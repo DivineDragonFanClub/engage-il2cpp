@@ -2,243 +2,53 @@
 
 #[cfg(feature = "combat-situation_converter-convertfortress-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        combat::situation_converter::{
-            baseconverter::{BaseConverter, IBaseConverter},
-            converterwithut::{ConverterWithUt, IConverterWithUt},
-        },
-        system::object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/situation_converter/convertfortress/ConvertFortress.md"))]
-    #[::unity2::class(namespace = "Combat.SituationConverter", name = "ConvertFortress")]
-    #[parent(crate::combat::situation_converter::converterwithut::ConverterWithUt)]
-    pub struct ConvertFortress {
-        #[offset(44)]
-        #[rename(name = "m_LastCameraPos")]
-        pub m_last_camera_pos: crate::combat::cameraposition::CameraPosition,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: combat :: situation_converter :: baseconverter :: { BaseConverter , IBaseConverter }
+ ;
+ use crate :: combat :: situation_converter :: converterwithut :: { ConverterWithUt , IConverterWithUt }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/situation_converter/convertfortress/ConvertFortress.md"))] # [:: unity2 :: class (namespace = "Combat.SituationConverter" , name = "ConvertFortress")] # [parent (crate :: combat :: situation_converter :: converterwithut :: ConverterWithUt)] pub struct ConvertFortress {
+# [offset (44)] # [rename (name = "m_LastCameraPos")] pub m_last_camera_pos : crate :: combat :: cameraposition :: CameraPosition ,
+}
+
 }
 
 #[cfg(feature = "combat-situation_converter-convertfortress-types")]
 pub use __types::*;
 
 #[cfg(feature = "combat-situation_converter-convertfortress")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ConvertFortress_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::combat::situation_converter::cameradataset::CameraDataSet as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ConvertFortress as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ConvertFortress as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: ConvertFortress,
-        data: crate::combat::situation_converter::cameradataset::CameraDataSet,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(ConvertFortress, crate::combat::situation_converter::cameradataset::CameraDataSet, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_begin {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ConvertFortress as ::unity2::ClassIdentity>::class(),
-                "OnBegin",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ConvertFortress as ::unity2::ClassIdentity>::NAME,
-                        "OnBegin",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_begin(this: ConvertFortress, __unity2_method_info: ::unity2::OptionalMethod) -> crate::combat::cameraposition::CameraPosition {
-        let inner: extern "C" fn(ConvertFortress, ::unity2::OptionalMethod) -> crate::combat::cameraposition::CameraPosition =
-            ::core::mem::transmute(__lookup_on_begin::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_approach {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ConvertFortress as ::unity2::ClassIdentity>::class(),
-                "OnApproach",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ConvertFortress as ::unity2::ClassIdentity>::NAME,
-                        "OnApproach",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_approach(
-        this: ConvertFortress,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::combat::cameraposition::CameraPosition {
-        let inner: extern "C" fn(ConvertFortress, ::unity2::OptionalMethod) -> crate::combat::cameraposition::CameraPosition =
-            ::core::mem::transmute(__lookup_on_approach::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_unusable {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ConvertFortress as ::unity2::ClassIdentity>::class(),
-                "OnUnusable",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ConvertFortress as ::unity2::ClassIdentity>::NAME,
-                        "OnUnusable",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_unusable(
-        this: ConvertFortress,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::combat::cameraposition::CameraPosition {
-        let inner: extern "C" fn(ConvertFortress, ::unity2::OptionalMethod) -> crate::combat::cameraposition::CameraPosition =
-            ::core::mem::transmute(__lookup_on_unusable::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ConvertFortress_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: situation_converter :: cameradataset :: CameraDataSet as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ConvertFortress as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ConvertFortress as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : ConvertFortress , data : crate :: combat :: situation_converter :: cameradataset :: CameraDataSet , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ConvertFortress , crate :: combat :: situation_converter :: cameradataset :: CameraDataSet , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , data , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_begin { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ConvertFortress as :: unity2 :: ClassIdentity > :: class () , "OnBegin" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ConvertFortress as :: unity2 :: ClassIdentity > :: NAME , "OnBegin" , e) , } } } pub unsafe fn on_begin (this : ConvertFortress , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: combat :: cameraposition :: CameraPosition { let inner : extern "C" fn (ConvertFortress , :: unity2 :: OptionalMethod ,) -> crate :: combat :: cameraposition :: CameraPosition = :: core :: mem :: transmute (__lookup_on_begin :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_approach { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ConvertFortress as :: unity2 :: ClassIdentity > :: class () , "OnApproach" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ConvertFortress as :: unity2 :: ClassIdentity > :: NAME , "OnApproach" , e) , } } } pub unsafe fn on_approach (this : ConvertFortress , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: combat :: cameraposition :: CameraPosition { let inner : extern "C" fn (ConvertFortress , :: unity2 :: OptionalMethod ,) -> crate :: combat :: cameraposition :: CameraPosition = :: core :: mem :: transmute (__lookup_on_approach :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_unusable { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ConvertFortress as :: unity2 :: ClassIdentity > :: class () , "OnUnusable" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ConvertFortress as :: unity2 :: ClassIdentity > :: NAME , "OnUnusable" , e) , } } } pub unsafe fn on_unusable (this : ConvertFortress , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: combat :: cameraposition :: CameraPosition { let inner : extern "C" fn (ConvertFortress , :: unity2 :: OptionalMethod ,) -> crate :: combat :: cameraposition :: CameraPosition = :: core :: mem :: transmute (__lookup_on_unusable :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "combat-situation_converter-convertfortress")]
-pub trait IConvertFortressMethods: IConvertFortress {
-    #[doc = "`.ctor(crate::combat::situation_converter::cameradataset::CameraDataSet)` overload"]
-    fn ctor(self, data: impl ::core::convert::Into<crate::combat::situation_converter::cameradataset::CameraDataSet>) -> () {
-        unsafe {
-            let __receiver = <ConvertFortress as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ConvertFortress_unity2_raw::ctor(__receiver, ::core::convert::Into::into(data), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnBegin()` overload"]
-    fn on_begin(self) -> crate::combat::cameraposition::CameraPosition {
-        unsafe {
-            let __receiver = <ConvertFortress as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ConvertFortress_unity2_raw::on_begin(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnApproach()` overload"]
-    fn on_approach(self) -> crate::combat::cameraposition::CameraPosition {
-        unsafe {
-            let __receiver = <ConvertFortress as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ConvertFortress_unity2_raw::on_approach(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnUnusable()` overload"]
-    fn on_unusable(self) -> crate::combat::cameraposition::CameraPosition {
-        unsafe {
-            let __receiver = <ConvertFortress as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ConvertFortress_unity2_raw::on_unusable(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IConvertFortressMethods : IConvertFortress { # [doc = "`.ctor(crate::combat::situation_converter::cameradataset::CameraDataSet)` overload"] fn ctor (self , data : impl :: core :: convert :: Into < crate :: combat :: situation_converter :: cameradataset :: CameraDataSet >) -> () { unsafe { let __receiver = < ConvertFortress as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ConvertFortress_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (data) , :: core :: option :: Option :: None) } } # [doc = "`OnBegin()` overload"] fn on_begin (self ,) -> crate :: combat :: cameraposition :: CameraPosition { unsafe { let __receiver = < ConvertFortress as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ConvertFortress_unity2_raw :: on_begin (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnApproach()` overload"] fn on_approach (self ,) -> crate :: combat :: cameraposition :: CameraPosition { unsafe { let __receiver = < ConvertFortress as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ConvertFortress_unity2_raw :: on_approach (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnUnusable()` overload"] fn on_unusable (self ,) -> crate :: combat :: cameraposition :: CameraPosition { unsafe { let __receiver = < ConvertFortress as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ConvertFortress_unity2_raw :: on_unusable (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "combat-situation_converter-convertfortress")]
-impl<__T: IConvertFortress> IConvertFortressMethods for __T {}
+impl < __T : IConvertFortress > IConvertFortressMethods for __T { }
+
+#[cfg(feature = "combat-situation_converter-convertfortress")]
+impl ConvertFortress { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ConvertFortress_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn on_begin_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ConvertFortress_unity2_raw :: __lookup_on_begin :: get_method_info () } pub fn on_approach_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ConvertFortress_unity2_raw :: __lookup_on_approach :: get_method_info () } pub fn on_unusable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ConvertFortress_unity2_raw :: __lookup_on_unusable :: get_method_info () } }
 
 #[cfg(feature = "combat-situation_converter-convertfortress")]
 impl ConvertFortress {
-    #[doc = "`.ctor(crate::combat::situation_converter::cameradataset::CameraDataSet)` — overload selector"]
-    pub fn new(data: crate::combat::situation_converter::cameradataset::CameraDataSet) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ConvertFortress),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IConvertFortressMethods>::ctor(this, data);
-        this
-    }
+# [doc = "`.ctor(crate::combat::situation_converter::cameradataset::CameraDataSet)` — overload selector"] pub fn new (data : crate :: combat :: situation_converter :: cameradataset :: CameraDataSet) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ConvertFortress) , :: core :: stringify ! (new) ,)) ; < Self as IConvertFortressMethods > :: ctor (this , data) ; this }
 }
 
 #[cfg(feature = "combat-situation_converter-convertfortress")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{ConvertFortress, IConvertFortress, IConvertFortressMethods};
-    #[cfg(feature = "combat-situation_converter-baseconverter")]
-    pub use crate::combat::situation_converter::baseconverter::IBaseConverterMethods;
-    #[cfg(feature = "combat-situation_converter-converterwithut")]
-    pub use crate::combat::situation_converter::converterwithut::IConverterWithUtMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::{
-        combat::situation_converter::{baseconverter::IBaseConverter, converterwithut::IConverterWithUt},
-        system::object::IObject,
-    };
+    pub use super::ConvertFortress;
+    pub use super::IConvertFortress;
+    pub use super::IConvertFortressMethods;
+    pub use crate::combat::situation_converter::baseconverter::IBaseConverter;
+    pub use crate::combat::situation_converter::converterwithut::IConverterWithUt;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "combat-situation_converter-baseconverter")] pub use crate::combat::situation_converter::baseconverter::IBaseConverterMethods;
+    #[cfg(feature = "combat-situation_converter-converterwithut")] pub use crate::combat::situation_converter::converterwithut::IConverterWithUtMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

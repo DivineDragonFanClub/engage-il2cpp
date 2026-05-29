@@ -2,517 +2,68 @@
 
 #[cfg(feature = "app-systemscrollmenuitemcontent-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::basicmenuitemcontent::{BasicMenuItemContent, IBasicMenuItemContent},
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemscrollmenuitemcontent/SystemScrollMenuItemContent.md"))]
-    #[::unity2::class(namespace = "App", name = "SystemScrollMenuItemContent")]
-    #[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]
-    pub struct SystemScrollMenuItemContent {
-        #[offset(72)]
-        #[rename(name = "m_Partner")]
-        pub m_partner: crate::unity_engine::gameobject::GameObject,
-        #[offset(80)]
-        #[rename(name = "m_Title")]
-        pub m_title: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(88)]
-        #[rename(name = "m_Help")]
-        pub m_help: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(96)]
-        #[rename(name = "m_Icon")]
-        pub m_icon: crate::unity_engine::gameobject::GameObject,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: basicmenuitemcontent :: { BasicMenuItemContent , IBasicMenuItemContent }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemscrollmenuitemcontent/SystemScrollMenuItemContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "SystemScrollMenuItemContent")] # [parent (crate :: app :: basicmenuitemcontent :: BasicMenuItemContent)] pub struct SystemScrollMenuItemContent {
+# [offset (72)] # [rename (name = "m_Partner")] pub m_partner : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (80)] # [rename (name = "m_Title")] pub m_title : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (88)] # [rename (name = "m_Help")] pub m_help : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (96)] # [rename (name = "m_Icon")] pub m_icon : crate :: unity_engine :: gameobject :: GameObject ,
+}
+
 }
 
 #[cfg(feature = "app-systemscrollmenuitemcontent-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-systemscrollmenuitemcontent")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __SystemScrollMenuItemContent_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_build {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::basicmenuitem::BasicMenuItem as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SystemScrollMenuItemContent as ::unity2::ClassIdentity>::class(),
-                "Build",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SystemScrollMenuItemContent as ::unity2::ClassIdentity>::NAME,
-                        "Build",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn build(
-        this: SystemScrollMenuItemContent,
-        menu_item: crate::app::basicmenuitem::BasicMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(SystemScrollMenuItemContent, crate::app::basicmenuitem::BasicMenuItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_build::get_method_info().method_ptr);
-        inner(this, menu_item, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SystemScrollMenuItemContent as ::unity2::ClassIdentity>::class(),
-                "Update",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SystemScrollMenuItemContent as ::unity2::ClassIdentity>::NAME,
-                        "Update",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update(this: SystemScrollMenuItemContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SystemScrollMenuItemContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update_text_color {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SystemScrollMenuItemContent as ::unity2::ClassIdentity>::class(),
-                "UpdateTextColor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SystemScrollMenuItemContent as ::unity2::ClassIdentity>::NAME,
-                        "UpdateTextColor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update_text_color(this: SystemScrollMenuItemContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SystemScrollMenuItemContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update_text_color::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_disable {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SystemScrollMenuItemContent as ::unity2::ClassIdentity>::class(),
-                "Disable",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SystemScrollMenuItemContent as ::unity2::ClassIdentity>::NAME,
-                        "Disable",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn disable(this: SystemScrollMenuItemContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SystemScrollMenuItemContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_disable::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_help_text {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SystemScrollMenuItemContent as ::unity2::ClassIdentity>::class(),
-                "SetHelpText",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SystemScrollMenuItemContent as ::unity2::ClassIdentity>::NAME,
-                        "SetHelpText",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_help_text(
-        this: SystemScrollMenuItemContent,
-        help: ::unity2::Il2CppString,
-        c: crate::unity_engine::color::Color,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            SystemScrollMenuItemContent,
-            ::unity2::Il2CppString,
-            crate::unity_engine::color::Color,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_set_help_text::get_method_info().method_ptr);
-        inner(this, help, c, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_help_active {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <bool as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SystemScrollMenuItemContent as ::unity2::ClassIdentity>::class(),
-                "SetHelpActive",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SystemScrollMenuItemContent as ::unity2::ClassIdentity>::NAME,
-                        "SetHelpActive",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_help_active(
-        this: SystemScrollMenuItemContent,
-        b_active: bool,
-        c: crate::unity_engine::color::Color,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(SystemScrollMenuItemContent, bool, crate::unity_engine::color::Color, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_help_active::get_method_info().method_ptr);
-        inner(this, b_active, c, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_icon {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::gmapspot::GmapSpot as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SystemScrollMenuItemContent as ::unity2::ClassIdentity>::class(),
-                "SetIcon",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SystemScrollMenuItemContent as ::unity2::ClassIdentity>::NAME,
-                        "SetIcon",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_icon(
-        this: SystemScrollMenuItemContent,
-        spot: crate::app::gmapspot::GmapSpot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(SystemScrollMenuItemContent, crate::app::gmapspot::GmapSpot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_icon::get_method_info().method_ptr);
-        inner(this, spot, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_encount_icon {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::encountunitdata::EncountUnitData_RareType as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SystemScrollMenuItemContent as ::unity2::ClassIdentity>::class(),
-                "GetEncountIcon",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SystemScrollMenuItemContent as ::unity2::ClassIdentity>::NAME,
-                        "GetEncountIcon",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_encount_icon(
-        this: SystemScrollMenuItemContent,
-        rare_type: crate::app::encountunitdata::EncountUnitData_RareType,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::sprite::Sprite {
-        let inner: extern "C" fn(
-            SystemScrollMenuItemContent,
-            crate::app::encountunitdata::EncountUnitData_RareType,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::sprite::Sprite = ::core::mem::transmute(__lookup_get_encount_icon::get_method_info().method_ptr);
-        inner(this, rare_type, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SystemScrollMenuItemContent as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SystemScrollMenuItemContent as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: SystemScrollMenuItemContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SystemScrollMenuItemContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __SystemScrollMenuItemContent_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_build { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: basicmenuitem :: BasicMenuItem as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SystemScrollMenuItemContent as :: unity2 :: ClassIdentity > :: class () , "Build" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SystemScrollMenuItemContent as :: unity2 :: ClassIdentity > :: NAME , "Build" , e) , } } } pub unsafe fn build (this : SystemScrollMenuItemContent , menu_item : crate :: app :: basicmenuitem :: BasicMenuItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SystemScrollMenuItemContent , crate :: app :: basicmenuitem :: BasicMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_build :: get_method_info () . method_ptr ,) ; inner (this , menu_item , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SystemScrollMenuItemContent as :: unity2 :: ClassIdentity > :: class () , "Update" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SystemScrollMenuItemContent as :: unity2 :: ClassIdentity > :: NAME , "Update" , e) , } } } pub unsafe fn update (this : SystemScrollMenuItemContent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SystemScrollMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update_text_color { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SystemScrollMenuItemContent as :: unity2 :: ClassIdentity > :: class () , "UpdateTextColor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SystemScrollMenuItemContent as :: unity2 :: ClassIdentity > :: NAME , "UpdateTextColor" , e) , } } } pub unsafe fn update_text_color (this : SystemScrollMenuItemContent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SystemScrollMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update_text_color :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_disable { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SystemScrollMenuItemContent as :: unity2 :: ClassIdentity > :: class () , "Disable" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SystemScrollMenuItemContent as :: unity2 :: ClassIdentity > :: NAME , "Disable" , e) , } } } pub unsafe fn disable (this : SystemScrollMenuItemContent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SystemScrollMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_disable :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_help_text { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: color :: Color as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SystemScrollMenuItemContent as :: unity2 :: ClassIdentity > :: class () , "SetHelpText" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SystemScrollMenuItemContent as :: unity2 :: ClassIdentity > :: NAME , "SetHelpText" , e) , } } } pub unsafe fn set_help_text (this : SystemScrollMenuItemContent , help : :: unity2 :: Il2CppString , c : crate :: unity_engine :: color :: Color , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SystemScrollMenuItemContent , :: unity2 :: Il2CppString , crate :: unity_engine :: color :: Color , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_help_text :: get_method_info () . method_ptr ,) ; inner (this , help , c , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_help_active { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: color :: Color as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SystemScrollMenuItemContent as :: unity2 :: ClassIdentity > :: class () , "SetHelpActive" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SystemScrollMenuItemContent as :: unity2 :: ClassIdentity > :: NAME , "SetHelpActive" , e) , } } } pub unsafe fn set_help_active (this : SystemScrollMenuItemContent , b_active : bool , c : crate :: unity_engine :: color :: Color , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SystemScrollMenuItemContent , bool , crate :: unity_engine :: color :: Color , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_help_active :: get_method_info () . method_ptr ,) ; inner (this , b_active , c , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_icon { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: gmapspot :: GmapSpot as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SystemScrollMenuItemContent as :: unity2 :: ClassIdentity > :: class () , "SetIcon" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SystemScrollMenuItemContent as :: unity2 :: ClassIdentity > :: NAME , "SetIcon" , e) , } } } pub unsafe fn set_icon (this : SystemScrollMenuItemContent , spot : crate :: app :: gmapspot :: GmapSpot , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SystemScrollMenuItemContent , crate :: app :: gmapspot :: GmapSpot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_icon :: get_method_info () . method_ptr ,) ; inner (this , spot , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_encount_icon { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: encountunitdata :: EncountUnitData_RareType as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SystemScrollMenuItemContent as :: unity2 :: ClassIdentity > :: class () , "GetEncountIcon" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SystemScrollMenuItemContent as :: unity2 :: ClassIdentity > :: NAME , "GetEncountIcon" , e) , } } } pub unsafe fn get_encount_icon (this : SystemScrollMenuItemContent , rare_type : crate :: app :: encountunitdata :: EncountUnitData_RareType , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: sprite :: Sprite { let inner : extern "C" fn (SystemScrollMenuItemContent , crate :: app :: encountunitdata :: EncountUnitData_RareType , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: sprite :: Sprite = :: core :: mem :: transmute (__lookup_get_encount_icon :: get_method_info () . method_ptr ,) ; inner (this , rare_type , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SystemScrollMenuItemContent as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SystemScrollMenuItemContent as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : SystemScrollMenuItemContent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SystemScrollMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-systemscrollmenuitemcontent")]
-pub trait ISystemScrollMenuItemContentMethods: ISystemScrollMenuItemContent {
-    #[doc = "`Build(crate::app::basicmenuitem::BasicMenuItem)` overload"]
-    fn build(self, menu_item: impl ::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem>) -> () {
-        unsafe {
-            let __receiver =
-                <SystemScrollMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SystemScrollMenuItemContent_unity2_raw::build(__receiver, ::core::convert::Into::into(menu_item), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Update()` overload"]
-    fn update(self) -> () {
-        unsafe {
-            let __receiver =
-                <SystemScrollMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SystemScrollMenuItemContent_unity2_raw::update(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`UpdateTextColor()` overload"]
-    fn update_text_color(self) -> () {
-        unsafe {
-            let __receiver =
-                <SystemScrollMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SystemScrollMenuItemContent_unity2_raw::update_text_color(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Disable()` overload"]
-    fn disable(self) -> () {
-        unsafe {
-            let __receiver =
-                <SystemScrollMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SystemScrollMenuItemContent_unity2_raw::disable(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetHelpText(::unity2::Il2CppString, crate::unity_engine::color::Color)` overload"]
-    fn set_help_text(
-        self,
-        help: impl ::core::convert::Into<::unity2::Il2CppString>,
-        c: impl ::core::convert::Into<crate::unity_engine::color::Color>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <SystemScrollMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SystemScrollMenuItemContent_unity2_raw::set_help_text(
-                __receiver,
-                ::core::convert::Into::into(help),
-                ::core::convert::Into::into(c),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetHelpActive(bool, crate::unity_engine::color::Color)` overload"]
-    fn set_help_active(self, b_active: impl ::core::convert::Into<bool>, c: impl ::core::convert::Into<crate::unity_engine::color::Color>) -> () {
-        unsafe {
-            let __receiver =
-                <SystemScrollMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SystemScrollMenuItemContent_unity2_raw::set_help_active(
-                __receiver,
-                ::core::convert::Into::into(b_active),
-                ::core::convert::Into::into(c),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetIcon(crate::app::gmapspot::GmapSpot)` overload"]
-    fn set_icon(self, spot: impl ::core::convert::Into<crate::app::gmapspot::GmapSpot>) -> () {
-        unsafe {
-            let __receiver =
-                <SystemScrollMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SystemScrollMenuItemContent_unity2_raw::set_icon(__receiver, ::core::convert::Into::into(spot), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetEncountIcon(crate::app::encountunitdata::EncountUnitData_RareType)` overload"]
-    fn get_encount_icon(
-        self,
-        rare_type: impl ::core::convert::Into<crate::app::encountunitdata::EncountUnitData_RareType>,
-    ) -> crate::unity_engine::sprite::Sprite {
-        unsafe {
-            let __receiver =
-                <SystemScrollMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SystemScrollMenuItemContent_unity2_raw::get_encount_icon(
-                __receiver,
-                ::core::convert::Into::into(rare_type),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <SystemScrollMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SystemScrollMenuItemContent_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait ISystemScrollMenuItemContentMethods : ISystemScrollMenuItemContent { # [doc = "`Build(crate::app::basicmenuitem::BasicMenuItem)` overload"] fn build (self , menu_item : impl :: core :: convert :: Into < crate :: app :: basicmenuitem :: BasicMenuItem >) -> () { unsafe { let __receiver = < SystemScrollMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SystemScrollMenuItemContent_unity2_raw :: build (__receiver , :: core :: convert :: Into :: into (menu_item) , :: core :: option :: Option :: None) } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < SystemScrollMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SystemScrollMenuItemContent_unity2_raw :: update (__receiver , :: core :: option :: Option :: None) } } # [doc = "`UpdateTextColor()` overload"] fn update_text_color (self ,) -> () { unsafe { let __receiver = < SystemScrollMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SystemScrollMenuItemContent_unity2_raw :: update_text_color (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Disable()` overload"] fn disable (self ,) -> () { unsafe { let __receiver = < SystemScrollMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SystemScrollMenuItemContent_unity2_raw :: disable (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetHelpText(::unity2::Il2CppString, crate::unity_engine::color::Color)` overload"] fn set_help_text (self , help : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , c : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color >) -> () { unsafe { let __receiver = < SystemScrollMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SystemScrollMenuItemContent_unity2_raw :: set_help_text (__receiver , :: core :: convert :: Into :: into (help) , :: core :: convert :: Into :: into (c) , :: core :: option :: Option :: None) } } # [doc = "`SetHelpActive(bool, crate::unity_engine::color::Color)` overload"] fn set_help_active (self , b_active : impl :: core :: convert :: Into < bool > , c : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color >) -> () { unsafe { let __receiver = < SystemScrollMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SystemScrollMenuItemContent_unity2_raw :: set_help_active (__receiver , :: core :: convert :: Into :: into (b_active) , :: core :: convert :: Into :: into (c) , :: core :: option :: Option :: None) } } # [doc = "`SetIcon(crate::app::gmapspot::GmapSpot)` overload"] fn set_icon (self , spot : impl :: core :: convert :: Into < crate :: app :: gmapspot :: GmapSpot >) -> () { unsafe { let __receiver = < SystemScrollMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SystemScrollMenuItemContent_unity2_raw :: set_icon (__receiver , :: core :: convert :: Into :: into (spot) , :: core :: option :: Option :: None) } } # [doc = "`GetEncountIcon(crate::app::encountunitdata::EncountUnitData_RareType)` overload"] fn get_encount_icon (self , rare_type : impl :: core :: convert :: Into < crate :: app :: encountunitdata :: EncountUnitData_RareType >) -> crate :: unity_engine :: sprite :: Sprite { unsafe { let __receiver = < SystemScrollMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SystemScrollMenuItemContent_unity2_raw :: get_encount_icon (__receiver , :: core :: convert :: Into :: into (rare_type) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < SystemScrollMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SystemScrollMenuItemContent_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-systemscrollmenuitemcontent")]
-impl<__T: ISystemScrollMenuItemContent> ISystemScrollMenuItemContentMethods for __T {}
+impl < __T : ISystemScrollMenuItemContent > ISystemScrollMenuItemContentMethods for __T { }
+
+#[cfg(feature = "app-systemscrollmenuitemcontent")]
+impl SystemScrollMenuItemContent { pub fn build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SystemScrollMenuItemContent_unity2_raw :: __lookup_build :: get_method_info () } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SystemScrollMenuItemContent_unity2_raw :: __lookup_update :: get_method_info () } pub fn update_text_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SystemScrollMenuItemContent_unity2_raw :: __lookup_update_text_color :: get_method_info () } pub fn disable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SystemScrollMenuItemContent_unity2_raw :: __lookup_disable :: get_method_info () } pub fn set_help_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SystemScrollMenuItemContent_unity2_raw :: __lookup_set_help_text :: get_method_info () } pub fn set_help_active_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SystemScrollMenuItemContent_unity2_raw :: __lookup_set_help_active :: get_method_info () } pub fn set_icon_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SystemScrollMenuItemContent_unity2_raw :: __lookup_set_icon :: get_method_info () } pub fn get_encount_icon_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SystemScrollMenuItemContent_unity2_raw :: __lookup_get_encount_icon :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SystemScrollMenuItemContent_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-systemscrollmenuitemcontent")]
 impl SystemScrollMenuItemContent {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SystemScrollMenuItemContent),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISystemScrollMenuItemContentMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SystemScrollMenuItemContent) , :: core :: stringify ! (new) ,)) ; < Self as ISystemScrollMenuItemContentMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-systemscrollmenuitemcontent")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{ISystemScrollMenuItemContent, ISystemScrollMenuItemContentMethods, SystemScrollMenuItemContent};
-    #[cfg(feature = "app-basicmenuitemcontent")]
-    pub use crate::app::basicmenuitemcontent::IBasicMenuItemContentMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        app::basicmenuitemcontent::IBasicMenuItemContent,
-        system::object::IObject,
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::SystemScrollMenuItemContent;
+    pub use super::ISystemScrollMenuItemContent;
+    pub use super::ISystemScrollMenuItemContentMethods;
+    pub use crate::app::basicmenuitemcontent::IBasicMenuItemContent;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "app-basicmenuitemcontent")] pub use crate::app::basicmenuitemcontent::IBasicMenuItemContentMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

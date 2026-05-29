@@ -2,306 +2,51 @@
 
 #[cfg(feature = "unity_engine-vfx-vfxspawnercallbacks-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::{
-            object_2::{IObject_2, Object_2},
-            scriptableobject::{IScriptableObject, ScriptableObject},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/vfx/vfxspawnercallbacks/VFXSpawnerCallbacks.md"))]
-    #[::unity2::class(namespace = "UnityEngine.VFX", name = "VFXSpawnerCallbacks")]
-    #[parent(crate::unity_engine::scriptableobject::ScriptableObject)]
-    pub struct VFXSpawnerCallbacks {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+ use crate :: unity_engine :: scriptableobject :: { IScriptableObject , ScriptableObject }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/vfx/vfxspawnercallbacks/VFXSpawnerCallbacks.md"))] # [:: unity2 :: class (namespace = "UnityEngine.VFX" , name = "VFXSpawnerCallbacks")] # [parent (crate :: unity_engine :: scriptableobject :: ScriptableObject)] pub struct VFXSpawnerCallbacks {}
+
 }
 
 #[cfg(feature = "unity_engine-vfx-vfxspawnercallbacks-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-vfx-vfxspawnercallbacks")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __VFXSpawnerCallbacks_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_play {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::vfx::vfxspawnerstate::VFXSpawnerState as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::vfx::vfxexpressionvalues::VFXExpressionValues as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::vfx::visualeffect::VisualEffect as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VFXSpawnerCallbacks as ::unity2::ClassIdentity>::class(),
-                "OnPlay",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <VFXSpawnerCallbacks as ::unity2::ClassIdentity>::NAME,
-                        "OnPlay",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_play(
-        this: VFXSpawnerCallbacks,
-        state: crate::unity_engine::vfx::vfxspawnerstate::VFXSpawnerState,
-        vfx_values: crate::unity_engine::vfx::vfxexpressionvalues::VFXExpressionValues,
-        vfx_component: crate::unity_engine::vfx::visualeffect::VisualEffect,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            VFXSpawnerCallbacks,
-            crate::unity_engine::vfx::vfxspawnerstate::VFXSpawnerState,
-            crate::unity_engine::vfx::vfxexpressionvalues::VFXExpressionValues,
-            crate::unity_engine::vfx::visualeffect::VisualEffect,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_on_play::get_method_info().method_ptr);
-        inner(this, state, vfx_values, vfx_component, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_update {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::vfx::vfxspawnerstate::VFXSpawnerState as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::vfx::vfxexpressionvalues::VFXExpressionValues as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::vfx::visualeffect::VisualEffect as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VFXSpawnerCallbacks as ::unity2::ClassIdentity>::class(),
-                "OnUpdate",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <VFXSpawnerCallbacks as ::unity2::ClassIdentity>::NAME,
-                        "OnUpdate",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_update(
-        this: VFXSpawnerCallbacks,
-        state: crate::unity_engine::vfx::vfxspawnerstate::VFXSpawnerState,
-        vfx_values: crate::unity_engine::vfx::vfxexpressionvalues::VFXExpressionValues,
-        vfx_component: crate::unity_engine::vfx::visualeffect::VisualEffect,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            VFXSpawnerCallbacks,
-            crate::unity_engine::vfx::vfxspawnerstate::VFXSpawnerState,
-            crate::unity_engine::vfx::vfxexpressionvalues::VFXExpressionValues,
-            crate::unity_engine::vfx::visualeffect::VisualEffect,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_on_update::get_method_info().method_ptr);
-        inner(this, state, vfx_values, vfx_component, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_stop {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::vfx::vfxspawnerstate::VFXSpawnerState as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::vfx::vfxexpressionvalues::VFXExpressionValues as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::vfx::visualeffect::VisualEffect as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VFXSpawnerCallbacks as ::unity2::ClassIdentity>::class(),
-                "OnStop",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <VFXSpawnerCallbacks as ::unity2::ClassIdentity>::NAME,
-                        "OnStop",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_stop(
-        this: VFXSpawnerCallbacks,
-        state: crate::unity_engine::vfx::vfxspawnerstate::VFXSpawnerState,
-        vfx_values: crate::unity_engine::vfx::vfxexpressionvalues::VFXExpressionValues,
-        vfx_component: crate::unity_engine::vfx::visualeffect::VisualEffect,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            VFXSpawnerCallbacks,
-            crate::unity_engine::vfx::vfxspawnerstate::VFXSpawnerState,
-            crate::unity_engine::vfx::vfxexpressionvalues::VFXExpressionValues,
-            crate::unity_engine::vfx::visualeffect::VisualEffect,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_on_stop::get_method_info().method_ptr);
-        inner(this, state, vfx_values, vfx_component, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VFXSpawnerCallbacks as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <VFXSpawnerCallbacks as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: VFXSpawnerCallbacks, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(VFXSpawnerCallbacks, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __VFXSpawnerCallbacks_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_play { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vfx :: vfxspawnerstate :: VFXSpawnerState as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vfx :: vfxexpressionvalues :: VFXExpressionValues as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vfx :: visualeffect :: VisualEffect as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< VFXSpawnerCallbacks as :: unity2 :: ClassIdentity > :: class () , "OnPlay" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < VFXSpawnerCallbacks as :: unity2 :: ClassIdentity > :: NAME , "OnPlay" , e) , } } } pub unsafe fn on_play (this : VFXSpawnerCallbacks , state : crate :: unity_engine :: vfx :: vfxspawnerstate :: VFXSpawnerState , vfx_values : crate :: unity_engine :: vfx :: vfxexpressionvalues :: VFXExpressionValues , vfx_component : crate :: unity_engine :: vfx :: visualeffect :: VisualEffect , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (VFXSpawnerCallbacks , crate :: unity_engine :: vfx :: vfxspawnerstate :: VFXSpawnerState , crate :: unity_engine :: vfx :: vfxexpressionvalues :: VFXExpressionValues , crate :: unity_engine :: vfx :: visualeffect :: VisualEffect , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_play :: get_method_info () . method_ptr ,) ; inner (this , state , vfx_values , vfx_component , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_update { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vfx :: vfxspawnerstate :: VFXSpawnerState as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vfx :: vfxexpressionvalues :: VFXExpressionValues as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vfx :: visualeffect :: VisualEffect as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< VFXSpawnerCallbacks as :: unity2 :: ClassIdentity > :: class () , "OnUpdate" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < VFXSpawnerCallbacks as :: unity2 :: ClassIdentity > :: NAME , "OnUpdate" , e) , } } } pub unsafe fn on_update (this : VFXSpawnerCallbacks , state : crate :: unity_engine :: vfx :: vfxspawnerstate :: VFXSpawnerState , vfx_values : crate :: unity_engine :: vfx :: vfxexpressionvalues :: VFXExpressionValues , vfx_component : crate :: unity_engine :: vfx :: visualeffect :: VisualEffect , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (VFXSpawnerCallbacks , crate :: unity_engine :: vfx :: vfxspawnerstate :: VFXSpawnerState , crate :: unity_engine :: vfx :: vfxexpressionvalues :: VFXExpressionValues , crate :: unity_engine :: vfx :: visualeffect :: VisualEffect , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_update :: get_method_info () . method_ptr ,) ; inner (this , state , vfx_values , vfx_component , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_stop { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vfx :: vfxspawnerstate :: VFXSpawnerState as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vfx :: vfxexpressionvalues :: VFXExpressionValues as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vfx :: visualeffect :: VisualEffect as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< VFXSpawnerCallbacks as :: unity2 :: ClassIdentity > :: class () , "OnStop" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < VFXSpawnerCallbacks as :: unity2 :: ClassIdentity > :: NAME , "OnStop" , e) , } } } pub unsafe fn on_stop (this : VFXSpawnerCallbacks , state : crate :: unity_engine :: vfx :: vfxspawnerstate :: VFXSpawnerState , vfx_values : crate :: unity_engine :: vfx :: vfxexpressionvalues :: VFXExpressionValues , vfx_component : crate :: unity_engine :: vfx :: visualeffect :: VisualEffect , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (VFXSpawnerCallbacks , crate :: unity_engine :: vfx :: vfxspawnerstate :: VFXSpawnerState , crate :: unity_engine :: vfx :: vfxexpressionvalues :: VFXExpressionValues , crate :: unity_engine :: vfx :: visualeffect :: VisualEffect , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_stop :: get_method_info () . method_ptr ,) ; inner (this , state , vfx_values , vfx_component , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< VFXSpawnerCallbacks as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < VFXSpawnerCallbacks as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : VFXSpawnerCallbacks , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (VFXSpawnerCallbacks , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-vfx-vfxspawnercallbacks")]
-pub trait IVFXSpawnerCallbacksMethods: IVFXSpawnerCallbacks {
-    #[doc = "`OnPlay(crate::unity_engine::vfx::vfxspawnerstate::VFXSpawnerState, crate::unity_engine::vfx::vfxexpressionvalues::VFXExpressionValues, crate::unity_engine::vfx::visualeffect::VisualEffect)` overload"]
-    fn on_play(
-        self,
-        state: impl ::core::convert::Into<crate::unity_engine::vfx::vfxspawnerstate::VFXSpawnerState>,
-        vfx_values: impl ::core::convert::Into<crate::unity_engine::vfx::vfxexpressionvalues::VFXExpressionValues>,
-        vfx_component: impl ::core::convert::Into<crate::unity_engine::vfx::visualeffect::VisualEffect>,
-    ) -> () {
-        unsafe {
-            let __receiver = <VFXSpawnerCallbacks as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __VFXSpawnerCallbacks_unity2_raw::on_play(
-                __receiver,
-                ::core::convert::Into::into(state),
-                ::core::convert::Into::into(vfx_values),
-                ::core::convert::Into::into(vfx_component),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`OnUpdate(crate::unity_engine::vfx::vfxspawnerstate::VFXSpawnerState, crate::unity_engine::vfx::vfxexpressionvalues::VFXExpressionValues, crate::unity_engine::vfx::visualeffect::VisualEffect)` overload"]
-    fn on_update(
-        self,
-        state: impl ::core::convert::Into<crate::unity_engine::vfx::vfxspawnerstate::VFXSpawnerState>,
-        vfx_values: impl ::core::convert::Into<crate::unity_engine::vfx::vfxexpressionvalues::VFXExpressionValues>,
-        vfx_component: impl ::core::convert::Into<crate::unity_engine::vfx::visualeffect::VisualEffect>,
-    ) -> () {
-        unsafe {
-            let __receiver = <VFXSpawnerCallbacks as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __VFXSpawnerCallbacks_unity2_raw::on_update(
-                __receiver,
-                ::core::convert::Into::into(state),
-                ::core::convert::Into::into(vfx_values),
-                ::core::convert::Into::into(vfx_component),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`OnStop(crate::unity_engine::vfx::vfxspawnerstate::VFXSpawnerState, crate::unity_engine::vfx::vfxexpressionvalues::VFXExpressionValues, crate::unity_engine::vfx::visualeffect::VisualEffect)` overload"]
-    fn on_stop(
-        self,
-        state: impl ::core::convert::Into<crate::unity_engine::vfx::vfxspawnerstate::VFXSpawnerState>,
-        vfx_values: impl ::core::convert::Into<crate::unity_engine::vfx::vfxexpressionvalues::VFXExpressionValues>,
-        vfx_component: impl ::core::convert::Into<crate::unity_engine::vfx::visualeffect::VisualEffect>,
-    ) -> () {
-        unsafe {
-            let __receiver = <VFXSpawnerCallbacks as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __VFXSpawnerCallbacks_unity2_raw::on_stop(
-                __receiver,
-                ::core::convert::Into::into(state),
-                ::core::convert::Into::into(vfx_values),
-                ::core::convert::Into::into(vfx_component),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <VFXSpawnerCallbacks as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __VFXSpawnerCallbacks_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IVFXSpawnerCallbacksMethods : IVFXSpawnerCallbacks { # [doc = "`OnPlay(crate::unity_engine::vfx::vfxspawnerstate::VFXSpawnerState, crate::unity_engine::vfx::vfxexpressionvalues::VFXExpressionValues, crate::unity_engine::vfx::visualeffect::VisualEffect)` overload"] fn on_play (self , state : impl :: core :: convert :: Into < crate :: unity_engine :: vfx :: vfxspawnerstate :: VFXSpawnerState > , vfx_values : impl :: core :: convert :: Into < crate :: unity_engine :: vfx :: vfxexpressionvalues :: VFXExpressionValues > , vfx_component : impl :: core :: convert :: Into < crate :: unity_engine :: vfx :: visualeffect :: VisualEffect >) -> () { unsafe { let __receiver = < VFXSpawnerCallbacks as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __VFXSpawnerCallbacks_unity2_raw :: on_play (__receiver , :: core :: convert :: Into :: into (state) , :: core :: convert :: Into :: into (vfx_values) , :: core :: convert :: Into :: into (vfx_component) , :: core :: option :: Option :: None) } } # [doc = "`OnUpdate(crate::unity_engine::vfx::vfxspawnerstate::VFXSpawnerState, crate::unity_engine::vfx::vfxexpressionvalues::VFXExpressionValues, crate::unity_engine::vfx::visualeffect::VisualEffect)` overload"] fn on_update (self , state : impl :: core :: convert :: Into < crate :: unity_engine :: vfx :: vfxspawnerstate :: VFXSpawnerState > , vfx_values : impl :: core :: convert :: Into < crate :: unity_engine :: vfx :: vfxexpressionvalues :: VFXExpressionValues > , vfx_component : impl :: core :: convert :: Into < crate :: unity_engine :: vfx :: visualeffect :: VisualEffect >) -> () { unsafe { let __receiver = < VFXSpawnerCallbacks as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __VFXSpawnerCallbacks_unity2_raw :: on_update (__receiver , :: core :: convert :: Into :: into (state) , :: core :: convert :: Into :: into (vfx_values) , :: core :: convert :: Into :: into (vfx_component) , :: core :: option :: Option :: None) } } # [doc = "`OnStop(crate::unity_engine::vfx::vfxspawnerstate::VFXSpawnerState, crate::unity_engine::vfx::vfxexpressionvalues::VFXExpressionValues, crate::unity_engine::vfx::visualeffect::VisualEffect)` overload"] fn on_stop (self , state : impl :: core :: convert :: Into < crate :: unity_engine :: vfx :: vfxspawnerstate :: VFXSpawnerState > , vfx_values : impl :: core :: convert :: Into < crate :: unity_engine :: vfx :: vfxexpressionvalues :: VFXExpressionValues > , vfx_component : impl :: core :: convert :: Into < crate :: unity_engine :: vfx :: visualeffect :: VisualEffect >) -> () { unsafe { let __receiver = < VFXSpawnerCallbacks as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __VFXSpawnerCallbacks_unity2_raw :: on_stop (__receiver , :: core :: convert :: Into :: into (state) , :: core :: convert :: Into :: into (vfx_values) , :: core :: convert :: Into :: into (vfx_component) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < VFXSpawnerCallbacks as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __VFXSpawnerCallbacks_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-vfx-vfxspawnercallbacks")]
-impl<__T: IVFXSpawnerCallbacks> IVFXSpawnerCallbacksMethods for __T {}
+impl < __T : IVFXSpawnerCallbacks > IVFXSpawnerCallbacksMethods for __T { }
+
+#[cfg(feature = "unity_engine-vfx-vfxspawnercallbacks")]
+impl VFXSpawnerCallbacks { pub fn on_play_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __VFXSpawnerCallbacks_unity2_raw :: __lookup_on_play :: get_method_info () } pub fn on_update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __VFXSpawnerCallbacks_unity2_raw :: __lookup_on_update :: get_method_info () } pub fn on_stop_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __VFXSpawnerCallbacks_unity2_raw :: __lookup_on_stop :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __VFXSpawnerCallbacks_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-vfx-vfxspawnercallbacks")]
 impl VFXSpawnerCallbacks {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(VFXSpawnerCallbacks),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IVFXSpawnerCallbacksMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (VFXSpawnerCallbacks) , :: core :: stringify ! (new) ,)) ; < Self as IVFXSpawnerCallbacksMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "unity_engine-vfx-vfxspawnercallbacks")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IVFXSpawnerCallbacks, IVFXSpawnerCallbacksMethods, VFXSpawnerCallbacks};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    #[cfg(feature = "unity_engine-scriptableobject")]
-    pub use crate::unity_engine::scriptableobject::IScriptableObjectMethods;
-    pub use crate::{
-        system::object::IObject,
-        unity_engine::{object_2::IObject_2, scriptableobject::IScriptableObject},
-    };
+    pub use super::VFXSpawnerCallbacks;
+    pub use super::IVFXSpawnerCallbacks;
+    pub use super::IVFXSpawnerCallbacksMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::object_2::IObject_2;
+    pub use crate::unity_engine::scriptableobject::IScriptableObject;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
+    #[cfg(feature = "unity_engine-scriptableobject")] pub use crate::unity_engine::scriptableobject::IScriptableObjectMethods;
 }

@@ -2,117 +2,34 @@
 
 #[cfg(feature = "unity_engine-ui-imask_interface-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/imask_interface/IMask_Interface.md"))]
-    #[::unity2::class(namespace = "UnityEngine.UI", name = "IMask")]
-    pub struct IMask_Interface {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/imask_interface/IMask_Interface.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "IMask")] pub struct IMask_Interface {}
+
 }
 
 #[cfg(feature = "unity_engine-ui-imask_interface-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-ui-imask_interface")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __IMask_Interface_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_enabled {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <IMask_Interface as ::unity2::ClassIdentity>::class(),
-                "Enabled",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <IMask_Interface as ::unity2::ClassIdentity>::NAME,
-                        "Enabled",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn enabled(this: IMask_Interface, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(IMask_Interface, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_enabled::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_rect_transform {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <IMask_Interface as ::unity2::ClassIdentity>::class(),
-                "get_rectTransform",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <IMask_Interface as ::unity2::ClassIdentity>::NAME,
-                        "get_rectTransform",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_rect_transform(
-        this: IMask_Interface,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::recttransform::RectTransform {
-        let inner: extern "C" fn(IMask_Interface, ::unity2::OptionalMethod) -> crate::unity_engine::recttransform::RectTransform =
-            ::core::mem::transmute(__lookup_get_rect_transform::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __IMask_Interface_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_enabled { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< IMask_Interface as :: unity2 :: ClassIdentity > :: class () , "Enabled" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < IMask_Interface as :: unity2 :: ClassIdentity > :: NAME , "Enabled" , e) , } } } pub unsafe fn enabled (this : IMask_Interface , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (IMask_Interface , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_enabled :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_rect_transform { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< IMask_Interface as :: unity2 :: ClassIdentity > :: class () , "get_rectTransform" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < IMask_Interface as :: unity2 :: ClassIdentity > :: NAME , "get_rectTransform" , e) , } } } pub unsafe fn get_rect_transform (this : IMask_Interface , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: recttransform :: RectTransform { let inner : extern "C" fn (IMask_Interface , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: recttransform :: RectTransform = :: core :: mem :: transmute (__lookup_get_rect_transform :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-ui-imask_interface")]
-pub trait IIMask_InterfaceMethods: IIMask_Interface {
-    #[doc = "`Enabled()` overload"]
-    fn enabled(self) -> bool {
-        unsafe {
-            let __receiver = <IMask_Interface as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __IMask_Interface_unity2_raw::enabled(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_rectTransform()` overload"]
-    fn get_rect_transform(self) -> crate::unity_engine::recttransform::RectTransform {
-        unsafe {
-            let __receiver = <IMask_Interface as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __IMask_Interface_unity2_raw::get_rect_transform(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IIMask_InterfaceMethods : IIMask_Interface { # [doc = "`Enabled()` overload"] fn enabled (self ,) -> bool { unsafe { let __receiver = < IMask_Interface as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IMask_Interface_unity2_raw :: enabled (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_rectTransform()` overload"] fn get_rect_transform (self ,) -> crate :: unity_engine :: recttransform :: RectTransform { unsafe { let __receiver = < IMask_Interface as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IMask_Interface_unity2_raw :: get_rect_transform (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-ui-imask_interface")]
-impl<__T: IIMask_Interface> IIMask_InterfaceMethods for __T {}
+impl < __T : IIMask_Interface > IIMask_InterfaceMethods for __T { }
+
+#[cfg(feature = "unity_engine-ui-imask_interface")]
+impl IMask_Interface { pub fn enabled_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __IMask_Interface_unity2_raw :: __lookup_enabled :: get_method_info () } pub fn get_rect_transform_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __IMask_Interface_unity2_raw :: __lookup_get_rect_transform :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-ui-imask_interface")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IIMask_Interface, IIMask_InterfaceMethods, IMask_Interface};
+    pub use super::IMask_Interface;
+    pub use super::IIMask_Interface;
+    pub use super::IIMask_InterfaceMethods;
 }

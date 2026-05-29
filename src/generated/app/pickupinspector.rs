@@ -2,119 +2,55 @@
 
 #[cfg(feature = "app-pickupinspector-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::{
-            mapinspector::{IMapInspector, MapInspector},
-            personinspector::{IPersonInspector, PersonInspector},
-            scriptutil::{IScriptUtil, ScriptUtil},
-        },
-        system::object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/pickupinspector/PickupInspector.md"))]
-    #[::unity2::class(namespace = "App", name = "PickupInspector")]
-    #[parent(crate::app::personinspector::PersonInspector)]
-    pub struct PickupInspector {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: mapinspector :: { IMapInspector , MapInspector }
+ ;
+ use crate :: app :: personinspector :: { IPersonInspector , PersonInspector }
+ ;
+ use crate :: app :: scriptutil :: { IScriptUtil , ScriptUtil }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/pickupinspector/PickupInspector.md"))] # [:: unity2 :: class (namespace = "App" , name = "PickupInspector")] # [parent (crate :: app :: personinspector :: PersonInspector)] pub struct PickupInspector {}
+
 }
 
 #[cfg(feature = "app-pickupinspector-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-pickupinspector")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __PickupInspector_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PickupInspector as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PickupInspector as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: PickupInspector,
-        args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            PickupInspector,
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, args, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __PickupInspector_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PickupInspector as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PickupInspector as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : PickupInspector , args : :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (PickupInspector , :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , args , __unity2_method_info) } }
 
 #[cfg(feature = "app-pickupinspector")]
-pub trait IPickupInspectorMethods: IPickupInspector {
-    #[doc = "`.ctor(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    fn ctor(self, args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
-        unsafe {
-            let __receiver = <PickupInspector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __PickupInspector_unity2_raw::ctor(__receiver, ::core::convert::Into::into(args), ::core::option::Option::None)
-        }
-    }
-}
+pub trait IPickupInspectorMethods : IPickupInspector { # [doc = "`.ctor(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"] fn ctor (self , args : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > >) -> () { unsafe { let __receiver = < PickupInspector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __PickupInspector_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (args) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-pickupinspector")]
-impl<__T: IPickupInspector> IPickupInspectorMethods for __T {}
+impl < __T : IPickupInspector > IPickupInspectorMethods for __T { }
+
+#[cfg(feature = "app-pickupinspector")]
+impl PickupInspector { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PickupInspector_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-pickupinspector")]
 impl PickupInspector {
-    #[doc = "`.ctor(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` — overload selector"]
-    pub fn new(args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(PickupInspector),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IPickupInspectorMethods>::ctor(this, args);
-        this
-    }
+# [doc = "`.ctor(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` — overload selector"] pub fn new (args : :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue >) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (PickupInspector) , :: core :: stringify ! (new) ,)) ; < Self as IPickupInspectorMethods > :: ctor (this , args) ; this }
 }
 
 #[cfg(feature = "app-pickupinspector")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IPickupInspector, IPickupInspectorMethods, PickupInspector};
-    #[cfg(feature = "app-mapinspector")]
-    pub use crate::app::mapinspector::IMapInspectorMethods;
-    #[cfg(feature = "app-personinspector")]
-    pub use crate::app::personinspector::IPersonInspectorMethods;
-    #[cfg(feature = "app-scriptutil")]
-    pub use crate::app::scriptutil::IScriptUtilMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::{
-        app::{mapinspector::IMapInspector, personinspector::IPersonInspector, scriptutil::IScriptUtil},
-        system::object::IObject,
-    };
+    pub use super::PickupInspector;
+    pub use super::IPickupInspector;
+    pub use super::IPickupInspectorMethods;
+    pub use crate::app::mapinspector::IMapInspector;
+    pub use crate::app::personinspector::IPersonInspector;
+    pub use crate::app::scriptutil::IScriptUtil;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "app-mapinspector")] pub use crate::app::mapinspector::IMapInspectorMethods;
+    #[cfg(feature = "app-personinspector")] pub use crate::app::personinspector::IPersonInspectorMethods;
+    #[cfg(feature = "app-scriptutil")] pub use crate::app::scriptutil::IScriptUtilMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

@@ -2,281 +2,48 @@
 
 #[cfg(feature = "unity_engine-rendering-universal-custom-drawobjectcategoryinfo-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/custom/drawobjectcategoryinfo/DrawObjectCategoryInfo.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Rendering.Universal.Custom", name = "DrawObjectCategoryInfo")]
-    #[parent(crate::system::object::Object)]
-    pub struct DrawObjectCategoryInfo {
-        #[static_field]
-        #[rename(name = "s_DrawObjectVisibilities")]
-        pub s_draw_object_visibilities: ::unity2::Array<bool>,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/custom/drawobjectcategoryinfo/DrawObjectCategoryInfo.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.Universal.Custom" , name = "DrawObjectCategoryInfo")] # [parent (crate :: system :: object :: Object)] pub struct DrawObjectCategoryInfo {
+# [static_field] # [rename (name = "s_DrawObjectVisibilities")] pub s_draw_object_visibilities : :: unity2 :: Array < bool > ,
+}
+
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-custom-drawobjectcategoryinfo-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-universal-custom-drawobjectcategoryinfo")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __DrawObjectCategoryInfo_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_no_override_state_index_begin {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DrawObjectCategoryInfo as ::unity2::ClassIdentity>::class(),
-                "GetNoOverrideStateIndexBegin",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DrawObjectCategoryInfo as ::unity2::ClassIdentity>::NAME,
-                        "GetNoOverrideStateIndexBegin",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_no_override_state_index_begin(__unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_no_override_state_index_begin::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_initialize {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DrawObjectCategoryInfo as ::unity2::ClassIdentity>::class(),
-                "Initialize",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DrawObjectCategoryInfo as ::unity2::ClassIdentity>::NAME,
-                        "Initialize",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn initialize(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_initialize::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_visible {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::rendering::universal::custom::drawobjectcategory::DrawObjectCategory as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DrawObjectCategoryInfo as ::unity2::ClassIdentity>::class(),
-                "IsVisible",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DrawObjectCategoryInfo as ::unity2::ClassIdentity>::NAME,
-                        "IsVisible",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_visible(
-        category: crate::unity_engine::rendering::universal::custom::drawobjectcategory::DrawObjectCategory,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            crate::unity_engine::rendering::universal::custom::drawobjectcategory::DrawObjectCategory,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(__lookup_is_visible::get_method_info().method_ptr);
-        inner(category, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_visibility {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::rendering::universal::custom::drawobjectcategory::DrawObjectCategory as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DrawObjectCategoryInfo as ::unity2::ClassIdentity>::class(),
-                "SetVisibility",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DrawObjectCategoryInfo as ::unity2::ClassIdentity>::NAME,
-                        "SetVisibility",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_visibility(
-        category: crate::unity_engine::rendering::universal::custom::drawobjectcategory::DrawObjectCategory,
-        visibility: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::rendering::universal::custom::drawobjectcategory::DrawObjectCategory,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_set_visibility::get_method_info().method_ptr);
-        inner(category, visibility, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DrawObjectCategoryInfo as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DrawObjectCategoryInfo as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: DrawObjectCategoryInfo, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DrawObjectCategoryInfo, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __DrawObjectCategoryInfo_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_no_override_state_index_begin { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DrawObjectCategoryInfo as :: unity2 :: ClassIdentity > :: class () , "GetNoOverrideStateIndexBegin" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DrawObjectCategoryInfo as :: unity2 :: ClassIdentity > :: NAME , "GetNoOverrideStateIndexBegin" , e) , } } } pub unsafe fn get_no_override_state_index_begin (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_no_override_state_index_begin :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_initialize { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DrawObjectCategoryInfo as :: unity2 :: ClassIdentity > :: class () , "Initialize" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DrawObjectCategoryInfo as :: unity2 :: ClassIdentity > :: NAME , "Initialize" , e) , } } } pub unsafe fn initialize (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_initialize :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_visible { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: universal :: custom :: drawobjectcategory :: DrawObjectCategory as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DrawObjectCategoryInfo as :: unity2 :: ClassIdentity > :: class () , "IsVisible" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DrawObjectCategoryInfo as :: unity2 :: ClassIdentity > :: NAME , "IsVisible" , e) , } } } pub unsafe fn is_visible (category : crate :: unity_engine :: rendering :: universal :: custom :: drawobjectcategory :: DrawObjectCategory , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (crate :: unity_engine :: rendering :: universal :: custom :: drawobjectcategory :: DrawObjectCategory , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_visible :: get_method_info () . method_ptr ,) ; inner (category , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_visibility { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: universal :: custom :: drawobjectcategory :: DrawObjectCategory as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DrawObjectCategoryInfo as :: unity2 :: ClassIdentity > :: class () , "SetVisibility" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DrawObjectCategoryInfo as :: unity2 :: ClassIdentity > :: NAME , "SetVisibility" , e) , } } } pub unsafe fn set_visibility (category : crate :: unity_engine :: rendering :: universal :: custom :: drawobjectcategory :: DrawObjectCategory , visibility : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: unity_engine :: rendering :: universal :: custom :: drawobjectcategory :: DrawObjectCategory , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_visibility :: get_method_info () . method_ptr ,) ; inner (category , visibility , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DrawObjectCategoryInfo as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DrawObjectCategoryInfo as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : DrawObjectCategoryInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DrawObjectCategoryInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "unity_engine-rendering-universal-custom-drawobjectcategoryinfo")]
+impl DrawObjectCategoryInfo { # [doc = "`GetNoOverrideStateIndexBegin()` overload"] pub fn get_no_override_state_index_begin () -> i32 { unsafe { __DrawObjectCategoryInfo_unity2_raw :: get_no_override_state_index_begin (:: core :: option :: Option :: None) } } # [doc = "`Initialize()` overload"] pub fn initialize () -> () { unsafe { __DrawObjectCategoryInfo_unity2_raw :: initialize (:: core :: option :: Option :: None) } } # [doc = "`IsVisible(crate::unity_engine::rendering::universal::custom::drawobjectcategory::DrawObjectCategory)` overload"] pub fn is_visible (category : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: universal :: custom :: drawobjectcategory :: DrawObjectCategory >) -> bool { unsafe { __DrawObjectCategoryInfo_unity2_raw :: is_visible (:: core :: convert :: Into :: into (category) , :: core :: option :: Option :: None) } } # [doc = "`SetVisibility(crate::unity_engine::rendering::universal::custom::drawobjectcategory::DrawObjectCategory, bool)` overload"] pub fn set_visibility (category : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: universal :: custom :: drawobjectcategory :: DrawObjectCategory > , visibility : impl :: core :: convert :: Into < bool >) -> () { unsafe { __DrawObjectCategoryInfo_unity2_raw :: set_visibility (:: core :: convert :: Into :: into (category) , :: core :: convert :: Into :: into (visibility) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-rendering-universal-custom-drawobjectcategoryinfo")]
+pub trait IDrawObjectCategoryInfoMethods : IDrawObjectCategoryInfo { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DrawObjectCategoryInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DrawObjectCategoryInfo_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-rendering-universal-custom-drawobjectcategoryinfo")]
+impl < __T : IDrawObjectCategoryInfo > IDrawObjectCategoryInfoMethods for __T { }
+
+#[cfg(feature = "unity_engine-rendering-universal-custom-drawobjectcategoryinfo")]
+impl DrawObjectCategoryInfo { pub fn get_no_override_state_index_begin_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DrawObjectCategoryInfo_unity2_raw :: __lookup_get_no_override_state_index_begin :: get_method_info () } pub fn initialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DrawObjectCategoryInfo_unity2_raw :: __lookup_initialize :: get_method_info () } pub fn is_visible_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DrawObjectCategoryInfo_unity2_raw :: __lookup_is_visible :: get_method_info () } pub fn set_visibility_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DrawObjectCategoryInfo_unity2_raw :: __lookup_set_visibility :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DrawObjectCategoryInfo_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-rendering-universal-custom-drawobjectcategoryinfo")]
 impl DrawObjectCategoryInfo {
-    #[doc = "`GetNoOverrideStateIndexBegin()` overload"]
-    pub fn get_no_override_state_index_begin() -> i32 {
-        unsafe { __DrawObjectCategoryInfo_unity2_raw::get_no_override_state_index_begin(::core::option::Option::None) }
-    }
-
-    #[doc = "`Initialize()` overload"]
-    pub fn initialize() -> () {
-        unsafe { __DrawObjectCategoryInfo_unity2_raw::initialize(::core::option::Option::None) }
-    }
-
-    #[doc = "`IsVisible(crate::unity_engine::rendering::universal::custom::drawobjectcategory::DrawObjectCategory)` overload"]
-    pub fn is_visible(
-        category: impl ::core::convert::Into<crate::unity_engine::rendering::universal::custom::drawobjectcategory::DrawObjectCategory>,
-    ) -> bool {
-        unsafe { __DrawObjectCategoryInfo_unity2_raw::is_visible(::core::convert::Into::into(category), ::core::option::Option::None) }
-    }
-
-    #[doc = "`SetVisibility(crate::unity_engine::rendering::universal::custom::drawobjectcategory::DrawObjectCategory, bool)` overload"]
-    pub fn set_visibility(
-        category: impl ::core::convert::Into<crate::unity_engine::rendering::universal::custom::drawobjectcategory::DrawObjectCategory>,
-        visibility: impl ::core::convert::Into<bool>,
-    ) -> () {
-        unsafe {
-            __DrawObjectCategoryInfo_unity2_raw::set_visibility(
-                ::core::convert::Into::into(category),
-                ::core::convert::Into::into(visibility),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-custom-drawobjectcategoryinfo")]
-pub trait IDrawObjectCategoryInfoMethods: IDrawObjectCategoryInfo {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <DrawObjectCategoryInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DrawObjectCategoryInfo_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-custom-drawobjectcategoryinfo")]
-impl<__T: IDrawObjectCategoryInfo> IDrawObjectCategoryInfoMethods for __T {}
-
-#[cfg(feature = "unity_engine-rendering-universal-custom-drawobjectcategoryinfo")]
-impl DrawObjectCategoryInfo {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DrawObjectCategoryInfo),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDrawObjectCategoryInfoMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DrawObjectCategoryInfo) , :: core :: stringify ! (new) ,)) ; < Self as IDrawObjectCategoryInfoMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-custom-drawobjectcategoryinfo")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{DrawObjectCategoryInfo, IDrawObjectCategoryInfo, IDrawObjectCategoryInfoMethods};
+    pub use super::DrawObjectCategoryInfo;
+    pub use super::IDrawObjectCategoryInfo;
+    pub use super::IDrawObjectCategoryInfoMethods;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

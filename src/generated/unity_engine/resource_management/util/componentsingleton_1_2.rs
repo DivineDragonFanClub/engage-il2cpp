@@ -2,104 +2,68 @@
 
 #[cfg(feature = "unity_engine-resource_management-util-componentsingleton_1_2-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/util/componentsingleton_1_2/ComponentSingleton_1_2.md"))]
-    #[::unity2::class(namespace = "UnityEngine.ResourceManagement.Util", name = "ComponentSingleton`1")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    #[parent(crate::unity_engine::behaviour::Behaviour)]
-    #[parent(crate::unity_engine::component::Component)]
-    #[parent(crate::unity_engine::object_2::Object_2)]
-    #[parent(crate::system::object::Object)]
-    pub struct ComponentSingleton_1_2<T0: ::unity2::ClassIdentity> {
-        #[static_field]
-        #[rename(name = "s_Instance")]
-        pub s_instance: T0,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/util/componentsingleton_1_2/ComponentSingleton_1_2.md"))] # [:: unity2 :: class (namespace = "UnityEngine.ResourceManagement.Util" , name = "ComponentSingleton`1")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] # [parent (crate :: unity_engine :: behaviour :: Behaviour)] # [parent (crate :: unity_engine :: component :: Component)] # [parent (crate :: unity_engine :: object_2 :: Object_2)] # [parent (crate :: system :: object :: Object)] pub struct ComponentSingleton_1_2 < T0 : :: unity2 :: ClassIdentity > {
+# [static_field] # [rename (name = "s_Instance")] pub s_instance : T0 ,
+}
+
 }
 
 #[cfg(feature = "unity_engine-resource_management-util-componentsingleton_1_2-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-resource_management-util-componentsingleton_1_2")]
-#[::unity2::methods]
-impl<T0: ::unity2::ClassIdentity> ComponentSingleton_1_2<T0> {
-    #[doc = "`get_Exists()` overload"]
-    #[method(name = "get_Exists", args = 0)]
-    pub fn get_exists() -> bool;
+# [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity > ComponentSingleton_1_2 < T0 > {
+# [doc = "`get_Exists()` overload"] # [method (name = "get_Exists" , args = 0)] pub fn get_exists () -> bool ;
 
-    #[doc = "`get_Instance()` overload"]
-    #[method(name = "get_Instance", args = 0)]
-    pub fn get_instance() -> T0;
+# [doc = "`get_Instance()` overload"] # [method (name = "get_Instance" , args = 0)] pub fn get_instance () -> T0 ;
 
-    #[doc = "`FindInstance()` overload"]
-    #[method(name = "FindInstance", args = 0)]
-    pub fn find_instance() -> T0;
+# [doc = "`FindInstance()` overload"] # [method (name = "FindInstance" , args = 0)] pub fn find_instance () -> T0 ;
 
-    #[doc = "`GetGameObjectName()` overload"]
-    #[method(name = "GetGameObjectName", args = 0)]
-    pub fn get_game_object_name(self) -> ::unity2::Il2CppString;
+# [doc = "`GetGameObjectName()` overload"] # [method (name = "GetGameObjectName" , args = 0)] pub fn get_game_object_name (self ,) -> :: unity2 :: Il2CppString ;
 
-    #[doc = "`CreateNewSingleton()` overload"]
-    #[method(name = "CreateNewSingleton", args = 0)]
-    pub fn create_new_singleton() -> T0;
+# [doc = "`CreateNewSingleton()` overload"] # [method (name = "CreateNewSingleton" , args = 0)] pub fn create_new_singleton () -> T0 ;
 
-    #[doc = "`Awake()` overload"]
-    #[method(name = "Awake", args = 0)]
-    pub fn awake(self) -> ();
+# [doc = "`Awake()` overload"] # [method (name = "Awake" , args = 0)] pub fn awake (self ,) -> () ;
 
-    #[doc = "`DestroySingleton()` overload"]
-    #[method(name = "DestroySingleton", args = 0)]
-    pub fn destroy_singleton() -> ();
+# [doc = "`DestroySingleton()` overload"] # [method (name = "DestroySingleton" , args = 0)] pub fn destroy_singleton () -> () ;
 
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+# [doc = "`.ctor()` overload"] # [method (name = ".ctor" , args = 0)] pub fn ctor (self ,) -> () ;
 }
 
 #[cfg(feature = "unity_engine-resource_management-util-componentsingleton_1_2")]
-impl<T0: ::unity2::ClassIdentity> ComponentSingleton_1_2<T0> {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ComponentSingleton_1_2),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IComponentSingleton_1_2Methods<T0>>::ctor(this);
-        this
-    }
+impl < T0 : :: unity2 :: ClassIdentity > ComponentSingleton_1_2 < T0 > {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ComponentSingleton_1_2) , :: core :: stringify ! (new) ,)) ; < Self as IComponentSingleton_1_2Methods < T0 > > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "unity_engine-resource_management-util-componentsingleton_1_2")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{ComponentSingleton_1_2, IComponentSingleton_1_2, IComponentSingleton_1_2Methods};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        system::object::IObject,
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::ComponentSingleton_1_2;
+    pub use super::IComponentSingleton_1_2;
+    pub use super::IComponentSingleton_1_2Methods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

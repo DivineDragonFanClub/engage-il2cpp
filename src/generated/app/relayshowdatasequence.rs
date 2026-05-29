@@ -2,539 +2,112 @@
 
 #[cfg(feature = "app-relayshowdatasequence-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::procinst::{IProcInst, ProcInst},
-        system::{
-            object::{IObject, Object},
-            r#enum::{Enum, IEnum},
-            valuetype::{IValueType, ValueType},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayshowdatasequence/RelayShowDataSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "RelayShowDataSequence")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct RelayShowDataSequence {
-        #[offset(112)]
-        #[rename(name = "m_MetaData")]
-        pub m_meta_data: crate::app::relayservermetadata::RelayServerMetaData,
-        #[offset(120)]
-        #[rename(name = "m_Mode")]
-        pub m_mode: crate::app::relayshowdatadialog::RelayShowDataDialog_Mode,
-        #[offset(124)]
-        #[rename(name = "m_IsNewPlay")]
-        pub m_is_new_play: bool,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: procinst :: { IProcInst , ProcInst }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relayshowdatasequence/RelayShowDataSequence_Label.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct RelayShowDataSequence_Label {
-        pub value: i32,
-    }
 
-    impl ::unity2::ClassIdentity for RelayShowDataSequence_Label {
-        const NAME: &'static str = "RelayShowDataSequence.Label";
-        const NAMESPACE: &'static str = "App";
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayshowdatasequence/RelayShowDataSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "RelayShowDataSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct RelayShowDataSequence {
+# [offset (112)] # [rename (name = "m_MetaData")] pub m_meta_data : crate :: app :: relayservermetadata :: RelayServerMetaData ,
+# [offset (120)] # [rename (name = "m_Mode")] pub m_mode : crate :: app :: relayshowdatadialog :: RelayShowDataDialog_Mode ,
+# [offset (124)] # [rename (name = "m_IsNewPlay")] pub m_is_new_play : bool ,
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relayshowdatasequence/RelayShowDataSequence_Label.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct RelayShowDataSequence_Label  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for RelayShowDataSequence_Label  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "RelayShowDataSequence.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for RelayShowDataSequence_Label {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  ::unity2::IlType for RelayShowDataSequence_Label  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl RelayShowDataSequence_Label {
-        pub fn show() -> Self {
-            Self { value: 0 }
-        }
+}
 
-        pub fn end() -> Self {
-            Self { value: 1 }
-        }
+
+impl  RelayShowDataSequence_Label  {
+    pub fn show() -> Self {
+        Self { value: 0 }
+
     }
+
+
+    pub fn end() -> Self {
+        Self { value: 1 }
+
+    }
+
+}
+
 }
 
 #[cfg(feature = "app-relayshowdatasequence-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-relayshowdatasequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RelayShowDataSequence_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::relayshowdatadialog::RelayShowDataDialog_Mode as ::unity2::IlType>::il_type(),
-                <crate::app::relayservermetadata::RelayServerMetaData as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayShowDataSequence as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RelayShowDataSequence as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: RelayShowDataSequence,
-        mode: crate::app::relayshowdatadialog::RelayShowDataDialog_Mode,
-        meta_data: crate::app::relayservermetadata::RelayServerMetaData,
-        is_new_play: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RelayShowDataSequence,
-            crate::app::relayshowdatadialog::RelayShowDataDialog_Mode,
-            crate::app::relayservermetadata::RelayServerMetaData,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, mode, meta_data, is_new_play, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_skip_tutorial {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayShowDataSequence as ::unity2::ClassIdentity>::class(),
-                "IsSkipTutorial",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RelayShowDataSequence as ::unity2::ClassIdentity>::NAME,
-                        "IsSkipTutorial",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_skip_tutorial(this: RelayShowDataSequence, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(RelayShowDataSequence, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_skip_tutorial::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_show {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayShowDataSequence as ::unity2::ClassIdentity>::class(),
-                "Show",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RelayShowDataSequence as ::unity2::ClassIdentity>::NAME,
-                        "Show",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn show(this: RelayShowDataSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RelayShowDataSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_show::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_set_publish_mode {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayShowDataSequence as ::unity2::ClassIdentity>::class(),
-                "IsSetPublishMode",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RelayShowDataSequence as ::unity2::ClassIdentity>::NAME,
-                        "IsSetPublishMode",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_set_publish_mode(this: RelayShowDataSequence, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(RelayShowDataSequence, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_set_publish_mode::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_publish_mode {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayShowDataSequence as ::unity2::ClassIdentity>::class(),
-                "SetPublishMode",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RelayShowDataSequence as ::unity2::ClassIdentity>::NAME,
-                        "SetPublishMode",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_publish_mode(this: RelayShowDataSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RelayShowDataSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_publish_mode::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind_take_over {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <crate::app::relayservermetadata::RelayServerMetaData as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayShowDataSequence as ::unity2::ClassIdentity>::class(),
-                "CreateBindTakeOver",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RelayShowDataSequence as ::unity2::ClassIdentity>::NAME,
-                        "CreateBindTakeOver",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_bind_take_over(
-        super_: crate::app::procinst::ProcInst,
-        meta_data: crate::app::relayservermetadata::RelayServerMetaData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            crate::app::relayservermetadata::RelayServerMetaData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_create_bind_take_over::get_method_info().method_ptr);
-        inner(super_, meta_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind_upload {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <crate::app::relayservermetadata::RelayServerMetaData as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayShowDataSequence as ::unity2::ClassIdentity>::class(),
-                "CreateBindUpload",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RelayShowDataSequence as ::unity2::ClassIdentity>::NAME,
-                        "CreateBindUpload",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_bind_upload(
-        super_: crate::app::procinst::ProcInst,
-        meta_data: crate::app::relayservermetadata::RelayServerMetaData,
-        is_new_play: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            crate::app::relayservermetadata::RelayServerMetaData,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_create_bind_upload::get_method_info().method_ptr);
-        inner(super_, meta_data, is_new_play, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind_impl {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <crate::app::relayshowdatadialog::RelayShowDataDialog_Mode as ::unity2::IlType>::il_type(),
-                <crate::app::relayservermetadata::RelayServerMetaData as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayShowDataSequence as ::unity2::ClassIdentity>::class(),
-                "CreateBindImpl",
-                4,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RelayShowDataSequence as ::unity2::ClassIdentity>::NAME,
-                        "CreateBindImpl",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_bind_impl(
-        super_: crate::app::procinst::ProcInst,
-        mode: crate::app::relayshowdatadialog::RelayShowDataDialog_Mode,
-        meta_data: crate::app::relayservermetadata::RelayServerMetaData,
-        is_new_play: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            crate::app::relayshowdatadialog::RelayShowDataDialog_Mode,
-            crate::app::relayservermetadata::RelayServerMetaData,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_create_bind_impl::get_method_info().method_ptr);
-        inner(super_, mode, meta_data, is_new_play, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __RelayShowDataSequence_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: relayshowdatadialog :: RelayShowDataDialog_Mode as :: unity2 :: IlType > :: il_type () , < crate :: app :: relayservermetadata :: RelayServerMetaData as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RelayShowDataSequence as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RelayShowDataSequence as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : RelayShowDataSequence , mode : crate :: app :: relayshowdatadialog :: RelayShowDataDialog_Mode , meta_data : crate :: app :: relayservermetadata :: RelayServerMetaData , is_new_play : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RelayShowDataSequence , crate :: app :: relayshowdatadialog :: RelayShowDataDialog_Mode , crate :: app :: relayservermetadata :: RelayServerMetaData , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , mode , meta_data , is_new_play , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_skip_tutorial { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RelayShowDataSequence as :: unity2 :: ClassIdentity > :: class () , "IsSkipTutorial" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RelayShowDataSequence as :: unity2 :: ClassIdentity > :: NAME , "IsSkipTutorial" , e) , } } } pub unsafe fn is_skip_tutorial (this : RelayShowDataSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (RelayShowDataSequence , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_skip_tutorial :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_show { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RelayShowDataSequence as :: unity2 :: ClassIdentity > :: class () , "Show" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RelayShowDataSequence as :: unity2 :: ClassIdentity > :: NAME , "Show" , e) , } } } pub unsafe fn show (this : RelayShowDataSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RelayShowDataSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_show :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_set_publish_mode { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RelayShowDataSequence as :: unity2 :: ClassIdentity > :: class () , "IsSetPublishMode" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RelayShowDataSequence as :: unity2 :: ClassIdentity > :: NAME , "IsSetPublishMode" , e) , } } } pub unsafe fn is_set_publish_mode (this : RelayShowDataSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (RelayShowDataSequence , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_set_publish_mode :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_publish_mode { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RelayShowDataSequence as :: unity2 :: ClassIdentity > :: class () , "SetPublishMode" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RelayShowDataSequence as :: unity2 :: ClassIdentity > :: NAME , "SetPublishMode" , e) , } } } pub unsafe fn set_publish_mode (this : RelayShowDataSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RelayShowDataSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_publish_mode :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_bind_take_over { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: relayservermetadata :: RelayServerMetaData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RelayShowDataSequence as :: unity2 :: ClassIdentity > :: class () , "CreateBindTakeOver" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RelayShowDataSequence as :: unity2 :: ClassIdentity > :: NAME , "CreateBindTakeOver" , e) , } } } pub unsafe fn create_bind_take_over (super_ : crate :: app :: procinst :: ProcInst , meta_data : crate :: app :: relayservermetadata :: RelayServerMetaData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: relayservermetadata :: RelayServerMetaData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create_bind_take_over :: get_method_info () . method_ptr ,) ; inner (super_ , meta_data , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_bind_upload { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: relayservermetadata :: RelayServerMetaData as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RelayShowDataSequence as :: unity2 :: ClassIdentity > :: class () , "CreateBindUpload" , 3 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RelayShowDataSequence as :: unity2 :: ClassIdentity > :: NAME , "CreateBindUpload" , e) , } } } pub unsafe fn create_bind_upload (super_ : crate :: app :: procinst :: ProcInst , meta_data : crate :: app :: relayservermetadata :: RelayServerMetaData , is_new_play : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: relayservermetadata :: RelayServerMetaData , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create_bind_upload :: get_method_info () . method_ptr ,) ; inner (super_ , meta_data , is_new_play , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_bind_impl { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: relayshowdatadialog :: RelayShowDataDialog_Mode as :: unity2 :: IlType > :: il_type () , < crate :: app :: relayservermetadata :: RelayServerMetaData as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RelayShowDataSequence as :: unity2 :: ClassIdentity > :: class () , "CreateBindImpl" , 4 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RelayShowDataSequence as :: unity2 :: ClassIdentity > :: NAME , "CreateBindImpl" , e) , } } } pub unsafe fn create_bind_impl (super_ : crate :: app :: procinst :: ProcInst , mode : crate :: app :: relayshowdatadialog :: RelayShowDataDialog_Mode , meta_data : crate :: app :: relayservermetadata :: RelayServerMetaData , is_new_play : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: relayshowdatadialog :: RelayShowDataDialog_Mode , crate :: app :: relayservermetadata :: RelayServerMetaData , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create_bind_impl :: get_method_info () . method_ptr ,) ; inner (super_ , mode , meta_data , is_new_play , __unity2_method_info) } }
+
+#[cfg(feature = "app-relayshowdatasequence")]
+impl RelayShowDataSequence { # [doc = "`CreateBindTakeOver(crate::app::procinst::ProcInst, crate::app::relayservermetadata::RelayServerMetaData)` overload"] pub fn create_bind_take_over (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , meta_data : impl :: core :: convert :: Into < crate :: app :: relayservermetadata :: RelayServerMetaData >) -> () { unsafe { __RelayShowDataSequence_unity2_raw :: create_bind_take_over (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (meta_data) , :: core :: option :: Option :: None) } } # [doc = "`CreateBindUpload(crate::app::procinst::ProcInst, crate::app::relayservermetadata::RelayServerMetaData, bool)` overload"] pub fn create_bind_upload (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , meta_data : impl :: core :: convert :: Into < crate :: app :: relayservermetadata :: RelayServerMetaData > , is_new_play : impl :: core :: convert :: Into < bool >) -> () { unsafe { __RelayShowDataSequence_unity2_raw :: create_bind_upload (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (meta_data) , :: core :: convert :: Into :: into (is_new_play) , :: core :: option :: Option :: None) } } # [doc = "`CreateBindImpl(crate::app::procinst::ProcInst, crate::app::relayshowdatadialog::RelayShowDataDialog_Mode, crate::app::relayservermetadata::RelayServerMetaData, bool)` overload"] pub fn create_bind_impl (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , mode : impl :: core :: convert :: Into < crate :: app :: relayshowdatadialog :: RelayShowDataDialog_Mode > , meta_data : impl :: core :: convert :: Into < crate :: app :: relayservermetadata :: RelayServerMetaData > , is_new_play : impl :: core :: convert :: Into < bool >) -> () { unsafe { __RelayShowDataSequence_unity2_raw :: create_bind_impl (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (mode) , :: core :: convert :: Into :: into (meta_data) , :: core :: convert :: Into :: into (is_new_play) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-relayshowdatasequence")]
+pub trait IRelayShowDataSequenceMethods : IRelayShowDataSequence { # [doc = "`.ctor(crate::app::relayshowdatadialog::RelayShowDataDialog_Mode, crate::app::relayservermetadata::RelayServerMetaData, bool)` overload"] fn ctor (self , mode : impl :: core :: convert :: Into < crate :: app :: relayshowdatadialog :: RelayShowDataDialog_Mode > , meta_data : impl :: core :: convert :: Into < crate :: app :: relayservermetadata :: RelayServerMetaData > , is_new_play : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < RelayShowDataSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RelayShowDataSequence_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (mode) , :: core :: convert :: Into :: into (meta_data) , :: core :: convert :: Into :: into (is_new_play) , :: core :: option :: Option :: None) } } # [doc = "`IsSkipTutorial()` overload"] fn is_skip_tutorial (self ,) -> bool { unsafe { let __receiver = < RelayShowDataSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RelayShowDataSequence_unity2_raw :: is_skip_tutorial (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Show()` overload"] fn show (self ,) -> () { unsafe { let __receiver = < RelayShowDataSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RelayShowDataSequence_unity2_raw :: show (__receiver , :: core :: option :: Option :: None) } } # [doc = "`IsSetPublishMode()` overload"] fn is_set_publish_mode (self ,) -> bool { unsafe { let __receiver = < RelayShowDataSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RelayShowDataSequence_unity2_raw :: is_set_publish_mode (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetPublishMode()` overload"] fn set_publish_mode (self ,) -> () { unsafe { let __receiver = < RelayShowDataSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RelayShowDataSequence_unity2_raw :: set_publish_mode (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-relayshowdatasequence")]
+impl < __T : IRelayShowDataSequence > IRelayShowDataSequenceMethods for __T { }
+
+#[cfg(feature = "app-relayshowdatasequence")]
+impl RelayShowDataSequence { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RelayShowDataSequence_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn is_skip_tutorial_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RelayShowDataSequence_unity2_raw :: __lookup_is_skip_tutorial :: get_method_info () } pub fn show_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RelayShowDataSequence_unity2_raw :: __lookup_show :: get_method_info () } pub fn is_set_publish_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RelayShowDataSequence_unity2_raw :: __lookup_is_set_publish_mode :: get_method_info () } pub fn set_publish_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RelayShowDataSequence_unity2_raw :: __lookup_set_publish_mode :: get_method_info () } pub fn create_bind_take_over_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RelayShowDataSequence_unity2_raw :: __lookup_create_bind_take_over :: get_method_info () } pub fn create_bind_upload_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RelayShowDataSequence_unity2_raw :: __lookup_create_bind_upload :: get_method_info () } pub fn create_bind_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RelayShowDataSequence_unity2_raw :: __lookup_create_bind_impl :: get_method_info () } }
 
 #[cfg(feature = "app-relayshowdatasequence")]
 impl RelayShowDataSequence {
-    #[doc = "`CreateBindTakeOver(crate::app::procinst::ProcInst, crate::app::relayservermetadata::RelayServerMetaData)` overload"]
-    pub fn create_bind_take_over(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        meta_data: impl ::core::convert::Into<crate::app::relayservermetadata::RelayServerMetaData>,
-    ) -> () {
-        unsafe {
-            __RelayShowDataSequence_unity2_raw::create_bind_take_over(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(meta_data),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`CreateBindUpload(crate::app::procinst::ProcInst, crate::app::relayservermetadata::RelayServerMetaData, bool)` overload"]
-    pub fn create_bind_upload(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        meta_data: impl ::core::convert::Into<crate::app::relayservermetadata::RelayServerMetaData>,
-        is_new_play: impl ::core::convert::Into<bool>,
-    ) -> () {
-        unsafe {
-            __RelayShowDataSequence_unity2_raw::create_bind_upload(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(meta_data),
-                ::core::convert::Into::into(is_new_play),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`CreateBindImpl(crate::app::procinst::ProcInst, crate::app::relayshowdatadialog::RelayShowDataDialog_Mode, crate::app::relayservermetadata::RelayServerMetaData, bool)` overload"]
-    pub fn create_bind_impl(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        mode: impl ::core::convert::Into<crate::app::relayshowdatadialog::RelayShowDataDialog_Mode>,
-        meta_data: impl ::core::convert::Into<crate::app::relayservermetadata::RelayServerMetaData>,
-        is_new_play: impl ::core::convert::Into<bool>,
-    ) -> () {
-        unsafe {
-            __RelayShowDataSequence_unity2_raw::create_bind_impl(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(mode),
-                ::core::convert::Into::into(meta_data),
-                ::core::convert::Into::into(is_new_play),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-relayshowdatasequence")]
-pub trait IRelayShowDataSequenceMethods: IRelayShowDataSequence {
-    #[doc = "`.ctor(crate::app::relayshowdatadialog::RelayShowDataDialog_Mode, crate::app::relayservermetadata::RelayServerMetaData, bool)` overload"]
-    fn ctor(
-        self,
-        mode: impl ::core::convert::Into<crate::app::relayshowdatadialog::RelayShowDataDialog_Mode>,
-        meta_data: impl ::core::convert::Into<crate::app::relayservermetadata::RelayServerMetaData>,
-        is_new_play: impl ::core::convert::Into<bool>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <RelayShowDataSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RelayShowDataSequence_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(mode),
-                ::core::convert::Into::into(meta_data),
-                ::core::convert::Into::into(is_new_play),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`IsSkipTutorial()` overload"]
-    fn is_skip_tutorial(self) -> bool {
-        unsafe {
-            let __receiver =
-                <RelayShowDataSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RelayShowDataSequence_unity2_raw::is_skip_tutorial(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Show()` overload"]
-    fn show(self) -> () {
-        unsafe {
-            let __receiver =
-                <RelayShowDataSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RelayShowDataSequence_unity2_raw::show(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsSetPublishMode()` overload"]
-    fn is_set_publish_mode(self) -> bool {
-        unsafe {
-            let __receiver =
-                <RelayShowDataSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RelayShowDataSequence_unity2_raw::is_set_publish_mode(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetPublishMode()` overload"]
-    fn set_publish_mode(self) -> () {
-        unsafe {
-            let __receiver =
-                <RelayShowDataSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RelayShowDataSequence_unity2_raw::set_publish_mode(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-relayshowdatasequence")]
-impl<__T: IRelayShowDataSequence> IRelayShowDataSequenceMethods for __T {}
-
-#[cfg(feature = "app-relayshowdatasequence")]
-impl RelayShowDataSequence {
-    #[doc = "`.ctor(crate::app::relayshowdatadialog::RelayShowDataDialog_Mode, crate::app::relayservermetadata::RelayServerMetaData, bool)` — overload selector"]
-    pub fn new(
-        mode: crate::app::relayshowdatadialog::RelayShowDataDialog_Mode,
-        meta_data: crate::app::relayservermetadata::RelayServerMetaData,
-        is_new_play: bool,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RelayShowDataSequence),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRelayShowDataSequenceMethods>::ctor(this, mode, meta_data, is_new_play);
-        this
-    }
+# [doc = "`.ctor(crate::app::relayshowdatadialog::RelayShowDataDialog_Mode, crate::app::relayservermetadata::RelayServerMetaData, bool)` — overload selector"] pub fn new (mode : crate :: app :: relayshowdatadialog :: RelayShowDataDialog_Mode , meta_data : crate :: app :: relayservermetadata :: RelayServerMetaData , is_new_play : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RelayShowDataSequence) , :: core :: stringify ! (new) ,)) ; < Self as IRelayShowDataSequenceMethods > :: ctor (this , mode , meta_data , is_new_play) ; this }
 }
 
 #[cfg(feature = "app-relayshowdatasequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IRelayShowDataSequence, IRelayShowDataSequenceMethods, RelayShowDataSequence, RelayShowDataSequence_Label};
-    #[cfg(feature = "app-procinst")]
-    pub use crate::app::procinst::IProcInstMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::{
-        app::procinst::IProcInst,
-        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
-    };
+    pub use super::RelayShowDataSequence;
+    pub use super::IRelayShowDataSequence;
+    pub use super::IRelayShowDataSequenceMethods;
+    pub use super::RelayShowDataSequence_Label;
+    pub use crate::app::procinst::IProcInst;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "app-procinst")] pub use crate::app::procinst::IProcInstMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

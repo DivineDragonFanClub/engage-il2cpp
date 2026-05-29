@@ -2,362 +2,51 @@
 
 #[cfg(feature = "combat-combatlocationbrawl-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        combat::basecombatlocation::{BaseCombatLocation, IBaseCombatLocation},
-        system::object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/combatlocationbrawl/CombatLocationBrawl.md"))]
-    #[::unity2::class(namespace = "Combat", name = "CombatLocationBrawl")]
-    #[parent(crate::combat::basecombatlocation::BaseCombatLocation)]
-    pub struct CombatLocationBrawl {
-        #[offset(137)]
-        #[rename(name = "m_IsShootAttack")]
-        pub m_is_shoot_attack: bool,
-        #[offset(144)]
-        #[rename(name = "RotateTable")]
-        pub rotate_table: ::unity2::Array<i32>,
-        #[offset(152)]
-        #[rename(name = "MaxCheckLength")]
-        pub max_check_length: i32,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: combat :: basecombatlocation :: { BaseCombatLocation , IBaseCombatLocation }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/combatlocationbrawl/CombatLocationBrawl.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "CombatLocationBrawl")] # [parent (crate :: combat :: basecombatlocation :: BaseCombatLocation)] pub struct CombatLocationBrawl {
+# [offset (137)] # [rename (name = "m_IsShootAttack")] pub m_is_shoot_attack : bool ,
+# [offset (144)] # [rename (name = "RotateTable")] pub rotate_table : :: unity2 :: Array < i32 > ,
+# [offset (152)] # [rename (name = "MaxCheckLength")] pub max_check_length : i32 ,
+}
+
 }
 
 #[cfg(feature = "combat-combatlocationbrawl-types")]
 pub use __types::*;
 
 #[cfg(feature = "combat-combatlocationbrawl")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __CombatLocationBrawl_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::combat::combatrecord::CombatRecord as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CombatLocationBrawl as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CombatLocationBrawl as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: CombatLocationBrawl,
-        record: crate::combat::combatrecord::CombatRecord,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(CombatLocationBrawl, crate::combat::combatrecord::CombatRecord, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, record, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_setup {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Array<crate::combat::charactergamestatus::CharacterGameStatus> as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CombatLocationBrawl as ::unity2::ClassIdentity>::class(),
-                "Setup",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CombatLocationBrawl as ::unity2::ClassIdentity>::NAME,
-                        "Setup",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn setup(
-        this: CombatLocationBrawl,
-        gs: ::unity2::Array<crate::combat::charactergamestatus::CharacterGameStatus>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            CombatLocationBrawl,
-            ::unity2::Array<crate::combat::charactergamestatus::CharacterGameStatus>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_setup::get_method_info().method_ptr);
-        inner(this, gs, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_rough_pos_count {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CombatLocationBrawl as ::unity2::ClassIdentity>::class(),
-                "get_RoughPosCount",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CombatLocationBrawl as ::unity2::ClassIdentity>::NAME,
-                        "get_RoughPosCount",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_rough_pos_count(this: CombatLocationBrawl, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(CombatLocationBrawl, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_rough_pos_count::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_rough_pos {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CombatLocationBrawl as ::unity2::ClassIdentity>::class(),
-                "SetRoughPos",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CombatLocationBrawl as ::unity2::ClassIdentity>::NAME,
-                        "SetRoughPos",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_rough_pos(this: CombatLocationBrawl, try_count: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CombatLocationBrawl, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_rough_pos::get_method_info().method_ptr);
-        inner(this, try_count, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_pattern_count {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CombatLocationBrawl as ::unity2::ClassIdentity>::class(),
-                "get_PatternCount",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CombatLocationBrawl as ::unity2::ClassIdentity>::NAME,
-                        "get_PatternCount",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_pattern_count(this: CombatLocationBrawl, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(CombatLocationBrawl, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_pattern_count::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_battle_patern {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CombatLocationBrawl as ::unity2::ClassIdentity>::class(),
-                "SetBattlePatern",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CombatLocationBrawl as ::unity2::ClassIdentity>::NAME,
-                        "SetBattlePatern",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_battle_patern(this: CombatLocationBrawl, pattern: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CombatLocationBrawl, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_battle_patern::get_method_info().method_ptr);
-        inner(this, pattern, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_location {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CombatLocationBrawl as ::unity2::ClassIdentity>::class(),
-                "CalcLocation",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CombatLocationBrawl as ::unity2::ClassIdentity>::NAME,
-                        "CalcLocation",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn calc_location(this: CombatLocationBrawl, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CombatLocationBrawl, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_calc_location::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __CombatLocationBrawl_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: combatrecord :: CombatRecord as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CombatLocationBrawl as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CombatLocationBrawl as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : CombatLocationBrawl , record : crate :: combat :: combatrecord :: CombatRecord , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CombatLocationBrawl , crate :: combat :: combatrecord :: CombatRecord , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , record , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_setup { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: combat :: charactergamestatus :: CharacterGameStatus > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CombatLocationBrawl as :: unity2 :: ClassIdentity > :: class () , "Setup" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CombatLocationBrawl as :: unity2 :: ClassIdentity > :: NAME , "Setup" , e) , } } } pub unsafe fn setup (this : CombatLocationBrawl , gs : :: unity2 :: Array < crate :: combat :: charactergamestatus :: CharacterGameStatus > , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CombatLocationBrawl , :: unity2 :: Array < crate :: combat :: charactergamestatus :: CharacterGameStatus > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_setup :: get_method_info () . method_ptr ,) ; inner (this , gs , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_rough_pos_count { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CombatLocationBrawl as :: unity2 :: ClassIdentity > :: class () , "get_RoughPosCount" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CombatLocationBrawl as :: unity2 :: ClassIdentity > :: NAME , "get_RoughPosCount" , e) , } } } pub unsafe fn get_rough_pos_count (this : CombatLocationBrawl , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (CombatLocationBrawl , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_rough_pos_count :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_rough_pos { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CombatLocationBrawl as :: unity2 :: ClassIdentity > :: class () , "SetRoughPos" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CombatLocationBrawl as :: unity2 :: ClassIdentity > :: NAME , "SetRoughPos" , e) , } } } pub unsafe fn set_rough_pos (this : CombatLocationBrawl , try_count : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CombatLocationBrawl , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_rough_pos :: get_method_info () . method_ptr ,) ; inner (this , try_count , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_pattern_count { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CombatLocationBrawl as :: unity2 :: ClassIdentity > :: class () , "get_PatternCount" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CombatLocationBrawl as :: unity2 :: ClassIdentity > :: NAME , "get_PatternCount" , e) , } } } pub unsafe fn get_pattern_count (this : CombatLocationBrawl , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (CombatLocationBrawl , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_pattern_count :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_battle_patern { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CombatLocationBrawl as :: unity2 :: ClassIdentity > :: class () , "SetBattlePatern" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CombatLocationBrawl as :: unity2 :: ClassIdentity > :: NAME , "SetBattlePatern" , e) , } } } pub unsafe fn set_battle_patern (this : CombatLocationBrawl , pattern : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CombatLocationBrawl , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_battle_patern :: get_method_info () . method_ptr ,) ; inner (this , pattern , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_calc_location { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CombatLocationBrawl as :: unity2 :: ClassIdentity > :: class () , "CalcLocation" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CombatLocationBrawl as :: unity2 :: ClassIdentity > :: NAME , "CalcLocation" , e) , } } } pub unsafe fn calc_location (this : CombatLocationBrawl , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CombatLocationBrawl , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_calc_location :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "combat-combatlocationbrawl")]
-pub trait ICombatLocationBrawlMethods: ICombatLocationBrawl {
-    #[doc = "`.ctor(crate::combat::combatrecord::CombatRecord)` overload"]
-    fn ctor(self, record: impl ::core::convert::Into<crate::combat::combatrecord::CombatRecord>) -> () {
-        unsafe {
-            let __receiver = <CombatLocationBrawl as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CombatLocationBrawl_unity2_raw::ctor(__receiver, ::core::convert::Into::into(record), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Setup(::unity2::Array<crate::combat::charactergamestatus::CharacterGameStatus>)` overload"]
-    fn setup(self, gs: impl ::core::convert::Into<::unity2::Array<crate::combat::charactergamestatus::CharacterGameStatus>>) -> () {
-        unsafe {
-            let __receiver = <CombatLocationBrawl as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CombatLocationBrawl_unity2_raw::setup(__receiver, ::core::convert::Into::into(gs), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_RoughPosCount()` overload"]
-    fn get_rough_pos_count(self) -> i32 {
-        unsafe {
-            let __receiver = <CombatLocationBrawl as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CombatLocationBrawl_unity2_raw::get_rough_pos_count(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetRoughPos(i32)` overload"]
-    fn set_rough_pos(self, try_count: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver = <CombatLocationBrawl as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CombatLocationBrawl_unity2_raw::set_rough_pos(__receiver, ::core::convert::Into::into(try_count), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_PatternCount()` overload"]
-    fn get_pattern_count(self) -> i32 {
-        unsafe {
-            let __receiver = <CombatLocationBrawl as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CombatLocationBrawl_unity2_raw::get_pattern_count(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetBattlePatern(i32)` overload"]
-    fn set_battle_patern(self, pattern: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver = <CombatLocationBrawl as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CombatLocationBrawl_unity2_raw::set_battle_patern(__receiver, ::core::convert::Into::into(pattern), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CalcLocation()` overload"]
-    fn calc_location(self) -> () {
-        unsafe {
-            let __receiver = <CombatLocationBrawl as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CombatLocationBrawl_unity2_raw::calc_location(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait ICombatLocationBrawlMethods : ICombatLocationBrawl { # [doc = "`.ctor(crate::combat::combatrecord::CombatRecord)` overload"] fn ctor (self , record : impl :: core :: convert :: Into < crate :: combat :: combatrecord :: CombatRecord >) -> () { unsafe { let __receiver = < CombatLocationBrawl as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CombatLocationBrawl_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (record) , :: core :: option :: Option :: None) } } # [doc = "`Setup(::unity2::Array<crate::combat::charactergamestatus::CharacterGameStatus>)` overload"] fn setup (self , gs : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: combat :: charactergamestatus :: CharacterGameStatus > >) -> () { unsafe { let __receiver = < CombatLocationBrawl as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CombatLocationBrawl_unity2_raw :: setup (__receiver , :: core :: convert :: Into :: into (gs) , :: core :: option :: Option :: None) } } # [doc = "`get_RoughPosCount()` overload"] fn get_rough_pos_count (self ,) -> i32 { unsafe { let __receiver = < CombatLocationBrawl as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CombatLocationBrawl_unity2_raw :: get_rough_pos_count (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetRoughPos(i32)` overload"] fn set_rough_pos (self , try_count : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < CombatLocationBrawl as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CombatLocationBrawl_unity2_raw :: set_rough_pos (__receiver , :: core :: convert :: Into :: into (try_count) , :: core :: option :: Option :: None) } } # [doc = "`get_PatternCount()` overload"] fn get_pattern_count (self ,) -> i32 { unsafe { let __receiver = < CombatLocationBrawl as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CombatLocationBrawl_unity2_raw :: get_pattern_count (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetBattlePatern(i32)` overload"] fn set_battle_patern (self , pattern : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < CombatLocationBrawl as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CombatLocationBrawl_unity2_raw :: set_battle_patern (__receiver , :: core :: convert :: Into :: into (pattern) , :: core :: option :: Option :: None) } } # [doc = "`CalcLocation()` overload"] fn calc_location (self ,) -> () { unsafe { let __receiver = < CombatLocationBrawl as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CombatLocationBrawl_unity2_raw :: calc_location (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "combat-combatlocationbrawl")]
-impl<__T: ICombatLocationBrawl> ICombatLocationBrawlMethods for __T {}
+impl < __T : ICombatLocationBrawl > ICombatLocationBrawlMethods for __T { }
+
+#[cfg(feature = "combat-combatlocationbrawl")]
+impl CombatLocationBrawl { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CombatLocationBrawl_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn setup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CombatLocationBrawl_unity2_raw :: __lookup_setup :: get_method_info () } pub fn get_rough_pos_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CombatLocationBrawl_unity2_raw :: __lookup_get_rough_pos_count :: get_method_info () } pub fn set_rough_pos_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CombatLocationBrawl_unity2_raw :: __lookup_set_rough_pos :: get_method_info () } pub fn get_pattern_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CombatLocationBrawl_unity2_raw :: __lookup_get_pattern_count :: get_method_info () } pub fn set_battle_patern_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CombatLocationBrawl_unity2_raw :: __lookup_set_battle_patern :: get_method_info () } pub fn calc_location_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CombatLocationBrawl_unity2_raw :: __lookup_calc_location :: get_method_info () } }
 
 #[cfg(feature = "combat-combatlocationbrawl")]
 impl CombatLocationBrawl {
-    #[doc = "`.ctor(crate::combat::combatrecord::CombatRecord)` — overload selector"]
-    pub fn new(record: crate::combat::combatrecord::CombatRecord) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(CombatLocationBrawl),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ICombatLocationBrawlMethods>::ctor(this, record);
-        this
-    }
+# [doc = "`.ctor(crate::combat::combatrecord::CombatRecord)` — overload selector"] pub fn new (record : crate :: combat :: combatrecord :: CombatRecord) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CombatLocationBrawl) , :: core :: stringify ! (new) ,)) ; < Self as ICombatLocationBrawlMethods > :: ctor (this , record) ; this }
 }
 
 #[cfg(feature = "combat-combatlocationbrawl")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{CombatLocationBrawl, ICombatLocationBrawl, ICombatLocationBrawlMethods};
-    #[cfg(feature = "combat-basecombatlocation")]
-    pub use crate::combat::basecombatlocation::IBaseCombatLocationMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::{combat::basecombatlocation::IBaseCombatLocation, system::object::IObject};
+    pub use super::CombatLocationBrawl;
+    pub use super::ICombatLocationBrawl;
+    pub use super::ICombatLocationBrawlMethods;
+    pub use crate::combat::basecombatlocation::IBaseCombatLocation;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "combat-basecombatlocation")] pub use crate::combat::basecombatlocation::IBaseCombatLocationMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

@@ -2,605 +2,160 @@
 
 #[cfg(feature = "app-noticemanager-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::singletonmonobehaviour_1::{ISingletonMonoBehaviour_1, SingletonMonoBehaviour_1},
-        system::{
-            object::{IObject, Object},
-            r#enum::{Enum, IEnum},
-            valuetype::{IValueType, ValueType},
-        },
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/noticemanager/NoticeManager_Kinds.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct NoticeManager_Kinds {
-        pub value: i32,
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: singletonmonobehaviour_1 :: { ISingletonMonoBehaviour_1 , SingletonMonoBehaviour_1 }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/noticemanager/NoticeManager.md"))] # [:: unity2 :: class (namespace = "App" , name = "NoticeManager")] # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: noticemanager :: NoticeManager >)] pub struct NoticeManager {
+# [offset (32)] # [rename (name = "m_AchievementPopUp")] pub m_achievement_pop_up : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (40)] # [rename (name = "m_Animator")] pub m_animator : crate :: unity_engine :: animator :: Animator ,
+# [offset (48)] # [rename (name = "m_TextMesh")] pub m_text_mesh : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (56)] # [rename (name = "m_ClearObject")] pub m_clear_object : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (64)] # [rename (name = "m_Queues")] pub m_queues : :: unity2 :: Array < crate :: system :: collections :: generic :: queue_1 :: Queue_1 < :: unity2 :: Il2CppString > > ,
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/noticemanager/NoticeManager_Kinds.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct NoticeManager_Kinds  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for NoticeManager_Kinds  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "NoticeManager.Kinds";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    impl ::unity2::ClassIdentity for NoticeManager_Kinds {
-        const NAME: &'static str = "NoticeManager.Kinds";
-        const NAMESPACE: &'static str = "App";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  ::unity2::IlType for NoticeManager_Kinds  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::IlType for NoticeManager_Kinds {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  NoticeManager_Kinds  {
+    pub fn none() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl NoticeManager_Kinds {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn facility() -> Self {
-            Self { value: 1 }
-        }
+    pub fn facility() -> Self {
+        Self { value: 1 }
 
-        pub fn kizuna() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn tutorial() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn notebook() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn ring_list() -> Self {
-            Self { value: 5 }
-        }
-
-        pub fn num() -> Self {
-            Self { value: 6 }
-        }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/noticemanager/NoticeManager.md"))]
-    #[::unity2::class(namespace = "App", name = "NoticeManager")]
-    # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: noticemanager :: NoticeManager >)]
-    pub struct NoticeManager {
-        #[offset(32)]
-        #[rename(name = "m_AchievementPopUp")]
-        pub m_achievement_pop_up: crate::unity_engine::gameobject::GameObject,
-        #[offset(40)]
-        #[rename(name = "m_Animator")]
-        pub m_animator: crate::unity_engine::animator::Animator,
-        #[offset(48)]
-        #[rename(name = "m_TextMesh")]
-        pub m_text_mesh: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(56)]
-        #[rename(name = "m_ClearObject")]
-        pub m_clear_object: crate::unity_engine::gameobject::GameObject,
-        #[offset(64)]
-        #[rename(name = "m_Queues")]
-        pub m_queues: ::unity2::Array<crate::system::collections::generic::queue_1::Queue_1<::unity2::Il2CppString>>,
+
+    pub fn kizuna() -> Self {
+        Self { value: 2 }
+
     }
+
+
+    pub fn tutorial() -> Self {
+        Self { value: 3 }
+
+    }
+
+
+    pub fn notebook() -> Self {
+        Self { value: 4 }
+
+    }
+
+
+    pub fn ring_list() -> Self {
+        Self { value: 5 }
+
+    }
+
+
+    pub fn num() -> Self {
+        Self { value: 6 }
+
+    }
+
+}
+
 }
 
 #[cfg(feature = "app-noticemanager-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-noticemanager")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __NoticeManager_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::noticemanager::NoticeManager_Kinds as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<NoticeManager as ::unity2::ClassIdentity>::class(), "Add", 2, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <NoticeManager as ::unity2::ClassIdentity>::NAME,
-                        "Add",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add(
-        kind: crate::app::noticemanager::NoticeManager_Kinds,
-        text: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::app::noticemanager::NoticeManager_Kinds, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add::get_method_info().method_ptr);
-        inner(kind, text, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_clear {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<NoticeManager as ::unity2::ClassIdentity>::class(), "Clear", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <NoticeManager as ::unity2::ClassIdentity>::NAME,
-                        "Clear",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn clear(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_stop {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<NoticeManager as ::unity2::ClassIdentity>::class(), "Stop", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <NoticeManager as ::unity2::ClassIdentity>::NAME,
-                        "Stop",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn stop(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_stop::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_can_kizuna_talk {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NoticeManager as ::unity2::ClassIdentity>::class(),
-                "CanKizunaTalk",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <NoticeManager as ::unity2::ClassIdentity>::NAME,
-                        "CanKizunaTalk",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn can_kizuna_talk(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_can_kizuna_talk::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update_kizuna_talk {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NoticeManager as ::unity2::ClassIdentity>::class(),
-                "UpdateKizunaTalk",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <NoticeManager as ::unity2::ClassIdentity>::NAME,
-                        "UpdateKizunaTalk",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update_kizuna_talk(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_update_kizuna_talk::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_awake {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<NoticeManager as ::unity2::ClassIdentity>::class(), "Awake", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <NoticeManager as ::unity2::ClassIdentity>::NAME,
-                        "Awake",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn awake(this: NoticeManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(NoticeManager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_awake::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_start {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<NoticeManager as ::unity2::ClassIdentity>::class(), "Start", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <NoticeManager as ::unity2::ClassIdentity>::NAME,
-                        "Start",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn start(this: NoticeManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(NoticeManager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_start::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_finish {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::animator::Animator as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NoticeManager as ::unity2::ClassIdentity>::class(),
-                "IsFinish",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <NoticeManager as ::unity2::ClassIdentity>::NAME,
-                        "IsFinish",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_finish(
-        this: NoticeManager,
-        animator: crate::unity_engine::animator::Animator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(NoticeManager, crate::unity_engine::animator::Animator, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_finish::get_method_info().method_ptr);
-        inner(this, animator, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_can_show {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NoticeManager as ::unity2::ClassIdentity>::class(),
-                "CanShow",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <NoticeManager as ::unity2::ClassIdentity>::NAME,
-                        "CanShow",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn can_show(this: NoticeManager, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(NoticeManager, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_can_show::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_show {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<NoticeManager as ::unity2::ClassIdentity>::class(), "Show", 2, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <NoticeManager as ::unity2::ClassIdentity>::NAME,
-                        "Show",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn show(this: NoticeManager, text: ::unity2::Il2CppString, clear: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(NoticeManager, ::unity2::Il2CppString, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_show::get_method_info().method_ptr);
-        inner(this, text, clear, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NoticeManager as ::unity2::ClassIdentity>::class(),
-                "Update",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <NoticeManager as ::unity2::ClassIdentity>::NAME,
-                        "Update",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update(this: NoticeManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(NoticeManager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<NoticeManager as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <NoticeManager as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: NoticeManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(NoticeManager, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __NoticeManager_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: noticemanager :: NoticeManager_Kinds as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< NoticeManager as :: unity2 :: ClassIdentity > :: class () , "Add" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NoticeManager as :: unity2 :: ClassIdentity > :: NAME , "Add" , e) , } } } pub unsafe fn add (kind : crate :: app :: noticemanager :: NoticeManager_Kinds , text : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: noticemanager :: NoticeManager_Kinds , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add :: get_method_info () . method_ptr ,) ; inner (kind , text , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_clear { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< NoticeManager as :: unity2 :: ClassIdentity > :: class () , "Clear" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NoticeManager as :: unity2 :: ClassIdentity > :: NAME , "Clear" , e) , } } } pub unsafe fn clear (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_clear :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_stop { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< NoticeManager as :: unity2 :: ClassIdentity > :: class () , "Stop" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NoticeManager as :: unity2 :: ClassIdentity > :: NAME , "Stop" , e) , } } } pub unsafe fn stop (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_stop :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_can_kizuna_talk { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< NoticeManager as :: unity2 :: ClassIdentity > :: class () , "CanKizunaTalk" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NoticeManager as :: unity2 :: ClassIdentity > :: NAME , "CanKizunaTalk" , e) , } } } pub unsafe fn can_kizuna_talk (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_can_kizuna_talk :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update_kizuna_talk { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< NoticeManager as :: unity2 :: ClassIdentity > :: class () , "UpdateKizunaTalk" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NoticeManager as :: unity2 :: ClassIdentity > :: NAME , "UpdateKizunaTalk" , e) , } } } pub unsafe fn update_kizuna_talk (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update_kizuna_talk :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_awake { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< NoticeManager as :: unity2 :: ClassIdentity > :: class () , "Awake" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NoticeManager as :: unity2 :: ClassIdentity > :: NAME , "Awake" , e) , } } } pub unsafe fn awake (this : NoticeManager , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (NoticeManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_awake :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_start { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< NoticeManager as :: unity2 :: ClassIdentity > :: class () , "Start" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NoticeManager as :: unity2 :: ClassIdentity > :: NAME , "Start" , e) , } } } pub unsafe fn start (this : NoticeManager , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (NoticeManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_start :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_finish { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: animator :: Animator as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< NoticeManager as :: unity2 :: ClassIdentity > :: class () , "IsFinish" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NoticeManager as :: unity2 :: ClassIdentity > :: NAME , "IsFinish" , e) , } } } pub unsafe fn is_finish (this : NoticeManager , animator : crate :: unity_engine :: animator :: Animator , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (NoticeManager , crate :: unity_engine :: animator :: Animator , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_finish :: get_method_info () . method_ptr ,) ; inner (this , animator , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_can_show { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< NoticeManager as :: unity2 :: ClassIdentity > :: class () , "CanShow" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NoticeManager as :: unity2 :: ClassIdentity > :: NAME , "CanShow" , e) , } } } pub unsafe fn can_show (this : NoticeManager , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (NoticeManager , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_can_show :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_show { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< NoticeManager as :: unity2 :: ClassIdentity > :: class () , "Show" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NoticeManager as :: unity2 :: ClassIdentity > :: NAME , "Show" , e) , } } } pub unsafe fn show (this : NoticeManager , text : :: unity2 :: Il2CppString , clear : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (NoticeManager , :: unity2 :: Il2CppString , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_show :: get_method_info () . method_ptr ,) ; inner (this , text , clear , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< NoticeManager as :: unity2 :: ClassIdentity > :: class () , "Update" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NoticeManager as :: unity2 :: ClassIdentity > :: NAME , "Update" , e) , } } } pub unsafe fn update (this : NoticeManager , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (NoticeManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< NoticeManager as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NoticeManager as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : NoticeManager , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (NoticeManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-noticemanager")]
+impl NoticeManager { # [doc = "`Add(crate::app::noticemanager::NoticeManager_Kinds, ::unity2::Il2CppString)` overload"] pub fn add (kind : impl :: core :: convert :: Into < crate :: app :: noticemanager :: NoticeManager_Kinds > , text : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { __NoticeManager_unity2_raw :: add (:: core :: convert :: Into :: into (kind) , :: core :: convert :: Into :: into (text) , :: core :: option :: Option :: None) } } # [doc = "`Clear()` overload"] pub fn clear () -> () { unsafe { __NoticeManager_unity2_raw :: clear (:: core :: option :: Option :: None) } } # [doc = "`Stop()` overload"] pub fn stop () -> () { unsafe { __NoticeManager_unity2_raw :: stop (:: core :: option :: Option :: None) } } # [doc = "`CanKizunaTalk()` overload"] pub fn can_kizuna_talk () -> bool { unsafe { __NoticeManager_unity2_raw :: can_kizuna_talk (:: core :: option :: Option :: None) } } # [doc = "`UpdateKizunaTalk()` overload"] pub fn update_kizuna_talk () -> () { unsafe { __NoticeManager_unity2_raw :: update_kizuna_talk (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-noticemanager")]
+pub trait INoticeManagerMethods : INoticeManager { # [doc = "`Awake()` overload"] fn awake (self ,) -> () { unsafe { let __receiver = < NoticeManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __NoticeManager_unity2_raw :: awake (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < NoticeManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __NoticeManager_unity2_raw :: start (__receiver , :: core :: option :: Option :: None) } } # [doc = "`IsFinish(crate::unity_engine::animator::Animator)` overload"] fn is_finish (self , animator : impl :: core :: convert :: Into < crate :: unity_engine :: animator :: Animator >) -> bool { unsafe { let __receiver = < NoticeManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __NoticeManager_unity2_raw :: is_finish (__receiver , :: core :: convert :: Into :: into (animator) , :: core :: option :: Option :: None) } } # [doc = "`CanShow()` overload"] fn can_show (self ,) -> bool { unsafe { let __receiver = < NoticeManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __NoticeManager_unity2_raw :: can_show (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Show(::unity2::Il2CppString, bool)` overload"] fn show (self , text : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , clear : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < NoticeManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __NoticeManager_unity2_raw :: show (__receiver , :: core :: convert :: Into :: into (text) , :: core :: convert :: Into :: into (clear) , :: core :: option :: Option :: None) } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < NoticeManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __NoticeManager_unity2_raw :: update (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < NoticeManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __NoticeManager_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-noticemanager")]
+impl < __T : INoticeManager > INoticeManagerMethods for __T { }
+
+#[cfg(feature = "app-noticemanager")]
+impl NoticeManager { pub fn add_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __NoticeManager_unity2_raw :: __lookup_add :: get_method_info () } pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __NoticeManager_unity2_raw :: __lookup_clear :: get_method_info () } pub fn stop_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __NoticeManager_unity2_raw :: __lookup_stop :: get_method_info () } pub fn can_kizuna_talk_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __NoticeManager_unity2_raw :: __lookup_can_kizuna_talk :: get_method_info () } pub fn update_kizuna_talk_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __NoticeManager_unity2_raw :: __lookup_update_kizuna_talk :: get_method_info () } pub fn awake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __NoticeManager_unity2_raw :: __lookup_awake :: get_method_info () } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __NoticeManager_unity2_raw :: __lookup_start :: get_method_info () } pub fn is_finish_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __NoticeManager_unity2_raw :: __lookup_is_finish :: get_method_info () } pub fn can_show_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __NoticeManager_unity2_raw :: __lookup_can_show :: get_method_info () } pub fn show_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __NoticeManager_unity2_raw :: __lookup_show :: get_method_info () } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __NoticeManager_unity2_raw :: __lookup_update :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __NoticeManager_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-noticemanager")]
 impl NoticeManager {
-    #[doc = "`Add(crate::app::noticemanager::NoticeManager_Kinds, ::unity2::Il2CppString)` overload"]
-    pub fn add(
-        kind: impl ::core::convert::Into<crate::app::noticemanager::NoticeManager_Kinds>,
-        text: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
-        unsafe {
-            __NoticeManager_unity2_raw::add(
-                ::core::convert::Into::into(kind),
-                ::core::convert::Into::into(text),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`Clear()` overload"]
-    pub fn clear() -> () {
-        unsafe { __NoticeManager_unity2_raw::clear(::core::option::Option::None) }
-    }
-
-    #[doc = "`Stop()` overload"]
-    pub fn stop() -> () {
-        unsafe { __NoticeManager_unity2_raw::stop(::core::option::Option::None) }
-    }
-
-    #[doc = "`CanKizunaTalk()` overload"]
-    pub fn can_kizuna_talk() -> bool {
-        unsafe { __NoticeManager_unity2_raw::can_kizuna_talk(::core::option::Option::None) }
-    }
-
-    #[doc = "`UpdateKizunaTalk()` overload"]
-    pub fn update_kizuna_talk() -> () {
-        unsafe { __NoticeManager_unity2_raw::update_kizuna_talk(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-noticemanager")]
-pub trait INoticeManagerMethods: INoticeManager {
-    #[doc = "`Awake()` overload"]
-    fn awake(self) -> () {
-        unsafe {
-            let __receiver = <NoticeManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __NoticeManager_unity2_raw::awake(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Start()` overload"]
-    fn start(self) -> () {
-        unsafe {
-            let __receiver = <NoticeManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __NoticeManager_unity2_raw::start(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsFinish(crate::unity_engine::animator::Animator)` overload"]
-    fn is_finish(self, animator: impl ::core::convert::Into<crate::unity_engine::animator::Animator>) -> bool {
-        unsafe {
-            let __receiver = <NoticeManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __NoticeManager_unity2_raw::is_finish(__receiver, ::core::convert::Into::into(animator), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CanShow()` overload"]
-    fn can_show(self) -> bool {
-        unsafe {
-            let __receiver = <NoticeManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __NoticeManager_unity2_raw::can_show(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Show(::unity2::Il2CppString, bool)` overload"]
-    fn show(self, text: impl ::core::convert::Into<::unity2::Il2CppString>, clear: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver = <NoticeManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __NoticeManager_unity2_raw::show(
-                __receiver,
-                ::core::convert::Into::into(text),
-                ::core::convert::Into::into(clear),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Update()` overload"]
-    fn update(self) -> () {
-        unsafe {
-            let __receiver = <NoticeManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __NoticeManager_unity2_raw::update(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <NoticeManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __NoticeManager_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-noticemanager")]
-impl<__T: INoticeManager> INoticeManagerMethods for __T {}
-
-#[cfg(feature = "app-noticemanager")]
-impl NoticeManager {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(NoticeManager), ::core::stringify!(new),));
-        <Self as INoticeManagerMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (NoticeManager) , :: core :: stringify ! (new) ,)) ; < Self as INoticeManagerMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-noticemanager")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{INoticeManager, INoticeManagerMethods, NoticeManager, NoticeManager_Kinds};
-    #[cfg(feature = "app-singletonmonobehaviour_1")]
-    pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1Methods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1,
-        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::NoticeManager;
+    pub use super::INoticeManager;
+    pub use super::INoticeManagerMethods;
+    pub use super::NoticeManager_Kinds;
+    pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "app-singletonmonobehaviour_1")] pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1Methods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

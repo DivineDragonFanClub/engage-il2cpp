@@ -2,22 +2,21 @@
 
 #[cfg(feature = "unity_engine-charactercontroller-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::{
-            collider::{Collider, ICollider},
-            component::{Component, IComponent},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/charactercontroller/CharacterController.md"))]
-    #[::unity2::class(namespace = "UnityEngine", name = "CharacterController")]
-    #[parent(crate::unity_engine::collider::Collider)]
-    pub struct CharacterController {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: collider :: { Collider , ICollider }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/charactercontroller/CharacterController.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "CharacterController")] # [parent (crate :: unity_engine :: collider :: Collider)] pub struct CharacterController {}
+
 }
 
 #[cfg(feature = "unity_engine-charactercontroller-types")]
@@ -26,17 +25,14 @@ pub use __types::*;
 #[cfg(feature = "unity_engine-charactercontroller")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{CharacterController, ICharacterController};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-collider")]
-    pub use crate::unity_engine::collider::IColliderMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        system::object::IObject,
-        unity_engine::{collider::ICollider, component::IComponent, object_2::IObject_2},
-    };
+    pub use super::CharacterController;
+    pub use super::ICharacterController;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::collider::ICollider;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-collider")] pub use crate::unity_engine::collider::IColliderMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

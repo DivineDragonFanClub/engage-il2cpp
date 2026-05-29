@@ -2,271 +2,51 @@
 
 #[cfg(feature = "root-allinfoswitchtypemenuitem-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::basicmenuitem::{BasicMenuItem, IBasicMenuItem},
-        root::configbasicmenuitem::{ConfigBasicMenuItem, IConfigBasicMenuItem},
-        system::object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/allinfoswitchtypemenuitem/AllInfoSwitchTypeMenuItem.md"))]
-    #[::unity2::class(namespace = "", name = "AllInfoSwitchTypeMenuItem")]
-    #[parent(crate::root::configbasicmenuitem::ConfigBasicMenuItem)]
-    pub struct AllInfoSwitchTypeMenuItem {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
+ ;
+ use crate :: root :: configbasicmenuitem :: { ConfigBasicMenuItem , IConfigBasicMenuItem }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/allinfoswitchtypemenuitem/AllInfoSwitchTypeMenuItem.md"))] # [:: unity2 :: class (namespace = "" , name = "AllInfoSwitchTypeMenuItem")] # [parent (crate :: root :: configbasicmenuitem :: ConfigBasicMenuItem)] pub struct AllInfoSwitchTypeMenuItem {}
+
 }
 
 #[cfg(feature = "root-allinfoswitchtypemenuitem-types")]
 pub use __types::*;
 
 #[cfg(feature = "root-allinfoswitchtypemenuitem")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AllInfoSwitchTypeMenuItem_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AllInfoSwitchTypeMenuItem as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AllInfoSwitchTypeMenuItem as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: AllInfoSwitchTypeMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AllInfoSwitchTypeMenuItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_custom_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AllInfoSwitchTypeMenuItem as ::unity2::ClassIdentity>::class(),
-                "CustomCall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AllInfoSwitchTypeMenuItem as ::unity2::ClassIdentity>::NAME,
-                        "CustomCall",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn custom_call(
-        this: AllInfoSwitchTypeMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(AllInfoSwitchTypeMenuItem, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
-            ::core::mem::transmute(__lookup_custom_call::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_init_content {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AllInfoSwitchTypeMenuItem as ::unity2::ClassIdentity>::class(),
-                "InitContent",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AllInfoSwitchTypeMenuItem as ::unity2::ClassIdentity>::NAME,
-                        "InitContent",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn init_content(this: AllInfoSwitchTypeMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AllInfoSwitchTypeMenuItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_init_content::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_command_text {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AllInfoSwitchTypeMenuItem as ::unity2::ClassIdentity>::class(),
-                "SetCommandText",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AllInfoSwitchTypeMenuItem as ::unity2::ClassIdentity>::NAME,
-                        "SetCommandText",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_command_text(this: AllInfoSwitchTypeMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AllInfoSwitchTypeMenuItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_command_text::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_help_text {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AllInfoSwitchTypeMenuItem as ::unity2::ClassIdentity>::class(),
-                "SetHelpText",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AllInfoSwitchTypeMenuItem as ::unity2::ClassIdentity>::NAME,
-                        "SetHelpText",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_help_text(this: AllInfoSwitchTypeMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AllInfoSwitchTypeMenuItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_help_text::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __AllInfoSwitchTypeMenuItem_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AllInfoSwitchTypeMenuItem as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AllInfoSwitchTypeMenuItem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : AllInfoSwitchTypeMenuItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AllInfoSwitchTypeMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_custom_call { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AllInfoSwitchTypeMenuItem as :: unity2 :: ClassIdentity > :: class () , "CustomCall" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AllInfoSwitchTypeMenuItem as :: unity2 :: ClassIdentity > :: NAME , "CustomCall" , e) , } } } pub unsafe fn custom_call (this : AllInfoSwitchTypeMenuItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result { let inner : extern "C" fn (AllInfoSwitchTypeMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute (__lookup_custom_call :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_init_content { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AllInfoSwitchTypeMenuItem as :: unity2 :: ClassIdentity > :: class () , "InitContent" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AllInfoSwitchTypeMenuItem as :: unity2 :: ClassIdentity > :: NAME , "InitContent" , e) , } } } pub unsafe fn init_content (this : AllInfoSwitchTypeMenuItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AllInfoSwitchTypeMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_init_content :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_command_text { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AllInfoSwitchTypeMenuItem as :: unity2 :: ClassIdentity > :: class () , "SetCommandText" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AllInfoSwitchTypeMenuItem as :: unity2 :: ClassIdentity > :: NAME , "SetCommandText" , e) , } } } pub unsafe fn set_command_text (this : AllInfoSwitchTypeMenuItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AllInfoSwitchTypeMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_command_text :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_help_text { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AllInfoSwitchTypeMenuItem as :: unity2 :: ClassIdentity > :: class () , "SetHelpText" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AllInfoSwitchTypeMenuItem as :: unity2 :: ClassIdentity > :: NAME , "SetHelpText" , e) , } } } pub unsafe fn set_help_text (this : AllInfoSwitchTypeMenuItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AllInfoSwitchTypeMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_help_text :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "root-allinfoswitchtypemenuitem")]
-pub trait IAllInfoSwitchTypeMenuItemMethods: IAllInfoSwitchTypeMenuItem {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <AllInfoSwitchTypeMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AllInfoSwitchTypeMenuItem_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CustomCall()` overload"]
-    fn custom_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver =
-                <AllInfoSwitchTypeMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AllInfoSwitchTypeMenuItem_unity2_raw::custom_call(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`InitContent()` overload"]
-    fn init_content(self) -> () {
-        unsafe {
-            let __receiver =
-                <AllInfoSwitchTypeMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AllInfoSwitchTypeMenuItem_unity2_raw::init_content(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetCommandText()` overload"]
-    fn set_command_text(self) -> () {
-        unsafe {
-            let __receiver =
-                <AllInfoSwitchTypeMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AllInfoSwitchTypeMenuItem_unity2_raw::set_command_text(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetHelpText()` overload"]
-    fn set_help_text(self) -> () {
-        unsafe {
-            let __receiver =
-                <AllInfoSwitchTypeMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AllInfoSwitchTypeMenuItem_unity2_raw::set_help_text(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IAllInfoSwitchTypeMenuItemMethods : IAllInfoSwitchTypeMenuItem { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AllInfoSwitchTypeMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AllInfoSwitchTypeMenuItem_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CustomCall()` overload"] fn custom_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < AllInfoSwitchTypeMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AllInfoSwitchTypeMenuItem_unity2_raw :: custom_call (__receiver , :: core :: option :: Option :: None) } } # [doc = "`InitContent()` overload"] fn init_content (self ,) -> () { unsafe { let __receiver = < AllInfoSwitchTypeMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AllInfoSwitchTypeMenuItem_unity2_raw :: init_content (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetCommandText()` overload"] fn set_command_text (self ,) -> () { unsafe { let __receiver = < AllInfoSwitchTypeMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AllInfoSwitchTypeMenuItem_unity2_raw :: set_command_text (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetHelpText()` overload"] fn set_help_text (self ,) -> () { unsafe { let __receiver = < AllInfoSwitchTypeMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AllInfoSwitchTypeMenuItem_unity2_raw :: set_help_text (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "root-allinfoswitchtypemenuitem")]
-impl<__T: IAllInfoSwitchTypeMenuItem> IAllInfoSwitchTypeMenuItemMethods for __T {}
+impl < __T : IAllInfoSwitchTypeMenuItem > IAllInfoSwitchTypeMenuItemMethods for __T { }
+
+#[cfg(feature = "root-allinfoswitchtypemenuitem")]
+impl AllInfoSwitchTypeMenuItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AllInfoSwitchTypeMenuItem_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn custom_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AllInfoSwitchTypeMenuItem_unity2_raw :: __lookup_custom_call :: get_method_info () } pub fn init_content_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AllInfoSwitchTypeMenuItem_unity2_raw :: __lookup_init_content :: get_method_info () } pub fn set_command_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AllInfoSwitchTypeMenuItem_unity2_raw :: __lookup_set_command_text :: get_method_info () } pub fn set_help_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AllInfoSwitchTypeMenuItem_unity2_raw :: __lookup_set_help_text :: get_method_info () } }
 
 #[cfg(feature = "root-allinfoswitchtypemenuitem")]
 impl AllInfoSwitchTypeMenuItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AllInfoSwitchTypeMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAllInfoSwitchTypeMenuItemMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AllInfoSwitchTypeMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IAllInfoSwitchTypeMenuItemMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "root-allinfoswitchtypemenuitem")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{AllInfoSwitchTypeMenuItem, IAllInfoSwitchTypeMenuItem, IAllInfoSwitchTypeMenuItemMethods};
-    #[cfg(feature = "app-basicmenuitem")]
-    pub use crate::app::basicmenuitem::IBasicMenuItemMethods;
-    #[cfg(feature = "root-configbasicmenuitem")]
-    pub use crate::root::configbasicmenuitem::IConfigBasicMenuItemMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::{app::basicmenuitem::IBasicMenuItem, root::configbasicmenuitem::IConfigBasicMenuItem, system::object::IObject};
+    pub use super::AllInfoSwitchTypeMenuItem;
+    pub use super::IAllInfoSwitchTypeMenuItem;
+    pub use super::IAllInfoSwitchTypeMenuItemMethods;
+    pub use crate::app::basicmenuitem::IBasicMenuItem;
+    pub use crate::root::configbasicmenuitem::IConfigBasicMenuItem;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "app-basicmenuitem")] pub use crate::app::basicmenuitem::IBasicMenuItemMethods;
+    #[cfg(feature = "root-configbasicmenuitem")] pub use crate::root::configbasicmenuitem::IConfigBasicMenuItemMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

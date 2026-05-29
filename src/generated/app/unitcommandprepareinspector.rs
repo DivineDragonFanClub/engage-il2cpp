@@ -2,120 +2,55 @@
 
 #[cfg(feature = "app-unitcommandprepareinspector-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::{
-            mapinspector::{IMapInspector, MapInspector},
-            personinspector::{IPersonInspector, PersonInspector},
-            scriptutil::{IScriptUtil, ScriptUtil},
-        },
-        system::object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitcommandprepareinspector/UnitCommandPrepareInspector.md"))]
-    #[::unity2::class(namespace = "App", name = "UnitCommandPrepareInspector")]
-    #[parent(crate::app::personinspector::PersonInspector)]
-    pub struct UnitCommandPrepareInspector {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: mapinspector :: { IMapInspector , MapInspector }
+ ;
+ use crate :: app :: personinspector :: { IPersonInspector , PersonInspector }
+ ;
+ use crate :: app :: scriptutil :: { IScriptUtil , ScriptUtil }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitcommandprepareinspector/UnitCommandPrepareInspector.md"))] # [:: unity2 :: class (namespace = "App" , name = "UnitCommandPrepareInspector")] # [parent (crate :: app :: personinspector :: PersonInspector)] pub struct UnitCommandPrepareInspector {}
+
 }
 
 #[cfg(feature = "app-unitcommandprepareinspector-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-unitcommandprepareinspector")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __UnitCommandPrepareInspector_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitCommandPrepareInspector as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnitCommandPrepareInspector as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: UnitCommandPrepareInspector,
-        args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            UnitCommandPrepareInspector,
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, args, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __UnitCommandPrepareInspector_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitCommandPrepareInspector as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitCommandPrepareInspector as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : UnitCommandPrepareInspector , args : :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitCommandPrepareInspector , :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , args , __unity2_method_info) } }
 
 #[cfg(feature = "app-unitcommandprepareinspector")]
-pub trait IUnitCommandPrepareInspectorMethods: IUnitCommandPrepareInspector {
-    #[doc = "`.ctor(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    fn ctor(self, args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
-        unsafe {
-            let __receiver =
-                <UnitCommandPrepareInspector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnitCommandPrepareInspector_unity2_raw::ctor(__receiver, ::core::convert::Into::into(args), ::core::option::Option::None)
-        }
-    }
-}
+pub trait IUnitCommandPrepareInspectorMethods : IUnitCommandPrepareInspector { # [doc = "`.ctor(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"] fn ctor (self , args : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > >) -> () { unsafe { let __receiver = < UnitCommandPrepareInspector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitCommandPrepareInspector_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (args) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-unitcommandprepareinspector")]
-impl<__T: IUnitCommandPrepareInspector> IUnitCommandPrepareInspectorMethods for __T {}
+impl < __T : IUnitCommandPrepareInspector > IUnitCommandPrepareInspectorMethods for __T { }
+
+#[cfg(feature = "app-unitcommandprepareinspector")]
+impl UnitCommandPrepareInspector { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitCommandPrepareInspector_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-unitcommandprepareinspector")]
 impl UnitCommandPrepareInspector {
-    #[doc = "`.ctor(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` — overload selector"]
-    pub fn new(args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(UnitCommandPrepareInspector),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IUnitCommandPrepareInspectorMethods>::ctor(this, args);
-        this
-    }
+# [doc = "`.ctor(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` — overload selector"] pub fn new (args : :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue >) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (UnitCommandPrepareInspector) , :: core :: stringify ! (new) ,)) ; < Self as IUnitCommandPrepareInspectorMethods > :: ctor (this , args) ; this }
 }
 
 #[cfg(feature = "app-unitcommandprepareinspector")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IUnitCommandPrepareInspector, IUnitCommandPrepareInspectorMethods, UnitCommandPrepareInspector};
-    #[cfg(feature = "app-mapinspector")]
-    pub use crate::app::mapinspector::IMapInspectorMethods;
-    #[cfg(feature = "app-personinspector")]
-    pub use crate::app::personinspector::IPersonInspectorMethods;
-    #[cfg(feature = "app-scriptutil")]
-    pub use crate::app::scriptutil::IScriptUtilMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::{
-        app::{mapinspector::IMapInspector, personinspector::IPersonInspector, scriptutil::IScriptUtil},
-        system::object::IObject,
-    };
+    pub use super::UnitCommandPrepareInspector;
+    pub use super::IUnitCommandPrepareInspector;
+    pub use super::IUnitCommandPrepareInspectorMethods;
+    pub use crate::app::mapinspector::IMapInspector;
+    pub use crate::app::personinspector::IPersonInspector;
+    pub use crate::app::scriptutil::IScriptUtil;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "app-mapinspector")] pub use crate::app::mapinspector::IMapInspectorMethods;
+    #[cfg(feature = "app-personinspector")] pub use crate::app::personinspector::IPersonInspectorMethods;
+    #[cfg(feature = "app-scriptutil")] pub use crate::app::scriptutil::IScriptUtilMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

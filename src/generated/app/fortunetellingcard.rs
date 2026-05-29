@@ -2,254 +2,49 @@
 
 #[cfg(feature = "app-fortunetellingcard-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fortunetellingcard/FortuneTellingCard.md"))]
-    #[::unity2::class(namespace = "App", name = "FortuneTellingCard")]
-    #[parent(crate::system::object::Object)]
-    pub struct FortuneTellingCard {
-        #[static_field]
-        #[rename(name = "Path")]
-        pub path: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "s_FortuneTellingCard")]
-        pub s_fortune_telling_card: crate::app::spriteatlasmanager_2::SpriteAtlasManager_2,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fortunetellingcard/FortuneTellingCard.md"))] # [:: unity2 :: class (namespace = "App" , name = "FortuneTellingCard")] # [parent (crate :: system :: object :: Object)] pub struct FortuneTellingCard {
+# [static_field] # [rename (name = "Path")] pub path : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "s_FortuneTellingCard")] pub s_fortune_telling_card : crate :: app :: spriteatlasmanager_2 :: SpriteAtlasManager_2 ,
+}
+
 }
 
 #[cfg(feature = "app-fortunetellingcard-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-fortunetellingcard")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __FortuneTellingCard_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_load_async {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FortuneTellingCard as ::unity2::ClassIdentity>::class(),
-                "LoadAsync",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FortuneTellingCard as ::unity2::ClassIdentity>::NAME,
-                        "LoadAsync",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn load_async(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_load_async::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_unload {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FortuneTellingCard as ::unity2::ClassIdentity>::class(),
-                "Unload",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FortuneTellingCard as ::unity2::ClassIdentity>::NAME,
-                        "Unload",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn unload(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_unload::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FortuneTellingCard as ::unity2::ClassIdentity>::class(),
-                "Get",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FortuneTellingCard as ::unity2::ClassIdentity>::NAME,
-                        "Get",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get(icon_name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::sprite::Sprite {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> crate::unity_engine::sprite::Sprite =
-            ::core::mem::transmute(__lookup_get::get_method_info().method_ptr);
-        inner(icon_name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FortuneTellingCard as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FortuneTellingCard as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: FortuneTellingCard, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(FortuneTellingCard, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FortuneTellingCard as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FortuneTellingCard as ::unity2::ClassIdentity>::NAME,
-                        ".cctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __FortuneTellingCard_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_load_async { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FortuneTellingCard as :: unity2 :: ClassIdentity > :: class () , "LoadAsync" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FortuneTellingCard as :: unity2 :: ClassIdentity > :: NAME , "LoadAsync" , e) , } } } pub unsafe fn load_async (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_load_async :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_unload { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FortuneTellingCard as :: unity2 :: ClassIdentity > :: class () , "Unload" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FortuneTellingCard as :: unity2 :: ClassIdentity > :: NAME , "Unload" , e) , } } } pub unsafe fn unload (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_unload :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FortuneTellingCard as :: unity2 :: ClassIdentity > :: class () , "Get" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FortuneTellingCard as :: unity2 :: ClassIdentity > :: NAME , "Get" , e) , } } } pub unsafe fn get (icon_name : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: sprite :: Sprite { let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: sprite :: Sprite = :: core :: mem :: transmute (__lookup_get :: get_method_info () . method_ptr ,) ; inner (icon_name , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FortuneTellingCard as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FortuneTellingCard as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : FortuneTellingCard , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FortuneTellingCard , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FortuneTellingCard as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FortuneTellingCard as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
+
+#[cfg(feature = "app-fortunetellingcard")]
+impl FortuneTellingCard { # [doc = "`LoadAsync()` overload"] pub fn load_async () -> () { unsafe { __FortuneTellingCard_unity2_raw :: load_async (:: core :: option :: Option :: None) } } # [doc = "`Unload()` overload"] pub fn unload () -> () { unsafe { __FortuneTellingCard_unity2_raw :: unload (:: core :: option :: Option :: None) } } # [doc = "`Get(::unity2::Il2CppString)` overload"] pub fn get (icon_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: unity_engine :: sprite :: Sprite { unsafe { __FortuneTellingCard_unity2_raw :: get (:: core :: convert :: Into :: into (icon_name) , :: core :: option :: Option :: None) } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { __FortuneTellingCard_unity2_raw :: cctor (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-fortunetellingcard")]
+pub trait IFortuneTellingCardMethods : IFortuneTellingCard { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < FortuneTellingCard as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FortuneTellingCard_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-fortunetellingcard")]
+impl < __T : IFortuneTellingCard > IFortuneTellingCardMethods for __T { }
+
+#[cfg(feature = "app-fortunetellingcard")]
+impl FortuneTellingCard { pub fn load_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FortuneTellingCard_unity2_raw :: __lookup_load_async :: get_method_info () } pub fn unload_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FortuneTellingCard_unity2_raw :: __lookup_unload :: get_method_info () } pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FortuneTellingCard_unity2_raw :: __lookup_get :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FortuneTellingCard_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FortuneTellingCard_unity2_raw :: __lookup_cctor :: get_method_info () } }
 
 #[cfg(feature = "app-fortunetellingcard")]
 impl FortuneTellingCard {
-    #[doc = "`LoadAsync()` overload"]
-    pub fn load_async() -> () {
-        unsafe { __FortuneTellingCard_unity2_raw::load_async(::core::option::Option::None) }
-    }
-
-    #[doc = "`Unload()` overload"]
-    pub fn unload() -> () {
-        unsafe { __FortuneTellingCard_unity2_raw::unload(::core::option::Option::None) }
-    }
-
-    #[doc = "`Get(::unity2::Il2CppString)` overload"]
-    pub fn get(icon_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> crate::unity_engine::sprite::Sprite {
-        unsafe { __FortuneTellingCard_unity2_raw::get(::core::convert::Into::into(icon_name), ::core::option::Option::None) }
-    }
-
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __FortuneTellingCard_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-fortunetellingcard")]
-pub trait IFortuneTellingCardMethods: IFortuneTellingCard {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <FortuneTellingCard as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FortuneTellingCard_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-fortunetellingcard")]
-impl<__T: IFortuneTellingCard> IFortuneTellingCardMethods for __T {}
-
-#[cfg(feature = "app-fortunetellingcard")]
-impl FortuneTellingCard {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(FortuneTellingCard),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IFortuneTellingCardMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FortuneTellingCard) , :: core :: stringify ! (new) ,)) ; < Self as IFortuneTellingCardMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-fortunetellingcard")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{FortuneTellingCard, IFortuneTellingCard, IFortuneTellingCardMethods};
+    pub use super::FortuneTellingCard;
+    pub use super::IFortuneTellingCard;
+    pub use super::IFortuneTellingCardMethods;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

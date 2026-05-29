@@ -2,79 +2,37 @@
 
 #[cfg(feature = "unity_engine-rendering-universal-customrpconstant-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/customrpconstant/CustomRPConstant.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Rendering.Universal", name = "CustomRPConstant")]
-    #[parent(crate::system::object::Object)]
-    pub struct CustomRPConstant {
-        #[static_field]
-        #[rename(name = "SilhouetteCount")]
-        pub silhouette_count: i32,
-        #[static_field]
-        #[rename(name = "ExposureCount")]
-        pub exposure_count: i32,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/customrpconstant/CustomRPConstant.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.Universal" , name = "CustomRPConstant")] # [parent (crate :: system :: object :: Object)] pub struct CustomRPConstant {
+# [static_field] # [rename (name = "SilhouetteCount")] pub silhouette_count : i32 ,
+# [static_field] # [rename (name = "ExposureCount")] pub exposure_count : i32 ,
+}
+
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-customrpconstant-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-universal-customrpconstant")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __CustomRPConstant_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CustomRPConstant as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CustomRPConstant as ::unity2::ClassIdentity>::NAME,
-                        ".cctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __CustomRPConstant_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CustomRPConstant as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CustomRPConstant as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-rendering-universal-customrpconstant")]
-impl CustomRPConstant {
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __CustomRPConstant_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
+impl CustomRPConstant { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { __CustomRPConstant_unity2_raw :: cctor (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-rendering-universal-customrpconstant")]
+impl CustomRPConstant { pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CustomRPConstant_unity2_raw :: __lookup_cctor :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-rendering-universal-customrpconstant")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{CustomRPConstant, ICustomRPConstant};
+    pub use super::CustomRPConstant;
+    pub use super::ICustomRPConstant;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

@@ -2,100 +2,47 @@
 
 #[cfg(feature = "root-akshowonlyattribute-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::propertyattribute::{IPropertyAttribute, PropertyAttribute},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akshowonlyattribute/AkShowOnlyAttribute.md"))]
-    #[::unity2::class(namespace = "", name = "AkShowOnlyAttribute")]
-    #[parent(crate::unity_engine::propertyattribute::PropertyAttribute)]
-    pub struct AkShowOnlyAttribute {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: propertyattribute :: { IPropertyAttribute , PropertyAttribute }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akshowonlyattribute/AkShowOnlyAttribute.md"))] # [:: unity2 :: class (namespace = "" , name = "AkShowOnlyAttribute")] # [parent (crate :: unity_engine :: propertyattribute :: PropertyAttribute)] pub struct AkShowOnlyAttribute {}
+
 }
 
 #[cfg(feature = "root-akshowonlyattribute-types")]
 pub use __types::*;
 
 #[cfg(feature = "root-akshowonlyattribute")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AkShowOnlyAttribute_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkShowOnlyAttribute as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkShowOnlyAttribute as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: AkShowOnlyAttribute, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AkShowOnlyAttribute, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __AkShowOnlyAttribute_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkShowOnlyAttribute as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkShowOnlyAttribute as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : AkShowOnlyAttribute , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkShowOnlyAttribute , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "root-akshowonlyattribute")]
-pub trait IAkShowOnlyAttributeMethods: IAkShowOnlyAttribute {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <AkShowOnlyAttribute as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkShowOnlyAttribute_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IAkShowOnlyAttributeMethods : IAkShowOnlyAttribute { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AkShowOnlyAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkShowOnlyAttribute_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "root-akshowonlyattribute")]
-impl<__T: IAkShowOnlyAttribute> IAkShowOnlyAttributeMethods for __T {}
+impl < __T : IAkShowOnlyAttribute > IAkShowOnlyAttributeMethods for __T { }
+
+#[cfg(feature = "root-akshowonlyattribute")]
+impl AkShowOnlyAttribute { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkShowOnlyAttribute_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "root-akshowonlyattribute")]
 impl AkShowOnlyAttribute {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AkShowOnlyAttribute),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAkShowOnlyAttributeMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkShowOnlyAttribute) , :: core :: stringify ! (new) ,)) ; < Self as IAkShowOnlyAttributeMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "root-akshowonlyattribute")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{AkShowOnlyAttribute, IAkShowOnlyAttribute, IAkShowOnlyAttributeMethods};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-propertyattribute")]
-    pub use crate::unity_engine::propertyattribute::IPropertyAttributeMethods;
-    pub use crate::{system::object::IObject, unity_engine::propertyattribute::IPropertyAttribute};
+    pub use super::AkShowOnlyAttribute;
+    pub use super::IAkShowOnlyAttribute;
+    pub use super::IAkShowOnlyAttributeMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::propertyattribute::IPropertyAttribute;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-propertyattribute")] pub use crate::unity_engine::propertyattribute::IPropertyAttributeMethods;
 }

@@ -2,306 +2,46 @@
 
 #[cfg(feature = "app-mapbattleinfowindowsingle-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapbattleinfowindowsingle/MapBattleInfoWindowSingle.md"))]
-    #[::unity2::class(namespace = "App", name = "MapBattleInfoWindowSingle")]
-    #[parent(crate::system::object::Object)]
-    pub struct MapBattleInfoWindowSingle {
-        #[offset(16)]
-        #[rename(name = "m_MapBattleInfoParamSetter")]
-        pub m_map_battle_info_param_setter: crate::app::mapbattleinfoparamsetter::MapBattleInfoParamSetter,
-        #[offset(24)]
-        #[rename(name = "m_SideType")]
-        pub m_side_type: crate::app::battleside::BattleSide_Type,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapbattleinfowindowsingle/MapBattleInfoWindowSingle.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapBattleInfoWindowSingle")] # [parent (crate :: system :: object :: Object)] pub struct MapBattleInfoWindowSingle {
+# [offset (16)] # [rename (name = "m_MapBattleInfoParamSetter")] pub m_map_battle_info_param_setter : crate :: app :: mapbattleinfoparamsetter :: MapBattleInfoParamSetter ,
+# [offset (24)] # [rename (name = "m_SideType")] pub m_side_type : crate :: app :: battleside :: BattleSide_Type ,
+}
+
 }
 
 #[cfg(feature = "app-mapbattleinfowindowsingle-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-mapbattleinfowindowsingle")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapBattleInfoWindowSingle_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::battleside::BattleSide_Type as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapBattleInfoWindowSingle as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapBattleInfoWindowSingle as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: MapBattleInfoWindowSingle,
-        side_type: crate::app::battleside::BattleSide_Type,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MapBattleInfoWindowSingle, crate::app::battleside::BattleSide_Type, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, side_type, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_setup {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapBattleInfoWindowSingle as ::unity2::ClassIdentity>::class(),
-                "Setup",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapBattleInfoWindowSingle as ::unity2::ClassIdentity>::NAME,
-                        "Setup",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn setup(
-        this: MapBattleInfoWindowSingle,
-        game_object: crate::unity_engine::gameobject::GameObject,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(MapBattleInfoWindowSingle, crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_setup::get_method_info().method_ptr);
-        inner(this, game_object, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_battle_info {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <bool as ::unity2::IlType>::il_type(),
-                <crate::app::battleinfo::BattleInfo as ::unity2::IlType>::il_type(),
-                <crate::app::battlescenelist::BattleSceneList as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapBattleInfoWindowSingle as ::unity2::ClassIdentity>::class(),
-                "SetBattleInfo",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapBattleInfoWindowSingle as ::unity2::ClassIdentity>::NAME,
-                        "SetBattleInfo",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_battle_info(
-        this: MapBattleInfoWindowSingle,
-        b_show_wdw: bool,
-        info: crate::app::battleinfo::BattleInfo,
-        scene_list: crate::app::battlescenelist::BattleSceneList,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MapBattleInfoWindowSingle,
-            bool,
-            crate::app::battleinfo::BattleInfo,
-            crate::app::battlescenelist::BattleSceneList,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_set_battle_info::get_method_info().method_ptr);
-        inner(this, b_show_wdw, info, scene_list, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_weapon_change_visible {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapBattleInfoWindowSingle as ::unity2::ClassIdentity>::class(),
-                "SetWeaponChangeVisible",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapBattleInfoWindowSingle as ::unity2::ClassIdentity>::NAME,
-                        "SetWeaponChangeVisible",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_weapon_change_visible(this: MapBattleInfoWindowSingle, is_visible: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapBattleInfoWindowSingle, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_weapon_change_visible::get_method_info().method_ptr);
-        inner(this, is_visible, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_simple {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapBattleInfoWindowSingle as ::unity2::ClassIdentity>::class(),
-                "IsSimple",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapBattleInfoWindowSingle as ::unity2::ClassIdentity>::NAME,
-                        "IsSimple",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_simple(this: MapBattleInfoWindowSingle, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(MapBattleInfoWindowSingle, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_simple::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MapBattleInfoWindowSingle_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: battleside :: BattleSide_Type as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapBattleInfoWindowSingle as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapBattleInfoWindowSingle as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : MapBattleInfoWindowSingle , side_type : crate :: app :: battleside :: BattleSide_Type , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapBattleInfoWindowSingle , crate :: app :: battleside :: BattleSide_Type , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , side_type , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_setup { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: gameobject :: GameObject as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapBattleInfoWindowSingle as :: unity2 :: ClassIdentity > :: class () , "Setup" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapBattleInfoWindowSingle as :: unity2 :: ClassIdentity > :: NAME , "Setup" , e) , } } } pub unsafe fn setup (this : MapBattleInfoWindowSingle , game_object : crate :: unity_engine :: gameobject :: GameObject , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (MapBattleInfoWindowSingle , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_setup :: get_method_info () . method_ptr ,) ; inner (this , game_object , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_battle_info { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type () , < crate :: app :: battleinfo :: BattleInfo as :: unity2 :: IlType > :: il_type () , < crate :: app :: battlescenelist :: BattleSceneList as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapBattleInfoWindowSingle as :: unity2 :: ClassIdentity > :: class () , "SetBattleInfo" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapBattleInfoWindowSingle as :: unity2 :: ClassIdentity > :: NAME , "SetBattleInfo" , e) , } } } pub unsafe fn set_battle_info (this : MapBattleInfoWindowSingle , b_show_wdw : bool , info : crate :: app :: battleinfo :: BattleInfo , scene_list : crate :: app :: battlescenelist :: BattleSceneList , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapBattleInfoWindowSingle , bool , crate :: app :: battleinfo :: BattleInfo , crate :: app :: battlescenelist :: BattleSceneList , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_battle_info :: get_method_info () . method_ptr ,) ; inner (this , b_show_wdw , info , scene_list , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_weapon_change_visible { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapBattleInfoWindowSingle as :: unity2 :: ClassIdentity > :: class () , "SetWeaponChangeVisible" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapBattleInfoWindowSingle as :: unity2 :: ClassIdentity > :: NAME , "SetWeaponChangeVisible" , e) , } } } pub unsafe fn set_weapon_change_visible (this : MapBattleInfoWindowSingle , is_visible : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapBattleInfoWindowSingle , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_weapon_change_visible :: get_method_info () . method_ptr ,) ; inner (this , is_visible , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_simple { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapBattleInfoWindowSingle as :: unity2 :: ClassIdentity > :: class () , "IsSimple" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapBattleInfoWindowSingle as :: unity2 :: ClassIdentity > :: NAME , "IsSimple" , e) , } } } pub unsafe fn is_simple (this : MapBattleInfoWindowSingle , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (MapBattleInfoWindowSingle , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_simple :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-mapbattleinfowindowsingle")]
-pub trait IMapBattleInfoWindowSingleMethods: IMapBattleInfoWindowSingle {
-    #[doc = "`.ctor(crate::app::battleside::BattleSide_Type)` overload"]
-    fn ctor(self, side_type: impl ::core::convert::Into<crate::app::battleside::BattleSide_Type>) -> () {
-        unsafe {
-            let __receiver =
-                <MapBattleInfoWindowSingle as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapBattleInfoWindowSingle_unity2_raw::ctor(__receiver, ::core::convert::Into::into(side_type), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Setup(crate::unity_engine::gameobject::GameObject)` overload"]
-    fn setup(self, game_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>) -> bool {
-        unsafe {
-            let __receiver =
-                <MapBattleInfoWindowSingle as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapBattleInfoWindowSingle_unity2_raw::setup(__receiver, ::core::convert::Into::into(game_object), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetBattleInfo(bool, crate::app::battleinfo::BattleInfo, crate::app::battlescenelist::BattleSceneList)` overload"]
-    fn set_battle_info(
-        self,
-        b_show_wdw: impl ::core::convert::Into<bool>,
-        info: impl ::core::convert::Into<crate::app::battleinfo::BattleInfo>,
-        scene_list: impl ::core::convert::Into<crate::app::battlescenelist::BattleSceneList>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <MapBattleInfoWindowSingle as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapBattleInfoWindowSingle_unity2_raw::set_battle_info(
-                __receiver,
-                ::core::convert::Into::into(b_show_wdw),
-                ::core::convert::Into::into(info),
-                ::core::convert::Into::into(scene_list),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetWeaponChangeVisible(bool)` overload"]
-    fn set_weapon_change_visible(self, is_visible: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver =
-                <MapBattleInfoWindowSingle as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapBattleInfoWindowSingle_unity2_raw::set_weapon_change_visible(
-                __receiver,
-                ::core::convert::Into::into(is_visible),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`IsSimple()` overload"]
-    fn is_simple(self) -> bool {
-        unsafe {
-            let __receiver =
-                <MapBattleInfoWindowSingle as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapBattleInfoWindowSingle_unity2_raw::is_simple(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IMapBattleInfoWindowSingleMethods : IMapBattleInfoWindowSingle { # [doc = "`.ctor(crate::app::battleside::BattleSide_Type)` overload"] fn ctor (self , side_type : impl :: core :: convert :: Into < crate :: app :: battleside :: BattleSide_Type >) -> () { unsafe { let __receiver = < MapBattleInfoWindowSingle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapBattleInfoWindowSingle_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (side_type) , :: core :: option :: Option :: None) } } # [doc = "`Setup(crate::unity_engine::gameobject::GameObject)` overload"] fn setup (self , game_object : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> bool { unsafe { let __receiver = < MapBattleInfoWindowSingle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapBattleInfoWindowSingle_unity2_raw :: setup (__receiver , :: core :: convert :: Into :: into (game_object) , :: core :: option :: Option :: None) } } # [doc = "`SetBattleInfo(bool, crate::app::battleinfo::BattleInfo, crate::app::battlescenelist::BattleSceneList)` overload"] fn set_battle_info (self , b_show_wdw : impl :: core :: convert :: Into < bool > , info : impl :: core :: convert :: Into < crate :: app :: battleinfo :: BattleInfo > , scene_list : impl :: core :: convert :: Into < crate :: app :: battlescenelist :: BattleSceneList >) -> () { unsafe { let __receiver = < MapBattleInfoWindowSingle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapBattleInfoWindowSingle_unity2_raw :: set_battle_info (__receiver , :: core :: convert :: Into :: into (b_show_wdw) , :: core :: convert :: Into :: into (info) , :: core :: convert :: Into :: into (scene_list) , :: core :: option :: Option :: None) } } # [doc = "`SetWeaponChangeVisible(bool)` overload"] fn set_weapon_change_visible (self , is_visible : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < MapBattleInfoWindowSingle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapBattleInfoWindowSingle_unity2_raw :: set_weapon_change_visible (__receiver , :: core :: convert :: Into :: into (is_visible) , :: core :: option :: Option :: None) } } # [doc = "`IsSimple()` overload"] fn is_simple (self ,) -> bool { unsafe { let __receiver = < MapBattleInfoWindowSingle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapBattleInfoWindowSingle_unity2_raw :: is_simple (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-mapbattleinfowindowsingle")]
-impl<__T: IMapBattleInfoWindowSingle> IMapBattleInfoWindowSingleMethods for __T {}
+impl < __T : IMapBattleInfoWindowSingle > IMapBattleInfoWindowSingleMethods for __T { }
+
+#[cfg(feature = "app-mapbattleinfowindowsingle")]
+impl MapBattleInfoWindowSingle { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapBattleInfoWindowSingle_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn setup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapBattleInfoWindowSingle_unity2_raw :: __lookup_setup :: get_method_info () } pub fn set_battle_info_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapBattleInfoWindowSingle_unity2_raw :: __lookup_set_battle_info :: get_method_info () } pub fn set_weapon_change_visible_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapBattleInfoWindowSingle_unity2_raw :: __lookup_set_weapon_change_visible :: get_method_info () } pub fn is_simple_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapBattleInfoWindowSingle_unity2_raw :: __lookup_is_simple :: get_method_info () } }
 
 #[cfg(feature = "app-mapbattleinfowindowsingle")]
 impl MapBattleInfoWindowSingle {
-    #[doc = "`.ctor(crate::app::battleside::BattleSide_Type)` — overload selector"]
-    pub fn new(side_type: crate::app::battleside::BattleSide_Type) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapBattleInfoWindowSingle),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapBattleInfoWindowSingleMethods>::ctor(this, side_type);
-        this
-    }
+# [doc = "`.ctor(crate::app::battleside::BattleSide_Type)` — overload selector"] pub fn new (side_type : crate :: app :: battleside :: BattleSide_Type) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapBattleInfoWindowSingle) , :: core :: stringify ! (new) ,)) ; < Self as IMapBattleInfoWindowSingleMethods > :: ctor (this , side_type) ; this }
 }
 
 #[cfg(feature = "app-mapbattleinfowindowsingle")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IMapBattleInfoWindowSingle, IMapBattleInfoWindowSingleMethods, MapBattleInfoWindowSingle};
+    pub use super::MapBattleInfoWindowSingle;
+    pub use super::IMapBattleInfoWindowSingle;
+    pub use super::IMapBattleInfoWindowSingleMethods;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

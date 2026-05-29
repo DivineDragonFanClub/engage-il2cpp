@@ -2,763 +2,192 @@
 
 #[cfg(feature = "app-mapgodexp-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::singletonclass_1::{ISingletonClass_1, SingletonClass_1},
-        system::{
-            object::{IObject, Object},
-            r#enum::{Enum, IEnum},
-            valuetype::{IValueType, ValueType},
-        },
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapgodexp/MapGodExp_Kinds.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct MapGodExp_Kinds {
-        pub value: i32,
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: singletonclass_1 :: { ISingletonClass_1 , SingletonClass_1 }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapgodexp/MapGodExp_Kinds.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct MapGodExp_Kinds  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for MapGodExp_Kinds  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapGodExp.Kinds";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    impl ::unity2::ClassIdentity for MapGodExp_Kinds {
-        const NAME: &'static str = "MapGodExp.Kinds";
-        const NAMESPACE: &'static str = "App";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  ::unity2::IlType for MapGodExp_Kinds  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::IlType for MapGodExp_Kinds {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  MapGodExp_Kinds  {
+    pub fn fixed() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl MapGodExp_Kinds {
-        pub fn fixed() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn battle() -> Self {
-            Self { value: 1 }
-        }
+    pub fn battle() -> Self {
+        Self { value: 1 }
 
-        pub fn rod() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn command_skill() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn engage_attack() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn kill() -> Self {
-            Self { value: 5 }
-        }
-
-        pub fn num() -> Self {
-            Self { value: 6 }
-        }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapgodexp/MapGodExp_KindDesc.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct MapGodExp_KindDesc {
-        pub param_name: ::unity2::Il2CppString,
-        pub is_multi: bool,
+
+    pub fn rod() -> Self {
+        Self { value: 2 }
+
     }
 
-    impl ::unity2::ClassIdentity for MapGodExp_KindDesc {
-        const NAME: &'static str = "MapGodExp.KindDesc";
-        const NAMESPACE: &'static str = "App";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+    pub fn command_skill() -> Self {
+        Self { value: 3 }
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+
+
+    pub fn engage_attack() -> Self {
+        Self { value: 4 }
+
+    }
+
+
+    pub fn kill() -> Self {
+        Self { value: 5 }
+
+    }
+
+
+    pub fn num() -> Self {
+        Self { value: 6 }
+
+    }
+
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapgodexp/MapGodExp_KindDesc.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct MapGodExp_KindDesc {
+    pub param_name: :: unity2 :: Il2CppString,
+    pub is_multi: bool,
+}
+
+
+impl ::unity2::ClassIdentity for MapGodExp_KindDesc {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapGodExp.KindDesc";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for MapGodExp_KindDesc {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl ::unity2::IlType for MapGodExp_KindDesc {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapgodexp/MapGodExp.md"))]
-    #[::unity2::class(namespace = "App", name = "MapGodExp")]
-    # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: mapgodexp :: MapGodExp >)]
-    pub struct MapGodExp {
-        #[offset(32)]
-        #[rename(name = "m_AddFlag")]
-        pub m_add_flag: crate::app::bitfield32::BitField32,
-        #[offset(40)]
-        #[rename(name = "m_CommitUnit")]
-        pub m_commit_unit: crate::app::unit::Unit,
-        #[offset(48)]
-        #[rename(name = "m_CommitGodUnit")]
-        pub m_commit_god_unit: crate::app::godunit::GodUnit,
-        #[offset(56)]
-        #[rename(name = "m_Exp")]
-        pub m_exp: i32,
-        #[offset(60)]
-        #[rename(name = "m_Dirty")]
-        pub m_dirty: i32,
-        #[static_field]
-        #[rename(name = "KindDescs")]
-        pub kind_descs: ::unity2::Array<crate::app::mapgodexp::MapGodExp_KindDesc>,
-        #[static_field]
-        #[rename(name = "EngageParamNameSuffix")]
-        pub engage_param_name_suffix: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "RingDirtyKindDescs")]
-        pub ring_dirty_kind_descs: ::unity2::Array<crate::app::mapgodexp::MapGodExp_KindDesc>,
-    }
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapgodexp/MapGodExp.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapGodExp")] # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: mapgodexp :: MapGodExp >)] pub struct MapGodExp {
+# [offset (32)] # [rename (name = "m_AddFlag")] pub m_add_flag : crate :: app :: bitfield32 :: BitField32 ,
+# [offset (40)] # [rename (name = "m_CommitUnit")] pub m_commit_unit : crate :: app :: unit :: Unit ,
+# [offset (48)] # [rename (name = "m_CommitGodUnit")] pub m_commit_god_unit : crate :: app :: godunit :: GodUnit ,
+# [offset (56)] # [rename (name = "m_Exp")] pub m_exp : i32 ,
+# [offset (60)] # [rename (name = "m_Dirty")] pub m_dirty : i32 ,
+# [static_field] # [rename (name = "KindDescs")] pub kind_descs : :: unity2 :: Array < crate :: app :: mapgodexp :: MapGodExp_KindDesc > ,
+# [static_field] # [rename (name = "EngageParamNameSuffix")] pub engage_param_name_suffix : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "RingDirtyKindDescs")] pub ring_dirty_kind_descs : :: unity2 :: Array < crate :: app :: mapgodexp :: MapGodExp_KindDesc > ,
+}
+
 }
 
 #[cfg(feature = "app-mapgodexp-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-mapgodexp")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapGodExp_KindDesc_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapGodExp_KindDesc as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapGodExp_KindDesc as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: MapGodExp_KindDesc, param_name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapGodExp_KindDesc, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, param_name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapGodExp_KindDesc as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapGodExp_KindDesc as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor_2(
-        this: MapGodExp_KindDesc,
-        param_name: ::unity2::Il2CppString,
-        is_multi: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MapGodExp_KindDesc, ::unity2::Il2CppString, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
-        inner(this, param_name, is_multi, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MapGodExp_KindDesc_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapGodExp_KindDesc as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapGodExp_KindDesc as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : MapGodExp_KindDesc , param_name : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapGodExp_KindDesc , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , param_name , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapGodExp_KindDesc as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapGodExp_KindDesc as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor_2 (this : MapGodExp_KindDesc , param_name : :: unity2 :: Il2CppString , is_multi : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapGodExp_KindDesc , :: unity2 :: Il2CppString , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor_2 :: get_method_info () . method_ptr ,) ; inner (this , param_name , is_multi , __unity2_method_info) } }
 
 #[cfg(feature = "app-mapgodexp")]
-impl MapGodExp_KindDesc {
-    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
-    pub fn ctor(self, param_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe { __MapGodExp_KindDesc_unity2_raw::ctor(self, ::core::convert::Into::into(param_name), ::core::option::Option::None) }
-    }
-
-    #[doc = "`.ctor(::unity2::Il2CppString, bool)` overload"]
-    pub fn ctor_2(self, param_name: impl ::core::convert::Into<::unity2::Il2CppString>, is_multi: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            __MapGodExp_KindDesc_unity2_raw::ctor_2(
-                self,
-                ::core::convert::Into::into(param_name),
-                ::core::convert::Into::into(is_multi),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+impl MapGodExp_KindDesc { # [doc = "`.ctor(::unity2::Il2CppString)` overload"] pub fn ctor (self , param_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { __MapGodExp_KindDesc_unity2_raw :: ctor (self , :: core :: convert :: Into :: into (param_name) , :: core :: option :: Option :: None) } } # [doc = "`.ctor(::unity2::Il2CppString, bool)` overload"] pub fn ctor_2 (self , param_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , is_multi : impl :: core :: convert :: Into < bool >) -> () { unsafe { __MapGodExp_KindDesc_unity2_raw :: ctor_2 (self , :: core :: convert :: Into :: into (param_name) , :: core :: convert :: Into :: into (is_multi) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-mapgodexp")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapGodExp_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<MapGodExp as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapGodExp as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: MapGodExp, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapGodExp, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_battle {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::battlecalculator::BattleCalculator as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<MapGodExp as ::unity2::ClassIdentity>::class(), "AddBattle", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapGodExp as ::unity2::ClassIdentity>::NAME,
-                        "AddBattle",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_battle(
-        this: MapGodExp,
-        calculator: crate::app::battlecalculator::BattleCalculator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MapGodExp, crate::app::battlecalculator::BattleCalculator, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add_battle::get_method_info().method_ptr);
-        inner(this, calculator, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_command_skill {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapGodExp as ::unity2::ClassIdentity>::class(),
-                "AddCommandSkill",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapGodExp as ::unity2::ClassIdentity>::NAME,
-                        "AddCommandSkill",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_command_skill(this: MapGodExp, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapGodExp, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add_command_skill::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_engage_attack {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapGodExp as ::unity2::ClassIdentity>::class(),
-                "AddEngageAttack",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapGodExp as ::unity2::ClassIdentity>::NAME,
-                        "AddEngageAttack",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_engage_attack(this: MapGodExp, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapGodExp, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add_engage_attack::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_multiplier {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::godunit::GodUnit as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapGodExp as ::unity2::ClassIdentity>::class(),
-                "GetMultiplier",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapGodExp as ::unity2::ClassIdentity>::NAME,
-                        "GetMultiplier",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_multiplier(god_unit: crate::app::godunit::GodUnit, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(crate::app::godunit::GodUnit, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_get_multiplier::get_method_info().method_ptr);
-        inner(god_unit, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_try_commit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<MapGodExp as ::unity2::ClassIdentity>::class(), "TryCommit", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapGodExp as ::unity2::ClassIdentity>::NAME,
-                        "TryCommit",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn try_commit(this: MapGodExp, super_: crate::app::procinst::ProcInst, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapGodExp, crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_try_commit::get_method_info().method_ptr);
-        inner(this, super_, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_reset {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<MapGodExp as ::unity2::ClassIdentity>::class(), "Reset", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapGodExp as ::unity2::ClassIdentity>::NAME,
-                        "Reset",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn reset(this: MapGodExp, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapGodExp, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_reset::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::mapgodexp::MapGodExp_Kinds as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<MapGodExp as ::unity2::ClassIdentity>::class(), "Add", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <MapGodExp as ::unity2::ClassIdentity>::NAME, "Add", e),
-            }
-        }
-    }
-    pub unsafe fn add(this: MapGodExp, kind: crate::app::mapgodexp::MapGodExp_Kinds, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapGodExp, crate::app::mapgodexp::MapGodExp_Kinds, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add::get_method_info().method_ptr);
-        inner(this, kind, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_exp {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::mapgodexp::MapGodExp_Kinds as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<MapGodExp as ::unity2::ClassIdentity>::class(), "GetExp", 2, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapGodExp as ::unity2::ClassIdentity>::NAME,
-                        "GetExp",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_exp(
-        this: MapGodExp,
-        kind: crate::app::mapgodexp::MapGodExp_Kinds,
-        is_engage: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(MapGodExp, crate::app::mapgodexp::MapGodExp_Kinds, bool, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_exp::get_method_info().method_ptr);
-        inner(this, kind, is_engage, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_current_unit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapGodExp as ::unity2::ClassIdentity>::class(),
-                "GetCurrentUnit",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapGodExp as ::unity2::ClassIdentity>::NAME,
-                        "GetCurrentUnit",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_current_unit(this: MapGodExp, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::unit::Unit {
-        let inner: extern "C" fn(MapGodExp, ::unity2::OptionalMethod) -> crate::app::unit::Unit =
-            ::core::mem::transmute(__lookup_get_current_unit::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_valid_common {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapGodExp as ::unity2::ClassIdentity>::class(),
-                "IsValidCommon",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapGodExp as ::unity2::ClassIdentity>::NAME,
-                        "IsValidCommon",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_valid_common(this: MapGodExp, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(MapGodExp, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_valid_common::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_dirty {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::mapgodexp::MapGodExp_Kinds as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<MapGodExp as ::unity2::ClassIdentity>::class(), "GetDirty", 2, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapGodExp as ::unity2::ClassIdentity>::NAME,
-                        "GetDirty",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_dirty(
-        this: MapGodExp,
-        kind: crate::app::mapgodexp::MapGodExp_Kinds,
-        is_engage: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(MapGodExp, crate::app::mapgodexp::MapGodExp_Kinds, bool, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_dirty::get_method_info().method_ptr);
-        inner(this, kind, is_engage, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<MapGodExp as ::unity2::ClassIdentity>::class(), ".cctor", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapGodExp as ::unity2::ClassIdentity>::NAME,
-                        ".cctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
+impl MapGodExp_KindDesc { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapGodExp_KindDesc_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapGodExp_KindDesc_unity2_raw :: __lookup_ctor_2 :: get_method_info () } }
+
+#[cfg(feature = "app-mapgodexp")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MapGodExp_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapGodExp as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapGodExp as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : MapGodExp , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapGodExp , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_battle { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: battlecalculator :: BattleCalculator as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapGodExp as :: unity2 :: ClassIdentity > :: class () , "AddBattle" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapGodExp as :: unity2 :: ClassIdentity > :: NAME , "AddBattle" , e) , } } } pub unsafe fn add_battle (this : MapGodExp , calculator : crate :: app :: battlecalculator :: BattleCalculator , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapGodExp , crate :: app :: battlecalculator :: BattleCalculator , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_battle :: get_method_info () . method_ptr ,) ; inner (this , calculator , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_command_skill { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapGodExp as :: unity2 :: ClassIdentity > :: class () , "AddCommandSkill" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapGodExp as :: unity2 :: ClassIdentity > :: NAME , "AddCommandSkill" , e) , } } } pub unsafe fn add_command_skill (this : MapGodExp , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapGodExp , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_command_skill :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_engage_attack { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapGodExp as :: unity2 :: ClassIdentity > :: class () , "AddEngageAttack" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapGodExp as :: unity2 :: ClassIdentity > :: NAME , "AddEngageAttack" , e) , } } } pub unsafe fn add_engage_attack (this : MapGodExp , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapGodExp , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_engage_attack :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_multiplier { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: godunit :: GodUnit as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapGodExp as :: unity2 :: ClassIdentity > :: class () , "GetMultiplier" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapGodExp as :: unity2 :: ClassIdentity > :: NAME , "GetMultiplier" , e) , } } } pub unsafe fn get_multiplier (god_unit : crate :: app :: godunit :: GodUnit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (crate :: app :: godunit :: GodUnit , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_get_multiplier :: get_method_info () . method_ptr ,) ; inner (god_unit , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_try_commit { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapGodExp as :: unity2 :: ClassIdentity > :: class () , "TryCommit" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapGodExp as :: unity2 :: ClassIdentity > :: NAME , "TryCommit" , e) , } } } pub unsafe fn try_commit (this : MapGodExp , super_ : crate :: app :: procinst :: ProcInst , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapGodExp , crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_try_commit :: get_method_info () . method_ptr ,) ; inner (this , super_ , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_reset { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapGodExp as :: unity2 :: ClassIdentity > :: class () , "Reset" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapGodExp as :: unity2 :: ClassIdentity > :: NAME , "Reset" , e) , } } } pub unsafe fn reset (this : MapGodExp , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapGodExp , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_reset :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: mapgodexp :: MapGodExp_Kinds as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapGodExp as :: unity2 :: ClassIdentity > :: class () , "Add" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapGodExp as :: unity2 :: ClassIdentity > :: NAME , "Add" , e) , } } } pub unsafe fn add (this : MapGodExp , kind : crate :: app :: mapgodexp :: MapGodExp_Kinds , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapGodExp , crate :: app :: mapgodexp :: MapGodExp_Kinds , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add :: get_method_info () . method_ptr ,) ; inner (this , kind , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_exp { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: mapgodexp :: MapGodExp_Kinds as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapGodExp as :: unity2 :: ClassIdentity > :: class () , "GetExp" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapGodExp as :: unity2 :: ClassIdentity > :: NAME , "GetExp" , e) , } } } pub unsafe fn get_exp (this : MapGodExp , kind : crate :: app :: mapgodexp :: MapGodExp_Kinds , is_engage : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (MapGodExp , crate :: app :: mapgodexp :: MapGodExp_Kinds , bool , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_exp :: get_method_info () . method_ptr ,) ; inner (this , kind , is_engage , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_current_unit { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapGodExp as :: unity2 :: ClassIdentity > :: class () , "GetCurrentUnit" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapGodExp as :: unity2 :: ClassIdentity > :: NAME , "GetCurrentUnit" , e) , } } } pub unsafe fn get_current_unit (this : MapGodExp , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit { let inner : extern "C" fn (MapGodExp , :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit = :: core :: mem :: transmute (__lookup_get_current_unit :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_valid_common { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapGodExp as :: unity2 :: ClassIdentity > :: class () , "IsValidCommon" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapGodExp as :: unity2 :: ClassIdentity > :: NAME , "IsValidCommon" , e) , } } } pub unsafe fn is_valid_common (this : MapGodExp , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (MapGodExp , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_valid_common :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_dirty { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: mapgodexp :: MapGodExp_Kinds as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapGodExp as :: unity2 :: ClassIdentity > :: class () , "GetDirty" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapGodExp as :: unity2 :: ClassIdentity > :: NAME , "GetDirty" , e) , } } } pub unsafe fn get_dirty (this : MapGodExp , kind : crate :: app :: mapgodexp :: MapGodExp_Kinds , is_engage : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (MapGodExp , crate :: app :: mapgodexp :: MapGodExp_Kinds , bool , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_dirty :: get_method_info () . method_ptr ,) ; inner (this , kind , is_engage , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapGodExp as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapGodExp as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
+
+#[cfg(feature = "app-mapgodexp")]
+impl MapGodExp { # [doc = "`GetMultiplier(crate::app::godunit::GodUnit)` overload"] pub fn get_multiplier (god_unit : impl :: core :: convert :: Into < crate :: app :: godunit :: GodUnit >) -> f32 { unsafe { __MapGodExp_unity2_raw :: get_multiplier (:: core :: convert :: Into :: into (god_unit) , :: core :: option :: Option :: None) } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { __MapGodExp_unity2_raw :: cctor (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-mapgodexp")]
+pub trait IMapGodExpMethods : IMapGodExp { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapGodExp as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapGodExp_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } # [doc = "`AddBattle(crate::app::battlecalculator::BattleCalculator)` overload"] fn add_battle (self , calculator : impl :: core :: convert :: Into < crate :: app :: battlecalculator :: BattleCalculator >) -> () { unsafe { let __receiver = < MapGodExp as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapGodExp_unity2_raw :: add_battle (__receiver , :: core :: convert :: Into :: into (calculator) , :: core :: option :: Option :: None) } } # [doc = "`AddCommandSkill()` overload"] fn add_command_skill (self ,) -> () { unsafe { let __receiver = < MapGodExp as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapGodExp_unity2_raw :: add_command_skill (__receiver , :: core :: option :: Option :: None) } } # [doc = "`AddEngageAttack()` overload"] fn add_engage_attack (self ,) -> () { unsafe { let __receiver = < MapGodExp as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapGodExp_unity2_raw :: add_engage_attack (__receiver , :: core :: option :: Option :: None) } } # [doc = "`TryCommit(crate::app::procinst::ProcInst)` overload"] fn try_commit (self , super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { let __receiver = < MapGodExp as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapGodExp_unity2_raw :: try_commit (__receiver , :: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } # [doc = "`Reset()` overload"] fn reset (self ,) -> () { unsafe { let __receiver = < MapGodExp as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapGodExp_unity2_raw :: reset (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Add(crate::app::mapgodexp::MapGodExp_Kinds)` overload"] fn add (self , kind : impl :: core :: convert :: Into < crate :: app :: mapgodexp :: MapGodExp_Kinds >) -> () { unsafe { let __receiver = < MapGodExp as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapGodExp_unity2_raw :: add (__receiver , :: core :: convert :: Into :: into (kind) , :: core :: option :: Option :: None) } } # [doc = "`GetExp(crate::app::mapgodexp::MapGodExp_Kinds, bool)` overload"] fn get_exp (self , kind : impl :: core :: convert :: Into < crate :: app :: mapgodexp :: MapGodExp_Kinds > , is_engage : impl :: core :: convert :: Into < bool >) -> i32 { unsafe { let __receiver = < MapGodExp as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapGodExp_unity2_raw :: get_exp (__receiver , :: core :: convert :: Into :: into (kind) , :: core :: convert :: Into :: into (is_engage) , :: core :: option :: Option :: None) } } # [doc = "`GetCurrentUnit()` overload"] fn get_current_unit (self ,) -> crate :: app :: unit :: Unit { unsafe { let __receiver = < MapGodExp as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapGodExp_unity2_raw :: get_current_unit (__receiver , :: core :: option :: Option :: None) } } # [doc = "`IsValidCommon()` overload"] fn is_valid_common (self ,) -> bool { unsafe { let __receiver = < MapGodExp as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapGodExp_unity2_raw :: is_valid_common (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetDirty(crate::app::mapgodexp::MapGodExp_Kinds, bool)` overload"] fn get_dirty (self , kind : impl :: core :: convert :: Into < crate :: app :: mapgodexp :: MapGodExp_Kinds > , is_engage : impl :: core :: convert :: Into < bool >) -> i32 { unsafe { let __receiver = < MapGodExp as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapGodExp_unity2_raw :: get_dirty (__receiver , :: core :: convert :: Into :: into (kind) , :: core :: convert :: Into :: into (is_engage) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-mapgodexp")]
+impl < __T : IMapGodExp > IMapGodExpMethods for __T { }
+
+#[cfg(feature = "app-mapgodexp")]
+impl MapGodExp { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapGodExp_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn add_battle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapGodExp_unity2_raw :: __lookup_add_battle :: get_method_info () } pub fn add_command_skill_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapGodExp_unity2_raw :: __lookup_add_command_skill :: get_method_info () } pub fn add_engage_attack_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapGodExp_unity2_raw :: __lookup_add_engage_attack :: get_method_info () } pub fn get_multiplier_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapGodExp_unity2_raw :: __lookup_get_multiplier :: get_method_info () } pub fn try_commit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapGodExp_unity2_raw :: __lookup_try_commit :: get_method_info () } pub fn reset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapGodExp_unity2_raw :: __lookup_reset :: get_method_info () } pub fn add_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapGodExp_unity2_raw :: __lookup_add :: get_method_info () } pub fn get_exp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapGodExp_unity2_raw :: __lookup_get_exp :: get_method_info () } pub fn get_current_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapGodExp_unity2_raw :: __lookup_get_current_unit :: get_method_info () } pub fn is_valid_common_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapGodExp_unity2_raw :: __lookup_is_valid_common :: get_method_info () } pub fn get_dirty_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapGodExp_unity2_raw :: __lookup_get_dirty :: get_method_info () } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapGodExp_unity2_raw :: __lookup_cctor :: get_method_info () } }
 
 #[cfg(feature = "app-mapgodexp")]
 impl MapGodExp {
-    #[doc = "`GetMultiplier(crate::app::godunit::GodUnit)` overload"]
-    pub fn get_multiplier(god_unit: impl ::core::convert::Into<crate::app::godunit::GodUnit>) -> f32 {
-        unsafe { __MapGodExp_unity2_raw::get_multiplier(::core::convert::Into::into(god_unit), ::core::option::Option::None) }
-    }
-
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __MapGodExp_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-mapgodexp")]
-pub trait IMapGodExpMethods: IMapGodExp {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <MapGodExp as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapGodExp_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`AddBattle(crate::app::battlecalculator::BattleCalculator)` overload"]
-    fn add_battle(self, calculator: impl ::core::convert::Into<crate::app::battlecalculator::BattleCalculator>) -> () {
-        unsafe {
-            let __receiver = <MapGodExp as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapGodExp_unity2_raw::add_battle(__receiver, ::core::convert::Into::into(calculator), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`AddCommandSkill()` overload"]
-    fn add_command_skill(self) -> () {
-        unsafe {
-            let __receiver = <MapGodExp as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapGodExp_unity2_raw::add_command_skill(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`AddEngageAttack()` overload"]
-    fn add_engage_attack(self) -> () {
-        unsafe {
-            let __receiver = <MapGodExp as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapGodExp_unity2_raw::add_engage_attack(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`TryCommit(crate::app::procinst::ProcInst)` overload"]
-    fn try_commit(self, super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
-        unsafe {
-            let __receiver = <MapGodExp as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapGodExp_unity2_raw::try_commit(__receiver, ::core::convert::Into::into(super_), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Reset()` overload"]
-    fn reset(self) -> () {
-        unsafe {
-            let __receiver = <MapGodExp as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapGodExp_unity2_raw::reset(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Add(crate::app::mapgodexp::MapGodExp_Kinds)` overload"]
-    fn add(self, kind: impl ::core::convert::Into<crate::app::mapgodexp::MapGodExp_Kinds>) -> () {
-        unsafe {
-            let __receiver = <MapGodExp as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapGodExp_unity2_raw::add(__receiver, ::core::convert::Into::into(kind), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetExp(crate::app::mapgodexp::MapGodExp_Kinds, bool)` overload"]
-    fn get_exp(self, kind: impl ::core::convert::Into<crate::app::mapgodexp::MapGodExp_Kinds>, is_engage: impl ::core::convert::Into<bool>) -> i32 {
-        unsafe {
-            let __receiver = <MapGodExp as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapGodExp_unity2_raw::get_exp(
-                __receiver,
-                ::core::convert::Into::into(kind),
-                ::core::convert::Into::into(is_engage),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetCurrentUnit()` overload"]
-    fn get_current_unit(self) -> crate::app::unit::Unit {
-        unsafe {
-            let __receiver = <MapGodExp as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapGodExp_unity2_raw::get_current_unit(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsValidCommon()` overload"]
-    fn is_valid_common(self) -> bool {
-        unsafe {
-            let __receiver = <MapGodExp as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapGodExp_unity2_raw::is_valid_common(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetDirty(crate::app::mapgodexp::MapGodExp_Kinds, bool)` overload"]
-    fn get_dirty(self, kind: impl ::core::convert::Into<crate::app::mapgodexp::MapGodExp_Kinds>, is_engage: impl ::core::convert::Into<bool>) -> i32 {
-        unsafe {
-            let __receiver = <MapGodExp as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapGodExp_unity2_raw::get_dirty(
-                __receiver,
-                ::core::convert::Into::into(kind),
-                ::core::convert::Into::into(is_engage),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-mapgodexp")]
-impl<__T: IMapGodExp> IMapGodExpMethods for __T {}
-
-#[cfg(feature = "app-mapgodexp")]
-impl MapGodExp {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(MapGodExp), ::core::stringify!(new),));
-        <Self as IMapGodExpMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapGodExp) , :: core :: stringify ! (new) ,)) ; < Self as IMapGodExpMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-mapgodexp")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IMapGodExp, IMapGodExpMethods, MapGodExp, MapGodExp_KindDesc, MapGodExp_Kinds};
-    #[cfg(feature = "app-singletonclass_1")]
-    pub use crate::app::singletonclass_1::ISingletonClass_1Methods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::{
-        app::singletonclass_1::ISingletonClass_1,
-        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
-    };
+    pub use super::MapGodExp_Kinds;
+    pub use super::MapGodExp_KindDesc;
+    pub use super::MapGodExp;
+    pub use super::IMapGodExp;
+    pub use super::IMapGodExpMethods;
+    pub use crate::app::singletonclass_1::ISingletonClass_1;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "app-singletonclass_1")] pub use crate::app::singletonclass_1::ISingletonClass_1Methods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

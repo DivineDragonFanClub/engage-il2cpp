@@ -2,281 +2,58 @@
 
 #[cfg(feature = "app-keyhelpdata-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::{
-            structbase::{IStructBase, StructBase},
-            structdataarray_1::{IStructDataArray_1, StructDataArray_1},
-            structtemplate_1::{IStructTemplate_1, StructTemplate_1},
-        },
-        system::object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/keyhelpdata/KeyHelpData.md"))]
-    #[::unity2::class(namespace = "App", name = "KeyHelpData")]
-    # [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < crate :: app :: keyhelpdata :: KeyHelpData >)]
-    pub struct KeyHelpData {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: structbase :: { IStructBase , StructBase }
+ ;
+ use crate :: app :: structdataarray_1 :: { IStructDataArray_1 , StructDataArray_1 }
+ ;
+ use crate :: app :: structtemplate_1 :: { IStructTemplate_1 , StructTemplate_1 }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/keyhelpdata/KeyHelpData.md"))] # [:: unity2 :: class (namespace = "App" , name = "KeyHelpData")] # [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < crate :: app :: keyhelpdata :: KeyHelpData >)] pub struct KeyHelpData {}
+
 }
 
 #[cfg(feature = "app-keyhelpdata-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-keyhelpdata")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __KeyHelpData_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_load {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<KeyHelpData as ::unity2::ClassIdentity>::class(), "Load", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <KeyHelpData as ::unity2::ClassIdentity>::NAME,
-                        "Load",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn load(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_load::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_button_index {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <KeyHelpData as ::unity2::ClassIdentity>::class(),
-                "get_ButtonIndex",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <KeyHelpData as ::unity2::ClassIdentity>::NAME,
-                        "get_ButtonIndex",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_button_index(this: KeyHelpData, __unity2_method_info: ::unity2::OptionalMethod) -> i8 {
-        let inner: extern "C" fn(KeyHelpData, ::unity2::OptionalMethod) -> i8 =
-            ::core::mem::transmute(__lookup_get_button_index::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_button_index {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i8 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <KeyHelpData as ::unity2::ClassIdentity>::class(),
-                "set_ButtonIndex",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <KeyHelpData as ::unity2::ClassIdentity>::NAME,
-                        "set_ButtonIndex",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_button_index(this: KeyHelpData, value: i8, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(KeyHelpData, i8, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_button_index::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_mid {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<KeyHelpData as ::unity2::ClassIdentity>::class(), "get_MID", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <KeyHelpData as ::unity2::ClassIdentity>::NAME,
-                        "get_MID",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_mid(this: KeyHelpData, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(KeyHelpData, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_mid::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_mid {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<KeyHelpData as ::unity2::ClassIdentity>::class(), "set_MID", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <KeyHelpData as ::unity2::ClassIdentity>::NAME,
-                        "set_MID",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_mid(this: KeyHelpData, value: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(KeyHelpData, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_mid::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<KeyHelpData as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <KeyHelpData as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: KeyHelpData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(KeyHelpData, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __KeyHelpData_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_load { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< KeyHelpData as :: unity2 :: ClassIdentity > :: class () , "Load" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < KeyHelpData as :: unity2 :: ClassIdentity > :: NAME , "Load" , e) , } } } pub unsafe fn load (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_load :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_button_index { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< KeyHelpData as :: unity2 :: ClassIdentity > :: class () , "get_ButtonIndex" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < KeyHelpData as :: unity2 :: ClassIdentity > :: NAME , "get_ButtonIndex" , e) , } } } pub unsafe fn get_button_index (this : KeyHelpData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i8 { let inner : extern "C" fn (KeyHelpData , :: unity2 :: OptionalMethod ,) -> i8 = :: core :: mem :: transmute (__lookup_get_button_index :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_button_index { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i8 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< KeyHelpData as :: unity2 :: ClassIdentity > :: class () , "set_ButtonIndex" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < KeyHelpData as :: unity2 :: ClassIdentity > :: NAME , "set_ButtonIndex" , e) , } } } pub unsafe fn set_button_index (this : KeyHelpData , value : i8 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (KeyHelpData , i8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_button_index :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_mid { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< KeyHelpData as :: unity2 :: ClassIdentity > :: class () , "get_MID" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < KeyHelpData as :: unity2 :: ClassIdentity > :: NAME , "get_MID" , e) , } } } pub unsafe fn get_mid (this : KeyHelpData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (KeyHelpData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_mid :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_mid { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< KeyHelpData as :: unity2 :: ClassIdentity > :: class () , "set_MID" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < KeyHelpData as :: unity2 :: ClassIdentity > :: NAME , "set_MID" , e) , } } } pub unsafe fn set_mid (this : KeyHelpData , value : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (KeyHelpData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_mid :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< KeyHelpData as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < KeyHelpData as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : KeyHelpData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (KeyHelpData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-keyhelpdata")]
+impl KeyHelpData { # [doc = "`Load()` overload"] pub fn load () -> () { unsafe { __KeyHelpData_unity2_raw :: load (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-keyhelpdata")]
+pub trait IKeyHelpDataMethods : IKeyHelpData { # [doc = "`get_ButtonIndex()` overload"] fn get_button_index (self ,) -> i8 { unsafe { let __receiver = < KeyHelpData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __KeyHelpData_unity2_raw :: get_button_index (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_ButtonIndex(i8)` overload"] fn set_button_index (self , value : impl :: core :: convert :: Into < i8 >) -> () { unsafe { let __receiver = < KeyHelpData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __KeyHelpData_unity2_raw :: set_button_index (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_MID()` overload"] fn get_mid (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < KeyHelpData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __KeyHelpData_unity2_raw :: get_mid (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_MID(::unity2::Il2CppString)` overload"] fn set_mid (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < KeyHelpData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __KeyHelpData_unity2_raw :: set_mid (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < KeyHelpData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __KeyHelpData_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-keyhelpdata")]
+impl < __T : IKeyHelpData > IKeyHelpDataMethods for __T { }
+
+#[cfg(feature = "app-keyhelpdata")]
+impl KeyHelpData { pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __KeyHelpData_unity2_raw :: __lookup_load :: get_method_info () } pub fn get_button_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __KeyHelpData_unity2_raw :: __lookup_get_button_index :: get_method_info () } pub fn set_button_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __KeyHelpData_unity2_raw :: __lookup_set_button_index :: get_method_info () } pub fn get_mid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __KeyHelpData_unity2_raw :: __lookup_get_mid :: get_method_info () } pub fn set_mid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __KeyHelpData_unity2_raw :: __lookup_set_mid :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __KeyHelpData_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-keyhelpdata")]
 impl KeyHelpData {
-    #[doc = "`Load()` overload"]
-    pub fn load() -> () {
-        unsafe { __KeyHelpData_unity2_raw::load(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-keyhelpdata")]
-pub trait IKeyHelpDataMethods: IKeyHelpData {
-    #[doc = "`get_ButtonIndex()` overload"]
-    fn get_button_index(self) -> i8 {
-        unsafe {
-            let __receiver = <KeyHelpData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __KeyHelpData_unity2_raw::get_button_index(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_ButtonIndex(i8)` overload"]
-    fn set_button_index(self, value: impl ::core::convert::Into<i8>) -> () {
-        unsafe {
-            let __receiver = <KeyHelpData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __KeyHelpData_unity2_raw::set_button_index(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_MID()` overload"]
-    fn get_mid(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <KeyHelpData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __KeyHelpData_unity2_raw::get_mid(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_MID(::unity2::Il2CppString)` overload"]
-    fn set_mid(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver = <KeyHelpData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __KeyHelpData_unity2_raw::set_mid(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <KeyHelpData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __KeyHelpData_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-keyhelpdata")]
-impl<__T: IKeyHelpData> IKeyHelpDataMethods for __T {}
-
-#[cfg(feature = "app-keyhelpdata")]
-impl KeyHelpData {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(KeyHelpData), ::core::stringify!(new),));
-        <Self as IKeyHelpDataMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (KeyHelpData) , :: core :: stringify ! (new) ,)) ; < Self as IKeyHelpDataMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-keyhelpdata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IKeyHelpData, IKeyHelpDataMethods, KeyHelpData};
-    #[cfg(feature = "app-structbase")]
-    pub use crate::app::structbase::IStructBaseMethods;
-    #[cfg(feature = "app-structdataarray_1")]
-    pub use crate::app::structdataarray_1::IStructDataArray_1Methods;
-    #[cfg(feature = "app-structtemplate_1")]
-    pub use crate::app::structtemplate_1::IStructTemplate_1Methods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::{
-        app::{structbase::IStructBase, structdataarray_1::IStructDataArray_1, structtemplate_1::IStructTemplate_1},
-        system::object::IObject,
-    };
+    pub use super::KeyHelpData;
+    pub use super::IKeyHelpData;
+    pub use super::IKeyHelpDataMethods;
+    pub use crate::app::structbase::IStructBase;
+    pub use crate::app::structdataarray_1::IStructDataArray_1;
+    pub use crate::app::structtemplate_1::IStructTemplate_1;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "app-structbase")] pub use crate::app::structbase::IStructBaseMethods;
+    #[cfg(feature = "app-structdataarray_1")] pub use crate::app::structdataarray_1::IStructDataArray_1Methods;
+    #[cfg(feature = "app-structtemplate_1")] pub use crate::app::structtemplate_1::IStructTemplate_1Methods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

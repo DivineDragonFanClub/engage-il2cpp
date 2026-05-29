@@ -2,18 +2,17 @@
 
 #[cfg(feature = "system-reflection-emit-modulebuilder-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        reflection::module::{IModule, Module},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/emit/modulebuilder/ModuleBuilder.md"))]
-    #[::unity2::class(namespace = "System.Reflection.Emit", name = "ModuleBuilder")]
-    #[parent(crate::system::reflection::module::Module)]
-    pub struct ModuleBuilder {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: reflection :: module :: { IModule , Module }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/emit/modulebuilder/ModuleBuilder.md"))] # [:: unity2 :: class (namespace = "System.Reflection.Emit" , name = "ModuleBuilder")] # [parent (crate :: system :: reflection :: module :: Module)] pub struct ModuleBuilder {}
+
 }
 
 #[cfg(feature = "system-reflection-emit-modulebuilder-types")]
@@ -22,10 +21,10 @@ pub use __types::*;
 #[cfg(feature = "system-reflection-emit-modulebuilder")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IModuleBuilder, ModuleBuilder};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-reflection-module")]
-    pub use crate::system::reflection::module::IModuleMethods;
-    pub use crate::system::{object::IObject, reflection::module::IModule};
+    pub use super::ModuleBuilder;
+    pub use super::IModuleBuilder;
+    pub use crate::system::object::IObject;
+    pub use crate::system::reflection::module::IModule;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-reflection-module")] pub use crate::system::reflection::module::IModuleMethods;
 }

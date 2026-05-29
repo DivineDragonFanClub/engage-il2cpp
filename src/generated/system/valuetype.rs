@@ -2,369 +2,46 @@
 
 #[cfg(feature = "system-valuetype-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/valuetype/ValueType.md"))]
-    #[::unity2::class(namespace = "System", name = "ValueType")]
-    #[parent(crate::system::object::Object)]
-    pub struct ValueType {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/valuetype/ValueType.md"))] # [:: unity2 :: class (namespace = "System" , name = "ValueType")] # [parent (crate :: system :: object :: Object)] pub struct ValueType {}
+
 }
 
 #[cfg(feature = "system-valuetype-types")]
 pub use __types::*;
 
 #[cfg(feature = "system-valuetype")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ValueType_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<ValueType as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ValueType as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: ValueType, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ValueType, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_internal_equals {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::Array<crate::system::object::Object> as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ValueType as ::unity2::ClassIdentity>::class(),
-                "InternalEquals",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ValueType as ::unity2::ClassIdentity>::NAME,
-                        "InternalEquals",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn internal_equals(
-        o1: crate::system::object::Object,
-        o2: crate::system::object::Object,
-        fields: *mut ::unity2::Array<crate::system::object::Object>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            crate::system::object::Object,
-            crate::system::object::Object,
-            *mut ::unity2::Array<crate::system::object::Object>,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(__lookup_internal_equals::get_method_info().method_ptr);
-        inner(o1, o2, fields, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_default_equals {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ValueType as ::unity2::ClassIdentity>::class(),
-                "DefaultEquals",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ValueType as ::unity2::ClassIdentity>::NAME,
-                        "DefaultEquals",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn default_equals(
-        o1: crate::system::object::Object,
-        o2: crate::system::object::Object,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(crate::system::object::Object, crate::system::object::Object, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_default_equals::get_method_info().method_ptr);
-        inner(o1, o2, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_equals {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<ValueType as ::unity2::ClassIdentity>::class(), "Equals", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ValueType as ::unity2::ClassIdentity>::NAME,
-                        "Equals",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn equals(this: ValueType, obj: crate::system::object::Object, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(ValueType, crate::system::object::Object, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_equals::get_method_info().method_ptr);
-        inner(this, obj, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_internal_get_hash_code {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::Array<crate::system::object::Object> as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ValueType as ::unity2::ClassIdentity>::class(),
-                "InternalGetHashCode",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ValueType as ::unity2::ClassIdentity>::NAME,
-                        "InternalGetHashCode",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn internal_get_hash_code(
-        o: crate::system::object::Object,
-        fields: *mut ::unity2::Array<crate::system::object::Object>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(
-            crate::system::object::Object,
-            *mut ::unity2::Array<crate::system::object::Object>,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(__lookup_internal_get_hash_code::get_method_info().method_ptr);
-        inner(o, fields, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_hash_code {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ValueType as ::unity2::ClassIdentity>::class(),
-                "GetHashCode",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ValueType as ::unity2::ClassIdentity>::NAME,
-                        "GetHashCode",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_hash_code(this: ValueType, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(ValueType, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_hash_code::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_to_string {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<ValueType as ::unity2::ClassIdentity>::class(), "ToString", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ValueType as ::unity2::ClassIdentity>::NAME,
-                        "ToString",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn to_string(this: ValueType, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(ValueType, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_to_string::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ValueType_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ValueType as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ValueType as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : ValueType , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ValueType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_internal_equals { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type () , < crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: system :: object :: Object > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ValueType as :: unity2 :: ClassIdentity > :: class () , "InternalEquals" , 3 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ValueType as :: unity2 :: ClassIdentity > :: NAME , "InternalEquals" , e) , } } } pub unsafe fn internal_equals (o1 : crate :: system :: object :: Object , o2 : crate :: system :: object :: Object , fields : * mut :: unity2 :: Array < crate :: system :: object :: Object > , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (crate :: system :: object :: Object , crate :: system :: object :: Object , * mut :: unity2 :: Array < crate :: system :: object :: Object > , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_internal_equals :: get_method_info () . method_ptr ,) ; inner (o1 , o2 , fields , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_default_equals { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type () , < crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ValueType as :: unity2 :: ClassIdentity > :: class () , "DefaultEquals" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ValueType as :: unity2 :: ClassIdentity > :: NAME , "DefaultEquals" , e) , } } } pub unsafe fn default_equals (o1 : crate :: system :: object :: Object , o2 : crate :: system :: object :: Object , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (crate :: system :: object :: Object , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_default_equals :: get_method_info () . method_ptr ,) ; inner (o1 , o2 , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_equals { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ValueType as :: unity2 :: ClassIdentity > :: class () , "Equals" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ValueType as :: unity2 :: ClassIdentity > :: NAME , "Equals" , e) , } } } pub unsafe fn equals (this : ValueType , obj : crate :: system :: object :: Object , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (ValueType , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_equals :: get_method_info () . method_ptr ,) ; inner (this , obj , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_internal_get_hash_code { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: system :: object :: Object > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ValueType as :: unity2 :: ClassIdentity > :: class () , "InternalGetHashCode" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ValueType as :: unity2 :: ClassIdentity > :: NAME , "InternalGetHashCode" , e) , } } } pub unsafe fn internal_get_hash_code (o : crate :: system :: object :: Object , fields : * mut :: unity2 :: Array < crate :: system :: object :: Object > , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (crate :: system :: object :: Object , * mut :: unity2 :: Array < crate :: system :: object :: Object > , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_internal_get_hash_code :: get_method_info () . method_ptr ,) ; inner (o , fields , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_hash_code { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ValueType as :: unity2 :: ClassIdentity > :: class () , "GetHashCode" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ValueType as :: unity2 :: ClassIdentity > :: NAME , "GetHashCode" , e) , } } } pub unsafe fn get_hash_code (this : ValueType , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (ValueType , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_hash_code :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_to_string { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ValueType as :: unity2 :: ClassIdentity > :: class () , "ToString" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ValueType as :: unity2 :: ClassIdentity > :: NAME , "ToString" , e) , } } } pub unsafe fn to_string (this : ValueType , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (ValueType , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_to_string :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "system-valuetype")]
+impl ValueType { # [doc = "`InternalEquals(crate::system::object::Object, crate::system::object::Object, *mut::unity2::Array<crate::system::object::Object>)` overload"] pub fn internal_equals (o1 : impl :: core :: convert :: Into < crate :: system :: object :: Object > , o2 : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> (bool , :: unity2 :: Array < crate :: system :: object :: Object >) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < :: unity2 :: Array < crate :: system :: object :: Object > > :: uninit () ; let __ret = { __ValueType_unity2_raw :: internal_equals (:: core :: convert :: Into :: into (o1) , :: core :: convert :: Into :: into (o2) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } ; (__ret , __out_0 . assume_init ()) } } # [doc = "`DefaultEquals(crate::system::object::Object, crate::system::object::Object)` overload"] pub fn default_equals (o1 : impl :: core :: convert :: Into < crate :: system :: object :: Object > , o2 : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { __ValueType_unity2_raw :: default_equals (:: core :: convert :: Into :: into (o1) , :: core :: convert :: Into :: into (o2) , :: core :: option :: Option :: None) } } # [doc = "`InternalGetHashCode(crate::system::object::Object, *mut::unity2::Array<crate::system::object::Object>)` overload"] pub fn internal_get_hash_code (o : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> (i32 , :: unity2 :: Array < crate :: system :: object :: Object >) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < :: unity2 :: Array < crate :: system :: object :: Object > > :: uninit () ; let __ret = { __ValueType_unity2_raw :: internal_get_hash_code (:: core :: convert :: Into :: into (o) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } ; (__ret , __out_0 . assume_init ()) } } }
+
+#[cfg(feature = "system-valuetype")]
+pub trait IValueTypeMethods : IValueType { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ValueType as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ValueType_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Equals(crate::system::object::Object)` overload"] fn equals (self , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { let __receiver = < ValueType as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ValueType_unity2_raw :: equals (__receiver , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } # [doc = "`GetHashCode()` overload"] fn get_hash_code (self ,) -> i32 { unsafe { let __receiver = < ValueType as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ValueType_unity2_raw :: get_hash_code (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ToString()` overload"] fn to_string (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ValueType as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ValueType_unity2_raw :: to_string (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "system-valuetype")]
+impl < __T : IValueType > IValueTypeMethods for __T { }
+
+#[cfg(feature = "system-valuetype")]
+impl ValueType { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ValueType_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn internal_equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ValueType_unity2_raw :: __lookup_internal_equals :: get_method_info () } pub fn default_equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ValueType_unity2_raw :: __lookup_default_equals :: get_method_info () } pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ValueType_unity2_raw :: __lookup_equals :: get_method_info () } pub fn internal_get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ValueType_unity2_raw :: __lookup_internal_get_hash_code :: get_method_info () } pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ValueType_unity2_raw :: __lookup_get_hash_code :: get_method_info () } pub fn to_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ValueType_unity2_raw :: __lookup_to_string :: get_method_info () } }
 
 #[cfg(feature = "system-valuetype")]
 impl ValueType {
-    #[doc = "`InternalEquals(crate::system::object::Object, crate::system::object::Object, *mut::unity2::Array<crate::system::object::Object>)` overload"]
-    pub fn internal_equals(
-        o1: impl ::core::convert::Into<crate::system::object::Object>,
-        o2: impl ::core::convert::Into<crate::system::object::Object>,
-    ) -> (bool, ::unity2::Array<crate::system::object::Object>) {
-        unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<::unity2::Array<crate::system::object::Object>>::uninit();
-            let __ret = {
-                __ValueType_unity2_raw::internal_equals(
-                    ::core::convert::Into::into(o1),
-                    ::core::convert::Into::into(o2),
-                    __out_0.as_mut_ptr(),
-                    ::core::option::Option::None,
-                )
-            };
-            (__ret, __out_0.assume_init())
-        }
-    }
-
-    #[doc = "`DefaultEquals(crate::system::object::Object, crate::system::object::Object)` overload"]
-    pub fn default_equals(
-        o1: impl ::core::convert::Into<crate::system::object::Object>,
-        o2: impl ::core::convert::Into<crate::system::object::Object>,
-    ) -> bool {
-        unsafe {
-            __ValueType_unity2_raw::default_equals(
-                ::core::convert::Into::into(o1),
-                ::core::convert::Into::into(o2),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`InternalGetHashCode(crate::system::object::Object, *mut::unity2::Array<crate::system::object::Object>)` overload"]
-    pub fn internal_get_hash_code(
-        o: impl ::core::convert::Into<crate::system::object::Object>,
-    ) -> (i32, ::unity2::Array<crate::system::object::Object>) {
-        unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<::unity2::Array<crate::system::object::Object>>::uninit();
-            let __ret = {
-                __ValueType_unity2_raw::internal_get_hash_code(::core::convert::Into::into(o), __out_0.as_mut_ptr(), ::core::option::Option::None)
-            };
-            (__ret, __out_0.assume_init())
-        }
-    }
-}
-
-#[cfg(feature = "system-valuetype")]
-pub trait IValueTypeMethods: IValueType {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <ValueType as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ValueType_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Equals(crate::system::object::Object)` overload"]
-    fn equals(self, obj: impl ::core::convert::Into<crate::system::object::Object>) -> bool {
-        unsafe {
-            let __receiver = <ValueType as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ValueType_unity2_raw::equals(__receiver, ::core::convert::Into::into(obj), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetHashCode()` overload"]
-    fn get_hash_code(self) -> i32 {
-        unsafe {
-            let __receiver = <ValueType as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ValueType_unity2_raw::get_hash_code(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ToString()` overload"]
-    fn to_string(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <ValueType as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ValueType_unity2_raw::to_string(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "system-valuetype")]
-impl<__T: IValueType> IValueTypeMethods for __T {}
-
-#[cfg(feature = "system-valuetype")]
-impl ValueType {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(ValueType), ::core::stringify!(new),));
-        <Self as IValueTypeMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ValueType) , :: core :: stringify ! (new) ,)) ; < Self as IValueTypeMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "system-valuetype")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IValueType, IValueTypeMethods, ValueType};
+    pub use super::ValueType;
+    pub use super::IValueType;
+    pub use super::IValueTypeMethods;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

@@ -2,649 +2,91 @@
 
 #[cfg(feature = "root-akspatialaudiolistener-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akspatialaudiolistener/AkSpatialAudioListener_SpatialAudioListenerList.md"))]
-    #[::unity2::class(namespace = "", name = "AkSpatialAudioListener.SpatialAudioListenerList")]
-    #[parent(crate::system::object::Object)]
-    pub struct AkSpatialAudioListener_SpatialAudioListenerList {
-        #[offset(16)]
-        #[rename(name = "listenerList")]
-        pub listener_list: crate::system::collections::generic::list_1::List_1<crate::root::akspatialaudiolistener::AkSpatialAudioListener>,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akspatialaudiolistener/AkSpatialAudioListener.md"))]
-    #[::unity2::class(namespace = "", name = "AkSpatialAudioListener")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct AkSpatialAudioListener {
-        #[static_field]
-        #[rename(name = "s_SpatialAudioListener")]
-        pub s_spatial_audio_listener: crate::root::akspatialaudiolistener::AkSpatialAudioListener,
-        #[static_field]
-        #[rename(name = "spatialAudioListeners")]
-        pub spatial_audio_listeners: crate::root::akspatialaudiolistener::AkSpatialAudioListener_SpatialAudioListenerList,
-        #[offset(24)]
-        #[rename(name = "AkAudioListener")]
-        pub ak_audio_listener: crate::root::akaudiolistener::AkAudioListener,
-    }
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akspatialaudiolistener/AkSpatialAudioListener.md"))] # [:: unity2 :: class (namespace = "" , name = "AkSpatialAudioListener")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct AkSpatialAudioListener {
+# [static_field] # [rename (name = "s_SpatialAudioListener")] pub s_spatial_audio_listener : crate :: root :: akspatialaudiolistener :: AkSpatialAudioListener ,
+# [static_field] # [rename (name = "spatialAudioListeners")] pub spatial_audio_listeners : crate :: root :: akspatialaudiolistener :: AkSpatialAudioListener_SpatialAudioListenerList ,
+# [offset (24)] # [rename (name = "AkAudioListener")] pub ak_audio_listener : crate :: root :: akaudiolistener :: AkAudioListener ,
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akspatialaudiolistener/AkSpatialAudioListener_SpatialAudioListenerList.md"))] # [:: unity2 :: class (namespace = "" , name = "AkSpatialAudioListener.SpatialAudioListenerList")] # [parent (crate :: system :: object :: Object)] pub struct AkSpatialAudioListener_SpatialAudioListenerList {
+# [offset (16)] # [rename (name = "listenerList")] pub listener_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: root :: akspatialaudiolistener :: AkSpatialAudioListener > ,
+}
+
 }
 
 #[cfg(feature = "root-akspatialaudiolistener-types")]
 pub use __types::*;
 
 #[cfg(feature = "root-akspatialaudiolistener")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AkSpatialAudioListener_SpatialAudioListenerList_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_listener_list {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkSpatialAudioListener_SpatialAudioListenerList as ::unity2::ClassIdentity>::class(),
-                "get_ListenerList",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkSpatialAudioListener_SpatialAudioListenerList as ::unity2::ClassIdentity>::NAME,
-                        "get_ListenerList",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_listener_list(
-        this: AkSpatialAudioListener_SpatialAudioListenerList,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::list_1::List_1<crate::root::akspatialaudiolistener::AkSpatialAudioListener> {
-        let inner: extern "C" fn(
-            AkSpatialAudioListener_SpatialAudioListenerList,
-            ::unity2::OptionalMethod,
-        )
-            -> crate::system::collections::generic::list_1::List_1<crate::root::akspatialaudiolistener::AkSpatialAudioListener> =
-            ::core::mem::transmute(__lookup_get_listener_list::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::root::akspatialaudiolistener::AkSpatialAudioListener as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkSpatialAudioListener_SpatialAudioListenerList as ::unity2::ClassIdentity>::class(),
-                "Add",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkSpatialAudioListener_SpatialAudioListenerList as ::unity2::ClassIdentity>::NAME,
-                        "Add",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add(
-        this: AkSpatialAudioListener_SpatialAudioListenerList,
-        listener: crate::root::akspatialaudiolistener::AkSpatialAudioListener,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            AkSpatialAudioListener_SpatialAudioListenerList,
-            crate::root::akspatialaudiolistener::AkSpatialAudioListener,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(__lookup_add::get_method_info().method_ptr);
-        inner(this, listener, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_remove {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::root::akspatialaudiolistener::AkSpatialAudioListener as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkSpatialAudioListener_SpatialAudioListenerList as ::unity2::ClassIdentity>::class(),
-                "Remove",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkSpatialAudioListener_SpatialAudioListenerList as ::unity2::ClassIdentity>::NAME,
-                        "Remove",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn remove(
-        this: AkSpatialAudioListener_SpatialAudioListenerList,
-        listener: crate::root::akspatialaudiolistener::AkSpatialAudioListener,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            AkSpatialAudioListener_SpatialAudioListenerList,
-            crate::root::akspatialaudiolistener::AkSpatialAudioListener,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(__lookup_remove::get_method_info().method_ptr);
-        inner(this, listener, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_refresh {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkSpatialAudioListener_SpatialAudioListenerList as ::unity2::ClassIdentity>::class(),
-                "Refresh",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkSpatialAudioListener_SpatialAudioListenerList as ::unity2::ClassIdentity>::NAME,
-                        "Refresh",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn refresh(this: AkSpatialAudioListener_SpatialAudioListenerList, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AkSpatialAudioListener_SpatialAudioListenerList, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_refresh::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkSpatialAudioListener_SpatialAudioListenerList as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkSpatialAudioListener_SpatialAudioListenerList as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: AkSpatialAudioListener_SpatialAudioListenerList, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AkSpatialAudioListener_SpatialAudioListenerList, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __AkSpatialAudioListener_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_the_spatial_audio_listener { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkSpatialAudioListener as :: unity2 :: ClassIdentity > :: class () , "get_TheSpatialAudioListener" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkSpatialAudioListener as :: unity2 :: ClassIdentity > :: NAME , "get_TheSpatialAudioListener" , e) , } } } pub unsafe fn get_the_spatial_audio_listener (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: root :: akaudiolistener :: AkAudioListener { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: root :: akaudiolistener :: AkAudioListener = :: core :: mem :: transmute (__lookup_get_the_spatial_audio_listener :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_spatial_audio_listeners { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkSpatialAudioListener as :: unity2 :: ClassIdentity > :: class () , "get_SpatialAudioListeners" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkSpatialAudioListener as :: unity2 :: ClassIdentity > :: NAME , "get_SpatialAudioListeners" , e) , } } } pub unsafe fn get_spatial_audio_listeners (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: root :: akspatialaudiolistener :: AkSpatialAudioListener_SpatialAudioListenerList { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: root :: akspatialaudiolistener :: AkSpatialAudioListener_SpatialAudioListenerList = :: core :: mem :: transmute (__lookup_get_spatial_audio_listeners :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_awake { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkSpatialAudioListener as :: unity2 :: ClassIdentity > :: class () , "Awake" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkSpatialAudioListener as :: unity2 :: ClassIdentity > :: NAME , "Awake" , e) , } } } pub unsafe fn awake (this : AkSpatialAudioListener , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkSpatialAudioListener , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_awake :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_enable { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkSpatialAudioListener as :: unity2 :: ClassIdentity > :: class () , "OnEnable" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkSpatialAudioListener as :: unity2 :: ClassIdentity > :: NAME , "OnEnable" , e) , } } } pub unsafe fn on_enable (this : AkSpatialAudioListener , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkSpatialAudioListener , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_enable :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_disable { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkSpatialAudioListener as :: unity2 :: ClassIdentity > :: class () , "OnDisable" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkSpatialAudioListener as :: unity2 :: ClassIdentity > :: NAME , "OnDisable" , e) , } } } pub unsafe fn on_disable (this : AkSpatialAudioListener , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkSpatialAudioListener , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_disable :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkSpatialAudioListener as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkSpatialAudioListener as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : AkSpatialAudioListener , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkSpatialAudioListener , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkSpatialAudioListener as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkSpatialAudioListener as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
+
+#[cfg(feature = "root-akspatialaudiolistener")]
+impl AkSpatialAudioListener { # [doc = "`get_TheSpatialAudioListener()` overload"] pub fn get_the_spatial_audio_listener () -> crate :: root :: akaudiolistener :: AkAudioListener { unsafe { __AkSpatialAudioListener_unity2_raw :: get_the_spatial_audio_listener (:: core :: option :: Option :: None) } } # [doc = "`get_SpatialAudioListeners()` overload"] pub fn get_spatial_audio_listeners () -> crate :: root :: akspatialaudiolistener :: AkSpatialAudioListener_SpatialAudioListenerList { unsafe { __AkSpatialAudioListener_unity2_raw :: get_spatial_audio_listeners (:: core :: option :: Option :: None) } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { __AkSpatialAudioListener_unity2_raw :: cctor (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "root-akspatialaudiolistener")]
+pub trait IAkSpatialAudioListenerMethods : IAkSpatialAudioListener { # [doc = "`Awake()` overload"] fn awake (self ,) -> () { unsafe { let __receiver = < AkSpatialAudioListener as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkSpatialAudioListener_unity2_raw :: awake (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnEnable()` overload"] fn on_enable (self ,) -> () { unsafe { let __receiver = < AkSpatialAudioListener as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkSpatialAudioListener_unity2_raw :: on_enable (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnDisable()` overload"] fn on_disable (self ,) -> () { unsafe { let __receiver = < AkSpatialAudioListener as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkSpatialAudioListener_unity2_raw :: on_disable (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AkSpatialAudioListener as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkSpatialAudioListener_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "root-akspatialaudiolistener")]
+impl < __T : IAkSpatialAudioListener > IAkSpatialAudioListenerMethods for __T { }
+
+#[cfg(feature = "root-akspatialaudiolistener")]
+impl AkSpatialAudioListener { pub fn get_the_spatial_audio_listener_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkSpatialAudioListener_unity2_raw :: __lookup_get_the_spatial_audio_listener :: get_method_info () } pub fn get_spatial_audio_listeners_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkSpatialAudioListener_unity2_raw :: __lookup_get_spatial_audio_listeners :: get_method_info () } pub fn awake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkSpatialAudioListener_unity2_raw :: __lookup_awake :: get_method_info () } pub fn on_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkSpatialAudioListener_unity2_raw :: __lookup_on_enable :: get_method_info () } pub fn on_disable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkSpatialAudioListener_unity2_raw :: __lookup_on_disable :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkSpatialAudioListener_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkSpatialAudioListener_unity2_raw :: __lookup_cctor :: get_method_info () } }
+
+#[cfg(feature = "root-akspatialaudiolistener")]
+impl AkSpatialAudioListener {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkSpatialAudioListener) , :: core :: stringify ! (new) ,)) ; < Self as IAkSpatialAudioListenerMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "root-akspatialaudiolistener")]
-pub trait IAkSpatialAudioListener_SpatialAudioListenerListMethods: IAkSpatialAudioListener_SpatialAudioListenerList {
-    #[doc = "`get_ListenerList()` overload"]
-    fn get_listener_list(self) -> crate::system::collections::generic::list_1::List_1<crate::root::akspatialaudiolistener::AkSpatialAudioListener> {
-        unsafe {
-            let __receiver = <AkSpatialAudioListener_SpatialAudioListenerList as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AkSpatialAudioListener_SpatialAudioListenerList_unity2_raw::get_listener_list(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Add(crate::root::akspatialaudiolistener::AkSpatialAudioListener)` overload"]
-    fn add(self, listener: impl ::core::convert::Into<crate::root::akspatialaudiolistener::AkSpatialAudioListener>) -> bool {
-        unsafe {
-            let __receiver = <AkSpatialAudioListener_SpatialAudioListenerList as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AkSpatialAudioListener_SpatialAudioListenerList_unity2_raw::add(
-                __receiver,
-                ::core::convert::Into::into(listener),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Remove(crate::root::akspatialaudiolistener::AkSpatialAudioListener)` overload"]
-    fn remove(self, listener: impl ::core::convert::Into<crate::root::akspatialaudiolistener::AkSpatialAudioListener>) -> bool {
-        unsafe {
-            let __receiver = <AkSpatialAudioListener_SpatialAudioListenerList as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AkSpatialAudioListener_SpatialAudioListenerList_unity2_raw::remove(
-                __receiver,
-                ::core::convert::Into::into(listener),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Refresh()` overload"]
-    fn refresh(self) -> () {
-        unsafe {
-            let __receiver = <AkSpatialAudioListener_SpatialAudioListenerList as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AkSpatialAudioListener_SpatialAudioListenerList_unity2_raw::refresh(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <AkSpatialAudioListener_SpatialAudioListenerList as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AkSpatialAudioListener_SpatialAudioListenerList_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __AkSpatialAudioListener_SpatialAudioListenerList_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_listener_list { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkSpatialAudioListener_SpatialAudioListenerList as :: unity2 :: ClassIdentity > :: class () , "get_ListenerList" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkSpatialAudioListener_SpatialAudioListenerList as :: unity2 :: ClassIdentity > :: NAME , "get_ListenerList" , e) , } } } pub unsafe fn get_listener_list (this : AkSpatialAudioListener_SpatialAudioListenerList , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: root :: akspatialaudiolistener :: AkSpatialAudioListener > { let inner : extern "C" fn (AkSpatialAudioListener_SpatialAudioListenerList , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: root :: akspatialaudiolistener :: AkSpatialAudioListener > = :: core :: mem :: transmute (__lookup_get_listener_list :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: root :: akspatialaudiolistener :: AkSpatialAudioListener as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkSpatialAudioListener_SpatialAudioListenerList as :: unity2 :: ClassIdentity > :: class () , "Add" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkSpatialAudioListener_SpatialAudioListenerList as :: unity2 :: ClassIdentity > :: NAME , "Add" , e) , } } } pub unsafe fn add (this : AkSpatialAudioListener_SpatialAudioListenerList , listener : crate :: root :: akspatialaudiolistener :: AkSpatialAudioListener , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (AkSpatialAudioListener_SpatialAudioListenerList , crate :: root :: akspatialaudiolistener :: AkSpatialAudioListener , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_add :: get_method_info () . method_ptr ,) ; inner (this , listener , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_remove { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: root :: akspatialaudiolistener :: AkSpatialAudioListener as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkSpatialAudioListener_SpatialAudioListenerList as :: unity2 :: ClassIdentity > :: class () , "Remove" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkSpatialAudioListener_SpatialAudioListenerList as :: unity2 :: ClassIdentity > :: NAME , "Remove" , e) , } } } pub unsafe fn remove (this : AkSpatialAudioListener_SpatialAudioListenerList , listener : crate :: root :: akspatialaudiolistener :: AkSpatialAudioListener , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (AkSpatialAudioListener_SpatialAudioListenerList , crate :: root :: akspatialaudiolistener :: AkSpatialAudioListener , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_remove :: get_method_info () . method_ptr ,) ; inner (this , listener , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_refresh { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkSpatialAudioListener_SpatialAudioListenerList as :: unity2 :: ClassIdentity > :: class () , "Refresh" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkSpatialAudioListener_SpatialAudioListenerList as :: unity2 :: ClassIdentity > :: NAME , "Refresh" , e) , } } } pub unsafe fn refresh (this : AkSpatialAudioListener_SpatialAudioListenerList , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkSpatialAudioListener_SpatialAudioListenerList , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_refresh :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkSpatialAudioListener_SpatialAudioListenerList as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkSpatialAudioListener_SpatialAudioListenerList as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : AkSpatialAudioListener_SpatialAudioListenerList , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkSpatialAudioListener_SpatialAudioListenerList , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "root-akspatialaudiolistener")]
-impl<__T: IAkSpatialAudioListener_SpatialAudioListenerList> IAkSpatialAudioListener_SpatialAudioListenerListMethods for __T {}
+pub trait IAkSpatialAudioListener_SpatialAudioListenerListMethods : IAkSpatialAudioListener_SpatialAudioListenerList { # [doc = "`get_ListenerList()` overload"] fn get_listener_list (self ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: root :: akspatialaudiolistener :: AkSpatialAudioListener > { unsafe { let __receiver = < AkSpatialAudioListener_SpatialAudioListenerList as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkSpatialAudioListener_SpatialAudioListenerList_unity2_raw :: get_listener_list (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Add(crate::root::akspatialaudiolistener::AkSpatialAudioListener)` overload"] fn add (self , listener : impl :: core :: convert :: Into < crate :: root :: akspatialaudiolistener :: AkSpatialAudioListener >) -> bool { unsafe { let __receiver = < AkSpatialAudioListener_SpatialAudioListenerList as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkSpatialAudioListener_SpatialAudioListenerList_unity2_raw :: add (__receiver , :: core :: convert :: Into :: into (listener) , :: core :: option :: Option :: None) } } # [doc = "`Remove(crate::root::akspatialaudiolistener::AkSpatialAudioListener)` overload"] fn remove (self , listener : impl :: core :: convert :: Into < crate :: root :: akspatialaudiolistener :: AkSpatialAudioListener >) -> bool { unsafe { let __receiver = < AkSpatialAudioListener_SpatialAudioListenerList as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkSpatialAudioListener_SpatialAudioListenerList_unity2_raw :: remove (__receiver , :: core :: convert :: Into :: into (listener) , :: core :: option :: Option :: None) } } # [doc = "`Refresh()` overload"] fn refresh (self ,) -> () { unsafe { let __receiver = < AkSpatialAudioListener_SpatialAudioListenerList as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkSpatialAudioListener_SpatialAudioListenerList_unity2_raw :: refresh (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AkSpatialAudioListener_SpatialAudioListenerList as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkSpatialAudioListener_SpatialAudioListenerList_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "root-akspatialaudiolistener")]
+impl < __T : IAkSpatialAudioListener_SpatialAudioListenerList > IAkSpatialAudioListener_SpatialAudioListenerListMethods for __T { }
+
+#[cfg(feature = "root-akspatialaudiolistener")]
+impl AkSpatialAudioListener_SpatialAudioListenerList { pub fn get_listener_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkSpatialAudioListener_SpatialAudioListenerList_unity2_raw :: __lookup_get_listener_list :: get_method_info () } pub fn add_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkSpatialAudioListener_SpatialAudioListenerList_unity2_raw :: __lookup_add :: get_method_info () } pub fn remove_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkSpatialAudioListener_SpatialAudioListenerList_unity2_raw :: __lookup_remove :: get_method_info () } pub fn refresh_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkSpatialAudioListener_SpatialAudioListenerList_unity2_raw :: __lookup_refresh :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkSpatialAudioListener_SpatialAudioListenerList_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "root-akspatialaudiolistener")]
 impl AkSpatialAudioListener_SpatialAudioListenerList {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AkSpatialAudioListener_SpatialAudioListenerList),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAkSpatialAudioListener_SpatialAudioListenerListMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "root-akspatialaudiolistener")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AkSpatialAudioListener_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_the_spatial_audio_listener {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkSpatialAudioListener as ::unity2::ClassIdentity>::class(),
-                "get_TheSpatialAudioListener",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkSpatialAudioListener as ::unity2::ClassIdentity>::NAME,
-                        "get_TheSpatialAudioListener",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_the_spatial_audio_listener(__unity2_method_info: ::unity2::OptionalMethod) -> crate::root::akaudiolistener::AkAudioListener {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::root::akaudiolistener::AkAudioListener =
-            ::core::mem::transmute(__lookup_get_the_spatial_audio_listener::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_spatial_audio_listeners {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkSpatialAudioListener as ::unity2::ClassIdentity>::class(),
-                "get_SpatialAudioListeners",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkSpatialAudioListener as ::unity2::ClassIdentity>::NAME,
-                        "get_SpatialAudioListeners",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_spatial_audio_listeners(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::root::akspatialaudiolistener::AkSpatialAudioListener_SpatialAudioListenerList {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::root::akspatialaudiolistener::AkSpatialAudioListener_SpatialAudioListenerList =
-            ::core::mem::transmute(__lookup_get_spatial_audio_listeners::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_awake {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkSpatialAudioListener as ::unity2::ClassIdentity>::class(),
-                "Awake",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkSpatialAudioListener as ::unity2::ClassIdentity>::NAME,
-                        "Awake",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn awake(this: AkSpatialAudioListener, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AkSpatialAudioListener, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_awake::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_enable {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkSpatialAudioListener as ::unity2::ClassIdentity>::class(),
-                "OnEnable",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkSpatialAudioListener as ::unity2::ClassIdentity>::NAME,
-                        "OnEnable",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_enable(this: AkSpatialAudioListener, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AkSpatialAudioListener, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_enable::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_disable {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkSpatialAudioListener as ::unity2::ClassIdentity>::class(),
-                "OnDisable",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkSpatialAudioListener as ::unity2::ClassIdentity>::NAME,
-                        "OnDisable",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_disable(this: AkSpatialAudioListener, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AkSpatialAudioListener, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_disable::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkSpatialAudioListener as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkSpatialAudioListener as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: AkSpatialAudioListener, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AkSpatialAudioListener, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkSpatialAudioListener as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkSpatialAudioListener as ::unity2::ClassIdentity>::NAME,
-                        ".cctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
-
-#[cfg(feature = "root-akspatialaudiolistener")]
-impl AkSpatialAudioListener {
-    #[doc = "`get_TheSpatialAudioListener()` overload"]
-    pub fn get_the_spatial_audio_listener() -> crate::root::akaudiolistener::AkAudioListener {
-        unsafe { __AkSpatialAudioListener_unity2_raw::get_the_spatial_audio_listener(::core::option::Option::None) }
-    }
-
-    #[doc = "`get_SpatialAudioListeners()` overload"]
-    pub fn get_spatial_audio_listeners() -> crate::root::akspatialaudiolistener::AkSpatialAudioListener_SpatialAudioListenerList {
-        unsafe { __AkSpatialAudioListener_unity2_raw::get_spatial_audio_listeners(::core::option::Option::None) }
-    }
-
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __AkSpatialAudioListener_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "root-akspatialaudiolistener")]
-pub trait IAkSpatialAudioListenerMethods: IAkSpatialAudioListener {
-    #[doc = "`Awake()` overload"]
-    fn awake(self) -> () {
-        unsafe {
-            let __receiver =
-                <AkSpatialAudioListener as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkSpatialAudioListener_unity2_raw::awake(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnEnable()` overload"]
-    fn on_enable(self) -> () {
-        unsafe {
-            let __receiver =
-                <AkSpatialAudioListener as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkSpatialAudioListener_unity2_raw::on_enable(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnDisable()` overload"]
-    fn on_disable(self) -> () {
-        unsafe {
-            let __receiver =
-                <AkSpatialAudioListener as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkSpatialAudioListener_unity2_raw::on_disable(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <AkSpatialAudioListener as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkSpatialAudioListener_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "root-akspatialaudiolistener")]
-impl<__T: IAkSpatialAudioListener> IAkSpatialAudioListenerMethods for __T {}
-
-#[cfg(feature = "root-akspatialaudiolistener")]
-impl AkSpatialAudioListener {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AkSpatialAudioListener),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAkSpatialAudioListenerMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkSpatialAudioListener_SpatialAudioListenerList) , :: core :: stringify ! (new) ,)) ; < Self as IAkSpatialAudioListener_SpatialAudioListenerListMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "root-akspatialaudiolistener")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{
-        AkSpatialAudioListener, AkSpatialAudioListener_SpatialAudioListenerList, IAkSpatialAudioListener, IAkSpatialAudioListenerMethods,
-        IAkSpatialAudioListener_SpatialAudioListenerList, IAkSpatialAudioListener_SpatialAudioListenerListMethods,
-    };
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        system::object::IObject,
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::AkSpatialAudioListener;
+    pub use super::IAkSpatialAudioListener;
+    pub use super::IAkSpatialAudioListenerMethods;
+    pub use super::AkSpatialAudioListener_SpatialAudioListenerList;
+    pub use super::IAkSpatialAudioListener_SpatialAudioListenerList;
+    pub use super::IAkSpatialAudioListener_SpatialAudioListenerListMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

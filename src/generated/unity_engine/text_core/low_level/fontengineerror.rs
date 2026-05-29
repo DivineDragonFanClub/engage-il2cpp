@@ -2,96 +2,137 @@
 
 #[cfg(feature = "unity_engine-text_core-low_level-fontengineerror-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        r#enum::{Enum, IEnum},
-        valuetype::{IValueType, ValueType},
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/text_core/low_level/fontengineerror/FontEngineError.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct FontEngineError {
-        pub value: i32,
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/text_core/low_level/fontengineerror/FontEngineError.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct FontEngineError  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for FontEngineError  {
+    const NAMESPACE: &'static str = "UnityEngine.TextCore.LowLevel";
+
+    const NAME: &'static str = "FontEngineError";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    impl ::unity2::ClassIdentity for FontEngineError {
-        const NAME: &'static str = "FontEngineError";
-        const NAMESPACE: &'static str = "UnityEngine.TextCore.LowLevel";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  ::unity2::IlType for FontEngineError  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::IlType for FontEngineError {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  FontEngineError  {
+    pub fn success() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl FontEngineError {
-        pub fn success() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn invalid_file_path() -> Self {
-            Self { value: 1 }
-        }
+    pub fn invalid_file_path() -> Self {
+        Self { value: 1 }
 
-        pub fn invalid_file_format() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn invalid_file_structure() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn invalid_file() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn invalid_table() -> Self {
-            Self { value: 8 }
-        }
-
-        pub fn invalid_glyph_index() -> Self {
-            Self { value: 16 }
-        }
-
-        pub fn invalid_character_code() -> Self {
-            Self { value: 17 }
-        }
-
-        pub fn invalid_pixel_size() -> Self {
-            Self { value: 23 }
-        }
-
-        pub fn invalid_library() -> Self {
-            Self { value: 33 }
-        }
-
-        pub fn invalid_face() -> Self {
-            Self { value: 35 }
-        }
-
-        pub fn invalid_library_or_face() -> Self {
-            Self { value: 41 }
-        }
-
-        pub fn atlas_generation_cancelled() -> Self {
-            Self { value: 100 }
-        }
-
-        pub fn invalid_shared_texture_data() -> Self {
-            Self { value: 101 }
-        }
     }
+
+
+    pub fn invalid_file_format() -> Self {
+        Self { value: 2 }
+
+    }
+
+
+    pub fn invalid_file_structure() -> Self {
+        Self { value: 3 }
+
+    }
+
+
+    pub fn invalid_file() -> Self {
+        Self { value: 4 }
+
+    }
+
+
+    pub fn invalid_table() -> Self {
+        Self { value: 8 }
+
+    }
+
+
+    pub fn invalid_glyph_index() -> Self {
+        Self { value: 16 }
+
+    }
+
+
+    pub fn invalid_character_code() -> Self {
+        Self { value: 17 }
+
+    }
+
+
+    pub fn invalid_pixel_size() -> Self {
+        Self { value: 23 }
+
+    }
+
+
+    pub fn invalid_library() -> Self {
+        Self { value: 33 }
+
+    }
+
+
+    pub fn invalid_face() -> Self {
+        Self { value: 35 }
+
+    }
+
+
+    pub fn invalid_library_or_face() -> Self {
+        Self { value: 41 }
+
+    }
+
+
+    pub fn atlas_generation_cancelled() -> Self {
+        Self { value: 100 }
+
+    }
+
+
+    pub fn invalid_shared_texture_data() -> Self {
+        Self { value: 101 }
+
+    }
+
+}
+
 }
 
 #[cfg(feature = "unity_engine-text_core-low_level-fontengineerror-types")]
@@ -101,11 +142,10 @@ pub use __types::*;
 #[doc(hidden)]
 pub mod prelude {
     pub use super::FontEngineError;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::system::{object::IObject, r#enum::IEnum, valuetype::IValueType};
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

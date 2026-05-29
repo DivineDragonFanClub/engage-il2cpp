@@ -2,98 +2,34 @@
 
 #[cfg(feature = "unity_engine-ui-misc-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/misc/Misc.md"))]
-    #[::unity2::class(namespace = "UnityEngine.UI", name = "Misc")]
-    #[parent(crate::system::object::Object)]
-    pub struct Misc {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/misc/Misc.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "Misc")] # [parent (crate :: system :: object :: Object)] pub struct Misc {}
+
 }
 
 #[cfg(feature = "unity_engine-ui-misc-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-ui-misc")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __Misc_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_destroy {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::object_2::Object_2 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<Misc as ::unity2::ClassIdentity>::class(), "Destroy", 1, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Misc as ::unity2::ClassIdentity>::NAME, "Destroy", e),
-            }
-        }
-    }
-    pub unsafe fn destroy(obj: crate::unity_engine::object_2::Object_2, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(crate::unity_engine::object_2::Object_2, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_destroy::get_method_info().method_ptr);
-        inner(obj, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_destroy_immediate {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::object_2::Object_2 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Misc as ::unity2::ClassIdentity>::class(),
-                "DestroyImmediate",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Misc as ::unity2::ClassIdentity>::NAME,
-                        "DestroyImmediate",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn destroy_immediate(obj: crate::unity_engine::object_2::Object_2, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(crate::unity_engine::object_2::Object_2, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_destroy_immediate::get_method_info().method_ptr);
-        inner(obj, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __Misc_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_destroy { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: object_2 :: Object_2 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Misc as :: unity2 :: ClassIdentity > :: class () , "Destroy" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Misc as :: unity2 :: ClassIdentity > :: NAME , "Destroy" , e) , } } } pub unsafe fn destroy (obj : crate :: unity_engine :: object_2 :: Object_2 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: unity_engine :: object_2 :: Object_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_destroy :: get_method_info () . method_ptr ,) ; inner (obj , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_destroy_immediate { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: object_2 :: Object_2 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Misc as :: unity2 :: ClassIdentity > :: class () , "DestroyImmediate" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Misc as :: unity2 :: ClassIdentity > :: NAME , "DestroyImmediate" , e) , } } } pub unsafe fn destroy_immediate (obj : crate :: unity_engine :: object_2 :: Object_2 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: unity_engine :: object_2 :: Object_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_destroy_immediate :: get_method_info () . method_ptr ,) ; inner (obj , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-ui-misc")]
-impl Misc {
-    #[doc = "`Destroy(crate::unity_engine::object_2::Object_2)` overload"]
-    pub fn destroy(obj: impl ::core::convert::Into<crate::unity_engine::object_2::Object_2>) -> () {
-        unsafe { __Misc_unity2_raw::destroy(::core::convert::Into::into(obj), ::core::option::Option::None) }
-    }
+impl Misc { # [doc = "`Destroy(crate::unity_engine::object_2::Object_2)` overload"] pub fn destroy (obj : impl :: core :: convert :: Into < crate :: unity_engine :: object_2 :: Object_2 >) -> () { unsafe { __Misc_unity2_raw :: destroy (:: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } # [doc = "`DestroyImmediate(crate::unity_engine::object_2::Object_2)` overload"] pub fn destroy_immediate (obj : impl :: core :: convert :: Into < crate :: unity_engine :: object_2 :: Object_2 >) -> () { unsafe { __Misc_unity2_raw :: destroy_immediate (:: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } }
 
-    #[doc = "`DestroyImmediate(crate::unity_engine::object_2::Object_2)` overload"]
-    pub fn destroy_immediate(obj: impl ::core::convert::Into<crate::unity_engine::object_2::Object_2>) -> () {
-        unsafe { __Misc_unity2_raw::destroy_immediate(::core::convert::Into::into(obj), ::core::option::Option::None) }
-    }
-}
+#[cfg(feature = "unity_engine-ui-misc")]
+impl Misc { pub fn destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Misc_unity2_raw :: __lookup_destroy :: get_method_info () } pub fn destroy_immediate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Misc_unity2_raw :: __lookup_destroy_immediate :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-ui-misc")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IMisc, Misc};
+    pub use super::Misc;
+    pub use super::IMisc;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

@@ -2,387 +2,71 @@
 
 #[cfg(feature = "system-boolean-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        valuetype::{IValueType, ValueType},
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/boolean/Boolean.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct Boolean {
-        pub m_value: bool,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
 
-    impl ::unity2::ClassIdentity for Boolean {
-        const NAME: &'static str = "Boolean";
-        const NAMESPACE: &'static str = "System";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/boolean/Boolean.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct Boolean {
+    pub m_value: bool,
+}
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+
+impl ::unity2::ClassIdentity for Boolean {
+    const NAMESPACE: &'static str = "System";
+
+    const NAME: &'static str = "Boolean";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for Boolean {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl ::unity2::IlType for Boolean {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
+
+}
+
 }
 
 #[cfg(feature = "system-boolean-types")]
 pub use __types::*;
 
 #[cfg(feature = "system-boolean")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __Boolean_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_hash_code {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Boolean as ::unity2::ClassIdentity>::class(), "GetHashCode", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Boolean as ::unity2::ClassIdentity>::NAME,
-                        "GetHashCode",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_hash_code(this: Boolean, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(Boolean, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_hash_code::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_to_string {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Boolean as ::unity2::ClassIdentity>::class(), "ToString", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Boolean as ::unity2::ClassIdentity>::NAME,
-                        "ToString",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn to_string(this: Boolean, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(Boolean, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_to_string::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_equals {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<Boolean as ::unity2::ClassIdentity>::class(), "Equals", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Boolean as ::unity2::ClassIdentity>::NAME,
-                        "Equals",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn equals(this: Boolean, obj: crate::system::object::Object, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(Boolean, crate::system::object::Object, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_equals::get_method_info().method_ptr);
-        inner(this, obj, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_equals_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<Boolean as ::unity2::ClassIdentity>::class(), "Equals", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Boolean as ::unity2::ClassIdentity>::NAME,
-                        "Equals",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn equals_2(this: Boolean, obj: bool, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(Boolean, bool, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_equals_2::get_method_info().method_ptr);
-        inner(this, obj, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_compare_to {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<Boolean as ::unity2::ClassIdentity>::class(), "CompareTo", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Boolean as ::unity2::ClassIdentity>::NAME,
-                        "CompareTo",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn compare_to(this: Boolean, obj: crate::system::object::Object, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(Boolean, crate::system::object::Object, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_compare_to::get_method_info().method_ptr);
-        inner(this, obj, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_compare_to_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<Boolean as ::unity2::ClassIdentity>::class(), "CompareTo", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Boolean as ::unity2::ClassIdentity>::NAME,
-                        "CompareTo",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn compare_to_2(this: Boolean, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(Boolean, bool, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_compare_to_2::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_parse {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<Boolean as ::unity2::ClassIdentity>::class(), "Parse", 1, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Boolean as ::unity2::ClassIdentity>::NAME, "Parse", e),
-            }
-        }
-    }
-    pub unsafe fn parse(value: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_parse::get_method_info().method_ptr);
-        inner(value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_try_parse {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<Boolean as ::unity2::ClassIdentity>::class(), "TryParse", 2, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Boolean as ::unity2::ClassIdentity>::NAME,
-                        "TryParse",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn try_parse(value: ::unity2::Il2CppString, result: *mut bool, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::Il2CppString, *mut bool, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_try_parse::get_method_info().method_ptr);
-        inner(value, result, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_trim_white_space_and_null {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Boolean as ::unity2::ClassIdentity>::class(),
-                "TrimWhiteSpaceAndNull",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Boolean as ::unity2::ClassIdentity>::NAME,
-                        "TrimWhiteSpaceAndNull",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn trim_white_space_and_null(value: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_trim_white_space_and_null::get_method_info().method_ptr);
-        inner(value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Boolean as ::unity2::ClassIdentity>::class(), ".cctor", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Boolean as ::unity2::ClassIdentity>::NAME,
-                        ".cctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __Boolean_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_hash_code { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Boolean as :: unity2 :: ClassIdentity > :: class () , "GetHashCode" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Boolean as :: unity2 :: ClassIdentity > :: NAME , "GetHashCode" , e) , } } } pub unsafe fn get_hash_code (this : Boolean , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (Boolean , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_hash_code :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_to_string { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Boolean as :: unity2 :: ClassIdentity > :: class () , "ToString" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Boolean as :: unity2 :: ClassIdentity > :: NAME , "ToString" , e) , } } } pub unsafe fn to_string (this : Boolean , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (Boolean , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_to_string :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_equals { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Boolean as :: unity2 :: ClassIdentity > :: class () , "Equals" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Boolean as :: unity2 :: ClassIdentity > :: NAME , "Equals" , e) , } } } pub unsafe fn equals (this : Boolean , obj : crate :: system :: object :: Object , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (Boolean , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_equals :: get_method_info () . method_ptr ,) ; inner (this , obj , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_equals_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Boolean as :: unity2 :: ClassIdentity > :: class () , "Equals" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Boolean as :: unity2 :: ClassIdentity > :: NAME , "Equals" , e) , } } } pub unsafe fn equals_2 (this : Boolean , obj : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (Boolean , bool , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_equals_2 :: get_method_info () . method_ptr ,) ; inner (this , obj , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_compare_to { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Boolean as :: unity2 :: ClassIdentity > :: class () , "CompareTo" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Boolean as :: unity2 :: ClassIdentity > :: NAME , "CompareTo" , e) , } } } pub unsafe fn compare_to (this : Boolean , obj : crate :: system :: object :: Object , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (Boolean , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_compare_to :: get_method_info () . method_ptr ,) ; inner (this , obj , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_compare_to_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Boolean as :: unity2 :: ClassIdentity > :: class () , "CompareTo" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Boolean as :: unity2 :: ClassIdentity > :: NAME , "CompareTo" , e) , } } } pub unsafe fn compare_to_2 (this : Boolean , value : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (Boolean , bool , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_compare_to_2 :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_parse { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Boolean as :: unity2 :: ClassIdentity > :: class () , "Parse" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Boolean as :: unity2 :: ClassIdentity > :: NAME , "Parse" , e) , } } } pub unsafe fn parse (value : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_parse :: get_method_info () . method_ptr ,) ; inner (value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_try_parse { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Boolean as :: unity2 :: ClassIdentity > :: class () , "TryParse" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Boolean as :: unity2 :: ClassIdentity > :: NAME , "TryParse" , e) , } } } pub unsafe fn try_parse (value : :: unity2 :: Il2CppString , result : * mut bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: Il2CppString , * mut bool , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_try_parse :: get_method_info () . method_ptr ,) ; inner (value , result , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_trim_white_space_and_null { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Boolean as :: unity2 :: ClassIdentity > :: class () , "TrimWhiteSpaceAndNull" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Boolean as :: unity2 :: ClassIdentity > :: NAME , "TrimWhiteSpaceAndNull" , e) , } } } pub unsafe fn trim_white_space_and_null (value : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_trim_white_space_and_null :: get_method_info () . method_ptr ,) ; inner (value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Boolean as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Boolean as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
 
 #[cfg(feature = "system-boolean")]
-impl Boolean {
-    #[doc = "`Parse(::unity2::Il2CppString)` overload"]
-    pub fn parse(value: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
-        unsafe { __Boolean_unity2_raw::parse(::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`TryParse(::unity2::Il2CppString, *mutbool)` overload"]
-    pub fn try_parse(value: impl ::core::convert::Into<::unity2::Il2CppString>) -> (bool, bool) {
-        unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<bool>::uninit();
-            let __ret = { __Boolean_unity2_raw::try_parse(::core::convert::Into::into(value), __out_0.as_mut_ptr(), ::core::option::Option::None) };
-            (__ret, __out_0.assume_init())
-        }
-    }
-
-    #[doc = "`TrimWhiteSpaceAndNull(::unity2::Il2CppString)` overload"]
-    pub fn trim_white_space_and_null(value: impl ::core::convert::Into<::unity2::Il2CppString>) -> ::unity2::Il2CppString {
-        unsafe { __Boolean_unity2_raw::trim_white_space_and_null(::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __Boolean_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
+impl Boolean { # [doc = "`Parse(::unity2::Il2CppString)` overload"] pub fn parse (value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { __Boolean_unity2_raw :: parse (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`TryParse(::unity2::Il2CppString, *mutbool)` overload"] pub fn try_parse (value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> (bool , bool) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < bool > :: uninit () ; let __ret = { __Boolean_unity2_raw :: try_parse (:: core :: convert :: Into :: into (value) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } ; (__ret , __out_0 . assume_init ()) } } # [doc = "`TrimWhiteSpaceAndNull(::unity2::Il2CppString)` overload"] pub fn trim_white_space_and_null (value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Il2CppString { unsafe { __Boolean_unity2_raw :: trim_white_space_and_null (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { __Boolean_unity2_raw :: cctor (:: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "system-boolean")]
-impl Boolean {
-    #[doc = "`GetHashCode()` overload"]
-    pub fn get_hash_code(self) -> i32 {
-        unsafe { __Boolean_unity2_raw::get_hash_code(self, ::core::option::Option::None) }
-    }
+impl Boolean { # [doc = "`GetHashCode()` overload"] pub fn get_hash_code (self ,) -> i32 { unsafe { __Boolean_unity2_raw :: get_hash_code (self , :: core :: option :: Option :: None) } } # [doc = "`ToString()` overload"] pub fn to_string (self ,) -> :: unity2 :: Il2CppString { unsafe { __Boolean_unity2_raw :: to_string (self , :: core :: option :: Option :: None) } } # [doc = "`Equals(crate::system::object::Object)` overload"] pub fn equals (self , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { __Boolean_unity2_raw :: equals (self , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } # [doc = "`Equals(bool)` overload"] pub fn equals_2 (self , obj : impl :: core :: convert :: Into < bool >) -> bool { unsafe { __Boolean_unity2_raw :: equals_2 (self , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } # [doc = "`CompareTo(crate::system::object::Object)` overload"] pub fn compare_to (self , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> i32 { unsafe { __Boolean_unity2_raw :: compare_to (self , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } # [doc = "`CompareTo(bool)` overload"] pub fn compare_to_2 (self , value : impl :: core :: convert :: Into < bool >) -> i32 { unsafe { __Boolean_unity2_raw :: compare_to_2 (self , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } }
 
-    #[doc = "`ToString()` overload"]
-    pub fn to_string(self) -> ::unity2::Il2CppString {
-        unsafe { __Boolean_unity2_raw::to_string(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`Equals(crate::system::object::Object)` overload"]
-    pub fn equals(self, obj: impl ::core::convert::Into<crate::system::object::Object>) -> bool {
-        unsafe { __Boolean_unity2_raw::equals(self, ::core::convert::Into::into(obj), ::core::option::Option::None) }
-    }
-
-    #[doc = "`Equals(bool)` overload"]
-    pub fn equals_2(self, obj: impl ::core::convert::Into<bool>) -> bool {
-        unsafe { __Boolean_unity2_raw::equals_2(self, ::core::convert::Into::into(obj), ::core::option::Option::None) }
-    }
-
-    #[doc = "`CompareTo(crate::system::object::Object)` overload"]
-    pub fn compare_to(self, obj: impl ::core::convert::Into<crate::system::object::Object>) -> i32 {
-        unsafe { __Boolean_unity2_raw::compare_to(self, ::core::convert::Into::into(obj), ::core::option::Option::None) }
-    }
-
-    #[doc = "`CompareTo(bool)` overload"]
-    pub fn compare_to_2(self, value: impl ::core::convert::Into<bool>) -> i32 {
-        unsafe { __Boolean_unity2_raw::compare_to_2(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-}
+#[cfg(feature = "system-boolean")]
+impl Boolean { pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Boolean_unity2_raw :: __lookup_get_hash_code :: get_method_info () } pub fn to_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Boolean_unity2_raw :: __lookup_to_string :: get_method_info () } pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Boolean_unity2_raw :: __lookup_equals :: get_method_info () } pub fn equals_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Boolean_unity2_raw :: __lookup_equals_2 :: get_method_info () } pub fn compare_to_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Boolean_unity2_raw :: __lookup_compare_to :: get_method_info () } pub fn compare_to_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Boolean_unity2_raw :: __lookup_compare_to_2 :: get_method_info () } pub fn parse_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Boolean_unity2_raw :: __lookup_parse :: get_method_info () } pub fn try_parse_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Boolean_unity2_raw :: __lookup_try_parse :: get_method_info () } pub fn trim_white_space_and_null_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Boolean_unity2_raw :: __lookup_trim_white_space_and_null :: get_method_info () } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Boolean_unity2_raw :: __lookup_cctor :: get_method_info () } }
 
 #[cfg(feature = "system-boolean")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::Boolean;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::system::{object::IObject, valuetype::IValueType};
+    pub use crate::system::object::IObject;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

@@ -2,319 +2,72 @@
 
 #[cfg(feature = "moon_sharp-interpreter-tablepair-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        valuetype::{IValueType, ValueType},
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/tablepair/TablePair.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct TablePair {
-        pub key: crate::moon_sharp::interpreter::dynvalue::DynValue,
-        pub value: crate::moon_sharp::interpreter::dynvalue::DynValue,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
 
-    impl ::unity2::ClassIdentity for TablePair {
-        const NAME: &'static str = "TablePair";
-        const NAMESPACE: &'static str = "MoonSharp.Interpreter";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/tablepair/TablePair.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct TablePair {
+    pub key: crate :: moon_sharp :: interpreter :: dynvalue :: DynValue,
+    pub value: crate :: moon_sharp :: interpreter :: dynvalue :: DynValue,
+}
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+
+impl ::unity2::ClassIdentity for TablePair {
+    const NAMESPACE: &'static str = "MoonSharp.Interpreter";
+
+    const NAME: &'static str = "TablePair";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for TablePair {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl ::unity2::IlType for TablePair {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
+
+}
+
 }
 
 #[cfg(feature = "moon_sharp-interpreter-tablepair-types")]
 pub use __types::*;
 
 #[cfg(feature = "moon_sharp-interpreter-tablepair")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __TablePair_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_key {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<TablePair as ::unity2::ClassIdentity>::class(), "get_Key", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TablePair as ::unity2::ClassIdentity>::NAME,
-                        "get_Key",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_key(this: TablePair, __unity2_method_info: ::unity2::OptionalMethod) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
-        let inner: extern "C" fn(TablePair, ::unity2::OptionalMethod) -> crate::moon_sharp::interpreter::dynvalue::DynValue =
-            ::core::mem::transmute(__lookup_get_key::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_key {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::moon_sharp::interpreter::dynvalue::DynValue as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<TablePair as ::unity2::ClassIdentity>::class(), "set_Key", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TablePair as ::unity2::ClassIdentity>::NAME,
-                        "set_Key",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_key(
-        this: TablePair,
-        value: crate::moon_sharp::interpreter::dynvalue::DynValue,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(TablePair, crate::moon_sharp::interpreter::dynvalue::DynValue, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_key::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_value {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<TablePair as ::unity2::ClassIdentity>::class(), "get_Value", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TablePair as ::unity2::ClassIdentity>::NAME,
-                        "get_Value",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_value(this: TablePair, __unity2_method_info: ::unity2::OptionalMethod) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
-        let inner: extern "C" fn(TablePair, ::unity2::OptionalMethod) -> crate::moon_sharp::interpreter::dynvalue::DynValue =
-            ::core::mem::transmute(__lookup_get_value::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_value {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::moon_sharp::interpreter::dynvalue::DynValue as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<TablePair as ::unity2::ClassIdentity>::class(), "set_Value", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TablePair as ::unity2::ClassIdentity>::NAME,
-                        "set_Value",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_value(
-        this: TablePair,
-        value: crate::moon_sharp::interpreter::dynvalue::DynValue,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(TablePair, crate::moon_sharp::interpreter::dynvalue::DynValue, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_value::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::moon_sharp::interpreter::dynvalue::DynValue as ::unity2::IlType>::il_type(),
-                <crate::moon_sharp::interpreter::dynvalue::DynValue as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<TablePair as ::unity2::ClassIdentity>::class(), ".ctor", 2, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TablePair as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: TablePair,
-        key: crate::moon_sharp::interpreter::dynvalue::DynValue,
-        val: crate::moon_sharp::interpreter::dynvalue::DynValue,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            TablePair,
-            crate::moon_sharp::interpreter::dynvalue::DynValue,
-            crate::moon_sharp::interpreter::dynvalue::DynValue,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, key, val, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_nil {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<TablePair as ::unity2::ClassIdentity>::class(), "get_Nil", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TablePair as ::unity2::ClassIdentity>::NAME,
-                        "get_Nil",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_nil(__unity2_method_info: ::unity2::OptionalMethod) -> crate::moon_sharp::interpreter::tablepair::TablePair {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::moon_sharp::interpreter::tablepair::TablePair =
-            ::core::mem::transmute(__lookup_get_nil::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<TablePair as ::unity2::ClassIdentity>::class(), ".cctor", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TablePair as ::unity2::ClassIdentity>::NAME,
-                        ".cctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __TablePair_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_key { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TablePair as :: unity2 :: ClassIdentity > :: class () , "get_Key" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TablePair as :: unity2 :: ClassIdentity > :: NAME , "get_Key" , e) , } } } pub unsafe fn get_key (this : TablePair , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue { let inner : extern "C" fn (TablePair , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue = :: core :: mem :: transmute (__lookup_get_key :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_key { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: dynvalue :: DynValue as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TablePair as :: unity2 :: ClassIdentity > :: class () , "set_Key" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TablePair as :: unity2 :: ClassIdentity > :: NAME , "set_Key" , e) , } } } pub unsafe fn set_key (this : TablePair , value : crate :: moon_sharp :: interpreter :: dynvalue :: DynValue , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TablePair , crate :: moon_sharp :: interpreter :: dynvalue :: DynValue , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_key :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_value { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TablePair as :: unity2 :: ClassIdentity > :: class () , "get_Value" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TablePair as :: unity2 :: ClassIdentity > :: NAME , "get_Value" , e) , } } } pub unsafe fn get_value (this : TablePair , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue { let inner : extern "C" fn (TablePair , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue = :: core :: mem :: transmute (__lookup_get_value :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_value { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: dynvalue :: DynValue as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TablePair as :: unity2 :: ClassIdentity > :: class () , "set_Value" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TablePair as :: unity2 :: ClassIdentity > :: NAME , "set_Value" , e) , } } } pub unsafe fn set_value (this : TablePair , value : crate :: moon_sharp :: interpreter :: dynvalue :: DynValue , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TablePair , crate :: moon_sharp :: interpreter :: dynvalue :: DynValue , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_value :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: dynvalue :: DynValue as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TablePair as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TablePair as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : TablePair , key : crate :: moon_sharp :: interpreter :: dynvalue :: DynValue , val : crate :: moon_sharp :: interpreter :: dynvalue :: DynValue , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TablePair , crate :: moon_sharp :: interpreter :: dynvalue :: DynValue , crate :: moon_sharp :: interpreter :: dynvalue :: DynValue , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , key , val , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_nil { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TablePair as :: unity2 :: ClassIdentity > :: class () , "get_Nil" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TablePair as :: unity2 :: ClassIdentity > :: NAME , "get_Nil" , e) , } } } pub unsafe fn get_nil (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: tablepair :: TablePair { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: tablepair :: TablePair = :: core :: mem :: transmute (__lookup_get_nil :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TablePair as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TablePair as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
 
 #[cfg(feature = "moon_sharp-interpreter-tablepair")]
-impl TablePair {
-    #[doc = "`get_Nil()` overload"]
-    pub fn get_nil() -> crate::moon_sharp::interpreter::tablepair::TablePair {
-        unsafe { __TablePair_unity2_raw::get_nil(::core::option::Option::None) }
-    }
-
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __TablePair_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
+impl TablePair { # [doc = "`get_Nil()` overload"] pub fn get_nil () -> crate :: moon_sharp :: interpreter :: tablepair :: TablePair { unsafe { __TablePair_unity2_raw :: get_nil (:: core :: option :: Option :: None) } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { __TablePair_unity2_raw :: cctor (:: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "moon_sharp-interpreter-tablepair")]
-impl TablePair {
-    #[doc = "`get_Key()` overload"]
-    pub fn get_key(self) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
-        unsafe { __TablePair_unity2_raw::get_key(self, ::core::option::Option::None) }
-    }
+impl TablePair { # [doc = "`get_Key()` overload"] pub fn get_key (self ,) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue { unsafe { __TablePair_unity2_raw :: get_key (self , :: core :: option :: Option :: None) } } # [doc = "`set_Key(crate::moon_sharp::interpreter::dynvalue::DynValue)` overload"] pub fn set_key (self , value : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue >) -> () { unsafe { __TablePair_unity2_raw :: set_key (self , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_Value()` overload"] pub fn get_value (self ,) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue { unsafe { __TablePair_unity2_raw :: get_value (self , :: core :: option :: Option :: None) } } # [doc = "`set_Value(crate::moon_sharp::interpreter::dynvalue::DynValue)` overload"] pub fn set_value (self , value : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue >) -> () { unsafe { __TablePair_unity2_raw :: set_value (self , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`.ctor(crate::moon_sharp::interpreter::dynvalue::DynValue, crate::moon_sharp::interpreter::dynvalue::DynValue)` overload"] pub fn ctor (self , key : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > , val : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue >) -> () { unsafe { __TablePair_unity2_raw :: ctor (self , :: core :: convert :: Into :: into (key) , :: core :: convert :: Into :: into (val) , :: core :: option :: Option :: None) } } }
 
-    #[doc = "`set_Key(crate::moon_sharp::interpreter::dynvalue::DynValue)` overload"]
-    pub fn set_key(self, value: impl ::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue>) -> () {
-        unsafe { __TablePair_unity2_raw::set_key(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_Value()` overload"]
-    pub fn get_value(self) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
-        unsafe { __TablePair_unity2_raw::get_value(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_Value(crate::moon_sharp::interpreter::dynvalue::DynValue)` overload"]
-    pub fn set_value(self, value: impl ::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue>) -> () {
-        unsafe { __TablePair_unity2_raw::set_value(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`.ctor(crate::moon_sharp::interpreter::dynvalue::DynValue, crate::moon_sharp::interpreter::dynvalue::DynValue)` overload"]
-    pub fn ctor(
-        self,
-        key: impl ::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        val: impl ::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-    ) -> () {
-        unsafe {
-            __TablePair_unity2_raw::ctor(
-                self,
-                ::core::convert::Into::into(key),
-                ::core::convert::Into::into(val),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+#[cfg(feature = "moon_sharp-interpreter-tablepair")]
+impl TablePair { pub fn get_key_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TablePair_unity2_raw :: __lookup_get_key :: get_method_info () } pub fn set_key_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TablePair_unity2_raw :: __lookup_set_key :: get_method_info () } pub fn get_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TablePair_unity2_raw :: __lookup_get_value :: get_method_info () } pub fn set_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TablePair_unity2_raw :: __lookup_set_value :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TablePair_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn get_nil_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TablePair_unity2_raw :: __lookup_get_nil :: get_method_info () } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TablePair_unity2_raw :: __lookup_cctor :: get_method_info () } }
 
 #[cfg(feature = "moon_sharp-interpreter-tablepair")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::TablePair;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::system::{object::IObject, valuetype::IValueType};
+    pub use crate::system::object::IObject;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

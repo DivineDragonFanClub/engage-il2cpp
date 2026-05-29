@@ -2,945 +2,163 @@
 
 #[cfg(feature = "app-gx-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::{
-            object::{IObject, Object},
-            r#enum::{Enum, IEnum},
-            valuetype::{IValueType, ValueType},
-        },
-        unity_engine::gui::{GUI, IGUI},
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gx/GX_Anchor.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct GX_Anchor {
-        pub value: i32,
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+ use crate :: unity_engine :: gui :: { GUI , IGUI }
+ ;
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gx/GX_Anchor.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct GX_Anchor  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for GX_Anchor  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "GX.Anchor";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    impl ::unity2::ClassIdentity for GX_Anchor {
-        const NAME: &'static str = "GX.Anchor";
-        const NAMESPACE: &'static str = "App";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  ::unity2::IlType for GX_Anchor  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::IlType for GX_Anchor {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  GX_Anchor  {
+    pub fn center() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl GX_Anchor {
-        pub fn center() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn left_up() -> Self {
-            Self { value: 1 }
-        }
+    pub fn left_up() -> Self {
+        Self { value: 1 }
 
-        pub fn up() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn right_up() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn right() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn right_down() -> Self {
-            Self { value: 5 }
-        }
-
-        pub fn down() -> Self {
-            Self { value: 6 }
-        }
-
-        pub fn left_down() -> Self {
-            Self { value: 7 }
-        }
-
-        pub fn left() -> Self {
-            Self { value: 8 }
-        }
-
-        pub fn num() -> Self {
-            Self { value: 9 }
-        }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gx/GX.md"))]
-    #[::unity2::class(namespace = "App", name = "GX")]
-    #[parent(crate::unity_engine::gui::GUI)]
-    pub struct GX {
-        #[static_field]
-        #[rename(name = "scrollBaseColor")]
-        pub scroll_base_color: crate::unity_engine::color::Color,
-        #[static_field]
-        #[rename(name = "scrollBarColor")]
-        pub scroll_bar_color: crate::unity_engine::color::Color,
-        #[static_field]
-        #[rename(name = "CanvasSizeX")]
-        pub canvas_size_x: f32,
-        #[static_field]
-        #[rename(name = "CanvasSizeY")]
-        pub canvas_size_y: f32,
-        #[static_field]
-        #[rename(name = "CanvasHalfX")]
-        pub canvas_half_x: f32,
-        #[static_field]
-        #[rename(name = "CanvasHalfY")]
-        pub canvas_half_y: f32,
+
+    pub fn up() -> Self {
+        Self { value: 2 }
+
     }
+
+
+    pub fn right_up() -> Self {
+        Self { value: 3 }
+
+    }
+
+
+    pub fn right() -> Self {
+        Self { value: 4 }
+
+    }
+
+
+    pub fn right_down() -> Self {
+        Self { value: 5 }
+
+    }
+
+
+    pub fn down() -> Self {
+        Self { value: 6 }
+
+    }
+
+
+    pub fn left_down() -> Self {
+        Self { value: 7 }
+
+    }
+
+
+    pub fn left() -> Self {
+        Self { value: 8 }
+
+    }
+
+
+    pub fn num() -> Self {
+        Self { value: 9 }
+
+    }
+
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gx/GX.md"))] # [:: unity2 :: class (namespace = "App" , name = "GX")] # [parent (crate :: unity_engine :: gui :: GUI)] pub struct GX {
+# [static_field] # [rename (name = "scrollBaseColor")] pub scroll_base_color : crate :: unity_engine :: color :: Color ,
+# [static_field] # [rename (name = "scrollBarColor")] pub scroll_bar_color : crate :: unity_engine :: color :: Color ,
+# [static_field] # [rename (name = "CanvasSizeX")] pub canvas_size_x : f32 ,
+# [static_field] # [rename (name = "CanvasSizeY")] pub canvas_size_y : f32 ,
+# [static_field] # [rename (name = "CanvasHalfX")] pub canvas_half_x : f32 ,
+# [static_field] # [rename (name = "CanvasHalfY")] pub canvas_half_y : f32 ,
+}
+
 }
 
 #[cfg(feature = "app-gx-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-gx")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __GX_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_anchor_dir {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::gx::GX_Anchor as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<GX as ::unity2::ClassIdentity>::class(), "GetAnchorDir", 1, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GX as ::unity2::ClassIdentity>::NAME,
-                        "GetAnchorDir",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_anchor_dir(
-        anchor: crate::app::gx::GX_Anchor,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::vector2::Vector2 {
-        let inner: extern "C" fn(crate::app::gx::GX_Anchor, ::unity2::OptionalMethod) -> crate::unity_engine::vector2::Vector2 =
-            ::core::mem::transmute(__lookup_get_anchor_dir::get_method_info().method_ptr);
-        inner(anchor, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_anchor_pos {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::gx::GX_Anchor as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<GX as ::unity2::ClassIdentity>::class(), "GetAnchorPos", 1, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GX as ::unity2::ClassIdentity>::NAME,
-                        "GetAnchorPos",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_anchor_pos(
-        anchor: crate::app::gx::GX_Anchor,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::vector3::Vector3 {
-        let inner: extern "C" fn(crate::app::gx::GX_Anchor, ::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 =
-            ::core::mem::transmute(__lookup_get_anchor_pos::get_method_info().method_ptr);
-        inner(anchor, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_reduce_rect {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<GX as ::unity2::ClassIdentity>::class(), "GetReduceRect", 2, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GX as ::unity2::ClassIdentity>::NAME,
-                        "GetReduceRect",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_reduce_rect(
-        rect: crate::unity_engine::rect::Rect,
-        size: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::rect::Rect {
-        let inner: extern "C" fn(crate::unity_engine::rect::Rect, f32, ::unity2::OptionalMethod) -> crate::unity_engine::rect::Rect =
-            ::core::mem::transmute(__lookup_get_reduce_rect::get_method_info().method_ptr);
-        inner(rect, size, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_reduce_rect_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<GX as ::unity2::ClassIdentity>::class(), "GetReduceRect", 3, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GX as ::unity2::ClassIdentity>::NAME,
-                        "GetReduceRect",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_reduce_rect_2(
-        rect: crate::unity_engine::rect::Rect,
-        size_x: f32,
-        size_y: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::rect::Rect {
-        let inner: extern "C" fn(crate::unity_engine::rect::Rect, f32, f32, ::unity2::OptionalMethod) -> crate::unity_engine::rect::Rect =
-            ::core::mem::transmute(__lookup_get_reduce_rect_2::get_method_info().method_ptr);
-        inner(rect, size_x, size_y, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_local_rect {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<GX as ::unity2::ClassIdentity>::class(), "GetLocalRect", 1, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GX as ::unity2::ClassIdentity>::NAME,
-                        "GetLocalRect",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_local_rect(
-        rect: crate::unity_engine::rect::Rect,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::rect::Rect {
-        let inner: extern "C" fn(crate::unity_engine::rect::Rect, ::unity2::OptionalMethod) -> crate::unity_engine::rect::Rect =
-            ::core::mem::transmute(__lookup_get_local_rect::get_method_info().method_ptr);
-        inner(rect, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_setup_screen_matrix {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::gx::GX_Anchor as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<GX as ::unity2::ClassIdentity>::class(), "SetupScreenMatrix", 1, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GX as ::unity2::ClassIdentity>::NAME,
-                        "SetupScreenMatrix",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn setup_screen_matrix(anchor: crate::app::gx::GX_Anchor, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(crate::app::gx::GX_Anchor, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_setup_screen_matrix::get_method_info().method_ptr);
-        inner(anchor, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_screen_space_matrix {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::gx::GX_Anchor as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GX as ::unity2::ClassIdentity>::class(),
-                "GetScreenSpaceMatrix",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GX as ::unity2::ClassIdentity>::NAME,
-                        "GetScreenSpaceMatrix",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_screen_space_matrix(
-        anchor: crate::app::gx::GX_Anchor,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::matrix4x4::Matrix4x4 {
-        let inner: extern "C" fn(crate::app::gx::GX_Anchor, ::unity2::OptionalMethod) -> crate::unity_engine::matrix4x4::Matrix4x4 =
-            ::core::mem::transmute(__lookup_get_screen_space_matrix::get_method_info().method_ptr);
-        inner(anchor, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_draw_rect {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<GX as ::unity2::ClassIdentity>::class(), "DrawRect", 2, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <GX as ::unity2::ClassIdentity>::NAME, "DrawRect", e),
-            }
-        }
-    }
-    pub unsafe fn draw_rect(
-        rect: crate::unity_engine::rect::Rect,
-        color: crate::unity_engine::color::Color,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::unity_engine::rect::Rect, crate::unity_engine::color::Color, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_draw_rect::get_method_info().method_ptr);
-        inner(rect, color, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_draw_rect_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <f32 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<GX as ::unity2::ClassIdentity>::class(), "DrawRect", 5, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <GX as ::unity2::ClassIdentity>::NAME, "DrawRect", e),
-            }
-        }
-    }
-    pub unsafe fn draw_rect_2(
-        x: f32,
-        y: f32,
-        w: f32,
-        h: f32,
-        color: crate::unity_engine::color::Color,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(f32, f32, f32, f32, crate::unity_engine::color::Color, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_draw_rect_2::get_method_info().method_ptr);
-        inner(x, y, w, h, color, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_draw_text {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <f32 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<GX as ::unity2::ClassIdentity>::class(), "DrawText", 6, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <GX as ::unity2::ClassIdentity>::NAME, "DrawText", e),
-            }
-        }
-    }
-    pub unsafe fn draw_text(
-        x: f32,
-        y: f32,
-        w: f32,
-        h: f32,
-        color: crate::unity_engine::color::Color,
-        text: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(f32, f32, f32, f32, crate::unity_engine::color::Color, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_draw_text::get_method_info().method_ptr);
-        inner(x, y, w, h, color, text, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_draw_text_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<GX as ::unity2::ClassIdentity>::class(), "DrawText", 3, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <GX as ::unity2::ClassIdentity>::NAME, "DrawText", e),
-            }
-        }
-    }
-    pub unsafe fn draw_text_2(
-        rect: crate::unity_engine::rect::Rect,
-        color: crate::unity_engine::color::Color,
-        text: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::rect::Rect,
-            crate::unity_engine::color::Color,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_draw_text_2::get_method_info().method_ptr);
-        inner(rect, color, text, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_begin_screen_clip {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<GX as ::unity2::ClassIdentity>::class(), "BeginScreenClip", 1, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GX as ::unity2::ClassIdentity>::NAME,
-                        "BeginScreenClip",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn begin_screen_clip(rect: crate::unity_engine::rect::Rect, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(crate::unity_engine::rect::Rect, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_begin_screen_clip::get_method_info().method_ptr);
-        inner(rect, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_begin_screen_clip_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <f32 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<GX as ::unity2::ClassIdentity>::class(), "BeginScreenClip", 4, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GX as ::unity2::ClassIdentity>::NAME,
-                        "BeginScreenClip",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn begin_screen_clip_2(x: f32, y: f32, width: f32, height: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(f32, f32, f32, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_begin_screen_clip_2::get_method_info().method_ptr);
-        inner(x, y, width, height, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_end_screen_clip {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<GX as ::unity2::ClassIdentity>::class(), "EndScreenClip", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GX as ::unity2::ClassIdentity>::NAME,
-                        "EndScreenClip",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn end_screen_clip(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_end_screen_clip::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_draw_scroll_bar {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <f32 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<GX as ::unity2::ClassIdentity>::class(), "DrawScrollBar", 6, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GX as ::unity2::ClassIdentity>::NAME,
-                        "DrawScrollBar",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn draw_scroll_bar(
-        x: f32,
-        y: f32,
-        color: crate::unity_engine::color::Color,
-        height: f32,
-        pos: f32,
-        max: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(f32, f32, crate::unity_engine::color::Color, f32, f32, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_draw_scroll_bar::get_method_info().method_ptr);
-        inner(x, y, color, height, pos, max, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_text_size {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::guistyle::GUIStyle as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<GX as ::unity2::ClassIdentity>::class(), "GetTextSize", 2, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GX as ::unity2::ClassIdentity>::NAME,
-                        "GetTextSize",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_text_size(
-        style: crate::unity_engine::guistyle::GUIStyle,
-        text: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::vector2::Vector2 {
-        let inner: extern "C" fn(
-            crate::unity_engine::guistyle::GUIStyle,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector2::Vector2 = ::core::mem::transmute(__lookup_get_text_size::get_method_info().method_ptr);
-        inner(style, text, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_text_size_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<GX as ::unity2::ClassIdentity>::class(), "GetTextSize", 1, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GX as ::unity2::ClassIdentity>::NAME,
-                        "GetTextSize",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_text_size_2(
-        text: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::vector2::Vector2 {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> crate::unity_engine::vector2::Vector2 =
-            ::core::mem::transmute(__lookup_get_text_size_2::get_method_info().method_ptr);
-        inner(text, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<GX as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <GX as ::unity2::ClassIdentity>::NAME, ".ctor", e),
-            }
-        }
-    }
-    pub unsafe fn ctor(this: GX, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GX, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<GX as ::unity2::ClassIdentity>::class(), ".cctor", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <GX as ::unity2::ClassIdentity>::NAME, ".cctor", e),
-            }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __GX_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_anchor_dir { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: gx :: GX_Anchor as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GX as :: unity2 :: ClassIdentity > :: class () , "GetAnchorDir" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GX as :: unity2 :: ClassIdentity > :: NAME , "GetAnchorDir" , e) , } } } pub unsafe fn get_anchor_dir (anchor : crate :: app :: gx :: GX_Anchor , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector2 :: Vector2 { let inner : extern "C" fn (crate :: app :: gx :: GX_Anchor , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector2 :: Vector2 = :: core :: mem :: transmute (__lookup_get_anchor_dir :: get_method_info () . method_ptr ,) ; inner (anchor , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_anchor_pos { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: gx :: GX_Anchor as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GX as :: unity2 :: ClassIdentity > :: class () , "GetAnchorPos" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GX as :: unity2 :: ClassIdentity > :: NAME , "GetAnchorPos" , e) , } } } pub unsafe fn get_anchor_pos (anchor : crate :: app :: gx :: GX_Anchor , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 { let inner : extern "C" fn (crate :: app :: gx :: GX_Anchor , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute (__lookup_get_anchor_pos :: get_method_info () . method_ptr ,) ; inner (anchor , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_reduce_rect { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rect :: Rect as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GX as :: unity2 :: ClassIdentity > :: class () , "GetReduceRect" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GX as :: unity2 :: ClassIdentity > :: NAME , "GetReduceRect" , e) , } } } pub unsafe fn get_reduce_rect (rect : crate :: unity_engine :: rect :: Rect , size : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rect :: Rect { let inner : extern "C" fn (crate :: unity_engine :: rect :: Rect , f32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rect :: Rect = :: core :: mem :: transmute (__lookup_get_reduce_rect :: get_method_info () . method_ptr ,) ; inner (rect , size , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_reduce_rect_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rect :: Rect as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GX as :: unity2 :: ClassIdentity > :: class () , "GetReduceRect" , 3 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GX as :: unity2 :: ClassIdentity > :: NAME , "GetReduceRect" , e) , } } } pub unsafe fn get_reduce_rect_2 (rect : crate :: unity_engine :: rect :: Rect , size_x : f32 , size_y : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rect :: Rect { let inner : extern "C" fn (crate :: unity_engine :: rect :: Rect , f32 , f32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rect :: Rect = :: core :: mem :: transmute (__lookup_get_reduce_rect_2 :: get_method_info () . method_ptr ,) ; inner (rect , size_x , size_y , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_local_rect { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rect :: Rect as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GX as :: unity2 :: ClassIdentity > :: class () , "GetLocalRect" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GX as :: unity2 :: ClassIdentity > :: NAME , "GetLocalRect" , e) , } } } pub unsafe fn get_local_rect (rect : crate :: unity_engine :: rect :: Rect , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rect :: Rect { let inner : extern "C" fn (crate :: unity_engine :: rect :: Rect , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rect :: Rect = :: core :: mem :: transmute (__lookup_get_local_rect :: get_method_info () . method_ptr ,) ; inner (rect , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_setup_screen_matrix { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: gx :: GX_Anchor as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GX as :: unity2 :: ClassIdentity > :: class () , "SetupScreenMatrix" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GX as :: unity2 :: ClassIdentity > :: NAME , "SetupScreenMatrix" , e) , } } } pub unsafe fn setup_screen_matrix (anchor : crate :: app :: gx :: GX_Anchor , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: gx :: GX_Anchor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_setup_screen_matrix :: get_method_info () . method_ptr ,) ; inner (anchor , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_screen_space_matrix { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: gx :: GX_Anchor as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GX as :: unity2 :: ClassIdentity > :: class () , "GetScreenSpaceMatrix" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GX as :: unity2 :: ClassIdentity > :: NAME , "GetScreenSpaceMatrix" , e) , } } } pub unsafe fn get_screen_space_matrix (anchor : crate :: app :: gx :: GX_Anchor , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: matrix4x4 :: Matrix4x4 { let inner : extern "C" fn (crate :: app :: gx :: GX_Anchor , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: matrix4x4 :: Matrix4x4 = :: core :: mem :: transmute (__lookup_get_screen_space_matrix :: get_method_info () . method_ptr ,) ; inner (anchor , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_draw_rect { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rect :: Rect as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: color :: Color as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GX as :: unity2 :: ClassIdentity > :: class () , "DrawRect" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GX as :: unity2 :: ClassIdentity > :: NAME , "DrawRect" , e) , } } } pub unsafe fn draw_rect (rect : crate :: unity_engine :: rect :: Rect , color : crate :: unity_engine :: color :: Color , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: unity_engine :: rect :: Rect , crate :: unity_engine :: color :: Color , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_draw_rect :: get_method_info () . method_ptr ,) ; inner (rect , color , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_draw_rect_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< f32 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: color :: Color as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GX as :: unity2 :: ClassIdentity > :: class () , "DrawRect" , 5 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GX as :: unity2 :: ClassIdentity > :: NAME , "DrawRect" , e) , } } } pub unsafe fn draw_rect_2 (x : f32 , y : f32 , w : f32 , h : f32 , color : crate :: unity_engine :: color :: Color , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (f32 , f32 , f32 , f32 , crate :: unity_engine :: color :: Color , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_draw_rect_2 :: get_method_info () . method_ptr ,) ; inner (x , y , w , h , color , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_draw_text { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< f32 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: color :: Color as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GX as :: unity2 :: ClassIdentity > :: class () , "DrawText" , 6 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GX as :: unity2 :: ClassIdentity > :: NAME , "DrawText" , e) , } } } pub unsafe fn draw_text (x : f32 , y : f32 , w : f32 , h : f32 , color : crate :: unity_engine :: color :: Color , text : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (f32 , f32 , f32 , f32 , crate :: unity_engine :: color :: Color , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_draw_text :: get_method_info () . method_ptr ,) ; inner (x , y , w , h , color , text , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_draw_text_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rect :: Rect as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: color :: Color as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GX as :: unity2 :: ClassIdentity > :: class () , "DrawText" , 3 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GX as :: unity2 :: ClassIdentity > :: NAME , "DrawText" , e) , } } } pub unsafe fn draw_text_2 (rect : crate :: unity_engine :: rect :: Rect , color : crate :: unity_engine :: color :: Color , text : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: unity_engine :: rect :: Rect , crate :: unity_engine :: color :: Color , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_draw_text_2 :: get_method_info () . method_ptr ,) ; inner (rect , color , text , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_begin_screen_clip { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rect :: Rect as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GX as :: unity2 :: ClassIdentity > :: class () , "BeginScreenClip" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GX as :: unity2 :: ClassIdentity > :: NAME , "BeginScreenClip" , e) , } } } pub unsafe fn begin_screen_clip (rect : crate :: unity_engine :: rect :: Rect , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: unity_engine :: rect :: Rect , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_begin_screen_clip :: get_method_info () . method_ptr ,) ; inner (rect , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_begin_screen_clip_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< f32 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GX as :: unity2 :: ClassIdentity > :: class () , "BeginScreenClip" , 4 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GX as :: unity2 :: ClassIdentity > :: NAME , "BeginScreenClip" , e) , } } } pub unsafe fn begin_screen_clip_2 (x : f32 , y : f32 , width : f32 , height : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (f32 , f32 , f32 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_begin_screen_clip_2 :: get_method_info () . method_ptr ,) ; inner (x , y , width , height , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_end_screen_clip { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GX as :: unity2 :: ClassIdentity > :: class () , "EndScreenClip" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GX as :: unity2 :: ClassIdentity > :: NAME , "EndScreenClip" , e) , } } } pub unsafe fn end_screen_clip (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_end_screen_clip :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_draw_scroll_bar { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< f32 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: color :: Color as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GX as :: unity2 :: ClassIdentity > :: class () , "DrawScrollBar" , 6 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GX as :: unity2 :: ClassIdentity > :: NAME , "DrawScrollBar" , e) , } } } pub unsafe fn draw_scroll_bar (x : f32 , y : f32 , color : crate :: unity_engine :: color :: Color , height : f32 , pos : f32 , max : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (f32 , f32 , crate :: unity_engine :: color :: Color , f32 , f32 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_draw_scroll_bar :: get_method_info () . method_ptr ,) ; inner (x , y , color , height , pos , max , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_text_size { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: guistyle :: GUIStyle as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GX as :: unity2 :: ClassIdentity > :: class () , "GetTextSize" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GX as :: unity2 :: ClassIdentity > :: NAME , "GetTextSize" , e) , } } } pub unsafe fn get_text_size (style : crate :: unity_engine :: guistyle :: GUIStyle , text : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector2 :: Vector2 { let inner : extern "C" fn (crate :: unity_engine :: guistyle :: GUIStyle , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector2 :: Vector2 = :: core :: mem :: transmute (__lookup_get_text_size :: get_method_info () . method_ptr ,) ; inner (style , text , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_text_size_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GX as :: unity2 :: ClassIdentity > :: class () , "GetTextSize" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GX as :: unity2 :: ClassIdentity > :: NAME , "GetTextSize" , e) , } } } pub unsafe fn get_text_size_2 (text : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector2 :: Vector2 { let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector2 :: Vector2 = :: core :: mem :: transmute (__lookup_get_text_size_2 :: get_method_info () . method_ptr ,) ; inner (text , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GX as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GX as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : GX , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GX , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GX as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GX as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
+
+#[cfg(feature = "app-gx")]
+impl GX { # [doc = "`GetAnchorDir(crate::app::gx::GX_Anchor)` overload"] pub fn get_anchor_dir (anchor : impl :: core :: convert :: Into < crate :: app :: gx :: GX_Anchor >) -> crate :: unity_engine :: vector2 :: Vector2 { unsafe { __GX_unity2_raw :: get_anchor_dir (:: core :: convert :: Into :: into (anchor) , :: core :: option :: Option :: None) } } # [doc = "`GetAnchorPos(crate::app::gx::GX_Anchor)` overload"] pub fn get_anchor_pos (anchor : impl :: core :: convert :: Into < crate :: app :: gx :: GX_Anchor >) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { __GX_unity2_raw :: get_anchor_pos (:: core :: convert :: Into :: into (anchor) , :: core :: option :: Option :: None) } } # [doc = "`GetReduceRect(crate::unity_engine::rect::Rect, f32)` overload"] pub fn get_reduce_rect (rect : impl :: core :: convert :: Into < crate :: unity_engine :: rect :: Rect > , size : impl :: core :: convert :: Into < f32 >) -> crate :: unity_engine :: rect :: Rect { unsafe { __GX_unity2_raw :: get_reduce_rect (:: core :: convert :: Into :: into (rect) , :: core :: convert :: Into :: into (size) , :: core :: option :: Option :: None) } } # [doc = "`GetReduceRect(crate::unity_engine::rect::Rect, f32, f32)` overload"] pub fn get_reduce_rect_2 (rect : impl :: core :: convert :: Into < crate :: unity_engine :: rect :: Rect > , size_x : impl :: core :: convert :: Into < f32 > , size_y : impl :: core :: convert :: Into < f32 >) -> crate :: unity_engine :: rect :: Rect { unsafe { __GX_unity2_raw :: get_reduce_rect_2 (:: core :: convert :: Into :: into (rect) , :: core :: convert :: Into :: into (size_x) , :: core :: convert :: Into :: into (size_y) , :: core :: option :: Option :: None) } } # [doc = "`GetLocalRect(crate::unity_engine::rect::Rect)` overload"] pub fn get_local_rect (rect : impl :: core :: convert :: Into < crate :: unity_engine :: rect :: Rect >) -> crate :: unity_engine :: rect :: Rect { unsafe { __GX_unity2_raw :: get_local_rect (:: core :: convert :: Into :: into (rect) , :: core :: option :: Option :: None) } } # [doc = "`SetupScreenMatrix(crate::app::gx::GX_Anchor)` overload"] pub fn setup_screen_matrix (anchor : impl :: core :: convert :: Into < crate :: app :: gx :: GX_Anchor >) -> () { unsafe { __GX_unity2_raw :: setup_screen_matrix (:: core :: convert :: Into :: into (anchor) , :: core :: option :: Option :: None) } } # [doc = "`GetScreenSpaceMatrix(crate::app::gx::GX_Anchor)` overload"] pub fn get_screen_space_matrix (anchor : impl :: core :: convert :: Into < crate :: app :: gx :: GX_Anchor >) -> crate :: unity_engine :: matrix4x4 :: Matrix4x4 { unsafe { __GX_unity2_raw :: get_screen_space_matrix (:: core :: convert :: Into :: into (anchor) , :: core :: option :: Option :: None) } } # [doc = "`DrawRect(crate::unity_engine::rect::Rect, crate::unity_engine::color::Color)` overload"] pub fn draw_rect (rect : impl :: core :: convert :: Into < crate :: unity_engine :: rect :: Rect > , color : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color >) -> () { unsafe { __GX_unity2_raw :: draw_rect (:: core :: convert :: Into :: into (rect) , :: core :: convert :: Into :: into (color) , :: core :: option :: Option :: None) } } # [doc = "`DrawRect(f32, f32, f32, f32, crate::unity_engine::color::Color)` overload"] pub fn draw_rect_2 (x : impl :: core :: convert :: Into < f32 > , y : impl :: core :: convert :: Into < f32 > , w : impl :: core :: convert :: Into < f32 > , h : impl :: core :: convert :: Into < f32 > , color : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color >) -> () { unsafe { __GX_unity2_raw :: draw_rect_2 (:: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (y) , :: core :: convert :: Into :: into (w) , :: core :: convert :: Into :: into (h) , :: core :: convert :: Into :: into (color) , :: core :: option :: Option :: None) } } # [doc = "`DrawText(f32, f32, f32, f32, crate::unity_engine::color::Color, ::unity2::Il2CppString)` overload"] pub fn draw_text (x : impl :: core :: convert :: Into < f32 > , y : impl :: core :: convert :: Into < f32 > , w : impl :: core :: convert :: Into < f32 > , h : impl :: core :: convert :: Into < f32 > , color : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color > , text : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { __GX_unity2_raw :: draw_text (:: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (y) , :: core :: convert :: Into :: into (w) , :: core :: convert :: Into :: into (h) , :: core :: convert :: Into :: into (color) , :: core :: convert :: Into :: into (text) , :: core :: option :: Option :: None) } } # [doc = "`DrawText(crate::unity_engine::rect::Rect, crate::unity_engine::color::Color, ::unity2::Il2CppString)` overload"] pub fn draw_text_2 (rect : impl :: core :: convert :: Into < crate :: unity_engine :: rect :: Rect > , color : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color > , text : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { __GX_unity2_raw :: draw_text_2 (:: core :: convert :: Into :: into (rect) , :: core :: convert :: Into :: into (color) , :: core :: convert :: Into :: into (text) , :: core :: option :: Option :: None) } } # [doc = "`BeginScreenClip(crate::unity_engine::rect::Rect)` overload"] pub fn begin_screen_clip (rect : impl :: core :: convert :: Into < crate :: unity_engine :: rect :: Rect >) -> () { unsafe { __GX_unity2_raw :: begin_screen_clip (:: core :: convert :: Into :: into (rect) , :: core :: option :: Option :: None) } } # [doc = "`BeginScreenClip(f32, f32, f32, f32)` overload"] pub fn begin_screen_clip_2 (x : impl :: core :: convert :: Into < f32 > , y : impl :: core :: convert :: Into < f32 > , width : impl :: core :: convert :: Into < f32 > , height : impl :: core :: convert :: Into < f32 >) -> () { unsafe { __GX_unity2_raw :: begin_screen_clip_2 (:: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (y) , :: core :: convert :: Into :: into (width) , :: core :: convert :: Into :: into (height) , :: core :: option :: Option :: None) } } # [doc = "`EndScreenClip()` overload"] pub fn end_screen_clip () -> () { unsafe { __GX_unity2_raw :: end_screen_clip (:: core :: option :: Option :: None) } } # [doc = "`DrawScrollBar(f32, f32, crate::unity_engine::color::Color, f32, f32, f32)` overload"] pub fn draw_scroll_bar (x : impl :: core :: convert :: Into < f32 > , y : impl :: core :: convert :: Into < f32 > , color : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color > , height : impl :: core :: convert :: Into < f32 > , pos : impl :: core :: convert :: Into < f32 > , max : impl :: core :: convert :: Into < f32 >) -> () { unsafe { __GX_unity2_raw :: draw_scroll_bar (:: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (y) , :: core :: convert :: Into :: into (color) , :: core :: convert :: Into :: into (height) , :: core :: convert :: Into :: into (pos) , :: core :: convert :: Into :: into (max) , :: core :: option :: Option :: None) } } # [doc = "`GetTextSize(crate::unity_engine::guistyle::GUIStyle, ::unity2::Il2CppString)` overload"] pub fn get_text_size (style : impl :: core :: convert :: Into < crate :: unity_engine :: guistyle :: GUIStyle > , text : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: unity_engine :: vector2 :: Vector2 { unsafe { __GX_unity2_raw :: get_text_size (:: core :: convert :: Into :: into (style) , :: core :: convert :: Into :: into (text) , :: core :: option :: Option :: None) } } # [doc = "`GetTextSize(::unity2::Il2CppString)` overload"] pub fn get_text_size_2 (text : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: unity_engine :: vector2 :: Vector2 { unsafe { __GX_unity2_raw :: get_text_size_2 (:: core :: convert :: Into :: into (text) , :: core :: option :: Option :: None) } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { __GX_unity2_raw :: cctor (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-gx")]
+pub trait IGXMethods : IGX { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GX as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GX_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-gx")]
+impl < __T : IGX > IGXMethods for __T { }
+
+#[cfg(feature = "app-gx")]
+impl GX { pub fn get_anchor_dir_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GX_unity2_raw :: __lookup_get_anchor_dir :: get_method_info () } pub fn get_anchor_pos_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GX_unity2_raw :: __lookup_get_anchor_pos :: get_method_info () } pub fn get_reduce_rect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GX_unity2_raw :: __lookup_get_reduce_rect :: get_method_info () } pub fn get_reduce_rect_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GX_unity2_raw :: __lookup_get_reduce_rect_2 :: get_method_info () } pub fn get_local_rect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GX_unity2_raw :: __lookup_get_local_rect :: get_method_info () } pub fn setup_screen_matrix_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GX_unity2_raw :: __lookup_setup_screen_matrix :: get_method_info () } pub fn get_screen_space_matrix_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GX_unity2_raw :: __lookup_get_screen_space_matrix :: get_method_info () } pub fn draw_rect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GX_unity2_raw :: __lookup_draw_rect :: get_method_info () } pub fn draw_rect_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GX_unity2_raw :: __lookup_draw_rect_2 :: get_method_info () } pub fn draw_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GX_unity2_raw :: __lookup_draw_text :: get_method_info () } pub fn draw_text_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GX_unity2_raw :: __lookup_draw_text_2 :: get_method_info () } pub fn begin_screen_clip_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GX_unity2_raw :: __lookup_begin_screen_clip :: get_method_info () } pub fn begin_screen_clip_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GX_unity2_raw :: __lookup_begin_screen_clip_2 :: get_method_info () } pub fn end_screen_clip_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GX_unity2_raw :: __lookup_end_screen_clip :: get_method_info () } pub fn draw_scroll_bar_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GX_unity2_raw :: __lookup_draw_scroll_bar :: get_method_info () } pub fn get_text_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GX_unity2_raw :: __lookup_get_text_size :: get_method_info () } pub fn get_text_size_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GX_unity2_raw :: __lookup_get_text_size_2 :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GX_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GX_unity2_raw :: __lookup_cctor :: get_method_info () } }
 
 #[cfg(feature = "app-gx")]
 impl GX {
-    #[doc = "`GetAnchorDir(crate::app::gx::GX_Anchor)` overload"]
-    pub fn get_anchor_dir(anchor: impl ::core::convert::Into<crate::app::gx::GX_Anchor>) -> crate::unity_engine::vector2::Vector2 {
-        unsafe { __GX_unity2_raw::get_anchor_dir(::core::convert::Into::into(anchor), ::core::option::Option::None) }
-    }
-
-    #[doc = "`GetAnchorPos(crate::app::gx::GX_Anchor)` overload"]
-    pub fn get_anchor_pos(anchor: impl ::core::convert::Into<crate::app::gx::GX_Anchor>) -> crate::unity_engine::vector3::Vector3 {
-        unsafe { __GX_unity2_raw::get_anchor_pos(::core::convert::Into::into(anchor), ::core::option::Option::None) }
-    }
-
-    #[doc = "`GetReduceRect(crate::unity_engine::rect::Rect, f32)` overload"]
-    pub fn get_reduce_rect(
-        rect: impl ::core::convert::Into<crate::unity_engine::rect::Rect>,
-        size: impl ::core::convert::Into<f32>,
-    ) -> crate::unity_engine::rect::Rect {
-        unsafe {
-            __GX_unity2_raw::get_reduce_rect(
-                ::core::convert::Into::into(rect),
-                ::core::convert::Into::into(size),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`GetReduceRect(crate::unity_engine::rect::Rect, f32, f32)` overload"]
-    pub fn get_reduce_rect_2(
-        rect: impl ::core::convert::Into<crate::unity_engine::rect::Rect>,
-        size_x: impl ::core::convert::Into<f32>,
-        size_y: impl ::core::convert::Into<f32>,
-    ) -> crate::unity_engine::rect::Rect {
-        unsafe {
-            __GX_unity2_raw::get_reduce_rect_2(
-                ::core::convert::Into::into(rect),
-                ::core::convert::Into::into(size_x),
-                ::core::convert::Into::into(size_y),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`GetLocalRect(crate::unity_engine::rect::Rect)` overload"]
-    pub fn get_local_rect(rect: impl ::core::convert::Into<crate::unity_engine::rect::Rect>) -> crate::unity_engine::rect::Rect {
-        unsafe { __GX_unity2_raw::get_local_rect(::core::convert::Into::into(rect), ::core::option::Option::None) }
-    }
-
-    #[doc = "`SetupScreenMatrix(crate::app::gx::GX_Anchor)` overload"]
-    pub fn setup_screen_matrix(anchor: impl ::core::convert::Into<crate::app::gx::GX_Anchor>) -> () {
-        unsafe { __GX_unity2_raw::setup_screen_matrix(::core::convert::Into::into(anchor), ::core::option::Option::None) }
-    }
-
-    #[doc = "`GetScreenSpaceMatrix(crate::app::gx::GX_Anchor)` overload"]
-    pub fn get_screen_space_matrix(anchor: impl ::core::convert::Into<crate::app::gx::GX_Anchor>) -> crate::unity_engine::matrix4x4::Matrix4x4 {
-        unsafe { __GX_unity2_raw::get_screen_space_matrix(::core::convert::Into::into(anchor), ::core::option::Option::None) }
-    }
-
-    #[doc = "`DrawRect(crate::unity_engine::rect::Rect, crate::unity_engine::color::Color)` overload"]
-    pub fn draw_rect(
-        rect: impl ::core::convert::Into<crate::unity_engine::rect::Rect>,
-        color: impl ::core::convert::Into<crate::unity_engine::color::Color>,
-    ) -> () {
-        unsafe {
-            __GX_unity2_raw::draw_rect(
-                ::core::convert::Into::into(rect),
-                ::core::convert::Into::into(color),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`DrawRect(f32, f32, f32, f32, crate::unity_engine::color::Color)` overload"]
-    pub fn draw_rect_2(
-        x: impl ::core::convert::Into<f32>,
-        y: impl ::core::convert::Into<f32>,
-        w: impl ::core::convert::Into<f32>,
-        h: impl ::core::convert::Into<f32>,
-        color: impl ::core::convert::Into<crate::unity_engine::color::Color>,
-    ) -> () {
-        unsafe {
-            __GX_unity2_raw::draw_rect_2(
-                ::core::convert::Into::into(x),
-                ::core::convert::Into::into(y),
-                ::core::convert::Into::into(w),
-                ::core::convert::Into::into(h),
-                ::core::convert::Into::into(color),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`DrawText(f32, f32, f32, f32, crate::unity_engine::color::Color, ::unity2::Il2CppString)` overload"]
-    pub fn draw_text(
-        x: impl ::core::convert::Into<f32>,
-        y: impl ::core::convert::Into<f32>,
-        w: impl ::core::convert::Into<f32>,
-        h: impl ::core::convert::Into<f32>,
-        color: impl ::core::convert::Into<crate::unity_engine::color::Color>,
-        text: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
-        unsafe {
-            __GX_unity2_raw::draw_text(
-                ::core::convert::Into::into(x),
-                ::core::convert::Into::into(y),
-                ::core::convert::Into::into(w),
-                ::core::convert::Into::into(h),
-                ::core::convert::Into::into(color),
-                ::core::convert::Into::into(text),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`DrawText(crate::unity_engine::rect::Rect, crate::unity_engine::color::Color, ::unity2::Il2CppString)` overload"]
-    pub fn draw_text_2(
-        rect: impl ::core::convert::Into<crate::unity_engine::rect::Rect>,
-        color: impl ::core::convert::Into<crate::unity_engine::color::Color>,
-        text: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
-        unsafe {
-            __GX_unity2_raw::draw_text_2(
-                ::core::convert::Into::into(rect),
-                ::core::convert::Into::into(color),
-                ::core::convert::Into::into(text),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`BeginScreenClip(crate::unity_engine::rect::Rect)` overload"]
-    pub fn begin_screen_clip(rect: impl ::core::convert::Into<crate::unity_engine::rect::Rect>) -> () {
-        unsafe { __GX_unity2_raw::begin_screen_clip(::core::convert::Into::into(rect), ::core::option::Option::None) }
-    }
-
-    #[doc = "`BeginScreenClip(f32, f32, f32, f32)` overload"]
-    pub fn begin_screen_clip_2(
-        x: impl ::core::convert::Into<f32>,
-        y: impl ::core::convert::Into<f32>,
-        width: impl ::core::convert::Into<f32>,
-        height: impl ::core::convert::Into<f32>,
-    ) -> () {
-        unsafe {
-            __GX_unity2_raw::begin_screen_clip_2(
-                ::core::convert::Into::into(x),
-                ::core::convert::Into::into(y),
-                ::core::convert::Into::into(width),
-                ::core::convert::Into::into(height),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`EndScreenClip()` overload"]
-    pub fn end_screen_clip() -> () {
-        unsafe { __GX_unity2_raw::end_screen_clip(::core::option::Option::None) }
-    }
-
-    #[doc = "`DrawScrollBar(f32, f32, crate::unity_engine::color::Color, f32, f32, f32)` overload"]
-    pub fn draw_scroll_bar(
-        x: impl ::core::convert::Into<f32>,
-        y: impl ::core::convert::Into<f32>,
-        color: impl ::core::convert::Into<crate::unity_engine::color::Color>,
-        height: impl ::core::convert::Into<f32>,
-        pos: impl ::core::convert::Into<f32>,
-        max: impl ::core::convert::Into<f32>,
-    ) -> () {
-        unsafe {
-            __GX_unity2_raw::draw_scroll_bar(
-                ::core::convert::Into::into(x),
-                ::core::convert::Into::into(y),
-                ::core::convert::Into::into(color),
-                ::core::convert::Into::into(height),
-                ::core::convert::Into::into(pos),
-                ::core::convert::Into::into(max),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`GetTextSize(crate::unity_engine::guistyle::GUIStyle, ::unity2::Il2CppString)` overload"]
-    pub fn get_text_size(
-        style: impl ::core::convert::Into<crate::unity_engine::guistyle::GUIStyle>,
-        text: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> crate::unity_engine::vector2::Vector2 {
-        unsafe {
-            __GX_unity2_raw::get_text_size(
-                ::core::convert::Into::into(style),
-                ::core::convert::Into::into(text),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`GetTextSize(::unity2::Il2CppString)` overload"]
-    pub fn get_text_size_2(text: impl ::core::convert::Into<::unity2::Il2CppString>) -> crate::unity_engine::vector2::Vector2 {
-        unsafe { __GX_unity2_raw::get_text_size_2(::core::convert::Into::into(text), ::core::option::Option::None) }
-    }
-
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __GX_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-gx")]
-pub trait IGXMethods: IGX {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <GX as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GX_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-gx")]
-impl<__T: IGX> IGXMethods for __T {}
-
-#[cfg(feature = "app-gx")]
-impl GX {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(GX), ::core::stringify!(new),));
-        <Self as IGXMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GX) , :: core :: stringify ! (new) ,)) ; < Self as IGXMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-gx")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{GX_Anchor, IGXMethods, GX, IGX};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    #[cfg(feature = "unity_engine-gui")]
-    pub use crate::unity_engine::gui::IGUIMethods;
-    pub use crate::{
-        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
-        unity_engine::gui::IGUI,
-    };
+    pub use super::GX_Anchor;
+    pub use super::GX;
+    pub use super::IGX;
+    pub use super::IGXMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    pub use crate::unity_engine::gui::IGUI;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
+    #[cfg(feature = "unity_engine-gui")] pub use crate::unity_engine::gui::IGUIMethods;
 }

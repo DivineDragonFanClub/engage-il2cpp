@@ -2,217 +2,34 @@
 
 #[cfg(feature = "moon_sharp-interpreter-loaders-iscriptloader-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/loaders/iscriptloader/IScriptLoader.md"))]
-    #[::unity2::class(namespace = "MoonSharp.Interpreter.Loaders", name = "IScriptLoader")]
-    pub struct IScriptLoader {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/loaders/iscriptloader/IScriptLoader.md"))] # [:: unity2 :: class (namespace = "MoonSharp.Interpreter.Loaders" , name = "IScriptLoader")] pub struct IScriptLoader {}
+
 }
 
 #[cfg(feature = "moon_sharp-interpreter-loaders-iscriptloader-types")]
 pub use __types::*;
 
 #[cfg(feature = "moon_sharp-interpreter-loaders-iscriptloader")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __IScriptLoader_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_load_file {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::moon_sharp::interpreter::table::Table as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <IScriptLoader as ::unity2::ClassIdentity>::class(),
-                "LoadFile",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <IScriptLoader as ::unity2::ClassIdentity>::NAME,
-                        "LoadFile",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn load_file(
-        this: IScriptLoader,
-        file: ::unity2::Il2CppString,
-        global_context: crate::moon_sharp::interpreter::table::Table,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::object::Object {
-        let inner: extern "C" fn(
-            IScriptLoader,
-            ::unity2::Il2CppString,
-            crate::moon_sharp::interpreter::table::Table,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::object::Object = ::core::mem::transmute(__lookup_load_file::get_method_info().method_ptr);
-        inner(this, file, global_context, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_resolve_file_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::moon_sharp::interpreter::table::Table as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <IScriptLoader as ::unity2::ClassIdentity>::class(),
-                "ResolveFileName",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <IScriptLoader as ::unity2::ClassIdentity>::NAME,
-                        "ResolveFileName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn resolve_file_name(
-        this: IScriptLoader,
-        filename: ::unity2::Il2CppString,
-        global_context: crate::moon_sharp::interpreter::table::Table,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            IScriptLoader,
-            ::unity2::Il2CppString,
-            crate::moon_sharp::interpreter::table::Table,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(__lookup_resolve_file_name::get_method_info().method_ptr);
-        inner(this, filename, global_context, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_resolve_module_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::moon_sharp::interpreter::table::Table as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <IScriptLoader as ::unity2::ClassIdentity>::class(),
-                "ResolveModuleName",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <IScriptLoader as ::unity2::ClassIdentity>::NAME,
-                        "ResolveModuleName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn resolve_module_name(
-        this: IScriptLoader,
-        modname: ::unity2::Il2CppString,
-        global_context: crate::moon_sharp::interpreter::table::Table,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            IScriptLoader,
-            ::unity2::Il2CppString,
-            crate::moon_sharp::interpreter::table::Table,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(__lookup_resolve_module_name::get_method_info().method_ptr);
-        inner(this, modname, global_context, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __IScriptLoader_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_load_file { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: table :: Table as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< IScriptLoader as :: unity2 :: ClassIdentity > :: class () , "LoadFile" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < IScriptLoader as :: unity2 :: ClassIdentity > :: NAME , "LoadFile" , e) , } } } pub unsafe fn load_file (this : IScriptLoader , file : :: unity2 :: Il2CppString , global_context : crate :: moon_sharp :: interpreter :: table :: Table , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object { let inner : extern "C" fn (IScriptLoader , :: unity2 :: Il2CppString , crate :: moon_sharp :: interpreter :: table :: Table , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute (__lookup_load_file :: get_method_info () . method_ptr ,) ; inner (this , file , global_context , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_resolve_file_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: table :: Table as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< IScriptLoader as :: unity2 :: ClassIdentity > :: class () , "ResolveFileName" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < IScriptLoader as :: unity2 :: ClassIdentity > :: NAME , "ResolveFileName" , e) , } } } pub unsafe fn resolve_file_name (this : IScriptLoader , filename : :: unity2 :: Il2CppString , global_context : crate :: moon_sharp :: interpreter :: table :: Table , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (IScriptLoader , :: unity2 :: Il2CppString , crate :: moon_sharp :: interpreter :: table :: Table , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_resolve_file_name :: get_method_info () . method_ptr ,) ; inner (this , filename , global_context , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_resolve_module_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: table :: Table as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< IScriptLoader as :: unity2 :: ClassIdentity > :: class () , "ResolveModuleName" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < IScriptLoader as :: unity2 :: ClassIdentity > :: NAME , "ResolveModuleName" , e) , } } } pub unsafe fn resolve_module_name (this : IScriptLoader , modname : :: unity2 :: Il2CppString , global_context : crate :: moon_sharp :: interpreter :: table :: Table , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (IScriptLoader , :: unity2 :: Il2CppString , crate :: moon_sharp :: interpreter :: table :: Table , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_resolve_module_name :: get_method_info () . method_ptr ,) ; inner (this , modname , global_context , __unity2_method_info) } }
 
 #[cfg(feature = "moon_sharp-interpreter-loaders-iscriptloader")]
-pub trait IIScriptLoaderMethods: IIScriptLoader {
-    #[doc = "`LoadFile(::unity2::Il2CppString, crate::moon_sharp::interpreter::table::Table)` overload"]
-    fn load_file(
-        self,
-        file: impl ::core::convert::Into<::unity2::Il2CppString>,
-        global_context: impl ::core::convert::Into<crate::moon_sharp::interpreter::table::Table>,
-    ) -> crate::system::object::Object {
-        unsafe {
-            let __receiver = <IScriptLoader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __IScriptLoader_unity2_raw::load_file(
-                __receiver,
-                ::core::convert::Into::into(file),
-                ::core::convert::Into::into(global_context),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ResolveFileName(::unity2::Il2CppString, crate::moon_sharp::interpreter::table::Table)` overload"]
-    fn resolve_file_name(
-        self,
-        filename: impl ::core::convert::Into<::unity2::Il2CppString>,
-        global_context: impl ::core::convert::Into<crate::moon_sharp::interpreter::table::Table>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <IScriptLoader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __IScriptLoader_unity2_raw::resolve_file_name(
-                __receiver,
-                ::core::convert::Into::into(filename),
-                ::core::convert::Into::into(global_context),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ResolveModuleName(::unity2::Il2CppString, crate::moon_sharp::interpreter::table::Table)` overload"]
-    fn resolve_module_name(
-        self,
-        modname: impl ::core::convert::Into<::unity2::Il2CppString>,
-        global_context: impl ::core::convert::Into<crate::moon_sharp::interpreter::table::Table>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <IScriptLoader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __IScriptLoader_unity2_raw::resolve_module_name(
-                __receiver,
-                ::core::convert::Into::into(modname),
-                ::core::convert::Into::into(global_context),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+pub trait IIScriptLoaderMethods : IIScriptLoader { # [doc = "`LoadFile(::unity2::Il2CppString, crate::moon_sharp::interpreter::table::Table)` overload"] fn load_file (self , file : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , global_context : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: table :: Table >) -> crate :: system :: object :: Object { unsafe { let __receiver = < IScriptLoader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IScriptLoader_unity2_raw :: load_file (__receiver , :: core :: convert :: Into :: into (file) , :: core :: convert :: Into :: into (global_context) , :: core :: option :: Option :: None) } } # [doc = "`ResolveFileName(::unity2::Il2CppString, crate::moon_sharp::interpreter::table::Table)` overload"] fn resolve_file_name (self , filename : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , global_context : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: table :: Table >) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < IScriptLoader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IScriptLoader_unity2_raw :: resolve_file_name (__receiver , :: core :: convert :: Into :: into (filename) , :: core :: convert :: Into :: into (global_context) , :: core :: option :: Option :: None) } } # [doc = "`ResolveModuleName(::unity2::Il2CppString, crate::moon_sharp::interpreter::table::Table)` overload"] fn resolve_module_name (self , modname : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , global_context : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: table :: Table >) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < IScriptLoader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IScriptLoader_unity2_raw :: resolve_module_name (__receiver , :: core :: convert :: Into :: into (modname) , :: core :: convert :: Into :: into (global_context) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "moon_sharp-interpreter-loaders-iscriptloader")]
-impl<__T: IIScriptLoader> IIScriptLoaderMethods for __T {}
+impl < __T : IIScriptLoader > IIScriptLoaderMethods for __T { }
+
+#[cfg(feature = "moon_sharp-interpreter-loaders-iscriptloader")]
+impl IScriptLoader { pub fn load_file_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __IScriptLoader_unity2_raw :: __lookup_load_file :: get_method_info () } pub fn resolve_file_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __IScriptLoader_unity2_raw :: __lookup_resolve_file_name :: get_method_info () } pub fn resolve_module_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __IScriptLoader_unity2_raw :: __lookup_resolve_module_name :: get_method_info () } }
 
 #[cfg(feature = "moon_sharp-interpreter-loaders-iscriptloader")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IIScriptLoader, IIScriptLoaderMethods, IScriptLoader};
+    pub use super::IScriptLoader;
+    pub use super::IIScriptLoader;
+    pub use super::IIScriptLoaderMethods;
 }

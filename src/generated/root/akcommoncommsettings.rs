@@ -2,251 +2,55 @@
 
 #[cfg(feature = "root-akcommoncommsettings-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akcommoncommsettings/AkCommonCommSettings.md"))]
-    #[::unity2::class(namespace = "", name = "AkCommonCommSettings")]
-    #[parent(crate::system::object::Object)]
-    pub struct AkCommonCommSettings {
-        #[offset(16)]
-        #[rename(name = "m_PoolSize")]
-        pub m_pool_size: u32,
-        #[static_field]
-        #[rename(name = "DefaultDiscoveryBroadcastPort")]
-        pub default_discovery_broadcast_port: u16,
-        #[offset(20)]
-        #[rename(name = "m_DiscoveryBroadcastPort")]
-        pub m_discovery_broadcast_port: u16,
-        #[offset(22)]
-        #[rename(name = "m_CommandPort")]
-        pub m_command_port: u16,
-        #[offset(24)]
-        #[rename(name = "m_NotificationPort")]
-        pub m_notification_port: u16,
-        #[offset(26)]
-        #[rename(name = "m_InitializeSystemComms")]
-        pub m_initialize_system_comms: bool,
-        #[offset(32)]
-        #[rename(name = "m_NetworkName")]
-        pub m_network_name: ::unity2::Il2CppString,
-        #[offset(40)]
-        #[rename(name = "m_commSystem")]
-        pub m_comm_system: crate::root::akcommunicationsettings::AkCommunicationSettings_AkCommSystem,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akcommoncommsettings/AkCommonCommSettings.md"))] # [:: unity2 :: class (namespace = "" , name = "AkCommonCommSettings")] # [parent (crate :: system :: object :: Object)] pub struct AkCommonCommSettings {
+# [offset (16)] # [rename (name = "m_PoolSize")] pub m_pool_size : u32 ,
+# [static_field] # [rename (name = "DefaultDiscoveryBroadcastPort")] pub default_discovery_broadcast_port : u16 ,
+# [offset (20)] # [rename (name = "m_DiscoveryBroadcastPort")] pub m_discovery_broadcast_port : u16 ,
+# [offset (22)] # [rename (name = "m_CommandPort")] pub m_command_port : u16 ,
+# [offset (24)] # [rename (name = "m_NotificationPort")] pub m_notification_port : u16 ,
+# [offset (26)] # [rename (name = "m_InitializeSystemComms")] pub m_initialize_system_comms : bool ,
+# [offset (32)] # [rename (name = "m_NetworkName")] pub m_network_name : :: unity2 :: Il2CppString ,
+# [offset (40)] # [rename (name = "m_commSystem")] pub m_comm_system : crate :: root :: akcommunicationsettings :: AkCommunicationSettings_AkCommSystem ,
+}
+
 }
 
 #[cfg(feature = "root-akcommoncommsettings-types")]
 pub use __types::*;
 
 #[cfg(feature = "root-akcommoncommsettings")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AkCommonCommSettings_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_copy_to {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::root::akcommunicationsettings::AkCommunicationSettings as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkCommonCommSettings as ::unity2::ClassIdentity>::class(),
-                "CopyTo",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkCommonCommSettings as ::unity2::ClassIdentity>::NAME,
-                        "CopyTo",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn copy_to(
-        this: AkCommonCommSettings,
-        settings: crate::root::akcommunicationsettings::AkCommunicationSettings,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            AkCommonCommSettings,
-            crate::root::akcommunicationsettings::AkCommunicationSettings,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_copy_to::get_method_info().method_ptr);
-        inner(this, settings, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_validate {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkCommonCommSettings as ::unity2::ClassIdentity>::class(),
-                "Validate",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkCommonCommSettings as ::unity2::ClassIdentity>::NAME,
-                        "Validate",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn validate(this: AkCommonCommSettings, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AkCommonCommSettings, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_validate::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkCommonCommSettings as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkCommonCommSettings as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: AkCommonCommSettings, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AkCommonCommSettings, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkCommonCommSettings as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkCommonCommSettings as ::unity2::ClassIdentity>::NAME,
-                        ".cctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __AkCommonCommSettings_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_copy_to { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: root :: akcommunicationsettings :: AkCommunicationSettings as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkCommonCommSettings as :: unity2 :: ClassIdentity > :: class () , "CopyTo" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkCommonCommSettings as :: unity2 :: ClassIdentity > :: NAME , "CopyTo" , e) , } } } pub unsafe fn copy_to (this : AkCommonCommSettings , settings : crate :: root :: akcommunicationsettings :: AkCommunicationSettings , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkCommonCommSettings , crate :: root :: akcommunicationsettings :: AkCommunicationSettings , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_copy_to :: get_method_info () . method_ptr ,) ; inner (this , settings , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_validate { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkCommonCommSettings as :: unity2 :: ClassIdentity > :: class () , "Validate" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkCommonCommSettings as :: unity2 :: ClassIdentity > :: NAME , "Validate" , e) , } } } pub unsafe fn validate (this : AkCommonCommSettings , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkCommonCommSettings , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_validate :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkCommonCommSettings as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkCommonCommSettings as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : AkCommonCommSettings , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkCommonCommSettings , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkCommonCommSettings as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkCommonCommSettings as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
+
+#[cfg(feature = "root-akcommoncommsettings")]
+impl AkCommonCommSettings { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { __AkCommonCommSettings_unity2_raw :: cctor (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "root-akcommoncommsettings")]
+pub trait IAkCommonCommSettingsMethods : IAkCommonCommSettings { # [doc = "`CopyTo(crate::root::akcommunicationsettings::AkCommunicationSettings)` overload"] fn copy_to (self , settings : impl :: core :: convert :: Into < crate :: root :: akcommunicationsettings :: AkCommunicationSettings >) -> () { unsafe { let __receiver = < AkCommonCommSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkCommonCommSettings_unity2_raw :: copy_to (__receiver , :: core :: convert :: Into :: into (settings) , :: core :: option :: Option :: None) } } # [doc = "`Validate()` overload"] fn validate (self ,) -> () { unsafe { let __receiver = < AkCommonCommSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkCommonCommSettings_unity2_raw :: validate (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AkCommonCommSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkCommonCommSettings_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "root-akcommoncommsettings")]
+impl < __T : IAkCommonCommSettings > IAkCommonCommSettingsMethods for __T { }
+
+#[cfg(feature = "root-akcommoncommsettings")]
+impl AkCommonCommSettings { pub fn copy_to_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkCommonCommSettings_unity2_raw :: __lookup_copy_to :: get_method_info () } pub fn validate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkCommonCommSettings_unity2_raw :: __lookup_validate :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkCommonCommSettings_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkCommonCommSettings_unity2_raw :: __lookup_cctor :: get_method_info () } }
 
 #[cfg(feature = "root-akcommoncommsettings")]
 impl AkCommonCommSettings {
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __AkCommonCommSettings_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "root-akcommoncommsettings")]
-pub trait IAkCommonCommSettingsMethods: IAkCommonCommSettings {
-    #[doc = "`CopyTo(crate::root::akcommunicationsettings::AkCommunicationSettings)` overload"]
-    fn copy_to(self, settings: impl ::core::convert::Into<crate::root::akcommunicationsettings::AkCommunicationSettings>) -> () {
-        unsafe {
-            let __receiver =
-                <AkCommonCommSettings as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkCommonCommSettings_unity2_raw::copy_to(__receiver, ::core::convert::Into::into(settings), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Validate()` overload"]
-    fn validate(self) -> () {
-        unsafe {
-            let __receiver =
-                <AkCommonCommSettings as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkCommonCommSettings_unity2_raw::validate(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <AkCommonCommSettings as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkCommonCommSettings_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "root-akcommoncommsettings")]
-impl<__T: IAkCommonCommSettings> IAkCommonCommSettingsMethods for __T {}
-
-#[cfg(feature = "root-akcommoncommsettings")]
-impl AkCommonCommSettings {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AkCommonCommSettings),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAkCommonCommSettingsMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkCommonCommSettings) , :: core :: stringify ! (new) ,)) ; < Self as IAkCommonCommSettingsMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "root-akcommoncommsettings")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{AkCommonCommSettings, IAkCommonCommSettings, IAkCommonCommSettingsMethods};
+    pub use super::AkCommonCommSettings;
+    pub use super::IAkCommonCommSettings;
+    pub use super::IAkCommonCommSettingsMethods;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

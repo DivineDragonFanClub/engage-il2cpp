@@ -2,310 +2,47 @@
 
 #[cfg(feature = "combat-combatlocationcrosscut-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        combat::basecombatlocation::{BaseCombatLocation, IBaseCombatLocation},
-        system::object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/combatlocationcrosscut/CombatLocationCrosscut.md"))]
-    #[::unity2::class(namespace = "Combat", name = "CombatLocationCrosscut")]
-    #[parent(crate::combat::basecombatlocation::BaseCombatLocation)]
-    pub struct CombatLocationCrosscut {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: combat :: basecombatlocation :: { BaseCombatLocation , IBaseCombatLocation }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/combatlocationcrosscut/CombatLocationCrosscut.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "CombatLocationCrosscut")] # [parent (crate :: combat :: basecombatlocation :: BaseCombatLocation)] pub struct CombatLocationCrosscut {}
+
 }
 
 #[cfg(feature = "combat-combatlocationcrosscut-types")]
 pub use __types::*;
 
 #[cfg(feature = "combat-combatlocationcrosscut")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __CombatLocationCrosscut_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::combat::combatrecord::CombatRecord as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CombatLocationCrosscut as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CombatLocationCrosscut as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: CombatLocationCrosscut,
-        record: crate::combat::combatrecord::CombatRecord,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(CombatLocationCrosscut, crate::combat::combatrecord::CombatRecord, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, record, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_rough_pos_count {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CombatLocationCrosscut as ::unity2::ClassIdentity>::class(),
-                "get_RoughPosCount",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CombatLocationCrosscut as ::unity2::ClassIdentity>::NAME,
-                        "get_RoughPosCount",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_rough_pos_count(this: CombatLocationCrosscut, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(CombatLocationCrosscut, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_rough_pos_count::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_rough_pos {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CombatLocationCrosscut as ::unity2::ClassIdentity>::class(),
-                "SetRoughPos",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CombatLocationCrosscut as ::unity2::ClassIdentity>::NAME,
-                        "SetRoughPos",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_rough_pos(this: CombatLocationCrosscut, try_count: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CombatLocationCrosscut, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_rough_pos::get_method_info().method_ptr);
-        inner(this, try_count, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_pattern_count {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CombatLocationCrosscut as ::unity2::ClassIdentity>::class(),
-                "get_PatternCount",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CombatLocationCrosscut as ::unity2::ClassIdentity>::NAME,
-                        "get_PatternCount",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_pattern_count(this: CombatLocationCrosscut, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(CombatLocationCrosscut, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_pattern_count::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_battle_patern {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CombatLocationCrosscut as ::unity2::ClassIdentity>::class(),
-                "SetBattlePatern",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CombatLocationCrosscut as ::unity2::ClassIdentity>::NAME,
-                        "SetBattlePatern",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_battle_patern(this: CombatLocationCrosscut, pattern: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CombatLocationCrosscut, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_battle_patern::get_method_info().method_ptr);
-        inner(this, pattern, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_location {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CombatLocationCrosscut as ::unity2::ClassIdentity>::class(),
-                "CalcLocation",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CombatLocationCrosscut as ::unity2::ClassIdentity>::NAME,
-                        "CalcLocation",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn calc_location(this: CombatLocationCrosscut, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CombatLocationCrosscut, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_calc_location::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __CombatLocationCrosscut_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: combatrecord :: CombatRecord as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CombatLocationCrosscut as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CombatLocationCrosscut as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : CombatLocationCrosscut , record : crate :: combat :: combatrecord :: CombatRecord , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CombatLocationCrosscut , crate :: combat :: combatrecord :: CombatRecord , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , record , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_rough_pos_count { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CombatLocationCrosscut as :: unity2 :: ClassIdentity > :: class () , "get_RoughPosCount" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CombatLocationCrosscut as :: unity2 :: ClassIdentity > :: NAME , "get_RoughPosCount" , e) , } } } pub unsafe fn get_rough_pos_count (this : CombatLocationCrosscut , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (CombatLocationCrosscut , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_rough_pos_count :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_rough_pos { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CombatLocationCrosscut as :: unity2 :: ClassIdentity > :: class () , "SetRoughPos" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CombatLocationCrosscut as :: unity2 :: ClassIdentity > :: NAME , "SetRoughPos" , e) , } } } pub unsafe fn set_rough_pos (this : CombatLocationCrosscut , try_count : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CombatLocationCrosscut , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_rough_pos :: get_method_info () . method_ptr ,) ; inner (this , try_count , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_pattern_count { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CombatLocationCrosscut as :: unity2 :: ClassIdentity > :: class () , "get_PatternCount" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CombatLocationCrosscut as :: unity2 :: ClassIdentity > :: NAME , "get_PatternCount" , e) , } } } pub unsafe fn get_pattern_count (this : CombatLocationCrosscut , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (CombatLocationCrosscut , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_pattern_count :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_battle_patern { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CombatLocationCrosscut as :: unity2 :: ClassIdentity > :: class () , "SetBattlePatern" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CombatLocationCrosscut as :: unity2 :: ClassIdentity > :: NAME , "SetBattlePatern" , e) , } } } pub unsafe fn set_battle_patern (this : CombatLocationCrosscut , pattern : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CombatLocationCrosscut , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_battle_patern :: get_method_info () . method_ptr ,) ; inner (this , pattern , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_calc_location { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CombatLocationCrosscut as :: unity2 :: ClassIdentity > :: class () , "CalcLocation" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CombatLocationCrosscut as :: unity2 :: ClassIdentity > :: NAME , "CalcLocation" , e) , } } } pub unsafe fn calc_location (this : CombatLocationCrosscut , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CombatLocationCrosscut , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_calc_location :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "combat-combatlocationcrosscut")]
-pub trait ICombatLocationCrosscutMethods: ICombatLocationCrosscut {
-    #[doc = "`.ctor(crate::combat::combatrecord::CombatRecord)` overload"]
-    fn ctor(self, record: impl ::core::convert::Into<crate::combat::combatrecord::CombatRecord>) -> () {
-        unsafe {
-            let __receiver =
-                <CombatLocationCrosscut as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CombatLocationCrosscut_unity2_raw::ctor(__receiver, ::core::convert::Into::into(record), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_RoughPosCount()` overload"]
-    fn get_rough_pos_count(self) -> i32 {
-        unsafe {
-            let __receiver =
-                <CombatLocationCrosscut as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CombatLocationCrosscut_unity2_raw::get_rough_pos_count(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetRoughPos(i32)` overload"]
-    fn set_rough_pos(self, try_count: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver =
-                <CombatLocationCrosscut as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CombatLocationCrosscut_unity2_raw::set_rough_pos(__receiver, ::core::convert::Into::into(try_count), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_PatternCount()` overload"]
-    fn get_pattern_count(self) -> i32 {
-        unsafe {
-            let __receiver =
-                <CombatLocationCrosscut as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CombatLocationCrosscut_unity2_raw::get_pattern_count(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetBattlePatern(i32)` overload"]
-    fn set_battle_patern(self, pattern: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver =
-                <CombatLocationCrosscut as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CombatLocationCrosscut_unity2_raw::set_battle_patern(__receiver, ::core::convert::Into::into(pattern), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CalcLocation()` overload"]
-    fn calc_location(self) -> () {
-        unsafe {
-            let __receiver =
-                <CombatLocationCrosscut as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CombatLocationCrosscut_unity2_raw::calc_location(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait ICombatLocationCrosscutMethods : ICombatLocationCrosscut { # [doc = "`.ctor(crate::combat::combatrecord::CombatRecord)` overload"] fn ctor (self , record : impl :: core :: convert :: Into < crate :: combat :: combatrecord :: CombatRecord >) -> () { unsafe { let __receiver = < CombatLocationCrosscut as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CombatLocationCrosscut_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (record) , :: core :: option :: Option :: None) } } # [doc = "`get_RoughPosCount()` overload"] fn get_rough_pos_count (self ,) -> i32 { unsafe { let __receiver = < CombatLocationCrosscut as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CombatLocationCrosscut_unity2_raw :: get_rough_pos_count (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetRoughPos(i32)` overload"] fn set_rough_pos (self , try_count : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < CombatLocationCrosscut as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CombatLocationCrosscut_unity2_raw :: set_rough_pos (__receiver , :: core :: convert :: Into :: into (try_count) , :: core :: option :: Option :: None) } } # [doc = "`get_PatternCount()` overload"] fn get_pattern_count (self ,) -> i32 { unsafe { let __receiver = < CombatLocationCrosscut as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CombatLocationCrosscut_unity2_raw :: get_pattern_count (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetBattlePatern(i32)` overload"] fn set_battle_patern (self , pattern : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < CombatLocationCrosscut as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CombatLocationCrosscut_unity2_raw :: set_battle_patern (__receiver , :: core :: convert :: Into :: into (pattern) , :: core :: option :: Option :: None) } } # [doc = "`CalcLocation()` overload"] fn calc_location (self ,) -> () { unsafe { let __receiver = < CombatLocationCrosscut as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CombatLocationCrosscut_unity2_raw :: calc_location (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "combat-combatlocationcrosscut")]
-impl<__T: ICombatLocationCrosscut> ICombatLocationCrosscutMethods for __T {}
+impl < __T : ICombatLocationCrosscut > ICombatLocationCrosscutMethods for __T { }
+
+#[cfg(feature = "combat-combatlocationcrosscut")]
+impl CombatLocationCrosscut { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CombatLocationCrosscut_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn get_rough_pos_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CombatLocationCrosscut_unity2_raw :: __lookup_get_rough_pos_count :: get_method_info () } pub fn set_rough_pos_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CombatLocationCrosscut_unity2_raw :: __lookup_set_rough_pos :: get_method_info () } pub fn get_pattern_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CombatLocationCrosscut_unity2_raw :: __lookup_get_pattern_count :: get_method_info () } pub fn set_battle_patern_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CombatLocationCrosscut_unity2_raw :: __lookup_set_battle_patern :: get_method_info () } pub fn calc_location_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CombatLocationCrosscut_unity2_raw :: __lookup_calc_location :: get_method_info () } }
 
 #[cfg(feature = "combat-combatlocationcrosscut")]
 impl CombatLocationCrosscut {
-    #[doc = "`.ctor(crate::combat::combatrecord::CombatRecord)` — overload selector"]
-    pub fn new(record: crate::combat::combatrecord::CombatRecord) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(CombatLocationCrosscut),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ICombatLocationCrosscutMethods>::ctor(this, record);
-        this
-    }
+# [doc = "`.ctor(crate::combat::combatrecord::CombatRecord)` — overload selector"] pub fn new (record : crate :: combat :: combatrecord :: CombatRecord) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CombatLocationCrosscut) , :: core :: stringify ! (new) ,)) ; < Self as ICombatLocationCrosscutMethods > :: ctor (this , record) ; this }
 }
 
 #[cfg(feature = "combat-combatlocationcrosscut")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{CombatLocationCrosscut, ICombatLocationCrosscut, ICombatLocationCrosscutMethods};
-    #[cfg(feature = "combat-basecombatlocation")]
-    pub use crate::combat::basecombatlocation::IBaseCombatLocationMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::{combat::basecombatlocation::IBaseCombatLocation, system::object::IObject};
+    pub use super::CombatLocationCrosscut;
+    pub use super::ICombatLocationCrosscut;
+    pub use super::ICombatLocationCrosscutMethods;
+    pub use crate::combat::basecombatlocation::IBaseCombatLocation;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "combat-basecombatlocation")] pub use crate::combat::basecombatlocation::IBaseCombatLocationMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

@@ -2,186 +2,53 @@
 
 #[cfg(feature = "app-proceventwait-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::procinst::{IProcInst, ProcInst},
-        system::object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/proceventwait/ProcEventWait.md"))]
-    #[::unity2::class(namespace = "App", name = "ProcEventWait")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct ProcEventWait {
-        #[offset(112)]
-        #[rename(name = "m_Tick")]
-        pub m_tick: f32,
-        #[offset(116)]
-        #[rename(name = "m_Time")]
-        pub m_time: f32,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: procinst :: { IProcInst , ProcInst }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/proceventwait/ProcEventWait.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProcEventWait")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct ProcEventWait {
+# [offset (112)] # [rename (name = "m_Tick")] pub m_tick : f32 ,
+# [offset (116)] # [rename (name = "m_Time")] pub m_time : f32 ,
+}
+
 }
 
 #[cfg(feature = "app-proceventwait-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-proceventwait")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ProcEventWait_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<ProcEventWait as ::unity2::ClassIdentity>::class(), ".ctor", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProcEventWait as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: ProcEventWait, time: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ProcEventWait, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, time, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_tick {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProcEventWait as ::unity2::ClassIdentity>::class(),
-                "OnTick",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProcEventWait as ::unity2::ClassIdentity>::NAME,
-                        "OnTick",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_tick(this: ProcEventWait, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ProcEventWait, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_tick::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProcEventWait as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProcEventWait as ::unity2::ClassIdentity>::NAME,
-                        "CreateBind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_bind(super_: crate::app::procinst::ProcInst, time: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(crate::app::procinst::ProcInst, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
-        inner(super_, time, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ProcEventWait_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProcEventWait as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProcEventWait as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : ProcEventWait , time : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ProcEventWait , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , time , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_tick { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProcEventWait as :: unity2 :: ClassIdentity > :: class () , "OnTick" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProcEventWait as :: unity2 :: ClassIdentity > :: NAME , "OnTick" , e) , } } } pub unsafe fn on_tick (this : ProcEventWait , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ProcEventWait , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_tick :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_bind { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProcEventWait as :: unity2 :: ClassIdentity > :: class () , "CreateBind" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProcEventWait as :: unity2 :: ClassIdentity > :: NAME , "CreateBind" , e) , } } } pub unsafe fn create_bind (super_ : crate :: app :: procinst :: ProcInst , time : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create_bind :: get_method_info () . method_ptr ,) ; inner (super_ , time , __unity2_method_info) } }
+
+#[cfg(feature = "app-proceventwait")]
+impl ProcEventWait { # [doc = "`CreateBind(crate::app::procinst::ProcInst, f32)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , time : impl :: core :: convert :: Into < f32 >) -> () { unsafe { __ProcEventWait_unity2_raw :: create_bind (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (time) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-proceventwait")]
+pub trait IProcEventWaitMethods : IProcEventWait { # [doc = "`.ctor(f32)` overload"] fn ctor (self , time : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < ProcEventWait as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ProcEventWait_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (time) , :: core :: option :: Option :: None) } } # [doc = "`OnTick()` overload"] fn on_tick (self ,) -> () { unsafe { let __receiver = < ProcEventWait as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ProcEventWait_unity2_raw :: on_tick (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-proceventwait")]
+impl < __T : IProcEventWait > IProcEventWaitMethods for __T { }
+
+#[cfg(feature = "app-proceventwait")]
+impl ProcEventWait { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProcEventWait_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn on_tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProcEventWait_unity2_raw :: __lookup_on_tick :: get_method_info () } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProcEventWait_unity2_raw :: __lookup_create_bind :: get_method_info () } }
 
 #[cfg(feature = "app-proceventwait")]
 impl ProcEventWait {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, f32)` overload"]
-    pub fn create_bind(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>, time: impl ::core::convert::Into<f32>) -> () {
-        unsafe {
-            __ProcEventWait_unity2_raw::create_bind(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(time),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-proceventwait")]
-pub trait IProcEventWaitMethods: IProcEventWait {
-    #[doc = "`.ctor(f32)` overload"]
-    fn ctor(self, time: impl ::core::convert::Into<f32>) -> () {
-        unsafe {
-            let __receiver = <ProcEventWait as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ProcEventWait_unity2_raw::ctor(__receiver, ::core::convert::Into::into(time), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnTick()` overload"]
-    fn on_tick(self) -> () {
-        unsafe {
-            let __receiver = <ProcEventWait as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ProcEventWait_unity2_raw::on_tick(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-proceventwait")]
-impl<__T: IProcEventWait> IProcEventWaitMethods for __T {}
-
-#[cfg(feature = "app-proceventwait")]
-impl ProcEventWait {
-    #[doc = "`.ctor(f32)` — overload selector"]
-    pub fn new(time: f32) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(ProcEventWait), ::core::stringify!(new),));
-        <Self as IProcEventWaitMethods>::ctor(this, time);
-        this
-    }
+# [doc = "`.ctor(f32)` — overload selector"] pub fn new (time : f32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProcEventWait) , :: core :: stringify ! (new) ,)) ; < Self as IProcEventWaitMethods > :: ctor (this , time) ; this }
 }
 
 #[cfg(feature = "app-proceventwait")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IProcEventWait, IProcEventWaitMethods, ProcEventWait};
-    #[cfg(feature = "app-procinst")]
-    pub use crate::app::procinst::IProcInstMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::{app::procinst::IProcInst, system::object::IObject};
+    pub use super::ProcEventWait;
+    pub use super::IProcEventWait;
+    pub use super::IProcEventWaitMethods;
+    pub use crate::app::procinst::IProcInst;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "app-procinst")] pub use crate::app::procinst::IProcInstMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

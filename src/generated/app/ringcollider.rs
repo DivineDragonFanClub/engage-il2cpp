@@ -2,275 +2,64 @@
 
 #[cfg(feature = "app-ringcollider-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringcollider/RingCollider.md"))]
-    #[::unity2::class(namespace = "App", name = "RingCollider")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct RingCollider {
-        #[offset(24)]
-        #[rename(name = "m_Colliders")]
-        pub m_colliders: crate::system::collections::generic::list_1::List_1<crate::unity_engine::capsulecollider::CapsuleCollider>,
-        #[offset(32)]
-        #[rename(name = "m_Radius")]
-        pub m_radius: f32,
-        #[offset(36)]
-        #[rename(name = "m_Height")]
-        pub m_height: f32,
-        #[offset(40)]
-        #[rename(name = "m_ColliderRadius")]
-        pub m_collider_radius: f32,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringcollider/RingCollider.md"))] # [:: unity2 :: class (namespace = "App" , name = "RingCollider")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct RingCollider {
+# [offset (24)] # [rename (name = "m_Colliders")] pub m_colliders : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: capsulecollider :: CapsuleCollider > ,
+# [offset (32)] # [rename (name = "m_Radius")] pub m_radius : f32 ,
+# [offset (36)] # [rename (name = "m_Height")] pub m_height : f32 ,
+# [offset (40)] # [rename (name = "m_ColliderRadius")] pub m_collider_radius : f32 ,
+}
+
 }
 
 #[cfg(feature = "app-ringcollider-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-ringcollider")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RingCollider_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_validate {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingCollider as ::unity2::ClassIdentity>::class(),
-                "OnValidate",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingCollider as ::unity2::ClassIdentity>::NAME,
-                        "OnValidate",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_validate(this: RingCollider, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RingCollider, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_validate::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_critical {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingCollider as ::unity2::ClassIdentity>::class(),
-                "SetCritical",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingCollider as ::unity2::ClassIdentity>::NAME,
-                        "SetCritical",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_critical(this: RingCollider, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(RingCollider, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_set_critical::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_clear_critical {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingCollider as ::unity2::ClassIdentity>::class(),
-                "ClearCritical",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingCollider as ::unity2::ClassIdentity>::NAME,
-                        "ClearCritical",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn clear_critical(this: RingCollider, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RingCollider, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_clear_critical::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_critical_index {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingCollider as ::unity2::ClassIdentity>::class(),
-                "GetCriticalIndex",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingCollider as ::unity2::ClassIdentity>::NAME,
-                        "GetCriticalIndex",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_critical_index(this: RingCollider, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(RingCollider, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_critical_index::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<RingCollider as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingCollider as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: RingCollider, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RingCollider, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __RingCollider_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_validate { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RingCollider as :: unity2 :: ClassIdentity > :: class () , "OnValidate" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RingCollider as :: unity2 :: ClassIdentity > :: NAME , "OnValidate" , e) , } } } pub unsafe fn on_validate (this : RingCollider , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RingCollider , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_validate :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_critical { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RingCollider as :: unity2 :: ClassIdentity > :: class () , "SetCritical" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RingCollider as :: unity2 :: ClassIdentity > :: NAME , "SetCritical" , e) , } } } pub unsafe fn set_critical (this : RingCollider , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (RingCollider , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_set_critical :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_clear_critical { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RingCollider as :: unity2 :: ClassIdentity > :: class () , "ClearCritical" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RingCollider as :: unity2 :: ClassIdentity > :: NAME , "ClearCritical" , e) , } } } pub unsafe fn clear_critical (this : RingCollider , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RingCollider , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_clear_critical :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_critical_index { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RingCollider as :: unity2 :: ClassIdentity > :: class () , "GetCriticalIndex" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RingCollider as :: unity2 :: ClassIdentity > :: NAME , "GetCriticalIndex" , e) , } } } pub unsafe fn get_critical_index (this : RingCollider , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (RingCollider , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_critical_index :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RingCollider as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RingCollider as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : RingCollider , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RingCollider , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-ringcollider")]
-pub trait IRingColliderMethods: IRingCollider {
-    #[doc = "`OnValidate()` overload"]
-    fn on_validate(self) -> () {
-        unsafe {
-            let __receiver = <RingCollider as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RingCollider_unity2_raw::on_validate(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetCritical()` overload"]
-    fn set_critical(self) -> i32 {
-        unsafe {
-            let __receiver = <RingCollider as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RingCollider_unity2_raw::set_critical(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ClearCritical()` overload"]
-    fn clear_critical(self) -> () {
-        unsafe {
-            let __receiver = <RingCollider as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RingCollider_unity2_raw::clear_critical(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetCriticalIndex()` overload"]
-    fn get_critical_index(self) -> i32 {
-        unsafe {
-            let __receiver = <RingCollider as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RingCollider_unity2_raw::get_critical_index(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <RingCollider as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RingCollider_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IRingColliderMethods : IRingCollider { # [doc = "`OnValidate()` overload"] fn on_validate (self ,) -> () { unsafe { let __receiver = < RingCollider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RingCollider_unity2_raw :: on_validate (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetCritical()` overload"] fn set_critical (self ,) -> i32 { unsafe { let __receiver = < RingCollider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RingCollider_unity2_raw :: set_critical (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ClearCritical()` overload"] fn clear_critical (self ,) -> () { unsafe { let __receiver = < RingCollider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RingCollider_unity2_raw :: clear_critical (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetCriticalIndex()` overload"] fn get_critical_index (self ,) -> i32 { unsafe { let __receiver = < RingCollider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RingCollider_unity2_raw :: get_critical_index (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RingCollider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RingCollider_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-ringcollider")]
-impl<__T: IRingCollider> IRingColliderMethods for __T {}
+impl < __T : IRingCollider > IRingColliderMethods for __T { }
+
+#[cfg(feature = "app-ringcollider")]
+impl RingCollider { pub fn on_validate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RingCollider_unity2_raw :: __lookup_on_validate :: get_method_info () } pub fn set_critical_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RingCollider_unity2_raw :: __lookup_set_critical :: get_method_info () } pub fn clear_critical_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RingCollider_unity2_raw :: __lookup_clear_critical :: get_method_info () } pub fn get_critical_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RingCollider_unity2_raw :: __lookup_get_critical_index :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RingCollider_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-ringcollider")]
 impl RingCollider {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(RingCollider), ::core::stringify!(new),));
-        <Self as IRingColliderMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RingCollider) , :: core :: stringify ! (new) ,)) ; < Self as IRingColliderMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-ringcollider")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IRingCollider, IRingColliderMethods, RingCollider};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        system::object::IObject,
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::RingCollider;
+    pub use super::IRingCollider;
+    pub use super::IRingColliderMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

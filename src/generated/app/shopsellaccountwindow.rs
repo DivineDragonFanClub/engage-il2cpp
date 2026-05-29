@@ -2,467 +2,66 @@
 
 #[cfg(feature = "app-shopsellaccountwindow-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/shopsellaccountwindow/ShopSellAccountWindow.md"))]
-    #[::unity2::class(namespace = "App", name = "ShopSellAccountWindow")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct ShopSellAccountWindow {
-        #[offset(24)]
-        #[rename(name = "m_CountTitleText")]
-        pub m_count_title_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(32)]
-        #[rename(name = "m_CountValueText")]
-        pub m_count_value_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(40)]
-        #[rename(name = "m_TotalTitleText")]
-        pub m_total_title_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(48)]
-        #[rename(name = "m_TotalValueText")]
-        pub m_total_value_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(56)]
-        #[rename(name = "m_TotalValueGText")]
-        pub m_total_value_g_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(72)]
-        #[rename(name = "m_Animator")]
-        pub m_animator: crate::unity_engine::animator::Animator,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/shopsellaccountwindow/ShopSellAccountWindow.md"))] # [:: unity2 :: class (namespace = "App" , name = "ShopSellAccountWindow")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct ShopSellAccountWindow {
+# [offset (24)] # [rename (name = "m_CountTitleText")] pub m_count_title_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (32)] # [rename (name = "m_CountValueText")] pub m_count_value_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (40)] # [rename (name = "m_TotalTitleText")] pub m_total_title_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (48)] # [rename (name = "m_TotalValueText")] pub m_total_value_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (56)] # [rename (name = "m_TotalValueGText")] pub m_total_value_g_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (72)] # [rename (name = "m_Animator")] pub m_animator : crate :: unity_engine :: animator :: Animator ,
+}
+
 }
 
 #[cfg(feature = "app-shopsellaccountwindow-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-shopsellaccountwindow")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ShopSellAccountWindow_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_m_count {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ShopSellAccountWindow as ::unity2::ClassIdentity>::class(),
-                "get_m_Count",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ShopSellAccountWindow as ::unity2::ClassIdentity>::NAME,
-                        "get_m_Count",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_m_count(this: ShopSellAccountWindow, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(ShopSellAccountWindow, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_m_count::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_m_count {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ShopSellAccountWindow as ::unity2::ClassIdentity>::class(),
-                "set_m_Count",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ShopSellAccountWindow as ::unity2::ClassIdentity>::NAME,
-                        "set_m_Count",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_m_count(this: ShopSellAccountWindow, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ShopSellAccountWindow, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_m_count::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_m_total {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ShopSellAccountWindow as ::unity2::ClassIdentity>::class(),
-                "get_m_Total",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ShopSellAccountWindow as ::unity2::ClassIdentity>::NAME,
-                        "get_m_Total",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_m_total(this: ShopSellAccountWindow, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(ShopSellAccountWindow, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_m_total::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_m_total {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ShopSellAccountWindow as ::unity2::ClassIdentity>::class(),
-                "set_m_Total",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ShopSellAccountWindow as ::unity2::ClassIdentity>::NAME,
-                        "set_m_Total",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_m_total(this: ShopSellAccountWindow, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ShopSellAccountWindow, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_m_total::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_start {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ShopSellAccountWindow as ::unity2::ClassIdentity>::class(),
-                "Start",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ShopSellAccountWindow as ::unity2::ClassIdentity>::NAME,
-                        "Start",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn start(this: ShopSellAccountWindow, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ShopSellAccountWindow, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_start::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update_info {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ShopSellAccountWindow as ::unity2::ClassIdentity>::class(),
-                "UpdateInfo",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ShopSellAccountWindow as ::unity2::ClassIdentity>::NAME,
-                        "UpdateInfo",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update_info(this: ShopSellAccountWindow, item_count: i32, total_value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ShopSellAccountWindow, i32, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update_info::get_method_info().method_ptr);
-        inner(this, item_count, total_value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_clear_info {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ShopSellAccountWindow as ::unity2::ClassIdentity>::class(),
-                "ClearInfo",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ShopSellAccountWindow as ::unity2::ClassIdentity>::NAME,
-                        "ClearInfo",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn clear_info(this: ShopSellAccountWindow, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ShopSellAccountWindow, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_clear_info::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_close {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ShopSellAccountWindow as ::unity2::ClassIdentity>::class(),
-                "Close",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ShopSellAccountWindow as ::unity2::ClassIdentity>::NAME,
-                        "Close",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn close(this: ShopSellAccountWindow, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ShopSellAccountWindow, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_close::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ShopSellAccountWindow as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ShopSellAccountWindow as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: ShopSellAccountWindow, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ShopSellAccountWindow, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ShopSellAccountWindow_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_m_count { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ShopSellAccountWindow as :: unity2 :: ClassIdentity > :: class () , "get_m_Count" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ShopSellAccountWindow as :: unity2 :: ClassIdentity > :: NAME , "get_m_Count" , e) , } } } pub unsafe fn get_m_count (this : ShopSellAccountWindow , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (ShopSellAccountWindow , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_m_count :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_m_count { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ShopSellAccountWindow as :: unity2 :: ClassIdentity > :: class () , "set_m_Count" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ShopSellAccountWindow as :: unity2 :: ClassIdentity > :: NAME , "set_m_Count" , e) , } } } pub unsafe fn set_m_count (this : ShopSellAccountWindow , value : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ShopSellAccountWindow , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_m_count :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_m_total { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ShopSellAccountWindow as :: unity2 :: ClassIdentity > :: class () , "get_m_Total" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ShopSellAccountWindow as :: unity2 :: ClassIdentity > :: NAME , "get_m_Total" , e) , } } } pub unsafe fn get_m_total (this : ShopSellAccountWindow , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (ShopSellAccountWindow , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_m_total :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_m_total { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ShopSellAccountWindow as :: unity2 :: ClassIdentity > :: class () , "set_m_Total" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ShopSellAccountWindow as :: unity2 :: ClassIdentity > :: NAME , "set_m_Total" , e) , } } } pub unsafe fn set_m_total (this : ShopSellAccountWindow , value : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ShopSellAccountWindow , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_m_total :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_start { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ShopSellAccountWindow as :: unity2 :: ClassIdentity > :: class () , "Start" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ShopSellAccountWindow as :: unity2 :: ClassIdentity > :: NAME , "Start" , e) , } } } pub unsafe fn start (this : ShopSellAccountWindow , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ShopSellAccountWindow , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_start :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update_info { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ShopSellAccountWindow as :: unity2 :: ClassIdentity > :: class () , "UpdateInfo" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ShopSellAccountWindow as :: unity2 :: ClassIdentity > :: NAME , "UpdateInfo" , e) , } } } pub unsafe fn update_info (this : ShopSellAccountWindow , item_count : i32 , total_value : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ShopSellAccountWindow , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update_info :: get_method_info () . method_ptr ,) ; inner (this , item_count , total_value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_clear_info { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ShopSellAccountWindow as :: unity2 :: ClassIdentity > :: class () , "ClearInfo" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ShopSellAccountWindow as :: unity2 :: ClassIdentity > :: NAME , "ClearInfo" , e) , } } } pub unsafe fn clear_info (this : ShopSellAccountWindow , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ShopSellAccountWindow , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_clear_info :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_close { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ShopSellAccountWindow as :: unity2 :: ClassIdentity > :: class () , "Close" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ShopSellAccountWindow as :: unity2 :: ClassIdentity > :: NAME , "Close" , e) , } } } pub unsafe fn close (this : ShopSellAccountWindow , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ShopSellAccountWindow , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_close :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ShopSellAccountWindow as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ShopSellAccountWindow as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : ShopSellAccountWindow , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ShopSellAccountWindow , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-shopsellaccountwindow")]
-pub trait IShopSellAccountWindowMethods: IShopSellAccountWindow {
-    #[doc = "`get_m_Count()` overload"]
-    fn get_m_count(self) -> i32 {
-        unsafe {
-            let __receiver =
-                <ShopSellAccountWindow as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ShopSellAccountWindow_unity2_raw::get_m_count(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_m_Count(i32)` overload"]
-    fn set_m_count(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver =
-                <ShopSellAccountWindow as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ShopSellAccountWindow_unity2_raw::set_m_count(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_m_Total()` overload"]
-    fn get_m_total(self) -> i32 {
-        unsafe {
-            let __receiver =
-                <ShopSellAccountWindow as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ShopSellAccountWindow_unity2_raw::get_m_total(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_m_Total(i32)` overload"]
-    fn set_m_total(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver =
-                <ShopSellAccountWindow as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ShopSellAccountWindow_unity2_raw::set_m_total(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Start()` overload"]
-    fn start(self) -> () {
-        unsafe {
-            let __receiver =
-                <ShopSellAccountWindow as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ShopSellAccountWindow_unity2_raw::start(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`UpdateInfo(i32, i32)` overload"]
-    fn update_info(self, item_count: impl ::core::convert::Into<i32>, total_value: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver =
-                <ShopSellAccountWindow as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ShopSellAccountWindow_unity2_raw::update_info(
-                __receiver,
-                ::core::convert::Into::into(item_count),
-                ::core::convert::Into::into(total_value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ClearInfo()` overload"]
-    fn clear_info(self) -> () {
-        unsafe {
-            let __receiver =
-                <ShopSellAccountWindow as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ShopSellAccountWindow_unity2_raw::clear_info(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Close()` overload"]
-    fn close(self) -> () {
-        unsafe {
-            let __receiver =
-                <ShopSellAccountWindow as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ShopSellAccountWindow_unity2_raw::close(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <ShopSellAccountWindow as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ShopSellAccountWindow_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IShopSellAccountWindowMethods : IShopSellAccountWindow { # [doc = "`get_m_Count()` overload"] fn get_m_count (self ,) -> i32 { unsafe { let __receiver = < ShopSellAccountWindow as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ShopSellAccountWindow_unity2_raw :: get_m_count (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_m_Count(i32)` overload"] fn set_m_count (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < ShopSellAccountWindow as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ShopSellAccountWindow_unity2_raw :: set_m_count (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_m_Total()` overload"] fn get_m_total (self ,) -> i32 { unsafe { let __receiver = < ShopSellAccountWindow as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ShopSellAccountWindow_unity2_raw :: get_m_total (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_m_Total(i32)` overload"] fn set_m_total (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < ShopSellAccountWindow as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ShopSellAccountWindow_unity2_raw :: set_m_total (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < ShopSellAccountWindow as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ShopSellAccountWindow_unity2_raw :: start (__receiver , :: core :: option :: Option :: None) } } # [doc = "`UpdateInfo(i32, i32)` overload"] fn update_info (self , item_count : impl :: core :: convert :: Into < i32 > , total_value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < ShopSellAccountWindow as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ShopSellAccountWindow_unity2_raw :: update_info (__receiver , :: core :: convert :: Into :: into (item_count) , :: core :: convert :: Into :: into (total_value) , :: core :: option :: Option :: None) } } # [doc = "`ClearInfo()` overload"] fn clear_info (self ,) -> () { unsafe { let __receiver = < ShopSellAccountWindow as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ShopSellAccountWindow_unity2_raw :: clear_info (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Close()` overload"] fn close (self ,) -> () { unsafe { let __receiver = < ShopSellAccountWindow as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ShopSellAccountWindow_unity2_raw :: close (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ShopSellAccountWindow as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ShopSellAccountWindow_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-shopsellaccountwindow")]
-impl<__T: IShopSellAccountWindow> IShopSellAccountWindowMethods for __T {}
+impl < __T : IShopSellAccountWindow > IShopSellAccountWindowMethods for __T { }
+
+#[cfg(feature = "app-shopsellaccountwindow")]
+impl ShopSellAccountWindow { pub fn get_m_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ShopSellAccountWindow_unity2_raw :: __lookup_get_m_count :: get_method_info () } pub fn set_m_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ShopSellAccountWindow_unity2_raw :: __lookup_set_m_count :: get_method_info () } pub fn get_m_total_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ShopSellAccountWindow_unity2_raw :: __lookup_get_m_total :: get_method_info () } pub fn set_m_total_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ShopSellAccountWindow_unity2_raw :: __lookup_set_m_total :: get_method_info () } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ShopSellAccountWindow_unity2_raw :: __lookup_start :: get_method_info () } pub fn update_info_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ShopSellAccountWindow_unity2_raw :: __lookup_update_info :: get_method_info () } pub fn clear_info_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ShopSellAccountWindow_unity2_raw :: __lookup_clear_info :: get_method_info () } pub fn close_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ShopSellAccountWindow_unity2_raw :: __lookup_close :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ShopSellAccountWindow_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-shopsellaccountwindow")]
 impl ShopSellAccountWindow {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ShopSellAccountWindow),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IShopSellAccountWindowMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ShopSellAccountWindow) , :: core :: stringify ! (new) ,)) ; < Self as IShopSellAccountWindowMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-shopsellaccountwindow")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IShopSellAccountWindow, IShopSellAccountWindowMethods, ShopSellAccountWindow};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        system::object::IObject,
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::ShopSellAccountWindow;
+    pub use super::IShopSellAccountWindow;
+    pub use super::IShopSellAccountWindowMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

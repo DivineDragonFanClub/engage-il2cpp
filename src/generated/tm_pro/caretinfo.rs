@@ -2,111 +2,69 @@
 
 #[cfg(feature = "tm_pro-caretinfo-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        valuetype::{IValueType, ValueType},
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/caretinfo/CaretInfo.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct CaretInfo {
-        pub index: i32,
-        pub position: crate::tm_pro::caretposition::CaretPosition,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
 
-    impl ::unity2::ClassIdentity for CaretInfo {
-        const NAME: &'static str = "CaretInfo";
-        const NAMESPACE: &'static str = "TMPro";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/caretinfo/CaretInfo.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct CaretInfo {
+    pub index: i32,
+    pub position: crate :: tm_pro :: caretposition :: CaretPosition,
+}
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+
+impl ::unity2::ClassIdentity for CaretInfo {
+    const NAMESPACE: &'static str = "TMPro";
+
+    const NAME: &'static str = "CaretInfo";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for CaretInfo {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl ::unity2::IlType for CaretInfo {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
+
+}
+
 }
 
 #[cfg(feature = "tm_pro-caretinfo-types")]
 pub use __types::*;
 
 #[cfg(feature = "tm_pro-caretinfo")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __CaretInfo_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <crate::tm_pro::caretposition::CaretPosition as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<CaretInfo as ::unity2::ClassIdentity>::class(), ".ctor", 2, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CaretInfo as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: CaretInfo,
-        index: i32,
-        position: crate::tm_pro::caretposition::CaretPosition,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(CaretInfo, i32, crate::tm_pro::caretposition::CaretPosition, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, index, position, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __CaretInfo_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < crate :: tm_pro :: caretposition :: CaretPosition as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CaretInfo as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CaretInfo as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : CaretInfo , index : i32 , position : crate :: tm_pro :: caretposition :: CaretPosition , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CaretInfo , i32 , crate :: tm_pro :: caretposition :: CaretPosition , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , index , position , __unity2_method_info) } }
 
 #[cfg(feature = "tm_pro-caretinfo")]
-impl CaretInfo {
-    #[doc = "`.ctor(i32, crate::tm_pro::caretposition::CaretPosition)` overload"]
-    pub fn ctor(
-        self,
-        index: impl ::core::convert::Into<i32>,
-        position: impl ::core::convert::Into<crate::tm_pro::caretposition::CaretPosition>,
-    ) -> () {
-        unsafe {
-            __CaretInfo_unity2_raw::ctor(
-                self,
-                ::core::convert::Into::into(index),
-                ::core::convert::Into::into(position),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+impl CaretInfo { # [doc = "`.ctor(i32, crate::tm_pro::caretposition::CaretPosition)` overload"] pub fn ctor (self , index : impl :: core :: convert :: Into < i32 > , position : impl :: core :: convert :: Into < crate :: tm_pro :: caretposition :: CaretPosition >) -> () { unsafe { __CaretInfo_unity2_raw :: ctor (self , :: core :: convert :: Into :: into (index) , :: core :: convert :: Into :: into (position) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "tm_pro-caretinfo")]
+impl CaretInfo { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CaretInfo_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "tm_pro-caretinfo")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::CaretInfo;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::system::{object::IObject, valuetype::IValueType};
+    pub use crate::system::object::IObject;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

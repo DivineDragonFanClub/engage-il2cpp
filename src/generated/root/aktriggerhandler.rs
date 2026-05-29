@@ -2,549 +2,72 @@
 
 #[cfg(feature = "root-aktriggerhandler-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/aktriggerhandler/AkTriggerHandler.md"))]
-    #[::unity2::class(namespace = "", name = "AkTriggerHandler")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct AkTriggerHandler {
-        #[static_field]
-        #[rename(name = "AWAKE_TRIGGER_ID")]
-        pub awake_trigger_id: i32,
-        #[static_field]
-        #[rename(name = "START_TRIGGER_ID")]
-        pub start_trigger_id: i32,
-        #[static_field]
-        #[rename(name = "DESTROY_TRIGGER_ID")]
-        pub destroy_trigger_id: i32,
-        #[static_field]
-        #[rename(name = "ON_ENABLE_TRIGGER_ID")]
-        pub on_enable_trigger_id: i32,
-        #[static_field]
-        #[rename(name = "MAX_NB_TRIGGERS")]
-        pub max_nb_triggers: i32,
-        #[static_field]
-        #[rename(name = "triggerTypes")]
-        pub trigger_types: crate::system::collections::generic::dictionary_2::Dictionary_2<u32, ::unity2::Il2CppString>,
-        #[offset(24)]
-        #[rename(name = "didDestroy")]
-        pub did_destroy: bool,
-        #[offset(32)]
-        #[rename(name = "triggerList")]
-        pub trigger_list: crate::system::collections::generic::list_1::List_1<i32>,
-        #[offset(40)]
-        #[rename(name = "useOtherObject")]
-        pub use_other_object: bool,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/aktriggerhandler/AkTriggerHandler.md"))] # [:: unity2 :: class (namespace = "" , name = "AkTriggerHandler")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct AkTriggerHandler {
+# [static_field] # [rename (name = "AWAKE_TRIGGER_ID")] pub awake_trigger_id : i32 ,
+# [static_field] # [rename (name = "START_TRIGGER_ID")] pub start_trigger_id : i32 ,
+# [static_field] # [rename (name = "DESTROY_TRIGGER_ID")] pub destroy_trigger_id : i32 ,
+# [static_field] # [rename (name = "ON_ENABLE_TRIGGER_ID")] pub on_enable_trigger_id : i32 ,
+# [static_field] # [rename (name = "MAX_NB_TRIGGERS")] pub max_nb_triggers : i32 ,
+# [static_field] # [rename (name = "triggerTypes")] pub trigger_types : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < u32 , :: unity2 :: Il2CppString > ,
+# [offset (24)] # [rename (name = "didDestroy")] pub did_destroy : bool ,
+# [offset (32)] # [rename (name = "triggerList")] pub trigger_list : crate :: system :: collections :: generic :: list_1 :: List_1 < i32 > ,
+# [offset (40)] # [rename (name = "useOtherObject")] pub use_other_object : bool ,
+}
+
 }
 
 #[cfg(feature = "root-aktriggerhandler-types")]
 pub use __types::*;
 
 #[cfg(feature = "root-aktriggerhandler")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AkTriggerHandler_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_handle_event {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkTriggerHandler as ::unity2::ClassIdentity>::class(),
-                "HandleEvent",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkTriggerHandler as ::unity2::ClassIdentity>::NAME,
-                        "HandleEvent",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn handle_event(
-        this: AkTriggerHandler,
-        in_game_object: crate::unity_engine::gameobject::GameObject,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(AkTriggerHandler, crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_handle_event::get_method_info().method_ptr);
-        inner(this, in_game_object, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_awake {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkTriggerHandler as ::unity2::ClassIdentity>::class(),
-                "Awake",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkTriggerHandler as ::unity2::ClassIdentity>::NAME,
-                        "Awake",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn awake(this: AkTriggerHandler, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AkTriggerHandler, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_awake::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_start {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkTriggerHandler as ::unity2::ClassIdentity>::class(),
-                "Start",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkTriggerHandler as ::unity2::ClassIdentity>::NAME,
-                        "Start",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn start(this: AkTriggerHandler, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AkTriggerHandler, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_start::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_destroy {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkTriggerHandler as ::unity2::ClassIdentity>::class(),
-                "OnDestroy",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkTriggerHandler as ::unity2::ClassIdentity>::NAME,
-                        "OnDestroy",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_destroy(this: AkTriggerHandler, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AkTriggerHandler, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_destroy::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_do_destroy {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkTriggerHandler as ::unity2::ClassIdentity>::class(),
-                "DoDestroy",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkTriggerHandler as ::unity2::ClassIdentity>::NAME,
-                        "DoDestroy",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn do_destroy(this: AkTriggerHandler, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AkTriggerHandler, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_do_destroy::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_enable {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkTriggerHandler as ::unity2::ClassIdentity>::class(),
-                "OnEnable",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkTriggerHandler as ::unity2::ClassIdentity>::NAME,
-                        "OnEnable",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_enable(this: AkTriggerHandler, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AkTriggerHandler, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_enable::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_register_triggers {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::collections::generic::list_1::List_1<i32> as ::unity2::IlType>::il_type(),
-                <crate::root::aktriggerbase::AkTriggerBase_Trigger as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkTriggerHandler as ::unity2::ClassIdentity>::class(),
-                "RegisterTriggers",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkTriggerHandler as ::unity2::ClassIdentity>::NAME,
-                        "RegisterTriggers",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn register_triggers(
-        this: AkTriggerHandler,
-        in_trigger_list: crate::system::collections::generic::list_1::List_1<i32>,
-        in_delegate: crate::root::aktriggerbase::AkTriggerBase_Trigger,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            AkTriggerHandler,
-            crate::system::collections::generic::list_1::List_1<i32>,
-            crate::root::aktriggerbase::AkTriggerBase_Trigger,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_register_triggers::get_method_info().method_ptr);
-        inner(this, in_trigger_list, in_delegate, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_unregister_triggers {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::collections::generic::list_1::List_1<i32> as ::unity2::IlType>::il_type(),
-                <crate::root::aktriggerbase::AkTriggerBase_Trigger as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkTriggerHandler as ::unity2::ClassIdentity>::class(),
-                "UnregisterTriggers",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkTriggerHandler as ::unity2::ClassIdentity>::NAME,
-                        "UnregisterTriggers",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn unregister_triggers(
-        this: AkTriggerHandler,
-        in_trigger_list: crate::system::collections::generic::list_1::List_1<i32>,
-        in_delegate: crate::root::aktriggerbase::AkTriggerBase_Trigger,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            AkTriggerHandler,
-            crate::system::collections::generic::list_1::List_1<i32>,
-            crate::root::aktriggerbase::AkTriggerBase_Trigger,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_unregister_triggers::get_method_info().method_ptr);
-        inner(this, in_trigger_list, in_delegate, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkTriggerHandler as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkTriggerHandler as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: AkTriggerHandler, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AkTriggerHandler, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkTriggerHandler as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkTriggerHandler as ::unity2::ClassIdentity>::NAME,
-                        ".cctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __AkTriggerHandler_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_handle_event { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: gameobject :: GameObject as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkTriggerHandler as :: unity2 :: ClassIdentity > :: class () , "HandleEvent" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkTriggerHandler as :: unity2 :: ClassIdentity > :: NAME , "HandleEvent" , e) , } } } pub unsafe fn handle_event (this : AkTriggerHandler , in_game_object : crate :: unity_engine :: gameobject :: GameObject , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkTriggerHandler , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_handle_event :: get_method_info () . method_ptr ,) ; inner (this , in_game_object , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_awake { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkTriggerHandler as :: unity2 :: ClassIdentity > :: class () , "Awake" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkTriggerHandler as :: unity2 :: ClassIdentity > :: NAME , "Awake" , e) , } } } pub unsafe fn awake (this : AkTriggerHandler , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkTriggerHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_awake :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_start { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkTriggerHandler as :: unity2 :: ClassIdentity > :: class () , "Start" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkTriggerHandler as :: unity2 :: ClassIdentity > :: NAME , "Start" , e) , } } } pub unsafe fn start (this : AkTriggerHandler , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkTriggerHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_start :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_destroy { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkTriggerHandler as :: unity2 :: ClassIdentity > :: class () , "OnDestroy" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkTriggerHandler as :: unity2 :: ClassIdentity > :: NAME , "OnDestroy" , e) , } } } pub unsafe fn on_destroy (this : AkTriggerHandler , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkTriggerHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_destroy :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_do_destroy { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkTriggerHandler as :: unity2 :: ClassIdentity > :: class () , "DoDestroy" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkTriggerHandler as :: unity2 :: ClassIdentity > :: NAME , "DoDestroy" , e) , } } } pub unsafe fn do_destroy (this : AkTriggerHandler , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkTriggerHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_do_destroy :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_enable { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkTriggerHandler as :: unity2 :: ClassIdentity > :: class () , "OnEnable" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkTriggerHandler as :: unity2 :: ClassIdentity > :: NAME , "OnEnable" , e) , } } } pub unsafe fn on_enable (this : AkTriggerHandler , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkTriggerHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_enable :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_register_triggers { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < i32 > as :: unity2 :: IlType > :: il_type () , < crate :: root :: aktriggerbase :: AkTriggerBase_Trigger as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkTriggerHandler as :: unity2 :: ClassIdentity > :: class () , "RegisterTriggers" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkTriggerHandler as :: unity2 :: ClassIdentity > :: NAME , "RegisterTriggers" , e) , } } } pub unsafe fn register_triggers (this : AkTriggerHandler , in_trigger_list : crate :: system :: collections :: generic :: list_1 :: List_1 < i32 > , in_delegate : crate :: root :: aktriggerbase :: AkTriggerBase_Trigger , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkTriggerHandler , crate :: system :: collections :: generic :: list_1 :: List_1 < i32 > , crate :: root :: aktriggerbase :: AkTriggerBase_Trigger , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_register_triggers :: get_method_info () . method_ptr ,) ; inner (this , in_trigger_list , in_delegate , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_unregister_triggers { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < i32 > as :: unity2 :: IlType > :: il_type () , < crate :: root :: aktriggerbase :: AkTriggerBase_Trigger as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkTriggerHandler as :: unity2 :: ClassIdentity > :: class () , "UnregisterTriggers" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkTriggerHandler as :: unity2 :: ClassIdentity > :: NAME , "UnregisterTriggers" , e) , } } } pub unsafe fn unregister_triggers (this : AkTriggerHandler , in_trigger_list : crate :: system :: collections :: generic :: list_1 :: List_1 < i32 > , in_delegate : crate :: root :: aktriggerbase :: AkTriggerBase_Trigger , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkTriggerHandler , crate :: system :: collections :: generic :: list_1 :: List_1 < i32 > , crate :: root :: aktriggerbase :: AkTriggerBase_Trigger , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_unregister_triggers :: get_method_info () . method_ptr ,) ; inner (this , in_trigger_list , in_delegate , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkTriggerHandler as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkTriggerHandler as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : AkTriggerHandler , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkTriggerHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkTriggerHandler as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkTriggerHandler as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
+
+#[cfg(feature = "root-aktriggerhandler")]
+impl AkTriggerHandler { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { __AkTriggerHandler_unity2_raw :: cctor (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "root-aktriggerhandler")]
+pub trait IAkTriggerHandlerMethods : IAkTriggerHandler { # [doc = "`HandleEvent(crate::unity_engine::gameobject::GameObject)` overload"] fn handle_event (self , in_game_object : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> () { unsafe { let __receiver = < AkTriggerHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkTriggerHandler_unity2_raw :: handle_event (__receiver , :: core :: convert :: Into :: into (in_game_object) , :: core :: option :: Option :: None) } } # [doc = "`Awake()` overload"] fn awake (self ,) -> () { unsafe { let __receiver = < AkTriggerHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkTriggerHandler_unity2_raw :: awake (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < AkTriggerHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkTriggerHandler_unity2_raw :: start (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnDestroy()` overload"] fn on_destroy (self ,) -> () { unsafe { let __receiver = < AkTriggerHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkTriggerHandler_unity2_raw :: on_destroy (__receiver , :: core :: option :: Option :: None) } } # [doc = "`DoDestroy()` overload"] fn do_destroy (self ,) -> () { unsafe { let __receiver = < AkTriggerHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkTriggerHandler_unity2_raw :: do_destroy (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnEnable()` overload"] fn on_enable (self ,) -> () { unsafe { let __receiver = < AkTriggerHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkTriggerHandler_unity2_raw :: on_enable (__receiver , :: core :: option :: Option :: None) } } # [doc = "`RegisterTriggers(crate::system::collections::generic::list_1::List_1<i32>, crate::root::aktriggerbase::AkTriggerBase_Trigger)` overload"] fn register_triggers (self , in_trigger_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < i32 > > , in_delegate : impl :: core :: convert :: Into < crate :: root :: aktriggerbase :: AkTriggerBase_Trigger >) -> () { unsafe { let __receiver = < AkTriggerHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkTriggerHandler_unity2_raw :: register_triggers (__receiver , :: core :: convert :: Into :: into (in_trigger_list) , :: core :: convert :: Into :: into (in_delegate) , :: core :: option :: Option :: None) } } # [doc = "`UnregisterTriggers(crate::system::collections::generic::list_1::List_1<i32>, crate::root::aktriggerbase::AkTriggerBase_Trigger)` overload"] fn unregister_triggers (self , in_trigger_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < i32 > > , in_delegate : impl :: core :: convert :: Into < crate :: root :: aktriggerbase :: AkTriggerBase_Trigger >) -> () { unsafe { let __receiver = < AkTriggerHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkTriggerHandler_unity2_raw :: unregister_triggers (__receiver , :: core :: convert :: Into :: into (in_trigger_list) , :: core :: convert :: Into :: into (in_delegate) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AkTriggerHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkTriggerHandler_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "root-aktriggerhandler")]
+impl < __T : IAkTriggerHandler > IAkTriggerHandlerMethods for __T { }
+
+#[cfg(feature = "root-aktriggerhandler")]
+impl AkTriggerHandler { pub fn handle_event_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkTriggerHandler_unity2_raw :: __lookup_handle_event :: get_method_info () } pub fn awake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkTriggerHandler_unity2_raw :: __lookup_awake :: get_method_info () } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkTriggerHandler_unity2_raw :: __lookup_start :: get_method_info () } pub fn on_destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkTriggerHandler_unity2_raw :: __lookup_on_destroy :: get_method_info () } pub fn do_destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkTriggerHandler_unity2_raw :: __lookup_do_destroy :: get_method_info () } pub fn on_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkTriggerHandler_unity2_raw :: __lookup_on_enable :: get_method_info () } pub fn register_triggers_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkTriggerHandler_unity2_raw :: __lookup_register_triggers :: get_method_info () } pub fn unregister_triggers_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkTriggerHandler_unity2_raw :: __lookup_unregister_triggers :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkTriggerHandler_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkTriggerHandler_unity2_raw :: __lookup_cctor :: get_method_info () } }
 
 #[cfg(feature = "root-aktriggerhandler")]
 impl AkTriggerHandler {
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __AkTriggerHandler_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "root-aktriggerhandler")]
-pub trait IAkTriggerHandlerMethods: IAkTriggerHandler {
-    #[doc = "`HandleEvent(crate::unity_engine::gameobject::GameObject)` overload"]
-    fn handle_event(self, in_game_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>) -> () {
-        unsafe {
-            let __receiver = <AkTriggerHandler as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkTriggerHandler_unity2_raw::handle_event(__receiver, ::core::convert::Into::into(in_game_object), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Awake()` overload"]
-    fn awake(self) -> () {
-        unsafe {
-            let __receiver = <AkTriggerHandler as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkTriggerHandler_unity2_raw::awake(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Start()` overload"]
-    fn start(self) -> () {
-        unsafe {
-            let __receiver = <AkTriggerHandler as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkTriggerHandler_unity2_raw::start(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnDestroy()` overload"]
-    fn on_destroy(self) -> () {
-        unsafe {
-            let __receiver = <AkTriggerHandler as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkTriggerHandler_unity2_raw::on_destroy(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`DoDestroy()` overload"]
-    fn do_destroy(self) -> () {
-        unsafe {
-            let __receiver = <AkTriggerHandler as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkTriggerHandler_unity2_raw::do_destroy(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnEnable()` overload"]
-    fn on_enable(self) -> () {
-        unsafe {
-            let __receiver = <AkTriggerHandler as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkTriggerHandler_unity2_raw::on_enable(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`RegisterTriggers(crate::system::collections::generic::list_1::List_1<i32>, crate::root::aktriggerbase::AkTriggerBase_Trigger)` overload"]
-    fn register_triggers(
-        self,
-        in_trigger_list: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<i32>>,
-        in_delegate: impl ::core::convert::Into<crate::root::aktriggerbase::AkTriggerBase_Trigger>,
-    ) -> () {
-        unsafe {
-            let __receiver = <AkTriggerHandler as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkTriggerHandler_unity2_raw::register_triggers(
-                __receiver,
-                ::core::convert::Into::into(in_trigger_list),
-                ::core::convert::Into::into(in_delegate),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`UnregisterTriggers(crate::system::collections::generic::list_1::List_1<i32>, crate::root::aktriggerbase::AkTriggerBase_Trigger)` overload"]
-    fn unregister_triggers(
-        self,
-        in_trigger_list: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<i32>>,
-        in_delegate: impl ::core::convert::Into<crate::root::aktriggerbase::AkTriggerBase_Trigger>,
-    ) -> () {
-        unsafe {
-            let __receiver = <AkTriggerHandler as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkTriggerHandler_unity2_raw::unregister_triggers(
-                __receiver,
-                ::core::convert::Into::into(in_trigger_list),
-                ::core::convert::Into::into(in_delegate),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <AkTriggerHandler as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkTriggerHandler_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "root-aktriggerhandler")]
-impl<__T: IAkTriggerHandler> IAkTriggerHandlerMethods for __T {}
-
-#[cfg(feature = "root-aktriggerhandler")]
-impl AkTriggerHandler {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AkTriggerHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAkTriggerHandlerMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkTriggerHandler) , :: core :: stringify ! (new) ,)) ; < Self as IAkTriggerHandlerMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "root-aktriggerhandler")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{AkTriggerHandler, IAkTriggerHandler, IAkTriggerHandlerMethods};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        system::object::IObject,
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::AkTriggerHandler;
+    pub use super::IAkTriggerHandler;
+    pub use super::IAkTriggerHandlerMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

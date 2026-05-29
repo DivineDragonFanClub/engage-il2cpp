@@ -2,75 +2,34 @@
 
 #[cfg(feature = "unity_engine-timeline-itimelineevaluatecallback-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/itimelineevaluatecallback/ITimelineEvaluateCallback.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Timeline", name = "ITimelineEvaluateCallback")]
-    pub struct ITimelineEvaluateCallback {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/itimelineevaluatecallback/ITimelineEvaluateCallback.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Timeline" , name = "ITimelineEvaluateCallback")] pub struct ITimelineEvaluateCallback {}
+
 }
 
 #[cfg(feature = "unity_engine-timeline-itimelineevaluatecallback-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-timeline-itimelineevaluatecallback")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ITimelineEvaluateCallback_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_evaluate {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ITimelineEvaluateCallback as ::unity2::ClassIdentity>::class(),
-                "Evaluate",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ITimelineEvaluateCallback as ::unity2::ClassIdentity>::NAME,
-                        "Evaluate",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn evaluate(this: ITimelineEvaluateCallback, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ITimelineEvaluateCallback, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_evaluate::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ITimelineEvaluateCallback_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_evaluate { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ITimelineEvaluateCallback as :: unity2 :: ClassIdentity > :: class () , "Evaluate" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ITimelineEvaluateCallback as :: unity2 :: ClassIdentity > :: NAME , "Evaluate" , e) , } } } pub unsafe fn evaluate (this : ITimelineEvaluateCallback , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ITimelineEvaluateCallback , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_evaluate :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-timeline-itimelineevaluatecallback")]
-pub trait IITimelineEvaluateCallbackMethods: IITimelineEvaluateCallback {
-    #[doc = "`Evaluate()` overload"]
-    fn evaluate(self) -> () {
-        unsafe {
-            let __receiver =
-                <ITimelineEvaluateCallback as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ITimelineEvaluateCallback_unity2_raw::evaluate(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IITimelineEvaluateCallbackMethods : IITimelineEvaluateCallback { # [doc = "`Evaluate()` overload"] fn evaluate (self ,) -> () { unsafe { let __receiver = < ITimelineEvaluateCallback as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ITimelineEvaluateCallback_unity2_raw :: evaluate (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-timeline-itimelineevaluatecallback")]
-impl<__T: IITimelineEvaluateCallback> IITimelineEvaluateCallbackMethods for __T {}
+impl < __T : IITimelineEvaluateCallback > IITimelineEvaluateCallbackMethods for __T { }
+
+#[cfg(feature = "unity_engine-timeline-itimelineevaluatecallback")]
+impl ITimelineEvaluateCallback { pub fn evaluate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ITimelineEvaluateCallback_unity2_raw :: __lookup_evaluate :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-timeline-itimelineevaluatecallback")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IITimelineEvaluateCallback, IITimelineEvaluateCallbackMethods, ITimelineEvaluateCallback};
+    pub use super::ITimelineEvaluateCallback;
+    pub use super::IITimelineEvaluateCallback;
+    pub use super::IITimelineEvaluateCallbackMethods;
 }

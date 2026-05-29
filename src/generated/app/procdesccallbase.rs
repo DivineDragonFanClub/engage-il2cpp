@@ -2,187 +2,47 @@
 
 #[cfg(feature = "app-procdesccallbase-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::procdesc::{IProcDesc, ProcDesc},
-        system::object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/procdesccallbase/ProcDescCallBase.md"))]
-    #[::unity2::class(namespace = "App", name = "ProcDescCallBase")]
-    #[parent(crate::app::procdesc::ProcDesc)]
-    pub struct ProcDescCallBase {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: procdesc :: { IProcDesc , ProcDesc }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/procdesccallbase/ProcDescCallBase.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProcDescCallBase")] # [parent (crate :: app :: procdesc :: ProcDesc)] pub struct ProcDescCallBase {}
+
 }
 
 #[cfg(feature = "app-procdesccallbase-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-procdesccallbase")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ProcDescCallBase_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procdesc::ProcDesc_Type as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProcDescCallBase as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProcDescCallBase as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: ProcDescCallBase, r#type: crate::app::procdesc::ProcDesc_Type, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ProcDescCallBase, crate::app::procdesc::ProcDesc_Type, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, r#type, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_execute {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProcDescCallBase as ::unity2::ClassIdentity>::class(),
-                "Execute",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProcDescCallBase as ::unity2::ClassIdentity>::NAME,
-                        "Execute",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn execute(
-        this: ProcDescCallBase,
-        inst: crate::app::procinst::ProcInst,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::procdesc::ProcDesc_Result {
-        let inner: extern "C" fn(
-            ProcDescCallBase,
-            crate::app::procinst::ProcInst,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::procdesc::ProcDesc_Result = ::core::mem::transmute(__lookup_execute::get_method_info().method_ptr);
-        inner(this, inst, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_execute_impl {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProcDescCallBase as ::unity2::ClassIdentity>::class(),
-                "ExecuteImpl",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProcDescCallBase as ::unity2::ClassIdentity>::NAME,
-                        "ExecuteImpl",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn execute_impl(this: ProcDescCallBase, inst: crate::app::procinst::ProcInst, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ProcDescCallBase, crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_execute_impl::get_method_info().method_ptr);
-        inner(this, inst, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ProcDescCallBase_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procdesc :: ProcDesc_Type as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProcDescCallBase as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProcDescCallBase as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : ProcDescCallBase , r#type : crate :: app :: procdesc :: ProcDesc_Type , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ProcDescCallBase , crate :: app :: procdesc :: ProcDesc_Type , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , r#type , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_execute { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProcDescCallBase as :: unity2 :: ClassIdentity > :: class () , "Execute" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProcDescCallBase as :: unity2 :: ClassIdentity > :: NAME , "Execute" , e) , } } } pub unsafe fn execute (this : ProcDescCallBase , inst : crate :: app :: procinst :: ProcInst , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: procdesc :: ProcDesc_Result { let inner : extern "C" fn (ProcDescCallBase , crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> crate :: app :: procdesc :: ProcDesc_Result = :: core :: mem :: transmute (__lookup_execute :: get_method_info () . method_ptr ,) ; inner (this , inst , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_execute_impl { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProcDescCallBase as :: unity2 :: ClassIdentity > :: class () , "ExecuteImpl" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProcDescCallBase as :: unity2 :: ClassIdentity > :: NAME , "ExecuteImpl" , e) , } } } pub unsafe fn execute_impl (this : ProcDescCallBase , inst : crate :: app :: procinst :: ProcInst , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ProcDescCallBase , crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_execute_impl :: get_method_info () . method_ptr ,) ; inner (this , inst , __unity2_method_info) } }
 
 #[cfg(feature = "app-procdesccallbase")]
-pub trait IProcDescCallBaseMethods: IProcDescCallBase {
-    #[doc = "`.ctor(crate::app::procdesc::ProcDesc_Type)` overload"]
-    fn ctor(self, r#type: impl ::core::convert::Into<crate::app::procdesc::ProcDesc_Type>) -> () {
-        unsafe {
-            let __receiver = <ProcDescCallBase as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ProcDescCallBase_unity2_raw::ctor(__receiver, ::core::convert::Into::into(r#type), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Execute(crate::app::procinst::ProcInst)` overload"]
-    fn execute(self, inst: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> crate::app::procdesc::ProcDesc_Result {
-        unsafe {
-            let __receiver = <ProcDescCallBase as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ProcDescCallBase_unity2_raw::execute(__receiver, ::core::convert::Into::into(inst), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ExecuteImpl(crate::app::procinst::ProcInst)` overload"]
-    fn execute_impl(self, inst: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
-        unsafe {
-            let __receiver = <ProcDescCallBase as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ProcDescCallBase_unity2_raw::execute_impl(__receiver, ::core::convert::Into::into(inst), ::core::option::Option::None)
-        }
-    }
-}
+pub trait IProcDescCallBaseMethods : IProcDescCallBase { # [doc = "`.ctor(crate::app::procdesc::ProcDesc_Type)` overload"] fn ctor (self , r#type : impl :: core :: convert :: Into < crate :: app :: procdesc :: ProcDesc_Type >) -> () { unsafe { let __receiver = < ProcDescCallBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ProcDescCallBase_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } # [doc = "`Execute(crate::app::procinst::ProcInst)` overload"] fn execute (self , inst : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> crate :: app :: procdesc :: ProcDesc_Result { unsafe { let __receiver = < ProcDescCallBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ProcDescCallBase_unity2_raw :: execute (__receiver , :: core :: convert :: Into :: into (inst) , :: core :: option :: Option :: None) } } # [doc = "`ExecuteImpl(crate::app::procinst::ProcInst)` overload"] fn execute_impl (self , inst : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { let __receiver = < ProcDescCallBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ProcDescCallBase_unity2_raw :: execute_impl (__receiver , :: core :: convert :: Into :: into (inst) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-procdesccallbase")]
-impl<__T: IProcDescCallBase> IProcDescCallBaseMethods for __T {}
+impl < __T : IProcDescCallBase > IProcDescCallBaseMethods for __T { }
+
+#[cfg(feature = "app-procdesccallbase")]
+impl ProcDescCallBase { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProcDescCallBase_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn execute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProcDescCallBase_unity2_raw :: __lookup_execute :: get_method_info () } pub fn execute_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProcDescCallBase_unity2_raw :: __lookup_execute_impl :: get_method_info () } }
 
 #[cfg(feature = "app-procdesccallbase")]
 impl ProcDescCallBase {
-    #[doc = "`.ctor(crate::app::procdesc::ProcDesc_Type)` — overload selector"]
-    pub fn new(r#type: crate::app::procdesc::ProcDesc_Type) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ProcDescCallBase),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IProcDescCallBaseMethods>::ctor(this, r#type);
-        this
-    }
+# [doc = "`.ctor(crate::app::procdesc::ProcDesc_Type)` — overload selector"] pub fn new (r#type : crate :: app :: procdesc :: ProcDesc_Type) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProcDescCallBase) , :: core :: stringify ! (new) ,)) ; < Self as IProcDescCallBaseMethods > :: ctor (this , r#type) ; this }
 }
 
 #[cfg(feature = "app-procdesccallbase")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IProcDescCallBase, IProcDescCallBaseMethods, ProcDescCallBase};
-    #[cfg(feature = "app-procdesc")]
-    pub use crate::app::procdesc::IProcDescMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::{app::procdesc::IProcDesc, system::object::IObject};
+    pub use super::ProcDescCallBase;
+    pub use super::IProcDescCallBase;
+    pub use super::IProcDescCallBaseMethods;
+    pub use crate::app::procdesc::IProcDesc;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "app-procdesc")] pub use crate::app::procdesc::IProcDescMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

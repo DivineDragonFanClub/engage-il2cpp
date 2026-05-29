@@ -2,574 +2,78 @@
 
 #[cfg(feature = "app-refineshopengravedemoroot-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshopengravedemoroot/RefineShopEngraveDemoRoot.md"))]
-    #[::unity2::class(namespace = "App", name = "RefineShopEngraveDemoRoot")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct RefineShopEngraveDemoRoot {
-        #[static_field]
-        #[rename(name = "PrefabPath")]
-        pub prefab_path: ::unity2::Il2CppString,
-        #[offset(24)]
-        #[rename(name = "m_WeaponModelObject")]
-        pub m_weapon_model_object: crate::unity_engine::gameobject::GameObject,
-        #[offset(32)]
-        #[rename(name = "m_GodSymbolFront")]
-        pub m_god_symbol_front: crate::unity_engine::gameobject::GameObject,
-        #[offset(40)]
-        #[rename(name = "m_GodSymbolBack")]
-        pub m_god_symbol_back: crate::unity_engine::gameobject::GameObject,
-        #[offset(48)]
-        #[rename(name = "m_GodSymbolEff")]
-        pub m_god_symbol_eff: crate::unity_engine::gameobject::GameObject,
-        #[offset(56)]
-        #[rename(name = "m_EffLight")]
-        pub m_eff_light: crate::unity_engine::gameobject::GameObject,
-        #[offset(64)]
-        #[rename(name = "m_WeaponIconFrameBefore")]
-        pub m_weapon_icon_frame_before: crate::unity_engine::gameobject::GameObject,
-        #[offset(72)]
-        #[rename(name = "m_WeaponNameTextBefore")]
-        pub m_weapon_name_text_before: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(80)]
-        #[rename(name = "m_WeaponIconFrameAfter")]
-        pub m_weapon_icon_frame_after: crate::unity_engine::gameobject::GameObject,
-        #[offset(88)]
-        #[rename(name = "m_WeaponNameTextAfter")]
-        pub m_weapon_name_text_after: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(96)]
-        #[rename(name = "m_RefineShopEngraveDemo")]
-        pub m_refine_shop_engrave_demo: crate::app::refineshopengravedemo::RefineShopEngraveDemo,
-        #[offset(104)]
-        #[rename(name = "m_ShopWeaponModelRenderer")]
-        pub m_shop_weapon_model_renderer: crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer,
-        #[offset(112)]
-        #[rename(name = "m_Animator")]
-        pub m_animator: crate::unity_engine::animator::Animator,
-        #[offset(120)]
-        #[rename(name = "m_UnitItem")]
-        pub m_unit_item: crate::app::unititem::UnitItem,
-        #[offset(128)]
-        #[rename(name = "m_Material")]
-        pub m_material: crate::unity_engine::material::Material,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshopengravedemoroot/RefineShopEngraveDemoRoot.md"))] # [:: unity2 :: class (namespace = "App" , name = "RefineShopEngraveDemoRoot")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct RefineShopEngraveDemoRoot {
+# [static_field] # [rename (name = "PrefabPath")] pub prefab_path : :: unity2 :: Il2CppString ,
+# [offset (24)] # [rename (name = "m_WeaponModelObject")] pub m_weapon_model_object : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (32)] # [rename (name = "m_GodSymbolFront")] pub m_god_symbol_front : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (40)] # [rename (name = "m_GodSymbolBack")] pub m_god_symbol_back : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (48)] # [rename (name = "m_GodSymbolEff")] pub m_god_symbol_eff : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (56)] # [rename (name = "m_EffLight")] pub m_eff_light : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (64)] # [rename (name = "m_WeaponIconFrameBefore")] pub m_weapon_icon_frame_before : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (72)] # [rename (name = "m_WeaponNameTextBefore")] pub m_weapon_name_text_before : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (80)] # [rename (name = "m_WeaponIconFrameAfter")] pub m_weapon_icon_frame_after : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (88)] # [rename (name = "m_WeaponNameTextAfter")] pub m_weapon_name_text_after : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (96)] # [rename (name = "m_RefineShopEngraveDemo")] pub m_refine_shop_engrave_demo : crate :: app :: refineshopengravedemo :: RefineShopEngraveDemo ,
+# [offset (104)] # [rename (name = "m_ShopWeaponModelRenderer")] pub m_shop_weapon_model_renderer : crate :: app :: shopweaponmodelrenderer :: ShopWeaponModelRenderer ,
+# [offset (112)] # [rename (name = "m_Animator")] pub m_animator : crate :: unity_engine :: animator :: Animator ,
+# [offset (120)] # [rename (name = "m_UnitItem")] pub m_unit_item : crate :: app :: unititem :: UnitItem ,
+# [offset (128)] # [rename (name = "m_Material")] pub m_material : crate :: unity_engine :: material :: Material ,
+}
+
 }
 
 #[cfg(feature = "app-refineshopengravedemoroot-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-refineshopengravedemoroot")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RefineShopEngraveDemoRoot_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_load_prefab_async {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RefineShopEngraveDemoRoot as ::unity2::ClassIdentity>::class(),
-                "LoadPrefabAsync",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RefineShopEngraveDemoRoot as ::unity2::ClassIdentity>::NAME,
-                        "LoadPrefabAsync",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn load_prefab_async(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_load_prefab_async::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_loading_prefab {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RefineShopEngraveDemoRoot as ::unity2::ClassIdentity>::class(),
-                "IsLoadingPrefab",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RefineShopEngraveDemoRoot as ::unity2::ClassIdentity>::NAME,
-                        "IsLoadingPrefab",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_loading_prefab(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_is_loading_prefab::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_unload_prefab {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RefineShopEngraveDemoRoot as ::unity2::ClassIdentity>::class(),
-                "UnloadPrefab",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RefineShopEngraveDemoRoot as ::unity2::ClassIdentity>::NAME,
-                        "UnloadPrefab",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn unload_prefab(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_unload_prefab::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::refineshopengravedemo::RefineShopEngraveDemo as ::unity2::IlType>::il_type(),
-                <crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer as ::unity2::IlType>::il_type(),
-                <crate::app::unititem::UnitItem as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RefineShopEngraveDemoRoot as ::unity2::ClassIdentity>::class(),
-                "Create",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RefineShopEngraveDemoRoot as ::unity2::ClassIdentity>::NAME,
-                        "Create",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create(
-        refine_shop_engrave_demo: crate::app::refineshopengravedemo::RefineShopEngraveDemo,
-        shop_weapon_model_renderer: crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer,
-        base_unit_item: crate::app::unititem::UnitItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::refineshopengravedemoroot::RefineShopEngraveDemoRoot {
-        let inner: extern "C" fn(
-            crate::app::refineshopengravedemo::RefineShopEngraveDemo,
-            crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer,
-            crate::app::unititem::UnitItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::refineshopengravedemoroot::RefineShopEngraveDemoRoot = ::core::mem::transmute(__lookup_create::get_method_info().method_ptr);
-        inner(refine_shop_engrave_demo, shop_weapon_model_renderer, base_unit_item, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_inside {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::refineshopengravedemo::RefineShopEngraveDemo as ::unity2::IlType>::il_type(),
-                <crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer as ::unity2::IlType>::il_type(),
-                <crate::app::unititem::UnitItem as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RefineShopEngraveDemoRoot as ::unity2::ClassIdentity>::class(),
-                "CreateInside",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RefineShopEngraveDemoRoot as ::unity2::ClassIdentity>::NAME,
-                        "CreateInside",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_inside(
-        this: RefineShopEngraveDemoRoot,
-        refine_shop_engrave_demo: crate::app::refineshopengravedemo::RefineShopEngraveDemo,
-        shop_weapon_model_renderer: crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer,
-        base_unit_item: crate::app::unititem::UnitItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RefineShopEngraveDemoRoot,
-            crate::app::refineshopengravedemo::RefineShopEngraveDemo,
-            crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer,
-            crate::app::unititem::UnitItem,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_create_inside::get_method_info().method_ptr);
-        inner(
-            this,
-            refine_shop_engrave_demo,
-            shop_weapon_model_renderer,
-            base_unit_item,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_build {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RefineShopEngraveDemoRoot as ::unity2::ClassIdentity>::class(),
-                "Build",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RefineShopEngraveDemoRoot as ::unity2::ClassIdentity>::NAME,
-                        "Build",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn build(this: RefineShopEngraveDemoRoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RefineShopEngraveDemoRoot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_build::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_playing {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RefineShopEngraveDemoRoot as ::unity2::ClassIdentity>::class(),
-                "IsPlaying",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RefineShopEngraveDemoRoot as ::unity2::ClassIdentity>::NAME,
-                        "IsPlaying",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_playing(this: RefineShopEngraveDemoRoot, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(RefineShopEngraveDemoRoot, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_playing::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_destroyed {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RefineShopEngraveDemoRoot as ::unity2::ClassIdentity>::class(),
-                "IsDestroyed",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RefineShopEngraveDemoRoot as ::unity2::ClassIdentity>::NAME,
-                        "IsDestroyed",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_destroyed(this: RefineShopEngraveDemoRoot, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(RefineShopEngraveDemoRoot, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_destroyed::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_destroy {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RefineShopEngraveDemoRoot as ::unity2::ClassIdentity>::class(),
-                "Destroy",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RefineShopEngraveDemoRoot as ::unity2::ClassIdentity>::NAME,
-                        "Destroy",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn destroy(this: RefineShopEngraveDemoRoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RefineShopEngraveDemoRoot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_destroy::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RefineShopEngraveDemoRoot as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RefineShopEngraveDemoRoot as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: RefineShopEngraveDemoRoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RefineShopEngraveDemoRoot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __RefineShopEngraveDemoRoot_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_load_prefab_async { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RefineShopEngraveDemoRoot as :: unity2 :: ClassIdentity > :: class () , "LoadPrefabAsync" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefineShopEngraveDemoRoot as :: unity2 :: ClassIdentity > :: NAME , "LoadPrefabAsync" , e) , } } } pub unsafe fn load_prefab_async (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_load_prefab_async :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_loading_prefab { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RefineShopEngraveDemoRoot as :: unity2 :: ClassIdentity > :: class () , "IsLoadingPrefab" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefineShopEngraveDemoRoot as :: unity2 :: ClassIdentity > :: NAME , "IsLoadingPrefab" , e) , } } } pub unsafe fn is_loading_prefab (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_loading_prefab :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_unload_prefab { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RefineShopEngraveDemoRoot as :: unity2 :: ClassIdentity > :: class () , "UnloadPrefab" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefineShopEngraveDemoRoot as :: unity2 :: ClassIdentity > :: NAME , "UnloadPrefab" , e) , } } } pub unsafe fn unload_prefab (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_unload_prefab :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: refineshopengravedemo :: RefineShopEngraveDemo as :: unity2 :: IlType > :: il_type () , < crate :: app :: shopweaponmodelrenderer :: ShopWeaponModelRenderer as :: unity2 :: IlType > :: il_type () , < crate :: app :: unititem :: UnitItem as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RefineShopEngraveDemoRoot as :: unity2 :: ClassIdentity > :: class () , "Create" , 3 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefineShopEngraveDemoRoot as :: unity2 :: ClassIdentity > :: NAME , "Create" , e) , } } } pub unsafe fn create (refine_shop_engrave_demo : crate :: app :: refineshopengravedemo :: RefineShopEngraveDemo , shop_weapon_model_renderer : crate :: app :: shopweaponmodelrenderer :: ShopWeaponModelRenderer , base_unit_item : crate :: app :: unititem :: UnitItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: refineshopengravedemoroot :: RefineShopEngraveDemoRoot { let inner : extern "C" fn (crate :: app :: refineshopengravedemo :: RefineShopEngraveDemo , crate :: app :: shopweaponmodelrenderer :: ShopWeaponModelRenderer , crate :: app :: unititem :: UnitItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: refineshopengravedemoroot :: RefineShopEngraveDemoRoot = :: core :: mem :: transmute (__lookup_create :: get_method_info () . method_ptr ,) ; inner (refine_shop_engrave_demo , shop_weapon_model_renderer , base_unit_item , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_inside { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: refineshopengravedemo :: RefineShopEngraveDemo as :: unity2 :: IlType > :: il_type () , < crate :: app :: shopweaponmodelrenderer :: ShopWeaponModelRenderer as :: unity2 :: IlType > :: il_type () , < crate :: app :: unititem :: UnitItem as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RefineShopEngraveDemoRoot as :: unity2 :: ClassIdentity > :: class () , "CreateInside" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefineShopEngraveDemoRoot as :: unity2 :: ClassIdentity > :: NAME , "CreateInside" , e) , } } } pub unsafe fn create_inside (this : RefineShopEngraveDemoRoot , refine_shop_engrave_demo : crate :: app :: refineshopengravedemo :: RefineShopEngraveDemo , shop_weapon_model_renderer : crate :: app :: shopweaponmodelrenderer :: ShopWeaponModelRenderer , base_unit_item : crate :: app :: unititem :: UnitItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RefineShopEngraveDemoRoot , crate :: app :: refineshopengravedemo :: RefineShopEngraveDemo , crate :: app :: shopweaponmodelrenderer :: ShopWeaponModelRenderer , crate :: app :: unititem :: UnitItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create_inside :: get_method_info () . method_ptr ,) ; inner (this , refine_shop_engrave_demo , shop_weapon_model_renderer , base_unit_item , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_build { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RefineShopEngraveDemoRoot as :: unity2 :: ClassIdentity > :: class () , "Build" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefineShopEngraveDemoRoot as :: unity2 :: ClassIdentity > :: NAME , "Build" , e) , } } } pub unsafe fn build (this : RefineShopEngraveDemoRoot , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RefineShopEngraveDemoRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_build :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_playing { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RefineShopEngraveDemoRoot as :: unity2 :: ClassIdentity > :: class () , "IsPlaying" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefineShopEngraveDemoRoot as :: unity2 :: ClassIdentity > :: NAME , "IsPlaying" , e) , } } } pub unsafe fn is_playing (this : RefineShopEngraveDemoRoot , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (RefineShopEngraveDemoRoot , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_playing :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_destroyed { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RefineShopEngraveDemoRoot as :: unity2 :: ClassIdentity > :: class () , "IsDestroyed" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefineShopEngraveDemoRoot as :: unity2 :: ClassIdentity > :: NAME , "IsDestroyed" , e) , } } } pub unsafe fn is_destroyed (this : RefineShopEngraveDemoRoot , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (RefineShopEngraveDemoRoot , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_destroyed :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_destroy { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RefineShopEngraveDemoRoot as :: unity2 :: ClassIdentity > :: class () , "Destroy" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefineShopEngraveDemoRoot as :: unity2 :: ClassIdentity > :: NAME , "Destroy" , e) , } } } pub unsafe fn destroy (this : RefineShopEngraveDemoRoot , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RefineShopEngraveDemoRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_destroy :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RefineShopEngraveDemoRoot as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefineShopEngraveDemoRoot as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : RefineShopEngraveDemoRoot , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RefineShopEngraveDemoRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-refineshopengravedemoroot")]
+impl RefineShopEngraveDemoRoot { # [doc = "`LoadPrefabAsync()` overload"] pub fn load_prefab_async () -> () { unsafe { __RefineShopEngraveDemoRoot_unity2_raw :: load_prefab_async (:: core :: option :: Option :: None) } } # [doc = "`IsLoadingPrefab()` overload"] pub fn is_loading_prefab () -> bool { unsafe { __RefineShopEngraveDemoRoot_unity2_raw :: is_loading_prefab (:: core :: option :: Option :: None) } } # [doc = "`UnloadPrefab()` overload"] pub fn unload_prefab () -> () { unsafe { __RefineShopEngraveDemoRoot_unity2_raw :: unload_prefab (:: core :: option :: Option :: None) } } # [doc = "`Create(crate::app::refineshopengravedemo::RefineShopEngraveDemo, crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer, crate::app::unititem::UnitItem)` overload"] pub fn create (refine_shop_engrave_demo : impl :: core :: convert :: Into < crate :: app :: refineshopengravedemo :: RefineShopEngraveDemo > , shop_weapon_model_renderer : impl :: core :: convert :: Into < crate :: app :: shopweaponmodelrenderer :: ShopWeaponModelRenderer > , base_unit_item : impl :: core :: convert :: Into < crate :: app :: unititem :: UnitItem >) -> crate :: app :: refineshopengravedemoroot :: RefineShopEngraveDemoRoot { unsafe { __RefineShopEngraveDemoRoot_unity2_raw :: create (:: core :: convert :: Into :: into (refine_shop_engrave_demo) , :: core :: convert :: Into :: into (shop_weapon_model_renderer) , :: core :: convert :: Into :: into (base_unit_item) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-refineshopengravedemoroot")]
+pub trait IRefineShopEngraveDemoRootMethods : IRefineShopEngraveDemoRoot { # [doc = "`CreateInside(crate::app::refineshopengravedemo::RefineShopEngraveDemo, crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer, crate::app::unititem::UnitItem)` overload"] fn create_inside (self , refine_shop_engrave_demo : impl :: core :: convert :: Into < crate :: app :: refineshopengravedemo :: RefineShopEngraveDemo > , shop_weapon_model_renderer : impl :: core :: convert :: Into < crate :: app :: shopweaponmodelrenderer :: ShopWeaponModelRenderer > , base_unit_item : impl :: core :: convert :: Into < crate :: app :: unititem :: UnitItem >) -> () { unsafe { let __receiver = < RefineShopEngraveDemoRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RefineShopEngraveDemoRoot_unity2_raw :: create_inside (__receiver , :: core :: convert :: Into :: into (refine_shop_engrave_demo) , :: core :: convert :: Into :: into (shop_weapon_model_renderer) , :: core :: convert :: Into :: into (base_unit_item) , :: core :: option :: Option :: None) } } # [doc = "`Build()` overload"] fn build (self ,) -> () { unsafe { let __receiver = < RefineShopEngraveDemoRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RefineShopEngraveDemoRoot_unity2_raw :: build (__receiver , :: core :: option :: Option :: None) } } # [doc = "`IsPlaying()` overload"] fn is_playing (self ,) -> bool { unsafe { let __receiver = < RefineShopEngraveDemoRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RefineShopEngraveDemoRoot_unity2_raw :: is_playing (__receiver , :: core :: option :: Option :: None) } } # [doc = "`IsDestroyed()` overload"] fn is_destroyed (self ,) -> bool { unsafe { let __receiver = < RefineShopEngraveDemoRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RefineShopEngraveDemoRoot_unity2_raw :: is_destroyed (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Destroy()` overload"] fn destroy (self ,) -> () { unsafe { let __receiver = < RefineShopEngraveDemoRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RefineShopEngraveDemoRoot_unity2_raw :: destroy (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RefineShopEngraveDemoRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RefineShopEngraveDemoRoot_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-refineshopengravedemoroot")]
+impl < __T : IRefineShopEngraveDemoRoot > IRefineShopEngraveDemoRootMethods for __T { }
+
+#[cfg(feature = "app-refineshopengravedemoroot")]
+impl RefineShopEngraveDemoRoot { pub fn load_prefab_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RefineShopEngraveDemoRoot_unity2_raw :: __lookup_load_prefab_async :: get_method_info () } pub fn is_loading_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RefineShopEngraveDemoRoot_unity2_raw :: __lookup_is_loading_prefab :: get_method_info () } pub fn unload_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RefineShopEngraveDemoRoot_unity2_raw :: __lookup_unload_prefab :: get_method_info () } pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RefineShopEngraveDemoRoot_unity2_raw :: __lookup_create :: get_method_info () } pub fn create_inside_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RefineShopEngraveDemoRoot_unity2_raw :: __lookup_create_inside :: get_method_info () } pub fn build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RefineShopEngraveDemoRoot_unity2_raw :: __lookup_build :: get_method_info () } pub fn is_playing_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RefineShopEngraveDemoRoot_unity2_raw :: __lookup_is_playing :: get_method_info () } pub fn is_destroyed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RefineShopEngraveDemoRoot_unity2_raw :: __lookup_is_destroyed :: get_method_info () } pub fn destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RefineShopEngraveDemoRoot_unity2_raw :: __lookup_destroy :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RefineShopEngraveDemoRoot_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-refineshopengravedemoroot")]
 impl RefineShopEngraveDemoRoot {
-    #[doc = "`LoadPrefabAsync()` overload"]
-    pub fn load_prefab_async() -> () {
-        unsafe { __RefineShopEngraveDemoRoot_unity2_raw::load_prefab_async(::core::option::Option::None) }
-    }
-
-    #[doc = "`IsLoadingPrefab()` overload"]
-    pub fn is_loading_prefab() -> bool {
-        unsafe { __RefineShopEngraveDemoRoot_unity2_raw::is_loading_prefab(::core::option::Option::None) }
-    }
-
-    #[doc = "`UnloadPrefab()` overload"]
-    pub fn unload_prefab() -> () {
-        unsafe { __RefineShopEngraveDemoRoot_unity2_raw::unload_prefab(::core::option::Option::None) }
-    }
-
-    #[doc = "`Create(crate::app::refineshopengravedemo::RefineShopEngraveDemo, crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer, crate::app::unititem::UnitItem)` overload"]
-    pub fn create(
-        refine_shop_engrave_demo: impl ::core::convert::Into<crate::app::refineshopengravedemo::RefineShopEngraveDemo>,
-        shop_weapon_model_renderer: impl ::core::convert::Into<crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer>,
-        base_unit_item: impl ::core::convert::Into<crate::app::unititem::UnitItem>,
-    ) -> crate::app::refineshopengravedemoroot::RefineShopEngraveDemoRoot {
-        unsafe {
-            __RefineShopEngraveDemoRoot_unity2_raw::create(
-                ::core::convert::Into::into(refine_shop_engrave_demo),
-                ::core::convert::Into::into(shop_weapon_model_renderer),
-                ::core::convert::Into::into(base_unit_item),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-refineshopengravedemoroot")]
-pub trait IRefineShopEngraveDemoRootMethods: IRefineShopEngraveDemoRoot {
-    #[doc = "`CreateInside(crate::app::refineshopengravedemo::RefineShopEngraveDemo, crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer, crate::app::unititem::UnitItem)` overload"]
-    fn create_inside(
-        self,
-        refine_shop_engrave_demo: impl ::core::convert::Into<crate::app::refineshopengravedemo::RefineShopEngraveDemo>,
-        shop_weapon_model_renderer: impl ::core::convert::Into<crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer>,
-        base_unit_item: impl ::core::convert::Into<crate::app::unititem::UnitItem>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <RefineShopEngraveDemoRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RefineShopEngraveDemoRoot_unity2_raw::create_inside(
-                __receiver,
-                ::core::convert::Into::into(refine_shop_engrave_demo),
-                ::core::convert::Into::into(shop_weapon_model_renderer),
-                ::core::convert::Into::into(base_unit_item),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Build()` overload"]
-    fn build(self) -> () {
-        unsafe {
-            let __receiver =
-                <RefineShopEngraveDemoRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RefineShopEngraveDemoRoot_unity2_raw::build(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsPlaying()` overload"]
-    fn is_playing(self) -> bool {
-        unsafe {
-            let __receiver =
-                <RefineShopEngraveDemoRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RefineShopEngraveDemoRoot_unity2_raw::is_playing(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsDestroyed()` overload"]
-    fn is_destroyed(self) -> bool {
-        unsafe {
-            let __receiver =
-                <RefineShopEngraveDemoRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RefineShopEngraveDemoRoot_unity2_raw::is_destroyed(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Destroy()` overload"]
-    fn destroy(self) -> () {
-        unsafe {
-            let __receiver =
-                <RefineShopEngraveDemoRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RefineShopEngraveDemoRoot_unity2_raw::destroy(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <RefineShopEngraveDemoRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RefineShopEngraveDemoRoot_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-refineshopengravedemoroot")]
-impl<__T: IRefineShopEngraveDemoRoot> IRefineShopEngraveDemoRootMethods for __T {}
-
-#[cfg(feature = "app-refineshopengravedemoroot")]
-impl RefineShopEngraveDemoRoot {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RefineShopEngraveDemoRoot),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRefineShopEngraveDemoRootMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RefineShopEngraveDemoRoot) , :: core :: stringify ! (new) ,)) ; < Self as IRefineShopEngraveDemoRootMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-refineshopengravedemoroot")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IRefineShopEngraveDemoRoot, IRefineShopEngraveDemoRootMethods, RefineShopEngraveDemoRoot};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        system::object::IObject,
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::RefineShopEngraveDemoRoot;
+    pub use super::IRefineShopEngraveDemoRoot;
+    pub use super::IRefineShopEngraveDemoRootMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

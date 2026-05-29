@@ -2,260 +2,49 @@
 
 #[cfg(feature = "moon_sharp-interpreter-execution-closurecontext-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        collections::generic::list_1::{IList_1, List_1},
-        object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/execution/closurecontext/ClosureContext.md"))]
-    #[::unity2::class(namespace = "MoonSharp.Interpreter.Execution", name = "ClosureContext")]
-    # [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue >)]
-    pub struct ClosureContext {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: collections :: generic :: list_1 :: { IList_1 , List_1 }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/execution/closurecontext/ClosureContext.md"))] # [:: unity2 :: class (namespace = "MoonSharp.Interpreter.Execution" , name = "ClosureContext")] # [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue >)] pub struct ClosureContext {}
+
 }
 
 #[cfg(feature = "moon_sharp-interpreter-execution-closurecontext-types")]
 pub use __types::*;
 
 #[cfg(feature = "moon_sharp-interpreter-execution-closurecontext")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ClosureContext_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_symbols {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ClosureContext as ::unity2::ClassIdentity>::class(),
-                "get_Symbols",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ClosureContext as ::unity2::ClassIdentity>::NAME,
-                        "get_Symbols",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_symbols(this: ClosureContext, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Array<::unity2::Il2CppString> {
-        let inner: extern "C" fn(ClosureContext, ::unity2::OptionalMethod) -> ::unity2::Array<::unity2::Il2CppString> =
-            ::core::mem::transmute(__lookup_get_symbols::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_symbols {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<::unity2::Il2CppString> as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ClosureContext as ::unity2::ClassIdentity>::class(),
-                "set_Symbols",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ClosureContext as ::unity2::ClassIdentity>::NAME,
-                        "set_Symbols",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_symbols(
-        this: ClosureContext,
-        value: ::unity2::Array<::unity2::Il2CppString>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(ClosureContext, ::unity2::Array<::unity2::Il2CppString>, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_symbols::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: moon_sharp :: interpreter :: symbolref :: SymbolRef > as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ClosureContext as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ClosureContext as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: ClosureContext,
-        symbols: ::unity2::Array<crate::moon_sharp::interpreter::symbolref::SymbolRef>,
-        values: crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ClosureContext,
-            ::unity2::Array<crate::moon_sharp::interpreter::symbolref::SymbolRef>,
-            crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, symbols, values, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ClosureContext as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ClosureContext as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor_2(this: ClosureContext, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ClosureContext, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ClosureContext_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_symbols { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ClosureContext as :: unity2 :: ClassIdentity > :: class () , "get_Symbols" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ClosureContext as :: unity2 :: ClassIdentity > :: NAME , "get_Symbols" , e) , } } } pub unsafe fn get_symbols (this : ClosureContext , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > { let inner : extern "C" fn (ClosureContext , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > = :: core :: mem :: transmute (__lookup_get_symbols :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_symbols { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < :: unity2 :: Il2CppString > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ClosureContext as :: unity2 :: ClassIdentity > :: class () , "set_Symbols" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ClosureContext as :: unity2 :: ClassIdentity > :: NAME , "set_Symbols" , e) , } } } pub unsafe fn set_symbols (this : ClosureContext , value : :: unity2 :: Array < :: unity2 :: Il2CppString > , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ClosureContext , :: unity2 :: Array < :: unity2 :: Il2CppString > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_symbols :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: moon_sharp :: interpreter :: symbolref :: SymbolRef > as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ClosureContext as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ClosureContext as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : ClosureContext , symbols : :: unity2 :: Array < crate :: moon_sharp :: interpreter :: symbolref :: SymbolRef > , values : crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ClosureContext , :: unity2 :: Array < crate :: moon_sharp :: interpreter :: symbolref :: SymbolRef > , crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , symbols , values , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ClosureContext as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ClosureContext as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor_2 (this : ClosureContext , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ClosureContext , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor_2 :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "moon_sharp-interpreter-execution-closurecontext")]
-pub trait IClosureContextMethods: IClosureContext {
-    #[doc = "`get_Symbols()` overload"]
-    fn get_symbols(self) -> ::unity2::Array<::unity2::Il2CppString> {
-        unsafe {
-            let __receiver = <ClosureContext as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ClosureContext_unity2_raw::get_symbols(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_Symbols(::unity2::Array<::unity2::Il2CppString>)` overload"]
-    fn set_symbols(self, value: impl ::core::convert::Into<::unity2::Array<::unity2::Il2CppString>>) -> () {
-        unsafe {
-            let __receiver = <ClosureContext as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ClosureContext_unity2_raw::set_symbols(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor(::unity2::Array<crate::moon_sharp::interpreter::symbolref::SymbolRef>, crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    fn ctor(
-        self,
-        symbols: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::symbolref::SymbolRef>>,
-        values: impl ::core::convert::Into<
-            crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
-    ) -> () {
-        unsafe {
-            let __receiver = <ClosureContext as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ClosureContext_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(symbols),
-                ::core::convert::Into::into(values),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor_2(self) -> () {
-        unsafe {
-            let __receiver = <ClosureContext as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ClosureContext_unity2_raw::ctor_2(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IClosureContextMethods : IClosureContext { # [doc = "`get_Symbols()` overload"] fn get_symbols (self ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > { unsafe { let __receiver = < ClosureContext as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ClosureContext_unity2_raw :: get_symbols (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_Symbols(::unity2::Array<::unity2::Il2CppString>)` overload"] fn set_symbols (self , value : impl :: core :: convert :: Into < :: unity2 :: Array < :: unity2 :: Il2CppString > >) -> () { unsafe { let __receiver = < ClosureContext as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ClosureContext_unity2_raw :: set_symbols (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`.ctor(::unity2::Array<crate::moon_sharp::interpreter::symbolref::SymbolRef>, crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"] fn ctor (self , symbols : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: moon_sharp :: interpreter :: symbolref :: SymbolRef > > , values : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > >) -> () { unsafe { let __receiver = < ClosureContext as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ClosureContext_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (symbols) , :: core :: convert :: Into :: into (values) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor_2 (self ,) -> () { unsafe { let __receiver = < ClosureContext as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ClosureContext_unity2_raw :: ctor_2 (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "moon_sharp-interpreter-execution-closurecontext")]
-impl<__T: IClosureContext> IClosureContextMethods for __T {}
+impl < __T : IClosureContext > IClosureContextMethods for __T { }
+
+#[cfg(feature = "moon_sharp-interpreter-execution-closurecontext")]
+impl ClosureContext { pub fn get_symbols_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ClosureContext_unity2_raw :: __lookup_get_symbols :: get_method_info () } pub fn set_symbols_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ClosureContext_unity2_raw :: __lookup_set_symbols :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ClosureContext_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ClosureContext_unity2_raw :: __lookup_ctor_2 :: get_method_info () } }
 
 #[cfg(feature = "moon_sharp-interpreter-execution-closurecontext")]
 impl ClosureContext {
-    #[doc = "`.ctor(::unity2::Array<crate::moon_sharp::interpreter::symbolref::SymbolRef>, crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::moon_sharp::interpreter::dynvalue::DynValue>)` — overload selector"]
-    pub fn new(
-        symbols: ::unity2::Array<crate::moon_sharp::interpreter::symbolref::SymbolRef>,
-        values: crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ClosureContext),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IClosureContextMethods>::ctor(this, symbols, values);
-        this
-    }
+# [doc = "`.ctor(::unity2::Array<crate::moon_sharp::interpreter::symbolref::SymbolRef>, crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::moon_sharp::interpreter::dynvalue::DynValue>)` — overload selector"] pub fn new (symbols : :: unity2 :: Array < crate :: moon_sharp :: interpreter :: symbolref :: SymbolRef > , values : crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue >) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ClosureContext) , :: core :: stringify ! (new) ,)) ; < Self as IClosureContextMethods > :: ctor (this , symbols , values) ; this }
 
-    #[doc = "`.ctor()` — no args"]
-    pub fn new_2() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ClosureContext),
-                ::core::stringify!(new_2),
-            )
-        });
-        <Self as IClosureContextMethods>::ctor_2(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new_2 () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ClosureContext) , :: core :: stringify ! (new_2) ,)) ; < Self as IClosureContextMethods > :: ctor_2 (this ,) ; this }
 }
 
 #[cfg(feature = "moon_sharp-interpreter-execution-closurecontext")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{ClosureContext, IClosureContext, IClosureContextMethods};
-    #[cfg(feature = "system-collections-generic-list_1")]
-    pub use crate::system::collections::generic::list_1::IList_1Methods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::system::{collections::generic::list_1::IList_1, object::IObject};
+    pub use super::ClosureContext;
+    pub use super::IClosureContext;
+    pub use super::IClosureContextMethods;
+    pub use crate::system::collections::generic::list_1::IList_1;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-collections-generic-list_1")] pub use crate::system::collections::generic::list_1::IList_1Methods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

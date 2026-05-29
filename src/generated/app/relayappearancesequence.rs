@@ -2,760 +2,137 @@
 
 #[cfg(feature = "app-relayappearancesequence-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::{
-            procinst::{IProcInst, ProcInst},
-            singletonprocinst_1::{ISingletonProcInst_1, SingletonProcInst_1},
-        },
-        system::{
-            object::{IObject, Object},
-            r#enum::{Enum, IEnum},
-            valuetype::{IValueType, ValueType},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayappearancesequence/RelayAppearanceSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "RelayAppearanceSequence")]
-    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: relayappearancesequence :: RelayAppearanceSequence >)]
-    pub struct RelayAppearanceSequence {
-        #[offset(116)]
-        #[rename(name = "m_Index")]
-        pub m_index: i32,
-        #[offset(120)]
-        #[rename(name = "m_Unit")]
-        pub m_unit: crate::app::unit::Unit,
-        #[offset(128)]
-        #[rename(name = "m_ReplayAppearanceIndexes")]
-        pub m_replay_appearance_indexes: ::unity2::Array<i32>,
-        #[offset(136)]
-        #[rename(name = "m_ReplayLeavingIndexes")]
-        pub m_replay_leaving_indexes: ::unity2::Array<i32>,
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: procinst :: { IProcInst , ProcInst }
+ ;
+ use crate :: app :: singletonprocinst_1 :: { ISingletonProcInst_1 , SingletonProcInst_1 }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relayappearancesequence/RelayAppearanceSequence_Label.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct RelayAppearanceSequence_Label  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for RelayAppearanceSequence_Label  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "RelayAppearanceSequence.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relayappearancesequence/RelayAppearanceSequence_Label.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct RelayAppearanceSequence_Label {
-        pub value: i32,
+}
+
+
+impl  ::unity2::IlType for RelayAppearanceSequence_Label  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::ClassIdentity for RelayAppearanceSequence_Label {
-        const NAME: &'static str = "RelayAppearanceSequence.Label";
-        const NAMESPACE: &'static str = "App";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  RelayAppearanceSequence_Label  {
+    pub fn leaving() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl ::unity2::IlType for RelayAppearanceSequence_Label {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+
+    pub fn leaving_loop() -> Self {
+        Self { value: 1 }
+
     }
 
-    impl RelayAppearanceSequence_Label {
-        pub fn leaving() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn leaving_loop() -> Self {
-            Self { value: 1 }
-        }
+    pub fn appearance() -> Self {
+        Self { value: 2 }
 
-        pub fn appearance() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn appearance_loop() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn end() -> Self {
-            Self { value: 4 }
-        }
     }
+
+
+    pub fn appearance_loop() -> Self {
+        Self { value: 3 }
+
+    }
+
+
+    pub fn end() -> Self {
+        Self { value: 4 }
+
+    }
+
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayappearancesequence/RelayAppearanceSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "RelayAppearanceSequence")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: relayappearancesequence :: RelayAppearanceSequence >)] pub struct RelayAppearanceSequence {
+# [offset (116)] # [rename (name = "m_Index")] pub m_index : i32 ,
+# [offset (120)] # [rename (name = "m_Unit")] pub m_unit : crate :: app :: unit :: Unit ,
+# [offset (128)] # [rename (name = "m_ReplayAppearanceIndexes")] pub m_replay_appearance_indexes : :: unity2 :: Array < i32 > ,
+# [offset (136)] # [rename (name = "m_ReplayLeavingIndexes")] pub m_replay_leaving_indexes : :: unity2 :: Array < i32 > ,
+}
+
 }
 
 #[cfg(feature = "app-relayappearancesequence-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-relayappearancesequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RelayAppearanceSequence_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayAppearanceSequence as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RelayAppearanceSequence as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: RelayAppearanceSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RelayAppearanceSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Array<i32> as ::unity2::IlType>::il_type(),
-                <::unity2::Array<i32> as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayAppearanceSequence as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RelayAppearanceSequence as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor_2(
-        this: RelayAppearanceSequence,
-        appearance_indexes: ::unity2::Array<i32>,
-        leaving_indexes: ::unity2::Array<i32>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RelayAppearanceSequence, ::unity2::Array<i32>, ::unity2::Array<i32>, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
-        inner(this, appearance_indexes, leaving_indexes, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_leaving_begin {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayAppearanceSequence as ::unity2::ClassIdentity>::class(),
-                "LeavingBegin",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RelayAppearanceSequence as ::unity2::ClassIdentity>::NAME,
-                        "LeavingBegin",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn leaving_begin(this: RelayAppearanceSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RelayAppearanceSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_leaving_begin::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_leaving {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayAppearanceSequence as ::unity2::ClassIdentity>::class(),
-                "Leaving",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RelayAppearanceSequence as ::unity2::ClassIdentity>::NAME,
-                        "Leaving",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn leaving(this: RelayAppearanceSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RelayAppearanceSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_leaving::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_leaving_next {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayAppearanceSequence as ::unity2::ClassIdentity>::class(),
-                "LeavingNext",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RelayAppearanceSequence as ::unity2::ClassIdentity>::NAME,
-                        "LeavingNext",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn leaving_next(this: RelayAppearanceSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RelayAppearanceSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_leaving_next::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_appearance_begin {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayAppearanceSequence as ::unity2::ClassIdentity>::class(),
-                "AppearanceBegin",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RelayAppearanceSequence as ::unity2::ClassIdentity>::NAME,
-                        "AppearanceBegin",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn appearance_begin(this: RelayAppearanceSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RelayAppearanceSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_appearance_begin::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_appearance {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayAppearanceSequence as ::unity2::ClassIdentity>::class(),
-                "Appearance",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RelayAppearanceSequence as ::unity2::ClassIdentity>::NAME,
-                        "Appearance",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn appearance(this: RelayAppearanceSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RelayAppearanceSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_appearance::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_appearance_next {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayAppearanceSequence as ::unity2::ClassIdentity>::class(),
-                "AppearanceNext",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RelayAppearanceSequence as ::unity2::ClassIdentity>::NAME,
-                        "AppearanceNext",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn appearance_next(this: RelayAppearanceSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RelayAppearanceSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_appearance_next::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_focus_unit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayAppearanceSequence as ::unity2::ClassIdentity>::class(),
-                "FocusUnit",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RelayAppearanceSequence as ::unity2::ClassIdentity>::NAME,
-                        "FocusUnit",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn focus_unit(this: RelayAppearanceSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RelayAppearanceSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_focus_unit::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_leaving_unit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayAppearanceSequence as ::unity2::ClassIdentity>::class(),
-                "GetLeavingUnit",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RelayAppearanceSequence as ::unity2::ClassIdentity>::NAME,
-                        "GetLeavingUnit",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_leaving_unit(
-        this: RelayAppearanceSequence,
-        index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::unit::Unit {
-        let inner: extern "C" fn(RelayAppearanceSequence, i32, ::unity2::OptionalMethod) -> crate::app::unit::Unit =
-            ::core::mem::transmute(__lookup_get_leaving_unit::get_method_info().method_ptr);
-        inner(this, index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_appearance_unit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayAppearanceSequence as ::unity2::ClassIdentity>::class(),
-                "GetAppearanceUnit",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RelayAppearanceSequence as ::unity2::ClassIdentity>::NAME,
-                        "GetAppearanceUnit",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_appearance_unit(
-        this: RelayAppearanceSequence,
-        index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::unit::Unit {
-        let inner: extern "C" fn(RelayAppearanceSequence, i32, ::unity2::OptionalMethod) -> crate::app::unit::Unit =
-            ::core::mem::transmute(__lookup_get_appearance_unit::get_method_info().method_ptr);
-        inner(this, index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind_take_over {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayAppearanceSequence as ::unity2::ClassIdentity>::class(),
-                "CreateBindTakeOver",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RelayAppearanceSequence as ::unity2::ClassIdentity>::NAME,
-                        "CreateBindTakeOver",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_bind_take_over(super_: crate::app::procinst::ProcInst, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_create_bind_take_over::get_method_info().method_ptr);
-        inner(super_, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind_replay {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayAppearanceSequence as ::unity2::ClassIdentity>::class(),
-                "CreateBindReplay",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RelayAppearanceSequence as ::unity2::ClassIdentity>::NAME,
-                        "CreateBindReplay",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_bind_replay(super_: crate::app::procinst::ProcInst, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_create_bind_replay::get_method_info().method_ptr);
-        inner(super_, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind_common {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::relayappearancesequence::RelayAppearanceSequence as ::unity2::IlType>::il_type(),
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayAppearanceSequence as ::unity2::ClassIdentity>::class(),
-                "CreateBindCommon",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RelayAppearanceSequence as ::unity2::ClassIdentity>::NAME,
-                        "CreateBindCommon",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_bind_common(
-        p: crate::app::relayappearancesequence::RelayAppearanceSequence,
-        super_: crate::app::procinst::ProcInst,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::app::relayappearancesequence::RelayAppearanceSequence,
-            crate::app::procinst::ProcInst,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_create_bind_common::get_method_info().method_ptr);
-        inner(p, super_, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __RelayAppearanceSequence_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RelayAppearanceSequence as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RelayAppearanceSequence as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : RelayAppearanceSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RelayAppearanceSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < i32 > as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < i32 > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RelayAppearanceSequence as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RelayAppearanceSequence as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor_2 (this : RelayAppearanceSequence , appearance_indexes : :: unity2 :: Array < i32 > , leaving_indexes : :: unity2 :: Array < i32 > , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RelayAppearanceSequence , :: unity2 :: Array < i32 > , :: unity2 :: Array < i32 > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor_2 :: get_method_info () . method_ptr ,) ; inner (this , appearance_indexes , leaving_indexes , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_leaving_begin { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RelayAppearanceSequence as :: unity2 :: ClassIdentity > :: class () , "LeavingBegin" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RelayAppearanceSequence as :: unity2 :: ClassIdentity > :: NAME , "LeavingBegin" , e) , } } } pub unsafe fn leaving_begin (this : RelayAppearanceSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RelayAppearanceSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_leaving_begin :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_leaving { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RelayAppearanceSequence as :: unity2 :: ClassIdentity > :: class () , "Leaving" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RelayAppearanceSequence as :: unity2 :: ClassIdentity > :: NAME , "Leaving" , e) , } } } pub unsafe fn leaving (this : RelayAppearanceSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RelayAppearanceSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_leaving :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_leaving_next { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RelayAppearanceSequence as :: unity2 :: ClassIdentity > :: class () , "LeavingNext" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RelayAppearanceSequence as :: unity2 :: ClassIdentity > :: NAME , "LeavingNext" , e) , } } } pub unsafe fn leaving_next (this : RelayAppearanceSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RelayAppearanceSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_leaving_next :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_appearance_begin { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RelayAppearanceSequence as :: unity2 :: ClassIdentity > :: class () , "AppearanceBegin" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RelayAppearanceSequence as :: unity2 :: ClassIdentity > :: NAME , "AppearanceBegin" , e) , } } } pub unsafe fn appearance_begin (this : RelayAppearanceSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RelayAppearanceSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_appearance_begin :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_appearance { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RelayAppearanceSequence as :: unity2 :: ClassIdentity > :: class () , "Appearance" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RelayAppearanceSequence as :: unity2 :: ClassIdentity > :: NAME , "Appearance" , e) , } } } pub unsafe fn appearance (this : RelayAppearanceSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RelayAppearanceSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_appearance :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_appearance_next { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RelayAppearanceSequence as :: unity2 :: ClassIdentity > :: class () , "AppearanceNext" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RelayAppearanceSequence as :: unity2 :: ClassIdentity > :: NAME , "AppearanceNext" , e) , } } } pub unsafe fn appearance_next (this : RelayAppearanceSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RelayAppearanceSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_appearance_next :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_focus_unit { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RelayAppearanceSequence as :: unity2 :: ClassIdentity > :: class () , "FocusUnit" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RelayAppearanceSequence as :: unity2 :: ClassIdentity > :: NAME , "FocusUnit" , e) , } } } pub unsafe fn focus_unit (this : RelayAppearanceSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RelayAppearanceSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_focus_unit :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_leaving_unit { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RelayAppearanceSequence as :: unity2 :: ClassIdentity > :: class () , "GetLeavingUnit" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RelayAppearanceSequence as :: unity2 :: ClassIdentity > :: NAME , "GetLeavingUnit" , e) , } } } pub unsafe fn get_leaving_unit (this : RelayAppearanceSequence , index : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit { let inner : extern "C" fn (RelayAppearanceSequence , i32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit = :: core :: mem :: transmute (__lookup_get_leaving_unit :: get_method_info () . method_ptr ,) ; inner (this , index , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_appearance_unit { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RelayAppearanceSequence as :: unity2 :: ClassIdentity > :: class () , "GetAppearanceUnit" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RelayAppearanceSequence as :: unity2 :: ClassIdentity > :: NAME , "GetAppearanceUnit" , e) , } } } pub unsafe fn get_appearance_unit (this : RelayAppearanceSequence , index : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit { let inner : extern "C" fn (RelayAppearanceSequence , i32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit = :: core :: mem :: transmute (__lookup_get_appearance_unit :: get_method_info () . method_ptr ,) ; inner (this , index , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_bind_take_over { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RelayAppearanceSequence as :: unity2 :: ClassIdentity > :: class () , "CreateBindTakeOver" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RelayAppearanceSequence as :: unity2 :: ClassIdentity > :: NAME , "CreateBindTakeOver" , e) , } } } pub unsafe fn create_bind_take_over (super_ : crate :: app :: procinst :: ProcInst , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create_bind_take_over :: get_method_info () . method_ptr ,) ; inner (super_ , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_bind_replay { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RelayAppearanceSequence as :: unity2 :: ClassIdentity > :: class () , "CreateBindReplay" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RelayAppearanceSequence as :: unity2 :: ClassIdentity > :: NAME , "CreateBindReplay" , e) , } } } pub unsafe fn create_bind_replay (super_ : crate :: app :: procinst :: ProcInst , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create_bind_replay :: get_method_info () . method_ptr ,) ; inner (super_ , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_bind_common { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: relayappearancesequence :: RelayAppearanceSequence as :: unity2 :: IlType > :: il_type () , < crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RelayAppearanceSequence as :: unity2 :: ClassIdentity > :: class () , "CreateBindCommon" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RelayAppearanceSequence as :: unity2 :: ClassIdentity > :: NAME , "CreateBindCommon" , e) , } } } pub unsafe fn create_bind_common (p : crate :: app :: relayappearancesequence :: RelayAppearanceSequence , super_ : crate :: app :: procinst :: ProcInst , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: relayappearancesequence :: RelayAppearanceSequence , crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create_bind_common :: get_method_info () . method_ptr ,) ; inner (p , super_ , __unity2_method_info) } }
+
+#[cfg(feature = "app-relayappearancesequence")]
+impl RelayAppearanceSequence { # [doc = "`CreateBindTakeOver(crate::app::procinst::ProcInst)` overload"] pub fn create_bind_take_over (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { __RelayAppearanceSequence_unity2_raw :: create_bind_take_over (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } # [doc = "`CreateBindReplay(crate::app::procinst::ProcInst)` overload"] pub fn create_bind_replay (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { __RelayAppearanceSequence_unity2_raw :: create_bind_replay (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } # [doc = "`CreateBindCommon(crate::app::relayappearancesequence::RelayAppearanceSequence, crate::app::procinst::ProcInst)` overload"] pub fn create_bind_common (p : impl :: core :: convert :: Into < crate :: app :: relayappearancesequence :: RelayAppearanceSequence > , super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { __RelayAppearanceSequence_unity2_raw :: create_bind_common (:: core :: convert :: Into :: into (p) , :: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-relayappearancesequence")]
+pub trait IRelayAppearanceSequenceMethods : IRelayAppearanceSequence { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RelayAppearanceSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RelayAppearanceSequence_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor(::unity2::Array<i32>, ::unity2::Array<i32>)` overload"] fn ctor_2 (self , appearance_indexes : impl :: core :: convert :: Into < :: unity2 :: Array < i32 > > , leaving_indexes : impl :: core :: convert :: Into < :: unity2 :: Array < i32 > >) -> () { unsafe { let __receiver = < RelayAppearanceSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RelayAppearanceSequence_unity2_raw :: ctor_2 (__receiver , :: core :: convert :: Into :: into (appearance_indexes) , :: core :: convert :: Into :: into (leaving_indexes) , :: core :: option :: Option :: None) } } # [doc = "`LeavingBegin()` overload"] fn leaving_begin (self ,) -> () { unsafe { let __receiver = < RelayAppearanceSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RelayAppearanceSequence_unity2_raw :: leaving_begin (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Leaving()` overload"] fn leaving (self ,) -> () { unsafe { let __receiver = < RelayAppearanceSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RelayAppearanceSequence_unity2_raw :: leaving (__receiver , :: core :: option :: Option :: None) } } # [doc = "`LeavingNext()` overload"] fn leaving_next (self ,) -> () { unsafe { let __receiver = < RelayAppearanceSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RelayAppearanceSequence_unity2_raw :: leaving_next (__receiver , :: core :: option :: Option :: None) } } # [doc = "`AppearanceBegin()` overload"] fn appearance_begin (self ,) -> () { unsafe { let __receiver = < RelayAppearanceSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RelayAppearanceSequence_unity2_raw :: appearance_begin (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Appearance()` overload"] fn appearance (self ,) -> () { unsafe { let __receiver = < RelayAppearanceSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RelayAppearanceSequence_unity2_raw :: appearance (__receiver , :: core :: option :: Option :: None) } } # [doc = "`AppearanceNext()` overload"] fn appearance_next (self ,) -> () { unsafe { let __receiver = < RelayAppearanceSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RelayAppearanceSequence_unity2_raw :: appearance_next (__receiver , :: core :: option :: Option :: None) } } # [doc = "`FocusUnit()` overload"] fn focus_unit (self ,) -> () { unsafe { let __receiver = < RelayAppearanceSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RelayAppearanceSequence_unity2_raw :: focus_unit (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetLeavingUnit(i32)` overload"] fn get_leaving_unit (self , index : impl :: core :: convert :: Into < i32 >) -> crate :: app :: unit :: Unit { unsafe { let __receiver = < RelayAppearanceSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RelayAppearanceSequence_unity2_raw :: get_leaving_unit (__receiver , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } # [doc = "`GetAppearanceUnit(i32)` overload"] fn get_appearance_unit (self , index : impl :: core :: convert :: Into < i32 >) -> crate :: app :: unit :: Unit { unsafe { let __receiver = < RelayAppearanceSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RelayAppearanceSequence_unity2_raw :: get_appearance_unit (__receiver , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-relayappearancesequence")]
+impl < __T : IRelayAppearanceSequence > IRelayAppearanceSequenceMethods for __T { }
+
+#[cfg(feature = "app-relayappearancesequence")]
+impl RelayAppearanceSequence { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RelayAppearanceSequence_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RelayAppearanceSequence_unity2_raw :: __lookup_ctor_2 :: get_method_info () } pub fn leaving_begin_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RelayAppearanceSequence_unity2_raw :: __lookup_leaving_begin :: get_method_info () } pub fn leaving_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RelayAppearanceSequence_unity2_raw :: __lookup_leaving :: get_method_info () } pub fn leaving_next_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RelayAppearanceSequence_unity2_raw :: __lookup_leaving_next :: get_method_info () } pub fn appearance_begin_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RelayAppearanceSequence_unity2_raw :: __lookup_appearance_begin :: get_method_info () } pub fn appearance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RelayAppearanceSequence_unity2_raw :: __lookup_appearance :: get_method_info () } pub fn appearance_next_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RelayAppearanceSequence_unity2_raw :: __lookup_appearance_next :: get_method_info () } pub fn focus_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RelayAppearanceSequence_unity2_raw :: __lookup_focus_unit :: get_method_info () } pub fn get_leaving_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RelayAppearanceSequence_unity2_raw :: __lookup_get_leaving_unit :: get_method_info () } pub fn get_appearance_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RelayAppearanceSequence_unity2_raw :: __lookup_get_appearance_unit :: get_method_info () } pub fn create_bind_take_over_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RelayAppearanceSequence_unity2_raw :: __lookup_create_bind_take_over :: get_method_info () } pub fn create_bind_replay_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RelayAppearanceSequence_unity2_raw :: __lookup_create_bind_replay :: get_method_info () } pub fn create_bind_common_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RelayAppearanceSequence_unity2_raw :: __lookup_create_bind_common :: get_method_info () } }
 
 #[cfg(feature = "app-relayappearancesequence")]
 impl RelayAppearanceSequence {
-    #[doc = "`CreateBindTakeOver(crate::app::procinst::ProcInst)` overload"]
-    pub fn create_bind_take_over(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
-        unsafe { __RelayAppearanceSequence_unity2_raw::create_bind_take_over(::core::convert::Into::into(super_), ::core::option::Option::None) }
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RelayAppearanceSequence) , :: core :: stringify ! (new) ,)) ; < Self as IRelayAppearanceSequenceMethods > :: ctor (this ,) ; this }
 
-    #[doc = "`CreateBindReplay(crate::app::procinst::ProcInst)` overload"]
-    pub fn create_bind_replay(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
-        unsafe { __RelayAppearanceSequence_unity2_raw::create_bind_replay(::core::convert::Into::into(super_), ::core::option::Option::None) }
-    }
-
-    #[doc = "`CreateBindCommon(crate::app::relayappearancesequence::RelayAppearanceSequence, crate::app::procinst::ProcInst)` overload"]
-    pub fn create_bind_common(
-        p: impl ::core::convert::Into<crate::app::relayappearancesequence::RelayAppearanceSequence>,
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-    ) -> () {
-        unsafe {
-            __RelayAppearanceSequence_unity2_raw::create_bind_common(
-                ::core::convert::Into::into(p),
-                ::core::convert::Into::into(super_),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-relayappearancesequence")]
-pub trait IRelayAppearanceSequenceMethods: IRelayAppearanceSequence {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <RelayAppearanceSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RelayAppearanceSequence_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor(::unity2::Array<i32>, ::unity2::Array<i32>)` overload"]
-    fn ctor_2(
-        self,
-        appearance_indexes: impl ::core::convert::Into<::unity2::Array<i32>>,
-        leaving_indexes: impl ::core::convert::Into<::unity2::Array<i32>>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <RelayAppearanceSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RelayAppearanceSequence_unity2_raw::ctor_2(
-                __receiver,
-                ::core::convert::Into::into(appearance_indexes),
-                ::core::convert::Into::into(leaving_indexes),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`LeavingBegin()` overload"]
-    fn leaving_begin(self) -> () {
-        unsafe {
-            let __receiver =
-                <RelayAppearanceSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RelayAppearanceSequence_unity2_raw::leaving_begin(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Leaving()` overload"]
-    fn leaving(self) -> () {
-        unsafe {
-            let __receiver =
-                <RelayAppearanceSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RelayAppearanceSequence_unity2_raw::leaving(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`LeavingNext()` overload"]
-    fn leaving_next(self) -> () {
-        unsafe {
-            let __receiver =
-                <RelayAppearanceSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RelayAppearanceSequence_unity2_raw::leaving_next(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`AppearanceBegin()` overload"]
-    fn appearance_begin(self) -> () {
-        unsafe {
-            let __receiver =
-                <RelayAppearanceSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RelayAppearanceSequence_unity2_raw::appearance_begin(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Appearance()` overload"]
-    fn appearance(self) -> () {
-        unsafe {
-            let __receiver =
-                <RelayAppearanceSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RelayAppearanceSequence_unity2_raw::appearance(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`AppearanceNext()` overload"]
-    fn appearance_next(self) -> () {
-        unsafe {
-            let __receiver =
-                <RelayAppearanceSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RelayAppearanceSequence_unity2_raw::appearance_next(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`FocusUnit()` overload"]
-    fn focus_unit(self) -> () {
-        unsafe {
-            let __receiver =
-                <RelayAppearanceSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RelayAppearanceSequence_unity2_raw::focus_unit(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetLeavingUnit(i32)` overload"]
-    fn get_leaving_unit(self, index: impl ::core::convert::Into<i32>) -> crate::app::unit::Unit {
-        unsafe {
-            let __receiver =
-                <RelayAppearanceSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RelayAppearanceSequence_unity2_raw::get_leaving_unit(__receiver, ::core::convert::Into::into(index), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetAppearanceUnit(i32)` overload"]
-    fn get_appearance_unit(self, index: impl ::core::convert::Into<i32>) -> crate::app::unit::Unit {
-        unsafe {
-            let __receiver =
-                <RelayAppearanceSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RelayAppearanceSequence_unity2_raw::get_appearance_unit(__receiver, ::core::convert::Into::into(index), ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-relayappearancesequence")]
-impl<__T: IRelayAppearanceSequence> IRelayAppearanceSequenceMethods for __T {}
-
-#[cfg(feature = "app-relayappearancesequence")]
-impl RelayAppearanceSequence {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RelayAppearanceSequence),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRelayAppearanceSequenceMethods>::ctor(this);
-        this
-    }
-
-    #[doc = "`.ctor(::unity2::Array<i32>, ::unity2::Array<i32>)` — overload selector"]
-    pub fn new_2(appearance_indexes: ::unity2::Array<i32>, leaving_indexes: ::unity2::Array<i32>) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RelayAppearanceSequence),
-                ::core::stringify!(new_2),
-            )
-        });
-        <Self as IRelayAppearanceSequenceMethods>::ctor_2(this, appearance_indexes, leaving_indexes);
-        this
-    }
+# [doc = "`.ctor(::unity2::Array<i32>, ::unity2::Array<i32>)` — overload selector"] pub fn new_2 (appearance_indexes : :: unity2 :: Array < i32 > , leaving_indexes : :: unity2 :: Array < i32 >) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RelayAppearanceSequence) , :: core :: stringify ! (new_2) ,)) ; < Self as IRelayAppearanceSequenceMethods > :: ctor_2 (this , appearance_indexes , leaving_indexes) ; this }
 }
 
 #[cfg(feature = "app-relayappearancesequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IRelayAppearanceSequence, IRelayAppearanceSequenceMethods, RelayAppearanceSequence, RelayAppearanceSequence_Label};
-    #[cfg(feature = "app-procinst")]
-    pub use crate::app::procinst::IProcInstMethods;
-    #[cfg(feature = "app-singletonprocinst_1")]
-    pub use crate::app::singletonprocinst_1::ISingletonProcInst_1Methods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::{
-        app::{procinst::IProcInst, singletonprocinst_1::ISingletonProcInst_1},
-        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
-    };
+    pub use super::RelayAppearanceSequence_Label;
+    pub use super::RelayAppearanceSequence;
+    pub use super::IRelayAppearanceSequence;
+    pub use super::IRelayAppearanceSequenceMethods;
+    pub use crate::app::procinst::IProcInst;
+    pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "app-procinst")] pub use crate::app::procinst::IProcInstMethods;
+    #[cfg(feature = "app-singletonprocinst_1")] pub use crate::app::singletonprocinst_1::ISingletonProcInst_1Methods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

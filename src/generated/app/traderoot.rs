@@ -2,418 +2,63 @@
 
 #[cfg(feature = "app-traderoot-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/traderoot/TradeRoot.md"))]
-    #[::unity2::class(namespace = "App", name = "TradeRoot")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct TradeRoot {
-        #[offset(24)]
-        #[rename(name = "m_ItemListLeft")]
-        pub m_item_list_left: crate::unity_engine::gameobject::GameObject,
-        #[offset(32)]
-        #[rename(name = "m_ItemListRight")]
-        pub m_item_list_right: crate::unity_engine::gameobject::GameObject,
-        #[offset(40)]
-        #[rename(name = "m_ItemInfo")]
-        pub m_item_info: crate::unity_engine::gameobject::GameObject,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/traderoot/TradeRoot.md"))] # [:: unity2 :: class (namespace = "App" , name = "TradeRoot")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct TradeRoot {
+# [offset (24)] # [rename (name = "m_ItemListLeft")] pub m_item_list_left : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (32)] # [rename (name = "m_ItemListRight")] pub m_item_list_right : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (40)] # [rename (name = "m_ItemInfo")] pub m_item_info : crate :: unity_engine :: gameobject :: GameObject ,
+}
+
 }
 
 #[cfg(feature = "app-traderoot-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-traderoot")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __TradeRoot_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_item_info {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unititem::UnitItem as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TradeRoot as ::unity2::ClassIdentity>::class(),
-                "SetItemInfo",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TradeRoot as ::unity2::ClassIdentity>::NAME,
-                        "SetItemInfo",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_item_info(this: TradeRoot, item: crate::app::unititem::UnitItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TradeRoot, crate::app::unititem::UnitItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_item_info::get_method_info().method_ptr);
-        inner(this, item, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_setup {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<TradeRoot as ::unity2::ClassIdentity>::class(), "Setup", 2, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TradeRoot as ::unity2::ClassIdentity>::NAME,
-                        "Setup",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn setup(
-        this: TradeRoot,
-        from_unit: crate::app::unit::Unit,
-        to_unit: crate::app::unit::Unit,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(TradeRoot, crate::app::unit::Unit, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_setup::get_method_info().method_ptr);
-        inner(this, from_unit, to_unit, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_select_item {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unititem::UnitItem as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TradeRoot as ::unity2::ClassIdentity>::class(),
-                "SetSelectItem",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TradeRoot as ::unity2::ClassIdentity>::NAME,
-                        "SetSelectItem",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_select_item(this: TradeRoot, item: crate::app::unititem::UnitItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TradeRoot, crate::app::unititem::UnitItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_select_item::get_method_info().method_ptr);
-        inner(this, item, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_select_item_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TradeRoot as ::unity2::ClassIdentity>::class(),
-                "SetSelectItem",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TradeRoot as ::unity2::ClassIdentity>::NAME,
-                        "SetSelectItem",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_select_item_2(
-        this: TradeRoot,
-        unit: crate::app::unit::Unit,
-        item_no: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(TradeRoot, crate::app::unit::Unit, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_select_item_2::get_method_info().method_ptr);
-        inner(this, unit, item_no, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_game_object_left {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TradeRoot as ::unity2::ClassIdentity>::class(),
-                "GetGameObjectLeft",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TradeRoot as ::unity2::ClassIdentity>::NAME,
-                        "GetGameObjectLeft",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_game_object_left(
-        this: TradeRoot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::gameobject::GameObject {
-        let inner: extern "C" fn(TradeRoot, ::unity2::OptionalMethod) -> crate::unity_engine::gameobject::GameObject =
-            ::core::mem::transmute(__lookup_get_game_object_left::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_game_object_right {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TradeRoot as ::unity2::ClassIdentity>::class(),
-                "GetGameObjectRight",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TradeRoot as ::unity2::ClassIdentity>::NAME,
-                        "GetGameObjectRight",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_game_object_right(
-        this: TradeRoot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::gameobject::GameObject {
-        let inner: extern "C" fn(TradeRoot, ::unity2::OptionalMethod) -> crate::unity_engine::gameobject::GameObject =
-            ::core::mem::transmute(__lookup_get_game_object_right::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_item_info {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TradeRoot as ::unity2::ClassIdentity>::class(),
-                "GetItemInfo",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TradeRoot as ::unity2::ClassIdentity>::NAME,
-                        "GetItemInfo",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_item_info(this: TradeRoot, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::gameobject::GameObject {
-        let inner: extern "C" fn(TradeRoot, ::unity2::OptionalMethod) -> crate::unity_engine::gameobject::GameObject =
-            ::core::mem::transmute(__lookup_get_item_info::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<TradeRoot as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TradeRoot as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: TradeRoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TradeRoot, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __TradeRoot_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_item_info { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unititem :: UnitItem as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TradeRoot as :: unity2 :: ClassIdentity > :: class () , "SetItemInfo" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TradeRoot as :: unity2 :: ClassIdentity > :: NAME , "SetItemInfo" , e) , } } } pub unsafe fn set_item_info (this : TradeRoot , item : crate :: app :: unititem :: UnitItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TradeRoot , crate :: app :: unititem :: UnitItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_item_info :: get_method_info () . method_ptr ,) ; inner (this , item , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_setup { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TradeRoot as :: unity2 :: ClassIdentity > :: class () , "Setup" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TradeRoot as :: unity2 :: ClassIdentity > :: NAME , "Setup" , e) , } } } pub unsafe fn setup (this : TradeRoot , from_unit : crate :: app :: unit :: Unit , to_unit : crate :: app :: unit :: Unit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TradeRoot , crate :: app :: unit :: Unit , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_setup :: get_method_info () . method_ptr ,) ; inner (this , from_unit , to_unit , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_select_item { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unititem :: UnitItem as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TradeRoot as :: unity2 :: ClassIdentity > :: class () , "SetSelectItem" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TradeRoot as :: unity2 :: ClassIdentity > :: NAME , "SetSelectItem" , e) , } } } pub unsafe fn set_select_item (this : TradeRoot , item : crate :: app :: unititem :: UnitItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TradeRoot , crate :: app :: unititem :: UnitItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_select_item :: get_method_info () . method_ptr ,) ; inner (this , item , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_select_item_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TradeRoot as :: unity2 :: ClassIdentity > :: class () , "SetSelectItem" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TradeRoot as :: unity2 :: ClassIdentity > :: NAME , "SetSelectItem" , e) , } } } pub unsafe fn set_select_item_2 (this : TradeRoot , unit : crate :: app :: unit :: Unit , item_no : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TradeRoot , crate :: app :: unit :: Unit , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_select_item_2 :: get_method_info () . method_ptr ,) ; inner (this , unit , item_no , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_game_object_left { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TradeRoot as :: unity2 :: ClassIdentity > :: class () , "GetGameObjectLeft" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TradeRoot as :: unity2 :: ClassIdentity > :: NAME , "GetGameObjectLeft" , e) , } } } pub unsafe fn get_game_object_left (this : TradeRoot , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject { let inner : extern "C" fn (TradeRoot , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute (__lookup_get_game_object_left :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_game_object_right { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TradeRoot as :: unity2 :: ClassIdentity > :: class () , "GetGameObjectRight" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TradeRoot as :: unity2 :: ClassIdentity > :: NAME , "GetGameObjectRight" , e) , } } } pub unsafe fn get_game_object_right (this : TradeRoot , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject { let inner : extern "C" fn (TradeRoot , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute (__lookup_get_game_object_right :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_item_info { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TradeRoot as :: unity2 :: ClassIdentity > :: class () , "GetItemInfo" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TradeRoot as :: unity2 :: ClassIdentity > :: NAME , "GetItemInfo" , e) , } } } pub unsafe fn get_item_info (this : TradeRoot , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject { let inner : extern "C" fn (TradeRoot , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute (__lookup_get_item_info :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TradeRoot as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TradeRoot as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : TradeRoot , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TradeRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-traderoot")]
-pub trait ITradeRootMethods: ITradeRoot {
-    #[doc = "`SetItemInfo(crate::app::unititem::UnitItem)` overload"]
-    fn set_item_info(self, item: impl ::core::convert::Into<crate::app::unititem::UnitItem>) -> () {
-        unsafe {
-            let __receiver = <TradeRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TradeRoot_unity2_raw::set_item_info(__receiver, ::core::convert::Into::into(item), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Setup(crate::app::unit::Unit, crate::app::unit::Unit)` overload"]
-    fn setup(self, from_unit: impl ::core::convert::Into<crate::app::unit::Unit>, to_unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
-        unsafe {
-            let __receiver = <TradeRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TradeRoot_unity2_raw::setup(
-                __receiver,
-                ::core::convert::Into::into(from_unit),
-                ::core::convert::Into::into(to_unit),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetSelectItem(crate::app::unititem::UnitItem)` overload"]
-    fn set_select_item(self, item: impl ::core::convert::Into<crate::app::unititem::UnitItem>) -> () {
-        unsafe {
-            let __receiver = <TradeRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TradeRoot_unity2_raw::set_select_item(__receiver, ::core::convert::Into::into(item), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetSelectItem(crate::app::unit::Unit, i32)` overload"]
-    fn set_select_item_2(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>, item_no: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver = <TradeRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TradeRoot_unity2_raw::set_select_item_2(
-                __receiver,
-                ::core::convert::Into::into(unit),
-                ::core::convert::Into::into(item_no),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetGameObjectLeft()` overload"]
-    fn get_game_object_left(self) -> crate::unity_engine::gameobject::GameObject {
-        unsafe {
-            let __receiver = <TradeRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TradeRoot_unity2_raw::get_game_object_left(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetGameObjectRight()` overload"]
-    fn get_game_object_right(self) -> crate::unity_engine::gameobject::GameObject {
-        unsafe {
-            let __receiver = <TradeRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TradeRoot_unity2_raw::get_game_object_right(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetItemInfo()` overload"]
-    fn get_item_info(self) -> crate::unity_engine::gameobject::GameObject {
-        unsafe {
-            let __receiver = <TradeRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TradeRoot_unity2_raw::get_item_info(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <TradeRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TradeRoot_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait ITradeRootMethods : ITradeRoot { # [doc = "`SetItemInfo(crate::app::unititem::UnitItem)` overload"] fn set_item_info (self , item : impl :: core :: convert :: Into < crate :: app :: unititem :: UnitItem >) -> () { unsafe { let __receiver = < TradeRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TradeRoot_unity2_raw :: set_item_info (__receiver , :: core :: convert :: Into :: into (item) , :: core :: option :: Option :: None) } } # [doc = "`Setup(crate::app::unit::Unit, crate::app::unit::Unit)` overload"] fn setup (self , from_unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , to_unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < TradeRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TradeRoot_unity2_raw :: setup (__receiver , :: core :: convert :: Into :: into (from_unit) , :: core :: convert :: Into :: into (to_unit) , :: core :: option :: Option :: None) } } # [doc = "`SetSelectItem(crate::app::unititem::UnitItem)` overload"] fn set_select_item (self , item : impl :: core :: convert :: Into < crate :: app :: unititem :: UnitItem >) -> () { unsafe { let __receiver = < TradeRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TradeRoot_unity2_raw :: set_select_item (__receiver , :: core :: convert :: Into :: into (item) , :: core :: option :: Option :: None) } } # [doc = "`SetSelectItem(crate::app::unit::Unit, i32)` overload"] fn set_select_item_2 (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , item_no : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < TradeRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TradeRoot_unity2_raw :: set_select_item_2 (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (item_no) , :: core :: option :: Option :: None) } } # [doc = "`GetGameObjectLeft()` overload"] fn get_game_object_left (self ,) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { let __receiver = < TradeRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TradeRoot_unity2_raw :: get_game_object_left (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetGameObjectRight()` overload"] fn get_game_object_right (self ,) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { let __receiver = < TradeRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TradeRoot_unity2_raw :: get_game_object_right (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetItemInfo()` overload"] fn get_item_info (self ,) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { let __receiver = < TradeRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TradeRoot_unity2_raw :: get_item_info (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TradeRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TradeRoot_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-traderoot")]
-impl<__T: ITradeRoot> ITradeRootMethods for __T {}
+impl < __T : ITradeRoot > ITradeRootMethods for __T { }
+
+#[cfg(feature = "app-traderoot")]
+impl TradeRoot { pub fn set_item_info_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TradeRoot_unity2_raw :: __lookup_set_item_info :: get_method_info () } pub fn setup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TradeRoot_unity2_raw :: __lookup_setup :: get_method_info () } pub fn set_select_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TradeRoot_unity2_raw :: __lookup_set_select_item :: get_method_info () } pub fn set_select_item_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TradeRoot_unity2_raw :: __lookup_set_select_item_2 :: get_method_info () } pub fn get_game_object_left_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TradeRoot_unity2_raw :: __lookup_get_game_object_left :: get_method_info () } pub fn get_game_object_right_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TradeRoot_unity2_raw :: __lookup_get_game_object_right :: get_method_info () } pub fn get_item_info_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TradeRoot_unity2_raw :: __lookup_get_item_info :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TradeRoot_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-traderoot")]
 impl TradeRoot {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(TradeRoot), ::core::stringify!(new),));
-        <Self as ITradeRootMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TradeRoot) , :: core :: stringify ! (new) ,)) ; < Self as ITradeRootMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-traderoot")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{ITradeRoot, ITradeRootMethods, TradeRoot};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        system::object::IObject,
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::TradeRoot;
+    pub use super::ITradeRoot;
+    pub use super::ITradeRootMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

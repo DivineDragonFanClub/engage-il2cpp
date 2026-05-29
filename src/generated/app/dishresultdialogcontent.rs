@@ -2,612 +2,70 @@
 
 #[cfg(feature = "app-dishresultdialogcontent-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dishresultdialogcontent/DishResultDialogContent.md"))]
-    #[::unity2::class(namespace = "App", name = "DishResultDialogContent")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct DishResultDialogContent {
-        #[offset(24)]
-        #[rename(name = "m_Animator")]
-        pub m_animator: crate::unity_engine::animator::Animator,
-        #[offset(32)]
-        #[rename(name = "m_DishText")]
-        pub m_dish_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(40)]
-        #[rename(name = "m_GradeTitle")]
-        pub m_grade_title: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(48)]
-        #[rename(name = "m_GradeList")]
-        pub m_grade_list: crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>,
-        #[offset(56)]
-        #[rename(name = "m_CondText")]
-        pub m_cond_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(64)]
-        #[rename(name = "m_EnhanceObjectList")]
-        pub m_enhance_object_list: crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>,
-        #[offset(72)]
-        #[rename(name = "m_NothingObject")]
-        pub m_nothing_object: crate::unity_engine::gameobject::GameObject,
-        #[offset(80)]
-        #[rename(name = "m_EnhanceBonus")]
-        pub m_enhance_bonus: crate::unity_engine::gameobject::GameObject,
-        #[offset(88)]
-        #[rename(name = "m_BonusObjectList")]
-        pub m_bonus_object_list: crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>,
-        #[offset(96)]
-        #[rename(name = "m_EveryoneText")]
-        pub m_everyone_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dishresultdialogcontent/DishResultDialogContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "DishResultDialogContent")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct DishResultDialogContent {
+# [offset (24)] # [rename (name = "m_Animator")] pub m_animator : crate :: unity_engine :: animator :: Animator ,
+# [offset (32)] # [rename (name = "m_DishText")] pub m_dish_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (40)] # [rename (name = "m_GradeTitle")] pub m_grade_title : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (48)] # [rename (name = "m_GradeList")] pub m_grade_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: gameobject :: GameObject > ,
+# [offset (56)] # [rename (name = "m_CondText")] pub m_cond_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (64)] # [rename (name = "m_EnhanceObjectList")] pub m_enhance_object_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: gameobject :: GameObject > ,
+# [offset (72)] # [rename (name = "m_NothingObject")] pub m_nothing_object : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (80)] # [rename (name = "m_EnhanceBonus")] pub m_enhance_bonus : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (88)] # [rename (name = "m_BonusObjectList")] pub m_bonus_object_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: gameobject :: GameObject > ,
+# [offset (96)] # [rename (name = "m_EveryoneText")] pub m_everyone_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+}
+
 }
 
 #[cfg(feature = "app-dishresultdialogcontent-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-dishresultdialogcontent")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __DishResultDialogContent_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_open {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DishResultDialogContent as ::unity2::ClassIdentity>::class(),
-                "Open",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DishResultDialogContent as ::unity2::ClassIdentity>::NAME,
-                        "Open",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn open(this: DishResultDialogContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DishResultDialogContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_open::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_close {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DishResultDialogContent as ::unity2::ClassIdentity>::class(),
-                "Close",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DishResultDialogContent as ::unity2::ClassIdentity>::NAME,
-                        "Close",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn close(this: DishResultDialogContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DishResultDialogContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_close::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_opening {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DishResultDialogContent as ::unity2::ClassIdentity>::class(),
-                "IsOpening",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DishResultDialogContent as ::unity2::ClassIdentity>::NAME,
-                        "IsOpening",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_opening(this: DishResultDialogContent, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(DishResultDialogContent, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_opening::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_closing {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DishResultDialogContent as ::unity2::ClassIdentity>::class(),
-                "IsClosing",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DishResultDialogContent as ::unity2::ClassIdentity>::NAME,
-                        "IsClosing",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_closing(this: DishResultDialogContent, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(DishResultDialogContent, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_closing::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_closed {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DishResultDialogContent as ::unity2::ClassIdentity>::class(),
-                "IsClosed",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DishResultDialogContent as ::unity2::ClassIdentity>::NAME,
-                        "IsClosed",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_closed(this: DishResultDialogContent, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(DishResultDialogContent, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_closed::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_start {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DishResultDialogContent as ::unity2::ClassIdentity>::class(),
-                "Start",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DishResultDialogContent as ::unity2::ClassIdentity>::NAME,
-                        "Start",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn start(this: DishResultDialogContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DishResultDialogContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_start::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_dish {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::dish::Dish as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DishResultDialogContent as ::unity2::ClassIdentity>::class(),
-                "SetDish",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DishResultDialogContent as ::unity2::ClassIdentity>::NAME,
-                        "SetDish",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_dish(this: DishResultDialogContent, dish: crate::app::dish::Dish, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DishResultDialogContent, crate::app::dish::Dish, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_dish::get_method_info().method_ptr);
-        inner(this, dish, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_grade {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::tastedata::TasteData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DishResultDialogContent as ::unity2::ClassIdentity>::class(),
-                "SetGrade",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DishResultDialogContent as ::unity2::ClassIdentity>::NAME,
-                        "SetGrade",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_grade(
-        this: DishResultDialogContent,
-        taste: crate::app::tastedata::TasteData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(DishResultDialogContent, crate::app::tastedata::TasteData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_grade::get_method_info().method_ptr);
-        inner(this, taste, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_enhance {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::capabilitydefinition::CapabilityDefinition_Type as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DishResultDialogContent as ::unity2::ClassIdentity>::class(),
-                "SetEnhance",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DishResultDialogContent as ::unity2::ClassIdentity>::NAME,
-                        "SetEnhance",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_enhance(
-        this: DishResultDialogContent,
-        r#type: crate::app::capabilitydefinition::CapabilityDefinition_Type,
-        index: i32,
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            DishResultDialogContent,
-            crate::app::capabilitydefinition::CapabilityDefinition_Type,
-            i32,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(__lookup_set_enhance::get_method_info().method_ptr);
-        inner(this, r#type, index, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_bonus {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::capabilitydefinition::CapabilityDefinition_Type as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DishResultDialogContent as ::unity2::ClassIdentity>::class(),
-                "SetBonus",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DishResultDialogContent as ::unity2::ClassIdentity>::NAME,
-                        "SetBonus",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_bonus(
-        this: DishResultDialogContent,
-        r#type: crate::app::capabilitydefinition::CapabilityDefinition_Type,
-        index: i32,
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            DishResultDialogContent,
-            crate::app::capabilitydefinition::CapabilityDefinition_Type,
-            i32,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(__lookup_set_bonus::get_method_info().method_ptr);
-        inner(this, r#type, index, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DishResultDialogContent as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DishResultDialogContent as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: DishResultDialogContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DishResultDialogContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __DishResultDialogContent_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_open { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DishResultDialogContent as :: unity2 :: ClassIdentity > :: class () , "Open" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DishResultDialogContent as :: unity2 :: ClassIdentity > :: NAME , "Open" , e) , } } } pub unsafe fn open (this : DishResultDialogContent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DishResultDialogContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_open :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_close { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DishResultDialogContent as :: unity2 :: ClassIdentity > :: class () , "Close" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DishResultDialogContent as :: unity2 :: ClassIdentity > :: NAME , "Close" , e) , } } } pub unsafe fn close (this : DishResultDialogContent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DishResultDialogContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_close :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_opening { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DishResultDialogContent as :: unity2 :: ClassIdentity > :: class () , "IsOpening" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DishResultDialogContent as :: unity2 :: ClassIdentity > :: NAME , "IsOpening" , e) , } } } pub unsafe fn is_opening (this : DishResultDialogContent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (DishResultDialogContent , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_opening :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_closing { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DishResultDialogContent as :: unity2 :: ClassIdentity > :: class () , "IsClosing" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DishResultDialogContent as :: unity2 :: ClassIdentity > :: NAME , "IsClosing" , e) , } } } pub unsafe fn is_closing (this : DishResultDialogContent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (DishResultDialogContent , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_closing :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_closed { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DishResultDialogContent as :: unity2 :: ClassIdentity > :: class () , "IsClosed" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DishResultDialogContent as :: unity2 :: ClassIdentity > :: NAME , "IsClosed" , e) , } } } pub unsafe fn is_closed (this : DishResultDialogContent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (DishResultDialogContent , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_closed :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_start { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DishResultDialogContent as :: unity2 :: ClassIdentity > :: class () , "Start" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DishResultDialogContent as :: unity2 :: ClassIdentity > :: NAME , "Start" , e) , } } } pub unsafe fn start (this : DishResultDialogContent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DishResultDialogContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_start :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_dish { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: dish :: Dish as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DishResultDialogContent as :: unity2 :: ClassIdentity > :: class () , "SetDish" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DishResultDialogContent as :: unity2 :: ClassIdentity > :: NAME , "SetDish" , e) , } } } pub unsafe fn set_dish (this : DishResultDialogContent , dish : crate :: app :: dish :: Dish , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DishResultDialogContent , crate :: app :: dish :: Dish , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_dish :: get_method_info () . method_ptr ,) ; inner (this , dish , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_grade { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: tastedata :: TasteData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DishResultDialogContent as :: unity2 :: ClassIdentity > :: class () , "SetGrade" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DishResultDialogContent as :: unity2 :: ClassIdentity > :: NAME , "SetGrade" , e) , } } } pub unsafe fn set_grade (this : DishResultDialogContent , taste : crate :: app :: tastedata :: TasteData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DishResultDialogContent , crate :: app :: tastedata :: TasteData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_grade :: get_method_info () . method_ptr ,) ; inner (this , taste , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_enhance { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: capabilitydefinition :: CapabilityDefinition_Type as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DishResultDialogContent as :: unity2 :: ClassIdentity > :: class () , "SetEnhance" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DishResultDialogContent as :: unity2 :: ClassIdentity > :: NAME , "SetEnhance" , e) , } } } pub unsafe fn set_enhance (this : DishResultDialogContent , r#type : crate :: app :: capabilitydefinition :: CapabilityDefinition_Type , index : i32 , value : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (DishResultDialogContent , crate :: app :: capabilitydefinition :: CapabilityDefinition_Type , i32 , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_set_enhance :: get_method_info () . method_ptr ,) ; inner (this , r#type , index , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_bonus { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: capabilitydefinition :: CapabilityDefinition_Type as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DishResultDialogContent as :: unity2 :: ClassIdentity > :: class () , "SetBonus" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DishResultDialogContent as :: unity2 :: ClassIdentity > :: NAME , "SetBonus" , e) , } } } pub unsafe fn set_bonus (this : DishResultDialogContent , r#type : crate :: app :: capabilitydefinition :: CapabilityDefinition_Type , index : i32 , value : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (DishResultDialogContent , crate :: app :: capabilitydefinition :: CapabilityDefinition_Type , i32 , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_set_bonus :: get_method_info () . method_ptr ,) ; inner (this , r#type , index , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DishResultDialogContent as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DishResultDialogContent as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : DishResultDialogContent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DishResultDialogContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-dishresultdialogcontent")]
-pub trait IDishResultDialogContentMethods: IDishResultDialogContent {
-    #[doc = "`Open()` overload"]
-    fn open(self) -> () {
-        unsafe {
-            let __receiver =
-                <DishResultDialogContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DishResultDialogContent_unity2_raw::open(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Close()` overload"]
-    fn close(self) -> () {
-        unsafe {
-            let __receiver =
-                <DishResultDialogContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DishResultDialogContent_unity2_raw::close(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsOpening()` overload"]
-    fn is_opening(self) -> bool {
-        unsafe {
-            let __receiver =
-                <DishResultDialogContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DishResultDialogContent_unity2_raw::is_opening(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsClosing()` overload"]
-    fn is_closing(self) -> bool {
-        unsafe {
-            let __receiver =
-                <DishResultDialogContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DishResultDialogContent_unity2_raw::is_closing(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsClosed()` overload"]
-    fn is_closed(self) -> bool {
-        unsafe {
-            let __receiver =
-                <DishResultDialogContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DishResultDialogContent_unity2_raw::is_closed(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Start()` overload"]
-    fn start(self) -> () {
-        unsafe {
-            let __receiver =
-                <DishResultDialogContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DishResultDialogContent_unity2_raw::start(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetDish(crate::app::dish::Dish)` overload"]
-    fn set_dish(self, dish: impl ::core::convert::Into<crate::app::dish::Dish>) -> () {
-        unsafe {
-            let __receiver =
-                <DishResultDialogContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DishResultDialogContent_unity2_raw::set_dish(__receiver, ::core::convert::Into::into(dish), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetGrade(crate::app::tastedata::TasteData)` overload"]
-    fn set_grade(self, taste: impl ::core::convert::Into<crate::app::tastedata::TasteData>) -> () {
-        unsafe {
-            let __receiver =
-                <DishResultDialogContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DishResultDialogContent_unity2_raw::set_grade(__receiver, ::core::convert::Into::into(taste), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetEnhance(crate::app::capabilitydefinition::CapabilityDefinition_Type, i32, i32)` overload"]
-    fn set_enhance(
-        self,
-        r#type: impl ::core::convert::Into<crate::app::capabilitydefinition::CapabilityDefinition_Type>,
-        index: impl ::core::convert::Into<i32>,
-        value: impl ::core::convert::Into<i32>,
-    ) -> bool {
-        unsafe {
-            let __receiver =
-                <DishResultDialogContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DishResultDialogContent_unity2_raw::set_enhance(
-                __receiver,
-                ::core::convert::Into::into(r#type),
-                ::core::convert::Into::into(index),
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetBonus(crate::app::capabilitydefinition::CapabilityDefinition_Type, i32, i32)` overload"]
-    fn set_bonus(
-        self,
-        r#type: impl ::core::convert::Into<crate::app::capabilitydefinition::CapabilityDefinition_Type>,
-        index: impl ::core::convert::Into<i32>,
-        value: impl ::core::convert::Into<i32>,
-    ) -> bool {
-        unsafe {
-            let __receiver =
-                <DishResultDialogContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DishResultDialogContent_unity2_raw::set_bonus(
-                __receiver,
-                ::core::convert::Into::into(r#type),
-                ::core::convert::Into::into(index),
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <DishResultDialogContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DishResultDialogContent_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IDishResultDialogContentMethods : IDishResultDialogContent { # [doc = "`Open()` overload"] fn open (self ,) -> () { unsafe { let __receiver = < DishResultDialogContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DishResultDialogContent_unity2_raw :: open (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Close()` overload"] fn close (self ,) -> () { unsafe { let __receiver = < DishResultDialogContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DishResultDialogContent_unity2_raw :: close (__receiver , :: core :: option :: Option :: None) } } # [doc = "`IsOpening()` overload"] fn is_opening (self ,) -> bool { unsafe { let __receiver = < DishResultDialogContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DishResultDialogContent_unity2_raw :: is_opening (__receiver , :: core :: option :: Option :: None) } } # [doc = "`IsClosing()` overload"] fn is_closing (self ,) -> bool { unsafe { let __receiver = < DishResultDialogContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DishResultDialogContent_unity2_raw :: is_closing (__receiver , :: core :: option :: Option :: None) } } # [doc = "`IsClosed()` overload"] fn is_closed (self ,) -> bool { unsafe { let __receiver = < DishResultDialogContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DishResultDialogContent_unity2_raw :: is_closed (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < DishResultDialogContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DishResultDialogContent_unity2_raw :: start (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetDish(crate::app::dish::Dish)` overload"] fn set_dish (self , dish : impl :: core :: convert :: Into < crate :: app :: dish :: Dish >) -> () { unsafe { let __receiver = < DishResultDialogContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DishResultDialogContent_unity2_raw :: set_dish (__receiver , :: core :: convert :: Into :: into (dish) , :: core :: option :: Option :: None) } } # [doc = "`SetGrade(crate::app::tastedata::TasteData)` overload"] fn set_grade (self , taste : impl :: core :: convert :: Into < crate :: app :: tastedata :: TasteData >) -> () { unsafe { let __receiver = < DishResultDialogContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DishResultDialogContent_unity2_raw :: set_grade (__receiver , :: core :: convert :: Into :: into (taste) , :: core :: option :: Option :: None) } } # [doc = "`SetEnhance(crate::app::capabilitydefinition::CapabilityDefinition_Type, i32, i32)` overload"] fn set_enhance (self , r#type : impl :: core :: convert :: Into < crate :: app :: capabilitydefinition :: CapabilityDefinition_Type > , index : impl :: core :: convert :: Into < i32 > , value : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { let __receiver = < DishResultDialogContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DishResultDialogContent_unity2_raw :: set_enhance (__receiver , :: core :: convert :: Into :: into (r#type) , :: core :: convert :: Into :: into (index) , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`SetBonus(crate::app::capabilitydefinition::CapabilityDefinition_Type, i32, i32)` overload"] fn set_bonus (self , r#type : impl :: core :: convert :: Into < crate :: app :: capabilitydefinition :: CapabilityDefinition_Type > , index : impl :: core :: convert :: Into < i32 > , value : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { let __receiver = < DishResultDialogContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DishResultDialogContent_unity2_raw :: set_bonus (__receiver , :: core :: convert :: Into :: into (r#type) , :: core :: convert :: Into :: into (index) , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DishResultDialogContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DishResultDialogContent_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-dishresultdialogcontent")]
-impl<__T: IDishResultDialogContent> IDishResultDialogContentMethods for __T {}
+impl < __T : IDishResultDialogContent > IDishResultDialogContentMethods for __T { }
+
+#[cfg(feature = "app-dishresultdialogcontent")]
+impl DishResultDialogContent { pub fn open_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DishResultDialogContent_unity2_raw :: __lookup_open :: get_method_info () } pub fn close_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DishResultDialogContent_unity2_raw :: __lookup_close :: get_method_info () } pub fn is_opening_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DishResultDialogContent_unity2_raw :: __lookup_is_opening :: get_method_info () } pub fn is_closing_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DishResultDialogContent_unity2_raw :: __lookup_is_closing :: get_method_info () } pub fn is_closed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DishResultDialogContent_unity2_raw :: __lookup_is_closed :: get_method_info () } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DishResultDialogContent_unity2_raw :: __lookup_start :: get_method_info () } pub fn set_dish_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DishResultDialogContent_unity2_raw :: __lookup_set_dish :: get_method_info () } pub fn set_grade_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DishResultDialogContent_unity2_raw :: __lookup_set_grade :: get_method_info () } pub fn set_enhance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DishResultDialogContent_unity2_raw :: __lookup_set_enhance :: get_method_info () } pub fn set_bonus_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DishResultDialogContent_unity2_raw :: __lookup_set_bonus :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DishResultDialogContent_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-dishresultdialogcontent")]
 impl DishResultDialogContent {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DishResultDialogContent),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDishResultDialogContentMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DishResultDialogContent) , :: core :: stringify ! (new) ,)) ; < Self as IDishResultDialogContentMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-dishresultdialogcontent")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{DishResultDialogContent, IDishResultDialogContent, IDishResultDialogContentMethods};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        system::object::IObject,
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::DishResultDialogContent;
+    pub use super::IDishResultDialogContent;
+    pub use super::IDishResultDialogContentMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

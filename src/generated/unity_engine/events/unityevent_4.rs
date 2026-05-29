@@ -2,87 +2,52 @@
 
 #[cfg(feature = "unity_engine-events-unityevent_4-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::events::unityeventbase::{IUnityEventBase, UnityEventBase},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/events/unityevent_4/UnityEvent_4.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Events", name = "UnityEvent`4")]
-    #[parent(crate::unity_engine::events::unityeventbase::UnityEventBase)]
-    #[parent(crate::system::object::Object)]
-    pub struct UnityEvent_4<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity, T2: ::unity2::ClassIdentity, T3: ::unity2::ClassIdentity> {
-        #[rename(name = "m_InvokeArray")]
-        pub m_invoke_array: ::unity2::Array<crate::system::object::Object>,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: events :: unityeventbase :: { IUnityEventBase , UnityEventBase }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/events/unityevent_4/UnityEvent_4.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Events" , name = "UnityEvent`4")] # [parent (crate :: unity_engine :: events :: unityeventbase :: UnityEventBase)] # [parent (crate :: system :: object :: Object)] pub struct UnityEvent_4 < T0 : :: unity2 :: ClassIdentity , T1 : :: unity2 :: ClassIdentity , T2 : :: unity2 :: ClassIdentity , T3 : :: unity2 :: ClassIdentity > {
+# [rename (name = "m_InvokeArray")] pub m_invoke_array : :: unity2 :: Array < crate :: system :: object :: Object > ,
+}
+
 }
 
 #[cfg(feature = "unity_engine-events-unityevent_4-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-events-unityevent_4")]
-#[::unity2::methods]
-impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity, T2: ::unity2::ClassIdentity, T3: ::unity2::ClassIdentity>
-    UnityEvent_4<T0, T1, T2, T3>
-{
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+# [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity , T1 : :: unity2 :: ClassIdentity , T2 : :: unity2 :: ClassIdentity , T3 : :: unity2 :: ClassIdentity > UnityEvent_4 < T0 , T1 , T2 , T3 > {
+# [doc = "`.ctor()` overload"] # [method (name = ".ctor" , args = 0)] pub fn ctor (self ,) -> () ;
 
-    #[doc = "`AddListener(crate::unity_engine::events::unityaction_4::UnityAction_4<T0,T1,T2,T3>)` overload"]
-    #[method(name = "AddListener", args = 1)]
-    pub fn add_listener(self, call: crate::unity_engine::events::unityaction_4::UnityAction_4<T0, T1, T2, T3>) -> ();
+# [doc = "`AddListener(crate::unity_engine::events::unityaction_4::UnityAction_4<T0,T1,T2,T3>)` overload"] # [method (name = "AddListener" , args = 1)] pub fn add_listener (self , call : crate :: unity_engine :: events :: unityaction_4 :: UnityAction_4 < T0 , T1 , T2 , T3 >) -> () ;
 
-    #[doc = "`RemoveListener(crate::unity_engine::events::unityaction_4::UnityAction_4<T0,T1,T2,T3>)` overload"]
-    #[method(name = "RemoveListener", args = 1)]
-    pub fn remove_listener(self, call: crate::unity_engine::events::unityaction_4::UnityAction_4<T0, T1, T2, T3>) -> ();
+# [doc = "`RemoveListener(crate::unity_engine::events::unityaction_4::UnityAction_4<T0,T1,T2,T3>)` overload"] # [method (name = "RemoveListener" , args = 1)] pub fn remove_listener (self , call : crate :: unity_engine :: events :: unityaction_4 :: UnityAction_4 < T0 , T1 , T2 , T3 >) -> () ;
 
-    #[doc = "`FindMethod_Impl(::unity2::Il2CppString, ::unity2::SystemType)` overload"]
-    #[method(name = "FindMethod_Impl", args = 2)]
-    pub fn find_method_impl(
-        self,
-        name: ::unity2::Il2CppString,
-        target_obj_type: ::unity2::SystemType,
-    ) -> crate::system::reflection::methodinfo::MethodInfo;
+# [doc = "`FindMethod_Impl(::unity2::Il2CppString, ::unity2::SystemType)` overload"] # [method (name = "FindMethod_Impl" , args = 2)] pub fn find_method_impl (self , name : :: unity2 :: Il2CppString , target_obj_type : :: unity2 :: SystemType) -> crate :: system :: reflection :: methodinfo :: MethodInfo ;
 
-    #[doc = "`GetDelegate(crate::system::object::Object, crate::system::reflection::methodinfo::MethodInfo)` overload"]
-    #[method(name = "GetDelegate", args = 2)]
-    pub fn get_delegate(
-        self,
-        target: crate::system::object::Object,
-        the_function: crate::system::reflection::methodinfo::MethodInfo,
-    ) -> crate::unity_engine::events::baseinvokablecall::BaseInvokableCall;
+# [doc = "`GetDelegate(crate::system::object::Object, crate::system::reflection::methodinfo::MethodInfo)` overload"] # [method (name = "GetDelegate" , args = 2)] pub fn get_delegate (self , target : crate :: system :: object :: Object , the_function : crate :: system :: reflection :: methodinfo :: MethodInfo) -> crate :: unity_engine :: events :: baseinvokablecall :: BaseInvokableCall ;
 
-    #[doc = "`GetDelegate(crate::unity_engine::events::unityaction_4::UnityAction_4<T0,T1,T2,T3>)` overload"]
-    #[method(name = "GetDelegate", args = 1)]
-    pub fn get_delegate_2(
-        action: crate::unity_engine::events::unityaction_4::UnityAction_4<T0, T1, T2, T3>,
-    ) -> crate::unity_engine::events::baseinvokablecall::BaseInvokableCall;
+# [doc = "`GetDelegate(crate::unity_engine::events::unityaction_4::UnityAction_4<T0,T1,T2,T3>)` overload"] # [method (name = "GetDelegate" , args = 1)] pub fn get_delegate_2 (action : crate :: unity_engine :: events :: unityaction_4 :: UnityAction_4 < T0 , T1 , T2 , T3 >) -> crate :: unity_engine :: events :: baseinvokablecall :: BaseInvokableCall ;
 }
 
 #[cfg(feature = "unity_engine-events-unityevent_4")]
-impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity, T2: ::unity2::ClassIdentity, T3: ::unity2::ClassIdentity>
-    UnityEvent_4<T0, T1, T2, T3>
-{
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(UnityEvent_4), ::core::stringify!(new),));
-        <Self as IUnityEvent_4Methods<T0, T1, T2, T3>>::ctor(this);
-        this
-    }
+impl < T0 : :: unity2 :: ClassIdentity , T1 : :: unity2 :: ClassIdentity , T2 : :: unity2 :: ClassIdentity , T3 : :: unity2 :: ClassIdentity > UnityEvent_4 < T0 , T1 , T2 , T3 > {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (UnityEvent_4) , :: core :: stringify ! (new) ,)) ; < Self as IUnityEvent_4Methods < T0 , T1 , T2 , T3 > > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "unity_engine-events-unityevent_4")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IUnityEvent_4, IUnityEvent_4Methods, UnityEvent_4};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-events-unityeventbase")]
-    pub use crate::unity_engine::events::unityeventbase::IUnityEventBaseMethods;
-    pub use crate::{system::object::IObject, unity_engine::events::unityeventbase::IUnityEventBase};
+    pub use super::UnityEvent_4;
+    pub use super::IUnityEvent_4;
+    pub use super::IUnityEvent_4Methods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::events::unityeventbase::IUnityEventBase;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-events-unityeventbase")] pub use crate::unity_engine::events::unityeventbase::IUnityEventBaseMethods;
 }

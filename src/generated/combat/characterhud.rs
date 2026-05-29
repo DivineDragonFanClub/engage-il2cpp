@@ -2,355 +2,62 @@
 
 #[cfg(feature = "combat-characterhud-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/characterhud/CharacterHUD.md"))]
-    #[::unity2::class(namespace = "Combat", name = "CharacterHUD")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct CharacterHUD {
-        #[offset(24)]
-        #[rename(name = "_cp")]
-        pub cp: crate::combat::character::Character,
-        #[offset(32)]
-        #[rename(name = "CombatGaugeController")]
-        pub combat_gauge_controller: crate::root::combatgaugecontroller::CombatGaugeController,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/characterhud/CharacterHUD.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "CharacterHUD")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct CharacterHUD {
+# [offset (24)] # [rename (name = "_cp")] pub cp : crate :: combat :: character :: Character ,
+# [offset (32)] # [rename (name = "CombatGaugeController")] pub combat_gauge_controller : crate :: root :: combatgaugecontroller :: CombatGaugeController ,
+}
+
 }
 
 #[cfg(feature = "combat-characterhud-types")]
 pub use __types::*;
 
 #[cfg(feature = "combat-characterhud")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __CharacterHUD_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_cp {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<CharacterHUD as ::unity2::ClassIdentity>::class(), "get_CP", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CharacterHUD as ::unity2::ClassIdentity>::NAME,
-                        "get_CP",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_cp(this: CharacterHUD, __unity2_method_info: ::unity2::OptionalMethod) -> crate::combat::character::Character {
-        let inner: extern "C" fn(CharacterHUD, ::unity2::OptionalMethod) -> crate::combat::character::Character =
-            ::core::mem::transmute(__lookup_get_cp::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_in {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<CharacterHUD as ::unity2::ClassIdentity>::class(), "In", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CharacterHUD as ::unity2::ClassIdentity>::NAME,
-                        "In",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn r#in(this: CharacterHUD, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CharacterHUD, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_in::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_destroy {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharacterHUD as ::unity2::ClassIdentity>::class(),
-                "OnDestroy",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CharacterHUD as ::unity2::ClassIdentity>::NAME,
-                        "OnDestroy",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_destroy(this: CharacterHUD, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CharacterHUD, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_destroy::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_try_update_values {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharacterHUD as ::unity2::ClassIdentity>::class(),
-                "TryUpdateValues",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CharacterHUD as ::unity2::ClassIdentity>::NAME,
-                        "TryUpdateValues",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn try_update_values(
-        this: CharacterHUD,
-        hp: i32,
-        maxhp: i32,
-        engage_count: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(CharacterHUD, i32, i32, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_try_update_values::get_method_info().method_ptr);
-        inner(this, hp, maxhp, engage_count, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_push_show_skill {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::skilldata::SkillData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharacterHUD as ::unity2::ClassIdentity>::class(),
-                "PushShowSkill",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CharacterHUD as ::unity2::ClassIdentity>::NAME,
-                        "PushShowSkill",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn push_show_skill(
-        this: CharacterHUD,
-        skill_data: crate::app::skilldata::SkillData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(CharacterHUD, crate::app::skilldata::SkillData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_push_show_skill::get_method_info().method_ptr);
-        inner(this, skill_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_out {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<CharacterHUD as ::unity2::ClassIdentity>::class(), "Out", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CharacterHUD as ::unity2::ClassIdentity>::NAME,
-                        "Out",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn out(this: CharacterHUD, ntime: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CharacterHUD, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_out::get_method_info().method_ptr);
-        inner(this, ntime, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<CharacterHUD as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CharacterHUD as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: CharacterHUD, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CharacterHUD, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __CharacterHUD_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_cp { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CharacterHUD as :: unity2 :: ClassIdentity > :: class () , "get_CP" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CharacterHUD as :: unity2 :: ClassIdentity > :: NAME , "get_CP" , e) , } } } pub unsafe fn get_cp (this : CharacterHUD , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: combat :: character :: Character { let inner : extern "C" fn (CharacterHUD , :: unity2 :: OptionalMethod ,) -> crate :: combat :: character :: Character = :: core :: mem :: transmute (__lookup_get_cp :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_in { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CharacterHUD as :: unity2 :: ClassIdentity > :: class () , "In" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CharacterHUD as :: unity2 :: ClassIdentity > :: NAME , "In" , e) , } } } pub unsafe fn r#in (this : CharacterHUD , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CharacterHUD , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_in :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_destroy { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CharacterHUD as :: unity2 :: ClassIdentity > :: class () , "OnDestroy" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CharacterHUD as :: unity2 :: ClassIdentity > :: NAME , "OnDestroy" , e) , } } } pub unsafe fn on_destroy (this : CharacterHUD , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CharacterHUD , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_destroy :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_try_update_values { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CharacterHUD as :: unity2 :: ClassIdentity > :: class () , "TryUpdateValues" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CharacterHUD as :: unity2 :: ClassIdentity > :: NAME , "TryUpdateValues" , e) , } } } pub unsafe fn try_update_values (this : CharacterHUD , hp : i32 , maxhp : i32 , engage_count : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CharacterHUD , i32 , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_try_update_values :: get_method_info () . method_ptr ,) ; inner (this , hp , maxhp , engage_count , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_push_show_skill { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: skilldata :: SkillData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CharacterHUD as :: unity2 :: ClassIdentity > :: class () , "PushShowSkill" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CharacterHUD as :: unity2 :: ClassIdentity > :: NAME , "PushShowSkill" , e) , } } } pub unsafe fn push_show_skill (this : CharacterHUD , skill_data : crate :: app :: skilldata :: SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CharacterHUD , crate :: app :: skilldata :: SkillData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_push_show_skill :: get_method_info () . method_ptr ,) ; inner (this , skill_data , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_out { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CharacterHUD as :: unity2 :: ClassIdentity > :: class () , "Out" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CharacterHUD as :: unity2 :: ClassIdentity > :: NAME , "Out" , e) , } } } pub unsafe fn out (this : CharacterHUD , ntime : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CharacterHUD , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_out :: get_method_info () . method_ptr ,) ; inner (this , ntime , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CharacterHUD as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CharacterHUD as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : CharacterHUD , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CharacterHUD , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "combat-characterhud")]
-pub trait ICharacterHUDMethods: ICharacterHUD {
-    #[doc = "`get_CP()` overload"]
-    fn get_cp(self) -> crate::combat::character::Character {
-        unsafe {
-            let __receiver = <CharacterHUD as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CharacterHUD_unity2_raw::get_cp(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`In()` overload"]
-    fn r#in(self) -> () {
-        unsafe {
-            let __receiver = <CharacterHUD as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CharacterHUD_unity2_raw::r#in(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnDestroy()` overload"]
-    fn on_destroy(self) -> () {
-        unsafe {
-            let __receiver = <CharacterHUD as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CharacterHUD_unity2_raw::on_destroy(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`TryUpdateValues(i32, i32, i32)` overload"]
-    fn try_update_values(
-        self,
-        hp: impl ::core::convert::Into<i32>,
-        maxhp: impl ::core::convert::Into<i32>,
-        engage_count: impl ::core::convert::Into<i32>,
-    ) -> () {
-        unsafe {
-            let __receiver = <CharacterHUD as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CharacterHUD_unity2_raw::try_update_values(
-                __receiver,
-                ::core::convert::Into::into(hp),
-                ::core::convert::Into::into(maxhp),
-                ::core::convert::Into::into(engage_count),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`PushShowSkill(crate::app::skilldata::SkillData)` overload"]
-    fn push_show_skill(self, skill_data: impl ::core::convert::Into<crate::app::skilldata::SkillData>) -> () {
-        unsafe {
-            let __receiver = <CharacterHUD as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CharacterHUD_unity2_raw::push_show_skill(__receiver, ::core::convert::Into::into(skill_data), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Out(f32)` overload"]
-    fn out(self, ntime: impl ::core::convert::Into<f32>) -> () {
-        unsafe {
-            let __receiver = <CharacterHUD as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CharacterHUD_unity2_raw::out(__receiver, ::core::convert::Into::into(ntime), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <CharacterHUD as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CharacterHUD_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait ICharacterHUDMethods : ICharacterHUD { # [doc = "`get_CP()` overload"] fn get_cp (self ,) -> crate :: combat :: character :: Character { unsafe { let __receiver = < CharacterHUD as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CharacterHUD_unity2_raw :: get_cp (__receiver , :: core :: option :: Option :: None) } } # [doc = "`In()` overload"] fn r#in (self ,) -> () { unsafe { let __receiver = < CharacterHUD as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CharacterHUD_unity2_raw :: r#in (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnDestroy()` overload"] fn on_destroy (self ,) -> () { unsafe { let __receiver = < CharacterHUD as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CharacterHUD_unity2_raw :: on_destroy (__receiver , :: core :: option :: Option :: None) } } # [doc = "`TryUpdateValues(i32, i32, i32)` overload"] fn try_update_values (self , hp : impl :: core :: convert :: Into < i32 > , maxhp : impl :: core :: convert :: Into < i32 > , engage_count : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < CharacterHUD as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CharacterHUD_unity2_raw :: try_update_values (__receiver , :: core :: convert :: Into :: into (hp) , :: core :: convert :: Into :: into (maxhp) , :: core :: convert :: Into :: into (engage_count) , :: core :: option :: Option :: None) } } # [doc = "`PushShowSkill(crate::app::skilldata::SkillData)` overload"] fn push_show_skill (self , skill_data : impl :: core :: convert :: Into < crate :: app :: skilldata :: SkillData >) -> () { unsafe { let __receiver = < CharacterHUD as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CharacterHUD_unity2_raw :: push_show_skill (__receiver , :: core :: convert :: Into :: into (skill_data) , :: core :: option :: Option :: None) } } # [doc = "`Out(f32)` overload"] fn out (self , ntime : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < CharacterHUD as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CharacterHUD_unity2_raw :: out (__receiver , :: core :: convert :: Into :: into (ntime) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CharacterHUD as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CharacterHUD_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "combat-characterhud")]
-impl<__T: ICharacterHUD> ICharacterHUDMethods for __T {}
+impl < __T : ICharacterHUD > ICharacterHUDMethods for __T { }
+
+#[cfg(feature = "combat-characterhud")]
+impl CharacterHUD { pub fn get_cp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CharacterHUD_unity2_raw :: __lookup_get_cp :: get_method_info () } pub fn in_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CharacterHUD_unity2_raw :: __lookup_in :: get_method_info () } pub fn on_destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CharacterHUD_unity2_raw :: __lookup_on_destroy :: get_method_info () } pub fn try_update_values_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CharacterHUD_unity2_raw :: __lookup_try_update_values :: get_method_info () } pub fn push_show_skill_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CharacterHUD_unity2_raw :: __lookup_push_show_skill :: get_method_info () } pub fn out_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CharacterHUD_unity2_raw :: __lookup_out :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CharacterHUD_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "combat-characterhud")]
 impl CharacterHUD {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(CharacterHUD), ::core::stringify!(new),));
-        <Self as ICharacterHUDMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CharacterHUD) , :: core :: stringify ! (new) ,)) ; < Self as ICharacterHUDMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "combat-characterhud")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{CharacterHUD, ICharacterHUD, ICharacterHUDMethods};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        system::object::IObject,
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::CharacterHUD;
+    pub use super::ICharacterHUD;
+    pub use super::ICharacterHUDMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

@@ -2,137 +2,34 @@
 
 #[cfg(feature = "combat-weaponstyleex-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/weaponstyleex/WeaponStyleEx.md"))]
-    #[::unity2::class(namespace = "Combat", name = "WeaponStyleEx")]
-    #[parent(crate::system::object::Object)]
-    pub struct WeaponStyleEx {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/weaponstyleex/WeaponStyleEx.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "WeaponStyleEx")] # [parent (crate :: system :: object :: Object)] pub struct WeaponStyleEx {}
+
 }
 
 #[cfg(feature = "combat-weaponstyleex-types")]
 pub use __types::*;
 
 #[cfg(feature = "combat-weaponstyleex")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __WeaponStyleEx_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_shoot_or_magic {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::combat::weaponstyle::WeaponStyle as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WeaponStyleEx as ::unity2::ClassIdentity>::class(),
-                "IsShootOrMagic",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WeaponStyleEx as ::unity2::ClassIdentity>::NAME,
-                        "IsShootOrMagic",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_shoot_or_magic(s: crate::combat::weaponstyle::WeaponStyle, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(crate::combat::weaponstyle::WeaponStyle, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_shoot_or_magic::get_method_info().method_ptr);
-        inner(s, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_hit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::combat::weaponstyle::WeaponStyle as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<WeaponStyleEx as ::unity2::ClassIdentity>::class(), "IsHit", 1, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WeaponStyleEx as ::unity2::ClassIdentity>::NAME,
-                        "IsHit",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_hit(s: crate::combat::weaponstyle::WeaponStyle, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(crate::combat::weaponstyle::WeaponStyle, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_hit::get_method_info().method_ptr);
-        inner(s, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_to_nml {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::combat::weaponstyle::WeaponStyle as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<WeaponStyleEx as ::unity2::ClassIdentity>::class(), "ToNML", 1, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WeaponStyleEx as ::unity2::ClassIdentity>::NAME,
-                        "ToNML",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn to_nml(s: crate::combat::weaponstyle::WeaponStyle, __unity2_method_info: ::unity2::OptionalMethod) -> u16 {
-        let inner: extern "C" fn(crate::combat::weaponstyle::WeaponStyle, ::unity2::OptionalMethod) -> u16 =
-            ::core::mem::transmute(__lookup_to_nml::get_method_info().method_ptr);
-        inner(s, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __WeaponStyleEx_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_shoot_or_magic { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: weaponstyle :: WeaponStyle as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WeaponStyleEx as :: unity2 :: ClassIdentity > :: class () , "IsShootOrMagic" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WeaponStyleEx as :: unity2 :: ClassIdentity > :: NAME , "IsShootOrMagic" , e) , } } } pub unsafe fn is_shoot_or_magic (s : crate :: combat :: weaponstyle :: WeaponStyle , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (crate :: combat :: weaponstyle :: WeaponStyle , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_shoot_or_magic :: get_method_info () . method_ptr ,) ; inner (s , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_hit { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: weaponstyle :: WeaponStyle as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WeaponStyleEx as :: unity2 :: ClassIdentity > :: class () , "IsHit" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WeaponStyleEx as :: unity2 :: ClassIdentity > :: NAME , "IsHit" , e) , } } } pub unsafe fn is_hit (s : crate :: combat :: weaponstyle :: WeaponStyle , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (crate :: combat :: weaponstyle :: WeaponStyle , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_hit :: get_method_info () . method_ptr ,) ; inner (s , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_to_nml { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: weaponstyle :: WeaponStyle as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WeaponStyleEx as :: unity2 :: ClassIdentity > :: class () , "ToNML" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WeaponStyleEx as :: unity2 :: ClassIdentity > :: NAME , "ToNML" , e) , } } } pub unsafe fn to_nml (s : crate :: combat :: weaponstyle :: WeaponStyle , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> u16 { let inner : extern "C" fn (crate :: combat :: weaponstyle :: WeaponStyle , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute (__lookup_to_nml :: get_method_info () . method_ptr ,) ; inner (s , __unity2_method_info) } }
 
 #[cfg(feature = "combat-weaponstyleex")]
-impl WeaponStyleEx {
-    #[doc = "`IsShootOrMagic(crate::combat::weaponstyle::WeaponStyle)` overload"]
-    pub fn is_shoot_or_magic(s: impl ::core::convert::Into<crate::combat::weaponstyle::WeaponStyle>) -> bool {
-        unsafe { __WeaponStyleEx_unity2_raw::is_shoot_or_magic(::core::convert::Into::into(s), ::core::option::Option::None) }
-    }
+impl WeaponStyleEx { # [doc = "`IsShootOrMagic(crate::combat::weaponstyle::WeaponStyle)` overload"] pub fn is_shoot_or_magic (s : impl :: core :: convert :: Into < crate :: combat :: weaponstyle :: WeaponStyle >) -> bool { unsafe { __WeaponStyleEx_unity2_raw :: is_shoot_or_magic (:: core :: convert :: Into :: into (s) , :: core :: option :: Option :: None) } } # [doc = "`IsHit(crate::combat::weaponstyle::WeaponStyle)` overload"] pub fn is_hit (s : impl :: core :: convert :: Into < crate :: combat :: weaponstyle :: WeaponStyle >) -> bool { unsafe { __WeaponStyleEx_unity2_raw :: is_hit (:: core :: convert :: Into :: into (s) , :: core :: option :: Option :: None) } } # [doc = "`ToNML(crate::combat::weaponstyle::WeaponStyle)` overload"] pub fn to_nml (s : impl :: core :: convert :: Into < crate :: combat :: weaponstyle :: WeaponStyle >) -> u16 { unsafe { __WeaponStyleEx_unity2_raw :: to_nml (:: core :: convert :: Into :: into (s) , :: core :: option :: Option :: None) } } }
 
-    #[doc = "`IsHit(crate::combat::weaponstyle::WeaponStyle)` overload"]
-    pub fn is_hit(s: impl ::core::convert::Into<crate::combat::weaponstyle::WeaponStyle>) -> bool {
-        unsafe { __WeaponStyleEx_unity2_raw::is_hit(::core::convert::Into::into(s), ::core::option::Option::None) }
-    }
-
-    #[doc = "`ToNML(crate::combat::weaponstyle::WeaponStyle)` overload"]
-    pub fn to_nml(s: impl ::core::convert::Into<crate::combat::weaponstyle::WeaponStyle>) -> u16 {
-        unsafe { __WeaponStyleEx_unity2_raw::to_nml(::core::convert::Into::into(s), ::core::option::Option::None) }
-    }
-}
+#[cfg(feature = "combat-weaponstyleex")]
+impl WeaponStyleEx { pub fn is_shoot_or_magic_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WeaponStyleEx_unity2_raw :: __lookup_is_shoot_or_magic :: get_method_info () } pub fn is_hit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WeaponStyleEx_unity2_raw :: __lookup_is_hit :: get_method_info () } pub fn to_nml_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WeaponStyleEx_unity2_raw :: __lookup_to_nml :: get_method_info () } }
 
 #[cfg(feature = "combat-weaponstyleex")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IWeaponStyleEx, WeaponStyleEx};
+    pub use super::WeaponStyleEx;
+    pub use super::IWeaponStyleEx;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

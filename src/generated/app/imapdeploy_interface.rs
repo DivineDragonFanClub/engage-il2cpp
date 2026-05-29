@@ -2,116 +2,34 @@
 
 #[cfg(feature = "app-imapdeploy_interface-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/imapdeploy_interface/IMapDeploy_Interface.md"))]
-    #[::unity2::class(namespace = "App", name = "IMapDeploy")]
-    pub struct IMapDeploy_Interface {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/imapdeploy_interface/IMapDeploy_Interface.md"))] # [:: unity2 :: class (namespace = "App" , name = "IMapDeploy")] pub struct IMapDeploy_Interface {}
+
 }
 
 #[cfg(feature = "app-imapdeploy_interface-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-imapdeploy_interface")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __IMapDeploy_Interface_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_buffer_a {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <IMapDeploy_Interface as ::unity2::ClassIdentity>::class(),
-                "SetBufferA",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <IMapDeploy_Interface as ::unity2::ClassIdentity>::NAME,
-                        "SetBufferA",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_buffer_a(this: IMapDeploy_Interface, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(IMapDeploy_Interface, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_buffer_a::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_buffer_b {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <IMapDeploy_Interface as ::unity2::ClassIdentity>::class(),
-                "SetBufferB",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <IMapDeploy_Interface as ::unity2::ClassIdentity>::NAME,
-                        "SetBufferB",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_buffer_b(this: IMapDeploy_Interface, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(IMapDeploy_Interface, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_buffer_b::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __IMapDeploy_Interface_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_buffer_a { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< IMapDeploy_Interface as :: unity2 :: ClassIdentity > :: class () , "SetBufferA" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < IMapDeploy_Interface as :: unity2 :: ClassIdentity > :: NAME , "SetBufferA" , e) , } } } pub unsafe fn set_buffer_a (this : IMapDeploy_Interface , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (IMapDeploy_Interface , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_buffer_a :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_buffer_b { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< IMapDeploy_Interface as :: unity2 :: ClassIdentity > :: class () , "SetBufferB" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < IMapDeploy_Interface as :: unity2 :: ClassIdentity > :: NAME , "SetBufferB" , e) , } } } pub unsafe fn set_buffer_b (this : IMapDeploy_Interface , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (IMapDeploy_Interface , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_buffer_b :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-imapdeploy_interface")]
-pub trait IIMapDeploy_InterfaceMethods: IIMapDeploy_Interface {
-    #[doc = "`SetBufferA()` overload"]
-    fn set_buffer_a(self) -> () {
-        unsafe {
-            let __receiver =
-                <IMapDeploy_Interface as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __IMapDeploy_Interface_unity2_raw::set_buffer_a(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetBufferB()` overload"]
-    fn set_buffer_b(self) -> () {
-        unsafe {
-            let __receiver =
-                <IMapDeploy_Interface as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __IMapDeploy_Interface_unity2_raw::set_buffer_b(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IIMapDeploy_InterfaceMethods : IIMapDeploy_Interface { # [doc = "`SetBufferA()` overload"] fn set_buffer_a (self ,) -> () { unsafe { let __receiver = < IMapDeploy_Interface as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IMapDeploy_Interface_unity2_raw :: set_buffer_a (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetBufferB()` overload"] fn set_buffer_b (self ,) -> () { unsafe { let __receiver = < IMapDeploy_Interface as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IMapDeploy_Interface_unity2_raw :: set_buffer_b (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-imapdeploy_interface")]
-impl<__T: IIMapDeploy_Interface> IIMapDeploy_InterfaceMethods for __T {}
+impl < __T : IIMapDeploy_Interface > IIMapDeploy_InterfaceMethods for __T { }
+
+#[cfg(feature = "app-imapdeploy_interface")]
+impl IMapDeploy_Interface { pub fn set_buffer_a_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __IMapDeploy_Interface_unity2_raw :: __lookup_set_buffer_a :: get_method_info () } pub fn set_buffer_b_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __IMapDeploy_Interface_unity2_raw :: __lookup_set_buffer_b :: get_method_info () } }
 
 #[cfg(feature = "app-imapdeploy_interface")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IIMapDeploy_Interface, IIMapDeploy_InterfaceMethods, IMapDeploy_Interface};
+    pub use super::IMapDeploy_Interface;
+    pub use super::IIMapDeploy_Interface;
+    pub use super::IIMapDeploy_InterfaceMethods;
 }

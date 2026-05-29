@@ -2,18 +2,17 @@
 
 #[cfg(feature = "system-reflection-emit-assemblybuilder-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        reflection::assembly::{Assembly, IAssembly},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/emit/assemblybuilder/AssemblyBuilder.md"))]
-    #[::unity2::class(namespace = "System.Reflection.Emit", name = "AssemblyBuilder")]
-    #[parent(crate::system::reflection::assembly::Assembly)]
-    pub struct AssemblyBuilder {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: reflection :: assembly :: { Assembly , IAssembly }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/emit/assemblybuilder/AssemblyBuilder.md"))] # [:: unity2 :: class (namespace = "System.Reflection.Emit" , name = "AssemblyBuilder")] # [parent (crate :: system :: reflection :: assembly :: Assembly)] pub struct AssemblyBuilder {}
+
 }
 
 #[cfg(feature = "system-reflection-emit-assemblybuilder-types")]
@@ -22,10 +21,10 @@ pub use __types::*;
 #[cfg(feature = "system-reflection-emit-assemblybuilder")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{AssemblyBuilder, IAssemblyBuilder};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-reflection-assembly")]
-    pub use crate::system::reflection::assembly::IAssemblyMethods;
-    pub use crate::system::{object::IObject, reflection::assembly::IAssembly};
+    pub use super::AssemblyBuilder;
+    pub use super::IAssemblyBuilder;
+    pub use crate::system::object::IObject;
+    pub use crate::system::reflection::assembly::IAssembly;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-reflection-assembly")] pub use crate::system::reflection::assembly::IAssemblyMethods;
 }

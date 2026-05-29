@@ -2,504 +2,57 @@
 
 #[cfg(feature = "app-unititemmenuitem-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::{
-            basicitemmenuitem::{BasicItemMenuItem, IBasicItemMenuItem},
-            basicmenuitem::{BasicMenuItem, IBasicMenuItem},
-        },
-        system::object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unititemmenuitem/UnitItemMenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "UnitItemMenuItem")]
-    #[parent(crate::app::basicitemmenuitem::BasicItemMenuItem)]
-    pub struct UnitItemMenuItem {
-        #[offset(100)]
-        #[rename(name = "m_OwnerItemIndex")]
-        pub m_owner_item_index: i32,
-        #[offset(104)]
-        #[rename(name = "m_SelectableBlank")]
-        pub m_selectable_blank: bool,
-        #[offset(112)]
-        #[rename(name = "m_SelectEventHandler")]
-        pub m_select_event_handler: crate::app::unititemmenu::UnitItemMenu_SelectEventHandler,
-        #[offset(120)]
-        #[rename(name = "m_DecideEventHandler")]
-        pub m_decide_event_handler: crate::app::unititemmenu::UnitItemMenu_DecideEventHandler,
-        #[offset(128)]
-        #[rename(name = "m_RequestCloseEventHandler")]
-        pub m_request_close_event_handler: crate::app::unititemmenu::UnitItemMenu_RequestCloseEventHandler,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: basicitemmenuitem :: { BasicItemMenuItem , IBasicItemMenuItem }
+ ;
+ use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unititemmenuitem/UnitItemMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "UnitItemMenuItem")] # [parent (crate :: app :: basicitemmenuitem :: BasicItemMenuItem)] pub struct UnitItemMenuItem {
+# [offset (100)] # [rename (name = "m_OwnerItemIndex")] pub m_owner_item_index : i32 ,
+# [offset (104)] # [rename (name = "m_SelectableBlank")] pub m_selectable_blank : bool ,
+# [offset (112)] # [rename (name = "m_SelectEventHandler")] pub m_select_event_handler : crate :: app :: unititemmenu :: UnitItemMenu_SelectEventHandler ,
+# [offset (120)] # [rename (name = "m_DecideEventHandler")] pub m_decide_event_handler : crate :: app :: unititemmenu :: UnitItemMenu_DecideEventHandler ,
+# [offset (128)] # [rename (name = "m_RequestCloseEventHandler")] pub m_request_close_event_handler : crate :: app :: unititemmenu :: UnitItemMenu_RequestCloseEventHandler ,
+}
+
 }
 
 #[cfg(feature = "app-unititemmenuitem-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-unititemmenuitem")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __UnitItemMenuItem_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-                <crate::app::unititemmenu::UnitItemMenu_SelectEventHandler as ::unity2::IlType>::il_type(),
-                <crate::app::unititemmenu::UnitItemMenu_DecideEventHandler as ::unity2::IlType>::il_type(),
-                <crate::app::unititemmenu::UnitItemMenu_RequestCloseEventHandler as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitItemMenuItem as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                5,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnitItemMenuItem as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: UnitItemMenuItem,
-        i: i32,
-        selectable_blank: bool,
-        select_event_handler: crate::app::unititemmenu::UnitItemMenu_SelectEventHandler,
-        decide_event_handler: crate::app::unititemmenu::UnitItemMenu_DecideEventHandler,
-        request_close_event_handler: crate::app::unititemmenu::UnitItemMenu_RequestCloseEventHandler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            UnitItemMenuItem,
-            i32,
-            bool,
-            crate::app::unititemmenu::UnitItemMenu_SelectEventHandler,
-            crate::app::unititemmenu::UnitItemMenu_DecideEventHandler,
-            crate::app::unititemmenu::UnitItemMenu_RequestCloseEventHandler,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(
-            this,
-            i,
-            selectable_blank,
-            select_event_handler,
-            decide_event_handler,
-            request_close_event_handler,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_build_attribute {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitItemMenuItem as ::unity2::ClassIdentity>::class(),
-                "BuildAttribute",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnitItemMenuItem as ::unity2::ClassIdentity>::NAME,
-                        "BuildAttribute",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn build_attribute(
-        this: UnitItemMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        let inner: extern "C" fn(UnitItemMenuItem, ::unity2::OptionalMethod) -> crate::app::basicmenuitem::BasicMenuItem_Attribute =
-            ::core::mem::transmute(__lookup_build_attribute::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_unit_item {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitItemMenuItem as ::unity2::ClassIdentity>::class(),
-                "GetUnitItem",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnitItemMenuItem as ::unity2::ClassIdentity>::NAME,
-                        "GetUnitItem",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_unit_item(this: UnitItemMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::unititem::UnitItem {
-        let inner: extern "C" fn(UnitItemMenuItem, ::unity2::OptionalMethod) -> crate::app::unititem::UnitItem =
-            ::core::mem::transmute(__lookup_get_unit_item::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_unit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitItemMenuItem as ::unity2::ClassIdentity>::class(),
-                "GetUnit",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnitItemMenuItem as ::unity2::ClassIdentity>::NAME,
-                        "GetUnit",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_unit(this: UnitItemMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::unit::Unit {
-        let inner: extern "C" fn(UnitItemMenuItem, ::unity2::OptionalMethod) -> crate::app::unit::Unit =
-            ::core::mem::transmute(__lookup_get_unit::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_reciever_unit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitItemMenuItem as ::unity2::ClassIdentity>::class(),
-                "GetRecieverUnit",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnitItemMenuItem as ::unity2::ClassIdentity>::NAME,
-                        "GetRecieverUnit",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_reciever_unit(this: UnitItemMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::unit::Unit {
-        let inner: extern "C" fn(UnitItemMenuItem, ::unity2::OptionalMethod) -> crate::app::unit::Unit =
-            ::core::mem::transmute(__lookup_get_reciever_unit::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_visible_item_icon_on_blank {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitItemMenuItem as ::unity2::ClassIdentity>::class(),
-                "IsVisibleItemIconOnBlank",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnitItemMenuItem as ::unity2::ClassIdentity>::NAME,
-                        "IsVisibleItemIconOnBlank",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_visible_item_icon_on_blank(this: UnitItemMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(UnitItemMenuItem, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_visible_item_icon_on_blank::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_select {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitItemMenuItem as ::unity2::ClassIdentity>::class(),
-                "OnSelect",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnitItemMenuItem as ::unity2::ClassIdentity>::NAME,
-                        "OnSelect",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_select(this: UnitItemMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(UnitItemMenuItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_select::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_a_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitItemMenuItem as ::unity2::ClassIdentity>::class(),
-                "ACall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnitItemMenuItem as ::unity2::ClassIdentity>::NAME,
-                        "ACall",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn a_call(this: UnitItemMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(UnitItemMenuItem, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
-            ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_b_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitItemMenuItem as ::unity2::ClassIdentity>::class(),
-                "BCall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnitItemMenuItem as ::unity2::ClassIdentity>::NAME,
-                        "BCall",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn b_call(this: UnitItemMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(UnitItemMenuItem, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
-            ::core::mem::transmute(__lookup_b_call::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __UnitItemMenuItem_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < crate :: app :: unititemmenu :: UnitItemMenu_SelectEventHandler as :: unity2 :: IlType > :: il_type () , < crate :: app :: unititemmenu :: UnitItemMenu_DecideEventHandler as :: unity2 :: IlType > :: il_type () , < crate :: app :: unititemmenu :: UnitItemMenu_RequestCloseEventHandler as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitItemMenuItem as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 5 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitItemMenuItem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : UnitItemMenuItem , i : i32 , selectable_blank : bool , select_event_handler : crate :: app :: unititemmenu :: UnitItemMenu_SelectEventHandler , decide_event_handler : crate :: app :: unititemmenu :: UnitItemMenu_DecideEventHandler , request_close_event_handler : crate :: app :: unititemmenu :: UnitItemMenu_RequestCloseEventHandler , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitItemMenuItem , i32 , bool , crate :: app :: unititemmenu :: UnitItemMenu_SelectEventHandler , crate :: app :: unititemmenu :: UnitItemMenu_DecideEventHandler , crate :: app :: unititemmenu :: UnitItemMenu_RequestCloseEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , i , selectable_blank , select_event_handler , decide_event_handler , request_close_event_handler , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_build_attribute { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitItemMenuItem as :: unity2 :: ClassIdentity > :: class () , "BuildAttribute" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitItemMenuItem as :: unity2 :: ClassIdentity > :: NAME , "BuildAttribute" , e) , } } } pub unsafe fn build_attribute (this : UnitItemMenuItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { let inner : extern "C" fn (UnitItemMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute (__lookup_build_attribute :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_unit_item { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitItemMenuItem as :: unity2 :: ClassIdentity > :: class () , "GetUnitItem" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitItemMenuItem as :: unity2 :: ClassIdentity > :: NAME , "GetUnitItem" , e) , } } } pub unsafe fn get_unit_item (this : UnitItemMenuItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: unititem :: UnitItem { let inner : extern "C" fn (UnitItemMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: unititem :: UnitItem = :: core :: mem :: transmute (__lookup_get_unit_item :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_unit { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitItemMenuItem as :: unity2 :: ClassIdentity > :: class () , "GetUnit" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitItemMenuItem as :: unity2 :: ClassIdentity > :: NAME , "GetUnit" , e) , } } } pub unsafe fn get_unit (this : UnitItemMenuItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit { let inner : extern "C" fn (UnitItemMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit = :: core :: mem :: transmute (__lookup_get_unit :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_reciever_unit { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitItemMenuItem as :: unity2 :: ClassIdentity > :: class () , "GetRecieverUnit" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitItemMenuItem as :: unity2 :: ClassIdentity > :: NAME , "GetRecieverUnit" , e) , } } } pub unsafe fn get_reciever_unit (this : UnitItemMenuItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit { let inner : extern "C" fn (UnitItemMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit = :: core :: mem :: transmute (__lookup_get_reciever_unit :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_visible_item_icon_on_blank { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitItemMenuItem as :: unity2 :: ClassIdentity > :: class () , "IsVisibleItemIconOnBlank" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitItemMenuItem as :: unity2 :: ClassIdentity > :: NAME , "IsVisibleItemIconOnBlank" , e) , } } } pub unsafe fn is_visible_item_icon_on_blank (this : UnitItemMenuItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (UnitItemMenuItem , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_visible_item_icon_on_blank :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_select { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitItemMenuItem as :: unity2 :: ClassIdentity > :: class () , "OnSelect" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitItemMenuItem as :: unity2 :: ClassIdentity > :: NAME , "OnSelect" , e) , } } } pub unsafe fn on_select (this : UnitItemMenuItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitItemMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_select :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_a_call { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitItemMenuItem as :: unity2 :: ClassIdentity > :: class () , "ACall" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitItemMenuItem as :: unity2 :: ClassIdentity > :: NAME , "ACall" , e) , } } } pub unsafe fn a_call (this : UnitItemMenuItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result { let inner : extern "C" fn (UnitItemMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute (__lookup_a_call :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_b_call { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitItemMenuItem as :: unity2 :: ClassIdentity > :: class () , "BCall" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitItemMenuItem as :: unity2 :: ClassIdentity > :: NAME , "BCall" , e) , } } } pub unsafe fn b_call (this : UnitItemMenuItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result { let inner : extern "C" fn (UnitItemMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute (__lookup_b_call :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-unititemmenuitem")]
-pub trait IUnitItemMenuItemMethods: IUnitItemMenuItem {
-    #[doc = "`.ctor(i32, bool, crate::app::unititemmenu::UnitItemMenu_SelectEventHandler, crate::app::unititemmenu::UnitItemMenu_DecideEventHandler, crate::app::unititemmenu::UnitItemMenu_RequestCloseEventHandler)` overload"]
-    fn ctor(
-        self,
-        i: impl ::core::convert::Into<i32>,
-        selectable_blank: impl ::core::convert::Into<bool>,
-        select_event_handler: impl ::core::convert::Into<crate::app::unititemmenu::UnitItemMenu_SelectEventHandler>,
-        decide_event_handler: impl ::core::convert::Into<crate::app::unititemmenu::UnitItemMenu_DecideEventHandler>,
-        request_close_event_handler: impl ::core::convert::Into<crate::app::unititemmenu::UnitItemMenu_RequestCloseEventHandler>,
-    ) -> () {
-        unsafe {
-            let __receiver = <UnitItemMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnitItemMenuItem_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(i),
-                ::core::convert::Into::into(selectable_blank),
-                ::core::convert::Into::into(select_event_handler),
-                ::core::convert::Into::into(decide_event_handler),
-                ::core::convert::Into::into(request_close_event_handler),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`BuildAttribute()` overload"]
-    fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        unsafe {
-            let __receiver = <UnitItemMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnitItemMenuItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetUnitItem()` overload"]
-    fn get_unit_item(self) -> crate::app::unititem::UnitItem {
-        unsafe {
-            let __receiver = <UnitItemMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnitItemMenuItem_unity2_raw::get_unit_item(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetUnit()` overload"]
-    fn get_unit(self) -> crate::app::unit::Unit {
-        unsafe {
-            let __receiver = <UnitItemMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnitItemMenuItem_unity2_raw::get_unit(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetRecieverUnit()` overload"]
-    fn get_reciever_unit(self) -> crate::app::unit::Unit {
-        unsafe {
-            let __receiver = <UnitItemMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnitItemMenuItem_unity2_raw::get_reciever_unit(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsVisibleItemIconOnBlank()` overload"]
-    fn is_visible_item_icon_on_blank(self) -> bool {
-        unsafe {
-            let __receiver = <UnitItemMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnitItemMenuItem_unity2_raw::is_visible_item_icon_on_blank(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnSelect()` overload"]
-    fn on_select(self) -> () {
-        unsafe {
-            let __receiver = <UnitItemMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnitItemMenuItem_unity2_raw::on_select(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ACall()` overload"]
-    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = <UnitItemMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnitItemMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`BCall()` overload"]
-    fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = <UnitItemMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnitItemMenuItem_unity2_raw::b_call(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IUnitItemMenuItemMethods : IUnitItemMenuItem { # [doc = "`.ctor(i32, bool, crate::app::unititemmenu::UnitItemMenu_SelectEventHandler, crate::app::unititemmenu::UnitItemMenu_DecideEventHandler, crate::app::unititemmenu::UnitItemMenu_RequestCloseEventHandler)` overload"] fn ctor (self , i : impl :: core :: convert :: Into < i32 > , selectable_blank : impl :: core :: convert :: Into < bool > , select_event_handler : impl :: core :: convert :: Into < crate :: app :: unititemmenu :: UnitItemMenu_SelectEventHandler > , decide_event_handler : impl :: core :: convert :: Into < crate :: app :: unititemmenu :: UnitItemMenu_DecideEventHandler > , request_close_event_handler : impl :: core :: convert :: Into < crate :: app :: unititemmenu :: UnitItemMenu_RequestCloseEventHandler >) -> () { unsafe { let __receiver = < UnitItemMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitItemMenuItem_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (i) , :: core :: convert :: Into :: into (selectable_blank) , :: core :: convert :: Into :: into (select_event_handler) , :: core :: convert :: Into :: into (decide_event_handler) , :: core :: convert :: Into :: into (request_close_event_handler) , :: core :: option :: Option :: None) } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < UnitItemMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitItemMenuItem_unity2_raw :: build_attribute (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetUnitItem()` overload"] fn get_unit_item (self ,) -> crate :: app :: unititem :: UnitItem { unsafe { let __receiver = < UnitItemMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitItemMenuItem_unity2_raw :: get_unit_item (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetUnit()` overload"] fn get_unit (self ,) -> crate :: app :: unit :: Unit { unsafe { let __receiver = < UnitItemMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitItemMenuItem_unity2_raw :: get_unit (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetRecieverUnit()` overload"] fn get_reciever_unit (self ,) -> crate :: app :: unit :: Unit { unsafe { let __receiver = < UnitItemMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitItemMenuItem_unity2_raw :: get_reciever_unit (__receiver , :: core :: option :: Option :: None) } } # [doc = "`IsVisibleItemIconOnBlank()` overload"] fn is_visible_item_icon_on_blank (self ,) -> bool { unsafe { let __receiver = < UnitItemMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitItemMenuItem_unity2_raw :: is_visible_item_icon_on_blank (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnSelect()` overload"] fn on_select (self ,) -> () { unsafe { let __receiver = < UnitItemMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitItemMenuItem_unity2_raw :: on_select (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < UnitItemMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitItemMenuItem_unity2_raw :: a_call (__receiver , :: core :: option :: Option :: None) } } # [doc = "`BCall()` overload"] fn b_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < UnitItemMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitItemMenuItem_unity2_raw :: b_call (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-unititemmenuitem")]
-impl<__T: IUnitItemMenuItem> IUnitItemMenuItemMethods for __T {}
+impl < __T : IUnitItemMenuItem > IUnitItemMenuItemMethods for __T { }
+
+#[cfg(feature = "app-unititemmenuitem")]
+impl UnitItemMenuItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitItemMenuItem_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitItemMenuItem_unity2_raw :: __lookup_build_attribute :: get_method_info () } pub fn get_unit_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitItemMenuItem_unity2_raw :: __lookup_get_unit_item :: get_method_info () } pub fn get_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitItemMenuItem_unity2_raw :: __lookup_get_unit :: get_method_info () } pub fn get_reciever_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitItemMenuItem_unity2_raw :: __lookup_get_reciever_unit :: get_method_info () } pub fn is_visible_item_icon_on_blank_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitItemMenuItem_unity2_raw :: __lookup_is_visible_item_icon_on_blank :: get_method_info () } pub fn on_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitItemMenuItem_unity2_raw :: __lookup_on_select :: get_method_info () } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitItemMenuItem_unity2_raw :: __lookup_a_call :: get_method_info () } pub fn b_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitItemMenuItem_unity2_raw :: __lookup_b_call :: get_method_info () } }
 
 #[cfg(feature = "app-unititemmenuitem")]
 impl UnitItemMenuItem {
-    #[doc = "`.ctor(i32, bool, crate::app::unititemmenu::UnitItemMenu_SelectEventHandler, crate::app::unititemmenu::UnitItemMenu_DecideEventHandler, crate::app::unititemmenu::UnitItemMenu_RequestCloseEventHandler)` — overload selector"]
-    pub fn new(
-        i: i32,
-        selectable_blank: bool,
-        select_event_handler: crate::app::unititemmenu::UnitItemMenu_SelectEventHandler,
-        decide_event_handler: crate::app::unititemmenu::UnitItemMenu_DecideEventHandler,
-        request_close_event_handler: crate::app::unititemmenu::UnitItemMenu_RequestCloseEventHandler,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(UnitItemMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IUnitItemMenuItemMethods>::ctor(
-            this,
-            i,
-            selectable_blank,
-            select_event_handler,
-            decide_event_handler,
-            request_close_event_handler,
-        );
-        this
-    }
+# [doc = "`.ctor(i32, bool, crate::app::unititemmenu::UnitItemMenu_SelectEventHandler, crate::app::unititemmenu::UnitItemMenu_DecideEventHandler, crate::app::unititemmenu::UnitItemMenu_RequestCloseEventHandler)` — overload selector"] pub fn new (i : i32 , selectable_blank : bool , select_event_handler : crate :: app :: unititemmenu :: UnitItemMenu_SelectEventHandler , decide_event_handler : crate :: app :: unititemmenu :: UnitItemMenu_DecideEventHandler , request_close_event_handler : crate :: app :: unititemmenu :: UnitItemMenu_RequestCloseEventHandler) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (UnitItemMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IUnitItemMenuItemMethods > :: ctor (this , i , selectable_blank , select_event_handler , decide_event_handler , request_close_event_handler) ; this }
 }
 
 #[cfg(feature = "app-unititemmenuitem")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IUnitItemMenuItem, IUnitItemMenuItemMethods, UnitItemMenuItem};
-    #[cfg(feature = "app-basicitemmenuitem")]
-    pub use crate::app::basicitemmenuitem::IBasicItemMenuItemMethods;
-    #[cfg(feature = "app-basicmenuitem")]
-    pub use crate::app::basicmenuitem::IBasicMenuItemMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::{
-        app::{basicitemmenuitem::IBasicItemMenuItem, basicmenuitem::IBasicMenuItem},
-        system::object::IObject,
-    };
+    pub use super::UnitItemMenuItem;
+    pub use super::IUnitItemMenuItem;
+    pub use super::IUnitItemMenuItemMethods;
+    pub use crate::app::basicitemmenuitem::IBasicItemMenuItem;
+    pub use crate::app::basicmenuitem::IBasicMenuItem;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "app-basicitemmenuitem")] pub use crate::app::basicitemmenuitem::IBasicItemMenuItemMethods;
+    #[cfg(feature = "app-basicmenuitem")] pub use crate::app::basicmenuitem::IBasicMenuItemMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

@@ -2,613 +2,103 @@
 
 #[cfg(feature = "unity_engine-ui-coroutine_tween-floattween-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::{
-            object::{IObject, Object},
-            valuetype::{IValueType, ValueType},
-        },
-        unity_engine::events::{
-            unityevent_1::{IUnityEvent_1, UnityEvent_1},
-            unityeventbase::{IUnityEventBase, UnityEventBase},
-        },
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/coroutine_tween/floattween/FloatTween.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct FloatTween {
-        pub m_target: crate::unity_engine::ui::coroutine_tween::floattween::FloatTween_FloatTweenCallback,
-        pub m_start_value: f32,
-        pub m_target_value: f32,
-        pub m_duration: f32,
-        pub m_ignore_time_scale: bool,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+ use crate :: unity_engine :: events :: unityevent_1 :: { IUnityEvent_1 , UnityEvent_1 }
+ ;
+ use crate :: unity_engine :: events :: unityeventbase :: { IUnityEventBase , UnityEventBase }
+ ;
 
-    impl ::unity2::ClassIdentity for FloatTween {
-        const NAME: &'static str = "FloatTween";
-        const NAMESPACE: &'static str = "UnityEngine.UI.CoroutineTween";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/coroutine_tween/floattween/FloatTween.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct FloatTween {
+    pub m_target: crate :: unity_engine :: ui :: coroutine_tween :: floattween :: FloatTween_FloatTweenCallback,
+    pub m_start_value: f32,
+    pub m_target_value: f32,
+    pub m_duration: f32,
+    pub m_ignore_time_scale: bool,
+}
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+
+impl ::unity2::ClassIdentity for FloatTween {
+    const NAMESPACE: &'static str = "UnityEngine.UI.CoroutineTween";
+
+    const NAME: &'static str = "FloatTween";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for FloatTween {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl ::unity2::IlType for FloatTween {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/coroutine_tween/floattween/FloatTween_FloatTweenCallback.md"))]
-    #[::unity2::class(namespace = "UnityEngine.UI.CoroutineTween", name = "FloatTween.FloatTweenCallback")]
-    # [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < f32 >)]
-    pub struct FloatTween_FloatTweenCallback {}
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/coroutine_tween/floattween/FloatTween_FloatTweenCallback.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI.CoroutineTween" , name = "FloatTween.FloatTweenCallback")] # [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < f32 >)] pub struct FloatTween_FloatTweenCallback {}
+
 }
 
 #[cfg(feature = "unity_engine-ui-coroutine_tween-floattween-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-ui-coroutine_tween-floattween")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __FloatTween_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_start_value {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FloatTween as ::unity2::ClassIdentity>::class(),
-                "get_startValue",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FloatTween as ::unity2::ClassIdentity>::NAME,
-                        "get_startValue",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_start_value(this: FloatTween, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(FloatTween, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_get_start_value::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_start_value {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FloatTween as ::unity2::ClassIdentity>::class(),
-                "set_startValue",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FloatTween as ::unity2::ClassIdentity>::NAME,
-                        "set_startValue",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_start_value(this: FloatTween, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(FloatTween, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_start_value::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_target_value {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FloatTween as ::unity2::ClassIdentity>::class(),
-                "get_targetValue",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FloatTween as ::unity2::ClassIdentity>::NAME,
-                        "get_targetValue",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_target_value(this: FloatTween, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(FloatTween, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_get_target_value::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_target_value {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FloatTween as ::unity2::ClassIdentity>::class(),
-                "set_targetValue",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FloatTween as ::unity2::ClassIdentity>::NAME,
-                        "set_targetValue",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_target_value(this: FloatTween, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(FloatTween, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_target_value::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_duration {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FloatTween as ::unity2::ClassIdentity>::class(),
-                "get_duration",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FloatTween as ::unity2::ClassIdentity>::NAME,
-                        "get_duration",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_duration(this: FloatTween, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(FloatTween, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_get_duration::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_duration {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FloatTween as ::unity2::ClassIdentity>::class(),
-                "set_duration",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FloatTween as ::unity2::ClassIdentity>::NAME,
-                        "set_duration",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_duration(this: FloatTween, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(FloatTween, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_duration::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_ignore_time_scale {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FloatTween as ::unity2::ClassIdentity>::class(),
-                "get_ignoreTimeScale",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FloatTween as ::unity2::ClassIdentity>::NAME,
-                        "get_ignoreTimeScale",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_ignore_time_scale(this: FloatTween, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(FloatTween, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_ignore_time_scale::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_ignore_time_scale {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FloatTween as ::unity2::ClassIdentity>::class(),
-                "set_ignoreTimeScale",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FloatTween as ::unity2::ClassIdentity>::NAME,
-                        "set_ignoreTimeScale",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_ignore_time_scale(this: FloatTween, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(FloatTween, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_ignore_time_scale::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_tween_value {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FloatTween as ::unity2::ClassIdentity>::class(),
-                "TweenValue",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FloatTween as ::unity2::ClassIdentity>::NAME,
-                        "TweenValue",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn tween_value(this: FloatTween, float_percentage: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(FloatTween, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_tween_value::get_method_info().method_ptr);
-        inner(this, float_percentage, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_on_changed_callback {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::events::unityaction_1::UnityAction_1<f32> as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FloatTween as ::unity2::ClassIdentity>::class(),
-                "AddOnChangedCallback",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FloatTween as ::unity2::ClassIdentity>::NAME,
-                        "AddOnChangedCallback",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_on_changed_callback(
-        this: FloatTween,
-        callback: crate::unity_engine::events::unityaction_1::UnityAction_1<f32>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(FloatTween, crate::unity_engine::events::unityaction_1::UnityAction_1<f32>, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add_on_changed_callback::get_method_info().method_ptr);
-        inner(this, callback, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_ignore_timescale {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FloatTween as ::unity2::ClassIdentity>::class(),
-                "GetIgnoreTimescale",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FloatTween as ::unity2::ClassIdentity>::NAME,
-                        "GetIgnoreTimescale",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_ignore_timescale(this: FloatTween, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(FloatTween, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_ignore_timescale::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_valid_target {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FloatTween as ::unity2::ClassIdentity>::class(),
-                "ValidTarget",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FloatTween as ::unity2::ClassIdentity>::NAME,
-                        "ValidTarget",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn valid_target(this: FloatTween, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(FloatTween, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_valid_target::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __FloatTween_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_start_value { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FloatTween as :: unity2 :: ClassIdentity > :: class () , "get_startValue" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FloatTween as :: unity2 :: ClassIdentity > :: NAME , "get_startValue" , e) , } } } pub unsafe fn get_start_value (this : FloatTween , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (FloatTween , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_get_start_value :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_start_value { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FloatTween as :: unity2 :: ClassIdentity > :: class () , "set_startValue" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FloatTween as :: unity2 :: ClassIdentity > :: NAME , "set_startValue" , e) , } } } pub unsafe fn set_start_value (this : FloatTween , value : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FloatTween , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_start_value :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_target_value { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FloatTween as :: unity2 :: ClassIdentity > :: class () , "get_targetValue" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FloatTween as :: unity2 :: ClassIdentity > :: NAME , "get_targetValue" , e) , } } } pub unsafe fn get_target_value (this : FloatTween , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (FloatTween , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_get_target_value :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_target_value { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FloatTween as :: unity2 :: ClassIdentity > :: class () , "set_targetValue" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FloatTween as :: unity2 :: ClassIdentity > :: NAME , "set_targetValue" , e) , } } } pub unsafe fn set_target_value (this : FloatTween , value : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FloatTween , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_target_value :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_duration { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FloatTween as :: unity2 :: ClassIdentity > :: class () , "get_duration" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FloatTween as :: unity2 :: ClassIdentity > :: NAME , "get_duration" , e) , } } } pub unsafe fn get_duration (this : FloatTween , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (FloatTween , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_get_duration :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_duration { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FloatTween as :: unity2 :: ClassIdentity > :: class () , "set_duration" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FloatTween as :: unity2 :: ClassIdentity > :: NAME , "set_duration" , e) , } } } pub unsafe fn set_duration (this : FloatTween , value : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FloatTween , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_duration :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_ignore_time_scale { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FloatTween as :: unity2 :: ClassIdentity > :: class () , "get_ignoreTimeScale" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FloatTween as :: unity2 :: ClassIdentity > :: NAME , "get_ignoreTimeScale" , e) , } } } pub unsafe fn get_ignore_time_scale (this : FloatTween , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (FloatTween , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_ignore_time_scale :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_ignore_time_scale { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FloatTween as :: unity2 :: ClassIdentity > :: class () , "set_ignoreTimeScale" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FloatTween as :: unity2 :: ClassIdentity > :: NAME , "set_ignoreTimeScale" , e) , } } } pub unsafe fn set_ignore_time_scale (this : FloatTween , value : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FloatTween , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_ignore_time_scale :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_tween_value { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FloatTween as :: unity2 :: ClassIdentity > :: class () , "TweenValue" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FloatTween as :: unity2 :: ClassIdentity > :: NAME , "TweenValue" , e) , } } } pub unsafe fn tween_value (this : FloatTween , float_percentage : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FloatTween , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_tween_value :: get_method_info () . method_ptr ,) ; inner (this , float_percentage , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_on_changed_callback { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: events :: unityaction_1 :: UnityAction_1 < f32 > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FloatTween as :: unity2 :: ClassIdentity > :: class () , "AddOnChangedCallback" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FloatTween as :: unity2 :: ClassIdentity > :: NAME , "AddOnChangedCallback" , e) , } } } pub unsafe fn add_on_changed_callback (this : FloatTween , callback : crate :: unity_engine :: events :: unityaction_1 :: UnityAction_1 < f32 > , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FloatTween , crate :: unity_engine :: events :: unityaction_1 :: UnityAction_1 < f32 > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_on_changed_callback :: get_method_info () . method_ptr ,) ; inner (this , callback , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_ignore_timescale { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FloatTween as :: unity2 :: ClassIdentity > :: class () , "GetIgnoreTimescale" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FloatTween as :: unity2 :: ClassIdentity > :: NAME , "GetIgnoreTimescale" , e) , } } } pub unsafe fn get_ignore_timescale (this : FloatTween , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (FloatTween , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_ignore_timescale :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_valid_target { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FloatTween as :: unity2 :: ClassIdentity > :: class () , "ValidTarget" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FloatTween as :: unity2 :: ClassIdentity > :: NAME , "ValidTarget" , e) , } } } pub unsafe fn valid_target (this : FloatTween , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (FloatTween , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_valid_target :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-ui-coroutine_tween-floattween")]
-impl FloatTween {
-    #[doc = "`get_startValue()` overload"]
-    pub fn get_start_value(self) -> f32 {
-        unsafe { __FloatTween_unity2_raw::get_start_value(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_startValue(f32)` overload"]
-    pub fn set_start_value(self, value: impl ::core::convert::Into<f32>) -> () {
-        unsafe { __FloatTween_unity2_raw::set_start_value(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_targetValue()` overload"]
-    pub fn get_target_value(self) -> f32 {
-        unsafe { __FloatTween_unity2_raw::get_target_value(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_targetValue(f32)` overload"]
-    pub fn set_target_value(self, value: impl ::core::convert::Into<f32>) -> () {
-        unsafe { __FloatTween_unity2_raw::set_target_value(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_duration()` overload"]
-    pub fn get_duration(self) -> f32 {
-        unsafe { __FloatTween_unity2_raw::get_duration(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_duration(f32)` overload"]
-    pub fn set_duration(self, value: impl ::core::convert::Into<f32>) -> () {
-        unsafe { __FloatTween_unity2_raw::set_duration(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_ignoreTimeScale()` overload"]
-    pub fn get_ignore_time_scale(self) -> bool {
-        unsafe { __FloatTween_unity2_raw::get_ignore_time_scale(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_ignoreTimeScale(bool)` overload"]
-    pub fn set_ignore_time_scale(self, value: impl ::core::convert::Into<bool>) -> () {
-        unsafe { __FloatTween_unity2_raw::set_ignore_time_scale(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`TweenValue(f32)` overload"]
-    pub fn tween_value(self, float_percentage: impl ::core::convert::Into<f32>) -> () {
-        unsafe { __FloatTween_unity2_raw::tween_value(self, ::core::convert::Into::into(float_percentage), ::core::option::Option::None) }
-    }
-
-    #[doc = "`AddOnChangedCallback(crate::unity_engine::events::unityaction_1::UnityAction_1<f32>)` overload"]
-    pub fn add_on_changed_callback(self, callback: impl ::core::convert::Into<crate::unity_engine::events::unityaction_1::UnityAction_1<f32>>) -> () {
-        unsafe { __FloatTween_unity2_raw::add_on_changed_callback(self, ::core::convert::Into::into(callback), ::core::option::Option::None) }
-    }
-
-    #[doc = "`GetIgnoreTimescale()` overload"]
-    pub fn get_ignore_timescale(self) -> bool {
-        unsafe { __FloatTween_unity2_raw::get_ignore_timescale(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`ValidTarget()` overload"]
-    pub fn valid_target(self) -> bool {
-        unsafe { __FloatTween_unity2_raw::valid_target(self, ::core::option::Option::None) }
-    }
-}
+impl FloatTween { # [doc = "`get_startValue()` overload"] pub fn get_start_value (self ,) -> f32 { unsafe { __FloatTween_unity2_raw :: get_start_value (self , :: core :: option :: Option :: None) } } # [doc = "`set_startValue(f32)` overload"] pub fn set_start_value (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { __FloatTween_unity2_raw :: set_start_value (self , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_targetValue()` overload"] pub fn get_target_value (self ,) -> f32 { unsafe { __FloatTween_unity2_raw :: get_target_value (self , :: core :: option :: Option :: None) } } # [doc = "`set_targetValue(f32)` overload"] pub fn set_target_value (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { __FloatTween_unity2_raw :: set_target_value (self , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_duration()` overload"] pub fn get_duration (self ,) -> f32 { unsafe { __FloatTween_unity2_raw :: get_duration (self , :: core :: option :: Option :: None) } } # [doc = "`set_duration(f32)` overload"] pub fn set_duration (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { __FloatTween_unity2_raw :: set_duration (self , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_ignoreTimeScale()` overload"] pub fn get_ignore_time_scale (self ,) -> bool { unsafe { __FloatTween_unity2_raw :: get_ignore_time_scale (self , :: core :: option :: Option :: None) } } # [doc = "`set_ignoreTimeScale(bool)` overload"] pub fn set_ignore_time_scale (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { __FloatTween_unity2_raw :: set_ignore_time_scale (self , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`TweenValue(f32)` overload"] pub fn tween_value (self , float_percentage : impl :: core :: convert :: Into < f32 >) -> () { unsafe { __FloatTween_unity2_raw :: tween_value (self , :: core :: convert :: Into :: into (float_percentage) , :: core :: option :: Option :: None) } } # [doc = "`AddOnChangedCallback(crate::unity_engine::events::unityaction_1::UnityAction_1<f32>)` overload"] pub fn add_on_changed_callback (self , callback : impl :: core :: convert :: Into < crate :: unity_engine :: events :: unityaction_1 :: UnityAction_1 < f32 > >) -> () { unsafe { __FloatTween_unity2_raw :: add_on_changed_callback (self , :: core :: convert :: Into :: into (callback) , :: core :: option :: Option :: None) } } # [doc = "`GetIgnoreTimescale()` overload"] pub fn get_ignore_timescale (self ,) -> bool { unsafe { __FloatTween_unity2_raw :: get_ignore_timescale (self , :: core :: option :: Option :: None) } } # [doc = "`ValidTarget()` overload"] pub fn valid_target (self ,) -> bool { unsafe { __FloatTween_unity2_raw :: valid_target (self , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-ui-coroutine_tween-floattween")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __FloatTween_FloatTweenCallback_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FloatTween_FloatTweenCallback as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FloatTween_FloatTweenCallback as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: FloatTween_FloatTweenCallback, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(FloatTween_FloatTweenCallback, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+impl FloatTween { pub fn get_start_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FloatTween_unity2_raw :: __lookup_get_start_value :: get_method_info () } pub fn set_start_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FloatTween_unity2_raw :: __lookup_set_start_value :: get_method_info () } pub fn get_target_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FloatTween_unity2_raw :: __lookup_get_target_value :: get_method_info () } pub fn set_target_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FloatTween_unity2_raw :: __lookup_set_target_value :: get_method_info () } pub fn get_duration_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FloatTween_unity2_raw :: __lookup_get_duration :: get_method_info () } pub fn set_duration_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FloatTween_unity2_raw :: __lookup_set_duration :: get_method_info () } pub fn get_ignore_time_scale_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FloatTween_unity2_raw :: __lookup_get_ignore_time_scale :: get_method_info () } pub fn set_ignore_time_scale_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FloatTween_unity2_raw :: __lookup_set_ignore_time_scale :: get_method_info () } pub fn tween_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FloatTween_unity2_raw :: __lookup_tween_value :: get_method_info () } pub fn add_on_changed_callback_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FloatTween_unity2_raw :: __lookup_add_on_changed_callback :: get_method_info () } pub fn get_ignore_timescale_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FloatTween_unity2_raw :: __lookup_get_ignore_timescale :: get_method_info () } pub fn valid_target_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FloatTween_unity2_raw :: __lookup_valid_target :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-ui-coroutine_tween-floattween")]
-pub trait IFloatTween_FloatTweenCallbackMethods: IFloatTween_FloatTweenCallback {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <FloatTween_FloatTweenCallback as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FloatTween_FloatTweenCallback_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __FloatTween_FloatTweenCallback_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FloatTween_FloatTweenCallback as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FloatTween_FloatTweenCallback as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : FloatTween_FloatTweenCallback , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FloatTween_FloatTweenCallback , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-ui-coroutine_tween-floattween")]
-impl<__T: IFloatTween_FloatTweenCallback> IFloatTween_FloatTweenCallbackMethods for __T {}
+pub trait IFloatTween_FloatTweenCallbackMethods : IFloatTween_FloatTweenCallback { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < FloatTween_FloatTweenCallback as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FloatTween_FloatTweenCallback_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-ui-coroutine_tween-floattween")]
+impl < __T : IFloatTween_FloatTweenCallback > IFloatTween_FloatTweenCallbackMethods for __T { }
+
+#[cfg(feature = "unity_engine-ui-coroutine_tween-floattween")]
+impl FloatTween_FloatTweenCallback { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FloatTween_FloatTweenCallback_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-ui-coroutine_tween-floattween")]
 impl FloatTween_FloatTweenCallback {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(FloatTween_FloatTweenCallback),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IFloatTween_FloatTweenCallbackMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FloatTween_FloatTweenCallback) , :: core :: stringify ! (new) ,)) ; < Self as IFloatTween_FloatTweenCallbackMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "unity_engine-ui-coroutine_tween-floattween")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{FloatTween, FloatTween_FloatTweenCallback, IFloatTween_FloatTweenCallback, IFloatTween_FloatTweenCallbackMethods};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    #[cfg(feature = "unity_engine-events-unityevent_1")]
-    pub use crate::unity_engine::events::unityevent_1::IUnityEvent_1Methods;
-    #[cfg(feature = "unity_engine-events-unityeventbase")]
-    pub use crate::unity_engine::events::unityeventbase::IUnityEventBaseMethods;
-    pub use crate::{
-        system::{object::IObject, valuetype::IValueType},
-        unity_engine::events::{unityevent_1::IUnityEvent_1, unityeventbase::IUnityEventBase},
-    };
+    pub use super::FloatTween;
+    pub use super::FloatTween_FloatTweenCallback;
+    pub use super::IFloatTween_FloatTweenCallback;
+    pub use super::IFloatTween_FloatTweenCallbackMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::system::valuetype::IValueType;
+    pub use crate::unity_engine::events::unityevent_1::IUnityEvent_1;
+    pub use crate::unity_engine::events::unityeventbase::IUnityEventBase;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
+    #[cfg(feature = "unity_engine-events-unityevent_1")] pub use crate::unity_engine::events::unityevent_1::IUnityEvent_1Methods;
+    #[cfg(feature = "unity_engine-events-unityeventbase")] pub use crate::unity_engine::events::unityeventbase::IUnityEventBaseMethods;
 }

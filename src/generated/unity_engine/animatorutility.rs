@@ -2,92 +2,34 @@
 
 #[cfg(feature = "unity_engine-animatorutility-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/animatorutility/AnimatorUtility.md"))]
-    #[::unity2::class(namespace = "UnityEngine", name = "AnimatorUtility")]
-    #[parent(crate::system::object::Object)]
-    pub struct AnimatorUtility {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/animatorutility/AnimatorUtility.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "AnimatorUtility")] # [parent (crate :: system :: object :: Object)] pub struct AnimatorUtility {}
+
 }
 
 #[cfg(feature = "unity_engine-animatorutility-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-animatorutility")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AnimatorUtility_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_optimize_transform_hierarchy {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
-                <::unity2::Array<::unity2::Il2CppString> as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AnimatorUtility as ::unity2::ClassIdentity>::class(),
-                "OptimizeTransformHierarchy",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AnimatorUtility as ::unity2::ClassIdentity>::NAME,
-                        "OptimizeTransformHierarchy",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn optimize_transform_hierarchy(
-        go: crate::unity_engine::gameobject::GameObject,
-        exposed_transforms: ::unity2::Array<::unity2::Il2CppString>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::gameobject::GameObject,
-            ::unity2::Array<::unity2::Il2CppString>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_optimize_transform_hierarchy::get_method_info().method_ptr);
-        inner(go, exposed_transforms, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __AnimatorUtility_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_optimize_transform_hierarchy { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: gameobject :: GameObject as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < :: unity2 :: Il2CppString > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AnimatorUtility as :: unity2 :: ClassIdentity > :: class () , "OptimizeTransformHierarchy" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AnimatorUtility as :: unity2 :: ClassIdentity > :: NAME , "OptimizeTransformHierarchy" , e) , } } } pub unsafe fn optimize_transform_hierarchy (go : crate :: unity_engine :: gameobject :: GameObject , exposed_transforms : :: unity2 :: Array < :: unity2 :: Il2CppString > , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: Array < :: unity2 :: Il2CppString > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_optimize_transform_hierarchy :: get_method_info () . method_ptr ,) ; inner (go , exposed_transforms , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-animatorutility")]
-impl AnimatorUtility {
-    #[doc = "`OptimizeTransformHierarchy(crate::unity_engine::gameobject::GameObject, ::unity2::Array<::unity2::Il2CppString>)` overload"]
-    pub fn optimize_transform_hierarchy(
-        go: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-        exposed_transforms: impl ::core::convert::Into<::unity2::Array<::unity2::Il2CppString>>,
-    ) -> () {
-        unsafe {
-            __AnimatorUtility_unity2_raw::optimize_transform_hierarchy(
-                ::core::convert::Into::into(go),
-                ::core::convert::Into::into(exposed_transforms),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+impl AnimatorUtility { # [doc = "`OptimizeTransformHierarchy(crate::unity_engine::gameobject::GameObject, ::unity2::Array<::unity2::Il2CppString>)` overload"] pub fn optimize_transform_hierarchy (go : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject > , exposed_transforms : impl :: core :: convert :: Into < :: unity2 :: Array < :: unity2 :: Il2CppString > >) -> () { unsafe { __AnimatorUtility_unity2_raw :: optimize_transform_hierarchy (:: core :: convert :: Into :: into (go) , :: core :: convert :: Into :: into (exposed_transforms) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-animatorutility")]
+impl AnimatorUtility { pub fn optimize_transform_hierarchy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AnimatorUtility_unity2_raw :: __lookup_optimize_transform_hierarchy :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-animatorutility")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{AnimatorUtility, IAnimatorUtility};
+    pub use super::AnimatorUtility;
+    pub use super::IAnimatorUtility;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

@@ -2,163 +2,55 @@
 
 #[cfg(feature = "app-procdescmtickenum-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::{
-            procdesc::{IProcDesc, ProcDesc},
-            procdesctickbase::{IProcDescTickBase, ProcDescTickBase},
-        },
-        system::object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/procdescmtickenum/ProcDescMTickEnum.md"))]
-    #[::unity2::class(namespace = "App", name = "ProcDescMTickEnum")]
-    #[parent(crate::app::procdesctickbase::ProcDescTickBase)]
-    pub struct ProcDescMTickEnum {
-        #[offset(24)]
-        #[rename(name = "m_SrcMethod")]
-        pub m_src_method: crate::app::procenummethod::ProcEnumMethod,
-        #[offset(32)]
-        #[rename(name = "m_Method")]
-        pub m_method: crate::system::collections::ienumerator::IEnumerator,
-        #[offset(40)]
-        #[rename(name = "m_IsFinished")]
-        pub m_is_finished: bool,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: procdesc :: { IProcDesc , ProcDesc }
+ ;
+ use crate :: app :: procdesctickbase :: { IProcDescTickBase , ProcDescTickBase }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/procdescmtickenum/ProcDescMTickEnum.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProcDescMTickEnum")] # [parent (crate :: app :: procdesctickbase :: ProcDescTickBase)] pub struct ProcDescMTickEnum {
+# [offset (24)] # [rename (name = "m_SrcMethod")] pub m_src_method : crate :: app :: procenummethod :: ProcEnumMethod ,
+# [offset (32)] # [rename (name = "m_Method")] pub m_method : crate :: system :: collections :: ienumerator :: IEnumerator ,
+# [offset (40)] # [rename (name = "m_IsFinished")] pub m_is_finished : bool ,
+}
+
 }
 
 #[cfg(feature = "app-procdescmtickenum-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-procdescmtickenum")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ProcDescMTickEnum_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::procenummethod::ProcEnumMethod as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProcDescMTickEnum as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProcDescMTickEnum as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: ProcDescMTickEnum,
-        method: crate::app::procenummethod::ProcEnumMethod,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(ProcDescMTickEnum, crate::app::procenummethod::ProcEnumMethod, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_execute_impl {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProcDescMTickEnum as ::unity2::ClassIdentity>::class(),
-                "ExecuteImpl",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProcDescMTickEnum as ::unity2::ClassIdentity>::NAME,
-                        "ExecuteImpl",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn execute_impl(this: ProcDescMTickEnum, inst: crate::app::procinst::ProcInst, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ProcDescMTickEnum, crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_execute_impl::get_method_info().method_ptr);
-        inner(this, inst, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ProcDescMTickEnum_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procenummethod :: ProcEnumMethod as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProcDescMTickEnum as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProcDescMTickEnum as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : ProcDescMTickEnum , method : crate :: app :: procenummethod :: ProcEnumMethod , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ProcDescMTickEnum , crate :: app :: procenummethod :: ProcEnumMethod , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , method , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_execute_impl { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProcDescMTickEnum as :: unity2 :: ClassIdentity > :: class () , "ExecuteImpl" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProcDescMTickEnum as :: unity2 :: ClassIdentity > :: NAME , "ExecuteImpl" , e) , } } } pub unsafe fn execute_impl (this : ProcDescMTickEnum , inst : crate :: app :: procinst :: ProcInst , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ProcDescMTickEnum , crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_execute_impl :: get_method_info () . method_ptr ,) ; inner (this , inst , __unity2_method_info) } }
 
 #[cfg(feature = "app-procdescmtickenum")]
-pub trait IProcDescMTickEnumMethods: IProcDescMTickEnum {
-    #[doc = "`.ctor(crate::app::procenummethod::ProcEnumMethod)` overload"]
-    fn ctor(self, method: impl ::core::convert::Into<crate::app::procenummethod::ProcEnumMethod>) -> () {
-        unsafe {
-            let __receiver = <ProcDescMTickEnum as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ProcDescMTickEnum_unity2_raw::ctor(__receiver, ::core::convert::Into::into(method), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ExecuteImpl(crate::app::procinst::ProcInst)` overload"]
-    fn execute_impl(self, inst: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
-        unsafe {
-            let __receiver = <ProcDescMTickEnum as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ProcDescMTickEnum_unity2_raw::execute_impl(__receiver, ::core::convert::Into::into(inst), ::core::option::Option::None)
-        }
-    }
-}
+pub trait IProcDescMTickEnumMethods : IProcDescMTickEnum { # [doc = "`.ctor(crate::app::procenummethod::ProcEnumMethod)` overload"] fn ctor (self , method : impl :: core :: convert :: Into < crate :: app :: procenummethod :: ProcEnumMethod >) -> () { unsafe { let __receiver = < ProcDescMTickEnum as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ProcDescMTickEnum_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } # [doc = "`ExecuteImpl(crate::app::procinst::ProcInst)` overload"] fn execute_impl (self , inst : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { let __receiver = < ProcDescMTickEnum as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ProcDescMTickEnum_unity2_raw :: execute_impl (__receiver , :: core :: convert :: Into :: into (inst) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-procdescmtickenum")]
-impl<__T: IProcDescMTickEnum> IProcDescMTickEnumMethods for __T {}
+impl < __T : IProcDescMTickEnum > IProcDescMTickEnumMethods for __T { }
+
+#[cfg(feature = "app-procdescmtickenum")]
+impl ProcDescMTickEnum { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProcDescMTickEnum_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn execute_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProcDescMTickEnum_unity2_raw :: __lookup_execute_impl :: get_method_info () } }
 
 #[cfg(feature = "app-procdescmtickenum")]
 impl ProcDescMTickEnum {
-    #[doc = "`.ctor(crate::app::procenummethod::ProcEnumMethod)` — overload selector"]
-    pub fn new(method: crate::app::procenummethod::ProcEnumMethod) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ProcDescMTickEnum),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IProcDescMTickEnumMethods>::ctor(this, method);
-        this
-    }
+# [doc = "`.ctor(crate::app::procenummethod::ProcEnumMethod)` — overload selector"] pub fn new (method : crate :: app :: procenummethod :: ProcEnumMethod) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProcDescMTickEnum) , :: core :: stringify ! (new) ,)) ; < Self as IProcDescMTickEnumMethods > :: ctor (this , method) ; this }
 }
 
 #[cfg(feature = "app-procdescmtickenum")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IProcDescMTickEnum, IProcDescMTickEnumMethods, ProcDescMTickEnum};
-    #[cfg(feature = "app-procdesc")]
-    pub use crate::app::procdesc::IProcDescMethods;
-    #[cfg(feature = "app-procdesctickbase")]
-    pub use crate::app::procdesctickbase::IProcDescTickBaseMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::{
-        app::{procdesc::IProcDesc, procdesctickbase::IProcDescTickBase},
-        system::object::IObject,
-    };
+    pub use super::ProcDescMTickEnum;
+    pub use super::IProcDescMTickEnum;
+    pub use super::IProcDescMTickEnumMethods;
+    pub use crate::app::procdesc::IProcDesc;
+    pub use crate::app::procdesctickbase::IProcDescTickBase;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "app-procdesc")] pub use crate::app::procdesc::IProcDescMethods;
+    #[cfg(feature = "app-procdesctickbase")] pub use crate::app::procdesctickbase::IProcDescTickBaseMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

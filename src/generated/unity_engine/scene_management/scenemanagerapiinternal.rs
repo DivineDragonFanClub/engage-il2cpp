@@ -2,177 +2,34 @@
 
 #[cfg(feature = "unity_engine-scene_management-scenemanagerapiinternal-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/scene_management/scenemanagerapiinternal/SceneManagerAPIInternal.md"))]
-    #[::unity2::class(namespace = "UnityEngine.SceneManagement", name = "SceneManagerAPIInternal")]
-    #[parent(crate::system::object::Object)]
-    pub struct SceneManagerAPIInternal {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/scene_management/scenemanagerapiinternal/SceneManagerAPIInternal.md"))] # [:: unity2 :: class (namespace = "UnityEngine.SceneManagement" , name = "SceneManagerAPIInternal")] # [parent (crate :: system :: object :: Object)] pub struct SceneManagerAPIInternal {}
+
 }
 
 #[cfg(feature = "unity_engine-scene_management-scenemanagerapiinternal-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-scene_management-scenemanagerapiinternal")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __SceneManagerAPIInternal_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_load_scene_async_name_index_internal {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::scene_management::loadsceneparameters::LoadSceneParameters as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SceneManagerAPIInternal as ::unity2::ClassIdentity>::class(),
-                "LoadSceneAsyncNameIndexInternal",
-                4,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SceneManagerAPIInternal as ::unity2::ClassIdentity>::NAME,
-                        "LoadSceneAsyncNameIndexInternal",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn load_scene_async_name_index_internal(
-        scene_name: ::unity2::Il2CppString,
-        scene_build_index: i32,
-        parameters: crate::unity_engine::scene_management::loadsceneparameters::LoadSceneParameters,
-        must_complete_next_frame: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::asyncoperation::AsyncOperation {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            i32,
-            crate::unity_engine::scene_management::loadsceneparameters::LoadSceneParameters,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::asyncoperation::AsyncOperation =
-            ::core::mem::transmute(__lookup_load_scene_async_name_index_internal::get_method_info().method_ptr);
-        inner(scene_name, scene_build_index, parameters, must_complete_next_frame, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_load_scene_async_name_index_internal_injected {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::scene_management::loadsceneparameters::LoadSceneParameters as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SceneManagerAPIInternal as ::unity2::ClassIdentity>::class(),
-                "LoadSceneAsyncNameIndexInternal_Injected",
-                4,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SceneManagerAPIInternal as ::unity2::ClassIdentity>::NAME,
-                        "LoadSceneAsyncNameIndexInternal_Injected",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn load_scene_async_name_index_internal_injected(
-        scene_name: ::unity2::Il2CppString,
-        scene_build_index: i32,
-        parameters: *mut crate::unity_engine::scene_management::loadsceneparameters::LoadSceneParameters,
-        must_complete_next_frame: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::asyncoperation::AsyncOperation {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            i32,
-            *mut crate::unity_engine::scene_management::loadsceneparameters::LoadSceneParameters,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::asyncoperation::AsyncOperation =
-            ::core::mem::transmute(__lookup_load_scene_async_name_index_internal_injected::get_method_info().method_ptr);
-        inner(scene_name, scene_build_index, parameters, must_complete_next_frame, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __SceneManagerAPIInternal_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_load_scene_async_name_index_internal { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: scene_management :: loadsceneparameters :: LoadSceneParameters as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SceneManagerAPIInternal as :: unity2 :: ClassIdentity > :: class () , "LoadSceneAsyncNameIndexInternal" , 4 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SceneManagerAPIInternal as :: unity2 :: ClassIdentity > :: NAME , "LoadSceneAsyncNameIndexInternal" , e) , } } } pub unsafe fn load_scene_async_name_index_internal (scene_name : :: unity2 :: Il2CppString , scene_build_index : i32 , parameters : crate :: unity_engine :: scene_management :: loadsceneparameters :: LoadSceneParameters , must_complete_next_frame : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: asyncoperation :: AsyncOperation { let inner : extern "C" fn (:: unity2 :: Il2CppString , i32 , crate :: unity_engine :: scene_management :: loadsceneparameters :: LoadSceneParameters , bool , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: asyncoperation :: AsyncOperation = :: core :: mem :: transmute (__lookup_load_scene_async_name_index_internal :: get_method_info () . method_ptr ,) ; inner (scene_name , scene_build_index , parameters , must_complete_next_frame , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_load_scene_async_name_index_internal_injected { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: scene_management :: loadsceneparameters :: LoadSceneParameters as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SceneManagerAPIInternal as :: unity2 :: ClassIdentity > :: class () , "LoadSceneAsyncNameIndexInternal_Injected" , 4 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SceneManagerAPIInternal as :: unity2 :: ClassIdentity > :: NAME , "LoadSceneAsyncNameIndexInternal_Injected" , e) , } } } pub unsafe fn load_scene_async_name_index_internal_injected (scene_name : :: unity2 :: Il2CppString , scene_build_index : i32 , parameters : * mut crate :: unity_engine :: scene_management :: loadsceneparameters :: LoadSceneParameters , must_complete_next_frame : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: asyncoperation :: AsyncOperation { let inner : extern "C" fn (:: unity2 :: Il2CppString , i32 , * mut crate :: unity_engine :: scene_management :: loadsceneparameters :: LoadSceneParameters , bool , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: asyncoperation :: AsyncOperation = :: core :: mem :: transmute (__lookup_load_scene_async_name_index_internal_injected :: get_method_info () . method_ptr ,) ; inner (scene_name , scene_build_index , parameters , must_complete_next_frame , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-scene_management-scenemanagerapiinternal")]
-impl SceneManagerAPIInternal {
-    #[doc = "`LoadSceneAsyncNameIndexInternal(::unity2::Il2CppString, i32, crate::unity_engine::scene_management::loadsceneparameters::LoadSceneParameters, bool)` overload"]
-    pub fn load_scene_async_name_index_internal(
-        scene_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        scene_build_index: impl ::core::convert::Into<i32>,
-        parameters: impl ::core::convert::Into<crate::unity_engine::scene_management::loadsceneparameters::LoadSceneParameters>,
-        must_complete_next_frame: impl ::core::convert::Into<bool>,
-    ) -> crate::unity_engine::asyncoperation::AsyncOperation {
-        unsafe {
-            __SceneManagerAPIInternal_unity2_raw::load_scene_async_name_index_internal(
-                ::core::convert::Into::into(scene_name),
-                ::core::convert::Into::into(scene_build_index),
-                ::core::convert::Into::into(parameters),
-                ::core::convert::Into::into(must_complete_next_frame),
-                ::core::option::Option::None,
-            )
-        }
-    }
+impl SceneManagerAPIInternal { # [doc = "`LoadSceneAsyncNameIndexInternal(::unity2::Il2CppString, i32, crate::unity_engine::scene_management::loadsceneparameters::LoadSceneParameters, bool)` overload"] pub fn load_scene_async_name_index_internal (scene_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , scene_build_index : impl :: core :: convert :: Into < i32 > , parameters : impl :: core :: convert :: Into < crate :: unity_engine :: scene_management :: loadsceneparameters :: LoadSceneParameters > , must_complete_next_frame : impl :: core :: convert :: Into < bool >) -> crate :: unity_engine :: asyncoperation :: AsyncOperation { unsafe { __SceneManagerAPIInternal_unity2_raw :: load_scene_async_name_index_internal (:: core :: convert :: Into :: into (scene_name) , :: core :: convert :: Into :: into (scene_build_index) , :: core :: convert :: Into :: into (parameters) , :: core :: convert :: Into :: into (must_complete_next_frame) , :: core :: option :: Option :: None) } } # [doc = "`LoadSceneAsyncNameIndexInternal_Injected(::unity2::Il2CppString, i32, *mutcrate::unity_engine::scene_management::loadsceneparameters::LoadSceneParameters, bool)` overload"] pub fn load_scene_async_name_index_internal_injected (scene_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , scene_build_index : impl :: core :: convert :: Into < i32 > , must_complete_next_frame : impl :: core :: convert :: Into < bool >) -> (crate :: unity_engine :: asyncoperation :: AsyncOperation , crate :: unity_engine :: scene_management :: loadsceneparameters :: LoadSceneParameters) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: scene_management :: loadsceneparameters :: LoadSceneParameters > :: uninit () ; let __ret = { __SceneManagerAPIInternal_unity2_raw :: load_scene_async_name_index_internal_injected (:: core :: convert :: Into :: into (scene_name) , :: core :: convert :: Into :: into (scene_build_index) , __out_0 . as_mut_ptr () , :: core :: convert :: Into :: into (must_complete_next_frame) , :: core :: option :: Option :: None) } ; (__ret , __out_0 . assume_init ()) } } }
 
-    #[doc = "`LoadSceneAsyncNameIndexInternal_Injected(::unity2::Il2CppString, i32, *mutcrate::unity_engine::scene_management::loadsceneparameters::LoadSceneParameters, bool)` overload"]
-    pub fn load_scene_async_name_index_internal_injected(
-        scene_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        scene_build_index: impl ::core::convert::Into<i32>,
-        must_complete_next_frame: impl ::core::convert::Into<bool>,
-    ) -> (
-        crate::unity_engine::asyncoperation::AsyncOperation,
-        crate::unity_engine::scene_management::loadsceneparameters::LoadSceneParameters,
-    ) {
-        unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::scene_management::loadsceneparameters::LoadSceneParameters>::uninit();
-            let __ret = {
-                __SceneManagerAPIInternal_unity2_raw::load_scene_async_name_index_internal_injected(
-                    ::core::convert::Into::into(scene_name),
-                    ::core::convert::Into::into(scene_build_index),
-                    __out_0.as_mut_ptr(),
-                    ::core::convert::Into::into(must_complete_next_frame),
-                    ::core::option::Option::None,
-                )
-            };
-            (__ret, __out_0.assume_init())
-        }
-    }
-}
+#[cfg(feature = "unity_engine-scene_management-scenemanagerapiinternal")]
+impl SceneManagerAPIInternal { pub fn load_scene_async_name_index_internal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SceneManagerAPIInternal_unity2_raw :: __lookup_load_scene_async_name_index_internal :: get_method_info () } pub fn load_scene_async_name_index_internal_injected_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SceneManagerAPIInternal_unity2_raw :: __lookup_load_scene_async_name_index_internal_injected :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-scene_management-scenemanagerapiinternal")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{ISceneManagerAPIInternal, SceneManagerAPIInternal};
+    pub use super::SceneManagerAPIInternal;
+    pub use super::ISceneManagerAPIInternal;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

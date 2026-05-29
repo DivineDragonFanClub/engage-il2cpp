@@ -2,240 +2,49 @@
 
 #[cfg(feature = "root-mapnavigationminimapbasicmenuitem-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::basicmenuitem::{BasicMenuItem, IBasicMenuItem},
-        system::object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/mapnavigationminimapbasicmenuitem/MapNavigationMiniMapBasicMenuItem.md"))]
-    #[::unity2::class(namespace = "", name = "MapNavigationMiniMapBasicMenuItem")]
-    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
-    pub struct MapNavigationMiniMapBasicMenuItem {
-        #[offset(104)]
-        #[rename(name = "m_MiniMapText")]
-        pub m_mini_map_text: ::unity2::Il2CppString,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/mapnavigationminimapbasicmenuitem/MapNavigationMiniMapBasicMenuItem.md"))] # [:: unity2 :: class (namespace = "" , name = "MapNavigationMiniMapBasicMenuItem")] # [parent (crate :: app :: basicmenuitem :: BasicMenuItem)] pub struct MapNavigationMiniMapBasicMenuItem {
+# [offset (104)] # [rename (name = "m_MiniMapText")] pub m_mini_map_text : :: unity2 :: Il2CppString ,
+}
+
 }
 
 #[cfg(feature = "root-mapnavigationminimapbasicmenuitem-types")]
 pub use __types::*;
 
 #[cfg(feature = "root-mapnavigationminimapbasicmenuitem")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapNavigationMiniMapBasicMenuItem_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_select {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapNavigationMiniMapBasicMenuItem as ::unity2::ClassIdentity>::class(),
-                "OnSelect",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapNavigationMiniMapBasicMenuItem as ::unity2::ClassIdentity>::NAME,
-                        "OnSelect",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_select(this: MapNavigationMiniMapBasicMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapNavigationMiniMapBasicMenuItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_select::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update_text {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapNavigationMiniMapBasicMenuItem as ::unity2::ClassIdentity>::class(),
-                "UpdateText",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapNavigationMiniMapBasicMenuItem as ::unity2::ClassIdentity>::NAME,
-                        "UpdateText",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update_text(this: MapNavigationMiniMapBasicMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapNavigationMiniMapBasicMenuItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update_text::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_mini_map_text {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapNavigationMiniMapBasicMenuItem as ::unity2::ClassIdentity>::class(),
-                "SetMiniMapText",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapNavigationMiniMapBasicMenuItem as ::unity2::ClassIdentity>::NAME,
-                        "SetMiniMapText",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_mini_map_text(
-        this: MapNavigationMiniMapBasicMenuItem,
-        text: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MapNavigationMiniMapBasicMenuItem, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_mini_map_text::get_method_info().method_ptr);
-        inner(this, text, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapNavigationMiniMapBasicMenuItem as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapNavigationMiniMapBasicMenuItem as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: MapNavigationMiniMapBasicMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapNavigationMiniMapBasicMenuItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MapNavigationMiniMapBasicMenuItem_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_select { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapNavigationMiniMapBasicMenuItem as :: unity2 :: ClassIdentity > :: class () , "OnSelect" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapNavigationMiniMapBasicMenuItem as :: unity2 :: ClassIdentity > :: NAME , "OnSelect" , e) , } } } pub unsafe fn on_select (this : MapNavigationMiniMapBasicMenuItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapNavigationMiniMapBasicMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_select :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update_text { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapNavigationMiniMapBasicMenuItem as :: unity2 :: ClassIdentity > :: class () , "UpdateText" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapNavigationMiniMapBasicMenuItem as :: unity2 :: ClassIdentity > :: NAME , "UpdateText" , e) , } } } pub unsafe fn update_text (this : MapNavigationMiniMapBasicMenuItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapNavigationMiniMapBasicMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update_text :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_mini_map_text { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapNavigationMiniMapBasicMenuItem as :: unity2 :: ClassIdentity > :: class () , "SetMiniMapText" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapNavigationMiniMapBasicMenuItem as :: unity2 :: ClassIdentity > :: NAME , "SetMiniMapText" , e) , } } } pub unsafe fn set_mini_map_text (this : MapNavigationMiniMapBasicMenuItem , text : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapNavigationMiniMapBasicMenuItem , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_mini_map_text :: get_method_info () . method_ptr ,) ; inner (this , text , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapNavigationMiniMapBasicMenuItem as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapNavigationMiniMapBasicMenuItem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : MapNavigationMiniMapBasicMenuItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapNavigationMiniMapBasicMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "root-mapnavigationminimapbasicmenuitem")]
-pub trait IMapNavigationMiniMapBasicMenuItemMethods: IMapNavigationMiniMapBasicMenuItem {
-    #[doc = "`OnSelect()` overload"]
-    fn on_select(self) -> () {
-        unsafe {
-            let __receiver = <MapNavigationMiniMapBasicMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapNavigationMiniMapBasicMenuItem_unity2_raw::on_select(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`UpdateText()` overload"]
-    fn update_text(self) -> () {
-        unsafe {
-            let __receiver = <MapNavigationMiniMapBasicMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapNavigationMiniMapBasicMenuItem_unity2_raw::update_text(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetMiniMapText(::unity2::Il2CppString)` overload"]
-    fn set_mini_map_text(self, text: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver = <MapNavigationMiniMapBasicMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapNavigationMiniMapBasicMenuItem_unity2_raw::set_mini_map_text(
-                __receiver,
-                ::core::convert::Into::into(text),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <MapNavigationMiniMapBasicMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapNavigationMiniMapBasicMenuItem_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IMapNavigationMiniMapBasicMenuItemMethods : IMapNavigationMiniMapBasicMenuItem { # [doc = "`OnSelect()` overload"] fn on_select (self ,) -> () { unsafe { let __receiver = < MapNavigationMiniMapBasicMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapNavigationMiniMapBasicMenuItem_unity2_raw :: on_select (__receiver , :: core :: option :: Option :: None) } } # [doc = "`UpdateText()` overload"] fn update_text (self ,) -> () { unsafe { let __receiver = < MapNavigationMiniMapBasicMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapNavigationMiniMapBasicMenuItem_unity2_raw :: update_text (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetMiniMapText(::unity2::Il2CppString)` overload"] fn set_mini_map_text (self , text : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < MapNavigationMiniMapBasicMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapNavigationMiniMapBasicMenuItem_unity2_raw :: set_mini_map_text (__receiver , :: core :: convert :: Into :: into (text) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapNavigationMiniMapBasicMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapNavigationMiniMapBasicMenuItem_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "root-mapnavigationminimapbasicmenuitem")]
-impl<__T: IMapNavigationMiniMapBasicMenuItem> IMapNavigationMiniMapBasicMenuItemMethods for __T {}
+impl < __T : IMapNavigationMiniMapBasicMenuItem > IMapNavigationMiniMapBasicMenuItemMethods for __T { }
+
+#[cfg(feature = "root-mapnavigationminimapbasicmenuitem")]
+impl MapNavigationMiniMapBasicMenuItem { pub fn on_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapNavigationMiniMapBasicMenuItem_unity2_raw :: __lookup_on_select :: get_method_info () } pub fn update_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapNavigationMiniMapBasicMenuItem_unity2_raw :: __lookup_update_text :: get_method_info () } pub fn set_mini_map_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapNavigationMiniMapBasicMenuItem_unity2_raw :: __lookup_set_mini_map_text :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapNavigationMiniMapBasicMenuItem_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "root-mapnavigationminimapbasicmenuitem")]
 impl MapNavigationMiniMapBasicMenuItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapNavigationMiniMapBasicMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapNavigationMiniMapBasicMenuItemMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapNavigationMiniMapBasicMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IMapNavigationMiniMapBasicMenuItemMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "root-mapnavigationminimapbasicmenuitem")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IMapNavigationMiniMapBasicMenuItem, IMapNavigationMiniMapBasicMenuItemMethods, MapNavigationMiniMapBasicMenuItem};
-    #[cfg(feature = "app-basicmenuitem")]
-    pub use crate::app::basicmenuitem::IBasicMenuItemMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::{app::basicmenuitem::IBasicMenuItem, system::object::IObject};
+    pub use super::MapNavigationMiniMapBasicMenuItem;
+    pub use super::IMapNavigationMiniMapBasicMenuItem;
+    pub use super::IMapNavigationMiniMapBasicMenuItemMethods;
+    pub use crate::app::basicmenuitem::IBasicMenuItem;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "app-basicmenuitem")] pub use crate::app::basicmenuitem::IBasicMenuItemMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

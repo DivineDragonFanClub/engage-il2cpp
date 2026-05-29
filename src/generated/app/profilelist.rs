@@ -2,402 +2,50 @@
 
 #[cfg(feature = "app-profilelist-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        collections::generic::list_1::{IList_1, List_1},
-        object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilelist/ProfileList.md"))]
-    #[::unity2::class(namespace = "App", name = "ProfileList")]
-    # [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: profilecard :: ProfileCard >)]
-    pub struct ProfileList {
-        #[static_field]
-        #[rename(name = "Version")]
-        pub version: i32,
-        #[static_field]
-        #[rename(name = "ProfileCountMax")]
-        pub profile_count_max: i32,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: collections :: generic :: list_1 :: { IList_1 , List_1 }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilelist/ProfileList.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProfileList")] # [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: profilecard :: ProfileCard >)] pub struct ProfileList {
+# [static_field] # [rename (name = "Version")] pub version : i32 ,
+# [static_field] # [rename (name = "ProfileCountMax")] pub profile_count_max : i32 ,
+}
+
 }
 
 #[cfg(feature = "app-profilelist-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-profilelist")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ProfileList_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_try_get {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<ProfileList as ::unity2::ClassIdentity>::class(), "TryGet", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProfileList as ::unity2::ClassIdentity>::NAME,
-                        "TryGet",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn try_get(this: ProfileList, index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::profilecard::ProfileCard {
-        let inner: extern "C" fn(ProfileList, i32, ::unity2::OptionalMethod) -> crate::app::profilecard::ProfileCard =
-            ::core::mem::transmute(__lookup_try_get::get_method_info().method_ptr);
-        inner(this, index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_serialize {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::stream_2::Stream_2 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileList as ::unity2::ClassIdentity>::class(),
-                "Serialize",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProfileList as ::unity2::ClassIdentity>::NAME,
-                        "Serialize",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn serialize(this: ProfileList, stream: crate::app::stream_2::Stream_2, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ProfileList, crate::app::stream_2::Stream_2, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_serialize::get_method_info().method_ptr);
-        inner(this, stream, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_deserialize {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::stream_2::Stream_2 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileList as ::unity2::ClassIdentity>::class(),
-                "Deserialize",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProfileList as ::unity2::ClassIdentity>::NAME,
-                        "Deserialize",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn deserialize(this: ProfileList, stream: crate::app::stream_2::Stream_2, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ProfileList, crate::app::stream_2::Stream_2, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_deserialize::get_method_info().method_ptr);
-        inner(this, stream, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_try_get_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <u64 as ::unity2::IlType>::il_type(),
-                <crate::app::profilecard::ProfileCard as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<ProfileList as ::unity2::ClassIdentity>::class(), "TryGet", 2, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProfileList as ::unity2::ClassIdentity>::NAME,
-                        "TryGet",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn try_get_2(
-        this: ProfileList,
-        owner_id: u64,
-        card: *mut crate::app::profilecard::ProfileCard,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(ProfileList, u64, *mut crate::app::profilecard::ProfileCard, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_try_get_2::get_method_info().method_ptr);
-        inner(this, owner_id, card, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_try_add {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::profilecard::ProfileCard as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<ProfileList as ::unity2::ClassIdentity>::class(), "TryAdd", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProfileList as ::unity2::ClassIdentity>::NAME,
-                        "TryAdd",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn try_add(this: ProfileList, card: crate::app::profilecard::ProfileCard, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(ProfileList, crate::app::profilecard::ProfileCard, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_try_add::get_method_info().method_ptr);
-        inner(this, card, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_force_add {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::profilecard::ProfileCard as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileList as ::unity2::ClassIdentity>::class(),
-                "ForceAdd",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProfileList as ::unity2::ClassIdentity>::NAME,
-                        "ForceAdd",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn force_add(this: ProfileList, card: crate::app::profilecard::ProfileCard, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(ProfileList, crate::app::profilecard::ProfileCard, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_force_add::get_method_info().method_ptr);
-        inner(this, card, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_full {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<ProfileList as ::unity2::ClassIdentity>::class(), "IsFull", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProfileList as ::unity2::ClassIdentity>::NAME,
-                        "IsFull",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_full(this: ProfileList, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(ProfileList, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_full::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_over {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<ProfileList as ::unity2::ClassIdentity>::class(), "IsOver", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProfileList as ::unity2::ClassIdentity>::NAME,
-                        "IsOver",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_over(this: ProfileList, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(ProfileList, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_over::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<ProfileList as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProfileList as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: ProfileList, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ProfileList, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ProfileList_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_try_get { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileList as :: unity2 :: ClassIdentity > :: class () , "TryGet" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileList as :: unity2 :: ClassIdentity > :: NAME , "TryGet" , e) , } } } pub unsafe fn try_get (this : ProfileList , index : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: profilecard :: ProfileCard { let inner : extern "C" fn (ProfileList , i32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: profilecard :: ProfileCard = :: core :: mem :: transmute (__lookup_try_get :: get_method_info () . method_ptr ,) ; inner (this , index , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_serialize { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: stream_2 :: Stream_2 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileList as :: unity2 :: ClassIdentity > :: class () , "Serialize" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileList as :: unity2 :: ClassIdentity > :: NAME , "Serialize" , e) , } } } pub unsafe fn serialize (this : ProfileList , stream : crate :: app :: stream_2 :: Stream_2 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ProfileList , crate :: app :: stream_2 :: Stream_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_serialize :: get_method_info () . method_ptr ,) ; inner (this , stream , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_deserialize { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: stream_2 :: Stream_2 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileList as :: unity2 :: ClassIdentity > :: class () , "Deserialize" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileList as :: unity2 :: ClassIdentity > :: NAME , "Deserialize" , e) , } } } pub unsafe fn deserialize (this : ProfileList , stream : crate :: app :: stream_2 :: Stream_2 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ProfileList , crate :: app :: stream_2 :: Stream_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_deserialize :: get_method_info () . method_ptr ,) ; inner (this , stream , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_try_get_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< u64 as :: unity2 :: IlType > :: il_type () , < crate :: app :: profilecard :: ProfileCard as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileList as :: unity2 :: ClassIdentity > :: class () , "TryGet" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileList as :: unity2 :: ClassIdentity > :: NAME , "TryGet" , e) , } } } pub unsafe fn try_get_2 (this : ProfileList , owner_id : u64 , card : * mut crate :: app :: profilecard :: ProfileCard , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (ProfileList , u64 , * mut crate :: app :: profilecard :: ProfileCard , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_try_get_2 :: get_method_info () . method_ptr ,) ; inner (this , owner_id , card , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_try_add { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: profilecard :: ProfileCard as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileList as :: unity2 :: ClassIdentity > :: class () , "TryAdd" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileList as :: unity2 :: ClassIdentity > :: NAME , "TryAdd" , e) , } } } pub unsafe fn try_add (this : ProfileList , card : crate :: app :: profilecard :: ProfileCard , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (ProfileList , crate :: app :: profilecard :: ProfileCard , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_try_add :: get_method_info () . method_ptr ,) ; inner (this , card , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_force_add { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: profilecard :: ProfileCard as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileList as :: unity2 :: ClassIdentity > :: class () , "ForceAdd" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileList as :: unity2 :: ClassIdentity > :: NAME , "ForceAdd" , e) , } } } pub unsafe fn force_add (this : ProfileList , card : crate :: app :: profilecard :: ProfileCard , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (ProfileList , crate :: app :: profilecard :: ProfileCard , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_force_add :: get_method_info () . method_ptr ,) ; inner (this , card , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_full { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileList as :: unity2 :: ClassIdentity > :: class () , "IsFull" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileList as :: unity2 :: ClassIdentity > :: NAME , "IsFull" , e) , } } } pub unsafe fn is_full (this : ProfileList , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (ProfileList , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_full :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_over { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileList as :: unity2 :: ClassIdentity > :: class () , "IsOver" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileList as :: unity2 :: ClassIdentity > :: NAME , "IsOver" , e) , } } } pub unsafe fn is_over (this : ProfileList , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (ProfileList , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_over :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileList as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileList as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : ProfileList , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ProfileList , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-profilelist")]
-pub trait IProfileListMethods: IProfileList {
-    #[doc = "`TryGet(i32)` overload"]
-    fn try_get(self, index: impl ::core::convert::Into<i32>) -> crate::app::profilecard::ProfileCard {
-        unsafe {
-            let __receiver = <ProfileList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ProfileList_unity2_raw::try_get(__receiver, ::core::convert::Into::into(index), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Serialize(crate::app::stream_2::Stream_2)` overload"]
-    fn serialize(self, stream: impl ::core::convert::Into<crate::app::stream_2::Stream_2>) -> () {
-        unsafe {
-            let __receiver = <ProfileList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ProfileList_unity2_raw::serialize(__receiver, ::core::convert::Into::into(stream), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Deserialize(crate::app::stream_2::Stream_2)` overload"]
-    fn deserialize(self, stream: impl ::core::convert::Into<crate::app::stream_2::Stream_2>) -> () {
-        unsafe {
-            let __receiver = <ProfileList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ProfileList_unity2_raw::deserialize(__receiver, ::core::convert::Into::into(stream), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`TryGet(u64, *mutcrate::app::profilecard::ProfileCard)` overload"]
-    fn try_get_2(self, owner_id: impl ::core::convert::Into<u64>) -> (bool, crate::app::profilecard::ProfileCard) {
-        unsafe {
-            let __receiver = <ProfileList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            let mut __out_0 = ::core::mem::MaybeUninit::<crate::app::profilecard::ProfileCard>::uninit();
-            let __ret = {
-                __ProfileList_unity2_raw::try_get_2(
-                    __receiver,
-                    ::core::convert::Into::into(owner_id),
-                    __out_0.as_mut_ptr(),
-                    ::core::option::Option::None,
-                )
-            };
-            (__ret, __out_0.assume_init())
-        }
-    }
-    #[doc = "`TryAdd(crate::app::profilecard::ProfileCard)` overload"]
-    fn try_add(self, card: impl ::core::convert::Into<crate::app::profilecard::ProfileCard>) -> bool {
-        unsafe {
-            let __receiver = <ProfileList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ProfileList_unity2_raw::try_add(__receiver, ::core::convert::Into::into(card), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ForceAdd(crate::app::profilecard::ProfileCard)` overload"]
-    fn force_add(self, card: impl ::core::convert::Into<crate::app::profilecard::ProfileCard>) -> bool {
-        unsafe {
-            let __receiver = <ProfileList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ProfileList_unity2_raw::force_add(__receiver, ::core::convert::Into::into(card), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsFull()` overload"]
-    fn is_full(self) -> bool {
-        unsafe {
-            let __receiver = <ProfileList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ProfileList_unity2_raw::is_full(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsOver()` overload"]
-    fn is_over(self) -> bool {
-        unsafe {
-            let __receiver = <ProfileList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ProfileList_unity2_raw::is_over(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <ProfileList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ProfileList_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IProfileListMethods : IProfileList { # [doc = "`TryGet(i32)` overload"] fn try_get (self , index : impl :: core :: convert :: Into < i32 >) -> crate :: app :: profilecard :: ProfileCard { unsafe { let __receiver = < ProfileList as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ProfileList_unity2_raw :: try_get (__receiver , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } # [doc = "`Serialize(crate::app::stream_2::Stream_2)` overload"] fn serialize (self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 >) -> () { unsafe { let __receiver = < ProfileList as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ProfileList_unity2_raw :: serialize (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: option :: Option :: None) } } # [doc = "`Deserialize(crate::app::stream_2::Stream_2)` overload"] fn deserialize (self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 >) -> () { unsafe { let __receiver = < ProfileList as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ProfileList_unity2_raw :: deserialize (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: option :: Option :: None) } } # [doc = "`TryGet(u64, *mutcrate::app::profilecard::ProfileCard)` overload"] fn try_get_2 (self , owner_id : impl :: core :: convert :: Into < u64 >) -> (bool , crate :: app :: profilecard :: ProfileCard) { unsafe { let __receiver = < ProfileList as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: app :: profilecard :: ProfileCard > :: uninit () ; let __ret = { __ProfileList_unity2_raw :: try_get_2 (__receiver , :: core :: convert :: Into :: into (owner_id) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } ; (__ret , __out_0 . assume_init ()) } } # [doc = "`TryAdd(crate::app::profilecard::ProfileCard)` overload"] fn try_add (self , card : impl :: core :: convert :: Into < crate :: app :: profilecard :: ProfileCard >) -> bool { unsafe { let __receiver = < ProfileList as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ProfileList_unity2_raw :: try_add (__receiver , :: core :: convert :: Into :: into (card) , :: core :: option :: Option :: None) } } # [doc = "`ForceAdd(crate::app::profilecard::ProfileCard)` overload"] fn force_add (self , card : impl :: core :: convert :: Into < crate :: app :: profilecard :: ProfileCard >) -> bool { unsafe { let __receiver = < ProfileList as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ProfileList_unity2_raw :: force_add (__receiver , :: core :: convert :: Into :: into (card) , :: core :: option :: Option :: None) } } # [doc = "`IsFull()` overload"] fn is_full (self ,) -> bool { unsafe { let __receiver = < ProfileList as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ProfileList_unity2_raw :: is_full (__receiver , :: core :: option :: Option :: None) } } # [doc = "`IsOver()` overload"] fn is_over (self ,) -> bool { unsafe { let __receiver = < ProfileList as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ProfileList_unity2_raw :: is_over (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ProfileList as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ProfileList_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-profilelist")]
-impl<__T: IProfileList> IProfileListMethods for __T {}
+impl < __T : IProfileList > IProfileListMethods for __T { }
+
+#[cfg(feature = "app-profilelist")]
+impl ProfileList { pub fn try_get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProfileList_unity2_raw :: __lookup_try_get :: get_method_info () } pub fn serialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProfileList_unity2_raw :: __lookup_serialize :: get_method_info () } pub fn deserialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProfileList_unity2_raw :: __lookup_deserialize :: get_method_info () } pub fn try_get_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProfileList_unity2_raw :: __lookup_try_get_2 :: get_method_info () } pub fn try_add_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProfileList_unity2_raw :: __lookup_try_add :: get_method_info () } pub fn force_add_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProfileList_unity2_raw :: __lookup_force_add :: get_method_info () } pub fn is_full_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProfileList_unity2_raw :: __lookup_is_full :: get_method_info () } pub fn is_over_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProfileList_unity2_raw :: __lookup_is_over :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProfileList_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-profilelist")]
 impl ProfileList {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(ProfileList), ::core::stringify!(new),));
-        <Self as IProfileListMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProfileList) , :: core :: stringify ! (new) ,)) ; < Self as IProfileListMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-profilelist")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IProfileList, IProfileListMethods, ProfileList};
-    #[cfg(feature = "system-collections-generic-list_1")]
-    pub use crate::system::collections::generic::list_1::IList_1Methods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::system::{collections::generic::list_1::IList_1, object::IObject};
+    pub use super::ProfileList;
+    pub use super::IProfileList;
+    pub use super::IProfileListMethods;
+    pub use crate::system::collections::generic::list_1::IList_1;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-collections-generic-list_1")] pub use crate::system::collections::generic::list_1::IList_1Methods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

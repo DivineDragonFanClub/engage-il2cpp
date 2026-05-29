@@ -2,143 +2,48 @@
 
 #[cfg(feature = "unity_engine-bootconfigdata-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/bootconfigdata/BootConfigData.md"))]
-    #[::unity2::class(namespace = "UnityEngine", name = "BootConfigData")]
-    #[parent(crate::system::object::Object)]
-    pub struct BootConfigData {
-        #[offset(16)]
-        #[rename(name = "m_Ptr")]
-        pub m_ptr: ::unity2::IntPtr,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/bootconfigdata/BootConfigData.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "BootConfigData")] # [parent (crate :: system :: object :: Object)] pub struct BootConfigData {
+# [offset (16)] # [rename (name = "m_Ptr")] pub m_ptr : :: unity2 :: IntPtr ,
+}
+
 }
 
 #[cfg(feature = "unity_engine-bootconfigdata-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-bootconfigdata")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __BootConfigData_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_wrap_boot_config_data {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BootConfigData as ::unity2::ClassIdentity>::class(),
-                "WrapBootConfigData",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <BootConfigData as ::unity2::ClassIdentity>::NAME,
-                        "WrapBootConfigData",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn wrap_boot_config_data(
-        native_handle: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::bootconfigdata::BootConfigData {
-        let inner: extern "C" fn(::unity2::IntPtr, ::unity2::OptionalMethod) -> crate::unity_engine::bootconfigdata::BootConfigData =
-            ::core::mem::transmute(__lookup_wrap_boot_config_data::get_method_info().method_ptr);
-        inner(native_handle, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BootConfigData as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <BootConfigData as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: BootConfigData, native_handle: ::unity2::IntPtr, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(BootConfigData, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, native_handle, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __BootConfigData_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_wrap_boot_config_data { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< BootConfigData as :: unity2 :: ClassIdentity > :: class () , "WrapBootConfigData" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < BootConfigData as :: unity2 :: ClassIdentity > :: NAME , "WrapBootConfigData" , e) , } } } pub unsafe fn wrap_boot_config_data (native_handle : :: unity2 :: IntPtr , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: bootconfigdata :: BootConfigData { let inner : extern "C" fn (:: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: bootconfigdata :: BootConfigData = :: core :: mem :: transmute (__lookup_wrap_boot_config_data :: get_method_info () . method_ptr ,) ; inner (native_handle , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< BootConfigData as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < BootConfigData as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : BootConfigData , native_handle : :: unity2 :: IntPtr , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (BootConfigData , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , native_handle , __unity2_method_info) } }
+
+#[cfg(feature = "unity_engine-bootconfigdata")]
+impl BootConfigData { # [doc = "`WrapBootConfigData(::unity2::IntPtr)` overload"] pub fn wrap_boot_config_data (native_handle : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> crate :: unity_engine :: bootconfigdata :: BootConfigData { unsafe { __BootConfigData_unity2_raw :: wrap_boot_config_data (:: core :: convert :: Into :: into (native_handle) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-bootconfigdata")]
+pub trait IBootConfigDataMethods : IBootConfigData { # [doc = "`.ctor(::unity2::IntPtr)` overload"] fn ctor (self , native_handle : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < BootConfigData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __BootConfigData_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (native_handle) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-bootconfigdata")]
+impl < __T : IBootConfigData > IBootConfigDataMethods for __T { }
+
+#[cfg(feature = "unity_engine-bootconfigdata")]
+impl BootConfigData { pub fn wrap_boot_config_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __BootConfigData_unity2_raw :: __lookup_wrap_boot_config_data :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __BootConfigData_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-bootconfigdata")]
 impl BootConfigData {
-    #[doc = "`WrapBootConfigData(::unity2::IntPtr)` overload"]
-    pub fn wrap_boot_config_data(native_handle: impl ::core::convert::Into<::unity2::IntPtr>) -> crate::unity_engine::bootconfigdata::BootConfigData {
-        unsafe { __BootConfigData_unity2_raw::wrap_boot_config_data(::core::convert::Into::into(native_handle), ::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "unity_engine-bootconfigdata")]
-pub trait IBootConfigDataMethods: IBootConfigData {
-    #[doc = "`.ctor(::unity2::IntPtr)` overload"]
-    fn ctor(self, native_handle: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
-        unsafe {
-            let __receiver = <BootConfigData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __BootConfigData_unity2_raw::ctor(__receiver, ::core::convert::Into::into(native_handle), ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-bootconfigdata")]
-impl<__T: IBootConfigData> IBootConfigDataMethods for __T {}
-
-#[cfg(feature = "unity_engine-bootconfigdata")]
-impl BootConfigData {
-    #[doc = "`.ctor(::unity2::IntPtr)` — overload selector"]
-    pub fn new(native_handle: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(BootConfigData),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IBootConfigDataMethods>::ctor(this, native_handle);
-        this
-    }
+# [doc = "`.ctor(::unity2::IntPtr)` — overload selector"] pub fn new (native_handle : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (BootConfigData) , :: core :: stringify ! (new) ,)) ; < Self as IBootConfigDataMethods > :: ctor (this , native_handle) ; this }
 }
 
 #[cfg(feature = "unity_engine-bootconfigdata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{BootConfigData, IBootConfigData, IBootConfigDataMethods};
+    pub use super::BootConfigData;
+    pub use super::IBootConfigData;
+    pub use super::IBootConfigDataMethods;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

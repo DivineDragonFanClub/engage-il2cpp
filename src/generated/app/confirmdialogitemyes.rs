@@ -2,177 +2,58 @@
 
 #[cfg(feature = "app-confirmdialogitemyes-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::{
-            basicdialogitem::{BasicDialogItem, IBasicDialogItem},
-            basicdialogitemyes::{BasicDialogItemYes, IBasicDialogItemYes},
-            basicmenuitem::{BasicMenuItem, IBasicMenuItem},
-        },
-        system::object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/confirmdialogitemyes/ConfirmDialogItemYes.md"))]
-    #[::unity2::class(namespace = "App", name = "ConfirmDialogItemYes")]
-    #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
-    pub struct ConfirmDialogItemYes {
-        #[offset(112)]
-        #[rename(name = "hubSequence")]
-        pub hub_sequence: crate::app::hubsequence::HubSequence,
-        #[offset(120)]
-        #[rename(name = "scriptName")]
-        pub script_name: ::unity2::Il2CppString,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: basicdialogitem :: { BasicDialogItem , IBasicDialogItem }
+ ;
+ use crate :: app :: basicdialogitemyes :: { BasicDialogItemYes , IBasicDialogItemYes }
+ ;
+ use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/confirmdialogitemyes/ConfirmDialogItemYes.md"))] # [:: unity2 :: class (namespace = "App" , name = "ConfirmDialogItemYes")] # [parent (crate :: app :: basicdialogitemyes :: BasicDialogItemYes)] pub struct ConfirmDialogItemYes {
+# [offset (112)] # [rename (name = "hubSequence")] pub hub_sequence : crate :: app :: hubsequence :: HubSequence ,
+# [offset (120)] # [rename (name = "scriptName")] pub script_name : :: unity2 :: Il2CppString ,
+}
+
 }
 
 #[cfg(feature = "app-confirmdialogitemyes-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-confirmdialogitemyes")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ConfirmDialogItemYes_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::hubsequence::HubSequence as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ConfirmDialogItemYes as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ConfirmDialogItemYes as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: ConfirmDialogItemYes,
-        hub_sequence: crate::app::hubsequence::HubSequence,
-        script_name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(ConfirmDialogItemYes, crate::app::hubsequence::HubSequence, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, hub_sequence, script_name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_a_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ConfirmDialogItemYes as ::unity2::ClassIdentity>::class(),
-                "ACall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ConfirmDialogItemYes as ::unity2::ClassIdentity>::NAME,
-                        "ACall",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn a_call(this: ConfirmDialogItemYes, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(ConfirmDialogItemYes, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
-            ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ConfirmDialogItemYes_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: hubsequence :: HubSequence as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ConfirmDialogItemYes as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ConfirmDialogItemYes as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : ConfirmDialogItemYes , hub_sequence : crate :: app :: hubsequence :: HubSequence , script_name : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ConfirmDialogItemYes , crate :: app :: hubsequence :: HubSequence , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , hub_sequence , script_name , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_a_call { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ConfirmDialogItemYes as :: unity2 :: ClassIdentity > :: class () , "ACall" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ConfirmDialogItemYes as :: unity2 :: ClassIdentity > :: NAME , "ACall" , e) , } } } pub unsafe fn a_call (this : ConfirmDialogItemYes , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result { let inner : extern "C" fn (ConfirmDialogItemYes , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute (__lookup_a_call :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-confirmdialogitemyes")]
-pub trait IConfirmDialogItemYesMethods: IConfirmDialogItemYes {
-    #[doc = "`.ctor(crate::app::hubsequence::HubSequence, ::unity2::Il2CppString)` overload"]
-    fn ctor(
-        self,
-        hub_sequence: impl ::core::convert::Into<crate::app::hubsequence::HubSequence>,
-        script_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <ConfirmDialogItemYes as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ConfirmDialogItemYes_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(hub_sequence),
-                ::core::convert::Into::into(script_name),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ACall()` overload"]
-    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver =
-                <ConfirmDialogItemYes as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ConfirmDialogItemYes_unity2_raw::a_call(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IConfirmDialogItemYesMethods : IConfirmDialogItemYes { # [doc = "`.ctor(crate::app::hubsequence::HubSequence, ::unity2::Il2CppString)` overload"] fn ctor (self , hub_sequence : impl :: core :: convert :: Into < crate :: app :: hubsequence :: HubSequence > , script_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < ConfirmDialogItemYes as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ConfirmDialogItemYes_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (hub_sequence) , :: core :: convert :: Into :: into (script_name) , :: core :: option :: Option :: None) } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < ConfirmDialogItemYes as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ConfirmDialogItemYes_unity2_raw :: a_call (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-confirmdialogitemyes")]
-impl<__T: IConfirmDialogItemYes> IConfirmDialogItemYesMethods for __T {}
+impl < __T : IConfirmDialogItemYes > IConfirmDialogItemYesMethods for __T { }
+
+#[cfg(feature = "app-confirmdialogitemyes")]
+impl ConfirmDialogItemYes { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ConfirmDialogItemYes_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ConfirmDialogItemYes_unity2_raw :: __lookup_a_call :: get_method_info () } }
 
 #[cfg(feature = "app-confirmdialogitemyes")]
 impl ConfirmDialogItemYes {
-    #[doc = "`.ctor(crate::app::hubsequence::HubSequence, ::unity2::Il2CppString)` — overload selector"]
-    pub fn new(hub_sequence: crate::app::hubsequence::HubSequence, script_name: ::unity2::Il2CppString) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ConfirmDialogItemYes),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IConfirmDialogItemYesMethods>::ctor(this, hub_sequence, script_name);
-        this
-    }
+# [doc = "`.ctor(crate::app::hubsequence::HubSequence, ::unity2::Il2CppString)` — overload selector"] pub fn new (hub_sequence : crate :: app :: hubsequence :: HubSequence , script_name : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ConfirmDialogItemYes) , :: core :: stringify ! (new) ,)) ; < Self as IConfirmDialogItemYesMethods > :: ctor (this , hub_sequence , script_name) ; this }
 }
 
 #[cfg(feature = "app-confirmdialogitemyes")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{ConfirmDialogItemYes, IConfirmDialogItemYes, IConfirmDialogItemYesMethods};
-    #[cfg(feature = "app-basicdialogitem")]
-    pub use crate::app::basicdialogitem::IBasicDialogItemMethods;
-    #[cfg(feature = "app-basicdialogitemyes")]
-    pub use crate::app::basicdialogitemyes::IBasicDialogItemYesMethods;
-    #[cfg(feature = "app-basicmenuitem")]
-    pub use crate::app::basicmenuitem::IBasicMenuItemMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::{
-        app::{basicdialogitem::IBasicDialogItem, basicdialogitemyes::IBasicDialogItemYes, basicmenuitem::IBasicMenuItem},
-        system::object::IObject,
-    };
+    pub use super::ConfirmDialogItemYes;
+    pub use super::IConfirmDialogItemYes;
+    pub use super::IConfirmDialogItemYesMethods;
+    pub use crate::app::basicdialogitem::IBasicDialogItem;
+    pub use crate::app::basicdialogitemyes::IBasicDialogItemYes;
+    pub use crate::app::basicmenuitem::IBasicMenuItem;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "app-basicdialogitem")] pub use crate::app::basicdialogitem::IBasicDialogItemMethods;
+    #[cfg(feature = "app-basicdialogitemyes")] pub use crate::app::basicdialogitemyes::IBasicDialogItemYesMethods;
+    #[cfg(feature = "app-basicmenuitem")] pub use crate::app::basicmenuitem::IBasicMenuItemMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

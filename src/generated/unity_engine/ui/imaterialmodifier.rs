@@ -2,88 +2,34 @@
 
 #[cfg(feature = "unity_engine-ui-imaterialmodifier-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/imaterialmodifier/IMaterialModifier.md"))]
-    #[::unity2::class(namespace = "UnityEngine.UI", name = "IMaterialModifier")]
-    pub struct IMaterialModifier {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/imaterialmodifier/IMaterialModifier.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "IMaterialModifier")] pub struct IMaterialModifier {}
+
 }
 
 #[cfg(feature = "unity_engine-ui-imaterialmodifier-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-ui-imaterialmodifier")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __IMaterialModifier_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_modified_material {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::material::Material as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <IMaterialModifier as ::unity2::ClassIdentity>::class(),
-                "GetModifiedMaterial",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <IMaterialModifier as ::unity2::ClassIdentity>::NAME,
-                        "GetModifiedMaterial",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_modified_material(
-        this: IMaterialModifier,
-        base_material: crate::unity_engine::material::Material,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::material::Material {
-        let inner: extern "C" fn(
-            IMaterialModifier,
-            crate::unity_engine::material::Material,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::material::Material = ::core::mem::transmute(__lookup_get_modified_material::get_method_info().method_ptr);
-        inner(this, base_material, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __IMaterialModifier_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_modified_material { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: material :: Material as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< IMaterialModifier as :: unity2 :: ClassIdentity > :: class () , "GetModifiedMaterial" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < IMaterialModifier as :: unity2 :: ClassIdentity > :: NAME , "GetModifiedMaterial" , e) , } } } pub unsafe fn get_modified_material (this : IMaterialModifier , base_material : crate :: unity_engine :: material :: Material , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: material :: Material { let inner : extern "C" fn (IMaterialModifier , crate :: unity_engine :: material :: Material , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: material :: Material = :: core :: mem :: transmute (__lookup_get_modified_material :: get_method_info () . method_ptr ,) ; inner (this , base_material , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-ui-imaterialmodifier")]
-pub trait IIMaterialModifierMethods: IIMaterialModifier {
-    #[doc = "`GetModifiedMaterial(crate::unity_engine::material::Material)` overload"]
-    fn get_modified_material(
-        self,
-        base_material: impl ::core::convert::Into<crate::unity_engine::material::Material>,
-    ) -> crate::unity_engine::material::Material {
-        unsafe {
-            let __receiver = <IMaterialModifier as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __IMaterialModifier_unity2_raw::get_modified_material(
-                __receiver,
-                ::core::convert::Into::into(base_material),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+pub trait IIMaterialModifierMethods : IIMaterialModifier { # [doc = "`GetModifiedMaterial(crate::unity_engine::material::Material)` overload"] fn get_modified_material (self , base_material : impl :: core :: convert :: Into < crate :: unity_engine :: material :: Material >) -> crate :: unity_engine :: material :: Material { unsafe { let __receiver = < IMaterialModifier as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IMaterialModifier_unity2_raw :: get_modified_material (__receiver , :: core :: convert :: Into :: into (base_material) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-ui-imaterialmodifier")]
-impl<__T: IIMaterialModifier> IIMaterialModifierMethods for __T {}
+impl < __T : IIMaterialModifier > IIMaterialModifierMethods for __T { }
+
+#[cfg(feature = "unity_engine-ui-imaterialmodifier")]
+impl IMaterialModifier { pub fn get_modified_material_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __IMaterialModifier_unity2_raw :: __lookup_get_modified_material :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-ui-imaterialmodifier")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IIMaterialModifier, IIMaterialModifierMethods, IMaterialModifier};
+    pub use super::IMaterialModifier;
+    pub use super::IIMaterialModifier;
+    pub use super::IIMaterialModifierMethods;
 }

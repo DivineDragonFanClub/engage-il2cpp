@@ -2,840 +2,120 @@
 
 #[cfg(feature = "app-jobintrosequence-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::{
-            procinst::{IProcInst, ProcInst},
-            procscenesequence_1::{IProcSceneSequence_1, ProcSceneSequence_1},
-            singletonprocinst_1::{ISingletonProcInst_1, SingletonProcInst_1},
-        },
-        system::{
-            object::{IObject, Object},
-            r#enum::{Enum, IEnum},
-            valuetype::{IValueType, ValueType},
-        },
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/jobintrosequence/JobIntroSequence_Label.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct JobIntroSequence_Label {
-        pub value: i32,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: procinst :: { IProcInst , ProcInst }
+ ;
+ use crate :: app :: procscenesequence_1 :: { IProcSceneSequence_1 , ProcSceneSequence_1 }
+ ;
+ use crate :: app :: singletonprocinst_1 :: { ISingletonProcInst_1 , SingletonProcInst_1 }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
 
-    impl ::unity2::ClassIdentity for JobIntroSequence_Label {
-        const NAME: &'static str = "JobIntroSequence.Label";
-        const NAMESPACE: &'static str = "App";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/jobintrosequence/JobIntroSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "JobIntroSequence")] # [parent (crate :: app :: procscenesequence_1 :: ProcSceneSequence_1 < crate :: app :: jobintrosequence :: JobIntroSequence >)] pub struct JobIntroSequence {
+# [offset (136)] # [rename (name = "m_JobDataList")] pub m_job_data_list : crate :: app :: structlist_1 :: StructList_1 < crate :: app :: jobintrodata :: JobIntroData > ,
+# [offset (144)] # [rename (name = "m_CurrentIndex")] pub m_current_index : i32 ,
+# [offset (148)] # [rename (name = "m_WaitTime")] pub m_wait_time : f32 ,
+}
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/jobintrosequence/JobIntroSequence_Label.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct JobIntroSequence_Label  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for JobIntroSequence_Label  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "JobIntroSequence.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for JobIntroSequence_Label {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  ::unity2::IlType for JobIntroSequence_Label  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl JobIntroSequence_Label {
-        pub fn r#loop() -> Self {
-            Self { value: 0 }
-        }
+}
 
-        pub fn end() -> Self {
-            Self { value: 1 }
-        }
+
+impl  JobIntroSequence_Label  {
+    pub fn r#loop() -> Self {
+        Self { value: 0 }
+
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/jobintrosequence/JobIntroSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "JobIntroSequence")]
-    # [parent (crate :: app :: procscenesequence_1 :: ProcSceneSequence_1 < crate :: app :: jobintrosequence :: JobIntroSequence >)]
-    pub struct JobIntroSequence {
-        #[offset(136)]
-        #[rename(name = "m_JobDataList")]
-        pub m_job_data_list: crate::app::structlist_1::StructList_1<crate::app::jobintrodata::JobIntroData>,
-        #[offset(144)]
-        #[rename(name = "m_CurrentIndex")]
-        pub m_current_index: i32,
-        #[offset(148)]
-        #[rename(name = "m_WaitTime")]
-        pub m_wait_time: f32,
+
+    pub fn end() -> Self {
+        Self { value: 1 }
+
     }
+
+}
+
 }
 
 #[cfg(feature = "app-jobintrosequence-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-jobintrosequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __JobIntroSequence_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_current_group_index {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <JobIntroSequence as ::unity2::ClassIdentity>::class(),
-                "get_CurrentGroupIndex",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <JobIntroSequence as ::unity2::ClassIdentity>::NAME,
-                        "get_CurrentGroupIndex",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_current_group_index(__unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_current_group_index::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_current_group_index {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <JobIntroSequence as ::unity2::ClassIdentity>::class(),
-                "set_CurrentGroupIndex",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <JobIntroSequence as ::unity2::ClassIdentity>::NAME,
-                        "set_CurrentGroupIndex",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_current_group_index(value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_current_group_index::get_method_info().method_ptr);
-        inner(value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_to_next_index {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <JobIntroSequence as ::unity2::ClassIdentity>::class(),
-                "ToNextIndex",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <JobIntroSequence as ::unity2::ClassIdentity>::NAME,
-                        "ToNextIndex",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn to_next_index(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_to_next_index::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_exist {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <JobIntroSequence as ::unity2::ClassIdentity>::class(),
-                "IsExist",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <JobIntroSequence as ::unity2::ClassIdentity>::NAME,
-                        "IsExist",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_exist(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_is_exist::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <JobIntroSequence as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <JobIntroSequence as ::unity2::ClassIdentity>::NAME,
-                        "CreateBind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_bind(super_: crate::app::procinst::ProcInst, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
-        inner(super_, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_is_finished {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <JobIntroSequence as ::unity2::ClassIdentity>::class(),
-                "get_IsFinished",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <JobIntroSequence as ::unity2::ClassIdentity>::NAME,
-                        "get_IsFinished",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_is_finished(this: JobIntroSequence, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(JobIntroSequence, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_is_finished::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_ready_time1 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <JobIntroSequence as ::unity2::ClassIdentity>::class(),
-                "get_ReadyTime1",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <JobIntroSequence as ::unity2::ClassIdentity>::NAME,
-                        "get_ReadyTime1",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_ready_time1(__unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> f32 = ::core::mem::transmute(__lookup_get_ready_time1::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_ready_time2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <JobIntroSequence as ::unity2::ClassIdentity>::class(),
-                "get_ReadyTime2",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <JobIntroSequence as ::unity2::ClassIdentity>::NAME,
-                        "get_ReadyTime2",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_ready_time2(__unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> f32 = ::core::mem::transmute(__lookup_get_ready_time2::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_current_data {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <JobIntroSequence as ::unity2::ClassIdentity>::class(),
-                "get_CurrentData",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <JobIntroSequence as ::unity2::ClassIdentity>::NAME,
-                        "get_CurrentData",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_current_data(this: JobIntroSequence, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::jobintrodata::JobIntroData {
-        let inner: extern "C" fn(JobIntroSequence, ::unity2::OptionalMethod) -> crate::app::jobintrodata::JobIntroData =
-            ::core::mem::transmute(__lookup_get_current_data::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_initialize {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <JobIntroSequence as ::unity2::ClassIdentity>::class(),
-                "Initialize",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <JobIntroSequence as ::unity2::ClassIdentity>::NAME,
-                        "Initialize",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn initialize(this: JobIntroSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(JobIntroSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_initialize::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_begin_map {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <JobIntroSequence as ::unity2::ClassIdentity>::class(),
-                "BeginMap",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <JobIntroSequence as ::unity2::ClassIdentity>::NAME,
-                        "BeginMap",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn begin_map(this: JobIntroSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(JobIntroSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_begin_map::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_unload {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <JobIntroSequence as ::unity2::ClassIdentity>::class(),
-                "Unload",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <JobIntroSequence as ::unity2::ClassIdentity>::NAME,
-                        "Unload",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn unload(this: JobIntroSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(JobIntroSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_unload::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_begin {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <JobIntroSequence as ::unity2::ClassIdentity>::class(),
-                "Begin",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <JobIntroSequence as ::unity2::ClassIdentity>::NAME,
-                        "Begin",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn begin(
-        this: JobIntroSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::ienumerator::IEnumerator {
-        let inner: extern "C" fn(JobIntroSequence, ::unity2::OptionalMethod) -> crate::system::collections::ienumerator::IEnumerator =
-            ::core::mem::transmute(__lookup_begin::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_tick {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <JobIntroSequence as ::unity2::ClassIdentity>::class(),
-                "Tick",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <JobIntroSequence as ::unity2::ClassIdentity>::NAME,
-                        "Tick",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn tick(
-        this: JobIntroSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::ienumerator::IEnumerator {
-        let inner: extern "C" fn(JobIntroSequence, ::unity2::OptionalMethod) -> crate::system::collections::ienumerator::IEnumerator =
-            ::core::mem::transmute(__lookup_tick::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_finish {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <JobIntroSequence as ::unity2::ClassIdentity>::class(),
-                "Finish",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <JobIntroSequence as ::unity2::ClassIdentity>::NAME,
-                        "Finish",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn finish(
-        this: JobIntroSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::ienumerator::IEnumerator {
-        let inner: extern "C" fn(JobIntroSequence, ::unity2::OptionalMethod) -> crate::system::collections::ienumerator::IEnumerator =
-            ::core::mem::transmute(__lookup_finish::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_check_key_push {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <JobIntroSequence as ::unity2::ClassIdentity>::class(),
-                "CheckKeyPush",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <JobIntroSequence as ::unity2::ClassIdentity>::NAME,
-                        "CheckKeyPush",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn check_key_push(
-        this: JobIntroSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::ienumerator::IEnumerator {
-        let inner: extern "C" fn(JobIntroSequence, ::unity2::OptionalMethod) -> crate::system::collections::ienumerator::IEnumerator =
-            ::core::mem::transmute(__lookup_check_key_push::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_branch_loop {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <JobIntroSequence as ::unity2::ClassIdentity>::class(),
-                "BranchLoop",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <JobIntroSequence as ::unity2::ClassIdentity>::NAME,
-                        "BranchLoop",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn branch_loop(this: JobIntroSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(JobIntroSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_branch_loop::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <JobIntroSequence as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <JobIntroSequence as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: JobIntroSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(JobIntroSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __JobIntroSequence_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_current_group_index { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< JobIntroSequence as :: unity2 :: ClassIdentity > :: class () , "get_CurrentGroupIndex" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < JobIntroSequence as :: unity2 :: ClassIdentity > :: NAME , "get_CurrentGroupIndex" , e) , } } } pub unsafe fn get_current_group_index (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_current_group_index :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_current_group_index { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< JobIntroSequence as :: unity2 :: ClassIdentity > :: class () , "set_CurrentGroupIndex" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < JobIntroSequence as :: unity2 :: ClassIdentity > :: NAME , "set_CurrentGroupIndex" , e) , } } } pub unsafe fn set_current_group_index (value : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_current_group_index :: get_method_info () . method_ptr ,) ; inner (value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_to_next_index { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< JobIntroSequence as :: unity2 :: ClassIdentity > :: class () , "ToNextIndex" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < JobIntroSequence as :: unity2 :: ClassIdentity > :: NAME , "ToNextIndex" , e) , } } } pub unsafe fn to_next_index (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_to_next_index :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_exist { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< JobIntroSequence as :: unity2 :: ClassIdentity > :: class () , "IsExist" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < JobIntroSequence as :: unity2 :: ClassIdentity > :: NAME , "IsExist" , e) , } } } pub unsafe fn is_exist (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_exist :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_bind { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< JobIntroSequence as :: unity2 :: ClassIdentity > :: class () , "CreateBind" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < JobIntroSequence as :: unity2 :: ClassIdentity > :: NAME , "CreateBind" , e) , } } } pub unsafe fn create_bind (super_ : crate :: app :: procinst :: ProcInst , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create_bind :: get_method_info () . method_ptr ,) ; inner (super_ , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_is_finished { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< JobIntroSequence as :: unity2 :: ClassIdentity > :: class () , "get_IsFinished" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < JobIntroSequence as :: unity2 :: ClassIdentity > :: NAME , "get_IsFinished" , e) , } } } pub unsafe fn get_is_finished (this : JobIntroSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (JobIntroSequence , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_is_finished :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_ready_time1 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< JobIntroSequence as :: unity2 :: ClassIdentity > :: class () , "get_ReadyTime1" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < JobIntroSequence as :: unity2 :: ClassIdentity > :: NAME , "get_ReadyTime1" , e) , } } } pub unsafe fn get_ready_time1 (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_get_ready_time1 :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_ready_time2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< JobIntroSequence as :: unity2 :: ClassIdentity > :: class () , "get_ReadyTime2" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < JobIntroSequence as :: unity2 :: ClassIdentity > :: NAME , "get_ReadyTime2" , e) , } } } pub unsafe fn get_ready_time2 (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_get_ready_time2 :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_current_data { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< JobIntroSequence as :: unity2 :: ClassIdentity > :: class () , "get_CurrentData" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < JobIntroSequence as :: unity2 :: ClassIdentity > :: NAME , "get_CurrentData" , e) , } } } pub unsafe fn get_current_data (this : JobIntroSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: jobintrodata :: JobIntroData { let inner : extern "C" fn (JobIntroSequence , :: unity2 :: OptionalMethod ,) -> crate :: app :: jobintrodata :: JobIntroData = :: core :: mem :: transmute (__lookup_get_current_data :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_initialize { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< JobIntroSequence as :: unity2 :: ClassIdentity > :: class () , "Initialize" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < JobIntroSequence as :: unity2 :: ClassIdentity > :: NAME , "Initialize" , e) , } } } pub unsafe fn initialize (this : JobIntroSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (JobIntroSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_initialize :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_begin_map { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< JobIntroSequence as :: unity2 :: ClassIdentity > :: class () , "BeginMap" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < JobIntroSequence as :: unity2 :: ClassIdentity > :: NAME , "BeginMap" , e) , } } } pub unsafe fn begin_map (this : JobIntroSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (JobIntroSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_begin_map :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_unload { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< JobIntroSequence as :: unity2 :: ClassIdentity > :: class () , "Unload" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < JobIntroSequence as :: unity2 :: ClassIdentity > :: NAME , "Unload" , e) , } } } pub unsafe fn unload (this : JobIntroSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (JobIntroSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_unload :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_begin { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< JobIntroSequence as :: unity2 :: ClassIdentity > :: class () , "Begin" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < JobIntroSequence as :: unity2 :: ClassIdentity > :: NAME , "Begin" , e) , } } } pub unsafe fn begin (this : JobIntroSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { let inner : extern "C" fn (JobIntroSequence , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute (__lookup_begin :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_tick { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< JobIntroSequence as :: unity2 :: ClassIdentity > :: class () , "Tick" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < JobIntroSequence as :: unity2 :: ClassIdentity > :: NAME , "Tick" , e) , } } } pub unsafe fn tick (this : JobIntroSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { let inner : extern "C" fn (JobIntroSequence , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute (__lookup_tick :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_finish { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< JobIntroSequence as :: unity2 :: ClassIdentity > :: class () , "Finish" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < JobIntroSequence as :: unity2 :: ClassIdentity > :: NAME , "Finish" , e) , } } } pub unsafe fn finish (this : JobIntroSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { let inner : extern "C" fn (JobIntroSequence , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute (__lookup_finish :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_check_key_push { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< JobIntroSequence as :: unity2 :: ClassIdentity > :: class () , "CheckKeyPush" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < JobIntroSequence as :: unity2 :: ClassIdentity > :: NAME , "CheckKeyPush" , e) , } } } pub unsafe fn check_key_push (this : JobIntroSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { let inner : extern "C" fn (JobIntroSequence , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute (__lookup_check_key_push :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_branch_loop { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< JobIntroSequence as :: unity2 :: ClassIdentity > :: class () , "BranchLoop" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < JobIntroSequence as :: unity2 :: ClassIdentity > :: NAME , "BranchLoop" , e) , } } } pub unsafe fn branch_loop (this : JobIntroSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (JobIntroSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_branch_loop :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< JobIntroSequence as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < JobIntroSequence as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : JobIntroSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (JobIntroSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-jobintrosequence")]
+impl JobIntroSequence { # [doc = "`get_CurrentGroupIndex()` overload"] pub fn get_current_group_index () -> i32 { unsafe { __JobIntroSequence_unity2_raw :: get_current_group_index (:: core :: option :: Option :: None) } } # [doc = "`set_CurrentGroupIndex(i32)` overload"] pub fn set_current_group_index (value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { __JobIntroSequence_unity2_raw :: set_current_group_index (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`ToNextIndex()` overload"] pub fn to_next_index () -> () { unsafe { __JobIntroSequence_unity2_raw :: to_next_index (:: core :: option :: Option :: None) } } # [doc = "`IsExist()` overload"] pub fn is_exist () -> bool { unsafe { __JobIntroSequence_unity2_raw :: is_exist (:: core :: option :: Option :: None) } } # [doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { __JobIntroSequence_unity2_raw :: create_bind (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } # [doc = "`get_ReadyTime1()` overload"] pub fn get_ready_time1 () -> f32 { unsafe { __JobIntroSequence_unity2_raw :: get_ready_time1 (:: core :: option :: Option :: None) } } # [doc = "`get_ReadyTime2()` overload"] pub fn get_ready_time2 () -> f32 { unsafe { __JobIntroSequence_unity2_raw :: get_ready_time2 (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-jobintrosequence")]
+pub trait IJobIntroSequenceMethods : IJobIntroSequence { # [doc = "`get_IsFinished()` overload"] fn get_is_finished (self ,) -> bool { unsafe { let __receiver = < JobIntroSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __JobIntroSequence_unity2_raw :: get_is_finished (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_CurrentData()` overload"] fn get_current_data (self ,) -> crate :: app :: jobintrodata :: JobIntroData { unsafe { let __receiver = < JobIntroSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __JobIntroSequence_unity2_raw :: get_current_data (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Initialize()` overload"] fn initialize (self ,) -> () { unsafe { let __receiver = < JobIntroSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __JobIntroSequence_unity2_raw :: initialize (__receiver , :: core :: option :: Option :: None) } } # [doc = "`BeginMap()` overload"] fn begin_map (self ,) -> () { unsafe { let __receiver = < JobIntroSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __JobIntroSequence_unity2_raw :: begin_map (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Unload()` overload"] fn unload (self ,) -> () { unsafe { let __receiver = < JobIntroSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __JobIntroSequence_unity2_raw :: unload (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Begin()` overload"] fn begin (self ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { let __receiver = < JobIntroSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __JobIntroSequence_unity2_raw :: begin (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Tick()` overload"] fn tick (self ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { let __receiver = < JobIntroSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __JobIntroSequence_unity2_raw :: tick (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Finish()` overload"] fn finish (self ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { let __receiver = < JobIntroSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __JobIntroSequence_unity2_raw :: finish (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CheckKeyPush()` overload"] fn check_key_push (self ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { let __receiver = < JobIntroSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __JobIntroSequence_unity2_raw :: check_key_push (__receiver , :: core :: option :: Option :: None) } } # [doc = "`BranchLoop()` overload"] fn branch_loop (self ,) -> () { unsafe { let __receiver = < JobIntroSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __JobIntroSequence_unity2_raw :: branch_loop (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < JobIntroSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __JobIntroSequence_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-jobintrosequence")]
+impl < __T : IJobIntroSequence > IJobIntroSequenceMethods for __T { }
+
+#[cfg(feature = "app-jobintrosequence")]
+impl JobIntroSequence { pub fn get_current_group_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __JobIntroSequence_unity2_raw :: __lookup_get_current_group_index :: get_method_info () } pub fn set_current_group_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __JobIntroSequence_unity2_raw :: __lookup_set_current_group_index :: get_method_info () } pub fn to_next_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __JobIntroSequence_unity2_raw :: __lookup_to_next_index :: get_method_info () } pub fn is_exist_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __JobIntroSequence_unity2_raw :: __lookup_is_exist :: get_method_info () } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __JobIntroSequence_unity2_raw :: __lookup_create_bind :: get_method_info () } pub fn get_is_finished_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __JobIntroSequence_unity2_raw :: __lookup_get_is_finished :: get_method_info () } pub fn get_ready_time1_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __JobIntroSequence_unity2_raw :: __lookup_get_ready_time1 :: get_method_info () } pub fn get_ready_time2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __JobIntroSequence_unity2_raw :: __lookup_get_ready_time2 :: get_method_info () } pub fn get_current_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __JobIntroSequence_unity2_raw :: __lookup_get_current_data :: get_method_info () } pub fn initialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __JobIntroSequence_unity2_raw :: __lookup_initialize :: get_method_info () } pub fn begin_map_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __JobIntroSequence_unity2_raw :: __lookup_begin_map :: get_method_info () } pub fn unload_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __JobIntroSequence_unity2_raw :: __lookup_unload :: get_method_info () } pub fn begin_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __JobIntroSequence_unity2_raw :: __lookup_begin :: get_method_info () } pub fn tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __JobIntroSequence_unity2_raw :: __lookup_tick :: get_method_info () } pub fn finish_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __JobIntroSequence_unity2_raw :: __lookup_finish :: get_method_info () } pub fn check_key_push_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __JobIntroSequence_unity2_raw :: __lookup_check_key_push :: get_method_info () } pub fn branch_loop_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __JobIntroSequence_unity2_raw :: __lookup_branch_loop :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __JobIntroSequence_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-jobintrosequence")]
 impl JobIntroSequence {
-    #[doc = "`get_CurrentGroupIndex()` overload"]
-    pub fn get_current_group_index() -> i32 {
-        unsafe { __JobIntroSequence_unity2_raw::get_current_group_index(::core::option::Option::None) }
-    }
-
-    #[doc = "`set_CurrentGroupIndex(i32)` overload"]
-    pub fn set_current_group_index(value: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __JobIntroSequence_unity2_raw::set_current_group_index(::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`ToNextIndex()` overload"]
-    pub fn to_next_index() -> () {
-        unsafe { __JobIntroSequence_unity2_raw::to_next_index(::core::option::Option::None) }
-    }
-
-    #[doc = "`IsExist()` overload"]
-    pub fn is_exist() -> bool {
-        unsafe { __JobIntroSequence_unity2_raw::is_exist(::core::option::Option::None) }
-    }
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
-    pub fn create_bind(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
-        unsafe { __JobIntroSequence_unity2_raw::create_bind(::core::convert::Into::into(super_), ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_ReadyTime1()` overload"]
-    pub fn get_ready_time1() -> f32 {
-        unsafe { __JobIntroSequence_unity2_raw::get_ready_time1(::core::option::Option::None) }
-    }
-
-    #[doc = "`get_ReadyTime2()` overload"]
-    pub fn get_ready_time2() -> f32 {
-        unsafe { __JobIntroSequence_unity2_raw::get_ready_time2(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-jobintrosequence")]
-pub trait IJobIntroSequenceMethods: IJobIntroSequence {
-    #[doc = "`get_IsFinished()` overload"]
-    fn get_is_finished(self) -> bool {
-        unsafe {
-            let __receiver = <JobIntroSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __JobIntroSequence_unity2_raw::get_is_finished(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_CurrentData()` overload"]
-    fn get_current_data(self) -> crate::app::jobintrodata::JobIntroData {
-        unsafe {
-            let __receiver = <JobIntroSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __JobIntroSequence_unity2_raw::get_current_data(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Initialize()` overload"]
-    fn initialize(self) -> () {
-        unsafe {
-            let __receiver = <JobIntroSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __JobIntroSequence_unity2_raw::initialize(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`BeginMap()` overload"]
-    fn begin_map(self) -> () {
-        unsafe {
-            let __receiver = <JobIntroSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __JobIntroSequence_unity2_raw::begin_map(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Unload()` overload"]
-    fn unload(self) -> () {
-        unsafe {
-            let __receiver = <JobIntroSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __JobIntroSequence_unity2_raw::unload(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Begin()` overload"]
-    fn begin(self) -> crate::system::collections::ienumerator::IEnumerator {
-        unsafe {
-            let __receiver = <JobIntroSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __JobIntroSequence_unity2_raw::begin(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Tick()` overload"]
-    fn tick(self) -> crate::system::collections::ienumerator::IEnumerator {
-        unsafe {
-            let __receiver = <JobIntroSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __JobIntroSequence_unity2_raw::tick(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Finish()` overload"]
-    fn finish(self) -> crate::system::collections::ienumerator::IEnumerator {
-        unsafe {
-            let __receiver = <JobIntroSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __JobIntroSequence_unity2_raw::finish(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CheckKeyPush()` overload"]
-    fn check_key_push(self) -> crate::system::collections::ienumerator::IEnumerator {
-        unsafe {
-            let __receiver = <JobIntroSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __JobIntroSequence_unity2_raw::check_key_push(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`BranchLoop()` overload"]
-    fn branch_loop(self) -> () {
-        unsafe {
-            let __receiver = <JobIntroSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __JobIntroSequence_unity2_raw::branch_loop(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <JobIntroSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __JobIntroSequence_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-jobintrosequence")]
-impl<__T: IJobIntroSequence> IJobIntroSequenceMethods for __T {}
-
-#[cfg(feature = "app-jobintrosequence")]
-impl JobIntroSequence {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(JobIntroSequence),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IJobIntroSequenceMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (JobIntroSequence) , :: core :: stringify ! (new) ,)) ; < Self as IJobIntroSequenceMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-jobintrosequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IJobIntroSequence, IJobIntroSequenceMethods, JobIntroSequence, JobIntroSequence_Label};
-    #[cfg(feature = "app-procinst")]
-    pub use crate::app::procinst::IProcInstMethods;
-    #[cfg(feature = "app-procscenesequence_1")]
-    pub use crate::app::procscenesequence_1::IProcSceneSequence_1Methods;
-    #[cfg(feature = "app-singletonprocinst_1")]
-    pub use crate::app::singletonprocinst_1::ISingletonProcInst_1Methods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::{
-        app::{procinst::IProcInst, procscenesequence_1::IProcSceneSequence_1, singletonprocinst_1::ISingletonProcInst_1},
-        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
-    };
+    pub use super::JobIntroSequence;
+    pub use super::IJobIntroSequence;
+    pub use super::IJobIntroSequenceMethods;
+    pub use super::JobIntroSequence_Label;
+    pub use crate::app::procinst::IProcInst;
+    pub use crate::app::procscenesequence_1::IProcSceneSequence_1;
+    pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "app-procinst")] pub use crate::app::procinst::IProcInstMethods;
+    #[cfg(feature = "app-procscenesequence_1")] pub use crate::app::procscenesequence_1::IProcSceneSequence_1Methods;
+    #[cfg(feature = "app-singletonprocinst_1")] pub use crate::app::singletonprocinst_1::ISingletonProcInst_1Methods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

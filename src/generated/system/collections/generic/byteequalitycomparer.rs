@@ -2,402 +2,47 @@
 
 #[cfg(feature = "system-collections-generic-byteequalitycomparer-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        collections::generic::equalitycomparer_1::{EqualityComparer_1, IEqualityComparer_1},
-        object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/byteequalitycomparer/ByteEqualityComparer.md"))]
-    #[::unity2::class(namespace = "System.Collections.Generic", name = "ByteEqualityComparer")]
-    # [parent (crate :: system :: collections :: generic :: equalitycomparer_1 :: EqualityComparer_1 < u8 >)]
-    pub struct ByteEqualityComparer {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: collections :: generic :: equalitycomparer_1 :: { EqualityComparer_1 , IEqualityComparer_1 }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/byteequalitycomparer/ByteEqualityComparer.md"))] # [:: unity2 :: class (namespace = "System.Collections.Generic" , name = "ByteEqualityComparer")] # [parent (crate :: system :: collections :: generic :: equalitycomparer_1 :: EqualityComparer_1 < u8 >)] pub struct ByteEqualityComparer {}
+
 }
 
 #[cfg(feature = "system-collections-generic-byteequalitycomparer-types")]
 pub use __types::*;
 
 #[cfg(feature = "system-collections-generic-byteequalitycomparer")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ByteEqualityComparer_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_equals {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u8 as ::unity2::IlType>::il_type(), <u8 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ByteEqualityComparer as ::unity2::ClassIdentity>::class(),
-                "Equals",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ByteEqualityComparer as ::unity2::ClassIdentity>::NAME,
-                        "Equals",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn equals(this: ByteEqualityComparer, x: u8, y: u8, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(ByteEqualityComparer, u8, u8, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_equals::get_method_info().method_ptr);
-        inner(this, x, y, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_hash_code {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u8 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ByteEqualityComparer as ::unity2::ClassIdentity>::class(),
-                "GetHashCode",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ByteEqualityComparer as ::unity2::ClassIdentity>::NAME,
-                        "GetHashCode",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_hash_code(this: ByteEqualityComparer, b: u8, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(ByteEqualityComparer, u8, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_hash_code::get_method_info().method_ptr);
-        inner(this, b, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_index_of {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Array<u8> as ::unity2::IlType>::il_type(),
-                <u8 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ByteEqualityComparer as ::unity2::ClassIdentity>::class(),
-                "IndexOf",
-                4,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ByteEqualityComparer as ::unity2::ClassIdentity>::NAME,
-                        "IndexOf",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn index_of(
-        this: ByteEqualityComparer,
-        array: ::unity2::Array<u8>,
-        value: u8,
-        start_index: i32,
-        count: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(ByteEqualityComparer, ::unity2::Array<u8>, u8, i32, i32, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_index_of::get_method_info().method_ptr);
-        inner(this, array, value, start_index, count, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_last_index_of {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Array<u8> as ::unity2::IlType>::il_type(),
-                <u8 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ByteEqualityComparer as ::unity2::ClassIdentity>::class(),
-                "LastIndexOf",
-                4,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ByteEqualityComparer as ::unity2::ClassIdentity>::NAME,
-                        "LastIndexOf",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn last_index_of(
-        this: ByteEqualityComparer,
-        array: ::unity2::Array<u8>,
-        value: u8,
-        start_index: i32,
-        count: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(ByteEqualityComparer, ::unity2::Array<u8>, u8, i32, i32, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_last_index_of::get_method_info().method_ptr);
-        inner(this, array, value, start_index, count, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_equals_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ByteEqualityComparer as ::unity2::ClassIdentity>::class(),
-                "Equals",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ByteEqualityComparer as ::unity2::ClassIdentity>::NAME,
-                        "Equals",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn equals_2(this: ByteEqualityComparer, obj: crate::system::object::Object, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(ByteEqualityComparer, crate::system::object::Object, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_equals_2::get_method_info().method_ptr);
-        inner(this, obj, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_hash_code_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ByteEqualityComparer as ::unity2::ClassIdentity>::class(),
-                "GetHashCode",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ByteEqualityComparer as ::unity2::ClassIdentity>::NAME,
-                        "GetHashCode",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_hash_code_2(this: ByteEqualityComparer, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(ByteEqualityComparer, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_hash_code_2::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ByteEqualityComparer as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ByteEqualityComparer as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: ByteEqualityComparer, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ByteEqualityComparer, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ByteEqualityComparer_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_equals { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< u8 as :: unity2 :: IlType > :: il_type () , < u8 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ByteEqualityComparer as :: unity2 :: ClassIdentity > :: class () , "Equals" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ByteEqualityComparer as :: unity2 :: ClassIdentity > :: NAME , "Equals" , e) , } } } pub unsafe fn equals (this : ByteEqualityComparer , x : u8 , y : u8 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (ByteEqualityComparer , u8 , u8 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_equals :: get_method_info () . method_ptr ,) ; inner (this , x , y , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_hash_code { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< u8 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ByteEqualityComparer as :: unity2 :: ClassIdentity > :: class () , "GetHashCode" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ByteEqualityComparer as :: unity2 :: ClassIdentity > :: NAME , "GetHashCode" , e) , } } } pub unsafe fn get_hash_code (this : ByteEqualityComparer , b : u8 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (ByteEqualityComparer , u8 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_hash_code :: get_method_info () . method_ptr ,) ; inner (this , b , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_index_of { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < u8 > as :: unity2 :: IlType > :: il_type () , < u8 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ByteEqualityComparer as :: unity2 :: ClassIdentity > :: class () , "IndexOf" , 4 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ByteEqualityComparer as :: unity2 :: ClassIdentity > :: NAME , "IndexOf" , e) , } } } pub unsafe fn index_of (this : ByteEqualityComparer , array : :: unity2 :: Array < u8 > , value : u8 , start_index : i32 , count : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (ByteEqualityComparer , :: unity2 :: Array < u8 > , u8 , i32 , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_index_of :: get_method_info () . method_ptr ,) ; inner (this , array , value , start_index , count , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_last_index_of { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < u8 > as :: unity2 :: IlType > :: il_type () , < u8 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ByteEqualityComparer as :: unity2 :: ClassIdentity > :: class () , "LastIndexOf" , 4 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ByteEqualityComparer as :: unity2 :: ClassIdentity > :: NAME , "LastIndexOf" , e) , } } } pub unsafe fn last_index_of (this : ByteEqualityComparer , array : :: unity2 :: Array < u8 > , value : u8 , start_index : i32 , count : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (ByteEqualityComparer , :: unity2 :: Array < u8 > , u8 , i32 , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_last_index_of :: get_method_info () . method_ptr ,) ; inner (this , array , value , start_index , count , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_equals_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ByteEqualityComparer as :: unity2 :: ClassIdentity > :: class () , "Equals" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ByteEqualityComparer as :: unity2 :: ClassIdentity > :: NAME , "Equals" , e) , } } } pub unsafe fn equals_2 (this : ByteEqualityComparer , obj : crate :: system :: object :: Object , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (ByteEqualityComparer , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_equals_2 :: get_method_info () . method_ptr ,) ; inner (this , obj , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_hash_code_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ByteEqualityComparer as :: unity2 :: ClassIdentity > :: class () , "GetHashCode" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ByteEqualityComparer as :: unity2 :: ClassIdentity > :: NAME , "GetHashCode" , e) , } } } pub unsafe fn get_hash_code_2 (this : ByteEqualityComparer , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (ByteEqualityComparer , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_hash_code_2 :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ByteEqualityComparer as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ByteEqualityComparer as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : ByteEqualityComparer , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ByteEqualityComparer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "system-collections-generic-byteequalitycomparer")]
-pub trait IByteEqualityComparerMethods: IByteEqualityComparer {
-    #[doc = "`Equals(u8, u8)` overload"]
-    fn equals(self, x: impl ::core::convert::Into<u8>, y: impl ::core::convert::Into<u8>) -> bool {
-        unsafe {
-            let __receiver =
-                <ByteEqualityComparer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ByteEqualityComparer_unity2_raw::equals(
-                __receiver,
-                ::core::convert::Into::into(x),
-                ::core::convert::Into::into(y),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetHashCode(u8)` overload"]
-    fn get_hash_code(self, b: impl ::core::convert::Into<u8>) -> i32 {
-        unsafe {
-            let __receiver =
-                <ByteEqualityComparer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ByteEqualityComparer_unity2_raw::get_hash_code(__receiver, ::core::convert::Into::into(b), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IndexOf(::unity2::Array<u8>, u8, i32, i32)` overload"]
-    fn index_of(
-        self,
-        array: impl ::core::convert::Into<::unity2::Array<u8>>,
-        value: impl ::core::convert::Into<u8>,
-        start_index: impl ::core::convert::Into<i32>,
-        count: impl ::core::convert::Into<i32>,
-    ) -> i32 {
-        unsafe {
-            let __receiver =
-                <ByteEqualityComparer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ByteEqualityComparer_unity2_raw::index_of(
-                __receiver,
-                ::core::convert::Into::into(array),
-                ::core::convert::Into::into(value),
-                ::core::convert::Into::into(start_index),
-                ::core::convert::Into::into(count),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`LastIndexOf(::unity2::Array<u8>, u8, i32, i32)` overload"]
-    fn last_index_of(
-        self,
-        array: impl ::core::convert::Into<::unity2::Array<u8>>,
-        value: impl ::core::convert::Into<u8>,
-        start_index: impl ::core::convert::Into<i32>,
-        count: impl ::core::convert::Into<i32>,
-    ) -> i32 {
-        unsafe {
-            let __receiver =
-                <ByteEqualityComparer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ByteEqualityComparer_unity2_raw::last_index_of(
-                __receiver,
-                ::core::convert::Into::into(array),
-                ::core::convert::Into::into(value),
-                ::core::convert::Into::into(start_index),
-                ::core::convert::Into::into(count),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Equals(crate::system::object::Object)` overload"]
-    fn equals_2(self, obj: impl ::core::convert::Into<crate::system::object::Object>) -> bool {
-        unsafe {
-            let __receiver =
-                <ByteEqualityComparer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ByteEqualityComparer_unity2_raw::equals_2(__receiver, ::core::convert::Into::into(obj), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetHashCode()` overload"]
-    fn get_hash_code_2(self) -> i32 {
-        unsafe {
-            let __receiver =
-                <ByteEqualityComparer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ByteEqualityComparer_unity2_raw::get_hash_code_2(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <ByteEqualityComparer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ByteEqualityComparer_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IByteEqualityComparerMethods : IByteEqualityComparer { # [doc = "`Equals(u8, u8)` overload"] fn equals (self , x : impl :: core :: convert :: Into < u8 > , y : impl :: core :: convert :: Into < u8 >) -> bool { unsafe { let __receiver = < ByteEqualityComparer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ByteEqualityComparer_unity2_raw :: equals (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (y) , :: core :: option :: Option :: None) } } # [doc = "`GetHashCode(u8)` overload"] fn get_hash_code (self , b : impl :: core :: convert :: Into < u8 >) -> i32 { unsafe { let __receiver = < ByteEqualityComparer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ByteEqualityComparer_unity2_raw :: get_hash_code (__receiver , :: core :: convert :: Into :: into (b) , :: core :: option :: Option :: None) } } # [doc = "`IndexOf(::unity2::Array<u8>, u8, i32, i32)` overload"] fn index_of (self , array : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > > , value : impl :: core :: convert :: Into < u8 > , start_index : impl :: core :: convert :: Into < i32 > , count : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { let __receiver = < ByteEqualityComparer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ByteEqualityComparer_unity2_raw :: index_of (__receiver , :: core :: convert :: Into :: into (array) , :: core :: convert :: Into :: into (value) , :: core :: convert :: Into :: into (start_index) , :: core :: convert :: Into :: into (count) , :: core :: option :: Option :: None) } } # [doc = "`LastIndexOf(::unity2::Array<u8>, u8, i32, i32)` overload"] fn last_index_of (self , array : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > > , value : impl :: core :: convert :: Into < u8 > , start_index : impl :: core :: convert :: Into < i32 > , count : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { let __receiver = < ByteEqualityComparer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ByteEqualityComparer_unity2_raw :: last_index_of (__receiver , :: core :: convert :: Into :: into (array) , :: core :: convert :: Into :: into (value) , :: core :: convert :: Into :: into (start_index) , :: core :: convert :: Into :: into (count) , :: core :: option :: Option :: None) } } # [doc = "`Equals(crate::system::object::Object)` overload"] fn equals_2 (self , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { let __receiver = < ByteEqualityComparer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ByteEqualityComparer_unity2_raw :: equals_2 (__receiver , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } # [doc = "`GetHashCode()` overload"] fn get_hash_code_2 (self ,) -> i32 { unsafe { let __receiver = < ByteEqualityComparer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ByteEqualityComparer_unity2_raw :: get_hash_code_2 (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ByteEqualityComparer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ByteEqualityComparer_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "system-collections-generic-byteequalitycomparer")]
-impl<__T: IByteEqualityComparer> IByteEqualityComparerMethods for __T {}
+impl < __T : IByteEqualityComparer > IByteEqualityComparerMethods for __T { }
+
+#[cfg(feature = "system-collections-generic-byteequalitycomparer")]
+impl ByteEqualityComparer { pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ByteEqualityComparer_unity2_raw :: __lookup_equals :: get_method_info () } pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ByteEqualityComparer_unity2_raw :: __lookup_get_hash_code :: get_method_info () } pub fn index_of_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ByteEqualityComparer_unity2_raw :: __lookup_index_of :: get_method_info () } pub fn last_index_of_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ByteEqualityComparer_unity2_raw :: __lookup_last_index_of :: get_method_info () } pub fn equals_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ByteEqualityComparer_unity2_raw :: __lookup_equals_2 :: get_method_info () } pub fn get_hash_code_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ByteEqualityComparer_unity2_raw :: __lookup_get_hash_code_2 :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ByteEqualityComparer_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "system-collections-generic-byteequalitycomparer")]
 impl ByteEqualityComparer {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ByteEqualityComparer),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IByteEqualityComparerMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ByteEqualityComparer) , :: core :: stringify ! (new) ,)) ; < Self as IByteEqualityComparerMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "system-collections-generic-byteequalitycomparer")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{ByteEqualityComparer, IByteEqualityComparer, IByteEqualityComparerMethods};
-    #[cfg(feature = "system-collections-generic-equalitycomparer_1")]
-    pub use crate::system::collections::generic::equalitycomparer_1::IEqualityComparer_1Methods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::system::{collections::generic::equalitycomparer_1::IEqualityComparer_1, object::IObject};
+    pub use super::ByteEqualityComparer;
+    pub use super::IByteEqualityComparer;
+    pub use super::IByteEqualityComparerMethods;
+    pub use crate::system::collections::generic::equalitycomparer_1::IEqualityComparer_1;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-collections-generic-equalitycomparer_1")] pub use crate::system::collections::generic::equalitycomparer_1::IEqualityComparer_1Methods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

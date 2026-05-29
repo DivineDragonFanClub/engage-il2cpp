@@ -2,96 +2,43 @@
 
 #[cfg(feature = "app-debugchapterrecordmenu-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugchapterrecordmenu/DebugChapterRecordMenu.md"))]
-    #[::unity2::class(namespace = "App", name = "DebugChapterRecordMenu")]
-    #[parent(crate::system::object::Object)]
-    pub struct DebugChapterRecordMenu {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugchapterrecordmenu/DebugChapterRecordMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "DebugChapterRecordMenu")] # [parent (crate :: system :: object :: Object)] pub struct DebugChapterRecordMenu {}
+
 }
 
 #[cfg(feature = "app-debugchapterrecordmenu-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-debugchapterrecordmenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __DebugChapterRecordMenu_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugChapterRecordMenu as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DebugChapterRecordMenu as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: DebugChapterRecordMenu, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DebugChapterRecordMenu, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __DebugChapterRecordMenu_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DebugChapterRecordMenu as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DebugChapterRecordMenu as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : DebugChapterRecordMenu , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DebugChapterRecordMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-debugchapterrecordmenu")]
-pub trait IDebugChapterRecordMenuMethods: IDebugChapterRecordMenu {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <DebugChapterRecordMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DebugChapterRecordMenu_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IDebugChapterRecordMenuMethods : IDebugChapterRecordMenu { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DebugChapterRecordMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DebugChapterRecordMenu_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-debugchapterrecordmenu")]
-impl<__T: IDebugChapterRecordMenu> IDebugChapterRecordMenuMethods for __T {}
+impl < __T : IDebugChapterRecordMenu > IDebugChapterRecordMenuMethods for __T { }
+
+#[cfg(feature = "app-debugchapterrecordmenu")]
+impl DebugChapterRecordMenu { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DebugChapterRecordMenu_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-debugchapterrecordmenu")]
 impl DebugChapterRecordMenu {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DebugChapterRecordMenu),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDebugChapterRecordMenuMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DebugChapterRecordMenu) , :: core :: stringify ! (new) ,)) ; < Self as IDebugChapterRecordMenuMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-debugchapterrecordmenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{DebugChapterRecordMenu, IDebugChapterRecordMenu, IDebugChapterRecordMenuMethods};
+    pub use super::DebugChapterRecordMenu;
+    pub use super::IDebugChapterRecordMenu;
+    pub use super::IDebugChapterRecordMenuMethods;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

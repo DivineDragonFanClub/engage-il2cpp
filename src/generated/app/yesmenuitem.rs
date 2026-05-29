@@ -2,138 +2,57 @@
 
 #[cfg(feature = "app-yesmenuitem-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::{
-            basicdialogitem::{BasicDialogItem, IBasicDialogItem},
-            basicdialogitemyes::{BasicDialogItemYes, IBasicDialogItemYes},
-            basicmenuitem::{BasicMenuItem, IBasicMenuItem},
-        },
-        system::object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/yesmenuitem/YesMenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "YesMenuItem")]
-    #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
-    pub struct YesMenuItem {
-        #[offset(112)]
-        #[rename(name = "YesEventHandler")]
-        pub yes_event_handler: crate::system::action::Action,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: basicdialogitem :: { BasicDialogItem , IBasicDialogItem }
+ ;
+ use crate :: app :: basicdialogitemyes :: { BasicDialogItemYes , IBasicDialogItemYes }
+ ;
+ use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/yesmenuitem/YesMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "YesMenuItem")] # [parent (crate :: app :: basicdialogitemyes :: BasicDialogItemYes)] pub struct YesMenuItem {
+# [offset (112)] # [rename (name = "YesEventHandler")] pub yes_event_handler : crate :: system :: action :: Action ,
+}
+
 }
 
 #[cfg(feature = "app-yesmenuitem-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-yesmenuitem")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __YesMenuItem_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::action::Action as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<YesMenuItem as ::unity2::ClassIdentity>::class(), ".ctor", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <YesMenuItem as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: YesMenuItem, yes_event_handler: crate::system::action::Action, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(YesMenuItem, crate::system::action::Action, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, yes_event_handler, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_a_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<YesMenuItem as ::unity2::ClassIdentity>::class(), "ACall", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <YesMenuItem as ::unity2::ClassIdentity>::NAME,
-                        "ACall",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn a_call(this: YesMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(YesMenuItem, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
-            ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __YesMenuItem_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: action :: Action as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< YesMenuItem as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < YesMenuItem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : YesMenuItem , yes_event_handler : crate :: system :: action :: Action , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (YesMenuItem , crate :: system :: action :: Action , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , yes_event_handler , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_a_call { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< YesMenuItem as :: unity2 :: ClassIdentity > :: class () , "ACall" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < YesMenuItem as :: unity2 :: ClassIdentity > :: NAME , "ACall" , e) , } } } pub unsafe fn a_call (this : YesMenuItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result { let inner : extern "C" fn (YesMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute (__lookup_a_call :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-yesmenuitem")]
-pub trait IYesMenuItemMethods: IYesMenuItem {
-    #[doc = "`.ctor(crate::system::action::Action)` overload"]
-    fn ctor(self, yes_event_handler: impl ::core::convert::Into<crate::system::action::Action>) -> () {
-        unsafe {
-            let __receiver = <YesMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __YesMenuItem_unity2_raw::ctor(__receiver, ::core::convert::Into::into(yes_event_handler), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ACall()` overload"]
-    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = <YesMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __YesMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IYesMenuItemMethods : IYesMenuItem { # [doc = "`.ctor(crate::system::action::Action)` overload"] fn ctor (self , yes_event_handler : impl :: core :: convert :: Into < crate :: system :: action :: Action >) -> () { unsafe { let __receiver = < YesMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __YesMenuItem_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (yes_event_handler) , :: core :: option :: Option :: None) } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < YesMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __YesMenuItem_unity2_raw :: a_call (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-yesmenuitem")]
-impl<__T: IYesMenuItem> IYesMenuItemMethods for __T {}
+impl < __T : IYesMenuItem > IYesMenuItemMethods for __T { }
+
+#[cfg(feature = "app-yesmenuitem")]
+impl YesMenuItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __YesMenuItem_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __YesMenuItem_unity2_raw :: __lookup_a_call :: get_method_info () } }
 
 #[cfg(feature = "app-yesmenuitem")]
 impl YesMenuItem {
-    #[doc = "`.ctor(crate::system::action::Action)` — overload selector"]
-    pub fn new(yes_event_handler: crate::system::action::Action) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(YesMenuItem), ::core::stringify!(new),));
-        <Self as IYesMenuItemMethods>::ctor(this, yes_event_handler);
-        this
-    }
+# [doc = "`.ctor(crate::system::action::Action)` — overload selector"] pub fn new (yes_event_handler : crate :: system :: action :: Action) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (YesMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IYesMenuItemMethods > :: ctor (this , yes_event_handler) ; this }
 }
 
 #[cfg(feature = "app-yesmenuitem")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IYesMenuItem, IYesMenuItemMethods, YesMenuItem};
-    #[cfg(feature = "app-basicdialogitem")]
-    pub use crate::app::basicdialogitem::IBasicDialogItemMethods;
-    #[cfg(feature = "app-basicdialogitemyes")]
-    pub use crate::app::basicdialogitemyes::IBasicDialogItemYesMethods;
-    #[cfg(feature = "app-basicmenuitem")]
-    pub use crate::app::basicmenuitem::IBasicMenuItemMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::{
-        app::{basicdialogitem::IBasicDialogItem, basicdialogitemyes::IBasicDialogItemYes, basicmenuitem::IBasicMenuItem},
-        system::object::IObject,
-    };
+    pub use super::YesMenuItem;
+    pub use super::IYesMenuItem;
+    pub use super::IYesMenuItemMethods;
+    pub use crate::app::basicdialogitem::IBasicDialogItem;
+    pub use crate::app::basicdialogitemyes::IBasicDialogItemYes;
+    pub use crate::app::basicmenuitem::IBasicMenuItem;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "app-basicdialogitem")] pub use crate::app::basicdialogitem::IBasicDialogItemMethods;
+    #[cfg(feature = "app-basicdialogitemyes")] pub use crate::app::basicdialogitemyes::IBasicDialogItemYesMethods;
+    #[cfg(feature = "app-basicmenuitem")] pub use crate::app::basicmenuitem::IBasicMenuItemMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

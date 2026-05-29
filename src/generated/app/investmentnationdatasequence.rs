@@ -2,776 +2,147 @@
 
 #[cfg(feature = "app-investmentnationdatasequence-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::{
-            procinst::{IProcInst, ProcInst},
-            singletonprocinst_1::{ISingletonProcInst_1, SingletonProcInst_1},
-        },
-        system::{
-            delegate::{Delegate, IDelegate},
-            multicastdelegate::{IMulticastDelegate, MulticastDelegate},
-            object::{IObject, Object},
-            r#enum::{Enum, IEnum},
-            valuetype::{IValueType, ValueType},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/investmentnationdatasequence/InvestmentNationDataSequence_DecideEventHandler.md"))]
-    #[::unity2::class(namespace = "App", name = "InvestmentNationDataSequence.DecideEventHandler")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct InvestmentNationDataSequence_DecideEventHandler {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: procinst :: { IProcInst , ProcInst }
+ ;
+ use crate :: app :: singletonprocinst_1 :: { ISingletonProcInst_1 , SingletonProcInst_1 }
+ ;
+ use crate :: system :: delegate :: { Delegate , IDelegate }
+ ;
+ use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/investmentnationdatasequence/InvestmentNationDataSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "InvestmentNationDataSequence")]
-    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: investmentnationdatasequence :: InvestmentNationDataSequence >)]
-    pub struct InvestmentNationDataSequence {
-        #[static_field]
-        #[rename(name = "ResNameC")]
-        pub res_name_c: ::unity2::Il2CppString,
-        #[offset(120)]
-        #[rename(name = "m_window")]
-        pub m_window: crate::app::investmentnationdatamenu::InvestmentNationDataMenu,
-        #[static_field]
-        #[rename(name = "m_nationIndex")]
-        pub m_nation_index: i32,
-    }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/investmentnationdatasequence/InvestmentNationDataSequence_Label2.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct InvestmentNationDataSequence_Label2 {
-        pub value: i32,
-    }
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/investmentnationdatasequence/InvestmentNationDataSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "InvestmentNationDataSequence")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: investmentnationdatasequence :: InvestmentNationDataSequence >)] pub struct InvestmentNationDataSequence {
+# [static_field] # [rename (name = "ResNameC")] pub res_name_c : :: unity2 :: Il2CppString ,
+# [offset (120)] # [rename (name = "m_window")] pub m_window : crate :: app :: investmentnationdatamenu :: InvestmentNationDataMenu ,
+# [static_field] # [rename (name = "m_nationIndex")] pub m_nation_index : i32 ,
+}
 
-    impl ::unity2::ClassIdentity for InvestmentNationDataSequence_Label2 {
-        const NAME: &'static str = "InvestmentNationDataSequence.Label2";
-        const NAMESPACE: &'static str = "App";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/investmentnationdatasequence/InvestmentNationDataSequence_Label2.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct InvestmentNationDataSequence_Label2  {
+    pub value: i32,
+}
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+
+impl  ::unity2::ClassIdentity for InvestmentNationDataSequence_Label2  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "InvestmentNationDataSequence.Label2";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for InvestmentNationDataSequence_Label2 {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  ::unity2::IlType for InvestmentNationDataSequence_Label2  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl InvestmentNationDataSequence_Label2 {
-        pub fn entry() -> Self {
-            Self { value: 0 }
-        }
+}
 
-        pub fn end() -> Self {
-            Self { value: 1 }
-        }
+
+impl  InvestmentNationDataSequence_Label2  {
+    pub fn entry() -> Self {
+        Self { value: 0 }
+
     }
+
+
+    pub fn end() -> Self {
+        Self { value: 1 }
+
+    }
+
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/investmentnationdatasequence/InvestmentNationDataSequence_DecideEventHandler.md"))] # [:: unity2 :: class (namespace = "App" , name = "InvestmentNationDataSequence.DecideEventHandler")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct InvestmentNationDataSequence_DecideEventHandler {}
+
 }
 
 #[cfg(feature = "app-investmentnationdatasequence-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-investmentnationdatasequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __InvestmentNationDataSequence_DecideEventHandler_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InvestmentNationDataSequence_DecideEventHandler as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InvestmentNationDataSequence_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: InvestmentNationDataSequence_DecideEventHandler,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            InvestmentNationDataSequence_DecideEventHandler,
-            crate::system::object::Object,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InvestmentNationDataSequence_DecideEventHandler as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InvestmentNationDataSequence_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
-                        "Invoke",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn invoke(this: InvestmentNationDataSequence_DecideEventHandler, index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(InvestmentNationDataSequence_DecideEventHandler, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
-        inner(this, index, __unity2_method_info)
-    }
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __InvestmentNationDataSequence_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_m_decide_event_handler { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InvestmentNationDataSequence as :: unity2 :: ClassIdentity > :: class () , "get_m_DecideEventHandler" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InvestmentNationDataSequence as :: unity2 :: ClassIdentity > :: NAME , "get_m_DecideEventHandler" , e) , } } } pub unsafe fn get_m_decide_event_handler (this : InvestmentNationDataSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: investmentnationdatasequence :: InvestmentNationDataSequence_DecideEventHandler { let inner : extern "C" fn (InvestmentNationDataSequence , :: unity2 :: OptionalMethod ,) -> crate :: app :: investmentnationdatasequence :: InvestmentNationDataSequence_DecideEventHandler = :: core :: mem :: transmute (__lookup_get_m_decide_event_handler :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_m_decide_event_handler { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: investmentnationdatasequence :: InvestmentNationDataSequence_DecideEventHandler as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InvestmentNationDataSequence as :: unity2 :: ClassIdentity > :: class () , "set_m_DecideEventHandler" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InvestmentNationDataSequence as :: unity2 :: ClassIdentity > :: NAME , "set_m_DecideEventHandler" , e) , } } } pub unsafe fn set_m_decide_event_handler (this : InvestmentNationDataSequence , value : crate :: app :: investmentnationdatasequence :: InvestmentNationDataSequence_DecideEventHandler , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (InvestmentNationDataSequence , crate :: app :: investmentnationdatasequence :: InvestmentNationDataSequence_DecideEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_m_decide_event_handler :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_bind { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: app :: investmentnationdatasequence :: InvestmentNationDataSequence_DecideEventHandler as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InvestmentNationDataSequence as :: unity2 :: ClassIdentity > :: class () , "CreateBind" , 3 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InvestmentNationDataSequence as :: unity2 :: ClassIdentity > :: NAME , "CreateBind" , e) , } } } pub unsafe fn create_bind (super_ : crate :: app :: procinst :: ProcInst , nation_index : i32 , event_handler : crate :: app :: investmentnationdatasequence :: InvestmentNationDataSequence_DecideEventHandler , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , i32 , crate :: app :: investmentnationdatasequence :: InvestmentNationDataSequence_DecideEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create_bind :: get_method_info () . method_ptr ,) ; inner (super_ , nation_index , event_handler , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: investmentnationdatasequence :: InvestmentNationDataSequence_DecideEventHandler as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InvestmentNationDataSequence as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InvestmentNationDataSequence as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : InvestmentNationDataSequence , event_handler : crate :: app :: investmentnationdatasequence :: InvestmentNationDataSequence_DecideEventHandler , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (InvestmentNationDataSequence , crate :: app :: investmentnationdatasequence :: InvestmentNationDataSequence_DecideEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , event_handler , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_desc { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InvestmentNationDataSequence as :: unity2 :: ClassIdentity > :: class () , "CreateDesc" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InvestmentNationDataSequence as :: unity2 :: ClassIdentity > :: NAME , "CreateDesc" , e) , } } } pub unsafe fn create_desc (this : InvestmentNationDataSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > { let inner : extern "C" fn (InvestmentNationDataSequence , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > = :: core :: mem :: transmute (__lookup_create_desc :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_load_res { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InvestmentNationDataSequence as :: unity2 :: ClassIdentity > :: class () , "LoadRes" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InvestmentNationDataSequence as :: unity2 :: ClassIdentity > :: NAME , "LoadRes" , e) , } } } pub unsafe fn load_res (this : InvestmentNationDataSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (InvestmentNationDataSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_load_res :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_open { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InvestmentNationDataSequence as :: unity2 :: ClassIdentity > :: class () , "Open" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InvestmentNationDataSequence as :: unity2 :: ClassIdentity > :: NAME , "Open" , e) , } } } pub unsafe fn open (this : InvestmentNationDataSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (InvestmentNationDataSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_open :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_close_event { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InvestmentNationDataSequence as :: unity2 :: ClassIdentity > :: class () , "CloseEvent" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InvestmentNationDataSequence as :: unity2 :: ClassIdentity > :: NAME , "CloseEvent" , e) , } } } pub unsafe fn close_event (this : InvestmentNationDataSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (InvestmentNationDataSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_close_event :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_closed { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InvestmentNationDataSequence as :: unity2 :: ClassIdentity > :: class () , "IsClosed" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InvestmentNationDataSequence as :: unity2 :: ClassIdentity > :: NAME , "IsClosed" , e) , } } } pub unsafe fn is_closed (this : InvestmentNationDataSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (InvestmentNationDataSequence , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_closed :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_close { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InvestmentNationDataSequence as :: unity2 :: ClassIdentity > :: class () , "Close" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InvestmentNationDataSequence as :: unity2 :: ClassIdentity > :: NAME , "Close" , e) , } } } pub unsafe fn close (this : InvestmentNationDataSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (InvestmentNationDataSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_close :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InvestmentNationDataSequence as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InvestmentNationDataSequence as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
+
+#[cfg(feature = "app-investmentnationdatasequence")]
+impl InvestmentNationDataSequence { # [doc = "`CreateBind(crate::app::procinst::ProcInst, i32, crate::app::investmentnationdatasequence::InvestmentNationDataSequence_DecideEventHandler)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , nation_index : impl :: core :: convert :: Into < i32 > , event_handler : impl :: core :: convert :: Into < crate :: app :: investmentnationdatasequence :: InvestmentNationDataSequence_DecideEventHandler >) -> () { unsafe { __InvestmentNationDataSequence_unity2_raw :: create_bind (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (nation_index) , :: core :: convert :: Into :: into (event_handler) , :: core :: option :: Option :: None) } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { __InvestmentNationDataSequence_unity2_raw :: cctor (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-investmentnationdatasequence")]
+pub trait IInvestmentNationDataSequenceMethods : IInvestmentNationDataSequence { # [doc = "`get_m_DecideEventHandler()` overload"] fn get_m_decide_event_handler (self ,) -> crate :: app :: investmentnationdatasequence :: InvestmentNationDataSequence_DecideEventHandler { unsafe { let __receiver = < InvestmentNationDataSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __InvestmentNationDataSequence_unity2_raw :: get_m_decide_event_handler (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_m_DecideEventHandler(crate::app::investmentnationdatasequence::InvestmentNationDataSequence_DecideEventHandler)` overload"] fn set_m_decide_event_handler (self , value : impl :: core :: convert :: Into < crate :: app :: investmentnationdatasequence :: InvestmentNationDataSequence_DecideEventHandler >) -> () { unsafe { let __receiver = < InvestmentNationDataSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __InvestmentNationDataSequence_unity2_raw :: set_m_decide_event_handler (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`.ctor(crate::app::investmentnationdatasequence::InvestmentNationDataSequence_DecideEventHandler)` overload"] fn ctor (self , event_handler : impl :: core :: convert :: Into < crate :: app :: investmentnationdatasequence :: InvestmentNationDataSequence_DecideEventHandler >) -> () { unsafe { let __receiver = < InvestmentNationDataSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __InvestmentNationDataSequence_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (event_handler) , :: core :: option :: Option :: None) } } # [doc = "`CreateDesc()` overload"] fn create_desc (self ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > { unsafe { let __receiver = < InvestmentNationDataSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __InvestmentNationDataSequence_unity2_raw :: create_desc (__receiver , :: core :: option :: Option :: None) } } # [doc = "`LoadRes()` overload"] fn load_res (self ,) -> () { unsafe { let __receiver = < InvestmentNationDataSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __InvestmentNationDataSequence_unity2_raw :: load_res (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Open()` overload"] fn open (self ,) -> () { unsafe { let __receiver = < InvestmentNationDataSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __InvestmentNationDataSequence_unity2_raw :: open (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CloseEvent()` overload"] fn close_event (self ,) -> () { unsafe { let __receiver = < InvestmentNationDataSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __InvestmentNationDataSequence_unity2_raw :: close_event (__receiver , :: core :: option :: Option :: None) } } # [doc = "`IsClosed()` overload"] fn is_closed (self ,) -> bool { unsafe { let __receiver = < InvestmentNationDataSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __InvestmentNationDataSequence_unity2_raw :: is_closed (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Close()` overload"] fn close (self ,) -> () { unsafe { let __receiver = < InvestmentNationDataSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __InvestmentNationDataSequence_unity2_raw :: close (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-investmentnationdatasequence")]
+impl < __T : IInvestmentNationDataSequence > IInvestmentNationDataSequenceMethods for __T { }
+
+#[cfg(feature = "app-investmentnationdatasequence")]
+impl InvestmentNationDataSequence { pub fn get_m_decide_event_handler_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InvestmentNationDataSequence_unity2_raw :: __lookup_get_m_decide_event_handler :: get_method_info () } pub fn set_m_decide_event_handler_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InvestmentNationDataSequence_unity2_raw :: __lookup_set_m_decide_event_handler :: get_method_info () } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InvestmentNationDataSequence_unity2_raw :: __lookup_create_bind :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InvestmentNationDataSequence_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn create_desc_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InvestmentNationDataSequence_unity2_raw :: __lookup_create_desc :: get_method_info () } pub fn load_res_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InvestmentNationDataSequence_unity2_raw :: __lookup_load_res :: get_method_info () } pub fn open_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InvestmentNationDataSequence_unity2_raw :: __lookup_open :: get_method_info () } pub fn close_event_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InvestmentNationDataSequence_unity2_raw :: __lookup_close_event :: get_method_info () } pub fn is_closed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InvestmentNationDataSequence_unity2_raw :: __lookup_is_closed :: get_method_info () } pub fn close_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InvestmentNationDataSequence_unity2_raw :: __lookup_close :: get_method_info () } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InvestmentNationDataSequence_unity2_raw :: __lookup_cctor :: get_method_info () } }
+
+#[cfg(feature = "app-investmentnationdatasequence")]
+impl InvestmentNationDataSequence {
+# [doc = "`.ctor(crate::app::investmentnationdatasequence::InvestmentNationDataSequence_DecideEventHandler)` — overload selector"] pub fn new (event_handler : crate :: app :: investmentnationdatasequence :: InvestmentNationDataSequence_DecideEventHandler) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (InvestmentNationDataSequence) , :: core :: stringify ! (new) ,)) ; < Self as IInvestmentNationDataSequenceMethods > :: ctor (this , event_handler) ; this }
 }
 
 #[cfg(feature = "app-investmentnationdatasequence")]
-pub trait IInvestmentNationDataSequence_DecideEventHandlerMethods: IInvestmentNationDataSequence_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
-        unsafe {
-            let __receiver = <InvestmentNationDataSequence_DecideEventHandler as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __InvestmentNationDataSequence_DecideEventHandler_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invoke(i32)` overload"]
-    fn invoke(self, index: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver = <InvestmentNationDataSequence_DecideEventHandler as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __InvestmentNationDataSequence_DecideEventHandler_unity2_raw::invoke(
-                __receiver,
-                ::core::convert::Into::into(index),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __InvestmentNationDataSequence_DecideEventHandler_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type () , < :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InvestmentNationDataSequence_DecideEventHandler as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InvestmentNationDataSequence_DecideEventHandler as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : InvestmentNationDataSequence_DecideEventHandler , object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (InvestmentNationDataSequence_DecideEventHandler , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , object , method , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_invoke { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InvestmentNationDataSequence_DecideEventHandler as :: unity2 :: ClassIdentity > :: class () , "Invoke" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InvestmentNationDataSequence_DecideEventHandler as :: unity2 :: ClassIdentity > :: NAME , "Invoke" , e) , } } } pub unsafe fn invoke (this : InvestmentNationDataSequence_DecideEventHandler , index : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (InvestmentNationDataSequence_DecideEventHandler , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_invoke :: get_method_info () . method_ptr ,) ; inner (this , index , __unity2_method_info) } }
 
 #[cfg(feature = "app-investmentnationdatasequence")]
-impl<__T: IInvestmentNationDataSequence_DecideEventHandler> IInvestmentNationDataSequence_DecideEventHandlerMethods for __T {}
+pub trait IInvestmentNationDataSequence_DecideEventHandlerMethods : IInvestmentNationDataSequence_DecideEventHandler { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < InvestmentNationDataSequence_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __InvestmentNationDataSequence_DecideEventHandler_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } # [doc = "`Invoke(i32)` overload"] fn invoke (self , index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < InvestmentNationDataSequence_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __InvestmentNationDataSequence_DecideEventHandler_unity2_raw :: invoke (__receiver , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-investmentnationdatasequence")]
+impl < __T : IInvestmentNationDataSequence_DecideEventHandler > IInvestmentNationDataSequence_DecideEventHandlerMethods for __T { }
+
+#[cfg(feature = "app-investmentnationdatasequence")]
+impl InvestmentNationDataSequence_DecideEventHandler { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InvestmentNationDataSequence_DecideEventHandler_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InvestmentNationDataSequence_DecideEventHandler_unity2_raw :: __lookup_invoke :: get_method_info () } }
 
 #[cfg(feature = "app-investmentnationdatasequence")]
 impl InvestmentNationDataSequence_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(InvestmentNationDataSequence_DecideEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IInvestmentNationDataSequence_DecideEventHandlerMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-#[cfg(feature = "app-investmentnationdatasequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __InvestmentNationDataSequence_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_m_decide_event_handler {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InvestmentNationDataSequence as ::unity2::ClassIdentity>::class(),
-                "get_m_DecideEventHandler",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InvestmentNationDataSequence as ::unity2::ClassIdentity>::NAME,
-                        "get_m_DecideEventHandler",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_m_decide_event_handler(
-        this: InvestmentNationDataSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::investmentnationdatasequence::InvestmentNationDataSequence_DecideEventHandler {
-        let inner: extern "C" fn(
-            InvestmentNationDataSequence,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::investmentnationdatasequence::InvestmentNationDataSequence_DecideEventHandler =
-            ::core::mem::transmute(__lookup_get_m_decide_event_handler::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_m_decide_event_handler {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::investmentnationdatasequence::InvestmentNationDataSequence_DecideEventHandler as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InvestmentNationDataSequence as ::unity2::ClassIdentity>::class(),
-                "set_m_DecideEventHandler",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InvestmentNationDataSequence as ::unity2::ClassIdentity>::NAME,
-                        "set_m_DecideEventHandler",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_m_decide_event_handler(
-        this: InvestmentNationDataSequence,
-        value: crate::app::investmentnationdatasequence::InvestmentNationDataSequence_DecideEventHandler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            InvestmentNationDataSequence,
-            crate::app::investmentnationdatasequence::InvestmentNationDataSequence_DecideEventHandler,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_set_m_decide_event_handler::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <crate::app::investmentnationdatasequence::InvestmentNationDataSequence_DecideEventHandler as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InvestmentNationDataSequence as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InvestmentNationDataSequence as ::unity2::ClassIdentity>::NAME,
-                        "CreateBind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        nation_index: i32,
-        event_handler: crate::app::investmentnationdatasequence::InvestmentNationDataSequence_DecideEventHandler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            i32,
-            crate::app::investmentnationdatasequence::InvestmentNationDataSequence_DecideEventHandler,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
-        inner(super_, nation_index, event_handler, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::investmentnationdatasequence::InvestmentNationDataSequence_DecideEventHandler as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InvestmentNationDataSequence as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InvestmentNationDataSequence as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: InvestmentNationDataSequence,
-        event_handler: crate::app::investmentnationdatasequence::InvestmentNationDataSequence_DecideEventHandler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            InvestmentNationDataSequence,
-            crate::app::investmentnationdatasequence::InvestmentNationDataSequence_DecideEventHandler,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, event_handler, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_desc {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InvestmentNationDataSequence as ::unity2::ClassIdentity>::class(),
-                "CreateDesc",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InvestmentNationDataSequence as ::unity2::ClassIdentity>::NAME,
-                        "CreateDesc",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_desc(
-        this: InvestmentNationDataSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Array<crate::app::procdesc::ProcDesc> {
-        let inner: extern "C" fn(InvestmentNationDataSequence, ::unity2::OptionalMethod) -> ::unity2::Array<crate::app::procdesc::ProcDesc> =
-            ::core::mem::transmute(__lookup_create_desc::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_load_res {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InvestmentNationDataSequence as ::unity2::ClassIdentity>::class(),
-                "LoadRes",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InvestmentNationDataSequence as ::unity2::ClassIdentity>::NAME,
-                        "LoadRes",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn load_res(this: InvestmentNationDataSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(InvestmentNationDataSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_load_res::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_open {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InvestmentNationDataSequence as ::unity2::ClassIdentity>::class(),
-                "Open",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InvestmentNationDataSequence as ::unity2::ClassIdentity>::NAME,
-                        "Open",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn open(this: InvestmentNationDataSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(InvestmentNationDataSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_open::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_close_event {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InvestmentNationDataSequence as ::unity2::ClassIdentity>::class(),
-                "CloseEvent",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InvestmentNationDataSequence as ::unity2::ClassIdentity>::NAME,
-                        "CloseEvent",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn close_event(this: InvestmentNationDataSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(InvestmentNationDataSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_close_event::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_closed {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InvestmentNationDataSequence as ::unity2::ClassIdentity>::class(),
-                "IsClosed",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InvestmentNationDataSequence as ::unity2::ClassIdentity>::NAME,
-                        "IsClosed",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_closed(this: InvestmentNationDataSequence, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(InvestmentNationDataSequence, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_closed::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_close {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InvestmentNationDataSequence as ::unity2::ClassIdentity>::class(),
-                "Close",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InvestmentNationDataSequence as ::unity2::ClassIdentity>::NAME,
-                        "Close",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn close(this: InvestmentNationDataSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(InvestmentNationDataSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_close::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InvestmentNationDataSequence as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InvestmentNationDataSequence as ::unity2::ClassIdentity>::NAME,
-                        ".cctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-investmentnationdatasequence")]
-impl InvestmentNationDataSequence {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, i32, crate::app::investmentnationdatasequence::InvestmentNationDataSequence_DecideEventHandler)` overload"]
-    pub fn create_bind(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        nation_index: impl ::core::convert::Into<i32>,
-        event_handler: impl ::core::convert::Into<crate::app::investmentnationdatasequence::InvestmentNationDataSequence_DecideEventHandler>,
-    ) -> () {
-        unsafe {
-            __InvestmentNationDataSequence_unity2_raw::create_bind(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(nation_index),
-                ::core::convert::Into::into(event_handler),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __InvestmentNationDataSequence_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-investmentnationdatasequence")]
-pub trait IInvestmentNationDataSequenceMethods: IInvestmentNationDataSequence {
-    #[doc = "`get_m_DecideEventHandler()` overload"]
-    fn get_m_decide_event_handler(self) -> crate::app::investmentnationdatasequence::InvestmentNationDataSequence_DecideEventHandler {
-        unsafe {
-            let __receiver =
-                <InvestmentNationDataSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InvestmentNationDataSequence_unity2_raw::get_m_decide_event_handler(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_m_DecideEventHandler(crate::app::investmentnationdatasequence::InvestmentNationDataSequence_DecideEventHandler)` overload"]
-    fn set_m_decide_event_handler(
-        self,
-        value: impl ::core::convert::Into<crate::app::investmentnationdatasequence::InvestmentNationDataSequence_DecideEventHandler>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <InvestmentNationDataSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InvestmentNationDataSequence_unity2_raw::set_m_decide_event_handler(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor(crate::app::investmentnationdatasequence::InvestmentNationDataSequence_DecideEventHandler)` overload"]
-    fn ctor(
-        self,
-        event_handler: impl ::core::convert::Into<crate::app::investmentnationdatasequence::InvestmentNationDataSequence_DecideEventHandler>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <InvestmentNationDataSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InvestmentNationDataSequence_unity2_raw::ctor(__receiver, ::core::convert::Into::into(event_handler), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CreateDesc()` overload"]
-    fn create_desc(self) -> ::unity2::Array<crate::app::procdesc::ProcDesc> {
-        unsafe {
-            let __receiver =
-                <InvestmentNationDataSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InvestmentNationDataSequence_unity2_raw::create_desc(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`LoadRes()` overload"]
-    fn load_res(self) -> () {
-        unsafe {
-            let __receiver =
-                <InvestmentNationDataSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InvestmentNationDataSequence_unity2_raw::load_res(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Open()` overload"]
-    fn open(self) -> () {
-        unsafe {
-            let __receiver =
-                <InvestmentNationDataSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InvestmentNationDataSequence_unity2_raw::open(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CloseEvent()` overload"]
-    fn close_event(self) -> () {
-        unsafe {
-            let __receiver =
-                <InvestmentNationDataSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InvestmentNationDataSequence_unity2_raw::close_event(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsClosed()` overload"]
-    fn is_closed(self) -> bool {
-        unsafe {
-            let __receiver =
-                <InvestmentNationDataSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InvestmentNationDataSequence_unity2_raw::is_closed(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Close()` overload"]
-    fn close(self) -> () {
-        unsafe {
-            let __receiver =
-                <InvestmentNationDataSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InvestmentNationDataSequence_unity2_raw::close(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-investmentnationdatasequence")]
-impl<__T: IInvestmentNationDataSequence> IInvestmentNationDataSequenceMethods for __T {}
-
-#[cfg(feature = "app-investmentnationdatasequence")]
-impl InvestmentNationDataSequence {
-    #[doc = "`.ctor(crate::app::investmentnationdatasequence::InvestmentNationDataSequence_DecideEventHandler)` — overload selector"]
-    pub fn new(event_handler: crate::app::investmentnationdatasequence::InvestmentNationDataSequence_DecideEventHandler) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(InvestmentNationDataSequence),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IInvestmentNationDataSequenceMethods>::ctor(this, event_handler);
-        this
-    }
+# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (InvestmentNationDataSequence_DecideEventHandler) , :: core :: stringify ! (new) ,)) ; < Self as IInvestmentNationDataSequence_DecideEventHandlerMethods > :: ctor (this , object , method) ; this }
 }
 
 #[cfg(feature = "app-investmentnationdatasequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{
-        IInvestmentNationDataSequence, IInvestmentNationDataSequenceMethods, IInvestmentNationDataSequence_DecideEventHandler,
-        IInvestmentNationDataSequence_DecideEventHandlerMethods, InvestmentNationDataSequence, InvestmentNationDataSequence_DecideEventHandler,
-        InvestmentNationDataSequence_Label2,
-    };
-    #[cfg(feature = "app-procinst")]
-    pub use crate::app::procinst::IProcInstMethods;
-    #[cfg(feature = "app-singletonprocinst_1")]
-    pub use crate::app::singletonprocinst_1::ISingletonProcInst_1Methods;
-    #[cfg(feature = "system-delegate")]
-    pub use crate::system::delegate::IDelegateMethods;
-    #[cfg(feature = "system-multicastdelegate")]
-    pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::{
-        app::{procinst::IProcInst, singletonprocinst_1::ISingletonProcInst_1},
-        system::{delegate::IDelegate, multicastdelegate::IMulticastDelegate, object::IObject, r#enum::IEnum, valuetype::IValueType},
-    };
+    pub use super::InvestmentNationDataSequence;
+    pub use super::IInvestmentNationDataSequence;
+    pub use super::IInvestmentNationDataSequenceMethods;
+    pub use super::InvestmentNationDataSequence_Label2;
+    pub use super::InvestmentNationDataSequence_DecideEventHandler;
+    pub use super::IInvestmentNationDataSequence_DecideEventHandler;
+    pub use super::IInvestmentNationDataSequence_DecideEventHandlerMethods;
+    pub use crate::app::procinst::IProcInst;
+    pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
+    pub use crate::system::delegate::IDelegate;
+    pub use crate::system::multicastdelegate::IMulticastDelegate;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "app-procinst")] pub use crate::app::procinst::IProcInstMethods;
+    #[cfg(feature = "app-singletonprocinst_1")] pub use crate::app::singletonprocinst_1::ISingletonProcInst_1Methods;
+    #[cfg(feature = "system-delegate")] pub use crate::system::delegate::IDelegateMethods;
+    #[cfg(feature = "system-multicastdelegate")] pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

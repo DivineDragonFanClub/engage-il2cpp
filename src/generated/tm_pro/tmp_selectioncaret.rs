@@ -2,225 +2,71 @@
 
 #[cfg(feature = "tm_pro-tmp_selectioncaret-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            event_systems::uibehaviour::{IUIBehaviour, UIBehaviour},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-            ui::{
-                graphic::{Graphic, IGraphic},
-                maskablegraphic::{IMaskableGraphic, MaskableGraphic},
-            },
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_selectioncaret/TMP_SelectionCaret.md"))]
-    #[::unity2::class(namespace = "TMPro", name = "TMP_SelectionCaret")]
-    #[parent(crate::unity_engine::ui::maskablegraphic::MaskableGraphic)]
-    pub struct TMP_SelectionCaret {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: event_systems :: uibehaviour :: { IUIBehaviour , UIBehaviour }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+ use crate :: unity_engine :: ui :: graphic :: { Graphic , IGraphic }
+ ;
+ use crate :: unity_engine :: ui :: maskablegraphic :: { IMaskableGraphic , MaskableGraphic }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_selectioncaret/TMP_SelectionCaret.md"))] # [:: unity2 :: class (namespace = "TMPro" , name = "TMP_SelectionCaret")] # [parent (crate :: unity_engine :: ui :: maskablegraphic :: MaskableGraphic)] pub struct TMP_SelectionCaret {}
+
 }
 
 #[cfg(feature = "tm_pro-tmp_selectioncaret-types")]
 pub use __types::*;
 
 #[cfg(feature = "tm_pro-tmp_selectioncaret")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __TMP_SelectionCaret_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cull {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TMP_SelectionCaret as ::unity2::ClassIdentity>::class(),
-                "Cull",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TMP_SelectionCaret as ::unity2::ClassIdentity>::NAME,
-                        "Cull",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cull(
-        this: TMP_SelectionCaret,
-        clip_rect: crate::unity_engine::rect::Rect,
-        valid_rect: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(TMP_SelectionCaret, crate::unity_engine::rect::Rect, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_cull::get_method_info().method_ptr);
-        inner(this, clip_rect, valid_rect, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update_geometry {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TMP_SelectionCaret as ::unity2::ClassIdentity>::class(),
-                "UpdateGeometry",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TMP_SelectionCaret as ::unity2::ClassIdentity>::NAME,
-                        "UpdateGeometry",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update_geometry(this: TMP_SelectionCaret, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TMP_SelectionCaret, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update_geometry::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TMP_SelectionCaret as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TMP_SelectionCaret as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: TMP_SelectionCaret, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TMP_SelectionCaret, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __TMP_SelectionCaret_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cull { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rect :: Rect as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TMP_SelectionCaret as :: unity2 :: ClassIdentity > :: class () , "Cull" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TMP_SelectionCaret as :: unity2 :: ClassIdentity > :: NAME , "Cull" , e) , } } } pub unsafe fn cull (this : TMP_SelectionCaret , clip_rect : crate :: unity_engine :: rect :: Rect , valid_rect : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TMP_SelectionCaret , crate :: unity_engine :: rect :: Rect , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cull :: get_method_info () . method_ptr ,) ; inner (this , clip_rect , valid_rect , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update_geometry { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TMP_SelectionCaret as :: unity2 :: ClassIdentity > :: class () , "UpdateGeometry" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TMP_SelectionCaret as :: unity2 :: ClassIdentity > :: NAME , "UpdateGeometry" , e) , } } } pub unsafe fn update_geometry (this : TMP_SelectionCaret , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TMP_SelectionCaret , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update_geometry :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TMP_SelectionCaret as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TMP_SelectionCaret as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : TMP_SelectionCaret , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TMP_SelectionCaret , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "tm_pro-tmp_selectioncaret")]
-pub trait ITMP_SelectionCaretMethods: ITMP_SelectionCaret {
-    #[doc = "`Cull(crate::unity_engine::rect::Rect, bool)` overload"]
-    fn cull(self, clip_rect: impl ::core::convert::Into<crate::unity_engine::rect::Rect>, valid_rect: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver = <TMP_SelectionCaret as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TMP_SelectionCaret_unity2_raw::cull(
-                __receiver,
-                ::core::convert::Into::into(clip_rect),
-                ::core::convert::Into::into(valid_rect),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`UpdateGeometry()` overload"]
-    fn update_geometry(self) -> () {
-        unsafe {
-            let __receiver = <TMP_SelectionCaret as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TMP_SelectionCaret_unity2_raw::update_geometry(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <TMP_SelectionCaret as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TMP_SelectionCaret_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait ITMP_SelectionCaretMethods : ITMP_SelectionCaret { # [doc = "`Cull(crate::unity_engine::rect::Rect, bool)` overload"] fn cull (self , clip_rect : impl :: core :: convert :: Into < crate :: unity_engine :: rect :: Rect > , valid_rect : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < TMP_SelectionCaret as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TMP_SelectionCaret_unity2_raw :: cull (__receiver , :: core :: convert :: Into :: into (clip_rect) , :: core :: convert :: Into :: into (valid_rect) , :: core :: option :: Option :: None) } } # [doc = "`UpdateGeometry()` overload"] fn update_geometry (self ,) -> () { unsafe { let __receiver = < TMP_SelectionCaret as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TMP_SelectionCaret_unity2_raw :: update_geometry (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TMP_SelectionCaret as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TMP_SelectionCaret_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "tm_pro-tmp_selectioncaret")]
-impl<__T: ITMP_SelectionCaret> ITMP_SelectionCaretMethods for __T {}
+impl < __T : ITMP_SelectionCaret > ITMP_SelectionCaretMethods for __T { }
+
+#[cfg(feature = "tm_pro-tmp_selectioncaret")]
+impl TMP_SelectionCaret { pub fn cull_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TMP_SelectionCaret_unity2_raw :: __lookup_cull :: get_method_info () } pub fn update_geometry_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TMP_SelectionCaret_unity2_raw :: __lookup_update_geometry :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TMP_SelectionCaret_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "tm_pro-tmp_selectioncaret")]
 impl TMP_SelectionCaret {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TMP_SelectionCaret),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITMP_SelectionCaretMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TMP_SelectionCaret) , :: core :: stringify ! (new) ,)) ; < Self as ITMP_SelectionCaretMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "tm_pro-tmp_selectioncaret")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{ITMP_SelectionCaret, ITMP_SelectionCaretMethods, TMP_SelectionCaret};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-event_systems-uibehaviour")]
-    pub use crate::unity_engine::event_systems::uibehaviour::IUIBehaviourMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    #[cfg(feature = "unity_engine-ui-graphic")]
-    pub use crate::unity_engine::ui::graphic::IGraphicMethods;
-    #[cfg(feature = "unity_engine-ui-maskablegraphic")]
-    pub use crate::unity_engine::ui::maskablegraphic::IMaskableGraphicMethods;
-    pub use crate::{
-        system::object::IObject,
-        unity_engine::{
-            behaviour::IBehaviour,
-            component::IComponent,
-            event_systems::uibehaviour::IUIBehaviour,
-            monobehaviour::IMonoBehaviour,
-            object_2::IObject_2,
-            ui::{graphic::IGraphic, maskablegraphic::IMaskableGraphic},
-        },
-    };
+    pub use super::TMP_SelectionCaret;
+    pub use super::ITMP_SelectionCaret;
+    pub use super::ITMP_SelectionCaretMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::event_systems::uibehaviour::IUIBehaviour;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    pub use crate::unity_engine::ui::graphic::IGraphic;
+    pub use crate::unity_engine::ui::maskablegraphic::IMaskableGraphic;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-event_systems-uibehaviour")] pub use crate::unity_engine::event_systems::uibehaviour::IUIBehaviourMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
+    #[cfg(feature = "unity_engine-ui-graphic")] pub use crate::unity_engine::ui::graphic::IGraphicMethods;
+    #[cfg(feature = "unity_engine-ui-maskablegraphic")] pub use crate::unity_engine::ui::maskablegraphic::IMaskableGraphicMethods;
 }

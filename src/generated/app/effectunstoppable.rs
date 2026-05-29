@@ -2,213 +2,66 @@
 
 #[cfg(feature = "app-effectunstoppable-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/effectunstoppable/EffectUnstoppable.md"))]
-    #[::unity2::class(namespace = "App", name = "EffectUnstoppable")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct EffectUnstoppable {
-        #[offset(24)]
-        #[rename(name = "m_Threshold")]
-        pub m_threshold: f32,
-        #[offset(28)]
-        #[rename(name = "m_Position")]
-        pub m_position: crate::unity_engine::vector3::Vector3,
-        #[offset(40)]
-        #[rename(name = "m_ParticleSystem")]
-        pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
-        #[offset(48)]
-        #[rename(name = "m_IsStopped")]
-        pub m_is_stopped: bool,
-        #[offset(56)]
-        #[rename(name = "m_StartSound")]
-        pub m_start_sound: ::unity2::Il2CppString,
-        #[offset(64)]
-        #[rename(name = "m_StopSound")]
-        pub m_stop_sound: ::unity2::Il2CppString,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/effectunstoppable/EffectUnstoppable.md"))] # [:: unity2 :: class (namespace = "App" , name = "EffectUnstoppable")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct EffectUnstoppable {
+# [offset (24)] # [rename (name = "m_Threshold")] pub m_threshold : f32 ,
+# [offset (28)] # [rename (name = "m_Position")] pub m_position : crate :: unity_engine :: vector3 :: Vector3 ,
+# [offset (40)] # [rename (name = "m_ParticleSystem")] pub m_particle_system : crate :: unity_engine :: particlesystem :: ParticleSystem ,
+# [offset (48)] # [rename (name = "m_IsStopped")] pub m_is_stopped : bool ,
+# [offset (56)] # [rename (name = "m_StartSound")] pub m_start_sound : :: unity2 :: Il2CppString ,
+# [offset (64)] # [rename (name = "m_StopSound")] pub m_stop_sound : :: unity2 :: Il2CppString ,
+}
+
 }
 
 #[cfg(feature = "app-effectunstoppable-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-effectunstoppable")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __EffectUnstoppable_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_start {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EffectUnstoppable as ::unity2::ClassIdentity>::class(),
-                "Start",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <EffectUnstoppable as ::unity2::ClassIdentity>::NAME,
-                        "Start",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn start(this: EffectUnstoppable, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(EffectUnstoppable, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_start::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_late_update {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EffectUnstoppable as ::unity2::ClassIdentity>::class(),
-                "LateUpdate",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <EffectUnstoppable as ::unity2::ClassIdentity>::NAME,
-                        "LateUpdate",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn late_update(this: EffectUnstoppable, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(EffectUnstoppable, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_late_update::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EffectUnstoppable as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <EffectUnstoppable as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: EffectUnstoppable, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(EffectUnstoppable, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __EffectUnstoppable_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_start { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< EffectUnstoppable as :: unity2 :: ClassIdentity > :: class () , "Start" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < EffectUnstoppable as :: unity2 :: ClassIdentity > :: NAME , "Start" , e) , } } } pub unsafe fn start (this : EffectUnstoppable , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (EffectUnstoppable , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_start :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_late_update { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< EffectUnstoppable as :: unity2 :: ClassIdentity > :: class () , "LateUpdate" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < EffectUnstoppable as :: unity2 :: ClassIdentity > :: NAME , "LateUpdate" , e) , } } } pub unsafe fn late_update (this : EffectUnstoppable , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (EffectUnstoppable , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_late_update :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< EffectUnstoppable as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < EffectUnstoppable as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : EffectUnstoppable , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (EffectUnstoppable , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-effectunstoppable")]
-pub trait IEffectUnstoppableMethods: IEffectUnstoppable {
-    #[doc = "`Start()` overload"]
-    fn start(self) -> () {
-        unsafe {
-            let __receiver = <EffectUnstoppable as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __EffectUnstoppable_unity2_raw::start(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`LateUpdate()` overload"]
-    fn late_update(self) -> () {
-        unsafe {
-            let __receiver = <EffectUnstoppable as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __EffectUnstoppable_unity2_raw::late_update(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <EffectUnstoppable as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __EffectUnstoppable_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IEffectUnstoppableMethods : IEffectUnstoppable { # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < EffectUnstoppable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __EffectUnstoppable_unity2_raw :: start (__receiver , :: core :: option :: Option :: None) } } # [doc = "`LateUpdate()` overload"] fn late_update (self ,) -> () { unsafe { let __receiver = < EffectUnstoppable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __EffectUnstoppable_unity2_raw :: late_update (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < EffectUnstoppable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __EffectUnstoppable_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-effectunstoppable")]
-impl<__T: IEffectUnstoppable> IEffectUnstoppableMethods for __T {}
+impl < __T : IEffectUnstoppable > IEffectUnstoppableMethods for __T { }
+
+#[cfg(feature = "app-effectunstoppable")]
+impl EffectUnstoppable { pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __EffectUnstoppable_unity2_raw :: __lookup_start :: get_method_info () } pub fn late_update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __EffectUnstoppable_unity2_raw :: __lookup_late_update :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __EffectUnstoppable_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-effectunstoppable")]
 impl EffectUnstoppable {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(EffectUnstoppable),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IEffectUnstoppableMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (EffectUnstoppable) , :: core :: stringify ! (new) ,)) ; < Self as IEffectUnstoppableMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-effectunstoppable")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{EffectUnstoppable, IEffectUnstoppable, IEffectUnstoppableMethods};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        system::object::IObject,
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::EffectUnstoppable;
+    pub use super::IEffectUnstoppable;
+    pub use super::IEffectUnstoppableMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

@@ -2,1262 +2,437 @@
 
 #[cfg(feature = "app-mapinfounit-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::singletonmonobehaviour_1::{ISingletonMonoBehaviour_1, SingletonMonoBehaviour_1},
-        system::{
-            object::{IObject, Object},
-            r#enum::{Enum, IEnum},
-            valuetype::{IValueType, ValueType},
-        },
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapinfounit/MapInfoUnit.md"))]
-    #[::unity2::class(namespace = "App", name = "MapInfoUnit")]
-    # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: mapinfounit :: MapInfoUnit >)]
-    pub struct MapInfoUnit {
-        #[static_field]
-        #[rename(name = "BeginPage")]
-        pub begin_page: i32,
-        #[static_field]
-        #[rename(name = "EndPage")]
-        pub end_page: i32,
-        #[offset(32)]
-        #[rename(name = "m_ScaleCurve")]
-        pub m_scale_curve: crate::unity_engine::animationcurve::AnimationCurve,
-        #[offset(40)]
-        #[rename(name = "m_Input")]
-        pub m_input: crate::app::mapinfounit::MapInfoUnit_InputState,
-        #[offset(44)]
-        #[rename(name = "m_IsOpenMapNavigation")]
-        pub m_is_open_map_navigation: bool,
-        #[offset(45)]
-        #[rename(name = "m_IsVisible")]
-        pub m_is_visible: bool,
-        #[offset(46)]
-        #[rename(name = "m_IsSuppress")]
-        pub m_is_suppress: bool,
-        #[offset(48)]
-        #[rename(name = "m_SuppressFlag")]
-        pub m_suppress_flag: crate::app::mapinfounit::MapInfoUnit_SuppressScene,
-        #[offset(52)]
-        #[rename(name = "m_AlphaChangeRatio")]
-        pub m_alpha_change_ratio: f32,
-        #[offset(56)]
-        #[rename(name = "m_WaitFrame")]
-        pub m_wait_frame: i32,
-        #[offset(60)]
-        #[rename(name = "m_Count")]
-        pub m_count: i32,
-        #[offset(64)]
-        #[rename(name = "m_SpriteAtlas")]
-        pub m_sprite_atlas: crate::unity_engine::u2d::spriteatlas::SpriteAtlas,
-        #[offset(72)]
-        #[rename(name = "m_Sprites")]
-        pub m_sprites: ::unity2::Array<crate::unity_engine::sprite::Sprite>,
-        #[static_field]
-        #[rename(name = "SpriteNames")]
-        pub sprite_names: ::unity2::Array<::unity2::Il2CppString>,
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: singletonmonobehaviour_1 :: { ISingletonMonoBehaviour_1 , SingletonMonoBehaviour_1 }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapinfounit/MapInfoUnit_InputState.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct MapInfoUnit_InputState  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for MapInfoUnit_InputState  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapInfoUnit.InputState";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapinfounit/MapInfoUnit_InputState.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct MapInfoUnit_InputState {
-        pub value: i32,
+}
+
+
+impl  ::unity2::IlType for MapInfoUnit_InputState  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::ClassIdentity for MapInfoUnit_InputState {
-        const NAME: &'static str = "MapInfoUnit.InputState";
-        const NAMESPACE: &'static str = "App";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  MapInfoUnit_InputState  {
+    pub fn neutral() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl ::unity2::IlType for MapInfoUnit_InputState {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+
+    pub fn switch() -> Self {
+        Self { value: 1 }
+
     }
 
-    impl MapInfoUnit_InputState {
-        pub fn neutral() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn switch() -> Self {
-            Self { value: 1 }
-        }
+    pub fn select() -> Self {
+        Self { value: 2 }
 
-        pub fn select() -> Self {
-            Self { value: 2 }
-        }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapinfounit/MapInfoUnit_SpriteKind.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct MapInfoUnit_SpriteKind {
-        pub value: i32,
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapinfounit/MapInfoUnit_SuppressScene.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct MapInfoUnit_SuppressScene  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for MapInfoUnit_SuppressScene  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapInfoUnit.SuppressScene";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    impl ::unity2::ClassIdentity for MapInfoUnit_SpriteKind {
-        const NAME: &'static str = "MapInfoUnit.SpriteKind";
-        const NAMESPACE: &'static str = "App";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  ::unity2::IlType for MapInfoUnit_SuppressScene  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::IlType for MapInfoUnit_SpriteKind {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  MapInfoUnit_SuppressScene  {
+    pub fn combat() -> Self {
+        Self { value: 1 }
+
     }
 
-    impl MapInfoUnit_SpriteKind {
-        pub fn num0() -> Self {
-            Self { value: 0 }
-        }
+}
 
-        pub fn num1() -> Self {
-            Self { value: 1 }
-        }
 
-        pub fn num2() -> Self {
-            Self { value: 2 }
-        }
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapinfounit/MapInfoUnit.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapInfoUnit")] # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: mapinfounit :: MapInfoUnit >)] pub struct MapInfoUnit {
+# [static_field] # [rename (name = "BeginPage")] pub begin_page : i32 ,
+# [static_field] # [rename (name = "EndPage")] pub end_page : i32 ,
+# [offset (32)] # [rename (name = "m_ScaleCurve")] pub m_scale_curve : crate :: unity_engine :: animationcurve :: AnimationCurve ,
+# [offset (40)] # [rename (name = "m_Input")] pub m_input : crate :: app :: mapinfounit :: MapInfoUnit_InputState ,
+# [offset (44)] # [rename (name = "m_IsOpenMapNavigation")] pub m_is_open_map_navigation : bool ,
+# [offset (45)] # [rename (name = "m_IsVisible")] pub m_is_visible : bool ,
+# [offset (46)] # [rename (name = "m_IsSuppress")] pub m_is_suppress : bool ,
+# [offset (48)] # [rename (name = "m_SuppressFlag")] pub m_suppress_flag : crate :: app :: mapinfounit :: MapInfoUnit_SuppressScene ,
+# [offset (52)] # [rename (name = "m_AlphaChangeRatio")] pub m_alpha_change_ratio : f32 ,
+# [offset (56)] # [rename (name = "m_WaitFrame")] pub m_wait_frame : i32 ,
+# [offset (60)] # [rename (name = "m_Count")] pub m_count : i32 ,
+# [offset (64)] # [rename (name = "m_SpriteAtlas")] pub m_sprite_atlas : crate :: unity_engine :: u2d :: spriteatlas :: SpriteAtlas ,
+# [offset (72)] # [rename (name = "m_Sprites")] pub m_sprites : :: unity2 :: Array < crate :: unity_engine :: sprite :: Sprite > ,
+# [static_field] # [rename (name = "SpriteNames")] pub sprite_names : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
+}
 
-        pub fn num3() -> Self {
-            Self { value: 3 }
-        }
 
-        pub fn num4() -> Self {
-            Self { value: 4 }
-        }
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapinfounit/MapInfoUnit_SpriteKind.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct MapInfoUnit_SpriteKind  {
+    pub value: i32,
+}
 
-        pub fn num5() -> Self {
-            Self { value: 5 }
-        }
 
-        pub fn num6() -> Self {
-            Self { value: 6 }
-        }
+impl  ::unity2::ClassIdentity for MapInfoUnit_SpriteKind  {
+    const NAMESPACE: &'static str = "App";
 
-        pub fn num7() -> Self {
-            Self { value: 7 }
-        }
+    const NAME: &'static str = "MapInfoUnit.SpriteKind";
 
-        pub fn num8() -> Self {
-            Self { value: 8 }
-        }
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
 
-        pub fn num9() -> Self {
-            Self { value: 9 }
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
-
-        pub fn phys_atk_title() -> Self {
-            Self { value: 10 }
-        }
-
-        pub fn def_title() -> Self {
-            Self { value: 11 }
-        }
-
-        pub fn mag_atk_title() -> Self {
-            Self { value: 12 }
-        }
-
-        pub fn res_title() -> Self {
-            Self { value: 13 }
-        }
-
-        pub fn hit_title() -> Self {
-            Self { value: 14 }
-        }
-
-        pub fn avo_title() -> Self {
-            Self { value: 15 }
-        }
-
-        pub fn crit_title() -> Self {
-            Self { value: 16 }
-        }
-
-        pub fn crit_avo_title() -> Self {
-            Self { value: 17 }
-        }
-
-        pub fn skill_title() -> Self {
-            Self { value: 18 }
-        }
-
-        pub fn spd_title() -> Self {
-            Self { value: 19 }
-        }
-
-        pub fn move_title() -> Self {
-            Self { value: 20 }
-        }
-
-        pub fn phys_title() -> Self {
-            Self { value: 21 }
-        }
-
-        pub fn special_atk_title() -> Self {
-            Self { value: 22 }
-        }
-
-        pub fn value_empty() -> Self {
-            Self { value: 23 }
-        }
-
-        pub fn value_infinity() -> Self {
-            Self { value: 24 }
-        }
-
-        pub fn battle_type_none() -> Self {
-            Self { value: 25 }
-        }
-
-        pub fn battle_type_cooperation() -> Self {
-            Self { value: 26 }
-        }
-
-        pub fn battle_type_horse() -> Self {
-            Self { value: 27 }
-        }
-
-        pub fn battle_type_covert() -> Self {
-            Self { value: 28 }
-        }
-
-        pub fn battle_type_heavy() -> Self {
-            Self { value: 29 }
-        }
-
-        pub fn battle_type_fly() -> Self {
-            Self { value: 30 }
-        }
-
-        pub fn battle_type_magic() -> Self {
-            Self { value: 31 }
-        }
-
-        pub fn battle_type_prana() -> Self {
-            Self { value: 32 }
-        }
-
-        pub fn battle_type_dragon() -> Self {
-            Self { value: 33 }
-        }
-
-        pub fn num() -> Self {
-            Self { value: 34 }
-        }
+)
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapinfounit/MapInfoUnit_SuppressScene.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct MapInfoUnit_SuppressScene {
-        pub value: i32,
+}
+
+
+impl  ::unity2::IlType for MapInfoUnit_SpriteKind  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::ClassIdentity for MapInfoUnit_SuppressScene {
-        const NAME: &'static str = "MapInfoUnit.SuppressScene";
-        const NAMESPACE: &'static str = "App";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  MapInfoUnit_SpriteKind  {
+    pub fn num0() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl ::unity2::IlType for MapInfoUnit_SuppressScene {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+
+    pub fn num1() -> Self {
+        Self { value: 1 }
+
     }
 
-    impl MapInfoUnit_SuppressScene {
-        pub fn combat() -> Self {
-            Self { value: 1 }
-        }
+
+    pub fn num2() -> Self {
+        Self { value: 2 }
+
     }
+
+
+    pub fn num3() -> Self {
+        Self { value: 3 }
+
+    }
+
+
+    pub fn num4() -> Self {
+        Self { value: 4 }
+
+    }
+
+
+    pub fn num5() -> Self {
+        Self { value: 5 }
+
+    }
+
+
+    pub fn num6() -> Self {
+        Self { value: 6 }
+
+    }
+
+
+    pub fn num7() -> Self {
+        Self { value: 7 }
+
+    }
+
+
+    pub fn num8() -> Self {
+        Self { value: 8 }
+
+    }
+
+
+    pub fn num9() -> Self {
+        Self { value: 9 }
+
+    }
+
+
+    pub fn phys_atk_title() -> Self {
+        Self { value: 10 }
+
+    }
+
+
+    pub fn def_title() -> Self {
+        Self { value: 11 }
+
+    }
+
+
+    pub fn mag_atk_title() -> Self {
+        Self { value: 12 }
+
+    }
+
+
+    pub fn res_title() -> Self {
+        Self { value: 13 }
+
+    }
+
+
+    pub fn hit_title() -> Self {
+        Self { value: 14 }
+
+    }
+
+
+    pub fn avo_title() -> Self {
+        Self { value: 15 }
+
+    }
+
+
+    pub fn crit_title() -> Self {
+        Self { value: 16 }
+
+    }
+
+
+    pub fn crit_avo_title() -> Self {
+        Self { value: 17 }
+
+    }
+
+
+    pub fn skill_title() -> Self {
+        Self { value: 18 }
+
+    }
+
+
+    pub fn spd_title() -> Self {
+        Self { value: 19 }
+
+    }
+
+
+    pub fn move_title() -> Self {
+        Self { value: 20 }
+
+    }
+
+
+    pub fn phys_title() -> Self {
+        Self { value: 21 }
+
+    }
+
+
+    pub fn special_atk_title() -> Self {
+        Self { value: 22 }
+
+    }
+
+
+    pub fn value_empty() -> Self {
+        Self { value: 23 }
+
+    }
+
+
+    pub fn value_infinity() -> Self {
+        Self { value: 24 }
+
+    }
+
+
+    pub fn battle_type_none() -> Self {
+        Self { value: 25 }
+
+    }
+
+
+    pub fn battle_type_cooperation() -> Self {
+        Self { value: 26 }
+
+    }
+
+
+    pub fn battle_type_horse() -> Self {
+        Self { value: 27 }
+
+    }
+
+
+    pub fn battle_type_covert() -> Self {
+        Self { value: 28 }
+
+    }
+
+
+    pub fn battle_type_heavy() -> Self {
+        Self { value: 29 }
+
+    }
+
+
+    pub fn battle_type_fly() -> Self {
+        Self { value: 30 }
+
+    }
+
+
+    pub fn battle_type_magic() -> Self {
+        Self { value: 31 }
+
+    }
+
+
+    pub fn battle_type_prana() -> Self {
+        Self { value: 32 }
+
+    }
+
+
+    pub fn battle_type_dragon() -> Self {
+        Self { value: 33 }
+
+    }
+
+
+    pub fn num() -> Self {
+        Self { value: 34 }
+
+    }
+
+}
+
 }
 
 #[cfg(feature = "app-mapinfounit-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-mapinfounit")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapInfoUnit_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_start {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<MapInfoUnit as ::unity2::ClassIdentity>::class(), "Start", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapInfoUnit as ::unity2::ClassIdentity>::NAME,
-                        "Start",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn start(this: MapInfoUnit, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapInfoUnit, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_start::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<MapInfoUnit as ::unity2::ClassIdentity>::class(), "Update", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapInfoUnit as ::unity2::ClassIdentity>::NAME,
-                        "Update",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update(this: MapInfoUnit, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapInfoUnit, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_update::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_init {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<MapInfoUnit as ::unity2::ClassIdentity>::class(), "Init", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapInfoUnit as ::unity2::ClassIdentity>::NAME,
-                        "Init",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn init(this: MapInfoUnit, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapInfoUnit, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_init::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_sprites {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapInfoUnit as ::unity2::ClassIdentity>::class(),
-                "GetSprites",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapInfoUnit as ::unity2::ClassIdentity>::NAME,
-                        "GetSprites",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_sprites(this: MapInfoUnit, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapInfoUnit, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_get_sprites::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_sprite {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapInfoUnit as ::unity2::ClassIdentity>::class(),
-                "GetSprite",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapInfoUnit as ::unity2::ClassIdentity>::NAME,
-                        "GetSprite",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_sprite(this: MapInfoUnit, index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::sprite::Sprite {
-        let inner: extern "C" fn(MapInfoUnit, i32, ::unity2::OptionalMethod) -> crate::unity_engine::sprite::Sprite =
-            ::core::mem::transmute(__lookup_get_sprite::get_method_info().method_ptr);
-        inner(this, index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update_visible {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapInfoUnit as ::unity2::ClassIdentity>::class(),
-                "UpdateVisible",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapInfoUnit as ::unity2::ClassIdentity>::NAME,
-                        "UpdateVisible",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update_visible(this: MapInfoUnit, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapInfoUnit, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update_visible::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update_page {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapInfoUnit as ::unity2::ClassIdentity>::class(),
-                "UpdatePage",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapInfoUnit as ::unity2::ClassIdentity>::NAME,
-                        "UpdatePage",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update_page(this: MapInfoUnit, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapInfoUnit, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update_page::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_force_update_all_unit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapInfoUnit as ::unity2::ClassIdentity>::class(),
-                "ForceUpdateAllUnit",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapInfoUnit as ::unity2::ClassIdentity>::NAME,
-                        "ForceUpdateAllUnit",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn force_update_all_unit(this: MapInfoUnit, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapInfoUnit, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_force_update_all_unit::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_suppress_flag {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::mapinfounit::MapInfoUnit_SuppressScene as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapInfoUnit as ::unity2::ClassIdentity>::class(),
-                "SetSuppressFlag",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapInfoUnit as ::unity2::ClassIdentity>::NAME,
-                        "SetSuppressFlag",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_suppress_flag(
-        this: MapInfoUnit,
-        flag: crate::app::mapinfounit::MapInfoUnit_SuppressScene,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MapInfoUnit, crate::app::mapinfounit::MapInfoUnit_SuppressScene, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_suppress_flag::get_method_info().method_ptr);
-        inner(this, flag, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_unset_suppress_flag {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::mapinfounit::MapInfoUnit_SuppressScene as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapInfoUnit as ::unity2::ClassIdentity>::class(),
-                "UnsetSuppressFlag",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapInfoUnit as ::unity2::ClassIdentity>::NAME,
-                        "UnsetSuppressFlag",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn unset_suppress_flag(
-        this: MapInfoUnit,
-        flag: crate::app::mapinfounit::MapInfoUnit_SuppressScene,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MapInfoUnit, crate::app::mapinfounit::MapInfoUnit_SuppressScene, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_unset_suppress_flag::get_method_info().method_ptr);
-        inner(this, flag, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update_suppress {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapInfoUnit as ::unity2::ClassIdentity>::class(),
-                "UpdateSuppress",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapInfoUnit as ::unity2::ClassIdentity>::NAME,
-                        "UpdateSuppress",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update_suppress(this: MapInfoUnit, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapInfoUnit, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update_suppress::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_can_switch_unit_info {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapInfoUnit as ::unity2::ClassIdentity>::class(),
-                "CanSwitchUnitInfo",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapInfoUnit as ::unity2::ClassIdentity>::NAME,
-                        "CanSwitchUnitInfo",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn can_switch_unit_info(this: MapInfoUnit, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(MapInfoUnit, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_can_switch_unit_info::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_switch_unit_info {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapInfoUnit as ::unity2::ClassIdentity>::class(),
-                "IsSwitchUnitInfo",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapInfoUnit as ::unity2::ClassIdentity>::NAME,
-                        "IsSwitchUnitInfo",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_switch_unit_info(this: MapInfoUnit, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(MapInfoUnit, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_switch_unit_info::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_scale_curve {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapInfoUnit as ::unity2::ClassIdentity>::class(),
-                "get_ScaleCurve",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapInfoUnit as ::unity2::ClassIdentity>::NAME,
-                        "get_ScaleCurve",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_scale_curve(
-        this: MapInfoUnit,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::animationcurve::AnimationCurve {
-        let inner: extern "C" fn(MapInfoUnit, ::unity2::OptionalMethod) -> crate::unity_engine::animationcurve::AnimationCurve =
-            ::core::mem::transmute(__lookup_get_scale_curve::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_input {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapInfoUnit as ::unity2::ClassIdentity>::class(),
-                "get_Input",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapInfoUnit as ::unity2::ClassIdentity>::NAME,
-                        "get_Input",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_input(this: MapInfoUnit, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::mapinfounit::MapInfoUnit_InputState {
-        let inner: extern "C" fn(MapInfoUnit, ::unity2::OptionalMethod) -> crate::app::mapinfounit::MapInfoUnit_InputState =
-            ::core::mem::transmute(__lookup_get_input::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_input {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::mapinfounit::MapInfoUnit_InputState as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapInfoUnit as ::unity2::ClassIdentity>::class(),
-                "set_Input",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapInfoUnit as ::unity2::ClassIdentity>::NAME,
-                        "set_Input",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_input(
-        this: MapInfoUnit,
-        value: crate::app::mapinfounit::MapInfoUnit_InputState,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MapInfoUnit, crate::app::mapinfounit::MapInfoUnit_InputState, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_input::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_is_visible {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapInfoUnit as ::unity2::ClassIdentity>::class(),
-                "get_IsVisible",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapInfoUnit as ::unity2::ClassIdentity>::NAME,
-                        "get_IsVisible",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_is_visible(this: MapInfoUnit, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(MapInfoUnit, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_is_visible::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_is_visible {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapInfoUnit as ::unity2::ClassIdentity>::class(),
-                "set_IsVisible",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapInfoUnit as ::unity2::ClassIdentity>::NAME,
-                        "set_IsVisible",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_is_visible(this: MapInfoUnit, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapInfoUnit, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_is_visible::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_is_suppress {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapInfoUnit as ::unity2::ClassIdentity>::class(),
-                "get_IsSuppress",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapInfoUnit as ::unity2::ClassIdentity>::NAME,
-                        "get_IsSuppress",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_is_suppress(this: MapInfoUnit, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(MapInfoUnit, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_is_suppress::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_alpha_change_ratio {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapInfoUnit as ::unity2::ClassIdentity>::class(),
-                "get_AlphaChangeRatio",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapInfoUnit as ::unity2::ClassIdentity>::NAME,
-                        "get_AlphaChangeRatio",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_alpha_change_ratio(this: MapInfoUnit, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(MapInfoUnit, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_get_alpha_change_ratio::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_is_open_map_navigation {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapInfoUnit as ::unity2::ClassIdentity>::class(),
-                "get_IsOpenMapNavigation",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapInfoUnit as ::unity2::ClassIdentity>::NAME,
-                        "get_IsOpenMapNavigation",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_is_open_map_navigation(this: MapInfoUnit, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(MapInfoUnit, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_is_open_map_navigation::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<MapInfoUnit as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapInfoUnit as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: MapInfoUnit, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapInfoUnit, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<MapInfoUnit as ::unity2::ClassIdentity>::class(), ".cctor", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapInfoUnit as ::unity2::ClassIdentity>::NAME,
-                        ".cctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MapInfoUnit_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_start { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapInfoUnit as :: unity2 :: ClassIdentity > :: class () , "Start" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapInfoUnit as :: unity2 :: ClassIdentity > :: NAME , "Start" , e) , } } } pub unsafe fn start (this : MapInfoUnit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapInfoUnit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_start :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapInfoUnit as :: unity2 :: ClassIdentity > :: class () , "Update" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapInfoUnit as :: unity2 :: ClassIdentity > :: NAME , "Update" , e) , } } } pub unsafe fn update (this : MapInfoUnit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapInfoUnit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_init { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapInfoUnit as :: unity2 :: ClassIdentity > :: class () , "Init" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapInfoUnit as :: unity2 :: ClassIdentity > :: NAME , "Init" , e) , } } } pub unsafe fn init (this : MapInfoUnit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapInfoUnit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_init :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_sprites { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapInfoUnit as :: unity2 :: ClassIdentity > :: class () , "GetSprites" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapInfoUnit as :: unity2 :: ClassIdentity > :: NAME , "GetSprites" , e) , } } } pub unsafe fn get_sprites (this : MapInfoUnit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapInfoUnit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_get_sprites :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_sprite { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapInfoUnit as :: unity2 :: ClassIdentity > :: class () , "GetSprite" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapInfoUnit as :: unity2 :: ClassIdentity > :: NAME , "GetSprite" , e) , } } } pub unsafe fn get_sprite (this : MapInfoUnit , index : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: sprite :: Sprite { let inner : extern "C" fn (MapInfoUnit , i32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: sprite :: Sprite = :: core :: mem :: transmute (__lookup_get_sprite :: get_method_info () . method_ptr ,) ; inner (this , index , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update_visible { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapInfoUnit as :: unity2 :: ClassIdentity > :: class () , "UpdateVisible" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapInfoUnit as :: unity2 :: ClassIdentity > :: NAME , "UpdateVisible" , e) , } } } pub unsafe fn update_visible (this : MapInfoUnit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapInfoUnit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update_visible :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update_page { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapInfoUnit as :: unity2 :: ClassIdentity > :: class () , "UpdatePage" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapInfoUnit as :: unity2 :: ClassIdentity > :: NAME , "UpdatePage" , e) , } } } pub unsafe fn update_page (this : MapInfoUnit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapInfoUnit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update_page :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_force_update_all_unit { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapInfoUnit as :: unity2 :: ClassIdentity > :: class () , "ForceUpdateAllUnit" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapInfoUnit as :: unity2 :: ClassIdentity > :: NAME , "ForceUpdateAllUnit" , e) , } } } pub unsafe fn force_update_all_unit (this : MapInfoUnit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapInfoUnit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_force_update_all_unit :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_suppress_flag { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: mapinfounit :: MapInfoUnit_SuppressScene as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapInfoUnit as :: unity2 :: ClassIdentity > :: class () , "SetSuppressFlag" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapInfoUnit as :: unity2 :: ClassIdentity > :: NAME , "SetSuppressFlag" , e) , } } } pub unsafe fn set_suppress_flag (this : MapInfoUnit , flag : crate :: app :: mapinfounit :: MapInfoUnit_SuppressScene , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapInfoUnit , crate :: app :: mapinfounit :: MapInfoUnit_SuppressScene , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_suppress_flag :: get_method_info () . method_ptr ,) ; inner (this , flag , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_unset_suppress_flag { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: mapinfounit :: MapInfoUnit_SuppressScene as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapInfoUnit as :: unity2 :: ClassIdentity > :: class () , "UnsetSuppressFlag" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapInfoUnit as :: unity2 :: ClassIdentity > :: NAME , "UnsetSuppressFlag" , e) , } } } pub unsafe fn unset_suppress_flag (this : MapInfoUnit , flag : crate :: app :: mapinfounit :: MapInfoUnit_SuppressScene , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapInfoUnit , crate :: app :: mapinfounit :: MapInfoUnit_SuppressScene , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_unset_suppress_flag :: get_method_info () . method_ptr ,) ; inner (this , flag , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update_suppress { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapInfoUnit as :: unity2 :: ClassIdentity > :: class () , "UpdateSuppress" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapInfoUnit as :: unity2 :: ClassIdentity > :: NAME , "UpdateSuppress" , e) , } } } pub unsafe fn update_suppress (this : MapInfoUnit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapInfoUnit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update_suppress :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_can_switch_unit_info { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapInfoUnit as :: unity2 :: ClassIdentity > :: class () , "CanSwitchUnitInfo" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapInfoUnit as :: unity2 :: ClassIdentity > :: NAME , "CanSwitchUnitInfo" , e) , } } } pub unsafe fn can_switch_unit_info (this : MapInfoUnit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (MapInfoUnit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_can_switch_unit_info :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_switch_unit_info { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapInfoUnit as :: unity2 :: ClassIdentity > :: class () , "IsSwitchUnitInfo" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapInfoUnit as :: unity2 :: ClassIdentity > :: NAME , "IsSwitchUnitInfo" , e) , } } } pub unsafe fn is_switch_unit_info (this : MapInfoUnit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (MapInfoUnit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_switch_unit_info :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_scale_curve { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapInfoUnit as :: unity2 :: ClassIdentity > :: class () , "get_ScaleCurve" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapInfoUnit as :: unity2 :: ClassIdentity > :: NAME , "get_ScaleCurve" , e) , } } } pub unsafe fn get_scale_curve (this : MapInfoUnit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: animationcurve :: AnimationCurve { let inner : extern "C" fn (MapInfoUnit , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: animationcurve :: AnimationCurve = :: core :: mem :: transmute (__lookup_get_scale_curve :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_input { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapInfoUnit as :: unity2 :: ClassIdentity > :: class () , "get_Input" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapInfoUnit as :: unity2 :: ClassIdentity > :: NAME , "get_Input" , e) , } } } pub unsafe fn get_input (this : MapInfoUnit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: mapinfounit :: MapInfoUnit_InputState { let inner : extern "C" fn (MapInfoUnit , :: unity2 :: OptionalMethod ,) -> crate :: app :: mapinfounit :: MapInfoUnit_InputState = :: core :: mem :: transmute (__lookup_get_input :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_input { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: mapinfounit :: MapInfoUnit_InputState as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapInfoUnit as :: unity2 :: ClassIdentity > :: class () , "set_Input" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapInfoUnit as :: unity2 :: ClassIdentity > :: NAME , "set_Input" , e) , } } } pub unsafe fn set_input (this : MapInfoUnit , value : crate :: app :: mapinfounit :: MapInfoUnit_InputState , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapInfoUnit , crate :: app :: mapinfounit :: MapInfoUnit_InputState , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_input :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_is_visible { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapInfoUnit as :: unity2 :: ClassIdentity > :: class () , "get_IsVisible" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapInfoUnit as :: unity2 :: ClassIdentity > :: NAME , "get_IsVisible" , e) , } } } pub unsafe fn get_is_visible (this : MapInfoUnit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (MapInfoUnit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_is_visible :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_is_visible { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapInfoUnit as :: unity2 :: ClassIdentity > :: class () , "set_IsVisible" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapInfoUnit as :: unity2 :: ClassIdentity > :: NAME , "set_IsVisible" , e) , } } } pub unsafe fn set_is_visible (this : MapInfoUnit , value : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapInfoUnit , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_is_visible :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_is_suppress { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapInfoUnit as :: unity2 :: ClassIdentity > :: class () , "get_IsSuppress" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapInfoUnit as :: unity2 :: ClassIdentity > :: NAME , "get_IsSuppress" , e) , } } } pub unsafe fn get_is_suppress (this : MapInfoUnit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (MapInfoUnit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_is_suppress :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_alpha_change_ratio { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapInfoUnit as :: unity2 :: ClassIdentity > :: class () , "get_AlphaChangeRatio" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapInfoUnit as :: unity2 :: ClassIdentity > :: NAME , "get_AlphaChangeRatio" , e) , } } } pub unsafe fn get_alpha_change_ratio (this : MapInfoUnit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (MapInfoUnit , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_get_alpha_change_ratio :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_is_open_map_navigation { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapInfoUnit as :: unity2 :: ClassIdentity > :: class () , "get_IsOpenMapNavigation" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapInfoUnit as :: unity2 :: ClassIdentity > :: NAME , "get_IsOpenMapNavigation" , e) , } } } pub unsafe fn get_is_open_map_navigation (this : MapInfoUnit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (MapInfoUnit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_is_open_map_navigation :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapInfoUnit as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapInfoUnit as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : MapInfoUnit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapInfoUnit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapInfoUnit as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapInfoUnit as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
+
+#[cfg(feature = "app-mapinfounit")]
+impl MapInfoUnit { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { __MapInfoUnit_unity2_raw :: cctor (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-mapinfounit")]
+pub trait IMapInfoUnitMethods : IMapInfoUnit { # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < MapInfoUnit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapInfoUnit_unity2_raw :: start (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < MapInfoUnit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapInfoUnit_unity2_raw :: update (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Init()` overload"] fn init (self ,) -> () { unsafe { let __receiver = < MapInfoUnit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapInfoUnit_unity2_raw :: init (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetSprites()` overload"] fn get_sprites (self ,) -> () { unsafe { let __receiver = < MapInfoUnit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapInfoUnit_unity2_raw :: get_sprites (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetSprite(i32)` overload"] fn get_sprite (self , index : impl :: core :: convert :: Into < i32 >) -> crate :: unity_engine :: sprite :: Sprite { unsafe { let __receiver = < MapInfoUnit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapInfoUnit_unity2_raw :: get_sprite (__receiver , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } # [doc = "`UpdateVisible()` overload"] fn update_visible (self ,) -> () { unsafe { let __receiver = < MapInfoUnit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapInfoUnit_unity2_raw :: update_visible (__receiver , :: core :: option :: Option :: None) } } # [doc = "`UpdatePage()` overload"] fn update_page (self ,) -> () { unsafe { let __receiver = < MapInfoUnit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapInfoUnit_unity2_raw :: update_page (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ForceUpdateAllUnit()` overload"] fn force_update_all_unit (self ,) -> () { unsafe { let __receiver = < MapInfoUnit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapInfoUnit_unity2_raw :: force_update_all_unit (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetSuppressFlag(crate::app::mapinfounit::MapInfoUnit_SuppressScene)` overload"] fn set_suppress_flag (self , flag : impl :: core :: convert :: Into < crate :: app :: mapinfounit :: MapInfoUnit_SuppressScene >) -> () { unsafe { let __receiver = < MapInfoUnit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapInfoUnit_unity2_raw :: set_suppress_flag (__receiver , :: core :: convert :: Into :: into (flag) , :: core :: option :: Option :: None) } } # [doc = "`UnsetSuppressFlag(crate::app::mapinfounit::MapInfoUnit_SuppressScene)` overload"] fn unset_suppress_flag (self , flag : impl :: core :: convert :: Into < crate :: app :: mapinfounit :: MapInfoUnit_SuppressScene >) -> () { unsafe { let __receiver = < MapInfoUnit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapInfoUnit_unity2_raw :: unset_suppress_flag (__receiver , :: core :: convert :: Into :: into (flag) , :: core :: option :: Option :: None) } } # [doc = "`UpdateSuppress()` overload"] fn update_suppress (self ,) -> () { unsafe { let __receiver = < MapInfoUnit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapInfoUnit_unity2_raw :: update_suppress (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CanSwitchUnitInfo()` overload"] fn can_switch_unit_info (self ,) -> bool { unsafe { let __receiver = < MapInfoUnit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapInfoUnit_unity2_raw :: can_switch_unit_info (__receiver , :: core :: option :: Option :: None) } } # [doc = "`IsSwitchUnitInfo()` overload"] fn is_switch_unit_info (self ,) -> bool { unsafe { let __receiver = < MapInfoUnit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapInfoUnit_unity2_raw :: is_switch_unit_info (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_ScaleCurve()` overload"] fn get_scale_curve (self ,) -> crate :: unity_engine :: animationcurve :: AnimationCurve { unsafe { let __receiver = < MapInfoUnit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapInfoUnit_unity2_raw :: get_scale_curve (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_Input()` overload"] fn get_input (self ,) -> crate :: app :: mapinfounit :: MapInfoUnit_InputState { unsafe { let __receiver = < MapInfoUnit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapInfoUnit_unity2_raw :: get_input (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_Input(crate::app::mapinfounit::MapInfoUnit_InputState)` overload"] fn set_input (self , value : impl :: core :: convert :: Into < crate :: app :: mapinfounit :: MapInfoUnit_InputState >) -> () { unsafe { let __receiver = < MapInfoUnit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapInfoUnit_unity2_raw :: set_input (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_IsVisible()` overload"] fn get_is_visible (self ,) -> bool { unsafe { let __receiver = < MapInfoUnit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapInfoUnit_unity2_raw :: get_is_visible (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_IsVisible(bool)` overload"] fn set_is_visible (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < MapInfoUnit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapInfoUnit_unity2_raw :: set_is_visible (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_IsSuppress()` overload"] fn get_is_suppress (self ,) -> bool { unsafe { let __receiver = < MapInfoUnit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapInfoUnit_unity2_raw :: get_is_suppress (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_AlphaChangeRatio()` overload"] fn get_alpha_change_ratio (self ,) -> f32 { unsafe { let __receiver = < MapInfoUnit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapInfoUnit_unity2_raw :: get_alpha_change_ratio (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_IsOpenMapNavigation()` overload"] fn get_is_open_map_navigation (self ,) -> bool { unsafe { let __receiver = < MapInfoUnit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapInfoUnit_unity2_raw :: get_is_open_map_navigation (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapInfoUnit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapInfoUnit_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-mapinfounit")]
+impl < __T : IMapInfoUnit > IMapInfoUnitMethods for __T { }
+
+#[cfg(feature = "app-mapinfounit")]
+impl MapInfoUnit { pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapInfoUnit_unity2_raw :: __lookup_start :: get_method_info () } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapInfoUnit_unity2_raw :: __lookup_update :: get_method_info () } pub fn init_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapInfoUnit_unity2_raw :: __lookup_init :: get_method_info () } pub fn get_sprites_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapInfoUnit_unity2_raw :: __lookup_get_sprites :: get_method_info () } pub fn get_sprite_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapInfoUnit_unity2_raw :: __lookup_get_sprite :: get_method_info () } pub fn update_visible_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapInfoUnit_unity2_raw :: __lookup_update_visible :: get_method_info () } pub fn update_page_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapInfoUnit_unity2_raw :: __lookup_update_page :: get_method_info () } pub fn force_update_all_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapInfoUnit_unity2_raw :: __lookup_force_update_all_unit :: get_method_info () } pub fn set_suppress_flag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapInfoUnit_unity2_raw :: __lookup_set_suppress_flag :: get_method_info () } pub fn unset_suppress_flag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapInfoUnit_unity2_raw :: __lookup_unset_suppress_flag :: get_method_info () } pub fn update_suppress_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapInfoUnit_unity2_raw :: __lookup_update_suppress :: get_method_info () } pub fn can_switch_unit_info_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapInfoUnit_unity2_raw :: __lookup_can_switch_unit_info :: get_method_info () } pub fn is_switch_unit_info_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapInfoUnit_unity2_raw :: __lookup_is_switch_unit_info :: get_method_info () } pub fn get_scale_curve_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapInfoUnit_unity2_raw :: __lookup_get_scale_curve :: get_method_info () } pub fn get_input_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapInfoUnit_unity2_raw :: __lookup_get_input :: get_method_info () } pub fn set_input_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapInfoUnit_unity2_raw :: __lookup_set_input :: get_method_info () } pub fn get_is_visible_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapInfoUnit_unity2_raw :: __lookup_get_is_visible :: get_method_info () } pub fn set_is_visible_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapInfoUnit_unity2_raw :: __lookup_set_is_visible :: get_method_info () } pub fn get_is_suppress_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapInfoUnit_unity2_raw :: __lookup_get_is_suppress :: get_method_info () } pub fn get_alpha_change_ratio_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapInfoUnit_unity2_raw :: __lookup_get_alpha_change_ratio :: get_method_info () } pub fn get_is_open_map_navigation_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapInfoUnit_unity2_raw :: __lookup_get_is_open_map_navigation :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapInfoUnit_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapInfoUnit_unity2_raw :: __lookup_cctor :: get_method_info () } }
 
 #[cfg(feature = "app-mapinfounit")]
 impl MapInfoUnit {
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __MapInfoUnit_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-mapinfounit")]
-pub trait IMapInfoUnitMethods: IMapInfoUnit {
-    #[doc = "`Start()` overload"]
-    fn start(self) -> () {
-        unsafe {
-            let __receiver = <MapInfoUnit as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapInfoUnit_unity2_raw::start(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Update()` overload"]
-    fn update(self) -> () {
-        unsafe {
-            let __receiver = <MapInfoUnit as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapInfoUnit_unity2_raw::update(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Init()` overload"]
-    fn init(self) -> () {
-        unsafe {
-            let __receiver = <MapInfoUnit as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapInfoUnit_unity2_raw::init(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetSprites()` overload"]
-    fn get_sprites(self) -> () {
-        unsafe {
-            let __receiver = <MapInfoUnit as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapInfoUnit_unity2_raw::get_sprites(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetSprite(i32)` overload"]
-    fn get_sprite(self, index: impl ::core::convert::Into<i32>) -> crate::unity_engine::sprite::Sprite {
-        unsafe {
-            let __receiver = <MapInfoUnit as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapInfoUnit_unity2_raw::get_sprite(__receiver, ::core::convert::Into::into(index), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`UpdateVisible()` overload"]
-    fn update_visible(self) -> () {
-        unsafe {
-            let __receiver = <MapInfoUnit as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapInfoUnit_unity2_raw::update_visible(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`UpdatePage()` overload"]
-    fn update_page(self) -> () {
-        unsafe {
-            let __receiver = <MapInfoUnit as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapInfoUnit_unity2_raw::update_page(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ForceUpdateAllUnit()` overload"]
-    fn force_update_all_unit(self) -> () {
-        unsafe {
-            let __receiver = <MapInfoUnit as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapInfoUnit_unity2_raw::force_update_all_unit(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetSuppressFlag(crate::app::mapinfounit::MapInfoUnit_SuppressScene)` overload"]
-    fn set_suppress_flag(self, flag: impl ::core::convert::Into<crate::app::mapinfounit::MapInfoUnit_SuppressScene>) -> () {
-        unsafe {
-            let __receiver = <MapInfoUnit as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapInfoUnit_unity2_raw::set_suppress_flag(__receiver, ::core::convert::Into::into(flag), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`UnsetSuppressFlag(crate::app::mapinfounit::MapInfoUnit_SuppressScene)` overload"]
-    fn unset_suppress_flag(self, flag: impl ::core::convert::Into<crate::app::mapinfounit::MapInfoUnit_SuppressScene>) -> () {
-        unsafe {
-            let __receiver = <MapInfoUnit as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapInfoUnit_unity2_raw::unset_suppress_flag(__receiver, ::core::convert::Into::into(flag), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`UpdateSuppress()` overload"]
-    fn update_suppress(self) -> () {
-        unsafe {
-            let __receiver = <MapInfoUnit as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapInfoUnit_unity2_raw::update_suppress(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CanSwitchUnitInfo()` overload"]
-    fn can_switch_unit_info(self) -> bool {
-        unsafe {
-            let __receiver = <MapInfoUnit as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapInfoUnit_unity2_raw::can_switch_unit_info(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsSwitchUnitInfo()` overload"]
-    fn is_switch_unit_info(self) -> bool {
-        unsafe {
-            let __receiver = <MapInfoUnit as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapInfoUnit_unity2_raw::is_switch_unit_info(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_ScaleCurve()` overload"]
-    fn get_scale_curve(self) -> crate::unity_engine::animationcurve::AnimationCurve {
-        unsafe {
-            let __receiver = <MapInfoUnit as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapInfoUnit_unity2_raw::get_scale_curve(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Input()` overload"]
-    fn get_input(self) -> crate::app::mapinfounit::MapInfoUnit_InputState {
-        unsafe {
-            let __receiver = <MapInfoUnit as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapInfoUnit_unity2_raw::get_input(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_Input(crate::app::mapinfounit::MapInfoUnit_InputState)` overload"]
-    fn set_input(self, value: impl ::core::convert::Into<crate::app::mapinfounit::MapInfoUnit_InputState>) -> () {
-        unsafe {
-            let __receiver = <MapInfoUnit as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapInfoUnit_unity2_raw::set_input(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_IsVisible()` overload"]
-    fn get_is_visible(self) -> bool {
-        unsafe {
-            let __receiver = <MapInfoUnit as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapInfoUnit_unity2_raw::get_is_visible(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_IsVisible(bool)` overload"]
-    fn set_is_visible(self, value: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver = <MapInfoUnit as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapInfoUnit_unity2_raw::set_is_visible(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_IsSuppress()` overload"]
-    fn get_is_suppress(self) -> bool {
-        unsafe {
-            let __receiver = <MapInfoUnit as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapInfoUnit_unity2_raw::get_is_suppress(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_AlphaChangeRatio()` overload"]
-    fn get_alpha_change_ratio(self) -> f32 {
-        unsafe {
-            let __receiver = <MapInfoUnit as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapInfoUnit_unity2_raw::get_alpha_change_ratio(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_IsOpenMapNavigation()` overload"]
-    fn get_is_open_map_navigation(self) -> bool {
-        unsafe {
-            let __receiver = <MapInfoUnit as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapInfoUnit_unity2_raw::get_is_open_map_navigation(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <MapInfoUnit as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapInfoUnit_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-mapinfounit")]
-impl<__T: IMapInfoUnit> IMapInfoUnitMethods for __T {}
-
-#[cfg(feature = "app-mapinfounit")]
-impl MapInfoUnit {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(MapInfoUnit), ::core::stringify!(new),));
-        <Self as IMapInfoUnitMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapInfoUnit) , :: core :: stringify ! (new) ,)) ; < Self as IMapInfoUnitMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-mapinfounit")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IMapInfoUnit, IMapInfoUnitMethods, MapInfoUnit, MapInfoUnit_InputState, MapInfoUnit_SpriteKind, MapInfoUnit_SuppressScene};
-    #[cfg(feature = "app-singletonmonobehaviour_1")]
-    pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1Methods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1,
-        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::MapInfoUnit_InputState;
+    pub use super::MapInfoUnit_SuppressScene;
+    pub use super::MapInfoUnit;
+    pub use super::IMapInfoUnit;
+    pub use super::IMapInfoUnitMethods;
+    pub use super::MapInfoUnit_SpriteKind;
+    pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "app-singletonmonobehaviour_1")] pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1Methods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

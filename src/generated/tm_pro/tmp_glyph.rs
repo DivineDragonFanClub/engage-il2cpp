@@ -2,126 +2,50 @@
 
 #[cfg(feature = "tm_pro-tmp_glyph-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        tm_pro::tmp_textelement_legacy::{ITMP_TextElement_Legacy, TMP_TextElement_Legacy},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_glyph/TMP_Glyph.md"))]
-    #[::unity2::class(namespace = "TMPro", name = "TMP_Glyph")]
-    #[parent(crate::tm_pro::tmp_textelement_legacy::TMP_TextElement_Legacy)]
-    pub struct TMP_Glyph {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: tm_pro :: tmp_textelement_legacy :: { ITMP_TextElement_Legacy , TMP_TextElement_Legacy }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_glyph/TMP_Glyph.md"))] # [:: unity2 :: class (namespace = "TMPro" , name = "TMP_Glyph")] # [parent (crate :: tm_pro :: tmp_textelement_legacy :: TMP_TextElement_Legacy)] pub struct TMP_Glyph {}
+
 }
 
 #[cfg(feature = "tm_pro-tmp_glyph-types")]
 pub use __types::*;
 
 #[cfg(feature = "tm_pro-tmp_glyph")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __TMP_Glyph_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_clone {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::tm_pro::tmp_glyph::TMP_Glyph as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<TMP_Glyph as ::unity2::ClassIdentity>::class(), "Clone", 1, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TMP_Glyph as ::unity2::ClassIdentity>::NAME,
-                        "Clone",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn clone(
-        source: crate::tm_pro::tmp_glyph::TMP_Glyph,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::tm_pro::tmp_glyph::TMP_Glyph {
-        let inner: extern "C" fn(crate::tm_pro::tmp_glyph::TMP_Glyph, ::unity2::OptionalMethod) -> crate::tm_pro::tmp_glyph::TMP_Glyph =
-            ::core::mem::transmute(__lookup_clone::get_method_info().method_ptr);
-        inner(source, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<TMP_Glyph as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TMP_Glyph as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: TMP_Glyph, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TMP_Glyph, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __TMP_Glyph_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_clone { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: tm_pro :: tmp_glyph :: TMP_Glyph as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TMP_Glyph as :: unity2 :: ClassIdentity > :: class () , "Clone" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TMP_Glyph as :: unity2 :: ClassIdentity > :: NAME , "Clone" , e) , } } } pub unsafe fn clone (source : crate :: tm_pro :: tmp_glyph :: TMP_Glyph , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: tm_pro :: tmp_glyph :: TMP_Glyph { let inner : extern "C" fn (crate :: tm_pro :: tmp_glyph :: TMP_Glyph , :: unity2 :: OptionalMethod ,) -> crate :: tm_pro :: tmp_glyph :: TMP_Glyph = :: core :: mem :: transmute (__lookup_clone :: get_method_info () . method_ptr ,) ; inner (source , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TMP_Glyph as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TMP_Glyph as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : TMP_Glyph , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TMP_Glyph , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "tm_pro-tmp_glyph")]
+impl TMP_Glyph { # [doc = "`Clone(crate::tm_pro::tmp_glyph::TMP_Glyph)` overload"] pub fn clone (source : impl :: core :: convert :: Into < crate :: tm_pro :: tmp_glyph :: TMP_Glyph >) -> crate :: tm_pro :: tmp_glyph :: TMP_Glyph { unsafe { __TMP_Glyph_unity2_raw :: clone (:: core :: convert :: Into :: into (source) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "tm_pro-tmp_glyph")]
+pub trait ITMP_GlyphMethods : ITMP_Glyph { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TMP_Glyph as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TMP_Glyph_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "tm_pro-tmp_glyph")]
+impl < __T : ITMP_Glyph > ITMP_GlyphMethods for __T { }
+
+#[cfg(feature = "tm_pro-tmp_glyph")]
+impl TMP_Glyph { pub fn clone_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TMP_Glyph_unity2_raw :: __lookup_clone :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TMP_Glyph_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "tm_pro-tmp_glyph")]
 impl TMP_Glyph {
-    #[doc = "`Clone(crate::tm_pro::tmp_glyph::TMP_Glyph)` overload"]
-    pub fn clone(source: impl ::core::convert::Into<crate::tm_pro::tmp_glyph::TMP_Glyph>) -> crate::tm_pro::tmp_glyph::TMP_Glyph {
-        unsafe { __TMP_Glyph_unity2_raw::clone(::core::convert::Into::into(source), ::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "tm_pro-tmp_glyph")]
-pub trait ITMP_GlyphMethods: ITMP_Glyph {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <TMP_Glyph as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TMP_Glyph_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "tm_pro-tmp_glyph")]
-impl<__T: ITMP_Glyph> ITMP_GlyphMethods for __T {}
-
-#[cfg(feature = "tm_pro-tmp_glyph")]
-impl TMP_Glyph {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(TMP_Glyph), ::core::stringify!(new),));
-        <Self as ITMP_GlyphMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TMP_Glyph) , :: core :: stringify ! (new) ,)) ; < Self as ITMP_GlyphMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "tm_pro-tmp_glyph")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{ITMP_Glyph, ITMP_GlyphMethods, TMP_Glyph};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "tm_pro-tmp_textelement_legacy")]
-    pub use crate::tm_pro::tmp_textelement_legacy::ITMP_TextElement_LegacyMethods;
-    pub use crate::{system::object::IObject, tm_pro::tmp_textelement_legacy::ITMP_TextElement_Legacy};
+    pub use super::TMP_Glyph;
+    pub use super::ITMP_Glyph;
+    pub use super::ITMP_GlyphMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::tm_pro::tmp_textelement_legacy::ITMP_TextElement_Legacy;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "tm_pro-tmp_textelement_legacy")] pub use crate::tm_pro::tmp_textelement_legacy::ITMP_TextElement_LegacyMethods;
 }

@@ -2,302 +2,97 @@
 
 #[cfg(feature = "app-qualitysettingsstack-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::singletonclass_1::{ISingletonClass_1, SingletonClass_1},
-        system::{
-            object::{IObject, Object},
-            valuetype::{IValueType, ValueType},
-        },
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/qualitysettingsstack/QualitySettingsStack_Settings.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct QualitySettingsStack_Settings {
-        pub v_sync_count: i32,
-        pub maximum_lod_level: i32,
-        pub shadow_distance: f32,
-        pub shadowmask_mode: crate::unity_engine::shadowmaskmode::ShadowmaskMode,
-        pub shadow_resolution: crate::unity_engine::shadowresolution::ShadowResolution,
-        pub shadow_cascades: i32,
-        pub global_maximum_lod: i32,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: singletonclass_1 :: { ISingletonClass_1 , SingletonClass_1 }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
 
-    impl ::unity2::ClassIdentity for QualitySettingsStack_Settings {
-        const NAME: &'static str = "QualitySettingsStack.Settings";
-        const NAMESPACE: &'static str = "App";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/qualitysettingsstack/QualitySettingsStack_Settings.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct QualitySettingsStack_Settings {
+    pub v_sync_count: i32,
+    pub maximum_lod_level: i32,
+    pub shadow_distance: f32,
+    pub shadowmask_mode: crate :: unity_engine :: shadowmaskmode :: ShadowmaskMode,
+    pub shadow_resolution: crate :: unity_engine :: shadowresolution :: ShadowResolution,
+    pub shadow_cascades: i32,
+    pub global_maximum_lod: i32,
+}
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+
+impl ::unity2::ClassIdentity for QualitySettingsStack_Settings {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "QualitySettingsStack.Settings";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for QualitySettingsStack_Settings {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl ::unity2::IlType for QualitySettingsStack_Settings {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/qualitysettingsstack/QualitySettingsStack.md"))]
-    #[::unity2::class(namespace = "App", name = "QualitySettingsStack")]
-    # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: qualitysettingsstack :: QualitySettingsStack >)]
-    pub struct QualitySettingsStack {
-        #[offset(32)]
-        #[rename(name = "m_Stack")]
-        pub m_stack: crate::system::collections::generic::stack_1::Stack_1<crate::app::qualitysettingsstack::QualitySettingsStack_Settings>,
-    }
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/qualitysettingsstack/QualitySettingsStack.md"))] # [:: unity2 :: class (namespace = "App" , name = "QualitySettingsStack")] # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: qualitysettingsstack :: QualitySettingsStack >)] pub struct QualitySettingsStack {
+# [offset (32)] # [rename (name = "m_Stack")] pub m_stack : crate :: system :: collections :: generic :: stack_1 :: Stack_1 < crate :: app :: qualitysettingsstack :: QualitySettingsStack_Settings > ,
+}
+
 }
 
 #[cfg(feature = "app-qualitysettingsstack-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-qualitysettingsstack")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __QualitySettingsStack_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_push_impl {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <QualitySettingsStack as ::unity2::ClassIdentity>::class(),
-                "PushImpl",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <QualitySettingsStack as ::unity2::ClassIdentity>::NAME,
-                        "PushImpl",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn push_impl(this: QualitySettingsStack, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(QualitySettingsStack, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_push_impl::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_pop_impl {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <QualitySettingsStack as ::unity2::ClassIdentity>::class(),
-                "PopImpl",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <QualitySettingsStack as ::unity2::ClassIdentity>::NAME,
-                        "PopImpl",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn pop_impl(this: QualitySettingsStack, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(QualitySettingsStack, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_pop_impl::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_push {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <QualitySettingsStack as ::unity2::ClassIdentity>::class(),
-                "Push",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <QualitySettingsStack as ::unity2::ClassIdentity>::NAME,
-                        "Push",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn push(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_push::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_pop {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <QualitySettingsStack as ::unity2::ClassIdentity>::class(),
-                "Pop",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <QualitySettingsStack as ::unity2::ClassIdentity>::NAME,
-                        "Pop",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn pop(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_pop::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <QualitySettingsStack as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <QualitySettingsStack as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: QualitySettingsStack, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(QualitySettingsStack, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __QualitySettingsStack_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_push_impl { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< QualitySettingsStack as :: unity2 :: ClassIdentity > :: class () , "PushImpl" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < QualitySettingsStack as :: unity2 :: ClassIdentity > :: NAME , "PushImpl" , e) , } } } pub unsafe fn push_impl (this : QualitySettingsStack , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (QualitySettingsStack , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_push_impl :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_pop_impl { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< QualitySettingsStack as :: unity2 :: ClassIdentity > :: class () , "PopImpl" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < QualitySettingsStack as :: unity2 :: ClassIdentity > :: NAME , "PopImpl" , e) , } } } pub unsafe fn pop_impl (this : QualitySettingsStack , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (QualitySettingsStack , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_pop_impl :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_push { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< QualitySettingsStack as :: unity2 :: ClassIdentity > :: class () , "Push" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < QualitySettingsStack as :: unity2 :: ClassIdentity > :: NAME , "Push" , e) , } } } pub unsafe fn push (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_push :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_pop { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< QualitySettingsStack as :: unity2 :: ClassIdentity > :: class () , "Pop" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < QualitySettingsStack as :: unity2 :: ClassIdentity > :: NAME , "Pop" , e) , } } } pub unsafe fn pop (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_pop :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< QualitySettingsStack as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < QualitySettingsStack as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : QualitySettingsStack , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (QualitySettingsStack , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-qualitysettingsstack")]
+impl QualitySettingsStack { # [doc = "`Push()` overload"] pub fn push () -> () { unsafe { __QualitySettingsStack_unity2_raw :: push (:: core :: option :: Option :: None) } } # [doc = "`Pop()` overload"] pub fn pop () -> () { unsafe { __QualitySettingsStack_unity2_raw :: pop (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-qualitysettingsstack")]
+pub trait IQualitySettingsStackMethods : IQualitySettingsStack { # [doc = "`PushImpl()` overload"] fn push_impl (self ,) -> () { unsafe { let __receiver = < QualitySettingsStack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __QualitySettingsStack_unity2_raw :: push_impl (__receiver , :: core :: option :: Option :: None) } } # [doc = "`PopImpl()` overload"] fn pop_impl (self ,) -> () { unsafe { let __receiver = < QualitySettingsStack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __QualitySettingsStack_unity2_raw :: pop_impl (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < QualitySettingsStack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __QualitySettingsStack_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-qualitysettingsstack")]
+impl < __T : IQualitySettingsStack > IQualitySettingsStackMethods for __T { }
+
+#[cfg(feature = "app-qualitysettingsstack")]
+impl QualitySettingsStack { pub fn push_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __QualitySettingsStack_unity2_raw :: __lookup_push_impl :: get_method_info () } pub fn pop_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __QualitySettingsStack_unity2_raw :: __lookup_pop_impl :: get_method_info () } pub fn push_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __QualitySettingsStack_unity2_raw :: __lookup_push :: get_method_info () } pub fn pop_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __QualitySettingsStack_unity2_raw :: __lookup_pop :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __QualitySettingsStack_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-qualitysettingsstack")]
 impl QualitySettingsStack {
-    #[doc = "`Push()` overload"]
-    pub fn push() -> () {
-        unsafe { __QualitySettingsStack_unity2_raw::push(::core::option::Option::None) }
-    }
-
-    #[doc = "`Pop()` overload"]
-    pub fn pop() -> () {
-        unsafe { __QualitySettingsStack_unity2_raw::pop(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-qualitysettingsstack")]
-pub trait IQualitySettingsStackMethods: IQualitySettingsStack {
-    #[doc = "`PushImpl()` overload"]
-    fn push_impl(self) -> () {
-        unsafe {
-            let __receiver =
-                <QualitySettingsStack as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __QualitySettingsStack_unity2_raw::push_impl(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`PopImpl()` overload"]
-    fn pop_impl(self) -> () {
-        unsafe {
-            let __receiver =
-                <QualitySettingsStack as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __QualitySettingsStack_unity2_raw::pop_impl(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <QualitySettingsStack as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __QualitySettingsStack_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-qualitysettingsstack")]
-impl<__T: IQualitySettingsStack> IQualitySettingsStackMethods for __T {}
-
-#[cfg(feature = "app-qualitysettingsstack")]
-impl QualitySettingsStack {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(QualitySettingsStack),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IQualitySettingsStackMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (QualitySettingsStack) , :: core :: stringify ! (new) ,)) ; < Self as IQualitySettingsStackMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-qualitysettingsstack")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IQualitySettingsStack, IQualitySettingsStackMethods, QualitySettingsStack, QualitySettingsStack_Settings};
-    #[cfg(feature = "app-singletonclass_1")]
-    pub use crate::app::singletonclass_1::ISingletonClass_1Methods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::{
-        app::singletonclass_1::ISingletonClass_1,
-        system::{object::IObject, valuetype::IValueType},
-    };
+    pub use super::QualitySettingsStack_Settings;
+    pub use super::QualitySettingsStack;
+    pub use super::IQualitySettingsStack;
+    pub use super::IQualitySettingsStackMethods;
+    pub use crate::app::singletonclass_1::ISingletonClass_1;
+    pub use crate::system::object::IObject;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "app-singletonclass_1")] pub use crate::app::singletonclass_1::ISingletonClass_1Methods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

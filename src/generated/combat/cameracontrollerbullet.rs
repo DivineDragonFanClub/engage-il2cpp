@@ -2,549 +2,139 @@
 
 #[cfg(feature = "combat-cameracontrollerbullet-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        combat::basecameracontroller::{BaseCameraController, IBaseCameraController},
-        system::{
-            object::{IObject, Object},
-            r#enum::{Enum, IEnum},
-            valuetype::{IValueType, ValueType},
-        },
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/cameracontrollerbullet/CameraControllerBullet.md"))]
-    #[::unity2::class(namespace = "Combat", name = "CameraControllerBullet")]
-    #[parent(crate::combat::basecameracontroller::BaseCameraController)]
-    pub struct CameraControllerBullet {
-        #[offset(184)]
-        #[rename(name = "StartVector")]
-        pub start_vector: crate::unity_engine::vector3::Vector3,
-        #[offset(196)]
-        #[rename(name = "HoldVector")]
-        pub hold_vector: crate::unity_engine::vector3::Vector3,
-        #[offset(208)]
-        #[rename(name = "BulletVector")]
-        pub bullet_vector: crate::unity_engine::vector3::Vector3,
-        #[offset(220)]
-        #[rename(name = "SpeedBrake")]
-        pub speed_brake: f32,
-        #[offset(224)]
-        #[rename(name = "m_LastSpeed")]
-        pub m_last_speed: crate::unity_engine::vector3::Vector3,
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: combat :: basecameracontroller :: { BaseCameraController , IBaseCameraController }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/cameracontrollerbullet/CameraControllerBullet_State.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct CameraControllerBullet_State  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for CameraControllerBullet_State  {
+    const NAMESPACE: &'static str = "Combat";
+
+    const NAME: &'static str = "CameraControllerBullet.State";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/cameracontrollerbullet/CameraControllerBullet_State.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct CameraControllerBullet_State {
-        pub value: i32,
+}
+
+
+impl  ::unity2::IlType for CameraControllerBullet_State  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::ClassIdentity for CameraControllerBullet_State {
-        const NAME: &'static str = "CameraControllerBullet.State";
-        const NAMESPACE: &'static str = "Combat";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  CameraControllerBullet_State  {
+    pub fn ready() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl ::unity2::IlType for CameraControllerBullet_State {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+
+    pub fn before_shoot() -> Self {
+        Self { value: 1 }
+
     }
 
-    impl CameraControllerBullet_State {
-        pub fn ready() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn before_shoot() -> Self {
-            Self { value: 1 }
-        }
+    pub fn shooting() -> Self {
+        Self { value: 2 }
 
-        pub fn shooting() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn after_shoot() -> Self {
-            Self { value: 3 }
-        }
     }
+
+
+    pub fn after_shoot() -> Self {
+        Self { value: 3 }
+
+    }
+
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/cameracontrollerbullet/CameraControllerBullet.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "CameraControllerBullet")] # [parent (crate :: combat :: basecameracontroller :: BaseCameraController)] pub struct CameraControllerBullet {
+# [offset (184)] # [rename (name = "StartVector")] pub start_vector : crate :: unity_engine :: vector3 :: Vector3 ,
+# [offset (196)] # [rename (name = "HoldVector")] pub hold_vector : crate :: unity_engine :: vector3 :: Vector3 ,
+# [offset (208)] # [rename (name = "BulletVector")] pub bullet_vector : crate :: unity_engine :: vector3 :: Vector3 ,
+# [offset (220)] # [rename (name = "SpeedBrake")] pub speed_brake : f32 ,
+# [offset (224)] # [rename (name = "m_LastSpeed")] pub m_last_speed : crate :: unity_engine :: vector3 :: Vector3 ,
+}
+
 }
 
 #[cfg(feature = "combat-cameracontrollerbullet-types")]
 pub use __types::*;
 
 #[cfg(feature = "combat-cameracontrollerbullet")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __CameraControllerBullet_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_shoot_state {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CameraControllerBullet as ::unity2::ClassIdentity>::class(),
-                "get_ShootState",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CameraControllerBullet as ::unity2::ClassIdentity>::NAME,
-                        "get_ShootState",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_shoot_state(
-        this: CameraControllerBullet,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::combat::cameracontrollerbullet::CameraControllerBullet_State {
-        let inner: extern "C" fn(
-            CameraControllerBullet,
-            ::unity2::OptionalMethod,
-        ) -> crate::combat::cameracontrollerbullet::CameraControllerBullet_State =
-            ::core::mem::transmute(__lookup_get_shoot_state::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_shoot_state {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::combat::cameracontrollerbullet::CameraControllerBullet_State as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CameraControllerBullet as ::unity2::ClassIdentity>::class(),
-                "set_ShootState",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CameraControllerBullet as ::unity2::ClassIdentity>::NAME,
-                        "set_ShootState",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_shoot_state(
-        this: CameraControllerBullet,
-        value: crate::combat::cameracontrollerbullet::CameraControllerBullet_State,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            CameraControllerBullet,
-            crate::combat::cameracontrollerbullet::CameraControllerBullet_State,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_set_shoot_state::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_lancher {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CameraControllerBullet as ::unity2::ClassIdentity>::class(),
-                "get_Lancher",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CameraControllerBullet as ::unity2::ClassIdentity>::NAME,
-                        "get_Lancher",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_lancher(
-        this: CameraControllerBullet,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::combat::launchbehaviour::LaunchBehaviour {
-        let inner: extern "C" fn(CameraControllerBullet, ::unity2::OptionalMethod) -> crate::combat::launchbehaviour::LaunchBehaviour =
-            ::core::mem::transmute(__lookup_get_lancher::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_lancher {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::combat::launchbehaviour::LaunchBehaviour as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CameraControllerBullet as ::unity2::ClassIdentity>::class(),
-                "set_Lancher",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CameraControllerBullet as ::unity2::ClassIdentity>::NAME,
-                        "set_Lancher",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_lancher(
-        this: CameraControllerBullet,
-        value: crate::combat::launchbehaviour::LaunchBehaviour,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(CameraControllerBullet, crate::combat::launchbehaviour::LaunchBehaviour, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_lancher::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_check_state {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CameraControllerBullet as ::unity2::ClassIdentity>::class(),
-                "CheckState",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CameraControllerBullet as ::unity2::ClassIdentity>::NAME,
-                        "CheckState",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn check_state(this: CameraControllerBullet, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CameraControllerBullet, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_check_state::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_combat_vector {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CameraControllerBullet as ::unity2::ClassIdentity>::class(),
-                "GetCombatVector",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CameraControllerBullet as ::unity2::ClassIdentity>::NAME,
-                        "GetCombatVector",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_combat_vector(
-        this: CameraControllerBullet,
-        look_at_vector: crate::unity_engine::vector3::Vector3,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::vector3::Vector3 {
-        let inner: extern "C" fn(
-            CameraControllerBullet,
-            crate::unity_engine::vector3::Vector3,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(__lookup_get_combat_vector::get_method_info().method_ptr);
-        inner(this, look_at_vector, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_activate {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CameraControllerBullet as ::unity2::ClassIdentity>::class(),
-                "Activate",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CameraControllerBullet as ::unity2::ClassIdentity>::NAME,
-                        "Activate",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn activate(this: CameraControllerBullet, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CameraControllerBullet, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_activate::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_camera_targets {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CameraControllerBullet as ::unity2::ClassIdentity>::class(),
-                "GetCameraTargets",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CameraControllerBullet as ::unity2::ClassIdentity>::NAME,
-                        "GetCameraTargets",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_camera_targets(this: CameraControllerBullet, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Array<i32> {
-        let inner: extern "C" fn(CameraControllerBullet, ::unity2::OptionalMethod) -> ::unity2::Array<i32> =
-            ::core::mem::transmute(__lookup_get_camera_targets::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CameraControllerBullet as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CameraControllerBullet as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: CameraControllerBullet, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CameraControllerBullet, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __CameraControllerBullet_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_shoot_state { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CameraControllerBullet as :: unity2 :: ClassIdentity > :: class () , "get_ShootState" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CameraControllerBullet as :: unity2 :: ClassIdentity > :: NAME , "get_ShootState" , e) , } } } pub unsafe fn get_shoot_state (this : CameraControllerBullet , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: combat :: cameracontrollerbullet :: CameraControllerBullet_State { let inner : extern "C" fn (CameraControllerBullet , :: unity2 :: OptionalMethod ,) -> crate :: combat :: cameracontrollerbullet :: CameraControllerBullet_State = :: core :: mem :: transmute (__lookup_get_shoot_state :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_shoot_state { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: cameracontrollerbullet :: CameraControllerBullet_State as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CameraControllerBullet as :: unity2 :: ClassIdentity > :: class () , "set_ShootState" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CameraControllerBullet as :: unity2 :: ClassIdentity > :: NAME , "set_ShootState" , e) , } } } pub unsafe fn set_shoot_state (this : CameraControllerBullet , value : crate :: combat :: cameracontrollerbullet :: CameraControllerBullet_State , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CameraControllerBullet , crate :: combat :: cameracontrollerbullet :: CameraControllerBullet_State , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_shoot_state :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_lancher { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CameraControllerBullet as :: unity2 :: ClassIdentity > :: class () , "get_Lancher" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CameraControllerBullet as :: unity2 :: ClassIdentity > :: NAME , "get_Lancher" , e) , } } } pub unsafe fn get_lancher (this : CameraControllerBullet , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: combat :: launchbehaviour :: LaunchBehaviour { let inner : extern "C" fn (CameraControllerBullet , :: unity2 :: OptionalMethod ,) -> crate :: combat :: launchbehaviour :: LaunchBehaviour = :: core :: mem :: transmute (__lookup_get_lancher :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_lancher { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: launchbehaviour :: LaunchBehaviour as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CameraControllerBullet as :: unity2 :: ClassIdentity > :: class () , "set_Lancher" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CameraControllerBullet as :: unity2 :: ClassIdentity > :: NAME , "set_Lancher" , e) , } } } pub unsafe fn set_lancher (this : CameraControllerBullet , value : crate :: combat :: launchbehaviour :: LaunchBehaviour , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CameraControllerBullet , crate :: combat :: launchbehaviour :: LaunchBehaviour , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_lancher :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_check_state { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CameraControllerBullet as :: unity2 :: ClassIdentity > :: class () , "CheckState" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CameraControllerBullet as :: unity2 :: ClassIdentity > :: NAME , "CheckState" , e) , } } } pub unsafe fn check_state (this : CameraControllerBullet , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CameraControllerBullet , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_check_state :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_combat_vector { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CameraControllerBullet as :: unity2 :: ClassIdentity > :: class () , "GetCombatVector" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CameraControllerBullet as :: unity2 :: ClassIdentity > :: NAME , "GetCombatVector" , e) , } } } pub unsafe fn get_combat_vector (this : CameraControllerBullet , look_at_vector : crate :: unity_engine :: vector3 :: Vector3 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 { let inner : extern "C" fn (CameraControllerBullet , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute (__lookup_get_combat_vector :: get_method_info () . method_ptr ,) ; inner (this , look_at_vector , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_activate { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CameraControllerBullet as :: unity2 :: ClassIdentity > :: class () , "Activate" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CameraControllerBullet as :: unity2 :: ClassIdentity > :: NAME , "Activate" , e) , } } } pub unsafe fn activate (this : CameraControllerBullet , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CameraControllerBullet , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_activate :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_camera_targets { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CameraControllerBullet as :: unity2 :: ClassIdentity > :: class () , "GetCameraTargets" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CameraControllerBullet as :: unity2 :: ClassIdentity > :: NAME , "GetCameraTargets" , e) , } } } pub unsafe fn get_camera_targets (this : CameraControllerBullet , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < i32 > { let inner : extern "C" fn (CameraControllerBullet , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < i32 > = :: core :: mem :: transmute (__lookup_get_camera_targets :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CameraControllerBullet as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CameraControllerBullet as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : CameraControllerBullet , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CameraControllerBullet , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "combat-cameracontrollerbullet")]
-pub trait ICameraControllerBulletMethods: ICameraControllerBullet {
-    #[doc = "`get_ShootState()` overload"]
-    fn get_shoot_state(self) -> crate::combat::cameracontrollerbullet::CameraControllerBullet_State {
-        unsafe {
-            let __receiver =
-                <CameraControllerBullet as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CameraControllerBullet_unity2_raw::get_shoot_state(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_ShootState(crate::combat::cameracontrollerbullet::CameraControllerBullet_State)` overload"]
-    fn set_shoot_state(self, value: impl ::core::convert::Into<crate::combat::cameracontrollerbullet::CameraControllerBullet_State>) -> () {
-        unsafe {
-            let __receiver =
-                <CameraControllerBullet as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CameraControllerBullet_unity2_raw::set_shoot_state(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Lancher()` overload"]
-    fn get_lancher(self) -> crate::combat::launchbehaviour::LaunchBehaviour {
-        unsafe {
-            let __receiver =
-                <CameraControllerBullet as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CameraControllerBullet_unity2_raw::get_lancher(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_Lancher(crate::combat::launchbehaviour::LaunchBehaviour)` overload"]
-    fn set_lancher(self, value: impl ::core::convert::Into<crate::combat::launchbehaviour::LaunchBehaviour>) -> () {
-        unsafe {
-            let __receiver =
-                <CameraControllerBullet as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CameraControllerBullet_unity2_raw::set_lancher(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CheckState()` overload"]
-    fn check_state(self) -> () {
-        unsafe {
-            let __receiver =
-                <CameraControllerBullet as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CameraControllerBullet_unity2_raw::check_state(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetCombatVector(crate::unity_engine::vector3::Vector3)` overload"]
-    fn get_combat_vector(
-        self,
-        look_at_vector: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-    ) -> crate::unity_engine::vector3::Vector3 {
-        unsafe {
-            let __receiver =
-                <CameraControllerBullet as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CameraControllerBullet_unity2_raw::get_combat_vector(
-                __receiver,
-                ::core::convert::Into::into(look_at_vector),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Activate()` overload"]
-    fn activate(self) -> () {
-        unsafe {
-            let __receiver =
-                <CameraControllerBullet as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CameraControllerBullet_unity2_raw::activate(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetCameraTargets()` overload"]
-    fn get_camera_targets(self) -> ::unity2::Array<i32> {
-        unsafe {
-            let __receiver =
-                <CameraControllerBullet as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CameraControllerBullet_unity2_raw::get_camera_targets(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <CameraControllerBullet as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CameraControllerBullet_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait ICameraControllerBulletMethods : ICameraControllerBullet { # [doc = "`get_ShootState()` overload"] fn get_shoot_state (self ,) -> crate :: combat :: cameracontrollerbullet :: CameraControllerBullet_State { unsafe { let __receiver = < CameraControllerBullet as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CameraControllerBullet_unity2_raw :: get_shoot_state (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_ShootState(crate::combat::cameracontrollerbullet::CameraControllerBullet_State)` overload"] fn set_shoot_state (self , value : impl :: core :: convert :: Into < crate :: combat :: cameracontrollerbullet :: CameraControllerBullet_State >) -> () { unsafe { let __receiver = < CameraControllerBullet as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CameraControllerBullet_unity2_raw :: set_shoot_state (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_Lancher()` overload"] fn get_lancher (self ,) -> crate :: combat :: launchbehaviour :: LaunchBehaviour { unsafe { let __receiver = < CameraControllerBullet as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CameraControllerBullet_unity2_raw :: get_lancher (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_Lancher(crate::combat::launchbehaviour::LaunchBehaviour)` overload"] fn set_lancher (self , value : impl :: core :: convert :: Into < crate :: combat :: launchbehaviour :: LaunchBehaviour >) -> () { unsafe { let __receiver = < CameraControllerBullet as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CameraControllerBullet_unity2_raw :: set_lancher (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`CheckState()` overload"] fn check_state (self ,) -> () { unsafe { let __receiver = < CameraControllerBullet as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CameraControllerBullet_unity2_raw :: check_state (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetCombatVector(crate::unity_engine::vector3::Vector3)` overload"] fn get_combat_vector (self , look_at_vector : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < CameraControllerBullet as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CameraControllerBullet_unity2_raw :: get_combat_vector (__receiver , :: core :: convert :: Into :: into (look_at_vector) , :: core :: option :: Option :: None) } } # [doc = "`Activate()` overload"] fn activate (self ,) -> () { unsafe { let __receiver = < CameraControllerBullet as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CameraControllerBullet_unity2_raw :: activate (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetCameraTargets()` overload"] fn get_camera_targets (self ,) -> :: unity2 :: Array < i32 > { unsafe { let __receiver = < CameraControllerBullet as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CameraControllerBullet_unity2_raw :: get_camera_targets (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CameraControllerBullet as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CameraControllerBullet_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "combat-cameracontrollerbullet")]
-impl<__T: ICameraControllerBullet> ICameraControllerBulletMethods for __T {}
+impl < __T : ICameraControllerBullet > ICameraControllerBulletMethods for __T { }
+
+#[cfg(feature = "combat-cameracontrollerbullet")]
+impl CameraControllerBullet { pub fn get_shoot_state_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CameraControllerBullet_unity2_raw :: __lookup_get_shoot_state :: get_method_info () } pub fn set_shoot_state_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CameraControllerBullet_unity2_raw :: __lookup_set_shoot_state :: get_method_info () } pub fn get_lancher_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CameraControllerBullet_unity2_raw :: __lookup_get_lancher :: get_method_info () } pub fn set_lancher_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CameraControllerBullet_unity2_raw :: __lookup_set_lancher :: get_method_info () } pub fn check_state_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CameraControllerBullet_unity2_raw :: __lookup_check_state :: get_method_info () } pub fn get_combat_vector_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CameraControllerBullet_unity2_raw :: __lookup_get_combat_vector :: get_method_info () } pub fn activate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CameraControllerBullet_unity2_raw :: __lookup_activate :: get_method_info () } pub fn get_camera_targets_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CameraControllerBullet_unity2_raw :: __lookup_get_camera_targets :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CameraControllerBullet_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "combat-cameracontrollerbullet")]
 impl CameraControllerBullet {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(CameraControllerBullet),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ICameraControllerBulletMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CameraControllerBullet) , :: core :: stringify ! (new) ,)) ; < Self as ICameraControllerBulletMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "combat-cameracontrollerbullet")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{CameraControllerBullet, CameraControllerBullet_State, ICameraControllerBullet, ICameraControllerBulletMethods};
-    #[cfg(feature = "combat-basecameracontroller")]
-    pub use crate::combat::basecameracontroller::IBaseCameraControllerMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        combat::basecameracontroller::IBaseCameraController,
-        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::CameraControllerBullet_State;
+    pub use super::CameraControllerBullet;
+    pub use super::ICameraControllerBullet;
+    pub use super::ICameraControllerBulletMethods;
+    pub use crate::combat::basecameracontroller::IBaseCameraController;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "combat-basecameracontroller")] pub use crate::combat::basecameracontroller::IBaseCameraControllerMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

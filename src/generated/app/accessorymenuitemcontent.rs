@@ -2,305 +2,71 @@
 
 #[cfg(feature = "app-accessorymenuitemcontent-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::basicmenuitemcontent::{BasicMenuItemContent, IBasicMenuItemContent},
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/accessorymenuitemcontent/AccessoryMenuItemContent.md"))]
-    #[::unity2::class(namespace = "App", name = "AccessoryMenuItemContent")]
-    #[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]
-    pub struct AccessoryMenuItemContent {
-        #[offset(72)]
-        #[rename(name = "m_FixedCursorObject")]
-        pub m_fixed_cursor_object: crate::unity_engine::gameobject::GameObject,
-        #[offset(80)]
-        #[rename(name = "m_FixedCursorImage")]
-        pub m_fixed_cursor_image: crate::unity_engine::ui::image::Image,
-        #[offset(88)]
-        #[rename(name = "m_FixedCursorFrameImage")]
-        pub m_fixed_cursor_frame_image: crate::unity_engine::ui::image::Image,
-        #[offset(96)]
-        #[rename(name = "m_KindIconObject")]
-        pub m_kind_icon_object: crate::unity_engine::gameobject::GameObject,
-        #[offset(104)]
-        #[rename(name = "m_KindIconImage")]
-        pub m_kind_icon_image: crate::unity_engine::ui::image::Image,
-        #[offset(112)]
-        #[rename(name = "m_NameObject")]
-        pub m_name_object: crate::unity_engine::gameobject::GameObject,
-        #[offset(120)]
-        #[rename(name = "m_NameText")]
-        pub m_name_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: basicmenuitemcontent :: { BasicMenuItemContent , IBasicMenuItemContent }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/accessorymenuitemcontent/AccessoryMenuItemContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "AccessoryMenuItemContent")] # [parent (crate :: app :: basicmenuitemcontent :: BasicMenuItemContent)] pub struct AccessoryMenuItemContent {
+# [offset (72)] # [rename (name = "m_FixedCursorObject")] pub m_fixed_cursor_object : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (80)] # [rename (name = "m_FixedCursorImage")] pub m_fixed_cursor_image : crate :: unity_engine :: ui :: image :: Image ,
+# [offset (88)] # [rename (name = "m_FixedCursorFrameImage")] pub m_fixed_cursor_frame_image : crate :: unity_engine :: ui :: image :: Image ,
+# [offset (96)] # [rename (name = "m_KindIconObject")] pub m_kind_icon_object : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (104)] # [rename (name = "m_KindIconImage")] pub m_kind_icon_image : crate :: unity_engine :: ui :: image :: Image ,
+# [offset (112)] # [rename (name = "m_NameObject")] pub m_name_object : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (120)] # [rename (name = "m_NameText")] pub m_name_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+}
+
 }
 
 #[cfg(feature = "app-accessorymenuitemcontent-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-accessorymenuitemcontent")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AccessoryMenuItemContent_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AccessoryMenuItemContent as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AccessoryMenuItemContent as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: AccessoryMenuItemContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AccessoryMenuItemContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_build_text {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AccessoryMenuItemContent as ::unity2::ClassIdentity>::class(),
-                "BuildText",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AccessoryMenuItemContent as ::unity2::ClassIdentity>::NAME,
-                        "BuildText",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn build_text(this: AccessoryMenuItemContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AccessoryMenuItemContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_build_text::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update_text_color {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AccessoryMenuItemContent as ::unity2::ClassIdentity>::class(),
-                "UpdateTextColor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AccessoryMenuItemContent as ::unity2::ClassIdentity>::NAME,
-                        "UpdateTextColor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update_text_color(this: AccessoryMenuItemContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AccessoryMenuItemContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update_text_color::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_show_fixed_cursor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AccessoryMenuItemContent as ::unity2::ClassIdentity>::class(),
-                "ShowFixedCursor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AccessoryMenuItemContent as ::unity2::ClassIdentity>::NAME,
-                        "ShowFixedCursor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn show_fixed_cursor(this: AccessoryMenuItemContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AccessoryMenuItemContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_show_fixed_cursor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_hide_fixed_cursor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AccessoryMenuItemContent as ::unity2::ClassIdentity>::class(),
-                "HideFixedCursor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AccessoryMenuItemContent as ::unity2::ClassIdentity>::NAME,
-                        "HideFixedCursor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn hide_fixed_cursor(this: AccessoryMenuItemContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AccessoryMenuItemContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_hide_fixed_cursor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __AccessoryMenuItemContent_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AccessoryMenuItemContent as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AccessoryMenuItemContent as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : AccessoryMenuItemContent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AccessoryMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_build_text { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AccessoryMenuItemContent as :: unity2 :: ClassIdentity > :: class () , "BuildText" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AccessoryMenuItemContent as :: unity2 :: ClassIdentity > :: NAME , "BuildText" , e) , } } } pub unsafe fn build_text (this : AccessoryMenuItemContent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AccessoryMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_build_text :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update_text_color { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AccessoryMenuItemContent as :: unity2 :: ClassIdentity > :: class () , "UpdateTextColor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AccessoryMenuItemContent as :: unity2 :: ClassIdentity > :: NAME , "UpdateTextColor" , e) , } } } pub unsafe fn update_text_color (this : AccessoryMenuItemContent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AccessoryMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update_text_color :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_show_fixed_cursor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AccessoryMenuItemContent as :: unity2 :: ClassIdentity > :: class () , "ShowFixedCursor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AccessoryMenuItemContent as :: unity2 :: ClassIdentity > :: NAME , "ShowFixedCursor" , e) , } } } pub unsafe fn show_fixed_cursor (this : AccessoryMenuItemContent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AccessoryMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_show_fixed_cursor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_hide_fixed_cursor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AccessoryMenuItemContent as :: unity2 :: ClassIdentity > :: class () , "HideFixedCursor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AccessoryMenuItemContent as :: unity2 :: ClassIdentity > :: NAME , "HideFixedCursor" , e) , } } } pub unsafe fn hide_fixed_cursor (this : AccessoryMenuItemContent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AccessoryMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_hide_fixed_cursor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-accessorymenuitemcontent")]
-pub trait IAccessoryMenuItemContentMethods: IAccessoryMenuItemContent {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <AccessoryMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AccessoryMenuItemContent_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`BuildText()` overload"]
-    fn build_text(self) -> () {
-        unsafe {
-            let __receiver =
-                <AccessoryMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AccessoryMenuItemContent_unity2_raw::build_text(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`UpdateTextColor()` overload"]
-    fn update_text_color(self) -> () {
-        unsafe {
-            let __receiver =
-                <AccessoryMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AccessoryMenuItemContent_unity2_raw::update_text_color(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ShowFixedCursor()` overload"]
-    fn show_fixed_cursor(self) -> () {
-        unsafe {
-            let __receiver =
-                <AccessoryMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AccessoryMenuItemContent_unity2_raw::show_fixed_cursor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`HideFixedCursor()` overload"]
-    fn hide_fixed_cursor(self) -> () {
-        unsafe {
-            let __receiver =
-                <AccessoryMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AccessoryMenuItemContent_unity2_raw::hide_fixed_cursor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IAccessoryMenuItemContentMethods : IAccessoryMenuItemContent { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AccessoryMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AccessoryMenuItemContent_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } # [doc = "`BuildText()` overload"] fn build_text (self ,) -> () { unsafe { let __receiver = < AccessoryMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AccessoryMenuItemContent_unity2_raw :: build_text (__receiver , :: core :: option :: Option :: None) } } # [doc = "`UpdateTextColor()` overload"] fn update_text_color (self ,) -> () { unsafe { let __receiver = < AccessoryMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AccessoryMenuItemContent_unity2_raw :: update_text_color (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ShowFixedCursor()` overload"] fn show_fixed_cursor (self ,) -> () { unsafe { let __receiver = < AccessoryMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AccessoryMenuItemContent_unity2_raw :: show_fixed_cursor (__receiver , :: core :: option :: Option :: None) } } # [doc = "`HideFixedCursor()` overload"] fn hide_fixed_cursor (self ,) -> () { unsafe { let __receiver = < AccessoryMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AccessoryMenuItemContent_unity2_raw :: hide_fixed_cursor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-accessorymenuitemcontent")]
-impl<__T: IAccessoryMenuItemContent> IAccessoryMenuItemContentMethods for __T {}
+impl < __T : IAccessoryMenuItemContent > IAccessoryMenuItemContentMethods for __T { }
+
+#[cfg(feature = "app-accessorymenuitemcontent")]
+impl AccessoryMenuItemContent { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AccessoryMenuItemContent_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn build_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AccessoryMenuItemContent_unity2_raw :: __lookup_build_text :: get_method_info () } pub fn update_text_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AccessoryMenuItemContent_unity2_raw :: __lookup_update_text_color :: get_method_info () } pub fn show_fixed_cursor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AccessoryMenuItemContent_unity2_raw :: __lookup_show_fixed_cursor :: get_method_info () } pub fn hide_fixed_cursor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AccessoryMenuItemContent_unity2_raw :: __lookup_hide_fixed_cursor :: get_method_info () } }
 
 #[cfg(feature = "app-accessorymenuitemcontent")]
 impl AccessoryMenuItemContent {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AccessoryMenuItemContent),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAccessoryMenuItemContentMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AccessoryMenuItemContent) , :: core :: stringify ! (new) ,)) ; < Self as IAccessoryMenuItemContentMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-accessorymenuitemcontent")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{AccessoryMenuItemContent, IAccessoryMenuItemContent, IAccessoryMenuItemContentMethods};
-    #[cfg(feature = "app-basicmenuitemcontent")]
-    pub use crate::app::basicmenuitemcontent::IBasicMenuItemContentMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        app::basicmenuitemcontent::IBasicMenuItemContent,
-        system::object::IObject,
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::AccessoryMenuItemContent;
+    pub use super::IAccessoryMenuItemContent;
+    pub use super::IAccessoryMenuItemContentMethods;
+    pub use crate::app::basicmenuitemcontent::IBasicMenuItemContent;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "app-basicmenuitemcontent")] pub use crate::app::basicmenuitemcontent::IBasicMenuItemContentMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

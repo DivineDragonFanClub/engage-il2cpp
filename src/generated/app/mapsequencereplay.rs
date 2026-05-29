@@ -2,779 +2,154 @@
 
 #[cfg(feature = "app-mapsequencereplay-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::{
-            procinst::{IProcInst, ProcInst},
-            singletonprocinst_1::{ISingletonProcInst_1, SingletonProcInst_1},
-        },
-        system::{
-            object::{IObject, Object},
-            r#enum::{Enum, IEnum},
-            valuetype::{IValueType, ValueType},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencereplay/MapSequenceReplay.md"))]
-    #[::unity2::class(namespace = "App", name = "MapSequenceReplay")]
-    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: mapsequencereplay :: MapSequenceReplay >)]
-    pub struct MapSequenceReplay {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: procinst :: { IProcInst , ProcInst }
+ ;
+ use crate :: app :: singletonprocinst_1 :: { ISingletonProcInst_1 , SingletonProcInst_1 }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencereplay/MapSequenceReplay_Label.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct MapSequenceReplay_Label {
-        pub value: i32,
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencereplay/MapSequenceReplay.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapSequenceReplay")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: mapsequencereplay :: MapSequenceReplay >)] pub struct MapSequenceReplay {}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencereplay/MapSequenceReplay_Label.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct MapSequenceReplay_Label  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for MapSequenceReplay_Label  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapSequenceReplay.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    impl ::unity2::ClassIdentity for MapSequenceReplay_Label {
-        const NAME: &'static str = "MapSequenceReplay.Label";
-        const NAMESPACE: &'static str = "App";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  ::unity2::IlType for MapSequenceReplay_Label  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::IlType for MapSequenceReplay_Label {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  MapSequenceReplay_Label  {
+    pub fn read() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl MapSequenceReplay_Label {
-        pub fn read() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn mind() -> Self {
-            Self { value: 1 }
-        }
+    pub fn mind() -> Self {
+        Self { value: 1 }
 
-        pub fn engage_start() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn engage_link() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn engage_rewarp() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn god_change() -> Self {
-            Self { value: 5 }
-        }
-
-        pub fn surrender() -> Self {
-            Self { value: 6 }
-        }
-
-        pub fn cancel() -> Self {
-            Self { value: 7 }
-        }
-
-        pub fn end() -> Self {
-            Self { value: 8 }
-        }
     }
+
+
+    pub fn engage_start() -> Self {
+        Self { value: 2 }
+
+    }
+
+
+    pub fn engage_link() -> Self {
+        Self { value: 3 }
+
+    }
+
+
+    pub fn engage_rewarp() -> Self {
+        Self { value: 4 }
+
+    }
+
+
+    pub fn god_change() -> Self {
+        Self { value: 5 }
+
+    }
+
+
+    pub fn surrender() -> Self {
+        Self { value: 6 }
+
+    }
+
+
+    pub fn cancel() -> Self {
+        Self { value: 7 }
+
+    }
+
+
+    pub fn end() -> Self {
+        Self { value: 8 }
+
+    }
+
+}
+
 }
 
 #[cfg(feature = "app-mapsequencereplay-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-mapsequencereplay")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapSequenceReplay_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_create {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceReplay as ::unity2::ClassIdentity>::class(),
-                "OnCreate",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceReplay as ::unity2::ClassIdentity>::NAME,
-                        "OnCreate",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_create(this: MapSequenceReplay, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapSequenceReplay, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_create::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_dispose {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceReplay as ::unity2::ClassIdentity>::class(),
-                "OnDispose",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceReplay as ::unity2::ClassIdentity>::NAME,
-                        "OnDispose",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_dispose(this: MapSequenceReplay, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapSequenceReplay, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_dispose::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_persistent {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceReplay as ::unity2::ClassIdentity>::class(),
-                "OnPersistent",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceReplay as ::unity2::ClassIdentity>::NAME,
-                        "OnPersistent",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_persistent(this: MapSequenceReplay, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapSequenceReplay, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_persistent::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_read {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceReplay as ::unity2::ClassIdentity>::class(),
-                "Read",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceReplay as ::unity2::ClassIdentity>::NAME,
-                        "Read",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn read(this: MapSequenceReplay, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapSequenceReplay, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_read::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_focus {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceReplay as ::unity2::ClassIdentity>::class(),
-                "Focus",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceReplay as ::unity2::ClassIdentity>::NAME,
-                        "Focus",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn focus(this: MapSequenceReplay, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapSequenceReplay, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_focus::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_mind_type_branch {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceReplay as ::unity2::ClassIdentity>::class(),
-                "MindTypeBranch",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceReplay as ::unity2::ClassIdentity>::NAME,
-                        "MindTypeBranch",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn mind_type_branch(this: MapSequenceReplay, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapSequenceReplay, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_mind_type_branch::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_prepare_engage_rewarp {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceReplay as ::unity2::ClassIdentity>::class(),
-                "PrepareEngageRewarp",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceReplay as ::unity2::ClassIdentity>::NAME,
-                        "PrepareEngageRewarp",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn prepare_engage_rewarp(this: MapSequenceReplay, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapSequenceReplay, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_prepare_engage_rewarp::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_mind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceReplay as ::unity2::ClassIdentity>::class(),
-                "Mind",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceReplay as ::unity2::ClassIdentity>::NAME,
-                        "Mind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn mind(this: MapSequenceReplay, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapSequenceReplay, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_mind::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_surrender {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceReplay as ::unity2::ClassIdentity>::class(),
-                "Surrender",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceReplay as ::unity2::ClassIdentity>::NAME,
-                        "Surrender",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn surrender(this: MapSequenceReplay, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapSequenceReplay, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_surrender::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_game_end_branch {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceReplay as ::unity2::ClassIdentity>::class(),
-                "GameEndBranch",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceReplay as ::unity2::ClassIdentity>::NAME,
-                        "GameEndBranch",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn game_end_branch(this: MapSequenceReplay, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapSequenceReplay, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_game_end_branch::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_check_cancel_input {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceReplay as ::unity2::ClassIdentity>::class(),
-                "CheckCancelInput",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceReplay as ::unity2::ClassIdentity>::NAME,
-                        "CheckCancelInput",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn check_cancel_input(this: MapSequenceReplay, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapSequenceReplay, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_check_cancel_input::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_check_cancel {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceReplay as ::unity2::ClassIdentity>::class(),
-                "CheckCancel",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceReplay as ::unity2::ClassIdentity>::NAME,
-                        "CheckCancel",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn check_cancel(this: MapSequenceReplay, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(MapSequenceReplay, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_check_cancel::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cancel {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceReplay as ::unity2::ClassIdentity>::class(),
-                "Cancel",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceReplay as ::unity2::ClassIdentity>::NAME,
-                        "Cancel",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cancel(this: MapSequenceReplay, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapSequenceReplay, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_cancel::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_finish_replay {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceReplay as ::unity2::ClassIdentity>::class(),
-                "FinishReplay",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceReplay as ::unity2::ClassIdentity>::NAME,
-                        "FinishReplay",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn finish_replay(this: MapSequenceReplay, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapSequenceReplay, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_finish_replay::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceReplay as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceReplay as ::unity2::ClassIdentity>::NAME,
-                        "CreateBind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_bind(super_: crate::app::procinst::ProcInst, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
-        inner(super_, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceReplay as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceReplay as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: MapSequenceReplay, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapSequenceReplay, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MapSequenceReplay_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_create { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceReplay as :: unity2 :: ClassIdentity > :: class () , "OnCreate" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceReplay as :: unity2 :: ClassIdentity > :: NAME , "OnCreate" , e) , } } } pub unsafe fn on_create (this : MapSequenceReplay , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapSequenceReplay , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_create :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_dispose { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceReplay as :: unity2 :: ClassIdentity > :: class () , "OnDispose" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceReplay as :: unity2 :: ClassIdentity > :: NAME , "OnDispose" , e) , } } } pub unsafe fn on_dispose (this : MapSequenceReplay , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapSequenceReplay , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_dispose :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_persistent { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceReplay as :: unity2 :: ClassIdentity > :: class () , "OnPersistent" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceReplay as :: unity2 :: ClassIdentity > :: NAME , "OnPersistent" , e) , } } } pub unsafe fn on_persistent (this : MapSequenceReplay , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapSequenceReplay , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_persistent :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_read { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceReplay as :: unity2 :: ClassIdentity > :: class () , "Read" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceReplay as :: unity2 :: ClassIdentity > :: NAME , "Read" , e) , } } } pub unsafe fn read (this : MapSequenceReplay , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapSequenceReplay , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_read :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_focus { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceReplay as :: unity2 :: ClassIdentity > :: class () , "Focus" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceReplay as :: unity2 :: ClassIdentity > :: NAME , "Focus" , e) , } } } pub unsafe fn focus (this : MapSequenceReplay , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapSequenceReplay , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_focus :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_mind_type_branch { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceReplay as :: unity2 :: ClassIdentity > :: class () , "MindTypeBranch" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceReplay as :: unity2 :: ClassIdentity > :: NAME , "MindTypeBranch" , e) , } } } pub unsafe fn mind_type_branch (this : MapSequenceReplay , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapSequenceReplay , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_mind_type_branch :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_prepare_engage_rewarp { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceReplay as :: unity2 :: ClassIdentity > :: class () , "PrepareEngageRewarp" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceReplay as :: unity2 :: ClassIdentity > :: NAME , "PrepareEngageRewarp" , e) , } } } pub unsafe fn prepare_engage_rewarp (this : MapSequenceReplay , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapSequenceReplay , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_prepare_engage_rewarp :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_mind { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceReplay as :: unity2 :: ClassIdentity > :: class () , "Mind" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceReplay as :: unity2 :: ClassIdentity > :: NAME , "Mind" , e) , } } } pub unsafe fn mind (this : MapSequenceReplay , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapSequenceReplay , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_mind :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_surrender { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceReplay as :: unity2 :: ClassIdentity > :: class () , "Surrender" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceReplay as :: unity2 :: ClassIdentity > :: NAME , "Surrender" , e) , } } } pub unsafe fn surrender (this : MapSequenceReplay , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapSequenceReplay , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_surrender :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_game_end_branch { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceReplay as :: unity2 :: ClassIdentity > :: class () , "GameEndBranch" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceReplay as :: unity2 :: ClassIdentity > :: NAME , "GameEndBranch" , e) , } } } pub unsafe fn game_end_branch (this : MapSequenceReplay , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapSequenceReplay , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_game_end_branch :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_check_cancel_input { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceReplay as :: unity2 :: ClassIdentity > :: class () , "CheckCancelInput" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceReplay as :: unity2 :: ClassIdentity > :: NAME , "CheckCancelInput" , e) , } } } pub unsafe fn check_cancel_input (this : MapSequenceReplay , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapSequenceReplay , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_check_cancel_input :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_check_cancel { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceReplay as :: unity2 :: ClassIdentity > :: class () , "CheckCancel" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceReplay as :: unity2 :: ClassIdentity > :: NAME , "CheckCancel" , e) , } } } pub unsafe fn check_cancel (this : MapSequenceReplay , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (MapSequenceReplay , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_check_cancel :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cancel { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceReplay as :: unity2 :: ClassIdentity > :: class () , "Cancel" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceReplay as :: unity2 :: ClassIdentity > :: NAME , "Cancel" , e) , } } } pub unsafe fn cancel (this : MapSequenceReplay , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapSequenceReplay , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cancel :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_finish_replay { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceReplay as :: unity2 :: ClassIdentity > :: class () , "FinishReplay" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceReplay as :: unity2 :: ClassIdentity > :: NAME , "FinishReplay" , e) , } } } pub unsafe fn finish_replay (this : MapSequenceReplay , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapSequenceReplay , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_finish_replay :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_bind { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceReplay as :: unity2 :: ClassIdentity > :: class () , "CreateBind" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceReplay as :: unity2 :: ClassIdentity > :: NAME , "CreateBind" , e) , } } } pub unsafe fn create_bind (super_ : crate :: app :: procinst :: ProcInst , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create_bind :: get_method_info () . method_ptr ,) ; inner (super_ , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceReplay as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceReplay as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : MapSequenceReplay , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapSequenceReplay , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-mapsequencereplay")]
+impl MapSequenceReplay { # [doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { __MapSequenceReplay_unity2_raw :: create_bind (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-mapsequencereplay")]
+pub trait IMapSequenceReplayMethods : IMapSequenceReplay { # [doc = "`OnCreate()` overload"] fn on_create (self ,) -> () { unsafe { let __receiver = < MapSequenceReplay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceReplay_unity2_raw :: on_create (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnDispose()` overload"] fn on_dispose (self ,) -> () { unsafe { let __receiver = < MapSequenceReplay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceReplay_unity2_raw :: on_dispose (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnPersistent()` overload"] fn on_persistent (self ,) -> () { unsafe { let __receiver = < MapSequenceReplay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceReplay_unity2_raw :: on_persistent (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Read()` overload"] fn read (self ,) -> () { unsafe { let __receiver = < MapSequenceReplay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceReplay_unity2_raw :: read (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Focus()` overload"] fn focus (self ,) -> () { unsafe { let __receiver = < MapSequenceReplay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceReplay_unity2_raw :: focus (__receiver , :: core :: option :: Option :: None) } } # [doc = "`MindTypeBranch()` overload"] fn mind_type_branch (self ,) -> () { unsafe { let __receiver = < MapSequenceReplay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceReplay_unity2_raw :: mind_type_branch (__receiver , :: core :: option :: Option :: None) } } # [doc = "`PrepareEngageRewarp()` overload"] fn prepare_engage_rewarp (self ,) -> () { unsafe { let __receiver = < MapSequenceReplay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceReplay_unity2_raw :: prepare_engage_rewarp (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Mind()` overload"] fn mind (self ,) -> () { unsafe { let __receiver = < MapSequenceReplay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceReplay_unity2_raw :: mind (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Surrender()` overload"] fn surrender (self ,) -> () { unsafe { let __receiver = < MapSequenceReplay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceReplay_unity2_raw :: surrender (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GameEndBranch()` overload"] fn game_end_branch (self ,) -> () { unsafe { let __receiver = < MapSequenceReplay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceReplay_unity2_raw :: game_end_branch (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CheckCancelInput()` overload"] fn check_cancel_input (self ,) -> () { unsafe { let __receiver = < MapSequenceReplay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceReplay_unity2_raw :: check_cancel_input (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CheckCancel()` overload"] fn check_cancel (self ,) -> bool { unsafe { let __receiver = < MapSequenceReplay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceReplay_unity2_raw :: check_cancel (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Cancel()` overload"] fn cancel (self ,) -> () { unsafe { let __receiver = < MapSequenceReplay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceReplay_unity2_raw :: cancel (__receiver , :: core :: option :: Option :: None) } } # [doc = "`FinishReplay()` overload"] fn finish_replay (self ,) -> () { unsafe { let __receiver = < MapSequenceReplay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceReplay_unity2_raw :: finish_replay (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapSequenceReplay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceReplay_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-mapsequencereplay")]
+impl < __T : IMapSequenceReplay > IMapSequenceReplayMethods for __T { }
+
+#[cfg(feature = "app-mapsequencereplay")]
+impl MapSequenceReplay { pub fn on_create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceReplay_unity2_raw :: __lookup_on_create :: get_method_info () } pub fn on_dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceReplay_unity2_raw :: __lookup_on_dispose :: get_method_info () } pub fn on_persistent_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceReplay_unity2_raw :: __lookup_on_persistent :: get_method_info () } pub fn read_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceReplay_unity2_raw :: __lookup_read :: get_method_info () } pub fn focus_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceReplay_unity2_raw :: __lookup_focus :: get_method_info () } pub fn mind_type_branch_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceReplay_unity2_raw :: __lookup_mind_type_branch :: get_method_info () } pub fn prepare_engage_rewarp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceReplay_unity2_raw :: __lookup_prepare_engage_rewarp :: get_method_info () } pub fn mind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceReplay_unity2_raw :: __lookup_mind :: get_method_info () } pub fn surrender_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceReplay_unity2_raw :: __lookup_surrender :: get_method_info () } pub fn game_end_branch_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceReplay_unity2_raw :: __lookup_game_end_branch :: get_method_info () } pub fn check_cancel_input_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceReplay_unity2_raw :: __lookup_check_cancel_input :: get_method_info () } pub fn check_cancel_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceReplay_unity2_raw :: __lookup_check_cancel :: get_method_info () } pub fn cancel_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceReplay_unity2_raw :: __lookup_cancel :: get_method_info () } pub fn finish_replay_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceReplay_unity2_raw :: __lookup_finish_replay :: get_method_info () } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceReplay_unity2_raw :: __lookup_create_bind :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceReplay_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-mapsequencereplay")]
 impl MapSequenceReplay {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
-    pub fn create_bind(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
-        unsafe { __MapSequenceReplay_unity2_raw::create_bind(::core::convert::Into::into(super_), ::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-mapsequencereplay")]
-pub trait IMapSequenceReplayMethods: IMapSequenceReplay {
-    #[doc = "`OnCreate()` overload"]
-    fn on_create(self) -> () {
-        unsafe {
-            let __receiver = <MapSequenceReplay as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSequenceReplay_unity2_raw::on_create(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnDispose()` overload"]
-    fn on_dispose(self) -> () {
-        unsafe {
-            let __receiver = <MapSequenceReplay as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSequenceReplay_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnPersistent()` overload"]
-    fn on_persistent(self) -> () {
-        unsafe {
-            let __receiver = <MapSequenceReplay as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSequenceReplay_unity2_raw::on_persistent(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Read()` overload"]
-    fn read(self) -> () {
-        unsafe {
-            let __receiver = <MapSequenceReplay as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSequenceReplay_unity2_raw::read(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Focus()` overload"]
-    fn focus(self) -> () {
-        unsafe {
-            let __receiver = <MapSequenceReplay as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSequenceReplay_unity2_raw::focus(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`MindTypeBranch()` overload"]
-    fn mind_type_branch(self) -> () {
-        unsafe {
-            let __receiver = <MapSequenceReplay as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSequenceReplay_unity2_raw::mind_type_branch(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`PrepareEngageRewarp()` overload"]
-    fn prepare_engage_rewarp(self) -> () {
-        unsafe {
-            let __receiver = <MapSequenceReplay as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSequenceReplay_unity2_raw::prepare_engage_rewarp(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Mind()` overload"]
-    fn mind(self) -> () {
-        unsafe {
-            let __receiver = <MapSequenceReplay as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSequenceReplay_unity2_raw::mind(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Surrender()` overload"]
-    fn surrender(self) -> () {
-        unsafe {
-            let __receiver = <MapSequenceReplay as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSequenceReplay_unity2_raw::surrender(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GameEndBranch()` overload"]
-    fn game_end_branch(self) -> () {
-        unsafe {
-            let __receiver = <MapSequenceReplay as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSequenceReplay_unity2_raw::game_end_branch(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CheckCancelInput()` overload"]
-    fn check_cancel_input(self) -> () {
-        unsafe {
-            let __receiver = <MapSequenceReplay as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSequenceReplay_unity2_raw::check_cancel_input(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CheckCancel()` overload"]
-    fn check_cancel(self) -> bool {
-        unsafe {
-            let __receiver = <MapSequenceReplay as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSequenceReplay_unity2_raw::check_cancel(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Cancel()` overload"]
-    fn cancel(self) -> () {
-        unsafe {
-            let __receiver = <MapSequenceReplay as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSequenceReplay_unity2_raw::cancel(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`FinishReplay()` overload"]
-    fn finish_replay(self) -> () {
-        unsafe {
-            let __receiver = <MapSequenceReplay as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSequenceReplay_unity2_raw::finish_replay(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <MapSequenceReplay as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSequenceReplay_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-mapsequencereplay")]
-impl<__T: IMapSequenceReplay> IMapSequenceReplayMethods for __T {}
-
-#[cfg(feature = "app-mapsequencereplay")]
-impl MapSequenceReplay {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapSequenceReplay),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapSequenceReplayMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapSequenceReplay) , :: core :: stringify ! (new) ,)) ; < Self as IMapSequenceReplayMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-mapsequencereplay")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IMapSequenceReplay, IMapSequenceReplayMethods, MapSequenceReplay, MapSequenceReplay_Label};
-    #[cfg(feature = "app-procinst")]
-    pub use crate::app::procinst::IProcInstMethods;
-    #[cfg(feature = "app-singletonprocinst_1")]
-    pub use crate::app::singletonprocinst_1::ISingletonProcInst_1Methods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::{
-        app::{procinst::IProcInst, singletonprocinst_1::ISingletonProcInst_1},
-        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
-    };
+    pub use super::MapSequenceReplay;
+    pub use super::IMapSequenceReplay;
+    pub use super::IMapSequenceReplayMethods;
+    pub use super::MapSequenceReplay_Label;
+    pub use crate::app::procinst::IProcInst;
+    pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "app-procinst")] pub use crate::app::procinst::IProcInstMethods;
+    #[cfg(feature = "app-singletonprocinst_1")] pub use crate::app::singletonprocinst_1::ISingletonProcInst_1Methods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

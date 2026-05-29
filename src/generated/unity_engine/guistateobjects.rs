@@ -2,130 +2,36 @@
 
 #[cfg(feature = "unity_engine-guistateobjects-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/guistateobjects/GUIStateObjects.md"))]
-    #[::unity2::class(namespace = "UnityEngine", name = "GUIStateObjects")]
-    #[parent(crate::system::object::Object)]
-    pub struct GUIStateObjects {
-        #[static_field]
-        #[rename(name = "s_StateCache")]
-        pub s_state_cache: crate::system::collections::generic::dictionary_2::Dictionary_2<i32, crate::system::object::Object>,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/guistateobjects/GUIStateObjects.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "GUIStateObjects")] # [parent (crate :: system :: object :: Object)] pub struct GUIStateObjects {
+# [static_field] # [rename (name = "s_StateCache")] pub s_state_cache : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < i32 , crate :: system :: object :: Object > ,
+}
+
 }
 
 #[cfg(feature = "unity_engine-guistateobjects-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-guistateobjects")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __GUIStateObjects_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_state_object {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::SystemType as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GUIStateObjects as ::unity2::ClassIdentity>::class(),
-                "GetStateObject",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GUIStateObjects as ::unity2::ClassIdentity>::NAME,
-                        "GetStateObject",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_state_object(
-        t: ::unity2::SystemType,
-        control_id: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::object::Object {
-        let inner: extern "C" fn(::unity2::SystemType, i32, ::unity2::OptionalMethod) -> crate::system::object::Object =
-            ::core::mem::transmute(__lookup_get_state_object::get_method_info().method_ptr);
-        inner(t, control_id, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GUIStateObjects as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GUIStateObjects as ::unity2::ClassIdentity>::NAME,
-                        ".cctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __GUIStateObjects_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_state_object { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: SystemType as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GUIStateObjects as :: unity2 :: ClassIdentity > :: class () , "GetStateObject" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GUIStateObjects as :: unity2 :: ClassIdentity > :: NAME , "GetStateObject" , e) , } } } pub unsafe fn get_state_object (t : :: unity2 :: SystemType , control_id : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object { let inner : extern "C" fn (:: unity2 :: SystemType , i32 , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute (__lookup_get_state_object :: get_method_info () . method_ptr ,) ; inner (t , control_id , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GUIStateObjects as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GUIStateObjects as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-guistateobjects")]
-impl GUIStateObjects {
-    #[doc = "`GetStateObject(::unity2::SystemType, i32)` overload"]
-    pub fn get_state_object(
-        t: impl ::core::convert::Into<::unity2::SystemType>,
-        control_id: impl ::core::convert::Into<i32>,
-    ) -> crate::system::object::Object {
-        unsafe {
-            __GUIStateObjects_unity2_raw::get_state_object(
-                ::core::convert::Into::into(t),
-                ::core::convert::Into::into(control_id),
-                ::core::option::Option::None,
-            )
-        }
-    }
+impl GUIStateObjects { # [doc = "`GetStateObject(::unity2::SystemType, i32)` overload"] pub fn get_state_object (t : impl :: core :: convert :: Into < :: unity2 :: SystemType > , control_id : impl :: core :: convert :: Into < i32 >) -> crate :: system :: object :: Object { unsafe { __GUIStateObjects_unity2_raw :: get_state_object (:: core :: convert :: Into :: into (t) , :: core :: convert :: Into :: into (control_id) , :: core :: option :: Option :: None) } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { __GUIStateObjects_unity2_raw :: cctor (:: core :: option :: Option :: None) } } }
 
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __GUIStateObjects_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
+#[cfg(feature = "unity_engine-guistateobjects")]
+impl GUIStateObjects { pub fn get_state_object_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GUIStateObjects_unity2_raw :: __lookup_get_state_object :: get_method_info () } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GUIStateObjects_unity2_raw :: __lookup_cctor :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-guistateobjects")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{GUIStateObjects, IGUIStateObjects};
+    pub use super::GUIStateObjects;
+    pub use super::IGUIStateObjects;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

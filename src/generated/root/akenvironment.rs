@@ -2,683 +2,117 @@
 
 #[cfg(feature = "root-akenvironment-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akenvironment/AkEnvironment_AkEnvironment_CompareByPriority.md"))]
-    #[::unity2::class(namespace = "", name = "AkEnvironment.AkEnvironment_CompareByPriority")]
-    #[parent(crate::system::object::Object)]
-    pub struct AkEnvironment_AkEnvironment_CompareByPriority {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akenvironment/AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm.md"))]
-    #[::unity2::class(namespace = "", name = "AkEnvironment.AkEnvironment_CompareBySelectionAlgorithm")]
-    #[parent(crate::root::akenvironment::AkEnvironment_AkEnvironment_CompareByPriority)]
-    pub struct AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akenvironment/AkEnvironment.md"))]
-    #[::unity2::class(namespace = "", name = "AkEnvironment")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct AkEnvironment {
-        #[static_field]
-        #[rename(name = "MAX_NB_ENVIRONMENTS")]
-        pub max_nb_environments: i32,
-        #[static_field]
-        #[rename(name = "s_compareByPriority")]
-        pub s_compare_by_priority: crate::root::akenvironment::AkEnvironment_AkEnvironment_CompareByPriority,
-        #[static_field]
-        #[rename(name = "s_compareBySelectionAlgorithm")]
-        pub s_compare_by_selection_algorithm: crate::root::akenvironment::AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm,
-        #[offset(24)]
-        #[rename(name = "excludeOthers")]
-        pub exclude_others: bool,
-        #[offset(25)]
-        #[rename(name = "isDefault")]
-        pub is_default: bool,
-        #[offset(48)]
-        #[rename(name = "priority")]
-        pub priority: i32,
-        #[offset(52)]
-        #[rename(name = "auxBusIdInternal")]
-        pub aux_bus_id_internal: i32,
-        #[offset(56)]
-        #[rename(name = "valueGuidInternal")]
-        pub value_guid_internal: ::unity2::Array<u8>,
-    }
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akenvironment/AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm.md"))] # [:: unity2 :: class (namespace = "" , name = "AkEnvironment.AkEnvironment_CompareBySelectionAlgorithm")] # [parent (crate :: root :: akenvironment :: AkEnvironment_AkEnvironment_CompareByPriority)] pub struct AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm {}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akenvironment/AkEnvironment_AkEnvironment_CompareByPriority.md"))] # [:: unity2 :: class (namespace = "" , name = "AkEnvironment.AkEnvironment_CompareByPriority")] # [parent (crate :: system :: object :: Object)] pub struct AkEnvironment_AkEnvironment_CompareByPriority {}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akenvironment/AkEnvironment.md"))] # [:: unity2 :: class (namespace = "" , name = "AkEnvironment")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct AkEnvironment {
+# [static_field] # [rename (name = "MAX_NB_ENVIRONMENTS")] pub max_nb_environments : i32 ,
+# [static_field] # [rename (name = "s_compareByPriority")] pub s_compare_by_priority : crate :: root :: akenvironment :: AkEnvironment_AkEnvironment_CompareByPriority ,
+# [static_field] # [rename (name = "s_compareBySelectionAlgorithm")] pub s_compare_by_selection_algorithm : crate :: root :: akenvironment :: AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm ,
+# [offset (24)] # [rename (name = "excludeOthers")] pub exclude_others : bool ,
+# [offset (25)] # [rename (name = "isDefault")] pub is_default : bool ,
+# [offset (48)] # [rename (name = "priority")] pub priority : i32 ,
+# [offset (52)] # [rename (name = "auxBusIdInternal")] pub aux_bus_id_internal : i32 ,
+# [offset (56)] # [rename (name = "valueGuidInternal")] pub value_guid_internal : :: unity2 :: Array < u8 > ,
+}
+
 }
 
 #[cfg(feature = "root-akenvironment-types")]
 pub use __types::*;
 
 #[cfg(feature = "root-akenvironment")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AkEnvironment_AkEnvironment_CompareByPriority_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_compare {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::root::akenvironment::AkEnvironment as ::unity2::IlType>::il_type(),
-                <crate::root::akenvironment::AkEnvironment as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkEnvironment_AkEnvironment_CompareByPriority as ::unity2::ClassIdentity>::class(),
-                "Compare",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkEnvironment_AkEnvironment_CompareByPriority as ::unity2::ClassIdentity>::NAME,
-                        "Compare",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn compare(
-        this: AkEnvironment_AkEnvironment_CompareByPriority,
-        a: crate::root::akenvironment::AkEnvironment,
-        b: crate::root::akenvironment::AkEnvironment,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(
-            AkEnvironment_AkEnvironment_CompareByPriority,
-            crate::root::akenvironment::AkEnvironment,
-            crate::root::akenvironment::AkEnvironment,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(__lookup_compare::get_method_info().method_ptr);
-        inner(this, a, b, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkEnvironment_AkEnvironment_CompareByPriority as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkEnvironment_AkEnvironment_CompareByPriority as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: AkEnvironment_AkEnvironment_CompareByPriority, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AkEnvironment_AkEnvironment_CompareByPriority, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_compare { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: root :: akenvironment :: AkEnvironment as :: unity2 :: IlType > :: il_type () , < crate :: root :: akenvironment :: AkEnvironment as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm as :: unity2 :: ClassIdentity > :: class () , "Compare" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm as :: unity2 :: ClassIdentity > :: NAME , "Compare" , e) , } } } pub unsafe fn compare (this : AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm , a : crate :: root :: akenvironment :: AkEnvironment , b : crate :: root :: akenvironment :: AkEnvironment , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm , crate :: root :: akenvironment :: AkEnvironment , crate :: root :: akenvironment :: AkEnvironment , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_compare :: get_method_info () . method_ptr ,) ; inner (this , a , b , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "root-akenvironment")]
-pub trait IAkEnvironment_AkEnvironment_CompareByPriorityMethods: IAkEnvironment_AkEnvironment_CompareByPriority {
-    #[doc = "`Compare(crate::root::akenvironment::AkEnvironment, crate::root::akenvironment::AkEnvironment)` overload"]
-    fn compare(
-        self,
-        a: impl ::core::convert::Into<crate::root::akenvironment::AkEnvironment>,
-        b: impl ::core::convert::Into<crate::root::akenvironment::AkEnvironment>,
-    ) -> i32 {
-        unsafe {
-            let __receiver = <AkEnvironment_AkEnvironment_CompareByPriority as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AkEnvironment_AkEnvironment_CompareByPriority_unity2_raw::compare(
-                __receiver,
-                ::core::convert::Into::into(a),
-                ::core::convert::Into::into(b),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <AkEnvironment_AkEnvironment_CompareByPriority as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AkEnvironment_AkEnvironment_CompareByPriority_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IAkEnvironment_AkEnvironment_CompareBySelectionAlgorithmMethods : IAkEnvironment_AkEnvironment_CompareBySelectionAlgorithm { # [doc = "`Compare(crate::root::akenvironment::AkEnvironment, crate::root::akenvironment::AkEnvironment)` overload"] fn compare (self , a : impl :: core :: convert :: Into < crate :: root :: akenvironment :: AkEnvironment > , b : impl :: core :: convert :: Into < crate :: root :: akenvironment :: AkEnvironment >) -> i32 { unsafe { let __receiver = < AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm_unity2_raw :: compare (__receiver , :: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "root-akenvironment")]
-impl<__T: IAkEnvironment_AkEnvironment_CompareByPriority> IAkEnvironment_AkEnvironment_CompareByPriorityMethods for __T {}
+impl < __T : IAkEnvironment_AkEnvironment_CompareBySelectionAlgorithm > IAkEnvironment_AkEnvironment_CompareBySelectionAlgorithmMethods for __T { }
 
 #[cfg(feature = "root-akenvironment")]
-impl AkEnvironment_AkEnvironment_CompareByPriority {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AkEnvironment_AkEnvironment_CompareByPriority),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAkEnvironment_AkEnvironment_CompareByPriorityMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "root-akenvironment")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_compare {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::root::akenvironment::AkEnvironment as ::unity2::IlType>::il_type(),
-                <crate::root::akenvironment::AkEnvironment as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm as ::unity2::ClassIdentity>::class(),
-                "Compare",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm as ::unity2::ClassIdentity>::NAME,
-                        "Compare",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn compare(
-        this: AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm,
-        a: crate::root::akenvironment::AkEnvironment,
-        b: crate::root::akenvironment::AkEnvironment,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(
-            AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm,
-            crate::root::akenvironment::AkEnvironment,
-            crate::root::akenvironment::AkEnvironment,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(__lookup_compare::get_method_info().method_ptr);
-        inner(this, a, b, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "root-akenvironment")]
-pub trait IAkEnvironment_AkEnvironment_CompareBySelectionAlgorithmMethods: IAkEnvironment_AkEnvironment_CompareBySelectionAlgorithm {
-    #[doc = "`Compare(crate::root::akenvironment::AkEnvironment, crate::root::akenvironment::AkEnvironment)` overload"]
-    fn compare(
-        self,
-        a: impl ::core::convert::Into<crate::root::akenvironment::AkEnvironment>,
-        b: impl ::core::convert::Into<crate::root::akenvironment::AkEnvironment>,
-    ) -> i32 {
-        unsafe {
-            let __receiver = <AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm_unity2_raw::compare(
-                __receiver,
-                ::core::convert::Into::into(a),
-                ::core::convert::Into::into(b),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "root-akenvironment")]
-impl<__T: IAkEnvironment_AkEnvironment_CompareBySelectionAlgorithm> IAkEnvironment_AkEnvironment_CompareBySelectionAlgorithmMethods for __T {}
+impl AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm { pub fn compare_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm_unity2_raw :: __lookup_compare :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "root-akenvironment")]
 impl AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAkEnvironment_AkEnvironment_CompareBySelectionAlgorithmMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm) , :: core :: stringify ! (new) ,)) ; < Self as IAkEnvironment_AkEnvironment_CompareBySelectionAlgorithmMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "root-akenvironment")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AkEnvironment_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_collider {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkEnvironment as ::unity2::ClassIdentity>::class(),
-                "get_Collider",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkEnvironment as ::unity2::ClassIdentity>::NAME,
-                        "get_Collider",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_collider(this: AkEnvironment, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::collider::Collider {
-        let inner: extern "C" fn(AkEnvironment, ::unity2::OptionalMethod) -> crate::unity_engine::collider::Collider =
-            ::core::mem::transmute(__lookup_get_collider::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_collider {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::collider::Collider as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkEnvironment as ::unity2::ClassIdentity>::class(),
-                "set_Collider",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkEnvironment as ::unity2::ClassIdentity>::NAME,
-                        "set_Collider",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_collider(
-        this: AkEnvironment,
-        value: crate::unity_engine::collider::Collider,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(AkEnvironment, crate::unity_engine::collider::Collider, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_collider::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_awake {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<AkEnvironment as ::unity2::ClassIdentity>::class(), "Awake", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkEnvironment as ::unity2::ClassIdentity>::NAME,
-                        "Awake",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn awake(this: AkEnvironment, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AkEnvironment, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_awake::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_m_aux_bus_id {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkEnvironment as ::unity2::ClassIdentity>::class(),
-                "get_m_auxBusID",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkEnvironment as ::unity2::ClassIdentity>::NAME,
-                        "get_m_auxBusID",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_m_aux_bus_id(this: AkEnvironment, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AkEnvironment, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_m_aux_bus_id::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_value_guid {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkEnvironment as ::unity2::ClassIdentity>::class(),
-                "get_valueGuid",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkEnvironment as ::unity2::ClassIdentity>::NAME,
-                        "get_valueGuid",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_value_guid(this: AkEnvironment, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Array<u8> {
-        let inner: extern "C" fn(AkEnvironment, ::unity2::OptionalMethod) -> ::unity2::Array<u8> =
-            ::core::mem::transmute(__lookup_get_value_guid::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_aux_bus_id {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkEnvironment as ::unity2::ClassIdentity>::class(),
-                "GetAuxBusID",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkEnvironment as ::unity2::ClassIdentity>::NAME,
-                        "GetAuxBusID",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_aux_bus_id(this: AkEnvironment, __unity2_method_info: ::unity2::OptionalMethod) -> u32 {
-        let inner: extern "C" fn(AkEnvironment, ::unity2::OptionalMethod) -> u32 =
-            ::core::mem::transmute(__lookup_get_aux_bus_id::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<AkEnvironment as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkEnvironment as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: AkEnvironment, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AkEnvironment, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<AkEnvironment as ::unity2::ClassIdentity>::class(), ".cctor", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkEnvironment as ::unity2::ClassIdentity>::NAME,
-                        ".cctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __AkEnvironment_AkEnvironment_CompareByPriority_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_compare { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: root :: akenvironment :: AkEnvironment as :: unity2 :: IlType > :: il_type () , < crate :: root :: akenvironment :: AkEnvironment as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkEnvironment_AkEnvironment_CompareByPriority as :: unity2 :: ClassIdentity > :: class () , "Compare" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkEnvironment_AkEnvironment_CompareByPriority as :: unity2 :: ClassIdentity > :: NAME , "Compare" , e) , } } } pub unsafe fn compare (this : AkEnvironment_AkEnvironment_CompareByPriority , a : crate :: root :: akenvironment :: AkEnvironment , b : crate :: root :: akenvironment :: AkEnvironment , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (AkEnvironment_AkEnvironment_CompareByPriority , crate :: root :: akenvironment :: AkEnvironment , crate :: root :: akenvironment :: AkEnvironment , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_compare :: get_method_info () . method_ptr ,) ; inner (this , a , b , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkEnvironment_AkEnvironment_CompareByPriority as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkEnvironment_AkEnvironment_CompareByPriority as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : AkEnvironment_AkEnvironment_CompareByPriority , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkEnvironment_AkEnvironment_CompareByPriority , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "root-akenvironment")]
+pub trait IAkEnvironment_AkEnvironment_CompareByPriorityMethods : IAkEnvironment_AkEnvironment_CompareByPriority { # [doc = "`Compare(crate::root::akenvironment::AkEnvironment, crate::root::akenvironment::AkEnvironment)` overload"] fn compare (self , a : impl :: core :: convert :: Into < crate :: root :: akenvironment :: AkEnvironment > , b : impl :: core :: convert :: Into < crate :: root :: akenvironment :: AkEnvironment >) -> i32 { unsafe { let __receiver = < AkEnvironment_AkEnvironment_CompareByPriority as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkEnvironment_AkEnvironment_CompareByPriority_unity2_raw :: compare (__receiver , :: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AkEnvironment_AkEnvironment_CompareByPriority as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkEnvironment_AkEnvironment_CompareByPriority_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "root-akenvironment")]
+impl < __T : IAkEnvironment_AkEnvironment_CompareByPriority > IAkEnvironment_AkEnvironment_CompareByPriorityMethods for __T { }
+
+#[cfg(feature = "root-akenvironment")]
+impl AkEnvironment_AkEnvironment_CompareByPriority { pub fn compare_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkEnvironment_AkEnvironment_CompareByPriority_unity2_raw :: __lookup_compare :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkEnvironment_AkEnvironment_CompareByPriority_unity2_raw :: __lookup_ctor :: get_method_info () } }
+
+#[cfg(feature = "root-akenvironment")]
+impl AkEnvironment_AkEnvironment_CompareByPriority {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkEnvironment_AkEnvironment_CompareByPriority) , :: core :: stringify ! (new) ,)) ; < Self as IAkEnvironment_AkEnvironment_CompareByPriorityMethods > :: ctor (this ,) ; this }
 }
+
+#[cfg(feature = "root-akenvironment")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __AkEnvironment_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_collider { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkEnvironment as :: unity2 :: ClassIdentity > :: class () , "get_Collider" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkEnvironment as :: unity2 :: ClassIdentity > :: NAME , "get_Collider" , e) , } } } pub unsafe fn get_collider (this : AkEnvironment , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: collider :: Collider { let inner : extern "C" fn (AkEnvironment , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: collider :: Collider = :: core :: mem :: transmute (__lookup_get_collider :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_collider { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: collider :: Collider as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkEnvironment as :: unity2 :: ClassIdentity > :: class () , "set_Collider" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkEnvironment as :: unity2 :: ClassIdentity > :: NAME , "set_Collider" , e) , } } } pub unsafe fn set_collider (this : AkEnvironment , value : crate :: unity_engine :: collider :: Collider , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkEnvironment , crate :: unity_engine :: collider :: Collider , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_collider :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_awake { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkEnvironment as :: unity2 :: ClassIdentity > :: class () , "Awake" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkEnvironment as :: unity2 :: ClassIdentity > :: NAME , "Awake" , e) , } } } pub unsafe fn awake (this : AkEnvironment , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkEnvironment , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_awake :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_m_aux_bus_id { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkEnvironment as :: unity2 :: ClassIdentity > :: class () , "get_m_auxBusID" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkEnvironment as :: unity2 :: ClassIdentity > :: NAME , "get_m_auxBusID" , e) , } } } pub unsafe fn get_m_aux_bus_id (this : AkEnvironment , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (AkEnvironment , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_m_aux_bus_id :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_value_guid { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkEnvironment as :: unity2 :: ClassIdentity > :: class () , "get_valueGuid" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkEnvironment as :: unity2 :: ClassIdentity > :: NAME , "get_valueGuid" , e) , } } } pub unsafe fn get_value_guid (this : AkEnvironment , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < u8 > { let inner : extern "C" fn (AkEnvironment , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < u8 > = :: core :: mem :: transmute (__lookup_get_value_guid :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_aux_bus_id { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkEnvironment as :: unity2 :: ClassIdentity > :: class () , "GetAuxBusID" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkEnvironment as :: unity2 :: ClassIdentity > :: NAME , "GetAuxBusID" , e) , } } } pub unsafe fn get_aux_bus_id (this : AkEnvironment , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> u32 { let inner : extern "C" fn (AkEnvironment , :: unity2 :: OptionalMethod ,) -> u32 = :: core :: mem :: transmute (__lookup_get_aux_bus_id :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkEnvironment as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkEnvironment as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : AkEnvironment , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkEnvironment , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkEnvironment as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkEnvironment as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
+
+#[cfg(feature = "root-akenvironment")]
+impl AkEnvironment { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { __AkEnvironment_unity2_raw :: cctor (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "root-akenvironment")]
+pub trait IAkEnvironmentMethods : IAkEnvironment { # [doc = "`get_Collider()` overload"] fn get_collider (self ,) -> crate :: unity_engine :: collider :: Collider { unsafe { let __receiver = < AkEnvironment as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkEnvironment_unity2_raw :: get_collider (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_Collider(crate::unity_engine::collider::Collider)` overload"] fn set_collider (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: collider :: Collider >) -> () { unsafe { let __receiver = < AkEnvironment as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkEnvironment_unity2_raw :: set_collider (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`Awake()` overload"] fn awake (self ,) -> () { unsafe { let __receiver = < AkEnvironment as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkEnvironment_unity2_raw :: awake (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_m_auxBusID()` overload"] fn get_m_aux_bus_id (self ,) -> i32 { unsafe { let __receiver = < AkEnvironment as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkEnvironment_unity2_raw :: get_m_aux_bus_id (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_valueGuid()` overload"] fn get_value_guid (self ,) -> :: unity2 :: Array < u8 > { unsafe { let __receiver = < AkEnvironment as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkEnvironment_unity2_raw :: get_value_guid (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetAuxBusID()` overload"] fn get_aux_bus_id (self ,) -> u32 { unsafe { let __receiver = < AkEnvironment as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkEnvironment_unity2_raw :: get_aux_bus_id (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AkEnvironment as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkEnvironment_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "root-akenvironment")]
+impl < __T : IAkEnvironment > IAkEnvironmentMethods for __T { }
+
+#[cfg(feature = "root-akenvironment")]
+impl AkEnvironment { pub fn get_collider_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkEnvironment_unity2_raw :: __lookup_get_collider :: get_method_info () } pub fn set_collider_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkEnvironment_unity2_raw :: __lookup_set_collider :: get_method_info () } pub fn awake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkEnvironment_unity2_raw :: __lookup_awake :: get_method_info () } pub fn get_m_aux_bus_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkEnvironment_unity2_raw :: __lookup_get_m_aux_bus_id :: get_method_info () } pub fn get_value_guid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkEnvironment_unity2_raw :: __lookup_get_value_guid :: get_method_info () } pub fn get_aux_bus_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkEnvironment_unity2_raw :: __lookup_get_aux_bus_id :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkEnvironment_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkEnvironment_unity2_raw :: __lookup_cctor :: get_method_info () } }
 
 #[cfg(feature = "root-akenvironment")]
 impl AkEnvironment {
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __AkEnvironment_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "root-akenvironment")]
-pub trait IAkEnvironmentMethods: IAkEnvironment {
-    #[doc = "`get_Collider()` overload"]
-    fn get_collider(self) -> crate::unity_engine::collider::Collider {
-        unsafe {
-            let __receiver = <AkEnvironment as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkEnvironment_unity2_raw::get_collider(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_Collider(crate::unity_engine::collider::Collider)` overload"]
-    fn set_collider(self, value: impl ::core::convert::Into<crate::unity_engine::collider::Collider>) -> () {
-        unsafe {
-            let __receiver = <AkEnvironment as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkEnvironment_unity2_raw::set_collider(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Awake()` overload"]
-    fn awake(self) -> () {
-        unsafe {
-            let __receiver = <AkEnvironment as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkEnvironment_unity2_raw::awake(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_m_auxBusID()` overload"]
-    fn get_m_aux_bus_id(self) -> i32 {
-        unsafe {
-            let __receiver = <AkEnvironment as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkEnvironment_unity2_raw::get_m_aux_bus_id(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_valueGuid()` overload"]
-    fn get_value_guid(self) -> ::unity2::Array<u8> {
-        unsafe {
-            let __receiver = <AkEnvironment as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkEnvironment_unity2_raw::get_value_guid(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetAuxBusID()` overload"]
-    fn get_aux_bus_id(self) -> u32 {
-        unsafe {
-            let __receiver = <AkEnvironment as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkEnvironment_unity2_raw::get_aux_bus_id(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <AkEnvironment as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkEnvironment_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "root-akenvironment")]
-impl<__T: IAkEnvironment> IAkEnvironmentMethods for __T {}
-
-#[cfg(feature = "root-akenvironment")]
-impl AkEnvironment {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(AkEnvironment), ::core::stringify!(new),));
-        <Self as IAkEnvironmentMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkEnvironment) , :: core :: stringify ! (new) ,)) ; < Self as IAkEnvironmentMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "root-akenvironment")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{
-        AkEnvironment, AkEnvironment_AkEnvironment_CompareByPriority, AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm, IAkEnvironment,
-        IAkEnvironmentMethods, IAkEnvironment_AkEnvironment_CompareByPriority, IAkEnvironment_AkEnvironment_CompareByPriorityMethods,
-        IAkEnvironment_AkEnvironment_CompareBySelectionAlgorithm, IAkEnvironment_AkEnvironment_CompareBySelectionAlgorithmMethods,
-    };
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        system::object::IObject,
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm;
+    pub use super::IAkEnvironment_AkEnvironment_CompareBySelectionAlgorithm;
+    pub use super::IAkEnvironment_AkEnvironment_CompareBySelectionAlgorithmMethods;
+    pub use super::AkEnvironment_AkEnvironment_CompareByPriority;
+    pub use super::IAkEnvironment_AkEnvironment_CompareByPriority;
+    pub use super::IAkEnvironment_AkEnvironment_CompareByPriorityMethods;
+    pub use super::AkEnvironment;
+    pub use super::IAkEnvironment;
+    pub use super::IAkEnvironmentMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

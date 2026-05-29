@@ -2,119 +2,34 @@
 
 #[cfg(feature = "unity_engine-ui-imeshmodifier-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/imeshmodifier/IMeshModifier.md"))]
-    #[::unity2::class(namespace = "UnityEngine.UI", name = "IMeshModifier")]
-    pub struct IMeshModifier {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/imeshmodifier/IMeshModifier.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "IMeshModifier")] pub struct IMeshModifier {}
+
 }
 
 #[cfg(feature = "unity_engine-ui-imeshmodifier-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-ui-imeshmodifier")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __IMeshModifier_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_modify_mesh {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::mesh::Mesh as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <IMeshModifier as ::unity2::ClassIdentity>::class(),
-                "ModifyMesh",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <IMeshModifier as ::unity2::ClassIdentity>::NAME,
-                        "ModifyMesh",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn modify_mesh(this: IMeshModifier, mesh: crate::unity_engine::mesh::Mesh, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(IMeshModifier, crate::unity_engine::mesh::Mesh, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_modify_mesh::get_method_info().method_ptr);
-        inner(this, mesh, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_modify_mesh_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::ui::vertexhelper::VertexHelper as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <IMeshModifier as ::unity2::ClassIdentity>::class(),
-                "ModifyMesh",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <IMeshModifier as ::unity2::ClassIdentity>::NAME,
-                        "ModifyMesh",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn modify_mesh_2(
-        this: IMeshModifier,
-        verts: crate::unity_engine::ui::vertexhelper::VertexHelper,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(IMeshModifier, crate::unity_engine::ui::vertexhelper::VertexHelper, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_modify_mesh_2::get_method_info().method_ptr);
-        inner(this, verts, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __IMeshModifier_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_modify_mesh { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: mesh :: Mesh as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< IMeshModifier as :: unity2 :: ClassIdentity > :: class () , "ModifyMesh" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < IMeshModifier as :: unity2 :: ClassIdentity > :: NAME , "ModifyMesh" , e) , } } } pub unsafe fn modify_mesh (this : IMeshModifier , mesh : crate :: unity_engine :: mesh :: Mesh , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (IMeshModifier , crate :: unity_engine :: mesh :: Mesh , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_modify_mesh :: get_method_info () . method_ptr ,) ; inner (this , mesh , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_modify_mesh_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: ui :: vertexhelper :: VertexHelper as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< IMeshModifier as :: unity2 :: ClassIdentity > :: class () , "ModifyMesh" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < IMeshModifier as :: unity2 :: ClassIdentity > :: NAME , "ModifyMesh" , e) , } } } pub unsafe fn modify_mesh_2 (this : IMeshModifier , verts : crate :: unity_engine :: ui :: vertexhelper :: VertexHelper , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (IMeshModifier , crate :: unity_engine :: ui :: vertexhelper :: VertexHelper , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_modify_mesh_2 :: get_method_info () . method_ptr ,) ; inner (this , verts , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-ui-imeshmodifier")]
-pub trait IIMeshModifierMethods: IIMeshModifier {
-    #[doc = "`ModifyMesh(crate::unity_engine::mesh::Mesh)` overload"]
-    fn modify_mesh(self, mesh: impl ::core::convert::Into<crate::unity_engine::mesh::Mesh>) -> () {
-        unsafe {
-            let __receiver = <IMeshModifier as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __IMeshModifier_unity2_raw::modify_mesh(__receiver, ::core::convert::Into::into(mesh), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ModifyMesh(crate::unity_engine::ui::vertexhelper::VertexHelper)` overload"]
-    fn modify_mesh_2(self, verts: impl ::core::convert::Into<crate::unity_engine::ui::vertexhelper::VertexHelper>) -> () {
-        unsafe {
-            let __receiver = <IMeshModifier as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __IMeshModifier_unity2_raw::modify_mesh_2(__receiver, ::core::convert::Into::into(verts), ::core::option::Option::None)
-        }
-    }
-}
+pub trait IIMeshModifierMethods : IIMeshModifier { # [doc = "`ModifyMesh(crate::unity_engine::mesh::Mesh)` overload"] fn modify_mesh (self , mesh : impl :: core :: convert :: Into < crate :: unity_engine :: mesh :: Mesh >) -> () { unsafe { let __receiver = < IMeshModifier as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IMeshModifier_unity2_raw :: modify_mesh (__receiver , :: core :: convert :: Into :: into (mesh) , :: core :: option :: Option :: None) } } # [doc = "`ModifyMesh(crate::unity_engine::ui::vertexhelper::VertexHelper)` overload"] fn modify_mesh_2 (self , verts : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: vertexhelper :: VertexHelper >) -> () { unsafe { let __receiver = < IMeshModifier as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IMeshModifier_unity2_raw :: modify_mesh_2 (__receiver , :: core :: convert :: Into :: into (verts) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-ui-imeshmodifier")]
-impl<__T: IIMeshModifier> IIMeshModifierMethods for __T {}
+impl < __T : IIMeshModifier > IIMeshModifierMethods for __T { }
+
+#[cfg(feature = "unity_engine-ui-imeshmodifier")]
+impl IMeshModifier { pub fn modify_mesh_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __IMeshModifier_unity2_raw :: __lookup_modify_mesh :: get_method_info () } pub fn modify_mesh_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __IMeshModifier_unity2_raw :: __lookup_modify_mesh_2 :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-ui-imeshmodifier")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IIMeshModifier, IIMeshModifierMethods, IMeshModifier};
+    pub use super::IMeshModifier;
+    pub use super::IIMeshModifier;
+    pub use super::IIMeshModifierMethods;
 }

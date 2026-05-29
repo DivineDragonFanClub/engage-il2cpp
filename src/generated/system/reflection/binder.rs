@@ -2,279 +2,43 @@
 
 #[cfg(feature = "system-reflection-binder-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/binder/Binder.md"))]
-    #[::unity2::class(namespace = "System.Reflection", name = "Binder")]
-    #[parent(crate::system::object::Object)]
-    pub struct Binder {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/binder/Binder.md"))] # [:: unity2 :: class (namespace = "System.Reflection" , name = "Binder")] # [parent (crate :: system :: object :: Object)] pub struct Binder {}
+
 }
 
 #[cfg(feature = "system-reflection-binder-types")]
 pub use __types::*;
 
 #[cfg(feature = "system-reflection-binder")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __Binder_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_select_method {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::reflection::bindingflags::BindingFlags as ::unity2::IlType>::il_type(),
-                <::unity2::Array<crate::system::reflection::methodbase::MethodBase> as ::unity2::IlType>::il_type(),
-                <::unity2::Array<::unity2::SystemType> as ::unity2::IlType>::il_type(),
-                <::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier> as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<Binder as ::unity2::ClassIdentity>::class(), "SelectMethod", 4, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Binder as ::unity2::ClassIdentity>::NAME,
-                        "SelectMethod",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn select_method(
-        this: Binder,
-        binding_attr: crate::system::reflection::bindingflags::BindingFlags,
-        r#match: ::unity2::Array<crate::system::reflection::methodbase::MethodBase>,
-        types: ::unity2::Array<::unity2::SystemType>,
-        modifiers: ::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::reflection::methodbase::MethodBase {
-        let inner: extern "C" fn(
-            Binder,
-            crate::system::reflection::bindingflags::BindingFlags,
-            ::unity2::Array<crate::system::reflection::methodbase::MethodBase>,
-            ::unity2::Array<::unity2::SystemType>,
-            ::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier>,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::reflection::methodbase::MethodBase = ::core::mem::transmute(__lookup_select_method::get_method_info().method_ptr);
-        inner(this, binding_attr, r#match, types, modifiers, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_select_property {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::reflection::bindingflags::BindingFlags as ::unity2::IlType>::il_type(),
-                <::unity2::Array<crate::system::reflection::propertyinfo::PropertyInfo> as ::unity2::IlType>::il_type(),
-                <::unity2::SystemType as ::unity2::IlType>::il_type(),
-                <::unity2::Array<::unity2::SystemType> as ::unity2::IlType>::il_type(),
-                <::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier> as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Binder as ::unity2::ClassIdentity>::class(),
-                "SelectProperty",
-                5,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Binder as ::unity2::ClassIdentity>::NAME,
-                        "SelectProperty",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn select_property(
-        this: Binder,
-        binding_attr: crate::system::reflection::bindingflags::BindingFlags,
-        r#match: ::unity2::Array<crate::system::reflection::propertyinfo::PropertyInfo>,
-        return_type: ::unity2::SystemType,
-        indexes: ::unity2::Array<::unity2::SystemType>,
-        modifiers: ::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::reflection::propertyinfo::PropertyInfo {
-        let inner: extern "C" fn(
-            Binder,
-            crate::system::reflection::bindingflags::BindingFlags,
-            ::unity2::Array<crate::system::reflection::propertyinfo::PropertyInfo>,
-            ::unity2::SystemType,
-            ::unity2::Array<::unity2::SystemType>,
-            ::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier>,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::reflection::propertyinfo::PropertyInfo = ::core::mem::transmute(__lookup_select_property::get_method_info().method_ptr);
-        inner(this, binding_attr, r#match, return_type, indexes, modifiers, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_reorder_argument_array {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Array<crate::system::object::Object> as ::unity2::IlType>::il_type(),
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Binder as ::unity2::ClassIdentity>::class(),
-                "ReorderArgumentArray",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Binder as ::unity2::ClassIdentity>::NAME,
-                        "ReorderArgumentArray",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn reorder_argument_array(
-        this: Binder,
-        args: *mut ::unity2::Array<crate::system::object::Object>,
-        state: crate::system::object::Object,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            Binder,
-            *mut ::unity2::Array<crate::system::object::Object>,
-            crate::system::object::Object,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_reorder_argument_array::get_method_info().method_ptr);
-        inner(this, args, state, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Binder as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Binder as ::unity2::ClassIdentity>::NAME, ".ctor", e),
-            }
-        }
-    }
-    pub unsafe fn ctor(this: Binder, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Binder, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __Binder_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_select_method { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: reflection :: bindingflags :: BindingFlags as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: system :: reflection :: methodbase :: MethodBase > as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < :: unity2 :: SystemType > as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: system :: reflection :: parametermodifier :: ParameterModifier > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Binder as :: unity2 :: ClassIdentity > :: class () , "SelectMethod" , 4 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Binder as :: unity2 :: ClassIdentity > :: NAME , "SelectMethod" , e) , } } } pub unsafe fn select_method (this : Binder , binding_attr : crate :: system :: reflection :: bindingflags :: BindingFlags , r#match : :: unity2 :: Array < crate :: system :: reflection :: methodbase :: MethodBase > , types : :: unity2 :: Array < :: unity2 :: SystemType > , modifiers : :: unity2 :: Array < crate :: system :: reflection :: parametermodifier :: ParameterModifier > , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: methodbase :: MethodBase { let inner : extern "C" fn (Binder , crate :: system :: reflection :: bindingflags :: BindingFlags , :: unity2 :: Array < crate :: system :: reflection :: methodbase :: MethodBase > , :: unity2 :: Array < :: unity2 :: SystemType > , :: unity2 :: Array < crate :: system :: reflection :: parametermodifier :: ParameterModifier > , :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: methodbase :: MethodBase = :: core :: mem :: transmute (__lookup_select_method :: get_method_info () . method_ptr ,) ; inner (this , binding_attr , r#match , types , modifiers , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_select_property { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: reflection :: bindingflags :: BindingFlags as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: system :: reflection :: propertyinfo :: PropertyInfo > as :: unity2 :: IlType > :: il_type () , < :: unity2 :: SystemType as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < :: unity2 :: SystemType > as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: system :: reflection :: parametermodifier :: ParameterModifier > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Binder as :: unity2 :: ClassIdentity > :: class () , "SelectProperty" , 5 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Binder as :: unity2 :: ClassIdentity > :: NAME , "SelectProperty" , e) , } } } pub unsafe fn select_property (this : Binder , binding_attr : crate :: system :: reflection :: bindingflags :: BindingFlags , r#match : :: unity2 :: Array < crate :: system :: reflection :: propertyinfo :: PropertyInfo > , return_type : :: unity2 :: SystemType , indexes : :: unity2 :: Array < :: unity2 :: SystemType > , modifiers : :: unity2 :: Array < crate :: system :: reflection :: parametermodifier :: ParameterModifier > , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: propertyinfo :: PropertyInfo { let inner : extern "C" fn (Binder , crate :: system :: reflection :: bindingflags :: BindingFlags , :: unity2 :: Array < crate :: system :: reflection :: propertyinfo :: PropertyInfo > , :: unity2 :: SystemType , :: unity2 :: Array < :: unity2 :: SystemType > , :: unity2 :: Array < crate :: system :: reflection :: parametermodifier :: ParameterModifier > , :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: propertyinfo :: PropertyInfo = :: core :: mem :: transmute (__lookup_select_property :: get_method_info () . method_ptr ,) ; inner (this , binding_attr , r#match , return_type , indexes , modifiers , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_reorder_argument_array { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: system :: object :: Object > as :: unity2 :: IlType > :: il_type () , < crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Binder as :: unity2 :: ClassIdentity > :: class () , "ReorderArgumentArray" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Binder as :: unity2 :: ClassIdentity > :: NAME , "ReorderArgumentArray" , e) , } } } pub unsafe fn reorder_argument_array (this : Binder , args : * mut :: unity2 :: Array < crate :: system :: object :: Object > , state : crate :: system :: object :: Object , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Binder , * mut :: unity2 :: Array < crate :: system :: object :: Object > , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_reorder_argument_array :: get_method_info () . method_ptr ,) ; inner (this , args , state , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Binder as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Binder as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : Binder , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Binder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "system-reflection-binder")]
-pub trait IBinderMethods: IBinder {
-    #[doc = "`SelectMethod(crate::system::reflection::bindingflags::BindingFlags, ::unity2::Array<crate::system::reflection::methodbase::MethodBase>, ::unity2::Array<::unity2::SystemType>, ::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier>)` overload"]
-    fn select_method(
-        self,
-        binding_attr: impl ::core::convert::Into<crate::system::reflection::bindingflags::BindingFlags>,
-        r#match: impl ::core::convert::Into<::unity2::Array<crate::system::reflection::methodbase::MethodBase>>,
-        types: impl ::core::convert::Into<::unity2::Array<::unity2::SystemType>>,
-        modifiers: impl ::core::convert::Into<::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier>>,
-    ) -> crate::system::reflection::methodbase::MethodBase {
-        unsafe {
-            let __receiver = <Binder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Binder_unity2_raw::select_method(
-                __receiver,
-                ::core::convert::Into::into(binding_attr),
-                ::core::convert::Into::into(r#match),
-                ::core::convert::Into::into(types),
-                ::core::convert::Into::into(modifiers),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SelectProperty(crate::system::reflection::bindingflags::BindingFlags, ::unity2::Array<crate::system::reflection::propertyinfo::PropertyInfo>, ::unity2::SystemType, ::unity2::Array<::unity2::SystemType>, ::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier>)` overload"]
-    fn select_property(
-        self,
-        binding_attr: impl ::core::convert::Into<crate::system::reflection::bindingflags::BindingFlags>,
-        r#match: impl ::core::convert::Into<::unity2::Array<crate::system::reflection::propertyinfo::PropertyInfo>>,
-        return_type: impl ::core::convert::Into<::unity2::SystemType>,
-        indexes: impl ::core::convert::Into<::unity2::Array<::unity2::SystemType>>,
-        modifiers: impl ::core::convert::Into<::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier>>,
-    ) -> crate::system::reflection::propertyinfo::PropertyInfo {
-        unsafe {
-            let __receiver = <Binder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Binder_unity2_raw::select_property(
-                __receiver,
-                ::core::convert::Into::into(binding_attr),
-                ::core::convert::Into::into(r#match),
-                ::core::convert::Into::into(return_type),
-                ::core::convert::Into::into(indexes),
-                ::core::convert::Into::into(modifiers),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ReorderArgumentArray(*mut::unity2::Array<crate::system::object::Object>, crate::system::object::Object)` overload"]
-    fn reorder_argument_array(
-        self,
-        state: impl ::core::convert::Into<crate::system::object::Object>,
-    ) -> ::unity2::Array<crate::system::object::Object> {
-        unsafe {
-            let __receiver = <Binder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            let mut __out_0 = ::core::mem::MaybeUninit::<::unity2::Array<crate::system::object::Object>>::uninit();
-            __Binder_unity2_raw::reorder_argument_array(
-                __receiver,
-                __out_0.as_mut_ptr(),
-                ::core::convert::Into::into(state),
-                ::core::option::Option::None,
-            );
-            __out_0.assume_init()
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <Binder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Binder_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IBinderMethods : IBinder { # [doc = "`SelectMethod(crate::system::reflection::bindingflags::BindingFlags, ::unity2::Array<crate::system::reflection::methodbase::MethodBase>, ::unity2::Array<::unity2::SystemType>, ::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier>)` overload"] fn select_method (self , binding_attr : impl :: core :: convert :: Into < crate :: system :: reflection :: bindingflags :: BindingFlags > , r#match : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: system :: reflection :: methodbase :: MethodBase > > , types : impl :: core :: convert :: Into < :: unity2 :: Array < :: unity2 :: SystemType > > , modifiers : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: system :: reflection :: parametermodifier :: ParameterModifier > >) -> crate :: system :: reflection :: methodbase :: MethodBase { unsafe { let __receiver = < Binder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Binder_unity2_raw :: select_method (__receiver , :: core :: convert :: Into :: into (binding_attr) , :: core :: convert :: Into :: into (r#match) , :: core :: convert :: Into :: into (types) , :: core :: convert :: Into :: into (modifiers) , :: core :: option :: Option :: None) } } # [doc = "`SelectProperty(crate::system::reflection::bindingflags::BindingFlags, ::unity2::Array<crate::system::reflection::propertyinfo::PropertyInfo>, ::unity2::SystemType, ::unity2::Array<::unity2::SystemType>, ::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier>)` overload"] fn select_property (self , binding_attr : impl :: core :: convert :: Into < crate :: system :: reflection :: bindingflags :: BindingFlags > , r#match : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: system :: reflection :: propertyinfo :: PropertyInfo > > , return_type : impl :: core :: convert :: Into < :: unity2 :: SystemType > , indexes : impl :: core :: convert :: Into < :: unity2 :: Array < :: unity2 :: SystemType > > , modifiers : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: system :: reflection :: parametermodifier :: ParameterModifier > >) -> crate :: system :: reflection :: propertyinfo :: PropertyInfo { unsafe { let __receiver = < Binder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Binder_unity2_raw :: select_property (__receiver , :: core :: convert :: Into :: into (binding_attr) , :: core :: convert :: Into :: into (r#match) , :: core :: convert :: Into :: into (return_type) , :: core :: convert :: Into :: into (indexes) , :: core :: convert :: Into :: into (modifiers) , :: core :: option :: Option :: None) } } # [doc = "`ReorderArgumentArray(*mut::unity2::Array<crate::system::object::Object>, crate::system::object::Object)` overload"] fn reorder_argument_array (self , state : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> :: unity2 :: Array < crate :: system :: object :: Object > { unsafe { let __receiver = < Binder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < :: unity2 :: Array < crate :: system :: object :: Object > > :: uninit () ; __Binder_unity2_raw :: reorder_argument_array (__receiver , __out_0 . as_mut_ptr () , :: core :: convert :: Into :: into (state) , :: core :: option :: Option :: None) ; __out_0 . assume_init () } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Binder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Binder_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "system-reflection-binder")]
-impl<__T: IBinder> IBinderMethods for __T {}
+impl < __T : IBinder > IBinderMethods for __T { }
+
+#[cfg(feature = "system-reflection-binder")]
+impl Binder { pub fn select_method_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Binder_unity2_raw :: __lookup_select_method :: get_method_info () } pub fn select_property_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Binder_unity2_raw :: __lookup_select_property :: get_method_info () } pub fn reorder_argument_array_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Binder_unity2_raw :: __lookup_reorder_argument_array :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Binder_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "system-reflection-binder")]
 impl Binder {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(Binder), ::core::stringify!(new),));
-        <Self as IBinderMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Binder) , :: core :: stringify ! (new) ,)) ; < Self as IBinderMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "system-reflection-binder")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{Binder, IBinder, IBinderMethods};
+    pub use super::Binder;
+    pub use super::IBinder;
+    pub use super::IBinderMethods;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

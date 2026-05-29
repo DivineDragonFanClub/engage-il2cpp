@@ -2,87 +2,59 @@
 
 #[cfg(feature = "app-enumitem_2-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::{
-            instanceitem_1::{IInstanceItem_1, InstanceItem_1},
-            menuitem::{IMenuItem, MenuItem},
-            paramitem::{IParamItem, ParamItem},
-        },
-        system::object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/enumitem_2/EnumItem_2.md"))]
-    #[::unity2::class(namespace = "App", name = "EnumItem`2")]
-    # [parent (crate :: app :: instanceitem_1 :: InstanceItem_1 < T0 >)]
-    #[parent(crate::app::paramitem::ParamItem)]
-    #[parent(crate::app::menuitem::MenuItem)]
-    #[parent(crate::system::object::Object)]
-    pub struct EnumItem_2<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: instanceitem_1 :: { IInstanceItem_1 , InstanceItem_1 }
+ ;
+ use crate :: app :: menuitem :: { IMenuItem , MenuItem }
+ ;
+ use crate :: app :: paramitem :: { IParamItem , ParamItem }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/enumitem_2/EnumItem_2.md"))] # [:: unity2 :: class (namespace = "App" , name = "EnumItem`2")] # [parent (crate :: app :: instanceitem_1 :: InstanceItem_1 < T0 >)] # [parent (crate :: app :: paramitem :: ParamItem)] # [parent (crate :: app :: menuitem :: MenuItem)] # [parent (crate :: system :: object :: Object)] pub struct EnumItem_2 < T0 : :: unity2 :: ClassIdentity , T1 : :: unity2 :: ClassIdentity > {}
+
 }
 
 #[cfg(feature = "app-enumitem_2-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-enumitem_2")]
-#[::unity2::methods]
-impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> EnumItem_2<T0, T1> {
-    #[doc = "`.ctor(T0)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, instance: T0) -> ();
+# [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity , T1 : :: unity2 :: ClassIdentity > EnumItem_2 < T0 , T1 > {
+# [doc = "`.ctor(T0)` overload"] # [method (name = ".ctor" , args = 1)] pub fn ctor (self , instance : T0) -> () ;
 
-    #[doc = "`GetValue()` overload"]
-    #[method(name = "GetValue", args = 0)]
-    pub fn get_value(self) -> T1;
+# [doc = "`GetValue()` overload"] # [method (name = "GetValue" , args = 0)] pub fn get_value (self ,) -> T1 ;
 
-    #[doc = "`SetValue(T1)` overload"]
-    #[method(name = "SetValue", args = 1)]
-    pub fn set_value(self, value: T1) -> ();
+# [doc = "`SetValue(T1)` overload"] # [method (name = "SetValue" , args = 1)] pub fn set_value (self , value : T1) -> () ;
 
-    #[doc = "`GetColumnName0()` overload"]
-    #[method(name = "GetColumnName0", args = 0)]
-    pub fn get_column_name0(self) -> ::unity2::Il2CppString;
+# [doc = "`GetColumnName0()` overload"] # [method (name = "GetColumnName0" , args = 0)] pub fn get_column_name0 (self ,) -> :: unity2 :: Il2CppString ;
 
-    #[doc = "`GetColumnName1()` overload"]
-    #[method(name = "GetColumnName1", args = 0)]
-    pub fn get_column_name1(self) -> ::unity2::Il2CppString;
+# [doc = "`GetColumnName1()` overload"] # [method (name = "GetColumnName1" , args = 0)] pub fn get_column_name1 (self ,) -> :: unity2 :: Il2CppString ;
 
-    #[doc = "`OnLeftRight(i32, bool)` overload"]
-    #[method(name = "OnLeftRight", args = 2)]
-    pub fn on_left_right(self, step: i32, is_trigger: bool) -> ();
+# [doc = "`OnLeftRight(i32, bool)` overload"] # [method (name = "OnLeftRight" , args = 2)] pub fn on_left_right (self , step : i32 , is_trigger : bool) -> () ;
 }
 
 #[cfg(feature = "app-enumitem_2")]
-impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> EnumItem_2<T0, T1> {
-    #[doc = "`.ctor(T0)` — overload selector"]
-    pub fn new(instance: T0) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(EnumItem_2), ::core::stringify!(new),));
-        <Self as IEnumItem_2Methods<T0, T1>>::ctor(this, instance);
-        this
-    }
+impl < T0 : :: unity2 :: ClassIdentity , T1 : :: unity2 :: ClassIdentity > EnumItem_2 < T0 , T1 > {
+# [doc = "`.ctor(T0)` — overload selector"] pub fn new (instance : T0) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (EnumItem_2) , :: core :: stringify ! (new) ,)) ; < Self as IEnumItem_2Methods < T0 , T1 > > :: ctor (this , instance) ; this }
 }
 
 #[cfg(feature = "app-enumitem_2")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{EnumItem_2, IEnumItem_2, IEnumItem_2Methods};
-    #[cfg(feature = "app-instanceitem_1")]
-    pub use crate::app::instanceitem_1::IInstanceItem_1Methods;
-    #[cfg(feature = "app-menuitem")]
-    pub use crate::app::menuitem::IMenuItemMethods;
-    #[cfg(feature = "app-paramitem")]
-    pub use crate::app::paramitem::IParamItemMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::{
-        app::{
-            instanceitem_1::{IInstanceItem_1, InstanceItem_1},
-            menuitem::IMenuItem,
-            paramitem::IParamItem,
-        },
-        system::object::IObject,
-    };
+    pub use super::EnumItem_2;
+    pub use super::IEnumItem_2;
+    pub use super::IEnumItem_2Methods;
+    pub use crate::app::instanceitem_1::IInstanceItem_1;
+    pub use crate::app::instanceitem_1::InstanceItem_1;
+    pub use crate::app::menuitem::IMenuItem;
+    pub use crate::app::paramitem::IParamItem;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "app-instanceitem_1")] pub use crate::app::instanceitem_1::IInstanceItem_1Methods;
+    #[cfg(feature = "app-menuitem")] pub use crate::app::menuitem::IMenuItemMethods;
+    #[cfg(feature = "app-paramitem")] pub use crate::app::paramitem::IParamItemMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

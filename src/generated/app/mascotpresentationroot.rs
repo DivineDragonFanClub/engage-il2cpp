@@ -2,428 +2,59 @@
 
 #[cfg(feature = "app-mascotpresentationroot-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mascotpresentationroot/MascotPresentationRoot.md"))]
-    #[::unity2::class(namespace = "App", name = "MascotPresentationRoot")]
-    #[parent(crate::system::object::Object)]
-    pub struct MascotPresentationRoot {
-        #[offset(16)]
-        #[rename(name = "Root")]
-        pub root: crate::unity_engine::gameobject::GameObject,
-        #[offset(24)]
-        #[rename(name = "MascotRoot")]
-        pub mascot_root: crate::unity_engine::gameobject::GameObject,
-        #[offset(32)]
-        #[rename(name = "PlayerRoot")]
-        pub player_root: crate::unity_engine::gameobject::GameObject,
-        #[offset(40)]
-        #[rename(name = "CameraRoot")]
-        pub camera_root: crate::unity_engine::gameobject::GameObject,
-        #[offset(48)]
-        #[rename(name = "PlayerReserveRoot")]
-        pub player_reserve_root: crate::unity_engine::transform::Transform,
-        #[offset(56)]
-        #[rename(name = "PlayerReservePosition")]
-        pub player_reserve_position: crate::unity_engine::vector3::Vector3,
-        #[offset(68)]
-        #[rename(name = "PlayerReserveRotationY")]
-        pub player_reserve_rotation_y: f32,
-        #[offset(72)]
-        #[rename(name = "MascotReserveRoot")]
-        pub mascot_reserve_root: crate::unity_engine::transform::Transform,
-        #[offset(80)]
-        #[rename(name = "MascotReservePosition")]
-        pub mascot_reserve_position: crate::unity_engine::vector3::Vector3,
-        #[offset(92)]
-        #[rename(name = "MascotReserveRotation")]
-        pub mascot_reserve_rotation: crate::unity_engine::quaternion::Quaternion,
-        #[offset(112)]
-        #[rename(name = "CameraReserveRoot")]
-        pub camera_reserve_root: crate::unity_engine::transform::Transform,
-        #[offset(120)]
-        #[rename(name = "m_Apply")]
-        pub m_apply: bool,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mascotpresentationroot/MascotPresentationRoot.md"))] # [:: unity2 :: class (namespace = "App" , name = "MascotPresentationRoot")] # [parent (crate :: system :: object :: Object)] pub struct MascotPresentationRoot {
+# [offset (16)] # [rename (name = "Root")] pub root : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (24)] # [rename (name = "MascotRoot")] pub mascot_root : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (32)] # [rename (name = "PlayerRoot")] pub player_root : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (40)] # [rename (name = "CameraRoot")] pub camera_root : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (48)] # [rename (name = "PlayerReserveRoot")] pub player_reserve_root : crate :: unity_engine :: transform :: Transform ,
+# [offset (56)] # [rename (name = "PlayerReservePosition")] pub player_reserve_position : crate :: unity_engine :: vector3 :: Vector3 ,
+# [offset (68)] # [rename (name = "PlayerReserveRotationY")] pub player_reserve_rotation_y : f32 ,
+# [offset (72)] # [rename (name = "MascotReserveRoot")] pub mascot_reserve_root : crate :: unity_engine :: transform :: Transform ,
+# [offset (80)] # [rename (name = "MascotReservePosition")] pub mascot_reserve_position : crate :: unity_engine :: vector3 :: Vector3 ,
+# [offset (92)] # [rename (name = "MascotReserveRotation")] pub mascot_reserve_rotation : crate :: unity_engine :: quaternion :: Quaternion ,
+# [offset (112)] # [rename (name = "CameraReserveRoot")] pub camera_reserve_root : crate :: unity_engine :: transform :: Transform ,
+# [offset (120)] # [rename (name = "m_Apply")] pub m_apply : bool ,
+}
+
 }
 
 #[cfg(feature = "app-mascotpresentationroot-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-mascotpresentationroot")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MascotPresentationRoot_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_setup {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MascotPresentationRoot as ::unity2::ClassIdentity>::class(),
-                "Setup",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MascotPresentationRoot as ::unity2::ClassIdentity>::NAME,
-                        "Setup",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn setup(
-        this: MascotPresentationRoot,
-        root: crate::unity_engine::gameobject::GameObject,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MascotPresentationRoot, crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_setup::get_method_info().method_ptr);
-        inner(this, root, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_apply {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MascotPresentationRoot as ::unity2::ClassIdentity>::class(),
-                "Apply",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MascotPresentationRoot as ::unity2::ClassIdentity>::NAME,
-                        "Apply",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn apply(this: MascotPresentationRoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MascotPresentationRoot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_apply::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_revert {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MascotPresentationRoot as ::unity2::ClassIdentity>::class(),
-                "Revert",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MascotPresentationRoot as ::unity2::ClassIdentity>::NAME,
-                        "Revert",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn revert(this: MascotPresentationRoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MascotPresentationRoot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_revert::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_player_controller {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MascotPresentationRoot as ::unity2::ClassIdentity>::class(),
-                "get_PlayerController",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MascotPresentationRoot as ::unity2::ClassIdentity>::NAME,
-                        "get_PlayerController",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_player_controller(
-        this: MascotPresentationRoot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::hubplayercontroller::HubPlayerController {
-        let inner: extern "C" fn(MascotPresentationRoot, ::unity2::OptionalMethod) -> crate::app::hubplayercontroller::HubPlayerController =
-            ::core::mem::transmute(__lookup_get_player_controller::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_mascot_controller {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MascotPresentationRoot as ::unity2::ClassIdentity>::class(),
-                "get_MascotController",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MascotPresentationRoot as ::unity2::ClassIdentity>::NAME,
-                        "get_MascotController",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_mascot_controller(
-        this: MascotPresentationRoot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::hubmascotcontroller::HubMascotController {
-        let inner: extern "C" fn(MascotPresentationRoot, ::unity2::OptionalMethod) -> crate::app::hubmascotcontroller::HubMascotController =
-            ::core::mem::transmute(__lookup_get_mascot_controller::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_location {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MascotPresentationRoot as ::unity2::ClassIdentity>::class(),
-                "GetLocation",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MascotPresentationRoot as ::unity2::ClassIdentity>::NAME,
-                        "GetLocation",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_location(__unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 =
-            ::core::mem::transmute(__lookup_get_location::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_rotation {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MascotPresentationRoot as ::unity2::ClassIdentity>::class(),
-                "GetRotation",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MascotPresentationRoot as ::unity2::ClassIdentity>::NAME,
-                        "GetRotation",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_rotation(__unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::quaternion::Quaternion {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::unity_engine::quaternion::Quaternion =
-            ::core::mem::transmute(__lookup_get_rotation::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MascotPresentationRoot as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MascotPresentationRoot as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: MascotPresentationRoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MascotPresentationRoot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MascotPresentationRoot_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_setup { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: gameobject :: GameObject as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MascotPresentationRoot as :: unity2 :: ClassIdentity > :: class () , "Setup" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MascotPresentationRoot as :: unity2 :: ClassIdentity > :: NAME , "Setup" , e) , } } } pub unsafe fn setup (this : MascotPresentationRoot , root : crate :: unity_engine :: gameobject :: GameObject , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MascotPresentationRoot , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_setup :: get_method_info () . method_ptr ,) ; inner (this , root , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_apply { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MascotPresentationRoot as :: unity2 :: ClassIdentity > :: class () , "Apply" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MascotPresentationRoot as :: unity2 :: ClassIdentity > :: NAME , "Apply" , e) , } } } pub unsafe fn apply (this : MascotPresentationRoot , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MascotPresentationRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_apply :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_revert { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MascotPresentationRoot as :: unity2 :: ClassIdentity > :: class () , "Revert" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MascotPresentationRoot as :: unity2 :: ClassIdentity > :: NAME , "Revert" , e) , } } } pub unsafe fn revert (this : MascotPresentationRoot , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MascotPresentationRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_revert :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_player_controller { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MascotPresentationRoot as :: unity2 :: ClassIdentity > :: class () , "get_PlayerController" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MascotPresentationRoot as :: unity2 :: ClassIdentity > :: NAME , "get_PlayerController" , e) , } } } pub unsafe fn get_player_controller (this : MascotPresentationRoot , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: hubplayercontroller :: HubPlayerController { let inner : extern "C" fn (MascotPresentationRoot , :: unity2 :: OptionalMethod ,) -> crate :: app :: hubplayercontroller :: HubPlayerController = :: core :: mem :: transmute (__lookup_get_player_controller :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_mascot_controller { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MascotPresentationRoot as :: unity2 :: ClassIdentity > :: class () , "get_MascotController" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MascotPresentationRoot as :: unity2 :: ClassIdentity > :: NAME , "get_MascotController" , e) , } } } pub unsafe fn get_mascot_controller (this : MascotPresentationRoot , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: hubmascotcontroller :: HubMascotController { let inner : extern "C" fn (MascotPresentationRoot , :: unity2 :: OptionalMethod ,) -> crate :: app :: hubmascotcontroller :: HubMascotController = :: core :: mem :: transmute (__lookup_get_mascot_controller :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_location { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MascotPresentationRoot as :: unity2 :: ClassIdentity > :: class () , "GetLocation" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MascotPresentationRoot as :: unity2 :: ClassIdentity > :: NAME , "GetLocation" , e) , } } } pub unsafe fn get_location (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute (__lookup_get_location :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_rotation { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MascotPresentationRoot as :: unity2 :: ClassIdentity > :: class () , "GetRotation" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MascotPresentationRoot as :: unity2 :: ClassIdentity > :: NAME , "GetRotation" , e) , } } } pub unsafe fn get_rotation (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: quaternion :: Quaternion { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: quaternion :: Quaternion = :: core :: mem :: transmute (__lookup_get_rotation :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MascotPresentationRoot as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MascotPresentationRoot as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : MascotPresentationRoot , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MascotPresentationRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-mascotpresentationroot")]
+impl MascotPresentationRoot { # [doc = "`GetLocation()` overload"] pub fn get_location () -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { __MascotPresentationRoot_unity2_raw :: get_location (:: core :: option :: Option :: None) } } # [doc = "`GetRotation()` overload"] pub fn get_rotation () -> crate :: unity_engine :: quaternion :: Quaternion { unsafe { __MascotPresentationRoot_unity2_raw :: get_rotation (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-mascotpresentationroot")]
+pub trait IMascotPresentationRootMethods : IMascotPresentationRoot { # [doc = "`Setup(crate::unity_engine::gameobject::GameObject)` overload"] fn setup (self , root : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> () { unsafe { let __receiver = < MascotPresentationRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MascotPresentationRoot_unity2_raw :: setup (__receiver , :: core :: convert :: Into :: into (root) , :: core :: option :: Option :: None) } } # [doc = "`Apply()` overload"] fn apply (self ,) -> () { unsafe { let __receiver = < MascotPresentationRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MascotPresentationRoot_unity2_raw :: apply (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Revert()` overload"] fn revert (self ,) -> () { unsafe { let __receiver = < MascotPresentationRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MascotPresentationRoot_unity2_raw :: revert (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_PlayerController()` overload"] fn get_player_controller (self ,) -> crate :: app :: hubplayercontroller :: HubPlayerController { unsafe { let __receiver = < MascotPresentationRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MascotPresentationRoot_unity2_raw :: get_player_controller (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_MascotController()` overload"] fn get_mascot_controller (self ,) -> crate :: app :: hubmascotcontroller :: HubMascotController { unsafe { let __receiver = < MascotPresentationRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MascotPresentationRoot_unity2_raw :: get_mascot_controller (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MascotPresentationRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MascotPresentationRoot_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-mascotpresentationroot")]
+impl < __T : IMascotPresentationRoot > IMascotPresentationRootMethods for __T { }
+
+#[cfg(feature = "app-mascotpresentationroot")]
+impl MascotPresentationRoot { pub fn setup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MascotPresentationRoot_unity2_raw :: __lookup_setup :: get_method_info () } pub fn apply_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MascotPresentationRoot_unity2_raw :: __lookup_apply :: get_method_info () } pub fn revert_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MascotPresentationRoot_unity2_raw :: __lookup_revert :: get_method_info () } pub fn get_player_controller_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MascotPresentationRoot_unity2_raw :: __lookup_get_player_controller :: get_method_info () } pub fn get_mascot_controller_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MascotPresentationRoot_unity2_raw :: __lookup_get_mascot_controller :: get_method_info () } pub fn get_location_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MascotPresentationRoot_unity2_raw :: __lookup_get_location :: get_method_info () } pub fn get_rotation_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MascotPresentationRoot_unity2_raw :: __lookup_get_rotation :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MascotPresentationRoot_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-mascotpresentationroot")]
 impl MascotPresentationRoot {
-    #[doc = "`GetLocation()` overload"]
-    pub fn get_location() -> crate::unity_engine::vector3::Vector3 {
-        unsafe { __MascotPresentationRoot_unity2_raw::get_location(::core::option::Option::None) }
-    }
-
-    #[doc = "`GetRotation()` overload"]
-    pub fn get_rotation() -> crate::unity_engine::quaternion::Quaternion {
-        unsafe { __MascotPresentationRoot_unity2_raw::get_rotation(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-mascotpresentationroot")]
-pub trait IMascotPresentationRootMethods: IMascotPresentationRoot {
-    #[doc = "`Setup(crate::unity_engine::gameobject::GameObject)` overload"]
-    fn setup(self, root: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>) -> () {
-        unsafe {
-            let __receiver =
-                <MascotPresentationRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MascotPresentationRoot_unity2_raw::setup(__receiver, ::core::convert::Into::into(root), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Apply()` overload"]
-    fn apply(self) -> () {
-        unsafe {
-            let __receiver =
-                <MascotPresentationRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MascotPresentationRoot_unity2_raw::apply(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Revert()` overload"]
-    fn revert(self) -> () {
-        unsafe {
-            let __receiver =
-                <MascotPresentationRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MascotPresentationRoot_unity2_raw::revert(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_PlayerController()` overload"]
-    fn get_player_controller(self) -> crate::app::hubplayercontroller::HubPlayerController {
-        unsafe {
-            let __receiver =
-                <MascotPresentationRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MascotPresentationRoot_unity2_raw::get_player_controller(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_MascotController()` overload"]
-    fn get_mascot_controller(self) -> crate::app::hubmascotcontroller::HubMascotController {
-        unsafe {
-            let __receiver =
-                <MascotPresentationRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MascotPresentationRoot_unity2_raw::get_mascot_controller(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <MascotPresentationRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MascotPresentationRoot_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-mascotpresentationroot")]
-impl<__T: IMascotPresentationRoot> IMascotPresentationRootMethods for __T {}
-
-#[cfg(feature = "app-mascotpresentationroot")]
-impl MascotPresentationRoot {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MascotPresentationRoot),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMascotPresentationRootMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MascotPresentationRoot) , :: core :: stringify ! (new) ,)) ; < Self as IMascotPresentationRootMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-mascotpresentationroot")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IMascotPresentationRoot, IMascotPresentationRootMethods, MascotPresentationRoot};
+    pub use super::MascotPresentationRoot;
+    pub use super::IMascotPresentationRoot;
+    pub use super::IMascotPresentationRootMethods;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

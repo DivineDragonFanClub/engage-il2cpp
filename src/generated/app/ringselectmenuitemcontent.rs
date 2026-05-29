@@ -2,420 +2,77 @@
 
 #[cfg(feature = "app-ringselectmenuitemcontent-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::basicmenuitemcontent::{BasicMenuItemContent, IBasicMenuItemContent},
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringselectmenuitemcontent/RingSelectMenuItemContent.md"))]
-    #[::unity2::class(namespace = "App", name = "RingSelectMenuItemContent")]
-    #[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]
-    pub struct RingSelectMenuItemContent {
-        #[offset(72)]
-        #[rename(name = "m_name")]
-        pub m_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(80)]
-        #[rename(name = "m_emptyText")]
-        pub m_empty_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(88)]
-        #[rename(name = "m_face")]
-        pub m_face: crate::unity_engine::ui::image::Image,
-        #[offset(96)]
-        #[rename(name = "m_symbol")]
-        pub m_symbol: crate::unity_engine::ui::image::Image,
-        #[offset(104)]
-        #[rename(name = "m_selectBg")]
-        pub m_select_bg: crate::unity_engine::ui::image::Image,
-        #[offset(112)]
-        #[rename(name = "m_frame")]
-        pub m_frame: crate::unity_engine::ui::image::Image,
-        #[offset(120)]
-        #[rename(name = "m_check")]
-        pub m_check: crate::unity_engine::gameobject::GameObject,
-        #[offset(128)]
-        #[rename(name = "m_unitIcon")]
-        pub m_unit_icon: crate::unity_engine::gameobject::GameObject,
-        #[offset(136)]
-        #[rename(name = "m_IsEquip")]
-        pub m_is_equip: bool,
-        #[offset(137)]
-        #[rename(name = "m_IsEmpty")]
-        pub m_is_empty: bool,
-        #[offset(144)]
-        #[rename(name = "m_numRoot")]
-        pub m_num_root: crate::unity_engine::gameobject::GameObject,
-        #[offset(152)]
-        #[rename(name = "m_num")]
-        pub m_num: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(160)]
-        #[rename(name = "m_x")]
-        pub m_x: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: basicmenuitemcontent :: { BasicMenuItemContent , IBasicMenuItemContent }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringselectmenuitemcontent/RingSelectMenuItemContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "RingSelectMenuItemContent")] # [parent (crate :: app :: basicmenuitemcontent :: BasicMenuItemContent)] pub struct RingSelectMenuItemContent {
+# [offset (72)] # [rename (name = "m_name")] pub m_name : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (80)] # [rename (name = "m_emptyText")] pub m_empty_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (88)] # [rename (name = "m_face")] pub m_face : crate :: unity_engine :: ui :: image :: Image ,
+# [offset (96)] # [rename (name = "m_symbol")] pub m_symbol : crate :: unity_engine :: ui :: image :: Image ,
+# [offset (104)] # [rename (name = "m_selectBg")] pub m_select_bg : crate :: unity_engine :: ui :: image :: Image ,
+# [offset (112)] # [rename (name = "m_frame")] pub m_frame : crate :: unity_engine :: ui :: image :: Image ,
+# [offset (120)] # [rename (name = "m_check")] pub m_check : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (128)] # [rename (name = "m_unitIcon")] pub m_unit_icon : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (136)] # [rename (name = "m_IsEquip")] pub m_is_equip : bool ,
+# [offset (137)] # [rename (name = "m_IsEmpty")] pub m_is_empty : bool ,
+# [offset (144)] # [rename (name = "m_numRoot")] pub m_num_root : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (152)] # [rename (name = "m_num")] pub m_num : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (160)] # [rename (name = "m_x")] pub m_x : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+}
+
 }
 
 #[cfg(feature = "app-ringselectmenuitemcontent-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-ringselectmenuitemcontent")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RingSelectMenuItemContent_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_text_mesh_pro_component {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingSelectMenuItemContent as ::unity2::ClassIdentity>::class(),
-                "GetTextMeshProComponent",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingSelectMenuItemContent as ::unity2::ClassIdentity>::NAME,
-                        "GetTextMeshProComponent",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_text_mesh_pro_component(
-        this: RingSelectMenuItemContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::tm_pro::textmeshprougui::TextMeshProUGUI {
-        let inner: extern "C" fn(RingSelectMenuItemContent, ::unity2::OptionalMethod) -> crate::tm_pro::textmeshprougui::TextMeshProUGUI =
-            ::core::mem::transmute(__lookup_get_text_mesh_pro_component::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_build {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::basicmenuitem::BasicMenuItem as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingSelectMenuItemContent as ::unity2::ClassIdentity>::class(),
-                "Build",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingSelectMenuItemContent as ::unity2::ClassIdentity>::NAME,
-                        "Build",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn build(
-        this: RingSelectMenuItemContent,
-        menu_item: crate::app::basicmenuitem::BasicMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RingSelectMenuItemContent, crate::app::basicmenuitem::BasicMenuItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_build::get_method_info().method_ptr);
-        inner(this, menu_item, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_face_image {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::sprite::Sprite as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingSelectMenuItemContent as ::unity2::ClassIdentity>::class(),
-                "SetFaceImage",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingSelectMenuItemContent as ::unity2::ClassIdentity>::NAME,
-                        "SetFaceImage",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_face_image(
-        this: RingSelectMenuItemContent,
-        sprite: crate::unity_engine::sprite::Sprite,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RingSelectMenuItemContent, crate::unity_engine::sprite::Sprite, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_face_image::get_method_info().method_ptr);
-        inner(this, sprite, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_symbol_image {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::sprite::Sprite as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingSelectMenuItemContent as ::unity2::ClassIdentity>::class(),
-                "SetSymbolImage",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingSelectMenuItemContent as ::unity2::ClassIdentity>::NAME,
-                        "SetSymbolImage",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_symbol_image(
-        this: RingSelectMenuItemContent,
-        sprite: crate::unity_engine::sprite::Sprite,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RingSelectMenuItemContent, crate::unity_engine::sprite::Sprite, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_symbol_image::get_method_info().method_ptr);
-        inner(this, sprite, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_owner {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingSelectMenuItemContent as ::unity2::ClassIdentity>::class(),
-                "SetOwner",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingSelectMenuItemContent as ::unity2::ClassIdentity>::NAME,
-                        "SetOwner",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_owner(this: RingSelectMenuItemContent, owner: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RingSelectMenuItemContent, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_owner::get_method_info().method_ptr);
-        inner(this, owner, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update_text_color {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingSelectMenuItemContent as ::unity2::ClassIdentity>::class(),
-                "UpdateTextColor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingSelectMenuItemContent as ::unity2::ClassIdentity>::NAME,
-                        "UpdateTextColor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update_text_color(this: RingSelectMenuItemContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RingSelectMenuItemContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update_text_color::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingSelectMenuItemContent as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingSelectMenuItemContent as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: RingSelectMenuItemContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RingSelectMenuItemContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __RingSelectMenuItemContent_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_text_mesh_pro_component { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RingSelectMenuItemContent as :: unity2 :: ClassIdentity > :: class () , "GetTextMeshProComponent" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RingSelectMenuItemContent as :: unity2 :: ClassIdentity > :: NAME , "GetTextMeshProComponent" , e) , } } } pub unsafe fn get_text_mesh_pro_component (this : RingSelectMenuItemContent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI { let inner : extern "C" fn (RingSelectMenuItemContent , :: unity2 :: OptionalMethod ,) -> crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI = :: core :: mem :: transmute (__lookup_get_text_mesh_pro_component :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_build { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: basicmenuitem :: BasicMenuItem as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RingSelectMenuItemContent as :: unity2 :: ClassIdentity > :: class () , "Build" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RingSelectMenuItemContent as :: unity2 :: ClassIdentity > :: NAME , "Build" , e) , } } } pub unsafe fn build (this : RingSelectMenuItemContent , menu_item : crate :: app :: basicmenuitem :: BasicMenuItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RingSelectMenuItemContent , crate :: app :: basicmenuitem :: BasicMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_build :: get_method_info () . method_ptr ,) ; inner (this , menu_item , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_face_image { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: sprite :: Sprite as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RingSelectMenuItemContent as :: unity2 :: ClassIdentity > :: class () , "SetFaceImage" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RingSelectMenuItemContent as :: unity2 :: ClassIdentity > :: NAME , "SetFaceImage" , e) , } } } pub unsafe fn set_face_image (this : RingSelectMenuItemContent , sprite : crate :: unity_engine :: sprite :: Sprite , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RingSelectMenuItemContent , crate :: unity_engine :: sprite :: Sprite , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_face_image :: get_method_info () . method_ptr ,) ; inner (this , sprite , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_symbol_image { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: sprite :: Sprite as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RingSelectMenuItemContent as :: unity2 :: ClassIdentity > :: class () , "SetSymbolImage" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RingSelectMenuItemContent as :: unity2 :: ClassIdentity > :: NAME , "SetSymbolImage" , e) , } } } pub unsafe fn set_symbol_image (this : RingSelectMenuItemContent , sprite : crate :: unity_engine :: sprite :: Sprite , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RingSelectMenuItemContent , crate :: unity_engine :: sprite :: Sprite , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_symbol_image :: get_method_info () . method_ptr ,) ; inner (this , sprite , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_owner { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RingSelectMenuItemContent as :: unity2 :: ClassIdentity > :: class () , "SetOwner" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RingSelectMenuItemContent as :: unity2 :: ClassIdentity > :: NAME , "SetOwner" , e) , } } } pub unsafe fn set_owner (this : RingSelectMenuItemContent , owner : crate :: app :: unit :: Unit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RingSelectMenuItemContent , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_owner :: get_method_info () . method_ptr ,) ; inner (this , owner , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update_text_color { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RingSelectMenuItemContent as :: unity2 :: ClassIdentity > :: class () , "UpdateTextColor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RingSelectMenuItemContent as :: unity2 :: ClassIdentity > :: NAME , "UpdateTextColor" , e) , } } } pub unsafe fn update_text_color (this : RingSelectMenuItemContent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RingSelectMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update_text_color :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RingSelectMenuItemContent as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RingSelectMenuItemContent as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : RingSelectMenuItemContent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RingSelectMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-ringselectmenuitemcontent")]
-pub trait IRingSelectMenuItemContentMethods: IRingSelectMenuItemContent {
-    #[doc = "`GetTextMeshProComponent()` overload"]
-    fn get_text_mesh_pro_component(self) -> crate::tm_pro::textmeshprougui::TextMeshProUGUI {
-        unsafe {
-            let __receiver =
-                <RingSelectMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RingSelectMenuItemContent_unity2_raw::get_text_mesh_pro_component(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Build(crate::app::basicmenuitem::BasicMenuItem)` overload"]
-    fn build(self, menu_item: impl ::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem>) -> () {
-        unsafe {
-            let __receiver =
-                <RingSelectMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RingSelectMenuItemContent_unity2_raw::build(__receiver, ::core::convert::Into::into(menu_item), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetFaceImage(crate::unity_engine::sprite::Sprite)` overload"]
-    fn set_face_image(self, sprite: impl ::core::convert::Into<crate::unity_engine::sprite::Sprite>) -> () {
-        unsafe {
-            let __receiver =
-                <RingSelectMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RingSelectMenuItemContent_unity2_raw::set_face_image(__receiver, ::core::convert::Into::into(sprite), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetSymbolImage(crate::unity_engine::sprite::Sprite)` overload"]
-    fn set_symbol_image(self, sprite: impl ::core::convert::Into<crate::unity_engine::sprite::Sprite>) -> () {
-        unsafe {
-            let __receiver =
-                <RingSelectMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RingSelectMenuItemContent_unity2_raw::set_symbol_image(__receiver, ::core::convert::Into::into(sprite), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetOwner(crate::app::unit::Unit)` overload"]
-    fn set_owner(self, owner: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
-        unsafe {
-            let __receiver =
-                <RingSelectMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RingSelectMenuItemContent_unity2_raw::set_owner(__receiver, ::core::convert::Into::into(owner), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`UpdateTextColor()` overload"]
-    fn update_text_color(self) -> () {
-        unsafe {
-            let __receiver =
-                <RingSelectMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RingSelectMenuItemContent_unity2_raw::update_text_color(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <RingSelectMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RingSelectMenuItemContent_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IRingSelectMenuItemContentMethods : IRingSelectMenuItemContent { # [doc = "`GetTextMeshProComponent()` overload"] fn get_text_mesh_pro_component (self ,) -> crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI { unsafe { let __receiver = < RingSelectMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RingSelectMenuItemContent_unity2_raw :: get_text_mesh_pro_component (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Build(crate::app::basicmenuitem::BasicMenuItem)` overload"] fn build (self , menu_item : impl :: core :: convert :: Into < crate :: app :: basicmenuitem :: BasicMenuItem >) -> () { unsafe { let __receiver = < RingSelectMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RingSelectMenuItemContent_unity2_raw :: build (__receiver , :: core :: convert :: Into :: into (menu_item) , :: core :: option :: Option :: None) } } # [doc = "`SetFaceImage(crate::unity_engine::sprite::Sprite)` overload"] fn set_face_image (self , sprite : impl :: core :: convert :: Into < crate :: unity_engine :: sprite :: Sprite >) -> () { unsafe { let __receiver = < RingSelectMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RingSelectMenuItemContent_unity2_raw :: set_face_image (__receiver , :: core :: convert :: Into :: into (sprite) , :: core :: option :: Option :: None) } } # [doc = "`SetSymbolImage(crate::unity_engine::sprite::Sprite)` overload"] fn set_symbol_image (self , sprite : impl :: core :: convert :: Into < crate :: unity_engine :: sprite :: Sprite >) -> () { unsafe { let __receiver = < RingSelectMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RingSelectMenuItemContent_unity2_raw :: set_symbol_image (__receiver , :: core :: convert :: Into :: into (sprite) , :: core :: option :: Option :: None) } } # [doc = "`SetOwner(crate::app::unit::Unit)` overload"] fn set_owner (self , owner : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < RingSelectMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RingSelectMenuItemContent_unity2_raw :: set_owner (__receiver , :: core :: convert :: Into :: into (owner) , :: core :: option :: Option :: None) } } # [doc = "`UpdateTextColor()` overload"] fn update_text_color (self ,) -> () { unsafe { let __receiver = < RingSelectMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RingSelectMenuItemContent_unity2_raw :: update_text_color (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RingSelectMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RingSelectMenuItemContent_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-ringselectmenuitemcontent")]
-impl<__T: IRingSelectMenuItemContent> IRingSelectMenuItemContentMethods for __T {}
+impl < __T : IRingSelectMenuItemContent > IRingSelectMenuItemContentMethods for __T { }
+
+#[cfg(feature = "app-ringselectmenuitemcontent")]
+impl RingSelectMenuItemContent { pub fn get_text_mesh_pro_component_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RingSelectMenuItemContent_unity2_raw :: __lookup_get_text_mesh_pro_component :: get_method_info () } pub fn build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RingSelectMenuItemContent_unity2_raw :: __lookup_build :: get_method_info () } pub fn set_face_image_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RingSelectMenuItemContent_unity2_raw :: __lookup_set_face_image :: get_method_info () } pub fn set_symbol_image_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RingSelectMenuItemContent_unity2_raw :: __lookup_set_symbol_image :: get_method_info () } pub fn set_owner_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RingSelectMenuItemContent_unity2_raw :: __lookup_set_owner :: get_method_info () } pub fn update_text_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RingSelectMenuItemContent_unity2_raw :: __lookup_update_text_color :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RingSelectMenuItemContent_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-ringselectmenuitemcontent")]
 impl RingSelectMenuItemContent {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RingSelectMenuItemContent),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRingSelectMenuItemContentMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RingSelectMenuItemContent) , :: core :: stringify ! (new) ,)) ; < Self as IRingSelectMenuItemContentMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-ringselectmenuitemcontent")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IRingSelectMenuItemContent, IRingSelectMenuItemContentMethods, RingSelectMenuItemContent};
-    #[cfg(feature = "app-basicmenuitemcontent")]
-    pub use crate::app::basicmenuitemcontent::IBasicMenuItemContentMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        app::basicmenuitemcontent::IBasicMenuItemContent,
-        system::object::IObject,
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::RingSelectMenuItemContent;
+    pub use super::IRingSelectMenuItemContent;
+    pub use super::IRingSelectMenuItemContentMethods;
+    pub use crate::app::basicmenuitemcontent::IBasicMenuItemContent;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "app-basicmenuitemcontent")] pub use crate::app::basicmenuitemcontent::IBasicMenuItemContentMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

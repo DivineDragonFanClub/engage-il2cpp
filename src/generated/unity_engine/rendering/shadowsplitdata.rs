@@ -2,423 +2,69 @@
 
 #[cfg(feature = "unity_engine-rendering-shadowsplitdata-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        valuetype::{IValueType, ValueType},
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/shadowsplitdata/ShadowSplitData.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct ShadowSplitData {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
 
-    impl ::unity2::ClassIdentity for ShadowSplitData {
-        const NAME: &'static str = "ShadowSplitData";
-        const NAMESPACE: &'static str = "UnityEngine.Rendering";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/shadowsplitdata/ShadowSplitData.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct ShadowSplitData {}
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+
+impl ::unity2::ClassIdentity for ShadowSplitData {
+    const NAMESPACE: &'static str = "UnityEngine.Rendering";
+
+    const NAME: &'static str = "ShadowSplitData";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for ShadowSplitData {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl ::unity2::IlType for ShadowSplitData {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
+
+}
+
 }
 
 #[cfg(feature = "unity_engine-rendering-shadowsplitdata-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-shadowsplitdata")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ShadowSplitData_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_culling_plane_count {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ShadowSplitData as ::unity2::ClassIdentity>::class(),
-                "get_cullingPlaneCount",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ShadowSplitData as ::unity2::ClassIdentity>::NAME,
-                        "get_cullingPlaneCount",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_culling_plane_count(this: ShadowSplitData, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(ShadowSplitData, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_culling_plane_count::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_culling_sphere {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ShadowSplitData as ::unity2::ClassIdentity>::class(),
-                "get_cullingSphere",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ShadowSplitData as ::unity2::ClassIdentity>::NAME,
-                        "get_cullingSphere",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_culling_sphere(this: ShadowSplitData, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::vector4::Vector4 {
-        let inner: extern "C" fn(ShadowSplitData, ::unity2::OptionalMethod) -> crate::unity_engine::vector4::Vector4 =
-            ::core::mem::transmute(__lookup_get_culling_sphere::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_culling_sphere {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector4::Vector4 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ShadowSplitData as ::unity2::ClassIdentity>::class(),
-                "set_cullingSphere",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ShadowSplitData as ::unity2::ClassIdentity>::NAME,
-                        "set_cullingSphere",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_culling_sphere(
-        this: ShadowSplitData,
-        value: crate::unity_engine::vector4::Vector4,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(ShadowSplitData, crate::unity_engine::vector4::Vector4, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_culling_sphere::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_shadow_cascade_blend_culling_factor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ShadowSplitData as ::unity2::ClassIdentity>::class(),
-                "set_shadowCascadeBlendCullingFactor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ShadowSplitData as ::unity2::ClassIdentity>::NAME,
-                        "set_shadowCascadeBlendCullingFactor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_shadow_cascade_blend_culling_factor(this: ShadowSplitData, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ShadowSplitData, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_shadow_cascade_blend_culling_factor::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_culling_plane {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ShadowSplitData as ::unity2::ClassIdentity>::class(),
-                "GetCullingPlane",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ShadowSplitData as ::unity2::ClassIdentity>::NAME,
-                        "GetCullingPlane",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_culling_plane(
-        this: ShadowSplitData,
-        index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::plane::Plane {
-        let inner: extern "C" fn(ShadowSplitData, i32, ::unity2::OptionalMethod) -> crate::unity_engine::plane::Plane =
-            ::core::mem::transmute(__lookup_get_culling_plane::get_method_info().method_ptr);
-        inner(this, index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_equals {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::rendering::shadowsplitdata::ShadowSplitData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ShadowSplitData as ::unity2::ClassIdentity>::class(),
-                "Equals",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ShadowSplitData as ::unity2::ClassIdentity>::NAME,
-                        "Equals",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn equals(
-        this: ShadowSplitData,
-        other: crate::unity_engine::rendering::shadowsplitdata::ShadowSplitData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            ShadowSplitData,
-            crate::unity_engine::rendering::shadowsplitdata::ShadowSplitData,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(__lookup_equals::get_method_info().method_ptr);
-        inner(this, other, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_equals_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ShadowSplitData as ::unity2::ClassIdentity>::class(),
-                "Equals",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ShadowSplitData as ::unity2::ClassIdentity>::NAME,
-                        "Equals",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn equals_2(this: ShadowSplitData, obj: crate::system::object::Object, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(ShadowSplitData, crate::system::object::Object, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_equals_2::get_method_info().method_ptr);
-        inner(this, obj, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_hash_code {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ShadowSplitData as ::unity2::ClassIdentity>::class(),
-                "GetHashCode",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ShadowSplitData as ::unity2::ClassIdentity>::NAME,
-                        "GetHashCode",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_hash_code(this: ShadowSplitData, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(ShadowSplitData, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_hash_code::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ShadowSplitData as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ShadowSplitData as ::unity2::ClassIdentity>::NAME,
-                        ".cctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ShadowSplitData_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_culling_plane_count { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ShadowSplitData as :: unity2 :: ClassIdentity > :: class () , "get_cullingPlaneCount" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ShadowSplitData as :: unity2 :: ClassIdentity > :: NAME , "get_cullingPlaneCount" , e) , } } } pub unsafe fn get_culling_plane_count (this : ShadowSplitData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (ShadowSplitData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_culling_plane_count :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_culling_sphere { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ShadowSplitData as :: unity2 :: ClassIdentity > :: class () , "get_cullingSphere" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ShadowSplitData as :: unity2 :: ClassIdentity > :: NAME , "get_cullingSphere" , e) , } } } pub unsafe fn get_culling_sphere (this : ShadowSplitData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector4 :: Vector4 { let inner : extern "C" fn (ShadowSplitData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector4 :: Vector4 = :: core :: mem :: transmute (__lookup_get_culling_sphere :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_culling_sphere { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector4 :: Vector4 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ShadowSplitData as :: unity2 :: ClassIdentity > :: class () , "set_cullingSphere" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ShadowSplitData as :: unity2 :: ClassIdentity > :: NAME , "set_cullingSphere" , e) , } } } pub unsafe fn set_culling_sphere (this : ShadowSplitData , value : crate :: unity_engine :: vector4 :: Vector4 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ShadowSplitData , crate :: unity_engine :: vector4 :: Vector4 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_culling_sphere :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_shadow_cascade_blend_culling_factor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ShadowSplitData as :: unity2 :: ClassIdentity > :: class () , "set_shadowCascadeBlendCullingFactor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ShadowSplitData as :: unity2 :: ClassIdentity > :: NAME , "set_shadowCascadeBlendCullingFactor" , e) , } } } pub unsafe fn set_shadow_cascade_blend_culling_factor (this : ShadowSplitData , value : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ShadowSplitData , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_shadow_cascade_blend_culling_factor :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_culling_plane { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ShadowSplitData as :: unity2 :: ClassIdentity > :: class () , "GetCullingPlane" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ShadowSplitData as :: unity2 :: ClassIdentity > :: NAME , "GetCullingPlane" , e) , } } } pub unsafe fn get_culling_plane (this : ShadowSplitData , index : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: plane :: Plane { let inner : extern "C" fn (ShadowSplitData , i32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: plane :: Plane = :: core :: mem :: transmute (__lookup_get_culling_plane :: get_method_info () . method_ptr ,) ; inner (this , index , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_equals { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: shadowsplitdata :: ShadowSplitData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ShadowSplitData as :: unity2 :: ClassIdentity > :: class () , "Equals" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ShadowSplitData as :: unity2 :: ClassIdentity > :: NAME , "Equals" , e) , } } } pub unsafe fn equals (this : ShadowSplitData , other : crate :: unity_engine :: rendering :: shadowsplitdata :: ShadowSplitData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (ShadowSplitData , crate :: unity_engine :: rendering :: shadowsplitdata :: ShadowSplitData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_equals :: get_method_info () . method_ptr ,) ; inner (this , other , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_equals_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ShadowSplitData as :: unity2 :: ClassIdentity > :: class () , "Equals" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ShadowSplitData as :: unity2 :: ClassIdentity > :: NAME , "Equals" , e) , } } } pub unsafe fn equals_2 (this : ShadowSplitData , obj : crate :: system :: object :: Object , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (ShadowSplitData , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_equals_2 :: get_method_info () . method_ptr ,) ; inner (this , obj , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_hash_code { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ShadowSplitData as :: unity2 :: ClassIdentity > :: class () , "GetHashCode" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ShadowSplitData as :: unity2 :: ClassIdentity > :: NAME , "GetHashCode" , e) , } } } pub unsafe fn get_hash_code (this : ShadowSplitData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (ShadowSplitData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_hash_code :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ShadowSplitData as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ShadowSplitData as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-rendering-shadowsplitdata")]
-impl ShadowSplitData {
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __ShadowSplitData_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
+impl ShadowSplitData { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { __ShadowSplitData_unity2_raw :: cctor (:: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-rendering-shadowsplitdata")]
-impl ShadowSplitData {
-    #[doc = "`get_cullingPlaneCount()` overload"]
-    pub fn get_culling_plane_count(self) -> i32 {
-        unsafe { __ShadowSplitData_unity2_raw::get_culling_plane_count(self, ::core::option::Option::None) }
-    }
+impl ShadowSplitData { # [doc = "`get_cullingPlaneCount()` overload"] pub fn get_culling_plane_count (self ,) -> i32 { unsafe { __ShadowSplitData_unity2_raw :: get_culling_plane_count (self , :: core :: option :: Option :: None) } } # [doc = "`get_cullingSphere()` overload"] pub fn get_culling_sphere (self ,) -> crate :: unity_engine :: vector4 :: Vector4 { unsafe { __ShadowSplitData_unity2_raw :: get_culling_sphere (self , :: core :: option :: Option :: None) } } # [doc = "`set_cullingSphere(crate::unity_engine::vector4::Vector4)` overload"] pub fn set_culling_sphere (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: vector4 :: Vector4 >) -> () { unsafe { __ShadowSplitData_unity2_raw :: set_culling_sphere (self , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`set_shadowCascadeBlendCullingFactor(f32)` overload"] pub fn set_shadow_cascade_blend_culling_factor (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { __ShadowSplitData_unity2_raw :: set_shadow_cascade_blend_culling_factor (self , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`GetCullingPlane(i32)` overload"] pub fn get_culling_plane (self , index : impl :: core :: convert :: Into < i32 >) -> crate :: unity_engine :: plane :: Plane { unsafe { __ShadowSplitData_unity2_raw :: get_culling_plane (self , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } # [doc = "`Equals(crate::unity_engine::rendering::shadowsplitdata::ShadowSplitData)` overload"] pub fn equals (self , other : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: shadowsplitdata :: ShadowSplitData >) -> bool { unsafe { __ShadowSplitData_unity2_raw :: equals (self , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } # [doc = "`Equals(crate::system::object::Object)` overload"] pub fn equals_2 (self , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { __ShadowSplitData_unity2_raw :: equals_2 (self , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } # [doc = "`GetHashCode()` overload"] pub fn get_hash_code (self ,) -> i32 { unsafe { __ShadowSplitData_unity2_raw :: get_hash_code (self , :: core :: option :: Option :: None) } } }
 
-    #[doc = "`get_cullingSphere()` overload"]
-    pub fn get_culling_sphere(self) -> crate::unity_engine::vector4::Vector4 {
-        unsafe { __ShadowSplitData_unity2_raw::get_culling_sphere(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_cullingSphere(crate::unity_engine::vector4::Vector4)` overload"]
-    pub fn set_culling_sphere(self, value: impl ::core::convert::Into<crate::unity_engine::vector4::Vector4>) -> () {
-        unsafe { __ShadowSplitData_unity2_raw::set_culling_sphere(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_shadowCascadeBlendCullingFactor(f32)` overload"]
-    pub fn set_shadow_cascade_blend_culling_factor(self, value: impl ::core::convert::Into<f32>) -> () {
-        unsafe {
-            __ShadowSplitData_unity2_raw::set_shadow_cascade_blend_culling_factor(
-                self,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`GetCullingPlane(i32)` overload"]
-    pub fn get_culling_plane(self, index: impl ::core::convert::Into<i32>) -> crate::unity_engine::plane::Plane {
-        unsafe { __ShadowSplitData_unity2_raw::get_culling_plane(self, ::core::convert::Into::into(index), ::core::option::Option::None) }
-    }
-
-    #[doc = "`Equals(crate::unity_engine::rendering::shadowsplitdata::ShadowSplitData)` overload"]
-    pub fn equals(self, other: impl ::core::convert::Into<crate::unity_engine::rendering::shadowsplitdata::ShadowSplitData>) -> bool {
-        unsafe { __ShadowSplitData_unity2_raw::equals(self, ::core::convert::Into::into(other), ::core::option::Option::None) }
-    }
-
-    #[doc = "`Equals(crate::system::object::Object)` overload"]
-    pub fn equals_2(self, obj: impl ::core::convert::Into<crate::system::object::Object>) -> bool {
-        unsafe { __ShadowSplitData_unity2_raw::equals_2(self, ::core::convert::Into::into(obj), ::core::option::Option::None) }
-    }
-
-    #[doc = "`GetHashCode()` overload"]
-    pub fn get_hash_code(self) -> i32 {
-        unsafe { __ShadowSplitData_unity2_raw::get_hash_code(self, ::core::option::Option::None) }
-    }
-}
+#[cfg(feature = "unity_engine-rendering-shadowsplitdata")]
+impl ShadowSplitData { pub fn get_culling_plane_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ShadowSplitData_unity2_raw :: __lookup_get_culling_plane_count :: get_method_info () } pub fn get_culling_sphere_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ShadowSplitData_unity2_raw :: __lookup_get_culling_sphere :: get_method_info () } pub fn set_culling_sphere_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ShadowSplitData_unity2_raw :: __lookup_set_culling_sphere :: get_method_info () } pub fn set_shadow_cascade_blend_culling_factor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ShadowSplitData_unity2_raw :: __lookup_set_shadow_cascade_blend_culling_factor :: get_method_info () } pub fn get_culling_plane_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ShadowSplitData_unity2_raw :: __lookup_get_culling_plane :: get_method_info () } pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ShadowSplitData_unity2_raw :: __lookup_equals :: get_method_info () } pub fn equals_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ShadowSplitData_unity2_raw :: __lookup_equals_2 :: get_method_info () } pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ShadowSplitData_unity2_raw :: __lookup_get_hash_code :: get_method_info () } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ShadowSplitData_unity2_raw :: __lookup_cctor :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-rendering-shadowsplitdata")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::ShadowSplitData;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::system::{object::IObject, valuetype::IValueType};
+    pub use crate::system::object::IObject;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

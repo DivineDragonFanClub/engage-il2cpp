@@ -2,206 +2,46 @@
 
 #[cfg(feature = "app-bitfieldhelper-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/bitfieldhelper/BitFieldHelper.md"))]
-    #[::unity2::class(namespace = "App", name = "BitFieldHelper")]
-    #[parent(crate::system::object::Object)]
-    pub struct BitFieldHelper {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/bitfieldhelper/BitFieldHelper.md"))] # [:: unity2 :: class (namespace = "App" , name = "BitFieldHelper")] # [parent (crate :: system :: object :: Object)] pub struct BitFieldHelper {}
+
 }
 
 #[cfg(feature = "app-bitfieldhelper-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-bitfieldhelper")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __BitFieldHelper_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_by_names {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::SystemType as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BitFieldHelper as ::unity2::ClassIdentity>::class(),
-                "GetByNames",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <BitFieldHelper as ::unity2::ClassIdentity>::NAME,
-                        "GetByNames",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_by_names(
-        src_type: ::unity2::SystemType,
-        src_value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(::unity2::SystemType, i32, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_by_names::get_method_info().method_ptr);
-        inner(src_type, src_value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_by_names_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::SystemType as ::unity2::IlType>::il_type(),
-                <i64 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BitFieldHelper as ::unity2::ClassIdentity>::class(),
-                "GetByNames",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <BitFieldHelper as ::unity2::ClassIdentity>::NAME,
-                        "GetByNames",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_by_names_2(
-        src_type: ::unity2::SystemType,
-        src_value: i64,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(::unity2::SystemType, i64, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_by_names_2::get_method_info().method_ptr);
-        inner(src_type, src_value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BitFieldHelper as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <BitFieldHelper as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: BitFieldHelper, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(BitFieldHelper, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __BitFieldHelper_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_by_names { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: SystemType as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< BitFieldHelper as :: unity2 :: ClassIdentity > :: class () , "GetByNames" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < BitFieldHelper as :: unity2 :: ClassIdentity > :: NAME , "GetByNames" , e) , } } } pub unsafe fn get_by_names (src_type : :: unity2 :: SystemType , src_value : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (:: unity2 :: SystemType , i32 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_by_names :: get_method_info () . method_ptr ,) ; inner (src_type , src_value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_by_names_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: SystemType as :: unity2 :: IlType > :: il_type () , < i64 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< BitFieldHelper as :: unity2 :: ClassIdentity > :: class () , "GetByNames" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < BitFieldHelper as :: unity2 :: ClassIdentity > :: NAME , "GetByNames" , e) , } } } pub unsafe fn get_by_names_2 (src_type : :: unity2 :: SystemType , src_value : i64 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (:: unity2 :: SystemType , i64 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_by_names_2 :: get_method_info () . method_ptr ,) ; inner (src_type , src_value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< BitFieldHelper as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < BitFieldHelper as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : BitFieldHelper , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (BitFieldHelper , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-bitfieldhelper")]
+impl BitFieldHelper { # [doc = "`GetByNames(::unity2::SystemType, i32)` overload"] pub fn get_by_names (src_type : impl :: core :: convert :: Into < :: unity2 :: SystemType > , src_value : impl :: core :: convert :: Into < i32 >) -> :: unity2 :: Il2CppString { unsafe { __BitFieldHelper_unity2_raw :: get_by_names (:: core :: convert :: Into :: into (src_type) , :: core :: convert :: Into :: into (src_value) , :: core :: option :: Option :: None) } } # [doc = "`GetByNames(::unity2::SystemType, i64)` overload"] pub fn get_by_names_2 (src_type : impl :: core :: convert :: Into < :: unity2 :: SystemType > , src_value : impl :: core :: convert :: Into < i64 >) -> :: unity2 :: Il2CppString { unsafe { __BitFieldHelper_unity2_raw :: get_by_names_2 (:: core :: convert :: Into :: into (src_type) , :: core :: convert :: Into :: into (src_value) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-bitfieldhelper")]
+pub trait IBitFieldHelperMethods : IBitFieldHelper { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < BitFieldHelper as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __BitFieldHelper_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-bitfieldhelper")]
+impl < __T : IBitFieldHelper > IBitFieldHelperMethods for __T { }
+
+#[cfg(feature = "app-bitfieldhelper")]
+impl BitFieldHelper { pub fn get_by_names_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __BitFieldHelper_unity2_raw :: __lookup_get_by_names :: get_method_info () } pub fn get_by_names_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __BitFieldHelper_unity2_raw :: __lookup_get_by_names_2 :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __BitFieldHelper_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-bitfieldhelper")]
 impl BitFieldHelper {
-    #[doc = "`GetByNames(::unity2::SystemType, i32)` overload"]
-    pub fn get_by_names(
-        src_type: impl ::core::convert::Into<::unity2::SystemType>,
-        src_value: impl ::core::convert::Into<i32>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __BitFieldHelper_unity2_raw::get_by_names(
-                ::core::convert::Into::into(src_type),
-                ::core::convert::Into::into(src_value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`GetByNames(::unity2::SystemType, i64)` overload"]
-    pub fn get_by_names_2(
-        src_type: impl ::core::convert::Into<::unity2::SystemType>,
-        src_value: impl ::core::convert::Into<i64>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __BitFieldHelper_unity2_raw::get_by_names_2(
-                ::core::convert::Into::into(src_type),
-                ::core::convert::Into::into(src_value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-bitfieldhelper")]
-pub trait IBitFieldHelperMethods: IBitFieldHelper {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <BitFieldHelper as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __BitFieldHelper_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-bitfieldhelper")]
-impl<__T: IBitFieldHelper> IBitFieldHelperMethods for __T {}
-
-#[cfg(feature = "app-bitfieldhelper")]
-impl BitFieldHelper {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(BitFieldHelper),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IBitFieldHelperMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (BitFieldHelper) , :: core :: stringify ! (new) ,)) ; < Self as IBitFieldHelperMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-bitfieldhelper")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{BitFieldHelper, IBitFieldHelper, IBitFieldHelperMethods};
+    pub use super::BitFieldHelper;
+    pub use super::IBitFieldHelper;
+    pub use super::IBitFieldHelperMethods;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

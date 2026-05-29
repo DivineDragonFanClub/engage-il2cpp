@@ -2,338 +2,56 @@
 
 #[cfg(feature = "app-hubmovestatemovespline-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::hubmovestate::{HubMoveState, IHubMoveState},
-        system::object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmovestatemovespline/HubMoveStateMoveSpline.md"))]
-    #[::unity2::class(namespace = "App", name = "HubMoveStateMoveSpline")]
-    #[parent(crate::app::hubmovestate::HubMoveState)]
-    pub struct HubMoveStateMoveSpline {
-        #[offset(16)]
-        #[rename(name = "m_unit")]
-        pub m_unit: crate::app::hubunitcontroller::HubUnitController,
-        #[offset(24)]
-        #[rename(name = "m_data")]
-        pub m_data: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
-        #[offset(32)]
-        #[rename(name = "m_term")]
-        pub m_term: f32,
-        #[offset(40)]
-        #[rename(name = "m_bodyAnim")]
-        pub m_body_anim: ::unity2::Il2CppString,
-        #[offset(48)]
-        #[rename(name = "m_faceAnim")]
-        pub m_face_anim: ::unity2::Il2CppString,
-        #[offset(56)]
-        #[rename(name = "m_isTurn")]
-        pub m_is_turn: bool,
-        #[offset(57)]
-        #[rename(name = "m_resume")]
-        pub m_resume: bool,
-        #[offset(60)]
-        #[rename(name = "m_speed")]
-        pub m_speed: f32,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: hubmovestate :: { HubMoveState , IHubMoveState }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmovestatemovespline/HubMoveStateMoveSpline.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubMoveStateMoveSpline")] # [parent (crate :: app :: hubmovestate :: HubMoveState)] pub struct HubMoveStateMoveSpline {
+# [offset (16)] # [rename (name = "m_unit")] pub m_unit : crate :: app :: hubunitcontroller :: HubUnitController ,
+# [offset (24)] # [rename (name = "m_data")] pub m_data : :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > ,
+# [offset (32)] # [rename (name = "m_term")] pub m_term : f32 ,
+# [offset (40)] # [rename (name = "m_bodyAnim")] pub m_body_anim : :: unity2 :: Il2CppString ,
+# [offset (48)] # [rename (name = "m_faceAnim")] pub m_face_anim : :: unity2 :: Il2CppString ,
+# [offset (56)] # [rename (name = "m_isTurn")] pub m_is_turn : bool ,
+# [offset (57)] # [rename (name = "m_resume")] pub m_resume : bool ,
+# [offset (60)] # [rename (name = "m_speed")] pub m_speed : f32 ,
+}
+
 }
 
 #[cfg(feature = "app-hubmovestatemovespline-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-hubmovestatemovespline")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __HubMoveStateMoveSpline_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::hubunitcontroller::HubUnitController as ::unity2::IlType>::il_type(),
-                <::unity2::Array<crate::unity_engine::vector3::Vector3> as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubMoveStateMoveSpline as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                6,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubMoveStateMoveSpline as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: HubMoveStateMoveSpline,
-        unit: crate::app::hubunitcontroller::HubUnitController,
-        data: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
-        body_anim: ::unity2::Il2CppString,
-        face_anim: ::unity2::Il2CppString,
-        is_turn: bool,
-        speed: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            HubMoveStateMoveSpline,
-            crate::app::hubunitcontroller::HubUnitController,
-            ::unity2::Array<crate::unity_engine::vector3::Vector3>,
-            ::unity2::Il2CppString,
-            ::unity2::Il2CppString,
-            bool,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, unit, data, body_anim, face_anim, is_turn, speed, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_end {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubMoveStateMoveSpline as ::unity2::ClassIdentity>::class(),
-                "IsEnd",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubMoveStateMoveSpline as ::unity2::ClassIdentity>::NAME,
-                        "IsEnd",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_end(this: HubMoveStateMoveSpline, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(HubMoveStateMoveSpline, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_end::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_start {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubMoveStateMoveSpline as ::unity2::ClassIdentity>::class(),
-                "Start",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubMoveStateMoveSpline as ::unity2::ClassIdentity>::NAME,
-                        "Start",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn start(this: HubMoveStateMoveSpline, resume: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(HubMoveStateMoveSpline, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_start::get_method_info().method_ptr);
-        inner(this, resume, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubMoveStateMoveSpline as ::unity2::ClassIdentity>::class(),
-                "Update",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubMoveStateMoveSpline as ::unity2::ClassIdentity>::NAME,
-                        "Update",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update(this: HubMoveStateMoveSpline, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(HubMoveStateMoveSpline, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_draw_gizmos {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubMoveStateMoveSpline as ::unity2::ClassIdentity>::class(),
-                "OnDrawGizmos",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubMoveStateMoveSpline as ::unity2::ClassIdentity>::NAME,
-                        "OnDrawGizmos",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_draw_gizmos(this: HubMoveStateMoveSpline, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(HubMoveStateMoveSpline, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_draw_gizmos::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __HubMoveStateMoveSpline_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: hubunitcontroller :: HubUnitController as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubMoveStateMoveSpline as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 6 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubMoveStateMoveSpline as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : HubMoveStateMoveSpline , unit : crate :: app :: hubunitcontroller :: HubUnitController , data : :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > , body_anim : :: unity2 :: Il2CppString , face_anim : :: unity2 :: Il2CppString , is_turn : bool , speed : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HubMoveStateMoveSpline , crate :: app :: hubunitcontroller :: HubUnitController , :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , bool , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , unit , data , body_anim , face_anim , is_turn , speed , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_end { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubMoveStateMoveSpline as :: unity2 :: ClassIdentity > :: class () , "IsEnd" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubMoveStateMoveSpline as :: unity2 :: ClassIdentity > :: NAME , "IsEnd" , e) , } } } pub unsafe fn is_end (this : HubMoveStateMoveSpline , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (HubMoveStateMoveSpline , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_end :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_start { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubMoveStateMoveSpline as :: unity2 :: ClassIdentity > :: class () , "Start" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubMoveStateMoveSpline as :: unity2 :: ClassIdentity > :: NAME , "Start" , e) , } } } pub unsafe fn start (this : HubMoveStateMoveSpline , resume : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HubMoveStateMoveSpline , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_start :: get_method_info () . method_ptr ,) ; inner (this , resume , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubMoveStateMoveSpline as :: unity2 :: ClassIdentity > :: class () , "Update" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubMoveStateMoveSpline as :: unity2 :: ClassIdentity > :: NAME , "Update" , e) , } } } pub unsafe fn update (this : HubMoveStateMoveSpline , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HubMoveStateMoveSpline , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_draw_gizmos { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubMoveStateMoveSpline as :: unity2 :: ClassIdentity > :: class () , "OnDrawGizmos" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubMoveStateMoveSpline as :: unity2 :: ClassIdentity > :: NAME , "OnDrawGizmos" , e) , } } } pub unsafe fn on_draw_gizmos (this : HubMoveStateMoveSpline , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HubMoveStateMoveSpline , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_draw_gizmos :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-hubmovestatemovespline")]
-pub trait IHubMoveStateMoveSplineMethods: IHubMoveStateMoveSpline {
-    #[doc = "`.ctor(crate::app::hubunitcontroller::HubUnitController, ::unity2::Array<crate::unity_engine::vector3::Vector3>, ::unity2::Il2CppString, ::unity2::Il2CppString, bool, f32)` overload"]
-    fn ctor(
-        self,
-        unit: impl ::core::convert::Into<crate::app::hubunitcontroller::HubUnitController>,
-        data: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::vector3::Vector3>>,
-        body_anim: impl ::core::convert::Into<::unity2::Il2CppString>,
-        face_anim: impl ::core::convert::Into<::unity2::Il2CppString>,
-        is_turn: impl ::core::convert::Into<bool>,
-        speed: impl ::core::convert::Into<f32>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <HubMoveStateMoveSpline as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubMoveStateMoveSpline_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(unit),
-                ::core::convert::Into::into(data),
-                ::core::convert::Into::into(body_anim),
-                ::core::convert::Into::into(face_anim),
-                ::core::convert::Into::into(is_turn),
-                ::core::convert::Into::into(speed),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`IsEnd()` overload"]
-    fn is_end(self) -> bool {
-        unsafe {
-            let __receiver =
-                <HubMoveStateMoveSpline as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubMoveStateMoveSpline_unity2_raw::is_end(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Start(bool)` overload"]
-    fn start(self, resume: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver =
-                <HubMoveStateMoveSpline as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubMoveStateMoveSpline_unity2_raw::start(__receiver, ::core::convert::Into::into(resume), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Update()` overload"]
-    fn update(self) -> () {
-        unsafe {
-            let __receiver =
-                <HubMoveStateMoveSpline as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubMoveStateMoveSpline_unity2_raw::update(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnDrawGizmos()` overload"]
-    fn on_draw_gizmos(self) -> () {
-        unsafe {
-            let __receiver =
-                <HubMoveStateMoveSpline as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubMoveStateMoveSpline_unity2_raw::on_draw_gizmos(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IHubMoveStateMoveSplineMethods : IHubMoveStateMoveSpline { # [doc = "`.ctor(crate::app::hubunitcontroller::HubUnitController, ::unity2::Array<crate::unity_engine::vector3::Vector3>, ::unity2::Il2CppString, ::unity2::Il2CppString, bool, f32)` overload"] fn ctor (self , unit : impl :: core :: convert :: Into < crate :: app :: hubunitcontroller :: HubUnitController > , data : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > > , body_anim : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , face_anim : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , is_turn : impl :: core :: convert :: Into < bool > , speed : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < HubMoveStateMoveSpline as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubMoveStateMoveSpline_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (data) , :: core :: convert :: Into :: into (body_anim) , :: core :: convert :: Into :: into (face_anim) , :: core :: convert :: Into :: into (is_turn) , :: core :: convert :: Into :: into (speed) , :: core :: option :: Option :: None) } } # [doc = "`IsEnd()` overload"] fn is_end (self ,) -> bool { unsafe { let __receiver = < HubMoveStateMoveSpline as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubMoveStateMoveSpline_unity2_raw :: is_end (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Start(bool)` overload"] fn start (self , resume : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < HubMoveStateMoveSpline as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubMoveStateMoveSpline_unity2_raw :: start (__receiver , :: core :: convert :: Into :: into (resume) , :: core :: option :: Option :: None) } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < HubMoveStateMoveSpline as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubMoveStateMoveSpline_unity2_raw :: update (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnDrawGizmos()` overload"] fn on_draw_gizmos (self ,) -> () { unsafe { let __receiver = < HubMoveStateMoveSpline as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubMoveStateMoveSpline_unity2_raw :: on_draw_gizmos (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-hubmovestatemovespline")]
-impl<__T: IHubMoveStateMoveSpline> IHubMoveStateMoveSplineMethods for __T {}
+impl < __T : IHubMoveStateMoveSpline > IHubMoveStateMoveSplineMethods for __T { }
+
+#[cfg(feature = "app-hubmovestatemovespline")]
+impl HubMoveStateMoveSpline { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubMoveStateMoveSpline_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn is_end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubMoveStateMoveSpline_unity2_raw :: __lookup_is_end :: get_method_info () } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubMoveStateMoveSpline_unity2_raw :: __lookup_start :: get_method_info () } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubMoveStateMoveSpline_unity2_raw :: __lookup_update :: get_method_info () } pub fn on_draw_gizmos_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubMoveStateMoveSpline_unity2_raw :: __lookup_on_draw_gizmos :: get_method_info () } }
 
 #[cfg(feature = "app-hubmovestatemovespline")]
 impl HubMoveStateMoveSpline {
-    #[doc = "`.ctor(crate::app::hubunitcontroller::HubUnitController, ::unity2::Array<crate::unity_engine::vector3::Vector3>, ::unity2::Il2CppString, ::unity2::Il2CppString, bool, f32)` — overload selector"]
-    pub fn new(
-        unit: crate::app::hubunitcontroller::HubUnitController,
-        data: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
-        body_anim: ::unity2::Il2CppString,
-        face_anim: ::unity2::Il2CppString,
-        is_turn: bool,
-        speed: f32,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(HubMoveStateMoveSpline),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IHubMoveStateMoveSplineMethods>::ctor(this, unit, data, body_anim, face_anim, is_turn, speed);
-        this
-    }
+# [doc = "`.ctor(crate::app::hubunitcontroller::HubUnitController, ::unity2::Array<crate::unity_engine::vector3::Vector3>, ::unity2::Il2CppString, ::unity2::Il2CppString, bool, f32)` — overload selector"] pub fn new (unit : crate :: app :: hubunitcontroller :: HubUnitController , data : :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > , body_anim : :: unity2 :: Il2CppString , face_anim : :: unity2 :: Il2CppString , is_turn : bool , speed : f32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubMoveStateMoveSpline) , :: core :: stringify ! (new) ,)) ; < Self as IHubMoveStateMoveSplineMethods > :: ctor (this , unit , data , body_anim , face_anim , is_turn , speed) ; this }
 }
 
 #[cfg(feature = "app-hubmovestatemovespline")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{HubMoveStateMoveSpline, IHubMoveStateMoveSpline, IHubMoveStateMoveSplineMethods};
-    #[cfg(feature = "app-hubmovestate")]
-    pub use crate::app::hubmovestate::IHubMoveStateMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::{app::hubmovestate::IHubMoveState, system::object::IObject};
+    pub use super::HubMoveStateMoveSpline;
+    pub use super::IHubMoveStateMoveSpline;
+    pub use super::IHubMoveStateMoveSplineMethods;
+    pub use crate::app::hubmovestate::IHubMoveState;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "app-hubmovestate")] pub use crate::app::hubmovestate::IHubMoveStateMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

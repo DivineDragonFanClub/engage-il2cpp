@@ -2,1241 +2,169 @@
 
 #[cfg(feature = "app-photographsequence-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::procinst::{IProcInst, ProcInst},
-        system::{
-            object::{IObject, Object},
-            r#enum::{Enum, IEnum},
-            valuetype::{IValueType, ValueType},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographsequence/PhotographSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "PhotographSequence")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct PhotographSequence {
-        #[offset(112)]
-        #[rename(name = "m_ReservedLabel")]
-        pub m_reserved_label: crate::app::photographsequence::PhotographSequence_Label,
-        #[offset(120)]
-        #[rename(name = "m_AllMenuContent")]
-        pub m_all_menu_content: crate::app::photographallmenucontent::PhotographAllMenuContent,
-        #[offset(128)]
-        #[rename(name = "m_SpotObj")]
-        pub m_spot_obj: crate::unity_engine::gameobject::GameObject,
-        #[offset(136)]
-        #[rename(name = "m_DisposManager")]
-        pub m_dispos_manager: crate::app::photographdisposmanager::PhotographDisposManager,
-        #[offset(144)]
-        #[rename(name = "m_CameraController")]
-        pub m_camera_controller: crate::app::photographcameracontroller::PhotographCameraController,
-        #[offset(152)]
-        #[rename(name = "m_AnimalLocatorNameList")]
-        pub m_animal_locator_name_list: crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: procinst :: { IProcInst , ProcInst }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographsequence/PhotographSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "PhotographSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct PhotographSequence {
+# [offset (112)] # [rename (name = "m_ReservedLabel")] pub m_reserved_label : crate :: app :: photographsequence :: PhotographSequence_Label ,
+# [offset (120)] # [rename (name = "m_AllMenuContent")] pub m_all_menu_content : crate :: app :: photographallmenucontent :: PhotographAllMenuContent ,
+# [offset (128)] # [rename (name = "m_SpotObj")] pub m_spot_obj : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (136)] # [rename (name = "m_DisposManager")] pub m_dispos_manager : crate :: app :: photographdisposmanager :: PhotographDisposManager ,
+# [offset (144)] # [rename (name = "m_CameraController")] pub m_camera_controller : crate :: app :: photographcameracontroller :: PhotographCameraController ,
+# [offset (152)] # [rename (name = "m_AnimalLocatorNameList")] pub m_animal_locator_name_list : crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > ,
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/photographsequence/PhotographSequence_Label.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct PhotographSequence_Label  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for PhotographSequence_Label  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "PhotographSequence.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/photographsequence/PhotographSequence_Label.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct PhotographSequence_Label {
-        pub value: i32,
+}
+
+
+impl  ::unity2::IlType for PhotographSequence_Label  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::ClassIdentity for PhotographSequence_Label {
-        const NAME: &'static str = "PhotographSequence.Label";
-        const NAMESPACE: &'static str = "App";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  PhotographSequence_Label  {
+    pub fn entry() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl ::unity2::IlType for PhotographSequence_Label {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+
+    pub fn select_dispos() -> Self {
+        Self { value: 1 }
+
     }
 
-    impl PhotographSequence_Label {
-        pub fn entry() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn select_dispos() -> Self {
-            Self { value: 1 }
-        }
+    pub fn edit_dispos() -> Self {
+        Self { value: 2 }
 
-        pub fn edit_dispos() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn select_character() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn select_body_acc() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn select_face_acc() -> Self {
-            Self { value: 5 }
-        }
-
-        pub fn select_pause() -> Self {
-            Self { value: 6 }
-        }
-
-        pub fn select_scarf_color() -> Self {
-            Self { value: 7 }
-        }
-
-        pub fn select_weapon() -> Self {
-            Self { value: 8 }
-        }
-
-        pub fn photograph_mode() -> Self {
-            Self { value: 9 }
-        }
-
-        pub fn exit() -> Self {
-            Self { value: 10 }
-        }
     }
+
+
+    pub fn select_character() -> Self {
+        Self { value: 3 }
+
+    }
+
+
+    pub fn select_body_acc() -> Self {
+        Self { value: 4 }
+
+    }
+
+
+    pub fn select_face_acc() -> Self {
+        Self { value: 5 }
+
+    }
+
+
+    pub fn select_pause() -> Self {
+        Self { value: 6 }
+
+    }
+
+
+    pub fn select_scarf_color() -> Self {
+        Self { value: 7 }
+
+    }
+
+
+    pub fn select_weapon() -> Self {
+        Self { value: 8 }
+
+    }
+
+
+    pub fn photograph_mode() -> Self {
+        Self { value: 9 }
+
+    }
+
+
+    pub fn exit() -> Self {
+        Self { value: 10 }
+
+    }
+
+}
+
 }
 
 #[cfg(feature = "app-photographsequence-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-photographsequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __PhotographSequence_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PhotographSequence as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PhotographSequence as ::unity2::ClassIdentity>::NAME,
-                        "CreateBind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_bind(super_: crate::app::procinst::ProcInst, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
-        inner(super_, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_open_key_help {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PhotographSequence as ::unity2::ClassIdentity>::class(),
-                "OpenKeyHelp",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PhotographSequence as ::unity2::ClassIdentity>::NAME,
-                        "OpenKeyHelp",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn open_key_help(this: PhotographSequence, key_help_id: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(PhotographSequence, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_open_key_help::get_method_info().method_ptr);
-        inner(this, key_help_id, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_close_key_help {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PhotographSequence as ::unity2::ClassIdentity>::class(),
-                "CloseKeyHelp",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PhotographSequence as ::unity2::ClassIdentity>::NAME,
-                        "CloseKeyHelp",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn close_key_help(this: PhotographSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(PhotographSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_close_key_help::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_start_sequence {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PhotographSequence as ::unity2::ClassIdentity>::class(),
-                "StartSequence",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PhotographSequence as ::unity2::ClassIdentity>::NAME,
-                        "StartSequence",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn start_sequence(this: PhotographSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(PhotographSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_start_sequence::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_open_select_dispos_menu {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PhotographSequence as ::unity2::ClassIdentity>::class(),
-                "OpenSelectDisposMenu",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PhotographSequence as ::unity2::ClassIdentity>::NAME,
-                        "OpenSelectDisposMenu",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn open_select_dispos_menu(this: PhotographSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(PhotographSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_open_select_dispos_menu::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_close_select_dispos_menu {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PhotographSequence as ::unity2::ClassIdentity>::class(),
-                "CloseSelectDisposMenu",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PhotographSequence as ::unity2::ClassIdentity>::NAME,
-                        "CloseSelectDisposMenu",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn close_select_dispos_menu(this: PhotographSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(PhotographSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_close_select_dispos_menu::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_open_edit_dispos_menu {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PhotographSequence as ::unity2::ClassIdentity>::class(),
-                "OpenEditDisposMenu",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PhotographSequence as ::unity2::ClassIdentity>::NAME,
-                        "OpenEditDisposMenu",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn open_edit_dispos_menu(this: PhotographSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(PhotographSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_open_edit_dispos_menu::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_close_edit_dispos_menu {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PhotographSequence as ::unity2::ClassIdentity>::class(),
-                "CloseEditDisposMenu",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PhotographSequence as ::unity2::ClassIdentity>::NAME,
-                        "CloseEditDisposMenu",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn close_edit_dispos_menu(this: PhotographSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(PhotographSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_close_edit_dispos_menu::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_open_select_character_menu {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PhotographSequence as ::unity2::ClassIdentity>::class(),
-                "OpenSelectCharacterMenu",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PhotographSequence as ::unity2::ClassIdentity>::NAME,
-                        "OpenSelectCharacterMenu",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn open_select_character_menu(this: PhotographSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(PhotographSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_open_select_character_menu::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_close_select_character_menu {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PhotographSequence as ::unity2::ClassIdentity>::class(),
-                "CloseSelectCharacterMenu",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PhotographSequence as ::unity2::ClassIdentity>::NAME,
-                        "CloseSelectCharacterMenu",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn close_select_character_menu(this: PhotographSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(PhotographSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_close_select_character_menu::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_open_select_body_acc_menu {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PhotographSequence as ::unity2::ClassIdentity>::class(),
-                "OpenSelectBodyAccMenu",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PhotographSequence as ::unity2::ClassIdentity>::NAME,
-                        "OpenSelectBodyAccMenu",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn open_select_body_acc_menu(this: PhotographSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(PhotographSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_open_select_body_acc_menu::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_close_select_body_acc_menu {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PhotographSequence as ::unity2::ClassIdentity>::class(),
-                "CloseSelectBodyAccMenu",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PhotographSequence as ::unity2::ClassIdentity>::NAME,
-                        "CloseSelectBodyAccMenu",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn close_select_body_acc_menu(this: PhotographSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(PhotographSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_close_select_body_acc_menu::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_open_select_face_acc_menu {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PhotographSequence as ::unity2::ClassIdentity>::class(),
-                "OpenSelectFaceAccMenu",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PhotographSequence as ::unity2::ClassIdentity>::NAME,
-                        "OpenSelectFaceAccMenu",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn open_select_face_acc_menu(this: PhotographSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(PhotographSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_open_select_face_acc_menu::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_close_select_face_acc_menu {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PhotographSequence as ::unity2::ClassIdentity>::class(),
-                "CloseSelectFaceAccMenu",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PhotographSequence as ::unity2::ClassIdentity>::NAME,
-                        "CloseSelectFaceAccMenu",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn close_select_face_acc_menu(this: PhotographSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(PhotographSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_close_select_face_acc_menu::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_open_select_pause_menu {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PhotographSequence as ::unity2::ClassIdentity>::class(),
-                "OpenSelectPauseMenu",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PhotographSequence as ::unity2::ClassIdentity>::NAME,
-                        "OpenSelectPauseMenu",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn open_select_pause_menu(this: PhotographSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(PhotographSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_open_select_pause_menu::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_close_select_pause_menu {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PhotographSequence as ::unity2::ClassIdentity>::class(),
-                "CloseSelectPauseMenu",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PhotographSequence as ::unity2::ClassIdentity>::NAME,
-                        "CloseSelectPauseMenu",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn close_select_pause_menu(this: PhotographSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(PhotographSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_close_select_pause_menu::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_open_select_scarf_color_menu {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PhotographSequence as ::unity2::ClassIdentity>::class(),
-                "OpenSelectScarfColorMenu",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PhotographSequence as ::unity2::ClassIdentity>::NAME,
-                        "OpenSelectScarfColorMenu",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn open_select_scarf_color_menu(this: PhotographSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(PhotographSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_open_select_scarf_color_menu::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_close_select_scarf_color_menu {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PhotographSequence as ::unity2::ClassIdentity>::class(),
-                "CloseSelectScarfColorMenu",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PhotographSequence as ::unity2::ClassIdentity>::NAME,
-                        "CloseSelectScarfColorMenu",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn close_select_scarf_color_menu(this: PhotographSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(PhotographSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_close_select_scarf_color_menu::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_open_select_weapon_menu {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PhotographSequence as ::unity2::ClassIdentity>::class(),
-                "OpenSelectWeaponMenu",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PhotographSequence as ::unity2::ClassIdentity>::NAME,
-                        "OpenSelectWeaponMenu",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn open_select_weapon_menu(this: PhotographSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(PhotographSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_open_select_weapon_menu::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_close_select_weapon_menu {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PhotographSequence as ::unity2::ClassIdentity>::class(),
-                "CloseSelectWeaponMenu",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PhotographSequence as ::unity2::ClassIdentity>::NAME,
-                        "CloseSelectWeaponMenu",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn close_select_weapon_menu(this: PhotographSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(PhotographSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_close_select_weapon_menu::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_start_photograph_mode_sequence {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PhotographSequence as ::unity2::ClassIdentity>::class(),
-                "StartPhotographModeSequence",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PhotographSequence as ::unity2::ClassIdentity>::NAME,
-                        "StartPhotographModeSequence",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn start_photograph_mode_sequence(this: PhotographSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(PhotographSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_start_photograph_mode_sequence::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_end_photograph_mode_sequence {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PhotographSequence as ::unity2::ClassIdentity>::class(),
-                "EndPhotographModeSequence",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PhotographSequence as ::unity2::ClassIdentity>::NAME,
-                        "EndPhotographModeSequence",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn end_photograph_mode_sequence(this: PhotographSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(PhotographSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_end_photograph_mode_sequence::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_end_sequence {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PhotographSequence as ::unity2::ClassIdentity>::class(),
-                "EndSequence",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PhotographSequence as ::unity2::ClassIdentity>::NAME,
-                        "EndSequence",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn end_sequence(this: PhotographSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(PhotographSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_end_sequence::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_load_resource {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PhotographSequence as ::unity2::ClassIdentity>::class(),
-                "LoadResource",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PhotographSequence as ::unity2::ClassIdentity>::NAME,
-                        "LoadResource",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn load_resource(this: PhotographSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(PhotographSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_load_resource::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_loading_resource {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PhotographSequence as ::unity2::ClassIdentity>::class(),
-                "IsLoadingResource",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PhotographSequence as ::unity2::ClassIdentity>::NAME,
-                        "IsLoadingResource",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_loading_resource(this: PhotographSequence, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(PhotographSequence, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_loading_resource::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_unload_resource {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PhotographSequence as ::unity2::ClassIdentity>::class(),
-                "UnloadResource",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PhotographSequence as ::unity2::ClassIdentity>::NAME,
-                        "UnloadResource",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn unload_resource(this: PhotographSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(PhotographSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_unload_resource::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PhotographSequence as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PhotographSequence as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: PhotographSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(PhotographSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __PhotographSequence_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_bind { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PhotographSequence as :: unity2 :: ClassIdentity > :: class () , "CreateBind" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PhotographSequence as :: unity2 :: ClassIdentity > :: NAME , "CreateBind" , e) , } } } pub unsafe fn create_bind (super_ : crate :: app :: procinst :: ProcInst , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create_bind :: get_method_info () . method_ptr ,) ; inner (super_ , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_open_key_help { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PhotographSequence as :: unity2 :: ClassIdentity > :: class () , "OpenKeyHelp" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PhotographSequence as :: unity2 :: ClassIdentity > :: NAME , "OpenKeyHelp" , e) , } } } pub unsafe fn open_key_help (this : PhotographSequence , key_help_id : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (PhotographSequence , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_open_key_help :: get_method_info () . method_ptr ,) ; inner (this , key_help_id , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_close_key_help { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PhotographSequence as :: unity2 :: ClassIdentity > :: class () , "CloseKeyHelp" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PhotographSequence as :: unity2 :: ClassIdentity > :: NAME , "CloseKeyHelp" , e) , } } } pub unsafe fn close_key_help (this : PhotographSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (PhotographSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_close_key_help :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_start_sequence { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PhotographSequence as :: unity2 :: ClassIdentity > :: class () , "StartSequence" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PhotographSequence as :: unity2 :: ClassIdentity > :: NAME , "StartSequence" , e) , } } } pub unsafe fn start_sequence (this : PhotographSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (PhotographSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_start_sequence :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_open_select_dispos_menu { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PhotographSequence as :: unity2 :: ClassIdentity > :: class () , "OpenSelectDisposMenu" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PhotographSequence as :: unity2 :: ClassIdentity > :: NAME , "OpenSelectDisposMenu" , e) , } } } pub unsafe fn open_select_dispos_menu (this : PhotographSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (PhotographSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_open_select_dispos_menu :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_close_select_dispos_menu { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PhotographSequence as :: unity2 :: ClassIdentity > :: class () , "CloseSelectDisposMenu" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PhotographSequence as :: unity2 :: ClassIdentity > :: NAME , "CloseSelectDisposMenu" , e) , } } } pub unsafe fn close_select_dispos_menu (this : PhotographSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (PhotographSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_close_select_dispos_menu :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_open_edit_dispos_menu { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PhotographSequence as :: unity2 :: ClassIdentity > :: class () , "OpenEditDisposMenu" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PhotographSequence as :: unity2 :: ClassIdentity > :: NAME , "OpenEditDisposMenu" , e) , } } } pub unsafe fn open_edit_dispos_menu (this : PhotographSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (PhotographSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_open_edit_dispos_menu :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_close_edit_dispos_menu { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PhotographSequence as :: unity2 :: ClassIdentity > :: class () , "CloseEditDisposMenu" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PhotographSequence as :: unity2 :: ClassIdentity > :: NAME , "CloseEditDisposMenu" , e) , } } } pub unsafe fn close_edit_dispos_menu (this : PhotographSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (PhotographSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_close_edit_dispos_menu :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_open_select_character_menu { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PhotographSequence as :: unity2 :: ClassIdentity > :: class () , "OpenSelectCharacterMenu" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PhotographSequence as :: unity2 :: ClassIdentity > :: NAME , "OpenSelectCharacterMenu" , e) , } } } pub unsafe fn open_select_character_menu (this : PhotographSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (PhotographSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_open_select_character_menu :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_close_select_character_menu { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PhotographSequence as :: unity2 :: ClassIdentity > :: class () , "CloseSelectCharacterMenu" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PhotographSequence as :: unity2 :: ClassIdentity > :: NAME , "CloseSelectCharacterMenu" , e) , } } } pub unsafe fn close_select_character_menu (this : PhotographSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (PhotographSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_close_select_character_menu :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_open_select_body_acc_menu { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PhotographSequence as :: unity2 :: ClassIdentity > :: class () , "OpenSelectBodyAccMenu" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PhotographSequence as :: unity2 :: ClassIdentity > :: NAME , "OpenSelectBodyAccMenu" , e) , } } } pub unsafe fn open_select_body_acc_menu (this : PhotographSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (PhotographSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_open_select_body_acc_menu :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_close_select_body_acc_menu { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PhotographSequence as :: unity2 :: ClassIdentity > :: class () , "CloseSelectBodyAccMenu" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PhotographSequence as :: unity2 :: ClassIdentity > :: NAME , "CloseSelectBodyAccMenu" , e) , } } } pub unsafe fn close_select_body_acc_menu (this : PhotographSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (PhotographSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_close_select_body_acc_menu :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_open_select_face_acc_menu { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PhotographSequence as :: unity2 :: ClassIdentity > :: class () , "OpenSelectFaceAccMenu" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PhotographSequence as :: unity2 :: ClassIdentity > :: NAME , "OpenSelectFaceAccMenu" , e) , } } } pub unsafe fn open_select_face_acc_menu (this : PhotographSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (PhotographSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_open_select_face_acc_menu :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_close_select_face_acc_menu { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PhotographSequence as :: unity2 :: ClassIdentity > :: class () , "CloseSelectFaceAccMenu" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PhotographSequence as :: unity2 :: ClassIdentity > :: NAME , "CloseSelectFaceAccMenu" , e) , } } } pub unsafe fn close_select_face_acc_menu (this : PhotographSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (PhotographSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_close_select_face_acc_menu :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_open_select_pause_menu { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PhotographSequence as :: unity2 :: ClassIdentity > :: class () , "OpenSelectPauseMenu" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PhotographSequence as :: unity2 :: ClassIdentity > :: NAME , "OpenSelectPauseMenu" , e) , } } } pub unsafe fn open_select_pause_menu (this : PhotographSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (PhotographSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_open_select_pause_menu :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_close_select_pause_menu { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PhotographSequence as :: unity2 :: ClassIdentity > :: class () , "CloseSelectPauseMenu" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PhotographSequence as :: unity2 :: ClassIdentity > :: NAME , "CloseSelectPauseMenu" , e) , } } } pub unsafe fn close_select_pause_menu (this : PhotographSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (PhotographSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_close_select_pause_menu :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_open_select_scarf_color_menu { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PhotographSequence as :: unity2 :: ClassIdentity > :: class () , "OpenSelectScarfColorMenu" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PhotographSequence as :: unity2 :: ClassIdentity > :: NAME , "OpenSelectScarfColorMenu" , e) , } } } pub unsafe fn open_select_scarf_color_menu (this : PhotographSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (PhotographSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_open_select_scarf_color_menu :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_close_select_scarf_color_menu { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PhotographSequence as :: unity2 :: ClassIdentity > :: class () , "CloseSelectScarfColorMenu" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PhotographSequence as :: unity2 :: ClassIdentity > :: NAME , "CloseSelectScarfColorMenu" , e) , } } } pub unsafe fn close_select_scarf_color_menu (this : PhotographSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (PhotographSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_close_select_scarf_color_menu :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_open_select_weapon_menu { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PhotographSequence as :: unity2 :: ClassIdentity > :: class () , "OpenSelectWeaponMenu" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PhotographSequence as :: unity2 :: ClassIdentity > :: NAME , "OpenSelectWeaponMenu" , e) , } } } pub unsafe fn open_select_weapon_menu (this : PhotographSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (PhotographSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_open_select_weapon_menu :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_close_select_weapon_menu { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PhotographSequence as :: unity2 :: ClassIdentity > :: class () , "CloseSelectWeaponMenu" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PhotographSequence as :: unity2 :: ClassIdentity > :: NAME , "CloseSelectWeaponMenu" , e) , } } } pub unsafe fn close_select_weapon_menu (this : PhotographSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (PhotographSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_close_select_weapon_menu :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_start_photograph_mode_sequence { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PhotographSequence as :: unity2 :: ClassIdentity > :: class () , "StartPhotographModeSequence" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PhotographSequence as :: unity2 :: ClassIdentity > :: NAME , "StartPhotographModeSequence" , e) , } } } pub unsafe fn start_photograph_mode_sequence (this : PhotographSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (PhotographSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_start_photograph_mode_sequence :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_end_photograph_mode_sequence { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PhotographSequence as :: unity2 :: ClassIdentity > :: class () , "EndPhotographModeSequence" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PhotographSequence as :: unity2 :: ClassIdentity > :: NAME , "EndPhotographModeSequence" , e) , } } } pub unsafe fn end_photograph_mode_sequence (this : PhotographSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (PhotographSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_end_photograph_mode_sequence :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_end_sequence { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PhotographSequence as :: unity2 :: ClassIdentity > :: class () , "EndSequence" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PhotographSequence as :: unity2 :: ClassIdentity > :: NAME , "EndSequence" , e) , } } } pub unsafe fn end_sequence (this : PhotographSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (PhotographSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_end_sequence :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_load_resource { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PhotographSequence as :: unity2 :: ClassIdentity > :: class () , "LoadResource" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PhotographSequence as :: unity2 :: ClassIdentity > :: NAME , "LoadResource" , e) , } } } pub unsafe fn load_resource (this : PhotographSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (PhotographSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_load_resource :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_loading_resource { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PhotographSequence as :: unity2 :: ClassIdentity > :: class () , "IsLoadingResource" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PhotographSequence as :: unity2 :: ClassIdentity > :: NAME , "IsLoadingResource" , e) , } } } pub unsafe fn is_loading_resource (this : PhotographSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (PhotographSequence , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_loading_resource :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_unload_resource { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PhotographSequence as :: unity2 :: ClassIdentity > :: class () , "UnloadResource" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PhotographSequence as :: unity2 :: ClassIdentity > :: NAME , "UnloadResource" , e) , } } } pub unsafe fn unload_resource (this : PhotographSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (PhotographSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_unload_resource :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PhotographSequence as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PhotographSequence as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : PhotographSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (PhotographSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-photographsequence")]
+impl PhotographSequence { # [doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { __PhotographSequence_unity2_raw :: create_bind (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-photographsequence")]
+pub trait IPhotographSequenceMethods : IPhotographSequence { # [doc = "`OpenKeyHelp(::unity2::Il2CppString)` overload"] fn open_key_help (self , key_help_id : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < PhotographSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __PhotographSequence_unity2_raw :: open_key_help (__receiver , :: core :: convert :: Into :: into (key_help_id) , :: core :: option :: Option :: None) } } # [doc = "`CloseKeyHelp()` overload"] fn close_key_help (self ,) -> () { unsafe { let __receiver = < PhotographSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __PhotographSequence_unity2_raw :: close_key_help (__receiver , :: core :: option :: Option :: None) } } # [doc = "`StartSequence()` overload"] fn start_sequence (self ,) -> () { unsafe { let __receiver = < PhotographSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __PhotographSequence_unity2_raw :: start_sequence (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OpenSelectDisposMenu()` overload"] fn open_select_dispos_menu (self ,) -> () { unsafe { let __receiver = < PhotographSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __PhotographSequence_unity2_raw :: open_select_dispos_menu (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CloseSelectDisposMenu()` overload"] fn close_select_dispos_menu (self ,) -> () { unsafe { let __receiver = < PhotographSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __PhotographSequence_unity2_raw :: close_select_dispos_menu (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OpenEditDisposMenu()` overload"] fn open_edit_dispos_menu (self ,) -> () { unsafe { let __receiver = < PhotographSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __PhotographSequence_unity2_raw :: open_edit_dispos_menu (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CloseEditDisposMenu()` overload"] fn close_edit_dispos_menu (self ,) -> () { unsafe { let __receiver = < PhotographSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __PhotographSequence_unity2_raw :: close_edit_dispos_menu (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OpenSelectCharacterMenu()` overload"] fn open_select_character_menu (self ,) -> () { unsafe { let __receiver = < PhotographSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __PhotographSequence_unity2_raw :: open_select_character_menu (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CloseSelectCharacterMenu()` overload"] fn close_select_character_menu (self ,) -> () { unsafe { let __receiver = < PhotographSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __PhotographSequence_unity2_raw :: close_select_character_menu (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OpenSelectBodyAccMenu()` overload"] fn open_select_body_acc_menu (self ,) -> () { unsafe { let __receiver = < PhotographSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __PhotographSequence_unity2_raw :: open_select_body_acc_menu (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CloseSelectBodyAccMenu()` overload"] fn close_select_body_acc_menu (self ,) -> () { unsafe { let __receiver = < PhotographSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __PhotographSequence_unity2_raw :: close_select_body_acc_menu (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OpenSelectFaceAccMenu()` overload"] fn open_select_face_acc_menu (self ,) -> () { unsafe { let __receiver = < PhotographSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __PhotographSequence_unity2_raw :: open_select_face_acc_menu (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CloseSelectFaceAccMenu()` overload"] fn close_select_face_acc_menu (self ,) -> () { unsafe { let __receiver = < PhotographSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __PhotographSequence_unity2_raw :: close_select_face_acc_menu (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OpenSelectPauseMenu()` overload"] fn open_select_pause_menu (self ,) -> () { unsafe { let __receiver = < PhotographSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __PhotographSequence_unity2_raw :: open_select_pause_menu (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CloseSelectPauseMenu()` overload"] fn close_select_pause_menu (self ,) -> () { unsafe { let __receiver = < PhotographSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __PhotographSequence_unity2_raw :: close_select_pause_menu (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OpenSelectScarfColorMenu()` overload"] fn open_select_scarf_color_menu (self ,) -> () { unsafe { let __receiver = < PhotographSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __PhotographSequence_unity2_raw :: open_select_scarf_color_menu (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CloseSelectScarfColorMenu()` overload"] fn close_select_scarf_color_menu (self ,) -> () { unsafe { let __receiver = < PhotographSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __PhotographSequence_unity2_raw :: close_select_scarf_color_menu (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OpenSelectWeaponMenu()` overload"] fn open_select_weapon_menu (self ,) -> () { unsafe { let __receiver = < PhotographSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __PhotographSequence_unity2_raw :: open_select_weapon_menu (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CloseSelectWeaponMenu()` overload"] fn close_select_weapon_menu (self ,) -> () { unsafe { let __receiver = < PhotographSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __PhotographSequence_unity2_raw :: close_select_weapon_menu (__receiver , :: core :: option :: Option :: None) } } # [doc = "`StartPhotographModeSequence()` overload"] fn start_photograph_mode_sequence (self ,) -> () { unsafe { let __receiver = < PhotographSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __PhotographSequence_unity2_raw :: start_photograph_mode_sequence (__receiver , :: core :: option :: Option :: None) } } # [doc = "`EndPhotographModeSequence()` overload"] fn end_photograph_mode_sequence (self ,) -> () { unsafe { let __receiver = < PhotographSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __PhotographSequence_unity2_raw :: end_photograph_mode_sequence (__receiver , :: core :: option :: Option :: None) } } # [doc = "`EndSequence()` overload"] fn end_sequence (self ,) -> () { unsafe { let __receiver = < PhotographSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __PhotographSequence_unity2_raw :: end_sequence (__receiver , :: core :: option :: Option :: None) } } # [doc = "`LoadResource()` overload"] fn load_resource (self ,) -> () { unsafe { let __receiver = < PhotographSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __PhotographSequence_unity2_raw :: load_resource (__receiver , :: core :: option :: Option :: None) } } # [doc = "`IsLoadingResource()` overload"] fn is_loading_resource (self ,) -> bool { unsafe { let __receiver = < PhotographSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __PhotographSequence_unity2_raw :: is_loading_resource (__receiver , :: core :: option :: Option :: None) } } # [doc = "`UnloadResource()` overload"] fn unload_resource (self ,) -> () { unsafe { let __receiver = < PhotographSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __PhotographSequence_unity2_raw :: unload_resource (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < PhotographSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __PhotographSequence_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-photographsequence")]
+impl < __T : IPhotographSequence > IPhotographSequenceMethods for __T { }
+
+#[cfg(feature = "app-photographsequence")]
+impl PhotographSequence { pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PhotographSequence_unity2_raw :: __lookup_create_bind :: get_method_info () } pub fn open_key_help_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PhotographSequence_unity2_raw :: __lookup_open_key_help :: get_method_info () } pub fn close_key_help_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PhotographSequence_unity2_raw :: __lookup_close_key_help :: get_method_info () } pub fn start_sequence_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PhotographSequence_unity2_raw :: __lookup_start_sequence :: get_method_info () } pub fn open_select_dispos_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PhotographSequence_unity2_raw :: __lookup_open_select_dispos_menu :: get_method_info () } pub fn close_select_dispos_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PhotographSequence_unity2_raw :: __lookup_close_select_dispos_menu :: get_method_info () } pub fn open_edit_dispos_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PhotographSequence_unity2_raw :: __lookup_open_edit_dispos_menu :: get_method_info () } pub fn close_edit_dispos_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PhotographSequence_unity2_raw :: __lookup_close_edit_dispos_menu :: get_method_info () } pub fn open_select_character_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PhotographSequence_unity2_raw :: __lookup_open_select_character_menu :: get_method_info () } pub fn close_select_character_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PhotographSequence_unity2_raw :: __lookup_close_select_character_menu :: get_method_info () } pub fn open_select_body_acc_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PhotographSequence_unity2_raw :: __lookup_open_select_body_acc_menu :: get_method_info () } pub fn close_select_body_acc_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PhotographSequence_unity2_raw :: __lookup_close_select_body_acc_menu :: get_method_info () } pub fn open_select_face_acc_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PhotographSequence_unity2_raw :: __lookup_open_select_face_acc_menu :: get_method_info () } pub fn close_select_face_acc_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PhotographSequence_unity2_raw :: __lookup_close_select_face_acc_menu :: get_method_info () } pub fn open_select_pause_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PhotographSequence_unity2_raw :: __lookup_open_select_pause_menu :: get_method_info () } pub fn close_select_pause_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PhotographSequence_unity2_raw :: __lookup_close_select_pause_menu :: get_method_info () } pub fn open_select_scarf_color_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PhotographSequence_unity2_raw :: __lookup_open_select_scarf_color_menu :: get_method_info () } pub fn close_select_scarf_color_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PhotographSequence_unity2_raw :: __lookup_close_select_scarf_color_menu :: get_method_info () } pub fn open_select_weapon_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PhotographSequence_unity2_raw :: __lookup_open_select_weapon_menu :: get_method_info () } pub fn close_select_weapon_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PhotographSequence_unity2_raw :: __lookup_close_select_weapon_menu :: get_method_info () } pub fn start_photograph_mode_sequence_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PhotographSequence_unity2_raw :: __lookup_start_photograph_mode_sequence :: get_method_info () } pub fn end_photograph_mode_sequence_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PhotographSequence_unity2_raw :: __lookup_end_photograph_mode_sequence :: get_method_info () } pub fn end_sequence_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PhotographSequence_unity2_raw :: __lookup_end_sequence :: get_method_info () } pub fn load_resource_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PhotographSequence_unity2_raw :: __lookup_load_resource :: get_method_info () } pub fn is_loading_resource_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PhotographSequence_unity2_raw :: __lookup_is_loading_resource :: get_method_info () } pub fn unload_resource_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PhotographSequence_unity2_raw :: __lookup_unload_resource :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PhotographSequence_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-photographsequence")]
 impl PhotographSequence {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
-    pub fn create_bind(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
-        unsafe { __PhotographSequence_unity2_raw::create_bind(::core::convert::Into::into(super_), ::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-photographsequence")]
-pub trait IPhotographSequenceMethods: IPhotographSequence {
-    #[doc = "`OpenKeyHelp(::unity2::Il2CppString)` overload"]
-    fn open_key_help(self, key_help_id: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver = <PhotographSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __PhotographSequence_unity2_raw::open_key_help(__receiver, ::core::convert::Into::into(key_help_id), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CloseKeyHelp()` overload"]
-    fn close_key_help(self) -> () {
-        unsafe {
-            let __receiver = <PhotographSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __PhotographSequence_unity2_raw::close_key_help(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`StartSequence()` overload"]
-    fn start_sequence(self) -> () {
-        unsafe {
-            let __receiver = <PhotographSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __PhotographSequence_unity2_raw::start_sequence(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OpenSelectDisposMenu()` overload"]
-    fn open_select_dispos_menu(self) -> () {
-        unsafe {
-            let __receiver = <PhotographSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __PhotographSequence_unity2_raw::open_select_dispos_menu(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CloseSelectDisposMenu()` overload"]
-    fn close_select_dispos_menu(self) -> () {
-        unsafe {
-            let __receiver = <PhotographSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __PhotographSequence_unity2_raw::close_select_dispos_menu(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OpenEditDisposMenu()` overload"]
-    fn open_edit_dispos_menu(self) -> () {
-        unsafe {
-            let __receiver = <PhotographSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __PhotographSequence_unity2_raw::open_edit_dispos_menu(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CloseEditDisposMenu()` overload"]
-    fn close_edit_dispos_menu(self) -> () {
-        unsafe {
-            let __receiver = <PhotographSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __PhotographSequence_unity2_raw::close_edit_dispos_menu(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OpenSelectCharacterMenu()` overload"]
-    fn open_select_character_menu(self) -> () {
-        unsafe {
-            let __receiver = <PhotographSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __PhotographSequence_unity2_raw::open_select_character_menu(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CloseSelectCharacterMenu()` overload"]
-    fn close_select_character_menu(self) -> () {
-        unsafe {
-            let __receiver = <PhotographSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __PhotographSequence_unity2_raw::close_select_character_menu(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OpenSelectBodyAccMenu()` overload"]
-    fn open_select_body_acc_menu(self) -> () {
-        unsafe {
-            let __receiver = <PhotographSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __PhotographSequence_unity2_raw::open_select_body_acc_menu(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CloseSelectBodyAccMenu()` overload"]
-    fn close_select_body_acc_menu(self) -> () {
-        unsafe {
-            let __receiver = <PhotographSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __PhotographSequence_unity2_raw::close_select_body_acc_menu(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OpenSelectFaceAccMenu()` overload"]
-    fn open_select_face_acc_menu(self) -> () {
-        unsafe {
-            let __receiver = <PhotographSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __PhotographSequence_unity2_raw::open_select_face_acc_menu(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CloseSelectFaceAccMenu()` overload"]
-    fn close_select_face_acc_menu(self) -> () {
-        unsafe {
-            let __receiver = <PhotographSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __PhotographSequence_unity2_raw::close_select_face_acc_menu(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OpenSelectPauseMenu()` overload"]
-    fn open_select_pause_menu(self) -> () {
-        unsafe {
-            let __receiver = <PhotographSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __PhotographSequence_unity2_raw::open_select_pause_menu(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CloseSelectPauseMenu()` overload"]
-    fn close_select_pause_menu(self) -> () {
-        unsafe {
-            let __receiver = <PhotographSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __PhotographSequence_unity2_raw::close_select_pause_menu(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OpenSelectScarfColorMenu()` overload"]
-    fn open_select_scarf_color_menu(self) -> () {
-        unsafe {
-            let __receiver = <PhotographSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __PhotographSequence_unity2_raw::open_select_scarf_color_menu(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CloseSelectScarfColorMenu()` overload"]
-    fn close_select_scarf_color_menu(self) -> () {
-        unsafe {
-            let __receiver = <PhotographSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __PhotographSequence_unity2_raw::close_select_scarf_color_menu(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OpenSelectWeaponMenu()` overload"]
-    fn open_select_weapon_menu(self) -> () {
-        unsafe {
-            let __receiver = <PhotographSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __PhotographSequence_unity2_raw::open_select_weapon_menu(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CloseSelectWeaponMenu()` overload"]
-    fn close_select_weapon_menu(self) -> () {
-        unsafe {
-            let __receiver = <PhotographSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __PhotographSequence_unity2_raw::close_select_weapon_menu(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`StartPhotographModeSequence()` overload"]
-    fn start_photograph_mode_sequence(self) -> () {
-        unsafe {
-            let __receiver = <PhotographSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __PhotographSequence_unity2_raw::start_photograph_mode_sequence(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`EndPhotographModeSequence()` overload"]
-    fn end_photograph_mode_sequence(self) -> () {
-        unsafe {
-            let __receiver = <PhotographSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __PhotographSequence_unity2_raw::end_photograph_mode_sequence(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`EndSequence()` overload"]
-    fn end_sequence(self) -> () {
-        unsafe {
-            let __receiver = <PhotographSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __PhotographSequence_unity2_raw::end_sequence(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`LoadResource()` overload"]
-    fn load_resource(self) -> () {
-        unsafe {
-            let __receiver = <PhotographSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __PhotographSequence_unity2_raw::load_resource(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsLoadingResource()` overload"]
-    fn is_loading_resource(self) -> bool {
-        unsafe {
-            let __receiver = <PhotographSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __PhotographSequence_unity2_raw::is_loading_resource(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`UnloadResource()` overload"]
-    fn unload_resource(self) -> () {
-        unsafe {
-            let __receiver = <PhotographSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __PhotographSequence_unity2_raw::unload_resource(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <PhotographSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __PhotographSequence_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-photographsequence")]
-impl<__T: IPhotographSequence> IPhotographSequenceMethods for __T {}
-
-#[cfg(feature = "app-photographsequence")]
-impl PhotographSequence {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(PhotographSequence),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IPhotographSequenceMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (PhotographSequence) , :: core :: stringify ! (new) ,)) ; < Self as IPhotographSequenceMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-photographsequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IPhotographSequence, IPhotographSequenceMethods, PhotographSequence, PhotographSequence_Label};
-    #[cfg(feature = "app-procinst")]
-    pub use crate::app::procinst::IProcInstMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::{
-        app::procinst::IProcInst,
-        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
-    };
+    pub use super::PhotographSequence;
+    pub use super::IPhotographSequence;
+    pub use super::IPhotographSequenceMethods;
+    pub use super::PhotographSequence_Label;
+    pub use crate::app::procinst::IProcInst;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "app-procinst")] pub use crate::app::procinst::IProcInstMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

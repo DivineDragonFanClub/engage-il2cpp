@@ -2,601 +2,76 @@
 
 #[cfg(feature = "combat-throwing-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        combat::launchbehaviour::{ILaunchBehaviour, LaunchBehaviour},
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/throwing/Throwing.md"))]
-    #[::unity2::class(namespace = "Combat", name = "Throwing")]
-    #[parent(crate::combat::launchbehaviour::LaunchBehaviour)]
-    pub struct Throwing {
-        #[offset(56)]
-        #[rename(name = "Mass")]
-        pub mass: f32,
-        #[offset(60)]
-        #[rename(name = "FlySpeed")]
-        pub fly_speed: f32,
-        #[offset(64)]
-        #[rename(name = "LocalAngularVelocity")]
-        pub local_angular_velocity: f32,
-        #[offset(72)]
-        #[rename(name = "TrailPrefab")]
-        pub trail_prefab: crate::unity_engine::gameobject::GameObject,
-        #[offset(80)]
-        #[rename(name = "TrailParentNode")]
-        pub trail_parent_node: ::unity2::Il2CppString,
-        #[offset(88)]
-        #[rename(name = "HitEffectPrefab")]
-        pub hit_effect_prefab: crate::unity_engine::gameobject::GameObject,
-        #[offset(96)]
-        #[rename(name = "m_ShootPassed")]
-        pub m_shoot_passed: bool,
-        #[offset(97)]
-        #[rename(name = "m_bReached")]
-        pub m_b_reached: bool,
-        #[offset(104)]
-        #[rename(name = "m_WeaponPrefab")]
-        pub m_weapon_prefab: crate::unity_engine::gameobject::GameObject,
-        #[offset(112)]
-        #[rename(name = "m_WeaponLength")]
-        pub m_weapon_length: f32,
-        #[offset(120)]
-        #[rename(name = "m_Parabola")]
-        pub m_parabola: crate::combat::parabola::Parabola,
-        #[offset(128)]
-        #[rename(name = "m_KnockoffAttack")]
-        pub m_knockoff_attack: i32,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: combat :: launchbehaviour :: { ILaunchBehaviour , LaunchBehaviour }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/throwing/Throwing.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "Throwing")] # [parent (crate :: combat :: launchbehaviour :: LaunchBehaviour)] pub struct Throwing {
+# [offset (56)] # [rename (name = "Mass")] pub mass : f32 ,
+# [offset (60)] # [rename (name = "FlySpeed")] pub fly_speed : f32 ,
+# [offset (64)] # [rename (name = "LocalAngularVelocity")] pub local_angular_velocity : f32 ,
+# [offset (72)] # [rename (name = "TrailPrefab")] pub trail_prefab : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (80)] # [rename (name = "TrailParentNode")] pub trail_parent_node : :: unity2 :: Il2CppString ,
+# [offset (88)] # [rename (name = "HitEffectPrefab")] pub hit_effect_prefab : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (96)] # [rename (name = "m_ShootPassed")] pub m_shoot_passed : bool ,
+# [offset (97)] # [rename (name = "m_bReached")] pub m_b_reached : bool ,
+# [offset (104)] # [rename (name = "m_WeaponPrefab")] pub m_weapon_prefab : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (112)] # [rename (name = "m_WeaponLength")] pub m_weapon_length : f32 ,
+# [offset (120)] # [rename (name = "m_Parabola")] pub m_parabola : crate :: combat :: parabola :: Parabola ,
+# [offset (128)] # [rename (name = "m_KnockoffAttack")] pub m_knockoff_attack : i32 ,
+}
+
 }
 
 #[cfg(feature = "combat-throwing-types")]
 pub use __types::*;
 
 #[cfg(feature = "combat-throwing")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __Throwing_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_character_setup {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::combat::character::Character as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Throwing as ::unity2::ClassIdentity>::class(),
-                "OnCharacterSetup",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Throwing as ::unity2::ClassIdentity>::NAME,
-                        "OnCharacterSetup",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_character_setup(
-        this: Throwing,
-        owner: crate::combat::character::Character,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(Throwing, crate::combat::character::Character, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_character_setup::get_method_info().method_ptr);
-        inner(this, owner, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_enter_attack {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Throwing as ::unity2::ClassIdentity>::class(),
-                "OnEnterAttack",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Throwing as ::unity2::ClassIdentity>::NAME,
-                        "OnEnterAttack",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_enter_attack(this: Throwing, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Throwing, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_enter_attack::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_hit_time_predicted {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Throwing as ::unity2::ClassIdentity>::class(),
-                "OnHitTimePredicted",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Throwing as ::unity2::ClassIdentity>::NAME,
-                        "OnHitTimePredicted",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_hit_time_predicted(this: Throwing, world_hit_time: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Throwing, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_hit_time_predicted::get_method_info().method_ptr);
-        inner(this, world_hit_time, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_reached {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Throwing as ::unity2::ClassIdentity>::class(), "OnReached", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Throwing as ::unity2::ClassIdentity>::NAME,
-                        "OnReached",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_reached(this: Throwing, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Throwing, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_reached::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_flying_hit_reaction {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::combat::phase::Phase as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Throwing as ::unity2::ClassIdentity>::class(),
-                "FlyingHitReaction",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Throwing as ::unity2::ClassIdentity>::NAME,
-                        "FlyingHitReaction",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn flying_hit_reaction(this: Throwing, phase: crate::combat::phase::Phase, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Throwing, crate::combat::phase::Phase, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_flying_hit_reaction::get_method_info().method_ptr);
-        inner(this, phase, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_hit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Throwing as ::unity2::ClassIdentity>::class(), "OnHit", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Throwing as ::unity2::ClassIdentity>::NAME,
-                        "OnHit",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_hit(this: Throwing, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Throwing, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_on_hit::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_miss {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Throwing as ::unity2::ClassIdentity>::class(), "OnMiss", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Throwing as ::unity2::ClassIdentity>::NAME,
-                        "OnMiss",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_miss(this: Throwing, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Throwing, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_on_miss::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_guard {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Throwing as ::unity2::ClassIdentity>::class(), "OnGuard", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Throwing as ::unity2::ClassIdentity>::NAME,
-                        "OnGuard",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_guard(this: Throwing, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Throwing, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_on_guard::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_knockoff {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Throwing as ::unity2::ClassIdentity>::class(), "OnKnockoff", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Throwing as ::unity2::ClassIdentity>::NAME,
-                        "OnKnockoff",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_knockoff(this: Throwing, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Throwing, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_knockoff::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_発射 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Throwing as ::unity2::ClassIdentity>::class(), "発射", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Throwing as ::unity2::ClassIdentity>::NAME, "発射", e),
-            }
-        }
-    }
-    pub unsafe fn 発射(this: Throwing, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Throwing, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_発射::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_aim_position {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::combat::character::Character as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Throwing as ::unity2::ClassIdentity>::class(),
-                "CalcAimPosition",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Throwing as ::unity2::ClassIdentity>::NAME,
-                        "CalcAimPosition",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn calc_aim_position(
-        this: Throwing,
-        enemy: crate::combat::character::Character,
-        knockoff_attack: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::vector3::Vector3 {
-        let inner: extern "C" fn(
-            Throwing,
-            crate::combat::character::Character,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(__lookup_calc_aim_position::get_method_info().method_ptr);
-        inner(this, enemy, knockoff_attack, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_recalc_flying_time {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Throwing as ::unity2::ClassIdentity>::class(),
-                "RecalcFlyingTime",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Throwing as ::unity2::ClassIdentity>::NAME,
-                        "RecalcFlyingTime",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn recalc_flying_time(this: Throwing, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Throwing, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_recalc_flying_time::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Throwing as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Throwing as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: Throwing, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Throwing, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __Throwing_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_character_setup { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: character :: Character as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Throwing as :: unity2 :: ClassIdentity > :: class () , "OnCharacterSetup" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Throwing as :: unity2 :: ClassIdentity > :: NAME , "OnCharacterSetup" , e) , } } } pub unsafe fn on_character_setup (this : Throwing , owner : crate :: combat :: character :: Character , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Throwing , crate :: combat :: character :: Character , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_character_setup :: get_method_info () . method_ptr ,) ; inner (this , owner , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_enter_attack { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Throwing as :: unity2 :: ClassIdentity > :: class () , "OnEnterAttack" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Throwing as :: unity2 :: ClassIdentity > :: NAME , "OnEnterAttack" , e) , } } } pub unsafe fn on_enter_attack (this : Throwing , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Throwing , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_enter_attack :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_hit_time_predicted { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Throwing as :: unity2 :: ClassIdentity > :: class () , "OnHitTimePredicted" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Throwing as :: unity2 :: ClassIdentity > :: NAME , "OnHitTimePredicted" , e) , } } } pub unsafe fn on_hit_time_predicted (this : Throwing , world_hit_time : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Throwing , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_hit_time_predicted :: get_method_info () . method_ptr ,) ; inner (this , world_hit_time , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_reached { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Throwing as :: unity2 :: ClassIdentity > :: class () , "OnReached" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Throwing as :: unity2 :: ClassIdentity > :: NAME , "OnReached" , e) , } } } pub unsafe fn on_reached (this : Throwing , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Throwing , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_reached :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_flying_hit_reaction { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: phase :: Phase as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Throwing as :: unity2 :: ClassIdentity > :: class () , "FlyingHitReaction" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Throwing as :: unity2 :: ClassIdentity > :: NAME , "FlyingHitReaction" , e) , } } } pub unsafe fn flying_hit_reaction (this : Throwing , phase : crate :: combat :: phase :: Phase , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Throwing , crate :: combat :: phase :: Phase , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_flying_hit_reaction :: get_method_info () . method_ptr ,) ; inner (this , phase , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_hit { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Throwing as :: unity2 :: ClassIdentity > :: class () , "OnHit" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Throwing as :: unity2 :: ClassIdentity > :: NAME , "OnHit" , e) , } } } pub unsafe fn on_hit (this : Throwing , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Throwing , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_hit :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_miss { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Throwing as :: unity2 :: ClassIdentity > :: class () , "OnMiss" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Throwing as :: unity2 :: ClassIdentity > :: NAME , "OnMiss" , e) , } } } pub unsafe fn on_miss (this : Throwing , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Throwing , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_miss :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_guard { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Throwing as :: unity2 :: ClassIdentity > :: class () , "OnGuard" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Throwing as :: unity2 :: ClassIdentity > :: NAME , "OnGuard" , e) , } } } pub unsafe fn on_guard (this : Throwing , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Throwing , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_guard :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_knockoff { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Throwing as :: unity2 :: ClassIdentity > :: class () , "OnKnockoff" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Throwing as :: unity2 :: ClassIdentity > :: NAME , "OnKnockoff" , e) , } } } pub unsafe fn on_knockoff (this : Throwing , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Throwing , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_knockoff :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_発射 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Throwing as :: unity2 :: ClassIdentity > :: class () , "発射" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Throwing as :: unity2 :: ClassIdentity > :: NAME , "発射" , e) , } } } pub unsafe fn 発射 (this : Throwing , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Throwing , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_発射 :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_calc_aim_position { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: character :: Character as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Throwing as :: unity2 :: ClassIdentity > :: class () , "CalcAimPosition" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Throwing as :: unity2 :: ClassIdentity > :: NAME , "CalcAimPosition" , e) , } } } pub unsafe fn calc_aim_position (this : Throwing , enemy : crate :: combat :: character :: Character , knockoff_attack : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 { let inner : extern "C" fn (Throwing , crate :: combat :: character :: Character , i32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute (__lookup_calc_aim_position :: get_method_info () . method_ptr ,) ; inner (this , enemy , knockoff_attack , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_recalc_flying_time { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Throwing as :: unity2 :: ClassIdentity > :: class () , "RecalcFlyingTime" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Throwing as :: unity2 :: ClassIdentity > :: NAME , "RecalcFlyingTime" , e) , } } } pub unsafe fn recalc_flying_time (this : Throwing , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Throwing , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_recalc_flying_time :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Throwing as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Throwing as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : Throwing , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Throwing , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "combat-throwing")]
-pub trait IThrowingMethods: IThrowing {
-    #[doc = "`OnCharacterSetup(crate::combat::character::Character)` overload"]
-    fn on_character_setup(self, owner: impl ::core::convert::Into<crate::combat::character::Character>) -> () {
-        unsafe {
-            let __receiver = <Throwing as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Throwing_unity2_raw::on_character_setup(__receiver, ::core::convert::Into::into(owner), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnEnterAttack()` overload"]
-    fn on_enter_attack(self) -> () {
-        unsafe {
-            let __receiver = <Throwing as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Throwing_unity2_raw::on_enter_attack(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnHitTimePredicted(f32)` overload"]
-    fn on_hit_time_predicted(self, world_hit_time: impl ::core::convert::Into<f32>) -> () {
-        unsafe {
-            let __receiver = <Throwing as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Throwing_unity2_raw::on_hit_time_predicted(__receiver, ::core::convert::Into::into(world_hit_time), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnReached()` overload"]
-    fn on_reached(self) -> () {
-        unsafe {
-            let __receiver = <Throwing as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Throwing_unity2_raw::on_reached(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`FlyingHitReaction(crate::combat::phase::Phase)` overload"]
-    fn flying_hit_reaction(self, phase: impl ::core::convert::Into<crate::combat::phase::Phase>) -> () {
-        unsafe {
-            let __receiver = <Throwing as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Throwing_unity2_raw::flying_hit_reaction(__receiver, ::core::convert::Into::into(phase), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnHit()` overload"]
-    fn on_hit(self) -> () {
-        unsafe {
-            let __receiver = <Throwing as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Throwing_unity2_raw::on_hit(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnMiss()` overload"]
-    fn on_miss(self) -> () {
-        unsafe {
-            let __receiver = <Throwing as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Throwing_unity2_raw::on_miss(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnGuard()` overload"]
-    fn on_guard(self) -> () {
-        unsafe {
-            let __receiver = <Throwing as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Throwing_unity2_raw::on_guard(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnKnockoff()` overload"]
-    fn on_knockoff(self) -> () {
-        unsafe {
-            let __receiver = <Throwing as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Throwing_unity2_raw::on_knockoff(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`発射()` overload"]
-    fn 発射(self) -> () {
-        unsafe {
-            let __receiver = <Throwing as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Throwing_unity2_raw::発射(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CalcAimPosition(crate::combat::character::Character, i32)` overload"]
-    fn calc_aim_position(
-        self,
-        enemy: impl ::core::convert::Into<crate::combat::character::Character>,
-        knockoff_attack: impl ::core::convert::Into<i32>,
-    ) -> crate::unity_engine::vector3::Vector3 {
-        unsafe {
-            let __receiver = <Throwing as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Throwing_unity2_raw::calc_aim_position(
-                __receiver,
-                ::core::convert::Into::into(enemy),
-                ::core::convert::Into::into(knockoff_attack),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`RecalcFlyingTime()` overload"]
-    fn recalc_flying_time(self) -> () {
-        unsafe {
-            let __receiver = <Throwing as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Throwing_unity2_raw::recalc_flying_time(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <Throwing as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Throwing_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IThrowingMethods : IThrowing { # [doc = "`OnCharacterSetup(crate::combat::character::Character)` overload"] fn on_character_setup (self , owner : impl :: core :: convert :: Into < crate :: combat :: character :: Character >) -> () { unsafe { let __receiver = < Throwing as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Throwing_unity2_raw :: on_character_setup (__receiver , :: core :: convert :: Into :: into (owner) , :: core :: option :: Option :: None) } } # [doc = "`OnEnterAttack()` overload"] fn on_enter_attack (self ,) -> () { unsafe { let __receiver = < Throwing as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Throwing_unity2_raw :: on_enter_attack (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnHitTimePredicted(f32)` overload"] fn on_hit_time_predicted (self , world_hit_time : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < Throwing as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Throwing_unity2_raw :: on_hit_time_predicted (__receiver , :: core :: convert :: Into :: into (world_hit_time) , :: core :: option :: Option :: None) } } # [doc = "`OnReached()` overload"] fn on_reached (self ,) -> () { unsafe { let __receiver = < Throwing as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Throwing_unity2_raw :: on_reached (__receiver , :: core :: option :: Option :: None) } } # [doc = "`FlyingHitReaction(crate::combat::phase::Phase)` overload"] fn flying_hit_reaction (self , phase : impl :: core :: convert :: Into < crate :: combat :: phase :: Phase >) -> () { unsafe { let __receiver = < Throwing as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Throwing_unity2_raw :: flying_hit_reaction (__receiver , :: core :: convert :: Into :: into (phase) , :: core :: option :: Option :: None) } } # [doc = "`OnHit()` overload"] fn on_hit (self ,) -> () { unsafe { let __receiver = < Throwing as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Throwing_unity2_raw :: on_hit (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnMiss()` overload"] fn on_miss (self ,) -> () { unsafe { let __receiver = < Throwing as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Throwing_unity2_raw :: on_miss (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnGuard()` overload"] fn on_guard (self ,) -> () { unsafe { let __receiver = < Throwing as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Throwing_unity2_raw :: on_guard (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnKnockoff()` overload"] fn on_knockoff (self ,) -> () { unsafe { let __receiver = < Throwing as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Throwing_unity2_raw :: on_knockoff (__receiver , :: core :: option :: Option :: None) } } # [doc = "`発射()` overload"] fn 発射 (self ,) -> () { unsafe { let __receiver = < Throwing as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Throwing_unity2_raw :: 発射 (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CalcAimPosition(crate::combat::character::Character, i32)` overload"] fn calc_aim_position (self , enemy : impl :: core :: convert :: Into < crate :: combat :: character :: Character > , knockoff_attack : impl :: core :: convert :: Into < i32 >) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < Throwing as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Throwing_unity2_raw :: calc_aim_position (__receiver , :: core :: convert :: Into :: into (enemy) , :: core :: convert :: Into :: into (knockoff_attack) , :: core :: option :: Option :: None) } } # [doc = "`RecalcFlyingTime()` overload"] fn recalc_flying_time (self ,) -> () { unsafe { let __receiver = < Throwing as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Throwing_unity2_raw :: recalc_flying_time (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Throwing as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Throwing_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "combat-throwing")]
-impl<__T: IThrowing> IThrowingMethods for __T {}
+impl < __T : IThrowing > IThrowingMethods for __T { }
+
+#[cfg(feature = "combat-throwing")]
+impl Throwing { pub fn on_character_setup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Throwing_unity2_raw :: __lookup_on_character_setup :: get_method_info () } pub fn on_enter_attack_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Throwing_unity2_raw :: __lookup_on_enter_attack :: get_method_info () } pub fn on_hit_time_predicted_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Throwing_unity2_raw :: __lookup_on_hit_time_predicted :: get_method_info () } pub fn on_reached_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Throwing_unity2_raw :: __lookup_on_reached :: get_method_info () } pub fn flying_hit_reaction_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Throwing_unity2_raw :: __lookup_flying_hit_reaction :: get_method_info () } pub fn on_hit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Throwing_unity2_raw :: __lookup_on_hit :: get_method_info () } pub fn on_miss_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Throwing_unity2_raw :: __lookup_on_miss :: get_method_info () } pub fn on_guard_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Throwing_unity2_raw :: __lookup_on_guard :: get_method_info () } pub fn on_knockoff_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Throwing_unity2_raw :: __lookup_on_knockoff :: get_method_info () } pub fn 発射_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Throwing_unity2_raw :: __lookup_発射 :: get_method_info () } pub fn calc_aim_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Throwing_unity2_raw :: __lookup_calc_aim_position :: get_method_info () } pub fn recalc_flying_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Throwing_unity2_raw :: __lookup_recalc_flying_time :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Throwing_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "combat-throwing")]
 impl Throwing {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(Throwing), ::core::stringify!(new),));
-        <Self as IThrowingMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Throwing) , :: core :: stringify ! (new) ,)) ; < Self as IThrowingMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "combat-throwing")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IThrowing, IThrowingMethods, Throwing};
-    #[cfg(feature = "combat-launchbehaviour")]
-    pub use crate::combat::launchbehaviour::ILaunchBehaviourMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        combat::launchbehaviour::ILaunchBehaviour,
-        system::object::IObject,
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::Throwing;
+    pub use super::IThrowing;
+    pub use super::IThrowingMethods;
+    pub use crate::combat::launchbehaviour::ILaunchBehaviour;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "combat-launchbehaviour")] pub use crate::combat::launchbehaviour::ILaunchBehaviourMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

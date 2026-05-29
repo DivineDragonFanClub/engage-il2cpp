@@ -2,478 +2,66 @@
 
 #[cfg(feature = "root-mappointerlocatorroot-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/mappointerlocatorroot/MapPointerLocatorRoot.md"))]
-    #[::unity2::class(namespace = "", name = "MapPointerLocatorRoot")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct MapPointerLocatorRoot {
-        #[offset(24)]
-        #[rename(name = "m_Pointer")]
-        pub m_pointer: crate::unity_engine::transform::Transform,
-        #[offset(32)]
-        #[rename(name = "m_Attack")]
-        pub m_attack: crate::unity_engine::transform::Transform,
-        #[offset(40)]
-        #[rename(name = "m_Rod")]
-        pub m_rod: crate::unity_engine::transform::Transform,
-        #[offset(48)]
-        #[rename(name = "m_Dance")]
-        pub m_dance: crate::unity_engine::transform::Transform,
-        #[offset(56)]
-        #[rename(name = "m_Cannon")]
-        pub m_cannon: crate::unity_engine::transform::Transform,
-        #[offset(64)]
-        #[rename(name = "m_Color")]
-        pub m_color: crate::root::mapcursorcolor::MapCursorColor,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/mappointerlocatorroot/MapPointerLocatorRoot.md"))] # [:: unity2 :: class (namespace = "" , name = "MapPointerLocatorRoot")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct MapPointerLocatorRoot {
+# [offset (24)] # [rename (name = "m_Pointer")] pub m_pointer : crate :: unity_engine :: transform :: Transform ,
+# [offset (32)] # [rename (name = "m_Attack")] pub m_attack : crate :: unity_engine :: transform :: Transform ,
+# [offset (40)] # [rename (name = "m_Rod")] pub m_rod : crate :: unity_engine :: transform :: Transform ,
+# [offset (48)] # [rename (name = "m_Dance")] pub m_dance : crate :: unity_engine :: transform :: Transform ,
+# [offset (56)] # [rename (name = "m_Cannon")] pub m_cannon : crate :: unity_engine :: transform :: Transform ,
+# [offset (64)] # [rename (name = "m_Color")] pub m_color : crate :: root :: mapcursorcolor :: MapCursorColor ,
+}
+
 }
 
 #[cfg(feature = "root-mappointerlocatorroot-types")]
 pub use __types::*;
 
 #[cfg(feature = "root-mappointerlocatorroot")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapPointerLocatorRoot_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_awake {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapPointerLocatorRoot as ::unity2::ClassIdentity>::class(),
-                "Awake",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapPointerLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                        "Awake",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn awake(this: MapPointerLocatorRoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapPointerLocatorRoot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_awake::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_map_cursor_color {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapPointerLocatorRoot as ::unity2::ClassIdentity>::class(),
-                "GetMapCursorColor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapPointerLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                        "GetMapCursorColor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_map_cursor_color(this: MapPointerLocatorRoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapPointerLocatorRoot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_get_map_cursor_color::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_color {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::color::Color as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapPointerLocatorRoot as ::unity2::ClassIdentity>::class(),
-                "SetColor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapPointerLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                        "SetColor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_color(
-        this: MapPointerLocatorRoot,
-        color: crate::unity_engine::color::Color,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MapPointerLocatorRoot, crate::unity_engine::color::Color, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_color::get_method_info().method_ptr);
-        inner(this, color, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_pointer {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapPointerLocatorRoot as ::unity2::ClassIdentity>::class(),
-                "get_Pointer",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapPointerLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                        "get_Pointer",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_pointer(
-        this: MapPointerLocatorRoot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::transform::Transform {
-        let inner: extern "C" fn(MapPointerLocatorRoot, ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform =
-            ::core::mem::transmute(__lookup_get_pointer::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_attack {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapPointerLocatorRoot as ::unity2::ClassIdentity>::class(),
-                "get_Attack",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapPointerLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                        "get_Attack",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_attack(
-        this: MapPointerLocatorRoot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::transform::Transform {
-        let inner: extern "C" fn(MapPointerLocatorRoot, ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform =
-            ::core::mem::transmute(__lookup_get_attack::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_rod {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapPointerLocatorRoot as ::unity2::ClassIdentity>::class(),
-                "get_Rod",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapPointerLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                        "get_Rod",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_rod(this: MapPointerLocatorRoot, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform {
-        let inner: extern "C" fn(MapPointerLocatorRoot, ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform =
-            ::core::mem::transmute(__lookup_get_rod::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_dance {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapPointerLocatorRoot as ::unity2::ClassIdentity>::class(),
-                "get_Dance",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapPointerLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                        "get_Dance",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_dance(
-        this: MapPointerLocatorRoot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::transform::Transform {
-        let inner: extern "C" fn(MapPointerLocatorRoot, ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform =
-            ::core::mem::transmute(__lookup_get_dance::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_cannon {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapPointerLocatorRoot as ::unity2::ClassIdentity>::class(),
-                "get_Cannon",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapPointerLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                        "get_Cannon",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_cannon(
-        this: MapPointerLocatorRoot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::transform::Transform {
-        let inner: extern "C" fn(MapPointerLocatorRoot, ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform =
-            ::core::mem::transmute(__lookup_get_cannon::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapPointerLocatorRoot as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapPointerLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: MapPointerLocatorRoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapPointerLocatorRoot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MapPointerLocatorRoot_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_awake { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapPointerLocatorRoot as :: unity2 :: ClassIdentity > :: class () , "Awake" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapPointerLocatorRoot as :: unity2 :: ClassIdentity > :: NAME , "Awake" , e) , } } } pub unsafe fn awake (this : MapPointerLocatorRoot , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapPointerLocatorRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_awake :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_map_cursor_color { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapPointerLocatorRoot as :: unity2 :: ClassIdentity > :: class () , "GetMapCursorColor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapPointerLocatorRoot as :: unity2 :: ClassIdentity > :: NAME , "GetMapCursorColor" , e) , } } } pub unsafe fn get_map_cursor_color (this : MapPointerLocatorRoot , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapPointerLocatorRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_get_map_cursor_color :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_color { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: color :: Color as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapPointerLocatorRoot as :: unity2 :: ClassIdentity > :: class () , "SetColor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapPointerLocatorRoot as :: unity2 :: ClassIdentity > :: NAME , "SetColor" , e) , } } } pub unsafe fn set_color (this : MapPointerLocatorRoot , color : crate :: unity_engine :: color :: Color , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapPointerLocatorRoot , crate :: unity_engine :: color :: Color , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_color :: get_method_info () . method_ptr ,) ; inner (this , color , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_pointer { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapPointerLocatorRoot as :: unity2 :: ClassIdentity > :: class () , "get_Pointer" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapPointerLocatorRoot as :: unity2 :: ClassIdentity > :: NAME , "get_Pointer" , e) , } } } pub unsafe fn get_pointer (this : MapPointerLocatorRoot , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: transform :: Transform { let inner : extern "C" fn (MapPointerLocatorRoot , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: transform :: Transform = :: core :: mem :: transmute (__lookup_get_pointer :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_attack { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapPointerLocatorRoot as :: unity2 :: ClassIdentity > :: class () , "get_Attack" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapPointerLocatorRoot as :: unity2 :: ClassIdentity > :: NAME , "get_Attack" , e) , } } } pub unsafe fn get_attack (this : MapPointerLocatorRoot , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: transform :: Transform { let inner : extern "C" fn (MapPointerLocatorRoot , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: transform :: Transform = :: core :: mem :: transmute (__lookup_get_attack :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_rod { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapPointerLocatorRoot as :: unity2 :: ClassIdentity > :: class () , "get_Rod" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapPointerLocatorRoot as :: unity2 :: ClassIdentity > :: NAME , "get_Rod" , e) , } } } pub unsafe fn get_rod (this : MapPointerLocatorRoot , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: transform :: Transform { let inner : extern "C" fn (MapPointerLocatorRoot , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: transform :: Transform = :: core :: mem :: transmute (__lookup_get_rod :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_dance { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapPointerLocatorRoot as :: unity2 :: ClassIdentity > :: class () , "get_Dance" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapPointerLocatorRoot as :: unity2 :: ClassIdentity > :: NAME , "get_Dance" , e) , } } } pub unsafe fn get_dance (this : MapPointerLocatorRoot , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: transform :: Transform { let inner : extern "C" fn (MapPointerLocatorRoot , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: transform :: Transform = :: core :: mem :: transmute (__lookup_get_dance :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_cannon { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapPointerLocatorRoot as :: unity2 :: ClassIdentity > :: class () , "get_Cannon" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapPointerLocatorRoot as :: unity2 :: ClassIdentity > :: NAME , "get_Cannon" , e) , } } } pub unsafe fn get_cannon (this : MapPointerLocatorRoot , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: transform :: Transform { let inner : extern "C" fn (MapPointerLocatorRoot , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: transform :: Transform = :: core :: mem :: transmute (__lookup_get_cannon :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapPointerLocatorRoot as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapPointerLocatorRoot as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : MapPointerLocatorRoot , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapPointerLocatorRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "root-mappointerlocatorroot")]
-pub trait IMapPointerLocatorRootMethods: IMapPointerLocatorRoot {
-    #[doc = "`Awake()` overload"]
-    fn awake(self) -> () {
-        unsafe {
-            let __receiver =
-                <MapPointerLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapPointerLocatorRoot_unity2_raw::awake(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetMapCursorColor()` overload"]
-    fn get_map_cursor_color(self) -> () {
-        unsafe {
-            let __receiver =
-                <MapPointerLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapPointerLocatorRoot_unity2_raw::get_map_cursor_color(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetColor(crate::unity_engine::color::Color)` overload"]
-    fn set_color(self, color: impl ::core::convert::Into<crate::unity_engine::color::Color>) -> () {
-        unsafe {
-            let __receiver =
-                <MapPointerLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapPointerLocatorRoot_unity2_raw::set_color(__receiver, ::core::convert::Into::into(color), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Pointer()` overload"]
-    fn get_pointer(self) -> crate::unity_engine::transform::Transform {
-        unsafe {
-            let __receiver =
-                <MapPointerLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapPointerLocatorRoot_unity2_raw::get_pointer(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Attack()` overload"]
-    fn get_attack(self) -> crate::unity_engine::transform::Transform {
-        unsafe {
-            let __receiver =
-                <MapPointerLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapPointerLocatorRoot_unity2_raw::get_attack(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Rod()` overload"]
-    fn get_rod(self) -> crate::unity_engine::transform::Transform {
-        unsafe {
-            let __receiver =
-                <MapPointerLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapPointerLocatorRoot_unity2_raw::get_rod(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Dance()` overload"]
-    fn get_dance(self) -> crate::unity_engine::transform::Transform {
-        unsafe {
-            let __receiver =
-                <MapPointerLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapPointerLocatorRoot_unity2_raw::get_dance(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Cannon()` overload"]
-    fn get_cannon(self) -> crate::unity_engine::transform::Transform {
-        unsafe {
-            let __receiver =
-                <MapPointerLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapPointerLocatorRoot_unity2_raw::get_cannon(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <MapPointerLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapPointerLocatorRoot_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IMapPointerLocatorRootMethods : IMapPointerLocatorRoot { # [doc = "`Awake()` overload"] fn awake (self ,) -> () { unsafe { let __receiver = < MapPointerLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapPointerLocatorRoot_unity2_raw :: awake (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetMapCursorColor()` overload"] fn get_map_cursor_color (self ,) -> () { unsafe { let __receiver = < MapPointerLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapPointerLocatorRoot_unity2_raw :: get_map_cursor_color (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetColor(crate::unity_engine::color::Color)` overload"] fn set_color (self , color : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color >) -> () { unsafe { let __receiver = < MapPointerLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapPointerLocatorRoot_unity2_raw :: set_color (__receiver , :: core :: convert :: Into :: into (color) , :: core :: option :: Option :: None) } } # [doc = "`get_Pointer()` overload"] fn get_pointer (self ,) -> crate :: unity_engine :: transform :: Transform { unsafe { let __receiver = < MapPointerLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapPointerLocatorRoot_unity2_raw :: get_pointer (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_Attack()` overload"] fn get_attack (self ,) -> crate :: unity_engine :: transform :: Transform { unsafe { let __receiver = < MapPointerLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapPointerLocatorRoot_unity2_raw :: get_attack (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_Rod()` overload"] fn get_rod (self ,) -> crate :: unity_engine :: transform :: Transform { unsafe { let __receiver = < MapPointerLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapPointerLocatorRoot_unity2_raw :: get_rod (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_Dance()` overload"] fn get_dance (self ,) -> crate :: unity_engine :: transform :: Transform { unsafe { let __receiver = < MapPointerLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapPointerLocatorRoot_unity2_raw :: get_dance (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_Cannon()` overload"] fn get_cannon (self ,) -> crate :: unity_engine :: transform :: Transform { unsafe { let __receiver = < MapPointerLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapPointerLocatorRoot_unity2_raw :: get_cannon (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapPointerLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapPointerLocatorRoot_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "root-mappointerlocatorroot")]
-impl<__T: IMapPointerLocatorRoot> IMapPointerLocatorRootMethods for __T {}
+impl < __T : IMapPointerLocatorRoot > IMapPointerLocatorRootMethods for __T { }
+
+#[cfg(feature = "root-mappointerlocatorroot")]
+impl MapPointerLocatorRoot { pub fn awake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapPointerLocatorRoot_unity2_raw :: __lookup_awake :: get_method_info () } pub fn get_map_cursor_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapPointerLocatorRoot_unity2_raw :: __lookup_get_map_cursor_color :: get_method_info () } pub fn set_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapPointerLocatorRoot_unity2_raw :: __lookup_set_color :: get_method_info () } pub fn get_pointer_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapPointerLocatorRoot_unity2_raw :: __lookup_get_pointer :: get_method_info () } pub fn get_attack_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapPointerLocatorRoot_unity2_raw :: __lookup_get_attack :: get_method_info () } pub fn get_rod_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapPointerLocatorRoot_unity2_raw :: __lookup_get_rod :: get_method_info () } pub fn get_dance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapPointerLocatorRoot_unity2_raw :: __lookup_get_dance :: get_method_info () } pub fn get_cannon_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapPointerLocatorRoot_unity2_raw :: __lookup_get_cannon :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapPointerLocatorRoot_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "root-mappointerlocatorroot")]
 impl MapPointerLocatorRoot {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapPointerLocatorRoot),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapPointerLocatorRootMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapPointerLocatorRoot) , :: core :: stringify ! (new) ,)) ; < Self as IMapPointerLocatorRootMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "root-mappointerlocatorroot")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IMapPointerLocatorRoot, IMapPointerLocatorRootMethods, MapPointerLocatorRoot};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        system::object::IObject,
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::MapPointerLocatorRoot;
+    pub use super::IMapPointerLocatorRoot;
+    pub use super::IMapPointerLocatorRootMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

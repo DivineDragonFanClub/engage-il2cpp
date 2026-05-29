@@ -2,402 +2,54 @@
 
 #[cfg(feature = "app-photographcameracontroller-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographcameracontroller/PhotographCameraController.md"))]
-    #[::unity2::class(namespace = "App", name = "PhotographCameraController")]
-    #[parent(crate::system::object::Object)]
-    pub struct PhotographCameraController {
-        #[offset(16)]
-        #[rename(name = "m_IsEnable")]
-        pub m_is_enable: bool,
-        #[offset(17)]
-        #[rename(name = "m_IsPhotographMode")]
-        pub m_is_photograph_mode: bool,
-        #[offset(24)]
-        #[rename(name = "m_ParameterList")]
-        pub m_parameter_list: crate::system::collections::generic::list_1::List_1<crate::app::photographcameraparameter::PhotographCameraParameter>,
-        #[offset(32)]
-        #[rename(name = "m_CurrentParameter")]
-        pub m_current_parameter: crate::app::photographcameraparameter::PhotographCameraParameter,
-        #[offset(40)]
-        #[rename(name = "m_MoveX")]
-        pub m_move_x: crate::app::interpolatorfloat::InterpolatorFloat,
-        #[offset(48)]
-        #[rename(name = "m_MoveY")]
-        pub m_move_y: crate::app::interpolatorfloat::InterpolatorFloat,
-        #[offset(56)]
-        #[rename(name = "m_AngleY")]
-        pub m_angle_y: crate::app::interpolatorrotation::InterpolatorRotation,
-        #[offset(64)]
-        #[rename(name = "m_Fov")]
-        pub m_fov: crate::app::interpolatorfloat::InterpolatorFloat,
-        #[offset(72)]
-        #[rename(name = "m_DisposManager")]
-        pub m_dispos_manager: crate::app::photographdisposmanager::PhotographDisposManager,
-        #[offset(80)]
-        #[rename(name = "flg")]
-        pub flg: bool,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographcameracontroller/PhotographCameraController.md"))] # [:: unity2 :: class (namespace = "App" , name = "PhotographCameraController")] # [parent (crate :: system :: object :: Object)] pub struct PhotographCameraController {
+# [offset (16)] # [rename (name = "m_IsEnable")] pub m_is_enable : bool ,
+# [offset (17)] # [rename (name = "m_IsPhotographMode")] pub m_is_photograph_mode : bool ,
+# [offset (24)] # [rename (name = "m_ParameterList")] pub m_parameter_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: photographcameraparameter :: PhotographCameraParameter > ,
+# [offset (32)] # [rename (name = "m_CurrentParameter")] pub m_current_parameter : crate :: app :: photographcameraparameter :: PhotographCameraParameter ,
+# [offset (40)] # [rename (name = "m_MoveX")] pub m_move_x : crate :: app :: interpolatorfloat :: InterpolatorFloat ,
+# [offset (48)] # [rename (name = "m_MoveY")] pub m_move_y : crate :: app :: interpolatorfloat :: InterpolatorFloat ,
+# [offset (56)] # [rename (name = "m_AngleY")] pub m_angle_y : crate :: app :: interpolatorrotation :: InterpolatorRotation ,
+# [offset (64)] # [rename (name = "m_Fov")] pub m_fov : crate :: app :: interpolatorfloat :: InterpolatorFloat ,
+# [offset (72)] # [rename (name = "m_DisposManager")] pub m_dispos_manager : crate :: app :: photographdisposmanager :: PhotographDisposManager ,
+# [offset (80)] # [rename (name = "flg")] pub flg : bool ,
+}
+
 }
 
 #[cfg(feature = "app-photographcameracontroller-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-photographcameracontroller")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __PhotographCameraController_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_setup {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
-                <crate::app::photographdisposmanager::PhotographDisposManager as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PhotographCameraController as ::unity2::ClassIdentity>::class(),
-                "Setup",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PhotographCameraController as ::unity2::ClassIdentity>::NAME,
-                        "Setup",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn setup(
-        this: PhotographCameraController,
-        spot: crate::unity_engine::gameobject::GameObject,
-        dispos_manager: crate::app::photographdisposmanager::PhotographDisposManager,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            PhotographCameraController,
-            crate::unity_engine::gameobject::GameObject,
-            crate::app::photographdisposmanager::PhotographDisposManager,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_setup::get_method_info().method_ptr);
-        inner(this, spot, dispos_manager, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_enable {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PhotographCameraController as ::unity2::ClassIdentity>::class(),
-                "Enable",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PhotographCameraController as ::unity2::ClassIdentity>::NAME,
-                        "Enable",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn enable(this: PhotographCameraController, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(PhotographCameraController, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_enable::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_disable {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PhotographCameraController as ::unity2::ClassIdentity>::class(),
-                "Disable",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PhotographCameraController as ::unity2::ClassIdentity>::NAME,
-                        "Disable",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn disable(this: PhotographCameraController, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(PhotographCameraController, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_disable::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_is_photograph_mode {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PhotographCameraController as ::unity2::ClassIdentity>::class(),
-                "SetIsPhotographMode",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PhotographCameraController as ::unity2::ClassIdentity>::NAME,
-                        "SetIsPhotographMode",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_is_photograph_mode(
-        this: PhotographCameraController,
-        is_photograph_mode: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(PhotographCameraController, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_is_photograph_mode::get_method_info().method_ptr);
-        inner(this, is_photograph_mode, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PhotographCameraController as ::unity2::ClassIdentity>::class(),
-                "Update",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PhotographCameraController as ::unity2::ClassIdentity>::NAME,
-                        "Update",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update(this: PhotographCameraController, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(PhotographCameraController, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_camera_parameter {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PhotographCameraController as ::unity2::ClassIdentity>::class(),
-                "SetCameraParameter",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PhotographCameraController as ::unity2::ClassIdentity>::NAME,
-                        "SetCameraParameter",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_camera_parameter(this: PhotographCameraController, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(PhotographCameraController, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_camera_parameter::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PhotographCameraController as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PhotographCameraController as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: PhotographCameraController, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(PhotographCameraController, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __PhotographCameraController_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_setup { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: gameobject :: GameObject as :: unity2 :: IlType > :: il_type () , < crate :: app :: photographdisposmanager :: PhotographDisposManager as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PhotographCameraController as :: unity2 :: ClassIdentity > :: class () , "Setup" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PhotographCameraController as :: unity2 :: ClassIdentity > :: NAME , "Setup" , e) , } } } pub unsafe fn setup (this : PhotographCameraController , spot : crate :: unity_engine :: gameobject :: GameObject , dispos_manager : crate :: app :: photographdisposmanager :: PhotographDisposManager , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (PhotographCameraController , crate :: unity_engine :: gameobject :: GameObject , crate :: app :: photographdisposmanager :: PhotographDisposManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_setup :: get_method_info () . method_ptr ,) ; inner (this , spot , dispos_manager , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_enable { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PhotographCameraController as :: unity2 :: ClassIdentity > :: class () , "Enable" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PhotographCameraController as :: unity2 :: ClassIdentity > :: NAME , "Enable" , e) , } } } pub unsafe fn enable (this : PhotographCameraController , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (PhotographCameraController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_enable :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_disable { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PhotographCameraController as :: unity2 :: ClassIdentity > :: class () , "Disable" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PhotographCameraController as :: unity2 :: ClassIdentity > :: NAME , "Disable" , e) , } } } pub unsafe fn disable (this : PhotographCameraController , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (PhotographCameraController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_disable :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_is_photograph_mode { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PhotographCameraController as :: unity2 :: ClassIdentity > :: class () , "SetIsPhotographMode" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PhotographCameraController as :: unity2 :: ClassIdentity > :: NAME , "SetIsPhotographMode" , e) , } } } pub unsafe fn set_is_photograph_mode (this : PhotographCameraController , is_photograph_mode : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (PhotographCameraController , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_is_photograph_mode :: get_method_info () . method_ptr ,) ; inner (this , is_photograph_mode , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PhotographCameraController as :: unity2 :: ClassIdentity > :: class () , "Update" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PhotographCameraController as :: unity2 :: ClassIdentity > :: NAME , "Update" , e) , } } } pub unsafe fn update (this : PhotographCameraController , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (PhotographCameraController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_camera_parameter { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PhotographCameraController as :: unity2 :: ClassIdentity > :: class () , "SetCameraParameter" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PhotographCameraController as :: unity2 :: ClassIdentity > :: NAME , "SetCameraParameter" , e) , } } } pub unsafe fn set_camera_parameter (this : PhotographCameraController , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (PhotographCameraController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_camera_parameter :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PhotographCameraController as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PhotographCameraController as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : PhotographCameraController , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (PhotographCameraController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-photographcameracontroller")]
-pub trait IPhotographCameraControllerMethods: IPhotographCameraController {
-    #[doc = "`Setup(crate::unity_engine::gameobject::GameObject, crate::app::photographdisposmanager::PhotographDisposManager)` overload"]
-    fn setup(
-        self,
-        spot: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-        dispos_manager: impl ::core::convert::Into<crate::app::photographdisposmanager::PhotographDisposManager>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <PhotographCameraController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __PhotographCameraController_unity2_raw::setup(
-                __receiver,
-                ::core::convert::Into::into(spot),
-                ::core::convert::Into::into(dispos_manager),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Enable()` overload"]
-    fn enable(self) -> () {
-        unsafe {
-            let __receiver =
-                <PhotographCameraController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __PhotographCameraController_unity2_raw::enable(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Disable()` overload"]
-    fn disable(self) -> () {
-        unsafe {
-            let __receiver =
-                <PhotographCameraController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __PhotographCameraController_unity2_raw::disable(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetIsPhotographMode(bool)` overload"]
-    fn set_is_photograph_mode(self, is_photograph_mode: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver =
-                <PhotographCameraController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __PhotographCameraController_unity2_raw::set_is_photograph_mode(
-                __receiver,
-                ::core::convert::Into::into(is_photograph_mode),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Update()` overload"]
-    fn update(self) -> () {
-        unsafe {
-            let __receiver =
-                <PhotographCameraController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __PhotographCameraController_unity2_raw::update(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetCameraParameter()` overload"]
-    fn set_camera_parameter(self) -> () {
-        unsafe {
-            let __receiver =
-                <PhotographCameraController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __PhotographCameraController_unity2_raw::set_camera_parameter(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <PhotographCameraController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __PhotographCameraController_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IPhotographCameraControllerMethods : IPhotographCameraController { # [doc = "`Setup(crate::unity_engine::gameobject::GameObject, crate::app::photographdisposmanager::PhotographDisposManager)` overload"] fn setup (self , spot : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject > , dispos_manager : impl :: core :: convert :: Into < crate :: app :: photographdisposmanager :: PhotographDisposManager >) -> () { unsafe { let __receiver = < PhotographCameraController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __PhotographCameraController_unity2_raw :: setup (__receiver , :: core :: convert :: Into :: into (spot) , :: core :: convert :: Into :: into (dispos_manager) , :: core :: option :: Option :: None) } } # [doc = "`Enable()` overload"] fn enable (self ,) -> () { unsafe { let __receiver = < PhotographCameraController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __PhotographCameraController_unity2_raw :: enable (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Disable()` overload"] fn disable (self ,) -> () { unsafe { let __receiver = < PhotographCameraController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __PhotographCameraController_unity2_raw :: disable (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetIsPhotographMode(bool)` overload"] fn set_is_photograph_mode (self , is_photograph_mode : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < PhotographCameraController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __PhotographCameraController_unity2_raw :: set_is_photograph_mode (__receiver , :: core :: convert :: Into :: into (is_photograph_mode) , :: core :: option :: Option :: None) } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < PhotographCameraController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __PhotographCameraController_unity2_raw :: update (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetCameraParameter()` overload"] fn set_camera_parameter (self ,) -> () { unsafe { let __receiver = < PhotographCameraController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __PhotographCameraController_unity2_raw :: set_camera_parameter (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < PhotographCameraController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __PhotographCameraController_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-photographcameracontroller")]
-impl<__T: IPhotographCameraController> IPhotographCameraControllerMethods for __T {}
+impl < __T : IPhotographCameraController > IPhotographCameraControllerMethods for __T { }
+
+#[cfg(feature = "app-photographcameracontroller")]
+impl PhotographCameraController { pub fn setup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PhotographCameraController_unity2_raw :: __lookup_setup :: get_method_info () } pub fn enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PhotographCameraController_unity2_raw :: __lookup_enable :: get_method_info () } pub fn disable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PhotographCameraController_unity2_raw :: __lookup_disable :: get_method_info () } pub fn set_is_photograph_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PhotographCameraController_unity2_raw :: __lookup_set_is_photograph_mode :: get_method_info () } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PhotographCameraController_unity2_raw :: __lookup_update :: get_method_info () } pub fn set_camera_parameter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PhotographCameraController_unity2_raw :: __lookup_set_camera_parameter :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PhotographCameraController_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-photographcameracontroller")]
 impl PhotographCameraController {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(PhotographCameraController),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IPhotographCameraControllerMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (PhotographCameraController) , :: core :: stringify ! (new) ,)) ; < Self as IPhotographCameraControllerMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-photographcameracontroller")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IPhotographCameraController, IPhotographCameraControllerMethods, PhotographCameraController};
+    pub use super::PhotographCameraController;
+    pub use super::IPhotographCameraController;
+    pub use super::IPhotographCameraControllerMethods;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

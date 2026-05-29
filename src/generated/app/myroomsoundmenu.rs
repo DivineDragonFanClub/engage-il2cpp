@@ -2,916 +2,122 @@
 
 #[cfg(feature = "app-myroomsoundmenu-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::{
-            basicmenu::{BasicMenu, IBasicMenu},
-            procinst::{IProcInst, ProcInst},
-        },
-        system::{
-            object::{IObject, Object},
-            r#enum::{Enum, IEnum},
-            valuetype::{IValueType, ValueType},
-        },
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/myroomsoundmenu/MyRoomSoundMenu_MenuType.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct MyRoomSoundMenu_MenuType {
-        pub value: i32,
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: basicmenu :: { BasicMenu , IBasicMenu }
+ ;
+ use crate :: app :: procinst :: { IProcInst , ProcInst }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomsoundmenu/MyRoomSoundMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "MyRoomSoundMenu")] # [parent (crate :: app :: basicmenu :: BasicMenu)] pub struct MyRoomSoundMenu {
+# [offset (208)] # [rename (name = "m_menuType")] pub m_menu_type : crate :: app :: myroomsoundmenu :: MyRoomSoundMenu_MenuType ,
+# [static_field] # [rename (name = "DefaultBgmChangeSuppressCount")] pub default_bgm_change_suppress_count : i32 ,
+# [offset (212)] # [rename (name = "m_bgmChangeSuppressCount")] pub m_bgm_change_suppress_count : i32 ,
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/myroomsoundmenu/MyRoomSoundMenu_MenuType.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct MyRoomSoundMenu_MenuType  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for MyRoomSoundMenu_MenuType  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MyRoomSoundMenu.MenuType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    impl ::unity2::ClassIdentity for MyRoomSoundMenu_MenuType {
-        const NAME: &'static str = "MyRoomSoundMenu.MenuType";
-        const NAMESPACE: &'static str = "App";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  ::unity2::IlType for MyRoomSoundMenu_MenuType  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::IlType for MyRoomSoundMenu_MenuType {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  MyRoomSoundMenu_MenuType  {
+    pub fn sound_test() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl MyRoomSoundMenu_MenuType {
-        pub fn sound_test() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn jukebox() -> Self {
-            Self { value: 1 }
-        }
+    pub fn jukebox() -> Self {
+        Self { value: 1 }
 
-        pub fn bgm_select() -> Self {
-            Self { value: 2 }
-        }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomsoundmenu/MyRoomSoundMenu.md"))]
-    #[::unity2::class(namespace = "App", name = "MyRoomSoundMenu")]
-    #[parent(crate::app::basicmenu::BasicMenu)]
-    pub struct MyRoomSoundMenu {
-        #[offset(208)]
-        #[rename(name = "m_menuType")]
-        pub m_menu_type: crate::app::myroomsoundmenu::MyRoomSoundMenu_MenuType,
-        #[static_field]
-        #[rename(name = "DefaultBgmChangeSuppressCount")]
-        pub default_bgm_change_suppress_count: i32,
-        #[offset(212)]
-        #[rename(name = "m_bgmChangeSuppressCount")]
-        pub m_bgm_change_suppress_count: i32,
+
+    pub fn bgm_select() -> Self {
+        Self { value: 2 }
+
     }
+
+}
+
 }
 
 #[cfg(feature = "app-myroomsoundmenu-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-myroomsoundmenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MyRoomSoundMenu_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_player {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MyRoomSoundMenu as ::unity2::ClassIdentity>::class(),
-                "get_Player",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MyRoomSoundMenu as ::unity2::ClassIdentity>::NAME,
-                        "get_Player",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_player(this: MyRoomSoundMenu, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::bgmplayer::BgmPlayer {
-        let inner: extern "C" fn(MyRoomSoundMenu, ::unity2::OptionalMethod) -> crate::app::bgmplayer::BgmPlayer =
-            ::core::mem::transmute(__lookup_get_player::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_select_bgm {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MyRoomSoundMenu as ::unity2::ClassIdentity>::class(),
-                "get_SelectBgm",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MyRoomSoundMenu as ::unity2::ClassIdentity>::NAME,
-                        "get_SelectBgm",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_select_bgm(__unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_select_bgm::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_select_bgm {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MyRoomSoundMenu as ::unity2::ClassIdentity>::class(),
-                "set_SelectBgm",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MyRoomSoundMenu as ::unity2::ClassIdentity>::NAME,
-                        "set_SelectBgm",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_select_bgm(value: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_select_bgm::get_method_info().method_ptr);
-        inner(value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> as ::unity2::IlType>::il_type(),
-                <crate::app::basicmenucontent::BasicMenuContent as ::unity2::IlType>::il_type(),
-                <crate::app::myroomsoundmenu::MyRoomSoundMenu_MenuType as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MyRoomSoundMenu as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                4,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MyRoomSoundMenu as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: MyRoomSoundMenu,
-        menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
-        menu_content: crate::app::basicmenucontent::BasicMenuContent,
-        menu_type: crate::app::myroomsoundmenu::MyRoomSoundMenu_MenuType,
-        select_bgm: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MyRoomSoundMenu,
-            crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
-            crate::app::basicmenucontent::BasicMenuContent,
-            crate::app::myroomsoundmenu::MyRoomSoundMenu_MenuType,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, menu_item_list, menu_content, menu_type, select_bgm, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind_music {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MyRoomSoundMenu as ::unity2::ClassIdentity>::class(),
-                "CreateBindMusic",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MyRoomSoundMenu as ::unity2::ClassIdentity>::NAME,
-                        "CreateBindMusic",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_bind_music(super_: crate::app::procinst::ProcInst, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_create_bind_music::get_method_info().method_ptr);
-        inner(super_, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind_jukebox {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MyRoomSoundMenu as ::unity2::ClassIdentity>::class(),
-                "CreateBindJukebox",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MyRoomSoundMenu as ::unity2::ClassIdentity>::NAME,
-                        "CreateBindJukebox",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_bind_jukebox(super_: crate::app::procinst::ProcInst, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_create_bind_jukebox::get_method_info().method_ptr);
-        inner(super_, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind_field_bgm_select {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::system::action_1::Action_1<::unity2::Il2CppString> as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MyRoomSoundMenu as ::unity2::ClassIdentity>::class(),
-                "CreateBindFieldBgmSelect",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MyRoomSoundMenu as ::unity2::ClassIdentity>::NAME,
-                        "CreateBindFieldBgmSelect",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_bind_field_bgm_select(
-        super_: crate::app::procinst::ProcInst,
-        select_bgm: ::unity2::Il2CppString,
-        callback: crate::system::action_1::Action_1<::unity2::Il2CppString>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            ::unity2::Il2CppString,
-            crate::system::action_1::Action_1<::unity2::Il2CppString>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_create_bind_field_bgm_select::get_method_info().method_ptr);
-        inner(super_, select_bgm, callback, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MyRoomSoundMenu as ::unity2::ClassIdentity>::class(),
-                "GetName",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MyRoomSoundMenu as ::unity2::ClassIdentity>::NAME,
-                        "GetName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_name(this: MyRoomSoundMenu, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(MyRoomSoundMenu, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_close {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MyRoomSoundMenu as ::unity2::ClassIdentity>::class(),
-                "OnClose",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MyRoomSoundMenu as ::unity2::ClassIdentity>::NAME,
-                        "OnClose",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_close(this: MyRoomSoundMenu, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MyRoomSoundMenu, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_close::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_music_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MyRoomSoundMenu as ::unity2::ClassIdentity>::class(),
-                "SetMusicName",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MyRoomSoundMenu as ::unity2::ClassIdentity>::NAME,
-                        "SetMusicName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_music_name(this: MyRoomSoundMenu, music_name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MyRoomSoundMenu, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_music_name::get_method_info().method_ptr);
-        inner(this, music_name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_music_help_text {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MyRoomSoundMenu as ::unity2::ClassIdentity>::class(),
-                "SetMusicHelpText",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MyRoomSoundMenu as ::unity2::ClassIdentity>::NAME,
-                        "SetMusicHelpText",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_music_help_text(this: MyRoomSoundMenu, text: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MyRoomSoundMenu, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_music_help_text::get_method_info().method_ptr);
-        inner(this, text, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_play {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MyRoomSoundMenu as ::unity2::ClassIdentity>::class(),
-                "Play",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MyRoomSoundMenu as ::unity2::ClassIdentity>::NAME,
-                        "Play",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn play(this: MyRoomSoundMenu, event_name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MyRoomSoundMenu, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_play::get_method_info().method_ptr);
-        inner(this, event_name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_play_select {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MyRoomSoundMenu as ::unity2::ClassIdentity>::class(),
-                "PlaySelect",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MyRoomSoundMenu as ::unity2::ClassIdentity>::NAME,
-                        "PlaySelect",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn play_select(this: MyRoomSoundMenu, event_name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MyRoomSoundMenu, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_play_select::get_method_info().method_ptr);
-        inner(this, event_name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_stop {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MyRoomSoundMenu as ::unity2::ClassIdentity>::class(),
-                "Stop",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MyRoomSoundMenu as ::unity2::ClassIdentity>::NAME,
-                        "Stop",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn stop(this: MyRoomSoundMenu, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MyRoomSoundMenu, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_stop::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_build_attribute {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::myroomsoundmenuitem::MyRoomSoundMenuItem as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MyRoomSoundMenu as ::unity2::ClassIdentity>::class(),
-                "BuildAttribute",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MyRoomSoundMenu as ::unity2::ClassIdentity>::NAME,
-                        "BuildAttribute",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn build_attribute(
-        this: MyRoomSoundMenu,
-        item: crate::app::myroomsoundmenuitem::MyRoomSoundMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        let inner: extern "C" fn(
-            MyRoomSoundMenu,
-            crate::app::myroomsoundmenuitem::MyRoomSoundMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute = ::core::mem::transmute(__lookup_build_attribute::get_method_info().method_ptr);
-        inner(this, item, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_decide {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::myroomsoundmenuitem::MyRoomSoundMenuItem as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MyRoomSoundMenu as ::unity2::ClassIdentity>::class(),
-                "Decide",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MyRoomSoundMenu as ::unity2::ClassIdentity>::NAME,
-                        "Decide",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn decide(
-        this: MyRoomSoundMenu,
-        item: crate::app::myroomsoundmenuitem::MyRoomSoundMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            MyRoomSoundMenu,
-            crate::app::myroomsoundmenuitem::MyRoomSoundMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(__lookup_decide::get_method_info().method_ptr);
-        inner(this, item, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_tick {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MyRoomSoundMenu as ::unity2::ClassIdentity>::class(),
-                "Tick",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MyRoomSoundMenu as ::unity2::ClassIdentity>::NAME,
-                        "Tick",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn tick(this: MyRoomSoundMenu, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MyRoomSoundMenu, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_tick::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MyRoomSoundMenu as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MyRoomSoundMenu as ::unity2::ClassIdentity>::NAME,
-                        ".cctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MyRoomSoundMenu_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_player { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MyRoomSoundMenu as :: unity2 :: ClassIdentity > :: class () , "get_Player" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MyRoomSoundMenu as :: unity2 :: ClassIdentity > :: NAME , "get_Player" , e) , } } } pub unsafe fn get_player (this : MyRoomSoundMenu , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: bgmplayer :: BgmPlayer { let inner : extern "C" fn (MyRoomSoundMenu , :: unity2 :: OptionalMethod ,) -> crate :: app :: bgmplayer :: BgmPlayer = :: core :: mem :: transmute (__lookup_get_player :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_select_bgm { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MyRoomSoundMenu as :: unity2 :: ClassIdentity > :: class () , "get_SelectBgm" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MyRoomSoundMenu as :: unity2 :: ClassIdentity > :: NAME , "get_SelectBgm" , e) , } } } pub unsafe fn get_select_bgm (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_select_bgm :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_select_bgm { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MyRoomSoundMenu as :: unity2 :: ClassIdentity > :: class () , "set_SelectBgm" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MyRoomSoundMenu as :: unity2 :: ClassIdentity > :: NAME , "set_SelectBgm" , e) , } } } pub unsafe fn set_select_bgm (value : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_select_bgm :: get_method_info () . method_ptr ,) ; inner (value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > as :: unity2 :: IlType > :: il_type () , < crate :: app :: basicmenucontent :: BasicMenuContent as :: unity2 :: IlType > :: il_type () , < crate :: app :: myroomsoundmenu :: MyRoomSoundMenu_MenuType as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MyRoomSoundMenu as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 4 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MyRoomSoundMenu as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : MyRoomSoundMenu , menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , menu_content : crate :: app :: basicmenucontent :: BasicMenuContent , menu_type : crate :: app :: myroomsoundmenu :: MyRoomSoundMenu_MenuType , select_bgm : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MyRoomSoundMenu , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , crate :: app :: basicmenucontent :: BasicMenuContent , crate :: app :: myroomsoundmenu :: MyRoomSoundMenu_MenuType , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , menu_item_list , menu_content , menu_type , select_bgm , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_bind_music { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MyRoomSoundMenu as :: unity2 :: ClassIdentity > :: class () , "CreateBindMusic" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MyRoomSoundMenu as :: unity2 :: ClassIdentity > :: NAME , "CreateBindMusic" , e) , } } } pub unsafe fn create_bind_music (super_ : crate :: app :: procinst :: ProcInst , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create_bind_music :: get_method_info () . method_ptr ,) ; inner (super_ , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_bind_jukebox { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MyRoomSoundMenu as :: unity2 :: ClassIdentity > :: class () , "CreateBindJukebox" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MyRoomSoundMenu as :: unity2 :: ClassIdentity > :: NAME , "CreateBindJukebox" , e) , } } } pub unsafe fn create_bind_jukebox (super_ : crate :: app :: procinst :: ProcInst , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create_bind_jukebox :: get_method_info () . method_ptr ,) ; inner (super_ , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_bind_field_bgm_select { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: system :: action_1 :: Action_1 < :: unity2 :: Il2CppString > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MyRoomSoundMenu as :: unity2 :: ClassIdentity > :: class () , "CreateBindFieldBgmSelect" , 3 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MyRoomSoundMenu as :: unity2 :: ClassIdentity > :: NAME , "CreateBindFieldBgmSelect" , e) , } } } pub unsafe fn create_bind_field_bgm_select (super_ : crate :: app :: procinst :: ProcInst , select_bgm : :: unity2 :: Il2CppString , callback : crate :: system :: action_1 :: Action_1 < :: unity2 :: Il2CppString > , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: Il2CppString , crate :: system :: action_1 :: Action_1 < :: unity2 :: Il2CppString > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create_bind_field_bgm_select :: get_method_info () . method_ptr ,) ; inner (super_ , select_bgm , callback , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MyRoomSoundMenu as :: unity2 :: ClassIdentity > :: class () , "GetName" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MyRoomSoundMenu as :: unity2 :: ClassIdentity > :: NAME , "GetName" , e) , } } } pub unsafe fn get_name (this : MyRoomSoundMenu , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (MyRoomSoundMenu , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_name :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_close { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MyRoomSoundMenu as :: unity2 :: ClassIdentity > :: class () , "OnClose" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MyRoomSoundMenu as :: unity2 :: ClassIdentity > :: NAME , "OnClose" , e) , } } } pub unsafe fn on_close (this : MyRoomSoundMenu , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MyRoomSoundMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_close :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_music_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MyRoomSoundMenu as :: unity2 :: ClassIdentity > :: class () , "SetMusicName" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MyRoomSoundMenu as :: unity2 :: ClassIdentity > :: NAME , "SetMusicName" , e) , } } } pub unsafe fn set_music_name (this : MyRoomSoundMenu , music_name : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MyRoomSoundMenu , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_music_name :: get_method_info () . method_ptr ,) ; inner (this , music_name , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_music_help_text { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MyRoomSoundMenu as :: unity2 :: ClassIdentity > :: class () , "SetMusicHelpText" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MyRoomSoundMenu as :: unity2 :: ClassIdentity > :: NAME , "SetMusicHelpText" , e) , } } } pub unsafe fn set_music_help_text (this : MyRoomSoundMenu , text : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MyRoomSoundMenu , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_music_help_text :: get_method_info () . method_ptr ,) ; inner (this , text , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_play { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MyRoomSoundMenu as :: unity2 :: ClassIdentity > :: class () , "Play" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MyRoomSoundMenu as :: unity2 :: ClassIdentity > :: NAME , "Play" , e) , } } } pub unsafe fn play (this : MyRoomSoundMenu , event_name : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MyRoomSoundMenu , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_play :: get_method_info () . method_ptr ,) ; inner (this , event_name , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_play_select { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MyRoomSoundMenu as :: unity2 :: ClassIdentity > :: class () , "PlaySelect" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MyRoomSoundMenu as :: unity2 :: ClassIdentity > :: NAME , "PlaySelect" , e) , } } } pub unsafe fn play_select (this : MyRoomSoundMenu , event_name : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MyRoomSoundMenu , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_play_select :: get_method_info () . method_ptr ,) ; inner (this , event_name , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_stop { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MyRoomSoundMenu as :: unity2 :: ClassIdentity > :: class () , "Stop" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MyRoomSoundMenu as :: unity2 :: ClassIdentity > :: NAME , "Stop" , e) , } } } pub unsafe fn stop (this : MyRoomSoundMenu , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MyRoomSoundMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_stop :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_build_attribute { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: myroomsoundmenuitem :: MyRoomSoundMenuItem as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MyRoomSoundMenu as :: unity2 :: ClassIdentity > :: class () , "BuildAttribute" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MyRoomSoundMenu as :: unity2 :: ClassIdentity > :: NAME , "BuildAttribute" , e) , } } } pub unsafe fn build_attribute (this : MyRoomSoundMenu , item : crate :: app :: myroomsoundmenuitem :: MyRoomSoundMenuItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { let inner : extern "C" fn (MyRoomSoundMenu , crate :: app :: myroomsoundmenuitem :: MyRoomSoundMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute (__lookup_build_attribute :: get_method_info () . method_ptr ,) ; inner (this , item , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_decide { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: myroomsoundmenuitem :: MyRoomSoundMenuItem as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MyRoomSoundMenu as :: unity2 :: ClassIdentity > :: class () , "Decide" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MyRoomSoundMenu as :: unity2 :: ClassIdentity > :: NAME , "Decide" , e) , } } } pub unsafe fn decide (this : MyRoomSoundMenu , item : crate :: app :: myroomsoundmenuitem :: MyRoomSoundMenuItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result { let inner : extern "C" fn (MyRoomSoundMenu , crate :: app :: myroomsoundmenuitem :: MyRoomSoundMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute (__lookup_decide :: get_method_info () . method_ptr ,) ; inner (this , item , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_tick { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MyRoomSoundMenu as :: unity2 :: ClassIdentity > :: class () , "Tick" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MyRoomSoundMenu as :: unity2 :: ClassIdentity > :: NAME , "Tick" , e) , } } } pub unsafe fn tick (this : MyRoomSoundMenu , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MyRoomSoundMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_tick :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MyRoomSoundMenu as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MyRoomSoundMenu as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
+
+#[cfg(feature = "app-myroomsoundmenu")]
+impl MyRoomSoundMenu { # [doc = "`get_SelectBgm()` overload"] pub fn get_select_bgm () -> :: unity2 :: Il2CppString { unsafe { __MyRoomSoundMenu_unity2_raw :: get_select_bgm (:: core :: option :: Option :: None) } } # [doc = "`set_SelectBgm(::unity2::Il2CppString)` overload"] pub fn set_select_bgm (value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { __MyRoomSoundMenu_unity2_raw :: set_select_bgm (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`CreateBindMusic(crate::app::procinst::ProcInst)` overload"] pub fn create_bind_music (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { __MyRoomSoundMenu_unity2_raw :: create_bind_music (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } # [doc = "`CreateBindJukebox(crate::app::procinst::ProcInst)` overload"] pub fn create_bind_jukebox (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { __MyRoomSoundMenu_unity2_raw :: create_bind_jukebox (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } # [doc = "`CreateBindFieldBgmSelect(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::system::action_1::Action_1<::unity2::Il2CppString>)` overload"] pub fn create_bind_field_bgm_select (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , select_bgm : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , callback : impl :: core :: convert :: Into < crate :: system :: action_1 :: Action_1 < :: unity2 :: Il2CppString > >) -> () { unsafe { __MyRoomSoundMenu_unity2_raw :: create_bind_field_bgm_select (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (select_bgm) , :: core :: convert :: Into :: into (callback) , :: core :: option :: Option :: None) } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { __MyRoomSoundMenu_unity2_raw :: cctor (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-myroomsoundmenu")]
+pub trait IMyRoomSoundMenuMethods : IMyRoomSoundMenu { # [doc = "`get_Player()` overload"] fn get_player (self ,) -> crate :: app :: bgmplayer :: BgmPlayer { unsafe { let __receiver = < MyRoomSoundMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MyRoomSoundMenu_unity2_raw :: get_player (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent, crate::app::myroomsoundmenu::MyRoomSoundMenu_MenuType, ::unity2::Il2CppString)` overload"] fn ctor (self , menu_item_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > > , menu_content : impl :: core :: convert :: Into < crate :: app :: basicmenucontent :: BasicMenuContent > , menu_type : impl :: core :: convert :: Into < crate :: app :: myroomsoundmenu :: MyRoomSoundMenu_MenuType > , select_bgm : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < MyRoomSoundMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MyRoomSoundMenu_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (menu_item_list) , :: core :: convert :: Into :: into (menu_content) , :: core :: convert :: Into :: into (menu_type) , :: core :: convert :: Into :: into (select_bgm) , :: core :: option :: Option :: None) } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MyRoomSoundMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MyRoomSoundMenu_unity2_raw :: get_name (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnClose()` overload"] fn on_close (self ,) -> () { unsafe { let __receiver = < MyRoomSoundMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MyRoomSoundMenu_unity2_raw :: on_close (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetMusicName(::unity2::Il2CppString)` overload"] fn set_music_name (self , music_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < MyRoomSoundMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MyRoomSoundMenu_unity2_raw :: set_music_name (__receiver , :: core :: convert :: Into :: into (music_name) , :: core :: option :: Option :: None) } } # [doc = "`SetMusicHelpText(::unity2::Il2CppString)` overload"] fn set_music_help_text (self , text : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < MyRoomSoundMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MyRoomSoundMenu_unity2_raw :: set_music_help_text (__receiver , :: core :: convert :: Into :: into (text) , :: core :: option :: Option :: None) } } # [doc = "`Play(::unity2::Il2CppString)` overload"] fn play (self , event_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < MyRoomSoundMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MyRoomSoundMenu_unity2_raw :: play (__receiver , :: core :: convert :: Into :: into (event_name) , :: core :: option :: Option :: None) } } # [doc = "`PlaySelect(::unity2::Il2CppString)` overload"] fn play_select (self , event_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < MyRoomSoundMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MyRoomSoundMenu_unity2_raw :: play_select (__receiver , :: core :: convert :: Into :: into (event_name) , :: core :: option :: Option :: None) } } # [doc = "`Stop()` overload"] fn stop (self ,) -> () { unsafe { let __receiver = < MyRoomSoundMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MyRoomSoundMenu_unity2_raw :: stop (__receiver , :: core :: option :: Option :: None) } } # [doc = "`BuildAttribute(crate::app::myroomsoundmenuitem::MyRoomSoundMenuItem)` overload"] fn build_attribute (self , item : impl :: core :: convert :: Into < crate :: app :: myroomsoundmenuitem :: MyRoomSoundMenuItem >) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < MyRoomSoundMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MyRoomSoundMenu_unity2_raw :: build_attribute (__receiver , :: core :: convert :: Into :: into (item) , :: core :: option :: Option :: None) } } # [doc = "`Decide(crate::app::myroomsoundmenuitem::MyRoomSoundMenuItem)` overload"] fn decide (self , item : impl :: core :: convert :: Into < crate :: app :: myroomsoundmenuitem :: MyRoomSoundMenuItem >) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < MyRoomSoundMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MyRoomSoundMenu_unity2_raw :: decide (__receiver , :: core :: convert :: Into :: into (item) , :: core :: option :: Option :: None) } } # [doc = "`Tick()` overload"] fn tick (self ,) -> () { unsafe { let __receiver = < MyRoomSoundMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MyRoomSoundMenu_unity2_raw :: tick (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-myroomsoundmenu")]
+impl < __T : IMyRoomSoundMenu > IMyRoomSoundMenuMethods for __T { }
+
+#[cfg(feature = "app-myroomsoundmenu")]
+impl MyRoomSoundMenu { pub fn get_player_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MyRoomSoundMenu_unity2_raw :: __lookup_get_player :: get_method_info () } pub fn get_select_bgm_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MyRoomSoundMenu_unity2_raw :: __lookup_get_select_bgm :: get_method_info () } pub fn set_select_bgm_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MyRoomSoundMenu_unity2_raw :: __lookup_set_select_bgm :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MyRoomSoundMenu_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn create_bind_music_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MyRoomSoundMenu_unity2_raw :: __lookup_create_bind_music :: get_method_info () } pub fn create_bind_jukebox_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MyRoomSoundMenu_unity2_raw :: __lookup_create_bind_jukebox :: get_method_info () } pub fn create_bind_field_bgm_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MyRoomSoundMenu_unity2_raw :: __lookup_create_bind_field_bgm_select :: get_method_info () } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MyRoomSoundMenu_unity2_raw :: __lookup_get_name :: get_method_info () } pub fn on_close_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MyRoomSoundMenu_unity2_raw :: __lookup_on_close :: get_method_info () } pub fn set_music_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MyRoomSoundMenu_unity2_raw :: __lookup_set_music_name :: get_method_info () } pub fn set_music_help_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MyRoomSoundMenu_unity2_raw :: __lookup_set_music_help_text :: get_method_info () } pub fn play_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MyRoomSoundMenu_unity2_raw :: __lookup_play :: get_method_info () } pub fn play_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MyRoomSoundMenu_unity2_raw :: __lookup_play_select :: get_method_info () } pub fn stop_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MyRoomSoundMenu_unity2_raw :: __lookup_stop :: get_method_info () } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MyRoomSoundMenu_unity2_raw :: __lookup_build_attribute :: get_method_info () } pub fn decide_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MyRoomSoundMenu_unity2_raw :: __lookup_decide :: get_method_info () } pub fn tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MyRoomSoundMenu_unity2_raw :: __lookup_tick :: get_method_info () } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MyRoomSoundMenu_unity2_raw :: __lookup_cctor :: get_method_info () } }
 
 #[cfg(feature = "app-myroomsoundmenu")]
 impl MyRoomSoundMenu {
-    #[doc = "`get_SelectBgm()` overload"]
-    pub fn get_select_bgm() -> ::unity2::Il2CppString {
-        unsafe { __MyRoomSoundMenu_unity2_raw::get_select_bgm(::core::option::Option::None) }
-    }
-
-    #[doc = "`set_SelectBgm(::unity2::Il2CppString)` overload"]
-    pub fn set_select_bgm(value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe { __MyRoomSoundMenu_unity2_raw::set_select_bgm(::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`CreateBindMusic(crate::app::procinst::ProcInst)` overload"]
-    pub fn create_bind_music(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
-        unsafe { __MyRoomSoundMenu_unity2_raw::create_bind_music(::core::convert::Into::into(super_), ::core::option::Option::None) }
-    }
-
-    #[doc = "`CreateBindJukebox(crate::app::procinst::ProcInst)` overload"]
-    pub fn create_bind_jukebox(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
-        unsafe { __MyRoomSoundMenu_unity2_raw::create_bind_jukebox(::core::convert::Into::into(super_), ::core::option::Option::None) }
-    }
-
-    #[doc = "`CreateBindFieldBgmSelect(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::system::action_1::Action_1<::unity2::Il2CppString>)` overload"]
-    pub fn create_bind_field_bgm_select(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        select_bgm: impl ::core::convert::Into<::unity2::Il2CppString>,
-        callback: impl ::core::convert::Into<crate::system::action_1::Action_1<::unity2::Il2CppString>>,
-    ) -> () {
-        unsafe {
-            __MyRoomSoundMenu_unity2_raw::create_bind_field_bgm_select(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(select_bgm),
-                ::core::convert::Into::into(callback),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __MyRoomSoundMenu_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-myroomsoundmenu")]
-pub trait IMyRoomSoundMenuMethods: IMyRoomSoundMenu {
-    #[doc = "`get_Player()` overload"]
-    fn get_player(self) -> crate::app::bgmplayer::BgmPlayer {
-        unsafe {
-            let __receiver = <MyRoomSoundMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MyRoomSoundMenu_unity2_raw::get_player(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent, crate::app::myroomsoundmenu::MyRoomSoundMenu_MenuType, ::unity2::Il2CppString)` overload"]
-    fn ctor(
-        self,
-        menu_item_list: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>>,
-        menu_content: impl ::core::convert::Into<crate::app::basicmenucontent::BasicMenuContent>,
-        menu_type: impl ::core::convert::Into<crate::app::myroomsoundmenu::MyRoomSoundMenu_MenuType>,
-        select_bgm: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
-        unsafe {
-            let __receiver = <MyRoomSoundMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MyRoomSoundMenu_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(menu_item_list),
-                ::core::convert::Into::into(menu_content),
-                ::core::convert::Into::into(menu_type),
-                ::core::convert::Into::into(select_bgm),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetName()` overload"]
-    fn get_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <MyRoomSoundMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MyRoomSoundMenu_unity2_raw::get_name(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnClose()` overload"]
-    fn on_close(self) -> () {
-        unsafe {
-            let __receiver = <MyRoomSoundMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MyRoomSoundMenu_unity2_raw::on_close(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetMusicName(::unity2::Il2CppString)` overload"]
-    fn set_music_name(self, music_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver = <MyRoomSoundMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MyRoomSoundMenu_unity2_raw::set_music_name(__receiver, ::core::convert::Into::into(music_name), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetMusicHelpText(::unity2::Il2CppString)` overload"]
-    fn set_music_help_text(self, text: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver = <MyRoomSoundMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MyRoomSoundMenu_unity2_raw::set_music_help_text(__receiver, ::core::convert::Into::into(text), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Play(::unity2::Il2CppString)` overload"]
-    fn play(self, event_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver = <MyRoomSoundMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MyRoomSoundMenu_unity2_raw::play(__receiver, ::core::convert::Into::into(event_name), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`PlaySelect(::unity2::Il2CppString)` overload"]
-    fn play_select(self, event_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver = <MyRoomSoundMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MyRoomSoundMenu_unity2_raw::play_select(__receiver, ::core::convert::Into::into(event_name), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Stop()` overload"]
-    fn stop(self) -> () {
-        unsafe {
-            let __receiver = <MyRoomSoundMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MyRoomSoundMenu_unity2_raw::stop(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`BuildAttribute(crate::app::myroomsoundmenuitem::MyRoomSoundMenuItem)` overload"]
-    fn build_attribute(
-        self,
-        item: impl ::core::convert::Into<crate::app::myroomsoundmenuitem::MyRoomSoundMenuItem>,
-    ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        unsafe {
-            let __receiver = <MyRoomSoundMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MyRoomSoundMenu_unity2_raw::build_attribute(__receiver, ::core::convert::Into::into(item), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Decide(crate::app::myroomsoundmenuitem::MyRoomSoundMenuItem)` overload"]
-    fn decide(
-        self,
-        item: impl ::core::convert::Into<crate::app::myroomsoundmenuitem::MyRoomSoundMenuItem>,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = <MyRoomSoundMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MyRoomSoundMenu_unity2_raw::decide(__receiver, ::core::convert::Into::into(item), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Tick()` overload"]
-    fn tick(self) -> () {
-        unsafe {
-            let __receiver = <MyRoomSoundMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MyRoomSoundMenu_unity2_raw::tick(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-myroomsoundmenu")]
-impl<__T: IMyRoomSoundMenu> IMyRoomSoundMenuMethods for __T {}
-
-#[cfg(feature = "app-myroomsoundmenu")]
-impl MyRoomSoundMenu {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent, crate::app::myroomsoundmenu::MyRoomSoundMenu_MenuType, ::unity2::Il2CppString)` — overload selector"]
-    pub fn new(
-        menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
-        menu_content: crate::app::basicmenucontent::BasicMenuContent,
-        menu_type: crate::app::myroomsoundmenu::MyRoomSoundMenu_MenuType,
-        select_bgm: ::unity2::Il2CppString,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MyRoomSoundMenu),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMyRoomSoundMenuMethods>::ctor(this, menu_item_list, menu_content, menu_type, select_bgm);
-        this
-    }
+# [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent, crate::app::myroomsoundmenu::MyRoomSoundMenu_MenuType, ::unity2::Il2CppString)` — overload selector"] pub fn new (menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , menu_content : crate :: app :: basicmenucontent :: BasicMenuContent , menu_type : crate :: app :: myroomsoundmenu :: MyRoomSoundMenu_MenuType , select_bgm : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MyRoomSoundMenu) , :: core :: stringify ! (new) ,)) ; < Self as IMyRoomSoundMenuMethods > :: ctor (this , menu_item_list , menu_content , menu_type , select_bgm) ; this }
 }
 
 #[cfg(feature = "app-myroomsoundmenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IMyRoomSoundMenu, IMyRoomSoundMenuMethods, MyRoomSoundMenu, MyRoomSoundMenu_MenuType};
-    #[cfg(feature = "app-basicmenu")]
-    pub use crate::app::basicmenu::IBasicMenuMethods;
-    #[cfg(feature = "app-procinst")]
-    pub use crate::app::procinst::IProcInstMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::{
-        app::{basicmenu::IBasicMenu, procinst::IProcInst},
-        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
-    };
+    pub use super::MyRoomSoundMenu;
+    pub use super::IMyRoomSoundMenu;
+    pub use super::IMyRoomSoundMenuMethods;
+    pub use super::MyRoomSoundMenu_MenuType;
+    pub use crate::app::basicmenu::IBasicMenu;
+    pub use crate::app::procinst::IProcInst;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "app-basicmenu")] pub use crate::app::basicmenu::IBasicMenuMethods;
+    #[cfg(feature = "app-procinst")] pub use crate::app::procinst::IProcInstMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

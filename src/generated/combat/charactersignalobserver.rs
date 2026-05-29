@@ -2,513 +2,66 @@
 
 #[cfg(feature = "combat-charactersignalobserver-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/charactersignalobserver/CharacterSignalObserver.md"))]
-    #[::unity2::class(namespace = "Combat", name = "CharacterSignalObserver")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct CharacterSignalObserver {
-        #[offset(24)]
-        #[rename(name = "_cp")]
-        pub cp: crate::combat::character::Character,
-        #[offset(32)]
-        #[rename(name = "_radialBlur")]
-        pub radial_blur: crate::unity_engine::rendering::universal::custom::customradialblur::CustomRadialBlur,
-        #[offset(48)]
-        #[rename(name = "pushedFootIKEnabled")]
-        pub pushed_foot_ik_enabled: bool,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/charactersignalobserver/CharacterSignalObserver.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "CharacterSignalObserver")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct CharacterSignalObserver {
+# [offset (24)] # [rename (name = "_cp")] pub cp : crate :: combat :: character :: Character ,
+# [offset (32)] # [rename (name = "_radialBlur")] pub radial_blur : crate :: unity_engine :: rendering :: universal :: custom :: customradialblur :: CustomRadialBlur ,
+# [offset (48)] # [rename (name = "pushedFootIKEnabled")] pub pushed_foot_ik_enabled : bool ,
+}
+
 }
 
 #[cfg(feature = "combat-charactersignalobserver-types")]
 pub use __types::*;
 
 #[cfg(feature = "combat-charactersignalobserver")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __CharacterSignalObserver_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_cp {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharacterSignalObserver as ::unity2::ClassIdentity>::class(),
-                "get_CP",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CharacterSignalObserver as ::unity2::ClassIdentity>::NAME,
-                        "get_CP",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_cp(this: CharacterSignalObserver, __unity2_method_info: ::unity2::OptionalMethod) -> crate::combat::character::Character {
-        let inner: extern "C" fn(CharacterSignalObserver, ::unity2::OptionalMethod) -> crate::combat::character::Character =
-            ::core::mem::transmute(__lookup_get_cp::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_radial_blur {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharacterSignalObserver as ::unity2::ClassIdentity>::class(),
-                "get_RadialBlur",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CharacterSignalObserver as ::unity2::ClassIdentity>::NAME,
-                        "get_RadialBlur",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_radial_blur(
-        this: CharacterSignalObserver,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::rendering::universal::custom::customradialblur::CustomRadialBlur {
-        let inner: extern "C" fn(
-            CharacterSignalObserver,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::rendering::universal::custom::customradialblur::CustomRadialBlur =
-            ::core::mem::transmute(__lookup_get_radial_blur::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_find_volume_from_scene {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharacterSignalObserver as ::unity2::ClassIdentity>::class(),
-                "FindVolumeFromScene",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CharacterSignalObserver as ::unity2::ClassIdentity>::NAME,
-                        "FindVolumeFromScene",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn find_volume_from_scene(__unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::rendering::volume::Volume {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::unity_engine::rendering::volume::Volume =
-            ::core::mem::transmute(__lookup_find_volume_from_scene::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_start {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharacterSignalObserver as ::unity2::ClassIdentity>::class(),
-                "Start",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CharacterSignalObserver as ::unity2::ClassIdentity>::NAME,
-                        "Start",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn start(this: CharacterSignalObserver, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CharacterSignalObserver, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_start::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_my_start {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharacterSignalObserver as ::unity2::ClassIdentity>::class(),
-                "MyStart",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CharacterSignalObserver as ::unity2::ClassIdentity>::NAME,
-                        "MyStart",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn my_start(this: CharacterSignalObserver, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CharacterSignalObserver, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_my_start::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_push_and_enable_foot_ik {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharacterSignalObserver as ::unity2::ClassIdentity>::class(),
-                "PushAndEnableFootIK",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CharacterSignalObserver as ::unity2::ClassIdentity>::NAME,
-                        "PushAndEnableFootIK",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn push_and_enable_foot_ik(this: CharacterSignalObserver, v: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CharacterSignalObserver, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_push_and_enable_foot_ik::get_method_info().method_ptr);
-        inner(this, v, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_pop_foot_ik {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharacterSignalObserver as ::unity2::ClassIdentity>::class(),
-                "PopFootIK",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CharacterSignalObserver as ::unity2::ClassIdentity>::NAME,
-                        "PopFootIK",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn pop_foot_ik(this: CharacterSignalObserver, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CharacterSignalObserver, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_pop_foot_ik::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ground_particle {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharacterSignalObserver as ::unity2::ClassIdentity>::class(),
-                "GroundParticle",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CharacterSignalObserver as ::unity2::ClassIdentity>::NAME,
-                        "GroundParticle",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ground_particle(
-        this: CharacterSignalObserver,
-        effect_type: i32,
-        node_name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(CharacterSignalObserver, i32, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ground_particle::get_method_info().method_ptr);
-        inner(this, effect_type, node_name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_stop_footstep_observers {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharacterSignalObserver as ::unity2::ClassIdentity>::class(),
-                "StopFootstepObservers",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CharacterSignalObserver as ::unity2::ClassIdentity>::NAME,
-                        "StopFootstepObservers",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn stop_footstep_observers(this: CharacterSignalObserver, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CharacterSignalObserver, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_stop_footstep_observers::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharacterSignalObserver as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CharacterSignalObserver as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: CharacterSignalObserver, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CharacterSignalObserver, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __CharacterSignalObserver_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_cp { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CharacterSignalObserver as :: unity2 :: ClassIdentity > :: class () , "get_CP" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CharacterSignalObserver as :: unity2 :: ClassIdentity > :: NAME , "get_CP" , e) , } } } pub unsafe fn get_cp (this : CharacterSignalObserver , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: combat :: character :: Character { let inner : extern "C" fn (CharacterSignalObserver , :: unity2 :: OptionalMethod ,) -> crate :: combat :: character :: Character = :: core :: mem :: transmute (__lookup_get_cp :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_radial_blur { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CharacterSignalObserver as :: unity2 :: ClassIdentity > :: class () , "get_RadialBlur" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CharacterSignalObserver as :: unity2 :: ClassIdentity > :: NAME , "get_RadialBlur" , e) , } } } pub unsafe fn get_radial_blur (this : CharacterSignalObserver , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: universal :: custom :: customradialblur :: CustomRadialBlur { let inner : extern "C" fn (CharacterSignalObserver , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: universal :: custom :: customradialblur :: CustomRadialBlur = :: core :: mem :: transmute (__lookup_get_radial_blur :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_find_volume_from_scene { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CharacterSignalObserver as :: unity2 :: ClassIdentity > :: class () , "FindVolumeFromScene" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CharacterSignalObserver as :: unity2 :: ClassIdentity > :: NAME , "FindVolumeFromScene" , e) , } } } pub unsafe fn find_volume_from_scene (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: volume :: Volume { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: volume :: Volume = :: core :: mem :: transmute (__lookup_find_volume_from_scene :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_start { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CharacterSignalObserver as :: unity2 :: ClassIdentity > :: class () , "Start" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CharacterSignalObserver as :: unity2 :: ClassIdentity > :: NAME , "Start" , e) , } } } pub unsafe fn start (this : CharacterSignalObserver , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CharacterSignalObserver , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_start :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_my_start { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CharacterSignalObserver as :: unity2 :: ClassIdentity > :: class () , "MyStart" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CharacterSignalObserver as :: unity2 :: ClassIdentity > :: NAME , "MyStart" , e) , } } } pub unsafe fn my_start (this : CharacterSignalObserver , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CharacterSignalObserver , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_my_start :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_push_and_enable_foot_ik { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CharacterSignalObserver as :: unity2 :: ClassIdentity > :: class () , "PushAndEnableFootIK" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CharacterSignalObserver as :: unity2 :: ClassIdentity > :: NAME , "PushAndEnableFootIK" , e) , } } } pub unsafe fn push_and_enable_foot_ik (this : CharacterSignalObserver , v : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CharacterSignalObserver , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_push_and_enable_foot_ik :: get_method_info () . method_ptr ,) ; inner (this , v , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_pop_foot_ik { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CharacterSignalObserver as :: unity2 :: ClassIdentity > :: class () , "PopFootIK" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CharacterSignalObserver as :: unity2 :: ClassIdentity > :: NAME , "PopFootIK" , e) , } } } pub unsafe fn pop_foot_ik (this : CharacterSignalObserver , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CharacterSignalObserver , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_pop_foot_ik :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ground_particle { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CharacterSignalObserver as :: unity2 :: ClassIdentity > :: class () , "GroundParticle" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CharacterSignalObserver as :: unity2 :: ClassIdentity > :: NAME , "GroundParticle" , e) , } } } pub unsafe fn ground_particle (this : CharacterSignalObserver , effect_type : i32 , node_name : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CharacterSignalObserver , i32 , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ground_particle :: get_method_info () . method_ptr ,) ; inner (this , effect_type , node_name , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_stop_footstep_observers { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CharacterSignalObserver as :: unity2 :: ClassIdentity > :: class () , "StopFootstepObservers" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CharacterSignalObserver as :: unity2 :: ClassIdentity > :: NAME , "StopFootstepObservers" , e) , } } } pub unsafe fn stop_footstep_observers (this : CharacterSignalObserver , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CharacterSignalObserver , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_stop_footstep_observers :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CharacterSignalObserver as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CharacterSignalObserver as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : CharacterSignalObserver , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CharacterSignalObserver , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "combat-charactersignalobserver")]
+impl CharacterSignalObserver { # [doc = "`FindVolumeFromScene()` overload"] pub fn find_volume_from_scene () -> crate :: unity_engine :: rendering :: volume :: Volume { unsafe { __CharacterSignalObserver_unity2_raw :: find_volume_from_scene (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "combat-charactersignalobserver")]
+pub trait ICharacterSignalObserverMethods : ICharacterSignalObserver { # [doc = "`get_CP()` overload"] fn get_cp (self ,) -> crate :: combat :: character :: Character { unsafe { let __receiver = < CharacterSignalObserver as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CharacterSignalObserver_unity2_raw :: get_cp (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_RadialBlur()` overload"] fn get_radial_blur (self ,) -> crate :: unity_engine :: rendering :: universal :: custom :: customradialblur :: CustomRadialBlur { unsafe { let __receiver = < CharacterSignalObserver as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CharacterSignalObserver_unity2_raw :: get_radial_blur (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < CharacterSignalObserver as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CharacterSignalObserver_unity2_raw :: start (__receiver , :: core :: option :: Option :: None) } } # [doc = "`MyStart()` overload"] fn my_start (self ,) -> () { unsafe { let __receiver = < CharacterSignalObserver as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CharacterSignalObserver_unity2_raw :: my_start (__receiver , :: core :: option :: Option :: None) } } # [doc = "`PushAndEnableFootIK(bool)` overload"] fn push_and_enable_foot_ik (self , v : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < CharacterSignalObserver as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CharacterSignalObserver_unity2_raw :: push_and_enable_foot_ik (__receiver , :: core :: convert :: Into :: into (v) , :: core :: option :: Option :: None) } } # [doc = "`PopFootIK()` overload"] fn pop_foot_ik (self ,) -> () { unsafe { let __receiver = < CharacterSignalObserver as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CharacterSignalObserver_unity2_raw :: pop_foot_ik (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GroundParticle(i32, ::unity2::Il2CppString)` overload"] fn ground_particle (self , effect_type : impl :: core :: convert :: Into < i32 > , node_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < CharacterSignalObserver as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CharacterSignalObserver_unity2_raw :: ground_particle (__receiver , :: core :: convert :: Into :: into (effect_type) , :: core :: convert :: Into :: into (node_name) , :: core :: option :: Option :: None) } } # [doc = "`StopFootstepObservers()` overload"] fn stop_footstep_observers (self ,) -> () { unsafe { let __receiver = < CharacterSignalObserver as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CharacterSignalObserver_unity2_raw :: stop_footstep_observers (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CharacterSignalObserver as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CharacterSignalObserver_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "combat-charactersignalobserver")]
+impl < __T : ICharacterSignalObserver > ICharacterSignalObserverMethods for __T { }
+
+#[cfg(feature = "combat-charactersignalobserver")]
+impl CharacterSignalObserver { pub fn get_cp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CharacterSignalObserver_unity2_raw :: __lookup_get_cp :: get_method_info () } pub fn get_radial_blur_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CharacterSignalObserver_unity2_raw :: __lookup_get_radial_blur :: get_method_info () } pub fn find_volume_from_scene_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CharacterSignalObserver_unity2_raw :: __lookup_find_volume_from_scene :: get_method_info () } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CharacterSignalObserver_unity2_raw :: __lookup_start :: get_method_info () } pub fn my_start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CharacterSignalObserver_unity2_raw :: __lookup_my_start :: get_method_info () } pub fn push_and_enable_foot_ik_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CharacterSignalObserver_unity2_raw :: __lookup_push_and_enable_foot_ik :: get_method_info () } pub fn pop_foot_ik_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CharacterSignalObserver_unity2_raw :: __lookup_pop_foot_ik :: get_method_info () } pub fn ground_particle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CharacterSignalObserver_unity2_raw :: __lookup_ground_particle :: get_method_info () } pub fn stop_footstep_observers_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CharacterSignalObserver_unity2_raw :: __lookup_stop_footstep_observers :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CharacterSignalObserver_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "combat-charactersignalobserver")]
 impl CharacterSignalObserver {
-    #[doc = "`FindVolumeFromScene()` overload"]
-    pub fn find_volume_from_scene() -> crate::unity_engine::rendering::volume::Volume {
-        unsafe { __CharacterSignalObserver_unity2_raw::find_volume_from_scene(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "combat-charactersignalobserver")]
-pub trait ICharacterSignalObserverMethods: ICharacterSignalObserver {
-    #[doc = "`get_CP()` overload"]
-    fn get_cp(self) -> crate::combat::character::Character {
-        unsafe {
-            let __receiver =
-                <CharacterSignalObserver as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CharacterSignalObserver_unity2_raw::get_cp(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_RadialBlur()` overload"]
-    fn get_radial_blur(self) -> crate::unity_engine::rendering::universal::custom::customradialblur::CustomRadialBlur {
-        unsafe {
-            let __receiver =
-                <CharacterSignalObserver as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CharacterSignalObserver_unity2_raw::get_radial_blur(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Start()` overload"]
-    fn start(self) -> () {
-        unsafe {
-            let __receiver =
-                <CharacterSignalObserver as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CharacterSignalObserver_unity2_raw::start(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`MyStart()` overload"]
-    fn my_start(self) -> () {
-        unsafe {
-            let __receiver =
-                <CharacterSignalObserver as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CharacterSignalObserver_unity2_raw::my_start(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`PushAndEnableFootIK(bool)` overload"]
-    fn push_and_enable_foot_ik(self, v: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver =
-                <CharacterSignalObserver as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CharacterSignalObserver_unity2_raw::push_and_enable_foot_ik(__receiver, ::core::convert::Into::into(v), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`PopFootIK()` overload"]
-    fn pop_foot_ik(self) -> () {
-        unsafe {
-            let __receiver =
-                <CharacterSignalObserver as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CharacterSignalObserver_unity2_raw::pop_foot_ik(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GroundParticle(i32, ::unity2::Il2CppString)` overload"]
-    fn ground_particle(self, effect_type: impl ::core::convert::Into<i32>, node_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver =
-                <CharacterSignalObserver as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CharacterSignalObserver_unity2_raw::ground_particle(
-                __receiver,
-                ::core::convert::Into::into(effect_type),
-                ::core::convert::Into::into(node_name),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`StopFootstepObservers()` overload"]
-    fn stop_footstep_observers(self) -> () {
-        unsafe {
-            let __receiver =
-                <CharacterSignalObserver as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CharacterSignalObserver_unity2_raw::stop_footstep_observers(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <CharacterSignalObserver as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CharacterSignalObserver_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "combat-charactersignalobserver")]
-impl<__T: ICharacterSignalObserver> ICharacterSignalObserverMethods for __T {}
-
-#[cfg(feature = "combat-charactersignalobserver")]
-impl CharacterSignalObserver {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(CharacterSignalObserver),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ICharacterSignalObserverMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CharacterSignalObserver) , :: core :: stringify ! (new) ,)) ; < Self as ICharacterSignalObserverMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "combat-charactersignalobserver")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{CharacterSignalObserver, ICharacterSignalObserver, ICharacterSignalObserverMethods};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        system::object::IObject,
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::CharacterSignalObserver;
+    pub use super::ICharacterSignalObserver;
+    pub use super::ICharacterSignalObserverMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

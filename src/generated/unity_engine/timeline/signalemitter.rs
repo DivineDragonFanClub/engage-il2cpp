@@ -2,443 +2,59 @@
 
 #[cfg(feature = "unity_engine-timeline-signalemitter-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::{
-            object_2::{IObject_2, Object_2},
-            scriptableobject::{IScriptableObject, ScriptableObject},
-            timeline::marker::{IMarker, Marker},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/signalemitter/SignalEmitter.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Timeline", name = "SignalEmitter")]
-    #[parent(crate::unity_engine::timeline::marker::Marker)]
-    pub struct SignalEmitter {
-        #[offset(40)]
-        #[rename(name = "m_Retroactive")]
-        pub m_retroactive: bool,
-        #[offset(41)]
-        #[rename(name = "m_EmitOnce")]
-        pub m_emit_once: bool,
-        #[offset(48)]
-        #[rename(name = "m_Asset")]
-        pub m_asset: crate::unity_engine::timeline::signalasset::SignalAsset,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+ use crate :: unity_engine :: scriptableobject :: { IScriptableObject , ScriptableObject }
+ ;
+ use crate :: unity_engine :: timeline :: marker :: { IMarker , Marker }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/signalemitter/SignalEmitter.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Timeline" , name = "SignalEmitter")] # [parent (crate :: unity_engine :: timeline :: marker :: Marker)] pub struct SignalEmitter {
+# [offset (40)] # [rename (name = "m_Retroactive")] pub m_retroactive : bool ,
+# [offset (41)] # [rename (name = "m_EmitOnce")] pub m_emit_once : bool ,
+# [offset (48)] # [rename (name = "m_Asset")] pub m_asset : crate :: unity_engine :: timeline :: signalasset :: SignalAsset ,
+}
+
 }
 
 #[cfg(feature = "unity_engine-timeline-signalemitter-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-timeline-signalemitter")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __SignalEmitter_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_retroactive {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SignalEmitter as ::unity2::ClassIdentity>::class(),
-                "get_retroactive",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SignalEmitter as ::unity2::ClassIdentity>::NAME,
-                        "get_retroactive",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_retroactive(this: SignalEmitter, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(SignalEmitter, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_retroactive::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_retroactive {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SignalEmitter as ::unity2::ClassIdentity>::class(),
-                "set_retroactive",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SignalEmitter as ::unity2::ClassIdentity>::NAME,
-                        "set_retroactive",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_retroactive(this: SignalEmitter, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SignalEmitter, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_retroactive::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_emit_once {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SignalEmitter as ::unity2::ClassIdentity>::class(),
-                "get_emitOnce",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SignalEmitter as ::unity2::ClassIdentity>::NAME,
-                        "get_emitOnce",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_emit_once(this: SignalEmitter, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(SignalEmitter, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_emit_once::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_emit_once {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SignalEmitter as ::unity2::ClassIdentity>::class(),
-                "set_emitOnce",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SignalEmitter as ::unity2::ClassIdentity>::NAME,
-                        "set_emitOnce",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_emit_once(this: SignalEmitter, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SignalEmitter, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_emit_once::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_asset {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SignalEmitter as ::unity2::ClassIdentity>::class(),
-                "get_asset",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SignalEmitter as ::unity2::ClassIdentity>::NAME,
-                        "get_asset",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_asset(
-        this: SignalEmitter,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::timeline::signalasset::SignalAsset {
-        let inner: extern "C" fn(SignalEmitter, ::unity2::OptionalMethod) -> crate::unity_engine::timeline::signalasset::SignalAsset =
-            ::core::mem::transmute(__lookup_get_asset::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_asset {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::timeline::signalasset::SignalAsset as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SignalEmitter as ::unity2::ClassIdentity>::class(),
-                "set_asset",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SignalEmitter as ::unity2::ClassIdentity>::NAME,
-                        "set_asset",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_asset(
-        this: SignalEmitter,
-        value: crate::unity_engine::timeline::signalasset::SignalAsset,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(SignalEmitter, crate::unity_engine::timeline::signalasset::SignalAsset, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_asset::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_unity_engine_playables_i_notification_get_id {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SignalEmitter as ::unity2::ClassIdentity>::class(),
-                "UnityEngine.Playables.INotification.get_id",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SignalEmitter as ::unity2::ClassIdentity>::NAME,
-                        "UnityEngine.Playables.INotification.get_id",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn unity_engine_playables_i_notification_get_id(
-        this: SignalEmitter,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::propertyname::PropertyName {
-        let inner: extern "C" fn(SignalEmitter, ::unity2::OptionalMethod) -> crate::unity_engine::propertyname::PropertyName =
-            ::core::mem::transmute(__lookup_unity_engine_playables_i_notification_get_id::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_unity_engine_timeline_i_notification_option_provider_get_flags {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SignalEmitter as ::unity2::ClassIdentity>::class(),
-                "UnityEngine.Timeline.INotificationOptionProvider.get_flags",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SignalEmitter as ::unity2::ClassIdentity>::NAME,
-                        "UnityEngine.Timeline.INotificationOptionProvider.get_flags",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn unity_engine_timeline_i_notification_option_provider_get_flags(
-        this: SignalEmitter,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::timeline::notificationflags::NotificationFlags {
-        let inner: extern "C" fn(SignalEmitter, ::unity2::OptionalMethod) -> crate::unity_engine::timeline::notificationflags::NotificationFlags =
-            ::core::mem::transmute(__lookup_unity_engine_timeline_i_notification_option_provider_get_flags::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<SignalEmitter as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SignalEmitter as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: SignalEmitter, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SignalEmitter, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __SignalEmitter_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_retroactive { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SignalEmitter as :: unity2 :: ClassIdentity > :: class () , "get_retroactive" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SignalEmitter as :: unity2 :: ClassIdentity > :: NAME , "get_retroactive" , e) , } } } pub unsafe fn get_retroactive (this : SignalEmitter , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (SignalEmitter , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_retroactive :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_retroactive { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SignalEmitter as :: unity2 :: ClassIdentity > :: class () , "set_retroactive" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SignalEmitter as :: unity2 :: ClassIdentity > :: NAME , "set_retroactive" , e) , } } } pub unsafe fn set_retroactive (this : SignalEmitter , value : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SignalEmitter , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_retroactive :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_emit_once { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SignalEmitter as :: unity2 :: ClassIdentity > :: class () , "get_emitOnce" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SignalEmitter as :: unity2 :: ClassIdentity > :: NAME , "get_emitOnce" , e) , } } } pub unsafe fn get_emit_once (this : SignalEmitter , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (SignalEmitter , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_emit_once :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_emit_once { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SignalEmitter as :: unity2 :: ClassIdentity > :: class () , "set_emitOnce" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SignalEmitter as :: unity2 :: ClassIdentity > :: NAME , "set_emitOnce" , e) , } } } pub unsafe fn set_emit_once (this : SignalEmitter , value : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SignalEmitter , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_emit_once :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_asset { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SignalEmitter as :: unity2 :: ClassIdentity > :: class () , "get_asset" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SignalEmitter as :: unity2 :: ClassIdentity > :: NAME , "get_asset" , e) , } } } pub unsafe fn get_asset (this : SignalEmitter , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: timeline :: signalasset :: SignalAsset { let inner : extern "C" fn (SignalEmitter , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: timeline :: signalasset :: SignalAsset = :: core :: mem :: transmute (__lookup_get_asset :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_asset { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: timeline :: signalasset :: SignalAsset as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SignalEmitter as :: unity2 :: ClassIdentity > :: class () , "set_asset" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SignalEmitter as :: unity2 :: ClassIdentity > :: NAME , "set_asset" , e) , } } } pub unsafe fn set_asset (this : SignalEmitter , value : crate :: unity_engine :: timeline :: signalasset :: SignalAsset , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SignalEmitter , crate :: unity_engine :: timeline :: signalasset :: SignalAsset , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_asset :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_unity_engine_playables_i_notification_get_id { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SignalEmitter as :: unity2 :: ClassIdentity > :: class () , "UnityEngine.Playables.INotification.get_id" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SignalEmitter as :: unity2 :: ClassIdentity > :: NAME , "UnityEngine.Playables.INotification.get_id" , e) , } } } pub unsafe fn unity_engine_playables_i_notification_get_id (this : SignalEmitter , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: propertyname :: PropertyName { let inner : extern "C" fn (SignalEmitter , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: propertyname :: PropertyName = :: core :: mem :: transmute (__lookup_unity_engine_playables_i_notification_get_id :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_unity_engine_timeline_i_notification_option_provider_get_flags { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SignalEmitter as :: unity2 :: ClassIdentity > :: class () , "UnityEngine.Timeline.INotificationOptionProvider.get_flags" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SignalEmitter as :: unity2 :: ClassIdentity > :: NAME , "UnityEngine.Timeline.INotificationOptionProvider.get_flags" , e) , } } } pub unsafe fn unity_engine_timeline_i_notification_option_provider_get_flags (this : SignalEmitter , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: timeline :: notificationflags :: NotificationFlags { let inner : extern "C" fn (SignalEmitter , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: timeline :: notificationflags :: NotificationFlags = :: core :: mem :: transmute (__lookup_unity_engine_timeline_i_notification_option_provider_get_flags :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SignalEmitter as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SignalEmitter as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : SignalEmitter , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SignalEmitter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-timeline-signalemitter")]
-pub trait ISignalEmitterMethods: ISignalEmitter {
-    #[doc = "`get_retroactive()` overload"]
-    fn get_retroactive(self) -> bool {
-        unsafe {
-            let __receiver = <SignalEmitter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SignalEmitter_unity2_raw::get_retroactive(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_retroactive(bool)` overload"]
-    fn set_retroactive(self, value: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver = <SignalEmitter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SignalEmitter_unity2_raw::set_retroactive(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_emitOnce()` overload"]
-    fn get_emit_once(self) -> bool {
-        unsafe {
-            let __receiver = <SignalEmitter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SignalEmitter_unity2_raw::get_emit_once(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_emitOnce(bool)` overload"]
-    fn set_emit_once(self, value: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver = <SignalEmitter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SignalEmitter_unity2_raw::set_emit_once(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_asset()` overload"]
-    fn get_asset(self) -> crate::unity_engine::timeline::signalasset::SignalAsset {
-        unsafe {
-            let __receiver = <SignalEmitter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SignalEmitter_unity2_raw::get_asset(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_asset(crate::unity_engine::timeline::signalasset::SignalAsset)` overload"]
-    fn set_asset(self, value: impl ::core::convert::Into<crate::unity_engine::timeline::signalasset::SignalAsset>) -> () {
-        unsafe {
-            let __receiver = <SignalEmitter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SignalEmitter_unity2_raw::set_asset(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`UnityEngine.Playables.INotification.get_id()` overload"]
-    fn unity_engine_playables_i_notification_get_id(self) -> crate::unity_engine::propertyname::PropertyName {
-        unsafe {
-            let __receiver = <SignalEmitter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SignalEmitter_unity2_raw::unity_engine_playables_i_notification_get_id(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`UnityEngine.Timeline.INotificationOptionProvider.get_flags()` overload"]
-    fn unity_engine_timeline_i_notification_option_provider_get_flags(self) -> crate::unity_engine::timeline::notificationflags::NotificationFlags {
-        unsafe {
-            let __receiver = <SignalEmitter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SignalEmitter_unity2_raw::unity_engine_timeline_i_notification_option_provider_get_flags(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <SignalEmitter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SignalEmitter_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait ISignalEmitterMethods : ISignalEmitter { # [doc = "`get_retroactive()` overload"] fn get_retroactive (self ,) -> bool { unsafe { let __receiver = < SignalEmitter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SignalEmitter_unity2_raw :: get_retroactive (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_retroactive(bool)` overload"] fn set_retroactive (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < SignalEmitter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SignalEmitter_unity2_raw :: set_retroactive (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_emitOnce()` overload"] fn get_emit_once (self ,) -> bool { unsafe { let __receiver = < SignalEmitter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SignalEmitter_unity2_raw :: get_emit_once (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_emitOnce(bool)` overload"] fn set_emit_once (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < SignalEmitter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SignalEmitter_unity2_raw :: set_emit_once (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_asset()` overload"] fn get_asset (self ,) -> crate :: unity_engine :: timeline :: signalasset :: SignalAsset { unsafe { let __receiver = < SignalEmitter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SignalEmitter_unity2_raw :: get_asset (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_asset(crate::unity_engine::timeline::signalasset::SignalAsset)` overload"] fn set_asset (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: timeline :: signalasset :: SignalAsset >) -> () { unsafe { let __receiver = < SignalEmitter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SignalEmitter_unity2_raw :: set_asset (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`UnityEngine.Playables.INotification.get_id()` overload"] fn unity_engine_playables_i_notification_get_id (self ,) -> crate :: unity_engine :: propertyname :: PropertyName { unsafe { let __receiver = < SignalEmitter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SignalEmitter_unity2_raw :: unity_engine_playables_i_notification_get_id (__receiver , :: core :: option :: Option :: None) } } # [doc = "`UnityEngine.Timeline.INotificationOptionProvider.get_flags()` overload"] fn unity_engine_timeline_i_notification_option_provider_get_flags (self ,) -> crate :: unity_engine :: timeline :: notificationflags :: NotificationFlags { unsafe { let __receiver = < SignalEmitter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SignalEmitter_unity2_raw :: unity_engine_timeline_i_notification_option_provider_get_flags (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < SignalEmitter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SignalEmitter_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-timeline-signalemitter")]
-impl<__T: ISignalEmitter> ISignalEmitterMethods for __T {}
+impl < __T : ISignalEmitter > ISignalEmitterMethods for __T { }
+
+#[cfg(feature = "unity_engine-timeline-signalemitter")]
+impl SignalEmitter { pub fn get_retroactive_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SignalEmitter_unity2_raw :: __lookup_get_retroactive :: get_method_info () } pub fn set_retroactive_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SignalEmitter_unity2_raw :: __lookup_set_retroactive :: get_method_info () } pub fn get_emit_once_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SignalEmitter_unity2_raw :: __lookup_get_emit_once :: get_method_info () } pub fn set_emit_once_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SignalEmitter_unity2_raw :: __lookup_set_emit_once :: get_method_info () } pub fn get_asset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SignalEmitter_unity2_raw :: __lookup_get_asset :: get_method_info () } pub fn set_asset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SignalEmitter_unity2_raw :: __lookup_set_asset :: get_method_info () } pub fn unity_engine_playables_i_notification_get_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SignalEmitter_unity2_raw :: __lookup_unity_engine_playables_i_notification_get_id :: get_method_info () } pub fn unity_engine_timeline_i_notification_option_provider_get_flags_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SignalEmitter_unity2_raw :: __lookup_unity_engine_timeline_i_notification_option_provider_get_flags :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SignalEmitter_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-timeline-signalemitter")]
 impl SignalEmitter {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(SignalEmitter), ::core::stringify!(new),));
-        <Self as ISignalEmitterMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SignalEmitter) , :: core :: stringify ! (new) ,)) ; < Self as ISignalEmitterMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "unity_engine-timeline-signalemitter")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{ISignalEmitter, ISignalEmitterMethods, SignalEmitter};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    #[cfg(feature = "unity_engine-scriptableobject")]
-    pub use crate::unity_engine::scriptableobject::IScriptableObjectMethods;
-    #[cfg(feature = "unity_engine-timeline-marker")]
-    pub use crate::unity_engine::timeline::marker::IMarkerMethods;
-    pub use crate::{
-        system::object::IObject,
-        unity_engine::{object_2::IObject_2, scriptableobject::IScriptableObject, timeline::marker::IMarker},
-    };
+    pub use super::SignalEmitter;
+    pub use super::ISignalEmitter;
+    pub use super::ISignalEmitterMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::object_2::IObject_2;
+    pub use crate::unity_engine::scriptableobject::IScriptableObject;
+    pub use crate::unity_engine::timeline::marker::IMarker;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
+    #[cfg(feature = "unity_engine-scriptableobject")] pub use crate::unity_engine::scriptableobject::IScriptableObjectMethods;
+    #[cfg(feature = "unity_engine-timeline-marker")] pub use crate::unity_engine::timeline::marker::IMarkerMethods;
 }

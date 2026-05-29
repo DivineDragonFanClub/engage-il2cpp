@@ -2,359 +2,71 @@
 
 #[cfg(feature = "app-battleinfoenum-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        valuetype::{IValueType, ValueType},
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battleinfoenum/BattleInfoEnum.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct BattleInfoEnum {
-        pub m_info: crate::app::battleinfo::BattleInfo,
-        pub m_min: crate::app::battleside::BattleSide_Type,
-        pub m_max: crate::app::battleside::BattleSide_Type,
-        pub m_current: crate::app::battleinfoside::BattleInfoSide,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
 
-    impl ::unity2::ClassIdentity for BattleInfoEnum {
-        const NAME: &'static str = "BattleInfoEnum";
-        const NAMESPACE: &'static str = "App";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battleinfoenum/BattleInfoEnum.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct BattleInfoEnum {
+    pub m_info: crate :: app :: battleinfo :: BattleInfo,
+    pub m_min: crate :: app :: battleside :: BattleSide_Type,
+    pub m_max: crate :: app :: battleside :: BattleSide_Type,
+    pub m_current: crate :: app :: battleinfoside :: BattleInfoSide,
+}
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+
+impl ::unity2::ClassIdentity for BattleInfoEnum {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "BattleInfoEnum";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for BattleInfoEnum {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl ::unity2::IlType for BattleInfoEnum {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
+
+}
+
 }
 
 #[cfg(feature = "app-battleinfoenum-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-battleinfoenum")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __BattleInfoEnum_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_enumerator {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleInfoEnum as ::unity2::ClassIdentity>::class(),
-                "GetEnumerator",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <BattleInfoEnum as ::unity2::ClassIdentity>::NAME,
-                        "GetEnumerator",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_enumerator(this: BattleInfoEnum, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::battleinfoenum::BattleInfoEnum {
-        let inner: extern "C" fn(BattleInfoEnum, ::unity2::OptionalMethod) -> crate::app::battleinfoenum::BattleInfoEnum =
-            ::core::mem::transmute(__lookup_get_enumerator::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::battleinfo::BattleInfo as ::unity2::IlType>::il_type(),
-                <crate::app::battleside::BattleSide_Type as ::unity2::IlType>::il_type(),
-                <crate::app::battleside::BattleSide_Type as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleInfoEnum as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <BattleInfoEnum as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: BattleInfoEnum,
-        info: crate::app::battleinfo::BattleInfo,
-        min: crate::app::battleside::BattleSide_Type,
-        max: crate::app::battleside::BattleSide_Type,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            BattleInfoEnum,
-            crate::app::battleinfo::BattleInfo,
-            crate::app::battleside::BattleSide_Type,
-            crate::app::battleside::BattleSide_Type,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, info, min, max, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_dispose {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleInfoEnum as ::unity2::ClassIdentity>::class(),
-                "Dispose",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <BattleInfoEnum as ::unity2::ClassIdentity>::NAME,
-                        "Dispose",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn dispose(this: BattleInfoEnum, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(BattleInfoEnum, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_dispose::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_move_next {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleInfoEnum as ::unity2::ClassIdentity>::class(),
-                "MoveNext",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <BattleInfoEnum as ::unity2::ClassIdentity>::NAME,
-                        "MoveNext",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn move_next(this: BattleInfoEnum, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(BattleInfoEnum, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_move_next::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_reset {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleInfoEnum as ::unity2::ClassIdentity>::class(),
-                "Reset",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <BattleInfoEnum as ::unity2::ClassIdentity>::NAME,
-                        "Reset",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn reset(this: BattleInfoEnum, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(BattleInfoEnum, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_reset::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_system_collections_i_enumerator_get_current {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleInfoEnum as ::unity2::ClassIdentity>::class(),
-                "System.Collections.IEnumerator.get_Current",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <BattleInfoEnum as ::unity2::ClassIdentity>::NAME,
-                        "System.Collections.IEnumerator.get_Current",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn system_collections_i_enumerator_get_current(
-        this: BattleInfoEnum,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::object::Object {
-        let inner: extern "C" fn(BattleInfoEnum, ::unity2::OptionalMethod) -> crate::system::object::Object =
-            ::core::mem::transmute(__lookup_system_collections_i_enumerator_get_current::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_current {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleInfoEnum as ::unity2::ClassIdentity>::class(),
-                "get_Current",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <BattleInfoEnum as ::unity2::ClassIdentity>::NAME,
-                        "get_Current",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_current(this: BattleInfoEnum, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::battleinfoside::BattleInfoSide {
-        let inner: extern "C" fn(BattleInfoEnum, ::unity2::OptionalMethod) -> crate::app::battleinfoside::BattleInfoSide =
-            ::core::mem::transmute(__lookup_get_current::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __BattleInfoEnum_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_enumerator { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< BattleInfoEnum as :: unity2 :: ClassIdentity > :: class () , "GetEnumerator" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < BattleInfoEnum as :: unity2 :: ClassIdentity > :: NAME , "GetEnumerator" , e) , } } } pub unsafe fn get_enumerator (this : BattleInfoEnum , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: battleinfoenum :: BattleInfoEnum { let inner : extern "C" fn (BattleInfoEnum , :: unity2 :: OptionalMethod ,) -> crate :: app :: battleinfoenum :: BattleInfoEnum = :: core :: mem :: transmute (__lookup_get_enumerator :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: battleinfo :: BattleInfo as :: unity2 :: IlType > :: il_type () , < crate :: app :: battleside :: BattleSide_Type as :: unity2 :: IlType > :: il_type () , < crate :: app :: battleside :: BattleSide_Type as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< BattleInfoEnum as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < BattleInfoEnum as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : BattleInfoEnum , info : crate :: app :: battleinfo :: BattleInfo , min : crate :: app :: battleside :: BattleSide_Type , max : crate :: app :: battleside :: BattleSide_Type , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (BattleInfoEnum , crate :: app :: battleinfo :: BattleInfo , crate :: app :: battleside :: BattleSide_Type , crate :: app :: battleside :: BattleSide_Type , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , info , min , max , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_dispose { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< BattleInfoEnum as :: unity2 :: ClassIdentity > :: class () , "Dispose" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < BattleInfoEnum as :: unity2 :: ClassIdentity > :: NAME , "Dispose" , e) , } } } pub unsafe fn dispose (this : BattleInfoEnum , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (BattleInfoEnum , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_dispose :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_move_next { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< BattleInfoEnum as :: unity2 :: ClassIdentity > :: class () , "MoveNext" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < BattleInfoEnum as :: unity2 :: ClassIdentity > :: NAME , "MoveNext" , e) , } } } pub unsafe fn move_next (this : BattleInfoEnum , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (BattleInfoEnum , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_move_next :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_reset { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< BattleInfoEnum as :: unity2 :: ClassIdentity > :: class () , "Reset" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < BattleInfoEnum as :: unity2 :: ClassIdentity > :: NAME , "Reset" , e) , } } } pub unsafe fn reset (this : BattleInfoEnum , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (BattleInfoEnum , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_reset :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_system_collections_i_enumerator_get_current { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< BattleInfoEnum as :: unity2 :: ClassIdentity > :: class () , "System.Collections.IEnumerator.get_Current" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < BattleInfoEnum as :: unity2 :: ClassIdentity > :: NAME , "System.Collections.IEnumerator.get_Current" , e) , } } } pub unsafe fn system_collections_i_enumerator_get_current (this : BattleInfoEnum , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object { let inner : extern "C" fn (BattleInfoEnum , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute (__lookup_system_collections_i_enumerator_get_current :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_current { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< BattleInfoEnum as :: unity2 :: ClassIdentity > :: class () , "get_Current" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < BattleInfoEnum as :: unity2 :: ClassIdentity > :: NAME , "get_Current" , e) , } } } pub unsafe fn get_current (this : BattleInfoEnum , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: battleinfoside :: BattleInfoSide { let inner : extern "C" fn (BattleInfoEnum , :: unity2 :: OptionalMethod ,) -> crate :: app :: battleinfoside :: BattleInfoSide = :: core :: mem :: transmute (__lookup_get_current :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-battleinfoenum")]
-impl BattleInfoEnum {
-    #[doc = "`GetEnumerator()` overload"]
-    pub fn get_enumerator(self) -> crate::app::battleinfoenum::BattleInfoEnum {
-        unsafe { __BattleInfoEnum_unity2_raw::get_enumerator(self, ::core::option::Option::None) }
-    }
+impl BattleInfoEnum { # [doc = "`GetEnumerator()` overload"] pub fn get_enumerator (self ,) -> crate :: app :: battleinfoenum :: BattleInfoEnum { unsafe { __BattleInfoEnum_unity2_raw :: get_enumerator (self , :: core :: option :: Option :: None) } } # [doc = "`.ctor(crate::app::battleinfo::BattleInfo, crate::app::battleside::BattleSide_Type, crate::app::battleside::BattleSide_Type)` overload"] pub fn ctor (self , info : impl :: core :: convert :: Into < crate :: app :: battleinfo :: BattleInfo > , min : impl :: core :: convert :: Into < crate :: app :: battleside :: BattleSide_Type > , max : impl :: core :: convert :: Into < crate :: app :: battleside :: BattleSide_Type >) -> () { unsafe { __BattleInfoEnum_unity2_raw :: ctor (self , :: core :: convert :: Into :: into (info) , :: core :: convert :: Into :: into (min) , :: core :: convert :: Into :: into (max) , :: core :: option :: Option :: None) } } # [doc = "`Dispose()` overload"] pub fn dispose (self ,) -> () { unsafe { __BattleInfoEnum_unity2_raw :: dispose (self , :: core :: option :: Option :: None) } } # [doc = "`MoveNext()` overload"] pub fn move_next (self ,) -> bool { unsafe { __BattleInfoEnum_unity2_raw :: move_next (self , :: core :: option :: Option :: None) } } # [doc = "`Reset()` overload"] pub fn reset (self ,) -> () { unsafe { __BattleInfoEnum_unity2_raw :: reset (self , :: core :: option :: Option :: None) } } # [doc = "`System.Collections.IEnumerator.get_Current()` overload"] pub fn system_collections_i_enumerator_get_current (self ,) -> crate :: system :: object :: Object { unsafe { __BattleInfoEnum_unity2_raw :: system_collections_i_enumerator_get_current (self , :: core :: option :: Option :: None) } } # [doc = "`get_Current()` overload"] pub fn get_current (self ,) -> crate :: app :: battleinfoside :: BattleInfoSide { unsafe { __BattleInfoEnum_unity2_raw :: get_current (self , :: core :: option :: Option :: None) } } }
 
-    #[doc = "`.ctor(crate::app::battleinfo::BattleInfo, crate::app::battleside::BattleSide_Type, crate::app::battleside::BattleSide_Type)` overload"]
-    pub fn ctor(
-        self,
-        info: impl ::core::convert::Into<crate::app::battleinfo::BattleInfo>,
-        min: impl ::core::convert::Into<crate::app::battleside::BattleSide_Type>,
-        max: impl ::core::convert::Into<crate::app::battleside::BattleSide_Type>,
-    ) -> () {
-        unsafe {
-            __BattleInfoEnum_unity2_raw::ctor(
-                self,
-                ::core::convert::Into::into(info),
-                ::core::convert::Into::into(min),
-                ::core::convert::Into::into(max),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`Dispose()` overload"]
-    pub fn dispose(self) -> () {
-        unsafe { __BattleInfoEnum_unity2_raw::dispose(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`MoveNext()` overload"]
-    pub fn move_next(self) -> bool {
-        unsafe { __BattleInfoEnum_unity2_raw::move_next(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`Reset()` overload"]
-    pub fn reset(self) -> () {
-        unsafe { __BattleInfoEnum_unity2_raw::reset(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`System.Collections.IEnumerator.get_Current()` overload"]
-    pub fn system_collections_i_enumerator_get_current(self) -> crate::system::object::Object {
-        unsafe { __BattleInfoEnum_unity2_raw::system_collections_i_enumerator_get_current(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_Current()` overload"]
-    pub fn get_current(self) -> crate::app::battleinfoside::BattleInfoSide {
-        unsafe { __BattleInfoEnum_unity2_raw::get_current(self, ::core::option::Option::None) }
-    }
-}
+#[cfg(feature = "app-battleinfoenum")]
+impl BattleInfoEnum { pub fn get_enumerator_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __BattleInfoEnum_unity2_raw :: __lookup_get_enumerator :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __BattleInfoEnum_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __BattleInfoEnum_unity2_raw :: __lookup_dispose :: get_method_info () } pub fn move_next_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __BattleInfoEnum_unity2_raw :: __lookup_move_next :: get_method_info () } pub fn reset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __BattleInfoEnum_unity2_raw :: __lookup_reset :: get_method_info () } pub fn system_collections_i_enumerator_get_current_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __BattleInfoEnum_unity2_raw :: __lookup_system_collections_i_enumerator_get_current :: get_method_info () } pub fn get_current_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __BattleInfoEnum_unity2_raw :: __lookup_get_current :: get_method_info () } }
 
 #[cfg(feature = "app-battleinfoenum")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::BattleInfoEnum;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::system::{object::IObject, valuetype::IValueType};
+    pub use crate::system::object::IObject;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

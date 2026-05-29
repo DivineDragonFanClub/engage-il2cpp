@@ -2,301 +2,34 @@
 
 #[cfg(feature = "unity_engine-ui-iclippable-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/iclippable/IClippable.md"))]
-    #[::unity2::class(namespace = "UnityEngine.UI", name = "IClippable")]
-    pub struct IClippable {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/iclippable/IClippable.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "IClippable")] pub struct IClippable {}
+
 }
 
 #[cfg(feature = "unity_engine-ui-iclippable-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-ui-iclippable")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __IClippable_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_game_object {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <IClippable as ::unity2::ClassIdentity>::class(),
-                "get_gameObject",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <IClippable as ::unity2::ClassIdentity>::NAME,
-                        "get_gameObject",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_game_object(this: IClippable, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::gameobject::GameObject {
-        let inner: extern "C" fn(IClippable, ::unity2::OptionalMethod) -> crate::unity_engine::gameobject::GameObject =
-            ::core::mem::transmute(__lookup_get_game_object::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_recalculate_clipping {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <IClippable as ::unity2::ClassIdentity>::class(),
-                "RecalculateClipping",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <IClippable as ::unity2::ClassIdentity>::NAME,
-                        "RecalculateClipping",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn recalculate_clipping(this: IClippable, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(IClippable, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_recalculate_clipping::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_rect_transform {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <IClippable as ::unity2::ClassIdentity>::class(),
-                "get_rectTransform",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <IClippable as ::unity2::ClassIdentity>::NAME,
-                        "get_rectTransform",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_rect_transform(
-        this: IClippable,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::recttransform::RectTransform {
-        let inner: extern "C" fn(IClippable, ::unity2::OptionalMethod) -> crate::unity_engine::recttransform::RectTransform =
-            ::core::mem::transmute(__lookup_get_rect_transform::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cull {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<IClippable as ::unity2::ClassIdentity>::class(), "Cull", 2, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <IClippable as ::unity2::ClassIdentity>::NAME,
-                        "Cull",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cull(
-        this: IClippable,
-        clip_rect: crate::unity_engine::rect::Rect,
-        valid_rect: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(IClippable, crate::unity_engine::rect::Rect, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_cull::get_method_info().method_ptr);
-        inner(this, clip_rect, valid_rect, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_clip_rect {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <IClippable as ::unity2::ClassIdentity>::class(),
-                "SetClipRect",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <IClippable as ::unity2::ClassIdentity>::NAME,
-                        "SetClipRect",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_clip_rect(
-        this: IClippable,
-        value: crate::unity_engine::rect::Rect,
-        valid_rect: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(IClippable, crate::unity_engine::rect::Rect, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_clip_rect::get_method_info().method_ptr);
-        inner(this, value, valid_rect, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_clip_softness {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <IClippable as ::unity2::ClassIdentity>::class(),
-                "SetClipSoftness",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <IClippable as ::unity2::ClassIdentity>::NAME,
-                        "SetClipSoftness",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_clip_softness(
-        this: IClippable,
-        clip_softness: crate::unity_engine::vector2::Vector2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(IClippable, crate::unity_engine::vector2::Vector2, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_clip_softness::get_method_info().method_ptr);
-        inner(this, clip_softness, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __IClippable_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_game_object { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< IClippable as :: unity2 :: ClassIdentity > :: class () , "get_gameObject" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < IClippable as :: unity2 :: ClassIdentity > :: NAME , "get_gameObject" , e) , } } } pub unsafe fn get_game_object (this : IClippable , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject { let inner : extern "C" fn (IClippable , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute (__lookup_get_game_object :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_recalculate_clipping { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< IClippable as :: unity2 :: ClassIdentity > :: class () , "RecalculateClipping" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < IClippable as :: unity2 :: ClassIdentity > :: NAME , "RecalculateClipping" , e) , } } } pub unsafe fn recalculate_clipping (this : IClippable , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (IClippable , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_recalculate_clipping :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_rect_transform { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< IClippable as :: unity2 :: ClassIdentity > :: class () , "get_rectTransform" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < IClippable as :: unity2 :: ClassIdentity > :: NAME , "get_rectTransform" , e) , } } } pub unsafe fn get_rect_transform (this : IClippable , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: recttransform :: RectTransform { let inner : extern "C" fn (IClippable , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: recttransform :: RectTransform = :: core :: mem :: transmute (__lookup_get_rect_transform :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cull { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rect :: Rect as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< IClippable as :: unity2 :: ClassIdentity > :: class () , "Cull" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < IClippable as :: unity2 :: ClassIdentity > :: NAME , "Cull" , e) , } } } pub unsafe fn cull (this : IClippable , clip_rect : crate :: unity_engine :: rect :: Rect , valid_rect : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (IClippable , crate :: unity_engine :: rect :: Rect , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cull :: get_method_info () . method_ptr ,) ; inner (this , clip_rect , valid_rect , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_clip_rect { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rect :: Rect as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< IClippable as :: unity2 :: ClassIdentity > :: class () , "SetClipRect" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < IClippable as :: unity2 :: ClassIdentity > :: NAME , "SetClipRect" , e) , } } } pub unsafe fn set_clip_rect (this : IClippable , value : crate :: unity_engine :: rect :: Rect , valid_rect : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (IClippable , crate :: unity_engine :: rect :: Rect , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_clip_rect :: get_method_info () . method_ptr ,) ; inner (this , value , valid_rect , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_clip_softness { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector2 :: Vector2 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< IClippable as :: unity2 :: ClassIdentity > :: class () , "SetClipSoftness" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < IClippable as :: unity2 :: ClassIdentity > :: NAME , "SetClipSoftness" , e) , } } } pub unsafe fn set_clip_softness (this : IClippable , clip_softness : crate :: unity_engine :: vector2 :: Vector2 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (IClippable , crate :: unity_engine :: vector2 :: Vector2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_clip_softness :: get_method_info () . method_ptr ,) ; inner (this , clip_softness , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-ui-iclippable")]
-pub trait IIClippableMethods: IIClippable {
-    #[doc = "`get_gameObject()` overload"]
-    fn get_game_object(self) -> crate::unity_engine::gameobject::GameObject {
-        unsafe {
-            let __receiver = <IClippable as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __IClippable_unity2_raw::get_game_object(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`RecalculateClipping()` overload"]
-    fn recalculate_clipping(self) -> () {
-        unsafe {
-            let __receiver = <IClippable as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __IClippable_unity2_raw::recalculate_clipping(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_rectTransform()` overload"]
-    fn get_rect_transform(self) -> crate::unity_engine::recttransform::RectTransform {
-        unsafe {
-            let __receiver = <IClippable as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __IClippable_unity2_raw::get_rect_transform(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Cull(crate::unity_engine::rect::Rect, bool)` overload"]
-    fn cull(self, clip_rect: impl ::core::convert::Into<crate::unity_engine::rect::Rect>, valid_rect: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver = <IClippable as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __IClippable_unity2_raw::cull(
-                __receiver,
-                ::core::convert::Into::into(clip_rect),
-                ::core::convert::Into::into(valid_rect),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetClipRect(crate::unity_engine::rect::Rect, bool)` overload"]
-    fn set_clip_rect(self, value: impl ::core::convert::Into<crate::unity_engine::rect::Rect>, valid_rect: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver = <IClippable as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __IClippable_unity2_raw::set_clip_rect(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::convert::Into::into(valid_rect),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetClipSoftness(crate::unity_engine::vector2::Vector2)` overload"]
-    fn set_clip_softness(self, clip_softness: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>) -> () {
-        unsafe {
-            let __receiver = <IClippable as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __IClippable_unity2_raw::set_clip_softness(__receiver, ::core::convert::Into::into(clip_softness), ::core::option::Option::None)
-        }
-    }
-}
+pub trait IIClippableMethods : IIClippable { # [doc = "`get_gameObject()` overload"] fn get_game_object (self ,) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { let __receiver = < IClippable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IClippable_unity2_raw :: get_game_object (__receiver , :: core :: option :: Option :: None) } } # [doc = "`RecalculateClipping()` overload"] fn recalculate_clipping (self ,) -> () { unsafe { let __receiver = < IClippable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IClippable_unity2_raw :: recalculate_clipping (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_rectTransform()` overload"] fn get_rect_transform (self ,) -> crate :: unity_engine :: recttransform :: RectTransform { unsafe { let __receiver = < IClippable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IClippable_unity2_raw :: get_rect_transform (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Cull(crate::unity_engine::rect::Rect, bool)` overload"] fn cull (self , clip_rect : impl :: core :: convert :: Into < crate :: unity_engine :: rect :: Rect > , valid_rect : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < IClippable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IClippable_unity2_raw :: cull (__receiver , :: core :: convert :: Into :: into (clip_rect) , :: core :: convert :: Into :: into (valid_rect) , :: core :: option :: Option :: None) } } # [doc = "`SetClipRect(crate::unity_engine::rect::Rect, bool)` overload"] fn set_clip_rect (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: rect :: Rect > , valid_rect : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < IClippable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IClippable_unity2_raw :: set_clip_rect (__receiver , :: core :: convert :: Into :: into (value) , :: core :: convert :: Into :: into (valid_rect) , :: core :: option :: Option :: None) } } # [doc = "`SetClipSoftness(crate::unity_engine::vector2::Vector2)` overload"] fn set_clip_softness (self , clip_softness : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 >) -> () { unsafe { let __receiver = < IClippable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IClippable_unity2_raw :: set_clip_softness (__receiver , :: core :: convert :: Into :: into (clip_softness) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-ui-iclippable")]
-impl<__T: IIClippable> IIClippableMethods for __T {}
+impl < __T : IIClippable > IIClippableMethods for __T { }
+
+#[cfg(feature = "unity_engine-ui-iclippable")]
+impl IClippable { pub fn get_game_object_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __IClippable_unity2_raw :: __lookup_get_game_object :: get_method_info () } pub fn recalculate_clipping_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __IClippable_unity2_raw :: __lookup_recalculate_clipping :: get_method_info () } pub fn get_rect_transform_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __IClippable_unity2_raw :: __lookup_get_rect_transform :: get_method_info () } pub fn cull_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __IClippable_unity2_raw :: __lookup_cull :: get_method_info () } pub fn set_clip_rect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __IClippable_unity2_raw :: __lookup_set_clip_rect :: get_method_info () } pub fn set_clip_softness_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __IClippable_unity2_raw :: __lookup_set_clip_softness :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-ui-iclippable")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IClippable, IIClippable, IIClippableMethods};
+    pub use super::IClippable;
+    pub use super::IIClippable;
+    pub use super::IIClippableMethods;
 }

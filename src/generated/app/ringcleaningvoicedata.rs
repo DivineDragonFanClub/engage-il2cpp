@@ -2,931 +2,270 @@
 
 #[cfg(feature = "app-ringcleaningvoicedata-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::{
-            structbase::{IStructBase, StructBase},
-            structdataarray_1::{IStructDataArray_1, StructDataArray_1},
-            structtemplate_1::{IStructTemplate_1, StructTemplate_1},
-        },
-        system::{
-            object::{IObject, Object},
-            r#enum::{Enum, IEnum},
-            valuetype::{IValueType, ValueType},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringcleaningvoicedata/RingCleaningVoiceData.md"))]
-    #[::unity2::class(namespace = "App", name = "RingCleaningVoiceData")]
-    # [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < crate :: app :: ringcleaningvoicedata :: RingCleaningVoiceData >)]
-    pub struct RingCleaningVoiceData {
-        #[static_field]
-        #[rename(name = "EventNames")]
-        pub event_names: ::unity2::Array<::unity2::Il2CppString>,
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: structbase :: { IStructBase , StructBase }
+ ;
+ use crate :: app :: structdataarray_1 :: { IStructDataArray_1 , StructDataArray_1 }
+ ;
+ use crate :: app :: structtemplate_1 :: { IStructTemplate_1 , StructTemplate_1 }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ringcleaningvoicedata/RingCleaningVoiceData_Situation.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct RingCleaningVoiceData_Situation  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for RingCleaningVoiceData_Situation  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "RingCleaningVoiceData.Situation";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ringcleaningvoicedata/RingCleaningVoiceData_Situation.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct RingCleaningVoiceData_Situation {
-        pub value: i32,
+}
+
+
+impl  ::unity2::IlType for RingCleaningVoiceData_Situation  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::ClassIdentity for RingCleaningVoiceData_Situation {
-        const NAME: &'static str = "RingCleaningVoiceData.Situation";
-        const NAMESPACE: &'static str = "App";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  RingCleaningVoiceData_Situation  {
+    pub fn start() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl ::unity2::IlType for RingCleaningVoiceData_Situation {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+
+    pub fn clean_strongly_not_dirty() -> Self {
+        Self { value: 1 }
+
     }
 
-    impl RingCleaningVoiceData_Situation {
-        pub fn start() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn clean_strongly_not_dirty() -> Self {
-            Self { value: 1 }
-        }
+    pub fn clean_dirty() -> Self {
+        Self { value: 2 }
 
-        pub fn clean_dirty() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn clean_strongly_diry() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn finish() -> Self {
-            Self { value: 4 }
-        }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ringcleaningvoicedata/RingCleaningVoiceData_VoiceLabel.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct RingCleaningVoiceData_VoiceLabel {
-        pub value: i32,
+
+    pub fn clean_strongly_diry() -> Self {
+        Self { value: 3 }
+
     }
 
-    impl ::unity2::ClassIdentity for RingCleaningVoiceData_VoiceLabel {
-        const NAME: &'static str = "RingCleaningVoiceData.VoiceLabel";
-        const NAMESPACE: &'static str = "App";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+    pub fn finish() -> Self {
+        Self { value: 4 }
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
     }
 
-    impl ::unity2::IlType for RingCleaningVoiceData_VoiceLabel {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringcleaningvoicedata/RingCleaningVoiceData.md"))] # [:: unity2 :: class (namespace = "App" , name = "RingCleaningVoiceData")] # [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < crate :: app :: ringcleaningvoicedata :: RingCleaningVoiceData >)] pub struct RingCleaningVoiceData {
+# [static_field] # [rename (name = "EventNames")] pub event_names : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ringcleaningvoicedata/RingCleaningVoiceData_VoiceLabel.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct RingCleaningVoiceData_VoiceLabel  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for RingCleaningVoiceData_VoiceLabel  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "RingCleaningVoiceData.VoiceLabel";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl RingCleaningVoiceData_VoiceLabel {
-        pub fn touch01() -> Self {
-            Self { value: 0 }
-        }
+}
 
-        pub fn touch02() -> Self {
-            Self { value: 1 }
-        }
 
-        pub fn touch03() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn touch04() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn touch05() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn touch06() -> Self {
-            Self { value: 5 }
-        }
-
-        pub fn touch07() -> Self {
-            Self { value: 6 }
-        }
-
-        pub fn touch08() -> Self {
-            Self { value: 7 }
-        }
-
-        pub fn touch09() -> Self {
-            Self { value: 8 }
-        }
-
-        pub fn touch10() -> Self {
-            Self { value: 9 }
-        }
-
-        pub fn dirt01() -> Self {
-            Self { value: 10 }
-        }
-
-        pub fn dirt02() -> Self {
-            Self { value: 11 }
-        }
-
-        pub fn dirt03() -> Self {
-            Self { value: 12 }
-        }
-
-        pub fn thank01() -> Self {
-            Self { value: 13 }
-        }
-
-        pub fn thank02() -> Self {
-            Self { value: 14 }
-        }
-
-        pub fn thank03() -> Self {
-            Self { value: 15 }
-        }
+impl  ::unity2::IlType for RingCleaningVoiceData_VoiceLabel  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
+
+}
+
+
+impl  RingCleaningVoiceData_VoiceLabel  {
+    pub fn touch01() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn touch02() -> Self {
+        Self { value: 1 }
+
+    }
+
+
+    pub fn touch03() -> Self {
+        Self { value: 2 }
+
+    }
+
+
+    pub fn touch04() -> Self {
+        Self { value: 3 }
+
+    }
+
+
+    pub fn touch05() -> Self {
+        Self { value: 4 }
+
+    }
+
+
+    pub fn touch06() -> Self {
+        Self { value: 5 }
+
+    }
+
+
+    pub fn touch07() -> Self {
+        Self { value: 6 }
+
+    }
+
+
+    pub fn touch08() -> Self {
+        Self { value: 7 }
+
+    }
+
+
+    pub fn touch09() -> Self {
+        Self { value: 8 }
+
+    }
+
+
+    pub fn touch10() -> Self {
+        Self { value: 9 }
+
+    }
+
+
+    pub fn dirt01() -> Self {
+        Self { value: 10 }
+
+    }
+
+
+    pub fn dirt02() -> Self {
+        Self { value: 11 }
+
+    }
+
+
+    pub fn dirt03() -> Self {
+        Self { value: 12 }
+
+    }
+
+
+    pub fn thank01() -> Self {
+        Self { value: 13 }
+
+    }
+
+
+    pub fn thank02() -> Self {
+        Self { value: 14 }
+
+    }
+
+
+    pub fn thank03() -> Self {
+        Self { value: 15 }
+
+    }
+
+}
+
 }
 
 #[cfg(feature = "app-ringcleaningvoicedata-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-ringcleaningvoicedata")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RingCleaningVoiceData_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_load {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingCleaningVoiceData as ::unity2::ClassIdentity>::class(),
-                "Load",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingCleaningVoiceData as ::unity2::ClassIdentity>::NAME,
-                        "Load",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn load(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_load::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_label {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingCleaningVoiceData as ::unity2::ClassIdentity>::class(),
-                "get_Label",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingCleaningVoiceData as ::unity2::ClassIdentity>::NAME,
-                        "get_Label",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_label(
-        this: RingCleaningVoiceData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::ringcleaningvoicedata::RingCleaningVoiceData_VoiceLabel {
-        let inner: extern "C" fn(
-            RingCleaningVoiceData,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::ringcleaningvoicedata::RingCleaningVoiceData_VoiceLabel =
-            ::core::mem::transmute(__lookup_get_label::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_label {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::ringcleaningvoicedata::RingCleaningVoiceData_VoiceLabel as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingCleaningVoiceData as ::unity2::ClassIdentity>::class(),
-                "set_Label",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingCleaningVoiceData as ::unity2::ClassIdentity>::NAME,
-                        "set_Label",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_label(
-        this: RingCleaningVoiceData,
-        value: crate::app::ringcleaningvoicedata::RingCleaningVoiceData_VoiceLabel,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RingCleaningVoiceData,
-            crate::app::ringcleaningvoicedata::RingCleaningVoiceData_VoiceLabel,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_set_label::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_play_situation {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingCleaningVoiceData as ::unity2::ClassIdentity>::class(),
-                "get_PlaySituation",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingCleaningVoiceData as ::unity2::ClassIdentity>::NAME,
-                        "get_PlaySituation",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_play_situation(
-        this: RingCleaningVoiceData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::ringcleaningvoicedata::RingCleaningVoiceData_Situation {
-        let inner: extern "C" fn(
-            RingCleaningVoiceData,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::ringcleaningvoicedata::RingCleaningVoiceData_Situation =
-            ::core::mem::transmute(__lookup_get_play_situation::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_play_situation {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::ringcleaningvoicedata::RingCleaningVoiceData_Situation as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingCleaningVoiceData as ::unity2::ClassIdentity>::class(),
-                "set_PlaySituation",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingCleaningVoiceData as ::unity2::ClassIdentity>::NAME,
-                        "set_PlaySituation",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_play_situation(
-        this: RingCleaningVoiceData,
-        value: crate::app::ringcleaningvoicedata::RingCleaningVoiceData_Situation,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RingCleaningVoiceData,
-            crate::app::ringcleaningvoicedata::RingCleaningVoiceData_Situation,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_set_play_situation::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_is_play_completed {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingCleaningVoiceData as ::unity2::ClassIdentity>::class(),
-                "get_IsPlayCompleted",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingCleaningVoiceData as ::unity2::ClassIdentity>::NAME,
-                        "get_IsPlayCompleted",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_is_play_completed(this: RingCleaningVoiceData, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(RingCleaningVoiceData, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_is_play_completed::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_is_play_completed {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingCleaningVoiceData as ::unity2::ClassIdentity>::class(),
-                "set_IsPlayCompleted",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingCleaningVoiceData as ::unity2::ClassIdentity>::NAME,
-                        "set_IsPlayCompleted",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_is_play_completed(this: RingCleaningVoiceData, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RingCleaningVoiceData, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_is_play_completed::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_unit_face_anim {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingCleaningVoiceData as ::unity2::ClassIdentity>::class(),
-                "get_UnitFaceAnim",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingCleaningVoiceData as ::unity2::ClassIdentity>::NAME,
-                        "get_UnitFaceAnim",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_unit_face_anim(this: RingCleaningVoiceData, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(RingCleaningVoiceData, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_unit_face_anim::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_unit_face_anim {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingCleaningVoiceData as ::unity2::ClassIdentity>::class(),
-                "set_UnitFaceAnim",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingCleaningVoiceData as ::unity2::ClassIdentity>::NAME,
-                        "set_UnitFaceAnim",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_unit_face_anim(
-        this: RingCleaningVoiceData,
-        value: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RingCleaningVoiceData, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_unit_face_anim::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_god_face_anim {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingCleaningVoiceData as ::unity2::ClassIdentity>::class(),
-                "get_GodFaceAnim",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingCleaningVoiceData as ::unity2::ClassIdentity>::NAME,
-                        "get_GodFaceAnim",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_god_face_anim(this: RingCleaningVoiceData, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(RingCleaningVoiceData, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_god_face_anim::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_god_face_anim {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingCleaningVoiceData as ::unity2::ClassIdentity>::class(),
-                "set_GodFaceAnim",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingCleaningVoiceData as ::unity2::ClassIdentity>::NAME,
-                        "set_GodFaceAnim",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_god_face_anim(
-        this: RingCleaningVoiceData,
-        value: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RingCleaningVoiceData, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_god_face_anim::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_debug_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingCleaningVoiceData as ::unity2::ClassIdentity>::class(),
-                "GetDebugName",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingCleaningVoiceData as ::unity2::ClassIdentity>::NAME,
-                        "GetDebugName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_debug_name(this: RingCleaningVoiceData, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(RingCleaningVoiceData, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_debug_name::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_event_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingCleaningVoiceData as ::unity2::ClassIdentity>::class(),
-                "GetEventName",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingCleaningVoiceData as ::unity2::ClassIdentity>::NAME,
-                        "GetEventName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_event_name(this: RingCleaningVoiceData, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(RingCleaningVoiceData, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_event_name::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_random_voice_event {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::godunit::GodUnit as ::unity2::IlType>::il_type(),
-                <crate::app::ringcleaningvoicedata::RingCleaningVoiceData_Situation as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingCleaningVoiceData as ::unity2::ClassIdentity>::class(),
-                "GetRandomVoiceEvent",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingCleaningVoiceData as ::unity2::ClassIdentity>::NAME,
-                        "GetRandomVoiceEvent",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_random_voice_event(
-        god: crate::app::godunit::GodUnit,
-        situation: crate::app::ringcleaningvoicedata::RingCleaningVoiceData_Situation,
-        is_finish: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::ringcleaningvoicedata::RingCleaningVoiceData {
-        let inner: extern "C" fn(
-            crate::app::godunit::GodUnit,
-            crate::app::ringcleaningvoicedata::RingCleaningVoiceData_Situation,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::ringcleaningvoicedata::RingCleaningVoiceData =
-            ::core::mem::transmute(__lookup_get_random_voice_event::get_method_info().method_ptr);
-        inner(god, situation, is_finish, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingCleaningVoiceData as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingCleaningVoiceData as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: RingCleaningVoiceData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RingCleaningVoiceData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingCleaningVoiceData as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingCleaningVoiceData as ::unity2::ClassIdentity>::NAME,
-                        ".cctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __RingCleaningVoiceData_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_load { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RingCleaningVoiceData as :: unity2 :: ClassIdentity > :: class () , "Load" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RingCleaningVoiceData as :: unity2 :: ClassIdentity > :: NAME , "Load" , e) , } } } pub unsafe fn load (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_load :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_label { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RingCleaningVoiceData as :: unity2 :: ClassIdentity > :: class () , "get_Label" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RingCleaningVoiceData as :: unity2 :: ClassIdentity > :: NAME , "get_Label" , e) , } } } pub unsafe fn get_label (this : RingCleaningVoiceData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: ringcleaningvoicedata :: RingCleaningVoiceData_VoiceLabel { let inner : extern "C" fn (RingCleaningVoiceData , :: unity2 :: OptionalMethod ,) -> crate :: app :: ringcleaningvoicedata :: RingCleaningVoiceData_VoiceLabel = :: core :: mem :: transmute (__lookup_get_label :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_label { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: ringcleaningvoicedata :: RingCleaningVoiceData_VoiceLabel as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RingCleaningVoiceData as :: unity2 :: ClassIdentity > :: class () , "set_Label" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RingCleaningVoiceData as :: unity2 :: ClassIdentity > :: NAME , "set_Label" , e) , } } } pub unsafe fn set_label (this : RingCleaningVoiceData , value : crate :: app :: ringcleaningvoicedata :: RingCleaningVoiceData_VoiceLabel , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RingCleaningVoiceData , crate :: app :: ringcleaningvoicedata :: RingCleaningVoiceData_VoiceLabel , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_label :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_play_situation { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RingCleaningVoiceData as :: unity2 :: ClassIdentity > :: class () , "get_PlaySituation" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RingCleaningVoiceData as :: unity2 :: ClassIdentity > :: NAME , "get_PlaySituation" , e) , } } } pub unsafe fn get_play_situation (this : RingCleaningVoiceData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: ringcleaningvoicedata :: RingCleaningVoiceData_Situation { let inner : extern "C" fn (RingCleaningVoiceData , :: unity2 :: OptionalMethod ,) -> crate :: app :: ringcleaningvoicedata :: RingCleaningVoiceData_Situation = :: core :: mem :: transmute (__lookup_get_play_situation :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_play_situation { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: ringcleaningvoicedata :: RingCleaningVoiceData_Situation as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RingCleaningVoiceData as :: unity2 :: ClassIdentity > :: class () , "set_PlaySituation" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RingCleaningVoiceData as :: unity2 :: ClassIdentity > :: NAME , "set_PlaySituation" , e) , } } } pub unsafe fn set_play_situation (this : RingCleaningVoiceData , value : crate :: app :: ringcleaningvoicedata :: RingCleaningVoiceData_Situation , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RingCleaningVoiceData , crate :: app :: ringcleaningvoicedata :: RingCleaningVoiceData_Situation , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_play_situation :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_is_play_completed { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RingCleaningVoiceData as :: unity2 :: ClassIdentity > :: class () , "get_IsPlayCompleted" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RingCleaningVoiceData as :: unity2 :: ClassIdentity > :: NAME , "get_IsPlayCompleted" , e) , } } } pub unsafe fn get_is_play_completed (this : RingCleaningVoiceData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (RingCleaningVoiceData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_is_play_completed :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_is_play_completed { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RingCleaningVoiceData as :: unity2 :: ClassIdentity > :: class () , "set_IsPlayCompleted" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RingCleaningVoiceData as :: unity2 :: ClassIdentity > :: NAME , "set_IsPlayCompleted" , e) , } } } pub unsafe fn set_is_play_completed (this : RingCleaningVoiceData , value : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RingCleaningVoiceData , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_is_play_completed :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_unit_face_anim { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RingCleaningVoiceData as :: unity2 :: ClassIdentity > :: class () , "get_UnitFaceAnim" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RingCleaningVoiceData as :: unity2 :: ClassIdentity > :: NAME , "get_UnitFaceAnim" , e) , } } } pub unsafe fn get_unit_face_anim (this : RingCleaningVoiceData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (RingCleaningVoiceData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_unit_face_anim :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_unit_face_anim { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RingCleaningVoiceData as :: unity2 :: ClassIdentity > :: class () , "set_UnitFaceAnim" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RingCleaningVoiceData as :: unity2 :: ClassIdentity > :: NAME , "set_UnitFaceAnim" , e) , } } } pub unsafe fn set_unit_face_anim (this : RingCleaningVoiceData , value : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RingCleaningVoiceData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_unit_face_anim :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_god_face_anim { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RingCleaningVoiceData as :: unity2 :: ClassIdentity > :: class () , "get_GodFaceAnim" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RingCleaningVoiceData as :: unity2 :: ClassIdentity > :: NAME , "get_GodFaceAnim" , e) , } } } pub unsafe fn get_god_face_anim (this : RingCleaningVoiceData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (RingCleaningVoiceData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_god_face_anim :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_god_face_anim { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RingCleaningVoiceData as :: unity2 :: ClassIdentity > :: class () , "set_GodFaceAnim" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RingCleaningVoiceData as :: unity2 :: ClassIdentity > :: NAME , "set_GodFaceAnim" , e) , } } } pub unsafe fn set_god_face_anim (this : RingCleaningVoiceData , value : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RingCleaningVoiceData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_god_face_anim :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_debug_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RingCleaningVoiceData as :: unity2 :: ClassIdentity > :: class () , "GetDebugName" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RingCleaningVoiceData as :: unity2 :: ClassIdentity > :: NAME , "GetDebugName" , e) , } } } pub unsafe fn get_debug_name (this : RingCleaningVoiceData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (RingCleaningVoiceData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_debug_name :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_event_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RingCleaningVoiceData as :: unity2 :: ClassIdentity > :: class () , "GetEventName" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RingCleaningVoiceData as :: unity2 :: ClassIdentity > :: NAME , "GetEventName" , e) , } } } pub unsafe fn get_event_name (this : RingCleaningVoiceData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (RingCleaningVoiceData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_event_name :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_random_voice_event { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: godunit :: GodUnit as :: unity2 :: IlType > :: il_type () , < crate :: app :: ringcleaningvoicedata :: RingCleaningVoiceData_Situation as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RingCleaningVoiceData as :: unity2 :: ClassIdentity > :: class () , "GetRandomVoiceEvent" , 3 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RingCleaningVoiceData as :: unity2 :: ClassIdentity > :: NAME , "GetRandomVoiceEvent" , e) , } } } pub unsafe fn get_random_voice_event (god : crate :: app :: godunit :: GodUnit , situation : crate :: app :: ringcleaningvoicedata :: RingCleaningVoiceData_Situation , is_finish : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: ringcleaningvoicedata :: RingCleaningVoiceData { let inner : extern "C" fn (crate :: app :: godunit :: GodUnit , crate :: app :: ringcleaningvoicedata :: RingCleaningVoiceData_Situation , bool , :: unity2 :: OptionalMethod ,) -> crate :: app :: ringcleaningvoicedata :: RingCleaningVoiceData = :: core :: mem :: transmute (__lookup_get_random_voice_event :: get_method_info () . method_ptr ,) ; inner (god , situation , is_finish , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RingCleaningVoiceData as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RingCleaningVoiceData as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : RingCleaningVoiceData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RingCleaningVoiceData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RingCleaningVoiceData as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RingCleaningVoiceData as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
+
+#[cfg(feature = "app-ringcleaningvoicedata")]
+impl RingCleaningVoiceData { # [doc = "`Load()` overload"] pub fn load () -> () { unsafe { __RingCleaningVoiceData_unity2_raw :: load (:: core :: option :: Option :: None) } } # [doc = "`GetRandomVoiceEvent(crate::app::godunit::GodUnit, crate::app::ringcleaningvoicedata::RingCleaningVoiceData_Situation, bool)` overload"] pub fn get_random_voice_event (god : impl :: core :: convert :: Into < crate :: app :: godunit :: GodUnit > , situation : impl :: core :: convert :: Into < crate :: app :: ringcleaningvoicedata :: RingCleaningVoiceData_Situation > , is_finish : impl :: core :: convert :: Into < bool >) -> crate :: app :: ringcleaningvoicedata :: RingCleaningVoiceData { unsafe { __RingCleaningVoiceData_unity2_raw :: get_random_voice_event (:: core :: convert :: Into :: into (god) , :: core :: convert :: Into :: into (situation) , :: core :: convert :: Into :: into (is_finish) , :: core :: option :: Option :: None) } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { __RingCleaningVoiceData_unity2_raw :: cctor (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-ringcleaningvoicedata")]
+pub trait IRingCleaningVoiceDataMethods : IRingCleaningVoiceData { # [doc = "`get_Label()` overload"] fn get_label (self ,) -> crate :: app :: ringcleaningvoicedata :: RingCleaningVoiceData_VoiceLabel { unsafe { let __receiver = < RingCleaningVoiceData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RingCleaningVoiceData_unity2_raw :: get_label (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_Label(crate::app::ringcleaningvoicedata::RingCleaningVoiceData_VoiceLabel)` overload"] fn set_label (self , value : impl :: core :: convert :: Into < crate :: app :: ringcleaningvoicedata :: RingCleaningVoiceData_VoiceLabel >) -> () { unsafe { let __receiver = < RingCleaningVoiceData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RingCleaningVoiceData_unity2_raw :: set_label (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_PlaySituation()` overload"] fn get_play_situation (self ,) -> crate :: app :: ringcleaningvoicedata :: RingCleaningVoiceData_Situation { unsafe { let __receiver = < RingCleaningVoiceData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RingCleaningVoiceData_unity2_raw :: get_play_situation (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_PlaySituation(crate::app::ringcleaningvoicedata::RingCleaningVoiceData_Situation)` overload"] fn set_play_situation (self , value : impl :: core :: convert :: Into < crate :: app :: ringcleaningvoicedata :: RingCleaningVoiceData_Situation >) -> () { unsafe { let __receiver = < RingCleaningVoiceData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RingCleaningVoiceData_unity2_raw :: set_play_situation (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_IsPlayCompleted()` overload"] fn get_is_play_completed (self ,) -> bool { unsafe { let __receiver = < RingCleaningVoiceData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RingCleaningVoiceData_unity2_raw :: get_is_play_completed (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_IsPlayCompleted(bool)` overload"] fn set_is_play_completed (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < RingCleaningVoiceData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RingCleaningVoiceData_unity2_raw :: set_is_play_completed (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_UnitFaceAnim()` overload"] fn get_unit_face_anim (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < RingCleaningVoiceData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RingCleaningVoiceData_unity2_raw :: get_unit_face_anim (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_UnitFaceAnim(::unity2::Il2CppString)` overload"] fn set_unit_face_anim (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < RingCleaningVoiceData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RingCleaningVoiceData_unity2_raw :: set_unit_face_anim (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_GodFaceAnim()` overload"] fn get_god_face_anim (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < RingCleaningVoiceData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RingCleaningVoiceData_unity2_raw :: get_god_face_anim (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_GodFaceAnim(::unity2::Il2CppString)` overload"] fn set_god_face_anim (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < RingCleaningVoiceData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RingCleaningVoiceData_unity2_raw :: set_god_face_anim (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`GetDebugName()` overload"] fn get_debug_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < RingCleaningVoiceData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RingCleaningVoiceData_unity2_raw :: get_debug_name (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetEventName()` overload"] fn get_event_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < RingCleaningVoiceData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RingCleaningVoiceData_unity2_raw :: get_event_name (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RingCleaningVoiceData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RingCleaningVoiceData_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-ringcleaningvoicedata")]
+impl < __T : IRingCleaningVoiceData > IRingCleaningVoiceDataMethods for __T { }
+
+#[cfg(feature = "app-ringcleaningvoicedata")]
+impl RingCleaningVoiceData { pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RingCleaningVoiceData_unity2_raw :: __lookup_load :: get_method_info () } pub fn get_label_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RingCleaningVoiceData_unity2_raw :: __lookup_get_label :: get_method_info () } pub fn set_label_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RingCleaningVoiceData_unity2_raw :: __lookup_set_label :: get_method_info () } pub fn get_play_situation_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RingCleaningVoiceData_unity2_raw :: __lookup_get_play_situation :: get_method_info () } pub fn set_play_situation_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RingCleaningVoiceData_unity2_raw :: __lookup_set_play_situation :: get_method_info () } pub fn get_is_play_completed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RingCleaningVoiceData_unity2_raw :: __lookup_get_is_play_completed :: get_method_info () } pub fn set_is_play_completed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RingCleaningVoiceData_unity2_raw :: __lookup_set_is_play_completed :: get_method_info () } pub fn get_unit_face_anim_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RingCleaningVoiceData_unity2_raw :: __lookup_get_unit_face_anim :: get_method_info () } pub fn set_unit_face_anim_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RingCleaningVoiceData_unity2_raw :: __lookup_set_unit_face_anim :: get_method_info () } pub fn get_god_face_anim_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RingCleaningVoiceData_unity2_raw :: __lookup_get_god_face_anim :: get_method_info () } pub fn set_god_face_anim_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RingCleaningVoiceData_unity2_raw :: __lookup_set_god_face_anim :: get_method_info () } pub fn get_debug_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RingCleaningVoiceData_unity2_raw :: __lookup_get_debug_name :: get_method_info () } pub fn get_event_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RingCleaningVoiceData_unity2_raw :: __lookup_get_event_name :: get_method_info () } pub fn get_random_voice_event_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RingCleaningVoiceData_unity2_raw :: __lookup_get_random_voice_event :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RingCleaningVoiceData_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RingCleaningVoiceData_unity2_raw :: __lookup_cctor :: get_method_info () } }
 
 #[cfg(feature = "app-ringcleaningvoicedata")]
 impl RingCleaningVoiceData {
-    #[doc = "`Load()` overload"]
-    pub fn load() -> () {
-        unsafe { __RingCleaningVoiceData_unity2_raw::load(::core::option::Option::None) }
-    }
-
-    #[doc = "`GetRandomVoiceEvent(crate::app::godunit::GodUnit, crate::app::ringcleaningvoicedata::RingCleaningVoiceData_Situation, bool)` overload"]
-    pub fn get_random_voice_event(
-        god: impl ::core::convert::Into<crate::app::godunit::GodUnit>,
-        situation: impl ::core::convert::Into<crate::app::ringcleaningvoicedata::RingCleaningVoiceData_Situation>,
-        is_finish: impl ::core::convert::Into<bool>,
-    ) -> crate::app::ringcleaningvoicedata::RingCleaningVoiceData {
-        unsafe {
-            __RingCleaningVoiceData_unity2_raw::get_random_voice_event(
-                ::core::convert::Into::into(god),
-                ::core::convert::Into::into(situation),
-                ::core::convert::Into::into(is_finish),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __RingCleaningVoiceData_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-ringcleaningvoicedata")]
-pub trait IRingCleaningVoiceDataMethods: IRingCleaningVoiceData {
-    #[doc = "`get_Label()` overload"]
-    fn get_label(self) -> crate::app::ringcleaningvoicedata::RingCleaningVoiceData_VoiceLabel {
-        unsafe {
-            let __receiver =
-                <RingCleaningVoiceData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RingCleaningVoiceData_unity2_raw::get_label(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_Label(crate::app::ringcleaningvoicedata::RingCleaningVoiceData_VoiceLabel)` overload"]
-    fn set_label(self, value: impl ::core::convert::Into<crate::app::ringcleaningvoicedata::RingCleaningVoiceData_VoiceLabel>) -> () {
-        unsafe {
-            let __receiver =
-                <RingCleaningVoiceData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RingCleaningVoiceData_unity2_raw::set_label(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_PlaySituation()` overload"]
-    fn get_play_situation(self) -> crate::app::ringcleaningvoicedata::RingCleaningVoiceData_Situation {
-        unsafe {
-            let __receiver =
-                <RingCleaningVoiceData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RingCleaningVoiceData_unity2_raw::get_play_situation(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_PlaySituation(crate::app::ringcleaningvoicedata::RingCleaningVoiceData_Situation)` overload"]
-    fn set_play_situation(self, value: impl ::core::convert::Into<crate::app::ringcleaningvoicedata::RingCleaningVoiceData_Situation>) -> () {
-        unsafe {
-            let __receiver =
-                <RingCleaningVoiceData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RingCleaningVoiceData_unity2_raw::set_play_situation(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_IsPlayCompleted()` overload"]
-    fn get_is_play_completed(self) -> bool {
-        unsafe {
-            let __receiver =
-                <RingCleaningVoiceData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RingCleaningVoiceData_unity2_raw::get_is_play_completed(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_IsPlayCompleted(bool)` overload"]
-    fn set_is_play_completed(self, value: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver =
-                <RingCleaningVoiceData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RingCleaningVoiceData_unity2_raw::set_is_play_completed(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_UnitFaceAnim()` overload"]
-    fn get_unit_face_anim(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver =
-                <RingCleaningVoiceData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RingCleaningVoiceData_unity2_raw::get_unit_face_anim(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_UnitFaceAnim(::unity2::Il2CppString)` overload"]
-    fn set_unit_face_anim(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver =
-                <RingCleaningVoiceData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RingCleaningVoiceData_unity2_raw::set_unit_face_anim(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_GodFaceAnim()` overload"]
-    fn get_god_face_anim(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver =
-                <RingCleaningVoiceData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RingCleaningVoiceData_unity2_raw::get_god_face_anim(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_GodFaceAnim(::unity2::Il2CppString)` overload"]
-    fn set_god_face_anim(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver =
-                <RingCleaningVoiceData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RingCleaningVoiceData_unity2_raw::set_god_face_anim(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetDebugName()` overload"]
-    fn get_debug_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver =
-                <RingCleaningVoiceData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RingCleaningVoiceData_unity2_raw::get_debug_name(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetEventName()` overload"]
-    fn get_event_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver =
-                <RingCleaningVoiceData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RingCleaningVoiceData_unity2_raw::get_event_name(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <RingCleaningVoiceData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RingCleaningVoiceData_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-ringcleaningvoicedata")]
-impl<__T: IRingCleaningVoiceData> IRingCleaningVoiceDataMethods for __T {}
-
-#[cfg(feature = "app-ringcleaningvoicedata")]
-impl RingCleaningVoiceData {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RingCleaningVoiceData),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRingCleaningVoiceDataMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RingCleaningVoiceData) , :: core :: stringify ! (new) ,)) ; < Self as IRingCleaningVoiceDataMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-ringcleaningvoicedata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{
-        IRingCleaningVoiceData, IRingCleaningVoiceDataMethods, RingCleaningVoiceData, RingCleaningVoiceData_Situation,
-        RingCleaningVoiceData_VoiceLabel,
-    };
-    #[cfg(feature = "app-structbase")]
-    pub use crate::app::structbase::IStructBaseMethods;
-    #[cfg(feature = "app-structdataarray_1")]
-    pub use crate::app::structdataarray_1::IStructDataArray_1Methods;
-    #[cfg(feature = "app-structtemplate_1")]
-    pub use crate::app::structtemplate_1::IStructTemplate_1Methods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::{
-        app::{structbase::IStructBase, structdataarray_1::IStructDataArray_1, structtemplate_1::IStructTemplate_1},
-        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
-    };
+    pub use super::RingCleaningVoiceData_Situation;
+    pub use super::RingCleaningVoiceData;
+    pub use super::IRingCleaningVoiceData;
+    pub use super::IRingCleaningVoiceDataMethods;
+    pub use super::RingCleaningVoiceData_VoiceLabel;
+    pub use crate::app::structbase::IStructBase;
+    pub use crate::app::structdataarray_1::IStructDataArray_1;
+    pub use crate::app::structtemplate_1::IStructTemplate_1;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "app-structbase")] pub use crate::app::structbase::IStructBaseMethods;
+    #[cfg(feature = "app-structdataarray_1")] pub use crate::app::structdataarray_1::IStructDataArray_1Methods;
+    #[cfg(feature = "app-structtemplate_1")] pub use crate::app::structtemplate_1::IStructTemplate_1Methods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

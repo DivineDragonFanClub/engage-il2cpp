@@ -2,759 +2,167 @@
 
 #[cfg(feature = "root-windactor-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::{
-            delegate::{Delegate, IDelegate},
-            multicastdelegate::{IMulticastDelegate, MulticastDelegate},
-            object::{IObject, Object},
-            r#enum::{Enum, IEnum},
-            valuetype::{IValueType, ValueType},
-        },
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/windactor/WindActor_Func.md"))]
-    #[::unity2::class(namespace = "", name = "WindActor.Func")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct WindActor_Func {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: delegate :: { Delegate , IDelegate }
+ ;
+ use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/windactor/WindActor_Kind.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct WindActor_Kind {
-        pub value: i32,
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/windactor/WindActor.md"))] # [:: unity2 :: class (namespace = "" , name = "WindActor")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct WindActor {
+# [offset (24)] # [rename (name = "m_Kind")] pub m_kind : crate :: root :: windactor :: WindActor_Kind ,
+# [offset (28)] # [rename (name = "m_Power")] pub m_power : f32 ,
+# [offset (32)] # [rename (name = "m_Radius")] pub m_radius : f32 ,
+# [offset (36)] # [rename (name = "m_Life")] pub m_life : f32 ,
+# [offset (40)] # [rename (name = "m_Speed")] pub m_speed : f32 ,
+# [offset (44)] # [rename (name = "m_Angle")] pub m_angle : f32 ,
+# [offset (48)] # [rename (name = "m_Range")] pub m_range : crate :: unity_engine :: vector2 :: Vector2 ,
+# [offset (56)] # [rename (name = "m_Time")] pub m_time : f32 ,
+# [offset (64)] # [rename (name = "m_Funcs")] pub m_funcs : :: unity2 :: Array < crate :: root :: windactor :: WindActor_Func > ,
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/windactor/WindActor_Kind.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct WindActor_Kind  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for WindActor_Kind  {
+    const NAMESPACE: &'static str = "";
+
+    const NAME: &'static str = "WindActor.Kind";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    impl ::unity2::ClassIdentity for WindActor_Kind {
-        const NAME: &'static str = "WindActor.Kind";
-        const NAMESPACE: &'static str = "";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  ::unity2::IlType for WindActor_Kind  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::IlType for WindActor_Kind {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  WindActor_Kind  {
+    pub fn none() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl WindActor_Kind {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn directional() -> Self {
-            Self { value: 1 }
-        }
+    pub fn directional() -> Self {
+        Self { value: 1 }
 
-        pub fn sphere() -> Self {
-            Self { value: 2 }
-        }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/windactor/WindActor.md"))]
-    #[::unity2::class(namespace = "", name = "WindActor")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct WindActor {
-        #[offset(24)]
-        #[rename(name = "m_Kind")]
-        pub m_kind: crate::root::windactor::WindActor_Kind,
-        #[offset(28)]
-        #[rename(name = "m_Power")]
-        pub m_power: f32,
-        #[offset(32)]
-        #[rename(name = "m_Radius")]
-        pub m_radius: f32,
-        #[offset(36)]
-        #[rename(name = "m_Life")]
-        pub m_life: f32,
-        #[offset(40)]
-        #[rename(name = "m_Speed")]
-        pub m_speed: f32,
-        #[offset(44)]
-        #[rename(name = "m_Angle")]
-        pub m_angle: f32,
-        #[offset(48)]
-        #[rename(name = "m_Range")]
-        pub m_range: crate::unity_engine::vector2::Vector2,
-        #[offset(56)]
-        #[rename(name = "m_Time")]
-        pub m_time: f32,
-        #[offset(64)]
-        #[rename(name = "m_Funcs")]
-        pub m_funcs: ::unity2::Array<crate::root::windactor::WindActor_Func>,
+
+    pub fn sphere() -> Self {
+        Self { value: 2 }
+
     }
+
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/windactor/WindActor_Func.md"))] # [:: unity2 :: class (namespace = "" , name = "WindActor.Func")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct WindActor_Func {}
+
 }
 
 #[cfg(feature = "root-windactor-types")]
 pub use __types::*;
 
 #[cfg(feature = "root-windactor")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __WindActor_Func_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WindActor_Func as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WindActor_Func as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: WindActor_Func,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(WindActor_Func, crate::system::object::Object, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WindActor_Func as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WindActor_Func as ::unity2::ClassIdentity>::NAME,
-                        "Invoke",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn invoke(
-        this: WindActor_Func,
-        pos: crate::unity_engine::vector3::Vector3,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::vector3::Vector3 {
-        let inner: extern "C" fn(
-            WindActor_Func,
-            crate::unity_engine::vector3::Vector3,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
-        inner(this, pos, __unity2_method_info)
-    }
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __WindActor_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_func_none { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WindActor as :: unity2 :: ClassIdentity > :: class () , "FuncNone" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WindActor as :: unity2 :: ClassIdentity > :: NAME , "FuncNone" , e) , } } } pub unsafe fn func_none (this : WindActor , pos : crate :: unity_engine :: vector3 :: Vector3 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 { let inner : extern "C" fn (WindActor , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute (__lookup_func_none :: get_method_info () . method_ptr ,) ; inner (this , pos , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_func_directional { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WindActor as :: unity2 :: ClassIdentity > :: class () , "FuncDirectional" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WindActor as :: unity2 :: ClassIdentity > :: NAME , "FuncDirectional" , e) , } } } pub unsafe fn func_directional (this : WindActor , pos : crate :: unity_engine :: vector3 :: Vector3 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 { let inner : extern "C" fn (WindActor , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute (__lookup_func_directional :: get_method_info () . method_ptr ,) ; inner (this , pos , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_func_sphere { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WindActor as :: unity2 :: ClassIdentity > :: class () , "FuncSphere" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WindActor as :: unity2 :: ClassIdentity > :: NAME , "FuncSphere" , e) , } } } pub unsafe fn func_sphere (this : WindActor , pos : crate :: unity_engine :: vector3 :: Vector3 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 { let inner : extern "C" fn (WindActor , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute (__lookup_func_sphere :: get_method_info () . method_ptr ,) ; inner (this , pos , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_awake { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WindActor as :: unity2 :: ClassIdentity > :: class () , "Awake" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WindActor as :: unity2 :: ClassIdentity > :: NAME , "Awake" , e) , } } } pub unsafe fn awake (this : WindActor , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (WindActor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_awake :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_start { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WindActor as :: unity2 :: ClassIdentity > :: class () , "Start" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WindActor as :: unity2 :: ClassIdentity > :: NAME , "Start" , e) , } } } pub unsafe fn start (this : WindActor , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (WindActor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_start :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WindActor as :: unity2 :: ClassIdentity > :: class () , "Update" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WindActor as :: unity2 :: ClassIdentity > :: NAME , "Update" , e) , } } } pub unsafe fn update (this : WindActor , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (WindActor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_calculate { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WindActor as :: unity2 :: ClassIdentity > :: class () , "Calculate" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WindActor as :: unity2 :: ClassIdentity > :: NAME , "Calculate" , e) , } } } pub unsafe fn calculate (this : WindActor , pos : crate :: unity_engine :: vector3 :: Vector3 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 { let inner : extern "C" fn (WindActor , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute (__lookup_calculate :: get_method_info () . method_ptr ,) ; inner (this , pos , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_draw_gizmos { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WindActor as :: unity2 :: ClassIdentity > :: class () , "OnDrawGizmos" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WindActor as :: unity2 :: ClassIdentity > :: NAME , "OnDrawGizmos" , e) , } } } pub unsafe fn on_draw_gizmos (this : WindActor , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (WindActor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_draw_gizmos :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_enable { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WindActor as :: unity2 :: ClassIdentity > :: class () , "OnEnable" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WindActor as :: unity2 :: ClassIdentity > :: NAME , "OnEnable" , e) , } } } pub unsafe fn on_enable (this : WindActor , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (WindActor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_enable :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_disable { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WindActor as :: unity2 :: ClassIdentity > :: class () , "OnDisable" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WindActor as :: unity2 :: ClassIdentity > :: NAME , "OnDisable" , e) , } } } pub unsafe fn on_disable (this : WindActor , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (WindActor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_disable :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_draw_wind { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: color :: Color as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WindActor as :: unity2 :: ClassIdentity > :: class () , "DrawWind" , 3 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WindActor as :: unity2 :: ClassIdentity > :: NAME , "DrawWind" , e) , } } } pub unsafe fn draw_wind (pos : crate :: unity_engine :: vector3 :: Vector3 , dir : crate :: unity_engine :: vector3 :: Vector3 , color : crate :: unity_engine :: color :: Color , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: color :: Color , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_draw_wind :: get_method_info () . method_ptr ,) ; inner (pos , dir , color , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WindActor as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WindActor as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : WindActor , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (WindActor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "root-windactor")]
+impl WindActor { # [doc = "`DrawWind(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, crate::unity_engine::color::Color)` overload"] pub fn draw_wind (pos : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , dir : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , color : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color >) -> () { unsafe { __WindActor_unity2_raw :: draw_wind (:: core :: convert :: Into :: into (pos) , :: core :: convert :: Into :: into (dir) , :: core :: convert :: Into :: into (color) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "root-windactor")]
+pub trait IWindActorMethods : IWindActor { # [doc = "`FuncNone(crate::unity_engine::vector3::Vector3)` overload"] fn func_none (self , pos : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < WindActor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __WindActor_unity2_raw :: func_none (__receiver , :: core :: convert :: Into :: into (pos) , :: core :: option :: Option :: None) } } # [doc = "`FuncDirectional(crate::unity_engine::vector3::Vector3)` overload"] fn func_directional (self , pos : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < WindActor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __WindActor_unity2_raw :: func_directional (__receiver , :: core :: convert :: Into :: into (pos) , :: core :: option :: Option :: None) } } # [doc = "`FuncSphere(crate::unity_engine::vector3::Vector3)` overload"] fn func_sphere (self , pos : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < WindActor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __WindActor_unity2_raw :: func_sphere (__receiver , :: core :: convert :: Into :: into (pos) , :: core :: option :: Option :: None) } } # [doc = "`Awake()` overload"] fn awake (self ,) -> () { unsafe { let __receiver = < WindActor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __WindActor_unity2_raw :: awake (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < WindActor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __WindActor_unity2_raw :: start (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < WindActor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __WindActor_unity2_raw :: update (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Calculate(crate::unity_engine::vector3::Vector3)` overload"] fn calculate (self , pos : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < WindActor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __WindActor_unity2_raw :: calculate (__receiver , :: core :: convert :: Into :: into (pos) , :: core :: option :: Option :: None) } } # [doc = "`OnDrawGizmos()` overload"] fn on_draw_gizmos (self ,) -> () { unsafe { let __receiver = < WindActor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __WindActor_unity2_raw :: on_draw_gizmos (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnEnable()` overload"] fn on_enable (self ,) -> () { unsafe { let __receiver = < WindActor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __WindActor_unity2_raw :: on_enable (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnDisable()` overload"] fn on_disable (self ,) -> () { unsafe { let __receiver = < WindActor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __WindActor_unity2_raw :: on_disable (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < WindActor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __WindActor_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "root-windactor")]
+impl < __T : IWindActor > IWindActorMethods for __T { }
+
+#[cfg(feature = "root-windactor")]
+impl WindActor { pub fn func_none_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WindActor_unity2_raw :: __lookup_func_none :: get_method_info () } pub fn func_directional_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WindActor_unity2_raw :: __lookup_func_directional :: get_method_info () } pub fn func_sphere_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WindActor_unity2_raw :: __lookup_func_sphere :: get_method_info () } pub fn awake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WindActor_unity2_raw :: __lookup_awake :: get_method_info () } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WindActor_unity2_raw :: __lookup_start :: get_method_info () } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WindActor_unity2_raw :: __lookup_update :: get_method_info () } pub fn calculate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WindActor_unity2_raw :: __lookup_calculate :: get_method_info () } pub fn on_draw_gizmos_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WindActor_unity2_raw :: __lookup_on_draw_gizmos :: get_method_info () } pub fn on_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WindActor_unity2_raw :: __lookup_on_enable :: get_method_info () } pub fn on_disable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WindActor_unity2_raw :: __lookup_on_disable :: get_method_info () } pub fn draw_wind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WindActor_unity2_raw :: __lookup_draw_wind :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WindActor_unity2_raw :: __lookup_ctor :: get_method_info () } }
+
+#[cfg(feature = "root-windactor")]
+impl WindActor {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (WindActor) , :: core :: stringify ! (new) ,)) ; < Self as IWindActorMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "root-windactor")]
-pub trait IWindActor_FuncMethods: IWindActor_Func {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
-        unsafe {
-            let __receiver = <WindActor_Func as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __WindActor_Func_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invoke(crate::unity_engine::vector3::Vector3)` overload"]
-    fn invoke(self, pos: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>) -> crate::unity_engine::vector3::Vector3 {
-        unsafe {
-            let __receiver = <WindActor_Func as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __WindActor_Func_unity2_raw::invoke(__receiver, ::core::convert::Into::into(pos), ::core::option::Option::None)
-        }
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __WindActor_Func_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type () , < :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WindActor_Func as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WindActor_Func as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : WindActor_Func , object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (WindActor_Func , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , object , method , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_invoke { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WindActor_Func as :: unity2 :: ClassIdentity > :: class () , "Invoke" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WindActor_Func as :: unity2 :: ClassIdentity > :: NAME , "Invoke" , e) , } } } pub unsafe fn invoke (this : WindActor_Func , pos : crate :: unity_engine :: vector3 :: Vector3 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 { let inner : extern "C" fn (WindActor_Func , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute (__lookup_invoke :: get_method_info () . method_ptr ,) ; inner (this , pos , __unity2_method_info) } }
 
 #[cfg(feature = "root-windactor")]
-impl<__T: IWindActor_Func> IWindActor_FuncMethods for __T {}
+pub trait IWindActor_FuncMethods : IWindActor_Func { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < WindActor_Func as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __WindActor_Func_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } # [doc = "`Invoke(crate::unity_engine::vector3::Vector3)` overload"] fn invoke (self , pos : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < WindActor_Func as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __WindActor_Func_unity2_raw :: invoke (__receiver , :: core :: convert :: Into :: into (pos) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "root-windactor")]
+impl < __T : IWindActor_Func > IWindActor_FuncMethods for __T { }
+
+#[cfg(feature = "root-windactor")]
+impl WindActor_Func { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WindActor_Func_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WindActor_Func_unity2_raw :: __lookup_invoke :: get_method_info () } }
 
 #[cfg(feature = "root-windactor")]
 impl WindActor_Func {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(WindActor_Func),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IWindActor_FuncMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-#[cfg(feature = "root-windactor")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __WindActor_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_func_none {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<WindActor as ::unity2::ClassIdentity>::class(), "FuncNone", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WindActor as ::unity2::ClassIdentity>::NAME,
-                        "FuncNone",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn func_none(
-        this: WindActor,
-        pos: crate::unity_engine::vector3::Vector3,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::vector3::Vector3 {
-        let inner: extern "C" fn(
-            WindActor,
-            crate::unity_engine::vector3::Vector3,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(__lookup_func_none::get_method_info().method_ptr);
-        inner(this, pos, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_func_directional {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WindActor as ::unity2::ClassIdentity>::class(),
-                "FuncDirectional",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WindActor as ::unity2::ClassIdentity>::NAME,
-                        "FuncDirectional",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn func_directional(
-        this: WindActor,
-        pos: crate::unity_engine::vector3::Vector3,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::vector3::Vector3 {
-        let inner: extern "C" fn(
-            WindActor,
-            crate::unity_engine::vector3::Vector3,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(__lookup_func_directional::get_method_info().method_ptr);
-        inner(this, pos, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_func_sphere {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WindActor as ::unity2::ClassIdentity>::class(),
-                "FuncSphere",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WindActor as ::unity2::ClassIdentity>::NAME,
-                        "FuncSphere",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn func_sphere(
-        this: WindActor,
-        pos: crate::unity_engine::vector3::Vector3,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::vector3::Vector3 {
-        let inner: extern "C" fn(
-            WindActor,
-            crate::unity_engine::vector3::Vector3,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(__lookup_func_sphere::get_method_info().method_ptr);
-        inner(this, pos, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_awake {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<WindActor as ::unity2::ClassIdentity>::class(), "Awake", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WindActor as ::unity2::ClassIdentity>::NAME,
-                        "Awake",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn awake(this: WindActor, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(WindActor, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_awake::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_start {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<WindActor as ::unity2::ClassIdentity>::class(), "Start", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WindActor as ::unity2::ClassIdentity>::NAME,
-                        "Start",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn start(this: WindActor, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(WindActor, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_start::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<WindActor as ::unity2::ClassIdentity>::class(), "Update", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WindActor as ::unity2::ClassIdentity>::NAME,
-                        "Update",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update(this: WindActor, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(WindActor, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_update::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calculate {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<WindActor as ::unity2::ClassIdentity>::class(), "Calculate", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WindActor as ::unity2::ClassIdentity>::NAME,
-                        "Calculate",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn calculate(
-        this: WindActor,
-        pos: crate::unity_engine::vector3::Vector3,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::vector3::Vector3 {
-        let inner: extern "C" fn(
-            WindActor,
-            crate::unity_engine::vector3::Vector3,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(__lookup_calculate::get_method_info().method_ptr);
-        inner(this, pos, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_draw_gizmos {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WindActor as ::unity2::ClassIdentity>::class(),
-                "OnDrawGizmos",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WindActor as ::unity2::ClassIdentity>::NAME,
-                        "OnDrawGizmos",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_draw_gizmos(this: WindActor, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(WindActor, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_draw_gizmos::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_enable {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<WindActor as ::unity2::ClassIdentity>::class(), "OnEnable", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WindActor as ::unity2::ClassIdentity>::NAME,
-                        "OnEnable",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_enable(this: WindActor, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(WindActor, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_enable::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_disable {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<WindActor as ::unity2::ClassIdentity>::class(), "OnDisable", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WindActor as ::unity2::ClassIdentity>::NAME,
-                        "OnDisable",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_disable(this: WindActor, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(WindActor, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_disable::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_draw_wind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<WindActor as ::unity2::ClassIdentity>::class(), "DrawWind", 3, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WindActor as ::unity2::ClassIdentity>::NAME,
-                        "DrawWind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn draw_wind(
-        pos: crate::unity_engine::vector3::Vector3,
-        dir: crate::unity_engine::vector3::Vector3,
-        color: crate::unity_engine::color::Color,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::vector3::Vector3,
-            crate::unity_engine::vector3::Vector3,
-            crate::unity_engine::color::Color,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_draw_wind::get_method_info().method_ptr);
-        inner(pos, dir, color, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<WindActor as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WindActor as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: WindActor, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(WindActor, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "root-windactor")]
-impl WindActor {
-    #[doc = "`DrawWind(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, crate::unity_engine::color::Color)` overload"]
-    pub fn draw_wind(
-        pos: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-        dir: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-        color: impl ::core::convert::Into<crate::unity_engine::color::Color>,
-    ) -> () {
-        unsafe {
-            __WindActor_unity2_raw::draw_wind(
-                ::core::convert::Into::into(pos),
-                ::core::convert::Into::into(dir),
-                ::core::convert::Into::into(color),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "root-windactor")]
-pub trait IWindActorMethods: IWindActor {
-    #[doc = "`FuncNone(crate::unity_engine::vector3::Vector3)` overload"]
-    fn func_none(self, pos: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>) -> crate::unity_engine::vector3::Vector3 {
-        unsafe {
-            let __receiver = <WindActor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __WindActor_unity2_raw::func_none(__receiver, ::core::convert::Into::into(pos), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`FuncDirectional(crate::unity_engine::vector3::Vector3)` overload"]
-    fn func_directional(self, pos: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>) -> crate::unity_engine::vector3::Vector3 {
-        unsafe {
-            let __receiver = <WindActor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __WindActor_unity2_raw::func_directional(__receiver, ::core::convert::Into::into(pos), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`FuncSphere(crate::unity_engine::vector3::Vector3)` overload"]
-    fn func_sphere(self, pos: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>) -> crate::unity_engine::vector3::Vector3 {
-        unsafe {
-            let __receiver = <WindActor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __WindActor_unity2_raw::func_sphere(__receiver, ::core::convert::Into::into(pos), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Awake()` overload"]
-    fn awake(self) -> () {
-        unsafe {
-            let __receiver = <WindActor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __WindActor_unity2_raw::awake(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Start()` overload"]
-    fn start(self) -> () {
-        unsafe {
-            let __receiver = <WindActor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __WindActor_unity2_raw::start(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Update()` overload"]
-    fn update(self) -> () {
-        unsafe {
-            let __receiver = <WindActor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __WindActor_unity2_raw::update(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Calculate(crate::unity_engine::vector3::Vector3)` overload"]
-    fn calculate(self, pos: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>) -> crate::unity_engine::vector3::Vector3 {
-        unsafe {
-            let __receiver = <WindActor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __WindActor_unity2_raw::calculate(__receiver, ::core::convert::Into::into(pos), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnDrawGizmos()` overload"]
-    fn on_draw_gizmos(self) -> () {
-        unsafe {
-            let __receiver = <WindActor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __WindActor_unity2_raw::on_draw_gizmos(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnEnable()` overload"]
-    fn on_enable(self) -> () {
-        unsafe {
-            let __receiver = <WindActor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __WindActor_unity2_raw::on_enable(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnDisable()` overload"]
-    fn on_disable(self) -> () {
-        unsafe {
-            let __receiver = <WindActor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __WindActor_unity2_raw::on_disable(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <WindActor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __WindActor_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "root-windactor")]
-impl<__T: IWindActor> IWindActorMethods for __T {}
-
-#[cfg(feature = "root-windactor")]
-impl WindActor {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(WindActor), ::core::stringify!(new),));
-        <Self as IWindActorMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (WindActor_Func) , :: core :: stringify ! (new) ,)) ; < Self as IWindActor_FuncMethods > :: ctor (this , object , method) ; this }
 }
 
 #[cfg(feature = "root-windactor")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IWindActor, IWindActorMethods, IWindActor_Func, IWindActor_FuncMethods, WindActor, WindActor_Func, WindActor_Kind};
-    #[cfg(feature = "system-delegate")]
-    pub use crate::system::delegate::IDelegateMethods;
-    #[cfg(feature = "system-multicastdelegate")]
-    pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        system::{delegate::IDelegate, multicastdelegate::IMulticastDelegate, object::IObject, r#enum::IEnum, valuetype::IValueType},
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::WindActor;
+    pub use super::IWindActor;
+    pub use super::IWindActorMethods;
+    pub use super::WindActor_Kind;
+    pub use super::WindActor_Func;
+    pub use super::IWindActor_Func;
+    pub use super::IWindActor_FuncMethods;
+    pub use crate::system::delegate::IDelegate;
+    pub use crate::system::multicastdelegate::IMulticastDelegate;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "system-delegate")] pub use crate::system::delegate::IDelegateMethods;
+    #[cfg(feature = "system-multicastdelegate")] pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

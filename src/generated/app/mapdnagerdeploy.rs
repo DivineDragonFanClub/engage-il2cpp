@@ -2,108 +2,51 @@
 
 #[cfg(feature = "app-mapdnagerdeploy-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::{
-            mapdeploytemplate_1::{IMapDeployTemplate_1, MapDeployTemplate_1},
-            singletonclass_1::{ISingletonClass_1, SingletonClass_1},
-        },
-        system::object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapdnagerdeploy/MapDnagerDeploy.md"))]
-    #[::unity2::class(namespace = "App", name = "MapDnagerDeploy")]
-    # [parent (crate :: app :: mapdeploytemplate_1 :: MapDeployTemplate_1 < crate :: app :: mapdnagerdeploy :: MapDnagerDeploy >)]
-    pub struct MapDnagerDeploy {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: mapdeploytemplate_1 :: { IMapDeployTemplate_1 , MapDeployTemplate_1 }
+ ;
+ use crate :: app :: singletonclass_1 :: { ISingletonClass_1 , SingletonClass_1 }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapdnagerdeploy/MapDnagerDeploy.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapDnagerDeploy")] # [parent (crate :: app :: mapdeploytemplate_1 :: MapDeployTemplate_1 < crate :: app :: mapdnagerdeploy :: MapDnagerDeploy >)] pub struct MapDnagerDeploy {}
+
 }
 
 #[cfg(feature = "app-mapdnagerdeploy-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-mapdnagerdeploy")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapDnagerDeploy_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapDnagerDeploy as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapDnagerDeploy as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: MapDnagerDeploy, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapDnagerDeploy, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MapDnagerDeploy_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapDnagerDeploy as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapDnagerDeploy as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : MapDnagerDeploy , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapDnagerDeploy , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-mapdnagerdeploy")]
-pub trait IMapDnagerDeployMethods: IMapDnagerDeploy {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <MapDnagerDeploy as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapDnagerDeploy_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IMapDnagerDeployMethods : IMapDnagerDeploy { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapDnagerDeploy as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapDnagerDeploy_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-mapdnagerdeploy")]
-impl<__T: IMapDnagerDeploy> IMapDnagerDeployMethods for __T {}
+impl < __T : IMapDnagerDeploy > IMapDnagerDeployMethods for __T { }
+
+#[cfg(feature = "app-mapdnagerdeploy")]
+impl MapDnagerDeploy { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapDnagerDeploy_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-mapdnagerdeploy")]
 impl MapDnagerDeploy {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapDnagerDeploy),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapDnagerDeployMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapDnagerDeploy) , :: core :: stringify ! (new) ,)) ; < Self as IMapDnagerDeployMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-mapdnagerdeploy")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IMapDnagerDeploy, IMapDnagerDeployMethods, MapDnagerDeploy};
-    #[cfg(feature = "app-mapdeploytemplate_1")]
-    pub use crate::app::mapdeploytemplate_1::IMapDeployTemplate_1Methods;
-    #[cfg(feature = "app-singletonclass_1")]
-    pub use crate::app::singletonclass_1::ISingletonClass_1Methods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::{
-        app::{mapdeploytemplate_1::IMapDeployTemplate_1, singletonclass_1::ISingletonClass_1},
-        system::object::IObject,
-    };
+    pub use super::MapDnagerDeploy;
+    pub use super::IMapDnagerDeploy;
+    pub use super::IMapDnagerDeployMethods;
+    pub use crate::app::mapdeploytemplate_1::IMapDeployTemplate_1;
+    pub use crate::app::singletonclass_1::ISingletonClass_1;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "app-mapdeploytemplate_1")] pub use crate::app::mapdeploytemplate_1::IMapDeployTemplate_1Methods;
+    #[cfg(feature = "app-singletonclass_1")] pub use crate::app::singletonclass_1::ISingletonClass_1Methods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

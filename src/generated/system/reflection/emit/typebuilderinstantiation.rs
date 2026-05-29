@@ -2,102 +2,42 @@
 
 #[cfg(feature = "system-reflection-emit-typebuilderinstantiation-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        reflection::{
-            memberinfo::{IMemberInfo, MemberInfo},
-            typeinfo::{ITypeInfo, TypeInfo},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/emit/typebuilderinstantiation/TypeBuilderInstantiation.md"))]
-    #[::unity2::class(namespace = "System.Reflection.Emit", name = "TypeBuilderInstantiation")]
-    #[parent(crate::system::reflection::typeinfo::TypeInfo)]
-    pub struct TypeBuilderInstantiation {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: reflection :: memberinfo :: { IMemberInfo , MemberInfo }
+ ;
+ use crate :: system :: reflection :: typeinfo :: { ITypeInfo , TypeInfo }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/emit/typebuilderinstantiation/TypeBuilderInstantiation.md"))] # [:: unity2 :: class (namespace = "System.Reflection.Emit" , name = "TypeBuilderInstantiation")] # [parent (crate :: system :: reflection :: typeinfo :: TypeInfo)] pub struct TypeBuilderInstantiation {}
+
 }
 
 #[cfg(feature = "system-reflection-emit-typebuilderinstantiation-types")]
 pub use __types::*;
 
 #[cfg(feature = "system-reflection-emit-typebuilderinstantiation")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __TypeBuilderInstantiation_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_make_generic_type {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::SystemType as ::unity2::IlType>::il_type(),
-                <::unity2::Array<::unity2::SystemType> as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TypeBuilderInstantiation as ::unity2::ClassIdentity>::class(),
-                "MakeGenericType",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TypeBuilderInstantiation as ::unity2::ClassIdentity>::NAME,
-                        "MakeGenericType",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn make_generic_type(
-        r#type: ::unity2::SystemType,
-        type_arguments: ::unity2::Array<::unity2::SystemType>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::SystemType {
-        let inner: extern "C" fn(::unity2::SystemType, ::unity2::Array<::unity2::SystemType>, ::unity2::OptionalMethod) -> ::unity2::SystemType =
-            ::core::mem::transmute(__lookup_make_generic_type::get_method_info().method_ptr);
-        inner(r#type, type_arguments, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __TypeBuilderInstantiation_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_make_generic_type { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: SystemType as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < :: unity2 :: SystemType > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TypeBuilderInstantiation as :: unity2 :: ClassIdentity > :: class () , "MakeGenericType" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TypeBuilderInstantiation as :: unity2 :: ClassIdentity > :: NAME , "MakeGenericType" , e) , } } } pub unsafe fn make_generic_type (r#type : :: unity2 :: SystemType , type_arguments : :: unity2 :: Array < :: unity2 :: SystemType > , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: SystemType { let inner : extern "C" fn (:: unity2 :: SystemType , :: unity2 :: Array < :: unity2 :: SystemType > , :: unity2 :: OptionalMethod ,) -> :: unity2 :: SystemType = :: core :: mem :: transmute (__lookup_make_generic_type :: get_method_info () . method_ptr ,) ; inner (r#type , type_arguments , __unity2_method_info) } }
 
 #[cfg(feature = "system-reflection-emit-typebuilderinstantiation")]
-impl TypeBuilderInstantiation {
-    #[doc = "`MakeGenericType(::unity2::SystemType, ::unity2::Array<::unity2::SystemType>)` overload"]
-    pub fn make_generic_type(
-        r#type: impl ::core::convert::Into<::unity2::SystemType>,
-        type_arguments: impl ::core::convert::Into<::unity2::Array<::unity2::SystemType>>,
-    ) -> ::unity2::SystemType {
-        unsafe {
-            __TypeBuilderInstantiation_unity2_raw::make_generic_type(
-                ::core::convert::Into::into(r#type),
-                ::core::convert::Into::into(type_arguments),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+impl TypeBuilderInstantiation { # [doc = "`MakeGenericType(::unity2::SystemType, ::unity2::Array<::unity2::SystemType>)` overload"] pub fn make_generic_type (r#type : impl :: core :: convert :: Into < :: unity2 :: SystemType > , type_arguments : impl :: core :: convert :: Into < :: unity2 :: Array < :: unity2 :: SystemType > >) -> :: unity2 :: SystemType { unsafe { __TypeBuilderInstantiation_unity2_raw :: make_generic_type (:: core :: convert :: Into :: into (r#type) , :: core :: convert :: Into :: into (type_arguments) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "system-reflection-emit-typebuilderinstantiation")]
+impl TypeBuilderInstantiation { pub fn make_generic_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TypeBuilderInstantiation_unity2_raw :: __lookup_make_generic_type :: get_method_info () } }
 
 #[cfg(feature = "system-reflection-emit-typebuilderinstantiation")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{ITypeBuilderInstantiation, TypeBuilderInstantiation};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-reflection-memberinfo")]
-    pub use crate::system::reflection::memberinfo::IMemberInfoMethods;
-    #[cfg(feature = "system-reflection-typeinfo")]
-    pub use crate::system::reflection::typeinfo::ITypeInfoMethods;
-    pub use crate::system::{
-        object::IObject,
-        reflection::{memberinfo::IMemberInfo, typeinfo::ITypeInfo},
-    };
+    pub use super::TypeBuilderInstantiation;
+    pub use super::ITypeBuilderInstantiation;
+    pub use crate::system::object::IObject;
+    pub use crate::system::reflection::memberinfo::IMemberInfo;
+    pub use crate::system::reflection::typeinfo::ITypeInfo;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-reflection-memberinfo")] pub use crate::system::reflection::memberinfo::IMemberInfoMethods;
+    #[cfg(feature = "system-reflection-typeinfo")] pub use crate::system::reflection::typeinfo::ITypeInfoMethods;
 }

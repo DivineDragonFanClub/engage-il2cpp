@@ -2,140 +2,203 @@
 
 #[cfg(feature = "unity_engine-rendering-cameraevent-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        r#enum::{Enum, IEnum},
-        valuetype::{IValueType, ValueType},
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/cameraevent/CameraEvent.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct CameraEvent {
-        pub value: i32,
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/cameraevent/CameraEvent.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct CameraEvent  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for CameraEvent  {
+    const NAMESPACE: &'static str = "UnityEngine.Rendering";
+
+    const NAME: &'static str = "CameraEvent";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    impl ::unity2::ClassIdentity for CameraEvent {
-        const NAME: &'static str = "CameraEvent";
-        const NAMESPACE: &'static str = "UnityEngine.Rendering";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  ::unity2::IlType for CameraEvent  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::IlType for CameraEvent {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  CameraEvent  {
+    pub fn before_depth_texture() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl CameraEvent {
-        pub fn before_depth_texture() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn after_depth_texture() -> Self {
-            Self { value: 1 }
-        }
+    pub fn after_depth_texture() -> Self {
+        Self { value: 1 }
 
-        pub fn before_depth_normals_texture() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn after_depth_normals_texture() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn before_g_buffer() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn after_g_buffer() -> Self {
-            Self { value: 5 }
-        }
-
-        pub fn before_lighting() -> Self {
-            Self { value: 6 }
-        }
-
-        pub fn after_lighting() -> Self {
-            Self { value: 7 }
-        }
-
-        pub fn before_final_pass() -> Self {
-            Self { value: 8 }
-        }
-
-        pub fn after_final_pass() -> Self {
-            Self { value: 9 }
-        }
-
-        pub fn before_forward_opaque() -> Self {
-            Self { value: 10 }
-        }
-
-        pub fn after_forward_opaque() -> Self {
-            Self { value: 11 }
-        }
-
-        pub fn before_image_effects_opaque() -> Self {
-            Self { value: 12 }
-        }
-
-        pub fn after_image_effects_opaque() -> Self {
-            Self { value: 13 }
-        }
-
-        pub fn before_skybox() -> Self {
-            Self { value: 14 }
-        }
-
-        pub fn after_skybox() -> Self {
-            Self { value: 15 }
-        }
-
-        pub fn before_forward_alpha() -> Self {
-            Self { value: 16 }
-        }
-
-        pub fn after_forward_alpha() -> Self {
-            Self { value: 17 }
-        }
-
-        pub fn before_image_effects() -> Self {
-            Self { value: 18 }
-        }
-
-        pub fn after_image_effects() -> Self {
-            Self { value: 19 }
-        }
-
-        pub fn after_everything() -> Self {
-            Self { value: 20 }
-        }
-
-        pub fn before_reflections() -> Self {
-            Self { value: 21 }
-        }
-
-        pub fn after_reflections() -> Self {
-            Self { value: 22 }
-        }
-
-        pub fn before_halo_and_lens_flares() -> Self {
-            Self { value: 23 }
-        }
-
-        pub fn after_halo_and_lens_flares() -> Self {
-            Self { value: 24 }
-        }
     }
+
+
+    pub fn before_depth_normals_texture() -> Self {
+        Self { value: 2 }
+
+    }
+
+
+    pub fn after_depth_normals_texture() -> Self {
+        Self { value: 3 }
+
+    }
+
+
+    pub fn before_g_buffer() -> Self {
+        Self { value: 4 }
+
+    }
+
+
+    pub fn after_g_buffer() -> Self {
+        Self { value: 5 }
+
+    }
+
+
+    pub fn before_lighting() -> Self {
+        Self { value: 6 }
+
+    }
+
+
+    pub fn after_lighting() -> Self {
+        Self { value: 7 }
+
+    }
+
+
+    pub fn before_final_pass() -> Self {
+        Self { value: 8 }
+
+    }
+
+
+    pub fn after_final_pass() -> Self {
+        Self { value: 9 }
+
+    }
+
+
+    pub fn before_forward_opaque() -> Self {
+        Self { value: 10 }
+
+    }
+
+
+    pub fn after_forward_opaque() -> Self {
+        Self { value: 11 }
+
+    }
+
+
+    pub fn before_image_effects_opaque() -> Self {
+        Self { value: 12 }
+
+    }
+
+
+    pub fn after_image_effects_opaque() -> Self {
+        Self { value: 13 }
+
+    }
+
+
+    pub fn before_skybox() -> Self {
+        Self { value: 14 }
+
+    }
+
+
+    pub fn after_skybox() -> Self {
+        Self { value: 15 }
+
+    }
+
+
+    pub fn before_forward_alpha() -> Self {
+        Self { value: 16 }
+
+    }
+
+
+    pub fn after_forward_alpha() -> Self {
+        Self { value: 17 }
+
+    }
+
+
+    pub fn before_image_effects() -> Self {
+        Self { value: 18 }
+
+    }
+
+
+    pub fn after_image_effects() -> Self {
+        Self { value: 19 }
+
+    }
+
+
+    pub fn after_everything() -> Self {
+        Self { value: 20 }
+
+    }
+
+
+    pub fn before_reflections() -> Self {
+        Self { value: 21 }
+
+    }
+
+
+    pub fn after_reflections() -> Self {
+        Self { value: 22 }
+
+    }
+
+
+    pub fn before_halo_and_lens_flares() -> Self {
+        Self { value: 23 }
+
+    }
+
+
+    pub fn after_halo_and_lens_flares() -> Self {
+        Self { value: 24 }
+
+    }
+
+}
+
 }
 
 #[cfg(feature = "unity_engine-rendering-cameraevent-types")]
@@ -145,11 +208,10 @@ pub use __types::*;
 #[doc(hidden)]
 pub mod prelude {
     pub use super::CameraEvent;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::system::{object::IObject, r#enum::IEnum, valuetype::IValueType};
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

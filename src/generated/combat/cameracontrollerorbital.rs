@@ -2,229 +2,73 @@
 
 #[cfg(feature = "combat-cameracontrollerorbital-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        combat::basecameracontroller::{BaseCameraController, IBaseCameraController},
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/cameracontrollerorbital/CameraControllerOrbital.md"))]
-    #[::unity2::class(namespace = "Combat", name = "CameraControllerOrbital")]
-    #[parent(crate::combat::basecameracontroller::BaseCameraController)]
-    pub struct CameraControllerOrbital {
-        #[offset(168)]
-        #[rename(name = "Target")]
-        pub target: crate::combat::camerapositiondata::CameraPositionData_TargetJoint,
-        #[offset(172)]
-        #[rename(name = "Distance")]
-        pub distance: f32,
-        #[offset(176)]
-        #[rename(name = "StartDegree")]
-        pub start_degree: f32,
-        #[offset(180)]
-        #[rename(name = "RotateSpeed")]
-        pub rotate_speed: f32,
-        #[offset(184)]
-        #[rename(name = "CameraHeight")]
-        pub camera_height: f32,
-        #[offset(188)]
-        #[rename(name = "FOVWalk")]
-        pub fov_walk: f32,
-        #[offset(192)]
-        #[rename(name = "FOVRide")]
-        pub fov_ride: f32,
-        #[offset(196)]
-        #[rename(name = "m_Rotate")]
-        pub m_rotate: f32,
-        #[offset(200)]
-        #[rename(name = "m_LookAt")]
-        pub m_look_at: crate::combat::fxz::FXZ,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: combat :: basecameracontroller :: { BaseCameraController , IBaseCameraController }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/cameracontrollerorbital/CameraControllerOrbital.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "CameraControllerOrbital")] # [parent (crate :: combat :: basecameracontroller :: BaseCameraController)] pub struct CameraControllerOrbital {
+# [offset (168)] # [rename (name = "Target")] pub target : crate :: combat :: camerapositiondata :: CameraPositionData_TargetJoint ,
+# [offset (172)] # [rename (name = "Distance")] pub distance : f32 ,
+# [offset (176)] # [rename (name = "StartDegree")] pub start_degree : f32 ,
+# [offset (180)] # [rename (name = "RotateSpeed")] pub rotate_speed : f32 ,
+# [offset (184)] # [rename (name = "CameraHeight")] pub camera_height : f32 ,
+# [offset (188)] # [rename (name = "FOVWalk")] pub fov_walk : f32 ,
+# [offset (192)] # [rename (name = "FOVRide")] pub fov_ride : f32 ,
+# [offset (196)] # [rename (name = "m_Rotate")] pub m_rotate : f32 ,
+# [offset (200)] # [rename (name = "m_LookAt")] pub m_look_at : crate :: combat :: fxz :: FXZ ,
+}
+
 }
 
 #[cfg(feature = "combat-cameracontrollerorbital-types")]
 pub use __types::*;
 
 #[cfg(feature = "combat-cameracontrollerorbital")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __CameraControllerOrbital_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_activate {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CameraControllerOrbital as ::unity2::ClassIdentity>::class(),
-                "Activate",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CameraControllerOrbital as ::unity2::ClassIdentity>::NAME,
-                        "Activate",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn activate(this: CameraControllerOrbital, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CameraControllerOrbital, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_activate::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_camera_targets {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CameraControllerOrbital as ::unity2::ClassIdentity>::class(),
-                "GetCameraTargets",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CameraControllerOrbital as ::unity2::ClassIdentity>::NAME,
-                        "GetCameraTargets",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_camera_targets(this: CameraControllerOrbital, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Array<i32> {
-        let inner: extern "C" fn(CameraControllerOrbital, ::unity2::OptionalMethod) -> ::unity2::Array<i32> =
-            ::core::mem::transmute(__lookup_get_camera_targets::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CameraControllerOrbital as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CameraControllerOrbital as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: CameraControllerOrbital, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CameraControllerOrbital, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __CameraControllerOrbital_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_activate { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CameraControllerOrbital as :: unity2 :: ClassIdentity > :: class () , "Activate" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CameraControllerOrbital as :: unity2 :: ClassIdentity > :: NAME , "Activate" , e) , } } } pub unsafe fn activate (this : CameraControllerOrbital , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CameraControllerOrbital , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_activate :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_camera_targets { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CameraControllerOrbital as :: unity2 :: ClassIdentity > :: class () , "GetCameraTargets" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CameraControllerOrbital as :: unity2 :: ClassIdentity > :: NAME , "GetCameraTargets" , e) , } } } pub unsafe fn get_camera_targets (this : CameraControllerOrbital , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < i32 > { let inner : extern "C" fn (CameraControllerOrbital , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < i32 > = :: core :: mem :: transmute (__lookup_get_camera_targets :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CameraControllerOrbital as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CameraControllerOrbital as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : CameraControllerOrbital , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CameraControllerOrbital , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "combat-cameracontrollerorbital")]
-pub trait ICameraControllerOrbitalMethods: ICameraControllerOrbital {
-    #[doc = "`Activate()` overload"]
-    fn activate(self) -> () {
-        unsafe {
-            let __receiver =
-                <CameraControllerOrbital as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CameraControllerOrbital_unity2_raw::activate(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetCameraTargets()` overload"]
-    fn get_camera_targets(self) -> ::unity2::Array<i32> {
-        unsafe {
-            let __receiver =
-                <CameraControllerOrbital as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CameraControllerOrbital_unity2_raw::get_camera_targets(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <CameraControllerOrbital as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CameraControllerOrbital_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait ICameraControllerOrbitalMethods : ICameraControllerOrbital { # [doc = "`Activate()` overload"] fn activate (self ,) -> () { unsafe { let __receiver = < CameraControllerOrbital as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CameraControllerOrbital_unity2_raw :: activate (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetCameraTargets()` overload"] fn get_camera_targets (self ,) -> :: unity2 :: Array < i32 > { unsafe { let __receiver = < CameraControllerOrbital as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CameraControllerOrbital_unity2_raw :: get_camera_targets (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CameraControllerOrbital as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CameraControllerOrbital_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "combat-cameracontrollerorbital")]
-impl<__T: ICameraControllerOrbital> ICameraControllerOrbitalMethods for __T {}
+impl < __T : ICameraControllerOrbital > ICameraControllerOrbitalMethods for __T { }
+
+#[cfg(feature = "combat-cameracontrollerorbital")]
+impl CameraControllerOrbital { pub fn activate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CameraControllerOrbital_unity2_raw :: __lookup_activate :: get_method_info () } pub fn get_camera_targets_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CameraControllerOrbital_unity2_raw :: __lookup_get_camera_targets :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CameraControllerOrbital_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "combat-cameracontrollerorbital")]
 impl CameraControllerOrbital {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(CameraControllerOrbital),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ICameraControllerOrbitalMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CameraControllerOrbital) , :: core :: stringify ! (new) ,)) ; < Self as ICameraControllerOrbitalMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "combat-cameracontrollerorbital")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{CameraControllerOrbital, ICameraControllerOrbital, ICameraControllerOrbitalMethods};
-    #[cfg(feature = "combat-basecameracontroller")]
-    pub use crate::combat::basecameracontroller::IBaseCameraControllerMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        combat::basecameracontroller::IBaseCameraController,
-        system::object::IObject,
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::CameraControllerOrbital;
+    pub use super::ICameraControllerOrbital;
+    pub use super::ICameraControllerOrbitalMethods;
+    pub use crate::combat::basecameracontroller::IBaseCameraController;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "combat-basecameracontroller")] pub use crate::combat::basecameracontroller::IBaseCameraControllerMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

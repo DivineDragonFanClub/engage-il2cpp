@@ -2,75 +2,34 @@
 
 #[cfg(feature = "moon_sharp-interpreter-interop-basic_descriptors-ioptimizabledescriptor-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/basic_descriptors/ioptimizabledescriptor/IOptimizableDescriptor.md"))]
-    #[::unity2::class(namespace = "MoonSharp.Interpreter.Interop.BasicDescriptors", name = "IOptimizableDescriptor")]
-    pub struct IOptimizableDescriptor {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/basic_descriptors/ioptimizabledescriptor/IOptimizableDescriptor.md"))] # [:: unity2 :: class (namespace = "MoonSharp.Interpreter.Interop.BasicDescriptors" , name = "IOptimizableDescriptor")] pub struct IOptimizableDescriptor {}
+
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-basic_descriptors-ioptimizabledescriptor-types")]
 pub use __types::*;
 
 #[cfg(feature = "moon_sharp-interpreter-interop-basic_descriptors-ioptimizabledescriptor")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __IOptimizableDescriptor_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_optimize {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <IOptimizableDescriptor as ::unity2::ClassIdentity>::class(),
-                "Optimize",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <IOptimizableDescriptor as ::unity2::ClassIdentity>::NAME,
-                        "Optimize",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn optimize(this: IOptimizableDescriptor, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(IOptimizableDescriptor, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_optimize::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __IOptimizableDescriptor_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_optimize { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< IOptimizableDescriptor as :: unity2 :: ClassIdentity > :: class () , "Optimize" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < IOptimizableDescriptor as :: unity2 :: ClassIdentity > :: NAME , "Optimize" , e) , } } } pub unsafe fn optimize (this : IOptimizableDescriptor , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (IOptimizableDescriptor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_optimize :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-basic_descriptors-ioptimizabledescriptor")]
-pub trait IIOptimizableDescriptorMethods: IIOptimizableDescriptor {
-    #[doc = "`Optimize()` overload"]
-    fn optimize(self) -> () {
-        unsafe {
-            let __receiver =
-                <IOptimizableDescriptor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __IOptimizableDescriptor_unity2_raw::optimize(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IIOptimizableDescriptorMethods : IIOptimizableDescriptor { # [doc = "`Optimize()` overload"] fn optimize (self ,) -> () { unsafe { let __receiver = < IOptimizableDescriptor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IOptimizableDescriptor_unity2_raw :: optimize (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-basic_descriptors-ioptimizabledescriptor")]
-impl<__T: IIOptimizableDescriptor> IIOptimizableDescriptorMethods for __T {}
+impl < __T : IIOptimizableDescriptor > IIOptimizableDescriptorMethods for __T { }
+
+#[cfg(feature = "moon_sharp-interpreter-interop-basic_descriptors-ioptimizabledescriptor")]
+impl IOptimizableDescriptor { pub fn optimize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __IOptimizableDescriptor_unity2_raw :: __lookup_optimize :: get_method_info () } }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-basic_descriptors-ioptimizabledescriptor")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IIOptimizableDescriptor, IIOptimizableDescriptorMethods, IOptimizableDescriptor};
+    pub use super::IOptimizableDescriptor;
+    pub use super::IIOptimizableDescriptor;
+    pub use super::IIOptimizableDescriptorMethods;
 }

@@ -2,347 +2,66 @@
 
 #[cfg(feature = "app-photographselectbodyaccmenuitemcontent-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::basicmenuitemcontent::{BasicMenuItemContent, IBasicMenuItemContent},
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographselectbodyaccmenuitemcontent/PhotographSelectBodyAccMenuItemContent.md"))]
-    #[::unity2::class(namespace = "App", name = "PhotographSelectBodyAccMenuItemContent")]
-    #[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]
-    pub struct PhotographSelectBodyAccMenuItemContent {
-        #[offset(72)]
-        #[rename(name = "m_NameText")]
-        pub m_name_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(80)]
-        #[rename(name = "m_CursorObj")]
-        pub m_cursor_obj: crate::unity_engine::gameobject::GameObject,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: basicmenuitemcontent :: { BasicMenuItemContent , IBasicMenuItemContent }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographselectbodyaccmenuitemcontent/PhotographSelectBodyAccMenuItemContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "PhotographSelectBodyAccMenuItemContent")] # [parent (crate :: app :: basicmenuitemcontent :: BasicMenuItemContent)] pub struct PhotographSelectBodyAccMenuItemContent {
+# [offset (72)] # [rename (name = "m_NameText")] pub m_name_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (80)] # [rename (name = "m_CursorObj")] pub m_cursor_obj : crate :: unity_engine :: gameobject :: GameObject ,
+}
+
 }
 
 #[cfg(feature = "app-photographselectbodyaccmenuitemcontent-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-photographselectbodyaccmenuitemcontent")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __PhotographSelectBodyAccMenuItemContent_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_build_object {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PhotographSelectBodyAccMenuItemContent as ::unity2::ClassIdentity>::class(),
-                "BuildObject",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PhotographSelectBodyAccMenuItemContent as ::unity2::ClassIdentity>::NAME,
-                        "BuildObject",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn build_object(this: PhotographSelectBodyAccMenuItemContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(PhotographSelectBodyAccMenuItemContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_build_object::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_build {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::basicmenuitem::BasicMenuItem as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PhotographSelectBodyAccMenuItemContent as ::unity2::ClassIdentity>::class(),
-                "Build",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PhotographSelectBodyAccMenuItemContent as ::unity2::ClassIdentity>::NAME,
-                        "Build",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn build(
-        this: PhotographSelectBodyAccMenuItemContent,
-        menu_item: crate::app::basicmenuitem::BasicMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(PhotographSelectBodyAccMenuItemContent, crate::app::basicmenuitem::BasicMenuItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_build::get_method_info().method_ptr);
-        inner(this, menu_item, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_build_text {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PhotographSelectBodyAccMenuItemContent as ::unity2::ClassIdentity>::class(),
-                "BuildText",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PhotographSelectBodyAccMenuItemContent as ::unity2::ClassIdentity>::NAME,
-                        "BuildText",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn build_text(this: PhotographSelectBodyAccMenuItemContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(PhotographSelectBodyAccMenuItemContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_build_text::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_build_text_color {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PhotographSelectBodyAccMenuItemContent as ::unity2::ClassIdentity>::class(),
-                "BuildTextColor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PhotographSelectBodyAccMenuItemContent as ::unity2::ClassIdentity>::NAME,
-                        "BuildTextColor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn build_text_color(this: PhotographSelectBodyAccMenuItemContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(PhotographSelectBodyAccMenuItemContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_build_text_color::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update_text_color {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PhotographSelectBodyAccMenuItemContent as ::unity2::ClassIdentity>::class(),
-                "UpdateTextColor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PhotographSelectBodyAccMenuItemContent as ::unity2::ClassIdentity>::NAME,
-                        "UpdateTextColor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update_text_color(this: PhotographSelectBodyAccMenuItemContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(PhotographSelectBodyAccMenuItemContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update_text_color::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PhotographSelectBodyAccMenuItemContent as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PhotographSelectBodyAccMenuItemContent as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: PhotographSelectBodyAccMenuItemContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(PhotographSelectBodyAccMenuItemContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __PhotographSelectBodyAccMenuItemContent_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_build_object { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PhotographSelectBodyAccMenuItemContent as :: unity2 :: ClassIdentity > :: class () , "BuildObject" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PhotographSelectBodyAccMenuItemContent as :: unity2 :: ClassIdentity > :: NAME , "BuildObject" , e) , } } } pub unsafe fn build_object (this : PhotographSelectBodyAccMenuItemContent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (PhotographSelectBodyAccMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_build_object :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_build { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: basicmenuitem :: BasicMenuItem as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PhotographSelectBodyAccMenuItemContent as :: unity2 :: ClassIdentity > :: class () , "Build" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PhotographSelectBodyAccMenuItemContent as :: unity2 :: ClassIdentity > :: NAME , "Build" , e) , } } } pub unsafe fn build (this : PhotographSelectBodyAccMenuItemContent , menu_item : crate :: app :: basicmenuitem :: BasicMenuItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (PhotographSelectBodyAccMenuItemContent , crate :: app :: basicmenuitem :: BasicMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_build :: get_method_info () . method_ptr ,) ; inner (this , menu_item , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_build_text { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PhotographSelectBodyAccMenuItemContent as :: unity2 :: ClassIdentity > :: class () , "BuildText" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PhotographSelectBodyAccMenuItemContent as :: unity2 :: ClassIdentity > :: NAME , "BuildText" , e) , } } } pub unsafe fn build_text (this : PhotographSelectBodyAccMenuItemContent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (PhotographSelectBodyAccMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_build_text :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_build_text_color { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PhotographSelectBodyAccMenuItemContent as :: unity2 :: ClassIdentity > :: class () , "BuildTextColor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PhotographSelectBodyAccMenuItemContent as :: unity2 :: ClassIdentity > :: NAME , "BuildTextColor" , e) , } } } pub unsafe fn build_text_color (this : PhotographSelectBodyAccMenuItemContent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (PhotographSelectBodyAccMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_build_text_color :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update_text_color { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PhotographSelectBodyAccMenuItemContent as :: unity2 :: ClassIdentity > :: class () , "UpdateTextColor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PhotographSelectBodyAccMenuItemContent as :: unity2 :: ClassIdentity > :: NAME , "UpdateTextColor" , e) , } } } pub unsafe fn update_text_color (this : PhotographSelectBodyAccMenuItemContent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (PhotographSelectBodyAccMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update_text_color :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PhotographSelectBodyAccMenuItemContent as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PhotographSelectBodyAccMenuItemContent as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : PhotographSelectBodyAccMenuItemContent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (PhotographSelectBodyAccMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-photographselectbodyaccmenuitemcontent")]
-pub trait IPhotographSelectBodyAccMenuItemContentMethods: IPhotographSelectBodyAccMenuItemContent {
-    #[doc = "`BuildObject()` overload"]
-    fn build_object(self) -> () {
-        unsafe {
-            let __receiver = <PhotographSelectBodyAccMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PhotographSelectBodyAccMenuItemContent_unity2_raw::build_object(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Build(crate::app::basicmenuitem::BasicMenuItem)` overload"]
-    fn build(self, menu_item: impl ::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem>) -> () {
-        unsafe {
-            let __receiver = <PhotographSelectBodyAccMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PhotographSelectBodyAccMenuItemContent_unity2_raw::build(
-                __receiver,
-                ::core::convert::Into::into(menu_item),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`BuildText()` overload"]
-    fn build_text(self) -> () {
-        unsafe {
-            let __receiver = <PhotographSelectBodyAccMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PhotographSelectBodyAccMenuItemContent_unity2_raw::build_text(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`BuildTextColor()` overload"]
-    fn build_text_color(self) -> () {
-        unsafe {
-            let __receiver = <PhotographSelectBodyAccMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PhotographSelectBodyAccMenuItemContent_unity2_raw::build_text_color(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`UpdateTextColor()` overload"]
-    fn update_text_color(self) -> () {
-        unsafe {
-            let __receiver = <PhotographSelectBodyAccMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PhotographSelectBodyAccMenuItemContent_unity2_raw::update_text_color(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <PhotographSelectBodyAccMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PhotographSelectBodyAccMenuItemContent_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IPhotographSelectBodyAccMenuItemContentMethods : IPhotographSelectBodyAccMenuItemContent { # [doc = "`BuildObject()` overload"] fn build_object (self ,) -> () { unsafe { let __receiver = < PhotographSelectBodyAccMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __PhotographSelectBodyAccMenuItemContent_unity2_raw :: build_object (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Build(crate::app::basicmenuitem::BasicMenuItem)` overload"] fn build (self , menu_item : impl :: core :: convert :: Into < crate :: app :: basicmenuitem :: BasicMenuItem >) -> () { unsafe { let __receiver = < PhotographSelectBodyAccMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __PhotographSelectBodyAccMenuItemContent_unity2_raw :: build (__receiver , :: core :: convert :: Into :: into (menu_item) , :: core :: option :: Option :: None) } } # [doc = "`BuildText()` overload"] fn build_text (self ,) -> () { unsafe { let __receiver = < PhotographSelectBodyAccMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __PhotographSelectBodyAccMenuItemContent_unity2_raw :: build_text (__receiver , :: core :: option :: Option :: None) } } # [doc = "`BuildTextColor()` overload"] fn build_text_color (self ,) -> () { unsafe { let __receiver = < PhotographSelectBodyAccMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __PhotographSelectBodyAccMenuItemContent_unity2_raw :: build_text_color (__receiver , :: core :: option :: Option :: None) } } # [doc = "`UpdateTextColor()` overload"] fn update_text_color (self ,) -> () { unsafe { let __receiver = < PhotographSelectBodyAccMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __PhotographSelectBodyAccMenuItemContent_unity2_raw :: update_text_color (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < PhotographSelectBodyAccMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __PhotographSelectBodyAccMenuItemContent_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-photographselectbodyaccmenuitemcontent")]
-impl<__T: IPhotographSelectBodyAccMenuItemContent> IPhotographSelectBodyAccMenuItemContentMethods for __T {}
+impl < __T : IPhotographSelectBodyAccMenuItemContent > IPhotographSelectBodyAccMenuItemContentMethods for __T { }
+
+#[cfg(feature = "app-photographselectbodyaccmenuitemcontent")]
+impl PhotographSelectBodyAccMenuItemContent { pub fn build_object_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PhotographSelectBodyAccMenuItemContent_unity2_raw :: __lookup_build_object :: get_method_info () } pub fn build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PhotographSelectBodyAccMenuItemContent_unity2_raw :: __lookup_build :: get_method_info () } pub fn build_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PhotographSelectBodyAccMenuItemContent_unity2_raw :: __lookup_build_text :: get_method_info () } pub fn build_text_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PhotographSelectBodyAccMenuItemContent_unity2_raw :: __lookup_build_text_color :: get_method_info () } pub fn update_text_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PhotographSelectBodyAccMenuItemContent_unity2_raw :: __lookup_update_text_color :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PhotographSelectBodyAccMenuItemContent_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-photographselectbodyaccmenuitemcontent")]
 impl PhotographSelectBodyAccMenuItemContent {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(PhotographSelectBodyAccMenuItemContent),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IPhotographSelectBodyAccMenuItemContentMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (PhotographSelectBodyAccMenuItemContent) , :: core :: stringify ! (new) ,)) ; < Self as IPhotographSelectBodyAccMenuItemContentMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-photographselectbodyaccmenuitemcontent")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{
-        IPhotographSelectBodyAccMenuItemContent, IPhotographSelectBodyAccMenuItemContentMethods, PhotographSelectBodyAccMenuItemContent,
-    };
-    #[cfg(feature = "app-basicmenuitemcontent")]
-    pub use crate::app::basicmenuitemcontent::IBasicMenuItemContentMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        app::basicmenuitemcontent::IBasicMenuItemContent,
-        system::object::IObject,
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::PhotographSelectBodyAccMenuItemContent;
+    pub use super::IPhotographSelectBodyAccMenuItemContent;
+    pub use super::IPhotographSelectBodyAccMenuItemContentMethods;
+    pub use crate::app::basicmenuitemcontent::IBasicMenuItemContent;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "app-basicmenuitemcontent")] pub use crate::app::basicmenuitemcontent::IBasicMenuItemContentMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

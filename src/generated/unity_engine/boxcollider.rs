@@ -2,523 +2,55 @@
 
 #[cfg(feature = "unity_engine-boxcollider-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::{
-            collider::{Collider, ICollider},
-            component::{Component, IComponent},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/boxcollider/BoxCollider.md"))]
-    #[::unity2::class(namespace = "UnityEngine", name = "BoxCollider")]
-    #[parent(crate::unity_engine::collider::Collider)]
-    pub struct BoxCollider {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: collider :: { Collider , ICollider }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/boxcollider/BoxCollider.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "BoxCollider")] # [parent (crate :: unity_engine :: collider :: Collider)] pub struct BoxCollider {}
+
 }
 
 #[cfg(feature = "unity_engine-boxcollider-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-boxcollider")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __BoxCollider_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_center {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BoxCollider as ::unity2::ClassIdentity>::class(),
-                "get_center",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <BoxCollider as ::unity2::ClassIdentity>::NAME,
-                        "get_center",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_center(this: BoxCollider, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 {
-        let inner: extern "C" fn(BoxCollider, ::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 =
-            ::core::mem::transmute(__lookup_get_center::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_center {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BoxCollider as ::unity2::ClassIdentity>::class(),
-                "set_center",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <BoxCollider as ::unity2::ClassIdentity>::NAME,
-                        "set_center",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_center(this: BoxCollider, value: crate::unity_engine::vector3::Vector3, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(BoxCollider, crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_center::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_size {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BoxCollider as ::unity2::ClassIdentity>::class(),
-                "get_size",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <BoxCollider as ::unity2::ClassIdentity>::NAME,
-                        "get_size",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_size(this: BoxCollider, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 {
-        let inner: extern "C" fn(BoxCollider, ::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 =
-            ::core::mem::transmute(__lookup_get_size::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_size {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BoxCollider as ::unity2::ClassIdentity>::class(),
-                "set_size",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <BoxCollider as ::unity2::ClassIdentity>::NAME,
-                        "set_size",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_size(this: BoxCollider, value: crate::unity_engine::vector3::Vector3, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(BoxCollider, crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_size::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_extents {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BoxCollider as ::unity2::ClassIdentity>::class(),
-                "get_extents",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <BoxCollider as ::unity2::ClassIdentity>::NAME,
-                        "get_extents",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_extents(this: BoxCollider, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 {
-        let inner: extern "C" fn(BoxCollider, ::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 =
-            ::core::mem::transmute(__lookup_get_extents::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_extents {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BoxCollider as ::unity2::ClassIdentity>::class(),
-                "set_extents",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <BoxCollider as ::unity2::ClassIdentity>::NAME,
-                        "set_extents",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_extents(this: BoxCollider, value: crate::unity_engine::vector3::Vector3, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(BoxCollider, crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_extents::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<BoxCollider as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <BoxCollider as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: BoxCollider, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(BoxCollider, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_center_injected {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BoxCollider as ::unity2::ClassIdentity>::class(),
-                "get_center_Injected",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <BoxCollider as ::unity2::ClassIdentity>::NAME,
-                        "get_center_Injected",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_center_injected(
-        this: BoxCollider,
-        ret: *mut crate::unity_engine::vector3::Vector3,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(BoxCollider, *mut crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_get_center_injected::get_method_info().method_ptr);
-        inner(this, ret, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_center_injected {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BoxCollider as ::unity2::ClassIdentity>::class(),
-                "set_center_Injected",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <BoxCollider as ::unity2::ClassIdentity>::NAME,
-                        "set_center_Injected",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_center_injected(
-        this: BoxCollider,
-        value: *mut crate::unity_engine::vector3::Vector3,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(BoxCollider, *mut crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_center_injected::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_size_injected {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BoxCollider as ::unity2::ClassIdentity>::class(),
-                "get_size_Injected",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <BoxCollider as ::unity2::ClassIdentity>::NAME,
-                        "get_size_Injected",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_size_injected(
-        this: BoxCollider,
-        ret: *mut crate::unity_engine::vector3::Vector3,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(BoxCollider, *mut crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_get_size_injected::get_method_info().method_ptr);
-        inner(this, ret, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_size_injected {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BoxCollider as ::unity2::ClassIdentity>::class(),
-                "set_size_Injected",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <BoxCollider as ::unity2::ClassIdentity>::NAME,
-                        "set_size_Injected",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_size_injected(
-        this: BoxCollider,
-        value: *mut crate::unity_engine::vector3::Vector3,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(BoxCollider, *mut crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_size_injected::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __BoxCollider_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_center { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< BoxCollider as :: unity2 :: ClassIdentity > :: class () , "get_center" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < BoxCollider as :: unity2 :: ClassIdentity > :: NAME , "get_center" , e) , } } } pub unsafe fn get_center (this : BoxCollider , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 { let inner : extern "C" fn (BoxCollider , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute (__lookup_get_center :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_center { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< BoxCollider as :: unity2 :: ClassIdentity > :: class () , "set_center" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < BoxCollider as :: unity2 :: ClassIdentity > :: NAME , "set_center" , e) , } } } pub unsafe fn set_center (this : BoxCollider , value : crate :: unity_engine :: vector3 :: Vector3 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (BoxCollider , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_center :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_size { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< BoxCollider as :: unity2 :: ClassIdentity > :: class () , "get_size" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < BoxCollider as :: unity2 :: ClassIdentity > :: NAME , "get_size" , e) , } } } pub unsafe fn get_size (this : BoxCollider , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 { let inner : extern "C" fn (BoxCollider , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute (__lookup_get_size :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_size { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< BoxCollider as :: unity2 :: ClassIdentity > :: class () , "set_size" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < BoxCollider as :: unity2 :: ClassIdentity > :: NAME , "set_size" , e) , } } } pub unsafe fn set_size (this : BoxCollider , value : crate :: unity_engine :: vector3 :: Vector3 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (BoxCollider , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_size :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_extents { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< BoxCollider as :: unity2 :: ClassIdentity > :: class () , "get_extents" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < BoxCollider as :: unity2 :: ClassIdentity > :: NAME , "get_extents" , e) , } } } pub unsafe fn get_extents (this : BoxCollider , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 { let inner : extern "C" fn (BoxCollider , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute (__lookup_get_extents :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_extents { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< BoxCollider as :: unity2 :: ClassIdentity > :: class () , "set_extents" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < BoxCollider as :: unity2 :: ClassIdentity > :: NAME , "set_extents" , e) , } } } pub unsafe fn set_extents (this : BoxCollider , value : crate :: unity_engine :: vector3 :: Vector3 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (BoxCollider , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_extents :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< BoxCollider as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < BoxCollider as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : BoxCollider , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (BoxCollider , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_center_injected { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< BoxCollider as :: unity2 :: ClassIdentity > :: class () , "get_center_Injected" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < BoxCollider as :: unity2 :: ClassIdentity > :: NAME , "get_center_Injected" , e) , } } } pub unsafe fn get_center_injected (this : BoxCollider , ret : * mut crate :: unity_engine :: vector3 :: Vector3 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (BoxCollider , * mut crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_get_center_injected :: get_method_info () . method_ptr ,) ; inner (this , ret , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_center_injected { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< BoxCollider as :: unity2 :: ClassIdentity > :: class () , "set_center_Injected" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < BoxCollider as :: unity2 :: ClassIdentity > :: NAME , "set_center_Injected" , e) , } } } pub unsafe fn set_center_injected (this : BoxCollider , value : * mut crate :: unity_engine :: vector3 :: Vector3 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (BoxCollider , * mut crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_center_injected :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_size_injected { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< BoxCollider as :: unity2 :: ClassIdentity > :: class () , "get_size_Injected" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < BoxCollider as :: unity2 :: ClassIdentity > :: NAME , "get_size_Injected" , e) , } } } pub unsafe fn get_size_injected (this : BoxCollider , ret : * mut crate :: unity_engine :: vector3 :: Vector3 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (BoxCollider , * mut crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_get_size_injected :: get_method_info () . method_ptr ,) ; inner (this , ret , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_size_injected { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< BoxCollider as :: unity2 :: ClassIdentity > :: class () , "set_size_Injected" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < BoxCollider as :: unity2 :: ClassIdentity > :: NAME , "set_size_Injected" , e) , } } } pub unsafe fn set_size_injected (this : BoxCollider , value : * mut crate :: unity_engine :: vector3 :: Vector3 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (BoxCollider , * mut crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_size_injected :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-boxcollider")]
-pub trait IBoxColliderMethods: IBoxCollider {
-    #[doc = "`get_center()` overload"]
-    fn get_center(self) -> crate::unity_engine::vector3::Vector3 {
-        unsafe {
-            let __receiver = <BoxCollider as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __BoxCollider_unity2_raw::get_center(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_center(crate::unity_engine::vector3::Vector3)` overload"]
-    fn set_center(self, value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>) -> () {
-        unsafe {
-            let __receiver = <BoxCollider as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __BoxCollider_unity2_raw::set_center(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_size()` overload"]
-    fn get_size(self) -> crate::unity_engine::vector3::Vector3 {
-        unsafe {
-            let __receiver = <BoxCollider as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __BoxCollider_unity2_raw::get_size(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_size(crate::unity_engine::vector3::Vector3)` overload"]
-    fn set_size(self, value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>) -> () {
-        unsafe {
-            let __receiver = <BoxCollider as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __BoxCollider_unity2_raw::set_size(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_extents()` overload"]
-    fn get_extents(self) -> crate::unity_engine::vector3::Vector3 {
-        unsafe {
-            let __receiver = <BoxCollider as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __BoxCollider_unity2_raw::get_extents(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_extents(crate::unity_engine::vector3::Vector3)` overload"]
-    fn set_extents(self, value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>) -> () {
-        unsafe {
-            let __receiver = <BoxCollider as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __BoxCollider_unity2_raw::set_extents(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <BoxCollider as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __BoxCollider_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_center_Injected(*mutcrate::unity_engine::vector3::Vector3)` overload"]
-    fn get_center_injected(self) -> crate::unity_engine::vector3::Vector3 {
-        unsafe {
-            let __receiver = <BoxCollider as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
-            __BoxCollider_unity2_raw::get_center_injected(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None);
-            __out_0.assume_init()
-        }
-    }
-    #[doc = "`set_center_Injected(*mutcrate::unity_engine::vector3::Vector3)` overload"]
-    fn set_center_injected(self) -> crate::unity_engine::vector3::Vector3 {
-        unsafe {
-            let __receiver = <BoxCollider as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
-            __BoxCollider_unity2_raw::set_center_injected(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None);
-            __out_0.assume_init()
-        }
-    }
-    #[doc = "`get_size_Injected(*mutcrate::unity_engine::vector3::Vector3)` overload"]
-    fn get_size_injected(self) -> crate::unity_engine::vector3::Vector3 {
-        unsafe {
-            let __receiver = <BoxCollider as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
-            __BoxCollider_unity2_raw::get_size_injected(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None);
-            __out_0.assume_init()
-        }
-    }
-    #[doc = "`set_size_Injected(*mutcrate::unity_engine::vector3::Vector3)` overload"]
-    fn set_size_injected(self) -> crate::unity_engine::vector3::Vector3 {
-        unsafe {
-            let __receiver = <BoxCollider as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
-            __BoxCollider_unity2_raw::set_size_injected(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None);
-            __out_0.assume_init()
-        }
-    }
-}
+pub trait IBoxColliderMethods : IBoxCollider { # [doc = "`get_center()` overload"] fn get_center (self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < BoxCollider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __BoxCollider_unity2_raw :: get_center (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_center(crate::unity_engine::vector3::Vector3)` overload"] fn set_center (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> () { unsafe { let __receiver = < BoxCollider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __BoxCollider_unity2_raw :: set_center (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_size()` overload"] fn get_size (self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < BoxCollider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __BoxCollider_unity2_raw :: get_size (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_size(crate::unity_engine::vector3::Vector3)` overload"] fn set_size (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> () { unsafe { let __receiver = < BoxCollider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __BoxCollider_unity2_raw :: set_size (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_extents()` overload"] fn get_extents (self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < BoxCollider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __BoxCollider_unity2_raw :: get_extents (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_extents(crate::unity_engine::vector3::Vector3)` overload"] fn set_extents (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> () { unsafe { let __receiver = < BoxCollider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __BoxCollider_unity2_raw :: set_extents (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < BoxCollider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __BoxCollider_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_center_Injected(*mutcrate::unity_engine::vector3::Vector3)` overload"] fn get_center_injected (self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < BoxCollider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector3 :: Vector3 > :: uninit () ; __BoxCollider_unity2_raw :: get_center_injected (__receiver , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) ; __out_0 . assume_init () } } # [doc = "`set_center_Injected(*mutcrate::unity_engine::vector3::Vector3)` overload"] fn set_center_injected (self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < BoxCollider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector3 :: Vector3 > :: uninit () ; __BoxCollider_unity2_raw :: set_center_injected (__receiver , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) ; __out_0 . assume_init () } } # [doc = "`get_size_Injected(*mutcrate::unity_engine::vector3::Vector3)` overload"] fn get_size_injected (self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < BoxCollider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector3 :: Vector3 > :: uninit () ; __BoxCollider_unity2_raw :: get_size_injected (__receiver , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) ; __out_0 . assume_init () } } # [doc = "`set_size_Injected(*mutcrate::unity_engine::vector3::Vector3)` overload"] fn set_size_injected (self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < BoxCollider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector3 :: Vector3 > :: uninit () ; __BoxCollider_unity2_raw :: set_size_injected (__receiver , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) ; __out_0 . assume_init () } } }
 
 #[cfg(feature = "unity_engine-boxcollider")]
-impl<__T: IBoxCollider> IBoxColliderMethods for __T {}
+impl < __T : IBoxCollider > IBoxColliderMethods for __T { }
+
+#[cfg(feature = "unity_engine-boxcollider")]
+impl BoxCollider { pub fn get_center_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __BoxCollider_unity2_raw :: __lookup_get_center :: get_method_info () } pub fn set_center_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __BoxCollider_unity2_raw :: __lookup_set_center :: get_method_info () } pub fn get_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __BoxCollider_unity2_raw :: __lookup_get_size :: get_method_info () } pub fn set_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __BoxCollider_unity2_raw :: __lookup_set_size :: get_method_info () } pub fn get_extents_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __BoxCollider_unity2_raw :: __lookup_get_extents :: get_method_info () } pub fn set_extents_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __BoxCollider_unity2_raw :: __lookup_set_extents :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __BoxCollider_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn get_center_injected_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __BoxCollider_unity2_raw :: __lookup_get_center_injected :: get_method_info () } pub fn set_center_injected_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __BoxCollider_unity2_raw :: __lookup_set_center_injected :: get_method_info () } pub fn get_size_injected_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __BoxCollider_unity2_raw :: __lookup_get_size_injected :: get_method_info () } pub fn set_size_injected_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __BoxCollider_unity2_raw :: __lookup_set_size_injected :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-boxcollider")]
 impl BoxCollider {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(BoxCollider), ::core::stringify!(new),));
-        <Self as IBoxColliderMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (BoxCollider) , :: core :: stringify ! (new) ,)) ; < Self as IBoxColliderMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "unity_engine-boxcollider")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{BoxCollider, IBoxCollider, IBoxColliderMethods};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-collider")]
-    pub use crate::unity_engine::collider::IColliderMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        system::object::IObject,
-        unity_engine::{collider::ICollider, component::IComponent, object_2::IObject_2},
-    };
+    pub use super::BoxCollider;
+    pub use super::IBoxCollider;
+    pub use super::IBoxColliderMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::collider::ICollider;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-collider")] pub use crate::unity_engine::collider::IColliderMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

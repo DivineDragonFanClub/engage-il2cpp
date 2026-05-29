@@ -2,747 +2,146 @@
 
 #[cfg(feature = "app-viewmode-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        r#enum::{Enum, IEnum},
-        valuetype::{IValueType, ValueType},
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/viewmode/ViewMode_Mode.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct ViewMode_Mode {
-        pub value: i32,
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/viewmode/ViewMode_Mode.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct ViewMode_Mode  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for ViewMode_Mode  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "ViewMode.Mode";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    impl ::unity2::ClassIdentity for ViewMode_Mode {
-        const NAME: &'static str = "ViewMode.Mode";
-        const NAMESPACE: &'static str = "App";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  ::unity2::IlType for ViewMode_Mode  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::IlType for ViewMode_Mode {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  ViewMode_Mode  {
+    pub fn none() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl ViewMode_Mode {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn bmap() -> Self {
-            Self { value: 1 }
-        }
+    pub fn bmap() -> Self {
+        Self { value: 1 }
 
-        pub fn combat() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn kizuna() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn hub() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn ride() -> Self {
-            Self { value: 5 }
-        }
-
-        pub fn gmap() -> Self {
-            Self { value: 6 }
-        }
-
-        pub fn demo() -> Self {
-            Self { value: 7 }
-        }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/viewmode/ViewMode.md"))]
-    #[::unity2::class(namespace = "App", name = "ViewMode")]
-    #[parent(crate::system::object::Object)]
-    pub struct ViewMode {
-        #[static_field]
-        #[rename(name = "s_Transition")]
-        pub s_transition: f32,
-        #[static_field]
-        #[rename(name = "s_Mode")]
-        pub s_mode: crate::app::viewmode::ViewMode_Mode,
-        #[static_field]
-        #[rename(name = "s_Stack")]
-        pub s_stack: crate::system::collections::generic::stack_1::Stack_1<crate::app::viewmode::ViewMode_Mode>,
-        #[static_field]
-        #[rename(name = "s_BmapSkinQuality")]
-        pub s_bmap_skin_quality: crate::unity_engine::skinquality::SkinQuality,
-        #[static_field]
-        #[rename(name = "m_ModeThreshold")]
-        pub m_mode_threshold: crate::app::gameparam::GameParam_Holder,
+
+    pub fn combat() -> Self {
+        Self { value: 2 }
+
     }
+
+
+    pub fn kizuna() -> Self {
+        Self { value: 3 }
+
+    }
+
+
+    pub fn hub() -> Self {
+        Self { value: 4 }
+
+    }
+
+
+    pub fn ride() -> Self {
+        Self { value: 5 }
+
+    }
+
+
+    pub fn gmap() -> Self {
+        Self { value: 6 }
+
+    }
+
+
+    pub fn demo() -> Self {
+        Self { value: 7 }
+
+    }
+
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/viewmode/ViewMode.md"))] # [:: unity2 :: class (namespace = "App" , name = "ViewMode")] # [parent (crate :: system :: object :: Object)] pub struct ViewMode {
+# [static_field] # [rename (name = "s_Transition")] pub s_transition : f32 ,
+# [static_field] # [rename (name = "s_Mode")] pub s_mode : crate :: app :: viewmode :: ViewMode_Mode ,
+# [static_field] # [rename (name = "s_Stack")] pub s_stack : crate :: system :: collections :: generic :: stack_1 :: Stack_1 < crate :: app :: viewmode :: ViewMode_Mode > ,
+# [static_field] # [rename (name = "s_BmapSkinQuality")] pub s_bmap_skin_quality : crate :: unity_engine :: skinquality :: SkinQuality ,
+# [static_field] # [rename (name = "m_ModeThreshold")] pub m_mode_threshold : crate :: app :: gameparam :: GameParam_Holder ,
+}
+
 }
 
 #[cfg(feature = "app-viewmode-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-viewmode")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ViewMode_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_mode_threshold {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ViewMode as ::unity2::ClassIdentity>::class(),
-                "get_ModeThreshold",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ViewMode as ::unity2::ClassIdentity>::NAME,
-                        "get_ModeThreshold",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_mode_threshold(__unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> f32 = ::core::mem::transmute(__lookup_get_mode_threshold::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_mode {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<ViewMode as ::unity2::ClassIdentity>::class(), "GetMode", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ViewMode as ::unity2::ClassIdentity>::NAME,
-                        "GetMode",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_mode(__unity2_method_info: ::unity2::OptionalMethod) -> crate::app::viewmode::ViewMode_Mode {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::app::viewmode::ViewMode_Mode =
-            ::core::mem::transmute(__lookup_get_mode::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_bmap_skin_quality {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ViewMode as ::unity2::ClassIdentity>::class(),
-                "GetBmapSkinQuality",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ViewMode as ::unity2::ClassIdentity>::NAME,
-                        "GetBmapSkinQuality",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_bmap_skin_quality(__unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::skinquality::SkinQuality {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::unity_engine::skinquality::SkinQuality =
-            ::core::mem::transmute(__lookup_get_bmap_skin_quality::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_bmap_alpha {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ViewMode as ::unity2::ClassIdentity>::class(),
-                "GetBmapAlpha",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ViewMode as ::unity2::ClassIdentity>::NAME,
-                        "GetBmapAlpha",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_bmap_alpha(__unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> f32 = ::core::mem::transmute(__lookup_get_bmap_alpha::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_bmap_showing {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ViewMode as ::unity2::ClassIdentity>::class(),
-                "IsBmapShowing",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ViewMode as ::unity2::ClassIdentity>::NAME,
-                        "IsBmapShowing",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_bmap_showing(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_is_bmap_showing::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_transition {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ViewMode as ::unity2::ClassIdentity>::class(),
-                "GetTransition",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ViewMode as ::unity2::ClassIdentity>::NAME,
-                        "GetTransition",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_transition(__unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> f32 = ::core::mem::transmute(__lookup_get_transition::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_mode {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::viewmode::ViewMode_Mode as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<ViewMode as ::unity2::ClassIdentity>::class(), "SetMode", 1, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ViewMode as ::unity2::ClassIdentity>::NAME,
-                        "SetMode",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_mode(mode: crate::app::viewmode::ViewMode_Mode, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(crate::app::viewmode::ViewMode_Mode, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_mode::get_method_info().method_ptr);
-        inner(mode, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_mode_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::camera::Camera as ::unity2::IlType>::il_type(),
-                <crate::app::viewmode::ViewMode_Mode as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<ViewMode as ::unity2::ClassIdentity>::class(), "SetMode", 2, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ViewMode as ::unity2::ClassIdentity>::NAME,
-                        "SetMode",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_mode_2(
-        camera: crate::unity_engine::camera::Camera,
-        mode: crate::app::viewmode::ViewMode_Mode,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::unity_engine::camera::Camera, crate::app::viewmode::ViewMode_Mode, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_mode_2::get_method_info().method_ptr);
-        inner(camera, mode, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_push_mode {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::viewmode::ViewMode_Mode as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<ViewMode as ::unity2::ClassIdentity>::class(), "PushMode", 1, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ViewMode as ::unity2::ClassIdentity>::NAME,
-                        "PushMode",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn push_mode(mode: crate::app::viewmode::ViewMode_Mode, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(crate::app::viewmode::ViewMode_Mode, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_push_mode::get_method_info().method_ptr);
-        inner(mode, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_pop_mode {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<ViewMode as ::unity2::ClassIdentity>::class(), "PopMode", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ViewMode as ::unity2::ClassIdentity>::NAME,
-                        "PopMode",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn pop_mode(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_pop_mode::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_transition {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ViewMode as ::unity2::ClassIdentity>::class(),
-                "SetTransition",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ViewMode as ::unity2::ClassIdentity>::NAME,
-                        "SetTransition",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_transition(transition: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(f32, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_set_transition::get_method_info().method_ptr);
-        inner(transition, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_layer_culling_mask {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::camera::Camera as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ViewMode as ::unity2::ClassIdentity>::class(),
-                "SetLayerCullingMask",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ViewMode as ::unity2::ClassIdentity>::NAME,
-                        "SetLayerCullingMask",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_layer_culling_mask(
-        camera: crate::unity_engine::camera::Camera,
-        name: ::unity2::Il2CppString,
-        enable: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::unity_engine::camera::Camera, ::unity2::Il2CppString, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_layer_culling_mask::get_method_info().method_ptr);
-        inner(camera, name, enable, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_transition_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::camera::Camera as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ViewMode as ::unity2::ClassIdentity>::class(),
-                "SetTransition",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ViewMode as ::unity2::ClassIdentity>::NAME,
-                        "SetTransition",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_transition_2(
-        camera: crate::unity_engine::camera::Camera,
-        transition: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::unity_engine::camera::Camera, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_transition_2::get_method_info().method_ptr);
-        inner(camera, transition, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update_boost_mode {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ViewMode as ::unity2::ClassIdentity>::class(),
-                "UpdateBoostMode",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ViewMode as ::unity2::ClassIdentity>::NAME,
-                        "UpdateBoostMode",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update_boost_mode(is_boost: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update_boost_mode::get_method_info().method_ptr);
-        inner(is_boost, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<ViewMode as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ViewMode as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: ViewMode, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ViewMode, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<ViewMode as ::unity2::ClassIdentity>::class(), ".cctor", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ViewMode as ::unity2::ClassIdentity>::NAME,
-                        ".cctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ViewMode_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_mode_threshold { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ViewMode as :: unity2 :: ClassIdentity > :: class () , "get_ModeThreshold" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ViewMode as :: unity2 :: ClassIdentity > :: NAME , "get_ModeThreshold" , e) , } } } pub unsafe fn get_mode_threshold (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_get_mode_threshold :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_mode { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ViewMode as :: unity2 :: ClassIdentity > :: class () , "GetMode" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ViewMode as :: unity2 :: ClassIdentity > :: NAME , "GetMode" , e) , } } } pub unsafe fn get_mode (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: viewmode :: ViewMode_Mode { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: viewmode :: ViewMode_Mode = :: core :: mem :: transmute (__lookup_get_mode :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_bmap_skin_quality { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ViewMode as :: unity2 :: ClassIdentity > :: class () , "GetBmapSkinQuality" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ViewMode as :: unity2 :: ClassIdentity > :: NAME , "GetBmapSkinQuality" , e) , } } } pub unsafe fn get_bmap_skin_quality (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: skinquality :: SkinQuality { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: skinquality :: SkinQuality = :: core :: mem :: transmute (__lookup_get_bmap_skin_quality :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_bmap_alpha { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ViewMode as :: unity2 :: ClassIdentity > :: class () , "GetBmapAlpha" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ViewMode as :: unity2 :: ClassIdentity > :: NAME , "GetBmapAlpha" , e) , } } } pub unsafe fn get_bmap_alpha (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_get_bmap_alpha :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_bmap_showing { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ViewMode as :: unity2 :: ClassIdentity > :: class () , "IsBmapShowing" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ViewMode as :: unity2 :: ClassIdentity > :: NAME , "IsBmapShowing" , e) , } } } pub unsafe fn is_bmap_showing (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_bmap_showing :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_transition { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ViewMode as :: unity2 :: ClassIdentity > :: class () , "GetTransition" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ViewMode as :: unity2 :: ClassIdentity > :: NAME , "GetTransition" , e) , } } } pub unsafe fn get_transition (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_get_transition :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_mode { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: viewmode :: ViewMode_Mode as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ViewMode as :: unity2 :: ClassIdentity > :: class () , "SetMode" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ViewMode as :: unity2 :: ClassIdentity > :: NAME , "SetMode" , e) , } } } pub unsafe fn set_mode (mode : crate :: app :: viewmode :: ViewMode_Mode , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: viewmode :: ViewMode_Mode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_mode :: get_method_info () . method_ptr ,) ; inner (mode , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_mode_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: camera :: Camera as :: unity2 :: IlType > :: il_type () , < crate :: app :: viewmode :: ViewMode_Mode as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ViewMode as :: unity2 :: ClassIdentity > :: class () , "SetMode" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ViewMode as :: unity2 :: ClassIdentity > :: NAME , "SetMode" , e) , } } } pub unsafe fn set_mode_2 (camera : crate :: unity_engine :: camera :: Camera , mode : crate :: app :: viewmode :: ViewMode_Mode , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: unity_engine :: camera :: Camera , crate :: app :: viewmode :: ViewMode_Mode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_mode_2 :: get_method_info () . method_ptr ,) ; inner (camera , mode , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_push_mode { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: viewmode :: ViewMode_Mode as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ViewMode as :: unity2 :: ClassIdentity > :: class () , "PushMode" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ViewMode as :: unity2 :: ClassIdentity > :: NAME , "PushMode" , e) , } } } pub unsafe fn push_mode (mode : crate :: app :: viewmode :: ViewMode_Mode , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: viewmode :: ViewMode_Mode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_push_mode :: get_method_info () . method_ptr ,) ; inner (mode , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_pop_mode { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ViewMode as :: unity2 :: ClassIdentity > :: class () , "PopMode" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ViewMode as :: unity2 :: ClassIdentity > :: NAME , "PopMode" , e) , } } } pub unsafe fn pop_mode (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_pop_mode :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_transition { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ViewMode as :: unity2 :: ClassIdentity > :: class () , "SetTransition" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ViewMode as :: unity2 :: ClassIdentity > :: NAME , "SetTransition" , e) , } } } pub unsafe fn set_transition (transition : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_transition :: get_method_info () . method_ptr ,) ; inner (transition , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_layer_culling_mask { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: camera :: Camera as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ViewMode as :: unity2 :: ClassIdentity > :: class () , "SetLayerCullingMask" , 3 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ViewMode as :: unity2 :: ClassIdentity > :: NAME , "SetLayerCullingMask" , e) , } } } pub unsafe fn set_layer_culling_mask (camera : crate :: unity_engine :: camera :: Camera , name : :: unity2 :: Il2CppString , enable : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: unity_engine :: camera :: Camera , :: unity2 :: Il2CppString , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_layer_culling_mask :: get_method_info () . method_ptr ,) ; inner (camera , name , enable , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_transition_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: camera :: Camera as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ViewMode as :: unity2 :: ClassIdentity > :: class () , "SetTransition" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ViewMode as :: unity2 :: ClassIdentity > :: NAME , "SetTransition" , e) , } } } pub unsafe fn set_transition_2 (camera : crate :: unity_engine :: camera :: Camera , transition : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: unity_engine :: camera :: Camera , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_transition_2 :: get_method_info () . method_ptr ,) ; inner (camera , transition , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update_boost_mode { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ViewMode as :: unity2 :: ClassIdentity > :: class () , "UpdateBoostMode" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ViewMode as :: unity2 :: ClassIdentity > :: NAME , "UpdateBoostMode" , e) , } } } pub unsafe fn update_boost_mode (is_boost : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update_boost_mode :: get_method_info () . method_ptr ,) ; inner (is_boost , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ViewMode as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ViewMode as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : ViewMode , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ViewMode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ViewMode as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ViewMode as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
+
+#[cfg(feature = "app-viewmode")]
+impl ViewMode { # [doc = "`get_ModeThreshold()` overload"] pub fn get_mode_threshold () -> f32 { unsafe { __ViewMode_unity2_raw :: get_mode_threshold (:: core :: option :: Option :: None) } } # [doc = "`GetMode()` overload"] pub fn get_mode () -> crate :: app :: viewmode :: ViewMode_Mode { unsafe { __ViewMode_unity2_raw :: get_mode (:: core :: option :: Option :: None) } } # [doc = "`GetBmapSkinQuality()` overload"] pub fn get_bmap_skin_quality () -> crate :: unity_engine :: skinquality :: SkinQuality { unsafe { __ViewMode_unity2_raw :: get_bmap_skin_quality (:: core :: option :: Option :: None) } } # [doc = "`GetBmapAlpha()` overload"] pub fn get_bmap_alpha () -> f32 { unsafe { __ViewMode_unity2_raw :: get_bmap_alpha (:: core :: option :: Option :: None) } } # [doc = "`IsBmapShowing()` overload"] pub fn is_bmap_showing () -> bool { unsafe { __ViewMode_unity2_raw :: is_bmap_showing (:: core :: option :: Option :: None) } } # [doc = "`GetTransition()` overload"] pub fn get_transition () -> f32 { unsafe { __ViewMode_unity2_raw :: get_transition (:: core :: option :: Option :: None) } } # [doc = "`SetMode(crate::app::viewmode::ViewMode_Mode)` overload"] pub fn set_mode (mode : impl :: core :: convert :: Into < crate :: app :: viewmode :: ViewMode_Mode >) -> () { unsafe { __ViewMode_unity2_raw :: set_mode (:: core :: convert :: Into :: into (mode) , :: core :: option :: Option :: None) } } # [doc = "`SetMode(crate::unity_engine::camera::Camera, crate::app::viewmode::ViewMode_Mode)` overload"] pub fn set_mode_2 (camera : impl :: core :: convert :: Into < crate :: unity_engine :: camera :: Camera > , mode : impl :: core :: convert :: Into < crate :: app :: viewmode :: ViewMode_Mode >) -> () { unsafe { __ViewMode_unity2_raw :: set_mode_2 (:: core :: convert :: Into :: into (camera) , :: core :: convert :: Into :: into (mode) , :: core :: option :: Option :: None) } } # [doc = "`PushMode(crate::app::viewmode::ViewMode_Mode)` overload"] pub fn push_mode (mode : impl :: core :: convert :: Into < crate :: app :: viewmode :: ViewMode_Mode >) -> () { unsafe { __ViewMode_unity2_raw :: push_mode (:: core :: convert :: Into :: into (mode) , :: core :: option :: Option :: None) } } # [doc = "`PopMode()` overload"] pub fn pop_mode () -> () { unsafe { __ViewMode_unity2_raw :: pop_mode (:: core :: option :: Option :: None) } } # [doc = "`SetTransition(f32)` overload"] pub fn set_transition (transition : impl :: core :: convert :: Into < f32 >) -> () { unsafe { __ViewMode_unity2_raw :: set_transition (:: core :: convert :: Into :: into (transition) , :: core :: option :: Option :: None) } } # [doc = "`SetLayerCullingMask(crate::unity_engine::camera::Camera, ::unity2::Il2CppString, bool)` overload"] pub fn set_layer_culling_mask (camera : impl :: core :: convert :: Into < crate :: unity_engine :: camera :: Camera > , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , enable : impl :: core :: convert :: Into < bool >) -> () { unsafe { __ViewMode_unity2_raw :: set_layer_culling_mask (:: core :: convert :: Into :: into (camera) , :: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (enable) , :: core :: option :: Option :: None) } } # [doc = "`SetTransition(crate::unity_engine::camera::Camera, f32)` overload"] pub fn set_transition_2 (camera : impl :: core :: convert :: Into < crate :: unity_engine :: camera :: Camera > , transition : impl :: core :: convert :: Into < f32 >) -> () { unsafe { __ViewMode_unity2_raw :: set_transition_2 (:: core :: convert :: Into :: into (camera) , :: core :: convert :: Into :: into (transition) , :: core :: option :: Option :: None) } } # [doc = "`UpdateBoostMode(bool)` overload"] pub fn update_boost_mode (is_boost : impl :: core :: convert :: Into < bool >) -> () { unsafe { __ViewMode_unity2_raw :: update_boost_mode (:: core :: convert :: Into :: into (is_boost) , :: core :: option :: Option :: None) } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { __ViewMode_unity2_raw :: cctor (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-viewmode")]
+pub trait IViewModeMethods : IViewMode { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ViewMode as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ViewMode_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-viewmode")]
+impl < __T : IViewMode > IViewModeMethods for __T { }
+
+#[cfg(feature = "app-viewmode")]
+impl ViewMode { pub fn get_mode_threshold_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ViewMode_unity2_raw :: __lookup_get_mode_threshold :: get_method_info () } pub fn get_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ViewMode_unity2_raw :: __lookup_get_mode :: get_method_info () } pub fn get_bmap_skin_quality_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ViewMode_unity2_raw :: __lookup_get_bmap_skin_quality :: get_method_info () } pub fn get_bmap_alpha_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ViewMode_unity2_raw :: __lookup_get_bmap_alpha :: get_method_info () } pub fn is_bmap_showing_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ViewMode_unity2_raw :: __lookup_is_bmap_showing :: get_method_info () } pub fn get_transition_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ViewMode_unity2_raw :: __lookup_get_transition :: get_method_info () } pub fn set_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ViewMode_unity2_raw :: __lookup_set_mode :: get_method_info () } pub fn set_mode_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ViewMode_unity2_raw :: __lookup_set_mode_2 :: get_method_info () } pub fn push_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ViewMode_unity2_raw :: __lookup_push_mode :: get_method_info () } pub fn pop_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ViewMode_unity2_raw :: __lookup_pop_mode :: get_method_info () } pub fn set_transition_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ViewMode_unity2_raw :: __lookup_set_transition :: get_method_info () } pub fn set_layer_culling_mask_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ViewMode_unity2_raw :: __lookup_set_layer_culling_mask :: get_method_info () } pub fn set_transition_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ViewMode_unity2_raw :: __lookup_set_transition_2 :: get_method_info () } pub fn update_boost_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ViewMode_unity2_raw :: __lookup_update_boost_mode :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ViewMode_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ViewMode_unity2_raw :: __lookup_cctor :: get_method_info () } }
 
 #[cfg(feature = "app-viewmode")]
 impl ViewMode {
-    #[doc = "`get_ModeThreshold()` overload"]
-    pub fn get_mode_threshold() -> f32 {
-        unsafe { __ViewMode_unity2_raw::get_mode_threshold(::core::option::Option::None) }
-    }
-
-    #[doc = "`GetMode()` overload"]
-    pub fn get_mode() -> crate::app::viewmode::ViewMode_Mode {
-        unsafe { __ViewMode_unity2_raw::get_mode(::core::option::Option::None) }
-    }
-
-    #[doc = "`GetBmapSkinQuality()` overload"]
-    pub fn get_bmap_skin_quality() -> crate::unity_engine::skinquality::SkinQuality {
-        unsafe { __ViewMode_unity2_raw::get_bmap_skin_quality(::core::option::Option::None) }
-    }
-
-    #[doc = "`GetBmapAlpha()` overload"]
-    pub fn get_bmap_alpha() -> f32 {
-        unsafe { __ViewMode_unity2_raw::get_bmap_alpha(::core::option::Option::None) }
-    }
-
-    #[doc = "`IsBmapShowing()` overload"]
-    pub fn is_bmap_showing() -> bool {
-        unsafe { __ViewMode_unity2_raw::is_bmap_showing(::core::option::Option::None) }
-    }
-
-    #[doc = "`GetTransition()` overload"]
-    pub fn get_transition() -> f32 {
-        unsafe { __ViewMode_unity2_raw::get_transition(::core::option::Option::None) }
-    }
-
-    #[doc = "`SetMode(crate::app::viewmode::ViewMode_Mode)` overload"]
-    pub fn set_mode(mode: impl ::core::convert::Into<crate::app::viewmode::ViewMode_Mode>) -> () {
-        unsafe { __ViewMode_unity2_raw::set_mode(::core::convert::Into::into(mode), ::core::option::Option::None) }
-    }
-
-    #[doc = "`SetMode(crate::unity_engine::camera::Camera, crate::app::viewmode::ViewMode_Mode)` overload"]
-    pub fn set_mode_2(
-        camera: impl ::core::convert::Into<crate::unity_engine::camera::Camera>,
-        mode: impl ::core::convert::Into<crate::app::viewmode::ViewMode_Mode>,
-    ) -> () {
-        unsafe {
-            __ViewMode_unity2_raw::set_mode_2(
-                ::core::convert::Into::into(camera),
-                ::core::convert::Into::into(mode),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`PushMode(crate::app::viewmode::ViewMode_Mode)` overload"]
-    pub fn push_mode(mode: impl ::core::convert::Into<crate::app::viewmode::ViewMode_Mode>) -> () {
-        unsafe { __ViewMode_unity2_raw::push_mode(::core::convert::Into::into(mode), ::core::option::Option::None) }
-    }
-
-    #[doc = "`PopMode()` overload"]
-    pub fn pop_mode() -> () {
-        unsafe { __ViewMode_unity2_raw::pop_mode(::core::option::Option::None) }
-    }
-
-    #[doc = "`SetTransition(f32)` overload"]
-    pub fn set_transition(transition: impl ::core::convert::Into<f32>) -> () {
-        unsafe { __ViewMode_unity2_raw::set_transition(::core::convert::Into::into(transition), ::core::option::Option::None) }
-    }
-
-    #[doc = "`SetLayerCullingMask(crate::unity_engine::camera::Camera, ::unity2::Il2CppString, bool)` overload"]
-    pub fn set_layer_culling_mask(
-        camera: impl ::core::convert::Into<crate::unity_engine::camera::Camera>,
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        enable: impl ::core::convert::Into<bool>,
-    ) -> () {
-        unsafe {
-            __ViewMode_unity2_raw::set_layer_culling_mask(
-                ::core::convert::Into::into(camera),
-                ::core::convert::Into::into(name),
-                ::core::convert::Into::into(enable),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`SetTransition(crate::unity_engine::camera::Camera, f32)` overload"]
-    pub fn set_transition_2(
-        camera: impl ::core::convert::Into<crate::unity_engine::camera::Camera>,
-        transition: impl ::core::convert::Into<f32>,
-    ) -> () {
-        unsafe {
-            __ViewMode_unity2_raw::set_transition_2(
-                ::core::convert::Into::into(camera),
-                ::core::convert::Into::into(transition),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`UpdateBoostMode(bool)` overload"]
-    pub fn update_boost_mode(is_boost: impl ::core::convert::Into<bool>) -> () {
-        unsafe { __ViewMode_unity2_raw::update_boost_mode(::core::convert::Into::into(is_boost), ::core::option::Option::None) }
-    }
-
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __ViewMode_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-viewmode")]
-pub trait IViewModeMethods: IViewMode {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <ViewMode as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ViewMode_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-viewmode")]
-impl<__T: IViewMode> IViewModeMethods for __T {}
-
-#[cfg(feature = "app-viewmode")]
-impl ViewMode {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(ViewMode), ::core::stringify!(new),));
-        <Self as IViewModeMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ViewMode) , :: core :: stringify ! (new) ,)) ; < Self as IViewModeMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-viewmode")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IViewMode, IViewModeMethods, ViewMode, ViewMode_Mode};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::system::{object::IObject, r#enum::IEnum, valuetype::IValueType};
+    pub use super::ViewMode_Mode;
+    pub use super::ViewMode;
+    pub use super::IViewMode;
+    pub use super::IViewModeMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

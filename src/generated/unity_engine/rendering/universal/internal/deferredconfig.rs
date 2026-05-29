@@ -2,290 +2,44 @@
 
 #[cfg(feature = "unity_engine-rendering-universal-internal-deferredconfig-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/deferredconfig/DeferredConfig.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Rendering.Universal.Internal", name = "DeferredConfig")]
-    #[parent(crate::system::object::Object)]
-    pub struct DeferredConfig {
-        #[static_field]
-        #[rename(name = "kPreferredCBufferSize")]
-        pub k_preferred_c_buffer_size: i32,
-        #[static_field]
-        #[rename(name = "kPreferredStructuredBufferSize")]
-        pub k_preferred_structured_buffer_size: i32,
-        #[static_field]
-        #[rename(name = "kTilePixelWidth")]
-        pub k_tile_pixel_width: i32,
-        #[static_field]
-        #[rename(name = "kTilePixelHeight")]
-        pub k_tile_pixel_height: i32,
-        #[static_field]
-        #[rename(name = "kTilerDepth")]
-        pub k_tiler_depth: i32,
-        #[static_field]
-        #[rename(name = "kTilerSubdivisions")]
-        pub k_tiler_subdivisions: i32,
-        #[static_field]
-        #[rename(name = "kAvgLightPerTile")]
-        pub k_avg_light_per_tile: i32,
-        #[static_field]
-        #[rename(name = "kTileDepthInfoIntermediateLevel")]
-        pub k_tile_depth_info_intermediate_level: i32,
-        #[static_field]
-        #[rename(name = "kHasNativeQuadSupport")]
-        pub k_has_native_quad_support: bool,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/deferredconfig/DeferredConfig.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.Universal.Internal" , name = "DeferredConfig")] # [parent (crate :: system :: object :: Object)] pub struct DeferredConfig {
+# [static_field] # [rename (name = "kPreferredCBufferSize")] pub k_preferred_c_buffer_size : i32 ,
+# [static_field] # [rename (name = "kPreferredStructuredBufferSize")] pub k_preferred_structured_buffer_size : i32 ,
+# [static_field] # [rename (name = "kTilePixelWidth")] pub k_tile_pixel_width : i32 ,
+# [static_field] # [rename (name = "kTilePixelHeight")] pub k_tile_pixel_height : i32 ,
+# [static_field] # [rename (name = "kTilerDepth")] pub k_tiler_depth : i32 ,
+# [static_field] # [rename (name = "kTilerSubdivisions")] pub k_tiler_subdivisions : i32 ,
+# [static_field] # [rename (name = "kAvgLightPerTile")] pub k_avg_light_per_tile : i32 ,
+# [static_field] # [rename (name = "kTileDepthInfoIntermediateLevel")] pub k_tile_depth_info_intermediate_level : i32 ,
+# [static_field] # [rename (name = "kHasNativeQuadSupport")] pub k_has_native_quad_support : bool ,
+}
+
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-internal-deferredconfig-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-universal-internal-deferredconfig")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __DeferredConfig_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_is_open_gl {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DeferredConfig as ::unity2::ClassIdentity>::class(),
-                "get_IsOpenGL",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DeferredConfig as ::unity2::ClassIdentity>::NAME,
-                        "get_IsOpenGL",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_is_open_gl(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_get_is_open_gl::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_is_open_gl {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DeferredConfig as ::unity2::ClassIdentity>::class(),
-                "set_IsOpenGL",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DeferredConfig as ::unity2::ClassIdentity>::NAME,
-                        "set_IsOpenGL",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_is_open_gl(value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_is_open_gl::get_method_info().method_ptr);
-        inner(value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_use_c_buffer_for_depth_range {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DeferredConfig as ::unity2::ClassIdentity>::class(),
-                "get_UseCBufferForDepthRange",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DeferredConfig as ::unity2::ClassIdentity>::NAME,
-                        "get_UseCBufferForDepthRange",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_use_c_buffer_for_depth_range(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_use_c_buffer_for_depth_range::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_use_c_buffer_for_tile_list {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DeferredConfig as ::unity2::ClassIdentity>::class(),
-                "get_UseCBufferForTileList",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DeferredConfig as ::unity2::ClassIdentity>::NAME,
-                        "get_UseCBufferForTileList",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_use_c_buffer_for_tile_list(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_use_c_buffer_for_tile_list::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_use_c_buffer_for_light_data {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DeferredConfig as ::unity2::ClassIdentity>::class(),
-                "get_UseCBufferForLightData",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DeferredConfig as ::unity2::ClassIdentity>::NAME,
-                        "get_UseCBufferForLightData",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_use_c_buffer_for_light_data(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_use_c_buffer_for_light_data::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_use_c_buffer_for_light_list {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DeferredConfig as ::unity2::ClassIdentity>::class(),
-                "get_UseCBufferForLightList",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DeferredConfig as ::unity2::ClassIdentity>::NAME,
-                        "get_UseCBufferForLightList",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_use_c_buffer_for_light_list(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_use_c_buffer_for_light_list::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __DeferredConfig_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_is_open_gl { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DeferredConfig as :: unity2 :: ClassIdentity > :: class () , "get_IsOpenGL" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DeferredConfig as :: unity2 :: ClassIdentity > :: NAME , "get_IsOpenGL" , e) , } } } pub unsafe fn get_is_open_gl (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_is_open_gl :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_is_open_gl { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DeferredConfig as :: unity2 :: ClassIdentity > :: class () , "set_IsOpenGL" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DeferredConfig as :: unity2 :: ClassIdentity > :: NAME , "set_IsOpenGL" , e) , } } } pub unsafe fn set_is_open_gl (value : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_is_open_gl :: get_method_info () . method_ptr ,) ; inner (value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_use_c_buffer_for_depth_range { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DeferredConfig as :: unity2 :: ClassIdentity > :: class () , "get_UseCBufferForDepthRange" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DeferredConfig as :: unity2 :: ClassIdentity > :: NAME , "get_UseCBufferForDepthRange" , e) , } } } pub unsafe fn get_use_c_buffer_for_depth_range (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_use_c_buffer_for_depth_range :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_use_c_buffer_for_tile_list { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DeferredConfig as :: unity2 :: ClassIdentity > :: class () , "get_UseCBufferForTileList" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DeferredConfig as :: unity2 :: ClassIdentity > :: NAME , "get_UseCBufferForTileList" , e) , } } } pub unsafe fn get_use_c_buffer_for_tile_list (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_use_c_buffer_for_tile_list :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_use_c_buffer_for_light_data { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DeferredConfig as :: unity2 :: ClassIdentity > :: class () , "get_UseCBufferForLightData" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DeferredConfig as :: unity2 :: ClassIdentity > :: NAME , "get_UseCBufferForLightData" , e) , } } } pub unsafe fn get_use_c_buffer_for_light_data (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_use_c_buffer_for_light_data :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_use_c_buffer_for_light_list { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DeferredConfig as :: unity2 :: ClassIdentity > :: class () , "get_UseCBufferForLightList" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DeferredConfig as :: unity2 :: ClassIdentity > :: NAME , "get_UseCBufferForLightList" , e) , } } } pub unsafe fn get_use_c_buffer_for_light_list (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_use_c_buffer_for_light_list :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-rendering-universal-internal-deferredconfig")]
-impl DeferredConfig {
-    #[doc = "`get_IsOpenGL()` overload"]
-    pub fn get_is_open_gl() -> bool {
-        unsafe { __DeferredConfig_unity2_raw::get_is_open_gl(::core::option::Option::None) }
-    }
+impl DeferredConfig { # [doc = "`get_IsOpenGL()` overload"] pub fn get_is_open_gl () -> bool { unsafe { __DeferredConfig_unity2_raw :: get_is_open_gl (:: core :: option :: Option :: None) } } # [doc = "`set_IsOpenGL(bool)` overload"] pub fn set_is_open_gl (value : impl :: core :: convert :: Into < bool >) -> () { unsafe { __DeferredConfig_unity2_raw :: set_is_open_gl (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_UseCBufferForDepthRange()` overload"] pub fn get_use_c_buffer_for_depth_range () -> bool { unsafe { __DeferredConfig_unity2_raw :: get_use_c_buffer_for_depth_range (:: core :: option :: Option :: None) } } # [doc = "`get_UseCBufferForTileList()` overload"] pub fn get_use_c_buffer_for_tile_list () -> bool { unsafe { __DeferredConfig_unity2_raw :: get_use_c_buffer_for_tile_list (:: core :: option :: Option :: None) } } # [doc = "`get_UseCBufferForLightData()` overload"] pub fn get_use_c_buffer_for_light_data () -> bool { unsafe { __DeferredConfig_unity2_raw :: get_use_c_buffer_for_light_data (:: core :: option :: Option :: None) } } # [doc = "`get_UseCBufferForLightList()` overload"] pub fn get_use_c_buffer_for_light_list () -> bool { unsafe { __DeferredConfig_unity2_raw :: get_use_c_buffer_for_light_list (:: core :: option :: Option :: None) } } }
 
-    #[doc = "`set_IsOpenGL(bool)` overload"]
-    pub fn set_is_open_gl(value: impl ::core::convert::Into<bool>) -> () {
-        unsafe { __DeferredConfig_unity2_raw::set_is_open_gl(::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_UseCBufferForDepthRange()` overload"]
-    pub fn get_use_c_buffer_for_depth_range() -> bool {
-        unsafe { __DeferredConfig_unity2_raw::get_use_c_buffer_for_depth_range(::core::option::Option::None) }
-    }
-
-    #[doc = "`get_UseCBufferForTileList()` overload"]
-    pub fn get_use_c_buffer_for_tile_list() -> bool {
-        unsafe { __DeferredConfig_unity2_raw::get_use_c_buffer_for_tile_list(::core::option::Option::None) }
-    }
-
-    #[doc = "`get_UseCBufferForLightData()` overload"]
-    pub fn get_use_c_buffer_for_light_data() -> bool {
-        unsafe { __DeferredConfig_unity2_raw::get_use_c_buffer_for_light_data(::core::option::Option::None) }
-    }
-
-    #[doc = "`get_UseCBufferForLightList()` overload"]
-    pub fn get_use_c_buffer_for_light_list() -> bool {
-        unsafe { __DeferredConfig_unity2_raw::get_use_c_buffer_for_light_list(::core::option::Option::None) }
-    }
-}
+#[cfg(feature = "unity_engine-rendering-universal-internal-deferredconfig")]
+impl DeferredConfig { pub fn get_is_open_gl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DeferredConfig_unity2_raw :: __lookup_get_is_open_gl :: get_method_info () } pub fn set_is_open_gl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DeferredConfig_unity2_raw :: __lookup_set_is_open_gl :: get_method_info () } pub fn get_use_c_buffer_for_depth_range_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DeferredConfig_unity2_raw :: __lookup_get_use_c_buffer_for_depth_range :: get_method_info () } pub fn get_use_c_buffer_for_tile_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DeferredConfig_unity2_raw :: __lookup_get_use_c_buffer_for_tile_list :: get_method_info () } pub fn get_use_c_buffer_for_light_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DeferredConfig_unity2_raw :: __lookup_get_use_c_buffer_for_light_data :: get_method_info () } pub fn get_use_c_buffer_for_light_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DeferredConfig_unity2_raw :: __lookup_get_use_c_buffer_for_light_list :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-rendering-universal-internal-deferredconfig")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{DeferredConfig, IDeferredConfig};
+    pub use super::DeferredConfig;
+    pub use super::IDeferredConfig;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

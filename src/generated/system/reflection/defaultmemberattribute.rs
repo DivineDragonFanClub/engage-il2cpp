@@ -2,136 +2,41 @@
 
 #[cfg(feature = "system-reflection-defaultmemberattribute-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/defaultmemberattribute/DefaultMemberAttribute.md"))]
-    #[::unity2::class(namespace = "System.Reflection", name = "DefaultMemberAttribute")]
-    pub struct DefaultMemberAttribute {
-        #[offset(16)]
-        #[rename(name = "m_memberName")]
-        pub m_member_name: ::unity2::Il2CppString,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/defaultmemberattribute/DefaultMemberAttribute.md"))] # [:: unity2 :: class (namespace = "System.Reflection" , name = "DefaultMemberAttribute")] pub struct DefaultMemberAttribute {
+# [offset (16)] # [rename (name = "m_memberName")] pub m_member_name : :: unity2 :: Il2CppString ,
+}
+
 }
 
 #[cfg(feature = "system-reflection-defaultmemberattribute-types")]
 pub use __types::*;
 
 #[cfg(feature = "system-reflection-defaultmemberattribute")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __DefaultMemberAttribute_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DefaultMemberAttribute as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DefaultMemberAttribute as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: DefaultMemberAttribute, member_name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DefaultMemberAttribute, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, member_name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_member_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DefaultMemberAttribute as ::unity2::ClassIdentity>::class(),
-                "get_MemberName",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DefaultMemberAttribute as ::unity2::ClassIdentity>::NAME,
-                        "get_MemberName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_member_name(this: DefaultMemberAttribute, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(DefaultMemberAttribute, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_member_name::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __DefaultMemberAttribute_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DefaultMemberAttribute as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DefaultMemberAttribute as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : DefaultMemberAttribute , member_name : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DefaultMemberAttribute , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , member_name , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_member_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DefaultMemberAttribute as :: unity2 :: ClassIdentity > :: class () , "get_MemberName" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DefaultMemberAttribute as :: unity2 :: ClassIdentity > :: NAME , "get_MemberName" , e) , } } } pub unsafe fn get_member_name (this : DefaultMemberAttribute , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (DefaultMemberAttribute , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_member_name :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "system-reflection-defaultmemberattribute")]
-pub trait IDefaultMemberAttributeMethods: IDefaultMemberAttribute {
-    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
-    fn ctor(self, member_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver =
-                <DefaultMemberAttribute as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DefaultMemberAttribute_unity2_raw::ctor(__receiver, ::core::convert::Into::into(member_name), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_MemberName()` overload"]
-    fn get_member_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver =
-                <DefaultMemberAttribute as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DefaultMemberAttribute_unity2_raw::get_member_name(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IDefaultMemberAttributeMethods : IDefaultMemberAttribute { # [doc = "`.ctor(::unity2::Il2CppString)` overload"] fn ctor (self , member_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < DefaultMemberAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DefaultMemberAttribute_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (member_name) , :: core :: option :: Option :: None) } } # [doc = "`get_MemberName()` overload"] fn get_member_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < DefaultMemberAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DefaultMemberAttribute_unity2_raw :: get_member_name (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "system-reflection-defaultmemberattribute")]
-impl<__T: IDefaultMemberAttribute> IDefaultMemberAttributeMethods for __T {}
+impl < __T : IDefaultMemberAttribute > IDefaultMemberAttributeMethods for __T { }
+
+#[cfg(feature = "system-reflection-defaultmemberattribute")]
+impl DefaultMemberAttribute { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DefaultMemberAttribute_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn get_member_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DefaultMemberAttribute_unity2_raw :: __lookup_get_member_name :: get_method_info () } }
 
 #[cfg(feature = "system-reflection-defaultmemberattribute")]
 impl DefaultMemberAttribute {
-    #[doc = "`.ctor(::unity2::Il2CppString)` — overload selector"]
-    pub fn new(member_name: ::unity2::Il2CppString) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DefaultMemberAttribute),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDefaultMemberAttributeMethods>::ctor(this, member_name);
-        this
-    }
+# [doc = "`.ctor(::unity2::Il2CppString)` — overload selector"] pub fn new (member_name : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DefaultMemberAttribute) , :: core :: stringify ! (new) ,)) ; < Self as IDefaultMemberAttributeMethods > :: ctor (this , member_name) ; this }
 }
 
 #[cfg(feature = "system-reflection-defaultmemberattribute")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{DefaultMemberAttribute, IDefaultMemberAttribute, IDefaultMemberAttributeMethods};
+    pub use super::DefaultMemberAttribute;
+    pub use super::IDefaultMemberAttribute;
+    pub use super::IDefaultMemberAttributeMethods;
 }

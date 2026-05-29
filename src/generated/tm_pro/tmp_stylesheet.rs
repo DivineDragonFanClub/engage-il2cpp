@@ -2,369 +2,54 @@
 
 #[cfg(feature = "tm_pro-tmp_stylesheet-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::{
-            object_2::{IObject_2, Object_2},
-            scriptableobject::{IScriptableObject, ScriptableObject},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_stylesheet/TMP_StyleSheet.md"))]
-    #[::unity2::class(namespace = "TMPro", name = "TMP_StyleSheet")]
-    #[parent(crate::unity_engine::scriptableobject::ScriptableObject)]
-    pub struct TMP_StyleSheet {
-        #[offset(24)]
-        #[rename(name = "m_StyleList")]
-        pub m_style_list: crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_style::TMP_Style>,
-        #[offset(32)]
-        #[rename(name = "m_StyleLookupDictionary")]
-        pub m_style_lookup_dictionary: crate::system::collections::generic::dictionary_2::Dictionary_2<i32, crate::tm_pro::tmp_style::TMP_Style>,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+ use crate :: unity_engine :: scriptableobject :: { IScriptableObject , ScriptableObject }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_stylesheet/TMP_StyleSheet.md"))] # [:: unity2 :: class (namespace = "TMPro" , name = "TMP_StyleSheet")] # [parent (crate :: unity_engine :: scriptableobject :: ScriptableObject)] pub struct TMP_StyleSheet {
+# [offset (24)] # [rename (name = "m_StyleList")] pub m_style_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: tm_pro :: tmp_style :: TMP_Style > ,
+# [offset (32)] # [rename (name = "m_StyleLookupDictionary")] pub m_style_lookup_dictionary : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < i32 , crate :: tm_pro :: tmp_style :: TMP_Style > ,
+}
+
 }
 
 #[cfg(feature = "tm_pro-tmp_stylesheet-types")]
 pub use __types::*;
 
 #[cfg(feature = "tm_pro-tmp_stylesheet")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __TMP_StyleSheet_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_styles {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TMP_StyleSheet as ::unity2::ClassIdentity>::class(),
-                "get_styles",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TMP_StyleSheet as ::unity2::ClassIdentity>::NAME,
-                        "get_styles",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_styles(
-        this: TMP_StyleSheet,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_style::TMP_Style> {
-        let inner: extern "C" fn(
-            TMP_StyleSheet,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_style::TMP_Style> =
-            ::core::mem::transmute(__lookup_get_styles::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_reset {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TMP_StyleSheet as ::unity2::ClassIdentity>::class(),
-                "Reset",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TMP_StyleSheet as ::unity2::ClassIdentity>::NAME,
-                        "Reset",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn reset(this: TMP_StyleSheet, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TMP_StyleSheet, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_reset::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_style {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TMP_StyleSheet as ::unity2::ClassIdentity>::class(),
-                "GetStyle",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TMP_StyleSheet as ::unity2::ClassIdentity>::NAME,
-                        "GetStyle",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_style(
-        this: TMP_StyleSheet,
-        hash_code: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::tm_pro::tmp_style::TMP_Style {
-        let inner: extern "C" fn(TMP_StyleSheet, i32, ::unity2::OptionalMethod) -> crate::tm_pro::tmp_style::TMP_Style =
-            ::core::mem::transmute(__lookup_get_style::get_method_info().method_ptr);
-        inner(this, hash_code, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_style_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TMP_StyleSheet as ::unity2::ClassIdentity>::class(),
-                "GetStyle",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TMP_StyleSheet as ::unity2::ClassIdentity>::NAME,
-                        "GetStyle",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_style_2(
-        this: TMP_StyleSheet,
-        name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::tm_pro::tmp_style::TMP_Style {
-        let inner: extern "C" fn(TMP_StyleSheet, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> crate::tm_pro::tmp_style::TMP_Style =
-            ::core::mem::transmute(__lookup_get_style_2::get_method_info().method_ptr);
-        inner(this, name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_refresh_styles {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TMP_StyleSheet as ::unity2::ClassIdentity>::class(),
-                "RefreshStyles",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TMP_StyleSheet as ::unity2::ClassIdentity>::NAME,
-                        "RefreshStyles",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn refresh_styles(this: TMP_StyleSheet, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TMP_StyleSheet, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_refresh_styles::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_load_style_dictionary_internal {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TMP_StyleSheet as ::unity2::ClassIdentity>::class(),
-                "LoadStyleDictionaryInternal",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TMP_StyleSheet as ::unity2::ClassIdentity>::NAME,
-                        "LoadStyleDictionaryInternal",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn load_style_dictionary_internal(this: TMP_StyleSheet, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TMP_StyleSheet, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_load_style_dictionary_internal::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TMP_StyleSheet as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TMP_StyleSheet as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: TMP_StyleSheet, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TMP_StyleSheet, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __TMP_StyleSheet_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_styles { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TMP_StyleSheet as :: unity2 :: ClassIdentity > :: class () , "get_styles" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TMP_StyleSheet as :: unity2 :: ClassIdentity > :: NAME , "get_styles" , e) , } } } pub unsafe fn get_styles (this : TMP_StyleSheet , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: tm_pro :: tmp_style :: TMP_Style > { let inner : extern "C" fn (TMP_StyleSheet , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: tm_pro :: tmp_style :: TMP_Style > = :: core :: mem :: transmute (__lookup_get_styles :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_reset { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TMP_StyleSheet as :: unity2 :: ClassIdentity > :: class () , "Reset" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TMP_StyleSheet as :: unity2 :: ClassIdentity > :: NAME , "Reset" , e) , } } } pub unsafe fn reset (this : TMP_StyleSheet , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TMP_StyleSheet , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_reset :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_style { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TMP_StyleSheet as :: unity2 :: ClassIdentity > :: class () , "GetStyle" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TMP_StyleSheet as :: unity2 :: ClassIdentity > :: NAME , "GetStyle" , e) , } } } pub unsafe fn get_style (this : TMP_StyleSheet , hash_code : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: tm_pro :: tmp_style :: TMP_Style { let inner : extern "C" fn (TMP_StyleSheet , i32 , :: unity2 :: OptionalMethod ,) -> crate :: tm_pro :: tmp_style :: TMP_Style = :: core :: mem :: transmute (__lookup_get_style :: get_method_info () . method_ptr ,) ; inner (this , hash_code , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_style_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TMP_StyleSheet as :: unity2 :: ClassIdentity > :: class () , "GetStyle" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TMP_StyleSheet as :: unity2 :: ClassIdentity > :: NAME , "GetStyle" , e) , } } } pub unsafe fn get_style_2 (this : TMP_StyleSheet , name : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: tm_pro :: tmp_style :: TMP_Style { let inner : extern "C" fn (TMP_StyleSheet , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: tm_pro :: tmp_style :: TMP_Style = :: core :: mem :: transmute (__lookup_get_style_2 :: get_method_info () . method_ptr ,) ; inner (this , name , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_refresh_styles { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TMP_StyleSheet as :: unity2 :: ClassIdentity > :: class () , "RefreshStyles" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TMP_StyleSheet as :: unity2 :: ClassIdentity > :: NAME , "RefreshStyles" , e) , } } } pub unsafe fn refresh_styles (this : TMP_StyleSheet , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TMP_StyleSheet , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_refresh_styles :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_load_style_dictionary_internal { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TMP_StyleSheet as :: unity2 :: ClassIdentity > :: class () , "LoadStyleDictionaryInternal" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TMP_StyleSheet as :: unity2 :: ClassIdentity > :: NAME , "LoadStyleDictionaryInternal" , e) , } } } pub unsafe fn load_style_dictionary_internal (this : TMP_StyleSheet , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TMP_StyleSheet , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_load_style_dictionary_internal :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TMP_StyleSheet as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TMP_StyleSheet as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : TMP_StyleSheet , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TMP_StyleSheet , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "tm_pro-tmp_stylesheet")]
-pub trait ITMP_StyleSheetMethods: ITMP_StyleSheet {
-    #[doc = "`get_styles()` overload"]
-    fn get_styles(self) -> crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_style::TMP_Style> {
-        unsafe {
-            let __receiver = <TMP_StyleSheet as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TMP_StyleSheet_unity2_raw::get_styles(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Reset()` overload"]
-    fn reset(self) -> () {
-        unsafe {
-            let __receiver = <TMP_StyleSheet as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TMP_StyleSheet_unity2_raw::reset(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetStyle(i32)` overload"]
-    fn get_style(self, hash_code: impl ::core::convert::Into<i32>) -> crate::tm_pro::tmp_style::TMP_Style {
-        unsafe {
-            let __receiver = <TMP_StyleSheet as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TMP_StyleSheet_unity2_raw::get_style(__receiver, ::core::convert::Into::into(hash_code), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetStyle(::unity2::Il2CppString)` overload"]
-    fn get_style_2(self, name: impl ::core::convert::Into<::unity2::Il2CppString>) -> crate::tm_pro::tmp_style::TMP_Style {
-        unsafe {
-            let __receiver = <TMP_StyleSheet as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TMP_StyleSheet_unity2_raw::get_style_2(__receiver, ::core::convert::Into::into(name), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`RefreshStyles()` overload"]
-    fn refresh_styles(self) -> () {
-        unsafe {
-            let __receiver = <TMP_StyleSheet as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TMP_StyleSheet_unity2_raw::refresh_styles(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`LoadStyleDictionaryInternal()` overload"]
-    fn load_style_dictionary_internal(self) -> () {
-        unsafe {
-            let __receiver = <TMP_StyleSheet as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TMP_StyleSheet_unity2_raw::load_style_dictionary_internal(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <TMP_StyleSheet as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TMP_StyleSheet_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait ITMP_StyleSheetMethods : ITMP_StyleSheet { # [doc = "`get_styles()` overload"] fn get_styles (self ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: tm_pro :: tmp_style :: TMP_Style > { unsafe { let __receiver = < TMP_StyleSheet as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TMP_StyleSheet_unity2_raw :: get_styles (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Reset()` overload"] fn reset (self ,) -> () { unsafe { let __receiver = < TMP_StyleSheet as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TMP_StyleSheet_unity2_raw :: reset (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetStyle(i32)` overload"] fn get_style (self , hash_code : impl :: core :: convert :: Into < i32 >) -> crate :: tm_pro :: tmp_style :: TMP_Style { unsafe { let __receiver = < TMP_StyleSheet as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TMP_StyleSheet_unity2_raw :: get_style (__receiver , :: core :: convert :: Into :: into (hash_code) , :: core :: option :: Option :: None) } } # [doc = "`GetStyle(::unity2::Il2CppString)` overload"] fn get_style_2 (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: tm_pro :: tmp_style :: TMP_Style { unsafe { let __receiver = < TMP_StyleSheet as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TMP_StyleSheet_unity2_raw :: get_style_2 (__receiver , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } # [doc = "`RefreshStyles()` overload"] fn refresh_styles (self ,) -> () { unsafe { let __receiver = < TMP_StyleSheet as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TMP_StyleSheet_unity2_raw :: refresh_styles (__receiver , :: core :: option :: Option :: None) } } # [doc = "`LoadStyleDictionaryInternal()` overload"] fn load_style_dictionary_internal (self ,) -> () { unsafe { let __receiver = < TMP_StyleSheet as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TMP_StyleSheet_unity2_raw :: load_style_dictionary_internal (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TMP_StyleSheet as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TMP_StyleSheet_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "tm_pro-tmp_stylesheet")]
-impl<__T: ITMP_StyleSheet> ITMP_StyleSheetMethods for __T {}
+impl < __T : ITMP_StyleSheet > ITMP_StyleSheetMethods for __T { }
+
+#[cfg(feature = "tm_pro-tmp_stylesheet")]
+impl TMP_StyleSheet { pub fn get_styles_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TMP_StyleSheet_unity2_raw :: __lookup_get_styles :: get_method_info () } pub fn reset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TMP_StyleSheet_unity2_raw :: __lookup_reset :: get_method_info () } pub fn get_style_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TMP_StyleSheet_unity2_raw :: __lookup_get_style :: get_method_info () } pub fn get_style_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TMP_StyleSheet_unity2_raw :: __lookup_get_style_2 :: get_method_info () } pub fn refresh_styles_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TMP_StyleSheet_unity2_raw :: __lookup_refresh_styles :: get_method_info () } pub fn load_style_dictionary_internal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TMP_StyleSheet_unity2_raw :: __lookup_load_style_dictionary_internal :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TMP_StyleSheet_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "tm_pro-tmp_stylesheet")]
 impl TMP_StyleSheet {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TMP_StyleSheet),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITMP_StyleSheetMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TMP_StyleSheet) , :: core :: stringify ! (new) ,)) ; < Self as ITMP_StyleSheetMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "tm_pro-tmp_stylesheet")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{ITMP_StyleSheet, ITMP_StyleSheetMethods, TMP_StyleSheet};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    #[cfg(feature = "unity_engine-scriptableobject")]
-    pub use crate::unity_engine::scriptableobject::IScriptableObjectMethods;
-    pub use crate::{
-        system::object::IObject,
-        unity_engine::{object_2::IObject_2, scriptableobject::IScriptableObject},
-    };
+    pub use super::TMP_StyleSheet;
+    pub use super::ITMP_StyleSheet;
+    pub use super::ITMP_StyleSheetMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::object_2::IObject_2;
+    pub use crate::unity_engine::scriptableobject::IScriptableObject;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
+    #[cfg(feature = "unity_engine-scriptableobject")] pub use crate::unity_engine::scriptableobject::IScriptableObjectMethods;
 }

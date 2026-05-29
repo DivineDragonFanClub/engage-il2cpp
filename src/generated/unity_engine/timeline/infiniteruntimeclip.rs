@@ -2,329 +2,53 @@
 
 #[cfg(feature = "unity_engine-timeline-infiniteruntimeclip-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::timeline::runtimeelement::{IRuntimeElement, RuntimeElement},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/infiniteruntimeclip/InfiniteRuntimeClip.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Timeline", name = "InfiniteRuntimeClip")]
-    #[parent(crate::unity_engine::timeline::runtimeelement::RuntimeElement)]
-    pub struct InfiniteRuntimeClip {
-        #[offset(24)]
-        #[rename(name = "m_Playable")]
-        pub m_playable: crate::unity_engine::playables::playable::Playable,
-        #[static_field]
-        #[rename(name = "kIntervalEnd")]
-        pub k_interval_end: i64,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: timeline :: runtimeelement :: { IRuntimeElement , RuntimeElement }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/infiniteruntimeclip/InfiniteRuntimeClip.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Timeline" , name = "InfiniteRuntimeClip")] # [parent (crate :: unity_engine :: timeline :: runtimeelement :: RuntimeElement)] pub struct InfiniteRuntimeClip {
+# [offset (24)] # [rename (name = "m_Playable")] pub m_playable : crate :: unity_engine :: playables :: playable :: Playable ,
+# [static_field] # [rename (name = "kIntervalEnd")] pub k_interval_end : i64 ,
+}
+
 }
 
 #[cfg(feature = "unity_engine-timeline-infiniteruntimeclip-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-timeline-infiniteruntimeclip")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __InfiniteRuntimeClip_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::playables::playable::Playable as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InfiniteRuntimeClip as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InfiniteRuntimeClip as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: InfiniteRuntimeClip,
-        playable: crate::unity_engine::playables::playable::Playable,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(InfiniteRuntimeClip, crate::unity_engine::playables::playable::Playable, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, playable, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_interval_start {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InfiniteRuntimeClip as ::unity2::ClassIdentity>::class(),
-                "get_intervalStart",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InfiniteRuntimeClip as ::unity2::ClassIdentity>::NAME,
-                        "get_intervalStart",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_interval_start(this: InfiniteRuntimeClip, __unity2_method_info: ::unity2::OptionalMethod) -> i64 {
-        let inner: extern "C" fn(InfiniteRuntimeClip, ::unity2::OptionalMethod) -> i64 =
-            ::core::mem::transmute(__lookup_get_interval_start::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_interval_end {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InfiniteRuntimeClip as ::unity2::ClassIdentity>::class(),
-                "get_intervalEnd",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InfiniteRuntimeClip as ::unity2::ClassIdentity>::NAME,
-                        "get_intervalEnd",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_interval_end(this: InfiniteRuntimeClip, __unity2_method_info: ::unity2::OptionalMethod) -> i64 {
-        let inner: extern "C" fn(InfiniteRuntimeClip, ::unity2::OptionalMethod) -> i64 =
-            ::core::mem::transmute(__lookup_get_interval_end::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_enable {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InfiniteRuntimeClip as ::unity2::ClassIdentity>::class(),
-                "set_enable",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InfiniteRuntimeClip as ::unity2::ClassIdentity>::NAME,
-                        "set_enable",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_enable(this: InfiniteRuntimeClip, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(InfiniteRuntimeClip, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_enable::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_evaluate_at {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <f64 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::playables::framedata::FrameData as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InfiniteRuntimeClip as ::unity2::ClassIdentity>::class(),
-                "EvaluateAt",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InfiniteRuntimeClip as ::unity2::ClassIdentity>::NAME,
-                        "EvaluateAt",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn evaluate_at(
-        this: InfiniteRuntimeClip,
-        local_time: f64,
-        frame_data: crate::unity_engine::playables::framedata::FrameData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(InfiniteRuntimeClip, f64, crate::unity_engine::playables::framedata::FrameData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_evaluate_at::get_method_info().method_ptr);
-        inner(this, local_time, frame_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InfiniteRuntimeClip as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InfiniteRuntimeClip as ::unity2::ClassIdentity>::NAME,
-                        ".cctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __InfiniteRuntimeClip_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playable :: Playable as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InfiniteRuntimeClip as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InfiniteRuntimeClip as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : InfiniteRuntimeClip , playable : crate :: unity_engine :: playables :: playable :: Playable , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (InfiniteRuntimeClip , crate :: unity_engine :: playables :: playable :: Playable , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , playable , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_interval_start { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InfiniteRuntimeClip as :: unity2 :: ClassIdentity > :: class () , "get_intervalStart" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InfiniteRuntimeClip as :: unity2 :: ClassIdentity > :: NAME , "get_intervalStart" , e) , } } } pub unsafe fn get_interval_start (this : InfiniteRuntimeClip , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i64 { let inner : extern "C" fn (InfiniteRuntimeClip , :: unity2 :: OptionalMethod ,) -> i64 = :: core :: mem :: transmute (__lookup_get_interval_start :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_interval_end { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InfiniteRuntimeClip as :: unity2 :: ClassIdentity > :: class () , "get_intervalEnd" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InfiniteRuntimeClip as :: unity2 :: ClassIdentity > :: NAME , "get_intervalEnd" , e) , } } } pub unsafe fn get_interval_end (this : InfiniteRuntimeClip , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i64 { let inner : extern "C" fn (InfiniteRuntimeClip , :: unity2 :: OptionalMethod ,) -> i64 = :: core :: mem :: transmute (__lookup_get_interval_end :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_enable { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InfiniteRuntimeClip as :: unity2 :: ClassIdentity > :: class () , "set_enable" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InfiniteRuntimeClip as :: unity2 :: ClassIdentity > :: NAME , "set_enable" , e) , } } } pub unsafe fn set_enable (this : InfiniteRuntimeClip , value : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (InfiniteRuntimeClip , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_enable :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_evaluate_at { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< f64 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: playables :: framedata :: FrameData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InfiniteRuntimeClip as :: unity2 :: ClassIdentity > :: class () , "EvaluateAt" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InfiniteRuntimeClip as :: unity2 :: ClassIdentity > :: NAME , "EvaluateAt" , e) , } } } pub unsafe fn evaluate_at (this : InfiniteRuntimeClip , local_time : f64 , frame_data : crate :: unity_engine :: playables :: framedata :: FrameData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (InfiniteRuntimeClip , f64 , crate :: unity_engine :: playables :: framedata :: FrameData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_evaluate_at :: get_method_info () . method_ptr ,) ; inner (this , local_time , frame_data , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InfiniteRuntimeClip as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InfiniteRuntimeClip as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
+
+#[cfg(feature = "unity_engine-timeline-infiniteruntimeclip")]
+impl InfiniteRuntimeClip { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { __InfiniteRuntimeClip_unity2_raw :: cctor (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-timeline-infiniteruntimeclip")]
+pub trait IInfiniteRuntimeClipMethods : IInfiniteRuntimeClip { # [doc = "`.ctor(crate::unity_engine::playables::playable::Playable)` overload"] fn ctor (self , playable : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playable :: Playable >) -> () { unsafe { let __receiver = < InfiniteRuntimeClip as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __InfiniteRuntimeClip_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (playable) , :: core :: option :: Option :: None) } } # [doc = "`get_intervalStart()` overload"] fn get_interval_start (self ,) -> i64 { unsafe { let __receiver = < InfiniteRuntimeClip as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __InfiniteRuntimeClip_unity2_raw :: get_interval_start (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_intervalEnd()` overload"] fn get_interval_end (self ,) -> i64 { unsafe { let __receiver = < InfiniteRuntimeClip as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __InfiniteRuntimeClip_unity2_raw :: get_interval_end (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_enable(bool)` overload"] fn set_enable (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < InfiniteRuntimeClip as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __InfiniteRuntimeClip_unity2_raw :: set_enable (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`EvaluateAt(f64, crate::unity_engine::playables::framedata::FrameData)` overload"] fn evaluate_at (self , local_time : impl :: core :: convert :: Into < f64 > , frame_data : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: framedata :: FrameData >) -> () { unsafe { let __receiver = < InfiniteRuntimeClip as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __InfiniteRuntimeClip_unity2_raw :: evaluate_at (__receiver , :: core :: convert :: Into :: into (local_time) , :: core :: convert :: Into :: into (frame_data) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-timeline-infiniteruntimeclip")]
+impl < __T : IInfiniteRuntimeClip > IInfiniteRuntimeClipMethods for __T { }
+
+#[cfg(feature = "unity_engine-timeline-infiniteruntimeclip")]
+impl InfiniteRuntimeClip { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InfiniteRuntimeClip_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn get_interval_start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InfiniteRuntimeClip_unity2_raw :: __lookup_get_interval_start :: get_method_info () } pub fn get_interval_end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InfiniteRuntimeClip_unity2_raw :: __lookup_get_interval_end :: get_method_info () } pub fn set_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InfiniteRuntimeClip_unity2_raw :: __lookup_set_enable :: get_method_info () } pub fn evaluate_at_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InfiniteRuntimeClip_unity2_raw :: __lookup_evaluate_at :: get_method_info () } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InfiniteRuntimeClip_unity2_raw :: __lookup_cctor :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-timeline-infiniteruntimeclip")]
 impl InfiniteRuntimeClip {
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __InfiniteRuntimeClip_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "unity_engine-timeline-infiniteruntimeclip")]
-pub trait IInfiniteRuntimeClipMethods: IInfiniteRuntimeClip {
-    #[doc = "`.ctor(crate::unity_engine::playables::playable::Playable)` overload"]
-    fn ctor(self, playable: impl ::core::convert::Into<crate::unity_engine::playables::playable::Playable>) -> () {
-        unsafe {
-            let __receiver = <InfiniteRuntimeClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InfiniteRuntimeClip_unity2_raw::ctor(__receiver, ::core::convert::Into::into(playable), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_intervalStart()` overload"]
-    fn get_interval_start(self) -> i64 {
-        unsafe {
-            let __receiver = <InfiniteRuntimeClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InfiniteRuntimeClip_unity2_raw::get_interval_start(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_intervalEnd()` overload"]
-    fn get_interval_end(self) -> i64 {
-        unsafe {
-            let __receiver = <InfiniteRuntimeClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InfiniteRuntimeClip_unity2_raw::get_interval_end(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_enable(bool)` overload"]
-    fn set_enable(self, value: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver = <InfiniteRuntimeClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InfiniteRuntimeClip_unity2_raw::set_enable(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`EvaluateAt(f64, crate::unity_engine::playables::framedata::FrameData)` overload"]
-    fn evaluate_at(
-        self,
-        local_time: impl ::core::convert::Into<f64>,
-        frame_data: impl ::core::convert::Into<crate::unity_engine::playables::framedata::FrameData>,
-    ) -> () {
-        unsafe {
-            let __receiver = <InfiniteRuntimeClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InfiniteRuntimeClip_unity2_raw::evaluate_at(
-                __receiver,
-                ::core::convert::Into::into(local_time),
-                ::core::convert::Into::into(frame_data),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-timeline-infiniteruntimeclip")]
-impl<__T: IInfiniteRuntimeClip> IInfiniteRuntimeClipMethods for __T {}
-
-#[cfg(feature = "unity_engine-timeline-infiniteruntimeclip")]
-impl InfiniteRuntimeClip {
-    #[doc = "`.ctor(crate::unity_engine::playables::playable::Playable)` — overload selector"]
-    pub fn new(playable: crate::unity_engine::playables::playable::Playable) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(InfiniteRuntimeClip),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IInfiniteRuntimeClipMethods>::ctor(this, playable);
-        this
-    }
+# [doc = "`.ctor(crate::unity_engine::playables::playable::Playable)` — overload selector"] pub fn new (playable : crate :: unity_engine :: playables :: playable :: Playable) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (InfiniteRuntimeClip) , :: core :: stringify ! (new) ,)) ; < Self as IInfiniteRuntimeClipMethods > :: ctor (this , playable) ; this }
 }
 
 #[cfg(feature = "unity_engine-timeline-infiniteruntimeclip")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IInfiniteRuntimeClip, IInfiniteRuntimeClipMethods, InfiniteRuntimeClip};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-timeline-runtimeelement")]
-    pub use crate::unity_engine::timeline::runtimeelement::IRuntimeElementMethods;
-    pub use crate::{system::object::IObject, unity_engine::timeline::runtimeelement::IRuntimeElement};
+    pub use super::InfiniteRuntimeClip;
+    pub use super::IInfiniteRuntimeClip;
+    pub use super::IInfiniteRuntimeClipMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::timeline::runtimeelement::IRuntimeElement;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-timeline-runtimeelement")] pub use crate::unity_engine::timeline::runtimeelement::IRuntimeElementMethods;
 }

@@ -2,437 +2,52 @@
 
 #[cfg(feature = "root-akroommanager-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akroommanager/AkRoomManager.md"))]
-    #[::unity2::class(namespace = "", name = "AkRoomManager")]
-    #[parent(crate::system::object::Object)]
-    pub struct AkRoomManager {
-        #[offset(16)]
-        #[rename(name = "m_Portals")]
-        pub m_portals: crate::system::collections::generic::list_1::List_1<crate::root::akroomportal::AkRoomPortal>,
-        #[offset(24)]
-        #[rename(name = "m_PortalsToUpdate")]
-        pub m_portals_to_update: crate::system::collections::generic::list_1::List_1<crate::root::akroomportal::AkRoomPortal>,
-        #[offset(32)]
-        #[rename(name = "m_Reflectors")]
-        pub m_reflectors: crate::system::collections::generic::list_1::List_1<crate::root::aksurfacereflector::AkSurfaceReflector>,
-        #[offset(40)]
-        #[rename(name = "m_ReflectorsToUpdate")]
-        pub m_reflectors_to_update: crate::system::collections::generic::list_1::List_1<crate::root::aksurfacereflector::AkSurfaceReflector>,
-        #[static_field]
-        #[rename(name = "m_Instance")]
-        pub m_instance: crate::root::akroommanager::AkRoomManager,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akroommanager/AkRoomManager.md"))] # [:: unity2 :: class (namespace = "" , name = "AkRoomManager")] # [parent (crate :: system :: object :: Object)] pub struct AkRoomManager {
+# [offset (16)] # [rename (name = "m_Portals")] pub m_portals : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: root :: akroomportal :: AkRoomPortal > ,
+# [offset (24)] # [rename (name = "m_PortalsToUpdate")] pub m_portals_to_update : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: root :: akroomportal :: AkRoomPortal > ,
+# [offset (32)] # [rename (name = "m_Reflectors")] pub m_reflectors : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: root :: aksurfacereflector :: AkSurfaceReflector > ,
+# [offset (40)] # [rename (name = "m_ReflectorsToUpdate")] pub m_reflectors_to_update : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: root :: aksurfacereflector :: AkSurfaceReflector > ,
+# [static_field] # [rename (name = "m_Instance")] pub m_instance : crate :: root :: akroommanager :: AkRoomManager ,
+}
+
 }
 
 #[cfg(feature = "root-akroommanager-types")]
 pub use __types::*;
 
 #[cfg(feature = "root-akroommanager")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AkRoomManager_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_init {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<AkRoomManager as ::unity2::ClassIdentity>::class(), "Init", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkRoomManager as ::unity2::ClassIdentity>::NAME,
-                        "Init",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn init(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_init::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_terminate {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkRoomManager as ::unity2::ClassIdentity>::class(),
-                "Terminate",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkRoomManager as ::unity2::ClassIdentity>::NAME,
-                        "Terminate",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn terminate(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_terminate::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_register_portal {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::root::akroomportal::AkRoomPortal as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkRoomManager as ::unity2::ClassIdentity>::class(),
-                "RegisterPortal",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkRoomManager as ::unity2::ClassIdentity>::NAME,
-                        "RegisterPortal",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn register_portal(portal: crate::root::akroomportal::AkRoomPortal, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(crate::root::akroomportal::AkRoomPortal, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_register_portal::get_method_info().method_ptr);
-        inner(portal, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_unregister_portal {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::root::akroomportal::AkRoomPortal as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkRoomManager as ::unity2::ClassIdentity>::class(),
-                "UnregisterPortal",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkRoomManager as ::unity2::ClassIdentity>::NAME,
-                        "UnregisterPortal",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn unregister_portal(portal: crate::root::akroomportal::AkRoomPortal, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(crate::root::akroomportal::AkRoomPortal, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_unregister_portal::get_method_info().method_ptr);
-        inner(portal, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_register_reflector {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::root::aksurfacereflector::AkSurfaceReflector as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkRoomManager as ::unity2::ClassIdentity>::class(),
-                "RegisterReflector",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkRoomManager as ::unity2::ClassIdentity>::NAME,
-                        "RegisterReflector",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn register_reflector(
-        reflector: crate::root::aksurfacereflector::AkSurfaceReflector,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::root::aksurfacereflector::AkSurfaceReflector, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_register_reflector::get_method_info().method_ptr);
-        inner(reflector, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_unregister_reflector {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::root::aksurfacereflector::AkSurfaceReflector as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkRoomManager as ::unity2::ClassIdentity>::class(),
-                "UnregisterReflector",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkRoomManager as ::unity2::ClassIdentity>::NAME,
-                        "UnregisterReflector",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn unregister_reflector(
-        reflector: crate::root::aksurfacereflector::AkSurfaceReflector,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::root::aksurfacereflector::AkSurfaceReflector, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_unregister_reflector::get_method_info().method_ptr);
-        inner(reflector, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_register_portal_update {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::root::akroomportal::AkRoomPortal as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkRoomManager as ::unity2::ClassIdentity>::class(),
-                "RegisterPortalUpdate",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkRoomManager as ::unity2::ClassIdentity>::NAME,
-                        "RegisterPortalUpdate",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn register_portal_update(portal: crate::root::akroomportal::AkRoomPortal, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(crate::root::akroomportal::AkRoomPortal, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_register_portal_update::get_method_info().method_ptr);
-        inner(portal, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_register_room_update {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::root::akroom::AkRoom as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkRoomManager as ::unity2::ClassIdentity>::class(),
-                "RegisterRoomUpdate",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkRoomManager as ::unity2::ClassIdentity>::NAME,
-                        "RegisterRoomUpdate",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn register_room_update(room: crate::root::akroom::AkRoom, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(crate::root::akroom::AkRoom, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_register_room_update::get_method_info().method_ptr);
-        inner(room, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<AkRoomManager as ::unity2::ClassIdentity>::class(), "Update", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkRoomManager as ::unity2::ClassIdentity>::NAME,
-                        "Update",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_update::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<AkRoomManager as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkRoomManager as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: AkRoomManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AkRoomManager, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __AkRoomManager_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_init { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkRoomManager as :: unity2 :: ClassIdentity > :: class () , "Init" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkRoomManager as :: unity2 :: ClassIdentity > :: NAME , "Init" , e) , } } } pub unsafe fn init (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_init :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_terminate { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkRoomManager as :: unity2 :: ClassIdentity > :: class () , "Terminate" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkRoomManager as :: unity2 :: ClassIdentity > :: NAME , "Terminate" , e) , } } } pub unsafe fn terminate (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_terminate :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_register_portal { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: root :: akroomportal :: AkRoomPortal as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkRoomManager as :: unity2 :: ClassIdentity > :: class () , "RegisterPortal" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkRoomManager as :: unity2 :: ClassIdentity > :: NAME , "RegisterPortal" , e) , } } } pub unsafe fn register_portal (portal : crate :: root :: akroomportal :: AkRoomPortal , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: root :: akroomportal :: AkRoomPortal , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_register_portal :: get_method_info () . method_ptr ,) ; inner (portal , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_unregister_portal { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: root :: akroomportal :: AkRoomPortal as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkRoomManager as :: unity2 :: ClassIdentity > :: class () , "UnregisterPortal" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkRoomManager as :: unity2 :: ClassIdentity > :: NAME , "UnregisterPortal" , e) , } } } pub unsafe fn unregister_portal (portal : crate :: root :: akroomportal :: AkRoomPortal , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: root :: akroomportal :: AkRoomPortal , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_unregister_portal :: get_method_info () . method_ptr ,) ; inner (portal , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_register_reflector { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: root :: aksurfacereflector :: AkSurfaceReflector as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkRoomManager as :: unity2 :: ClassIdentity > :: class () , "RegisterReflector" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkRoomManager as :: unity2 :: ClassIdentity > :: NAME , "RegisterReflector" , e) , } } } pub unsafe fn register_reflector (reflector : crate :: root :: aksurfacereflector :: AkSurfaceReflector , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: root :: aksurfacereflector :: AkSurfaceReflector , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_register_reflector :: get_method_info () . method_ptr ,) ; inner (reflector , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_unregister_reflector { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: root :: aksurfacereflector :: AkSurfaceReflector as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkRoomManager as :: unity2 :: ClassIdentity > :: class () , "UnregisterReflector" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkRoomManager as :: unity2 :: ClassIdentity > :: NAME , "UnregisterReflector" , e) , } } } pub unsafe fn unregister_reflector (reflector : crate :: root :: aksurfacereflector :: AkSurfaceReflector , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: root :: aksurfacereflector :: AkSurfaceReflector , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_unregister_reflector :: get_method_info () . method_ptr ,) ; inner (reflector , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_register_portal_update { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: root :: akroomportal :: AkRoomPortal as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkRoomManager as :: unity2 :: ClassIdentity > :: class () , "RegisterPortalUpdate" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkRoomManager as :: unity2 :: ClassIdentity > :: NAME , "RegisterPortalUpdate" , e) , } } } pub unsafe fn register_portal_update (portal : crate :: root :: akroomportal :: AkRoomPortal , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: root :: akroomportal :: AkRoomPortal , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_register_portal_update :: get_method_info () . method_ptr ,) ; inner (portal , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_register_room_update { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: root :: akroom :: AkRoom as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkRoomManager as :: unity2 :: ClassIdentity > :: class () , "RegisterRoomUpdate" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkRoomManager as :: unity2 :: ClassIdentity > :: NAME , "RegisterRoomUpdate" , e) , } } } pub unsafe fn register_room_update (room : crate :: root :: akroom :: AkRoom , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: root :: akroom :: AkRoom , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_register_room_update :: get_method_info () . method_ptr ,) ; inner (room , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkRoomManager as :: unity2 :: ClassIdentity > :: class () , "Update" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkRoomManager as :: unity2 :: ClassIdentity > :: NAME , "Update" , e) , } } } pub unsafe fn update (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkRoomManager as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkRoomManager as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : AkRoomManager , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkRoomManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "root-akroommanager")]
+impl AkRoomManager { # [doc = "`Init()` overload"] pub fn init () -> () { unsafe { __AkRoomManager_unity2_raw :: init (:: core :: option :: Option :: None) } } # [doc = "`Terminate()` overload"] pub fn terminate () -> () { unsafe { __AkRoomManager_unity2_raw :: terminate (:: core :: option :: Option :: None) } } # [doc = "`RegisterPortal(crate::root::akroomportal::AkRoomPortal)` overload"] pub fn register_portal (portal : impl :: core :: convert :: Into < crate :: root :: akroomportal :: AkRoomPortal >) -> () { unsafe { __AkRoomManager_unity2_raw :: register_portal (:: core :: convert :: Into :: into (portal) , :: core :: option :: Option :: None) } } # [doc = "`UnregisterPortal(crate::root::akroomportal::AkRoomPortal)` overload"] pub fn unregister_portal (portal : impl :: core :: convert :: Into < crate :: root :: akroomportal :: AkRoomPortal >) -> () { unsafe { __AkRoomManager_unity2_raw :: unregister_portal (:: core :: convert :: Into :: into (portal) , :: core :: option :: Option :: None) } } # [doc = "`RegisterReflector(crate::root::aksurfacereflector::AkSurfaceReflector)` overload"] pub fn register_reflector (reflector : impl :: core :: convert :: Into < crate :: root :: aksurfacereflector :: AkSurfaceReflector >) -> () { unsafe { __AkRoomManager_unity2_raw :: register_reflector (:: core :: convert :: Into :: into (reflector) , :: core :: option :: Option :: None) } } # [doc = "`UnregisterReflector(crate::root::aksurfacereflector::AkSurfaceReflector)` overload"] pub fn unregister_reflector (reflector : impl :: core :: convert :: Into < crate :: root :: aksurfacereflector :: AkSurfaceReflector >) -> () { unsafe { __AkRoomManager_unity2_raw :: unregister_reflector (:: core :: convert :: Into :: into (reflector) , :: core :: option :: Option :: None) } } # [doc = "`RegisterPortalUpdate(crate::root::akroomportal::AkRoomPortal)` overload"] pub fn register_portal_update (portal : impl :: core :: convert :: Into < crate :: root :: akroomportal :: AkRoomPortal >) -> () { unsafe { __AkRoomManager_unity2_raw :: register_portal_update (:: core :: convert :: Into :: into (portal) , :: core :: option :: Option :: None) } } # [doc = "`RegisterRoomUpdate(crate::root::akroom::AkRoom)` overload"] pub fn register_room_update (room : impl :: core :: convert :: Into < crate :: root :: akroom :: AkRoom >) -> () { unsafe { __AkRoomManager_unity2_raw :: register_room_update (:: core :: convert :: Into :: into (room) , :: core :: option :: Option :: None) } } # [doc = "`Update()` overload"] pub fn update () -> () { unsafe { __AkRoomManager_unity2_raw :: update (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "root-akroommanager")]
+pub trait IAkRoomManagerMethods : IAkRoomManager { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AkRoomManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkRoomManager_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "root-akroommanager")]
+impl < __T : IAkRoomManager > IAkRoomManagerMethods for __T { }
+
+#[cfg(feature = "root-akroommanager")]
+impl AkRoomManager { pub fn init_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkRoomManager_unity2_raw :: __lookup_init :: get_method_info () } pub fn terminate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkRoomManager_unity2_raw :: __lookup_terminate :: get_method_info () } pub fn register_portal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkRoomManager_unity2_raw :: __lookup_register_portal :: get_method_info () } pub fn unregister_portal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkRoomManager_unity2_raw :: __lookup_unregister_portal :: get_method_info () } pub fn register_reflector_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkRoomManager_unity2_raw :: __lookup_register_reflector :: get_method_info () } pub fn unregister_reflector_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkRoomManager_unity2_raw :: __lookup_unregister_reflector :: get_method_info () } pub fn register_portal_update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkRoomManager_unity2_raw :: __lookup_register_portal_update :: get_method_info () } pub fn register_room_update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkRoomManager_unity2_raw :: __lookup_register_room_update :: get_method_info () } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkRoomManager_unity2_raw :: __lookup_update :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkRoomManager_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "root-akroommanager")]
 impl AkRoomManager {
-    #[doc = "`Init()` overload"]
-    pub fn init() -> () {
-        unsafe { __AkRoomManager_unity2_raw::init(::core::option::Option::None) }
-    }
-
-    #[doc = "`Terminate()` overload"]
-    pub fn terminate() -> () {
-        unsafe { __AkRoomManager_unity2_raw::terminate(::core::option::Option::None) }
-    }
-
-    #[doc = "`RegisterPortal(crate::root::akroomportal::AkRoomPortal)` overload"]
-    pub fn register_portal(portal: impl ::core::convert::Into<crate::root::akroomportal::AkRoomPortal>) -> () {
-        unsafe { __AkRoomManager_unity2_raw::register_portal(::core::convert::Into::into(portal), ::core::option::Option::None) }
-    }
-
-    #[doc = "`UnregisterPortal(crate::root::akroomportal::AkRoomPortal)` overload"]
-    pub fn unregister_portal(portal: impl ::core::convert::Into<crate::root::akroomportal::AkRoomPortal>) -> () {
-        unsafe { __AkRoomManager_unity2_raw::unregister_portal(::core::convert::Into::into(portal), ::core::option::Option::None) }
-    }
-
-    #[doc = "`RegisterReflector(crate::root::aksurfacereflector::AkSurfaceReflector)` overload"]
-    pub fn register_reflector(reflector: impl ::core::convert::Into<crate::root::aksurfacereflector::AkSurfaceReflector>) -> () {
-        unsafe { __AkRoomManager_unity2_raw::register_reflector(::core::convert::Into::into(reflector), ::core::option::Option::None) }
-    }
-
-    #[doc = "`UnregisterReflector(crate::root::aksurfacereflector::AkSurfaceReflector)` overload"]
-    pub fn unregister_reflector(reflector: impl ::core::convert::Into<crate::root::aksurfacereflector::AkSurfaceReflector>) -> () {
-        unsafe { __AkRoomManager_unity2_raw::unregister_reflector(::core::convert::Into::into(reflector), ::core::option::Option::None) }
-    }
-
-    #[doc = "`RegisterPortalUpdate(crate::root::akroomportal::AkRoomPortal)` overload"]
-    pub fn register_portal_update(portal: impl ::core::convert::Into<crate::root::akroomportal::AkRoomPortal>) -> () {
-        unsafe { __AkRoomManager_unity2_raw::register_portal_update(::core::convert::Into::into(portal), ::core::option::Option::None) }
-    }
-
-    #[doc = "`RegisterRoomUpdate(crate::root::akroom::AkRoom)` overload"]
-    pub fn register_room_update(room: impl ::core::convert::Into<crate::root::akroom::AkRoom>) -> () {
-        unsafe { __AkRoomManager_unity2_raw::register_room_update(::core::convert::Into::into(room), ::core::option::Option::None) }
-    }
-
-    #[doc = "`Update()` overload"]
-    pub fn update() -> () {
-        unsafe { __AkRoomManager_unity2_raw::update(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "root-akroommanager")]
-pub trait IAkRoomManagerMethods: IAkRoomManager {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <AkRoomManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkRoomManager_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "root-akroommanager")]
-impl<__T: IAkRoomManager> IAkRoomManagerMethods for __T {}
-
-#[cfg(feature = "root-akroommanager")]
-impl AkRoomManager {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(AkRoomManager), ::core::stringify!(new),));
-        <Self as IAkRoomManagerMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkRoomManager) , :: core :: stringify ! (new) ,)) ; < Self as IAkRoomManagerMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "root-akroommanager")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{AkRoomManager, IAkRoomManager, IAkRoomManagerMethods};
+    pub use super::AkRoomManager;
+    pub use super::IAkRoomManager;
+    pub use super::IAkRoomManagerMethods;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

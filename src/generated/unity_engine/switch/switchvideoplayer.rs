@@ -2,335 +2,145 @@
 
 #[cfg(feature = "unity_engine-switch-switchvideoplayer-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        delegate::{Delegate, IDelegate},
-        multicastdelegate::{IMulticastDelegate, MulticastDelegate},
-        object::{IObject, Object},
-        r#enum::{Enum, IEnum},
-        valuetype::{IValueType, ValueType},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/switch/switchvideoplayer/SwitchVideoPlayer_MovieEventDelegate.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Switch", name = "SwitchVideoPlayer.MovieEventDelegate")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct SwitchVideoPlayer_MovieEventDelegate {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: delegate :: { Delegate , IDelegate }
+ ;
+ use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/switch/switchvideoplayer/SwitchVideoPlayer.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Switch", name = "SwitchVideoPlayer")]
-    #[parent(crate::system::object::Object)]
-    pub struct SwitchVideoPlayer {
-        #[offset(16)]
-        #[rename(name = "m_Ptr")]
-        pub m_ptr: ::unity2::IntPtr,
-        #[offset(24)]
-        #[rename(name = "m_MovieEvent")]
-        pub m_movie_event: crate::unity_engine::switch::switchvideoplayer::SwitchVideoPlayer_MovieEventDelegate,
-        #[static_field]
-        #[rename(name = "OnMovieEvent")]
-        pub on_movie_event: crate::unity_engine::switch::switchvideoplayer::SwitchVideoPlayer_MovieEventDelegate,
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/switch/switchvideoplayer/SwitchVideoPlayer.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Switch" , name = "SwitchVideoPlayer")] # [parent (crate :: system :: object :: Object)] pub struct SwitchVideoPlayer {
+# [offset (16)] # [rename (name = "m_Ptr")] pub m_ptr : :: unity2 :: IntPtr ,
+# [offset (24)] # [rename (name = "m_MovieEvent")] pub m_movie_event : crate :: unity_engine :: switch :: switchvideoplayer :: SwitchVideoPlayer_MovieEventDelegate ,
+# [static_field] # [rename (name = "OnMovieEvent")] pub on_movie_event : crate :: unity_engine :: switch :: switchvideoplayer :: SwitchVideoPlayer_MovieEventDelegate ,
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/switch/switchvideoplayer/SwitchVideoPlayer_MovieEventDelegate.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Switch" , name = "SwitchVideoPlayer.MovieEventDelegate")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct SwitchVideoPlayer_MovieEventDelegate {}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/switch/switchvideoplayer/SwitchVideoPlayer_Event.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct SwitchVideoPlayer_Event  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for SwitchVideoPlayer_Event  {
+    const NAMESPACE: &'static str = "UnityEngine.Switch";
+
+    const NAME: &'static str = "SwitchVideoPlayer.Event";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/switch/switchvideoplayer/SwitchVideoPlayer_Event.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct SwitchVideoPlayer_Event {
-        pub value: i32,
+}
+
+
+impl  ::unity2::IlType for SwitchVideoPlayer_Event  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::ClassIdentity for SwitchVideoPlayer_Event {
-        const NAME: &'static str = "SwitchVideoPlayer.Event";
-        const NAMESPACE: &'static str = "UnityEngine.Switch";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  SwitchVideoPlayer_Event  {
+    pub fn none() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl ::unity2::IlType for SwitchVideoPlayer_Event {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+
+    pub fn created() -> Self {
+        Self { value: 1 }
+
     }
 
-    impl SwitchVideoPlayer_Event {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn created() -> Self {
-            Self { value: 1 }
-        }
+    pub fn end_of_stream() -> Self {
+        Self { value: 2 }
 
-        pub fn end_of_stream() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn loop_point_reached() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn first_frame_ready() -> Self {
-            Self { value: 4 }
-        }
     }
+
+
+    pub fn loop_point_reached() -> Self {
+        Self { value: 3 }
+
+    }
+
+
+    pub fn first_frame_ready() -> Self {
+        Self { value: 4 }
+
+    }
+
+}
+
 }
 
 #[cfg(feature = "unity_engine-switch-switchvideoplayer-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-switch-switchvideoplayer")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __SwitchVideoPlayer_MovieEventDelegate_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SwitchVideoPlayer_MovieEventDelegate as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SwitchVideoPlayer_MovieEventDelegate as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: SwitchVideoPlayer_MovieEventDelegate,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            SwitchVideoPlayer_MovieEventDelegate,
-            crate::system::object::Object,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::switch::switchvideoplayer::SwitchVideoPlayer_Event as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SwitchVideoPlayer_MovieEventDelegate as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SwitchVideoPlayer_MovieEventDelegate as ::unity2::ClassIdentity>::NAME,
-                        "Invoke",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn invoke(
-        this: SwitchVideoPlayer_MovieEventDelegate,
-        eventtype: crate::unity_engine::switch::switchvideoplayer::SwitchVideoPlayer_Event,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            SwitchVideoPlayer_MovieEventDelegate,
-            crate::unity_engine::switch::switchvideoplayer::SwitchVideoPlayer_Event,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
-        inner(this, eventtype, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __SwitchVideoPlayer_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_fire_movie_event { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: switch :: switchvideoplayer :: SwitchVideoPlayer_Event as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SwitchVideoPlayer as :: unity2 :: ClassIdentity > :: class () , "FireMovieEvent" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SwitchVideoPlayer as :: unity2 :: ClassIdentity > :: NAME , "FireMovieEvent" , e) , } } } pub unsafe fn fire_movie_event (event_value : crate :: unity_engine :: switch :: switchvideoplayer :: SwitchVideoPlayer_Event , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: unity_engine :: switch :: switchvideoplayer :: SwitchVideoPlayer_Event , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_fire_movie_event :: get_method_info () . method_ptr ,) ; inner (event_value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SwitchVideoPlayer as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SwitchVideoPlayer as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-switch-switchvideoplayer")]
-pub trait ISwitchVideoPlayer_MovieEventDelegateMethods: ISwitchVideoPlayer_MovieEventDelegate {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
-        unsafe {
-            let __receiver = <SwitchVideoPlayer_MovieEventDelegate as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SwitchVideoPlayer_MovieEventDelegate_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invoke(crate::unity_engine::switch::switchvideoplayer::SwitchVideoPlayer_Event)` overload"]
-    fn invoke(self, eventtype: impl ::core::convert::Into<crate::unity_engine::switch::switchvideoplayer::SwitchVideoPlayer_Event>) -> () {
-        unsafe {
-            let __receiver = <SwitchVideoPlayer_MovieEventDelegate as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SwitchVideoPlayer_MovieEventDelegate_unity2_raw::invoke(
-                __receiver,
-                ::core::convert::Into::into(eventtype),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+impl SwitchVideoPlayer { # [doc = "`FireMovieEvent(crate::unity_engine::switch::switchvideoplayer::SwitchVideoPlayer_Event)` overload"] pub fn fire_movie_event (event_value : impl :: core :: convert :: Into < crate :: unity_engine :: switch :: switchvideoplayer :: SwitchVideoPlayer_Event >) -> () { unsafe { __SwitchVideoPlayer_unity2_raw :: fire_movie_event (:: core :: convert :: Into :: into (event_value) , :: core :: option :: Option :: None) } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { __SwitchVideoPlayer_unity2_raw :: cctor (:: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-switch-switchvideoplayer")]
-impl<__T: ISwitchVideoPlayer_MovieEventDelegate> ISwitchVideoPlayer_MovieEventDelegateMethods for __T {}
+impl SwitchVideoPlayer { pub fn fire_movie_event_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SwitchVideoPlayer_unity2_raw :: __lookup_fire_movie_event :: get_method_info () } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SwitchVideoPlayer_unity2_raw :: __lookup_cctor :: get_method_info () } }
+
+#[cfg(feature = "unity_engine-switch-switchvideoplayer")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __SwitchVideoPlayer_MovieEventDelegate_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type () , < :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SwitchVideoPlayer_MovieEventDelegate as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SwitchVideoPlayer_MovieEventDelegate as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : SwitchVideoPlayer_MovieEventDelegate , object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SwitchVideoPlayer_MovieEventDelegate , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , object , method , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_invoke { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: switch :: switchvideoplayer :: SwitchVideoPlayer_Event as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SwitchVideoPlayer_MovieEventDelegate as :: unity2 :: ClassIdentity > :: class () , "Invoke" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SwitchVideoPlayer_MovieEventDelegate as :: unity2 :: ClassIdentity > :: NAME , "Invoke" , e) , } } } pub unsafe fn invoke (this : SwitchVideoPlayer_MovieEventDelegate , eventtype : crate :: unity_engine :: switch :: switchvideoplayer :: SwitchVideoPlayer_Event , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SwitchVideoPlayer_MovieEventDelegate , crate :: unity_engine :: switch :: switchvideoplayer :: SwitchVideoPlayer_Event , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_invoke :: get_method_info () . method_ptr ,) ; inner (this , eventtype , __unity2_method_info) } }
+
+#[cfg(feature = "unity_engine-switch-switchvideoplayer")]
+pub trait ISwitchVideoPlayer_MovieEventDelegateMethods : ISwitchVideoPlayer_MovieEventDelegate { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < SwitchVideoPlayer_MovieEventDelegate as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SwitchVideoPlayer_MovieEventDelegate_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } # [doc = "`Invoke(crate::unity_engine::switch::switchvideoplayer::SwitchVideoPlayer_Event)` overload"] fn invoke (self , eventtype : impl :: core :: convert :: Into < crate :: unity_engine :: switch :: switchvideoplayer :: SwitchVideoPlayer_Event >) -> () { unsafe { let __receiver = < SwitchVideoPlayer_MovieEventDelegate as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SwitchVideoPlayer_MovieEventDelegate_unity2_raw :: invoke (__receiver , :: core :: convert :: Into :: into (eventtype) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-switch-switchvideoplayer")]
+impl < __T : ISwitchVideoPlayer_MovieEventDelegate > ISwitchVideoPlayer_MovieEventDelegateMethods for __T { }
+
+#[cfg(feature = "unity_engine-switch-switchvideoplayer")]
+impl SwitchVideoPlayer_MovieEventDelegate { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SwitchVideoPlayer_MovieEventDelegate_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SwitchVideoPlayer_MovieEventDelegate_unity2_raw :: __lookup_invoke :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-switch-switchvideoplayer")]
 impl SwitchVideoPlayer_MovieEventDelegate {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SwitchVideoPlayer_MovieEventDelegate),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISwitchVideoPlayer_MovieEventDelegateMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-#[cfg(feature = "unity_engine-switch-switchvideoplayer")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __SwitchVideoPlayer_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_fire_movie_event {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::switch::switchvideoplayer::SwitchVideoPlayer_Event as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SwitchVideoPlayer as ::unity2::ClassIdentity>::class(),
-                "FireMovieEvent",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SwitchVideoPlayer as ::unity2::ClassIdentity>::NAME,
-                        "FireMovieEvent",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn fire_movie_event(
-        event_value: crate::unity_engine::switch::switchvideoplayer::SwitchVideoPlayer_Event,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::unity_engine::switch::switchvideoplayer::SwitchVideoPlayer_Event, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_fire_movie_event::get_method_info().method_ptr);
-        inner(event_value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SwitchVideoPlayer as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SwitchVideoPlayer as ::unity2::ClassIdentity>::NAME,
-                        ".cctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
-
-#[cfg(feature = "unity_engine-switch-switchvideoplayer")]
-impl SwitchVideoPlayer {
-    #[doc = "`FireMovieEvent(crate::unity_engine::switch::switchvideoplayer::SwitchVideoPlayer_Event)` overload"]
-    pub fn fire_movie_event(event_value: impl ::core::convert::Into<crate::unity_engine::switch::switchvideoplayer::SwitchVideoPlayer_Event>) -> () {
-        unsafe { __SwitchVideoPlayer_unity2_raw::fire_movie_event(::core::convert::Into::into(event_value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __SwitchVideoPlayer_unity2_raw::cctor(::core::option::Option::None) }
-    }
+# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SwitchVideoPlayer_MovieEventDelegate) , :: core :: stringify ! (new) ,)) ; < Self as ISwitchVideoPlayer_MovieEventDelegateMethods > :: ctor (this , object , method) ; this }
 }
 
 #[cfg(feature = "unity_engine-switch-switchvideoplayer")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{
-        ISwitchVideoPlayer, ISwitchVideoPlayer_MovieEventDelegate, ISwitchVideoPlayer_MovieEventDelegateMethods, SwitchVideoPlayer,
-        SwitchVideoPlayer_Event, SwitchVideoPlayer_MovieEventDelegate,
-    };
-    #[cfg(feature = "system-delegate")]
-    pub use crate::system::delegate::IDelegateMethods;
-    #[cfg(feature = "system-multicastdelegate")]
-    pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::system::{delegate::IDelegate, multicastdelegate::IMulticastDelegate, object::IObject, r#enum::IEnum, valuetype::IValueType};
+    pub use super::SwitchVideoPlayer;
+    pub use super::ISwitchVideoPlayer;
+    pub use super::SwitchVideoPlayer_MovieEventDelegate;
+    pub use super::ISwitchVideoPlayer_MovieEventDelegate;
+    pub use super::ISwitchVideoPlayer_MovieEventDelegateMethods;
+    pub use super::SwitchVideoPlayer_Event;
+    pub use crate::system::delegate::IDelegate;
+    pub use crate::system::multicastdelegate::IMulticastDelegate;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-delegate")] pub use crate::system::delegate::IDelegateMethods;
+    #[cfg(feature = "system-multicastdelegate")] pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

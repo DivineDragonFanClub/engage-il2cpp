@@ -2,981 +2,250 @@
 
 #[cfg(feature = "unity_engine-ui-gridlayoutgroup-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::{
-            object::{IObject, Object},
-            r#enum::{Enum, IEnum},
-            valuetype::{IValueType, ValueType},
-        },
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            event_systems::uibehaviour::{IUIBehaviour, UIBehaviour},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-            ui::layoutgroup::{ILayoutGroup, LayoutGroup},
-        },
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/gridlayoutgroup/GridLayoutGroup_Axis.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct GridLayoutGroup_Axis {
-        pub value: i32,
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: event_systems :: uibehaviour :: { IUIBehaviour , UIBehaviour }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+ use crate :: unity_engine :: ui :: layoutgroup :: { ILayoutGroup , LayoutGroup }
+ ;
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/gridlayoutgroup/GridLayoutGroup_Axis.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct GridLayoutGroup_Axis  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for GridLayoutGroup_Axis  {
+    const NAMESPACE: &'static str = "UnityEngine.UI";
+
+    const NAME: &'static str = "GridLayoutGroup.Axis";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    impl ::unity2::ClassIdentity for GridLayoutGroup_Axis {
-        const NAME: &'static str = "GridLayoutGroup.Axis";
-        const NAMESPACE: &'static str = "UnityEngine.UI";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  ::unity2::IlType for GridLayoutGroup_Axis  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::IlType for GridLayoutGroup_Axis {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  GridLayoutGroup_Axis  {
+    pub fn horizontal() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl GridLayoutGroup_Axis {
-        pub fn horizontal() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn vertical() -> Self {
-            Self { value: 1 }
-        }
+    pub fn vertical() -> Self {
+        Self { value: 1 }
+
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/gridlayoutgroup/GridLayoutGroup_Corner.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct GridLayoutGroup_Corner {
-        pub value: i32,
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/gridlayoutgroup/GridLayoutGroup_Corner.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct GridLayoutGroup_Corner  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for GridLayoutGroup_Corner  {
+    const NAMESPACE: &'static str = "UnityEngine.UI";
+
+    const NAME: &'static str = "GridLayoutGroup.Corner";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    impl ::unity2::ClassIdentity for GridLayoutGroup_Corner {
-        const NAME: &'static str = "GridLayoutGroup.Corner";
-        const NAMESPACE: &'static str = "UnityEngine.UI";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  ::unity2::IlType for GridLayoutGroup_Corner  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::IlType for GridLayoutGroup_Corner {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  GridLayoutGroup_Corner  {
+    pub fn upper_left() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl GridLayoutGroup_Corner {
-        pub fn upper_left() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn upper_right() -> Self {
-            Self { value: 1 }
-        }
+    pub fn upper_right() -> Self {
+        Self { value: 1 }
 
-        pub fn lower_left() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn lower_right() -> Self {
-            Self { value: 3 }
-        }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/gridlayoutgroup/GridLayoutGroup.md"))]
-    #[::unity2::class(namespace = "UnityEngine.UI", name = "GridLayoutGroup")]
-    #[parent(crate::unity_engine::ui::layoutgroup::LayoutGroup)]
-    pub struct GridLayoutGroup {
-        #[offset(88)]
-        #[rename(name = "m_StartCorner")]
-        pub m_start_corner: crate::unity_engine::ui::gridlayoutgroup::GridLayoutGroup_Corner,
-        #[offset(92)]
-        #[rename(name = "m_StartAxis")]
-        pub m_start_axis: crate::unity_engine::ui::gridlayoutgroup::GridLayoutGroup_Axis,
-        #[offset(96)]
-        #[rename(name = "m_CellSize")]
-        pub m_cell_size: crate::unity_engine::vector2::Vector2,
-        #[offset(104)]
-        #[rename(name = "m_Spacing")]
-        pub m_spacing: crate::unity_engine::vector2::Vector2,
-        #[offset(112)]
-        #[rename(name = "m_Constraint")]
-        pub m_constraint: crate::unity_engine::ui::gridlayoutgroup::GridLayoutGroup_Constraint,
-        #[offset(116)]
-        #[rename(name = "m_ConstraintCount")]
-        pub m_constraint_count: i32,
+
+    pub fn lower_left() -> Self {
+        Self { value: 2 }
+
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/gridlayoutgroup/GridLayoutGroup_Constraint.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct GridLayoutGroup_Constraint {
-        pub value: i32,
+
+    pub fn lower_right() -> Self {
+        Self { value: 3 }
+
     }
 
-    impl ::unity2::ClassIdentity for GridLayoutGroup_Constraint {
-        const NAME: &'static str = "GridLayoutGroup.Constraint";
-        const NAMESPACE: &'static str = "UnityEngine.UI";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/gridlayoutgroup/GridLayoutGroup_Constraint.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct GridLayoutGroup_Constraint  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for GridLayoutGroup_Constraint  {
+    const NAMESPACE: &'static str = "UnityEngine.UI";
+
+    const NAME: &'static str = "GridLayoutGroup.Constraint";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for GridLayoutGroup_Constraint {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  ::unity2::IlType for GridLayoutGroup_Constraint  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl GridLayoutGroup_Constraint {
-        pub fn flexible() -> Self {
-            Self { value: 0 }
-        }
+}
 
-        pub fn fixed_column_count() -> Self {
-            Self { value: 1 }
-        }
 
-        pub fn fixed_row_count() -> Self {
-            Self { value: 2 }
-        }
+impl  GridLayoutGroup_Constraint  {
+    pub fn flexible() -> Self {
+        Self { value: 0 }
+
     }
+
+
+    pub fn fixed_column_count() -> Self {
+        Self { value: 1 }
+
+    }
+
+
+    pub fn fixed_row_count() -> Self {
+        Self { value: 2 }
+
+    }
+
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/gridlayoutgroup/GridLayoutGroup.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "GridLayoutGroup")] # [parent (crate :: unity_engine :: ui :: layoutgroup :: LayoutGroup)] pub struct GridLayoutGroup {
+# [offset (88)] # [rename (name = "m_StartCorner")] pub m_start_corner : crate :: unity_engine :: ui :: gridlayoutgroup :: GridLayoutGroup_Corner ,
+# [offset (92)] # [rename (name = "m_StartAxis")] pub m_start_axis : crate :: unity_engine :: ui :: gridlayoutgroup :: GridLayoutGroup_Axis ,
+# [offset (96)] # [rename (name = "m_CellSize")] pub m_cell_size : crate :: unity_engine :: vector2 :: Vector2 ,
+# [offset (104)] # [rename (name = "m_Spacing")] pub m_spacing : crate :: unity_engine :: vector2 :: Vector2 ,
+# [offset (112)] # [rename (name = "m_Constraint")] pub m_constraint : crate :: unity_engine :: ui :: gridlayoutgroup :: GridLayoutGroup_Constraint ,
+# [offset (116)] # [rename (name = "m_ConstraintCount")] pub m_constraint_count : i32 ,
+}
+
 }
 
 #[cfg(feature = "unity_engine-ui-gridlayoutgroup-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-ui-gridlayoutgroup")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __GridLayoutGroup_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_start_corner {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GridLayoutGroup as ::unity2::ClassIdentity>::class(),
-                "get_startCorner",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GridLayoutGroup as ::unity2::ClassIdentity>::NAME,
-                        "get_startCorner",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_start_corner(
-        this: GridLayoutGroup,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::ui::gridlayoutgroup::GridLayoutGroup_Corner {
-        let inner: extern "C" fn(GridLayoutGroup, ::unity2::OptionalMethod) -> crate::unity_engine::ui::gridlayoutgroup::GridLayoutGroup_Corner =
-            ::core::mem::transmute(__lookup_get_start_corner::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_start_corner {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::ui::gridlayoutgroup::GridLayoutGroup_Corner as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GridLayoutGroup as ::unity2::ClassIdentity>::class(),
-                "set_startCorner",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GridLayoutGroup as ::unity2::ClassIdentity>::NAME,
-                        "set_startCorner",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_start_corner(
-        this: GridLayoutGroup,
-        value: crate::unity_engine::ui::gridlayoutgroup::GridLayoutGroup_Corner,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(GridLayoutGroup, crate::unity_engine::ui::gridlayoutgroup::GridLayoutGroup_Corner, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_start_corner::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_start_axis {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GridLayoutGroup as ::unity2::ClassIdentity>::class(),
-                "get_startAxis",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GridLayoutGroup as ::unity2::ClassIdentity>::NAME,
-                        "get_startAxis",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_start_axis(
-        this: GridLayoutGroup,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::ui::gridlayoutgroup::GridLayoutGroup_Axis {
-        let inner: extern "C" fn(GridLayoutGroup, ::unity2::OptionalMethod) -> crate::unity_engine::ui::gridlayoutgroup::GridLayoutGroup_Axis =
-            ::core::mem::transmute(__lookup_get_start_axis::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_start_axis {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::ui::gridlayoutgroup::GridLayoutGroup_Axis as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GridLayoutGroup as ::unity2::ClassIdentity>::class(),
-                "set_startAxis",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GridLayoutGroup as ::unity2::ClassIdentity>::NAME,
-                        "set_startAxis",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_start_axis(
-        this: GridLayoutGroup,
-        value: crate::unity_engine::ui::gridlayoutgroup::GridLayoutGroup_Axis,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(GridLayoutGroup, crate::unity_engine::ui::gridlayoutgroup::GridLayoutGroup_Axis, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_start_axis::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_cell_size {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GridLayoutGroup as ::unity2::ClassIdentity>::class(),
-                "get_cellSize",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GridLayoutGroup as ::unity2::ClassIdentity>::NAME,
-                        "get_cellSize",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_cell_size(this: GridLayoutGroup, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::vector2::Vector2 {
-        let inner: extern "C" fn(GridLayoutGroup, ::unity2::OptionalMethod) -> crate::unity_engine::vector2::Vector2 =
-            ::core::mem::transmute(__lookup_get_cell_size::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_cell_size {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GridLayoutGroup as ::unity2::ClassIdentity>::class(),
-                "set_cellSize",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GridLayoutGroup as ::unity2::ClassIdentity>::NAME,
-                        "set_cellSize",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_cell_size(
-        this: GridLayoutGroup,
-        value: crate::unity_engine::vector2::Vector2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(GridLayoutGroup, crate::unity_engine::vector2::Vector2, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_cell_size::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_spacing {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GridLayoutGroup as ::unity2::ClassIdentity>::class(),
-                "get_spacing",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GridLayoutGroup as ::unity2::ClassIdentity>::NAME,
-                        "get_spacing",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_spacing(this: GridLayoutGroup, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::vector2::Vector2 {
-        let inner: extern "C" fn(GridLayoutGroup, ::unity2::OptionalMethod) -> crate::unity_engine::vector2::Vector2 =
-            ::core::mem::transmute(__lookup_get_spacing::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_spacing {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GridLayoutGroup as ::unity2::ClassIdentity>::class(),
-                "set_spacing",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GridLayoutGroup as ::unity2::ClassIdentity>::NAME,
-                        "set_spacing",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_spacing(
-        this: GridLayoutGroup,
-        value: crate::unity_engine::vector2::Vector2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(GridLayoutGroup, crate::unity_engine::vector2::Vector2, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_spacing::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_constraint {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GridLayoutGroup as ::unity2::ClassIdentity>::class(),
-                "get_constraint",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GridLayoutGroup as ::unity2::ClassIdentity>::NAME,
-                        "get_constraint",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_constraint(
-        this: GridLayoutGroup,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::ui::gridlayoutgroup::GridLayoutGroup_Constraint {
-        let inner: extern "C" fn(GridLayoutGroup, ::unity2::OptionalMethod) -> crate::unity_engine::ui::gridlayoutgroup::GridLayoutGroup_Constraint =
-            ::core::mem::transmute(__lookup_get_constraint::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_constraint {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::ui::gridlayoutgroup::GridLayoutGroup_Constraint as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GridLayoutGroup as ::unity2::ClassIdentity>::class(),
-                "set_constraint",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GridLayoutGroup as ::unity2::ClassIdentity>::NAME,
-                        "set_constraint",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_constraint(
-        this: GridLayoutGroup,
-        value: crate::unity_engine::ui::gridlayoutgroup::GridLayoutGroup_Constraint,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            GridLayoutGroup,
-            crate::unity_engine::ui::gridlayoutgroup::GridLayoutGroup_Constraint,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_set_constraint::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_constraint_count {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GridLayoutGroup as ::unity2::ClassIdentity>::class(),
-                "get_constraintCount",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GridLayoutGroup as ::unity2::ClassIdentity>::NAME,
-                        "get_constraintCount",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_constraint_count(this: GridLayoutGroup, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(GridLayoutGroup, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_constraint_count::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_constraint_count {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GridLayoutGroup as ::unity2::ClassIdentity>::class(),
-                "set_constraintCount",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GridLayoutGroup as ::unity2::ClassIdentity>::NAME,
-                        "set_constraintCount",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_constraint_count(this: GridLayoutGroup, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GridLayoutGroup, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_constraint_count::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GridLayoutGroup as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GridLayoutGroup as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: GridLayoutGroup, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GridLayoutGroup, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calculate_layout_input_horizontal {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GridLayoutGroup as ::unity2::ClassIdentity>::class(),
-                "CalculateLayoutInputHorizontal",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GridLayoutGroup as ::unity2::ClassIdentity>::NAME,
-                        "CalculateLayoutInputHorizontal",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn calculate_layout_input_horizontal(this: GridLayoutGroup, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GridLayoutGroup, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_calculate_layout_input_horizontal::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calculate_layout_input_vertical {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GridLayoutGroup as ::unity2::ClassIdentity>::class(),
-                "CalculateLayoutInputVertical",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GridLayoutGroup as ::unity2::ClassIdentity>::NAME,
-                        "CalculateLayoutInputVertical",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn calculate_layout_input_vertical(this: GridLayoutGroup, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GridLayoutGroup, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_calculate_layout_input_vertical::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_layout_horizontal {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GridLayoutGroup as ::unity2::ClassIdentity>::class(),
-                "SetLayoutHorizontal",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GridLayoutGroup as ::unity2::ClassIdentity>::NAME,
-                        "SetLayoutHorizontal",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_layout_horizontal(this: GridLayoutGroup, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GridLayoutGroup, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_layout_horizontal::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_layout_vertical {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GridLayoutGroup as ::unity2::ClassIdentity>::class(),
-                "SetLayoutVertical",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GridLayoutGroup as ::unity2::ClassIdentity>::NAME,
-                        "SetLayoutVertical",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_layout_vertical(this: GridLayoutGroup, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GridLayoutGroup, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_layout_vertical::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_cells_along_axis {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GridLayoutGroup as ::unity2::ClassIdentity>::class(),
-                "SetCellsAlongAxis",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GridLayoutGroup as ::unity2::ClassIdentity>::NAME,
-                        "SetCellsAlongAxis",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_cells_along_axis(this: GridLayoutGroup, axis: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GridLayoutGroup, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_cells_along_axis::get_method_info().method_ptr);
-        inner(this, axis, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __GridLayoutGroup_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_start_corner { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GridLayoutGroup as :: unity2 :: ClassIdentity > :: class () , "get_startCorner" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GridLayoutGroup as :: unity2 :: ClassIdentity > :: NAME , "get_startCorner" , e) , } } } pub unsafe fn get_start_corner (this : GridLayoutGroup , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: gridlayoutgroup :: GridLayoutGroup_Corner { let inner : extern "C" fn (GridLayoutGroup , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: gridlayoutgroup :: GridLayoutGroup_Corner = :: core :: mem :: transmute (__lookup_get_start_corner :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_start_corner { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: ui :: gridlayoutgroup :: GridLayoutGroup_Corner as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GridLayoutGroup as :: unity2 :: ClassIdentity > :: class () , "set_startCorner" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GridLayoutGroup as :: unity2 :: ClassIdentity > :: NAME , "set_startCorner" , e) , } } } pub unsafe fn set_start_corner (this : GridLayoutGroup , value : crate :: unity_engine :: ui :: gridlayoutgroup :: GridLayoutGroup_Corner , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GridLayoutGroup , crate :: unity_engine :: ui :: gridlayoutgroup :: GridLayoutGroup_Corner , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_start_corner :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_start_axis { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GridLayoutGroup as :: unity2 :: ClassIdentity > :: class () , "get_startAxis" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GridLayoutGroup as :: unity2 :: ClassIdentity > :: NAME , "get_startAxis" , e) , } } } pub unsafe fn get_start_axis (this : GridLayoutGroup , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: gridlayoutgroup :: GridLayoutGroup_Axis { let inner : extern "C" fn (GridLayoutGroup , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: gridlayoutgroup :: GridLayoutGroup_Axis = :: core :: mem :: transmute (__lookup_get_start_axis :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_start_axis { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: ui :: gridlayoutgroup :: GridLayoutGroup_Axis as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GridLayoutGroup as :: unity2 :: ClassIdentity > :: class () , "set_startAxis" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GridLayoutGroup as :: unity2 :: ClassIdentity > :: NAME , "set_startAxis" , e) , } } } pub unsafe fn set_start_axis (this : GridLayoutGroup , value : crate :: unity_engine :: ui :: gridlayoutgroup :: GridLayoutGroup_Axis , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GridLayoutGroup , crate :: unity_engine :: ui :: gridlayoutgroup :: GridLayoutGroup_Axis , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_start_axis :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_cell_size { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GridLayoutGroup as :: unity2 :: ClassIdentity > :: class () , "get_cellSize" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GridLayoutGroup as :: unity2 :: ClassIdentity > :: NAME , "get_cellSize" , e) , } } } pub unsafe fn get_cell_size (this : GridLayoutGroup , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector2 :: Vector2 { let inner : extern "C" fn (GridLayoutGroup , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector2 :: Vector2 = :: core :: mem :: transmute (__lookup_get_cell_size :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_cell_size { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector2 :: Vector2 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GridLayoutGroup as :: unity2 :: ClassIdentity > :: class () , "set_cellSize" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GridLayoutGroup as :: unity2 :: ClassIdentity > :: NAME , "set_cellSize" , e) , } } } pub unsafe fn set_cell_size (this : GridLayoutGroup , value : crate :: unity_engine :: vector2 :: Vector2 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GridLayoutGroup , crate :: unity_engine :: vector2 :: Vector2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_cell_size :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_spacing { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GridLayoutGroup as :: unity2 :: ClassIdentity > :: class () , "get_spacing" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GridLayoutGroup as :: unity2 :: ClassIdentity > :: NAME , "get_spacing" , e) , } } } pub unsafe fn get_spacing (this : GridLayoutGroup , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector2 :: Vector2 { let inner : extern "C" fn (GridLayoutGroup , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector2 :: Vector2 = :: core :: mem :: transmute (__lookup_get_spacing :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_spacing { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector2 :: Vector2 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GridLayoutGroup as :: unity2 :: ClassIdentity > :: class () , "set_spacing" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GridLayoutGroup as :: unity2 :: ClassIdentity > :: NAME , "set_spacing" , e) , } } } pub unsafe fn set_spacing (this : GridLayoutGroup , value : crate :: unity_engine :: vector2 :: Vector2 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GridLayoutGroup , crate :: unity_engine :: vector2 :: Vector2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_spacing :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_constraint { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GridLayoutGroup as :: unity2 :: ClassIdentity > :: class () , "get_constraint" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GridLayoutGroup as :: unity2 :: ClassIdentity > :: NAME , "get_constraint" , e) , } } } pub unsafe fn get_constraint (this : GridLayoutGroup , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: gridlayoutgroup :: GridLayoutGroup_Constraint { let inner : extern "C" fn (GridLayoutGroup , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: gridlayoutgroup :: GridLayoutGroup_Constraint = :: core :: mem :: transmute (__lookup_get_constraint :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_constraint { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: ui :: gridlayoutgroup :: GridLayoutGroup_Constraint as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GridLayoutGroup as :: unity2 :: ClassIdentity > :: class () , "set_constraint" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GridLayoutGroup as :: unity2 :: ClassIdentity > :: NAME , "set_constraint" , e) , } } } pub unsafe fn set_constraint (this : GridLayoutGroup , value : crate :: unity_engine :: ui :: gridlayoutgroup :: GridLayoutGroup_Constraint , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GridLayoutGroup , crate :: unity_engine :: ui :: gridlayoutgroup :: GridLayoutGroup_Constraint , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_constraint :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_constraint_count { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GridLayoutGroup as :: unity2 :: ClassIdentity > :: class () , "get_constraintCount" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GridLayoutGroup as :: unity2 :: ClassIdentity > :: NAME , "get_constraintCount" , e) , } } } pub unsafe fn get_constraint_count (this : GridLayoutGroup , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (GridLayoutGroup , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_constraint_count :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_constraint_count { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GridLayoutGroup as :: unity2 :: ClassIdentity > :: class () , "set_constraintCount" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GridLayoutGroup as :: unity2 :: ClassIdentity > :: NAME , "set_constraintCount" , e) , } } } pub unsafe fn set_constraint_count (this : GridLayoutGroup , value : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GridLayoutGroup , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_constraint_count :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GridLayoutGroup as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GridLayoutGroup as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : GridLayoutGroup , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GridLayoutGroup , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_calculate_layout_input_horizontal { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GridLayoutGroup as :: unity2 :: ClassIdentity > :: class () , "CalculateLayoutInputHorizontal" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GridLayoutGroup as :: unity2 :: ClassIdentity > :: NAME , "CalculateLayoutInputHorizontal" , e) , } } } pub unsafe fn calculate_layout_input_horizontal (this : GridLayoutGroup , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GridLayoutGroup , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_calculate_layout_input_horizontal :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_calculate_layout_input_vertical { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GridLayoutGroup as :: unity2 :: ClassIdentity > :: class () , "CalculateLayoutInputVertical" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GridLayoutGroup as :: unity2 :: ClassIdentity > :: NAME , "CalculateLayoutInputVertical" , e) , } } } pub unsafe fn calculate_layout_input_vertical (this : GridLayoutGroup , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GridLayoutGroup , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_calculate_layout_input_vertical :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_layout_horizontal { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GridLayoutGroup as :: unity2 :: ClassIdentity > :: class () , "SetLayoutHorizontal" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GridLayoutGroup as :: unity2 :: ClassIdentity > :: NAME , "SetLayoutHorizontal" , e) , } } } pub unsafe fn set_layout_horizontal (this : GridLayoutGroup , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GridLayoutGroup , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_layout_horizontal :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_layout_vertical { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GridLayoutGroup as :: unity2 :: ClassIdentity > :: class () , "SetLayoutVertical" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GridLayoutGroup as :: unity2 :: ClassIdentity > :: NAME , "SetLayoutVertical" , e) , } } } pub unsafe fn set_layout_vertical (this : GridLayoutGroup , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GridLayoutGroup , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_layout_vertical :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_cells_along_axis { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GridLayoutGroup as :: unity2 :: ClassIdentity > :: class () , "SetCellsAlongAxis" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GridLayoutGroup as :: unity2 :: ClassIdentity > :: NAME , "SetCellsAlongAxis" , e) , } } } pub unsafe fn set_cells_along_axis (this : GridLayoutGroup , axis : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GridLayoutGroup , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_cells_along_axis :: get_method_info () . method_ptr ,) ; inner (this , axis , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-ui-gridlayoutgroup")]
-pub trait IGridLayoutGroupMethods: IGridLayoutGroup {
-    #[doc = "`get_startCorner()` overload"]
-    fn get_start_corner(self) -> crate::unity_engine::ui::gridlayoutgroup::GridLayoutGroup_Corner {
-        unsafe {
-            let __receiver = <GridLayoutGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GridLayoutGroup_unity2_raw::get_start_corner(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_startCorner(crate::unity_engine::ui::gridlayoutgroup::GridLayoutGroup_Corner)` overload"]
-    fn set_start_corner(self, value: impl ::core::convert::Into<crate::unity_engine::ui::gridlayoutgroup::GridLayoutGroup_Corner>) -> () {
-        unsafe {
-            let __receiver = <GridLayoutGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GridLayoutGroup_unity2_raw::set_start_corner(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_startAxis()` overload"]
-    fn get_start_axis(self) -> crate::unity_engine::ui::gridlayoutgroup::GridLayoutGroup_Axis {
-        unsafe {
-            let __receiver = <GridLayoutGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GridLayoutGroup_unity2_raw::get_start_axis(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_startAxis(crate::unity_engine::ui::gridlayoutgroup::GridLayoutGroup_Axis)` overload"]
-    fn set_start_axis(self, value: impl ::core::convert::Into<crate::unity_engine::ui::gridlayoutgroup::GridLayoutGroup_Axis>) -> () {
-        unsafe {
-            let __receiver = <GridLayoutGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GridLayoutGroup_unity2_raw::set_start_axis(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_cellSize()` overload"]
-    fn get_cell_size(self) -> crate::unity_engine::vector2::Vector2 {
-        unsafe {
-            let __receiver = <GridLayoutGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GridLayoutGroup_unity2_raw::get_cell_size(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_cellSize(crate::unity_engine::vector2::Vector2)` overload"]
-    fn set_cell_size(self, value: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>) -> () {
-        unsafe {
-            let __receiver = <GridLayoutGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GridLayoutGroup_unity2_raw::set_cell_size(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_spacing()` overload"]
-    fn get_spacing(self) -> crate::unity_engine::vector2::Vector2 {
-        unsafe {
-            let __receiver = <GridLayoutGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GridLayoutGroup_unity2_raw::get_spacing(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_spacing(crate::unity_engine::vector2::Vector2)` overload"]
-    fn set_spacing(self, value: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>) -> () {
-        unsafe {
-            let __receiver = <GridLayoutGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GridLayoutGroup_unity2_raw::set_spacing(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_constraint()` overload"]
-    fn get_constraint(self) -> crate::unity_engine::ui::gridlayoutgroup::GridLayoutGroup_Constraint {
-        unsafe {
-            let __receiver = <GridLayoutGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GridLayoutGroup_unity2_raw::get_constraint(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_constraint(crate::unity_engine::ui::gridlayoutgroup::GridLayoutGroup_Constraint)` overload"]
-    fn set_constraint(self, value: impl ::core::convert::Into<crate::unity_engine::ui::gridlayoutgroup::GridLayoutGroup_Constraint>) -> () {
-        unsafe {
-            let __receiver = <GridLayoutGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GridLayoutGroup_unity2_raw::set_constraint(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_constraintCount()` overload"]
-    fn get_constraint_count(self) -> i32 {
-        unsafe {
-            let __receiver = <GridLayoutGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GridLayoutGroup_unity2_raw::get_constraint_count(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_constraintCount(i32)` overload"]
-    fn set_constraint_count(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver = <GridLayoutGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GridLayoutGroup_unity2_raw::set_constraint_count(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <GridLayoutGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GridLayoutGroup_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CalculateLayoutInputHorizontal()` overload"]
-    fn calculate_layout_input_horizontal(self) -> () {
-        unsafe {
-            let __receiver = <GridLayoutGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GridLayoutGroup_unity2_raw::calculate_layout_input_horizontal(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CalculateLayoutInputVertical()` overload"]
-    fn calculate_layout_input_vertical(self) -> () {
-        unsafe {
-            let __receiver = <GridLayoutGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GridLayoutGroup_unity2_raw::calculate_layout_input_vertical(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetLayoutHorizontal()` overload"]
-    fn set_layout_horizontal(self) -> () {
-        unsafe {
-            let __receiver = <GridLayoutGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GridLayoutGroup_unity2_raw::set_layout_horizontal(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetLayoutVertical()` overload"]
-    fn set_layout_vertical(self) -> () {
-        unsafe {
-            let __receiver = <GridLayoutGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GridLayoutGroup_unity2_raw::set_layout_vertical(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetCellsAlongAxis(i32)` overload"]
-    fn set_cells_along_axis(self, axis: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver = <GridLayoutGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GridLayoutGroup_unity2_raw::set_cells_along_axis(__receiver, ::core::convert::Into::into(axis), ::core::option::Option::None)
-        }
-    }
-}
+pub trait IGridLayoutGroupMethods : IGridLayoutGroup { # [doc = "`get_startCorner()` overload"] fn get_start_corner (self ,) -> crate :: unity_engine :: ui :: gridlayoutgroup :: GridLayoutGroup_Corner { unsafe { let __receiver = < GridLayoutGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GridLayoutGroup_unity2_raw :: get_start_corner (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_startCorner(crate::unity_engine::ui::gridlayoutgroup::GridLayoutGroup_Corner)` overload"] fn set_start_corner (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: gridlayoutgroup :: GridLayoutGroup_Corner >) -> () { unsafe { let __receiver = < GridLayoutGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GridLayoutGroup_unity2_raw :: set_start_corner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_startAxis()` overload"] fn get_start_axis (self ,) -> crate :: unity_engine :: ui :: gridlayoutgroup :: GridLayoutGroup_Axis { unsafe { let __receiver = < GridLayoutGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GridLayoutGroup_unity2_raw :: get_start_axis (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_startAxis(crate::unity_engine::ui::gridlayoutgroup::GridLayoutGroup_Axis)` overload"] fn set_start_axis (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: gridlayoutgroup :: GridLayoutGroup_Axis >) -> () { unsafe { let __receiver = < GridLayoutGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GridLayoutGroup_unity2_raw :: set_start_axis (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_cellSize()` overload"] fn get_cell_size (self ,) -> crate :: unity_engine :: vector2 :: Vector2 { unsafe { let __receiver = < GridLayoutGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GridLayoutGroup_unity2_raw :: get_cell_size (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_cellSize(crate::unity_engine::vector2::Vector2)` overload"] fn set_cell_size (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 >) -> () { unsafe { let __receiver = < GridLayoutGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GridLayoutGroup_unity2_raw :: set_cell_size (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_spacing()` overload"] fn get_spacing (self ,) -> crate :: unity_engine :: vector2 :: Vector2 { unsafe { let __receiver = < GridLayoutGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GridLayoutGroup_unity2_raw :: get_spacing (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_spacing(crate::unity_engine::vector2::Vector2)` overload"] fn set_spacing (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 >) -> () { unsafe { let __receiver = < GridLayoutGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GridLayoutGroup_unity2_raw :: set_spacing (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_constraint()` overload"] fn get_constraint (self ,) -> crate :: unity_engine :: ui :: gridlayoutgroup :: GridLayoutGroup_Constraint { unsafe { let __receiver = < GridLayoutGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GridLayoutGroup_unity2_raw :: get_constraint (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_constraint(crate::unity_engine::ui::gridlayoutgroup::GridLayoutGroup_Constraint)` overload"] fn set_constraint (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: gridlayoutgroup :: GridLayoutGroup_Constraint >) -> () { unsafe { let __receiver = < GridLayoutGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GridLayoutGroup_unity2_raw :: set_constraint (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_constraintCount()` overload"] fn get_constraint_count (self ,) -> i32 { unsafe { let __receiver = < GridLayoutGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GridLayoutGroup_unity2_raw :: get_constraint_count (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_constraintCount(i32)` overload"] fn set_constraint_count (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < GridLayoutGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GridLayoutGroup_unity2_raw :: set_constraint_count (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GridLayoutGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GridLayoutGroup_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CalculateLayoutInputHorizontal()` overload"] fn calculate_layout_input_horizontal (self ,) -> () { unsafe { let __receiver = < GridLayoutGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GridLayoutGroup_unity2_raw :: calculate_layout_input_horizontal (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CalculateLayoutInputVertical()` overload"] fn calculate_layout_input_vertical (self ,) -> () { unsafe { let __receiver = < GridLayoutGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GridLayoutGroup_unity2_raw :: calculate_layout_input_vertical (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetLayoutHorizontal()` overload"] fn set_layout_horizontal (self ,) -> () { unsafe { let __receiver = < GridLayoutGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GridLayoutGroup_unity2_raw :: set_layout_horizontal (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetLayoutVertical()` overload"] fn set_layout_vertical (self ,) -> () { unsafe { let __receiver = < GridLayoutGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GridLayoutGroup_unity2_raw :: set_layout_vertical (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetCellsAlongAxis(i32)` overload"] fn set_cells_along_axis (self , axis : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < GridLayoutGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GridLayoutGroup_unity2_raw :: set_cells_along_axis (__receiver , :: core :: convert :: Into :: into (axis) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-ui-gridlayoutgroup")]
-impl<__T: IGridLayoutGroup> IGridLayoutGroupMethods for __T {}
+impl < __T : IGridLayoutGroup > IGridLayoutGroupMethods for __T { }
+
+#[cfg(feature = "unity_engine-ui-gridlayoutgroup")]
+impl GridLayoutGroup { pub fn get_start_corner_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GridLayoutGroup_unity2_raw :: __lookup_get_start_corner :: get_method_info () } pub fn set_start_corner_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GridLayoutGroup_unity2_raw :: __lookup_set_start_corner :: get_method_info () } pub fn get_start_axis_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GridLayoutGroup_unity2_raw :: __lookup_get_start_axis :: get_method_info () } pub fn set_start_axis_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GridLayoutGroup_unity2_raw :: __lookup_set_start_axis :: get_method_info () } pub fn get_cell_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GridLayoutGroup_unity2_raw :: __lookup_get_cell_size :: get_method_info () } pub fn set_cell_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GridLayoutGroup_unity2_raw :: __lookup_set_cell_size :: get_method_info () } pub fn get_spacing_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GridLayoutGroup_unity2_raw :: __lookup_get_spacing :: get_method_info () } pub fn set_spacing_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GridLayoutGroup_unity2_raw :: __lookup_set_spacing :: get_method_info () } pub fn get_constraint_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GridLayoutGroup_unity2_raw :: __lookup_get_constraint :: get_method_info () } pub fn set_constraint_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GridLayoutGroup_unity2_raw :: __lookup_set_constraint :: get_method_info () } pub fn get_constraint_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GridLayoutGroup_unity2_raw :: __lookup_get_constraint_count :: get_method_info () } pub fn set_constraint_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GridLayoutGroup_unity2_raw :: __lookup_set_constraint_count :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GridLayoutGroup_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn calculate_layout_input_horizontal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GridLayoutGroup_unity2_raw :: __lookup_calculate_layout_input_horizontal :: get_method_info () } pub fn calculate_layout_input_vertical_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GridLayoutGroup_unity2_raw :: __lookup_calculate_layout_input_vertical :: get_method_info () } pub fn set_layout_horizontal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GridLayoutGroup_unity2_raw :: __lookup_set_layout_horizontal :: get_method_info () } pub fn set_layout_vertical_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GridLayoutGroup_unity2_raw :: __lookup_set_layout_vertical :: get_method_info () } pub fn set_cells_along_axis_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GridLayoutGroup_unity2_raw :: __lookup_set_cells_along_axis :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-ui-gridlayoutgroup")]
 impl GridLayoutGroup {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GridLayoutGroup),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGridLayoutGroupMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GridLayoutGroup) , :: core :: stringify ! (new) ,)) ; < Self as IGridLayoutGroupMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "unity_engine-ui-gridlayoutgroup")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{
-        GridLayoutGroup, GridLayoutGroup_Axis, GridLayoutGroup_Constraint, GridLayoutGroup_Corner, IGridLayoutGroup, IGridLayoutGroupMethods,
-    };
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-event_systems-uibehaviour")]
-    pub use crate::unity_engine::event_systems::uibehaviour::IUIBehaviourMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    #[cfg(feature = "unity_engine-ui-layoutgroup")]
-    pub use crate::unity_engine::ui::layoutgroup::ILayoutGroupMethods;
-    pub use crate::{
-        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
-        unity_engine::{
-            behaviour::IBehaviour, component::IComponent, event_systems::uibehaviour::IUIBehaviour, monobehaviour::IMonoBehaviour,
-            object_2::IObject_2, ui::layoutgroup::ILayoutGroup,
-        },
-    };
+    pub use super::GridLayoutGroup_Axis;
+    pub use super::GridLayoutGroup_Corner;
+    pub use super::GridLayoutGroup_Constraint;
+    pub use super::GridLayoutGroup;
+    pub use super::IGridLayoutGroup;
+    pub use super::IGridLayoutGroupMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::event_systems::uibehaviour::IUIBehaviour;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    pub use crate::unity_engine::ui::layoutgroup::ILayoutGroup;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-event_systems-uibehaviour")] pub use crate::unity_engine::event_systems::uibehaviour::IUIBehaviourMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
+    #[cfg(feature = "unity_engine-ui-layoutgroup")] pub use crate::unity_engine::ui::layoutgroup::ILayoutGroupMethods;
 }

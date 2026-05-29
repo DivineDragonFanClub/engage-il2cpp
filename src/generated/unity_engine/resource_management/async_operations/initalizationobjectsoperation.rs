@@ -2,361 +2,51 @@
 
 #[cfg(feature = "unity_engine-resource_management-async_operations-initalizationobjectsoperation-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::resource_management::async_operations::asyncoperationbase_1::{AsyncOperationBase_1, IAsyncOperationBase_1},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/async_operations/initalizationobjectsoperation/InitalizationObjectsOperation.md"))]
-    #[::unity2::class(namespace = "UnityEngine.ResourceManagement.AsyncOperations", name = "InitalizationObjectsOperation")]
-    # [parent (crate :: unity_engine :: resource_management :: async_operations :: asyncoperationbase_1 :: AsyncOperationBase_1 < bool >)]
-    pub struct InitalizationObjectsOperation {
-        #[offset(136)]
-        #[rename(name = "m_RtdOp")]
-        pub m_rtd_op: crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<
-            crate::unity_engine::addressable_assets::initialization::resourcemanagerruntimedata::ResourceManagerRuntimeData,
-        >,
-        #[offset(160)]
-        #[rename(name = "m_Addressables")]
-        pub m_addressables: crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl,
-        #[offset(168)]
-        #[rename(name = "m_DepOp")]
-        pub m_dep_op: crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<
-            crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
-                crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle,
-            >,
-        >,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: resource_management :: async_operations :: asyncoperationbase_1 :: { AsyncOperationBase_1 , IAsyncOperationBase_1 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/async_operations/initalizationobjectsoperation/InitalizationObjectsOperation.md"))] # [:: unity2 :: class (namespace = "UnityEngine.ResourceManagement.AsyncOperations" , name = "InitalizationObjectsOperation")] # [parent (crate :: unity_engine :: resource_management :: async_operations :: asyncoperationbase_1 :: AsyncOperationBase_1 < bool >)] pub struct InitalizationObjectsOperation {
+# [offset (136)] # [rename (name = "m_RtdOp")] pub m_rtd_op : crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: addressable_assets :: initialization :: resourcemanagerruntimedata :: ResourceManagerRuntimeData > ,
+# [offset (160)] # [rename (name = "m_Addressables")] pub m_addressables : crate :: unity_engine :: addressable_assets :: addressablesimpl :: AddressablesImpl ,
+# [offset (168)] # [rename (name = "m_DepOp")] pub m_dep_op : crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle > > ,
+}
+
 }
 
 #[cfg(feature = "unity_engine-resource_management-async_operations-initalizationobjectsoperation-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-resource_management-async_operations-initalizationobjectsoperation")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __InitalizationObjectsOperation_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_init {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<
-                    crate::unity_engine::addressable_assets::initialization::resourcemanagerruntimedata::ResourceManagerRuntimeData,
-                > as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InitalizationObjectsOperation as ::unity2::ClassIdentity>::class(),
-                "Init",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InitalizationObjectsOperation as ::unity2::ClassIdentity>::NAME,
-                        "Init",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn init(
-        this: InitalizationObjectsOperation,
-        rtd_op: crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<
-            crate::unity_engine::addressable_assets::initialization::resourcemanagerruntimedata::ResourceManagerRuntimeData,
-        >,
-        addressables: crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            InitalizationObjectsOperation,
-            crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<
-                crate::unity_engine::addressable_assets::initialization::resourcemanagerruntimedata::ResourceManagerRuntimeData,
-            >,
-            crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_init::get_method_info().method_ptr);
-        inner(this, rtd_op, addressables, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_debug_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InitalizationObjectsOperation as ::unity2::ClassIdentity>::class(),
-                "get_DebugName",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InitalizationObjectsOperation as ::unity2::ClassIdentity>::NAME,
-                        "get_DebugName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_debug_name(this: InitalizationObjectsOperation, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(InitalizationObjectsOperation, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_debug_name::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_log_runtime_warnings {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InitalizationObjectsOperation as ::unity2::ClassIdentity>::class(),
-                "LogRuntimeWarnings",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InitalizationObjectsOperation as ::unity2::ClassIdentity>::NAME,
-                        "LogRuntimeWarnings",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn log_runtime_warnings(
-        this: InitalizationObjectsOperation,
-        path_to_build_logs: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(InitalizationObjectsOperation, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_log_runtime_warnings::get_method_info().method_ptr);
-        inner(this, path_to_build_logs, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke_wait_for_completion {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InitalizationObjectsOperation as ::unity2::ClassIdentity>::class(),
-                "InvokeWaitForCompletion",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InitalizationObjectsOperation as ::unity2::ClassIdentity>::NAME,
-                        "InvokeWaitForCompletion",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn invoke_wait_for_completion(this: InitalizationObjectsOperation, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(InitalizationObjectsOperation, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_invoke_wait_for_completion::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_execute {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InitalizationObjectsOperation as ::unity2::ClassIdentity>::class(),
-                "Execute",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InitalizationObjectsOperation as ::unity2::ClassIdentity>::NAME,
-                        "Execute",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn execute(this: InitalizationObjectsOperation, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(InitalizationObjectsOperation, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_execute::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InitalizationObjectsOperation as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InitalizationObjectsOperation as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: InitalizationObjectsOperation, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(InitalizationObjectsOperation, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __InitalizationObjectsOperation_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_init { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: addressable_assets :: initialization :: resourcemanagerruntimedata :: ResourceManagerRuntimeData > as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: addressable_assets :: addressablesimpl :: AddressablesImpl as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InitalizationObjectsOperation as :: unity2 :: ClassIdentity > :: class () , "Init" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InitalizationObjectsOperation as :: unity2 :: ClassIdentity > :: NAME , "Init" , e) , } } } pub unsafe fn init (this : InitalizationObjectsOperation , rtd_op : crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: addressable_assets :: initialization :: resourcemanagerruntimedata :: ResourceManagerRuntimeData > , addressables : crate :: unity_engine :: addressable_assets :: addressablesimpl :: AddressablesImpl , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (InitalizationObjectsOperation , crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: addressable_assets :: initialization :: resourcemanagerruntimedata :: ResourceManagerRuntimeData > , crate :: unity_engine :: addressable_assets :: addressablesimpl :: AddressablesImpl , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_init :: get_method_info () . method_ptr ,) ; inner (this , rtd_op , addressables , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_debug_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InitalizationObjectsOperation as :: unity2 :: ClassIdentity > :: class () , "get_DebugName" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InitalizationObjectsOperation as :: unity2 :: ClassIdentity > :: NAME , "get_DebugName" , e) , } } } pub unsafe fn get_debug_name (this : InitalizationObjectsOperation , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (InitalizationObjectsOperation , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_debug_name :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_log_runtime_warnings { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InitalizationObjectsOperation as :: unity2 :: ClassIdentity > :: class () , "LogRuntimeWarnings" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InitalizationObjectsOperation as :: unity2 :: ClassIdentity > :: NAME , "LogRuntimeWarnings" , e) , } } } pub unsafe fn log_runtime_warnings (this : InitalizationObjectsOperation , path_to_build_logs : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (InitalizationObjectsOperation , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_log_runtime_warnings :: get_method_info () . method_ptr ,) ; inner (this , path_to_build_logs , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_invoke_wait_for_completion { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InitalizationObjectsOperation as :: unity2 :: ClassIdentity > :: class () , "InvokeWaitForCompletion" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InitalizationObjectsOperation as :: unity2 :: ClassIdentity > :: NAME , "InvokeWaitForCompletion" , e) , } } } pub unsafe fn invoke_wait_for_completion (this : InitalizationObjectsOperation , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (InitalizationObjectsOperation , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_invoke_wait_for_completion :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_execute { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InitalizationObjectsOperation as :: unity2 :: ClassIdentity > :: class () , "Execute" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InitalizationObjectsOperation as :: unity2 :: ClassIdentity > :: NAME , "Execute" , e) , } } } pub unsafe fn execute (this : InitalizationObjectsOperation , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (InitalizationObjectsOperation , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_execute :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InitalizationObjectsOperation as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InitalizationObjectsOperation as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : InitalizationObjectsOperation , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (InitalizationObjectsOperation , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-resource_management-async_operations-initalizationobjectsoperation")]
-pub trait IInitalizationObjectsOperationMethods: IInitalizationObjectsOperation {
-    #[doc = "`Init(crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::addressable_assets::initialization::resourcemanagerruntimedata::ResourceManagerRuntimeData>, crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl)` overload"]
-    fn init(
-        self,
-        rtd_op: impl ::core::convert::Into<
-            crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<
-                crate::unity_engine::addressable_assets::initialization::resourcemanagerruntimedata::ResourceManagerRuntimeData,
-            >,
-        >,
-        addressables: impl ::core::convert::Into<crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <InitalizationObjectsOperation as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InitalizationObjectsOperation_unity2_raw::init(
-                __receiver,
-                ::core::convert::Into::into(rtd_op),
-                ::core::convert::Into::into(addressables),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_DebugName()` overload"]
-    fn get_debug_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver =
-                <InitalizationObjectsOperation as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InitalizationObjectsOperation_unity2_raw::get_debug_name(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`LogRuntimeWarnings(::unity2::Il2CppString)` overload"]
-    fn log_runtime_warnings(self, path_to_build_logs: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
-        unsafe {
-            let __receiver =
-                <InitalizationObjectsOperation as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InitalizationObjectsOperation_unity2_raw::log_runtime_warnings(
-                __receiver,
-                ::core::convert::Into::into(path_to_build_logs),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`InvokeWaitForCompletion()` overload"]
-    fn invoke_wait_for_completion(self) -> bool {
-        unsafe {
-            let __receiver =
-                <InitalizationObjectsOperation as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InitalizationObjectsOperation_unity2_raw::invoke_wait_for_completion(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Execute()` overload"]
-    fn execute(self) -> () {
-        unsafe {
-            let __receiver =
-                <InitalizationObjectsOperation as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InitalizationObjectsOperation_unity2_raw::execute(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <InitalizationObjectsOperation as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InitalizationObjectsOperation_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IInitalizationObjectsOperationMethods : IInitalizationObjectsOperation { # [doc = "`Init(crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::addressable_assets::initialization::resourcemanagerruntimedata::ResourceManagerRuntimeData>, crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl)` overload"] fn init (self , rtd_op : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: addressable_assets :: initialization :: resourcemanagerruntimedata :: ResourceManagerRuntimeData > > , addressables : impl :: core :: convert :: Into < crate :: unity_engine :: addressable_assets :: addressablesimpl :: AddressablesImpl >) -> () { unsafe { let __receiver = < InitalizationObjectsOperation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __InitalizationObjectsOperation_unity2_raw :: init (__receiver , :: core :: convert :: Into :: into (rtd_op) , :: core :: convert :: Into :: into (addressables) , :: core :: option :: Option :: None) } } # [doc = "`get_DebugName()` overload"] fn get_debug_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < InitalizationObjectsOperation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __InitalizationObjectsOperation_unity2_raw :: get_debug_name (__receiver , :: core :: option :: Option :: None) } } # [doc = "`LogRuntimeWarnings(::unity2::Il2CppString)` overload"] fn log_runtime_warnings (self , path_to_build_logs : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { let __receiver = < InitalizationObjectsOperation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __InitalizationObjectsOperation_unity2_raw :: log_runtime_warnings (__receiver , :: core :: convert :: Into :: into (path_to_build_logs) , :: core :: option :: Option :: None) } } # [doc = "`InvokeWaitForCompletion()` overload"] fn invoke_wait_for_completion (self ,) -> bool { unsafe { let __receiver = < InitalizationObjectsOperation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __InitalizationObjectsOperation_unity2_raw :: invoke_wait_for_completion (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Execute()` overload"] fn execute (self ,) -> () { unsafe { let __receiver = < InitalizationObjectsOperation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __InitalizationObjectsOperation_unity2_raw :: execute (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < InitalizationObjectsOperation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __InitalizationObjectsOperation_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-resource_management-async_operations-initalizationobjectsoperation")]
-impl<__T: IInitalizationObjectsOperation> IInitalizationObjectsOperationMethods for __T {}
+impl < __T : IInitalizationObjectsOperation > IInitalizationObjectsOperationMethods for __T { }
+
+#[cfg(feature = "unity_engine-resource_management-async_operations-initalizationobjectsoperation")]
+impl InitalizationObjectsOperation { pub fn init_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InitalizationObjectsOperation_unity2_raw :: __lookup_init :: get_method_info () } pub fn get_debug_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InitalizationObjectsOperation_unity2_raw :: __lookup_get_debug_name :: get_method_info () } pub fn log_runtime_warnings_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InitalizationObjectsOperation_unity2_raw :: __lookup_log_runtime_warnings :: get_method_info () } pub fn invoke_wait_for_completion_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InitalizationObjectsOperation_unity2_raw :: __lookup_invoke_wait_for_completion :: get_method_info () } pub fn execute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InitalizationObjectsOperation_unity2_raw :: __lookup_execute :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InitalizationObjectsOperation_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-resource_management-async_operations-initalizationobjectsoperation")]
 impl InitalizationObjectsOperation {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(InitalizationObjectsOperation),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IInitalizationObjectsOperationMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (InitalizationObjectsOperation) , :: core :: stringify ! (new) ,)) ; < Self as IInitalizationObjectsOperationMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "unity_engine-resource_management-async_operations-initalizationobjectsoperation")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IInitalizationObjectsOperation, IInitalizationObjectsOperationMethods, InitalizationObjectsOperation};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-resource_management-async_operations-asyncoperationbase_1")]
-    pub use crate::unity_engine::resource_management::async_operations::asyncoperationbase_1::IAsyncOperationBase_1Methods;
-    pub use crate::{system::object::IObject, unity_engine::resource_management::async_operations::asyncoperationbase_1::IAsyncOperationBase_1};
+    pub use super::InitalizationObjectsOperation;
+    pub use super::IInitalizationObjectsOperation;
+    pub use super::IInitalizationObjectsOperationMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::resource_management::async_operations::asyncoperationbase_1::IAsyncOperationBase_1;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-resource_management-async_operations-asyncoperationbase_1")] pub use crate::unity_engine::resource_management::async_operations::asyncoperationbase_1::IAsyncOperationBase_1Methods;
 }

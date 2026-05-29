@@ -2,365 +2,129 @@
 
 #[cfg(feature = "combat-characternodeconstraint-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::{
-            object::{IObject, Object},
-            r#enum::{Enum, IEnum},
-            valuetype::{IValueType, ValueType},
-        },
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/characternodeconstraint/CharacterNodeConstraint.md"))]
-    #[::unity2::class(namespace = "Combat", name = "CharacterNodeConstraint")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct CharacterNodeConstraint {
-        #[offset(24)]
-        #[rename(name = "state")]
-        pub state: crate::combat::characternodeconstraint::CharacterNodeConstraint_State,
-        #[offset(32)]
-        #[rename(name = "SpecialPurposeCameraNodes")]
-        pub special_purpose_camera_nodes: ::unity2::Array<crate::unity_engine::transform::Transform>,
-        #[offset(40)]
-        #[rename(name = "SpecialPurposeParticleNodes")]
-        pub special_purpose_particle_nodes: ::unity2::Array<crate::unity_engine::transform::Transform>,
-        #[offset(48)]
-        #[rename(name = "specialPurposeParticleNodesOffset")]
-        pub special_purpose_particle_nodes_offset: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
-        #[offset(56)]
-        #[rename(name = "_ctr")]
-        pub ctr: crate::unity_engine::transform::Transform,
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/characternodeconstraint/CharacterNodeConstraint.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "CharacterNodeConstraint")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct CharacterNodeConstraint {
+# [offset (24)] # [rename (name = "state")] pub state : crate :: combat :: characternodeconstraint :: CharacterNodeConstraint_State ,
+# [offset (32)] # [rename (name = "SpecialPurposeCameraNodes")] pub special_purpose_camera_nodes : :: unity2 :: Array < crate :: unity_engine :: transform :: Transform > ,
+# [offset (40)] # [rename (name = "SpecialPurposeParticleNodes")] pub special_purpose_particle_nodes : :: unity2 :: Array < crate :: unity_engine :: transform :: Transform > ,
+# [offset (48)] # [rename (name = "specialPurposeParticleNodesOffset")] pub special_purpose_particle_nodes_offset : :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > ,
+# [offset (56)] # [rename (name = "_ctr")] pub ctr : crate :: unity_engine :: transform :: Transform ,
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/characternodeconstraint/CharacterNodeConstraint_State.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct CharacterNodeConstraint_State  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for CharacterNodeConstraint_State  {
+    const NAMESPACE: &'static str = "Combat";
+
+    const NAME: &'static str = "CharacterNodeConstraint.State";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/characternodeconstraint/CharacterNodeConstraint_State.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct CharacterNodeConstraint_State {
-        pub value: i32,
+}
+
+
+impl  ::unity2::IlType for CharacterNodeConstraint_State  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::ClassIdentity for CharacterNodeConstraint_State {
-        const NAME: &'static str = "CharacterNodeConstraint.State";
-        const NAMESPACE: &'static str = "Combat";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  CharacterNodeConstraint_State  {
+    pub fn uninitialized() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl ::unity2::IlType for CharacterNodeConstraint_State {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+
+    pub fn no_use() -> Self {
+        Self { value: 1 }
+
     }
 
-    impl CharacterNodeConstraint_State {
-        pub fn uninitialized() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn no_use() -> Self {
-            Self { value: 1 }
-        }
+    pub fn running() -> Self {
+        Self { value: 2 }
 
-        pub fn running() -> Self {
-            Self { value: 2 }
-        }
     }
+
+}
+
 }
 
 #[cfg(feature = "combat-characternodeconstraint-types")]
 pub use __types::*;
 
 #[cfg(feature = "combat-characternodeconstraint")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __CharacterNodeConstraint_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_ctr {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharacterNodeConstraint as ::unity2::ClassIdentity>::class(),
-                "get_CTR",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CharacterNodeConstraint as ::unity2::ClassIdentity>::NAME,
-                        "get_CTR",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_ctr(
-        this: CharacterNodeConstraint,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::transform::Transform {
-        let inner: extern "C" fn(CharacterNodeConstraint, ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform =
-            ::core::mem::transmute(__lookup_get_ctr::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_alloc_once {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharacterNodeConstraint as ::unity2::ClassIdentity>::class(),
-                "AllocOnce",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CharacterNodeConstraint as ::unity2::ClassIdentity>::NAME,
-                        "AllocOnce",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn alloc_once(this: CharacterNodeConstraint, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CharacterNodeConstraint, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_alloc_once::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_late_update {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharacterNodeConstraint as ::unity2::ClassIdentity>::class(),
-                "LateUpdate",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CharacterNodeConstraint as ::unity2::ClassIdentity>::NAME,
-                        "LateUpdate",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn late_update(this: CharacterNodeConstraint, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CharacterNodeConstraint, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_late_update::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_node_offset {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharacterNodeConstraint as ::unity2::ClassIdentity>::class(),
-                "SetNodeOffset",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CharacterNodeConstraint as ::unity2::ClassIdentity>::NAME,
-                        "SetNodeOffset",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_node_offset(
-        this: CharacterNodeConstraint,
-        node: crate::unity_engine::transform::Transform,
-        offset: crate::unity_engine::vector3::Vector3,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            CharacterNodeConstraint,
-            crate::unity_engine::transform::Transform,
-            crate::unity_engine::vector3::Vector3,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_set_node_offset::get_method_info().method_ptr);
-        inner(this, node, offset, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharacterNodeConstraint as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CharacterNodeConstraint as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: CharacterNodeConstraint, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CharacterNodeConstraint, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __CharacterNodeConstraint_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_ctr { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CharacterNodeConstraint as :: unity2 :: ClassIdentity > :: class () , "get_CTR" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CharacterNodeConstraint as :: unity2 :: ClassIdentity > :: NAME , "get_CTR" , e) , } } } pub unsafe fn get_ctr (this : CharacterNodeConstraint , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: transform :: Transform { let inner : extern "C" fn (CharacterNodeConstraint , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: transform :: Transform = :: core :: mem :: transmute (__lookup_get_ctr :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_alloc_once { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CharacterNodeConstraint as :: unity2 :: ClassIdentity > :: class () , "AllocOnce" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CharacterNodeConstraint as :: unity2 :: ClassIdentity > :: NAME , "AllocOnce" , e) , } } } pub unsafe fn alloc_once (this : CharacterNodeConstraint , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CharacterNodeConstraint , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_alloc_once :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_late_update { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CharacterNodeConstraint as :: unity2 :: ClassIdentity > :: class () , "LateUpdate" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CharacterNodeConstraint as :: unity2 :: ClassIdentity > :: NAME , "LateUpdate" , e) , } } } pub unsafe fn late_update (this : CharacterNodeConstraint , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CharacterNodeConstraint , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_late_update :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_node_offset { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: transform :: Transform as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CharacterNodeConstraint as :: unity2 :: ClassIdentity > :: class () , "SetNodeOffset" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CharacterNodeConstraint as :: unity2 :: ClassIdentity > :: NAME , "SetNodeOffset" , e) , } } } pub unsafe fn set_node_offset (this : CharacterNodeConstraint , node : crate :: unity_engine :: transform :: Transform , offset : crate :: unity_engine :: vector3 :: Vector3 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CharacterNodeConstraint , crate :: unity_engine :: transform :: Transform , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_node_offset :: get_method_info () . method_ptr ,) ; inner (this , node , offset , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CharacterNodeConstraint as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CharacterNodeConstraint as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : CharacterNodeConstraint , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CharacterNodeConstraint , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "combat-characternodeconstraint")]
-pub trait ICharacterNodeConstraintMethods: ICharacterNodeConstraint {
-    #[doc = "`get_CTR()` overload"]
-    fn get_ctr(self) -> crate::unity_engine::transform::Transform {
-        unsafe {
-            let __receiver =
-                <CharacterNodeConstraint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CharacterNodeConstraint_unity2_raw::get_ctr(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`AllocOnce()` overload"]
-    fn alloc_once(self) -> () {
-        unsafe {
-            let __receiver =
-                <CharacterNodeConstraint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CharacterNodeConstraint_unity2_raw::alloc_once(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`LateUpdate()` overload"]
-    fn late_update(self) -> () {
-        unsafe {
-            let __receiver =
-                <CharacterNodeConstraint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CharacterNodeConstraint_unity2_raw::late_update(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetNodeOffset(crate::unity_engine::transform::Transform, crate::unity_engine::vector3::Vector3)` overload"]
-    fn set_node_offset(
-        self,
-        node: impl ::core::convert::Into<crate::unity_engine::transform::Transform>,
-        offset: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <CharacterNodeConstraint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CharacterNodeConstraint_unity2_raw::set_node_offset(
-                __receiver,
-                ::core::convert::Into::into(node),
-                ::core::convert::Into::into(offset),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <CharacterNodeConstraint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CharacterNodeConstraint_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait ICharacterNodeConstraintMethods : ICharacterNodeConstraint { # [doc = "`get_CTR()` overload"] fn get_ctr (self ,) -> crate :: unity_engine :: transform :: Transform { unsafe { let __receiver = < CharacterNodeConstraint as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CharacterNodeConstraint_unity2_raw :: get_ctr (__receiver , :: core :: option :: Option :: None) } } # [doc = "`AllocOnce()` overload"] fn alloc_once (self ,) -> () { unsafe { let __receiver = < CharacterNodeConstraint as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CharacterNodeConstraint_unity2_raw :: alloc_once (__receiver , :: core :: option :: Option :: None) } } # [doc = "`LateUpdate()` overload"] fn late_update (self ,) -> () { unsafe { let __receiver = < CharacterNodeConstraint as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CharacterNodeConstraint_unity2_raw :: late_update (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetNodeOffset(crate::unity_engine::transform::Transform, crate::unity_engine::vector3::Vector3)` overload"] fn set_node_offset (self , node : impl :: core :: convert :: Into < crate :: unity_engine :: transform :: Transform > , offset : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> () { unsafe { let __receiver = < CharacterNodeConstraint as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CharacterNodeConstraint_unity2_raw :: set_node_offset (__receiver , :: core :: convert :: Into :: into (node) , :: core :: convert :: Into :: into (offset) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CharacterNodeConstraint as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CharacterNodeConstraint_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "combat-characternodeconstraint")]
-impl<__T: ICharacterNodeConstraint> ICharacterNodeConstraintMethods for __T {}
+impl < __T : ICharacterNodeConstraint > ICharacterNodeConstraintMethods for __T { }
+
+#[cfg(feature = "combat-characternodeconstraint")]
+impl CharacterNodeConstraint { pub fn get_ctr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CharacterNodeConstraint_unity2_raw :: __lookup_get_ctr :: get_method_info () } pub fn alloc_once_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CharacterNodeConstraint_unity2_raw :: __lookup_alloc_once :: get_method_info () } pub fn late_update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CharacterNodeConstraint_unity2_raw :: __lookup_late_update :: get_method_info () } pub fn set_node_offset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CharacterNodeConstraint_unity2_raw :: __lookup_set_node_offset :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CharacterNodeConstraint_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "combat-characternodeconstraint")]
 impl CharacterNodeConstraint {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(CharacterNodeConstraint),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ICharacterNodeConstraintMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CharacterNodeConstraint) , :: core :: stringify ! (new) ,)) ; < Self as ICharacterNodeConstraintMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "combat-characternodeconstraint")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{CharacterNodeConstraint, CharacterNodeConstraint_State, ICharacterNodeConstraint, ICharacterNodeConstraintMethods};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::CharacterNodeConstraint;
+    pub use super::ICharacterNodeConstraint;
+    pub use super::ICharacterNodeConstraintMethods;
+    pub use super::CharacterNodeConstraint_State;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

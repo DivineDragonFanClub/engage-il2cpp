@@ -2,68 +2,95 @@
 
 #[cfg(feature = "unity_engine-events-persistentlistenermode-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        r#enum::{Enum, IEnum},
-        valuetype::{IValueType, ValueType},
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/events/persistentlistenermode/PersistentListenerMode.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct PersistentListenerMode {
-        pub value: i32,
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/events/persistentlistenermode/PersistentListenerMode.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct PersistentListenerMode  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for PersistentListenerMode  {
+    const NAMESPACE: &'static str = "UnityEngine.Events";
+
+    const NAME: &'static str = "PersistentListenerMode";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    impl ::unity2::ClassIdentity for PersistentListenerMode {
-        const NAME: &'static str = "PersistentListenerMode";
-        const NAMESPACE: &'static str = "UnityEngine.Events";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  ::unity2::IlType for PersistentListenerMode  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::IlType for PersistentListenerMode {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  PersistentListenerMode  {
+    pub fn event_defined() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl PersistentListenerMode {
-        pub fn event_defined() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn void() -> Self {
-            Self { value: 1 }
-        }
+    pub fn void() -> Self {
+        Self { value: 1 }
 
-        pub fn object() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn int() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn float() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn string() -> Self {
-            Self { value: 5 }
-        }
-
-        pub fn bool() -> Self {
-            Self { value: 6 }
-        }
     }
+
+
+    pub fn object() -> Self {
+        Self { value: 2 }
+
+    }
+
+
+    pub fn int() -> Self {
+        Self { value: 3 }
+
+    }
+
+
+    pub fn float() -> Self {
+        Self { value: 4 }
+
+    }
+
+
+    pub fn string() -> Self {
+        Self { value: 5 }
+
+    }
+
+
+    pub fn bool() -> Self {
+        Self { value: 6 }
+
+    }
+
+}
+
 }
 
 #[cfg(feature = "unity_engine-events-persistentlistenermode-types")]
@@ -73,11 +100,10 @@ pub use __types::*;
 #[doc(hidden)]
 pub mod prelude {
     pub use super::PersistentListenerMode;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::system::{object::IObject, r#enum::IEnum, valuetype::IValueType};
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

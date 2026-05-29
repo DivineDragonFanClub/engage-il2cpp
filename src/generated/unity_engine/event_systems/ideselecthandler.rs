@@ -2,79 +2,34 @@
 
 #[cfg(feature = "unity_engine-event_systems-ideselecthandler-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/ideselecthandler/IDeselectHandler.md"))]
-    #[::unity2::class(namespace = "UnityEngine.EventSystems", name = "IDeselectHandler")]
-    pub struct IDeselectHandler {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/ideselecthandler/IDeselectHandler.md"))] # [:: unity2 :: class (namespace = "UnityEngine.EventSystems" , name = "IDeselectHandler")] pub struct IDeselectHandler {}
+
 }
 
 #[cfg(feature = "unity_engine-event_systems-ideselecthandler-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-event_systems-ideselecthandler")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __IDeselectHandler_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_deselect {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::event_systems::baseeventdata::BaseEventData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <IDeselectHandler as ::unity2::ClassIdentity>::class(),
-                "OnDeselect",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <IDeselectHandler as ::unity2::ClassIdentity>::NAME,
-                        "OnDeselect",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_deselect(
-        this: IDeselectHandler,
-        event_data: crate::unity_engine::event_systems::baseeventdata::BaseEventData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(IDeselectHandler, crate::unity_engine::event_systems::baseeventdata::BaseEventData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_deselect::get_method_info().method_ptr);
-        inner(this, event_data, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __IDeselectHandler_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_deselect { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: event_systems :: baseeventdata :: BaseEventData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< IDeselectHandler as :: unity2 :: ClassIdentity > :: class () , "OnDeselect" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < IDeselectHandler as :: unity2 :: ClassIdentity > :: NAME , "OnDeselect" , e) , } } } pub unsafe fn on_deselect (this : IDeselectHandler , event_data : crate :: unity_engine :: event_systems :: baseeventdata :: BaseEventData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (IDeselectHandler , crate :: unity_engine :: event_systems :: baseeventdata :: BaseEventData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_deselect :: get_method_info () . method_ptr ,) ; inner (this , event_data , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-event_systems-ideselecthandler")]
-pub trait IIDeselectHandlerMethods: IIDeselectHandler {
-    #[doc = "`OnDeselect(crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]
-    fn on_deselect(self, event_data: impl ::core::convert::Into<crate::unity_engine::event_systems::baseeventdata::BaseEventData>) -> () {
-        unsafe {
-            let __receiver = <IDeselectHandler as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __IDeselectHandler_unity2_raw::on_deselect(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)
-        }
-    }
-}
+pub trait IIDeselectHandlerMethods : IIDeselectHandler { # [doc = "`OnDeselect(crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"] fn on_deselect (self , event_data : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: baseeventdata :: BaseEventData >) -> () { unsafe { let __receiver = < IDeselectHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IDeselectHandler_unity2_raw :: on_deselect (__receiver , :: core :: convert :: Into :: into (event_data) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-event_systems-ideselecthandler")]
-impl<__T: IIDeselectHandler> IIDeselectHandlerMethods for __T {}
+impl < __T : IIDeselectHandler > IIDeselectHandlerMethods for __T { }
+
+#[cfg(feature = "unity_engine-event_systems-ideselecthandler")]
+impl IDeselectHandler { pub fn on_deselect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __IDeselectHandler_unity2_raw :: __lookup_on_deselect :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-event_systems-ideselecthandler")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IDeselectHandler, IIDeselectHandler, IIDeselectHandlerMethods};
+    pub use super::IDeselectHandler;
+    pub use super::IIDeselectHandler;
+    pub use super::IIDeselectHandlerMethods;
 }

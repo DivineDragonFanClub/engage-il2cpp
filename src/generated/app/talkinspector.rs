@@ -2,170 +2,55 @@
 
 #[cfg(feature = "app-talkinspector-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::{
-            eachinspector::{EachInspector, IEachInspector},
-            mapinspector::{IMapInspector, MapInspector},
-            scriptutil::{IScriptUtil, ScriptUtil},
-        },
-        system::object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talkinspector/TalkInspector.md"))]
-    #[::unity2::class(namespace = "App", name = "TalkInspector")]
-    #[parent(crate::app::eachinspector::EachInspector)]
-    pub struct TalkInspector {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: eachinspector :: { EachInspector , IEachInspector }
+ ;
+ use crate :: app :: mapinspector :: { IMapInspector , MapInspector }
+ ;
+ use crate :: app :: scriptutil :: { IScriptUtil , ScriptUtil }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talkinspector/TalkInspector.md"))] # [:: unity2 :: class (namespace = "App" , name = "TalkInspector")] # [parent (crate :: app :: eachinspector :: EachInspector)] pub struct TalkInspector {}
+
 }
 
 #[cfg(feature = "app-talkinspector-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-talkinspector")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __TalkInspector_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<TalkInspector as ::unity2::ClassIdentity>::class(), ".ctor", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TalkInspector as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: TalkInspector,
-        args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(TalkInspector, ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, args, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_terminated {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkInspector as ::unity2::ClassIdentity>::class(),
-                "IsTerminated",
-                4,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TalkInspector as ::unity2::ClassIdentity>::NAME,
-                        "IsTerminated",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_terminated(
-        this: TalkInspector,
-        arg1: i32,
-        arg2: i32,
-        arg3: i32,
-        arg4: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(TalkInspector, i32, i32, i32, i32, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_terminated::get_method_info().method_ptr);
-        inner(this, arg1, arg2, arg3, arg4, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __TalkInspector_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TalkInspector as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TalkInspector as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : TalkInspector , args : :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TalkInspector , :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , args , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_terminated { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TalkInspector as :: unity2 :: ClassIdentity > :: class () , "IsTerminated" , 4 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TalkInspector as :: unity2 :: ClassIdentity > :: NAME , "IsTerminated" , e) , } } } pub unsafe fn is_terminated (this : TalkInspector , arg1 : i32 , arg2 : i32 , arg3 : i32 , arg4 : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (TalkInspector , i32 , i32 , i32 , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_terminated :: get_method_info () . method_ptr ,) ; inner (this , arg1 , arg2 , arg3 , arg4 , __unity2_method_info) } }
 
 #[cfg(feature = "app-talkinspector")]
-pub trait ITalkInspectorMethods: ITalkInspector {
-    #[doc = "`.ctor(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    fn ctor(self, args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
-        unsafe {
-            let __receiver = <TalkInspector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TalkInspector_unity2_raw::ctor(__receiver, ::core::convert::Into::into(args), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsTerminated(i32, i32, i32, i32)` overload"]
-    fn is_terminated(
-        self,
-        arg1: impl ::core::convert::Into<i32>,
-        arg2: impl ::core::convert::Into<i32>,
-        arg3: impl ::core::convert::Into<i32>,
-        arg4: impl ::core::convert::Into<i32>,
-    ) -> bool {
-        unsafe {
-            let __receiver = <TalkInspector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TalkInspector_unity2_raw::is_terminated(
-                __receiver,
-                ::core::convert::Into::into(arg1),
-                ::core::convert::Into::into(arg2),
-                ::core::convert::Into::into(arg3),
-                ::core::convert::Into::into(arg4),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+pub trait ITalkInspectorMethods : ITalkInspector { # [doc = "`.ctor(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"] fn ctor (self , args : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > >) -> () { unsafe { let __receiver = < TalkInspector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TalkInspector_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (args) , :: core :: option :: Option :: None) } } # [doc = "`IsTerminated(i32, i32, i32, i32)` overload"] fn is_terminated (self , arg1 : impl :: core :: convert :: Into < i32 > , arg2 : impl :: core :: convert :: Into < i32 > , arg3 : impl :: core :: convert :: Into < i32 > , arg4 : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { let __receiver = < TalkInspector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TalkInspector_unity2_raw :: is_terminated (__receiver , :: core :: convert :: Into :: into (arg1) , :: core :: convert :: Into :: into (arg2) , :: core :: convert :: Into :: into (arg3) , :: core :: convert :: Into :: into (arg4) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-talkinspector")]
-impl<__T: ITalkInspector> ITalkInspectorMethods for __T {}
+impl < __T : ITalkInspector > ITalkInspectorMethods for __T { }
+
+#[cfg(feature = "app-talkinspector")]
+impl TalkInspector { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TalkInspector_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn is_terminated_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TalkInspector_unity2_raw :: __lookup_is_terminated :: get_method_info () } }
 
 #[cfg(feature = "app-talkinspector")]
 impl TalkInspector {
-    #[doc = "`.ctor(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` — overload selector"]
-    pub fn new(args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(TalkInspector), ::core::stringify!(new),));
-        <Self as ITalkInspectorMethods>::ctor(this, args);
-        this
-    }
+# [doc = "`.ctor(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` — overload selector"] pub fn new (args : :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue >) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TalkInspector) , :: core :: stringify ! (new) ,)) ; < Self as ITalkInspectorMethods > :: ctor (this , args) ; this }
 }
 
 #[cfg(feature = "app-talkinspector")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{ITalkInspector, ITalkInspectorMethods, TalkInspector};
-    #[cfg(feature = "app-eachinspector")]
-    pub use crate::app::eachinspector::IEachInspectorMethods;
-    #[cfg(feature = "app-mapinspector")]
-    pub use crate::app::mapinspector::IMapInspectorMethods;
-    #[cfg(feature = "app-scriptutil")]
-    pub use crate::app::scriptutil::IScriptUtilMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::{
-        app::{eachinspector::IEachInspector, mapinspector::IMapInspector, scriptutil::IScriptUtil},
-        system::object::IObject,
-    };
+    pub use super::TalkInspector;
+    pub use super::ITalkInspector;
+    pub use super::ITalkInspectorMethods;
+    pub use crate::app::eachinspector::IEachInspector;
+    pub use crate::app::mapinspector::IMapInspector;
+    pub use crate::app::scriptutil::IScriptUtil;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "app-eachinspector")] pub use crate::app::eachinspector::IEachInspectorMethods;
+    #[cfg(feature = "app-mapinspector")] pub use crate::app::mapinspector::IMapInspectorMethods;
+    #[cfg(feature = "app-scriptutil")] pub use crate::app::scriptutil::IScriptUtilMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

@@ -2,473 +2,54 @@
 
 #[cfg(feature = "root-akdynamicsequenceitemcallbackinfo-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        root::akcallbackinfo::{AkCallbackInfo, IAkCallbackInfo},
-        system::object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akdynamicsequenceitemcallbackinfo/AkDynamicSequenceItemCallbackInfo.md"))]
-    #[::unity2::class(namespace = "", name = "AkDynamicSequenceItemCallbackInfo")]
-    #[parent(crate::root::akcallbackinfo::AkCallbackInfo)]
-    pub struct AkDynamicSequenceItemCallbackInfo {
-        #[offset(32)]
-        #[rename(name = "swigCPtr")]
-        pub swig_c_ptr: ::unity2::IntPtr,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: root :: akcallbackinfo :: { AkCallbackInfo , IAkCallbackInfo }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akdynamicsequenceitemcallbackinfo/AkDynamicSequenceItemCallbackInfo.md"))] # [:: unity2 :: class (namespace = "" , name = "AkDynamicSequenceItemCallbackInfo")] # [parent (crate :: root :: akcallbackinfo :: AkCallbackInfo)] pub struct AkDynamicSequenceItemCallbackInfo {
+# [offset (32)] # [rename (name = "swigCPtr")] pub swig_c_ptr : :: unity2 :: IntPtr ,
+}
+
 }
 
 #[cfg(feature = "root-akdynamicsequenceitemcallbackinfo-types")]
 pub use __types::*;
 
 #[cfg(feature = "root-akdynamicsequenceitemcallbackinfo")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AkDynamicSequenceItemCallbackInfo_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::IntPtr as ::unity2::IlType>::il_type(), <bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkDynamicSequenceItemCallbackInfo as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkDynamicSequenceItemCallbackInfo as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: AkDynamicSequenceItemCallbackInfo,
-        c_ptr: ::unity2::IntPtr,
-        c_memory_own: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(AkDynamicSequenceItemCallbackInfo, ::unity2::IntPtr, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, c_ptr, c_memory_own, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_c_ptr {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::root::akdynamicsequenceitemcallbackinfo::AkDynamicSequenceItemCallbackInfo as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkDynamicSequenceItemCallbackInfo as ::unity2::ClassIdentity>::class(),
-                "getCPtr",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkDynamicSequenceItemCallbackInfo as ::unity2::ClassIdentity>::NAME,
-                        "getCPtr",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_c_ptr(
-        obj: crate::root::akdynamicsequenceitemcallbackinfo::AkDynamicSequenceItemCallbackInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::IntPtr {
-        let inner: extern "C" fn(
-            crate::root::akdynamicsequenceitemcallbackinfo::AkDynamicSequenceItemCallbackInfo,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::IntPtr = ::core::mem::transmute(__lookup_get_c_ptr::get_method_info().method_ptr);
-        inner(obj, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_c_ptr {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkDynamicSequenceItemCallbackInfo as ::unity2::ClassIdentity>::class(),
-                "setCPtr",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkDynamicSequenceItemCallbackInfo as ::unity2::ClassIdentity>::NAME,
-                        "setCPtr",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_c_ptr(this: AkDynamicSequenceItemCallbackInfo, c_ptr: ::unity2::IntPtr, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AkDynamicSequenceItemCallbackInfo, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_c_ptr::get_method_info().method_ptr);
-        inner(this, c_ptr, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_finalize {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkDynamicSequenceItemCallbackInfo as ::unity2::ClassIdentity>::class(),
-                "Finalize",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkDynamicSequenceItemCallbackInfo as ::unity2::ClassIdentity>::NAME,
-                        "Finalize",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn finalize(this: AkDynamicSequenceItemCallbackInfo, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AkDynamicSequenceItemCallbackInfo, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_finalize::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_dispose {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkDynamicSequenceItemCallbackInfo as ::unity2::ClassIdentity>::class(),
-                "Dispose",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkDynamicSequenceItemCallbackInfo as ::unity2::ClassIdentity>::NAME,
-                        "Dispose",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn dispose(this: AkDynamicSequenceItemCallbackInfo, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AkDynamicSequenceItemCallbackInfo, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_dispose::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_playing_id {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkDynamicSequenceItemCallbackInfo as ::unity2::ClassIdentity>::class(),
-                "get_playingID",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkDynamicSequenceItemCallbackInfo as ::unity2::ClassIdentity>::NAME,
-                        "get_playingID",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_playing_id(this: AkDynamicSequenceItemCallbackInfo, __unity2_method_info: ::unity2::OptionalMethod) -> u32 {
-        let inner: extern "C" fn(AkDynamicSequenceItemCallbackInfo, ::unity2::OptionalMethod) -> u32 =
-            ::core::mem::transmute(__lookup_get_playing_id::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_audio_node_id {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkDynamicSequenceItemCallbackInfo as ::unity2::ClassIdentity>::class(),
-                "get_audioNodeID",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkDynamicSequenceItemCallbackInfo as ::unity2::ClassIdentity>::NAME,
-                        "get_audioNodeID",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_audio_node_id(this: AkDynamicSequenceItemCallbackInfo, __unity2_method_info: ::unity2::OptionalMethod) -> u32 {
-        let inner: extern "C" fn(AkDynamicSequenceItemCallbackInfo, ::unity2::OptionalMethod) -> u32 =
-            ::core::mem::transmute(__lookup_get_audio_node_id::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_p_custom_info {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkDynamicSequenceItemCallbackInfo as ::unity2::ClassIdentity>::class(),
-                "get_pCustomInfo",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkDynamicSequenceItemCallbackInfo as ::unity2::ClassIdentity>::NAME,
-                        "get_pCustomInfo",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_p_custom_info(this: AkDynamicSequenceItemCallbackInfo, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::IntPtr {
-        let inner: extern "C" fn(AkDynamicSequenceItemCallbackInfo, ::unity2::OptionalMethod) -> ::unity2::IntPtr =
-            ::core::mem::transmute(__lookup_get_p_custom_info::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkDynamicSequenceItemCallbackInfo as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkDynamicSequenceItemCallbackInfo as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor_2(this: AkDynamicSequenceItemCallbackInfo, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AkDynamicSequenceItemCallbackInfo, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __AkDynamicSequenceItemCallbackInfo_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkDynamicSequenceItemCallbackInfo as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkDynamicSequenceItemCallbackInfo as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : AkDynamicSequenceItemCallbackInfo , c_ptr : :: unity2 :: IntPtr , c_memory_own : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkDynamicSequenceItemCallbackInfo , :: unity2 :: IntPtr , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , c_ptr , c_memory_own , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_c_ptr { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: root :: akdynamicsequenceitemcallbackinfo :: AkDynamicSequenceItemCallbackInfo as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkDynamicSequenceItemCallbackInfo as :: unity2 :: ClassIdentity > :: class () , "getCPtr" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkDynamicSequenceItemCallbackInfo as :: unity2 :: ClassIdentity > :: NAME , "getCPtr" , e) , } } } pub unsafe fn get_c_ptr (obj : crate :: root :: akdynamicsequenceitemcallbackinfo :: AkDynamicSequenceItemCallbackInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: IntPtr { let inner : extern "C" fn (crate :: root :: akdynamicsequenceitemcallbackinfo :: AkDynamicSequenceItemCallbackInfo , :: unity2 :: OptionalMethod ,) -> :: unity2 :: IntPtr = :: core :: mem :: transmute (__lookup_get_c_ptr :: get_method_info () . method_ptr ,) ; inner (obj , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_c_ptr { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkDynamicSequenceItemCallbackInfo as :: unity2 :: ClassIdentity > :: class () , "setCPtr" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkDynamicSequenceItemCallbackInfo as :: unity2 :: ClassIdentity > :: NAME , "setCPtr" , e) , } } } pub unsafe fn set_c_ptr (this : AkDynamicSequenceItemCallbackInfo , c_ptr : :: unity2 :: IntPtr , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkDynamicSequenceItemCallbackInfo , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_c_ptr :: get_method_info () . method_ptr ,) ; inner (this , c_ptr , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_finalize { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkDynamicSequenceItemCallbackInfo as :: unity2 :: ClassIdentity > :: class () , "Finalize" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkDynamicSequenceItemCallbackInfo as :: unity2 :: ClassIdentity > :: NAME , "Finalize" , e) , } } } pub unsafe fn finalize (this : AkDynamicSequenceItemCallbackInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkDynamicSequenceItemCallbackInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_finalize :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_dispose { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkDynamicSequenceItemCallbackInfo as :: unity2 :: ClassIdentity > :: class () , "Dispose" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkDynamicSequenceItemCallbackInfo as :: unity2 :: ClassIdentity > :: NAME , "Dispose" , e) , } } } pub unsafe fn dispose (this : AkDynamicSequenceItemCallbackInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkDynamicSequenceItemCallbackInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_dispose :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_playing_id { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkDynamicSequenceItemCallbackInfo as :: unity2 :: ClassIdentity > :: class () , "get_playingID" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkDynamicSequenceItemCallbackInfo as :: unity2 :: ClassIdentity > :: NAME , "get_playingID" , e) , } } } pub unsafe fn get_playing_id (this : AkDynamicSequenceItemCallbackInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> u32 { let inner : extern "C" fn (AkDynamicSequenceItemCallbackInfo , :: unity2 :: OptionalMethod ,) -> u32 = :: core :: mem :: transmute (__lookup_get_playing_id :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_audio_node_id { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkDynamicSequenceItemCallbackInfo as :: unity2 :: ClassIdentity > :: class () , "get_audioNodeID" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkDynamicSequenceItemCallbackInfo as :: unity2 :: ClassIdentity > :: NAME , "get_audioNodeID" , e) , } } } pub unsafe fn get_audio_node_id (this : AkDynamicSequenceItemCallbackInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> u32 { let inner : extern "C" fn (AkDynamicSequenceItemCallbackInfo , :: unity2 :: OptionalMethod ,) -> u32 = :: core :: mem :: transmute (__lookup_get_audio_node_id :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_p_custom_info { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkDynamicSequenceItemCallbackInfo as :: unity2 :: ClassIdentity > :: class () , "get_pCustomInfo" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkDynamicSequenceItemCallbackInfo as :: unity2 :: ClassIdentity > :: NAME , "get_pCustomInfo" , e) , } } } pub unsafe fn get_p_custom_info (this : AkDynamicSequenceItemCallbackInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: IntPtr { let inner : extern "C" fn (AkDynamicSequenceItemCallbackInfo , :: unity2 :: OptionalMethod ,) -> :: unity2 :: IntPtr = :: core :: mem :: transmute (__lookup_get_p_custom_info :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkDynamicSequenceItemCallbackInfo as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkDynamicSequenceItemCallbackInfo as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor_2 (this : AkDynamicSequenceItemCallbackInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkDynamicSequenceItemCallbackInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor_2 :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "root-akdynamicsequenceitemcallbackinfo")]
+impl AkDynamicSequenceItemCallbackInfo { # [doc = "`getCPtr(crate::root::akdynamicsequenceitemcallbackinfo::AkDynamicSequenceItemCallbackInfo)` overload"] pub fn get_c_ptr (obj : impl :: core :: convert :: Into < crate :: root :: akdynamicsequenceitemcallbackinfo :: AkDynamicSequenceItemCallbackInfo >) -> :: unity2 :: IntPtr { unsafe { __AkDynamicSequenceItemCallbackInfo_unity2_raw :: get_c_ptr (:: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "root-akdynamicsequenceitemcallbackinfo")]
+pub trait IAkDynamicSequenceItemCallbackInfoMethods : IAkDynamicSequenceItemCallbackInfo { # [doc = "`.ctor(::unity2::IntPtr, bool)` overload"] fn ctor (self , c_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr > , c_memory_own : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < AkDynamicSequenceItemCallbackInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkDynamicSequenceItemCallbackInfo_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (c_ptr) , :: core :: convert :: Into :: into (c_memory_own) , :: core :: option :: Option :: None) } } # [doc = "`setCPtr(::unity2::IntPtr)` overload"] fn set_c_ptr (self , c_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < AkDynamicSequenceItemCallbackInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkDynamicSequenceItemCallbackInfo_unity2_raw :: set_c_ptr (__receiver , :: core :: convert :: Into :: into (c_ptr) , :: core :: option :: Option :: None) } } # [doc = "`Finalize()` overload"] fn finalize (self ,) -> () { unsafe { let __receiver = < AkDynamicSequenceItemCallbackInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkDynamicSequenceItemCallbackInfo_unity2_raw :: finalize (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Dispose()` overload"] fn dispose (self ,) -> () { unsafe { let __receiver = < AkDynamicSequenceItemCallbackInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkDynamicSequenceItemCallbackInfo_unity2_raw :: dispose (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_playingID()` overload"] fn get_playing_id (self ,) -> u32 { unsafe { let __receiver = < AkDynamicSequenceItemCallbackInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkDynamicSequenceItemCallbackInfo_unity2_raw :: get_playing_id (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_audioNodeID()` overload"] fn get_audio_node_id (self ,) -> u32 { unsafe { let __receiver = < AkDynamicSequenceItemCallbackInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkDynamicSequenceItemCallbackInfo_unity2_raw :: get_audio_node_id (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_pCustomInfo()` overload"] fn get_p_custom_info (self ,) -> :: unity2 :: IntPtr { unsafe { let __receiver = < AkDynamicSequenceItemCallbackInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkDynamicSequenceItemCallbackInfo_unity2_raw :: get_p_custom_info (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor_2 (self ,) -> () { unsafe { let __receiver = < AkDynamicSequenceItemCallbackInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkDynamicSequenceItemCallbackInfo_unity2_raw :: ctor_2 (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "root-akdynamicsequenceitemcallbackinfo")]
+impl < __T : IAkDynamicSequenceItemCallbackInfo > IAkDynamicSequenceItemCallbackInfoMethods for __T { }
+
+#[cfg(feature = "root-akdynamicsequenceitemcallbackinfo")]
+impl AkDynamicSequenceItemCallbackInfo { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkDynamicSequenceItemCallbackInfo_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn get_c_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkDynamicSequenceItemCallbackInfo_unity2_raw :: __lookup_get_c_ptr :: get_method_info () } pub fn set_c_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkDynamicSequenceItemCallbackInfo_unity2_raw :: __lookup_set_c_ptr :: get_method_info () } pub fn finalize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkDynamicSequenceItemCallbackInfo_unity2_raw :: __lookup_finalize :: get_method_info () } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkDynamicSequenceItemCallbackInfo_unity2_raw :: __lookup_dispose :: get_method_info () } pub fn get_playing_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkDynamicSequenceItemCallbackInfo_unity2_raw :: __lookup_get_playing_id :: get_method_info () } pub fn get_audio_node_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkDynamicSequenceItemCallbackInfo_unity2_raw :: __lookup_get_audio_node_id :: get_method_info () } pub fn get_p_custom_info_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkDynamicSequenceItemCallbackInfo_unity2_raw :: __lookup_get_p_custom_info :: get_method_info () } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkDynamicSequenceItemCallbackInfo_unity2_raw :: __lookup_ctor_2 :: get_method_info () } }
 
 #[cfg(feature = "root-akdynamicsequenceitemcallbackinfo")]
 impl AkDynamicSequenceItemCallbackInfo {
-    #[doc = "`getCPtr(crate::root::akdynamicsequenceitemcallbackinfo::AkDynamicSequenceItemCallbackInfo)` overload"]
-    pub fn get_c_ptr(
-        obj: impl ::core::convert::Into<crate::root::akdynamicsequenceitemcallbackinfo::AkDynamicSequenceItemCallbackInfo>,
-    ) -> ::unity2::IntPtr {
-        unsafe { __AkDynamicSequenceItemCallbackInfo_unity2_raw::get_c_ptr(::core::convert::Into::into(obj), ::core::option::Option::None) }
-    }
-}
+# [doc = "`.ctor(::unity2::IntPtr, bool)` — overload selector"] pub fn new (c_ptr : :: unity2 :: IntPtr , c_memory_own : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkDynamicSequenceItemCallbackInfo) , :: core :: stringify ! (new) ,)) ; < Self as IAkDynamicSequenceItemCallbackInfoMethods > :: ctor (this , c_ptr , c_memory_own) ; this }
 
-#[cfg(feature = "root-akdynamicsequenceitemcallbackinfo")]
-pub trait IAkDynamicSequenceItemCallbackInfoMethods: IAkDynamicSequenceItemCallbackInfo {
-    #[doc = "`.ctor(::unity2::IntPtr, bool)` overload"]
-    fn ctor(self, c_ptr: impl ::core::convert::Into<::unity2::IntPtr>, c_memory_own: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver = <AkDynamicSequenceItemCallbackInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AkDynamicSequenceItemCallbackInfo_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(c_ptr),
-                ::core::convert::Into::into(c_memory_own),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`setCPtr(::unity2::IntPtr)` overload"]
-    fn set_c_ptr(self, c_ptr: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
-        unsafe {
-            let __receiver = <AkDynamicSequenceItemCallbackInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AkDynamicSequenceItemCallbackInfo_unity2_raw::set_c_ptr(__receiver, ::core::convert::Into::into(c_ptr), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Finalize()` overload"]
-    fn finalize(self) -> () {
-        unsafe {
-            let __receiver = <AkDynamicSequenceItemCallbackInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AkDynamicSequenceItemCallbackInfo_unity2_raw::finalize(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Dispose()` overload"]
-    fn dispose(self) -> () {
-        unsafe {
-            let __receiver = <AkDynamicSequenceItemCallbackInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AkDynamicSequenceItemCallbackInfo_unity2_raw::dispose(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_playingID()` overload"]
-    fn get_playing_id(self) -> u32 {
-        unsafe {
-            let __receiver = <AkDynamicSequenceItemCallbackInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AkDynamicSequenceItemCallbackInfo_unity2_raw::get_playing_id(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_audioNodeID()` overload"]
-    fn get_audio_node_id(self) -> u32 {
-        unsafe {
-            let __receiver = <AkDynamicSequenceItemCallbackInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AkDynamicSequenceItemCallbackInfo_unity2_raw::get_audio_node_id(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_pCustomInfo()` overload"]
-    fn get_p_custom_info(self) -> ::unity2::IntPtr {
-        unsafe {
-            let __receiver = <AkDynamicSequenceItemCallbackInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AkDynamicSequenceItemCallbackInfo_unity2_raw::get_p_custom_info(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor_2(self) -> () {
-        unsafe {
-            let __receiver = <AkDynamicSequenceItemCallbackInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AkDynamicSequenceItemCallbackInfo_unity2_raw::ctor_2(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "root-akdynamicsequenceitemcallbackinfo")]
-impl<__T: IAkDynamicSequenceItemCallbackInfo> IAkDynamicSequenceItemCallbackInfoMethods for __T {}
-
-#[cfg(feature = "root-akdynamicsequenceitemcallbackinfo")]
-impl AkDynamicSequenceItemCallbackInfo {
-    #[doc = "`.ctor(::unity2::IntPtr, bool)` — overload selector"]
-    pub fn new(c_ptr: ::unity2::IntPtr, c_memory_own: bool) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AkDynamicSequenceItemCallbackInfo),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAkDynamicSequenceItemCallbackInfoMethods>::ctor(this, c_ptr, c_memory_own);
-        this
-    }
-
-    #[doc = "`.ctor()` — no args"]
-    pub fn new_2() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AkDynamicSequenceItemCallbackInfo),
-                ::core::stringify!(new_2),
-            )
-        });
-        <Self as IAkDynamicSequenceItemCallbackInfoMethods>::ctor_2(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new_2 () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkDynamicSequenceItemCallbackInfo) , :: core :: stringify ! (new_2) ,)) ; < Self as IAkDynamicSequenceItemCallbackInfoMethods > :: ctor_2 (this ,) ; this }
 }
 
 #[cfg(feature = "root-akdynamicsequenceitemcallbackinfo")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{AkDynamicSequenceItemCallbackInfo, IAkDynamicSequenceItemCallbackInfo, IAkDynamicSequenceItemCallbackInfoMethods};
-    #[cfg(feature = "root-akcallbackinfo")]
-    pub use crate::root::akcallbackinfo::IAkCallbackInfoMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::{root::akcallbackinfo::IAkCallbackInfo, system::object::IObject};
+    pub use super::AkDynamicSequenceItemCallbackInfo;
+    pub use super::IAkDynamicSequenceItemCallbackInfo;
+    pub use super::IAkDynamicSequenceItemCallbackInfoMethods;
+    pub use crate::root::akcallbackinfo::IAkCallbackInfo;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "root-akcallbackinfo")] pub use crate::root::akcallbackinfo::IAkCallbackInfoMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

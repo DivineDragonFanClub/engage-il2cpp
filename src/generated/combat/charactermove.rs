@@ -2,1115 +2,197 @@
 
 #[cfg(feature = "combat-charactermove-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::{
-            object::{IObject, Object},
-            r#enum::{Enum, IEnum},
-            valuetype::{IValueType, ValueType},
-        },
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/charactermove/CharacterMove_State.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct CharacterMove_State {
-        pub value: i32,
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/charactermove/CharacterMove_State.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct CharacterMove_State  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for CharacterMove_State  {
+    const NAMESPACE: &'static str = "Combat";
+
+    const NAME: &'static str = "CharacterMove.State";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    impl ::unity2::ClassIdentity for CharacterMove_State {
-        const NAME: &'static str = "CharacterMove.State";
-        const NAMESPACE: &'static str = "Combat";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  ::unity2::IlType for CharacterMove_State  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::IlType for CharacterMove_State {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  CharacterMove_State  {
+    pub fn waiting() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl CharacterMove_State {
-        pub fn waiting() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn running() -> Self {
-            Self { value: 1 }
-        }
+    pub fn running() -> Self {
+        Self { value: 1 }
 
-        pub fn braking() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn jumping() -> Self {
-            Self { value: 3 }
-        }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/charactermove/CharacterMove_StartMode.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct CharacterMove_StartMode {
-        pub value: i32,
+
+    pub fn braking() -> Self {
+        Self { value: 2 }
+
     }
 
-    impl ::unity2::ClassIdentity for CharacterMove_StartMode {
-        const NAME: &'static str = "CharacterMove.StartMode";
-        const NAMESPACE: &'static str = "Combat";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+    pub fn jumping() -> Self {
+        Self { value: 3 }
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
     }
 
-    impl ::unity2::IlType for CharacterMove_StartMode {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/charactermove/CharacterMove.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "CharacterMove")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct CharacterMove {
+# [offset (24)] # [rename (name = "_cp")] pub cp : crate :: combat :: character :: Character ,
+# [offset (32)] # [rename (name = "MaxRunSpeedKMPS")] pub max_run_speed_kmps : f32 ,
+# [offset (36)] # [rename (name = "TimeToMaxSpeed")] pub time_to_max_speed : f32 ,
+# [offset (40)] # [rename (name = "TimeToZero")] pub time_to_zero : f32 ,
+# [offset (44)] # [rename (name = "HeightSmoothRatio")] pub height_smooth_ratio : f32 ,
+# [offset (48)] # [rename (name = "StairInterpolationLimit")] pub stair_interpolation_limit : f32 ,
+# [offset (56)] # [rename (name = "m_State")] pub m_state : crate :: combat :: charactermove :: CharacterMove_State ,
+# [offset (60)] # [rename (name = "m_Goal")] pub m_goal : crate :: combat :: fxz :: FXZ ,
+# [offset (68)] # [rename (name = "m_Velocity")] pub m_velocity : f32 ,
+# [offset (72)] # [rename (name = "m_PrevY")] pub m_prev_y : f32 ,
+# [offset (80)] # [rename (name = "m_Jump")] pub m_jump : crate :: combat :: characterjump :: CharacterJump ,
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/charactermove/CharacterMove_StartMode.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct CharacterMove_StartMode  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for CharacterMove_StartMode  {
+    const NAMESPACE: &'static str = "Combat";
+
+    const NAME: &'static str = "CharacterMove.StartMode";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl CharacterMove_StartMode {
-        pub fn from_start() -> Self {
-            Self { value: 0 }
-        }
+}
 
-        pub fn from_loop() -> Self {
-            Self { value: 1 }
-        }
 
-        pub fn from_max_speed() -> Self {
-            Self { value: 2 }
-        }
+impl  ::unity2::IlType for CharacterMove_StartMode  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/charactermove/CharacterMove.md"))]
-    #[::unity2::class(namespace = "Combat", name = "CharacterMove")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct CharacterMove {
-        #[offset(24)]
-        #[rename(name = "_cp")]
-        pub cp: crate::combat::character::Character,
-        #[offset(32)]
-        #[rename(name = "MaxRunSpeedKMPS")]
-        pub max_run_speed_kmps: f32,
-        #[offset(36)]
-        #[rename(name = "TimeToMaxSpeed")]
-        pub time_to_max_speed: f32,
-        #[offset(40)]
-        #[rename(name = "TimeToZero")]
-        pub time_to_zero: f32,
-        #[offset(44)]
-        #[rename(name = "HeightSmoothRatio")]
-        pub height_smooth_ratio: f32,
-        #[offset(48)]
-        #[rename(name = "StairInterpolationLimit")]
-        pub stair_interpolation_limit: f32,
-        #[offset(56)]
-        #[rename(name = "m_State")]
-        pub m_state: crate::combat::charactermove::CharacterMove_State,
-        #[offset(60)]
-        #[rename(name = "m_Goal")]
-        pub m_goal: crate::combat::fxz::FXZ,
-        #[offset(68)]
-        #[rename(name = "m_Velocity")]
-        pub m_velocity: f32,
-        #[offset(72)]
-        #[rename(name = "m_PrevY")]
-        pub m_prev_y: f32,
-        #[offset(80)]
-        #[rename(name = "m_Jump")]
-        pub m_jump: crate::combat::characterjump::CharacterJump,
+}
+
+
+impl  CharacterMove_StartMode  {
+    pub fn from_start() -> Self {
+        Self { value: 0 }
+
     }
+
+
+    pub fn from_loop() -> Self {
+        Self { value: 1 }
+
+    }
+
+
+    pub fn from_max_speed() -> Self {
+        Self { value: 2 }
+
+    }
+
+}
+
 }
 
 #[cfg(feature = "combat-charactermove-types")]
 pub use __types::*;
 
 #[cfg(feature = "combat-charactermove")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __CharacterMove_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_cp {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharacterMove as ::unity2::ClassIdentity>::class(),
-                "get_CP",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CharacterMove as ::unity2::ClassIdentity>::NAME,
-                        "get_CP",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_cp(this: CharacterMove, __unity2_method_info: ::unity2::OptionalMethod) -> crate::combat::character::Character {
-        let inner: extern "C" fn(CharacterMove, ::unity2::OptionalMethod) -> crate::combat::character::Character =
-            ::core::mem::transmute(__lookup_get_cp::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_max_run_speed {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharacterMove as ::unity2::ClassIdentity>::class(),
-                "get_MaxRunSpeed",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CharacterMove as ::unity2::ClassIdentity>::NAME,
-                        "get_MaxRunSpeed",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_max_run_speed(this: CharacterMove, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(CharacterMove, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_get_max_run_speed::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_max_run_speed {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharacterMove as ::unity2::ClassIdentity>::class(),
-                "set_MaxRunSpeed",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CharacterMove as ::unity2::ClassIdentity>::NAME,
-                        "set_MaxRunSpeed",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_max_run_speed(this: CharacterMove, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CharacterMove, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_max_run_speed::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_acceleration {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharacterMove as ::unity2::ClassIdentity>::class(),
-                "get_Acceleration",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CharacterMove as ::unity2::ClassIdentity>::NAME,
-                        "get_Acceleration",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_acceleration(this: CharacterMove, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(CharacterMove, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_get_acceleration::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_deceleration {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharacterMove as ::unity2::ClassIdentity>::class(),
-                "get_Deceleration",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CharacterMove as ::unity2::ClassIdentity>::NAME,
-                        "get_Deceleration",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_deceleration(this: CharacterMove, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(CharacterMove, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_get_deceleration::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_stabilize {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharacterMove as ::unity2::ClassIdentity>::class(),
-                "Stabilize",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CharacterMove as ::unity2::ClassIdentity>::NAME,
-                        "Stabilize",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn stabilize(this: CharacterMove, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CharacterMove, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_stabilize::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_awake {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<CharacterMove as ::unity2::ClassIdentity>::class(), "Awake", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CharacterMove as ::unity2::ClassIdentity>::NAME,
-                        "Awake",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn awake(this: CharacterMove, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CharacterMove, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_awake::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_late_update {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharacterMove as ::unity2::ClassIdentity>::class(),
-                "LateUpdate",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CharacterMove as ::unity2::ClassIdentity>::NAME,
-                        "LateUpdate",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn late_update(this: CharacterMove, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CharacterMove, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_late_update::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_warp_to {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::combat::fxz::FXZ as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharacterMove as ::unity2::ClassIdentity>::class(),
-                "WarpTo",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CharacterMove as ::unity2::ClassIdentity>::NAME,
-                        "WarpTo",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn warp_to(this: CharacterMove, goal: crate::combat::fxz::FXZ, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CharacterMove, crate::combat::fxz::FXZ, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_warp_to::get_method_info().method_ptr);
-        inner(this, goal, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_run_to {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::combat::fxz::FXZ as ::unity2::IlType>::il_type(),
-                <crate::combat::charactermove::CharacterMove_StartMode as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<CharacterMove as ::unity2::ClassIdentity>::class(), "RunTo", 2, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CharacterMove as ::unity2::ClassIdentity>::NAME,
-                        "RunTo",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn run_to(
-        this: CharacterMove,
-        goal: crate::combat::fxz::FXZ,
-        mode: crate::combat::charactermove::CharacterMove_StartMode,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            CharacterMove,
-            crate::combat::fxz::FXZ,
-            crate::combat::charactermove::CharacterMove_StartMode,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_run_to::get_method_info().method_ptr);
-        inner(this, goal, mode, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_run_to_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::combat::fxz::FXZ as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<CharacterMove as ::unity2::ClassIdentity>::class(), "RunTo", 2, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CharacterMove as ::unity2::ClassIdentity>::NAME,
-                        "RunTo",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn run_to_2(
-        this: CharacterMove,
-        goal: crate::combat::fxz::FXZ,
-        from_max_speed: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(CharacterMove, crate::combat::fxz::FXZ, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_run_to_2::get_method_info().method_ptr);
-        inner(this, goal, from_max_speed, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_jump_to {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharacterMove as ::unity2::ClassIdentity>::class(),
-                "JumpTo",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CharacterMove as ::unity2::ClassIdentity>::NAME,
-                        "JumpTo",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn jump_to(
-        this: CharacterMove,
-        goal: crate::unity_engine::vector3::Vector3,
-        duration: f32,
-        is_grounding: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(CharacterMove, crate::unity_engine::vector3::Vector3, f32, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_jump_to::get_method_info().method_ptr);
-        inner(this, goal, duration, is_grounding, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_jump_to_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::animationevent::AnimationEvent as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharacterMove as ::unity2::ClassIdentity>::class(),
-                "JumpTo",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CharacterMove as ::unity2::ClassIdentity>::NAME,
-                        "JumpTo",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn jump_to_2(
-        this: CharacterMove,
-        target: crate::unity_engine::transform::Transform,
-        ev: crate::unity_engine::animationevent::AnimationEvent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            CharacterMove,
-            crate::unity_engine::transform::Transform,
-            crate::unity_engine::animationevent::AnimationEvent,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_jump_to_2::get_method_info().method_ptr);
-        inner(this, target, ev, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_brake {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<CharacterMove as ::unity2::ClassIdentity>::class(), "Brake", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CharacterMove as ::unity2::ClassIdentity>::NAME,
-                        "Brake",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn brake(this: CharacterMove, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CharacterMove, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_brake::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_stop {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<CharacterMove as ::unity2::ClassIdentity>::class(), "Stop", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CharacterMove as ::unity2::ClassIdentity>::NAME,
-                        "Stop",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn stop(this: CharacterMove, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CharacterMove, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_stop::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update_moving {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharacterMove as ::unity2::ClassIdentity>::class(),
-                "UpdateMoving",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CharacterMove as ::unity2::ClassIdentity>::NAME,
-                        "UpdateMoving",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update_moving(this: CharacterMove, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CharacterMove, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update_moving::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update_run {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharacterMove as ::unity2::ClassIdentity>::class(),
-                "UpdateRun",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CharacterMove as ::unity2::ClassIdentity>::NAME,
-                        "UpdateRun",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update_run(this: CharacterMove, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CharacterMove, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update_run::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update_run_brake {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharacterMove as ::unity2::ClassIdentity>::class(),
-                "UpdateRunBrake",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CharacterMove as ::unity2::ClassIdentity>::NAME,
-                        "UpdateRunBrake",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update_run_brake(this: CharacterMove, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CharacterMove, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update_run_brake::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_advance_time_and_get_dt {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharacterMove as ::unity2::ClassIdentity>::class(),
-                "AdvanceTimeAndGetDT",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CharacterMove as ::unity2::ClassIdentity>::NAME,
-                        "AdvanceTimeAndGetDT",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn advance_time_and_get_dt(this: CharacterMove, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(CharacterMove, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_advance_time_and_get_dt::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update_jump {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharacterMove as ::unity2::ClassIdentity>::class(),
-                "UpdateJump",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CharacterMove as ::unity2::ClassIdentity>::NAME,
-                        "UpdateJump",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update_jump(this: CharacterMove, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CharacterMove, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update_jump::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_time_to_arrive {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type(), <bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharacterMove as ::unity2::ClassIdentity>::class(),
-                "CalcTimeToArrive",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CharacterMove as ::unity2::ClassIdentity>::NAME,
-                        "CalcTimeToArrive",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn calc_time_to_arrive(this: CharacterMove, dist: f32, run_max_speed: bool, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(CharacterMove, f32, bool, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_calc_time_to_arrive::get_method_info().method_ptr);
-        inner(this, dist, run_max_speed, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<CharacterMove as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CharacterMove as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: CharacterMove, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CharacterMove, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __CharacterMove_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_cp { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CharacterMove as :: unity2 :: ClassIdentity > :: class () , "get_CP" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CharacterMove as :: unity2 :: ClassIdentity > :: NAME , "get_CP" , e) , } } } pub unsafe fn get_cp (this : CharacterMove , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: combat :: character :: Character { let inner : extern "C" fn (CharacterMove , :: unity2 :: OptionalMethod ,) -> crate :: combat :: character :: Character = :: core :: mem :: transmute (__lookup_get_cp :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_max_run_speed { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CharacterMove as :: unity2 :: ClassIdentity > :: class () , "get_MaxRunSpeed" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CharacterMove as :: unity2 :: ClassIdentity > :: NAME , "get_MaxRunSpeed" , e) , } } } pub unsafe fn get_max_run_speed (this : CharacterMove , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (CharacterMove , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_get_max_run_speed :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_max_run_speed { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CharacterMove as :: unity2 :: ClassIdentity > :: class () , "set_MaxRunSpeed" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CharacterMove as :: unity2 :: ClassIdentity > :: NAME , "set_MaxRunSpeed" , e) , } } } pub unsafe fn set_max_run_speed (this : CharacterMove , value : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CharacterMove , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_max_run_speed :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_acceleration { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CharacterMove as :: unity2 :: ClassIdentity > :: class () , "get_Acceleration" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CharacterMove as :: unity2 :: ClassIdentity > :: NAME , "get_Acceleration" , e) , } } } pub unsafe fn get_acceleration (this : CharacterMove , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (CharacterMove , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_get_acceleration :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_deceleration { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CharacterMove as :: unity2 :: ClassIdentity > :: class () , "get_Deceleration" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CharacterMove as :: unity2 :: ClassIdentity > :: NAME , "get_Deceleration" , e) , } } } pub unsafe fn get_deceleration (this : CharacterMove , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (CharacterMove , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_get_deceleration :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_stabilize { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CharacterMove as :: unity2 :: ClassIdentity > :: class () , "Stabilize" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CharacterMove as :: unity2 :: ClassIdentity > :: NAME , "Stabilize" , e) , } } } pub unsafe fn stabilize (this : CharacterMove , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CharacterMove , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_stabilize :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_awake { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CharacterMove as :: unity2 :: ClassIdentity > :: class () , "Awake" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CharacterMove as :: unity2 :: ClassIdentity > :: NAME , "Awake" , e) , } } } pub unsafe fn awake (this : CharacterMove , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CharacterMove , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_awake :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_late_update { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CharacterMove as :: unity2 :: ClassIdentity > :: class () , "LateUpdate" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CharacterMove as :: unity2 :: ClassIdentity > :: NAME , "LateUpdate" , e) , } } } pub unsafe fn late_update (this : CharacterMove , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CharacterMove , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_late_update :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_warp_to { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: fxz :: FXZ as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CharacterMove as :: unity2 :: ClassIdentity > :: class () , "WarpTo" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CharacterMove as :: unity2 :: ClassIdentity > :: NAME , "WarpTo" , e) , } } } pub unsafe fn warp_to (this : CharacterMove , goal : crate :: combat :: fxz :: FXZ , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CharacterMove , crate :: combat :: fxz :: FXZ , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_warp_to :: get_method_info () . method_ptr ,) ; inner (this , goal , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_run_to { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: fxz :: FXZ as :: unity2 :: IlType > :: il_type () , < crate :: combat :: charactermove :: CharacterMove_StartMode as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CharacterMove as :: unity2 :: ClassIdentity > :: class () , "RunTo" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CharacterMove as :: unity2 :: ClassIdentity > :: NAME , "RunTo" , e) , } } } pub unsafe fn run_to (this : CharacterMove , goal : crate :: combat :: fxz :: FXZ , mode : crate :: combat :: charactermove :: CharacterMove_StartMode , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CharacterMove , crate :: combat :: fxz :: FXZ , crate :: combat :: charactermove :: CharacterMove_StartMode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_run_to :: get_method_info () . method_ptr ,) ; inner (this , goal , mode , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_run_to_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: fxz :: FXZ as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CharacterMove as :: unity2 :: ClassIdentity > :: class () , "RunTo" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CharacterMove as :: unity2 :: ClassIdentity > :: NAME , "RunTo" , e) , } } } pub unsafe fn run_to_2 (this : CharacterMove , goal : crate :: combat :: fxz :: FXZ , from_max_speed : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CharacterMove , crate :: combat :: fxz :: FXZ , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_run_to_2 :: get_method_info () . method_ptr ,) ; inner (this , goal , from_max_speed , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_jump_to { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CharacterMove as :: unity2 :: ClassIdentity > :: class () , "JumpTo" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CharacterMove as :: unity2 :: ClassIdentity > :: NAME , "JumpTo" , e) , } } } pub unsafe fn jump_to (this : CharacterMove , goal : crate :: unity_engine :: vector3 :: Vector3 , duration : f32 , is_grounding : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CharacterMove , crate :: unity_engine :: vector3 :: Vector3 , f32 , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_jump_to :: get_method_info () . method_ptr ,) ; inner (this , goal , duration , is_grounding , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_jump_to_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: transform :: Transform as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: animationevent :: AnimationEvent as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CharacterMove as :: unity2 :: ClassIdentity > :: class () , "JumpTo" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CharacterMove as :: unity2 :: ClassIdentity > :: NAME , "JumpTo" , e) , } } } pub unsafe fn jump_to_2 (this : CharacterMove , target : crate :: unity_engine :: transform :: Transform , ev : crate :: unity_engine :: animationevent :: AnimationEvent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CharacterMove , crate :: unity_engine :: transform :: Transform , crate :: unity_engine :: animationevent :: AnimationEvent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_jump_to_2 :: get_method_info () . method_ptr ,) ; inner (this , target , ev , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_brake { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CharacterMove as :: unity2 :: ClassIdentity > :: class () , "Brake" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CharacterMove as :: unity2 :: ClassIdentity > :: NAME , "Brake" , e) , } } } pub unsafe fn brake (this : CharacterMove , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CharacterMove , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_brake :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_stop { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CharacterMove as :: unity2 :: ClassIdentity > :: class () , "Stop" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CharacterMove as :: unity2 :: ClassIdentity > :: NAME , "Stop" , e) , } } } pub unsafe fn stop (this : CharacterMove , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CharacterMove , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_stop :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update_moving { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CharacterMove as :: unity2 :: ClassIdentity > :: class () , "UpdateMoving" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CharacterMove as :: unity2 :: ClassIdentity > :: NAME , "UpdateMoving" , e) , } } } pub unsafe fn update_moving (this : CharacterMove , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CharacterMove , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update_moving :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update_run { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CharacterMove as :: unity2 :: ClassIdentity > :: class () , "UpdateRun" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CharacterMove as :: unity2 :: ClassIdentity > :: NAME , "UpdateRun" , e) , } } } pub unsafe fn update_run (this : CharacterMove , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CharacterMove , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update_run :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update_run_brake { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CharacterMove as :: unity2 :: ClassIdentity > :: class () , "UpdateRunBrake" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CharacterMove as :: unity2 :: ClassIdentity > :: NAME , "UpdateRunBrake" , e) , } } } pub unsafe fn update_run_brake (this : CharacterMove , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CharacterMove , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update_run_brake :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_advance_time_and_get_dt { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CharacterMove as :: unity2 :: ClassIdentity > :: class () , "AdvanceTimeAndGetDT" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CharacterMove as :: unity2 :: ClassIdentity > :: NAME , "AdvanceTimeAndGetDT" , e) , } } } pub unsafe fn advance_time_and_get_dt (this : CharacterMove , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (CharacterMove , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_advance_time_and_get_dt :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update_jump { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CharacterMove as :: unity2 :: ClassIdentity > :: class () , "UpdateJump" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CharacterMove as :: unity2 :: ClassIdentity > :: NAME , "UpdateJump" , e) , } } } pub unsafe fn update_jump (this : CharacterMove , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CharacterMove , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update_jump :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_calc_time_to_arrive { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< f32 as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CharacterMove as :: unity2 :: ClassIdentity > :: class () , "CalcTimeToArrive" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CharacterMove as :: unity2 :: ClassIdentity > :: NAME , "CalcTimeToArrive" , e) , } } } pub unsafe fn calc_time_to_arrive (this : CharacterMove , dist : f32 , run_max_speed : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (CharacterMove , f32 , bool , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_calc_time_to_arrive :: get_method_info () . method_ptr ,) ; inner (this , dist , run_max_speed , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CharacterMove as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CharacterMove as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : CharacterMove , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CharacterMove , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "combat-charactermove")]
-pub trait ICharacterMoveMethods: ICharacterMove {
-    #[doc = "`get_CP()` overload"]
-    fn get_cp(self) -> crate::combat::character::Character {
-        unsafe {
-            let __receiver = <CharacterMove as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CharacterMove_unity2_raw::get_cp(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_MaxRunSpeed()` overload"]
-    fn get_max_run_speed(self) -> f32 {
-        unsafe {
-            let __receiver = <CharacterMove as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CharacterMove_unity2_raw::get_max_run_speed(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_MaxRunSpeed(f32)` overload"]
-    fn set_max_run_speed(self, value: impl ::core::convert::Into<f32>) -> () {
-        unsafe {
-            let __receiver = <CharacterMove as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CharacterMove_unity2_raw::set_max_run_speed(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Acceleration()` overload"]
-    fn get_acceleration(self) -> f32 {
-        unsafe {
-            let __receiver = <CharacterMove as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CharacterMove_unity2_raw::get_acceleration(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Deceleration()` overload"]
-    fn get_deceleration(self) -> f32 {
-        unsafe {
-            let __receiver = <CharacterMove as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CharacterMove_unity2_raw::get_deceleration(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Stabilize()` overload"]
-    fn stabilize(self) -> () {
-        unsafe {
-            let __receiver = <CharacterMove as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CharacterMove_unity2_raw::stabilize(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Awake()` overload"]
-    fn awake(self) -> () {
-        unsafe {
-            let __receiver = <CharacterMove as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CharacterMove_unity2_raw::awake(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`LateUpdate()` overload"]
-    fn late_update(self) -> () {
-        unsafe {
-            let __receiver = <CharacterMove as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CharacterMove_unity2_raw::late_update(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`WarpTo(crate::combat::fxz::FXZ)` overload"]
-    fn warp_to(self, goal: impl ::core::convert::Into<crate::combat::fxz::FXZ>) -> () {
-        unsafe {
-            let __receiver = <CharacterMove as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CharacterMove_unity2_raw::warp_to(__receiver, ::core::convert::Into::into(goal), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`RunTo(crate::combat::fxz::FXZ, crate::combat::charactermove::CharacterMove_StartMode)` overload"]
-    fn run_to(
-        self,
-        goal: impl ::core::convert::Into<crate::combat::fxz::FXZ>,
-        mode: impl ::core::convert::Into<crate::combat::charactermove::CharacterMove_StartMode>,
-    ) -> () {
-        unsafe {
-            let __receiver = <CharacterMove as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CharacterMove_unity2_raw::run_to(
-                __receiver,
-                ::core::convert::Into::into(goal),
-                ::core::convert::Into::into(mode),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`RunTo(crate::combat::fxz::FXZ, bool)` overload"]
-    fn run_to_2(self, goal: impl ::core::convert::Into<crate::combat::fxz::FXZ>, from_max_speed: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver = <CharacterMove as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CharacterMove_unity2_raw::run_to_2(
-                __receiver,
-                ::core::convert::Into::into(goal),
-                ::core::convert::Into::into(from_max_speed),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`JumpTo(crate::unity_engine::vector3::Vector3, f32, bool)` overload"]
-    fn jump_to(
-        self,
-        goal: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-        duration: impl ::core::convert::Into<f32>,
-        is_grounding: impl ::core::convert::Into<bool>,
-    ) -> () {
-        unsafe {
-            let __receiver = <CharacterMove as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CharacterMove_unity2_raw::jump_to(
-                __receiver,
-                ::core::convert::Into::into(goal),
-                ::core::convert::Into::into(duration),
-                ::core::convert::Into::into(is_grounding),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`JumpTo(crate::unity_engine::transform::Transform, crate::unity_engine::animationevent::AnimationEvent)` overload"]
-    fn jump_to_2(
-        self,
-        target: impl ::core::convert::Into<crate::unity_engine::transform::Transform>,
-        ev: impl ::core::convert::Into<crate::unity_engine::animationevent::AnimationEvent>,
-    ) -> () {
-        unsafe {
-            let __receiver = <CharacterMove as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CharacterMove_unity2_raw::jump_to_2(
-                __receiver,
-                ::core::convert::Into::into(target),
-                ::core::convert::Into::into(ev),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Brake()` overload"]
-    fn brake(self) -> () {
-        unsafe {
-            let __receiver = <CharacterMove as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CharacterMove_unity2_raw::brake(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Stop()` overload"]
-    fn stop(self) -> () {
-        unsafe {
-            let __receiver = <CharacterMove as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CharacterMove_unity2_raw::stop(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`UpdateMoving()` overload"]
-    fn update_moving(self) -> () {
-        unsafe {
-            let __receiver = <CharacterMove as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CharacterMove_unity2_raw::update_moving(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`UpdateRun()` overload"]
-    fn update_run(self) -> () {
-        unsafe {
-            let __receiver = <CharacterMove as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CharacterMove_unity2_raw::update_run(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`UpdateRunBrake()` overload"]
-    fn update_run_brake(self) -> () {
-        unsafe {
-            let __receiver = <CharacterMove as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CharacterMove_unity2_raw::update_run_brake(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`AdvanceTimeAndGetDT()` overload"]
-    fn advance_time_and_get_dt(self) -> f32 {
-        unsafe {
-            let __receiver = <CharacterMove as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CharacterMove_unity2_raw::advance_time_and_get_dt(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`UpdateJump()` overload"]
-    fn update_jump(self) -> () {
-        unsafe {
-            let __receiver = <CharacterMove as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CharacterMove_unity2_raw::update_jump(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CalcTimeToArrive(f32, bool)` overload"]
-    fn calc_time_to_arrive(self, dist: impl ::core::convert::Into<f32>, run_max_speed: impl ::core::convert::Into<bool>) -> f32 {
-        unsafe {
-            let __receiver = <CharacterMove as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CharacterMove_unity2_raw::calc_time_to_arrive(
-                __receiver,
-                ::core::convert::Into::into(dist),
-                ::core::convert::Into::into(run_max_speed),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <CharacterMove as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CharacterMove_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait ICharacterMoveMethods : ICharacterMove { # [doc = "`get_CP()` overload"] fn get_cp (self ,) -> crate :: combat :: character :: Character { unsafe { let __receiver = < CharacterMove as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CharacterMove_unity2_raw :: get_cp (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_MaxRunSpeed()` overload"] fn get_max_run_speed (self ,) -> f32 { unsafe { let __receiver = < CharacterMove as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CharacterMove_unity2_raw :: get_max_run_speed (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_MaxRunSpeed(f32)` overload"] fn set_max_run_speed (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < CharacterMove as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CharacterMove_unity2_raw :: set_max_run_speed (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_Acceleration()` overload"] fn get_acceleration (self ,) -> f32 { unsafe { let __receiver = < CharacterMove as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CharacterMove_unity2_raw :: get_acceleration (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_Deceleration()` overload"] fn get_deceleration (self ,) -> f32 { unsafe { let __receiver = < CharacterMove as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CharacterMove_unity2_raw :: get_deceleration (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Stabilize()` overload"] fn stabilize (self ,) -> () { unsafe { let __receiver = < CharacterMove as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CharacterMove_unity2_raw :: stabilize (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Awake()` overload"] fn awake (self ,) -> () { unsafe { let __receiver = < CharacterMove as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CharacterMove_unity2_raw :: awake (__receiver , :: core :: option :: Option :: None) } } # [doc = "`LateUpdate()` overload"] fn late_update (self ,) -> () { unsafe { let __receiver = < CharacterMove as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CharacterMove_unity2_raw :: late_update (__receiver , :: core :: option :: Option :: None) } } # [doc = "`WarpTo(crate::combat::fxz::FXZ)` overload"] fn warp_to (self , goal : impl :: core :: convert :: Into < crate :: combat :: fxz :: FXZ >) -> () { unsafe { let __receiver = < CharacterMove as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CharacterMove_unity2_raw :: warp_to (__receiver , :: core :: convert :: Into :: into (goal) , :: core :: option :: Option :: None) } } # [doc = "`RunTo(crate::combat::fxz::FXZ, crate::combat::charactermove::CharacterMove_StartMode)` overload"] fn run_to (self , goal : impl :: core :: convert :: Into < crate :: combat :: fxz :: FXZ > , mode : impl :: core :: convert :: Into < crate :: combat :: charactermove :: CharacterMove_StartMode >) -> () { unsafe { let __receiver = < CharacterMove as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CharacterMove_unity2_raw :: run_to (__receiver , :: core :: convert :: Into :: into (goal) , :: core :: convert :: Into :: into (mode) , :: core :: option :: Option :: None) } } # [doc = "`RunTo(crate::combat::fxz::FXZ, bool)` overload"] fn run_to_2 (self , goal : impl :: core :: convert :: Into < crate :: combat :: fxz :: FXZ > , from_max_speed : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < CharacterMove as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CharacterMove_unity2_raw :: run_to_2 (__receiver , :: core :: convert :: Into :: into (goal) , :: core :: convert :: Into :: into (from_max_speed) , :: core :: option :: Option :: None) } } # [doc = "`JumpTo(crate::unity_engine::vector3::Vector3, f32, bool)` overload"] fn jump_to (self , goal : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , duration : impl :: core :: convert :: Into < f32 > , is_grounding : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < CharacterMove as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CharacterMove_unity2_raw :: jump_to (__receiver , :: core :: convert :: Into :: into (goal) , :: core :: convert :: Into :: into (duration) , :: core :: convert :: Into :: into (is_grounding) , :: core :: option :: Option :: None) } } # [doc = "`JumpTo(crate::unity_engine::transform::Transform, crate::unity_engine::animationevent::AnimationEvent)` overload"] fn jump_to_2 (self , target : impl :: core :: convert :: Into < crate :: unity_engine :: transform :: Transform > , ev : impl :: core :: convert :: Into < crate :: unity_engine :: animationevent :: AnimationEvent >) -> () { unsafe { let __receiver = < CharacterMove as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CharacterMove_unity2_raw :: jump_to_2 (__receiver , :: core :: convert :: Into :: into (target) , :: core :: convert :: Into :: into (ev) , :: core :: option :: Option :: None) } } # [doc = "`Brake()` overload"] fn brake (self ,) -> () { unsafe { let __receiver = < CharacterMove as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CharacterMove_unity2_raw :: brake (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Stop()` overload"] fn stop (self ,) -> () { unsafe { let __receiver = < CharacterMove as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CharacterMove_unity2_raw :: stop (__receiver , :: core :: option :: Option :: None) } } # [doc = "`UpdateMoving()` overload"] fn update_moving (self ,) -> () { unsafe { let __receiver = < CharacterMove as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CharacterMove_unity2_raw :: update_moving (__receiver , :: core :: option :: Option :: None) } } # [doc = "`UpdateRun()` overload"] fn update_run (self ,) -> () { unsafe { let __receiver = < CharacterMove as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CharacterMove_unity2_raw :: update_run (__receiver , :: core :: option :: Option :: None) } } # [doc = "`UpdateRunBrake()` overload"] fn update_run_brake (self ,) -> () { unsafe { let __receiver = < CharacterMove as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CharacterMove_unity2_raw :: update_run_brake (__receiver , :: core :: option :: Option :: None) } } # [doc = "`AdvanceTimeAndGetDT()` overload"] fn advance_time_and_get_dt (self ,) -> f32 { unsafe { let __receiver = < CharacterMove as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CharacterMove_unity2_raw :: advance_time_and_get_dt (__receiver , :: core :: option :: Option :: None) } } # [doc = "`UpdateJump()` overload"] fn update_jump (self ,) -> () { unsafe { let __receiver = < CharacterMove as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CharacterMove_unity2_raw :: update_jump (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CalcTimeToArrive(f32, bool)` overload"] fn calc_time_to_arrive (self , dist : impl :: core :: convert :: Into < f32 > , run_max_speed : impl :: core :: convert :: Into < bool >) -> f32 { unsafe { let __receiver = < CharacterMove as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CharacterMove_unity2_raw :: calc_time_to_arrive (__receiver , :: core :: convert :: Into :: into (dist) , :: core :: convert :: Into :: into (run_max_speed) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CharacterMove as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CharacterMove_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "combat-charactermove")]
-impl<__T: ICharacterMove> ICharacterMoveMethods for __T {}
+impl < __T : ICharacterMove > ICharacterMoveMethods for __T { }
+
+#[cfg(feature = "combat-charactermove")]
+impl CharacterMove { pub fn get_cp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CharacterMove_unity2_raw :: __lookup_get_cp :: get_method_info () } pub fn get_max_run_speed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CharacterMove_unity2_raw :: __lookup_get_max_run_speed :: get_method_info () } pub fn set_max_run_speed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CharacterMove_unity2_raw :: __lookup_set_max_run_speed :: get_method_info () } pub fn get_acceleration_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CharacterMove_unity2_raw :: __lookup_get_acceleration :: get_method_info () } pub fn get_deceleration_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CharacterMove_unity2_raw :: __lookup_get_deceleration :: get_method_info () } pub fn stabilize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CharacterMove_unity2_raw :: __lookup_stabilize :: get_method_info () } pub fn awake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CharacterMove_unity2_raw :: __lookup_awake :: get_method_info () } pub fn late_update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CharacterMove_unity2_raw :: __lookup_late_update :: get_method_info () } pub fn warp_to_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CharacterMove_unity2_raw :: __lookup_warp_to :: get_method_info () } pub fn run_to_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CharacterMove_unity2_raw :: __lookup_run_to :: get_method_info () } pub fn run_to_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CharacterMove_unity2_raw :: __lookup_run_to_2 :: get_method_info () } pub fn jump_to_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CharacterMove_unity2_raw :: __lookup_jump_to :: get_method_info () } pub fn jump_to_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CharacterMove_unity2_raw :: __lookup_jump_to_2 :: get_method_info () } pub fn brake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CharacterMove_unity2_raw :: __lookup_brake :: get_method_info () } pub fn stop_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CharacterMove_unity2_raw :: __lookup_stop :: get_method_info () } pub fn update_moving_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CharacterMove_unity2_raw :: __lookup_update_moving :: get_method_info () } pub fn update_run_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CharacterMove_unity2_raw :: __lookup_update_run :: get_method_info () } pub fn update_run_brake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CharacterMove_unity2_raw :: __lookup_update_run_brake :: get_method_info () } pub fn advance_time_and_get_dt_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CharacterMove_unity2_raw :: __lookup_advance_time_and_get_dt :: get_method_info () } pub fn update_jump_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CharacterMove_unity2_raw :: __lookup_update_jump :: get_method_info () } pub fn calc_time_to_arrive_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CharacterMove_unity2_raw :: __lookup_calc_time_to_arrive :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CharacterMove_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "combat-charactermove")]
 impl CharacterMove {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(CharacterMove), ::core::stringify!(new),));
-        <Self as ICharacterMoveMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CharacterMove) , :: core :: stringify ! (new) ,)) ; < Self as ICharacterMoveMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "combat-charactermove")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{CharacterMove, CharacterMove_StartMode, CharacterMove_State, ICharacterMove, ICharacterMoveMethods};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::CharacterMove_State;
+    pub use super::CharacterMove;
+    pub use super::ICharacterMove;
+    pub use super::ICharacterMoveMethods;
+    pub use super::CharacterMove_StartMode;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

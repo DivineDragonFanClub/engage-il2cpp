@@ -2,924 +2,184 @@
 
 #[cfg(feature = "unity_engine-rendering-universal-screenspaceambientocclusion-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::{
-            object::{IObject, Object},
-            r#enum::{Enum, IEnum},
-            valuetype::{IValueType, ValueType},
-        },
-        unity_engine::{
-            object_2::{IObject_2, Object_2},
-            rendering::universal::{
-                scriptablerendererfeature::{IScriptableRendererFeature, ScriptableRendererFeature},
-                scriptablerenderpass::{IScriptableRenderPass, ScriptableRenderPass},
-            },
-            scriptableobject::{IScriptableObject, ScriptableObject},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/screenspaceambientocclusion/ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Rendering.Universal",
-        name = "ScreenSpaceAmbientOcclusion.ScreenSpaceAmbientOcclusionPass"
-    )]
-    #[parent(crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass)]
-    pub struct ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass {
-        #[offset(112)]
-        #[rename(name = "profilerTag")]
-        pub profiler_tag: ::unity2::Il2CppString,
-        #[offset(120)]
-        #[rename(name = "material")]
-        pub material: crate::unity_engine::material::Material,
-        #[offset(128)]
-        #[rename(name = "m_CurrentSettings")]
-        pub m_current_settings: crate::unity_engine::rendering::universal::screenspaceambientocclusionsettings::ScreenSpaceAmbientOcclusionSettings,
-        #[offset(136)]
-        #[rename(name = "m_ProfilingSampler")]
-        pub m_profiling_sampler: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
-        #[offset(144)]
-        #[rename(name = "m_SSAOTexture1Target")]
-        pub m_ssao_texture1_target: crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-        #[offset(184)]
-        #[rename(name = "m_SSAOTexture2Target")]
-        pub m_ssao_texture2_target: crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-        #[offset(224)]
-        #[rename(name = "m_SSAOTexture3Target")]
-        pub m_ssao_texture3_target: crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-        #[offset(264)]
-        #[rename(name = "m_Descriptor")]
-        pub m_descriptor: crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor,
-        #[static_field]
-        #[rename(name = "k_SSAOAmbientOcclusionParamName")]
-        pub k_ssao_ambient_occlusion_param_name: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "k_SSAOTextureName")]
-        pub k_ssao_texture_name: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "s_BaseMapID")]
-        pub s_base_map_id: i32,
-        #[static_field]
-        #[rename(name = "s_SSAOParamsID")]
-        pub s_ssao_params_id: i32,
-        #[static_field]
-        #[rename(name = "s_SSAOTexture1ID")]
-        pub s_ssao_texture1_id: i32,
-        #[static_field]
-        #[rename(name = "s_SSAOTexture2ID")]
-        pub s_ssao_texture2_id: i32,
-        #[static_field]
-        #[rename(name = "s_SSAOTexture3ID")]
-        pub s_ssao_texture3_id: i32,
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+ use crate :: unity_engine :: rendering :: universal :: scriptablerendererfeature :: { IScriptableRendererFeature , ScriptableRendererFeature }
+ ;
+ use crate :: unity_engine :: rendering :: universal :: scriptablerenderpass :: { IScriptableRenderPass , ScriptableRenderPass }
+ ;
+ use crate :: unity_engine :: scriptableobject :: { IScriptableObject , ScriptableObject }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/screenspaceambientocclusion/ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.Universal" , name = "ScreenSpaceAmbientOcclusion.ScreenSpaceAmbientOcclusionPass")] # [parent (crate :: unity_engine :: rendering :: universal :: scriptablerenderpass :: ScriptableRenderPass)] pub struct ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass {
+# [offset (112)] # [rename (name = "profilerTag")] pub profiler_tag : :: unity2 :: Il2CppString ,
+# [offset (120)] # [rename (name = "material")] pub material : crate :: unity_engine :: material :: Material ,
+# [offset (128)] # [rename (name = "m_CurrentSettings")] pub m_current_settings : crate :: unity_engine :: rendering :: universal :: screenspaceambientocclusionsettings :: ScreenSpaceAmbientOcclusionSettings ,
+# [offset (136)] # [rename (name = "m_ProfilingSampler")] pub m_profiling_sampler : crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler ,
+# [offset (144)] # [rename (name = "m_SSAOTexture1Target")] pub m_ssao_texture1_target : crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier ,
+# [offset (184)] # [rename (name = "m_SSAOTexture2Target")] pub m_ssao_texture2_target : crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier ,
+# [offset (224)] # [rename (name = "m_SSAOTexture3Target")] pub m_ssao_texture3_target : crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier ,
+# [offset (264)] # [rename (name = "m_Descriptor")] pub m_descriptor : crate :: unity_engine :: rendertexturedescriptor :: RenderTextureDescriptor ,
+# [static_field] # [rename (name = "k_SSAOAmbientOcclusionParamName")] pub k_ssao_ambient_occlusion_param_name : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "k_SSAOTextureName")] pub k_ssao_texture_name : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "s_BaseMapID")] pub s_base_map_id : i32 ,
+# [static_field] # [rename (name = "s_SSAOParamsID")] pub s_ssao_params_id : i32 ,
+# [static_field] # [rename (name = "s_SSAOTexture1ID")] pub s_ssao_texture1_id : i32 ,
+# [static_field] # [rename (name = "s_SSAOTexture2ID")] pub s_ssao_texture2_id : i32 ,
+# [static_field] # [rename (name = "s_SSAOTexture3ID")] pub s_ssao_texture3_id : i32 ,
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/screenspaceambientocclusion/ScreenSpaceAmbientOcclusion.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.Universal" , name = "ScreenSpaceAmbientOcclusion")] # [parent (crate :: unity_engine :: rendering :: universal :: scriptablerendererfeature :: ScriptableRendererFeature)] pub struct ScreenSpaceAmbientOcclusion {
+# [offset (32)] # [rename (name = "m_Shader")] pub m_shader : crate :: unity_engine :: shader :: Shader ,
+# [offset (40)] # [rename (name = "m_Settings")] pub m_settings : crate :: unity_engine :: rendering :: universal :: screenspaceambientocclusionsettings :: ScreenSpaceAmbientOcclusionSettings ,
+# [offset (48)] # [rename (name = "m_Material")] pub m_material : crate :: unity_engine :: material :: Material ,
+# [offset (56)] # [rename (name = "m_SSAOPass")] pub m_ssao_pass : crate :: unity_engine :: rendering :: universal :: screenspaceambientocclusion :: ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass ,
+# [static_field] # [rename (name = "k_ShaderName")] pub k_shader_name : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "k_OrthographicCameraKeyword")] pub k_orthographic_camera_keyword : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "k_NormalReconstructionLowKeyword")] pub k_normal_reconstruction_low_keyword : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "k_NormalReconstructionMediumKeyword")] pub k_normal_reconstruction_medium_keyword : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "k_NormalReconstructionHighKeyword")] pub k_normal_reconstruction_high_keyword : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "k_SourceDepthKeyword")] pub k_source_depth_keyword : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "k_SourceDepthNormalsKeyword")] pub k_source_depth_normals_keyword : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "k_SourceGBufferKeyword")] pub k_source_g_buffer_keyword : :: unity2 :: Il2CppString ,
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/screenspaceambientocclusion/ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass_ShaderPasses.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass_ShaderPasses  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass_ShaderPasses  {
+    const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal";
+
+    const NAME: &'static str = "ScreenSpaceAmbientOcclusion.ScreenSpaceAmbientOcclusionPass.ShaderPasses";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/screenspaceambientocclusion/ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass_ShaderPasses.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass_ShaderPasses {
-        pub value: i32,
+}
+
+
+impl  ::unity2::IlType for ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass_ShaderPasses  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::ClassIdentity for ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass_ShaderPasses {
-        const NAME: &'static str = "ScreenSpaceAmbientOcclusion.ScreenSpaceAmbientOcclusionPass.ShaderPasses";
-        const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass_ShaderPasses  {
+    pub fn ao() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl ::unity2::IlType for ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass_ShaderPasses {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+
+    pub fn blur_horizontal() -> Self {
+        Self { value: 1 }
+
     }
 
-    impl ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass_ShaderPasses {
-        pub fn ao() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn blur_horizontal() -> Self {
-            Self { value: 1 }
-        }
+    pub fn blur_vertical() -> Self {
+        Self { value: 2 }
 
-        pub fn blur_vertical() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn blur_final() -> Self {
-            Self { value: 3 }
-        }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/screenspaceambientocclusion/ScreenSpaceAmbientOcclusion.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Rendering.Universal", name = "ScreenSpaceAmbientOcclusion")]
-    #[parent(crate::unity_engine::rendering::universal::scriptablerendererfeature::ScriptableRendererFeature)]
-    pub struct ScreenSpaceAmbientOcclusion {
-        #[offset(32)]
-        #[rename(name = "m_Shader")]
-        pub m_shader: crate::unity_engine::shader::Shader,
-        #[offset(40)]
-        #[rename(name = "m_Settings")]
-        pub m_settings: crate::unity_engine::rendering::universal::screenspaceambientocclusionsettings::ScreenSpaceAmbientOcclusionSettings,
-        #[offset(48)]
-        #[rename(name = "m_Material")]
-        pub m_material: crate::unity_engine::material::Material,
-        #[offset(56)]
-        #[rename(name = "m_SSAOPass")]
-        pub m_ssao_pass:
-            crate::unity_engine::rendering::universal::screenspaceambientocclusion::ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass,
-        #[static_field]
-        #[rename(name = "k_ShaderName")]
-        pub k_shader_name: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "k_OrthographicCameraKeyword")]
-        pub k_orthographic_camera_keyword: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "k_NormalReconstructionLowKeyword")]
-        pub k_normal_reconstruction_low_keyword: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "k_NormalReconstructionMediumKeyword")]
-        pub k_normal_reconstruction_medium_keyword: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "k_NormalReconstructionHighKeyword")]
-        pub k_normal_reconstruction_high_keyword: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "k_SourceDepthKeyword")]
-        pub k_source_depth_keyword: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "k_SourceDepthNormalsKeyword")]
-        pub k_source_depth_normals_keyword: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "k_SourceGBufferKeyword")]
-        pub k_source_g_buffer_keyword: ::unity2::Il2CppString,
+
+    pub fn blur_final() -> Self {
+        Self { value: 3 }
+
     }
+
+}
+
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-screenspaceambientocclusion-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-universal-screenspaceambientocclusion")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_setup {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: universal :: screenspaceambientocclusionsettings :: ScreenSpaceAmbientOcclusionSettings as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass as ::unity2::ClassIdentity>::class(),
-                "Setup",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass as ::unity2::ClassIdentity>::NAME,
-                        "Setup",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn setup(
-        this: ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass,
-        feature_settings: crate::unity_engine::rendering::universal::screenspaceambientocclusionsettings::ScreenSpaceAmbientOcclusionSettings,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass,
-            crate::unity_engine::rendering::universal::screenspaceambientocclusionsettings::ScreenSpaceAmbientOcclusionSettings,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(__lookup_setup::get_method_info().method_ptr);
-        inner(this, feature_settings, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_camera_setup {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::rendering::commandbuffer::CommandBuffer as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::rendering::universal::renderingdata::RenderingData as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass as ::unity2::ClassIdentity>::class(),
-                "OnCameraSetup",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass as ::unity2::ClassIdentity>::NAME,
-                        "OnCameraSetup",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_camera_setup(
-        this: ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass,
-        cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
-        rendering_data: *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass,
-            crate::unity_engine::rendering::commandbuffer::CommandBuffer,
-            *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_on_camera_setup::get_method_info().method_ptr);
-        inner(this, cmd, rendering_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_execute {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::rendering::universal::renderingdata::RenderingData as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass as ::unity2::ClassIdentity>::class(),
-                "Execute",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass as ::unity2::ClassIdentity>::NAME,
-                        "Execute",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn execute(
-        this: ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass,
-        context: crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
-        rendering_data: *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass,
-            crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
-            *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_execute::get_method_info().method_ptr);
-        inner(this, context, rendering_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_render {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: screenspaceambientocclusion :: ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass_ShaderPasses as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass as ::unity2::ClassIdentity>::class(),
-                "Render",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass as ::unity2::ClassIdentity>::NAME,
-                        "Render",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn render(
-        this: ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass,
-        cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
-        target: crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-        pass : crate :: unity_engine :: rendering :: universal :: screenspaceambientocclusion :: ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass_ShaderPasses,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner : extern "C" fn (ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass , crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer , crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier , crate :: unity_engine :: rendering :: universal :: screenspaceambientocclusion :: ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass_ShaderPasses , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_render :: get_method_info () . method_ptr ,) ;
-        inner(this, cmd, target, pass, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_render_and_set_base_map {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: screenspaceambientocclusion :: ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass_ShaderPasses as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass as ::unity2::ClassIdentity>::class(),
-                "RenderAndSetBaseMap",
-                4,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass as ::unity2::ClassIdentity>::NAME,
-                        "RenderAndSetBaseMap",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn render_and_set_base_map(
-        this: ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass,
-        cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
-        base_map: crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-        target: crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-        pass : crate :: unity_engine :: rendering :: universal :: screenspaceambientocclusion :: ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass_ShaderPasses,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner : extern "C" fn (ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass , crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer , crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier , crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier , crate :: unity_engine :: rendering :: universal :: screenspaceambientocclusion :: ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass_ShaderPasses , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_render_and_set_base_map :: get_method_info () . method_ptr ,) ;
-        inner(this, cmd, base_map, target, pass, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_camera_cleanup {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::rendering::commandbuffer::CommandBuffer as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass as ::unity2::ClassIdentity>::class(),
-                "OnCameraCleanup",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass as ::unity2::ClassIdentity>::NAME,
-                        "OnCameraCleanup",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_camera_cleanup(
-        this: ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass,
-        cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass,
-            crate::unity_engine::rendering::commandbuffer::CommandBuffer,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_on_camera_cleanup::get_method_info().method_ptr);
-        inner(this, cmd, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass as ::unity2::ClassIdentity>::NAME,
-                        ".cctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_setup { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: universal :: screenspaceambientocclusionsettings :: ScreenSpaceAmbientOcclusionSettings as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass as :: unity2 :: ClassIdentity > :: class () , "Setup" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass as :: unity2 :: ClassIdentity > :: NAME , "Setup" , e) , } } } pub unsafe fn setup (this : ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass , feature_settings : crate :: unity_engine :: rendering :: universal :: screenspaceambientocclusionsettings :: ScreenSpaceAmbientOcclusionSettings , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass , crate :: unity_engine :: rendering :: universal :: screenspaceambientocclusionsettings :: ScreenSpaceAmbientOcclusionSettings , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_setup :: get_method_info () . method_ptr ,) ; inner (this , feature_settings , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_camera_setup { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass as :: unity2 :: ClassIdentity > :: class () , "OnCameraSetup" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass as :: unity2 :: ClassIdentity > :: NAME , "OnCameraSetup" , e) , } } } pub unsafe fn on_camera_setup (this : ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass , cmd : crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer , rendering_data : * mut crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass , crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer , * mut crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_camera_setup :: get_method_info () . method_ptr ,) ; inner (this , cmd , rendering_data , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_execute { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass as :: unity2 :: ClassIdentity > :: class () , "Execute" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass as :: unity2 :: ClassIdentity > :: NAME , "Execute" , e) , } } } pub unsafe fn execute (this : ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass , context : crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext , rendering_data : * mut crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass , crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext , * mut crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_execute :: get_method_info () . method_ptr ,) ; inner (this , context , rendering_data , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_render { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: screenspaceambientocclusion :: ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass_ShaderPasses as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass as :: unity2 :: ClassIdentity > :: class () , "Render" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass as :: unity2 :: ClassIdentity > :: NAME , "Render" , e) , } } } pub unsafe fn render (this : ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass , cmd : crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer , target : crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier , pass : crate :: unity_engine :: rendering :: universal :: screenspaceambientocclusion :: ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass_ShaderPasses , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass , crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer , crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier , crate :: unity_engine :: rendering :: universal :: screenspaceambientocclusion :: ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass_ShaderPasses , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_render :: get_method_info () . method_ptr ,) ; inner (this , cmd , target , pass , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_render_and_set_base_map { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: screenspaceambientocclusion :: ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass_ShaderPasses as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass as :: unity2 :: ClassIdentity > :: class () , "RenderAndSetBaseMap" , 4 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass as :: unity2 :: ClassIdentity > :: NAME , "RenderAndSetBaseMap" , e) , } } } pub unsafe fn render_and_set_base_map (this : ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass , cmd : crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer , base_map : crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier , target : crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier , pass : crate :: unity_engine :: rendering :: universal :: screenspaceambientocclusion :: ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass_ShaderPasses , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass , crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer , crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier , crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier , crate :: unity_engine :: rendering :: universal :: screenspaceambientocclusion :: ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass_ShaderPasses , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_render_and_set_base_map :: get_method_info () . method_ptr ,) ; inner (this , cmd , base_map , target , pass , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_camera_cleanup { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass as :: unity2 :: ClassIdentity > :: class () , "OnCameraCleanup" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass as :: unity2 :: ClassIdentity > :: NAME , "OnCameraCleanup" , e) , } } } pub unsafe fn on_camera_cleanup (this : ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass , cmd : crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass , crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_camera_cleanup :: get_method_info () . method_ptr ,) ; inner (this , cmd , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
+
+#[cfg(feature = "unity_engine-rendering-universal-screenspaceambientocclusion")]
+impl ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { __ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass_unity2_raw :: cctor (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-rendering-universal-screenspaceambientocclusion")]
+pub trait IScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPassMethods : IScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Setup(crate::unity_engine::rendering::universal::screenspaceambientocclusionsettings::ScreenSpaceAmbientOcclusionSettings)` overload"] fn setup (self , feature_settings : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: universal :: screenspaceambientocclusionsettings :: ScreenSpaceAmbientOcclusionSettings >) -> bool { unsafe { let __receiver = < ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass_unity2_raw :: setup (__receiver , :: core :: convert :: Into :: into (feature_settings) , :: core :: option :: Option :: None) } } # [doc = "`OnCameraSetup(crate::unity_engine::rendering::commandbuffer::CommandBuffer, *mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"] fn on_camera_setup (self , cmd : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer >) -> crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData { unsafe { let __receiver = < ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData > :: uninit () ; __ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass_unity2_raw :: on_camera_setup (__receiver , :: core :: convert :: Into :: into (cmd) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) ; __out_0 . assume_init () } } # [doc = "`Execute(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, *mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"] fn execute (self , context : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext >) -> crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData { unsafe { let __receiver = < ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData > :: uninit () ; __ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass_unity2_raw :: execute (__receiver , :: core :: convert :: Into :: into (context) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) ; __out_0 . assume_init () } } # [doc = "`Render(crate::unity_engine::rendering::commandbuffer::CommandBuffer, crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier, crate::unity_engine::rendering::universal::screenspaceambientocclusion::ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass_ShaderPasses)` overload"] fn render (self , cmd : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer > , target : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier > , pass : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: universal :: screenspaceambientocclusion :: ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass_ShaderPasses >) -> () { unsafe { let __receiver = < ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass_unity2_raw :: render (__receiver , :: core :: convert :: Into :: into (cmd) , :: core :: convert :: Into :: into (target) , :: core :: convert :: Into :: into (pass) , :: core :: option :: Option :: None) } } # [doc = "`RenderAndSetBaseMap(crate::unity_engine::rendering::commandbuffer::CommandBuffer, crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier, crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier, crate::unity_engine::rendering::universal::screenspaceambientocclusion::ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass_ShaderPasses)` overload"] fn render_and_set_base_map (self , cmd : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer > , base_map : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier > , target : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier > , pass : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: universal :: screenspaceambientocclusion :: ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass_ShaderPasses >) -> () { unsafe { let __receiver = < ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass_unity2_raw :: render_and_set_base_map (__receiver , :: core :: convert :: Into :: into (cmd) , :: core :: convert :: Into :: into (base_map) , :: core :: convert :: Into :: into (target) , :: core :: convert :: Into :: into (pass) , :: core :: option :: Option :: None) } } # [doc = "`OnCameraCleanup(crate::unity_engine::rendering::commandbuffer::CommandBuffer)` overload"] fn on_camera_cleanup (self , cmd : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer >) -> () { unsafe { let __receiver = < ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass_unity2_raw :: on_camera_cleanup (__receiver , :: core :: convert :: Into :: into (cmd) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-rendering-universal-screenspaceambientocclusion")]
+impl < __T : IScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass > IScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPassMethods for __T { }
+
+#[cfg(feature = "unity_engine-rendering-universal-screenspaceambientocclusion")]
+impl ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn setup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass_unity2_raw :: __lookup_setup :: get_method_info () } pub fn on_camera_setup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass_unity2_raw :: __lookup_on_camera_setup :: get_method_info () } pub fn execute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass_unity2_raw :: __lookup_execute :: get_method_info () } pub fn render_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass_unity2_raw :: __lookup_render :: get_method_info () } pub fn render_and_set_base_map_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass_unity2_raw :: __lookup_render_and_set_base_map :: get_method_info () } pub fn on_camera_cleanup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass_unity2_raw :: __lookup_on_camera_cleanup :: get_method_info () } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass_unity2_raw :: __lookup_cctor :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-rendering-universal-screenspaceambientocclusion")]
 impl ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass {
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass_unity2_raw::cctor(::core::option::Option::None) }
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass) , :: core :: stringify ! (new) ,)) ; < Self as IScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPassMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-screenspaceambientocclusion")]
-pub trait IScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPassMethods: IScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Setup(crate::unity_engine::rendering::universal::screenspaceambientocclusionsettings::ScreenSpaceAmbientOcclusionSettings)` overload"]
-    fn setup(
-        self,
-        feature_settings: impl ::core::convert::Into<
-            crate::unity_engine::rendering::universal::screenspaceambientocclusionsettings::ScreenSpaceAmbientOcclusionSettings,
-        >,
-    ) -> bool {
-        unsafe {
-            let __receiver = <ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass_unity2_raw::setup(
-                __receiver,
-                ::core::convert::Into::into(feature_settings),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`OnCameraSetup(crate::unity_engine::rendering::commandbuffer::CommandBuffer, *mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"]
-    fn on_camera_setup(
-        self,
-        cmd: impl ::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>,
-    ) -> crate::unity_engine::rendering::universal::renderingdata::RenderingData {
-        unsafe {
-            let __receiver = <ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::universal::renderingdata::RenderingData>::uninit();
-            __ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass_unity2_raw::on_camera_setup(
-                __receiver,
-                ::core::convert::Into::into(cmd),
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
-            __out_0.assume_init()
-        }
-    }
-    #[doc = "`Execute(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, *mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"]
-    fn execute(
-        self,
-        context: impl ::core::convert::Into<crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext>,
-    ) -> crate::unity_engine::rendering::universal::renderingdata::RenderingData {
-        unsafe {
-            let __receiver = <ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::universal::renderingdata::RenderingData>::uninit();
-            __ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass_unity2_raw::execute(
-                __receiver,
-                ::core::convert::Into::into(context),
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
-            __out_0.assume_init()
-        }
-    }
-    #[doc = "`Render(crate::unity_engine::rendering::commandbuffer::CommandBuffer, crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier, crate::unity_engine::rendering::universal::screenspaceambientocclusion::ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass_ShaderPasses)` overload"]
-    fn render(
-        self,
-        cmd: impl ::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>,
-        target: impl ::core::convert::Into<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier>,
-        pass : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: universal :: screenspaceambientocclusion :: ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass_ShaderPasses >,
-    ) -> () {
-        unsafe {
-            let __receiver = <ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass_unity2_raw::render(
-                __receiver,
-                ::core::convert::Into::into(cmd),
-                ::core::convert::Into::into(target),
-                ::core::convert::Into::into(pass),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`RenderAndSetBaseMap(crate::unity_engine::rendering::commandbuffer::CommandBuffer, crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier, crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier, crate::unity_engine::rendering::universal::screenspaceambientocclusion::ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass_ShaderPasses)` overload"]
-    fn render_and_set_base_map(
-        self,
-        cmd: impl ::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>,
-        base_map: impl ::core::convert::Into<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier>,
-        target: impl ::core::convert::Into<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier>,
-        pass : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: universal :: screenspaceambientocclusion :: ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass_ShaderPasses >,
-    ) -> () {
-        unsafe {
-            let __receiver = <ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass_unity2_raw::render_and_set_base_map(
-                __receiver,
-                ::core::convert::Into::into(cmd),
-                ::core::convert::Into::into(base_map),
-                ::core::convert::Into::into(target),
-                ::core::convert::Into::into(pass),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`OnCameraCleanup(crate::unity_engine::rendering::commandbuffer::CommandBuffer)` overload"]
-    fn on_camera_cleanup(self, cmd: impl ::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>) -> () {
-        unsafe {
-            let __receiver = <ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass_unity2_raw::on_camera_cleanup(
-                __receiver,
-                ::core::convert::Into::into(cmd),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ScreenSpaceAmbientOcclusion_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ScreenSpaceAmbientOcclusion as :: unity2 :: ClassIdentity > :: class () , "Create" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ScreenSpaceAmbientOcclusion as :: unity2 :: ClassIdentity > :: NAME , "Create" , e) , } } } pub unsafe fn create (this : ScreenSpaceAmbientOcclusion , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ScreenSpaceAmbientOcclusion , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_render_passes { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: universal :: scriptablerenderer :: ScriptableRenderer as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ScreenSpaceAmbientOcclusion as :: unity2 :: ClassIdentity > :: class () , "AddRenderPasses" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ScreenSpaceAmbientOcclusion as :: unity2 :: ClassIdentity > :: NAME , "AddRenderPasses" , e) , } } } pub unsafe fn add_render_passes (this : ScreenSpaceAmbientOcclusion , renderer : crate :: unity_engine :: rendering :: universal :: scriptablerenderer :: ScriptableRenderer , rendering_data : * mut crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ScreenSpaceAmbientOcclusion , crate :: unity_engine :: rendering :: universal :: scriptablerenderer :: ScriptableRenderer , * mut crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_render_passes :: get_method_info () . method_ptr ,) ; inner (this , renderer , rendering_data , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_dispose { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ScreenSpaceAmbientOcclusion as :: unity2 :: ClassIdentity > :: class () , "Dispose" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ScreenSpaceAmbientOcclusion as :: unity2 :: ClassIdentity > :: NAME , "Dispose" , e) , } } } pub unsafe fn dispose (this : ScreenSpaceAmbientOcclusion , disposing : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ScreenSpaceAmbientOcclusion , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_dispose :: get_method_info () . method_ptr ,) ; inner (this , disposing , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_material { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ScreenSpaceAmbientOcclusion as :: unity2 :: ClassIdentity > :: class () , "GetMaterial" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ScreenSpaceAmbientOcclusion as :: unity2 :: ClassIdentity > :: NAME , "GetMaterial" , e) , } } } pub unsafe fn get_material (this : ScreenSpaceAmbientOcclusion , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (ScreenSpaceAmbientOcclusion , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_material :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ScreenSpaceAmbientOcclusion as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ScreenSpaceAmbientOcclusion as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : ScreenSpaceAmbientOcclusion , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ScreenSpaceAmbientOcclusion , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-rendering-universal-screenspaceambientocclusion")]
-impl<__T: IScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass> IScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPassMethods for __T {}
+pub trait IScreenSpaceAmbientOcclusionMethods : IScreenSpaceAmbientOcclusion { # [doc = "`Create()` overload"] fn create (self ,) -> () { unsafe { let __receiver = < ScreenSpaceAmbientOcclusion as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ScreenSpaceAmbientOcclusion_unity2_raw :: create (__receiver , :: core :: option :: Option :: None) } } # [doc = "`AddRenderPasses(crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer, *mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"] fn add_render_passes (self , renderer : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: universal :: scriptablerenderer :: ScriptableRenderer >) -> crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData { unsafe { let __receiver = < ScreenSpaceAmbientOcclusion as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData > :: uninit () ; __ScreenSpaceAmbientOcclusion_unity2_raw :: add_render_passes (__receiver , :: core :: convert :: Into :: into (renderer) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) ; __out_0 . assume_init () } } # [doc = "`Dispose(bool)` overload"] fn dispose (self , disposing : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < ScreenSpaceAmbientOcclusion as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ScreenSpaceAmbientOcclusion_unity2_raw :: dispose (__receiver , :: core :: convert :: Into :: into (disposing) , :: core :: option :: Option :: None) } } # [doc = "`GetMaterial()` overload"] fn get_material (self ,) -> bool { unsafe { let __receiver = < ScreenSpaceAmbientOcclusion as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ScreenSpaceAmbientOcclusion_unity2_raw :: get_material (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ScreenSpaceAmbientOcclusion as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ScreenSpaceAmbientOcclusion_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-rendering-universal-screenspaceambientocclusion")]
-impl ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPassMethods>::ctor(this);
-        this
-    }
-}
+impl < __T : IScreenSpaceAmbientOcclusion > IScreenSpaceAmbientOcclusionMethods for __T { }
 
 #[cfg(feature = "unity_engine-rendering-universal-screenspaceambientocclusion")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ScreenSpaceAmbientOcclusion_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ScreenSpaceAmbientOcclusion as ::unity2::ClassIdentity>::class(),
-                "Create",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ScreenSpaceAmbientOcclusion as ::unity2::ClassIdentity>::NAME,
-                        "Create",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create(this: ScreenSpaceAmbientOcclusion, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ScreenSpaceAmbientOcclusion, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_create::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_render_passes {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::rendering::universal::renderingdata::RenderingData as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ScreenSpaceAmbientOcclusion as ::unity2::ClassIdentity>::class(),
-                "AddRenderPasses",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ScreenSpaceAmbientOcclusion as ::unity2::ClassIdentity>::NAME,
-                        "AddRenderPasses",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_render_passes(
-        this: ScreenSpaceAmbientOcclusion,
-        renderer: crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer,
-        rendering_data: *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ScreenSpaceAmbientOcclusion,
-            crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer,
-            *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_add_render_passes::get_method_info().method_ptr);
-        inner(this, renderer, rendering_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_dispose {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ScreenSpaceAmbientOcclusion as ::unity2::ClassIdentity>::class(),
-                "Dispose",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ScreenSpaceAmbientOcclusion as ::unity2::ClassIdentity>::NAME,
-                        "Dispose",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn dispose(this: ScreenSpaceAmbientOcclusion, disposing: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ScreenSpaceAmbientOcclusion, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_dispose::get_method_info().method_ptr);
-        inner(this, disposing, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_material {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ScreenSpaceAmbientOcclusion as ::unity2::ClassIdentity>::class(),
-                "GetMaterial",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ScreenSpaceAmbientOcclusion as ::unity2::ClassIdentity>::NAME,
-                        "GetMaterial",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_material(this: ScreenSpaceAmbientOcclusion, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(ScreenSpaceAmbientOcclusion, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_material::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ScreenSpaceAmbientOcclusion as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ScreenSpaceAmbientOcclusion as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: ScreenSpaceAmbientOcclusion, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ScreenSpaceAmbientOcclusion, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-screenspaceambientocclusion")]
-pub trait IScreenSpaceAmbientOcclusionMethods: IScreenSpaceAmbientOcclusion {
-    #[doc = "`Create()` overload"]
-    fn create(self) -> () {
-        unsafe {
-            let __receiver =
-                <ScreenSpaceAmbientOcclusion as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ScreenSpaceAmbientOcclusion_unity2_raw::create(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`AddRenderPasses(crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer, *mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"]
-    fn add_render_passes(
-        self,
-        renderer: impl ::core::convert::Into<crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer>,
-    ) -> crate::unity_engine::rendering::universal::renderingdata::RenderingData {
-        unsafe {
-            let __receiver =
-                <ScreenSpaceAmbientOcclusion as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::universal::renderingdata::RenderingData>::uninit();
-            __ScreenSpaceAmbientOcclusion_unity2_raw::add_render_passes(
-                __receiver,
-                ::core::convert::Into::into(renderer),
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
-            __out_0.assume_init()
-        }
-    }
-    #[doc = "`Dispose(bool)` overload"]
-    fn dispose(self, disposing: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver =
-                <ScreenSpaceAmbientOcclusion as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ScreenSpaceAmbientOcclusion_unity2_raw::dispose(__receiver, ::core::convert::Into::into(disposing), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetMaterial()` overload"]
-    fn get_material(self) -> bool {
-        unsafe {
-            let __receiver =
-                <ScreenSpaceAmbientOcclusion as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ScreenSpaceAmbientOcclusion_unity2_raw::get_material(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <ScreenSpaceAmbientOcclusion as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ScreenSpaceAmbientOcclusion_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-screenspaceambientocclusion")]
-impl<__T: IScreenSpaceAmbientOcclusion> IScreenSpaceAmbientOcclusionMethods for __T {}
+impl ScreenSpaceAmbientOcclusion { pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ScreenSpaceAmbientOcclusion_unity2_raw :: __lookup_create :: get_method_info () } pub fn add_render_passes_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ScreenSpaceAmbientOcclusion_unity2_raw :: __lookup_add_render_passes :: get_method_info () } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ScreenSpaceAmbientOcclusion_unity2_raw :: __lookup_dispose :: get_method_info () } pub fn get_material_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ScreenSpaceAmbientOcclusion_unity2_raw :: __lookup_get_material :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ScreenSpaceAmbientOcclusion_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-rendering-universal-screenspaceambientocclusion")]
 impl ScreenSpaceAmbientOcclusion {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ScreenSpaceAmbientOcclusion),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IScreenSpaceAmbientOcclusionMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ScreenSpaceAmbientOcclusion) , :: core :: stringify ! (new) ,)) ; < Self as IScreenSpaceAmbientOcclusionMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-screenspaceambientocclusion")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{
-        IScreenSpaceAmbientOcclusion, IScreenSpaceAmbientOcclusionMethods, IScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass,
-        IScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPassMethods, ScreenSpaceAmbientOcclusion,
-        ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass, ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass_ShaderPasses,
-    };
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    #[cfg(feature = "unity_engine-rendering-universal-scriptablerendererfeature")]
-    pub use crate::unity_engine::rendering::universal::scriptablerendererfeature::IScriptableRendererFeatureMethods;
-    #[cfg(feature = "unity_engine-rendering-universal-scriptablerenderpass")]
-    pub use crate::unity_engine::rendering::universal::scriptablerenderpass::IScriptableRenderPassMethods;
-    #[cfg(feature = "unity_engine-scriptableobject")]
-    pub use crate::unity_engine::scriptableobject::IScriptableObjectMethods;
-    pub use crate::{
-        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
-        unity_engine::{
-            object_2::IObject_2,
-            rendering::universal::{scriptablerendererfeature::IScriptableRendererFeature, scriptablerenderpass::IScriptableRenderPass},
-            scriptableobject::IScriptableObject,
-        },
-    };
+    pub use super::ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass;
+    pub use super::IScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass;
+    pub use super::IScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPassMethods;
+    pub use super::ScreenSpaceAmbientOcclusion;
+    pub use super::IScreenSpaceAmbientOcclusion;
+    pub use super::IScreenSpaceAmbientOcclusionMethods;
+    pub use super::ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass_ShaderPasses;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    pub use crate::unity_engine::object_2::IObject_2;
+    pub use crate::unity_engine::rendering::universal::scriptablerendererfeature::IScriptableRendererFeature;
+    pub use crate::unity_engine::rendering::universal::scriptablerenderpass::IScriptableRenderPass;
+    pub use crate::unity_engine::scriptableobject::IScriptableObject;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
+    #[cfg(feature = "unity_engine-rendering-universal-scriptablerendererfeature")] pub use crate::unity_engine::rendering::universal::scriptablerendererfeature::IScriptableRendererFeatureMethods;
+    #[cfg(feature = "unity_engine-rendering-universal-scriptablerenderpass")] pub use crate::unity_engine::rendering::universal::scriptablerenderpass::IScriptableRenderPassMethods;
+    #[cfg(feature = "unity_engine-scriptableobject")] pub use crate::unity_engine::scriptableobject::IScriptableObjectMethods;
 }

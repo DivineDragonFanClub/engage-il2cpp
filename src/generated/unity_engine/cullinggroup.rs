@@ -2,246 +2,68 @@
 
 #[cfg(feature = "unity_engine-cullinggroup-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        delegate::{Delegate, IDelegate},
-        multicastdelegate::{IMulticastDelegate, MulticastDelegate},
-        object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/cullinggroup/CullingGroup_StateChanged.md"))]
-    #[::unity2::class(namespace = "UnityEngine", name = "CullingGroup.StateChanged")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct CullingGroup_StateChanged {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: delegate :: { Delegate , IDelegate }
+ ;
+ use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/cullinggroup/CullingGroup.md"))]
-    #[::unity2::class(namespace = "UnityEngine", name = "CullingGroup")]
-    #[parent(crate::system::object::Object)]
-    pub struct CullingGroup {
-        #[offset(16)]
-        #[rename(name = "m_Ptr")]
-        pub m_ptr: ::unity2::IntPtr,
-        #[offset(24)]
-        #[rename(name = "m_OnStateChanged")]
-        pub m_on_state_changed: crate::unity_engine::cullinggroup::CullingGroup_StateChanged,
-    }
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/cullinggroup/CullingGroup_StateChanged.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "CullingGroup.StateChanged")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct CullingGroup_StateChanged {}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/cullinggroup/CullingGroup.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "CullingGroup")] # [parent (crate :: system :: object :: Object)] pub struct CullingGroup {
+# [offset (16)] # [rename (name = "m_Ptr")] pub m_ptr : :: unity2 :: IntPtr ,
+# [offset (24)] # [rename (name = "m_OnStateChanged")] pub m_on_state_changed : crate :: unity_engine :: cullinggroup :: CullingGroup_StateChanged ,
+}
+
 }
 
 #[cfg(feature = "unity_engine-cullinggroup-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-cullinggroup")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __CullingGroup_StateChanged_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CullingGroup_StateChanged as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CullingGroup_StateChanged as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: CullingGroup_StateChanged,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(CullingGroup_StateChanged, crate::system::object::Object, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::cullinggroupevent::CullingGroupEvent as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CullingGroup_StateChanged as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CullingGroup_StateChanged as ::unity2::ClassIdentity>::NAME,
-                        "Invoke",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn invoke(
-        this: CullingGroup_StateChanged,
-        sphere: crate::unity_engine::cullinggroupevent::CullingGroupEvent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            CullingGroup_StateChanged,
-            crate::unity_engine::cullinggroupevent::CullingGroupEvent,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
-        inner(this, sphere, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __CullingGroup_StateChanged_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type () , < :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CullingGroup_StateChanged as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CullingGroup_StateChanged as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : CullingGroup_StateChanged , object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CullingGroup_StateChanged , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , object , method , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_invoke { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: cullinggroupevent :: CullingGroupEvent as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CullingGroup_StateChanged as :: unity2 :: ClassIdentity > :: class () , "Invoke" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CullingGroup_StateChanged as :: unity2 :: ClassIdentity > :: NAME , "Invoke" , e) , } } } pub unsafe fn invoke (this : CullingGroup_StateChanged , sphere : crate :: unity_engine :: cullinggroupevent :: CullingGroupEvent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CullingGroup_StateChanged , crate :: unity_engine :: cullinggroupevent :: CullingGroupEvent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_invoke :: get_method_info () . method_ptr ,) ; inner (this , sphere , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-cullinggroup")]
-pub trait ICullingGroup_StateChangedMethods: ICullingGroup_StateChanged {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
-        unsafe {
-            let __receiver =
-                <CullingGroup_StateChanged as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CullingGroup_StateChanged_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invoke(crate::unity_engine::cullinggroupevent::CullingGroupEvent)` overload"]
-    fn invoke(self, sphere: impl ::core::convert::Into<crate::unity_engine::cullinggroupevent::CullingGroupEvent>) -> () {
-        unsafe {
-            let __receiver =
-                <CullingGroup_StateChanged as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CullingGroup_StateChanged_unity2_raw::invoke(__receiver, ::core::convert::Into::into(sphere), ::core::option::Option::None)
-        }
-    }
-}
+pub trait ICullingGroup_StateChangedMethods : ICullingGroup_StateChanged { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < CullingGroup_StateChanged as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CullingGroup_StateChanged_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } # [doc = "`Invoke(crate::unity_engine::cullinggroupevent::CullingGroupEvent)` overload"] fn invoke (self , sphere : impl :: core :: convert :: Into < crate :: unity_engine :: cullinggroupevent :: CullingGroupEvent >) -> () { unsafe { let __receiver = < CullingGroup_StateChanged as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CullingGroup_StateChanged_unity2_raw :: invoke (__receiver , :: core :: convert :: Into :: into (sphere) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-cullinggroup")]
-impl<__T: ICullingGroup_StateChanged> ICullingGroup_StateChangedMethods for __T {}
+impl < __T : ICullingGroup_StateChanged > ICullingGroup_StateChangedMethods for __T { }
+
+#[cfg(feature = "unity_engine-cullinggroup")]
+impl CullingGroup_StateChanged { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CullingGroup_StateChanged_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CullingGroup_StateChanged_unity2_raw :: __lookup_invoke :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-cullinggroup")]
 impl CullingGroup_StateChanged {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(CullingGroup_StateChanged),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ICullingGroup_StateChangedMethods>::ctor(this, object, method);
-        this
-    }
+# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CullingGroup_StateChanged) , :: core :: stringify ! (new) ,)) ; < Self as ICullingGroup_StateChangedMethods > :: ctor (this , object , method) ; this }
 }
 
 #[cfg(feature = "unity_engine-cullinggroup")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __CullingGroup_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_send_events {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::cullinggroup::CullingGroup as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CullingGroup as ::unity2::ClassIdentity>::class(),
-                "SendEvents",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CullingGroup as ::unity2::ClassIdentity>::NAME,
-                        "SendEvents",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn send_events(
-        culling_group: crate::unity_engine::cullinggroup::CullingGroup,
-        events_ptr: ::unity2::IntPtr,
-        count: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::unity_engine::cullinggroup::CullingGroup, ::unity2::IntPtr, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_send_events::get_method_info().method_ptr);
-        inner(culling_group, events_ptr, count, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __CullingGroup_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_send_events { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: cullinggroup :: CullingGroup as :: unity2 :: IlType > :: il_type () , < :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CullingGroup as :: unity2 :: ClassIdentity > :: class () , "SendEvents" , 3 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CullingGroup as :: unity2 :: ClassIdentity > :: NAME , "SendEvents" , e) , } } } pub unsafe fn send_events (culling_group : crate :: unity_engine :: cullinggroup :: CullingGroup , events_ptr : :: unity2 :: IntPtr , count : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: unity_engine :: cullinggroup :: CullingGroup , :: unity2 :: IntPtr , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_send_events :: get_method_info () . method_ptr ,) ; inner (culling_group , events_ptr , count , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-cullinggroup")]
-impl CullingGroup {
-    #[doc = "`SendEvents(crate::unity_engine::cullinggroup::CullingGroup, ::unity2::IntPtr, i32)` overload"]
-    pub fn send_events(
-        culling_group: impl ::core::convert::Into<crate::unity_engine::cullinggroup::CullingGroup>,
-        events_ptr: impl ::core::convert::Into<::unity2::IntPtr>,
-        count: impl ::core::convert::Into<i32>,
-    ) -> () {
-        unsafe {
-            __CullingGroup_unity2_raw::send_events(
-                ::core::convert::Into::into(culling_group),
-                ::core::convert::Into::into(events_ptr),
-                ::core::convert::Into::into(count),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+impl CullingGroup { # [doc = "`SendEvents(crate::unity_engine::cullinggroup::CullingGroup, ::unity2::IntPtr, i32)` overload"] pub fn send_events (culling_group : impl :: core :: convert :: Into < crate :: unity_engine :: cullinggroup :: CullingGroup > , events_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr > , count : impl :: core :: convert :: Into < i32 >) -> () { unsafe { __CullingGroup_unity2_raw :: send_events (:: core :: convert :: Into :: into (culling_group) , :: core :: convert :: Into :: into (events_ptr) , :: core :: convert :: Into :: into (count) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-cullinggroup")]
+impl CullingGroup { pub fn send_events_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CullingGroup_unity2_raw :: __lookup_send_events :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-cullinggroup")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{CullingGroup, CullingGroup_StateChanged, ICullingGroup, ICullingGroup_StateChanged, ICullingGroup_StateChangedMethods};
-    #[cfg(feature = "system-delegate")]
-    pub use crate::system::delegate::IDelegateMethods;
-    #[cfg(feature = "system-multicastdelegate")]
-    pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::system::{delegate::IDelegate, multicastdelegate::IMulticastDelegate, object::IObject};
+    pub use super::CullingGroup_StateChanged;
+    pub use super::ICullingGroup_StateChanged;
+    pub use super::ICullingGroup_StateChangedMethods;
+    pub use super::CullingGroup;
+    pub use super::ICullingGroup;
+    pub use crate::system::delegate::IDelegate;
+    pub use crate::system::multicastdelegate::IMulticastDelegate;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-delegate")] pub use crate::system::delegate::IDelegateMethods;
+    #[cfg(feature = "system-multicastdelegate")] pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

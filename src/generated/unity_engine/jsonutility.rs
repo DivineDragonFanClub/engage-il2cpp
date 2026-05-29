@@ -2,314 +2,34 @@
 
 #[cfg(feature = "unity_engine-jsonutility-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/jsonutility/JsonUtility.md"))]
-    #[::unity2::class(namespace = "UnityEngine", name = "JsonUtility")]
-    #[parent(crate::system::object::Object)]
-    pub struct JsonUtility {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/jsonutility/JsonUtility.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "JsonUtility")] # [parent (crate :: system :: object :: Object)] pub struct JsonUtility {}
+
 }
 
 #[cfg(feature = "unity_engine-jsonutility-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-jsonutility")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __JsonUtility_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_to_json_internal {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <JsonUtility as ::unity2::ClassIdentity>::class(),
-                "ToJsonInternal",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <JsonUtility as ::unity2::ClassIdentity>::NAME,
-                        "ToJsonInternal",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn to_json_internal(
-        obj: crate::system::object::Object,
-        pretty_print: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(crate::system::object::Object, bool, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_to_json_internal::get_method_info().method_ptr);
-        inner(obj, pretty_print, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_from_json_internal {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::SystemType as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <JsonUtility as ::unity2::ClassIdentity>::class(),
-                "FromJsonInternal",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <JsonUtility as ::unity2::ClassIdentity>::NAME,
-                        "FromJsonInternal",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn from_json_internal(
-        json: ::unity2::Il2CppString,
-        object_to_overwrite: crate::system::object::Object,
-        r#type: ::unity2::SystemType,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::object::Object {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            crate::system::object::Object,
-            ::unity2::SystemType,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::object::Object = ::core::mem::transmute(__lookup_from_json_internal::get_method_info().method_ptr);
-        inner(json, object_to_overwrite, r#type, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_to_json {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<JsonUtility as ::unity2::ClassIdentity>::class(), "ToJson", 1, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <JsonUtility as ::unity2::ClassIdentity>::NAME,
-                        "ToJson",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn to_json(obj: crate::system::object::Object, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(crate::system::object::Object, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_to_json::get_method_info().method_ptr);
-        inner(obj, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_to_json_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<JsonUtility as ::unity2::ClassIdentity>::class(), "ToJson", 2, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <JsonUtility as ::unity2::ClassIdentity>::NAME,
-                        "ToJson",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn to_json_2(
-        obj: crate::system::object::Object,
-        pretty_print: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(crate::system::object::Object, bool, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_to_json_2::get_method_info().method_ptr);
-        inner(obj, pretty_print, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_from_json_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <::unity2::SystemType as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<JsonUtility as ::unity2::ClassIdentity>::class(), "FromJson", 2, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <JsonUtility as ::unity2::ClassIdentity>::NAME,
-                        "FromJson",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn from_json_2(
-        json: ::unity2::Il2CppString,
-        r#type: ::unity2::SystemType,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::object::Object {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::SystemType, ::unity2::OptionalMethod) -> crate::system::object::Object =
-            ::core::mem::transmute(__lookup_from_json_2::get_method_info().method_ptr);
-        inner(json, r#type, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __JsonUtility_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_to_json_internal { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< JsonUtility as :: unity2 :: ClassIdentity > :: class () , "ToJsonInternal" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < JsonUtility as :: unity2 :: ClassIdentity > :: NAME , "ToJsonInternal" , e) , } } } pub unsafe fn to_json_internal (obj : crate :: system :: object :: Object , pretty_print : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (crate :: system :: object :: Object , bool , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_to_json_internal :: get_method_info () . method_ptr ,) ; inner (obj , pretty_print , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_from_json_internal { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type () , < :: unity2 :: SystemType as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< JsonUtility as :: unity2 :: ClassIdentity > :: class () , "FromJsonInternal" , 3 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < JsonUtility as :: unity2 :: ClassIdentity > :: NAME , "FromJsonInternal" , e) , } } } pub unsafe fn from_json_internal (json : :: unity2 :: Il2CppString , object_to_overwrite : crate :: system :: object :: Object , r#type : :: unity2 :: SystemType , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object { let inner : extern "C" fn (:: unity2 :: Il2CppString , crate :: system :: object :: Object , :: unity2 :: SystemType , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute (__lookup_from_json_internal :: get_method_info () . method_ptr ,) ; inner (json , object_to_overwrite , r#type , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_to_json { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< JsonUtility as :: unity2 :: ClassIdentity > :: class () , "ToJson" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < JsonUtility as :: unity2 :: ClassIdentity > :: NAME , "ToJson" , e) , } } } pub unsafe fn to_json (obj : crate :: system :: object :: Object , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_to_json :: get_method_info () . method_ptr ,) ; inner (obj , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_to_json_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< JsonUtility as :: unity2 :: ClassIdentity > :: class () , "ToJson" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < JsonUtility as :: unity2 :: ClassIdentity > :: NAME , "ToJson" , e) , } } } pub unsafe fn to_json_2 (obj : crate :: system :: object :: Object , pretty_print : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (crate :: system :: object :: Object , bool , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_to_json_2 :: get_method_info () . method_ptr ,) ; inner (obj , pretty_print , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_from_json_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: SystemType as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< JsonUtility as :: unity2 :: ClassIdentity > :: class () , "FromJson" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < JsonUtility as :: unity2 :: ClassIdentity > :: NAME , "FromJson" , e) , } } } pub unsafe fn from_json_2 (json : :: unity2 :: Il2CppString , r#type : :: unity2 :: SystemType , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object { let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: SystemType , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute (__lookup_from_json_2 :: get_method_info () . method_ptr ,) ; inner (json , r#type , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-jsonutility")]
-impl JsonUtility {
-    #[doc = "`ToJsonInternal(crate::system::object::Object, bool)` overload"]
-    pub fn to_json_internal(
-        obj: impl ::core::convert::Into<crate::system::object::Object>,
-        pretty_print: impl ::core::convert::Into<bool>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __JsonUtility_unity2_raw::to_json_internal(
-                ::core::convert::Into::into(obj),
-                ::core::convert::Into::into(pretty_print),
-                ::core::option::Option::None,
-            )
-        }
-    }
+impl JsonUtility { # [doc = "`ToJsonInternal(crate::system::object::Object, bool)` overload"] pub fn to_json_internal (obj : impl :: core :: convert :: Into < crate :: system :: object :: Object > , pretty_print : impl :: core :: convert :: Into < bool >) -> :: unity2 :: Il2CppString { unsafe { __JsonUtility_unity2_raw :: to_json_internal (:: core :: convert :: Into :: into (obj) , :: core :: convert :: Into :: into (pretty_print) , :: core :: option :: Option :: None) } } # [doc = "`FromJsonInternal(::unity2::Il2CppString, crate::system::object::Object, ::unity2::SystemType)` overload"] pub fn from_json_internal (json : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , object_to_overwrite : impl :: core :: convert :: Into < crate :: system :: object :: Object > , r#type : impl :: core :: convert :: Into < :: unity2 :: SystemType >) -> crate :: system :: object :: Object { unsafe { __JsonUtility_unity2_raw :: from_json_internal (:: core :: convert :: Into :: into (json) , :: core :: convert :: Into :: into (object_to_overwrite) , :: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } # [doc = "`ToJson(crate::system::object::Object)` overload"] pub fn to_json (obj : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> :: unity2 :: Il2CppString { unsafe { __JsonUtility_unity2_raw :: to_json (:: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } # [doc = "`ToJson(crate::system::object::Object, bool)` overload"] pub fn to_json_2 (obj : impl :: core :: convert :: Into < crate :: system :: object :: Object > , pretty_print : impl :: core :: convert :: Into < bool >) -> :: unity2 :: Il2CppString { unsafe { __JsonUtility_unity2_raw :: to_json_2 (:: core :: convert :: Into :: into (obj) , :: core :: convert :: Into :: into (pretty_print) , :: core :: option :: Option :: None) } } pub fn from_json < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > (json : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> M0 { static OPEN : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { :: unity2 :: lookup :: method_info_on_class (< JsonUtility as :: unity2 :: ClassIdentity > :: class () , "FromJson" , 1 ,) }) ; # [allow (clippy :: type_complexity)] static CACHE : :: std :: sync :: OnceLock < :: std :: sync :: Mutex < :: std :: collections :: HashMap < usize , & 'static :: unity2 :: il2cpp :: MethodInfo > , > , > = :: std :: sync :: OnceLock :: new () ; let _ = true ; let __open : & 'static :: unity2 :: il2cpp :: MethodInfo = match & * OPEN { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < JsonUtility as :: unity2 :: ClassIdentity > :: NAME , "FromJson" , e) , } ; let __cache = CACHE . get_or_init (|| { :: std :: sync :: Mutex :: new (:: std :: collections :: HashMap :: new ()) }) ; let __key : usize = < M0 as :: unity2 :: IlType > :: il_type () as * const _ as usize ; let __inflated : & 'static :: unity2 :: il2cpp :: MethodInfo = { let mut __guard = __cache . lock () . unwrap () ; * __guard . entry (__key) . or_insert_with (|| { :: unity2 :: il2cpp :: generic :: create_generic_method_info (__open , & [< M0 as :: unity2 :: IlType > :: il_type ()] ,) }) } ; unsafe { let __f : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> M0 = :: core :: mem :: transmute (__inflated . method_ptr) ; let __mi_opaque : & 'static () = & * (__inflated as * const _ as * const ()) ; __f (:: core :: convert :: Into :: into (json) , :: core :: option :: Option :: Some (__mi_opaque) ,) } } # [doc = "`FromJson(::unity2::Il2CppString, ::unity2::SystemType)` overload"] pub fn from_json_2 (json : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , r#type : impl :: core :: convert :: Into < :: unity2 :: SystemType >) -> crate :: system :: object :: Object { unsafe { __JsonUtility_unity2_raw :: from_json_2 (:: core :: convert :: Into :: into (json) , :: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } }
 
-    #[doc = "`FromJsonInternal(::unity2::Il2CppString, crate::system::object::Object, ::unity2::SystemType)` overload"]
-    pub fn from_json_internal(
-        json: impl ::core::convert::Into<::unity2::Il2CppString>,
-        object_to_overwrite: impl ::core::convert::Into<crate::system::object::Object>,
-        r#type: impl ::core::convert::Into<::unity2::SystemType>,
-    ) -> crate::system::object::Object {
-        unsafe {
-            __JsonUtility_unity2_raw::from_json_internal(
-                ::core::convert::Into::into(json),
-                ::core::convert::Into::into(object_to_overwrite),
-                ::core::convert::Into::into(r#type),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`ToJson(crate::system::object::Object)` overload"]
-    pub fn to_json(obj: impl ::core::convert::Into<crate::system::object::Object>) -> ::unity2::Il2CppString {
-        unsafe { __JsonUtility_unity2_raw::to_json(::core::convert::Into::into(obj), ::core::option::Option::None) }
-    }
-
-    #[doc = "`ToJson(crate::system::object::Object, bool)` overload"]
-    pub fn to_json_2(
-        obj: impl ::core::convert::Into<crate::system::object::Object>,
-        pretty_print: impl ::core::convert::Into<bool>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __JsonUtility_unity2_raw::to_json_2(
-                ::core::convert::Into::into(obj),
-                ::core::convert::Into::into(pretty_print),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    pub fn from_json<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
-        json: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> M0 {
-        static OPEN: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> =
-            ::std::sync::LazyLock::new(|| ::unity2::lookup::method_info_on_class(<JsonUtility as ::unity2::ClassIdentity>::class(), "FromJson", 1));
-        #[allow(clippy::type_complexity)]
-        static CACHE: ::std::sync::OnceLock<::std::sync::Mutex<::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>>> =
-            ::std::sync::OnceLock::new();
-        let _ = true;
-        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
-            ::core::result::Result::Ok(mi) => *mi,
-            ::core::result::Result::Err(e) => {
-                panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <JsonUtility as ::unity2::ClassIdentity>::NAME,
-                    "FromJson",
-                    e
-                )
-            },
-        };
-        let __cache = CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
-        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
-        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
-            let mut __guard = __cache.lock().unwrap();
-            *__guard
-                .entry(__key)
-                .or_insert_with(|| ::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as ::unity2::IlType>::il_type()]))
-        };
-        unsafe {
-            let __f: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> M0 = ::core::mem::transmute(__inflated.method_ptr);
-            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
-            __f(::core::convert::Into::into(json), ::core::option::Option::Some(__mi_opaque))
-        }
-    }
-
-    #[doc = "`FromJson(::unity2::Il2CppString, ::unity2::SystemType)` overload"]
-    pub fn from_json_2(
-        json: impl ::core::convert::Into<::unity2::Il2CppString>,
-        r#type: impl ::core::convert::Into<::unity2::SystemType>,
-    ) -> crate::system::object::Object {
-        unsafe {
-            __JsonUtility_unity2_raw::from_json_2(
-                ::core::convert::Into::into(json),
-                ::core::convert::Into::into(r#type),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+#[cfg(feature = "unity_engine-jsonutility")]
+impl JsonUtility { pub fn to_json_internal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __JsonUtility_unity2_raw :: __lookup_to_json_internal :: get_method_info () } pub fn from_json_internal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __JsonUtility_unity2_raw :: __lookup_from_json_internal :: get_method_info () } pub fn to_json_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __JsonUtility_unity2_raw :: __lookup_to_json :: get_method_info () } pub fn to_json_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __JsonUtility_unity2_raw :: __lookup_to_json_2 :: get_method_info () } pub fn from_json_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __JsonUtility_unity2_raw :: __lookup_from_json_2 :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-jsonutility")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IJsonUtility, JsonUtility};
+    pub use super::JsonUtility;
+    pub use super::IJsonUtility;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

@@ -2,436 +2,122 @@
 
 #[cfg(feature = "app-interactdata-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::{
-            structbase::{IStructBase, StructBase},
-            structdata_1::{IStructData_1, StructData_1},
-            structtemplate_1::{IStructTemplate_1, StructTemplate_1},
-        },
-        system::{
-            object::{IObject, Object},
-            r#enum::{Enum, IEnum},
-            valuetype::{IValueType, ValueType},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/interactdata/InteractData.md"))]
-    #[::unity2::class(namespace = "App", name = "InteractData")]
-    # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: interactdata :: InteractData >)]
-    pub struct InteractData {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: structbase :: { IStructBase , StructBase }
+ ;
+ use crate :: app :: structdata_1 :: { IStructData_1 , StructData_1 }
+ ;
+ use crate :: app :: structtemplate_1 :: { IStructTemplate_1 , StructTemplate_1 }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/interactdata/InteractData_Interacts.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct InteractData_Interacts {
-        pub value: i32,
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/interactdata/InteractData.md"))] # [:: unity2 :: class (namespace = "App" , name = "InteractData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: interactdata :: InteractData >)] pub struct InteractData {}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/interactdata/InteractData_Interacts.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct InteractData_Interacts  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for InteractData_Interacts  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "InteractData.Interacts";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    impl ::unity2::ClassIdentity for InteractData_Interacts {
-        const NAME: &'static str = "InteractData.Interacts";
-        const NAMESPACE: &'static str = "App";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  ::unity2::IlType for InteractData_Interacts  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::IlType for InteractData_Interacts {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  InteractData_Interacts  {
+    pub fn none() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl InteractData_Interacts {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn good() -> Self {
-            Self { value: 1 }
-        }
+    pub fn good() -> Self {
+        Self { value: 1 }
 
-        pub fn bad() -> Self {
-            Self { value: 2 }
-        }
     }
+
+
+    pub fn bad() -> Self {
+        Self { value: 2 }
+
+    }
+
+}
+
 }
 
 #[cfg(feature = "app-interactdata-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-interactdata")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __InteractData_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_load {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<InteractData as ::unity2::ClassIdentity>::class(), "Load", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InteractData as ::unity2::ClassIdentity>::NAME,
-                        "Load",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn load(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_load::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_debug_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InteractData as ::unity2::ClassIdentity>::class(),
-                "GetDebugName",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InteractData as ::unity2::ClassIdentity>::NAME,
-                        "GetDebugName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_debug_name(this: InteractData, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(InteractData, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_debug_name::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_kind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InteractData as ::unity2::ClassIdentity>::class(),
-                "get_Kind",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InteractData as ::unity2::ClassIdentity>::NAME,
-                        "get_Kind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_kind(this: InteractData, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(InteractData, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_kind::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_kind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InteractData as ::unity2::ClassIdentity>::class(),
-                "set_Kind",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InteractData as ::unity2::ClassIdentity>::NAME,
-                        "set_Kind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_kind(this: InteractData, value: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(InteractData, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_kind::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_flag {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InteractData as ::unity2::ClassIdentity>::class(),
-                "get_Flag",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InteractData as ::unity2::ClassIdentity>::NAME,
-                        "get_Flag",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_flag(this: InteractData, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::bitfield32::BitField32 {
-        let inner: extern "C" fn(InteractData, ::unity2::OptionalMethod) -> crate::app::bitfield32::BitField32 =
-            ::core::mem::transmute(__lookup_get_flag::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_flag {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::bitfield32::BitField32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InteractData as ::unity2::ClassIdentity>::class(),
-                "set_Flag",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InteractData as ::unity2::ClassIdentity>::NAME,
-                        "set_Flag",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_flag(this: InteractData, value: crate::app::bitfield32::BitField32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(InteractData, crate::app::bitfield32::BitField32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_flag::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_interact {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::unititem::UnitItem as ::unity2::IlType>::il_type(),
-                <crate::app::unititem::UnitItem as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InteractData as ::unity2::ClassIdentity>::class(),
-                "GetInteract",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InteractData as ::unity2::ClassIdentity>::NAME,
-                        "GetInteract",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_interact(
-        current: crate::app::unititem::UnitItem,
-        reverse: crate::app::unititem::UnitItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::interactdata::InteractData_Interacts {
-        let inner: extern "C" fn(
-            crate::app::unititem::UnitItem,
-            crate::app::unititem::UnitItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::interactdata::InteractData_Interacts = ::core::mem::transmute(__lookup_get_interact::get_method_info().method_ptr);
-        inner(current, reverse, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<InteractData as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InteractData as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: InteractData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(InteractData, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __InteractData_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_load { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InteractData as :: unity2 :: ClassIdentity > :: class () , "Load" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InteractData as :: unity2 :: ClassIdentity > :: NAME , "Load" , e) , } } } pub unsafe fn load (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_load :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_debug_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InteractData as :: unity2 :: ClassIdentity > :: class () , "GetDebugName" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InteractData as :: unity2 :: ClassIdentity > :: NAME , "GetDebugName" , e) , } } } pub unsafe fn get_debug_name (this : InteractData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (InteractData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_debug_name :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_kind { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InteractData as :: unity2 :: ClassIdentity > :: class () , "get_Kind" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InteractData as :: unity2 :: ClassIdentity > :: NAME , "get_Kind" , e) , } } } pub unsafe fn get_kind (this : InteractData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (InteractData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_kind :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_kind { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InteractData as :: unity2 :: ClassIdentity > :: class () , "set_Kind" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InteractData as :: unity2 :: ClassIdentity > :: NAME , "set_Kind" , e) , } } } pub unsafe fn set_kind (this : InteractData , value : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (InteractData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_kind :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_flag { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InteractData as :: unity2 :: ClassIdentity > :: class () , "get_Flag" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InteractData as :: unity2 :: ClassIdentity > :: NAME , "get_Flag" , e) , } } } pub unsafe fn get_flag (this : InteractData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: bitfield32 :: BitField32 { let inner : extern "C" fn (InteractData , :: unity2 :: OptionalMethod ,) -> crate :: app :: bitfield32 :: BitField32 = :: core :: mem :: transmute (__lookup_get_flag :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_flag { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: bitfield32 :: BitField32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InteractData as :: unity2 :: ClassIdentity > :: class () , "set_Flag" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InteractData as :: unity2 :: ClassIdentity > :: NAME , "set_Flag" , e) , } } } pub unsafe fn set_flag (this : InteractData , value : crate :: app :: bitfield32 :: BitField32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (InteractData , crate :: app :: bitfield32 :: BitField32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_flag :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_interact { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unititem :: UnitItem as :: unity2 :: IlType > :: il_type () , < crate :: app :: unititem :: UnitItem as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InteractData as :: unity2 :: ClassIdentity > :: class () , "GetInteract" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InteractData as :: unity2 :: ClassIdentity > :: NAME , "GetInteract" , e) , } } } pub unsafe fn get_interact (current : crate :: app :: unititem :: UnitItem , reverse : crate :: app :: unititem :: UnitItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: interactdata :: InteractData_Interacts { let inner : extern "C" fn (crate :: app :: unititem :: UnitItem , crate :: app :: unititem :: UnitItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: interactdata :: InteractData_Interacts = :: core :: mem :: transmute (__lookup_get_interact :: get_method_info () . method_ptr ,) ; inner (current , reverse , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InteractData as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InteractData as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : InteractData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (InteractData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-interactdata")]
+impl InteractData { # [doc = "`Load()` overload"] pub fn load () -> () { unsafe { __InteractData_unity2_raw :: load (:: core :: option :: Option :: None) } } # [doc = "`GetInteract(crate::app::unititem::UnitItem, crate::app::unititem::UnitItem)` overload"] pub fn get_interact (current : impl :: core :: convert :: Into < crate :: app :: unititem :: UnitItem > , reverse : impl :: core :: convert :: Into < crate :: app :: unititem :: UnitItem >) -> crate :: app :: interactdata :: InteractData_Interacts { unsafe { __InteractData_unity2_raw :: get_interact (:: core :: convert :: Into :: into (current) , :: core :: convert :: Into :: into (reverse) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-interactdata")]
+pub trait IInteractDataMethods : IInteractData { # [doc = "`GetDebugName()` overload"] fn get_debug_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < InteractData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __InteractData_unity2_raw :: get_debug_name (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_Kind()` overload"] fn get_kind (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < InteractData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __InteractData_unity2_raw :: get_kind (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_Kind(::unity2::Il2CppString)` overload"] fn set_kind (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < InteractData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __InteractData_unity2_raw :: set_kind (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_Flag()` overload"] fn get_flag (self ,) -> crate :: app :: bitfield32 :: BitField32 { unsafe { let __receiver = < InteractData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __InteractData_unity2_raw :: get_flag (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_Flag(crate::app::bitfield32::BitField32)` overload"] fn set_flag (self , value : impl :: core :: convert :: Into < crate :: app :: bitfield32 :: BitField32 >) -> () { unsafe { let __receiver = < InteractData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __InteractData_unity2_raw :: set_flag (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < InteractData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __InteractData_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-interactdata")]
+impl < __T : IInteractData > IInteractDataMethods for __T { }
+
+#[cfg(feature = "app-interactdata")]
+impl InteractData { pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InteractData_unity2_raw :: __lookup_load :: get_method_info () } pub fn get_debug_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InteractData_unity2_raw :: __lookup_get_debug_name :: get_method_info () } pub fn get_kind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InteractData_unity2_raw :: __lookup_get_kind :: get_method_info () } pub fn set_kind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InteractData_unity2_raw :: __lookup_set_kind :: get_method_info () } pub fn get_flag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InteractData_unity2_raw :: __lookup_get_flag :: get_method_info () } pub fn set_flag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InteractData_unity2_raw :: __lookup_set_flag :: get_method_info () } pub fn get_interact_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InteractData_unity2_raw :: __lookup_get_interact :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InteractData_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-interactdata")]
 impl InteractData {
-    #[doc = "`Load()` overload"]
-    pub fn load() -> () {
-        unsafe { __InteractData_unity2_raw::load(::core::option::Option::None) }
-    }
-
-    #[doc = "`GetInteract(crate::app::unititem::UnitItem, crate::app::unititem::UnitItem)` overload"]
-    pub fn get_interact(
-        current: impl ::core::convert::Into<crate::app::unititem::UnitItem>,
-        reverse: impl ::core::convert::Into<crate::app::unititem::UnitItem>,
-    ) -> crate::app::interactdata::InteractData_Interacts {
-        unsafe {
-            __InteractData_unity2_raw::get_interact(
-                ::core::convert::Into::into(current),
-                ::core::convert::Into::into(reverse),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-interactdata")]
-pub trait IInteractDataMethods: IInteractData {
-    #[doc = "`GetDebugName()` overload"]
-    fn get_debug_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <InteractData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InteractData_unity2_raw::get_debug_name(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Kind()` overload"]
-    fn get_kind(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <InteractData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InteractData_unity2_raw::get_kind(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_Kind(::unity2::Il2CppString)` overload"]
-    fn set_kind(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver = <InteractData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InteractData_unity2_raw::set_kind(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Flag()` overload"]
-    fn get_flag(self) -> crate::app::bitfield32::BitField32 {
-        unsafe {
-            let __receiver = <InteractData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InteractData_unity2_raw::get_flag(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_Flag(crate::app::bitfield32::BitField32)` overload"]
-    fn set_flag(self, value: impl ::core::convert::Into<crate::app::bitfield32::BitField32>) -> () {
-        unsafe {
-            let __receiver = <InteractData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InteractData_unity2_raw::set_flag(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <InteractData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InteractData_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-interactdata")]
-impl<__T: IInteractData> IInteractDataMethods for __T {}
-
-#[cfg(feature = "app-interactdata")]
-impl InteractData {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(InteractData), ::core::stringify!(new),));
-        <Self as IInteractDataMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (InteractData) , :: core :: stringify ! (new) ,)) ; < Self as IInteractDataMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-interactdata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IInteractData, IInteractDataMethods, InteractData, InteractData_Interacts};
-    #[cfg(feature = "app-structbase")]
-    pub use crate::app::structbase::IStructBaseMethods;
-    #[cfg(feature = "app-structdata_1")]
-    pub use crate::app::structdata_1::IStructData_1Methods;
-    #[cfg(feature = "app-structtemplate_1")]
-    pub use crate::app::structtemplate_1::IStructTemplate_1Methods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::{
-        app::{structbase::IStructBase, structdata_1::IStructData_1, structtemplate_1::IStructTemplate_1},
-        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
-    };
+    pub use super::InteractData;
+    pub use super::IInteractData;
+    pub use super::IInteractDataMethods;
+    pub use super::InteractData_Interacts;
+    pub use crate::app::structbase::IStructBase;
+    pub use crate::app::structdata_1::IStructData_1;
+    pub use crate::app::structtemplate_1::IStructTemplate_1;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "app-structbase")] pub use crate::app::structbase::IStructBaseMethods;
+    #[cfg(feature = "app-structdata_1")] pub use crate::app::structdata_1::IStructData_1Methods;
+    #[cfg(feature = "app-structtemplate_1")] pub use crate::app::structtemplate_1::IStructTemplate_1Methods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

@@ -2,1724 +2,192 @@
 
 #[cfg(feature = "app-investmentmenucontent-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::basicmenucontent::{BasicMenuContent, IBasicMenuContent},
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/investmentmenucontent/InvestmentMenuContent_DropItemInfo.md"))]
-    #[::unity2::class(namespace = "App", name = "InvestmentMenuContent.DropItemInfo")]
-    #[parent(crate::system::object::Object)]
-    pub struct InvestmentMenuContent_DropItemInfo {
-        #[offset(16)]
-        #[rename(name = "m_root")]
-        pub m_root: crate::unity_engine::gameobject::GameObject,
-        #[offset(24)]
-        #[rename(name = "m_icon")]
-        pub m_icon: crate::unity_engine::ui::image::Image,
-        #[offset(32)]
-        #[rename(name = "m_title")]
-        pub m_title: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(40)]
-        #[rename(name = "m_current")]
-        pub m_current: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(48)]
-        #[rename(name = "m_nextCode")]
-        pub m_next_code: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(56)]
-        #[rename(name = "m_next")]
-        pub m_next: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: basicmenucontent :: { BasicMenuContent , IBasicMenuContent }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/investmentmenucontent/InvestmentMenuContent_BattleEnemyInfo.md"))]
-    #[::unity2::class(namespace = "App", name = "InvestmentMenuContent.BattleEnemyInfo")]
-    #[parent(crate::system::object::Object)]
-    pub struct InvestmentMenuContent_BattleEnemyInfo {
-        #[offset(16)]
-        #[rename(name = "m_root")]
-        pub m_root: crate::unity_engine::gameobject::GameObject,
-        #[offset(24)]
-        #[rename(name = "m_title")]
-        pub m_title: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(32)]
-        #[rename(name = "m_current")]
-        pub m_current: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(40)]
-        #[rename(name = "m_next")]
-        pub m_next: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(48)]
-        #[rename(name = "m_nextPercent")]
-        pub m_next_percent: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-    }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/investmentmenucontent/InvestmentMenuContent.md"))]
-    #[::unity2::class(namespace = "App", name = "InvestmentMenuContent")]
-    #[parent(crate::app::basicmenucontent::BasicMenuContent)]
-    pub struct InvestmentMenuContent {
-        #[static_field]
-        #[rename(name = "PrefabPath")]
-        pub prefab_path: ::unity2::Il2CppString,
-        #[offset(232)]
-        #[rename(name = "m_nextText")]
-        pub m_next_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(240)]
-        #[rename(name = "m_totalText")]
-        pub m_total_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(248)]
-        #[rename(name = "m_levelBeforeTitle")]
-        pub m_level_before_title: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(256)]
-        #[rename(name = "m_levelAfterTitle")]
-        pub m_level_after_title: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(264)]
-        #[rename(name = "m_levelEffectTitle")]
-        pub m_level_effect_title: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(272)]
-        #[rename(name = "m_levelBonusTitle")]
-        pub m_level_bonus_title: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(280)]
-        #[rename(name = "m_battleTitle")]
-        pub m_battle_title: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(288)]
-        #[rename(name = "m_resultTitle")]
-        pub m_result_title: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(296)]
-        #[rename(name = "m_completeText")]
-        pub m_complete_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(304)]
-        #[rename(name = "m_completeInfoText")]
-        pub m_complete_info_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(312)]
-        #[rename(name = "m_nextCostRoot")]
-        pub m_next_cost_root: crate::unity_engine::gameobject::GameObject,
-        #[offset(320)]
-        #[rename(name = "m_maxCostRoot")]
-        pub m_max_cost_root: crate::unity_engine::gameobject::GameObject,
-        #[offset(328)]
-        #[rename(name = "m_useCost")]
-        pub m_use_cost: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(336)]
-        #[rename(name = "m_useCostUnit")]
-        pub m_use_cost_unit: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(344)]
-        #[rename(name = "m_maxCostUnit")]
-        pub m_max_cost_unit: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(352)]
-        #[rename(name = "m_nextCost")]
-        pub m_next_cost: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(360)]
-        #[rename(name = "m_nextCostUnit")]
-        pub m_next_cost_unit: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(368)]
-        #[rename(name = "m_bgSymbol")]
-        pub m_bg_symbol: crate::unity_engine::ui::image::Image,
-        #[offset(376)]
-        #[rename(name = "m_currentLevel")]
-        pub m_current_level: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(384)]
-        #[rename(name = "m_nextLevel")]
-        pub m_next_level: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(392)]
-        #[rename(name = "m_bonusItem")]
-        pub m_bonus_item: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(400)]
-        #[rename(name = "m_mapRoot")]
-        pub m_map_root: crate::unity_engine::ui::image::Image,
-        #[offset(408)]
-        #[rename(name = "m_mapPoint")]
-        pub m_map_point: crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>,
-        #[offset(416)]
-        #[rename(name = "m_mapFrm")]
-        pub m_map_frm: crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>,
-        #[offset(424)]
-        #[rename(name = "m_mapBeforeTexture")]
-        pub m_map_before_texture: crate::unity_engine::sprite::Sprite,
-        #[offset(432)]
-        #[rename(name = "m_mapAfterTexture")]
-        pub m_map_after_texture: crate::unity_engine::sprite::Sprite,
-        #[offset(440)]
-        #[rename(name = "m_goldEnemyInfo")]
-        pub m_gold_enemy_info: crate::app::investmentmenucontent::InvestmentMenuContent_BattleEnemyInfo,
-        #[offset(448)]
-        #[rename(name = "m_expEnemyInfo")]
-        pub m_exp_enemy_info: crate::app::investmentmenucontent::InvestmentMenuContent_BattleEnemyInfo,
-        #[offset(456)]
-        #[rename(name = "m_dropItemInfo")]
-        pub m_drop_item_info:
-            crate::system::collections::generic::list_1::List_1<crate::app::investmentmenucontent::InvestmentMenuContent_DropItemInfo>,
-        #[offset(464)]
-        #[rename(name = "m_animalInfo")]
-        pub m_animal_info: crate::system::collections::generic::list_1::List_1<crate::app::investmentmenucontent::InvestmentMenuContent_AnimalInfo>,
-        #[offset(472)]
-        #[rename(name = "m_lvMaxShowObject")]
-        pub m_lv_max_show_object: crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>,
-        #[offset(480)]
-        #[rename(name = "m_lvMaxHideObject")]
-        pub m_lv_max_hide_object: crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>,
-        #[offset(488)]
-        #[rename(name = "m_lvMaxBgTexture")]
-        pub m_lv_max_bg_texture: crate::unity_engine::sprite::Sprite,
-        #[offset(496)]
-        #[rename(name = "m_normalBgTexture")]
-        pub m_normal_bg_texture: crate::unity_engine::sprite::Sprite,
-        #[offset(504)]
-        #[rename(name = "m_textureChangeImage")]
-        pub m_texture_change_image: crate::unity_engine::ui::image::Image,
-        #[offset(512)]
-        #[rename(name = "m_dispTotalCost")]
-        pub m_disp_total_cost: i32,
-        #[offset(520)]
-        #[rename(name = "m_dispNationData")]
-        pub m_disp_nation_data: crate::app::hubnationdata::HubNationData,
-    }
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/investmentmenucontent/InvestmentMenuContent_BattleEnemyInfo.md"))] # [:: unity2 :: class (namespace = "App" , name = "InvestmentMenuContent.BattleEnemyInfo")] # [parent (crate :: system :: object :: Object)] pub struct InvestmentMenuContent_BattleEnemyInfo {
+# [offset (16)] # [rename (name = "m_root")] pub m_root : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (24)] # [rename (name = "m_title")] pub m_title : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (32)] # [rename (name = "m_current")] pub m_current : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (40)] # [rename (name = "m_next")] pub m_next : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (48)] # [rename (name = "m_nextPercent")] pub m_next_percent : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/investmentmenucontent/InvestmentMenuContent_AnimalInfo.md"))]
-    #[::unity2::class(namespace = "App", name = "InvestmentMenuContent.AnimalInfo")]
-    #[parent(crate::system::object::Object)]
-    pub struct InvestmentMenuContent_AnimalInfo {
-        #[offset(16)]
-        #[rename(name = "m_root")]
-        pub m_root: crate::unity_engine::gameobject::GameObject,
-        #[offset(24)]
-        #[rename(name = "m_icon")]
-        pub m_icon: crate::unity_engine::ui::image::Image,
-        #[offset(32)]
-        #[rename(name = "m_name")]
-        pub m_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(40)]
-        #[rename(name = "m_text")]
-        pub m_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-    }
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/investmentmenucontent/InvestmentMenuContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "InvestmentMenuContent")] # [parent (crate :: app :: basicmenucontent :: BasicMenuContent)] pub struct InvestmentMenuContent {
+# [static_field] # [rename (name = "PrefabPath")] pub prefab_path : :: unity2 :: Il2CppString ,
+# [offset (232)] # [rename (name = "m_nextText")] pub m_next_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (240)] # [rename (name = "m_totalText")] pub m_total_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (248)] # [rename (name = "m_levelBeforeTitle")] pub m_level_before_title : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (256)] # [rename (name = "m_levelAfterTitle")] pub m_level_after_title : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (264)] # [rename (name = "m_levelEffectTitle")] pub m_level_effect_title : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (272)] # [rename (name = "m_levelBonusTitle")] pub m_level_bonus_title : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (280)] # [rename (name = "m_battleTitle")] pub m_battle_title : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (288)] # [rename (name = "m_resultTitle")] pub m_result_title : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (296)] # [rename (name = "m_completeText")] pub m_complete_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (304)] # [rename (name = "m_completeInfoText")] pub m_complete_info_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (312)] # [rename (name = "m_nextCostRoot")] pub m_next_cost_root : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (320)] # [rename (name = "m_maxCostRoot")] pub m_max_cost_root : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (328)] # [rename (name = "m_useCost")] pub m_use_cost : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (336)] # [rename (name = "m_useCostUnit")] pub m_use_cost_unit : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (344)] # [rename (name = "m_maxCostUnit")] pub m_max_cost_unit : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (352)] # [rename (name = "m_nextCost")] pub m_next_cost : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (360)] # [rename (name = "m_nextCostUnit")] pub m_next_cost_unit : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (368)] # [rename (name = "m_bgSymbol")] pub m_bg_symbol : crate :: unity_engine :: ui :: image :: Image ,
+# [offset (376)] # [rename (name = "m_currentLevel")] pub m_current_level : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (384)] # [rename (name = "m_nextLevel")] pub m_next_level : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (392)] # [rename (name = "m_bonusItem")] pub m_bonus_item : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (400)] # [rename (name = "m_mapRoot")] pub m_map_root : crate :: unity_engine :: ui :: image :: Image ,
+# [offset (408)] # [rename (name = "m_mapPoint")] pub m_map_point : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: gameobject :: GameObject > ,
+# [offset (416)] # [rename (name = "m_mapFrm")] pub m_map_frm : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: gameobject :: GameObject > ,
+# [offset (424)] # [rename (name = "m_mapBeforeTexture")] pub m_map_before_texture : crate :: unity_engine :: sprite :: Sprite ,
+# [offset (432)] # [rename (name = "m_mapAfterTexture")] pub m_map_after_texture : crate :: unity_engine :: sprite :: Sprite ,
+# [offset (440)] # [rename (name = "m_goldEnemyInfo")] pub m_gold_enemy_info : crate :: app :: investmentmenucontent :: InvestmentMenuContent_BattleEnemyInfo ,
+# [offset (448)] # [rename (name = "m_expEnemyInfo")] pub m_exp_enemy_info : crate :: app :: investmentmenucontent :: InvestmentMenuContent_BattleEnemyInfo ,
+# [offset (456)] # [rename (name = "m_dropItemInfo")] pub m_drop_item_info : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: investmentmenucontent :: InvestmentMenuContent_DropItemInfo > ,
+# [offset (464)] # [rename (name = "m_animalInfo")] pub m_animal_info : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: investmentmenucontent :: InvestmentMenuContent_AnimalInfo > ,
+# [offset (472)] # [rename (name = "m_lvMaxShowObject")] pub m_lv_max_show_object : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: gameobject :: GameObject > ,
+# [offset (480)] # [rename (name = "m_lvMaxHideObject")] pub m_lv_max_hide_object : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: gameobject :: GameObject > ,
+# [offset (488)] # [rename (name = "m_lvMaxBgTexture")] pub m_lv_max_bg_texture : crate :: unity_engine :: sprite :: Sprite ,
+# [offset (496)] # [rename (name = "m_normalBgTexture")] pub m_normal_bg_texture : crate :: unity_engine :: sprite :: Sprite ,
+# [offset (504)] # [rename (name = "m_textureChangeImage")] pub m_texture_change_image : crate :: unity_engine :: ui :: image :: Image ,
+# [offset (512)] # [rename (name = "m_dispTotalCost")] pub m_disp_total_cost : i32 ,
+# [offset (520)] # [rename (name = "m_dispNationData")] pub m_disp_nation_data : crate :: app :: hubnationdata :: HubNationData ,
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/investmentmenucontent/InvestmentMenuContent_AnimalInfo.md"))] # [:: unity2 :: class (namespace = "App" , name = "InvestmentMenuContent.AnimalInfo")] # [parent (crate :: system :: object :: Object)] pub struct InvestmentMenuContent_AnimalInfo {
+# [offset (16)] # [rename (name = "m_root")] pub m_root : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (24)] # [rename (name = "m_icon")] pub m_icon : crate :: unity_engine :: ui :: image :: Image ,
+# [offset (32)] # [rename (name = "m_name")] pub m_name : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (40)] # [rename (name = "m_text")] pub m_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/investmentmenucontent/InvestmentMenuContent_DropItemInfo.md"))] # [:: unity2 :: class (namespace = "App" , name = "InvestmentMenuContent.DropItemInfo")] # [parent (crate :: system :: object :: Object)] pub struct InvestmentMenuContent_DropItemInfo {
+# [offset (16)] # [rename (name = "m_root")] pub m_root : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (24)] # [rename (name = "m_icon")] pub m_icon : crate :: unity_engine :: ui :: image :: Image ,
+# [offset (32)] # [rename (name = "m_title")] pub m_title : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (40)] # [rename (name = "m_current")] pub m_current : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (48)] # [rename (name = "m_nextCode")] pub m_next_code : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (56)] # [rename (name = "m_next")] pub m_next : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+}
+
 }
 
 #[cfg(feature = "app-investmentmenucontent-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-investmentmenucontent")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __InvestmentMenuContent_DropItemInfo_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_setup_obj {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InvestmentMenuContent_DropItemInfo as ::unity2::ClassIdentity>::class(),
-                "SetupObj",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InvestmentMenuContent_DropItemInfo as ::unity2::ClassIdentity>::NAME,
-                        "SetupObj",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn setup_obj(this: InvestmentMenuContent_DropItemInfo, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(InvestmentMenuContent_DropItemInfo, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_setup_obj::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_show {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InvestmentMenuContent_DropItemInfo as ::unity2::ClassIdentity>::class(),
-                "Show",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InvestmentMenuContent_DropItemInfo as ::unity2::ClassIdentity>::NAME,
-                        "Show",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn show(this: InvestmentMenuContent_DropItemInfo, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(InvestmentMenuContent_DropItemInfo, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_show::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_hide {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InvestmentMenuContent_DropItemInfo as ::unity2::ClassIdentity>::class(),
-                "Hide",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InvestmentMenuContent_DropItemInfo as ::unity2::ClassIdentity>::NAME,
-                        "Hide",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn hide(this: InvestmentMenuContent_DropItemInfo, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(InvestmentMenuContent_DropItemInfo, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_hide::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_title {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InvestmentMenuContent_DropItemInfo as ::unity2::ClassIdentity>::class(),
-                "SetTitle",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InvestmentMenuContent_DropItemInfo as ::unity2::ClassIdentity>::NAME,
-                        "SetTitle",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_title(
-        this: InvestmentMenuContent_DropItemInfo,
-        title: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(InvestmentMenuContent_DropItemInfo, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_title::get_method_info().method_ptr);
-        inner(this, title, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_value {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InvestmentMenuContent_DropItemInfo as ::unity2::ClassIdentity>::class(),
-                "SetValue",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InvestmentMenuContent_DropItemInfo as ::unity2::ClassIdentity>::NAME,
-                        "SetValue",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_value(this: InvestmentMenuContent_DropItemInfo, current: i32, next: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(InvestmentMenuContent_DropItemInfo, i32, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_value::get_method_info().method_ptr);
-        inner(this, current, next, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_icon {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InvestmentMenuContent_DropItemInfo as ::unity2::ClassIdentity>::class(),
-                "SetIcon",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InvestmentMenuContent_DropItemInfo as ::unity2::ClassIdentity>::NAME,
-                        "SetIcon",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_icon(
-        this: InvestmentMenuContent_DropItemInfo,
-        icon_name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(InvestmentMenuContent_DropItemInfo, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_icon::get_method_info().method_ptr);
-        inner(this, icon_name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InvestmentMenuContent_DropItemInfo as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InvestmentMenuContent_DropItemInfo as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: InvestmentMenuContent_DropItemInfo, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(InvestmentMenuContent_DropItemInfo, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __InvestmentMenuContent_BattleEnemyInfo_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_title { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InvestmentMenuContent_BattleEnemyInfo as :: unity2 :: ClassIdentity > :: class () , "SetTitle" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InvestmentMenuContent_BattleEnemyInfo as :: unity2 :: ClassIdentity > :: NAME , "SetTitle" , e) , } } } pub unsafe fn set_title (this : InvestmentMenuContent_BattleEnemyInfo , title : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (InvestmentMenuContent_BattleEnemyInfo , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_title :: get_method_info () . method_ptr ,) ; inner (this , title , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_value { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InvestmentMenuContent_BattleEnemyInfo as :: unity2 :: ClassIdentity > :: class () , "SetValue" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InvestmentMenuContent_BattleEnemyInfo as :: unity2 :: ClassIdentity > :: NAME , "SetValue" , e) , } } } pub unsafe fn set_value (this : InvestmentMenuContent_BattleEnemyInfo , current : i32 , next : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (InvestmentMenuContent_BattleEnemyInfo , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_value :: get_method_info () . method_ptr ,) ; inner (this , current , next , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_value_max { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InvestmentMenuContent_BattleEnemyInfo as :: unity2 :: ClassIdentity > :: class () , "SetValueMax" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InvestmentMenuContent_BattleEnemyInfo as :: unity2 :: ClassIdentity > :: NAME , "SetValueMax" , e) , } } } pub unsafe fn set_value_max (this : InvestmentMenuContent_BattleEnemyInfo , current : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (InvestmentMenuContent_BattleEnemyInfo , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_value_max :: get_method_info () . method_ptr ,) ; inner (this , current , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InvestmentMenuContent_BattleEnemyInfo as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InvestmentMenuContent_BattleEnemyInfo as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : InvestmentMenuContent_BattleEnemyInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (InvestmentMenuContent_BattleEnemyInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-investmentmenucontent")]
-pub trait IInvestmentMenuContent_DropItemInfoMethods: IInvestmentMenuContent_DropItemInfo {
-    #[doc = "`SetupObj()` overload"]
-    fn setup_obj(self) -> () {
-        unsafe {
-            let __receiver = <InvestmentMenuContent_DropItemInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __InvestmentMenuContent_DropItemInfo_unity2_raw::setup_obj(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Show()` overload"]
-    fn show(self) -> () {
-        unsafe {
-            let __receiver = <InvestmentMenuContent_DropItemInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __InvestmentMenuContent_DropItemInfo_unity2_raw::show(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Hide()` overload"]
-    fn hide(self) -> () {
-        unsafe {
-            let __receiver = <InvestmentMenuContent_DropItemInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __InvestmentMenuContent_DropItemInfo_unity2_raw::hide(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetTitle(::unity2::Il2CppString)` overload"]
-    fn set_title(self, title: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver = <InvestmentMenuContent_DropItemInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __InvestmentMenuContent_DropItemInfo_unity2_raw::set_title(__receiver, ::core::convert::Into::into(title), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetValue(i32, i32)` overload"]
-    fn set_value(self, current: impl ::core::convert::Into<i32>, next: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver = <InvestmentMenuContent_DropItemInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __InvestmentMenuContent_DropItemInfo_unity2_raw::set_value(
-                __receiver,
-                ::core::convert::Into::into(current),
-                ::core::convert::Into::into(next),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetIcon(::unity2::Il2CppString)` overload"]
-    fn set_icon(self, icon_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver = <InvestmentMenuContent_DropItemInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __InvestmentMenuContent_DropItemInfo_unity2_raw::set_icon(
-                __receiver,
-                ::core::convert::Into::into(icon_name),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <InvestmentMenuContent_DropItemInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __InvestmentMenuContent_DropItemInfo_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IInvestmentMenuContent_BattleEnemyInfoMethods : IInvestmentMenuContent_BattleEnemyInfo { # [doc = "`SetTitle(::unity2::Il2CppString)` overload"] fn set_title (self , title : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < InvestmentMenuContent_BattleEnemyInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __InvestmentMenuContent_BattleEnemyInfo_unity2_raw :: set_title (__receiver , :: core :: convert :: Into :: into (title) , :: core :: option :: Option :: None) } } # [doc = "`SetValue(i32, i32)` overload"] fn set_value (self , current : impl :: core :: convert :: Into < i32 > , next : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < InvestmentMenuContent_BattleEnemyInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __InvestmentMenuContent_BattleEnemyInfo_unity2_raw :: set_value (__receiver , :: core :: convert :: Into :: into (current) , :: core :: convert :: Into :: into (next) , :: core :: option :: Option :: None) } } # [doc = "`SetValueMax(i32)` overload"] fn set_value_max (self , current : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < InvestmentMenuContent_BattleEnemyInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __InvestmentMenuContent_BattleEnemyInfo_unity2_raw :: set_value_max (__receiver , :: core :: convert :: Into :: into (current) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < InvestmentMenuContent_BattleEnemyInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __InvestmentMenuContent_BattleEnemyInfo_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-investmentmenucontent")]
-impl<__T: IInvestmentMenuContent_DropItemInfo> IInvestmentMenuContent_DropItemInfoMethods for __T {}
+impl < __T : IInvestmentMenuContent_BattleEnemyInfo > IInvestmentMenuContent_BattleEnemyInfoMethods for __T { }
 
 #[cfg(feature = "app-investmentmenucontent")]
-impl InvestmentMenuContent_DropItemInfo {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(InvestmentMenuContent_DropItemInfo),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IInvestmentMenuContent_DropItemInfoMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-investmentmenucontent")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __InvestmentMenuContent_BattleEnemyInfo_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_title {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InvestmentMenuContent_BattleEnemyInfo as ::unity2::ClassIdentity>::class(),
-                "SetTitle",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InvestmentMenuContent_BattleEnemyInfo as ::unity2::ClassIdentity>::NAME,
-                        "SetTitle",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_title(
-        this: InvestmentMenuContent_BattleEnemyInfo,
-        title: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(InvestmentMenuContent_BattleEnemyInfo, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_title::get_method_info().method_ptr);
-        inner(this, title, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_value {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InvestmentMenuContent_BattleEnemyInfo as ::unity2::ClassIdentity>::class(),
-                "SetValue",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InvestmentMenuContent_BattleEnemyInfo as ::unity2::ClassIdentity>::NAME,
-                        "SetValue",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_value(
-        this: InvestmentMenuContent_BattleEnemyInfo,
-        current: i32,
-        next: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(InvestmentMenuContent_BattleEnemyInfo, i32, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_value::get_method_info().method_ptr);
-        inner(this, current, next, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_value_max {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InvestmentMenuContent_BattleEnemyInfo as ::unity2::ClassIdentity>::class(),
-                "SetValueMax",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InvestmentMenuContent_BattleEnemyInfo as ::unity2::ClassIdentity>::NAME,
-                        "SetValueMax",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_value_max(this: InvestmentMenuContent_BattleEnemyInfo, current: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(InvestmentMenuContent_BattleEnemyInfo, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_value_max::get_method_info().method_ptr);
-        inner(this, current, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InvestmentMenuContent_BattleEnemyInfo as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InvestmentMenuContent_BattleEnemyInfo as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: InvestmentMenuContent_BattleEnemyInfo, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(InvestmentMenuContent_BattleEnemyInfo, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-investmentmenucontent")]
-pub trait IInvestmentMenuContent_BattleEnemyInfoMethods: IInvestmentMenuContent_BattleEnemyInfo {
-    #[doc = "`SetTitle(::unity2::Il2CppString)` overload"]
-    fn set_title(self, title: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver = <InvestmentMenuContent_BattleEnemyInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __InvestmentMenuContent_BattleEnemyInfo_unity2_raw::set_title(
-                __receiver,
-                ::core::convert::Into::into(title),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetValue(i32, i32)` overload"]
-    fn set_value(self, current: impl ::core::convert::Into<i32>, next: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver = <InvestmentMenuContent_BattleEnemyInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __InvestmentMenuContent_BattleEnemyInfo_unity2_raw::set_value(
-                __receiver,
-                ::core::convert::Into::into(current),
-                ::core::convert::Into::into(next),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetValueMax(i32)` overload"]
-    fn set_value_max(self, current: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver = <InvestmentMenuContent_BattleEnemyInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __InvestmentMenuContent_BattleEnemyInfo_unity2_raw::set_value_max(
-                __receiver,
-                ::core::convert::Into::into(current),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <InvestmentMenuContent_BattleEnemyInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __InvestmentMenuContent_BattleEnemyInfo_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-investmentmenucontent")]
-impl<__T: IInvestmentMenuContent_BattleEnemyInfo> IInvestmentMenuContent_BattleEnemyInfoMethods for __T {}
+impl InvestmentMenuContent_BattleEnemyInfo { pub fn set_title_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InvestmentMenuContent_BattleEnemyInfo_unity2_raw :: __lookup_set_title :: get_method_info () } pub fn set_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InvestmentMenuContent_BattleEnemyInfo_unity2_raw :: __lookup_set_value :: get_method_info () } pub fn set_value_max_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InvestmentMenuContent_BattleEnemyInfo_unity2_raw :: __lookup_set_value_max :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InvestmentMenuContent_BattleEnemyInfo_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-investmentmenucontent")]
 impl InvestmentMenuContent_BattleEnemyInfo {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(InvestmentMenuContent_BattleEnemyInfo),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IInvestmentMenuContent_BattleEnemyInfoMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (InvestmentMenuContent_BattleEnemyInfo) , :: core :: stringify ! (new) ,)) ; < Self as IInvestmentMenuContent_BattleEnemyInfoMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-investmentmenucontent")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __InvestmentMenuContent_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_setup {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InvestmentMenuContent as ::unity2::ClassIdentity>::class(),
-                "Setup",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InvestmentMenuContent as ::unity2::ClassIdentity>::NAME,
-                        "Setup",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn setup(this: InvestmentMenuContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(InvestmentMenuContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_setup::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_cursor_moved_pos_y {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InvestmentMenuContent as ::unity2::ClassIdentity>::class(),
-                "CalcCursorMovedPosY",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InvestmentMenuContent as ::unity2::ClassIdentity>::NAME,
-                        "CalcCursorMovedPosY",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn calc_cursor_moved_pos_y(this: InvestmentMenuContent, menu_item_index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(InvestmentMenuContent, i32, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_calc_cursor_moved_pos_y::get_method_info().method_ptr);
-        inner(this, menu_item_index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InvestmentMenuContent as ::unity2::ClassIdentity>::class(),
-                "Update",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InvestmentMenuContent as ::unity2::ClassIdentity>::NAME,
-                        "Update",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update(this: InvestmentMenuContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(InvestmentMenuContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_load_prefab_async {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InvestmentMenuContent as ::unity2::ClassIdentity>::class(),
-                "LoadPrefabAsync",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InvestmentMenuContent as ::unity2::ClassIdentity>::NAME,
-                        "LoadPrefabAsync",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn load_prefab_async(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_load_prefab_async::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_loading_prefab {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InvestmentMenuContent as ::unity2::ClassIdentity>::class(),
-                "IsLoadingPrefab",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InvestmentMenuContent as ::unity2::ClassIdentity>::NAME,
-                        "IsLoadingPrefab",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_loading_prefab(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_is_loading_prefab::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_unload_prefab {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InvestmentMenuContent as ::unity2::ClassIdentity>::class(),
-                "UnloadPrefab",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InvestmentMenuContent as ::unity2::ClassIdentity>::NAME,
-                        "UnloadPrefab",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn unload_prefab(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_unload_prefab::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InvestmentMenuContent as ::unity2::ClassIdentity>::class(),
-                "Create",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InvestmentMenuContent as ::unity2::ClassIdentity>::NAME,
-                        "Create",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create(__unity2_method_info: ::unity2::OptionalMethod) -> crate::app::investmentmenucontent::InvestmentMenuContent {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::app::investmentmenucontent::InvestmentMenuContent =
-            ::core::mem::transmute(__lookup_create::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_destroy {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::investmentmenucontent::InvestmentMenuContent as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InvestmentMenuContent as ::unity2::ClassIdentity>::class(),
-                "Destroy",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InvestmentMenuContent as ::unity2::ClassIdentity>::NAME,
-                        "Destroy",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn destroy(content: crate::app::investmentmenucontent::InvestmentMenuContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(crate::app::investmentmenucontent::InvestmentMenuContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_destroy::get_method_info().method_ptr);
-        inner(content, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_menu_item_content_max {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InvestmentMenuContent as ::unity2::ClassIdentity>::class(),
-                "GetMenuItemContentMax",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InvestmentMenuContent as ::unity2::ClassIdentity>::NAME,
-                        "GetMenuItemContentMax",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_menu_item_content_max(this: InvestmentMenuContent, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(InvestmentMenuContent, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_menu_item_content_max::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_w {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InvestmentMenuContent as ::unity2::ClassIdentity>::class(),
-                "CalcW",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InvestmentMenuContent as ::unity2::ClassIdentity>::NAME,
-                        "CalcW",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn calc_w(this: InvestmentMenuContent, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(InvestmentMenuContent, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_calc_w::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_h {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InvestmentMenuContent as ::unity2::ClassIdentity>::class(),
-                "CalcH",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InvestmentMenuContent as ::unity2::ClassIdentity>::NAME,
-                        "CalcH",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn calc_h(this: InvestmentMenuContent, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(InvestmentMenuContent, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_calc_h::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_nation_data {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::hubnationdata::HubNationData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InvestmentMenuContent as ::unity2::ClassIdentity>::class(),
-                "SetNationData",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InvestmentMenuContent as ::unity2::ClassIdentity>::NAME,
-                        "SetNationData",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_nation_data(
-        this: InvestmentMenuContent,
-        data: crate::app::hubnationdata::HubNationData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(InvestmentMenuContent, crate::app::hubnationdata::HubNationData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_nation_data::get_method_info().method_ptr);
-        inner(this, data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update_nation_data {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::hubnationdata::HubNationData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InvestmentMenuContent as ::unity2::ClassIdentity>::class(),
-                "UpdateNationData",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InvestmentMenuContent as ::unity2::ClassIdentity>::NAME,
-                        "UpdateNationData",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update_nation_data(
-        this: InvestmentMenuContent,
-        data: crate::app::hubnationdata::HubNationData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(InvestmentMenuContent, crate::app::hubnationdata::HubNationData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update_nation_data::get_method_info().method_ptr);
-        inner(this, data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update_nation_data_disp {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InvestmentMenuContent as ::unity2::ClassIdentity>::class(),
-                "UpdateNationDataDisp",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InvestmentMenuContent as ::unity2::ClassIdentity>::NAME,
-                        "UpdateNationDataDisp",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update_nation_data_disp(this: InvestmentMenuContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(InvestmentMenuContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update_nation_data_disp::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_bg_symbol {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::sprite::Sprite as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InvestmentMenuContent as ::unity2::ClassIdentity>::class(),
-                "SetBgSymbol",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InvestmentMenuContent as ::unity2::ClassIdentity>::NAME,
-                        "SetBgSymbol",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_bg_symbol(
-        this: InvestmentMenuContent,
-        sprite: crate::unity_engine::sprite::Sprite,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(InvestmentMenuContent, crate::unity_engine::sprite::Sprite, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_bg_symbol::get_method_info().method_ptr);
-        inner(this, sprite, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InvestmentMenuContent as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InvestmentMenuContent as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: InvestmentMenuContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(InvestmentMenuContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __InvestmentMenuContent_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_setup { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InvestmentMenuContent as :: unity2 :: ClassIdentity > :: class () , "Setup" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InvestmentMenuContent as :: unity2 :: ClassIdentity > :: NAME , "Setup" , e) , } } } pub unsafe fn setup (this : InvestmentMenuContent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (InvestmentMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_setup :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_calc_cursor_moved_pos_y { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InvestmentMenuContent as :: unity2 :: ClassIdentity > :: class () , "CalcCursorMovedPosY" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InvestmentMenuContent as :: unity2 :: ClassIdentity > :: NAME , "CalcCursorMovedPosY" , e) , } } } pub unsafe fn calc_cursor_moved_pos_y (this : InvestmentMenuContent , menu_item_index : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (InvestmentMenuContent , i32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_calc_cursor_moved_pos_y :: get_method_info () . method_ptr ,) ; inner (this , menu_item_index , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InvestmentMenuContent as :: unity2 :: ClassIdentity > :: class () , "Update" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InvestmentMenuContent as :: unity2 :: ClassIdentity > :: NAME , "Update" , e) , } } } pub unsafe fn update (this : InvestmentMenuContent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (InvestmentMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_load_prefab_async { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InvestmentMenuContent as :: unity2 :: ClassIdentity > :: class () , "LoadPrefabAsync" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InvestmentMenuContent as :: unity2 :: ClassIdentity > :: NAME , "LoadPrefabAsync" , e) , } } } pub unsafe fn load_prefab_async (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_load_prefab_async :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_loading_prefab { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InvestmentMenuContent as :: unity2 :: ClassIdentity > :: class () , "IsLoadingPrefab" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InvestmentMenuContent as :: unity2 :: ClassIdentity > :: NAME , "IsLoadingPrefab" , e) , } } } pub unsafe fn is_loading_prefab (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_loading_prefab :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_unload_prefab { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InvestmentMenuContent as :: unity2 :: ClassIdentity > :: class () , "UnloadPrefab" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InvestmentMenuContent as :: unity2 :: ClassIdentity > :: NAME , "UnloadPrefab" , e) , } } } pub unsafe fn unload_prefab (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_unload_prefab :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InvestmentMenuContent as :: unity2 :: ClassIdentity > :: class () , "Create" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InvestmentMenuContent as :: unity2 :: ClassIdentity > :: NAME , "Create" , e) , } } } pub unsafe fn create (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: investmentmenucontent :: InvestmentMenuContent { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: investmentmenucontent :: InvestmentMenuContent = :: core :: mem :: transmute (__lookup_create :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_destroy { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: investmentmenucontent :: InvestmentMenuContent as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InvestmentMenuContent as :: unity2 :: ClassIdentity > :: class () , "Destroy" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InvestmentMenuContent as :: unity2 :: ClassIdentity > :: NAME , "Destroy" , e) , } } } pub unsafe fn destroy (content : crate :: app :: investmentmenucontent :: InvestmentMenuContent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: investmentmenucontent :: InvestmentMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_destroy :: get_method_info () . method_ptr ,) ; inner (content , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_menu_item_content_max { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InvestmentMenuContent as :: unity2 :: ClassIdentity > :: class () , "GetMenuItemContentMax" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InvestmentMenuContent as :: unity2 :: ClassIdentity > :: NAME , "GetMenuItemContentMax" , e) , } } } pub unsafe fn get_menu_item_content_max (this : InvestmentMenuContent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (InvestmentMenuContent , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_menu_item_content_max :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_calc_w { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InvestmentMenuContent as :: unity2 :: ClassIdentity > :: class () , "CalcW" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InvestmentMenuContent as :: unity2 :: ClassIdentity > :: NAME , "CalcW" , e) , } } } pub unsafe fn calc_w (this : InvestmentMenuContent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (InvestmentMenuContent , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_calc_w :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_calc_h { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InvestmentMenuContent as :: unity2 :: ClassIdentity > :: class () , "CalcH" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InvestmentMenuContent as :: unity2 :: ClassIdentity > :: NAME , "CalcH" , e) , } } } pub unsafe fn calc_h (this : InvestmentMenuContent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (InvestmentMenuContent , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_calc_h :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_nation_data { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: hubnationdata :: HubNationData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InvestmentMenuContent as :: unity2 :: ClassIdentity > :: class () , "SetNationData" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InvestmentMenuContent as :: unity2 :: ClassIdentity > :: NAME , "SetNationData" , e) , } } } pub unsafe fn set_nation_data (this : InvestmentMenuContent , data : crate :: app :: hubnationdata :: HubNationData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (InvestmentMenuContent , crate :: app :: hubnationdata :: HubNationData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_nation_data :: get_method_info () . method_ptr ,) ; inner (this , data , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update_nation_data { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: hubnationdata :: HubNationData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InvestmentMenuContent as :: unity2 :: ClassIdentity > :: class () , "UpdateNationData" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InvestmentMenuContent as :: unity2 :: ClassIdentity > :: NAME , "UpdateNationData" , e) , } } } pub unsafe fn update_nation_data (this : InvestmentMenuContent , data : crate :: app :: hubnationdata :: HubNationData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (InvestmentMenuContent , crate :: app :: hubnationdata :: HubNationData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update_nation_data :: get_method_info () . method_ptr ,) ; inner (this , data , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update_nation_data_disp { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InvestmentMenuContent as :: unity2 :: ClassIdentity > :: class () , "UpdateNationDataDisp" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InvestmentMenuContent as :: unity2 :: ClassIdentity > :: NAME , "UpdateNationDataDisp" , e) , } } } pub unsafe fn update_nation_data_disp (this : InvestmentMenuContent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (InvestmentMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update_nation_data_disp :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_bg_symbol { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: sprite :: Sprite as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InvestmentMenuContent as :: unity2 :: ClassIdentity > :: class () , "SetBgSymbol" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InvestmentMenuContent as :: unity2 :: ClassIdentity > :: NAME , "SetBgSymbol" , e) , } } } pub unsafe fn set_bg_symbol (this : InvestmentMenuContent , sprite : crate :: unity_engine :: sprite :: Sprite , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (InvestmentMenuContent , crate :: unity_engine :: sprite :: Sprite , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_bg_symbol :: get_method_info () . method_ptr ,) ; inner (this , sprite , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InvestmentMenuContent as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InvestmentMenuContent as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : InvestmentMenuContent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (InvestmentMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-investmentmenucontent")]
+impl InvestmentMenuContent { # [doc = "`LoadPrefabAsync()` overload"] pub fn load_prefab_async () -> () { unsafe { __InvestmentMenuContent_unity2_raw :: load_prefab_async (:: core :: option :: Option :: None) } } # [doc = "`IsLoadingPrefab()` overload"] pub fn is_loading_prefab () -> bool { unsafe { __InvestmentMenuContent_unity2_raw :: is_loading_prefab (:: core :: option :: Option :: None) } } # [doc = "`UnloadPrefab()` overload"] pub fn unload_prefab () -> () { unsafe { __InvestmentMenuContent_unity2_raw :: unload_prefab (:: core :: option :: Option :: None) } } # [doc = "`Create()` overload"] pub fn create () -> crate :: app :: investmentmenucontent :: InvestmentMenuContent { unsafe { __InvestmentMenuContent_unity2_raw :: create (:: core :: option :: Option :: None) } } # [doc = "`Destroy(crate::app::investmentmenucontent::InvestmentMenuContent)` overload"] pub fn destroy (content : impl :: core :: convert :: Into < crate :: app :: investmentmenucontent :: InvestmentMenuContent >) -> () { unsafe { __InvestmentMenuContent_unity2_raw :: destroy (:: core :: convert :: Into :: into (content) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-investmentmenucontent")]
+pub trait IInvestmentMenuContentMethods : IInvestmentMenuContent { # [doc = "`Setup()` overload"] fn setup (self ,) -> () { unsafe { let __receiver = < InvestmentMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __InvestmentMenuContent_unity2_raw :: setup (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CalcCursorMovedPosY(i32)` overload"] fn calc_cursor_moved_pos_y (self , menu_item_index : impl :: core :: convert :: Into < i32 >) -> f32 { unsafe { let __receiver = < InvestmentMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __InvestmentMenuContent_unity2_raw :: calc_cursor_moved_pos_y (__receiver , :: core :: convert :: Into :: into (menu_item_index) , :: core :: option :: Option :: None) } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < InvestmentMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __InvestmentMenuContent_unity2_raw :: update (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetMenuItemContentMax()` overload"] fn get_menu_item_content_max (self ,) -> i32 { unsafe { let __receiver = < InvestmentMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __InvestmentMenuContent_unity2_raw :: get_menu_item_content_max (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CalcW()` overload"] fn calc_w (self ,) -> f32 { unsafe { let __receiver = < InvestmentMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __InvestmentMenuContent_unity2_raw :: calc_w (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CalcH()` overload"] fn calc_h (self ,) -> f32 { unsafe { let __receiver = < InvestmentMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __InvestmentMenuContent_unity2_raw :: calc_h (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetNationData(crate::app::hubnationdata::HubNationData)` overload"] fn set_nation_data (self , data : impl :: core :: convert :: Into < crate :: app :: hubnationdata :: HubNationData >) -> () { unsafe { let __receiver = < InvestmentMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __InvestmentMenuContent_unity2_raw :: set_nation_data (__receiver , :: core :: convert :: Into :: into (data) , :: core :: option :: Option :: None) } } # [doc = "`UpdateNationData(crate::app::hubnationdata::HubNationData)` overload"] fn update_nation_data (self , data : impl :: core :: convert :: Into < crate :: app :: hubnationdata :: HubNationData >) -> () { unsafe { let __receiver = < InvestmentMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __InvestmentMenuContent_unity2_raw :: update_nation_data (__receiver , :: core :: convert :: Into :: into (data) , :: core :: option :: Option :: None) } } # [doc = "`UpdateNationDataDisp()` overload"] fn update_nation_data_disp (self ,) -> () { unsafe { let __receiver = < InvestmentMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __InvestmentMenuContent_unity2_raw :: update_nation_data_disp (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetBgSymbol(crate::unity_engine::sprite::Sprite)` overload"] fn set_bg_symbol (self , sprite : impl :: core :: convert :: Into < crate :: unity_engine :: sprite :: Sprite >) -> () { unsafe { let __receiver = < InvestmentMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __InvestmentMenuContent_unity2_raw :: set_bg_symbol (__receiver , :: core :: convert :: Into :: into (sprite) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < InvestmentMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __InvestmentMenuContent_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-investmentmenucontent")]
+impl < __T : IInvestmentMenuContent > IInvestmentMenuContentMethods for __T { }
+
+#[cfg(feature = "app-investmentmenucontent")]
+impl InvestmentMenuContent { pub fn setup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InvestmentMenuContent_unity2_raw :: __lookup_setup :: get_method_info () } pub fn calc_cursor_moved_pos_y_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InvestmentMenuContent_unity2_raw :: __lookup_calc_cursor_moved_pos_y :: get_method_info () } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InvestmentMenuContent_unity2_raw :: __lookup_update :: get_method_info () } pub fn load_prefab_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InvestmentMenuContent_unity2_raw :: __lookup_load_prefab_async :: get_method_info () } pub fn is_loading_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InvestmentMenuContent_unity2_raw :: __lookup_is_loading_prefab :: get_method_info () } pub fn unload_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InvestmentMenuContent_unity2_raw :: __lookup_unload_prefab :: get_method_info () } pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InvestmentMenuContent_unity2_raw :: __lookup_create :: get_method_info () } pub fn destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InvestmentMenuContent_unity2_raw :: __lookup_destroy :: get_method_info () } pub fn get_menu_item_content_max_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InvestmentMenuContent_unity2_raw :: __lookup_get_menu_item_content_max :: get_method_info () } pub fn calc_w_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InvestmentMenuContent_unity2_raw :: __lookup_calc_w :: get_method_info () } pub fn calc_h_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InvestmentMenuContent_unity2_raw :: __lookup_calc_h :: get_method_info () } pub fn set_nation_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InvestmentMenuContent_unity2_raw :: __lookup_set_nation_data :: get_method_info () } pub fn update_nation_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InvestmentMenuContent_unity2_raw :: __lookup_update_nation_data :: get_method_info () } pub fn update_nation_data_disp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InvestmentMenuContent_unity2_raw :: __lookup_update_nation_data_disp :: get_method_info () } pub fn set_bg_symbol_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InvestmentMenuContent_unity2_raw :: __lookup_set_bg_symbol :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InvestmentMenuContent_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-investmentmenucontent")]
 impl InvestmentMenuContent {
-    #[doc = "`LoadPrefabAsync()` overload"]
-    pub fn load_prefab_async() -> () {
-        unsafe { __InvestmentMenuContent_unity2_raw::load_prefab_async(::core::option::Option::None) }
-    }
-
-    #[doc = "`IsLoadingPrefab()` overload"]
-    pub fn is_loading_prefab() -> bool {
-        unsafe { __InvestmentMenuContent_unity2_raw::is_loading_prefab(::core::option::Option::None) }
-    }
-
-    #[doc = "`UnloadPrefab()` overload"]
-    pub fn unload_prefab() -> () {
-        unsafe { __InvestmentMenuContent_unity2_raw::unload_prefab(::core::option::Option::None) }
-    }
-
-    #[doc = "`Create()` overload"]
-    pub fn create() -> crate::app::investmentmenucontent::InvestmentMenuContent {
-        unsafe { __InvestmentMenuContent_unity2_raw::create(::core::option::Option::None) }
-    }
-
-    #[doc = "`Destroy(crate::app::investmentmenucontent::InvestmentMenuContent)` overload"]
-    pub fn destroy(content: impl ::core::convert::Into<crate::app::investmentmenucontent::InvestmentMenuContent>) -> () {
-        unsafe { __InvestmentMenuContent_unity2_raw::destroy(::core::convert::Into::into(content), ::core::option::Option::None) }
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (InvestmentMenuContent) , :: core :: stringify ! (new) ,)) ; < Self as IInvestmentMenuContentMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-investmentmenucontent")]
-pub trait IInvestmentMenuContentMethods: IInvestmentMenuContent {
-    #[doc = "`Setup()` overload"]
-    fn setup(self) -> () {
-        unsafe {
-            let __receiver =
-                <InvestmentMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InvestmentMenuContent_unity2_raw::setup(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CalcCursorMovedPosY(i32)` overload"]
-    fn calc_cursor_moved_pos_y(self, menu_item_index: impl ::core::convert::Into<i32>) -> f32 {
-        unsafe {
-            let __receiver =
-                <InvestmentMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InvestmentMenuContent_unity2_raw::calc_cursor_moved_pos_y(
-                __receiver,
-                ::core::convert::Into::into(menu_item_index),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Update()` overload"]
-    fn update(self) -> () {
-        unsafe {
-            let __receiver =
-                <InvestmentMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InvestmentMenuContent_unity2_raw::update(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetMenuItemContentMax()` overload"]
-    fn get_menu_item_content_max(self) -> i32 {
-        unsafe {
-            let __receiver =
-                <InvestmentMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InvestmentMenuContent_unity2_raw::get_menu_item_content_max(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CalcW()` overload"]
-    fn calc_w(self) -> f32 {
-        unsafe {
-            let __receiver =
-                <InvestmentMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InvestmentMenuContent_unity2_raw::calc_w(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CalcH()` overload"]
-    fn calc_h(self) -> f32 {
-        unsafe {
-            let __receiver =
-                <InvestmentMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InvestmentMenuContent_unity2_raw::calc_h(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetNationData(crate::app::hubnationdata::HubNationData)` overload"]
-    fn set_nation_data(self, data: impl ::core::convert::Into<crate::app::hubnationdata::HubNationData>) -> () {
-        unsafe {
-            let __receiver =
-                <InvestmentMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InvestmentMenuContent_unity2_raw::set_nation_data(__receiver, ::core::convert::Into::into(data), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`UpdateNationData(crate::app::hubnationdata::HubNationData)` overload"]
-    fn update_nation_data(self, data: impl ::core::convert::Into<crate::app::hubnationdata::HubNationData>) -> () {
-        unsafe {
-            let __receiver =
-                <InvestmentMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InvestmentMenuContent_unity2_raw::update_nation_data(__receiver, ::core::convert::Into::into(data), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`UpdateNationDataDisp()` overload"]
-    fn update_nation_data_disp(self) -> () {
-        unsafe {
-            let __receiver =
-                <InvestmentMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InvestmentMenuContent_unity2_raw::update_nation_data_disp(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetBgSymbol(crate::unity_engine::sprite::Sprite)` overload"]
-    fn set_bg_symbol(self, sprite: impl ::core::convert::Into<crate::unity_engine::sprite::Sprite>) -> () {
-        unsafe {
-            let __receiver =
-                <InvestmentMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InvestmentMenuContent_unity2_raw::set_bg_symbol(__receiver, ::core::convert::Into::into(sprite), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <InvestmentMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InvestmentMenuContent_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __InvestmentMenuContent_AnimalInfo_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_setup_obj { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InvestmentMenuContent_AnimalInfo as :: unity2 :: ClassIdentity > :: class () , "SetupObj" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InvestmentMenuContent_AnimalInfo as :: unity2 :: ClassIdentity > :: NAME , "SetupObj" , e) , } } } pub unsafe fn setup_obj (this : InvestmentMenuContent_AnimalInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (InvestmentMenuContent_AnimalInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_setup_obj :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InvestmentMenuContent_AnimalInfo as :: unity2 :: ClassIdentity > :: class () , "Set" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InvestmentMenuContent_AnimalInfo as :: unity2 :: ClassIdentity > :: NAME , "Set" , e) , } } } pub unsafe fn set (this : InvestmentMenuContent_AnimalInfo , animal_id : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (InvestmentMenuContent_AnimalInfo , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set :: get_method_info () . method_ptr ,) ; inner (this , animal_id , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_icon { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InvestmentMenuContent_AnimalInfo as :: unity2 :: ClassIdentity > :: class () , "SetIcon" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InvestmentMenuContent_AnimalInfo as :: unity2 :: ClassIdentity > :: NAME , "SetIcon" , e) , } } } pub unsafe fn set_icon (this : InvestmentMenuContent_AnimalInfo , icon_name : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (InvestmentMenuContent_AnimalInfo , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_icon :: get_method_info () . method_ptr ,) ; inner (this , icon_name , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_hide { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InvestmentMenuContent_AnimalInfo as :: unity2 :: ClassIdentity > :: class () , "Hide" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InvestmentMenuContent_AnimalInfo as :: unity2 :: ClassIdentity > :: NAME , "Hide" , e) , } } } pub unsafe fn hide (this : InvestmentMenuContent_AnimalInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (InvestmentMenuContent_AnimalInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_hide :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InvestmentMenuContent_AnimalInfo as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InvestmentMenuContent_AnimalInfo as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : InvestmentMenuContent_AnimalInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (InvestmentMenuContent_AnimalInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-investmentmenucontent")]
-impl<__T: IInvestmentMenuContent> IInvestmentMenuContentMethods for __T {}
+pub trait IInvestmentMenuContent_AnimalInfoMethods : IInvestmentMenuContent_AnimalInfo { # [doc = "`SetupObj()` overload"] fn setup_obj (self ,) -> () { unsafe { let __receiver = < InvestmentMenuContent_AnimalInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __InvestmentMenuContent_AnimalInfo_unity2_raw :: setup_obj (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Set(::unity2::Il2CppString)` overload"] fn set (self , animal_id : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < InvestmentMenuContent_AnimalInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __InvestmentMenuContent_AnimalInfo_unity2_raw :: set (__receiver , :: core :: convert :: Into :: into (animal_id) , :: core :: option :: Option :: None) } } # [doc = "`SetIcon(::unity2::Il2CppString)` overload"] fn set_icon (self , icon_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < InvestmentMenuContent_AnimalInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __InvestmentMenuContent_AnimalInfo_unity2_raw :: set_icon (__receiver , :: core :: convert :: Into :: into (icon_name) , :: core :: option :: Option :: None) } } # [doc = "`Hide()` overload"] fn hide (self ,) -> () { unsafe { let __receiver = < InvestmentMenuContent_AnimalInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __InvestmentMenuContent_AnimalInfo_unity2_raw :: hide (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < InvestmentMenuContent_AnimalInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __InvestmentMenuContent_AnimalInfo_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-investmentmenucontent")]
-impl InvestmentMenuContent {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(InvestmentMenuContent),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IInvestmentMenuContentMethods>::ctor(this);
-        this
-    }
-}
+impl < __T : IInvestmentMenuContent_AnimalInfo > IInvestmentMenuContent_AnimalInfoMethods for __T { }
 
 #[cfg(feature = "app-investmentmenucontent")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __InvestmentMenuContent_AnimalInfo_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_setup_obj {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InvestmentMenuContent_AnimalInfo as ::unity2::ClassIdentity>::class(),
-                "SetupObj",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InvestmentMenuContent_AnimalInfo as ::unity2::ClassIdentity>::NAME,
-                        "SetupObj",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn setup_obj(this: InvestmentMenuContent_AnimalInfo, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(InvestmentMenuContent_AnimalInfo, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_setup_obj::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InvestmentMenuContent_AnimalInfo as ::unity2::ClassIdentity>::class(),
-                "Set",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InvestmentMenuContent_AnimalInfo as ::unity2::ClassIdentity>::NAME,
-                        "Set",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set(
-        this: InvestmentMenuContent_AnimalInfo,
-        animal_id: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(InvestmentMenuContent_AnimalInfo, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set::get_method_info().method_ptr);
-        inner(this, animal_id, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_icon {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InvestmentMenuContent_AnimalInfo as ::unity2::ClassIdentity>::class(),
-                "SetIcon",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InvestmentMenuContent_AnimalInfo as ::unity2::ClassIdentity>::NAME,
-                        "SetIcon",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_icon(
-        this: InvestmentMenuContent_AnimalInfo,
-        icon_name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(InvestmentMenuContent_AnimalInfo, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_icon::get_method_info().method_ptr);
-        inner(this, icon_name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_hide {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InvestmentMenuContent_AnimalInfo as ::unity2::ClassIdentity>::class(),
-                "Hide",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InvestmentMenuContent_AnimalInfo as ::unity2::ClassIdentity>::NAME,
-                        "Hide",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn hide(this: InvestmentMenuContent_AnimalInfo, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(InvestmentMenuContent_AnimalInfo, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_hide::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InvestmentMenuContent_AnimalInfo as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InvestmentMenuContent_AnimalInfo as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: InvestmentMenuContent_AnimalInfo, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(InvestmentMenuContent_AnimalInfo, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-investmentmenucontent")]
-pub trait IInvestmentMenuContent_AnimalInfoMethods: IInvestmentMenuContent_AnimalInfo {
-    #[doc = "`SetupObj()` overload"]
-    fn setup_obj(self) -> () {
-        unsafe {
-            let __receiver =
-                <InvestmentMenuContent_AnimalInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InvestmentMenuContent_AnimalInfo_unity2_raw::setup_obj(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Set(::unity2::Il2CppString)` overload"]
-    fn set(self, animal_id: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver =
-                <InvestmentMenuContent_AnimalInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InvestmentMenuContent_AnimalInfo_unity2_raw::set(__receiver, ::core::convert::Into::into(animal_id), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetIcon(::unity2::Il2CppString)` overload"]
-    fn set_icon(self, icon_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver =
-                <InvestmentMenuContent_AnimalInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InvestmentMenuContent_AnimalInfo_unity2_raw::set_icon(__receiver, ::core::convert::Into::into(icon_name), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Hide()` overload"]
-    fn hide(self) -> () {
-        unsafe {
-            let __receiver =
-                <InvestmentMenuContent_AnimalInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InvestmentMenuContent_AnimalInfo_unity2_raw::hide(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <InvestmentMenuContent_AnimalInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InvestmentMenuContent_AnimalInfo_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-investmentmenucontent")]
-impl<__T: IInvestmentMenuContent_AnimalInfo> IInvestmentMenuContent_AnimalInfoMethods for __T {}
+impl InvestmentMenuContent_AnimalInfo { pub fn setup_obj_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InvestmentMenuContent_AnimalInfo_unity2_raw :: __lookup_setup_obj :: get_method_info () } pub fn set_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InvestmentMenuContent_AnimalInfo_unity2_raw :: __lookup_set :: get_method_info () } pub fn set_icon_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InvestmentMenuContent_AnimalInfo_unity2_raw :: __lookup_set_icon :: get_method_info () } pub fn hide_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InvestmentMenuContent_AnimalInfo_unity2_raw :: __lookup_hide :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InvestmentMenuContent_AnimalInfo_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-investmentmenucontent")]
 impl InvestmentMenuContent_AnimalInfo {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(InvestmentMenuContent_AnimalInfo),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IInvestmentMenuContent_AnimalInfoMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (InvestmentMenuContent_AnimalInfo) , :: core :: stringify ! (new) ,)) ; < Self as IInvestmentMenuContent_AnimalInfoMethods > :: ctor (this ,) ; this }
+}
+
+#[cfg(feature = "app-investmentmenucontent")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __InvestmentMenuContent_DropItemInfo_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_setup_obj { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InvestmentMenuContent_DropItemInfo as :: unity2 :: ClassIdentity > :: class () , "SetupObj" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InvestmentMenuContent_DropItemInfo as :: unity2 :: ClassIdentity > :: NAME , "SetupObj" , e) , } } } pub unsafe fn setup_obj (this : InvestmentMenuContent_DropItemInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (InvestmentMenuContent_DropItemInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_setup_obj :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_show { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InvestmentMenuContent_DropItemInfo as :: unity2 :: ClassIdentity > :: class () , "Show" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InvestmentMenuContent_DropItemInfo as :: unity2 :: ClassIdentity > :: NAME , "Show" , e) , } } } pub unsafe fn show (this : InvestmentMenuContent_DropItemInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (InvestmentMenuContent_DropItemInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_show :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_hide { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InvestmentMenuContent_DropItemInfo as :: unity2 :: ClassIdentity > :: class () , "Hide" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InvestmentMenuContent_DropItemInfo as :: unity2 :: ClassIdentity > :: NAME , "Hide" , e) , } } } pub unsafe fn hide (this : InvestmentMenuContent_DropItemInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (InvestmentMenuContent_DropItemInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_hide :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_title { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InvestmentMenuContent_DropItemInfo as :: unity2 :: ClassIdentity > :: class () , "SetTitle" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InvestmentMenuContent_DropItemInfo as :: unity2 :: ClassIdentity > :: NAME , "SetTitle" , e) , } } } pub unsafe fn set_title (this : InvestmentMenuContent_DropItemInfo , title : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (InvestmentMenuContent_DropItemInfo , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_title :: get_method_info () . method_ptr ,) ; inner (this , title , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_value { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InvestmentMenuContent_DropItemInfo as :: unity2 :: ClassIdentity > :: class () , "SetValue" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InvestmentMenuContent_DropItemInfo as :: unity2 :: ClassIdentity > :: NAME , "SetValue" , e) , } } } pub unsafe fn set_value (this : InvestmentMenuContent_DropItemInfo , current : i32 , next : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (InvestmentMenuContent_DropItemInfo , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_value :: get_method_info () . method_ptr ,) ; inner (this , current , next , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_icon { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InvestmentMenuContent_DropItemInfo as :: unity2 :: ClassIdentity > :: class () , "SetIcon" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InvestmentMenuContent_DropItemInfo as :: unity2 :: ClassIdentity > :: NAME , "SetIcon" , e) , } } } pub unsafe fn set_icon (this : InvestmentMenuContent_DropItemInfo , icon_name : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (InvestmentMenuContent_DropItemInfo , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_icon :: get_method_info () . method_ptr ,) ; inner (this , icon_name , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InvestmentMenuContent_DropItemInfo as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InvestmentMenuContent_DropItemInfo as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : InvestmentMenuContent_DropItemInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (InvestmentMenuContent_DropItemInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-investmentmenucontent")]
+pub trait IInvestmentMenuContent_DropItemInfoMethods : IInvestmentMenuContent_DropItemInfo { # [doc = "`SetupObj()` overload"] fn setup_obj (self ,) -> () { unsafe { let __receiver = < InvestmentMenuContent_DropItemInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __InvestmentMenuContent_DropItemInfo_unity2_raw :: setup_obj (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Show()` overload"] fn show (self ,) -> () { unsafe { let __receiver = < InvestmentMenuContent_DropItemInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __InvestmentMenuContent_DropItemInfo_unity2_raw :: show (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Hide()` overload"] fn hide (self ,) -> () { unsafe { let __receiver = < InvestmentMenuContent_DropItemInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __InvestmentMenuContent_DropItemInfo_unity2_raw :: hide (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetTitle(::unity2::Il2CppString)` overload"] fn set_title (self , title : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < InvestmentMenuContent_DropItemInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __InvestmentMenuContent_DropItemInfo_unity2_raw :: set_title (__receiver , :: core :: convert :: Into :: into (title) , :: core :: option :: Option :: None) } } # [doc = "`SetValue(i32, i32)` overload"] fn set_value (self , current : impl :: core :: convert :: Into < i32 > , next : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < InvestmentMenuContent_DropItemInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __InvestmentMenuContent_DropItemInfo_unity2_raw :: set_value (__receiver , :: core :: convert :: Into :: into (current) , :: core :: convert :: Into :: into (next) , :: core :: option :: Option :: None) } } # [doc = "`SetIcon(::unity2::Il2CppString)` overload"] fn set_icon (self , icon_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < InvestmentMenuContent_DropItemInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __InvestmentMenuContent_DropItemInfo_unity2_raw :: set_icon (__receiver , :: core :: convert :: Into :: into (icon_name) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < InvestmentMenuContent_DropItemInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __InvestmentMenuContent_DropItemInfo_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-investmentmenucontent")]
+impl < __T : IInvestmentMenuContent_DropItemInfo > IInvestmentMenuContent_DropItemInfoMethods for __T { }
+
+#[cfg(feature = "app-investmentmenucontent")]
+impl InvestmentMenuContent_DropItemInfo { pub fn setup_obj_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InvestmentMenuContent_DropItemInfo_unity2_raw :: __lookup_setup_obj :: get_method_info () } pub fn show_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InvestmentMenuContent_DropItemInfo_unity2_raw :: __lookup_show :: get_method_info () } pub fn hide_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InvestmentMenuContent_DropItemInfo_unity2_raw :: __lookup_hide :: get_method_info () } pub fn set_title_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InvestmentMenuContent_DropItemInfo_unity2_raw :: __lookup_set_title :: get_method_info () } pub fn set_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InvestmentMenuContent_DropItemInfo_unity2_raw :: __lookup_set_value :: get_method_info () } pub fn set_icon_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InvestmentMenuContent_DropItemInfo_unity2_raw :: __lookup_set_icon :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InvestmentMenuContent_DropItemInfo_unity2_raw :: __lookup_ctor :: get_method_info () } }
+
+#[cfg(feature = "app-investmentmenucontent")]
+impl InvestmentMenuContent_DropItemInfo {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (InvestmentMenuContent_DropItemInfo) , :: core :: stringify ! (new) ,)) ; < Self as IInvestmentMenuContent_DropItemInfoMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-investmentmenucontent")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{
-        IInvestmentMenuContent, IInvestmentMenuContentMethods, IInvestmentMenuContent_AnimalInfo, IInvestmentMenuContent_AnimalInfoMethods,
-        IInvestmentMenuContent_BattleEnemyInfo, IInvestmentMenuContent_BattleEnemyInfoMethods, IInvestmentMenuContent_DropItemInfo,
-        IInvestmentMenuContent_DropItemInfoMethods, InvestmentMenuContent, InvestmentMenuContent_AnimalInfo, InvestmentMenuContent_BattleEnemyInfo,
-        InvestmentMenuContent_DropItemInfo,
-    };
-    #[cfg(feature = "app-basicmenucontent")]
-    pub use crate::app::basicmenucontent::IBasicMenuContentMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        app::basicmenucontent::IBasicMenuContent,
-        system::object::IObject,
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::InvestmentMenuContent_BattleEnemyInfo;
+    pub use super::IInvestmentMenuContent_BattleEnemyInfo;
+    pub use super::IInvestmentMenuContent_BattleEnemyInfoMethods;
+    pub use super::InvestmentMenuContent;
+    pub use super::IInvestmentMenuContent;
+    pub use super::IInvestmentMenuContentMethods;
+    pub use super::InvestmentMenuContent_AnimalInfo;
+    pub use super::IInvestmentMenuContent_AnimalInfo;
+    pub use super::IInvestmentMenuContent_AnimalInfoMethods;
+    pub use super::InvestmentMenuContent_DropItemInfo;
+    pub use super::IInvestmentMenuContent_DropItemInfo;
+    pub use super::IInvestmentMenuContent_DropItemInfoMethods;
+    pub use crate::app::basicmenucontent::IBasicMenuContent;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "app-basicmenucontent")] pub use crate::app::basicmenucontent::IBasicMenuContentMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

@@ -2,140 +2,37 @@
 
 #[cfg(feature = "unity_engine-customrendertexturemanager-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/customrendertexturemanager/CustomRenderTextureManager.md"))]
-    #[::unity2::class(namespace = "UnityEngine", name = "CustomRenderTextureManager")]
-    #[parent(crate::system::object::Object)]
-    pub struct CustomRenderTextureManager {
-        #[static_field]
-        #[rename(name = "textureLoaded")]
-        pub texture_loaded: crate::system::action_1::Action_1<crate::unity_engine::customrendertexture::CustomRenderTexture>,
-        #[static_field]
-        #[rename(name = "textureUnloaded")]
-        pub texture_unloaded: crate::system::action_1::Action_1<crate::unity_engine::customrendertexture::CustomRenderTexture>,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/customrendertexturemanager/CustomRenderTextureManager.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "CustomRenderTextureManager")] # [parent (crate :: system :: object :: Object)] pub struct CustomRenderTextureManager {
+# [static_field] # [rename (name = "textureLoaded")] pub texture_loaded : crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: customrendertexture :: CustomRenderTexture > ,
+# [static_field] # [rename (name = "textureUnloaded")] pub texture_unloaded : crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: customrendertexture :: CustomRenderTexture > ,
+}
+
 }
 
 #[cfg(feature = "unity_engine-customrendertexturemanager-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-customrendertexturemanager")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __CustomRenderTextureManager_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke_on_texture_loaded_internal {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::customrendertexture::CustomRenderTexture as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CustomRenderTextureManager as ::unity2::ClassIdentity>::class(),
-                "InvokeOnTextureLoaded_Internal",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CustomRenderTextureManager as ::unity2::ClassIdentity>::NAME,
-                        "InvokeOnTextureLoaded_Internal",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn invoke_on_texture_loaded_internal(
-        source: crate::unity_engine::customrendertexture::CustomRenderTexture,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::unity_engine::customrendertexture::CustomRenderTexture, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_invoke_on_texture_loaded_internal::get_method_info().method_ptr);
-        inner(source, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke_on_texture_unloaded_internal {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::customrendertexture::CustomRenderTexture as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CustomRenderTextureManager as ::unity2::ClassIdentity>::class(),
-                "InvokeOnTextureUnloaded_Internal",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CustomRenderTextureManager as ::unity2::ClassIdentity>::NAME,
-                        "InvokeOnTextureUnloaded_Internal",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn invoke_on_texture_unloaded_internal(
-        source: crate::unity_engine::customrendertexture::CustomRenderTexture,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::unity_engine::customrendertexture::CustomRenderTexture, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_invoke_on_texture_unloaded_internal::get_method_info().method_ptr);
-        inner(source, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __CustomRenderTextureManager_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_invoke_on_texture_loaded_internal { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: customrendertexture :: CustomRenderTexture as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CustomRenderTextureManager as :: unity2 :: ClassIdentity > :: class () , "InvokeOnTextureLoaded_Internal" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CustomRenderTextureManager as :: unity2 :: ClassIdentity > :: NAME , "InvokeOnTextureLoaded_Internal" , e) , } } } pub unsafe fn invoke_on_texture_loaded_internal (source : crate :: unity_engine :: customrendertexture :: CustomRenderTexture , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: unity_engine :: customrendertexture :: CustomRenderTexture , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_invoke_on_texture_loaded_internal :: get_method_info () . method_ptr ,) ; inner (source , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_invoke_on_texture_unloaded_internal { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: customrendertexture :: CustomRenderTexture as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CustomRenderTextureManager as :: unity2 :: ClassIdentity > :: class () , "InvokeOnTextureUnloaded_Internal" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CustomRenderTextureManager as :: unity2 :: ClassIdentity > :: NAME , "InvokeOnTextureUnloaded_Internal" , e) , } } } pub unsafe fn invoke_on_texture_unloaded_internal (source : crate :: unity_engine :: customrendertexture :: CustomRenderTexture , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: unity_engine :: customrendertexture :: CustomRenderTexture , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_invoke_on_texture_unloaded_internal :: get_method_info () . method_ptr ,) ; inner (source , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-customrendertexturemanager")]
-impl CustomRenderTextureManager {
-    #[doc = "`InvokeOnTextureLoaded_Internal(crate::unity_engine::customrendertexture::CustomRenderTexture)` overload"]
-    pub fn invoke_on_texture_loaded_internal(
-        source: impl ::core::convert::Into<crate::unity_engine::customrendertexture::CustomRenderTexture>,
-    ) -> () {
-        unsafe {
-            __CustomRenderTextureManager_unity2_raw::invoke_on_texture_loaded_internal(
-                ::core::convert::Into::into(source),
-                ::core::option::Option::None,
-            )
-        }
-    }
+impl CustomRenderTextureManager { # [doc = "`InvokeOnTextureLoaded_Internal(crate::unity_engine::customrendertexture::CustomRenderTexture)` overload"] pub fn invoke_on_texture_loaded_internal (source : impl :: core :: convert :: Into < crate :: unity_engine :: customrendertexture :: CustomRenderTexture >) -> () { unsafe { __CustomRenderTextureManager_unity2_raw :: invoke_on_texture_loaded_internal (:: core :: convert :: Into :: into (source) , :: core :: option :: Option :: None) } } # [doc = "`InvokeOnTextureUnloaded_Internal(crate::unity_engine::customrendertexture::CustomRenderTexture)` overload"] pub fn invoke_on_texture_unloaded_internal (source : impl :: core :: convert :: Into < crate :: unity_engine :: customrendertexture :: CustomRenderTexture >) -> () { unsafe { __CustomRenderTextureManager_unity2_raw :: invoke_on_texture_unloaded_internal (:: core :: convert :: Into :: into (source) , :: core :: option :: Option :: None) } } }
 
-    #[doc = "`InvokeOnTextureUnloaded_Internal(crate::unity_engine::customrendertexture::CustomRenderTexture)` overload"]
-    pub fn invoke_on_texture_unloaded_internal(
-        source: impl ::core::convert::Into<crate::unity_engine::customrendertexture::CustomRenderTexture>,
-    ) -> () {
-        unsafe {
-            __CustomRenderTextureManager_unity2_raw::invoke_on_texture_unloaded_internal(
-                ::core::convert::Into::into(source),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+#[cfg(feature = "unity_engine-customrendertexturemanager")]
+impl CustomRenderTextureManager { pub fn invoke_on_texture_loaded_internal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CustomRenderTextureManager_unity2_raw :: __lookup_invoke_on_texture_loaded_internal :: get_method_info () } pub fn invoke_on_texture_unloaded_internal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CustomRenderTextureManager_unity2_raw :: __lookup_invoke_on_texture_unloaded_internal :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-customrendertexturemanager")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{CustomRenderTextureManager, ICustomRenderTextureManager};
+    pub use super::CustomRenderTextureManager;
+    pub use super::ICustomRenderTextureManager;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

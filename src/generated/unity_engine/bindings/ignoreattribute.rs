@@ -2,134 +2,39 @@
 
 #[cfg(feature = "unity_engine-bindings-ignoreattribute-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/bindings/ignoreattribute/IgnoreAttribute.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Bindings", name = "IgnoreAttribute")]
-    pub struct IgnoreAttribute {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/bindings/ignoreattribute/IgnoreAttribute.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Bindings" , name = "IgnoreAttribute")] pub struct IgnoreAttribute {}
+
 }
 
 #[cfg(feature = "unity_engine-bindings-ignoreattribute-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-bindings-ignoreattribute")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __IgnoreAttribute_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_does_not_contribute_to_size {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <IgnoreAttribute as ::unity2::ClassIdentity>::class(),
-                "set_DoesNotContributeToSize",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <IgnoreAttribute as ::unity2::ClassIdentity>::NAME,
-                        "set_DoesNotContributeToSize",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_does_not_contribute_to_size(this: IgnoreAttribute, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(IgnoreAttribute, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_does_not_contribute_to_size::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <IgnoreAttribute as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <IgnoreAttribute as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: IgnoreAttribute, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(IgnoreAttribute, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __IgnoreAttribute_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_does_not_contribute_to_size { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< IgnoreAttribute as :: unity2 :: ClassIdentity > :: class () , "set_DoesNotContributeToSize" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < IgnoreAttribute as :: unity2 :: ClassIdentity > :: NAME , "set_DoesNotContributeToSize" , e) , } } } pub unsafe fn set_does_not_contribute_to_size (this : IgnoreAttribute , value : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (IgnoreAttribute , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_does_not_contribute_to_size :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< IgnoreAttribute as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < IgnoreAttribute as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : IgnoreAttribute , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (IgnoreAttribute , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-bindings-ignoreattribute")]
-pub trait IIgnoreAttributeMethods: IIgnoreAttribute {
-    #[doc = "`set_DoesNotContributeToSize(bool)` overload"]
-    fn set_does_not_contribute_to_size(self, value: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver = <IgnoreAttribute as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __IgnoreAttribute_unity2_raw::set_does_not_contribute_to_size(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <IgnoreAttribute as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __IgnoreAttribute_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IIgnoreAttributeMethods : IIgnoreAttribute { # [doc = "`set_DoesNotContributeToSize(bool)` overload"] fn set_does_not_contribute_to_size (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < IgnoreAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IgnoreAttribute_unity2_raw :: set_does_not_contribute_to_size (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < IgnoreAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IgnoreAttribute_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-bindings-ignoreattribute")]
-impl<__T: IIgnoreAttribute> IIgnoreAttributeMethods for __T {}
+impl < __T : IIgnoreAttribute > IIgnoreAttributeMethods for __T { }
+
+#[cfg(feature = "unity_engine-bindings-ignoreattribute")]
+impl IgnoreAttribute { pub fn set_does_not_contribute_to_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __IgnoreAttribute_unity2_raw :: __lookup_set_does_not_contribute_to_size :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __IgnoreAttribute_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-bindings-ignoreattribute")]
 impl IgnoreAttribute {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(IgnoreAttribute),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IIgnoreAttributeMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (IgnoreAttribute) , :: core :: stringify ! (new) ,)) ; < Self as IIgnoreAttributeMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "unity_engine-bindings-ignoreattribute")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IIgnoreAttribute, IIgnoreAttributeMethods, IgnoreAttribute};
+    pub use super::IgnoreAttribute;
+    pub use super::IIgnoreAttribute;
+    pub use super::IIgnoreAttributeMethods;
 }

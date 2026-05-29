@@ -2,238 +2,81 @@
 
 #[cfg(feature = "unity_engine-touch-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        valuetype::{IValueType, ValueType},
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/touch/Touch.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct Touch {
-        pub m_finger_id: i32,
-        pub m_position: crate::unity_engine::vector2::Vector2,
-        pub m_raw_position: crate::unity_engine::vector2::Vector2,
-        pub m_position_delta: crate::unity_engine::vector2::Vector2,
-        pub m_time_delta: f32,
-        pub m_tap_count: i32,
-        pub m_phase: crate::unity_engine::touchphase::TouchPhase,
-        pub m_type: crate::unity_engine::touchtype::TouchType,
-        pub m_pressure: f32,
-        pub m_maximum_possible_pressure: f32,
-        pub m_radius: f32,
-        pub m_radius_variance: f32,
-        pub m_altitude_angle: f32,
-        pub m_azimuth_angle: f32,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
 
-    impl ::unity2::ClassIdentity for Touch {
-        const NAME: &'static str = "Touch";
-        const NAMESPACE: &'static str = "UnityEngine";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/touch/Touch.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct Touch {
+    pub m_finger_id: i32,
+    pub m_position: crate :: unity_engine :: vector2 :: Vector2,
+    pub m_raw_position: crate :: unity_engine :: vector2 :: Vector2,
+    pub m_position_delta: crate :: unity_engine :: vector2 :: Vector2,
+    pub m_time_delta: f32,
+    pub m_tap_count: i32,
+    pub m_phase: crate :: unity_engine :: touchphase :: TouchPhase,
+    pub m_type: crate :: unity_engine :: touchtype :: TouchType,
+    pub m_pressure: f32,
+    pub m_maximum_possible_pressure: f32,
+    pub m_radius: f32,
+    pub m_radius_variance: f32,
+    pub m_altitude_angle: f32,
+    pub m_azimuth_angle: f32,
+}
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+
+impl ::unity2::ClassIdentity for Touch {
+    const NAMESPACE: &'static str = "UnityEngine";
+
+    const NAME: &'static str = "Touch";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for Touch {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl ::unity2::IlType for Touch {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
+
+}
+
 }
 
 #[cfg(feature = "unity_engine-touch-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-touch")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __Touch_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_finger_id {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Touch as ::unity2::ClassIdentity>::class(), "get_fingerId", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Touch as ::unity2::ClassIdentity>::NAME,
-                        "get_fingerId",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_finger_id(this: Touch, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(Touch, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_finger_id::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_position {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Touch as ::unity2::ClassIdentity>::class(), "get_position", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Touch as ::unity2::ClassIdentity>::NAME,
-                        "get_position",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_position(this: Touch, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::vector2::Vector2 {
-        let inner: extern "C" fn(Touch, ::unity2::OptionalMethod) -> crate::unity_engine::vector2::Vector2 =
-            ::core::mem::transmute(__lookup_get_position::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_delta_position {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Touch as ::unity2::ClassIdentity>::class(),
-                "get_deltaPosition",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Touch as ::unity2::ClassIdentity>::NAME,
-                        "get_deltaPosition",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_delta_position(this: Touch, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::vector2::Vector2 {
-        let inner: extern "C" fn(Touch, ::unity2::OptionalMethod) -> crate::unity_engine::vector2::Vector2 =
-            ::core::mem::transmute(__lookup_get_delta_position::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_phase {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Touch as ::unity2::ClassIdentity>::class(), "get_phase", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Touch as ::unity2::ClassIdentity>::NAME,
-                        "get_phase",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_phase(this: Touch, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::touchphase::TouchPhase {
-        let inner: extern "C" fn(Touch, ::unity2::OptionalMethod) -> crate::unity_engine::touchphase::TouchPhase =
-            ::core::mem::transmute(__lookup_get_phase::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_type {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Touch as ::unity2::ClassIdentity>::class(), "get_type", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Touch as ::unity2::ClassIdentity>::NAME,
-                        "get_type",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_type(this: Touch, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::touchtype::TouchType {
-        let inner: extern "C" fn(Touch, ::unity2::OptionalMethod) -> crate::unity_engine::touchtype::TouchType =
-            ::core::mem::transmute(__lookup_get_type::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __Touch_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_finger_id { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Touch as :: unity2 :: ClassIdentity > :: class () , "get_fingerId" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Touch as :: unity2 :: ClassIdentity > :: NAME , "get_fingerId" , e) , } } } pub unsafe fn get_finger_id (this : Touch , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (Touch , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_finger_id :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_position { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Touch as :: unity2 :: ClassIdentity > :: class () , "get_position" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Touch as :: unity2 :: ClassIdentity > :: NAME , "get_position" , e) , } } } pub unsafe fn get_position (this : Touch , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector2 :: Vector2 { let inner : extern "C" fn (Touch , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector2 :: Vector2 = :: core :: mem :: transmute (__lookup_get_position :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_delta_position { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Touch as :: unity2 :: ClassIdentity > :: class () , "get_deltaPosition" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Touch as :: unity2 :: ClassIdentity > :: NAME , "get_deltaPosition" , e) , } } } pub unsafe fn get_delta_position (this : Touch , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector2 :: Vector2 { let inner : extern "C" fn (Touch , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector2 :: Vector2 = :: core :: mem :: transmute (__lookup_get_delta_position :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_phase { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Touch as :: unity2 :: ClassIdentity > :: class () , "get_phase" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Touch as :: unity2 :: ClassIdentity > :: NAME , "get_phase" , e) , } } } pub unsafe fn get_phase (this : Touch , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: touchphase :: TouchPhase { let inner : extern "C" fn (Touch , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: touchphase :: TouchPhase = :: core :: mem :: transmute (__lookup_get_phase :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_type { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Touch as :: unity2 :: ClassIdentity > :: class () , "get_type" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Touch as :: unity2 :: ClassIdentity > :: NAME , "get_type" , e) , } } } pub unsafe fn get_type (this : Touch , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: touchtype :: TouchType { let inner : extern "C" fn (Touch , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: touchtype :: TouchType = :: core :: mem :: transmute (__lookup_get_type :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-touch")]
-impl Touch {
-    #[doc = "`get_fingerId()` overload"]
-    pub fn get_finger_id(self) -> i32 {
-        unsafe { __Touch_unity2_raw::get_finger_id(self, ::core::option::Option::None) }
-    }
+impl Touch { # [doc = "`get_fingerId()` overload"] pub fn get_finger_id (self ,) -> i32 { unsafe { __Touch_unity2_raw :: get_finger_id (self , :: core :: option :: Option :: None) } } # [doc = "`get_position()` overload"] pub fn get_position (self ,) -> crate :: unity_engine :: vector2 :: Vector2 { unsafe { __Touch_unity2_raw :: get_position (self , :: core :: option :: Option :: None) } } # [doc = "`get_deltaPosition()` overload"] pub fn get_delta_position (self ,) -> crate :: unity_engine :: vector2 :: Vector2 { unsafe { __Touch_unity2_raw :: get_delta_position (self , :: core :: option :: Option :: None) } } # [doc = "`get_phase()` overload"] pub fn get_phase (self ,) -> crate :: unity_engine :: touchphase :: TouchPhase { unsafe { __Touch_unity2_raw :: get_phase (self , :: core :: option :: Option :: None) } } # [doc = "`get_type()` overload"] pub fn get_type (self ,) -> crate :: unity_engine :: touchtype :: TouchType { unsafe { __Touch_unity2_raw :: get_type (self , :: core :: option :: Option :: None) } } }
 
-    #[doc = "`get_position()` overload"]
-    pub fn get_position(self) -> crate::unity_engine::vector2::Vector2 {
-        unsafe { __Touch_unity2_raw::get_position(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_deltaPosition()` overload"]
-    pub fn get_delta_position(self) -> crate::unity_engine::vector2::Vector2 {
-        unsafe { __Touch_unity2_raw::get_delta_position(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_phase()` overload"]
-    pub fn get_phase(self) -> crate::unity_engine::touchphase::TouchPhase {
-        unsafe { __Touch_unity2_raw::get_phase(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_type()` overload"]
-    pub fn get_type(self) -> crate::unity_engine::touchtype::TouchType {
-        unsafe { __Touch_unity2_raw::get_type(self, ::core::option::Option::None) }
-    }
-}
+#[cfg(feature = "unity_engine-touch")]
+impl Touch { pub fn get_finger_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Touch_unity2_raw :: __lookup_get_finger_id :: get_method_info () } pub fn get_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Touch_unity2_raw :: __lookup_get_position :: get_method_info () } pub fn get_delta_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Touch_unity2_raw :: __lookup_get_delta_position :: get_method_info () } pub fn get_phase_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Touch_unity2_raw :: __lookup_get_phase :: get_method_info () } pub fn get_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Touch_unity2_raw :: __lookup_get_type :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-touch")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::Touch;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::system::{object::IObject, valuetype::IValueType};
+    pub use crate::system::object::IObject;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

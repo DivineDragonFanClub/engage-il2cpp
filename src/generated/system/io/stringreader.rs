@@ -2,373 +2,51 @@
 
 #[cfg(feature = "system-io-stringreader-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        io::textreader::{ITextReader, TextReader},
-        object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/stringreader/StringReader.md"))]
-    #[::unity2::class(namespace = "System.IO", name = "StringReader")]
-    #[parent(crate::system::io::textreader::TextReader)]
-    pub struct StringReader {
-        #[offset(24)]
-        #[rename(name = "_s")]
-        pub s: ::unity2::Il2CppString,
-        #[offset(32)]
-        #[rename(name = "_pos")]
-        pub pos: i32,
-        #[offset(36)]
-        #[rename(name = "_length")]
-        pub length: i32,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: io :: textreader :: { ITextReader , TextReader }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/stringreader/StringReader.md"))] # [:: unity2 :: class (namespace = "System.IO" , name = "StringReader")] # [parent (crate :: system :: io :: textreader :: TextReader)] pub struct StringReader {
+# [offset (24)] # [rename (name = "_s")] pub s : :: unity2 :: Il2CppString ,
+# [offset (32)] # [rename (name = "_pos")] pub pos : i32 ,
+# [offset (36)] # [rename (name = "_length")] pub length : i32 ,
+}
+
 }
 
 #[cfg(feature = "system-io-stringreader-types")]
 pub use __types::*;
 
 #[cfg(feature = "system-io-stringreader")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __StringReader_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<StringReader as ::unity2::ClassIdentity>::class(), ".ctor", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <StringReader as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: StringReader, s: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(StringReader, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, s, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_close {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<StringReader as ::unity2::ClassIdentity>::class(), "Close", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <StringReader as ::unity2::ClassIdentity>::NAME,
-                        "Close",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn close(this: StringReader, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(StringReader, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_close::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_dispose {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <StringReader as ::unity2::ClassIdentity>::class(),
-                "Dispose",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <StringReader as ::unity2::ClassIdentity>::NAME,
-                        "Dispose",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn dispose(this: StringReader, disposing: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(StringReader, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_dispose::get_method_info().method_ptr);
-        inner(this, disposing, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_peek {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<StringReader as ::unity2::ClassIdentity>::class(), "Peek", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <StringReader as ::unity2::ClassIdentity>::NAME,
-                        "Peek",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn peek(this: StringReader, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(StringReader, ::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(__lookup_peek::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_read {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<StringReader as ::unity2::ClassIdentity>::class(), "Read", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <StringReader as ::unity2::ClassIdentity>::NAME,
-                        "Read",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn read(this: StringReader, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(StringReader, ::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(__lookup_read::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_read_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Array<u16> as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<StringReader as ::unity2::ClassIdentity>::class(), "Read", 3, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <StringReader as ::unity2::ClassIdentity>::NAME,
-                        "Read",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn read_2(
-        this: StringReader,
-        buffer: ::unity2::Array<u16>,
-        index: i32,
-        count: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(StringReader, ::unity2::Array<u16>, i32, i32, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_read_2::get_method_info().method_ptr);
-        inner(this, buffer, index, count, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_read_to_end {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <StringReader as ::unity2::ClassIdentity>::class(),
-                "ReadToEnd",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <StringReader as ::unity2::ClassIdentity>::NAME,
-                        "ReadToEnd",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn read_to_end(this: StringReader, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(StringReader, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_read_to_end::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_read_line {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <StringReader as ::unity2::ClassIdentity>::class(),
-                "ReadLine",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <StringReader as ::unity2::ClassIdentity>::NAME,
-                        "ReadLine",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn read_line(this: StringReader, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(StringReader, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_read_line::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __StringReader_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< StringReader as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < StringReader as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : StringReader , s : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (StringReader , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , s , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_close { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< StringReader as :: unity2 :: ClassIdentity > :: class () , "Close" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < StringReader as :: unity2 :: ClassIdentity > :: NAME , "Close" , e) , } } } pub unsafe fn close (this : StringReader , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (StringReader , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_close :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_dispose { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< StringReader as :: unity2 :: ClassIdentity > :: class () , "Dispose" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < StringReader as :: unity2 :: ClassIdentity > :: NAME , "Dispose" , e) , } } } pub unsafe fn dispose (this : StringReader , disposing : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (StringReader , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_dispose :: get_method_info () . method_ptr ,) ; inner (this , disposing , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_peek { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< StringReader as :: unity2 :: ClassIdentity > :: class () , "Peek" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < StringReader as :: unity2 :: ClassIdentity > :: NAME , "Peek" , e) , } } } pub unsafe fn peek (this : StringReader , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (StringReader , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_peek :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_read { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< StringReader as :: unity2 :: ClassIdentity > :: class () , "Read" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < StringReader as :: unity2 :: ClassIdentity > :: NAME , "Read" , e) , } } } pub unsafe fn read (this : StringReader , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (StringReader , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_read :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_read_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < u16 > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< StringReader as :: unity2 :: ClassIdentity > :: class () , "Read" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < StringReader as :: unity2 :: ClassIdentity > :: NAME , "Read" , e) , } } } pub unsafe fn read_2 (this : StringReader , buffer : :: unity2 :: Array < u16 > , index : i32 , count : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (StringReader , :: unity2 :: Array < u16 > , i32 , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_read_2 :: get_method_info () . method_ptr ,) ; inner (this , buffer , index , count , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_read_to_end { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< StringReader as :: unity2 :: ClassIdentity > :: class () , "ReadToEnd" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < StringReader as :: unity2 :: ClassIdentity > :: NAME , "ReadToEnd" , e) , } } } pub unsafe fn read_to_end (this : StringReader , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (StringReader , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_read_to_end :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_read_line { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< StringReader as :: unity2 :: ClassIdentity > :: class () , "ReadLine" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < StringReader as :: unity2 :: ClassIdentity > :: NAME , "ReadLine" , e) , } } } pub unsafe fn read_line (this : StringReader , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (StringReader , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_read_line :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "system-io-stringreader")]
-pub trait IStringReaderMethods: IStringReader {
-    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
-    fn ctor(self, s: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver = <StringReader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __StringReader_unity2_raw::ctor(__receiver, ::core::convert::Into::into(s), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Close()` overload"]
-    fn close(self) -> () {
-        unsafe {
-            let __receiver = <StringReader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __StringReader_unity2_raw::close(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Dispose(bool)` overload"]
-    fn dispose(self, disposing: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver = <StringReader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __StringReader_unity2_raw::dispose(__receiver, ::core::convert::Into::into(disposing), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Peek()` overload"]
-    fn peek(self) -> i32 {
-        unsafe {
-            let __receiver = <StringReader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __StringReader_unity2_raw::peek(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Read()` overload"]
-    fn read(self) -> i32 {
-        unsafe {
-            let __receiver = <StringReader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __StringReader_unity2_raw::read(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Read(::unity2::Array<u16>, i32, i32)` overload"]
-    fn read_2(
-        self,
-        buffer: impl ::core::convert::Into<::unity2::Array<u16>>,
-        index: impl ::core::convert::Into<i32>,
-        count: impl ::core::convert::Into<i32>,
-    ) -> i32 {
-        unsafe {
-            let __receiver = <StringReader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __StringReader_unity2_raw::read_2(
-                __receiver,
-                ::core::convert::Into::into(buffer),
-                ::core::convert::Into::into(index),
-                ::core::convert::Into::into(count),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ReadToEnd()` overload"]
-    fn read_to_end(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <StringReader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __StringReader_unity2_raw::read_to_end(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ReadLine()` overload"]
-    fn read_line(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <StringReader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __StringReader_unity2_raw::read_line(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IStringReaderMethods : IStringReader { # [doc = "`.ctor(::unity2::Il2CppString)` overload"] fn ctor (self , s : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < StringReader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __StringReader_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (s) , :: core :: option :: Option :: None) } } # [doc = "`Close()` overload"] fn close (self ,) -> () { unsafe { let __receiver = < StringReader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __StringReader_unity2_raw :: close (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Dispose(bool)` overload"] fn dispose (self , disposing : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < StringReader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __StringReader_unity2_raw :: dispose (__receiver , :: core :: convert :: Into :: into (disposing) , :: core :: option :: Option :: None) } } # [doc = "`Peek()` overload"] fn peek (self ,) -> i32 { unsafe { let __receiver = < StringReader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __StringReader_unity2_raw :: peek (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Read()` overload"] fn read (self ,) -> i32 { unsafe { let __receiver = < StringReader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __StringReader_unity2_raw :: read (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Read(::unity2::Array<u16>, i32, i32)` overload"] fn read_2 (self , buffer : impl :: core :: convert :: Into < :: unity2 :: Array < u16 > > , index : impl :: core :: convert :: Into < i32 > , count : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { let __receiver = < StringReader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __StringReader_unity2_raw :: read_2 (__receiver , :: core :: convert :: Into :: into (buffer) , :: core :: convert :: Into :: into (index) , :: core :: convert :: Into :: into (count) , :: core :: option :: Option :: None) } } # [doc = "`ReadToEnd()` overload"] fn read_to_end (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < StringReader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __StringReader_unity2_raw :: read_to_end (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ReadLine()` overload"] fn read_line (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < StringReader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __StringReader_unity2_raw :: read_line (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "system-io-stringreader")]
-impl<__T: IStringReader> IStringReaderMethods for __T {}
+impl < __T : IStringReader > IStringReaderMethods for __T { }
+
+#[cfg(feature = "system-io-stringreader")]
+impl StringReader { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __StringReader_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn close_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __StringReader_unity2_raw :: __lookup_close :: get_method_info () } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __StringReader_unity2_raw :: __lookup_dispose :: get_method_info () } pub fn peek_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __StringReader_unity2_raw :: __lookup_peek :: get_method_info () } pub fn read_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __StringReader_unity2_raw :: __lookup_read :: get_method_info () } pub fn read_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __StringReader_unity2_raw :: __lookup_read_2 :: get_method_info () } pub fn read_to_end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __StringReader_unity2_raw :: __lookup_read_to_end :: get_method_info () } pub fn read_line_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __StringReader_unity2_raw :: __lookup_read_line :: get_method_info () } }
 
 #[cfg(feature = "system-io-stringreader")]
 impl StringReader {
-    #[doc = "`.ctor(::unity2::Il2CppString)` — overload selector"]
-    pub fn new(s: ::unity2::Il2CppString) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(StringReader), ::core::stringify!(new),));
-        <Self as IStringReaderMethods>::ctor(this, s);
-        this
-    }
+# [doc = "`.ctor(::unity2::Il2CppString)` — overload selector"] pub fn new (s : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (StringReader) , :: core :: stringify ! (new) ,)) ; < Self as IStringReaderMethods > :: ctor (this , s) ; this }
 }
 
 #[cfg(feature = "system-io-stringreader")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IStringReader, IStringReaderMethods, StringReader};
-    #[cfg(feature = "system-io-textreader")]
-    pub use crate::system::io::textreader::ITextReaderMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::system::{io::textreader::ITextReader, object::IObject};
+    pub use super::StringReader;
+    pub use super::IStringReader;
+    pub use super::IStringReaderMethods;
+    pub use crate::system::io::textreader::ITextReader;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-io-textreader")] pub use crate::system::io::textreader::ITextReaderMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

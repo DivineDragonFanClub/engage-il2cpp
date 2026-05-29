@@ -2,355 +2,70 @@
 
 #[cfg(feature = "root-akbank-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        root::aktriggerhandler::{AkTriggerHandler, IAkTriggerHandler},
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akbank/AkBank.md"))]
-    #[::unity2::class(namespace = "", name = "AkBank")]
-    #[parent(crate::root::aktriggerhandler::AkTriggerHandler)]
-    pub struct AkBank {
-        #[offset(56)]
-        #[rename(name = "decodeBank")]
-        pub decode_bank: bool,
-        #[offset(57)]
-        #[rename(name = "loadAsynchronous")]
-        pub load_asynchronous: bool,
-        #[offset(58)]
-        #[rename(name = "saveDecodedBank")]
-        pub save_decoded_bank: bool,
-        #[offset(64)]
-        #[rename(name = "unloadTriggerList")]
-        pub unload_trigger_list: crate::system::collections::generic::list_1::List_1<i32>,
-        #[offset(72)]
-        #[rename(name = "bankNameInternal")]
-        pub bank_name_internal: ::unity2::Il2CppString,
-        #[offset(80)]
-        #[rename(name = "valueGuidInternal")]
-        pub value_guid_internal: ::unity2::Array<u8>,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: root :: aktriggerhandler :: { AkTriggerHandler , IAkTriggerHandler }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akbank/AkBank.md"))] # [:: unity2 :: class (namespace = "" , name = "AkBank")] # [parent (crate :: root :: aktriggerhandler :: AkTriggerHandler)] pub struct AkBank {
+# [offset (56)] # [rename (name = "decodeBank")] pub decode_bank : bool ,
+# [offset (57)] # [rename (name = "loadAsynchronous")] pub load_asynchronous : bool ,
+# [offset (58)] # [rename (name = "saveDecodedBank")] pub save_decoded_bank : bool ,
+# [offset (64)] # [rename (name = "unloadTriggerList")] pub unload_trigger_list : crate :: system :: collections :: generic :: list_1 :: List_1 < i32 > ,
+# [offset (72)] # [rename (name = "bankNameInternal")] pub bank_name_internal : :: unity2 :: Il2CppString ,
+# [offset (80)] # [rename (name = "valueGuidInternal")] pub value_guid_internal : :: unity2 :: Array < u8 > ,
+}
+
 }
 
 #[cfg(feature = "root-akbank-types")]
 pub use __types::*;
 
 #[cfg(feature = "root-akbank")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AkBank_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_awake {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<AkBank as ::unity2::ClassIdentity>::class(), "Awake", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <AkBank as ::unity2::ClassIdentity>::NAME, "Awake", e),
-            }
-        }
-    }
-    pub unsafe fn awake(this: AkBank, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AkBank, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_awake::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_start {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<AkBank as ::unity2::ClassIdentity>::class(), "Start", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <AkBank as ::unity2::ClassIdentity>::NAME, "Start", e),
-            }
-        }
-    }
-    pub unsafe fn start(this: AkBank, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AkBank, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_start::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_handle_event {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<AkBank as ::unity2::ClassIdentity>::class(), "HandleEvent", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkBank as ::unity2::ClassIdentity>::NAME,
-                        "HandleEvent",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn handle_event(
-        this: AkBank,
-        in_game_object: crate::unity_engine::gameobject::GameObject,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(AkBank, crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_handle_event::get_method_info().method_ptr);
-        inner(this, in_game_object, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_unload_bank {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<AkBank as ::unity2::ClassIdentity>::class(), "UnloadBank", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkBank as ::unity2::ClassIdentity>::NAME,
-                        "UnloadBank",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn unload_bank(
-        this: AkBank,
-        in_game_object: crate::unity_engine::gameobject::GameObject,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(AkBank, crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_unload_bank::get_method_info().method_ptr);
-        inner(this, in_game_object, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_destroy {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<AkBank as ::unity2::ClassIdentity>::class(), "OnDestroy", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkBank as ::unity2::ClassIdentity>::NAME,
-                        "OnDestroy",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_destroy(this: AkBank, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AkBank, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_on_destroy::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_bank_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<AkBank as ::unity2::ClassIdentity>::class(), "get_bankName", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkBank as ::unity2::ClassIdentity>::NAME,
-                        "get_bankName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_bank_name(this: AkBank, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(AkBank, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_bank_name::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_value_guid {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkBank as ::unity2::ClassIdentity>::class(),
-                "get_valueGuid",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkBank as ::unity2::ClassIdentity>::NAME,
-                        "get_valueGuid",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_value_guid(this: AkBank, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Array<u8> {
-        let inner: extern "C" fn(AkBank, ::unity2::OptionalMethod) -> ::unity2::Array<u8> =
-            ::core::mem::transmute(__lookup_get_value_guid::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<AkBank as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <AkBank as ::unity2::ClassIdentity>::NAME, ".ctor", e),
-            }
-        }
-    }
-    pub unsafe fn ctor(this: AkBank, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AkBank, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __AkBank_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_awake { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkBank as :: unity2 :: ClassIdentity > :: class () , "Awake" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkBank as :: unity2 :: ClassIdentity > :: NAME , "Awake" , e) , } } } pub unsafe fn awake (this : AkBank , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkBank , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_awake :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_start { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkBank as :: unity2 :: ClassIdentity > :: class () , "Start" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkBank as :: unity2 :: ClassIdentity > :: NAME , "Start" , e) , } } } pub unsafe fn start (this : AkBank , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkBank , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_start :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_handle_event { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: gameobject :: GameObject as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkBank as :: unity2 :: ClassIdentity > :: class () , "HandleEvent" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkBank as :: unity2 :: ClassIdentity > :: NAME , "HandleEvent" , e) , } } } pub unsafe fn handle_event (this : AkBank , in_game_object : crate :: unity_engine :: gameobject :: GameObject , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkBank , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_handle_event :: get_method_info () . method_ptr ,) ; inner (this , in_game_object , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_unload_bank { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: gameobject :: GameObject as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkBank as :: unity2 :: ClassIdentity > :: class () , "UnloadBank" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkBank as :: unity2 :: ClassIdentity > :: NAME , "UnloadBank" , e) , } } } pub unsafe fn unload_bank (this : AkBank , in_game_object : crate :: unity_engine :: gameobject :: GameObject , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkBank , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_unload_bank :: get_method_info () . method_ptr ,) ; inner (this , in_game_object , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_destroy { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkBank as :: unity2 :: ClassIdentity > :: class () , "OnDestroy" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkBank as :: unity2 :: ClassIdentity > :: NAME , "OnDestroy" , e) , } } } pub unsafe fn on_destroy (this : AkBank , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkBank , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_destroy :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_bank_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkBank as :: unity2 :: ClassIdentity > :: class () , "get_bankName" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkBank as :: unity2 :: ClassIdentity > :: NAME , "get_bankName" , e) , } } } pub unsafe fn get_bank_name (this : AkBank , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (AkBank , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_bank_name :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_value_guid { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkBank as :: unity2 :: ClassIdentity > :: class () , "get_valueGuid" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkBank as :: unity2 :: ClassIdentity > :: NAME , "get_valueGuid" , e) , } } } pub unsafe fn get_value_guid (this : AkBank , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < u8 > { let inner : extern "C" fn (AkBank , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < u8 > = :: core :: mem :: transmute (__lookup_get_value_guid :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkBank as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkBank as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : AkBank , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkBank , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "root-akbank")]
-pub trait IAkBankMethods: IAkBank {
-    #[doc = "`Awake()` overload"]
-    fn awake(self) -> () {
-        unsafe {
-            let __receiver = <AkBank as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkBank_unity2_raw::awake(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Start()` overload"]
-    fn start(self) -> () {
-        unsafe {
-            let __receiver = <AkBank as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkBank_unity2_raw::start(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`HandleEvent(crate::unity_engine::gameobject::GameObject)` overload"]
-    fn handle_event(self, in_game_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>) -> () {
-        unsafe {
-            let __receiver = <AkBank as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkBank_unity2_raw::handle_event(__receiver, ::core::convert::Into::into(in_game_object), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`UnloadBank(crate::unity_engine::gameobject::GameObject)` overload"]
-    fn unload_bank(self, in_game_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>) -> () {
-        unsafe {
-            let __receiver = <AkBank as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkBank_unity2_raw::unload_bank(__receiver, ::core::convert::Into::into(in_game_object), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnDestroy()` overload"]
-    fn on_destroy(self) -> () {
-        unsafe {
-            let __receiver = <AkBank as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkBank_unity2_raw::on_destroy(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_bankName()` overload"]
-    fn get_bank_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <AkBank as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkBank_unity2_raw::get_bank_name(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_valueGuid()` overload"]
-    fn get_value_guid(self) -> ::unity2::Array<u8> {
-        unsafe {
-            let __receiver = <AkBank as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkBank_unity2_raw::get_value_guid(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <AkBank as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkBank_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IAkBankMethods : IAkBank { # [doc = "`Awake()` overload"] fn awake (self ,) -> () { unsafe { let __receiver = < AkBank as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkBank_unity2_raw :: awake (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < AkBank as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkBank_unity2_raw :: start (__receiver , :: core :: option :: Option :: None) } } # [doc = "`HandleEvent(crate::unity_engine::gameobject::GameObject)` overload"] fn handle_event (self , in_game_object : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> () { unsafe { let __receiver = < AkBank as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkBank_unity2_raw :: handle_event (__receiver , :: core :: convert :: Into :: into (in_game_object) , :: core :: option :: Option :: None) } } # [doc = "`UnloadBank(crate::unity_engine::gameobject::GameObject)` overload"] fn unload_bank (self , in_game_object : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> () { unsafe { let __receiver = < AkBank as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkBank_unity2_raw :: unload_bank (__receiver , :: core :: convert :: Into :: into (in_game_object) , :: core :: option :: Option :: None) } } # [doc = "`OnDestroy()` overload"] fn on_destroy (self ,) -> () { unsafe { let __receiver = < AkBank as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkBank_unity2_raw :: on_destroy (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_bankName()` overload"] fn get_bank_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < AkBank as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkBank_unity2_raw :: get_bank_name (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_valueGuid()` overload"] fn get_value_guid (self ,) -> :: unity2 :: Array < u8 > { unsafe { let __receiver = < AkBank as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkBank_unity2_raw :: get_value_guid (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AkBank as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkBank_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "root-akbank")]
-impl<__T: IAkBank> IAkBankMethods for __T {}
+impl < __T : IAkBank > IAkBankMethods for __T { }
+
+#[cfg(feature = "root-akbank")]
+impl AkBank { pub fn awake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkBank_unity2_raw :: __lookup_awake :: get_method_info () } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkBank_unity2_raw :: __lookup_start :: get_method_info () } pub fn handle_event_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkBank_unity2_raw :: __lookup_handle_event :: get_method_info () } pub fn unload_bank_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkBank_unity2_raw :: __lookup_unload_bank :: get_method_info () } pub fn on_destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkBank_unity2_raw :: __lookup_on_destroy :: get_method_info () } pub fn get_bank_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkBank_unity2_raw :: __lookup_get_bank_name :: get_method_info () } pub fn get_value_guid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkBank_unity2_raw :: __lookup_get_value_guid :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkBank_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "root-akbank")]
 impl AkBank {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(AkBank), ::core::stringify!(new),));
-        <Self as IAkBankMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkBank) , :: core :: stringify ! (new) ,)) ; < Self as IAkBankMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "root-akbank")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{AkBank, IAkBank, IAkBankMethods};
-    #[cfg(feature = "root-aktriggerhandler")]
-    pub use crate::root::aktriggerhandler::IAkTriggerHandlerMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        root::aktriggerhandler::IAkTriggerHandler,
-        system::object::IObject,
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::AkBank;
+    pub use super::IAkBank;
+    pub use super::IAkBankMethods;
+    pub use crate::root::aktriggerhandler::IAkTriggerHandler;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "root-aktriggerhandler")] pub use crate::root::aktriggerhandler::IAkTriggerHandlerMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

@@ -2,217 +2,55 @@
 
 #[cfg(feature = "app-godweaponrefinelevels-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godweaponrefinelevels/GodWeaponRefineLevels.md"))]
-    #[::unity2::class(namespace = "App", name = "GodWeaponRefineLevels")]
-    #[parent(crate::system::object::Object)]
-    pub struct GodWeaponRefineLevels {
-        #[offset(16)]
-        #[rename(name = "m_Capacity")]
-        pub m_capacity: u8,
-        #[offset(17)]
-        #[rename(name = "m_Power")]
-        pub m_power: u8,
-        #[offset(18)]
-        #[rename(name = "m_Hit")]
-        pub m_hit: u8,
-        #[offset(19)]
-        #[rename(name = "m_Critical")]
-        pub m_critical: u8,
-        #[offset(20)]
-        #[rename(name = "m_Avoid")]
-        pub m_avoid: u8,
-        #[offset(21)]
-        #[rename(name = "m_Secure")]
-        pub m_secure: u8,
-        #[offset(22)]
-        #[rename(name = "m_Tech")]
-        pub m_tech: u8,
-        #[offset(23)]
-        #[rename(name = "m_Quick")]
-        pub m_quick: u8,
-        #[offset(24)]
-        #[rename(name = "m_Def")]
-        pub m_def: u8,
-        #[offset(25)]
-        #[rename(name = "m_Mdef")]
-        pub m_mdef: u8,
-        #[offset(32)]
-        #[rename(name = "m_Sid")]
-        pub m_sid: ::unity2::Il2CppString,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godweaponrefinelevels/GodWeaponRefineLevels.md"))] # [:: unity2 :: class (namespace = "App" , name = "GodWeaponRefineLevels")] # [parent (crate :: system :: object :: Object)] pub struct GodWeaponRefineLevels {
+# [offset (16)] # [rename (name = "m_Capacity")] pub m_capacity : u8 ,
+# [offset (17)] # [rename (name = "m_Power")] pub m_power : u8 ,
+# [offset (18)] # [rename (name = "m_Hit")] pub m_hit : u8 ,
+# [offset (19)] # [rename (name = "m_Critical")] pub m_critical : u8 ,
+# [offset (20)] # [rename (name = "m_Avoid")] pub m_avoid : u8 ,
+# [offset (21)] # [rename (name = "m_Secure")] pub m_secure : u8 ,
+# [offset (22)] # [rename (name = "m_Tech")] pub m_tech : u8 ,
+# [offset (23)] # [rename (name = "m_Quick")] pub m_quick : u8 ,
+# [offset (24)] # [rename (name = "m_Def")] pub m_def : u8 ,
+# [offset (25)] # [rename (name = "m_Mdef")] pub m_mdef : u8 ,
+# [offset (32)] # [rename (name = "m_Sid")] pub m_sid : :: unity2 :: Il2CppString ,
+}
+
 }
 
 #[cfg(feature = "app-godweaponrefinelevels-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-godweaponrefinelevels")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __GodWeaponRefineLevels_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GodWeaponRefineLevels as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GodWeaponRefineLevels as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: GodWeaponRefineLevels, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GodWeaponRefineLevels, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_clear {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GodWeaponRefineLevels as ::unity2::ClassIdentity>::class(),
-                "Clear",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GodWeaponRefineLevels as ::unity2::ClassIdentity>::NAME,
-                        "Clear",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn clear(this: GodWeaponRefineLevels, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GodWeaponRefineLevels, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_copy_from {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::godweaponrefinelevels::GodWeaponRefineLevels as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GodWeaponRefineLevels as ::unity2::ClassIdentity>::class(),
-                "CopyFrom",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GodWeaponRefineLevels as ::unity2::ClassIdentity>::NAME,
-                        "CopyFrom",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn copy_from(
-        this: GodWeaponRefineLevels,
-        from: crate::app::godweaponrefinelevels::GodWeaponRefineLevels,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(GodWeaponRefineLevels, crate::app::godweaponrefinelevels::GodWeaponRefineLevels, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_copy_from::get_method_info().method_ptr);
-        inner(this, from, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __GodWeaponRefineLevels_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GodWeaponRefineLevels as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GodWeaponRefineLevels as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : GodWeaponRefineLevels , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GodWeaponRefineLevels , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_clear { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GodWeaponRefineLevels as :: unity2 :: ClassIdentity > :: class () , "Clear" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GodWeaponRefineLevels as :: unity2 :: ClassIdentity > :: NAME , "Clear" , e) , } } } pub unsafe fn clear (this : GodWeaponRefineLevels , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GodWeaponRefineLevels , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_clear :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_copy_from { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: godweaponrefinelevels :: GodWeaponRefineLevels as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GodWeaponRefineLevels as :: unity2 :: ClassIdentity > :: class () , "CopyFrom" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GodWeaponRefineLevels as :: unity2 :: ClassIdentity > :: NAME , "CopyFrom" , e) , } } } pub unsafe fn copy_from (this : GodWeaponRefineLevels , from : crate :: app :: godweaponrefinelevels :: GodWeaponRefineLevels , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GodWeaponRefineLevels , crate :: app :: godweaponrefinelevels :: GodWeaponRefineLevels , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_copy_from :: get_method_info () . method_ptr ,) ; inner (this , from , __unity2_method_info) } }
 
 #[cfg(feature = "app-godweaponrefinelevels")]
-pub trait IGodWeaponRefineLevelsMethods: IGodWeaponRefineLevels {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <GodWeaponRefineLevels as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GodWeaponRefineLevels_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Clear()` overload"]
-    fn clear(self) -> () {
-        unsafe {
-            let __receiver =
-                <GodWeaponRefineLevels as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GodWeaponRefineLevels_unity2_raw::clear(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CopyFrom(crate::app::godweaponrefinelevels::GodWeaponRefineLevels)` overload"]
-    fn copy_from(self, from: impl ::core::convert::Into<crate::app::godweaponrefinelevels::GodWeaponRefineLevels>) -> () {
-        unsafe {
-            let __receiver =
-                <GodWeaponRefineLevels as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GodWeaponRefineLevels_unity2_raw::copy_from(__receiver, ::core::convert::Into::into(from), ::core::option::Option::None)
-        }
-    }
-}
+pub trait IGodWeaponRefineLevelsMethods : IGodWeaponRefineLevels { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GodWeaponRefineLevels as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GodWeaponRefineLevels_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Clear()` overload"] fn clear (self ,) -> () { unsafe { let __receiver = < GodWeaponRefineLevels as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GodWeaponRefineLevels_unity2_raw :: clear (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CopyFrom(crate::app::godweaponrefinelevels::GodWeaponRefineLevels)` overload"] fn copy_from (self , from : impl :: core :: convert :: Into < crate :: app :: godweaponrefinelevels :: GodWeaponRefineLevels >) -> () { unsafe { let __receiver = < GodWeaponRefineLevels as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GodWeaponRefineLevels_unity2_raw :: copy_from (__receiver , :: core :: convert :: Into :: into (from) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-godweaponrefinelevels")]
-impl<__T: IGodWeaponRefineLevels> IGodWeaponRefineLevelsMethods for __T {}
+impl < __T : IGodWeaponRefineLevels > IGodWeaponRefineLevelsMethods for __T { }
+
+#[cfg(feature = "app-godweaponrefinelevels")]
+impl GodWeaponRefineLevels { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GodWeaponRefineLevels_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GodWeaponRefineLevels_unity2_raw :: __lookup_clear :: get_method_info () } pub fn copy_from_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GodWeaponRefineLevels_unity2_raw :: __lookup_copy_from :: get_method_info () } }
 
 #[cfg(feature = "app-godweaponrefinelevels")]
 impl GodWeaponRefineLevels {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GodWeaponRefineLevels),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGodWeaponRefineLevelsMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GodWeaponRefineLevels) , :: core :: stringify ! (new) ,)) ; < Self as IGodWeaponRefineLevelsMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-godweaponrefinelevels")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{GodWeaponRefineLevels, IGodWeaponRefineLevels, IGodWeaponRefineLevelsMethods};
+    pub use super::GodWeaponRefineLevels;
+    pub use super::IGodWeaponRefineLevels;
+    pub use super::IGodWeaponRefineLevelsMethods;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

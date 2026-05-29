@@ -2,227 +2,49 @@
 
 #[cfg(feature = "unity_engine-globaljavaobjectref-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/globaljavaobjectref/GlobalJavaObjectRef.md"))]
-    #[::unity2::class(namespace = "UnityEngine", name = "GlobalJavaObjectRef")]
-    #[parent(crate::system::object::Object)]
-    pub struct GlobalJavaObjectRef {
-        #[offset(16)]
-        #[rename(name = "m_disposed")]
-        pub m_disposed: bool,
-        #[offset(24)]
-        #[rename(name = "m_jobject")]
-        pub m_jobject: ::unity2::IntPtr,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/globaljavaobjectref/GlobalJavaObjectRef.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "GlobalJavaObjectRef")] # [parent (crate :: system :: object :: Object)] pub struct GlobalJavaObjectRef {
+# [offset (16)] # [rename (name = "m_disposed")] pub m_disposed : bool ,
+# [offset (24)] # [rename (name = "m_jobject")] pub m_jobject : :: unity2 :: IntPtr ,
+}
+
 }
 
 #[cfg(feature = "unity_engine-globaljavaobjectref-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-globaljavaobjectref")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __GlobalJavaObjectRef_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GlobalJavaObjectRef as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GlobalJavaObjectRef as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: GlobalJavaObjectRef, jobject: ::unity2::IntPtr, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GlobalJavaObjectRef, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, jobject, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_finalize {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GlobalJavaObjectRef as ::unity2::ClassIdentity>::class(),
-                "Finalize",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GlobalJavaObjectRef as ::unity2::ClassIdentity>::NAME,
-                        "Finalize",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn finalize(this: GlobalJavaObjectRef, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GlobalJavaObjectRef, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_finalize::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_op_implicit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::globaljavaobjectref::GlobalJavaObjectRef as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GlobalJavaObjectRef as ::unity2::ClassIdentity>::class(),
-                "op_Implicit",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GlobalJavaObjectRef as ::unity2::ClassIdentity>::NAME,
-                        "op_Implicit",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn op_implicit(
-        obj: crate::unity_engine::globaljavaobjectref::GlobalJavaObjectRef,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::IntPtr {
-        let inner: extern "C" fn(crate::unity_engine::globaljavaobjectref::GlobalJavaObjectRef, ::unity2::OptionalMethod) -> ::unity2::IntPtr =
-            ::core::mem::transmute(__lookup_op_implicit::get_method_info().method_ptr);
-        inner(obj, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_dispose {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GlobalJavaObjectRef as ::unity2::ClassIdentity>::class(),
-                "Dispose",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GlobalJavaObjectRef as ::unity2::ClassIdentity>::NAME,
-                        "Dispose",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn dispose(this: GlobalJavaObjectRef, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GlobalJavaObjectRef, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_dispose::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __GlobalJavaObjectRef_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GlobalJavaObjectRef as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GlobalJavaObjectRef as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : GlobalJavaObjectRef , jobject : :: unity2 :: IntPtr , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GlobalJavaObjectRef , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , jobject , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_finalize { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GlobalJavaObjectRef as :: unity2 :: ClassIdentity > :: class () , "Finalize" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GlobalJavaObjectRef as :: unity2 :: ClassIdentity > :: NAME , "Finalize" , e) , } } } pub unsafe fn finalize (this : GlobalJavaObjectRef , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GlobalJavaObjectRef , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_finalize :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_op_implicit { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: globaljavaobjectref :: GlobalJavaObjectRef as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GlobalJavaObjectRef as :: unity2 :: ClassIdentity > :: class () , "op_Implicit" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GlobalJavaObjectRef as :: unity2 :: ClassIdentity > :: NAME , "op_Implicit" , e) , } } } pub unsafe fn op_implicit (obj : crate :: unity_engine :: globaljavaobjectref :: GlobalJavaObjectRef , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: IntPtr { let inner : extern "C" fn (crate :: unity_engine :: globaljavaobjectref :: GlobalJavaObjectRef , :: unity2 :: OptionalMethod ,) -> :: unity2 :: IntPtr = :: core :: mem :: transmute (__lookup_op_implicit :: get_method_info () . method_ptr ,) ; inner (obj , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_dispose { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GlobalJavaObjectRef as :: unity2 :: ClassIdentity > :: class () , "Dispose" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GlobalJavaObjectRef as :: unity2 :: ClassIdentity > :: NAME , "Dispose" , e) , } } } pub unsafe fn dispose (this : GlobalJavaObjectRef , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GlobalJavaObjectRef , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_dispose :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "unity_engine-globaljavaobjectref")]
+impl GlobalJavaObjectRef { # [doc = "`op_Implicit(crate::unity_engine::globaljavaobjectref::GlobalJavaObjectRef)` overload"] pub fn op_implicit (obj : impl :: core :: convert :: Into < crate :: unity_engine :: globaljavaobjectref :: GlobalJavaObjectRef >) -> :: unity2 :: IntPtr { unsafe { __GlobalJavaObjectRef_unity2_raw :: op_implicit (:: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-globaljavaobjectref")]
+pub trait IGlobalJavaObjectRefMethods : IGlobalJavaObjectRef { # [doc = "`.ctor(::unity2::IntPtr)` overload"] fn ctor (self , jobject : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < GlobalJavaObjectRef as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GlobalJavaObjectRef_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (jobject) , :: core :: option :: Option :: None) } } # [doc = "`Finalize()` overload"] fn finalize (self ,) -> () { unsafe { let __receiver = < GlobalJavaObjectRef as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GlobalJavaObjectRef_unity2_raw :: finalize (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Dispose()` overload"] fn dispose (self ,) -> () { unsafe { let __receiver = < GlobalJavaObjectRef as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GlobalJavaObjectRef_unity2_raw :: dispose (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-globaljavaobjectref")]
+impl < __T : IGlobalJavaObjectRef > IGlobalJavaObjectRefMethods for __T { }
+
+#[cfg(feature = "unity_engine-globaljavaobjectref")]
+impl GlobalJavaObjectRef { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GlobalJavaObjectRef_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn finalize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GlobalJavaObjectRef_unity2_raw :: __lookup_finalize :: get_method_info () } pub fn op_implicit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GlobalJavaObjectRef_unity2_raw :: __lookup_op_implicit :: get_method_info () } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GlobalJavaObjectRef_unity2_raw :: __lookup_dispose :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-globaljavaobjectref")]
 impl GlobalJavaObjectRef {
-    #[doc = "`op_Implicit(crate::unity_engine::globaljavaobjectref::GlobalJavaObjectRef)` overload"]
-    pub fn op_implicit(obj: impl ::core::convert::Into<crate::unity_engine::globaljavaobjectref::GlobalJavaObjectRef>) -> ::unity2::IntPtr {
-        unsafe { __GlobalJavaObjectRef_unity2_raw::op_implicit(::core::convert::Into::into(obj), ::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "unity_engine-globaljavaobjectref")]
-pub trait IGlobalJavaObjectRefMethods: IGlobalJavaObjectRef {
-    #[doc = "`.ctor(::unity2::IntPtr)` overload"]
-    fn ctor(self, jobject: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
-        unsafe {
-            let __receiver = <GlobalJavaObjectRef as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GlobalJavaObjectRef_unity2_raw::ctor(__receiver, ::core::convert::Into::into(jobject), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Finalize()` overload"]
-    fn finalize(self) -> () {
-        unsafe {
-            let __receiver = <GlobalJavaObjectRef as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GlobalJavaObjectRef_unity2_raw::finalize(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Dispose()` overload"]
-    fn dispose(self) -> () {
-        unsafe {
-            let __receiver = <GlobalJavaObjectRef as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GlobalJavaObjectRef_unity2_raw::dispose(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-globaljavaobjectref")]
-impl<__T: IGlobalJavaObjectRef> IGlobalJavaObjectRefMethods for __T {}
-
-#[cfg(feature = "unity_engine-globaljavaobjectref")]
-impl GlobalJavaObjectRef {
-    #[doc = "`.ctor(::unity2::IntPtr)` — overload selector"]
-    pub fn new(jobject: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GlobalJavaObjectRef),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGlobalJavaObjectRefMethods>::ctor(this, jobject);
-        this
-    }
+# [doc = "`.ctor(::unity2::IntPtr)` — overload selector"] pub fn new (jobject : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GlobalJavaObjectRef) , :: core :: stringify ! (new) ,)) ; < Self as IGlobalJavaObjectRefMethods > :: ctor (this , jobject) ; this }
 }
 
 #[cfg(feature = "unity_engine-globaljavaobjectref")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{GlobalJavaObjectRef, IGlobalJavaObjectRef, IGlobalJavaObjectRefMethods};
+    pub use super::GlobalJavaObjectRef;
+    pub use super::IGlobalJavaObjectRef;
+    pub use super::IGlobalJavaObjectRefMethods;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

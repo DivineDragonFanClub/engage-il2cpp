@@ -2,523 +2,62 @@
 
 #[cfg(feature = "app-water-reflectionmanager-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/water/reflectionmanager/ReflectionManager.md"))]
-    #[::unity2::class(namespace = "App.Water", name = "ReflectionManager")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct ReflectionManager {
-        #[offset(24)]
-        #[rename(name = "WaterMeshRoot")]
-        pub water_mesh_root: crate::unity_engine::gameobject::GameObject,
-        #[offset(32)]
-        #[rename(name = "m_renderedList")]
-        pub m_rendered_list: crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/water/reflectionmanager/ReflectionManager.md"))] # [:: unity2 :: class (namespace = "App.Water" , name = "ReflectionManager")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct ReflectionManager {
+# [offset (24)] # [rename (name = "WaterMeshRoot")] pub water_mesh_root : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (32)] # [rename (name = "m_renderedList")] pub m_rendered_list : crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > ,
+}
+
 }
 
 #[cfg(feature = "app-water-reflectionmanager-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-water-reflectionmanager")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ReflectionManager_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_start {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ReflectionManager as ::unity2::ClassIdentity>::class(),
-                "Start",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ReflectionManager as ::unity2::ClassIdentity>::NAME,
-                        "Start",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn start(this: ReflectionManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ReflectionManager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_start::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ReflectionManager as ::unity2::ClassIdentity>::class(),
-                "Update",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ReflectionManager as ::unity2::ClassIdentity>::NAME,
-                        "Update",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update(this: ReflectionManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ReflectionManager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_late_update {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ReflectionManager as ::unity2::ClassIdentity>::class(),
-                "LateUpdate",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ReflectionManager as ::unity2::ClassIdentity>::NAME,
-                        "LateUpdate",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn late_update(this: ReflectionManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ReflectionManager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_late_update::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_remove_non_reference_camera {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ReflectionManager as ::unity2::ClassIdentity>::class(),
-                "RemoveNonReferenceCamera",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ReflectionManager as ::unity2::ClassIdentity>::NAME,
-                        "RemoveNonReferenceCamera",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn remove_non_reference_camera(this: ReflectionManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ReflectionManager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_remove_non_reference_camera::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_clear_rendered_list {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ReflectionManager as ::unity2::ClassIdentity>::class(),
-                "ClearRenderedList",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ReflectionManager as ::unity2::ClassIdentity>::NAME,
-                        "ClearRenderedList",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn clear_rendered_list(this: ReflectionManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ReflectionManager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_clear_rendered_list::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_render_reflection {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::camera::Camera as ::unity2::IlType>::il_type(),
-                <i16 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ReflectionManager as ::unity2::ClassIdentity>::class(),
-                "RenderReflection",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ReflectionManager as ::unity2::ClassIdentity>::NAME,
-                        "RenderReflection",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn render_reflection(
-        this: ReflectionManager,
-        tr: crate::unity_engine::transform::Transform,
-        cam: crate::unity_engine::camera::Camera,
-        number: i16,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            ReflectionManager,
-            crate::unity_engine::transform::Transform,
-            crate::unity_engine::camera::Camera,
-            i16,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(__lookup_render_reflection::get_method_info().method_ptr);
-        inner(this, tr, cam, number, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_reflection_camera {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ReflectionManager as ::unity2::ClassIdentity>::class(),
-                "AddReflectionCamera",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ReflectionManager as ::unity2::ClassIdentity>::NAME,
-                        "AddReflectionCamera",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_reflection_camera(
-        this: ReflectionManager,
-        obj_camera: crate::unity_engine::gameobject::GameObject,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::water::reflectioncamera::ReflectionCamera {
-        let inner: extern "C" fn(
-            ReflectionManager,
-            crate::unity_engine::gameobject::GameObject,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::water::reflectioncamera::ReflectionCamera =
-            ::core::mem::transmute(__lookup_add_reflection_camera::get_method_info().method_ptr);
-        inner(this, obj_camera, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_reflection_texture {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i16 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ReflectionManager as ::unity2::ClassIdentity>::class(),
-                "GetReflectionTexture",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ReflectionManager as ::unity2::ClassIdentity>::NAME,
-                        "GetReflectionTexture",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_reflection_texture(
-        this: ReflectionManager,
-        number: i16,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::rendertexture::RenderTexture {
-        let inner: extern "C" fn(ReflectionManager, i16, ::unity2::OptionalMethod) -> crate::unity_engine::rendertexture::RenderTexture =
-            ::core::mem::transmute(__lookup_get_reflection_texture::get_method_info().method_ptr);
-        inner(this, number, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_camera_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i16 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ReflectionManager as ::unity2::ClassIdentity>::class(),
-                "GetCameraName",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ReflectionManager as ::unity2::ClassIdentity>::NAME,
-                        "GetCameraName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_camera_name(this: ReflectionManager, number: i16, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(ReflectionManager, i16, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_camera_name::get_method_info().method_ptr);
-        inner(this, number, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ReflectionManager as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ReflectionManager as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: ReflectionManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ReflectionManager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ReflectionManager_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_start { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ReflectionManager as :: unity2 :: ClassIdentity > :: class () , "Start" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ReflectionManager as :: unity2 :: ClassIdentity > :: NAME , "Start" , e) , } } } pub unsafe fn start (this : ReflectionManager , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ReflectionManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_start :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ReflectionManager as :: unity2 :: ClassIdentity > :: class () , "Update" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ReflectionManager as :: unity2 :: ClassIdentity > :: NAME , "Update" , e) , } } } pub unsafe fn update (this : ReflectionManager , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ReflectionManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_late_update { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ReflectionManager as :: unity2 :: ClassIdentity > :: class () , "LateUpdate" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ReflectionManager as :: unity2 :: ClassIdentity > :: NAME , "LateUpdate" , e) , } } } pub unsafe fn late_update (this : ReflectionManager , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ReflectionManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_late_update :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_remove_non_reference_camera { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ReflectionManager as :: unity2 :: ClassIdentity > :: class () , "RemoveNonReferenceCamera" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ReflectionManager as :: unity2 :: ClassIdentity > :: NAME , "RemoveNonReferenceCamera" , e) , } } } pub unsafe fn remove_non_reference_camera (this : ReflectionManager , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ReflectionManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_remove_non_reference_camera :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_clear_rendered_list { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ReflectionManager as :: unity2 :: ClassIdentity > :: class () , "ClearRenderedList" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ReflectionManager as :: unity2 :: ClassIdentity > :: NAME , "ClearRenderedList" , e) , } } } pub unsafe fn clear_rendered_list (this : ReflectionManager , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ReflectionManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_clear_rendered_list :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_render_reflection { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: transform :: Transform as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: camera :: Camera as :: unity2 :: IlType > :: il_type () , < i16 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ReflectionManager as :: unity2 :: ClassIdentity > :: class () , "RenderReflection" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ReflectionManager as :: unity2 :: ClassIdentity > :: NAME , "RenderReflection" , e) , } } } pub unsafe fn render_reflection (this : ReflectionManager , tr : crate :: unity_engine :: transform :: Transform , cam : crate :: unity_engine :: camera :: Camera , number : i16 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (ReflectionManager , crate :: unity_engine :: transform :: Transform , crate :: unity_engine :: camera :: Camera , i16 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_render_reflection :: get_method_info () . method_ptr ,) ; inner (this , tr , cam , number , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_reflection_camera { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: gameobject :: GameObject as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ReflectionManager as :: unity2 :: ClassIdentity > :: class () , "AddReflectionCamera" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ReflectionManager as :: unity2 :: ClassIdentity > :: NAME , "AddReflectionCamera" , e) , } } } pub unsafe fn add_reflection_camera (this : ReflectionManager , obj_camera : crate :: unity_engine :: gameobject :: GameObject , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: water :: reflectioncamera :: ReflectionCamera { let inner : extern "C" fn (ReflectionManager , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> crate :: app :: water :: reflectioncamera :: ReflectionCamera = :: core :: mem :: transmute (__lookup_add_reflection_camera :: get_method_info () . method_ptr ,) ; inner (this , obj_camera , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_reflection_texture { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i16 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ReflectionManager as :: unity2 :: ClassIdentity > :: class () , "GetReflectionTexture" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ReflectionManager as :: unity2 :: ClassIdentity > :: NAME , "GetReflectionTexture" , e) , } } } pub unsafe fn get_reflection_texture (this : ReflectionManager , number : i16 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendertexture :: RenderTexture { let inner : extern "C" fn (ReflectionManager , i16 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendertexture :: RenderTexture = :: core :: mem :: transmute (__lookup_get_reflection_texture :: get_method_info () . method_ptr ,) ; inner (this , number , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_camera_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i16 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ReflectionManager as :: unity2 :: ClassIdentity > :: class () , "GetCameraName" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ReflectionManager as :: unity2 :: ClassIdentity > :: NAME , "GetCameraName" , e) , } } } pub unsafe fn get_camera_name (this : ReflectionManager , number : i16 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (ReflectionManager , i16 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_camera_name :: get_method_info () . method_ptr ,) ; inner (this , number , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ReflectionManager as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ReflectionManager as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : ReflectionManager , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ReflectionManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-water-reflectionmanager")]
-pub trait IReflectionManagerMethods: IReflectionManager {
-    #[doc = "`Start()` overload"]
-    fn start(self) -> () {
-        unsafe {
-            let __receiver = <ReflectionManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ReflectionManager_unity2_raw::start(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Update()` overload"]
-    fn update(self) -> () {
-        unsafe {
-            let __receiver = <ReflectionManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ReflectionManager_unity2_raw::update(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`LateUpdate()` overload"]
-    fn late_update(self) -> () {
-        unsafe {
-            let __receiver = <ReflectionManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ReflectionManager_unity2_raw::late_update(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`RemoveNonReferenceCamera()` overload"]
-    fn remove_non_reference_camera(self) -> () {
-        unsafe {
-            let __receiver = <ReflectionManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ReflectionManager_unity2_raw::remove_non_reference_camera(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ClearRenderedList()` overload"]
-    fn clear_rendered_list(self) -> () {
-        unsafe {
-            let __receiver = <ReflectionManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ReflectionManager_unity2_raw::clear_rendered_list(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`RenderReflection(crate::unity_engine::transform::Transform, crate::unity_engine::camera::Camera, i16)` overload"]
-    fn render_reflection(
-        self,
-        tr: impl ::core::convert::Into<crate::unity_engine::transform::Transform>,
-        cam: impl ::core::convert::Into<crate::unity_engine::camera::Camera>,
-        number: impl ::core::convert::Into<i16>,
-    ) -> bool {
-        unsafe {
-            let __receiver = <ReflectionManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ReflectionManager_unity2_raw::render_reflection(
-                __receiver,
-                ::core::convert::Into::into(tr),
-                ::core::convert::Into::into(cam),
-                ::core::convert::Into::into(number),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`AddReflectionCamera(crate::unity_engine::gameobject::GameObject)` overload"]
-    fn add_reflection_camera(
-        self,
-        obj_camera: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-    ) -> crate::app::water::reflectioncamera::ReflectionCamera {
-        unsafe {
-            let __receiver = <ReflectionManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ReflectionManager_unity2_raw::add_reflection_camera(__receiver, ::core::convert::Into::into(obj_camera), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetReflectionTexture(i16)` overload"]
-    fn get_reflection_texture(self, number: impl ::core::convert::Into<i16>) -> crate::unity_engine::rendertexture::RenderTexture {
-        unsafe {
-            let __receiver = <ReflectionManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ReflectionManager_unity2_raw::get_reflection_texture(__receiver, ::core::convert::Into::into(number), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetCameraName(i16)` overload"]
-    fn get_camera_name(self, number: impl ::core::convert::Into<i16>) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <ReflectionManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ReflectionManager_unity2_raw::get_camera_name(__receiver, ::core::convert::Into::into(number), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <ReflectionManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ReflectionManager_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IReflectionManagerMethods : IReflectionManager { # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < ReflectionManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ReflectionManager_unity2_raw :: start (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < ReflectionManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ReflectionManager_unity2_raw :: update (__receiver , :: core :: option :: Option :: None) } } # [doc = "`LateUpdate()` overload"] fn late_update (self ,) -> () { unsafe { let __receiver = < ReflectionManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ReflectionManager_unity2_raw :: late_update (__receiver , :: core :: option :: Option :: None) } } # [doc = "`RemoveNonReferenceCamera()` overload"] fn remove_non_reference_camera (self ,) -> () { unsafe { let __receiver = < ReflectionManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ReflectionManager_unity2_raw :: remove_non_reference_camera (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ClearRenderedList()` overload"] fn clear_rendered_list (self ,) -> () { unsafe { let __receiver = < ReflectionManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ReflectionManager_unity2_raw :: clear_rendered_list (__receiver , :: core :: option :: Option :: None) } } # [doc = "`RenderReflection(crate::unity_engine::transform::Transform, crate::unity_engine::camera::Camera, i16)` overload"] fn render_reflection (self , tr : impl :: core :: convert :: Into < crate :: unity_engine :: transform :: Transform > , cam : impl :: core :: convert :: Into < crate :: unity_engine :: camera :: Camera > , number : impl :: core :: convert :: Into < i16 >) -> bool { unsafe { let __receiver = < ReflectionManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ReflectionManager_unity2_raw :: render_reflection (__receiver , :: core :: convert :: Into :: into (tr) , :: core :: convert :: Into :: into (cam) , :: core :: convert :: Into :: into (number) , :: core :: option :: Option :: None) } } # [doc = "`AddReflectionCamera(crate::unity_engine::gameobject::GameObject)` overload"] fn add_reflection_camera (self , obj_camera : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> crate :: app :: water :: reflectioncamera :: ReflectionCamera { unsafe { let __receiver = < ReflectionManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ReflectionManager_unity2_raw :: add_reflection_camera (__receiver , :: core :: convert :: Into :: into (obj_camera) , :: core :: option :: Option :: None) } } # [doc = "`GetReflectionTexture(i16)` overload"] fn get_reflection_texture (self , number : impl :: core :: convert :: Into < i16 >) -> crate :: unity_engine :: rendertexture :: RenderTexture { unsafe { let __receiver = < ReflectionManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ReflectionManager_unity2_raw :: get_reflection_texture (__receiver , :: core :: convert :: Into :: into (number) , :: core :: option :: Option :: None) } } # [doc = "`GetCameraName(i16)` overload"] fn get_camera_name (self , number : impl :: core :: convert :: Into < i16 >) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ReflectionManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ReflectionManager_unity2_raw :: get_camera_name (__receiver , :: core :: convert :: Into :: into (number) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ReflectionManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ReflectionManager_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-water-reflectionmanager")]
-impl<__T: IReflectionManager> IReflectionManagerMethods for __T {}
+impl < __T : IReflectionManager > IReflectionManagerMethods for __T { }
+
+#[cfg(feature = "app-water-reflectionmanager")]
+impl ReflectionManager { pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ReflectionManager_unity2_raw :: __lookup_start :: get_method_info () } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ReflectionManager_unity2_raw :: __lookup_update :: get_method_info () } pub fn late_update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ReflectionManager_unity2_raw :: __lookup_late_update :: get_method_info () } pub fn remove_non_reference_camera_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ReflectionManager_unity2_raw :: __lookup_remove_non_reference_camera :: get_method_info () } pub fn clear_rendered_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ReflectionManager_unity2_raw :: __lookup_clear_rendered_list :: get_method_info () } pub fn render_reflection_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ReflectionManager_unity2_raw :: __lookup_render_reflection :: get_method_info () } pub fn add_reflection_camera_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ReflectionManager_unity2_raw :: __lookup_add_reflection_camera :: get_method_info () } pub fn get_reflection_texture_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ReflectionManager_unity2_raw :: __lookup_get_reflection_texture :: get_method_info () } pub fn get_camera_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ReflectionManager_unity2_raw :: __lookup_get_camera_name :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ReflectionManager_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-water-reflectionmanager")]
 impl ReflectionManager {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ReflectionManager),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IReflectionManagerMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ReflectionManager) , :: core :: stringify ! (new) ,)) ; < Self as IReflectionManagerMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-water-reflectionmanager")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IReflectionManager, IReflectionManagerMethods, ReflectionManager};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        system::object::IObject,
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::ReflectionManager;
+    pub use super::IReflectionManager;
+    pub use super::IReflectionManagerMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

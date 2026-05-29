@@ -2,257 +2,56 @@
 
 #[cfg(feature = "unity_engine-vfx-visualeffect-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/vfx/visualeffect/VisualEffect.md"))]
-    #[::unity2::class(namespace = "UnityEngine.VFX", name = "VisualEffect")]
-    #[parent(crate::unity_engine::behaviour::Behaviour)]
-    pub struct VisualEffect {
-        #[offset(24)]
-        #[rename(name = "m_cachedEventAttribute")]
-        pub m_cached_event_attribute: crate::unity_engine::vfx::vfxeventattribute::VFXEventAttribute,
-        #[offset(32)]
-        #[rename(name = "outputEventReceived")]
-        pub output_event_received: crate::system::action_1::Action_1<crate::unity_engine::vfx::vfxoutputeventargs::VFXOutputEventArgs>,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/vfx/visualeffect/VisualEffect.md"))] # [:: unity2 :: class (namespace = "UnityEngine.VFX" , name = "VisualEffect")] # [parent (crate :: unity_engine :: behaviour :: Behaviour)] pub struct VisualEffect {
+# [offset (24)] # [rename (name = "m_cachedEventAttribute")] pub m_cached_event_attribute : crate :: unity_engine :: vfx :: vfxeventattribute :: VFXEventAttribute ,
+# [offset (32)] # [rename (name = "outputEventReceived")] pub output_event_received : crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: vfx :: vfxoutputeventargs :: VFXOutputEventArgs > ,
+}
+
 }
 
 #[cfg(feature = "unity_engine-vfx-visualeffect-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-vfx-visualeffect")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __VisualEffect_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_visual_effect_asset {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VisualEffect as ::unity2::ClassIdentity>::class(),
-                "get_visualEffectAsset",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <VisualEffect as ::unity2::ClassIdentity>::NAME,
-                        "get_visualEffectAsset",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_visual_effect_asset(
-        this: VisualEffect,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::vfx::visualeffectasset::VisualEffectAsset {
-        let inner: extern "C" fn(VisualEffect, ::unity2::OptionalMethod) -> crate::unity_engine::vfx::visualeffectasset::VisualEffectAsset =
-            ::core::mem::transmute(__lookup_get_visual_effect_asset::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_vfx_event_attribute {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VisualEffect as ::unity2::ClassIdentity>::class(),
-                "CreateVFXEventAttribute",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <VisualEffect as ::unity2::ClassIdentity>::NAME,
-                        "CreateVFXEventAttribute",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_vfx_event_attribute(
-        this: VisualEffect,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::vfx::vfxeventattribute::VFXEventAttribute {
-        let inner: extern "C" fn(VisualEffect, ::unity2::OptionalMethod) -> crate::unity_engine::vfx::vfxeventattribute::VFXEventAttribute =
-            ::core::mem::transmute(__lookup_create_vfx_event_attribute::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke_get_cached_event_attribute_for_output_event_internal {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vfx::visualeffect::VisualEffect as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VisualEffect as ::unity2::ClassIdentity>::class(),
-                "InvokeGetCachedEventAttributeForOutputEvent_Internal",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <VisualEffect as ::unity2::ClassIdentity>::NAME,
-                        "InvokeGetCachedEventAttributeForOutputEvent_Internal",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn invoke_get_cached_event_attribute_for_output_event_internal(
-        source: crate::unity_engine::vfx::visualeffect::VisualEffect,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::vfx::vfxeventattribute::VFXEventAttribute {
-        let inner: extern "C" fn(
-            crate::unity_engine::vfx::visualeffect::VisualEffect,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vfx::vfxeventattribute::VFXEventAttribute =
-            ::core::mem::transmute(__lookup_invoke_get_cached_event_attribute_for_output_event_internal::get_method_info().method_ptr);
-        inner(source, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke_output_event_received_internal {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::vfx::visualeffect::VisualEffect as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VisualEffect as ::unity2::ClassIdentity>::class(),
-                "InvokeOutputEventReceived_Internal",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <VisualEffect as ::unity2::ClassIdentity>::NAME,
-                        "InvokeOutputEventReceived_Internal",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn invoke_output_event_received_internal(
-        source: crate::unity_engine::vfx::visualeffect::VisualEffect,
-        event_name_id: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::unity_engine::vfx::visualeffect::VisualEffect, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_invoke_output_event_received_internal::get_method_info().method_ptr);
-        inner(source, event_name_id, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __VisualEffect_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_visual_effect_asset { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< VisualEffect as :: unity2 :: ClassIdentity > :: class () , "get_visualEffectAsset" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < VisualEffect as :: unity2 :: ClassIdentity > :: NAME , "get_visualEffectAsset" , e) , } } } pub unsafe fn get_visual_effect_asset (this : VisualEffect , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vfx :: visualeffectasset :: VisualEffectAsset { let inner : extern "C" fn (VisualEffect , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vfx :: visualeffectasset :: VisualEffectAsset = :: core :: mem :: transmute (__lookup_get_visual_effect_asset :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_vfx_event_attribute { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< VisualEffect as :: unity2 :: ClassIdentity > :: class () , "CreateVFXEventAttribute" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < VisualEffect as :: unity2 :: ClassIdentity > :: NAME , "CreateVFXEventAttribute" , e) , } } } pub unsafe fn create_vfx_event_attribute (this : VisualEffect , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vfx :: vfxeventattribute :: VFXEventAttribute { let inner : extern "C" fn (VisualEffect , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vfx :: vfxeventattribute :: VFXEventAttribute = :: core :: mem :: transmute (__lookup_create_vfx_event_attribute :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_invoke_get_cached_event_attribute_for_output_event_internal { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vfx :: visualeffect :: VisualEffect as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< VisualEffect as :: unity2 :: ClassIdentity > :: class () , "InvokeGetCachedEventAttributeForOutputEvent_Internal" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < VisualEffect as :: unity2 :: ClassIdentity > :: NAME , "InvokeGetCachedEventAttributeForOutputEvent_Internal" , e) , } } } pub unsafe fn invoke_get_cached_event_attribute_for_output_event_internal (source : crate :: unity_engine :: vfx :: visualeffect :: VisualEffect , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vfx :: vfxeventattribute :: VFXEventAttribute { let inner : extern "C" fn (crate :: unity_engine :: vfx :: visualeffect :: VisualEffect , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vfx :: vfxeventattribute :: VFXEventAttribute = :: core :: mem :: transmute (__lookup_invoke_get_cached_event_attribute_for_output_event_internal :: get_method_info () . method_ptr ,) ; inner (source , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_invoke_output_event_received_internal { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vfx :: visualeffect :: VisualEffect as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< VisualEffect as :: unity2 :: ClassIdentity > :: class () , "InvokeOutputEventReceived_Internal" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < VisualEffect as :: unity2 :: ClassIdentity > :: NAME , "InvokeOutputEventReceived_Internal" , e) , } } } pub unsafe fn invoke_output_event_received_internal (source : crate :: unity_engine :: vfx :: visualeffect :: VisualEffect , event_name_id : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: unity_engine :: vfx :: visualeffect :: VisualEffect , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_invoke_output_event_received_internal :: get_method_info () . method_ptr ,) ; inner (source , event_name_id , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-vfx-visualeffect")]
-impl VisualEffect {
-    #[doc = "`InvokeGetCachedEventAttributeForOutputEvent_Internal(crate::unity_engine::vfx::visualeffect::VisualEffect)` overload"]
-    pub fn invoke_get_cached_event_attribute_for_output_event_internal(
-        source: impl ::core::convert::Into<crate::unity_engine::vfx::visualeffect::VisualEffect>,
-    ) -> crate::unity_engine::vfx::vfxeventattribute::VFXEventAttribute {
-        unsafe {
-            __VisualEffect_unity2_raw::invoke_get_cached_event_attribute_for_output_event_internal(
-                ::core::convert::Into::into(source),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`InvokeOutputEventReceived_Internal(crate::unity_engine::vfx::visualeffect::VisualEffect, i32)` overload"]
-    pub fn invoke_output_event_received_internal(
-        source: impl ::core::convert::Into<crate::unity_engine::vfx::visualeffect::VisualEffect>,
-        event_name_id: impl ::core::convert::Into<i32>,
-    ) -> () {
-        unsafe {
-            __VisualEffect_unity2_raw::invoke_output_event_received_internal(
-                ::core::convert::Into::into(source),
-                ::core::convert::Into::into(event_name_id),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+impl VisualEffect { # [doc = "`InvokeGetCachedEventAttributeForOutputEvent_Internal(crate::unity_engine::vfx::visualeffect::VisualEffect)` overload"] pub fn invoke_get_cached_event_attribute_for_output_event_internal (source : impl :: core :: convert :: Into < crate :: unity_engine :: vfx :: visualeffect :: VisualEffect >) -> crate :: unity_engine :: vfx :: vfxeventattribute :: VFXEventAttribute { unsafe { __VisualEffect_unity2_raw :: invoke_get_cached_event_attribute_for_output_event_internal (:: core :: convert :: Into :: into (source) , :: core :: option :: Option :: None) } } # [doc = "`InvokeOutputEventReceived_Internal(crate::unity_engine::vfx::visualeffect::VisualEffect, i32)` overload"] pub fn invoke_output_event_received_internal (source : impl :: core :: convert :: Into < crate :: unity_engine :: vfx :: visualeffect :: VisualEffect > , event_name_id : impl :: core :: convert :: Into < i32 >) -> () { unsafe { __VisualEffect_unity2_raw :: invoke_output_event_received_internal (:: core :: convert :: Into :: into (source) , :: core :: convert :: Into :: into (event_name_id) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-vfx-visualeffect")]
-pub trait IVisualEffectMethods: IVisualEffect {
-    #[doc = "`get_visualEffectAsset()` overload"]
-    fn get_visual_effect_asset(self) -> crate::unity_engine::vfx::visualeffectasset::VisualEffectAsset {
-        unsafe {
-            let __receiver = <VisualEffect as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __VisualEffect_unity2_raw::get_visual_effect_asset(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CreateVFXEventAttribute()` overload"]
-    fn create_vfx_event_attribute(self) -> crate::unity_engine::vfx::vfxeventattribute::VFXEventAttribute {
-        unsafe {
-            let __receiver = <VisualEffect as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __VisualEffect_unity2_raw::create_vfx_event_attribute(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IVisualEffectMethods : IVisualEffect { # [doc = "`get_visualEffectAsset()` overload"] fn get_visual_effect_asset (self ,) -> crate :: unity_engine :: vfx :: visualeffectasset :: VisualEffectAsset { unsafe { let __receiver = < VisualEffect as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __VisualEffect_unity2_raw :: get_visual_effect_asset (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CreateVFXEventAttribute()` overload"] fn create_vfx_event_attribute (self ,) -> crate :: unity_engine :: vfx :: vfxeventattribute :: VFXEventAttribute { unsafe { let __receiver = < VisualEffect as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __VisualEffect_unity2_raw :: create_vfx_event_attribute (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-vfx-visualeffect")]
-impl<__T: IVisualEffect> IVisualEffectMethods for __T {}
+impl < __T : IVisualEffect > IVisualEffectMethods for __T { }
+
+#[cfg(feature = "unity_engine-vfx-visualeffect")]
+impl VisualEffect { pub fn get_visual_effect_asset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __VisualEffect_unity2_raw :: __lookup_get_visual_effect_asset :: get_method_info () } pub fn create_vfx_event_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __VisualEffect_unity2_raw :: __lookup_create_vfx_event_attribute :: get_method_info () } pub fn invoke_get_cached_event_attribute_for_output_event_internal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __VisualEffect_unity2_raw :: __lookup_invoke_get_cached_event_attribute_for_output_event_internal :: get_method_info () } pub fn invoke_output_event_received_internal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __VisualEffect_unity2_raw :: __lookup_invoke_output_event_received_internal :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-vfx-visualeffect")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IVisualEffect, IVisualEffectMethods, VisualEffect};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        system::object::IObject,
-        unity_engine::{behaviour::IBehaviour, component::IComponent, object_2::IObject_2},
-    };
+    pub use super::VisualEffect;
+    pub use super::IVisualEffect;
+    pub use super::IVisualEffectMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

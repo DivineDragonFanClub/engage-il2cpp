@@ -2,437 +2,60 @@
 
 #[cfg(feature = "app-battlerecordsequence-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::{
-            procinst::{IProcInst, ProcInst},
-            singletonprocinst_1::{ISingletonProcInst_1, SingletonProcInst_1},
-        },
-        system::object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battlerecordsequence/BattleRecordSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "BattleRecordSequence")]
-    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: battlerecordsequence :: BattleRecordSequence >)]
-    pub struct BattleRecordSequence {
-        #[static_field]
-        #[rename(name = "PrefabPath")]
-        pub prefab_path: ::unity2::Il2CppString,
-        #[offset(120)]
-        #[rename(name = "m_BgmHeader")]
-        pub m_bgm_header: ::unity2::Il2CppString,
-        #[offset(128)]
-        #[rename(name = "m_PrefabHandle")]
-        pub m_prefab_handle: crate::app::tresourcehandle_1::TResourceHandle_1<crate::unity_engine::gameobject::GameObject>,
-        #[offset(136)]
-        #[rename(name = "m_Setter")]
-        pub m_setter: crate::app::battlerecordsetter::BattleRecordSetter,
-        #[offset(144)]
-        #[rename(name = "m_IsSkipped")]
-        pub m_is_skipped: bool,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: procinst :: { IProcInst , ProcInst }
+ ;
+ use crate :: app :: singletonprocinst_1 :: { ISingletonProcInst_1 , SingletonProcInst_1 }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battlerecordsequence/BattleRecordSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "BattleRecordSequence")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: battlerecordsequence :: BattleRecordSequence >)] pub struct BattleRecordSequence {
+# [static_field] # [rename (name = "PrefabPath")] pub prefab_path : :: unity2 :: Il2CppString ,
+# [offset (120)] # [rename (name = "m_BgmHeader")] pub m_bgm_header : :: unity2 :: Il2CppString ,
+# [offset (128)] # [rename (name = "m_PrefabHandle")] pub m_prefab_handle : crate :: app :: tresourcehandle_1 :: TResourceHandle_1 < crate :: unity_engine :: gameobject :: GameObject > ,
+# [offset (136)] # [rename (name = "m_Setter")] pub m_setter : crate :: app :: battlerecordsetter :: BattleRecordSetter ,
+# [offset (144)] # [rename (name = "m_IsSkipped")] pub m_is_skipped : bool ,
+}
+
 }
 
 #[cfg(feature = "app-battlerecordsequence-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-battlerecordsequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __BattleRecordSequence_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleRecordSequence as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <BattleRecordSequence as ::unity2::ClassIdentity>::NAME,
-                        "CreateBind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        bgm_header: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
-        inner(super_, bgm_header, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_load_scene {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleRecordSequence as ::unity2::ClassIdentity>::class(),
-                "LoadScene",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <BattleRecordSequence as ::unity2::ClassIdentity>::NAME,
-                        "LoadScene",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn load_scene(this: BattleRecordSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(BattleRecordSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_load_scene::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_wait_load {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleRecordSequence as ::unity2::ClassIdentity>::class(),
-                "WaitLoad",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <BattleRecordSequence as ::unity2::ClassIdentity>::NAME,
-                        "WaitLoad",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn wait_load(
-        this: BattleRecordSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::ienumerator::IEnumerator {
-        let inner: extern "C" fn(BattleRecordSequence, ::unity2::OptionalMethod) -> crate::system::collections::ienumerator::IEnumerator =
-            ::core::mem::transmute(__lookup_wait_load::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_setup {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleRecordSequence as ::unity2::ClassIdentity>::class(),
-                "Setup",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <BattleRecordSequence as ::unity2::ClassIdentity>::NAME,
-                        "Setup",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn setup(this: BattleRecordSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(BattleRecordSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_setup::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_unload {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleRecordSequence as ::unity2::ClassIdentity>::class(),
-                "Unload",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <BattleRecordSequence as ::unity2::ClassIdentity>::NAME,
-                        "Unload",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn unload(this: BattleRecordSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(BattleRecordSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_unload::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_tick {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleRecordSequence as ::unity2::ClassIdentity>::class(),
-                "Tick",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <BattleRecordSequence as ::unity2::ClassIdentity>::NAME,
-                        "Tick",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn tick(
-        this: BattleRecordSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::ienumerator::IEnumerator {
-        let inner: extern "C" fn(BattleRecordSequence, ::unity2::OptionalMethod) -> crate::system::collections::ienumerator::IEnumerator =
-            ::core::mem::transmute(__lookup_tick::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_fade_out {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleRecordSequence as ::unity2::ClassIdentity>::class(),
-                "FadeOut",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <BattleRecordSequence as ::unity2::ClassIdentity>::NAME,
-                        "FadeOut",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn fade_out(
-        this: BattleRecordSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::ienumerator::IEnumerator {
-        let inner: extern "C" fn(BattleRecordSequence, ::unity2::OptionalMethod) -> crate::system::collections::ienumerator::IEnumerator =
-            ::core::mem::transmute(__lookup_fade_out::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleRecordSequence as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <BattleRecordSequence as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: BattleRecordSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(BattleRecordSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __BattleRecordSequence_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_bind { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< BattleRecordSequence as :: unity2 :: ClassIdentity > :: class () , "CreateBind" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < BattleRecordSequence as :: unity2 :: ClassIdentity > :: NAME , "CreateBind" , e) , } } } pub unsafe fn create_bind (super_ : crate :: app :: procinst :: ProcInst , bgm_header : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create_bind :: get_method_info () . method_ptr ,) ; inner (super_ , bgm_header , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_load_scene { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< BattleRecordSequence as :: unity2 :: ClassIdentity > :: class () , "LoadScene" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < BattleRecordSequence as :: unity2 :: ClassIdentity > :: NAME , "LoadScene" , e) , } } } pub unsafe fn load_scene (this : BattleRecordSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (BattleRecordSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_load_scene :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_wait_load { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< BattleRecordSequence as :: unity2 :: ClassIdentity > :: class () , "WaitLoad" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < BattleRecordSequence as :: unity2 :: ClassIdentity > :: NAME , "WaitLoad" , e) , } } } pub unsafe fn wait_load (this : BattleRecordSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { let inner : extern "C" fn (BattleRecordSequence , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute (__lookup_wait_load :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_setup { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< BattleRecordSequence as :: unity2 :: ClassIdentity > :: class () , "Setup" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < BattleRecordSequence as :: unity2 :: ClassIdentity > :: NAME , "Setup" , e) , } } } pub unsafe fn setup (this : BattleRecordSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (BattleRecordSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_setup :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_unload { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< BattleRecordSequence as :: unity2 :: ClassIdentity > :: class () , "Unload" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < BattleRecordSequence as :: unity2 :: ClassIdentity > :: NAME , "Unload" , e) , } } } pub unsafe fn unload (this : BattleRecordSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (BattleRecordSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_unload :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_tick { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< BattleRecordSequence as :: unity2 :: ClassIdentity > :: class () , "Tick" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < BattleRecordSequence as :: unity2 :: ClassIdentity > :: NAME , "Tick" , e) , } } } pub unsafe fn tick (this : BattleRecordSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { let inner : extern "C" fn (BattleRecordSequence , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute (__lookup_tick :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_fade_out { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< BattleRecordSequence as :: unity2 :: ClassIdentity > :: class () , "FadeOut" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < BattleRecordSequence as :: unity2 :: ClassIdentity > :: NAME , "FadeOut" , e) , } } } pub unsafe fn fade_out (this : BattleRecordSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { let inner : extern "C" fn (BattleRecordSequence , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute (__lookup_fade_out :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< BattleRecordSequence as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < BattleRecordSequence as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : BattleRecordSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (BattleRecordSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-battlerecordsequence")]
+impl BattleRecordSequence { # [doc = "`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , bgm_header : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { __BattleRecordSequence_unity2_raw :: create_bind (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (bgm_header) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-battlerecordsequence")]
+pub trait IBattleRecordSequenceMethods : IBattleRecordSequence { # [doc = "`LoadScene()` overload"] fn load_scene (self ,) -> () { unsafe { let __receiver = < BattleRecordSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __BattleRecordSequence_unity2_raw :: load_scene (__receiver , :: core :: option :: Option :: None) } } # [doc = "`WaitLoad()` overload"] fn wait_load (self ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { let __receiver = < BattleRecordSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __BattleRecordSequence_unity2_raw :: wait_load (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Setup()` overload"] fn setup (self ,) -> () { unsafe { let __receiver = < BattleRecordSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __BattleRecordSequence_unity2_raw :: setup (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Unload()` overload"] fn unload (self ,) -> () { unsafe { let __receiver = < BattleRecordSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __BattleRecordSequence_unity2_raw :: unload (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Tick()` overload"] fn tick (self ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { let __receiver = < BattleRecordSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __BattleRecordSequence_unity2_raw :: tick (__receiver , :: core :: option :: Option :: None) } } # [doc = "`FadeOut()` overload"] fn fade_out (self ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { let __receiver = < BattleRecordSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __BattleRecordSequence_unity2_raw :: fade_out (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < BattleRecordSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __BattleRecordSequence_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-battlerecordsequence")]
+impl < __T : IBattleRecordSequence > IBattleRecordSequenceMethods for __T { }
+
+#[cfg(feature = "app-battlerecordsequence")]
+impl BattleRecordSequence { pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __BattleRecordSequence_unity2_raw :: __lookup_create_bind :: get_method_info () } pub fn load_scene_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __BattleRecordSequence_unity2_raw :: __lookup_load_scene :: get_method_info () } pub fn wait_load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __BattleRecordSequence_unity2_raw :: __lookup_wait_load :: get_method_info () } pub fn setup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __BattleRecordSequence_unity2_raw :: __lookup_setup :: get_method_info () } pub fn unload_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __BattleRecordSequence_unity2_raw :: __lookup_unload :: get_method_info () } pub fn tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __BattleRecordSequence_unity2_raw :: __lookup_tick :: get_method_info () } pub fn fade_out_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __BattleRecordSequence_unity2_raw :: __lookup_fade_out :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __BattleRecordSequence_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-battlerecordsequence")]
 impl BattleRecordSequence {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString)` overload"]
-    pub fn create_bind(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        bgm_header: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
-        unsafe {
-            __BattleRecordSequence_unity2_raw::create_bind(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(bgm_header),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-battlerecordsequence")]
-pub trait IBattleRecordSequenceMethods: IBattleRecordSequence {
-    #[doc = "`LoadScene()` overload"]
-    fn load_scene(self) -> () {
-        unsafe {
-            let __receiver =
-                <BattleRecordSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __BattleRecordSequence_unity2_raw::load_scene(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`WaitLoad()` overload"]
-    fn wait_load(self) -> crate::system::collections::ienumerator::IEnumerator {
-        unsafe {
-            let __receiver =
-                <BattleRecordSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __BattleRecordSequence_unity2_raw::wait_load(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Setup()` overload"]
-    fn setup(self) -> () {
-        unsafe {
-            let __receiver =
-                <BattleRecordSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __BattleRecordSequence_unity2_raw::setup(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Unload()` overload"]
-    fn unload(self) -> () {
-        unsafe {
-            let __receiver =
-                <BattleRecordSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __BattleRecordSequence_unity2_raw::unload(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Tick()` overload"]
-    fn tick(self) -> crate::system::collections::ienumerator::IEnumerator {
-        unsafe {
-            let __receiver =
-                <BattleRecordSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __BattleRecordSequence_unity2_raw::tick(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`FadeOut()` overload"]
-    fn fade_out(self) -> crate::system::collections::ienumerator::IEnumerator {
-        unsafe {
-            let __receiver =
-                <BattleRecordSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __BattleRecordSequence_unity2_raw::fade_out(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <BattleRecordSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __BattleRecordSequence_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-battlerecordsequence")]
-impl<__T: IBattleRecordSequence> IBattleRecordSequenceMethods for __T {}
-
-#[cfg(feature = "app-battlerecordsequence")]
-impl BattleRecordSequence {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(BattleRecordSequence),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IBattleRecordSequenceMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (BattleRecordSequence) , :: core :: stringify ! (new) ,)) ; < Self as IBattleRecordSequenceMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-battlerecordsequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{BattleRecordSequence, IBattleRecordSequence, IBattleRecordSequenceMethods};
-    #[cfg(feature = "app-procinst")]
-    pub use crate::app::procinst::IProcInstMethods;
-    #[cfg(feature = "app-singletonprocinst_1")]
-    pub use crate::app::singletonprocinst_1::ISingletonProcInst_1Methods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::{
-        app::{procinst::IProcInst, singletonprocinst_1::ISingletonProcInst_1},
-        system::object::IObject,
-    };
+    pub use super::BattleRecordSequence;
+    pub use super::IBattleRecordSequence;
+    pub use super::IBattleRecordSequenceMethods;
+    pub use crate::app::procinst::IProcInst;
+    pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "app-procinst")] pub use crate::app::procinst::IProcInstMethods;
+    #[cfg(feature = "app-singletonprocinst_1")] pub use crate::app::singletonprocinst_1::ISingletonProcInst_1Methods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

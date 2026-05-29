@@ -2,22 +2,21 @@
 
 #[cfg(feature = "unity_engine-customrendertexture-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::{
-            object_2::{IObject_2, Object_2},
-            rendertexture::{IRenderTexture, RenderTexture},
-            texture::{ITexture, Texture},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/customrendertexture/CustomRenderTexture.md"))]
-    #[::unity2::class(namespace = "UnityEngine", name = "CustomRenderTexture")]
-    #[parent(crate::unity_engine::rendertexture::RenderTexture)]
-    pub struct CustomRenderTexture {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+ use crate :: unity_engine :: rendertexture :: { IRenderTexture , RenderTexture }
+ ;
+ use crate :: unity_engine :: texture :: { ITexture , Texture }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/customrendertexture/CustomRenderTexture.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "CustomRenderTexture")] # [parent (crate :: unity_engine :: rendertexture :: RenderTexture)] pub struct CustomRenderTexture {}
+
 }
 
 #[cfg(feature = "unity_engine-customrendertexture-types")]
@@ -26,17 +25,14 @@ pub use __types::*;
 #[cfg(feature = "unity_engine-customrendertexture")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{CustomRenderTexture, ICustomRenderTexture};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    #[cfg(feature = "unity_engine-rendertexture")]
-    pub use crate::unity_engine::rendertexture::IRenderTextureMethods;
-    #[cfg(feature = "unity_engine-texture")]
-    pub use crate::unity_engine::texture::ITextureMethods;
-    pub use crate::{
-        system::object::IObject,
-        unity_engine::{object_2::IObject_2, rendertexture::IRenderTexture, texture::ITexture},
-    };
+    pub use super::CustomRenderTexture;
+    pub use super::ICustomRenderTexture;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::object_2::IObject_2;
+    pub use crate::unity_engine::rendertexture::IRenderTexture;
+    pub use crate::unity_engine::texture::ITexture;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
+    #[cfg(feature = "unity_engine-rendertexture")] pub use crate::unity_engine::rendertexture::IRenderTextureMethods;
+    #[cfg(feature = "unity_engine-texture")] pub use crate::unity_engine::texture::ITextureMethods;
 }

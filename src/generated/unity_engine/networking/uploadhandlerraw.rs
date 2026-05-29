@@ -2,160 +2,50 @@
 
 #[cfg(feature = "unity_engine-networking-uploadhandlerraw-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::networking::uploadhandler::{IUploadHandler, UploadHandler},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/networking/uploadhandlerraw/UploadHandlerRaw.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Networking", name = "UploadHandlerRaw")]
-    #[parent(crate::unity_engine::networking::uploadhandler::UploadHandler)]
-    pub struct UploadHandlerRaw {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: networking :: uploadhandler :: { IUploadHandler , UploadHandler }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/networking/uploadhandlerraw/UploadHandlerRaw.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Networking" , name = "UploadHandlerRaw")] # [parent (crate :: unity_engine :: networking :: uploadhandler :: UploadHandler)] pub struct UploadHandlerRaw {}
+
 }
 
 #[cfg(feature = "unity_engine-networking-uploadhandlerraw-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-networking-uploadhandlerraw")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __UploadHandlerRaw_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::networking::uploadhandlerraw::UploadHandlerRaw as ::unity2::IlType>::il_type(),
-                <::unity2::Array<u8> as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UploadHandlerRaw as ::unity2::ClassIdentity>::class(),
-                "Create",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UploadHandlerRaw as ::unity2::ClassIdentity>::NAME,
-                        "Create",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create(
-        self_: crate::unity_engine::networking::uploadhandlerraw::UploadHandlerRaw,
-        data: ::unity2::Array<u8>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::IntPtr {
-        let inner: extern "C" fn(
-            crate::unity_engine::networking::uploadhandlerraw::UploadHandlerRaw,
-            ::unity2::Array<u8>,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::IntPtr = ::core::mem::transmute(__lookup_create::get_method_info().method_ptr);
-        inner(self_, data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<u8> as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UploadHandlerRaw as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UploadHandlerRaw as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: UploadHandlerRaw, data: ::unity2::Array<u8>, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(UploadHandlerRaw, ::unity2::Array<u8>, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, data, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __UploadHandlerRaw_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: networking :: uploadhandlerraw :: UploadHandlerRaw as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < u8 > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UploadHandlerRaw as :: unity2 :: ClassIdentity > :: class () , "Create" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UploadHandlerRaw as :: unity2 :: ClassIdentity > :: NAME , "Create" , e) , } } } pub unsafe fn create (self_ : crate :: unity_engine :: networking :: uploadhandlerraw :: UploadHandlerRaw , data : :: unity2 :: Array < u8 > , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: IntPtr { let inner : extern "C" fn (crate :: unity_engine :: networking :: uploadhandlerraw :: UploadHandlerRaw , :: unity2 :: Array < u8 > , :: unity2 :: OptionalMethod ,) -> :: unity2 :: IntPtr = :: core :: mem :: transmute (__lookup_create :: get_method_info () . method_ptr ,) ; inner (self_ , data , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < u8 > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UploadHandlerRaw as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UploadHandlerRaw as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : UploadHandlerRaw , data : :: unity2 :: Array < u8 > , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UploadHandlerRaw , :: unity2 :: Array < u8 > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , data , __unity2_method_info) } }
+
+#[cfg(feature = "unity_engine-networking-uploadhandlerraw")]
+impl UploadHandlerRaw { # [doc = "`Create(crate::unity_engine::networking::uploadhandlerraw::UploadHandlerRaw, ::unity2::Array<u8>)` overload"] pub fn create (self_ : impl :: core :: convert :: Into < crate :: unity_engine :: networking :: uploadhandlerraw :: UploadHandlerRaw > , data : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > >) -> :: unity2 :: IntPtr { unsafe { __UploadHandlerRaw_unity2_raw :: create (:: core :: convert :: Into :: into (self_) , :: core :: convert :: Into :: into (data) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-networking-uploadhandlerraw")]
+pub trait IUploadHandlerRawMethods : IUploadHandlerRaw { # [doc = "`.ctor(::unity2::Array<u8>)` overload"] fn ctor (self , data : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > >) -> () { unsafe { let __receiver = < UploadHandlerRaw as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UploadHandlerRaw_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (data) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-networking-uploadhandlerraw")]
+impl < __T : IUploadHandlerRaw > IUploadHandlerRawMethods for __T { }
+
+#[cfg(feature = "unity_engine-networking-uploadhandlerraw")]
+impl UploadHandlerRaw { pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UploadHandlerRaw_unity2_raw :: __lookup_create :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UploadHandlerRaw_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-networking-uploadhandlerraw")]
 impl UploadHandlerRaw {
-    #[doc = "`Create(crate::unity_engine::networking::uploadhandlerraw::UploadHandlerRaw, ::unity2::Array<u8>)` overload"]
-    pub fn create(
-        self_: impl ::core::convert::Into<crate::unity_engine::networking::uploadhandlerraw::UploadHandlerRaw>,
-        data: impl ::core::convert::Into<::unity2::Array<u8>>,
-    ) -> ::unity2::IntPtr {
-        unsafe {
-            __UploadHandlerRaw_unity2_raw::create(
-                ::core::convert::Into::into(self_),
-                ::core::convert::Into::into(data),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-networking-uploadhandlerraw")]
-pub trait IUploadHandlerRawMethods: IUploadHandlerRaw {
-    #[doc = "`.ctor(::unity2::Array<u8>)` overload"]
-    fn ctor(self, data: impl ::core::convert::Into<::unity2::Array<u8>>) -> () {
-        unsafe {
-            let __receiver = <UploadHandlerRaw as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UploadHandlerRaw_unity2_raw::ctor(__receiver, ::core::convert::Into::into(data), ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-networking-uploadhandlerraw")]
-impl<__T: IUploadHandlerRaw> IUploadHandlerRawMethods for __T {}
-
-#[cfg(feature = "unity_engine-networking-uploadhandlerraw")]
-impl UploadHandlerRaw {
-    #[doc = "`.ctor(::unity2::Array<u8>)` — overload selector"]
-    pub fn new(data: ::unity2::Array<u8>) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(UploadHandlerRaw),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IUploadHandlerRawMethods>::ctor(this, data);
-        this
-    }
+# [doc = "`.ctor(::unity2::Array<u8>)` — overload selector"] pub fn new (data : :: unity2 :: Array < u8 >) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (UploadHandlerRaw) , :: core :: stringify ! (new) ,)) ; < Self as IUploadHandlerRawMethods > :: ctor (this , data) ; this }
 }
 
 #[cfg(feature = "unity_engine-networking-uploadhandlerraw")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IUploadHandlerRaw, IUploadHandlerRawMethods, UploadHandlerRaw};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-networking-uploadhandler")]
-    pub use crate::unity_engine::networking::uploadhandler::IUploadHandlerMethods;
-    pub use crate::{system::object::IObject, unity_engine::networking::uploadhandler::IUploadHandler};
+    pub use super::UploadHandlerRaw;
+    pub use super::IUploadHandlerRaw;
+    pub use super::IUploadHandlerRawMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::networking::uploadhandler::IUploadHandler;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-networking-uploadhandler")] pub use crate::unity_engine::networking::uploadhandler::IUploadHandlerMethods;
 }

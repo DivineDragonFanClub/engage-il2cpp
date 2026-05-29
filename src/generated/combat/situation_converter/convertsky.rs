@@ -2,136 +2,51 @@
 
 #[cfg(feature = "combat-situation_converter-convertsky-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        combat::situation_converter::{
-            baseconverter::{BaseConverter, IBaseConverter},
-            converterwithut::{ConverterWithUt, IConverterWithUt},
-        },
-        system::object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/situation_converter/convertsky/ConvertSky.md"))]
-    #[::unity2::class(namespace = "Combat.SituationConverter", name = "ConvertSky")]
-    #[parent(crate::combat::situation_converter::converterwithut::ConverterWithUt)]
-    pub struct ConvertSky {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: combat :: situation_converter :: baseconverter :: { BaseConverter , IBaseConverter }
+ ;
+ use crate :: combat :: situation_converter :: converterwithut :: { ConverterWithUt , IConverterWithUt }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/situation_converter/convertsky/ConvertSky.md"))] # [:: unity2 :: class (namespace = "Combat.SituationConverter" , name = "ConvertSky")] # [parent (crate :: combat :: situation_converter :: converterwithut :: ConverterWithUt)] pub struct ConvertSky {}
+
 }
 
 #[cfg(feature = "combat-situation_converter-convertsky-types")]
 pub use __types::*;
 
 #[cfg(feature = "combat-situation_converter-convertsky")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ConvertSky_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::combat::situation_converter::cameradataset::CameraDataSet as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<ConvertSky as ::unity2::ClassIdentity>::class(), ".ctor", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ConvertSky as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: ConvertSky,
-        data: crate::combat::situation_converter::cameradataset::CameraDataSet,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(ConvertSky, crate::combat::situation_converter::cameradataset::CameraDataSet, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_damage {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<ConvertSky as ::unity2::ClassIdentity>::class(), "OnDamage", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ConvertSky as ::unity2::ClassIdentity>::NAME,
-                        "OnDamage",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_damage(this: ConvertSky, __unity2_method_info: ::unity2::OptionalMethod) -> crate::combat::cameraposition::CameraPosition {
-        let inner: extern "C" fn(ConvertSky, ::unity2::OptionalMethod) -> crate::combat::cameraposition::CameraPosition =
-            ::core::mem::transmute(__lookup_on_damage::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ConvertSky_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: situation_converter :: cameradataset :: CameraDataSet as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ConvertSky as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ConvertSky as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : ConvertSky , data : crate :: combat :: situation_converter :: cameradataset :: CameraDataSet , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ConvertSky , crate :: combat :: situation_converter :: cameradataset :: CameraDataSet , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , data , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_damage { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ConvertSky as :: unity2 :: ClassIdentity > :: class () , "OnDamage" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ConvertSky as :: unity2 :: ClassIdentity > :: NAME , "OnDamage" , e) , } } } pub unsafe fn on_damage (this : ConvertSky , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: combat :: cameraposition :: CameraPosition { let inner : extern "C" fn (ConvertSky , :: unity2 :: OptionalMethod ,) -> crate :: combat :: cameraposition :: CameraPosition = :: core :: mem :: transmute (__lookup_on_damage :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "combat-situation_converter-convertsky")]
-pub trait IConvertSkyMethods: IConvertSky {
-    #[doc = "`.ctor(crate::combat::situation_converter::cameradataset::CameraDataSet)` overload"]
-    fn ctor(self, data: impl ::core::convert::Into<crate::combat::situation_converter::cameradataset::CameraDataSet>) -> () {
-        unsafe {
-            let __receiver = <ConvertSky as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ConvertSky_unity2_raw::ctor(__receiver, ::core::convert::Into::into(data), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnDamage()` overload"]
-    fn on_damage(self) -> crate::combat::cameraposition::CameraPosition {
-        unsafe {
-            let __receiver = <ConvertSky as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ConvertSky_unity2_raw::on_damage(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IConvertSkyMethods : IConvertSky { # [doc = "`.ctor(crate::combat::situation_converter::cameradataset::CameraDataSet)` overload"] fn ctor (self , data : impl :: core :: convert :: Into < crate :: combat :: situation_converter :: cameradataset :: CameraDataSet >) -> () { unsafe { let __receiver = < ConvertSky as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ConvertSky_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (data) , :: core :: option :: Option :: None) } } # [doc = "`OnDamage()` overload"] fn on_damage (self ,) -> crate :: combat :: cameraposition :: CameraPosition { unsafe { let __receiver = < ConvertSky as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ConvertSky_unity2_raw :: on_damage (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "combat-situation_converter-convertsky")]
-impl<__T: IConvertSky> IConvertSkyMethods for __T {}
+impl < __T : IConvertSky > IConvertSkyMethods for __T { }
+
+#[cfg(feature = "combat-situation_converter-convertsky")]
+impl ConvertSky { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ConvertSky_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn on_damage_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ConvertSky_unity2_raw :: __lookup_on_damage :: get_method_info () } }
 
 #[cfg(feature = "combat-situation_converter-convertsky")]
 impl ConvertSky {
-    #[doc = "`.ctor(crate::combat::situation_converter::cameradataset::CameraDataSet)` — overload selector"]
-    pub fn new(data: crate::combat::situation_converter::cameradataset::CameraDataSet) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(ConvertSky), ::core::stringify!(new),));
-        <Self as IConvertSkyMethods>::ctor(this, data);
-        this
-    }
+# [doc = "`.ctor(crate::combat::situation_converter::cameradataset::CameraDataSet)` — overload selector"] pub fn new (data : crate :: combat :: situation_converter :: cameradataset :: CameraDataSet) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ConvertSky) , :: core :: stringify ! (new) ,)) ; < Self as IConvertSkyMethods > :: ctor (this , data) ; this }
 }
 
 #[cfg(feature = "combat-situation_converter-convertsky")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{ConvertSky, IConvertSky, IConvertSkyMethods};
-    #[cfg(feature = "combat-situation_converter-baseconverter")]
-    pub use crate::combat::situation_converter::baseconverter::IBaseConverterMethods;
-    #[cfg(feature = "combat-situation_converter-converterwithut")]
-    pub use crate::combat::situation_converter::converterwithut::IConverterWithUtMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::{
-        combat::situation_converter::{baseconverter::IBaseConverter, converterwithut::IConverterWithUt},
-        system::object::IObject,
-    };
+    pub use super::ConvertSky;
+    pub use super::IConvertSky;
+    pub use super::IConvertSkyMethods;
+    pub use crate::combat::situation_converter::baseconverter::IBaseConverter;
+    pub use crate::combat::situation_converter::converterwithut::IConverterWithUt;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "combat-situation_converter-baseconverter")] pub use crate::combat::situation_converter::baseconverter::IBaseConverterMethods;
+    #[cfg(feature = "combat-situation_converter-converterwithut")] pub use crate::combat::situation_converter::converterwithut::IConverterWithUtMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

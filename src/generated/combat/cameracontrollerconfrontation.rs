@@ -2,583 +2,72 @@
 
 #[cfg(feature = "combat-cameracontrollerconfrontation-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        combat::{
-            basecameracontroller::{BaseCameraController, IBaseCameraController},
-            basetransitioncameracontroller::{BaseTransitionCameraController, IBaseTransitionCameraController},
-        },
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/cameracontrollerconfrontation/CameraControllerConfrontation.md"))]
-    #[::unity2::class(namespace = "Combat", name = "CameraControllerConfrontation")]
-    #[parent(crate::combat::basetransitioncameracontroller::BaseTransitionCameraController)]
-    pub struct CameraControllerConfrontation {
-        #[offset(192)]
-        #[rename(name = "FollowCurve")]
-        pub follow_curve: crate::unity_engine::animationcurve::AnimationCurve,
-        #[offset(200)]
-        #[rename(name = "LookatCurve")]
-        pub lookat_curve: crate::unity_engine::animationcurve::AnimationCurve,
-        #[offset(208)]
-        #[rename(name = "FollowPosition")]
-        pub follow_position: crate::unity_engine::vector3::Vector3,
-        #[offset(220)]
-        #[rename(name = "LookatPosition")]
-        pub lookat_position: crate::unity_engine::vector3::Vector3,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: combat :: basecameracontroller :: { BaseCameraController , IBaseCameraController }
+ ;
+ use crate :: combat :: basetransitioncameracontroller :: { BaseTransitionCameraController , IBaseTransitionCameraController }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/cameracontrollerconfrontation/CameraControllerConfrontation.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "CameraControllerConfrontation")] # [parent (crate :: combat :: basetransitioncameracontroller :: BaseTransitionCameraController)] pub struct CameraControllerConfrontation {
+# [offset (192)] # [rename (name = "FollowCurve")] pub follow_curve : crate :: unity_engine :: animationcurve :: AnimationCurve ,
+# [offset (200)] # [rename (name = "LookatCurve")] pub lookat_curve : crate :: unity_engine :: animationcurve :: AnimationCurve ,
+# [offset (208)] # [rename (name = "FollowPosition")] pub follow_position : crate :: unity_engine :: vector3 :: Vector3 ,
+# [offset (220)] # [rename (name = "LookatPosition")] pub lookat_position : crate :: unity_engine :: vector3 :: Vector3 ,
+}
+
 }
 
 #[cfg(feature = "combat-cameracontrollerconfrontation-types")]
 pub use __types::*;
 
 #[cfg(feature = "combat-cameracontrollerconfrontation")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __CameraControllerConfrontation_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_curve_length {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CameraControllerConfrontation as ::unity2::ClassIdentity>::class(),
-                "get_CurveLength",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CameraControllerConfrontation as ::unity2::ClassIdentity>::NAME,
-                        "get_CurveLength",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_curve_length(this: CameraControllerConfrontation, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(CameraControllerConfrontation, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_get_curve_length::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_transition_time_start {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CameraControllerConfrontation as ::unity2::ClassIdentity>::class(),
-                "get_TransitionTimeStart",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CameraControllerConfrontation as ::unity2::ClassIdentity>::NAME,
-                        "get_TransitionTimeStart",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_transition_time_start(this: CameraControllerConfrontation, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(CameraControllerConfrontation, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_get_transition_time_start::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_transition_time_return {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CameraControllerConfrontation as ::unity2::ClassIdentity>::class(),
-                "get_TransitionTimeReturn",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CameraControllerConfrontation as ::unity2::ClassIdentity>::NAME,
-                        "get_TransitionTimeReturn",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_transition_time_return(this: CameraControllerConfrontation, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(CameraControllerConfrontation, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_get_transition_time_return::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_is_active_v_cam {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CameraControllerConfrontation as ::unity2::ClassIdentity>::class(),
-                "get_IsActiveVCam",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CameraControllerConfrontation as ::unity2::ClassIdentity>::NAME,
-                        "get_IsActiveVCam",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_is_active_v_cam(this: CameraControllerConfrontation, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(CameraControllerConfrontation, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_is_active_v_cam::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_check_usable {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CameraControllerConfrontation as ::unity2::ClassIdentity>::class(),
-                "CheckUsable",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CameraControllerConfrontation as ::unity2::ClassIdentity>::NAME,
-                        "CheckUsable",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn check_usable(this: CameraControllerConfrontation, is_routine: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CameraControllerConfrontation, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_check_usable::get_method_info().method_ptr);
-        inner(this, is_routine, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_start {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CameraControllerConfrontation as ::unity2::ClassIdentity>::class(),
-                "Start",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CameraControllerConfrontation as ::unity2::ClassIdentity>::NAME,
-                        "Start",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn start(this: CameraControllerConfrontation, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CameraControllerConfrontation, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_start::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_start_transition {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::combat::basecameracontroller::BaseCameraController as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CameraControllerConfrontation as ::unity2::ClassIdentity>::class(),
-                "StartTransition",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CameraControllerConfrontation as ::unity2::ClassIdentity>::NAME,
-                        "StartTransition",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn start_transition(
-        this: CameraControllerConfrontation,
-        next_cam: crate::combat::basecameracontroller::BaseCameraController,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            CameraControllerConfrontation,
-            crate::combat::basecameracontroller::BaseCameraController,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_start_transition::get_method_info().method_ptr);
-        inner(this, next_cam, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_change_taget {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::combat::basecameracontroller::BaseCameraController as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CameraControllerConfrontation as ::unity2::ClassIdentity>::class(),
-                "ChangeTaget",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CameraControllerConfrontation as ::unity2::ClassIdentity>::NAME,
-                        "ChangeTaget",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn change_taget(
-        this: CameraControllerConfrontation,
-        next_cam: crate::combat::basecameracontroller::BaseCameraController,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            CameraControllerConfrontation,
-            crate::combat::basecameracontroller::BaseCameraController,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_change_taget::get_method_info().method_ptr);
-        inner(this, next_cam, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_return_transition {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::combat::basecameracontroller::BaseCameraController as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CameraControllerConfrontation as ::unity2::ClassIdentity>::class(),
-                "ReturnTransition",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CameraControllerConfrontation as ::unity2::ClassIdentity>::NAME,
-                        "ReturnTransition",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn return_transition(
-        this: CameraControllerConfrontation,
-        current_cam: crate::combat::basecameracontroller::BaseCameraController,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            CameraControllerConfrontation,
-            crate::combat::basecameracontroller::BaseCameraController,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_return_transition::get_method_info().method_ptr);
-        inner(this, current_cam, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_camera_targets {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CameraControllerConfrontation as ::unity2::ClassIdentity>::class(),
-                "GetCameraTargets",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CameraControllerConfrontation as ::unity2::ClassIdentity>::NAME,
-                        "GetCameraTargets",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_camera_targets(this: CameraControllerConfrontation, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Array<i32> {
-        let inner: extern "C" fn(CameraControllerConfrontation, ::unity2::OptionalMethod) -> ::unity2::Array<i32> =
-            ::core::mem::transmute(__lookup_get_camera_targets::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CameraControllerConfrontation as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CameraControllerConfrontation as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: CameraControllerConfrontation, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CameraControllerConfrontation, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __CameraControllerConfrontation_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_curve_length { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CameraControllerConfrontation as :: unity2 :: ClassIdentity > :: class () , "get_CurveLength" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CameraControllerConfrontation as :: unity2 :: ClassIdentity > :: NAME , "get_CurveLength" , e) , } } } pub unsafe fn get_curve_length (this : CameraControllerConfrontation , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (CameraControllerConfrontation , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_get_curve_length :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_transition_time_start { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CameraControllerConfrontation as :: unity2 :: ClassIdentity > :: class () , "get_TransitionTimeStart" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CameraControllerConfrontation as :: unity2 :: ClassIdentity > :: NAME , "get_TransitionTimeStart" , e) , } } } pub unsafe fn get_transition_time_start (this : CameraControllerConfrontation , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (CameraControllerConfrontation , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_get_transition_time_start :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_transition_time_return { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CameraControllerConfrontation as :: unity2 :: ClassIdentity > :: class () , "get_TransitionTimeReturn" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CameraControllerConfrontation as :: unity2 :: ClassIdentity > :: NAME , "get_TransitionTimeReturn" , e) , } } } pub unsafe fn get_transition_time_return (this : CameraControllerConfrontation , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (CameraControllerConfrontation , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_get_transition_time_return :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_is_active_v_cam { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CameraControllerConfrontation as :: unity2 :: ClassIdentity > :: class () , "get_IsActiveVCam" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CameraControllerConfrontation as :: unity2 :: ClassIdentity > :: NAME , "get_IsActiveVCam" , e) , } } } pub unsafe fn get_is_active_v_cam (this : CameraControllerConfrontation , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (CameraControllerConfrontation , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_is_active_v_cam :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_check_usable { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CameraControllerConfrontation as :: unity2 :: ClassIdentity > :: class () , "CheckUsable" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CameraControllerConfrontation as :: unity2 :: ClassIdentity > :: NAME , "CheckUsable" , e) , } } } pub unsafe fn check_usable (this : CameraControllerConfrontation , is_routine : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CameraControllerConfrontation , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_check_usable :: get_method_info () . method_ptr ,) ; inner (this , is_routine , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_start { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CameraControllerConfrontation as :: unity2 :: ClassIdentity > :: class () , "Start" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CameraControllerConfrontation as :: unity2 :: ClassIdentity > :: NAME , "Start" , e) , } } } pub unsafe fn start (this : CameraControllerConfrontation , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CameraControllerConfrontation , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_start :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_start_transition { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: basecameracontroller :: BaseCameraController as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CameraControllerConfrontation as :: unity2 :: ClassIdentity > :: class () , "StartTransition" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CameraControllerConfrontation as :: unity2 :: ClassIdentity > :: NAME , "StartTransition" , e) , } } } pub unsafe fn start_transition (this : CameraControllerConfrontation , next_cam : crate :: combat :: basecameracontroller :: BaseCameraController , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CameraControllerConfrontation , crate :: combat :: basecameracontroller :: BaseCameraController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_start_transition :: get_method_info () . method_ptr ,) ; inner (this , next_cam , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_change_taget { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: basecameracontroller :: BaseCameraController as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CameraControllerConfrontation as :: unity2 :: ClassIdentity > :: class () , "ChangeTaget" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CameraControllerConfrontation as :: unity2 :: ClassIdentity > :: NAME , "ChangeTaget" , e) , } } } pub unsafe fn change_taget (this : CameraControllerConfrontation , next_cam : crate :: combat :: basecameracontroller :: BaseCameraController , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CameraControllerConfrontation , crate :: combat :: basecameracontroller :: BaseCameraController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_change_taget :: get_method_info () . method_ptr ,) ; inner (this , next_cam , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_return_transition { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: basecameracontroller :: BaseCameraController as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CameraControllerConfrontation as :: unity2 :: ClassIdentity > :: class () , "ReturnTransition" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CameraControllerConfrontation as :: unity2 :: ClassIdentity > :: NAME , "ReturnTransition" , e) , } } } pub unsafe fn return_transition (this : CameraControllerConfrontation , current_cam : crate :: combat :: basecameracontroller :: BaseCameraController , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CameraControllerConfrontation , crate :: combat :: basecameracontroller :: BaseCameraController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_return_transition :: get_method_info () . method_ptr ,) ; inner (this , current_cam , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_camera_targets { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CameraControllerConfrontation as :: unity2 :: ClassIdentity > :: class () , "GetCameraTargets" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CameraControllerConfrontation as :: unity2 :: ClassIdentity > :: NAME , "GetCameraTargets" , e) , } } } pub unsafe fn get_camera_targets (this : CameraControllerConfrontation , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < i32 > { let inner : extern "C" fn (CameraControllerConfrontation , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < i32 > = :: core :: mem :: transmute (__lookup_get_camera_targets :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CameraControllerConfrontation as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CameraControllerConfrontation as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : CameraControllerConfrontation , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CameraControllerConfrontation , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "combat-cameracontrollerconfrontation")]
-pub trait ICameraControllerConfrontationMethods: ICameraControllerConfrontation {
-    #[doc = "`get_CurveLength()` overload"]
-    fn get_curve_length(self) -> f32 {
-        unsafe {
-            let __receiver =
-                <CameraControllerConfrontation as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CameraControllerConfrontation_unity2_raw::get_curve_length(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_TransitionTimeStart()` overload"]
-    fn get_transition_time_start(self) -> f32 {
-        unsafe {
-            let __receiver =
-                <CameraControllerConfrontation as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CameraControllerConfrontation_unity2_raw::get_transition_time_start(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_TransitionTimeReturn()` overload"]
-    fn get_transition_time_return(self) -> f32 {
-        unsafe {
-            let __receiver =
-                <CameraControllerConfrontation as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CameraControllerConfrontation_unity2_raw::get_transition_time_return(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_IsActiveVCam()` overload"]
-    fn get_is_active_v_cam(self) -> bool {
-        unsafe {
-            let __receiver =
-                <CameraControllerConfrontation as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CameraControllerConfrontation_unity2_raw::get_is_active_v_cam(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CheckUsable(bool)` overload"]
-    fn check_usable(self, is_routine: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver =
-                <CameraControllerConfrontation as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CameraControllerConfrontation_unity2_raw::check_usable(
-                __receiver,
-                ::core::convert::Into::into(is_routine),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Start()` overload"]
-    fn start(self) -> () {
-        unsafe {
-            let __receiver =
-                <CameraControllerConfrontation as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CameraControllerConfrontation_unity2_raw::start(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`StartTransition(crate::combat::basecameracontroller::BaseCameraController)` overload"]
-    fn start_transition(self, next_cam: impl ::core::convert::Into<crate::combat::basecameracontroller::BaseCameraController>) -> () {
-        unsafe {
-            let __receiver =
-                <CameraControllerConfrontation as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CameraControllerConfrontation_unity2_raw::start_transition(
-                __receiver,
-                ::core::convert::Into::into(next_cam),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ChangeTaget(crate::combat::basecameracontroller::BaseCameraController)` overload"]
-    fn change_taget(self, next_cam: impl ::core::convert::Into<crate::combat::basecameracontroller::BaseCameraController>) -> () {
-        unsafe {
-            let __receiver =
-                <CameraControllerConfrontation as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CameraControllerConfrontation_unity2_raw::change_taget(__receiver, ::core::convert::Into::into(next_cam), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ReturnTransition(crate::combat::basecameracontroller::BaseCameraController)` overload"]
-    fn return_transition(self, current_cam: impl ::core::convert::Into<crate::combat::basecameracontroller::BaseCameraController>) -> () {
-        unsafe {
-            let __receiver =
-                <CameraControllerConfrontation as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CameraControllerConfrontation_unity2_raw::return_transition(
-                __receiver,
-                ::core::convert::Into::into(current_cam),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetCameraTargets()` overload"]
-    fn get_camera_targets(self) -> ::unity2::Array<i32> {
-        unsafe {
-            let __receiver =
-                <CameraControllerConfrontation as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CameraControllerConfrontation_unity2_raw::get_camera_targets(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <CameraControllerConfrontation as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CameraControllerConfrontation_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait ICameraControllerConfrontationMethods : ICameraControllerConfrontation { # [doc = "`get_CurveLength()` overload"] fn get_curve_length (self ,) -> f32 { unsafe { let __receiver = < CameraControllerConfrontation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CameraControllerConfrontation_unity2_raw :: get_curve_length (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_TransitionTimeStart()` overload"] fn get_transition_time_start (self ,) -> f32 { unsafe { let __receiver = < CameraControllerConfrontation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CameraControllerConfrontation_unity2_raw :: get_transition_time_start (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_TransitionTimeReturn()` overload"] fn get_transition_time_return (self ,) -> f32 { unsafe { let __receiver = < CameraControllerConfrontation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CameraControllerConfrontation_unity2_raw :: get_transition_time_return (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_IsActiveVCam()` overload"] fn get_is_active_v_cam (self ,) -> bool { unsafe { let __receiver = < CameraControllerConfrontation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CameraControllerConfrontation_unity2_raw :: get_is_active_v_cam (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CheckUsable(bool)` overload"] fn check_usable (self , is_routine : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < CameraControllerConfrontation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CameraControllerConfrontation_unity2_raw :: check_usable (__receiver , :: core :: convert :: Into :: into (is_routine) , :: core :: option :: Option :: None) } } # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < CameraControllerConfrontation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CameraControllerConfrontation_unity2_raw :: start (__receiver , :: core :: option :: Option :: None) } } # [doc = "`StartTransition(crate::combat::basecameracontroller::BaseCameraController)` overload"] fn start_transition (self , next_cam : impl :: core :: convert :: Into < crate :: combat :: basecameracontroller :: BaseCameraController >) -> () { unsafe { let __receiver = < CameraControllerConfrontation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CameraControllerConfrontation_unity2_raw :: start_transition (__receiver , :: core :: convert :: Into :: into (next_cam) , :: core :: option :: Option :: None) } } # [doc = "`ChangeTaget(crate::combat::basecameracontroller::BaseCameraController)` overload"] fn change_taget (self , next_cam : impl :: core :: convert :: Into < crate :: combat :: basecameracontroller :: BaseCameraController >) -> () { unsafe { let __receiver = < CameraControllerConfrontation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CameraControllerConfrontation_unity2_raw :: change_taget (__receiver , :: core :: convert :: Into :: into (next_cam) , :: core :: option :: Option :: None) } } # [doc = "`ReturnTransition(crate::combat::basecameracontroller::BaseCameraController)` overload"] fn return_transition (self , current_cam : impl :: core :: convert :: Into < crate :: combat :: basecameracontroller :: BaseCameraController >) -> () { unsafe { let __receiver = < CameraControllerConfrontation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CameraControllerConfrontation_unity2_raw :: return_transition (__receiver , :: core :: convert :: Into :: into (current_cam) , :: core :: option :: Option :: None) } } # [doc = "`GetCameraTargets()` overload"] fn get_camera_targets (self ,) -> :: unity2 :: Array < i32 > { unsafe { let __receiver = < CameraControllerConfrontation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CameraControllerConfrontation_unity2_raw :: get_camera_targets (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CameraControllerConfrontation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CameraControllerConfrontation_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "combat-cameracontrollerconfrontation")]
-impl<__T: ICameraControllerConfrontation> ICameraControllerConfrontationMethods for __T {}
+impl < __T : ICameraControllerConfrontation > ICameraControllerConfrontationMethods for __T { }
+
+#[cfg(feature = "combat-cameracontrollerconfrontation")]
+impl CameraControllerConfrontation { pub fn get_curve_length_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CameraControllerConfrontation_unity2_raw :: __lookup_get_curve_length :: get_method_info () } pub fn get_transition_time_start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CameraControllerConfrontation_unity2_raw :: __lookup_get_transition_time_start :: get_method_info () } pub fn get_transition_time_return_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CameraControllerConfrontation_unity2_raw :: __lookup_get_transition_time_return :: get_method_info () } pub fn get_is_active_v_cam_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CameraControllerConfrontation_unity2_raw :: __lookup_get_is_active_v_cam :: get_method_info () } pub fn check_usable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CameraControllerConfrontation_unity2_raw :: __lookup_check_usable :: get_method_info () } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CameraControllerConfrontation_unity2_raw :: __lookup_start :: get_method_info () } pub fn start_transition_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CameraControllerConfrontation_unity2_raw :: __lookup_start_transition :: get_method_info () } pub fn change_taget_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CameraControllerConfrontation_unity2_raw :: __lookup_change_taget :: get_method_info () } pub fn return_transition_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CameraControllerConfrontation_unity2_raw :: __lookup_return_transition :: get_method_info () } pub fn get_camera_targets_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CameraControllerConfrontation_unity2_raw :: __lookup_get_camera_targets :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CameraControllerConfrontation_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "combat-cameracontrollerconfrontation")]
 impl CameraControllerConfrontation {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(CameraControllerConfrontation),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ICameraControllerConfrontationMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CameraControllerConfrontation) , :: core :: stringify ! (new) ,)) ; < Self as ICameraControllerConfrontationMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "combat-cameracontrollerconfrontation")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{CameraControllerConfrontation, ICameraControllerConfrontation, ICameraControllerConfrontationMethods};
-    #[cfg(feature = "combat-basecameracontroller")]
-    pub use crate::combat::basecameracontroller::IBaseCameraControllerMethods;
-    #[cfg(feature = "combat-basetransitioncameracontroller")]
-    pub use crate::combat::basetransitioncameracontroller::IBaseTransitionCameraControllerMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        combat::{basecameracontroller::IBaseCameraController, basetransitioncameracontroller::IBaseTransitionCameraController},
-        system::object::IObject,
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::CameraControllerConfrontation;
+    pub use super::ICameraControllerConfrontation;
+    pub use super::ICameraControllerConfrontationMethods;
+    pub use crate::combat::basecameracontroller::IBaseCameraController;
+    pub use crate::combat::basetransitioncameracontroller::IBaseTransitionCameraController;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "combat-basecameracontroller")] pub use crate::combat::basecameracontroller::IBaseCameraControllerMethods;
+    #[cfg(feature = "combat-basetransitioncameracontroller")] pub use crate::combat::basetransitioncameracontroller::IBaseTransitionCameraControllerMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

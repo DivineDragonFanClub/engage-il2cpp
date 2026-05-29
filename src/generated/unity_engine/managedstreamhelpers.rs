@@ -2,255 +2,34 @@
 
 #[cfg(feature = "unity_engine-managedstreamhelpers-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/managedstreamhelpers/ManagedStreamHelpers.md"))]
-    #[::unity2::class(namespace = "UnityEngine", name = "ManagedStreamHelpers")]
-    #[parent(crate::system::object::Object)]
-    pub struct ManagedStreamHelpers {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/managedstreamhelpers/ManagedStreamHelpers.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "ManagedStreamHelpers")] # [parent (crate :: system :: object :: Object)] pub struct ManagedStreamHelpers {}
+
 }
 
 #[cfg(feature = "unity_engine-managedstreamhelpers-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-managedstreamhelpers")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ManagedStreamHelpers_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_validate_load_from_stream {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::io::stream::Stream as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ManagedStreamHelpers as ::unity2::ClassIdentity>::class(),
-                "ValidateLoadFromStream",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ManagedStreamHelpers as ::unity2::ClassIdentity>::NAME,
-                        "ValidateLoadFromStream",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn validate_load_from_stream(stream: crate::system::io::stream::Stream, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(crate::system::io::stream::Stream, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_validate_load_from_stream::get_method_info().method_ptr);
-        inner(stream, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_managed_stream_read {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Array<u8> as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <crate::system::io::stream::Stream as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ManagedStreamHelpers as ::unity2::ClassIdentity>::class(),
-                "ManagedStreamRead",
-                5,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ManagedStreamHelpers as ::unity2::ClassIdentity>::NAME,
-                        "ManagedStreamRead",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn managed_stream_read(
-        buffer: ::unity2::Array<u8>,
-        offset: i32,
-        count: i32,
-        stream: crate::system::io::stream::Stream,
-        return_value_address: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(::unity2::Array<u8>, i32, i32, crate::system::io::stream::Stream, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_managed_stream_read::get_method_info().method_ptr);
-        inner(buffer, offset, count, stream, return_value_address, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_managed_stream_seek {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i64 as ::unity2::IlType>::il_type(),
-                <u32 as ::unity2::IlType>::il_type(),
-                <crate::system::io::stream::Stream as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ManagedStreamHelpers as ::unity2::ClassIdentity>::class(),
-                "ManagedStreamSeek",
-                4,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ManagedStreamHelpers as ::unity2::ClassIdentity>::NAME,
-                        "ManagedStreamSeek",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn managed_stream_seek(
-        offset: i64,
-        origin: u32,
-        stream: crate::system::io::stream::Stream,
-        return_value_address: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(i64, u32, crate::system::io::stream::Stream, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_managed_stream_seek::get_method_info().method_ptr);
-        inner(offset, origin, stream, return_value_address, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_managed_stream_length {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::io::stream::Stream as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ManagedStreamHelpers as ::unity2::ClassIdentity>::class(),
-                "ManagedStreamLength",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ManagedStreamHelpers as ::unity2::ClassIdentity>::NAME,
-                        "ManagedStreamLength",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn managed_stream_length(
-        stream: crate::system::io::stream::Stream,
-        return_value_address: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::system::io::stream::Stream, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_managed_stream_length::get_method_info().method_ptr);
-        inner(stream, return_value_address, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ManagedStreamHelpers_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_validate_load_from_stream { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: io :: stream :: Stream as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ManagedStreamHelpers as :: unity2 :: ClassIdentity > :: class () , "ValidateLoadFromStream" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ManagedStreamHelpers as :: unity2 :: ClassIdentity > :: NAME , "ValidateLoadFromStream" , e) , } } } pub unsafe fn validate_load_from_stream (stream : crate :: system :: io :: stream :: Stream , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: system :: io :: stream :: Stream , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_validate_load_from_stream :: get_method_info () . method_ptr ,) ; inner (stream , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_managed_stream_read { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < u8 > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: system :: io :: stream :: Stream as :: unity2 :: IlType > :: il_type () , < :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ManagedStreamHelpers as :: unity2 :: ClassIdentity > :: class () , "ManagedStreamRead" , 5 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ManagedStreamHelpers as :: unity2 :: ClassIdentity > :: NAME , "ManagedStreamRead" , e) , } } } pub unsafe fn managed_stream_read (buffer : :: unity2 :: Array < u8 > , offset : i32 , count : i32 , stream : crate :: system :: io :: stream :: Stream , return_value_address : :: unity2 :: IntPtr , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: Array < u8 > , i32 , i32 , crate :: system :: io :: stream :: Stream , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_managed_stream_read :: get_method_info () . method_ptr ,) ; inner (buffer , offset , count , stream , return_value_address , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_managed_stream_seek { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i64 as :: unity2 :: IlType > :: il_type () , < u32 as :: unity2 :: IlType > :: il_type () , < crate :: system :: io :: stream :: Stream as :: unity2 :: IlType > :: il_type () , < :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ManagedStreamHelpers as :: unity2 :: ClassIdentity > :: class () , "ManagedStreamSeek" , 4 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ManagedStreamHelpers as :: unity2 :: ClassIdentity > :: NAME , "ManagedStreamSeek" , e) , } } } pub unsafe fn managed_stream_seek (offset : i64 , origin : u32 , stream : crate :: system :: io :: stream :: Stream , return_value_address : :: unity2 :: IntPtr , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (i64 , u32 , crate :: system :: io :: stream :: Stream , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_managed_stream_seek :: get_method_info () . method_ptr ,) ; inner (offset , origin , stream , return_value_address , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_managed_stream_length { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: io :: stream :: Stream as :: unity2 :: IlType > :: il_type () , < :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ManagedStreamHelpers as :: unity2 :: ClassIdentity > :: class () , "ManagedStreamLength" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ManagedStreamHelpers as :: unity2 :: ClassIdentity > :: NAME , "ManagedStreamLength" , e) , } } } pub unsafe fn managed_stream_length (stream : crate :: system :: io :: stream :: Stream , return_value_address : :: unity2 :: IntPtr , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: system :: io :: stream :: Stream , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_managed_stream_length :: get_method_info () . method_ptr ,) ; inner (stream , return_value_address , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-managedstreamhelpers")]
-impl ManagedStreamHelpers {
-    #[doc = "`ValidateLoadFromStream(crate::system::io::stream::Stream)` overload"]
-    pub fn validate_load_from_stream(stream: impl ::core::convert::Into<crate::system::io::stream::Stream>) -> () {
-        unsafe { __ManagedStreamHelpers_unity2_raw::validate_load_from_stream(::core::convert::Into::into(stream), ::core::option::Option::None) }
-    }
+impl ManagedStreamHelpers { # [doc = "`ValidateLoadFromStream(crate::system::io::stream::Stream)` overload"] pub fn validate_load_from_stream (stream : impl :: core :: convert :: Into < crate :: system :: io :: stream :: Stream >) -> () { unsafe { __ManagedStreamHelpers_unity2_raw :: validate_load_from_stream (:: core :: convert :: Into :: into (stream) , :: core :: option :: Option :: None) } } # [doc = "`ManagedStreamRead(::unity2::Array<u8>, i32, i32, crate::system::io::stream::Stream, ::unity2::IntPtr)` overload"] pub fn managed_stream_read (buffer : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > > , offset : impl :: core :: convert :: Into < i32 > , count : impl :: core :: convert :: Into < i32 > , stream : impl :: core :: convert :: Into < crate :: system :: io :: stream :: Stream > , return_value_address : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { __ManagedStreamHelpers_unity2_raw :: managed_stream_read (:: core :: convert :: Into :: into (buffer) , :: core :: convert :: Into :: into (offset) , :: core :: convert :: Into :: into (count) , :: core :: convert :: Into :: into (stream) , :: core :: convert :: Into :: into (return_value_address) , :: core :: option :: Option :: None) } } # [doc = "`ManagedStreamSeek(i64, u32, crate::system::io::stream::Stream, ::unity2::IntPtr)` overload"] pub fn managed_stream_seek (offset : impl :: core :: convert :: Into < i64 > , origin : impl :: core :: convert :: Into < u32 > , stream : impl :: core :: convert :: Into < crate :: system :: io :: stream :: Stream > , return_value_address : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { __ManagedStreamHelpers_unity2_raw :: managed_stream_seek (:: core :: convert :: Into :: into (offset) , :: core :: convert :: Into :: into (origin) , :: core :: convert :: Into :: into (stream) , :: core :: convert :: Into :: into (return_value_address) , :: core :: option :: Option :: None) } } # [doc = "`ManagedStreamLength(crate::system::io::stream::Stream, ::unity2::IntPtr)` overload"] pub fn managed_stream_length (stream : impl :: core :: convert :: Into < crate :: system :: io :: stream :: Stream > , return_value_address : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { __ManagedStreamHelpers_unity2_raw :: managed_stream_length (:: core :: convert :: Into :: into (stream) , :: core :: convert :: Into :: into (return_value_address) , :: core :: option :: Option :: None) } } }
 
-    #[doc = "`ManagedStreamRead(::unity2::Array<u8>, i32, i32, crate::system::io::stream::Stream, ::unity2::IntPtr)` overload"]
-    pub fn managed_stream_read(
-        buffer: impl ::core::convert::Into<::unity2::Array<u8>>,
-        offset: impl ::core::convert::Into<i32>,
-        count: impl ::core::convert::Into<i32>,
-        stream: impl ::core::convert::Into<crate::system::io::stream::Stream>,
-        return_value_address: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
-        unsafe {
-            __ManagedStreamHelpers_unity2_raw::managed_stream_read(
-                ::core::convert::Into::into(buffer),
-                ::core::convert::Into::into(offset),
-                ::core::convert::Into::into(count),
-                ::core::convert::Into::into(stream),
-                ::core::convert::Into::into(return_value_address),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`ManagedStreamSeek(i64, u32, crate::system::io::stream::Stream, ::unity2::IntPtr)` overload"]
-    pub fn managed_stream_seek(
-        offset: impl ::core::convert::Into<i64>,
-        origin: impl ::core::convert::Into<u32>,
-        stream: impl ::core::convert::Into<crate::system::io::stream::Stream>,
-        return_value_address: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
-        unsafe {
-            __ManagedStreamHelpers_unity2_raw::managed_stream_seek(
-                ::core::convert::Into::into(offset),
-                ::core::convert::Into::into(origin),
-                ::core::convert::Into::into(stream),
-                ::core::convert::Into::into(return_value_address),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`ManagedStreamLength(crate::system::io::stream::Stream, ::unity2::IntPtr)` overload"]
-    pub fn managed_stream_length(
-        stream: impl ::core::convert::Into<crate::system::io::stream::Stream>,
-        return_value_address: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
-        unsafe {
-            __ManagedStreamHelpers_unity2_raw::managed_stream_length(
-                ::core::convert::Into::into(stream),
-                ::core::convert::Into::into(return_value_address),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+#[cfg(feature = "unity_engine-managedstreamhelpers")]
+impl ManagedStreamHelpers { pub fn validate_load_from_stream_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ManagedStreamHelpers_unity2_raw :: __lookup_validate_load_from_stream :: get_method_info () } pub fn managed_stream_read_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ManagedStreamHelpers_unity2_raw :: __lookup_managed_stream_read :: get_method_info () } pub fn managed_stream_seek_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ManagedStreamHelpers_unity2_raw :: __lookup_managed_stream_seek :: get_method_info () } pub fn managed_stream_length_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ManagedStreamHelpers_unity2_raw :: __lookup_managed_stream_length :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-managedstreamhelpers")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IManagedStreamHelpers, ManagedStreamHelpers};
+    pub use super::ManagedStreamHelpers;
+    pub use super::IManagedStreamHelpers;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

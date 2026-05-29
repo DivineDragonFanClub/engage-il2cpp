@@ -2,103 +2,46 @@
 
 #[cfg(feature = "app-accessoryshopcontent-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/accessoryshopcontent/AccessoryShopContent.md"))]
-    #[::unity2::class(namespace = "App", name = "AccessoryShopContent")]
-    #[parent(crate::system::object::Object)]
-    pub struct AccessoryShopContent {
-        #[offset(16)]
-        #[rename(name = "m_Aid")]
-        pub m_aid: ::unity2::Il2CppString,
-        #[offset(24)]
-        #[rename(name = "m_NewArrival")]
-        pub m_new_arrival: bool,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/accessoryshopcontent/AccessoryShopContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "AccessoryShopContent")] # [parent (crate :: system :: object :: Object)] pub struct AccessoryShopContent {
+# [offset (16)] # [rename (name = "m_Aid")] pub m_aid : :: unity2 :: Il2CppString ,
+# [offset (24)] # [rename (name = "m_NewArrival")] pub m_new_arrival : bool ,
+}
+
 }
 
 #[cfg(feature = "app-accessoryshopcontent-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-accessoryshopcontent")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AccessoryShopContent_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AccessoryShopContent as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AccessoryShopContent as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: AccessoryShopContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AccessoryShopContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __AccessoryShopContent_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AccessoryShopContent as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AccessoryShopContent as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : AccessoryShopContent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AccessoryShopContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-accessoryshopcontent")]
-pub trait IAccessoryShopContentMethods: IAccessoryShopContent {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <AccessoryShopContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AccessoryShopContent_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IAccessoryShopContentMethods : IAccessoryShopContent { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AccessoryShopContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AccessoryShopContent_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-accessoryshopcontent")]
-impl<__T: IAccessoryShopContent> IAccessoryShopContentMethods for __T {}
+impl < __T : IAccessoryShopContent > IAccessoryShopContentMethods for __T { }
+
+#[cfg(feature = "app-accessoryshopcontent")]
+impl AccessoryShopContent { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AccessoryShopContent_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-accessoryshopcontent")]
 impl AccessoryShopContent {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AccessoryShopContent),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAccessoryShopContentMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AccessoryShopContent) , :: core :: stringify ! (new) ,)) ; < Self as IAccessoryShopContentMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-accessoryshopcontent")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{AccessoryShopContent, IAccessoryShopContent, IAccessoryShopContentMethods};
+    pub use super::AccessoryShopContent;
+    pub use super::IAccessoryShopContent;
+    pub use super::IAccessoryShopContentMethods;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

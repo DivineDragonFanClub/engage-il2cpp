@@ -2,376 +2,63 @@
 
 #[cfg(feature = "app-grassmanagerwithoutterrain-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::grassmanager::{GrassManager, IGrassManager},
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/grassmanagerwithoutterrain/GrassManagerWithoutTerrain.md"))]
-    #[::unity2::class(namespace = "App", name = "GrassManagerWithoutTerrain")]
-    #[parent(crate::app::grassmanager::GrassManager)]
-    pub struct GrassManagerWithoutTerrain {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: grassmanager :: { GrassManager , IGrassManager }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/grassmanagerwithoutterrain/GrassManagerWithoutTerrain.md"))] # [:: unity2 :: class (namespace = "App" , name = "GrassManagerWithoutTerrain")] # [parent (crate :: app :: grassmanager :: GrassManager)] pub struct GrassManagerWithoutTerrain {}
+
 }
 
 #[cfg(feature = "app-grassmanagerwithoutterrain-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-grassmanagerwithoutterrain")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __GrassManagerWithoutTerrain_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_has_terrain {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GrassManagerWithoutTerrain as ::unity2::ClassIdentity>::class(),
-                "get_HasTerrain",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GrassManagerWithoutTerrain as ::unity2::ClassIdentity>::NAME,
-                        "get_HasTerrain",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_has_terrain(this: GrassManagerWithoutTerrain, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(GrassManagerWithoutTerrain, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_has_terrain::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_find_grass_mesh_parent_transform {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GrassManagerWithoutTerrain as ::unity2::ClassIdentity>::class(),
-                "FindGrassMeshParentTransform",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GrassManagerWithoutTerrain as ::unity2::ClassIdentity>::NAME,
-                        "FindGrassMeshParentTransform",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn find_grass_mesh_parent_transform(
-        this: GrassManagerWithoutTerrain,
-        parent: crate::unity_engine::transform::Transform,
-        mesh_index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::transform::Transform {
-        let inner: extern "C" fn(
-            GrassManagerWithoutTerrain,
-            crate::unity_engine::transform::Transform,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::transform::Transform =
-            ::core::mem::transmute(__lookup_find_grass_mesh_parent_transform::get_method_info().method_ptr);
-        inner(this, parent, mesh_index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_reference_transform_num {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GrassManagerWithoutTerrain as ::unity2::ClassIdentity>::class(),
-                "CalcReferenceTransformNum",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GrassManagerWithoutTerrain as ::unity2::ClassIdentity>::NAME,
-                        "CalcReferenceTransformNum",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn calc_reference_transform_num(this: GrassManagerWithoutTerrain, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(GrassManagerWithoutTerrain, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_calc_reference_transform_num::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_field_size_offset {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GrassManagerWithoutTerrain as ::unity2::ClassIdentity>::class(),
-                "GetFieldSizeOffset",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GrassManagerWithoutTerrain as ::unity2::ClassIdentity>::NAME,
-                        "GetFieldSizeOffset",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_field_size_offset(
-        this: GrassManagerWithoutTerrain,
-        size: *mut crate::unity_engine::vector3::Vector3,
-        offset: *mut crate::unity_engine::vector3::Vector3,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            GrassManagerWithoutTerrain,
-            *mut crate::unity_engine::vector3::Vector3,
-            *mut crate::unity_engine::vector3::Vector3,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(__lookup_get_field_size_offset::get_method_info().method_ptr);
-        inner(this, size, offset, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_find_ground_texture {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GrassManagerWithoutTerrain as ::unity2::ClassIdentity>::class(),
-                "FindGroundTexture",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GrassManagerWithoutTerrain as ::unity2::ClassIdentity>::NAME,
-                        "FindGroundTexture",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn find_ground_texture(
-        this: GrassManagerWithoutTerrain,
-        mesh_index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::texture2d::Texture2D {
-        let inner: extern "C" fn(GrassManagerWithoutTerrain, i32, ::unity2::OptionalMethod) -> crate::unity_engine::texture2d::Texture2D =
-            ::core::mem::transmute(__lookup_find_ground_texture::get_method_info().method_ptr);
-        inner(this, mesh_index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GrassManagerWithoutTerrain as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GrassManagerWithoutTerrain as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: GrassManagerWithoutTerrain, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GrassManagerWithoutTerrain, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __GrassManagerWithoutTerrain_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_has_terrain { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GrassManagerWithoutTerrain as :: unity2 :: ClassIdentity > :: class () , "get_HasTerrain" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GrassManagerWithoutTerrain as :: unity2 :: ClassIdentity > :: NAME , "get_HasTerrain" , e) , } } } pub unsafe fn get_has_terrain (this : GrassManagerWithoutTerrain , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (GrassManagerWithoutTerrain , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_has_terrain :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_find_grass_mesh_parent_transform { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: transform :: Transform as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GrassManagerWithoutTerrain as :: unity2 :: ClassIdentity > :: class () , "FindGrassMeshParentTransform" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GrassManagerWithoutTerrain as :: unity2 :: ClassIdentity > :: NAME , "FindGrassMeshParentTransform" , e) , } } } pub unsafe fn find_grass_mesh_parent_transform (this : GrassManagerWithoutTerrain , parent : crate :: unity_engine :: transform :: Transform , mesh_index : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: transform :: Transform { let inner : extern "C" fn (GrassManagerWithoutTerrain , crate :: unity_engine :: transform :: Transform , i32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: transform :: Transform = :: core :: mem :: transmute (__lookup_find_grass_mesh_parent_transform :: get_method_info () . method_ptr ,) ; inner (this , parent , mesh_index , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_calc_reference_transform_num { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GrassManagerWithoutTerrain as :: unity2 :: ClassIdentity > :: class () , "CalcReferenceTransformNum" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GrassManagerWithoutTerrain as :: unity2 :: ClassIdentity > :: NAME , "CalcReferenceTransformNum" , e) , } } } pub unsafe fn calc_reference_transform_num (this : GrassManagerWithoutTerrain , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (GrassManagerWithoutTerrain , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_calc_reference_transform_num :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_field_size_offset { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GrassManagerWithoutTerrain as :: unity2 :: ClassIdentity > :: class () , "GetFieldSizeOffset" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GrassManagerWithoutTerrain as :: unity2 :: ClassIdentity > :: NAME , "GetFieldSizeOffset" , e) , } } } pub unsafe fn get_field_size_offset (this : GrassManagerWithoutTerrain , size : * mut crate :: unity_engine :: vector3 :: Vector3 , offset : * mut crate :: unity_engine :: vector3 :: Vector3 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (GrassManagerWithoutTerrain , * mut crate :: unity_engine :: vector3 :: Vector3 , * mut crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_field_size_offset :: get_method_info () . method_ptr ,) ; inner (this , size , offset , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_find_ground_texture { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GrassManagerWithoutTerrain as :: unity2 :: ClassIdentity > :: class () , "FindGroundTexture" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GrassManagerWithoutTerrain as :: unity2 :: ClassIdentity > :: NAME , "FindGroundTexture" , e) , } } } pub unsafe fn find_ground_texture (this : GrassManagerWithoutTerrain , mesh_index : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: texture2d :: Texture2D { let inner : extern "C" fn (GrassManagerWithoutTerrain , i32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: texture2d :: Texture2D = :: core :: mem :: transmute (__lookup_find_ground_texture :: get_method_info () . method_ptr ,) ; inner (this , mesh_index , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GrassManagerWithoutTerrain as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GrassManagerWithoutTerrain as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : GrassManagerWithoutTerrain , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GrassManagerWithoutTerrain , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-grassmanagerwithoutterrain")]
-pub trait IGrassManagerWithoutTerrainMethods: IGrassManagerWithoutTerrain {
-    #[doc = "`get_HasTerrain()` overload"]
-    fn get_has_terrain(self) -> bool {
-        unsafe {
-            let __receiver =
-                <GrassManagerWithoutTerrain as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GrassManagerWithoutTerrain_unity2_raw::get_has_terrain(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`FindGrassMeshParentTransform(crate::unity_engine::transform::Transform, i32)` overload"]
-    fn find_grass_mesh_parent_transform(
-        self,
-        parent: impl ::core::convert::Into<crate::unity_engine::transform::Transform>,
-        mesh_index: impl ::core::convert::Into<i32>,
-    ) -> crate::unity_engine::transform::Transform {
-        unsafe {
-            let __receiver =
-                <GrassManagerWithoutTerrain as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GrassManagerWithoutTerrain_unity2_raw::find_grass_mesh_parent_transform(
-                __receiver,
-                ::core::convert::Into::into(parent),
-                ::core::convert::Into::into(mesh_index),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CalcReferenceTransformNum()` overload"]
-    fn calc_reference_transform_num(self) -> i32 {
-        unsafe {
-            let __receiver =
-                <GrassManagerWithoutTerrain as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GrassManagerWithoutTerrain_unity2_raw::calc_reference_transform_num(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetFieldSizeOffset(*mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::vector3::Vector3)` overload"]
-    fn get_field_size_offset(self) -> (bool, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3) {
-        unsafe {
-            let __receiver =
-                <GrassManagerWithoutTerrain as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
-            let mut __out_1 = ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
-            let __ret = {
-                __GrassManagerWithoutTerrain_unity2_raw::get_field_size_offset(
-                    __receiver,
-                    __out_0.as_mut_ptr(),
-                    __out_1.as_mut_ptr(),
-                    ::core::option::Option::None,
-                )
-            };
-            (__ret, __out_0.assume_init(), __out_1.assume_init())
-        }
-    }
-    #[doc = "`FindGroundTexture(i32)` overload"]
-    fn find_ground_texture(self, mesh_index: impl ::core::convert::Into<i32>) -> crate::unity_engine::texture2d::Texture2D {
-        unsafe {
-            let __receiver =
-                <GrassManagerWithoutTerrain as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GrassManagerWithoutTerrain_unity2_raw::find_ground_texture(
-                __receiver,
-                ::core::convert::Into::into(mesh_index),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <GrassManagerWithoutTerrain as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GrassManagerWithoutTerrain_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IGrassManagerWithoutTerrainMethods : IGrassManagerWithoutTerrain { # [doc = "`get_HasTerrain()` overload"] fn get_has_terrain (self ,) -> bool { unsafe { let __receiver = < GrassManagerWithoutTerrain as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GrassManagerWithoutTerrain_unity2_raw :: get_has_terrain (__receiver , :: core :: option :: Option :: None) } } # [doc = "`FindGrassMeshParentTransform(crate::unity_engine::transform::Transform, i32)` overload"] fn find_grass_mesh_parent_transform (self , parent : impl :: core :: convert :: Into < crate :: unity_engine :: transform :: Transform > , mesh_index : impl :: core :: convert :: Into < i32 >) -> crate :: unity_engine :: transform :: Transform { unsafe { let __receiver = < GrassManagerWithoutTerrain as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GrassManagerWithoutTerrain_unity2_raw :: find_grass_mesh_parent_transform (__receiver , :: core :: convert :: Into :: into (parent) , :: core :: convert :: Into :: into (mesh_index) , :: core :: option :: Option :: None) } } # [doc = "`CalcReferenceTransformNum()` overload"] fn calc_reference_transform_num (self ,) -> i32 { unsafe { let __receiver = < GrassManagerWithoutTerrain as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GrassManagerWithoutTerrain_unity2_raw :: calc_reference_transform_num (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetFieldSizeOffset(*mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::vector3::Vector3)` overload"] fn get_field_size_offset (self ,) -> (bool , crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector3 :: Vector3) { unsafe { let __receiver = < GrassManagerWithoutTerrain as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector3 :: Vector3 > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector3 :: Vector3 > :: uninit () ; let __ret = { __GrassManagerWithoutTerrain_unity2_raw :: get_field_size_offset (__receiver , __out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: option :: Option :: None) } ; (__ret , __out_0 . assume_init () , __out_1 . assume_init ()) } } # [doc = "`FindGroundTexture(i32)` overload"] fn find_ground_texture (self , mesh_index : impl :: core :: convert :: Into < i32 >) -> crate :: unity_engine :: texture2d :: Texture2D { unsafe { let __receiver = < GrassManagerWithoutTerrain as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GrassManagerWithoutTerrain_unity2_raw :: find_ground_texture (__receiver , :: core :: convert :: Into :: into (mesh_index) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GrassManagerWithoutTerrain as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GrassManagerWithoutTerrain_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-grassmanagerwithoutterrain")]
-impl<__T: IGrassManagerWithoutTerrain> IGrassManagerWithoutTerrainMethods for __T {}
+impl < __T : IGrassManagerWithoutTerrain > IGrassManagerWithoutTerrainMethods for __T { }
+
+#[cfg(feature = "app-grassmanagerwithoutterrain")]
+impl GrassManagerWithoutTerrain { pub fn get_has_terrain_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GrassManagerWithoutTerrain_unity2_raw :: __lookup_get_has_terrain :: get_method_info () } pub fn find_grass_mesh_parent_transform_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GrassManagerWithoutTerrain_unity2_raw :: __lookup_find_grass_mesh_parent_transform :: get_method_info () } pub fn calc_reference_transform_num_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GrassManagerWithoutTerrain_unity2_raw :: __lookup_calc_reference_transform_num :: get_method_info () } pub fn get_field_size_offset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GrassManagerWithoutTerrain_unity2_raw :: __lookup_get_field_size_offset :: get_method_info () } pub fn find_ground_texture_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GrassManagerWithoutTerrain_unity2_raw :: __lookup_find_ground_texture :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GrassManagerWithoutTerrain_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-grassmanagerwithoutterrain")]
 impl GrassManagerWithoutTerrain {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GrassManagerWithoutTerrain),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGrassManagerWithoutTerrainMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GrassManagerWithoutTerrain) , :: core :: stringify ! (new) ,)) ; < Self as IGrassManagerWithoutTerrainMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-grassmanagerwithoutterrain")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{GrassManagerWithoutTerrain, IGrassManagerWithoutTerrain, IGrassManagerWithoutTerrainMethods};
-    #[cfg(feature = "app-grassmanager")]
-    pub use crate::app::grassmanager::IGrassManagerMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        app::grassmanager::IGrassManager,
-        system::object::IObject,
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::GrassManagerWithoutTerrain;
+    pub use super::IGrassManagerWithoutTerrain;
+    pub use super::IGrassManagerWithoutTerrainMethods;
+    pub use crate::app::grassmanager::IGrassManager;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "app-grassmanager")] pub use crate::app::grassmanager::IGrassManagerMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

@@ -2,439 +2,124 @@
 
 #[cfg(feature = "app-gyromnager-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        r#enum::{Enum, IEnum},
-        valuetype::{IValueType, ValueType},
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gyromnager/GyroMnager_DeviceType.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct GyroMnager_DeviceType {
-        pub value: i32,
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gyromnager/GyroMnager.md"))] # [:: unity2 :: class (namespace = "App" , name = "GyroMnager")] # [parent (crate :: system :: object :: Object)] pub struct GyroMnager {
+# [offset (16)] # [rename (name = "m_IsSampling")] pub m_is_sampling : bool ,
+# [offset (24)] # [rename (name = "m_HandleList")] pub m_handle_list : :: unity2 :: Array < crate :: nn :: hid :: sixaxissensorhandle :: SixAxisSensorHandle > ,
+# [offset (32)] # [rename (name = "m_HandleCoount")] pub m_handle_coount : i32 ,
+# [offset (40)] # [rename (name = "m_StateList")] pub m_state_list : :: unity2 :: Array < crate :: nn :: hid :: sixaxissensorstate :: SixAxisSensorState > ,
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gyromnager/GyroMnager_DeviceType.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct GyroMnager_DeviceType  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for GyroMnager_DeviceType  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "GyroMnager.DeviceType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    impl ::unity2::ClassIdentity for GyroMnager_DeviceType {
-        const NAME: &'static str = "GyroMnager.DeviceType";
-        const NAMESPACE: &'static str = "App";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  ::unity2::IlType for GyroMnager_DeviceType  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::IlType for GyroMnager_DeviceType {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  GyroMnager_DeviceType  {
+    pub fn joy_left() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl GyroMnager_DeviceType {
-        pub fn joy_left() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn joy_right() -> Self {
-            Self { value: 1 }
-        }
+    pub fn joy_right() -> Self {
+        Self { value: 1 }
 
-        pub fn max() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn handheld() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn full_key() -> Self {
-            Self { value: 0 }
-        }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gyromnager/GyroMnager.md"))]
-    #[::unity2::class(namespace = "App", name = "GyroMnager")]
-    #[parent(crate::system::object::Object)]
-    pub struct GyroMnager {
-        #[offset(16)]
-        #[rename(name = "m_IsSampling")]
-        pub m_is_sampling: bool,
-        #[offset(24)]
-        #[rename(name = "m_HandleList")]
-        pub m_handle_list: ::unity2::Array<crate::nn::hid::sixaxissensorhandle::SixAxisSensorHandle>,
-        #[offset(32)]
-        #[rename(name = "m_HandleCoount")]
-        pub m_handle_coount: i32,
-        #[offset(40)]
-        #[rename(name = "m_StateList")]
-        pub m_state_list: ::unity2::Array<crate::nn::hid::sixaxissensorstate::SixAxisSensorState>,
+
+    pub fn max() -> Self {
+        Self { value: 2 }
+
     }
+
+
+    pub fn handheld() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn full_key() -> Self {
+        Self { value: 0 }
+
+    }
+
+}
+
 }
 
 #[cfg(feature = "app-gyromnager-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-gyromnager")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __GyroMnager_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_pad_style {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GyroMnager as ::unity2::ClassIdentity>::class(),
-                "get_PadStyle",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GyroMnager as ::unity2::ClassIdentity>::NAME,
-                        "get_PadStyle",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_pad_style(this: GyroMnager, __unity2_method_info: ::unity2::OptionalMethod) -> crate::nn::hid::npadstyle::NpadStyle {
-        let inner: extern "C" fn(GyroMnager, ::unity2::OptionalMethod) -> crate::nn::hid::npadstyle::NpadStyle =
-            ::core::mem::transmute(__lookup_get_pad_style::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_pad_style {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::nn::hid::npadstyle::NpadStyle as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GyroMnager as ::unity2::ClassIdentity>::class(),
-                "set_PadStyle",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GyroMnager as ::unity2::ClassIdentity>::NAME,
-                        "set_PadStyle",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_pad_style(this: GyroMnager, value: crate::nn::hid::npadstyle::NpadStyle, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GyroMnager, crate::nn::hid::npadstyle::NpadStyle, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_pad_style::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<GyroMnager as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GyroMnager as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: GyroMnager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GyroMnager, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_setup_pad {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::nn::hid::npadid::NpadId as ::unity2::IlType>::il_type(),
-                <crate::nn::hid::npadstyle::NpadStyle as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<GyroMnager as ::unity2::ClassIdentity>::class(), "SetupPad", 2, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GyroMnager as ::unity2::ClassIdentity>::NAME,
-                        "SetupPad",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn setup_pad(
-        this: GyroMnager,
-        npad_id: crate::nn::hid::npadid::NpadId,
-        npad_style: crate::nn::hid::npadstyle::NpadStyle,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(GyroMnager, crate::nn::hid::npadid::NpadId, crate::nn::hid::npadstyle::NpadStyle, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_setup_pad::get_method_info().method_ptr);
-        inner(this, npad_id, npad_style, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_start_sampling {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GyroMnager as ::unity2::ClassIdentity>::class(),
-                "StartSampling",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GyroMnager as ::unity2::ClassIdentity>::NAME,
-                        "StartSampling",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn start_sampling(this: GyroMnager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GyroMnager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_start_sampling::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_stop_sampling {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GyroMnager as ::unity2::ClassIdentity>::class(),
-                "StopSampling",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GyroMnager as ::unity2::ClassIdentity>::NAME,
-                        "StopSampling",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn stop_sampling(this: GyroMnager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GyroMnager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_stop_sampling::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<GyroMnager as ::unity2::ClassIdentity>::class(), "Update", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GyroMnager as ::unity2::ClassIdentity>::NAME,
-                        "Update",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update(this: GyroMnager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GyroMnager, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_update::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_state {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::gyromnager::GyroMnager_DeviceType as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<GyroMnager as ::unity2::ClassIdentity>::class(), "GetState", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GyroMnager as ::unity2::ClassIdentity>::NAME,
-                        "GetState",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_state(
-        this: GyroMnager,
-        r#type: crate::app::gyromnager::GyroMnager_DeviceType,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::nn::hid::sixaxissensorstate::SixAxisSensorState {
-        let inner: extern "C" fn(
-            GyroMnager,
-            crate::app::gyromnager::GyroMnager_DeviceType,
-            ::unity2::OptionalMethod,
-        ) -> crate::nn::hid::sixaxissensorstate::SixAxisSensorState = ::core::mem::transmute(__lookup_get_state::get_method_info().method_ptr);
-        inner(this, r#type, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __GyroMnager_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_pad_style { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GyroMnager as :: unity2 :: ClassIdentity > :: class () , "get_PadStyle" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GyroMnager as :: unity2 :: ClassIdentity > :: NAME , "get_PadStyle" , e) , } } } pub unsafe fn get_pad_style (this : GyroMnager , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: nn :: hid :: npadstyle :: NpadStyle { let inner : extern "C" fn (GyroMnager , :: unity2 :: OptionalMethod ,) -> crate :: nn :: hid :: npadstyle :: NpadStyle = :: core :: mem :: transmute (__lookup_get_pad_style :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_pad_style { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: nn :: hid :: npadstyle :: NpadStyle as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GyroMnager as :: unity2 :: ClassIdentity > :: class () , "set_PadStyle" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GyroMnager as :: unity2 :: ClassIdentity > :: NAME , "set_PadStyle" , e) , } } } pub unsafe fn set_pad_style (this : GyroMnager , value : crate :: nn :: hid :: npadstyle :: NpadStyle , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GyroMnager , crate :: nn :: hid :: npadstyle :: NpadStyle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_pad_style :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GyroMnager as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GyroMnager as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : GyroMnager , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GyroMnager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_setup_pad { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: nn :: hid :: npadid :: NpadId as :: unity2 :: IlType > :: il_type () , < crate :: nn :: hid :: npadstyle :: NpadStyle as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GyroMnager as :: unity2 :: ClassIdentity > :: class () , "SetupPad" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GyroMnager as :: unity2 :: ClassIdentity > :: NAME , "SetupPad" , e) , } } } pub unsafe fn setup_pad (this : GyroMnager , npad_id : crate :: nn :: hid :: npadid :: NpadId , npad_style : crate :: nn :: hid :: npadstyle :: NpadStyle , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GyroMnager , crate :: nn :: hid :: npadid :: NpadId , crate :: nn :: hid :: npadstyle :: NpadStyle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_setup_pad :: get_method_info () . method_ptr ,) ; inner (this , npad_id , npad_style , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_start_sampling { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GyroMnager as :: unity2 :: ClassIdentity > :: class () , "StartSampling" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GyroMnager as :: unity2 :: ClassIdentity > :: NAME , "StartSampling" , e) , } } } pub unsafe fn start_sampling (this : GyroMnager , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GyroMnager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_start_sampling :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_stop_sampling { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GyroMnager as :: unity2 :: ClassIdentity > :: class () , "StopSampling" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GyroMnager as :: unity2 :: ClassIdentity > :: NAME , "StopSampling" , e) , } } } pub unsafe fn stop_sampling (this : GyroMnager , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GyroMnager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_stop_sampling :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GyroMnager as :: unity2 :: ClassIdentity > :: class () , "Update" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GyroMnager as :: unity2 :: ClassIdentity > :: NAME , "Update" , e) , } } } pub unsafe fn update (this : GyroMnager , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GyroMnager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_state { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: gyromnager :: GyroMnager_DeviceType as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GyroMnager as :: unity2 :: ClassIdentity > :: class () , "GetState" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GyroMnager as :: unity2 :: ClassIdentity > :: NAME , "GetState" , e) , } } } pub unsafe fn get_state (this : GyroMnager , r#type : crate :: app :: gyromnager :: GyroMnager_DeviceType , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: nn :: hid :: sixaxissensorstate :: SixAxisSensorState { let inner : extern "C" fn (GyroMnager , crate :: app :: gyromnager :: GyroMnager_DeviceType , :: unity2 :: OptionalMethod ,) -> crate :: nn :: hid :: sixaxissensorstate :: SixAxisSensorState = :: core :: mem :: transmute (__lookup_get_state :: get_method_info () . method_ptr ,) ; inner (this , r#type , __unity2_method_info) } }
 
 #[cfg(feature = "app-gyromnager")]
-pub trait IGyroMnagerMethods: IGyroMnager {
-    #[doc = "`get_PadStyle()` overload"]
-    fn get_pad_style(self) -> crate::nn::hid::npadstyle::NpadStyle {
-        unsafe {
-            let __receiver = <GyroMnager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GyroMnager_unity2_raw::get_pad_style(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_PadStyle(crate::nn::hid::npadstyle::NpadStyle)` overload"]
-    fn set_pad_style(self, value: impl ::core::convert::Into<crate::nn::hid::npadstyle::NpadStyle>) -> () {
-        unsafe {
-            let __receiver = <GyroMnager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GyroMnager_unity2_raw::set_pad_style(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <GyroMnager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GyroMnager_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetupPad(crate::nn::hid::npadid::NpadId, crate::nn::hid::npadstyle::NpadStyle)` overload"]
-    fn setup_pad(
-        self,
-        npad_id: impl ::core::convert::Into<crate::nn::hid::npadid::NpadId>,
-        npad_style: impl ::core::convert::Into<crate::nn::hid::npadstyle::NpadStyle>,
-    ) -> () {
-        unsafe {
-            let __receiver = <GyroMnager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GyroMnager_unity2_raw::setup_pad(
-                __receiver,
-                ::core::convert::Into::into(npad_id),
-                ::core::convert::Into::into(npad_style),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`StartSampling()` overload"]
-    fn start_sampling(self) -> () {
-        unsafe {
-            let __receiver = <GyroMnager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GyroMnager_unity2_raw::start_sampling(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`StopSampling()` overload"]
-    fn stop_sampling(self) -> () {
-        unsafe {
-            let __receiver = <GyroMnager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GyroMnager_unity2_raw::stop_sampling(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Update()` overload"]
-    fn update(self) -> () {
-        unsafe {
-            let __receiver = <GyroMnager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GyroMnager_unity2_raw::update(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetState(crate::app::gyromnager::GyroMnager_DeviceType)` overload"]
-    fn get_state(
-        self,
-        r#type: impl ::core::convert::Into<crate::app::gyromnager::GyroMnager_DeviceType>,
-    ) -> crate::nn::hid::sixaxissensorstate::SixAxisSensorState {
-        unsafe {
-            let __receiver = <GyroMnager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GyroMnager_unity2_raw::get_state(__receiver, ::core::convert::Into::into(r#type), ::core::option::Option::None)
-        }
-    }
-}
+pub trait IGyroMnagerMethods : IGyroMnager { # [doc = "`get_PadStyle()` overload"] fn get_pad_style (self ,) -> crate :: nn :: hid :: npadstyle :: NpadStyle { unsafe { let __receiver = < GyroMnager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GyroMnager_unity2_raw :: get_pad_style (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_PadStyle(crate::nn::hid::npadstyle::NpadStyle)` overload"] fn set_pad_style (self , value : impl :: core :: convert :: Into < crate :: nn :: hid :: npadstyle :: NpadStyle >) -> () { unsafe { let __receiver = < GyroMnager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GyroMnager_unity2_raw :: set_pad_style (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GyroMnager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GyroMnager_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetupPad(crate::nn::hid::npadid::NpadId, crate::nn::hid::npadstyle::NpadStyle)` overload"] fn setup_pad (self , npad_id : impl :: core :: convert :: Into < crate :: nn :: hid :: npadid :: NpadId > , npad_style : impl :: core :: convert :: Into < crate :: nn :: hid :: npadstyle :: NpadStyle >) -> () { unsafe { let __receiver = < GyroMnager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GyroMnager_unity2_raw :: setup_pad (__receiver , :: core :: convert :: Into :: into (npad_id) , :: core :: convert :: Into :: into (npad_style) , :: core :: option :: Option :: None) } } # [doc = "`StartSampling()` overload"] fn start_sampling (self ,) -> () { unsafe { let __receiver = < GyroMnager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GyroMnager_unity2_raw :: start_sampling (__receiver , :: core :: option :: Option :: None) } } # [doc = "`StopSampling()` overload"] fn stop_sampling (self ,) -> () { unsafe { let __receiver = < GyroMnager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GyroMnager_unity2_raw :: stop_sampling (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < GyroMnager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GyroMnager_unity2_raw :: update (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetState(crate::app::gyromnager::GyroMnager_DeviceType)` overload"] fn get_state (self , r#type : impl :: core :: convert :: Into < crate :: app :: gyromnager :: GyroMnager_DeviceType >) -> crate :: nn :: hid :: sixaxissensorstate :: SixAxisSensorState { unsafe { let __receiver = < GyroMnager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GyroMnager_unity2_raw :: get_state (__receiver , :: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-gyromnager")]
-impl<__T: IGyroMnager> IGyroMnagerMethods for __T {}
+impl < __T : IGyroMnager > IGyroMnagerMethods for __T { }
+
+#[cfg(feature = "app-gyromnager")]
+impl GyroMnager { pub fn get_pad_style_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GyroMnager_unity2_raw :: __lookup_get_pad_style :: get_method_info () } pub fn set_pad_style_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GyroMnager_unity2_raw :: __lookup_set_pad_style :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GyroMnager_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn setup_pad_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GyroMnager_unity2_raw :: __lookup_setup_pad :: get_method_info () } pub fn start_sampling_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GyroMnager_unity2_raw :: __lookup_start_sampling :: get_method_info () } pub fn stop_sampling_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GyroMnager_unity2_raw :: __lookup_stop_sampling :: get_method_info () } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GyroMnager_unity2_raw :: __lookup_update :: get_method_info () } pub fn get_state_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GyroMnager_unity2_raw :: __lookup_get_state :: get_method_info () } }
 
 #[cfg(feature = "app-gyromnager")]
 impl GyroMnager {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(GyroMnager), ::core::stringify!(new),));
-        <Self as IGyroMnagerMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GyroMnager) , :: core :: stringify ! (new) ,)) ; < Self as IGyroMnagerMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-gyromnager")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{GyroMnager, GyroMnager_DeviceType, IGyroMnager, IGyroMnagerMethods};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::system::{object::IObject, r#enum::IEnum, valuetype::IValueType};
+    pub use super::GyroMnager;
+    pub use super::IGyroMnager;
+    pub use super::IGyroMnagerMethods;
+    pub use super::GyroMnager_DeviceType;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

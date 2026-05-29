@@ -2,431 +2,112 @@
 
 #[cfg(feature = "combat-vcamshaker-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        r#enum::{Enum, IEnum},
-        valuetype::{IValueType, ValueType},
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/vcamshaker/VCamShaker_ShakeType.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct VCamShaker_ShakeType {
-        pub value: i32,
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/vcamshaker/VCamShaker.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "VCamShaker")] pub struct VCamShaker {
+# [offset (80)] # [rename (name = "m_Setting")] pub m_setting : crate :: combat :: camerapositiondata :: CameraPositionData_CameraShakeSettings ,
+# [offset (88)] # [rename (name = "m_ShakeType")] pub m_shake_type : crate :: combat :: vcamshaker :: VCamShaker_ShakeType ,
+# [offset (92)] # [rename (name = "m_Life")] pub m_life : i32 ,
+# [offset (96)] # [rename (name = "m_Magnitude")] pub m_magnitude : f32 ,
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/vcamshaker/VCamShaker_ShakeType.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct VCamShaker_ShakeType  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for VCamShaker_ShakeType  {
+    const NAMESPACE: &'static str = "Combat";
+
+    const NAME: &'static str = "VCamShaker.ShakeType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    impl ::unity2::ClassIdentity for VCamShaker_ShakeType {
-        const NAME: &'static str = "VCamShaker.ShakeType";
-        const NAMESPACE: &'static str = "Combat";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  ::unity2::IlType for VCamShaker_ShakeType  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::IlType for VCamShaker_ShakeType {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  VCamShaker_ShakeType  {
+    pub fn waiting() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl VCamShaker_ShakeType {
-        pub fn waiting() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn impact() -> Self {
-            Self { value: 1 }
-        }
+    pub fn impact() -> Self {
+        Self { value: 1 }
 
-        pub fn armor_step() -> Self {
-            Self { value: 2 }
-        }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/vcamshaker/VCamShaker.md"))]
-    #[::unity2::class(namespace = "Combat", name = "VCamShaker")]
-    pub struct VCamShaker {
-        #[offset(80)]
-        #[rename(name = "m_Setting")]
-        pub m_setting: crate::combat::camerapositiondata::CameraPositionData_CameraShakeSettings,
-        #[offset(88)]
-        #[rename(name = "m_ShakeType")]
-        pub m_shake_type: crate::combat::vcamshaker::VCamShaker_ShakeType,
-        #[offset(92)]
-        #[rename(name = "m_Life")]
-        pub m_life: i32,
-        #[offset(96)]
-        #[rename(name = "m_Magnitude")]
-        pub m_magnitude: f32,
+
+    pub fn armor_step() -> Self {
+        Self { value: 2 }
+
     }
+
+}
+
 }
 
 #[cfg(feature = "combat-vcamshaker-types")]
 pub use __types::*;
 
 #[cfg(feature = "combat-vcamshaker")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __VCamShaker_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_is_valid {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VCamShaker as ::unity2::ClassIdentity>::class(),
-                "get_IsValid",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <VCamShaker as ::unity2::ClassIdentity>::NAME,
-                        "get_IsValid",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_is_valid(this: VCamShaker, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(VCamShaker, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_is_valid::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_awake {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<VCamShaker as ::unity2::ClassIdentity>::class(), "Awake", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <VCamShaker as ::unity2::ClassIdentity>::NAME,
-                        "Awake",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn awake(this: VCamShaker, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(VCamShaker, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_awake::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_impact {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VCamShaker as ::unity2::ClassIdentity>::class(),
-                "CalcImpact",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <VCamShaker as ::unity2::ClassIdentity>::NAME,
-                        "CalcImpact",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn calc_impact(this: VCamShaker, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 {
-        let inner: extern "C" fn(VCamShaker, ::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 =
-            ::core::mem::transmute(__lookup_calc_impact::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_armor_step {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VCamShaker as ::unity2::ClassIdentity>::class(),
-                "CalcArmorStep",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <VCamShaker as ::unity2::ClassIdentity>::NAME,
-                        "CalcArmorStep",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn calc_armor_step(this: VCamShaker, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 {
-        let inner: extern "C" fn(VCamShaker, ::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 =
-            ::core::mem::transmute(__lookup_calc_armor_step::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_start_shake {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::combat::camerapositiondata::CameraPositionData_CameraShakeSettings as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VCamShaker as ::unity2::ClassIdentity>::class(),
-                "StartShake",
-                4,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <VCamShaker as ::unity2::ClassIdentity>::NAME,
-                        "StartShake",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn start_shake(
-        this: VCamShaker,
-        setting: crate::combat::camerapositiondata::CameraPositionData_CameraShakeSettings,
-        magnitude: f32,
-        distance: f32,
-        is_critical: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            VCamShaker,
-            crate::combat::camerapositiondata::CameraPositionData_CameraShakeSettings,
-            f32,
-            f32,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_start_shake::get_method_info().method_ptr);
-        inner(this, setting, magnitude, distance, is_critical, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_armor_shake {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::combat::camerapositiondata::CameraPositionData_CameraShakeSettings as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VCamShaker as ::unity2::ClassIdentity>::class(),
-                "ArmorShake",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <VCamShaker as ::unity2::ClassIdentity>::NAME,
-                        "ArmorShake",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn armor_shake(
-        this: VCamShaker,
-        setting: crate::combat::camerapositiondata::CameraPositionData_CameraShakeSettings,
-        magnitude: f32,
-        distance: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            VCamShaker,
-            crate::combat::camerapositiondata::CameraPositionData_CameraShakeSettings,
-            f32,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_armor_shake::get_method_info().method_ptr);
-        inner(this, setting, magnitude, distance, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<VCamShaker as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <VCamShaker as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: VCamShaker, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(VCamShaker, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __VCamShaker_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_is_valid { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< VCamShaker as :: unity2 :: ClassIdentity > :: class () , "get_IsValid" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < VCamShaker as :: unity2 :: ClassIdentity > :: NAME , "get_IsValid" , e) , } } } pub unsafe fn get_is_valid (this : VCamShaker , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (VCamShaker , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_is_valid :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_awake { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< VCamShaker as :: unity2 :: ClassIdentity > :: class () , "Awake" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < VCamShaker as :: unity2 :: ClassIdentity > :: NAME , "Awake" , e) , } } } pub unsafe fn awake (this : VCamShaker , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (VCamShaker , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_awake :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_calc_impact { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< VCamShaker as :: unity2 :: ClassIdentity > :: class () , "CalcImpact" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < VCamShaker as :: unity2 :: ClassIdentity > :: NAME , "CalcImpact" , e) , } } } pub unsafe fn calc_impact (this : VCamShaker , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 { let inner : extern "C" fn (VCamShaker , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute (__lookup_calc_impact :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_calc_armor_step { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< VCamShaker as :: unity2 :: ClassIdentity > :: class () , "CalcArmorStep" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < VCamShaker as :: unity2 :: ClassIdentity > :: NAME , "CalcArmorStep" , e) , } } } pub unsafe fn calc_armor_step (this : VCamShaker , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 { let inner : extern "C" fn (VCamShaker , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute (__lookup_calc_armor_step :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_start_shake { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: camerapositiondata :: CameraPositionData_CameraShakeSettings as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< VCamShaker as :: unity2 :: ClassIdentity > :: class () , "StartShake" , 4 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < VCamShaker as :: unity2 :: ClassIdentity > :: NAME , "StartShake" , e) , } } } pub unsafe fn start_shake (this : VCamShaker , setting : crate :: combat :: camerapositiondata :: CameraPositionData_CameraShakeSettings , magnitude : f32 , distance : f32 , is_critical : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (VCamShaker , crate :: combat :: camerapositiondata :: CameraPositionData_CameraShakeSettings , f32 , f32 , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_start_shake :: get_method_info () . method_ptr ,) ; inner (this , setting , magnitude , distance , is_critical , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_armor_shake { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: camerapositiondata :: CameraPositionData_CameraShakeSettings as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< VCamShaker as :: unity2 :: ClassIdentity > :: class () , "ArmorShake" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < VCamShaker as :: unity2 :: ClassIdentity > :: NAME , "ArmorShake" , e) , } } } pub unsafe fn armor_shake (this : VCamShaker , setting : crate :: combat :: camerapositiondata :: CameraPositionData_CameraShakeSettings , magnitude : f32 , distance : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (VCamShaker , crate :: combat :: camerapositiondata :: CameraPositionData_CameraShakeSettings , f32 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_armor_shake :: get_method_info () . method_ptr ,) ; inner (this , setting , magnitude , distance , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< VCamShaker as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < VCamShaker as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : VCamShaker , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (VCamShaker , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "combat-vcamshaker")]
-pub trait IVCamShakerMethods: IVCamShaker {
-    #[doc = "`get_IsValid()` overload"]
-    fn get_is_valid(self) -> bool {
-        unsafe {
-            let __receiver = <VCamShaker as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __VCamShaker_unity2_raw::get_is_valid(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Awake()` overload"]
-    fn awake(self) -> () {
-        unsafe {
-            let __receiver = <VCamShaker as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __VCamShaker_unity2_raw::awake(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CalcImpact()` overload"]
-    fn calc_impact(self) -> crate::unity_engine::vector3::Vector3 {
-        unsafe {
-            let __receiver = <VCamShaker as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __VCamShaker_unity2_raw::calc_impact(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CalcArmorStep()` overload"]
-    fn calc_armor_step(self) -> crate::unity_engine::vector3::Vector3 {
-        unsafe {
-            let __receiver = <VCamShaker as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __VCamShaker_unity2_raw::calc_armor_step(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`StartShake(crate::combat::camerapositiondata::CameraPositionData_CameraShakeSettings, f32, f32, bool)` overload"]
-    fn start_shake(
-        self,
-        setting: impl ::core::convert::Into<crate::combat::camerapositiondata::CameraPositionData_CameraShakeSettings>,
-        magnitude: impl ::core::convert::Into<f32>,
-        distance: impl ::core::convert::Into<f32>,
-        is_critical: impl ::core::convert::Into<bool>,
-    ) -> () {
-        unsafe {
-            let __receiver = <VCamShaker as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __VCamShaker_unity2_raw::start_shake(
-                __receiver,
-                ::core::convert::Into::into(setting),
-                ::core::convert::Into::into(magnitude),
-                ::core::convert::Into::into(distance),
-                ::core::convert::Into::into(is_critical),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ArmorShake(crate::combat::camerapositiondata::CameraPositionData_CameraShakeSettings, f32, f32)` overload"]
-    fn armor_shake(
-        self,
-        setting: impl ::core::convert::Into<crate::combat::camerapositiondata::CameraPositionData_CameraShakeSettings>,
-        magnitude: impl ::core::convert::Into<f32>,
-        distance: impl ::core::convert::Into<f32>,
-    ) -> () {
-        unsafe {
-            let __receiver = <VCamShaker as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __VCamShaker_unity2_raw::armor_shake(
-                __receiver,
-                ::core::convert::Into::into(setting),
-                ::core::convert::Into::into(magnitude),
-                ::core::convert::Into::into(distance),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <VCamShaker as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __VCamShaker_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IVCamShakerMethods : IVCamShaker { # [doc = "`get_IsValid()` overload"] fn get_is_valid (self ,) -> bool { unsafe { let __receiver = < VCamShaker as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __VCamShaker_unity2_raw :: get_is_valid (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Awake()` overload"] fn awake (self ,) -> () { unsafe { let __receiver = < VCamShaker as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __VCamShaker_unity2_raw :: awake (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CalcImpact()` overload"] fn calc_impact (self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < VCamShaker as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __VCamShaker_unity2_raw :: calc_impact (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CalcArmorStep()` overload"] fn calc_armor_step (self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < VCamShaker as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __VCamShaker_unity2_raw :: calc_armor_step (__receiver , :: core :: option :: Option :: None) } } # [doc = "`StartShake(crate::combat::camerapositiondata::CameraPositionData_CameraShakeSettings, f32, f32, bool)` overload"] fn start_shake (self , setting : impl :: core :: convert :: Into < crate :: combat :: camerapositiondata :: CameraPositionData_CameraShakeSettings > , magnitude : impl :: core :: convert :: Into < f32 > , distance : impl :: core :: convert :: Into < f32 > , is_critical : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < VCamShaker as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __VCamShaker_unity2_raw :: start_shake (__receiver , :: core :: convert :: Into :: into (setting) , :: core :: convert :: Into :: into (magnitude) , :: core :: convert :: Into :: into (distance) , :: core :: convert :: Into :: into (is_critical) , :: core :: option :: Option :: None) } } # [doc = "`ArmorShake(crate::combat::camerapositiondata::CameraPositionData_CameraShakeSettings, f32, f32)` overload"] fn armor_shake (self , setting : impl :: core :: convert :: Into < crate :: combat :: camerapositiondata :: CameraPositionData_CameraShakeSettings > , magnitude : impl :: core :: convert :: Into < f32 > , distance : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < VCamShaker as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __VCamShaker_unity2_raw :: armor_shake (__receiver , :: core :: convert :: Into :: into (setting) , :: core :: convert :: Into :: into (magnitude) , :: core :: convert :: Into :: into (distance) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < VCamShaker as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __VCamShaker_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "combat-vcamshaker")]
-impl<__T: IVCamShaker> IVCamShakerMethods for __T {}
+impl < __T : IVCamShaker > IVCamShakerMethods for __T { }
+
+#[cfg(feature = "combat-vcamshaker")]
+impl VCamShaker { pub fn get_is_valid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __VCamShaker_unity2_raw :: __lookup_get_is_valid :: get_method_info () } pub fn awake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __VCamShaker_unity2_raw :: __lookup_awake :: get_method_info () } pub fn calc_impact_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __VCamShaker_unity2_raw :: __lookup_calc_impact :: get_method_info () } pub fn calc_armor_step_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __VCamShaker_unity2_raw :: __lookup_calc_armor_step :: get_method_info () } pub fn start_shake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __VCamShaker_unity2_raw :: __lookup_start_shake :: get_method_info () } pub fn armor_shake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __VCamShaker_unity2_raw :: __lookup_armor_shake :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __VCamShaker_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "combat-vcamshaker")]
 impl VCamShaker {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(VCamShaker), ::core::stringify!(new),));
-        <Self as IVCamShakerMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (VCamShaker) , :: core :: stringify ! (new) ,)) ; < Self as IVCamShakerMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "combat-vcamshaker")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IVCamShaker, IVCamShakerMethods, VCamShaker, VCamShaker_ShakeType};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::system::{object::IObject, r#enum::IEnum, valuetype::IValueType};
+    pub use super::VCamShaker;
+    pub use super::IVCamShaker;
+    pub use super::IVCamShakerMethods;
+    pub use super::VCamShaker_ShakeType;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

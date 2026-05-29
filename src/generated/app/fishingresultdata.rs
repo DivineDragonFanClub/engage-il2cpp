@@ -2,114 +2,50 @@
 
 #[cfg(feature = "app-fishingresultdata-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishingresultdata/FishingResultData.md"))]
-    #[::unity2::class(namespace = "App", name = "FishingResultData")]
-    #[parent(crate::system::object::Object)]
-    pub struct FishingResultData {
-        #[offset(16)]
-        #[rename(name = "BaseData")]
-        pub base_data: crate::app::fishingfishdata::FishingFishData,
-        #[offset(24)]
-        #[rename(name = "Size")]
-        pub size: f32,
-        #[offset(28)]
-        #[rename(name = "Rank")]
-        pub rank: crate::app::fishing::sizerank::SizeRank,
-        #[offset(32)]
-        #[rename(name = "IsBonus")]
-        pub is_bonus: bool,
-        #[offset(36)]
-        #[rename(name = "ItemNum")]
-        pub item_num: i32,
-        #[offset(40)]
-        #[rename(name = "Cench2Inch")]
-        pub cench2_inch: f32,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishingresultdata/FishingResultData.md"))] # [:: unity2 :: class (namespace = "App" , name = "FishingResultData")] # [parent (crate :: system :: object :: Object)] pub struct FishingResultData {
+# [offset (16)] # [rename (name = "BaseData")] pub base_data : crate :: app :: fishingfishdata :: FishingFishData ,
+# [offset (24)] # [rename (name = "Size")] pub size : f32 ,
+# [offset (28)] # [rename (name = "Rank")] pub rank : crate :: app :: fishing :: sizerank :: SizeRank ,
+# [offset (32)] # [rename (name = "IsBonus")] pub is_bonus : bool ,
+# [offset (36)] # [rename (name = "ItemNum")] pub item_num : i32 ,
+# [offset (40)] # [rename (name = "Cench2Inch")] pub cench2_inch : f32 ,
+}
+
 }
 
 #[cfg(feature = "app-fishingresultdata-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-fishingresultdata")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __FishingResultData_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FishingResultData as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FishingResultData as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: FishingResultData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(FishingResultData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __FishingResultData_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FishingResultData as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FishingResultData as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : FishingResultData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FishingResultData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-fishingresultdata")]
-pub trait IFishingResultDataMethods: IFishingResultData {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <FishingResultData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FishingResultData_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IFishingResultDataMethods : IFishingResultData { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < FishingResultData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FishingResultData_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-fishingresultdata")]
-impl<__T: IFishingResultData> IFishingResultDataMethods for __T {}
+impl < __T : IFishingResultData > IFishingResultDataMethods for __T { }
+
+#[cfg(feature = "app-fishingresultdata")]
+impl FishingResultData { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FishingResultData_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-fishingresultdata")]
 impl FishingResultData {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(FishingResultData),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IFishingResultDataMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FishingResultData) , :: core :: stringify ! (new) ,)) ; < Self as IFishingResultDataMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-fishingresultdata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{FishingResultData, IFishingResultData, IFishingResultDataMethods};
+    pub use super::FishingResultData;
+    pub use super::IFishingResultData;
+    pub use super::IFishingResultDataMethods;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

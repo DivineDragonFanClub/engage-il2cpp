@@ -2,698 +2,114 @@
 
 #[cfg(feature = "app-godgrowsequence-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::procinst::{IProcInst, ProcInst},
-        system::{
-            object::{IObject, Object},
-            r#enum::{Enum, IEnum},
-            valuetype::{IValueType, ValueType},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godgrowsequence/GodGrowSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "GodGrowSequence")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct GodGrowSequence {
-        #[offset(112)]
-        #[rename(name = "m_GodUnit")]
-        pub m_god_unit: crate::app::godunit::GodUnit,
-        #[offset(120)]
-        #[rename(name = "m_Unit")]
-        pub m_unit: crate::app::unit::Unit,
-        #[offset(128)]
-        #[rename(name = "m_Exp")]
-        pub m_exp: i32,
-        #[offset(132)]
-        #[rename(name = "m_Dirty")]
-        pub m_dirty: i32,
-        #[offset(136)]
-        #[rename(name = "m_OldLevel")]
-        pub m_old_level: i32,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: procinst :: { IProcInst , ProcInst }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/godgrowsequence/GodGrowSequence_Label.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct GodGrowSequence_Label {
-        pub value: i32,
-    }
 
-    impl ::unity2::ClassIdentity for GodGrowSequence_Label {
-        const NAME: &'static str = "GodGrowSequence.Label";
-        const NAMESPACE: &'static str = "App";
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/godgrowsequence/GodGrowSequence_Label.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct GodGrowSequence_Label  {
+    pub value: i32,
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+impl  ::unity2::ClassIdentity for GodGrowSequence_Label  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "GodGrowSequence.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for GodGrowSequence_Label {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  ::unity2::IlType for GodGrowSequence_Label  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl GodGrowSequence_Label {
-        pub fn level_up() -> Self {
-            Self { value: 0 }
-        }
+}
 
-        pub fn end() -> Self {
-            Self { value: 1 }
-        }
+
+impl  GodGrowSequence_Label  {
+    pub fn level_up() -> Self {
+        Self { value: 0 }
+
     }
+
+
+    pub fn end() -> Self {
+        Self { value: 1 }
+
+    }
+
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godgrowsequence/GodGrowSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "GodGrowSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct GodGrowSequence {
+# [offset (112)] # [rename (name = "m_GodUnit")] pub m_god_unit : crate :: app :: godunit :: GodUnit ,
+# [offset (120)] # [rename (name = "m_Unit")] pub m_unit : crate :: app :: unit :: Unit ,
+# [offset (128)] # [rename (name = "m_Exp")] pub m_exp : i32 ,
+# [offset (132)] # [rename (name = "m_Dirty")] pub m_dirty : i32 ,
+# [offset (136)] # [rename (name = "m_OldLevel")] pub m_old_level : i32 ,
+}
+
 }
 
 #[cfg(feature = "app-godgrowsequence-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-godgrowsequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __GodGrowSequence_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <crate::app::godunit::GodUnit as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GodGrowSequence as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GodGrowSequence as ::unity2::ClassIdentity>::NAME,
-                        "CreateBind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        god_unit: crate::app::godunit::GodUnit,
-        exp: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::app::procinst::ProcInst, crate::app::godunit::GodUnit, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
-        inner(super_, god_unit, exp, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <crate::app::godunit::GodUnit as ::unity2::IlType>::il_type(),
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GodGrowSequence as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                4,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GodGrowSequence as ::unity2::ClassIdentity>::NAME,
-                        "CreateBind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_bind_2(
-        super_: crate::app::procinst::ProcInst,
-        god_unit: crate::app::godunit::GodUnit,
-        unit: crate::app::unit::Unit,
-        exp: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            crate::app::godunit::GodUnit,
-            crate::app::unit::Unit,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_create_bind_2::get_method_info().method_ptr);
-        inner(super_, god_unit, unit, exp, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind_3 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <crate::app::godunit::GodUnit as ::unity2::IlType>::il_type(),
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GodGrowSequence as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                5,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GodGrowSequence as ::unity2::ClassIdentity>::NAME,
-                        "CreateBind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_bind_3(
-        super_: crate::app::procinst::ProcInst,
-        god_unit: crate::app::godunit::GodUnit,
-        unit: crate::app::unit::Unit,
-        exp: i32,
-        dirty: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            crate::app::godunit::GodUnit,
-            crate::app::unit::Unit,
-            i32,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_create_bind_3::get_method_info().method_ptr);
-        inner(super_, god_unit, unit, exp, dirty, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind_impl {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <crate::app::godunit::GodUnit as ::unity2::IlType>::il_type(),
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GodGrowSequence as ::unity2::ClassIdentity>::class(),
-                "CreateBindImpl",
-                5,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GodGrowSequence as ::unity2::ClassIdentity>::NAME,
-                        "CreateBindImpl",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_bind_impl(
-        super_: crate::app::procinst::ProcInst,
-        god_unit: crate::app::godunit::GodUnit,
-        unit: crate::app::unit::Unit,
-        exp: i32,
-        dirty: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            crate::app::godunit::GodUnit,
-            crate::app::unit::Unit,
-            i32,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_create_bind_impl::get_method_info().method_ptr);
-        inner(super_, god_unit, unit, exp, dirty, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::godunit::GodUnit as ::unity2::IlType>::il_type(),
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GodGrowSequence as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                4,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GodGrowSequence as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: GodGrowSequence,
-        god_unit: crate::app::godunit::GodUnit,
-        unit: crate::app::unit::Unit,
-        exp: i32,
-        dirty: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(GodGrowSequence, crate::app::godunit::GodUnit, crate::app::unit::Unit, i32, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, god_unit, unit, exp, dirty, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_gain_exp {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GodGrowSequence as ::unity2::ClassIdentity>::class(),
-                "GainExp",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GodGrowSequence as ::unity2::ClassIdentity>::NAME,
-                        "GainExp",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn gain_exp(this: GodGrowSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GodGrowSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_gain_exp::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_gain_dirty {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GodGrowSequence as ::unity2::ClassIdentity>::class(),
-                "GainDirty",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GodGrowSequence as ::unity2::ClassIdentity>::NAME,
-                        "GainDirty",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn gain_dirty(this: GodGrowSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GodGrowSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_gain_dirty::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_check_notify_level_cap_talk {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GodGrowSequence as ::unity2::ClassIdentity>::class(),
-                "CheckNotifyLevelCapTalk",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GodGrowSequence as ::unity2::ClassIdentity>::NAME,
-                        "CheckNotifyLevelCapTalk",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn check_notify_level_cap_talk(this: GodGrowSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GodGrowSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_check_notify_level_cap_talk::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_notify_level_cap_talk {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GodGrowSequence as ::unity2::ClassIdentity>::class(),
-                "NotifyLevelCapTalk",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GodGrowSequence as ::unity2::ClassIdentity>::NAME,
-                        "NotifyLevelCapTalk",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn notify_level_cap_talk(this: GodGrowSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GodGrowSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_notify_level_cap_talk::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_check_level_up {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GodGrowSequence as ::unity2::ClassIdentity>::class(),
-                "CheckLevelUp",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GodGrowSequence as ::unity2::ClassIdentity>::NAME,
-                        "CheckLevelUp",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn check_level_up(this: GodGrowSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GodGrowSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_check_level_up::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_level_up {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GodGrowSequence as ::unity2::ClassIdentity>::class(),
-                "LevelUp",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GodGrowSequence as ::unity2::ClassIdentity>::NAME,
-                        "LevelUp",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn level_up(this: GodGrowSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GodGrowSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_level_up::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __GodGrowSequence_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_bind { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: godunit :: GodUnit as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GodGrowSequence as :: unity2 :: ClassIdentity > :: class () , "CreateBind" , 3 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GodGrowSequence as :: unity2 :: ClassIdentity > :: NAME , "CreateBind" , e) , } } } pub unsafe fn create_bind (super_ : crate :: app :: procinst :: ProcInst , god_unit : crate :: app :: godunit :: GodUnit , exp : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: godunit :: GodUnit , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create_bind :: get_method_info () . method_ptr ,) ; inner (super_ , god_unit , exp , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_bind_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: godunit :: GodUnit as :: unity2 :: IlType > :: il_type () , < crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GodGrowSequence as :: unity2 :: ClassIdentity > :: class () , "CreateBind" , 4 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GodGrowSequence as :: unity2 :: ClassIdentity > :: NAME , "CreateBind" , e) , } } } pub unsafe fn create_bind_2 (super_ : crate :: app :: procinst :: ProcInst , god_unit : crate :: app :: godunit :: GodUnit , unit : crate :: app :: unit :: Unit , exp : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: godunit :: GodUnit , crate :: app :: unit :: Unit , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create_bind_2 :: get_method_info () . method_ptr ,) ; inner (super_ , god_unit , unit , exp , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_bind_3 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: godunit :: GodUnit as :: unity2 :: IlType > :: il_type () , < crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GodGrowSequence as :: unity2 :: ClassIdentity > :: class () , "CreateBind" , 5 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GodGrowSequence as :: unity2 :: ClassIdentity > :: NAME , "CreateBind" , e) , } } } pub unsafe fn create_bind_3 (super_ : crate :: app :: procinst :: ProcInst , god_unit : crate :: app :: godunit :: GodUnit , unit : crate :: app :: unit :: Unit , exp : i32 , dirty : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: godunit :: GodUnit , crate :: app :: unit :: Unit , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create_bind_3 :: get_method_info () . method_ptr ,) ; inner (super_ , god_unit , unit , exp , dirty , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_bind_impl { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: godunit :: GodUnit as :: unity2 :: IlType > :: il_type () , < crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GodGrowSequence as :: unity2 :: ClassIdentity > :: class () , "CreateBindImpl" , 5 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GodGrowSequence as :: unity2 :: ClassIdentity > :: NAME , "CreateBindImpl" , e) , } } } pub unsafe fn create_bind_impl (super_ : crate :: app :: procinst :: ProcInst , god_unit : crate :: app :: godunit :: GodUnit , unit : crate :: app :: unit :: Unit , exp : i32 , dirty : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: godunit :: GodUnit , crate :: app :: unit :: Unit , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create_bind_impl :: get_method_info () . method_ptr ,) ; inner (super_ , god_unit , unit , exp , dirty , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: godunit :: GodUnit as :: unity2 :: IlType > :: il_type () , < crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GodGrowSequence as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 4 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GodGrowSequence as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : GodGrowSequence , god_unit : crate :: app :: godunit :: GodUnit , unit : crate :: app :: unit :: Unit , exp : i32 , dirty : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GodGrowSequence , crate :: app :: godunit :: GodUnit , crate :: app :: unit :: Unit , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , god_unit , unit , exp , dirty , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_gain_exp { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GodGrowSequence as :: unity2 :: ClassIdentity > :: class () , "GainExp" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GodGrowSequence as :: unity2 :: ClassIdentity > :: NAME , "GainExp" , e) , } } } pub unsafe fn gain_exp (this : GodGrowSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GodGrowSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_gain_exp :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_gain_dirty { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GodGrowSequence as :: unity2 :: ClassIdentity > :: class () , "GainDirty" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GodGrowSequence as :: unity2 :: ClassIdentity > :: NAME , "GainDirty" , e) , } } } pub unsafe fn gain_dirty (this : GodGrowSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GodGrowSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_gain_dirty :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_check_notify_level_cap_talk { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GodGrowSequence as :: unity2 :: ClassIdentity > :: class () , "CheckNotifyLevelCapTalk" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GodGrowSequence as :: unity2 :: ClassIdentity > :: NAME , "CheckNotifyLevelCapTalk" , e) , } } } pub unsafe fn check_notify_level_cap_talk (this : GodGrowSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GodGrowSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_check_notify_level_cap_talk :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_notify_level_cap_talk { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GodGrowSequence as :: unity2 :: ClassIdentity > :: class () , "NotifyLevelCapTalk" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GodGrowSequence as :: unity2 :: ClassIdentity > :: NAME , "NotifyLevelCapTalk" , e) , } } } pub unsafe fn notify_level_cap_talk (this : GodGrowSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GodGrowSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_notify_level_cap_talk :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_check_level_up { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GodGrowSequence as :: unity2 :: ClassIdentity > :: class () , "CheckLevelUp" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GodGrowSequence as :: unity2 :: ClassIdentity > :: NAME , "CheckLevelUp" , e) , } } } pub unsafe fn check_level_up (this : GodGrowSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GodGrowSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_check_level_up :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_level_up { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GodGrowSequence as :: unity2 :: ClassIdentity > :: class () , "LevelUp" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GodGrowSequence as :: unity2 :: ClassIdentity > :: NAME , "LevelUp" , e) , } } } pub unsafe fn level_up (this : GodGrowSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GodGrowSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_level_up :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-godgrowsequence")]
+impl GodGrowSequence { # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::godunit::GodUnit, i32)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , god_unit : impl :: core :: convert :: Into < crate :: app :: godunit :: GodUnit > , exp : impl :: core :: convert :: Into < i32 >) -> () { unsafe { __GodGrowSequence_unity2_raw :: create_bind (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (god_unit) , :: core :: convert :: Into :: into (exp) , :: core :: option :: Option :: None) } } # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::godunit::GodUnit, crate::app::unit::Unit, i32)` overload"] pub fn create_bind_2 (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , god_unit : impl :: core :: convert :: Into < crate :: app :: godunit :: GodUnit > , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , exp : impl :: core :: convert :: Into < i32 >) -> () { unsafe { __GodGrowSequence_unity2_raw :: create_bind_2 (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (god_unit) , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (exp) , :: core :: option :: Option :: None) } } # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::godunit::GodUnit, crate::app::unit::Unit, i32, i32)` overload"] pub fn create_bind_3 (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , god_unit : impl :: core :: convert :: Into < crate :: app :: godunit :: GodUnit > , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , exp : impl :: core :: convert :: Into < i32 > , dirty : impl :: core :: convert :: Into < i32 >) -> () { unsafe { __GodGrowSequence_unity2_raw :: create_bind_3 (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (god_unit) , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (exp) , :: core :: convert :: Into :: into (dirty) , :: core :: option :: Option :: None) } } # [doc = "`CreateBindImpl(crate::app::procinst::ProcInst, crate::app::godunit::GodUnit, crate::app::unit::Unit, i32, i32)` overload"] pub fn create_bind_impl (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , god_unit : impl :: core :: convert :: Into < crate :: app :: godunit :: GodUnit > , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , exp : impl :: core :: convert :: Into < i32 > , dirty : impl :: core :: convert :: Into < i32 >) -> () { unsafe { __GodGrowSequence_unity2_raw :: create_bind_impl (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (god_unit) , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (exp) , :: core :: convert :: Into :: into (dirty) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-godgrowsequence")]
+pub trait IGodGrowSequenceMethods : IGodGrowSequence { # [doc = "`.ctor(crate::app::godunit::GodUnit, crate::app::unit::Unit, i32, i32)` overload"] fn ctor (self , god_unit : impl :: core :: convert :: Into < crate :: app :: godunit :: GodUnit > , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , exp : impl :: core :: convert :: Into < i32 > , dirty : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < GodGrowSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GodGrowSequence_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (god_unit) , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (exp) , :: core :: convert :: Into :: into (dirty) , :: core :: option :: Option :: None) } } # [doc = "`GainExp()` overload"] fn gain_exp (self ,) -> () { unsafe { let __receiver = < GodGrowSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GodGrowSequence_unity2_raw :: gain_exp (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GainDirty()` overload"] fn gain_dirty (self ,) -> () { unsafe { let __receiver = < GodGrowSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GodGrowSequence_unity2_raw :: gain_dirty (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CheckNotifyLevelCapTalk()` overload"] fn check_notify_level_cap_talk (self ,) -> () { unsafe { let __receiver = < GodGrowSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GodGrowSequence_unity2_raw :: check_notify_level_cap_talk (__receiver , :: core :: option :: Option :: None) } } # [doc = "`NotifyLevelCapTalk()` overload"] fn notify_level_cap_talk (self ,) -> () { unsafe { let __receiver = < GodGrowSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GodGrowSequence_unity2_raw :: notify_level_cap_talk (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CheckLevelUp()` overload"] fn check_level_up (self ,) -> () { unsafe { let __receiver = < GodGrowSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GodGrowSequence_unity2_raw :: check_level_up (__receiver , :: core :: option :: Option :: None) } } # [doc = "`LevelUp()` overload"] fn level_up (self ,) -> () { unsafe { let __receiver = < GodGrowSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GodGrowSequence_unity2_raw :: level_up (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-godgrowsequence")]
+impl < __T : IGodGrowSequence > IGodGrowSequenceMethods for __T { }
+
+#[cfg(feature = "app-godgrowsequence")]
+impl GodGrowSequence { pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GodGrowSequence_unity2_raw :: __lookup_create_bind :: get_method_info () } pub fn create_bind_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GodGrowSequence_unity2_raw :: __lookup_create_bind_2 :: get_method_info () } pub fn create_bind_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GodGrowSequence_unity2_raw :: __lookup_create_bind_3 :: get_method_info () } pub fn create_bind_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GodGrowSequence_unity2_raw :: __lookup_create_bind_impl :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GodGrowSequence_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn gain_exp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GodGrowSequence_unity2_raw :: __lookup_gain_exp :: get_method_info () } pub fn gain_dirty_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GodGrowSequence_unity2_raw :: __lookup_gain_dirty :: get_method_info () } pub fn check_notify_level_cap_talk_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GodGrowSequence_unity2_raw :: __lookup_check_notify_level_cap_talk :: get_method_info () } pub fn notify_level_cap_talk_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GodGrowSequence_unity2_raw :: __lookup_notify_level_cap_talk :: get_method_info () } pub fn check_level_up_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GodGrowSequence_unity2_raw :: __lookup_check_level_up :: get_method_info () } pub fn level_up_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GodGrowSequence_unity2_raw :: __lookup_level_up :: get_method_info () } }
 
 #[cfg(feature = "app-godgrowsequence")]
 impl GodGrowSequence {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::godunit::GodUnit, i32)` overload"]
-    pub fn create_bind(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        god_unit: impl ::core::convert::Into<crate::app::godunit::GodUnit>,
-        exp: impl ::core::convert::Into<i32>,
-    ) -> () {
-        unsafe {
-            __GodGrowSequence_unity2_raw::create_bind(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(god_unit),
-                ::core::convert::Into::into(exp),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::godunit::GodUnit, crate::app::unit::Unit, i32)` overload"]
-    pub fn create_bind_2(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        god_unit: impl ::core::convert::Into<crate::app::godunit::GodUnit>,
-        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-        exp: impl ::core::convert::Into<i32>,
-    ) -> () {
-        unsafe {
-            __GodGrowSequence_unity2_raw::create_bind_2(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(god_unit),
-                ::core::convert::Into::into(unit),
-                ::core::convert::Into::into(exp),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::godunit::GodUnit, crate::app::unit::Unit, i32, i32)` overload"]
-    pub fn create_bind_3(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        god_unit: impl ::core::convert::Into<crate::app::godunit::GodUnit>,
-        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-        exp: impl ::core::convert::Into<i32>,
-        dirty: impl ::core::convert::Into<i32>,
-    ) -> () {
-        unsafe {
-            __GodGrowSequence_unity2_raw::create_bind_3(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(god_unit),
-                ::core::convert::Into::into(unit),
-                ::core::convert::Into::into(exp),
-                ::core::convert::Into::into(dirty),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`CreateBindImpl(crate::app::procinst::ProcInst, crate::app::godunit::GodUnit, crate::app::unit::Unit, i32, i32)` overload"]
-    pub fn create_bind_impl(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        god_unit: impl ::core::convert::Into<crate::app::godunit::GodUnit>,
-        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-        exp: impl ::core::convert::Into<i32>,
-        dirty: impl ::core::convert::Into<i32>,
-    ) -> () {
-        unsafe {
-            __GodGrowSequence_unity2_raw::create_bind_impl(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(god_unit),
-                ::core::convert::Into::into(unit),
-                ::core::convert::Into::into(exp),
-                ::core::convert::Into::into(dirty),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-godgrowsequence")]
-pub trait IGodGrowSequenceMethods: IGodGrowSequence {
-    #[doc = "`.ctor(crate::app::godunit::GodUnit, crate::app::unit::Unit, i32, i32)` overload"]
-    fn ctor(
-        self,
-        god_unit: impl ::core::convert::Into<crate::app::godunit::GodUnit>,
-        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-        exp: impl ::core::convert::Into<i32>,
-        dirty: impl ::core::convert::Into<i32>,
-    ) -> () {
-        unsafe {
-            let __receiver = <GodGrowSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GodGrowSequence_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(god_unit),
-                ::core::convert::Into::into(unit),
-                ::core::convert::Into::into(exp),
-                ::core::convert::Into::into(dirty),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GainExp()` overload"]
-    fn gain_exp(self) -> () {
-        unsafe {
-            let __receiver = <GodGrowSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GodGrowSequence_unity2_raw::gain_exp(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GainDirty()` overload"]
-    fn gain_dirty(self) -> () {
-        unsafe {
-            let __receiver = <GodGrowSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GodGrowSequence_unity2_raw::gain_dirty(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CheckNotifyLevelCapTalk()` overload"]
-    fn check_notify_level_cap_talk(self) -> () {
-        unsafe {
-            let __receiver = <GodGrowSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GodGrowSequence_unity2_raw::check_notify_level_cap_talk(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`NotifyLevelCapTalk()` overload"]
-    fn notify_level_cap_talk(self) -> () {
-        unsafe {
-            let __receiver = <GodGrowSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GodGrowSequence_unity2_raw::notify_level_cap_talk(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CheckLevelUp()` overload"]
-    fn check_level_up(self) -> () {
-        unsafe {
-            let __receiver = <GodGrowSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GodGrowSequence_unity2_raw::check_level_up(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`LevelUp()` overload"]
-    fn level_up(self) -> () {
-        unsafe {
-            let __receiver = <GodGrowSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GodGrowSequence_unity2_raw::level_up(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-godgrowsequence")]
-impl<__T: IGodGrowSequence> IGodGrowSequenceMethods for __T {}
-
-#[cfg(feature = "app-godgrowsequence")]
-impl GodGrowSequence {
-    #[doc = "`.ctor(crate::app::godunit::GodUnit, crate::app::unit::Unit, i32, i32)` — overload selector"]
-    pub fn new(god_unit: crate::app::godunit::GodUnit, unit: crate::app::unit::Unit, exp: i32, dirty: i32) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GodGrowSequence),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGodGrowSequenceMethods>::ctor(this, god_unit, unit, exp, dirty);
-        this
-    }
+# [doc = "`.ctor(crate::app::godunit::GodUnit, crate::app::unit::Unit, i32, i32)` — overload selector"] pub fn new (god_unit : crate :: app :: godunit :: GodUnit , unit : crate :: app :: unit :: Unit , exp : i32 , dirty : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GodGrowSequence) , :: core :: stringify ! (new) ,)) ; < Self as IGodGrowSequenceMethods > :: ctor (this , god_unit , unit , exp , dirty) ; this }
 }
 
 #[cfg(feature = "app-godgrowsequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{GodGrowSequence, GodGrowSequence_Label, IGodGrowSequence, IGodGrowSequenceMethods};
-    #[cfg(feature = "app-procinst")]
-    pub use crate::app::procinst::IProcInstMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::{
-        app::procinst::IProcInst,
-        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
-    };
+    pub use super::GodGrowSequence_Label;
+    pub use super::GodGrowSequence;
+    pub use super::IGodGrowSequence;
+    pub use super::IGodGrowSequenceMethods;
+    pub use crate::app::procinst::IProcInst;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "app-procinst")] pub use crate::app::procinst::IProcInstMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

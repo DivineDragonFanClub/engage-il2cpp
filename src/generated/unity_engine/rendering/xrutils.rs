@@ -2,97 +2,34 @@
 
 #[cfg(feature = "unity_engine-rendering-xrutils-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/xrutils/XRUtils.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Rendering", name = "XRUtils")]
-    #[parent(crate::system::object::Object)]
-    pub struct XRUtils {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/xrutils/XRUtils.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering" , name = "XRUtils")] # [parent (crate :: system :: object :: Object)] pub struct XRUtils {}
+
 }
 
 #[cfg(feature = "unity_engine-rendering-xrutils-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-xrutils")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __XRUtils_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_draw_occlusion_mesh {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::rendering::commandbuffer::CommandBuffer as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::camera::Camera as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <XRUtils as ::unity2::ClassIdentity>::class(),
-                "DrawOcclusionMesh",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <XRUtils as ::unity2::ClassIdentity>::NAME,
-                        "DrawOcclusionMesh",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn draw_occlusion_mesh(
-        cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
-        camera: crate::unity_engine::camera::Camera,
-        stereo_enabled: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::rendering::commandbuffer::CommandBuffer,
-            crate::unity_engine::camera::Camera,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_draw_occlusion_mesh::get_method_info().method_ptr);
-        inner(cmd, camera, stereo_enabled, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __XRUtils_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_draw_occlusion_mesh { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: camera :: Camera as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< XRUtils as :: unity2 :: ClassIdentity > :: class () , "DrawOcclusionMesh" , 3 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < XRUtils as :: unity2 :: ClassIdentity > :: NAME , "DrawOcclusionMesh" , e) , } } } pub unsafe fn draw_occlusion_mesh (cmd : crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer , camera : crate :: unity_engine :: camera :: Camera , stereo_enabled : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer , crate :: unity_engine :: camera :: Camera , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_draw_occlusion_mesh :: get_method_info () . method_ptr ,) ; inner (cmd , camera , stereo_enabled , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-rendering-xrutils")]
-impl XRUtils {
-    #[doc = "`DrawOcclusionMesh(crate::unity_engine::rendering::commandbuffer::CommandBuffer, crate::unity_engine::camera::Camera, bool)` overload"]
-    pub fn draw_occlusion_mesh(
-        cmd: impl ::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>,
-        camera: impl ::core::convert::Into<crate::unity_engine::camera::Camera>,
-        stereo_enabled: impl ::core::convert::Into<bool>,
-    ) -> () {
-        unsafe {
-            __XRUtils_unity2_raw::draw_occlusion_mesh(
-                ::core::convert::Into::into(cmd),
-                ::core::convert::Into::into(camera),
-                ::core::convert::Into::into(stereo_enabled),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+impl XRUtils { # [doc = "`DrawOcclusionMesh(crate::unity_engine::rendering::commandbuffer::CommandBuffer, crate::unity_engine::camera::Camera, bool)` overload"] pub fn draw_occlusion_mesh (cmd : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer > , camera : impl :: core :: convert :: Into < crate :: unity_engine :: camera :: Camera > , stereo_enabled : impl :: core :: convert :: Into < bool >) -> () { unsafe { __XRUtils_unity2_raw :: draw_occlusion_mesh (:: core :: convert :: Into :: into (cmd) , :: core :: convert :: Into :: into (camera) , :: core :: convert :: Into :: into (stereo_enabled) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-rendering-xrutils")]
+impl XRUtils { pub fn draw_occlusion_mesh_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __XRUtils_unity2_raw :: __lookup_draw_occlusion_mesh :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-rendering-xrutils")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IXRUtils, XRUtils};
+    pub use super::XRUtils;
+    pub use super::IXRUtils;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

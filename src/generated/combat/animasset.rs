@@ -2,246 +2,49 @@
 
 #[cfg(feature = "combat-animasset-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        combat::characterassett_1::{CharacterAssetT_1, ICharacterAssetT_1},
-        system::object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/animasset/AnimAsset.md"))]
-    #[::unity2::class(namespace = "Combat", name = "AnimAsset")]
-    # [parent (crate :: combat :: characterassett_1 :: CharacterAssetT_1 < crate :: unity_engine :: animationclip :: AnimationClip >)]
-    pub struct AnimAsset {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: combat :: characterassett_1 :: { CharacterAssetT_1 , ICharacterAssetT_1 }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/animasset/AnimAsset.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "AnimAsset")] # [parent (crate :: combat :: characterassett_1 :: CharacterAssetT_1 < crate :: unity_engine :: animationclip :: AnimationClip >)] pub struct AnimAsset {}
+
 }
 
 #[cfg(feature = "combat-animasset-types")]
 pub use __types::*;
 
 #[cfg(feature = "combat-animasset")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AnimAsset_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<AnimAsset as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AnimAsset as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: AnimAsset, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AnimAsset, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<AnimAsset as ::unity2::ClassIdentity>::class(), ".ctor", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AnimAsset as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor_2(this: AnimAsset, name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AnimAsset, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
-        inner(this, name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_hash {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<AnimAsset as ::unity2::ClassIdentity>::class(), "get_Hash", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AnimAsset as ::unity2::ClassIdentity>::NAME,
-                        "get_Hash",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_hash(this: AnimAsset, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AnimAsset, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_hash::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_hash {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<AnimAsset as ::unity2::ClassIdentity>::class(), "set_Hash", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AnimAsset as ::unity2::ClassIdentity>::NAME,
-                        "set_Hash",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_hash(this: AnimAsset, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AnimAsset, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_hash::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_name_and_hash {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AnimAsset as ::unity2::ClassIdentity>::class(),
-                "SetNameAndHash",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AnimAsset as ::unity2::ClassIdentity>::NAME,
-                        "SetNameAndHash",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_name_and_hash(this: AnimAsset, name: ::unity2::Il2CppString, hash: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AnimAsset, ::unity2::Il2CppString, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_name_and_hash::get_method_info().method_ptr);
-        inner(this, name, hash, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __AnimAsset_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AnimAsset as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AnimAsset as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : AnimAsset , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AnimAsset , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AnimAsset as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AnimAsset as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor_2 (this : AnimAsset , name : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AnimAsset , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor_2 :: get_method_info () . method_ptr ,) ; inner (this , name , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_hash { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AnimAsset as :: unity2 :: ClassIdentity > :: class () , "get_Hash" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AnimAsset as :: unity2 :: ClassIdentity > :: NAME , "get_Hash" , e) , } } } pub unsafe fn get_hash (this : AnimAsset , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (AnimAsset , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_hash :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_hash { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AnimAsset as :: unity2 :: ClassIdentity > :: class () , "set_Hash" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AnimAsset as :: unity2 :: ClassIdentity > :: NAME , "set_Hash" , e) , } } } pub unsafe fn set_hash (this : AnimAsset , value : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AnimAsset , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_hash :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_name_and_hash { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AnimAsset as :: unity2 :: ClassIdentity > :: class () , "SetNameAndHash" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AnimAsset as :: unity2 :: ClassIdentity > :: NAME , "SetNameAndHash" , e) , } } } pub unsafe fn set_name_and_hash (this : AnimAsset , name : :: unity2 :: Il2CppString , hash : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AnimAsset , :: unity2 :: Il2CppString , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_name_and_hash :: get_method_info () . method_ptr ,) ; inner (this , name , hash , __unity2_method_info) } }
 
 #[cfg(feature = "combat-animasset")]
-pub trait IAnimAssetMethods: IAnimAsset {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <AnimAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AnimAsset_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
-    fn ctor_2(self, name: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver = <AnimAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AnimAsset_unity2_raw::ctor_2(__receiver, ::core::convert::Into::into(name), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Hash()` overload"]
-    fn get_hash(self) -> i32 {
-        unsafe {
-            let __receiver = <AnimAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AnimAsset_unity2_raw::get_hash(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_Hash(i32)` overload"]
-    fn set_hash(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver = <AnimAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AnimAsset_unity2_raw::set_hash(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetNameAndHash(::unity2::Il2CppString, i32)` overload"]
-    fn set_name_and_hash(self, name: impl ::core::convert::Into<::unity2::Il2CppString>, hash: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver = <AnimAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AnimAsset_unity2_raw::set_name_and_hash(
-                __receiver,
-                ::core::convert::Into::into(name),
-                ::core::convert::Into::into(hash),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+pub trait IAnimAssetMethods : IAnimAsset { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AnimAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AnimAsset_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor(::unity2::Il2CppString)` overload"] fn ctor_2 (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < AnimAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AnimAsset_unity2_raw :: ctor_2 (__receiver , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } # [doc = "`get_Hash()` overload"] fn get_hash (self ,) -> i32 { unsafe { let __receiver = < AnimAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AnimAsset_unity2_raw :: get_hash (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_Hash(i32)` overload"] fn set_hash (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < AnimAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AnimAsset_unity2_raw :: set_hash (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`SetNameAndHash(::unity2::Il2CppString, i32)` overload"] fn set_name_and_hash (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , hash : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < AnimAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AnimAsset_unity2_raw :: set_name_and_hash (__receiver , :: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (hash) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "combat-animasset")]
-impl<__T: IAnimAsset> IAnimAssetMethods for __T {}
+impl < __T : IAnimAsset > IAnimAssetMethods for __T { }
+
+#[cfg(feature = "combat-animasset")]
+impl AnimAsset { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AnimAsset_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AnimAsset_unity2_raw :: __lookup_ctor_2 :: get_method_info () } pub fn get_hash_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AnimAsset_unity2_raw :: __lookup_get_hash :: get_method_info () } pub fn set_hash_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AnimAsset_unity2_raw :: __lookup_set_hash :: get_method_info () } pub fn set_name_and_hash_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AnimAsset_unity2_raw :: __lookup_set_name_and_hash :: get_method_info () } }
 
 #[cfg(feature = "combat-animasset")]
 impl AnimAsset {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(AnimAsset), ::core::stringify!(new),));
-        <Self as IAnimAssetMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AnimAsset) , :: core :: stringify ! (new) ,)) ; < Self as IAnimAssetMethods > :: ctor (this ,) ; this }
 
-    #[doc = "`.ctor(::unity2::Il2CppString)` — overload selector"]
-    pub fn new_2(name: ::unity2::Il2CppString) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(AnimAsset), ::core::stringify!(new_2),));
-        <Self as IAnimAssetMethods>::ctor_2(this, name);
-        this
-    }
+# [doc = "`.ctor(::unity2::Il2CppString)` — overload selector"] pub fn new_2 (name : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AnimAsset) , :: core :: stringify ! (new_2) ,)) ; < Self as IAnimAssetMethods > :: ctor_2 (this , name) ; this }
 }
 
 #[cfg(feature = "combat-animasset")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{AnimAsset, IAnimAsset, IAnimAssetMethods};
-    #[cfg(feature = "combat-characterassett_1")]
-    pub use crate::combat::characterassett_1::ICharacterAssetT_1Methods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::{combat::characterassett_1::ICharacterAssetT_1, system::object::IObject};
+    pub use super::AnimAsset;
+    pub use super::IAnimAsset;
+    pub use super::IAnimAssetMethods;
+    pub use crate::combat::characterassett_1::ICharacterAssetT_1;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "combat-characterassett_1")] pub use crate::combat::characterassett_1::ICharacterAssetT_1Methods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

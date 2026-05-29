@@ -2,387 +2,122 @@
 
 #[cfg(feature = "app-mascotaccdata-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::{
-            structbase::{IStructBase, StructBase},
-            structdata_1::{IStructData_1, StructData_1},
-            structtemplate_1::{IStructTemplate_1, StructTemplate_1},
-        },
-        system::{
-            object::{IObject, Object},
-            r#enum::{Enum, IEnum},
-            valuetype::{IValueType, ValueType},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mascotaccdata/MascotAccData.md"))]
-    #[::unity2::class(namespace = "App", name = "MascotAccData")]
-    # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: mascotaccdata :: MascotAccData >)]
-    pub struct MascotAccData {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: structbase :: { IStructBase , StructBase }
+ ;
+ use crate :: app :: structdata_1 :: { IStructData_1 , StructData_1 }
+ ;
+ use crate :: app :: structtemplate_1 :: { IStructTemplate_1 , StructTemplate_1 }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mascotaccdata/MascotAccData_PartsType.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct MascotAccData_PartsType {
-        pub value: i32,
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mascotaccdata/MascotAccData.md"))] # [:: unity2 :: class (namespace = "App" , name = "MascotAccData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: mascotaccdata :: MascotAccData >)] pub struct MascotAccData {}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mascotaccdata/MascotAccData_PartsType.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct MascotAccData_PartsType  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for MascotAccData_PartsType  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MascotAccData.PartsType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    impl ::unity2::ClassIdentity for MascotAccData_PartsType {
-        const NAME: &'static str = "MascotAccData.PartsType";
-        const NAMESPACE: &'static str = "App";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  ::unity2::IlType for MascotAccData_PartsType  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::IlType for MascotAccData_PartsType {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  MascotAccData_PartsType  {
+    pub fn head() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl MascotAccData_PartsType {
-        pub fn head() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn tail() -> Self {
-            Self { value: 1 }
-        }
+    pub fn tail() -> Self {
+        Self { value: 1 }
 
-        pub fn num() -> Self {
-            Self { value: 2 }
-        }
     }
+
+
+    pub fn num() -> Self {
+        Self { value: 2 }
+
+    }
+
+}
+
 }
 
 #[cfg(feature = "app-mascotaccdata-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-mascotaccdata")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MascotAccData_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_load {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<MascotAccData as ::unity2::ClassIdentity>::class(), "Load", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MascotAccData as ::unity2::ClassIdentity>::NAME,
-                        "Load",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn load(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_load::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_aid {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MascotAccData as ::unity2::ClassIdentity>::class(),
-                "get_Aid",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MascotAccData as ::unity2::ClassIdentity>::NAME,
-                        "get_Aid",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_aid(this: MascotAccData, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(MascotAccData, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_aid::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_aid {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MascotAccData as ::unity2::ClassIdentity>::class(),
-                "set_Aid",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MascotAccData as ::unity2::ClassIdentity>::NAME,
-                        "set_Aid",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_aid(this: MascotAccData, value: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MascotAccData, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_aid::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_type {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MascotAccData as ::unity2::ClassIdentity>::class(),
-                "get_Type",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MascotAccData as ::unity2::ClassIdentity>::NAME,
-                        "get_Type",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_type(
-        this: MascotAccData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::mascotaccdata::MascotAccData_PartsType {
-        let inner: extern "C" fn(MascotAccData, ::unity2::OptionalMethod) -> crate::app::mascotaccdata::MascotAccData_PartsType =
-            ::core::mem::transmute(__lookup_get_type::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_type {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::mascotaccdata::MascotAccData_PartsType as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MascotAccData as ::unity2::ClassIdentity>::class(),
-                "set_Type",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MascotAccData as ::unity2::ClassIdentity>::NAME,
-                        "set_Type",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_type(
-        this: MascotAccData,
-        value: crate::app::mascotaccdata::MascotAccData_PartsType,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MascotAccData, crate::app::mascotaccdata::MascotAccData_PartsType, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_type::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_debug_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MascotAccData as ::unity2::ClassIdentity>::class(),
-                "GetDebugName",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MascotAccData as ::unity2::ClassIdentity>::NAME,
-                        "GetDebugName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_debug_name(this: MascotAccData, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(MascotAccData, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_debug_name::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<MascotAccData as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MascotAccData as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: MascotAccData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MascotAccData, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MascotAccData_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_load { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MascotAccData as :: unity2 :: ClassIdentity > :: class () , "Load" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MascotAccData as :: unity2 :: ClassIdentity > :: NAME , "Load" , e) , } } } pub unsafe fn load (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_load :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_aid { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MascotAccData as :: unity2 :: ClassIdentity > :: class () , "get_Aid" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MascotAccData as :: unity2 :: ClassIdentity > :: NAME , "get_Aid" , e) , } } } pub unsafe fn get_aid (this : MascotAccData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (MascotAccData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_aid :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_aid { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MascotAccData as :: unity2 :: ClassIdentity > :: class () , "set_Aid" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MascotAccData as :: unity2 :: ClassIdentity > :: NAME , "set_Aid" , e) , } } } pub unsafe fn set_aid (this : MascotAccData , value : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MascotAccData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_aid :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_type { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MascotAccData as :: unity2 :: ClassIdentity > :: class () , "get_Type" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MascotAccData as :: unity2 :: ClassIdentity > :: NAME , "get_Type" , e) , } } } pub unsafe fn get_type (this : MascotAccData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: mascotaccdata :: MascotAccData_PartsType { let inner : extern "C" fn (MascotAccData , :: unity2 :: OptionalMethod ,) -> crate :: app :: mascotaccdata :: MascotAccData_PartsType = :: core :: mem :: transmute (__lookup_get_type :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_type { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: mascotaccdata :: MascotAccData_PartsType as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MascotAccData as :: unity2 :: ClassIdentity > :: class () , "set_Type" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MascotAccData as :: unity2 :: ClassIdentity > :: NAME , "set_Type" , e) , } } } pub unsafe fn set_type (this : MascotAccData , value : crate :: app :: mascotaccdata :: MascotAccData_PartsType , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MascotAccData , crate :: app :: mascotaccdata :: MascotAccData_PartsType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_type :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_debug_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MascotAccData as :: unity2 :: ClassIdentity > :: class () , "GetDebugName" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MascotAccData as :: unity2 :: ClassIdentity > :: NAME , "GetDebugName" , e) , } } } pub unsafe fn get_debug_name (this : MascotAccData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (MascotAccData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_debug_name :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MascotAccData as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MascotAccData as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : MascotAccData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MascotAccData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-mascotaccdata")]
+impl MascotAccData { # [doc = "`Load()` overload"] pub fn load () -> () { unsafe { __MascotAccData_unity2_raw :: load (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-mascotaccdata")]
+pub trait IMascotAccDataMethods : IMascotAccData { # [doc = "`get_Aid()` overload"] fn get_aid (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MascotAccData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MascotAccData_unity2_raw :: get_aid (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_Aid(::unity2::Il2CppString)` overload"] fn set_aid (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < MascotAccData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MascotAccData_unity2_raw :: set_aid (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_Type()` overload"] fn get_type (self ,) -> crate :: app :: mascotaccdata :: MascotAccData_PartsType { unsafe { let __receiver = < MascotAccData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MascotAccData_unity2_raw :: get_type (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_Type(crate::app::mascotaccdata::MascotAccData_PartsType)` overload"] fn set_type (self , value : impl :: core :: convert :: Into < crate :: app :: mascotaccdata :: MascotAccData_PartsType >) -> () { unsafe { let __receiver = < MascotAccData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MascotAccData_unity2_raw :: set_type (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`GetDebugName()` overload"] fn get_debug_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MascotAccData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MascotAccData_unity2_raw :: get_debug_name (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MascotAccData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MascotAccData_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-mascotaccdata")]
+impl < __T : IMascotAccData > IMascotAccDataMethods for __T { }
+
+#[cfg(feature = "app-mascotaccdata")]
+impl MascotAccData { pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MascotAccData_unity2_raw :: __lookup_load :: get_method_info () } pub fn get_aid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MascotAccData_unity2_raw :: __lookup_get_aid :: get_method_info () } pub fn set_aid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MascotAccData_unity2_raw :: __lookup_set_aid :: get_method_info () } pub fn get_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MascotAccData_unity2_raw :: __lookup_get_type :: get_method_info () } pub fn set_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MascotAccData_unity2_raw :: __lookup_set_type :: get_method_info () } pub fn get_debug_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MascotAccData_unity2_raw :: __lookup_get_debug_name :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MascotAccData_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-mascotaccdata")]
 impl MascotAccData {
-    #[doc = "`Load()` overload"]
-    pub fn load() -> () {
-        unsafe { __MascotAccData_unity2_raw::load(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-mascotaccdata")]
-pub trait IMascotAccDataMethods: IMascotAccData {
-    #[doc = "`get_Aid()` overload"]
-    fn get_aid(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <MascotAccData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MascotAccData_unity2_raw::get_aid(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_Aid(::unity2::Il2CppString)` overload"]
-    fn set_aid(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver = <MascotAccData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MascotAccData_unity2_raw::set_aid(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Type()` overload"]
-    fn get_type(self) -> crate::app::mascotaccdata::MascotAccData_PartsType {
-        unsafe {
-            let __receiver = <MascotAccData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MascotAccData_unity2_raw::get_type(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_Type(crate::app::mascotaccdata::MascotAccData_PartsType)` overload"]
-    fn set_type(self, value: impl ::core::convert::Into<crate::app::mascotaccdata::MascotAccData_PartsType>) -> () {
-        unsafe {
-            let __receiver = <MascotAccData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MascotAccData_unity2_raw::set_type(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetDebugName()` overload"]
-    fn get_debug_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <MascotAccData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MascotAccData_unity2_raw::get_debug_name(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <MascotAccData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MascotAccData_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-mascotaccdata")]
-impl<__T: IMascotAccData> IMascotAccDataMethods for __T {}
-
-#[cfg(feature = "app-mascotaccdata")]
-impl MascotAccData {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(MascotAccData), ::core::stringify!(new),));
-        <Self as IMascotAccDataMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MascotAccData) , :: core :: stringify ! (new) ,)) ; < Self as IMascotAccDataMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-mascotaccdata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IMascotAccData, IMascotAccDataMethods, MascotAccData, MascotAccData_PartsType};
-    #[cfg(feature = "app-structbase")]
-    pub use crate::app::structbase::IStructBaseMethods;
-    #[cfg(feature = "app-structdata_1")]
-    pub use crate::app::structdata_1::IStructData_1Methods;
-    #[cfg(feature = "app-structtemplate_1")]
-    pub use crate::app::structtemplate_1::IStructTemplate_1Methods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::{
-        app::{structbase::IStructBase, structdata_1::IStructData_1, structtemplate_1::IStructTemplate_1},
-        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
-    };
+    pub use super::MascotAccData;
+    pub use super::IMascotAccData;
+    pub use super::IMascotAccDataMethods;
+    pub use super::MascotAccData_PartsType;
+    pub use crate::app::structbase::IStructBase;
+    pub use crate::app::structdata_1::IStructData_1;
+    pub use crate::app::structtemplate_1::IStructTemplate_1;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "app-structbase")] pub use crate::app::structbase::IStructBaseMethods;
+    #[cfg(feature = "app-structdata_1")] pub use crate::app::structdata_1::IStructData_1Methods;
+    #[cfg(feature = "app-structtemplate_1")] pub use crate::app::structtemplate_1::IStructTemplate_1Methods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

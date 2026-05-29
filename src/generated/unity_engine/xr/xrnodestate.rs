@@ -2,186 +2,77 @@
 
 #[cfg(feature = "unity_engine-xr-xrnodestate-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        valuetype::{IValueType, ValueType},
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/xr/xrnodestate/XRNodeState.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct XRNodeState {
-        pub m_type: crate::unity_engine::xr::xrnode::XRNode,
-        pub m_available_fields: crate::unity_engine::xr::availabletrackingdata::AvailableTrackingData,
-        pub m_position: crate::unity_engine::vector3::Vector3,
-        pub m_rotation: crate::unity_engine::quaternion::Quaternion,
-        pub m_velocity: crate::unity_engine::vector3::Vector3,
-        pub m_angular_velocity: crate::unity_engine::vector3::Vector3,
-        pub m_acceleration: crate::unity_engine::vector3::Vector3,
-        pub m_angular_acceleration: crate::unity_engine::vector3::Vector3,
-        pub m_tracked: i32,
-        pub m_unique_id: u64,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
 
-    impl ::unity2::ClassIdentity for XRNodeState {
-        const NAME: &'static str = "XRNodeState";
-        const NAMESPACE: &'static str = "UnityEngine.XR";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/xr/xrnodestate/XRNodeState.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct XRNodeState {
+    pub m_type: crate :: unity_engine :: xr :: xrnode :: XRNode,
+    pub m_available_fields: crate :: unity_engine :: xr :: availabletrackingdata :: AvailableTrackingData,
+    pub m_position: crate :: unity_engine :: vector3 :: Vector3,
+    pub m_rotation: crate :: unity_engine :: quaternion :: Quaternion,
+    pub m_velocity: crate :: unity_engine :: vector3 :: Vector3,
+    pub m_angular_velocity: crate :: unity_engine :: vector3 :: Vector3,
+    pub m_acceleration: crate :: unity_engine :: vector3 :: Vector3,
+    pub m_angular_acceleration: crate :: unity_engine :: vector3 :: Vector3,
+    pub m_tracked: i32,
+    pub m_unique_id: u64,
+}
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+
+impl ::unity2::ClassIdentity for XRNodeState {
+    const NAMESPACE: &'static str = "UnityEngine.XR";
+
+    const NAME: &'static str = "XRNodeState";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for XRNodeState {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl ::unity2::IlType for XRNodeState {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
+
+}
+
 }
 
 #[cfg(feature = "unity_engine-xr-xrnodestate-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-xr-xrnodestate")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __XRNodeState_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_unique_id {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u64 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <XRNodeState as ::unity2::ClassIdentity>::class(),
-                "set_uniqueID",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <XRNodeState as ::unity2::ClassIdentity>::NAME,
-                        "set_uniqueID",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_unique_id(this: XRNodeState, value: u64, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(XRNodeState, u64, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_unique_id::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_node_type {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::xr::xrnode::XRNode as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <XRNodeState as ::unity2::ClassIdentity>::class(),
-                "set_nodeType",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <XRNodeState as ::unity2::ClassIdentity>::NAME,
-                        "set_nodeType",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_node_type(
-        this: XRNodeState,
-        value: crate::unity_engine::xr::xrnode::XRNode,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(XRNodeState, crate::unity_engine::xr::xrnode::XRNode, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_node_type::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_tracked {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <XRNodeState as ::unity2::ClassIdentity>::class(),
-                "set_tracked",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <XRNodeState as ::unity2::ClassIdentity>::NAME,
-                        "set_tracked",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_tracked(this: XRNodeState, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(XRNodeState, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_tracked::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __XRNodeState_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_unique_id { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< u64 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< XRNodeState as :: unity2 :: ClassIdentity > :: class () , "set_uniqueID" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < XRNodeState as :: unity2 :: ClassIdentity > :: NAME , "set_uniqueID" , e) , } } } pub unsafe fn set_unique_id (this : XRNodeState , value : u64 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (XRNodeState , u64 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_unique_id :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_node_type { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: xr :: xrnode :: XRNode as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< XRNodeState as :: unity2 :: ClassIdentity > :: class () , "set_nodeType" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < XRNodeState as :: unity2 :: ClassIdentity > :: NAME , "set_nodeType" , e) , } } } pub unsafe fn set_node_type (this : XRNodeState , value : crate :: unity_engine :: xr :: xrnode :: XRNode , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (XRNodeState , crate :: unity_engine :: xr :: xrnode :: XRNode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_node_type :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_tracked { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< XRNodeState as :: unity2 :: ClassIdentity > :: class () , "set_tracked" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < XRNodeState as :: unity2 :: ClassIdentity > :: NAME , "set_tracked" , e) , } } } pub unsafe fn set_tracked (this : XRNodeState , value : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (XRNodeState , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_tracked :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-xr-xrnodestate")]
-impl XRNodeState {
-    #[doc = "`set_uniqueID(u64)` overload"]
-    pub fn set_unique_id(self, value: impl ::core::convert::Into<u64>) -> () {
-        unsafe { __XRNodeState_unity2_raw::set_unique_id(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
+impl XRNodeState { # [doc = "`set_uniqueID(u64)` overload"] pub fn set_unique_id (self , value : impl :: core :: convert :: Into < u64 >) -> () { unsafe { __XRNodeState_unity2_raw :: set_unique_id (self , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`set_nodeType(crate::unity_engine::xr::xrnode::XRNode)` overload"] pub fn set_node_type (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: xr :: xrnode :: XRNode >) -> () { unsafe { __XRNodeState_unity2_raw :: set_node_type (self , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`set_tracked(bool)` overload"] pub fn set_tracked (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { __XRNodeState_unity2_raw :: set_tracked (self , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } }
 
-    #[doc = "`set_nodeType(crate::unity_engine::xr::xrnode::XRNode)` overload"]
-    pub fn set_node_type(self, value: impl ::core::convert::Into<crate::unity_engine::xr::xrnode::XRNode>) -> () {
-        unsafe { __XRNodeState_unity2_raw::set_node_type(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_tracked(bool)` overload"]
-    pub fn set_tracked(self, value: impl ::core::convert::Into<bool>) -> () {
-        unsafe { __XRNodeState_unity2_raw::set_tracked(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-}
+#[cfg(feature = "unity_engine-xr-xrnodestate")]
+impl XRNodeState { pub fn set_unique_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __XRNodeState_unity2_raw :: __lookup_set_unique_id :: get_method_info () } pub fn set_node_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __XRNodeState_unity2_raw :: __lookup_set_node_type :: get_method_info () } pub fn set_tracked_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __XRNodeState_unity2_raw :: __lookup_set_tracked :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-xr-xrnodestate")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::XRNodeState;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::system::{object::IObject, valuetype::IValueType};
+    pub use crate::system::object::IObject;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

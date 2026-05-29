@@ -2,738 +2,147 @@
 
 #[cfg(feature = "app-flipbook-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::{
-            object::{IObject, Object},
-            r#enum::{Enum, IEnum},
-            valuetype::{IValueType, ValueType},
-        },
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/flipbook/Flipbook_Mode.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct Flipbook_Mode {
-        pub value: i32,
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/flipbook/Flipbook_Mode.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct Flipbook_Mode  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for Flipbook_Mode  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "Flipbook.Mode";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    impl ::unity2::ClassIdentity for Flipbook_Mode {
-        const NAME: &'static str = "Flipbook.Mode";
-        const NAMESPACE: &'static str = "App";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  ::unity2::IlType for Flipbook_Mode  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::IlType for Flipbook_Mode {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  Flipbook_Mode  {
+    pub fn r#loop() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl Flipbook_Mode {
-        pub fn r#loop() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn stop() -> Self {
-            Self { value: 1 }
-        }
+    pub fn stop() -> Self {
+        Self { value: 1 }
 
-        pub fn stop_and_hide() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn delete_object() -> Self {
-            Self { value: 3 }
-        }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/flipbook/Flipbook.md"))]
-    #[::unity2::class(namespace = "App", name = "Flipbook")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct Flipbook {
-        #[offset(24)]
-        #[rename(name = "m_patterns")]
-        pub m_patterns: crate::unity_engine::vector2::Vector2,
-        #[offset(32)]
-        #[rename(name = "m_span")]
-        pub m_span: f32,
-        #[offset(36)]
-        #[rename(name = "m_animateStrength")]
-        pub m_animate_strength: bool,
-        #[offset(40)]
-        #[rename(name = "m_strength")]
-        pub m_strength: f32,
-        #[offset(44)]
-        #[rename(name = "m_strengthCycle")]
-        pub m_strength_cycle: f32,
-        #[offset(48)]
-        #[rename(name = "m_mode")]
-        pub m_mode: crate::app::flipbook::Flipbook_Mode,
-        #[offset(52)]
-        #[rename(name = "m_autoPlay")]
-        pub m_auto_play: bool,
-        #[offset(53)]
-        #[rename(name = "m_playing")]
-        pub m_playing: bool,
-        #[offset(56)]
-        #[rename(name = "m_spanIndex")]
-        pub m_span_index: i32,
-        #[offset(60)]
-        #[rename(name = "m_strengthCycleIndex")]
-        pub m_strength_cycle_index: i32,
-        #[offset(64)]
-        #[rename(name = "m_patternIndex")]
-        pub m_pattern_index: i32,
-        #[offset(68)]
-        #[rename(name = "m_patternCount")]
-        pub m_pattern_count: i32,
-        #[offset(72)]
-        #[rename(name = "m_material")]
-        pub m_material: crate::unity_engine::material::Material,
-        #[offset(80)]
-        #[rename(name = "m_targetTexture")]
-        pub m_target_texture: ::unity2::Il2CppString,
-        #[offset(88)]
-        #[rename(name = "m_targetTextureId")]
-        pub m_target_texture_id: i32,
-        #[offset(96)]
-        #[rename(name = "m_targetStrength")]
-        pub m_target_strength: ::unity2::Il2CppString,
-        #[offset(104)]
-        #[rename(name = "m_targetStrengthId")]
-        pub m_target_strength_id: i32,
+
+    pub fn stop_and_hide() -> Self {
+        Self { value: 2 }
+
     }
+
+
+    pub fn delete_object() -> Self {
+        Self { value: 3 }
+
+    }
+
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/flipbook/Flipbook.md"))] # [:: unity2 :: class (namespace = "App" , name = "Flipbook")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct Flipbook {
+# [offset (24)] # [rename (name = "m_patterns")] pub m_patterns : crate :: unity_engine :: vector2 :: Vector2 ,
+# [offset (32)] # [rename (name = "m_span")] pub m_span : f32 ,
+# [offset (36)] # [rename (name = "m_animateStrength")] pub m_animate_strength : bool ,
+# [offset (40)] # [rename (name = "m_strength")] pub m_strength : f32 ,
+# [offset (44)] # [rename (name = "m_strengthCycle")] pub m_strength_cycle : f32 ,
+# [offset (48)] # [rename (name = "m_mode")] pub m_mode : crate :: app :: flipbook :: Flipbook_Mode ,
+# [offset (52)] # [rename (name = "m_autoPlay")] pub m_auto_play : bool ,
+# [offset (53)] # [rename (name = "m_playing")] pub m_playing : bool ,
+# [offset (56)] # [rename (name = "m_spanIndex")] pub m_span_index : i32 ,
+# [offset (60)] # [rename (name = "m_strengthCycleIndex")] pub m_strength_cycle_index : i32 ,
+# [offset (64)] # [rename (name = "m_patternIndex")] pub m_pattern_index : i32 ,
+# [offset (68)] # [rename (name = "m_patternCount")] pub m_pattern_count : i32 ,
+# [offset (72)] # [rename (name = "m_material")] pub m_material : crate :: unity_engine :: material :: Material ,
+# [offset (80)] # [rename (name = "m_targetTexture")] pub m_target_texture : :: unity2 :: Il2CppString ,
+# [offset (88)] # [rename (name = "m_targetTextureId")] pub m_target_texture_id : i32 ,
+# [offset (96)] # [rename (name = "m_targetStrength")] pub m_target_strength : :: unity2 :: Il2CppString ,
+# [offset (104)] # [rename (name = "m_targetStrengthId")] pub m_target_strength_id : i32 ,
+}
+
 }
 
 #[cfg(feature = "app-flipbook-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-flipbook")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __Flipbook_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_pattern_index {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Flipbook as ::unity2::ClassIdentity>::class(),
-                "get_PatternIndex",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Flipbook as ::unity2::ClassIdentity>::NAME,
-                        "get_PatternIndex",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_pattern_index(this: Flipbook, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(Flipbook, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_pattern_index::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_frac {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<Flipbook as ::unity2::ClassIdentity>::class(), "Frac", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Flipbook as ::unity2::ClassIdentity>::NAME, "Frac", e),
-            }
-        }
-    }
-    pub unsafe fn frac(this: Flipbook, val: f32, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(Flipbook, f32, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_frac::get_method_info().method_ptr);
-        inner(this, val, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_uv_offset {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Flipbook as ::unity2::ClassIdentity>::class(),
-                "GetUvOffset",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Flipbook as ::unity2::ClassIdentity>::NAME,
-                        "GetUvOffset",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_uv_offset(this: Flipbook, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::vector2::Vector2 {
-        let inner: extern "C" fn(Flipbook, ::unity2::OptionalMethod) -> crate::unity_engine::vector2::Vector2 =
-            ::core::mem::transmute(__lookup_get_uv_offset::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_uv_scale {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Flipbook as ::unity2::ClassIdentity>::class(), "GetUvScale", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Flipbook as ::unity2::ClassIdentity>::NAME,
-                        "GetUvScale",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_uv_scale(this: Flipbook, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::vector2::Vector2 {
-        let inner: extern "C" fn(Flipbook, ::unity2::OptionalMethod) -> crate::unity_engine::vector2::Vector2 =
-            ::core::mem::transmute(__lookup_get_uv_scale::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_uv_offset {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Flipbook as ::unity2::ClassIdentity>::class(),
-                "SetUvOffset",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Flipbook as ::unity2::ClassIdentity>::NAME,
-                        "SetUvOffset",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_uv_offset(this: Flipbook, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Flipbook, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_uv_offset::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_uv_scale {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Flipbook as ::unity2::ClassIdentity>::class(), "SetUvScale", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Flipbook as ::unity2::ClassIdentity>::NAME,
-                        "SetUvScale",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_uv_scale(this: Flipbook, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Flipbook, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_uv_scale::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_strength {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Flipbook as ::unity2::ClassIdentity>::class(),
-                "GetStrength",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Flipbook as ::unity2::ClassIdentity>::NAME,
-                        "GetStrength",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_strength(this: Flipbook, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(Flipbook, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_get_strength::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_strength {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Flipbook as ::unity2::ClassIdentity>::class(),
-                "SetStrength",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Flipbook as ::unity2::ClassIdentity>::NAME,
-                        "SetStrength",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_strength(this: Flipbook, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Flipbook, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_strength::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_play {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Flipbook as ::unity2::ClassIdentity>::class(), "Play", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Flipbook as ::unity2::ClassIdentity>::NAME, "Play", e),
-            }
-        }
-    }
-    pub unsafe fn play(this: Flipbook, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Flipbook, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_play::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_awake {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Flipbook as ::unity2::ClassIdentity>::class(), "Awake", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Flipbook as ::unity2::ClassIdentity>::NAME,
-                        "Awake",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn awake(this: Flipbook, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Flipbook, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_awake::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_destroy {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Flipbook as ::unity2::ClassIdentity>::class(), "OnDestroy", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Flipbook as ::unity2::ClassIdentity>::NAME,
-                        "OnDestroy",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_destroy(this: Flipbook, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Flipbook, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_destroy::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_start {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Flipbook as ::unity2::ClassIdentity>::class(), "Start", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Flipbook as ::unity2::ClassIdentity>::NAME,
-                        "Start",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn start(this: Flipbook, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Flipbook, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_start::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Flipbook as ::unity2::ClassIdentity>::class(), "Update", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Flipbook as ::unity2::ClassIdentity>::NAME,
-                        "Update",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update(this: Flipbook, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Flipbook, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_update::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_pattern_rate {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Flipbook as ::unity2::ClassIdentity>::class(),
-                "GetPatternRate",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Flipbook as ::unity2::ClassIdentity>::NAME,
-                        "GetPatternRate",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_pattern_rate(this: Flipbook, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(Flipbook, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_get_pattern_rate::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_playing {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Flipbook as ::unity2::ClassIdentity>::class(),
-                "get_Playing",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Flipbook as ::unity2::ClassIdentity>::NAME,
-                        "get_Playing",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_playing(this: Flipbook, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(Flipbook, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_playing::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Flipbook as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Flipbook as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: Flipbook, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Flipbook, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __Flipbook_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_pattern_index { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Flipbook as :: unity2 :: ClassIdentity > :: class () , "get_PatternIndex" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Flipbook as :: unity2 :: ClassIdentity > :: NAME , "get_PatternIndex" , e) , } } } pub unsafe fn get_pattern_index (this : Flipbook , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (Flipbook , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_pattern_index :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_frac { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Flipbook as :: unity2 :: ClassIdentity > :: class () , "Frac" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Flipbook as :: unity2 :: ClassIdentity > :: NAME , "Frac" , e) , } } } pub unsafe fn frac (this : Flipbook , val : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (Flipbook , f32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_frac :: get_method_info () . method_ptr ,) ; inner (this , val , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_uv_offset { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Flipbook as :: unity2 :: ClassIdentity > :: class () , "GetUvOffset" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Flipbook as :: unity2 :: ClassIdentity > :: NAME , "GetUvOffset" , e) , } } } pub unsafe fn get_uv_offset (this : Flipbook , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector2 :: Vector2 { let inner : extern "C" fn (Flipbook , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector2 :: Vector2 = :: core :: mem :: transmute (__lookup_get_uv_offset :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_uv_scale { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Flipbook as :: unity2 :: ClassIdentity > :: class () , "GetUvScale" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Flipbook as :: unity2 :: ClassIdentity > :: NAME , "GetUvScale" , e) , } } } pub unsafe fn get_uv_scale (this : Flipbook , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector2 :: Vector2 { let inner : extern "C" fn (Flipbook , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector2 :: Vector2 = :: core :: mem :: transmute (__lookup_get_uv_scale :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_uv_offset { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Flipbook as :: unity2 :: ClassIdentity > :: class () , "SetUvOffset" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Flipbook as :: unity2 :: ClassIdentity > :: NAME , "SetUvOffset" , e) , } } } pub unsafe fn set_uv_offset (this : Flipbook , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Flipbook , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_uv_offset :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_uv_scale { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Flipbook as :: unity2 :: ClassIdentity > :: class () , "SetUvScale" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Flipbook as :: unity2 :: ClassIdentity > :: NAME , "SetUvScale" , e) , } } } pub unsafe fn set_uv_scale (this : Flipbook , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Flipbook , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_uv_scale :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_strength { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Flipbook as :: unity2 :: ClassIdentity > :: class () , "GetStrength" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Flipbook as :: unity2 :: ClassIdentity > :: NAME , "GetStrength" , e) , } } } pub unsafe fn get_strength (this : Flipbook , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (Flipbook , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_get_strength :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_strength { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Flipbook as :: unity2 :: ClassIdentity > :: class () , "SetStrength" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Flipbook as :: unity2 :: ClassIdentity > :: NAME , "SetStrength" , e) , } } } pub unsafe fn set_strength (this : Flipbook , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Flipbook , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_strength :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_play { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Flipbook as :: unity2 :: ClassIdentity > :: class () , "Play" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Flipbook as :: unity2 :: ClassIdentity > :: NAME , "Play" , e) , } } } pub unsafe fn play (this : Flipbook , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Flipbook , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_play :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_awake { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Flipbook as :: unity2 :: ClassIdentity > :: class () , "Awake" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Flipbook as :: unity2 :: ClassIdentity > :: NAME , "Awake" , e) , } } } pub unsafe fn awake (this : Flipbook , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Flipbook , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_awake :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_destroy { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Flipbook as :: unity2 :: ClassIdentity > :: class () , "OnDestroy" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Flipbook as :: unity2 :: ClassIdentity > :: NAME , "OnDestroy" , e) , } } } pub unsafe fn on_destroy (this : Flipbook , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Flipbook , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_destroy :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_start { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Flipbook as :: unity2 :: ClassIdentity > :: class () , "Start" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Flipbook as :: unity2 :: ClassIdentity > :: NAME , "Start" , e) , } } } pub unsafe fn start (this : Flipbook , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Flipbook , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_start :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Flipbook as :: unity2 :: ClassIdentity > :: class () , "Update" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Flipbook as :: unity2 :: ClassIdentity > :: NAME , "Update" , e) , } } } pub unsafe fn update (this : Flipbook , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Flipbook , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_pattern_rate { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Flipbook as :: unity2 :: ClassIdentity > :: class () , "GetPatternRate" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Flipbook as :: unity2 :: ClassIdentity > :: NAME , "GetPatternRate" , e) , } } } pub unsafe fn get_pattern_rate (this : Flipbook , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (Flipbook , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_get_pattern_rate :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_playing { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Flipbook as :: unity2 :: ClassIdentity > :: class () , "get_Playing" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Flipbook as :: unity2 :: ClassIdentity > :: NAME , "get_Playing" , e) , } } } pub unsafe fn get_playing (this : Flipbook , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (Flipbook , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_playing :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Flipbook as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Flipbook as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : Flipbook , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Flipbook , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-flipbook")]
-pub trait IFlipbookMethods: IFlipbook {
-    #[doc = "`get_PatternIndex()` overload"]
-    fn get_pattern_index(self) -> i32 {
-        unsafe {
-            let __receiver = <Flipbook as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Flipbook_unity2_raw::get_pattern_index(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Frac(f32)` overload"]
-    fn frac(self, val: impl ::core::convert::Into<f32>) -> f32 {
-        unsafe {
-            let __receiver = <Flipbook as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Flipbook_unity2_raw::frac(__receiver, ::core::convert::Into::into(val), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetUvOffset()` overload"]
-    fn get_uv_offset(self) -> crate::unity_engine::vector2::Vector2 {
-        unsafe {
-            let __receiver = <Flipbook as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Flipbook_unity2_raw::get_uv_offset(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetUvScale()` overload"]
-    fn get_uv_scale(self) -> crate::unity_engine::vector2::Vector2 {
-        unsafe {
-            let __receiver = <Flipbook as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Flipbook_unity2_raw::get_uv_scale(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetUvOffset()` overload"]
-    fn set_uv_offset(self) -> () {
-        unsafe {
-            let __receiver = <Flipbook as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Flipbook_unity2_raw::set_uv_offset(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetUvScale()` overload"]
-    fn set_uv_scale(self) -> () {
-        unsafe {
-            let __receiver = <Flipbook as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Flipbook_unity2_raw::set_uv_scale(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetStrength()` overload"]
-    fn get_strength(self) -> f32 {
-        unsafe {
-            let __receiver = <Flipbook as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Flipbook_unity2_raw::get_strength(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetStrength()` overload"]
-    fn set_strength(self) -> () {
-        unsafe {
-            let __receiver = <Flipbook as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Flipbook_unity2_raw::set_strength(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Play()` overload"]
-    fn play(self) -> () {
-        unsafe {
-            let __receiver = <Flipbook as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Flipbook_unity2_raw::play(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Awake()` overload"]
-    fn awake(self) -> () {
-        unsafe {
-            let __receiver = <Flipbook as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Flipbook_unity2_raw::awake(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnDestroy()` overload"]
-    fn on_destroy(self) -> () {
-        unsafe {
-            let __receiver = <Flipbook as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Flipbook_unity2_raw::on_destroy(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Start()` overload"]
-    fn start(self) -> () {
-        unsafe {
-            let __receiver = <Flipbook as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Flipbook_unity2_raw::start(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Update()` overload"]
-    fn update(self) -> () {
-        unsafe {
-            let __receiver = <Flipbook as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Flipbook_unity2_raw::update(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetPatternRate()` overload"]
-    fn get_pattern_rate(self) -> f32 {
-        unsafe {
-            let __receiver = <Flipbook as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Flipbook_unity2_raw::get_pattern_rate(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Playing()` overload"]
-    fn get_playing(self) -> bool {
-        unsafe {
-            let __receiver = <Flipbook as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Flipbook_unity2_raw::get_playing(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <Flipbook as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Flipbook_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IFlipbookMethods : IFlipbook { # [doc = "`get_PatternIndex()` overload"] fn get_pattern_index (self ,) -> i32 { unsafe { let __receiver = < Flipbook as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Flipbook_unity2_raw :: get_pattern_index (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Frac(f32)` overload"] fn frac (self , val : impl :: core :: convert :: Into < f32 >) -> f32 { unsafe { let __receiver = < Flipbook as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Flipbook_unity2_raw :: frac (__receiver , :: core :: convert :: Into :: into (val) , :: core :: option :: Option :: None) } } # [doc = "`GetUvOffset()` overload"] fn get_uv_offset (self ,) -> crate :: unity_engine :: vector2 :: Vector2 { unsafe { let __receiver = < Flipbook as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Flipbook_unity2_raw :: get_uv_offset (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetUvScale()` overload"] fn get_uv_scale (self ,) -> crate :: unity_engine :: vector2 :: Vector2 { unsafe { let __receiver = < Flipbook as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Flipbook_unity2_raw :: get_uv_scale (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetUvOffset()` overload"] fn set_uv_offset (self ,) -> () { unsafe { let __receiver = < Flipbook as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Flipbook_unity2_raw :: set_uv_offset (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetUvScale()` overload"] fn set_uv_scale (self ,) -> () { unsafe { let __receiver = < Flipbook as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Flipbook_unity2_raw :: set_uv_scale (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetStrength()` overload"] fn get_strength (self ,) -> f32 { unsafe { let __receiver = < Flipbook as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Flipbook_unity2_raw :: get_strength (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetStrength()` overload"] fn set_strength (self ,) -> () { unsafe { let __receiver = < Flipbook as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Flipbook_unity2_raw :: set_strength (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Play()` overload"] fn play (self ,) -> () { unsafe { let __receiver = < Flipbook as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Flipbook_unity2_raw :: play (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Awake()` overload"] fn awake (self ,) -> () { unsafe { let __receiver = < Flipbook as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Flipbook_unity2_raw :: awake (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnDestroy()` overload"] fn on_destroy (self ,) -> () { unsafe { let __receiver = < Flipbook as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Flipbook_unity2_raw :: on_destroy (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < Flipbook as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Flipbook_unity2_raw :: start (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < Flipbook as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Flipbook_unity2_raw :: update (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetPatternRate()` overload"] fn get_pattern_rate (self ,) -> f32 { unsafe { let __receiver = < Flipbook as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Flipbook_unity2_raw :: get_pattern_rate (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_Playing()` overload"] fn get_playing (self ,) -> bool { unsafe { let __receiver = < Flipbook as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Flipbook_unity2_raw :: get_playing (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Flipbook as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Flipbook_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-flipbook")]
-impl<__T: IFlipbook> IFlipbookMethods for __T {}
+impl < __T : IFlipbook > IFlipbookMethods for __T { }
+
+#[cfg(feature = "app-flipbook")]
+impl Flipbook { pub fn get_pattern_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Flipbook_unity2_raw :: __lookup_get_pattern_index :: get_method_info () } pub fn frac_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Flipbook_unity2_raw :: __lookup_frac :: get_method_info () } pub fn get_uv_offset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Flipbook_unity2_raw :: __lookup_get_uv_offset :: get_method_info () } pub fn get_uv_scale_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Flipbook_unity2_raw :: __lookup_get_uv_scale :: get_method_info () } pub fn set_uv_offset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Flipbook_unity2_raw :: __lookup_set_uv_offset :: get_method_info () } pub fn set_uv_scale_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Flipbook_unity2_raw :: __lookup_set_uv_scale :: get_method_info () } pub fn get_strength_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Flipbook_unity2_raw :: __lookup_get_strength :: get_method_info () } pub fn set_strength_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Flipbook_unity2_raw :: __lookup_set_strength :: get_method_info () } pub fn play_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Flipbook_unity2_raw :: __lookup_play :: get_method_info () } pub fn awake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Flipbook_unity2_raw :: __lookup_awake :: get_method_info () } pub fn on_destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Flipbook_unity2_raw :: __lookup_on_destroy :: get_method_info () } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Flipbook_unity2_raw :: __lookup_start :: get_method_info () } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Flipbook_unity2_raw :: __lookup_update :: get_method_info () } pub fn get_pattern_rate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Flipbook_unity2_raw :: __lookup_get_pattern_rate :: get_method_info () } pub fn get_playing_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Flipbook_unity2_raw :: __lookup_get_playing :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Flipbook_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-flipbook")]
 impl Flipbook {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(Flipbook), ::core::stringify!(new),));
-        <Self as IFlipbookMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Flipbook) , :: core :: stringify ! (new) ,)) ; < Self as IFlipbookMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-flipbook")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{Flipbook, Flipbook_Mode, IFlipbook, IFlipbookMethods};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::Flipbook_Mode;
+    pub use super::Flipbook;
+    pub use super::IFlipbook;
+    pub use super::IFlipbookMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

@@ -2,77 +2,34 @@
 
 #[cfg(feature = "system-reflection-ireflectabletype-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/ireflectabletype/IReflectableType.md"))]
-    #[::unity2::class(namespace = "System.Reflection", name = "IReflectableType")]
-    pub struct IReflectableType {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/ireflectabletype/IReflectableType.md"))] # [:: unity2 :: class (namespace = "System.Reflection" , name = "IReflectableType")] pub struct IReflectableType {}
+
 }
 
 #[cfg(feature = "system-reflection-ireflectabletype-types")]
 pub use __types::*;
 
 #[cfg(feature = "system-reflection-ireflectabletype")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __IReflectableType_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_type_info {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <IReflectableType as ::unity2::ClassIdentity>::class(),
-                "GetTypeInfo",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <IReflectableType as ::unity2::ClassIdentity>::NAME,
-                        "GetTypeInfo",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_type_info(
-        this: IReflectableType,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::reflection::typeinfo::TypeInfo {
-        let inner: extern "C" fn(IReflectableType, ::unity2::OptionalMethod) -> crate::system::reflection::typeinfo::TypeInfo =
-            ::core::mem::transmute(__lookup_get_type_info::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __IReflectableType_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_type_info { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< IReflectableType as :: unity2 :: ClassIdentity > :: class () , "GetTypeInfo" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < IReflectableType as :: unity2 :: ClassIdentity > :: NAME , "GetTypeInfo" , e) , } } } pub unsafe fn get_type_info (this : IReflectableType , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: typeinfo :: TypeInfo { let inner : extern "C" fn (IReflectableType , :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: typeinfo :: TypeInfo = :: core :: mem :: transmute (__lookup_get_type_info :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "system-reflection-ireflectabletype")]
-pub trait IIReflectableTypeMethods: IIReflectableType {
-    #[doc = "`GetTypeInfo()` overload"]
-    fn get_type_info(self) -> crate::system::reflection::typeinfo::TypeInfo {
-        unsafe {
-            let __receiver = <IReflectableType as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __IReflectableType_unity2_raw::get_type_info(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IIReflectableTypeMethods : IIReflectableType { # [doc = "`GetTypeInfo()` overload"] fn get_type_info (self ,) -> crate :: system :: reflection :: typeinfo :: TypeInfo { unsafe { let __receiver = < IReflectableType as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IReflectableType_unity2_raw :: get_type_info (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "system-reflection-ireflectabletype")]
-impl<__T: IIReflectableType> IIReflectableTypeMethods for __T {}
+impl < __T : IIReflectableType > IIReflectableTypeMethods for __T { }
+
+#[cfg(feature = "system-reflection-ireflectabletype")]
+impl IReflectableType { pub fn get_type_info_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __IReflectableType_unity2_raw :: __lookup_get_type_info :: get_method_info () } }
 
 #[cfg(feature = "system-reflection-ireflectabletype")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IIReflectableType, IIReflectableTypeMethods, IReflectableType};
+    pub use super::IReflectableType;
+    pub use super::IIReflectableType;
+    pub use super::IIReflectableTypeMethods;
 }

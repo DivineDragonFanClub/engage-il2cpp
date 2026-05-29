@@ -2,79 +2,34 @@
 
 #[cfg(feature = "unity_engine-internal_subsystemdescriptors-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/internal_subsystemdescriptors/Internal_SubsystemDescriptors.md"))]
-    #[::unity2::class(namespace = "UnityEngine", name = "Internal_SubsystemDescriptors")]
-    #[parent(crate::system::object::Object)]
-    pub struct Internal_SubsystemDescriptors {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/internal_subsystemdescriptors/Internal_SubsystemDescriptors.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "Internal_SubsystemDescriptors")] # [parent (crate :: system :: object :: Object)] pub struct Internal_SubsystemDescriptors {}
+
 }
 
 #[cfg(feature = "unity_engine-internal_subsystemdescriptors-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-internal_subsystemdescriptors")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __Internal_SubsystemDescriptors_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_internal_add_descriptor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::subsystemdescriptor::SubsystemDescriptor as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Internal_SubsystemDescriptors as ::unity2::ClassIdentity>::class(),
-                "Internal_AddDescriptor",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Internal_SubsystemDescriptors as ::unity2::ClassIdentity>::NAME,
-                        "Internal_AddDescriptor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn internal_add_descriptor(
-        descriptor: crate::unity_engine::subsystemdescriptor::SubsystemDescriptor,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::unity_engine::subsystemdescriptor::SubsystemDescriptor, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_internal_add_descriptor::get_method_info().method_ptr);
-        inner(descriptor, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __Internal_SubsystemDescriptors_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_internal_add_descriptor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: subsystemdescriptor :: SubsystemDescriptor as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Internal_SubsystemDescriptors as :: unity2 :: ClassIdentity > :: class () , "Internal_AddDescriptor" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Internal_SubsystemDescriptors as :: unity2 :: ClassIdentity > :: NAME , "Internal_AddDescriptor" , e) , } } } pub unsafe fn internal_add_descriptor (descriptor : crate :: unity_engine :: subsystemdescriptor :: SubsystemDescriptor , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: unity_engine :: subsystemdescriptor :: SubsystemDescriptor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_internal_add_descriptor :: get_method_info () . method_ptr ,) ; inner (descriptor , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-internal_subsystemdescriptors")]
-impl Internal_SubsystemDescriptors {
-    #[doc = "`Internal_AddDescriptor(crate::unity_engine::subsystemdescriptor::SubsystemDescriptor)` overload"]
-    pub fn internal_add_descriptor(descriptor: impl ::core::convert::Into<crate::unity_engine::subsystemdescriptor::SubsystemDescriptor>) -> () {
-        unsafe {
-            __Internal_SubsystemDescriptors_unity2_raw::internal_add_descriptor(::core::convert::Into::into(descriptor), ::core::option::Option::None)
-        }
-    }
-}
+impl Internal_SubsystemDescriptors { # [doc = "`Internal_AddDescriptor(crate::unity_engine::subsystemdescriptor::SubsystemDescriptor)` overload"] pub fn internal_add_descriptor (descriptor : impl :: core :: convert :: Into < crate :: unity_engine :: subsystemdescriptor :: SubsystemDescriptor >) -> () { unsafe { __Internal_SubsystemDescriptors_unity2_raw :: internal_add_descriptor (:: core :: convert :: Into :: into (descriptor) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-internal_subsystemdescriptors")]
+impl Internal_SubsystemDescriptors { pub fn internal_add_descriptor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Internal_SubsystemDescriptors_unity2_raw :: __lookup_internal_add_descriptor :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-internal_subsystemdescriptors")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IInternal_SubsystemDescriptors, Internal_SubsystemDescriptors};
+    pub use super::Internal_SubsystemDescriptors;
+    pub use super::IInternal_SubsystemDescriptors;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

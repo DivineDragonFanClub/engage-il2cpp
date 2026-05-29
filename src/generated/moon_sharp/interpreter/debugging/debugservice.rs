@@ -2,262 +2,45 @@
 
 #[cfg(feature = "moon_sharp-interpreter-debugging-debugservice-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/debugging/debugservice/DebugService.md"))]
-    #[::unity2::class(namespace = "MoonSharp.Interpreter.Debugging", name = "DebugService")]
-    #[parent(crate::system::object::Object)]
-    pub struct DebugService {
-        #[offset(16)]
-        #[rename(name = "m_Processor")]
-        pub m_processor: crate::moon_sharp::interpreter::execution::vm::processor::Processor,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/debugging/debugservice/DebugService.md"))] # [:: unity2 :: class (namespace = "MoonSharp.Interpreter.Debugging" , name = "DebugService")] # [parent (crate :: system :: object :: Object)] pub struct DebugService {
+# [offset (16)] # [rename (name = "m_Processor")] pub m_processor : crate :: moon_sharp :: interpreter :: execution :: vm :: processor :: Processor ,
+}
+
 }
 
 #[cfg(feature = "moon_sharp-interpreter-debugging-debugservice-types")]
 pub use __types::*;
 
 #[cfg(feature = "moon_sharp-interpreter-debugging-debugservice")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __DebugService_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::moon_sharp::interpreter::script::Script as ::unity2::IlType>::il_type(),
-                <crate::moon_sharp::interpreter::execution::vm::processor::Processor as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<DebugService as ::unity2::ClassIdentity>::class(), ".ctor", 2, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DebugService as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: DebugService,
-        script: crate::moon_sharp::interpreter::script::Script,
-        processor: crate::moon_sharp::interpreter::execution::vm::processor::Processor,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            DebugService,
-            crate::moon_sharp::interpreter::script::Script,
-            crate::moon_sharp::interpreter::execution::vm::processor::Processor,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, script, processor, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_owner_script {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugService as ::unity2::ClassIdentity>::class(),
-                "get_OwnerScript",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DebugService as ::unity2::ClassIdentity>::NAME,
-                        "get_OwnerScript",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_owner_script(
-        this: DebugService,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::moon_sharp::interpreter::script::Script {
-        let inner: extern "C" fn(DebugService, ::unity2::OptionalMethod) -> crate::moon_sharp::interpreter::script::Script =
-            ::core::mem::transmute(__lookup_get_owner_script::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_owner_script {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::moon_sharp::interpreter::script::Script as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugService as ::unity2::ClassIdentity>::class(),
-                "set_OwnerScript",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DebugService as ::unity2::ClassIdentity>::NAME,
-                        "set_OwnerScript",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_owner_script(
-        this: DebugService,
-        value: crate::moon_sharp::interpreter::script::Script,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(DebugService, crate::moon_sharp::interpreter::script::Script, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_owner_script::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_reset_break_points {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::moon_sharp::interpreter::debugging::sourcecode::SourceCode as ::unity2::IlType>::il_type(),
-                <crate::system::collections::generic::hashset_1::HashSet_1<i32> as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugService as ::unity2::ClassIdentity>::class(),
-                "ResetBreakPoints",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DebugService as ::unity2::ClassIdentity>::NAME,
-                        "ResetBreakPoints",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn reset_break_points(
-        this: DebugService,
-        src: crate::moon_sharp::interpreter::debugging::sourcecode::SourceCode,
-        lines: crate::system::collections::generic::hashset_1::HashSet_1<i32>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::hashset_1::HashSet_1<i32> {
-        let inner: extern "C" fn(
-            DebugService,
-            crate::moon_sharp::interpreter::debugging::sourcecode::SourceCode,
-            crate::system::collections::generic::hashset_1::HashSet_1<i32>,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::collections::generic::hashset_1::HashSet_1<i32> =
-            ::core::mem::transmute(__lookup_reset_break_points::get_method_info().method_ptr);
-        inner(this, src, lines, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __DebugService_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: script :: Script as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: execution :: vm :: processor :: Processor as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DebugService as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DebugService as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : DebugService , script : crate :: moon_sharp :: interpreter :: script :: Script , processor : crate :: moon_sharp :: interpreter :: execution :: vm :: processor :: Processor , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DebugService , crate :: moon_sharp :: interpreter :: script :: Script , crate :: moon_sharp :: interpreter :: execution :: vm :: processor :: Processor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , script , processor , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_owner_script { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DebugService as :: unity2 :: ClassIdentity > :: class () , "get_OwnerScript" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DebugService as :: unity2 :: ClassIdentity > :: NAME , "get_OwnerScript" , e) , } } } pub unsafe fn get_owner_script (this : DebugService , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: script :: Script { let inner : extern "C" fn (DebugService , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: script :: Script = :: core :: mem :: transmute (__lookup_get_owner_script :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_owner_script { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: script :: Script as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DebugService as :: unity2 :: ClassIdentity > :: class () , "set_OwnerScript" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DebugService as :: unity2 :: ClassIdentity > :: NAME , "set_OwnerScript" , e) , } } } pub unsafe fn set_owner_script (this : DebugService , value : crate :: moon_sharp :: interpreter :: script :: Script , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DebugService , crate :: moon_sharp :: interpreter :: script :: Script , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_owner_script :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_reset_break_points { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: debugging :: sourcecode :: SourceCode as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: hashset_1 :: HashSet_1 < i32 > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DebugService as :: unity2 :: ClassIdentity > :: class () , "ResetBreakPoints" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DebugService as :: unity2 :: ClassIdentity > :: NAME , "ResetBreakPoints" , e) , } } } pub unsafe fn reset_break_points (this : DebugService , src : crate :: moon_sharp :: interpreter :: debugging :: sourcecode :: SourceCode , lines : crate :: system :: collections :: generic :: hashset_1 :: HashSet_1 < i32 > , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: hashset_1 :: HashSet_1 < i32 > { let inner : extern "C" fn (DebugService , crate :: moon_sharp :: interpreter :: debugging :: sourcecode :: SourceCode , crate :: system :: collections :: generic :: hashset_1 :: HashSet_1 < i32 > , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: hashset_1 :: HashSet_1 < i32 > = :: core :: mem :: transmute (__lookup_reset_break_points :: get_method_info () . method_ptr ,) ; inner (this , src , lines , __unity2_method_info) } }
 
 #[cfg(feature = "moon_sharp-interpreter-debugging-debugservice")]
-pub trait IDebugServiceMethods: IDebugService {
-    #[doc = "`.ctor(crate::moon_sharp::interpreter::script::Script, crate::moon_sharp::interpreter::execution::vm::processor::Processor)` overload"]
-    fn ctor(
-        self,
-        script: impl ::core::convert::Into<crate::moon_sharp::interpreter::script::Script>,
-        processor: impl ::core::convert::Into<crate::moon_sharp::interpreter::execution::vm::processor::Processor>,
-    ) -> () {
-        unsafe {
-            let __receiver = <DebugService as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DebugService_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(script),
-                ::core::convert::Into::into(processor),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_OwnerScript()` overload"]
-    fn get_owner_script(self) -> crate::moon_sharp::interpreter::script::Script {
-        unsafe {
-            let __receiver = <DebugService as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DebugService_unity2_raw::get_owner_script(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_OwnerScript(crate::moon_sharp::interpreter::script::Script)` overload"]
-    fn set_owner_script(self, value: impl ::core::convert::Into<crate::moon_sharp::interpreter::script::Script>) -> () {
-        unsafe {
-            let __receiver = <DebugService as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DebugService_unity2_raw::set_owner_script(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ResetBreakPoints(crate::moon_sharp::interpreter::debugging::sourcecode::SourceCode, crate::system::collections::generic::hashset_1::HashSet_1<i32>)` overload"]
-    fn reset_break_points(
-        self,
-        src: impl ::core::convert::Into<crate::moon_sharp::interpreter::debugging::sourcecode::SourceCode>,
-        lines: impl ::core::convert::Into<crate::system::collections::generic::hashset_1::HashSet_1<i32>>,
-    ) -> crate::system::collections::generic::hashset_1::HashSet_1<i32> {
-        unsafe {
-            let __receiver = <DebugService as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DebugService_unity2_raw::reset_break_points(
-                __receiver,
-                ::core::convert::Into::into(src),
-                ::core::convert::Into::into(lines),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+pub trait IDebugServiceMethods : IDebugService { # [doc = "`.ctor(crate::moon_sharp::interpreter::script::Script, crate::moon_sharp::interpreter::execution::vm::processor::Processor)` overload"] fn ctor (self , script : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: script :: Script > , processor : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: execution :: vm :: processor :: Processor >) -> () { unsafe { let __receiver = < DebugService as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DebugService_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (script) , :: core :: convert :: Into :: into (processor) , :: core :: option :: Option :: None) } } # [doc = "`get_OwnerScript()` overload"] fn get_owner_script (self ,) -> crate :: moon_sharp :: interpreter :: script :: Script { unsafe { let __receiver = < DebugService as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DebugService_unity2_raw :: get_owner_script (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_OwnerScript(crate::moon_sharp::interpreter::script::Script)` overload"] fn set_owner_script (self , value : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: script :: Script >) -> () { unsafe { let __receiver = < DebugService as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DebugService_unity2_raw :: set_owner_script (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`ResetBreakPoints(crate::moon_sharp::interpreter::debugging::sourcecode::SourceCode, crate::system::collections::generic::hashset_1::HashSet_1<i32>)` overload"] fn reset_break_points (self , src : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: debugging :: sourcecode :: SourceCode > , lines : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: hashset_1 :: HashSet_1 < i32 > >) -> crate :: system :: collections :: generic :: hashset_1 :: HashSet_1 < i32 > { unsafe { let __receiver = < DebugService as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DebugService_unity2_raw :: reset_break_points (__receiver , :: core :: convert :: Into :: into (src) , :: core :: convert :: Into :: into (lines) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "moon_sharp-interpreter-debugging-debugservice")]
-impl<__T: IDebugService> IDebugServiceMethods for __T {}
+impl < __T : IDebugService > IDebugServiceMethods for __T { }
+
+#[cfg(feature = "moon_sharp-interpreter-debugging-debugservice")]
+impl DebugService { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DebugService_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn get_owner_script_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DebugService_unity2_raw :: __lookup_get_owner_script :: get_method_info () } pub fn set_owner_script_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DebugService_unity2_raw :: __lookup_set_owner_script :: get_method_info () } pub fn reset_break_points_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DebugService_unity2_raw :: __lookup_reset_break_points :: get_method_info () } }
 
 #[cfg(feature = "moon_sharp-interpreter-debugging-debugservice")]
 impl DebugService {
-    #[doc = "`.ctor(crate::moon_sharp::interpreter::script::Script, crate::moon_sharp::interpreter::execution::vm::processor::Processor)` — overload selector"]
-    pub fn new(
-        script: crate::moon_sharp::interpreter::script::Script,
-        processor: crate::moon_sharp::interpreter::execution::vm::processor::Processor,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(DebugService), ::core::stringify!(new),));
-        <Self as IDebugServiceMethods>::ctor(this, script, processor);
-        this
-    }
+# [doc = "`.ctor(crate::moon_sharp::interpreter::script::Script, crate::moon_sharp::interpreter::execution::vm::processor::Processor)` — overload selector"] pub fn new (script : crate :: moon_sharp :: interpreter :: script :: Script , processor : crate :: moon_sharp :: interpreter :: execution :: vm :: processor :: Processor) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DebugService) , :: core :: stringify ! (new) ,)) ; < Self as IDebugServiceMethods > :: ctor (this , script , processor) ; this }
 }
 
 #[cfg(feature = "moon_sharp-interpreter-debugging-debugservice")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{DebugService, IDebugService, IDebugServiceMethods};
+    pub use super::DebugService;
+    pub use super::IDebugService;
+    pub use super::IDebugServiceMethods;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

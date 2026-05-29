@@ -2,143 +2,74 @@
 
 #[cfg(feature = "unity_engine-scripting-api_updating-movedfromattributedata-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        valuetype::{IValueType, ValueType},
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/scripting/api_updating/movedfromattributedata/MovedFromAttributeData.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct MovedFromAttributeData {
-        pub class_name: ::unity2::Il2CppString,
-        pub name_space: ::unity2::Il2CppString,
-        pub assembly: ::unity2::Il2CppString,
-        pub class_has_changed: bool,
-        pub name_space_has_changed: bool,
-        pub assembly_has_changed: bool,
-        pub auto_udpate_api: bool,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
 
-    impl ::unity2::ClassIdentity for MovedFromAttributeData {
-        const NAME: &'static str = "MovedFromAttributeData";
-        const NAMESPACE: &'static str = "UnityEngine.Scripting.APIUpdating";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/scripting/api_updating/movedfromattributedata/MovedFromAttributeData.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct MovedFromAttributeData {
+    pub class_name: :: unity2 :: Il2CppString,
+    pub name_space: :: unity2 :: Il2CppString,
+    pub assembly: :: unity2 :: Il2CppString,
+    pub class_has_changed: bool,
+    pub name_space_has_changed: bool,
+    pub assembly_has_changed: bool,
+    pub auto_udpate_api: bool,
+}
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+
+impl ::unity2::ClassIdentity for MovedFromAttributeData {
+    const NAMESPACE: &'static str = "UnityEngine.Scripting.APIUpdating";
+
+    const NAME: &'static str = "MovedFromAttributeData";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for MovedFromAttributeData {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl ::unity2::IlType for MovedFromAttributeData {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
+
+}
+
 }
 
 #[cfg(feature = "unity_engine-scripting-api_updating-movedfromattributedata-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-scripting-api_updating-movedfromattributedata")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MovedFromAttributeData_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <bool as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MovedFromAttributeData as ::unity2::ClassIdentity>::class(),
-                "Set",
-                4,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MovedFromAttributeData as ::unity2::ClassIdentity>::NAME,
-                        "Set",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set(
-        this: MovedFromAttributeData,
-        auto_update_api: bool,
-        source_namespace: ::unity2::Il2CppString,
-        source_assembly: ::unity2::Il2CppString,
-        source_class_name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MovedFromAttributeData,
-            bool,
-            ::unity2::Il2CppString,
-            ::unity2::Il2CppString,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_set::get_method_info().method_ptr);
-        inner(
-            this,
-            auto_update_api,
-            source_namespace,
-            source_assembly,
-            source_class_name,
-            __unity2_method_info,
-        )
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MovedFromAttributeData_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MovedFromAttributeData as :: unity2 :: ClassIdentity > :: class () , "Set" , 4 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MovedFromAttributeData as :: unity2 :: ClassIdentity > :: NAME , "Set" , e) , } } } pub unsafe fn set (this : MovedFromAttributeData , auto_update_api : bool , source_namespace : :: unity2 :: Il2CppString , source_assembly : :: unity2 :: Il2CppString , source_class_name : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MovedFromAttributeData , bool , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set :: get_method_info () . method_ptr ,) ; inner (this , auto_update_api , source_namespace , source_assembly , source_class_name , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-scripting-api_updating-movedfromattributedata")]
-impl MovedFromAttributeData {
-    #[doc = "`Set(bool, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
-    pub fn set(
-        self,
-        auto_update_api: impl ::core::convert::Into<bool>,
-        source_namespace: impl ::core::convert::Into<::unity2::Il2CppString>,
-        source_assembly: impl ::core::convert::Into<::unity2::Il2CppString>,
-        source_class_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
-        unsafe {
-            __MovedFromAttributeData_unity2_raw::set(
-                self,
-                ::core::convert::Into::into(auto_update_api),
-                ::core::convert::Into::into(source_namespace),
-                ::core::convert::Into::into(source_assembly),
-                ::core::convert::Into::into(source_class_name),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+impl MovedFromAttributeData { # [doc = "`Set(bool, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"] pub fn set (self , auto_update_api : impl :: core :: convert :: Into < bool > , source_namespace : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , source_assembly : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , source_class_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { __MovedFromAttributeData_unity2_raw :: set (self , :: core :: convert :: Into :: into (auto_update_api) , :: core :: convert :: Into :: into (source_namespace) , :: core :: convert :: Into :: into (source_assembly) , :: core :: convert :: Into :: into (source_class_name) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-scripting-api_updating-movedfromattributedata")]
+impl MovedFromAttributeData { pub fn set_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MovedFromAttributeData_unity2_raw :: __lookup_set :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-scripting-api_updating-movedfromattributedata")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::MovedFromAttributeData;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::system::{object::IObject, valuetype::IValueType};
+    pub use crate::system::object::IObject;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

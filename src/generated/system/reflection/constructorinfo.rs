@@ -2,440 +2,57 @@
 
 #[cfg(feature = "system-reflection-constructorinfo-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        reflection::{
-            memberinfo::{IMemberInfo, MemberInfo},
-            methodbase::{IMethodBase, MethodBase},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/constructorinfo/ConstructorInfo.md"))]
-    #[::unity2::class(namespace = "System.Reflection", name = "ConstructorInfo")]
-    #[parent(crate::system::reflection::methodbase::MethodBase)]
-    pub struct ConstructorInfo {
-        #[static_field]
-        #[rename(name = "ConstructorName")]
-        pub constructor_name: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "TypeConstructorName")]
-        pub type_constructor_name: ::unity2::Il2CppString,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: reflection :: memberinfo :: { IMemberInfo , MemberInfo }
+ ;
+ use crate :: system :: reflection :: methodbase :: { IMethodBase , MethodBase }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/constructorinfo/ConstructorInfo.md"))] # [:: unity2 :: class (namespace = "System.Reflection" , name = "ConstructorInfo")] # [parent (crate :: system :: reflection :: methodbase :: MethodBase)] pub struct ConstructorInfo {
+# [static_field] # [rename (name = "ConstructorName")] pub constructor_name : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "TypeConstructorName")] pub type_constructor_name : :: unity2 :: Il2CppString ,
+}
+
 }
 
 #[cfg(feature = "system-reflection-constructorinfo-types")]
 pub use __types::*;
 
 #[cfg(feature = "system-reflection-constructorinfo")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ConstructorInfo_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ConstructorInfo as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ConstructorInfo as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: ConstructorInfo, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ConstructorInfo, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_member_type {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ConstructorInfo as ::unity2::ClassIdentity>::class(),
-                "get_MemberType",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ConstructorInfo as ::unity2::ClassIdentity>::NAME,
-                        "get_MemberType",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_member_type(
-        this: ConstructorInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::reflection::membertypes::MemberTypes {
-        let inner: extern "C" fn(ConstructorInfo, ::unity2::OptionalMethod) -> crate::system::reflection::membertypes::MemberTypes =
-            ::core::mem::transmute(__lookup_get_member_type::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Array<crate::system::object::Object> as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ConstructorInfo as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ConstructorInfo as ::unity2::ClassIdentity>::NAME,
-                        "Invoke",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn invoke(
-        this: ConstructorInfo,
-        parameters: ::unity2::Array<crate::system::object::Object>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::object::Object {
-        let inner: extern "C" fn(
-            ConstructorInfo,
-            ::unity2::Array<crate::system::object::Object>,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::object::Object = ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
-        inner(this, parameters, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_equals {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ConstructorInfo as ::unity2::ClassIdentity>::class(),
-                "Equals",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ConstructorInfo as ::unity2::ClassIdentity>::NAME,
-                        "Equals",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn equals(this: ConstructorInfo, obj: crate::system::object::Object, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(ConstructorInfo, crate::system::object::Object, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_equals::get_method_info().method_ptr);
-        inner(this, obj, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_hash_code {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ConstructorInfo as ::unity2::ClassIdentity>::class(),
-                "GetHashCode",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ConstructorInfo as ::unity2::ClassIdentity>::NAME,
-                        "GetHashCode",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_hash_code(this: ConstructorInfo, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(ConstructorInfo, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_hash_code::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_op_equality {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::reflection::constructorinfo::ConstructorInfo as ::unity2::IlType>::il_type(),
-                <crate::system::reflection::constructorinfo::ConstructorInfo as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ConstructorInfo as ::unity2::ClassIdentity>::class(),
-                "op_Equality",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ConstructorInfo as ::unity2::ClassIdentity>::NAME,
-                        "op_Equality",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn op_equality(
-        left: crate::system::reflection::constructorinfo::ConstructorInfo,
-        right: crate::system::reflection::constructorinfo::ConstructorInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            crate::system::reflection::constructorinfo::ConstructorInfo,
-            crate::system::reflection::constructorinfo::ConstructorInfo,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(__lookup_op_equality::get_method_info().method_ptr);
-        inner(left, right, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_op_inequality {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::reflection::constructorinfo::ConstructorInfo as ::unity2::IlType>::il_type(),
-                <crate::system::reflection::constructorinfo::ConstructorInfo as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ConstructorInfo as ::unity2::ClassIdentity>::class(),
-                "op_Inequality",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ConstructorInfo as ::unity2::ClassIdentity>::NAME,
-                        "op_Inequality",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn op_inequality(
-        left: crate::system::reflection::constructorinfo::ConstructorInfo,
-        right: crate::system::reflection::constructorinfo::ConstructorInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            crate::system::reflection::constructorinfo::ConstructorInfo,
-            crate::system::reflection::constructorinfo::ConstructorInfo,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(__lookup_op_inequality::get_method_info().method_ptr);
-        inner(left, right, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ConstructorInfo as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ConstructorInfo as ::unity2::ClassIdentity>::NAME,
-                        ".cctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ConstructorInfo_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ConstructorInfo as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ConstructorInfo as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : ConstructorInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ConstructorInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_member_type { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ConstructorInfo as :: unity2 :: ClassIdentity > :: class () , "get_MemberType" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ConstructorInfo as :: unity2 :: ClassIdentity > :: NAME , "get_MemberType" , e) , } } } pub unsafe fn get_member_type (this : ConstructorInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: membertypes :: MemberTypes { let inner : extern "C" fn (ConstructorInfo , :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: membertypes :: MemberTypes = :: core :: mem :: transmute (__lookup_get_member_type :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_invoke { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: system :: object :: Object > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ConstructorInfo as :: unity2 :: ClassIdentity > :: class () , "Invoke" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ConstructorInfo as :: unity2 :: ClassIdentity > :: NAME , "Invoke" , e) , } } } pub unsafe fn invoke (this : ConstructorInfo , parameters : :: unity2 :: Array < crate :: system :: object :: Object > , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object { let inner : extern "C" fn (ConstructorInfo , :: unity2 :: Array < crate :: system :: object :: Object > , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute (__lookup_invoke :: get_method_info () . method_ptr ,) ; inner (this , parameters , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_equals { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ConstructorInfo as :: unity2 :: ClassIdentity > :: class () , "Equals" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ConstructorInfo as :: unity2 :: ClassIdentity > :: NAME , "Equals" , e) , } } } pub unsafe fn equals (this : ConstructorInfo , obj : crate :: system :: object :: Object , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (ConstructorInfo , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_equals :: get_method_info () . method_ptr ,) ; inner (this , obj , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_hash_code { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ConstructorInfo as :: unity2 :: ClassIdentity > :: class () , "GetHashCode" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ConstructorInfo as :: unity2 :: ClassIdentity > :: NAME , "GetHashCode" , e) , } } } pub unsafe fn get_hash_code (this : ConstructorInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (ConstructorInfo , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_hash_code :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_op_equality { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: reflection :: constructorinfo :: ConstructorInfo as :: unity2 :: IlType > :: il_type () , < crate :: system :: reflection :: constructorinfo :: ConstructorInfo as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ConstructorInfo as :: unity2 :: ClassIdentity > :: class () , "op_Equality" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ConstructorInfo as :: unity2 :: ClassIdentity > :: NAME , "op_Equality" , e) , } } } pub unsafe fn op_equality (left : crate :: system :: reflection :: constructorinfo :: ConstructorInfo , right : crate :: system :: reflection :: constructorinfo :: ConstructorInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (crate :: system :: reflection :: constructorinfo :: ConstructorInfo , crate :: system :: reflection :: constructorinfo :: ConstructorInfo , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_op_equality :: get_method_info () . method_ptr ,) ; inner (left , right , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_op_inequality { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: reflection :: constructorinfo :: ConstructorInfo as :: unity2 :: IlType > :: il_type () , < crate :: system :: reflection :: constructorinfo :: ConstructorInfo as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ConstructorInfo as :: unity2 :: ClassIdentity > :: class () , "op_Inequality" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ConstructorInfo as :: unity2 :: ClassIdentity > :: NAME , "op_Inequality" , e) , } } } pub unsafe fn op_inequality (left : crate :: system :: reflection :: constructorinfo :: ConstructorInfo , right : crate :: system :: reflection :: constructorinfo :: ConstructorInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (crate :: system :: reflection :: constructorinfo :: ConstructorInfo , crate :: system :: reflection :: constructorinfo :: ConstructorInfo , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_op_inequality :: get_method_info () . method_ptr ,) ; inner (left , right , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ConstructorInfo as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ConstructorInfo as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
+
+#[cfg(feature = "system-reflection-constructorinfo")]
+impl ConstructorInfo { # [doc = "`op_Equality(crate::system::reflection::constructorinfo::ConstructorInfo, crate::system::reflection::constructorinfo::ConstructorInfo)` overload"] pub fn op_equality (left : impl :: core :: convert :: Into < crate :: system :: reflection :: constructorinfo :: ConstructorInfo > , right : impl :: core :: convert :: Into < crate :: system :: reflection :: constructorinfo :: ConstructorInfo >) -> bool { unsafe { __ConstructorInfo_unity2_raw :: op_equality (:: core :: convert :: Into :: into (left) , :: core :: convert :: Into :: into (right) , :: core :: option :: Option :: None) } } # [doc = "`op_Inequality(crate::system::reflection::constructorinfo::ConstructorInfo, crate::system::reflection::constructorinfo::ConstructorInfo)` overload"] pub fn op_inequality (left : impl :: core :: convert :: Into < crate :: system :: reflection :: constructorinfo :: ConstructorInfo > , right : impl :: core :: convert :: Into < crate :: system :: reflection :: constructorinfo :: ConstructorInfo >) -> bool { unsafe { __ConstructorInfo_unity2_raw :: op_inequality (:: core :: convert :: Into :: into (left) , :: core :: convert :: Into :: into (right) , :: core :: option :: Option :: None) } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { __ConstructorInfo_unity2_raw :: cctor (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "system-reflection-constructorinfo")]
+pub trait IConstructorInfoMethods : IConstructorInfo { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ConstructorInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ConstructorInfo_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_MemberType()` overload"] fn get_member_type (self ,) -> crate :: system :: reflection :: membertypes :: MemberTypes { unsafe { let __receiver = < ConstructorInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ConstructorInfo_unity2_raw :: get_member_type (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Invoke(::unity2::Array<crate::system::object::Object>)` overload"] fn invoke (self , parameters : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: system :: object :: Object > >) -> crate :: system :: object :: Object { unsafe { let __receiver = < ConstructorInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ConstructorInfo_unity2_raw :: invoke (__receiver , :: core :: convert :: Into :: into (parameters) , :: core :: option :: Option :: None) } } # [doc = "`Equals(crate::system::object::Object)` overload"] fn equals (self , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { let __receiver = < ConstructorInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ConstructorInfo_unity2_raw :: equals (__receiver , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } # [doc = "`GetHashCode()` overload"] fn get_hash_code (self ,) -> i32 { unsafe { let __receiver = < ConstructorInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ConstructorInfo_unity2_raw :: get_hash_code (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "system-reflection-constructorinfo")]
+impl < __T : IConstructorInfo > IConstructorInfoMethods for __T { }
+
+#[cfg(feature = "system-reflection-constructorinfo")]
+impl ConstructorInfo { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ConstructorInfo_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn get_member_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ConstructorInfo_unity2_raw :: __lookup_get_member_type :: get_method_info () } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ConstructorInfo_unity2_raw :: __lookup_invoke :: get_method_info () } pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ConstructorInfo_unity2_raw :: __lookup_equals :: get_method_info () } pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ConstructorInfo_unity2_raw :: __lookup_get_hash_code :: get_method_info () } pub fn op_equality_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ConstructorInfo_unity2_raw :: __lookup_op_equality :: get_method_info () } pub fn op_inequality_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ConstructorInfo_unity2_raw :: __lookup_op_inequality :: get_method_info () } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ConstructorInfo_unity2_raw :: __lookup_cctor :: get_method_info () } }
 
 #[cfg(feature = "system-reflection-constructorinfo")]
 impl ConstructorInfo {
-    #[doc = "`op_Equality(crate::system::reflection::constructorinfo::ConstructorInfo, crate::system::reflection::constructorinfo::ConstructorInfo)` overload"]
-    pub fn op_equality(
-        left: impl ::core::convert::Into<crate::system::reflection::constructorinfo::ConstructorInfo>,
-        right: impl ::core::convert::Into<crate::system::reflection::constructorinfo::ConstructorInfo>,
-    ) -> bool {
-        unsafe {
-            __ConstructorInfo_unity2_raw::op_equality(
-                ::core::convert::Into::into(left),
-                ::core::convert::Into::into(right),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`op_Inequality(crate::system::reflection::constructorinfo::ConstructorInfo, crate::system::reflection::constructorinfo::ConstructorInfo)` overload"]
-    pub fn op_inequality(
-        left: impl ::core::convert::Into<crate::system::reflection::constructorinfo::ConstructorInfo>,
-        right: impl ::core::convert::Into<crate::system::reflection::constructorinfo::ConstructorInfo>,
-    ) -> bool {
-        unsafe {
-            __ConstructorInfo_unity2_raw::op_inequality(
-                ::core::convert::Into::into(left),
-                ::core::convert::Into::into(right),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __ConstructorInfo_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "system-reflection-constructorinfo")]
-pub trait IConstructorInfoMethods: IConstructorInfo {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <ConstructorInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ConstructorInfo_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_MemberType()` overload"]
-    fn get_member_type(self) -> crate::system::reflection::membertypes::MemberTypes {
-        unsafe {
-            let __receiver = <ConstructorInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ConstructorInfo_unity2_raw::get_member_type(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Invoke(::unity2::Array<crate::system::object::Object>)` overload"]
-    fn invoke(self, parameters: impl ::core::convert::Into<::unity2::Array<crate::system::object::Object>>) -> crate::system::object::Object {
-        unsafe {
-            let __receiver = <ConstructorInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ConstructorInfo_unity2_raw::invoke(__receiver, ::core::convert::Into::into(parameters), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Equals(crate::system::object::Object)` overload"]
-    fn equals(self, obj: impl ::core::convert::Into<crate::system::object::Object>) -> bool {
-        unsafe {
-            let __receiver = <ConstructorInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ConstructorInfo_unity2_raw::equals(__receiver, ::core::convert::Into::into(obj), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetHashCode()` overload"]
-    fn get_hash_code(self) -> i32 {
-        unsafe {
-            let __receiver = <ConstructorInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ConstructorInfo_unity2_raw::get_hash_code(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "system-reflection-constructorinfo")]
-impl<__T: IConstructorInfo> IConstructorInfoMethods for __T {}
-
-#[cfg(feature = "system-reflection-constructorinfo")]
-impl ConstructorInfo {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ConstructorInfo),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IConstructorInfoMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ConstructorInfo) , :: core :: stringify ! (new) ,)) ; < Self as IConstructorInfoMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "system-reflection-constructorinfo")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{ConstructorInfo, IConstructorInfo, IConstructorInfoMethods};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-reflection-memberinfo")]
-    pub use crate::system::reflection::memberinfo::IMemberInfoMethods;
-    #[cfg(feature = "system-reflection-methodbase")]
-    pub use crate::system::reflection::methodbase::IMethodBaseMethods;
-    pub use crate::system::{
-        object::IObject,
-        reflection::{memberinfo::IMemberInfo, methodbase::IMethodBase},
-    };
+    pub use super::ConstructorInfo;
+    pub use super::IConstructorInfo;
+    pub use super::IConstructorInfoMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::system::reflection::memberinfo::IMemberInfo;
+    pub use crate::system::reflection::methodbase::IMethodBase;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-reflection-memberinfo")] pub use crate::system::reflection::memberinfo::IMemberInfoMethods;
+    #[cfg(feature = "system-reflection-methodbase")] pub use crate::system::reflection::methodbase::IMethodBaseMethods;
 }

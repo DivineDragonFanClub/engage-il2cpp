@@ -2,278 +2,54 @@
 
 #[cfg(feature = "unity_engine-profiling-customsampler-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::profiling::sampler::{ISampler, Sampler},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/profiling/customsampler/CustomSampler.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Profiling", name = "CustomSampler")]
-    #[parent(crate::unity_engine::profiling::sampler::Sampler)]
-    pub struct CustomSampler {
-        #[static_field]
-        #[rename(name = "s_InvalidCustomSampler")]
-        pub s_invalid_custom_sampler: crate::unity_engine::profiling::customsampler::CustomSampler,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: profiling :: sampler :: { ISampler , Sampler }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/profiling/customsampler/CustomSampler.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Profiling" , name = "CustomSampler")] # [parent (crate :: unity_engine :: profiling :: sampler :: Sampler)] pub struct CustomSampler {
+# [static_field] # [rename (name = "s_InvalidCustomSampler")] pub s_invalid_custom_sampler : crate :: unity_engine :: profiling :: customsampler :: CustomSampler ,
+}
+
 }
 
 #[cfg(feature = "unity_engine-profiling-customsampler-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-profiling-customsampler")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __CustomSampler_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<CustomSampler as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CustomSampler as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: CustomSampler, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CustomSampler, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<CustomSampler as ::unity2::ClassIdentity>::class(), ".ctor", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CustomSampler as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor_2(this: CustomSampler, ptr: ::unity2::IntPtr, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CustomSampler, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
-        inner(this, ptr, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<CustomSampler as ::unity2::ClassIdentity>::class(), "Create", 2, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CustomSampler as ::unity2::ClassIdentity>::NAME,
-                        "Create",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create(
-        name: ::unity2::Il2CppString,
-        collect_gpu_data: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::profiling::customsampler::CustomSampler {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::profiling::customsampler::CustomSampler = ::core::mem::transmute(__lookup_create::get_method_info().method_ptr);
-        inner(name, collect_gpu_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_internal {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CustomSampler as ::unity2::ClassIdentity>::class(),
-                "CreateInternal",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CustomSampler as ::unity2::ClassIdentity>::NAME,
-                        "CreateInternal",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_internal(
-        name: ::unity2::Il2CppString,
-        collect_gpu_data: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::IntPtr {
-        let inner: extern "C" fn(::unity2::Il2CppString, bool, ::unity2::OptionalMethod) -> ::unity2::IntPtr =
-            ::core::mem::transmute(__lookup_create_internal::get_method_info().method_ptr);
-        inner(name, collect_gpu_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<CustomSampler as ::unity2::ClassIdentity>::class(), ".cctor", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CustomSampler as ::unity2::ClassIdentity>::NAME,
-                        ".cctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __CustomSampler_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CustomSampler as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CustomSampler as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : CustomSampler , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CustomSampler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CustomSampler as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CustomSampler as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor_2 (this : CustomSampler , ptr : :: unity2 :: IntPtr , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CustomSampler , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor_2 :: get_method_info () . method_ptr ,) ; inner (this , ptr , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CustomSampler as :: unity2 :: ClassIdentity > :: class () , "Create" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CustomSampler as :: unity2 :: ClassIdentity > :: NAME , "Create" , e) , } } } pub unsafe fn create (name : :: unity2 :: Il2CppString , collect_gpu_data : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: profiling :: customsampler :: CustomSampler { let inner : extern "C" fn (:: unity2 :: Il2CppString , bool , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: profiling :: customsampler :: CustomSampler = :: core :: mem :: transmute (__lookup_create :: get_method_info () . method_ptr ,) ; inner (name , collect_gpu_data , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_internal { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CustomSampler as :: unity2 :: ClassIdentity > :: class () , "CreateInternal" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CustomSampler as :: unity2 :: ClassIdentity > :: NAME , "CreateInternal" , e) , } } } pub unsafe fn create_internal (name : :: unity2 :: Il2CppString , collect_gpu_data : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: IntPtr { let inner : extern "C" fn (:: unity2 :: Il2CppString , bool , :: unity2 :: OptionalMethod ,) -> :: unity2 :: IntPtr = :: core :: mem :: transmute (__lookup_create_internal :: get_method_info () . method_ptr ,) ; inner (name , collect_gpu_data , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CustomSampler as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CustomSampler as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
+
+#[cfg(feature = "unity_engine-profiling-customsampler")]
+impl CustomSampler { # [doc = "`Create(::unity2::Il2CppString, bool)` overload"] pub fn create (name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , collect_gpu_data : impl :: core :: convert :: Into < bool >) -> crate :: unity_engine :: profiling :: customsampler :: CustomSampler { unsafe { __CustomSampler_unity2_raw :: create (:: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (collect_gpu_data) , :: core :: option :: Option :: None) } } # [doc = "`CreateInternal(::unity2::Il2CppString, bool)` overload"] pub fn create_internal (name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , collect_gpu_data : impl :: core :: convert :: Into < bool >) -> :: unity2 :: IntPtr { unsafe { __CustomSampler_unity2_raw :: create_internal (:: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (collect_gpu_data) , :: core :: option :: Option :: None) } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { __CustomSampler_unity2_raw :: cctor (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-profiling-customsampler")]
+pub trait ICustomSamplerMethods : ICustomSampler { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CustomSampler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CustomSampler_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor(::unity2::IntPtr)` overload"] fn ctor_2 (self , ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < CustomSampler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CustomSampler_unity2_raw :: ctor_2 (__receiver , :: core :: convert :: Into :: into (ptr) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-profiling-customsampler")]
+impl < __T : ICustomSampler > ICustomSamplerMethods for __T { }
+
+#[cfg(feature = "unity_engine-profiling-customsampler")]
+impl CustomSampler { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CustomSampler_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CustomSampler_unity2_raw :: __lookup_ctor_2 :: get_method_info () } pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CustomSampler_unity2_raw :: __lookup_create :: get_method_info () } pub fn create_internal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CustomSampler_unity2_raw :: __lookup_create_internal :: get_method_info () } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CustomSampler_unity2_raw :: __lookup_cctor :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-profiling-customsampler")]
 impl CustomSampler {
-    #[doc = "`Create(::unity2::Il2CppString, bool)` overload"]
-    pub fn create(
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        collect_gpu_data: impl ::core::convert::Into<bool>,
-    ) -> crate::unity_engine::profiling::customsampler::CustomSampler {
-        unsafe {
-            __CustomSampler_unity2_raw::create(
-                ::core::convert::Into::into(name),
-                ::core::convert::Into::into(collect_gpu_data),
-                ::core::option::Option::None,
-            )
-        }
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CustomSampler) , :: core :: stringify ! (new) ,)) ; < Self as ICustomSamplerMethods > :: ctor (this ,) ; this }
 
-    #[doc = "`CreateInternal(::unity2::Il2CppString, bool)` overload"]
-    pub fn create_internal(
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        collect_gpu_data: impl ::core::convert::Into<bool>,
-    ) -> ::unity2::IntPtr {
-        unsafe {
-            __CustomSampler_unity2_raw::create_internal(
-                ::core::convert::Into::into(name),
-                ::core::convert::Into::into(collect_gpu_data),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __CustomSampler_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "unity_engine-profiling-customsampler")]
-pub trait ICustomSamplerMethods: ICustomSampler {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <CustomSampler as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CustomSampler_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor(::unity2::IntPtr)` overload"]
-    fn ctor_2(self, ptr: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
-        unsafe {
-            let __receiver = <CustomSampler as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CustomSampler_unity2_raw::ctor_2(__receiver, ::core::convert::Into::into(ptr), ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-profiling-customsampler")]
-impl<__T: ICustomSampler> ICustomSamplerMethods for __T {}
-
-#[cfg(feature = "unity_engine-profiling-customsampler")]
-impl CustomSampler {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(CustomSampler), ::core::stringify!(new),));
-        <Self as ICustomSamplerMethods>::ctor(this);
-        this
-    }
-
-    #[doc = "`.ctor(::unity2::IntPtr)` — overload selector"]
-    pub fn new_2(ptr: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(CustomSampler),
-                ::core::stringify!(new_2),
-            )
-        });
-        <Self as ICustomSamplerMethods>::ctor_2(this, ptr);
-        this
-    }
+# [doc = "`.ctor(::unity2::IntPtr)` — overload selector"] pub fn new_2 (ptr : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CustomSampler) , :: core :: stringify ! (new_2) ,)) ; < Self as ICustomSamplerMethods > :: ctor_2 (this , ptr) ; this }
 }
 
 #[cfg(feature = "unity_engine-profiling-customsampler")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{CustomSampler, ICustomSampler, ICustomSamplerMethods};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-profiling-sampler")]
-    pub use crate::unity_engine::profiling::sampler::ISamplerMethods;
-    pub use crate::{system::object::IObject, unity_engine::profiling::sampler::ISampler};
+    pub use super::CustomSampler;
+    pub use super::ICustomSampler;
+    pub use super::ICustomSamplerMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::profiling::sampler::ISampler;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-profiling-sampler")] pub use crate::unity_engine::profiling::sampler::ISamplerMethods;
 }

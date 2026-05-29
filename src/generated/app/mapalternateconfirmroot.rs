@@ -2,352 +2,64 @@
 
 #[cfg(feature = "app-mapalternateconfirmroot-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapalternateconfirmroot/MapAlternateConfirmRoot.md"))]
-    #[::unity2::class(namespace = "App", name = "MapAlternateConfirmRoot")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct MapAlternateConfirmRoot {
-        #[offset(24)]
-        #[rename(name = "m_beforeGodName")]
-        pub m_before_god_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(32)]
-        #[rename(name = "m_afterGodName")]
-        pub m_after_god_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(40)]
-        #[rename(name = "m_skillBefore")]
-        pub m_skill_before: crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>,
-        #[offset(48)]
-        #[rename(name = "m_skillAfter")]
-        pub m_skill_after: crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapalternateconfirmroot/MapAlternateConfirmRoot.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapAlternateConfirmRoot")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct MapAlternateConfirmRoot {
+# [offset (24)] # [rename (name = "m_beforeGodName")] pub m_before_god_name : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (32)] # [rename (name = "m_afterGodName")] pub m_after_god_name : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (40)] # [rename (name = "m_skillBefore")] pub m_skill_before : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: gameobject :: GameObject > ,
+# [offset (48)] # [rename (name = "m_skillAfter")] pub m_skill_after : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: gameobject :: GameObject > ,
+}
+
 }
 
 #[cfg(feature = "app-mapalternateconfirmroot-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-mapalternateconfirmroot")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapAlternateConfirmRoot_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_setup {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapAlternateConfirmRoot as ::unity2::ClassIdentity>::class(),
-                "Setup",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapAlternateConfirmRoot as ::unity2::ClassIdentity>::NAME,
-                        "Setup",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn setup(this: MapAlternateConfirmRoot, unit: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapAlternateConfirmRoot, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_setup::get_method_info().method_ptr);
-        inner(this, unit, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_before_god_data {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-                <crate::app::godunit::GodUnit as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapAlternateConfirmRoot as ::unity2::ClassIdentity>::class(),
-                "SetBeforeGodData",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapAlternateConfirmRoot as ::unity2::ClassIdentity>::NAME,
-                        "SetBeforeGodData",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_before_god_data(
-        this: MapAlternateConfirmRoot,
-        unit: crate::app::unit::Unit,
-        god: crate::app::godunit::GodUnit,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MapAlternateConfirmRoot, crate::app::unit::Unit, crate::app::godunit::GodUnit, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_before_god_data::get_method_info().method_ptr);
-        inner(this, unit, god, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_after_god_data {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-                <crate::app::godunit::GodUnit as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapAlternateConfirmRoot as ::unity2::ClassIdentity>::class(),
-                "SetAfterGodData",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapAlternateConfirmRoot as ::unity2::ClassIdentity>::NAME,
-                        "SetAfterGodData",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_after_god_data(
-        this: MapAlternateConfirmRoot,
-        unit: crate::app::unit::Unit,
-        god: crate::app::godunit::GodUnit,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MapAlternateConfirmRoot, crate::app::unit::Unit, crate::app::godunit::GodUnit, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_after_god_data::get_method_info().method_ptr);
-        inner(this, unit, god, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_skill {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
-                <crate::app::skilldata::SkillData as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapAlternateConfirmRoot as ::unity2::ClassIdentity>::class(),
-                "SetSkill",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapAlternateConfirmRoot as ::unity2::ClassIdentity>::NAME,
-                        "SetSkill",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_skill(
-        this: MapAlternateConfirmRoot,
-        unit: crate::app::unit::Unit,
-        obj: crate::unity_engine::gameobject::GameObject,
-        skill: crate::app::skilldata::SkillData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MapAlternateConfirmRoot,
-            crate::app::unit::Unit,
-            crate::unity_engine::gameobject::GameObject,
-            crate::app::skilldata::SkillData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_set_skill::get_method_info().method_ptr);
-        inner(this, unit, obj, skill, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapAlternateConfirmRoot as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapAlternateConfirmRoot as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: MapAlternateConfirmRoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapAlternateConfirmRoot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MapAlternateConfirmRoot_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_setup { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapAlternateConfirmRoot as :: unity2 :: ClassIdentity > :: class () , "Setup" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapAlternateConfirmRoot as :: unity2 :: ClassIdentity > :: NAME , "Setup" , e) , } } } pub unsafe fn setup (this : MapAlternateConfirmRoot , unit : crate :: app :: unit :: Unit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapAlternateConfirmRoot , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_setup :: get_method_info () . method_ptr ,) ; inner (this , unit , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_before_god_data { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < crate :: app :: godunit :: GodUnit as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapAlternateConfirmRoot as :: unity2 :: ClassIdentity > :: class () , "SetBeforeGodData" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapAlternateConfirmRoot as :: unity2 :: ClassIdentity > :: NAME , "SetBeforeGodData" , e) , } } } pub unsafe fn set_before_god_data (this : MapAlternateConfirmRoot , unit : crate :: app :: unit :: Unit , god : crate :: app :: godunit :: GodUnit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapAlternateConfirmRoot , crate :: app :: unit :: Unit , crate :: app :: godunit :: GodUnit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_before_god_data :: get_method_info () . method_ptr ,) ; inner (this , unit , god , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_after_god_data { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < crate :: app :: godunit :: GodUnit as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapAlternateConfirmRoot as :: unity2 :: ClassIdentity > :: class () , "SetAfterGodData" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapAlternateConfirmRoot as :: unity2 :: ClassIdentity > :: NAME , "SetAfterGodData" , e) , } } } pub unsafe fn set_after_god_data (this : MapAlternateConfirmRoot , unit : crate :: app :: unit :: Unit , god : crate :: app :: godunit :: GodUnit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapAlternateConfirmRoot , crate :: app :: unit :: Unit , crate :: app :: godunit :: GodUnit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_after_god_data :: get_method_info () . method_ptr ,) ; inner (this , unit , god , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_skill { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: gameobject :: GameObject as :: unity2 :: IlType > :: il_type () , < crate :: app :: skilldata :: SkillData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapAlternateConfirmRoot as :: unity2 :: ClassIdentity > :: class () , "SetSkill" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapAlternateConfirmRoot as :: unity2 :: ClassIdentity > :: NAME , "SetSkill" , e) , } } } pub unsafe fn set_skill (this : MapAlternateConfirmRoot , unit : crate :: app :: unit :: Unit , obj : crate :: unity_engine :: gameobject :: GameObject , skill : crate :: app :: skilldata :: SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapAlternateConfirmRoot , crate :: app :: unit :: Unit , crate :: unity_engine :: gameobject :: GameObject , crate :: app :: skilldata :: SkillData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_skill :: get_method_info () . method_ptr ,) ; inner (this , unit , obj , skill , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapAlternateConfirmRoot as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapAlternateConfirmRoot as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : MapAlternateConfirmRoot , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapAlternateConfirmRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-mapalternateconfirmroot")]
-pub trait IMapAlternateConfirmRootMethods: IMapAlternateConfirmRoot {
-    #[doc = "`Setup(crate::app::unit::Unit)` overload"]
-    fn setup(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
-        unsafe {
-            let __receiver =
-                <MapAlternateConfirmRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapAlternateConfirmRoot_unity2_raw::setup(__receiver, ::core::convert::Into::into(unit), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetBeforeGodData(crate::app::unit::Unit, crate::app::godunit::GodUnit)` overload"]
-    fn set_before_god_data(
-        self,
-        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-        god: impl ::core::convert::Into<crate::app::godunit::GodUnit>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <MapAlternateConfirmRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapAlternateConfirmRoot_unity2_raw::set_before_god_data(
-                __receiver,
-                ::core::convert::Into::into(unit),
-                ::core::convert::Into::into(god),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetAfterGodData(crate::app::unit::Unit, crate::app::godunit::GodUnit)` overload"]
-    fn set_after_god_data(
-        self,
-        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-        god: impl ::core::convert::Into<crate::app::godunit::GodUnit>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <MapAlternateConfirmRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapAlternateConfirmRoot_unity2_raw::set_after_god_data(
-                __receiver,
-                ::core::convert::Into::into(unit),
-                ::core::convert::Into::into(god),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetSkill(crate::app::unit::Unit, crate::unity_engine::gameobject::GameObject, crate::app::skilldata::SkillData)` overload"]
-    fn set_skill(
-        self,
-        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-        obj: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-        skill: impl ::core::convert::Into<crate::app::skilldata::SkillData>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <MapAlternateConfirmRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapAlternateConfirmRoot_unity2_raw::set_skill(
-                __receiver,
-                ::core::convert::Into::into(unit),
-                ::core::convert::Into::into(obj),
-                ::core::convert::Into::into(skill),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <MapAlternateConfirmRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapAlternateConfirmRoot_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IMapAlternateConfirmRootMethods : IMapAlternateConfirmRoot { # [doc = "`Setup(crate::app::unit::Unit)` overload"] fn setup (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < MapAlternateConfirmRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapAlternateConfirmRoot_unity2_raw :: setup (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } # [doc = "`SetBeforeGodData(crate::app::unit::Unit, crate::app::godunit::GodUnit)` overload"] fn set_before_god_data (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , god : impl :: core :: convert :: Into < crate :: app :: godunit :: GodUnit >) -> () { unsafe { let __receiver = < MapAlternateConfirmRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapAlternateConfirmRoot_unity2_raw :: set_before_god_data (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (god) , :: core :: option :: Option :: None) } } # [doc = "`SetAfterGodData(crate::app::unit::Unit, crate::app::godunit::GodUnit)` overload"] fn set_after_god_data (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , god : impl :: core :: convert :: Into < crate :: app :: godunit :: GodUnit >) -> () { unsafe { let __receiver = < MapAlternateConfirmRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapAlternateConfirmRoot_unity2_raw :: set_after_god_data (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (god) , :: core :: option :: Option :: None) } } # [doc = "`SetSkill(crate::app::unit::Unit, crate::unity_engine::gameobject::GameObject, crate::app::skilldata::SkillData)` overload"] fn set_skill (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , obj : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject > , skill : impl :: core :: convert :: Into < crate :: app :: skilldata :: SkillData >) -> () { unsafe { let __receiver = < MapAlternateConfirmRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapAlternateConfirmRoot_unity2_raw :: set_skill (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (obj) , :: core :: convert :: Into :: into (skill) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapAlternateConfirmRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapAlternateConfirmRoot_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-mapalternateconfirmroot")]
-impl<__T: IMapAlternateConfirmRoot> IMapAlternateConfirmRootMethods for __T {}
+impl < __T : IMapAlternateConfirmRoot > IMapAlternateConfirmRootMethods for __T { }
+
+#[cfg(feature = "app-mapalternateconfirmroot")]
+impl MapAlternateConfirmRoot { pub fn setup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapAlternateConfirmRoot_unity2_raw :: __lookup_setup :: get_method_info () } pub fn set_before_god_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapAlternateConfirmRoot_unity2_raw :: __lookup_set_before_god_data :: get_method_info () } pub fn set_after_god_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapAlternateConfirmRoot_unity2_raw :: __lookup_set_after_god_data :: get_method_info () } pub fn set_skill_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapAlternateConfirmRoot_unity2_raw :: __lookup_set_skill :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapAlternateConfirmRoot_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-mapalternateconfirmroot")]
 impl MapAlternateConfirmRoot {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapAlternateConfirmRoot),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapAlternateConfirmRootMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapAlternateConfirmRoot) , :: core :: stringify ! (new) ,)) ; < Self as IMapAlternateConfirmRootMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-mapalternateconfirmroot")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IMapAlternateConfirmRoot, IMapAlternateConfirmRootMethods, MapAlternateConfirmRoot};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        system::object::IObject,
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::MapAlternateConfirmRoot;
+    pub use super::IMapAlternateConfirmRoot;
+    pub use super::IMapAlternateConfirmRootMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

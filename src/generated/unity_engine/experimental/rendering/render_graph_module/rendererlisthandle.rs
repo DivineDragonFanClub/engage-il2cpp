@@ -2,259 +2,71 @@
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendererlisthandle-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        valuetype::{IValueType, ValueType},
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/rendering/render_graph_module/rendererlisthandle/RendererListHandle.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct RendererListHandle {
-        pub m_is_valid: bool,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
 
-    impl ::unity2::ClassIdentity for RendererListHandle {
-        const NAME: &'static str = "RendererListHandle";
-        const NAMESPACE: &'static str = "UnityEngine.Experimental.Rendering.RenderGraphModule";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/rendering/render_graph_module/rendererlisthandle/RendererListHandle.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct RendererListHandle {
+    pub m_is_valid: bool,
+}
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+
+impl ::unity2::ClassIdentity for RendererListHandle {
+    const NAMESPACE: &'static str = "UnityEngine.Experimental.Rendering.RenderGraphModule";
+
+    const NAME: &'static str = "RendererListHandle";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for RendererListHandle {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl ::unity2::IlType for RendererListHandle {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
+
+}
+
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendererlisthandle-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendererlisthandle")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RendererListHandle_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_handle {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RendererListHandle as ::unity2::ClassIdentity>::class(),
-                "get_handle",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RendererListHandle as ::unity2::ClassIdentity>::NAME,
-                        "get_handle",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_handle(this: RendererListHandle, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(RendererListHandle, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_handle::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_handle {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RendererListHandle as ::unity2::ClassIdentity>::class(),
-                "set_handle",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RendererListHandle as ::unity2::ClassIdentity>::NAME,
-                        "set_handle",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_handle(this: RendererListHandle, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RendererListHandle, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_handle::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RendererListHandle as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RendererListHandle as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: RendererListHandle, handle: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RendererListHandle, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, handle, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_op_implicit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendererlisthandle :: RendererListHandle as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RendererListHandle as ::unity2::ClassIdentity>::class(),
-                "op_Implicit",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RendererListHandle as ::unity2::ClassIdentity>::NAME,
-                        "op_Implicit",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn op_implicit(
-        handle: crate::unity_engine::experimental::rendering::render_graph_module::rendererlisthandle::RendererListHandle,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(
-            crate::unity_engine::experimental::rendering::render_graph_module::rendererlisthandle::RendererListHandle,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(__lookup_op_implicit::get_method_info().method_ptr);
-        inner(handle, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_valid {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RendererListHandle as ::unity2::ClassIdentity>::class(),
-                "IsValid",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RendererListHandle as ::unity2::ClassIdentity>::NAME,
-                        "IsValid",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_valid(this: RendererListHandle, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(RendererListHandle, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_valid::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __RendererListHandle_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_handle { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RendererListHandle as :: unity2 :: ClassIdentity > :: class () , "get_handle" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RendererListHandle as :: unity2 :: ClassIdentity > :: NAME , "get_handle" , e) , } } } pub unsafe fn get_handle (this : RendererListHandle , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (RendererListHandle , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_handle :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_handle { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RendererListHandle as :: unity2 :: ClassIdentity > :: class () , "set_handle" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RendererListHandle as :: unity2 :: ClassIdentity > :: NAME , "set_handle" , e) , } } } pub unsafe fn set_handle (this : RendererListHandle , value : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RendererListHandle , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_handle :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RendererListHandle as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RendererListHandle as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : RendererListHandle , handle : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RendererListHandle , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , handle , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_op_implicit { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendererlisthandle :: RendererListHandle as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RendererListHandle as :: unity2 :: ClassIdentity > :: class () , "op_Implicit" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RendererListHandle as :: unity2 :: ClassIdentity > :: NAME , "op_Implicit" , e) , } } } pub unsafe fn op_implicit (handle : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendererlisthandle :: RendererListHandle , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendererlisthandle :: RendererListHandle , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_op_implicit :: get_method_info () . method_ptr ,) ; inner (handle , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_valid { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RendererListHandle as :: unity2 :: ClassIdentity > :: class () , "IsValid" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RendererListHandle as :: unity2 :: ClassIdentity > :: NAME , "IsValid" , e) , } } } pub unsafe fn is_valid (this : RendererListHandle , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (RendererListHandle , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_valid :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendererlisthandle")]
-impl RendererListHandle {
-    #[doc = "`op_Implicit(crate::unity_engine::experimental::rendering::render_graph_module::rendererlisthandle::RendererListHandle)` overload"]
-    pub fn op_implicit(
-        handle: impl ::core::convert::Into<crate::unity_engine::experimental::rendering::render_graph_module::rendererlisthandle::RendererListHandle>,
-    ) -> i32 {
-        unsafe { __RendererListHandle_unity2_raw::op_implicit(::core::convert::Into::into(handle), ::core::option::Option::None) }
-    }
-}
+impl RendererListHandle { # [doc = "`op_Implicit(crate::unity_engine::experimental::rendering::render_graph_module::rendererlisthandle::RendererListHandle)` overload"] pub fn op_implicit (handle : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendererlisthandle :: RendererListHandle >) -> i32 { unsafe { __RendererListHandle_unity2_raw :: op_implicit (:: core :: convert :: Into :: into (handle) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendererlisthandle")]
-impl RendererListHandle {
-    #[doc = "`get_handle()` overload"]
-    pub fn get_handle(self) -> i32 {
-        unsafe { __RendererListHandle_unity2_raw::get_handle(self, ::core::option::Option::None) }
-    }
+impl RendererListHandle { # [doc = "`get_handle()` overload"] pub fn get_handle (self ,) -> i32 { unsafe { __RendererListHandle_unity2_raw :: get_handle (self , :: core :: option :: Option :: None) } } # [doc = "`set_handle(i32)` overload"] pub fn set_handle (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { __RendererListHandle_unity2_raw :: set_handle (self , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`.ctor(i32)` overload"] pub fn ctor (self , handle : impl :: core :: convert :: Into < i32 >) -> () { unsafe { __RendererListHandle_unity2_raw :: ctor (self , :: core :: convert :: Into :: into (handle) , :: core :: option :: Option :: None) } } # [doc = "`IsValid()` overload"] pub fn is_valid (self ,) -> bool { unsafe { __RendererListHandle_unity2_raw :: is_valid (self , :: core :: option :: Option :: None) } } }
 
-    #[doc = "`set_handle(i32)` overload"]
-    pub fn set_handle(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __RendererListHandle_unity2_raw::set_handle(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`.ctor(i32)` overload"]
-    pub fn ctor(self, handle: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __RendererListHandle_unity2_raw::ctor(self, ::core::convert::Into::into(handle), ::core::option::Option::None) }
-    }
-
-    #[doc = "`IsValid()` overload"]
-    pub fn is_valid(self) -> bool {
-        unsafe { __RendererListHandle_unity2_raw::is_valid(self, ::core::option::Option::None) }
-    }
-}
+#[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendererlisthandle")]
+impl RendererListHandle { pub fn get_handle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RendererListHandle_unity2_raw :: __lookup_get_handle :: get_method_info () } pub fn set_handle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RendererListHandle_unity2_raw :: __lookup_set_handle :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RendererListHandle_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn op_implicit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RendererListHandle_unity2_raw :: __lookup_op_implicit :: get_method_info () } pub fn is_valid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RendererListHandle_unity2_raw :: __lookup_is_valid :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendererlisthandle")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::RendererListHandle;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::system::{object::IObject, valuetype::IValueType};
+    pub use crate::system::object::IObject;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

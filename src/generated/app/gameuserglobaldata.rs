@@ -2,1253 +2,212 @@
 
 #[cfg(feature = "app-gameuserglobaldata-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::{
-            bitfield32::{BitField32, IBitField32},
-            bitfieldcommon::{BitFieldCommon, IBitFieldCommon},
-            bitfieldtemplate32_1::{BitFieldTemplate32_1, IBitFieldTemplate32_1},
-            singletonclass_1::{ISingletonClass_1, SingletonClass_1},
-        },
-        system::{
-            object::{IObject, Object},
-            r#enum::{Enum, IEnum},
-            valuetype::{IValueType, ValueType},
-        },
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gameuserglobaldata/GameUserGlobalData_Flags.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct GameUserGlobalData_Flags {
-        pub value: i32,
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: bitfield32 :: { BitField32 , IBitField32 }
+ ;
+ use crate :: app :: bitfieldcommon :: { BitFieldCommon , IBitFieldCommon }
+ ;
+ use crate :: app :: bitfieldtemplate32_1 :: { BitFieldTemplate32_1 , IBitFieldTemplate32_1 }
+ ;
+ use crate :: app :: singletonclass_1 :: { ISingletonClass_1 , SingletonClass_1 }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gameuserglobaldata/GameUserGlobalData_Flags.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct GameUserGlobalData_Flags  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for GameUserGlobalData_Flags  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "GameUserGlobalData.Flags";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    impl ::unity2::ClassIdentity for GameUserGlobalData_Flags {
-        const NAME: &'static str = "GameUserGlobalData.Flags";
-        const NAMESPACE: &'static str = "App";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  ::unity2::IlType for GameUserGlobalData_Flags  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::IlType for GameUserGlobalData_Flags {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  GameUserGlobalData_Flags  {
+    pub fn cleared_difficulty_normal() -> Self {
+        Self { value: 1 }
+
     }
 
-    impl GameUserGlobalData_Flags {
-        pub fn cleared_difficulty_normal() -> Self {
-            Self { value: 1 }
-        }
 
-        pub fn cleared_difficulty_hard() -> Self {
-            Self { value: 2 }
-        }
+    pub fn cleared_difficulty_hard() -> Self {
+        Self { value: 2 }
 
-        pub fn cleared_difficulty_lunatic() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn cleared_difficulty_mask() -> Self {
-            Self { value: 7 }
-        }
-
-        pub fn cleared_mode_classic() -> Self {
-            Self { value: 8 }
-        }
-
-        pub fn cleared_mode_casual() -> Self {
-            Self { value: 16 }
-        }
-
-        pub fn cleared_mode_phoenix() -> Self {
-            Self { value: 32 }
-        }
-
-        pub fn cleared_mode_mask() -> Self {
-            Self { value: 56 }
-        }
-
-        pub fn cleared_mask() -> Self {
-            Self { value: 63 }
-        }
-
-        pub fn dlc_news_patch0() -> Self {
-            Self { value: 64 }
-        }
-
-        pub fn dlc_news_patch1() -> Self {
-            Self { value: 128 }
-        }
-
-        pub fn dlc_news_patch2() -> Self {
-            Self { value: 256 }
-        }
-
-        pub fn dlc_news_patch3() -> Self {
-            Self { value: 512 }
-        }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameuserglobaldata/GameUserGlobalData_FlagsField.md"))]
-    #[::unity2::class(namespace = "App", name = "GameUserGlobalData.FlagsField")]
-    # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: gameuserglobaldata :: GameUserGlobalData_Flags >)]
-    pub struct GameUserGlobalData_FlagsField {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameuserglobaldata/GameUserGlobalData.md"))]
-    #[::unity2::class(namespace = "App", name = "GameUserGlobalData")]
-    # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: gameuserglobaldata :: GameUserGlobalData >)]
-    pub struct GameUserGlobalData {
-        #[offset(48)]
-        #[rename(name = "m_CompletedHash")]
-        pub m_completed_hash: crate::system::collections::generic::hashset_1::HashSet_1<::unity2::Il2CppString>,
-        #[offset(56)]
-        #[rename(name = "m_CompletedList")]
-        pub m_completed_list: crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
+    pub fn cleared_difficulty_lunatic() -> Self {
+        Self { value: 4 }
+
     }
+
+
+    pub fn cleared_difficulty_mask() -> Self {
+        Self { value: 7 }
+
+    }
+
+
+    pub fn cleared_mode_classic() -> Self {
+        Self { value: 8 }
+
+    }
+
+
+    pub fn cleared_mode_casual() -> Self {
+        Self { value: 16 }
+
+    }
+
+
+    pub fn cleared_mode_phoenix() -> Self {
+        Self { value: 32 }
+
+    }
+
+
+    pub fn cleared_mode_mask() -> Self {
+        Self { value: 56 }
+
+    }
+
+
+    pub fn cleared_mask() -> Self {
+        Self { value: 63 }
+
+    }
+
+
+    pub fn dlc_news_patch0() -> Self {
+        Self { value: 64 }
+
+    }
+
+
+    pub fn dlc_news_patch1() -> Self {
+        Self { value: 128 }
+
+    }
+
+
+    pub fn dlc_news_patch2() -> Self {
+        Self { value: 256 }
+
+    }
+
+
+    pub fn dlc_news_patch3() -> Self {
+        Self { value: 512 }
+
+    }
+
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameuserglobaldata/GameUserGlobalData.md"))] # [:: unity2 :: class (namespace = "App" , name = "GameUserGlobalData")] # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: gameuserglobaldata :: GameUserGlobalData >)] pub struct GameUserGlobalData {
+# [offset (48)] # [rename (name = "m_CompletedHash")] pub m_completed_hash : crate :: system :: collections :: generic :: hashset_1 :: HashSet_1 < :: unity2 :: Il2CppString > ,
+# [offset (56)] # [rename (name = "m_CompletedList")] pub m_completed_list : crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > ,
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameuserglobaldata/GameUserGlobalData_FlagsField.md"))] # [:: unity2 :: class (namespace = "App" , name = "GameUserGlobalData.FlagsField")] # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: gameuserglobaldata :: GameUserGlobalData_Flags >)] pub struct GameUserGlobalData_FlagsField {}
+
 }
 
 #[cfg(feature = "app-gameuserglobaldata-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-gameuserglobaldata")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __GameUserGlobalData_FlagsField_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_to_int {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::gameuserglobaldata::GameUserGlobalData_Flags as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GameUserGlobalData_FlagsField as ::unity2::ClassIdentity>::class(),
-                "ToInt",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GameUserGlobalData_FlagsField as ::unity2::ClassIdentity>::NAME,
-                        "ToInt",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn to_int(
-        this: GameUserGlobalData_FlagsField,
-        value: crate::app::gameuserglobaldata::GameUserGlobalData_Flags,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(
-            GameUserGlobalData_FlagsField,
-            crate::app::gameuserglobaldata::GameUserGlobalData_Flags,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(__lookup_to_int::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GameUserGlobalData_FlagsField as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GameUserGlobalData_FlagsField as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: GameUserGlobalData_FlagsField, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GameUserGlobalData_FlagsField, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __GameUserGlobalData_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GameUserGlobalData as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GameUserGlobalData as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : GameUserGlobalData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GameUserGlobalData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_reset { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GameUserGlobalData as :: unity2 :: ClassIdentity > :: class () , "Reset" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GameUserGlobalData as :: unity2 :: ClassIdentity > :: NAME , "Reset" , e) , } } } pub unsafe fn reset (this : GameUserGlobalData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GameUserGlobalData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_reset :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_last_save_data_type { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GameUserGlobalData as :: unity2 :: ClassIdentity > :: class () , "GetLastSaveDataType" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GameUserGlobalData as :: unity2 :: ClassIdentity > :: NAME , "GetLastSaveDataType" , e) , } } } pub unsafe fn get_last_save_data_type (this : GameUserGlobalData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: gamesavedata :: GameSaveData_Types { let inner : extern "C" fn (GameUserGlobalData , :: unity2 :: OptionalMethod ,) -> crate :: app :: gamesavedata :: GameSaveData_Types = :: core :: mem :: transmute (__lookup_get_last_save_data_type :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_last_save_data_index { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GameUserGlobalData as :: unity2 :: ClassIdentity > :: class () , "GetLastSaveDataIndex" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GameUserGlobalData as :: unity2 :: ClassIdentity > :: NAME , "GetLastSaveDataIndex" , e) , } } } pub unsafe fn get_last_save_data_index (this : GameUserGlobalData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (GameUserGlobalData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_last_save_data_index :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_last_save_data_index_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: gamesavedata :: GameSaveData_Types as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GameUserGlobalData as :: unity2 :: ClassIdentity > :: class () , "GetLastSaveDataIndex" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GameUserGlobalData as :: unity2 :: ClassIdentity > :: NAME , "GetLastSaveDataIndex" , e) , } } } pub unsafe fn get_last_save_data_index_2 (this : GameUserGlobalData , r#type : crate :: app :: gamesavedata :: GameSaveData_Types , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (GameUserGlobalData , crate :: app :: gamesavedata :: GameSaveData_Types , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_last_save_data_index_2 :: get_method_info () . method_ptr ,) ; inner (this , r#type , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_last_save_data_info { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: gamesavedata :: GameSaveData_Types as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GameUserGlobalData as :: unity2 :: ClassIdentity > :: class () , "SetLastSaveDataInfo" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GameUserGlobalData as :: unity2 :: ClassIdentity > :: NAME , "SetLastSaveDataInfo" , e) , } } } pub unsafe fn set_last_save_data_info (this : GameUserGlobalData , r#type : crate :: app :: gamesavedata :: GameSaveData_Types , index : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GameUserGlobalData , crate :: app :: gamesavedata :: GameSaveData_Types , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_last_save_data_info :: get_method_info () . method_ptr ,) ; inner (this , r#type , index , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_last_save_data_info { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: gamesavedata :: GameSaveData_Types as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GameUserGlobalData as :: unity2 :: ClassIdentity > :: class () , "IsLastSaveDataInfo" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GameUserGlobalData as :: unity2 :: ClassIdentity > :: NAME , "IsLastSaveDataInfo" , e) , } } } pub unsafe fn is_last_save_data_info (this : GameUserGlobalData , r#type : crate :: app :: gamesavedata :: GameSaveData_Types , index : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (GameUserGlobalData , crate :: app :: gamesavedata :: GameSaveData_Types , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_last_save_data_info :: get_method_info () . method_ptr ,) ; inner (this , r#type , index , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_version { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GameUserGlobalData as :: unity2 :: ClassIdentity > :: class () , "get_Version" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GameUserGlobalData as :: unity2 :: ClassIdentity > :: NAME , "get_Version" , e) , } } } pub unsafe fn get_version (this : GameUserGlobalData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (GameUserGlobalData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_version :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_serialize { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: stream_2 :: Stream_2 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GameUserGlobalData as :: unity2 :: ClassIdentity > :: class () , "OnSerialize" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GameUserGlobalData as :: unity2 :: ClassIdentity > :: NAME , "OnSerialize" , e) , } } } pub unsafe fn on_serialize (this : GameUserGlobalData , stream : crate :: app :: stream_2 :: Stream_2 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GameUserGlobalData , crate :: app :: stream_2 :: Stream_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_serialize :: get_method_info () . method_ptr ,) ; inner (this , stream , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_deserialize { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: stream_2 :: Stream_2 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GameUserGlobalData as :: unity2 :: ClassIdentity > :: class () , "OnDeserialize" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GameUserGlobalData as :: unity2 :: ClassIdentity > :: NAME , "OnDeserialize" , e) , } } } pub unsafe fn on_deserialize (this : GameUserGlobalData , stream : crate :: app :: stream_2 :: Stream_2 , version : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GameUserGlobalData , crate :: app :: stream_2 :: Stream_2 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_deserialize :: get_method_info () . method_ptr ,) ; inner (this , stream , version , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_last_save_data_type { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: gamesavedata :: GameSaveData_Types as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GameUserGlobalData as :: unity2 :: ClassIdentity > :: class () , "set_LastSaveDataType" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GameUserGlobalData as :: unity2 :: ClassIdentity > :: NAME , "set_LastSaveDataType" , e) , } } } pub unsafe fn set_last_save_data_type (this : GameUserGlobalData , value : crate :: app :: gamesavedata :: GameSaveData_Types , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GameUserGlobalData , crate :: app :: gamesavedata :: GameSaveData_Types , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_last_save_data_type :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_last_save_data_index { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GameUserGlobalData as :: unity2 :: ClassIdentity > :: class () , "set_LastSaveDataIndex" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GameUserGlobalData as :: unity2 :: ClassIdentity > :: NAME , "set_LastSaveDataIndex" , e) , } } } pub unsafe fn set_last_save_data_index (this : GameUserGlobalData , value : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GameUserGlobalData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_last_save_data_index :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_identifier_count { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GameUserGlobalData as :: unity2 :: ClassIdentity > :: class () , "get_IdentifierCount" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GameUserGlobalData as :: unity2 :: ClassIdentity > :: NAME , "get_IdentifierCount" , e) , } } } pub unsafe fn get_identifier_count (this : GameUserGlobalData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> u32 { let inner : extern "C" fn (GameUserGlobalData , :: unity2 :: OptionalMethod ,) -> u32 = :: core :: mem :: transmute (__lookup_get_identifier_count :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_identifier_count { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< u32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GameUserGlobalData as :: unity2 :: ClassIdentity > :: class () , "set_IdentifierCount" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GameUserGlobalData as :: unity2 :: ClassIdentity > :: NAME , "set_IdentifierCount" , e) , } } } pub unsafe fn set_identifier_count (this : GameUserGlobalData , value : u32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GameUserGlobalData , u32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_identifier_count :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_flag { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GameUserGlobalData as :: unity2 :: ClassIdentity > :: class () , "get_Flag" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GameUserGlobalData as :: unity2 :: ClassIdentity > :: NAME , "get_Flag" , e) , } } } pub unsafe fn get_flag (this : GameUserGlobalData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: gameuserglobaldata :: GameUserGlobalData_FlagsField { let inner : extern "C" fn (GameUserGlobalData , :: unity2 :: OptionalMethod ,) -> crate :: app :: gameuserglobaldata :: GameUserGlobalData_FlagsField = :: core :: mem :: transmute (__lookup_get_flag :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_completed { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GameUserGlobalData as :: unity2 :: ClassIdentity > :: class () , "Completed" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GameUserGlobalData as :: unity2 :: ClassIdentity > :: NAME , "Completed" , e) , } } } pub unsafe fn completed (this : GameUserGlobalData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GameUserGlobalData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_completed :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_clear_completed { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GameUserGlobalData as :: unity2 :: ClassIdentity > :: class () , "ClearCompleted" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GameUserGlobalData as :: unity2 :: ClassIdentity > :: NAME , "ClearCompleted" , e) , } } } pub unsafe fn clear_completed (this : GameUserGlobalData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GameUserGlobalData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_clear_completed :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_completed { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GameUserGlobalData as :: unity2 :: ClassIdentity > :: class () , "IsCompleted" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GameUserGlobalData as :: unity2 :: ClassIdentity > :: NAME , "IsCompleted" , e) , } } } pub unsafe fn is_completed (this : GameUserGlobalData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (GameUserGlobalData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_completed :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_completed { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: chapterdata :: ChapterData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GameUserGlobalData as :: unity2 :: ClassIdentity > :: class () , "SetCompleted" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GameUserGlobalData as :: unity2 :: ClassIdentity > :: NAME , "SetCompleted" , e) , } } } pub unsafe fn set_completed (this : GameUserGlobalData , chapter : crate :: app :: chapterdata :: ChapterData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GameUserGlobalData , crate :: app :: chapterdata :: ChapterData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_completed :: get_method_info () . method_ptr ,) ; inner (this , chapter , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_clear_completed_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: chapterdata :: ChapterData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GameUserGlobalData as :: unity2 :: ClassIdentity > :: class () , "ClearCompleted" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GameUserGlobalData as :: unity2 :: ClassIdentity > :: NAME , "ClearCompleted" , e) , } } } pub unsafe fn clear_completed_2 (this : GameUserGlobalData , chapter : crate :: app :: chapterdata :: ChapterData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GameUserGlobalData , crate :: app :: chapterdata :: ChapterData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_clear_completed_2 :: get_method_info () . method_ptr ,) ; inner (this , chapter , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_completed_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GameUserGlobalData as :: unity2 :: ClassIdentity > :: class () , "IsCompleted" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GameUserGlobalData as :: unity2 :: ClassIdentity > :: NAME , "IsCompleted" , e) , } } } pub unsafe fn is_completed_2 (this : GameUserGlobalData , cid : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (GameUserGlobalData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_completed_2 :: get_method_info () . method_ptr ,) ; inner (this , cid , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_identifier { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GameUserGlobalData as :: unity2 :: ClassIdentity > :: class () , "CreateIdentifier" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GameUserGlobalData as :: unity2 :: ClassIdentity > :: NAME , "CreateIdentifier" , e) , } } } pub unsafe fn create_identifier (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> u64 { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> u64 = :: core :: mem :: transmute (__lookup_create_identifier :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
+
+#[cfg(feature = "app-gameuserglobaldata")]
+impl GameUserGlobalData { # [doc = "`CreateIdentifier()` overload"] pub fn create_identifier () -> u64 { unsafe { __GameUserGlobalData_unity2_raw :: create_identifier (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-gameuserglobaldata")]
+pub trait IGameUserGlobalDataMethods : IGameUserGlobalData { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GameUserGlobalData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GameUserGlobalData_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Reset()` overload"] fn reset (self ,) -> () { unsafe { let __receiver = < GameUserGlobalData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GameUserGlobalData_unity2_raw :: reset (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetLastSaveDataType()` overload"] fn get_last_save_data_type (self ,) -> crate :: app :: gamesavedata :: GameSaveData_Types { unsafe { let __receiver = < GameUserGlobalData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GameUserGlobalData_unity2_raw :: get_last_save_data_type (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetLastSaveDataIndex()` overload"] fn get_last_save_data_index (self ,) -> i32 { unsafe { let __receiver = < GameUserGlobalData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GameUserGlobalData_unity2_raw :: get_last_save_data_index (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetLastSaveDataIndex(crate::app::gamesavedata::GameSaveData_Types)` overload"] fn get_last_save_data_index_2 (self , r#type : impl :: core :: convert :: Into < crate :: app :: gamesavedata :: GameSaveData_Types >) -> i32 { unsafe { let __receiver = < GameUserGlobalData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GameUserGlobalData_unity2_raw :: get_last_save_data_index_2 (__receiver , :: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } # [doc = "`SetLastSaveDataInfo(crate::app::gamesavedata::GameSaveData_Types, i32)` overload"] fn set_last_save_data_info (self , r#type : impl :: core :: convert :: Into < crate :: app :: gamesavedata :: GameSaveData_Types > , index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < GameUserGlobalData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GameUserGlobalData_unity2_raw :: set_last_save_data_info (__receiver , :: core :: convert :: Into :: into (r#type) , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } # [doc = "`IsLastSaveDataInfo(crate::app::gamesavedata::GameSaveData_Types, i32)` overload"] fn is_last_save_data_info (self , r#type : impl :: core :: convert :: Into < crate :: app :: gamesavedata :: GameSaveData_Types > , index : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { let __receiver = < GameUserGlobalData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GameUserGlobalData_unity2_raw :: is_last_save_data_info (__receiver , :: core :: convert :: Into :: into (r#type) , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } # [doc = "`get_Version()` overload"] fn get_version (self ,) -> i32 { unsafe { let __receiver = < GameUserGlobalData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GameUserGlobalData_unity2_raw :: get_version (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnSerialize(crate::app::stream_2::Stream_2)` overload"] fn on_serialize (self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 >) -> () { unsafe { let __receiver = < GameUserGlobalData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GameUserGlobalData_unity2_raw :: on_serialize (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: option :: Option :: None) } } # [doc = "`OnDeserialize(crate::app::stream_2::Stream_2, i32)` overload"] fn on_deserialize (self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 > , version : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < GameUserGlobalData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GameUserGlobalData_unity2_raw :: on_deserialize (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: convert :: Into :: into (version) , :: core :: option :: Option :: None) } } # [doc = "`set_LastSaveDataType(crate::app::gamesavedata::GameSaveData_Types)` overload"] fn set_last_save_data_type (self , value : impl :: core :: convert :: Into < crate :: app :: gamesavedata :: GameSaveData_Types >) -> () { unsafe { let __receiver = < GameUserGlobalData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GameUserGlobalData_unity2_raw :: set_last_save_data_type (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`set_LastSaveDataIndex(i32)` overload"] fn set_last_save_data_index (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < GameUserGlobalData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GameUserGlobalData_unity2_raw :: set_last_save_data_index (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_IdentifierCount()` overload"] fn get_identifier_count (self ,) -> u32 { unsafe { let __receiver = < GameUserGlobalData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GameUserGlobalData_unity2_raw :: get_identifier_count (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_IdentifierCount(u32)` overload"] fn set_identifier_count (self , value : impl :: core :: convert :: Into < u32 >) -> () { unsafe { let __receiver = < GameUserGlobalData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GameUserGlobalData_unity2_raw :: set_identifier_count (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_Flag()` overload"] fn get_flag (self ,) -> crate :: app :: gameuserglobaldata :: GameUserGlobalData_FlagsField { unsafe { let __receiver = < GameUserGlobalData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GameUserGlobalData_unity2_raw :: get_flag (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Completed()` overload"] fn completed (self ,) -> () { unsafe { let __receiver = < GameUserGlobalData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GameUserGlobalData_unity2_raw :: completed (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ClearCompleted()` overload"] fn clear_completed (self ,) -> () { unsafe { let __receiver = < GameUserGlobalData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GameUserGlobalData_unity2_raw :: clear_completed (__receiver , :: core :: option :: Option :: None) } } # [doc = "`IsCompleted()` overload"] fn is_completed (self ,) -> bool { unsafe { let __receiver = < GameUserGlobalData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GameUserGlobalData_unity2_raw :: is_completed (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetCompleted(crate::app::chapterdata::ChapterData)` overload"] fn set_completed (self , chapter : impl :: core :: convert :: Into < crate :: app :: chapterdata :: ChapterData >) -> () { unsafe { let __receiver = < GameUserGlobalData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GameUserGlobalData_unity2_raw :: set_completed (__receiver , :: core :: convert :: Into :: into (chapter) , :: core :: option :: Option :: None) } } # [doc = "`ClearCompleted(crate::app::chapterdata::ChapterData)` overload"] fn clear_completed_2 (self , chapter : impl :: core :: convert :: Into < crate :: app :: chapterdata :: ChapterData >) -> () { unsafe { let __receiver = < GameUserGlobalData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GameUserGlobalData_unity2_raw :: clear_completed_2 (__receiver , :: core :: convert :: Into :: into (chapter) , :: core :: option :: Option :: None) } } # [doc = "`IsCompleted(::unity2::Il2CppString)` overload"] fn is_completed_2 (self , cid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { let __receiver = < GameUserGlobalData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GameUserGlobalData_unity2_raw :: is_completed_2 (__receiver , :: core :: convert :: Into :: into (cid) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-gameuserglobaldata")]
+impl < __T : IGameUserGlobalData > IGameUserGlobalDataMethods for __T { }
+
+#[cfg(feature = "app-gameuserglobaldata")]
+impl GameUserGlobalData { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GameUserGlobalData_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn reset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GameUserGlobalData_unity2_raw :: __lookup_reset :: get_method_info () } pub fn get_last_save_data_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GameUserGlobalData_unity2_raw :: __lookup_get_last_save_data_type :: get_method_info () } pub fn get_last_save_data_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GameUserGlobalData_unity2_raw :: __lookup_get_last_save_data_index :: get_method_info () } pub fn get_last_save_data_index_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GameUserGlobalData_unity2_raw :: __lookup_get_last_save_data_index_2 :: get_method_info () } pub fn set_last_save_data_info_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GameUserGlobalData_unity2_raw :: __lookup_set_last_save_data_info :: get_method_info () } pub fn is_last_save_data_info_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GameUserGlobalData_unity2_raw :: __lookup_is_last_save_data_info :: get_method_info () } pub fn get_version_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GameUserGlobalData_unity2_raw :: __lookup_get_version :: get_method_info () } pub fn on_serialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GameUserGlobalData_unity2_raw :: __lookup_on_serialize :: get_method_info () } pub fn on_deserialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GameUserGlobalData_unity2_raw :: __lookup_on_deserialize :: get_method_info () } pub fn set_last_save_data_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GameUserGlobalData_unity2_raw :: __lookup_set_last_save_data_type :: get_method_info () } pub fn set_last_save_data_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GameUserGlobalData_unity2_raw :: __lookup_set_last_save_data_index :: get_method_info () } pub fn get_identifier_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GameUserGlobalData_unity2_raw :: __lookup_get_identifier_count :: get_method_info () } pub fn set_identifier_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GameUserGlobalData_unity2_raw :: __lookup_set_identifier_count :: get_method_info () } pub fn get_flag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GameUserGlobalData_unity2_raw :: __lookup_get_flag :: get_method_info () } pub fn completed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GameUserGlobalData_unity2_raw :: __lookup_completed :: get_method_info () } pub fn clear_completed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GameUserGlobalData_unity2_raw :: __lookup_clear_completed :: get_method_info () } pub fn is_completed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GameUserGlobalData_unity2_raw :: __lookup_is_completed :: get_method_info () } pub fn set_completed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GameUserGlobalData_unity2_raw :: __lookup_set_completed :: get_method_info () } pub fn clear_completed_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GameUserGlobalData_unity2_raw :: __lookup_clear_completed_2 :: get_method_info () } pub fn is_completed_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GameUserGlobalData_unity2_raw :: __lookup_is_completed_2 :: get_method_info () } pub fn create_identifier_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GameUserGlobalData_unity2_raw :: __lookup_create_identifier :: get_method_info () } }
+
+#[cfg(feature = "app-gameuserglobaldata")]
+impl GameUserGlobalData {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GameUserGlobalData) , :: core :: stringify ! (new) ,)) ; < Self as IGameUserGlobalDataMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-gameuserglobaldata")]
-pub trait IGameUserGlobalData_FlagsFieldMethods: IGameUserGlobalData_FlagsField {
-    #[doc = "`ToInt(crate::app::gameuserglobaldata::GameUserGlobalData_Flags)` overload"]
-    fn to_int(self, value: impl ::core::convert::Into<crate::app::gameuserglobaldata::GameUserGlobalData_Flags>) -> i32 {
-        unsafe {
-            let __receiver =
-                <GameUserGlobalData_FlagsField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GameUserGlobalData_FlagsField_unity2_raw::to_int(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <GameUserGlobalData_FlagsField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GameUserGlobalData_FlagsField_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __GameUserGlobalData_FlagsField_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_to_int { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: gameuserglobaldata :: GameUserGlobalData_Flags as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GameUserGlobalData_FlagsField as :: unity2 :: ClassIdentity > :: class () , "ToInt" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GameUserGlobalData_FlagsField as :: unity2 :: ClassIdentity > :: NAME , "ToInt" , e) , } } } pub unsafe fn to_int (this : GameUserGlobalData_FlagsField , value : crate :: app :: gameuserglobaldata :: GameUserGlobalData_Flags , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (GameUserGlobalData_FlagsField , crate :: app :: gameuserglobaldata :: GameUserGlobalData_Flags , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_to_int :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GameUserGlobalData_FlagsField as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GameUserGlobalData_FlagsField as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : GameUserGlobalData_FlagsField , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GameUserGlobalData_FlagsField , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-gameuserglobaldata")]
-impl<__T: IGameUserGlobalData_FlagsField> IGameUserGlobalData_FlagsFieldMethods for __T {}
+pub trait IGameUserGlobalData_FlagsFieldMethods : IGameUserGlobalData_FlagsField { # [doc = "`ToInt(crate::app::gameuserglobaldata::GameUserGlobalData_Flags)` overload"] fn to_int (self , value : impl :: core :: convert :: Into < crate :: app :: gameuserglobaldata :: GameUserGlobalData_Flags >) -> i32 { unsafe { let __receiver = < GameUserGlobalData_FlagsField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GameUserGlobalData_FlagsField_unity2_raw :: to_int (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GameUserGlobalData_FlagsField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GameUserGlobalData_FlagsField_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-gameuserglobaldata")]
+impl < __T : IGameUserGlobalData_FlagsField > IGameUserGlobalData_FlagsFieldMethods for __T { }
+
+#[cfg(feature = "app-gameuserglobaldata")]
+impl GameUserGlobalData_FlagsField { pub fn to_int_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GameUserGlobalData_FlagsField_unity2_raw :: __lookup_to_int :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GameUserGlobalData_FlagsField_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-gameuserglobaldata")]
 impl GameUserGlobalData_FlagsField {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GameUserGlobalData_FlagsField),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGameUserGlobalData_FlagsFieldMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-gameuserglobaldata")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __GameUserGlobalData_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GameUserGlobalData as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GameUserGlobalData as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: GameUserGlobalData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GameUserGlobalData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_reset {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GameUserGlobalData as ::unity2::ClassIdentity>::class(),
-                "Reset",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GameUserGlobalData as ::unity2::ClassIdentity>::NAME,
-                        "Reset",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn reset(this: GameUserGlobalData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GameUserGlobalData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_reset::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_last_save_data_type {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GameUserGlobalData as ::unity2::ClassIdentity>::class(),
-                "GetLastSaveDataType",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GameUserGlobalData as ::unity2::ClassIdentity>::NAME,
-                        "GetLastSaveDataType",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_last_save_data_type(
-        this: GameUserGlobalData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::gamesavedata::GameSaveData_Types {
-        let inner: extern "C" fn(GameUserGlobalData, ::unity2::OptionalMethod) -> crate::app::gamesavedata::GameSaveData_Types =
-            ::core::mem::transmute(__lookup_get_last_save_data_type::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_last_save_data_index {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GameUserGlobalData as ::unity2::ClassIdentity>::class(),
-                "GetLastSaveDataIndex",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GameUserGlobalData as ::unity2::ClassIdentity>::NAME,
-                        "GetLastSaveDataIndex",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_last_save_data_index(this: GameUserGlobalData, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(GameUserGlobalData, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_last_save_data_index::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_last_save_data_index_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::gamesavedata::GameSaveData_Types as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GameUserGlobalData as ::unity2::ClassIdentity>::class(),
-                "GetLastSaveDataIndex",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GameUserGlobalData as ::unity2::ClassIdentity>::NAME,
-                        "GetLastSaveDataIndex",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_last_save_data_index_2(
-        this: GameUserGlobalData,
-        r#type: crate::app::gamesavedata::GameSaveData_Types,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(GameUserGlobalData, crate::app::gamesavedata::GameSaveData_Types, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_last_save_data_index_2::get_method_info().method_ptr);
-        inner(this, r#type, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_last_save_data_info {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::gamesavedata::GameSaveData_Types as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GameUserGlobalData as ::unity2::ClassIdentity>::class(),
-                "SetLastSaveDataInfo",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GameUserGlobalData as ::unity2::ClassIdentity>::NAME,
-                        "SetLastSaveDataInfo",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_last_save_data_info(
-        this: GameUserGlobalData,
-        r#type: crate::app::gamesavedata::GameSaveData_Types,
-        index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(GameUserGlobalData, crate::app::gamesavedata::GameSaveData_Types, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_last_save_data_info::get_method_info().method_ptr);
-        inner(this, r#type, index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_last_save_data_info {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::gamesavedata::GameSaveData_Types as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GameUserGlobalData as ::unity2::ClassIdentity>::class(),
-                "IsLastSaveDataInfo",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GameUserGlobalData as ::unity2::ClassIdentity>::NAME,
-                        "IsLastSaveDataInfo",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_last_save_data_info(
-        this: GameUserGlobalData,
-        r#type: crate::app::gamesavedata::GameSaveData_Types,
-        index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(GameUserGlobalData, crate::app::gamesavedata::GameSaveData_Types, i32, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_last_save_data_info::get_method_info().method_ptr);
-        inner(this, r#type, index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_version {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GameUserGlobalData as ::unity2::ClassIdentity>::class(),
-                "get_Version",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GameUserGlobalData as ::unity2::ClassIdentity>::NAME,
-                        "get_Version",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_version(this: GameUserGlobalData, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(GameUserGlobalData, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_version::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_serialize {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::stream_2::Stream_2 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GameUserGlobalData as ::unity2::ClassIdentity>::class(),
-                "OnSerialize",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GameUserGlobalData as ::unity2::ClassIdentity>::NAME,
-                        "OnSerialize",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_serialize(
-        this: GameUserGlobalData,
-        stream: crate::app::stream_2::Stream_2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(GameUserGlobalData, crate::app::stream_2::Stream_2, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_serialize::get_method_info().method_ptr);
-        inner(this, stream, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_deserialize {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::stream_2::Stream_2 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GameUserGlobalData as ::unity2::ClassIdentity>::class(),
-                "OnDeserialize",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GameUserGlobalData as ::unity2::ClassIdentity>::NAME,
-                        "OnDeserialize",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_deserialize(
-        this: GameUserGlobalData,
-        stream: crate::app::stream_2::Stream_2,
-        version: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(GameUserGlobalData, crate::app::stream_2::Stream_2, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_deserialize::get_method_info().method_ptr);
-        inner(this, stream, version, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_last_save_data_type {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::gamesavedata::GameSaveData_Types as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GameUserGlobalData as ::unity2::ClassIdentity>::class(),
-                "set_LastSaveDataType",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GameUserGlobalData as ::unity2::ClassIdentity>::NAME,
-                        "set_LastSaveDataType",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_last_save_data_type(
-        this: GameUserGlobalData,
-        value: crate::app::gamesavedata::GameSaveData_Types,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(GameUserGlobalData, crate::app::gamesavedata::GameSaveData_Types, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_last_save_data_type::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_last_save_data_index {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GameUserGlobalData as ::unity2::ClassIdentity>::class(),
-                "set_LastSaveDataIndex",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GameUserGlobalData as ::unity2::ClassIdentity>::NAME,
-                        "set_LastSaveDataIndex",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_last_save_data_index(this: GameUserGlobalData, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GameUserGlobalData, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_last_save_data_index::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_identifier_count {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GameUserGlobalData as ::unity2::ClassIdentity>::class(),
-                "get_IdentifierCount",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GameUserGlobalData as ::unity2::ClassIdentity>::NAME,
-                        "get_IdentifierCount",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_identifier_count(this: GameUserGlobalData, __unity2_method_info: ::unity2::OptionalMethod) -> u32 {
-        let inner: extern "C" fn(GameUserGlobalData, ::unity2::OptionalMethod) -> u32 =
-            ::core::mem::transmute(__lookup_get_identifier_count::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_identifier_count {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GameUserGlobalData as ::unity2::ClassIdentity>::class(),
-                "set_IdentifierCount",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GameUserGlobalData as ::unity2::ClassIdentity>::NAME,
-                        "set_IdentifierCount",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_identifier_count(this: GameUserGlobalData, value: u32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GameUserGlobalData, u32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_identifier_count::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_flag {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GameUserGlobalData as ::unity2::ClassIdentity>::class(),
-                "get_Flag",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GameUserGlobalData as ::unity2::ClassIdentity>::NAME,
-                        "get_Flag",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_flag(
-        this: GameUserGlobalData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::gameuserglobaldata::GameUserGlobalData_FlagsField {
-        let inner: extern "C" fn(GameUserGlobalData, ::unity2::OptionalMethod) -> crate::app::gameuserglobaldata::GameUserGlobalData_FlagsField =
-            ::core::mem::transmute(__lookup_get_flag::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_completed {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GameUserGlobalData as ::unity2::ClassIdentity>::class(),
-                "Completed",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GameUserGlobalData as ::unity2::ClassIdentity>::NAME,
-                        "Completed",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn completed(this: GameUserGlobalData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GameUserGlobalData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_completed::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_clear_completed {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GameUserGlobalData as ::unity2::ClassIdentity>::class(),
-                "ClearCompleted",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GameUserGlobalData as ::unity2::ClassIdentity>::NAME,
-                        "ClearCompleted",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn clear_completed(this: GameUserGlobalData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GameUserGlobalData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_clear_completed::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_completed {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GameUserGlobalData as ::unity2::ClassIdentity>::class(),
-                "IsCompleted",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GameUserGlobalData as ::unity2::ClassIdentity>::NAME,
-                        "IsCompleted",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_completed(this: GameUserGlobalData, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(GameUserGlobalData, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_completed::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_completed {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::chapterdata::ChapterData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GameUserGlobalData as ::unity2::ClassIdentity>::class(),
-                "SetCompleted",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GameUserGlobalData as ::unity2::ClassIdentity>::NAME,
-                        "SetCompleted",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_completed(
-        this: GameUserGlobalData,
-        chapter: crate::app::chapterdata::ChapterData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(GameUserGlobalData, crate::app::chapterdata::ChapterData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_completed::get_method_info().method_ptr);
-        inner(this, chapter, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_clear_completed_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::chapterdata::ChapterData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GameUserGlobalData as ::unity2::ClassIdentity>::class(),
-                "ClearCompleted",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GameUserGlobalData as ::unity2::ClassIdentity>::NAME,
-                        "ClearCompleted",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn clear_completed_2(
-        this: GameUserGlobalData,
-        chapter: crate::app::chapterdata::ChapterData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(GameUserGlobalData, crate::app::chapterdata::ChapterData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_clear_completed_2::get_method_info().method_ptr);
-        inner(this, chapter, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_completed_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GameUserGlobalData as ::unity2::ClassIdentity>::class(),
-                "IsCompleted",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GameUserGlobalData as ::unity2::ClassIdentity>::NAME,
-                        "IsCompleted",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_completed_2(this: GameUserGlobalData, cid: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(GameUserGlobalData, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_completed_2::get_method_info().method_ptr);
-        inner(this, cid, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_identifier {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GameUserGlobalData as ::unity2::ClassIdentity>::class(),
-                "CreateIdentifier",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GameUserGlobalData as ::unity2::ClassIdentity>::NAME,
-                        "CreateIdentifier",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_identifier(__unity2_method_info: ::unity2::OptionalMethod) -> u64 {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> u64 = ::core::mem::transmute(__lookup_create_identifier::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-gameuserglobaldata")]
-impl GameUserGlobalData {
-    #[doc = "`CreateIdentifier()` overload"]
-    pub fn create_identifier() -> u64 {
-        unsafe { __GameUserGlobalData_unity2_raw::create_identifier(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-gameuserglobaldata")]
-pub trait IGameUserGlobalDataMethods: IGameUserGlobalData {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <GameUserGlobalData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GameUserGlobalData_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Reset()` overload"]
-    fn reset(self) -> () {
-        unsafe {
-            let __receiver = <GameUserGlobalData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GameUserGlobalData_unity2_raw::reset(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetLastSaveDataType()` overload"]
-    fn get_last_save_data_type(self) -> crate::app::gamesavedata::GameSaveData_Types {
-        unsafe {
-            let __receiver = <GameUserGlobalData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GameUserGlobalData_unity2_raw::get_last_save_data_type(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetLastSaveDataIndex()` overload"]
-    fn get_last_save_data_index(self) -> i32 {
-        unsafe {
-            let __receiver = <GameUserGlobalData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GameUserGlobalData_unity2_raw::get_last_save_data_index(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetLastSaveDataIndex(crate::app::gamesavedata::GameSaveData_Types)` overload"]
-    fn get_last_save_data_index_2(self, r#type: impl ::core::convert::Into<crate::app::gamesavedata::GameSaveData_Types>) -> i32 {
-        unsafe {
-            let __receiver = <GameUserGlobalData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GameUserGlobalData_unity2_raw::get_last_save_data_index_2(__receiver, ::core::convert::Into::into(r#type), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetLastSaveDataInfo(crate::app::gamesavedata::GameSaveData_Types, i32)` overload"]
-    fn set_last_save_data_info(
-        self,
-        r#type: impl ::core::convert::Into<crate::app::gamesavedata::GameSaveData_Types>,
-        index: impl ::core::convert::Into<i32>,
-    ) -> () {
-        unsafe {
-            let __receiver = <GameUserGlobalData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GameUserGlobalData_unity2_raw::set_last_save_data_info(
-                __receiver,
-                ::core::convert::Into::into(r#type),
-                ::core::convert::Into::into(index),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`IsLastSaveDataInfo(crate::app::gamesavedata::GameSaveData_Types, i32)` overload"]
-    fn is_last_save_data_info(
-        self,
-        r#type: impl ::core::convert::Into<crate::app::gamesavedata::GameSaveData_Types>,
-        index: impl ::core::convert::Into<i32>,
-    ) -> bool {
-        unsafe {
-            let __receiver = <GameUserGlobalData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GameUserGlobalData_unity2_raw::is_last_save_data_info(
-                __receiver,
-                ::core::convert::Into::into(r#type),
-                ::core::convert::Into::into(index),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_Version()` overload"]
-    fn get_version(self) -> i32 {
-        unsafe {
-            let __receiver = <GameUserGlobalData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GameUserGlobalData_unity2_raw::get_version(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnSerialize(crate::app::stream_2::Stream_2)` overload"]
-    fn on_serialize(self, stream: impl ::core::convert::Into<crate::app::stream_2::Stream_2>) -> () {
-        unsafe {
-            let __receiver = <GameUserGlobalData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GameUserGlobalData_unity2_raw::on_serialize(__receiver, ::core::convert::Into::into(stream), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnDeserialize(crate::app::stream_2::Stream_2, i32)` overload"]
-    fn on_deserialize(self, stream: impl ::core::convert::Into<crate::app::stream_2::Stream_2>, version: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver = <GameUserGlobalData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GameUserGlobalData_unity2_raw::on_deserialize(
-                __receiver,
-                ::core::convert::Into::into(stream),
-                ::core::convert::Into::into(version),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`set_LastSaveDataType(crate::app::gamesavedata::GameSaveData_Types)` overload"]
-    fn set_last_save_data_type(self, value: impl ::core::convert::Into<crate::app::gamesavedata::GameSaveData_Types>) -> () {
-        unsafe {
-            let __receiver = <GameUserGlobalData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GameUserGlobalData_unity2_raw::set_last_save_data_type(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_LastSaveDataIndex(i32)` overload"]
-    fn set_last_save_data_index(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver = <GameUserGlobalData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GameUserGlobalData_unity2_raw::set_last_save_data_index(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_IdentifierCount()` overload"]
-    fn get_identifier_count(self) -> u32 {
-        unsafe {
-            let __receiver = <GameUserGlobalData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GameUserGlobalData_unity2_raw::get_identifier_count(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_IdentifierCount(u32)` overload"]
-    fn set_identifier_count(self, value: impl ::core::convert::Into<u32>) -> () {
-        unsafe {
-            let __receiver = <GameUserGlobalData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GameUserGlobalData_unity2_raw::set_identifier_count(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Flag()` overload"]
-    fn get_flag(self) -> crate::app::gameuserglobaldata::GameUserGlobalData_FlagsField {
-        unsafe {
-            let __receiver = <GameUserGlobalData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GameUserGlobalData_unity2_raw::get_flag(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Completed()` overload"]
-    fn completed(self) -> () {
-        unsafe {
-            let __receiver = <GameUserGlobalData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GameUserGlobalData_unity2_raw::completed(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ClearCompleted()` overload"]
-    fn clear_completed(self) -> () {
-        unsafe {
-            let __receiver = <GameUserGlobalData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GameUserGlobalData_unity2_raw::clear_completed(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsCompleted()` overload"]
-    fn is_completed(self) -> bool {
-        unsafe {
-            let __receiver = <GameUserGlobalData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GameUserGlobalData_unity2_raw::is_completed(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetCompleted(crate::app::chapterdata::ChapterData)` overload"]
-    fn set_completed(self, chapter: impl ::core::convert::Into<crate::app::chapterdata::ChapterData>) -> () {
-        unsafe {
-            let __receiver = <GameUserGlobalData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GameUserGlobalData_unity2_raw::set_completed(__receiver, ::core::convert::Into::into(chapter), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ClearCompleted(crate::app::chapterdata::ChapterData)` overload"]
-    fn clear_completed_2(self, chapter: impl ::core::convert::Into<crate::app::chapterdata::ChapterData>) -> () {
-        unsafe {
-            let __receiver = <GameUserGlobalData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GameUserGlobalData_unity2_raw::clear_completed_2(__receiver, ::core::convert::Into::into(chapter), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsCompleted(::unity2::Il2CppString)` overload"]
-    fn is_completed_2(self, cid: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
-        unsafe {
-            let __receiver = <GameUserGlobalData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GameUserGlobalData_unity2_raw::is_completed_2(__receiver, ::core::convert::Into::into(cid), ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-gameuserglobaldata")]
-impl<__T: IGameUserGlobalData> IGameUserGlobalDataMethods for __T {}
-
-#[cfg(feature = "app-gameuserglobaldata")]
-impl GameUserGlobalData {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GameUserGlobalData),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGameUserGlobalDataMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GameUserGlobalData_FlagsField) , :: core :: stringify ! (new) ,)) ; < Self as IGameUserGlobalData_FlagsFieldMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-gameuserglobaldata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{
-        GameUserGlobalData, GameUserGlobalData_Flags, GameUserGlobalData_FlagsField, IGameUserGlobalData, IGameUserGlobalDataMethods,
-        IGameUserGlobalData_FlagsField, IGameUserGlobalData_FlagsFieldMethods,
-    };
-    #[cfg(feature = "app-bitfield32")]
-    pub use crate::app::bitfield32::IBitField32Methods;
-    #[cfg(feature = "app-bitfieldcommon")]
-    pub use crate::app::bitfieldcommon::IBitFieldCommonMethods;
-    #[cfg(feature = "app-bitfieldtemplate32_1")]
-    pub use crate::app::bitfieldtemplate32_1::IBitFieldTemplate32_1Methods;
-    #[cfg(feature = "app-singletonclass_1")]
-    pub use crate::app::singletonclass_1::ISingletonClass_1Methods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::{
-        app::{
-            bitfield32::IBitField32, bitfieldcommon::IBitFieldCommon, bitfieldtemplate32_1::IBitFieldTemplate32_1,
-            singletonclass_1::ISingletonClass_1,
-        },
-        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
-    };
+    pub use super::GameUserGlobalData_Flags;
+    pub use super::GameUserGlobalData;
+    pub use super::IGameUserGlobalData;
+    pub use super::IGameUserGlobalDataMethods;
+    pub use super::GameUserGlobalData_FlagsField;
+    pub use super::IGameUserGlobalData_FlagsField;
+    pub use super::IGameUserGlobalData_FlagsFieldMethods;
+    pub use crate::app::bitfield32::IBitField32;
+    pub use crate::app::bitfieldcommon::IBitFieldCommon;
+    pub use crate::app::bitfieldtemplate32_1::IBitFieldTemplate32_1;
+    pub use crate::app::singletonclass_1::ISingletonClass_1;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "app-bitfield32")] pub use crate::app::bitfield32::IBitField32Methods;
+    #[cfg(feature = "app-bitfieldcommon")] pub use crate::app::bitfieldcommon::IBitFieldCommonMethods;
+    #[cfg(feature = "app-bitfieldtemplate32_1")] pub use crate::app::bitfieldtemplate32_1::IBitFieldTemplate32_1Methods;
+    #[cfg(feature = "app-singletonclass_1")] pub use crate::app::singletonclass_1::ISingletonClass_1Methods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

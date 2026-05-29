@@ -2,105 +2,70 @@
 
 #[cfg(feature = "unity_engine-lod-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        valuetype::{IValueType, ValueType},
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/lod/LOD.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct LOD {
-        pub screen_relative_transition_height: f32,
-        pub fade_transition_width: f32,
-        pub renderers: ::unity2::Array<crate::unity_engine::renderer::Renderer>,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
 
-    impl ::unity2::ClassIdentity for LOD {
-        const NAME: &'static str = "LOD";
-        const NAMESPACE: &'static str = "UnityEngine";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/lod/LOD.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct LOD {
+    pub screen_relative_transition_height: f32,
+    pub fade_transition_width: f32,
+    pub renderers: :: unity2 :: Array < crate :: unity_engine :: renderer :: Renderer >,
+}
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+
+impl ::unity2::ClassIdentity for LOD {
+    const NAMESPACE: &'static str = "UnityEngine";
+
+    const NAME: &'static str = "LOD";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for LOD {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl ::unity2::IlType for LOD {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
+
+}
+
 }
 
 #[cfg(feature = "unity_engine-lod-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-lod")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __LOD_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <f32 as ::unity2::IlType>::il_type(),
-                <::unity2::Array<crate::unity_engine::renderer::Renderer> as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<LOD as ::unity2::ClassIdentity>::class(), ".ctor", 2, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <LOD as ::unity2::ClassIdentity>::NAME, ".ctor", e),
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: LOD,
-        screen_relative_transition_height: f32,
-        renderers: ::unity2::Array<crate::unity_engine::renderer::Renderer>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(LOD, f32, ::unity2::Array<crate::unity_engine::renderer::Renderer>, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, screen_relative_transition_height, renderers, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __LOD_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< f32 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: renderer :: Renderer > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LOD as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LOD as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : LOD , screen_relative_transition_height : f32 , renderers : :: unity2 :: Array < crate :: unity_engine :: renderer :: Renderer > , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (LOD , f32 , :: unity2 :: Array < crate :: unity_engine :: renderer :: Renderer > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , screen_relative_transition_height , renderers , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-lod")]
-impl LOD {
-    #[doc = "`.ctor(f32, ::unity2::Array<crate::unity_engine::renderer::Renderer>)` overload"]
-    pub fn ctor(
-        self,
-        screen_relative_transition_height: impl ::core::convert::Into<f32>,
-        renderers: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::renderer::Renderer>>,
-    ) -> () {
-        unsafe {
-            __LOD_unity2_raw::ctor(
-                self,
-                ::core::convert::Into::into(screen_relative_transition_height),
-                ::core::convert::Into::into(renderers),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+impl LOD { # [doc = "`.ctor(f32, ::unity2::Array<crate::unity_engine::renderer::Renderer>)` overload"] pub fn ctor (self , screen_relative_transition_height : impl :: core :: convert :: Into < f32 > , renderers : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: unity_engine :: renderer :: Renderer > >) -> () { unsafe { __LOD_unity2_raw :: ctor (self , :: core :: convert :: Into :: into (screen_relative_transition_height) , :: core :: convert :: Into :: into (renderers) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-lod")]
+impl LOD { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __LOD_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-lod")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::LOD;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::system::{object::IObject, valuetype::IValueType};
+    pub use crate::system::object::IObject;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

@@ -2,193 +2,51 @@
 
 #[cfg(feature = "app-mapimagecorebyte-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::{
-            mapimagecore_1::{IMapImageCore_1, MapImageCore_1},
-            mapimageindex::{IMapImageIndex, MapImageIndex},
-        },
-        system::object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapimagecorebyte/MapImageCoreByte.md"))]
-    #[::unity2::class(namespace = "App", name = "MapImageCoreByte")]
-    # [parent (crate :: app :: mapimagecore_1 :: MapImageCore_1 < u8 >)]
-    pub struct MapImageCoreByte {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: mapimagecore_1 :: { IMapImageCore_1 , MapImageCore_1 }
+ ;
+ use crate :: app :: mapimageindex :: { IMapImageIndex , MapImageIndex }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapimagecorebyte/MapImageCoreByte.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapImageCoreByte")] # [parent (crate :: app :: mapimagecore_1 :: MapImageCore_1 < u8 >)] pub struct MapImageCoreByte {}
+
 }
 
 #[cfg(feature = "app-mapimagecorebyte-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-mapimagecorebyte")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapImageCoreByte_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <u8 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapImageCoreByte as ::unity2::ClassIdentity>::class(),
-                "Add",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapImageCoreByte as ::unity2::ClassIdentity>::NAME,
-                        "Add",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add(this: MapImageCoreByte, index: i32, v: u8, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapImageCoreByte, i32, u8, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add::get_method_info().method_ptr);
-        inner(this, index, v, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_hash_code {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapImageCoreByte as ::unity2::ClassIdentity>::class(),
-                "GetHashCode",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapImageCoreByte as ::unity2::ClassIdentity>::NAME,
-                        "GetHashCode",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_hash_code(this: MapImageCoreByte, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(MapImageCoreByte, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_hash_code::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapImageCoreByte as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapImageCoreByte as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: MapImageCoreByte, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapImageCoreByte, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MapImageCoreByte_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < u8 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapImageCoreByte as :: unity2 :: ClassIdentity > :: class () , "Add" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapImageCoreByte as :: unity2 :: ClassIdentity > :: NAME , "Add" , e) , } } } pub unsafe fn add (this : MapImageCoreByte , index : i32 , v : u8 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapImageCoreByte , i32 , u8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add :: get_method_info () . method_ptr ,) ; inner (this , index , v , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_hash_code { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapImageCoreByte as :: unity2 :: ClassIdentity > :: class () , "GetHashCode" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapImageCoreByte as :: unity2 :: ClassIdentity > :: NAME , "GetHashCode" , e) , } } } pub unsafe fn get_hash_code (this : MapImageCoreByte , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (MapImageCoreByte , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_hash_code :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapImageCoreByte as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapImageCoreByte as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : MapImageCoreByte , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapImageCoreByte , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-mapimagecorebyte")]
-pub trait IMapImageCoreByteMethods: IMapImageCoreByte {
-    #[doc = "`Add(i32, u8)` overload"]
-    fn add(self, index: impl ::core::convert::Into<i32>, v: impl ::core::convert::Into<u8>) -> () {
-        unsafe {
-            let __receiver = <MapImageCoreByte as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapImageCoreByte_unity2_raw::add(
-                __receiver,
-                ::core::convert::Into::into(index),
-                ::core::convert::Into::into(v),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetHashCode()` overload"]
-    fn get_hash_code(self) -> i32 {
-        unsafe {
-            let __receiver = <MapImageCoreByte as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapImageCoreByte_unity2_raw::get_hash_code(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <MapImageCoreByte as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapImageCoreByte_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IMapImageCoreByteMethods : IMapImageCoreByte { # [doc = "`Add(i32, u8)` overload"] fn add (self , index : impl :: core :: convert :: Into < i32 > , v : impl :: core :: convert :: Into < u8 >) -> () { unsafe { let __receiver = < MapImageCoreByte as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapImageCoreByte_unity2_raw :: add (__receiver , :: core :: convert :: Into :: into (index) , :: core :: convert :: Into :: into (v) , :: core :: option :: Option :: None) } } # [doc = "`GetHashCode()` overload"] fn get_hash_code (self ,) -> i32 { unsafe { let __receiver = < MapImageCoreByte as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapImageCoreByte_unity2_raw :: get_hash_code (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapImageCoreByte as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapImageCoreByte_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-mapimagecorebyte")]
-impl<__T: IMapImageCoreByte> IMapImageCoreByteMethods for __T {}
+impl < __T : IMapImageCoreByte > IMapImageCoreByteMethods for __T { }
+
+#[cfg(feature = "app-mapimagecorebyte")]
+impl MapImageCoreByte { pub fn add_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapImageCoreByte_unity2_raw :: __lookup_add :: get_method_info () } pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapImageCoreByte_unity2_raw :: __lookup_get_hash_code :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapImageCoreByte_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-mapimagecorebyte")]
 impl MapImageCoreByte {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapImageCoreByte),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapImageCoreByteMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapImageCoreByte) , :: core :: stringify ! (new) ,)) ; < Self as IMapImageCoreByteMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-mapimagecorebyte")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IMapImageCoreByte, IMapImageCoreByteMethods, MapImageCoreByte};
-    #[cfg(feature = "app-mapimagecore_1")]
-    pub use crate::app::mapimagecore_1::IMapImageCore_1Methods;
-    #[cfg(feature = "app-mapimageindex")]
-    pub use crate::app::mapimageindex::IMapImageIndexMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::{
-        app::{mapimagecore_1::IMapImageCore_1, mapimageindex::IMapImageIndex},
-        system::object::IObject,
-    };
+    pub use super::MapImageCoreByte;
+    pub use super::IMapImageCoreByte;
+    pub use super::IMapImageCoreByteMethods;
+    pub use crate::app::mapimagecore_1::IMapImageCore_1;
+    pub use crate::app::mapimageindex::IMapImageIndex;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "app-mapimagecore_1")] pub use crate::app::mapimagecore_1::IMapImageCore_1Methods;
+    #[cfg(feature = "app-mapimageindex")] pub use crate::app::mapimageindex::IMapImageIndexMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

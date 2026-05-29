@@ -2,260 +2,47 @@
 
 #[cfg(feature = "unity_engine-timeline-runtimeclipbase-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::timeline::runtimeelement::{IRuntimeElement, RuntimeElement},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/runtimeclipbase/RuntimeClipBase.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Timeline", name = "RuntimeClipBase")]
-    #[parent(crate::unity_engine::timeline::runtimeelement::RuntimeElement)]
-    pub struct RuntimeClipBase {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: timeline :: runtimeelement :: { IRuntimeElement , RuntimeElement }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/runtimeclipbase/RuntimeClipBase.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Timeline" , name = "RuntimeClipBase")] # [parent (crate :: unity_engine :: timeline :: runtimeelement :: RuntimeElement)] pub struct RuntimeClipBase {}
+
 }
 
 #[cfg(feature = "unity_engine-timeline-runtimeclipbase-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-timeline-runtimeclipbase")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RuntimeClipBase_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_start {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RuntimeClipBase as ::unity2::ClassIdentity>::class(),
-                "get_start",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RuntimeClipBase as ::unity2::ClassIdentity>::NAME,
-                        "get_start",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_start(this: RuntimeClipBase, __unity2_method_info: ::unity2::OptionalMethod) -> f64 {
-        let inner: extern "C" fn(RuntimeClipBase, ::unity2::OptionalMethod) -> f64 =
-            ::core::mem::transmute(__lookup_get_start::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_duration {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RuntimeClipBase as ::unity2::ClassIdentity>::class(),
-                "get_duration",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RuntimeClipBase as ::unity2::ClassIdentity>::NAME,
-                        "get_duration",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_duration(this: RuntimeClipBase, __unity2_method_info: ::unity2::OptionalMethod) -> f64 {
-        let inner: extern "C" fn(RuntimeClipBase, ::unity2::OptionalMethod) -> f64 =
-            ::core::mem::transmute(__lookup_get_duration::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_interval_start {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RuntimeClipBase as ::unity2::ClassIdentity>::class(),
-                "get_intervalStart",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RuntimeClipBase as ::unity2::ClassIdentity>::NAME,
-                        "get_intervalStart",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_interval_start(this: RuntimeClipBase, __unity2_method_info: ::unity2::OptionalMethod) -> i64 {
-        let inner: extern "C" fn(RuntimeClipBase, ::unity2::OptionalMethod) -> i64 =
-            ::core::mem::transmute(__lookup_get_interval_start::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_interval_end {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RuntimeClipBase as ::unity2::ClassIdentity>::class(),
-                "get_intervalEnd",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RuntimeClipBase as ::unity2::ClassIdentity>::NAME,
-                        "get_intervalEnd",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_interval_end(this: RuntimeClipBase, __unity2_method_info: ::unity2::OptionalMethod) -> i64 {
-        let inner: extern "C" fn(RuntimeClipBase, ::unity2::OptionalMethod) -> i64 =
-            ::core::mem::transmute(__lookup_get_interval_end::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RuntimeClipBase as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RuntimeClipBase as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: RuntimeClipBase, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RuntimeClipBase, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __RuntimeClipBase_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_start { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RuntimeClipBase as :: unity2 :: ClassIdentity > :: class () , "get_start" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RuntimeClipBase as :: unity2 :: ClassIdentity > :: NAME , "get_start" , e) , } } } pub unsafe fn get_start (this : RuntimeClipBase , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f64 { let inner : extern "C" fn (RuntimeClipBase , :: unity2 :: OptionalMethod ,) -> f64 = :: core :: mem :: transmute (__lookup_get_start :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_duration { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RuntimeClipBase as :: unity2 :: ClassIdentity > :: class () , "get_duration" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RuntimeClipBase as :: unity2 :: ClassIdentity > :: NAME , "get_duration" , e) , } } } pub unsafe fn get_duration (this : RuntimeClipBase , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f64 { let inner : extern "C" fn (RuntimeClipBase , :: unity2 :: OptionalMethod ,) -> f64 = :: core :: mem :: transmute (__lookup_get_duration :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_interval_start { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RuntimeClipBase as :: unity2 :: ClassIdentity > :: class () , "get_intervalStart" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RuntimeClipBase as :: unity2 :: ClassIdentity > :: NAME , "get_intervalStart" , e) , } } } pub unsafe fn get_interval_start (this : RuntimeClipBase , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i64 { let inner : extern "C" fn (RuntimeClipBase , :: unity2 :: OptionalMethod ,) -> i64 = :: core :: mem :: transmute (__lookup_get_interval_start :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_interval_end { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RuntimeClipBase as :: unity2 :: ClassIdentity > :: class () , "get_intervalEnd" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RuntimeClipBase as :: unity2 :: ClassIdentity > :: NAME , "get_intervalEnd" , e) , } } } pub unsafe fn get_interval_end (this : RuntimeClipBase , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i64 { let inner : extern "C" fn (RuntimeClipBase , :: unity2 :: OptionalMethod ,) -> i64 = :: core :: mem :: transmute (__lookup_get_interval_end :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RuntimeClipBase as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RuntimeClipBase as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : RuntimeClipBase , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RuntimeClipBase , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-timeline-runtimeclipbase")]
-pub trait IRuntimeClipBaseMethods: IRuntimeClipBase {
-    #[doc = "`get_start()` overload"]
-    fn get_start(self) -> f64 {
-        unsafe {
-            let __receiver = <RuntimeClipBase as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RuntimeClipBase_unity2_raw::get_start(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_duration()` overload"]
-    fn get_duration(self) -> f64 {
-        unsafe {
-            let __receiver = <RuntimeClipBase as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RuntimeClipBase_unity2_raw::get_duration(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_intervalStart()` overload"]
-    fn get_interval_start(self) -> i64 {
-        unsafe {
-            let __receiver = <RuntimeClipBase as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RuntimeClipBase_unity2_raw::get_interval_start(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_intervalEnd()` overload"]
-    fn get_interval_end(self) -> i64 {
-        unsafe {
-            let __receiver = <RuntimeClipBase as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RuntimeClipBase_unity2_raw::get_interval_end(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <RuntimeClipBase as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RuntimeClipBase_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IRuntimeClipBaseMethods : IRuntimeClipBase { # [doc = "`get_start()` overload"] fn get_start (self ,) -> f64 { unsafe { let __receiver = < RuntimeClipBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RuntimeClipBase_unity2_raw :: get_start (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_duration()` overload"] fn get_duration (self ,) -> f64 { unsafe { let __receiver = < RuntimeClipBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RuntimeClipBase_unity2_raw :: get_duration (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_intervalStart()` overload"] fn get_interval_start (self ,) -> i64 { unsafe { let __receiver = < RuntimeClipBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RuntimeClipBase_unity2_raw :: get_interval_start (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_intervalEnd()` overload"] fn get_interval_end (self ,) -> i64 { unsafe { let __receiver = < RuntimeClipBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RuntimeClipBase_unity2_raw :: get_interval_end (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RuntimeClipBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RuntimeClipBase_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-timeline-runtimeclipbase")]
-impl<__T: IRuntimeClipBase> IRuntimeClipBaseMethods for __T {}
+impl < __T : IRuntimeClipBase > IRuntimeClipBaseMethods for __T { }
+
+#[cfg(feature = "unity_engine-timeline-runtimeclipbase")]
+impl RuntimeClipBase { pub fn get_start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RuntimeClipBase_unity2_raw :: __lookup_get_start :: get_method_info () } pub fn get_duration_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RuntimeClipBase_unity2_raw :: __lookup_get_duration :: get_method_info () } pub fn get_interval_start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RuntimeClipBase_unity2_raw :: __lookup_get_interval_start :: get_method_info () } pub fn get_interval_end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RuntimeClipBase_unity2_raw :: __lookup_get_interval_end :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RuntimeClipBase_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-timeline-runtimeclipbase")]
 impl RuntimeClipBase {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RuntimeClipBase),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRuntimeClipBaseMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RuntimeClipBase) , :: core :: stringify ! (new) ,)) ; < Self as IRuntimeClipBaseMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "unity_engine-timeline-runtimeclipbase")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IRuntimeClipBase, IRuntimeClipBaseMethods, RuntimeClipBase};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-timeline-runtimeelement")]
-    pub use crate::unity_engine::timeline::runtimeelement::IRuntimeElementMethods;
-    pub use crate::{system::object::IObject, unity_engine::timeline::runtimeelement::IRuntimeElement};
+    pub use super::RuntimeClipBase;
+    pub use super::IRuntimeClipBase;
+    pub use super::IRuntimeClipBaseMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::timeline::runtimeelement::IRuntimeElement;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-timeline-runtimeelement")] pub use crate::unity_engine::timeline::runtimeelement::IRuntimeElementMethods;
 }

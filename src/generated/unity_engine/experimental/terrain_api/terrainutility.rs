@@ -2,1044 +2,237 @@
 
 #[cfg(feature = "unity_engine-experimental-terrain_api-terrainutility-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        collections::generic::dictionary_2::{Dictionary_2, IDictionary_2},
-        delegate::{Delegate, IDelegate},
-        multicastdelegate::{IMulticastDelegate, MulticastDelegate},
-        object::{IObject, Object},
-        r#enum::{Enum, IEnum},
-        valuetype::{IValueType, ValueType},
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/terrain_api/terrainutility/TerrainUtility_TerrainMap_TileCoord.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct TerrainUtility_TerrainMap_TileCoord {
-        pub tile_x: i32,
-        pub tile_z: i32,
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: collections :: generic :: dictionary_2 :: { Dictionary_2 , IDictionary_2 }
+ ;
+ use crate :: system :: delegate :: { Delegate , IDelegate }
+ ;
+ use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/terrain_api/terrainutility/TerrainUtility_TerrainMap_TileCoord.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct TerrainUtility_TerrainMap_TileCoord {
+    pub tile_x: i32,
+    pub tile_z: i32,
+}
+
+
+impl ::unity2::ClassIdentity for TerrainUtility_TerrainMap_TileCoord {
+    const NAMESPACE: &'static str = "UnityEngine.Experimental.TerrainAPI";
+
+    const NAME: &'static str = "TerrainUtility.TerrainMap.TileCoord";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    impl ::unity2::ClassIdentity for TerrainUtility_TerrainMap_TileCoord {
-        const NAME: &'static str = "TerrainUtility.TerrainMap.TileCoord";
-        const NAMESPACE: &'static str = "UnityEngine.Experimental.TerrainAPI";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl ::unity2::IlType for TerrainUtility_TerrainMap_TileCoord {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::IlType for TerrainUtility_TerrainMap_TileCoord {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/terrain_api/terrainutility/TerrainUtility_TerrainMap.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Experimental.TerrainAPI" , name = "TerrainUtility.TerrainMap")] # [parent (crate :: system :: object :: Object)] pub struct TerrainUtility_TerrainMap {
+# [offset (16)] # [rename (name = "m_patchSize")] pub m_patch_size : crate :: unity_engine :: vector3 :: Vector3 ,
+# [offset (28)] # [rename (name = "m_errorCode")] pub m_error_code : crate :: unity_engine :: experimental :: terrain_api :: terrainutility :: TerrainUtility_TerrainMap_ErrorCode ,
+# [offset (32)] # [rename (name = "m_terrainTiles")] pub m_terrain_tiles : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < crate :: unity_engine :: experimental :: terrain_api :: terrainutility :: TerrainUtility_TerrainMap_TileCoord , crate :: unity_engine :: terrain :: Terrain > ,
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/terrain_api/terrainutility/TerrainUtility_TerrainMap_TerrainFilter.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Experimental.TerrainAPI" , name = "TerrainUtility.TerrainMap.TerrainFilter")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct TerrainUtility_TerrainMap_TerrainFilter {}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/terrain_api/terrainutility/TerrainUtility_TerrainGroups.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Experimental.TerrainAPI" , name = "TerrainUtility.TerrainGroups")] # [parent (crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < i32 , crate :: unity_engine :: experimental :: terrain_api :: terrainutility :: TerrainUtility_TerrainMap >)] pub struct TerrainUtility_TerrainGroups {}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/terrain_api/terrainutility/TerrainUtility.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Experimental.TerrainAPI" , name = "TerrainUtility")] # [parent (crate :: system :: object :: Object)] pub struct TerrainUtility {}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/terrain_api/terrainutility/TerrainUtility_TerrainMap_ErrorCode.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct TerrainUtility_TerrainMap_ErrorCode  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for TerrainUtility_TerrainMap_ErrorCode  {
+    const NAMESPACE: &'static str = "UnityEngine.Experimental.TerrainAPI";
+
+    const NAME: &'static str = "TerrainUtility.TerrainMap.ErrorCode";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/terrain_api/terrainutility/TerrainUtility_TerrainMap_TerrainFilter.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Experimental.TerrainAPI", name = "TerrainUtility.TerrainMap.TerrainFilter")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct TerrainUtility_TerrainMap_TerrainFilter {}
+}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/terrain_api/terrainutility/TerrainUtility_TerrainMap.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Experimental.TerrainAPI", name = "TerrainUtility.TerrainMap")]
-    #[parent(crate::system::object::Object)]
-    pub struct TerrainUtility_TerrainMap {
-        #[offset(16)]
-        #[rename(name = "m_patchSize")]
-        pub m_patch_size: crate::unity_engine::vector3::Vector3,
-        #[offset(28)]
-        #[rename(name = "m_errorCode")]
-        pub m_error_code: crate::unity_engine::experimental::terrain_api::terrainutility::TerrainUtility_TerrainMap_ErrorCode,
-        #[offset(32)]
-        #[rename(name = "m_terrainTiles")]
-        pub m_terrain_tiles: crate::system::collections::generic::dictionary_2::Dictionary_2<
-            crate::unity_engine::experimental::terrain_api::terrainutility::TerrainUtility_TerrainMap_TileCoord,
-            crate::unity_engine::terrain::Terrain,
-        >,
+
+impl  ::unity2::IlType for TerrainUtility_TerrainMap_ErrorCode  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/terrain_api/terrainutility/TerrainUtility_TerrainMap_ErrorCode.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct TerrainUtility_TerrainMap_ErrorCode {
-        pub value: i32,
+}
+
+
+impl  TerrainUtility_TerrainMap_ErrorCode  {
+    pub fn ok() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl ::unity2::ClassIdentity for TerrainUtility_TerrainMap_ErrorCode {
-        const NAME: &'static str = "TerrainUtility.TerrainMap.ErrorCode";
-        const NAMESPACE: &'static str = "UnityEngine.Experimental.TerrainAPI";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+    pub fn overlapping() -> Self {
+        Self { value: 1 }
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
     }
 
-    impl ::unity2::IlType for TerrainUtility_TerrainMap_ErrorCode {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+
+    pub fn size_mismatch() -> Self {
+        Self { value: 4 }
+
     }
 
-    impl TerrainUtility_TerrainMap_ErrorCode {
-        pub fn ok() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn overlapping() -> Self {
-            Self { value: 1 }
-        }
+    pub fn edge_alignment_mismatch() -> Self {
+        Self { value: 8 }
 
-        pub fn size_mismatch() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn edge_alignment_mismatch() -> Self {
-            Self { value: 8 }
-        }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/terrain_api/terrainutility/TerrainUtility.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Experimental.TerrainAPI", name = "TerrainUtility")]
-    #[parent(crate::system::object::Object)]
-    pub struct TerrainUtility {}
+}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/terrain_api/terrainutility/TerrainUtility_TerrainGroups.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Experimental.TerrainAPI", name = "TerrainUtility.TerrainGroups")]
-    # [parent (crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < i32 , crate :: unity_engine :: experimental :: terrain_api :: terrainutility :: TerrainUtility_TerrainMap >)]
-    pub struct TerrainUtility_TerrainGroups {}
 }
 
 #[cfg(feature = "unity_engine-experimental-terrain_api-terrainutility-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-experimental-terrain_api-terrainutility")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __TerrainUtility_TerrainMap_TileCoord_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TerrainUtility_TerrainMap_TileCoord as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TerrainUtility_TerrainMap_TileCoord as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: TerrainUtility_TerrainMap_TileCoord, tile_x: i32, tile_z: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TerrainUtility_TerrainMap_TileCoord, i32, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, tile_x, tile_z, __unity2_method_info)
-    }
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __TerrainUtility_TerrainMap_TileCoord_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TerrainUtility_TerrainMap_TileCoord as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TerrainUtility_TerrainMap_TileCoord as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : TerrainUtility_TerrainMap_TileCoord , tile_x : i32 , tile_z : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TerrainUtility_TerrainMap_TileCoord , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , tile_x , tile_z , __unity2_method_info) } }
+
+#[cfg(feature = "unity_engine-experimental-terrain_api-terrainutility")]
+impl TerrainUtility_TerrainMap_TileCoord { # [doc = "`.ctor(i32, i32)` overload"] pub fn ctor (self , tile_x : impl :: core :: convert :: Into < i32 > , tile_z : impl :: core :: convert :: Into < i32 >) -> () { unsafe { __TerrainUtility_TerrainMap_TileCoord_unity2_raw :: ctor (self , :: core :: convert :: Into :: into (tile_x) , :: core :: convert :: Into :: into (tile_z) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-experimental-terrain_api-terrainutility")]
+impl TerrainUtility_TerrainMap_TileCoord { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TerrainUtility_TerrainMap_TileCoord_unity2_raw :: __lookup_ctor :: get_method_info () } }
+
+#[cfg(feature = "unity_engine-experimental-terrain_api-terrainutility")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __TerrainUtility_TerrainMap_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_terrain { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TerrainUtility_TerrainMap as :: unity2 :: ClassIdentity > :: class () , "GetTerrain" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TerrainUtility_TerrainMap as :: unity2 :: ClassIdentity > :: NAME , "GetTerrain" , e) , } } } pub unsafe fn get_terrain (this : TerrainUtility_TerrainMap , tile_x : i32 , tile_z : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: terrain :: Terrain { let inner : extern "C" fn (TerrainUtility_TerrainMap , i32 , i32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: terrain :: Terrain = :: core :: mem :: transmute (__lookup_get_terrain :: get_method_info () . method_ptr ,) ; inner (this , tile_x , tile_z , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_from_placement { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: terrain :: Terrain as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: experimental :: terrain_api :: terrainutility :: TerrainUtility_TerrainMap_TerrainFilter as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TerrainUtility_TerrainMap as :: unity2 :: ClassIdentity > :: class () , "CreateFromPlacement" , 3 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TerrainUtility_TerrainMap as :: unity2 :: ClassIdentity > :: NAME , "CreateFromPlacement" , e) , } } } pub unsafe fn create_from_placement (origin_terrain : crate :: unity_engine :: terrain :: Terrain , filter : crate :: unity_engine :: experimental :: terrain_api :: terrainutility :: TerrainUtility_TerrainMap_TerrainFilter , full_validation : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: terrain_api :: terrainutility :: TerrainUtility_TerrainMap { let inner : extern "C" fn (crate :: unity_engine :: terrain :: Terrain , crate :: unity_engine :: experimental :: terrain_api :: terrainutility :: TerrainUtility_TerrainMap_TerrainFilter , bool , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: terrain_api :: terrainutility :: TerrainUtility_TerrainMap = :: core :: mem :: transmute (__lookup_create_from_placement :: get_method_info () . method_ptr ,) ; inner (origin_terrain , filter , full_validation , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_from_placement_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector2 :: Vector2 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector2 :: Vector2 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: experimental :: terrain_api :: terrainutility :: TerrainUtility_TerrainMap_TerrainFilter as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TerrainUtility_TerrainMap as :: unity2 :: ClassIdentity > :: class () , "CreateFromPlacement" , 4 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TerrainUtility_TerrainMap as :: unity2 :: ClassIdentity > :: NAME , "CreateFromPlacement" , e) , } } } pub unsafe fn create_from_placement_2 (grid_origin : crate :: unity_engine :: vector2 :: Vector2 , grid_size : crate :: unity_engine :: vector2 :: Vector2 , filter : crate :: unity_engine :: experimental :: terrain_api :: terrainutility :: TerrainUtility_TerrainMap_TerrainFilter , full_validation : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: terrain_api :: terrainutility :: TerrainUtility_TerrainMap { let inner : extern "C" fn (crate :: unity_engine :: vector2 :: Vector2 , crate :: unity_engine :: vector2 :: Vector2 , crate :: unity_engine :: experimental :: terrain_api :: terrainutility :: TerrainUtility_TerrainMap_TerrainFilter , bool , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: terrain_api :: terrainutility :: TerrainUtility_TerrainMap = :: core :: mem :: transmute (__lookup_create_from_placement_2 :: get_method_info () . method_ptr ,) ; inner (grid_origin , grid_size , filter , full_validation , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TerrainUtility_TerrainMap as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TerrainUtility_TerrainMap as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : TerrainUtility_TerrainMap , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TerrainUtility_TerrainMap , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_terrain_internal { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: terrain :: Terrain as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TerrainUtility_TerrainMap as :: unity2 :: ClassIdentity > :: class () , "AddTerrainInternal" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TerrainUtility_TerrainMap as :: unity2 :: ClassIdentity > :: NAME , "AddTerrainInternal" , e) , } } } pub unsafe fn add_terrain_internal (this : TerrainUtility_TerrainMap , x : i32 , z : i32 , terrain : crate :: unity_engine :: terrain :: Terrain , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TerrainUtility_TerrainMap , i32 , i32 , crate :: unity_engine :: terrain :: Terrain , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_terrain_internal :: get_method_info () . method_ptr ,) ; inner (this , x , z , terrain , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_try_to_add_terrain { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: terrain :: Terrain as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TerrainUtility_TerrainMap as :: unity2 :: ClassIdentity > :: class () , "TryToAddTerrain" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TerrainUtility_TerrainMap as :: unity2 :: ClassIdentity > :: NAME , "TryToAddTerrain" , e) , } } } pub unsafe fn try_to_add_terrain (this : TerrainUtility_TerrainMap , tile_x : i32 , tile_z : i32 , terrain : crate :: unity_engine :: terrain :: Terrain , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (TerrainUtility_TerrainMap , i32 , i32 , crate :: unity_engine :: terrain :: Terrain , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_try_to_add_terrain :: get_method_info () . method_ptr ,) ; inner (this , tile_x , tile_z , terrain , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_validate_terrain { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TerrainUtility_TerrainMap as :: unity2 :: ClassIdentity > :: class () , "ValidateTerrain" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TerrainUtility_TerrainMap as :: unity2 :: ClassIdentity > :: NAME , "ValidateTerrain" , e) , } } } pub unsafe fn validate_terrain (this : TerrainUtility_TerrainMap , tile_x : i32 , tile_z : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TerrainUtility_TerrainMap , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_validate_terrain :: get_method_info () . method_ptr ,) ; inner (this , tile_x , tile_z , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_validate { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TerrainUtility_TerrainMap as :: unity2 :: ClassIdentity > :: class () , "Validate" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TerrainUtility_TerrainMap as :: unity2 :: ClassIdentity > :: NAME , "Validate" , e) , } } } pub unsafe fn validate (this : TerrainUtility_TerrainMap , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: terrain_api :: terrainutility :: TerrainUtility_TerrainMap_ErrorCode { let inner : extern "C" fn (TerrainUtility_TerrainMap , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: terrain_api :: terrainutility :: TerrainUtility_TerrainMap_ErrorCode = :: core :: mem :: transmute (__lookup_validate :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "unity_engine-experimental-terrain_api-terrainutility")]
+impl TerrainUtility_TerrainMap { # [doc = "`CreateFromPlacement(crate::unity_engine::terrain::Terrain, crate::unity_engine::experimental::terrain_api::terrainutility::TerrainUtility_TerrainMap_TerrainFilter, bool)` overload"] pub fn create_from_placement (origin_terrain : impl :: core :: convert :: Into < crate :: unity_engine :: terrain :: Terrain > , filter : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: terrain_api :: terrainutility :: TerrainUtility_TerrainMap_TerrainFilter > , full_validation : impl :: core :: convert :: Into < bool >) -> crate :: unity_engine :: experimental :: terrain_api :: terrainutility :: TerrainUtility_TerrainMap { unsafe { __TerrainUtility_TerrainMap_unity2_raw :: create_from_placement (:: core :: convert :: Into :: into (origin_terrain) , :: core :: convert :: Into :: into (filter) , :: core :: convert :: Into :: into (full_validation) , :: core :: option :: Option :: None) } } # [doc = "`CreateFromPlacement(crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, crate::unity_engine::experimental::terrain_api::terrainutility::TerrainUtility_TerrainMap_TerrainFilter, bool)` overload"] pub fn create_from_placement_2 (grid_origin : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 > , grid_size : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 > , filter : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: terrain_api :: terrainutility :: TerrainUtility_TerrainMap_TerrainFilter > , full_validation : impl :: core :: convert :: Into < bool >) -> crate :: unity_engine :: experimental :: terrain_api :: terrainutility :: TerrainUtility_TerrainMap { unsafe { __TerrainUtility_TerrainMap_unity2_raw :: create_from_placement_2 (:: core :: convert :: Into :: into (grid_origin) , :: core :: convert :: Into :: into (grid_size) , :: core :: convert :: Into :: into (filter) , :: core :: convert :: Into :: into (full_validation) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-experimental-terrain_api-terrainutility")]
+pub trait ITerrainUtility_TerrainMapMethods : ITerrainUtility_TerrainMap { # [doc = "`GetTerrain(i32, i32)` overload"] fn get_terrain (self , tile_x : impl :: core :: convert :: Into < i32 > , tile_z : impl :: core :: convert :: Into < i32 >) -> crate :: unity_engine :: terrain :: Terrain { unsafe { let __receiver = < TerrainUtility_TerrainMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TerrainUtility_TerrainMap_unity2_raw :: get_terrain (__receiver , :: core :: convert :: Into :: into (tile_x) , :: core :: convert :: Into :: into (tile_z) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TerrainUtility_TerrainMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TerrainUtility_TerrainMap_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } # [doc = "`AddTerrainInternal(i32, i32, crate::unity_engine::terrain::Terrain)` overload"] fn add_terrain_internal (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 > , terrain : impl :: core :: convert :: Into < crate :: unity_engine :: terrain :: Terrain >) -> () { unsafe { let __receiver = < TerrainUtility_TerrainMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TerrainUtility_TerrainMap_unity2_raw :: add_terrain_internal (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: convert :: Into :: into (terrain) , :: core :: option :: Option :: None) } } # [doc = "`TryToAddTerrain(i32, i32, crate::unity_engine::terrain::Terrain)` overload"] fn try_to_add_terrain (self , tile_x : impl :: core :: convert :: Into < i32 > , tile_z : impl :: core :: convert :: Into < i32 > , terrain : impl :: core :: convert :: Into < crate :: unity_engine :: terrain :: Terrain >) -> bool { unsafe { let __receiver = < TerrainUtility_TerrainMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TerrainUtility_TerrainMap_unity2_raw :: try_to_add_terrain (__receiver , :: core :: convert :: Into :: into (tile_x) , :: core :: convert :: Into :: into (tile_z) , :: core :: convert :: Into :: into (terrain) , :: core :: option :: Option :: None) } } # [doc = "`ValidateTerrain(i32, i32)` overload"] fn validate_terrain (self , tile_x : impl :: core :: convert :: Into < i32 > , tile_z : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < TerrainUtility_TerrainMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TerrainUtility_TerrainMap_unity2_raw :: validate_terrain (__receiver , :: core :: convert :: Into :: into (tile_x) , :: core :: convert :: Into :: into (tile_z) , :: core :: option :: Option :: None) } } # [doc = "`Validate()` overload"] fn validate (self ,) -> crate :: unity_engine :: experimental :: terrain_api :: terrainutility :: TerrainUtility_TerrainMap_ErrorCode { unsafe { let __receiver = < TerrainUtility_TerrainMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TerrainUtility_TerrainMap_unity2_raw :: validate (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-experimental-terrain_api-terrainutility")]
+impl < __T : ITerrainUtility_TerrainMap > ITerrainUtility_TerrainMapMethods for __T { }
+
+#[cfg(feature = "unity_engine-experimental-terrain_api-terrainutility")]
+impl TerrainUtility_TerrainMap { pub fn get_terrain_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TerrainUtility_TerrainMap_unity2_raw :: __lookup_get_terrain :: get_method_info () } pub fn create_from_placement_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TerrainUtility_TerrainMap_unity2_raw :: __lookup_create_from_placement :: get_method_info () } pub fn create_from_placement_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TerrainUtility_TerrainMap_unity2_raw :: __lookup_create_from_placement_2 :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TerrainUtility_TerrainMap_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn add_terrain_internal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TerrainUtility_TerrainMap_unity2_raw :: __lookup_add_terrain_internal :: get_method_info () } pub fn try_to_add_terrain_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TerrainUtility_TerrainMap_unity2_raw :: __lookup_try_to_add_terrain :: get_method_info () } pub fn validate_terrain_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TerrainUtility_TerrainMap_unity2_raw :: __lookup_validate_terrain :: get_method_info () } pub fn validate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TerrainUtility_TerrainMap_unity2_raw :: __lookup_validate :: get_method_info () } }
+
+#[cfg(feature = "unity_engine-experimental-terrain_api-terrainutility")]
+impl TerrainUtility_TerrainMap {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TerrainUtility_TerrainMap) , :: core :: stringify ! (new) ,)) ; < Self as ITerrainUtility_TerrainMapMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "unity_engine-experimental-terrain_api-terrainutility")]
-impl TerrainUtility_TerrainMap_TileCoord {
-    #[doc = "`.ctor(i32, i32)` overload"]
-    pub fn ctor(self, tile_x: impl ::core::convert::Into<i32>, tile_z: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            __TerrainUtility_TerrainMap_TileCoord_unity2_raw::ctor(
-                self,
-                ::core::convert::Into::into(tile_x),
-                ::core::convert::Into::into(tile_z),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __TerrainUtility_TerrainMap_TerrainFilter_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type () , < :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TerrainUtility_TerrainMap_TerrainFilter as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TerrainUtility_TerrainMap_TerrainFilter as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : TerrainUtility_TerrainMap_TerrainFilter , object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TerrainUtility_TerrainMap_TerrainFilter , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , object , method , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_invoke { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: terrain :: Terrain as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TerrainUtility_TerrainMap_TerrainFilter as :: unity2 :: ClassIdentity > :: class () , "Invoke" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TerrainUtility_TerrainMap_TerrainFilter as :: unity2 :: ClassIdentity > :: NAME , "Invoke" , e) , } } } pub unsafe fn invoke (this : TerrainUtility_TerrainMap_TerrainFilter , terrain : crate :: unity_engine :: terrain :: Terrain , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (TerrainUtility_TerrainMap_TerrainFilter , crate :: unity_engine :: terrain :: Terrain , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_invoke :: get_method_info () . method_ptr ,) ; inner (this , terrain , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-experimental-terrain_api-terrainutility")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __TerrainUtility_TerrainMap_TerrainFilter_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TerrainUtility_TerrainMap_TerrainFilter as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TerrainUtility_TerrainMap_TerrainFilter as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: TerrainUtility_TerrainMap_TerrainFilter,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            TerrainUtility_TerrainMap_TerrainFilter,
-            crate::system::object::Object,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::terrain::Terrain as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TerrainUtility_TerrainMap_TerrainFilter as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TerrainUtility_TerrainMap_TerrainFilter as ::unity2::ClassIdentity>::NAME,
-                        "Invoke",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn invoke(
-        this: TerrainUtility_TerrainMap_TerrainFilter,
-        terrain: crate::unity_engine::terrain::Terrain,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(TerrainUtility_TerrainMap_TerrainFilter, crate::unity_engine::terrain::Terrain, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
-        inner(this, terrain, __unity2_method_info)
-    }
-}
+pub trait ITerrainUtility_TerrainMap_TerrainFilterMethods : ITerrainUtility_TerrainMap_TerrainFilter { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < TerrainUtility_TerrainMap_TerrainFilter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TerrainUtility_TerrainMap_TerrainFilter_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } # [doc = "`Invoke(crate::unity_engine::terrain::Terrain)` overload"] fn invoke (self , terrain : impl :: core :: convert :: Into < crate :: unity_engine :: terrain :: Terrain >) -> bool { unsafe { let __receiver = < TerrainUtility_TerrainMap_TerrainFilter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TerrainUtility_TerrainMap_TerrainFilter_unity2_raw :: invoke (__receiver , :: core :: convert :: Into :: into (terrain) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-experimental-terrain_api-terrainutility")]
-pub trait ITerrainUtility_TerrainMap_TerrainFilterMethods: ITerrainUtility_TerrainMap_TerrainFilter {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
-        unsafe {
-            let __receiver = <TerrainUtility_TerrainMap_TerrainFilter as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TerrainUtility_TerrainMap_TerrainFilter_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invoke(crate::unity_engine::terrain::Terrain)` overload"]
-    fn invoke(self, terrain: impl ::core::convert::Into<crate::unity_engine::terrain::Terrain>) -> bool {
-        unsafe {
-            let __receiver = <TerrainUtility_TerrainMap_TerrainFilter as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TerrainUtility_TerrainMap_TerrainFilter_unity2_raw::invoke(
-                __receiver,
-                ::core::convert::Into::into(terrain),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+impl < __T : ITerrainUtility_TerrainMap_TerrainFilter > ITerrainUtility_TerrainMap_TerrainFilterMethods for __T { }
 
 #[cfg(feature = "unity_engine-experimental-terrain_api-terrainutility")]
-impl<__T: ITerrainUtility_TerrainMap_TerrainFilter> ITerrainUtility_TerrainMap_TerrainFilterMethods for __T {}
+impl TerrainUtility_TerrainMap_TerrainFilter { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TerrainUtility_TerrainMap_TerrainFilter_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TerrainUtility_TerrainMap_TerrainFilter_unity2_raw :: __lookup_invoke :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-experimental-terrain_api-terrainutility")]
 impl TerrainUtility_TerrainMap_TerrainFilter {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TerrainUtility_TerrainMap_TerrainFilter),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITerrainUtility_TerrainMap_TerrainFilterMethods>::ctor(this, object, method);
-        this
-    }
+# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TerrainUtility_TerrainMap_TerrainFilter) , :: core :: stringify ! (new) ,)) ; < Self as ITerrainUtility_TerrainMap_TerrainFilterMethods > :: ctor (this , object , method) ; this }
 }
 
 #[cfg(feature = "unity_engine-experimental-terrain_api-terrainutility")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __TerrainUtility_TerrainMap_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_terrain {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TerrainUtility_TerrainMap as ::unity2::ClassIdentity>::class(),
-                "GetTerrain",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TerrainUtility_TerrainMap as ::unity2::ClassIdentity>::NAME,
-                        "GetTerrain",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_terrain(
-        this: TerrainUtility_TerrainMap,
-        tile_x: i32,
-        tile_z: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::terrain::Terrain {
-        let inner: extern "C" fn(TerrainUtility_TerrainMap, i32, i32, ::unity2::OptionalMethod) -> crate::unity_engine::terrain::Terrain =
-            ::core::mem::transmute(__lookup_get_terrain::get_method_info().method_ptr);
-        inner(this, tile_x, tile_z, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_from_placement {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: terrain :: Terrain as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: experimental :: terrain_api :: terrainutility :: TerrainUtility_TerrainMap_TerrainFilter as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TerrainUtility_TerrainMap as ::unity2::ClassIdentity>::class(),
-                "CreateFromPlacement",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TerrainUtility_TerrainMap as ::unity2::ClassIdentity>::NAME,
-                        "CreateFromPlacement",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_from_placement(
-        origin_terrain: crate::unity_engine::terrain::Terrain,
-        filter: crate::unity_engine::experimental::terrain_api::terrainutility::TerrainUtility_TerrainMap_TerrainFilter,
-        full_validation: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::experimental::terrain_api::terrainutility::TerrainUtility_TerrainMap {
-        let inner: extern "C" fn(
-            crate::unity_engine::terrain::Terrain,
-            crate::unity_engine::experimental::terrain_api::terrainutility::TerrainUtility_TerrainMap_TerrainFilter,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::experimental::terrain_api::terrainutility::TerrainUtility_TerrainMap =
-            ::core::mem::transmute(__lookup_create_from_placement::get_method_info().method_ptr);
-        inner(origin_terrain, filter, full_validation, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_from_placement_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector2 :: Vector2 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector2 :: Vector2 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: experimental :: terrain_api :: terrainutility :: TerrainUtility_TerrainMap_TerrainFilter as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TerrainUtility_TerrainMap as ::unity2::ClassIdentity>::class(),
-                "CreateFromPlacement",
-                4,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TerrainUtility_TerrainMap as ::unity2::ClassIdentity>::NAME,
-                        "CreateFromPlacement",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_from_placement_2(
-        grid_origin: crate::unity_engine::vector2::Vector2,
-        grid_size: crate::unity_engine::vector2::Vector2,
-        filter: crate::unity_engine::experimental::terrain_api::terrainutility::TerrainUtility_TerrainMap_TerrainFilter,
-        full_validation: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::experimental::terrain_api::terrainutility::TerrainUtility_TerrainMap {
-        let inner: extern "C" fn(
-            crate::unity_engine::vector2::Vector2,
-            crate::unity_engine::vector2::Vector2,
-            crate::unity_engine::experimental::terrain_api::terrainutility::TerrainUtility_TerrainMap_TerrainFilter,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::experimental::terrain_api::terrainutility::TerrainUtility_TerrainMap =
-            ::core::mem::transmute(__lookup_create_from_placement_2::get_method_info().method_ptr);
-        inner(grid_origin, grid_size, filter, full_validation, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TerrainUtility_TerrainMap as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TerrainUtility_TerrainMap as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: TerrainUtility_TerrainMap, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TerrainUtility_TerrainMap, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_terrain_internal {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::terrain::Terrain as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TerrainUtility_TerrainMap as ::unity2::ClassIdentity>::class(),
-                "AddTerrainInternal",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TerrainUtility_TerrainMap as ::unity2::ClassIdentity>::NAME,
-                        "AddTerrainInternal",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_terrain_internal(
-        this: TerrainUtility_TerrainMap,
-        x: i32,
-        z: i32,
-        terrain: crate::unity_engine::terrain::Terrain,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(TerrainUtility_TerrainMap, i32, i32, crate::unity_engine::terrain::Terrain, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add_terrain_internal::get_method_info().method_ptr);
-        inner(this, x, z, terrain, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_try_to_add_terrain {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::terrain::Terrain as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TerrainUtility_TerrainMap as ::unity2::ClassIdentity>::class(),
-                "TryToAddTerrain",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TerrainUtility_TerrainMap as ::unity2::ClassIdentity>::NAME,
-                        "TryToAddTerrain",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn try_to_add_terrain(
-        this: TerrainUtility_TerrainMap,
-        tile_x: i32,
-        tile_z: i32,
-        terrain: crate::unity_engine::terrain::Terrain,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(TerrainUtility_TerrainMap, i32, i32, crate::unity_engine::terrain::Terrain, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_try_to_add_terrain::get_method_info().method_ptr);
-        inner(this, tile_x, tile_z, terrain, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_validate_terrain {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TerrainUtility_TerrainMap as ::unity2::ClassIdentity>::class(),
-                "ValidateTerrain",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TerrainUtility_TerrainMap as ::unity2::ClassIdentity>::NAME,
-                        "ValidateTerrain",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn validate_terrain(this: TerrainUtility_TerrainMap, tile_x: i32, tile_z: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TerrainUtility_TerrainMap, i32, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_validate_terrain::get_method_info().method_ptr);
-        inner(this, tile_x, tile_z, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_validate {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TerrainUtility_TerrainMap as ::unity2::ClassIdentity>::class(),
-                "Validate",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TerrainUtility_TerrainMap as ::unity2::ClassIdentity>::NAME,
-                        "Validate",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn validate(
-        this: TerrainUtility_TerrainMap,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::experimental::terrain_api::terrainutility::TerrainUtility_TerrainMap_ErrorCode {
-        let inner: extern "C" fn(
-            TerrainUtility_TerrainMap,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::experimental::terrain_api::terrainutility::TerrainUtility_TerrainMap_ErrorCode =
-            ::core::mem::transmute(__lookup_validate::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __TerrainUtility_TerrainGroups_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TerrainUtility_TerrainGroups as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TerrainUtility_TerrainGroups as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : TerrainUtility_TerrainGroups , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TerrainUtility_TerrainGroups , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-experimental-terrain_api-terrainutility")]
-impl TerrainUtility_TerrainMap {
-    #[doc = "`CreateFromPlacement(crate::unity_engine::terrain::Terrain, crate::unity_engine::experimental::terrain_api::terrainutility::TerrainUtility_TerrainMap_TerrainFilter, bool)` overload"]
-    pub fn create_from_placement(
-        origin_terrain: impl ::core::convert::Into<crate::unity_engine::terrain::Terrain>,
-        filter: impl ::core::convert::Into<crate::unity_engine::experimental::terrain_api::terrainutility::TerrainUtility_TerrainMap_TerrainFilter>,
-        full_validation: impl ::core::convert::Into<bool>,
-    ) -> crate::unity_engine::experimental::terrain_api::terrainutility::TerrainUtility_TerrainMap {
-        unsafe {
-            __TerrainUtility_TerrainMap_unity2_raw::create_from_placement(
-                ::core::convert::Into::into(origin_terrain),
-                ::core::convert::Into::into(filter),
-                ::core::convert::Into::into(full_validation),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`CreateFromPlacement(crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, crate::unity_engine::experimental::terrain_api::terrainutility::TerrainUtility_TerrainMap_TerrainFilter, bool)` overload"]
-    pub fn create_from_placement_2(
-        grid_origin: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
-        grid_size: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
-        filter: impl ::core::convert::Into<crate::unity_engine::experimental::terrain_api::terrainutility::TerrainUtility_TerrainMap_TerrainFilter>,
-        full_validation: impl ::core::convert::Into<bool>,
-    ) -> crate::unity_engine::experimental::terrain_api::terrainutility::TerrainUtility_TerrainMap {
-        unsafe {
-            __TerrainUtility_TerrainMap_unity2_raw::create_from_placement_2(
-                ::core::convert::Into::into(grid_origin),
-                ::core::convert::Into::into(grid_size),
-                ::core::convert::Into::into(filter),
-                ::core::convert::Into::into(full_validation),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+pub trait ITerrainUtility_TerrainGroupsMethods : ITerrainUtility_TerrainGroups { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TerrainUtility_TerrainGroups as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TerrainUtility_TerrainGroups_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-experimental-terrain_api-terrainutility")]
-pub trait ITerrainUtility_TerrainMapMethods: ITerrainUtility_TerrainMap {
-    #[doc = "`GetTerrain(i32, i32)` overload"]
-    fn get_terrain(self, tile_x: impl ::core::convert::Into<i32>, tile_z: impl ::core::convert::Into<i32>) -> crate::unity_engine::terrain::Terrain {
-        unsafe {
-            let __receiver =
-                <TerrainUtility_TerrainMap as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TerrainUtility_TerrainMap_unity2_raw::get_terrain(
-                __receiver,
-                ::core::convert::Into::into(tile_x),
-                ::core::convert::Into::into(tile_z),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <TerrainUtility_TerrainMap as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TerrainUtility_TerrainMap_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`AddTerrainInternal(i32, i32, crate::unity_engine::terrain::Terrain)` overload"]
-    fn add_terrain_internal(
-        self,
-        x: impl ::core::convert::Into<i32>,
-        z: impl ::core::convert::Into<i32>,
-        terrain: impl ::core::convert::Into<crate::unity_engine::terrain::Terrain>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <TerrainUtility_TerrainMap as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TerrainUtility_TerrainMap_unity2_raw::add_terrain_internal(
-                __receiver,
-                ::core::convert::Into::into(x),
-                ::core::convert::Into::into(z),
-                ::core::convert::Into::into(terrain),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`TryToAddTerrain(i32, i32, crate::unity_engine::terrain::Terrain)` overload"]
-    fn try_to_add_terrain(
-        self,
-        tile_x: impl ::core::convert::Into<i32>,
-        tile_z: impl ::core::convert::Into<i32>,
-        terrain: impl ::core::convert::Into<crate::unity_engine::terrain::Terrain>,
-    ) -> bool {
-        unsafe {
-            let __receiver =
-                <TerrainUtility_TerrainMap as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TerrainUtility_TerrainMap_unity2_raw::try_to_add_terrain(
-                __receiver,
-                ::core::convert::Into::into(tile_x),
-                ::core::convert::Into::into(tile_z),
-                ::core::convert::Into::into(terrain),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ValidateTerrain(i32, i32)` overload"]
-    fn validate_terrain(self, tile_x: impl ::core::convert::Into<i32>, tile_z: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver =
-                <TerrainUtility_TerrainMap as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TerrainUtility_TerrainMap_unity2_raw::validate_terrain(
-                __receiver,
-                ::core::convert::Into::into(tile_x),
-                ::core::convert::Into::into(tile_z),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Validate()` overload"]
-    fn validate(self) -> crate::unity_engine::experimental::terrain_api::terrainutility::TerrainUtility_TerrainMap_ErrorCode {
-        unsafe {
-            let __receiver =
-                <TerrainUtility_TerrainMap as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TerrainUtility_TerrainMap_unity2_raw::validate(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+impl < __T : ITerrainUtility_TerrainGroups > ITerrainUtility_TerrainGroupsMethods for __T { }
 
 #[cfg(feature = "unity_engine-experimental-terrain_api-terrainutility")]
-impl<__T: ITerrainUtility_TerrainMap> ITerrainUtility_TerrainMapMethods for __T {}
-
-#[cfg(feature = "unity_engine-experimental-terrain_api-terrainutility")]
-impl TerrainUtility_TerrainMap {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TerrainUtility_TerrainMap),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITerrainUtility_TerrainMapMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "unity_engine-experimental-terrain_api-terrainutility")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __TerrainUtility_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_has_valid_terrains {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TerrainUtility as ::unity2::ClassIdentity>::class(),
-                "HasValidTerrains",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TerrainUtility as ::unity2::ClassIdentity>::NAME,
-                        "HasValidTerrains",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn has_valid_terrains(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_has_valid_terrains::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_clear_connectivity {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TerrainUtility as ::unity2::ClassIdentity>::class(),
-                "ClearConnectivity",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TerrainUtility as ::unity2::ClassIdentity>::NAME,
-                        "ClearConnectivity",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn clear_connectivity(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_clear_connectivity::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_collect_terrains {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TerrainUtility as ::unity2::ClassIdentity>::class(),
-                "CollectTerrains",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TerrainUtility as ::unity2::ClassIdentity>::NAME,
-                        "CollectTerrains",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn collect_terrains(
-        only_auto_connected_terrains: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::experimental::terrain_api::terrainutility::TerrainUtility_TerrainGroups {
-        let inner: extern "C" fn(
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::experimental::terrain_api::terrainutility::TerrainUtility_TerrainGroups =
-            ::core::mem::transmute(__lookup_collect_terrains::get_method_info().method_ptr);
-        inner(only_auto_connected_terrains, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_auto_connect {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TerrainUtility as ::unity2::ClassIdentity>::class(),
-                "AutoConnect",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TerrainUtility as ::unity2::ClassIdentity>::NAME,
-                        "AutoConnect",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn auto_connect(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_auto_connect::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
-
-#[cfg(feature = "unity_engine-experimental-terrain_api-terrainutility")]
-impl TerrainUtility {
-    #[doc = "`HasValidTerrains()` overload"]
-    pub fn has_valid_terrains() -> bool {
-        unsafe { __TerrainUtility_unity2_raw::has_valid_terrains(::core::option::Option::None) }
-    }
-
-    #[doc = "`ClearConnectivity()` overload"]
-    pub fn clear_connectivity() -> () {
-        unsafe { __TerrainUtility_unity2_raw::clear_connectivity(::core::option::Option::None) }
-    }
-
-    #[doc = "`CollectTerrains(bool)` overload"]
-    pub fn collect_terrains(
-        only_auto_connected_terrains: impl ::core::convert::Into<bool>,
-    ) -> crate::unity_engine::experimental::terrain_api::terrainutility::TerrainUtility_TerrainGroups {
-        unsafe {
-            __TerrainUtility_unity2_raw::collect_terrains(::core::convert::Into::into(only_auto_connected_terrains), ::core::option::Option::None)
-        }
-    }
-
-    #[doc = "`AutoConnect()` overload"]
-    pub fn auto_connect() -> () {
-        unsafe { __TerrainUtility_unity2_raw::auto_connect(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "unity_engine-experimental-terrain_api-terrainutility")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __TerrainUtility_TerrainGroups_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TerrainUtility_TerrainGroups as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TerrainUtility_TerrainGroups as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: TerrainUtility_TerrainGroups, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TerrainUtility_TerrainGroups, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "unity_engine-experimental-terrain_api-terrainutility")]
-pub trait ITerrainUtility_TerrainGroupsMethods: ITerrainUtility_TerrainGroups {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <TerrainUtility_TerrainGroups as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TerrainUtility_TerrainGroups_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-experimental-terrain_api-terrainutility")]
-impl<__T: ITerrainUtility_TerrainGroups> ITerrainUtility_TerrainGroupsMethods for __T {}
+impl TerrainUtility_TerrainGroups { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TerrainUtility_TerrainGroups_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-experimental-terrain_api-terrainutility")]
 impl TerrainUtility_TerrainGroups {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TerrainUtility_TerrainGroups),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITerrainUtility_TerrainGroupsMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TerrainUtility_TerrainGroups) , :: core :: stringify ! (new) ,)) ; < Self as ITerrainUtility_TerrainGroupsMethods > :: ctor (this ,) ; this }
 }
+
+#[cfg(feature = "unity_engine-experimental-terrain_api-terrainutility")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __TerrainUtility_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_has_valid_terrains { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TerrainUtility as :: unity2 :: ClassIdentity > :: class () , "HasValidTerrains" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TerrainUtility as :: unity2 :: ClassIdentity > :: NAME , "HasValidTerrains" , e) , } } } pub unsafe fn has_valid_terrains (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_has_valid_terrains :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_clear_connectivity { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TerrainUtility as :: unity2 :: ClassIdentity > :: class () , "ClearConnectivity" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TerrainUtility as :: unity2 :: ClassIdentity > :: NAME , "ClearConnectivity" , e) , } } } pub unsafe fn clear_connectivity (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_clear_connectivity :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_collect_terrains { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TerrainUtility as :: unity2 :: ClassIdentity > :: class () , "CollectTerrains" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TerrainUtility as :: unity2 :: ClassIdentity > :: NAME , "CollectTerrains" , e) , } } } pub unsafe fn collect_terrains (only_auto_connected_terrains : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: terrain_api :: terrainutility :: TerrainUtility_TerrainGroups { let inner : extern "C" fn (bool , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: terrain_api :: terrainutility :: TerrainUtility_TerrainGroups = :: core :: mem :: transmute (__lookup_collect_terrains :: get_method_info () . method_ptr ,) ; inner (only_auto_connected_terrains , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_auto_connect { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TerrainUtility as :: unity2 :: ClassIdentity > :: class () , "AutoConnect" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TerrainUtility as :: unity2 :: ClassIdentity > :: NAME , "AutoConnect" , e) , } } } pub unsafe fn auto_connect (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_auto_connect :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
+
+#[cfg(feature = "unity_engine-experimental-terrain_api-terrainutility")]
+impl TerrainUtility { # [doc = "`HasValidTerrains()` overload"] pub fn has_valid_terrains () -> bool { unsafe { __TerrainUtility_unity2_raw :: has_valid_terrains (:: core :: option :: Option :: None) } } # [doc = "`ClearConnectivity()` overload"] pub fn clear_connectivity () -> () { unsafe { __TerrainUtility_unity2_raw :: clear_connectivity (:: core :: option :: Option :: None) } } # [doc = "`CollectTerrains(bool)` overload"] pub fn collect_terrains (only_auto_connected_terrains : impl :: core :: convert :: Into < bool >) -> crate :: unity_engine :: experimental :: terrain_api :: terrainutility :: TerrainUtility_TerrainGroups { unsafe { __TerrainUtility_unity2_raw :: collect_terrains (:: core :: convert :: Into :: into (only_auto_connected_terrains) , :: core :: option :: Option :: None) } } # [doc = "`AutoConnect()` overload"] pub fn auto_connect () -> () { unsafe { __TerrainUtility_unity2_raw :: auto_connect (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-experimental-terrain_api-terrainutility")]
+impl TerrainUtility { pub fn has_valid_terrains_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TerrainUtility_unity2_raw :: __lookup_has_valid_terrains :: get_method_info () } pub fn clear_connectivity_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TerrainUtility_unity2_raw :: __lookup_clear_connectivity :: get_method_info () } pub fn collect_terrains_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TerrainUtility_unity2_raw :: __lookup_collect_terrains :: get_method_info () } pub fn auto_connect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TerrainUtility_unity2_raw :: __lookup_auto_connect :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-experimental-terrain_api-terrainutility")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{
-        ITerrainUtility, ITerrainUtility_TerrainGroups, ITerrainUtility_TerrainGroupsMethods, ITerrainUtility_TerrainMap,
-        ITerrainUtility_TerrainMapMethods, ITerrainUtility_TerrainMap_TerrainFilter, ITerrainUtility_TerrainMap_TerrainFilterMethods, TerrainUtility,
-        TerrainUtility_TerrainGroups, TerrainUtility_TerrainMap, TerrainUtility_TerrainMap_ErrorCode, TerrainUtility_TerrainMap_TerrainFilter,
-        TerrainUtility_TerrainMap_TileCoord,
-    };
-    #[cfg(feature = "system-collections-generic-dictionary_2")]
-    pub use crate::system::collections::generic::dictionary_2::IDictionary_2Methods;
-    #[cfg(feature = "system-delegate")]
-    pub use crate::system::delegate::IDelegateMethods;
-    #[cfg(feature = "system-multicastdelegate")]
-    pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::system::{
-        collections::generic::dictionary_2::IDictionary_2, delegate::IDelegate, multicastdelegate::IMulticastDelegate, object::IObject,
-        r#enum::IEnum, valuetype::IValueType,
-    };
+    pub use super::TerrainUtility_TerrainMap_TileCoord;
+    pub use super::TerrainUtility_TerrainMap;
+    pub use super::ITerrainUtility_TerrainMap;
+    pub use super::ITerrainUtility_TerrainMapMethods;
+    pub use super::TerrainUtility_TerrainMap_TerrainFilter;
+    pub use super::ITerrainUtility_TerrainMap_TerrainFilter;
+    pub use super::ITerrainUtility_TerrainMap_TerrainFilterMethods;
+    pub use super::TerrainUtility_TerrainGroups;
+    pub use super::ITerrainUtility_TerrainGroups;
+    pub use super::ITerrainUtility_TerrainGroupsMethods;
+    pub use super::TerrainUtility;
+    pub use super::ITerrainUtility;
+    pub use super::TerrainUtility_TerrainMap_ErrorCode;
+    pub use crate::system::collections::generic::dictionary_2::IDictionary_2;
+    pub use crate::system::delegate::IDelegate;
+    pub use crate::system::multicastdelegate::IMulticastDelegate;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-collections-generic-dictionary_2")] pub use crate::system::collections::generic::dictionary_2::IDictionary_2Methods;
+    #[cfg(feature = "system-delegate")] pub use crate::system::delegate::IDelegateMethods;
+    #[cfg(feature = "system-multicastdelegate")] pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

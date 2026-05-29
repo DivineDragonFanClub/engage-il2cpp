@@ -2,159 +2,65 @@
 
 #[cfg(feature = "tm_pro-faceinfo_legacy-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/faceinfo_legacy/FaceInfo_Legacy.md"))]
-    #[::unity2::class(namespace = "TMPro", name = "FaceInfo_Legacy")]
-    #[parent(crate::system::object::Object)]
-    pub struct FaceInfo_Legacy {
-        #[offset(16)]
-        #[rename(name = "Name")]
-        pub name: ::unity2::Il2CppString,
-        #[offset(24)]
-        #[rename(name = "PointSize")]
-        pub point_size: f32,
-        #[offset(28)]
-        #[rename(name = "Scale")]
-        pub scale: f32,
-        #[offset(32)]
-        #[rename(name = "CharacterCount")]
-        pub character_count: i32,
-        #[offset(36)]
-        #[rename(name = "LineHeight")]
-        pub line_height: f32,
-        #[offset(40)]
-        #[rename(name = "Baseline")]
-        pub baseline: f32,
-        #[offset(44)]
-        #[rename(name = "Ascender")]
-        pub ascender: f32,
-        #[offset(48)]
-        #[rename(name = "CapHeight")]
-        pub cap_height: f32,
-        #[offset(52)]
-        #[rename(name = "Descender")]
-        pub descender: f32,
-        #[offset(56)]
-        #[rename(name = "CenterLine")]
-        pub center_line: f32,
-        #[offset(60)]
-        #[rename(name = "SuperscriptOffset")]
-        pub superscript_offset: f32,
-        #[offset(64)]
-        #[rename(name = "SubscriptOffset")]
-        pub subscript_offset: f32,
-        #[offset(68)]
-        #[rename(name = "SubSize")]
-        pub sub_size: f32,
-        #[offset(72)]
-        #[rename(name = "Underline")]
-        pub underline: f32,
-        #[offset(76)]
-        #[rename(name = "UnderlineThickness")]
-        pub underline_thickness: f32,
-        #[offset(80)]
-        #[rename(name = "strikethrough")]
-        pub strikethrough: f32,
-        #[offset(84)]
-        #[rename(name = "strikethroughThickness")]
-        pub strikethrough_thickness: f32,
-        #[offset(88)]
-        #[rename(name = "TabWidth")]
-        pub tab_width: f32,
-        #[offset(92)]
-        #[rename(name = "Padding")]
-        pub padding: f32,
-        #[offset(96)]
-        #[rename(name = "AtlasWidth")]
-        pub atlas_width: f32,
-        #[offset(100)]
-        #[rename(name = "AtlasHeight")]
-        pub atlas_height: f32,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/faceinfo_legacy/FaceInfo_Legacy.md"))] # [:: unity2 :: class (namespace = "TMPro" , name = "FaceInfo_Legacy")] # [parent (crate :: system :: object :: Object)] pub struct FaceInfo_Legacy {
+# [offset (16)] # [rename (name = "Name")] pub name : :: unity2 :: Il2CppString ,
+# [offset (24)] # [rename (name = "PointSize")] pub point_size : f32 ,
+# [offset (28)] # [rename (name = "Scale")] pub scale : f32 ,
+# [offset (32)] # [rename (name = "CharacterCount")] pub character_count : i32 ,
+# [offset (36)] # [rename (name = "LineHeight")] pub line_height : f32 ,
+# [offset (40)] # [rename (name = "Baseline")] pub baseline : f32 ,
+# [offset (44)] # [rename (name = "Ascender")] pub ascender : f32 ,
+# [offset (48)] # [rename (name = "CapHeight")] pub cap_height : f32 ,
+# [offset (52)] # [rename (name = "Descender")] pub descender : f32 ,
+# [offset (56)] # [rename (name = "CenterLine")] pub center_line : f32 ,
+# [offset (60)] # [rename (name = "SuperscriptOffset")] pub superscript_offset : f32 ,
+# [offset (64)] # [rename (name = "SubscriptOffset")] pub subscript_offset : f32 ,
+# [offset (68)] # [rename (name = "SubSize")] pub sub_size : f32 ,
+# [offset (72)] # [rename (name = "Underline")] pub underline : f32 ,
+# [offset (76)] # [rename (name = "UnderlineThickness")] pub underline_thickness : f32 ,
+# [offset (80)] # [rename (name = "strikethrough")] pub strikethrough : f32 ,
+# [offset (84)] # [rename (name = "strikethroughThickness")] pub strikethrough_thickness : f32 ,
+# [offset (88)] # [rename (name = "TabWidth")] pub tab_width : f32 ,
+# [offset (92)] # [rename (name = "Padding")] pub padding : f32 ,
+# [offset (96)] # [rename (name = "AtlasWidth")] pub atlas_width : f32 ,
+# [offset (100)] # [rename (name = "AtlasHeight")] pub atlas_height : f32 ,
+}
+
 }
 
 #[cfg(feature = "tm_pro-faceinfo_legacy-types")]
 pub use __types::*;
 
 #[cfg(feature = "tm_pro-faceinfo_legacy")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __FaceInfo_Legacy_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FaceInfo_Legacy as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FaceInfo_Legacy as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: FaceInfo_Legacy, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(FaceInfo_Legacy, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __FaceInfo_Legacy_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FaceInfo_Legacy as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FaceInfo_Legacy as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : FaceInfo_Legacy , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FaceInfo_Legacy , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "tm_pro-faceinfo_legacy")]
-pub trait IFaceInfo_LegacyMethods: IFaceInfo_Legacy {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <FaceInfo_Legacy as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FaceInfo_Legacy_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IFaceInfo_LegacyMethods : IFaceInfo_Legacy { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < FaceInfo_Legacy as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FaceInfo_Legacy_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "tm_pro-faceinfo_legacy")]
-impl<__T: IFaceInfo_Legacy> IFaceInfo_LegacyMethods for __T {}
+impl < __T : IFaceInfo_Legacy > IFaceInfo_LegacyMethods for __T { }
+
+#[cfg(feature = "tm_pro-faceinfo_legacy")]
+impl FaceInfo_Legacy { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FaceInfo_Legacy_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "tm_pro-faceinfo_legacy")]
 impl FaceInfo_Legacy {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(FaceInfo_Legacy),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IFaceInfo_LegacyMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FaceInfo_Legacy) , :: core :: stringify ! (new) ,)) ; < Self as IFaceInfo_LegacyMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "tm_pro-faceinfo_legacy")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{FaceInfo_Legacy, IFaceInfo_Legacy, IFaceInfo_LegacyMethods};
+    pub use super::FaceInfo_Legacy;
+    pub use super::IFaceInfo_Legacy;
+    pub use super::IFaceInfo_LegacyMethods;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

@@ -2,405 +2,48 @@
 
 #[cfg(feature = "unity_engine-rendering-mousepositiondebug-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/mousepositiondebug/MousePositionDebug.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Rendering", name = "MousePositionDebug")]
-    #[parent(crate::system::object::Object)]
-    pub struct MousePositionDebug {
-        #[static_field]
-        #[rename(name = "s_Instance")]
-        pub s_instance: crate::unity_engine::rendering::mousepositiondebug::MousePositionDebug,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/mousepositiondebug/MousePositionDebug.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering" , name = "MousePositionDebug")] # [parent (crate :: system :: object :: Object)] pub struct MousePositionDebug {
+# [static_field] # [rename (name = "s_Instance")] pub s_instance : crate :: unity_engine :: rendering :: mousepositiondebug :: MousePositionDebug ,
+}
+
 }
 
 #[cfg(feature = "unity_engine-rendering-mousepositiondebug-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-mousepositiondebug")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MousePositionDebug_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_instance {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MousePositionDebug as ::unity2::ClassIdentity>::class(),
-                "get_instance",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MousePositionDebug as ::unity2::ClassIdentity>::NAME,
-                        "get_instance",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_instance(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::rendering::mousepositiondebug::MousePositionDebug {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::unity_engine::rendering::mousepositiondebug::MousePositionDebug =
-            ::core::mem::transmute(__lookup_get_instance::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_build {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MousePositionDebug as ::unity2::ClassIdentity>::class(),
-                "Build",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MousePositionDebug as ::unity2::ClassIdentity>::NAME,
-                        "Build",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn build(this: MousePositionDebug, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MousePositionDebug, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_build::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cleanup {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MousePositionDebug as ::unity2::ClassIdentity>::class(),
-                "Cleanup",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MousePositionDebug as ::unity2::ClassIdentity>::NAME,
-                        "Cleanup",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cleanup(this: MousePositionDebug, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MousePositionDebug, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_cleanup::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_mouse_position {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type(), <bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MousePositionDebug as ::unity2::ClassIdentity>::class(),
-                "GetMousePosition",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MousePositionDebug as ::unity2::ClassIdentity>::NAME,
-                        "GetMousePosition",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_mouse_position(
-        this: MousePositionDebug,
-        screen_height: f32,
-        scene_view: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::vector2::Vector2 {
-        let inner: extern "C" fn(MousePositionDebug, f32, bool, ::unity2::OptionalMethod) -> crate::unity_engine::vector2::Vector2 =
-            ::core::mem::transmute(__lookup_get_mouse_position::get_method_info().method_ptr);
-        inner(this, screen_height, scene_view, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_input_mouse_position {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MousePositionDebug as ::unity2::ClassIdentity>::class(),
-                "GetInputMousePosition",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MousePositionDebug as ::unity2::ClassIdentity>::NAME,
-                        "GetInputMousePosition",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_input_mouse_position(
-        this: MousePositionDebug,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::vector2::Vector2 {
-        let inner: extern "C" fn(MousePositionDebug, ::unity2::OptionalMethod) -> crate::unity_engine::vector2::Vector2 =
-            ::core::mem::transmute(__lookup_get_input_mouse_position::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_mouse_click_position {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MousePositionDebug as ::unity2::ClassIdentity>::class(),
-                "GetMouseClickPosition",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MousePositionDebug as ::unity2::ClassIdentity>::NAME,
-                        "GetMouseClickPosition",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_mouse_click_position(
-        this: MousePositionDebug,
-        screen_height: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::vector2::Vector2 {
-        let inner: extern "C" fn(MousePositionDebug, f32, ::unity2::OptionalMethod) -> crate::unity_engine::vector2::Vector2 =
-            ::core::mem::transmute(__lookup_get_mouse_click_position::get_method_info().method_ptr);
-        inner(this, screen_height, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MousePositionDebug as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MousePositionDebug as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: MousePositionDebug, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MousePositionDebug, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MousePositionDebug as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MousePositionDebug as ::unity2::ClassIdentity>::NAME,
-                        ".cctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MousePositionDebug_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_instance { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MousePositionDebug as :: unity2 :: ClassIdentity > :: class () , "get_instance" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MousePositionDebug as :: unity2 :: ClassIdentity > :: NAME , "get_instance" , e) , } } } pub unsafe fn get_instance (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: mousepositiondebug :: MousePositionDebug { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: mousepositiondebug :: MousePositionDebug = :: core :: mem :: transmute (__lookup_get_instance :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_build { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MousePositionDebug as :: unity2 :: ClassIdentity > :: class () , "Build" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MousePositionDebug as :: unity2 :: ClassIdentity > :: NAME , "Build" , e) , } } } pub unsafe fn build (this : MousePositionDebug , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MousePositionDebug , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_build :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cleanup { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MousePositionDebug as :: unity2 :: ClassIdentity > :: class () , "Cleanup" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MousePositionDebug as :: unity2 :: ClassIdentity > :: NAME , "Cleanup" , e) , } } } pub unsafe fn cleanup (this : MousePositionDebug , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MousePositionDebug , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cleanup :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_mouse_position { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< f32 as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MousePositionDebug as :: unity2 :: ClassIdentity > :: class () , "GetMousePosition" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MousePositionDebug as :: unity2 :: ClassIdentity > :: NAME , "GetMousePosition" , e) , } } } pub unsafe fn get_mouse_position (this : MousePositionDebug , screen_height : f32 , scene_view : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector2 :: Vector2 { let inner : extern "C" fn (MousePositionDebug , f32 , bool , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector2 :: Vector2 = :: core :: mem :: transmute (__lookup_get_mouse_position :: get_method_info () . method_ptr ,) ; inner (this , screen_height , scene_view , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_input_mouse_position { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MousePositionDebug as :: unity2 :: ClassIdentity > :: class () , "GetInputMousePosition" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MousePositionDebug as :: unity2 :: ClassIdentity > :: NAME , "GetInputMousePosition" , e) , } } } pub unsafe fn get_input_mouse_position (this : MousePositionDebug , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector2 :: Vector2 { let inner : extern "C" fn (MousePositionDebug , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector2 :: Vector2 = :: core :: mem :: transmute (__lookup_get_input_mouse_position :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_mouse_click_position { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MousePositionDebug as :: unity2 :: ClassIdentity > :: class () , "GetMouseClickPosition" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MousePositionDebug as :: unity2 :: ClassIdentity > :: NAME , "GetMouseClickPosition" , e) , } } } pub unsafe fn get_mouse_click_position (this : MousePositionDebug , screen_height : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector2 :: Vector2 { let inner : extern "C" fn (MousePositionDebug , f32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector2 :: Vector2 = :: core :: mem :: transmute (__lookup_get_mouse_click_position :: get_method_info () . method_ptr ,) ; inner (this , screen_height , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MousePositionDebug as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MousePositionDebug as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : MousePositionDebug , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MousePositionDebug , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MousePositionDebug as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MousePositionDebug as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
+
+#[cfg(feature = "unity_engine-rendering-mousepositiondebug")]
+impl MousePositionDebug { # [doc = "`get_instance()` overload"] pub fn get_instance () -> crate :: unity_engine :: rendering :: mousepositiondebug :: MousePositionDebug { unsafe { __MousePositionDebug_unity2_raw :: get_instance (:: core :: option :: Option :: None) } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { __MousePositionDebug_unity2_raw :: cctor (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-rendering-mousepositiondebug")]
+pub trait IMousePositionDebugMethods : IMousePositionDebug { # [doc = "`Build()` overload"] fn build (self ,) -> () { unsafe { let __receiver = < MousePositionDebug as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MousePositionDebug_unity2_raw :: build (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Cleanup()` overload"] fn cleanup (self ,) -> () { unsafe { let __receiver = < MousePositionDebug as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MousePositionDebug_unity2_raw :: cleanup (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetMousePosition(f32, bool)` overload"] fn get_mouse_position (self , screen_height : impl :: core :: convert :: Into < f32 > , scene_view : impl :: core :: convert :: Into < bool >) -> crate :: unity_engine :: vector2 :: Vector2 { unsafe { let __receiver = < MousePositionDebug as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MousePositionDebug_unity2_raw :: get_mouse_position (__receiver , :: core :: convert :: Into :: into (screen_height) , :: core :: convert :: Into :: into (scene_view) , :: core :: option :: Option :: None) } } # [doc = "`GetInputMousePosition()` overload"] fn get_input_mouse_position (self ,) -> crate :: unity_engine :: vector2 :: Vector2 { unsafe { let __receiver = < MousePositionDebug as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MousePositionDebug_unity2_raw :: get_input_mouse_position (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetMouseClickPosition(f32)` overload"] fn get_mouse_click_position (self , screen_height : impl :: core :: convert :: Into < f32 >) -> crate :: unity_engine :: vector2 :: Vector2 { unsafe { let __receiver = < MousePositionDebug as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MousePositionDebug_unity2_raw :: get_mouse_click_position (__receiver , :: core :: convert :: Into :: into (screen_height) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MousePositionDebug as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MousePositionDebug_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-rendering-mousepositiondebug")]
+impl < __T : IMousePositionDebug > IMousePositionDebugMethods for __T { }
+
+#[cfg(feature = "unity_engine-rendering-mousepositiondebug")]
+impl MousePositionDebug { pub fn get_instance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MousePositionDebug_unity2_raw :: __lookup_get_instance :: get_method_info () } pub fn build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MousePositionDebug_unity2_raw :: __lookup_build :: get_method_info () } pub fn cleanup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MousePositionDebug_unity2_raw :: __lookup_cleanup :: get_method_info () } pub fn get_mouse_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MousePositionDebug_unity2_raw :: __lookup_get_mouse_position :: get_method_info () } pub fn get_input_mouse_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MousePositionDebug_unity2_raw :: __lookup_get_input_mouse_position :: get_method_info () } pub fn get_mouse_click_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MousePositionDebug_unity2_raw :: __lookup_get_mouse_click_position :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MousePositionDebug_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MousePositionDebug_unity2_raw :: __lookup_cctor :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-rendering-mousepositiondebug")]
 impl MousePositionDebug {
-    #[doc = "`get_instance()` overload"]
-    pub fn get_instance() -> crate::unity_engine::rendering::mousepositiondebug::MousePositionDebug {
-        unsafe { __MousePositionDebug_unity2_raw::get_instance(::core::option::Option::None) }
-    }
-
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __MousePositionDebug_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "unity_engine-rendering-mousepositiondebug")]
-pub trait IMousePositionDebugMethods: IMousePositionDebug {
-    #[doc = "`Build()` overload"]
-    fn build(self) -> () {
-        unsafe {
-            let __receiver = <MousePositionDebug as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MousePositionDebug_unity2_raw::build(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Cleanup()` overload"]
-    fn cleanup(self) -> () {
-        unsafe {
-            let __receiver = <MousePositionDebug as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MousePositionDebug_unity2_raw::cleanup(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetMousePosition(f32, bool)` overload"]
-    fn get_mouse_position(
-        self,
-        screen_height: impl ::core::convert::Into<f32>,
-        scene_view: impl ::core::convert::Into<bool>,
-    ) -> crate::unity_engine::vector2::Vector2 {
-        unsafe {
-            let __receiver = <MousePositionDebug as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MousePositionDebug_unity2_raw::get_mouse_position(
-                __receiver,
-                ::core::convert::Into::into(screen_height),
-                ::core::convert::Into::into(scene_view),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetInputMousePosition()` overload"]
-    fn get_input_mouse_position(self) -> crate::unity_engine::vector2::Vector2 {
-        unsafe {
-            let __receiver = <MousePositionDebug as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MousePositionDebug_unity2_raw::get_input_mouse_position(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetMouseClickPosition(f32)` overload"]
-    fn get_mouse_click_position(self, screen_height: impl ::core::convert::Into<f32>) -> crate::unity_engine::vector2::Vector2 {
-        unsafe {
-            let __receiver = <MousePositionDebug as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MousePositionDebug_unity2_raw::get_mouse_click_position(
-                __receiver,
-                ::core::convert::Into::into(screen_height),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <MousePositionDebug as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MousePositionDebug_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-rendering-mousepositiondebug")]
-impl<__T: IMousePositionDebug> IMousePositionDebugMethods for __T {}
-
-#[cfg(feature = "unity_engine-rendering-mousepositiondebug")]
-impl MousePositionDebug {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MousePositionDebug),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMousePositionDebugMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MousePositionDebug) , :: core :: stringify ! (new) ,)) ; < Self as IMousePositionDebugMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "unity_engine-rendering-mousepositiondebug")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IMousePositionDebug, IMousePositionDebugMethods, MousePositionDebug};
+    pub use super::MousePositionDebug;
+    pub use super::IMousePositionDebug;
+    pub use super::IMousePositionDebugMethods;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

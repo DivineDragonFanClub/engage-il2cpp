@@ -2,1845 +2,282 @@
 
 #[cfg(feature = "app-dynamicmesh-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        r#enum::{Enum, IEnum},
-        valuetype::{IValueType, ValueType},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dynamicmesh/DynamicMesh_StaticIndices.md"))]
-    #[::unity2::class(namespace = "App", name = "DynamicMesh.StaticIndices")]
-    #[parent(crate::system::object::Object)]
-    pub struct DynamicMesh_StaticIndices {
-        #[static_field]
-        #[rename(name = "s_Indices")]
-        pub s_indices: ::unity2::Array<::unity2::Array<u16>>,
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dynamicmesh/DynamicMesh_StaticIndices.md"))] # [:: unity2 :: class (namespace = "App" , name = "DynamicMesh.StaticIndices")] # [parent (crate :: system :: object :: Object)] pub struct DynamicMesh_StaticIndices {
+# [static_field] # [rename (name = "s_Indices")] pub s_indices : :: unity2 :: Array < :: unity2 :: Array < u16 > > ,
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dynamicmesh/DynamicMesh_Scope.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct DynamicMesh_Scope {
+    pub m_mesh: crate :: app :: dynamicmesh :: DynamicMesh,
+}
+
+
+impl ::unity2::ClassIdentity for DynamicMesh_Scope {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "DynamicMesh.Scope";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dynamicmesh/DynamicMesh_State.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct DynamicMesh_State {
-        pub mode: crate::app::dynamicmesh::DynamicMesh_Mode,
-        pub index: u16,
-        pub count: u16,
+}
+
+
+impl ::unity2::IlType for DynamicMesh_Scope {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::ClassIdentity for DynamicMesh_State {
-        const NAME: &'static str = "DynamicMesh.State";
-        const NAMESPACE: &'static str = "App";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dynamicmesh/DynamicMesh.md"))] # [:: unity2 :: class (namespace = "App" , name = "DynamicMesh")] # [parent (crate :: system :: object :: Object)] pub struct DynamicMesh {
+# [static_field] # [rename (name = "STACK_COUNT")] pub stack_count : i32 ,
+# [static_field] # [rename (name = "BOUNDS")] pub bounds : crate :: unity_engine :: bounds :: Bounds ,
+# [offset (16)] # [rename (name = "m_Mesh")] pub m_mesh : crate :: unity_engine :: mesh :: Mesh ,
+# [offset (24)] # [rename (name = "m_Positions")] pub m_positions : crate :: app :: rawstructlist_1 :: RawStructList_1 < crate :: unity_engine :: vector3 :: Vector3 > ,
+# [offset (32)] # [rename (name = "m_Normals")] pub m_normals : crate :: app :: rawstructlist_1 :: RawStructList_1 < crate :: unity_engine :: vector3 :: Vector3 > ,
+# [offset (40)] # [rename (name = "m_Tangents")] pub m_tangents : crate :: app :: rawstructlist_1 :: RawStructList_1 < crate :: unity_engine :: vector4 :: Vector4 > ,
+# [offset (48)] # [rename (name = "m_Colors")] pub m_colors : crate :: app :: rawstructlist_1 :: RawStructList_1 < crate :: unity_engine :: color :: Color > ,
+# [offset (56)] # [rename (name = "m_UV0")] pub m_uv0 : crate :: app :: rawstructlist_1 :: RawStructList_1 < crate :: unity_engine :: vector2 :: Vector2 > ,
+# [offset (64)] # [rename (name = "m_UV1")] pub m_uv1 : crate :: app :: rawstructlist_1 :: RawStructList_1 < crate :: unity_engine :: vector2 :: Vector2 > ,
+# [offset (72)] # [rename (name = "m_UVs")] pub m_u_vs : :: unity2 :: Array < crate :: app :: rawstructlist_1 :: RawStructList_1 < crate :: unity_engine :: vector2 :: Vector2 > > ,
+# [offset (80)] # [rename (name = "m_Stack")] pub m_stack : crate :: system :: collections :: generic :: stack_1 :: Stack_1 < crate :: app :: dynamicmesh :: DynamicMesh_State > ,
+# [offset (88)] # [rename (name = "m_States")] pub m_states : :: unity2 :: Array < crate :: app :: dynamicmesh :: DynamicMesh_State > ,
+# [offset (96)] # [rename (name = "m_StripIndex")] pub m_strip_index : i32 ,
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dynamicmesh/DynamicMesh_State.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct DynamicMesh_State {
+    pub mode: crate :: app :: dynamicmesh :: DynamicMesh_Mode,
+    pub index: u16,
+    pub count: u16,
+}
+
+
+impl ::unity2::ClassIdentity for DynamicMesh_State {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "DynamicMesh.State";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for DynamicMesh_State {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl ::unity2::IlType for DynamicMesh_State {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dynamicmesh/DynamicMesh.md"))]
-    #[::unity2::class(namespace = "App", name = "DynamicMesh")]
-    #[parent(crate::system::object::Object)]
-    pub struct DynamicMesh {
-        #[static_field]
-        #[rename(name = "STACK_COUNT")]
-        pub stack_count: i32,
-        #[static_field]
-        #[rename(name = "BOUNDS")]
-        pub bounds: crate::unity_engine::bounds::Bounds,
-        #[offset(16)]
-        #[rename(name = "m_Mesh")]
-        pub m_mesh: crate::unity_engine::mesh::Mesh,
-        #[offset(24)]
-        #[rename(name = "m_Positions")]
-        pub m_positions: crate::app::rawstructlist_1::RawStructList_1<crate::unity_engine::vector3::Vector3>,
-        #[offset(32)]
-        #[rename(name = "m_Normals")]
-        pub m_normals: crate::app::rawstructlist_1::RawStructList_1<crate::unity_engine::vector3::Vector3>,
-        #[offset(40)]
-        #[rename(name = "m_Tangents")]
-        pub m_tangents: crate::app::rawstructlist_1::RawStructList_1<crate::unity_engine::vector4::Vector4>,
-        #[offset(48)]
-        #[rename(name = "m_Colors")]
-        pub m_colors: crate::app::rawstructlist_1::RawStructList_1<crate::unity_engine::color::Color>,
-        #[offset(56)]
-        #[rename(name = "m_UV0")]
-        pub m_uv0: crate::app::rawstructlist_1::RawStructList_1<crate::unity_engine::vector2::Vector2>,
-        #[offset(64)]
-        #[rename(name = "m_UV1")]
-        pub m_uv1: crate::app::rawstructlist_1::RawStructList_1<crate::unity_engine::vector2::Vector2>,
-        #[offset(72)]
-        #[rename(name = "m_UVs")]
-        pub m_u_vs: ::unity2::Array<crate::app::rawstructlist_1::RawStructList_1<crate::unity_engine::vector2::Vector2>>,
-        #[offset(80)]
-        #[rename(name = "m_Stack")]
-        pub m_stack: crate::system::collections::generic::stack_1::Stack_1<crate::app::dynamicmesh::DynamicMesh_State>,
-        #[offset(88)]
-        #[rename(name = "m_States")]
-        pub m_states: ::unity2::Array<crate::app::dynamicmesh::DynamicMesh_State>,
-        #[offset(96)]
-        #[rename(name = "m_StripIndex")]
-        pub m_strip_index: i32,
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dynamicmesh/DynamicMesh_Mode.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct DynamicMesh_Mode  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for DynamicMesh_Mode  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "DynamicMesh.Mode";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dynamicmesh/DynamicMesh_Scope.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct DynamicMesh_Scope {
-        pub m_mesh: crate::app::dynamicmesh::DynamicMesh,
+}
+
+
+impl  ::unity2::IlType for DynamicMesh_Mode  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::ClassIdentity for DynamicMesh_Scope {
-        const NAME: &'static str = "DynamicMesh.Scope";
-        const NAMESPACE: &'static str = "App";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  DynamicMesh_Mode  {
+    pub fn none() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl ::unity2::IlType for DynamicMesh_Scope {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+
+    pub fn triangle() -> Self {
+        Self { value: 1 }
+
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dynamicmesh/DynamicMesh_Mode.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct DynamicMesh_Mode {
-        pub value: i32,
+
+    pub fn quad() -> Self {
+        Self { value: 2 }
+
     }
 
-    impl ::unity2::ClassIdentity for DynamicMesh_Mode {
-        const NAME: &'static str = "DynamicMesh.Mode";
-        const NAMESPACE: &'static str = "App";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+    pub fn pyramid() -> Self {
+        Self { value: 3 }
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
     }
 
-    impl ::unity2::IlType for DynamicMesh_Mode {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+
+    pub fn fan() -> Self {
+        Self { value: 4 }
+
     }
 
-    impl DynamicMesh_Mode {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn triangle() -> Self {
-            Self { value: 1 }
-        }
+    pub fn fan_ccw() -> Self {
+        Self { value: 5 }
 
-        pub fn quad() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn pyramid() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn fan() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn fan_ccw() -> Self {
-            Self { value: 5 }
-        }
-
-        pub fn strip() -> Self {
-            Self { value: 6 }
-        }
-
-        pub fn lines() -> Self {
-            Self { value: 7 }
-        }
-
-        pub fn cell() -> Self {
-            Self { value: 3 }
-        }
     }
+
+
+    pub fn strip() -> Self {
+        Self { value: 6 }
+
+    }
+
+
+    pub fn lines() -> Self {
+        Self { value: 7 }
+
+    }
+
+
+    pub fn cell() -> Self {
+        Self { value: 3 }
+
+    }
+
+}
+
 }
 
 #[cfg(feature = "app-dynamicmesh-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-dynamicmesh")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __DynamicMesh_StaticIndices_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DynamicMesh_StaticIndices as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DynamicMesh_StaticIndices as ::unity2::ClassIdentity>::NAME,
-                        ".cctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_indices {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::dynamicmesh::DynamicMesh_Mode as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DynamicMesh_StaticIndices as ::unity2::ClassIdentity>::class(),
-                "GetIndices",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DynamicMesh_StaticIndices as ::unity2::ClassIdentity>::NAME,
-                        "GetIndices",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_indices(
-        mode: crate::app::dynamicmesh::DynamicMesh_Mode,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Array<u16> {
-        let inner: extern "C" fn(crate::app::dynamicmesh::DynamicMesh_Mode, ::unity2::OptionalMethod) -> ::unity2::Array<u16> =
-            ::core::mem::transmute(__lookup_get_indices::get_method_info().method_ptr);
-        inner(mode, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_triangle_count {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::dynamicmesh::DynamicMesh_Mode as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DynamicMesh_StaticIndices as ::unity2::ClassIdentity>::class(),
-                "GetTriangleCount",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DynamicMesh_StaticIndices as ::unity2::ClassIdentity>::NAME,
-                        "GetTriangleCount",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_triangle_count(
-        mode: crate::app::dynamicmesh::DynamicMesh_Mode,
-        vertex_count: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(crate::app::dynamicmesh::DynamicMesh_Mode, i32, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_triangle_count::get_method_info().method_ptr);
-        inner(mode, vertex_count, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DynamicMesh_StaticIndices as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DynamicMesh_StaticIndices as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: DynamicMesh_StaticIndices, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DynamicMesh_StaticIndices, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __DynamicMesh_StaticIndices_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynamicMesh_StaticIndices as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynamicMesh_StaticIndices as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_indices { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: dynamicmesh :: DynamicMesh_Mode as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynamicMesh_StaticIndices as :: unity2 :: ClassIdentity > :: class () , "GetIndices" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynamicMesh_StaticIndices as :: unity2 :: ClassIdentity > :: NAME , "GetIndices" , e) , } } } pub unsafe fn get_indices (mode : crate :: app :: dynamicmesh :: DynamicMesh_Mode , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < u16 > { let inner : extern "C" fn (crate :: app :: dynamicmesh :: DynamicMesh_Mode , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < u16 > = :: core :: mem :: transmute (__lookup_get_indices :: get_method_info () . method_ptr ,) ; inner (mode , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_triangle_count { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: dynamicmesh :: DynamicMesh_Mode as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynamicMesh_StaticIndices as :: unity2 :: ClassIdentity > :: class () , "GetTriangleCount" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynamicMesh_StaticIndices as :: unity2 :: ClassIdentity > :: NAME , "GetTriangleCount" , e) , } } } pub unsafe fn get_triangle_count (mode : crate :: app :: dynamicmesh :: DynamicMesh_Mode , vertex_count : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (crate :: app :: dynamicmesh :: DynamicMesh_Mode , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_triangle_count :: get_method_info () . method_ptr ,) ; inner (mode , vertex_count , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynamicMesh_StaticIndices as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynamicMesh_StaticIndices as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : DynamicMesh_StaticIndices , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DynamicMesh_StaticIndices , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-dynamicmesh")]
+impl DynamicMesh_StaticIndices { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { __DynamicMesh_StaticIndices_unity2_raw :: cctor (:: core :: option :: Option :: None) } } # [doc = "`GetIndices(crate::app::dynamicmesh::DynamicMesh_Mode)` overload"] pub fn get_indices (mode : impl :: core :: convert :: Into < crate :: app :: dynamicmesh :: DynamicMesh_Mode >) -> :: unity2 :: Array < u16 > { unsafe { __DynamicMesh_StaticIndices_unity2_raw :: get_indices (:: core :: convert :: Into :: into (mode) , :: core :: option :: Option :: None) } } # [doc = "`GetTriangleCount(crate::app::dynamicmesh::DynamicMesh_Mode, i32)` overload"] pub fn get_triangle_count (mode : impl :: core :: convert :: Into < crate :: app :: dynamicmesh :: DynamicMesh_Mode > , vertex_count : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { __DynamicMesh_StaticIndices_unity2_raw :: get_triangle_count (:: core :: convert :: Into :: into (mode) , :: core :: convert :: Into :: into (vertex_count) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-dynamicmesh")]
+pub trait IDynamicMesh_StaticIndicesMethods : IDynamicMesh_StaticIndices { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DynamicMesh_StaticIndices as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DynamicMesh_StaticIndices_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-dynamicmesh")]
+impl < __T : IDynamicMesh_StaticIndices > IDynamicMesh_StaticIndicesMethods for __T { }
+
+#[cfg(feature = "app-dynamicmesh")]
+impl DynamicMesh_StaticIndices { pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DynamicMesh_StaticIndices_unity2_raw :: __lookup_cctor :: get_method_info () } pub fn get_indices_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DynamicMesh_StaticIndices_unity2_raw :: __lookup_get_indices :: get_method_info () } pub fn get_triangle_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DynamicMesh_StaticIndices_unity2_raw :: __lookup_get_triangle_count :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DynamicMesh_StaticIndices_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-dynamicmesh")]
 impl DynamicMesh_StaticIndices {
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __DynamicMesh_StaticIndices_unity2_raw::cctor(::core::option::Option::None) }
-    }
-
-    #[doc = "`GetIndices(crate::app::dynamicmesh::DynamicMesh_Mode)` overload"]
-    pub fn get_indices(mode: impl ::core::convert::Into<crate::app::dynamicmesh::DynamicMesh_Mode>) -> ::unity2::Array<u16> {
-        unsafe { __DynamicMesh_StaticIndices_unity2_raw::get_indices(::core::convert::Into::into(mode), ::core::option::Option::None) }
-    }
-
-    #[doc = "`GetTriangleCount(crate::app::dynamicmesh::DynamicMesh_Mode, i32)` overload"]
-    pub fn get_triangle_count(
-        mode: impl ::core::convert::Into<crate::app::dynamicmesh::DynamicMesh_Mode>,
-        vertex_count: impl ::core::convert::Into<i32>,
-    ) -> i32 {
-        unsafe {
-            __DynamicMesh_StaticIndices_unity2_raw::get_triangle_count(
-                ::core::convert::Into::into(mode),
-                ::core::convert::Into::into(vertex_count),
-                ::core::option::Option::None,
-            )
-        }
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DynamicMesh_StaticIndices) , :: core :: stringify ! (new) ,)) ; < Self as IDynamicMesh_StaticIndicesMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-dynamicmesh")]
-pub trait IDynamicMesh_StaticIndicesMethods: IDynamicMesh_StaticIndices {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <DynamicMesh_StaticIndices as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DynamicMesh_StaticIndices_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __DynamicMesh_Scope_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: dynamicmesh :: DynamicMesh as :: unity2 :: IlType > :: il_type () , < crate :: app :: dynamicmesh :: DynamicMesh_Mode as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynamicMesh_Scope as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynamicMesh_Scope as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : DynamicMesh_Scope , mesh : crate :: app :: dynamicmesh :: DynamicMesh , mode : crate :: app :: dynamicmesh :: DynamicMesh_Mode , sub_mesh_index : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DynamicMesh_Scope , crate :: app :: dynamicmesh :: DynamicMesh , crate :: app :: dynamicmesh :: DynamicMesh_Mode , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , mesh , mode , sub_mesh_index , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_dispose { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynamicMesh_Scope as :: unity2 :: ClassIdentity > :: class () , "Dispose" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynamicMesh_Scope as :: unity2 :: ClassIdentity > :: NAME , "Dispose" , e) , } } } pub unsafe fn dispose (this : DynamicMesh_Scope , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DynamicMesh_Scope , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_dispose :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-dynamicmesh")]
-impl<__T: IDynamicMesh_StaticIndices> IDynamicMesh_StaticIndicesMethods for __T {}
+impl DynamicMesh_Scope { # [doc = "`.ctor(crate::app::dynamicmesh::DynamicMesh, crate::app::dynamicmesh::DynamicMesh_Mode, i32)` overload"] pub fn ctor (self , mesh : impl :: core :: convert :: Into < crate :: app :: dynamicmesh :: DynamicMesh > , mode : impl :: core :: convert :: Into < crate :: app :: dynamicmesh :: DynamicMesh_Mode > , sub_mesh_index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { __DynamicMesh_Scope_unity2_raw :: ctor (self , :: core :: convert :: Into :: into (mesh) , :: core :: convert :: Into :: into (mode) , :: core :: convert :: Into :: into (sub_mesh_index) , :: core :: option :: Option :: None) } } # [doc = "`Dispose()` overload"] pub fn dispose (self ,) -> () { unsafe { __DynamicMesh_Scope_unity2_raw :: dispose (self , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-dynamicmesh")]
-impl DynamicMesh_StaticIndices {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DynamicMesh_StaticIndices),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDynamicMesh_StaticIndicesMethods>::ctor(this);
-        this
-    }
-}
+impl DynamicMesh_Scope { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DynamicMesh_Scope_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DynamicMesh_Scope_unity2_raw :: __lookup_dispose :: get_method_info () } }
 
 #[cfg(feature = "app-dynamicmesh")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __DynamicMesh_State_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_can_connect {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::dynamicmesh::DynamicMesh_State as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DynamicMesh_State as ::unity2::ClassIdentity>::class(),
-                "CanConnect",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DynamicMesh_State as ::unity2::ClassIdentity>::NAME,
-                        "CanConnect",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn can_connect(
-        this: DynamicMesh_State,
-        state: crate::app::dynamicmesh::DynamicMesh_State,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(DynamicMesh_State, crate::app::dynamicmesh::DynamicMesh_State, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_can_connect::get_method_info().method_ptr);
-        inner(this, state, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_connect {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::dynamicmesh::DynamicMesh_State as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DynamicMesh_State as ::unity2::ClassIdentity>::class(),
-                "Connect",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DynamicMesh_State as ::unity2::ClassIdentity>::NAME,
-                        "Connect",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn connect(
-        this: DynamicMesh_State,
-        state: crate::app::dynamicmesh::DynamicMesh_State,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(DynamicMesh_State, crate::app::dynamicmesh::DynamicMesh_State, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_connect::get_method_info().method_ptr);
-        inner(this, state, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_clear {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DynamicMesh_State as ::unity2::ClassIdentity>::class(),
-                "Clear",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DynamicMesh_State as ::unity2::ClassIdentity>::NAME,
-                        "Clear",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn clear(this: DynamicMesh_State, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DynamicMesh_State, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __DynamicMesh_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynamicMesh as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynamicMesh as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : DynamicMesh , vertex_capacity : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DynamicMesh , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , vertex_capacity , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynamicMesh as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynamicMesh as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor_2 (this : DynamicMesh , sub_mesh_count : i32 , vertex_capacity : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DynamicMesh , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor_2 :: get_method_info () . method_ptr ,) ; inner (this , sub_mesh_count , vertex_capacity , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor_3 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: gameobject :: GameObject as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynamicMesh as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynamicMesh as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor_3 (this : DynamicMesh , go : crate :: unity_engine :: gameobject :: GameObject , sub_mesh_count : i32 , vertex_capacity : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DynamicMesh , crate :: unity_engine :: gameobject :: GameObject , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor_3 :: get_method_info () . method_ptr ,) ; inner (this , go , sub_mesh_count , vertex_capacity , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_finalize { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynamicMesh as :: unity2 :: ClassIdentity > :: class () , "Finalize" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynamicMesh as :: unity2 :: ClassIdentity > :: NAME , "Finalize" , e) , } } } pub unsafe fn finalize (this : DynamicMesh , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DynamicMesh , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_finalize :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_setup { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: gameobject :: GameObject as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynamicMesh as :: unity2 :: ClassIdentity > :: class () , "Setup" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynamicMesh as :: unity2 :: ClassIdentity > :: NAME , "Setup" , e) , } } } pub unsafe fn setup (this : DynamicMesh , go : crate :: unity_engine :: gameobject :: GameObject , sub_mesh_count : i32 , vertex_capacity : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DynamicMesh , crate :: unity_engine :: gameobject :: GameObject , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_setup :: get_method_info () . method_ptr ,) ; inner (this , go , sub_mesh_count , vertex_capacity , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_dispose { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynamicMesh as :: unity2 :: ClassIdentity > :: class () , "Dispose" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynamicMesh as :: unity2 :: ClassIdentity > :: NAME , "Dispose" , e) , } } } pub unsafe fn dispose (this : DynamicMesh , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DynamicMesh , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_dispose :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_mesh { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynamicMesh as :: unity2 :: ClassIdentity > :: class () , "get_Mesh" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynamicMesh as :: unity2 :: ClassIdentity > :: NAME , "get_Mesh" , e) , } } } pub unsafe fn get_mesh (this : DynamicMesh , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: mesh :: Mesh { let inner : extern "C" fn (DynamicMesh , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: mesh :: Mesh = :: core :: mem :: transmute (__lookup_get_mesh :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_position { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynamicMesh as :: unity2 :: ClassIdentity > :: class () , "AddPosition" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynamicMesh as :: unity2 :: ClassIdentity > :: NAME , "AddPosition" , e) , } } } pub unsafe fn add_position (this : DynamicMesh , position : * mut crate :: unity_engine :: vector3 :: Vector3 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DynamicMesh , * mut crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_position :: get_method_info () . method_ptr ,) ; inner (this , position , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_normal { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynamicMesh as :: unity2 :: ClassIdentity > :: class () , "AddNormal" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynamicMesh as :: unity2 :: ClassIdentity > :: NAME , "AddNormal" , e) , } } } pub unsafe fn add_normal (this : DynamicMesh , normal : * mut crate :: unity_engine :: vector3 :: Vector3 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DynamicMesh , * mut crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_normal :: get_method_info () . method_ptr ,) ; inner (this , normal , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_tangents { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector4 :: Vector4 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynamicMesh as :: unity2 :: ClassIdentity > :: class () , "AddTangents" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynamicMesh as :: unity2 :: ClassIdentity > :: NAME , "AddTangents" , e) , } } } pub unsafe fn add_tangents (this : DynamicMesh , tangent : * mut crate :: unity_engine :: vector4 :: Vector4 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DynamicMesh , * mut crate :: unity_engine :: vector4 :: Vector4 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_tangents :: get_method_info () . method_ptr ,) ; inner (this , tangent , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_color { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: color :: Color as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynamicMesh as :: unity2 :: ClassIdentity > :: class () , "AddColor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynamicMesh as :: unity2 :: ClassIdentity > :: NAME , "AddColor" , e) , } } } pub unsafe fn add_color (this : DynamicMesh , color : * mut crate :: unity_engine :: color :: Color , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DynamicMesh , * mut crate :: unity_engine :: color :: Color , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_color :: get_method_info () . method_ptr ,) ; inner (this , color , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_uv { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector2 :: Vector2 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynamicMesh as :: unity2 :: ClassIdentity > :: class () , "AddUV" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynamicMesh as :: unity2 :: ClassIdentity > :: NAME , "AddUV" , e) , } } } pub unsafe fn add_uv (this : DynamicMesh , uv : * mut crate :: unity_engine :: vector2 :: Vector2 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DynamicMesh , * mut crate :: unity_engine :: vector2 :: Vector2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_uv :: get_method_info () . method_ptr ,) ; inner (this , uv , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_uv_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector2 :: Vector2 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynamicMesh as :: unity2 :: ClassIdentity > :: class () , "AddUV" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynamicMesh as :: unity2 :: ClassIdentity > :: NAME , "AddUV" , e) , } } } pub unsafe fn add_uv_2 (this : DynamicMesh , ch : i32 , uv : * mut crate :: unity_engine :: vector2 :: Vector2 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DynamicMesh , i32 , * mut crate :: unity_engine :: vector2 :: Vector2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_uv_2 :: get_method_info () . method_ptr ,) ; inner (this , ch , uv , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_vertex { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: color :: Color as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynamicMesh as :: unity2 :: ClassIdentity > :: class () , "AddVertex" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynamicMesh as :: unity2 :: ClassIdentity > :: NAME , "AddVertex" , e) , } } } pub unsafe fn add_vertex (this : DynamicMesh , position : * mut crate :: unity_engine :: vector3 :: Vector3 , color : * mut crate :: unity_engine :: color :: Color , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DynamicMesh , * mut crate :: unity_engine :: vector3 :: Vector3 , * mut crate :: unity_engine :: color :: Color , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_vertex :: get_method_info () . method_ptr ,) ; inner (this , position , color , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_vertex_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: color :: Color as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector2 :: Vector2 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynamicMesh as :: unity2 :: ClassIdentity > :: class () , "AddVertex" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynamicMesh as :: unity2 :: ClassIdentity > :: NAME , "AddVertex" , e) , } } } pub unsafe fn add_vertex_2 (this : DynamicMesh , position : * mut crate :: unity_engine :: vector3 :: Vector3 , color : * mut crate :: unity_engine :: color :: Color , uv : * mut crate :: unity_engine :: vector2 :: Vector2 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DynamicMesh , * mut crate :: unity_engine :: vector3 :: Vector3 , * mut crate :: unity_engine :: color :: Color , * mut crate :: unity_engine :: vector2 :: Vector2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_vertex_2 :: get_method_info () . method_ptr ,) ; inner (this , position , color , uv , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_vertex_3 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector2 :: Vector2 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynamicMesh as :: unity2 :: ClassIdentity > :: class () , "AddVertex" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynamicMesh as :: unity2 :: ClassIdentity > :: NAME , "AddVertex" , e) , } } } pub unsafe fn add_vertex_3 (this : DynamicMesh , position : * mut crate :: unity_engine :: vector3 :: Vector3 , uv : * mut crate :: unity_engine :: vector2 :: Vector2 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DynamicMesh , * mut crate :: unity_engine :: vector3 :: Vector3 , * mut crate :: unity_engine :: vector2 :: Vector2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_vertex_3 :: get_method_info () . method_ptr ,) ; inner (this , position , uv , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_strip_begin { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynamicMesh as :: unity2 :: ClassIdentity > :: class () , "StripBegin" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynamicMesh as :: unity2 :: ClassIdentity > :: NAME , "StripBegin" , e) , } } } pub unsafe fn strip_begin (this : DynamicMesh , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DynamicMesh , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_strip_begin :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_strip_end { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynamicMesh as :: unity2 :: ClassIdentity > :: class () , "StripEnd" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynamicMesh as :: unity2 :: ClassIdentity > :: NAME , "StripEnd" , e) , } } } pub unsafe fn strip_end (this : DynamicMesh , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DynamicMesh , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_strip_end :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_clear { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynamicMesh as :: unity2 :: ClassIdentity > :: class () , "Clear" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynamicMesh as :: unity2 :: ClassIdentity > :: NAME , "Clear" , e) , } } } pub unsafe fn clear (this : DynamicMesh , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DynamicMesh , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_clear :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_scope { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: dynamicmesh :: DynamicMesh_Mode as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynamicMesh as :: unity2 :: ClassIdentity > :: class () , "CreateScope" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynamicMesh as :: unity2 :: ClassIdentity > :: NAME , "CreateScope" , e) , } } } pub unsafe fn create_scope (this : DynamicMesh , mode : crate :: app :: dynamicmesh :: DynamicMesh_Mode , sub_mesh_index : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: dynamicmesh :: DynamicMesh_Scope { let inner : extern "C" fn (DynamicMesh , crate :: app :: dynamicmesh :: DynamicMesh_Mode , i32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: dynamicmesh :: DynamicMesh_Scope = :: core :: mem :: transmute (__lookup_create_scope :: get_method_info () . method_ptr ,) ; inner (this , mode , sub_mesh_index , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_begin { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: dynamicmesh :: DynamicMesh_Mode as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynamicMesh as :: unity2 :: ClassIdentity > :: class () , "Begin" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynamicMesh as :: unity2 :: ClassIdentity > :: NAME , "Begin" , e) , } } } pub unsafe fn begin (this : DynamicMesh , mode : crate :: app :: dynamicmesh :: DynamicMesh_Mode , sub_mesh_index : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DynamicMesh , crate :: app :: dynamicmesh :: DynamicMesh_Mode , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_begin :: get_method_info () . method_ptr ,) ; inner (this , mode , sub_mesh_index , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_end { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynamicMesh as :: unity2 :: ClassIdentity > :: class () , "End" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynamicMesh as :: unity2 :: ClassIdentity > :: NAME , "End" , e) , } } } pub unsafe fn end (this : DynamicMesh , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DynamicMesh , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_end :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_common_mode { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynamicMesh as :: unity2 :: ClassIdentity > :: class () , "GetCommonMode" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynamicMesh as :: unity2 :: ClassIdentity > :: NAME , "GetCommonMode" , e) , } } } pub unsafe fn get_common_mode (this : DynamicMesh , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: dynamicmesh :: DynamicMesh_Mode { let inner : extern "C" fn (DynamicMesh , :: unity2 :: OptionalMethod ,) -> crate :: app :: dynamicmesh :: DynamicMesh_Mode = :: core :: mem :: transmute (__lookup_get_common_mode :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_commit { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynamicMesh as :: unity2 :: ClassIdentity > :: class () , "Commit" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynamicMesh as :: unity2 :: ClassIdentity > :: NAME , "Commit" , e) , } } } pub unsafe fn commit (this : DynamicMesh , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DynamicMesh , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_commit :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_copy_sub_mesh { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynamicMesh as :: unity2 :: ClassIdentity > :: class () , "CopySubMesh" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynamicMesh as :: unity2 :: ClassIdentity > :: NAME , "CopySubMesh" , e) , } } } pub unsafe fn copy_sub_mesh (this : DynamicMesh , src_mesh_index : i32 , dst_mesh_index : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DynamicMesh , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_copy_sub_mesh :: get_method_info () . method_ptr ,) ; inner (this , src_mesh_index , dst_mesh_index , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynamicMesh as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynamicMesh as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
 
 #[cfg(feature = "app-dynamicmesh")]
-impl DynamicMesh_State {
-    #[doc = "`CanConnect(crate::app::dynamicmesh::DynamicMesh_State)` overload"]
-    pub fn can_connect(self, state: impl ::core::convert::Into<crate::app::dynamicmesh::DynamicMesh_State>) -> bool {
-        unsafe { __DynamicMesh_State_unity2_raw::can_connect(self, ::core::convert::Into::into(state), ::core::option::Option::None) }
-    }
-
-    #[doc = "`Connect(crate::app::dynamicmesh::DynamicMesh_State)` overload"]
-    pub fn connect(self, state: impl ::core::convert::Into<crate::app::dynamicmesh::DynamicMesh_State>) -> () {
-        unsafe { __DynamicMesh_State_unity2_raw::connect(self, ::core::convert::Into::into(state), ::core::option::Option::None) }
-    }
-
-    #[doc = "`Clear()` overload"]
-    pub fn clear(self) -> () {
-        unsafe { __DynamicMesh_State_unity2_raw::clear(self, ::core::option::Option::None) }
-    }
-}
+impl DynamicMesh { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { __DynamicMesh_unity2_raw :: cctor (:: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-dynamicmesh")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __DynamicMesh_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<DynamicMesh as ::unity2::ClassIdentity>::class(), ".ctor", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DynamicMesh as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: DynamicMesh, vertex_capacity: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DynamicMesh, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, vertex_capacity, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<DynamicMesh as ::unity2::ClassIdentity>::class(), ".ctor", 2, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DynamicMesh as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor_2(this: DynamicMesh, sub_mesh_count: i32, vertex_capacity: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DynamicMesh, i32, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
-        inner(this, sub_mesh_count, vertex_capacity, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor_3 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<DynamicMesh as ::unity2::ClassIdentity>::class(), ".ctor", 3, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DynamicMesh as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor_3(
-        this: DynamicMesh,
-        go: crate::unity_engine::gameobject::GameObject,
-        sub_mesh_count: i32,
-        vertex_capacity: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(DynamicMesh, crate::unity_engine::gameobject::GameObject, i32, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor_3::get_method_info().method_ptr);
-        inner(this, go, sub_mesh_count, vertex_capacity, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_finalize {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DynamicMesh as ::unity2::ClassIdentity>::class(),
-                "Finalize",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DynamicMesh as ::unity2::ClassIdentity>::NAME,
-                        "Finalize",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn finalize(this: DynamicMesh, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DynamicMesh, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_finalize::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_setup {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<DynamicMesh as ::unity2::ClassIdentity>::class(), "Setup", 3, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DynamicMesh as ::unity2::ClassIdentity>::NAME,
-                        "Setup",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn setup(
-        this: DynamicMesh,
-        go: crate::unity_engine::gameobject::GameObject,
-        sub_mesh_count: i32,
-        vertex_capacity: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(DynamicMesh, crate::unity_engine::gameobject::GameObject, i32, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_setup::get_method_info().method_ptr);
-        inner(this, go, sub_mesh_count, vertex_capacity, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_dispose {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<DynamicMesh as ::unity2::ClassIdentity>::class(), "Dispose", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DynamicMesh as ::unity2::ClassIdentity>::NAME,
-                        "Dispose",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn dispose(this: DynamicMesh, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DynamicMesh, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_dispose::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_mesh {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DynamicMesh as ::unity2::ClassIdentity>::class(),
-                "get_Mesh",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DynamicMesh as ::unity2::ClassIdentity>::NAME,
-                        "get_Mesh",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_mesh(this: DynamicMesh, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::mesh::Mesh {
-        let inner: extern "C" fn(DynamicMesh, ::unity2::OptionalMethod) -> crate::unity_engine::mesh::Mesh =
-            ::core::mem::transmute(__lookup_get_mesh::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_position {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DynamicMesh as ::unity2::ClassIdentity>::class(),
-                "AddPosition",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DynamicMesh as ::unity2::ClassIdentity>::NAME,
-                        "AddPosition",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_position(
-        this: DynamicMesh,
-        position: *mut crate::unity_engine::vector3::Vector3,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(DynamicMesh, *mut crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add_position::get_method_info().method_ptr);
-        inner(this, position, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_normal {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DynamicMesh as ::unity2::ClassIdentity>::class(),
-                "AddNormal",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DynamicMesh as ::unity2::ClassIdentity>::NAME,
-                        "AddNormal",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_normal(
-        this: DynamicMesh,
-        normal: *mut crate::unity_engine::vector3::Vector3,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(DynamicMesh, *mut crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add_normal::get_method_info().method_ptr);
-        inner(this, normal, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_tangents {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector4::Vector4 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DynamicMesh as ::unity2::ClassIdentity>::class(),
-                "AddTangents",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DynamicMesh as ::unity2::ClassIdentity>::NAME,
-                        "AddTangents",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_tangents(
-        this: DynamicMesh,
-        tangent: *mut crate::unity_engine::vector4::Vector4,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(DynamicMesh, *mut crate::unity_engine::vector4::Vector4, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add_tangents::get_method_info().method_ptr);
-        inner(this, tangent, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_color {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::color::Color as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DynamicMesh as ::unity2::ClassIdentity>::class(),
-                "AddColor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DynamicMesh as ::unity2::ClassIdentity>::NAME,
-                        "AddColor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_color(this: DynamicMesh, color: *mut crate::unity_engine::color::Color, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DynamicMesh, *mut crate::unity_engine::color::Color, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add_color::get_method_info().method_ptr);
-        inner(this, color, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_uv {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<DynamicMesh as ::unity2::ClassIdentity>::class(), "AddUV", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DynamicMesh as ::unity2::ClassIdentity>::NAME,
-                        "AddUV",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_uv(this: DynamicMesh, uv: *mut crate::unity_engine::vector2::Vector2, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DynamicMesh, *mut crate::unity_engine::vector2::Vector2, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add_uv::get_method_info().method_ptr);
-        inner(this, uv, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_uv_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<DynamicMesh as ::unity2::ClassIdentity>::class(), "AddUV", 2, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DynamicMesh as ::unity2::ClassIdentity>::NAME,
-                        "AddUV",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_uv_2(
-        this: DynamicMesh,
-        ch: i32,
-        uv: *mut crate::unity_engine::vector2::Vector2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(DynamicMesh, i32, *mut crate::unity_engine::vector2::Vector2, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add_uv_2::get_method_info().method_ptr);
-        inner(this, ch, uv, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_vertex {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DynamicMesh as ::unity2::ClassIdentity>::class(),
-                "AddVertex",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DynamicMesh as ::unity2::ClassIdentity>::NAME,
-                        "AddVertex",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_vertex(
-        this: DynamicMesh,
-        position: *mut crate::unity_engine::vector3::Vector3,
-        color: *mut crate::unity_engine::color::Color,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            DynamicMesh,
-            *mut crate::unity_engine::vector3::Vector3,
-            *mut crate::unity_engine::color::Color,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_add_vertex::get_method_info().method_ptr);
-        inner(this, position, color, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_vertex_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DynamicMesh as ::unity2::ClassIdentity>::class(),
-                "AddVertex",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DynamicMesh as ::unity2::ClassIdentity>::NAME,
-                        "AddVertex",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_vertex_2(
-        this: DynamicMesh,
-        position: *mut crate::unity_engine::vector3::Vector3,
-        color: *mut crate::unity_engine::color::Color,
-        uv: *mut crate::unity_engine::vector2::Vector2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            DynamicMesh,
-            *mut crate::unity_engine::vector3::Vector3,
-            *mut crate::unity_engine::color::Color,
-            *mut crate::unity_engine::vector2::Vector2,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_add_vertex_2::get_method_info().method_ptr);
-        inner(this, position, color, uv, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_vertex_3 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DynamicMesh as ::unity2::ClassIdentity>::class(),
-                "AddVertex",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DynamicMesh as ::unity2::ClassIdentity>::NAME,
-                        "AddVertex",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_vertex_3(
-        this: DynamicMesh,
-        position: *mut crate::unity_engine::vector3::Vector3,
-        uv: *mut crate::unity_engine::vector2::Vector2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            DynamicMesh,
-            *mut crate::unity_engine::vector3::Vector3,
-            *mut crate::unity_engine::vector2::Vector2,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_add_vertex_3::get_method_info().method_ptr);
-        inner(this, position, uv, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_strip_begin {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DynamicMesh as ::unity2::ClassIdentity>::class(),
-                "StripBegin",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DynamicMesh as ::unity2::ClassIdentity>::NAME,
-                        "StripBegin",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn strip_begin(this: DynamicMesh, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DynamicMesh, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_strip_begin::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_strip_end {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DynamicMesh as ::unity2::ClassIdentity>::class(),
-                "StripEnd",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DynamicMesh as ::unity2::ClassIdentity>::NAME,
-                        "StripEnd",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn strip_end(this: DynamicMesh, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DynamicMesh, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_strip_end::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_clear {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<DynamicMesh as ::unity2::ClassIdentity>::class(), "Clear", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DynamicMesh as ::unity2::ClassIdentity>::NAME,
-                        "Clear",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn clear(this: DynamicMesh, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DynamicMesh, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_scope {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::dynamicmesh::DynamicMesh_Mode as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DynamicMesh as ::unity2::ClassIdentity>::class(),
-                "CreateScope",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DynamicMesh as ::unity2::ClassIdentity>::NAME,
-                        "CreateScope",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_scope(
-        this: DynamicMesh,
-        mode: crate::app::dynamicmesh::DynamicMesh_Mode,
-        sub_mesh_index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::dynamicmesh::DynamicMesh_Scope {
-        let inner: extern "C" fn(
-            DynamicMesh,
-            crate::app::dynamicmesh::DynamicMesh_Mode,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::dynamicmesh::DynamicMesh_Scope = ::core::mem::transmute(__lookup_create_scope::get_method_info().method_ptr);
-        inner(this, mode, sub_mesh_index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_begin {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::dynamicmesh::DynamicMesh_Mode as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<DynamicMesh as ::unity2::ClassIdentity>::class(), "Begin", 2, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DynamicMesh as ::unity2::ClassIdentity>::NAME,
-                        "Begin",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn begin(
-        this: DynamicMesh,
-        mode: crate::app::dynamicmesh::DynamicMesh_Mode,
-        sub_mesh_index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(DynamicMesh, crate::app::dynamicmesh::DynamicMesh_Mode, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_begin::get_method_info().method_ptr);
-        inner(this, mode, sub_mesh_index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_end {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<DynamicMesh as ::unity2::ClassIdentity>::class(), "End", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DynamicMesh as ::unity2::ClassIdentity>::NAME,
-                        "End",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn end(this: DynamicMesh, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DynamicMesh, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_end::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_common_mode {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DynamicMesh as ::unity2::ClassIdentity>::class(),
-                "GetCommonMode",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DynamicMesh as ::unity2::ClassIdentity>::NAME,
-                        "GetCommonMode",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_common_mode(this: DynamicMesh, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::dynamicmesh::DynamicMesh_Mode {
-        let inner: extern "C" fn(DynamicMesh, ::unity2::OptionalMethod) -> crate::app::dynamicmesh::DynamicMesh_Mode =
-            ::core::mem::transmute(__lookup_get_common_mode::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_commit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<DynamicMesh as ::unity2::ClassIdentity>::class(), "Commit", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DynamicMesh as ::unity2::ClassIdentity>::NAME,
-                        "Commit",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn commit(this: DynamicMesh, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DynamicMesh, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_commit::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_copy_sub_mesh {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DynamicMesh as ::unity2::ClassIdentity>::class(),
-                "CopySubMesh",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DynamicMesh as ::unity2::ClassIdentity>::NAME,
-                        "CopySubMesh",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn copy_sub_mesh(this: DynamicMesh, src_mesh_index: i32, dst_mesh_index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DynamicMesh, i32, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_copy_sub_mesh::get_method_info().method_ptr);
-        inner(this, src_mesh_index, dst_mesh_index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<DynamicMesh as ::unity2::ClassIdentity>::class(), ".cctor", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DynamicMesh as ::unity2::ClassIdentity>::NAME,
-                        ".cctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
+pub trait IDynamicMeshMethods : IDynamicMesh { # [doc = "`.ctor(i32)` overload"] fn ctor (self , vertex_capacity : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < DynamicMesh as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DynamicMesh_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (vertex_capacity) , :: core :: option :: Option :: None) } } # [doc = "`.ctor(i32, i32)` overload"] fn ctor_2 (self , sub_mesh_count : impl :: core :: convert :: Into < i32 > , vertex_capacity : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < DynamicMesh as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DynamicMesh_unity2_raw :: ctor_2 (__receiver , :: core :: convert :: Into :: into (sub_mesh_count) , :: core :: convert :: Into :: into (vertex_capacity) , :: core :: option :: Option :: None) } } # [doc = "`.ctor(crate::unity_engine::gameobject::GameObject, i32, i32)` overload"] fn ctor_3 (self , go : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject > , sub_mesh_count : impl :: core :: convert :: Into < i32 > , vertex_capacity : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < DynamicMesh as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DynamicMesh_unity2_raw :: ctor_3 (__receiver , :: core :: convert :: Into :: into (go) , :: core :: convert :: Into :: into (sub_mesh_count) , :: core :: convert :: Into :: into (vertex_capacity) , :: core :: option :: Option :: None) } } # [doc = "`Finalize()` overload"] fn finalize (self ,) -> () { unsafe { let __receiver = < DynamicMesh as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DynamicMesh_unity2_raw :: finalize (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Setup(crate::unity_engine::gameobject::GameObject, i32, i32)` overload"] fn setup (self , go : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject > , sub_mesh_count : impl :: core :: convert :: Into < i32 > , vertex_capacity : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < DynamicMesh as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DynamicMesh_unity2_raw :: setup (__receiver , :: core :: convert :: Into :: into (go) , :: core :: convert :: Into :: into (sub_mesh_count) , :: core :: convert :: Into :: into (vertex_capacity) , :: core :: option :: Option :: None) } } # [doc = "`Dispose()` overload"] fn dispose (self ,) -> () { unsafe { let __receiver = < DynamicMesh as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DynamicMesh_unity2_raw :: dispose (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_Mesh()` overload"] fn get_mesh (self ,) -> crate :: unity_engine :: mesh :: Mesh { unsafe { let __receiver = < DynamicMesh as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DynamicMesh_unity2_raw :: get_mesh (__receiver , :: core :: option :: Option :: None) } } # [doc = "`AddPosition(*mutcrate::unity_engine::vector3::Vector3)` overload"] fn add_position (self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < DynamicMesh as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector3 :: Vector3 > :: uninit () ; __DynamicMesh_unity2_raw :: add_position (__receiver , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) ; __out_0 . assume_init () } } # [doc = "`AddNormal(*mutcrate::unity_engine::vector3::Vector3)` overload"] fn add_normal (self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < DynamicMesh as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector3 :: Vector3 > :: uninit () ; __DynamicMesh_unity2_raw :: add_normal (__receiver , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) ; __out_0 . assume_init () } } # [doc = "`AddTangents(*mutcrate::unity_engine::vector4::Vector4)` overload"] fn add_tangents (self ,) -> crate :: unity_engine :: vector4 :: Vector4 { unsafe { let __receiver = < DynamicMesh as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector4 :: Vector4 > :: uninit () ; __DynamicMesh_unity2_raw :: add_tangents (__receiver , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) ; __out_0 . assume_init () } } # [doc = "`AddColor(*mutcrate::unity_engine::color::Color)` overload"] fn add_color (self ,) -> crate :: unity_engine :: color :: Color { unsafe { let __receiver = < DynamicMesh as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: color :: Color > :: uninit () ; __DynamicMesh_unity2_raw :: add_color (__receiver , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) ; __out_0 . assume_init () } } # [doc = "`AddUV(*mutcrate::unity_engine::vector2::Vector2)` overload"] fn add_uv (self ,) -> crate :: unity_engine :: vector2 :: Vector2 { unsafe { let __receiver = < DynamicMesh as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector2 :: Vector2 > :: uninit () ; __DynamicMesh_unity2_raw :: add_uv (__receiver , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) ; __out_0 . assume_init () } } # [doc = "`AddUV(i32, *mutcrate::unity_engine::vector2::Vector2)` overload"] fn add_uv_2 (self , ch : impl :: core :: convert :: Into < i32 >) -> crate :: unity_engine :: vector2 :: Vector2 { unsafe { let __receiver = < DynamicMesh as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector2 :: Vector2 > :: uninit () ; __DynamicMesh_unity2_raw :: add_uv_2 (__receiver , :: core :: convert :: Into :: into (ch) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) ; __out_0 . assume_init () } } # [doc = "`AddVertex(*mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::color::Color)` overload"] fn add_vertex (self ,) -> (crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: color :: Color) { unsafe { let __receiver = < DynamicMesh as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector3 :: Vector3 > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: color :: Color > :: uninit () ; __DynamicMesh_unity2_raw :: add_vertex (__receiver , __out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: option :: Option :: None) ; (__out_0 . assume_init () , __out_1 . assume_init ()) } } # [doc = "`AddVertex(*mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::color::Color, *mutcrate::unity_engine::vector2::Vector2)` overload"] fn add_vertex_2 (self ,) -> (crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: color :: Color , crate :: unity_engine :: vector2 :: Vector2) { unsafe { let __receiver = < DynamicMesh as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector3 :: Vector3 > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: color :: Color > :: uninit () ; let mut __out_2 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector2 :: Vector2 > :: uninit () ; __DynamicMesh_unity2_raw :: add_vertex_2 (__receiver , __out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , __out_2 . as_mut_ptr () , :: core :: option :: Option :: None) ; (__out_0 . assume_init () , __out_1 . assume_init () , __out_2 . assume_init ()) } } # [doc = "`AddVertex(*mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::vector2::Vector2)` overload"] fn add_vertex_3 (self ,) -> (crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector2 :: Vector2) { unsafe { let __receiver = < DynamicMesh as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector3 :: Vector3 > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector2 :: Vector2 > :: uninit () ; __DynamicMesh_unity2_raw :: add_vertex_3 (__receiver , __out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: option :: Option :: None) ; (__out_0 . assume_init () , __out_1 . assume_init ()) } } # [doc = "`StripBegin()` overload"] fn strip_begin (self ,) -> () { unsafe { let __receiver = < DynamicMesh as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DynamicMesh_unity2_raw :: strip_begin (__receiver , :: core :: option :: Option :: None) } } # [doc = "`StripEnd()` overload"] fn strip_end (self ,) -> () { unsafe { let __receiver = < DynamicMesh as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DynamicMesh_unity2_raw :: strip_end (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Clear()` overload"] fn clear (self ,) -> () { unsafe { let __receiver = < DynamicMesh as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DynamicMesh_unity2_raw :: clear (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CreateScope(crate::app::dynamicmesh::DynamicMesh_Mode, i32)` overload"] fn create_scope (self , mode : impl :: core :: convert :: Into < crate :: app :: dynamicmesh :: DynamicMesh_Mode > , sub_mesh_index : impl :: core :: convert :: Into < i32 >) -> crate :: app :: dynamicmesh :: DynamicMesh_Scope { unsafe { let __receiver = < DynamicMesh as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DynamicMesh_unity2_raw :: create_scope (__receiver , :: core :: convert :: Into :: into (mode) , :: core :: convert :: Into :: into (sub_mesh_index) , :: core :: option :: Option :: None) } } # [doc = "`Begin(crate::app::dynamicmesh::DynamicMesh_Mode, i32)` overload"] fn begin (self , mode : impl :: core :: convert :: Into < crate :: app :: dynamicmesh :: DynamicMesh_Mode > , sub_mesh_index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < DynamicMesh as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DynamicMesh_unity2_raw :: begin (__receiver , :: core :: convert :: Into :: into (mode) , :: core :: convert :: Into :: into (sub_mesh_index) , :: core :: option :: Option :: None) } } # [doc = "`End()` overload"] fn end (self ,) -> () { unsafe { let __receiver = < DynamicMesh as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DynamicMesh_unity2_raw :: end (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetCommonMode()` overload"] fn get_common_mode (self ,) -> crate :: app :: dynamicmesh :: DynamicMesh_Mode { unsafe { let __receiver = < DynamicMesh as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DynamicMesh_unity2_raw :: get_common_mode (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Commit()` overload"] fn commit (self ,) -> () { unsafe { let __receiver = < DynamicMesh as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DynamicMesh_unity2_raw :: commit (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CopySubMesh(i32, i32)` overload"] fn copy_sub_mesh (self , src_mesh_index : impl :: core :: convert :: Into < i32 > , dst_mesh_index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < DynamicMesh as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DynamicMesh_unity2_raw :: copy_sub_mesh (__receiver , :: core :: convert :: Into :: into (src_mesh_index) , :: core :: convert :: Into :: into (dst_mesh_index) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-dynamicmesh")]
+impl < __T : IDynamicMesh > IDynamicMeshMethods for __T { }
+
+#[cfg(feature = "app-dynamicmesh")]
+impl DynamicMesh { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DynamicMesh_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DynamicMesh_unity2_raw :: __lookup_ctor_2 :: get_method_info () } pub fn ctor_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DynamicMesh_unity2_raw :: __lookup_ctor_3 :: get_method_info () } pub fn finalize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DynamicMesh_unity2_raw :: __lookup_finalize :: get_method_info () } pub fn setup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DynamicMesh_unity2_raw :: __lookup_setup :: get_method_info () } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DynamicMesh_unity2_raw :: __lookup_dispose :: get_method_info () } pub fn get_mesh_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DynamicMesh_unity2_raw :: __lookup_get_mesh :: get_method_info () } pub fn add_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DynamicMesh_unity2_raw :: __lookup_add_position :: get_method_info () } pub fn add_normal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DynamicMesh_unity2_raw :: __lookup_add_normal :: get_method_info () } pub fn add_tangents_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DynamicMesh_unity2_raw :: __lookup_add_tangents :: get_method_info () } pub fn add_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DynamicMesh_unity2_raw :: __lookup_add_color :: get_method_info () } pub fn add_uv_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DynamicMesh_unity2_raw :: __lookup_add_uv :: get_method_info () } pub fn add_uv_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DynamicMesh_unity2_raw :: __lookup_add_uv_2 :: get_method_info () } pub fn add_vertex_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DynamicMesh_unity2_raw :: __lookup_add_vertex :: get_method_info () } pub fn add_vertex_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DynamicMesh_unity2_raw :: __lookup_add_vertex_2 :: get_method_info () } pub fn add_vertex_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DynamicMesh_unity2_raw :: __lookup_add_vertex_3 :: get_method_info () } pub fn strip_begin_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DynamicMesh_unity2_raw :: __lookup_strip_begin :: get_method_info () } pub fn strip_end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DynamicMesh_unity2_raw :: __lookup_strip_end :: get_method_info () } pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DynamicMesh_unity2_raw :: __lookup_clear :: get_method_info () } pub fn create_scope_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DynamicMesh_unity2_raw :: __lookup_create_scope :: get_method_info () } pub fn begin_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DynamicMesh_unity2_raw :: __lookup_begin :: get_method_info () } pub fn end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DynamicMesh_unity2_raw :: __lookup_end :: get_method_info () } pub fn get_common_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DynamicMesh_unity2_raw :: __lookup_get_common_mode :: get_method_info () } pub fn commit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DynamicMesh_unity2_raw :: __lookup_commit :: get_method_info () } pub fn copy_sub_mesh_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DynamicMesh_unity2_raw :: __lookup_copy_sub_mesh :: get_method_info () } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DynamicMesh_unity2_raw :: __lookup_cctor :: get_method_info () } }
 
 #[cfg(feature = "app-dynamicmesh")]
 impl DynamicMesh {
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __DynamicMesh_unity2_raw::cctor(::core::option::Option::None) }
-    }
+# [doc = "`.ctor(i32)` — overload selector"] pub fn new (vertex_capacity : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DynamicMesh) , :: core :: stringify ! (new) ,)) ; < Self as IDynamicMeshMethods > :: ctor (this , vertex_capacity) ; this }
+
+# [doc = "`.ctor(i32, i32)` — overload selector"] pub fn new_2 (sub_mesh_count : i32 , vertex_capacity : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DynamicMesh) , :: core :: stringify ! (new_2) ,)) ; < Self as IDynamicMeshMethods > :: ctor_2 (this , sub_mesh_count , vertex_capacity) ; this }
+
+# [doc = "`.ctor(crate::unity_engine::gameobject::GameObject, i32, i32)` — overload selector"] pub fn new_3 (go : crate :: unity_engine :: gameobject :: GameObject , sub_mesh_count : i32 , vertex_capacity : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DynamicMesh) , :: core :: stringify ! (new_3) ,)) ; < Self as IDynamicMeshMethods > :: ctor_3 (this , go , sub_mesh_count , vertex_capacity) ; this }
 }
 
 #[cfg(feature = "app-dynamicmesh")]
-pub trait IDynamicMeshMethods: IDynamicMesh {
-    #[doc = "`.ctor(i32)` overload"]
-    fn ctor(self, vertex_capacity: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver = <DynamicMesh as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DynamicMesh_unity2_raw::ctor(__receiver, ::core::convert::Into::into(vertex_capacity), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor(i32, i32)` overload"]
-    fn ctor_2(self, sub_mesh_count: impl ::core::convert::Into<i32>, vertex_capacity: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver = <DynamicMesh as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DynamicMesh_unity2_raw::ctor_2(
-                __receiver,
-                ::core::convert::Into::into(sub_mesh_count),
-                ::core::convert::Into::into(vertex_capacity),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject, i32, i32)` overload"]
-    fn ctor_3(
-        self,
-        go: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-        sub_mesh_count: impl ::core::convert::Into<i32>,
-        vertex_capacity: impl ::core::convert::Into<i32>,
-    ) -> () {
-        unsafe {
-            let __receiver = <DynamicMesh as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DynamicMesh_unity2_raw::ctor_3(
-                __receiver,
-                ::core::convert::Into::into(go),
-                ::core::convert::Into::into(sub_mesh_count),
-                ::core::convert::Into::into(vertex_capacity),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Finalize()` overload"]
-    fn finalize(self) -> () {
-        unsafe {
-            let __receiver = <DynamicMesh as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DynamicMesh_unity2_raw::finalize(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Setup(crate::unity_engine::gameobject::GameObject, i32, i32)` overload"]
-    fn setup(
-        self,
-        go: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-        sub_mesh_count: impl ::core::convert::Into<i32>,
-        vertex_capacity: impl ::core::convert::Into<i32>,
-    ) -> () {
-        unsafe {
-            let __receiver = <DynamicMesh as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DynamicMesh_unity2_raw::setup(
-                __receiver,
-                ::core::convert::Into::into(go),
-                ::core::convert::Into::into(sub_mesh_count),
-                ::core::convert::Into::into(vertex_capacity),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Dispose()` overload"]
-    fn dispose(self) -> () {
-        unsafe {
-            let __receiver = <DynamicMesh as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DynamicMesh_unity2_raw::dispose(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Mesh()` overload"]
-    fn get_mesh(self) -> crate::unity_engine::mesh::Mesh {
-        unsafe {
-            let __receiver = <DynamicMesh as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DynamicMesh_unity2_raw::get_mesh(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`AddPosition(*mutcrate::unity_engine::vector3::Vector3)` overload"]
-    fn add_position(self) -> crate::unity_engine::vector3::Vector3 {
-        unsafe {
-            let __receiver = <DynamicMesh as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
-            __DynamicMesh_unity2_raw::add_position(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None);
-            __out_0.assume_init()
-        }
-    }
-    #[doc = "`AddNormal(*mutcrate::unity_engine::vector3::Vector3)` overload"]
-    fn add_normal(self) -> crate::unity_engine::vector3::Vector3 {
-        unsafe {
-            let __receiver = <DynamicMesh as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
-            __DynamicMesh_unity2_raw::add_normal(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None);
-            __out_0.assume_init()
-        }
-    }
-    #[doc = "`AddTangents(*mutcrate::unity_engine::vector4::Vector4)` overload"]
-    fn add_tangents(self) -> crate::unity_engine::vector4::Vector4 {
-        unsafe {
-            let __receiver = <DynamicMesh as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::vector4::Vector4>::uninit();
-            __DynamicMesh_unity2_raw::add_tangents(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None);
-            __out_0.assume_init()
-        }
-    }
-    #[doc = "`AddColor(*mutcrate::unity_engine::color::Color)` overload"]
-    fn add_color(self) -> crate::unity_engine::color::Color {
-        unsafe {
-            let __receiver = <DynamicMesh as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::color::Color>::uninit();
-            __DynamicMesh_unity2_raw::add_color(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None);
-            __out_0.assume_init()
-        }
-    }
-    #[doc = "`AddUV(*mutcrate::unity_engine::vector2::Vector2)` overload"]
-    fn add_uv(self) -> crate::unity_engine::vector2::Vector2 {
-        unsafe {
-            let __receiver = <DynamicMesh as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::vector2::Vector2>::uninit();
-            __DynamicMesh_unity2_raw::add_uv(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None);
-            __out_0.assume_init()
-        }
-    }
-    #[doc = "`AddUV(i32, *mutcrate::unity_engine::vector2::Vector2)` overload"]
-    fn add_uv_2(self, ch: impl ::core::convert::Into<i32>) -> crate::unity_engine::vector2::Vector2 {
-        unsafe {
-            let __receiver = <DynamicMesh as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::vector2::Vector2>::uninit();
-            __DynamicMesh_unity2_raw::add_uv_2(
-                __receiver,
-                ::core::convert::Into::into(ch),
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
-            __out_0.assume_init()
-        }
-    }
-    #[doc = "`AddVertex(*mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::color::Color)` overload"]
-    fn add_vertex(self) -> (crate::unity_engine::vector3::Vector3, crate::unity_engine::color::Color) {
-        unsafe {
-            let __receiver = <DynamicMesh as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
-            let mut __out_1 = ::core::mem::MaybeUninit::<crate::unity_engine::color::Color>::uninit();
-            __DynamicMesh_unity2_raw::add_vertex(__receiver, __out_0.as_mut_ptr(), __out_1.as_mut_ptr(), ::core::option::Option::None);
-            (__out_0.assume_init(), __out_1.assume_init())
-        }
-    }
-    #[doc = "`AddVertex(*mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::color::Color, *mutcrate::unity_engine::vector2::Vector2)` overload"]
-    fn add_vertex_2(
-        self,
-    ) -> (
-        crate::unity_engine::vector3::Vector3,
-        crate::unity_engine::color::Color,
-        crate::unity_engine::vector2::Vector2,
-    ) {
-        unsafe {
-            let __receiver = <DynamicMesh as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
-            let mut __out_1 = ::core::mem::MaybeUninit::<crate::unity_engine::color::Color>::uninit();
-            let mut __out_2 = ::core::mem::MaybeUninit::<crate::unity_engine::vector2::Vector2>::uninit();
-            __DynamicMesh_unity2_raw::add_vertex_2(
-                __receiver,
-                __out_0.as_mut_ptr(),
-                __out_1.as_mut_ptr(),
-                __out_2.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
-            (__out_0.assume_init(), __out_1.assume_init(), __out_2.assume_init())
-        }
-    }
-    #[doc = "`AddVertex(*mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::vector2::Vector2)` overload"]
-    fn add_vertex_3(self) -> (crate::unity_engine::vector3::Vector3, crate::unity_engine::vector2::Vector2) {
-        unsafe {
-            let __receiver = <DynamicMesh as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
-            let mut __out_1 = ::core::mem::MaybeUninit::<crate::unity_engine::vector2::Vector2>::uninit();
-            __DynamicMesh_unity2_raw::add_vertex_3(__receiver, __out_0.as_mut_ptr(), __out_1.as_mut_ptr(), ::core::option::Option::None);
-            (__out_0.assume_init(), __out_1.assume_init())
-        }
-    }
-    #[doc = "`StripBegin()` overload"]
-    fn strip_begin(self) -> () {
-        unsafe {
-            let __receiver = <DynamicMesh as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DynamicMesh_unity2_raw::strip_begin(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`StripEnd()` overload"]
-    fn strip_end(self) -> () {
-        unsafe {
-            let __receiver = <DynamicMesh as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DynamicMesh_unity2_raw::strip_end(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Clear()` overload"]
-    fn clear(self) -> () {
-        unsafe {
-            let __receiver = <DynamicMesh as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DynamicMesh_unity2_raw::clear(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CreateScope(crate::app::dynamicmesh::DynamicMesh_Mode, i32)` overload"]
-    fn create_scope(
-        self,
-        mode: impl ::core::convert::Into<crate::app::dynamicmesh::DynamicMesh_Mode>,
-        sub_mesh_index: impl ::core::convert::Into<i32>,
-    ) -> crate::app::dynamicmesh::DynamicMesh_Scope {
-        unsafe {
-            let __receiver = <DynamicMesh as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DynamicMesh_unity2_raw::create_scope(
-                __receiver,
-                ::core::convert::Into::into(mode),
-                ::core::convert::Into::into(sub_mesh_index),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Begin(crate::app::dynamicmesh::DynamicMesh_Mode, i32)` overload"]
-    fn begin(
-        self,
-        mode: impl ::core::convert::Into<crate::app::dynamicmesh::DynamicMesh_Mode>,
-        sub_mesh_index: impl ::core::convert::Into<i32>,
-    ) -> () {
-        unsafe {
-            let __receiver = <DynamicMesh as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DynamicMesh_unity2_raw::begin(
-                __receiver,
-                ::core::convert::Into::into(mode),
-                ::core::convert::Into::into(sub_mesh_index),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`End()` overload"]
-    fn end(self) -> () {
-        unsafe {
-            let __receiver = <DynamicMesh as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DynamicMesh_unity2_raw::end(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetCommonMode()` overload"]
-    fn get_common_mode(self) -> crate::app::dynamicmesh::DynamicMesh_Mode {
-        unsafe {
-            let __receiver = <DynamicMesh as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DynamicMesh_unity2_raw::get_common_mode(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Commit()` overload"]
-    fn commit(self) -> () {
-        unsafe {
-            let __receiver = <DynamicMesh as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DynamicMesh_unity2_raw::commit(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CopySubMesh(i32, i32)` overload"]
-    fn copy_sub_mesh(self, src_mesh_index: impl ::core::convert::Into<i32>, dst_mesh_index: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver = <DynamicMesh as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DynamicMesh_unity2_raw::copy_sub_mesh(
-                __receiver,
-                ::core::convert::Into::into(src_mesh_index),
-                ::core::convert::Into::into(dst_mesh_index),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __DynamicMesh_State_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_can_connect { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: dynamicmesh :: DynamicMesh_State as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynamicMesh_State as :: unity2 :: ClassIdentity > :: class () , "CanConnect" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynamicMesh_State as :: unity2 :: ClassIdentity > :: NAME , "CanConnect" , e) , } } } pub unsafe fn can_connect (this : DynamicMesh_State , state : crate :: app :: dynamicmesh :: DynamicMesh_State , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (DynamicMesh_State , crate :: app :: dynamicmesh :: DynamicMesh_State , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_can_connect :: get_method_info () . method_ptr ,) ; inner (this , state , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_connect { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: dynamicmesh :: DynamicMesh_State as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynamicMesh_State as :: unity2 :: ClassIdentity > :: class () , "Connect" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynamicMesh_State as :: unity2 :: ClassIdentity > :: NAME , "Connect" , e) , } } } pub unsafe fn connect (this : DynamicMesh_State , state : crate :: app :: dynamicmesh :: DynamicMesh_State , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DynamicMesh_State , crate :: app :: dynamicmesh :: DynamicMesh_State , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_connect :: get_method_info () . method_ptr ,) ; inner (this , state , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_clear { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynamicMesh_State as :: unity2 :: ClassIdentity > :: class () , "Clear" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynamicMesh_State as :: unity2 :: ClassIdentity > :: NAME , "Clear" , e) , } } } pub unsafe fn clear (this : DynamicMesh_State , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DynamicMesh_State , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_clear :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-dynamicmesh")]
-impl<__T: IDynamicMesh> IDynamicMeshMethods for __T {}
+impl DynamicMesh_State { # [doc = "`CanConnect(crate::app::dynamicmesh::DynamicMesh_State)` overload"] pub fn can_connect (self , state : impl :: core :: convert :: Into < crate :: app :: dynamicmesh :: DynamicMesh_State >) -> bool { unsafe { __DynamicMesh_State_unity2_raw :: can_connect (self , :: core :: convert :: Into :: into (state) , :: core :: option :: Option :: None) } } # [doc = "`Connect(crate::app::dynamicmesh::DynamicMesh_State)` overload"] pub fn connect (self , state : impl :: core :: convert :: Into < crate :: app :: dynamicmesh :: DynamicMesh_State >) -> () { unsafe { __DynamicMesh_State_unity2_raw :: connect (self , :: core :: convert :: Into :: into (state) , :: core :: option :: Option :: None) } } # [doc = "`Clear()` overload"] pub fn clear (self ,) -> () { unsafe { __DynamicMesh_State_unity2_raw :: clear (self , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-dynamicmesh")]
-impl DynamicMesh {
-    #[doc = "`.ctor(i32)` — overload selector"]
-    pub fn new(vertex_capacity: i32) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(DynamicMesh), ::core::stringify!(new),));
-        <Self as IDynamicMeshMethods>::ctor(this, vertex_capacity);
-        this
-    }
-
-    #[doc = "`.ctor(i32, i32)` — overload selector"]
-    pub fn new_2(sub_mesh_count: i32, vertex_capacity: i32) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(DynamicMesh), ::core::stringify!(new_2),));
-        <Self as IDynamicMeshMethods>::ctor_2(this, sub_mesh_count, vertex_capacity);
-        this
-    }
-
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject, i32, i32)` — overload selector"]
-    pub fn new_3(go: crate::unity_engine::gameobject::GameObject, sub_mesh_count: i32, vertex_capacity: i32) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(DynamicMesh), ::core::stringify!(new_3),));
-        <Self as IDynamicMeshMethods>::ctor_3(this, go, sub_mesh_count, vertex_capacity);
-        this
-    }
-}
-
-#[cfg(feature = "app-dynamicmesh")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __DynamicMesh_Scope_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::dynamicmesh::DynamicMesh as ::unity2::IlType>::il_type(),
-                <crate::app::dynamicmesh::DynamicMesh_Mode as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DynamicMesh_Scope as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DynamicMesh_Scope as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: DynamicMesh_Scope,
-        mesh: crate::app::dynamicmesh::DynamicMesh,
-        mode: crate::app::dynamicmesh::DynamicMesh_Mode,
-        sub_mesh_index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            DynamicMesh_Scope,
-            crate::app::dynamicmesh::DynamicMesh,
-            crate::app::dynamicmesh::DynamicMesh_Mode,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, mesh, mode, sub_mesh_index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_dispose {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DynamicMesh_Scope as ::unity2::ClassIdentity>::class(),
-                "Dispose",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DynamicMesh_Scope as ::unity2::ClassIdentity>::NAME,
-                        "Dispose",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn dispose(this: DynamicMesh_Scope, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DynamicMesh_Scope, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_dispose::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-dynamicmesh")]
-impl DynamicMesh_Scope {
-    #[doc = "`.ctor(crate::app::dynamicmesh::DynamicMesh, crate::app::dynamicmesh::DynamicMesh_Mode, i32)` overload"]
-    pub fn ctor(
-        self,
-        mesh: impl ::core::convert::Into<crate::app::dynamicmesh::DynamicMesh>,
-        mode: impl ::core::convert::Into<crate::app::dynamicmesh::DynamicMesh_Mode>,
-        sub_mesh_index: impl ::core::convert::Into<i32>,
-    ) -> () {
-        unsafe {
-            __DynamicMesh_Scope_unity2_raw::ctor(
-                self,
-                ::core::convert::Into::into(mesh),
-                ::core::convert::Into::into(mode),
-                ::core::convert::Into::into(sub_mesh_index),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`Dispose()` overload"]
-    pub fn dispose(self) -> () {
-        unsafe { __DynamicMesh_Scope_unity2_raw::dispose(self, ::core::option::Option::None) }
-    }
-}
+impl DynamicMesh_State { pub fn can_connect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DynamicMesh_State_unity2_raw :: __lookup_can_connect :: get_method_info () } pub fn connect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DynamicMesh_State_unity2_raw :: __lookup_connect :: get_method_info () } pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DynamicMesh_State_unity2_raw :: __lookup_clear :: get_method_info () } }
 
 #[cfg(feature = "app-dynamicmesh")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{
-        DynamicMesh, DynamicMesh_Mode, DynamicMesh_Scope, DynamicMesh_State, DynamicMesh_StaticIndices, IDynamicMesh, IDynamicMeshMethods,
-        IDynamicMesh_StaticIndices, IDynamicMesh_StaticIndicesMethods,
-    };
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::system::{object::IObject, r#enum::IEnum, valuetype::IValueType};
+    pub use super::DynamicMesh_StaticIndices;
+    pub use super::IDynamicMesh_StaticIndices;
+    pub use super::IDynamicMesh_StaticIndicesMethods;
+    pub use super::DynamicMesh_Scope;
+    pub use super::DynamicMesh;
+    pub use super::IDynamicMesh;
+    pub use super::IDynamicMeshMethods;
+    pub use super::DynamicMesh_State;
+    pub use super::DynamicMesh_Mode;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

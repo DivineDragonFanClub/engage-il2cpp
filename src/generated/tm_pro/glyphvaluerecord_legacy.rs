@@ -2,169 +2,74 @@
 
 #[cfg(feature = "tm_pro-glyphvaluerecord_legacy-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        valuetype::{IValueType, ValueType},
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/glyphvaluerecord_legacy/GlyphValueRecord_Legacy.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct GlyphValueRecord_Legacy {
-        pub x_placement: f32,
-        pub y_placement: f32,
-        pub x_advance: f32,
-        pub y_advance: f32,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
 
-    impl ::unity2::ClassIdentity for GlyphValueRecord_Legacy {
-        const NAME: &'static str = "GlyphValueRecord_Legacy";
-        const NAMESPACE: &'static str = "TMPro";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/glyphvaluerecord_legacy/GlyphValueRecord_Legacy.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct GlyphValueRecord_Legacy {
+    pub x_placement: f32,
+    pub y_placement: f32,
+    pub x_advance: f32,
+    pub y_advance: f32,
+}
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+
+impl ::unity2::ClassIdentity for GlyphValueRecord_Legacy {
+    const NAMESPACE: &'static str = "TMPro";
+
+    const NAME: &'static str = "GlyphValueRecord_Legacy";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for GlyphValueRecord_Legacy {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl ::unity2::IlType for GlyphValueRecord_Legacy {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
+
+}
+
 }
 
 #[cfg(feature = "tm_pro-glyphvaluerecord_legacy-types")]
 pub use __types::*;
 
 #[cfg(feature = "tm_pro-glyphvaluerecord_legacy")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __GlyphValueRecord_Legacy_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::text_core::low_level::glyphvaluerecord::GlyphValueRecord as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GlyphValueRecord_Legacy as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GlyphValueRecord_Legacy as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: GlyphValueRecord_Legacy,
-        value_record: crate::unity_engine::text_core::low_level::glyphvaluerecord::GlyphValueRecord,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            GlyphValueRecord_Legacy,
-            crate::unity_engine::text_core::low_level::glyphvaluerecord::GlyphValueRecord,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, value_record, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_op_addition {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::tm_pro::glyphvaluerecord_legacy::GlyphValueRecord_Legacy as ::unity2::IlType>::il_type(),
-                <crate::tm_pro::glyphvaluerecord_legacy::GlyphValueRecord_Legacy as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GlyphValueRecord_Legacy as ::unity2::ClassIdentity>::class(),
-                "op_Addition",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GlyphValueRecord_Legacy as ::unity2::ClassIdentity>::NAME,
-                        "op_Addition",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn op_addition(
-        a: crate::tm_pro::glyphvaluerecord_legacy::GlyphValueRecord_Legacy,
-        b: crate::tm_pro::glyphvaluerecord_legacy::GlyphValueRecord_Legacy,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::tm_pro::glyphvaluerecord_legacy::GlyphValueRecord_Legacy {
-        let inner: extern "C" fn(
-            crate::tm_pro::glyphvaluerecord_legacy::GlyphValueRecord_Legacy,
-            crate::tm_pro::glyphvaluerecord_legacy::GlyphValueRecord_Legacy,
-            ::unity2::OptionalMethod,
-        ) -> crate::tm_pro::glyphvaluerecord_legacy::GlyphValueRecord_Legacy =
-            ::core::mem::transmute(__lookup_op_addition::get_method_info().method_ptr);
-        inner(a, b, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __GlyphValueRecord_Legacy_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: text_core :: low_level :: glyphvaluerecord :: GlyphValueRecord as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GlyphValueRecord_Legacy as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GlyphValueRecord_Legacy as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : GlyphValueRecord_Legacy , value_record : crate :: unity_engine :: text_core :: low_level :: glyphvaluerecord :: GlyphValueRecord , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GlyphValueRecord_Legacy , crate :: unity_engine :: text_core :: low_level :: glyphvaluerecord :: GlyphValueRecord , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , value_record , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_op_addition { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: tm_pro :: glyphvaluerecord_legacy :: GlyphValueRecord_Legacy as :: unity2 :: IlType > :: il_type () , < crate :: tm_pro :: glyphvaluerecord_legacy :: GlyphValueRecord_Legacy as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GlyphValueRecord_Legacy as :: unity2 :: ClassIdentity > :: class () , "op_Addition" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GlyphValueRecord_Legacy as :: unity2 :: ClassIdentity > :: NAME , "op_Addition" , e) , } } } pub unsafe fn op_addition (a : crate :: tm_pro :: glyphvaluerecord_legacy :: GlyphValueRecord_Legacy , b : crate :: tm_pro :: glyphvaluerecord_legacy :: GlyphValueRecord_Legacy , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: tm_pro :: glyphvaluerecord_legacy :: GlyphValueRecord_Legacy { let inner : extern "C" fn (crate :: tm_pro :: glyphvaluerecord_legacy :: GlyphValueRecord_Legacy , crate :: tm_pro :: glyphvaluerecord_legacy :: GlyphValueRecord_Legacy , :: unity2 :: OptionalMethod ,) -> crate :: tm_pro :: glyphvaluerecord_legacy :: GlyphValueRecord_Legacy = :: core :: mem :: transmute (__lookup_op_addition :: get_method_info () . method_ptr ,) ; inner (a , b , __unity2_method_info) } }
 
 #[cfg(feature = "tm_pro-glyphvaluerecord_legacy")]
-impl GlyphValueRecord_Legacy {
-    #[doc = "`op_Addition(crate::tm_pro::glyphvaluerecord_legacy::GlyphValueRecord_Legacy, crate::tm_pro::glyphvaluerecord_legacy::GlyphValueRecord_Legacy)` overload"]
-    pub fn op_addition(
-        a: impl ::core::convert::Into<crate::tm_pro::glyphvaluerecord_legacy::GlyphValueRecord_Legacy>,
-        b: impl ::core::convert::Into<crate::tm_pro::glyphvaluerecord_legacy::GlyphValueRecord_Legacy>,
-    ) -> crate::tm_pro::glyphvaluerecord_legacy::GlyphValueRecord_Legacy {
-        unsafe {
-            __GlyphValueRecord_Legacy_unity2_raw::op_addition(
-                ::core::convert::Into::into(a),
-                ::core::convert::Into::into(b),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+impl GlyphValueRecord_Legacy { # [doc = "`op_Addition(crate::tm_pro::glyphvaluerecord_legacy::GlyphValueRecord_Legacy, crate::tm_pro::glyphvaluerecord_legacy::GlyphValueRecord_Legacy)` overload"] pub fn op_addition (a : impl :: core :: convert :: Into < crate :: tm_pro :: glyphvaluerecord_legacy :: GlyphValueRecord_Legacy > , b : impl :: core :: convert :: Into < crate :: tm_pro :: glyphvaluerecord_legacy :: GlyphValueRecord_Legacy >) -> crate :: tm_pro :: glyphvaluerecord_legacy :: GlyphValueRecord_Legacy { unsafe { __GlyphValueRecord_Legacy_unity2_raw :: op_addition (:: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "tm_pro-glyphvaluerecord_legacy")]
-impl GlyphValueRecord_Legacy {
-    #[doc = "`.ctor(crate::unity_engine::text_core::low_level::glyphvaluerecord::GlyphValueRecord)` overload"]
-    pub fn ctor(self, value_record: impl ::core::convert::Into<crate::unity_engine::text_core::low_level::glyphvaluerecord::GlyphValueRecord>) -> () {
-        unsafe { __GlyphValueRecord_Legacy_unity2_raw::ctor(self, ::core::convert::Into::into(value_record), ::core::option::Option::None) }
-    }
-}
+impl GlyphValueRecord_Legacy { # [doc = "`.ctor(crate::unity_engine::text_core::low_level::glyphvaluerecord::GlyphValueRecord)` overload"] pub fn ctor (self , value_record : impl :: core :: convert :: Into < crate :: unity_engine :: text_core :: low_level :: glyphvaluerecord :: GlyphValueRecord >) -> () { unsafe { __GlyphValueRecord_Legacy_unity2_raw :: ctor (self , :: core :: convert :: Into :: into (value_record) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "tm_pro-glyphvaluerecord_legacy")]
+impl GlyphValueRecord_Legacy { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GlyphValueRecord_Legacy_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn op_addition_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GlyphValueRecord_Legacy_unity2_raw :: __lookup_op_addition :: get_method_info () } }
 
 #[cfg(feature = "tm_pro-glyphvaluerecord_legacy")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::GlyphValueRecord_Legacy;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::system::{object::IObject, valuetype::IValueType};
+    pub use crate::system::object::IObject;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

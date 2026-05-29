@@ -2,429 +2,50 @@
 
 #[cfg(feature = "unity_engine-lightingsettings-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::object_2::{IObject_2, Object_2},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/lightingsettings/LightingSettings.md"))]
-    #[::unity2::class(namespace = "UnityEngine", name = "LightingSettings")]
-    #[parent(crate::unity_engine::object_2::Object_2)]
-    pub struct LightingSettings {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/lightingsettings/LightingSettings.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "LightingSettings")] # [parent (crate :: unity_engine :: object_2 :: Object_2)] pub struct LightingSettings {}
+
 }
 
 #[cfg(feature = "unity_engine-lightingsettings-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-lightingsettings")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __LightingSettings_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_lighting_settings_dont_strip_me {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <LightingSettings as ::unity2::ClassIdentity>::class(),
-                "LightingSettingsDontStripMe",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <LightingSettings as ::unity2::ClassIdentity>::NAME,
-                        "LightingSettingsDontStripMe",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn lighting_settings_dont_strip_me(this: LightingSettings, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(LightingSettings, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_lighting_settings_dont_strip_me::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <LightingSettings as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <LightingSettings as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: LightingSettings, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(LightingSettings, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_internal_create {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::lightingsettings::LightingSettings as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <LightingSettings as ::unity2::ClassIdentity>::class(),
-                "Internal_Create",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <LightingSettings as ::unity2::ClassIdentity>::NAME,
-                        "Internal_Create",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn internal_create(
-        self_: crate::unity_engine::lightingsettings::LightingSettings,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::unity_engine::lightingsettings::LightingSettings, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_internal_create::get_method_info().method_ptr);
-        inner(self_, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_baked_gi {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <LightingSettings as ::unity2::ClassIdentity>::class(),
-                "get_bakedGI",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <LightingSettings as ::unity2::ClassIdentity>::NAME,
-                        "get_bakedGI",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_baked_gi(this: LightingSettings, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(LightingSettings, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_baked_gi::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_baked_gi {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <LightingSettings as ::unity2::ClassIdentity>::class(),
-                "set_bakedGI",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <LightingSettings as ::unity2::ClassIdentity>::NAME,
-                        "set_bakedGI",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_baked_gi(this: LightingSettings, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(LightingSettings, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_baked_gi::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_realtime_gi {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <LightingSettings as ::unity2::ClassIdentity>::class(),
-                "get_realtimeGI",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <LightingSettings as ::unity2::ClassIdentity>::NAME,
-                        "get_realtimeGI",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_realtime_gi(this: LightingSettings, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(LightingSettings, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_realtime_gi::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_realtime_gi {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <LightingSettings as ::unity2::ClassIdentity>::class(),
-                "set_realtimeGI",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <LightingSettings as ::unity2::ClassIdentity>::NAME,
-                        "set_realtimeGI",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_realtime_gi(this: LightingSettings, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(LightingSettings, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_realtime_gi::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_realtime_environment_lighting {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <LightingSettings as ::unity2::ClassIdentity>::class(),
-                "get_realtimeEnvironmentLighting",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <LightingSettings as ::unity2::ClassIdentity>::NAME,
-                        "get_realtimeEnvironmentLighting",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_realtime_environment_lighting(this: LightingSettings, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(LightingSettings, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_realtime_environment_lighting::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_realtime_environment_lighting {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <LightingSettings as ::unity2::ClassIdentity>::class(),
-                "set_realtimeEnvironmentLighting",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <LightingSettings as ::unity2::ClassIdentity>::NAME,
-                        "set_realtimeEnvironmentLighting",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_realtime_environment_lighting(this: LightingSettings, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(LightingSettings, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_realtime_environment_lighting::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __LightingSettings_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_lighting_settings_dont_strip_me { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LightingSettings as :: unity2 :: ClassIdentity > :: class () , "LightingSettingsDontStripMe" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LightingSettings as :: unity2 :: ClassIdentity > :: NAME , "LightingSettingsDontStripMe" , e) , } } } pub unsafe fn lighting_settings_dont_strip_me (this : LightingSettings , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (LightingSettings , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_lighting_settings_dont_strip_me :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LightingSettings as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LightingSettings as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : LightingSettings , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (LightingSettings , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_internal_create { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: lightingsettings :: LightingSettings as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LightingSettings as :: unity2 :: ClassIdentity > :: class () , "Internal_Create" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LightingSettings as :: unity2 :: ClassIdentity > :: NAME , "Internal_Create" , e) , } } } pub unsafe fn internal_create (self_ : crate :: unity_engine :: lightingsettings :: LightingSettings , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: unity_engine :: lightingsettings :: LightingSettings , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_internal_create :: get_method_info () . method_ptr ,) ; inner (self_ , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_baked_gi { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LightingSettings as :: unity2 :: ClassIdentity > :: class () , "get_bakedGI" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LightingSettings as :: unity2 :: ClassIdentity > :: NAME , "get_bakedGI" , e) , } } } pub unsafe fn get_baked_gi (this : LightingSettings , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (LightingSettings , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_baked_gi :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_baked_gi { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LightingSettings as :: unity2 :: ClassIdentity > :: class () , "set_bakedGI" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LightingSettings as :: unity2 :: ClassIdentity > :: NAME , "set_bakedGI" , e) , } } } pub unsafe fn set_baked_gi (this : LightingSettings , value : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (LightingSettings , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_baked_gi :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_realtime_gi { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LightingSettings as :: unity2 :: ClassIdentity > :: class () , "get_realtimeGI" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LightingSettings as :: unity2 :: ClassIdentity > :: NAME , "get_realtimeGI" , e) , } } } pub unsafe fn get_realtime_gi (this : LightingSettings , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (LightingSettings , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_realtime_gi :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_realtime_gi { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LightingSettings as :: unity2 :: ClassIdentity > :: class () , "set_realtimeGI" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LightingSettings as :: unity2 :: ClassIdentity > :: NAME , "set_realtimeGI" , e) , } } } pub unsafe fn set_realtime_gi (this : LightingSettings , value : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (LightingSettings , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_realtime_gi :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_realtime_environment_lighting { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LightingSettings as :: unity2 :: ClassIdentity > :: class () , "get_realtimeEnvironmentLighting" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LightingSettings as :: unity2 :: ClassIdentity > :: NAME , "get_realtimeEnvironmentLighting" , e) , } } } pub unsafe fn get_realtime_environment_lighting (this : LightingSettings , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (LightingSettings , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_realtime_environment_lighting :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_realtime_environment_lighting { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LightingSettings as :: unity2 :: ClassIdentity > :: class () , "set_realtimeEnvironmentLighting" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LightingSettings as :: unity2 :: ClassIdentity > :: NAME , "set_realtimeEnvironmentLighting" , e) , } } } pub unsafe fn set_realtime_environment_lighting (this : LightingSettings , value : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (LightingSettings , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_realtime_environment_lighting :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } }
+
+#[cfg(feature = "unity_engine-lightingsettings")]
+impl LightingSettings { # [doc = "`Internal_Create(crate::unity_engine::lightingsettings::LightingSettings)` overload"] pub fn internal_create (self_ : impl :: core :: convert :: Into < crate :: unity_engine :: lightingsettings :: LightingSettings >) -> () { unsafe { __LightingSettings_unity2_raw :: internal_create (:: core :: convert :: Into :: into (self_) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-lightingsettings")]
+pub trait ILightingSettingsMethods : ILightingSettings { # [doc = "`LightingSettingsDontStripMe()` overload"] fn lighting_settings_dont_strip_me (self ,) -> () { unsafe { let __receiver = < LightingSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __LightingSettings_unity2_raw :: lighting_settings_dont_strip_me (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < LightingSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __LightingSettings_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_bakedGI()` overload"] fn get_baked_gi (self ,) -> bool { unsafe { let __receiver = < LightingSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __LightingSettings_unity2_raw :: get_baked_gi (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_bakedGI(bool)` overload"] fn set_baked_gi (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < LightingSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __LightingSettings_unity2_raw :: set_baked_gi (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_realtimeGI()` overload"] fn get_realtime_gi (self ,) -> bool { unsafe { let __receiver = < LightingSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __LightingSettings_unity2_raw :: get_realtime_gi (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_realtimeGI(bool)` overload"] fn set_realtime_gi (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < LightingSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __LightingSettings_unity2_raw :: set_realtime_gi (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_realtimeEnvironmentLighting()` overload"] fn get_realtime_environment_lighting (self ,) -> bool { unsafe { let __receiver = < LightingSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __LightingSettings_unity2_raw :: get_realtime_environment_lighting (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_realtimeEnvironmentLighting(bool)` overload"] fn set_realtime_environment_lighting (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < LightingSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __LightingSettings_unity2_raw :: set_realtime_environment_lighting (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-lightingsettings")]
+impl < __T : ILightingSettings > ILightingSettingsMethods for __T { }
+
+#[cfg(feature = "unity_engine-lightingsettings")]
+impl LightingSettings { pub fn lighting_settings_dont_strip_me_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __LightingSettings_unity2_raw :: __lookup_lighting_settings_dont_strip_me :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __LightingSettings_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn internal_create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __LightingSettings_unity2_raw :: __lookup_internal_create :: get_method_info () } pub fn get_baked_gi_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __LightingSettings_unity2_raw :: __lookup_get_baked_gi :: get_method_info () } pub fn set_baked_gi_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __LightingSettings_unity2_raw :: __lookup_set_baked_gi :: get_method_info () } pub fn get_realtime_gi_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __LightingSettings_unity2_raw :: __lookup_get_realtime_gi :: get_method_info () } pub fn set_realtime_gi_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __LightingSettings_unity2_raw :: __lookup_set_realtime_gi :: get_method_info () } pub fn get_realtime_environment_lighting_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __LightingSettings_unity2_raw :: __lookup_get_realtime_environment_lighting :: get_method_info () } pub fn set_realtime_environment_lighting_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __LightingSettings_unity2_raw :: __lookup_set_realtime_environment_lighting :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-lightingsettings")]
 impl LightingSettings {
-    #[doc = "`Internal_Create(crate::unity_engine::lightingsettings::LightingSettings)` overload"]
-    pub fn internal_create(self_: impl ::core::convert::Into<crate::unity_engine::lightingsettings::LightingSettings>) -> () {
-        unsafe { __LightingSettings_unity2_raw::internal_create(::core::convert::Into::into(self_), ::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "unity_engine-lightingsettings")]
-pub trait ILightingSettingsMethods: ILightingSettings {
-    #[doc = "`LightingSettingsDontStripMe()` overload"]
-    fn lighting_settings_dont_strip_me(self) -> () {
-        unsafe {
-            let __receiver = <LightingSettings as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __LightingSettings_unity2_raw::lighting_settings_dont_strip_me(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <LightingSettings as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __LightingSettings_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_bakedGI()` overload"]
-    fn get_baked_gi(self) -> bool {
-        unsafe {
-            let __receiver = <LightingSettings as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __LightingSettings_unity2_raw::get_baked_gi(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_bakedGI(bool)` overload"]
-    fn set_baked_gi(self, value: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver = <LightingSettings as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __LightingSettings_unity2_raw::set_baked_gi(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_realtimeGI()` overload"]
-    fn get_realtime_gi(self) -> bool {
-        unsafe {
-            let __receiver = <LightingSettings as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __LightingSettings_unity2_raw::get_realtime_gi(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_realtimeGI(bool)` overload"]
-    fn set_realtime_gi(self, value: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver = <LightingSettings as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __LightingSettings_unity2_raw::set_realtime_gi(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_realtimeEnvironmentLighting()` overload"]
-    fn get_realtime_environment_lighting(self) -> bool {
-        unsafe {
-            let __receiver = <LightingSettings as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __LightingSettings_unity2_raw::get_realtime_environment_lighting(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_realtimeEnvironmentLighting(bool)` overload"]
-    fn set_realtime_environment_lighting(self, value: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver = <LightingSettings as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __LightingSettings_unity2_raw::set_realtime_environment_lighting(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-lightingsettings")]
-impl<__T: ILightingSettings> ILightingSettingsMethods for __T {}
-
-#[cfg(feature = "unity_engine-lightingsettings")]
-impl LightingSettings {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(LightingSettings),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ILightingSettingsMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (LightingSettings) , :: core :: stringify ! (new) ,)) ; < Self as ILightingSettingsMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "unity_engine-lightingsettings")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{ILightingSettings, ILightingSettingsMethods, LightingSettings};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{system::object::IObject, unity_engine::object_2::IObject_2};
+    pub use super::LightingSettings;
+    pub use super::ILightingSettings;
+    pub use super::ILightingSettingsMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

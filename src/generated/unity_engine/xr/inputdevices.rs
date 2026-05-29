@@ -2,99 +2,38 @@
 
 #[cfg(feature = "unity_engine-xr-inputdevices-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/xr/inputdevices/InputDevices.md"))]
-    #[::unity2::class(namespace = "UnityEngine.XR", name = "InputDevices")]
-    #[parent(crate::system::object::Object)]
-    pub struct InputDevices {
-        #[static_field]
-        #[rename(name = "deviceConnected")]
-        pub device_connected: crate::system::action_1::Action_1<crate::unity_engine::xr::inputdevice::InputDevice>,
-        #[static_field]
-        #[rename(name = "deviceDisconnected")]
-        pub device_disconnected: crate::system::action_1::Action_1<crate::unity_engine::xr::inputdevice::InputDevice>,
-        #[static_field]
-        #[rename(name = "deviceConfigChanged")]
-        pub device_config_changed: crate::system::action_1::Action_1<crate::unity_engine::xr::inputdevice::InputDevice>,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/xr/inputdevices/InputDevices.md"))] # [:: unity2 :: class (namespace = "UnityEngine.XR" , name = "InputDevices")] # [parent (crate :: system :: object :: Object)] pub struct InputDevices {
+# [static_field] # [rename (name = "deviceConnected")] pub device_connected : crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: xr :: inputdevice :: InputDevice > ,
+# [static_field] # [rename (name = "deviceDisconnected")] pub device_disconnected : crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: xr :: inputdevice :: InputDevice > ,
+# [static_field] # [rename (name = "deviceConfigChanged")] pub device_config_changed : crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: xr :: inputdevice :: InputDevice > ,
+}
+
 }
 
 #[cfg(feature = "unity_engine-xr-inputdevices-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-xr-inputdevices")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __InputDevices_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke_connection_event {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <u64 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::xr::connectionchangetype::ConnectionChangeType as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InputDevices as ::unity2::ClassIdentity>::class(),
-                "InvokeConnectionEvent",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InputDevices as ::unity2::ClassIdentity>::NAME,
-                        "InvokeConnectionEvent",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn invoke_connection_event(
-        device_id: u64,
-        change: crate::unity_engine::xr::connectionchangetype::ConnectionChangeType,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(u64, crate::unity_engine::xr::connectionchangetype::ConnectionChangeType, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_invoke_connection_event::get_method_info().method_ptr);
-        inner(device_id, change, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __InputDevices_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_invoke_connection_event { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< u64 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: xr :: connectionchangetype :: ConnectionChangeType as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InputDevices as :: unity2 :: ClassIdentity > :: class () , "InvokeConnectionEvent" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InputDevices as :: unity2 :: ClassIdentity > :: NAME , "InvokeConnectionEvent" , e) , } } } pub unsafe fn invoke_connection_event (device_id : u64 , change : crate :: unity_engine :: xr :: connectionchangetype :: ConnectionChangeType , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (u64 , crate :: unity_engine :: xr :: connectionchangetype :: ConnectionChangeType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_invoke_connection_event :: get_method_info () . method_ptr ,) ; inner (device_id , change , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-xr-inputdevices")]
-impl InputDevices {
-    #[doc = "`InvokeConnectionEvent(u64, crate::unity_engine::xr::connectionchangetype::ConnectionChangeType)` overload"]
-    pub fn invoke_connection_event(
-        device_id: impl ::core::convert::Into<u64>,
-        change: impl ::core::convert::Into<crate::unity_engine::xr::connectionchangetype::ConnectionChangeType>,
-    ) -> () {
-        unsafe {
-            __InputDevices_unity2_raw::invoke_connection_event(
-                ::core::convert::Into::into(device_id),
-                ::core::convert::Into::into(change),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+impl InputDevices { # [doc = "`InvokeConnectionEvent(u64, crate::unity_engine::xr::connectionchangetype::ConnectionChangeType)` overload"] pub fn invoke_connection_event (device_id : impl :: core :: convert :: Into < u64 > , change : impl :: core :: convert :: Into < crate :: unity_engine :: xr :: connectionchangetype :: ConnectionChangeType >) -> () { unsafe { __InputDevices_unity2_raw :: invoke_connection_event (:: core :: convert :: Into :: into (device_id) , :: core :: convert :: Into :: into (change) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-xr-inputdevices")]
+impl InputDevices { pub fn invoke_connection_event_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InputDevices_unity2_raw :: __lookup_invoke_connection_event :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-xr-inputdevices")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IInputDevices, InputDevices};
+    pub use super::InputDevices;
+    pub use super::IInputDevices;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

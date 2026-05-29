@@ -2,89 +2,34 @@
 
 #[cfg(feature = "root-customplayableextensions-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/customplayableextensions/CustomPlayableExtensions.md"))]
-    #[::unity2::class(namespace = "", name = "CustomPlayableExtensions")]
-    #[parent(crate::system::object::Object)]
-    pub struct CustomPlayableExtensions {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/customplayableextensions/CustomPlayableExtensions.md"))] # [:: unity2 :: class (namespace = "" , name = "CustomPlayableExtensions")] # [parent (crate :: system :: object :: Object)] pub struct CustomPlayableExtensions {}
+
 }
 
 #[cfg(feature = "root-customplayableextensions-types")]
 pub use __types::*;
 
 #[cfg(feature = "root-customplayableextensions")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __CustomPlayableExtensions_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_reset_time {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::playables::playable::Playable as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CustomPlayableExtensions as ::unity2::ClassIdentity>::class(),
-                "ResetTime",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CustomPlayableExtensions as ::unity2::ClassIdentity>::NAME,
-                        "ResetTime",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn reset_time(
-        playable: crate::unity_engine::playables::playable::Playable,
-        time: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::unity_engine::playables::playable::Playable, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_reset_time::get_method_info().method_ptr);
-        inner(playable, time, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __CustomPlayableExtensions_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_reset_time { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playable :: Playable as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CustomPlayableExtensions as :: unity2 :: ClassIdentity > :: class () , "ResetTime" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CustomPlayableExtensions as :: unity2 :: ClassIdentity > :: NAME , "ResetTime" , e) , } } } pub unsafe fn reset_time (playable : crate :: unity_engine :: playables :: playable :: Playable , time : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: unity_engine :: playables :: playable :: Playable , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_reset_time :: get_method_info () . method_ptr ,) ; inner (playable , time , __unity2_method_info) } }
 
 #[cfg(feature = "root-customplayableextensions")]
-impl CustomPlayableExtensions {
-    #[doc = "`ResetTime(crate::unity_engine::playables::playable::Playable, f32)` overload"]
-    pub fn reset_time(
-        playable: impl ::core::convert::Into<crate::unity_engine::playables::playable::Playable>,
-        time: impl ::core::convert::Into<f32>,
-    ) -> () {
-        unsafe {
-            __CustomPlayableExtensions_unity2_raw::reset_time(
-                ::core::convert::Into::into(playable),
-                ::core::convert::Into::into(time),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+impl CustomPlayableExtensions { # [doc = "`ResetTime(crate::unity_engine::playables::playable::Playable, f32)` overload"] pub fn reset_time (playable : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playable :: Playable > , time : impl :: core :: convert :: Into < f32 >) -> () { unsafe { __CustomPlayableExtensions_unity2_raw :: reset_time (:: core :: convert :: Into :: into (playable) , :: core :: convert :: Into :: into (time) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "root-customplayableextensions")]
+impl CustomPlayableExtensions { pub fn reset_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CustomPlayableExtensions_unity2_raw :: __lookup_reset_time :: get_method_info () } }
 
 #[cfg(feature = "root-customplayableextensions")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{CustomPlayableExtensions, ICustomPlayableExtensions};
+    pub use super::CustomPlayableExtensions;
+    pub use super::ICustomPlayableExtensions;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

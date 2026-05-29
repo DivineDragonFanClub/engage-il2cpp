@@ -2,177 +2,49 @@
 
 #[cfg(feature = "app-procdescjump-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::procdesc::{IProcDesc, ProcDesc},
-        system::object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/procdescjump/ProcDescJump.md"))]
-    #[::unity2::class(namespace = "App", name = "ProcDescJump")]
-    #[parent(crate::app::procdesc::ProcDesc)]
-    pub struct ProcDescJump {
-        #[offset(20)]
-        #[rename(name = "m_Label")]
-        pub m_label: i32,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: procdesc :: { IProcDesc , ProcDesc }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/procdescjump/ProcDescJump.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProcDescJump")] # [parent (crate :: app :: procdesc :: ProcDesc)] pub struct ProcDescJump {
+# [offset (20)] # [rename (name = "m_Label")] pub m_label : i32 ,
+}
+
 }
 
 #[cfg(feature = "app-procdescjump-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-procdescjump")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ProcDescJump_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<ProcDescJump as ::unity2::ClassIdentity>::class(), ".ctor", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProcDescJump as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: ProcDescJump, label: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ProcDescJump, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, label, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_execute {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProcDescJump as ::unity2::ClassIdentity>::class(),
-                "Execute",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProcDescJump as ::unity2::ClassIdentity>::NAME,
-                        "Execute",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn execute(
-        this: ProcDescJump,
-        inst: crate::app::procinst::ProcInst,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::procdesc::ProcDesc_Result {
-        let inner: extern "C" fn(ProcDescJump, crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> crate::app::procdesc::ProcDesc_Result =
-            ::core::mem::transmute(__lookup_execute::get_method_info().method_ptr);
-        inner(this, inst, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_label {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProcDescJump as ::unity2::ClassIdentity>::class(),
-                "get_Label",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProcDescJump as ::unity2::ClassIdentity>::NAME,
-                        "get_Label",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_label(this: ProcDescJump, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(ProcDescJump, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_label::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ProcDescJump_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProcDescJump as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProcDescJump as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : ProcDescJump , label : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ProcDescJump , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , label , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_execute { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProcDescJump as :: unity2 :: ClassIdentity > :: class () , "Execute" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProcDescJump as :: unity2 :: ClassIdentity > :: NAME , "Execute" , e) , } } } pub unsafe fn execute (this : ProcDescJump , inst : crate :: app :: procinst :: ProcInst , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: procdesc :: ProcDesc_Result { let inner : extern "C" fn (ProcDescJump , crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> crate :: app :: procdesc :: ProcDesc_Result = :: core :: mem :: transmute (__lookup_execute :: get_method_info () . method_ptr ,) ; inner (this , inst , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_label { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProcDescJump as :: unity2 :: ClassIdentity > :: class () , "get_Label" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProcDescJump as :: unity2 :: ClassIdentity > :: NAME , "get_Label" , e) , } } } pub unsafe fn get_label (this : ProcDescJump , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (ProcDescJump , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_label :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-procdescjump")]
-pub trait IProcDescJumpMethods: IProcDescJump {
-    #[doc = "`.ctor(i32)` overload"]
-    fn ctor(self, label: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver = <ProcDescJump as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ProcDescJump_unity2_raw::ctor(__receiver, ::core::convert::Into::into(label), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Execute(crate::app::procinst::ProcInst)` overload"]
-    fn execute(self, inst: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> crate::app::procdesc::ProcDesc_Result {
-        unsafe {
-            let __receiver = <ProcDescJump as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ProcDescJump_unity2_raw::execute(__receiver, ::core::convert::Into::into(inst), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Label()` overload"]
-    fn get_label(self) -> i32 {
-        unsafe {
-            let __receiver = <ProcDescJump as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ProcDescJump_unity2_raw::get_label(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IProcDescJumpMethods : IProcDescJump { # [doc = "`.ctor(i32)` overload"] fn ctor (self , label : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < ProcDescJump as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ProcDescJump_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (label) , :: core :: option :: Option :: None) } } # [doc = "`Execute(crate::app::procinst::ProcInst)` overload"] fn execute (self , inst : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> crate :: app :: procdesc :: ProcDesc_Result { unsafe { let __receiver = < ProcDescJump as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ProcDescJump_unity2_raw :: execute (__receiver , :: core :: convert :: Into :: into (inst) , :: core :: option :: Option :: None) } } # [doc = "`get_Label()` overload"] fn get_label (self ,) -> i32 { unsafe { let __receiver = < ProcDescJump as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ProcDescJump_unity2_raw :: get_label (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-procdescjump")]
-impl<__T: IProcDescJump> IProcDescJumpMethods for __T {}
+impl < __T : IProcDescJump > IProcDescJumpMethods for __T { }
+
+#[cfg(feature = "app-procdescjump")]
+impl ProcDescJump { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProcDescJump_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn execute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProcDescJump_unity2_raw :: __lookup_execute :: get_method_info () } pub fn get_label_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProcDescJump_unity2_raw :: __lookup_get_label :: get_method_info () } }
 
 #[cfg(feature = "app-procdescjump")]
 impl ProcDescJump {
-    #[doc = "`.ctor(i32)` — overload selector"]
-    pub fn new(label: i32) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(ProcDescJump), ::core::stringify!(new),));
-        <Self as IProcDescJumpMethods>::ctor(this, label);
-        this
-    }
+# [doc = "`.ctor(i32)` — overload selector"] pub fn new (label : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProcDescJump) , :: core :: stringify ! (new) ,)) ; < Self as IProcDescJumpMethods > :: ctor (this , label) ; this }
 }
 
 #[cfg(feature = "app-procdescjump")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IProcDescJump, IProcDescJumpMethods, ProcDescJump};
-    #[cfg(feature = "app-procdesc")]
-    pub use crate::app::procdesc::IProcDescMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::{app::procdesc::IProcDesc, system::object::IObject};
+    pub use super::ProcDescJump;
+    pub use super::IProcDescJump;
+    pub use super::IProcDescJumpMethods;
+    pub use crate::app::procdesc::IProcDesc;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "app-procdesc")] pub use crate::app::procdesc::IProcDescMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

@@ -2,176 +2,59 @@
 
 #[cfg(feature = "app-visitworld-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/visitworld/VisitWorld.md"))]
-    #[::unity2::class(namespace = "App", name = "VisitWorld")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct VisitWorld {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/visitworld/VisitWorld.md"))] # [:: unity2 :: class (namespace = "App" , name = "VisitWorld")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct VisitWorld {}
+
 }
 
 #[cfg(feature = "app-visitworld-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-visitworld")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __VisitWorld_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_is_transitioning {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VisitWorld as ::unity2::ClassIdentity>::class(),
-                "get_IsTransitioning",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <VisitWorld as ::unity2::ClassIdentity>::NAME,
-                        "get_IsTransitioning",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_is_transitioning(this: VisitWorld, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(VisitWorld, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_is_transitioning::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_come_back {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<VisitWorld as ::unity2::ClassIdentity>::class(), "ComeBack", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <VisitWorld as ::unity2::ClassIdentity>::NAME,
-                        "ComeBack",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn come_back(this: VisitWorld, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(VisitWorld, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_come_back::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<VisitWorld as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <VisitWorld as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: VisitWorld, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(VisitWorld, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __VisitWorld_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_is_transitioning { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< VisitWorld as :: unity2 :: ClassIdentity > :: class () , "get_IsTransitioning" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < VisitWorld as :: unity2 :: ClassIdentity > :: NAME , "get_IsTransitioning" , e) , } } } pub unsafe fn get_is_transitioning (this : VisitWorld , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (VisitWorld , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_is_transitioning :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_come_back { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< VisitWorld as :: unity2 :: ClassIdentity > :: class () , "ComeBack" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < VisitWorld as :: unity2 :: ClassIdentity > :: NAME , "ComeBack" , e) , } } } pub unsafe fn come_back (this : VisitWorld , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (VisitWorld , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_come_back :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< VisitWorld as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < VisitWorld as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : VisitWorld , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (VisitWorld , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-visitworld")]
-pub trait IVisitWorldMethods: IVisitWorld {
-    #[doc = "`get_IsTransitioning()` overload"]
-    fn get_is_transitioning(self) -> bool {
-        unsafe {
-            let __receiver = <VisitWorld as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __VisitWorld_unity2_raw::get_is_transitioning(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ComeBack()` overload"]
-    fn come_back(self) -> () {
-        unsafe {
-            let __receiver = <VisitWorld as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __VisitWorld_unity2_raw::come_back(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <VisitWorld as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __VisitWorld_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IVisitWorldMethods : IVisitWorld { # [doc = "`get_IsTransitioning()` overload"] fn get_is_transitioning (self ,) -> bool { unsafe { let __receiver = < VisitWorld as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __VisitWorld_unity2_raw :: get_is_transitioning (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ComeBack()` overload"] fn come_back (self ,) -> () { unsafe { let __receiver = < VisitWorld as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __VisitWorld_unity2_raw :: come_back (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < VisitWorld as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __VisitWorld_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-visitworld")]
-impl<__T: IVisitWorld> IVisitWorldMethods for __T {}
+impl < __T : IVisitWorld > IVisitWorldMethods for __T { }
+
+#[cfg(feature = "app-visitworld")]
+impl VisitWorld { pub fn get_is_transitioning_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __VisitWorld_unity2_raw :: __lookup_get_is_transitioning :: get_method_info () } pub fn come_back_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __VisitWorld_unity2_raw :: __lookup_come_back :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __VisitWorld_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-visitworld")]
 impl VisitWorld {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(VisitWorld), ::core::stringify!(new),));
-        <Self as IVisitWorldMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (VisitWorld) , :: core :: stringify ! (new) ,)) ; < Self as IVisitWorldMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-visitworld")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IVisitWorld, IVisitWorldMethods, VisitWorld};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        system::object::IObject,
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::VisitWorld;
+    pub use super::IVisitWorld;
+    pub use super::IVisitWorldMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

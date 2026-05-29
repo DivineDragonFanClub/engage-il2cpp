@@ -2,28 +2,27 @@
 
 #[cfg(feature = "system-collections-generic-ienumerator_1-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/ienumerator_1/IEnumerator_1.md"))]
-    #[::unity2::class(namespace = "System.Collections.Generic", name = "IEnumerator`1")]
-    pub struct IEnumerator_1<T0: ::unity2::ClassIdentity> {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/ienumerator_1/IEnumerator_1.md"))] # [:: unity2 :: class (namespace = "System.Collections.Generic" , name = "IEnumerator`1")] pub struct IEnumerator_1 < T0 : :: unity2 :: ClassIdentity > {}
+
 }
 
 #[cfg(feature = "system-collections-generic-ienumerator_1-types")]
 pub use __types::*;
 
 #[cfg(feature = "system-collections-generic-ienumerator_1")]
-#[::unity2::methods]
-impl<T0: ::unity2::ClassIdentity> IEnumerator_1<T0> {
-    #[doc = "`get_Current()` overload"]
-    #[method(name = "get_Current", args = 0)]
-    pub fn get_current(self) -> T0;
+# [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity > IEnumerator_1 < T0 > {
+# [doc = "`get_Current()` overload"] # [method (name = "get_Current" , args = 0)] pub fn get_current (self ,) -> T0 ;
 }
 
 #[cfg(feature = "system-collections-generic-ienumerator_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IEnumerator_1, IIEnumerator_1, IIEnumerator_1Methods};
+    pub use super::IEnumerator_1;
+    pub use super::IIEnumerator_1;
+    pub use super::IIEnumerator_1Methods;
 }

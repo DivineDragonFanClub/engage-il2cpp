@@ -2,193 +2,34 @@
 
 #[cfg(feature = "combat-bit-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/bit/Bit.md"))]
-    #[::unity2::class(namespace = "Combat", name = "Bit")]
-    #[parent(crate::system::object::Object)]
-    pub struct Bit {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/bit/Bit.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "Bit")] # [parent (crate :: system :: object :: Object)] pub struct Bit {}
+
 }
 
 #[cfg(feature = "combat-bit-types")]
 pub use __types::*;
 
 #[cfg(feature = "combat-bit")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __Bit_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<Bit as ::unity2::ClassIdentity>::class(), "Get", 3, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Bit as ::unity2::ClassIdentity>::NAME, "Get", e),
-            }
-        }
-    }
-    pub unsafe fn get(src_value: i32, bits: i32, shift: i32, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(i32, i32, i32, ::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(__lookup_get::get_method_info().method_ptr);
-        inner(src_value, bits, shift, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_signed {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<Bit as ::unity2::ClassIdentity>::class(), "GetSigned", 3, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Bit as ::unity2::ClassIdentity>::NAME, "GetSigned", e),
-            }
-        }
-    }
-    pub unsafe fn get_signed(src_value: i32, bits: i32, shift: i32, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(i32, i32, i32, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_signed::get_method_info().method_ptr);
-        inner(src_value, bits, shift, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_combine {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<Bit as ::unity2::ClassIdentity>::class(), "Combine", 4, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Bit as ::unity2::ClassIdentity>::NAME, "Combine", e),
-            }
-        }
-    }
-    pub unsafe fn combine(src_value: i32, value: i32, bits: i32, shift: i32, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(i32, i32, i32, i32, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_combine::get_method_info().method_ptr);
-        inner(src_value, value, bits, shift, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_combine_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<Bit as ::unity2::ClassIdentity>::class(), "Combine", 3, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Bit as ::unity2::ClassIdentity>::NAME, "Combine", e),
-            }
-        }
-    }
-    pub unsafe fn combine_2(src_value: i32, value: bool, shift: i32, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(i32, bool, i32, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_combine_2::get_method_info().method_ptr);
-        inner(src_value, value, shift, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __Bit_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Bit as :: unity2 :: ClassIdentity > :: class () , "Get" , 3 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Bit as :: unity2 :: ClassIdentity > :: NAME , "Get" , e) , } } } pub unsafe fn get (src_value : i32 , bits : i32 , shift : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (i32 , i32 , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get :: get_method_info () . method_ptr ,) ; inner (src_value , bits , shift , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_signed { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Bit as :: unity2 :: ClassIdentity > :: class () , "GetSigned" , 3 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Bit as :: unity2 :: ClassIdentity > :: NAME , "GetSigned" , e) , } } } pub unsafe fn get_signed (src_value : i32 , bits : i32 , shift : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (i32 , i32 , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_signed :: get_method_info () . method_ptr ,) ; inner (src_value , bits , shift , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_combine { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Bit as :: unity2 :: ClassIdentity > :: class () , "Combine" , 4 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Bit as :: unity2 :: ClassIdentity > :: NAME , "Combine" , e) , } } } pub unsafe fn combine (src_value : i32 , value : i32 , bits : i32 , shift : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (i32 , i32 , i32 , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_combine :: get_method_info () . method_ptr ,) ; inner (src_value , value , bits , shift , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_combine_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Bit as :: unity2 :: ClassIdentity > :: class () , "Combine" , 3 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Bit as :: unity2 :: ClassIdentity > :: NAME , "Combine" , e) , } } } pub unsafe fn combine_2 (src_value : i32 , value : bool , shift : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (i32 , bool , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_combine_2 :: get_method_info () . method_ptr ,) ; inner (src_value , value , shift , __unity2_method_info) } }
 
 #[cfg(feature = "combat-bit")]
-impl Bit {
-    #[doc = "`Get(i32, i32, i32)` overload"]
-    pub fn get(src_value: impl ::core::convert::Into<i32>, bits: impl ::core::convert::Into<i32>, shift: impl ::core::convert::Into<i32>) -> i32 {
-        unsafe {
-            __Bit_unity2_raw::get(
-                ::core::convert::Into::into(src_value),
-                ::core::convert::Into::into(bits),
-                ::core::convert::Into::into(shift),
-                ::core::option::Option::None,
-            )
-        }
-    }
+impl Bit { # [doc = "`Get(i32, i32, i32)` overload"] pub fn get (src_value : impl :: core :: convert :: Into < i32 > , bits : impl :: core :: convert :: Into < i32 > , shift : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { __Bit_unity2_raw :: get (:: core :: convert :: Into :: into (src_value) , :: core :: convert :: Into :: into (bits) , :: core :: convert :: Into :: into (shift) , :: core :: option :: Option :: None) } } # [doc = "`GetSigned(i32, i32, i32)` overload"] pub fn get_signed (src_value : impl :: core :: convert :: Into < i32 > , bits : impl :: core :: convert :: Into < i32 > , shift : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { __Bit_unity2_raw :: get_signed (:: core :: convert :: Into :: into (src_value) , :: core :: convert :: Into :: into (bits) , :: core :: convert :: Into :: into (shift) , :: core :: option :: Option :: None) } } # [doc = "`Combine(i32, i32, i32, i32)` overload"] pub fn combine (src_value : impl :: core :: convert :: Into < i32 > , value : impl :: core :: convert :: Into < i32 > , bits : impl :: core :: convert :: Into < i32 > , shift : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { __Bit_unity2_raw :: combine (:: core :: convert :: Into :: into (src_value) , :: core :: convert :: Into :: into (value) , :: core :: convert :: Into :: into (bits) , :: core :: convert :: Into :: into (shift) , :: core :: option :: Option :: None) } } # [doc = "`Combine(i32, bool, i32)` overload"] pub fn combine_2 (src_value : impl :: core :: convert :: Into < i32 > , value : impl :: core :: convert :: Into < bool > , shift : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { __Bit_unity2_raw :: combine_2 (:: core :: convert :: Into :: into (src_value) , :: core :: convert :: Into :: into (value) , :: core :: convert :: Into :: into (shift) , :: core :: option :: Option :: None) } } }
 
-    #[doc = "`GetSigned(i32, i32, i32)` overload"]
-    pub fn get_signed(
-        src_value: impl ::core::convert::Into<i32>,
-        bits: impl ::core::convert::Into<i32>,
-        shift: impl ::core::convert::Into<i32>,
-    ) -> i32 {
-        unsafe {
-            __Bit_unity2_raw::get_signed(
-                ::core::convert::Into::into(src_value),
-                ::core::convert::Into::into(bits),
-                ::core::convert::Into::into(shift),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`Combine(i32, i32, i32, i32)` overload"]
-    pub fn combine(
-        src_value: impl ::core::convert::Into<i32>,
-        value: impl ::core::convert::Into<i32>,
-        bits: impl ::core::convert::Into<i32>,
-        shift: impl ::core::convert::Into<i32>,
-    ) -> i32 {
-        unsafe {
-            __Bit_unity2_raw::combine(
-                ::core::convert::Into::into(src_value),
-                ::core::convert::Into::into(value),
-                ::core::convert::Into::into(bits),
-                ::core::convert::Into::into(shift),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`Combine(i32, bool, i32)` overload"]
-    pub fn combine_2(
-        src_value: impl ::core::convert::Into<i32>,
-        value: impl ::core::convert::Into<bool>,
-        shift: impl ::core::convert::Into<i32>,
-    ) -> i32 {
-        unsafe {
-            __Bit_unity2_raw::combine_2(
-                ::core::convert::Into::into(src_value),
-                ::core::convert::Into::into(value),
-                ::core::convert::Into::into(shift),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+#[cfg(feature = "combat-bit")]
+impl Bit { pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Bit_unity2_raw :: __lookup_get :: get_method_info () } pub fn get_signed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Bit_unity2_raw :: __lookup_get_signed :: get_method_info () } pub fn combine_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Bit_unity2_raw :: __lookup_combine :: get_method_info () } pub fn combine_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Bit_unity2_raw :: __lookup_combine_2 :: get_method_info () } }
 
 #[cfg(feature = "combat-bit")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{Bit, IBit};
+    pub use super::Bit;
+    pub use super::IBit;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

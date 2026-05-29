@@ -2,199 +2,34 @@
 
 #[cfg(feature = "unity_engine-sprites-datautility-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/sprites/datautility/DataUtility.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Sprites", name = "DataUtility")]
-    #[parent(crate::system::object::Object)]
-    pub struct DataUtility {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/sprites/datautility/DataUtility.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Sprites" , name = "DataUtility")] # [parent (crate :: system :: object :: Object)] pub struct DataUtility {}
+
 }
 
 #[cfg(feature = "unity_engine-sprites-datautility-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-sprites-datautility")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __DataUtility_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_inner_uv {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::sprite::Sprite as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DataUtility as ::unity2::ClassIdentity>::class(),
-                "GetInnerUV",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DataUtility as ::unity2::ClassIdentity>::NAME,
-                        "GetInnerUV",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_inner_uv(
-        sprite: crate::unity_engine::sprite::Sprite,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::vector4::Vector4 {
-        let inner: extern "C" fn(crate::unity_engine::sprite::Sprite, ::unity2::OptionalMethod) -> crate::unity_engine::vector4::Vector4 =
-            ::core::mem::transmute(__lookup_get_inner_uv::get_method_info().method_ptr);
-        inner(sprite, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_outer_uv {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::sprite::Sprite as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DataUtility as ::unity2::ClassIdentity>::class(),
-                "GetOuterUV",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DataUtility as ::unity2::ClassIdentity>::NAME,
-                        "GetOuterUV",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_outer_uv(
-        sprite: crate::unity_engine::sprite::Sprite,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::vector4::Vector4 {
-        let inner: extern "C" fn(crate::unity_engine::sprite::Sprite, ::unity2::OptionalMethod) -> crate::unity_engine::vector4::Vector4 =
-            ::core::mem::transmute(__lookup_get_outer_uv::get_method_info().method_ptr);
-        inner(sprite, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_padding {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::sprite::Sprite as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DataUtility as ::unity2::ClassIdentity>::class(),
-                "GetPadding",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DataUtility as ::unity2::ClassIdentity>::NAME,
-                        "GetPadding",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_padding(
-        sprite: crate::unity_engine::sprite::Sprite,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::vector4::Vector4 {
-        let inner: extern "C" fn(crate::unity_engine::sprite::Sprite, ::unity2::OptionalMethod) -> crate::unity_engine::vector4::Vector4 =
-            ::core::mem::transmute(__lookup_get_padding::get_method_info().method_ptr);
-        inner(sprite, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_min_size {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::sprite::Sprite as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DataUtility as ::unity2::ClassIdentity>::class(),
-                "GetMinSize",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DataUtility as ::unity2::ClassIdentity>::NAME,
-                        "GetMinSize",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_min_size(
-        sprite: crate::unity_engine::sprite::Sprite,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::vector2::Vector2 {
-        let inner: extern "C" fn(crate::unity_engine::sprite::Sprite, ::unity2::OptionalMethod) -> crate::unity_engine::vector2::Vector2 =
-            ::core::mem::transmute(__lookup_get_min_size::get_method_info().method_ptr);
-        inner(sprite, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __DataUtility_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_inner_uv { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: sprite :: Sprite as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DataUtility as :: unity2 :: ClassIdentity > :: class () , "GetInnerUV" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DataUtility as :: unity2 :: ClassIdentity > :: NAME , "GetInnerUV" , e) , } } } pub unsafe fn get_inner_uv (sprite : crate :: unity_engine :: sprite :: Sprite , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector4 :: Vector4 { let inner : extern "C" fn (crate :: unity_engine :: sprite :: Sprite , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector4 :: Vector4 = :: core :: mem :: transmute (__lookup_get_inner_uv :: get_method_info () . method_ptr ,) ; inner (sprite , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_outer_uv { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: sprite :: Sprite as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DataUtility as :: unity2 :: ClassIdentity > :: class () , "GetOuterUV" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DataUtility as :: unity2 :: ClassIdentity > :: NAME , "GetOuterUV" , e) , } } } pub unsafe fn get_outer_uv (sprite : crate :: unity_engine :: sprite :: Sprite , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector4 :: Vector4 { let inner : extern "C" fn (crate :: unity_engine :: sprite :: Sprite , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector4 :: Vector4 = :: core :: mem :: transmute (__lookup_get_outer_uv :: get_method_info () . method_ptr ,) ; inner (sprite , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_padding { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: sprite :: Sprite as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DataUtility as :: unity2 :: ClassIdentity > :: class () , "GetPadding" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DataUtility as :: unity2 :: ClassIdentity > :: NAME , "GetPadding" , e) , } } } pub unsafe fn get_padding (sprite : crate :: unity_engine :: sprite :: Sprite , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector4 :: Vector4 { let inner : extern "C" fn (crate :: unity_engine :: sprite :: Sprite , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector4 :: Vector4 = :: core :: mem :: transmute (__lookup_get_padding :: get_method_info () . method_ptr ,) ; inner (sprite , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_min_size { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: sprite :: Sprite as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DataUtility as :: unity2 :: ClassIdentity > :: class () , "GetMinSize" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DataUtility as :: unity2 :: ClassIdentity > :: NAME , "GetMinSize" , e) , } } } pub unsafe fn get_min_size (sprite : crate :: unity_engine :: sprite :: Sprite , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector2 :: Vector2 { let inner : extern "C" fn (crate :: unity_engine :: sprite :: Sprite , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector2 :: Vector2 = :: core :: mem :: transmute (__lookup_get_min_size :: get_method_info () . method_ptr ,) ; inner (sprite , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-sprites-datautility")]
-impl DataUtility {
-    #[doc = "`GetInnerUV(crate::unity_engine::sprite::Sprite)` overload"]
-    pub fn get_inner_uv(sprite: impl ::core::convert::Into<crate::unity_engine::sprite::Sprite>) -> crate::unity_engine::vector4::Vector4 {
-        unsafe { __DataUtility_unity2_raw::get_inner_uv(::core::convert::Into::into(sprite), ::core::option::Option::None) }
-    }
+impl DataUtility { # [doc = "`GetInnerUV(crate::unity_engine::sprite::Sprite)` overload"] pub fn get_inner_uv (sprite : impl :: core :: convert :: Into < crate :: unity_engine :: sprite :: Sprite >) -> crate :: unity_engine :: vector4 :: Vector4 { unsafe { __DataUtility_unity2_raw :: get_inner_uv (:: core :: convert :: Into :: into (sprite) , :: core :: option :: Option :: None) } } # [doc = "`GetOuterUV(crate::unity_engine::sprite::Sprite)` overload"] pub fn get_outer_uv (sprite : impl :: core :: convert :: Into < crate :: unity_engine :: sprite :: Sprite >) -> crate :: unity_engine :: vector4 :: Vector4 { unsafe { __DataUtility_unity2_raw :: get_outer_uv (:: core :: convert :: Into :: into (sprite) , :: core :: option :: Option :: None) } } # [doc = "`GetPadding(crate::unity_engine::sprite::Sprite)` overload"] pub fn get_padding (sprite : impl :: core :: convert :: Into < crate :: unity_engine :: sprite :: Sprite >) -> crate :: unity_engine :: vector4 :: Vector4 { unsafe { __DataUtility_unity2_raw :: get_padding (:: core :: convert :: Into :: into (sprite) , :: core :: option :: Option :: None) } } # [doc = "`GetMinSize(crate::unity_engine::sprite::Sprite)` overload"] pub fn get_min_size (sprite : impl :: core :: convert :: Into < crate :: unity_engine :: sprite :: Sprite >) -> crate :: unity_engine :: vector2 :: Vector2 { unsafe { __DataUtility_unity2_raw :: get_min_size (:: core :: convert :: Into :: into (sprite) , :: core :: option :: Option :: None) } } }
 
-    #[doc = "`GetOuterUV(crate::unity_engine::sprite::Sprite)` overload"]
-    pub fn get_outer_uv(sprite: impl ::core::convert::Into<crate::unity_engine::sprite::Sprite>) -> crate::unity_engine::vector4::Vector4 {
-        unsafe { __DataUtility_unity2_raw::get_outer_uv(::core::convert::Into::into(sprite), ::core::option::Option::None) }
-    }
-
-    #[doc = "`GetPadding(crate::unity_engine::sprite::Sprite)` overload"]
-    pub fn get_padding(sprite: impl ::core::convert::Into<crate::unity_engine::sprite::Sprite>) -> crate::unity_engine::vector4::Vector4 {
-        unsafe { __DataUtility_unity2_raw::get_padding(::core::convert::Into::into(sprite), ::core::option::Option::None) }
-    }
-
-    #[doc = "`GetMinSize(crate::unity_engine::sprite::Sprite)` overload"]
-    pub fn get_min_size(sprite: impl ::core::convert::Into<crate::unity_engine::sprite::Sprite>) -> crate::unity_engine::vector2::Vector2 {
-        unsafe { __DataUtility_unity2_raw::get_min_size(::core::convert::Into::into(sprite), ::core::option::Option::None) }
-    }
-}
+#[cfg(feature = "unity_engine-sprites-datautility")]
+impl DataUtility { pub fn get_inner_uv_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DataUtility_unity2_raw :: __lookup_get_inner_uv :: get_method_info () } pub fn get_outer_uv_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DataUtility_unity2_raw :: __lookup_get_outer_uv :: get_method_info () } pub fn get_padding_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DataUtility_unity2_raw :: __lookup_get_padding :: get_method_info () } pub fn get_min_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DataUtility_unity2_raw :: __lookup_get_min_size :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-sprites-datautility")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{DataUtility, IDataUtility};
+    pub use super::DataUtility;
+    pub use super::IDataUtility;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

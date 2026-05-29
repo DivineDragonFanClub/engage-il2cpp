@@ -2,68 +2,95 @@
 
 #[cfg(feature = "unity_engine-xr-availabletrackingdata-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        r#enum::{Enum, IEnum},
-        valuetype::{IValueType, ValueType},
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/xr/availabletrackingdata/AvailableTrackingData.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct AvailableTrackingData {
-        pub value: i32,
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/xr/availabletrackingdata/AvailableTrackingData.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct AvailableTrackingData  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for AvailableTrackingData  {
+    const NAMESPACE: &'static str = "UnityEngine.XR";
+
+    const NAME: &'static str = "AvailableTrackingData";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    impl ::unity2::ClassIdentity for AvailableTrackingData {
-        const NAME: &'static str = "AvailableTrackingData";
-        const NAMESPACE: &'static str = "UnityEngine.XR";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  ::unity2::IlType for AvailableTrackingData  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::IlType for AvailableTrackingData {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  AvailableTrackingData  {
+    pub fn none() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl AvailableTrackingData {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn position_available() -> Self {
-            Self { value: 1 }
-        }
+    pub fn position_available() -> Self {
+        Self { value: 1 }
 
-        pub fn rotation_available() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn velocity_available() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn angular_velocity_available() -> Self {
-            Self { value: 8 }
-        }
-
-        pub fn acceleration_available() -> Self {
-            Self { value: 16 }
-        }
-
-        pub fn angular_acceleration_available() -> Self {
-            Self { value: 32 }
-        }
     }
+
+
+    pub fn rotation_available() -> Self {
+        Self { value: 2 }
+
+    }
+
+
+    pub fn velocity_available() -> Self {
+        Self { value: 4 }
+
+    }
+
+
+    pub fn angular_velocity_available() -> Self {
+        Self { value: 8 }
+
+    }
+
+
+    pub fn acceleration_available() -> Self {
+        Self { value: 16 }
+
+    }
+
+
+    pub fn angular_acceleration_available() -> Self {
+        Self { value: 32 }
+
+    }
+
+}
+
 }
 
 #[cfg(feature = "unity_engine-xr-availabletrackingdata-types")]
@@ -73,11 +100,10 @@ pub use __types::*;
 #[doc(hidden)]
 pub mod prelude {
     pub use super::AvailableTrackingData;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::system::{object::IObject, r#enum::IEnum, valuetype::IValueType};
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

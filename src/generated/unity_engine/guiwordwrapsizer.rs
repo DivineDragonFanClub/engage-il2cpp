@@ -2,220 +2,51 @@
 
 #[cfg(feature = "unity_engine-guiwordwrapsizer-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::guilayoutentry::{GUILayoutEntry, IGUILayoutEntry},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/guiwordwrapsizer/GUIWordWrapSizer.md"))]
-    #[::unity2::class(namespace = "UnityEngine", name = "GUIWordWrapSizer")]
-    #[parent(crate::unity_engine::guilayoutentry::GUILayoutEntry)]
-    pub struct GUIWordWrapSizer {
-        #[offset(72)]
-        #[rename(name = "m_Content")]
-        pub m_content: crate::unity_engine::guicontent::GUIContent,
-        #[offset(80)]
-        #[rename(name = "m_ForcedMinHeight")]
-        pub m_forced_min_height: f32,
-        #[offset(84)]
-        #[rename(name = "m_ForcedMaxHeight")]
-        pub m_forced_max_height: f32,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: guilayoutentry :: { GUILayoutEntry , IGUILayoutEntry }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/guiwordwrapsizer/GUIWordWrapSizer.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "GUIWordWrapSizer")] # [parent (crate :: unity_engine :: guilayoutentry :: GUILayoutEntry)] pub struct GUIWordWrapSizer {
+# [offset (72)] # [rename (name = "m_Content")] pub m_content : crate :: unity_engine :: guicontent :: GUIContent ,
+# [offset (80)] # [rename (name = "m_ForcedMinHeight")] pub m_forced_min_height : f32 ,
+# [offset (84)] # [rename (name = "m_ForcedMaxHeight")] pub m_forced_max_height : f32 ,
+}
+
 }
 
 #[cfg(feature = "unity_engine-guiwordwrapsizer-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-guiwordwrapsizer")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __GUIWordWrapSizer_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::guistyle::GUIStyle as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::guicontent::GUIContent as ::unity2::IlType>::il_type(),
-                <::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption> as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GUIWordWrapSizer as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GUIWordWrapSizer as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: GUIWordWrapSizer,
-        style: crate::unity_engine::guistyle::GUIStyle,
-        content: crate::unity_engine::guicontent::GUIContent,
-        options: ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            GUIWordWrapSizer,
-            crate::unity_engine::guistyle::GUIStyle,
-            crate::unity_engine::guicontent::GUIContent,
-            ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, style, content, options, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_width {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GUIWordWrapSizer as ::unity2::ClassIdentity>::class(),
-                "CalcWidth",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GUIWordWrapSizer as ::unity2::ClassIdentity>::NAME,
-                        "CalcWidth",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn calc_width(this: GUIWordWrapSizer, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GUIWordWrapSizer, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_calc_width::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_height {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GUIWordWrapSizer as ::unity2::ClassIdentity>::class(),
-                "CalcHeight",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GUIWordWrapSizer as ::unity2::ClassIdentity>::NAME,
-                        "CalcHeight",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn calc_height(this: GUIWordWrapSizer, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GUIWordWrapSizer, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_calc_height::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __GUIWordWrapSizer_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: guistyle :: GUIStyle as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: guicontent :: GUIContent as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: guilayoutoption :: GUILayoutOption > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GUIWordWrapSizer as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GUIWordWrapSizer as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : GUIWordWrapSizer , style : crate :: unity_engine :: guistyle :: GUIStyle , content : crate :: unity_engine :: guicontent :: GUIContent , options : :: unity2 :: Array < crate :: unity_engine :: guilayoutoption :: GUILayoutOption > , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GUIWordWrapSizer , crate :: unity_engine :: guistyle :: GUIStyle , crate :: unity_engine :: guicontent :: GUIContent , :: unity2 :: Array < crate :: unity_engine :: guilayoutoption :: GUILayoutOption > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , style , content , options , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_calc_width { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GUIWordWrapSizer as :: unity2 :: ClassIdentity > :: class () , "CalcWidth" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GUIWordWrapSizer as :: unity2 :: ClassIdentity > :: NAME , "CalcWidth" , e) , } } } pub unsafe fn calc_width (this : GUIWordWrapSizer , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GUIWordWrapSizer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_calc_width :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_calc_height { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GUIWordWrapSizer as :: unity2 :: ClassIdentity > :: class () , "CalcHeight" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GUIWordWrapSizer as :: unity2 :: ClassIdentity > :: NAME , "CalcHeight" , e) , } } } pub unsafe fn calc_height (this : GUIWordWrapSizer , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GUIWordWrapSizer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_calc_height :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-guiwordwrapsizer")]
-pub trait IGUIWordWrapSizerMethods: IGUIWordWrapSizer {
-    #[doc = "`.ctor(crate::unity_engine::guistyle::GUIStyle, crate::unity_engine::guicontent::GUIContent, ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>)` overload"]
-    fn ctor(
-        self,
-        style: impl ::core::convert::Into<crate::unity_engine::guistyle::GUIStyle>,
-        content: impl ::core::convert::Into<crate::unity_engine::guicontent::GUIContent>,
-        options: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>>,
-    ) -> () {
-        unsafe {
-            let __receiver = <GUIWordWrapSizer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GUIWordWrapSizer_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(style),
-                ::core::convert::Into::into(content),
-                ::core::convert::Into::into(options),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CalcWidth()` overload"]
-    fn calc_width(self) -> () {
-        unsafe {
-            let __receiver = <GUIWordWrapSizer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GUIWordWrapSizer_unity2_raw::calc_width(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CalcHeight()` overload"]
-    fn calc_height(self) -> () {
-        unsafe {
-            let __receiver = <GUIWordWrapSizer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GUIWordWrapSizer_unity2_raw::calc_height(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IGUIWordWrapSizerMethods : IGUIWordWrapSizer { # [doc = "`.ctor(crate::unity_engine::guistyle::GUIStyle, crate::unity_engine::guicontent::GUIContent, ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>)` overload"] fn ctor (self , style : impl :: core :: convert :: Into < crate :: unity_engine :: guistyle :: GUIStyle > , content : impl :: core :: convert :: Into < crate :: unity_engine :: guicontent :: GUIContent > , options : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: unity_engine :: guilayoutoption :: GUILayoutOption > >) -> () { unsafe { let __receiver = < GUIWordWrapSizer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GUIWordWrapSizer_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (style) , :: core :: convert :: Into :: into (content) , :: core :: convert :: Into :: into (options) , :: core :: option :: Option :: None) } } # [doc = "`CalcWidth()` overload"] fn calc_width (self ,) -> () { unsafe { let __receiver = < GUIWordWrapSizer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GUIWordWrapSizer_unity2_raw :: calc_width (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CalcHeight()` overload"] fn calc_height (self ,) -> () { unsafe { let __receiver = < GUIWordWrapSizer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GUIWordWrapSizer_unity2_raw :: calc_height (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-guiwordwrapsizer")]
-impl<__T: IGUIWordWrapSizer> IGUIWordWrapSizerMethods for __T {}
+impl < __T : IGUIWordWrapSizer > IGUIWordWrapSizerMethods for __T { }
+
+#[cfg(feature = "unity_engine-guiwordwrapsizer")]
+impl GUIWordWrapSizer { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GUIWordWrapSizer_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn calc_width_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GUIWordWrapSizer_unity2_raw :: __lookup_calc_width :: get_method_info () } pub fn calc_height_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GUIWordWrapSizer_unity2_raw :: __lookup_calc_height :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-guiwordwrapsizer")]
 impl GUIWordWrapSizer {
-    #[doc = "`.ctor(crate::unity_engine::guistyle::GUIStyle, crate::unity_engine::guicontent::GUIContent, ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>)` — overload selector"]
-    pub fn new(
-        style: crate::unity_engine::guistyle::GUIStyle,
-        content: crate::unity_engine::guicontent::GUIContent,
-        options: ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GUIWordWrapSizer),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGUIWordWrapSizerMethods>::ctor(this, style, content, options);
-        this
-    }
+# [doc = "`.ctor(crate::unity_engine::guistyle::GUIStyle, crate::unity_engine::guicontent::GUIContent, ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>)` — overload selector"] pub fn new (style : crate :: unity_engine :: guistyle :: GUIStyle , content : crate :: unity_engine :: guicontent :: GUIContent , options : :: unity2 :: Array < crate :: unity_engine :: guilayoutoption :: GUILayoutOption >) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GUIWordWrapSizer) , :: core :: stringify ! (new) ,)) ; < Self as IGUIWordWrapSizerMethods > :: ctor (this , style , content , options) ; this }
 }
 
 #[cfg(feature = "unity_engine-guiwordwrapsizer")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{GUIWordWrapSizer, IGUIWordWrapSizer, IGUIWordWrapSizerMethods};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-guilayoutentry")]
-    pub use crate::unity_engine::guilayoutentry::IGUILayoutEntryMethods;
-    pub use crate::{system::object::IObject, unity_engine::guilayoutentry::IGUILayoutEntry};
+    pub use super::GUIWordWrapSizer;
+    pub use super::IGUIWordWrapSizer;
+    pub use super::IGUIWordWrapSizerMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::guilayoutentry::IGUILayoutEntry;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-guilayoutentry")] pub use crate::unity_engine::guilayoutentry::IGUILayoutEntryMethods;
 }

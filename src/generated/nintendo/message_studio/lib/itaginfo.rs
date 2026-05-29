@@ -2,107 +2,34 @@
 
 #[cfg(feature = "nintendo-message_studio-lib-itaginfo-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/nintendo/message_studio/lib/itaginfo/ITagInfo.md"))]
-    #[::unity2::class(namespace = "Nintendo.MessageStudio.Lib", name = "ITagInfo")]
-    pub struct ITagInfo {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/nintendo/message_studio/lib/itaginfo/ITagInfo.md"))] # [:: unity2 :: class (namespace = "Nintendo.MessageStudio.Lib" , name = "ITagInfo")] pub struct ITagInfo {}
+
 }
 
 #[cfg(feature = "nintendo-message_studio-lib-itaginfo-types")]
 pub use __types::*;
 
 #[cfg(feature = "nintendo-message_studio-lib-itaginfo")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ITagInfo_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_tag_group {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ITagInfo as ::unity2::ClassIdentity>::class(),
-                "get_TagGroup",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ITagInfo as ::unity2::ClassIdentity>::NAME,
-                        "get_TagGroup",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_tag_group(this: ITagInfo, __unity2_method_info: ::unity2::OptionalMethod) -> u16 {
-        let inner: extern "C" fn(ITagInfo, ::unity2::OptionalMethod) -> u16 =
-            ::core::mem::transmute(__lookup_get_tag_group::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_tag {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<ITagInfo as ::unity2::ClassIdentity>::class(), "get_Tag", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ITagInfo as ::unity2::ClassIdentity>::NAME,
-                        "get_Tag",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_tag(this: ITagInfo, __unity2_method_info: ::unity2::OptionalMethod) -> u16 {
-        let inner: extern "C" fn(ITagInfo, ::unity2::OptionalMethod) -> u16 = ::core::mem::transmute(__lookup_get_tag::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ITagInfo_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_tag_group { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ITagInfo as :: unity2 :: ClassIdentity > :: class () , "get_TagGroup" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ITagInfo as :: unity2 :: ClassIdentity > :: NAME , "get_TagGroup" , e) , } } } pub unsafe fn get_tag_group (this : ITagInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> u16 { let inner : extern "C" fn (ITagInfo , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute (__lookup_get_tag_group :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_tag { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ITagInfo as :: unity2 :: ClassIdentity > :: class () , "get_Tag" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ITagInfo as :: unity2 :: ClassIdentity > :: NAME , "get_Tag" , e) , } } } pub unsafe fn get_tag (this : ITagInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> u16 { let inner : extern "C" fn (ITagInfo , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute (__lookup_get_tag :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "nintendo-message_studio-lib-itaginfo")]
-pub trait IITagInfoMethods: IITagInfo {
-    #[doc = "`get_TagGroup()` overload"]
-    fn get_tag_group(self) -> u16 {
-        unsafe {
-            let __receiver = <ITagInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ITagInfo_unity2_raw::get_tag_group(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Tag()` overload"]
-    fn get_tag(self) -> u16 {
-        unsafe {
-            let __receiver = <ITagInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ITagInfo_unity2_raw::get_tag(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IITagInfoMethods : IITagInfo { # [doc = "`get_TagGroup()` overload"] fn get_tag_group (self ,) -> u16 { unsafe { let __receiver = < ITagInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ITagInfo_unity2_raw :: get_tag_group (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_Tag()` overload"] fn get_tag (self ,) -> u16 { unsafe { let __receiver = < ITagInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ITagInfo_unity2_raw :: get_tag (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "nintendo-message_studio-lib-itaginfo")]
-impl<__T: IITagInfo> IITagInfoMethods for __T {}
+impl < __T : IITagInfo > IITagInfoMethods for __T { }
+
+#[cfg(feature = "nintendo-message_studio-lib-itaginfo")]
+impl ITagInfo { pub fn get_tag_group_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ITagInfo_unity2_raw :: __lookup_get_tag_group :: get_method_info () } pub fn get_tag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ITagInfo_unity2_raw :: __lookup_get_tag :: get_method_info () } }
 
 #[cfg(feature = "nintendo-message_studio-lib-itaginfo")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IITagInfo, IITagInfoMethods, ITagInfo};
+    pub use super::ITagInfo;
+    pub use super::IITagInfo;
+    pub use super::IITagInfoMethods;
 }

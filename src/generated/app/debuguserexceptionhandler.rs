@@ -2,112 +2,34 @@
 
 #[cfg(feature = "app-debuguserexceptionhandler-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debuguserexceptionhandler/DebugUserExceptionHandler.md"))]
-    #[::unity2::class(namespace = "App", name = "DebugUserExceptionHandler")]
-    #[parent(crate::system::object::Object)]
-    pub struct DebugUserExceptionHandler {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debuguserexceptionhandler/DebugUserExceptionHandler.md"))] # [:: unity2 :: class (namespace = "App" , name = "DebugUserExceptionHandler")] # [parent (crate :: system :: object :: Object)] pub struct DebugUserExceptionHandler {}
+
 }
 
 #[cfg(feature = "app-debuguserexceptionhandler-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-debuguserexceptionhandler")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __DebugUserExceptionHandler_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_initialize {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugUserExceptionHandler as ::unity2::ClassIdentity>::class(),
-                "Initialize",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DebugUserExceptionHandler as ::unity2::ClassIdentity>::NAME,
-                        "Initialize",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn initialize(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_initialize::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_exception_handler {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugUserExceptionHandler as ::unity2::ClassIdentity>::class(),
-                "ExceptionHandler",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DebugUserExceptionHandler as ::unity2::ClassIdentity>::NAME,
-                        "ExceptionHandler",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn exception_handler(exception_info: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_exception_handler::get_method_info().method_ptr);
-        inner(exception_info, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __DebugUserExceptionHandler_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_initialize { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DebugUserExceptionHandler as :: unity2 :: ClassIdentity > :: class () , "Initialize" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DebugUserExceptionHandler as :: unity2 :: ClassIdentity > :: NAME , "Initialize" , e) , } } } pub unsafe fn initialize (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_initialize :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_exception_handler { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DebugUserExceptionHandler as :: unity2 :: ClassIdentity > :: class () , "ExceptionHandler" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DebugUserExceptionHandler as :: unity2 :: ClassIdentity > :: NAME , "ExceptionHandler" , e) , } } } pub unsafe fn exception_handler (exception_info : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_exception_handler :: get_method_info () . method_ptr ,) ; inner (exception_info , __unity2_method_info) } }
 
 #[cfg(feature = "app-debuguserexceptionhandler")]
-impl DebugUserExceptionHandler {
-    #[doc = "`Initialize()` overload"]
-    pub fn initialize() -> () {
-        unsafe { __DebugUserExceptionHandler_unity2_raw::initialize(::core::option::Option::None) }
-    }
+impl DebugUserExceptionHandler { # [doc = "`Initialize()` overload"] pub fn initialize () -> () { unsafe { __DebugUserExceptionHandler_unity2_raw :: initialize (:: core :: option :: Option :: None) } } # [doc = "`ExceptionHandler(::unity2::Il2CppString)` overload"] pub fn exception_handler (exception_info : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { __DebugUserExceptionHandler_unity2_raw :: exception_handler (:: core :: convert :: Into :: into (exception_info) , :: core :: option :: Option :: None) } } }
 
-    #[doc = "`ExceptionHandler(::unity2::Il2CppString)` overload"]
-    pub fn exception_handler(exception_info: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            __DebugUserExceptionHandler_unity2_raw::exception_handler(::core::convert::Into::into(exception_info), ::core::option::Option::None)
-        }
-    }
-}
+#[cfg(feature = "app-debuguserexceptionhandler")]
+impl DebugUserExceptionHandler { pub fn initialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DebugUserExceptionHandler_unity2_raw :: __lookup_initialize :: get_method_info () } pub fn exception_handler_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DebugUserExceptionHandler_unity2_raw :: __lookup_exception_handler :: get_method_info () } }
 
 #[cfg(feature = "app-debuguserexceptionhandler")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{DebugUserExceptionHandler, IDebugUserExceptionHandler};
+    pub use super::DebugUserExceptionHandler;
+    pub use super::IDebugUserExceptionHandler;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

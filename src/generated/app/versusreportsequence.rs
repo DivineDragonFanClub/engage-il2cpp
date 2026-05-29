@@ -2,1357 +2,227 @@
 
 #[cfg(feature = "app-versusreportsequence-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::{
-            basicdialog::{BasicDialog, IBasicDialog},
-            basicdialogitem::{BasicDialogItem, IBasicDialogItem},
-            basicdialogitemno::{BasicDialogItemNo, IBasicDialogItemNo},
-            basicdialogitemyes::{BasicDialogItemYes, IBasicDialogItemYes},
-            basicmenu::{BasicMenu, IBasicMenu},
-            basicmenuitem::{BasicMenuItem, IBasicMenuItem},
-            procinst::{IProcInst, ProcInst},
-            yesnodialog::{IYesNoDialog, YesNoDialog},
-        },
-        system::{
-            object::{IObject, Object},
-            r#enum::{Enum, IEnum},
-            valuetype::{IValueType, ValueType},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versusreportsequence/VersusReportSequence_ConfirmDialog.md"))]
-    #[::unity2::class(namespace = "App", name = "VersusReportSequence.ConfirmDialog")]
-    #[parent(crate::app::yesnodialog::YesNoDialog)]
-    pub struct VersusReportSequence_ConfirmDialog {
-        #[offset(216)]
-        #[rename(name = "m_CancelCallback")]
-        pub m_cancel_callback: crate::system::action::Action,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: basicdialog :: { BasicDialog , IBasicDialog }
+ ;
+ use crate :: app :: basicdialogitem :: { BasicDialogItem , IBasicDialogItem }
+ ;
+ use crate :: app :: basicdialogitemno :: { BasicDialogItemNo , IBasicDialogItemNo }
+ ;
+ use crate :: app :: basicdialogitemyes :: { BasicDialogItemYes , IBasicDialogItemYes }
+ ;
+ use crate :: app :: basicmenu :: { BasicMenu , IBasicMenu }
+ ;
+ use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
+ ;
+ use crate :: app :: procinst :: { IProcInst , ProcInst }
+ ;
+ use crate :: app :: yesnodialog :: { IYesNoDialog , YesNoDialog }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/versusreportsequence/VersusReportSequence_Label.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct VersusReportSequence_Label {
-        pub value: i32,
-    }
 
-    impl ::unity2::ClassIdentity for VersusReportSequence_Label {
-        const NAME: &'static str = "VersusReportSequence.Label";
-        const NAMESPACE: &'static str = "App";
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versusreportsequence/VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo.md"))] # [:: unity2 :: class (namespace = "App" , name = "VersusReportSequence.ConfirmDialog.ConfirmDialogItemNo")] # [parent (crate :: app :: basicdialogitemno :: BasicDialogItemNo)] pub struct VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo {
+# [offset (112)] # [rename (name = "m_Action")] pub m_action : crate :: system :: action :: Action ,
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/versusreportsequence/VersusReportSequence_Label.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct VersusReportSequence_Label  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for VersusReportSequence_Label  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "VersusReportSequence.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for VersusReportSequence_Label {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  ::unity2::IlType for VersusReportSequence_Label  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl VersusReportSequence_Label {
-        pub fn type_menu() -> Self {
-            Self { value: 0 }
-        }
+}
 
-        pub fn reason() -> Self {
-            Self { value: 1 }
-        }
 
-        pub fn end() -> Self {
-            Self { value: 2 }
-        }
+impl  VersusReportSequence_Label  {
+    pub fn type_menu() -> Self {
+        Self { value: 0 }
+
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versusreportsequence/VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes.md"))]
-    #[::unity2::class(namespace = "App", name = "VersusReportSequence.ConfirmDialog.ConfirmDialogItemYes")]
-    #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
-    pub struct VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes {
-        #[offset(112)]
-        #[rename(name = "m_Action")]
-        pub m_action: crate::system::action::Action,
+
+    pub fn reason() -> Self {
+        Self { value: 1 }
+
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versusreportsequence/VersusReportSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "VersusReportSequence")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct VersusReportSequence {
-        #[offset(112)]
-        #[rename(name = "m_Content")]
-        pub m_content: crate::app::versusviolationtopcontent::VersusViolationTopContent,
-        #[offset(120)]
-        #[rename(name = "m_Bg")]
-        pub m_bg: crate::app::menubg::MenuBg,
-        #[offset(128)]
-        #[rename(name = "m_MapTexture")]
-        pub m_map_texture: crate::unity_engine::texture2d::Texture2D,
-        #[offset(144)]
-        #[rename(name = "m_Reason")]
-        pub m_reason: ::unity2::Il2CppString,
-        #[offset(152)]
-        #[rename(name = "m_ReasonDisplay")]
-        pub m_reason_display: ::unity2::Il2CppString,
-        #[offset(160)]
-        #[rename(name = "m_IsReported")]
-        pub m_is_reported: bool,
+
+    pub fn end() -> Self {
+        Self { value: 2 }
+
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versusreportsequence/VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo.md"))]
-    #[::unity2::class(namespace = "App", name = "VersusReportSequence.ConfirmDialog.ConfirmDialogItemNo")]
-    #[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
-    pub struct VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo {
-        #[offset(112)]
-        #[rename(name = "m_Action")]
-        pub m_action: crate::system::action::Action,
-    }
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versusreportsequence/VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes.md"))] # [:: unity2 :: class (namespace = "App" , name = "VersusReportSequence.ConfirmDialog.ConfirmDialogItemYes")] # [parent (crate :: app :: basicdialogitemyes :: BasicDialogItemYes)] pub struct VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes {
+# [offset (112)] # [rename (name = "m_Action")] pub m_action : crate :: system :: action :: Action ,
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versusreportsequence/VersusReportSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "VersusReportSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct VersusReportSequence {
+# [offset (112)] # [rename (name = "m_Content")] pub m_content : crate :: app :: versusviolationtopcontent :: VersusViolationTopContent ,
+# [offset (120)] # [rename (name = "m_Bg")] pub m_bg : crate :: app :: menubg :: MenuBg ,
+# [offset (128)] # [rename (name = "m_MapTexture")] pub m_map_texture : crate :: unity_engine :: texture2d :: Texture2D ,
+# [offset (144)] # [rename (name = "m_Reason")] pub m_reason : :: unity2 :: Il2CppString ,
+# [offset (152)] # [rename (name = "m_ReasonDisplay")] pub m_reason_display : :: unity2 :: Il2CppString ,
+# [offset (160)] # [rename (name = "m_IsReported")] pub m_is_reported : bool ,
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versusreportsequence/VersusReportSequence_ConfirmDialog.md"))] # [:: unity2 :: class (namespace = "App" , name = "VersusReportSequence.ConfirmDialog")] # [parent (crate :: app :: yesnodialog :: YesNoDialog)] pub struct VersusReportSequence_ConfirmDialog {
+# [offset (216)] # [rename (name = "m_CancelCallback")] pub m_cancel_callback : crate :: system :: action :: Action ,
+}
+
 }
 
 #[cfg(feature = "app-versusreportsequence-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-versusreportsequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __VersusReportSequence_ConfirmDialog_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> as ::unity2::IlType>::il_type(),
-                <crate::system::action::Action as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VersusReportSequence_ConfirmDialog as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <VersusReportSequence_ConfirmDialog as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: VersusReportSequence_ConfirmDialog,
-        menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
-        cancel_callback: crate::system::action::Action,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            VersusReportSequence_ConfirmDialog,
-            crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
-            crate::system::action::Action,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, menu_item_list, cancel_callback, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <crate::system::action::Action as ::unity2::IlType>::il_type(),
-                <crate::system::action::Action as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VersusReportSequence_ConfirmDialog as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <VersusReportSequence_ConfirmDialog as ::unity2::ClassIdentity>::NAME,
-                        "CreateBind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        decide_callback: crate::system::action::Action,
-        cancel_callback: crate::system::action::Action,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            crate::system::action::Action,
-            crate::system::action::Action,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
-        inner(super_, decide_callback, cancel_callback, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_b_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VersusReportSequence_ConfirmDialog as ::unity2::ClassIdentity>::class(),
-                "BCall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <VersusReportSequence_ConfirmDialog as ::unity2::ClassIdentity>::NAME,
-                        "BCall",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn b_call(
-        this: VersusReportSequence_ConfirmDialog,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(VersusReportSequence_ConfirmDialog, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
-            ::core::mem::transmute(__lookup_b_call::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: action :: Action as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo , action : crate :: system :: action :: Action , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo , crate :: system :: action :: Action , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , action , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_a_call { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo as :: unity2 :: ClassIdentity > :: class () , "ACall" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo as :: unity2 :: ClassIdentity > :: NAME , "ACall" , e) , } } } pub unsafe fn a_call (this : VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result { let inner : extern "C" fn (VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute (__lookup_a_call :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-versusreportsequence")]
-impl VersusReportSequence_ConfirmDialog {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::system::action::Action, crate::system::action::Action)` overload"]
-    pub fn create_bind(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        decide_callback: impl ::core::convert::Into<crate::system::action::Action>,
-        cancel_callback: impl ::core::convert::Into<crate::system::action::Action>,
-    ) -> () {
-        unsafe {
-            __VersusReportSequence_ConfirmDialog_unity2_raw::create_bind(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(decide_callback),
-                ::core::convert::Into::into(cancel_callback),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+pub trait IVersusReportSequence_ConfirmDialog_ConfirmDialogItemNoMethods : IVersusReportSequence_ConfirmDialog_ConfirmDialogItemNo { # [doc = "`.ctor(crate::system::action::Action)` overload"] fn ctor (self , action : impl :: core :: convert :: Into < crate :: system :: action :: Action >) -> () { unsafe { let __receiver = < VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (action) , :: core :: option :: Option :: None) } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo_unity2_raw :: a_call (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-versusreportsequence")]
-pub trait IVersusReportSequence_ConfirmDialogMethods: IVersusReportSequence_ConfirmDialog {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::system::action::Action)` overload"]
-    fn ctor(
-        self,
-        menu_item_list: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>>,
-        cancel_callback: impl ::core::convert::Into<crate::system::action::Action>,
-    ) -> () {
-        unsafe {
-            let __receiver = <VersusReportSequence_ConfirmDialog as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VersusReportSequence_ConfirmDialog_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(menu_item_list),
-                ::core::convert::Into::into(cancel_callback),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`BCall()` overload"]
-    fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = <VersusReportSequence_ConfirmDialog as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VersusReportSequence_ConfirmDialog_unity2_raw::b_call(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+impl < __T : IVersusReportSequence_ConfirmDialog_ConfirmDialogItemNo > IVersusReportSequence_ConfirmDialog_ConfirmDialogItemNoMethods for __T { }
 
 #[cfg(feature = "app-versusreportsequence")]
-impl<__T: IVersusReportSequence_ConfirmDialog> IVersusReportSequence_ConfirmDialogMethods for __T {}
-
-#[cfg(feature = "app-versusreportsequence")]
-impl VersusReportSequence_ConfirmDialog {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::system::action::Action)` — overload selector"]
-    pub fn new(
-        menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
-        cancel_callback: crate::system::action::Action,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(VersusReportSequence_ConfirmDialog),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IVersusReportSequence_ConfirmDialogMethods>::ctor(this, menu_item_list, cancel_callback);
-        this
-    }
-}
-
-#[cfg(feature = "app-versusreportsequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::system::action::Action as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes,
-        text: ::unity2::Il2CppString,
-        action: crate::system::action::Action,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes,
-            ::unity2::Il2CppString,
-            crate::system::action::Action,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, text, action, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_a_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes as ::unity2::ClassIdentity>::class(),
-                "ACall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes as ::unity2::ClassIdentity>::NAME,
-                        "ACall",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn a_call(
-        this: VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-versusreportsequence")]
-pub trait IVersusReportSequence_ConfirmDialog_ConfirmDialogItemYesMethods: IVersusReportSequence_ConfirmDialog_ConfirmDialogItemYes {
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::system::action::Action)` overload"]
-    fn ctor(self, text: impl ::core::convert::Into<::unity2::Il2CppString>, action: impl ::core::convert::Into<crate::system::action::Action>) -> () {
-        unsafe {
-            let __receiver = <VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(text),
-                ::core::convert::Into::into(action),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ACall()` overload"]
-    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = <VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes_unity2_raw::a_call(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-versusreportsequence")]
-impl<__T: IVersusReportSequence_ConfirmDialog_ConfirmDialogItemYes> IVersusReportSequence_ConfirmDialog_ConfirmDialogItemYesMethods for __T {}
-
-#[cfg(feature = "app-versusreportsequence")]
-impl VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes {
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::system::action::Action)` — overload selector"]
-    pub fn new(text: ::unity2::Il2CppString, action: crate::system::action::Action) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IVersusReportSequence_ConfirmDialog_ConfirmDialogItemYesMethods>::ctor(this, text, action);
-        this
-    }
-}
-
-#[cfg(feature = "app-versusreportsequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __VersusReportSequence_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_load_resources {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VersusReportSequence as ::unity2::ClassIdentity>::class(),
-                "LoadResources",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <VersusReportSequence as ::unity2::ClassIdentity>::NAME,
-                        "LoadResources",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn load_resources(this: VersusReportSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(VersusReportSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_load_resources::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_loading_resources {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VersusReportSequence as ::unity2::ClassIdentity>::class(),
-                "IsLoadingResources",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <VersusReportSequence as ::unity2::ClassIdentity>::NAME,
-                        "IsLoadingResources",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_loading_resources(this: VersusReportSequence, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(VersusReportSequence, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_loading_resources::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_unload_resources {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VersusReportSequence as ::unity2::ClassIdentity>::class(),
-                "UnloadResources",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <VersusReportSequence as ::unity2::ClassIdentity>::NAME,
-                        "UnloadResources",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn unload_resources(this: VersusReportSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(VersusReportSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_unload_resources::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_start {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VersusReportSequence as ::unity2::ClassIdentity>::class(),
-                "Start",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <VersusReportSequence as ::unity2::ClassIdentity>::NAME,
-                        "Start",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn start(this: VersusReportSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(VersusReportSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_start::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_notice {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VersusReportSequence as ::unity2::ClassIdentity>::class(),
-                "Notice",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <VersusReportSequence as ::unity2::ClassIdentity>::NAME,
-                        "Notice",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn notice(this: VersusReportSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(VersusReportSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_notice::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_content {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VersusReportSequence as ::unity2::ClassIdentity>::class(),
-                "CreateContent",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <VersusReportSequence as ::unity2::ClassIdentity>::NAME,
-                        "CreateContent",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_content(this: VersusReportSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(VersusReportSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_create_content::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_open_menu {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VersusReportSequence as ::unity2::ClassIdentity>::class(),
-                "OpenMenu",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <VersusReportSequence as ::unity2::ClassIdentity>::NAME,
-                        "OpenMenu",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn open_menu(this: VersusReportSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(VersusReportSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_open_menu::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_input_keyboard {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VersusReportSequence as ::unity2::ClassIdentity>::class(),
-                "InputKeyboard",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <VersusReportSequence as ::unity2::ClassIdentity>::NAME,
-                        "InputKeyboard",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn input_keyboard(this: VersusReportSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(VersusReportSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_input_keyboard::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_check_reason {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VersusReportSequence as ::unity2::ClassIdentity>::class(),
-                "CheckReason",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <VersusReportSequence as ::unity2::ClassIdentity>::NAME,
-                        "CheckReason",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn check_reason(this: VersusReportSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(VersusReportSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_check_reason::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_open_confirm_dialog {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VersusReportSequence as ::unity2::ClassIdentity>::class(),
-                "OpenConfirmDialog",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <VersusReportSequence as ::unity2::ClassIdentity>::NAME,
-                        "OpenConfirmDialog",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn open_confirm_dialog(this: VersusReportSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(VersusReportSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_open_confirm_dialog::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_report {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VersusReportSequence as ::unity2::ClassIdentity>::class(),
-                "Report",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <VersusReportSequence as ::unity2::ClassIdentity>::NAME,
-                        "Report",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn report(this: VersusReportSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(VersusReportSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_report::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_show_dialog {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VersusReportSequence as ::unity2::ClassIdentity>::class(),
-                "ShowDialog",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <VersusReportSequence as ::unity2::ClassIdentity>::NAME,
-                        "ShowDialog",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn show_dialog(this: VersusReportSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(VersusReportSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_show_dialog::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_end {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VersusReportSequence as ::unity2::ClassIdentity>::class(),
-                "End",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <VersusReportSequence as ::unity2::ClassIdentity>::NAME,
-                        "End",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn end(this: VersusReportSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(VersusReportSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_end::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VersusReportSequence as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <VersusReportSequence as ::unity2::ClassIdentity>::NAME,
-                        "CreateBind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_bind(super_: crate::app::procinst::ProcInst, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
-        inner(super_, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_dispose {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VersusReportSequence as ::unity2::ClassIdentity>::class(),
-                "OnDispose",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <VersusReportSequence as ::unity2::ClassIdentity>::NAME,
-                        "OnDispose",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_dispose(this: VersusReportSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(VersusReportSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_dispose::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_reason {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VersusReportSequence as ::unity2::ClassIdentity>::class(),
-                "SetReason",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <VersusReportSequence as ::unity2::ClassIdentity>::NAME,
-                        "SetReason",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_reason(this: VersusReportSequence, reason: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(VersusReportSequence, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_reason::get_method_info().method_ptr);
-        inner(this, reason, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VersusReportSequence as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <VersusReportSequence as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: VersusReportSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(VersusReportSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-versusreportsequence")]
-impl VersusReportSequence {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
-    pub fn create_bind(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
-        unsafe { __VersusReportSequence_unity2_raw::create_bind(::core::convert::Into::into(super_), ::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-versusreportsequence")]
-pub trait IVersusReportSequenceMethods: IVersusReportSequence {
-    #[doc = "`LoadResources()` overload"]
-    fn load_resources(self) -> () {
-        unsafe {
-            let __receiver =
-                <VersusReportSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __VersusReportSequence_unity2_raw::load_resources(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsLoadingResources()` overload"]
-    fn is_loading_resources(self) -> bool {
-        unsafe {
-            let __receiver =
-                <VersusReportSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __VersusReportSequence_unity2_raw::is_loading_resources(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`UnloadResources()` overload"]
-    fn unload_resources(self) -> () {
-        unsafe {
-            let __receiver =
-                <VersusReportSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __VersusReportSequence_unity2_raw::unload_resources(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Start()` overload"]
-    fn start(self) -> () {
-        unsafe {
-            let __receiver =
-                <VersusReportSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __VersusReportSequence_unity2_raw::start(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Notice()` overload"]
-    fn notice(self) -> () {
-        unsafe {
-            let __receiver =
-                <VersusReportSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __VersusReportSequence_unity2_raw::notice(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CreateContent()` overload"]
-    fn create_content(self) -> () {
-        unsafe {
-            let __receiver =
-                <VersusReportSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __VersusReportSequence_unity2_raw::create_content(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OpenMenu()` overload"]
-    fn open_menu(self) -> () {
-        unsafe {
-            let __receiver =
-                <VersusReportSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __VersusReportSequence_unity2_raw::open_menu(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`InputKeyboard()` overload"]
-    fn input_keyboard(self) -> () {
-        unsafe {
-            let __receiver =
-                <VersusReportSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __VersusReportSequence_unity2_raw::input_keyboard(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CheckReason()` overload"]
-    fn check_reason(self) -> () {
-        unsafe {
-            let __receiver =
-                <VersusReportSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __VersusReportSequence_unity2_raw::check_reason(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OpenConfirmDialog()` overload"]
-    fn open_confirm_dialog(self) -> () {
-        unsafe {
-            let __receiver =
-                <VersusReportSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __VersusReportSequence_unity2_raw::open_confirm_dialog(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Report()` overload"]
-    fn report(self) -> () {
-        unsafe {
-            let __receiver =
-                <VersusReportSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __VersusReportSequence_unity2_raw::report(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ShowDialog()` overload"]
-    fn show_dialog(self) -> () {
-        unsafe {
-            let __receiver =
-                <VersusReportSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __VersusReportSequence_unity2_raw::show_dialog(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`End()` overload"]
-    fn end(self) -> () {
-        unsafe {
-            let __receiver =
-                <VersusReportSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __VersusReportSequence_unity2_raw::end(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnDispose()` overload"]
-    fn on_dispose(self) -> () {
-        unsafe {
-            let __receiver =
-                <VersusReportSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __VersusReportSequence_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetReason(::unity2::Il2CppString)` overload"]
-    fn set_reason(self, reason: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver =
-                <VersusReportSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __VersusReportSequence_unity2_raw::set_reason(__receiver, ::core::convert::Into::into(reason), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <VersusReportSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __VersusReportSequence_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-versusreportsequence")]
-impl<__T: IVersusReportSequence> IVersusReportSequenceMethods for __T {}
-
-#[cfg(feature = "app-versusreportsequence")]
-impl VersusReportSequence {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(VersusReportSequence),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IVersusReportSequenceMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-versusreportsequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::action::Action as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo,
-        action: crate::system::action::Action,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo,
-            crate::system::action::Action,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, action, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_a_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo as ::unity2::ClassIdentity>::class(),
-                "ACall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo as ::unity2::ClassIdentity>::NAME,
-                        "ACall",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn a_call(
-        this: VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-versusreportsequence")]
-pub trait IVersusReportSequence_ConfirmDialog_ConfirmDialogItemNoMethods: IVersusReportSequence_ConfirmDialog_ConfirmDialogItemNo {
-    #[doc = "`.ctor(crate::system::action::Action)` overload"]
-    fn ctor(self, action: impl ::core::convert::Into<crate::system::action::Action>) -> () {
-        unsafe {
-            let __receiver = <VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(action),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ACall()` overload"]
-    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = <VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo_unity2_raw::a_call(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-versusreportsequence")]
-impl<__T: IVersusReportSequence_ConfirmDialog_ConfirmDialogItemNo> IVersusReportSequence_ConfirmDialog_ConfirmDialogItemNoMethods for __T {}
+impl VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo_unity2_raw :: __lookup_a_call :: get_method_info () } }
 
 #[cfg(feature = "app-versusreportsequence")]
 impl VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo {
-    #[doc = "`.ctor(crate::system::action::Action)` — overload selector"]
-    pub fn new(action: crate::system::action::Action) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IVersusReportSequence_ConfirmDialog_ConfirmDialogItemNoMethods>::ctor(this, action);
-        this
-    }
+# [doc = "`.ctor(crate::system::action::Action)` — overload selector"] pub fn new (action : crate :: system :: action :: Action) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo) , :: core :: stringify ! (new) ,)) ; < Self as IVersusReportSequence_ConfirmDialog_ConfirmDialogItemNoMethods > :: ctor (this , action) ; this }
+}
+
+#[cfg(feature = "app-versusreportsequence")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: system :: action :: Action as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes , text : :: unity2 :: Il2CppString , action : crate :: system :: action :: Action , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes , :: unity2 :: Il2CppString , crate :: system :: action :: Action , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , text , action , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_a_call { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes as :: unity2 :: ClassIdentity > :: class () , "ACall" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes as :: unity2 :: ClassIdentity > :: NAME , "ACall" , e) , } } } pub unsafe fn a_call (this : VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result { let inner : extern "C" fn (VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute (__lookup_a_call :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-versusreportsequence")]
+pub trait IVersusReportSequence_ConfirmDialog_ConfirmDialogItemYesMethods : IVersusReportSequence_ConfirmDialog_ConfirmDialogItemYes { # [doc = "`.ctor(::unity2::Il2CppString, crate::system::action::Action)` overload"] fn ctor (self , text : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , action : impl :: core :: convert :: Into < crate :: system :: action :: Action >) -> () { unsafe { let __receiver = < VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (text) , :: core :: convert :: Into :: into (action) , :: core :: option :: Option :: None) } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes_unity2_raw :: a_call (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-versusreportsequence")]
+impl < __T : IVersusReportSequence_ConfirmDialog_ConfirmDialogItemYes > IVersusReportSequence_ConfirmDialog_ConfirmDialogItemYesMethods for __T { }
+
+#[cfg(feature = "app-versusreportsequence")]
+impl VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes_unity2_raw :: __lookup_a_call :: get_method_info () } }
+
+#[cfg(feature = "app-versusreportsequence")]
+impl VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes {
+# [doc = "`.ctor(::unity2::Il2CppString, crate::system::action::Action)` — overload selector"] pub fn new (text : :: unity2 :: Il2CppString , action : crate :: system :: action :: Action) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes) , :: core :: stringify ! (new) ,)) ; < Self as IVersusReportSequence_ConfirmDialog_ConfirmDialogItemYesMethods > :: ctor (this , text , action) ; this }
+}
+
+#[cfg(feature = "app-versusreportsequence")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __VersusReportSequence_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_load_resources { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< VersusReportSequence as :: unity2 :: ClassIdentity > :: class () , "LoadResources" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < VersusReportSequence as :: unity2 :: ClassIdentity > :: NAME , "LoadResources" , e) , } } } pub unsafe fn load_resources (this : VersusReportSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (VersusReportSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_load_resources :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_loading_resources { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< VersusReportSequence as :: unity2 :: ClassIdentity > :: class () , "IsLoadingResources" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < VersusReportSequence as :: unity2 :: ClassIdentity > :: NAME , "IsLoadingResources" , e) , } } } pub unsafe fn is_loading_resources (this : VersusReportSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (VersusReportSequence , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_loading_resources :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_unload_resources { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< VersusReportSequence as :: unity2 :: ClassIdentity > :: class () , "UnloadResources" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < VersusReportSequence as :: unity2 :: ClassIdentity > :: NAME , "UnloadResources" , e) , } } } pub unsafe fn unload_resources (this : VersusReportSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (VersusReportSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_unload_resources :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_start { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< VersusReportSequence as :: unity2 :: ClassIdentity > :: class () , "Start" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < VersusReportSequence as :: unity2 :: ClassIdentity > :: NAME , "Start" , e) , } } } pub unsafe fn start (this : VersusReportSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (VersusReportSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_start :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_notice { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< VersusReportSequence as :: unity2 :: ClassIdentity > :: class () , "Notice" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < VersusReportSequence as :: unity2 :: ClassIdentity > :: NAME , "Notice" , e) , } } } pub unsafe fn notice (this : VersusReportSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (VersusReportSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_notice :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_content { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< VersusReportSequence as :: unity2 :: ClassIdentity > :: class () , "CreateContent" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < VersusReportSequence as :: unity2 :: ClassIdentity > :: NAME , "CreateContent" , e) , } } } pub unsafe fn create_content (this : VersusReportSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (VersusReportSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create_content :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_open_menu { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< VersusReportSequence as :: unity2 :: ClassIdentity > :: class () , "OpenMenu" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < VersusReportSequence as :: unity2 :: ClassIdentity > :: NAME , "OpenMenu" , e) , } } } pub unsafe fn open_menu (this : VersusReportSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (VersusReportSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_open_menu :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_input_keyboard { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< VersusReportSequence as :: unity2 :: ClassIdentity > :: class () , "InputKeyboard" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < VersusReportSequence as :: unity2 :: ClassIdentity > :: NAME , "InputKeyboard" , e) , } } } pub unsafe fn input_keyboard (this : VersusReportSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (VersusReportSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_input_keyboard :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_check_reason { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< VersusReportSequence as :: unity2 :: ClassIdentity > :: class () , "CheckReason" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < VersusReportSequence as :: unity2 :: ClassIdentity > :: NAME , "CheckReason" , e) , } } } pub unsafe fn check_reason (this : VersusReportSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (VersusReportSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_check_reason :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_open_confirm_dialog { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< VersusReportSequence as :: unity2 :: ClassIdentity > :: class () , "OpenConfirmDialog" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < VersusReportSequence as :: unity2 :: ClassIdentity > :: NAME , "OpenConfirmDialog" , e) , } } } pub unsafe fn open_confirm_dialog (this : VersusReportSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (VersusReportSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_open_confirm_dialog :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_report { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< VersusReportSequence as :: unity2 :: ClassIdentity > :: class () , "Report" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < VersusReportSequence as :: unity2 :: ClassIdentity > :: NAME , "Report" , e) , } } } pub unsafe fn report (this : VersusReportSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (VersusReportSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_report :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_show_dialog { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< VersusReportSequence as :: unity2 :: ClassIdentity > :: class () , "ShowDialog" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < VersusReportSequence as :: unity2 :: ClassIdentity > :: NAME , "ShowDialog" , e) , } } } pub unsafe fn show_dialog (this : VersusReportSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (VersusReportSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_show_dialog :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_end { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< VersusReportSequence as :: unity2 :: ClassIdentity > :: class () , "End" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < VersusReportSequence as :: unity2 :: ClassIdentity > :: NAME , "End" , e) , } } } pub unsafe fn end (this : VersusReportSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (VersusReportSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_end :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_bind { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< VersusReportSequence as :: unity2 :: ClassIdentity > :: class () , "CreateBind" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < VersusReportSequence as :: unity2 :: ClassIdentity > :: NAME , "CreateBind" , e) , } } } pub unsafe fn create_bind (super_ : crate :: app :: procinst :: ProcInst , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create_bind :: get_method_info () . method_ptr ,) ; inner (super_ , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_dispose { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< VersusReportSequence as :: unity2 :: ClassIdentity > :: class () , "OnDispose" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < VersusReportSequence as :: unity2 :: ClassIdentity > :: NAME , "OnDispose" , e) , } } } pub unsafe fn on_dispose (this : VersusReportSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (VersusReportSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_dispose :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_reason { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< VersusReportSequence as :: unity2 :: ClassIdentity > :: class () , "SetReason" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < VersusReportSequence as :: unity2 :: ClassIdentity > :: NAME , "SetReason" , e) , } } } pub unsafe fn set_reason (this : VersusReportSequence , reason : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (VersusReportSequence , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_reason :: get_method_info () . method_ptr ,) ; inner (this , reason , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< VersusReportSequence as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < VersusReportSequence as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : VersusReportSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (VersusReportSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-versusreportsequence")]
+impl VersusReportSequence { # [doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { __VersusReportSequence_unity2_raw :: create_bind (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-versusreportsequence")]
+pub trait IVersusReportSequenceMethods : IVersusReportSequence { # [doc = "`LoadResources()` overload"] fn load_resources (self ,) -> () { unsafe { let __receiver = < VersusReportSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __VersusReportSequence_unity2_raw :: load_resources (__receiver , :: core :: option :: Option :: None) } } # [doc = "`IsLoadingResources()` overload"] fn is_loading_resources (self ,) -> bool { unsafe { let __receiver = < VersusReportSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __VersusReportSequence_unity2_raw :: is_loading_resources (__receiver , :: core :: option :: Option :: None) } } # [doc = "`UnloadResources()` overload"] fn unload_resources (self ,) -> () { unsafe { let __receiver = < VersusReportSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __VersusReportSequence_unity2_raw :: unload_resources (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < VersusReportSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __VersusReportSequence_unity2_raw :: start (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Notice()` overload"] fn notice (self ,) -> () { unsafe { let __receiver = < VersusReportSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __VersusReportSequence_unity2_raw :: notice (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CreateContent()` overload"] fn create_content (self ,) -> () { unsafe { let __receiver = < VersusReportSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __VersusReportSequence_unity2_raw :: create_content (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OpenMenu()` overload"] fn open_menu (self ,) -> () { unsafe { let __receiver = < VersusReportSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __VersusReportSequence_unity2_raw :: open_menu (__receiver , :: core :: option :: Option :: None) } } # [doc = "`InputKeyboard()` overload"] fn input_keyboard (self ,) -> () { unsafe { let __receiver = < VersusReportSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __VersusReportSequence_unity2_raw :: input_keyboard (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CheckReason()` overload"] fn check_reason (self ,) -> () { unsafe { let __receiver = < VersusReportSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __VersusReportSequence_unity2_raw :: check_reason (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OpenConfirmDialog()` overload"] fn open_confirm_dialog (self ,) -> () { unsafe { let __receiver = < VersusReportSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __VersusReportSequence_unity2_raw :: open_confirm_dialog (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Report()` overload"] fn report (self ,) -> () { unsafe { let __receiver = < VersusReportSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __VersusReportSequence_unity2_raw :: report (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ShowDialog()` overload"] fn show_dialog (self ,) -> () { unsafe { let __receiver = < VersusReportSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __VersusReportSequence_unity2_raw :: show_dialog (__receiver , :: core :: option :: Option :: None) } } # [doc = "`End()` overload"] fn end (self ,) -> () { unsafe { let __receiver = < VersusReportSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __VersusReportSequence_unity2_raw :: end (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnDispose()` overload"] fn on_dispose (self ,) -> () { unsafe { let __receiver = < VersusReportSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __VersusReportSequence_unity2_raw :: on_dispose (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetReason(::unity2::Il2CppString)` overload"] fn set_reason (self , reason : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < VersusReportSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __VersusReportSequence_unity2_raw :: set_reason (__receiver , :: core :: convert :: Into :: into (reason) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < VersusReportSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __VersusReportSequence_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-versusreportsequence")]
+impl < __T : IVersusReportSequence > IVersusReportSequenceMethods for __T { }
+
+#[cfg(feature = "app-versusreportsequence")]
+impl VersusReportSequence { pub fn load_resources_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __VersusReportSequence_unity2_raw :: __lookup_load_resources :: get_method_info () } pub fn is_loading_resources_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __VersusReportSequence_unity2_raw :: __lookup_is_loading_resources :: get_method_info () } pub fn unload_resources_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __VersusReportSequence_unity2_raw :: __lookup_unload_resources :: get_method_info () } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __VersusReportSequence_unity2_raw :: __lookup_start :: get_method_info () } pub fn notice_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __VersusReportSequence_unity2_raw :: __lookup_notice :: get_method_info () } pub fn create_content_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __VersusReportSequence_unity2_raw :: __lookup_create_content :: get_method_info () } pub fn open_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __VersusReportSequence_unity2_raw :: __lookup_open_menu :: get_method_info () } pub fn input_keyboard_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __VersusReportSequence_unity2_raw :: __lookup_input_keyboard :: get_method_info () } pub fn check_reason_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __VersusReportSequence_unity2_raw :: __lookup_check_reason :: get_method_info () } pub fn open_confirm_dialog_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __VersusReportSequence_unity2_raw :: __lookup_open_confirm_dialog :: get_method_info () } pub fn report_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __VersusReportSequence_unity2_raw :: __lookup_report :: get_method_info () } pub fn show_dialog_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __VersusReportSequence_unity2_raw :: __lookup_show_dialog :: get_method_info () } pub fn end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __VersusReportSequence_unity2_raw :: __lookup_end :: get_method_info () } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __VersusReportSequence_unity2_raw :: __lookup_create_bind :: get_method_info () } pub fn on_dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __VersusReportSequence_unity2_raw :: __lookup_on_dispose :: get_method_info () } pub fn set_reason_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __VersusReportSequence_unity2_raw :: __lookup_set_reason :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __VersusReportSequence_unity2_raw :: __lookup_ctor :: get_method_info () } }
+
+#[cfg(feature = "app-versusreportsequence")]
+impl VersusReportSequence {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (VersusReportSequence) , :: core :: stringify ! (new) ,)) ; < Self as IVersusReportSequenceMethods > :: ctor (this ,) ; this }
+}
+
+#[cfg(feature = "app-versusreportsequence")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __VersusReportSequence_ConfirmDialog_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > as :: unity2 :: IlType > :: il_type () , < crate :: system :: action :: Action as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< VersusReportSequence_ConfirmDialog as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < VersusReportSequence_ConfirmDialog as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : VersusReportSequence_ConfirmDialog , menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , cancel_callback : crate :: system :: action :: Action , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (VersusReportSequence_ConfirmDialog , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , crate :: system :: action :: Action , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , menu_item_list , cancel_callback , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_bind { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: system :: action :: Action as :: unity2 :: IlType > :: il_type () , < crate :: system :: action :: Action as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< VersusReportSequence_ConfirmDialog as :: unity2 :: ClassIdentity > :: class () , "CreateBind" , 3 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < VersusReportSequence_ConfirmDialog as :: unity2 :: ClassIdentity > :: NAME , "CreateBind" , e) , } } } pub unsafe fn create_bind (super_ : crate :: app :: procinst :: ProcInst , decide_callback : crate :: system :: action :: Action , cancel_callback : crate :: system :: action :: Action , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: system :: action :: Action , crate :: system :: action :: Action , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create_bind :: get_method_info () . method_ptr ,) ; inner (super_ , decide_callback , cancel_callback , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_b_call { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< VersusReportSequence_ConfirmDialog as :: unity2 :: ClassIdentity > :: class () , "BCall" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < VersusReportSequence_ConfirmDialog as :: unity2 :: ClassIdentity > :: NAME , "BCall" , e) , } } } pub unsafe fn b_call (this : VersusReportSequence_ConfirmDialog , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result { let inner : extern "C" fn (VersusReportSequence_ConfirmDialog , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute (__lookup_b_call :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-versusreportsequence")]
+impl VersusReportSequence_ConfirmDialog { # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::system::action::Action, crate::system::action::Action)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , decide_callback : impl :: core :: convert :: Into < crate :: system :: action :: Action > , cancel_callback : impl :: core :: convert :: Into < crate :: system :: action :: Action >) -> () { unsafe { __VersusReportSequence_ConfirmDialog_unity2_raw :: create_bind (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (decide_callback) , :: core :: convert :: Into :: into (cancel_callback) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-versusreportsequence")]
+pub trait IVersusReportSequence_ConfirmDialogMethods : IVersusReportSequence_ConfirmDialog { # [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::system::action::Action)` overload"] fn ctor (self , menu_item_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > > , cancel_callback : impl :: core :: convert :: Into < crate :: system :: action :: Action >) -> () { unsafe { let __receiver = < VersusReportSequence_ConfirmDialog as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __VersusReportSequence_ConfirmDialog_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (menu_item_list) , :: core :: convert :: Into :: into (cancel_callback) , :: core :: option :: Option :: None) } } # [doc = "`BCall()` overload"] fn b_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < VersusReportSequence_ConfirmDialog as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __VersusReportSequence_ConfirmDialog_unity2_raw :: b_call (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-versusreportsequence")]
+impl < __T : IVersusReportSequence_ConfirmDialog > IVersusReportSequence_ConfirmDialogMethods for __T { }
+
+#[cfg(feature = "app-versusreportsequence")]
+impl VersusReportSequence_ConfirmDialog { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __VersusReportSequence_ConfirmDialog_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __VersusReportSequence_ConfirmDialog_unity2_raw :: __lookup_create_bind :: get_method_info () } pub fn b_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __VersusReportSequence_ConfirmDialog_unity2_raw :: __lookup_b_call :: get_method_info () } }
+
+#[cfg(feature = "app-versusreportsequence")]
+impl VersusReportSequence_ConfirmDialog {
+# [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::system::action::Action)` — overload selector"] pub fn new (menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , cancel_callback : crate :: system :: action :: Action) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (VersusReportSequence_ConfirmDialog) , :: core :: stringify ! (new) ,)) ; < Self as IVersusReportSequence_ConfirmDialogMethods > :: ctor (this , menu_item_list , cancel_callback) ; this }
 }
 
 #[cfg(feature = "app-versusreportsequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{
-        IVersusReportSequence, IVersusReportSequenceMethods, IVersusReportSequence_ConfirmDialog, IVersusReportSequence_ConfirmDialogMethods,
-        IVersusReportSequence_ConfirmDialog_ConfirmDialogItemNo, IVersusReportSequence_ConfirmDialog_ConfirmDialogItemNoMethods,
-        IVersusReportSequence_ConfirmDialog_ConfirmDialogItemYes, IVersusReportSequence_ConfirmDialog_ConfirmDialogItemYesMethods,
-        VersusReportSequence, VersusReportSequence_ConfirmDialog, VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo,
-        VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes, VersusReportSequence_Label,
-    };
-    #[cfg(feature = "app-basicdialog")]
-    pub use crate::app::basicdialog::IBasicDialogMethods;
-    #[cfg(feature = "app-basicdialogitem")]
-    pub use crate::app::basicdialogitem::IBasicDialogItemMethods;
-    #[cfg(feature = "app-basicdialogitemno")]
-    pub use crate::app::basicdialogitemno::IBasicDialogItemNoMethods;
-    #[cfg(feature = "app-basicdialogitemyes")]
-    pub use crate::app::basicdialogitemyes::IBasicDialogItemYesMethods;
-    #[cfg(feature = "app-basicmenu")]
-    pub use crate::app::basicmenu::IBasicMenuMethods;
-    #[cfg(feature = "app-basicmenuitem")]
-    pub use crate::app::basicmenuitem::IBasicMenuItemMethods;
-    #[cfg(feature = "app-procinst")]
-    pub use crate::app::procinst::IProcInstMethods;
-    #[cfg(feature = "app-yesnodialog")]
-    pub use crate::app::yesnodialog::IYesNoDialogMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::{
-        app::{
-            basicdialog::IBasicDialog, basicdialogitem::IBasicDialogItem, basicdialogitemno::IBasicDialogItemNo,
-            basicdialogitemyes::IBasicDialogItemYes, basicmenu::IBasicMenu, basicmenuitem::IBasicMenuItem, procinst::IProcInst,
-            yesnodialog::IYesNoDialog,
-        },
-        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
-    };
+    pub use super::VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo;
+    pub use super::IVersusReportSequence_ConfirmDialog_ConfirmDialogItemNo;
+    pub use super::IVersusReportSequence_ConfirmDialog_ConfirmDialogItemNoMethods;
+    pub use super::VersusReportSequence_Label;
+    pub use super::VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes;
+    pub use super::IVersusReportSequence_ConfirmDialog_ConfirmDialogItemYes;
+    pub use super::IVersusReportSequence_ConfirmDialog_ConfirmDialogItemYesMethods;
+    pub use super::VersusReportSequence;
+    pub use super::IVersusReportSequence;
+    pub use super::IVersusReportSequenceMethods;
+    pub use super::VersusReportSequence_ConfirmDialog;
+    pub use super::IVersusReportSequence_ConfirmDialog;
+    pub use super::IVersusReportSequence_ConfirmDialogMethods;
+    pub use crate::app::basicdialog::IBasicDialog;
+    pub use crate::app::basicdialogitem::IBasicDialogItem;
+    pub use crate::app::basicdialogitemno::IBasicDialogItemNo;
+    pub use crate::app::basicdialogitemyes::IBasicDialogItemYes;
+    pub use crate::app::basicmenu::IBasicMenu;
+    pub use crate::app::basicmenuitem::IBasicMenuItem;
+    pub use crate::app::procinst::IProcInst;
+    pub use crate::app::yesnodialog::IYesNoDialog;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "app-basicdialog")] pub use crate::app::basicdialog::IBasicDialogMethods;
+    #[cfg(feature = "app-basicdialogitem")] pub use crate::app::basicdialogitem::IBasicDialogItemMethods;
+    #[cfg(feature = "app-basicdialogitemno")] pub use crate::app::basicdialogitemno::IBasicDialogItemNoMethods;
+    #[cfg(feature = "app-basicdialogitemyes")] pub use crate::app::basicdialogitemyes::IBasicDialogItemYesMethods;
+    #[cfg(feature = "app-basicmenu")] pub use crate::app::basicmenu::IBasicMenuMethods;
+    #[cfg(feature = "app-basicmenuitem")] pub use crate::app::basicmenuitem::IBasicMenuItemMethods;
+    #[cfg(feature = "app-procinst")] pub use crate::app::procinst::IProcInstMethods;
+    #[cfg(feature = "app-yesnodialog")] pub use crate::app::yesnodialog::IYesNoDialogMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

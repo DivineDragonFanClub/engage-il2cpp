@@ -2,177 +2,39 @@
 
 #[cfg(feature = "moon_sharp-interpreter-moonsharpmoduleconstantattribute-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/moonsharpmoduleconstantattribute/MoonSharpModuleConstantAttribute.md"))]
-    #[::unity2::class(namespace = "MoonSharp.Interpreter", name = "MoonSharpModuleConstantAttribute")]
-    pub struct MoonSharpModuleConstantAttribute {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/moonsharpmoduleconstantattribute/MoonSharpModuleConstantAttribute.md"))] # [:: unity2 :: class (namespace = "MoonSharp.Interpreter" , name = "MoonSharpModuleConstantAttribute")] pub struct MoonSharpModuleConstantAttribute {}
+
 }
 
 #[cfg(feature = "moon_sharp-interpreter-moonsharpmoduleconstantattribute-types")]
 pub use __types::*;
 
 #[cfg(feature = "moon_sharp-interpreter-moonsharpmoduleconstantattribute")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MoonSharpModuleConstantAttribute_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MoonSharpModuleConstantAttribute as ::unity2::ClassIdentity>::class(),
-                "get_Name",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MoonSharpModuleConstantAttribute as ::unity2::ClassIdentity>::NAME,
-                        "get_Name",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_name(this: MoonSharpModuleConstantAttribute, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(MoonSharpModuleConstantAttribute, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MoonSharpModuleConstantAttribute as ::unity2::ClassIdentity>::class(),
-                "set_Name",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MoonSharpModuleConstantAttribute as ::unity2::ClassIdentity>::NAME,
-                        "set_Name",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_name(
-        this: MoonSharpModuleConstantAttribute,
-        value: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MoonSharpModuleConstantAttribute, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_name::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MoonSharpModuleConstantAttribute as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MoonSharpModuleConstantAttribute as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: MoonSharpModuleConstantAttribute, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MoonSharpModuleConstantAttribute, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MoonSharpModuleConstantAttribute_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MoonSharpModuleConstantAttribute as :: unity2 :: ClassIdentity > :: class () , "get_Name" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MoonSharpModuleConstantAttribute as :: unity2 :: ClassIdentity > :: NAME , "get_Name" , e) , } } } pub unsafe fn get_name (this : MoonSharpModuleConstantAttribute , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (MoonSharpModuleConstantAttribute , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_name :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MoonSharpModuleConstantAttribute as :: unity2 :: ClassIdentity > :: class () , "set_Name" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MoonSharpModuleConstantAttribute as :: unity2 :: ClassIdentity > :: NAME , "set_Name" , e) , } } } pub unsafe fn set_name (this : MoonSharpModuleConstantAttribute , value : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MoonSharpModuleConstantAttribute , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_name :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MoonSharpModuleConstantAttribute as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MoonSharpModuleConstantAttribute as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : MoonSharpModuleConstantAttribute , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MoonSharpModuleConstantAttribute , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "moon_sharp-interpreter-moonsharpmoduleconstantattribute")]
-pub trait IMoonSharpModuleConstantAttributeMethods: IMoonSharpModuleConstantAttribute {
-    #[doc = "`get_Name()` overload"]
-    fn get_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver =
-                <MoonSharpModuleConstantAttribute as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MoonSharpModuleConstantAttribute_unity2_raw::get_name(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_Name(::unity2::Il2CppString)` overload"]
-    fn set_name(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver =
-                <MoonSharpModuleConstantAttribute as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MoonSharpModuleConstantAttribute_unity2_raw::set_name(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <MoonSharpModuleConstantAttribute as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MoonSharpModuleConstantAttribute_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IMoonSharpModuleConstantAttributeMethods : IMoonSharpModuleConstantAttribute { # [doc = "`get_Name()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MoonSharpModuleConstantAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MoonSharpModuleConstantAttribute_unity2_raw :: get_name (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_Name(::unity2::Il2CppString)` overload"] fn set_name (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < MoonSharpModuleConstantAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MoonSharpModuleConstantAttribute_unity2_raw :: set_name (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MoonSharpModuleConstantAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MoonSharpModuleConstantAttribute_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "moon_sharp-interpreter-moonsharpmoduleconstantattribute")]
-impl<__T: IMoonSharpModuleConstantAttribute> IMoonSharpModuleConstantAttributeMethods for __T {}
+impl < __T : IMoonSharpModuleConstantAttribute > IMoonSharpModuleConstantAttributeMethods for __T { }
+
+#[cfg(feature = "moon_sharp-interpreter-moonsharpmoduleconstantattribute")]
+impl MoonSharpModuleConstantAttribute { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MoonSharpModuleConstantAttribute_unity2_raw :: __lookup_get_name :: get_method_info () } pub fn set_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MoonSharpModuleConstantAttribute_unity2_raw :: __lookup_set_name :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MoonSharpModuleConstantAttribute_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "moon_sharp-interpreter-moonsharpmoduleconstantattribute")]
 impl MoonSharpModuleConstantAttribute {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MoonSharpModuleConstantAttribute),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMoonSharpModuleConstantAttributeMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MoonSharpModuleConstantAttribute) , :: core :: stringify ! (new) ,)) ; < Self as IMoonSharpModuleConstantAttributeMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "moon_sharp-interpreter-moonsharpmoduleconstantattribute")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IMoonSharpModuleConstantAttribute, IMoonSharpModuleConstantAttributeMethods, MoonSharpModuleConstantAttribute};
+    pub use super::MoonSharpModuleConstantAttribute;
+    pub use super::IMoonSharpModuleConstantAttribute;
+    pub use super::IMoonSharpModuleConstantAttributeMethods;
 }

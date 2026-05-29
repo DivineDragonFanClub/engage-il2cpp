@@ -2,369 +2,58 @@
 
 #[cfg(feature = "unity_engine-rendering-universal-custom-internal-customspecialreflectionpass-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::rendering::universal::scriptablerenderpass::{IScriptableRenderPass, ScriptableRenderPass},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/custom/internal/customspecialreflectionpass/CustomSpecialReflectionPass.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Rendering.Universal.Custom.Internal", name = "CustomSpecialReflectionPass")]
-    #[parent(crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass)]
-    pub struct CustomSpecialReflectionPass {
-        #[offset(112)]
-        #[rename(name = "m_FilteringSettings")]
-        pub m_filtering_settings: crate::unity_engine::rendering::filteringsettings::FilteringSettings,
-        #[offset(136)]
-        #[rename(name = "m_ShaderTagId")]
-        pub m_shader_tag_id: crate::unity_engine::rendering::shadertagid::ShaderTagId,
-        #[offset(144)]
-        #[rename(name = "m_ProfilingSampler")]
-        pub m_profiling_sampler: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
-        #[static_field]
-        #[rename(name = "s_DrawObjectPassDataPropID")]
-        pub s_draw_object_pass_data_prop_id: i32,
-        #[offset(152)]
-        #[rename(name = "m_CustomViewport")]
-        pub m_custom_viewport: bool,
-        #[offset(156)]
-        #[rename(name = "m_CustomViewportRect")]
-        pub m_custom_viewport_rect: crate::unity_engine::rect::Rect,
-        #[offset(172)]
-        #[rename(name = "m_OriginalViewportRect")]
-        pub m_original_viewport_rect: crate::unity_engine::rect::Rect,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: rendering :: universal :: scriptablerenderpass :: { IScriptableRenderPass , ScriptableRenderPass }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/custom/internal/customspecialreflectionpass/CustomSpecialReflectionPass.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.Universal.Custom.Internal" , name = "CustomSpecialReflectionPass")] # [parent (crate :: unity_engine :: rendering :: universal :: scriptablerenderpass :: ScriptableRenderPass)] pub struct CustomSpecialReflectionPass {
+# [offset (112)] # [rename (name = "m_FilteringSettings")] pub m_filtering_settings : crate :: unity_engine :: rendering :: filteringsettings :: FilteringSettings ,
+# [offset (136)] # [rename (name = "m_ShaderTagId")] pub m_shader_tag_id : crate :: unity_engine :: rendering :: shadertagid :: ShaderTagId ,
+# [offset (144)] # [rename (name = "m_ProfilingSampler")] pub m_profiling_sampler : crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler ,
+# [static_field] # [rename (name = "s_DrawObjectPassDataPropID")] pub s_draw_object_pass_data_prop_id : i32 ,
+# [offset (152)] # [rename (name = "m_CustomViewport")] pub m_custom_viewport : bool ,
+# [offset (156)] # [rename (name = "m_CustomViewportRect")] pub m_custom_viewport_rect : crate :: unity_engine :: rect :: Rect ,
+# [offset (172)] # [rename (name = "m_OriginalViewportRect")] pub m_original_viewport_rect : crate :: unity_engine :: rect :: Rect ,
+}
+
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-custom-internal-customspecialreflectionpass-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-universal-custom-internal-customspecialreflectionpass")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __CustomSpecialReflectionPass_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::rendering::renderqueuerange::RenderQueueRange as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::layermask::LayerMask as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CustomSpecialReflectionPass as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                4,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CustomSpecialReflectionPass as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: CustomSpecialReflectionPass,
-        profiler_tag: ::unity2::Il2CppString,
-        evt: crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent,
-        render_queue_range: crate::unity_engine::rendering::renderqueuerange::RenderQueueRange,
-        layer_mask: crate::unity_engine::layermask::LayerMask,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            CustomSpecialReflectionPass,
-            ::unity2::Il2CppString,
-            crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent,
-            crate::unity_engine::rendering::renderqueuerange::RenderQueueRange,
-            crate::unity_engine::layermask::LayerMask,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, profiler_tag, evt, render_queue_range, layer_mask, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_enable_custom_viewport {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <f32 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CustomSpecialReflectionPass as ::unity2::ClassIdentity>::class(),
-                "EnableCustomViewport",
-                4,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CustomSpecialReflectionPass as ::unity2::ClassIdentity>::NAME,
-                        "EnableCustomViewport",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn enable_custom_viewport(
-        this: CustomSpecialReflectionPass,
-        original_w: f32,
-        original_h: f32,
-        custom_w: f32,
-        custom_h: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(CustomSpecialReflectionPass, f32, f32, f32, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_enable_custom_viewport::get_method_info().method_ptr);
-        inner(this, original_w, original_h, custom_w, custom_h, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_disable_custom_viewport {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CustomSpecialReflectionPass as ::unity2::ClassIdentity>::class(),
-                "DisableCustomViewport",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CustomSpecialReflectionPass as ::unity2::ClassIdentity>::NAME,
-                        "DisableCustomViewport",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn disable_custom_viewport(this: CustomSpecialReflectionPass, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CustomSpecialReflectionPass, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_disable_custom_viewport::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_execute {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::rendering::universal::renderingdata::RenderingData as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CustomSpecialReflectionPass as ::unity2::ClassIdentity>::class(),
-                "Execute",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CustomSpecialReflectionPass as ::unity2::ClassIdentity>::NAME,
-                        "Execute",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn execute(
-        this: CustomSpecialReflectionPass,
-        context: crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
-        rendering_data: *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            CustomSpecialReflectionPass,
-            crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
-            *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_execute::get_method_info().method_ptr);
-        inner(this, context, rendering_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CustomSpecialReflectionPass as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CustomSpecialReflectionPass as ::unity2::ClassIdentity>::NAME,
-                        ".cctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __CustomSpecialReflectionPass_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: renderpassevent :: RenderPassEvent as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: renderqueuerange :: RenderQueueRange as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: layermask :: LayerMask as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CustomSpecialReflectionPass as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 4 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CustomSpecialReflectionPass as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : CustomSpecialReflectionPass , profiler_tag : :: unity2 :: Il2CppString , evt : crate :: unity_engine :: rendering :: universal :: renderpassevent :: RenderPassEvent , render_queue_range : crate :: unity_engine :: rendering :: renderqueuerange :: RenderQueueRange , layer_mask : crate :: unity_engine :: layermask :: LayerMask , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CustomSpecialReflectionPass , :: unity2 :: Il2CppString , crate :: unity_engine :: rendering :: universal :: renderpassevent :: RenderPassEvent , crate :: unity_engine :: rendering :: renderqueuerange :: RenderQueueRange , crate :: unity_engine :: layermask :: LayerMask , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , profiler_tag , evt , render_queue_range , layer_mask , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_enable_custom_viewport { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< f32 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CustomSpecialReflectionPass as :: unity2 :: ClassIdentity > :: class () , "EnableCustomViewport" , 4 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CustomSpecialReflectionPass as :: unity2 :: ClassIdentity > :: NAME , "EnableCustomViewport" , e) , } } } pub unsafe fn enable_custom_viewport (this : CustomSpecialReflectionPass , original_w : f32 , original_h : f32 , custom_w : f32 , custom_h : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CustomSpecialReflectionPass , f32 , f32 , f32 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_enable_custom_viewport :: get_method_info () . method_ptr ,) ; inner (this , original_w , original_h , custom_w , custom_h , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_disable_custom_viewport { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CustomSpecialReflectionPass as :: unity2 :: ClassIdentity > :: class () , "DisableCustomViewport" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CustomSpecialReflectionPass as :: unity2 :: ClassIdentity > :: NAME , "DisableCustomViewport" , e) , } } } pub unsafe fn disable_custom_viewport (this : CustomSpecialReflectionPass , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CustomSpecialReflectionPass , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_disable_custom_viewport :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_execute { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CustomSpecialReflectionPass as :: unity2 :: ClassIdentity > :: class () , "Execute" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CustomSpecialReflectionPass as :: unity2 :: ClassIdentity > :: NAME , "Execute" , e) , } } } pub unsafe fn execute (this : CustomSpecialReflectionPass , context : crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext , rendering_data : * mut crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CustomSpecialReflectionPass , crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext , * mut crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_execute :: get_method_info () . method_ptr ,) ; inner (this , context , rendering_data , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CustomSpecialReflectionPass as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CustomSpecialReflectionPass as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
+
+#[cfg(feature = "unity_engine-rendering-universal-custom-internal-customspecialreflectionpass")]
+impl CustomSpecialReflectionPass { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { __CustomSpecialReflectionPass_unity2_raw :: cctor (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-rendering-universal-custom-internal-customspecialreflectionpass")]
+pub trait ICustomSpecialReflectionPassMethods : ICustomSpecialReflectionPass { # [doc = "`.ctor(::unity2::Il2CppString, crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent, crate::unity_engine::rendering::renderqueuerange::RenderQueueRange, crate::unity_engine::layermask::LayerMask)` overload"] fn ctor (self , profiler_tag : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , evt : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: universal :: renderpassevent :: RenderPassEvent > , render_queue_range : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: renderqueuerange :: RenderQueueRange > , layer_mask : impl :: core :: convert :: Into < crate :: unity_engine :: layermask :: LayerMask >) -> () { unsafe { let __receiver = < CustomSpecialReflectionPass as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CustomSpecialReflectionPass_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (profiler_tag) , :: core :: convert :: Into :: into (evt) , :: core :: convert :: Into :: into (render_queue_range) , :: core :: convert :: Into :: into (layer_mask) , :: core :: option :: Option :: None) } } # [doc = "`EnableCustomViewport(f32, f32, f32, f32)` overload"] fn enable_custom_viewport (self , original_w : impl :: core :: convert :: Into < f32 > , original_h : impl :: core :: convert :: Into < f32 > , custom_w : impl :: core :: convert :: Into < f32 > , custom_h : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < CustomSpecialReflectionPass as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CustomSpecialReflectionPass_unity2_raw :: enable_custom_viewport (__receiver , :: core :: convert :: Into :: into (original_w) , :: core :: convert :: Into :: into (original_h) , :: core :: convert :: Into :: into (custom_w) , :: core :: convert :: Into :: into (custom_h) , :: core :: option :: Option :: None) } } # [doc = "`DisableCustomViewport()` overload"] fn disable_custom_viewport (self ,) -> () { unsafe { let __receiver = < CustomSpecialReflectionPass as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CustomSpecialReflectionPass_unity2_raw :: disable_custom_viewport (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Execute(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, *mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"] fn execute (self , context : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext >) -> crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData { unsafe { let __receiver = < CustomSpecialReflectionPass as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData > :: uninit () ; __CustomSpecialReflectionPass_unity2_raw :: execute (__receiver , :: core :: convert :: Into :: into (context) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) ; __out_0 . assume_init () } } }
+
+#[cfg(feature = "unity_engine-rendering-universal-custom-internal-customspecialreflectionpass")]
+impl < __T : ICustomSpecialReflectionPass > ICustomSpecialReflectionPassMethods for __T { }
+
+#[cfg(feature = "unity_engine-rendering-universal-custom-internal-customspecialreflectionpass")]
+impl CustomSpecialReflectionPass { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CustomSpecialReflectionPass_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn enable_custom_viewport_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CustomSpecialReflectionPass_unity2_raw :: __lookup_enable_custom_viewport :: get_method_info () } pub fn disable_custom_viewport_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CustomSpecialReflectionPass_unity2_raw :: __lookup_disable_custom_viewport :: get_method_info () } pub fn execute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CustomSpecialReflectionPass_unity2_raw :: __lookup_execute :: get_method_info () } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CustomSpecialReflectionPass_unity2_raw :: __lookup_cctor :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-rendering-universal-custom-internal-customspecialreflectionpass")]
 impl CustomSpecialReflectionPass {
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __CustomSpecialReflectionPass_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-custom-internal-customspecialreflectionpass")]
-pub trait ICustomSpecialReflectionPassMethods: ICustomSpecialReflectionPass {
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent, crate::unity_engine::rendering::renderqueuerange::RenderQueueRange, crate::unity_engine::layermask::LayerMask)` overload"]
-    fn ctor(
-        self,
-        profiler_tag: impl ::core::convert::Into<::unity2::Il2CppString>,
-        evt: impl ::core::convert::Into<crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent>,
-        render_queue_range: impl ::core::convert::Into<crate::unity_engine::rendering::renderqueuerange::RenderQueueRange>,
-        layer_mask: impl ::core::convert::Into<crate::unity_engine::layermask::LayerMask>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <CustomSpecialReflectionPass as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CustomSpecialReflectionPass_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(profiler_tag),
-                ::core::convert::Into::into(evt),
-                ::core::convert::Into::into(render_queue_range),
-                ::core::convert::Into::into(layer_mask),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`EnableCustomViewport(f32, f32, f32, f32)` overload"]
-    fn enable_custom_viewport(
-        self,
-        original_w: impl ::core::convert::Into<f32>,
-        original_h: impl ::core::convert::Into<f32>,
-        custom_w: impl ::core::convert::Into<f32>,
-        custom_h: impl ::core::convert::Into<f32>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <CustomSpecialReflectionPass as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CustomSpecialReflectionPass_unity2_raw::enable_custom_viewport(
-                __receiver,
-                ::core::convert::Into::into(original_w),
-                ::core::convert::Into::into(original_h),
-                ::core::convert::Into::into(custom_w),
-                ::core::convert::Into::into(custom_h),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`DisableCustomViewport()` overload"]
-    fn disable_custom_viewport(self) -> () {
-        unsafe {
-            let __receiver =
-                <CustomSpecialReflectionPass as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CustomSpecialReflectionPass_unity2_raw::disable_custom_viewport(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Execute(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, *mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"]
-    fn execute(
-        self,
-        context: impl ::core::convert::Into<crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext>,
-    ) -> crate::unity_engine::rendering::universal::renderingdata::RenderingData {
-        unsafe {
-            let __receiver =
-                <CustomSpecialReflectionPass as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::universal::renderingdata::RenderingData>::uninit();
-            __CustomSpecialReflectionPass_unity2_raw::execute(
-                __receiver,
-                ::core::convert::Into::into(context),
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
-            __out_0.assume_init()
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-custom-internal-customspecialreflectionpass")]
-impl<__T: ICustomSpecialReflectionPass> ICustomSpecialReflectionPassMethods for __T {}
-
-#[cfg(feature = "unity_engine-rendering-universal-custom-internal-customspecialreflectionpass")]
-impl CustomSpecialReflectionPass {
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent, crate::unity_engine::rendering::renderqueuerange::RenderQueueRange, crate::unity_engine::layermask::LayerMask)` — overload selector"]
-    pub fn new(
-        profiler_tag: ::unity2::Il2CppString,
-        evt: crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent,
-        render_queue_range: crate::unity_engine::rendering::renderqueuerange::RenderQueueRange,
-        layer_mask: crate::unity_engine::layermask::LayerMask,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(CustomSpecialReflectionPass),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ICustomSpecialReflectionPassMethods>::ctor(this, profiler_tag, evt, render_queue_range, layer_mask);
-        this
-    }
+# [doc = "`.ctor(::unity2::Il2CppString, crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent, crate::unity_engine::rendering::renderqueuerange::RenderQueueRange, crate::unity_engine::layermask::LayerMask)` — overload selector"] pub fn new (profiler_tag : :: unity2 :: Il2CppString , evt : crate :: unity_engine :: rendering :: universal :: renderpassevent :: RenderPassEvent , render_queue_range : crate :: unity_engine :: rendering :: renderqueuerange :: RenderQueueRange , layer_mask : crate :: unity_engine :: layermask :: LayerMask) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CustomSpecialReflectionPass) , :: core :: stringify ! (new) ,)) ; < Self as ICustomSpecialReflectionPassMethods > :: ctor (this , profiler_tag , evt , render_queue_range , layer_mask) ; this }
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-custom-internal-customspecialreflectionpass")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{CustomSpecialReflectionPass, ICustomSpecialReflectionPass, ICustomSpecialReflectionPassMethods};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-rendering-universal-scriptablerenderpass")]
-    pub use crate::unity_engine::rendering::universal::scriptablerenderpass::IScriptableRenderPassMethods;
-    pub use crate::{system::object::IObject, unity_engine::rendering::universal::scriptablerenderpass::IScriptableRenderPass};
+    pub use super::CustomSpecialReflectionPass;
+    pub use super::ICustomSpecialReflectionPass;
+    pub use super::ICustomSpecialReflectionPassMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::rendering::universal::scriptablerenderpass::IScriptableRenderPass;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-rendering-universal-scriptablerenderpass")] pub use crate::unity_engine::rendering::universal::scriptablerenderpass::IScriptableRenderPassMethods;
 }

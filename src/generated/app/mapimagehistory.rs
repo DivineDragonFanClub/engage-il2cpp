@@ -2,485 +2,73 @@
 
 #[cfg(feature = "app-mapimagehistory-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapimagehistory/MapImageHistory.md"))]
-    #[::unity2::class(namespace = "App", name = "MapImageHistory")]
-    #[parent(crate::system::object::Object)]
-    pub struct MapImageHistory {
-        #[offset(16)]
-        #[rename(name = "UnitMap")]
-        pub unit_map: crate::app::mapimagehistory::MapImageHistory_HeatMap,
-        #[offset(24)]
-        #[rename(name = "BattleMap")]
-        pub battle_map: crate::app::mapimagehistory::MapImageHistory_HeatMap,
-        #[offset(32)]
-        #[rename(name = "DeadMap")]
-        pub dead_map: crate::app::mapimagehistory::MapImageHistory_HeatMap,
-        #[offset(40)]
-        #[rename(name = "m_Cells")]
-        pub m_cells: ::unity2::Array<crate::app::mappos::MapPos>,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapimagehistory/MapImageHistory_HeatMap.md"))]
-    #[::unity2::class(namespace = "App", name = "MapImageHistory.HeatMap")]
-    #[parent(crate::system::object::Object)]
-    pub struct MapImageHistory_HeatMap {
-        #[offset(16)]
-        #[rename(name = "m_Maps")]
-        pub m_maps: ::unity2::Array<crate::app::mapimagecorebyte::MapImageCoreByte>,
-    }
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapimagehistory/MapImageHistory_HeatMap.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapImageHistory.HeatMap")] # [parent (crate :: system :: object :: Object)] pub struct MapImageHistory_HeatMap {
+# [offset (16)] # [rename (name = "m_Maps")] pub m_maps : :: unity2 :: Array < crate :: app :: mapimagecorebyte :: MapImageCoreByte > ,
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapimagehistory/MapImageHistory.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapImageHistory")] # [parent (crate :: system :: object :: Object)] pub struct MapImageHistory {
+# [offset (16)] # [rename (name = "UnitMap")] pub unit_map : crate :: app :: mapimagehistory :: MapImageHistory_HeatMap ,
+# [offset (24)] # [rename (name = "BattleMap")] pub battle_map : crate :: app :: mapimagehistory :: MapImageHistory_HeatMap ,
+# [offset (32)] # [rename (name = "DeadMap")] pub dead_map : crate :: app :: mapimagehistory :: MapImageHistory_HeatMap ,
+# [offset (40)] # [rename (name = "m_Cells")] pub m_cells : :: unity2 :: Array < crate :: app :: mappos :: MapPos > ,
+}
+
 }
 
 #[cfg(feature = "app-mapimagehistory-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-mapimagehistory")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapImageHistory_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_clear {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapImageHistory as ::unity2::ClassIdentity>::class(),
-                "Clear",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapImageHistory as ::unity2::ClassIdentity>::NAME,
-                        "Clear",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn clear(this: MapImageHistory, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapImageHistory, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update_phase {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapImageHistory as ::unity2::ClassIdentity>::class(),
-                "UpdatePhase",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapImageHistory as ::unity2::ClassIdentity>::NAME,
-                        "UpdatePhase",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update_phase(this: MapImageHistory, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapImageHistory, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update_phase::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_dead {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapImageHistory as ::unity2::ClassIdentity>::class(),
-                "AddDead",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapImageHistory as ::unity2::ClassIdentity>::NAME,
-                        "AddDead",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_dead(this: MapImageHistory, unit: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapImageHistory, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add_dead::get_method_info().method_ptr);
-        inner(this, unit, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_battle {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapImageHistory as ::unity2::ClassIdentity>::class(),
-                "AddBattle",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapImageHistory as ::unity2::ClassIdentity>::NAME,
-                        "AddBattle",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_battle(this: MapImageHistory, unit: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapImageHistory, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add_battle::get_method_info().method_ptr);
-        inner(this, unit, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapImageHistory as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapImageHistory as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: MapImageHistory, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapImageHistory, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MapImageHistory_HeatMap_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapImageHistory_HeatMap as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapImageHistory_HeatMap as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : MapImageHistory_HeatMap , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapImageHistory_HeatMap , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapImageHistory_HeatMap as :: unity2 :: ClassIdentity > :: class () , "Get" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapImageHistory_HeatMap as :: unity2 :: ClassIdentity > :: NAME , "Get" , e) , } } } pub unsafe fn get (this : MapImageHistory_HeatMap , index : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: mapimagecorebyte :: MapImageCoreByte { let inner : extern "C" fn (MapImageHistory_HeatMap , i32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: mapimagecorebyte :: MapImageCoreByte = :: core :: mem :: transmute (__lookup_get :: get_method_info () . method_ptr ,) ; inner (this , index , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: force :: Force_Type as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapImageHistory_HeatMap as :: unity2 :: ClassIdentity > :: class () , "Get" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapImageHistory_HeatMap as :: unity2 :: ClassIdentity > :: NAME , "Get" , e) , } } } pub unsafe fn get_2 (this : MapImageHistory_HeatMap , r#type : crate :: app :: force :: Force_Type , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: mapimagecorebyte :: MapImageCoreByte { let inner : extern "C" fn (MapImageHistory_HeatMap , crate :: app :: force :: Force_Type , :: unity2 :: OptionalMethod ,) -> crate :: app :: mapimagecorebyte :: MapImageCoreByte = :: core :: mem :: transmute (__lookup_get_2 :: get_method_info () . method_ptr ,) ; inner (this , r#type , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_clear { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapImageHistory_HeatMap as :: unity2 :: ClassIdentity > :: class () , "Clear" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapImageHistory_HeatMap as :: unity2 :: ClassIdentity > :: NAME , "Clear" , e) , } } } pub unsafe fn clear (this : MapImageHistory_HeatMap , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapImageHistory_HeatMap , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_clear :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-mapimagehistory")]
-pub trait IMapImageHistoryMethods: IMapImageHistory {
-    #[doc = "`Clear()` overload"]
-    fn clear(self) -> () {
-        unsafe {
-            let __receiver = <MapImageHistory as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapImageHistory_unity2_raw::clear(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`UpdatePhase()` overload"]
-    fn update_phase(self) -> () {
-        unsafe {
-            let __receiver = <MapImageHistory as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapImageHistory_unity2_raw::update_phase(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`AddDead(crate::app::unit::Unit)` overload"]
-    fn add_dead(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
-        unsafe {
-            let __receiver = <MapImageHistory as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapImageHistory_unity2_raw::add_dead(__receiver, ::core::convert::Into::into(unit), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`AddBattle(crate::app::unit::Unit)` overload"]
-    fn add_battle(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
-        unsafe {
-            let __receiver = <MapImageHistory as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapImageHistory_unity2_raw::add_battle(__receiver, ::core::convert::Into::into(unit), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <MapImageHistory as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapImageHistory_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IMapImageHistory_HeatMapMethods : IMapImageHistory_HeatMap { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapImageHistory_HeatMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapImageHistory_HeatMap_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Get(i32)` overload"] fn get (self , index : impl :: core :: convert :: Into < i32 >) -> crate :: app :: mapimagecorebyte :: MapImageCoreByte { unsafe { let __receiver = < MapImageHistory_HeatMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapImageHistory_HeatMap_unity2_raw :: get (__receiver , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } # [doc = "`Get(crate::app::force::Force_Type)` overload"] fn get_2 (self , r#type : impl :: core :: convert :: Into < crate :: app :: force :: Force_Type >) -> crate :: app :: mapimagecorebyte :: MapImageCoreByte { unsafe { let __receiver = < MapImageHistory_HeatMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapImageHistory_HeatMap_unity2_raw :: get_2 (__receiver , :: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } # [doc = "`Clear()` overload"] fn clear (self ,) -> () { unsafe { let __receiver = < MapImageHistory_HeatMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapImageHistory_HeatMap_unity2_raw :: clear (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-mapimagehistory")]
-impl<__T: IMapImageHistory> IMapImageHistoryMethods for __T {}
+impl < __T : IMapImageHistory_HeatMap > IMapImageHistory_HeatMapMethods for __T { }
 
 #[cfg(feature = "app-mapimagehistory")]
-impl MapImageHistory {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapImageHistory),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapImageHistoryMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-mapimagehistory")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapImageHistory_HeatMap_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapImageHistory_HeatMap as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapImageHistory_HeatMap as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: MapImageHistory_HeatMap, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapImageHistory_HeatMap, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapImageHistory_HeatMap as ::unity2::ClassIdentity>::class(),
-                "Get",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapImageHistory_HeatMap as ::unity2::ClassIdentity>::NAME,
-                        "Get",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get(
-        this: MapImageHistory_HeatMap,
-        index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::mapimagecorebyte::MapImageCoreByte {
-        let inner: extern "C" fn(MapImageHistory_HeatMap, i32, ::unity2::OptionalMethod) -> crate::app::mapimagecorebyte::MapImageCoreByte =
-            ::core::mem::transmute(__lookup_get::get_method_info().method_ptr);
-        inner(this, index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::force::Force_Type as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapImageHistory_HeatMap as ::unity2::ClassIdentity>::class(),
-                "Get",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapImageHistory_HeatMap as ::unity2::ClassIdentity>::NAME,
-                        "Get",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_2(
-        this: MapImageHistory_HeatMap,
-        r#type: crate::app::force::Force_Type,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::mapimagecorebyte::MapImageCoreByte {
-        let inner: extern "C" fn(
-            MapImageHistory_HeatMap,
-            crate::app::force::Force_Type,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::mapimagecorebyte::MapImageCoreByte = ::core::mem::transmute(__lookup_get_2::get_method_info().method_ptr);
-        inner(this, r#type, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_clear {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapImageHistory_HeatMap as ::unity2::ClassIdentity>::class(),
-                "Clear",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapImageHistory_HeatMap as ::unity2::ClassIdentity>::NAME,
-                        "Clear",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn clear(this: MapImageHistory_HeatMap, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapImageHistory_HeatMap, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-mapimagehistory")]
-pub trait IMapImageHistory_HeatMapMethods: IMapImageHistory_HeatMap {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <MapImageHistory_HeatMap as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapImageHistory_HeatMap_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Get(i32)` overload"]
-    fn get(self, index: impl ::core::convert::Into<i32>) -> crate::app::mapimagecorebyte::MapImageCoreByte {
-        unsafe {
-            let __receiver =
-                <MapImageHistory_HeatMap as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapImageHistory_HeatMap_unity2_raw::get(__receiver, ::core::convert::Into::into(index), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Get(crate::app::force::Force_Type)` overload"]
-    fn get_2(self, r#type: impl ::core::convert::Into<crate::app::force::Force_Type>) -> crate::app::mapimagecorebyte::MapImageCoreByte {
-        unsafe {
-            let __receiver =
-                <MapImageHistory_HeatMap as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapImageHistory_HeatMap_unity2_raw::get_2(__receiver, ::core::convert::Into::into(r#type), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Clear()` overload"]
-    fn clear(self) -> () {
-        unsafe {
-            let __receiver =
-                <MapImageHistory_HeatMap as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapImageHistory_HeatMap_unity2_raw::clear(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-mapimagehistory")]
-impl<__T: IMapImageHistory_HeatMap> IMapImageHistory_HeatMapMethods for __T {}
+impl MapImageHistory_HeatMap { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapImageHistory_HeatMap_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapImageHistory_HeatMap_unity2_raw :: __lookup_get :: get_method_info () } pub fn get_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapImageHistory_HeatMap_unity2_raw :: __lookup_get_2 :: get_method_info () } pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapImageHistory_HeatMap_unity2_raw :: __lookup_clear :: get_method_info () } }
 
 #[cfg(feature = "app-mapimagehistory")]
 impl MapImageHistory_HeatMap {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapImageHistory_HeatMap),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapImageHistory_HeatMapMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapImageHistory_HeatMap) , :: core :: stringify ! (new) ,)) ; < Self as IMapImageHistory_HeatMapMethods > :: ctor (this ,) ; this }
+}
+
+#[cfg(feature = "app-mapimagehistory")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MapImageHistory_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_clear { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapImageHistory as :: unity2 :: ClassIdentity > :: class () , "Clear" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapImageHistory as :: unity2 :: ClassIdentity > :: NAME , "Clear" , e) , } } } pub unsafe fn clear (this : MapImageHistory , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapImageHistory , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_clear :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update_phase { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapImageHistory as :: unity2 :: ClassIdentity > :: class () , "UpdatePhase" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapImageHistory as :: unity2 :: ClassIdentity > :: NAME , "UpdatePhase" , e) , } } } pub unsafe fn update_phase (this : MapImageHistory , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapImageHistory , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update_phase :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_dead { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapImageHistory as :: unity2 :: ClassIdentity > :: class () , "AddDead" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapImageHistory as :: unity2 :: ClassIdentity > :: NAME , "AddDead" , e) , } } } pub unsafe fn add_dead (this : MapImageHistory , unit : crate :: app :: unit :: Unit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapImageHistory , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_dead :: get_method_info () . method_ptr ,) ; inner (this , unit , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_battle { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapImageHistory as :: unity2 :: ClassIdentity > :: class () , "AddBattle" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapImageHistory as :: unity2 :: ClassIdentity > :: NAME , "AddBattle" , e) , } } } pub unsafe fn add_battle (this : MapImageHistory , unit : crate :: app :: unit :: Unit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapImageHistory , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_battle :: get_method_info () . method_ptr ,) ; inner (this , unit , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapImageHistory as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapImageHistory as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : MapImageHistory , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapImageHistory , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-mapimagehistory")]
+pub trait IMapImageHistoryMethods : IMapImageHistory { # [doc = "`Clear()` overload"] fn clear (self ,) -> () { unsafe { let __receiver = < MapImageHistory as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapImageHistory_unity2_raw :: clear (__receiver , :: core :: option :: Option :: None) } } # [doc = "`UpdatePhase()` overload"] fn update_phase (self ,) -> () { unsafe { let __receiver = < MapImageHistory as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapImageHistory_unity2_raw :: update_phase (__receiver , :: core :: option :: Option :: None) } } # [doc = "`AddDead(crate::app::unit::Unit)` overload"] fn add_dead (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < MapImageHistory as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapImageHistory_unity2_raw :: add_dead (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } # [doc = "`AddBattle(crate::app::unit::Unit)` overload"] fn add_battle (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < MapImageHistory as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapImageHistory_unity2_raw :: add_battle (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapImageHistory as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapImageHistory_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-mapimagehistory")]
+impl < __T : IMapImageHistory > IMapImageHistoryMethods for __T { }
+
+#[cfg(feature = "app-mapimagehistory")]
+impl MapImageHistory { pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapImageHistory_unity2_raw :: __lookup_clear :: get_method_info () } pub fn update_phase_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapImageHistory_unity2_raw :: __lookup_update_phase :: get_method_info () } pub fn add_dead_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapImageHistory_unity2_raw :: __lookup_add_dead :: get_method_info () } pub fn add_battle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapImageHistory_unity2_raw :: __lookup_add_battle :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapImageHistory_unity2_raw :: __lookup_ctor :: get_method_info () } }
+
+#[cfg(feature = "app-mapimagehistory")]
+impl MapImageHistory {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapImageHistory) , :: core :: stringify ! (new) ,)) ; < Self as IMapImageHistoryMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-mapimagehistory")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{
-        IMapImageHistory, IMapImageHistoryMethods, IMapImageHistory_HeatMap, IMapImageHistory_HeatMapMethods, MapImageHistory,
-        MapImageHistory_HeatMap,
-    };
+    pub use super::MapImageHistory_HeatMap;
+    pub use super::IMapImageHistory_HeatMap;
+    pub use super::IMapImageHistory_HeatMapMethods;
+    pub use super::MapImageHistory;
+    pub use super::IMapImageHistory;
+    pub use super::IMapImageHistoryMethods;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

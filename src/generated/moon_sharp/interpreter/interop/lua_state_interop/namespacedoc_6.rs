@@ -2,15 +2,15 @@
 
 #[cfg(feature = "moon_sharp-interpreter-interop-lua_state_interop-namespacedoc_6-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/lua_state_interop/namespacedoc_6/NamespaceDoc_6.md"))]
-    #[::unity2::class(namespace = "MoonSharp.Interpreter.Interop.LuaStateInterop", name = "NamespaceDoc")]
-    #[parent(crate::system::object::Object)]
-    pub struct NamespaceDoc_6 {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/lua_state_interop/namespacedoc_6/NamespaceDoc_6.md"))] # [:: unity2 :: class (namespace = "MoonSharp.Interpreter.Interop.LuaStateInterop" , name = "NamespaceDoc")] # [parent (crate :: system :: object :: Object)] pub struct NamespaceDoc_6 {}
+
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-lua_state_interop-namespacedoc_6-types")]
@@ -19,8 +19,8 @@ pub use __types::*;
 #[cfg(feature = "moon_sharp-interpreter-interop-lua_state_interop-namespacedoc_6")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{INamespaceDoc_6, NamespaceDoc_6};
+    pub use super::NamespaceDoc_6;
+    pub use super::INamespaceDoc_6;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

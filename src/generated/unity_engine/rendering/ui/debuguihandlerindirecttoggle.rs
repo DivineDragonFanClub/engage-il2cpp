@@ -2,366 +2,70 @@
 
 #[cfg(feature = "unity_engine-rendering-ui-debuguihandlerindirecttoggle-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-            rendering::ui::debuguihandlerwidget::{DebugUIHandlerWidget, IDebugUIHandlerWidget},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/ui/debuguihandlerindirecttoggle/DebugUIHandlerIndirectToggle.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Rendering.UI", name = "DebugUIHandlerIndirectToggle")]
-    #[parent(crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget)]
-    pub struct DebugUIHandlerIndirectToggle {
-        #[offset(88)]
-        #[rename(name = "nameLabel")]
-        pub name_label: crate::unity_engine::ui::text::Text,
-        #[offset(96)]
-        #[rename(name = "valueToggle")]
-        pub value_toggle: crate::unity_engine::ui::toggle::Toggle,
-        #[offset(104)]
-        #[rename(name = "checkmarkImage")]
-        pub checkmark_image: crate::unity_engine::ui::image::Image,
-        #[offset(112)]
-        #[rename(name = "getter")]
-        pub getter: crate::system::func_2::Func_2<i32, bool>,
-        #[offset(120)]
-        #[rename(name = "setter")]
-        pub setter: crate::system::action_2::Action_2<i32, bool>,
-        #[offset(128)]
-        #[rename(name = "index")]
-        pub index: i32,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+ use crate :: unity_engine :: rendering :: ui :: debuguihandlerwidget :: { DebugUIHandlerWidget , IDebugUIHandlerWidget }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/ui/debuguihandlerindirecttoggle/DebugUIHandlerIndirectToggle.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.UI" , name = "DebugUIHandlerIndirectToggle")] # [parent (crate :: unity_engine :: rendering :: ui :: debuguihandlerwidget :: DebugUIHandlerWidget)] pub struct DebugUIHandlerIndirectToggle {
+# [offset (88)] # [rename (name = "nameLabel")] pub name_label : crate :: unity_engine :: ui :: text :: Text ,
+# [offset (96)] # [rename (name = "valueToggle")] pub value_toggle : crate :: unity_engine :: ui :: toggle :: Toggle ,
+# [offset (104)] # [rename (name = "checkmarkImage")] pub checkmark_image : crate :: unity_engine :: ui :: image :: Image ,
+# [offset (112)] # [rename (name = "getter")] pub getter : crate :: system :: func_2 :: Func_2 < i32 , bool > ,
+# [offset (120)] # [rename (name = "setter")] pub setter : crate :: system :: action_2 :: Action_2 < i32 , bool > ,
+# [offset (128)] # [rename (name = "index")] pub index : i32 ,
+}
+
 }
 
 #[cfg(feature = "unity_engine-rendering-ui-debuguihandlerindirecttoggle-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-ui-debuguihandlerindirecttoggle")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __DebugUIHandlerIndirectToggle_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_init {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugUIHandlerIndirectToggle as ::unity2::ClassIdentity>::class(),
-                "Init",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DebugUIHandlerIndirectToggle as ::unity2::ClassIdentity>::NAME,
-                        "Init",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn init(this: DebugUIHandlerIndirectToggle, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DebugUIHandlerIndirectToggle, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_init::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_selection {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <bool as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugUIHandlerIndirectToggle as ::unity2::ClassIdentity>::class(),
-                "OnSelection",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DebugUIHandlerIndirectToggle as ::unity2::ClassIdentity>::NAME,
-                        "OnSelection",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_selection(
-        this: DebugUIHandlerIndirectToggle,
-        from_next: bool,
-        previous: crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            DebugUIHandlerIndirectToggle,
-            bool,
-            crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(__lookup_on_selection::get_method_info().method_ptr);
-        inner(this, from_next, previous, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_deselection {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugUIHandlerIndirectToggle as ::unity2::ClassIdentity>::class(),
-                "OnDeselection",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DebugUIHandlerIndirectToggle as ::unity2::ClassIdentity>::NAME,
-                        "OnDeselection",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_deselection(this: DebugUIHandlerIndirectToggle, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DebugUIHandlerIndirectToggle, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_deselection::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_action {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugUIHandlerIndirectToggle as ::unity2::ClassIdentity>::class(),
-                "OnAction",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DebugUIHandlerIndirectToggle as ::unity2::ClassIdentity>::NAME,
-                        "OnAction",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_action(this: DebugUIHandlerIndirectToggle, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DebugUIHandlerIndirectToggle, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_action::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update_value_label {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugUIHandlerIndirectToggle as ::unity2::ClassIdentity>::class(),
-                "UpdateValueLabel",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DebugUIHandlerIndirectToggle as ::unity2::ClassIdentity>::NAME,
-                        "UpdateValueLabel",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update_value_label(this: DebugUIHandlerIndirectToggle, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DebugUIHandlerIndirectToggle, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update_value_label::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugUIHandlerIndirectToggle as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DebugUIHandlerIndirectToggle as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: DebugUIHandlerIndirectToggle, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DebugUIHandlerIndirectToggle, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __DebugUIHandlerIndirectToggle_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_init { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DebugUIHandlerIndirectToggle as :: unity2 :: ClassIdentity > :: class () , "Init" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DebugUIHandlerIndirectToggle as :: unity2 :: ClassIdentity > :: NAME , "Init" , e) , } } } pub unsafe fn init (this : DebugUIHandlerIndirectToggle , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DebugUIHandlerIndirectToggle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_init :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_selection { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: ui :: debuguihandlerwidget :: DebugUIHandlerWidget as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DebugUIHandlerIndirectToggle as :: unity2 :: ClassIdentity > :: class () , "OnSelection" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DebugUIHandlerIndirectToggle as :: unity2 :: ClassIdentity > :: NAME , "OnSelection" , e) , } } } pub unsafe fn on_selection (this : DebugUIHandlerIndirectToggle , from_next : bool , previous : crate :: unity_engine :: rendering :: ui :: debuguihandlerwidget :: DebugUIHandlerWidget , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (DebugUIHandlerIndirectToggle , bool , crate :: unity_engine :: rendering :: ui :: debuguihandlerwidget :: DebugUIHandlerWidget , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_on_selection :: get_method_info () . method_ptr ,) ; inner (this , from_next , previous , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_deselection { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DebugUIHandlerIndirectToggle as :: unity2 :: ClassIdentity > :: class () , "OnDeselection" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DebugUIHandlerIndirectToggle as :: unity2 :: ClassIdentity > :: NAME , "OnDeselection" , e) , } } } pub unsafe fn on_deselection (this : DebugUIHandlerIndirectToggle , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DebugUIHandlerIndirectToggle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_deselection :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_action { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DebugUIHandlerIndirectToggle as :: unity2 :: ClassIdentity > :: class () , "OnAction" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DebugUIHandlerIndirectToggle as :: unity2 :: ClassIdentity > :: NAME , "OnAction" , e) , } } } pub unsafe fn on_action (this : DebugUIHandlerIndirectToggle , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DebugUIHandlerIndirectToggle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_action :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update_value_label { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DebugUIHandlerIndirectToggle as :: unity2 :: ClassIdentity > :: class () , "UpdateValueLabel" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DebugUIHandlerIndirectToggle as :: unity2 :: ClassIdentity > :: NAME , "UpdateValueLabel" , e) , } } } pub unsafe fn update_value_label (this : DebugUIHandlerIndirectToggle , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DebugUIHandlerIndirectToggle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update_value_label :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DebugUIHandlerIndirectToggle as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DebugUIHandlerIndirectToggle as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : DebugUIHandlerIndirectToggle , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DebugUIHandlerIndirectToggle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-rendering-ui-debuguihandlerindirecttoggle")]
-pub trait IDebugUIHandlerIndirectToggleMethods: IDebugUIHandlerIndirectToggle {
-    #[doc = "`Init()` overload"]
-    fn init(self) -> () {
-        unsafe {
-            let __receiver =
-                <DebugUIHandlerIndirectToggle as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DebugUIHandlerIndirectToggle_unity2_raw::init(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnSelection(bool, crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget)` overload"]
-    fn on_selection(
-        self,
-        from_next: impl ::core::convert::Into<bool>,
-        previous: impl ::core::convert::Into<crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget>,
-    ) -> bool {
-        unsafe {
-            let __receiver =
-                <DebugUIHandlerIndirectToggle as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DebugUIHandlerIndirectToggle_unity2_raw::on_selection(
-                __receiver,
-                ::core::convert::Into::into(from_next),
-                ::core::convert::Into::into(previous),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`OnDeselection()` overload"]
-    fn on_deselection(self) -> () {
-        unsafe {
-            let __receiver =
-                <DebugUIHandlerIndirectToggle as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DebugUIHandlerIndirectToggle_unity2_raw::on_deselection(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnAction()` overload"]
-    fn on_action(self) -> () {
-        unsafe {
-            let __receiver =
-                <DebugUIHandlerIndirectToggle as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DebugUIHandlerIndirectToggle_unity2_raw::on_action(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`UpdateValueLabel()` overload"]
-    fn update_value_label(self) -> () {
-        unsafe {
-            let __receiver =
-                <DebugUIHandlerIndirectToggle as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DebugUIHandlerIndirectToggle_unity2_raw::update_value_label(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <DebugUIHandlerIndirectToggle as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DebugUIHandlerIndirectToggle_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IDebugUIHandlerIndirectToggleMethods : IDebugUIHandlerIndirectToggle { # [doc = "`Init()` overload"] fn init (self ,) -> () { unsafe { let __receiver = < DebugUIHandlerIndirectToggle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DebugUIHandlerIndirectToggle_unity2_raw :: init (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnSelection(bool, crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget)` overload"] fn on_selection (self , from_next : impl :: core :: convert :: Into < bool > , previous : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: ui :: debuguihandlerwidget :: DebugUIHandlerWidget >) -> bool { unsafe { let __receiver = < DebugUIHandlerIndirectToggle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DebugUIHandlerIndirectToggle_unity2_raw :: on_selection (__receiver , :: core :: convert :: Into :: into (from_next) , :: core :: convert :: Into :: into (previous) , :: core :: option :: Option :: None) } } # [doc = "`OnDeselection()` overload"] fn on_deselection (self ,) -> () { unsafe { let __receiver = < DebugUIHandlerIndirectToggle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DebugUIHandlerIndirectToggle_unity2_raw :: on_deselection (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnAction()` overload"] fn on_action (self ,) -> () { unsafe { let __receiver = < DebugUIHandlerIndirectToggle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DebugUIHandlerIndirectToggle_unity2_raw :: on_action (__receiver , :: core :: option :: Option :: None) } } # [doc = "`UpdateValueLabel()` overload"] fn update_value_label (self ,) -> () { unsafe { let __receiver = < DebugUIHandlerIndirectToggle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DebugUIHandlerIndirectToggle_unity2_raw :: update_value_label (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DebugUIHandlerIndirectToggle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DebugUIHandlerIndirectToggle_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-rendering-ui-debuguihandlerindirecttoggle")]
-impl<__T: IDebugUIHandlerIndirectToggle> IDebugUIHandlerIndirectToggleMethods for __T {}
+impl < __T : IDebugUIHandlerIndirectToggle > IDebugUIHandlerIndirectToggleMethods for __T { }
+
+#[cfg(feature = "unity_engine-rendering-ui-debuguihandlerindirecttoggle")]
+impl DebugUIHandlerIndirectToggle { pub fn init_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DebugUIHandlerIndirectToggle_unity2_raw :: __lookup_init :: get_method_info () } pub fn on_selection_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DebugUIHandlerIndirectToggle_unity2_raw :: __lookup_on_selection :: get_method_info () } pub fn on_deselection_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DebugUIHandlerIndirectToggle_unity2_raw :: __lookup_on_deselection :: get_method_info () } pub fn on_action_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DebugUIHandlerIndirectToggle_unity2_raw :: __lookup_on_action :: get_method_info () } pub fn update_value_label_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DebugUIHandlerIndirectToggle_unity2_raw :: __lookup_update_value_label :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DebugUIHandlerIndirectToggle_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-rendering-ui-debuguihandlerindirecttoggle")]
 impl DebugUIHandlerIndirectToggle {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DebugUIHandlerIndirectToggle),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDebugUIHandlerIndirectToggleMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DebugUIHandlerIndirectToggle) , :: core :: stringify ! (new) ,)) ; < Self as IDebugUIHandlerIndirectToggleMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "unity_engine-rendering-ui-debuguihandlerindirecttoggle")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{DebugUIHandlerIndirectToggle, IDebugUIHandlerIndirectToggle, IDebugUIHandlerIndirectToggleMethods};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    #[cfg(feature = "unity_engine-rendering-ui-debuguihandlerwidget")]
-    pub use crate::unity_engine::rendering::ui::debuguihandlerwidget::IDebugUIHandlerWidgetMethods;
-    pub use crate::{
-        system::object::IObject,
-        unity_engine::{
-            behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2,
-            rendering::ui::debuguihandlerwidget::IDebugUIHandlerWidget,
-        },
-    };
+    pub use super::DebugUIHandlerIndirectToggle;
+    pub use super::IDebugUIHandlerIndirectToggle;
+    pub use super::IDebugUIHandlerIndirectToggleMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    pub use crate::unity_engine::rendering::ui::debuguihandlerwidget::IDebugUIHandlerWidget;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
+    #[cfg(feature = "unity_engine-rendering-ui-debuguihandlerwidget")] pub use crate::unity_engine::rendering::ui::debuguihandlerwidget::IDebugUIHandlerWidgetMethods;
 }

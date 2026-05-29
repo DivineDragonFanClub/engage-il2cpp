@@ -2,617 +2,114 @@
 
 #[cfg(feature = "unity_engine-rendering-debugactionstate-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        r#enum::{Enum, IEnum},
-        valuetype::{IValueType, ValueType},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/debugactionstate/DebugActionState.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Rendering", name = "DebugActionState")]
-    #[parent(crate::system::object::Object)]
-    pub struct DebugActionState {
-        #[offset(16)]
-        #[rename(name = "m_Type")]
-        pub m_type: crate::unity_engine::rendering::debugactionstate::DebugActionState_DebugActionKeyType,
-        #[offset(24)]
-        #[rename(name = "m_PressedButtons")]
-        pub m_pressed_buttons: ::unity2::Array<::unity2::Il2CppString>,
-        #[offset(32)]
-        #[rename(name = "m_PressedAxis")]
-        pub m_pressed_axis: ::unity2::Il2CppString,
-        #[offset(40)]
-        #[rename(name = "m_PressedKeys")]
-        pub m_pressed_keys: ::unity2::Array<crate::unity_engine::keycode::KeyCode>,
-        #[offset(48)]
-        #[rename(name = "m_TriggerPressedUp")]
-        pub m_trigger_pressed_up: ::unity2::Array<bool>,
-        #[offset(56)]
-        #[rename(name = "m_Timer")]
-        pub m_timer: f32,
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/debugactionstate/DebugActionState_DebugActionKeyType.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct DebugActionState_DebugActionKeyType  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for DebugActionState_DebugActionKeyType  {
+    const NAMESPACE: &'static str = "UnityEngine.Rendering";
+
+    const NAME: &'static str = "DebugActionState.DebugActionKeyType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/debugactionstate/DebugActionState_DebugActionKeyType.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct DebugActionState_DebugActionKeyType {
-        pub value: i32,
+}
+
+
+impl  ::unity2::IlType for DebugActionState_DebugActionKeyType  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::ClassIdentity for DebugActionState_DebugActionKeyType {
-        const NAME: &'static str = "DebugActionState.DebugActionKeyType";
-        const NAMESPACE: &'static str = "UnityEngine.Rendering";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  DebugActionState_DebugActionKeyType  {
+    pub fn button() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl ::unity2::IlType for DebugActionState_DebugActionKeyType {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+
+    pub fn axis() -> Self {
+        Self { value: 1 }
+
     }
 
-    impl DebugActionState_DebugActionKeyType {
-        pub fn button() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn axis() -> Self {
-            Self { value: 1 }
-        }
+    pub fn key() -> Self {
+        Self { value: 2 }
 
-        pub fn key() -> Self {
-            Self { value: 2 }
-        }
     }
+
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/debugactionstate/DebugActionState.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering" , name = "DebugActionState")] # [parent (crate :: system :: object :: Object)] pub struct DebugActionState {
+# [offset (16)] # [rename (name = "m_Type")] pub m_type : crate :: unity_engine :: rendering :: debugactionstate :: DebugActionState_DebugActionKeyType ,
+# [offset (24)] # [rename (name = "m_PressedButtons")] pub m_pressed_buttons : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
+# [offset (32)] # [rename (name = "m_PressedAxis")] pub m_pressed_axis : :: unity2 :: Il2CppString ,
+# [offset (40)] # [rename (name = "m_PressedKeys")] pub m_pressed_keys : :: unity2 :: Array < crate :: unity_engine :: keycode :: KeyCode > ,
+# [offset (48)] # [rename (name = "m_TriggerPressedUp")] pub m_trigger_pressed_up : :: unity2 :: Array < bool > ,
+# [offset (56)] # [rename (name = "m_Timer")] pub m_timer : f32 ,
+}
+
 }
 
 #[cfg(feature = "unity_engine-rendering-debugactionstate-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-debugactionstate")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __DebugActionState_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_running_action {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugActionState as ::unity2::ClassIdentity>::class(),
-                "get_runningAction",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DebugActionState as ::unity2::ClassIdentity>::NAME,
-                        "get_runningAction",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_running_action(this: DebugActionState, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(DebugActionState, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_running_action::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_running_action {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugActionState as ::unity2::ClassIdentity>::class(),
-                "set_runningAction",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DebugActionState as ::unity2::ClassIdentity>::NAME,
-                        "set_runningAction",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_running_action(this: DebugActionState, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DebugActionState, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_running_action::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_action_state {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugActionState as ::unity2::ClassIdentity>::class(),
-                "get_actionState",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DebugActionState as ::unity2::ClassIdentity>::NAME,
-                        "get_actionState",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_action_state(this: DebugActionState, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(DebugActionState, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_get_action_state::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_action_state {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugActionState as ::unity2::ClassIdentity>::class(),
-                "set_actionState",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DebugActionState as ::unity2::ClassIdentity>::NAME,
-                        "set_actionState",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_action_state(this: DebugActionState, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DebugActionState, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_action_state::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_trigger {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugActionState as ::unity2::ClassIdentity>::class(),
-                "Trigger",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DebugActionState as ::unity2::ClassIdentity>::NAME,
-                        "Trigger",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn trigger(this: DebugActionState, trigger_count: i32, state: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DebugActionState, i32, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_trigger::get_method_info().method_ptr);
-        inner(this, trigger_count, state, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_trigger_with_button {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Array<::unity2::Il2CppString> as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugActionState as ::unity2::ClassIdentity>::class(),
-                "TriggerWithButton",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DebugActionState as ::unity2::ClassIdentity>::NAME,
-                        "TriggerWithButton",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn trigger_with_button(
-        this: DebugActionState,
-        buttons: ::unity2::Array<::unity2::Il2CppString>,
-        state: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(DebugActionState, ::unity2::Array<::unity2::Il2CppString>, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_trigger_with_button::get_method_info().method_ptr);
-        inner(this, buttons, state, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_trigger_with_axis {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugActionState as ::unity2::ClassIdentity>::class(),
-                "TriggerWithAxis",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DebugActionState as ::unity2::ClassIdentity>::NAME,
-                        "TriggerWithAxis",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn trigger_with_axis(
-        this: DebugActionState,
-        axis: ::unity2::Il2CppString,
-        state: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(DebugActionState, ::unity2::Il2CppString, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_trigger_with_axis::get_method_info().method_ptr);
-        inner(this, axis, state, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_trigger_with_key {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Array<crate::unity_engine::keycode::KeyCode> as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugActionState as ::unity2::ClassIdentity>::class(),
-                "TriggerWithKey",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DebugActionState as ::unity2::ClassIdentity>::NAME,
-                        "TriggerWithKey",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn trigger_with_key(
-        this: DebugActionState,
-        keys: ::unity2::Array<crate::unity_engine::keycode::KeyCode>,
-        state: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(DebugActionState, ::unity2::Array<crate::unity_engine::keycode::KeyCode>, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_trigger_with_key::get_method_info().method_ptr);
-        inner(this, keys, state, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_reset {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugActionState as ::unity2::ClassIdentity>::class(),
-                "Reset",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DebugActionState as ::unity2::ClassIdentity>::NAME,
-                        "Reset",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn reset(this: DebugActionState, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DebugActionState, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_reset::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::rendering::debugactiondesc::DebugActionDesc as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugActionState as ::unity2::ClassIdentity>::class(),
-                "Update",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DebugActionState as ::unity2::ClassIdentity>::NAME,
-                        "Update",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update(
-        this: DebugActionState,
-        desc: crate::unity_engine::rendering::debugactiondesc::DebugActionDesc,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(DebugActionState, crate::unity_engine::rendering::debugactiondesc::DebugActionDesc, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update::get_method_info().method_ptr);
-        inner(this, desc, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugActionState as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DebugActionState as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: DebugActionState, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DebugActionState, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __DebugActionState_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_running_action { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DebugActionState as :: unity2 :: ClassIdentity > :: class () , "get_runningAction" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DebugActionState as :: unity2 :: ClassIdentity > :: NAME , "get_runningAction" , e) , } } } pub unsafe fn get_running_action (this : DebugActionState , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (DebugActionState , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_running_action :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_running_action { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DebugActionState as :: unity2 :: ClassIdentity > :: class () , "set_runningAction" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DebugActionState as :: unity2 :: ClassIdentity > :: NAME , "set_runningAction" , e) , } } } pub unsafe fn set_running_action (this : DebugActionState , value : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DebugActionState , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_running_action :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_action_state { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DebugActionState as :: unity2 :: ClassIdentity > :: class () , "get_actionState" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DebugActionState as :: unity2 :: ClassIdentity > :: NAME , "get_actionState" , e) , } } } pub unsafe fn get_action_state (this : DebugActionState , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (DebugActionState , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_get_action_state :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_action_state { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DebugActionState as :: unity2 :: ClassIdentity > :: class () , "set_actionState" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DebugActionState as :: unity2 :: ClassIdentity > :: NAME , "set_actionState" , e) , } } } pub unsafe fn set_action_state (this : DebugActionState , value : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DebugActionState , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_action_state :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_trigger { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DebugActionState as :: unity2 :: ClassIdentity > :: class () , "Trigger" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DebugActionState as :: unity2 :: ClassIdentity > :: NAME , "Trigger" , e) , } } } pub unsafe fn trigger (this : DebugActionState , trigger_count : i32 , state : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DebugActionState , i32 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_trigger :: get_method_info () . method_ptr ,) ; inner (this , trigger_count , state , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_trigger_with_button { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < :: unity2 :: Il2CppString > as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DebugActionState as :: unity2 :: ClassIdentity > :: class () , "TriggerWithButton" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DebugActionState as :: unity2 :: ClassIdentity > :: NAME , "TriggerWithButton" , e) , } } } pub unsafe fn trigger_with_button (this : DebugActionState , buttons : :: unity2 :: Array < :: unity2 :: Il2CppString > , state : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DebugActionState , :: unity2 :: Array < :: unity2 :: Il2CppString > , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_trigger_with_button :: get_method_info () . method_ptr ,) ; inner (this , buttons , state , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_trigger_with_axis { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DebugActionState as :: unity2 :: ClassIdentity > :: class () , "TriggerWithAxis" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DebugActionState as :: unity2 :: ClassIdentity > :: NAME , "TriggerWithAxis" , e) , } } } pub unsafe fn trigger_with_axis (this : DebugActionState , axis : :: unity2 :: Il2CppString , state : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DebugActionState , :: unity2 :: Il2CppString , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_trigger_with_axis :: get_method_info () . method_ptr ,) ; inner (this , axis , state , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_trigger_with_key { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: unity_engine :: keycode :: KeyCode > as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DebugActionState as :: unity2 :: ClassIdentity > :: class () , "TriggerWithKey" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DebugActionState as :: unity2 :: ClassIdentity > :: NAME , "TriggerWithKey" , e) , } } } pub unsafe fn trigger_with_key (this : DebugActionState , keys : :: unity2 :: Array < crate :: unity_engine :: keycode :: KeyCode > , state : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DebugActionState , :: unity2 :: Array < crate :: unity_engine :: keycode :: KeyCode > , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_trigger_with_key :: get_method_info () . method_ptr ,) ; inner (this , keys , state , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_reset { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DebugActionState as :: unity2 :: ClassIdentity > :: class () , "Reset" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DebugActionState as :: unity2 :: ClassIdentity > :: NAME , "Reset" , e) , } } } pub unsafe fn reset (this : DebugActionState , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DebugActionState , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_reset :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: debugactiondesc :: DebugActionDesc as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DebugActionState as :: unity2 :: ClassIdentity > :: class () , "Update" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DebugActionState as :: unity2 :: ClassIdentity > :: NAME , "Update" , e) , } } } pub unsafe fn update (this : DebugActionState , desc : crate :: unity_engine :: rendering :: debugactiondesc :: DebugActionDesc , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DebugActionState , crate :: unity_engine :: rendering :: debugactiondesc :: DebugActionDesc , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update :: get_method_info () . method_ptr ,) ; inner (this , desc , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DebugActionState as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DebugActionState as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : DebugActionState , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DebugActionState , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-rendering-debugactionstate")]
-pub trait IDebugActionStateMethods: IDebugActionState {
-    #[doc = "`get_runningAction()` overload"]
-    fn get_running_action(self) -> bool {
-        unsafe {
-            let __receiver = <DebugActionState as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DebugActionState_unity2_raw::get_running_action(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_runningAction(bool)` overload"]
-    fn set_running_action(self, value: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver = <DebugActionState as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DebugActionState_unity2_raw::set_running_action(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_actionState()` overload"]
-    fn get_action_state(self) -> f32 {
-        unsafe {
-            let __receiver = <DebugActionState as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DebugActionState_unity2_raw::get_action_state(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_actionState(f32)` overload"]
-    fn set_action_state(self, value: impl ::core::convert::Into<f32>) -> () {
-        unsafe {
-            let __receiver = <DebugActionState as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DebugActionState_unity2_raw::set_action_state(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Trigger(i32, f32)` overload"]
-    fn trigger(self, trigger_count: impl ::core::convert::Into<i32>, state: impl ::core::convert::Into<f32>) -> () {
-        unsafe {
-            let __receiver = <DebugActionState as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DebugActionState_unity2_raw::trigger(
-                __receiver,
-                ::core::convert::Into::into(trigger_count),
-                ::core::convert::Into::into(state),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`TriggerWithButton(::unity2::Array<::unity2::Il2CppString>, f32)` overload"]
-    fn trigger_with_button(
-        self,
-        buttons: impl ::core::convert::Into<::unity2::Array<::unity2::Il2CppString>>,
-        state: impl ::core::convert::Into<f32>,
-    ) -> () {
-        unsafe {
-            let __receiver = <DebugActionState as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DebugActionState_unity2_raw::trigger_with_button(
-                __receiver,
-                ::core::convert::Into::into(buttons),
-                ::core::convert::Into::into(state),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`TriggerWithAxis(::unity2::Il2CppString, f32)` overload"]
-    fn trigger_with_axis(self, axis: impl ::core::convert::Into<::unity2::Il2CppString>, state: impl ::core::convert::Into<f32>) -> () {
-        unsafe {
-            let __receiver = <DebugActionState as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DebugActionState_unity2_raw::trigger_with_axis(
-                __receiver,
-                ::core::convert::Into::into(axis),
-                ::core::convert::Into::into(state),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`TriggerWithKey(::unity2::Array<crate::unity_engine::keycode::KeyCode>, f32)` overload"]
-    fn trigger_with_key(
-        self,
-        keys: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::keycode::KeyCode>>,
-        state: impl ::core::convert::Into<f32>,
-    ) -> () {
-        unsafe {
-            let __receiver = <DebugActionState as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DebugActionState_unity2_raw::trigger_with_key(
-                __receiver,
-                ::core::convert::Into::into(keys),
-                ::core::convert::Into::into(state),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Reset()` overload"]
-    fn reset(self) -> () {
-        unsafe {
-            let __receiver = <DebugActionState as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DebugActionState_unity2_raw::reset(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Update(crate::unity_engine::rendering::debugactiondesc::DebugActionDesc)` overload"]
-    fn update(self, desc: impl ::core::convert::Into<crate::unity_engine::rendering::debugactiondesc::DebugActionDesc>) -> () {
-        unsafe {
-            let __receiver = <DebugActionState as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DebugActionState_unity2_raw::update(__receiver, ::core::convert::Into::into(desc), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <DebugActionState as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DebugActionState_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IDebugActionStateMethods : IDebugActionState { # [doc = "`get_runningAction()` overload"] fn get_running_action (self ,) -> bool { unsafe { let __receiver = < DebugActionState as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DebugActionState_unity2_raw :: get_running_action (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_runningAction(bool)` overload"] fn set_running_action (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < DebugActionState as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DebugActionState_unity2_raw :: set_running_action (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_actionState()` overload"] fn get_action_state (self ,) -> f32 { unsafe { let __receiver = < DebugActionState as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DebugActionState_unity2_raw :: get_action_state (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_actionState(f32)` overload"] fn set_action_state (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < DebugActionState as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DebugActionState_unity2_raw :: set_action_state (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`Trigger(i32, f32)` overload"] fn trigger (self , trigger_count : impl :: core :: convert :: Into < i32 > , state : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < DebugActionState as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DebugActionState_unity2_raw :: trigger (__receiver , :: core :: convert :: Into :: into (trigger_count) , :: core :: convert :: Into :: into (state) , :: core :: option :: Option :: None) } } # [doc = "`TriggerWithButton(::unity2::Array<::unity2::Il2CppString>, f32)` overload"] fn trigger_with_button (self , buttons : impl :: core :: convert :: Into < :: unity2 :: Array < :: unity2 :: Il2CppString > > , state : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < DebugActionState as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DebugActionState_unity2_raw :: trigger_with_button (__receiver , :: core :: convert :: Into :: into (buttons) , :: core :: convert :: Into :: into (state) , :: core :: option :: Option :: None) } } # [doc = "`TriggerWithAxis(::unity2::Il2CppString, f32)` overload"] fn trigger_with_axis (self , axis : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , state : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < DebugActionState as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DebugActionState_unity2_raw :: trigger_with_axis (__receiver , :: core :: convert :: Into :: into (axis) , :: core :: convert :: Into :: into (state) , :: core :: option :: Option :: None) } } # [doc = "`TriggerWithKey(::unity2::Array<crate::unity_engine::keycode::KeyCode>, f32)` overload"] fn trigger_with_key (self , keys : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: unity_engine :: keycode :: KeyCode > > , state : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < DebugActionState as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DebugActionState_unity2_raw :: trigger_with_key (__receiver , :: core :: convert :: Into :: into (keys) , :: core :: convert :: Into :: into (state) , :: core :: option :: Option :: None) } } # [doc = "`Reset()` overload"] fn reset (self ,) -> () { unsafe { let __receiver = < DebugActionState as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DebugActionState_unity2_raw :: reset (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Update(crate::unity_engine::rendering::debugactiondesc::DebugActionDesc)` overload"] fn update (self , desc : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: debugactiondesc :: DebugActionDesc >) -> () { unsafe { let __receiver = < DebugActionState as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DebugActionState_unity2_raw :: update (__receiver , :: core :: convert :: Into :: into (desc) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DebugActionState as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DebugActionState_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-rendering-debugactionstate")]
-impl<__T: IDebugActionState> IDebugActionStateMethods for __T {}
+impl < __T : IDebugActionState > IDebugActionStateMethods for __T { }
+
+#[cfg(feature = "unity_engine-rendering-debugactionstate")]
+impl DebugActionState { pub fn get_running_action_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DebugActionState_unity2_raw :: __lookup_get_running_action :: get_method_info () } pub fn set_running_action_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DebugActionState_unity2_raw :: __lookup_set_running_action :: get_method_info () } pub fn get_action_state_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DebugActionState_unity2_raw :: __lookup_get_action_state :: get_method_info () } pub fn set_action_state_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DebugActionState_unity2_raw :: __lookup_set_action_state :: get_method_info () } pub fn trigger_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DebugActionState_unity2_raw :: __lookup_trigger :: get_method_info () } pub fn trigger_with_button_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DebugActionState_unity2_raw :: __lookup_trigger_with_button :: get_method_info () } pub fn trigger_with_axis_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DebugActionState_unity2_raw :: __lookup_trigger_with_axis :: get_method_info () } pub fn trigger_with_key_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DebugActionState_unity2_raw :: __lookup_trigger_with_key :: get_method_info () } pub fn reset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DebugActionState_unity2_raw :: __lookup_reset :: get_method_info () } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DebugActionState_unity2_raw :: __lookup_update :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DebugActionState_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-rendering-debugactionstate")]
 impl DebugActionState {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DebugActionState),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDebugActionStateMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DebugActionState) , :: core :: stringify ! (new) ,)) ; < Self as IDebugActionStateMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "unity_engine-rendering-debugactionstate")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{DebugActionState, DebugActionState_DebugActionKeyType, IDebugActionState, IDebugActionStateMethods};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::system::{object::IObject, r#enum::IEnum, valuetype::IValueType};
+    pub use super::DebugActionState_DebugActionKeyType;
+    pub use super::DebugActionState;
+    pub use super::IDebugActionState;
+    pub use super::IDebugActionStateMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

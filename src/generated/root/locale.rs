@@ -2,118 +2,34 @@
 
 #[cfg(feature = "root-locale-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/locale/Locale.md"))]
-    #[::unity2::class(namespace = "", name = "Locale")]
-    #[parent(crate::system::object::Object)]
-    pub struct Locale {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/locale/Locale.md"))] # [:: unity2 :: class (namespace = "" , name = "Locale")] # [parent (crate :: system :: object :: Object)] pub struct Locale {}
+
 }
 
 #[cfg(feature = "root-locale-types")]
 pub use __types::*;
 
 #[cfg(feature = "root-locale")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __Locale_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_text {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<Locale as ::unity2::ClassIdentity>::class(), "GetText", 1, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Locale as ::unity2::ClassIdentity>::NAME,
-                        "GetText",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_text(msg: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_text::get_method_info().method_ptr);
-        inner(msg, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_text_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <::unity2::Array<crate::system::object::Object> as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<Locale as ::unity2::ClassIdentity>::class(), "GetText", 2, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Locale as ::unity2::ClassIdentity>::NAME,
-                        "GetText",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_text_2(
-        fmt: ::unity2::Il2CppString,
-        args: ::unity2::Array<crate::system::object::Object>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            ::unity2::Array<crate::system::object::Object>,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(__lookup_get_text_2::get_method_info().method_ptr);
-        inner(fmt, args, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __Locale_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_text { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Locale as :: unity2 :: ClassIdentity > :: class () , "GetText" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Locale as :: unity2 :: ClassIdentity > :: NAME , "GetText" , e) , } } } pub unsafe fn get_text (msg : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_text :: get_method_info () . method_ptr ,) ; inner (msg , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_text_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: system :: object :: Object > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Locale as :: unity2 :: ClassIdentity > :: class () , "GetText" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Locale as :: unity2 :: ClassIdentity > :: NAME , "GetText" , e) , } } } pub unsafe fn get_text_2 (fmt : :: unity2 :: Il2CppString , args : :: unity2 :: Array < crate :: system :: object :: Object > , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: Array < crate :: system :: object :: Object > , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_text_2 :: get_method_info () . method_ptr ,) ; inner (fmt , args , __unity2_method_info) } }
 
 #[cfg(feature = "root-locale")]
-impl Locale {
-    #[doc = "`GetText(::unity2::Il2CppString)` overload"]
-    pub fn get_text(msg: impl ::core::convert::Into<::unity2::Il2CppString>) -> ::unity2::Il2CppString {
-        unsafe { __Locale_unity2_raw::get_text(::core::convert::Into::into(msg), ::core::option::Option::None) }
-    }
+impl Locale { # [doc = "`GetText(::unity2::Il2CppString)` overload"] pub fn get_text (msg : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Il2CppString { unsafe { __Locale_unity2_raw :: get_text (:: core :: convert :: Into :: into (msg) , :: core :: option :: Option :: None) } } # [doc = "`GetText(::unity2::Il2CppString, ::unity2::Array<crate::system::object::Object>)` overload"] pub fn get_text_2 (fmt : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , args : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: system :: object :: Object > >) -> :: unity2 :: Il2CppString { unsafe { __Locale_unity2_raw :: get_text_2 (:: core :: convert :: Into :: into (fmt) , :: core :: convert :: Into :: into (args) , :: core :: option :: Option :: None) } } }
 
-    #[doc = "`GetText(::unity2::Il2CppString, ::unity2::Array<crate::system::object::Object>)` overload"]
-    pub fn get_text_2(
-        fmt: impl ::core::convert::Into<::unity2::Il2CppString>,
-        args: impl ::core::convert::Into<::unity2::Array<crate::system::object::Object>>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __Locale_unity2_raw::get_text_2(
-                ::core::convert::Into::into(fmt),
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+#[cfg(feature = "root-locale")]
+impl Locale { pub fn get_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Locale_unity2_raw :: __lookup_get_text :: get_method_info () } pub fn get_text_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Locale_unity2_raw :: __lookup_get_text_2 :: get_method_info () } }
 
 #[cfg(feature = "root-locale")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{ILocale, Locale};
+    pub use super::Locale;
+    pub use super::ILocale;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

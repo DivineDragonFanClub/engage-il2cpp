@@ -2,91 +2,39 @@
 
 #[cfg(feature = "unity_engine-excludefrompresetattribute-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/excludefrompresetattribute/ExcludeFromPresetAttribute.md"))]
-    #[::unity2::class(namespace = "UnityEngine", name = "ExcludeFromPresetAttribute")]
-    pub struct ExcludeFromPresetAttribute {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/excludefrompresetattribute/ExcludeFromPresetAttribute.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "ExcludeFromPresetAttribute")] pub struct ExcludeFromPresetAttribute {}
+
 }
 
 #[cfg(feature = "unity_engine-excludefrompresetattribute-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-excludefrompresetattribute")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ExcludeFromPresetAttribute_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ExcludeFromPresetAttribute as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ExcludeFromPresetAttribute as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: ExcludeFromPresetAttribute, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ExcludeFromPresetAttribute, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ExcludeFromPresetAttribute_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ExcludeFromPresetAttribute as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ExcludeFromPresetAttribute as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : ExcludeFromPresetAttribute , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ExcludeFromPresetAttribute , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-excludefrompresetattribute")]
-pub trait IExcludeFromPresetAttributeMethods: IExcludeFromPresetAttribute {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <ExcludeFromPresetAttribute as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ExcludeFromPresetAttribute_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IExcludeFromPresetAttributeMethods : IExcludeFromPresetAttribute { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ExcludeFromPresetAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ExcludeFromPresetAttribute_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-excludefrompresetattribute")]
-impl<__T: IExcludeFromPresetAttribute> IExcludeFromPresetAttributeMethods for __T {}
+impl < __T : IExcludeFromPresetAttribute > IExcludeFromPresetAttributeMethods for __T { }
+
+#[cfg(feature = "unity_engine-excludefrompresetattribute")]
+impl ExcludeFromPresetAttribute { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ExcludeFromPresetAttribute_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-excludefrompresetattribute")]
 impl ExcludeFromPresetAttribute {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ExcludeFromPresetAttribute),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IExcludeFromPresetAttributeMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ExcludeFromPresetAttribute) , :: core :: stringify ! (new) ,)) ; < Self as IExcludeFromPresetAttributeMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "unity_engine-excludefrompresetattribute")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{ExcludeFromPresetAttribute, IExcludeFromPresetAttribute, IExcludeFromPresetAttributeMethods};
+    pub use super::ExcludeFromPresetAttribute;
+    pub use super::IExcludeFromPresetAttribute;
+    pub use super::IExcludeFromPresetAttributeMethods;
 }

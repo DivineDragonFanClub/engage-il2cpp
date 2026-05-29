@@ -2,97 +2,34 @@
 
 #[cfg(feature = "unity_engine-playables-animationplayableutilities-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/playables/animationplayableutilities/AnimationPlayableUtilities.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Playables", name = "AnimationPlayableUtilities")]
-    #[parent(crate::system::object::Object)]
-    pub struct AnimationPlayableUtilities {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/playables/animationplayableutilities/AnimationPlayableUtilities.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Playables" , name = "AnimationPlayableUtilities")] # [parent (crate :: system :: object :: Object)] pub struct AnimationPlayableUtilities {}
+
 }
 
 #[cfg(feature = "unity_engine-playables-animationplayableutilities-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-playables-animationplayableutilities")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AnimationPlayableUtilities_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_play {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::animator::Animator as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::playables::playable::Playable as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::playables::playablegraph::PlayableGraph as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AnimationPlayableUtilities as ::unity2::ClassIdentity>::class(),
-                "Play",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AnimationPlayableUtilities as ::unity2::ClassIdentity>::NAME,
-                        "Play",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn play(
-        animator: crate::unity_engine::animator::Animator,
-        playable: crate::unity_engine::playables::playable::Playable,
-        graph: crate::unity_engine::playables::playablegraph::PlayableGraph,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::animator::Animator,
-            crate::unity_engine::playables::playable::Playable,
-            crate::unity_engine::playables::playablegraph::PlayableGraph,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_play::get_method_info().method_ptr);
-        inner(animator, playable, graph, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __AnimationPlayableUtilities_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_play { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: animator :: Animator as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: playables :: playable :: Playable as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: playables :: playablegraph :: PlayableGraph as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AnimationPlayableUtilities as :: unity2 :: ClassIdentity > :: class () , "Play" , 3 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AnimationPlayableUtilities as :: unity2 :: ClassIdentity > :: NAME , "Play" , e) , } } } pub unsafe fn play (animator : crate :: unity_engine :: animator :: Animator , playable : crate :: unity_engine :: playables :: playable :: Playable , graph : crate :: unity_engine :: playables :: playablegraph :: PlayableGraph , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: unity_engine :: animator :: Animator , crate :: unity_engine :: playables :: playable :: Playable , crate :: unity_engine :: playables :: playablegraph :: PlayableGraph , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_play :: get_method_info () . method_ptr ,) ; inner (animator , playable , graph , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-playables-animationplayableutilities")]
-impl AnimationPlayableUtilities {
-    #[doc = "`Play(crate::unity_engine::animator::Animator, crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::playablegraph::PlayableGraph)` overload"]
-    pub fn play(
-        animator: impl ::core::convert::Into<crate::unity_engine::animator::Animator>,
-        playable: impl ::core::convert::Into<crate::unity_engine::playables::playable::Playable>,
-        graph: impl ::core::convert::Into<crate::unity_engine::playables::playablegraph::PlayableGraph>,
-    ) -> () {
-        unsafe {
-            __AnimationPlayableUtilities_unity2_raw::play(
-                ::core::convert::Into::into(animator),
-                ::core::convert::Into::into(playable),
-                ::core::convert::Into::into(graph),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+impl AnimationPlayableUtilities { # [doc = "`Play(crate::unity_engine::animator::Animator, crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::playablegraph::PlayableGraph)` overload"] pub fn play (animator : impl :: core :: convert :: Into < crate :: unity_engine :: animator :: Animator > , playable : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playable :: Playable > , graph : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playablegraph :: PlayableGraph >) -> () { unsafe { __AnimationPlayableUtilities_unity2_raw :: play (:: core :: convert :: Into :: into (animator) , :: core :: convert :: Into :: into (playable) , :: core :: convert :: Into :: into (graph) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-playables-animationplayableutilities")]
+impl AnimationPlayableUtilities { pub fn play_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AnimationPlayableUtilities_unity2_raw :: __lookup_play :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-playables-animationplayableutilities")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{AnimationPlayableUtilities, IAnimationPlayableUtilities};
+    pub use super::AnimationPlayableUtilities;
+    pub use super::IAnimationPlayableUtilities;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

@@ -2,203 +2,165 @@
 
 #[cfg(feature = "unity_engine-rendering-universal-screenspaceambientocclusionsettings-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        r#enum::{Enum, IEnum},
-        valuetype::{IValueType, ValueType},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/screenspaceambientocclusionsettings/ScreenSpaceAmbientOcclusionSettings.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Rendering.Universal", name = "ScreenSpaceAmbientOcclusionSettings")]
-    #[parent(crate::system::object::Object)]
-    pub struct ScreenSpaceAmbientOcclusionSettings {
-        #[offset(16)]
-        #[rename(name = "Downsample")]
-        pub downsample: bool,
-        #[offset(20)]
-        #[rename(name = "Source")]
-        pub source: crate::unity_engine::rendering::universal::screenspaceambientocclusionsettings::ScreenSpaceAmbientOcclusionSettings_DepthSource,
-        #[offset(24)]
-        #[rename(name = "NormalSamples")]
-        pub normal_samples:
-            crate::unity_engine::rendering::universal::screenspaceambientocclusionsettings::ScreenSpaceAmbientOcclusionSettings_NormalQuality,
-        #[offset(28)]
-        #[rename(name = "Intensity")]
-        pub intensity: f32,
-        #[offset(32)]
-        #[rename(name = "DirectLightingStrength")]
-        pub direct_lighting_strength: f32,
-        #[offset(36)]
-        #[rename(name = "Radius")]
-        pub radius: f32,
-        #[offset(40)]
-        #[rename(name = "SampleCount")]
-        pub sample_count: i32,
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/screenspaceambientocclusionsettings/ScreenSpaceAmbientOcclusionSettings_NormalQuality.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct ScreenSpaceAmbientOcclusionSettings_NormalQuality  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for ScreenSpaceAmbientOcclusionSettings_NormalQuality  {
+    const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal";
+
+    const NAME: &'static str = "ScreenSpaceAmbientOcclusionSettings.NormalQuality";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/screenspaceambientocclusionsettings/ScreenSpaceAmbientOcclusionSettings_NormalQuality.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct ScreenSpaceAmbientOcclusionSettings_NormalQuality {
-        pub value: i32,
+}
+
+
+impl  ::unity2::IlType for ScreenSpaceAmbientOcclusionSettings_NormalQuality  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::ClassIdentity for ScreenSpaceAmbientOcclusionSettings_NormalQuality {
-        const NAME: &'static str = "ScreenSpaceAmbientOcclusionSettings.NormalQuality";
-        const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  ScreenSpaceAmbientOcclusionSettings_NormalQuality  {
+    pub fn low() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl ::unity2::IlType for ScreenSpaceAmbientOcclusionSettings_NormalQuality {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+
+    pub fn medium() -> Self {
+        Self { value: 1 }
+
     }
 
-    impl ScreenSpaceAmbientOcclusionSettings_NormalQuality {
-        pub fn low() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn medium() -> Self {
-            Self { value: 1 }
-        }
+    pub fn high() -> Self {
+        Self { value: 2 }
 
-        pub fn high() -> Self {
-            Self { value: 2 }
-        }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/screenspaceambientocclusionsettings/ScreenSpaceAmbientOcclusionSettings_DepthSource.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct ScreenSpaceAmbientOcclusionSettings_DepthSource {
-        pub value: i32,
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/screenspaceambientocclusionsettings/ScreenSpaceAmbientOcclusionSettings_DepthSource.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct ScreenSpaceAmbientOcclusionSettings_DepthSource  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for ScreenSpaceAmbientOcclusionSettings_DepthSource  {
+    const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal";
+
+    const NAME: &'static str = "ScreenSpaceAmbientOcclusionSettings.DepthSource";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    impl ::unity2::ClassIdentity for ScreenSpaceAmbientOcclusionSettings_DepthSource {
-        const NAME: &'static str = "ScreenSpaceAmbientOcclusionSettings.DepthSource";
-        const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  ::unity2::IlType for ScreenSpaceAmbientOcclusionSettings_DepthSource  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::IlType for ScreenSpaceAmbientOcclusionSettings_DepthSource {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  ScreenSpaceAmbientOcclusionSettings_DepthSource  {
+    pub fn depth() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl ScreenSpaceAmbientOcclusionSettings_DepthSource {
-        pub fn depth() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn depth_normals() -> Self {
-            Self { value: 1 }
-        }
+    pub fn depth_normals() -> Self {
+        Self { value: 1 }
+
     }
+
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/screenspaceambientocclusionsettings/ScreenSpaceAmbientOcclusionSettings.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.Universal" , name = "ScreenSpaceAmbientOcclusionSettings")] # [parent (crate :: system :: object :: Object)] pub struct ScreenSpaceAmbientOcclusionSettings {
+# [offset (16)] # [rename (name = "Downsample")] pub downsample : bool ,
+# [offset (20)] # [rename (name = "Source")] pub source : crate :: unity_engine :: rendering :: universal :: screenspaceambientocclusionsettings :: ScreenSpaceAmbientOcclusionSettings_DepthSource ,
+# [offset (24)] # [rename (name = "NormalSamples")] pub normal_samples : crate :: unity_engine :: rendering :: universal :: screenspaceambientocclusionsettings :: ScreenSpaceAmbientOcclusionSettings_NormalQuality ,
+# [offset (28)] # [rename (name = "Intensity")] pub intensity : f32 ,
+# [offset (32)] # [rename (name = "DirectLightingStrength")] pub direct_lighting_strength : f32 ,
+# [offset (36)] # [rename (name = "Radius")] pub radius : f32 ,
+# [offset (40)] # [rename (name = "SampleCount")] pub sample_count : i32 ,
+}
+
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-screenspaceambientocclusionsettings-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-universal-screenspaceambientocclusionsettings")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ScreenSpaceAmbientOcclusionSettings_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ScreenSpaceAmbientOcclusionSettings as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ScreenSpaceAmbientOcclusionSettings as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: ScreenSpaceAmbientOcclusionSettings, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ScreenSpaceAmbientOcclusionSettings, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ScreenSpaceAmbientOcclusionSettings_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ScreenSpaceAmbientOcclusionSettings as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ScreenSpaceAmbientOcclusionSettings as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : ScreenSpaceAmbientOcclusionSettings , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ScreenSpaceAmbientOcclusionSettings , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-rendering-universal-screenspaceambientocclusionsettings")]
-pub trait IScreenSpaceAmbientOcclusionSettingsMethods: IScreenSpaceAmbientOcclusionSettings {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <ScreenSpaceAmbientOcclusionSettings as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ScreenSpaceAmbientOcclusionSettings_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IScreenSpaceAmbientOcclusionSettingsMethods : IScreenSpaceAmbientOcclusionSettings { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ScreenSpaceAmbientOcclusionSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ScreenSpaceAmbientOcclusionSettings_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-rendering-universal-screenspaceambientocclusionsettings")]
-impl<__T: IScreenSpaceAmbientOcclusionSettings> IScreenSpaceAmbientOcclusionSettingsMethods for __T {}
+impl < __T : IScreenSpaceAmbientOcclusionSettings > IScreenSpaceAmbientOcclusionSettingsMethods for __T { }
+
+#[cfg(feature = "unity_engine-rendering-universal-screenspaceambientocclusionsettings")]
+impl ScreenSpaceAmbientOcclusionSettings { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ScreenSpaceAmbientOcclusionSettings_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-rendering-universal-screenspaceambientocclusionsettings")]
 impl ScreenSpaceAmbientOcclusionSettings {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ScreenSpaceAmbientOcclusionSettings),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IScreenSpaceAmbientOcclusionSettingsMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ScreenSpaceAmbientOcclusionSettings) , :: core :: stringify ! (new) ,)) ; < Self as IScreenSpaceAmbientOcclusionSettingsMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-screenspaceambientocclusionsettings")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{
-        IScreenSpaceAmbientOcclusionSettings, IScreenSpaceAmbientOcclusionSettingsMethods, ScreenSpaceAmbientOcclusionSettings,
-        ScreenSpaceAmbientOcclusionSettings_DepthSource, ScreenSpaceAmbientOcclusionSettings_NormalQuality,
-    };
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::system::{object::IObject, r#enum::IEnum, valuetype::IValueType};
+    pub use super::ScreenSpaceAmbientOcclusionSettings_NormalQuality;
+    pub use super::ScreenSpaceAmbientOcclusionSettings_DepthSource;
+    pub use super::ScreenSpaceAmbientOcclusionSettings;
+    pub use super::IScreenSpaceAmbientOcclusionSettings;
+    pub use super::IScreenSpaceAmbientOcclusionSettingsMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

@@ -2,37 +2,23 @@
 
 #[cfg(feature = "unity_engine-controllercolliderhit-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/controllercolliderhit/ControllerColliderHit.md"))]
-    #[::unity2::class(namespace = "UnityEngine", name = "ControllerColliderHit")]
-    #[parent(crate::system::object::Object)]
-    pub struct ControllerColliderHit {
-        #[offset(16)]
-        #[rename(name = "m_Controller")]
-        pub m_controller: crate::unity_engine::charactercontroller::CharacterController,
-        #[offset(24)]
-        #[rename(name = "m_Collider")]
-        pub m_collider: crate::unity_engine::collider::Collider,
-        #[offset(32)]
-        #[rename(name = "m_Point")]
-        pub m_point: crate::unity_engine::vector3::Vector3,
-        #[offset(44)]
-        #[rename(name = "m_Normal")]
-        pub m_normal: crate::unity_engine::vector3::Vector3,
-        #[offset(56)]
-        #[rename(name = "m_MoveDirection")]
-        pub m_move_direction: crate::unity_engine::vector3::Vector3,
-        #[offset(68)]
-        #[rename(name = "m_MoveLength")]
-        pub m_move_length: f32,
-        #[offset(72)]
-        #[rename(name = "m_Push")]
-        pub m_push: i32,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/controllercolliderhit/ControllerColliderHit.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "ControllerColliderHit")] # [parent (crate :: system :: object :: Object)] pub struct ControllerColliderHit {
+# [offset (16)] # [rename (name = "m_Controller")] pub m_controller : crate :: unity_engine :: charactercontroller :: CharacterController ,
+# [offset (24)] # [rename (name = "m_Collider")] pub m_collider : crate :: unity_engine :: collider :: Collider ,
+# [offset (32)] # [rename (name = "m_Point")] pub m_point : crate :: unity_engine :: vector3 :: Vector3 ,
+# [offset (44)] # [rename (name = "m_Normal")] pub m_normal : crate :: unity_engine :: vector3 :: Vector3 ,
+# [offset (56)] # [rename (name = "m_MoveDirection")] pub m_move_direction : crate :: unity_engine :: vector3 :: Vector3 ,
+# [offset (68)] # [rename (name = "m_MoveLength")] pub m_move_length : f32 ,
+# [offset (72)] # [rename (name = "m_Push")] pub m_push : i32 ,
+}
+
 }
 
 #[cfg(feature = "unity_engine-controllercolliderhit-types")]
@@ -41,8 +27,8 @@ pub use __types::*;
 #[cfg(feature = "unity_engine-controllercolliderhit")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{ControllerColliderHit, IControllerColliderHit};
+    pub use super::ControllerColliderHit;
+    pub use super::IControllerColliderHit;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

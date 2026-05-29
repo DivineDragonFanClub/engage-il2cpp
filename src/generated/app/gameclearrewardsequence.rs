@@ -2,320 +2,55 @@
 
 #[cfg(feature = "app-gameclearrewardsequence-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::{
-            irewardsequence::{IIRewardSequence, IRewardSequence},
-            procinst::{IProcInst, ProcInst},
-        },
-        system::object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameclearrewardsequence/GameClearRewardSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "GameClearRewardSequence")]
-    #[parent(crate::app::irewardsequence::IRewardSequence)]
-    pub struct GameClearRewardSequence {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: irewardsequence :: { IIRewardSequence , IRewardSequence }
+ ;
+ use crate :: app :: procinst :: { IProcInst , ProcInst }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameclearrewardsequence/GameClearRewardSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "GameClearRewardSequence")] # [parent (crate :: app :: irewardsequence :: IRewardSequence)] pub struct GameClearRewardSequence {}
+
 }
 
 #[cfg(feature = "app-gameclearrewardsequence-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-gameclearrewardsequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __GameClearRewardSequence_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GameClearRewardSequence as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GameClearRewardSequence as ::unity2::ClassIdentity>::NAME,
-                        "CreateBind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_bind(super_: crate::app::procinst::ProcInst, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
-        inner(super_, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_reword {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GameClearRewardSequence as ::unity2::ClassIdentity>::class(),
-                "Reword",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GameClearRewardSequence as ::unity2::ClassIdentity>::NAME,
-                        "Reword",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn reword(this: GameClearRewardSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GameClearRewardSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_reword::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_callenge_open {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GameClearRewardSequence as ::unity2::ClassIdentity>::class(),
-                "CallengeOpen",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GameClearRewardSequence as ::unity2::ClassIdentity>::NAME,
-                        "CallengeOpen",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn callenge_open(this: GameClearRewardSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GameClearRewardSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_callenge_open::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_relay_open {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GameClearRewardSequence as ::unity2::ClassIdentity>::class(),
-                "RelayOpen",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GameClearRewardSequence as ::unity2::ClassIdentity>::NAME,
-                        "RelayOpen",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn relay_open(this: GameClearRewardSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GameClearRewardSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_relay_open::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_desc {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GameClearRewardSequence as ::unity2::ClassIdentity>::class(),
-                "GetDesc",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GameClearRewardSequence as ::unity2::ClassIdentity>::NAME,
-                        "GetDesc",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_desc(
-        this: GameClearRewardSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Array<crate::app::procdesc::ProcDesc> {
-        let inner: extern "C" fn(GameClearRewardSequence, ::unity2::OptionalMethod) -> ::unity2::Array<crate::app::procdesc::ProcDesc> =
-            ::core::mem::transmute(__lookup_get_desc::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GameClearRewardSequence as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GameClearRewardSequence as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: GameClearRewardSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GameClearRewardSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __GameClearRewardSequence_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_bind { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GameClearRewardSequence as :: unity2 :: ClassIdentity > :: class () , "CreateBind" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GameClearRewardSequence as :: unity2 :: ClassIdentity > :: NAME , "CreateBind" , e) , } } } pub unsafe fn create_bind (super_ : crate :: app :: procinst :: ProcInst , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create_bind :: get_method_info () . method_ptr ,) ; inner (super_ , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_reword { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GameClearRewardSequence as :: unity2 :: ClassIdentity > :: class () , "Reword" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GameClearRewardSequence as :: unity2 :: ClassIdentity > :: NAME , "Reword" , e) , } } } pub unsafe fn reword (this : GameClearRewardSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GameClearRewardSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_reword :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_callenge_open { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GameClearRewardSequence as :: unity2 :: ClassIdentity > :: class () , "CallengeOpen" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GameClearRewardSequence as :: unity2 :: ClassIdentity > :: NAME , "CallengeOpen" , e) , } } } pub unsafe fn callenge_open (this : GameClearRewardSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GameClearRewardSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_callenge_open :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_relay_open { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GameClearRewardSequence as :: unity2 :: ClassIdentity > :: class () , "RelayOpen" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GameClearRewardSequence as :: unity2 :: ClassIdentity > :: NAME , "RelayOpen" , e) , } } } pub unsafe fn relay_open (this : GameClearRewardSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GameClearRewardSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_relay_open :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_desc { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GameClearRewardSequence as :: unity2 :: ClassIdentity > :: class () , "GetDesc" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GameClearRewardSequence as :: unity2 :: ClassIdentity > :: NAME , "GetDesc" , e) , } } } pub unsafe fn get_desc (this : GameClearRewardSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > { let inner : extern "C" fn (GameClearRewardSequence , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > = :: core :: mem :: transmute (__lookup_get_desc :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GameClearRewardSequence as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GameClearRewardSequence as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : GameClearRewardSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GameClearRewardSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-gameclearrewardsequence")]
+impl GameClearRewardSequence { # [doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { __GameClearRewardSequence_unity2_raw :: create_bind (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-gameclearrewardsequence")]
+pub trait IGameClearRewardSequenceMethods : IGameClearRewardSequence { # [doc = "`Reword()` overload"] fn reword (self ,) -> () { unsafe { let __receiver = < GameClearRewardSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GameClearRewardSequence_unity2_raw :: reword (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CallengeOpen()` overload"] fn callenge_open (self ,) -> () { unsafe { let __receiver = < GameClearRewardSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GameClearRewardSequence_unity2_raw :: callenge_open (__receiver , :: core :: option :: Option :: None) } } # [doc = "`RelayOpen()` overload"] fn relay_open (self ,) -> () { unsafe { let __receiver = < GameClearRewardSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GameClearRewardSequence_unity2_raw :: relay_open (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetDesc()` overload"] fn get_desc (self ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > { unsafe { let __receiver = < GameClearRewardSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GameClearRewardSequence_unity2_raw :: get_desc (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GameClearRewardSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GameClearRewardSequence_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-gameclearrewardsequence")]
+impl < __T : IGameClearRewardSequence > IGameClearRewardSequenceMethods for __T { }
+
+#[cfg(feature = "app-gameclearrewardsequence")]
+impl GameClearRewardSequence { pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GameClearRewardSequence_unity2_raw :: __lookup_create_bind :: get_method_info () } pub fn reword_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GameClearRewardSequence_unity2_raw :: __lookup_reword :: get_method_info () } pub fn callenge_open_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GameClearRewardSequence_unity2_raw :: __lookup_callenge_open :: get_method_info () } pub fn relay_open_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GameClearRewardSequence_unity2_raw :: __lookup_relay_open :: get_method_info () } pub fn get_desc_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GameClearRewardSequence_unity2_raw :: __lookup_get_desc :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GameClearRewardSequence_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-gameclearrewardsequence")]
 impl GameClearRewardSequence {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
-    pub fn create_bind(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
-        unsafe { __GameClearRewardSequence_unity2_raw::create_bind(::core::convert::Into::into(super_), ::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-gameclearrewardsequence")]
-pub trait IGameClearRewardSequenceMethods: IGameClearRewardSequence {
-    #[doc = "`Reword()` overload"]
-    fn reword(self) -> () {
-        unsafe {
-            let __receiver =
-                <GameClearRewardSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GameClearRewardSequence_unity2_raw::reword(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CallengeOpen()` overload"]
-    fn callenge_open(self) -> () {
-        unsafe {
-            let __receiver =
-                <GameClearRewardSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GameClearRewardSequence_unity2_raw::callenge_open(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`RelayOpen()` overload"]
-    fn relay_open(self) -> () {
-        unsafe {
-            let __receiver =
-                <GameClearRewardSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GameClearRewardSequence_unity2_raw::relay_open(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetDesc()` overload"]
-    fn get_desc(self) -> ::unity2::Array<crate::app::procdesc::ProcDesc> {
-        unsafe {
-            let __receiver =
-                <GameClearRewardSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GameClearRewardSequence_unity2_raw::get_desc(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <GameClearRewardSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GameClearRewardSequence_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-gameclearrewardsequence")]
-impl<__T: IGameClearRewardSequence> IGameClearRewardSequenceMethods for __T {}
-
-#[cfg(feature = "app-gameclearrewardsequence")]
-impl GameClearRewardSequence {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GameClearRewardSequence),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGameClearRewardSequenceMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GameClearRewardSequence) , :: core :: stringify ! (new) ,)) ; < Self as IGameClearRewardSequenceMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-gameclearrewardsequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{GameClearRewardSequence, IGameClearRewardSequence, IGameClearRewardSequenceMethods};
-    #[cfg(feature = "app-irewardsequence")]
-    pub use crate::app::irewardsequence::IIRewardSequenceMethods;
-    #[cfg(feature = "app-procinst")]
-    pub use crate::app::procinst::IProcInstMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::{
-        app::{
-            irewardsequence::{IIRewardSequence, IRewardSequence},
-            procinst::IProcInst,
-        },
-        system::object::IObject,
-    };
+    pub use super::GameClearRewardSequence;
+    pub use super::IGameClearRewardSequence;
+    pub use super::IGameClearRewardSequenceMethods;
+    pub use crate::app::irewardsequence::IIRewardSequence;
+    pub use crate::app::irewardsequence::IRewardSequence;
+    pub use crate::app::procinst::IProcInst;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "app-irewardsequence")] pub use crate::app::irewardsequence::IIRewardSequenceMethods;
+    #[cfg(feature = "app-procinst")] pub use crate::app::procinst::IProcInstMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

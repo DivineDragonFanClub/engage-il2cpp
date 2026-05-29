@@ -2,323 +2,67 @@
 
 #[cfg(feature = "app-eatunitsselectmenureliancelistcontent-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eatunitsselectmenureliancelistcontent/EatUnitsSelectMenuRelianceListContent.md"))]
-    #[::unity2::class(namespace = "App", name = "EatUnitsSelectMenuRelianceListContent")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct EatUnitsSelectMenuRelianceListContent {
-        #[offset(24)]
-        #[rename(name = "m_UnitIcon")]
-        pub m_unit_icon: crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>,
-        #[offset(32)]
-        #[rename(name = "m_RankObject")]
-        pub m_rank_object: crate::unity_engine::gameobject::GameObject,
-        #[offset(40)]
-        #[rename(name = "m_C_Object")]
-        pub m_c_object: crate::unity_engine::gameobject::GameObject,
-        #[offset(48)]
-        #[rename(name = "m_B_Object")]
-        pub m_b_object: crate::unity_engine::gameobject::GameObject,
-        #[offset(56)]
-        #[rename(name = "m_A_Object")]
-        pub m_a_object: crate::unity_engine::gameobject::GameObject,
-        #[offset(64)]
-        #[rename(name = "m_S_Object")]
-        pub m_s_object: crate::unity_engine::gameobject::GameObject,
-        #[offset(72)]
-        #[rename(name = "m_NoneObject")]
-        pub m_none_object: crate::unity_engine::gameobject::GameObject,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eatunitsselectmenureliancelistcontent/EatUnitsSelectMenuRelianceListContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "EatUnitsSelectMenuRelianceListContent")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct EatUnitsSelectMenuRelianceListContent {
+# [offset (24)] # [rename (name = "m_UnitIcon")] pub m_unit_icon : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: gameobject :: GameObject > ,
+# [offset (32)] # [rename (name = "m_RankObject")] pub m_rank_object : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (40)] # [rename (name = "m_C_Object")] pub m_c_object : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (48)] # [rename (name = "m_B_Object")] pub m_b_object : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (56)] # [rename (name = "m_A_Object")] pub m_a_object : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (64)] # [rename (name = "m_S_Object")] pub m_s_object : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (72)] # [rename (name = "m_NoneObject")] pub m_none_object : crate :: unity_engine :: gameobject :: GameObject ,
+}
+
 }
 
 #[cfg(feature = "app-eatunitsselectmenureliancelistcontent-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-eatunitsselectmenureliancelistcontent")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __EatUnitsSelectMenuRelianceListContent_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_info {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EatUnitsSelectMenuRelianceListContent as ::unity2::ClassIdentity>::class(),
-                "SetInfo",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <EatUnitsSelectMenuRelianceListContent as ::unity2::ClassIdentity>::NAME,
-                        "SetInfo",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_info(
-        this: EatUnitsSelectMenuRelianceListContent,
-        unit_a: crate::app::unit::Unit,
-        unit_b: crate::app::unit::Unit,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            EatUnitsSelectMenuRelianceListContent,
-            crate::app::unit::Unit,
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_set_info::get_method_info().method_ptr);
-        inner(this, unit_a, unit_b, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_reliance_info {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EatUnitsSelectMenuRelianceListContent as ::unity2::ClassIdentity>::class(),
-                "SetRelianceInfo",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <EatUnitsSelectMenuRelianceListContent as ::unity2::ClassIdentity>::NAME,
-                        "SetRelianceInfo",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_reliance_info(
-        this: EatUnitsSelectMenuRelianceListContent,
-        unit_a: crate::app::unit::Unit,
-        unit_b: crate::app::unit::Unit,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            EatUnitsSelectMenuRelianceListContent,
-            crate::app::unit::Unit,
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_set_reliance_info::get_method_info().method_ptr);
-        inner(this, unit_a, unit_b, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_color {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EatUnitsSelectMenuRelianceListContent as ::unity2::ClassIdentity>::class(),
-                "SetColor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <EatUnitsSelectMenuRelianceListContent as ::unity2::ClassIdentity>::NAME,
-                        "SetColor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_color(
-        this: EatUnitsSelectMenuRelianceListContent,
-        game_object: crate::unity_engine::gameobject::GameObject,
-        color: crate::unity_engine::color::Color,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            EatUnitsSelectMenuRelianceListContent,
-            crate::unity_engine::gameobject::GameObject,
-            crate::unity_engine::color::Color,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_set_color::get_method_info().method_ptr);
-        inner(this, game_object, color, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EatUnitsSelectMenuRelianceListContent as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <EatUnitsSelectMenuRelianceListContent as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: EatUnitsSelectMenuRelianceListContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(EatUnitsSelectMenuRelianceListContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __EatUnitsSelectMenuRelianceListContent_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_info { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< EatUnitsSelectMenuRelianceListContent as :: unity2 :: ClassIdentity > :: class () , "SetInfo" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < EatUnitsSelectMenuRelianceListContent as :: unity2 :: ClassIdentity > :: NAME , "SetInfo" , e) , } } } pub unsafe fn set_info (this : EatUnitsSelectMenuRelianceListContent , unit_a : crate :: app :: unit :: Unit , unit_b : crate :: app :: unit :: Unit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (EatUnitsSelectMenuRelianceListContent , crate :: app :: unit :: Unit , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_info :: get_method_info () . method_ptr ,) ; inner (this , unit_a , unit_b , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_reliance_info { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< EatUnitsSelectMenuRelianceListContent as :: unity2 :: ClassIdentity > :: class () , "SetRelianceInfo" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < EatUnitsSelectMenuRelianceListContent as :: unity2 :: ClassIdentity > :: NAME , "SetRelianceInfo" , e) , } } } pub unsafe fn set_reliance_info (this : EatUnitsSelectMenuRelianceListContent , unit_a : crate :: app :: unit :: Unit , unit_b : crate :: app :: unit :: Unit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (EatUnitsSelectMenuRelianceListContent , crate :: app :: unit :: Unit , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_reliance_info :: get_method_info () . method_ptr ,) ; inner (this , unit_a , unit_b , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_color { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: gameobject :: GameObject as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: color :: Color as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< EatUnitsSelectMenuRelianceListContent as :: unity2 :: ClassIdentity > :: class () , "SetColor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < EatUnitsSelectMenuRelianceListContent as :: unity2 :: ClassIdentity > :: NAME , "SetColor" , e) , } } } pub unsafe fn set_color (this : EatUnitsSelectMenuRelianceListContent , game_object : crate :: unity_engine :: gameobject :: GameObject , color : crate :: unity_engine :: color :: Color , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (EatUnitsSelectMenuRelianceListContent , crate :: unity_engine :: gameobject :: GameObject , crate :: unity_engine :: color :: Color , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_color :: get_method_info () . method_ptr ,) ; inner (this , game_object , color , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< EatUnitsSelectMenuRelianceListContent as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < EatUnitsSelectMenuRelianceListContent as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : EatUnitsSelectMenuRelianceListContent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (EatUnitsSelectMenuRelianceListContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-eatunitsselectmenureliancelistcontent")]
-pub trait IEatUnitsSelectMenuRelianceListContentMethods: IEatUnitsSelectMenuRelianceListContent {
-    #[doc = "`SetInfo(crate::app::unit::Unit, crate::app::unit::Unit)` overload"]
-    fn set_info(self, unit_a: impl ::core::convert::Into<crate::app::unit::Unit>, unit_b: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
-        unsafe {
-            let __receiver = <EatUnitsSelectMenuRelianceListContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __EatUnitsSelectMenuRelianceListContent_unity2_raw::set_info(
-                __receiver,
-                ::core::convert::Into::into(unit_a),
-                ::core::convert::Into::into(unit_b),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetRelianceInfo(crate::app::unit::Unit, crate::app::unit::Unit)` overload"]
-    fn set_reliance_info(
-        self,
-        unit_a: impl ::core::convert::Into<crate::app::unit::Unit>,
-        unit_b: impl ::core::convert::Into<crate::app::unit::Unit>,
-    ) -> () {
-        unsafe {
-            let __receiver = <EatUnitsSelectMenuRelianceListContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __EatUnitsSelectMenuRelianceListContent_unity2_raw::set_reliance_info(
-                __receiver,
-                ::core::convert::Into::into(unit_a),
-                ::core::convert::Into::into(unit_b),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetColor(crate::unity_engine::gameobject::GameObject, crate::unity_engine::color::Color)` overload"]
-    fn set_color(
-        self,
-        game_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-        color: impl ::core::convert::Into<crate::unity_engine::color::Color>,
-    ) -> () {
-        unsafe {
-            let __receiver = <EatUnitsSelectMenuRelianceListContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __EatUnitsSelectMenuRelianceListContent_unity2_raw::set_color(
-                __receiver,
-                ::core::convert::Into::into(game_object),
-                ::core::convert::Into::into(color),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <EatUnitsSelectMenuRelianceListContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __EatUnitsSelectMenuRelianceListContent_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IEatUnitsSelectMenuRelianceListContentMethods : IEatUnitsSelectMenuRelianceListContent { # [doc = "`SetInfo(crate::app::unit::Unit, crate::app::unit::Unit)` overload"] fn set_info (self , unit_a : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , unit_b : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < EatUnitsSelectMenuRelianceListContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __EatUnitsSelectMenuRelianceListContent_unity2_raw :: set_info (__receiver , :: core :: convert :: Into :: into (unit_a) , :: core :: convert :: Into :: into (unit_b) , :: core :: option :: Option :: None) } } # [doc = "`SetRelianceInfo(crate::app::unit::Unit, crate::app::unit::Unit)` overload"] fn set_reliance_info (self , unit_a : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , unit_b : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < EatUnitsSelectMenuRelianceListContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __EatUnitsSelectMenuRelianceListContent_unity2_raw :: set_reliance_info (__receiver , :: core :: convert :: Into :: into (unit_a) , :: core :: convert :: Into :: into (unit_b) , :: core :: option :: Option :: None) } } # [doc = "`SetColor(crate::unity_engine::gameobject::GameObject, crate::unity_engine::color::Color)` overload"] fn set_color (self , game_object : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject > , color : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color >) -> () { unsafe { let __receiver = < EatUnitsSelectMenuRelianceListContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __EatUnitsSelectMenuRelianceListContent_unity2_raw :: set_color (__receiver , :: core :: convert :: Into :: into (game_object) , :: core :: convert :: Into :: into (color) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < EatUnitsSelectMenuRelianceListContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __EatUnitsSelectMenuRelianceListContent_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-eatunitsselectmenureliancelistcontent")]
-impl<__T: IEatUnitsSelectMenuRelianceListContent> IEatUnitsSelectMenuRelianceListContentMethods for __T {}
+impl < __T : IEatUnitsSelectMenuRelianceListContent > IEatUnitsSelectMenuRelianceListContentMethods for __T { }
+
+#[cfg(feature = "app-eatunitsselectmenureliancelistcontent")]
+impl EatUnitsSelectMenuRelianceListContent { pub fn set_info_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __EatUnitsSelectMenuRelianceListContent_unity2_raw :: __lookup_set_info :: get_method_info () } pub fn set_reliance_info_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __EatUnitsSelectMenuRelianceListContent_unity2_raw :: __lookup_set_reliance_info :: get_method_info () } pub fn set_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __EatUnitsSelectMenuRelianceListContent_unity2_raw :: __lookup_set_color :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __EatUnitsSelectMenuRelianceListContent_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-eatunitsselectmenureliancelistcontent")]
 impl EatUnitsSelectMenuRelianceListContent {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(EatUnitsSelectMenuRelianceListContent),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IEatUnitsSelectMenuRelianceListContentMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (EatUnitsSelectMenuRelianceListContent) , :: core :: stringify ! (new) ,)) ; < Self as IEatUnitsSelectMenuRelianceListContentMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-eatunitsselectmenureliancelistcontent")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{EatUnitsSelectMenuRelianceListContent, IEatUnitsSelectMenuRelianceListContent, IEatUnitsSelectMenuRelianceListContentMethods};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        system::object::IObject,
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::EatUnitsSelectMenuRelianceListContent;
+    pub use super::IEatUnitsSelectMenuRelianceListContent;
+    pub use super::IEatUnitsSelectMenuRelianceListContentMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

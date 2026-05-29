@@ -2,962 +2,133 @@
 
 #[cfg(feature = "app-refineshopengravegodmenu-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::{
-            basicmenu::{BasicMenu, IBasicMenu},
-            procinst::{IProcInst, ProcInst},
-        },
-        system::{
-            delegate::{Delegate, IDelegate},
-            multicastdelegate::{IMulticastDelegate, MulticastDelegate},
-            object::{IObject, Object},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshopengravegodmenu/RefineShopEngraveGodMenu_DecideEventHandler.md"))]
-    #[::unity2::class(namespace = "App", name = "RefineShopEngraveGodMenu.DecideEventHandler")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct RefineShopEngraveGodMenu_DecideEventHandler {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: basicmenu :: { BasicMenu , IBasicMenu }
+ ;
+ use crate :: app :: procinst :: { IProcInst , ProcInst }
+ ;
+ use crate :: system :: delegate :: { Delegate , IDelegate }
+ ;
+ use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshopengravegodmenu/RefineShopEngraveGodMenu_RequestCloseEventHandler.md"))]
-    #[::unity2::class(namespace = "App", name = "RefineShopEngraveGodMenu.RequestCloseEventHandler")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct RefineShopEngraveGodMenu_RequestCloseEventHandler {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshopengravegodmenu/RefineShopEngraveGodMenu.md"))]
-    #[::unity2::class(namespace = "App", name = "RefineShopEngraveGodMenu")]
-    #[parent(crate::app::basicmenu::BasicMenu)]
-    pub struct RefineShopEngraveGodMenu {
-        #[offset(216)]
-        #[rename(name = "m_RequestCloseEventHandler")]
-        pub m_request_close_event_handler: crate::app::refineshopengravegodmenu::RefineShopEngraveGodMenu_RequestCloseEventHandler,
-    }
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshopengravegodmenu/RefineShopEngraveGodMenu_SelectEventHandler.md"))] # [:: unity2 :: class (namespace = "App" , name = "RefineShopEngraveGodMenu.SelectEventHandler")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct RefineShopEngraveGodMenu_SelectEventHandler {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshopengravegodmenu/RefineShopEngraveGodMenu_SelectEventHandler.md"))]
-    #[::unity2::class(namespace = "App", name = "RefineShopEngraveGodMenu.SelectEventHandler")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct RefineShopEngraveGodMenu_SelectEventHandler {}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshopengravegodmenu/RefineShopEngraveGodMenu_DecideEventHandler.md"))] # [:: unity2 :: class (namespace = "App" , name = "RefineShopEngraveGodMenu.DecideEventHandler")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct RefineShopEngraveGodMenu_DecideEventHandler {}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshopengravegodmenu/RefineShopEngraveGodMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "RefineShopEngraveGodMenu")] # [parent (crate :: app :: basicmenu :: BasicMenu)] pub struct RefineShopEngraveGodMenu {
+# [offset (216)] # [rename (name = "m_RequestCloseEventHandler")] pub m_request_close_event_handler : crate :: app :: refineshopengravegodmenu :: RefineShopEngraveGodMenu_RequestCloseEventHandler ,
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshopengravegodmenu/RefineShopEngraveGodMenu_RequestCloseEventHandler.md"))] # [:: unity2 :: class (namespace = "App" , name = "RefineShopEngraveGodMenu.RequestCloseEventHandler")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct RefineShopEngraveGodMenu_RequestCloseEventHandler {}
+
 }
 
 #[cfg(feature = "app-refineshopengravegodmenu-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-refineshopengravegodmenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RefineShopEngraveGodMenu_DecideEventHandler_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RefineShopEngraveGodMenu_DecideEventHandler as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RefineShopEngraveGodMenu_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: RefineShopEngraveGodMenu_DecideEventHandler,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RefineShopEngraveGodMenu_DecideEventHandler,
-            crate::system::object::Object,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::goddata::GodData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RefineShopEngraveGodMenu_DecideEventHandler as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RefineShopEngraveGodMenu_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
-                        "Invoke",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn invoke(
-        this: RefineShopEngraveGodMenu_DecideEventHandler,
-        god_data: crate::app::goddata::GodData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RefineShopEngraveGodMenu_DecideEventHandler, crate::app::goddata::GodData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
-        inner(this, god_data, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __RefineShopEngraveGodMenu_SelectEventHandler_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type () , < :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RefineShopEngraveGodMenu_SelectEventHandler as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefineShopEngraveGodMenu_SelectEventHandler as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : RefineShopEngraveGodMenu_SelectEventHandler , object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RefineShopEngraveGodMenu_SelectEventHandler , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , object , method , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_invoke { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: goddata :: GodData as :: unity2 :: IlType > :: il_type () , < crate :: app :: unititem :: UnitItem as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RefineShopEngraveGodMenu_SelectEventHandler as :: unity2 :: ClassIdentity > :: class () , "Invoke" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefineShopEngraveGodMenu_SelectEventHandler as :: unity2 :: ClassIdentity > :: NAME , "Invoke" , e) , } } } pub unsafe fn invoke (this : RefineShopEngraveGodMenu_SelectEventHandler , god_data : crate :: app :: goddata :: GodData , engraved_unit_item : crate :: app :: unititem :: UnitItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RefineShopEngraveGodMenu_SelectEventHandler , crate :: app :: goddata :: GodData , crate :: app :: unititem :: UnitItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_invoke :: get_method_info () . method_ptr ,) ; inner (this , god_data , engraved_unit_item , __unity2_method_info) } }
 
 #[cfg(feature = "app-refineshopengravegodmenu")]
-pub trait IRefineShopEngraveGodMenu_DecideEventHandlerMethods: IRefineShopEngraveGodMenu_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
-        unsafe {
-            let __receiver = <RefineShopEngraveGodMenu_DecideEventHandler as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RefineShopEngraveGodMenu_DecideEventHandler_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invoke(crate::app::goddata::GodData)` overload"]
-    fn invoke(self, god_data: impl ::core::convert::Into<crate::app::goddata::GodData>) -> () {
-        unsafe {
-            let __receiver = <RefineShopEngraveGodMenu_DecideEventHandler as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RefineShopEngraveGodMenu_DecideEventHandler_unity2_raw::invoke(
-                __receiver,
-                ::core::convert::Into::into(god_data),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+pub trait IRefineShopEngraveGodMenu_SelectEventHandlerMethods : IRefineShopEngraveGodMenu_SelectEventHandler { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < RefineShopEngraveGodMenu_SelectEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RefineShopEngraveGodMenu_SelectEventHandler_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } # [doc = "`Invoke(crate::app::goddata::GodData, crate::app::unititem::UnitItem)` overload"] fn invoke (self , god_data : impl :: core :: convert :: Into < crate :: app :: goddata :: GodData > , engraved_unit_item : impl :: core :: convert :: Into < crate :: app :: unititem :: UnitItem >) -> () { unsafe { let __receiver = < RefineShopEngraveGodMenu_SelectEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RefineShopEngraveGodMenu_SelectEventHandler_unity2_raw :: invoke (__receiver , :: core :: convert :: Into :: into (god_data) , :: core :: convert :: Into :: into (engraved_unit_item) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-refineshopengravegodmenu")]
-impl<__T: IRefineShopEngraveGodMenu_DecideEventHandler> IRefineShopEngraveGodMenu_DecideEventHandlerMethods for __T {}
+impl < __T : IRefineShopEngraveGodMenu_SelectEventHandler > IRefineShopEngraveGodMenu_SelectEventHandlerMethods for __T { }
 
 #[cfg(feature = "app-refineshopengravegodmenu")]
-impl RefineShopEngraveGodMenu_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RefineShopEngraveGodMenu_DecideEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRefineShopEngraveGodMenu_DecideEventHandlerMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-#[cfg(feature = "app-refineshopengravegodmenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RefineShopEngraveGodMenu_RequestCloseEventHandler_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RefineShopEngraveGodMenu_RequestCloseEventHandler as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RefineShopEngraveGodMenu_RequestCloseEventHandler as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: RefineShopEngraveGodMenu_RequestCloseEventHandler,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RefineShopEngraveGodMenu_RequestCloseEventHandler,
-            crate::system::object::Object,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RefineShopEngraveGodMenu_RequestCloseEventHandler as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RefineShopEngraveGodMenu_RequestCloseEventHandler as ::unity2::ClassIdentity>::NAME,
-                        "Invoke",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn invoke(this: RefineShopEngraveGodMenu_RequestCloseEventHandler, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RefineShopEngraveGodMenu_RequestCloseEventHandler, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-refineshopengravegodmenu")]
-pub trait IRefineShopEngraveGodMenu_RequestCloseEventHandlerMethods: IRefineShopEngraveGodMenu_RequestCloseEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
-        unsafe {
-            let __receiver = <RefineShopEngraveGodMenu_RequestCloseEventHandler as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RefineShopEngraveGodMenu_RequestCloseEventHandler_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invoke()` overload"]
-    fn invoke(self) -> () {
-        unsafe {
-            let __receiver = <RefineShopEngraveGodMenu_RequestCloseEventHandler as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RefineShopEngraveGodMenu_RequestCloseEventHandler_unity2_raw::invoke(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-refineshopengravegodmenu")]
-impl<__T: IRefineShopEngraveGodMenu_RequestCloseEventHandler> IRefineShopEngraveGodMenu_RequestCloseEventHandlerMethods for __T {}
-
-#[cfg(feature = "app-refineshopengravegodmenu")]
-impl RefineShopEngraveGodMenu_RequestCloseEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RefineShopEngraveGodMenu_RequestCloseEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRefineShopEngraveGodMenu_RequestCloseEventHandlerMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-#[cfg(feature = "app-refineshopengravegodmenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RefineShopEngraveGodMenu_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_m_unit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RefineShopEngraveGodMenu as ::unity2::ClassIdentity>::class(),
-                "get_m_Unit",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RefineShopEngraveGodMenu as ::unity2::ClassIdentity>::NAME,
-                        "get_m_Unit",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_m_unit(this: RefineShopEngraveGodMenu, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::unit::Unit {
-        let inner: extern "C" fn(RefineShopEngraveGodMenu, ::unity2::OptionalMethod) -> crate::app::unit::Unit =
-            ::core::mem::transmute(__lookup_get_m_unit::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_m_unit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RefineShopEngraveGodMenu as ::unity2::ClassIdentity>::class(),
-                "set_m_Unit",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RefineShopEngraveGodMenu as ::unity2::ClassIdentity>::NAME,
-                        "set_m_Unit",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_m_unit(this: RefineShopEngraveGodMenu, value: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RefineShopEngraveGodMenu, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_m_unit::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_m_base_unit_item {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RefineShopEngraveGodMenu as ::unity2::ClassIdentity>::class(),
-                "get_m_BaseUnitItem",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RefineShopEngraveGodMenu as ::unity2::ClassIdentity>::NAME,
-                        "get_m_BaseUnitItem",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_m_base_unit_item(
-        this: RefineShopEngraveGodMenu,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::unititem::UnitItem {
-        let inner: extern "C" fn(RefineShopEngraveGodMenu, ::unity2::OptionalMethod) -> crate::app::unititem::UnitItem =
-            ::core::mem::transmute(__lookup_get_m_base_unit_item::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_m_base_unit_item {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unititem::UnitItem as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RefineShopEngraveGodMenu as ::unity2::ClassIdentity>::class(),
-                "set_m_BaseUnitItem",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RefineShopEngraveGodMenu as ::unity2::ClassIdentity>::NAME,
-                        "set_m_BaseUnitItem",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_m_base_unit_item(
-        this: RefineShopEngraveGodMenu,
-        value: crate::app::unititem::UnitItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RefineShopEngraveGodMenu, crate::app::unititem::UnitItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_m_base_unit_item::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <crate::app::refineshopengravegodmenu::RefineShopEngraveGodMenu_SelectEventHandler as ::unity2::IlType>::il_type(),
-                <crate::app::refineshopengravegodmenu::RefineShopEngraveGodMenu_DecideEventHandler as ::unity2::IlType>::il_type(),
-                <crate::app::refineshopengravegodmenu::RefineShopEngraveGodMenu_RequestCloseEventHandler as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RefineShopEngraveGodMenu as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                7,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RefineShopEngraveGodMenu as ::unity2::ClassIdentity>::NAME,
-                        "CreateBind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        menu_object: crate::unity_engine::gameobject::GameObject,
-        unit: crate::app::unit::Unit,
-        item_index: i32,
-        select_event_handler: crate::app::refineshopengravegodmenu::RefineShopEngraveGodMenu_SelectEventHandler,
-        decide_event_handler: crate::app::refineshopengravegodmenu::RefineShopEngraveGodMenu_DecideEventHandler,
-        request_close_event_handler: crate::app::refineshopengravegodmenu::RefineShopEngraveGodMenu_RequestCloseEventHandler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::refineshopengravegodmenu::RefineShopEngraveGodMenu {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            crate::unity_engine::gameobject::GameObject,
-            crate::app::unit::Unit,
-            i32,
-            crate::app::refineshopengravegodmenu::RefineShopEngraveGodMenu_SelectEventHandler,
-            crate::app::refineshopengravegodmenu::RefineShopEngraveGodMenu_DecideEventHandler,
-            crate::app::refineshopengravegodmenu::RefineShopEngraveGodMenu_RequestCloseEventHandler,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::refineshopengravegodmenu::RefineShopEngraveGodMenu =
-            ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
-        inner(
-            super_,
-            menu_object,
-            unit,
-            item_index,
-            select_event_handler,
-            decide_event_handler,
-            request_close_event_handler,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> as ::unity2::IlType>::il_type(),
-                <crate::app::basicmenucontent::BasicMenuContent as ::unity2::IlType>::il_type(),
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-                <crate::app::unititem::UnitItem as ::unity2::IlType>::il_type(),
-                <crate::app::refineshopengravegodmenu::RefineShopEngraveGodMenu_RequestCloseEventHandler as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RefineShopEngraveGodMenu as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                5,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RefineShopEngraveGodMenu as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: RefineShopEngraveGodMenu,
-        menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
-        menu_content: crate::app::basicmenucontent::BasicMenuContent,
-        unit: crate::app::unit::Unit,
-        base_unit_item: crate::app::unititem::UnitItem,
-        request_close_event_handler: crate::app::refineshopengravegodmenu::RefineShopEngraveGodMenu_RequestCloseEventHandler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RefineShopEngraveGodMenu,
-            crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
-            crate::app::basicmenucontent::BasicMenuContent,
-            crate::app::unit::Unit,
-            crate::app::unititem::UnitItem,
-            crate::app::refineshopengravegodmenu::RefineShopEngraveGodMenu_RequestCloseEventHandler,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(
-            this,
-            menu_item_list,
-            menu_content,
-            unit,
-            base_unit_item,
-            request_close_event_handler,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RefineShopEngraveGodMenu as ::unity2::ClassIdentity>::class(),
-                "GetName",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RefineShopEngraveGodMenu as ::unity2::ClassIdentity>::NAME,
-                        "GetName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_name(this: RefineShopEngraveGodMenu, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(RefineShopEngraveGodMenu, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_b_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RefineShopEngraveGodMenu as ::unity2::ClassIdentity>::class(),
-                "BCall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RefineShopEngraveGodMenu as ::unity2::ClassIdentity>::NAME,
-                        "BCall",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn b_call(this: RefineShopEngraveGodMenu, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(RefineShopEngraveGodMenu, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
-            ::core::mem::transmute(__lookup_b_call::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-refineshopengravegodmenu")]
-impl RefineShopEngraveGodMenu {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::unity_engine::gameobject::GameObject, crate::app::unit::Unit, i32, crate::app::refineshopengravegodmenu::RefineShopEngraveGodMenu_SelectEventHandler, crate::app::refineshopengravegodmenu::RefineShopEngraveGodMenu_DecideEventHandler, crate::app::refineshopengravegodmenu::RefineShopEngraveGodMenu_RequestCloseEventHandler)` overload"]
-    pub fn create_bind(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        menu_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-        item_index: impl ::core::convert::Into<i32>,
-        select_event_handler: impl ::core::convert::Into<crate::app::refineshopengravegodmenu::RefineShopEngraveGodMenu_SelectEventHandler>,
-        decide_event_handler: impl ::core::convert::Into<crate::app::refineshopengravegodmenu::RefineShopEngraveGodMenu_DecideEventHandler>,
-        request_close_event_handler: impl ::core::convert::Into<crate::app::refineshopengravegodmenu::RefineShopEngraveGodMenu_RequestCloseEventHandler>,
-    ) -> crate::app::refineshopengravegodmenu::RefineShopEngraveGodMenu {
-        unsafe {
-            __RefineShopEngraveGodMenu_unity2_raw::create_bind(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(menu_object),
-                ::core::convert::Into::into(unit),
-                ::core::convert::Into::into(item_index),
-                ::core::convert::Into::into(select_event_handler),
-                ::core::convert::Into::into(decide_event_handler),
-                ::core::convert::Into::into(request_close_event_handler),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-refineshopengravegodmenu")]
-pub trait IRefineShopEngraveGodMenuMethods: IRefineShopEngraveGodMenu {
-    #[doc = "`get_m_Unit()` overload"]
-    fn get_m_unit(self) -> crate::app::unit::Unit {
-        unsafe {
-            let __receiver =
-                <RefineShopEngraveGodMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RefineShopEngraveGodMenu_unity2_raw::get_m_unit(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_m_Unit(crate::app::unit::Unit)` overload"]
-    fn set_m_unit(self, value: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
-        unsafe {
-            let __receiver =
-                <RefineShopEngraveGodMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RefineShopEngraveGodMenu_unity2_raw::set_m_unit(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_m_BaseUnitItem()` overload"]
-    fn get_m_base_unit_item(self) -> crate::app::unititem::UnitItem {
-        unsafe {
-            let __receiver =
-                <RefineShopEngraveGodMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RefineShopEngraveGodMenu_unity2_raw::get_m_base_unit_item(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_m_BaseUnitItem(crate::app::unititem::UnitItem)` overload"]
-    fn set_m_base_unit_item(self, value: impl ::core::convert::Into<crate::app::unititem::UnitItem>) -> () {
-        unsafe {
-            let __receiver =
-                <RefineShopEngraveGodMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RefineShopEngraveGodMenu_unity2_raw::set_m_base_unit_item(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent, crate::app::unit::Unit, crate::app::unititem::UnitItem, crate::app::refineshopengravegodmenu::RefineShopEngraveGodMenu_RequestCloseEventHandler)` overload"]
-    fn ctor(
-        self,
-        menu_item_list: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>>,
-        menu_content: impl ::core::convert::Into<crate::app::basicmenucontent::BasicMenuContent>,
-        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-        base_unit_item: impl ::core::convert::Into<crate::app::unititem::UnitItem>,
-        request_close_event_handler: impl ::core::convert::Into<crate::app::refineshopengravegodmenu::RefineShopEngraveGodMenu_RequestCloseEventHandler>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <RefineShopEngraveGodMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RefineShopEngraveGodMenu_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(menu_item_list),
-                ::core::convert::Into::into(menu_content),
-                ::core::convert::Into::into(unit),
-                ::core::convert::Into::into(base_unit_item),
-                ::core::convert::Into::into(request_close_event_handler),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetName()` overload"]
-    fn get_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver =
-                <RefineShopEngraveGodMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RefineShopEngraveGodMenu_unity2_raw::get_name(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`BCall()` overload"]
-    fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver =
-                <RefineShopEngraveGodMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RefineShopEngraveGodMenu_unity2_raw::b_call(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-refineshopengravegodmenu")]
-impl<__T: IRefineShopEngraveGodMenu> IRefineShopEngraveGodMenuMethods for __T {}
-
-#[cfg(feature = "app-refineshopengravegodmenu")]
-impl RefineShopEngraveGodMenu {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent, crate::app::unit::Unit, crate::app::unititem::UnitItem, crate::app::refineshopengravegodmenu::RefineShopEngraveGodMenu_RequestCloseEventHandler)` — overload selector"]
-    pub fn new(
-        menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
-        menu_content: crate::app::basicmenucontent::BasicMenuContent,
-        unit: crate::app::unit::Unit,
-        base_unit_item: crate::app::unititem::UnitItem,
-        request_close_event_handler: crate::app::refineshopengravegodmenu::RefineShopEngraveGodMenu_RequestCloseEventHandler,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RefineShopEngraveGodMenu),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRefineShopEngraveGodMenuMethods>::ctor(this, menu_item_list, menu_content, unit, base_unit_item, request_close_event_handler);
-        this
-    }
-}
-
-#[cfg(feature = "app-refineshopengravegodmenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RefineShopEngraveGodMenu_SelectEventHandler_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RefineShopEngraveGodMenu_SelectEventHandler as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RefineShopEngraveGodMenu_SelectEventHandler as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: RefineShopEngraveGodMenu_SelectEventHandler,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RefineShopEngraveGodMenu_SelectEventHandler,
-            crate::system::object::Object,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::goddata::GodData as ::unity2::IlType>::il_type(),
-                <crate::app::unititem::UnitItem as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RefineShopEngraveGodMenu_SelectEventHandler as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RefineShopEngraveGodMenu_SelectEventHandler as ::unity2::ClassIdentity>::NAME,
-                        "Invoke",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn invoke(
-        this: RefineShopEngraveGodMenu_SelectEventHandler,
-        god_data: crate::app::goddata::GodData,
-        engraved_unit_item: crate::app::unititem::UnitItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RefineShopEngraveGodMenu_SelectEventHandler,
-            crate::app::goddata::GodData,
-            crate::app::unititem::UnitItem,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
-        inner(this, god_data, engraved_unit_item, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-refineshopengravegodmenu")]
-pub trait IRefineShopEngraveGodMenu_SelectEventHandlerMethods: IRefineShopEngraveGodMenu_SelectEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
-        unsafe {
-            let __receiver = <RefineShopEngraveGodMenu_SelectEventHandler as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RefineShopEngraveGodMenu_SelectEventHandler_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invoke(crate::app::goddata::GodData, crate::app::unititem::UnitItem)` overload"]
-    fn invoke(
-        self,
-        god_data: impl ::core::convert::Into<crate::app::goddata::GodData>,
-        engraved_unit_item: impl ::core::convert::Into<crate::app::unititem::UnitItem>,
-    ) -> () {
-        unsafe {
-            let __receiver = <RefineShopEngraveGodMenu_SelectEventHandler as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RefineShopEngraveGodMenu_SelectEventHandler_unity2_raw::invoke(
-                __receiver,
-                ::core::convert::Into::into(god_data),
-                ::core::convert::Into::into(engraved_unit_item),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-refineshopengravegodmenu")]
-impl<__T: IRefineShopEngraveGodMenu_SelectEventHandler> IRefineShopEngraveGodMenu_SelectEventHandlerMethods for __T {}
+impl RefineShopEngraveGodMenu_SelectEventHandler { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RefineShopEngraveGodMenu_SelectEventHandler_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RefineShopEngraveGodMenu_SelectEventHandler_unity2_raw :: __lookup_invoke :: get_method_info () } }
 
 #[cfg(feature = "app-refineshopengravegodmenu")]
 impl RefineShopEngraveGodMenu_SelectEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RefineShopEngraveGodMenu_SelectEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRefineShopEngraveGodMenu_SelectEventHandlerMethods>::ctor(this, object, method);
-        this
-    }
+# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RefineShopEngraveGodMenu_SelectEventHandler) , :: core :: stringify ! (new) ,)) ; < Self as IRefineShopEngraveGodMenu_SelectEventHandlerMethods > :: ctor (this , object , method) ; this }
+}
+
+#[cfg(feature = "app-refineshopengravegodmenu")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __RefineShopEngraveGodMenu_DecideEventHandler_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type () , < :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RefineShopEngraveGodMenu_DecideEventHandler as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefineShopEngraveGodMenu_DecideEventHandler as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : RefineShopEngraveGodMenu_DecideEventHandler , object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RefineShopEngraveGodMenu_DecideEventHandler , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , object , method , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_invoke { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: goddata :: GodData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RefineShopEngraveGodMenu_DecideEventHandler as :: unity2 :: ClassIdentity > :: class () , "Invoke" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefineShopEngraveGodMenu_DecideEventHandler as :: unity2 :: ClassIdentity > :: NAME , "Invoke" , e) , } } } pub unsafe fn invoke (this : RefineShopEngraveGodMenu_DecideEventHandler , god_data : crate :: app :: goddata :: GodData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RefineShopEngraveGodMenu_DecideEventHandler , crate :: app :: goddata :: GodData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_invoke :: get_method_info () . method_ptr ,) ; inner (this , god_data , __unity2_method_info) } }
+
+#[cfg(feature = "app-refineshopengravegodmenu")]
+pub trait IRefineShopEngraveGodMenu_DecideEventHandlerMethods : IRefineShopEngraveGodMenu_DecideEventHandler { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < RefineShopEngraveGodMenu_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RefineShopEngraveGodMenu_DecideEventHandler_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } # [doc = "`Invoke(crate::app::goddata::GodData)` overload"] fn invoke (self , god_data : impl :: core :: convert :: Into < crate :: app :: goddata :: GodData >) -> () { unsafe { let __receiver = < RefineShopEngraveGodMenu_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RefineShopEngraveGodMenu_DecideEventHandler_unity2_raw :: invoke (__receiver , :: core :: convert :: Into :: into (god_data) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-refineshopengravegodmenu")]
+impl < __T : IRefineShopEngraveGodMenu_DecideEventHandler > IRefineShopEngraveGodMenu_DecideEventHandlerMethods for __T { }
+
+#[cfg(feature = "app-refineshopengravegodmenu")]
+impl RefineShopEngraveGodMenu_DecideEventHandler { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RefineShopEngraveGodMenu_DecideEventHandler_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RefineShopEngraveGodMenu_DecideEventHandler_unity2_raw :: __lookup_invoke :: get_method_info () } }
+
+#[cfg(feature = "app-refineshopengravegodmenu")]
+impl RefineShopEngraveGodMenu_DecideEventHandler {
+# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RefineShopEngraveGodMenu_DecideEventHandler) , :: core :: stringify ! (new) ,)) ; < Self as IRefineShopEngraveGodMenu_DecideEventHandlerMethods > :: ctor (this , object , method) ; this }
+}
+
+#[cfg(feature = "app-refineshopengravegodmenu")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __RefineShopEngraveGodMenu_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_m_unit { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RefineShopEngraveGodMenu as :: unity2 :: ClassIdentity > :: class () , "get_m_Unit" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefineShopEngraveGodMenu as :: unity2 :: ClassIdentity > :: NAME , "get_m_Unit" , e) , } } } pub unsafe fn get_m_unit (this : RefineShopEngraveGodMenu , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit { let inner : extern "C" fn (RefineShopEngraveGodMenu , :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit = :: core :: mem :: transmute (__lookup_get_m_unit :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_m_unit { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RefineShopEngraveGodMenu as :: unity2 :: ClassIdentity > :: class () , "set_m_Unit" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefineShopEngraveGodMenu as :: unity2 :: ClassIdentity > :: NAME , "set_m_Unit" , e) , } } } pub unsafe fn set_m_unit (this : RefineShopEngraveGodMenu , value : crate :: app :: unit :: Unit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RefineShopEngraveGodMenu , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_m_unit :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_m_base_unit_item { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RefineShopEngraveGodMenu as :: unity2 :: ClassIdentity > :: class () , "get_m_BaseUnitItem" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefineShopEngraveGodMenu as :: unity2 :: ClassIdentity > :: NAME , "get_m_BaseUnitItem" , e) , } } } pub unsafe fn get_m_base_unit_item (this : RefineShopEngraveGodMenu , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: unititem :: UnitItem { let inner : extern "C" fn (RefineShopEngraveGodMenu , :: unity2 :: OptionalMethod ,) -> crate :: app :: unititem :: UnitItem = :: core :: mem :: transmute (__lookup_get_m_base_unit_item :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_m_base_unit_item { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unititem :: UnitItem as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RefineShopEngraveGodMenu as :: unity2 :: ClassIdentity > :: class () , "set_m_BaseUnitItem" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefineShopEngraveGodMenu as :: unity2 :: ClassIdentity > :: NAME , "set_m_BaseUnitItem" , e) , } } } pub unsafe fn set_m_base_unit_item (this : RefineShopEngraveGodMenu , value : crate :: app :: unititem :: UnitItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RefineShopEngraveGodMenu , crate :: app :: unititem :: UnitItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_m_base_unit_item :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_bind { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: gameobject :: GameObject as :: unity2 :: IlType > :: il_type () , < crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: app :: refineshopengravegodmenu :: RefineShopEngraveGodMenu_SelectEventHandler as :: unity2 :: IlType > :: il_type () , < crate :: app :: refineshopengravegodmenu :: RefineShopEngraveGodMenu_DecideEventHandler as :: unity2 :: IlType > :: il_type () , < crate :: app :: refineshopengravegodmenu :: RefineShopEngraveGodMenu_RequestCloseEventHandler as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RefineShopEngraveGodMenu as :: unity2 :: ClassIdentity > :: class () , "CreateBind" , 7 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefineShopEngraveGodMenu as :: unity2 :: ClassIdentity > :: NAME , "CreateBind" , e) , } } } pub unsafe fn create_bind (super_ : crate :: app :: procinst :: ProcInst , menu_object : crate :: unity_engine :: gameobject :: GameObject , unit : crate :: app :: unit :: Unit , item_index : i32 , select_event_handler : crate :: app :: refineshopengravegodmenu :: RefineShopEngraveGodMenu_SelectEventHandler , decide_event_handler : crate :: app :: refineshopengravegodmenu :: RefineShopEngraveGodMenu_DecideEventHandler , request_close_event_handler : crate :: app :: refineshopengravegodmenu :: RefineShopEngraveGodMenu_RequestCloseEventHandler , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: refineshopengravegodmenu :: RefineShopEngraveGodMenu { let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: unity_engine :: gameobject :: GameObject , crate :: app :: unit :: Unit , i32 , crate :: app :: refineshopengravegodmenu :: RefineShopEngraveGodMenu_SelectEventHandler , crate :: app :: refineshopengravegodmenu :: RefineShopEngraveGodMenu_DecideEventHandler , crate :: app :: refineshopengravegodmenu :: RefineShopEngraveGodMenu_RequestCloseEventHandler , :: unity2 :: OptionalMethod ,) -> crate :: app :: refineshopengravegodmenu :: RefineShopEngraveGodMenu = :: core :: mem :: transmute (__lookup_create_bind :: get_method_info () . method_ptr ,) ; inner (super_ , menu_object , unit , item_index , select_event_handler , decide_event_handler , request_close_event_handler , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > as :: unity2 :: IlType > :: il_type () , < crate :: app :: basicmenucontent :: BasicMenuContent as :: unity2 :: IlType > :: il_type () , < crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < crate :: app :: unititem :: UnitItem as :: unity2 :: IlType > :: il_type () , < crate :: app :: refineshopengravegodmenu :: RefineShopEngraveGodMenu_RequestCloseEventHandler as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RefineShopEngraveGodMenu as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 5 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefineShopEngraveGodMenu as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : RefineShopEngraveGodMenu , menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , menu_content : crate :: app :: basicmenucontent :: BasicMenuContent , unit : crate :: app :: unit :: Unit , base_unit_item : crate :: app :: unititem :: UnitItem , request_close_event_handler : crate :: app :: refineshopengravegodmenu :: RefineShopEngraveGodMenu_RequestCloseEventHandler , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RefineShopEngraveGodMenu , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , crate :: app :: basicmenucontent :: BasicMenuContent , crate :: app :: unit :: Unit , crate :: app :: unititem :: UnitItem , crate :: app :: refineshopengravegodmenu :: RefineShopEngraveGodMenu_RequestCloseEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , menu_item_list , menu_content , unit , base_unit_item , request_close_event_handler , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RefineShopEngraveGodMenu as :: unity2 :: ClassIdentity > :: class () , "GetName" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefineShopEngraveGodMenu as :: unity2 :: ClassIdentity > :: NAME , "GetName" , e) , } } } pub unsafe fn get_name (this : RefineShopEngraveGodMenu , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (RefineShopEngraveGodMenu , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_name :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_b_call { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RefineShopEngraveGodMenu as :: unity2 :: ClassIdentity > :: class () , "BCall" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefineShopEngraveGodMenu as :: unity2 :: ClassIdentity > :: NAME , "BCall" , e) , } } } pub unsafe fn b_call (this : RefineShopEngraveGodMenu , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result { let inner : extern "C" fn (RefineShopEngraveGodMenu , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute (__lookup_b_call :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-refineshopengravegodmenu")]
+impl RefineShopEngraveGodMenu { # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::unity_engine::gameobject::GameObject, crate::app::unit::Unit, i32, crate::app::refineshopengravegodmenu::RefineShopEngraveGodMenu_SelectEventHandler, crate::app::refineshopengravegodmenu::RefineShopEngraveGodMenu_DecideEventHandler, crate::app::refineshopengravegodmenu::RefineShopEngraveGodMenu_RequestCloseEventHandler)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , menu_object : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject > , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , item_index : impl :: core :: convert :: Into < i32 > , select_event_handler : impl :: core :: convert :: Into < crate :: app :: refineshopengravegodmenu :: RefineShopEngraveGodMenu_SelectEventHandler > , decide_event_handler : impl :: core :: convert :: Into < crate :: app :: refineshopengravegodmenu :: RefineShopEngraveGodMenu_DecideEventHandler > , request_close_event_handler : impl :: core :: convert :: Into < crate :: app :: refineshopengravegodmenu :: RefineShopEngraveGodMenu_RequestCloseEventHandler >) -> crate :: app :: refineshopengravegodmenu :: RefineShopEngraveGodMenu { unsafe { __RefineShopEngraveGodMenu_unity2_raw :: create_bind (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (menu_object) , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (item_index) , :: core :: convert :: Into :: into (select_event_handler) , :: core :: convert :: Into :: into (decide_event_handler) , :: core :: convert :: Into :: into (request_close_event_handler) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-refineshopengravegodmenu")]
+pub trait IRefineShopEngraveGodMenuMethods : IRefineShopEngraveGodMenu { # [doc = "`get_m_Unit()` overload"] fn get_m_unit (self ,) -> crate :: app :: unit :: Unit { unsafe { let __receiver = < RefineShopEngraveGodMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RefineShopEngraveGodMenu_unity2_raw :: get_m_unit (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_m_Unit(crate::app::unit::Unit)` overload"] fn set_m_unit (self , value : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < RefineShopEngraveGodMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RefineShopEngraveGodMenu_unity2_raw :: set_m_unit (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_m_BaseUnitItem()` overload"] fn get_m_base_unit_item (self ,) -> crate :: app :: unititem :: UnitItem { unsafe { let __receiver = < RefineShopEngraveGodMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RefineShopEngraveGodMenu_unity2_raw :: get_m_base_unit_item (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_m_BaseUnitItem(crate::app::unititem::UnitItem)` overload"] fn set_m_base_unit_item (self , value : impl :: core :: convert :: Into < crate :: app :: unititem :: UnitItem >) -> () { unsafe { let __receiver = < RefineShopEngraveGodMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RefineShopEngraveGodMenu_unity2_raw :: set_m_base_unit_item (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent, crate::app::unit::Unit, crate::app::unititem::UnitItem, crate::app::refineshopengravegodmenu::RefineShopEngraveGodMenu_RequestCloseEventHandler)` overload"] fn ctor (self , menu_item_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > > , menu_content : impl :: core :: convert :: Into < crate :: app :: basicmenucontent :: BasicMenuContent > , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , base_unit_item : impl :: core :: convert :: Into < crate :: app :: unititem :: UnitItem > , request_close_event_handler : impl :: core :: convert :: Into < crate :: app :: refineshopengravegodmenu :: RefineShopEngraveGodMenu_RequestCloseEventHandler >) -> () { unsafe { let __receiver = < RefineShopEngraveGodMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RefineShopEngraveGodMenu_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (menu_item_list) , :: core :: convert :: Into :: into (menu_content) , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (base_unit_item) , :: core :: convert :: Into :: into (request_close_event_handler) , :: core :: option :: Option :: None) } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < RefineShopEngraveGodMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RefineShopEngraveGodMenu_unity2_raw :: get_name (__receiver , :: core :: option :: Option :: None) } } # [doc = "`BCall()` overload"] fn b_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < RefineShopEngraveGodMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RefineShopEngraveGodMenu_unity2_raw :: b_call (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-refineshopengravegodmenu")]
+impl < __T : IRefineShopEngraveGodMenu > IRefineShopEngraveGodMenuMethods for __T { }
+
+#[cfg(feature = "app-refineshopengravegodmenu")]
+impl RefineShopEngraveGodMenu { pub fn get_m_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RefineShopEngraveGodMenu_unity2_raw :: __lookup_get_m_unit :: get_method_info () } pub fn set_m_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RefineShopEngraveGodMenu_unity2_raw :: __lookup_set_m_unit :: get_method_info () } pub fn get_m_base_unit_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RefineShopEngraveGodMenu_unity2_raw :: __lookup_get_m_base_unit_item :: get_method_info () } pub fn set_m_base_unit_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RefineShopEngraveGodMenu_unity2_raw :: __lookup_set_m_base_unit_item :: get_method_info () } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RefineShopEngraveGodMenu_unity2_raw :: __lookup_create_bind :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RefineShopEngraveGodMenu_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RefineShopEngraveGodMenu_unity2_raw :: __lookup_get_name :: get_method_info () } pub fn b_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RefineShopEngraveGodMenu_unity2_raw :: __lookup_b_call :: get_method_info () } }
+
+#[cfg(feature = "app-refineshopengravegodmenu")]
+impl RefineShopEngraveGodMenu {
+# [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent, crate::app::unit::Unit, crate::app::unititem::UnitItem, crate::app::refineshopengravegodmenu::RefineShopEngraveGodMenu_RequestCloseEventHandler)` — overload selector"] pub fn new (menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , menu_content : crate :: app :: basicmenucontent :: BasicMenuContent , unit : crate :: app :: unit :: Unit , base_unit_item : crate :: app :: unititem :: UnitItem , request_close_event_handler : crate :: app :: refineshopengravegodmenu :: RefineShopEngraveGodMenu_RequestCloseEventHandler) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RefineShopEngraveGodMenu) , :: core :: stringify ! (new) ,)) ; < Self as IRefineShopEngraveGodMenuMethods > :: ctor (this , menu_item_list , menu_content , unit , base_unit_item , request_close_event_handler) ; this }
+}
+
+#[cfg(feature = "app-refineshopengravegodmenu")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __RefineShopEngraveGodMenu_RequestCloseEventHandler_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type () , < :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RefineShopEngraveGodMenu_RequestCloseEventHandler as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefineShopEngraveGodMenu_RequestCloseEventHandler as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : RefineShopEngraveGodMenu_RequestCloseEventHandler , object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RefineShopEngraveGodMenu_RequestCloseEventHandler , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , object , method , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_invoke { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RefineShopEngraveGodMenu_RequestCloseEventHandler as :: unity2 :: ClassIdentity > :: class () , "Invoke" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefineShopEngraveGodMenu_RequestCloseEventHandler as :: unity2 :: ClassIdentity > :: NAME , "Invoke" , e) , } } } pub unsafe fn invoke (this : RefineShopEngraveGodMenu_RequestCloseEventHandler , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RefineShopEngraveGodMenu_RequestCloseEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_invoke :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-refineshopengravegodmenu")]
+pub trait IRefineShopEngraveGodMenu_RequestCloseEventHandlerMethods : IRefineShopEngraveGodMenu_RequestCloseEventHandler { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < RefineShopEngraveGodMenu_RequestCloseEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RefineShopEngraveGodMenu_RequestCloseEventHandler_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } # [doc = "`Invoke()` overload"] fn invoke (self ,) -> () { unsafe { let __receiver = < RefineShopEngraveGodMenu_RequestCloseEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RefineShopEngraveGodMenu_RequestCloseEventHandler_unity2_raw :: invoke (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-refineshopengravegodmenu")]
+impl < __T : IRefineShopEngraveGodMenu_RequestCloseEventHandler > IRefineShopEngraveGodMenu_RequestCloseEventHandlerMethods for __T { }
+
+#[cfg(feature = "app-refineshopengravegodmenu")]
+impl RefineShopEngraveGodMenu_RequestCloseEventHandler { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RefineShopEngraveGodMenu_RequestCloseEventHandler_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RefineShopEngraveGodMenu_RequestCloseEventHandler_unity2_raw :: __lookup_invoke :: get_method_info () } }
+
+#[cfg(feature = "app-refineshopengravegodmenu")]
+impl RefineShopEngraveGodMenu_RequestCloseEventHandler {
+# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RefineShopEngraveGodMenu_RequestCloseEventHandler) , :: core :: stringify ! (new) ,)) ; < Self as IRefineShopEngraveGodMenu_RequestCloseEventHandlerMethods > :: ctor (this , object , method) ; this }
 }
 
 #[cfg(feature = "app-refineshopengravegodmenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{
-        IRefineShopEngraveGodMenu, IRefineShopEngraveGodMenuMethods, IRefineShopEngraveGodMenu_DecideEventHandler,
-        IRefineShopEngraveGodMenu_DecideEventHandlerMethods, IRefineShopEngraveGodMenu_RequestCloseEventHandler,
-        IRefineShopEngraveGodMenu_RequestCloseEventHandlerMethods, IRefineShopEngraveGodMenu_SelectEventHandler,
-        IRefineShopEngraveGodMenu_SelectEventHandlerMethods, RefineShopEngraveGodMenu, RefineShopEngraveGodMenu_DecideEventHandler,
-        RefineShopEngraveGodMenu_RequestCloseEventHandler, RefineShopEngraveGodMenu_SelectEventHandler,
-    };
-    #[cfg(feature = "app-basicmenu")]
-    pub use crate::app::basicmenu::IBasicMenuMethods;
-    #[cfg(feature = "app-procinst")]
-    pub use crate::app::procinst::IProcInstMethods;
-    #[cfg(feature = "system-delegate")]
-    pub use crate::system::delegate::IDelegateMethods;
-    #[cfg(feature = "system-multicastdelegate")]
-    pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::{
-        app::{basicmenu::IBasicMenu, procinst::IProcInst},
-        system::{delegate::IDelegate, multicastdelegate::IMulticastDelegate, object::IObject},
-    };
+    pub use super::RefineShopEngraveGodMenu_SelectEventHandler;
+    pub use super::IRefineShopEngraveGodMenu_SelectEventHandler;
+    pub use super::IRefineShopEngraveGodMenu_SelectEventHandlerMethods;
+    pub use super::RefineShopEngraveGodMenu_DecideEventHandler;
+    pub use super::IRefineShopEngraveGodMenu_DecideEventHandler;
+    pub use super::IRefineShopEngraveGodMenu_DecideEventHandlerMethods;
+    pub use super::RefineShopEngraveGodMenu;
+    pub use super::IRefineShopEngraveGodMenu;
+    pub use super::IRefineShopEngraveGodMenuMethods;
+    pub use super::RefineShopEngraveGodMenu_RequestCloseEventHandler;
+    pub use super::IRefineShopEngraveGodMenu_RequestCloseEventHandler;
+    pub use super::IRefineShopEngraveGodMenu_RequestCloseEventHandlerMethods;
+    pub use crate::app::basicmenu::IBasicMenu;
+    pub use crate::app::procinst::IProcInst;
+    pub use crate::system::delegate::IDelegate;
+    pub use crate::system::multicastdelegate::IMulticastDelegate;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "app-basicmenu")] pub use crate::app::basicmenu::IBasicMenuMethods;
+    #[cfg(feature = "app-procinst")] pub use crate::app::procinst::IProcInstMethods;
+    #[cfg(feature = "system-delegate")] pub use crate::system::delegate::IDelegateMethods;
+    #[cfg(feature = "system-multicastdelegate")] pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

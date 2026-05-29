@@ -2,1202 +2,147 @@
 
 #[cfg(feature = "app-itemusesequence-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::procinst::{IProcInst, ProcInst},
-        system::{
-            collections::generic::list_1::{IList_1, List_1},
-            object::{IObject, Object},
-            r#enum::{Enum, IEnum},
-            valuetype::{IValueType, ValueType},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemusesequence/ItemUseSequence_EnchantedUnitList.md"))]
-    #[::unity2::class(namespace = "App", name = "ItemUseSequence.EnchantedUnitList")]
-    # [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unit :: Unit >)]
-    pub struct ItemUseSequence_EnchantedUnitList {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: procinst :: { IProcInst , ProcInst }
+ ;
+ use crate :: system :: collections :: generic :: list_1 :: { IList_1 , List_1 }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemusesequence/ItemUseSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "ItemUseSequence")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct ItemUseSequence {
-        #[offset(112)]
-        #[rename(name = "m_Unit")]
-        pub m_unit: crate::app::unit::Unit,
-        #[offset(120)]
-        #[rename(name = "m_UseItem")]
-        pub m_use_item: crate::app::unititem::UnitItem,
-        #[offset(128)]
-        #[rename(name = "m_ItemData")]
-        pub m_item_data: crate::app::itemdata::ItemData,
-        #[offset(136)]
-        #[rename(name = "m_TargetIndex")]
-        pub m_target_index: i32,
-        #[offset(140)]
-        #[rename(name = "m_GainExp")]
-        pub m_gain_exp: i32,
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemusesequence/ItemUseSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "ItemUseSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct ItemUseSequence {
+# [offset (112)] # [rename (name = "m_Unit")] pub m_unit : crate :: app :: unit :: Unit ,
+# [offset (120)] # [rename (name = "m_UseItem")] pub m_use_item : crate :: app :: unititem :: UnitItem ,
+# [offset (128)] # [rename (name = "m_ItemData")] pub m_item_data : crate :: app :: itemdata :: ItemData ,
+# [offset (136)] # [rename (name = "m_TargetIndex")] pub m_target_index : i32 ,
+# [offset (140)] # [rename (name = "m_GainExp")] pub m_gain_exp : i32 ,
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/itemusesequence/ItemUseSequence_Label.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct ItemUseSequence_Label  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for ItemUseSequence_Label  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "ItemUseSequence.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/itemusesequence/ItemUseSequence_Label.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct ItemUseSequence_Label {
-        pub value: i32,
+}
+
+
+impl  ::unity2::IlType for ItemUseSequence_Label  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::ClassIdentity for ItemUseSequence_Label {
-        const NAME: &'static str = "ItemUseSequence.Label";
-        const NAMESPACE: &'static str = "App";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  ItemUseSequence_Label  {
+    pub fn normal() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl ::unity2::IlType for ItemUseSequence_Label {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+
+    pub fn class_change() -> Self {
+        Self { value: 1 }
+
     }
 
-    impl ItemUseSequence_Label {
-        pub fn normal() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn class_change() -> Self {
-            Self { value: 1 }
-        }
+    pub fn end() -> Self {
+        Self { value: 2 }
 
-        pub fn end() -> Self {
-            Self { value: 2 }
-        }
     }
+
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemusesequence/ItemUseSequence_EnchantedUnitList.md"))] # [:: unity2 :: class (namespace = "App" , name = "ItemUseSequence.EnchantedUnitList")] # [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unit :: Unit >)] pub struct ItemUseSequence_EnchantedUnitList {}
+
 }
 
 #[cfg(feature = "app-itemusesequence-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-itemusesequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ItemUseSequence_EnchantedUnitList_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_search {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ItemUseSequence_EnchantedUnitList as ::unity2::ClassIdentity>::class(),
-                "Search",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ItemUseSequence_EnchantedUnitList as ::unity2::ClassIdentity>::NAME,
-                        "Search",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn search(this: ItemUseSequence_EnchantedUnitList, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ItemUseSequence_EnchantedUnitList, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_search::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ItemUseSequence_EnchantedUnitList as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ItemUseSequence_EnchantedUnitList as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: ItemUseSequence_EnchantedUnitList, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ItemUseSequence_EnchantedUnitList, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ItemUseSequence_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ItemUseSequence as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ItemUseSequence as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : ItemUseSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ItemUseSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_branch { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ItemUseSequence as :: unity2 :: ClassIdentity > :: class () , "Branch" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ItemUseSequence as :: unity2 :: ClassIdentity > :: NAME , "Branch" , e) , } } } pub unsafe fn branch (this : ItemUseSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ItemUseSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_branch :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_target_unit { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ItemUseSequence as :: unity2 :: ClassIdentity > :: class () , "GetTargetUnit" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ItemUseSequence as :: unity2 :: ClassIdentity > :: NAME , "GetTargetUnit" , e) , } } } pub unsafe fn get_target_unit (this : ItemUseSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit { let inner : extern "C" fn (ItemUseSequence , :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit = :: core :: mem :: transmute (__lookup_get_target_unit :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_play_effect { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ItemUseSequence as :: unity2 :: ClassIdentity > :: class () , "PlayEffect" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ItemUseSequence as :: unity2 :: ClassIdentity > :: NAME , "PlayEffect" , e) , } } } pub unsafe fn play_effect (this : ItemUseSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ItemUseSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_play_effect :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_heal_hp { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ItemUseSequence as :: unity2 :: ClassIdentity > :: class () , "HealHp" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ItemUseSequence as :: unity2 :: ClassIdentity > :: NAME , "HealHp" , e) , } } } pub unsafe fn heal_hp (unit : crate :: app :: unit :: Unit , heal : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: unit :: Unit , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_heal_hp :: get_method_info () . method_ptr ,) ; inner (unit , heal , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_try_active_skill { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < crate :: app :: skilldata :: SkillData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ItemUseSequence as :: unity2 :: ClassIdentity > :: class () , "TryActiveSkill" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ItemUseSequence as :: unity2 :: ClassIdentity > :: NAME , "TryActiveSkill" , e) , } } } pub unsafe fn try_active_skill (unit : crate :: app :: unit :: Unit , skill : crate :: app :: skilldata :: SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (crate :: app :: unit :: Unit , crate :: app :: skilldata :: SkillData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_try_active_skill :: get_method_info () . method_ptr ,) ; inner (unit , skill , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_heal_hp_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ItemUseSequence as :: unity2 :: ClassIdentity > :: class () , "HealHp" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ItemUseSequence as :: unity2 :: ClassIdentity > :: NAME , "HealHp" , e) , } } } pub unsafe fn heal_hp_2 (this : ItemUseSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { let inner : extern "C" fn (ItemUseSequence , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute (__lookup_heal_hp_2 :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_item_use { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ItemUseSequence as :: unity2 :: ClassIdentity > :: class () , "ItemUse" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ItemUseSequence as :: unity2 :: ClassIdentity > :: NAME , "ItemUse" , e) , } } } pub unsafe fn item_use (this : ItemUseSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ItemUseSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_item_use :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_gain_exp { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ItemUseSequence as :: unity2 :: ClassIdentity > :: class () , "GainExp" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ItemUseSequence as :: unity2 :: ClassIdentity > :: NAME , "GainExp" , e) , } } } pub unsafe fn gain_exp (this : ItemUseSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ItemUseSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_gain_exp :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_use_type { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ItemUseSequence as :: unity2 :: ClassIdentity > :: class () , "GetUseType" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ItemUseSequence as :: unity2 :: ClassIdentity > :: NAME , "GetUseType" , e) , } } } pub unsafe fn get_use_type (this : ItemUseSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: itemdata :: ItemData_UseTypes { let inner : extern "C" fn (ItemUseSequence , :: unity2 :: OptionalMethod ,) -> crate :: app :: itemdata :: ItemData_UseTypes = :: core :: mem :: transmute (__lookup_get_use_type :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_weapon_enchant { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ItemUseSequence as :: unity2 :: ClassIdentity > :: class () , "IsWeaponEnchant" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ItemUseSequence as :: unity2 :: ClassIdentity > :: NAME , "IsWeaponEnchant" , e) , } } } pub unsafe fn is_weapon_enchant (this : ItemUseSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (ItemUseSequence , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_weapon_enchant :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_weapon_enchant { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ItemUseSequence as :: unity2 :: ClassIdentity > :: class () , "WeaponEnchant" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ItemUseSequence as :: unity2 :: ClassIdentity > :: NAME , "WeaponEnchant" , e) , } } } pub unsafe fn weapon_enchant (this : ItemUseSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ItemUseSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_weapon_enchant :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_show_message { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ItemUseSequence as :: unity2 :: ClassIdentity > :: class () , "ShowMessage" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ItemUseSequence as :: unity2 :: ClassIdentity > :: NAME , "ShowMessage" , e) , } } } pub unsafe fn show_message (this : ItemUseSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ItemUseSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_show_message :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_try_expend { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unititem :: UnitItem as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ItemUseSequence as :: unity2 :: ClassIdentity > :: class () , "TryExpend" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ItemUseSequence as :: unity2 :: ClassIdentity > :: NAME , "TryExpend" , e) , } } } pub unsafe fn try_expend (this : ItemUseSequence , unit_item : crate :: app :: unititem :: UnitItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (ItemUseSequence , crate :: app :: unititem :: UnitItem , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_try_expend :: get_method_info () . method_ptr ,) ; inner (this , unit_item , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_expend { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ItemUseSequence as :: unity2 :: ClassIdentity > :: class () , "Expend" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ItemUseSequence as :: unity2 :: ClassIdentity > :: NAME , "Expend" , e) , } } } pub unsafe fn expend (this : ItemUseSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { let inner : extern "C" fn (ItemUseSequence , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute (__lookup_expend :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_class_change { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ItemUseSequence as :: unity2 :: ClassIdentity > :: class () , "ClassChange" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ItemUseSequence as :: unity2 :: ClassIdentity > :: NAME , "ClassChange" , e) , } } } pub unsafe fn class_change (this : ItemUseSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ItemUseSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_class_change :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_class_change_rescue { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ItemUseSequence as :: unity2 :: ClassIdentity > :: class () , "ClassChangeRescue" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ItemUseSequence as :: unity2 :: ClassIdentity > :: NAME , "ClassChangeRescue" , e) , } } } pub unsafe fn class_change_rescue (this : ItemUseSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ItemUseSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_class_change_rescue :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_heal_hp { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ItemUseSequence as :: unity2 :: ClassIdentity > :: class () , "GetHealHp" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ItemUseSequence as :: unity2 :: ClassIdentity > :: NAME , "GetHealHp" , e) , } } } pub unsafe fn get_heal_hp (this : ItemUseSequence , target : crate :: app :: unit :: Unit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (ItemUseSequence , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_heal_hp :: get_method_info () . method_ptr ,) ; inner (this , target , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_can_heal_hp { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ItemUseSequence as :: unity2 :: ClassIdentity > :: class () , "CanHealHp" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ItemUseSequence as :: unity2 :: ClassIdentity > :: NAME , "CanHealHp" , e) , } } } pub unsafe fn can_heal_hp (this : ItemUseSequence , target : crate :: app :: unit :: Unit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (ItemUseSequence , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_can_heal_hp :: get_method_info () . method_ptr ,) ; inner (this , target , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_can_gain { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ItemUseSequence as :: unity2 :: ClassIdentity > :: class () , "CanGain" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ItemUseSequence as :: unity2 :: ClassIdentity > :: NAME , "CanGain" , e) , } } } pub unsafe fn can_gain (this : ItemUseSequence , target : crate :: app :: unit :: Unit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (ItemUseSequence , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_can_gain :: get_method_info () . method_ptr ,) ; inner (this , target , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_try_next_target { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ItemUseSequence as :: unity2 :: ClassIdentity > :: class () , "TryNextTarget" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ItemUseSequence as :: unity2 :: ClassIdentity > :: NAME , "TryNextTarget" , e) , } } } pub unsafe fn try_next_target (this : ItemUseSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ItemUseSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_try_next_target :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_try_grow { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ItemUseSequence as :: unity2 :: ClassIdentity > :: class () , "TryGrow" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ItemUseSequence as :: unity2 :: ClassIdentity > :: NAME , "TryGrow" , e) , } } } pub unsafe fn try_grow (this : ItemUseSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ItemUseSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_try_grow :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_bind { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ItemUseSequence as :: unity2 :: ClassIdentity > :: class () , "CreateBind" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ItemUseSequence as :: unity2 :: ClassIdentity > :: NAME , "CreateBind" , e) , } } } pub unsafe fn create_bind (super_ : crate :: app :: procinst :: ProcInst , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create_bind :: get_method_info () . method_ptr ,) ; inner (super_ , __unity2_method_info) } }
+
+#[cfg(feature = "app-itemusesequence")]
+impl ItemUseSequence { # [doc = "`HealHp(crate::app::unit::Unit, i32)` overload"] pub fn heal_hp (unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , heal : impl :: core :: convert :: Into < i32 >) -> () { unsafe { __ItemUseSequence_unity2_raw :: heal_hp (:: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (heal) , :: core :: option :: Option :: None) } } # [doc = "`TryActiveSkill(crate::app::unit::Unit, crate::app::skilldata::SkillData)` overload"] pub fn try_active_skill (unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , skill : impl :: core :: convert :: Into < crate :: app :: skilldata :: SkillData >) -> bool { unsafe { __ItemUseSequence_unity2_raw :: try_active_skill (:: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (skill) , :: core :: option :: Option :: None) } } # [doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { __ItemUseSequence_unity2_raw :: create_bind (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-itemusesequence")]
+pub trait IItemUseSequenceMethods : IItemUseSequence { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ItemUseSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ItemUseSequence_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Branch()` overload"] fn branch (self ,) -> () { unsafe { let __receiver = < ItemUseSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ItemUseSequence_unity2_raw :: branch (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetTargetUnit()` overload"] fn get_target_unit (self ,) -> crate :: app :: unit :: Unit { unsafe { let __receiver = < ItemUseSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ItemUseSequence_unity2_raw :: get_target_unit (__receiver , :: core :: option :: Option :: None) } } # [doc = "`PlayEffect()` overload"] fn play_effect (self ,) -> () { unsafe { let __receiver = < ItemUseSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ItemUseSequence_unity2_raw :: play_effect (__receiver , :: core :: option :: Option :: None) } } # [doc = "`HealHp()` overload"] fn heal_hp_2 (self ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { let __receiver = < ItemUseSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ItemUseSequence_unity2_raw :: heal_hp_2 (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ItemUse()` overload"] fn item_use (self ,) -> () { unsafe { let __receiver = < ItemUseSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ItemUseSequence_unity2_raw :: item_use (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GainExp()` overload"] fn gain_exp (self ,) -> () { unsafe { let __receiver = < ItemUseSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ItemUseSequence_unity2_raw :: gain_exp (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetUseType()` overload"] fn get_use_type (self ,) -> crate :: app :: itemdata :: ItemData_UseTypes { unsafe { let __receiver = < ItemUseSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ItemUseSequence_unity2_raw :: get_use_type (__receiver , :: core :: option :: Option :: None) } } # [doc = "`IsWeaponEnchant()` overload"] fn is_weapon_enchant (self ,) -> bool { unsafe { let __receiver = < ItemUseSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ItemUseSequence_unity2_raw :: is_weapon_enchant (__receiver , :: core :: option :: Option :: None) } } # [doc = "`WeaponEnchant()` overload"] fn weapon_enchant (self ,) -> () { unsafe { let __receiver = < ItemUseSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ItemUseSequence_unity2_raw :: weapon_enchant (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ShowMessage()` overload"] fn show_message (self ,) -> () { unsafe { let __receiver = < ItemUseSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ItemUseSequence_unity2_raw :: show_message (__receiver , :: core :: option :: Option :: None) } } # [doc = "`TryExpend(crate::app::unititem::UnitItem)` overload"] fn try_expend (self , unit_item : impl :: core :: convert :: Into < crate :: app :: unititem :: UnitItem >) -> bool { unsafe { let __receiver = < ItemUseSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ItemUseSequence_unity2_raw :: try_expend (__receiver , :: core :: convert :: Into :: into (unit_item) , :: core :: option :: Option :: None) } } # [doc = "`Expend()` overload"] fn expend (self ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { let __receiver = < ItemUseSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ItemUseSequence_unity2_raw :: expend (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ClassChange()` overload"] fn class_change (self ,) -> () { unsafe { let __receiver = < ItemUseSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ItemUseSequence_unity2_raw :: class_change (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ClassChangeRescue()` overload"] fn class_change_rescue (self ,) -> () { unsafe { let __receiver = < ItemUseSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ItemUseSequence_unity2_raw :: class_change_rescue (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetHealHp(crate::app::unit::Unit)` overload"] fn get_heal_hp (self , target : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> i32 { unsafe { let __receiver = < ItemUseSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ItemUseSequence_unity2_raw :: get_heal_hp (__receiver , :: core :: convert :: Into :: into (target) , :: core :: option :: Option :: None) } } # [doc = "`CanHealHp(crate::app::unit::Unit)` overload"] fn can_heal_hp (self , target : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> bool { unsafe { let __receiver = < ItemUseSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ItemUseSequence_unity2_raw :: can_heal_hp (__receiver , :: core :: convert :: Into :: into (target) , :: core :: option :: Option :: None) } } # [doc = "`CanGain(crate::app::unit::Unit)` overload"] fn can_gain (self , target : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> bool { unsafe { let __receiver = < ItemUseSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ItemUseSequence_unity2_raw :: can_gain (__receiver , :: core :: convert :: Into :: into (target) , :: core :: option :: Option :: None) } } # [doc = "`TryNextTarget()` overload"] fn try_next_target (self ,) -> () { unsafe { let __receiver = < ItemUseSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ItemUseSequence_unity2_raw :: try_next_target (__receiver , :: core :: option :: Option :: None) } } # [doc = "`TryGrow()` overload"] fn try_grow (self ,) -> () { unsafe { let __receiver = < ItemUseSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ItemUseSequence_unity2_raw :: try_grow (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-itemusesequence")]
+impl < __T : IItemUseSequence > IItemUseSequenceMethods for __T { }
+
+#[cfg(feature = "app-itemusesequence")]
+impl ItemUseSequence { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ItemUseSequence_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn branch_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ItemUseSequence_unity2_raw :: __lookup_branch :: get_method_info () } pub fn get_target_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ItemUseSequence_unity2_raw :: __lookup_get_target_unit :: get_method_info () } pub fn play_effect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ItemUseSequence_unity2_raw :: __lookup_play_effect :: get_method_info () } pub fn heal_hp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ItemUseSequence_unity2_raw :: __lookup_heal_hp :: get_method_info () } pub fn try_active_skill_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ItemUseSequence_unity2_raw :: __lookup_try_active_skill :: get_method_info () } pub fn heal_hp_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ItemUseSequence_unity2_raw :: __lookup_heal_hp_2 :: get_method_info () } pub fn item_use_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ItemUseSequence_unity2_raw :: __lookup_item_use :: get_method_info () } pub fn gain_exp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ItemUseSequence_unity2_raw :: __lookup_gain_exp :: get_method_info () } pub fn get_use_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ItemUseSequence_unity2_raw :: __lookup_get_use_type :: get_method_info () } pub fn is_weapon_enchant_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ItemUseSequence_unity2_raw :: __lookup_is_weapon_enchant :: get_method_info () } pub fn weapon_enchant_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ItemUseSequence_unity2_raw :: __lookup_weapon_enchant :: get_method_info () } pub fn show_message_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ItemUseSequence_unity2_raw :: __lookup_show_message :: get_method_info () } pub fn try_expend_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ItemUseSequence_unity2_raw :: __lookup_try_expend :: get_method_info () } pub fn expend_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ItemUseSequence_unity2_raw :: __lookup_expend :: get_method_info () } pub fn class_change_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ItemUseSequence_unity2_raw :: __lookup_class_change :: get_method_info () } pub fn class_change_rescue_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ItemUseSequence_unity2_raw :: __lookup_class_change_rescue :: get_method_info () } pub fn get_heal_hp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ItemUseSequence_unity2_raw :: __lookup_get_heal_hp :: get_method_info () } pub fn can_heal_hp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ItemUseSequence_unity2_raw :: __lookup_can_heal_hp :: get_method_info () } pub fn can_gain_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ItemUseSequence_unity2_raw :: __lookup_can_gain :: get_method_info () } pub fn try_next_target_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ItemUseSequence_unity2_raw :: __lookup_try_next_target :: get_method_info () } pub fn try_grow_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ItemUseSequence_unity2_raw :: __lookup_try_grow :: get_method_info () } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ItemUseSequence_unity2_raw :: __lookup_create_bind :: get_method_info () } }
+
+#[cfg(feature = "app-itemusesequence")]
+impl ItemUseSequence {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ItemUseSequence) , :: core :: stringify ! (new) ,)) ; < Self as IItemUseSequenceMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-itemusesequence")]
-pub trait IItemUseSequence_EnchantedUnitListMethods: IItemUseSequence_EnchantedUnitList {
-    #[doc = "`Search()` overload"]
-    fn search(self) -> () {
-        unsafe {
-            let __receiver = <ItemUseSequence_EnchantedUnitList as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ItemUseSequence_EnchantedUnitList_unity2_raw::search(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <ItemUseSequence_EnchantedUnitList as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ItemUseSequence_EnchantedUnitList_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ItemUseSequence_EnchantedUnitList_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_search { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ItemUseSequence_EnchantedUnitList as :: unity2 :: ClassIdentity > :: class () , "Search" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ItemUseSequence_EnchantedUnitList as :: unity2 :: ClassIdentity > :: NAME , "Search" , e) , } } } pub unsafe fn search (this : ItemUseSequence_EnchantedUnitList , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ItemUseSequence_EnchantedUnitList , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_search :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ItemUseSequence_EnchantedUnitList as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ItemUseSequence_EnchantedUnitList as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : ItemUseSequence_EnchantedUnitList , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ItemUseSequence_EnchantedUnitList , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-itemusesequence")]
-impl<__T: IItemUseSequence_EnchantedUnitList> IItemUseSequence_EnchantedUnitListMethods for __T {}
+pub trait IItemUseSequence_EnchantedUnitListMethods : IItemUseSequence_EnchantedUnitList { # [doc = "`Search()` overload"] fn search (self ,) -> () { unsafe { let __receiver = < ItemUseSequence_EnchantedUnitList as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ItemUseSequence_EnchantedUnitList_unity2_raw :: search (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ItemUseSequence_EnchantedUnitList as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ItemUseSequence_EnchantedUnitList_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-itemusesequence")]
+impl < __T : IItemUseSequence_EnchantedUnitList > IItemUseSequence_EnchantedUnitListMethods for __T { }
+
+#[cfg(feature = "app-itemusesequence")]
+impl ItemUseSequence_EnchantedUnitList { pub fn search_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ItemUseSequence_EnchantedUnitList_unity2_raw :: __lookup_search :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ItemUseSequence_EnchantedUnitList_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-itemusesequence")]
 impl ItemUseSequence_EnchantedUnitList {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ItemUseSequence_EnchantedUnitList),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IItemUseSequence_EnchantedUnitListMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-itemusesequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ItemUseSequence_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ItemUseSequence as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ItemUseSequence as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: ItemUseSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ItemUseSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_branch {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ItemUseSequence as ::unity2::ClassIdentity>::class(),
-                "Branch",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ItemUseSequence as ::unity2::ClassIdentity>::NAME,
-                        "Branch",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn branch(this: ItemUseSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ItemUseSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_branch::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_target_unit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ItemUseSequence as ::unity2::ClassIdentity>::class(),
-                "GetTargetUnit",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ItemUseSequence as ::unity2::ClassIdentity>::NAME,
-                        "GetTargetUnit",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_target_unit(this: ItemUseSequence, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::unit::Unit {
-        let inner: extern "C" fn(ItemUseSequence, ::unity2::OptionalMethod) -> crate::app::unit::Unit =
-            ::core::mem::transmute(__lookup_get_target_unit::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_play_effect {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ItemUseSequence as ::unity2::ClassIdentity>::class(),
-                "PlayEffect",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ItemUseSequence as ::unity2::ClassIdentity>::NAME,
-                        "PlayEffect",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn play_effect(this: ItemUseSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ItemUseSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_play_effect::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_heal_hp {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ItemUseSequence as ::unity2::ClassIdentity>::class(),
-                "HealHp",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ItemUseSequence as ::unity2::ClassIdentity>::NAME,
-                        "HealHp",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn heal_hp(unit: crate::app::unit::Unit, heal: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(crate::app::unit::Unit, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_heal_hp::get_method_info().method_ptr);
-        inner(unit, heal, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_try_active_skill {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-                <crate::app::skilldata::SkillData as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ItemUseSequence as ::unity2::ClassIdentity>::class(),
-                "TryActiveSkill",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ItemUseSequence as ::unity2::ClassIdentity>::NAME,
-                        "TryActiveSkill",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn try_active_skill(
-        unit: crate::app::unit::Unit,
-        skill: crate::app::skilldata::SkillData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(crate::app::unit::Unit, crate::app::skilldata::SkillData, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_try_active_skill::get_method_info().method_ptr);
-        inner(unit, skill, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_heal_hp_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ItemUseSequence as ::unity2::ClassIdentity>::class(),
-                "HealHp",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ItemUseSequence as ::unity2::ClassIdentity>::NAME,
-                        "HealHp",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn heal_hp_2(
-        this: ItemUseSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::ienumerator::IEnumerator {
-        let inner: extern "C" fn(ItemUseSequence, ::unity2::OptionalMethod) -> crate::system::collections::ienumerator::IEnumerator =
-            ::core::mem::transmute(__lookup_heal_hp_2::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_item_use {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ItemUseSequence as ::unity2::ClassIdentity>::class(),
-                "ItemUse",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ItemUseSequence as ::unity2::ClassIdentity>::NAME,
-                        "ItemUse",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn item_use(this: ItemUseSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ItemUseSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_item_use::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_gain_exp {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ItemUseSequence as ::unity2::ClassIdentity>::class(),
-                "GainExp",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ItemUseSequence as ::unity2::ClassIdentity>::NAME,
-                        "GainExp",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn gain_exp(this: ItemUseSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ItemUseSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_gain_exp::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_use_type {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ItemUseSequence as ::unity2::ClassIdentity>::class(),
-                "GetUseType",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ItemUseSequence as ::unity2::ClassIdentity>::NAME,
-                        "GetUseType",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_use_type(this: ItemUseSequence, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::itemdata::ItemData_UseTypes {
-        let inner: extern "C" fn(ItemUseSequence, ::unity2::OptionalMethod) -> crate::app::itemdata::ItemData_UseTypes =
-            ::core::mem::transmute(__lookup_get_use_type::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_weapon_enchant {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ItemUseSequence as ::unity2::ClassIdentity>::class(),
-                "IsWeaponEnchant",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ItemUseSequence as ::unity2::ClassIdentity>::NAME,
-                        "IsWeaponEnchant",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_weapon_enchant(this: ItemUseSequence, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(ItemUseSequence, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_weapon_enchant::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_weapon_enchant {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ItemUseSequence as ::unity2::ClassIdentity>::class(),
-                "WeaponEnchant",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ItemUseSequence as ::unity2::ClassIdentity>::NAME,
-                        "WeaponEnchant",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn weapon_enchant(this: ItemUseSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ItemUseSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_weapon_enchant::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_show_message {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ItemUseSequence as ::unity2::ClassIdentity>::class(),
-                "ShowMessage",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ItemUseSequence as ::unity2::ClassIdentity>::NAME,
-                        "ShowMessage",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn show_message(this: ItemUseSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ItemUseSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_show_message::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_try_expend {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unititem::UnitItem as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ItemUseSequence as ::unity2::ClassIdentity>::class(),
-                "TryExpend",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ItemUseSequence as ::unity2::ClassIdentity>::NAME,
-                        "TryExpend",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn try_expend(
-        this: ItemUseSequence,
-        unit_item: crate::app::unititem::UnitItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(ItemUseSequence, crate::app::unititem::UnitItem, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_try_expend::get_method_info().method_ptr);
-        inner(this, unit_item, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_expend {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ItemUseSequence as ::unity2::ClassIdentity>::class(),
-                "Expend",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ItemUseSequence as ::unity2::ClassIdentity>::NAME,
-                        "Expend",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn expend(
-        this: ItemUseSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::ienumerator::IEnumerator {
-        let inner: extern "C" fn(ItemUseSequence, ::unity2::OptionalMethod) -> crate::system::collections::ienumerator::IEnumerator =
-            ::core::mem::transmute(__lookup_expend::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_class_change {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ItemUseSequence as ::unity2::ClassIdentity>::class(),
-                "ClassChange",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ItemUseSequence as ::unity2::ClassIdentity>::NAME,
-                        "ClassChange",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn class_change(this: ItemUseSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ItemUseSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_class_change::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_class_change_rescue {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ItemUseSequence as ::unity2::ClassIdentity>::class(),
-                "ClassChangeRescue",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ItemUseSequence as ::unity2::ClassIdentity>::NAME,
-                        "ClassChangeRescue",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn class_change_rescue(this: ItemUseSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ItemUseSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_class_change_rescue::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_heal_hp {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ItemUseSequence as ::unity2::ClassIdentity>::class(),
-                "GetHealHp",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ItemUseSequence as ::unity2::ClassIdentity>::NAME,
-                        "GetHealHp",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_heal_hp(this: ItemUseSequence, target: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(ItemUseSequence, crate::app::unit::Unit, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_heal_hp::get_method_info().method_ptr);
-        inner(this, target, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_can_heal_hp {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ItemUseSequence as ::unity2::ClassIdentity>::class(),
-                "CanHealHp",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ItemUseSequence as ::unity2::ClassIdentity>::NAME,
-                        "CanHealHp",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn can_heal_hp(this: ItemUseSequence, target: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(ItemUseSequence, crate::app::unit::Unit, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_can_heal_hp::get_method_info().method_ptr);
-        inner(this, target, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_can_gain {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ItemUseSequence as ::unity2::ClassIdentity>::class(),
-                "CanGain",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ItemUseSequence as ::unity2::ClassIdentity>::NAME,
-                        "CanGain",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn can_gain(this: ItemUseSequence, target: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(ItemUseSequence, crate::app::unit::Unit, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_can_gain::get_method_info().method_ptr);
-        inner(this, target, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_try_next_target {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ItemUseSequence as ::unity2::ClassIdentity>::class(),
-                "TryNextTarget",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ItemUseSequence as ::unity2::ClassIdentity>::NAME,
-                        "TryNextTarget",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn try_next_target(this: ItemUseSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ItemUseSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_try_next_target::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_try_grow {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ItemUseSequence as ::unity2::ClassIdentity>::class(),
-                "TryGrow",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ItemUseSequence as ::unity2::ClassIdentity>::NAME,
-                        "TryGrow",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn try_grow(this: ItemUseSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ItemUseSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_try_grow::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ItemUseSequence as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ItemUseSequence as ::unity2::ClassIdentity>::NAME,
-                        "CreateBind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_bind(super_: crate::app::procinst::ProcInst, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
-        inner(super_, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-itemusesequence")]
-impl ItemUseSequence {
-    #[doc = "`HealHp(crate::app::unit::Unit, i32)` overload"]
-    pub fn heal_hp(unit: impl ::core::convert::Into<crate::app::unit::Unit>, heal: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            __ItemUseSequence_unity2_raw::heal_hp(
-                ::core::convert::Into::into(unit),
-                ::core::convert::Into::into(heal),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`TryActiveSkill(crate::app::unit::Unit, crate::app::skilldata::SkillData)` overload"]
-    pub fn try_active_skill(
-        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-        skill: impl ::core::convert::Into<crate::app::skilldata::SkillData>,
-    ) -> bool {
-        unsafe {
-            __ItemUseSequence_unity2_raw::try_active_skill(
-                ::core::convert::Into::into(unit),
-                ::core::convert::Into::into(skill),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
-    pub fn create_bind(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
-        unsafe { __ItemUseSequence_unity2_raw::create_bind(::core::convert::Into::into(super_), ::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-itemusesequence")]
-pub trait IItemUseSequenceMethods: IItemUseSequence {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <ItemUseSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ItemUseSequence_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Branch()` overload"]
-    fn branch(self) -> () {
-        unsafe {
-            let __receiver = <ItemUseSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ItemUseSequence_unity2_raw::branch(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetTargetUnit()` overload"]
-    fn get_target_unit(self) -> crate::app::unit::Unit {
-        unsafe {
-            let __receiver = <ItemUseSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ItemUseSequence_unity2_raw::get_target_unit(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`PlayEffect()` overload"]
-    fn play_effect(self) -> () {
-        unsafe {
-            let __receiver = <ItemUseSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ItemUseSequence_unity2_raw::play_effect(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`HealHp()` overload"]
-    fn heal_hp_2(self) -> crate::system::collections::ienumerator::IEnumerator {
-        unsafe {
-            let __receiver = <ItemUseSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ItemUseSequence_unity2_raw::heal_hp_2(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ItemUse()` overload"]
-    fn item_use(self) -> () {
-        unsafe {
-            let __receiver = <ItemUseSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ItemUseSequence_unity2_raw::item_use(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GainExp()` overload"]
-    fn gain_exp(self) -> () {
-        unsafe {
-            let __receiver = <ItemUseSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ItemUseSequence_unity2_raw::gain_exp(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetUseType()` overload"]
-    fn get_use_type(self) -> crate::app::itemdata::ItemData_UseTypes {
-        unsafe {
-            let __receiver = <ItemUseSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ItemUseSequence_unity2_raw::get_use_type(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsWeaponEnchant()` overload"]
-    fn is_weapon_enchant(self) -> bool {
-        unsafe {
-            let __receiver = <ItemUseSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ItemUseSequence_unity2_raw::is_weapon_enchant(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`WeaponEnchant()` overload"]
-    fn weapon_enchant(self) -> () {
-        unsafe {
-            let __receiver = <ItemUseSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ItemUseSequence_unity2_raw::weapon_enchant(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ShowMessage()` overload"]
-    fn show_message(self) -> () {
-        unsafe {
-            let __receiver = <ItemUseSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ItemUseSequence_unity2_raw::show_message(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`TryExpend(crate::app::unititem::UnitItem)` overload"]
-    fn try_expend(self, unit_item: impl ::core::convert::Into<crate::app::unititem::UnitItem>) -> bool {
-        unsafe {
-            let __receiver = <ItemUseSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ItemUseSequence_unity2_raw::try_expend(__receiver, ::core::convert::Into::into(unit_item), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Expend()` overload"]
-    fn expend(self) -> crate::system::collections::ienumerator::IEnumerator {
-        unsafe {
-            let __receiver = <ItemUseSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ItemUseSequence_unity2_raw::expend(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ClassChange()` overload"]
-    fn class_change(self) -> () {
-        unsafe {
-            let __receiver = <ItemUseSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ItemUseSequence_unity2_raw::class_change(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ClassChangeRescue()` overload"]
-    fn class_change_rescue(self) -> () {
-        unsafe {
-            let __receiver = <ItemUseSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ItemUseSequence_unity2_raw::class_change_rescue(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetHealHp(crate::app::unit::Unit)` overload"]
-    fn get_heal_hp(self, target: impl ::core::convert::Into<crate::app::unit::Unit>) -> i32 {
-        unsafe {
-            let __receiver = <ItemUseSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ItemUseSequence_unity2_raw::get_heal_hp(__receiver, ::core::convert::Into::into(target), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CanHealHp(crate::app::unit::Unit)` overload"]
-    fn can_heal_hp(self, target: impl ::core::convert::Into<crate::app::unit::Unit>) -> bool {
-        unsafe {
-            let __receiver = <ItemUseSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ItemUseSequence_unity2_raw::can_heal_hp(__receiver, ::core::convert::Into::into(target), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CanGain(crate::app::unit::Unit)` overload"]
-    fn can_gain(self, target: impl ::core::convert::Into<crate::app::unit::Unit>) -> bool {
-        unsafe {
-            let __receiver = <ItemUseSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ItemUseSequence_unity2_raw::can_gain(__receiver, ::core::convert::Into::into(target), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`TryNextTarget()` overload"]
-    fn try_next_target(self) -> () {
-        unsafe {
-            let __receiver = <ItemUseSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ItemUseSequence_unity2_raw::try_next_target(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`TryGrow()` overload"]
-    fn try_grow(self) -> () {
-        unsafe {
-            let __receiver = <ItemUseSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ItemUseSequence_unity2_raw::try_grow(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-itemusesequence")]
-impl<__T: IItemUseSequence> IItemUseSequenceMethods for __T {}
-
-#[cfg(feature = "app-itemusesequence")]
-impl ItemUseSequence {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ItemUseSequence),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IItemUseSequenceMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ItemUseSequence_EnchantedUnitList) , :: core :: stringify ! (new) ,)) ; < Self as IItemUseSequence_EnchantedUnitListMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-itemusesequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{
-        IItemUseSequence, IItemUseSequenceMethods, IItemUseSequence_EnchantedUnitList, IItemUseSequence_EnchantedUnitListMethods, ItemUseSequence,
-        ItemUseSequence_EnchantedUnitList, ItemUseSequence_Label,
-    };
-    #[cfg(feature = "app-procinst")]
-    pub use crate::app::procinst::IProcInstMethods;
-    #[cfg(feature = "system-collections-generic-list_1")]
-    pub use crate::system::collections::generic::list_1::IList_1Methods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::{
-        app::procinst::IProcInst,
-        system::{collections::generic::list_1::IList_1, object::IObject, r#enum::IEnum, valuetype::IValueType},
-    };
+    pub use super::ItemUseSequence;
+    pub use super::IItemUseSequence;
+    pub use super::IItemUseSequenceMethods;
+    pub use super::ItemUseSequence_Label;
+    pub use super::ItemUseSequence_EnchantedUnitList;
+    pub use super::IItemUseSequence_EnchantedUnitList;
+    pub use super::IItemUseSequence_EnchantedUnitListMethods;
+    pub use crate::app::procinst::IProcInst;
+    pub use crate::system::collections::generic::list_1::IList_1;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "app-procinst")] pub use crate::app::procinst::IProcInstMethods;
+    #[cfg(feature = "system-collections-generic-list_1")] pub use crate::system::collections::generic::list_1::IList_1Methods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

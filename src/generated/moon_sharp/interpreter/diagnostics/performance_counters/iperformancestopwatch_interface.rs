@@ -2,81 +2,34 @@
 
 #[cfg(feature = "moon_sharp-interpreter-diagnostics-performance_counters-iperformancestopwatch_interface-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/diagnostics/performance_counters/iperformancestopwatch_interface/IPerformanceStopwatch_Interface.md"))]
-    #[::unity2::class(namespace = "MoonSharp.Interpreter.Diagnostics.PerformanceCounters", name = "IPerformanceStopwatch")]
-    pub struct IPerformanceStopwatch_Interface {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/diagnostics/performance_counters/iperformancestopwatch_interface/IPerformanceStopwatch_Interface.md"))] # [:: unity2 :: class (namespace = "MoonSharp.Interpreter.Diagnostics.PerformanceCounters" , name = "IPerformanceStopwatch")] pub struct IPerformanceStopwatch_Interface {}
+
 }
 
 #[cfg(feature = "moon_sharp-interpreter-diagnostics-performance_counters-iperformancestopwatch_interface-types")]
 pub use __types::*;
 
 #[cfg(feature = "moon_sharp-interpreter-diagnostics-performance_counters-iperformancestopwatch_interface")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __IPerformanceStopwatch_Interface_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_result {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <IPerformanceStopwatch_Interface as ::unity2::ClassIdentity>::class(),
-                "GetResult",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <IPerformanceStopwatch_Interface as ::unity2::ClassIdentity>::NAME,
-                        "GetResult",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_result(
-        this: IPerformanceStopwatch_Interface,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::moon_sharp::interpreter::diagnostics::performanceresult::PerformanceResult {
-        let inner: extern "C" fn(
-            IPerformanceStopwatch_Interface,
-            ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::diagnostics::performanceresult::PerformanceResult =
-            ::core::mem::transmute(__lookup_get_result::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __IPerformanceStopwatch_Interface_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_result { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< IPerformanceStopwatch_Interface as :: unity2 :: ClassIdentity > :: class () , "GetResult" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < IPerformanceStopwatch_Interface as :: unity2 :: ClassIdentity > :: NAME , "GetResult" , e) , } } } pub unsafe fn get_result (this : IPerformanceStopwatch_Interface , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: diagnostics :: performanceresult :: PerformanceResult { let inner : extern "C" fn (IPerformanceStopwatch_Interface , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: diagnostics :: performanceresult :: PerformanceResult = :: core :: mem :: transmute (__lookup_get_result :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "moon_sharp-interpreter-diagnostics-performance_counters-iperformancestopwatch_interface")]
-pub trait IIPerformanceStopwatch_InterfaceMethods: IIPerformanceStopwatch_Interface {
-    #[doc = "`GetResult()` overload"]
-    fn get_result(self) -> crate::moon_sharp::interpreter::diagnostics::performanceresult::PerformanceResult {
-        unsafe {
-            let __receiver =
-                <IPerformanceStopwatch_Interface as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __IPerformanceStopwatch_Interface_unity2_raw::get_result(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IIPerformanceStopwatch_InterfaceMethods : IIPerformanceStopwatch_Interface { # [doc = "`GetResult()` overload"] fn get_result (self ,) -> crate :: moon_sharp :: interpreter :: diagnostics :: performanceresult :: PerformanceResult { unsafe { let __receiver = < IPerformanceStopwatch_Interface as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IPerformanceStopwatch_Interface_unity2_raw :: get_result (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "moon_sharp-interpreter-diagnostics-performance_counters-iperformancestopwatch_interface")]
-impl<__T: IIPerformanceStopwatch_Interface> IIPerformanceStopwatch_InterfaceMethods for __T {}
+impl < __T : IIPerformanceStopwatch_Interface > IIPerformanceStopwatch_InterfaceMethods for __T { }
+
+#[cfg(feature = "moon_sharp-interpreter-diagnostics-performance_counters-iperformancestopwatch_interface")]
+impl IPerformanceStopwatch_Interface { pub fn get_result_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __IPerformanceStopwatch_Interface_unity2_raw :: __lookup_get_result :: get_method_info () } }
 
 #[cfg(feature = "moon_sharp-interpreter-diagnostics-performance_counters-iperformancestopwatch_interface")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IIPerformanceStopwatch_Interface, IIPerformanceStopwatch_InterfaceMethods, IPerformanceStopwatch_Interface};
+    pub use super::IPerformanceStopwatch_Interface;
+    pub use super::IIPerformanceStopwatch_Interface;
+    pub use super::IIPerformanceStopwatch_InterfaceMethods;
 }

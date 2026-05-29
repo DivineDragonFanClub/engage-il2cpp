@@ -2,315 +2,64 @@
 
 #[cfg(feature = "unity_engine-guiscrollgroup-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::{
-            guilayoutentry::{GUILayoutEntry, IGUILayoutEntry},
-            guilayoutgroup::{GUILayoutGroup, IGUILayoutGroup},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/guiscrollgroup/GUIScrollGroup.md"))]
-    #[::unity2::class(namespace = "UnityEngine", name = "GUIScrollGroup")]
-    #[parent(crate::unity_engine::guilayoutgroup::GUILayoutGroup)]
-    pub struct GUIScrollGroup {
-        #[offset(144)]
-        #[rename(name = "calcMinWidth")]
-        pub calc_min_width: f32,
-        #[offset(148)]
-        #[rename(name = "calcMaxWidth")]
-        pub calc_max_width: f32,
-        #[offset(152)]
-        #[rename(name = "calcMinHeight")]
-        pub calc_min_height: f32,
-        #[offset(156)]
-        #[rename(name = "calcMaxHeight")]
-        pub calc_max_height: f32,
-        #[offset(160)]
-        #[rename(name = "clientWidth")]
-        pub client_width: f32,
-        #[offset(164)]
-        #[rename(name = "clientHeight")]
-        pub client_height: f32,
-        #[offset(168)]
-        #[rename(name = "allowHorizontalScroll")]
-        pub allow_horizontal_scroll: bool,
-        #[offset(169)]
-        #[rename(name = "allowVerticalScroll")]
-        pub allow_vertical_scroll: bool,
-        #[offset(170)]
-        #[rename(name = "needsHorizontalScrollbar")]
-        pub needs_horizontal_scrollbar: bool,
-        #[offset(171)]
-        #[rename(name = "needsVerticalScrollbar")]
-        pub needs_vertical_scrollbar: bool,
-        #[offset(176)]
-        #[rename(name = "horizontalScrollbar")]
-        pub horizontal_scrollbar: crate::unity_engine::guistyle::GUIStyle,
-        #[offset(184)]
-        #[rename(name = "verticalScrollbar")]
-        pub vertical_scrollbar: crate::unity_engine::guistyle::GUIStyle,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: guilayoutentry :: { GUILayoutEntry , IGUILayoutEntry }
+ ;
+ use crate :: unity_engine :: guilayoutgroup :: { GUILayoutGroup , IGUILayoutGroup }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/guiscrollgroup/GUIScrollGroup.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "GUIScrollGroup")] # [parent (crate :: unity_engine :: guilayoutgroup :: GUILayoutGroup)] pub struct GUIScrollGroup {
+# [offset (144)] # [rename (name = "calcMinWidth")] pub calc_min_width : f32 ,
+# [offset (148)] # [rename (name = "calcMaxWidth")] pub calc_max_width : f32 ,
+# [offset (152)] # [rename (name = "calcMinHeight")] pub calc_min_height : f32 ,
+# [offset (156)] # [rename (name = "calcMaxHeight")] pub calc_max_height : f32 ,
+# [offset (160)] # [rename (name = "clientWidth")] pub client_width : f32 ,
+# [offset (164)] # [rename (name = "clientHeight")] pub client_height : f32 ,
+# [offset (168)] # [rename (name = "allowHorizontalScroll")] pub allow_horizontal_scroll : bool ,
+# [offset (169)] # [rename (name = "allowVerticalScroll")] pub allow_vertical_scroll : bool ,
+# [offset (170)] # [rename (name = "needsHorizontalScrollbar")] pub needs_horizontal_scrollbar : bool ,
+# [offset (171)] # [rename (name = "needsVerticalScrollbar")] pub needs_vertical_scrollbar : bool ,
+# [offset (176)] # [rename (name = "horizontalScrollbar")] pub horizontal_scrollbar : crate :: unity_engine :: guistyle :: GUIStyle ,
+# [offset (184)] # [rename (name = "verticalScrollbar")] pub vertical_scrollbar : crate :: unity_engine :: guistyle :: GUIStyle ,
+}
+
 }
 
 #[cfg(feature = "unity_engine-guiscrollgroup-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-guiscrollgroup")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __GUIScrollGroup_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GUIScrollGroup as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GUIScrollGroup as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: GUIScrollGroup, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GUIScrollGroup, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_width {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GUIScrollGroup as ::unity2::ClassIdentity>::class(),
-                "CalcWidth",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GUIScrollGroup as ::unity2::ClassIdentity>::NAME,
-                        "CalcWidth",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn calc_width(this: GUIScrollGroup, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GUIScrollGroup, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_calc_width::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_horizontal {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type(), <f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GUIScrollGroup as ::unity2::ClassIdentity>::class(),
-                "SetHorizontal",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GUIScrollGroup as ::unity2::ClassIdentity>::NAME,
-                        "SetHorizontal",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_horizontal(this: GUIScrollGroup, x: f32, width: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GUIScrollGroup, f32, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_horizontal::get_method_info().method_ptr);
-        inner(this, x, width, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_height {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GUIScrollGroup as ::unity2::ClassIdentity>::class(),
-                "CalcHeight",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GUIScrollGroup as ::unity2::ClassIdentity>::NAME,
-                        "CalcHeight",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn calc_height(this: GUIScrollGroup, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GUIScrollGroup, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_calc_height::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_vertical {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type(), <f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GUIScrollGroup as ::unity2::ClassIdentity>::class(),
-                "SetVertical",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GUIScrollGroup as ::unity2::ClassIdentity>::NAME,
-                        "SetVertical",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_vertical(this: GUIScrollGroup, y: f32, height: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GUIScrollGroup, f32, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_vertical::get_method_info().method_ptr);
-        inner(this, y, height, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __GUIScrollGroup_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GUIScrollGroup as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GUIScrollGroup as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : GUIScrollGroup , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GUIScrollGroup , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_calc_width { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GUIScrollGroup as :: unity2 :: ClassIdentity > :: class () , "CalcWidth" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GUIScrollGroup as :: unity2 :: ClassIdentity > :: NAME , "CalcWidth" , e) , } } } pub unsafe fn calc_width (this : GUIScrollGroup , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GUIScrollGroup , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_calc_width :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_horizontal { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< f32 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GUIScrollGroup as :: unity2 :: ClassIdentity > :: class () , "SetHorizontal" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GUIScrollGroup as :: unity2 :: ClassIdentity > :: NAME , "SetHorizontal" , e) , } } } pub unsafe fn set_horizontal (this : GUIScrollGroup , x : f32 , width : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GUIScrollGroup , f32 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_horizontal :: get_method_info () . method_ptr ,) ; inner (this , x , width , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_calc_height { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GUIScrollGroup as :: unity2 :: ClassIdentity > :: class () , "CalcHeight" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GUIScrollGroup as :: unity2 :: ClassIdentity > :: NAME , "CalcHeight" , e) , } } } pub unsafe fn calc_height (this : GUIScrollGroup , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GUIScrollGroup , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_calc_height :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_vertical { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< f32 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GUIScrollGroup as :: unity2 :: ClassIdentity > :: class () , "SetVertical" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GUIScrollGroup as :: unity2 :: ClassIdentity > :: NAME , "SetVertical" , e) , } } } pub unsafe fn set_vertical (this : GUIScrollGroup , y : f32 , height : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GUIScrollGroup , f32 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_vertical :: get_method_info () . method_ptr ,) ; inner (this , y , height , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-guiscrollgroup")]
-pub trait IGUIScrollGroupMethods: IGUIScrollGroup {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <GUIScrollGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GUIScrollGroup_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CalcWidth()` overload"]
-    fn calc_width(self) -> () {
-        unsafe {
-            let __receiver = <GUIScrollGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GUIScrollGroup_unity2_raw::calc_width(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetHorizontal(f32, f32)` overload"]
-    fn set_horizontal(self, x: impl ::core::convert::Into<f32>, width: impl ::core::convert::Into<f32>) -> () {
-        unsafe {
-            let __receiver = <GUIScrollGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GUIScrollGroup_unity2_raw::set_horizontal(
-                __receiver,
-                ::core::convert::Into::into(x),
-                ::core::convert::Into::into(width),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CalcHeight()` overload"]
-    fn calc_height(self) -> () {
-        unsafe {
-            let __receiver = <GUIScrollGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GUIScrollGroup_unity2_raw::calc_height(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetVertical(f32, f32)` overload"]
-    fn set_vertical(self, y: impl ::core::convert::Into<f32>, height: impl ::core::convert::Into<f32>) -> () {
-        unsafe {
-            let __receiver = <GUIScrollGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GUIScrollGroup_unity2_raw::set_vertical(
-                __receiver,
-                ::core::convert::Into::into(y),
-                ::core::convert::Into::into(height),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+pub trait IGUIScrollGroupMethods : IGUIScrollGroup { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GUIScrollGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GUIScrollGroup_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CalcWidth()` overload"] fn calc_width (self ,) -> () { unsafe { let __receiver = < GUIScrollGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GUIScrollGroup_unity2_raw :: calc_width (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetHorizontal(f32, f32)` overload"] fn set_horizontal (self , x : impl :: core :: convert :: Into < f32 > , width : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < GUIScrollGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GUIScrollGroup_unity2_raw :: set_horizontal (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (width) , :: core :: option :: Option :: None) } } # [doc = "`CalcHeight()` overload"] fn calc_height (self ,) -> () { unsafe { let __receiver = < GUIScrollGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GUIScrollGroup_unity2_raw :: calc_height (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetVertical(f32, f32)` overload"] fn set_vertical (self , y : impl :: core :: convert :: Into < f32 > , height : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < GUIScrollGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GUIScrollGroup_unity2_raw :: set_vertical (__receiver , :: core :: convert :: Into :: into (y) , :: core :: convert :: Into :: into (height) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-guiscrollgroup")]
-impl<__T: IGUIScrollGroup> IGUIScrollGroupMethods for __T {}
+impl < __T : IGUIScrollGroup > IGUIScrollGroupMethods for __T { }
+
+#[cfg(feature = "unity_engine-guiscrollgroup")]
+impl GUIScrollGroup { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GUIScrollGroup_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn calc_width_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GUIScrollGroup_unity2_raw :: __lookup_calc_width :: get_method_info () } pub fn set_horizontal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GUIScrollGroup_unity2_raw :: __lookup_set_horizontal :: get_method_info () } pub fn calc_height_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GUIScrollGroup_unity2_raw :: __lookup_calc_height :: get_method_info () } pub fn set_vertical_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GUIScrollGroup_unity2_raw :: __lookup_set_vertical :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-guiscrollgroup")]
 impl GUIScrollGroup {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GUIScrollGroup),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGUIScrollGroupMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GUIScrollGroup) , :: core :: stringify ! (new) ,)) ; < Self as IGUIScrollGroupMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "unity_engine-guiscrollgroup")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{GUIScrollGroup, IGUIScrollGroup, IGUIScrollGroupMethods};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-guilayoutentry")]
-    pub use crate::unity_engine::guilayoutentry::IGUILayoutEntryMethods;
-    #[cfg(feature = "unity_engine-guilayoutgroup")]
-    pub use crate::unity_engine::guilayoutgroup::IGUILayoutGroupMethods;
-    pub use crate::{
-        system::object::IObject,
-        unity_engine::{guilayoutentry::IGUILayoutEntry, guilayoutgroup::IGUILayoutGroup},
-    };
+    pub use super::GUIScrollGroup;
+    pub use super::IGUIScrollGroup;
+    pub use super::IGUIScrollGroupMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::guilayoutentry::IGUILayoutEntry;
+    pub use crate::unity_engine::guilayoutgroup::IGUILayoutGroup;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-guilayoutentry")] pub use crate::unity_engine::guilayoutentry::IGUILayoutEntryMethods;
+    #[cfg(feature = "unity_engine-guilayoutgroup")] pub use crate::unity_engine::guilayoutgroup::IGUILayoutGroupMethods;
 }

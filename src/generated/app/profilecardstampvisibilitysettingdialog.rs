@@ -2,457 +2,110 @@
 
 #[cfg(feature = "app-profilecardstampvisibilitysettingdialog-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::{
-            basicdialogitem::{BasicDialogItem, IBasicDialogItem},
-            basicmenuitem::{BasicMenuItem, IBasicMenuItem},
-        },
-        system::{
-            delegate::{Delegate, IDelegate},
-            multicastdelegate::{IMulticastDelegate, MulticastDelegate},
-            object::{IObject, Object},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardstampvisibilitysettingdialog/ProfileCardStampVisibilitySettingDialog_DialogMenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "ProfileCardStampVisibilitySettingDialog.DialogMenuItem")]
-    #[parent(crate::app::basicdialogitem::BasicDialogItem)]
-    pub struct ProfileCardStampVisibilitySettingDialog_DialogMenuItem {
-        #[offset(112)]
-        #[rename(name = "m_DecideEventHandler")]
-        pub m_decide_event_handler: crate::app::profilecardstampvisibilitysettingdialog::ProfileCardStampVisibilitySettingDialog_DecideEventHandler,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: basicdialogitem :: { BasicDialogItem , IBasicDialogItem }
+ ;
+ use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
+ ;
+ use crate :: system :: delegate :: { Delegate , IDelegate }
+ ;
+ use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardstampvisibilitysettingdialog/ProfileCardStampVisibilitySettingDialog_DecideEventHandler.md"))]
-    #[::unity2::class(namespace = "App", name = "ProfileCardStampVisibilitySettingDialog.DecideEventHandler")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct ProfileCardStampVisibilitySettingDialog_DecideEventHandler {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardstampvisibilitysettingdialog/ProfileCardStampVisibilitySettingDialog.md"))]
-    #[::unity2::class(namespace = "App", name = "ProfileCardStampVisibilitySettingDialog")]
-    #[parent(crate::system::object::Object)]
-    pub struct ProfileCardStampVisibilitySettingDialog {}
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardstampvisibilitysettingdialog/ProfileCardStampVisibilitySettingDialog_DialogMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProfileCardStampVisibilitySettingDialog.DialogMenuItem")] # [parent (crate :: app :: basicdialogitem :: BasicDialogItem)] pub struct ProfileCardStampVisibilitySettingDialog_DialogMenuItem {
+# [offset (112)] # [rename (name = "m_DecideEventHandler")] pub m_decide_event_handler : crate :: app :: profilecardstampvisibilitysettingdialog :: ProfileCardStampVisibilitySettingDialog_DecideEventHandler ,
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardstampvisibilitysettingdialog/ProfileCardStampVisibilitySettingDialog.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProfileCardStampVisibilitySettingDialog")] # [parent (crate :: system :: object :: Object)] pub struct ProfileCardStampVisibilitySettingDialog {}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardstampvisibilitysettingdialog/ProfileCardStampVisibilitySettingDialog_DecideEventHandler.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProfileCardStampVisibilitySettingDialog.DecideEventHandler")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct ProfileCardStampVisibilitySettingDialog_DecideEventHandler {}
+
 }
 
 #[cfg(feature = "app-profilecardstampvisibilitysettingdialog-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-profilecardstampvisibilitysettingdialog")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ProfileCardStampVisibilitySettingDialog_DialogMenuItem_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: app :: profilecardstampvisibilitysettingdialog :: ProfileCardStampVisibilitySettingDialog_DecideEventHandler as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCardStampVisibilitySettingDialog_DialogMenuItem as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProfileCardStampVisibilitySettingDialog_DialogMenuItem as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: ProfileCardStampVisibilitySettingDialog_DialogMenuItem,
-        message: ::unity2::Il2CppString,
-        decide_event_handler: crate::app::profilecardstampvisibilitysettingdialog::ProfileCardStampVisibilitySettingDialog_DecideEventHandler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ProfileCardStampVisibilitySettingDialog_DialogMenuItem,
-            ::unity2::Il2CppString,
-            crate::app::profilecardstampvisibilitysettingdialog::ProfileCardStampVisibilitySettingDialog_DecideEventHandler,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, message, decide_event_handler, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_a_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCardStampVisibilitySettingDialog_DialogMenuItem as ::unity2::ClassIdentity>::class(),
-                "ACall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProfileCardStampVisibilitySettingDialog_DialogMenuItem as ::unity2::ClassIdentity>::NAME,
-                        "ACall",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn a_call(
-        this: ProfileCardStampVisibilitySettingDialog_DialogMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            ProfileCardStampVisibilitySettingDialog_DialogMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ProfileCardStampVisibilitySettingDialog_DialogMenuItem_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: app :: profilecardstampvisibilitysettingdialog :: ProfileCardStampVisibilitySettingDialog_DecideEventHandler as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileCardStampVisibilitySettingDialog_DialogMenuItem as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileCardStampVisibilitySettingDialog_DialogMenuItem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : ProfileCardStampVisibilitySettingDialog_DialogMenuItem , message : :: unity2 :: Il2CppString , decide_event_handler : crate :: app :: profilecardstampvisibilitysettingdialog :: ProfileCardStampVisibilitySettingDialog_DecideEventHandler , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ProfileCardStampVisibilitySettingDialog_DialogMenuItem , :: unity2 :: Il2CppString , crate :: app :: profilecardstampvisibilitysettingdialog :: ProfileCardStampVisibilitySettingDialog_DecideEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , message , decide_event_handler , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_a_call { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileCardStampVisibilitySettingDialog_DialogMenuItem as :: unity2 :: ClassIdentity > :: class () , "ACall" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileCardStampVisibilitySettingDialog_DialogMenuItem as :: unity2 :: ClassIdentity > :: NAME , "ACall" , e) , } } } pub unsafe fn a_call (this : ProfileCardStampVisibilitySettingDialog_DialogMenuItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result { let inner : extern "C" fn (ProfileCardStampVisibilitySettingDialog_DialogMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute (__lookup_a_call :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-profilecardstampvisibilitysettingdialog")]
-pub trait IProfileCardStampVisibilitySettingDialog_DialogMenuItemMethods: IProfileCardStampVisibilitySettingDialog_DialogMenuItem {
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::app::profilecardstampvisibilitysettingdialog::ProfileCardStampVisibilitySettingDialog_DecideEventHandler)` overload"]
-    fn ctor(
-        self,
-        message: impl ::core::convert::Into<::unity2::Il2CppString>,
-        decide_event_handler: impl ::core::convert::Into<
-            crate::app::profilecardstampvisibilitysettingdialog::ProfileCardStampVisibilitySettingDialog_DecideEventHandler,
-        >,
-    ) -> () {
-        unsafe {
-            let __receiver = <ProfileCardStampVisibilitySettingDialog_DialogMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ProfileCardStampVisibilitySettingDialog_DialogMenuItem_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(message),
-                ::core::convert::Into::into(decide_event_handler),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ACall()` overload"]
-    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = <ProfileCardStampVisibilitySettingDialog_DialogMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ProfileCardStampVisibilitySettingDialog_DialogMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IProfileCardStampVisibilitySettingDialog_DialogMenuItemMethods : IProfileCardStampVisibilitySettingDialog_DialogMenuItem { # [doc = "`.ctor(::unity2::Il2CppString, crate::app::profilecardstampvisibilitysettingdialog::ProfileCardStampVisibilitySettingDialog_DecideEventHandler)` overload"] fn ctor (self , message : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , decide_event_handler : impl :: core :: convert :: Into < crate :: app :: profilecardstampvisibilitysettingdialog :: ProfileCardStampVisibilitySettingDialog_DecideEventHandler >) -> () { unsafe { let __receiver = < ProfileCardStampVisibilitySettingDialog_DialogMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ProfileCardStampVisibilitySettingDialog_DialogMenuItem_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (message) , :: core :: convert :: Into :: into (decide_event_handler) , :: core :: option :: Option :: None) } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < ProfileCardStampVisibilitySettingDialog_DialogMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ProfileCardStampVisibilitySettingDialog_DialogMenuItem_unity2_raw :: a_call (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-profilecardstampvisibilitysettingdialog")]
-impl<__T: IProfileCardStampVisibilitySettingDialog_DialogMenuItem> IProfileCardStampVisibilitySettingDialog_DialogMenuItemMethods for __T {}
+impl < __T : IProfileCardStampVisibilitySettingDialog_DialogMenuItem > IProfileCardStampVisibilitySettingDialog_DialogMenuItemMethods for __T { }
+
+#[cfg(feature = "app-profilecardstampvisibilitysettingdialog")]
+impl ProfileCardStampVisibilitySettingDialog_DialogMenuItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProfileCardStampVisibilitySettingDialog_DialogMenuItem_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProfileCardStampVisibilitySettingDialog_DialogMenuItem_unity2_raw :: __lookup_a_call :: get_method_info () } }
 
 #[cfg(feature = "app-profilecardstampvisibilitysettingdialog")]
 impl ProfileCardStampVisibilitySettingDialog_DialogMenuItem {
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::app::profilecardstampvisibilitysettingdialog::ProfileCardStampVisibilitySettingDialog_DecideEventHandler)` — overload selector"]
-    pub fn new(
-        message: ::unity2::Il2CppString,
-        decide_event_handler: crate::app::profilecardstampvisibilitysettingdialog::ProfileCardStampVisibilitySettingDialog_DecideEventHandler,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ProfileCardStampVisibilitySettingDialog_DialogMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IProfileCardStampVisibilitySettingDialog_DialogMenuItemMethods>::ctor(this, message, decide_event_handler);
-        this
-    }
+# [doc = "`.ctor(::unity2::Il2CppString, crate::app::profilecardstampvisibilitysettingdialog::ProfileCardStampVisibilitySettingDialog_DecideEventHandler)` — overload selector"] pub fn new (message : :: unity2 :: Il2CppString , decide_event_handler : crate :: app :: profilecardstampvisibilitysettingdialog :: ProfileCardStampVisibilitySettingDialog_DecideEventHandler) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProfileCardStampVisibilitySettingDialog_DialogMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IProfileCardStampVisibilitySettingDialog_DialogMenuItemMethods > :: ctor (this , message , decide_event_handler) ; this }
 }
 
 #[cfg(feature = "app-profilecardstampvisibilitysettingdialog")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ProfileCardStampVisibilitySettingDialog_DecideEventHandler_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCardStampVisibilitySettingDialog_DecideEventHandler as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProfileCardStampVisibilitySettingDialog_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: ProfileCardStampVisibilitySettingDialog_DecideEventHandler,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ProfileCardStampVisibilitySettingDialog_DecideEventHandler,
-            crate::system::object::Object,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCardStampVisibilitySettingDialog_DecideEventHandler as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProfileCardStampVisibilitySettingDialog_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
-                        "Invoke",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn invoke(this: ProfileCardStampVisibilitySettingDialog_DecideEventHandler, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ProfileCardStampVisibilitySettingDialog_DecideEventHandler, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ProfileCardStampVisibilitySettingDialog_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_bind { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileCardStampVisibilitySettingDialog as :: unity2 :: ClassIdentity > :: class () , "CreateBind" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileCardStampVisibilitySettingDialog as :: unity2 :: ClassIdentity > :: NAME , "CreateBind" , e) , } } } pub unsafe fn create_bind (super_ : crate :: app :: procinst :: ProcInst , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: basicdialog :: BasicDialog { let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicdialog :: BasicDialog = :: core :: mem :: transmute (__lookup_create_bind :: get_method_info () . method_ptr ,) ; inner (super_ , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileCardStampVisibilitySettingDialog as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileCardStampVisibilitySettingDialog as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : ProfileCardStampVisibilitySettingDialog , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ProfileCardStampVisibilitySettingDialog , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-profilecardstampvisibilitysettingdialog")]
+impl ProfileCardStampVisibilitySettingDialog { # [doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> crate :: app :: basicdialog :: BasicDialog { unsafe { __ProfileCardStampVisibilitySettingDialog_unity2_raw :: create_bind (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-profilecardstampvisibilitysettingdialog")]
+pub trait IProfileCardStampVisibilitySettingDialogMethods : IProfileCardStampVisibilitySettingDialog { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ProfileCardStampVisibilitySettingDialog as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ProfileCardStampVisibilitySettingDialog_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-profilecardstampvisibilitysettingdialog")]
+impl < __T : IProfileCardStampVisibilitySettingDialog > IProfileCardStampVisibilitySettingDialogMethods for __T { }
+
+#[cfg(feature = "app-profilecardstampvisibilitysettingdialog")]
+impl ProfileCardStampVisibilitySettingDialog { pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProfileCardStampVisibilitySettingDialog_unity2_raw :: __lookup_create_bind :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProfileCardStampVisibilitySettingDialog_unity2_raw :: __lookup_ctor :: get_method_info () } }
+
+#[cfg(feature = "app-profilecardstampvisibilitysettingdialog")]
+impl ProfileCardStampVisibilitySettingDialog {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProfileCardStampVisibilitySettingDialog) , :: core :: stringify ! (new) ,)) ; < Self as IProfileCardStampVisibilitySettingDialogMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-profilecardstampvisibilitysettingdialog")]
-pub trait IProfileCardStampVisibilitySettingDialog_DecideEventHandlerMethods: IProfileCardStampVisibilitySettingDialog_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
-        unsafe {
-            let __receiver = <ProfileCardStampVisibilitySettingDialog_DecideEventHandler as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ProfileCardStampVisibilitySettingDialog_DecideEventHandler_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invoke()` overload"]
-    fn invoke(self) -> () {
-        unsafe {
-            let __receiver = <ProfileCardStampVisibilitySettingDialog_DecideEventHandler as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ProfileCardStampVisibilitySettingDialog_DecideEventHandler_unity2_raw::invoke(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ProfileCardStampVisibilitySettingDialog_DecideEventHandler_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type () , < :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileCardStampVisibilitySettingDialog_DecideEventHandler as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileCardStampVisibilitySettingDialog_DecideEventHandler as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : ProfileCardStampVisibilitySettingDialog_DecideEventHandler , object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ProfileCardStampVisibilitySettingDialog_DecideEventHandler , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , object , method , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_invoke { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileCardStampVisibilitySettingDialog_DecideEventHandler as :: unity2 :: ClassIdentity > :: class () , "Invoke" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileCardStampVisibilitySettingDialog_DecideEventHandler as :: unity2 :: ClassIdentity > :: NAME , "Invoke" , e) , } } } pub unsafe fn invoke (this : ProfileCardStampVisibilitySettingDialog_DecideEventHandler , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ProfileCardStampVisibilitySettingDialog_DecideEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_invoke :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-profilecardstampvisibilitysettingdialog")]
-impl<__T: IProfileCardStampVisibilitySettingDialog_DecideEventHandler> IProfileCardStampVisibilitySettingDialog_DecideEventHandlerMethods for __T {}
+pub trait IProfileCardStampVisibilitySettingDialog_DecideEventHandlerMethods : IProfileCardStampVisibilitySettingDialog_DecideEventHandler { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < ProfileCardStampVisibilitySettingDialog_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ProfileCardStampVisibilitySettingDialog_DecideEventHandler_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } # [doc = "`Invoke()` overload"] fn invoke (self ,) -> () { unsafe { let __receiver = < ProfileCardStampVisibilitySettingDialog_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ProfileCardStampVisibilitySettingDialog_DecideEventHandler_unity2_raw :: invoke (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-profilecardstampvisibilitysettingdialog")]
+impl < __T : IProfileCardStampVisibilitySettingDialog_DecideEventHandler > IProfileCardStampVisibilitySettingDialog_DecideEventHandlerMethods for __T { }
+
+#[cfg(feature = "app-profilecardstampvisibilitysettingdialog")]
+impl ProfileCardStampVisibilitySettingDialog_DecideEventHandler { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProfileCardStampVisibilitySettingDialog_DecideEventHandler_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProfileCardStampVisibilitySettingDialog_DecideEventHandler_unity2_raw :: __lookup_invoke :: get_method_info () } }
 
 #[cfg(feature = "app-profilecardstampvisibilitysettingdialog")]
 impl ProfileCardStampVisibilitySettingDialog_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ProfileCardStampVisibilitySettingDialog_DecideEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IProfileCardStampVisibilitySettingDialog_DecideEventHandlerMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-#[cfg(feature = "app-profilecardstampvisibilitysettingdialog")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ProfileCardStampVisibilitySettingDialog_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCardStampVisibilitySettingDialog as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProfileCardStampVisibilitySettingDialog as ::unity2::ClassIdentity>::NAME,
-                        "CreateBind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicdialog::BasicDialog {
-        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> crate::app::basicdialog::BasicDialog =
-            ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
-        inner(super_, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCardStampVisibilitySettingDialog as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProfileCardStampVisibilitySettingDialog as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: ProfileCardStampVisibilitySettingDialog, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ProfileCardStampVisibilitySettingDialog, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-profilecardstampvisibilitysettingdialog")]
-impl ProfileCardStampVisibilitySettingDialog {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
-    pub fn create_bind(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> crate::app::basicdialog::BasicDialog {
-        unsafe {
-            __ProfileCardStampVisibilitySettingDialog_unity2_raw::create_bind(::core::convert::Into::into(super_), ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-profilecardstampvisibilitysettingdialog")]
-pub trait IProfileCardStampVisibilitySettingDialogMethods: IProfileCardStampVisibilitySettingDialog {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <ProfileCardStampVisibilitySettingDialog as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ProfileCardStampVisibilitySettingDialog_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-profilecardstampvisibilitysettingdialog")]
-impl<__T: IProfileCardStampVisibilitySettingDialog> IProfileCardStampVisibilitySettingDialogMethods for __T {}
-
-#[cfg(feature = "app-profilecardstampvisibilitysettingdialog")]
-impl ProfileCardStampVisibilitySettingDialog {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ProfileCardStampVisibilitySettingDialog),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IProfileCardStampVisibilitySettingDialogMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProfileCardStampVisibilitySettingDialog_DecideEventHandler) , :: core :: stringify ! (new) ,)) ; < Self as IProfileCardStampVisibilitySettingDialog_DecideEventHandlerMethods > :: ctor (this , object , method) ; this }
 }
 
 #[cfg(feature = "app-profilecardstampvisibilitysettingdialog")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{
-        IProfileCardStampVisibilitySettingDialog, IProfileCardStampVisibilitySettingDialogMethods,
-        IProfileCardStampVisibilitySettingDialog_DecideEventHandler, IProfileCardStampVisibilitySettingDialog_DecideEventHandlerMethods,
-        IProfileCardStampVisibilitySettingDialog_DialogMenuItem, IProfileCardStampVisibilitySettingDialog_DialogMenuItemMethods,
-        ProfileCardStampVisibilitySettingDialog, ProfileCardStampVisibilitySettingDialog_DecideEventHandler,
-        ProfileCardStampVisibilitySettingDialog_DialogMenuItem,
-    };
-    #[cfg(feature = "app-basicdialogitem")]
-    pub use crate::app::basicdialogitem::IBasicDialogItemMethods;
-    #[cfg(feature = "app-basicmenuitem")]
-    pub use crate::app::basicmenuitem::IBasicMenuItemMethods;
-    #[cfg(feature = "system-delegate")]
-    pub use crate::system::delegate::IDelegateMethods;
-    #[cfg(feature = "system-multicastdelegate")]
-    pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::{
-        app::{basicdialogitem::IBasicDialogItem, basicmenuitem::IBasicMenuItem},
-        system::{delegate::IDelegate, multicastdelegate::IMulticastDelegate, object::IObject},
-    };
+    pub use super::ProfileCardStampVisibilitySettingDialog_DialogMenuItem;
+    pub use super::IProfileCardStampVisibilitySettingDialog_DialogMenuItem;
+    pub use super::IProfileCardStampVisibilitySettingDialog_DialogMenuItemMethods;
+    pub use super::ProfileCardStampVisibilitySettingDialog;
+    pub use super::IProfileCardStampVisibilitySettingDialog;
+    pub use super::IProfileCardStampVisibilitySettingDialogMethods;
+    pub use super::ProfileCardStampVisibilitySettingDialog_DecideEventHandler;
+    pub use super::IProfileCardStampVisibilitySettingDialog_DecideEventHandler;
+    pub use super::IProfileCardStampVisibilitySettingDialog_DecideEventHandlerMethods;
+    pub use crate::app::basicdialogitem::IBasicDialogItem;
+    pub use crate::app::basicmenuitem::IBasicMenuItem;
+    pub use crate::system::delegate::IDelegate;
+    pub use crate::system::multicastdelegate::IMulticastDelegate;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "app-basicdialogitem")] pub use crate::app::basicdialogitem::IBasicDialogItemMethods;
+    #[cfg(feature = "app-basicmenuitem")] pub use crate::app::basicmenuitem::IBasicMenuItemMethods;
+    #[cfg(feature = "system-delegate")] pub use crate::system::delegate::IDelegateMethods;
+    #[cfg(feature = "system-multicastdelegate")] pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

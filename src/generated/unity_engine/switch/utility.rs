@@ -2,73 +2,34 @@
 
 #[cfg(feature = "unity_engine-switch-utility-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/switch/utility/Utility.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Switch", name = "Utility")]
-    #[parent(crate::system::object::Object)]
-    pub struct Utility {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/switch/utility/Utility.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Switch" , name = "Utility")] # [parent (crate :: system :: object :: Object)] pub struct Utility {}
+
 }
 
 #[cfg(feature = "unity_engine-switch-utility-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-switch-utility")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __Utility_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_allocatable_native_memory_long {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Utility as ::unity2::ClassIdentity>::class(),
-                "GetAllocatableNativeMemoryLong",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Utility as ::unity2::ClassIdentity>::NAME,
-                        "GetAllocatableNativeMemoryLong",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_allocatable_native_memory_long(__unity2_method_info: ::unity2::OptionalMethod) -> i64 {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> i64 =
-            ::core::mem::transmute(__lookup_get_allocatable_native_memory_long::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __Utility_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_allocatable_native_memory_long { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Utility as :: unity2 :: ClassIdentity > :: class () , "GetAllocatableNativeMemoryLong" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Utility as :: unity2 :: ClassIdentity > :: NAME , "GetAllocatableNativeMemoryLong" , e) , } } } pub unsafe fn get_allocatable_native_memory_long (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> i64 { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i64 = :: core :: mem :: transmute (__lookup_get_allocatable_native_memory_long :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-switch-utility")]
-impl Utility {
-    #[doc = "`GetAllocatableNativeMemoryLong()` overload"]
-    pub fn get_allocatable_native_memory_long() -> i64 {
-        unsafe { __Utility_unity2_raw::get_allocatable_native_memory_long(::core::option::Option::None) }
-    }
-}
+impl Utility { # [doc = "`GetAllocatableNativeMemoryLong()` overload"] pub fn get_allocatable_native_memory_long () -> i64 { unsafe { __Utility_unity2_raw :: get_allocatable_native_memory_long (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-switch-utility")]
+impl Utility { pub fn get_allocatable_native_memory_long_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Utility_unity2_raw :: __lookup_get_allocatable_native_memory_long :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-switch-utility")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IUtility, Utility};
+    pub use super::Utility;
+    pub use super::IUtility;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

@@ -2,237 +2,45 @@
 
 #[cfg(feature = "combat-hierarchycache-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/hierarchycache/HierarchyCache.md"))]
-    #[::unity2::class(namespace = "Combat", name = "HierarchyCache")]
-    #[parent(crate::system::object::Object)]
-    pub struct HierarchyCache {
-        #[offset(16)]
-        #[rename(name = "dic")]
-        pub dic: crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, crate::unity_engine::transform::Transform>,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/hierarchycache/HierarchyCache.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "HierarchyCache")] # [parent (crate :: system :: object :: Object)] pub struct HierarchyCache {
+# [offset (16)] # [rename (name = "dic")] pub dic : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , crate :: unity_engine :: transform :: Transform > ,
+}
+
 }
 
 #[cfg(feature = "combat-hierarchycache-types")]
 pub use __types::*;
 
 #[cfg(feature = "combat-hierarchycache")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __HierarchyCache_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_dic {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HierarchyCache as ::unity2::ClassIdentity>::class(),
-                "get_Dic",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HierarchyCache as ::unity2::ClassIdentity>::NAME,
-                        "get_Dic",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_dic(
-        this: HierarchyCache,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, crate::unity_engine::transform::Transform> {
-        let inner: extern "C" fn(
-            HierarchyCache,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::collections::generic::dictionary_2::Dictionary_2<
-            ::unity2::Il2CppString,
-            crate::unity_engine::transform::Transform,
-        > = ::core::mem::transmute(__lookup_get_dic::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_item {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HierarchyCache as ::unity2::ClassIdentity>::class(),
-                "get_Item",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HierarchyCache as ::unity2::ClassIdentity>::NAME,
-                        "get_Item",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_item(
-        this: HierarchyCache,
-        name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::transform::Transform {
-        let inner: extern "C" fn(HierarchyCache, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform =
-            ::core::mem::transmute(__lookup_get_item::get_method_info().method_ptr);
-        inner(this, name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HierarchyCache as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HierarchyCache as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: HierarchyCache, root: crate::unity_engine::transform::Transform, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(HierarchyCache, crate::unity_engine::transform::Transform, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, root, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_range {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HierarchyCache as ::unity2::ClassIdentity>::class(),
-                "AddRange",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HierarchyCache as ::unity2::ClassIdentity>::NAME,
-                        "AddRange",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_range(
-        this: HierarchyCache,
-        root: crate::unity_engine::transform::Transform,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HierarchyCache, crate::unity_engine::transform::Transform, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add_range::get_method_info().method_ptr);
-        inner(this, root, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __HierarchyCache_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_dic { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HierarchyCache as :: unity2 :: ClassIdentity > :: class () , "get_Dic" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HierarchyCache as :: unity2 :: ClassIdentity > :: NAME , "get_Dic" , e) , } } } pub unsafe fn get_dic (this : HierarchyCache , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , crate :: unity_engine :: transform :: Transform > { let inner : extern "C" fn (HierarchyCache , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , crate :: unity_engine :: transform :: Transform > = :: core :: mem :: transmute (__lookup_get_dic :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_item { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HierarchyCache as :: unity2 :: ClassIdentity > :: class () , "get_Item" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HierarchyCache as :: unity2 :: ClassIdentity > :: NAME , "get_Item" , e) , } } } pub unsafe fn get_item (this : HierarchyCache , name : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: transform :: Transform { let inner : extern "C" fn (HierarchyCache , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: transform :: Transform = :: core :: mem :: transmute (__lookup_get_item :: get_method_info () . method_ptr ,) ; inner (this , name , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: transform :: Transform as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HierarchyCache as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HierarchyCache as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : HierarchyCache , root : crate :: unity_engine :: transform :: Transform , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HierarchyCache , crate :: unity_engine :: transform :: Transform , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , root , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_range { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: transform :: Transform as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HierarchyCache as :: unity2 :: ClassIdentity > :: class () , "AddRange" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HierarchyCache as :: unity2 :: ClassIdentity > :: NAME , "AddRange" , e) , } } } pub unsafe fn add_range (this : HierarchyCache , root : crate :: unity_engine :: transform :: Transform , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HierarchyCache , crate :: unity_engine :: transform :: Transform , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_range :: get_method_info () . method_ptr ,) ; inner (this , root , __unity2_method_info) } }
 
 #[cfg(feature = "combat-hierarchycache")]
-pub trait IHierarchyCacheMethods: IHierarchyCache {
-    #[doc = "`get_Dic()` overload"]
-    fn get_dic(
-        self,
-    ) -> crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, crate::unity_engine::transform::Transform> {
-        unsafe {
-            let __receiver = <HierarchyCache as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HierarchyCache_unity2_raw::get_dic(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Item(::unity2::Il2CppString)` overload"]
-    fn get_item(self, name: impl ::core::convert::Into<::unity2::Il2CppString>) -> crate::unity_engine::transform::Transform {
-        unsafe {
-            let __receiver = <HierarchyCache as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HierarchyCache_unity2_raw::get_item(__receiver, ::core::convert::Into::into(name), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor(crate::unity_engine::transform::Transform)` overload"]
-    fn ctor(self, root: impl ::core::convert::Into<crate::unity_engine::transform::Transform>) -> () {
-        unsafe {
-            let __receiver = <HierarchyCache as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HierarchyCache_unity2_raw::ctor(__receiver, ::core::convert::Into::into(root), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`AddRange(crate::unity_engine::transform::Transform)` overload"]
-    fn add_range(self, root: impl ::core::convert::Into<crate::unity_engine::transform::Transform>) -> () {
-        unsafe {
-            let __receiver = <HierarchyCache as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HierarchyCache_unity2_raw::add_range(__receiver, ::core::convert::Into::into(root), ::core::option::Option::None)
-        }
-    }
-}
+pub trait IHierarchyCacheMethods : IHierarchyCache { # [doc = "`get_Dic()` overload"] fn get_dic (self ,) -> crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , crate :: unity_engine :: transform :: Transform > { unsafe { let __receiver = < HierarchyCache as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HierarchyCache_unity2_raw :: get_dic (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_Item(::unity2::Il2CppString)` overload"] fn get_item (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: unity_engine :: transform :: Transform { unsafe { let __receiver = < HierarchyCache as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HierarchyCache_unity2_raw :: get_item (__receiver , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } # [doc = "`.ctor(crate::unity_engine::transform::Transform)` overload"] fn ctor (self , root : impl :: core :: convert :: Into < crate :: unity_engine :: transform :: Transform >) -> () { unsafe { let __receiver = < HierarchyCache as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HierarchyCache_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (root) , :: core :: option :: Option :: None) } } # [doc = "`AddRange(crate::unity_engine::transform::Transform)` overload"] fn add_range (self , root : impl :: core :: convert :: Into < crate :: unity_engine :: transform :: Transform >) -> () { unsafe { let __receiver = < HierarchyCache as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HierarchyCache_unity2_raw :: add_range (__receiver , :: core :: convert :: Into :: into (root) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "combat-hierarchycache")]
-impl<__T: IHierarchyCache> IHierarchyCacheMethods for __T {}
+impl < __T : IHierarchyCache > IHierarchyCacheMethods for __T { }
+
+#[cfg(feature = "combat-hierarchycache")]
+impl HierarchyCache { pub fn get_dic_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HierarchyCache_unity2_raw :: __lookup_get_dic :: get_method_info () } pub fn get_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HierarchyCache_unity2_raw :: __lookup_get_item :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HierarchyCache_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn add_range_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HierarchyCache_unity2_raw :: __lookup_add_range :: get_method_info () } }
 
 #[cfg(feature = "combat-hierarchycache")]
 impl HierarchyCache {
-    #[doc = "`.ctor(crate::unity_engine::transform::Transform)` — overload selector"]
-    pub fn new(root: crate::unity_engine::transform::Transform) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(HierarchyCache),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IHierarchyCacheMethods>::ctor(this, root);
-        this
-    }
+# [doc = "`.ctor(crate::unity_engine::transform::Transform)` — overload selector"] pub fn new (root : crate :: unity_engine :: transform :: Transform) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HierarchyCache) , :: core :: stringify ! (new) ,)) ; < Self as IHierarchyCacheMethods > :: ctor (this , root) ; this }
 }
 
 #[cfg(feature = "combat-hierarchycache")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{HierarchyCache, IHierarchyCache, IHierarchyCacheMethods};
+    pub use super::HierarchyCache;
+    pub use super::IHierarchyCache;
+    pub use super::IHierarchyCacheMethods;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

@@ -2,129 +2,75 @@
 
 #[cfg(feature = "root-akambient_bridge-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        root::{
-            akambient::{AkAmbient, IAkAmbient},
-            akdragdroptriggerhandler::{AkDragDropTriggerHandler, IAkDragDropTriggerHandler},
-            akevent::{AkEvent, IAkEvent},
-            aktriggerhandler::{AkTriggerHandler, IAkTriggerHandler},
-        },
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akambient_bridge/AkAmbient_Bridge.md"))]
-    #[::unity2::class(namespace = "", name = "AkAmbient_Bridge")]
-    #[parent(crate::root::akambient::AkAmbient)]
-    pub struct AkAmbient_Bridge {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: root :: akambient :: { AkAmbient , IAkAmbient }
+ ;
+ use crate :: root :: akdragdroptriggerhandler :: { AkDragDropTriggerHandler , IAkDragDropTriggerHandler }
+ ;
+ use crate :: root :: akevent :: { AkEvent , IAkEvent }
+ ;
+ use crate :: root :: aktriggerhandler :: { AkTriggerHandler , IAkTriggerHandler }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akambient_bridge/AkAmbient_Bridge.md"))] # [:: unity2 :: class (namespace = "" , name = "AkAmbient_Bridge")] # [parent (crate :: root :: akambient :: AkAmbient)] pub struct AkAmbient_Bridge {}
+
 }
 
 #[cfg(feature = "root-akambient_bridge-types")]
 pub use __types::*;
 
 #[cfg(feature = "root-akambient_bridge")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AkAmbient_Bridge_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkAmbient_Bridge as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkAmbient_Bridge as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: AkAmbient_Bridge, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AkAmbient_Bridge, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __AkAmbient_Bridge_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkAmbient_Bridge as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkAmbient_Bridge as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : AkAmbient_Bridge , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkAmbient_Bridge , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "root-akambient_bridge")]
-pub trait IAkAmbient_BridgeMethods: IAkAmbient_Bridge {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <AkAmbient_Bridge as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkAmbient_Bridge_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IAkAmbient_BridgeMethods : IAkAmbient_Bridge { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AkAmbient_Bridge as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkAmbient_Bridge_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "root-akambient_bridge")]
-impl<__T: IAkAmbient_Bridge> IAkAmbient_BridgeMethods for __T {}
+impl < __T : IAkAmbient_Bridge > IAkAmbient_BridgeMethods for __T { }
+
+#[cfg(feature = "root-akambient_bridge")]
+impl AkAmbient_Bridge { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkAmbient_Bridge_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "root-akambient_bridge")]
 impl AkAmbient_Bridge {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AkAmbient_Bridge),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAkAmbient_BridgeMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkAmbient_Bridge) , :: core :: stringify ! (new) ,)) ; < Self as IAkAmbient_BridgeMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "root-akambient_bridge")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{AkAmbient_Bridge, IAkAmbient_Bridge, IAkAmbient_BridgeMethods};
-    #[cfg(feature = "root-akambient")]
-    pub use crate::root::akambient::IAkAmbientMethods;
-    #[cfg(feature = "root-akdragdroptriggerhandler")]
-    pub use crate::root::akdragdroptriggerhandler::IAkDragDropTriggerHandlerMethods;
-    #[cfg(feature = "root-akevent")]
-    pub use crate::root::akevent::IAkEventMethods;
-    #[cfg(feature = "root-aktriggerhandler")]
-    pub use crate::root::aktriggerhandler::IAkTriggerHandlerMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        root::{akambient::IAkAmbient, akdragdroptriggerhandler::IAkDragDropTriggerHandler, akevent::IAkEvent, aktriggerhandler::IAkTriggerHandler},
-        system::object::IObject,
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::AkAmbient_Bridge;
+    pub use super::IAkAmbient_Bridge;
+    pub use super::IAkAmbient_BridgeMethods;
+    pub use crate::root::akambient::IAkAmbient;
+    pub use crate::root::akdragdroptriggerhandler::IAkDragDropTriggerHandler;
+    pub use crate::root::akevent::IAkEvent;
+    pub use crate::root::aktriggerhandler::IAkTriggerHandler;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "root-akambient")] pub use crate::root::akambient::IAkAmbientMethods;
+    #[cfg(feature = "root-akdragdroptriggerhandler")] pub use crate::root::akdragdroptriggerhandler::IAkDragDropTriggerHandlerMethods;
+    #[cfg(feature = "root-akevent")] pub use crate::root::akevent::IAkEventMethods;
+    #[cfg(feature = "root-aktriggerhandler")] pub use crate::root::aktriggerhandler::IAkTriggerHandlerMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

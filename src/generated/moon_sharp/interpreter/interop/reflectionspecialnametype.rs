@@ -2,160 +2,233 @@
 
 #[cfg(feature = "moon_sharp-interpreter-interop-reflectionspecialnametype-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        r#enum::{Enum, IEnum},
-        valuetype::{IValueType, ValueType},
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/interop/reflectionspecialnametype/ReflectionSpecialNameType.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct ReflectionSpecialNameType {
-        pub value: i32,
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/interop/reflectionspecialnametype/ReflectionSpecialNameType.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct ReflectionSpecialNameType  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for ReflectionSpecialNameType  {
+    const NAMESPACE: &'static str = "MoonSharp.Interpreter.Interop";
+
+    const NAME: &'static str = "ReflectionSpecialNameType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    impl ::unity2::ClassIdentity for ReflectionSpecialNameType {
-        const NAME: &'static str = "ReflectionSpecialNameType";
-        const NAMESPACE: &'static str = "MoonSharp.Interpreter.Interop";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  ::unity2::IlType for ReflectionSpecialNameType  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::IlType for ReflectionSpecialNameType {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  ReflectionSpecialNameType  {
+    pub fn index_getter() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl ReflectionSpecialNameType {
-        pub fn index_getter() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn index_setter() -> Self {
-            Self { value: 1 }
-        }
+    pub fn index_setter() -> Self {
+        Self { value: 1 }
 
-        pub fn implicit_cast() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn explicit_cast() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn operator_true() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn operator_false() -> Self {
-            Self { value: 5 }
-        }
-
-        pub fn property_getter() -> Self {
-            Self { value: 6 }
-        }
-
-        pub fn property_setter() -> Self {
-            Self { value: 7 }
-        }
-
-        pub fn add_event() -> Self {
-            Self { value: 8 }
-        }
-
-        pub fn remove_event() -> Self {
-            Self { value: 9 }
-        }
-
-        pub fn operator_add() -> Self {
-            Self { value: 10 }
-        }
-
-        pub fn operator_and() -> Self {
-            Self { value: 11 }
-        }
-
-        pub fn operator_or() -> Self {
-            Self { value: 12 }
-        }
-
-        pub fn operator_dec() -> Self {
-            Self { value: 13 }
-        }
-
-        pub fn operator_div() -> Self {
-            Self { value: 14 }
-        }
-
-        pub fn operator_eq() -> Self {
-            Self { value: 15 }
-        }
-
-        pub fn operator_xor() -> Self {
-            Self { value: 16 }
-        }
-
-        pub fn operator_gt() -> Self {
-            Self { value: 17 }
-        }
-
-        pub fn operator_gte() -> Self {
-            Self { value: 18 }
-        }
-
-        pub fn operator_inc() -> Self {
-            Self { value: 19 }
-        }
-
-        pub fn operator_neq() -> Self {
-            Self { value: 20 }
-        }
-
-        pub fn operator_lt() -> Self {
-            Self { value: 21 }
-        }
-
-        pub fn operator_lte() -> Self {
-            Self { value: 22 }
-        }
-
-        pub fn operator_not() -> Self {
-            Self { value: 23 }
-        }
-
-        pub fn operator_mod() -> Self {
-            Self { value: 24 }
-        }
-
-        pub fn operator_mul() -> Self {
-            Self { value: 25 }
-        }
-
-        pub fn operator_compl() -> Self {
-            Self { value: 26 }
-        }
-
-        pub fn operator_sub() -> Self {
-            Self { value: 27 }
-        }
-
-        pub fn operator_neg() -> Self {
-            Self { value: 28 }
-        }
-
-        pub fn operator_unary_plus() -> Self {
-            Self { value: 29 }
-        }
     }
+
+
+    pub fn implicit_cast() -> Self {
+        Self { value: 2 }
+
+    }
+
+
+    pub fn explicit_cast() -> Self {
+        Self { value: 3 }
+
+    }
+
+
+    pub fn operator_true() -> Self {
+        Self { value: 4 }
+
+    }
+
+
+    pub fn operator_false() -> Self {
+        Self { value: 5 }
+
+    }
+
+
+    pub fn property_getter() -> Self {
+        Self { value: 6 }
+
+    }
+
+
+    pub fn property_setter() -> Self {
+        Self { value: 7 }
+
+    }
+
+
+    pub fn add_event() -> Self {
+        Self { value: 8 }
+
+    }
+
+
+    pub fn remove_event() -> Self {
+        Self { value: 9 }
+
+    }
+
+
+    pub fn operator_add() -> Self {
+        Self { value: 10 }
+
+    }
+
+
+    pub fn operator_and() -> Self {
+        Self { value: 11 }
+
+    }
+
+
+    pub fn operator_or() -> Self {
+        Self { value: 12 }
+
+    }
+
+
+    pub fn operator_dec() -> Self {
+        Self { value: 13 }
+
+    }
+
+
+    pub fn operator_div() -> Self {
+        Self { value: 14 }
+
+    }
+
+
+    pub fn operator_eq() -> Self {
+        Self { value: 15 }
+
+    }
+
+
+    pub fn operator_xor() -> Self {
+        Self { value: 16 }
+
+    }
+
+
+    pub fn operator_gt() -> Self {
+        Self { value: 17 }
+
+    }
+
+
+    pub fn operator_gte() -> Self {
+        Self { value: 18 }
+
+    }
+
+
+    pub fn operator_inc() -> Self {
+        Self { value: 19 }
+
+    }
+
+
+    pub fn operator_neq() -> Self {
+        Self { value: 20 }
+
+    }
+
+
+    pub fn operator_lt() -> Self {
+        Self { value: 21 }
+
+    }
+
+
+    pub fn operator_lte() -> Self {
+        Self { value: 22 }
+
+    }
+
+
+    pub fn operator_not() -> Self {
+        Self { value: 23 }
+
+    }
+
+
+    pub fn operator_mod() -> Self {
+        Self { value: 24 }
+
+    }
+
+
+    pub fn operator_mul() -> Self {
+        Self { value: 25 }
+
+    }
+
+
+    pub fn operator_compl() -> Self {
+        Self { value: 26 }
+
+    }
+
+
+    pub fn operator_sub() -> Self {
+        Self { value: 27 }
+
+    }
+
+
+    pub fn operator_neg() -> Self {
+        Self { value: 28 }
+
+    }
+
+
+    pub fn operator_unary_plus() -> Self {
+        Self { value: 29 }
+
+    }
+
+}
+
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-reflectionspecialnametype-types")]
@@ -165,11 +238,10 @@ pub use __types::*;
 #[doc(hidden)]
 pub mod prelude {
     pub use super::ReflectionSpecialNameType;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::system::{object::IObject, r#enum::IEnum, valuetype::IValueType};
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

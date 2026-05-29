@@ -2,171 +2,51 @@
 
 #[cfg(feature = "moon_sharp-interpreter-repl-replinterpreterscriptloader-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        moon_sharp::interpreter::loaders::{
-            filesystemscriptloader::{FileSystemScriptLoader, IFileSystemScriptLoader},
-            scriptloaderbase::{IScriptLoaderBase, ScriptLoaderBase},
-        },
-        system::object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/repl/replinterpreterscriptloader/ReplInterpreterScriptLoader.md"))]
-    #[::unity2::class(namespace = "MoonSharp.Interpreter.REPL", name = "ReplInterpreterScriptLoader")]
-    #[parent(crate::moon_sharp::interpreter::loaders::filesystemscriptloader::FileSystemScriptLoader)]
-    pub struct ReplInterpreterScriptLoader {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: moon_sharp :: interpreter :: loaders :: filesystemscriptloader :: { FileSystemScriptLoader , IFileSystemScriptLoader }
+ ;
+ use crate :: moon_sharp :: interpreter :: loaders :: scriptloaderbase :: { IScriptLoaderBase , ScriptLoaderBase }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/repl/replinterpreterscriptloader/ReplInterpreterScriptLoader.md"))] # [:: unity2 :: class (namespace = "MoonSharp.Interpreter.REPL" , name = "ReplInterpreterScriptLoader")] # [parent (crate :: moon_sharp :: interpreter :: loaders :: filesystemscriptloader :: FileSystemScriptLoader)] pub struct ReplInterpreterScriptLoader {}
+
 }
 
 #[cfg(feature = "moon_sharp-interpreter-repl-replinterpreterscriptloader-types")]
 pub use __types::*;
 
 #[cfg(feature = "moon_sharp-interpreter-repl-replinterpreterscriptloader")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ReplInterpreterScriptLoader_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ReplInterpreterScriptLoader as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ReplInterpreterScriptLoader as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: ReplInterpreterScriptLoader, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ReplInterpreterScriptLoader, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_resolve_module_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::moon_sharp::interpreter::table::Table as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ReplInterpreterScriptLoader as ::unity2::ClassIdentity>::class(),
-                "ResolveModuleName",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ReplInterpreterScriptLoader as ::unity2::ClassIdentity>::NAME,
-                        "ResolveModuleName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn resolve_module_name(
-        this: ReplInterpreterScriptLoader,
-        modname: ::unity2::Il2CppString,
-        global_context: crate::moon_sharp::interpreter::table::Table,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            ReplInterpreterScriptLoader,
-            ::unity2::Il2CppString,
-            crate::moon_sharp::interpreter::table::Table,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(__lookup_resolve_module_name::get_method_info().method_ptr);
-        inner(this, modname, global_context, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ReplInterpreterScriptLoader_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ReplInterpreterScriptLoader as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ReplInterpreterScriptLoader as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : ReplInterpreterScriptLoader , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ReplInterpreterScriptLoader , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_resolve_module_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: table :: Table as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ReplInterpreterScriptLoader as :: unity2 :: ClassIdentity > :: class () , "ResolveModuleName" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ReplInterpreterScriptLoader as :: unity2 :: ClassIdentity > :: NAME , "ResolveModuleName" , e) , } } } pub unsafe fn resolve_module_name (this : ReplInterpreterScriptLoader , modname : :: unity2 :: Il2CppString , global_context : crate :: moon_sharp :: interpreter :: table :: Table , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (ReplInterpreterScriptLoader , :: unity2 :: Il2CppString , crate :: moon_sharp :: interpreter :: table :: Table , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_resolve_module_name :: get_method_info () . method_ptr ,) ; inner (this , modname , global_context , __unity2_method_info) } }
 
 #[cfg(feature = "moon_sharp-interpreter-repl-replinterpreterscriptloader")]
-pub trait IReplInterpreterScriptLoaderMethods: IReplInterpreterScriptLoader {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <ReplInterpreterScriptLoader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ReplInterpreterScriptLoader_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ResolveModuleName(::unity2::Il2CppString, crate::moon_sharp::interpreter::table::Table)` overload"]
-    fn resolve_module_name(
-        self,
-        modname: impl ::core::convert::Into<::unity2::Il2CppString>,
-        global_context: impl ::core::convert::Into<crate::moon_sharp::interpreter::table::Table>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver =
-                <ReplInterpreterScriptLoader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ReplInterpreterScriptLoader_unity2_raw::resolve_module_name(
-                __receiver,
-                ::core::convert::Into::into(modname),
-                ::core::convert::Into::into(global_context),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+pub trait IReplInterpreterScriptLoaderMethods : IReplInterpreterScriptLoader { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ReplInterpreterScriptLoader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ReplInterpreterScriptLoader_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ResolveModuleName(::unity2::Il2CppString, crate::moon_sharp::interpreter::table::Table)` overload"] fn resolve_module_name (self , modname : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , global_context : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: table :: Table >) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ReplInterpreterScriptLoader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ReplInterpreterScriptLoader_unity2_raw :: resolve_module_name (__receiver , :: core :: convert :: Into :: into (modname) , :: core :: convert :: Into :: into (global_context) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "moon_sharp-interpreter-repl-replinterpreterscriptloader")]
-impl<__T: IReplInterpreterScriptLoader> IReplInterpreterScriptLoaderMethods for __T {}
+impl < __T : IReplInterpreterScriptLoader > IReplInterpreterScriptLoaderMethods for __T { }
+
+#[cfg(feature = "moon_sharp-interpreter-repl-replinterpreterscriptloader")]
+impl ReplInterpreterScriptLoader { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ReplInterpreterScriptLoader_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn resolve_module_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ReplInterpreterScriptLoader_unity2_raw :: __lookup_resolve_module_name :: get_method_info () } }
 
 #[cfg(feature = "moon_sharp-interpreter-repl-replinterpreterscriptloader")]
 impl ReplInterpreterScriptLoader {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ReplInterpreterScriptLoader),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IReplInterpreterScriptLoaderMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ReplInterpreterScriptLoader) , :: core :: stringify ! (new) ,)) ; < Self as IReplInterpreterScriptLoaderMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "moon_sharp-interpreter-repl-replinterpreterscriptloader")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IReplInterpreterScriptLoader, IReplInterpreterScriptLoaderMethods, ReplInterpreterScriptLoader};
-    #[cfg(feature = "moon_sharp-interpreter-loaders-filesystemscriptloader")]
-    pub use crate::moon_sharp::interpreter::loaders::filesystemscriptloader::IFileSystemScriptLoaderMethods;
-    #[cfg(feature = "moon_sharp-interpreter-loaders-scriptloaderbase")]
-    pub use crate::moon_sharp::interpreter::loaders::scriptloaderbase::IScriptLoaderBaseMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::{
-        moon_sharp::interpreter::loaders::{filesystemscriptloader::IFileSystemScriptLoader, scriptloaderbase::IScriptLoaderBase},
-        system::object::IObject,
-    };
+    pub use super::ReplInterpreterScriptLoader;
+    pub use super::IReplInterpreterScriptLoader;
+    pub use super::IReplInterpreterScriptLoaderMethods;
+    pub use crate::moon_sharp::interpreter::loaders::filesystemscriptloader::IFileSystemScriptLoader;
+    pub use crate::moon_sharp::interpreter::loaders::scriptloaderbase::IScriptLoaderBase;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "moon_sharp-interpreter-loaders-filesystemscriptloader")] pub use crate::moon_sharp::interpreter::loaders::filesystemscriptloader::IFileSystemScriptLoaderMethods;
+    #[cfg(feature = "moon_sharp-interpreter-loaders-scriptloaderbase")] pub use crate::moon_sharp::interpreter::loaders::scriptloaderbase::IScriptLoaderBaseMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

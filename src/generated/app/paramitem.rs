@@ -2,248 +2,47 @@
 
 #[cfg(feature = "app-paramitem-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::menuitem::{IMenuItem, MenuItem},
-        system::object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/paramitem/ParamItem.md"))]
-    #[::unity2::class(namespace = "App", name = "ParamItem")]
-    #[parent(crate::app::menuitem::MenuItem)]
-    pub struct ParamItem {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: menuitem :: { IMenuItem , MenuItem }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/paramitem/ParamItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "ParamItem")] # [parent (crate :: app :: menuitem :: MenuItem)] pub struct ParamItem {}
+
 }
 
 #[cfg(feature = "app-paramitem-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-paramitem")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ParamItem_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_column_count {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ParamItem as ::unity2::ClassIdentity>::class(),
-                "GetColumnCount",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ParamItem as ::unity2::ClassIdentity>::NAME,
-                        "GetColumnCount",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_column_count(this: ParamItem, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(ParamItem, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_column_count::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_column_width0 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ParamItem as ::unity2::ClassIdentity>::class(),
-                "GetColumnWidth0",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ParamItem as ::unity2::ClassIdentity>::NAME,
-                        "GetColumnWidth0",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_column_width0(this: ParamItem, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(ParamItem, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_get_column_width0::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_column_width1 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ParamItem as ::unity2::ClassIdentity>::class(),
-                "GetColumnWidth1",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ParamItem as ::unity2::ClassIdentity>::NAME,
-                        "GetColumnWidth1",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_column_width1(this: ParamItem, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(ParamItem, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_get_column_width1::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_column_align1 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ParamItem as ::unity2::ClassIdentity>::class(),
-                "GetColumnAlign1",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ParamItem as ::unity2::ClassIdentity>::NAME,
-                        "GetColumnAlign1",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_column_align1(this: ParamItem, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::menuitem::MenuItem_Align {
-        let inner: extern "C" fn(ParamItem, ::unity2::OptionalMethod) -> crate::app::menuitem::MenuItem_Align =
-            ::core::mem::transmute(__lookup_get_column_align1::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<ParamItem as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ParamItem as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: ParamItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ParamItem, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ParamItem_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_column_count { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ParamItem as :: unity2 :: ClassIdentity > :: class () , "GetColumnCount" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ParamItem as :: unity2 :: ClassIdentity > :: NAME , "GetColumnCount" , e) , } } } pub unsafe fn get_column_count (this : ParamItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (ParamItem , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_column_count :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_column_width0 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ParamItem as :: unity2 :: ClassIdentity > :: class () , "GetColumnWidth0" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ParamItem as :: unity2 :: ClassIdentity > :: NAME , "GetColumnWidth0" , e) , } } } pub unsafe fn get_column_width0 (this : ParamItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (ParamItem , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_get_column_width0 :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_column_width1 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ParamItem as :: unity2 :: ClassIdentity > :: class () , "GetColumnWidth1" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ParamItem as :: unity2 :: ClassIdentity > :: NAME , "GetColumnWidth1" , e) , } } } pub unsafe fn get_column_width1 (this : ParamItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (ParamItem , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_get_column_width1 :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_column_align1 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ParamItem as :: unity2 :: ClassIdentity > :: class () , "GetColumnAlign1" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ParamItem as :: unity2 :: ClassIdentity > :: NAME , "GetColumnAlign1" , e) , } } } pub unsafe fn get_column_align1 (this : ParamItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: menuitem :: MenuItem_Align { let inner : extern "C" fn (ParamItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: menuitem :: MenuItem_Align = :: core :: mem :: transmute (__lookup_get_column_align1 :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ParamItem as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ParamItem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : ParamItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ParamItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-paramitem")]
-pub trait IParamItemMethods: IParamItem {
-    #[doc = "`GetColumnCount()` overload"]
-    fn get_column_count(self) -> i32 {
-        unsafe {
-            let __receiver = <ParamItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ParamItem_unity2_raw::get_column_count(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetColumnWidth0()` overload"]
-    fn get_column_width0(self) -> f32 {
-        unsafe {
-            let __receiver = <ParamItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ParamItem_unity2_raw::get_column_width0(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetColumnWidth1()` overload"]
-    fn get_column_width1(self) -> f32 {
-        unsafe {
-            let __receiver = <ParamItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ParamItem_unity2_raw::get_column_width1(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetColumnAlign1()` overload"]
-    fn get_column_align1(self) -> crate::app::menuitem::MenuItem_Align {
-        unsafe {
-            let __receiver = <ParamItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ParamItem_unity2_raw::get_column_align1(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <ParamItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ParamItem_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IParamItemMethods : IParamItem { # [doc = "`GetColumnCount()` overload"] fn get_column_count (self ,) -> i32 { unsafe { let __receiver = < ParamItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ParamItem_unity2_raw :: get_column_count (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetColumnWidth0()` overload"] fn get_column_width0 (self ,) -> f32 { unsafe { let __receiver = < ParamItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ParamItem_unity2_raw :: get_column_width0 (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetColumnWidth1()` overload"] fn get_column_width1 (self ,) -> f32 { unsafe { let __receiver = < ParamItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ParamItem_unity2_raw :: get_column_width1 (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetColumnAlign1()` overload"] fn get_column_align1 (self ,) -> crate :: app :: menuitem :: MenuItem_Align { unsafe { let __receiver = < ParamItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ParamItem_unity2_raw :: get_column_align1 (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ParamItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ParamItem_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-paramitem")]
-impl<__T: IParamItem> IParamItemMethods for __T {}
+impl < __T : IParamItem > IParamItemMethods for __T { }
+
+#[cfg(feature = "app-paramitem")]
+impl ParamItem { pub fn get_column_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ParamItem_unity2_raw :: __lookup_get_column_count :: get_method_info () } pub fn get_column_width0_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ParamItem_unity2_raw :: __lookup_get_column_width0 :: get_method_info () } pub fn get_column_width1_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ParamItem_unity2_raw :: __lookup_get_column_width1 :: get_method_info () } pub fn get_column_align1_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ParamItem_unity2_raw :: __lookup_get_column_align1 :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ParamItem_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-paramitem")]
 impl ParamItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(ParamItem), ::core::stringify!(new),));
-        <Self as IParamItemMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ParamItem) , :: core :: stringify ! (new) ,)) ; < Self as IParamItemMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-paramitem")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IParamItem, IParamItemMethods, ParamItem};
-    #[cfg(feature = "app-menuitem")]
-    pub use crate::app::menuitem::IMenuItemMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::{app::menuitem::IMenuItem, system::object::IObject};
+    pub use super::ParamItem;
+    pub use super::IParamItem;
+    pub use super::IParamItemMethods;
+    pub use crate::app::menuitem::IMenuItem;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "app-menuitem")] pub use crate::app::menuitem::IMenuItemMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

@@ -2,482 +2,69 @@
 
 #[cfg(feature = "app-profilecardtopmenuroot-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardtopmenuroot/ProfileCardTopMenuRoot.md"))]
-    #[::unity2::class(namespace = "App", name = "ProfileCardTopMenuRoot")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct ProfileCardTopMenuRoot {
-        #[static_field]
-        #[rename(name = "PrefabPath")]
-        pub prefab_path: ::unity2::Il2CppString,
-        #[offset(24)]
-        #[rename(name = "m_ProfileCardTopMenuContent")]
-        pub m_profile_card_top_menu_content: crate::app::profilecardtopmenucontent::ProfileCardTopMenuContent,
-        #[offset(32)]
-        #[rename(name = "m_InfoWindowAnimator")]
-        pub m_info_window_animator: crate::unity_engine::animator::Animator,
-        #[offset(40)]
-        #[rename(name = "m_InfoWindowCaptionText")]
-        pub m_info_window_caption_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(48)]
-        #[rename(name = "m_InfoWindowDescriptionText")]
-        pub m_info_window_description_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(56)]
-        #[rename(name = "m_InfoWindowWarningText")]
-        pub m_info_window_warning_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardtopmenuroot/ProfileCardTopMenuRoot.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProfileCardTopMenuRoot")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct ProfileCardTopMenuRoot {
+# [static_field] # [rename (name = "PrefabPath")] pub prefab_path : :: unity2 :: Il2CppString ,
+# [offset (24)] # [rename (name = "m_ProfileCardTopMenuContent")] pub m_profile_card_top_menu_content : crate :: app :: profilecardtopmenucontent :: ProfileCardTopMenuContent ,
+# [offset (32)] # [rename (name = "m_InfoWindowAnimator")] pub m_info_window_animator : crate :: unity_engine :: animator :: Animator ,
+# [offset (40)] # [rename (name = "m_InfoWindowCaptionText")] pub m_info_window_caption_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (48)] # [rename (name = "m_InfoWindowDescriptionText")] pub m_info_window_description_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (56)] # [rename (name = "m_InfoWindowWarningText")] pub m_info_window_warning_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+}
+
 }
 
 #[cfg(feature = "app-profilecardtopmenuroot-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-profilecardtopmenuroot")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ProfileCardTopMenuRoot_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_load_prefab_async {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCardTopMenuRoot as ::unity2::ClassIdentity>::class(),
-                "LoadPrefabAsync",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProfileCardTopMenuRoot as ::unity2::ClassIdentity>::NAME,
-                        "LoadPrefabAsync",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn load_prefab_async(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_load_prefab_async::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_loading_prefab {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCardTopMenuRoot as ::unity2::ClassIdentity>::class(),
-                "IsLoadingPrefab",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProfileCardTopMenuRoot as ::unity2::ClassIdentity>::NAME,
-                        "IsLoadingPrefab",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_loading_prefab(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_is_loading_prefab::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_unload_prefab {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCardTopMenuRoot as ::unity2::ClassIdentity>::class(),
-                "UnloadPrefab",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProfileCardTopMenuRoot as ::unity2::ClassIdentity>::NAME,
-                        "UnloadPrefab",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn unload_prefab(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_unload_prefab::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_root {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCardTopMenuRoot as ::unity2::ClassIdentity>::class(),
-                "CreateRoot",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProfileCardTopMenuRoot as ::unity2::ClassIdentity>::NAME,
-                        "CreateRoot",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_root(__unity2_method_info: ::unity2::OptionalMethod) -> crate::app::profilecardtopmenuroot::ProfileCardTopMenuRoot {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::app::profilecardtopmenuroot::ProfileCardTopMenuRoot =
-            ::core::mem::transmute(__lookup_create_root::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCardTopMenuRoot as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProfileCardTopMenuRoot as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: ProfileCardTopMenuRoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ProfileCardTopMenuRoot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_profile_card_top_menu_content {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCardTopMenuRoot as ::unity2::ClassIdentity>::class(),
-                "GetProfileCardTopMenuContent",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProfileCardTopMenuRoot as ::unity2::ClassIdentity>::NAME,
-                        "GetProfileCardTopMenuContent",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_profile_card_top_menu_content(
-        this: ProfileCardTopMenuRoot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::profilecardtopmenucontent::ProfileCardTopMenuContent {
-        let inner: extern "C" fn(
-            ProfileCardTopMenuRoot,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::profilecardtopmenucontent::ProfileCardTopMenuContent =
-            ::core::mem::transmute(__lookup_get_profile_card_top_menu_content::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update_info_window {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCardTopMenuRoot as ::unity2::ClassIdentity>::class(),
-                "UpdateInfoWindow",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProfileCardTopMenuRoot as ::unity2::ClassIdentity>::NAME,
-                        "UpdateInfoWindow",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update_info_window(
-        this: ProfileCardTopMenuRoot,
-        caption_mid: ::unity2::Il2CppString,
-        description_mid: ::unity2::Il2CppString,
-        warning_mid: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ProfileCardTopMenuRoot,
-            ::unity2::Il2CppString,
-            ::unity2::Il2CppString,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_update_info_window::get_method_info().method_ptr);
-        inner(this, caption_mid, description_mid, warning_mid, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_close {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCardTopMenuRoot as ::unity2::ClassIdentity>::class(),
-                "Close",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProfileCardTopMenuRoot as ::unity2::ClassIdentity>::NAME,
-                        "Close",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn close(this: ProfileCardTopMenuRoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ProfileCardTopMenuRoot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_close::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_destroy {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCardTopMenuRoot as ::unity2::ClassIdentity>::class(),
-                "Destroy",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProfileCardTopMenuRoot as ::unity2::ClassIdentity>::NAME,
-                        "Destroy",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn destroy(this: ProfileCardTopMenuRoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ProfileCardTopMenuRoot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_destroy::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ProfileCardTopMenuRoot_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_load_prefab_async { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileCardTopMenuRoot as :: unity2 :: ClassIdentity > :: class () , "LoadPrefabAsync" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileCardTopMenuRoot as :: unity2 :: ClassIdentity > :: NAME , "LoadPrefabAsync" , e) , } } } pub unsafe fn load_prefab_async (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_load_prefab_async :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_loading_prefab { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileCardTopMenuRoot as :: unity2 :: ClassIdentity > :: class () , "IsLoadingPrefab" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileCardTopMenuRoot as :: unity2 :: ClassIdentity > :: NAME , "IsLoadingPrefab" , e) , } } } pub unsafe fn is_loading_prefab (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_loading_prefab :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_unload_prefab { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileCardTopMenuRoot as :: unity2 :: ClassIdentity > :: class () , "UnloadPrefab" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileCardTopMenuRoot as :: unity2 :: ClassIdentity > :: NAME , "UnloadPrefab" , e) , } } } pub unsafe fn unload_prefab (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_unload_prefab :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_root { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileCardTopMenuRoot as :: unity2 :: ClassIdentity > :: class () , "CreateRoot" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileCardTopMenuRoot as :: unity2 :: ClassIdentity > :: NAME , "CreateRoot" , e) , } } } pub unsafe fn create_root (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: profilecardtopmenuroot :: ProfileCardTopMenuRoot { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: profilecardtopmenuroot :: ProfileCardTopMenuRoot = :: core :: mem :: transmute (__lookup_create_root :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileCardTopMenuRoot as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileCardTopMenuRoot as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : ProfileCardTopMenuRoot , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ProfileCardTopMenuRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_profile_card_top_menu_content { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileCardTopMenuRoot as :: unity2 :: ClassIdentity > :: class () , "GetProfileCardTopMenuContent" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileCardTopMenuRoot as :: unity2 :: ClassIdentity > :: NAME , "GetProfileCardTopMenuContent" , e) , } } } pub unsafe fn get_profile_card_top_menu_content (this : ProfileCardTopMenuRoot , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: profilecardtopmenucontent :: ProfileCardTopMenuContent { let inner : extern "C" fn (ProfileCardTopMenuRoot , :: unity2 :: OptionalMethod ,) -> crate :: app :: profilecardtopmenucontent :: ProfileCardTopMenuContent = :: core :: mem :: transmute (__lookup_get_profile_card_top_menu_content :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update_info_window { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileCardTopMenuRoot as :: unity2 :: ClassIdentity > :: class () , "UpdateInfoWindow" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileCardTopMenuRoot as :: unity2 :: ClassIdentity > :: NAME , "UpdateInfoWindow" , e) , } } } pub unsafe fn update_info_window (this : ProfileCardTopMenuRoot , caption_mid : :: unity2 :: Il2CppString , description_mid : :: unity2 :: Il2CppString , warning_mid : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ProfileCardTopMenuRoot , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update_info_window :: get_method_info () . method_ptr ,) ; inner (this , caption_mid , description_mid , warning_mid , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_close { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileCardTopMenuRoot as :: unity2 :: ClassIdentity > :: class () , "Close" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileCardTopMenuRoot as :: unity2 :: ClassIdentity > :: NAME , "Close" , e) , } } } pub unsafe fn close (this : ProfileCardTopMenuRoot , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ProfileCardTopMenuRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_close :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_destroy { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileCardTopMenuRoot as :: unity2 :: ClassIdentity > :: class () , "Destroy" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileCardTopMenuRoot as :: unity2 :: ClassIdentity > :: NAME , "Destroy" , e) , } } } pub unsafe fn destroy (this : ProfileCardTopMenuRoot , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ProfileCardTopMenuRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_destroy :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-profilecardtopmenuroot")]
+impl ProfileCardTopMenuRoot { # [doc = "`LoadPrefabAsync()` overload"] pub fn load_prefab_async () -> () { unsafe { __ProfileCardTopMenuRoot_unity2_raw :: load_prefab_async (:: core :: option :: Option :: None) } } # [doc = "`IsLoadingPrefab()` overload"] pub fn is_loading_prefab () -> bool { unsafe { __ProfileCardTopMenuRoot_unity2_raw :: is_loading_prefab (:: core :: option :: Option :: None) } } # [doc = "`UnloadPrefab()` overload"] pub fn unload_prefab () -> () { unsafe { __ProfileCardTopMenuRoot_unity2_raw :: unload_prefab (:: core :: option :: Option :: None) } } # [doc = "`CreateRoot()` overload"] pub fn create_root () -> crate :: app :: profilecardtopmenuroot :: ProfileCardTopMenuRoot { unsafe { __ProfileCardTopMenuRoot_unity2_raw :: create_root (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-profilecardtopmenuroot")]
+pub trait IProfileCardTopMenuRootMethods : IProfileCardTopMenuRoot { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ProfileCardTopMenuRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ProfileCardTopMenuRoot_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetProfileCardTopMenuContent()` overload"] fn get_profile_card_top_menu_content (self ,) -> crate :: app :: profilecardtopmenucontent :: ProfileCardTopMenuContent { unsafe { let __receiver = < ProfileCardTopMenuRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ProfileCardTopMenuRoot_unity2_raw :: get_profile_card_top_menu_content (__receiver , :: core :: option :: Option :: None) } } # [doc = "`UpdateInfoWindow(::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"] fn update_info_window (self , caption_mid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , description_mid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , warning_mid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < ProfileCardTopMenuRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ProfileCardTopMenuRoot_unity2_raw :: update_info_window (__receiver , :: core :: convert :: Into :: into (caption_mid) , :: core :: convert :: Into :: into (description_mid) , :: core :: convert :: Into :: into (warning_mid) , :: core :: option :: Option :: None) } } # [doc = "`Close()` overload"] fn close (self ,) -> () { unsafe { let __receiver = < ProfileCardTopMenuRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ProfileCardTopMenuRoot_unity2_raw :: close (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Destroy()` overload"] fn destroy (self ,) -> () { unsafe { let __receiver = < ProfileCardTopMenuRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ProfileCardTopMenuRoot_unity2_raw :: destroy (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-profilecardtopmenuroot")]
+impl < __T : IProfileCardTopMenuRoot > IProfileCardTopMenuRootMethods for __T { }
+
+#[cfg(feature = "app-profilecardtopmenuroot")]
+impl ProfileCardTopMenuRoot { pub fn load_prefab_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProfileCardTopMenuRoot_unity2_raw :: __lookup_load_prefab_async :: get_method_info () } pub fn is_loading_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProfileCardTopMenuRoot_unity2_raw :: __lookup_is_loading_prefab :: get_method_info () } pub fn unload_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProfileCardTopMenuRoot_unity2_raw :: __lookup_unload_prefab :: get_method_info () } pub fn create_root_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProfileCardTopMenuRoot_unity2_raw :: __lookup_create_root :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProfileCardTopMenuRoot_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn get_profile_card_top_menu_content_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProfileCardTopMenuRoot_unity2_raw :: __lookup_get_profile_card_top_menu_content :: get_method_info () } pub fn update_info_window_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProfileCardTopMenuRoot_unity2_raw :: __lookup_update_info_window :: get_method_info () } pub fn close_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProfileCardTopMenuRoot_unity2_raw :: __lookup_close :: get_method_info () } pub fn destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProfileCardTopMenuRoot_unity2_raw :: __lookup_destroy :: get_method_info () } }
 
 #[cfg(feature = "app-profilecardtopmenuroot")]
 impl ProfileCardTopMenuRoot {
-    #[doc = "`LoadPrefabAsync()` overload"]
-    pub fn load_prefab_async() -> () {
-        unsafe { __ProfileCardTopMenuRoot_unity2_raw::load_prefab_async(::core::option::Option::None) }
-    }
-
-    #[doc = "`IsLoadingPrefab()` overload"]
-    pub fn is_loading_prefab() -> bool {
-        unsafe { __ProfileCardTopMenuRoot_unity2_raw::is_loading_prefab(::core::option::Option::None) }
-    }
-
-    #[doc = "`UnloadPrefab()` overload"]
-    pub fn unload_prefab() -> () {
-        unsafe { __ProfileCardTopMenuRoot_unity2_raw::unload_prefab(::core::option::Option::None) }
-    }
-
-    #[doc = "`CreateRoot()` overload"]
-    pub fn create_root() -> crate::app::profilecardtopmenuroot::ProfileCardTopMenuRoot {
-        unsafe { __ProfileCardTopMenuRoot_unity2_raw::create_root(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-profilecardtopmenuroot")]
-pub trait IProfileCardTopMenuRootMethods: IProfileCardTopMenuRoot {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <ProfileCardTopMenuRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ProfileCardTopMenuRoot_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetProfileCardTopMenuContent()` overload"]
-    fn get_profile_card_top_menu_content(self) -> crate::app::profilecardtopmenucontent::ProfileCardTopMenuContent {
-        unsafe {
-            let __receiver =
-                <ProfileCardTopMenuRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ProfileCardTopMenuRoot_unity2_raw::get_profile_card_top_menu_content(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`UpdateInfoWindow(::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
-    fn update_info_window(
-        self,
-        caption_mid: impl ::core::convert::Into<::unity2::Il2CppString>,
-        description_mid: impl ::core::convert::Into<::unity2::Il2CppString>,
-        warning_mid: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <ProfileCardTopMenuRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ProfileCardTopMenuRoot_unity2_raw::update_info_window(
-                __receiver,
-                ::core::convert::Into::into(caption_mid),
-                ::core::convert::Into::into(description_mid),
-                ::core::convert::Into::into(warning_mid),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Close()` overload"]
-    fn close(self) -> () {
-        unsafe {
-            let __receiver =
-                <ProfileCardTopMenuRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ProfileCardTopMenuRoot_unity2_raw::close(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Destroy()` overload"]
-    fn destroy(self) -> () {
-        unsafe {
-            let __receiver =
-                <ProfileCardTopMenuRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ProfileCardTopMenuRoot_unity2_raw::destroy(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-profilecardtopmenuroot")]
-impl<__T: IProfileCardTopMenuRoot> IProfileCardTopMenuRootMethods for __T {}
-
-#[cfg(feature = "app-profilecardtopmenuroot")]
-impl ProfileCardTopMenuRoot {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ProfileCardTopMenuRoot),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IProfileCardTopMenuRootMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProfileCardTopMenuRoot) , :: core :: stringify ! (new) ,)) ; < Self as IProfileCardTopMenuRootMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-profilecardtopmenuroot")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IProfileCardTopMenuRoot, IProfileCardTopMenuRootMethods, ProfileCardTopMenuRoot};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        system::object::IObject,
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::ProfileCardTopMenuRoot;
+    pub use super::IProfileCardTopMenuRoot;
+    pub use super::IProfileCardTopMenuRootMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

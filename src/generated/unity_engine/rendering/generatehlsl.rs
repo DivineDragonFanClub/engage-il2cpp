@@ -2,196 +2,49 @@
 
 #[cfg(feature = "unity_engine-rendering-generatehlsl-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/generatehlsl/GenerateHLSL.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Rendering", name = "GenerateHLSL")]
-    pub struct GenerateHLSL {
-        #[offset(16)]
-        #[rename(name = "packingRules")]
-        pub packing_rules: crate::unity_engine::rendering::packingrules::PackingRules,
-        #[offset(20)]
-        #[rename(name = "containsPackedFields")]
-        pub contains_packed_fields: bool,
-        #[offset(21)]
-        #[rename(name = "needAccessors")]
-        pub need_accessors: bool,
-        #[offset(22)]
-        #[rename(name = "needSetters")]
-        pub need_setters: bool,
-        #[offset(23)]
-        #[rename(name = "needParamDebug")]
-        pub need_param_debug: bool,
-        #[offset(24)]
-        #[rename(name = "paramDefinesStart")]
-        pub param_defines_start: i32,
-        #[offset(28)]
-        #[rename(name = "omitStructDeclaration")]
-        pub omit_struct_declaration: bool,
-        #[offset(29)]
-        #[rename(name = "generateCBuffer")]
-        pub generate_c_buffer: bool,
-        #[offset(32)]
-        #[rename(name = "constantRegister")]
-        pub constant_register: i32,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/generatehlsl/GenerateHLSL.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering" , name = "GenerateHLSL")] pub struct GenerateHLSL {
+# [offset (16)] # [rename (name = "packingRules")] pub packing_rules : crate :: unity_engine :: rendering :: packingrules :: PackingRules ,
+# [offset (20)] # [rename (name = "containsPackedFields")] pub contains_packed_fields : bool ,
+# [offset (21)] # [rename (name = "needAccessors")] pub need_accessors : bool ,
+# [offset (22)] # [rename (name = "needSetters")] pub need_setters : bool ,
+# [offset (23)] # [rename (name = "needParamDebug")] pub need_param_debug : bool ,
+# [offset (24)] # [rename (name = "paramDefinesStart")] pub param_defines_start : i32 ,
+# [offset (28)] # [rename (name = "omitStructDeclaration")] pub omit_struct_declaration : bool ,
+# [offset (29)] # [rename (name = "generateCBuffer")] pub generate_c_buffer : bool ,
+# [offset (32)] # [rename (name = "constantRegister")] pub constant_register : i32 ,
+}
+
 }
 
 #[cfg(feature = "unity_engine-rendering-generatehlsl-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-generatehlsl")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __GenerateHLSL_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::rendering::packingrules::PackingRules as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<GenerateHLSL as ::unity2::ClassIdentity>::class(), ".ctor", 9, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GenerateHLSL as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: GenerateHLSL,
-        rules: crate::unity_engine::rendering::packingrules::PackingRules,
-        need_accessors: bool,
-        need_setters: bool,
-        need_param_debug: bool,
-        param_defines_start: i32,
-        omit_struct_declaration: bool,
-        contains_packed_fields: bool,
-        generate_c_buffer: bool,
-        constant_register: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            GenerateHLSL,
-            crate::unity_engine::rendering::packingrules::PackingRules,
-            bool,
-            bool,
-            bool,
-            i32,
-            bool,
-            bool,
-            bool,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(
-            this,
-            rules,
-            need_accessors,
-            need_setters,
-            need_param_debug,
-            param_defines_start,
-            omit_struct_declaration,
-            contains_packed_fields,
-            generate_c_buffer,
-            constant_register,
-            __unity2_method_info,
-        )
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __GenerateHLSL_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: packingrules :: PackingRules as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GenerateHLSL as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 9 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GenerateHLSL as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : GenerateHLSL , rules : crate :: unity_engine :: rendering :: packingrules :: PackingRules , need_accessors : bool , need_setters : bool , need_param_debug : bool , param_defines_start : i32 , omit_struct_declaration : bool , contains_packed_fields : bool , generate_c_buffer : bool , constant_register : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GenerateHLSL , crate :: unity_engine :: rendering :: packingrules :: PackingRules , bool , bool , bool , i32 , bool , bool , bool , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , rules , need_accessors , need_setters , need_param_debug , param_defines_start , omit_struct_declaration , contains_packed_fields , generate_c_buffer , constant_register , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-rendering-generatehlsl")]
-pub trait IGenerateHLSLMethods: IGenerateHLSL {
-    #[doc = "`.ctor(crate::unity_engine::rendering::packingrules::PackingRules, bool, bool, bool, i32, bool, bool, bool, i32)` overload"]
-    fn ctor(
-        self,
-        rules: impl ::core::convert::Into<crate::unity_engine::rendering::packingrules::PackingRules>,
-        need_accessors: impl ::core::convert::Into<bool>,
-        need_setters: impl ::core::convert::Into<bool>,
-        need_param_debug: impl ::core::convert::Into<bool>,
-        param_defines_start: impl ::core::convert::Into<i32>,
-        omit_struct_declaration: impl ::core::convert::Into<bool>,
-        contains_packed_fields: impl ::core::convert::Into<bool>,
-        generate_c_buffer: impl ::core::convert::Into<bool>,
-        constant_register: impl ::core::convert::Into<i32>,
-    ) -> () {
-        unsafe {
-            let __receiver = <GenerateHLSL as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GenerateHLSL_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(rules),
-                ::core::convert::Into::into(need_accessors),
-                ::core::convert::Into::into(need_setters),
-                ::core::convert::Into::into(need_param_debug),
-                ::core::convert::Into::into(param_defines_start),
-                ::core::convert::Into::into(omit_struct_declaration),
-                ::core::convert::Into::into(contains_packed_fields),
-                ::core::convert::Into::into(generate_c_buffer),
-                ::core::convert::Into::into(constant_register),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+pub trait IGenerateHLSLMethods : IGenerateHLSL { # [doc = "`.ctor(crate::unity_engine::rendering::packingrules::PackingRules, bool, bool, bool, i32, bool, bool, bool, i32)` overload"] fn ctor (self , rules : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: packingrules :: PackingRules > , need_accessors : impl :: core :: convert :: Into < bool > , need_setters : impl :: core :: convert :: Into < bool > , need_param_debug : impl :: core :: convert :: Into < bool > , param_defines_start : impl :: core :: convert :: Into < i32 > , omit_struct_declaration : impl :: core :: convert :: Into < bool > , contains_packed_fields : impl :: core :: convert :: Into < bool > , generate_c_buffer : impl :: core :: convert :: Into < bool > , constant_register : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < GenerateHLSL as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GenerateHLSL_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (rules) , :: core :: convert :: Into :: into (need_accessors) , :: core :: convert :: Into :: into (need_setters) , :: core :: convert :: Into :: into (need_param_debug) , :: core :: convert :: Into :: into (param_defines_start) , :: core :: convert :: Into :: into (omit_struct_declaration) , :: core :: convert :: Into :: into (contains_packed_fields) , :: core :: convert :: Into :: into (generate_c_buffer) , :: core :: convert :: Into :: into (constant_register) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-rendering-generatehlsl")]
-impl<__T: IGenerateHLSL> IGenerateHLSLMethods for __T {}
+impl < __T : IGenerateHLSL > IGenerateHLSLMethods for __T { }
+
+#[cfg(feature = "unity_engine-rendering-generatehlsl")]
+impl GenerateHLSL { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GenerateHLSL_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-rendering-generatehlsl")]
 impl GenerateHLSL {
-    #[doc = "`.ctor(crate::unity_engine::rendering::packingrules::PackingRules, bool, bool, bool, i32, bool, bool, bool, i32)` — overload selector"]
-    pub fn new(
-        rules: crate::unity_engine::rendering::packingrules::PackingRules,
-        need_accessors: bool,
-        need_setters: bool,
-        need_param_debug: bool,
-        param_defines_start: i32,
-        omit_struct_declaration: bool,
-        contains_packed_fields: bool,
-        generate_c_buffer: bool,
-        constant_register: i32,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(GenerateHLSL), ::core::stringify!(new),));
-        <Self as IGenerateHLSLMethods>::ctor(
-            this,
-            rules,
-            need_accessors,
-            need_setters,
-            need_param_debug,
-            param_defines_start,
-            omit_struct_declaration,
-            contains_packed_fields,
-            generate_c_buffer,
-            constant_register,
-        );
-        this
-    }
+# [doc = "`.ctor(crate::unity_engine::rendering::packingrules::PackingRules, bool, bool, bool, i32, bool, bool, bool, i32)` — overload selector"] pub fn new (rules : crate :: unity_engine :: rendering :: packingrules :: PackingRules , need_accessors : bool , need_setters : bool , need_param_debug : bool , param_defines_start : i32 , omit_struct_declaration : bool , contains_packed_fields : bool , generate_c_buffer : bool , constant_register : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GenerateHLSL) , :: core :: stringify ! (new) ,)) ; < Self as IGenerateHLSLMethods > :: ctor (this , rules , need_accessors , need_setters , need_param_debug , param_defines_start , omit_struct_declaration , contains_packed_fields , generate_c_buffer , constant_register) ; this }
 }
 
 #[cfg(feature = "unity_engine-rendering-generatehlsl")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{GenerateHLSL, IGenerateHLSL, IGenerateHLSLMethods};
+    pub use super::GenerateHLSL;
+    pub use super::IGenerateHLSL;
+    pub use super::IGenerateHLSLMethods;
 }

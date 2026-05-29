@@ -2,122 +2,36 @@
 
 #[cfg(feature = "unity_engine-rendering-universal-cameratypeutility-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/cameratypeutility/CameraTypeUtility.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Rendering.Universal", name = "CameraTypeUtility")]
-    #[parent(crate::system::object::Object)]
-    pub struct CameraTypeUtility {
-        #[static_field]
-        #[rename(name = "s_CameraTypeNames")]
-        pub s_camera_type_names: ::unity2::Array<::unity2::Il2CppString>,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/cameratypeutility/CameraTypeUtility.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.Universal" , name = "CameraTypeUtility")] # [parent (crate :: system :: object :: Object)] pub struct CameraTypeUtility {
+# [static_field] # [rename (name = "s_CameraTypeNames")] pub s_camera_type_names : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
+}
+
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-cameratypeutility-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-universal-cameratypeutility")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __CameraTypeUtility_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::rendering::universal::camerarendertype::CameraRenderType as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CameraTypeUtility as ::unity2::ClassIdentity>::class(),
-                "GetName",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CameraTypeUtility as ::unity2::ClassIdentity>::NAME,
-                        "GetName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_name(
-        r#type: crate::unity_engine::rendering::universal::camerarendertype::CameraRenderType,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            crate::unity_engine::rendering::universal::camerarendertype::CameraRenderType,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
-        inner(r#type, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CameraTypeUtility as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CameraTypeUtility as ::unity2::ClassIdentity>::NAME,
-                        ".cctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __CameraTypeUtility_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: universal :: camerarendertype :: CameraRenderType as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CameraTypeUtility as :: unity2 :: ClassIdentity > :: class () , "GetName" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CameraTypeUtility as :: unity2 :: ClassIdentity > :: NAME , "GetName" , e) , } } } pub unsafe fn get_name (r#type : crate :: unity_engine :: rendering :: universal :: camerarendertype :: CameraRenderType , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (crate :: unity_engine :: rendering :: universal :: camerarendertype :: CameraRenderType , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_name :: get_method_info () . method_ptr ,) ; inner (r#type , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CameraTypeUtility as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CameraTypeUtility as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-rendering-universal-cameratypeutility")]
-impl CameraTypeUtility {
-    #[doc = "`GetName(crate::unity_engine::rendering::universal::camerarendertype::CameraRenderType)` overload"]
-    pub fn get_name(
-        r#type: impl ::core::convert::Into<crate::unity_engine::rendering::universal::camerarendertype::CameraRenderType>,
-    ) -> ::unity2::Il2CppString {
-        unsafe { __CameraTypeUtility_unity2_raw::get_name(::core::convert::Into::into(r#type), ::core::option::Option::None) }
-    }
+impl CameraTypeUtility { # [doc = "`GetName(crate::unity_engine::rendering::universal::camerarendertype::CameraRenderType)` overload"] pub fn get_name (r#type : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: universal :: camerarendertype :: CameraRenderType >) -> :: unity2 :: Il2CppString { unsafe { __CameraTypeUtility_unity2_raw :: get_name (:: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { __CameraTypeUtility_unity2_raw :: cctor (:: core :: option :: Option :: None) } } }
 
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __CameraTypeUtility_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
+#[cfg(feature = "unity_engine-rendering-universal-cameratypeutility")]
+impl CameraTypeUtility { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CameraTypeUtility_unity2_raw :: __lookup_get_name :: get_method_info () } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CameraTypeUtility_unity2_raw :: __lookup_cctor :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-rendering-universal-cameratypeutility")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{CameraTypeUtility, ICameraTypeUtility};
+    pub use super::CameraTypeUtility;
+    pub use super::ICameraTypeUtility;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

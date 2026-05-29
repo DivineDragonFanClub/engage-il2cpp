@@ -2,87 +2,51 @@
 
 #[cfg(feature = "unity_engine-events-cachedinvokablecall_1-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::events::{
-            baseinvokablecall::{BaseInvokableCall, IBaseInvokableCall},
-            invokablecall_1::{IInvokableCall_1, InvokableCall_1},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/events/cachedinvokablecall_1/CachedInvokableCall_1.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Events", name = "CachedInvokableCall`1")]
-    # [parent (crate :: unity_engine :: events :: invokablecall_1 :: InvokableCall_1 < T0 >)]
-    #[parent(crate::unity_engine::events::baseinvokablecall::BaseInvokableCall)]
-    #[parent(crate::system::object::Object)]
-    pub struct CachedInvokableCall_1<T0: ::unity2::ClassIdentity> {
-        #[rename(name = "m_Arg1")]
-        pub m_arg1: T0,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: events :: baseinvokablecall :: { BaseInvokableCall , IBaseInvokableCall }
+ ;
+ use crate :: unity_engine :: events :: invokablecall_1 :: { IInvokableCall_1 , InvokableCall_1 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/events/cachedinvokablecall_1/CachedInvokableCall_1.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Events" , name = "CachedInvokableCall`1")] # [parent (crate :: unity_engine :: events :: invokablecall_1 :: InvokableCall_1 < T0 >)] # [parent (crate :: unity_engine :: events :: baseinvokablecall :: BaseInvokableCall)] # [parent (crate :: system :: object :: Object)] pub struct CachedInvokableCall_1 < T0 : :: unity2 :: ClassIdentity > {
+# [rename (name = "m_Arg1")] pub m_arg1 : T0 ,
+}
+
 }
 
 #[cfg(feature = "unity_engine-events-cachedinvokablecall_1-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-events-cachedinvokablecall_1")]
-#[::unity2::methods]
-impl<T0: ::unity2::ClassIdentity> CachedInvokableCall_1<T0> {
-    #[doc = "`.ctor(crate::unity_engine::object_2::Object_2, crate::system::reflection::methodinfo::MethodInfo, T0)` overload"]
-    #[method(name = ".ctor", args = 3)]
-    pub fn ctor(
-        self,
-        target: crate::unity_engine::object_2::Object_2,
-        the_function: crate::system::reflection::methodinfo::MethodInfo,
-        argument: T0,
-    ) -> ();
+# [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity > CachedInvokableCall_1 < T0 > {
+# [doc = "`.ctor(crate::unity_engine::object_2::Object_2, crate::system::reflection::methodinfo::MethodInfo, T0)` overload"] # [method (name = ".ctor" , args = 3)] pub fn ctor (self , target : crate :: unity_engine :: object_2 :: Object_2 , the_function : crate :: system :: reflection :: methodinfo :: MethodInfo , argument : T0) -> () ;
 
-    #[doc = "`Invoke(::unity2::Array<crate::system::object::Object>)` overload"]
-    #[method(name = "Invoke", args = 1)]
-    pub fn invoke(self, args: ::unity2::Array<crate::system::object::Object>) -> ();
+# [doc = "`Invoke(::unity2::Array<crate::system::object::Object>)` overload"] # [method (name = "Invoke" , args = 1)] pub fn invoke (self , args : :: unity2 :: Array < crate :: system :: object :: Object >) -> () ;
 
-    #[doc = "`Invoke(T0)` overload"]
-    #[method(name = "Invoke", args = 1)]
-    pub fn invoke_2(self, arg0: T0) -> ();
+# [doc = "`Invoke(T0)` overload"] # [method (name = "Invoke" , args = 1)] pub fn invoke_2 (self , arg0 : T0) -> () ;
 }
 
 #[cfg(feature = "unity_engine-events-cachedinvokablecall_1")]
-impl<T0: ::unity2::ClassIdentity> CachedInvokableCall_1<T0> {
-    #[doc = "`.ctor(crate::unity_engine::object_2::Object_2, crate::system::reflection::methodinfo::MethodInfo, T0)` — overload selector"]
-    pub fn new(
-        target: crate::unity_engine::object_2::Object_2,
-        the_function: crate::system::reflection::methodinfo::MethodInfo,
-        argument: T0,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(CachedInvokableCall_1),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ICachedInvokableCall_1Methods<T0>>::ctor(this, target, the_function, argument);
-        this
-    }
+impl < T0 : :: unity2 :: ClassIdentity > CachedInvokableCall_1 < T0 > {
+# [doc = "`.ctor(crate::unity_engine::object_2::Object_2, crate::system::reflection::methodinfo::MethodInfo, T0)` — overload selector"] pub fn new (target : crate :: unity_engine :: object_2 :: Object_2 , the_function : crate :: system :: reflection :: methodinfo :: MethodInfo , argument : T0) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CachedInvokableCall_1) , :: core :: stringify ! (new) ,)) ; < Self as ICachedInvokableCall_1Methods < T0 > > :: ctor (this , target , the_function , argument) ; this }
 }
 
 #[cfg(feature = "unity_engine-events-cachedinvokablecall_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{CachedInvokableCall_1, ICachedInvokableCall_1, ICachedInvokableCall_1Methods};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-events-baseinvokablecall")]
-    pub use crate::unity_engine::events::baseinvokablecall::IBaseInvokableCallMethods;
-    #[cfg(feature = "unity_engine-events-invokablecall_1")]
-    pub use crate::unity_engine::events::invokablecall_1::IInvokableCall_1Methods;
-    pub use crate::{
-        system::object::IObject,
-        unity_engine::events::{
-            baseinvokablecall::IBaseInvokableCall,
-            invokablecall_1::{IInvokableCall_1, InvokableCall_1},
-        },
-    };
+    pub use super::CachedInvokableCall_1;
+    pub use super::ICachedInvokableCall_1;
+    pub use super::ICachedInvokableCall_1Methods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::events::baseinvokablecall::IBaseInvokableCall;
+    pub use crate::unity_engine::events::invokablecall_1::IInvokableCall_1;
+    pub use crate::unity_engine::events::invokablecall_1::InvokableCall_1;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-events-baseinvokablecall")] pub use crate::unity_engine::events::baseinvokablecall::IBaseInvokableCallMethods;
+    #[cfg(feature = "unity_engine-events-invokablecall_1")] pub use crate::unity_engine::events::invokablecall_1::IInvokableCall_1Methods;
 }

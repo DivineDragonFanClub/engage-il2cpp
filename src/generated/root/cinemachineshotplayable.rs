@@ -2,142 +2,47 @@
 
 #[cfg(feature = "root-cinemachineshotplayable-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::playables::playablebehaviour::{IPlayableBehaviour, PlayableBehaviour},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/cinemachineshotplayable/CinemachineShotPlayable.md"))]
-    #[::unity2::class(namespace = "", name = "CinemachineShotPlayable")]
-    #[parent(crate::unity_engine::playables::playablebehaviour::PlayableBehaviour)]
-    pub struct CinemachineShotPlayable {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: playables :: playablebehaviour :: { IPlayableBehaviour , PlayableBehaviour }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/cinemachineshotplayable/CinemachineShotPlayable.md"))] # [:: unity2 :: class (namespace = "" , name = "CinemachineShotPlayable")] # [parent (crate :: unity_engine :: playables :: playablebehaviour :: PlayableBehaviour)] pub struct CinemachineShotPlayable {}
+
 }
 
 #[cfg(feature = "root-cinemachineshotplayable-types")]
 pub use __types::*;
 
 #[cfg(feature = "root-cinemachineshotplayable")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __CinemachineShotPlayable_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_is_valid {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CinemachineShotPlayable as ::unity2::ClassIdentity>::class(),
-                "get_IsValid",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CinemachineShotPlayable as ::unity2::ClassIdentity>::NAME,
-                        "get_IsValid",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_is_valid(this: CinemachineShotPlayable, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(CinemachineShotPlayable, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_is_valid::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CinemachineShotPlayable as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CinemachineShotPlayable as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: CinemachineShotPlayable, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CinemachineShotPlayable, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __CinemachineShotPlayable_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_is_valid { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CinemachineShotPlayable as :: unity2 :: ClassIdentity > :: class () , "get_IsValid" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CinemachineShotPlayable as :: unity2 :: ClassIdentity > :: NAME , "get_IsValid" , e) , } } } pub unsafe fn get_is_valid (this : CinemachineShotPlayable , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (CinemachineShotPlayable , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_is_valid :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CinemachineShotPlayable as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CinemachineShotPlayable as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : CinemachineShotPlayable , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CinemachineShotPlayable , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "root-cinemachineshotplayable")]
-pub trait ICinemachineShotPlayableMethods: ICinemachineShotPlayable {
-    #[doc = "`get_IsValid()` overload"]
-    fn get_is_valid(self) -> bool {
-        unsafe {
-            let __receiver =
-                <CinemachineShotPlayable as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CinemachineShotPlayable_unity2_raw::get_is_valid(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <CinemachineShotPlayable as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CinemachineShotPlayable_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait ICinemachineShotPlayableMethods : ICinemachineShotPlayable { # [doc = "`get_IsValid()` overload"] fn get_is_valid (self ,) -> bool { unsafe { let __receiver = < CinemachineShotPlayable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CinemachineShotPlayable_unity2_raw :: get_is_valid (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CinemachineShotPlayable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CinemachineShotPlayable_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "root-cinemachineshotplayable")]
-impl<__T: ICinemachineShotPlayable> ICinemachineShotPlayableMethods for __T {}
+impl < __T : ICinemachineShotPlayable > ICinemachineShotPlayableMethods for __T { }
+
+#[cfg(feature = "root-cinemachineshotplayable")]
+impl CinemachineShotPlayable { pub fn get_is_valid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CinemachineShotPlayable_unity2_raw :: __lookup_get_is_valid :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CinemachineShotPlayable_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "root-cinemachineshotplayable")]
 impl CinemachineShotPlayable {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(CinemachineShotPlayable),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ICinemachineShotPlayableMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CinemachineShotPlayable) , :: core :: stringify ! (new) ,)) ; < Self as ICinemachineShotPlayableMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "root-cinemachineshotplayable")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{CinemachineShotPlayable, ICinemachineShotPlayable, ICinemachineShotPlayableMethods};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-playables-playablebehaviour")]
-    pub use crate::unity_engine::playables::playablebehaviour::IPlayableBehaviourMethods;
-    pub use crate::{system::object::IObject, unity_engine::playables::playablebehaviour::IPlayableBehaviour};
+    pub use super::CinemachineShotPlayable;
+    pub use super::ICinemachineShotPlayable;
+    pub use super::ICinemachineShotPlayableMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::playables::playablebehaviour::IPlayableBehaviour;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-playables-playablebehaviour")] pub use crate::unity_engine::playables::playablebehaviour::IPlayableBehaviourMethods;
 }

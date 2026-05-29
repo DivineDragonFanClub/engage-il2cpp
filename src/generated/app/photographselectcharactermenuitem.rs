@@ -2,367 +2,53 @@
 
 #[cfg(feature = "app-photographselectcharactermenuitem-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::basicmenuitem::{BasicMenuItem, IBasicMenuItem},
-        system::object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographselectcharactermenuitem/PhotographSelectCharacterMenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "PhotographSelectCharacterMenuItem")]
-    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
-    pub struct PhotographSelectCharacterMenuItem {
-        #[offset(104)]
-        #[rename(name = "m_CharacterId")]
-        pub m_character_id: ::unity2::Il2CppString,
-        #[offset(112)]
-        #[rename(name = "m_IsCurrentCharacter")]
-        pub m_is_current_character: bool,
-        #[offset(120)]
-        #[rename(name = "m_DisposManager")]
-        pub m_dispos_manager: crate::app::photographdisposmanager::PhotographDisposManager,
-        #[offset(128)]
-        #[rename(name = "m_PauseData")]
-        pub m_pause_data: crate::app::photographpausedata::PhotographPauseData,
-        #[offset(136)]
-        #[rename(name = "m_WeaponData")]
-        pub m_weapon_data: crate::app::itemdata::ItemData,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographselectcharactermenuitem/PhotographSelectCharacterMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "PhotographSelectCharacterMenuItem")] # [parent (crate :: app :: basicmenuitem :: BasicMenuItem)] pub struct PhotographSelectCharacterMenuItem {
+# [offset (104)] # [rename (name = "m_CharacterId")] pub m_character_id : :: unity2 :: Il2CppString ,
+# [offset (112)] # [rename (name = "m_IsCurrentCharacter")] pub m_is_current_character : bool ,
+# [offset (120)] # [rename (name = "m_DisposManager")] pub m_dispos_manager : crate :: app :: photographdisposmanager :: PhotographDisposManager ,
+# [offset (128)] # [rename (name = "m_PauseData")] pub m_pause_data : crate :: app :: photographpausedata :: PhotographPauseData ,
+# [offset (136)] # [rename (name = "m_WeaponData")] pub m_weapon_data : crate :: app :: itemdata :: ItemData ,
+}
+
 }
 
 #[cfg(feature = "app-photographselectcharactermenuitem-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-photographselectcharactermenuitem")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __PhotographSelectCharacterMenuItem_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_character_id {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PhotographSelectCharacterMenuItem as ::unity2::ClassIdentity>::class(),
-                "get_CharacterId",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PhotographSelectCharacterMenuItem as ::unity2::ClassIdentity>::NAME,
-                        "get_CharacterId",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_character_id(
-        this: PhotographSelectCharacterMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(PhotographSelectCharacterMenuItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_character_id::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_is_current_character {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PhotographSelectCharacterMenuItem as ::unity2::ClassIdentity>::class(),
-                "get_IsCurrentCharacter",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PhotographSelectCharacterMenuItem as ::unity2::ClassIdentity>::NAME,
-                        "get_IsCurrentCharacter",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_is_current_character(this: PhotographSelectCharacterMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(PhotographSelectCharacterMenuItem, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_is_current_character::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::app::photographdisposmanager::PhotographDisposManager as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PhotographSelectCharacterMenuItem as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PhotographSelectCharacterMenuItem as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: PhotographSelectCharacterMenuItem,
-        character_id: ::unity2::Il2CppString,
-        dispos_manager: crate::app::photographdisposmanager::PhotographDisposManager,
-        is_current_character: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            PhotographSelectCharacterMenuItem,
-            ::unity2::Il2CppString,
-            crate::app::photographdisposmanager::PhotographDisposManager,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, character_id, dispos_manager, is_current_character, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_select {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PhotographSelectCharacterMenuItem as ::unity2::ClassIdentity>::class(),
-                "OnSelect",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PhotographSelectCharacterMenuItem as ::unity2::ClassIdentity>::NAME,
-                        "OnSelect",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_select(this: PhotographSelectCharacterMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(PhotographSelectCharacterMenuItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_select::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_a_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PhotographSelectCharacterMenuItem as ::unity2::ClassIdentity>::class(),
-                "ACall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PhotographSelectCharacterMenuItem as ::unity2::ClassIdentity>::NAME,
-                        "ACall",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn a_call(
-        this: PhotographSelectCharacterMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(PhotographSelectCharacterMenuItem, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
-            ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_b_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PhotographSelectCharacterMenuItem as ::unity2::ClassIdentity>::class(),
-                "BCall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PhotographSelectCharacterMenuItem as ::unity2::ClassIdentity>::NAME,
-                        "BCall",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn b_call(
-        this: PhotographSelectCharacterMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(PhotographSelectCharacterMenuItem, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
-            ::core::mem::transmute(__lookup_b_call::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __PhotographSelectCharacterMenuItem_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_character_id { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PhotographSelectCharacterMenuItem as :: unity2 :: ClassIdentity > :: class () , "get_CharacterId" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PhotographSelectCharacterMenuItem as :: unity2 :: ClassIdentity > :: NAME , "get_CharacterId" , e) , } } } pub unsafe fn get_character_id (this : PhotographSelectCharacterMenuItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (PhotographSelectCharacterMenuItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_character_id :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_is_current_character { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PhotographSelectCharacterMenuItem as :: unity2 :: ClassIdentity > :: class () , "get_IsCurrentCharacter" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PhotographSelectCharacterMenuItem as :: unity2 :: ClassIdentity > :: NAME , "get_IsCurrentCharacter" , e) , } } } pub unsafe fn get_is_current_character (this : PhotographSelectCharacterMenuItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (PhotographSelectCharacterMenuItem , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_is_current_character :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: app :: photographdisposmanager :: PhotographDisposManager as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PhotographSelectCharacterMenuItem as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PhotographSelectCharacterMenuItem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : PhotographSelectCharacterMenuItem , character_id : :: unity2 :: Il2CppString , dispos_manager : crate :: app :: photographdisposmanager :: PhotographDisposManager , is_current_character : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (PhotographSelectCharacterMenuItem , :: unity2 :: Il2CppString , crate :: app :: photographdisposmanager :: PhotographDisposManager , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , character_id , dispos_manager , is_current_character , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_select { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PhotographSelectCharacterMenuItem as :: unity2 :: ClassIdentity > :: class () , "OnSelect" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PhotographSelectCharacterMenuItem as :: unity2 :: ClassIdentity > :: NAME , "OnSelect" , e) , } } } pub unsafe fn on_select (this : PhotographSelectCharacterMenuItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (PhotographSelectCharacterMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_select :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_a_call { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PhotographSelectCharacterMenuItem as :: unity2 :: ClassIdentity > :: class () , "ACall" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PhotographSelectCharacterMenuItem as :: unity2 :: ClassIdentity > :: NAME , "ACall" , e) , } } } pub unsafe fn a_call (this : PhotographSelectCharacterMenuItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result { let inner : extern "C" fn (PhotographSelectCharacterMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute (__lookup_a_call :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_b_call { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PhotographSelectCharacterMenuItem as :: unity2 :: ClassIdentity > :: class () , "BCall" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PhotographSelectCharacterMenuItem as :: unity2 :: ClassIdentity > :: NAME , "BCall" , e) , } } } pub unsafe fn b_call (this : PhotographSelectCharacterMenuItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result { let inner : extern "C" fn (PhotographSelectCharacterMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute (__lookup_b_call :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-photographselectcharactermenuitem")]
-pub trait IPhotographSelectCharacterMenuItemMethods: IPhotographSelectCharacterMenuItem {
-    #[doc = "`get_CharacterId()` overload"]
-    fn get_character_id(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <PhotographSelectCharacterMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PhotographSelectCharacterMenuItem_unity2_raw::get_character_id(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_IsCurrentCharacter()` overload"]
-    fn get_is_current_character(self) -> bool {
-        unsafe {
-            let __receiver = <PhotographSelectCharacterMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PhotographSelectCharacterMenuItem_unity2_raw::get_is_current_character(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::app::photographdisposmanager::PhotographDisposManager, bool)` overload"]
-    fn ctor(
-        self,
-        character_id: impl ::core::convert::Into<::unity2::Il2CppString>,
-        dispos_manager: impl ::core::convert::Into<crate::app::photographdisposmanager::PhotographDisposManager>,
-        is_current_character: impl ::core::convert::Into<bool>,
-    ) -> () {
-        unsafe {
-            let __receiver = <PhotographSelectCharacterMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PhotographSelectCharacterMenuItem_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(character_id),
-                ::core::convert::Into::into(dispos_manager),
-                ::core::convert::Into::into(is_current_character),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`OnSelect()` overload"]
-    fn on_select(self) -> () {
-        unsafe {
-            let __receiver = <PhotographSelectCharacterMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PhotographSelectCharacterMenuItem_unity2_raw::on_select(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ACall()` overload"]
-    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = <PhotographSelectCharacterMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PhotographSelectCharacterMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`BCall()` overload"]
-    fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = <PhotographSelectCharacterMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PhotographSelectCharacterMenuItem_unity2_raw::b_call(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IPhotographSelectCharacterMenuItemMethods : IPhotographSelectCharacterMenuItem { # [doc = "`get_CharacterId()` overload"] fn get_character_id (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < PhotographSelectCharacterMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __PhotographSelectCharacterMenuItem_unity2_raw :: get_character_id (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_IsCurrentCharacter()` overload"] fn get_is_current_character (self ,) -> bool { unsafe { let __receiver = < PhotographSelectCharacterMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __PhotographSelectCharacterMenuItem_unity2_raw :: get_is_current_character (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor(::unity2::Il2CppString, crate::app::photographdisposmanager::PhotographDisposManager, bool)` overload"] fn ctor (self , character_id : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , dispos_manager : impl :: core :: convert :: Into < crate :: app :: photographdisposmanager :: PhotographDisposManager > , is_current_character : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < PhotographSelectCharacterMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __PhotographSelectCharacterMenuItem_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (character_id) , :: core :: convert :: Into :: into (dispos_manager) , :: core :: convert :: Into :: into (is_current_character) , :: core :: option :: Option :: None) } } # [doc = "`OnSelect()` overload"] fn on_select (self ,) -> () { unsafe { let __receiver = < PhotographSelectCharacterMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __PhotographSelectCharacterMenuItem_unity2_raw :: on_select (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < PhotographSelectCharacterMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __PhotographSelectCharacterMenuItem_unity2_raw :: a_call (__receiver , :: core :: option :: Option :: None) } } # [doc = "`BCall()` overload"] fn b_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < PhotographSelectCharacterMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __PhotographSelectCharacterMenuItem_unity2_raw :: b_call (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-photographselectcharactermenuitem")]
-impl<__T: IPhotographSelectCharacterMenuItem> IPhotographSelectCharacterMenuItemMethods for __T {}
+impl < __T : IPhotographSelectCharacterMenuItem > IPhotographSelectCharacterMenuItemMethods for __T { }
+
+#[cfg(feature = "app-photographselectcharactermenuitem")]
+impl PhotographSelectCharacterMenuItem { pub fn get_character_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PhotographSelectCharacterMenuItem_unity2_raw :: __lookup_get_character_id :: get_method_info () } pub fn get_is_current_character_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PhotographSelectCharacterMenuItem_unity2_raw :: __lookup_get_is_current_character :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PhotographSelectCharacterMenuItem_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn on_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PhotographSelectCharacterMenuItem_unity2_raw :: __lookup_on_select :: get_method_info () } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PhotographSelectCharacterMenuItem_unity2_raw :: __lookup_a_call :: get_method_info () } pub fn b_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PhotographSelectCharacterMenuItem_unity2_raw :: __lookup_b_call :: get_method_info () } }
 
 #[cfg(feature = "app-photographselectcharactermenuitem")]
 impl PhotographSelectCharacterMenuItem {
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::app::photographdisposmanager::PhotographDisposManager, bool)` — overload selector"]
-    pub fn new(
-        character_id: ::unity2::Il2CppString,
-        dispos_manager: crate::app::photographdisposmanager::PhotographDisposManager,
-        is_current_character: bool,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(PhotographSelectCharacterMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IPhotographSelectCharacterMenuItemMethods>::ctor(this, character_id, dispos_manager, is_current_character);
-        this
-    }
+# [doc = "`.ctor(::unity2::Il2CppString, crate::app::photographdisposmanager::PhotographDisposManager, bool)` — overload selector"] pub fn new (character_id : :: unity2 :: Il2CppString , dispos_manager : crate :: app :: photographdisposmanager :: PhotographDisposManager , is_current_character : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (PhotographSelectCharacterMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IPhotographSelectCharacterMenuItemMethods > :: ctor (this , character_id , dispos_manager , is_current_character) ; this }
 }
 
 #[cfg(feature = "app-photographselectcharactermenuitem")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IPhotographSelectCharacterMenuItem, IPhotographSelectCharacterMenuItemMethods, PhotographSelectCharacterMenuItem};
-    #[cfg(feature = "app-basicmenuitem")]
-    pub use crate::app::basicmenuitem::IBasicMenuItemMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::{app::basicmenuitem::IBasicMenuItem, system::object::IObject};
+    pub use super::PhotographSelectCharacterMenuItem;
+    pub use super::IPhotographSelectCharacterMenuItem;
+    pub use super::IPhotographSelectCharacterMenuItemMethods;
+    pub use crate::app::basicmenuitem::IBasicMenuItem;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "app-basicmenuitem")] pub use crate::app::basicmenuitem::IBasicMenuItemMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

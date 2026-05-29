@@ -2,174 +2,118 @@
 
 #[cfg(feature = "unity_engine-texteditor-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        r#enum::{Enum, IEnum},
-        valuetype::{IValueType, ValueType},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/texteditor/TextEditor.md"))]
-    #[::unity2::class(namespace = "UnityEngine", name = "TextEditor")]
-    #[parent(crate::system::object::Object)]
-    pub struct TextEditor {
-        #[offset(16)]
-        #[rename(name = "keyboardOnScreen")]
-        pub keyboard_on_screen: crate::unity_engine::touchscreenkeyboard::TouchScreenKeyboard,
-        #[offset(24)]
-        #[rename(name = "controlID")]
-        pub control_id: i32,
-        #[offset(32)]
-        #[rename(name = "style")]
-        pub style: crate::unity_engine::guistyle::GUIStyle,
-        #[offset(40)]
-        #[rename(name = "multiline")]
-        pub multiline: bool,
-        #[offset(41)]
-        #[rename(name = "hasHorizontalCursorPos")]
-        pub has_horizontal_cursor_pos: bool,
-        #[offset(42)]
-        #[rename(name = "isPasswordField")]
-        pub is_password_field: bool,
-        #[offset(44)]
-        #[rename(name = "scrollOffset")]
-        pub scroll_offset: crate::unity_engine::vector2::Vector2,
-        #[offset(56)]
-        #[rename(name = "m_Content")]
-        pub m_content: crate::unity_engine::guicontent::GUIContent,
-        #[offset(64)]
-        #[rename(name = "m_CursorIndex")]
-        pub m_cursor_index: i32,
-        #[offset(68)]
-        #[rename(name = "m_SelectIndex")]
-        pub m_select_index: i32,
-        #[offset(72)]
-        #[rename(name = "m_RevealCursor")]
-        pub m_reveal_cursor: bool,
-        #[offset(73)]
-        #[rename(name = "m_MouseDragSelectsWholeWords")]
-        pub m_mouse_drag_selects_whole_words: bool,
-        #[offset(76)]
-        #[rename(name = "m_DblClickInitPos")]
-        pub m_dbl_click_init_pos: i32,
-        #[offset(80)]
-        #[rename(name = "m_DblClickSnap")]
-        pub m_dbl_click_snap: crate::unity_engine::texteditor::TextEditor_DblClickSnapping,
-        #[offset(81)]
-        #[rename(name = "m_bJustSelected")]
-        pub m_b_just_selected: bool,
-        #[offset(84)]
-        #[rename(name = "m_iAltCursorPos")]
-        pub m_i_alt_cursor_pos: i32,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/texteditor/TextEditor_DblClickSnapping.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct TextEditor_DblClickSnapping {
-        pub value: i32,
-    }
 
-    impl ::unity2::ClassIdentity for TextEditor_DblClickSnapping {
-        const NAME: &'static str = "TextEditor.DblClickSnapping";
-        const NAMESPACE: &'static str = "UnityEngine";
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/texteditor/TextEditor_DblClickSnapping.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct TextEditor_DblClickSnapping  {
+    pub value: i32,
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+impl  ::unity2::ClassIdentity for TextEditor_DblClickSnapping  {
+    const NAMESPACE: &'static str = "UnityEngine";
+
+    const NAME: &'static str = "TextEditor.DblClickSnapping";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for TextEditor_DblClickSnapping {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  ::unity2::IlType for TextEditor_DblClickSnapping  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl TextEditor_DblClickSnapping {
-        pub fn words() -> Self {
-            Self { value: 256 }
-        }
+}
 
-        pub fn paragraphs() -> Self {
-            Self { value: 1 }
-        }
+
+impl  TextEditor_DblClickSnapping  {
+    pub fn words() -> Self {
+        Self { value: 256 }
+
     }
+
+
+    pub fn paragraphs() -> Self {
+        Self { value: 1 }
+
+    }
+
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/texteditor/TextEditor.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "TextEditor")] # [parent (crate :: system :: object :: Object)] pub struct TextEditor {
+# [offset (16)] # [rename (name = "keyboardOnScreen")] pub keyboard_on_screen : crate :: unity_engine :: touchscreenkeyboard :: TouchScreenKeyboard ,
+# [offset (24)] # [rename (name = "controlID")] pub control_id : i32 ,
+# [offset (32)] # [rename (name = "style")] pub style : crate :: unity_engine :: guistyle :: GUIStyle ,
+# [offset (40)] # [rename (name = "multiline")] pub multiline : bool ,
+# [offset (41)] # [rename (name = "hasHorizontalCursorPos")] pub has_horizontal_cursor_pos : bool ,
+# [offset (42)] # [rename (name = "isPasswordField")] pub is_password_field : bool ,
+# [offset (44)] # [rename (name = "scrollOffset")] pub scroll_offset : crate :: unity_engine :: vector2 :: Vector2 ,
+# [offset (56)] # [rename (name = "m_Content")] pub m_content : crate :: unity_engine :: guicontent :: GUIContent ,
+# [offset (64)] # [rename (name = "m_CursorIndex")] pub m_cursor_index : i32 ,
+# [offset (68)] # [rename (name = "m_SelectIndex")] pub m_select_index : i32 ,
+# [offset (72)] # [rename (name = "m_RevealCursor")] pub m_reveal_cursor : bool ,
+# [offset (73)] # [rename (name = "m_MouseDragSelectsWholeWords")] pub m_mouse_drag_selects_whole_words : bool ,
+# [offset (76)] # [rename (name = "m_DblClickInitPos")] pub m_dbl_click_init_pos : i32 ,
+# [offset (80)] # [rename (name = "m_DblClickSnap")] pub m_dbl_click_snap : crate :: unity_engine :: texteditor :: TextEditor_DblClickSnapping ,
+# [offset (81)] # [rename (name = "m_bJustSelected")] pub m_b_just_selected : bool ,
+# [offset (84)] # [rename (name = "m_iAltCursorPos")] pub m_i_alt_cursor_pos : i32 ,
+}
+
 }
 
 #[cfg(feature = "unity_engine-texteditor-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-texteditor")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __TextEditor_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<TextEditor as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TextEditor as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: TextEditor, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TextEditor, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __TextEditor_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TextEditor as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TextEditor as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : TextEditor , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TextEditor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-texteditor")]
-pub trait ITextEditorMethods: ITextEditor {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <TextEditor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TextEditor_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait ITextEditorMethods : ITextEditor { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TextEditor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TextEditor_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-texteditor")]
-impl<__T: ITextEditor> ITextEditorMethods for __T {}
+impl < __T : ITextEditor > ITextEditorMethods for __T { }
+
+#[cfg(feature = "unity_engine-texteditor")]
+impl TextEditor { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TextEditor_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-texteditor")]
 impl TextEditor {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(TextEditor), ::core::stringify!(new),));
-        <Self as ITextEditorMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TextEditor) , :: core :: stringify ! (new) ,)) ; < Self as ITextEditorMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "unity_engine-texteditor")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{ITextEditor, ITextEditorMethods, TextEditor, TextEditor_DblClickSnapping};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::system::{object::IObject, r#enum::IEnum, valuetype::IValueType};
+    pub use super::TextEditor_DblClickSnapping;
+    pub use super::TextEditor;
+    pub use super::ITextEditor;
+    pub use super::ITextEditorMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

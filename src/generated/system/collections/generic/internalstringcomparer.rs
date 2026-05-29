@@ -2,268 +2,47 @@
 
 #[cfg(feature = "system-collections-generic-internalstringcomparer-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        collections::generic::equalitycomparer_1::{EqualityComparer_1, IEqualityComparer_1},
-        object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/internalstringcomparer/InternalStringComparer.md"))]
-    #[::unity2::class(namespace = "System.Collections.Generic", name = "InternalStringComparer")]
-    # [parent (crate :: system :: collections :: generic :: equalitycomparer_1 :: EqualityComparer_1 < :: unity2 :: Il2CppString >)]
-    pub struct InternalStringComparer {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: collections :: generic :: equalitycomparer_1 :: { EqualityComparer_1 , IEqualityComparer_1 }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/internalstringcomparer/InternalStringComparer.md"))] # [:: unity2 :: class (namespace = "System.Collections.Generic" , name = "InternalStringComparer")] # [parent (crate :: system :: collections :: generic :: equalitycomparer_1 :: EqualityComparer_1 < :: unity2 :: Il2CppString >)] pub struct InternalStringComparer {}
+
 }
 
 #[cfg(feature = "system-collections-generic-internalstringcomparer-types")]
 pub use __types::*;
 
 #[cfg(feature = "system-collections-generic-internalstringcomparer")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __InternalStringComparer_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_hash_code {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InternalStringComparer as ::unity2::ClassIdentity>::class(),
-                "GetHashCode",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InternalStringComparer as ::unity2::ClassIdentity>::NAME,
-                        "GetHashCode",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_hash_code(this: InternalStringComparer, obj: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(InternalStringComparer, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_hash_code::get_method_info().method_ptr);
-        inner(this, obj, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_equals {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InternalStringComparer as ::unity2::ClassIdentity>::class(),
-                "Equals",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InternalStringComparer as ::unity2::ClassIdentity>::NAME,
-                        "Equals",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn equals(
-        this: InternalStringComparer,
-        x: ::unity2::Il2CppString,
-        y: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(InternalStringComparer, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_equals::get_method_info().method_ptr);
-        inner(this, x, y, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_index_of {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Array<::unity2::Il2CppString> as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InternalStringComparer as ::unity2::ClassIdentity>::class(),
-                "IndexOf",
-                4,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InternalStringComparer as ::unity2::ClassIdentity>::NAME,
-                        "IndexOf",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn index_of(
-        this: InternalStringComparer,
-        array: ::unity2::Array<::unity2::Il2CppString>,
-        value: ::unity2::Il2CppString,
-        start_index: i32,
-        count: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(
-            InternalStringComparer,
-            ::unity2::Array<::unity2::Il2CppString>,
-            ::unity2::Il2CppString,
-            i32,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(__lookup_index_of::get_method_info().method_ptr);
-        inner(this, array, value, start_index, count, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InternalStringComparer as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InternalStringComparer as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: InternalStringComparer, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(InternalStringComparer, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __InternalStringComparer_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_hash_code { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InternalStringComparer as :: unity2 :: ClassIdentity > :: class () , "GetHashCode" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InternalStringComparer as :: unity2 :: ClassIdentity > :: NAME , "GetHashCode" , e) , } } } pub unsafe fn get_hash_code (this : InternalStringComparer , obj : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (InternalStringComparer , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_hash_code :: get_method_info () . method_ptr ,) ; inner (this , obj , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_equals { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InternalStringComparer as :: unity2 :: ClassIdentity > :: class () , "Equals" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InternalStringComparer as :: unity2 :: ClassIdentity > :: NAME , "Equals" , e) , } } } pub unsafe fn equals (this : InternalStringComparer , x : :: unity2 :: Il2CppString , y : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (InternalStringComparer , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_equals :: get_method_info () . method_ptr ,) ; inner (this , x , y , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_index_of { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < :: unity2 :: Il2CppString > as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InternalStringComparer as :: unity2 :: ClassIdentity > :: class () , "IndexOf" , 4 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InternalStringComparer as :: unity2 :: ClassIdentity > :: NAME , "IndexOf" , e) , } } } pub unsafe fn index_of (this : InternalStringComparer , array : :: unity2 :: Array < :: unity2 :: Il2CppString > , value : :: unity2 :: Il2CppString , start_index : i32 , count : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (InternalStringComparer , :: unity2 :: Array < :: unity2 :: Il2CppString > , :: unity2 :: Il2CppString , i32 , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_index_of :: get_method_info () . method_ptr ,) ; inner (this , array , value , start_index , count , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InternalStringComparer as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InternalStringComparer as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : InternalStringComparer , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (InternalStringComparer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "system-collections-generic-internalstringcomparer")]
-pub trait IInternalStringComparerMethods: IInternalStringComparer {
-    #[doc = "`GetHashCode(::unity2::Il2CppString)` overload"]
-    fn get_hash_code(self, obj: impl ::core::convert::Into<::unity2::Il2CppString>) -> i32 {
-        unsafe {
-            let __receiver =
-                <InternalStringComparer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InternalStringComparer_unity2_raw::get_hash_code(__receiver, ::core::convert::Into::into(obj), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Equals(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
-    fn equals(self, x: impl ::core::convert::Into<::unity2::Il2CppString>, y: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
-        unsafe {
-            let __receiver =
-                <InternalStringComparer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InternalStringComparer_unity2_raw::equals(
-                __receiver,
-                ::core::convert::Into::into(x),
-                ::core::convert::Into::into(y),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`IndexOf(::unity2::Array<::unity2::Il2CppString>, ::unity2::Il2CppString, i32, i32)` overload"]
-    fn index_of(
-        self,
-        array: impl ::core::convert::Into<::unity2::Array<::unity2::Il2CppString>>,
-        value: impl ::core::convert::Into<::unity2::Il2CppString>,
-        start_index: impl ::core::convert::Into<i32>,
-        count: impl ::core::convert::Into<i32>,
-    ) -> i32 {
-        unsafe {
-            let __receiver =
-                <InternalStringComparer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InternalStringComparer_unity2_raw::index_of(
-                __receiver,
-                ::core::convert::Into::into(array),
-                ::core::convert::Into::into(value),
-                ::core::convert::Into::into(start_index),
-                ::core::convert::Into::into(count),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <InternalStringComparer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InternalStringComparer_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IInternalStringComparerMethods : IInternalStringComparer { # [doc = "`GetHashCode(::unity2::Il2CppString)` overload"] fn get_hash_code (self , obj : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> i32 { unsafe { let __receiver = < InternalStringComparer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __InternalStringComparer_unity2_raw :: get_hash_code (__receiver , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } # [doc = "`Equals(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"] fn equals (self , x : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , y : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { let __receiver = < InternalStringComparer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __InternalStringComparer_unity2_raw :: equals (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (y) , :: core :: option :: Option :: None) } } # [doc = "`IndexOf(::unity2::Array<::unity2::Il2CppString>, ::unity2::Il2CppString, i32, i32)` overload"] fn index_of (self , array : impl :: core :: convert :: Into < :: unity2 :: Array < :: unity2 :: Il2CppString > > , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , start_index : impl :: core :: convert :: Into < i32 > , count : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { let __receiver = < InternalStringComparer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __InternalStringComparer_unity2_raw :: index_of (__receiver , :: core :: convert :: Into :: into (array) , :: core :: convert :: Into :: into (value) , :: core :: convert :: Into :: into (start_index) , :: core :: convert :: Into :: into (count) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < InternalStringComparer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __InternalStringComparer_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "system-collections-generic-internalstringcomparer")]
-impl<__T: IInternalStringComparer> IInternalStringComparerMethods for __T {}
+impl < __T : IInternalStringComparer > IInternalStringComparerMethods for __T { }
+
+#[cfg(feature = "system-collections-generic-internalstringcomparer")]
+impl InternalStringComparer { pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InternalStringComparer_unity2_raw :: __lookup_get_hash_code :: get_method_info () } pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InternalStringComparer_unity2_raw :: __lookup_equals :: get_method_info () } pub fn index_of_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InternalStringComparer_unity2_raw :: __lookup_index_of :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InternalStringComparer_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "system-collections-generic-internalstringcomparer")]
 impl InternalStringComparer {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(InternalStringComparer),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IInternalStringComparerMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (InternalStringComparer) , :: core :: stringify ! (new) ,)) ; < Self as IInternalStringComparerMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "system-collections-generic-internalstringcomparer")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IInternalStringComparer, IInternalStringComparerMethods, InternalStringComparer};
-    #[cfg(feature = "system-collections-generic-equalitycomparer_1")]
-    pub use crate::system::collections::generic::equalitycomparer_1::IEqualityComparer_1Methods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::system::{collections::generic::equalitycomparer_1::IEqualityComparer_1, object::IObject};
+    pub use super::InternalStringComparer;
+    pub use super::IInternalStringComparer;
+    pub use super::IInternalStringComparerMethods;
+    pub use crate::system::collections::generic::equalitycomparer_1::IEqualityComparer_1;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-collections-generic-equalitycomparer_1")] pub use crate::system::collections::generic::equalitycomparer_1::IEqualityComparer_1Methods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

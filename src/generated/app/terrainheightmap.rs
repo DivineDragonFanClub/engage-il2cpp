@@ -2,480 +2,51 @@
 
 #[cfg(feature = "app-terrainheightmap-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::terrainmap::{ITerrainMap, TerrainMap},
-        system::object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/terrainheightmap/TerrainHeightMap.md"))]
-    #[::unity2::class(namespace = "App", name = "TerrainHeightMap")]
-    #[parent(crate::app::terrainmap::TerrainMap)]
-    pub struct TerrainHeightMap {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: terrainmap :: { ITerrainMap , TerrainMap }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/terrainheightmap/TerrainHeightMap.md"))] # [:: unity2 :: class (namespace = "App" , name = "TerrainHeightMap")] # [parent (crate :: app :: terrainmap :: TerrainMap)] pub struct TerrainHeightMap {}
+
 }
 
 #[cfg(feature = "app-terrainheightmap-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-terrainheightmap")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __TerrainHeightMap_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TerrainHeightMap as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TerrainHeightMap as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: TerrainHeightMap, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TerrainHeightMap, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::terrain::Terrain as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TerrainHeightMap as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TerrainHeightMap as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor_2(
-        this: TerrainHeightMap,
-        terrain: crate::unity_engine::terrain::Terrain,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(TerrainHeightMap, crate::unity_engine::terrain::Terrain, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
-        inner(this, terrain, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor_3 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::terraindata::TerrainData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TerrainHeightMap as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TerrainHeightMap as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor_3(
-        this: TerrainHeightMap,
-        data: crate::unity_engine::terraindata::TerrainData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(TerrainHeightMap, crate::unity_engine::terraindata::TerrainData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor_3::get_method_info().method_ptr);
-        inner(this, data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_read_data {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::terraindata::TerrainData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TerrainHeightMap as ::unity2::ClassIdentity>::class(),
-                "ReadData",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TerrainHeightMap as ::unity2::ClassIdentity>::NAME,
-                        "ReadData",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn read_data(
-        this: TerrainHeightMap,
-        data: crate::unity_engine::terraindata::TerrainData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(TerrainHeightMap, crate::unity_engine::terraindata::TerrainData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_read_data::get_method_info().method_ptr);
-        inner(this, data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_write_data {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::terraindata::TerrainData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TerrainHeightMap as ::unity2::ClassIdentity>::class(),
-                "WriteData",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TerrainHeightMap as ::unity2::ClassIdentity>::NAME,
-                        "WriteData",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn write_data(
-        this: TerrainHeightMap,
-        data: crate::unity_engine::terraindata::TerrainData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(TerrainHeightMap, crate::unity_engine::terraindata::TerrainData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_write_data::get_method_info().method_ptr);
-        inner(this, data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_fill_height {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TerrainHeightMap as ::unity2::ClassIdentity>::class(),
-                "FillHeight",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TerrainHeightMap as ::unity2::ClassIdentity>::NAME,
-                        "FillHeight",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn fill_height(this: TerrainHeightMap, height: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TerrainHeightMap, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_fill_height::get_method_info().method_ptr);
-        inner(this, height, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_move_height {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TerrainHeightMap as ::unity2::ClassIdentity>::class(),
-                "MoveHeight",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TerrainHeightMap as ::unity2::ClassIdentity>::NAME,
-                        "MoveHeight",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn move_height(this: TerrainHeightMap, height: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TerrainHeightMap, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_move_height::get_method_info().method_ptr);
-        inner(this, height, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_item {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TerrainHeightMap as ::unity2::ClassIdentity>::class(),
-                "get_Item",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TerrainHeightMap as ::unity2::ClassIdentity>::NAME,
-                        "get_Item",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_item(this: TerrainHeightMap, x: i32, y: i32, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(TerrainHeightMap, i32, i32, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_get_item::get_method_info().method_ptr);
-        inner(this, x, y, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_item {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TerrainHeightMap as ::unity2::ClassIdentity>::class(),
-                "set_Item",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TerrainHeightMap as ::unity2::ClassIdentity>::NAME,
-                        "set_Item",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_item(this: TerrainHeightMap, x: i32, y: i32, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TerrainHeightMap, i32, i32, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_item::get_method_info().method_ptr);
-        inner(this, x, y, value, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __TerrainHeightMap_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TerrainHeightMap as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TerrainHeightMap as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : TerrainHeightMap , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TerrainHeightMap , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: terrain :: Terrain as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TerrainHeightMap as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TerrainHeightMap as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor_2 (this : TerrainHeightMap , terrain : crate :: unity_engine :: terrain :: Terrain , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TerrainHeightMap , crate :: unity_engine :: terrain :: Terrain , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor_2 :: get_method_info () . method_ptr ,) ; inner (this , terrain , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor_3 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: terraindata :: TerrainData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TerrainHeightMap as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TerrainHeightMap as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor_3 (this : TerrainHeightMap , data : crate :: unity_engine :: terraindata :: TerrainData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TerrainHeightMap , crate :: unity_engine :: terraindata :: TerrainData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor_3 :: get_method_info () . method_ptr ,) ; inner (this , data , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_read_data { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: terraindata :: TerrainData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TerrainHeightMap as :: unity2 :: ClassIdentity > :: class () , "ReadData" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TerrainHeightMap as :: unity2 :: ClassIdentity > :: NAME , "ReadData" , e) , } } } pub unsafe fn read_data (this : TerrainHeightMap , data : crate :: unity_engine :: terraindata :: TerrainData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TerrainHeightMap , crate :: unity_engine :: terraindata :: TerrainData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_read_data :: get_method_info () . method_ptr ,) ; inner (this , data , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_write_data { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: terraindata :: TerrainData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TerrainHeightMap as :: unity2 :: ClassIdentity > :: class () , "WriteData" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TerrainHeightMap as :: unity2 :: ClassIdentity > :: NAME , "WriteData" , e) , } } } pub unsafe fn write_data (this : TerrainHeightMap , data : crate :: unity_engine :: terraindata :: TerrainData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TerrainHeightMap , crate :: unity_engine :: terraindata :: TerrainData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_write_data :: get_method_info () . method_ptr ,) ; inner (this , data , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_fill_height { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TerrainHeightMap as :: unity2 :: ClassIdentity > :: class () , "FillHeight" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TerrainHeightMap as :: unity2 :: ClassIdentity > :: NAME , "FillHeight" , e) , } } } pub unsafe fn fill_height (this : TerrainHeightMap , height : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TerrainHeightMap , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_fill_height :: get_method_info () . method_ptr ,) ; inner (this , height , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_move_height { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TerrainHeightMap as :: unity2 :: ClassIdentity > :: class () , "MoveHeight" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TerrainHeightMap as :: unity2 :: ClassIdentity > :: NAME , "MoveHeight" , e) , } } } pub unsafe fn move_height (this : TerrainHeightMap , height : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TerrainHeightMap , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_move_height :: get_method_info () . method_ptr ,) ; inner (this , height , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_item { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TerrainHeightMap as :: unity2 :: ClassIdentity > :: class () , "get_Item" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TerrainHeightMap as :: unity2 :: ClassIdentity > :: NAME , "get_Item" , e) , } } } pub unsafe fn get_item (this : TerrainHeightMap , x : i32 , y : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (TerrainHeightMap , i32 , i32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_get_item :: get_method_info () . method_ptr ,) ; inner (this , x , y , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_item { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TerrainHeightMap as :: unity2 :: ClassIdentity > :: class () , "set_Item" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TerrainHeightMap as :: unity2 :: ClassIdentity > :: NAME , "set_Item" , e) , } } } pub unsafe fn set_item (this : TerrainHeightMap , x : i32 , y : i32 , value : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TerrainHeightMap , i32 , i32 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_item :: get_method_info () . method_ptr ,) ; inner (this , x , y , value , __unity2_method_info) } }
 
 #[cfg(feature = "app-terrainheightmap")]
-pub trait ITerrainHeightMapMethods: ITerrainHeightMap {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <TerrainHeightMap as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TerrainHeightMap_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor(crate::unity_engine::terrain::Terrain)` overload"]
-    fn ctor_2(self, terrain: impl ::core::convert::Into<crate::unity_engine::terrain::Terrain>) -> () {
-        unsafe {
-            let __receiver = <TerrainHeightMap as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TerrainHeightMap_unity2_raw::ctor_2(__receiver, ::core::convert::Into::into(terrain), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor(crate::unity_engine::terraindata::TerrainData)` overload"]
-    fn ctor_3(self, data: impl ::core::convert::Into<crate::unity_engine::terraindata::TerrainData>) -> () {
-        unsafe {
-            let __receiver = <TerrainHeightMap as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TerrainHeightMap_unity2_raw::ctor_3(__receiver, ::core::convert::Into::into(data), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ReadData(crate::unity_engine::terraindata::TerrainData)` overload"]
-    fn read_data(self, data: impl ::core::convert::Into<crate::unity_engine::terraindata::TerrainData>) -> () {
-        unsafe {
-            let __receiver = <TerrainHeightMap as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TerrainHeightMap_unity2_raw::read_data(__receiver, ::core::convert::Into::into(data), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`WriteData(crate::unity_engine::terraindata::TerrainData)` overload"]
-    fn write_data(self, data: impl ::core::convert::Into<crate::unity_engine::terraindata::TerrainData>) -> () {
-        unsafe {
-            let __receiver = <TerrainHeightMap as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TerrainHeightMap_unity2_raw::write_data(__receiver, ::core::convert::Into::into(data), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`FillHeight(f32)` overload"]
-    fn fill_height(self, height: impl ::core::convert::Into<f32>) -> () {
-        unsafe {
-            let __receiver = <TerrainHeightMap as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TerrainHeightMap_unity2_raw::fill_height(__receiver, ::core::convert::Into::into(height), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`MoveHeight(f32)` overload"]
-    fn move_height(self, height: impl ::core::convert::Into<f32>) -> () {
-        unsafe {
-            let __receiver = <TerrainHeightMap as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TerrainHeightMap_unity2_raw::move_height(__receiver, ::core::convert::Into::into(height), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Item(i32, i32)` overload"]
-    fn get_item(self, x: impl ::core::convert::Into<i32>, y: impl ::core::convert::Into<i32>) -> f32 {
-        unsafe {
-            let __receiver = <TerrainHeightMap as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TerrainHeightMap_unity2_raw::get_item(
-                __receiver,
-                ::core::convert::Into::into(x),
-                ::core::convert::Into::into(y),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`set_Item(i32, i32, f32)` overload"]
-    fn set_item(self, x: impl ::core::convert::Into<i32>, y: impl ::core::convert::Into<i32>, value: impl ::core::convert::Into<f32>) -> () {
-        unsafe {
-            let __receiver = <TerrainHeightMap as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TerrainHeightMap_unity2_raw::set_item(
-                __receiver,
-                ::core::convert::Into::into(x),
-                ::core::convert::Into::into(y),
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+pub trait ITerrainHeightMapMethods : ITerrainHeightMap { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TerrainHeightMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TerrainHeightMap_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor(crate::unity_engine::terrain::Terrain)` overload"] fn ctor_2 (self , terrain : impl :: core :: convert :: Into < crate :: unity_engine :: terrain :: Terrain >) -> () { unsafe { let __receiver = < TerrainHeightMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TerrainHeightMap_unity2_raw :: ctor_2 (__receiver , :: core :: convert :: Into :: into (terrain) , :: core :: option :: Option :: None) } } # [doc = "`.ctor(crate::unity_engine::terraindata::TerrainData)` overload"] fn ctor_3 (self , data : impl :: core :: convert :: Into < crate :: unity_engine :: terraindata :: TerrainData >) -> () { unsafe { let __receiver = < TerrainHeightMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TerrainHeightMap_unity2_raw :: ctor_3 (__receiver , :: core :: convert :: Into :: into (data) , :: core :: option :: Option :: None) } } # [doc = "`ReadData(crate::unity_engine::terraindata::TerrainData)` overload"] fn read_data (self , data : impl :: core :: convert :: Into < crate :: unity_engine :: terraindata :: TerrainData >) -> () { unsafe { let __receiver = < TerrainHeightMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TerrainHeightMap_unity2_raw :: read_data (__receiver , :: core :: convert :: Into :: into (data) , :: core :: option :: Option :: None) } } # [doc = "`WriteData(crate::unity_engine::terraindata::TerrainData)` overload"] fn write_data (self , data : impl :: core :: convert :: Into < crate :: unity_engine :: terraindata :: TerrainData >) -> () { unsafe { let __receiver = < TerrainHeightMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TerrainHeightMap_unity2_raw :: write_data (__receiver , :: core :: convert :: Into :: into (data) , :: core :: option :: Option :: None) } } # [doc = "`FillHeight(f32)` overload"] fn fill_height (self , height : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < TerrainHeightMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TerrainHeightMap_unity2_raw :: fill_height (__receiver , :: core :: convert :: Into :: into (height) , :: core :: option :: Option :: None) } } # [doc = "`MoveHeight(f32)` overload"] fn move_height (self , height : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < TerrainHeightMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TerrainHeightMap_unity2_raw :: move_height (__receiver , :: core :: convert :: Into :: into (height) , :: core :: option :: Option :: None) } } # [doc = "`get_Item(i32, i32)` overload"] fn get_item (self , x : impl :: core :: convert :: Into < i32 > , y : impl :: core :: convert :: Into < i32 >) -> f32 { unsafe { let __receiver = < TerrainHeightMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TerrainHeightMap_unity2_raw :: get_item (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (y) , :: core :: option :: Option :: None) } } # [doc = "`set_Item(i32, i32, f32)` overload"] fn set_item (self , x : impl :: core :: convert :: Into < i32 > , y : impl :: core :: convert :: Into < i32 > , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < TerrainHeightMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TerrainHeightMap_unity2_raw :: set_item (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (y) , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-terrainheightmap")]
-impl<__T: ITerrainHeightMap> ITerrainHeightMapMethods for __T {}
+impl < __T : ITerrainHeightMap > ITerrainHeightMapMethods for __T { }
+
+#[cfg(feature = "app-terrainheightmap")]
+impl TerrainHeightMap { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TerrainHeightMap_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TerrainHeightMap_unity2_raw :: __lookup_ctor_2 :: get_method_info () } pub fn ctor_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TerrainHeightMap_unity2_raw :: __lookup_ctor_3 :: get_method_info () } pub fn read_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TerrainHeightMap_unity2_raw :: __lookup_read_data :: get_method_info () } pub fn write_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TerrainHeightMap_unity2_raw :: __lookup_write_data :: get_method_info () } pub fn fill_height_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TerrainHeightMap_unity2_raw :: __lookup_fill_height :: get_method_info () } pub fn move_height_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TerrainHeightMap_unity2_raw :: __lookup_move_height :: get_method_info () } pub fn get_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TerrainHeightMap_unity2_raw :: __lookup_get_item :: get_method_info () } pub fn set_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TerrainHeightMap_unity2_raw :: __lookup_set_item :: get_method_info () } }
 
 #[cfg(feature = "app-terrainheightmap")]
 impl TerrainHeightMap {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TerrainHeightMap),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITerrainHeightMapMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TerrainHeightMap) , :: core :: stringify ! (new) ,)) ; < Self as ITerrainHeightMapMethods > :: ctor (this ,) ; this }
 
-    #[doc = "`.ctor(crate::unity_engine::terrain::Terrain)` — overload selector"]
-    pub fn new_2(terrain: crate::unity_engine::terrain::Terrain) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TerrainHeightMap),
-                ::core::stringify!(new_2),
-            )
-        });
-        <Self as ITerrainHeightMapMethods>::ctor_2(this, terrain);
-        this
-    }
+# [doc = "`.ctor(crate::unity_engine::terrain::Terrain)` — overload selector"] pub fn new_2 (terrain : crate :: unity_engine :: terrain :: Terrain) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TerrainHeightMap) , :: core :: stringify ! (new_2) ,)) ; < Self as ITerrainHeightMapMethods > :: ctor_2 (this , terrain) ; this }
 
-    #[doc = "`.ctor(crate::unity_engine::terraindata::TerrainData)` — overload selector"]
-    pub fn new_3(data: crate::unity_engine::terraindata::TerrainData) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TerrainHeightMap),
-                ::core::stringify!(new_3),
-            )
-        });
-        <Self as ITerrainHeightMapMethods>::ctor_3(this, data);
-        this
-    }
+# [doc = "`.ctor(crate::unity_engine::terraindata::TerrainData)` — overload selector"] pub fn new_3 (data : crate :: unity_engine :: terraindata :: TerrainData) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TerrainHeightMap) , :: core :: stringify ! (new_3) ,)) ; < Self as ITerrainHeightMapMethods > :: ctor_3 (this , data) ; this }
 }
 
 #[cfg(feature = "app-terrainheightmap")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{ITerrainHeightMap, ITerrainHeightMapMethods, TerrainHeightMap};
-    #[cfg(feature = "app-terrainmap")]
-    pub use crate::app::terrainmap::ITerrainMapMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::{app::terrainmap::ITerrainMap, system::object::IObject};
+    pub use super::TerrainHeightMap;
+    pub use super::ITerrainHeightMap;
+    pub use super::ITerrainHeightMapMethods;
+    pub use crate::app::terrainmap::ITerrainMap;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "app-terrainmap")] pub use crate::app::terrainmap::ITerrainMapMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

@@ -2,105 +2,34 @@
 
 #[cfg(feature = "combat-finishstyleex-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/finishstyleex/FinishStyleEx.md"))]
-    #[::unity2::class(namespace = "Combat", name = "FinishStyleEx")]
-    #[parent(crate::system::object::Object)]
-    pub struct FinishStyleEx {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/finishstyleex/FinishStyleEx.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "FinishStyleEx")] # [parent (crate :: system :: object :: Object)] pub struct FinishStyleEx {}
+
 }
 
 #[cfg(feature = "combat-finishstyleex-types")]
 pub use __types::*;
 
 #[cfg(feature = "combat-finishstyleex")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __FinishStyleEx_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_enemy_group_killed {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::combat::finishstyle::FinishStyle as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FinishStyleEx as ::unity2::ClassIdentity>::class(),
-                "IsEnemyGroupKilled",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FinishStyleEx as ::unity2::ClassIdentity>::NAME,
-                        "IsEnemyGroupKilled",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_enemy_group_killed(s: crate::combat::finishstyle::FinishStyle, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(crate::combat::finishstyle::FinishStyle, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_enemy_group_killed::get_method_info().method_ptr);
-        inner(s, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_slow {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::combat::finishstyle::FinishStyle as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<FinishStyleEx as ::unity2::ClassIdentity>::class(), "IsSlow", 1, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FinishStyleEx as ::unity2::ClassIdentity>::NAME,
-                        "IsSlow",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_slow(s: crate::combat::finishstyle::FinishStyle, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(crate::combat::finishstyle::FinishStyle, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_slow::get_method_info().method_ptr);
-        inner(s, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __FinishStyleEx_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_enemy_group_killed { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: finishstyle :: FinishStyle as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FinishStyleEx as :: unity2 :: ClassIdentity > :: class () , "IsEnemyGroupKilled" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FinishStyleEx as :: unity2 :: ClassIdentity > :: NAME , "IsEnemyGroupKilled" , e) , } } } pub unsafe fn is_enemy_group_killed (s : crate :: combat :: finishstyle :: FinishStyle , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (crate :: combat :: finishstyle :: FinishStyle , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_enemy_group_killed :: get_method_info () . method_ptr ,) ; inner (s , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_slow { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: finishstyle :: FinishStyle as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FinishStyleEx as :: unity2 :: ClassIdentity > :: class () , "IsSlow" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FinishStyleEx as :: unity2 :: ClassIdentity > :: NAME , "IsSlow" , e) , } } } pub unsafe fn is_slow (s : crate :: combat :: finishstyle :: FinishStyle , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (crate :: combat :: finishstyle :: FinishStyle , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_slow :: get_method_info () . method_ptr ,) ; inner (s , __unity2_method_info) } }
 
 #[cfg(feature = "combat-finishstyleex")]
-impl FinishStyleEx {
-    #[doc = "`IsEnemyGroupKilled(crate::combat::finishstyle::FinishStyle)` overload"]
-    pub fn is_enemy_group_killed(s: impl ::core::convert::Into<crate::combat::finishstyle::FinishStyle>) -> bool {
-        unsafe { __FinishStyleEx_unity2_raw::is_enemy_group_killed(::core::convert::Into::into(s), ::core::option::Option::None) }
-    }
+impl FinishStyleEx { # [doc = "`IsEnemyGroupKilled(crate::combat::finishstyle::FinishStyle)` overload"] pub fn is_enemy_group_killed (s : impl :: core :: convert :: Into < crate :: combat :: finishstyle :: FinishStyle >) -> bool { unsafe { __FinishStyleEx_unity2_raw :: is_enemy_group_killed (:: core :: convert :: Into :: into (s) , :: core :: option :: Option :: None) } } # [doc = "`IsSlow(crate::combat::finishstyle::FinishStyle)` overload"] pub fn is_slow (s : impl :: core :: convert :: Into < crate :: combat :: finishstyle :: FinishStyle >) -> bool { unsafe { __FinishStyleEx_unity2_raw :: is_slow (:: core :: convert :: Into :: into (s) , :: core :: option :: Option :: None) } } }
 
-    #[doc = "`IsSlow(crate::combat::finishstyle::FinishStyle)` overload"]
-    pub fn is_slow(s: impl ::core::convert::Into<crate::combat::finishstyle::FinishStyle>) -> bool {
-        unsafe { __FinishStyleEx_unity2_raw::is_slow(::core::convert::Into::into(s), ::core::option::Option::None) }
-    }
-}
+#[cfg(feature = "combat-finishstyleex")]
+impl FinishStyleEx { pub fn is_enemy_group_killed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FinishStyleEx_unity2_raw :: __lookup_is_enemy_group_killed :: get_method_info () } pub fn is_slow_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FinishStyleEx_unity2_raw :: __lookup_is_slow :: get_method_info () } }
 
 #[cfg(feature = "combat-finishstyleex")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{FinishStyleEx, IFinishStyleEx};
+    pub use super::FinishStyleEx;
+    pub use super::IFinishStyleEx;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

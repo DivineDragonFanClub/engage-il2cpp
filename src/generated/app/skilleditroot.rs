@@ -2,284 +2,64 @@
 
 #[cfg(feature = "app-skilleditroot-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/skilleditroot/SkillEditRoot.md"))]
-    #[::unity2::class(namespace = "App", name = "SkillEditRoot")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct SkillEditRoot {
-        #[offset(24)]
-        #[rename(name = "m_EquipSkillList")]
-        pub m_equip_skill_list: crate::unity_engine::gameobject::GameObject,
-        #[offset(32)]
-        #[rename(name = "m_PoolSkillList")]
-        pub m_pool_skill_list: crate::unity_engine::gameobject::GameObject,
-        #[offset(40)]
-        #[rename(name = "m_SkillInfo")]
-        pub m_skill_info: crate::unity_engine::gameobject::GameObject,
-        #[offset(48)]
-        #[rename(name = "m_SkillInfoRoot")]
-        pub m_skill_info_root: crate::unity_engine::gameobject::GameObject,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/skilleditroot/SkillEditRoot.md"))] # [:: unity2 :: class (namespace = "App" , name = "SkillEditRoot")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct SkillEditRoot {
+# [offset (24)] # [rename (name = "m_EquipSkillList")] pub m_equip_skill_list : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (32)] # [rename (name = "m_PoolSkillList")] pub m_pool_skill_list : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (40)] # [rename (name = "m_SkillInfo")] pub m_skill_info : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (48)] # [rename (name = "m_SkillInfoRoot")] pub m_skill_info_root : crate :: unity_engine :: gameobject :: GameObject ,
+}
+
 }
 
 #[cfg(feature = "app-skilleditroot-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-skilleditroot")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __SkillEditRoot_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_game_object_equip {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillEditRoot as ::unity2::ClassIdentity>::class(),
-                "GetGameObjectEquip",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SkillEditRoot as ::unity2::ClassIdentity>::NAME,
-                        "GetGameObjectEquip",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_game_object_equip(
-        this: SkillEditRoot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::gameobject::GameObject {
-        let inner: extern "C" fn(SkillEditRoot, ::unity2::OptionalMethod) -> crate::unity_engine::gameobject::GameObject =
-            ::core::mem::transmute(__lookup_get_game_object_equip::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_game_object_pool {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillEditRoot as ::unity2::ClassIdentity>::class(),
-                "GetGameObjectPool",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SkillEditRoot as ::unity2::ClassIdentity>::NAME,
-                        "GetGameObjectPool",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_game_object_pool(
-        this: SkillEditRoot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::gameobject::GameObject {
-        let inner: extern "C" fn(SkillEditRoot, ::unity2::OptionalMethod) -> crate::unity_engine::gameobject::GameObject =
-            ::core::mem::transmute(__lookup_get_game_object_pool::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_skill_info {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillEditRoot as ::unity2::ClassIdentity>::class(),
-                "GetSkillInfo",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SkillEditRoot as ::unity2::ClassIdentity>::NAME,
-                        "GetSkillInfo",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_skill_info(this: SkillEditRoot, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::gameobject::GameObject {
-        let inner: extern "C" fn(SkillEditRoot, ::unity2::OptionalMethod) -> crate::unity_engine::gameobject::GameObject =
-            ::core::mem::transmute(__lookup_get_skill_info::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_skill_info_root {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillEditRoot as ::unity2::ClassIdentity>::class(),
-                "GetSkillInfoRoot",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SkillEditRoot as ::unity2::ClassIdentity>::NAME,
-                        "GetSkillInfoRoot",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_skill_info_root(
-        this: SkillEditRoot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::gameobject::GameObject {
-        let inner: extern "C" fn(SkillEditRoot, ::unity2::OptionalMethod) -> crate::unity_engine::gameobject::GameObject =
-            ::core::mem::transmute(__lookup_get_skill_info_root::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<SkillEditRoot as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SkillEditRoot as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: SkillEditRoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SkillEditRoot, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __SkillEditRoot_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_game_object_equip { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillEditRoot as :: unity2 :: ClassIdentity > :: class () , "GetGameObjectEquip" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillEditRoot as :: unity2 :: ClassIdentity > :: NAME , "GetGameObjectEquip" , e) , } } } pub unsafe fn get_game_object_equip (this : SkillEditRoot , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject { let inner : extern "C" fn (SkillEditRoot , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute (__lookup_get_game_object_equip :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_game_object_pool { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillEditRoot as :: unity2 :: ClassIdentity > :: class () , "GetGameObjectPool" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillEditRoot as :: unity2 :: ClassIdentity > :: NAME , "GetGameObjectPool" , e) , } } } pub unsafe fn get_game_object_pool (this : SkillEditRoot , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject { let inner : extern "C" fn (SkillEditRoot , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute (__lookup_get_game_object_pool :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_skill_info { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillEditRoot as :: unity2 :: ClassIdentity > :: class () , "GetSkillInfo" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillEditRoot as :: unity2 :: ClassIdentity > :: NAME , "GetSkillInfo" , e) , } } } pub unsafe fn get_skill_info (this : SkillEditRoot , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject { let inner : extern "C" fn (SkillEditRoot , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute (__lookup_get_skill_info :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_skill_info_root { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillEditRoot as :: unity2 :: ClassIdentity > :: class () , "GetSkillInfoRoot" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillEditRoot as :: unity2 :: ClassIdentity > :: NAME , "GetSkillInfoRoot" , e) , } } } pub unsafe fn get_skill_info_root (this : SkillEditRoot , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject { let inner : extern "C" fn (SkillEditRoot , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute (__lookup_get_skill_info_root :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillEditRoot as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillEditRoot as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : SkillEditRoot , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillEditRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-skilleditroot")]
-pub trait ISkillEditRootMethods: ISkillEditRoot {
-    #[doc = "`GetGameObjectEquip()` overload"]
-    fn get_game_object_equip(self) -> crate::unity_engine::gameobject::GameObject {
-        unsafe {
-            let __receiver = <SkillEditRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SkillEditRoot_unity2_raw::get_game_object_equip(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetGameObjectPool()` overload"]
-    fn get_game_object_pool(self) -> crate::unity_engine::gameobject::GameObject {
-        unsafe {
-            let __receiver = <SkillEditRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SkillEditRoot_unity2_raw::get_game_object_pool(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetSkillInfo()` overload"]
-    fn get_skill_info(self) -> crate::unity_engine::gameobject::GameObject {
-        unsafe {
-            let __receiver = <SkillEditRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SkillEditRoot_unity2_raw::get_skill_info(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetSkillInfoRoot()` overload"]
-    fn get_skill_info_root(self) -> crate::unity_engine::gameobject::GameObject {
-        unsafe {
-            let __receiver = <SkillEditRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SkillEditRoot_unity2_raw::get_skill_info_root(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <SkillEditRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SkillEditRoot_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait ISkillEditRootMethods : ISkillEditRoot { # [doc = "`GetGameObjectEquip()` overload"] fn get_game_object_equip (self ,) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { let __receiver = < SkillEditRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SkillEditRoot_unity2_raw :: get_game_object_equip (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetGameObjectPool()` overload"] fn get_game_object_pool (self ,) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { let __receiver = < SkillEditRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SkillEditRoot_unity2_raw :: get_game_object_pool (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetSkillInfo()` overload"] fn get_skill_info (self ,) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { let __receiver = < SkillEditRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SkillEditRoot_unity2_raw :: get_skill_info (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetSkillInfoRoot()` overload"] fn get_skill_info_root (self ,) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { let __receiver = < SkillEditRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SkillEditRoot_unity2_raw :: get_skill_info_root (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < SkillEditRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SkillEditRoot_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-skilleditroot")]
-impl<__T: ISkillEditRoot> ISkillEditRootMethods for __T {}
+impl < __T : ISkillEditRoot > ISkillEditRootMethods for __T { }
+
+#[cfg(feature = "app-skilleditroot")]
+impl SkillEditRoot { pub fn get_game_object_equip_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SkillEditRoot_unity2_raw :: __lookup_get_game_object_equip :: get_method_info () } pub fn get_game_object_pool_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SkillEditRoot_unity2_raw :: __lookup_get_game_object_pool :: get_method_info () } pub fn get_skill_info_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SkillEditRoot_unity2_raw :: __lookup_get_skill_info :: get_method_info () } pub fn get_skill_info_root_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SkillEditRoot_unity2_raw :: __lookup_get_skill_info_root :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SkillEditRoot_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-skilleditroot")]
 impl SkillEditRoot {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(SkillEditRoot), ::core::stringify!(new),));
-        <Self as ISkillEditRootMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SkillEditRoot) , :: core :: stringify ! (new) ,)) ; < Self as ISkillEditRootMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-skilleditroot")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{ISkillEditRoot, ISkillEditRootMethods, SkillEditRoot};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        system::object::IObject,
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::SkillEditRoot;
+    pub use super::ISkillEditRoot;
+    pub use super::ISkillEditRootMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

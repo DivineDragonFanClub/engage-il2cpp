@@ -2,260 +2,54 @@
 
 #[cfg(feature = "app-procbattlecallback-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::procinst::{IProcInst, ProcInst},
-        system::object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/procbattlecallback/ProcBattleCallback.md"))]
-    #[::unity2::class(namespace = "App", name = "ProcBattleCallback")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct ProcBattleCallback {
-        #[offset(112)]
-        #[rename(name = "m_Calculator")]
-        pub m_calculator: crate::app::battlecalculator::BattleCalculator,
-        #[offset(120)]
-        #[rename(name = "m_Completed")]
-        pub m_completed: crate::system::action::Action,
-        #[offset(128)]
-        #[rename(name = "m_Skipable")]
-        pub m_skipable: bool,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: procinst :: { IProcInst , ProcInst }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/procbattlecallback/ProcBattleCallback.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProcBattleCallback")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct ProcBattleCallback {
+# [offset (112)] # [rename (name = "m_Calculator")] pub m_calculator : crate :: app :: battlecalculator :: BattleCalculator ,
+# [offset (120)] # [rename (name = "m_Completed")] pub m_completed : crate :: system :: action :: Action ,
+# [offset (128)] # [rename (name = "m_Skipable")] pub m_skipable : bool ,
+}
+
 }
 
 #[cfg(feature = "app-procbattlecallback-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-procbattlecallback")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ProcBattleCallback_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::battlecalculator::BattleCalculator as ::unity2::IlType>::il_type(),
-                <crate::system::action::Action as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProcBattleCallback as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProcBattleCallback as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: ProcBattleCallback,
-        calculator: crate::app::battlecalculator::BattleCalculator,
-        completed: crate::system::action::Action,
-        skipable: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ProcBattleCallback,
-            crate::app::battlecalculator::BattleCalculator,
-            crate::system::action::Action,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, calculator, completed, skipable, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_create {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProcBattleCallback as ::unity2::ClassIdentity>::class(),
-                "OnCreate",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProcBattleCallback as ::unity2::ClassIdentity>::NAME,
-                        "OnCreate",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_create(this: ProcBattleCallback, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ProcBattleCallback, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_create::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_dispose {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProcBattleCallback as ::unity2::ClassIdentity>::class(),
-                "OnDispose",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProcBattleCallback as ::unity2::ClassIdentity>::NAME,
-                        "OnDispose",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_dispose(this: ProcBattleCallback, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ProcBattleCallback, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_dispose::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_current {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProcBattleCallback as ::unity2::ClassIdentity>::class(),
-                "GetCurrent",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProcBattleCallback as ::unity2::ClassIdentity>::NAME,
-                        "GetCurrent",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_current(
-        super_: crate::app::procinst::ProcInst,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::procinst::ProcInst {
-        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> crate::app::procinst::ProcInst =
-            ::core::mem::transmute(__lookup_get_current::get_method_info().method_ptr);
-        inner(super_, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ProcBattleCallback_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: battlecalculator :: BattleCalculator as :: unity2 :: IlType > :: il_type () , < crate :: system :: action :: Action as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProcBattleCallback as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProcBattleCallback as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : ProcBattleCallback , calculator : crate :: app :: battlecalculator :: BattleCalculator , completed : crate :: system :: action :: Action , skipable : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ProcBattleCallback , crate :: app :: battlecalculator :: BattleCalculator , crate :: system :: action :: Action , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , calculator , completed , skipable , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_create { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProcBattleCallback as :: unity2 :: ClassIdentity > :: class () , "OnCreate" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProcBattleCallback as :: unity2 :: ClassIdentity > :: NAME , "OnCreate" , e) , } } } pub unsafe fn on_create (this : ProcBattleCallback , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ProcBattleCallback , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_create :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_dispose { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProcBattleCallback as :: unity2 :: ClassIdentity > :: class () , "OnDispose" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProcBattleCallback as :: unity2 :: ClassIdentity > :: NAME , "OnDispose" , e) , } } } pub unsafe fn on_dispose (this : ProcBattleCallback , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ProcBattleCallback , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_dispose :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_current { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProcBattleCallback as :: unity2 :: ClassIdentity > :: class () , "GetCurrent" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProcBattleCallback as :: unity2 :: ClassIdentity > :: NAME , "GetCurrent" , e) , } } } pub unsafe fn get_current (super_ : crate :: app :: procinst :: ProcInst , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: procinst :: ProcInst { let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> crate :: app :: procinst :: ProcInst = :: core :: mem :: transmute (__lookup_get_current :: get_method_info () . method_ptr ,) ; inner (super_ , __unity2_method_info) } }
+
+#[cfg(feature = "app-procbattlecallback")]
+impl ProcBattleCallback { # [doc = "`GetCurrent(crate::app::procinst::ProcInst)` overload"] pub fn get_current (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> crate :: app :: procinst :: ProcInst { unsafe { __ProcBattleCallback_unity2_raw :: get_current (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-procbattlecallback")]
+pub trait IProcBattleCallbackMethods : IProcBattleCallback { # [doc = "`.ctor(crate::app::battlecalculator::BattleCalculator, crate::system::action::Action, bool)` overload"] fn ctor (self , calculator : impl :: core :: convert :: Into < crate :: app :: battlecalculator :: BattleCalculator > , completed : impl :: core :: convert :: Into < crate :: system :: action :: Action > , skipable : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < ProcBattleCallback as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ProcBattleCallback_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (calculator) , :: core :: convert :: Into :: into (completed) , :: core :: convert :: Into :: into (skipable) , :: core :: option :: Option :: None) } } # [doc = "`OnCreate()` overload"] fn on_create (self ,) -> () { unsafe { let __receiver = < ProcBattleCallback as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ProcBattleCallback_unity2_raw :: on_create (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnDispose()` overload"] fn on_dispose (self ,) -> () { unsafe { let __receiver = < ProcBattleCallback as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ProcBattleCallback_unity2_raw :: on_dispose (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-procbattlecallback")]
+impl < __T : IProcBattleCallback > IProcBattleCallbackMethods for __T { }
+
+#[cfg(feature = "app-procbattlecallback")]
+impl ProcBattleCallback { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProcBattleCallback_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn on_create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProcBattleCallback_unity2_raw :: __lookup_on_create :: get_method_info () } pub fn on_dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProcBattleCallback_unity2_raw :: __lookup_on_dispose :: get_method_info () } pub fn get_current_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProcBattleCallback_unity2_raw :: __lookup_get_current :: get_method_info () } }
 
 #[cfg(feature = "app-procbattlecallback")]
 impl ProcBattleCallback {
-    #[doc = "`GetCurrent(crate::app::procinst::ProcInst)` overload"]
-    pub fn get_current(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> crate::app::procinst::ProcInst {
-        unsafe { __ProcBattleCallback_unity2_raw::get_current(::core::convert::Into::into(super_), ::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-procbattlecallback")]
-pub trait IProcBattleCallbackMethods: IProcBattleCallback {
-    #[doc = "`.ctor(crate::app::battlecalculator::BattleCalculator, crate::system::action::Action, bool)` overload"]
-    fn ctor(
-        self,
-        calculator: impl ::core::convert::Into<crate::app::battlecalculator::BattleCalculator>,
-        completed: impl ::core::convert::Into<crate::system::action::Action>,
-        skipable: impl ::core::convert::Into<bool>,
-    ) -> () {
-        unsafe {
-            let __receiver = <ProcBattleCallback as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ProcBattleCallback_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(calculator),
-                ::core::convert::Into::into(completed),
-                ::core::convert::Into::into(skipable),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`OnCreate()` overload"]
-    fn on_create(self) -> () {
-        unsafe {
-            let __receiver = <ProcBattleCallback as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ProcBattleCallback_unity2_raw::on_create(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnDispose()` overload"]
-    fn on_dispose(self) -> () {
-        unsafe {
-            let __receiver = <ProcBattleCallback as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ProcBattleCallback_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-procbattlecallback")]
-impl<__T: IProcBattleCallback> IProcBattleCallbackMethods for __T {}
-
-#[cfg(feature = "app-procbattlecallback")]
-impl ProcBattleCallback {
-    #[doc = "`.ctor(crate::app::battlecalculator::BattleCalculator, crate::system::action::Action, bool)` — overload selector"]
-    pub fn new(calculator: crate::app::battlecalculator::BattleCalculator, completed: crate::system::action::Action, skipable: bool) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ProcBattleCallback),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IProcBattleCallbackMethods>::ctor(this, calculator, completed, skipable);
-        this
-    }
+# [doc = "`.ctor(crate::app::battlecalculator::BattleCalculator, crate::system::action::Action, bool)` — overload selector"] pub fn new (calculator : crate :: app :: battlecalculator :: BattleCalculator , completed : crate :: system :: action :: Action , skipable : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProcBattleCallback) , :: core :: stringify ! (new) ,)) ; < Self as IProcBattleCallbackMethods > :: ctor (this , calculator , completed , skipable) ; this }
 }
 
 #[cfg(feature = "app-procbattlecallback")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IProcBattleCallback, IProcBattleCallbackMethods, ProcBattleCallback};
-    #[cfg(feature = "app-procinst")]
-    pub use crate::app::procinst::IProcInstMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::{app::procinst::IProcInst, system::object::IObject};
+    pub use super::ProcBattleCallback;
+    pub use super::IProcBattleCallback;
+    pub use super::IProcBattleCallbackMethods;
+    pub use crate::app::procinst::IProcInst;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "app-procinst")] pub use crate::app::procinst::IProcInstMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

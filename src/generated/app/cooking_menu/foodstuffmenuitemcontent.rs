@@ -2,581 +2,77 @@
 
 #[cfg(feature = "app-cooking_menu-foodstuffmenuitemcontent-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::basicmenuitemcontent::{BasicMenuItemContent, IBasicMenuItemContent},
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/foodstuffmenuitemcontent/FoodstuffMenuItemContent.md"))]
-    #[::unity2::class(namespace = "App.CookingMenu", name = "FoodstuffMenuItemContent")]
-    #[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]
-    pub struct FoodstuffMenuItemContent {
-        #[offset(72)]
-        #[rename(name = "m_FoodstuffMenuItem")]
-        pub m_foodstuff_menu_item: crate::app::cooking_menu::foodstuffmenu::FoodstuffMenu_FoodstuffMenuItem,
-        #[offset(80)]
-        #[rename(name = "m_Type")]
-        pub m_type: crate::app::cooking_menu::foodstuffmenu::FoodstuffMenu_FoodstuffMenuItem_Type,
-        #[offset(88)]
-        #[rename(name = "m_Cursor")]
-        pub m_cursor: crate::unity_engine::gameobject::GameObject,
-        #[offset(96)]
-        #[rename(name = "m_Check")]
-        pub m_check: crate::unity_engine::gameobject::GameObject,
-        #[offset(104)]
-        #[rename(name = "m_Food")]
-        pub m_food: crate::unity_engine::gameobject::GameObject,
-        #[offset(112)]
-        #[rename(name = "m_Name")]
-        pub m_name: crate::unity_engine::gameobject::GameObject,
-        #[offset(120)]
-        #[rename(name = "m_Icon")]
-        pub m_icon: crate::unity_engine::gameobject::GameObject,
-        #[offset(128)]
-        #[rename(name = "m_Stock")]
-        pub m_stock: crate::unity_engine::gameobject::GameObject,
-        #[offset(136)]
-        #[rename(name = "m_Count")]
-        pub m_count: crate::unity_engine::gameobject::GameObject,
-        #[offset(144)]
-        #[rename(name = "m_NameText")]
-        pub m_name_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(152)]
-        #[rename(name = "m_CountText")]
-        pub m_count_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(160)]
-        #[rename(name = "m_DecideText")]
-        pub m_decide_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(168)]
-        #[rename(name = "m_CursorImage")]
-        pub m_cursor_image: crate::unity_engine::ui::image::Image,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: basicmenuitemcontent :: { BasicMenuItemContent , IBasicMenuItemContent }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/foodstuffmenuitemcontent/FoodstuffMenuItemContent.md"))] # [:: unity2 :: class (namespace = "App.CookingMenu" , name = "FoodstuffMenuItemContent")] # [parent (crate :: app :: basicmenuitemcontent :: BasicMenuItemContent)] pub struct FoodstuffMenuItemContent {
+# [offset (72)] # [rename (name = "m_FoodstuffMenuItem")] pub m_foodstuff_menu_item : crate :: app :: cooking_menu :: foodstuffmenu :: FoodstuffMenu_FoodstuffMenuItem ,
+# [offset (80)] # [rename (name = "m_Type")] pub m_type : crate :: app :: cooking_menu :: foodstuffmenu :: FoodstuffMenu_FoodstuffMenuItem_Type ,
+# [offset (88)] # [rename (name = "m_Cursor")] pub m_cursor : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (96)] # [rename (name = "m_Check")] pub m_check : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (104)] # [rename (name = "m_Food")] pub m_food : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (112)] # [rename (name = "m_Name")] pub m_name : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (120)] # [rename (name = "m_Icon")] pub m_icon : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (128)] # [rename (name = "m_Stock")] pub m_stock : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (136)] # [rename (name = "m_Count")] pub m_count : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (144)] # [rename (name = "m_NameText")] pub m_name_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (152)] # [rename (name = "m_CountText")] pub m_count_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (160)] # [rename (name = "m_DecideText")] pub m_decide_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (168)] # [rename (name = "m_CursorImage")] pub m_cursor_image : crate :: unity_engine :: ui :: image :: Image ,
+}
+
 }
 
 #[cfg(feature = "app-cooking_menu-foodstuffmenuitemcontent-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-cooking_menu-foodstuffmenuitemcontent")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __FoodstuffMenuItemContent_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_build {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::basicmenuitem::BasicMenuItem as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FoodstuffMenuItemContent as ::unity2::ClassIdentity>::class(),
-                "Build",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FoodstuffMenuItemContent as ::unity2::ClassIdentity>::NAME,
-                        "Build",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn build(
-        this: FoodstuffMenuItemContent,
-        menu_item: crate::app::basicmenuitem::BasicMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(FoodstuffMenuItemContent, crate::app::basicmenuitem::BasicMenuItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_build::get_method_info().method_ptr);
-        inner(this, menu_item, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_setup {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FoodstuffMenuItemContent as ::unity2::ClassIdentity>::class(),
-                "Setup",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FoodstuffMenuItemContent as ::unity2::ClassIdentity>::NAME,
-                        "Setup",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn setup(this: FoodstuffMenuItemContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(FoodstuffMenuItemContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_setup::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::foodstuffdata::FoodstuffData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FoodstuffMenuItemContent as ::unity2::ClassIdentity>::class(),
-                "SetName",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FoodstuffMenuItemContent as ::unity2::ClassIdentity>::NAME,
-                        "SetName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_name(
-        this: FoodstuffMenuItemContent,
-        foodstuff: crate::app::foodstuffdata::FoodstuffData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(FoodstuffMenuItemContent, crate::app::foodstuffdata::FoodstuffData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_name::get_method_info().method_ptr);
-        inner(this, foodstuff, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_icon {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::foodstuffdata::FoodstuffData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FoodstuffMenuItemContent as ::unity2::ClassIdentity>::class(),
-                "SetIcon",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FoodstuffMenuItemContent as ::unity2::ClassIdentity>::NAME,
-                        "SetIcon",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_icon(
-        this: FoodstuffMenuItemContent,
-        foodstuff: crate::app::foodstuffdata::FoodstuffData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(FoodstuffMenuItemContent, crate::app::foodstuffdata::FoodstuffData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_icon::get_method_info().method_ptr);
-        inner(this, foodstuff, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_change_selected {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FoodstuffMenuItemContent as ::unity2::ClassIdentity>::class(),
-                "ChangeSelected",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FoodstuffMenuItemContent as ::unity2::ClassIdentity>::NAME,
-                        "ChangeSelected",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn change_selected(this: FoodstuffMenuItemContent, is_selected: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(FoodstuffMenuItemContent, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_change_selected::get_method_info().method_ptr);
-        inner(this, is_selected, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_build_text {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FoodstuffMenuItemContent as ::unity2::ClassIdentity>::class(),
-                "BuildText",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FoodstuffMenuItemContent as ::unity2::ClassIdentity>::NAME,
-                        "BuildText",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn build_text(this: FoodstuffMenuItemContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(FoodstuffMenuItemContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_build_text::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FoodstuffMenuItemContent as ::unity2::ClassIdentity>::class(),
-                "Update",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FoodstuffMenuItemContent as ::unity2::ClassIdentity>::NAME,
-                        "Update",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update(this: FoodstuffMenuItemContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(FoodstuffMenuItemContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update_text_color {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FoodstuffMenuItemContent as ::unity2::ClassIdentity>::class(),
-                "UpdateTextColor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FoodstuffMenuItemContent as ::unity2::ClassIdentity>::NAME,
-                        "UpdateTextColor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update_text_color(this: FoodstuffMenuItemContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(FoodstuffMenuItemContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update_text_color::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update_decide_text_color {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FoodstuffMenuItemContent as ::unity2::ClassIdentity>::class(),
-                "UpdateDecideTextColor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FoodstuffMenuItemContent as ::unity2::ClassIdentity>::NAME,
-                        "UpdateDecideTextColor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update_decide_text_color(this: FoodstuffMenuItemContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(FoodstuffMenuItemContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update_decide_text_color::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update_not_have_text_color {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FoodstuffMenuItemContent as ::unity2::ClassIdentity>::class(),
-                "UpdateNotHaveTextColor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FoodstuffMenuItemContent as ::unity2::ClassIdentity>::NAME,
-                        "UpdateNotHaveTextColor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update_not_have_text_color(this: FoodstuffMenuItemContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(FoodstuffMenuItemContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update_not_have_text_color::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FoodstuffMenuItemContent as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FoodstuffMenuItemContent as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: FoodstuffMenuItemContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(FoodstuffMenuItemContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __FoodstuffMenuItemContent_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_build { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: basicmenuitem :: BasicMenuItem as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FoodstuffMenuItemContent as :: unity2 :: ClassIdentity > :: class () , "Build" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FoodstuffMenuItemContent as :: unity2 :: ClassIdentity > :: NAME , "Build" , e) , } } } pub unsafe fn build (this : FoodstuffMenuItemContent , menu_item : crate :: app :: basicmenuitem :: BasicMenuItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FoodstuffMenuItemContent , crate :: app :: basicmenuitem :: BasicMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_build :: get_method_info () . method_ptr ,) ; inner (this , menu_item , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_setup { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FoodstuffMenuItemContent as :: unity2 :: ClassIdentity > :: class () , "Setup" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FoodstuffMenuItemContent as :: unity2 :: ClassIdentity > :: NAME , "Setup" , e) , } } } pub unsafe fn setup (this : FoodstuffMenuItemContent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FoodstuffMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_setup :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: foodstuffdata :: FoodstuffData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FoodstuffMenuItemContent as :: unity2 :: ClassIdentity > :: class () , "SetName" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FoodstuffMenuItemContent as :: unity2 :: ClassIdentity > :: NAME , "SetName" , e) , } } } pub unsafe fn set_name (this : FoodstuffMenuItemContent , foodstuff : crate :: app :: foodstuffdata :: FoodstuffData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FoodstuffMenuItemContent , crate :: app :: foodstuffdata :: FoodstuffData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_name :: get_method_info () . method_ptr ,) ; inner (this , foodstuff , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_icon { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: foodstuffdata :: FoodstuffData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FoodstuffMenuItemContent as :: unity2 :: ClassIdentity > :: class () , "SetIcon" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FoodstuffMenuItemContent as :: unity2 :: ClassIdentity > :: NAME , "SetIcon" , e) , } } } pub unsafe fn set_icon (this : FoodstuffMenuItemContent , foodstuff : crate :: app :: foodstuffdata :: FoodstuffData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FoodstuffMenuItemContent , crate :: app :: foodstuffdata :: FoodstuffData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_icon :: get_method_info () . method_ptr ,) ; inner (this , foodstuff , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_change_selected { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FoodstuffMenuItemContent as :: unity2 :: ClassIdentity > :: class () , "ChangeSelected" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FoodstuffMenuItemContent as :: unity2 :: ClassIdentity > :: NAME , "ChangeSelected" , e) , } } } pub unsafe fn change_selected (this : FoodstuffMenuItemContent , is_selected : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FoodstuffMenuItemContent , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_change_selected :: get_method_info () . method_ptr ,) ; inner (this , is_selected , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_build_text { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FoodstuffMenuItemContent as :: unity2 :: ClassIdentity > :: class () , "BuildText" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FoodstuffMenuItemContent as :: unity2 :: ClassIdentity > :: NAME , "BuildText" , e) , } } } pub unsafe fn build_text (this : FoodstuffMenuItemContent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FoodstuffMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_build_text :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FoodstuffMenuItemContent as :: unity2 :: ClassIdentity > :: class () , "Update" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FoodstuffMenuItemContent as :: unity2 :: ClassIdentity > :: NAME , "Update" , e) , } } } pub unsafe fn update (this : FoodstuffMenuItemContent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FoodstuffMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update_text_color { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FoodstuffMenuItemContent as :: unity2 :: ClassIdentity > :: class () , "UpdateTextColor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FoodstuffMenuItemContent as :: unity2 :: ClassIdentity > :: NAME , "UpdateTextColor" , e) , } } } pub unsafe fn update_text_color (this : FoodstuffMenuItemContent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FoodstuffMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update_text_color :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update_decide_text_color { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FoodstuffMenuItemContent as :: unity2 :: ClassIdentity > :: class () , "UpdateDecideTextColor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FoodstuffMenuItemContent as :: unity2 :: ClassIdentity > :: NAME , "UpdateDecideTextColor" , e) , } } } pub unsafe fn update_decide_text_color (this : FoodstuffMenuItemContent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FoodstuffMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update_decide_text_color :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update_not_have_text_color { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FoodstuffMenuItemContent as :: unity2 :: ClassIdentity > :: class () , "UpdateNotHaveTextColor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FoodstuffMenuItemContent as :: unity2 :: ClassIdentity > :: NAME , "UpdateNotHaveTextColor" , e) , } } } pub unsafe fn update_not_have_text_color (this : FoodstuffMenuItemContent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FoodstuffMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update_not_have_text_color :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FoodstuffMenuItemContent as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FoodstuffMenuItemContent as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : FoodstuffMenuItemContent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FoodstuffMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-cooking_menu-foodstuffmenuitemcontent")]
-pub trait IFoodstuffMenuItemContentMethods: IFoodstuffMenuItemContent {
-    #[doc = "`Build(crate::app::basicmenuitem::BasicMenuItem)` overload"]
-    fn build(self, menu_item: impl ::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem>) -> () {
-        unsafe {
-            let __receiver =
-                <FoodstuffMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FoodstuffMenuItemContent_unity2_raw::build(__receiver, ::core::convert::Into::into(menu_item), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Setup()` overload"]
-    fn setup(self) -> () {
-        unsafe {
-            let __receiver =
-                <FoodstuffMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FoodstuffMenuItemContent_unity2_raw::setup(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetName(crate::app::foodstuffdata::FoodstuffData)` overload"]
-    fn set_name(self, foodstuff: impl ::core::convert::Into<crate::app::foodstuffdata::FoodstuffData>) -> () {
-        unsafe {
-            let __receiver =
-                <FoodstuffMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FoodstuffMenuItemContent_unity2_raw::set_name(__receiver, ::core::convert::Into::into(foodstuff), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetIcon(crate::app::foodstuffdata::FoodstuffData)` overload"]
-    fn set_icon(self, foodstuff: impl ::core::convert::Into<crate::app::foodstuffdata::FoodstuffData>) -> () {
-        unsafe {
-            let __receiver =
-                <FoodstuffMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FoodstuffMenuItemContent_unity2_raw::set_icon(__receiver, ::core::convert::Into::into(foodstuff), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ChangeSelected(bool)` overload"]
-    fn change_selected(self, is_selected: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver =
-                <FoodstuffMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FoodstuffMenuItemContent_unity2_raw::change_selected(__receiver, ::core::convert::Into::into(is_selected), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`BuildText()` overload"]
-    fn build_text(self) -> () {
-        unsafe {
-            let __receiver =
-                <FoodstuffMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FoodstuffMenuItemContent_unity2_raw::build_text(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Update()` overload"]
-    fn update(self) -> () {
-        unsafe {
-            let __receiver =
-                <FoodstuffMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FoodstuffMenuItemContent_unity2_raw::update(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`UpdateTextColor()` overload"]
-    fn update_text_color(self) -> () {
-        unsafe {
-            let __receiver =
-                <FoodstuffMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FoodstuffMenuItemContent_unity2_raw::update_text_color(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`UpdateDecideTextColor()` overload"]
-    fn update_decide_text_color(self) -> () {
-        unsafe {
-            let __receiver =
-                <FoodstuffMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FoodstuffMenuItemContent_unity2_raw::update_decide_text_color(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`UpdateNotHaveTextColor()` overload"]
-    fn update_not_have_text_color(self) -> () {
-        unsafe {
-            let __receiver =
-                <FoodstuffMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FoodstuffMenuItemContent_unity2_raw::update_not_have_text_color(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <FoodstuffMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FoodstuffMenuItemContent_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IFoodstuffMenuItemContentMethods : IFoodstuffMenuItemContent { # [doc = "`Build(crate::app::basicmenuitem::BasicMenuItem)` overload"] fn build (self , menu_item : impl :: core :: convert :: Into < crate :: app :: basicmenuitem :: BasicMenuItem >) -> () { unsafe { let __receiver = < FoodstuffMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FoodstuffMenuItemContent_unity2_raw :: build (__receiver , :: core :: convert :: Into :: into (menu_item) , :: core :: option :: Option :: None) } } # [doc = "`Setup()` overload"] fn setup (self ,) -> () { unsafe { let __receiver = < FoodstuffMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FoodstuffMenuItemContent_unity2_raw :: setup (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetName(crate::app::foodstuffdata::FoodstuffData)` overload"] fn set_name (self , foodstuff : impl :: core :: convert :: Into < crate :: app :: foodstuffdata :: FoodstuffData >) -> () { unsafe { let __receiver = < FoodstuffMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FoodstuffMenuItemContent_unity2_raw :: set_name (__receiver , :: core :: convert :: Into :: into (foodstuff) , :: core :: option :: Option :: None) } } # [doc = "`SetIcon(crate::app::foodstuffdata::FoodstuffData)` overload"] fn set_icon (self , foodstuff : impl :: core :: convert :: Into < crate :: app :: foodstuffdata :: FoodstuffData >) -> () { unsafe { let __receiver = < FoodstuffMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FoodstuffMenuItemContent_unity2_raw :: set_icon (__receiver , :: core :: convert :: Into :: into (foodstuff) , :: core :: option :: Option :: None) } } # [doc = "`ChangeSelected(bool)` overload"] fn change_selected (self , is_selected : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < FoodstuffMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FoodstuffMenuItemContent_unity2_raw :: change_selected (__receiver , :: core :: convert :: Into :: into (is_selected) , :: core :: option :: Option :: None) } } # [doc = "`BuildText()` overload"] fn build_text (self ,) -> () { unsafe { let __receiver = < FoodstuffMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FoodstuffMenuItemContent_unity2_raw :: build_text (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < FoodstuffMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FoodstuffMenuItemContent_unity2_raw :: update (__receiver , :: core :: option :: Option :: None) } } # [doc = "`UpdateTextColor()` overload"] fn update_text_color (self ,) -> () { unsafe { let __receiver = < FoodstuffMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FoodstuffMenuItemContent_unity2_raw :: update_text_color (__receiver , :: core :: option :: Option :: None) } } # [doc = "`UpdateDecideTextColor()` overload"] fn update_decide_text_color (self ,) -> () { unsafe { let __receiver = < FoodstuffMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FoodstuffMenuItemContent_unity2_raw :: update_decide_text_color (__receiver , :: core :: option :: Option :: None) } } # [doc = "`UpdateNotHaveTextColor()` overload"] fn update_not_have_text_color (self ,) -> () { unsafe { let __receiver = < FoodstuffMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FoodstuffMenuItemContent_unity2_raw :: update_not_have_text_color (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < FoodstuffMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FoodstuffMenuItemContent_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-cooking_menu-foodstuffmenuitemcontent")]
-impl<__T: IFoodstuffMenuItemContent> IFoodstuffMenuItemContentMethods for __T {}
+impl < __T : IFoodstuffMenuItemContent > IFoodstuffMenuItemContentMethods for __T { }
+
+#[cfg(feature = "app-cooking_menu-foodstuffmenuitemcontent")]
+impl FoodstuffMenuItemContent { pub fn build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FoodstuffMenuItemContent_unity2_raw :: __lookup_build :: get_method_info () } pub fn setup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FoodstuffMenuItemContent_unity2_raw :: __lookup_setup :: get_method_info () } pub fn set_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FoodstuffMenuItemContent_unity2_raw :: __lookup_set_name :: get_method_info () } pub fn set_icon_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FoodstuffMenuItemContent_unity2_raw :: __lookup_set_icon :: get_method_info () } pub fn change_selected_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FoodstuffMenuItemContent_unity2_raw :: __lookup_change_selected :: get_method_info () } pub fn build_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FoodstuffMenuItemContent_unity2_raw :: __lookup_build_text :: get_method_info () } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FoodstuffMenuItemContent_unity2_raw :: __lookup_update :: get_method_info () } pub fn update_text_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FoodstuffMenuItemContent_unity2_raw :: __lookup_update_text_color :: get_method_info () } pub fn update_decide_text_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FoodstuffMenuItemContent_unity2_raw :: __lookup_update_decide_text_color :: get_method_info () } pub fn update_not_have_text_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FoodstuffMenuItemContent_unity2_raw :: __lookup_update_not_have_text_color :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FoodstuffMenuItemContent_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-cooking_menu-foodstuffmenuitemcontent")]
 impl FoodstuffMenuItemContent {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(FoodstuffMenuItemContent),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IFoodstuffMenuItemContentMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FoodstuffMenuItemContent) , :: core :: stringify ! (new) ,)) ; < Self as IFoodstuffMenuItemContentMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-cooking_menu-foodstuffmenuitemcontent")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{FoodstuffMenuItemContent, IFoodstuffMenuItemContent, IFoodstuffMenuItemContentMethods};
-    #[cfg(feature = "app-basicmenuitemcontent")]
-    pub use crate::app::basicmenuitemcontent::IBasicMenuItemContentMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        app::basicmenuitemcontent::IBasicMenuItemContent,
-        system::object::IObject,
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::FoodstuffMenuItemContent;
+    pub use super::IFoodstuffMenuItemContent;
+    pub use super::IFoodstuffMenuItemContentMethods;
+    pub use crate::app::basicmenuitemcontent::IBasicMenuItemContent;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "app-basicmenuitemcontent")] pub use crate::app::basicmenuitemcontent::IBasicMenuItemContentMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

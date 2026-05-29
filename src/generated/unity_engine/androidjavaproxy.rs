@@ -2,451 +2,53 @@
 
 #[cfg(feature = "unity_engine-androidjavaproxy-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/androidjavaproxy/AndroidJavaProxy.md"))]
-    #[::unity2::class(namespace = "UnityEngine", name = "AndroidJavaProxy")]
-    #[parent(crate::system::object::Object)]
-    pub struct AndroidJavaProxy {
-        #[offset(16)]
-        #[rename(name = "javaInterface")]
-        pub java_interface: crate::unity_engine::androidjavaclass::AndroidJavaClass,
-        #[offset(24)]
-        #[rename(name = "proxyObject")]
-        pub proxy_object: ::unity2::IntPtr,
-        #[static_field]
-        #[rename(name = "s_JavaLangSystemClass")]
-        pub s_java_lang_system_class: crate::unity_engine::globaljavaobjectref::GlobalJavaObjectRef,
-        #[static_field]
-        #[rename(name = "s_HashCodeMethodID")]
-        pub s_hash_code_method_id: ::unity2::IntPtr,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/androidjavaproxy/AndroidJavaProxy.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "AndroidJavaProxy")] # [parent (crate :: system :: object :: Object)] pub struct AndroidJavaProxy {
+# [offset (16)] # [rename (name = "javaInterface")] pub java_interface : crate :: unity_engine :: androidjavaclass :: AndroidJavaClass ,
+# [offset (24)] # [rename (name = "proxyObject")] pub proxy_object : :: unity2 :: IntPtr ,
+# [static_field] # [rename (name = "s_JavaLangSystemClass")] pub s_java_lang_system_class : crate :: unity_engine :: globaljavaobjectref :: GlobalJavaObjectRef ,
+# [static_field] # [rename (name = "s_HashCodeMethodID")] pub s_hash_code_method_id : :: unity2 :: IntPtr ,
+}
+
 }
 
 #[cfg(feature = "unity_engine-androidjavaproxy-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-androidjavaproxy")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AndroidJavaProxy_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AndroidJavaProxy as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AndroidJavaProxy as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: AndroidJavaProxy, java_interface: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AndroidJavaProxy, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, java_interface, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::androidjavaclass::AndroidJavaClass as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AndroidJavaProxy as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AndroidJavaProxy as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor_2(
-        this: AndroidJavaProxy,
-        java_interface: crate::unity_engine::androidjavaclass::AndroidJavaClass,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(AndroidJavaProxy, crate::unity_engine::androidjavaclass::AndroidJavaClass, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
-        inner(this, java_interface, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_finalize {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AndroidJavaProxy as ::unity2::ClassIdentity>::class(),
-                "Finalize",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AndroidJavaProxy as ::unity2::ClassIdentity>::NAME,
-                        "Finalize",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn finalize(this: AndroidJavaProxy, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AndroidJavaProxy, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_finalize::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <::unity2::Array<crate::system::object::Object> as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AndroidJavaProxy as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AndroidJavaProxy as ::unity2::ClassIdentity>::NAME,
-                        "Invoke",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn invoke(
-        this: AndroidJavaProxy,
-        method_name: ::unity2::Il2CppString,
-        args: ::unity2::Array<crate::system::object::Object>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::androidjavaobject::AndroidJavaObject {
-        let inner: extern "C" fn(
-            AndroidJavaProxy,
-            ::unity2::Il2CppString,
-            ::unity2::Array<crate::system::object::Object>,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::androidjavaobject::AndroidJavaObject = ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
-        inner(this, method_name, args, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <::unity2::Array<crate::unity_engine::androidjavaobject::AndroidJavaObject> as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AndroidJavaProxy as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AndroidJavaProxy as ::unity2::ClassIdentity>::NAME,
-                        "Invoke",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn invoke_2(
-        this: AndroidJavaProxy,
-        method_name: ::unity2::Il2CppString,
-        java_args: ::unity2::Array<crate::unity_engine::androidjavaobject::AndroidJavaObject>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::androidjavaobject::AndroidJavaObject {
-        let inner: extern "C" fn(
-            AndroidJavaProxy,
-            ::unity2::Il2CppString,
-            ::unity2::Array<crate::unity_engine::androidjavaobject::AndroidJavaObject>,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::androidjavaobject::AndroidJavaObject = ::core::mem::transmute(__lookup_invoke_2::get_method_info().method_ptr);
-        inner(this, method_name, java_args, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_proxy_object {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AndroidJavaProxy as ::unity2::ClassIdentity>::class(),
-                "GetProxyObject",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AndroidJavaProxy as ::unity2::ClassIdentity>::NAME,
-                        "GetProxyObject",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_proxy_object(
-        this: AndroidJavaProxy,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::androidjavaobject::AndroidJavaObject {
-        let inner: extern "C" fn(AndroidJavaProxy, ::unity2::OptionalMethod) -> crate::unity_engine::androidjavaobject::AndroidJavaObject =
-            ::core::mem::transmute(__lookup_get_proxy_object::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_raw_proxy {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AndroidJavaProxy as ::unity2::ClassIdentity>::class(),
-                "GetRawProxy",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AndroidJavaProxy as ::unity2::ClassIdentity>::NAME,
-                        "GetRawProxy",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_raw_proxy(this: AndroidJavaProxy, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::IntPtr {
-        let inner: extern "C" fn(AndroidJavaProxy, ::unity2::OptionalMethod) -> ::unity2::IntPtr =
-            ::core::mem::transmute(__lookup_get_raw_proxy::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AndroidJavaProxy as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AndroidJavaProxy as ::unity2::ClassIdentity>::NAME,
-                        ".cctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __AndroidJavaProxy_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AndroidJavaProxy as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AndroidJavaProxy as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : AndroidJavaProxy , java_interface : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AndroidJavaProxy , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , java_interface , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: androidjavaclass :: AndroidJavaClass as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AndroidJavaProxy as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AndroidJavaProxy as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor_2 (this : AndroidJavaProxy , java_interface : crate :: unity_engine :: androidjavaclass :: AndroidJavaClass , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AndroidJavaProxy , crate :: unity_engine :: androidjavaclass :: AndroidJavaClass , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor_2 :: get_method_info () . method_ptr ,) ; inner (this , java_interface , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_finalize { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AndroidJavaProxy as :: unity2 :: ClassIdentity > :: class () , "Finalize" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AndroidJavaProxy as :: unity2 :: ClassIdentity > :: NAME , "Finalize" , e) , } } } pub unsafe fn finalize (this : AndroidJavaProxy , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AndroidJavaProxy , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_finalize :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_invoke { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: system :: object :: Object > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AndroidJavaProxy as :: unity2 :: ClassIdentity > :: class () , "Invoke" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AndroidJavaProxy as :: unity2 :: ClassIdentity > :: NAME , "Invoke" , e) , } } } pub unsafe fn invoke (this : AndroidJavaProxy , method_name : :: unity2 :: Il2CppString , args : :: unity2 :: Array < crate :: system :: object :: Object > , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: androidjavaobject :: AndroidJavaObject { let inner : extern "C" fn (AndroidJavaProxy , :: unity2 :: Il2CppString , :: unity2 :: Array < crate :: system :: object :: Object > , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: androidjavaobject :: AndroidJavaObject = :: core :: mem :: transmute (__lookup_invoke :: get_method_info () . method_ptr ,) ; inner (this , method_name , args , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_invoke_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: androidjavaobject :: AndroidJavaObject > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AndroidJavaProxy as :: unity2 :: ClassIdentity > :: class () , "Invoke" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AndroidJavaProxy as :: unity2 :: ClassIdentity > :: NAME , "Invoke" , e) , } } } pub unsafe fn invoke_2 (this : AndroidJavaProxy , method_name : :: unity2 :: Il2CppString , java_args : :: unity2 :: Array < crate :: unity_engine :: androidjavaobject :: AndroidJavaObject > , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: androidjavaobject :: AndroidJavaObject { let inner : extern "C" fn (AndroidJavaProxy , :: unity2 :: Il2CppString , :: unity2 :: Array < crate :: unity_engine :: androidjavaobject :: AndroidJavaObject > , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: androidjavaobject :: AndroidJavaObject = :: core :: mem :: transmute (__lookup_invoke_2 :: get_method_info () . method_ptr ,) ; inner (this , method_name , java_args , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_proxy_object { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AndroidJavaProxy as :: unity2 :: ClassIdentity > :: class () , "GetProxyObject" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AndroidJavaProxy as :: unity2 :: ClassIdentity > :: NAME , "GetProxyObject" , e) , } } } pub unsafe fn get_proxy_object (this : AndroidJavaProxy , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: androidjavaobject :: AndroidJavaObject { let inner : extern "C" fn (AndroidJavaProxy , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: androidjavaobject :: AndroidJavaObject = :: core :: mem :: transmute (__lookup_get_proxy_object :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_raw_proxy { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AndroidJavaProxy as :: unity2 :: ClassIdentity > :: class () , "GetRawProxy" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AndroidJavaProxy as :: unity2 :: ClassIdentity > :: NAME , "GetRawProxy" , e) , } } } pub unsafe fn get_raw_proxy (this : AndroidJavaProxy , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: IntPtr { let inner : extern "C" fn (AndroidJavaProxy , :: unity2 :: OptionalMethod ,) -> :: unity2 :: IntPtr = :: core :: mem :: transmute (__lookup_get_raw_proxy :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AndroidJavaProxy as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AndroidJavaProxy as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
+
+#[cfg(feature = "unity_engine-androidjavaproxy")]
+impl AndroidJavaProxy { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { __AndroidJavaProxy_unity2_raw :: cctor (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-androidjavaproxy")]
+pub trait IAndroidJavaProxyMethods : IAndroidJavaProxy { # [doc = "`.ctor(::unity2::Il2CppString)` overload"] fn ctor (self , java_interface : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < AndroidJavaProxy as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AndroidJavaProxy_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (java_interface) , :: core :: option :: Option :: None) } } # [doc = "`.ctor(crate::unity_engine::androidjavaclass::AndroidJavaClass)` overload"] fn ctor_2 (self , java_interface : impl :: core :: convert :: Into < crate :: unity_engine :: androidjavaclass :: AndroidJavaClass >) -> () { unsafe { let __receiver = < AndroidJavaProxy as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AndroidJavaProxy_unity2_raw :: ctor_2 (__receiver , :: core :: convert :: Into :: into (java_interface) , :: core :: option :: Option :: None) } } # [doc = "`Finalize()` overload"] fn finalize (self ,) -> () { unsafe { let __receiver = < AndroidJavaProxy as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AndroidJavaProxy_unity2_raw :: finalize (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Invoke(::unity2::Il2CppString, ::unity2::Array<crate::system::object::Object>)` overload"] fn invoke (self , method_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , args : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: system :: object :: Object > >) -> crate :: unity_engine :: androidjavaobject :: AndroidJavaObject { unsafe { let __receiver = < AndroidJavaProxy as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AndroidJavaProxy_unity2_raw :: invoke (__receiver , :: core :: convert :: Into :: into (method_name) , :: core :: convert :: Into :: into (args) , :: core :: option :: Option :: None) } } # [doc = "`Invoke(::unity2::Il2CppString, ::unity2::Array<crate::unity_engine::androidjavaobject::AndroidJavaObject>)` overload"] fn invoke_2 (self , method_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , java_args : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: unity_engine :: androidjavaobject :: AndroidJavaObject > >) -> crate :: unity_engine :: androidjavaobject :: AndroidJavaObject { unsafe { let __receiver = < AndroidJavaProxy as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AndroidJavaProxy_unity2_raw :: invoke_2 (__receiver , :: core :: convert :: Into :: into (method_name) , :: core :: convert :: Into :: into (java_args) , :: core :: option :: Option :: None) } } # [doc = "`GetProxyObject()` overload"] fn get_proxy_object (self ,) -> crate :: unity_engine :: androidjavaobject :: AndroidJavaObject { unsafe { let __receiver = < AndroidJavaProxy as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AndroidJavaProxy_unity2_raw :: get_proxy_object (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetRawProxy()` overload"] fn get_raw_proxy (self ,) -> :: unity2 :: IntPtr { unsafe { let __receiver = < AndroidJavaProxy as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AndroidJavaProxy_unity2_raw :: get_raw_proxy (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-androidjavaproxy")]
+impl < __T : IAndroidJavaProxy > IAndroidJavaProxyMethods for __T { }
+
+#[cfg(feature = "unity_engine-androidjavaproxy")]
+impl AndroidJavaProxy { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AndroidJavaProxy_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AndroidJavaProxy_unity2_raw :: __lookup_ctor_2 :: get_method_info () } pub fn finalize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AndroidJavaProxy_unity2_raw :: __lookup_finalize :: get_method_info () } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AndroidJavaProxy_unity2_raw :: __lookup_invoke :: get_method_info () } pub fn invoke_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AndroidJavaProxy_unity2_raw :: __lookup_invoke_2 :: get_method_info () } pub fn get_proxy_object_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AndroidJavaProxy_unity2_raw :: __lookup_get_proxy_object :: get_method_info () } pub fn get_raw_proxy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AndroidJavaProxy_unity2_raw :: __lookup_get_raw_proxy :: get_method_info () } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AndroidJavaProxy_unity2_raw :: __lookup_cctor :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-androidjavaproxy")]
 impl AndroidJavaProxy {
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __AndroidJavaProxy_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
+# [doc = "`.ctor(::unity2::Il2CppString)` — overload selector"] pub fn new (java_interface : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AndroidJavaProxy) , :: core :: stringify ! (new) ,)) ; < Self as IAndroidJavaProxyMethods > :: ctor (this , java_interface) ; this }
 
-#[cfg(feature = "unity_engine-androidjavaproxy")]
-pub trait IAndroidJavaProxyMethods: IAndroidJavaProxy {
-    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
-    fn ctor(self, java_interface: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver = <AndroidJavaProxy as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AndroidJavaProxy_unity2_raw::ctor(__receiver, ::core::convert::Into::into(java_interface), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor(crate::unity_engine::androidjavaclass::AndroidJavaClass)` overload"]
-    fn ctor_2(self, java_interface: impl ::core::convert::Into<crate::unity_engine::androidjavaclass::AndroidJavaClass>) -> () {
-        unsafe {
-            let __receiver = <AndroidJavaProxy as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AndroidJavaProxy_unity2_raw::ctor_2(__receiver, ::core::convert::Into::into(java_interface), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Finalize()` overload"]
-    fn finalize(self) -> () {
-        unsafe {
-            let __receiver = <AndroidJavaProxy as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AndroidJavaProxy_unity2_raw::finalize(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Invoke(::unity2::Il2CppString, ::unity2::Array<crate::system::object::Object>)` overload"]
-    fn invoke(
-        self,
-        method_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        args: impl ::core::convert::Into<::unity2::Array<crate::system::object::Object>>,
-    ) -> crate::unity_engine::androidjavaobject::AndroidJavaObject {
-        unsafe {
-            let __receiver = <AndroidJavaProxy as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AndroidJavaProxy_unity2_raw::invoke(
-                __receiver,
-                ::core::convert::Into::into(method_name),
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invoke(::unity2::Il2CppString, ::unity2::Array<crate::unity_engine::androidjavaobject::AndroidJavaObject>)` overload"]
-    fn invoke_2(
-        self,
-        method_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        java_args: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::androidjavaobject::AndroidJavaObject>>,
-    ) -> crate::unity_engine::androidjavaobject::AndroidJavaObject {
-        unsafe {
-            let __receiver = <AndroidJavaProxy as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AndroidJavaProxy_unity2_raw::invoke_2(
-                __receiver,
-                ::core::convert::Into::into(method_name),
-                ::core::convert::Into::into(java_args),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetProxyObject()` overload"]
-    fn get_proxy_object(self) -> crate::unity_engine::androidjavaobject::AndroidJavaObject {
-        unsafe {
-            let __receiver = <AndroidJavaProxy as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AndroidJavaProxy_unity2_raw::get_proxy_object(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetRawProxy()` overload"]
-    fn get_raw_proxy(self) -> ::unity2::IntPtr {
-        unsafe {
-            let __receiver = <AndroidJavaProxy as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AndroidJavaProxy_unity2_raw::get_raw_proxy(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-androidjavaproxy")]
-impl<__T: IAndroidJavaProxy> IAndroidJavaProxyMethods for __T {}
-
-#[cfg(feature = "unity_engine-androidjavaproxy")]
-impl AndroidJavaProxy {
-    #[doc = "`.ctor(::unity2::Il2CppString)` — overload selector"]
-    pub fn new(java_interface: ::unity2::Il2CppString) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AndroidJavaProxy),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAndroidJavaProxyMethods>::ctor(this, java_interface);
-        this
-    }
-
-    #[doc = "`.ctor(crate::unity_engine::androidjavaclass::AndroidJavaClass)` — overload selector"]
-    pub fn new_2(java_interface: crate::unity_engine::androidjavaclass::AndroidJavaClass) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AndroidJavaProxy),
-                ::core::stringify!(new_2),
-            )
-        });
-        <Self as IAndroidJavaProxyMethods>::ctor_2(this, java_interface);
-        this
-    }
+# [doc = "`.ctor(crate::unity_engine::androidjavaclass::AndroidJavaClass)` — overload selector"] pub fn new_2 (java_interface : crate :: unity_engine :: androidjavaclass :: AndroidJavaClass) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AndroidJavaProxy) , :: core :: stringify ! (new_2) ,)) ; < Self as IAndroidJavaProxyMethods > :: ctor_2 (this , java_interface) ; this }
 }
 
 #[cfg(feature = "unity_engine-androidjavaproxy")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{AndroidJavaProxy, IAndroidJavaProxy, IAndroidJavaProxyMethods};
+    pub use super::AndroidJavaProxy;
+    pub use super::IAndroidJavaProxy;
+    pub use super::IAndroidJavaProxyMethods;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

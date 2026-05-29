@@ -2,1077 +2,220 @@
 
 #[cfg(feature = "app-mappaneldangerall-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::singletonmonobehaviour_1::{ISingletonMonoBehaviour_1, SingletonMonoBehaviour_1},
-        root::mappanelbase_1::{IMapPanelBase_1, MapPanelBase_1},
-        system::{
-            object::{IObject, Object},
-            r#enum::{Enum, IEnum},
-            valuetype::{IValueType, ValueType},
-        },
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mappaneldangerall/MapPanelDangerAll_DangerType.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct MapPanelDangerAll_DangerType {
-        pub value: i32,
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: singletonmonobehaviour_1 :: { ISingletonMonoBehaviour_1 , SingletonMonoBehaviour_1 }
+ ;
+ use crate :: root :: mappanelbase_1 :: { IMapPanelBase_1 , MapPanelBase_1 }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mappaneldangerall/MapPanelDangerAll_MeshIndex.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct MapPanelDangerAll_MeshIndex  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for MapPanelDangerAll_MeshIndex  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapPanelDangerAll.MeshIndex";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    impl ::unity2::ClassIdentity for MapPanelDangerAll_DangerType {
-        const NAME: &'static str = "MapPanelDangerAll.DangerType";
-        const NAMESPACE: &'static str = "App";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  ::unity2::IlType for MapPanelDangerAll_MeshIndex  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::IlType for MapPanelDangerAll_DangerType {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  MapPanelDangerAll_MeshIndex  {
+    pub fn attack_panel() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl MapPanelDangerAll_DangerType {
-        pub fn attack() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn rod() -> Self {
-            Self { value: 1 }
-        }
+    pub fn rod_panel() -> Self {
+        Self { value: 1 }
 
-        pub fn gunner() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn num() -> Self {
-            Self { value: 3 }
-        }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mappaneldangerall/MapPanelDangerAll_MeshIndex.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct MapPanelDangerAll_MeshIndex {
-        pub value: i32,
+
+    pub fn gunner_panel() -> Self {
+        Self { value: 2 }
+
     }
 
-    impl ::unity2::ClassIdentity for MapPanelDangerAll_MeshIndex {
-        const NAME: &'static str = "MapPanelDangerAll.MeshIndex";
-        const NAMESPACE: &'static str = "App";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+    pub fn frame_panel_for_gunner() -> Self {
+        Self { value: 3 }
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
     }
 
-    impl ::unity2::IlType for MapPanelDangerAll_MeshIndex {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+
+    pub fn num() -> Self {
+        Self { value: 4 }
+
     }
 
-    impl MapPanelDangerAll_MeshIndex {
-        pub fn attack_panel() -> Self {
-            Self { value: 0 }
-        }
+}
 
-        pub fn rod_panel() -> Self {
-            Self { value: 1 }
-        }
 
-        pub fn gunner_panel() -> Self {
-            Self { value: 2 }
-        }
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mappaneldangerall/MapPanelDangerAll.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapPanelDangerAll")] # [parent (crate :: root :: mappanelbase_1 :: MapPanelBase_1 < crate :: app :: mappaneldangerall :: MapPanelDangerAll >)] pub struct MapPanelDangerAll {
+# [offset (64)] # [rename (name = "m_AttackMaterial")] pub m_attack_material : crate :: unity_engine :: material :: Material ,
+# [offset (72)] # [rename (name = "m_RodMaterial")] pub m_rod_material : crate :: unity_engine :: material :: Material ,
+# [offset (80)] # [rename (name = "m_GunnerMaterial")] pub m_gunner_material : crate :: unity_engine :: material :: Material ,
+# [offset (88)] # [rename (name = "m_FrameForGunnerMaterial")] pub m_frame_for_gunner_material : crate :: unity_engine :: material :: Material ,
+# [offset (96)] # [rename (name = "m_Mode")] pub m_mode : crate :: app :: gameconfig :: GameConfig_AllInfo ,
+# [offset (100)] # [rename (name = "m_OldMode")] pub m_old_mode : crate :: app :: gameconfig :: GameConfig_AllInfo ,
+# [offset (104)] # [rename (name = "m_IsUpdate")] pub m_is_update : bool ,
+# [offset (105)] # [rename (name = "m_IsVisible")] pub m_is_visible : bool ,
+# [offset (112)] # [rename (name = "m_Alpha")] pub m_alpha : crate :: app :: interpolatorfloat :: InterpolatorFloat ,
+# [offset (120)] # [rename (name = "m_MiniMapFillMaterials")] pub m_mini_map_fill_materials : :: unity2 :: Array < crate :: unity_engine :: material :: Material > ,
+# [offset (128)] # [rename (name = "m_MiniMapFrameMaterials")] pub m_mini_map_frame_materials : :: unity2 :: Array < crate :: unity_engine :: material :: Material > ,
+# [offset (136)] # [rename (name = "m_AttackColor")] pub m_attack_color : crate :: unity_engine :: color :: Color ,
+# [offset (152)] # [rename (name = "m_RodColor")] pub m_rod_color : crate :: unity_engine :: color :: Color ,
+# [offset (168)] # [rename (name = "m_GunnerColor")] pub m_gunner_color : crate :: unity_engine :: color :: Color ,
+}
 
-        pub fn frame_panel_for_gunner() -> Self {
-            Self { value: 3 }
-        }
 
-        pub fn num() -> Self {
-            Self { value: 4 }
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mappaneldangerall/MapPanelDangerAll_DangerType.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct MapPanelDangerAll_DangerType  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for MapPanelDangerAll_DangerType  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapPanelDangerAll.DangerType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mappaneldangerall/MapPanelDangerAll.md"))]
-    #[::unity2::class(namespace = "App", name = "MapPanelDangerAll")]
-    # [parent (crate :: root :: mappanelbase_1 :: MapPanelBase_1 < crate :: app :: mappaneldangerall :: MapPanelDangerAll >)]
-    pub struct MapPanelDangerAll {
-        #[offset(64)]
-        #[rename(name = "m_AttackMaterial")]
-        pub m_attack_material: crate::unity_engine::material::Material,
-        #[offset(72)]
-        #[rename(name = "m_RodMaterial")]
-        pub m_rod_material: crate::unity_engine::material::Material,
-        #[offset(80)]
-        #[rename(name = "m_GunnerMaterial")]
-        pub m_gunner_material: crate::unity_engine::material::Material,
-        #[offset(88)]
-        #[rename(name = "m_FrameForGunnerMaterial")]
-        pub m_frame_for_gunner_material: crate::unity_engine::material::Material,
-        #[offset(96)]
-        #[rename(name = "m_Mode")]
-        pub m_mode: crate::app::gameconfig::GameConfig_AllInfo,
-        #[offset(100)]
-        #[rename(name = "m_OldMode")]
-        pub m_old_mode: crate::app::gameconfig::GameConfig_AllInfo,
-        #[offset(104)]
-        #[rename(name = "m_IsUpdate")]
-        pub m_is_update: bool,
-        #[offset(105)]
-        #[rename(name = "m_IsVisible")]
-        pub m_is_visible: bool,
-        #[offset(112)]
-        #[rename(name = "m_Alpha")]
-        pub m_alpha: crate::app::interpolatorfloat::InterpolatorFloat,
-        #[offset(120)]
-        #[rename(name = "m_MiniMapFillMaterials")]
-        pub m_mini_map_fill_materials: ::unity2::Array<crate::unity_engine::material::Material>,
-        #[offset(128)]
-        #[rename(name = "m_MiniMapFrameMaterials")]
-        pub m_mini_map_frame_materials: ::unity2::Array<crate::unity_engine::material::Material>,
-        #[offset(136)]
-        #[rename(name = "m_AttackColor")]
-        pub m_attack_color: crate::unity_engine::color::Color,
-        #[offset(152)]
-        #[rename(name = "m_RodColor")]
-        pub m_rod_color: crate::unity_engine::color::Color,
-        #[offset(168)]
-        #[rename(name = "m_GunnerColor")]
-        pub m_gunner_color: crate::unity_engine::color::Color,
+}
+
+
+impl  ::unity2::IlType for MapPanelDangerAll_DangerType  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
+
+}
+
+
+impl  MapPanelDangerAll_DangerType  {
+    pub fn attack() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn rod() -> Self {
+        Self { value: 1 }
+
+    }
+
+
+    pub fn gunner() -> Self {
+        Self { value: 2 }
+
+    }
+
+
+    pub fn num() -> Self {
+        Self { value: 3 }
+
+    }
+
+}
+
 }
 
 #[cfg(feature = "app-mappaneldangerall-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-mappaneldangerall")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapPanelDangerAll_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_sub_mesh_count {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapPanelDangerAll as ::unity2::ClassIdentity>::class(),
-                "get_SubMeshCount",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapPanelDangerAll as ::unity2::ClassIdentity>::NAME,
-                        "get_SubMeshCount",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_sub_mesh_count(this: MapPanelDangerAll, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(MapPanelDangerAll, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_sub_mesh_count::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_start {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapPanelDangerAll as ::unity2::ClassIdentity>::class(),
-                "Start",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapPanelDangerAll as ::unity2::ClassIdentity>::NAME,
-                        "Start",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn start(this: MapPanelDangerAll, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapPanelDangerAll, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_start::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapPanelDangerAll as ::unity2::ClassIdentity>::class(),
-                "Update",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapPanelDangerAll as ::unity2::ClassIdentity>::NAME,
-                        "Update",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update(this: MapPanelDangerAll, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapPanelDangerAll, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_validate {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapPanelDangerAll as ::unity2::ClassIdentity>::class(),
-                "OnValidate",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapPanelDangerAll as ::unity2::ClassIdentity>::NAME,
-                        "OnValidate",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_validate(this: MapPanelDangerAll, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapPanelDangerAll, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_validate::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_source_materials {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapPanelDangerAll as ::unity2::ClassIdentity>::class(),
-                "GetSourceMaterials",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapPanelDangerAll as ::unity2::ClassIdentity>::NAME,
-                        "GetSourceMaterials",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_source_materials(
-        this: MapPanelDangerAll,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Array<crate::unity_engine::material::Material> {
-        let inner: extern "C" fn(MapPanelDangerAll, ::unity2::OptionalMethod) -> ::unity2::Array<crate::unity_engine::material::Material> =
-            ::core::mem::transmute(__lookup_get_source_materials::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_source_materials_for_mini_map_fill {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapPanelDangerAll as ::unity2::ClassIdentity>::class(),
-                "GetSourceMaterialsForMiniMapFill",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapPanelDangerAll as ::unity2::ClassIdentity>::NAME,
-                        "GetSourceMaterialsForMiniMapFill",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_source_materials_for_mini_map_fill(
-        this: MapPanelDangerAll,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Array<crate::unity_engine::material::Material> {
-        let inner: extern "C" fn(MapPanelDangerAll, ::unity2::OptionalMethod) -> ::unity2::Array<crate::unity_engine::material::Material> =
-            ::core::mem::transmute(__lookup_get_source_materials_for_mini_map_fill::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_source_materials_for_mini_map_frame {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapPanelDangerAll as ::unity2::ClassIdentity>::class(),
-                "GetSourceMaterialsForMiniMapFrame",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapPanelDangerAll as ::unity2::ClassIdentity>::NAME,
-                        "GetSourceMaterialsForMiniMapFrame",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_source_materials_for_mini_map_frame(
-        this: MapPanelDangerAll,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Array<crate::unity_engine::material::Material> {
-        let inner: extern "C" fn(MapPanelDangerAll, ::unity2::OptionalMethod) -> ::unity2::Array<crate::unity_engine::material::Material> =
-            ::core::mem::transmute(__lookup_get_source_materials_for_mini_map_frame::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_mode {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapPanelDangerAll as ::unity2::ClassIdentity>::class(),
-                "GetMode",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapPanelDangerAll as ::unity2::ClassIdentity>::NAME,
-                        "GetMode",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_mode(this: MapPanelDangerAll, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::gameconfig::GameConfig_AllInfo {
-        let inner: extern "C" fn(MapPanelDangerAll, ::unity2::OptionalMethod) -> crate::app::gameconfig::GameConfig_AllInfo =
-            ::core::mem::transmute(__lookup_get_mode::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_mode {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::gameconfig::GameConfig_AllInfo as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapPanelDangerAll as ::unity2::ClassIdentity>::class(),
-                "SetMode",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapPanelDangerAll as ::unity2::ClassIdentity>::NAME,
-                        "SetMode",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_mode(
-        this: MapPanelDangerAll,
-        mode: crate::app::gameconfig::GameConfig_AllInfo,
-        is_force_update: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MapPanelDangerAll, crate::app::gameconfig::GameConfig_AllInfo, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_mode::get_method_info().method_ptr);
-        inner(this, mode, is_force_update, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update_mode {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::gameconfig::GameConfig_AllInfo as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapPanelDangerAll as ::unity2::ClassIdentity>::class(),
-                "UpdateMode",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapPanelDangerAll as ::unity2::ClassIdentity>::NAME,
-                        "UpdateMode",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update_mode(
-        this: MapPanelDangerAll,
-        mode: crate::app::gameconfig::GameConfig_AllInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MapPanelDangerAll, crate::app::gameconfig::GameConfig_AllInfo, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update_mode::get_method_info().method_ptr);
-        inner(this, mode, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update_visible {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapPanelDangerAll as ::unity2::ClassIdentity>::class(),
-                "UpdateVisible",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapPanelDangerAll as ::unity2::ClassIdentity>::NAME,
-                        "UpdateVisible",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update_visible(this: MapPanelDangerAll, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapPanelDangerAll, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update_visible::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update_panel_alpha {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapPanelDangerAll as ::unity2::ClassIdentity>::class(),
-                "UpdatePanelAlpha",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapPanelDangerAll as ::unity2::ClassIdentity>::NAME,
-                        "UpdatePanelAlpha",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update_panel_alpha(this: MapPanelDangerAll, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapPanelDangerAll, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update_panel_alpha::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_panel_alpha {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapPanelDangerAll as ::unity2::ClassIdentity>::class(),
-                "SetPanelAlpha",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapPanelDangerAll as ::unity2::ClassIdentity>::NAME,
-                        "SetPanelAlpha",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_panel_alpha(this: MapPanelDangerAll, index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapPanelDangerAll, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_panel_alpha::get_method_info().method_ptr);
-        inner(this, index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update_vertex {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::gameconfig::GameConfig_AllInfo as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapPanelDangerAll as ::unity2::ClassIdentity>::class(),
-                "UpdateVertex",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapPanelDangerAll as ::unity2::ClassIdentity>::NAME,
-                        "UpdateVertex",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update_vertex(
-        this: MapPanelDangerAll,
-        mode: crate::app::gameconfig::GameConfig_AllInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MapPanelDangerAll, crate::app::gameconfig::GameConfig_AllInfo, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update_vertex::get_method_info().method_ptr);
-        inner(this, mode, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_vertex {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapPanelDangerAll as ::unity2::ClassIdentity>::class(),
-                "SetVertex",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapPanelDangerAll as ::unity2::ClassIdentity>::NAME,
-                        "SetVertex",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_vertex(this: MapPanelDangerAll, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapPanelDangerAll, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_vertex::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_mesh {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: mappaneldangerall :: MapPanelDangerAll_MeshIndex as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: color :: Color as :: unity2 :: IlType > :: il_type () , < crate :: app :: mappaneldangerall :: MapPanelDangerAll_DangerType as :: unity2 :: IlType > :: il_type () , < crate :: root :: mappanelbase_1 :: MapPanelBase_1_ImageGetFunction < crate :: app :: mappaneldangerall :: MapPanelDangerAll > as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapPanelDangerAll as ::unity2::ClassIdentity>::class(),
-                "SetMesh",
-                4,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapPanelDangerAll as ::unity2::ClassIdentity>::NAME,
-                        "SetMesh",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_mesh(
-        this: MapPanelDangerAll,
-        index: crate::app::mappaneldangerall::MapPanelDangerAll_MeshIndex,
-        color: crate::unity_engine::color::Color,
-        r#type: crate::app::mappaneldangerall::MapPanelDangerAll_DangerType,
-        func: crate::root::mappanelbase_1::MapPanelBase_1_ImageGetFunction<crate::app::mappaneldangerall::MapPanelDangerAll>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MapPanelDangerAll,
-            crate::app::mappaneldangerall::MapPanelDangerAll_MeshIndex,
-            crate::unity_engine::color::Color,
-            crate::app::mappaneldangerall::MapPanelDangerAll_DangerType,
-            crate::root::mappanelbase_1::MapPanelBase_1_ImageGetFunction<crate::app::mappaneldangerall::MapPanelDangerAll>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_set_mesh::get_method_info().method_ptr);
-        inner(this, index, color, r#type, func, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_mesh_for_gunner {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: mappaneldangerall :: MapPanelDangerAll_MeshIndex as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: color :: Color as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < crate :: root :: mappanelbase_1 :: MapPanelBase_1_ImageGetFunction < crate :: app :: mappaneldangerall :: MapPanelDangerAll > as :: unity2 :: IlType > :: il_type () , < crate :: root :: mappanelbase_1 :: MapPanelBase_1_ImageGetFunction < crate :: app :: mappaneldangerall :: MapPanelDangerAll > as :: unity2 :: IlType > :: il_type () , < crate :: root :: mappanelbase_1 :: MapPanelBase_1_ImageGetFunction < crate :: app :: mappaneldangerall :: MapPanelDangerAll > as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapPanelDangerAll as ::unity2::ClassIdentity>::class(),
-                "SetMeshForGunner",
-                6,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapPanelDangerAll as ::unity2::ClassIdentity>::NAME,
-                        "SetMeshForGunner",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_mesh_for_gunner(
-        this: MapPanelDangerAll,
-        index: crate::app::mappaneldangerall::MapPanelDangerAll_MeshIndex,
-        color: crate::unity_engine::color::Color,
-        is_image_filled: bool,
-        gunner: crate::root::mappanelbase_1::MapPanelBase_1_ImageGetFunction<crate::app::mappaneldangerall::MapPanelDangerAll>,
-        attack: crate::root::mappanelbase_1::MapPanelBase_1_ImageGetFunction<crate::app::mappaneldangerall::MapPanelDangerAll>,
-        rod: crate::root::mappanelbase_1::MapPanelBase_1_ImageGetFunction<crate::app::mappaneldangerall::MapPanelDangerAll>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MapPanelDangerAll,
-            crate::app::mappaneldangerall::MapPanelDangerAll_MeshIndex,
-            crate::unity_engine::color::Color,
-            bool,
-            crate::root::mappanelbase_1::MapPanelBase_1_ImageGetFunction<crate::app::mappaneldangerall::MapPanelDangerAll>,
-            crate::root::mappanelbase_1::MapPanelBase_1_ImageGetFunction<crate::app::mappaneldangerall::MapPanelDangerAll>,
-            crate::root::mappanelbase_1::MapPanelBase_1_ImageGetFunction<crate::app::mappaneldangerall::MapPanelDangerAll>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_set_mesh_for_gunner::get_method_info().method_ptr);
-        inner(this, index, color, is_image_filled, gunner, attack, rod, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_is_visible {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapPanelDangerAll as ::unity2::ClassIdentity>::class(),
-                "get_IsVisible",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapPanelDangerAll as ::unity2::ClassIdentity>::NAME,
-                        "get_IsVisible",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_is_visible(this: MapPanelDangerAll, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(MapPanelDangerAll, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_is_visible::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapPanelDangerAll as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapPanelDangerAll as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: MapPanelDangerAll, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapPanelDangerAll, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MapPanelDangerAll_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_sub_mesh_count { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapPanelDangerAll as :: unity2 :: ClassIdentity > :: class () , "get_SubMeshCount" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapPanelDangerAll as :: unity2 :: ClassIdentity > :: NAME , "get_SubMeshCount" , e) , } } } pub unsafe fn get_sub_mesh_count (this : MapPanelDangerAll , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (MapPanelDangerAll , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_sub_mesh_count :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_start { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapPanelDangerAll as :: unity2 :: ClassIdentity > :: class () , "Start" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapPanelDangerAll as :: unity2 :: ClassIdentity > :: NAME , "Start" , e) , } } } pub unsafe fn start (this : MapPanelDangerAll , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapPanelDangerAll , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_start :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapPanelDangerAll as :: unity2 :: ClassIdentity > :: class () , "Update" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapPanelDangerAll as :: unity2 :: ClassIdentity > :: NAME , "Update" , e) , } } } pub unsafe fn update (this : MapPanelDangerAll , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapPanelDangerAll , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_validate { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapPanelDangerAll as :: unity2 :: ClassIdentity > :: class () , "OnValidate" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapPanelDangerAll as :: unity2 :: ClassIdentity > :: NAME , "OnValidate" , e) , } } } pub unsafe fn on_validate (this : MapPanelDangerAll , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapPanelDangerAll , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_validate :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_source_materials { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapPanelDangerAll as :: unity2 :: ClassIdentity > :: class () , "GetSourceMaterials" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapPanelDangerAll as :: unity2 :: ClassIdentity > :: NAME , "GetSourceMaterials" , e) , } } } pub unsafe fn get_source_materials (this : MapPanelDangerAll , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: unity_engine :: material :: Material > { let inner : extern "C" fn (MapPanelDangerAll , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: unity_engine :: material :: Material > = :: core :: mem :: transmute (__lookup_get_source_materials :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_source_materials_for_mini_map_fill { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapPanelDangerAll as :: unity2 :: ClassIdentity > :: class () , "GetSourceMaterialsForMiniMapFill" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapPanelDangerAll as :: unity2 :: ClassIdentity > :: NAME , "GetSourceMaterialsForMiniMapFill" , e) , } } } pub unsafe fn get_source_materials_for_mini_map_fill (this : MapPanelDangerAll , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: unity_engine :: material :: Material > { let inner : extern "C" fn (MapPanelDangerAll , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: unity_engine :: material :: Material > = :: core :: mem :: transmute (__lookup_get_source_materials_for_mini_map_fill :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_source_materials_for_mini_map_frame { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapPanelDangerAll as :: unity2 :: ClassIdentity > :: class () , "GetSourceMaterialsForMiniMapFrame" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapPanelDangerAll as :: unity2 :: ClassIdentity > :: NAME , "GetSourceMaterialsForMiniMapFrame" , e) , } } } pub unsafe fn get_source_materials_for_mini_map_frame (this : MapPanelDangerAll , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: unity_engine :: material :: Material > { let inner : extern "C" fn (MapPanelDangerAll , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: unity_engine :: material :: Material > = :: core :: mem :: transmute (__lookup_get_source_materials_for_mini_map_frame :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_mode { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapPanelDangerAll as :: unity2 :: ClassIdentity > :: class () , "GetMode" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapPanelDangerAll as :: unity2 :: ClassIdentity > :: NAME , "GetMode" , e) , } } } pub unsafe fn get_mode (this : MapPanelDangerAll , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: gameconfig :: GameConfig_AllInfo { let inner : extern "C" fn (MapPanelDangerAll , :: unity2 :: OptionalMethod ,) -> crate :: app :: gameconfig :: GameConfig_AllInfo = :: core :: mem :: transmute (__lookup_get_mode :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_mode { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: gameconfig :: GameConfig_AllInfo as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapPanelDangerAll as :: unity2 :: ClassIdentity > :: class () , "SetMode" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapPanelDangerAll as :: unity2 :: ClassIdentity > :: NAME , "SetMode" , e) , } } } pub unsafe fn set_mode (this : MapPanelDangerAll , mode : crate :: app :: gameconfig :: GameConfig_AllInfo , is_force_update : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapPanelDangerAll , crate :: app :: gameconfig :: GameConfig_AllInfo , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_mode :: get_method_info () . method_ptr ,) ; inner (this , mode , is_force_update , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update_mode { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: gameconfig :: GameConfig_AllInfo as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapPanelDangerAll as :: unity2 :: ClassIdentity > :: class () , "UpdateMode" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapPanelDangerAll as :: unity2 :: ClassIdentity > :: NAME , "UpdateMode" , e) , } } } pub unsafe fn update_mode (this : MapPanelDangerAll , mode : crate :: app :: gameconfig :: GameConfig_AllInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapPanelDangerAll , crate :: app :: gameconfig :: GameConfig_AllInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update_mode :: get_method_info () . method_ptr ,) ; inner (this , mode , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update_visible { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapPanelDangerAll as :: unity2 :: ClassIdentity > :: class () , "UpdateVisible" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapPanelDangerAll as :: unity2 :: ClassIdentity > :: NAME , "UpdateVisible" , e) , } } } pub unsafe fn update_visible (this : MapPanelDangerAll , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapPanelDangerAll , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update_visible :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update_panel_alpha { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapPanelDangerAll as :: unity2 :: ClassIdentity > :: class () , "UpdatePanelAlpha" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapPanelDangerAll as :: unity2 :: ClassIdentity > :: NAME , "UpdatePanelAlpha" , e) , } } } pub unsafe fn update_panel_alpha (this : MapPanelDangerAll , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapPanelDangerAll , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update_panel_alpha :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_panel_alpha { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapPanelDangerAll as :: unity2 :: ClassIdentity > :: class () , "SetPanelAlpha" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapPanelDangerAll as :: unity2 :: ClassIdentity > :: NAME , "SetPanelAlpha" , e) , } } } pub unsafe fn set_panel_alpha (this : MapPanelDangerAll , index : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapPanelDangerAll , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_panel_alpha :: get_method_info () . method_ptr ,) ; inner (this , index , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update_vertex { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: gameconfig :: GameConfig_AllInfo as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapPanelDangerAll as :: unity2 :: ClassIdentity > :: class () , "UpdateVertex" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapPanelDangerAll as :: unity2 :: ClassIdentity > :: NAME , "UpdateVertex" , e) , } } } pub unsafe fn update_vertex (this : MapPanelDangerAll , mode : crate :: app :: gameconfig :: GameConfig_AllInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapPanelDangerAll , crate :: app :: gameconfig :: GameConfig_AllInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update_vertex :: get_method_info () . method_ptr ,) ; inner (this , mode , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_vertex { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapPanelDangerAll as :: unity2 :: ClassIdentity > :: class () , "SetVertex" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapPanelDangerAll as :: unity2 :: ClassIdentity > :: NAME , "SetVertex" , e) , } } } pub unsafe fn set_vertex (this : MapPanelDangerAll , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapPanelDangerAll , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_vertex :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_mesh { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: mappaneldangerall :: MapPanelDangerAll_MeshIndex as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: color :: Color as :: unity2 :: IlType > :: il_type () , < crate :: app :: mappaneldangerall :: MapPanelDangerAll_DangerType as :: unity2 :: IlType > :: il_type () , < crate :: root :: mappanelbase_1 :: MapPanelBase_1_ImageGetFunction < crate :: app :: mappaneldangerall :: MapPanelDangerAll > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapPanelDangerAll as :: unity2 :: ClassIdentity > :: class () , "SetMesh" , 4 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapPanelDangerAll as :: unity2 :: ClassIdentity > :: NAME , "SetMesh" , e) , } } } pub unsafe fn set_mesh (this : MapPanelDangerAll , index : crate :: app :: mappaneldangerall :: MapPanelDangerAll_MeshIndex , color : crate :: unity_engine :: color :: Color , r#type : crate :: app :: mappaneldangerall :: MapPanelDangerAll_DangerType , func : crate :: root :: mappanelbase_1 :: MapPanelBase_1_ImageGetFunction < crate :: app :: mappaneldangerall :: MapPanelDangerAll > , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapPanelDangerAll , crate :: app :: mappaneldangerall :: MapPanelDangerAll_MeshIndex , crate :: unity_engine :: color :: Color , crate :: app :: mappaneldangerall :: MapPanelDangerAll_DangerType , crate :: root :: mappanelbase_1 :: MapPanelBase_1_ImageGetFunction < crate :: app :: mappaneldangerall :: MapPanelDangerAll > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_mesh :: get_method_info () . method_ptr ,) ; inner (this , index , color , r#type , func , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_mesh_for_gunner { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: mappaneldangerall :: MapPanelDangerAll_MeshIndex as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: color :: Color as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < crate :: root :: mappanelbase_1 :: MapPanelBase_1_ImageGetFunction < crate :: app :: mappaneldangerall :: MapPanelDangerAll > as :: unity2 :: IlType > :: il_type () , < crate :: root :: mappanelbase_1 :: MapPanelBase_1_ImageGetFunction < crate :: app :: mappaneldangerall :: MapPanelDangerAll > as :: unity2 :: IlType > :: il_type () , < crate :: root :: mappanelbase_1 :: MapPanelBase_1_ImageGetFunction < crate :: app :: mappaneldangerall :: MapPanelDangerAll > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapPanelDangerAll as :: unity2 :: ClassIdentity > :: class () , "SetMeshForGunner" , 6 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapPanelDangerAll as :: unity2 :: ClassIdentity > :: NAME , "SetMeshForGunner" , e) , } } } pub unsafe fn set_mesh_for_gunner (this : MapPanelDangerAll , index : crate :: app :: mappaneldangerall :: MapPanelDangerAll_MeshIndex , color : crate :: unity_engine :: color :: Color , is_image_filled : bool , gunner : crate :: root :: mappanelbase_1 :: MapPanelBase_1_ImageGetFunction < crate :: app :: mappaneldangerall :: MapPanelDangerAll > , attack : crate :: root :: mappanelbase_1 :: MapPanelBase_1_ImageGetFunction < crate :: app :: mappaneldangerall :: MapPanelDangerAll > , rod : crate :: root :: mappanelbase_1 :: MapPanelBase_1_ImageGetFunction < crate :: app :: mappaneldangerall :: MapPanelDangerAll > , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapPanelDangerAll , crate :: app :: mappaneldangerall :: MapPanelDangerAll_MeshIndex , crate :: unity_engine :: color :: Color , bool , crate :: root :: mappanelbase_1 :: MapPanelBase_1_ImageGetFunction < crate :: app :: mappaneldangerall :: MapPanelDangerAll > , crate :: root :: mappanelbase_1 :: MapPanelBase_1_ImageGetFunction < crate :: app :: mappaneldangerall :: MapPanelDangerAll > , crate :: root :: mappanelbase_1 :: MapPanelBase_1_ImageGetFunction < crate :: app :: mappaneldangerall :: MapPanelDangerAll > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_mesh_for_gunner :: get_method_info () . method_ptr ,) ; inner (this , index , color , is_image_filled , gunner , attack , rod , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_is_visible { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapPanelDangerAll as :: unity2 :: ClassIdentity > :: class () , "get_IsVisible" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapPanelDangerAll as :: unity2 :: ClassIdentity > :: NAME , "get_IsVisible" , e) , } } } pub unsafe fn get_is_visible (this : MapPanelDangerAll , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (MapPanelDangerAll , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_is_visible :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapPanelDangerAll as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapPanelDangerAll as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : MapPanelDangerAll , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapPanelDangerAll , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-mappaneldangerall")]
-pub trait IMapPanelDangerAllMethods: IMapPanelDangerAll {
-    #[doc = "`get_SubMeshCount()` overload"]
-    fn get_sub_mesh_count(self) -> i32 {
-        unsafe {
-            let __receiver = <MapPanelDangerAll as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapPanelDangerAll_unity2_raw::get_sub_mesh_count(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Start()` overload"]
-    fn start(self) -> () {
-        unsafe {
-            let __receiver = <MapPanelDangerAll as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapPanelDangerAll_unity2_raw::start(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Update()` overload"]
-    fn update(self) -> () {
-        unsafe {
-            let __receiver = <MapPanelDangerAll as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapPanelDangerAll_unity2_raw::update(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnValidate()` overload"]
-    fn on_validate(self) -> () {
-        unsafe {
-            let __receiver = <MapPanelDangerAll as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapPanelDangerAll_unity2_raw::on_validate(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetSourceMaterials()` overload"]
-    fn get_source_materials(self) -> ::unity2::Array<crate::unity_engine::material::Material> {
-        unsafe {
-            let __receiver = <MapPanelDangerAll as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapPanelDangerAll_unity2_raw::get_source_materials(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetSourceMaterialsForMiniMapFill()` overload"]
-    fn get_source_materials_for_mini_map_fill(self) -> ::unity2::Array<crate::unity_engine::material::Material> {
-        unsafe {
-            let __receiver = <MapPanelDangerAll as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapPanelDangerAll_unity2_raw::get_source_materials_for_mini_map_fill(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetSourceMaterialsForMiniMapFrame()` overload"]
-    fn get_source_materials_for_mini_map_frame(self) -> ::unity2::Array<crate::unity_engine::material::Material> {
-        unsafe {
-            let __receiver = <MapPanelDangerAll as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapPanelDangerAll_unity2_raw::get_source_materials_for_mini_map_frame(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetMode()` overload"]
-    fn get_mode(self) -> crate::app::gameconfig::GameConfig_AllInfo {
-        unsafe {
-            let __receiver = <MapPanelDangerAll as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapPanelDangerAll_unity2_raw::get_mode(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetMode(crate::app::gameconfig::GameConfig_AllInfo, bool)` overload"]
-    fn set_mode(
-        self,
-        mode: impl ::core::convert::Into<crate::app::gameconfig::GameConfig_AllInfo>,
-        is_force_update: impl ::core::convert::Into<bool>,
-    ) -> () {
-        unsafe {
-            let __receiver = <MapPanelDangerAll as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapPanelDangerAll_unity2_raw::set_mode(
-                __receiver,
-                ::core::convert::Into::into(mode),
-                ::core::convert::Into::into(is_force_update),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`UpdateMode(crate::app::gameconfig::GameConfig_AllInfo)` overload"]
-    fn update_mode(self, mode: impl ::core::convert::Into<crate::app::gameconfig::GameConfig_AllInfo>) -> () {
-        unsafe {
-            let __receiver = <MapPanelDangerAll as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapPanelDangerAll_unity2_raw::update_mode(__receiver, ::core::convert::Into::into(mode), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`UpdateVisible()` overload"]
-    fn update_visible(self) -> () {
-        unsafe {
-            let __receiver = <MapPanelDangerAll as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapPanelDangerAll_unity2_raw::update_visible(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`UpdatePanelAlpha()` overload"]
-    fn update_panel_alpha(self) -> () {
-        unsafe {
-            let __receiver = <MapPanelDangerAll as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapPanelDangerAll_unity2_raw::update_panel_alpha(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetPanelAlpha(i32)` overload"]
-    fn set_panel_alpha(self, index: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver = <MapPanelDangerAll as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapPanelDangerAll_unity2_raw::set_panel_alpha(__receiver, ::core::convert::Into::into(index), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`UpdateVertex(crate::app::gameconfig::GameConfig_AllInfo)` overload"]
-    fn update_vertex(self, mode: impl ::core::convert::Into<crate::app::gameconfig::GameConfig_AllInfo>) -> () {
-        unsafe {
-            let __receiver = <MapPanelDangerAll as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapPanelDangerAll_unity2_raw::update_vertex(__receiver, ::core::convert::Into::into(mode), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetVertex()` overload"]
-    fn set_vertex(self) -> () {
-        unsafe {
-            let __receiver = <MapPanelDangerAll as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapPanelDangerAll_unity2_raw::set_vertex(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetMesh(crate::app::mappaneldangerall::MapPanelDangerAll_MeshIndex, crate::unity_engine::color::Color, crate::app::mappaneldangerall::MapPanelDangerAll_DangerType, crate::root::mappanelbase_1::MapPanelBase_1_ImageGetFunction<crate::app::mappaneldangerall::MapPanelDangerAll>)` overload"]
-    fn set_mesh(
-        self,
-        index: impl ::core::convert::Into<crate::app::mappaneldangerall::MapPanelDangerAll_MeshIndex>,
-        color: impl ::core::convert::Into<crate::unity_engine::color::Color>,
-        r#type: impl ::core::convert::Into<crate::app::mappaneldangerall::MapPanelDangerAll_DangerType>,
-        func: impl ::core::convert::Into<crate::root::mappanelbase_1::MapPanelBase_1_ImageGetFunction<crate::app::mappaneldangerall::MapPanelDangerAll>>,
-    ) -> () {
-        unsafe {
-            let __receiver = <MapPanelDangerAll as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapPanelDangerAll_unity2_raw::set_mesh(
-                __receiver,
-                ::core::convert::Into::into(index),
-                ::core::convert::Into::into(color),
-                ::core::convert::Into::into(r#type),
-                ::core::convert::Into::into(func),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetMeshForGunner(crate::app::mappaneldangerall::MapPanelDangerAll_MeshIndex, crate::unity_engine::color::Color, bool, crate::root::mappanelbase_1::MapPanelBase_1_ImageGetFunction<crate::app::mappaneldangerall::MapPanelDangerAll>, crate::root::mappanelbase_1::MapPanelBase_1_ImageGetFunction<crate::app::mappaneldangerall::MapPanelDangerAll>, crate::root::mappanelbase_1::MapPanelBase_1_ImageGetFunction<crate::app::mappaneldangerall::MapPanelDangerAll>)` overload"]
-    fn set_mesh_for_gunner(
-        self,
-        index: impl ::core::convert::Into<crate::app::mappaneldangerall::MapPanelDangerAll_MeshIndex>,
-        color: impl ::core::convert::Into<crate::unity_engine::color::Color>,
-        is_image_filled: impl ::core::convert::Into<bool>,
-        gunner: impl ::core::convert::Into<crate::root::mappanelbase_1::MapPanelBase_1_ImageGetFunction<crate::app::mappaneldangerall::MapPanelDangerAll>>,
-        attack: impl ::core::convert::Into<crate::root::mappanelbase_1::MapPanelBase_1_ImageGetFunction<crate::app::mappaneldangerall::MapPanelDangerAll>>,
-        rod: impl ::core::convert::Into<crate::root::mappanelbase_1::MapPanelBase_1_ImageGetFunction<crate::app::mappaneldangerall::MapPanelDangerAll>>,
-    ) -> () {
-        unsafe {
-            let __receiver = <MapPanelDangerAll as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapPanelDangerAll_unity2_raw::set_mesh_for_gunner(
-                __receiver,
-                ::core::convert::Into::into(index),
-                ::core::convert::Into::into(color),
-                ::core::convert::Into::into(is_image_filled),
-                ::core::convert::Into::into(gunner),
-                ::core::convert::Into::into(attack),
-                ::core::convert::Into::into(rod),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_IsVisible()` overload"]
-    fn get_is_visible(self) -> bool {
-        unsafe {
-            let __receiver = <MapPanelDangerAll as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapPanelDangerAll_unity2_raw::get_is_visible(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <MapPanelDangerAll as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapPanelDangerAll_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IMapPanelDangerAllMethods : IMapPanelDangerAll { # [doc = "`get_SubMeshCount()` overload"] fn get_sub_mesh_count (self ,) -> i32 { unsafe { let __receiver = < MapPanelDangerAll as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapPanelDangerAll_unity2_raw :: get_sub_mesh_count (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < MapPanelDangerAll as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapPanelDangerAll_unity2_raw :: start (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < MapPanelDangerAll as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapPanelDangerAll_unity2_raw :: update (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnValidate()` overload"] fn on_validate (self ,) -> () { unsafe { let __receiver = < MapPanelDangerAll as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapPanelDangerAll_unity2_raw :: on_validate (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetSourceMaterials()` overload"] fn get_source_materials (self ,) -> :: unity2 :: Array < crate :: unity_engine :: material :: Material > { unsafe { let __receiver = < MapPanelDangerAll as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapPanelDangerAll_unity2_raw :: get_source_materials (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetSourceMaterialsForMiniMapFill()` overload"] fn get_source_materials_for_mini_map_fill (self ,) -> :: unity2 :: Array < crate :: unity_engine :: material :: Material > { unsafe { let __receiver = < MapPanelDangerAll as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapPanelDangerAll_unity2_raw :: get_source_materials_for_mini_map_fill (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetSourceMaterialsForMiniMapFrame()` overload"] fn get_source_materials_for_mini_map_frame (self ,) -> :: unity2 :: Array < crate :: unity_engine :: material :: Material > { unsafe { let __receiver = < MapPanelDangerAll as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapPanelDangerAll_unity2_raw :: get_source_materials_for_mini_map_frame (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetMode()` overload"] fn get_mode (self ,) -> crate :: app :: gameconfig :: GameConfig_AllInfo { unsafe { let __receiver = < MapPanelDangerAll as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapPanelDangerAll_unity2_raw :: get_mode (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetMode(crate::app::gameconfig::GameConfig_AllInfo, bool)` overload"] fn set_mode (self , mode : impl :: core :: convert :: Into < crate :: app :: gameconfig :: GameConfig_AllInfo > , is_force_update : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < MapPanelDangerAll as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapPanelDangerAll_unity2_raw :: set_mode (__receiver , :: core :: convert :: Into :: into (mode) , :: core :: convert :: Into :: into (is_force_update) , :: core :: option :: Option :: None) } } # [doc = "`UpdateMode(crate::app::gameconfig::GameConfig_AllInfo)` overload"] fn update_mode (self , mode : impl :: core :: convert :: Into < crate :: app :: gameconfig :: GameConfig_AllInfo >) -> () { unsafe { let __receiver = < MapPanelDangerAll as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapPanelDangerAll_unity2_raw :: update_mode (__receiver , :: core :: convert :: Into :: into (mode) , :: core :: option :: Option :: None) } } # [doc = "`UpdateVisible()` overload"] fn update_visible (self ,) -> () { unsafe { let __receiver = < MapPanelDangerAll as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapPanelDangerAll_unity2_raw :: update_visible (__receiver , :: core :: option :: Option :: None) } } # [doc = "`UpdatePanelAlpha()` overload"] fn update_panel_alpha (self ,) -> () { unsafe { let __receiver = < MapPanelDangerAll as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapPanelDangerAll_unity2_raw :: update_panel_alpha (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetPanelAlpha(i32)` overload"] fn set_panel_alpha (self , index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapPanelDangerAll as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapPanelDangerAll_unity2_raw :: set_panel_alpha (__receiver , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } # [doc = "`UpdateVertex(crate::app::gameconfig::GameConfig_AllInfo)` overload"] fn update_vertex (self , mode : impl :: core :: convert :: Into < crate :: app :: gameconfig :: GameConfig_AllInfo >) -> () { unsafe { let __receiver = < MapPanelDangerAll as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapPanelDangerAll_unity2_raw :: update_vertex (__receiver , :: core :: convert :: Into :: into (mode) , :: core :: option :: Option :: None) } } # [doc = "`SetVertex()` overload"] fn set_vertex (self ,) -> () { unsafe { let __receiver = < MapPanelDangerAll as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapPanelDangerAll_unity2_raw :: set_vertex (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetMesh(crate::app::mappaneldangerall::MapPanelDangerAll_MeshIndex, crate::unity_engine::color::Color, crate::app::mappaneldangerall::MapPanelDangerAll_DangerType, crate::root::mappanelbase_1::MapPanelBase_1_ImageGetFunction<crate::app::mappaneldangerall::MapPanelDangerAll>)` overload"] fn set_mesh (self , index : impl :: core :: convert :: Into < crate :: app :: mappaneldangerall :: MapPanelDangerAll_MeshIndex > , color : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color > , r#type : impl :: core :: convert :: Into < crate :: app :: mappaneldangerall :: MapPanelDangerAll_DangerType > , func : impl :: core :: convert :: Into < crate :: root :: mappanelbase_1 :: MapPanelBase_1_ImageGetFunction < crate :: app :: mappaneldangerall :: MapPanelDangerAll > >) -> () { unsafe { let __receiver = < MapPanelDangerAll as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapPanelDangerAll_unity2_raw :: set_mesh (__receiver , :: core :: convert :: Into :: into (index) , :: core :: convert :: Into :: into (color) , :: core :: convert :: Into :: into (r#type) , :: core :: convert :: Into :: into (func) , :: core :: option :: Option :: None) } } # [doc = "`SetMeshForGunner(crate::app::mappaneldangerall::MapPanelDangerAll_MeshIndex, crate::unity_engine::color::Color, bool, crate::root::mappanelbase_1::MapPanelBase_1_ImageGetFunction<crate::app::mappaneldangerall::MapPanelDangerAll>, crate::root::mappanelbase_1::MapPanelBase_1_ImageGetFunction<crate::app::mappaneldangerall::MapPanelDangerAll>, crate::root::mappanelbase_1::MapPanelBase_1_ImageGetFunction<crate::app::mappaneldangerall::MapPanelDangerAll>)` overload"] fn set_mesh_for_gunner (self , index : impl :: core :: convert :: Into < crate :: app :: mappaneldangerall :: MapPanelDangerAll_MeshIndex > , color : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color > , is_image_filled : impl :: core :: convert :: Into < bool > , gunner : impl :: core :: convert :: Into < crate :: root :: mappanelbase_1 :: MapPanelBase_1_ImageGetFunction < crate :: app :: mappaneldangerall :: MapPanelDangerAll > > , attack : impl :: core :: convert :: Into < crate :: root :: mappanelbase_1 :: MapPanelBase_1_ImageGetFunction < crate :: app :: mappaneldangerall :: MapPanelDangerAll > > , rod : impl :: core :: convert :: Into < crate :: root :: mappanelbase_1 :: MapPanelBase_1_ImageGetFunction < crate :: app :: mappaneldangerall :: MapPanelDangerAll > >) -> () { unsafe { let __receiver = < MapPanelDangerAll as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapPanelDangerAll_unity2_raw :: set_mesh_for_gunner (__receiver , :: core :: convert :: Into :: into (index) , :: core :: convert :: Into :: into (color) , :: core :: convert :: Into :: into (is_image_filled) , :: core :: convert :: Into :: into (gunner) , :: core :: convert :: Into :: into (attack) , :: core :: convert :: Into :: into (rod) , :: core :: option :: Option :: None) } } # [doc = "`get_IsVisible()` overload"] fn get_is_visible (self ,) -> bool { unsafe { let __receiver = < MapPanelDangerAll as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapPanelDangerAll_unity2_raw :: get_is_visible (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapPanelDangerAll as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapPanelDangerAll_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-mappaneldangerall")]
-impl<__T: IMapPanelDangerAll> IMapPanelDangerAllMethods for __T {}
+impl < __T : IMapPanelDangerAll > IMapPanelDangerAllMethods for __T { }
+
+#[cfg(feature = "app-mappaneldangerall")]
+impl MapPanelDangerAll { pub fn get_sub_mesh_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapPanelDangerAll_unity2_raw :: __lookup_get_sub_mesh_count :: get_method_info () } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapPanelDangerAll_unity2_raw :: __lookup_start :: get_method_info () } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapPanelDangerAll_unity2_raw :: __lookup_update :: get_method_info () } pub fn on_validate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapPanelDangerAll_unity2_raw :: __lookup_on_validate :: get_method_info () } pub fn get_source_materials_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapPanelDangerAll_unity2_raw :: __lookup_get_source_materials :: get_method_info () } pub fn get_source_materials_for_mini_map_fill_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapPanelDangerAll_unity2_raw :: __lookup_get_source_materials_for_mini_map_fill :: get_method_info () } pub fn get_source_materials_for_mini_map_frame_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapPanelDangerAll_unity2_raw :: __lookup_get_source_materials_for_mini_map_frame :: get_method_info () } pub fn get_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapPanelDangerAll_unity2_raw :: __lookup_get_mode :: get_method_info () } pub fn set_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapPanelDangerAll_unity2_raw :: __lookup_set_mode :: get_method_info () } pub fn update_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapPanelDangerAll_unity2_raw :: __lookup_update_mode :: get_method_info () } pub fn update_visible_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapPanelDangerAll_unity2_raw :: __lookup_update_visible :: get_method_info () } pub fn update_panel_alpha_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapPanelDangerAll_unity2_raw :: __lookup_update_panel_alpha :: get_method_info () } pub fn set_panel_alpha_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapPanelDangerAll_unity2_raw :: __lookup_set_panel_alpha :: get_method_info () } pub fn update_vertex_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapPanelDangerAll_unity2_raw :: __lookup_update_vertex :: get_method_info () } pub fn set_vertex_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapPanelDangerAll_unity2_raw :: __lookup_set_vertex :: get_method_info () } pub fn set_mesh_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapPanelDangerAll_unity2_raw :: __lookup_set_mesh :: get_method_info () } pub fn set_mesh_for_gunner_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapPanelDangerAll_unity2_raw :: __lookup_set_mesh_for_gunner :: get_method_info () } pub fn get_is_visible_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapPanelDangerAll_unity2_raw :: __lookup_get_is_visible :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapPanelDangerAll_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-mappaneldangerall")]
 impl MapPanelDangerAll {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapPanelDangerAll),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapPanelDangerAllMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapPanelDangerAll) , :: core :: stringify ! (new) ,)) ; < Self as IMapPanelDangerAllMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-mappaneldangerall")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IMapPanelDangerAll, IMapPanelDangerAllMethods, MapPanelDangerAll, MapPanelDangerAll_DangerType, MapPanelDangerAll_MeshIndex};
-    #[cfg(feature = "app-singletonmonobehaviour_1")]
-    pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1Methods;
-    #[cfg(feature = "root-mappanelbase_1")]
-    pub use crate::root::mappanelbase_1::IMapPanelBase_1Methods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1,
-        root::mappanelbase_1::IMapPanelBase_1,
-        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::MapPanelDangerAll_MeshIndex;
+    pub use super::MapPanelDangerAll;
+    pub use super::IMapPanelDangerAll;
+    pub use super::IMapPanelDangerAllMethods;
+    pub use super::MapPanelDangerAll_DangerType;
+    pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1;
+    pub use crate::root::mappanelbase_1::IMapPanelBase_1;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "app-singletonmonobehaviour_1")] pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1Methods;
+    #[cfg(feature = "root-mappanelbase_1")] pub use crate::root::mappanelbase_1::IMapPanelBase_1Methods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

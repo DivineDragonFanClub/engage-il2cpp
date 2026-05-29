@@ -2,114 +2,34 @@
 
 #[cfg(feature = "unity_engine-ui-ilayoutcontroller-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/ilayoutcontroller/ILayoutController.md"))]
-    #[::unity2::class(namespace = "UnityEngine.UI", name = "ILayoutController")]
-    pub struct ILayoutController {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/ilayoutcontroller/ILayoutController.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "ILayoutController")] pub struct ILayoutController {}
+
 }
 
 #[cfg(feature = "unity_engine-ui-ilayoutcontroller-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-ui-ilayoutcontroller")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ILayoutController_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_layout_horizontal {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ILayoutController as ::unity2::ClassIdentity>::class(),
-                "SetLayoutHorizontal",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ILayoutController as ::unity2::ClassIdentity>::NAME,
-                        "SetLayoutHorizontal",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_layout_horizontal(this: ILayoutController, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ILayoutController, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_layout_horizontal::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_layout_vertical {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ILayoutController as ::unity2::ClassIdentity>::class(),
-                "SetLayoutVertical",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ILayoutController as ::unity2::ClassIdentity>::NAME,
-                        "SetLayoutVertical",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_layout_vertical(this: ILayoutController, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ILayoutController, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_layout_vertical::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ILayoutController_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_layout_horizontal { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ILayoutController as :: unity2 :: ClassIdentity > :: class () , "SetLayoutHorizontal" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ILayoutController as :: unity2 :: ClassIdentity > :: NAME , "SetLayoutHorizontal" , e) , } } } pub unsafe fn set_layout_horizontal (this : ILayoutController , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ILayoutController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_layout_horizontal :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_layout_vertical { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ILayoutController as :: unity2 :: ClassIdentity > :: class () , "SetLayoutVertical" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ILayoutController as :: unity2 :: ClassIdentity > :: NAME , "SetLayoutVertical" , e) , } } } pub unsafe fn set_layout_vertical (this : ILayoutController , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ILayoutController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_layout_vertical :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-ui-ilayoutcontroller")]
-pub trait IILayoutControllerMethods: IILayoutController {
-    #[doc = "`SetLayoutHorizontal()` overload"]
-    fn set_layout_horizontal(self) -> () {
-        unsafe {
-            let __receiver = <ILayoutController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ILayoutController_unity2_raw::set_layout_horizontal(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetLayoutVertical()` overload"]
-    fn set_layout_vertical(self) -> () {
-        unsafe {
-            let __receiver = <ILayoutController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ILayoutController_unity2_raw::set_layout_vertical(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IILayoutControllerMethods : IILayoutController { # [doc = "`SetLayoutHorizontal()` overload"] fn set_layout_horizontal (self ,) -> () { unsafe { let __receiver = < ILayoutController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ILayoutController_unity2_raw :: set_layout_horizontal (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetLayoutVertical()` overload"] fn set_layout_vertical (self ,) -> () { unsafe { let __receiver = < ILayoutController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ILayoutController_unity2_raw :: set_layout_vertical (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-ui-ilayoutcontroller")]
-impl<__T: IILayoutController> IILayoutControllerMethods for __T {}
+impl < __T : IILayoutController > IILayoutControllerMethods for __T { }
+
+#[cfg(feature = "unity_engine-ui-ilayoutcontroller")]
+impl ILayoutController { pub fn set_layout_horizontal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ILayoutController_unity2_raw :: __lookup_set_layout_horizontal :: get_method_info () } pub fn set_layout_vertical_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ILayoutController_unity2_raw :: __lookup_set_layout_vertical :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-ui-ilayoutcontroller")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IILayoutController, IILayoutControllerMethods, ILayoutController};
+    pub use super::ILayoutController;
+    pub use super::IILayoutController;
+    pub use super::IILayoutControllerMethods;
 }

@@ -2,520 +2,81 @@
 
 #[cfg(feature = "combat-autocamerabase-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        combat::basecameracontroller::{BaseCameraController, IBaseCameraController},
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/autocamerabase/AutoCameraBase.md"))]
-    #[::unity2::class(namespace = "Combat", name = "AutoCameraBase")]
-    #[parent(crate::combat::basecameracontroller::BaseCameraController)]
-    pub struct AutoCameraBase {
-        #[static_field]
-        #[rename(name = "MinLongitude")]
-        pub min_longitude: f32,
-        #[static_field]
-        #[rename(name = "MaxLongitude")]
-        pub max_longitude: f32,
-        #[static_field]
-        #[rename(name = "MinLatitude")]
-        pub min_latitude: f32,
-        #[static_field]
-        #[rename(name = "MaxLatitude")]
-        pub max_latitude: f32,
-        #[static_field]
-        #[rename(name = "HalfLatitude")]
-        pub half_latitude: f32,
-        #[offset(168)]
-        #[rename(name = "m_Longitude")]
-        pub m_longitude: f32,
-        #[offset(172)]
-        #[rename(name = "m_Latitude")]
-        pub m_latitude: f32,
-        #[offset(176)]
-        #[rename(name = "m_MinDistance")]
-        pub m_min_distance: f32,
-        #[offset(180)]
-        #[rename(name = "m_FocusSide")]
-        pub m_focus_side: f32,
-        #[offset(184)]
-        #[rename(name = "m_LastViewDir")]
-        pub m_last_view_dir: crate::unity_engine::vector3::Vector3,
-        #[offset(196)]
-        #[rename(name = "m_FOV")]
-        pub m_fov: f32,
-        #[offset(200)]
-        #[rename(name = "m_CameraLookUp")]
-        pub m_camera_look_up: crate::unity_engine::vector3::Vector3,
-        #[static_field]
-        #[rename(name = "HalfDegree")]
-        pub half_degree: f32,
-        #[offset(212)]
-        #[rename(name = "HalfDegreeDot")]
-        pub half_degree_dot: f32,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: combat :: basecameracontroller :: { BaseCameraController , IBaseCameraController }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/autocamerabase/AutoCameraBase.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "AutoCameraBase")] # [parent (crate :: combat :: basecameracontroller :: BaseCameraController)] pub struct AutoCameraBase {
+# [static_field] # [rename (name = "MinLongitude")] pub min_longitude : f32 ,
+# [static_field] # [rename (name = "MaxLongitude")] pub max_longitude : f32 ,
+# [static_field] # [rename (name = "MinLatitude")] pub min_latitude : f32 ,
+# [static_field] # [rename (name = "MaxLatitude")] pub max_latitude : f32 ,
+# [static_field] # [rename (name = "HalfLatitude")] pub half_latitude : f32 ,
+# [offset (168)] # [rename (name = "m_Longitude")] pub m_longitude : f32 ,
+# [offset (172)] # [rename (name = "m_Latitude")] pub m_latitude : f32 ,
+# [offset (176)] # [rename (name = "m_MinDistance")] pub m_min_distance : f32 ,
+# [offset (180)] # [rename (name = "m_FocusSide")] pub m_focus_side : f32 ,
+# [offset (184)] # [rename (name = "m_LastViewDir")] pub m_last_view_dir : crate :: unity_engine :: vector3 :: Vector3 ,
+# [offset (196)] # [rename (name = "m_FOV")] pub m_fov : f32 ,
+# [offset (200)] # [rename (name = "m_CameraLookUp")] pub m_camera_look_up : crate :: unity_engine :: vector3 :: Vector3 ,
+# [static_field] # [rename (name = "HalfDegree")] pub half_degree : f32 ,
+# [offset (212)] # [rename (name = "HalfDegreeDot")] pub half_degree_dot : f32 ,
+}
+
 }
 
 #[cfg(feature = "combat-autocamerabase-types")]
 pub use __types::*;
 
 #[cfg(feature = "combat-autocamerabase")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AutoCameraBase_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_tick {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<AutoCameraBase as ::unity2::ClassIdentity>::class(), "Tick", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AutoCameraBase as ::unity2::ClassIdentity>::NAME,
-                        "Tick",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn tick(this: AutoCameraBase, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AutoCameraBase, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_tick::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_check_usable {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AutoCameraBase as ::unity2::ClassIdentity>::class(),
-                "CheckUsable",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AutoCameraBase as ::unity2::ClassIdentity>::NAME,
-                        "CheckUsable",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn check_usable(this: AutoCameraBase, is_routine: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AutoCameraBase, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_check_usable::get_method_info().method_ptr);
-        inner(this, is_routine, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_similar_angle {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AutoCameraBase as ::unity2::ClassIdentity>::class(),
-                "IsSimilarAngle",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AutoCameraBase as ::unity2::ClassIdentity>::NAME,
-                        "IsSimilarAngle",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_similar_angle(
-        this: AutoCameraBase,
-        a: crate::unity_engine::vector3::Vector3,
-        b: crate::unity_engine::vector3::Vector3,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            AutoCameraBase,
-            crate::unity_engine::vector3::Vector3,
-            crate::unity_engine::vector3::Vector3,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(__lookup_is_similar_angle::get_method_info().method_ptr);
-        inner(this, a, b, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_fit_distance {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type(), <f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AutoCameraBase as ::unity2::ClassIdentity>::class(),
-                "CalcFitDistance",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AutoCameraBase as ::unity2::ClassIdentity>::NAME,
-                        "CalcFitDistance",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn calc_fit_distance(xdist: f32, fov_y_deg: f32, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(f32, f32, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_calc_fit_distance::get_method_info().method_ptr);
-        inner(xdist, fov_y_deg, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_reprojection {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::camera::Camera as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AutoCameraBase as ::unity2::ClassIdentity>::class(),
-                "Reprojection",
-                4,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AutoCameraBase as ::unity2::ClassIdentity>::NAME,
-                        "Reprojection",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn reprojection(
-        cam: crate::unity_engine::camera::Camera,
-        a: crate::unity_engine::vector3::Vector3,
-        b: crate::unity_engine::vector3::Vector3,
-        t: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::vector3::Vector3 {
-        let inner: extern "C" fn(
-            crate::unity_engine::camera::Camera,
-            crate::unity_engine::vector3::Vector3,
-            crate::unity_engine::vector3::Vector3,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(__lookup_reprojection::get_method_info().method_ptr);
-        inner(cam, a, b, t, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_reprojection_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AutoCameraBase as ::unity2::ClassIdentity>::class(),
-                "Reprojection",
-                4,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AutoCameraBase as ::unity2::ClassIdentity>::NAME,
-                        "Reprojection",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn reprojection_2(
-        mvp: *mut crate::unity_engine::matrix4x4::Matrix4x4,
-        a: crate::unity_engine::vector3::Vector3,
-        b: crate::unity_engine::vector3::Vector3,
-        t: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::vector3::Vector3 {
-        let inner: extern "C" fn(
-            *mut crate::unity_engine::matrix4x4::Matrix4x4,
-            crate::unity_engine::vector3::Vector3,
-            crate::unity_engine::vector3::Vector3,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(__lookup_reprojection_2::get_method_info().method_ptr);
-        inner(mvp, a, b, t, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_camera_targets {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AutoCameraBase as ::unity2::ClassIdentity>::class(),
-                "GetCameraTargets",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AutoCameraBase as ::unity2::ClassIdentity>::NAME,
-                        "GetCameraTargets",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_camera_targets(this: AutoCameraBase, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Array<i32> {
-        let inner: extern "C" fn(AutoCameraBase, ::unity2::OptionalMethod) -> ::unity2::Array<i32> =
-            ::core::mem::transmute(__lookup_get_camera_targets::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AutoCameraBase as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AutoCameraBase as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: AutoCameraBase, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AutoCameraBase, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __AutoCameraBase_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_tick { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AutoCameraBase as :: unity2 :: ClassIdentity > :: class () , "Tick" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AutoCameraBase as :: unity2 :: ClassIdentity > :: NAME , "Tick" , e) , } } } pub unsafe fn tick (this : AutoCameraBase , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AutoCameraBase , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_tick :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_check_usable { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AutoCameraBase as :: unity2 :: ClassIdentity > :: class () , "CheckUsable" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AutoCameraBase as :: unity2 :: ClassIdentity > :: NAME , "CheckUsable" , e) , } } } pub unsafe fn check_usable (this : AutoCameraBase , is_routine : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AutoCameraBase , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_check_usable :: get_method_info () . method_ptr ,) ; inner (this , is_routine , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_similar_angle { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AutoCameraBase as :: unity2 :: ClassIdentity > :: class () , "IsSimilarAngle" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AutoCameraBase as :: unity2 :: ClassIdentity > :: NAME , "IsSimilarAngle" , e) , } } } pub unsafe fn is_similar_angle (this : AutoCameraBase , a : crate :: unity_engine :: vector3 :: Vector3 , b : crate :: unity_engine :: vector3 :: Vector3 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (AutoCameraBase , crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_similar_angle :: get_method_info () . method_ptr ,) ; inner (this , a , b , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_calc_fit_distance { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< f32 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AutoCameraBase as :: unity2 :: ClassIdentity > :: class () , "CalcFitDistance" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AutoCameraBase as :: unity2 :: ClassIdentity > :: NAME , "CalcFitDistance" , e) , } } } pub unsafe fn calc_fit_distance (xdist : f32 , fov_y_deg : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (f32 , f32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_calc_fit_distance :: get_method_info () . method_ptr ,) ; inner (xdist , fov_y_deg , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_reprojection { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: camera :: Camera as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AutoCameraBase as :: unity2 :: ClassIdentity > :: class () , "Reprojection" , 4 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AutoCameraBase as :: unity2 :: ClassIdentity > :: NAME , "Reprojection" , e) , } } } pub unsafe fn reprojection (cam : crate :: unity_engine :: camera :: Camera , a : crate :: unity_engine :: vector3 :: Vector3 , b : crate :: unity_engine :: vector3 :: Vector3 , t : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 { let inner : extern "C" fn (crate :: unity_engine :: camera :: Camera , crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector3 :: Vector3 , f32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute (__lookup_reprojection :: get_method_info () . method_ptr ,) ; inner (cam , a , b , t , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_reprojection_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: matrix4x4 :: Matrix4x4 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AutoCameraBase as :: unity2 :: ClassIdentity > :: class () , "Reprojection" , 4 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AutoCameraBase as :: unity2 :: ClassIdentity > :: NAME , "Reprojection" , e) , } } } pub unsafe fn reprojection_2 (mvp : * mut crate :: unity_engine :: matrix4x4 :: Matrix4x4 , a : crate :: unity_engine :: vector3 :: Vector3 , b : crate :: unity_engine :: vector3 :: Vector3 , t : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 { let inner : extern "C" fn (* mut crate :: unity_engine :: matrix4x4 :: Matrix4x4 , crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector3 :: Vector3 , f32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute (__lookup_reprojection_2 :: get_method_info () . method_ptr ,) ; inner (mvp , a , b , t , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_camera_targets { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AutoCameraBase as :: unity2 :: ClassIdentity > :: class () , "GetCameraTargets" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AutoCameraBase as :: unity2 :: ClassIdentity > :: NAME , "GetCameraTargets" , e) , } } } pub unsafe fn get_camera_targets (this : AutoCameraBase , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < i32 > { let inner : extern "C" fn (AutoCameraBase , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < i32 > = :: core :: mem :: transmute (__lookup_get_camera_targets :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AutoCameraBase as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AutoCameraBase as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : AutoCameraBase , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AutoCameraBase , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "combat-autocamerabase")]
+impl AutoCameraBase { # [doc = "`CalcFitDistance(f32, f32)` overload"] pub fn calc_fit_distance (xdist : impl :: core :: convert :: Into < f32 > , fov_y_deg : impl :: core :: convert :: Into < f32 >) -> f32 { unsafe { __AutoCameraBase_unity2_raw :: calc_fit_distance (:: core :: convert :: Into :: into (xdist) , :: core :: convert :: Into :: into (fov_y_deg) , :: core :: option :: Option :: None) } } # [doc = "`Reprojection(crate::unity_engine::camera::Camera, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, f32)` overload"] pub fn reprojection (cam : impl :: core :: convert :: Into < crate :: unity_engine :: camera :: Camera > , a : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , b : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , t : impl :: core :: convert :: Into < f32 >) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { __AutoCameraBase_unity2_raw :: reprojection (:: core :: convert :: Into :: into (cam) , :: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: convert :: Into :: into (t) , :: core :: option :: Option :: None) } } # [doc = "`Reprojection(*mutcrate::unity_engine::matrix4x4::Matrix4x4, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, f32)` overload"] pub fn reprojection_2 (a : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , b : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , t : impl :: core :: convert :: Into < f32 >) -> (crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: matrix4x4 :: Matrix4x4) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: matrix4x4 :: Matrix4x4 > :: uninit () ; let __ret = { __AutoCameraBase_unity2_raw :: reprojection_2 (__out_0 . as_mut_ptr () , :: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: convert :: Into :: into (t) , :: core :: option :: Option :: None) } ; (__ret , __out_0 . assume_init ()) } } }
+
+#[cfg(feature = "combat-autocamerabase")]
+pub trait IAutoCameraBaseMethods : IAutoCameraBase { # [doc = "`Tick()` overload"] fn tick (self ,) -> () { unsafe { let __receiver = < AutoCameraBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AutoCameraBase_unity2_raw :: tick (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CheckUsable(bool)` overload"] fn check_usable (self , is_routine : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < AutoCameraBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AutoCameraBase_unity2_raw :: check_usable (__receiver , :: core :: convert :: Into :: into (is_routine) , :: core :: option :: Option :: None) } } # [doc = "`IsSimilarAngle(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"] fn is_similar_angle (self , a : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , b : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> bool { unsafe { let __receiver = < AutoCameraBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AutoCameraBase_unity2_raw :: is_similar_angle (__receiver , :: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: option :: Option :: None) } } # [doc = "`GetCameraTargets()` overload"] fn get_camera_targets (self ,) -> :: unity2 :: Array < i32 > { unsafe { let __receiver = < AutoCameraBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AutoCameraBase_unity2_raw :: get_camera_targets (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AutoCameraBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AutoCameraBase_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "combat-autocamerabase")]
+impl < __T : IAutoCameraBase > IAutoCameraBaseMethods for __T { }
+
+#[cfg(feature = "combat-autocamerabase")]
+impl AutoCameraBase { pub fn tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AutoCameraBase_unity2_raw :: __lookup_tick :: get_method_info () } pub fn check_usable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AutoCameraBase_unity2_raw :: __lookup_check_usable :: get_method_info () } pub fn is_similar_angle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AutoCameraBase_unity2_raw :: __lookup_is_similar_angle :: get_method_info () } pub fn calc_fit_distance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AutoCameraBase_unity2_raw :: __lookup_calc_fit_distance :: get_method_info () } pub fn reprojection_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AutoCameraBase_unity2_raw :: __lookup_reprojection :: get_method_info () } pub fn reprojection_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AutoCameraBase_unity2_raw :: __lookup_reprojection_2 :: get_method_info () } pub fn get_camera_targets_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AutoCameraBase_unity2_raw :: __lookup_get_camera_targets :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AutoCameraBase_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "combat-autocamerabase")]
 impl AutoCameraBase {
-    #[doc = "`CalcFitDistance(f32, f32)` overload"]
-    pub fn calc_fit_distance(xdist: impl ::core::convert::Into<f32>, fov_y_deg: impl ::core::convert::Into<f32>) -> f32 {
-        unsafe {
-            __AutoCameraBase_unity2_raw::calc_fit_distance(
-                ::core::convert::Into::into(xdist),
-                ::core::convert::Into::into(fov_y_deg),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`Reprojection(crate::unity_engine::camera::Camera, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, f32)` overload"]
-    pub fn reprojection(
-        cam: impl ::core::convert::Into<crate::unity_engine::camera::Camera>,
-        a: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-        b: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-        t: impl ::core::convert::Into<f32>,
-    ) -> crate::unity_engine::vector3::Vector3 {
-        unsafe {
-            __AutoCameraBase_unity2_raw::reprojection(
-                ::core::convert::Into::into(cam),
-                ::core::convert::Into::into(a),
-                ::core::convert::Into::into(b),
-                ::core::convert::Into::into(t),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`Reprojection(*mutcrate::unity_engine::matrix4x4::Matrix4x4, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, f32)` overload"]
-    pub fn reprojection_2(
-        a: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-        b: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-        t: impl ::core::convert::Into<f32>,
-    ) -> (crate::unity_engine::vector3::Vector3, crate::unity_engine::matrix4x4::Matrix4x4) {
-        unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::matrix4x4::Matrix4x4>::uninit();
-            let __ret = {
-                __AutoCameraBase_unity2_raw::reprojection_2(
-                    __out_0.as_mut_ptr(),
-                    ::core::convert::Into::into(a),
-                    ::core::convert::Into::into(b),
-                    ::core::convert::Into::into(t),
-                    ::core::option::Option::None,
-                )
-            };
-            (__ret, __out_0.assume_init())
-        }
-    }
-}
-
-#[cfg(feature = "combat-autocamerabase")]
-pub trait IAutoCameraBaseMethods: IAutoCameraBase {
-    #[doc = "`Tick()` overload"]
-    fn tick(self) -> () {
-        unsafe {
-            let __receiver = <AutoCameraBase as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AutoCameraBase_unity2_raw::tick(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CheckUsable(bool)` overload"]
-    fn check_usable(self, is_routine: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver = <AutoCameraBase as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AutoCameraBase_unity2_raw::check_usable(__receiver, ::core::convert::Into::into(is_routine), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsSimilarAngle(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"]
-    fn is_similar_angle(
-        self,
-        a: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-        b: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-    ) -> bool {
-        unsafe {
-            let __receiver = <AutoCameraBase as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AutoCameraBase_unity2_raw::is_similar_angle(
-                __receiver,
-                ::core::convert::Into::into(a),
-                ::core::convert::Into::into(b),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetCameraTargets()` overload"]
-    fn get_camera_targets(self) -> ::unity2::Array<i32> {
-        unsafe {
-            let __receiver = <AutoCameraBase as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AutoCameraBase_unity2_raw::get_camera_targets(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <AutoCameraBase as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AutoCameraBase_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "combat-autocamerabase")]
-impl<__T: IAutoCameraBase> IAutoCameraBaseMethods for __T {}
-
-#[cfg(feature = "combat-autocamerabase")]
-impl AutoCameraBase {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AutoCameraBase),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAutoCameraBaseMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AutoCameraBase) , :: core :: stringify ! (new) ,)) ; < Self as IAutoCameraBaseMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "combat-autocamerabase")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{AutoCameraBase, IAutoCameraBase, IAutoCameraBaseMethods};
-    #[cfg(feature = "combat-basecameracontroller")]
-    pub use crate::combat::basecameracontroller::IBaseCameraControllerMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        combat::basecameracontroller::IBaseCameraController,
-        system::object::IObject,
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::AutoCameraBase;
+    pub use super::IAutoCameraBase;
+    pub use super::IAutoCameraBaseMethods;
+    pub use crate::combat::basecameracontroller::IBaseCameraController;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "combat-basecameracontroller")] pub use crate::combat::basecameracontroller::IBaseCameraControllerMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

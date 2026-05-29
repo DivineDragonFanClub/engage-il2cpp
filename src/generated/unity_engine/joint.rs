@@ -2,219 +2,51 @@
 
 #[cfg(feature = "unity_engine-joint-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::{
-            component::{Component, IComponent},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/joint/Joint.md"))]
-    #[::unity2::class(namespace = "UnityEngine", name = "Joint")]
-    #[parent(crate::unity_engine::component::Component)]
-    pub struct Joint {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/joint/Joint.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "Joint")] # [parent (crate :: unity_engine :: component :: Component)] pub struct Joint {}
+
 }
 
 #[cfg(feature = "unity_engine-joint-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-joint")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __Joint_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_connected_body {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Joint as ::unity2::ClassIdentity>::class(),
-                "get_connectedBody",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Joint as ::unity2::ClassIdentity>::NAME,
-                        "get_connectedBody",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_connected_body(this: Joint, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::rigidbody::Rigidbody {
-        let inner: extern "C" fn(Joint, ::unity2::OptionalMethod) -> crate::unity_engine::rigidbody::Rigidbody =
-            ::core::mem::transmute(__lookup_get_connected_body::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_connected_anchor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Joint as ::unity2::ClassIdentity>::class(),
-                "set_connectedAnchor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Joint as ::unity2::ClassIdentity>::NAME,
-                        "set_connectedAnchor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_connected_anchor(
-        this: Joint,
-        value: crate::unity_engine::vector3::Vector3,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(Joint, crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_connected_anchor::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Joint as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Joint as ::unity2::ClassIdentity>::NAME, ".ctor", e),
-            }
-        }
-    }
-    pub unsafe fn ctor(this: Joint, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Joint, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_connected_anchor_injected {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Joint as ::unity2::ClassIdentity>::class(),
-                "set_connectedAnchor_Injected",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Joint as ::unity2::ClassIdentity>::NAME,
-                        "set_connectedAnchor_Injected",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_connected_anchor_injected(
-        this: Joint,
-        value: *mut crate::unity_engine::vector3::Vector3,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(Joint, *mut crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_connected_anchor_injected::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __Joint_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_connected_body { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Joint as :: unity2 :: ClassIdentity > :: class () , "get_connectedBody" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Joint as :: unity2 :: ClassIdentity > :: NAME , "get_connectedBody" , e) , } } } pub unsafe fn get_connected_body (this : Joint , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rigidbody :: Rigidbody { let inner : extern "C" fn (Joint , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rigidbody :: Rigidbody = :: core :: mem :: transmute (__lookup_get_connected_body :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_connected_anchor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Joint as :: unity2 :: ClassIdentity > :: class () , "set_connectedAnchor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Joint as :: unity2 :: ClassIdentity > :: NAME , "set_connectedAnchor" , e) , } } } pub unsafe fn set_connected_anchor (this : Joint , value : crate :: unity_engine :: vector3 :: Vector3 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Joint , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_connected_anchor :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Joint as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Joint as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : Joint , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Joint , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_connected_anchor_injected { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Joint as :: unity2 :: ClassIdentity > :: class () , "set_connectedAnchor_Injected" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Joint as :: unity2 :: ClassIdentity > :: NAME , "set_connectedAnchor_Injected" , e) , } } } pub unsafe fn set_connected_anchor_injected (this : Joint , value : * mut crate :: unity_engine :: vector3 :: Vector3 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Joint , * mut crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_connected_anchor_injected :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-joint")]
-pub trait IJointMethods: IJoint {
-    #[doc = "`get_connectedBody()` overload"]
-    fn get_connected_body(self) -> crate::unity_engine::rigidbody::Rigidbody {
-        unsafe {
-            let __receiver = <Joint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Joint_unity2_raw::get_connected_body(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_connectedAnchor(crate::unity_engine::vector3::Vector3)` overload"]
-    fn set_connected_anchor(self, value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>) -> () {
-        unsafe {
-            let __receiver = <Joint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Joint_unity2_raw::set_connected_anchor(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <Joint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Joint_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_connectedAnchor_Injected(*mutcrate::unity_engine::vector3::Vector3)` overload"]
-    fn set_connected_anchor_injected(self) -> crate::unity_engine::vector3::Vector3 {
-        unsafe {
-            let __receiver = <Joint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
-            __Joint_unity2_raw::set_connected_anchor_injected(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None);
-            __out_0.assume_init()
-        }
-    }
-}
+pub trait IJointMethods : IJoint { # [doc = "`get_connectedBody()` overload"] fn get_connected_body (self ,) -> crate :: unity_engine :: rigidbody :: Rigidbody { unsafe { let __receiver = < Joint as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Joint_unity2_raw :: get_connected_body (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_connectedAnchor(crate::unity_engine::vector3::Vector3)` overload"] fn set_connected_anchor (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> () { unsafe { let __receiver = < Joint as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Joint_unity2_raw :: set_connected_anchor (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Joint as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Joint_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_connectedAnchor_Injected(*mutcrate::unity_engine::vector3::Vector3)` overload"] fn set_connected_anchor_injected (self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < Joint as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector3 :: Vector3 > :: uninit () ; __Joint_unity2_raw :: set_connected_anchor_injected (__receiver , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) ; __out_0 . assume_init () } } }
 
 #[cfg(feature = "unity_engine-joint")]
-impl<__T: IJoint> IJointMethods for __T {}
+impl < __T : IJoint > IJointMethods for __T { }
+
+#[cfg(feature = "unity_engine-joint")]
+impl Joint { pub fn get_connected_body_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Joint_unity2_raw :: __lookup_get_connected_body :: get_method_info () } pub fn set_connected_anchor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Joint_unity2_raw :: __lookup_set_connected_anchor :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Joint_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn set_connected_anchor_injected_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Joint_unity2_raw :: __lookup_set_connected_anchor_injected :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-joint")]
 impl Joint {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(Joint), ::core::stringify!(new),));
-        <Self as IJointMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Joint) , :: core :: stringify ! (new) ,)) ; < Self as IJointMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "unity_engine-joint")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IJoint, IJointMethods, Joint};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        system::object::IObject,
-        unity_engine::{component::IComponent, object_2::IObject_2},
-    };
+    pub use super::Joint;
+    pub use super::IJoint;
+    pub use super::IJointMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

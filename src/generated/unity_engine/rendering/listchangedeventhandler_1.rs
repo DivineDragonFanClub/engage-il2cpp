@@ -2,67 +2,46 @@
 
 #[cfg(feature = "unity_engine-rendering-listchangedeventhandler_1-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        delegate::{Delegate, IDelegate},
-        multicastdelegate::{IMulticastDelegate, MulticastDelegate},
-        object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/listchangedeventhandler_1/ListChangedEventHandler_1.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Rendering", name = "ListChangedEventHandler`1")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    #[parent(crate::system::delegate::Delegate)]
-    #[parent(crate::system::object::Object)]
-    pub struct ListChangedEventHandler_1<T0: ::unity2::ClassIdentity> {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: delegate :: { Delegate , IDelegate }
+ ;
+ use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/listchangedeventhandler_1/ListChangedEventHandler_1.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering" , name = "ListChangedEventHandler`1")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] # [parent (crate :: system :: delegate :: Delegate)] # [parent (crate :: system :: object :: Object)] pub struct ListChangedEventHandler_1 < T0 : :: unity2 :: ClassIdentity > {}
+
 }
 
 #[cfg(feature = "unity_engine-rendering-listchangedeventhandler_1-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-listchangedeventhandler_1")]
-#[::unity2::methods]
-impl<T0: ::unity2::ClassIdentity> ListChangedEventHandler_1<T0> {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+# [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity > ListChangedEventHandler_1 < T0 > {
+# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] # [method (name = ".ctor" , args = 2)] pub fn ctor (self , object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> () ;
 
-    #[doc = "`Invoke(crate::unity_engine::rendering::observablelist_1::ObservableList_1<T0>, crate::unity_engine::rendering::listchangedeventargs_1::ListChangedEventArgs_1<T0>)` overload"]
-    #[method(name = "Invoke", args = 2)]
-    pub fn invoke(
-        self,
-        sender: crate::unity_engine::rendering::observablelist_1::ObservableList_1<T0>,
-        e: crate::unity_engine::rendering::listchangedeventargs_1::ListChangedEventArgs_1<T0>,
-    ) -> ();
+# [doc = "`Invoke(crate::unity_engine::rendering::observablelist_1::ObservableList_1<T0>, crate::unity_engine::rendering::listchangedeventargs_1::ListChangedEventArgs_1<T0>)` overload"] # [method (name = "Invoke" , args = 2)] pub fn invoke (self , sender : crate :: unity_engine :: rendering :: observablelist_1 :: ObservableList_1 < T0 > , e : crate :: unity_engine :: rendering :: listchangedeventargs_1 :: ListChangedEventArgs_1 < T0 >) -> () ;
 }
 
 #[cfg(feature = "unity_engine-rendering-listchangedeventhandler_1")]
-impl<T0: ::unity2::ClassIdentity> ListChangedEventHandler_1<T0> {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ListChangedEventHandler_1),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IListChangedEventHandler_1Methods<T0>>::ctor(this, object, method);
-        this
-    }
+impl < T0 : :: unity2 :: ClassIdentity > ListChangedEventHandler_1 < T0 > {
+# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ListChangedEventHandler_1) , :: core :: stringify ! (new) ,)) ; < Self as IListChangedEventHandler_1Methods < T0 > > :: ctor (this , object , method) ; this }
 }
 
 #[cfg(feature = "unity_engine-rendering-listchangedeventhandler_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IListChangedEventHandler_1, IListChangedEventHandler_1Methods, ListChangedEventHandler_1};
-    #[cfg(feature = "system-delegate")]
-    pub use crate::system::delegate::IDelegateMethods;
-    #[cfg(feature = "system-multicastdelegate")]
-    pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::system::{delegate::IDelegate, multicastdelegate::IMulticastDelegate, object::IObject};
+    pub use super::ListChangedEventHandler_1;
+    pub use super::IListChangedEventHandler_1;
+    pub use super::IListChangedEventHandler_1Methods;
+    pub use crate::system::delegate::IDelegate;
+    pub use crate::system::multicastdelegate::IMulticastDelegate;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-delegate")] pub use crate::system::delegate::IDelegateMethods;
+    #[cfg(feature = "system-multicastdelegate")] pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

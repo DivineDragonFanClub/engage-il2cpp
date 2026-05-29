@@ -2,1941 +2,225 @@
 
 #[cfg(feature = "app-refreshunitsetdecidemenu-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::{
-            basicmenu::{BasicMenu, IBasicMenu},
-            basicmenuitem::{BasicMenuItem, IBasicMenuItem},
-            procinst::{IProcInst, ProcInst},
-        },
-        system::{
-            delegate::{Delegate, IDelegate},
-            multicastdelegate::{IMulticastDelegate, MulticastDelegate},
-            object::{IObject, Object},
-            r#enum::{Enum, IEnum},
-            valuetype::{IValueType, ValueType},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshunitsetdecidemenu/RefreshUnitSetDecideMenu.md"))]
-    #[::unity2::class(namespace = "App", name = "RefreshUnitSetDecideMenu")]
-    #[parent(crate::app::basicmenu::BasicMenu)]
-    pub struct RefreshUnitSetDecideMenu {
-        #[offset(200)]
-        #[rename(name = "m_KeyUpEventHandler")]
-        pub m_key_up_event_handler: crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_KeyUpEventHandler,
-        #[offset(208)]
-        #[rename(name = "m_KeyDownEventHandler")]
-        pub m_key_down_event_handler: crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_KeyDownEventHandler,
-        #[offset(216)]
-        #[rename(name = "m_DecideEventHandler")]
-        pub m_decide_event_handler: crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_DecideEventHandler,
-        #[offset(224)]
-        #[rename(name = "m_Closed")]
-        pub m_closed: bool,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: basicmenu :: { BasicMenu , IBasicMenu }
+ ;
+ use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
+ ;
+ use crate :: app :: procinst :: { IProcInst , ProcInst }
+ ;
+ use crate :: system :: delegate :: { Delegate , IDelegate }
+ ;
+ use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/refreshunitsetdecidemenu/RefreshUnitSetDecideMenu_Result2.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct RefreshUnitSetDecideMenu_Result2 {
-        pub value: i32,
-    }
 
-    impl ::unity2::ClassIdentity for RefreshUnitSetDecideMenu_Result2 {
-        const NAME: &'static str = "RefreshUnitSetDecideMenu.Result2";
-        const NAMESPACE: &'static str = "App";
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshunitsetdecidemenu/RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "RefreshUnitSetDecideMenu.RefreshUnitSetDecideMenuItem")] # [parent (crate :: app :: basicmenuitem :: BasicMenuItem)] pub struct RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem {
+# [offset (100)] # [rename (name = "m_Enabled")] pub m_enabled : bool ,
+# [offset (101)] # [rename (name = "m_Usabled")] pub m_usabled : bool ,
+# [offset (104)] # [rename (name = "m_DecideEventHandler")] pub m_decide_event_handler : crate :: app :: refreshunitsetdecidemenu :: RefreshUnitSetDecideMenu_DecideEventHandler ,
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshunitsetdecidemenu/RefreshUnitSetDecideMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "RefreshUnitSetDecideMenu")] # [parent (crate :: app :: basicmenu :: BasicMenu)] pub struct RefreshUnitSetDecideMenu {
+# [offset (200)] # [rename (name = "m_KeyUpEventHandler")] pub m_key_up_event_handler : crate :: app :: refreshunitsetdecidemenu :: RefreshUnitSetDecideMenu_KeyUpEventHandler ,
+# [offset (208)] # [rename (name = "m_KeyDownEventHandler")] pub m_key_down_event_handler : crate :: app :: refreshunitsetdecidemenu :: RefreshUnitSetDecideMenu_KeyDownEventHandler ,
+# [offset (216)] # [rename (name = "m_DecideEventHandler")] pub m_decide_event_handler : crate :: app :: refreshunitsetdecidemenu :: RefreshUnitSetDecideMenu_DecideEventHandler ,
+# [offset (224)] # [rename (name = "m_Closed")] pub m_closed : bool ,
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/refreshunitsetdecidemenu/RefreshUnitSetDecideMenu_Result2.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct RefreshUnitSetDecideMenu_Result2  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for RefreshUnitSetDecideMenu_Result2  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "RefreshUnitSetDecideMenu.Result2";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for RefreshUnitSetDecideMenu_Result2 {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  ::unity2::IlType for RefreshUnitSetDecideMenu_Result2  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl RefreshUnitSetDecideMenu_Result2 {
-        pub fn ok() -> Self {
-            Self { value: 0 }
-        }
+}
 
-        pub fn cancel() -> Self {
-            Self { value: 1 }
-        }
+
+impl  RefreshUnitSetDecideMenu_Result2  {
+    pub fn ok() -> Self {
+        Self { value: 0 }
+
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshunitsetdecidemenu/RefreshUnitSetDecideMenu_KeyUpEventHandler.md"))]
-    #[::unity2::class(namespace = "App", name = "RefreshUnitSetDecideMenu.KeyUpEventHandler")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct RefreshUnitSetDecideMenu_KeyUpEventHandler {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshunitsetdecidemenu/RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "RefreshUnitSetDecideMenu.RefreshUnitSetDecideMenuItem")]
-    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
-    pub struct RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem {
-        #[offset(100)]
-        #[rename(name = "m_Enabled")]
-        pub m_enabled: bool,
-        #[offset(101)]
-        #[rename(name = "m_Usabled")]
-        pub m_usabled: bool,
-        #[offset(104)]
-        #[rename(name = "m_DecideEventHandler")]
-        pub m_decide_event_handler: crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_DecideEventHandler,
+    pub fn cancel() -> Self {
+        Self { value: 1 }
+
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshunitsetdecidemenu/RefreshUnitSetDecideMenu_DecideEventHandler.md"))]
-    #[::unity2::class(namespace = "App", name = "RefreshUnitSetDecideMenu.DecideEventHandler")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct RefreshUnitSetDecideMenu_DecideEventHandler {}
+}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshunitsetdecidemenu/RefreshUnitSetDecideMenu_KeyDownEventHandler.md"))]
-    #[::unity2::class(namespace = "App", name = "RefreshUnitSetDecideMenu.KeyDownEventHandler")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct RefreshUnitSetDecideMenu_KeyDownEventHandler {}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshunitsetdecidemenu/RefreshUnitSetDecideMenu_DecideEventHandler.md"))] # [:: unity2 :: class (namespace = "App" , name = "RefreshUnitSetDecideMenu.DecideEventHandler")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct RefreshUnitSetDecideMenu_DecideEventHandler {}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshunitsetdecidemenu/RefreshUnitSetDecideMenu_KeyUpEventHandler.md"))] # [:: unity2 :: class (namespace = "App" , name = "RefreshUnitSetDecideMenu.KeyUpEventHandler")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct RefreshUnitSetDecideMenu_KeyUpEventHandler {}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshunitsetdecidemenu/RefreshUnitSetDecideMenu_KeyDownEventHandler.md"))] # [:: unity2 :: class (namespace = "App" , name = "RefreshUnitSetDecideMenu.KeyDownEventHandler")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct RefreshUnitSetDecideMenu_KeyDownEventHandler {}
+
 }
 
 #[cfg(feature = "app-refreshunitsetdecidemenu-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-refreshunitsetdecidemenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RefreshUnitSetDecideMenu_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <crate::app::refreshunitsetdecidemenucontent::RefreshUnitSetDecideMenuContent as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-                <crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_KeyUpEventHandler as ::unity2::IlType>::il_type(),
-                <crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_KeyDownEventHandler as ::unity2::IlType>::il_type(),
-                <crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_DecideEventHandler as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RefreshUnitSetDecideMenu as ::unity2::ClassIdentity>::class(),
-                "Create",
-                7,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RefreshUnitSetDecideMenu as ::unity2::ClassIdentity>::NAME,
-                        "Create",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create(
-        super_: crate::app::procinst::ProcInst,
-        menu_content: crate::app::refreshunitsetdecidemenucontent::RefreshUnitSetDecideMenuContent,
-        enabled: bool,
-        usabled: bool,
-        key_up_event_handler: crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_KeyUpEventHandler,
-        key_down_event_handler: crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_KeyDownEventHandler,
-        decide_event_handler: crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_DecideEventHandler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            crate::app::refreshunitsetdecidemenucontent::RefreshUnitSetDecideMenuContent,
-            bool,
-            bool,
-            crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_KeyUpEventHandler,
-            crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_KeyDownEventHandler,
-            crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_DecideEventHandler,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu = ::core::mem::transmute(__lookup_create::get_method_info().method_ptr);
-        inner(
-            super_,
-            menu_content,
-            enabled,
-            usabled,
-            key_up_event_handler,
-            key_down_event_handler,
-            decide_event_handler,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> as ::unity2::IlType>::il_type(),
-                <crate::app::refreshunitsetdecidemenucontent::RefreshUnitSetDecideMenuContent as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-                <crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_KeyUpEventHandler as ::unity2::IlType>::il_type(),
-                <crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_KeyDownEventHandler as ::unity2::IlType>::il_type(),
-                <crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_DecideEventHandler as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RefreshUnitSetDecideMenu as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                6,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RefreshUnitSetDecideMenu as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: RefreshUnitSetDecideMenu,
-        menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
-        menu_content: crate::app::refreshunitsetdecidemenucontent::RefreshUnitSetDecideMenuContent,
-        usabled: bool,
-        key_up_event_handler: crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_KeyUpEventHandler,
-        key_down_event_handler: crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_KeyDownEventHandler,
-        decide_event_handler: crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_DecideEventHandler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RefreshUnitSetDecideMenu,
-            crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
-            crate::app::refreshunitsetdecidemenucontent::RefreshUnitSetDecideMenuContent,
-            bool,
-            crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_KeyUpEventHandler,
-            crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_KeyDownEventHandler,
-            crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_DecideEventHandler,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(
-            this,
-            menu_item_list,
-            menu_content,
-            usabled,
-            key_up_event_handler,
-            key_down_event_handler,
-            decide_event_handler,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_menu_item_list {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <bool as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-                <crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_DecideEventHandler as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RefreshUnitSetDecideMenu as ::unity2::ClassIdentity>::class(),
-                "CreateMenuItemList",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RefreshUnitSetDecideMenu as ::unity2::ClassIdentity>::NAME,
-                        "CreateMenuItemList",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_menu_item_list(
-        enabled: bool,
-        usabled: bool,
-        decide_event_handler: crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_DecideEventHandler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> {
-        let inner: extern "C" fn(
-            bool,
-            bool,
-            crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_DecideEventHandler,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> =
-            ::core::mem::transmute(__lookup_create_menu_item_list::get_method_info().method_ptr);
-        inner(enabled, usabled, decide_event_handler, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RefreshUnitSetDecideMenu as ::unity2::ClassIdentity>::class(),
-                "GetName",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RefreshUnitSetDecideMenu as ::unity2::ClassIdentity>::NAME,
-                        "GetName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_name(this: RefreshUnitSetDecideMenu, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(RefreshUnitSetDecideMenu, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_tick {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RefreshUnitSetDecideMenu as ::unity2::ClassIdentity>::class(),
-                "Tick",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RefreshUnitSetDecideMenu as ::unity2::ClassIdentity>::NAME,
-                        "Tick",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn tick(this: RefreshUnitSetDecideMenu, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RefreshUnitSetDecideMenu, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_tick::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_text_color {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::color::Color as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RefreshUnitSetDecideMenu as ::unity2::ClassIdentity>::class(),
-                "SetTextColor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RefreshUnitSetDecideMenu as ::unity2::ClassIdentity>::NAME,
-                        "SetTextColor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_text_color(
-        this: RefreshUnitSetDecideMenu,
-        color: crate::unity_engine::color::Color,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RefreshUnitSetDecideMenu, crate::unity_engine::color::Color, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_text_color::get_method_info().method_ptr);
-        inner(this, color, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update_enabled {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type(), <bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RefreshUnitSetDecideMenu as ::unity2::ClassIdentity>::class(),
-                "UpdateEnabled",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RefreshUnitSetDecideMenu as ::unity2::ClassIdentity>::NAME,
-                        "UpdateEnabled",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update_enabled(this: RefreshUnitSetDecideMenu, enabled: bool, usabled: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RefreshUnitSetDecideMenu, bool, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update_enabled::get_method_info().method_ptr);
-        inner(this, enabled, usabled, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_focus_this_menu {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RefreshUnitSetDecideMenu as ::unity2::ClassIdentity>::class(),
-                "FocusThisMenu",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RefreshUnitSetDecideMenu as ::unity2::ClassIdentity>::NAME,
-                        "FocusThisMenu",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn focus_this_menu(this: RefreshUnitSetDecideMenu, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RefreshUnitSetDecideMenu, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_focus_this_menu::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_unfocus_this_menu {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RefreshUnitSetDecideMenu as ::unity2::ClassIdentity>::class(),
-                "UnfocusThisMenu",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RefreshUnitSetDecideMenu as ::unity2::ClassIdentity>::NAME,
-                        "UnfocusThisMenu",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn unfocus_this_menu(this: RefreshUnitSetDecideMenu, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RefreshUnitSetDecideMenu, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_unfocus_this_menu::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_focused_this_menu {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RefreshUnitSetDecideMenu as ::unity2::ClassIdentity>::class(),
-                "IsFocusedThisMenu",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RefreshUnitSetDecideMenu as ::unity2::ClassIdentity>::NAME,
-                        "IsFocusedThisMenu",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_focused_this_menu(this: RefreshUnitSetDecideMenu, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(RefreshUnitSetDecideMenu, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_focused_this_menu::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_key_up {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RefreshUnitSetDecideMenu as ::unity2::ClassIdentity>::class(),
-                "KeyUp",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RefreshUnitSetDecideMenu as ::unity2::ClassIdentity>::NAME,
-                        "KeyUp",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn key_up(this: RefreshUnitSetDecideMenu, is_trigger: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RefreshUnitSetDecideMenu, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_key_up::get_method_info().method_ptr);
-        inner(this, is_trigger, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_key_down {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RefreshUnitSetDecideMenu as ::unity2::ClassIdentity>::class(),
-                "KeyDown",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RefreshUnitSetDecideMenu as ::unity2::ClassIdentity>::NAME,
-                        "KeyDown",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn key_down(this: RefreshUnitSetDecideMenu, is_trigger: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RefreshUnitSetDecideMenu, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_key_down::get_method_info().method_ptr);
-        inner(this, is_trigger, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_key_left {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RefreshUnitSetDecideMenu as ::unity2::ClassIdentity>::class(),
-                "KeyLeft",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RefreshUnitSetDecideMenu as ::unity2::ClassIdentity>::NAME,
-                        "KeyLeft",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn key_left(this: RefreshUnitSetDecideMenu, is_trigger: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RefreshUnitSetDecideMenu, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_key_left::get_method_info().method_ptr);
-        inner(this, is_trigger, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_key_right {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RefreshUnitSetDecideMenu as ::unity2::ClassIdentity>::class(),
-                "KeyRight",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RefreshUnitSetDecideMenu as ::unity2::ClassIdentity>::NAME,
-                        "KeyRight",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn key_right(this: RefreshUnitSetDecideMenu, is_trigger: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RefreshUnitSetDecideMenu, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_key_right::get_method_info().method_ptr);
-        inner(this, is_trigger, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_l_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RefreshUnitSetDecideMenu as ::unity2::ClassIdentity>::class(),
-                "LCall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RefreshUnitSetDecideMenu as ::unity2::ClassIdentity>::NAME,
-                        "LCall",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn l_call(this: RefreshUnitSetDecideMenu, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(RefreshUnitSetDecideMenu, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
-            ::core::mem::transmute(__lookup_l_call::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_dispose {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RefreshUnitSetDecideMenu as ::unity2::ClassIdentity>::class(),
-                "OnDispose",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RefreshUnitSetDecideMenu as ::unity2::ClassIdentity>::NAME,
-                        "OnDispose",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_dispose(this: RefreshUnitSetDecideMenu, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RefreshUnitSetDecideMenu, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_dispose::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < crate :: app :: refreshunitsetdecidemenu :: RefreshUnitSetDecideMenu_DecideEventHandler as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem , enabled : bool , usabled : bool , decide_event_handler : crate :: app :: refreshunitsetdecidemenu :: RefreshUnitSetDecideMenu_DecideEventHandler , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem , bool , bool , crate :: app :: refreshunitsetdecidemenu :: RefreshUnitSetDecideMenu_DecideEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , enabled , usabled , decide_event_handler , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_build { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem as :: unity2 :: ClassIdentity > :: class () , "OnBuild" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem as :: unity2 :: ClassIdentity > :: NAME , "OnBuild" , e) , } } } pub unsafe fn on_build (this : RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_build :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_build_menu_item_content { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem as :: unity2 :: ClassIdentity > :: class () , "OnBuildMenuItemContent" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem as :: unity2 :: ClassIdentity > :: NAME , "OnBuildMenuItemContent" , e) , } } } pub unsafe fn on_build_menu_item_content (this : RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_build_menu_item_content :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_initial_color { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem as :: unity2 :: ClassIdentity > :: class () , "SetInitialColor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem as :: unity2 :: ClassIdentity > :: NAME , "SetInitialColor" , e) , } } } pub unsafe fn set_initial_color (this : RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_initial_color :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem as :: unity2 :: ClassIdentity > :: class () , "GetName" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem as :: unity2 :: ClassIdentity > :: NAME , "GetName" , e) , } } } pub unsafe fn get_name (this : RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_name :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_build_attribute { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem as :: unity2 :: ClassIdentity > :: class () , "BuildAttribute" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem as :: unity2 :: ClassIdentity > :: NAME , "BuildAttribute" , e) , } } } pub unsafe fn build_attribute (this : RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { let inner : extern "C" fn (RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute (__lookup_build_attribute :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update_enabled { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem as :: unity2 :: ClassIdentity > :: class () , "UpdateEnabled" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem as :: unity2 :: ClassIdentity > :: NAME , "UpdateEnabled" , e) , } } } pub unsafe fn update_enabled (this : RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem , enabled : bool , usabled : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem , bool , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update_enabled :: get_method_info () . method_ptr ,) ; inner (this , enabled , usabled , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_deselect { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem as :: unity2 :: ClassIdentity > :: class () , "OnDeselect" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem as :: unity2 :: ClassIdentity > :: NAME , "OnDeselect" , e) , } } } pub unsafe fn on_deselect (this : RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_deselect :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_cursor_move_end { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem as :: unity2 :: ClassIdentity > :: class () , "OnCursorMoveEnd" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem as :: unity2 :: ClassIdentity > :: NAME , "OnCursorMoveEnd" , e) , } } } pub unsafe fn on_cursor_move_end (this : RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_cursor_move_end :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_a_call { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem as :: unity2 :: ClassIdentity > :: class () , "ACall" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem as :: unity2 :: ClassIdentity > :: NAME , "ACall" , e) , } } } pub unsafe fn a_call (this : RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result { let inner : extern "C" fn (RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute (__lookup_a_call :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_b_call { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem as :: unity2 :: ClassIdentity > :: class () , "BCall" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem as :: unity2 :: ClassIdentity > :: NAME , "BCall" , e) , } } } pub unsafe fn b_call (this : RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result { let inner : extern "C" fn (RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute (__lookup_b_call :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-refreshunitsetdecidemenu")]
-impl RefreshUnitSetDecideMenu {
-    #[doc = "`Create(crate::app::procinst::ProcInst, crate::app::refreshunitsetdecidemenucontent::RefreshUnitSetDecideMenuContent, bool, bool, crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_KeyUpEventHandler, crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_KeyDownEventHandler, crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_DecideEventHandler)` overload"]
-    pub fn create(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        menu_content: impl ::core::convert::Into<crate::app::refreshunitsetdecidemenucontent::RefreshUnitSetDecideMenuContent>,
-        enabled: impl ::core::convert::Into<bool>,
-        usabled: impl ::core::convert::Into<bool>,
-        key_up_event_handler: impl ::core::convert::Into<crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_KeyUpEventHandler>,
-        key_down_event_handler: impl ::core::convert::Into<crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_KeyDownEventHandler>,
-        decide_event_handler: impl ::core::convert::Into<crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_DecideEventHandler>,
-    ) -> crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu {
-        unsafe {
-            __RefreshUnitSetDecideMenu_unity2_raw::create(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(menu_content),
-                ::core::convert::Into::into(enabled),
-                ::core::convert::Into::into(usabled),
-                ::core::convert::Into::into(key_up_event_handler),
-                ::core::convert::Into::into(key_down_event_handler),
-                ::core::convert::Into::into(decide_event_handler),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`CreateMenuItemList(bool, bool, crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_DecideEventHandler)` overload"]
-    pub fn create_menu_item_list(
-        enabled: impl ::core::convert::Into<bool>,
-        usabled: impl ::core::convert::Into<bool>,
-        decide_event_handler: impl ::core::convert::Into<crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_DecideEventHandler>,
-    ) -> crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> {
-        unsafe {
-            __RefreshUnitSetDecideMenu_unity2_raw::create_menu_item_list(
-                ::core::convert::Into::into(enabled),
-                ::core::convert::Into::into(usabled),
-                ::core::convert::Into::into(decide_event_handler),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+pub trait IRefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItemMethods : IRefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem { # [doc = "`.ctor(bool, bool, crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_DecideEventHandler)` overload"] fn ctor (self , enabled : impl :: core :: convert :: Into < bool > , usabled : impl :: core :: convert :: Into < bool > , decide_event_handler : impl :: core :: convert :: Into < crate :: app :: refreshunitsetdecidemenu :: RefreshUnitSetDecideMenu_DecideEventHandler >) -> () { unsafe { let __receiver = < RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (enabled) , :: core :: convert :: Into :: into (usabled) , :: core :: convert :: Into :: into (decide_event_handler) , :: core :: option :: Option :: None) } } # [doc = "`OnBuild()` overload"] fn on_build (self ,) -> () { unsafe { let __receiver = < RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem_unity2_raw :: on_build (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnBuildMenuItemContent()` overload"] fn on_build_menu_item_content (self ,) -> () { unsafe { let __receiver = < RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem_unity2_raw :: on_build_menu_item_content (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetInitialColor()` overload"] fn set_initial_color (self ,) -> () { unsafe { let __receiver = < RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem_unity2_raw :: set_initial_color (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem_unity2_raw :: get_name (__receiver , :: core :: option :: Option :: None) } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem_unity2_raw :: build_attribute (__receiver , :: core :: option :: Option :: None) } } # [doc = "`UpdateEnabled(bool, bool)` overload"] fn update_enabled (self , enabled : impl :: core :: convert :: Into < bool > , usabled : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem_unity2_raw :: update_enabled (__receiver , :: core :: convert :: Into :: into (enabled) , :: core :: convert :: Into :: into (usabled) , :: core :: option :: Option :: None) } } # [doc = "`OnDeselect()` overload"] fn on_deselect (self ,) -> () { unsafe { let __receiver = < RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem_unity2_raw :: on_deselect (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnCursorMoveEnd()` overload"] fn on_cursor_move_end (self ,) -> () { unsafe { let __receiver = < RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem_unity2_raw :: on_cursor_move_end (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem_unity2_raw :: a_call (__receiver , :: core :: option :: Option :: None) } } # [doc = "`BCall()` overload"] fn b_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem_unity2_raw :: b_call (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-refreshunitsetdecidemenu")]
-pub trait IRefreshUnitSetDecideMenuMethods: IRefreshUnitSetDecideMenu {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::refreshunitsetdecidemenucontent::RefreshUnitSetDecideMenuContent, bool, crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_KeyUpEventHandler, crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_KeyDownEventHandler, crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_DecideEventHandler)` overload"]
-    fn ctor(
-        self,
-        menu_item_list: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>>,
-        menu_content: impl ::core::convert::Into<crate::app::refreshunitsetdecidemenucontent::RefreshUnitSetDecideMenuContent>,
-        usabled: impl ::core::convert::Into<bool>,
-        key_up_event_handler: impl ::core::convert::Into<crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_KeyUpEventHandler>,
-        key_down_event_handler: impl ::core::convert::Into<crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_KeyDownEventHandler>,
-        decide_event_handler: impl ::core::convert::Into<crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_DecideEventHandler>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <RefreshUnitSetDecideMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RefreshUnitSetDecideMenu_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(menu_item_list),
-                ::core::convert::Into::into(menu_content),
-                ::core::convert::Into::into(usabled),
-                ::core::convert::Into::into(key_up_event_handler),
-                ::core::convert::Into::into(key_down_event_handler),
-                ::core::convert::Into::into(decide_event_handler),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetName()` overload"]
-    fn get_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver =
-                <RefreshUnitSetDecideMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RefreshUnitSetDecideMenu_unity2_raw::get_name(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Tick()` overload"]
-    fn tick(self) -> () {
-        unsafe {
-            let __receiver =
-                <RefreshUnitSetDecideMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RefreshUnitSetDecideMenu_unity2_raw::tick(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetTextColor(crate::unity_engine::color::Color)` overload"]
-    fn set_text_color(self, color: impl ::core::convert::Into<crate::unity_engine::color::Color>) -> () {
-        unsafe {
-            let __receiver =
-                <RefreshUnitSetDecideMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RefreshUnitSetDecideMenu_unity2_raw::set_text_color(__receiver, ::core::convert::Into::into(color), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`UpdateEnabled(bool, bool)` overload"]
-    fn update_enabled(self, enabled: impl ::core::convert::Into<bool>, usabled: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver =
-                <RefreshUnitSetDecideMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RefreshUnitSetDecideMenu_unity2_raw::update_enabled(
-                __receiver,
-                ::core::convert::Into::into(enabled),
-                ::core::convert::Into::into(usabled),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`FocusThisMenu()` overload"]
-    fn focus_this_menu(self) -> () {
-        unsafe {
-            let __receiver =
-                <RefreshUnitSetDecideMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RefreshUnitSetDecideMenu_unity2_raw::focus_this_menu(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`UnfocusThisMenu()` overload"]
-    fn unfocus_this_menu(self) -> () {
-        unsafe {
-            let __receiver =
-                <RefreshUnitSetDecideMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RefreshUnitSetDecideMenu_unity2_raw::unfocus_this_menu(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsFocusedThisMenu()` overload"]
-    fn is_focused_this_menu(self) -> bool {
-        unsafe {
-            let __receiver =
-                <RefreshUnitSetDecideMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RefreshUnitSetDecideMenu_unity2_raw::is_focused_this_menu(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`KeyUp(bool)` overload"]
-    fn key_up(self, is_trigger: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver =
-                <RefreshUnitSetDecideMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RefreshUnitSetDecideMenu_unity2_raw::key_up(__receiver, ::core::convert::Into::into(is_trigger), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`KeyDown(bool)` overload"]
-    fn key_down(self, is_trigger: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver =
-                <RefreshUnitSetDecideMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RefreshUnitSetDecideMenu_unity2_raw::key_down(__receiver, ::core::convert::Into::into(is_trigger), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`KeyLeft(bool)` overload"]
-    fn key_left(self, is_trigger: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver =
-                <RefreshUnitSetDecideMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RefreshUnitSetDecideMenu_unity2_raw::key_left(__receiver, ::core::convert::Into::into(is_trigger), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`KeyRight(bool)` overload"]
-    fn key_right(self, is_trigger: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver =
-                <RefreshUnitSetDecideMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RefreshUnitSetDecideMenu_unity2_raw::key_right(__receiver, ::core::convert::Into::into(is_trigger), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`LCall()` overload"]
-    fn l_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver =
-                <RefreshUnitSetDecideMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RefreshUnitSetDecideMenu_unity2_raw::l_call(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnDispose()` overload"]
-    fn on_dispose(self) -> () {
-        unsafe {
-            let __receiver =
-                <RefreshUnitSetDecideMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RefreshUnitSetDecideMenu_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+impl < __T : IRefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem > IRefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItemMethods for __T { }
 
 #[cfg(feature = "app-refreshunitsetdecidemenu")]
-impl<__T: IRefreshUnitSetDecideMenu> IRefreshUnitSetDecideMenuMethods for __T {}
-
-#[cfg(feature = "app-refreshunitsetdecidemenu")]
-impl RefreshUnitSetDecideMenu {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::refreshunitsetdecidemenucontent::RefreshUnitSetDecideMenuContent, bool, crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_KeyUpEventHandler, crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_KeyDownEventHandler, crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_DecideEventHandler)` — overload selector"]
-    pub fn new(
-        menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
-        menu_content: crate::app::refreshunitsetdecidemenucontent::RefreshUnitSetDecideMenuContent,
-        usabled: bool,
-        key_up_event_handler: crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_KeyUpEventHandler,
-        key_down_event_handler: crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_KeyDownEventHandler,
-        decide_event_handler: crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_DecideEventHandler,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RefreshUnitSetDecideMenu),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRefreshUnitSetDecideMenuMethods>::ctor(
-            this,
-            menu_item_list,
-            menu_content,
-            usabled,
-            key_up_event_handler,
-            key_down_event_handler,
-            decide_event_handler,
-        );
-        this
-    }
-}
-
-#[cfg(feature = "app-refreshunitsetdecidemenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RefreshUnitSetDecideMenu_KeyUpEventHandler_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RefreshUnitSetDecideMenu_KeyUpEventHandler as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RefreshUnitSetDecideMenu_KeyUpEventHandler as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: RefreshUnitSetDecideMenu_KeyUpEventHandler,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RefreshUnitSetDecideMenu_KeyUpEventHandler,
-            crate::system::object::Object,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RefreshUnitSetDecideMenu_KeyUpEventHandler as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RefreshUnitSetDecideMenu_KeyUpEventHandler as ::unity2::ClassIdentity>::NAME,
-                        "Invoke",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn invoke(this: RefreshUnitSetDecideMenu_KeyUpEventHandler, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RefreshUnitSetDecideMenu_KeyUpEventHandler, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-refreshunitsetdecidemenu")]
-pub trait IRefreshUnitSetDecideMenu_KeyUpEventHandlerMethods: IRefreshUnitSetDecideMenu_KeyUpEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
-        unsafe {
-            let __receiver = <RefreshUnitSetDecideMenu_KeyUpEventHandler as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RefreshUnitSetDecideMenu_KeyUpEventHandler_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invoke()` overload"]
-    fn invoke(self) -> () {
-        unsafe {
-            let __receiver = <RefreshUnitSetDecideMenu_KeyUpEventHandler as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RefreshUnitSetDecideMenu_KeyUpEventHandler_unity2_raw::invoke(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-refreshunitsetdecidemenu")]
-impl<__T: IRefreshUnitSetDecideMenu_KeyUpEventHandler> IRefreshUnitSetDecideMenu_KeyUpEventHandlerMethods for __T {}
-
-#[cfg(feature = "app-refreshunitsetdecidemenu")]
-impl RefreshUnitSetDecideMenu_KeyUpEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RefreshUnitSetDecideMenu_KeyUpEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRefreshUnitSetDecideMenu_KeyUpEventHandlerMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-#[cfg(feature = "app-refreshunitsetdecidemenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <bool as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-                <crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_DecideEventHandler as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem,
-        enabled: bool,
-        usabled: bool,
-        decide_event_handler: crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_DecideEventHandler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem,
-            bool,
-            bool,
-            crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_DecideEventHandler,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, enabled, usabled, decide_event_handler, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_build {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem as ::unity2::ClassIdentity>::class(),
-                "OnBuild",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem as ::unity2::ClassIdentity>::NAME,
-                        "OnBuild",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_build(this: RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_build::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_build_menu_item_content {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem as ::unity2::ClassIdentity>::class(),
-                "OnBuildMenuItemContent",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem as ::unity2::ClassIdentity>::NAME,
-                        "OnBuildMenuItemContent",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_build_menu_item_content(
-        this: RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_build_menu_item_content::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_initial_color {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem as ::unity2::ClassIdentity>::class(),
-                "SetInitialColor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem as ::unity2::ClassIdentity>::NAME,
-                        "SetInitialColor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_initial_color(
-        this: RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_initial_color::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem as ::unity2::ClassIdentity>::class(),
-                "GetName",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem as ::unity2::ClassIdentity>::NAME,
-                        "GetName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_name(
-        this: RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_build_attribute {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem as ::unity2::ClassIdentity>::class(),
-                "BuildAttribute",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem as ::unity2::ClassIdentity>::NAME,
-                        "BuildAttribute",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn build_attribute(
-        this: RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        let inner: extern "C" fn(
-            RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute = ::core::mem::transmute(__lookup_build_attribute::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update_enabled {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type(), <bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem as ::unity2::ClassIdentity>::class(),
-                "UpdateEnabled",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem as ::unity2::ClassIdentity>::NAME,
-                        "UpdateEnabled",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update_enabled(
-        this: RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem,
-        enabled: bool,
-        usabled: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem, bool, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update_enabled::get_method_info().method_ptr);
-        inner(this, enabled, usabled, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_deselect {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem as ::unity2::ClassIdentity>::class(),
-                "OnDeselect",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem as ::unity2::ClassIdentity>::NAME,
-                        "OnDeselect",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_deselect(this: RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_deselect::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_cursor_move_end {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem as ::unity2::ClassIdentity>::class(),
-                "OnCursorMoveEnd",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem as ::unity2::ClassIdentity>::NAME,
-                        "OnCursorMoveEnd",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_cursor_move_end(
-        this: RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_cursor_move_end::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_a_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem as ::unity2::ClassIdentity>::class(),
-                "ACall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem as ::unity2::ClassIdentity>::NAME,
-                        "ACall",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn a_call(
-        this: RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_b_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem as ::unity2::ClassIdentity>::class(),
-                "BCall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem as ::unity2::ClassIdentity>::NAME,
-                        "BCall",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn b_call(
-        this: RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(__lookup_b_call::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-refreshunitsetdecidemenu")]
-pub trait IRefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItemMethods: IRefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem {
-    #[doc = "`.ctor(bool, bool, crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_DecideEventHandler)` overload"]
-    fn ctor(
-        self,
-        enabled: impl ::core::convert::Into<bool>,
-        usabled: impl ::core::convert::Into<bool>,
-        decide_event_handler: impl ::core::convert::Into<crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_DecideEventHandler>,
-    ) -> () {
-        unsafe {
-            let __receiver = <RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(enabled),
-                ::core::convert::Into::into(usabled),
-                ::core::convert::Into::into(decide_event_handler),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`OnBuild()` overload"]
-    fn on_build(self) -> () {
-        unsafe {
-            let __receiver = <RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem_unity2_raw::on_build(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnBuildMenuItemContent()` overload"]
-    fn on_build_menu_item_content(self) -> () {
-        unsafe {
-            let __receiver = <RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem_unity2_raw::on_build_menu_item_content(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetInitialColor()` overload"]
-    fn set_initial_color(self) -> () {
-        unsafe {
-            let __receiver = <RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem_unity2_raw::set_initial_color(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetName()` overload"]
-    fn get_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`BuildAttribute()` overload"]
-    fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        unsafe {
-            let __receiver = <RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`UpdateEnabled(bool, bool)` overload"]
-    fn update_enabled(self, enabled: impl ::core::convert::Into<bool>, usabled: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver = <RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem_unity2_raw::update_enabled(
-                __receiver,
-                ::core::convert::Into::into(enabled),
-                ::core::convert::Into::into(usabled),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`OnDeselect()` overload"]
-    fn on_deselect(self) -> () {
-        unsafe {
-            let __receiver = <RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem_unity2_raw::on_deselect(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnCursorMoveEnd()` overload"]
-    fn on_cursor_move_end(self) -> () {
-        unsafe {
-            let __receiver = <RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem_unity2_raw::on_cursor_move_end(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ACall()` overload"]
-    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = <RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`BCall()` overload"]
-    fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = <RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem_unity2_raw::b_call(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-refreshunitsetdecidemenu")]
-impl<__T: IRefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem> IRefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItemMethods for __T {}
+impl RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn on_build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem_unity2_raw :: __lookup_on_build :: get_method_info () } pub fn on_build_menu_item_content_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem_unity2_raw :: __lookup_on_build_menu_item_content :: get_method_info () } pub fn set_initial_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem_unity2_raw :: __lookup_set_initial_color :: get_method_info () } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem_unity2_raw :: __lookup_get_name :: get_method_info () } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem_unity2_raw :: __lookup_build_attribute :: get_method_info () } pub fn update_enabled_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem_unity2_raw :: __lookup_update_enabled :: get_method_info () } pub fn on_deselect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem_unity2_raw :: __lookup_on_deselect :: get_method_info () } pub fn on_cursor_move_end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem_unity2_raw :: __lookup_on_cursor_move_end :: get_method_info () } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem_unity2_raw :: __lookup_a_call :: get_method_info () } pub fn b_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem_unity2_raw :: __lookup_b_call :: get_method_info () } }
 
 #[cfg(feature = "app-refreshunitsetdecidemenu")]
 impl RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem {
-    #[doc = "`.ctor(bool, bool, crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_DecideEventHandler)` — overload selector"]
-    pub fn new(
-        enabled: bool,
-        usabled: bool,
-        decide_event_handler: crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_DecideEventHandler,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItemMethods>::ctor(this, enabled, usabled, decide_event_handler);
-        this
-    }
+# [doc = "`.ctor(bool, bool, crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_DecideEventHandler)` — overload selector"] pub fn new (enabled : bool , usabled : bool , decide_event_handler : crate :: app :: refreshunitsetdecidemenu :: RefreshUnitSetDecideMenu_DecideEventHandler) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IRefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItemMethods > :: ctor (this , enabled , usabled , decide_event_handler) ; this }
 }
 
 #[cfg(feature = "app-refreshunitsetdecidemenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RefreshUnitSetDecideMenu_DecideEventHandler_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RefreshUnitSetDecideMenu_DecideEventHandler as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RefreshUnitSetDecideMenu_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: RefreshUnitSetDecideMenu_DecideEventHandler,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RefreshUnitSetDecideMenu_DecideEventHandler,
-            crate::system::object::Object,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_Result2 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RefreshUnitSetDecideMenu_DecideEventHandler as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RefreshUnitSetDecideMenu_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
-                        "Invoke",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn invoke(
-        this: RefreshUnitSetDecideMenu_DecideEventHandler,
-        result: crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_Result2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RefreshUnitSetDecideMenu_DecideEventHandler,
-            crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_Result2,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
-        inner(this, result, __unity2_method_info)
-    }
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __RefreshUnitSetDecideMenu_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: refreshunitsetdecidemenucontent :: RefreshUnitSetDecideMenuContent as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < crate :: app :: refreshunitsetdecidemenu :: RefreshUnitSetDecideMenu_KeyUpEventHandler as :: unity2 :: IlType > :: il_type () , < crate :: app :: refreshunitsetdecidemenu :: RefreshUnitSetDecideMenu_KeyDownEventHandler as :: unity2 :: IlType > :: il_type () , < crate :: app :: refreshunitsetdecidemenu :: RefreshUnitSetDecideMenu_DecideEventHandler as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RefreshUnitSetDecideMenu as :: unity2 :: ClassIdentity > :: class () , "Create" , 7 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefreshUnitSetDecideMenu as :: unity2 :: ClassIdentity > :: NAME , "Create" , e) , } } } pub unsafe fn create (super_ : crate :: app :: procinst :: ProcInst , menu_content : crate :: app :: refreshunitsetdecidemenucontent :: RefreshUnitSetDecideMenuContent , enabled : bool , usabled : bool , key_up_event_handler : crate :: app :: refreshunitsetdecidemenu :: RefreshUnitSetDecideMenu_KeyUpEventHandler , key_down_event_handler : crate :: app :: refreshunitsetdecidemenu :: RefreshUnitSetDecideMenu_KeyDownEventHandler , decide_event_handler : crate :: app :: refreshunitsetdecidemenu :: RefreshUnitSetDecideMenu_DecideEventHandler , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: refreshunitsetdecidemenu :: RefreshUnitSetDecideMenu { let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: refreshunitsetdecidemenucontent :: RefreshUnitSetDecideMenuContent , bool , bool , crate :: app :: refreshunitsetdecidemenu :: RefreshUnitSetDecideMenu_KeyUpEventHandler , crate :: app :: refreshunitsetdecidemenu :: RefreshUnitSetDecideMenu_KeyDownEventHandler , crate :: app :: refreshunitsetdecidemenu :: RefreshUnitSetDecideMenu_DecideEventHandler , :: unity2 :: OptionalMethod ,) -> crate :: app :: refreshunitsetdecidemenu :: RefreshUnitSetDecideMenu = :: core :: mem :: transmute (__lookup_create :: get_method_info () . method_ptr ,) ; inner (super_ , menu_content , enabled , usabled , key_up_event_handler , key_down_event_handler , decide_event_handler , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > as :: unity2 :: IlType > :: il_type () , < crate :: app :: refreshunitsetdecidemenucontent :: RefreshUnitSetDecideMenuContent as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < crate :: app :: refreshunitsetdecidemenu :: RefreshUnitSetDecideMenu_KeyUpEventHandler as :: unity2 :: IlType > :: il_type () , < crate :: app :: refreshunitsetdecidemenu :: RefreshUnitSetDecideMenu_KeyDownEventHandler as :: unity2 :: IlType > :: il_type () , < crate :: app :: refreshunitsetdecidemenu :: RefreshUnitSetDecideMenu_DecideEventHandler as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RefreshUnitSetDecideMenu as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 6 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefreshUnitSetDecideMenu as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : RefreshUnitSetDecideMenu , menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , menu_content : crate :: app :: refreshunitsetdecidemenucontent :: RefreshUnitSetDecideMenuContent , usabled : bool , key_up_event_handler : crate :: app :: refreshunitsetdecidemenu :: RefreshUnitSetDecideMenu_KeyUpEventHandler , key_down_event_handler : crate :: app :: refreshunitsetdecidemenu :: RefreshUnitSetDecideMenu_KeyDownEventHandler , decide_event_handler : crate :: app :: refreshunitsetdecidemenu :: RefreshUnitSetDecideMenu_DecideEventHandler , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RefreshUnitSetDecideMenu , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , crate :: app :: refreshunitsetdecidemenucontent :: RefreshUnitSetDecideMenuContent , bool , crate :: app :: refreshunitsetdecidemenu :: RefreshUnitSetDecideMenu_KeyUpEventHandler , crate :: app :: refreshunitsetdecidemenu :: RefreshUnitSetDecideMenu_KeyDownEventHandler , crate :: app :: refreshunitsetdecidemenu :: RefreshUnitSetDecideMenu_DecideEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , menu_item_list , menu_content , usabled , key_up_event_handler , key_down_event_handler , decide_event_handler , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_menu_item_list { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < crate :: app :: refreshunitsetdecidemenu :: RefreshUnitSetDecideMenu_DecideEventHandler as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RefreshUnitSetDecideMenu as :: unity2 :: ClassIdentity > :: class () , "CreateMenuItemList" , 3 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefreshUnitSetDecideMenu as :: unity2 :: ClassIdentity > :: NAME , "CreateMenuItemList" , e) , } } } pub unsafe fn create_menu_item_list (enabled : bool , usabled : bool , decide_event_handler : crate :: app :: refreshunitsetdecidemenu :: RefreshUnitSetDecideMenu_DecideEventHandler , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > { let inner : extern "C" fn (bool , bool , crate :: app :: refreshunitsetdecidemenu :: RefreshUnitSetDecideMenu_DecideEventHandler , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > = :: core :: mem :: transmute (__lookup_create_menu_item_list :: get_method_info () . method_ptr ,) ; inner (enabled , usabled , decide_event_handler , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RefreshUnitSetDecideMenu as :: unity2 :: ClassIdentity > :: class () , "GetName" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefreshUnitSetDecideMenu as :: unity2 :: ClassIdentity > :: NAME , "GetName" , e) , } } } pub unsafe fn get_name (this : RefreshUnitSetDecideMenu , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (RefreshUnitSetDecideMenu , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_name :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_tick { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RefreshUnitSetDecideMenu as :: unity2 :: ClassIdentity > :: class () , "Tick" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefreshUnitSetDecideMenu as :: unity2 :: ClassIdentity > :: NAME , "Tick" , e) , } } } pub unsafe fn tick (this : RefreshUnitSetDecideMenu , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RefreshUnitSetDecideMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_tick :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_text_color { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: color :: Color as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RefreshUnitSetDecideMenu as :: unity2 :: ClassIdentity > :: class () , "SetTextColor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefreshUnitSetDecideMenu as :: unity2 :: ClassIdentity > :: NAME , "SetTextColor" , e) , } } } pub unsafe fn set_text_color (this : RefreshUnitSetDecideMenu , color : crate :: unity_engine :: color :: Color , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RefreshUnitSetDecideMenu , crate :: unity_engine :: color :: Color , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_text_color :: get_method_info () . method_ptr ,) ; inner (this , color , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update_enabled { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RefreshUnitSetDecideMenu as :: unity2 :: ClassIdentity > :: class () , "UpdateEnabled" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefreshUnitSetDecideMenu as :: unity2 :: ClassIdentity > :: NAME , "UpdateEnabled" , e) , } } } pub unsafe fn update_enabled (this : RefreshUnitSetDecideMenu , enabled : bool , usabled : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RefreshUnitSetDecideMenu , bool , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update_enabled :: get_method_info () . method_ptr ,) ; inner (this , enabled , usabled , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_focus_this_menu { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RefreshUnitSetDecideMenu as :: unity2 :: ClassIdentity > :: class () , "FocusThisMenu" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefreshUnitSetDecideMenu as :: unity2 :: ClassIdentity > :: NAME , "FocusThisMenu" , e) , } } } pub unsafe fn focus_this_menu (this : RefreshUnitSetDecideMenu , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RefreshUnitSetDecideMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_focus_this_menu :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_unfocus_this_menu { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RefreshUnitSetDecideMenu as :: unity2 :: ClassIdentity > :: class () , "UnfocusThisMenu" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefreshUnitSetDecideMenu as :: unity2 :: ClassIdentity > :: NAME , "UnfocusThisMenu" , e) , } } } pub unsafe fn unfocus_this_menu (this : RefreshUnitSetDecideMenu , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RefreshUnitSetDecideMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_unfocus_this_menu :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_focused_this_menu { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RefreshUnitSetDecideMenu as :: unity2 :: ClassIdentity > :: class () , "IsFocusedThisMenu" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefreshUnitSetDecideMenu as :: unity2 :: ClassIdentity > :: NAME , "IsFocusedThisMenu" , e) , } } } pub unsafe fn is_focused_this_menu (this : RefreshUnitSetDecideMenu , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (RefreshUnitSetDecideMenu , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_focused_this_menu :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_key_up { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RefreshUnitSetDecideMenu as :: unity2 :: ClassIdentity > :: class () , "KeyUp" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefreshUnitSetDecideMenu as :: unity2 :: ClassIdentity > :: NAME , "KeyUp" , e) , } } } pub unsafe fn key_up (this : RefreshUnitSetDecideMenu , is_trigger : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RefreshUnitSetDecideMenu , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_key_up :: get_method_info () . method_ptr ,) ; inner (this , is_trigger , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_key_down { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RefreshUnitSetDecideMenu as :: unity2 :: ClassIdentity > :: class () , "KeyDown" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefreshUnitSetDecideMenu as :: unity2 :: ClassIdentity > :: NAME , "KeyDown" , e) , } } } pub unsafe fn key_down (this : RefreshUnitSetDecideMenu , is_trigger : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RefreshUnitSetDecideMenu , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_key_down :: get_method_info () . method_ptr ,) ; inner (this , is_trigger , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_key_left { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RefreshUnitSetDecideMenu as :: unity2 :: ClassIdentity > :: class () , "KeyLeft" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefreshUnitSetDecideMenu as :: unity2 :: ClassIdentity > :: NAME , "KeyLeft" , e) , } } } pub unsafe fn key_left (this : RefreshUnitSetDecideMenu , is_trigger : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RefreshUnitSetDecideMenu , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_key_left :: get_method_info () . method_ptr ,) ; inner (this , is_trigger , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_key_right { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RefreshUnitSetDecideMenu as :: unity2 :: ClassIdentity > :: class () , "KeyRight" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefreshUnitSetDecideMenu as :: unity2 :: ClassIdentity > :: NAME , "KeyRight" , e) , } } } pub unsafe fn key_right (this : RefreshUnitSetDecideMenu , is_trigger : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RefreshUnitSetDecideMenu , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_key_right :: get_method_info () . method_ptr ,) ; inner (this , is_trigger , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_l_call { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RefreshUnitSetDecideMenu as :: unity2 :: ClassIdentity > :: class () , "LCall" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefreshUnitSetDecideMenu as :: unity2 :: ClassIdentity > :: NAME , "LCall" , e) , } } } pub unsafe fn l_call (this : RefreshUnitSetDecideMenu , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result { let inner : extern "C" fn (RefreshUnitSetDecideMenu , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute (__lookup_l_call :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_dispose { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RefreshUnitSetDecideMenu as :: unity2 :: ClassIdentity > :: class () , "OnDispose" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefreshUnitSetDecideMenu as :: unity2 :: ClassIdentity > :: NAME , "OnDispose" , e) , } } } pub unsafe fn on_dispose (this : RefreshUnitSetDecideMenu , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RefreshUnitSetDecideMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_dispose :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-refreshunitsetdecidemenu")]
+impl RefreshUnitSetDecideMenu { # [doc = "`Create(crate::app::procinst::ProcInst, crate::app::refreshunitsetdecidemenucontent::RefreshUnitSetDecideMenuContent, bool, bool, crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_KeyUpEventHandler, crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_KeyDownEventHandler, crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_DecideEventHandler)` overload"] pub fn create (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , menu_content : impl :: core :: convert :: Into < crate :: app :: refreshunitsetdecidemenucontent :: RefreshUnitSetDecideMenuContent > , enabled : impl :: core :: convert :: Into < bool > , usabled : impl :: core :: convert :: Into < bool > , key_up_event_handler : impl :: core :: convert :: Into < crate :: app :: refreshunitsetdecidemenu :: RefreshUnitSetDecideMenu_KeyUpEventHandler > , key_down_event_handler : impl :: core :: convert :: Into < crate :: app :: refreshunitsetdecidemenu :: RefreshUnitSetDecideMenu_KeyDownEventHandler > , decide_event_handler : impl :: core :: convert :: Into < crate :: app :: refreshunitsetdecidemenu :: RefreshUnitSetDecideMenu_DecideEventHandler >) -> crate :: app :: refreshunitsetdecidemenu :: RefreshUnitSetDecideMenu { unsafe { __RefreshUnitSetDecideMenu_unity2_raw :: create (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (menu_content) , :: core :: convert :: Into :: into (enabled) , :: core :: convert :: Into :: into (usabled) , :: core :: convert :: Into :: into (key_up_event_handler) , :: core :: convert :: Into :: into (key_down_event_handler) , :: core :: convert :: Into :: into (decide_event_handler) , :: core :: option :: Option :: None) } } # [doc = "`CreateMenuItemList(bool, bool, crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_DecideEventHandler)` overload"] pub fn create_menu_item_list (enabled : impl :: core :: convert :: Into < bool > , usabled : impl :: core :: convert :: Into < bool > , decide_event_handler : impl :: core :: convert :: Into < crate :: app :: refreshunitsetdecidemenu :: RefreshUnitSetDecideMenu_DecideEventHandler >) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > { unsafe { __RefreshUnitSetDecideMenu_unity2_raw :: create_menu_item_list (:: core :: convert :: Into :: into (enabled) , :: core :: convert :: Into :: into (usabled) , :: core :: convert :: Into :: into (decide_event_handler) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-refreshunitsetdecidemenu")]
+pub trait IRefreshUnitSetDecideMenuMethods : IRefreshUnitSetDecideMenu { # [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::refreshunitsetdecidemenucontent::RefreshUnitSetDecideMenuContent, bool, crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_KeyUpEventHandler, crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_KeyDownEventHandler, crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_DecideEventHandler)` overload"] fn ctor (self , menu_item_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > > , menu_content : impl :: core :: convert :: Into < crate :: app :: refreshunitsetdecidemenucontent :: RefreshUnitSetDecideMenuContent > , usabled : impl :: core :: convert :: Into < bool > , key_up_event_handler : impl :: core :: convert :: Into < crate :: app :: refreshunitsetdecidemenu :: RefreshUnitSetDecideMenu_KeyUpEventHandler > , key_down_event_handler : impl :: core :: convert :: Into < crate :: app :: refreshunitsetdecidemenu :: RefreshUnitSetDecideMenu_KeyDownEventHandler > , decide_event_handler : impl :: core :: convert :: Into < crate :: app :: refreshunitsetdecidemenu :: RefreshUnitSetDecideMenu_DecideEventHandler >) -> () { unsafe { let __receiver = < RefreshUnitSetDecideMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RefreshUnitSetDecideMenu_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (menu_item_list) , :: core :: convert :: Into :: into (menu_content) , :: core :: convert :: Into :: into (usabled) , :: core :: convert :: Into :: into (key_up_event_handler) , :: core :: convert :: Into :: into (key_down_event_handler) , :: core :: convert :: Into :: into (decide_event_handler) , :: core :: option :: Option :: None) } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < RefreshUnitSetDecideMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RefreshUnitSetDecideMenu_unity2_raw :: get_name (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Tick()` overload"] fn tick (self ,) -> () { unsafe { let __receiver = < RefreshUnitSetDecideMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RefreshUnitSetDecideMenu_unity2_raw :: tick (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetTextColor(crate::unity_engine::color::Color)` overload"] fn set_text_color (self , color : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color >) -> () { unsafe { let __receiver = < RefreshUnitSetDecideMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RefreshUnitSetDecideMenu_unity2_raw :: set_text_color (__receiver , :: core :: convert :: Into :: into (color) , :: core :: option :: Option :: None) } } # [doc = "`UpdateEnabled(bool, bool)` overload"] fn update_enabled (self , enabled : impl :: core :: convert :: Into < bool > , usabled : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < RefreshUnitSetDecideMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RefreshUnitSetDecideMenu_unity2_raw :: update_enabled (__receiver , :: core :: convert :: Into :: into (enabled) , :: core :: convert :: Into :: into (usabled) , :: core :: option :: Option :: None) } } # [doc = "`FocusThisMenu()` overload"] fn focus_this_menu (self ,) -> () { unsafe { let __receiver = < RefreshUnitSetDecideMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RefreshUnitSetDecideMenu_unity2_raw :: focus_this_menu (__receiver , :: core :: option :: Option :: None) } } # [doc = "`UnfocusThisMenu()` overload"] fn unfocus_this_menu (self ,) -> () { unsafe { let __receiver = < RefreshUnitSetDecideMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RefreshUnitSetDecideMenu_unity2_raw :: unfocus_this_menu (__receiver , :: core :: option :: Option :: None) } } # [doc = "`IsFocusedThisMenu()` overload"] fn is_focused_this_menu (self ,) -> bool { unsafe { let __receiver = < RefreshUnitSetDecideMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RefreshUnitSetDecideMenu_unity2_raw :: is_focused_this_menu (__receiver , :: core :: option :: Option :: None) } } # [doc = "`KeyUp(bool)` overload"] fn key_up (self , is_trigger : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < RefreshUnitSetDecideMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RefreshUnitSetDecideMenu_unity2_raw :: key_up (__receiver , :: core :: convert :: Into :: into (is_trigger) , :: core :: option :: Option :: None) } } # [doc = "`KeyDown(bool)` overload"] fn key_down (self , is_trigger : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < RefreshUnitSetDecideMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RefreshUnitSetDecideMenu_unity2_raw :: key_down (__receiver , :: core :: convert :: Into :: into (is_trigger) , :: core :: option :: Option :: None) } } # [doc = "`KeyLeft(bool)` overload"] fn key_left (self , is_trigger : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < RefreshUnitSetDecideMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RefreshUnitSetDecideMenu_unity2_raw :: key_left (__receiver , :: core :: convert :: Into :: into (is_trigger) , :: core :: option :: Option :: None) } } # [doc = "`KeyRight(bool)` overload"] fn key_right (self , is_trigger : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < RefreshUnitSetDecideMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RefreshUnitSetDecideMenu_unity2_raw :: key_right (__receiver , :: core :: convert :: Into :: into (is_trigger) , :: core :: option :: Option :: None) } } # [doc = "`LCall()` overload"] fn l_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < RefreshUnitSetDecideMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RefreshUnitSetDecideMenu_unity2_raw :: l_call (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnDispose()` overload"] fn on_dispose (self ,) -> () { unsafe { let __receiver = < RefreshUnitSetDecideMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RefreshUnitSetDecideMenu_unity2_raw :: on_dispose (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-refreshunitsetdecidemenu")]
+impl < __T : IRefreshUnitSetDecideMenu > IRefreshUnitSetDecideMenuMethods for __T { }
+
+#[cfg(feature = "app-refreshunitsetdecidemenu")]
+impl RefreshUnitSetDecideMenu { pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RefreshUnitSetDecideMenu_unity2_raw :: __lookup_create :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RefreshUnitSetDecideMenu_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn create_menu_item_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RefreshUnitSetDecideMenu_unity2_raw :: __lookup_create_menu_item_list :: get_method_info () } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RefreshUnitSetDecideMenu_unity2_raw :: __lookup_get_name :: get_method_info () } pub fn tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RefreshUnitSetDecideMenu_unity2_raw :: __lookup_tick :: get_method_info () } pub fn set_text_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RefreshUnitSetDecideMenu_unity2_raw :: __lookup_set_text_color :: get_method_info () } pub fn update_enabled_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RefreshUnitSetDecideMenu_unity2_raw :: __lookup_update_enabled :: get_method_info () } pub fn focus_this_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RefreshUnitSetDecideMenu_unity2_raw :: __lookup_focus_this_menu :: get_method_info () } pub fn unfocus_this_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RefreshUnitSetDecideMenu_unity2_raw :: __lookup_unfocus_this_menu :: get_method_info () } pub fn is_focused_this_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RefreshUnitSetDecideMenu_unity2_raw :: __lookup_is_focused_this_menu :: get_method_info () } pub fn key_up_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RefreshUnitSetDecideMenu_unity2_raw :: __lookup_key_up :: get_method_info () } pub fn key_down_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RefreshUnitSetDecideMenu_unity2_raw :: __lookup_key_down :: get_method_info () } pub fn key_left_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RefreshUnitSetDecideMenu_unity2_raw :: __lookup_key_left :: get_method_info () } pub fn key_right_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RefreshUnitSetDecideMenu_unity2_raw :: __lookup_key_right :: get_method_info () } pub fn l_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RefreshUnitSetDecideMenu_unity2_raw :: __lookup_l_call :: get_method_info () } pub fn on_dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RefreshUnitSetDecideMenu_unity2_raw :: __lookup_on_dispose :: get_method_info () } }
+
+#[cfg(feature = "app-refreshunitsetdecidemenu")]
+impl RefreshUnitSetDecideMenu {
+# [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::refreshunitsetdecidemenucontent::RefreshUnitSetDecideMenuContent, bool, crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_KeyUpEventHandler, crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_KeyDownEventHandler, crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_DecideEventHandler)` — overload selector"] pub fn new (menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , menu_content : crate :: app :: refreshunitsetdecidemenucontent :: RefreshUnitSetDecideMenuContent , usabled : bool , key_up_event_handler : crate :: app :: refreshunitsetdecidemenu :: RefreshUnitSetDecideMenu_KeyUpEventHandler , key_down_event_handler : crate :: app :: refreshunitsetdecidemenu :: RefreshUnitSetDecideMenu_KeyDownEventHandler , decide_event_handler : crate :: app :: refreshunitsetdecidemenu :: RefreshUnitSetDecideMenu_DecideEventHandler) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RefreshUnitSetDecideMenu) , :: core :: stringify ! (new) ,)) ; < Self as IRefreshUnitSetDecideMenuMethods > :: ctor (this , menu_item_list , menu_content , usabled , key_up_event_handler , key_down_event_handler , decide_event_handler) ; this }
 }
 
 #[cfg(feature = "app-refreshunitsetdecidemenu")]
-pub trait IRefreshUnitSetDecideMenu_DecideEventHandlerMethods: IRefreshUnitSetDecideMenu_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
-        unsafe {
-            let __receiver = <RefreshUnitSetDecideMenu_DecideEventHandler as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RefreshUnitSetDecideMenu_DecideEventHandler_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invoke(crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_Result2)` overload"]
-    fn invoke(self, result: impl ::core::convert::Into<crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_Result2>) -> () {
-        unsafe {
-            let __receiver = <RefreshUnitSetDecideMenu_DecideEventHandler as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RefreshUnitSetDecideMenu_DecideEventHandler_unity2_raw::invoke(
-                __receiver,
-                ::core::convert::Into::into(result),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __RefreshUnitSetDecideMenu_DecideEventHandler_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type () , < :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RefreshUnitSetDecideMenu_DecideEventHandler as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefreshUnitSetDecideMenu_DecideEventHandler as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : RefreshUnitSetDecideMenu_DecideEventHandler , object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RefreshUnitSetDecideMenu_DecideEventHandler , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , object , method , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_invoke { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: refreshunitsetdecidemenu :: RefreshUnitSetDecideMenu_Result2 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RefreshUnitSetDecideMenu_DecideEventHandler as :: unity2 :: ClassIdentity > :: class () , "Invoke" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefreshUnitSetDecideMenu_DecideEventHandler as :: unity2 :: ClassIdentity > :: NAME , "Invoke" , e) , } } } pub unsafe fn invoke (this : RefreshUnitSetDecideMenu_DecideEventHandler , result : crate :: app :: refreshunitsetdecidemenu :: RefreshUnitSetDecideMenu_Result2 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RefreshUnitSetDecideMenu_DecideEventHandler , crate :: app :: refreshunitsetdecidemenu :: RefreshUnitSetDecideMenu_Result2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_invoke :: get_method_info () . method_ptr ,) ; inner (this , result , __unity2_method_info) } }
 
 #[cfg(feature = "app-refreshunitsetdecidemenu")]
-impl<__T: IRefreshUnitSetDecideMenu_DecideEventHandler> IRefreshUnitSetDecideMenu_DecideEventHandlerMethods for __T {}
+pub trait IRefreshUnitSetDecideMenu_DecideEventHandlerMethods : IRefreshUnitSetDecideMenu_DecideEventHandler { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < RefreshUnitSetDecideMenu_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RefreshUnitSetDecideMenu_DecideEventHandler_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } # [doc = "`Invoke(crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_Result2)` overload"] fn invoke (self , result : impl :: core :: convert :: Into < crate :: app :: refreshunitsetdecidemenu :: RefreshUnitSetDecideMenu_Result2 >) -> () { unsafe { let __receiver = < RefreshUnitSetDecideMenu_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RefreshUnitSetDecideMenu_DecideEventHandler_unity2_raw :: invoke (__receiver , :: core :: convert :: Into :: into (result) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-refreshunitsetdecidemenu")]
+impl < __T : IRefreshUnitSetDecideMenu_DecideEventHandler > IRefreshUnitSetDecideMenu_DecideEventHandlerMethods for __T { }
+
+#[cfg(feature = "app-refreshunitsetdecidemenu")]
+impl RefreshUnitSetDecideMenu_DecideEventHandler { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RefreshUnitSetDecideMenu_DecideEventHandler_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RefreshUnitSetDecideMenu_DecideEventHandler_unity2_raw :: __lookup_invoke :: get_method_info () } }
 
 #[cfg(feature = "app-refreshunitsetdecidemenu")]
 impl RefreshUnitSetDecideMenu_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RefreshUnitSetDecideMenu_DecideEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRefreshUnitSetDecideMenu_DecideEventHandlerMethods>::ctor(this, object, method);
-        this
-    }
+# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RefreshUnitSetDecideMenu_DecideEventHandler) , :: core :: stringify ! (new) ,)) ; < Self as IRefreshUnitSetDecideMenu_DecideEventHandlerMethods > :: ctor (this , object , method) ; this }
 }
 
 #[cfg(feature = "app-refreshunitsetdecidemenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RefreshUnitSetDecideMenu_KeyDownEventHandler_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RefreshUnitSetDecideMenu_KeyDownEventHandler as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RefreshUnitSetDecideMenu_KeyDownEventHandler as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: RefreshUnitSetDecideMenu_KeyDownEventHandler,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RefreshUnitSetDecideMenu_KeyDownEventHandler,
-            crate::system::object::Object,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RefreshUnitSetDecideMenu_KeyDownEventHandler as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RefreshUnitSetDecideMenu_KeyDownEventHandler as ::unity2::ClassIdentity>::NAME,
-                        "Invoke",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn invoke(this: RefreshUnitSetDecideMenu_KeyDownEventHandler, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RefreshUnitSetDecideMenu_KeyDownEventHandler, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __RefreshUnitSetDecideMenu_KeyUpEventHandler_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type () , < :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RefreshUnitSetDecideMenu_KeyUpEventHandler as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefreshUnitSetDecideMenu_KeyUpEventHandler as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : RefreshUnitSetDecideMenu_KeyUpEventHandler , object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RefreshUnitSetDecideMenu_KeyUpEventHandler , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , object , method , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_invoke { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RefreshUnitSetDecideMenu_KeyUpEventHandler as :: unity2 :: ClassIdentity > :: class () , "Invoke" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefreshUnitSetDecideMenu_KeyUpEventHandler as :: unity2 :: ClassIdentity > :: NAME , "Invoke" , e) , } } } pub unsafe fn invoke (this : RefreshUnitSetDecideMenu_KeyUpEventHandler , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RefreshUnitSetDecideMenu_KeyUpEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_invoke :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-refreshunitsetdecidemenu")]
+pub trait IRefreshUnitSetDecideMenu_KeyUpEventHandlerMethods : IRefreshUnitSetDecideMenu_KeyUpEventHandler { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < RefreshUnitSetDecideMenu_KeyUpEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RefreshUnitSetDecideMenu_KeyUpEventHandler_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } # [doc = "`Invoke()` overload"] fn invoke (self ,) -> () { unsafe { let __receiver = < RefreshUnitSetDecideMenu_KeyUpEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RefreshUnitSetDecideMenu_KeyUpEventHandler_unity2_raw :: invoke (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-refreshunitsetdecidemenu")]
+impl < __T : IRefreshUnitSetDecideMenu_KeyUpEventHandler > IRefreshUnitSetDecideMenu_KeyUpEventHandlerMethods for __T { }
+
+#[cfg(feature = "app-refreshunitsetdecidemenu")]
+impl RefreshUnitSetDecideMenu_KeyUpEventHandler { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RefreshUnitSetDecideMenu_KeyUpEventHandler_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RefreshUnitSetDecideMenu_KeyUpEventHandler_unity2_raw :: __lookup_invoke :: get_method_info () } }
+
+#[cfg(feature = "app-refreshunitsetdecidemenu")]
+impl RefreshUnitSetDecideMenu_KeyUpEventHandler {
+# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RefreshUnitSetDecideMenu_KeyUpEventHandler) , :: core :: stringify ! (new) ,)) ; < Self as IRefreshUnitSetDecideMenu_KeyUpEventHandlerMethods > :: ctor (this , object , method) ; this }
 }
 
 #[cfg(feature = "app-refreshunitsetdecidemenu")]
-pub trait IRefreshUnitSetDecideMenu_KeyDownEventHandlerMethods: IRefreshUnitSetDecideMenu_KeyDownEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
-        unsafe {
-            let __receiver = <RefreshUnitSetDecideMenu_KeyDownEventHandler as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RefreshUnitSetDecideMenu_KeyDownEventHandler_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invoke()` overload"]
-    fn invoke(self) -> () {
-        unsafe {
-            let __receiver = <RefreshUnitSetDecideMenu_KeyDownEventHandler as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RefreshUnitSetDecideMenu_KeyDownEventHandler_unity2_raw::invoke(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __RefreshUnitSetDecideMenu_KeyDownEventHandler_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type () , < :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RefreshUnitSetDecideMenu_KeyDownEventHandler as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefreshUnitSetDecideMenu_KeyDownEventHandler as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : RefreshUnitSetDecideMenu_KeyDownEventHandler , object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RefreshUnitSetDecideMenu_KeyDownEventHandler , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , object , method , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_invoke { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RefreshUnitSetDecideMenu_KeyDownEventHandler as :: unity2 :: ClassIdentity > :: class () , "Invoke" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefreshUnitSetDecideMenu_KeyDownEventHandler as :: unity2 :: ClassIdentity > :: NAME , "Invoke" , e) , } } } pub unsafe fn invoke (this : RefreshUnitSetDecideMenu_KeyDownEventHandler , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RefreshUnitSetDecideMenu_KeyDownEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_invoke :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-refreshunitsetdecidemenu")]
-impl<__T: IRefreshUnitSetDecideMenu_KeyDownEventHandler> IRefreshUnitSetDecideMenu_KeyDownEventHandlerMethods for __T {}
+pub trait IRefreshUnitSetDecideMenu_KeyDownEventHandlerMethods : IRefreshUnitSetDecideMenu_KeyDownEventHandler { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < RefreshUnitSetDecideMenu_KeyDownEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RefreshUnitSetDecideMenu_KeyDownEventHandler_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } # [doc = "`Invoke()` overload"] fn invoke (self ,) -> () { unsafe { let __receiver = < RefreshUnitSetDecideMenu_KeyDownEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RefreshUnitSetDecideMenu_KeyDownEventHandler_unity2_raw :: invoke (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-refreshunitsetdecidemenu")]
+impl < __T : IRefreshUnitSetDecideMenu_KeyDownEventHandler > IRefreshUnitSetDecideMenu_KeyDownEventHandlerMethods for __T { }
+
+#[cfg(feature = "app-refreshunitsetdecidemenu")]
+impl RefreshUnitSetDecideMenu_KeyDownEventHandler { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RefreshUnitSetDecideMenu_KeyDownEventHandler_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RefreshUnitSetDecideMenu_KeyDownEventHandler_unity2_raw :: __lookup_invoke :: get_method_info () } }
 
 #[cfg(feature = "app-refreshunitsetdecidemenu")]
 impl RefreshUnitSetDecideMenu_KeyDownEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RefreshUnitSetDecideMenu_KeyDownEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRefreshUnitSetDecideMenu_KeyDownEventHandlerMethods>::ctor(this, object, method);
-        this
-    }
+# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RefreshUnitSetDecideMenu_KeyDownEventHandler) , :: core :: stringify ! (new) ,)) ; < Self as IRefreshUnitSetDecideMenu_KeyDownEventHandlerMethods > :: ctor (this , object , method) ; this }
 }
 
 #[cfg(feature = "app-refreshunitsetdecidemenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{
-        IRefreshUnitSetDecideMenu, IRefreshUnitSetDecideMenuMethods, IRefreshUnitSetDecideMenu_DecideEventHandler,
-        IRefreshUnitSetDecideMenu_DecideEventHandlerMethods, IRefreshUnitSetDecideMenu_KeyDownEventHandler,
-        IRefreshUnitSetDecideMenu_KeyDownEventHandlerMethods, IRefreshUnitSetDecideMenu_KeyUpEventHandler,
-        IRefreshUnitSetDecideMenu_KeyUpEventHandlerMethods, IRefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem,
-        IRefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItemMethods, RefreshUnitSetDecideMenu, RefreshUnitSetDecideMenu_DecideEventHandler,
-        RefreshUnitSetDecideMenu_KeyDownEventHandler, RefreshUnitSetDecideMenu_KeyUpEventHandler,
-        RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem, RefreshUnitSetDecideMenu_Result2,
-    };
-    #[cfg(feature = "app-basicmenu")]
-    pub use crate::app::basicmenu::IBasicMenuMethods;
-    #[cfg(feature = "app-basicmenuitem")]
-    pub use crate::app::basicmenuitem::IBasicMenuItemMethods;
-    #[cfg(feature = "app-procinst")]
-    pub use crate::app::procinst::IProcInstMethods;
-    #[cfg(feature = "system-delegate")]
-    pub use crate::system::delegate::IDelegateMethods;
-    #[cfg(feature = "system-multicastdelegate")]
-    pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::{
-        app::{basicmenu::IBasicMenu, basicmenuitem::IBasicMenuItem, procinst::IProcInst},
-        system::{delegate::IDelegate, multicastdelegate::IMulticastDelegate, object::IObject, r#enum::IEnum, valuetype::IValueType},
-    };
+    pub use super::RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem;
+    pub use super::IRefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem;
+    pub use super::IRefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItemMethods;
+    pub use super::RefreshUnitSetDecideMenu;
+    pub use super::IRefreshUnitSetDecideMenu;
+    pub use super::IRefreshUnitSetDecideMenuMethods;
+    pub use super::RefreshUnitSetDecideMenu_Result2;
+    pub use super::RefreshUnitSetDecideMenu_DecideEventHandler;
+    pub use super::IRefreshUnitSetDecideMenu_DecideEventHandler;
+    pub use super::IRefreshUnitSetDecideMenu_DecideEventHandlerMethods;
+    pub use super::RefreshUnitSetDecideMenu_KeyUpEventHandler;
+    pub use super::IRefreshUnitSetDecideMenu_KeyUpEventHandler;
+    pub use super::IRefreshUnitSetDecideMenu_KeyUpEventHandlerMethods;
+    pub use super::RefreshUnitSetDecideMenu_KeyDownEventHandler;
+    pub use super::IRefreshUnitSetDecideMenu_KeyDownEventHandler;
+    pub use super::IRefreshUnitSetDecideMenu_KeyDownEventHandlerMethods;
+    pub use crate::app::basicmenu::IBasicMenu;
+    pub use crate::app::basicmenuitem::IBasicMenuItem;
+    pub use crate::app::procinst::IProcInst;
+    pub use crate::system::delegate::IDelegate;
+    pub use crate::system::multicastdelegate::IMulticastDelegate;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "app-basicmenu")] pub use crate::app::basicmenu::IBasicMenuMethods;
+    #[cfg(feature = "app-basicmenuitem")] pub use crate::app::basicmenuitem::IBasicMenuItemMethods;
+    #[cfg(feature = "app-procinst")] pub use crate::app::procinst::IProcInstMethods;
+    #[cfg(feature = "system-delegate")] pub use crate::system::delegate::IDelegateMethods;
+    #[cfg(feature = "system-multicastdelegate")] pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

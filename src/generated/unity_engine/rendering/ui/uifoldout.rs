@@ -2,277 +2,75 @@
 
 #[cfg(feature = "unity_engine-rendering-ui-uifoldout-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            event_systems::uibehaviour::{IUIBehaviour, UIBehaviour},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-            ui::{
-                selectable::{ISelectable, Selectable},
-                toggle::{IToggle, Toggle},
-            },
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/ui/uifoldout/UIFoldout.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Rendering.UI", name = "UIFoldout")]
-    #[parent(crate::unity_engine::ui::toggle::Toggle)]
-    pub struct UIFoldout {
-        #[offset(288)]
-        #[rename(name = "content")]
-        pub content: crate::unity_engine::gameobject::GameObject,
-        #[offset(296)]
-        #[rename(name = "arrowOpened")]
-        pub arrow_opened: crate::unity_engine::gameobject::GameObject,
-        #[offset(304)]
-        #[rename(name = "arrowClosed")]
-        pub arrow_closed: crate::unity_engine::gameobject::GameObject,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: event_systems :: uibehaviour :: { IUIBehaviour , UIBehaviour }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+ use crate :: unity_engine :: ui :: selectable :: { ISelectable , Selectable }
+ ;
+ use crate :: unity_engine :: ui :: toggle :: { IToggle , Toggle }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/ui/uifoldout/UIFoldout.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.UI" , name = "UIFoldout")] # [parent (crate :: unity_engine :: ui :: toggle :: Toggle)] pub struct UIFoldout {
+# [offset (288)] # [rename (name = "content")] pub content : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (296)] # [rename (name = "arrowOpened")] pub arrow_opened : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (304)] # [rename (name = "arrowClosed")] pub arrow_closed : crate :: unity_engine :: gameobject :: GameObject ,
+}
+
 }
 
 #[cfg(feature = "unity_engine-rendering-ui-uifoldout-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-ui-uifoldout")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __UIFoldout_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_start {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<UIFoldout as ::unity2::ClassIdentity>::class(), "Start", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UIFoldout as ::unity2::ClassIdentity>::NAME,
-                        "Start",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn start(this: UIFoldout, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(UIFoldout, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_start::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_validate {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UIFoldout as ::unity2::ClassIdentity>::class(),
-                "OnValidate",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UIFoldout as ::unity2::ClassIdentity>::NAME,
-                        "OnValidate",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_validate(this: UIFoldout, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(UIFoldout, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_validate::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_state {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<UIFoldout as ::unity2::ClassIdentity>::class(), "SetState", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UIFoldout as ::unity2::ClassIdentity>::NAME,
-                        "SetState",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_state(this: UIFoldout, state: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(UIFoldout, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_state::get_method_info().method_ptr);
-        inner(this, state, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_state_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type(), <bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<UIFoldout as ::unity2::ClassIdentity>::class(), "SetState", 2, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UIFoldout as ::unity2::ClassIdentity>::NAME,
-                        "SetState",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_state_2(this: UIFoldout, state: bool, rebuild_layout: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(UIFoldout, bool, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_state_2::get_method_info().method_ptr);
-        inner(this, state, rebuild_layout, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<UIFoldout as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UIFoldout as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: UIFoldout, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(UIFoldout, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __UIFoldout_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_start { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UIFoldout as :: unity2 :: ClassIdentity > :: class () , "Start" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UIFoldout as :: unity2 :: ClassIdentity > :: NAME , "Start" , e) , } } } pub unsafe fn start (this : UIFoldout , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UIFoldout , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_start :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_validate { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UIFoldout as :: unity2 :: ClassIdentity > :: class () , "OnValidate" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UIFoldout as :: unity2 :: ClassIdentity > :: NAME , "OnValidate" , e) , } } } pub unsafe fn on_validate (this : UIFoldout , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UIFoldout , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_validate :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_state { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UIFoldout as :: unity2 :: ClassIdentity > :: class () , "SetState" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UIFoldout as :: unity2 :: ClassIdentity > :: NAME , "SetState" , e) , } } } pub unsafe fn set_state (this : UIFoldout , state : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UIFoldout , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_state :: get_method_info () . method_ptr ,) ; inner (this , state , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_state_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UIFoldout as :: unity2 :: ClassIdentity > :: class () , "SetState" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UIFoldout as :: unity2 :: ClassIdentity > :: NAME , "SetState" , e) , } } } pub unsafe fn set_state_2 (this : UIFoldout , state : bool , rebuild_layout : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UIFoldout , bool , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_state_2 :: get_method_info () . method_ptr ,) ; inner (this , state , rebuild_layout , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UIFoldout as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UIFoldout as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : UIFoldout , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UIFoldout , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-rendering-ui-uifoldout")]
-pub trait IUIFoldoutMethods: IUIFoldout {
-    #[doc = "`Start()` overload"]
-    fn start(self) -> () {
-        unsafe {
-            let __receiver = <UIFoldout as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UIFoldout_unity2_raw::start(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnValidate()` overload"]
-    fn on_validate(self) -> () {
-        unsafe {
-            let __receiver = <UIFoldout as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UIFoldout_unity2_raw::on_validate(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetState(bool)` overload"]
-    fn set_state(self, state: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver = <UIFoldout as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UIFoldout_unity2_raw::set_state(__receiver, ::core::convert::Into::into(state), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetState(bool, bool)` overload"]
-    fn set_state_2(self, state: impl ::core::convert::Into<bool>, rebuild_layout: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver = <UIFoldout as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UIFoldout_unity2_raw::set_state_2(
-                __receiver,
-                ::core::convert::Into::into(state),
-                ::core::convert::Into::into(rebuild_layout),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <UIFoldout as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UIFoldout_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IUIFoldoutMethods : IUIFoldout { # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < UIFoldout as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UIFoldout_unity2_raw :: start (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnValidate()` overload"] fn on_validate (self ,) -> () { unsafe { let __receiver = < UIFoldout as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UIFoldout_unity2_raw :: on_validate (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetState(bool)` overload"] fn set_state (self , state : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < UIFoldout as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UIFoldout_unity2_raw :: set_state (__receiver , :: core :: convert :: Into :: into (state) , :: core :: option :: Option :: None) } } # [doc = "`SetState(bool, bool)` overload"] fn set_state_2 (self , state : impl :: core :: convert :: Into < bool > , rebuild_layout : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < UIFoldout as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UIFoldout_unity2_raw :: set_state_2 (__receiver , :: core :: convert :: Into :: into (state) , :: core :: convert :: Into :: into (rebuild_layout) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < UIFoldout as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UIFoldout_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-rendering-ui-uifoldout")]
-impl<__T: IUIFoldout> IUIFoldoutMethods for __T {}
+impl < __T : IUIFoldout > IUIFoldoutMethods for __T { }
+
+#[cfg(feature = "unity_engine-rendering-ui-uifoldout")]
+impl UIFoldout { pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UIFoldout_unity2_raw :: __lookup_start :: get_method_info () } pub fn on_validate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UIFoldout_unity2_raw :: __lookup_on_validate :: get_method_info () } pub fn set_state_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UIFoldout_unity2_raw :: __lookup_set_state :: get_method_info () } pub fn set_state_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UIFoldout_unity2_raw :: __lookup_set_state_2 :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UIFoldout_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-rendering-ui-uifoldout")]
 impl UIFoldout {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(UIFoldout), ::core::stringify!(new),));
-        <Self as IUIFoldoutMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (UIFoldout) , :: core :: stringify ! (new) ,)) ; < Self as IUIFoldoutMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "unity_engine-rendering-ui-uifoldout")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IUIFoldout, IUIFoldoutMethods, UIFoldout};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-event_systems-uibehaviour")]
-    pub use crate::unity_engine::event_systems::uibehaviour::IUIBehaviourMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    #[cfg(feature = "unity_engine-ui-selectable")]
-    pub use crate::unity_engine::ui::selectable::ISelectableMethods;
-    #[cfg(feature = "unity_engine-ui-toggle")]
-    pub use crate::unity_engine::ui::toggle::IToggleMethods;
-    pub use crate::{
-        system::object::IObject,
-        unity_engine::{
-            behaviour::IBehaviour,
-            component::IComponent,
-            event_systems::uibehaviour::IUIBehaviour,
-            monobehaviour::IMonoBehaviour,
-            object_2::IObject_2,
-            ui::{selectable::ISelectable, toggle::IToggle},
-        },
-    };
+    pub use super::UIFoldout;
+    pub use super::IUIFoldout;
+    pub use super::IUIFoldoutMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::event_systems::uibehaviour::IUIBehaviour;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    pub use crate::unity_engine::ui::selectable::ISelectable;
+    pub use crate::unity_engine::ui::toggle::IToggle;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-event_systems-uibehaviour")] pub use crate::unity_engine::event_systems::uibehaviour::IUIBehaviourMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
+    #[cfg(feature = "unity_engine-ui-selectable")] pub use crate::unity_engine::ui::selectable::ISelectableMethods;
+    #[cfg(feature = "unity_engine-ui-toggle")] pub use crate::unity_engine::ui::toggle::IToggleMethods;
 }

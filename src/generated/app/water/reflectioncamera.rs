@@ -2,583 +2,66 @@
 
 #[cfg(feature = "app-water-reflectioncamera-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/water/reflectioncamera/ReflectionCamera.md"))]
-    #[::unity2::class(namespace = "App.Water", name = "ReflectionCamera")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct ReflectionCamera {
-        #[offset(24)]
-        #[rename(name = "m_id")]
-        pub m_id: i16,
-        #[offset(32)]
-        #[rename(name = "m_camera")]
-        pub m_camera: crate::unity_engine::camera::Camera,
-        #[offset(40)]
-        #[rename(name = "m_cameraOriginal")]
-        pub m_camera_original: crate::unity_engine::camera::Camera,
-        #[offset(48)]
-        #[rename(name = "renderTextureSize")]
-        pub render_texture_size_field: crate::unity_engine::vector2::Vector2,
-        #[offset(56)]
-        #[rename(name = "farClip")]
-        pub far_clip: f32,
-        #[offset(60)]
-        #[rename(name = "clipPlaneOffset")]
-        pub clip_plane_offset: f32,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/water/reflectioncamera/ReflectionCamera.md"))] # [:: unity2 :: class (namespace = "App.Water" , name = "ReflectionCamera")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct ReflectionCamera {
+# [offset (24)] # [rename (name = "m_id")] pub m_id : i16 ,
+# [offset (32)] # [rename (name = "m_camera")] pub m_camera : crate :: unity_engine :: camera :: Camera ,
+# [offset (40)] # [rename (name = "m_cameraOriginal")] pub m_camera_original : crate :: unity_engine :: camera :: Camera ,
+# [offset (48)] # [rename (name = "renderTextureSize")] pub render_texture_size_field : crate :: unity_engine :: vector2 :: Vector2 ,
+# [offset (56)] # [rename (name = "farClip")] pub far_clip : f32 ,
+# [offset (60)] # [rename (name = "clipPlaneOffset")] pub clip_plane_offset : f32 ,
+}
+
 }
 
 #[cfg(feature = "app-water-reflectioncamera-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-water-reflectioncamera")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ReflectionCamera_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_camera_setting {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::camera::Camera as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ReflectionCamera as ::unity2::ClassIdentity>::class(),
-                "CameraSetting",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ReflectionCamera as ::unity2::ClassIdentity>::NAME,
-                        "CameraSetting",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn camera_setting(
-        this: ReflectionCamera,
-        cam: crate::unity_engine::camera::Camera,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(ReflectionCamera, crate::unity_engine::camera::Camera, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_camera_setting::get_method_info().method_ptr);
-        inner(this, cam, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_render_texture_size {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type(), <f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ReflectionCamera as ::unity2::ClassIdentity>::class(),
-                "SetRenderTextureSize",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ReflectionCamera as ::unity2::ClassIdentity>::NAME,
-                        "SetRenderTextureSize",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_render_texture_size(this: ReflectionCamera, width: f32, height: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ReflectionCamera, f32, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_render_texture_size::get_method_info().method_ptr);
-        inner(this, width, height, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_texture {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ReflectionCamera as ::unity2::ClassIdentity>::class(),
-                "CreateTexture",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ReflectionCamera as ::unity2::ClassIdentity>::NAME,
-                        "CreateTexture",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_texture(this: ReflectionCamera, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ReflectionCamera, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_create_texture::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_render_reflection {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ReflectionCamera as ::unity2::ClassIdentity>::class(),
-                "RenderReflection",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ReflectionCamera as ::unity2::ClassIdentity>::NAME,
-                        "RenderReflection",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn render_reflection(
-        this: ReflectionCamera,
-        transform_mesh: crate::unity_engine::transform::Transform,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(ReflectionCamera, crate::unity_engine::transform::Transform, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_render_reflection::get_method_info().method_ptr);
-        inner(this, transform_mesh, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_camera_transform {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ReflectionCamera as ::unity2::ClassIdentity>::class(),
-                "SetCameraTransform",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ReflectionCamera as ::unity2::ClassIdentity>::NAME,
-                        "SetCameraTransform",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_camera_transform(
-        this: ReflectionCamera,
-        transform_mesh: crate::unity_engine::transform::Transform,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(ReflectionCamera, crate::unity_engine::transform::Transform, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_camera_transform::get_method_info().method_ptr);
-        inner(this, transform_mesh, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calculate_oblique_matrix {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::vector4::Vector4 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ReflectionCamera as ::unity2::ClassIdentity>::class(),
-                "CalculateObliqueMatrix",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ReflectionCamera as ::unity2::ClassIdentity>::NAME,
-                        "CalculateObliqueMatrix",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn calculate_oblique_matrix(
-        this: ReflectionCamera,
-        projection: crate::unity_engine::matrix4x4::Matrix4x4,
-        clip_plane: crate::unity_engine::vector4::Vector4,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::matrix4x4::Matrix4x4 {
-        let inner: extern "C" fn(
-            ReflectionCamera,
-            crate::unity_engine::matrix4x4::Matrix4x4,
-            crate::unity_engine::vector4::Vector4,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::matrix4x4::Matrix4x4 = ::core::mem::transmute(__lookup_calculate_oblique_matrix::get_method_info().method_ptr);
-        inner(this, projection, clip_plane, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calculate_reflection_matrix {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::vector4::Vector4 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ReflectionCamera as ::unity2::ClassIdentity>::class(),
-                "CalculateReflectionMatrix",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ReflectionCamera as ::unity2::ClassIdentity>::NAME,
-                        "CalculateReflectionMatrix",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn calculate_reflection_matrix(
-        this: ReflectionCamera,
-        reflection_mat: crate::unity_engine::matrix4x4::Matrix4x4,
-        plane: crate::unity_engine::vector4::Vector4,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::matrix4x4::Matrix4x4 {
-        let inner: extern "C" fn(
-            ReflectionCamera,
-            crate::unity_engine::matrix4x4::Matrix4x4,
-            crate::unity_engine::vector4::Vector4,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::matrix4x4::Matrix4x4 = ::core::mem::transmute(__lookup_calculate_reflection_matrix::get_method_info().method_ptr);
-        inner(this, reflection_mat, plane, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_sgn {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ReflectionCamera as ::unity2::ClassIdentity>::class(),
-                "Sgn",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ReflectionCamera as ::unity2::ClassIdentity>::NAME,
-                        "Sgn",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn sgn(this: ReflectionCamera, a: f32, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(ReflectionCamera, f32, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_sgn::get_method_info().method_ptr);
-        inner(this, a, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_camera_space_plane {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::camera::Camera as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ReflectionCamera as ::unity2::ClassIdentity>::class(),
-                "CameraSpacePlane",
-                4,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ReflectionCamera as ::unity2::ClassIdentity>::NAME,
-                        "CameraSpacePlane",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn camera_space_plane(
-        this: ReflectionCamera,
-        cam: crate::unity_engine::camera::Camera,
-        pos: crate::unity_engine::vector3::Vector3,
-        normal: crate::unity_engine::vector3::Vector3,
-        side_sign: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::vector4::Vector4 {
-        let inner: extern "C" fn(
-            ReflectionCamera,
-            crate::unity_engine::camera::Camera,
-            crate::unity_engine::vector3::Vector3,
-            crate::unity_engine::vector3::Vector3,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector4::Vector4 = ::core::mem::transmute(__lookup_camera_space_plane::get_method_info().method_ptr);
-        inner(this, cam, pos, normal, side_sign, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ReflectionCamera as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ReflectionCamera as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: ReflectionCamera, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ReflectionCamera, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ReflectionCamera_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_camera_setting { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: camera :: Camera as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ReflectionCamera as :: unity2 :: ClassIdentity > :: class () , "CameraSetting" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ReflectionCamera as :: unity2 :: ClassIdentity > :: NAME , "CameraSetting" , e) , } } } pub unsafe fn camera_setting (this : ReflectionCamera , cam : crate :: unity_engine :: camera :: Camera , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ReflectionCamera , crate :: unity_engine :: camera :: Camera , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_camera_setting :: get_method_info () . method_ptr ,) ; inner (this , cam , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_render_texture_size { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< f32 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ReflectionCamera as :: unity2 :: ClassIdentity > :: class () , "SetRenderTextureSize" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ReflectionCamera as :: unity2 :: ClassIdentity > :: NAME , "SetRenderTextureSize" , e) , } } } pub unsafe fn set_render_texture_size (this : ReflectionCamera , width : f32 , height : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ReflectionCamera , f32 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_render_texture_size :: get_method_info () . method_ptr ,) ; inner (this , width , height , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_texture { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ReflectionCamera as :: unity2 :: ClassIdentity > :: class () , "CreateTexture" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ReflectionCamera as :: unity2 :: ClassIdentity > :: NAME , "CreateTexture" , e) , } } } pub unsafe fn create_texture (this : ReflectionCamera , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ReflectionCamera , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create_texture :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_render_reflection { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: transform :: Transform as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ReflectionCamera as :: unity2 :: ClassIdentity > :: class () , "RenderReflection" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ReflectionCamera as :: unity2 :: ClassIdentity > :: NAME , "RenderReflection" , e) , } } } pub unsafe fn render_reflection (this : ReflectionCamera , transform_mesh : crate :: unity_engine :: transform :: Transform , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ReflectionCamera , crate :: unity_engine :: transform :: Transform , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_render_reflection :: get_method_info () . method_ptr ,) ; inner (this , transform_mesh , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_camera_transform { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: transform :: Transform as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ReflectionCamera as :: unity2 :: ClassIdentity > :: class () , "SetCameraTransform" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ReflectionCamera as :: unity2 :: ClassIdentity > :: NAME , "SetCameraTransform" , e) , } } } pub unsafe fn set_camera_transform (this : ReflectionCamera , transform_mesh : crate :: unity_engine :: transform :: Transform , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ReflectionCamera , crate :: unity_engine :: transform :: Transform , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_camera_transform :: get_method_info () . method_ptr ,) ; inner (this , transform_mesh , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_calculate_oblique_matrix { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: matrix4x4 :: Matrix4x4 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector4 :: Vector4 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ReflectionCamera as :: unity2 :: ClassIdentity > :: class () , "CalculateObliqueMatrix" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ReflectionCamera as :: unity2 :: ClassIdentity > :: NAME , "CalculateObliqueMatrix" , e) , } } } pub unsafe fn calculate_oblique_matrix (this : ReflectionCamera , projection : crate :: unity_engine :: matrix4x4 :: Matrix4x4 , clip_plane : crate :: unity_engine :: vector4 :: Vector4 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: matrix4x4 :: Matrix4x4 { let inner : extern "C" fn (ReflectionCamera , crate :: unity_engine :: matrix4x4 :: Matrix4x4 , crate :: unity_engine :: vector4 :: Vector4 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: matrix4x4 :: Matrix4x4 = :: core :: mem :: transmute (__lookup_calculate_oblique_matrix :: get_method_info () . method_ptr ,) ; inner (this , projection , clip_plane , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_calculate_reflection_matrix { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: matrix4x4 :: Matrix4x4 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector4 :: Vector4 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ReflectionCamera as :: unity2 :: ClassIdentity > :: class () , "CalculateReflectionMatrix" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ReflectionCamera as :: unity2 :: ClassIdentity > :: NAME , "CalculateReflectionMatrix" , e) , } } } pub unsafe fn calculate_reflection_matrix (this : ReflectionCamera , reflection_mat : crate :: unity_engine :: matrix4x4 :: Matrix4x4 , plane : crate :: unity_engine :: vector4 :: Vector4 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: matrix4x4 :: Matrix4x4 { let inner : extern "C" fn (ReflectionCamera , crate :: unity_engine :: matrix4x4 :: Matrix4x4 , crate :: unity_engine :: vector4 :: Vector4 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: matrix4x4 :: Matrix4x4 = :: core :: mem :: transmute (__lookup_calculate_reflection_matrix :: get_method_info () . method_ptr ,) ; inner (this , reflection_mat , plane , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_sgn { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ReflectionCamera as :: unity2 :: ClassIdentity > :: class () , "Sgn" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ReflectionCamera as :: unity2 :: ClassIdentity > :: NAME , "Sgn" , e) , } } } pub unsafe fn sgn (this : ReflectionCamera , a : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (ReflectionCamera , f32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_sgn :: get_method_info () . method_ptr ,) ; inner (this , a , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_camera_space_plane { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: camera :: Camera as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ReflectionCamera as :: unity2 :: ClassIdentity > :: class () , "CameraSpacePlane" , 4 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ReflectionCamera as :: unity2 :: ClassIdentity > :: NAME , "CameraSpacePlane" , e) , } } } pub unsafe fn camera_space_plane (this : ReflectionCamera , cam : crate :: unity_engine :: camera :: Camera , pos : crate :: unity_engine :: vector3 :: Vector3 , normal : crate :: unity_engine :: vector3 :: Vector3 , side_sign : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector4 :: Vector4 { let inner : extern "C" fn (ReflectionCamera , crate :: unity_engine :: camera :: Camera , crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector3 :: Vector3 , f32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector4 :: Vector4 = :: core :: mem :: transmute (__lookup_camera_space_plane :: get_method_info () . method_ptr ,) ; inner (this , cam , pos , normal , side_sign , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ReflectionCamera as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ReflectionCamera as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : ReflectionCamera , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ReflectionCamera , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-water-reflectioncamera")]
-pub trait IReflectionCameraMethods: IReflectionCamera {
-    #[doc = "`CameraSetting(crate::unity_engine::camera::Camera)` overload"]
-    fn camera_setting(self, cam: impl ::core::convert::Into<crate::unity_engine::camera::Camera>) -> () {
-        unsafe {
-            let __receiver = <ReflectionCamera as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ReflectionCamera_unity2_raw::camera_setting(__receiver, ::core::convert::Into::into(cam), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetRenderTextureSize(f32, f32)` overload"]
-    fn set_render_texture_size(self, width: impl ::core::convert::Into<f32>, height: impl ::core::convert::Into<f32>) -> () {
-        unsafe {
-            let __receiver = <ReflectionCamera as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ReflectionCamera_unity2_raw::set_render_texture_size(
-                __receiver,
-                ::core::convert::Into::into(width),
-                ::core::convert::Into::into(height),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CreateTexture()` overload"]
-    fn create_texture(self) -> () {
-        unsafe {
-            let __receiver = <ReflectionCamera as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ReflectionCamera_unity2_raw::create_texture(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`RenderReflection(crate::unity_engine::transform::Transform)` overload"]
-    fn render_reflection(self, transform_mesh: impl ::core::convert::Into<crate::unity_engine::transform::Transform>) -> () {
-        unsafe {
-            let __receiver = <ReflectionCamera as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ReflectionCamera_unity2_raw::render_reflection(__receiver, ::core::convert::Into::into(transform_mesh), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetCameraTransform(crate::unity_engine::transform::Transform)` overload"]
-    fn set_camera_transform(self, transform_mesh: impl ::core::convert::Into<crate::unity_engine::transform::Transform>) -> () {
-        unsafe {
-            let __receiver = <ReflectionCamera as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ReflectionCamera_unity2_raw::set_camera_transform(__receiver, ::core::convert::Into::into(transform_mesh), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CalculateObliqueMatrix(crate::unity_engine::matrix4x4::Matrix4x4, crate::unity_engine::vector4::Vector4)` overload"]
-    fn calculate_oblique_matrix(
-        self,
-        projection: impl ::core::convert::Into<crate::unity_engine::matrix4x4::Matrix4x4>,
-        clip_plane: impl ::core::convert::Into<crate::unity_engine::vector4::Vector4>,
-    ) -> crate::unity_engine::matrix4x4::Matrix4x4 {
-        unsafe {
-            let __receiver = <ReflectionCamera as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ReflectionCamera_unity2_raw::calculate_oblique_matrix(
-                __receiver,
-                ::core::convert::Into::into(projection),
-                ::core::convert::Into::into(clip_plane),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CalculateReflectionMatrix(crate::unity_engine::matrix4x4::Matrix4x4, crate::unity_engine::vector4::Vector4)` overload"]
-    fn calculate_reflection_matrix(
-        self,
-        reflection_mat: impl ::core::convert::Into<crate::unity_engine::matrix4x4::Matrix4x4>,
-        plane: impl ::core::convert::Into<crate::unity_engine::vector4::Vector4>,
-    ) -> crate::unity_engine::matrix4x4::Matrix4x4 {
-        unsafe {
-            let __receiver = <ReflectionCamera as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ReflectionCamera_unity2_raw::calculate_reflection_matrix(
-                __receiver,
-                ::core::convert::Into::into(reflection_mat),
-                ::core::convert::Into::into(plane),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Sgn(f32)` overload"]
-    fn sgn(self, a: impl ::core::convert::Into<f32>) -> f32 {
-        unsafe {
-            let __receiver = <ReflectionCamera as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ReflectionCamera_unity2_raw::sgn(__receiver, ::core::convert::Into::into(a), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CameraSpacePlane(crate::unity_engine::camera::Camera, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, f32)` overload"]
-    fn camera_space_plane(
-        self,
-        cam: impl ::core::convert::Into<crate::unity_engine::camera::Camera>,
-        pos: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-        normal: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-        side_sign: impl ::core::convert::Into<f32>,
-    ) -> crate::unity_engine::vector4::Vector4 {
-        unsafe {
-            let __receiver = <ReflectionCamera as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ReflectionCamera_unity2_raw::camera_space_plane(
-                __receiver,
-                ::core::convert::Into::into(cam),
-                ::core::convert::Into::into(pos),
-                ::core::convert::Into::into(normal),
-                ::core::convert::Into::into(side_sign),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <ReflectionCamera as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ReflectionCamera_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IReflectionCameraMethods : IReflectionCamera { # [doc = "`CameraSetting(crate::unity_engine::camera::Camera)` overload"] fn camera_setting (self , cam : impl :: core :: convert :: Into < crate :: unity_engine :: camera :: Camera >) -> () { unsafe { let __receiver = < ReflectionCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ReflectionCamera_unity2_raw :: camera_setting (__receiver , :: core :: convert :: Into :: into (cam) , :: core :: option :: Option :: None) } } # [doc = "`SetRenderTextureSize(f32, f32)` overload"] fn set_render_texture_size (self , width : impl :: core :: convert :: Into < f32 > , height : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < ReflectionCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ReflectionCamera_unity2_raw :: set_render_texture_size (__receiver , :: core :: convert :: Into :: into (width) , :: core :: convert :: Into :: into (height) , :: core :: option :: Option :: None) } } # [doc = "`CreateTexture()` overload"] fn create_texture (self ,) -> () { unsafe { let __receiver = < ReflectionCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ReflectionCamera_unity2_raw :: create_texture (__receiver , :: core :: option :: Option :: None) } } # [doc = "`RenderReflection(crate::unity_engine::transform::Transform)` overload"] fn render_reflection (self , transform_mesh : impl :: core :: convert :: Into < crate :: unity_engine :: transform :: Transform >) -> () { unsafe { let __receiver = < ReflectionCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ReflectionCamera_unity2_raw :: render_reflection (__receiver , :: core :: convert :: Into :: into (transform_mesh) , :: core :: option :: Option :: None) } } # [doc = "`SetCameraTransform(crate::unity_engine::transform::Transform)` overload"] fn set_camera_transform (self , transform_mesh : impl :: core :: convert :: Into < crate :: unity_engine :: transform :: Transform >) -> () { unsafe { let __receiver = < ReflectionCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ReflectionCamera_unity2_raw :: set_camera_transform (__receiver , :: core :: convert :: Into :: into (transform_mesh) , :: core :: option :: Option :: None) } } # [doc = "`CalculateObliqueMatrix(crate::unity_engine::matrix4x4::Matrix4x4, crate::unity_engine::vector4::Vector4)` overload"] fn calculate_oblique_matrix (self , projection : impl :: core :: convert :: Into < crate :: unity_engine :: matrix4x4 :: Matrix4x4 > , clip_plane : impl :: core :: convert :: Into < crate :: unity_engine :: vector4 :: Vector4 >) -> crate :: unity_engine :: matrix4x4 :: Matrix4x4 { unsafe { let __receiver = < ReflectionCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ReflectionCamera_unity2_raw :: calculate_oblique_matrix (__receiver , :: core :: convert :: Into :: into (projection) , :: core :: convert :: Into :: into (clip_plane) , :: core :: option :: Option :: None) } } # [doc = "`CalculateReflectionMatrix(crate::unity_engine::matrix4x4::Matrix4x4, crate::unity_engine::vector4::Vector4)` overload"] fn calculate_reflection_matrix (self , reflection_mat : impl :: core :: convert :: Into < crate :: unity_engine :: matrix4x4 :: Matrix4x4 > , plane : impl :: core :: convert :: Into < crate :: unity_engine :: vector4 :: Vector4 >) -> crate :: unity_engine :: matrix4x4 :: Matrix4x4 { unsafe { let __receiver = < ReflectionCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ReflectionCamera_unity2_raw :: calculate_reflection_matrix (__receiver , :: core :: convert :: Into :: into (reflection_mat) , :: core :: convert :: Into :: into (plane) , :: core :: option :: Option :: None) } } # [doc = "`Sgn(f32)` overload"] fn sgn (self , a : impl :: core :: convert :: Into < f32 >) -> f32 { unsafe { let __receiver = < ReflectionCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ReflectionCamera_unity2_raw :: sgn (__receiver , :: core :: convert :: Into :: into (a) , :: core :: option :: Option :: None) } } # [doc = "`CameraSpacePlane(crate::unity_engine::camera::Camera, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, f32)` overload"] fn camera_space_plane (self , cam : impl :: core :: convert :: Into < crate :: unity_engine :: camera :: Camera > , pos : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , normal : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , side_sign : impl :: core :: convert :: Into < f32 >) -> crate :: unity_engine :: vector4 :: Vector4 { unsafe { let __receiver = < ReflectionCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ReflectionCamera_unity2_raw :: camera_space_plane (__receiver , :: core :: convert :: Into :: into (cam) , :: core :: convert :: Into :: into (pos) , :: core :: convert :: Into :: into (normal) , :: core :: convert :: Into :: into (side_sign) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ReflectionCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ReflectionCamera_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-water-reflectioncamera")]
-impl<__T: IReflectionCamera> IReflectionCameraMethods for __T {}
+impl < __T : IReflectionCamera > IReflectionCameraMethods for __T { }
+
+#[cfg(feature = "app-water-reflectioncamera")]
+impl ReflectionCamera { pub fn camera_setting_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ReflectionCamera_unity2_raw :: __lookup_camera_setting :: get_method_info () } pub fn set_render_texture_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ReflectionCamera_unity2_raw :: __lookup_set_render_texture_size :: get_method_info () } pub fn create_texture_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ReflectionCamera_unity2_raw :: __lookup_create_texture :: get_method_info () } pub fn render_reflection_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ReflectionCamera_unity2_raw :: __lookup_render_reflection :: get_method_info () } pub fn set_camera_transform_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ReflectionCamera_unity2_raw :: __lookup_set_camera_transform :: get_method_info () } pub fn calculate_oblique_matrix_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ReflectionCamera_unity2_raw :: __lookup_calculate_oblique_matrix :: get_method_info () } pub fn calculate_reflection_matrix_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ReflectionCamera_unity2_raw :: __lookup_calculate_reflection_matrix :: get_method_info () } pub fn sgn_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ReflectionCamera_unity2_raw :: __lookup_sgn :: get_method_info () } pub fn camera_space_plane_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ReflectionCamera_unity2_raw :: __lookup_camera_space_plane :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ReflectionCamera_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-water-reflectioncamera")]
 impl ReflectionCamera {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ReflectionCamera),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IReflectionCameraMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ReflectionCamera) , :: core :: stringify ! (new) ,)) ; < Self as IReflectionCameraMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-water-reflectioncamera")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IReflectionCamera, IReflectionCameraMethods, ReflectionCamera};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        system::object::IObject,
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::ReflectionCamera;
+    pub use super::IReflectionCamera;
+    pub use super::IReflectionCameraMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

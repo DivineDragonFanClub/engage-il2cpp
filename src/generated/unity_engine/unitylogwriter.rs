@@ -2,351 +2,50 @@
 
 #[cfg(feature = "unity_engine-unitylogwriter-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        io::textwriter::{ITextWriter, TextWriter},
-        object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/unitylogwriter/UnityLogWriter.md"))]
-    #[::unity2::class(namespace = "UnityEngine", name = "UnityLogWriter")]
-    #[parent(crate::system::io::textwriter::TextWriter)]
-    pub struct UnityLogWriter {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: io :: textwriter :: { ITextWriter , TextWriter }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/unitylogwriter/UnityLogWriter.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "UnityLogWriter")] # [parent (crate :: system :: io :: textwriter :: TextWriter)] pub struct UnityLogWriter {}
+
 }
 
 #[cfg(feature = "unity_engine-unitylogwriter-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-unitylogwriter")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __UnityLogWriter_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_write_string_to_unity_log {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnityLogWriter as ::unity2::ClassIdentity>::class(),
-                "WriteStringToUnityLog",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnityLogWriter as ::unity2::ClassIdentity>::NAME,
-                        "WriteStringToUnityLog",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn write_string_to_unity_log(s: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_write_string_to_unity_log::get_method_info().method_ptr);
-        inner(s, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_write_string_to_unity_log_impl {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnityLogWriter as ::unity2::ClassIdentity>::class(),
-                "WriteStringToUnityLogImpl",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnityLogWriter as ::unity2::ClassIdentity>::NAME,
-                        "WriteStringToUnityLogImpl",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn write_string_to_unity_log_impl(s: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_write_string_to_unity_log_impl::get_method_info().method_ptr);
-        inner(s, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_init {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<UnityLogWriter as ::unity2::ClassIdentity>::class(), "Init", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnityLogWriter as ::unity2::ClassIdentity>::NAME,
-                        "Init",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn init(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_init::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_write {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnityLogWriter as ::unity2::ClassIdentity>::class(),
-                "Write",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnityLogWriter as ::unity2::ClassIdentity>::NAME,
-                        "Write",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn write(this: UnityLogWriter, value: u16, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(UnityLogWriter, u16, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_write::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_write_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnityLogWriter as ::unity2::ClassIdentity>::class(),
-                "Write",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnityLogWriter as ::unity2::ClassIdentity>::NAME,
-                        "Write",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn write_2(this: UnityLogWriter, s: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(UnityLogWriter, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_write_2::get_method_info().method_ptr);
-        inner(this, s, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_write_3 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Array<u16> as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnityLogWriter as ::unity2::ClassIdentity>::class(),
-                "Write",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnityLogWriter as ::unity2::ClassIdentity>::NAME,
-                        "Write",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn write_3(
-        this: UnityLogWriter,
-        buffer: ::unity2::Array<u16>,
-        index: i32,
-        count: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(UnityLogWriter, ::unity2::Array<u16>, i32, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_write_3::get_method_info().method_ptr);
-        inner(this, buffer, index, count, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnityLogWriter as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnityLogWriter as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: UnityLogWriter, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(UnityLogWriter, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __UnityLogWriter_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_write_string_to_unity_log { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnityLogWriter as :: unity2 :: ClassIdentity > :: class () , "WriteStringToUnityLog" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnityLogWriter as :: unity2 :: ClassIdentity > :: NAME , "WriteStringToUnityLog" , e) , } } } pub unsafe fn write_string_to_unity_log (s : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_write_string_to_unity_log :: get_method_info () . method_ptr ,) ; inner (s , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_write_string_to_unity_log_impl { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnityLogWriter as :: unity2 :: ClassIdentity > :: class () , "WriteStringToUnityLogImpl" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnityLogWriter as :: unity2 :: ClassIdentity > :: NAME , "WriteStringToUnityLogImpl" , e) , } } } pub unsafe fn write_string_to_unity_log_impl (s : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_write_string_to_unity_log_impl :: get_method_info () . method_ptr ,) ; inner (s , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_init { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnityLogWriter as :: unity2 :: ClassIdentity > :: class () , "Init" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnityLogWriter as :: unity2 :: ClassIdentity > :: NAME , "Init" , e) , } } } pub unsafe fn init (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_init :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_write { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< u16 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnityLogWriter as :: unity2 :: ClassIdentity > :: class () , "Write" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnityLogWriter as :: unity2 :: ClassIdentity > :: NAME , "Write" , e) , } } } pub unsafe fn write (this : UnityLogWriter , value : u16 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnityLogWriter , u16 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_write :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_write_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnityLogWriter as :: unity2 :: ClassIdentity > :: class () , "Write" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnityLogWriter as :: unity2 :: ClassIdentity > :: NAME , "Write" , e) , } } } pub unsafe fn write_2 (this : UnityLogWriter , s : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnityLogWriter , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_write_2 :: get_method_info () . method_ptr ,) ; inner (this , s , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_write_3 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < u16 > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnityLogWriter as :: unity2 :: ClassIdentity > :: class () , "Write" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnityLogWriter as :: unity2 :: ClassIdentity > :: NAME , "Write" , e) , } } } pub unsafe fn write_3 (this : UnityLogWriter , buffer : :: unity2 :: Array < u16 > , index : i32 , count : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnityLogWriter , :: unity2 :: Array < u16 > , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_write_3 :: get_method_info () . method_ptr ,) ; inner (this , buffer , index , count , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnityLogWriter as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnityLogWriter as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : UnityLogWriter , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnityLogWriter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "unity_engine-unitylogwriter")]
+impl UnityLogWriter { # [doc = "`WriteStringToUnityLog(::unity2::Il2CppString)` overload"] pub fn write_string_to_unity_log (s : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { __UnityLogWriter_unity2_raw :: write_string_to_unity_log (:: core :: convert :: Into :: into (s) , :: core :: option :: Option :: None) } } # [doc = "`WriteStringToUnityLogImpl(::unity2::Il2CppString)` overload"] pub fn write_string_to_unity_log_impl (s : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { __UnityLogWriter_unity2_raw :: write_string_to_unity_log_impl (:: core :: convert :: Into :: into (s) , :: core :: option :: Option :: None) } } # [doc = "`Init()` overload"] pub fn init () -> () { unsafe { __UnityLogWriter_unity2_raw :: init (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-unitylogwriter")]
+pub trait IUnityLogWriterMethods : IUnityLogWriter { # [doc = "`Write(u16)` overload"] fn write (self , value : impl :: core :: convert :: Into < u16 >) -> () { unsafe { let __receiver = < UnityLogWriter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnityLogWriter_unity2_raw :: write (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`Write(::unity2::Il2CppString)` overload"] fn write_2 (self , s : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < UnityLogWriter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnityLogWriter_unity2_raw :: write_2 (__receiver , :: core :: convert :: Into :: into (s) , :: core :: option :: Option :: None) } } # [doc = "`Write(::unity2::Array<u16>, i32, i32)` overload"] fn write_3 (self , buffer : impl :: core :: convert :: Into < :: unity2 :: Array < u16 > > , index : impl :: core :: convert :: Into < i32 > , count : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < UnityLogWriter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnityLogWriter_unity2_raw :: write_3 (__receiver , :: core :: convert :: Into :: into (buffer) , :: core :: convert :: Into :: into (index) , :: core :: convert :: Into :: into (count) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < UnityLogWriter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnityLogWriter_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-unitylogwriter")]
+impl < __T : IUnityLogWriter > IUnityLogWriterMethods for __T { }
+
+#[cfg(feature = "unity_engine-unitylogwriter")]
+impl UnityLogWriter { pub fn write_string_to_unity_log_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnityLogWriter_unity2_raw :: __lookup_write_string_to_unity_log :: get_method_info () } pub fn write_string_to_unity_log_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnityLogWriter_unity2_raw :: __lookup_write_string_to_unity_log_impl :: get_method_info () } pub fn init_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnityLogWriter_unity2_raw :: __lookup_init :: get_method_info () } pub fn write_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnityLogWriter_unity2_raw :: __lookup_write :: get_method_info () } pub fn write_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnityLogWriter_unity2_raw :: __lookup_write_2 :: get_method_info () } pub fn write_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnityLogWriter_unity2_raw :: __lookup_write_3 :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnityLogWriter_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-unitylogwriter")]
 impl UnityLogWriter {
-    #[doc = "`WriteStringToUnityLog(::unity2::Il2CppString)` overload"]
-    pub fn write_string_to_unity_log(s: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe { __UnityLogWriter_unity2_raw::write_string_to_unity_log(::core::convert::Into::into(s), ::core::option::Option::None) }
-    }
-
-    #[doc = "`WriteStringToUnityLogImpl(::unity2::Il2CppString)` overload"]
-    pub fn write_string_to_unity_log_impl(s: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe { __UnityLogWriter_unity2_raw::write_string_to_unity_log_impl(::core::convert::Into::into(s), ::core::option::Option::None) }
-    }
-
-    #[doc = "`Init()` overload"]
-    pub fn init() -> () {
-        unsafe { __UnityLogWriter_unity2_raw::init(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "unity_engine-unitylogwriter")]
-pub trait IUnityLogWriterMethods: IUnityLogWriter {
-    #[doc = "`Write(u16)` overload"]
-    fn write(self, value: impl ::core::convert::Into<u16>) -> () {
-        unsafe {
-            let __receiver = <UnityLogWriter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnityLogWriter_unity2_raw::write(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Write(::unity2::Il2CppString)` overload"]
-    fn write_2(self, s: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver = <UnityLogWriter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnityLogWriter_unity2_raw::write_2(__receiver, ::core::convert::Into::into(s), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Write(::unity2::Array<u16>, i32, i32)` overload"]
-    fn write_3(
-        self,
-        buffer: impl ::core::convert::Into<::unity2::Array<u16>>,
-        index: impl ::core::convert::Into<i32>,
-        count: impl ::core::convert::Into<i32>,
-    ) -> () {
-        unsafe {
-            let __receiver = <UnityLogWriter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnityLogWriter_unity2_raw::write_3(
-                __receiver,
-                ::core::convert::Into::into(buffer),
-                ::core::convert::Into::into(index),
-                ::core::convert::Into::into(count),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <UnityLogWriter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnityLogWriter_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-unitylogwriter")]
-impl<__T: IUnityLogWriter> IUnityLogWriterMethods for __T {}
-
-#[cfg(feature = "unity_engine-unitylogwriter")]
-impl UnityLogWriter {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(UnityLogWriter),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IUnityLogWriterMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (UnityLogWriter) , :: core :: stringify ! (new) ,)) ; < Self as IUnityLogWriterMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "unity_engine-unitylogwriter")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IUnityLogWriter, IUnityLogWriterMethods, UnityLogWriter};
-    #[cfg(feature = "system-io-textwriter")]
-    pub use crate::system::io::textwriter::ITextWriterMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::system::{io::textwriter::ITextWriter, object::IObject};
+    pub use super::UnityLogWriter;
+    pub use super::IUnityLogWriter;
+    pub use super::IUnityLogWriterMethods;
+    pub use crate::system::io::textwriter::ITextWriter;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-io-textwriter")] pub use crate::system::io::textwriter::ITextWriterMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

@@ -2,542 +2,75 @@
 
 #[cfg(feature = "app-profilecardvisualmenucontent-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::{
-            basicmenucontent::{BasicMenuContent, IBasicMenuContent},
-            gridmenucontent::{GridMenuContent, IGridMenuContent},
-        },
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardvisualmenucontent/ProfileCardVisualMenuContent.md"))]
-    #[::unity2::class(namespace = "App", name = "ProfileCardVisualMenuContent")]
-    #[parent(crate::app::gridmenucontent::GridMenuContent)]
-    pub struct ProfileCardVisualMenuContent {
-        #[offset(240)]
-        #[rename(name = "m_Caption")]
-        pub m_caption: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(248)]
-        #[rename(name = "m_PageIconImage")]
-        pub m_page_icon_image: ::unity2::Array<crate::unity_engine::ui::image::Image>,
-        #[static_field]
-        #[rename(name = "m_ColumnCount")]
-        pub m_column_count: i32,
-        #[offset(256)]
-        #[rename(name = "isStarted")]
-        pub is_started: bool,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: basicmenucontent :: { BasicMenuContent , IBasicMenuContent }
+ ;
+ use crate :: app :: gridmenucontent :: { GridMenuContent , IGridMenuContent }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardvisualmenucontent/ProfileCardVisualMenuContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProfileCardVisualMenuContent")] # [parent (crate :: app :: gridmenucontent :: GridMenuContent)] pub struct ProfileCardVisualMenuContent {
+# [offset (240)] # [rename (name = "m_Caption")] pub m_caption : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (248)] # [rename (name = "m_PageIconImage")] pub m_page_icon_image : :: unity2 :: Array < crate :: unity_engine :: ui :: image :: Image > ,
+# [static_field] # [rename (name = "m_ColumnCount")] pub m_column_count : i32 ,
+# [offset (256)] # [rename (name = "isStarted")] pub is_started : bool ,
+}
+
 }
 
 #[cfg(feature = "app-profilecardvisualmenucontent-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-profilecardvisualmenucontent")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ProfileCardVisualMenuContent_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_start {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCardVisualMenuContent as ::unity2::ClassIdentity>::class(),
-                "Start",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProfileCardVisualMenuContent as ::unity2::ClassIdentity>::NAME,
-                        "Start",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn start(this: ProfileCardVisualMenuContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ProfileCardVisualMenuContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_start::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_reuse {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCardVisualMenuContent as ::unity2::ClassIdentity>::class(),
-                "Reuse",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProfileCardVisualMenuContent as ::unity2::ClassIdentity>::NAME,
-                        "Reuse",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn reuse(this: ProfileCardVisualMenuContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ProfileCardVisualMenuContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_reuse::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_menu_item_content_max {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCardVisualMenuContent as ::unity2::ClassIdentity>::class(),
-                "GetMenuItemContentMax",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProfileCardVisualMenuContent as ::unity2::ClassIdentity>::NAME,
-                        "GetMenuItemContentMax",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_menu_item_content_max(this: ProfileCardVisualMenuContent, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(ProfileCardVisualMenuContent, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_menu_item_content_max::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_cursor_moved_pos_x {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCardVisualMenuContent as ::unity2::ClassIdentity>::class(),
-                "CalcCursorMovedPosX",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProfileCardVisualMenuContent as ::unity2::ClassIdentity>::NAME,
-                        "CalcCursorMovedPosX",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn calc_cursor_moved_pos_x(
-        this: ProfileCardVisualMenuContent,
-        menu_item_index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
-        let inner: extern "C" fn(ProfileCardVisualMenuContent, i32, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_calc_cursor_moved_pos_x::get_method_info().method_ptr);
-        inner(this, menu_item_index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_cursor_moved_pos_y {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCardVisualMenuContent as ::unity2::ClassIdentity>::class(),
-                "CalcCursorMovedPosY",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProfileCardVisualMenuContent as ::unity2::ClassIdentity>::NAME,
-                        "CalcCursorMovedPosY",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn calc_cursor_moved_pos_y(
-        this: ProfileCardVisualMenuContent,
-        menu_item_index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
-        let inner: extern "C" fn(ProfileCardVisualMenuContent, i32, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_calc_cursor_moved_pos_y::get_method_info().method_ptr);
-        inner(this, menu_item_index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_w {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCardVisualMenuContent as ::unity2::ClassIdentity>::class(),
-                "CalcW",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProfileCardVisualMenuContent as ::unity2::ClassIdentity>::NAME,
-                        "CalcW",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn calc_w(this: ProfileCardVisualMenuContent, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(ProfileCardVisualMenuContent, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_calc_w::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_h {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCardVisualMenuContent as ::unity2::ClassIdentity>::class(),
-                "CalcH",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProfileCardVisualMenuContent as ::unity2::ClassIdentity>::NAME,
-                        "CalcH",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn calc_h(this: ProfileCardVisualMenuContent, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(ProfileCardVisualMenuContent, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_calc_h::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update_content {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCardVisualMenuContent as ::unity2::ClassIdentity>::class(),
-                "UpdateContent",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProfileCardVisualMenuContent as ::unity2::ClassIdentity>::NAME,
-                        "UpdateContent",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update_content(
-        this: ProfileCardVisualMenuContent,
-        caption: ::unity2::Il2CppString,
-        selected_index: i32,
-        active_count: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(ProfileCardVisualMenuContent, ::unity2::Il2CppString, i32, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update_content::get_method_info().method_ptr);
-        inner(this, caption, selected_index, active_count, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCardVisualMenuContent as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProfileCardVisualMenuContent as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: ProfileCardVisualMenuContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ProfileCardVisualMenuContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCardVisualMenuContent as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProfileCardVisualMenuContent as ::unity2::ClassIdentity>::NAME,
-                        ".cctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ProfileCardVisualMenuContent_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_start { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileCardVisualMenuContent as :: unity2 :: ClassIdentity > :: class () , "Start" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileCardVisualMenuContent as :: unity2 :: ClassIdentity > :: NAME , "Start" , e) , } } } pub unsafe fn start (this : ProfileCardVisualMenuContent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ProfileCardVisualMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_start :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_reuse { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileCardVisualMenuContent as :: unity2 :: ClassIdentity > :: class () , "Reuse" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileCardVisualMenuContent as :: unity2 :: ClassIdentity > :: NAME , "Reuse" , e) , } } } pub unsafe fn reuse (this : ProfileCardVisualMenuContent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ProfileCardVisualMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_reuse :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_menu_item_content_max { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileCardVisualMenuContent as :: unity2 :: ClassIdentity > :: class () , "GetMenuItemContentMax" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileCardVisualMenuContent as :: unity2 :: ClassIdentity > :: NAME , "GetMenuItemContentMax" , e) , } } } pub unsafe fn get_menu_item_content_max (this : ProfileCardVisualMenuContent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (ProfileCardVisualMenuContent , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_menu_item_content_max :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_calc_cursor_moved_pos_x { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileCardVisualMenuContent as :: unity2 :: ClassIdentity > :: class () , "CalcCursorMovedPosX" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileCardVisualMenuContent as :: unity2 :: ClassIdentity > :: NAME , "CalcCursorMovedPosX" , e) , } } } pub unsafe fn calc_cursor_moved_pos_x (this : ProfileCardVisualMenuContent , menu_item_index : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (ProfileCardVisualMenuContent , i32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_calc_cursor_moved_pos_x :: get_method_info () . method_ptr ,) ; inner (this , menu_item_index , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_calc_cursor_moved_pos_y { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileCardVisualMenuContent as :: unity2 :: ClassIdentity > :: class () , "CalcCursorMovedPosY" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileCardVisualMenuContent as :: unity2 :: ClassIdentity > :: NAME , "CalcCursorMovedPosY" , e) , } } } pub unsafe fn calc_cursor_moved_pos_y (this : ProfileCardVisualMenuContent , menu_item_index : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (ProfileCardVisualMenuContent , i32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_calc_cursor_moved_pos_y :: get_method_info () . method_ptr ,) ; inner (this , menu_item_index , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_calc_w { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileCardVisualMenuContent as :: unity2 :: ClassIdentity > :: class () , "CalcW" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileCardVisualMenuContent as :: unity2 :: ClassIdentity > :: NAME , "CalcW" , e) , } } } pub unsafe fn calc_w (this : ProfileCardVisualMenuContent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (ProfileCardVisualMenuContent , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_calc_w :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_calc_h { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileCardVisualMenuContent as :: unity2 :: ClassIdentity > :: class () , "CalcH" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileCardVisualMenuContent as :: unity2 :: ClassIdentity > :: NAME , "CalcH" , e) , } } } pub unsafe fn calc_h (this : ProfileCardVisualMenuContent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (ProfileCardVisualMenuContent , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_calc_h :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update_content { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileCardVisualMenuContent as :: unity2 :: ClassIdentity > :: class () , "UpdateContent" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileCardVisualMenuContent as :: unity2 :: ClassIdentity > :: NAME , "UpdateContent" , e) , } } } pub unsafe fn update_content (this : ProfileCardVisualMenuContent , caption : :: unity2 :: Il2CppString , selected_index : i32 , active_count : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ProfileCardVisualMenuContent , :: unity2 :: Il2CppString , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update_content :: get_method_info () . method_ptr ,) ; inner (this , caption , selected_index , active_count , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileCardVisualMenuContent as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileCardVisualMenuContent as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : ProfileCardVisualMenuContent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ProfileCardVisualMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileCardVisualMenuContent as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileCardVisualMenuContent as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
+
+#[cfg(feature = "app-profilecardvisualmenucontent")]
+impl ProfileCardVisualMenuContent { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { __ProfileCardVisualMenuContent_unity2_raw :: cctor (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-profilecardvisualmenucontent")]
+pub trait IProfileCardVisualMenuContentMethods : IProfileCardVisualMenuContent { # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < ProfileCardVisualMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ProfileCardVisualMenuContent_unity2_raw :: start (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Reuse()` overload"] fn reuse (self ,) -> () { unsafe { let __receiver = < ProfileCardVisualMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ProfileCardVisualMenuContent_unity2_raw :: reuse (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetMenuItemContentMax()` overload"] fn get_menu_item_content_max (self ,) -> i32 { unsafe { let __receiver = < ProfileCardVisualMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ProfileCardVisualMenuContent_unity2_raw :: get_menu_item_content_max (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CalcCursorMovedPosX(i32)` overload"] fn calc_cursor_moved_pos_x (self , menu_item_index : impl :: core :: convert :: Into < i32 >) -> f32 { unsafe { let __receiver = < ProfileCardVisualMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ProfileCardVisualMenuContent_unity2_raw :: calc_cursor_moved_pos_x (__receiver , :: core :: convert :: Into :: into (menu_item_index) , :: core :: option :: Option :: None) } } # [doc = "`CalcCursorMovedPosY(i32)` overload"] fn calc_cursor_moved_pos_y (self , menu_item_index : impl :: core :: convert :: Into < i32 >) -> f32 { unsafe { let __receiver = < ProfileCardVisualMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ProfileCardVisualMenuContent_unity2_raw :: calc_cursor_moved_pos_y (__receiver , :: core :: convert :: Into :: into (menu_item_index) , :: core :: option :: Option :: None) } } # [doc = "`CalcW()` overload"] fn calc_w (self ,) -> f32 { unsafe { let __receiver = < ProfileCardVisualMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ProfileCardVisualMenuContent_unity2_raw :: calc_w (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CalcH()` overload"] fn calc_h (self ,) -> f32 { unsafe { let __receiver = < ProfileCardVisualMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ProfileCardVisualMenuContent_unity2_raw :: calc_h (__receiver , :: core :: option :: Option :: None) } } # [doc = "`UpdateContent(::unity2::Il2CppString, i32, i32)` overload"] fn update_content (self , caption : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , selected_index : impl :: core :: convert :: Into < i32 > , active_count : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < ProfileCardVisualMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ProfileCardVisualMenuContent_unity2_raw :: update_content (__receiver , :: core :: convert :: Into :: into (caption) , :: core :: convert :: Into :: into (selected_index) , :: core :: convert :: Into :: into (active_count) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ProfileCardVisualMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ProfileCardVisualMenuContent_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-profilecardvisualmenucontent")]
+impl < __T : IProfileCardVisualMenuContent > IProfileCardVisualMenuContentMethods for __T { }
+
+#[cfg(feature = "app-profilecardvisualmenucontent")]
+impl ProfileCardVisualMenuContent { pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProfileCardVisualMenuContent_unity2_raw :: __lookup_start :: get_method_info () } pub fn reuse_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProfileCardVisualMenuContent_unity2_raw :: __lookup_reuse :: get_method_info () } pub fn get_menu_item_content_max_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProfileCardVisualMenuContent_unity2_raw :: __lookup_get_menu_item_content_max :: get_method_info () } pub fn calc_cursor_moved_pos_x_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProfileCardVisualMenuContent_unity2_raw :: __lookup_calc_cursor_moved_pos_x :: get_method_info () } pub fn calc_cursor_moved_pos_y_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProfileCardVisualMenuContent_unity2_raw :: __lookup_calc_cursor_moved_pos_y :: get_method_info () } pub fn calc_w_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProfileCardVisualMenuContent_unity2_raw :: __lookup_calc_w :: get_method_info () } pub fn calc_h_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProfileCardVisualMenuContent_unity2_raw :: __lookup_calc_h :: get_method_info () } pub fn update_content_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProfileCardVisualMenuContent_unity2_raw :: __lookup_update_content :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProfileCardVisualMenuContent_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProfileCardVisualMenuContent_unity2_raw :: __lookup_cctor :: get_method_info () } }
 
 #[cfg(feature = "app-profilecardvisualmenucontent")]
 impl ProfileCardVisualMenuContent {
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __ProfileCardVisualMenuContent_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-profilecardvisualmenucontent")]
-pub trait IProfileCardVisualMenuContentMethods: IProfileCardVisualMenuContent {
-    #[doc = "`Start()` overload"]
-    fn start(self) -> () {
-        unsafe {
-            let __receiver =
-                <ProfileCardVisualMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ProfileCardVisualMenuContent_unity2_raw::start(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Reuse()` overload"]
-    fn reuse(self) -> () {
-        unsafe {
-            let __receiver =
-                <ProfileCardVisualMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ProfileCardVisualMenuContent_unity2_raw::reuse(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetMenuItemContentMax()` overload"]
-    fn get_menu_item_content_max(self) -> i32 {
-        unsafe {
-            let __receiver =
-                <ProfileCardVisualMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ProfileCardVisualMenuContent_unity2_raw::get_menu_item_content_max(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CalcCursorMovedPosX(i32)` overload"]
-    fn calc_cursor_moved_pos_x(self, menu_item_index: impl ::core::convert::Into<i32>) -> f32 {
-        unsafe {
-            let __receiver =
-                <ProfileCardVisualMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ProfileCardVisualMenuContent_unity2_raw::calc_cursor_moved_pos_x(
-                __receiver,
-                ::core::convert::Into::into(menu_item_index),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CalcCursorMovedPosY(i32)` overload"]
-    fn calc_cursor_moved_pos_y(self, menu_item_index: impl ::core::convert::Into<i32>) -> f32 {
-        unsafe {
-            let __receiver =
-                <ProfileCardVisualMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ProfileCardVisualMenuContent_unity2_raw::calc_cursor_moved_pos_y(
-                __receiver,
-                ::core::convert::Into::into(menu_item_index),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CalcW()` overload"]
-    fn calc_w(self) -> f32 {
-        unsafe {
-            let __receiver =
-                <ProfileCardVisualMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ProfileCardVisualMenuContent_unity2_raw::calc_w(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CalcH()` overload"]
-    fn calc_h(self) -> f32 {
-        unsafe {
-            let __receiver =
-                <ProfileCardVisualMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ProfileCardVisualMenuContent_unity2_raw::calc_h(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`UpdateContent(::unity2::Il2CppString, i32, i32)` overload"]
-    fn update_content(
-        self,
-        caption: impl ::core::convert::Into<::unity2::Il2CppString>,
-        selected_index: impl ::core::convert::Into<i32>,
-        active_count: impl ::core::convert::Into<i32>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <ProfileCardVisualMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ProfileCardVisualMenuContent_unity2_raw::update_content(
-                __receiver,
-                ::core::convert::Into::into(caption),
-                ::core::convert::Into::into(selected_index),
-                ::core::convert::Into::into(active_count),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <ProfileCardVisualMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ProfileCardVisualMenuContent_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-profilecardvisualmenucontent")]
-impl<__T: IProfileCardVisualMenuContent> IProfileCardVisualMenuContentMethods for __T {}
-
-#[cfg(feature = "app-profilecardvisualmenucontent")]
-impl ProfileCardVisualMenuContent {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ProfileCardVisualMenuContent),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IProfileCardVisualMenuContentMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProfileCardVisualMenuContent) , :: core :: stringify ! (new) ,)) ; < Self as IProfileCardVisualMenuContentMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-profilecardvisualmenucontent")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IProfileCardVisualMenuContent, IProfileCardVisualMenuContentMethods, ProfileCardVisualMenuContent};
-    #[cfg(feature = "app-basicmenucontent")]
-    pub use crate::app::basicmenucontent::IBasicMenuContentMethods;
-    #[cfg(feature = "app-gridmenucontent")]
-    pub use crate::app::gridmenucontent::IGridMenuContentMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        app::{basicmenucontent::IBasicMenuContent, gridmenucontent::IGridMenuContent},
-        system::object::IObject,
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::ProfileCardVisualMenuContent;
+    pub use super::IProfileCardVisualMenuContent;
+    pub use super::IProfileCardVisualMenuContentMethods;
+    pub use crate::app::basicmenucontent::IBasicMenuContent;
+    pub use crate::app::gridmenucontent::IGridMenuContent;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "app-basicmenucontent")] pub use crate::app::basicmenucontent::IBasicMenuContentMethods;
+    #[cfg(feature = "app-gridmenucontent")] pub use crate::app::gridmenucontent::IGridMenuContentMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

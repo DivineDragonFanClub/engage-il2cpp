@@ -2,87 +2,58 @@
 
 #[cfg(feature = "system-io-iterator_1-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/iterator_1/Iterator_1.md"))]
-    #[::unity2::class(namespace = "System.IO", name = "Iterator`1")]
-    #[parent(crate::system::object::Object)]
-    pub struct Iterator_1<T0: ::unity2::ClassIdentity> {
-        #[rename(name = "threadId")]
-        pub thread_id: i32,
-        #[rename(name = "state")]
-        pub state: i32,
-        #[rename(name = "current")]
-        pub current: T0,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/iterator_1/Iterator_1.md"))] # [:: unity2 :: class (namespace = "System.IO" , name = "Iterator`1")] # [parent (crate :: system :: object :: Object)] pub struct Iterator_1 < T0 : :: unity2 :: ClassIdentity > {
+# [rename (name = "threadId")] pub thread_id : i32 ,
+# [rename (name = "state")] pub state : i32 ,
+# [rename (name = "current")] pub current : T0 ,
+}
+
 }
 
 #[cfg(feature = "system-io-iterator_1-types")]
 pub use __types::*;
 
 #[cfg(feature = "system-io-iterator_1")]
-#[::unity2::methods]
-impl<T0: ::unity2::ClassIdentity> Iterator_1<T0> {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+# [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity > Iterator_1 < T0 > {
+# [doc = "`.ctor()` overload"] # [method (name = ".ctor" , args = 0)] pub fn ctor (self ,) -> () ;
 
-    #[doc = "`get_Current()` overload"]
-    #[method(name = "get_Current", args = 0)]
-    pub fn get_current(self) -> T0;
+# [doc = "`get_Current()` overload"] # [method (name = "get_Current" , args = 0)] pub fn get_current (self ,) -> T0 ;
 
-    #[doc = "`Clone()` overload"]
-    #[method(name = "Clone", args = 0)]
-    pub fn clone(self) -> crate::system::io::iterator_1::Iterator_1<T0>;
+# [doc = "`Clone()` overload"] # [method (name = "Clone" , args = 0)] pub fn clone (self ,) -> crate :: system :: io :: iterator_1 :: Iterator_1 < T0 > ;
 
-    #[doc = "`Dispose()` overload"]
-    #[method(name = "Dispose", args = 0)]
-    pub fn dispose(self) -> ();
+# [doc = "`Dispose()` overload"] # [method (name = "Dispose" , args = 0)] pub fn dispose (self ,) -> () ;
 
-    #[doc = "`Dispose(bool)` overload"]
-    #[method(name = "Dispose", args = 1)]
-    pub fn dispose_2(self, disposing: bool) -> ();
+# [doc = "`Dispose(bool)` overload"] # [method (name = "Dispose" , args = 1)] pub fn dispose_2 (self , disposing : bool) -> () ;
 
-    #[doc = "`GetEnumerator()` overload"]
-    #[method(name = "GetEnumerator", args = 0)]
-    pub fn get_enumerator(self) -> crate::system::collections::generic::ienumerator_1::IEnumerator_1<T0>;
+# [doc = "`GetEnumerator()` overload"] # [method (name = "GetEnumerator" , args = 0)] pub fn get_enumerator (self ,) -> crate :: system :: collections :: generic :: ienumerator_1 :: IEnumerator_1 < T0 > ;
 
-    #[doc = "`MoveNext()` overload"]
-    #[method(name = "MoveNext", args = 0)]
-    pub fn move_next(self) -> bool;
+# [doc = "`MoveNext()` overload"] # [method (name = "MoveNext" , args = 0)] pub fn move_next (self ,) -> bool ;
 
-    #[doc = "`System.Collections.IEnumerator.get_Current()` overload"]
-    #[method(name = "System.Collections.IEnumerator.get_Current", args = 0)]
-    pub fn system_collections_i_enumerator_get_current(self) -> crate::system::object::Object;
+# [doc = "`System.Collections.IEnumerator.get_Current()` overload"] # [method (name = "System.Collections.IEnumerator.get_Current" , args = 0)] pub fn system_collections_i_enumerator_get_current (self ,) -> crate :: system :: object :: Object ;
 
-    #[doc = "`System.Collections.IEnumerable.GetEnumerator()` overload"]
-    #[method(name = "System.Collections.IEnumerable.GetEnumerator", args = 0)]
-    pub fn system_collections_i_enumerable_get_enumerator(self) -> crate::system::collections::ienumerator::IEnumerator;
+# [doc = "`System.Collections.IEnumerable.GetEnumerator()` overload"] # [method (name = "System.Collections.IEnumerable.GetEnumerator" , args = 0)] pub fn system_collections_i_enumerable_get_enumerator (self ,) -> crate :: system :: collections :: ienumerator :: IEnumerator ;
 
-    #[doc = "`System.Collections.IEnumerator.Reset()` overload"]
-    #[method(name = "System.Collections.IEnumerator.Reset", args = 0)]
-    pub fn system_collections_i_enumerator_reset(self) -> ();
+# [doc = "`System.Collections.IEnumerator.Reset()` overload"] # [method (name = "System.Collections.IEnumerator.Reset" , args = 0)] pub fn system_collections_i_enumerator_reset (self ,) -> () ;
 }
 
 #[cfg(feature = "system-io-iterator_1")]
-impl<T0: ::unity2::ClassIdentity> Iterator_1<T0> {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(Iterator_1), ::core::stringify!(new),));
-        <Self as IIterator_1Methods<T0>>::ctor(this);
-        this
-    }
+impl < T0 : :: unity2 :: ClassIdentity > Iterator_1 < T0 > {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Iterator_1) , :: core :: stringify ! (new) ,)) ; < Self as IIterator_1Methods < T0 > > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "system-io-iterator_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IIterator_1, IIterator_1Methods, Iterator_1};
+    pub use super::Iterator_1;
+    pub use super::IIterator_1;
+    pub use super::IIterator_1Methods;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

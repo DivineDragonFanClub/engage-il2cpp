@@ -2,238 +2,43 @@
 
 #[cfg(feature = "nintendo-message_studio-lib-fonttaginfo-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/nintendo/message_studio/lib/fonttaginfo/FontTagInfo.md"))]
-    #[::unity2::class(namespace = "Nintendo.MessageStudio.Lib", name = "FontTagInfo")]
-    #[parent(crate::system::object::Object)]
-    pub struct FontTagInfo {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/nintendo/message_studio/lib/fonttaginfo/FontTagInfo.md"))] # [:: unity2 :: class (namespace = "Nintendo.MessageStudio.Lib" , name = "FontTagInfo")] # [parent (crate :: system :: object :: Object)] pub struct FontTagInfo {}
+
 }
 
 #[cfg(feature = "nintendo-message_studio-lib-fonttaginfo-types")]
 pub use __types::*;
 
 #[cfg(feature = "nintendo-message_studio-lib-fonttaginfo")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __FontTagInfo_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_tag {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<FontTagInfo as ::unity2::ClassIdentity>::class(), "get_Tag", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FontTagInfo as ::unity2::ClassIdentity>::NAME,
-                        "get_Tag",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_tag(this: FontTagInfo, __unity2_method_info: ::unity2::OptionalMethod) -> u16 {
-        let inner: extern "C" fn(FontTagInfo, ::unity2::OptionalMethod) -> u16 =
-            ::core::mem::transmute(__lookup_get_tag::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_tag_group {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FontTagInfo as ::unity2::ClassIdentity>::class(),
-                "get_TagGroup",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FontTagInfo as ::unity2::ClassIdentity>::NAME,
-                        "get_TagGroup",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_tag_group(this: FontTagInfo, __unity2_method_info: ::unity2::OptionalMethod) -> u16 {
-        let inner: extern "C" fn(FontTagInfo, ::unity2::OptionalMethod) -> u16 =
-            ::core::mem::transmute(__lookup_get_tag_group::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_index {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FontTagInfo as ::unity2::ClassIdentity>::class(),
-                "get_Index",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FontTagInfo as ::unity2::ClassIdentity>::NAME,
-                        "get_Index",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_index(this: FontTagInfo, __unity2_method_info: ::unity2::OptionalMethod) -> u16 {
-        let inner: extern "C" fn(FontTagInfo, ::unity2::OptionalMethod) -> u16 =
-            ::core::mem::transmute(__lookup_get_index::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_index {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FontTagInfo as ::unity2::ClassIdentity>::class(),
-                "set_Index",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FontTagInfo as ::unity2::ClassIdentity>::NAME,
-                        "set_Index",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_index(this: FontTagInfo, value: u16, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(FontTagInfo, u16, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_index::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<u8> as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<FontTagInfo as ::unity2::ClassIdentity>::class(), ".ctor", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FontTagInfo as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: FontTagInfo, param: ::unity2::Array<u8>, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(FontTagInfo, ::unity2::Array<u8>, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, param, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __FontTagInfo_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_tag { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FontTagInfo as :: unity2 :: ClassIdentity > :: class () , "get_Tag" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FontTagInfo as :: unity2 :: ClassIdentity > :: NAME , "get_Tag" , e) , } } } pub unsafe fn get_tag (this : FontTagInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> u16 { let inner : extern "C" fn (FontTagInfo , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute (__lookup_get_tag :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_tag_group { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FontTagInfo as :: unity2 :: ClassIdentity > :: class () , "get_TagGroup" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FontTagInfo as :: unity2 :: ClassIdentity > :: NAME , "get_TagGroup" , e) , } } } pub unsafe fn get_tag_group (this : FontTagInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> u16 { let inner : extern "C" fn (FontTagInfo , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute (__lookup_get_tag_group :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_index { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FontTagInfo as :: unity2 :: ClassIdentity > :: class () , "get_Index" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FontTagInfo as :: unity2 :: ClassIdentity > :: NAME , "get_Index" , e) , } } } pub unsafe fn get_index (this : FontTagInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> u16 { let inner : extern "C" fn (FontTagInfo , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute (__lookup_get_index :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_index { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< u16 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FontTagInfo as :: unity2 :: ClassIdentity > :: class () , "set_Index" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FontTagInfo as :: unity2 :: ClassIdentity > :: NAME , "set_Index" , e) , } } } pub unsafe fn set_index (this : FontTagInfo , value : u16 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FontTagInfo , u16 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_index :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < u8 > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FontTagInfo as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FontTagInfo as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : FontTagInfo , param : :: unity2 :: Array < u8 > , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FontTagInfo , :: unity2 :: Array < u8 > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , param , __unity2_method_info) } }
 
 #[cfg(feature = "nintendo-message_studio-lib-fonttaginfo")]
-pub trait IFontTagInfoMethods: IFontTagInfo {
-    #[doc = "`get_Tag()` overload"]
-    fn get_tag(self) -> u16 {
-        unsafe {
-            let __receiver = <FontTagInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FontTagInfo_unity2_raw::get_tag(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_TagGroup()` overload"]
-    fn get_tag_group(self) -> u16 {
-        unsafe {
-            let __receiver = <FontTagInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FontTagInfo_unity2_raw::get_tag_group(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Index()` overload"]
-    fn get_index(self) -> u16 {
-        unsafe {
-            let __receiver = <FontTagInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FontTagInfo_unity2_raw::get_index(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_Index(u16)` overload"]
-    fn set_index(self, value: impl ::core::convert::Into<u16>) -> () {
-        unsafe {
-            let __receiver = <FontTagInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FontTagInfo_unity2_raw::set_index(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor(::unity2::Array<u8>)` overload"]
-    fn ctor(self, param: impl ::core::convert::Into<::unity2::Array<u8>>) -> () {
-        unsafe {
-            let __receiver = <FontTagInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FontTagInfo_unity2_raw::ctor(__receiver, ::core::convert::Into::into(param), ::core::option::Option::None)
-        }
-    }
-}
+pub trait IFontTagInfoMethods : IFontTagInfo { # [doc = "`get_Tag()` overload"] fn get_tag (self ,) -> u16 { unsafe { let __receiver = < FontTagInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FontTagInfo_unity2_raw :: get_tag (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_TagGroup()` overload"] fn get_tag_group (self ,) -> u16 { unsafe { let __receiver = < FontTagInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FontTagInfo_unity2_raw :: get_tag_group (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_Index()` overload"] fn get_index (self ,) -> u16 { unsafe { let __receiver = < FontTagInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FontTagInfo_unity2_raw :: get_index (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_Index(u16)` overload"] fn set_index (self , value : impl :: core :: convert :: Into < u16 >) -> () { unsafe { let __receiver = < FontTagInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FontTagInfo_unity2_raw :: set_index (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`.ctor(::unity2::Array<u8>)` overload"] fn ctor (self , param : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > >) -> () { unsafe { let __receiver = < FontTagInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FontTagInfo_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (param) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "nintendo-message_studio-lib-fonttaginfo")]
-impl<__T: IFontTagInfo> IFontTagInfoMethods for __T {}
+impl < __T : IFontTagInfo > IFontTagInfoMethods for __T { }
+
+#[cfg(feature = "nintendo-message_studio-lib-fonttaginfo")]
+impl FontTagInfo { pub fn get_tag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FontTagInfo_unity2_raw :: __lookup_get_tag :: get_method_info () } pub fn get_tag_group_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FontTagInfo_unity2_raw :: __lookup_get_tag_group :: get_method_info () } pub fn get_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FontTagInfo_unity2_raw :: __lookup_get_index :: get_method_info () } pub fn set_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FontTagInfo_unity2_raw :: __lookup_set_index :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FontTagInfo_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "nintendo-message_studio-lib-fonttaginfo")]
 impl FontTagInfo {
-    #[doc = "`.ctor(::unity2::Array<u8>)` — overload selector"]
-    pub fn new(param: ::unity2::Array<u8>) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(FontTagInfo), ::core::stringify!(new),));
-        <Self as IFontTagInfoMethods>::ctor(this, param);
-        this
-    }
+# [doc = "`.ctor(::unity2::Array<u8>)` — overload selector"] pub fn new (param : :: unity2 :: Array < u8 >) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FontTagInfo) , :: core :: stringify ! (new) ,)) ; < Self as IFontTagInfoMethods > :: ctor (this , param) ; this }
 }
 
 #[cfg(feature = "nintendo-message_studio-lib-fonttaginfo")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{FontTagInfo, IFontTagInfo, IFontTagInfoMethods};
+    pub use super::FontTagInfo;
+    pub use super::IFontTagInfo;
+    pub use super::IFontTagInfoMethods;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

@@ -2,13 +2,13 @@
 
 #[cfg(feature = "unity_engine-assemblyiseditorassembly-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/assemblyiseditorassembly/AssemblyIsEditorAssembly.md"))]
-    #[::unity2::class(namespace = "UnityEngine", name = "AssemblyIsEditorAssembly")]
-    pub struct AssemblyIsEditorAssembly {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/assemblyiseditorassembly/AssemblyIsEditorAssembly.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "AssemblyIsEditorAssembly")] pub struct AssemblyIsEditorAssembly {}
+
 }
 
 #[cfg(feature = "unity_engine-assemblyiseditorassembly-types")]
@@ -17,5 +17,6 @@ pub use __types::*;
 #[cfg(feature = "unity_engine-assemblyiseditorassembly")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{AssemblyIsEditorAssembly, IAssemblyIsEditorAssembly};
+    pub use super::AssemblyIsEditorAssembly;
+    pub use super::IAssemblyIsEditorAssembly;
 }

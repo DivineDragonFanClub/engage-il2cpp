@@ -2,911 +2,128 @@
 
 #[cfg(feature = "app-mapsequenceengagesummon-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::{
-            commonbattlesequence_1::{CommonBattleSequence_1, ICommonBattleSequence_1},
-            procinst::{IProcInst, ProcInst},
-            singletonprocinst_1::{ISingletonProcInst_1, SingletonProcInst_1},
-        },
-        system::{
-            object::{IObject, Object},
-            r#enum::{Enum, IEnum},
-            valuetype::{IValueType, ValueType},
-        },
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequenceengagesummon/MapSequenceEngageSummon_Label.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct MapSequenceEngageSummon_Label {
-        pub value: i32,
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: commonbattlesequence_1 :: { CommonBattleSequence_1 , ICommonBattleSequence_1 }
+ ;
+ use crate :: app :: procinst :: { IProcInst , ProcInst }
+ ;
+ use crate :: app :: singletonprocinst_1 :: { ISingletonProcInst_1 , SingletonProcInst_1 }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequenceengagesummon/MapSequenceEngageSummon_Label.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct MapSequenceEngageSummon_Label  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for MapSequenceEngageSummon_Label  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapSequenceEngageSummon.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    impl ::unity2::ClassIdentity for MapSequenceEngageSummon_Label {
-        const NAME: &'static str = "MapSequenceEngageSummon.Label";
-        const NAMESPACE: &'static str = "App";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  ::unity2::IlType for MapSequenceEngageSummon_Label  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::IlType for MapSequenceEngageSummon_Label {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  MapSequenceEngageSummon_Label  {
+    pub fn simple() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl MapSequenceEngageSummon_Label {
-        pub fn simple() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn detail() -> Self {
-            Self { value: 1 }
-        }
+    pub fn detail() -> Self {
+        Self { value: 1 }
 
-        pub fn after() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn end() -> Self {
-            Self { value: 3 }
-        }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequenceengagesummon/MapSequenceEngageSummon.md"))]
-    #[::unity2::class(namespace = "App", name = "MapSequenceEngageSummon")]
-    # [parent (crate :: app :: commonbattlesequence_1 :: CommonBattleSequence_1 < crate :: app :: mapsequenceengagesummon :: MapSequenceEngageSummon >)]
-    pub struct MapSequenceEngageSummon {}
+
+    pub fn after() -> Self {
+        Self { value: 2 }
+
+    }
+
+
+    pub fn end() -> Self {
+        Self { value: 3 }
+
+    }
+
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequenceengagesummon/MapSequenceEngageSummon.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapSequenceEngageSummon")] # [parent (crate :: app :: commonbattlesequence_1 :: CommonBattleSequence_1 < crate :: app :: mapsequenceengagesummon :: MapSequenceEngageSummon >)] pub struct MapSequenceEngageSummon {}
+
 }
 
 #[cfg(feature = "app-mapsequenceengagesummon-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-mapsequenceengagesummon")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapSequenceEngageSummon_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_person {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceEngageSummon as ::unity2::ClassIdentity>::class(),
-                "get_Person",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceEngageSummon as ::unity2::ClassIdentity>::NAME,
-                        "get_Person",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_person(this: MapSequenceEngageSummon, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::persondata::PersonData {
-        let inner: extern "C" fn(MapSequenceEngageSummon, ::unity2::OptionalMethod) -> crate::app::persondata::PersonData =
-            ::core::mem::transmute(__lookup_get_person::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_person {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::persondata::PersonData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceEngageSummon as ::unity2::ClassIdentity>::class(),
-                "set_Person",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceEngageSummon as ::unity2::ClassIdentity>::NAME,
-                        "set_Person",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_person(
-        this: MapSequenceEngageSummon,
-        value: crate::app::persondata::PersonData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MapSequenceEngageSummon, crate::app::persondata::PersonData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_person::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_rank {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceEngageSummon as ::unity2::ClassIdentity>::class(),
-                "get_Rank",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceEngageSummon as ::unity2::ClassIdentity>::NAME,
-                        "get_Rank",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_rank(
-        this: MapSequenceEngageSummon,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::persondata::PersonData_Ranks {
-        let inner: extern "C" fn(MapSequenceEngageSummon, ::unity2::OptionalMethod) -> crate::app::persondata::PersonData_Ranks =
-            ::core::mem::transmute(__lookup_get_rank::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_rank {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::persondata::PersonData_Ranks as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceEngageSummon as ::unity2::ClassIdentity>::class(),
-                "set_Rank",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceEngageSummon as ::unity2::ClassIdentity>::NAME,
-                        "set_Rank",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_rank(
-        this: MapSequenceEngageSummon,
-        value: crate::app::persondata::PersonData_Ranks,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MapSequenceEngageSummon, crate::app::persondata::PersonData_Ranks, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_rank::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceEngageSummon as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceEngageSummon as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: MapSequenceEngageSummon, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapSequenceEngageSummon, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_mind_start {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceEngageSummon as ::unity2::ClassIdentity>::class(),
-                "MindStart",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceEngageSummon as ::unity2::ClassIdentity>::NAME,
-                        "MindStart",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn mind_start(this: MapSequenceEngageSummon, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapSequenceEngageSummon, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_mind_start::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_mind_end {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceEngageSummon as ::unity2::ClassIdentity>::class(),
-                "MindEnd",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceEngageSummon as ::unity2::ClassIdentity>::NAME,
-                        "MindEnd",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn mind_end(this: MapSequenceEngageSummon, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapSequenceEngageSummon, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_mind_end::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_bgm_start {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceEngageSummon as ::unity2::ClassIdentity>::class(),
-                "BgmStart",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceEngageSummon as ::unity2::ClassIdentity>::NAME,
-                        "BgmStart",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn bgm_start(this: MapSequenceEngageSummon, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapSequenceEngageSummon, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_bgm_start::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_bgm_end {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceEngageSummon as ::unity2::ClassIdentity>::class(),
-                "BgmEnd",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceEngageSummon as ::unity2::ClassIdentity>::NAME,
-                        "BgmEnd",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn bgm_end(this: MapSequenceEngageSummon, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapSequenceEngageSummon, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_bgm_end::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calculate {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceEngageSummon as ::unity2::ClassIdentity>::class(),
-                "Calculate",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceEngageSummon as ::unity2::ClassIdentity>::NAME,
-                        "Calculate",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn calculate(this: MapSequenceEngageSummon, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapSequenceEngageSummon, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_calculate::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_branch {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceEngageSummon as ::unity2::ClassIdentity>::class(),
-                "Branch",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceEngageSummon as ::unity2::ClassIdentity>::NAME,
-                        "Branch",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn branch(this: MapSequenceEngageSummon, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapSequenceEngageSummon, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_branch::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_simple_summon {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceEngageSummon as ::unity2::ClassIdentity>::class(),
-                "SimpleSummon",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceEngageSummon as ::unity2::ClassIdentity>::NAME,
-                        "SimpleSummon",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn simple_summon(this: MapSequenceEngageSummon, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapSequenceEngageSummon, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_simple_summon::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_combat_summon {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceEngageSummon as ::unity2::ClassIdentity>::class(),
-                "CombatSummon",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceEngageSummon as ::unity2::ClassIdentity>::NAME,
-                        "CombatSummon",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn combat_summon(this: MapSequenceEngageSummon, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapSequenceEngageSummon, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_combat_summon::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_commit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceEngageSummon as ::unity2::ClassIdentity>::class(),
-                "Commit",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceEngageSummon as ::unity2::ClassIdentity>::NAME,
-                        "Commit",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn commit(this: MapSequenceEngageSummon, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapSequenceEngageSummon, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_commit::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_grow {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceEngageSummon as ::unity2::ClassIdentity>::class(),
-                "Grow",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceEngageSummon as ::unity2::ClassIdentity>::NAME,
-                        "Grow",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn grow(this: MapSequenceEngageSummon, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapSequenceEngageSummon, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_grow::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_god_exp {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceEngageSummon as ::unity2::ClassIdentity>::class(),
-                "GodExp",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceEngageSummon as ::unity2::ClassIdentity>::NAME,
-                        "GodExp",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn god_exp(this: MapSequenceEngageSummon, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapSequenceEngageSummon, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_god_exp::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_try_skip {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceEngageSummon as ::unity2::ClassIdentity>::class(),
-                "TrySkip",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceEngageSummon as ::unity2::ClassIdentity>::NAME,
-                        "TrySkip",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn try_skip(this: MapSequenceEngageSummon, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapSequenceEngageSummon, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_try_skip::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_telop {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceEngageSummon as ::unity2::ClassIdentity>::class(),
-                "CreateTelop",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceEngageSummon as ::unity2::ClassIdentity>::NAME,
-                        "CreateTelop",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_telop(this: MapSequenceEngageSummon, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapSequenceEngageSummon, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_create_telop::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceEngageSummon as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceEngageSummon as ::unity2::ClassIdentity>::NAME,
-                        "CreateBind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_bind(super_: crate::app::procinst::ProcInst, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
-        inner(super_, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MapSequenceEngageSummon_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_person { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceEngageSummon as :: unity2 :: ClassIdentity > :: class () , "get_Person" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceEngageSummon as :: unity2 :: ClassIdentity > :: NAME , "get_Person" , e) , } } } pub unsafe fn get_person (this : MapSequenceEngageSummon , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: persondata :: PersonData { let inner : extern "C" fn (MapSequenceEngageSummon , :: unity2 :: OptionalMethod ,) -> crate :: app :: persondata :: PersonData = :: core :: mem :: transmute (__lookup_get_person :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_person { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: persondata :: PersonData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceEngageSummon as :: unity2 :: ClassIdentity > :: class () , "set_Person" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceEngageSummon as :: unity2 :: ClassIdentity > :: NAME , "set_Person" , e) , } } } pub unsafe fn set_person (this : MapSequenceEngageSummon , value : crate :: app :: persondata :: PersonData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapSequenceEngageSummon , crate :: app :: persondata :: PersonData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_person :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_rank { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceEngageSummon as :: unity2 :: ClassIdentity > :: class () , "get_Rank" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceEngageSummon as :: unity2 :: ClassIdentity > :: NAME , "get_Rank" , e) , } } } pub unsafe fn get_rank (this : MapSequenceEngageSummon , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: persondata :: PersonData_Ranks { let inner : extern "C" fn (MapSequenceEngageSummon , :: unity2 :: OptionalMethod ,) -> crate :: app :: persondata :: PersonData_Ranks = :: core :: mem :: transmute (__lookup_get_rank :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_rank { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: persondata :: PersonData_Ranks as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceEngageSummon as :: unity2 :: ClassIdentity > :: class () , "set_Rank" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceEngageSummon as :: unity2 :: ClassIdentity > :: NAME , "set_Rank" , e) , } } } pub unsafe fn set_rank (this : MapSequenceEngageSummon , value : crate :: app :: persondata :: PersonData_Ranks , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapSequenceEngageSummon , crate :: app :: persondata :: PersonData_Ranks , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_rank :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceEngageSummon as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceEngageSummon as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : MapSequenceEngageSummon , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapSequenceEngageSummon , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_mind_start { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceEngageSummon as :: unity2 :: ClassIdentity > :: class () , "MindStart" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceEngageSummon as :: unity2 :: ClassIdentity > :: NAME , "MindStart" , e) , } } } pub unsafe fn mind_start (this : MapSequenceEngageSummon , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapSequenceEngageSummon , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_mind_start :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_mind_end { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceEngageSummon as :: unity2 :: ClassIdentity > :: class () , "MindEnd" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceEngageSummon as :: unity2 :: ClassIdentity > :: NAME , "MindEnd" , e) , } } } pub unsafe fn mind_end (this : MapSequenceEngageSummon , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapSequenceEngageSummon , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_mind_end :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_bgm_start { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceEngageSummon as :: unity2 :: ClassIdentity > :: class () , "BgmStart" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceEngageSummon as :: unity2 :: ClassIdentity > :: NAME , "BgmStart" , e) , } } } pub unsafe fn bgm_start (this : MapSequenceEngageSummon , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapSequenceEngageSummon , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_bgm_start :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_bgm_end { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceEngageSummon as :: unity2 :: ClassIdentity > :: class () , "BgmEnd" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceEngageSummon as :: unity2 :: ClassIdentity > :: NAME , "BgmEnd" , e) , } } } pub unsafe fn bgm_end (this : MapSequenceEngageSummon , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapSequenceEngageSummon , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_bgm_end :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_calculate { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceEngageSummon as :: unity2 :: ClassIdentity > :: class () , "Calculate" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceEngageSummon as :: unity2 :: ClassIdentity > :: NAME , "Calculate" , e) , } } } pub unsafe fn calculate (this : MapSequenceEngageSummon , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapSequenceEngageSummon , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_calculate :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_branch { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceEngageSummon as :: unity2 :: ClassIdentity > :: class () , "Branch" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceEngageSummon as :: unity2 :: ClassIdentity > :: NAME , "Branch" , e) , } } } pub unsafe fn branch (this : MapSequenceEngageSummon , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapSequenceEngageSummon , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_branch :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_simple_summon { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceEngageSummon as :: unity2 :: ClassIdentity > :: class () , "SimpleSummon" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceEngageSummon as :: unity2 :: ClassIdentity > :: NAME , "SimpleSummon" , e) , } } } pub unsafe fn simple_summon (this : MapSequenceEngageSummon , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapSequenceEngageSummon , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_simple_summon :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_combat_summon { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceEngageSummon as :: unity2 :: ClassIdentity > :: class () , "CombatSummon" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceEngageSummon as :: unity2 :: ClassIdentity > :: NAME , "CombatSummon" , e) , } } } pub unsafe fn combat_summon (this : MapSequenceEngageSummon , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapSequenceEngageSummon , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_combat_summon :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_commit { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceEngageSummon as :: unity2 :: ClassIdentity > :: class () , "Commit" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceEngageSummon as :: unity2 :: ClassIdentity > :: NAME , "Commit" , e) , } } } pub unsafe fn commit (this : MapSequenceEngageSummon , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapSequenceEngageSummon , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_commit :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_grow { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceEngageSummon as :: unity2 :: ClassIdentity > :: class () , "Grow" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceEngageSummon as :: unity2 :: ClassIdentity > :: NAME , "Grow" , e) , } } } pub unsafe fn grow (this : MapSequenceEngageSummon , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapSequenceEngageSummon , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_grow :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_god_exp { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceEngageSummon as :: unity2 :: ClassIdentity > :: class () , "GodExp" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceEngageSummon as :: unity2 :: ClassIdentity > :: NAME , "GodExp" , e) , } } } pub unsafe fn god_exp (this : MapSequenceEngageSummon , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapSequenceEngageSummon , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_god_exp :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_try_skip { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceEngageSummon as :: unity2 :: ClassIdentity > :: class () , "TrySkip" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceEngageSummon as :: unity2 :: ClassIdentity > :: NAME , "TrySkip" , e) , } } } pub unsafe fn try_skip (this : MapSequenceEngageSummon , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapSequenceEngageSummon , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_try_skip :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_telop { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceEngageSummon as :: unity2 :: ClassIdentity > :: class () , "CreateTelop" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceEngageSummon as :: unity2 :: ClassIdentity > :: NAME , "CreateTelop" , e) , } } } pub unsafe fn create_telop (this : MapSequenceEngageSummon , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapSequenceEngageSummon , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create_telop :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_bind { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceEngageSummon as :: unity2 :: ClassIdentity > :: class () , "CreateBind" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceEngageSummon as :: unity2 :: ClassIdentity > :: NAME , "CreateBind" , e) , } } } pub unsafe fn create_bind (super_ : crate :: app :: procinst :: ProcInst , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create_bind :: get_method_info () . method_ptr ,) ; inner (super_ , __unity2_method_info) } }
+
+#[cfg(feature = "app-mapsequenceengagesummon")]
+impl MapSequenceEngageSummon { # [doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { __MapSequenceEngageSummon_unity2_raw :: create_bind (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-mapsequenceengagesummon")]
+pub trait IMapSequenceEngageSummonMethods : IMapSequenceEngageSummon { # [doc = "`get_Person()` overload"] fn get_person (self ,) -> crate :: app :: persondata :: PersonData { unsafe { let __receiver = < MapSequenceEngageSummon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceEngageSummon_unity2_raw :: get_person (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_Person(crate::app::persondata::PersonData)` overload"] fn set_person (self , value : impl :: core :: convert :: Into < crate :: app :: persondata :: PersonData >) -> () { unsafe { let __receiver = < MapSequenceEngageSummon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceEngageSummon_unity2_raw :: set_person (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_Rank()` overload"] fn get_rank (self ,) -> crate :: app :: persondata :: PersonData_Ranks { unsafe { let __receiver = < MapSequenceEngageSummon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceEngageSummon_unity2_raw :: get_rank (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_Rank(crate::app::persondata::PersonData_Ranks)` overload"] fn set_rank (self , value : impl :: core :: convert :: Into < crate :: app :: persondata :: PersonData_Ranks >) -> () { unsafe { let __receiver = < MapSequenceEngageSummon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceEngageSummon_unity2_raw :: set_rank (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapSequenceEngageSummon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceEngageSummon_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } # [doc = "`MindStart()` overload"] fn mind_start (self ,) -> () { unsafe { let __receiver = < MapSequenceEngageSummon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceEngageSummon_unity2_raw :: mind_start (__receiver , :: core :: option :: Option :: None) } } # [doc = "`MindEnd()` overload"] fn mind_end (self ,) -> () { unsafe { let __receiver = < MapSequenceEngageSummon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceEngageSummon_unity2_raw :: mind_end (__receiver , :: core :: option :: Option :: None) } } # [doc = "`BgmStart()` overload"] fn bgm_start (self ,) -> () { unsafe { let __receiver = < MapSequenceEngageSummon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceEngageSummon_unity2_raw :: bgm_start (__receiver , :: core :: option :: Option :: None) } } # [doc = "`BgmEnd()` overload"] fn bgm_end (self ,) -> () { unsafe { let __receiver = < MapSequenceEngageSummon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceEngageSummon_unity2_raw :: bgm_end (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Calculate()` overload"] fn calculate (self ,) -> () { unsafe { let __receiver = < MapSequenceEngageSummon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceEngageSummon_unity2_raw :: calculate (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Branch()` overload"] fn branch (self ,) -> () { unsafe { let __receiver = < MapSequenceEngageSummon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceEngageSummon_unity2_raw :: branch (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SimpleSummon()` overload"] fn simple_summon (self ,) -> () { unsafe { let __receiver = < MapSequenceEngageSummon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceEngageSummon_unity2_raw :: simple_summon (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CombatSummon()` overload"] fn combat_summon (self ,) -> () { unsafe { let __receiver = < MapSequenceEngageSummon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceEngageSummon_unity2_raw :: combat_summon (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Commit()` overload"] fn commit (self ,) -> () { unsafe { let __receiver = < MapSequenceEngageSummon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceEngageSummon_unity2_raw :: commit (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Grow()` overload"] fn grow (self ,) -> () { unsafe { let __receiver = < MapSequenceEngageSummon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceEngageSummon_unity2_raw :: grow (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GodExp()` overload"] fn god_exp (self ,) -> () { unsafe { let __receiver = < MapSequenceEngageSummon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceEngageSummon_unity2_raw :: god_exp (__receiver , :: core :: option :: Option :: None) } } # [doc = "`TrySkip()` overload"] fn try_skip (self ,) -> () { unsafe { let __receiver = < MapSequenceEngageSummon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceEngageSummon_unity2_raw :: try_skip (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CreateTelop()` overload"] fn create_telop (self ,) -> () { unsafe { let __receiver = < MapSequenceEngageSummon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceEngageSummon_unity2_raw :: create_telop (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-mapsequenceengagesummon")]
+impl < __T : IMapSequenceEngageSummon > IMapSequenceEngageSummonMethods for __T { }
+
+#[cfg(feature = "app-mapsequenceengagesummon")]
+impl MapSequenceEngageSummon { pub fn get_person_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceEngageSummon_unity2_raw :: __lookup_get_person :: get_method_info () } pub fn set_person_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceEngageSummon_unity2_raw :: __lookup_set_person :: get_method_info () } pub fn get_rank_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceEngageSummon_unity2_raw :: __lookup_get_rank :: get_method_info () } pub fn set_rank_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceEngageSummon_unity2_raw :: __lookup_set_rank :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceEngageSummon_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn mind_start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceEngageSummon_unity2_raw :: __lookup_mind_start :: get_method_info () } pub fn mind_end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceEngageSummon_unity2_raw :: __lookup_mind_end :: get_method_info () } pub fn bgm_start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceEngageSummon_unity2_raw :: __lookup_bgm_start :: get_method_info () } pub fn bgm_end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceEngageSummon_unity2_raw :: __lookup_bgm_end :: get_method_info () } pub fn calculate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceEngageSummon_unity2_raw :: __lookup_calculate :: get_method_info () } pub fn branch_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceEngageSummon_unity2_raw :: __lookup_branch :: get_method_info () } pub fn simple_summon_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceEngageSummon_unity2_raw :: __lookup_simple_summon :: get_method_info () } pub fn combat_summon_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceEngageSummon_unity2_raw :: __lookup_combat_summon :: get_method_info () } pub fn commit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceEngageSummon_unity2_raw :: __lookup_commit :: get_method_info () } pub fn grow_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceEngageSummon_unity2_raw :: __lookup_grow :: get_method_info () } pub fn god_exp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceEngageSummon_unity2_raw :: __lookup_god_exp :: get_method_info () } pub fn try_skip_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceEngageSummon_unity2_raw :: __lookup_try_skip :: get_method_info () } pub fn create_telop_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceEngageSummon_unity2_raw :: __lookup_create_telop :: get_method_info () } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceEngageSummon_unity2_raw :: __lookup_create_bind :: get_method_info () } }
 
 #[cfg(feature = "app-mapsequenceengagesummon")]
 impl MapSequenceEngageSummon {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
-    pub fn create_bind(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
-        unsafe { __MapSequenceEngageSummon_unity2_raw::create_bind(::core::convert::Into::into(super_), ::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-mapsequenceengagesummon")]
-pub trait IMapSequenceEngageSummonMethods: IMapSequenceEngageSummon {
-    #[doc = "`get_Person()` overload"]
-    fn get_person(self) -> crate::app::persondata::PersonData {
-        unsafe {
-            let __receiver =
-                <MapSequenceEngageSummon as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSequenceEngageSummon_unity2_raw::get_person(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_Person(crate::app::persondata::PersonData)` overload"]
-    fn set_person(self, value: impl ::core::convert::Into<crate::app::persondata::PersonData>) -> () {
-        unsafe {
-            let __receiver =
-                <MapSequenceEngageSummon as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSequenceEngageSummon_unity2_raw::set_person(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Rank()` overload"]
-    fn get_rank(self) -> crate::app::persondata::PersonData_Ranks {
-        unsafe {
-            let __receiver =
-                <MapSequenceEngageSummon as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSequenceEngageSummon_unity2_raw::get_rank(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_Rank(crate::app::persondata::PersonData_Ranks)` overload"]
-    fn set_rank(self, value: impl ::core::convert::Into<crate::app::persondata::PersonData_Ranks>) -> () {
-        unsafe {
-            let __receiver =
-                <MapSequenceEngageSummon as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSequenceEngageSummon_unity2_raw::set_rank(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <MapSequenceEngageSummon as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSequenceEngageSummon_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`MindStart()` overload"]
-    fn mind_start(self) -> () {
-        unsafe {
-            let __receiver =
-                <MapSequenceEngageSummon as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSequenceEngageSummon_unity2_raw::mind_start(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`MindEnd()` overload"]
-    fn mind_end(self) -> () {
-        unsafe {
-            let __receiver =
-                <MapSequenceEngageSummon as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSequenceEngageSummon_unity2_raw::mind_end(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`BgmStart()` overload"]
-    fn bgm_start(self) -> () {
-        unsafe {
-            let __receiver =
-                <MapSequenceEngageSummon as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSequenceEngageSummon_unity2_raw::bgm_start(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`BgmEnd()` overload"]
-    fn bgm_end(self) -> () {
-        unsafe {
-            let __receiver =
-                <MapSequenceEngageSummon as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSequenceEngageSummon_unity2_raw::bgm_end(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Calculate()` overload"]
-    fn calculate(self) -> () {
-        unsafe {
-            let __receiver =
-                <MapSequenceEngageSummon as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSequenceEngageSummon_unity2_raw::calculate(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Branch()` overload"]
-    fn branch(self) -> () {
-        unsafe {
-            let __receiver =
-                <MapSequenceEngageSummon as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSequenceEngageSummon_unity2_raw::branch(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SimpleSummon()` overload"]
-    fn simple_summon(self) -> () {
-        unsafe {
-            let __receiver =
-                <MapSequenceEngageSummon as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSequenceEngageSummon_unity2_raw::simple_summon(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CombatSummon()` overload"]
-    fn combat_summon(self) -> () {
-        unsafe {
-            let __receiver =
-                <MapSequenceEngageSummon as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSequenceEngageSummon_unity2_raw::combat_summon(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Commit()` overload"]
-    fn commit(self) -> () {
-        unsafe {
-            let __receiver =
-                <MapSequenceEngageSummon as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSequenceEngageSummon_unity2_raw::commit(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Grow()` overload"]
-    fn grow(self) -> () {
-        unsafe {
-            let __receiver =
-                <MapSequenceEngageSummon as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSequenceEngageSummon_unity2_raw::grow(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GodExp()` overload"]
-    fn god_exp(self) -> () {
-        unsafe {
-            let __receiver =
-                <MapSequenceEngageSummon as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSequenceEngageSummon_unity2_raw::god_exp(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`TrySkip()` overload"]
-    fn try_skip(self) -> () {
-        unsafe {
-            let __receiver =
-                <MapSequenceEngageSummon as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSequenceEngageSummon_unity2_raw::try_skip(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CreateTelop()` overload"]
-    fn create_telop(self) -> () {
-        unsafe {
-            let __receiver =
-                <MapSequenceEngageSummon as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSequenceEngageSummon_unity2_raw::create_telop(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-mapsequenceengagesummon")]
-impl<__T: IMapSequenceEngageSummon> IMapSequenceEngageSummonMethods for __T {}
-
-#[cfg(feature = "app-mapsequenceengagesummon")]
-impl MapSequenceEngageSummon {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapSequenceEngageSummon),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapSequenceEngageSummonMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapSequenceEngageSummon) , :: core :: stringify ! (new) ,)) ; < Self as IMapSequenceEngageSummonMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-mapsequenceengagesummon")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IMapSequenceEngageSummon, IMapSequenceEngageSummonMethods, MapSequenceEngageSummon, MapSequenceEngageSummon_Label};
-    #[cfg(feature = "app-commonbattlesequence_1")]
-    pub use crate::app::commonbattlesequence_1::ICommonBattleSequence_1Methods;
-    #[cfg(feature = "app-procinst")]
-    pub use crate::app::procinst::IProcInstMethods;
-    #[cfg(feature = "app-singletonprocinst_1")]
-    pub use crate::app::singletonprocinst_1::ISingletonProcInst_1Methods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::{
-        app::{commonbattlesequence_1::ICommonBattleSequence_1, procinst::IProcInst, singletonprocinst_1::ISingletonProcInst_1},
-        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
-    };
+    pub use super::MapSequenceEngageSummon_Label;
+    pub use super::MapSequenceEngageSummon;
+    pub use super::IMapSequenceEngageSummon;
+    pub use super::IMapSequenceEngageSummonMethods;
+    pub use crate::app::commonbattlesequence_1::ICommonBattleSequence_1;
+    pub use crate::app::procinst::IProcInst;
+    pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "app-commonbattlesequence_1")] pub use crate::app::commonbattlesequence_1::ICommonBattleSequence_1Methods;
+    #[cfg(feature = "app-procinst")] pub use crate::app::procinst::IProcInstMethods;
+    #[cfg(feature = "app-singletonprocinst_1")] pub use crate::app::singletonprocinst_1::ISingletonProcInst_1Methods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

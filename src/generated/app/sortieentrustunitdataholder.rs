@@ -2,296 +2,45 @@
 
 #[cfg(feature = "app-sortieentrustunitdataholder-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortieentrustunitdataholder/SortieEntrustUnitDataHolder.md"))]
-    #[::unity2::class(namespace = "App", name = "SortieEntrustUnitDataHolder")]
-    #[parent(crate::system::object::Object)]
-    pub struct SortieEntrustUnitDataHolder {
-        #[offset(16)]
-        #[rename(name = "m_Data")]
-        pub m_data: crate::system::collections::generic::list_1::List_1<crate::app::sortieentrustunitdata::SortieEntrustUnitData>,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortieentrustunitdataholder/SortieEntrustUnitDataHolder.md"))] # [:: unity2 :: class (namespace = "App" , name = "SortieEntrustUnitDataHolder")] # [parent (crate :: system :: object :: Object)] pub struct SortieEntrustUnitDataHolder {
+# [offset (16)] # [rename (name = "m_Data")] pub m_data : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: sortieentrustunitdata :: SortieEntrustUnitData > ,
+}
+
 }
 
 #[cfg(feature = "app-sortieentrustunitdataholder-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-sortieentrustunitdataholder")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __SortieEntrustUnitDataHolder_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieEntrustUnitDataHolder as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SortieEntrustUnitDataHolder as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: SortieEntrustUnitDataHolder, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SortieEntrustUnitDataHolder, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_register_unit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieEntrustUnitDataHolder as ::unity2::ClassIdentity>::class(),
-                "RegisterUnit",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SortieEntrustUnitDataHolder as ::unity2::ClassIdentity>::NAME,
-                        "RegisterUnit",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn register_unit(
-        this: SortieEntrustUnitDataHolder,
-        unit: crate::app::unit::Unit,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(SortieEntrustUnitDataHolder, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_register_unit::get_method_info().method_ptr);
-        inner(this, unit, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-                <crate::app::unititem::UnitItem as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieEntrustUnitDataHolder as ::unity2::ClassIdentity>::class(),
-                "Add",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SortieEntrustUnitDataHolder as ::unity2::ClassIdentity>::NAME,
-                        "Add",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add(
-        this: SortieEntrustUnitDataHolder,
-        unit: crate::app::unit::Unit,
-        unit_item: crate::app::unititem::UnitItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            SortieEntrustUnitDataHolder,
-            crate::app::unit::Unit,
-            crate::app::unititem::UnitItem,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_add::get_method_info().method_ptr);
-        inner(this, unit, unit_item, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_data {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieEntrustUnitDataHolder as ::unity2::ClassIdentity>::class(),
-                "get_Data",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SortieEntrustUnitDataHolder as ::unity2::ClassIdentity>::NAME,
-                        "get_Data",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_data(
-        this: SortieEntrustUnitDataHolder,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::list_1::List_1<crate::app::sortieentrustunitdata::SortieEntrustUnitData> {
-        let inner: extern "C" fn(
-            SortieEntrustUnitDataHolder,
-            ::unity2::OptionalMethod,
-        )
-            -> crate::system::collections::generic::list_1::List_1<crate::app::sortieentrustunitdata::SortieEntrustUnitData> =
-            ::core::mem::transmute(__lookup_get_data::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_count {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieEntrustUnitDataHolder as ::unity2::ClassIdentity>::class(),
-                "get_Count",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SortieEntrustUnitDataHolder as ::unity2::ClassIdentity>::NAME,
-                        "get_Count",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_count(this: SortieEntrustUnitDataHolder, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(SortieEntrustUnitDataHolder, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_count::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __SortieEntrustUnitDataHolder_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SortieEntrustUnitDataHolder as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SortieEntrustUnitDataHolder as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : SortieEntrustUnitDataHolder , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SortieEntrustUnitDataHolder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_register_unit { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SortieEntrustUnitDataHolder as :: unity2 :: ClassIdentity > :: class () , "RegisterUnit" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SortieEntrustUnitDataHolder as :: unity2 :: ClassIdentity > :: NAME , "RegisterUnit" , e) , } } } pub unsafe fn register_unit (this : SortieEntrustUnitDataHolder , unit : crate :: app :: unit :: Unit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SortieEntrustUnitDataHolder , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_register_unit :: get_method_info () . method_ptr ,) ; inner (this , unit , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < crate :: app :: unititem :: UnitItem as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SortieEntrustUnitDataHolder as :: unity2 :: ClassIdentity > :: class () , "Add" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SortieEntrustUnitDataHolder as :: unity2 :: ClassIdentity > :: NAME , "Add" , e) , } } } pub unsafe fn add (this : SortieEntrustUnitDataHolder , unit : crate :: app :: unit :: Unit , unit_item : crate :: app :: unititem :: UnitItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SortieEntrustUnitDataHolder , crate :: app :: unit :: Unit , crate :: app :: unititem :: UnitItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add :: get_method_info () . method_ptr ,) ; inner (this , unit , unit_item , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_data { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SortieEntrustUnitDataHolder as :: unity2 :: ClassIdentity > :: class () , "get_Data" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SortieEntrustUnitDataHolder as :: unity2 :: ClassIdentity > :: NAME , "get_Data" , e) , } } } pub unsafe fn get_data (this : SortieEntrustUnitDataHolder , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: sortieentrustunitdata :: SortieEntrustUnitData > { let inner : extern "C" fn (SortieEntrustUnitDataHolder , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: sortieentrustunitdata :: SortieEntrustUnitData > = :: core :: mem :: transmute (__lookup_get_data :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_count { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SortieEntrustUnitDataHolder as :: unity2 :: ClassIdentity > :: class () , "get_Count" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SortieEntrustUnitDataHolder as :: unity2 :: ClassIdentity > :: NAME , "get_Count" , e) , } } } pub unsafe fn get_count (this : SortieEntrustUnitDataHolder , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (SortieEntrustUnitDataHolder , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_count :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-sortieentrustunitdataholder")]
-pub trait ISortieEntrustUnitDataHolderMethods: ISortieEntrustUnitDataHolder {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <SortieEntrustUnitDataHolder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SortieEntrustUnitDataHolder_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`RegisterUnit(crate::app::unit::Unit)` overload"]
-    fn register_unit(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
-        unsafe {
-            let __receiver =
-                <SortieEntrustUnitDataHolder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SortieEntrustUnitDataHolder_unity2_raw::register_unit(__receiver, ::core::convert::Into::into(unit), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Add(crate::app::unit::Unit, crate::app::unititem::UnitItem)` overload"]
-    fn add(
-        self,
-        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-        unit_item: impl ::core::convert::Into<crate::app::unititem::UnitItem>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <SortieEntrustUnitDataHolder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SortieEntrustUnitDataHolder_unity2_raw::add(
-                __receiver,
-                ::core::convert::Into::into(unit),
-                ::core::convert::Into::into(unit_item),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_Data()` overload"]
-    fn get_data(self) -> crate::system::collections::generic::list_1::List_1<crate::app::sortieentrustunitdata::SortieEntrustUnitData> {
-        unsafe {
-            let __receiver =
-                <SortieEntrustUnitDataHolder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SortieEntrustUnitDataHolder_unity2_raw::get_data(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Count()` overload"]
-    fn get_count(self) -> i32 {
-        unsafe {
-            let __receiver =
-                <SortieEntrustUnitDataHolder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SortieEntrustUnitDataHolder_unity2_raw::get_count(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait ISortieEntrustUnitDataHolderMethods : ISortieEntrustUnitDataHolder { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < SortieEntrustUnitDataHolder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SortieEntrustUnitDataHolder_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } # [doc = "`RegisterUnit(crate::app::unit::Unit)` overload"] fn register_unit (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < SortieEntrustUnitDataHolder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SortieEntrustUnitDataHolder_unity2_raw :: register_unit (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } # [doc = "`Add(crate::app::unit::Unit, crate::app::unititem::UnitItem)` overload"] fn add (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , unit_item : impl :: core :: convert :: Into < crate :: app :: unititem :: UnitItem >) -> () { unsafe { let __receiver = < SortieEntrustUnitDataHolder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SortieEntrustUnitDataHolder_unity2_raw :: add (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (unit_item) , :: core :: option :: Option :: None) } } # [doc = "`get_Data()` overload"] fn get_data (self ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: sortieentrustunitdata :: SortieEntrustUnitData > { unsafe { let __receiver = < SortieEntrustUnitDataHolder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SortieEntrustUnitDataHolder_unity2_raw :: get_data (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_Count()` overload"] fn get_count (self ,) -> i32 { unsafe { let __receiver = < SortieEntrustUnitDataHolder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SortieEntrustUnitDataHolder_unity2_raw :: get_count (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-sortieentrustunitdataholder")]
-impl<__T: ISortieEntrustUnitDataHolder> ISortieEntrustUnitDataHolderMethods for __T {}
+impl < __T : ISortieEntrustUnitDataHolder > ISortieEntrustUnitDataHolderMethods for __T { }
+
+#[cfg(feature = "app-sortieentrustunitdataholder")]
+impl SortieEntrustUnitDataHolder { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SortieEntrustUnitDataHolder_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn register_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SortieEntrustUnitDataHolder_unity2_raw :: __lookup_register_unit :: get_method_info () } pub fn add_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SortieEntrustUnitDataHolder_unity2_raw :: __lookup_add :: get_method_info () } pub fn get_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SortieEntrustUnitDataHolder_unity2_raw :: __lookup_get_data :: get_method_info () } pub fn get_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SortieEntrustUnitDataHolder_unity2_raw :: __lookup_get_count :: get_method_info () } }
 
 #[cfg(feature = "app-sortieentrustunitdataholder")]
 impl SortieEntrustUnitDataHolder {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SortieEntrustUnitDataHolder),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISortieEntrustUnitDataHolderMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SortieEntrustUnitDataHolder) , :: core :: stringify ! (new) ,)) ; < Self as ISortieEntrustUnitDataHolderMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-sortieentrustunitdataholder")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{ISortieEntrustUnitDataHolder, ISortieEntrustUnitDataHolderMethods, SortieEntrustUnitDataHolder};
+    pub use super::SortieEntrustUnitDataHolder;
+    pub use super::ISortieEntrustUnitDataHolder;
+    pub use super::ISortieEntrustUnitDataHolderMethods;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

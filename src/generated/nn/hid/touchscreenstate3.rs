@@ -2,830 +2,117 @@
 
 #[cfg(feature = "nn-hid-touchscreenstate3-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        valuetype::{IValueType, ValueType},
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/nn/hid/touchscreenstate3/TouchScreenState3_TouchStateArray3.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct TouchScreenState3_TouchStateArray3 {
-        pub value0: crate::nn::hid::touchstate::TouchState,
-        pub value1: crate::nn::hid::touchstate::TouchState,
-        pub value2: crate::nn::hid::touchstate::TouchState,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
 
-    impl ::unity2::ClassIdentity for TouchScreenState3_TouchStateArray3 {
-        const NAME: &'static str = "TouchScreenState3.TouchStateArray3";
-        const NAMESPACE: &'static str = "nn.hid";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/nn/hid/touchscreenstate3/TouchScreenState3_TouchStateArray3.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct TouchScreenState3_TouchStateArray3 {
+    pub value0: crate :: nn :: hid :: touchstate :: TouchState,
+    pub value1: crate :: nn :: hid :: touchstate :: TouchState,
+    pub value2: crate :: nn :: hid :: touchstate :: TouchState,
+}
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+
+impl ::unity2::ClassIdentity for TouchScreenState3_TouchStateArray3 {
+    const NAMESPACE: &'static str = "nn.hid";
+
+    const NAME: &'static str = "TouchScreenState3.TouchStateArray3";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for TouchScreenState3_TouchStateArray3 {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+}
+
+
+impl ::unity2::IlType for TouchScreenState3_TouchStateArray3 {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/nn/hid/touchscreenstate3/TouchScreenState3.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct TouchScreenState3 {
+    pub sampling_number: i64,
+    pub count: i32,
+    pub reserved: i32,
+    pub touches: crate :: nn :: hid :: touchscreenstate3 :: TouchScreenState3_TouchStateArray3,
+}
+
+
+impl ::unity2::ClassIdentity for TouchScreenState3 {
+    const NAMESPACE: &'static str = "nn.hid";
+
+    const NAME: &'static str = "TouchScreenState3";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/nn/hid/touchscreenstate3/TouchScreenState3.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct TouchScreenState3 {
-        pub sampling_number: i64,
-        pub count: i32,
-        pub reserved: i32,
-        pub touches: crate::nn::hid::touchscreenstate3::TouchScreenState3_TouchStateArray3,
+}
+
+
+impl ::unity2::IlType for TouchScreenState3 {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::ClassIdentity for TouchScreenState3 {
-        const NAME: &'static str = "TouchScreenState3";
-        const NAMESPACE: &'static str = "nn.hid";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for TouchScreenState3 {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
 }
 
 #[cfg(feature = "nn-hid-touchscreenstate3-types")]
 pub use __types::*;
 
 #[cfg(feature = "nn-hid-touchscreenstate3")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __TouchScreenState3_TouchStateArray3_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_length {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TouchScreenState3_TouchStateArray3 as ::unity2::ClassIdentity>::class(),
-                "get_Length",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TouchScreenState3_TouchStateArray3 as ::unity2::ClassIdentity>::NAME,
-                        "get_Length",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_length(this: TouchScreenState3_TouchStateArray3, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(TouchScreenState3_TouchStateArray3, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_length::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_item {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TouchScreenState3_TouchStateArray3 as ::unity2::ClassIdentity>::class(),
-                "get_Item",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TouchScreenState3_TouchStateArray3 as ::unity2::ClassIdentity>::NAME,
-                        "get_Item",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_item(
-        this: TouchScreenState3_TouchStateArray3,
-        index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::nn::hid::touchstate::TouchState {
-        let inner: extern "C" fn(TouchScreenState3_TouchStateArray3, i32, ::unity2::OptionalMethod) -> crate::nn::hid::touchstate::TouchState =
-            ::core::mem::transmute(__lookup_get_item::get_method_info().method_ptr);
-        inner(this, index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_item {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <crate::nn::hid::touchstate::TouchState as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TouchScreenState3_TouchStateArray3 as ::unity2::ClassIdentity>::class(),
-                "set_Item",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TouchScreenState3_TouchStateArray3 as ::unity2::ClassIdentity>::NAME,
-                        "set_Item",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_item(
-        this: TouchScreenState3_TouchStateArray3,
-        index: i32,
-        value: crate::nn::hid::touchstate::TouchState,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(TouchScreenState3_TouchStateArray3, i32, crate::nn::hid::touchstate::TouchState, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_item::get_method_info().method_ptr);
-        inner(this, index, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_count {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TouchScreenState3_TouchStateArray3 as ::unity2::ClassIdentity>::class(),
-                "get_Count",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TouchScreenState3_TouchStateArray3 as ::unity2::ClassIdentity>::NAME,
-                        "get_Count",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_count(this: TouchScreenState3_TouchStateArray3, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(TouchScreenState3_TouchStateArray3, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_count::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_is_read_only {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TouchScreenState3_TouchStateArray3 as ::unity2::ClassIdentity>::class(),
-                "get_IsReadOnly",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TouchScreenState3_TouchStateArray3 as ::unity2::ClassIdentity>::NAME,
-                        "get_IsReadOnly",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_is_read_only(this: TouchScreenState3_TouchStateArray3, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(TouchScreenState3_TouchStateArray3, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_is_read_only::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_contains {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::nn::hid::touchstate::TouchState as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TouchScreenState3_TouchStateArray3 as ::unity2::ClassIdentity>::class(),
-                "Contains",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TouchScreenState3_TouchStateArray3 as ::unity2::ClassIdentity>::NAME,
-                        "Contains",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn contains(
-        this: TouchScreenState3_TouchStateArray3,
-        item: crate::nn::hid::touchstate::TouchState,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(TouchScreenState3_TouchStateArray3, crate::nn::hid::touchstate::TouchState, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_contains::get_method_info().method_ptr);
-        inner(this, item, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_index_of {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::nn::hid::touchstate::TouchState as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TouchScreenState3_TouchStateArray3 as ::unity2::ClassIdentity>::class(),
-                "IndexOf",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TouchScreenState3_TouchStateArray3 as ::unity2::ClassIdentity>::NAME,
-                        "IndexOf",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn index_of(
-        this: TouchScreenState3_TouchStateArray3,
-        item: crate::nn::hid::touchstate::TouchState,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(TouchScreenState3_TouchStateArray3, crate::nn::hid::touchstate::TouchState, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_index_of::get_method_info().method_ptr);
-        inner(this, item, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_copy_to {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Array<crate::nn::hid::touchstate::TouchState> as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TouchScreenState3_TouchStateArray3 as ::unity2::ClassIdentity>::class(),
-                "CopyTo",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TouchScreenState3_TouchStateArray3 as ::unity2::ClassIdentity>::NAME,
-                        "CopyTo",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn copy_to(
-        this: TouchScreenState3_TouchStateArray3,
-        array: ::unity2::Array<crate::nn::hid::touchstate::TouchState>,
-        array_index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            TouchScreenState3_TouchStateArray3,
-            ::unity2::Array<crate::nn::hid::touchstate::TouchState>,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_copy_to::get_method_info().method_ptr);
-        inner(this, array, array_index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_to_string {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TouchScreenState3_TouchStateArray3 as ::unity2::ClassIdentity>::class(),
-                "ToString",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TouchScreenState3_TouchStateArray3 as ::unity2::ClassIdentity>::NAME,
-                        "ToString",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn to_string(this: TouchScreenState3_TouchStateArray3, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(TouchScreenState3_TouchStateArray3, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_to_string::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_enumerator {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TouchScreenState3_TouchStateArray3 as ::unity2::ClassIdentity>::class(),
-                "GetEnumerator",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TouchScreenState3_TouchStateArray3 as ::unity2::ClassIdentity>::NAME,
-                        "GetEnumerator",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_enumerator(
-        this: TouchScreenState3_TouchStateArray3,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::ienumerator_1::IEnumerator_1<crate::nn::hid::touchstate::TouchState> {
-        let inner: extern "C" fn(
-            TouchScreenState3_TouchStateArray3,
-            ::unity2::OptionalMethod,
-        )
-            -> crate::system::collections::generic::ienumerator_1::IEnumerator_1<crate::nn::hid::touchstate::TouchState> =
-            ::core::mem::transmute(__lookup_get_enumerator::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_system_collections_i_enumerable_get_enumerator {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TouchScreenState3_TouchStateArray3 as ::unity2::ClassIdentity>::class(),
-                "System.Collections.IEnumerable.GetEnumerator",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TouchScreenState3_TouchStateArray3 as ::unity2::ClassIdentity>::NAME,
-                        "System.Collections.IEnumerable.GetEnumerator",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn system_collections_i_enumerable_get_enumerator(
-        this: TouchScreenState3_TouchStateArray3,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::ienumerator::IEnumerator {
-        let inner: extern "C" fn(
-            TouchScreenState3_TouchStateArray3,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::collections::ienumerator::IEnumerator =
-            ::core::mem::transmute(__lookup_system_collections_i_enumerable_get_enumerator::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::nn::hid::touchstate::TouchState as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TouchScreenState3_TouchStateArray3 as ::unity2::ClassIdentity>::class(),
-                "Add",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TouchScreenState3_TouchStateArray3 as ::unity2::ClassIdentity>::NAME,
-                        "Add",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add(
-        this: TouchScreenState3_TouchStateArray3,
-        item: crate::nn::hid::touchstate::TouchState,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(TouchScreenState3_TouchStateArray3, crate::nn::hid::touchstate::TouchState, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add::get_method_info().method_ptr);
-        inner(this, item, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_clear {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TouchScreenState3_TouchStateArray3 as ::unity2::ClassIdentity>::class(),
-                "Clear",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TouchScreenState3_TouchStateArray3 as ::unity2::ClassIdentity>::NAME,
-                        "Clear",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn clear(this: TouchScreenState3_TouchStateArray3, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TouchScreenState3_TouchStateArray3, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_insert {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <crate::nn::hid::touchstate::TouchState as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TouchScreenState3_TouchStateArray3 as ::unity2::ClassIdentity>::class(),
-                "Insert",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TouchScreenState3_TouchStateArray3 as ::unity2::ClassIdentity>::NAME,
-                        "Insert",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn insert(
-        this: TouchScreenState3_TouchStateArray3,
-        index: i32,
-        item: crate::nn::hid::touchstate::TouchState,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(TouchScreenState3_TouchStateArray3, i32, crate::nn::hid::touchstate::TouchState, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_insert::get_method_info().method_ptr);
-        inner(this, index, item, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_remove {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::nn::hid::touchstate::TouchState as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TouchScreenState3_TouchStateArray3 as ::unity2::ClassIdentity>::class(),
-                "Remove",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TouchScreenState3_TouchStateArray3 as ::unity2::ClassIdentity>::NAME,
-                        "Remove",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn remove(
-        this: TouchScreenState3_TouchStateArray3,
-        item: crate::nn::hid::touchstate::TouchState,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(TouchScreenState3_TouchStateArray3, crate::nn::hid::touchstate::TouchState, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_remove::get_method_info().method_ptr);
-        inner(this, item, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_remove_at {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TouchScreenState3_TouchStateArray3 as ::unity2::ClassIdentity>::class(),
-                "RemoveAt",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TouchScreenState3_TouchStateArray3 as ::unity2::ClassIdentity>::NAME,
-                        "RemoveAt",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn remove_at(this: TouchScreenState3_TouchStateArray3, index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TouchScreenState3_TouchStateArray3, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_remove_at::get_method_info().method_ptr);
-        inner(this, index, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __TouchScreenState3_TouchStateArray3_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_length { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TouchScreenState3_TouchStateArray3 as :: unity2 :: ClassIdentity > :: class () , "get_Length" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TouchScreenState3_TouchStateArray3 as :: unity2 :: ClassIdentity > :: NAME , "get_Length" , e) , } } } pub unsafe fn get_length (this : TouchScreenState3_TouchStateArray3 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (TouchScreenState3_TouchStateArray3 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_length :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_item { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TouchScreenState3_TouchStateArray3 as :: unity2 :: ClassIdentity > :: class () , "get_Item" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TouchScreenState3_TouchStateArray3 as :: unity2 :: ClassIdentity > :: NAME , "get_Item" , e) , } } } pub unsafe fn get_item (this : TouchScreenState3_TouchStateArray3 , index : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: nn :: hid :: touchstate :: TouchState { let inner : extern "C" fn (TouchScreenState3_TouchStateArray3 , i32 , :: unity2 :: OptionalMethod ,) -> crate :: nn :: hid :: touchstate :: TouchState = :: core :: mem :: transmute (__lookup_get_item :: get_method_info () . method_ptr ,) ; inner (this , index , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_item { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < crate :: nn :: hid :: touchstate :: TouchState as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TouchScreenState3_TouchStateArray3 as :: unity2 :: ClassIdentity > :: class () , "set_Item" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TouchScreenState3_TouchStateArray3 as :: unity2 :: ClassIdentity > :: NAME , "set_Item" , e) , } } } pub unsafe fn set_item (this : TouchScreenState3_TouchStateArray3 , index : i32 , value : crate :: nn :: hid :: touchstate :: TouchState , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TouchScreenState3_TouchStateArray3 , i32 , crate :: nn :: hid :: touchstate :: TouchState , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_item :: get_method_info () . method_ptr ,) ; inner (this , index , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_count { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TouchScreenState3_TouchStateArray3 as :: unity2 :: ClassIdentity > :: class () , "get_Count" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TouchScreenState3_TouchStateArray3 as :: unity2 :: ClassIdentity > :: NAME , "get_Count" , e) , } } } pub unsafe fn get_count (this : TouchScreenState3_TouchStateArray3 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (TouchScreenState3_TouchStateArray3 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_count :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_is_read_only { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TouchScreenState3_TouchStateArray3 as :: unity2 :: ClassIdentity > :: class () , "get_IsReadOnly" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TouchScreenState3_TouchStateArray3 as :: unity2 :: ClassIdentity > :: NAME , "get_IsReadOnly" , e) , } } } pub unsafe fn get_is_read_only (this : TouchScreenState3_TouchStateArray3 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (TouchScreenState3_TouchStateArray3 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_is_read_only :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_contains { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: nn :: hid :: touchstate :: TouchState as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TouchScreenState3_TouchStateArray3 as :: unity2 :: ClassIdentity > :: class () , "Contains" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TouchScreenState3_TouchStateArray3 as :: unity2 :: ClassIdentity > :: NAME , "Contains" , e) , } } } pub unsafe fn contains (this : TouchScreenState3_TouchStateArray3 , item : crate :: nn :: hid :: touchstate :: TouchState , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (TouchScreenState3_TouchStateArray3 , crate :: nn :: hid :: touchstate :: TouchState , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_contains :: get_method_info () . method_ptr ,) ; inner (this , item , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_index_of { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: nn :: hid :: touchstate :: TouchState as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TouchScreenState3_TouchStateArray3 as :: unity2 :: ClassIdentity > :: class () , "IndexOf" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TouchScreenState3_TouchStateArray3 as :: unity2 :: ClassIdentity > :: NAME , "IndexOf" , e) , } } } pub unsafe fn index_of (this : TouchScreenState3_TouchStateArray3 , item : crate :: nn :: hid :: touchstate :: TouchState , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (TouchScreenState3_TouchStateArray3 , crate :: nn :: hid :: touchstate :: TouchState , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_index_of :: get_method_info () . method_ptr ,) ; inner (this , item , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_copy_to { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: nn :: hid :: touchstate :: TouchState > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TouchScreenState3_TouchStateArray3 as :: unity2 :: ClassIdentity > :: class () , "CopyTo" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TouchScreenState3_TouchStateArray3 as :: unity2 :: ClassIdentity > :: NAME , "CopyTo" , e) , } } } pub unsafe fn copy_to (this : TouchScreenState3_TouchStateArray3 , array : :: unity2 :: Array < crate :: nn :: hid :: touchstate :: TouchState > , array_index : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TouchScreenState3_TouchStateArray3 , :: unity2 :: Array < crate :: nn :: hid :: touchstate :: TouchState > , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_copy_to :: get_method_info () . method_ptr ,) ; inner (this , array , array_index , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_to_string { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TouchScreenState3_TouchStateArray3 as :: unity2 :: ClassIdentity > :: class () , "ToString" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TouchScreenState3_TouchStateArray3 as :: unity2 :: ClassIdentity > :: NAME , "ToString" , e) , } } } pub unsafe fn to_string (this : TouchScreenState3_TouchStateArray3 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (TouchScreenState3_TouchStateArray3 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_to_string :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_enumerator { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TouchScreenState3_TouchStateArray3 as :: unity2 :: ClassIdentity > :: class () , "GetEnumerator" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TouchScreenState3_TouchStateArray3 as :: unity2 :: ClassIdentity > :: NAME , "GetEnumerator" , e) , } } } pub unsafe fn get_enumerator (this : TouchScreenState3_TouchStateArray3 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: ienumerator_1 :: IEnumerator_1 < crate :: nn :: hid :: touchstate :: TouchState > { let inner : extern "C" fn (TouchScreenState3_TouchStateArray3 , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: ienumerator_1 :: IEnumerator_1 < crate :: nn :: hid :: touchstate :: TouchState > = :: core :: mem :: transmute (__lookup_get_enumerator :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_system_collections_i_enumerable_get_enumerator { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TouchScreenState3_TouchStateArray3 as :: unity2 :: ClassIdentity > :: class () , "System.Collections.IEnumerable.GetEnumerator" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TouchScreenState3_TouchStateArray3 as :: unity2 :: ClassIdentity > :: NAME , "System.Collections.IEnumerable.GetEnumerator" , e) , } } } pub unsafe fn system_collections_i_enumerable_get_enumerator (this : TouchScreenState3_TouchStateArray3 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { let inner : extern "C" fn (TouchScreenState3_TouchStateArray3 , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute (__lookup_system_collections_i_enumerable_get_enumerator :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: nn :: hid :: touchstate :: TouchState as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TouchScreenState3_TouchStateArray3 as :: unity2 :: ClassIdentity > :: class () , "Add" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TouchScreenState3_TouchStateArray3 as :: unity2 :: ClassIdentity > :: NAME , "Add" , e) , } } } pub unsafe fn add (this : TouchScreenState3_TouchStateArray3 , item : crate :: nn :: hid :: touchstate :: TouchState , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TouchScreenState3_TouchStateArray3 , crate :: nn :: hid :: touchstate :: TouchState , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add :: get_method_info () . method_ptr ,) ; inner (this , item , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_clear { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TouchScreenState3_TouchStateArray3 as :: unity2 :: ClassIdentity > :: class () , "Clear" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TouchScreenState3_TouchStateArray3 as :: unity2 :: ClassIdentity > :: NAME , "Clear" , e) , } } } pub unsafe fn clear (this : TouchScreenState3_TouchStateArray3 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TouchScreenState3_TouchStateArray3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_clear :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_insert { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < crate :: nn :: hid :: touchstate :: TouchState as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TouchScreenState3_TouchStateArray3 as :: unity2 :: ClassIdentity > :: class () , "Insert" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TouchScreenState3_TouchStateArray3 as :: unity2 :: ClassIdentity > :: NAME , "Insert" , e) , } } } pub unsafe fn insert (this : TouchScreenState3_TouchStateArray3 , index : i32 , item : crate :: nn :: hid :: touchstate :: TouchState , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TouchScreenState3_TouchStateArray3 , i32 , crate :: nn :: hid :: touchstate :: TouchState , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_insert :: get_method_info () . method_ptr ,) ; inner (this , index , item , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_remove { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: nn :: hid :: touchstate :: TouchState as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TouchScreenState3_TouchStateArray3 as :: unity2 :: ClassIdentity > :: class () , "Remove" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TouchScreenState3_TouchStateArray3 as :: unity2 :: ClassIdentity > :: NAME , "Remove" , e) , } } } pub unsafe fn remove (this : TouchScreenState3_TouchStateArray3 , item : crate :: nn :: hid :: touchstate :: TouchState , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (TouchScreenState3_TouchStateArray3 , crate :: nn :: hid :: touchstate :: TouchState , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_remove :: get_method_info () . method_ptr ,) ; inner (this , item , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_remove_at { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TouchScreenState3_TouchStateArray3 as :: unity2 :: ClassIdentity > :: class () , "RemoveAt" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TouchScreenState3_TouchStateArray3 as :: unity2 :: ClassIdentity > :: NAME , "RemoveAt" , e) , } } } pub unsafe fn remove_at (this : TouchScreenState3_TouchStateArray3 , index : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TouchScreenState3_TouchStateArray3 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_remove_at :: get_method_info () . method_ptr ,) ; inner (this , index , __unity2_method_info) } }
 
 #[cfg(feature = "nn-hid-touchscreenstate3")]
-impl TouchScreenState3_TouchStateArray3 {
-    #[doc = "`get_Length()` overload"]
-    pub fn get_length(self) -> i32 {
-        unsafe { __TouchScreenState3_TouchStateArray3_unity2_raw::get_length(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_Item(i32)` overload"]
-    pub fn get_item(self, index: impl ::core::convert::Into<i32>) -> crate::nn::hid::touchstate::TouchState {
-        unsafe { __TouchScreenState3_TouchStateArray3_unity2_raw::get_item(self, ::core::convert::Into::into(index), ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_Item(i32, crate::nn::hid::touchstate::TouchState)` overload"]
-    pub fn set_item(self, index: impl ::core::convert::Into<i32>, value: impl ::core::convert::Into<crate::nn::hid::touchstate::TouchState>) -> () {
-        unsafe {
-            __TouchScreenState3_TouchStateArray3_unity2_raw::set_item(
-                self,
-                ::core::convert::Into::into(index),
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`get_Count()` overload"]
-    pub fn get_count(self) -> i32 {
-        unsafe { __TouchScreenState3_TouchStateArray3_unity2_raw::get_count(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_IsReadOnly()` overload"]
-    pub fn get_is_read_only(self) -> bool {
-        unsafe { __TouchScreenState3_TouchStateArray3_unity2_raw::get_is_read_only(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`Contains(crate::nn::hid::touchstate::TouchState)` overload"]
-    pub fn contains(self, item: impl ::core::convert::Into<crate::nn::hid::touchstate::TouchState>) -> bool {
-        unsafe { __TouchScreenState3_TouchStateArray3_unity2_raw::contains(self, ::core::convert::Into::into(item), ::core::option::Option::None) }
-    }
-
-    #[doc = "`IndexOf(crate::nn::hid::touchstate::TouchState)` overload"]
-    pub fn index_of(self, item: impl ::core::convert::Into<crate::nn::hid::touchstate::TouchState>) -> i32 {
-        unsafe { __TouchScreenState3_TouchStateArray3_unity2_raw::index_of(self, ::core::convert::Into::into(item), ::core::option::Option::None) }
-    }
-
-    #[doc = "`CopyTo(::unity2::Array<crate::nn::hid::touchstate::TouchState>, i32)` overload"]
-    pub fn copy_to(
-        self,
-        array: impl ::core::convert::Into<::unity2::Array<crate::nn::hid::touchstate::TouchState>>,
-        array_index: impl ::core::convert::Into<i32>,
-    ) -> () {
-        unsafe {
-            __TouchScreenState3_TouchStateArray3_unity2_raw::copy_to(
-                self,
-                ::core::convert::Into::into(array),
-                ::core::convert::Into::into(array_index),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`ToString()` overload"]
-    pub fn to_string(self) -> ::unity2::Il2CppString {
-        unsafe { __TouchScreenState3_TouchStateArray3_unity2_raw::to_string(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`GetEnumerator()` overload"]
-    pub fn get_enumerator(self) -> crate::system::collections::generic::ienumerator_1::IEnumerator_1<crate::nn::hid::touchstate::TouchState> {
-        unsafe { __TouchScreenState3_TouchStateArray3_unity2_raw::get_enumerator(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`System.Collections.IEnumerable.GetEnumerator()` overload"]
-    pub fn system_collections_i_enumerable_get_enumerator(self) -> crate::system::collections::ienumerator::IEnumerator {
-        unsafe { __TouchScreenState3_TouchStateArray3_unity2_raw::system_collections_i_enumerable_get_enumerator(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`Add(crate::nn::hid::touchstate::TouchState)` overload"]
-    pub fn add(self, item: impl ::core::convert::Into<crate::nn::hid::touchstate::TouchState>) -> () {
-        unsafe { __TouchScreenState3_TouchStateArray3_unity2_raw::add(self, ::core::convert::Into::into(item), ::core::option::Option::None) }
-    }
-
-    #[doc = "`Clear()` overload"]
-    pub fn clear(self) -> () {
-        unsafe { __TouchScreenState3_TouchStateArray3_unity2_raw::clear(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`Insert(i32, crate::nn::hid::touchstate::TouchState)` overload"]
-    pub fn insert(self, index: impl ::core::convert::Into<i32>, item: impl ::core::convert::Into<crate::nn::hid::touchstate::TouchState>) -> () {
-        unsafe {
-            __TouchScreenState3_TouchStateArray3_unity2_raw::insert(
-                self,
-                ::core::convert::Into::into(index),
-                ::core::convert::Into::into(item),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`Remove(crate::nn::hid::touchstate::TouchState)` overload"]
-    pub fn remove(self, item: impl ::core::convert::Into<crate::nn::hid::touchstate::TouchState>) -> bool {
-        unsafe { __TouchScreenState3_TouchStateArray3_unity2_raw::remove(self, ::core::convert::Into::into(item), ::core::option::Option::None) }
-    }
-
-    #[doc = "`RemoveAt(i32)` overload"]
-    pub fn remove_at(self, index: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __TouchScreenState3_TouchStateArray3_unity2_raw::remove_at(self, ::core::convert::Into::into(index), ::core::option::Option::None) }
-    }
-}
+impl TouchScreenState3_TouchStateArray3 { # [doc = "`get_Length()` overload"] pub fn get_length (self ,) -> i32 { unsafe { __TouchScreenState3_TouchStateArray3_unity2_raw :: get_length (self , :: core :: option :: Option :: None) } } # [doc = "`get_Item(i32)` overload"] pub fn get_item (self , index : impl :: core :: convert :: Into < i32 >) -> crate :: nn :: hid :: touchstate :: TouchState { unsafe { __TouchScreenState3_TouchStateArray3_unity2_raw :: get_item (self , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } # [doc = "`set_Item(i32, crate::nn::hid::touchstate::TouchState)` overload"] pub fn set_item (self , index : impl :: core :: convert :: Into < i32 > , value : impl :: core :: convert :: Into < crate :: nn :: hid :: touchstate :: TouchState >) -> () { unsafe { __TouchScreenState3_TouchStateArray3_unity2_raw :: set_item (self , :: core :: convert :: Into :: into (index) , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_Count()` overload"] pub fn get_count (self ,) -> i32 { unsafe { __TouchScreenState3_TouchStateArray3_unity2_raw :: get_count (self , :: core :: option :: Option :: None) } } # [doc = "`get_IsReadOnly()` overload"] pub fn get_is_read_only (self ,) -> bool { unsafe { __TouchScreenState3_TouchStateArray3_unity2_raw :: get_is_read_only (self , :: core :: option :: Option :: None) } } # [doc = "`Contains(crate::nn::hid::touchstate::TouchState)` overload"] pub fn contains (self , item : impl :: core :: convert :: Into < crate :: nn :: hid :: touchstate :: TouchState >) -> bool { unsafe { __TouchScreenState3_TouchStateArray3_unity2_raw :: contains (self , :: core :: convert :: Into :: into (item) , :: core :: option :: Option :: None) } } # [doc = "`IndexOf(crate::nn::hid::touchstate::TouchState)` overload"] pub fn index_of (self , item : impl :: core :: convert :: Into < crate :: nn :: hid :: touchstate :: TouchState >) -> i32 { unsafe { __TouchScreenState3_TouchStateArray3_unity2_raw :: index_of (self , :: core :: convert :: Into :: into (item) , :: core :: option :: Option :: None) } } # [doc = "`CopyTo(::unity2::Array<crate::nn::hid::touchstate::TouchState>, i32)` overload"] pub fn copy_to (self , array : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: nn :: hid :: touchstate :: TouchState > > , array_index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { __TouchScreenState3_TouchStateArray3_unity2_raw :: copy_to (self , :: core :: convert :: Into :: into (array) , :: core :: convert :: Into :: into (array_index) , :: core :: option :: Option :: None) } } # [doc = "`ToString()` overload"] pub fn to_string (self ,) -> :: unity2 :: Il2CppString { unsafe { __TouchScreenState3_TouchStateArray3_unity2_raw :: to_string (self , :: core :: option :: Option :: None) } } # [doc = "`GetEnumerator()` overload"] pub fn get_enumerator (self ,) -> crate :: system :: collections :: generic :: ienumerator_1 :: IEnumerator_1 < crate :: nn :: hid :: touchstate :: TouchState > { unsafe { __TouchScreenState3_TouchStateArray3_unity2_raw :: get_enumerator (self , :: core :: option :: Option :: None) } } # [doc = "`System.Collections.IEnumerable.GetEnumerator()` overload"] pub fn system_collections_i_enumerable_get_enumerator (self ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { __TouchScreenState3_TouchStateArray3_unity2_raw :: system_collections_i_enumerable_get_enumerator (self , :: core :: option :: Option :: None) } } # [doc = "`Add(crate::nn::hid::touchstate::TouchState)` overload"] pub fn add (self , item : impl :: core :: convert :: Into < crate :: nn :: hid :: touchstate :: TouchState >) -> () { unsafe { __TouchScreenState3_TouchStateArray3_unity2_raw :: add (self , :: core :: convert :: Into :: into (item) , :: core :: option :: Option :: None) } } # [doc = "`Clear()` overload"] pub fn clear (self ,) -> () { unsafe { __TouchScreenState3_TouchStateArray3_unity2_raw :: clear (self , :: core :: option :: Option :: None) } } # [doc = "`Insert(i32, crate::nn::hid::touchstate::TouchState)` overload"] pub fn insert (self , index : impl :: core :: convert :: Into < i32 > , item : impl :: core :: convert :: Into < crate :: nn :: hid :: touchstate :: TouchState >) -> () { unsafe { __TouchScreenState3_TouchStateArray3_unity2_raw :: insert (self , :: core :: convert :: Into :: into (index) , :: core :: convert :: Into :: into (item) , :: core :: option :: Option :: None) } } # [doc = "`Remove(crate::nn::hid::touchstate::TouchState)` overload"] pub fn remove (self , item : impl :: core :: convert :: Into < crate :: nn :: hid :: touchstate :: TouchState >) -> bool { unsafe { __TouchScreenState3_TouchStateArray3_unity2_raw :: remove (self , :: core :: convert :: Into :: into (item) , :: core :: option :: Option :: None) } } # [doc = "`RemoveAt(i32)` overload"] pub fn remove_at (self , index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { __TouchScreenState3_TouchStateArray3_unity2_raw :: remove_at (self , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "nn-hid-touchscreenstate3")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __TouchScreenState3_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_default {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TouchScreenState3 as ::unity2::ClassIdentity>::class(),
-                "SetDefault",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TouchScreenState3 as ::unity2::ClassIdentity>::NAME,
-                        "SetDefault",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_default(this: TouchScreenState3, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TouchScreenState3, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_default::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+impl TouchScreenState3_TouchStateArray3 { pub fn get_length_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TouchScreenState3_TouchStateArray3_unity2_raw :: __lookup_get_length :: get_method_info () } pub fn get_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TouchScreenState3_TouchStateArray3_unity2_raw :: __lookup_get_item :: get_method_info () } pub fn set_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TouchScreenState3_TouchStateArray3_unity2_raw :: __lookup_set_item :: get_method_info () } pub fn get_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TouchScreenState3_TouchStateArray3_unity2_raw :: __lookup_get_count :: get_method_info () } pub fn get_is_read_only_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TouchScreenState3_TouchStateArray3_unity2_raw :: __lookup_get_is_read_only :: get_method_info () } pub fn contains_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TouchScreenState3_TouchStateArray3_unity2_raw :: __lookup_contains :: get_method_info () } pub fn index_of_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TouchScreenState3_TouchStateArray3_unity2_raw :: __lookup_index_of :: get_method_info () } pub fn copy_to_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TouchScreenState3_TouchStateArray3_unity2_raw :: __lookup_copy_to :: get_method_info () } pub fn to_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TouchScreenState3_TouchStateArray3_unity2_raw :: __lookup_to_string :: get_method_info () } pub fn get_enumerator_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TouchScreenState3_TouchStateArray3_unity2_raw :: __lookup_get_enumerator :: get_method_info () } pub fn system_collections_i_enumerable_get_enumerator_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TouchScreenState3_TouchStateArray3_unity2_raw :: __lookup_system_collections_i_enumerable_get_enumerator :: get_method_info () } pub fn add_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TouchScreenState3_TouchStateArray3_unity2_raw :: __lookup_add :: get_method_info () } pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TouchScreenState3_TouchStateArray3_unity2_raw :: __lookup_clear :: get_method_info () } pub fn insert_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TouchScreenState3_TouchStateArray3_unity2_raw :: __lookup_insert :: get_method_info () } pub fn remove_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TouchScreenState3_TouchStateArray3_unity2_raw :: __lookup_remove :: get_method_info () } pub fn remove_at_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TouchScreenState3_TouchStateArray3_unity2_raw :: __lookup_remove_at :: get_method_info () } }
 
 #[cfg(feature = "nn-hid-touchscreenstate3")]
-impl TouchScreenState3 {
-    #[doc = "`SetDefault()` overload"]
-    pub fn set_default(self) -> () {
-        unsafe { __TouchScreenState3_unity2_raw::set_default(self, ::core::option::Option::None) }
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __TouchScreenState3_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_default { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TouchScreenState3 as :: unity2 :: ClassIdentity > :: class () , "SetDefault" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TouchScreenState3 as :: unity2 :: ClassIdentity > :: NAME , "SetDefault" , e) , } } } pub unsafe fn set_default (this : TouchScreenState3 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TouchScreenState3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_default :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "nn-hid-touchscreenstate3")]
+impl TouchScreenState3 { # [doc = "`SetDefault()` overload"] pub fn set_default (self ,) -> () { unsafe { __TouchScreenState3_unity2_raw :: set_default (self , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "nn-hid-touchscreenstate3")]
+impl TouchScreenState3 { pub fn set_default_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TouchScreenState3_unity2_raw :: __lookup_set_default :: get_method_info () } }
 
 #[cfg(feature = "nn-hid-touchscreenstate3")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{TouchScreenState3, TouchScreenState3_TouchStateArray3};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::system::{object::IObject, valuetype::IValueType};
+    pub use super::TouchScreenState3_TouchStateArray3;
+    pub use super::TouchScreenState3;
+    pub use crate::system::object::IObject;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

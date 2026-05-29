@@ -2,197 +2,34 @@
 
 #[cfg(feature = "unity_engine-timeline-icurvesowner-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/icurvesowner/ICurvesOwner.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Timeline", name = "ICurvesOwner")]
-    pub struct ICurvesOwner {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/icurvesowner/ICurvesOwner.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Timeline" , name = "ICurvesOwner")] pub struct ICurvesOwner {}
+
 }
 
 #[cfg(feature = "unity_engine-timeline-icurvesowner-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-timeline-icurvesowner")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ICurvesOwner_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_default_curves_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ICurvesOwner as ::unity2::ClassIdentity>::class(),
-                "get_defaultCurvesName",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ICurvesOwner as ::unity2::ClassIdentity>::NAME,
-                        "get_defaultCurvesName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_default_curves_name(this: ICurvesOwner, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(ICurvesOwner, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_default_curves_name::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_asset {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ICurvesOwner as ::unity2::ClassIdentity>::class(),
-                "get_asset",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ICurvesOwner as ::unity2::ClassIdentity>::NAME,
-                        "get_asset",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_asset(this: ICurvesOwner, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::object_2::Object_2 {
-        let inner: extern "C" fn(ICurvesOwner, ::unity2::OptionalMethod) -> crate::unity_engine::object_2::Object_2 =
-            ::core::mem::transmute(__lookup_get_asset::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_asset_owner {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ICurvesOwner as ::unity2::ClassIdentity>::class(),
-                "get_assetOwner",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ICurvesOwner as ::unity2::ClassIdentity>::NAME,
-                        "get_assetOwner",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_asset_owner(this: ICurvesOwner, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::object_2::Object_2 {
-        let inner: extern "C" fn(ICurvesOwner, ::unity2::OptionalMethod) -> crate::unity_engine::object_2::Object_2 =
-            ::core::mem::transmute(__lookup_get_asset_owner::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_target_track {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ICurvesOwner as ::unity2::ClassIdentity>::class(),
-                "get_targetTrack",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ICurvesOwner as ::unity2::ClassIdentity>::NAME,
-                        "get_targetTrack",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_target_track(
-        this: ICurvesOwner,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::timeline::trackasset::TrackAsset {
-        let inner: extern "C" fn(ICurvesOwner, ::unity2::OptionalMethod) -> crate::unity_engine::timeline::trackasset::TrackAsset =
-            ::core::mem::transmute(__lookup_get_target_track::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ICurvesOwner_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_default_curves_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ICurvesOwner as :: unity2 :: ClassIdentity > :: class () , "get_defaultCurvesName" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ICurvesOwner as :: unity2 :: ClassIdentity > :: NAME , "get_defaultCurvesName" , e) , } } } pub unsafe fn get_default_curves_name (this : ICurvesOwner , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (ICurvesOwner , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_default_curves_name :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_asset { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ICurvesOwner as :: unity2 :: ClassIdentity > :: class () , "get_asset" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ICurvesOwner as :: unity2 :: ClassIdentity > :: NAME , "get_asset" , e) , } } } pub unsafe fn get_asset (this : ICurvesOwner , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: object_2 :: Object_2 { let inner : extern "C" fn (ICurvesOwner , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: object_2 :: Object_2 = :: core :: mem :: transmute (__lookup_get_asset :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_asset_owner { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ICurvesOwner as :: unity2 :: ClassIdentity > :: class () , "get_assetOwner" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ICurvesOwner as :: unity2 :: ClassIdentity > :: NAME , "get_assetOwner" , e) , } } } pub unsafe fn get_asset_owner (this : ICurvesOwner , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: object_2 :: Object_2 { let inner : extern "C" fn (ICurvesOwner , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: object_2 :: Object_2 = :: core :: mem :: transmute (__lookup_get_asset_owner :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_target_track { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ICurvesOwner as :: unity2 :: ClassIdentity > :: class () , "get_targetTrack" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ICurvesOwner as :: unity2 :: ClassIdentity > :: NAME , "get_targetTrack" , e) , } } } pub unsafe fn get_target_track (this : ICurvesOwner , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: timeline :: trackasset :: TrackAsset { let inner : extern "C" fn (ICurvesOwner , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: timeline :: trackasset :: TrackAsset = :: core :: mem :: transmute (__lookup_get_target_track :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-timeline-icurvesowner")]
-pub trait IICurvesOwnerMethods: IICurvesOwner {
-    #[doc = "`get_defaultCurvesName()` overload"]
-    fn get_default_curves_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <ICurvesOwner as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ICurvesOwner_unity2_raw::get_default_curves_name(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_asset()` overload"]
-    fn get_asset(self) -> crate::unity_engine::object_2::Object_2 {
-        unsafe {
-            let __receiver = <ICurvesOwner as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ICurvesOwner_unity2_raw::get_asset(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_assetOwner()` overload"]
-    fn get_asset_owner(self) -> crate::unity_engine::object_2::Object_2 {
-        unsafe {
-            let __receiver = <ICurvesOwner as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ICurvesOwner_unity2_raw::get_asset_owner(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_targetTrack()` overload"]
-    fn get_target_track(self) -> crate::unity_engine::timeline::trackasset::TrackAsset {
-        unsafe {
-            let __receiver = <ICurvesOwner as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ICurvesOwner_unity2_raw::get_target_track(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IICurvesOwnerMethods : IICurvesOwner { # [doc = "`get_defaultCurvesName()` overload"] fn get_default_curves_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ICurvesOwner as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ICurvesOwner_unity2_raw :: get_default_curves_name (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_asset()` overload"] fn get_asset (self ,) -> crate :: unity_engine :: object_2 :: Object_2 { unsafe { let __receiver = < ICurvesOwner as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ICurvesOwner_unity2_raw :: get_asset (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_assetOwner()` overload"] fn get_asset_owner (self ,) -> crate :: unity_engine :: object_2 :: Object_2 { unsafe { let __receiver = < ICurvesOwner as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ICurvesOwner_unity2_raw :: get_asset_owner (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_targetTrack()` overload"] fn get_target_track (self ,) -> crate :: unity_engine :: timeline :: trackasset :: TrackAsset { unsafe { let __receiver = < ICurvesOwner as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ICurvesOwner_unity2_raw :: get_target_track (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-timeline-icurvesowner")]
-impl<__T: IICurvesOwner> IICurvesOwnerMethods for __T {}
+impl < __T : IICurvesOwner > IICurvesOwnerMethods for __T { }
+
+#[cfg(feature = "unity_engine-timeline-icurvesowner")]
+impl ICurvesOwner { pub fn get_default_curves_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ICurvesOwner_unity2_raw :: __lookup_get_default_curves_name :: get_method_info () } pub fn get_asset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ICurvesOwner_unity2_raw :: __lookup_get_asset :: get_method_info () } pub fn get_asset_owner_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ICurvesOwner_unity2_raw :: __lookup_get_asset_owner :: get_method_info () } pub fn get_target_track_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ICurvesOwner_unity2_raw :: __lookup_get_target_track :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-timeline-icurvesowner")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{ICurvesOwner, IICurvesOwner, IICurvesOwnerMethods};
+    pub use super::ICurvesOwner;
+    pub use super::IICurvesOwner;
+    pub use super::IICurvesOwnerMethods;
 }

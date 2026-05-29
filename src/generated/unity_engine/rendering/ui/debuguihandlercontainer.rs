@@ -2,315 +2,61 @@
 
 #[cfg(feature = "unity_engine-rendering-ui-debuguihandlercontainer-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/ui/debuguihandlercontainer/DebugUIHandlerContainer.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Rendering.UI", name = "DebugUIHandlerContainer")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct DebugUIHandlerContainer {
-        #[offset(24)]
-        #[rename(name = "contentHolder")]
-        pub content_holder: crate::unity_engine::recttransform::RectTransform,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/ui/debuguihandlercontainer/DebugUIHandlerContainer.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.UI" , name = "DebugUIHandlerContainer")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct DebugUIHandlerContainer {
+# [offset (24)] # [rename (name = "contentHolder")] pub content_holder : crate :: unity_engine :: recttransform :: RectTransform ,
+}
+
 }
 
 #[cfg(feature = "unity_engine-rendering-ui-debuguihandlercontainer-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-ui-debuguihandlercontainer")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __DebugUIHandlerContainer_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_first_item {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugUIHandlerContainer as ::unity2::ClassIdentity>::class(),
-                "GetFirstItem",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DebugUIHandlerContainer as ::unity2::ClassIdentity>::NAME,
-                        "GetFirstItem",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_first_item(
-        this: DebugUIHandlerContainer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget {
-        let inner: extern "C" fn(
-            DebugUIHandlerContainer,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget =
-            ::core::mem::transmute(__lookup_get_first_item::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_last_item {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugUIHandlerContainer as ::unity2::ClassIdentity>::class(),
-                "GetLastItem",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DebugUIHandlerContainer as ::unity2::ClassIdentity>::NAME,
-                        "GetLastItem",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_last_item(
-        this: DebugUIHandlerContainer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget {
-        let inner: extern "C" fn(
-            DebugUIHandlerContainer,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget =
-            ::core::mem::transmute(__lookup_get_last_item::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_direct_child {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugUIHandlerContainer as ::unity2::ClassIdentity>::class(),
-                "IsDirectChild",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DebugUIHandlerContainer as ::unity2::ClassIdentity>::NAME,
-                        "IsDirectChild",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_direct_child(
-        this: DebugUIHandlerContainer,
-        widget: crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            DebugUIHandlerContainer,
-            crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(__lookup_is_direct_child::get_method_info().method_ptr);
-        inner(this, widget, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_active_children {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugUIHandlerContainer as ::unity2::ClassIdentity>::class(),
-                "GetActiveChildren",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DebugUIHandlerContainer as ::unity2::ClassIdentity>::NAME,
-                        "GetActiveChildren",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_active_children(
-        this: DebugUIHandlerContainer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget> {
-        let inner: extern "C" fn(
-            DebugUIHandlerContainer,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget,
-        > = ::core::mem::transmute(__lookup_get_active_children::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugUIHandlerContainer as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DebugUIHandlerContainer as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: DebugUIHandlerContainer, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DebugUIHandlerContainer, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __DebugUIHandlerContainer_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_first_item { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DebugUIHandlerContainer as :: unity2 :: ClassIdentity > :: class () , "GetFirstItem" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DebugUIHandlerContainer as :: unity2 :: ClassIdentity > :: NAME , "GetFirstItem" , e) , } } } pub unsafe fn get_first_item (this : DebugUIHandlerContainer , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: ui :: debuguihandlerwidget :: DebugUIHandlerWidget { let inner : extern "C" fn (DebugUIHandlerContainer , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: ui :: debuguihandlerwidget :: DebugUIHandlerWidget = :: core :: mem :: transmute (__lookup_get_first_item :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_last_item { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DebugUIHandlerContainer as :: unity2 :: ClassIdentity > :: class () , "GetLastItem" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DebugUIHandlerContainer as :: unity2 :: ClassIdentity > :: NAME , "GetLastItem" , e) , } } } pub unsafe fn get_last_item (this : DebugUIHandlerContainer , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: ui :: debuguihandlerwidget :: DebugUIHandlerWidget { let inner : extern "C" fn (DebugUIHandlerContainer , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: ui :: debuguihandlerwidget :: DebugUIHandlerWidget = :: core :: mem :: transmute (__lookup_get_last_item :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_direct_child { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: ui :: debuguihandlerwidget :: DebugUIHandlerWidget as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DebugUIHandlerContainer as :: unity2 :: ClassIdentity > :: class () , "IsDirectChild" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DebugUIHandlerContainer as :: unity2 :: ClassIdentity > :: NAME , "IsDirectChild" , e) , } } } pub unsafe fn is_direct_child (this : DebugUIHandlerContainer , widget : crate :: unity_engine :: rendering :: ui :: debuguihandlerwidget :: DebugUIHandlerWidget , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (DebugUIHandlerContainer , crate :: unity_engine :: rendering :: ui :: debuguihandlerwidget :: DebugUIHandlerWidget , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_direct_child :: get_method_info () . method_ptr ,) ; inner (this , widget , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_active_children { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DebugUIHandlerContainer as :: unity2 :: ClassIdentity > :: class () , "GetActiveChildren" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DebugUIHandlerContainer as :: unity2 :: ClassIdentity > :: NAME , "GetActiveChildren" , e) , } } } pub unsafe fn get_active_children (this : DebugUIHandlerContainer , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: rendering :: ui :: debuguihandlerwidget :: DebugUIHandlerWidget > { let inner : extern "C" fn (DebugUIHandlerContainer , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: rendering :: ui :: debuguihandlerwidget :: DebugUIHandlerWidget > = :: core :: mem :: transmute (__lookup_get_active_children :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DebugUIHandlerContainer as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DebugUIHandlerContainer as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : DebugUIHandlerContainer , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DebugUIHandlerContainer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-rendering-ui-debuguihandlercontainer")]
-pub trait IDebugUIHandlerContainerMethods: IDebugUIHandlerContainer {
-    #[doc = "`GetFirstItem()` overload"]
-    fn get_first_item(self) -> crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget {
-        unsafe {
-            let __receiver =
-                <DebugUIHandlerContainer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DebugUIHandlerContainer_unity2_raw::get_first_item(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetLastItem()` overload"]
-    fn get_last_item(self) -> crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget {
-        unsafe {
-            let __receiver =
-                <DebugUIHandlerContainer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DebugUIHandlerContainer_unity2_raw::get_last_item(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsDirectChild(crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget)` overload"]
-    fn is_direct_child(
-        self,
-        widget: impl ::core::convert::Into<crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget>,
-    ) -> bool {
-        unsafe {
-            let __receiver =
-                <DebugUIHandlerContainer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DebugUIHandlerContainer_unity2_raw::is_direct_child(__receiver, ::core::convert::Into::into(widget), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetActiveChildren()` overload"]
-    fn get_active_children(
-        self,
-    ) -> crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget> {
-        unsafe {
-            let __receiver =
-                <DebugUIHandlerContainer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DebugUIHandlerContainer_unity2_raw::get_active_children(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <DebugUIHandlerContainer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DebugUIHandlerContainer_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IDebugUIHandlerContainerMethods : IDebugUIHandlerContainer { # [doc = "`GetFirstItem()` overload"] fn get_first_item (self ,) -> crate :: unity_engine :: rendering :: ui :: debuguihandlerwidget :: DebugUIHandlerWidget { unsafe { let __receiver = < DebugUIHandlerContainer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DebugUIHandlerContainer_unity2_raw :: get_first_item (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetLastItem()` overload"] fn get_last_item (self ,) -> crate :: unity_engine :: rendering :: ui :: debuguihandlerwidget :: DebugUIHandlerWidget { unsafe { let __receiver = < DebugUIHandlerContainer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DebugUIHandlerContainer_unity2_raw :: get_last_item (__receiver , :: core :: option :: Option :: None) } } # [doc = "`IsDirectChild(crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget)` overload"] fn is_direct_child (self , widget : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: ui :: debuguihandlerwidget :: DebugUIHandlerWidget >) -> bool { unsafe { let __receiver = < DebugUIHandlerContainer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DebugUIHandlerContainer_unity2_raw :: is_direct_child (__receiver , :: core :: convert :: Into :: into (widget) , :: core :: option :: Option :: None) } } # [doc = "`GetActiveChildren()` overload"] fn get_active_children (self ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: rendering :: ui :: debuguihandlerwidget :: DebugUIHandlerWidget > { unsafe { let __receiver = < DebugUIHandlerContainer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DebugUIHandlerContainer_unity2_raw :: get_active_children (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DebugUIHandlerContainer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DebugUIHandlerContainer_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-rendering-ui-debuguihandlercontainer")]
-impl<__T: IDebugUIHandlerContainer> IDebugUIHandlerContainerMethods for __T {}
+impl < __T : IDebugUIHandlerContainer > IDebugUIHandlerContainerMethods for __T { }
+
+#[cfg(feature = "unity_engine-rendering-ui-debuguihandlercontainer")]
+impl DebugUIHandlerContainer { pub fn get_first_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DebugUIHandlerContainer_unity2_raw :: __lookup_get_first_item :: get_method_info () } pub fn get_last_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DebugUIHandlerContainer_unity2_raw :: __lookup_get_last_item :: get_method_info () } pub fn is_direct_child_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DebugUIHandlerContainer_unity2_raw :: __lookup_is_direct_child :: get_method_info () } pub fn get_active_children_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DebugUIHandlerContainer_unity2_raw :: __lookup_get_active_children :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DebugUIHandlerContainer_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-rendering-ui-debuguihandlercontainer")]
 impl DebugUIHandlerContainer {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DebugUIHandlerContainer),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDebugUIHandlerContainerMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DebugUIHandlerContainer) , :: core :: stringify ! (new) ,)) ; < Self as IDebugUIHandlerContainerMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "unity_engine-rendering-ui-debuguihandlercontainer")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{DebugUIHandlerContainer, IDebugUIHandlerContainer, IDebugUIHandlerContainerMethods};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        system::object::IObject,
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::DebugUIHandlerContainer;
+    pub use super::IDebugUIHandlerContainer;
+    pub use super::IDebugUIHandlerContainerMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

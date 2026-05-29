@@ -2,213 +2,34 @@
 
 #[cfg(feature = "tm_pro-setpropertyutility_2-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/setpropertyutility_2/SetPropertyUtility_2.md"))]
-    #[::unity2::class(namespace = "TMPro", name = "SetPropertyUtility")]
-    #[parent(crate::system::object::Object)]
-    pub struct SetPropertyUtility_2 {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/setpropertyutility_2/SetPropertyUtility_2.md"))] # [:: unity2 :: class (namespace = "TMPro" , name = "SetPropertyUtility")] # [parent (crate :: system :: object :: Object)] pub struct SetPropertyUtility_2 {}
+
 }
 
 #[cfg(feature = "tm_pro-setpropertyutility_2-types")]
 pub use __types::*;
 
 #[cfg(feature = "tm_pro-setpropertyutility_2")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __SetPropertyUtility_2_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_color {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SetPropertyUtility_2 as ::unity2::ClassIdentity>::class(),
-                "SetColor",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SetPropertyUtility_2 as ::unity2::ClassIdentity>::NAME,
-                        "SetColor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_color(
-        current_value: *mut crate::unity_engine::color::Color,
-        new_value: crate::unity_engine::color::Color,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(*mut crate::unity_engine::color::Color, crate::unity_engine::color::Color, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_set_color::get_method_info().method_ptr);
-        inner(current_value, new_value, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __SetPropertyUtility_2_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_color { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: color :: Color as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: color :: Color as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SetPropertyUtility_2 as :: unity2 :: ClassIdentity > :: class () , "SetColor" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SetPropertyUtility_2 as :: unity2 :: ClassIdentity > :: NAME , "SetColor" , e) , } } } pub unsafe fn set_color (current_value : * mut crate :: unity_engine :: color :: Color , new_value : crate :: unity_engine :: color :: Color , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (* mut crate :: unity_engine :: color :: Color , crate :: unity_engine :: color :: Color , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_set_color :: get_method_info () . method_ptr ,) ; inner (current_value , new_value , __unity2_method_info) } }
 
 #[cfg(feature = "tm_pro-setpropertyutility_2")]
-impl SetPropertyUtility_2 {
-    #[doc = "`SetColor(*mutcrate::unity_engine::color::Color, crate::unity_engine::color::Color)` overload"]
-    pub fn set_color(new_value: impl ::core::convert::Into<crate::unity_engine::color::Color>) -> (bool, crate::unity_engine::color::Color) {
-        unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::color::Color>::uninit();
-            let __ret = {
-                __SetPropertyUtility_2_unity2_raw::set_color(
-                    __out_0.as_mut_ptr(),
-                    ::core::convert::Into::into(new_value),
-                    ::core::option::Option::None,
-                )
-            };
-            (__ret, __out_0.assume_init())
-        }
-    }
+impl SetPropertyUtility_2 { # [doc = "`SetColor(*mutcrate::unity_engine::color::Color, crate::unity_engine::color::Color)` overload"] pub fn set_color (new_value : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color >) -> (bool , crate :: unity_engine :: color :: Color) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: color :: Color > :: uninit () ; let __ret = { __SetPropertyUtility_2_unity2_raw :: set_color (__out_0 . as_mut_ptr () , :: core :: convert :: Into :: into (new_value) , :: core :: option :: Option :: None) } ; (__ret , __out_0 . assume_init ()) } } pub fn set_equatable_struct < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > (current_value : impl :: core :: convert :: Into < * mut M0 > , new_value : impl :: core :: convert :: Into < M0 >) -> bool { static OPEN : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { :: unity2 :: lookup :: method_info_on_class (< SetPropertyUtility_2 as :: unity2 :: ClassIdentity > :: class () , "SetEquatableStruct" , 2 ,) }) ; # [allow (clippy :: type_complexity)] static CACHE : :: std :: sync :: OnceLock < :: std :: sync :: Mutex < :: std :: collections :: HashMap < usize , & 'static :: unity2 :: il2cpp :: MethodInfo > , > , > = :: std :: sync :: OnceLock :: new () ; let _ = true ; let __open : & 'static :: unity2 :: il2cpp :: MethodInfo = match & * OPEN { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SetPropertyUtility_2 as :: unity2 :: ClassIdentity > :: NAME , "SetEquatableStruct" , e) , } ; let __cache = CACHE . get_or_init (|| { :: std :: sync :: Mutex :: new (:: std :: collections :: HashMap :: new ()) }) ; let __key : usize = < M0 as :: unity2 :: IlType > :: il_type () as * const _ as usize ; let __inflated : & 'static :: unity2 :: il2cpp :: MethodInfo = { let mut __guard = __cache . lock () . unwrap () ; * __guard . entry (__key) . or_insert_with (|| { :: unity2 :: il2cpp :: generic :: create_generic_method_info (__open , & [< M0 as :: unity2 :: IlType > :: il_type ()] ,) }) } ; unsafe { let __f : extern "C" fn (* mut M0 , M0 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__inflated . method_ptr) ; let __mi_opaque : & 'static () = & * (__inflated as * const _ as * const ()) ; __f (:: core :: convert :: Into :: into (current_value) , :: core :: convert :: Into :: into (new_value) , :: core :: option :: Option :: Some (__mi_opaque) ,) } } pub fn set_struct < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > (current_value : impl :: core :: convert :: Into < * mut M0 > , new_value : impl :: core :: convert :: Into < M0 >) -> bool { static OPEN : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { :: unity2 :: lookup :: method_info_on_class (< SetPropertyUtility_2 as :: unity2 :: ClassIdentity > :: class () , "SetStruct" , 2 ,) }) ; # [allow (clippy :: type_complexity)] static CACHE : :: std :: sync :: OnceLock < :: std :: sync :: Mutex < :: std :: collections :: HashMap < usize , & 'static :: unity2 :: il2cpp :: MethodInfo > , > , > = :: std :: sync :: OnceLock :: new () ; let _ = true ; let __open : & 'static :: unity2 :: il2cpp :: MethodInfo = match & * OPEN { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SetPropertyUtility_2 as :: unity2 :: ClassIdentity > :: NAME , "SetStruct" , e) , } ; let __cache = CACHE . get_or_init (|| { :: std :: sync :: Mutex :: new (:: std :: collections :: HashMap :: new ()) }) ; let __key : usize = < M0 as :: unity2 :: IlType > :: il_type () as * const _ as usize ; let __inflated : & 'static :: unity2 :: il2cpp :: MethodInfo = { let mut __guard = __cache . lock () . unwrap () ; * __guard . entry (__key) . or_insert_with (|| { :: unity2 :: il2cpp :: generic :: create_generic_method_info (__open , & [< M0 as :: unity2 :: IlType > :: il_type ()] ,) }) } ; unsafe { let __f : extern "C" fn (* mut M0 , M0 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__inflated . method_ptr) ; let __mi_opaque : & 'static () = & * (__inflated as * const _ as * const ()) ; __f (:: core :: convert :: Into :: into (current_value) , :: core :: convert :: Into :: into (new_value) , :: core :: option :: Option :: Some (__mi_opaque) ,) } } pub fn set_class < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > (current_value : impl :: core :: convert :: Into < * mut M0 > , new_value : impl :: core :: convert :: Into < M0 >) -> bool { static OPEN : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { :: unity2 :: lookup :: method_info_on_class (< SetPropertyUtility_2 as :: unity2 :: ClassIdentity > :: class () , "SetClass" , 2 ,) }) ; # [allow (clippy :: type_complexity)] static CACHE : :: std :: sync :: OnceLock < :: std :: sync :: Mutex < :: std :: collections :: HashMap < usize , & 'static :: unity2 :: il2cpp :: MethodInfo > , > , > = :: std :: sync :: OnceLock :: new () ; let _ = true ; let __open : & 'static :: unity2 :: il2cpp :: MethodInfo = match & * OPEN { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SetPropertyUtility_2 as :: unity2 :: ClassIdentity > :: NAME , "SetClass" , e) , } ; let __cache = CACHE . get_or_init (|| { :: std :: sync :: Mutex :: new (:: std :: collections :: HashMap :: new ()) }) ; let __key : usize = < M0 as :: unity2 :: IlType > :: il_type () as * const _ as usize ; let __inflated : & 'static :: unity2 :: il2cpp :: MethodInfo = { let mut __guard = __cache . lock () . unwrap () ; * __guard . entry (__key) . or_insert_with (|| { :: unity2 :: il2cpp :: generic :: create_generic_method_info (__open , & [< M0 as :: unity2 :: IlType > :: il_type ()] ,) }) } ; unsafe { let __f : extern "C" fn (* mut M0 , M0 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__inflated . method_ptr) ; let __mi_opaque : & 'static () = & * (__inflated as * const _ as * const ()) ; __f (:: core :: convert :: Into :: into (current_value) , :: core :: convert :: Into :: into (new_value) , :: core :: option :: Option :: Some (__mi_opaque) ,) } } }
 
-    pub fn set_equatable_struct<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
-        current_value: impl ::core::convert::Into<*mut M0>,
-        new_value: impl ::core::convert::Into<M0>,
-    ) -> bool {
-        static OPEN: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            ::unity2::lookup::method_info_on_class(<SetPropertyUtility_2 as ::unity2::ClassIdentity>::class(), "SetEquatableStruct", 2)
-        });
-        #[allow(clippy::type_complexity)]
-        static CACHE: ::std::sync::OnceLock<::std::sync::Mutex<::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>>> =
-            ::std::sync::OnceLock::new();
-        let _ = true;
-        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
-            ::core::result::Result::Ok(mi) => *mi,
-            ::core::result::Result::Err(e) => {
-                panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SetPropertyUtility_2 as ::unity2::ClassIdentity>::NAME,
-                    "SetEquatableStruct",
-                    e
-                )
-            },
-        };
-        let __cache = CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
-        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
-        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
-            let mut __guard = __cache.lock().unwrap();
-            *__guard
-                .entry(__key)
-                .or_insert_with(|| ::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as ::unity2::IlType>::il_type()]))
-        };
-        unsafe {
-            let __f: extern "C" fn(*mut M0, M0, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__inflated.method_ptr);
-            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
-            __f(
-                ::core::convert::Into::into(current_value),
-                ::core::convert::Into::into(new_value),
-                ::core::option::Option::Some(__mi_opaque),
-            )
-        }
-    }
-
-    pub fn set_struct<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
-        current_value: impl ::core::convert::Into<*mut M0>,
-        new_value: impl ::core::convert::Into<M0>,
-    ) -> bool {
-        static OPEN: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            ::unity2::lookup::method_info_on_class(<SetPropertyUtility_2 as ::unity2::ClassIdentity>::class(), "SetStruct", 2)
-        });
-        #[allow(clippy::type_complexity)]
-        static CACHE: ::std::sync::OnceLock<::std::sync::Mutex<::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>>> =
-            ::std::sync::OnceLock::new();
-        let _ = true;
-        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
-            ::core::result::Result::Ok(mi) => *mi,
-            ::core::result::Result::Err(e) => {
-                panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SetPropertyUtility_2 as ::unity2::ClassIdentity>::NAME,
-                    "SetStruct",
-                    e
-                )
-            },
-        };
-        let __cache = CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
-        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
-        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
-            let mut __guard = __cache.lock().unwrap();
-            *__guard
-                .entry(__key)
-                .or_insert_with(|| ::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as ::unity2::IlType>::il_type()]))
-        };
-        unsafe {
-            let __f: extern "C" fn(*mut M0, M0, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__inflated.method_ptr);
-            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
-            __f(
-                ::core::convert::Into::into(current_value),
-                ::core::convert::Into::into(new_value),
-                ::core::option::Option::Some(__mi_opaque),
-            )
-        }
-    }
-
-    pub fn set_class<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
-        current_value: impl ::core::convert::Into<*mut M0>,
-        new_value: impl ::core::convert::Into<M0>,
-    ) -> bool {
-        static OPEN: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            ::unity2::lookup::method_info_on_class(<SetPropertyUtility_2 as ::unity2::ClassIdentity>::class(), "SetClass", 2)
-        });
-        #[allow(clippy::type_complexity)]
-        static CACHE: ::std::sync::OnceLock<::std::sync::Mutex<::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>>> =
-            ::std::sync::OnceLock::new();
-        let _ = true;
-        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
-            ::core::result::Result::Ok(mi) => *mi,
-            ::core::result::Result::Err(e) => {
-                panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SetPropertyUtility_2 as ::unity2::ClassIdentity>::NAME,
-                    "SetClass",
-                    e
-                )
-            },
-        };
-        let __cache = CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
-        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
-        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
-            let mut __guard = __cache.lock().unwrap();
-            *__guard
-                .entry(__key)
-                .or_insert_with(|| ::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as ::unity2::IlType>::il_type()]))
-        };
-        unsafe {
-            let __f: extern "C" fn(*mut M0, M0, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__inflated.method_ptr);
-            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
-            __f(
-                ::core::convert::Into::into(current_value),
-                ::core::convert::Into::into(new_value),
-                ::core::option::Option::Some(__mi_opaque),
-            )
-        }
-    }
-}
+#[cfg(feature = "tm_pro-setpropertyutility_2")]
+impl SetPropertyUtility_2 { pub fn set_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SetPropertyUtility_2_unity2_raw :: __lookup_set_color :: get_method_info () } }
 
 #[cfg(feature = "tm_pro-setpropertyutility_2")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{ISetPropertyUtility_2, SetPropertyUtility_2};
+    pub use super::SetPropertyUtility_2;
+    pub use super::ISetPropertyUtility_2;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

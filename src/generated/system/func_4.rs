@@ -2,58 +2,46 @@
 
 #[cfg(feature = "system-func_4-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        delegate::{Delegate, IDelegate},
-        multicastdelegate::{IMulticastDelegate, MulticastDelegate},
-        object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/func_4/Func_4.md"))]
-    #[::unity2::class(namespace = "System", name = "Func`4")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    #[parent(crate::system::delegate::Delegate)]
-    #[parent(crate::system::object::Object)]
-    pub struct Func_4<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity, T2: ::unity2::ClassIdentity, T3: ::unity2::ClassIdentity> {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: delegate :: { Delegate , IDelegate }
+ ;
+ use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/func_4/Func_4.md"))] # [:: unity2 :: class (namespace = "System" , name = "Func`4")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] # [parent (crate :: system :: delegate :: Delegate)] # [parent (crate :: system :: object :: Object)] pub struct Func_4 < T0 : :: unity2 :: ClassIdentity , T1 : :: unity2 :: ClassIdentity , T2 : :: unity2 :: ClassIdentity , T3 : :: unity2 :: ClassIdentity > {}
+
 }
 
 #[cfg(feature = "system-func_4-types")]
 pub use __types::*;
 
 #[cfg(feature = "system-func_4")]
-#[::unity2::methods]
-impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity, T2: ::unity2::ClassIdentity, T3: ::unity2::ClassIdentity> Func_4<T0, T1, T2, T3> {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+# [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity , T1 : :: unity2 :: ClassIdentity , T2 : :: unity2 :: ClassIdentity , T3 : :: unity2 :: ClassIdentity > Func_4 < T0 , T1 , T2 , T3 > {
+# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] # [method (name = ".ctor" , args = 2)] pub fn ctor (self , object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> () ;
 
-    #[doc = "`Invoke(T0, T1, T2)` overload"]
-    #[method(name = "Invoke", args = 3)]
-    pub fn invoke(self, arg1: T0, arg2: T1, arg3: T2) -> T3;
+# [doc = "`Invoke(T0, T1, T2)` overload"] # [method (name = "Invoke" , args = 3)] pub fn invoke (self , arg1 : T0 , arg2 : T1 , arg3 : T2) -> T3 ;
 }
 
 #[cfg(feature = "system-func_4")]
-impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity, T2: ::unity2::ClassIdentity, T3: ::unity2::ClassIdentity> Func_4<T0, T1, T2, T3> {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(Func_4), ::core::stringify!(new),));
-        <Self as IFunc_4Methods<T0, T1, T2, T3>>::ctor(this, object, method);
-        this
-    }
+impl < T0 : :: unity2 :: ClassIdentity , T1 : :: unity2 :: ClassIdentity , T2 : :: unity2 :: ClassIdentity , T3 : :: unity2 :: ClassIdentity > Func_4 < T0 , T1 , T2 , T3 > {
+# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Func_4) , :: core :: stringify ! (new) ,)) ; < Self as IFunc_4Methods < T0 , T1 , T2 , T3 > > :: ctor (this , object , method) ; this }
 }
 
 #[cfg(feature = "system-func_4")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{Func_4, IFunc_4, IFunc_4Methods};
-    #[cfg(feature = "system-delegate")]
-    pub use crate::system::delegate::IDelegateMethods;
-    #[cfg(feature = "system-multicastdelegate")]
-    pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::system::{delegate::IDelegate, multicastdelegate::IMulticastDelegate, object::IObject};
+    pub use super::Func_4;
+    pub use super::IFunc_4;
+    pub use super::IFunc_4Methods;
+    pub use crate::system::delegate::IDelegate;
+    pub use crate::system::multicastdelegate::IMulticastDelegate;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-delegate")] pub use crate::system::delegate::IDelegateMethods;
+    #[cfg(feature = "system-multicastdelegate")] pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

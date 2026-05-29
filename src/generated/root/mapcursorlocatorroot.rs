@@ -2,616 +2,179 @@
 
 #[cfg(feature = "root-mapcursorlocatorroot-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::{
-            object::{IObject, Object},
-            r#enum::{Enum, IEnum},
-            valuetype::{IValueType, ValueType},
-        },
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/mapcursorlocatorroot/MapCursorLocatorRoot.md"))]
-    #[::unity2::class(namespace = "", name = "MapCursorLocatorRoot")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct MapCursorLocatorRoot {
-        #[offset(24)]
-        #[rename(name = "m_MapCursor1")]
-        pub m_map_cursor1: crate::unity_engine::transform::Transform,
-        #[offset(32)]
-        #[rename(name = "m_MapCursor2")]
-        pub m_map_cursor2: crate::unity_engine::transform::Transform,
-        #[offset(40)]
-        #[rename(name = "m_MapCursor3")]
-        pub m_map_cursor3: crate::unity_engine::transform::Transform,
-        #[offset(48)]
-        #[rename(name = "m_MapCursor4")]
-        pub m_map_cursor4: crate::unity_engine::transform::Transform,
-        #[offset(56)]
-        #[rename(name = "m_LockRoot1")]
-        pub m_lock_root1: crate::unity_engine::transform::Transform,
-        #[offset(64)]
-        #[rename(name = "m_LockRoot2")]
-        pub m_lock_root2: crate::unity_engine::transform::Transform,
-        #[offset(72)]
-        #[rename(name = "m_LockRoot3")]
-        pub m_lock_root3: crate::unity_engine::transform::Transform,
-        #[offset(80)]
-        #[rename(name = "m_LockRoot4")]
-        pub m_lock_root4: crate::unity_engine::transform::Transform,
-        #[offset(88)]
-        #[rename(name = "m_LockCursor1")]
-        pub m_lock_cursor1: crate::unity_engine::transform::Transform,
-        #[offset(96)]
-        #[rename(name = "m_LockCursor2")]
-        pub m_lock_cursor2: crate::unity_engine::transform::Transform,
-        #[offset(104)]
-        #[rename(name = "m_LockCursor3")]
-        pub m_lock_cursor3: crate::unity_engine::transform::Transform,
-        #[offset(112)]
-        #[rename(name = "m_LockCursor4")]
-        pub m_lock_cursor4: crate::unity_engine::transform::Transform,
-        #[offset(120)]
-        #[rename(name = "m_MapCursors")]
-        pub m_map_cursors: ::unity2::Array<crate::unity_engine::gameobject::GameObject>,
-        #[offset(128)]
-        #[rename(name = "m_Colors")]
-        pub m_colors: ::unity2::Array<crate::root::mapcursorcolor::MapCursorColor>,
-        #[offset(136)]
-        #[rename(name = "m_OrigPos")]
-        pub m_orig_pos: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
-        #[offset(144)]
-        #[rename(name = "m_SizeX")]
-        pub m_size_x: i32,
-        #[offset(148)]
-        #[rename(name = "m_SizeZ")]
-        pub m_size_z: i32,
-        #[offset(152)]
-        #[rename(name = "m_CursorCount")]
-        pub m_cursor_count: i32,
-        #[static_field]
-        #[rename(name = "MOVE_CURSOR_FRAME")]
-        pub move_cursor_frame: i32,
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/mapcursorlocatorroot/MapCursorLocatorRoot_PartType.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct MapCursorLocatorRoot_PartType  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for MapCursorLocatorRoot_PartType  {
+    const NAMESPACE: &'static str = "";
+
+    const NAME: &'static str = "MapCursorLocatorRoot.PartType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/mapcursorlocatorroot/MapCursorLocatorRoot_PartType.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct MapCursorLocatorRoot_PartType {
-        pub value: i32,
+}
+
+
+impl  ::unity2::IlType for MapCursorLocatorRoot_PartType  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::ClassIdentity for MapCursorLocatorRoot_PartType {
-        const NAME: &'static str = "MapCursorLocatorRoot.PartType";
-        const NAMESPACE: &'static str = "";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  MapCursorLocatorRoot_PartType  {
+    pub fn map_cursor1() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl ::unity2::IlType for MapCursorLocatorRoot_PartType {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+
+    pub fn map_cursor2() -> Self {
+        Self { value: 1 }
+
     }
 
-    impl MapCursorLocatorRoot_PartType {
-        pub fn map_cursor1() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn map_cursor2() -> Self {
-            Self { value: 1 }
-        }
+    pub fn map_cursor3() -> Self {
+        Self { value: 2 }
 
-        pub fn map_cursor3() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn map_cursor4() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn lock_root1() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn lock_root2() -> Self {
-            Self { value: 5 }
-        }
-
-        pub fn lock_root3() -> Self {
-            Self { value: 6 }
-        }
-
-        pub fn lock_root4() -> Self {
-            Self { value: 7 }
-        }
-
-        pub fn num() -> Self {
-            Self { value: 8 }
-        }
     }
+
+
+    pub fn map_cursor4() -> Self {
+        Self { value: 3 }
+
+    }
+
+
+    pub fn lock_root1() -> Self {
+        Self { value: 4 }
+
+    }
+
+
+    pub fn lock_root2() -> Self {
+        Self { value: 5 }
+
+    }
+
+
+    pub fn lock_root3() -> Self {
+        Self { value: 6 }
+
+    }
+
+
+    pub fn lock_root4() -> Self {
+        Self { value: 7 }
+
+    }
+
+
+    pub fn num() -> Self {
+        Self { value: 8 }
+
+    }
+
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/mapcursorlocatorroot/MapCursorLocatorRoot.md"))] # [:: unity2 :: class (namespace = "" , name = "MapCursorLocatorRoot")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct MapCursorLocatorRoot {
+# [offset (24)] # [rename (name = "m_MapCursor1")] pub m_map_cursor1 : crate :: unity_engine :: transform :: Transform ,
+# [offset (32)] # [rename (name = "m_MapCursor2")] pub m_map_cursor2 : crate :: unity_engine :: transform :: Transform ,
+# [offset (40)] # [rename (name = "m_MapCursor3")] pub m_map_cursor3 : crate :: unity_engine :: transform :: Transform ,
+# [offset (48)] # [rename (name = "m_MapCursor4")] pub m_map_cursor4 : crate :: unity_engine :: transform :: Transform ,
+# [offset (56)] # [rename (name = "m_LockRoot1")] pub m_lock_root1 : crate :: unity_engine :: transform :: Transform ,
+# [offset (64)] # [rename (name = "m_LockRoot2")] pub m_lock_root2 : crate :: unity_engine :: transform :: Transform ,
+# [offset (72)] # [rename (name = "m_LockRoot3")] pub m_lock_root3 : crate :: unity_engine :: transform :: Transform ,
+# [offset (80)] # [rename (name = "m_LockRoot4")] pub m_lock_root4 : crate :: unity_engine :: transform :: Transform ,
+# [offset (88)] # [rename (name = "m_LockCursor1")] pub m_lock_cursor1 : crate :: unity_engine :: transform :: Transform ,
+# [offset (96)] # [rename (name = "m_LockCursor2")] pub m_lock_cursor2 : crate :: unity_engine :: transform :: Transform ,
+# [offset (104)] # [rename (name = "m_LockCursor3")] pub m_lock_cursor3 : crate :: unity_engine :: transform :: Transform ,
+# [offset (112)] # [rename (name = "m_LockCursor4")] pub m_lock_cursor4 : crate :: unity_engine :: transform :: Transform ,
+# [offset (120)] # [rename (name = "m_MapCursors")] pub m_map_cursors : :: unity2 :: Array < crate :: unity_engine :: gameobject :: GameObject > ,
+# [offset (128)] # [rename (name = "m_Colors")] pub m_colors : :: unity2 :: Array < crate :: root :: mapcursorcolor :: MapCursorColor > ,
+# [offset (136)] # [rename (name = "m_OrigPos")] pub m_orig_pos : :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > ,
+# [offset (144)] # [rename (name = "m_SizeX")] pub m_size_x : i32 ,
+# [offset (148)] # [rename (name = "m_SizeZ")] pub m_size_z : i32 ,
+# [offset (152)] # [rename (name = "m_CursorCount")] pub m_cursor_count : i32 ,
+# [static_field] # [rename (name = "MOVE_CURSOR_FRAME")] pub move_cursor_frame : i32 ,
+}
+
 }
 
 #[cfg(feature = "root-mapcursorlocatorroot-types")]
 pub use __types::*;
 
 #[cfg(feature = "root-mapcursorlocatorroot")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapCursorLocatorRoot_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_awake {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapCursorLocatorRoot as ::unity2::ClassIdentity>::class(),
-                "Awake",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapCursorLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                        "Awake",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn awake(this: MapCursorLocatorRoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapCursorLocatorRoot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_awake::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_destroy {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapCursorLocatorRoot as ::unity2::ClassIdentity>::class(),
-                "OnDestroy",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapCursorLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                        "OnDestroy",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_destroy(this: MapCursorLocatorRoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapCursorLocatorRoot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_destroy::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_game_object {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapCursorLocatorRoot as ::unity2::ClassIdentity>::class(),
-                "GetGameObject",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapCursorLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                        "GetGameObject",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_game_object(this: MapCursorLocatorRoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapCursorLocatorRoot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_get_game_object::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_map_cursor_color {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapCursorLocatorRoot as ::unity2::ClassIdentity>::class(),
-                "GetMapCursorColor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapCursorLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                        "GetMapCursorColor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_map_cursor_color(this: MapCursorLocatorRoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapCursorLocatorRoot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_get_map_cursor_color::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_orig_pos {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapCursorLocatorRoot as ::unity2::ClassIdentity>::class(),
-                "GetOrigPos",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapCursorLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                        "GetOrigPos",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_orig_pos(this: MapCursorLocatorRoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapCursorLocatorRoot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_get_orig_pos::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_init_map_cursor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapCursorLocatorRoot as ::unity2::ClassIdentity>::class(),
-                "InitMapCursor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapCursorLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                        "InitMapCursor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn init_map_cursor(this: MapCursorLocatorRoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapCursorLocatorRoot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_init_map_cursor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_scale_cursor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapCursorLocatorRoot as ::unity2::ClassIdentity>::class(),
-                "ScaleCursor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapCursorLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                        "ScaleCursor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn scale_cursor(this: MapCursorLocatorRoot, frame: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapCursorLocatorRoot, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_scale_cursor::get_method_info().method_ptr);
-        inner(this, frame, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_scale_cursor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapCursorLocatorRoot as ::unity2::ClassIdentity>::class(),
-                "IsScaleCursor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapCursorLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                        "IsScaleCursor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_scale_cursor(this: MapCursorLocatorRoot, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(MapCursorLocatorRoot, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_scale_cursor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_color {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::color::Color as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapCursorLocatorRoot as ::unity2::ClassIdentity>::class(),
-                "SetColor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapCursorLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                        "SetColor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_color(
-        this: MapCursorLocatorRoot,
-        color: crate::unity_engine::color::Color,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MapCursorLocatorRoot, crate::unity_engine::color::Color, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_color::get_method_info().method_ptr);
-        inner(this, color, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapCursorLocatorRoot as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapCursorLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: MapCursorLocatorRoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapCursorLocatorRoot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MapCursorLocatorRoot_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_awake { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapCursorLocatorRoot as :: unity2 :: ClassIdentity > :: class () , "Awake" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapCursorLocatorRoot as :: unity2 :: ClassIdentity > :: NAME , "Awake" , e) , } } } pub unsafe fn awake (this : MapCursorLocatorRoot , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapCursorLocatorRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_awake :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_destroy { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapCursorLocatorRoot as :: unity2 :: ClassIdentity > :: class () , "OnDestroy" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapCursorLocatorRoot as :: unity2 :: ClassIdentity > :: NAME , "OnDestroy" , e) , } } } pub unsafe fn on_destroy (this : MapCursorLocatorRoot , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapCursorLocatorRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_destroy :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_game_object { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapCursorLocatorRoot as :: unity2 :: ClassIdentity > :: class () , "GetGameObject" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapCursorLocatorRoot as :: unity2 :: ClassIdentity > :: NAME , "GetGameObject" , e) , } } } pub unsafe fn get_game_object (this : MapCursorLocatorRoot , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapCursorLocatorRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_get_game_object :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_map_cursor_color { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapCursorLocatorRoot as :: unity2 :: ClassIdentity > :: class () , "GetMapCursorColor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapCursorLocatorRoot as :: unity2 :: ClassIdentity > :: NAME , "GetMapCursorColor" , e) , } } } pub unsafe fn get_map_cursor_color (this : MapCursorLocatorRoot , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapCursorLocatorRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_get_map_cursor_color :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_orig_pos { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapCursorLocatorRoot as :: unity2 :: ClassIdentity > :: class () , "GetOrigPos" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapCursorLocatorRoot as :: unity2 :: ClassIdentity > :: NAME , "GetOrigPos" , e) , } } } pub unsafe fn get_orig_pos (this : MapCursorLocatorRoot , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapCursorLocatorRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_get_orig_pos :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_init_map_cursor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapCursorLocatorRoot as :: unity2 :: ClassIdentity > :: class () , "InitMapCursor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapCursorLocatorRoot as :: unity2 :: ClassIdentity > :: NAME , "InitMapCursor" , e) , } } } pub unsafe fn init_map_cursor (this : MapCursorLocatorRoot , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapCursorLocatorRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_init_map_cursor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_scale_cursor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapCursorLocatorRoot as :: unity2 :: ClassIdentity > :: class () , "ScaleCursor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapCursorLocatorRoot as :: unity2 :: ClassIdentity > :: NAME , "ScaleCursor" , e) , } } } pub unsafe fn scale_cursor (this : MapCursorLocatorRoot , frame : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapCursorLocatorRoot , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_scale_cursor :: get_method_info () . method_ptr ,) ; inner (this , frame , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_scale_cursor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapCursorLocatorRoot as :: unity2 :: ClassIdentity > :: class () , "IsScaleCursor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapCursorLocatorRoot as :: unity2 :: ClassIdentity > :: NAME , "IsScaleCursor" , e) , } } } pub unsafe fn is_scale_cursor (this : MapCursorLocatorRoot , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (MapCursorLocatorRoot , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_scale_cursor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_color { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: color :: Color as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapCursorLocatorRoot as :: unity2 :: ClassIdentity > :: class () , "SetColor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapCursorLocatorRoot as :: unity2 :: ClassIdentity > :: NAME , "SetColor" , e) , } } } pub unsafe fn set_color (this : MapCursorLocatorRoot , color : crate :: unity_engine :: color :: Color , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapCursorLocatorRoot , crate :: unity_engine :: color :: Color , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_color :: get_method_info () . method_ptr ,) ; inner (this , color , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapCursorLocatorRoot as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapCursorLocatorRoot as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : MapCursorLocatorRoot , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapCursorLocatorRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "root-mapcursorlocatorroot")]
-pub trait IMapCursorLocatorRootMethods: IMapCursorLocatorRoot {
-    #[doc = "`Awake()` overload"]
-    fn awake(self) -> () {
-        unsafe {
-            let __receiver =
-                <MapCursorLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapCursorLocatorRoot_unity2_raw::awake(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnDestroy()` overload"]
-    fn on_destroy(self) -> () {
-        unsafe {
-            let __receiver =
-                <MapCursorLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapCursorLocatorRoot_unity2_raw::on_destroy(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetGameObject()` overload"]
-    fn get_game_object(self) -> () {
-        unsafe {
-            let __receiver =
-                <MapCursorLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapCursorLocatorRoot_unity2_raw::get_game_object(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetMapCursorColor()` overload"]
-    fn get_map_cursor_color(self) -> () {
-        unsafe {
-            let __receiver =
-                <MapCursorLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapCursorLocatorRoot_unity2_raw::get_map_cursor_color(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetOrigPos()` overload"]
-    fn get_orig_pos(self) -> () {
-        unsafe {
-            let __receiver =
-                <MapCursorLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapCursorLocatorRoot_unity2_raw::get_orig_pos(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`InitMapCursor()` overload"]
-    fn init_map_cursor(self) -> () {
-        unsafe {
-            let __receiver =
-                <MapCursorLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapCursorLocatorRoot_unity2_raw::init_map_cursor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ScaleCursor(i32)` overload"]
-    fn scale_cursor(self, frame: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver =
-                <MapCursorLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapCursorLocatorRoot_unity2_raw::scale_cursor(__receiver, ::core::convert::Into::into(frame), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsScaleCursor()` overload"]
-    fn is_scale_cursor(self) -> bool {
-        unsafe {
-            let __receiver =
-                <MapCursorLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapCursorLocatorRoot_unity2_raw::is_scale_cursor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetColor(crate::unity_engine::color::Color)` overload"]
-    fn set_color(self, color: impl ::core::convert::Into<crate::unity_engine::color::Color>) -> () {
-        unsafe {
-            let __receiver =
-                <MapCursorLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapCursorLocatorRoot_unity2_raw::set_color(__receiver, ::core::convert::Into::into(color), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <MapCursorLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapCursorLocatorRoot_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IMapCursorLocatorRootMethods : IMapCursorLocatorRoot { # [doc = "`Awake()` overload"] fn awake (self ,) -> () { unsafe { let __receiver = < MapCursorLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapCursorLocatorRoot_unity2_raw :: awake (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnDestroy()` overload"] fn on_destroy (self ,) -> () { unsafe { let __receiver = < MapCursorLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapCursorLocatorRoot_unity2_raw :: on_destroy (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetGameObject()` overload"] fn get_game_object (self ,) -> () { unsafe { let __receiver = < MapCursorLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapCursorLocatorRoot_unity2_raw :: get_game_object (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetMapCursorColor()` overload"] fn get_map_cursor_color (self ,) -> () { unsafe { let __receiver = < MapCursorLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapCursorLocatorRoot_unity2_raw :: get_map_cursor_color (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetOrigPos()` overload"] fn get_orig_pos (self ,) -> () { unsafe { let __receiver = < MapCursorLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapCursorLocatorRoot_unity2_raw :: get_orig_pos (__receiver , :: core :: option :: Option :: None) } } # [doc = "`InitMapCursor()` overload"] fn init_map_cursor (self ,) -> () { unsafe { let __receiver = < MapCursorLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapCursorLocatorRoot_unity2_raw :: init_map_cursor (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ScaleCursor(i32)` overload"] fn scale_cursor (self , frame : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapCursorLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapCursorLocatorRoot_unity2_raw :: scale_cursor (__receiver , :: core :: convert :: Into :: into (frame) , :: core :: option :: Option :: None) } } # [doc = "`IsScaleCursor()` overload"] fn is_scale_cursor (self ,) -> bool { unsafe { let __receiver = < MapCursorLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapCursorLocatorRoot_unity2_raw :: is_scale_cursor (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetColor(crate::unity_engine::color::Color)` overload"] fn set_color (self , color : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color >) -> () { unsafe { let __receiver = < MapCursorLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapCursorLocatorRoot_unity2_raw :: set_color (__receiver , :: core :: convert :: Into :: into (color) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapCursorLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapCursorLocatorRoot_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "root-mapcursorlocatorroot")]
-impl<__T: IMapCursorLocatorRoot> IMapCursorLocatorRootMethods for __T {}
+impl < __T : IMapCursorLocatorRoot > IMapCursorLocatorRootMethods for __T { }
+
+#[cfg(feature = "root-mapcursorlocatorroot")]
+impl MapCursorLocatorRoot { pub fn awake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapCursorLocatorRoot_unity2_raw :: __lookup_awake :: get_method_info () } pub fn on_destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapCursorLocatorRoot_unity2_raw :: __lookup_on_destroy :: get_method_info () } pub fn get_game_object_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapCursorLocatorRoot_unity2_raw :: __lookup_get_game_object :: get_method_info () } pub fn get_map_cursor_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapCursorLocatorRoot_unity2_raw :: __lookup_get_map_cursor_color :: get_method_info () } pub fn get_orig_pos_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapCursorLocatorRoot_unity2_raw :: __lookup_get_orig_pos :: get_method_info () } pub fn init_map_cursor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapCursorLocatorRoot_unity2_raw :: __lookup_init_map_cursor :: get_method_info () } pub fn scale_cursor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapCursorLocatorRoot_unity2_raw :: __lookup_scale_cursor :: get_method_info () } pub fn is_scale_cursor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapCursorLocatorRoot_unity2_raw :: __lookup_is_scale_cursor :: get_method_info () } pub fn set_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapCursorLocatorRoot_unity2_raw :: __lookup_set_color :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapCursorLocatorRoot_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "root-mapcursorlocatorroot")]
 impl MapCursorLocatorRoot {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapCursorLocatorRoot),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapCursorLocatorRootMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapCursorLocatorRoot) , :: core :: stringify ! (new) ,)) ; < Self as IMapCursorLocatorRootMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "root-mapcursorlocatorroot")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IMapCursorLocatorRoot, IMapCursorLocatorRootMethods, MapCursorLocatorRoot, MapCursorLocatorRoot_PartType};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::MapCursorLocatorRoot_PartType;
+    pub use super::MapCursorLocatorRoot;
+    pub use super::IMapCursorLocatorRoot;
+    pub use super::IMapCursorLocatorRootMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

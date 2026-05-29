@@ -2,516 +2,73 @@
 
 #[cfg(feature = "unity_engine-rendering-renderstateblock-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        valuetype::{IValueType, ValueType},
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/renderstateblock/RenderStateBlock.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct RenderStateBlock {
-        pub m_blend_state: crate::unity_engine::rendering::blendstate::BlendState,
-        pub m_raster_state: crate::unity_engine::rendering::rasterstate::RasterState,
-        pub m_depth_state: crate::unity_engine::rendering::depthstate::DepthState,
-        pub m_stencil_state: crate::unity_engine::rendering::stencilstate::StencilState,
-        pub m_stencil_reference: i32,
-        pub m_mask: crate::unity_engine::rendering::renderstatemask::RenderStateMask,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
 
-    impl ::unity2::ClassIdentity for RenderStateBlock {
-        const NAME: &'static str = "RenderStateBlock";
-        const NAMESPACE: &'static str = "UnityEngine.Rendering";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/renderstateblock/RenderStateBlock.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct RenderStateBlock {
+    pub m_blend_state: crate :: unity_engine :: rendering :: blendstate :: BlendState,
+    pub m_raster_state: crate :: unity_engine :: rendering :: rasterstate :: RasterState,
+    pub m_depth_state: crate :: unity_engine :: rendering :: depthstate :: DepthState,
+    pub m_stencil_state: crate :: unity_engine :: rendering :: stencilstate :: StencilState,
+    pub m_stencil_reference: i32,
+    pub m_mask: crate :: unity_engine :: rendering :: renderstatemask :: RenderStateMask,
+}
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+
+impl ::unity2::ClassIdentity for RenderStateBlock {
+    const NAMESPACE: &'static str = "UnityEngine.Rendering";
+
+    const NAME: &'static str = "RenderStateBlock";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for RenderStateBlock {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl ::unity2::IlType for RenderStateBlock {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
+
+}
+
 }
 
 #[cfg(feature = "unity_engine-rendering-renderstateblock-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-renderstateblock")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RenderStateBlock_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::rendering::renderstatemask::RenderStateMask as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RenderStateBlock as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RenderStateBlock as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: RenderStateBlock,
-        mask: crate::unity_engine::rendering::renderstatemask::RenderStateMask,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RenderStateBlock, crate::unity_engine::rendering::renderstatemask::RenderStateMask, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, mask, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_depth_state {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::rendering::depthstate::DepthState as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RenderStateBlock as ::unity2::ClassIdentity>::class(),
-                "set_depthState",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RenderStateBlock as ::unity2::ClassIdentity>::NAME,
-                        "set_depthState",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_depth_state(
-        this: RenderStateBlock,
-        value: crate::unity_engine::rendering::depthstate::DepthState,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RenderStateBlock, crate::unity_engine::rendering::depthstate::DepthState, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_depth_state::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_stencil_state {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RenderStateBlock as ::unity2::ClassIdentity>::class(),
-                "get_stencilState",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RenderStateBlock as ::unity2::ClassIdentity>::NAME,
-                        "get_stencilState",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_stencil_state(
-        this: RenderStateBlock,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::rendering::stencilstate::StencilState {
-        let inner: extern "C" fn(RenderStateBlock, ::unity2::OptionalMethod) -> crate::unity_engine::rendering::stencilstate::StencilState =
-            ::core::mem::transmute(__lookup_get_stencil_state::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_stencil_state {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::rendering::stencilstate::StencilState as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RenderStateBlock as ::unity2::ClassIdentity>::class(),
-                "set_stencilState",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RenderStateBlock as ::unity2::ClassIdentity>::NAME,
-                        "set_stencilState",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_stencil_state(
-        this: RenderStateBlock,
-        value: crate::unity_engine::rendering::stencilstate::StencilState,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RenderStateBlock, crate::unity_engine::rendering::stencilstate::StencilState, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_stencil_state::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_stencil_reference {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RenderStateBlock as ::unity2::ClassIdentity>::class(),
-                "get_stencilReference",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RenderStateBlock as ::unity2::ClassIdentity>::NAME,
-                        "get_stencilReference",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_stencil_reference(this: RenderStateBlock, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(RenderStateBlock, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_stencil_reference::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_stencil_reference {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RenderStateBlock as ::unity2::ClassIdentity>::class(),
-                "set_stencilReference",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RenderStateBlock as ::unity2::ClassIdentity>::NAME,
-                        "set_stencilReference",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_stencil_reference(this: RenderStateBlock, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RenderStateBlock, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_stencil_reference::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_mask {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RenderStateBlock as ::unity2::ClassIdentity>::class(),
-                "get_mask",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RenderStateBlock as ::unity2::ClassIdentity>::NAME,
-                        "get_mask",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_mask(
-        this: RenderStateBlock,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::rendering::renderstatemask::RenderStateMask {
-        let inner: extern "C" fn(RenderStateBlock, ::unity2::OptionalMethod) -> crate::unity_engine::rendering::renderstatemask::RenderStateMask =
-            ::core::mem::transmute(__lookup_get_mask::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_mask {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::rendering::renderstatemask::RenderStateMask as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RenderStateBlock as ::unity2::ClassIdentity>::class(),
-                "set_mask",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RenderStateBlock as ::unity2::ClassIdentity>::NAME,
-                        "set_mask",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_mask(
-        this: RenderStateBlock,
-        value: crate::unity_engine::rendering::renderstatemask::RenderStateMask,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RenderStateBlock, crate::unity_engine::rendering::renderstatemask::RenderStateMask, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_mask::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_equals {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::rendering::renderstateblock::RenderStateBlock as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RenderStateBlock as ::unity2::ClassIdentity>::class(),
-                "Equals",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RenderStateBlock as ::unity2::ClassIdentity>::NAME,
-                        "Equals",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn equals(
-        this: RenderStateBlock,
-        other: crate::unity_engine::rendering::renderstateblock::RenderStateBlock,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            RenderStateBlock,
-            crate::unity_engine::rendering::renderstateblock::RenderStateBlock,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(__lookup_equals::get_method_info().method_ptr);
-        inner(this, other, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_equals_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RenderStateBlock as ::unity2::ClassIdentity>::class(),
-                "Equals",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RenderStateBlock as ::unity2::ClassIdentity>::NAME,
-                        "Equals",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn equals_2(this: RenderStateBlock, obj: crate::system::object::Object, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(RenderStateBlock, crate::system::object::Object, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_equals_2::get_method_info().method_ptr);
-        inner(this, obj, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_hash_code {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RenderStateBlock as ::unity2::ClassIdentity>::class(),
-                "GetHashCode",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RenderStateBlock as ::unity2::ClassIdentity>::NAME,
-                        "GetHashCode",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_hash_code(this: RenderStateBlock, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(RenderStateBlock, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_hash_code::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __RenderStateBlock_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: renderstatemask :: RenderStateMask as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RenderStateBlock as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RenderStateBlock as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : RenderStateBlock , mask : crate :: unity_engine :: rendering :: renderstatemask :: RenderStateMask , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RenderStateBlock , crate :: unity_engine :: rendering :: renderstatemask :: RenderStateMask , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , mask , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_depth_state { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: depthstate :: DepthState as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RenderStateBlock as :: unity2 :: ClassIdentity > :: class () , "set_depthState" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RenderStateBlock as :: unity2 :: ClassIdentity > :: NAME , "set_depthState" , e) , } } } pub unsafe fn set_depth_state (this : RenderStateBlock , value : crate :: unity_engine :: rendering :: depthstate :: DepthState , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RenderStateBlock , crate :: unity_engine :: rendering :: depthstate :: DepthState , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_depth_state :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_stencil_state { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RenderStateBlock as :: unity2 :: ClassIdentity > :: class () , "get_stencilState" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RenderStateBlock as :: unity2 :: ClassIdentity > :: NAME , "get_stencilState" , e) , } } } pub unsafe fn get_stencil_state (this : RenderStateBlock , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: stencilstate :: StencilState { let inner : extern "C" fn (RenderStateBlock , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: stencilstate :: StencilState = :: core :: mem :: transmute (__lookup_get_stencil_state :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_stencil_state { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: stencilstate :: StencilState as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RenderStateBlock as :: unity2 :: ClassIdentity > :: class () , "set_stencilState" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RenderStateBlock as :: unity2 :: ClassIdentity > :: NAME , "set_stencilState" , e) , } } } pub unsafe fn set_stencil_state (this : RenderStateBlock , value : crate :: unity_engine :: rendering :: stencilstate :: StencilState , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RenderStateBlock , crate :: unity_engine :: rendering :: stencilstate :: StencilState , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_stencil_state :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_stencil_reference { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RenderStateBlock as :: unity2 :: ClassIdentity > :: class () , "get_stencilReference" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RenderStateBlock as :: unity2 :: ClassIdentity > :: NAME , "get_stencilReference" , e) , } } } pub unsafe fn get_stencil_reference (this : RenderStateBlock , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (RenderStateBlock , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_stencil_reference :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_stencil_reference { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RenderStateBlock as :: unity2 :: ClassIdentity > :: class () , "set_stencilReference" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RenderStateBlock as :: unity2 :: ClassIdentity > :: NAME , "set_stencilReference" , e) , } } } pub unsafe fn set_stencil_reference (this : RenderStateBlock , value : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RenderStateBlock , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_stencil_reference :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_mask { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RenderStateBlock as :: unity2 :: ClassIdentity > :: class () , "get_mask" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RenderStateBlock as :: unity2 :: ClassIdentity > :: NAME , "get_mask" , e) , } } } pub unsafe fn get_mask (this : RenderStateBlock , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: renderstatemask :: RenderStateMask { let inner : extern "C" fn (RenderStateBlock , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: renderstatemask :: RenderStateMask = :: core :: mem :: transmute (__lookup_get_mask :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_mask { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: renderstatemask :: RenderStateMask as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RenderStateBlock as :: unity2 :: ClassIdentity > :: class () , "set_mask" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RenderStateBlock as :: unity2 :: ClassIdentity > :: NAME , "set_mask" , e) , } } } pub unsafe fn set_mask (this : RenderStateBlock , value : crate :: unity_engine :: rendering :: renderstatemask :: RenderStateMask , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RenderStateBlock , crate :: unity_engine :: rendering :: renderstatemask :: RenderStateMask , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_mask :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_equals { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: renderstateblock :: RenderStateBlock as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RenderStateBlock as :: unity2 :: ClassIdentity > :: class () , "Equals" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RenderStateBlock as :: unity2 :: ClassIdentity > :: NAME , "Equals" , e) , } } } pub unsafe fn equals (this : RenderStateBlock , other : crate :: unity_engine :: rendering :: renderstateblock :: RenderStateBlock , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (RenderStateBlock , crate :: unity_engine :: rendering :: renderstateblock :: RenderStateBlock , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_equals :: get_method_info () . method_ptr ,) ; inner (this , other , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_equals_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RenderStateBlock as :: unity2 :: ClassIdentity > :: class () , "Equals" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RenderStateBlock as :: unity2 :: ClassIdentity > :: NAME , "Equals" , e) , } } } pub unsafe fn equals_2 (this : RenderStateBlock , obj : crate :: system :: object :: Object , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (RenderStateBlock , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_equals_2 :: get_method_info () . method_ptr ,) ; inner (this , obj , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_hash_code { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RenderStateBlock as :: unity2 :: ClassIdentity > :: class () , "GetHashCode" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RenderStateBlock as :: unity2 :: ClassIdentity > :: NAME , "GetHashCode" , e) , } } } pub unsafe fn get_hash_code (this : RenderStateBlock , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (RenderStateBlock , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_hash_code :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-rendering-renderstateblock")]
-impl RenderStateBlock {
-    #[doc = "`.ctor(crate::unity_engine::rendering::renderstatemask::RenderStateMask)` overload"]
-    pub fn ctor(self, mask: impl ::core::convert::Into<crate::unity_engine::rendering::renderstatemask::RenderStateMask>) -> () {
-        unsafe { __RenderStateBlock_unity2_raw::ctor(self, ::core::convert::Into::into(mask), ::core::option::Option::None) }
-    }
+impl RenderStateBlock { # [doc = "`.ctor(crate::unity_engine::rendering::renderstatemask::RenderStateMask)` overload"] pub fn ctor (self , mask : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: renderstatemask :: RenderStateMask >) -> () { unsafe { __RenderStateBlock_unity2_raw :: ctor (self , :: core :: convert :: Into :: into (mask) , :: core :: option :: Option :: None) } } # [doc = "`set_depthState(crate::unity_engine::rendering::depthstate::DepthState)` overload"] pub fn set_depth_state (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: depthstate :: DepthState >) -> () { unsafe { __RenderStateBlock_unity2_raw :: set_depth_state (self , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_stencilState()` overload"] pub fn get_stencil_state (self ,) -> crate :: unity_engine :: rendering :: stencilstate :: StencilState { unsafe { __RenderStateBlock_unity2_raw :: get_stencil_state (self , :: core :: option :: Option :: None) } } # [doc = "`set_stencilState(crate::unity_engine::rendering::stencilstate::StencilState)` overload"] pub fn set_stencil_state (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: stencilstate :: StencilState >) -> () { unsafe { __RenderStateBlock_unity2_raw :: set_stencil_state (self , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_stencilReference()` overload"] pub fn get_stencil_reference (self ,) -> i32 { unsafe { __RenderStateBlock_unity2_raw :: get_stencil_reference (self , :: core :: option :: Option :: None) } } # [doc = "`set_stencilReference(i32)` overload"] pub fn set_stencil_reference (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { __RenderStateBlock_unity2_raw :: set_stencil_reference (self , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_mask()` overload"] pub fn get_mask (self ,) -> crate :: unity_engine :: rendering :: renderstatemask :: RenderStateMask { unsafe { __RenderStateBlock_unity2_raw :: get_mask (self , :: core :: option :: Option :: None) } } # [doc = "`set_mask(crate::unity_engine::rendering::renderstatemask::RenderStateMask)` overload"] pub fn set_mask (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: renderstatemask :: RenderStateMask >) -> () { unsafe { __RenderStateBlock_unity2_raw :: set_mask (self , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`Equals(crate::unity_engine::rendering::renderstateblock::RenderStateBlock)` overload"] pub fn equals (self , other : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: renderstateblock :: RenderStateBlock >) -> bool { unsafe { __RenderStateBlock_unity2_raw :: equals (self , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } # [doc = "`Equals(crate::system::object::Object)` overload"] pub fn equals_2 (self , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { __RenderStateBlock_unity2_raw :: equals_2 (self , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } # [doc = "`GetHashCode()` overload"] pub fn get_hash_code (self ,) -> i32 { unsafe { __RenderStateBlock_unity2_raw :: get_hash_code (self , :: core :: option :: Option :: None) } } }
 
-    #[doc = "`set_depthState(crate::unity_engine::rendering::depthstate::DepthState)` overload"]
-    pub fn set_depth_state(self, value: impl ::core::convert::Into<crate::unity_engine::rendering::depthstate::DepthState>) -> () {
-        unsafe { __RenderStateBlock_unity2_raw::set_depth_state(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_stencilState()` overload"]
-    pub fn get_stencil_state(self) -> crate::unity_engine::rendering::stencilstate::StencilState {
-        unsafe { __RenderStateBlock_unity2_raw::get_stencil_state(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_stencilState(crate::unity_engine::rendering::stencilstate::StencilState)` overload"]
-    pub fn set_stencil_state(self, value: impl ::core::convert::Into<crate::unity_engine::rendering::stencilstate::StencilState>) -> () {
-        unsafe { __RenderStateBlock_unity2_raw::set_stencil_state(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_stencilReference()` overload"]
-    pub fn get_stencil_reference(self) -> i32 {
-        unsafe { __RenderStateBlock_unity2_raw::get_stencil_reference(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_stencilReference(i32)` overload"]
-    pub fn set_stencil_reference(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __RenderStateBlock_unity2_raw::set_stencil_reference(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_mask()` overload"]
-    pub fn get_mask(self) -> crate::unity_engine::rendering::renderstatemask::RenderStateMask {
-        unsafe { __RenderStateBlock_unity2_raw::get_mask(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_mask(crate::unity_engine::rendering::renderstatemask::RenderStateMask)` overload"]
-    pub fn set_mask(self, value: impl ::core::convert::Into<crate::unity_engine::rendering::renderstatemask::RenderStateMask>) -> () {
-        unsafe { __RenderStateBlock_unity2_raw::set_mask(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`Equals(crate::unity_engine::rendering::renderstateblock::RenderStateBlock)` overload"]
-    pub fn equals(self, other: impl ::core::convert::Into<crate::unity_engine::rendering::renderstateblock::RenderStateBlock>) -> bool {
-        unsafe { __RenderStateBlock_unity2_raw::equals(self, ::core::convert::Into::into(other), ::core::option::Option::None) }
-    }
-
-    #[doc = "`Equals(crate::system::object::Object)` overload"]
-    pub fn equals_2(self, obj: impl ::core::convert::Into<crate::system::object::Object>) -> bool {
-        unsafe { __RenderStateBlock_unity2_raw::equals_2(self, ::core::convert::Into::into(obj), ::core::option::Option::None) }
-    }
-
-    #[doc = "`GetHashCode()` overload"]
-    pub fn get_hash_code(self) -> i32 {
-        unsafe { __RenderStateBlock_unity2_raw::get_hash_code(self, ::core::option::Option::None) }
-    }
-}
+#[cfg(feature = "unity_engine-rendering-renderstateblock")]
+impl RenderStateBlock { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RenderStateBlock_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn set_depth_state_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RenderStateBlock_unity2_raw :: __lookup_set_depth_state :: get_method_info () } pub fn get_stencil_state_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RenderStateBlock_unity2_raw :: __lookup_get_stencil_state :: get_method_info () } pub fn set_stencil_state_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RenderStateBlock_unity2_raw :: __lookup_set_stencil_state :: get_method_info () } pub fn get_stencil_reference_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RenderStateBlock_unity2_raw :: __lookup_get_stencil_reference :: get_method_info () } pub fn set_stencil_reference_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RenderStateBlock_unity2_raw :: __lookup_set_stencil_reference :: get_method_info () } pub fn get_mask_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RenderStateBlock_unity2_raw :: __lookup_get_mask :: get_method_info () } pub fn set_mask_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RenderStateBlock_unity2_raw :: __lookup_set_mask :: get_method_info () } pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RenderStateBlock_unity2_raw :: __lookup_equals :: get_method_info () } pub fn equals_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RenderStateBlock_unity2_raw :: __lookup_equals_2 :: get_method_info () } pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RenderStateBlock_unity2_raw :: __lookup_get_hash_code :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-rendering-renderstateblock")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::RenderStateBlock;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::system::{object::IObject, valuetype::IValueType};
+    pub use crate::system::object::IObject;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

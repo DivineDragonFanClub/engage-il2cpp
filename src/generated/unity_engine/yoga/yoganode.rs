@@ -2,175 +2,38 @@
 
 #[cfg(feature = "unity_engine-yoga-yoganode-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/yoga/yoganode/YogaNode.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Yoga", name = "YogaNode")]
-    #[parent(crate::system::object::Object)]
-    pub struct YogaNode {
-        #[offset(16)]
-        #[rename(name = "_ygNode")]
-        pub yg_node: ::unity2::IntPtr,
-        #[offset(24)]
-        #[rename(name = "_measureFunction")]
-        pub measure_function: crate::unity_engine::yoga::measurefunction::MeasureFunction,
-        #[offset(32)]
-        #[rename(name = "_baselineFunction")]
-        pub baseline_function: crate::unity_engine::yoga::baselinefunction::BaselineFunction,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/yoga/yoganode/YogaNode.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Yoga" , name = "YogaNode")] # [parent (crate :: system :: object :: Object)] pub struct YogaNode {
+# [offset (16)] # [rename (name = "_ygNode")] pub yg_node : :: unity2 :: IntPtr ,
+# [offset (24)] # [rename (name = "_measureFunction")] pub measure_function : crate :: unity_engine :: yoga :: measurefunction :: MeasureFunction ,
+# [offset (32)] # [rename (name = "_baselineFunction")] pub baseline_function : crate :: unity_engine :: yoga :: baselinefunction :: BaselineFunction ,
+}
+
 }
 
 #[cfg(feature = "unity_engine-yoga-yoganode-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-yoga-yoganode")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __YogaNode_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_measure_internal {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::yoga::yoganode::YogaNode as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::yoga::yogameasuremode::YogaMeasureMode as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::yoga::yogameasuremode::YogaMeasureMode as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <YogaNode as ::unity2::ClassIdentity>::class(),
-                "MeasureInternal",
-                5,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <YogaNode as ::unity2::ClassIdentity>::NAME,
-                        "MeasureInternal",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn measure_internal(
-        node: crate::unity_engine::yoga::yoganode::YogaNode,
-        width: f32,
-        width_mode: crate::unity_engine::yoga::yogameasuremode::YogaMeasureMode,
-        height: f32,
-        height_mode: crate::unity_engine::yoga::yogameasuremode::YogaMeasureMode,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::yoga::yogasize::YogaSize {
-        let inner: extern "C" fn(
-            crate::unity_engine::yoga::yoganode::YogaNode,
-            f32,
-            crate::unity_engine::yoga::yogameasuremode::YogaMeasureMode,
-            f32,
-            crate::unity_engine::yoga::yogameasuremode::YogaMeasureMode,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::yoga::yogasize::YogaSize = ::core::mem::transmute(__lookup_measure_internal::get_method_info().method_ptr);
-        inner(node, width, width_mode, height, height_mode, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_baseline_internal {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::yoga::yoganode::YogaNode as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <YogaNode as ::unity2::ClassIdentity>::class(),
-                "BaselineInternal",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <YogaNode as ::unity2::ClassIdentity>::NAME,
-                        "BaselineInternal",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn baseline_internal(
-        node: crate::unity_engine::yoga::yoganode::YogaNode,
-        width: f32,
-        height: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
-        let inner: extern "C" fn(crate::unity_engine::yoga::yoganode::YogaNode, f32, f32, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_baseline_internal::get_method_info().method_ptr);
-        inner(node, width, height, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __YogaNode_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_measure_internal { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: yoga :: yoganode :: YogaNode as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: yoga :: yogameasuremode :: YogaMeasureMode as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: yoga :: yogameasuremode :: YogaMeasureMode as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< YogaNode as :: unity2 :: ClassIdentity > :: class () , "MeasureInternal" , 5 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < YogaNode as :: unity2 :: ClassIdentity > :: NAME , "MeasureInternal" , e) , } } } pub unsafe fn measure_internal (node : crate :: unity_engine :: yoga :: yoganode :: YogaNode , width : f32 , width_mode : crate :: unity_engine :: yoga :: yogameasuremode :: YogaMeasureMode , height : f32 , height_mode : crate :: unity_engine :: yoga :: yogameasuremode :: YogaMeasureMode , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: yoga :: yogasize :: YogaSize { let inner : extern "C" fn (crate :: unity_engine :: yoga :: yoganode :: YogaNode , f32 , crate :: unity_engine :: yoga :: yogameasuremode :: YogaMeasureMode , f32 , crate :: unity_engine :: yoga :: yogameasuremode :: YogaMeasureMode , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: yoga :: yogasize :: YogaSize = :: core :: mem :: transmute (__lookup_measure_internal :: get_method_info () . method_ptr ,) ; inner (node , width , width_mode , height , height_mode , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_baseline_internal { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: yoga :: yoganode :: YogaNode as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< YogaNode as :: unity2 :: ClassIdentity > :: class () , "BaselineInternal" , 3 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < YogaNode as :: unity2 :: ClassIdentity > :: NAME , "BaselineInternal" , e) , } } } pub unsafe fn baseline_internal (node : crate :: unity_engine :: yoga :: yoganode :: YogaNode , width : f32 , height : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (crate :: unity_engine :: yoga :: yoganode :: YogaNode , f32 , f32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_baseline_internal :: get_method_info () . method_ptr ,) ; inner (node , width , height , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-yoga-yoganode")]
-impl YogaNode {
-    #[doc = "`MeasureInternal(crate::unity_engine::yoga::yoganode::YogaNode, f32, crate::unity_engine::yoga::yogameasuremode::YogaMeasureMode, f32, crate::unity_engine::yoga::yogameasuremode::YogaMeasureMode)` overload"]
-    pub fn measure_internal(
-        node: impl ::core::convert::Into<crate::unity_engine::yoga::yoganode::YogaNode>,
-        width: impl ::core::convert::Into<f32>,
-        width_mode: impl ::core::convert::Into<crate::unity_engine::yoga::yogameasuremode::YogaMeasureMode>,
-        height: impl ::core::convert::Into<f32>,
-        height_mode: impl ::core::convert::Into<crate::unity_engine::yoga::yogameasuremode::YogaMeasureMode>,
-    ) -> crate::unity_engine::yoga::yogasize::YogaSize {
-        unsafe {
-            __YogaNode_unity2_raw::measure_internal(
-                ::core::convert::Into::into(node),
-                ::core::convert::Into::into(width),
-                ::core::convert::Into::into(width_mode),
-                ::core::convert::Into::into(height),
-                ::core::convert::Into::into(height_mode),
-                ::core::option::Option::None,
-            )
-        }
-    }
+impl YogaNode { # [doc = "`MeasureInternal(crate::unity_engine::yoga::yoganode::YogaNode, f32, crate::unity_engine::yoga::yogameasuremode::YogaMeasureMode, f32, crate::unity_engine::yoga::yogameasuremode::YogaMeasureMode)` overload"] pub fn measure_internal (node : impl :: core :: convert :: Into < crate :: unity_engine :: yoga :: yoganode :: YogaNode > , width : impl :: core :: convert :: Into < f32 > , width_mode : impl :: core :: convert :: Into < crate :: unity_engine :: yoga :: yogameasuremode :: YogaMeasureMode > , height : impl :: core :: convert :: Into < f32 > , height_mode : impl :: core :: convert :: Into < crate :: unity_engine :: yoga :: yogameasuremode :: YogaMeasureMode >) -> crate :: unity_engine :: yoga :: yogasize :: YogaSize { unsafe { __YogaNode_unity2_raw :: measure_internal (:: core :: convert :: Into :: into (node) , :: core :: convert :: Into :: into (width) , :: core :: convert :: Into :: into (width_mode) , :: core :: convert :: Into :: into (height) , :: core :: convert :: Into :: into (height_mode) , :: core :: option :: Option :: None) } } # [doc = "`BaselineInternal(crate::unity_engine::yoga::yoganode::YogaNode, f32, f32)` overload"] pub fn baseline_internal (node : impl :: core :: convert :: Into < crate :: unity_engine :: yoga :: yoganode :: YogaNode > , width : impl :: core :: convert :: Into < f32 > , height : impl :: core :: convert :: Into < f32 >) -> f32 { unsafe { __YogaNode_unity2_raw :: baseline_internal (:: core :: convert :: Into :: into (node) , :: core :: convert :: Into :: into (width) , :: core :: convert :: Into :: into (height) , :: core :: option :: Option :: None) } } }
 
-    #[doc = "`BaselineInternal(crate::unity_engine::yoga::yoganode::YogaNode, f32, f32)` overload"]
-    pub fn baseline_internal(
-        node: impl ::core::convert::Into<crate::unity_engine::yoga::yoganode::YogaNode>,
-        width: impl ::core::convert::Into<f32>,
-        height: impl ::core::convert::Into<f32>,
-    ) -> f32 {
-        unsafe {
-            __YogaNode_unity2_raw::baseline_internal(
-                ::core::convert::Into::into(node),
-                ::core::convert::Into::into(width),
-                ::core::convert::Into::into(height),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+#[cfg(feature = "unity_engine-yoga-yoganode")]
+impl YogaNode { pub fn measure_internal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __YogaNode_unity2_raw :: __lookup_measure_internal :: get_method_info () } pub fn baseline_internal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __YogaNode_unity2_raw :: __lookup_baseline_internal :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-yoga-yoganode")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IYogaNode, YogaNode};
+    pub use super::YogaNode;
+    pub use super::IYogaNode;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

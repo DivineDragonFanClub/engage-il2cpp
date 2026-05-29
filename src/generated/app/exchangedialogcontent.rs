@@ -2,542 +2,87 @@
 
 #[cfg(feature = "app-exchangedialogcontent-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::{
-            basicdialogcontent::{BasicDialogContent, IBasicDialogContent},
-            basicmenucontent::{BasicMenuContent, IBasicMenuContent},
-        },
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/exchangedialogcontent/ExchangeDialogContent.md"))]
-    #[::unity2::class(namespace = "App", name = "ExchangeDialogContent")]
-    #[parent(crate::app::basicdialogcontent::BasicDialogContent)]
-    pub struct ExchangeDialogContent {
-        #[static_field]
-        #[rename(name = "PrefabPath")]
-        pub prefab_path: ::unity2::Il2CppString,
-        #[offset(264)]
-        #[rename(name = "m_GetTitleText")]
-        pub m_get_title_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(272)]
-        #[rename(name = "m_GetItemListObject")]
-        pub m_get_item_list_object: crate::unity_engine::gameobject::GameObject,
-        #[offset(280)]
-        #[rename(name = "m_GetItemMoneyObject")]
-        pub m_get_item_money_object: crate::unity_engine::gameobject::GameObject,
-        #[offset(288)]
-        #[rename(name = "m_GetBeforeAfterObject")]
-        pub m_get_before_after_object: crate::unity_engine::gameobject::GameObject,
-        #[offset(296)]
-        #[rename(name = "m_GetItemBeforeItemObject")]
-        pub m_get_item_before_item_object: crate::unity_engine::gameobject::GameObject,
-        #[offset(304)]
-        #[rename(name = "m_GetItemArrowObject")]
-        pub m_get_item_arrow_object: crate::unity_engine::gameobject::GameObject,
-        #[offset(312)]
-        #[rename(name = "m_GetItemAfterItemObject")]
-        pub m_get_item_after_item_object: crate::unity_engine::gameobject::GameObject,
-        #[offset(320)]
-        #[rename(name = "m_GetItemLongNameObject")]
-        pub m_get_item_long_name_object: crate::unity_engine::gameobject::GameObject,
-        #[offset(328)]
-        #[rename(name = "m_GetItemNameOnlyObject")]
-        pub m_get_item_name_only_object: crate::unity_engine::gameobject::GameObject,
-        #[offset(336)]
-        #[rename(name = "m_CostTitleText")]
-        pub m_cost_title_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(344)]
-        #[rename(name = "m_CostItemListObject")]
-        pub m_cost_item_list_object: crate::unity_engine::gameobject::GameObject,
-        #[offset(352)]
-        #[rename(name = "m_CostItemMoneyObject")]
-        pub m_cost_item_money_object: crate::unity_engine::gameobject::GameObject,
-        #[offset(360)]
-        #[rename(name = "m_CostItemNameOnlyObject")]
-        pub m_cost_item_name_only_object: crate::unity_engine::gameobject::GameObject,
-        #[offset(368)]
-        #[rename(name = "m_MenuItemListParentObject")]
-        pub m_menu_item_list_parent_object: crate::unity_engine::gameobject::GameObject,
-        #[offset(376)]
-        #[rename(name = "m_WaitKeyIconObject")]
-        pub m_wait_key_icon_object: crate::unity_engine::gameobject::GameObject,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: basicdialogcontent :: { BasicDialogContent , IBasicDialogContent }
+ ;
+ use crate :: app :: basicmenucontent :: { BasicMenuContent , IBasicMenuContent }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/exchangedialogcontent/ExchangeDialogContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "ExchangeDialogContent")] # [parent (crate :: app :: basicdialogcontent :: BasicDialogContent)] pub struct ExchangeDialogContent {
+# [static_field] # [rename (name = "PrefabPath")] pub prefab_path : :: unity2 :: Il2CppString ,
+# [offset (264)] # [rename (name = "m_GetTitleText")] pub m_get_title_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (272)] # [rename (name = "m_GetItemListObject")] pub m_get_item_list_object : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (280)] # [rename (name = "m_GetItemMoneyObject")] pub m_get_item_money_object : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (288)] # [rename (name = "m_GetBeforeAfterObject")] pub m_get_before_after_object : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (296)] # [rename (name = "m_GetItemBeforeItemObject")] pub m_get_item_before_item_object : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (304)] # [rename (name = "m_GetItemArrowObject")] pub m_get_item_arrow_object : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (312)] # [rename (name = "m_GetItemAfterItemObject")] pub m_get_item_after_item_object : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (320)] # [rename (name = "m_GetItemLongNameObject")] pub m_get_item_long_name_object : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (328)] # [rename (name = "m_GetItemNameOnlyObject")] pub m_get_item_name_only_object : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (336)] # [rename (name = "m_CostTitleText")] pub m_cost_title_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (344)] # [rename (name = "m_CostItemListObject")] pub m_cost_item_list_object : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (352)] # [rename (name = "m_CostItemMoneyObject")] pub m_cost_item_money_object : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (360)] # [rename (name = "m_CostItemNameOnlyObject")] pub m_cost_item_name_only_object : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (368)] # [rename (name = "m_MenuItemListParentObject")] pub m_menu_item_list_parent_object : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (376)] # [rename (name = "m_WaitKeyIconObject")] pub m_wait_key_icon_object : crate :: unity_engine :: gameobject :: GameObject ,
+}
+
 }
 
 #[cfg(feature = "app-exchangedialogcontent-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-exchangedialogcontent")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ExchangeDialogContent_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_load_prefab_async {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ExchangeDialogContent as ::unity2::ClassIdentity>::class(),
-                "LoadPrefabAsync",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ExchangeDialogContent as ::unity2::ClassIdentity>::NAME,
-                        "LoadPrefabAsync",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn load_prefab_async(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_load_prefab_async::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ExchangeDialogContent as ::unity2::ClassIdentity>::class(),
-                "Create",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ExchangeDialogContent as ::unity2::ClassIdentity>::NAME,
-                        "Create",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create(__unity2_method_info: ::unity2::OptionalMethod) -> crate::app::exchangedialogcontent::ExchangeDialogContent {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::app::exchangedialogcontent::ExchangeDialogContent =
-            ::core::mem::transmute(__lookup_create::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_init_obj_reference {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ExchangeDialogContent as ::unity2::ClassIdentity>::class(),
-                "InitObjReference",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ExchangeDialogContent as ::unity2::ClassIdentity>::NAME,
-                        "InitObjReference",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn init_obj_reference(this: ExchangeDialogContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ExchangeDialogContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_init_obj_reference::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_build_menu_item_content {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ExchangeDialogContent as ::unity2::ClassIdentity>::class(),
-                "BuildMenuItemContent",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ExchangeDialogContent as ::unity2::ClassIdentity>::NAME,
-                        "BuildMenuItemContent",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn build_menu_item_content(this: ExchangeDialogContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ExchangeDialogContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_build_menu_item_content::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_get_item_list_count {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ExchangeDialogContent as ::unity2::ClassIdentity>::class(),
-                "GetGetItemListCount",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ExchangeDialogContent as ::unity2::ClassIdentity>::NAME,
-                        "GetGetItemListCount",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_get_item_list_count(this: ExchangeDialogContent, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(ExchangeDialogContent, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_get_item_list_count::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_cost_item_list_count {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ExchangeDialogContent as ::unity2::ClassIdentity>::class(),
-                "GetCostItemListCount",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ExchangeDialogContent as ::unity2::ClassIdentity>::NAME,
-                        "GetCostItemListCount",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_cost_item_list_count(this: ExchangeDialogContent, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(ExchangeDialogContent, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_cost_item_list_count::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_cursor_moved_pos_x {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ExchangeDialogContent as ::unity2::ClassIdentity>::class(),
-                "CalcCursorMovedPosX",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ExchangeDialogContent as ::unity2::ClassIdentity>::NAME,
-                        "CalcCursorMovedPosX",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn calc_cursor_moved_pos_x(this: ExchangeDialogContent, menu_item_index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(ExchangeDialogContent, i32, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_calc_cursor_moved_pos_x::get_method_info().method_ptr);
-        inner(this, menu_item_index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_cursor_moved_pos_y {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ExchangeDialogContent as ::unity2::ClassIdentity>::class(),
-                "CalcCursorMovedPosY",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ExchangeDialogContent as ::unity2::ClassIdentity>::NAME,
-                        "CalcCursorMovedPosY",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn calc_cursor_moved_pos_y(this: ExchangeDialogContent, menu_item_index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(ExchangeDialogContent, i32, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_calc_cursor_moved_pos_y::get_method_info().method_ptr);
-        inner(this, menu_item_index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ExchangeDialogContent as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ExchangeDialogContent as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: ExchangeDialogContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ExchangeDialogContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ExchangeDialogContent as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ExchangeDialogContent as ::unity2::ClassIdentity>::NAME,
-                        ".cctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ExchangeDialogContent_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_load_prefab_async { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ExchangeDialogContent as :: unity2 :: ClassIdentity > :: class () , "LoadPrefabAsync" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ExchangeDialogContent as :: unity2 :: ClassIdentity > :: NAME , "LoadPrefabAsync" , e) , } } } pub unsafe fn load_prefab_async (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_load_prefab_async :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ExchangeDialogContent as :: unity2 :: ClassIdentity > :: class () , "Create" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ExchangeDialogContent as :: unity2 :: ClassIdentity > :: NAME , "Create" , e) , } } } pub unsafe fn create (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: exchangedialogcontent :: ExchangeDialogContent { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: exchangedialogcontent :: ExchangeDialogContent = :: core :: mem :: transmute (__lookup_create :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_init_obj_reference { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ExchangeDialogContent as :: unity2 :: ClassIdentity > :: class () , "InitObjReference" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ExchangeDialogContent as :: unity2 :: ClassIdentity > :: NAME , "InitObjReference" , e) , } } } pub unsafe fn init_obj_reference (this : ExchangeDialogContent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ExchangeDialogContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_init_obj_reference :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_build_menu_item_content { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ExchangeDialogContent as :: unity2 :: ClassIdentity > :: class () , "BuildMenuItemContent" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ExchangeDialogContent as :: unity2 :: ClassIdentity > :: NAME , "BuildMenuItemContent" , e) , } } } pub unsafe fn build_menu_item_content (this : ExchangeDialogContent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ExchangeDialogContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_build_menu_item_content :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_get_item_list_count { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ExchangeDialogContent as :: unity2 :: ClassIdentity > :: class () , "GetGetItemListCount" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ExchangeDialogContent as :: unity2 :: ClassIdentity > :: NAME , "GetGetItemListCount" , e) , } } } pub unsafe fn get_get_item_list_count (this : ExchangeDialogContent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (ExchangeDialogContent , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_get_item_list_count :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_cost_item_list_count { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ExchangeDialogContent as :: unity2 :: ClassIdentity > :: class () , "GetCostItemListCount" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ExchangeDialogContent as :: unity2 :: ClassIdentity > :: NAME , "GetCostItemListCount" , e) , } } } pub unsafe fn get_cost_item_list_count (this : ExchangeDialogContent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (ExchangeDialogContent , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_cost_item_list_count :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_calc_cursor_moved_pos_x { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ExchangeDialogContent as :: unity2 :: ClassIdentity > :: class () , "CalcCursorMovedPosX" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ExchangeDialogContent as :: unity2 :: ClassIdentity > :: NAME , "CalcCursorMovedPosX" , e) , } } } pub unsafe fn calc_cursor_moved_pos_x (this : ExchangeDialogContent , menu_item_index : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (ExchangeDialogContent , i32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_calc_cursor_moved_pos_x :: get_method_info () . method_ptr ,) ; inner (this , menu_item_index , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_calc_cursor_moved_pos_y { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ExchangeDialogContent as :: unity2 :: ClassIdentity > :: class () , "CalcCursorMovedPosY" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ExchangeDialogContent as :: unity2 :: ClassIdentity > :: NAME , "CalcCursorMovedPosY" , e) , } } } pub unsafe fn calc_cursor_moved_pos_y (this : ExchangeDialogContent , menu_item_index : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (ExchangeDialogContent , i32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_calc_cursor_moved_pos_y :: get_method_info () . method_ptr ,) ; inner (this , menu_item_index , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ExchangeDialogContent as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ExchangeDialogContent as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : ExchangeDialogContent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ExchangeDialogContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ExchangeDialogContent as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ExchangeDialogContent as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
+
+#[cfg(feature = "app-exchangedialogcontent")]
+impl ExchangeDialogContent { # [doc = "`LoadPrefabAsync()` overload"] pub fn load_prefab_async () -> () { unsafe { __ExchangeDialogContent_unity2_raw :: load_prefab_async (:: core :: option :: Option :: None) } } # [doc = "`Create()` overload"] pub fn create () -> crate :: app :: exchangedialogcontent :: ExchangeDialogContent { unsafe { __ExchangeDialogContent_unity2_raw :: create (:: core :: option :: Option :: None) } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { __ExchangeDialogContent_unity2_raw :: cctor (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-exchangedialogcontent")]
+pub trait IExchangeDialogContentMethods : IExchangeDialogContent { # [doc = "`InitObjReference()` overload"] fn init_obj_reference (self ,) -> () { unsafe { let __receiver = < ExchangeDialogContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ExchangeDialogContent_unity2_raw :: init_obj_reference (__receiver , :: core :: option :: Option :: None) } } # [doc = "`BuildMenuItemContent()` overload"] fn build_menu_item_content (self ,) -> () { unsafe { let __receiver = < ExchangeDialogContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ExchangeDialogContent_unity2_raw :: build_menu_item_content (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetGetItemListCount()` overload"] fn get_get_item_list_count (self ,) -> i32 { unsafe { let __receiver = < ExchangeDialogContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ExchangeDialogContent_unity2_raw :: get_get_item_list_count (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetCostItemListCount()` overload"] fn get_cost_item_list_count (self ,) -> i32 { unsafe { let __receiver = < ExchangeDialogContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ExchangeDialogContent_unity2_raw :: get_cost_item_list_count (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CalcCursorMovedPosX(i32)` overload"] fn calc_cursor_moved_pos_x (self , menu_item_index : impl :: core :: convert :: Into < i32 >) -> f32 { unsafe { let __receiver = < ExchangeDialogContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ExchangeDialogContent_unity2_raw :: calc_cursor_moved_pos_x (__receiver , :: core :: convert :: Into :: into (menu_item_index) , :: core :: option :: Option :: None) } } # [doc = "`CalcCursorMovedPosY(i32)` overload"] fn calc_cursor_moved_pos_y (self , menu_item_index : impl :: core :: convert :: Into < i32 >) -> f32 { unsafe { let __receiver = < ExchangeDialogContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ExchangeDialogContent_unity2_raw :: calc_cursor_moved_pos_y (__receiver , :: core :: convert :: Into :: into (menu_item_index) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ExchangeDialogContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ExchangeDialogContent_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-exchangedialogcontent")]
+impl < __T : IExchangeDialogContent > IExchangeDialogContentMethods for __T { }
+
+#[cfg(feature = "app-exchangedialogcontent")]
+impl ExchangeDialogContent { pub fn load_prefab_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ExchangeDialogContent_unity2_raw :: __lookup_load_prefab_async :: get_method_info () } pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ExchangeDialogContent_unity2_raw :: __lookup_create :: get_method_info () } pub fn init_obj_reference_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ExchangeDialogContent_unity2_raw :: __lookup_init_obj_reference :: get_method_info () } pub fn build_menu_item_content_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ExchangeDialogContent_unity2_raw :: __lookup_build_menu_item_content :: get_method_info () } pub fn get_get_item_list_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ExchangeDialogContent_unity2_raw :: __lookup_get_get_item_list_count :: get_method_info () } pub fn get_cost_item_list_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ExchangeDialogContent_unity2_raw :: __lookup_get_cost_item_list_count :: get_method_info () } pub fn calc_cursor_moved_pos_x_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ExchangeDialogContent_unity2_raw :: __lookup_calc_cursor_moved_pos_x :: get_method_info () } pub fn calc_cursor_moved_pos_y_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ExchangeDialogContent_unity2_raw :: __lookup_calc_cursor_moved_pos_y :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ExchangeDialogContent_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ExchangeDialogContent_unity2_raw :: __lookup_cctor :: get_method_info () } }
 
 #[cfg(feature = "app-exchangedialogcontent")]
 impl ExchangeDialogContent {
-    #[doc = "`LoadPrefabAsync()` overload"]
-    pub fn load_prefab_async() -> () {
-        unsafe { __ExchangeDialogContent_unity2_raw::load_prefab_async(::core::option::Option::None) }
-    }
-
-    #[doc = "`Create()` overload"]
-    pub fn create() -> crate::app::exchangedialogcontent::ExchangeDialogContent {
-        unsafe { __ExchangeDialogContent_unity2_raw::create(::core::option::Option::None) }
-    }
-
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __ExchangeDialogContent_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-exchangedialogcontent")]
-pub trait IExchangeDialogContentMethods: IExchangeDialogContent {
-    #[doc = "`InitObjReference()` overload"]
-    fn init_obj_reference(self) -> () {
-        unsafe {
-            let __receiver =
-                <ExchangeDialogContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ExchangeDialogContent_unity2_raw::init_obj_reference(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`BuildMenuItemContent()` overload"]
-    fn build_menu_item_content(self) -> () {
-        unsafe {
-            let __receiver =
-                <ExchangeDialogContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ExchangeDialogContent_unity2_raw::build_menu_item_content(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetGetItemListCount()` overload"]
-    fn get_get_item_list_count(self) -> i32 {
-        unsafe {
-            let __receiver =
-                <ExchangeDialogContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ExchangeDialogContent_unity2_raw::get_get_item_list_count(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetCostItemListCount()` overload"]
-    fn get_cost_item_list_count(self) -> i32 {
-        unsafe {
-            let __receiver =
-                <ExchangeDialogContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ExchangeDialogContent_unity2_raw::get_cost_item_list_count(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CalcCursorMovedPosX(i32)` overload"]
-    fn calc_cursor_moved_pos_x(self, menu_item_index: impl ::core::convert::Into<i32>) -> f32 {
-        unsafe {
-            let __receiver =
-                <ExchangeDialogContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ExchangeDialogContent_unity2_raw::calc_cursor_moved_pos_x(
-                __receiver,
-                ::core::convert::Into::into(menu_item_index),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CalcCursorMovedPosY(i32)` overload"]
-    fn calc_cursor_moved_pos_y(self, menu_item_index: impl ::core::convert::Into<i32>) -> f32 {
-        unsafe {
-            let __receiver =
-                <ExchangeDialogContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ExchangeDialogContent_unity2_raw::calc_cursor_moved_pos_y(
-                __receiver,
-                ::core::convert::Into::into(menu_item_index),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <ExchangeDialogContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ExchangeDialogContent_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-exchangedialogcontent")]
-impl<__T: IExchangeDialogContent> IExchangeDialogContentMethods for __T {}
-
-#[cfg(feature = "app-exchangedialogcontent")]
-impl ExchangeDialogContent {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ExchangeDialogContent),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IExchangeDialogContentMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ExchangeDialogContent) , :: core :: stringify ! (new) ,)) ; < Self as IExchangeDialogContentMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-exchangedialogcontent")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{ExchangeDialogContent, IExchangeDialogContent, IExchangeDialogContentMethods};
-    #[cfg(feature = "app-basicdialogcontent")]
-    pub use crate::app::basicdialogcontent::IBasicDialogContentMethods;
-    #[cfg(feature = "app-basicmenucontent")]
-    pub use crate::app::basicmenucontent::IBasicMenuContentMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        app::{basicdialogcontent::IBasicDialogContent, basicmenucontent::IBasicMenuContent},
-        system::object::IObject,
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::ExchangeDialogContent;
+    pub use super::IExchangeDialogContent;
+    pub use super::IExchangeDialogContentMethods;
+    pub use crate::app::basicdialogcontent::IBasicDialogContent;
+    pub use crate::app::basicmenucontent::IBasicMenuContent;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "app-basicdialogcontent")] pub use crate::app::basicdialogcontent::IBasicDialogContentMethods;
+    #[cfg(feature = "app-basicmenucontent")] pub use crate::app::basicmenucontent::IBasicMenuContentMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

@@ -2,88 +2,34 @@
 
 #[cfg(feature = "unity_engine-hashutilities-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/hashutilities/HashUtilities.md"))]
-    #[::unity2::class(namespace = "UnityEngine", name = "HashUtilities")]
-    #[parent(crate::system::object::Object)]
-    pub struct HashUtilities {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/hashutilities/HashUtilities.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "HashUtilities")] # [parent (crate :: system :: object :: Object)] pub struct HashUtilities {}
+
 }
 
 #[cfg(feature = "unity_engine-hashutilities-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-hashutilities")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __HashUtilities_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_append_hash {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::hash128::Hash128 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::hash128::Hash128 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HashUtilities as ::unity2::ClassIdentity>::class(),
-                "AppendHash",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HashUtilities as ::unity2::ClassIdentity>::NAME,
-                        "AppendHash",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn append_hash(
-        in_hash: *mut crate::unity_engine::hash128::Hash128,
-        out_hash: *mut crate::unity_engine::hash128::Hash128,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            *mut crate::unity_engine::hash128::Hash128,
-            *mut crate::unity_engine::hash128::Hash128,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_append_hash::get_method_info().method_ptr);
-        inner(in_hash, out_hash, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __HashUtilities_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_append_hash { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: hash128 :: Hash128 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: hash128 :: Hash128 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HashUtilities as :: unity2 :: ClassIdentity > :: class () , "AppendHash" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HashUtilities as :: unity2 :: ClassIdentity > :: NAME , "AppendHash" , e) , } } } pub unsafe fn append_hash (in_hash : * mut crate :: unity_engine :: hash128 :: Hash128 , out_hash : * mut crate :: unity_engine :: hash128 :: Hash128 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (* mut crate :: unity_engine :: hash128 :: Hash128 , * mut crate :: unity_engine :: hash128 :: Hash128 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_append_hash :: get_method_info () . method_ptr ,) ; inner (in_hash , out_hash , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-hashutilities")]
-impl HashUtilities {
-    #[doc = "`AppendHash(*mutcrate::unity_engine::hash128::Hash128, *mutcrate::unity_engine::hash128::Hash128)` overload"]
-    pub fn append_hash() -> (crate::unity_engine::hash128::Hash128, crate::unity_engine::hash128::Hash128) {
-        unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::hash128::Hash128>::uninit();
-            let mut __out_1 = ::core::mem::MaybeUninit::<crate::unity_engine::hash128::Hash128>::uninit();
-            __HashUtilities_unity2_raw::append_hash(__out_0.as_mut_ptr(), __out_1.as_mut_ptr(), ::core::option::Option::None);
-            (__out_0.assume_init(), __out_1.assume_init())
-        }
-    }
-}
+impl HashUtilities { # [doc = "`AppendHash(*mutcrate::unity_engine::hash128::Hash128, *mutcrate::unity_engine::hash128::Hash128)` overload"] pub fn append_hash () -> (crate :: unity_engine :: hash128 :: Hash128 , crate :: unity_engine :: hash128 :: Hash128) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: hash128 :: Hash128 > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: hash128 :: Hash128 > :: uninit () ; __HashUtilities_unity2_raw :: append_hash (__out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: option :: Option :: None) ; (__out_0 . assume_init () , __out_1 . assume_init ()) } } }
+
+#[cfg(feature = "unity_engine-hashutilities")]
+impl HashUtilities { pub fn append_hash_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HashUtilities_unity2_raw :: __lookup_append_hash :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-hashutilities")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{HashUtilities, IHashUtilities};
+    pub use super::HashUtilities;
+    pub use super::IHashUtilities;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

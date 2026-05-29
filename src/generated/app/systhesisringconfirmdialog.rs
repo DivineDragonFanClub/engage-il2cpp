@@ -2,467 +2,114 @@
 
 #[cfg(feature = "app-systhesisringconfirmdialog-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::{
-            basicdialogitem::{BasicDialogItem, IBasicDialogItem},
-            basicdialogitemyes::{BasicDialogItemYes, IBasicDialogItemYes},
-            basicmenuitem::{BasicMenuItem, IBasicMenuItem},
-        },
-        system::{
-            delegate::{Delegate, IDelegate},
-            multicastdelegate::{IMulticastDelegate, MulticastDelegate},
-            object::{IObject, Object},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systhesisringconfirmdialog/SysthesisRingConfirmDialog_DecideEventHandler.md"))]
-    #[::unity2::class(namespace = "App", name = "SysthesisRingConfirmDialog.DecideEventHandler")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct SysthesisRingConfirmDialog_DecideEventHandler {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: basicdialogitem :: { BasicDialogItem , IBasicDialogItem }
+ ;
+ use crate :: app :: basicdialogitemyes :: { BasicDialogItemYes , IBasicDialogItemYes }
+ ;
+ use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
+ ;
+ use crate :: system :: delegate :: { Delegate , IDelegate }
+ ;
+ use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systhesisringconfirmdialog/SysthesisRingConfirmDialog_YesDialogItem.md"))]
-    #[::unity2::class(namespace = "App", name = "SysthesisRingConfirmDialog.YesDialogItem")]
-    #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
-    pub struct SysthesisRingConfirmDialog_YesDialogItem {
-        #[offset(112)]
-        #[rename(name = "m_DecideEventHandler")]
-        pub m_decide_event_handler: crate::app::systhesisringconfirmdialog::SysthesisRingConfirmDialog_DecideEventHandler,
-    }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systhesisringconfirmdialog/SysthesisRingConfirmDialog.md"))]
-    #[::unity2::class(namespace = "App", name = "SysthesisRingConfirmDialog")]
-    #[parent(crate::system::object::Object)]
-    pub struct SysthesisRingConfirmDialog {}
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systhesisringconfirmdialog/SysthesisRingConfirmDialog_DecideEventHandler.md"))] # [:: unity2 :: class (namespace = "App" , name = "SysthesisRingConfirmDialog.DecideEventHandler")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct SysthesisRingConfirmDialog_DecideEventHandler {}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systhesisringconfirmdialog/SysthesisRingConfirmDialog_YesDialogItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "SysthesisRingConfirmDialog.YesDialogItem")] # [parent (crate :: app :: basicdialogitemyes :: BasicDialogItemYes)] pub struct SysthesisRingConfirmDialog_YesDialogItem {
+# [offset (112)] # [rename (name = "m_DecideEventHandler")] pub m_decide_event_handler : crate :: app :: systhesisringconfirmdialog :: SysthesisRingConfirmDialog_DecideEventHandler ,
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systhesisringconfirmdialog/SysthesisRingConfirmDialog.md"))] # [:: unity2 :: class (namespace = "App" , name = "SysthesisRingConfirmDialog")] # [parent (crate :: system :: object :: Object)] pub struct SysthesisRingConfirmDialog {}
+
 }
 
 #[cfg(feature = "app-systhesisringconfirmdialog-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-systhesisringconfirmdialog")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __SysthesisRingConfirmDialog_DecideEventHandler_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SysthesisRingConfirmDialog_DecideEventHandler as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SysthesisRingConfirmDialog_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: SysthesisRingConfirmDialog_DecideEventHandler,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            SysthesisRingConfirmDialog_DecideEventHandler,
-            crate::system::object::Object,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SysthesisRingConfirmDialog_DecideEventHandler as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SysthesisRingConfirmDialog_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
-                        "Invoke",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn invoke(this: SysthesisRingConfirmDialog_DecideEventHandler, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SysthesisRingConfirmDialog_DecideEventHandler, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __SysthesisRingConfirmDialog_DecideEventHandler_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type () , < :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SysthesisRingConfirmDialog_DecideEventHandler as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SysthesisRingConfirmDialog_DecideEventHandler as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : SysthesisRingConfirmDialog_DecideEventHandler , object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SysthesisRingConfirmDialog_DecideEventHandler , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , object , method , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_invoke { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SysthesisRingConfirmDialog_DecideEventHandler as :: unity2 :: ClassIdentity > :: class () , "Invoke" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SysthesisRingConfirmDialog_DecideEventHandler as :: unity2 :: ClassIdentity > :: NAME , "Invoke" , e) , } } } pub unsafe fn invoke (this : SysthesisRingConfirmDialog_DecideEventHandler , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SysthesisRingConfirmDialog_DecideEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_invoke :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-systhesisringconfirmdialog")]
-pub trait ISysthesisRingConfirmDialog_DecideEventHandlerMethods: ISysthesisRingConfirmDialog_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
-        unsafe {
-            let __receiver = <SysthesisRingConfirmDialog_DecideEventHandler as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SysthesisRingConfirmDialog_DecideEventHandler_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invoke()` overload"]
-    fn invoke(self) -> () {
-        unsafe {
-            let __receiver = <SysthesisRingConfirmDialog_DecideEventHandler as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SysthesisRingConfirmDialog_DecideEventHandler_unity2_raw::invoke(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait ISysthesisRingConfirmDialog_DecideEventHandlerMethods : ISysthesisRingConfirmDialog_DecideEventHandler { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < SysthesisRingConfirmDialog_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SysthesisRingConfirmDialog_DecideEventHandler_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } # [doc = "`Invoke()` overload"] fn invoke (self ,) -> () { unsafe { let __receiver = < SysthesisRingConfirmDialog_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SysthesisRingConfirmDialog_DecideEventHandler_unity2_raw :: invoke (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-systhesisringconfirmdialog")]
-impl<__T: ISysthesisRingConfirmDialog_DecideEventHandler> ISysthesisRingConfirmDialog_DecideEventHandlerMethods for __T {}
+impl < __T : ISysthesisRingConfirmDialog_DecideEventHandler > ISysthesisRingConfirmDialog_DecideEventHandlerMethods for __T { }
+
+#[cfg(feature = "app-systhesisringconfirmdialog")]
+impl SysthesisRingConfirmDialog_DecideEventHandler { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SysthesisRingConfirmDialog_DecideEventHandler_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SysthesisRingConfirmDialog_DecideEventHandler_unity2_raw :: __lookup_invoke :: get_method_info () } }
 
 #[cfg(feature = "app-systhesisringconfirmdialog")]
 impl SysthesisRingConfirmDialog_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SysthesisRingConfirmDialog_DecideEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISysthesisRingConfirmDialog_DecideEventHandlerMethods>::ctor(this, object, method);
-        this
-    }
+# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SysthesisRingConfirmDialog_DecideEventHandler) , :: core :: stringify ! (new) ,)) ; < Self as ISysthesisRingConfirmDialog_DecideEventHandlerMethods > :: ctor (this , object , method) ; this }
 }
 
 #[cfg(feature = "app-systhesisringconfirmdialog")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __SysthesisRingConfirmDialog_YesDialogItem_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::systhesisringconfirmdialog::SysthesisRingConfirmDialog_DecideEventHandler as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SysthesisRingConfirmDialog_YesDialogItem as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SysthesisRingConfirmDialog_YesDialogItem as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: SysthesisRingConfirmDialog_YesDialogItem,
-        decide_event_handler: crate::app::systhesisringconfirmdialog::SysthesisRingConfirmDialog_DecideEventHandler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            SysthesisRingConfirmDialog_YesDialogItem,
-            crate::app::systhesisringconfirmdialog::SysthesisRingConfirmDialog_DecideEventHandler,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, decide_event_handler, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_a_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SysthesisRingConfirmDialog_YesDialogItem as ::unity2::ClassIdentity>::class(),
-                "ACall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SysthesisRingConfirmDialog_YesDialogItem as ::unity2::ClassIdentity>::NAME,
-                        "ACall",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn a_call(
-        this: SysthesisRingConfirmDialog_YesDialogItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(SysthesisRingConfirmDialog_YesDialogItem, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
-            ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __SysthesisRingConfirmDialog_YesDialogItem_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: systhesisringconfirmdialog :: SysthesisRingConfirmDialog_DecideEventHandler as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SysthesisRingConfirmDialog_YesDialogItem as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SysthesisRingConfirmDialog_YesDialogItem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : SysthesisRingConfirmDialog_YesDialogItem , decide_event_handler : crate :: app :: systhesisringconfirmdialog :: SysthesisRingConfirmDialog_DecideEventHandler , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SysthesisRingConfirmDialog_YesDialogItem , crate :: app :: systhesisringconfirmdialog :: SysthesisRingConfirmDialog_DecideEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , decide_event_handler , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_a_call { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SysthesisRingConfirmDialog_YesDialogItem as :: unity2 :: ClassIdentity > :: class () , "ACall" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SysthesisRingConfirmDialog_YesDialogItem as :: unity2 :: ClassIdentity > :: NAME , "ACall" , e) , } } } pub unsafe fn a_call (this : SysthesisRingConfirmDialog_YesDialogItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result { let inner : extern "C" fn (SysthesisRingConfirmDialog_YesDialogItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute (__lookup_a_call :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-systhesisringconfirmdialog")]
-pub trait ISysthesisRingConfirmDialog_YesDialogItemMethods: ISysthesisRingConfirmDialog_YesDialogItem {
-    #[doc = "`.ctor(crate::app::systhesisringconfirmdialog::SysthesisRingConfirmDialog_DecideEventHandler)` overload"]
-    fn ctor(
-        self,
-        decide_event_handler: impl ::core::convert::Into<crate::app::systhesisringconfirmdialog::SysthesisRingConfirmDialog_DecideEventHandler>,
-    ) -> () {
-        unsafe {
-            let __receiver = <SysthesisRingConfirmDialog_YesDialogItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SysthesisRingConfirmDialog_YesDialogItem_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(decide_event_handler),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ACall()` overload"]
-    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = <SysthesisRingConfirmDialog_YesDialogItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SysthesisRingConfirmDialog_YesDialogItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait ISysthesisRingConfirmDialog_YesDialogItemMethods : ISysthesisRingConfirmDialog_YesDialogItem { # [doc = "`.ctor(crate::app::systhesisringconfirmdialog::SysthesisRingConfirmDialog_DecideEventHandler)` overload"] fn ctor (self , decide_event_handler : impl :: core :: convert :: Into < crate :: app :: systhesisringconfirmdialog :: SysthesisRingConfirmDialog_DecideEventHandler >) -> () { unsafe { let __receiver = < SysthesisRingConfirmDialog_YesDialogItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SysthesisRingConfirmDialog_YesDialogItem_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (decide_event_handler) , :: core :: option :: Option :: None) } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < SysthesisRingConfirmDialog_YesDialogItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SysthesisRingConfirmDialog_YesDialogItem_unity2_raw :: a_call (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-systhesisringconfirmdialog")]
-impl<__T: ISysthesisRingConfirmDialog_YesDialogItem> ISysthesisRingConfirmDialog_YesDialogItemMethods for __T {}
+impl < __T : ISysthesisRingConfirmDialog_YesDialogItem > ISysthesisRingConfirmDialog_YesDialogItemMethods for __T { }
+
+#[cfg(feature = "app-systhesisringconfirmdialog")]
+impl SysthesisRingConfirmDialog_YesDialogItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SysthesisRingConfirmDialog_YesDialogItem_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SysthesisRingConfirmDialog_YesDialogItem_unity2_raw :: __lookup_a_call :: get_method_info () } }
 
 #[cfg(feature = "app-systhesisringconfirmdialog")]
 impl SysthesisRingConfirmDialog_YesDialogItem {
-    #[doc = "`.ctor(crate::app::systhesisringconfirmdialog::SysthesisRingConfirmDialog_DecideEventHandler)` — overload selector"]
-    pub fn new(decide_event_handler: crate::app::systhesisringconfirmdialog::SysthesisRingConfirmDialog_DecideEventHandler) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SysthesisRingConfirmDialog_YesDialogItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISysthesisRingConfirmDialog_YesDialogItemMethods>::ctor(this, decide_event_handler);
-        this
-    }
+# [doc = "`.ctor(crate::app::systhesisringconfirmdialog::SysthesisRingConfirmDialog_DecideEventHandler)` — overload selector"] pub fn new (decide_event_handler : crate :: app :: systhesisringconfirmdialog :: SysthesisRingConfirmDialog_DecideEventHandler) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SysthesisRingConfirmDialog_YesDialogItem) , :: core :: stringify ! (new) ,)) ; < Self as ISysthesisRingConfirmDialog_YesDialogItemMethods > :: ctor (this , decide_event_handler) ; this }
 }
 
 #[cfg(feature = "app-systhesisringconfirmdialog")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __SysthesisRingConfirmDialog_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::app::systhesisringconfirmdialog::SysthesisRingConfirmDialog_DecideEventHandler as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SysthesisRingConfirmDialog as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SysthesisRingConfirmDialog as ::unity2::ClassIdentity>::NAME,
-                        "CreateBind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_bind(
-        proc: crate::app::procinst::ProcInst,
-        text: ::unity2::Il2CppString,
-        decide_event_handler: crate::app::systhesisringconfirmdialog::SysthesisRingConfirmDialog_DecideEventHandler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            ::unity2::Il2CppString,
-            crate::app::systhesisringconfirmdialog::SysthesisRingConfirmDialog_DecideEventHandler,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
-        inner(proc, text, decide_event_handler, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SysthesisRingConfirmDialog as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SysthesisRingConfirmDialog as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: SysthesisRingConfirmDialog, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SysthesisRingConfirmDialog, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __SysthesisRingConfirmDialog_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_bind { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: app :: systhesisringconfirmdialog :: SysthesisRingConfirmDialog_DecideEventHandler as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SysthesisRingConfirmDialog as :: unity2 :: ClassIdentity > :: class () , "CreateBind" , 3 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SysthesisRingConfirmDialog as :: unity2 :: ClassIdentity > :: NAME , "CreateBind" , e) , } } } pub unsafe fn create_bind (proc : crate :: app :: procinst :: ProcInst , text : :: unity2 :: Il2CppString , decide_event_handler : crate :: app :: systhesisringconfirmdialog :: SysthesisRingConfirmDialog_DecideEventHandler , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: Il2CppString , crate :: app :: systhesisringconfirmdialog :: SysthesisRingConfirmDialog_DecideEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create_bind :: get_method_info () . method_ptr ,) ; inner (proc , text , decide_event_handler , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SysthesisRingConfirmDialog as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SysthesisRingConfirmDialog as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : SysthesisRingConfirmDialog , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SysthesisRingConfirmDialog , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-systhesisringconfirmdialog")]
+impl SysthesisRingConfirmDialog { # [doc = "`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::app::systhesisringconfirmdialog::SysthesisRingConfirmDialog_DecideEventHandler)` overload"] pub fn create_bind (proc : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , text : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , decide_event_handler : impl :: core :: convert :: Into < crate :: app :: systhesisringconfirmdialog :: SysthesisRingConfirmDialog_DecideEventHandler >) -> () { unsafe { __SysthesisRingConfirmDialog_unity2_raw :: create_bind (:: core :: convert :: Into :: into (proc) , :: core :: convert :: Into :: into (text) , :: core :: convert :: Into :: into (decide_event_handler) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-systhesisringconfirmdialog")]
+pub trait ISysthesisRingConfirmDialogMethods : ISysthesisRingConfirmDialog { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < SysthesisRingConfirmDialog as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SysthesisRingConfirmDialog_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-systhesisringconfirmdialog")]
+impl < __T : ISysthesisRingConfirmDialog > ISysthesisRingConfirmDialogMethods for __T { }
+
+#[cfg(feature = "app-systhesisringconfirmdialog")]
+impl SysthesisRingConfirmDialog { pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SysthesisRingConfirmDialog_unity2_raw :: __lookup_create_bind :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SysthesisRingConfirmDialog_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-systhesisringconfirmdialog")]
 impl SysthesisRingConfirmDialog {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::app::systhesisringconfirmdialog::SysthesisRingConfirmDialog_DecideEventHandler)` overload"]
-    pub fn create_bind(
-        proc: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        text: impl ::core::convert::Into<::unity2::Il2CppString>,
-        decide_event_handler: impl ::core::convert::Into<crate::app::systhesisringconfirmdialog::SysthesisRingConfirmDialog_DecideEventHandler>,
-    ) -> () {
-        unsafe {
-            __SysthesisRingConfirmDialog_unity2_raw::create_bind(
-                ::core::convert::Into::into(proc),
-                ::core::convert::Into::into(text),
-                ::core::convert::Into::into(decide_event_handler),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-systhesisringconfirmdialog")]
-pub trait ISysthesisRingConfirmDialogMethods: ISysthesisRingConfirmDialog {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <SysthesisRingConfirmDialog as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SysthesisRingConfirmDialog_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-systhesisringconfirmdialog")]
-impl<__T: ISysthesisRingConfirmDialog> ISysthesisRingConfirmDialogMethods for __T {}
-
-#[cfg(feature = "app-systhesisringconfirmdialog")]
-impl SysthesisRingConfirmDialog {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SysthesisRingConfirmDialog),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISysthesisRingConfirmDialogMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SysthesisRingConfirmDialog) , :: core :: stringify ! (new) ,)) ; < Self as ISysthesisRingConfirmDialogMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-systhesisringconfirmdialog")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{
-        ISysthesisRingConfirmDialog, ISysthesisRingConfirmDialogMethods, ISysthesisRingConfirmDialog_DecideEventHandler,
-        ISysthesisRingConfirmDialog_DecideEventHandlerMethods, ISysthesisRingConfirmDialog_YesDialogItem,
-        ISysthesisRingConfirmDialog_YesDialogItemMethods, SysthesisRingConfirmDialog, SysthesisRingConfirmDialog_DecideEventHandler,
-        SysthesisRingConfirmDialog_YesDialogItem,
-    };
-    #[cfg(feature = "app-basicdialogitem")]
-    pub use crate::app::basicdialogitem::IBasicDialogItemMethods;
-    #[cfg(feature = "app-basicdialogitemyes")]
-    pub use crate::app::basicdialogitemyes::IBasicDialogItemYesMethods;
-    #[cfg(feature = "app-basicmenuitem")]
-    pub use crate::app::basicmenuitem::IBasicMenuItemMethods;
-    #[cfg(feature = "system-delegate")]
-    pub use crate::system::delegate::IDelegateMethods;
-    #[cfg(feature = "system-multicastdelegate")]
-    pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::{
-        app::{basicdialogitem::IBasicDialogItem, basicdialogitemyes::IBasicDialogItemYes, basicmenuitem::IBasicMenuItem},
-        system::{delegate::IDelegate, multicastdelegate::IMulticastDelegate, object::IObject},
-    };
+    pub use super::SysthesisRingConfirmDialog_DecideEventHandler;
+    pub use super::ISysthesisRingConfirmDialog_DecideEventHandler;
+    pub use super::ISysthesisRingConfirmDialog_DecideEventHandlerMethods;
+    pub use super::SysthesisRingConfirmDialog_YesDialogItem;
+    pub use super::ISysthesisRingConfirmDialog_YesDialogItem;
+    pub use super::ISysthesisRingConfirmDialog_YesDialogItemMethods;
+    pub use super::SysthesisRingConfirmDialog;
+    pub use super::ISysthesisRingConfirmDialog;
+    pub use super::ISysthesisRingConfirmDialogMethods;
+    pub use crate::app::basicdialogitem::IBasicDialogItem;
+    pub use crate::app::basicdialogitemyes::IBasicDialogItemYes;
+    pub use crate::app::basicmenuitem::IBasicMenuItem;
+    pub use crate::system::delegate::IDelegate;
+    pub use crate::system::multicastdelegate::IMulticastDelegate;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "app-basicdialogitem")] pub use crate::app::basicdialogitem::IBasicDialogItemMethods;
+    #[cfg(feature = "app-basicdialogitemyes")] pub use crate::app::basicdialogitemyes::IBasicDialogItemYesMethods;
+    #[cfg(feature = "app-basicmenuitem")] pub use crate::app::basicmenuitem::IBasicMenuItemMethods;
+    #[cfg(feature = "system-delegate")] pub use crate::system::delegate::IDelegateMethods;
+    #[cfg(feature = "system-multicastdelegate")] pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

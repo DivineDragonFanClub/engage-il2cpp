@@ -2,765 +2,85 @@
 
 #[cfg(feature = "app-minimapterrainrenderer-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            event_systems::uibehaviour::{IUIBehaviour, UIBehaviour},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-            ui::{
-                graphic::{Graphic, IGraphic},
-                maskablegraphic::{IMaskableGraphic, MaskableGraphic},
-            },
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/minimapterrainrenderer/MiniMapTerrainRenderer.md"))]
-    #[::unity2::class(namespace = "App", name = "MiniMapTerrainRenderer")]
-    #[parent(crate::unity_engine::ui::maskablegraphic::MaskableGraphic)]
-    pub struct MiniMapTerrainRenderer {
-        #[offset(208)]
-        #[rename(name = "m_Texture")]
-        pub m_texture: crate::unity_engine::texture2d::Texture2D,
-        #[offset(216)]
-        #[rename(name = "m_CanvasRenderer")]
-        pub m_canvas_renderer: crate::unity_engine::canvasrenderer::CanvasRenderer,
-        #[offset(224)]
-        #[rename(name = "m_CostTypeColors")]
-        pub m_cost_type_colors: ::unity2::Array<crate::unity_engine::color::Color>,
-        #[offset(232)]
-        #[rename(name = "m_IsFillConstColorSightRange")]
-        pub m_is_fill_const_color_sight_range: bool,
-        #[offset(236)]
-        #[rename(name = "m_SightColorDarkness")]
-        pub m_sight_color_darkness: f32,
-        #[offset(240)]
-        #[rename(name = "m_SightFillColor")]
-        pub m_sight_fill_color: crate::unity_engine::color::Color,
-        #[offset(256)]
-        #[rename(name = "m_Mesh")]
-        pub m_mesh: crate::unity_engine::mesh::Mesh,
-        #[offset(264)]
-        #[rename(name = "m_Vertices")]
-        pub m_vertices: crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3>,
-        #[offset(272)]
-        #[rename(name = "m_Colors")]
-        pub m_colors: crate::system::collections::generic::list_1::List_1<crate::unity_engine::color::Color>,
-        #[offset(280)]
-        #[rename(name = "m_UVs")]
-        pub m_u_vs: crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector2::Vector2>,
-        #[offset(288)]
-        #[rename(name = "m_Indices")]
-        pub m_indices: crate::system::collections::generic::list_1::List_1<i32>,
-        #[offset(296)]
-        #[rename(name = "VERTEX_CAPACITY")]
-        pub vertex_capacity: i32,
-        #[offset(312)]
-        #[rename(name = "vtxOffsets")]
-        pub vtx_offsets: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: event_systems :: uibehaviour :: { IUIBehaviour , UIBehaviour }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+ use crate :: unity_engine :: ui :: graphic :: { Graphic , IGraphic }
+ ;
+ use crate :: unity_engine :: ui :: maskablegraphic :: { IMaskableGraphic , MaskableGraphic }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/minimapterrainrenderer/MiniMapTerrainRenderer.md"))] # [:: unity2 :: class (namespace = "App" , name = "MiniMapTerrainRenderer")] # [parent (crate :: unity_engine :: ui :: maskablegraphic :: MaskableGraphic)] pub struct MiniMapTerrainRenderer {
+# [offset (208)] # [rename (name = "m_Texture")] pub m_texture : crate :: unity_engine :: texture2d :: Texture2D ,
+# [offset (216)] # [rename (name = "m_CanvasRenderer")] pub m_canvas_renderer : crate :: unity_engine :: canvasrenderer :: CanvasRenderer ,
+# [offset (224)] # [rename (name = "m_CostTypeColors")] pub m_cost_type_colors : :: unity2 :: Array < crate :: unity_engine :: color :: Color > ,
+# [offset (232)] # [rename (name = "m_IsFillConstColorSightRange")] pub m_is_fill_const_color_sight_range : bool ,
+# [offset (236)] # [rename (name = "m_SightColorDarkness")] pub m_sight_color_darkness : f32 ,
+# [offset (240)] # [rename (name = "m_SightFillColor")] pub m_sight_fill_color : crate :: unity_engine :: color :: Color ,
+# [offset (256)] # [rename (name = "m_Mesh")] pub m_mesh : crate :: unity_engine :: mesh :: Mesh ,
+# [offset (264)] # [rename (name = "m_Vertices")] pub m_vertices : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: vector3 :: Vector3 > ,
+# [offset (272)] # [rename (name = "m_Colors")] pub m_colors : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: color :: Color > ,
+# [offset (280)] # [rename (name = "m_UVs")] pub m_u_vs : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: vector2 :: Vector2 > ,
+# [offset (288)] # [rename (name = "m_Indices")] pub m_indices : crate :: system :: collections :: generic :: list_1 :: List_1 < i32 > ,
+# [offset (296)] # [rename (name = "VERTEX_CAPACITY")] pub vertex_capacity : i32 ,
+# [offset (312)] # [rename (name = "vtxOffsets")] pub vtx_offsets : :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > ,
+}
+
 }
 
 #[cfg(feature = "app-minimapterrainrenderer-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-minimapterrainrenderer")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MiniMapTerrainRenderer_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_texture {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MiniMapTerrainRenderer as ::unity2::ClassIdentity>::class(),
-                "get_Texture",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MiniMapTerrainRenderer as ::unity2::ClassIdentity>::NAME,
-                        "get_Texture",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_texture(
-        this: MiniMapTerrainRenderer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::texture2d::Texture2D {
-        let inner: extern "C" fn(MiniMapTerrainRenderer, ::unity2::OptionalMethod) -> crate::unity_engine::texture2d::Texture2D =
-            ::core::mem::transmute(__lookup_get_texture::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_texture {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::texture2d::Texture2D as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MiniMapTerrainRenderer as ::unity2::ClassIdentity>::class(),
-                "set_Texture",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MiniMapTerrainRenderer as ::unity2::ClassIdentity>::NAME,
-                        "set_Texture",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_texture(
-        this: MiniMapTerrainRenderer,
-        value: crate::unity_engine::texture2d::Texture2D,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MiniMapTerrainRenderer, crate::unity_engine::texture2d::Texture2D, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_texture::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_canvas_renderer {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MiniMapTerrainRenderer as ::unity2::ClassIdentity>::class(),
-                "get_CanvasRenderer",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MiniMapTerrainRenderer as ::unity2::ClassIdentity>::NAME,
-                        "get_CanvasRenderer",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_canvas_renderer(
-        this: MiniMapTerrainRenderer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::canvasrenderer::CanvasRenderer {
-        let inner: extern "C" fn(MiniMapTerrainRenderer, ::unity2::OptionalMethod) -> crate::unity_engine::canvasrenderer::CanvasRenderer =
-            ::core::mem::transmute(__lookup_get_canvas_renderer::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_grid_size {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MiniMapTerrainRenderer as ::unity2::ClassIdentity>::class(),
-                "set_GridSize",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MiniMapTerrainRenderer as ::unity2::ClassIdentity>::NAME,
-                        "set_GridSize",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_grid_size(this: MiniMapTerrainRenderer, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MiniMapTerrainRenderer, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_grid_size::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_grid_size {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MiniMapTerrainRenderer as ::unity2::ClassIdentity>::class(),
-                "get_GridSize",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MiniMapTerrainRenderer as ::unity2::ClassIdentity>::NAME,
-                        "get_GridSize",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_grid_size(this: MiniMapTerrainRenderer, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(MiniMapTerrainRenderer, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_get_grid_size::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_out_line_size {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MiniMapTerrainRenderer as ::unity2::ClassIdentity>::class(),
-                "set_OutLineSize",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MiniMapTerrainRenderer as ::unity2::ClassIdentity>::NAME,
-                        "set_OutLineSize",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_out_line_size(this: MiniMapTerrainRenderer, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MiniMapTerrainRenderer, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_out_line_size::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_out_line_size {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MiniMapTerrainRenderer as ::unity2::ClassIdentity>::class(),
-                "get_OutLineSize",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MiniMapTerrainRenderer as ::unity2::ClassIdentity>::NAME,
-                        "get_OutLineSize",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_out_line_size(this: MiniMapTerrainRenderer, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(MiniMapTerrainRenderer, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_get_out_line_size::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_try_initialize_data {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MiniMapTerrainRenderer as ::unity2::ClassIdentity>::class(),
-                "TryInitializeData",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MiniMapTerrainRenderer as ::unity2::ClassIdentity>::NAME,
-                        "TryInitializeData",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn try_initialize_data(this: MiniMapTerrainRenderer, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MiniMapTerrainRenderer, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_try_initialize_data::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_map_image {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MiniMapTerrainRenderer as ::unity2::ClassIdentity>::class(),
-                "GetMapImage",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MiniMapTerrainRenderer as ::unity2::ClassIdentity>::NAME,
-                        "GetMapImage",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_map_image(this: MiniMapTerrainRenderer, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::mapimage::MapImage {
-        let inner: extern "C" fn(MiniMapTerrainRenderer, ::unity2::OptionalMethod) -> crate::app::mapimage::MapImage =
-            ::core::mem::transmute(__lookup_get_map_image::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update_geometry {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MiniMapTerrainRenderer as ::unity2::ClassIdentity>::class(),
-                "UpdateGeometry",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MiniMapTerrainRenderer as ::unity2::ClassIdentity>::NAME,
-                        "UpdateGeometry",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update_geometry(this: MiniMapTerrainRenderer, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MiniMapTerrainRenderer, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update_geometry::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_terrain_mesh {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MiniMapTerrainRenderer as ::unity2::ClassIdentity>::class(),
-                "CreateTerrainMesh",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MiniMapTerrainRenderer as ::unity2::ClassIdentity>::NAME,
-                        "CreateTerrainMesh",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_terrain_mesh(this: MiniMapTerrainRenderer, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MiniMapTerrainRenderer, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_create_terrain_mesh::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_terrain_mesh_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::mapimage::MapImage as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MiniMapTerrainRenderer as ::unity2::ClassIdentity>::class(),
-                "CreateTerrainMesh",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MiniMapTerrainRenderer as ::unity2::ClassIdentity>::NAME,
-                        "CreateTerrainMesh",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_terrain_mesh_2(
-        this: MiniMapTerrainRenderer,
-        map_image: crate::app::mapimage::MapImage,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MiniMapTerrainRenderer, crate::app::mapimage::MapImage, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_create_terrain_mesh_2::get_method_info().method_ptr);
-        inner(this, map_image, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_mesh_to_renderer {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MiniMapTerrainRenderer as ::unity2::ClassIdentity>::class(),
-                "SetMeshToRenderer",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MiniMapTerrainRenderer as ::unity2::ClassIdentity>::NAME,
-                        "SetMeshToRenderer",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_mesh_to_renderer(this: MiniMapTerrainRenderer, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MiniMapTerrainRenderer, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_mesh_to_renderer::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update_map_size {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MiniMapTerrainRenderer as ::unity2::ClassIdentity>::class(),
-                "UpdateMapSize",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MiniMapTerrainRenderer as ::unity2::ClassIdentity>::NAME,
-                        "UpdateMapSize",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update_map_size(this: MiniMapTerrainRenderer, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MiniMapTerrainRenderer, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update_map_size::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MiniMapTerrainRenderer as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MiniMapTerrainRenderer as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: MiniMapTerrainRenderer, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MiniMapTerrainRenderer, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MiniMapTerrainRenderer_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_texture { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MiniMapTerrainRenderer as :: unity2 :: ClassIdentity > :: class () , "get_Texture" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MiniMapTerrainRenderer as :: unity2 :: ClassIdentity > :: NAME , "get_Texture" , e) , } } } pub unsafe fn get_texture (this : MiniMapTerrainRenderer , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: texture2d :: Texture2D { let inner : extern "C" fn (MiniMapTerrainRenderer , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: texture2d :: Texture2D = :: core :: mem :: transmute (__lookup_get_texture :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_texture { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: texture2d :: Texture2D as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MiniMapTerrainRenderer as :: unity2 :: ClassIdentity > :: class () , "set_Texture" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MiniMapTerrainRenderer as :: unity2 :: ClassIdentity > :: NAME , "set_Texture" , e) , } } } pub unsafe fn set_texture (this : MiniMapTerrainRenderer , value : crate :: unity_engine :: texture2d :: Texture2D , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MiniMapTerrainRenderer , crate :: unity_engine :: texture2d :: Texture2D , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_texture :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_canvas_renderer { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MiniMapTerrainRenderer as :: unity2 :: ClassIdentity > :: class () , "get_CanvasRenderer" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MiniMapTerrainRenderer as :: unity2 :: ClassIdentity > :: NAME , "get_CanvasRenderer" , e) , } } } pub unsafe fn get_canvas_renderer (this : MiniMapTerrainRenderer , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: canvasrenderer :: CanvasRenderer { let inner : extern "C" fn (MiniMapTerrainRenderer , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: canvasrenderer :: CanvasRenderer = :: core :: mem :: transmute (__lookup_get_canvas_renderer :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_grid_size { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MiniMapTerrainRenderer as :: unity2 :: ClassIdentity > :: class () , "set_GridSize" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MiniMapTerrainRenderer as :: unity2 :: ClassIdentity > :: NAME , "set_GridSize" , e) , } } } pub unsafe fn set_grid_size (this : MiniMapTerrainRenderer , value : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MiniMapTerrainRenderer , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_grid_size :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_grid_size { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MiniMapTerrainRenderer as :: unity2 :: ClassIdentity > :: class () , "get_GridSize" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MiniMapTerrainRenderer as :: unity2 :: ClassIdentity > :: NAME , "get_GridSize" , e) , } } } pub unsafe fn get_grid_size (this : MiniMapTerrainRenderer , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (MiniMapTerrainRenderer , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_get_grid_size :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_out_line_size { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MiniMapTerrainRenderer as :: unity2 :: ClassIdentity > :: class () , "set_OutLineSize" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MiniMapTerrainRenderer as :: unity2 :: ClassIdentity > :: NAME , "set_OutLineSize" , e) , } } } pub unsafe fn set_out_line_size (this : MiniMapTerrainRenderer , value : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MiniMapTerrainRenderer , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_out_line_size :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_out_line_size { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MiniMapTerrainRenderer as :: unity2 :: ClassIdentity > :: class () , "get_OutLineSize" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MiniMapTerrainRenderer as :: unity2 :: ClassIdentity > :: NAME , "get_OutLineSize" , e) , } } } pub unsafe fn get_out_line_size (this : MiniMapTerrainRenderer , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (MiniMapTerrainRenderer , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_get_out_line_size :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_try_initialize_data { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MiniMapTerrainRenderer as :: unity2 :: ClassIdentity > :: class () , "TryInitializeData" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MiniMapTerrainRenderer as :: unity2 :: ClassIdentity > :: NAME , "TryInitializeData" , e) , } } } pub unsafe fn try_initialize_data (this : MiniMapTerrainRenderer , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MiniMapTerrainRenderer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_try_initialize_data :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_map_image { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MiniMapTerrainRenderer as :: unity2 :: ClassIdentity > :: class () , "GetMapImage" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MiniMapTerrainRenderer as :: unity2 :: ClassIdentity > :: NAME , "GetMapImage" , e) , } } } pub unsafe fn get_map_image (this : MiniMapTerrainRenderer , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: mapimage :: MapImage { let inner : extern "C" fn (MiniMapTerrainRenderer , :: unity2 :: OptionalMethod ,) -> crate :: app :: mapimage :: MapImage = :: core :: mem :: transmute (__lookup_get_map_image :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update_geometry { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MiniMapTerrainRenderer as :: unity2 :: ClassIdentity > :: class () , "UpdateGeometry" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MiniMapTerrainRenderer as :: unity2 :: ClassIdentity > :: NAME , "UpdateGeometry" , e) , } } } pub unsafe fn update_geometry (this : MiniMapTerrainRenderer , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MiniMapTerrainRenderer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update_geometry :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_terrain_mesh { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MiniMapTerrainRenderer as :: unity2 :: ClassIdentity > :: class () , "CreateTerrainMesh" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MiniMapTerrainRenderer as :: unity2 :: ClassIdentity > :: NAME , "CreateTerrainMesh" , e) , } } } pub unsafe fn create_terrain_mesh (this : MiniMapTerrainRenderer , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MiniMapTerrainRenderer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create_terrain_mesh :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_terrain_mesh_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: mapimage :: MapImage as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MiniMapTerrainRenderer as :: unity2 :: ClassIdentity > :: class () , "CreateTerrainMesh" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MiniMapTerrainRenderer as :: unity2 :: ClassIdentity > :: NAME , "CreateTerrainMesh" , e) , } } } pub unsafe fn create_terrain_mesh_2 (this : MiniMapTerrainRenderer , map_image : crate :: app :: mapimage :: MapImage , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MiniMapTerrainRenderer , crate :: app :: mapimage :: MapImage , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create_terrain_mesh_2 :: get_method_info () . method_ptr ,) ; inner (this , map_image , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_mesh_to_renderer { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MiniMapTerrainRenderer as :: unity2 :: ClassIdentity > :: class () , "SetMeshToRenderer" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MiniMapTerrainRenderer as :: unity2 :: ClassIdentity > :: NAME , "SetMeshToRenderer" , e) , } } } pub unsafe fn set_mesh_to_renderer (this : MiniMapTerrainRenderer , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MiniMapTerrainRenderer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_mesh_to_renderer :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update_map_size { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MiniMapTerrainRenderer as :: unity2 :: ClassIdentity > :: class () , "UpdateMapSize" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MiniMapTerrainRenderer as :: unity2 :: ClassIdentity > :: NAME , "UpdateMapSize" , e) , } } } pub unsafe fn update_map_size (this : MiniMapTerrainRenderer , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MiniMapTerrainRenderer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update_map_size :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MiniMapTerrainRenderer as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MiniMapTerrainRenderer as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : MiniMapTerrainRenderer , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MiniMapTerrainRenderer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-minimapterrainrenderer")]
-pub trait IMiniMapTerrainRendererMethods: IMiniMapTerrainRenderer {
-    #[doc = "`get_Texture()` overload"]
-    fn get_texture(self) -> crate::unity_engine::texture2d::Texture2D {
-        unsafe {
-            let __receiver =
-                <MiniMapTerrainRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MiniMapTerrainRenderer_unity2_raw::get_texture(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_Texture(crate::unity_engine::texture2d::Texture2D)` overload"]
-    fn set_texture(self, value: impl ::core::convert::Into<crate::unity_engine::texture2d::Texture2D>) -> () {
-        unsafe {
-            let __receiver =
-                <MiniMapTerrainRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MiniMapTerrainRenderer_unity2_raw::set_texture(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_CanvasRenderer()` overload"]
-    fn get_canvas_renderer(self) -> crate::unity_engine::canvasrenderer::CanvasRenderer {
-        unsafe {
-            let __receiver =
-                <MiniMapTerrainRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MiniMapTerrainRenderer_unity2_raw::get_canvas_renderer(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_GridSize(f32)` overload"]
-    fn set_grid_size(self, value: impl ::core::convert::Into<f32>) -> () {
-        unsafe {
-            let __receiver =
-                <MiniMapTerrainRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MiniMapTerrainRenderer_unity2_raw::set_grid_size(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_GridSize()` overload"]
-    fn get_grid_size(self) -> f32 {
-        unsafe {
-            let __receiver =
-                <MiniMapTerrainRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MiniMapTerrainRenderer_unity2_raw::get_grid_size(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_OutLineSize(f32)` overload"]
-    fn set_out_line_size(self, value: impl ::core::convert::Into<f32>) -> () {
-        unsafe {
-            let __receiver =
-                <MiniMapTerrainRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MiniMapTerrainRenderer_unity2_raw::set_out_line_size(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_OutLineSize()` overload"]
-    fn get_out_line_size(self) -> f32 {
-        unsafe {
-            let __receiver =
-                <MiniMapTerrainRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MiniMapTerrainRenderer_unity2_raw::get_out_line_size(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`TryInitializeData()` overload"]
-    fn try_initialize_data(self) -> () {
-        unsafe {
-            let __receiver =
-                <MiniMapTerrainRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MiniMapTerrainRenderer_unity2_raw::try_initialize_data(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetMapImage()` overload"]
-    fn get_map_image(self) -> crate::app::mapimage::MapImage {
-        unsafe {
-            let __receiver =
-                <MiniMapTerrainRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MiniMapTerrainRenderer_unity2_raw::get_map_image(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`UpdateGeometry()` overload"]
-    fn update_geometry(self) -> () {
-        unsafe {
-            let __receiver =
-                <MiniMapTerrainRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MiniMapTerrainRenderer_unity2_raw::update_geometry(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CreateTerrainMesh()` overload"]
-    fn create_terrain_mesh(self) -> () {
-        unsafe {
-            let __receiver =
-                <MiniMapTerrainRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MiniMapTerrainRenderer_unity2_raw::create_terrain_mesh(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CreateTerrainMesh(crate::app::mapimage::MapImage)` overload"]
-    fn create_terrain_mesh_2(self, map_image: impl ::core::convert::Into<crate::app::mapimage::MapImage>) -> () {
-        unsafe {
-            let __receiver =
-                <MiniMapTerrainRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MiniMapTerrainRenderer_unity2_raw::create_terrain_mesh_2(
-                __receiver,
-                ::core::convert::Into::into(map_image),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetMeshToRenderer()` overload"]
-    fn set_mesh_to_renderer(self) -> () {
-        unsafe {
-            let __receiver =
-                <MiniMapTerrainRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MiniMapTerrainRenderer_unity2_raw::set_mesh_to_renderer(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`UpdateMapSize()` overload"]
-    fn update_map_size(self) -> () {
-        unsafe {
-            let __receiver =
-                <MiniMapTerrainRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MiniMapTerrainRenderer_unity2_raw::update_map_size(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <MiniMapTerrainRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MiniMapTerrainRenderer_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IMiniMapTerrainRendererMethods : IMiniMapTerrainRenderer { # [doc = "`get_Texture()` overload"] fn get_texture (self ,) -> crate :: unity_engine :: texture2d :: Texture2D { unsafe { let __receiver = < MiniMapTerrainRenderer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MiniMapTerrainRenderer_unity2_raw :: get_texture (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_Texture(crate::unity_engine::texture2d::Texture2D)` overload"] fn set_texture (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: texture2d :: Texture2D >) -> () { unsafe { let __receiver = < MiniMapTerrainRenderer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MiniMapTerrainRenderer_unity2_raw :: set_texture (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_CanvasRenderer()` overload"] fn get_canvas_renderer (self ,) -> crate :: unity_engine :: canvasrenderer :: CanvasRenderer { unsafe { let __receiver = < MiniMapTerrainRenderer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MiniMapTerrainRenderer_unity2_raw :: get_canvas_renderer (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_GridSize(f32)` overload"] fn set_grid_size (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < MiniMapTerrainRenderer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MiniMapTerrainRenderer_unity2_raw :: set_grid_size (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_GridSize()` overload"] fn get_grid_size (self ,) -> f32 { unsafe { let __receiver = < MiniMapTerrainRenderer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MiniMapTerrainRenderer_unity2_raw :: get_grid_size (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_OutLineSize(f32)` overload"] fn set_out_line_size (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < MiniMapTerrainRenderer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MiniMapTerrainRenderer_unity2_raw :: set_out_line_size (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_OutLineSize()` overload"] fn get_out_line_size (self ,) -> f32 { unsafe { let __receiver = < MiniMapTerrainRenderer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MiniMapTerrainRenderer_unity2_raw :: get_out_line_size (__receiver , :: core :: option :: Option :: None) } } # [doc = "`TryInitializeData()` overload"] fn try_initialize_data (self ,) -> () { unsafe { let __receiver = < MiniMapTerrainRenderer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MiniMapTerrainRenderer_unity2_raw :: try_initialize_data (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetMapImage()` overload"] fn get_map_image (self ,) -> crate :: app :: mapimage :: MapImage { unsafe { let __receiver = < MiniMapTerrainRenderer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MiniMapTerrainRenderer_unity2_raw :: get_map_image (__receiver , :: core :: option :: Option :: None) } } # [doc = "`UpdateGeometry()` overload"] fn update_geometry (self ,) -> () { unsafe { let __receiver = < MiniMapTerrainRenderer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MiniMapTerrainRenderer_unity2_raw :: update_geometry (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CreateTerrainMesh()` overload"] fn create_terrain_mesh (self ,) -> () { unsafe { let __receiver = < MiniMapTerrainRenderer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MiniMapTerrainRenderer_unity2_raw :: create_terrain_mesh (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CreateTerrainMesh(crate::app::mapimage::MapImage)` overload"] fn create_terrain_mesh_2 (self , map_image : impl :: core :: convert :: Into < crate :: app :: mapimage :: MapImage >) -> () { unsafe { let __receiver = < MiniMapTerrainRenderer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MiniMapTerrainRenderer_unity2_raw :: create_terrain_mesh_2 (__receiver , :: core :: convert :: Into :: into (map_image) , :: core :: option :: Option :: None) } } # [doc = "`SetMeshToRenderer()` overload"] fn set_mesh_to_renderer (self ,) -> () { unsafe { let __receiver = < MiniMapTerrainRenderer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MiniMapTerrainRenderer_unity2_raw :: set_mesh_to_renderer (__receiver , :: core :: option :: Option :: None) } } # [doc = "`UpdateMapSize()` overload"] fn update_map_size (self ,) -> () { unsafe { let __receiver = < MiniMapTerrainRenderer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MiniMapTerrainRenderer_unity2_raw :: update_map_size (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MiniMapTerrainRenderer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MiniMapTerrainRenderer_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-minimapterrainrenderer")]
-impl<__T: IMiniMapTerrainRenderer> IMiniMapTerrainRendererMethods for __T {}
+impl < __T : IMiniMapTerrainRenderer > IMiniMapTerrainRendererMethods for __T { }
+
+#[cfg(feature = "app-minimapterrainrenderer")]
+impl MiniMapTerrainRenderer { pub fn get_texture_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MiniMapTerrainRenderer_unity2_raw :: __lookup_get_texture :: get_method_info () } pub fn set_texture_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MiniMapTerrainRenderer_unity2_raw :: __lookup_set_texture :: get_method_info () } pub fn get_canvas_renderer_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MiniMapTerrainRenderer_unity2_raw :: __lookup_get_canvas_renderer :: get_method_info () } pub fn set_grid_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MiniMapTerrainRenderer_unity2_raw :: __lookup_set_grid_size :: get_method_info () } pub fn get_grid_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MiniMapTerrainRenderer_unity2_raw :: __lookup_get_grid_size :: get_method_info () } pub fn set_out_line_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MiniMapTerrainRenderer_unity2_raw :: __lookup_set_out_line_size :: get_method_info () } pub fn get_out_line_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MiniMapTerrainRenderer_unity2_raw :: __lookup_get_out_line_size :: get_method_info () } pub fn try_initialize_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MiniMapTerrainRenderer_unity2_raw :: __lookup_try_initialize_data :: get_method_info () } pub fn get_map_image_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MiniMapTerrainRenderer_unity2_raw :: __lookup_get_map_image :: get_method_info () } pub fn update_geometry_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MiniMapTerrainRenderer_unity2_raw :: __lookup_update_geometry :: get_method_info () } pub fn create_terrain_mesh_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MiniMapTerrainRenderer_unity2_raw :: __lookup_create_terrain_mesh :: get_method_info () } pub fn create_terrain_mesh_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MiniMapTerrainRenderer_unity2_raw :: __lookup_create_terrain_mesh_2 :: get_method_info () } pub fn set_mesh_to_renderer_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MiniMapTerrainRenderer_unity2_raw :: __lookup_set_mesh_to_renderer :: get_method_info () } pub fn update_map_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MiniMapTerrainRenderer_unity2_raw :: __lookup_update_map_size :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MiniMapTerrainRenderer_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-minimapterrainrenderer")]
 impl MiniMapTerrainRenderer {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MiniMapTerrainRenderer),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMiniMapTerrainRendererMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MiniMapTerrainRenderer) , :: core :: stringify ! (new) ,)) ; < Self as IMiniMapTerrainRendererMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-minimapterrainrenderer")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IMiniMapTerrainRenderer, IMiniMapTerrainRendererMethods, MiniMapTerrainRenderer};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-event_systems-uibehaviour")]
-    pub use crate::unity_engine::event_systems::uibehaviour::IUIBehaviourMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    #[cfg(feature = "unity_engine-ui-graphic")]
-    pub use crate::unity_engine::ui::graphic::IGraphicMethods;
-    #[cfg(feature = "unity_engine-ui-maskablegraphic")]
-    pub use crate::unity_engine::ui::maskablegraphic::IMaskableGraphicMethods;
-    pub use crate::{
-        system::object::IObject,
-        unity_engine::{
-            behaviour::IBehaviour,
-            component::IComponent,
-            event_systems::uibehaviour::IUIBehaviour,
-            monobehaviour::IMonoBehaviour,
-            object_2::IObject_2,
-            ui::{graphic::IGraphic, maskablegraphic::IMaskableGraphic},
-        },
-    };
+    pub use super::MiniMapTerrainRenderer;
+    pub use super::IMiniMapTerrainRenderer;
+    pub use super::IMiniMapTerrainRendererMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::event_systems::uibehaviour::IUIBehaviour;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    pub use crate::unity_engine::ui::graphic::IGraphic;
+    pub use crate::unity_engine::ui::maskablegraphic::IMaskableGraphic;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-event_systems-uibehaviour")] pub use crate::unity_engine::event_systems::uibehaviour::IUIBehaviourMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
+    #[cfg(feature = "unity_engine-ui-graphic")] pub use crate::unity_engine::ui::graphic::IGraphicMethods;
+    #[cfg(feature = "unity_engine-ui-maskablegraphic")] pub use crate::unity_engine::ui::maskablegraphic::IMaskableGraphicMethods;
 }

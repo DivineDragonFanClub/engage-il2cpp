@@ -2,315 +2,55 @@
 
 #[cfg(feature = "app-talk3_d-talkkeywait-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::procinst::{IProcInst, ProcInst},
-        system::object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talkkeywait/TalkKeyWait.md"))]
-    #[::unity2::class(namespace = "App.Talk3D", name = "TalkKeyWait")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct TalkKeyWait {
-        #[offset(112)]
-        #[rename(name = "m_Mid")]
-        pub m_mid: ::unity2::Il2CppString,
-        #[offset(120)]
-        #[rename(name = "m_VoiceEventName")]
-        pub m_voice_event_name: ::unity2::Il2CppString,
-        #[offset(128)]
-        #[rename(name = "m_WaitSecForAutoPlay")]
-        pub m_wait_sec_for_auto_play: f32,
-        #[offset(132)]
-        #[rename(name = "m_waitCounter")]
-        pub m_wait_counter: f32,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: procinst :: { IProcInst , ProcInst }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talkkeywait/TalkKeyWait.md"))] # [:: unity2 :: class (namespace = "App.Talk3D" , name = "TalkKeyWait")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct TalkKeyWait {
+# [offset (112)] # [rename (name = "m_Mid")] pub m_mid : :: unity2 :: Il2CppString ,
+# [offset (120)] # [rename (name = "m_VoiceEventName")] pub m_voice_event_name : :: unity2 :: Il2CppString ,
+# [offset (128)] # [rename (name = "m_WaitSecForAutoPlay")] pub m_wait_sec_for_auto_play : f32 ,
+# [offset (132)] # [rename (name = "m_waitCounter")] pub m_wait_counter : f32 ,
+}
+
 }
 
 #[cfg(feature = "app-talk3_d-talkkeywait-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-talk3_d-talkkeywait")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __TalkKeyWait_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<TalkKeyWait as ::unity2::ClassIdentity>::class(), ".ctor", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TalkKeyWait as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: TalkKeyWait, mid: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TalkKeyWait, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, mid, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_create {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkKeyWait as ::unity2::ClassIdentity>::class(),
-                "OnCreate",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TalkKeyWait as ::unity2::ClassIdentity>::NAME,
-                        "OnCreate",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_create(this: TalkKeyWait, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TalkKeyWait, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_create::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_dispose {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkKeyWait as ::unity2::ClassIdentity>::class(),
-                "OnDispose",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TalkKeyWait as ::unity2::ClassIdentity>::NAME,
-                        "OnDispose",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_dispose(this: TalkKeyWait, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TalkKeyWait, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_dispose::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_tick {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<TalkKeyWait as ::unity2::ClassIdentity>::class(), "Tick", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TalkKeyWait as ::unity2::ClassIdentity>::NAME,
-                        "Tick",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn tick(this: TalkKeyWait, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TalkKeyWait, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_tick::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_shutdown {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkKeyWait as ::unity2::ClassIdentity>::class(),
-                "OnShutdown",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TalkKeyWait as ::unity2::ClassIdentity>::NAME,
-                        "OnShutdown",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_shutdown(this: TalkKeyWait, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TalkKeyWait, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_shutdown::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_inst_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkKeyWait as ::unity2::ClassIdentity>::class(),
-                "CreateInstBind",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TalkKeyWait as ::unity2::ClassIdentity>::NAME,
-                        "CreateInstBind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_inst_bind(
-        parent: crate::app::procinst::ProcInst,
-        mid: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::talk3_d::talkkeywait::TalkKeyWait {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::talk3_d::talkkeywait::TalkKeyWait = ::core::mem::transmute(__lookup_create_inst_bind::get_method_info().method_ptr);
-        inner(parent, mid, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __TalkKeyWait_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TalkKeyWait as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TalkKeyWait as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : TalkKeyWait , mid : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TalkKeyWait , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , mid , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_create { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TalkKeyWait as :: unity2 :: ClassIdentity > :: class () , "OnCreate" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TalkKeyWait as :: unity2 :: ClassIdentity > :: NAME , "OnCreate" , e) , } } } pub unsafe fn on_create (this : TalkKeyWait , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TalkKeyWait , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_create :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_dispose { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TalkKeyWait as :: unity2 :: ClassIdentity > :: class () , "OnDispose" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TalkKeyWait as :: unity2 :: ClassIdentity > :: NAME , "OnDispose" , e) , } } } pub unsafe fn on_dispose (this : TalkKeyWait , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TalkKeyWait , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_dispose :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_tick { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TalkKeyWait as :: unity2 :: ClassIdentity > :: class () , "Tick" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TalkKeyWait as :: unity2 :: ClassIdentity > :: NAME , "Tick" , e) , } } } pub unsafe fn tick (this : TalkKeyWait , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TalkKeyWait , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_tick :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_shutdown { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TalkKeyWait as :: unity2 :: ClassIdentity > :: class () , "OnShutdown" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TalkKeyWait as :: unity2 :: ClassIdentity > :: NAME , "OnShutdown" , e) , } } } pub unsafe fn on_shutdown (this : TalkKeyWait , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TalkKeyWait , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_shutdown :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_inst_bind { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TalkKeyWait as :: unity2 :: ClassIdentity > :: class () , "CreateInstBind" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TalkKeyWait as :: unity2 :: ClassIdentity > :: NAME , "CreateInstBind" , e) , } } } pub unsafe fn create_inst_bind (parent : crate :: app :: procinst :: ProcInst , mid : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: talk3_d :: talkkeywait :: TalkKeyWait { let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: app :: talk3_d :: talkkeywait :: TalkKeyWait = :: core :: mem :: transmute (__lookup_create_inst_bind :: get_method_info () . method_ptr ,) ; inner (parent , mid , __unity2_method_info) } }
+
+#[cfg(feature = "app-talk3_d-talkkeywait")]
+impl TalkKeyWait { # [doc = "`CreateInstBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString)` overload"] pub fn create_inst_bind (parent : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , mid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: app :: talk3_d :: talkkeywait :: TalkKeyWait { unsafe { __TalkKeyWait_unity2_raw :: create_inst_bind (:: core :: convert :: Into :: into (parent) , :: core :: convert :: Into :: into (mid) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-talk3_d-talkkeywait")]
+pub trait ITalkKeyWaitMethods : ITalkKeyWait { # [doc = "`.ctor(::unity2::Il2CppString)` overload"] fn ctor (self , mid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < TalkKeyWait as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TalkKeyWait_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (mid) , :: core :: option :: Option :: None) } } # [doc = "`OnCreate()` overload"] fn on_create (self ,) -> () { unsafe { let __receiver = < TalkKeyWait as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TalkKeyWait_unity2_raw :: on_create (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnDispose()` overload"] fn on_dispose (self ,) -> () { unsafe { let __receiver = < TalkKeyWait as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TalkKeyWait_unity2_raw :: on_dispose (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Tick()` overload"] fn tick (self ,) -> () { unsafe { let __receiver = < TalkKeyWait as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TalkKeyWait_unity2_raw :: tick (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnShutdown()` overload"] fn on_shutdown (self ,) -> () { unsafe { let __receiver = < TalkKeyWait as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TalkKeyWait_unity2_raw :: on_shutdown (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-talk3_d-talkkeywait")]
+impl < __T : ITalkKeyWait > ITalkKeyWaitMethods for __T { }
+
+#[cfg(feature = "app-talk3_d-talkkeywait")]
+impl TalkKeyWait { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TalkKeyWait_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn on_create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TalkKeyWait_unity2_raw :: __lookup_on_create :: get_method_info () } pub fn on_dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TalkKeyWait_unity2_raw :: __lookup_on_dispose :: get_method_info () } pub fn tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TalkKeyWait_unity2_raw :: __lookup_tick :: get_method_info () } pub fn on_shutdown_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TalkKeyWait_unity2_raw :: __lookup_on_shutdown :: get_method_info () } pub fn create_inst_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TalkKeyWait_unity2_raw :: __lookup_create_inst_bind :: get_method_info () } }
 
 #[cfg(feature = "app-talk3_d-talkkeywait")]
 impl TalkKeyWait {
-    #[doc = "`CreateInstBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString)` overload"]
-    pub fn create_inst_bind(
-        parent: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        mid: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> crate::app::talk3_d::talkkeywait::TalkKeyWait {
-        unsafe {
-            __TalkKeyWait_unity2_raw::create_inst_bind(
-                ::core::convert::Into::into(parent),
-                ::core::convert::Into::into(mid),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-talk3_d-talkkeywait")]
-pub trait ITalkKeyWaitMethods: ITalkKeyWait {
-    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
-    fn ctor(self, mid: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver = <TalkKeyWait as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TalkKeyWait_unity2_raw::ctor(__receiver, ::core::convert::Into::into(mid), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnCreate()` overload"]
-    fn on_create(self) -> () {
-        unsafe {
-            let __receiver = <TalkKeyWait as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TalkKeyWait_unity2_raw::on_create(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnDispose()` overload"]
-    fn on_dispose(self) -> () {
-        unsafe {
-            let __receiver = <TalkKeyWait as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TalkKeyWait_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Tick()` overload"]
-    fn tick(self) -> () {
-        unsafe {
-            let __receiver = <TalkKeyWait as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TalkKeyWait_unity2_raw::tick(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnShutdown()` overload"]
-    fn on_shutdown(self) -> () {
-        unsafe {
-            let __receiver = <TalkKeyWait as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TalkKeyWait_unity2_raw::on_shutdown(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-talk3_d-talkkeywait")]
-impl<__T: ITalkKeyWait> ITalkKeyWaitMethods for __T {}
-
-#[cfg(feature = "app-talk3_d-talkkeywait")]
-impl TalkKeyWait {
-    #[doc = "`.ctor(::unity2::Il2CppString)` — overload selector"]
-    pub fn new(mid: ::unity2::Il2CppString) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(TalkKeyWait), ::core::stringify!(new),));
-        <Self as ITalkKeyWaitMethods>::ctor(this, mid);
-        this
-    }
+# [doc = "`.ctor(::unity2::Il2CppString)` — overload selector"] pub fn new (mid : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TalkKeyWait) , :: core :: stringify ! (new) ,)) ; < Self as ITalkKeyWaitMethods > :: ctor (this , mid) ; this }
 }
 
 #[cfg(feature = "app-talk3_d-talkkeywait")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{ITalkKeyWait, ITalkKeyWaitMethods, TalkKeyWait};
-    #[cfg(feature = "app-procinst")]
-    pub use crate::app::procinst::IProcInstMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::{app::procinst::IProcInst, system::object::IObject};
+    pub use super::TalkKeyWait;
+    pub use super::ITalkKeyWait;
+    pub use super::ITalkKeyWaitMethods;
+    pub use crate::app::procinst::IProcInst;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "app-procinst")] pub use crate::app::procinst::IProcInstMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

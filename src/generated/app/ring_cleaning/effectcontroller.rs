@@ -2,630 +2,98 @@
 
 #[cfg(feature = "app-ring_cleaning-effectcontroller-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ring_cleaning/effectcontroller/EffectController_AutoDelete.md"))]
-    #[::unity2::class(namespace = "App.RingCleaning", name = "EffectController.AutoDelete")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct EffectController_AutoDelete {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ring_cleaning/effectcontroller/EffectController.md"))]
-    #[::unity2::class(namespace = "App.RingCleaning", name = "EffectController")]
-    #[parent(crate::system::object::Object)]
-    pub struct EffectController {
-        #[static_field]
-        #[rename(name = "GlitterEffectPrefab")]
-        pub glitter_effect_prefab: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "GlitterStrongEffectPrefab")]
-        pub glitter_strong_effect_prefab: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "GlitterWeakNotHit")]
-        pub glitter_weak_not_hit: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "GlitterWeakNear")]
-        pub glitter_weak_near: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "GlitterStrongA")]
-        pub glitter_strong_a: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "GlitterStrongB")]
-        pub glitter_strong_b: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "NoteEffectA")]
-        pub note_effect_a: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "NoteEffectB")]
-        pub note_effect_b: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "HitEffect2D")]
-        pub hit_effect2_d: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "RubEffect")]
-        pub rub_effect: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "s_EffectRoot")]
-        pub s_effect_root: crate::unity_engine::gameobject::GameObject,
-        #[static_field]
-        #[rename(name = "s_Rub")]
-        pub s_rub: crate::unity_engine::gameobject::GameObject,
-    }
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ring_cleaning/effectcontroller/EffectController.md"))] # [:: unity2 :: class (namespace = "App.RingCleaning" , name = "EffectController")] # [parent (crate :: system :: object :: Object)] pub struct EffectController {
+# [static_field] # [rename (name = "GlitterEffectPrefab")] pub glitter_effect_prefab : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "GlitterStrongEffectPrefab")] pub glitter_strong_effect_prefab : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "GlitterWeakNotHit")] pub glitter_weak_not_hit : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "GlitterWeakNear")] pub glitter_weak_near : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "GlitterStrongA")] pub glitter_strong_a : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "GlitterStrongB")] pub glitter_strong_b : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "NoteEffectA")] pub note_effect_a : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "NoteEffectB")] pub note_effect_b : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "HitEffect2D")] pub hit_effect2_d : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "RubEffect")] pub rub_effect : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "s_EffectRoot")] pub s_effect_root : crate :: unity_engine :: gameobject :: GameObject ,
+# [static_field] # [rename (name = "s_Rub")] pub s_rub : crate :: unity_engine :: gameobject :: GameObject ,
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ring_cleaning/effectcontroller/EffectController_AutoDelete.md"))] # [:: unity2 :: class (namespace = "App.RingCleaning" , name = "EffectController.AutoDelete")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct EffectController_AutoDelete {}
+
 }
 
 #[cfg(feature = "app-ring_cleaning-effectcontroller-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-ring_cleaning-effectcontroller")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __EffectController_AutoDelete_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EffectController_AutoDelete as ::unity2::ClassIdentity>::class(),
-                "Update",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <EffectController_AutoDelete as ::unity2::ClassIdentity>::NAME,
-                        "Update",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update(this: EffectController_AutoDelete, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(EffectController_AutoDelete, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EffectController_AutoDelete as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <EffectController_AutoDelete as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: EffectController_AutoDelete, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(EffectController_AutoDelete, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __EffectController_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_load_prefab_async { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< EffectController as :: unity2 :: ClassIdentity > :: class () , "LoadPrefabAsync" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < EffectController as :: unity2 :: ClassIdentity > :: NAME , "LoadPrefabAsync" , e) , } } } pub unsafe fn load_prefab_async (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_load_prefab_async :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_loading_prefab { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< EffectController as :: unity2 :: ClassIdentity > :: class () , "IsLoadingPrefab" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < EffectController as :: unity2 :: ClassIdentity > :: NAME , "IsLoadingPrefab" , e) , } } } pub unsafe fn is_loading_prefab (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_loading_prefab :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_unload_prefab { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< EffectController as :: unity2 :: ClassIdentity > :: class () , "UnloadPrefab" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < EffectController as :: unity2 :: ClassIdentity > :: NAME , "UnloadPrefab" , e) , } } } pub unsafe fn unload_prefab (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_unload_prefab :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_initialize { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< EffectController as :: unity2 :: ClassIdentity > :: class () , "Initialize" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < EffectController as :: unity2 :: ClassIdentity > :: NAME , "Initialize" , e) , } } } pub unsafe fn initialize (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_initialize :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_glitter_effect { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: ringcleaningsequence :: RingCleaningSequence_Strength as :: unity2 :: IlType > :: il_type () , < crate :: app :: ringcleaningsequence :: RingCleaningSequence_HitResult as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< EffectController as :: unity2 :: ClassIdentity > :: class () , "CreateGlitterEffect" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < EffectController as :: unity2 :: ClassIdentity > :: NAME , "CreateGlitterEffect" , e) , } } } pub unsafe fn create_glitter_effect (strength : crate :: app :: ringcleaningsequence :: RingCleaningSequence_Strength , hit_result : crate :: app :: ringcleaningsequence :: RingCleaningSequence_HitResult , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject { let inner : extern "C" fn (crate :: app :: ringcleaningsequence :: RingCleaningSequence_Strength , crate :: app :: ringcleaningsequence :: RingCleaningSequence_HitResult , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute (__lookup_create_glitter_effect :: get_method_info () . method_ptr ,) ; inner (strength , hit_result , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_play_hit_screen { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< EffectController as :: unity2 :: ClassIdentity > :: class () , "PlayHitScreen" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < EffectController as :: unity2 :: ClassIdentity > :: NAME , "PlayHitScreen" , e) , } } } pub unsafe fn play_hit_screen (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_play_hit_screen :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_play_rub_effect { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< EffectController as :: unity2 :: ClassIdentity > :: class () , "PlayRubEffect" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < EffectController as :: unity2 :: ClassIdentity > :: NAME , "PlayRubEffect" , e) , } } } pub unsafe fn play_rub_effect (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute (__lookup_play_rub_effect :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_note_effect { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< EffectController as :: unity2 :: ClassIdentity > :: class () , "get_NoteEffect" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < EffectController as :: unity2 :: ClassIdentity > :: NAME , "get_NoteEffect" , e) , } } } pub unsafe fn get_note_effect (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_note_effect :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_note_effect_big { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< EffectController as :: unity2 :: ClassIdentity > :: class () , "get_NoteEffectBig" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < EffectController as :: unity2 :: ClassIdentity > :: NAME , "get_NoteEffectBig" , e) , } } } pub unsafe fn get_note_effect_big (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_note_effect_big :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< EffectController as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < EffectController as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : EffectController , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (EffectController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-ring_cleaning-effectcontroller")]
+impl EffectController { # [doc = "`LoadPrefabAsync()` overload"] pub fn load_prefab_async () -> () { unsafe { __EffectController_unity2_raw :: load_prefab_async (:: core :: option :: Option :: None) } } # [doc = "`IsLoadingPrefab()` overload"] pub fn is_loading_prefab () -> bool { unsafe { __EffectController_unity2_raw :: is_loading_prefab (:: core :: option :: Option :: None) } } # [doc = "`UnloadPrefab()` overload"] pub fn unload_prefab () -> () { unsafe { __EffectController_unity2_raw :: unload_prefab (:: core :: option :: Option :: None) } } # [doc = "`Initialize()` overload"] pub fn initialize () -> () { unsafe { __EffectController_unity2_raw :: initialize (:: core :: option :: Option :: None) } } # [doc = "`CreateGlitterEffect(crate::app::ringcleaningsequence::RingCleaningSequence_Strength, crate::app::ringcleaningsequence::RingCleaningSequence_HitResult)` overload"] pub fn create_glitter_effect (strength : impl :: core :: convert :: Into < crate :: app :: ringcleaningsequence :: RingCleaningSequence_Strength > , hit_result : impl :: core :: convert :: Into < crate :: app :: ringcleaningsequence :: RingCleaningSequence_HitResult >) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { __EffectController_unity2_raw :: create_glitter_effect (:: core :: convert :: Into :: into (strength) , :: core :: convert :: Into :: into (hit_result) , :: core :: option :: Option :: None) } } # [doc = "`PlayHitScreen()` overload"] pub fn play_hit_screen () -> () { unsafe { __EffectController_unity2_raw :: play_hit_screen (:: core :: option :: Option :: None) } } # [doc = "`PlayRubEffect()` overload"] pub fn play_rub_effect () -> crate :: unity_engine :: gameobject :: GameObject { unsafe { __EffectController_unity2_raw :: play_rub_effect (:: core :: option :: Option :: None) } } # [doc = "`get_NoteEffect()` overload"] pub fn get_note_effect () -> :: unity2 :: Il2CppString { unsafe { __EffectController_unity2_raw :: get_note_effect (:: core :: option :: Option :: None) } } # [doc = "`get_NoteEffectBig()` overload"] pub fn get_note_effect_big () -> :: unity2 :: Il2CppString { unsafe { __EffectController_unity2_raw :: get_note_effect_big (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-ring_cleaning-effectcontroller")]
+pub trait IEffectControllerMethods : IEffectController { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < EffectController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __EffectController_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-ring_cleaning-effectcontroller")]
+impl < __T : IEffectController > IEffectControllerMethods for __T { }
+
+#[cfg(feature = "app-ring_cleaning-effectcontroller")]
+impl EffectController { pub fn load_prefab_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __EffectController_unity2_raw :: __lookup_load_prefab_async :: get_method_info () } pub fn is_loading_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __EffectController_unity2_raw :: __lookup_is_loading_prefab :: get_method_info () } pub fn unload_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __EffectController_unity2_raw :: __lookup_unload_prefab :: get_method_info () } pub fn initialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __EffectController_unity2_raw :: __lookup_initialize :: get_method_info () } pub fn create_glitter_effect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __EffectController_unity2_raw :: __lookup_create_glitter_effect :: get_method_info () } pub fn play_hit_screen_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __EffectController_unity2_raw :: __lookup_play_hit_screen :: get_method_info () } pub fn play_rub_effect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __EffectController_unity2_raw :: __lookup_play_rub_effect :: get_method_info () } pub fn get_note_effect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __EffectController_unity2_raw :: __lookup_get_note_effect :: get_method_info () } pub fn get_note_effect_big_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __EffectController_unity2_raw :: __lookup_get_note_effect_big :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __EffectController_unity2_raw :: __lookup_ctor :: get_method_info () } }
+
+#[cfg(feature = "app-ring_cleaning-effectcontroller")]
+impl EffectController {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (EffectController) , :: core :: stringify ! (new) ,)) ; < Self as IEffectControllerMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-ring_cleaning-effectcontroller")]
-pub trait IEffectController_AutoDeleteMethods: IEffectController_AutoDelete {
-    #[doc = "`Update()` overload"]
-    fn update(self) -> () {
-        unsafe {
-            let __receiver =
-                <EffectController_AutoDelete as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __EffectController_AutoDelete_unity2_raw::update(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <EffectController_AutoDelete as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __EffectController_AutoDelete_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __EffectController_AutoDelete_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< EffectController_AutoDelete as :: unity2 :: ClassIdentity > :: class () , "Update" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < EffectController_AutoDelete as :: unity2 :: ClassIdentity > :: NAME , "Update" , e) , } } } pub unsafe fn update (this : EffectController_AutoDelete , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (EffectController_AutoDelete , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< EffectController_AutoDelete as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < EffectController_AutoDelete as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : EffectController_AutoDelete , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (EffectController_AutoDelete , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-ring_cleaning-effectcontroller")]
-impl<__T: IEffectController_AutoDelete> IEffectController_AutoDeleteMethods for __T {}
+pub trait IEffectController_AutoDeleteMethods : IEffectController_AutoDelete { # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < EffectController_AutoDelete as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __EffectController_AutoDelete_unity2_raw :: update (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < EffectController_AutoDelete as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __EffectController_AutoDelete_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-ring_cleaning-effectcontroller")]
+impl < __T : IEffectController_AutoDelete > IEffectController_AutoDeleteMethods for __T { }
+
+#[cfg(feature = "app-ring_cleaning-effectcontroller")]
+impl EffectController_AutoDelete { pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __EffectController_AutoDelete_unity2_raw :: __lookup_update :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __EffectController_AutoDelete_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-ring_cleaning-effectcontroller")]
 impl EffectController_AutoDelete {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(EffectController_AutoDelete),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IEffectController_AutoDeleteMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-ring_cleaning-effectcontroller")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __EffectController_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_load_prefab_async {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EffectController as ::unity2::ClassIdentity>::class(),
-                "LoadPrefabAsync",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <EffectController as ::unity2::ClassIdentity>::NAME,
-                        "LoadPrefabAsync",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn load_prefab_async(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_load_prefab_async::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_loading_prefab {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EffectController as ::unity2::ClassIdentity>::class(),
-                "IsLoadingPrefab",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <EffectController as ::unity2::ClassIdentity>::NAME,
-                        "IsLoadingPrefab",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_loading_prefab(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_is_loading_prefab::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_unload_prefab {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EffectController as ::unity2::ClassIdentity>::class(),
-                "UnloadPrefab",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <EffectController as ::unity2::ClassIdentity>::NAME,
-                        "UnloadPrefab",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn unload_prefab(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_unload_prefab::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_initialize {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EffectController as ::unity2::ClassIdentity>::class(),
-                "Initialize",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <EffectController as ::unity2::ClassIdentity>::NAME,
-                        "Initialize",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn initialize(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_initialize::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_glitter_effect {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::ringcleaningsequence::RingCleaningSequence_Strength as ::unity2::IlType>::il_type(),
-                <crate::app::ringcleaningsequence::RingCleaningSequence_HitResult as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EffectController as ::unity2::ClassIdentity>::class(),
-                "CreateGlitterEffect",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <EffectController as ::unity2::ClassIdentity>::NAME,
-                        "CreateGlitterEffect",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_glitter_effect(
-        strength: crate::app::ringcleaningsequence::RingCleaningSequence_Strength,
-        hit_result: crate::app::ringcleaningsequence::RingCleaningSequence_HitResult,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::gameobject::GameObject {
-        let inner: extern "C" fn(
-            crate::app::ringcleaningsequence::RingCleaningSequence_Strength,
-            crate::app::ringcleaningsequence::RingCleaningSequence_HitResult,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(__lookup_create_glitter_effect::get_method_info().method_ptr);
-        inner(strength, hit_result, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_play_hit_screen {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EffectController as ::unity2::ClassIdentity>::class(),
-                "PlayHitScreen",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <EffectController as ::unity2::ClassIdentity>::NAME,
-                        "PlayHitScreen",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn play_hit_screen(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_play_hit_screen::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_play_rub_effect {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EffectController as ::unity2::ClassIdentity>::class(),
-                "PlayRubEffect",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <EffectController as ::unity2::ClassIdentity>::NAME,
-                        "PlayRubEffect",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn play_rub_effect(__unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::gameobject::GameObject {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::unity_engine::gameobject::GameObject =
-            ::core::mem::transmute(__lookup_play_rub_effect::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_note_effect {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EffectController as ::unity2::ClassIdentity>::class(),
-                "get_NoteEffect",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <EffectController as ::unity2::ClassIdentity>::NAME,
-                        "get_NoteEffect",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_note_effect(__unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_note_effect::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_note_effect_big {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EffectController as ::unity2::ClassIdentity>::class(),
-                "get_NoteEffectBig",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <EffectController as ::unity2::ClassIdentity>::NAME,
-                        "get_NoteEffectBig",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_note_effect_big(__unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_note_effect_big::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EffectController as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <EffectController as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: EffectController, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(EffectController, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-ring_cleaning-effectcontroller")]
-impl EffectController {
-    #[doc = "`LoadPrefabAsync()` overload"]
-    pub fn load_prefab_async() -> () {
-        unsafe { __EffectController_unity2_raw::load_prefab_async(::core::option::Option::None) }
-    }
-
-    #[doc = "`IsLoadingPrefab()` overload"]
-    pub fn is_loading_prefab() -> bool {
-        unsafe { __EffectController_unity2_raw::is_loading_prefab(::core::option::Option::None) }
-    }
-
-    #[doc = "`UnloadPrefab()` overload"]
-    pub fn unload_prefab() -> () {
-        unsafe { __EffectController_unity2_raw::unload_prefab(::core::option::Option::None) }
-    }
-
-    #[doc = "`Initialize()` overload"]
-    pub fn initialize() -> () {
-        unsafe { __EffectController_unity2_raw::initialize(::core::option::Option::None) }
-    }
-
-    #[doc = "`CreateGlitterEffect(crate::app::ringcleaningsequence::RingCleaningSequence_Strength, crate::app::ringcleaningsequence::RingCleaningSequence_HitResult)` overload"]
-    pub fn create_glitter_effect(
-        strength: impl ::core::convert::Into<crate::app::ringcleaningsequence::RingCleaningSequence_Strength>,
-        hit_result: impl ::core::convert::Into<crate::app::ringcleaningsequence::RingCleaningSequence_HitResult>,
-    ) -> crate::unity_engine::gameobject::GameObject {
-        unsafe {
-            __EffectController_unity2_raw::create_glitter_effect(
-                ::core::convert::Into::into(strength),
-                ::core::convert::Into::into(hit_result),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`PlayHitScreen()` overload"]
-    pub fn play_hit_screen() -> () {
-        unsafe { __EffectController_unity2_raw::play_hit_screen(::core::option::Option::None) }
-    }
-
-    #[doc = "`PlayRubEffect()` overload"]
-    pub fn play_rub_effect() -> crate::unity_engine::gameobject::GameObject {
-        unsafe { __EffectController_unity2_raw::play_rub_effect(::core::option::Option::None) }
-    }
-
-    #[doc = "`get_NoteEffect()` overload"]
-    pub fn get_note_effect() -> ::unity2::Il2CppString {
-        unsafe { __EffectController_unity2_raw::get_note_effect(::core::option::Option::None) }
-    }
-
-    #[doc = "`get_NoteEffectBig()` overload"]
-    pub fn get_note_effect_big() -> ::unity2::Il2CppString {
-        unsafe { __EffectController_unity2_raw::get_note_effect_big(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-ring_cleaning-effectcontroller")]
-pub trait IEffectControllerMethods: IEffectController {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <EffectController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __EffectController_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-ring_cleaning-effectcontroller")]
-impl<__T: IEffectController> IEffectControllerMethods for __T {}
-
-#[cfg(feature = "app-ring_cleaning-effectcontroller")]
-impl EffectController {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(EffectController),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IEffectControllerMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (EffectController_AutoDelete) , :: core :: stringify ! (new) ,)) ; < Self as IEffectController_AutoDeleteMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-ring_cleaning-effectcontroller")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{
-        EffectController, EffectController_AutoDelete, IEffectController, IEffectControllerMethods, IEffectController_AutoDelete,
-        IEffectController_AutoDeleteMethods,
-    };
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        system::object::IObject,
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::EffectController;
+    pub use super::IEffectController;
+    pub use super::IEffectControllerMethods;
+    pub use super::EffectController_AutoDelete;
+    pub use super::IEffectController_AutoDelete;
+    pub use super::IEffectController_AutoDeleteMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

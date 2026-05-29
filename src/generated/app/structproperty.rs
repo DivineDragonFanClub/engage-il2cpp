@@ -2,1079 +2,254 @@
 
 #[cfg(feature = "app-structproperty-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        r#enum::{Enum, IEnum},
-        valuetype::{IValueType, ValueType},
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/structproperty/StructProperty_Kind.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct StructProperty_Kind {
-        pub value: i32,
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/structproperty/StructProperty.md"))] # [:: unity2 :: class (namespace = "App" , name = "StructProperty")] # [parent (crate :: system :: object :: Object)] pub struct StructProperty {}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/structproperty/StructProperty_Kind.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct StructProperty_Kind  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for StructProperty_Kind  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "StructProperty.Kind";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    impl ::unity2::ClassIdentity for StructProperty_Kind {
-        const NAME: &'static str = "StructProperty.Kind";
-        const NAMESPACE: &'static str = "App";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  ::unity2::IlType for StructProperty_Kind  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::IlType for StructProperty_Kind {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  StructProperty_Kind  {
+    pub fn public_string() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl StructProperty_Kind {
-        pub fn public_string() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn string() -> Self {
-            Self { value: 1 }
-        }
+    pub fn string() -> Self {
+        Self { value: 1 }
 
-        pub fn string_array() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn public_label() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn public_array() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn public_file() -> Self {
-            Self { value: 5 }
-        }
-
-        pub fn u8() -> Self {
-            Self { value: 6 }
-        }
-
-        pub fn u8_array() -> Self {
-            Self { value: 7 }
-        }
-
-        pub fn s8() -> Self {
-            Self { value: 8 }
-        }
-
-        pub fn s8_array() -> Self {
-            Self { value: 9 }
-        }
-
-        pub fn u16() -> Self {
-            Self { value: 10 }
-        }
-
-        pub fn s16() -> Self {
-            Self { value: 11 }
-        }
-
-        pub fn u32() -> Self {
-            Self { value: 12 }
-        }
-
-        pub fn s32() -> Self {
-            Self { value: 13 }
-        }
-
-        pub fn s32_array() -> Self {
-            Self { value: 14 }
-        }
-
-        pub fn u64() -> Self {
-            Self { value: 15 }
-        }
-
-        pub fn s64() -> Self {
-            Self { value: 16 }
-        }
-
-        pub fn f32() -> Self {
-            Self { value: 17 }
-        }
-
-        pub fn f32_array() -> Self {
-            Self { value: 18 }
-        }
-
-        pub fn bool() -> Self {
-            Self { value: 19 }
-        }
-
-        pub fn b8() -> Self {
-            Self { value: 20 }
-        }
-
-        pub fn b16() -> Self {
-            Self { value: 21 }
-        }
-
-        pub fn b32() -> Self {
-            Self { value: 22 }
-        }
-
-        pub fn b64() -> Self {
-            Self { value: 23 }
-        }
-
-        pub fn flag32() -> Self {
-            Self { value: 24 }
-        }
-
-        pub fn flag64() -> Self {
-            Self { value: 25 }
-        }
-
-        pub fn none() -> Self {
-            Self { value: 26 }
-        }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/structproperty/StructProperty.md"))]
-    #[::unity2::class(namespace = "App", name = "StructProperty")]
-    #[parent(crate::system::object::Object)]
-    pub struct StructProperty {}
+
+    pub fn string_array() -> Self {
+        Self { value: 2 }
+
+    }
+
+
+    pub fn public_label() -> Self {
+        Self { value: 3 }
+
+    }
+
+
+    pub fn public_array() -> Self {
+        Self { value: 4 }
+
+    }
+
+
+    pub fn public_file() -> Self {
+        Self { value: 5 }
+
+    }
+
+
+    pub fn u8() -> Self {
+        Self { value: 6 }
+
+    }
+
+
+    pub fn u8_array() -> Self {
+        Self { value: 7 }
+
+    }
+
+
+    pub fn s8() -> Self {
+        Self { value: 8 }
+
+    }
+
+
+    pub fn s8_array() -> Self {
+        Self { value: 9 }
+
+    }
+
+
+    pub fn u16() -> Self {
+        Self { value: 10 }
+
+    }
+
+
+    pub fn s16() -> Self {
+        Self { value: 11 }
+
+    }
+
+
+    pub fn u32() -> Self {
+        Self { value: 12 }
+
+    }
+
+
+    pub fn s32() -> Self {
+        Self { value: 13 }
+
+    }
+
+
+    pub fn s32_array() -> Self {
+        Self { value: 14 }
+
+    }
+
+
+    pub fn u64() -> Self {
+        Self { value: 15 }
+
+    }
+
+
+    pub fn s64() -> Self {
+        Self { value: 16 }
+
+    }
+
+
+    pub fn f32() -> Self {
+        Self { value: 17 }
+
+    }
+
+
+    pub fn f32_array() -> Self {
+        Self { value: 18 }
+
+    }
+
+
+    pub fn bool() -> Self {
+        Self { value: 19 }
+
+    }
+
+
+    pub fn b8() -> Self {
+        Self { value: 20 }
+
+    }
+
+
+    pub fn b16() -> Self {
+        Self { value: 21 }
+
+    }
+
+
+    pub fn b32() -> Self {
+        Self { value: 22 }
+
+    }
+
+
+    pub fn b64() -> Self {
+        Self { value: 23 }
+
+    }
+
+
+    pub fn flag32() -> Self {
+        Self { value: 24 }
+
+    }
+
+
+    pub fn flag64() -> Self {
+        Self { value: 25 }
+
+    }
+
+
+    pub fn none() -> Self {
+        Self { value: 26 }
+
+    }
+
+}
+
 }
 
 #[cfg(feature = "app-structproperty-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-structproperty")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __StructProperty_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_kind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <StructProperty as ::unity2::ClassIdentity>::class(),
-                "get_kind",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <StructProperty as ::unity2::ClassIdentity>::NAME,
-                        "get_kind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_kind(this: StructProperty, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::structproperty::StructProperty_Kind {
-        let inner: extern "C" fn(StructProperty, ::unity2::OptionalMethod) -> crate::app::structproperty::StructProperty_Kind =
-            ::core::mem::transmute(__lookup_get_kind::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_kind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::structproperty::StructProperty_Kind as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <StructProperty as ::unity2::ClassIdentity>::class(),
-                "set_kind",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <StructProperty as ::unity2::ClassIdentity>::NAME,
-                        "set_kind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_kind(
-        this: StructProperty,
-        value: crate::app::structproperty::StructProperty_Kind,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(StructProperty, crate::app::structproperty::StructProperty_Kind, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_kind::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_property {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <StructProperty as ::unity2::ClassIdentity>::class(),
-                "get_property",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <StructProperty as ::unity2::ClassIdentity>::NAME,
-                        "get_property",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_property(
-        this: StructProperty,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::reflection::propertyinfo::PropertyInfo {
-        let inner: extern "C" fn(StructProperty, ::unity2::OptionalMethod) -> crate::system::reflection::propertyinfo::PropertyInfo =
-            ::core::mem::transmute(__lookup_get_property::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_property {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::reflection::propertyinfo::PropertyInfo as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <StructProperty as ::unity2::ClassIdentity>::class(),
-                "set_property",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <StructProperty as ::unity2::ClassIdentity>::NAME,
-                        "set_property",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_property(
-        this: StructProperty,
-        value: crate::system::reflection::propertyinfo::PropertyInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(StructProperty, crate::system::reflection::propertyinfo::PropertyInfo, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_property::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_obj_property {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <StructProperty as ::unity2::ClassIdentity>::class(),
-                "get_objProperty",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <StructProperty as ::unity2::ClassIdentity>::NAME,
-                        "get_objProperty",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_obj_property(
-        this: StructProperty,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::reflection::propertyinfo::PropertyInfo {
-        let inner: extern "C" fn(StructProperty, ::unity2::OptionalMethod) -> crate::system::reflection::propertyinfo::PropertyInfo =
-            ::core::mem::transmute(__lookup_get_obj_property::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_obj_property {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::reflection::propertyinfo::PropertyInfo as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <StructProperty as ::unity2::ClassIdentity>::class(),
-                "set_objProperty",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <StructProperty as ::unity2::ClassIdentity>::NAME,
-                        "set_objProperty",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_obj_property(
-        this: StructProperty,
-        value: crate::system::reflection::propertyinfo::PropertyInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(StructProperty, crate::system::reflection::propertyinfo::PropertyInfo, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_obj_property::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_is_struct {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <StructProperty as ::unity2::ClassIdentity>::class(),
-                "get_isStruct",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <StructProperty as ::unity2::ClassIdentity>::NAME,
-                        "get_isStruct",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_is_struct(this: StructProperty, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(StructProperty, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_is_struct::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_is_struct {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <StructProperty as ::unity2::ClassIdentity>::class(),
-                "set_isStruct",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <StructProperty as ::unity2::ClassIdentity>::NAME,
-                        "set_isStruct",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_is_struct(this: StructProperty, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(StructProperty, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_is_struct::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_is_setter {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <StructProperty as ::unity2::ClassIdentity>::class(),
-                "get_isSetter",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <StructProperty as ::unity2::ClassIdentity>::NAME,
-                        "get_isSetter",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_is_setter(this: StructProperty, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(StructProperty, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_is_setter::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_is_setter {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <StructProperty as ::unity2::ClassIdentity>::class(),
-                "set_isSetter",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <StructProperty as ::unity2::ClassIdentity>::NAME,
-                        "set_isSetter",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_is_setter(this: StructProperty, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(StructProperty, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_is_setter::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_setter {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <StructProperty as ::unity2::ClassIdentity>::class(),
-                "get_setter",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <StructProperty as ::unity2::ClassIdentity>::NAME,
-                        "get_setter",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_setter(this: StructProperty, __unity2_method_info: ::unity2::OptionalMethod) -> crate::system::object::Object {
-        let inner: extern "C" fn(StructProperty, ::unity2::OptionalMethod) -> crate::system::object::Object =
-            ::core::mem::transmute(__lookup_get_setter::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_setter {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <StructProperty as ::unity2::ClassIdentity>::class(),
-                "set_setter",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <StructProperty as ::unity2::ClassIdentity>::NAME,
-                        "set_setter",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_setter(this: StructProperty, value: crate::system::object::Object, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(StructProperty, crate::system::object::Object, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_setter::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_value_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <StructProperty as ::unity2::ClassIdentity>::class(),
-                "SetValue",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <StructProperty as ::unity2::ClassIdentity>::NAME,
-                        "SetValue",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_value_2(
-        this: StructProperty,
-        obj: crate::system::object::Object,
-        value: crate::system::object::Object,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(StructProperty, crate::system::object::Object, crate::system::object::Object, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_value_2::get_method_info().method_ptr);
-        inner(this, obj, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_kind_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <StructProperty as ::unity2::ClassIdentity>::class(),
-                "GetKind",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <StructProperty as ::unity2::ClassIdentity>::NAME,
-                        "GetKind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_kind_2(
-        name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::structproperty::StructProperty_Kind {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> crate::app::structproperty::StructProperty_Kind =
-            ::core::mem::transmute(__lookup_get_kind_2::get_method_info().method_ptr);
-        inner(name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_check_flag_kind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <StructProperty as ::unity2::ClassIdentity>::class(),
-                "CheckFlagKind",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <StructProperty as ::unity2::ClassIdentity>::NAME,
-                        "CheckFlagKind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn check_flag_kind(kind: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_check_flag_kind::get_method_info().method_ptr);
-        inner(kind, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_check_replace_kind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <StructProperty as ::unity2::ClassIdentity>::class(),
-                "CheckReplaceKind",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <StructProperty as ::unity2::ClassIdentity>::NAME,
-                        "CheckReplaceKind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn check_replace_kind(kind: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_check_replace_kind::get_method_info().method_ptr);
-        inner(kind, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_replace_kind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <StructProperty as ::unity2::ClassIdentity>::class(),
-                "ReplaceKind",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <StructProperty as ::unity2::ClassIdentity>::NAME,
-                        "ReplaceKind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn replace_kind(kind: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_replace_kind::get_method_info().method_ptr);
-        inner(kind, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_check_int_float_kind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <StructProperty as ::unity2::ClassIdentity>::class(),
-                "CheckIntFloatKind",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <StructProperty as ::unity2::ClassIdentity>::NAME,
-                        "CheckIntFloatKind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn check_int_float_kind(kind: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_check_int_float_kind::get_method_info().method_ptr);
-        inner(kind, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_check_array_kind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <StructProperty as ::unity2::ClassIdentity>::class(),
-                "CheckArrayKind",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <StructProperty as ::unity2::ClassIdentity>::NAME,
-                        "CheckArrayKind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn check_array_kind(kind: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_check_array_kind::get_method_info().method_ptr);
-        inner(kind, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <StructProperty as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <StructProperty as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: StructProperty, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(StructProperty, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __StructProperty_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_kind { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< StructProperty as :: unity2 :: ClassIdentity > :: class () , "get_kind" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < StructProperty as :: unity2 :: ClassIdentity > :: NAME , "get_kind" , e) , } } } pub unsafe fn get_kind (this : StructProperty , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: structproperty :: StructProperty_Kind { let inner : extern "C" fn (StructProperty , :: unity2 :: OptionalMethod ,) -> crate :: app :: structproperty :: StructProperty_Kind = :: core :: mem :: transmute (__lookup_get_kind :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_kind { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: structproperty :: StructProperty_Kind as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< StructProperty as :: unity2 :: ClassIdentity > :: class () , "set_kind" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < StructProperty as :: unity2 :: ClassIdentity > :: NAME , "set_kind" , e) , } } } pub unsafe fn set_kind (this : StructProperty , value : crate :: app :: structproperty :: StructProperty_Kind , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (StructProperty , crate :: app :: structproperty :: StructProperty_Kind , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_kind :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_property { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< StructProperty as :: unity2 :: ClassIdentity > :: class () , "get_property" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < StructProperty as :: unity2 :: ClassIdentity > :: NAME , "get_property" , e) , } } } pub unsafe fn get_property (this : StructProperty , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: propertyinfo :: PropertyInfo { let inner : extern "C" fn (StructProperty , :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: propertyinfo :: PropertyInfo = :: core :: mem :: transmute (__lookup_get_property :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_property { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: reflection :: propertyinfo :: PropertyInfo as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< StructProperty as :: unity2 :: ClassIdentity > :: class () , "set_property" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < StructProperty as :: unity2 :: ClassIdentity > :: NAME , "set_property" , e) , } } } pub unsafe fn set_property (this : StructProperty , value : crate :: system :: reflection :: propertyinfo :: PropertyInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (StructProperty , crate :: system :: reflection :: propertyinfo :: PropertyInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_property :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_obj_property { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< StructProperty as :: unity2 :: ClassIdentity > :: class () , "get_objProperty" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < StructProperty as :: unity2 :: ClassIdentity > :: NAME , "get_objProperty" , e) , } } } pub unsafe fn get_obj_property (this : StructProperty , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: propertyinfo :: PropertyInfo { let inner : extern "C" fn (StructProperty , :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: propertyinfo :: PropertyInfo = :: core :: mem :: transmute (__lookup_get_obj_property :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_obj_property { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: reflection :: propertyinfo :: PropertyInfo as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< StructProperty as :: unity2 :: ClassIdentity > :: class () , "set_objProperty" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < StructProperty as :: unity2 :: ClassIdentity > :: NAME , "set_objProperty" , e) , } } } pub unsafe fn set_obj_property (this : StructProperty , value : crate :: system :: reflection :: propertyinfo :: PropertyInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (StructProperty , crate :: system :: reflection :: propertyinfo :: PropertyInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_obj_property :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_is_struct { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< StructProperty as :: unity2 :: ClassIdentity > :: class () , "get_isStruct" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < StructProperty as :: unity2 :: ClassIdentity > :: NAME , "get_isStruct" , e) , } } } pub unsafe fn get_is_struct (this : StructProperty , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (StructProperty , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_is_struct :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_is_struct { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< StructProperty as :: unity2 :: ClassIdentity > :: class () , "set_isStruct" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < StructProperty as :: unity2 :: ClassIdentity > :: NAME , "set_isStruct" , e) , } } } pub unsafe fn set_is_struct (this : StructProperty , value : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (StructProperty , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_is_struct :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_is_setter { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< StructProperty as :: unity2 :: ClassIdentity > :: class () , "get_isSetter" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < StructProperty as :: unity2 :: ClassIdentity > :: NAME , "get_isSetter" , e) , } } } pub unsafe fn get_is_setter (this : StructProperty , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (StructProperty , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_is_setter :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_is_setter { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< StructProperty as :: unity2 :: ClassIdentity > :: class () , "set_isSetter" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < StructProperty as :: unity2 :: ClassIdentity > :: NAME , "set_isSetter" , e) , } } } pub unsafe fn set_is_setter (this : StructProperty , value : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (StructProperty , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_is_setter :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_setter { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< StructProperty as :: unity2 :: ClassIdentity > :: class () , "get_setter" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < StructProperty as :: unity2 :: ClassIdentity > :: NAME , "get_setter" , e) , } } } pub unsafe fn get_setter (this : StructProperty , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object { let inner : extern "C" fn (StructProperty , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute (__lookup_get_setter :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_setter { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< StructProperty as :: unity2 :: ClassIdentity > :: class () , "set_setter" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < StructProperty as :: unity2 :: ClassIdentity > :: NAME , "set_setter" , e) , } } } pub unsafe fn set_setter (this : StructProperty , value : crate :: system :: object :: Object , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (StructProperty , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_setter :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_value_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type () , < crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< StructProperty as :: unity2 :: ClassIdentity > :: class () , "SetValue" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < StructProperty as :: unity2 :: ClassIdentity > :: NAME , "SetValue" , e) , } } } pub unsafe fn set_value_2 (this : StructProperty , obj : crate :: system :: object :: Object , value : crate :: system :: object :: Object , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (StructProperty , crate :: system :: object :: Object , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_value_2 :: get_method_info () . method_ptr ,) ; inner (this , obj , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_kind_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< StructProperty as :: unity2 :: ClassIdentity > :: class () , "GetKind" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < StructProperty as :: unity2 :: ClassIdentity > :: NAME , "GetKind" , e) , } } } pub unsafe fn get_kind_2 (name : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: structproperty :: StructProperty_Kind { let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: app :: structproperty :: StructProperty_Kind = :: core :: mem :: transmute (__lookup_get_kind_2 :: get_method_info () . method_ptr ,) ; inner (name , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_check_flag_kind { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< StructProperty as :: unity2 :: ClassIdentity > :: class () , "CheckFlagKind" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < StructProperty as :: unity2 :: ClassIdentity > :: NAME , "CheckFlagKind" , e) , } } } pub unsafe fn check_flag_kind (kind : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_check_flag_kind :: get_method_info () . method_ptr ,) ; inner (kind , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_check_replace_kind { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< StructProperty as :: unity2 :: ClassIdentity > :: class () , "CheckReplaceKind" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < StructProperty as :: unity2 :: ClassIdentity > :: NAME , "CheckReplaceKind" , e) , } } } pub unsafe fn check_replace_kind (kind : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_check_replace_kind :: get_method_info () . method_ptr ,) ; inner (kind , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_replace_kind { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< StructProperty as :: unity2 :: ClassIdentity > :: class () , "ReplaceKind" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < StructProperty as :: unity2 :: ClassIdentity > :: NAME , "ReplaceKind" , e) , } } } pub unsafe fn replace_kind (kind : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_replace_kind :: get_method_info () . method_ptr ,) ; inner (kind , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_check_int_float_kind { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< StructProperty as :: unity2 :: ClassIdentity > :: class () , "CheckIntFloatKind" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < StructProperty as :: unity2 :: ClassIdentity > :: NAME , "CheckIntFloatKind" , e) , } } } pub unsafe fn check_int_float_kind (kind : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_check_int_float_kind :: get_method_info () . method_ptr ,) ; inner (kind , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_check_array_kind { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< StructProperty as :: unity2 :: ClassIdentity > :: class () , "CheckArrayKind" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < StructProperty as :: unity2 :: ClassIdentity > :: NAME , "CheckArrayKind" , e) , } } } pub unsafe fn check_array_kind (kind : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_check_array_kind :: get_method_info () . method_ptr ,) ; inner (kind , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< StructProperty as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < StructProperty as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : StructProperty , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (StructProperty , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-structproperty")]
+impl StructProperty { # [doc = "`GetKind(::unity2::Il2CppString)` overload"] pub fn get_kind_2 (name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: app :: structproperty :: StructProperty_Kind { unsafe { __StructProperty_unity2_raw :: get_kind_2 (:: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } # [doc = "`CheckFlagKind(::unity2::Il2CppString)` overload"] pub fn check_flag_kind (kind : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { __StructProperty_unity2_raw :: check_flag_kind (:: core :: convert :: Into :: into (kind) , :: core :: option :: Option :: None) } } # [doc = "`CheckReplaceKind(::unity2::Il2CppString)` overload"] pub fn check_replace_kind (kind : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { __StructProperty_unity2_raw :: check_replace_kind (:: core :: convert :: Into :: into (kind) , :: core :: option :: Option :: None) } } # [doc = "`ReplaceKind(::unity2::Il2CppString)` overload"] pub fn replace_kind (kind : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Il2CppString { unsafe { __StructProperty_unity2_raw :: replace_kind (:: core :: convert :: Into :: into (kind) , :: core :: option :: Option :: None) } } # [doc = "`CheckIntFloatKind(::unity2::Il2CppString)` overload"] pub fn check_int_float_kind (kind : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { __StructProperty_unity2_raw :: check_int_float_kind (:: core :: convert :: Into :: into (kind) , :: core :: option :: Option :: None) } } # [doc = "`CheckArrayKind(::unity2::Il2CppString)` overload"] pub fn check_array_kind (kind : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { __StructProperty_unity2_raw :: check_array_kind (:: core :: convert :: Into :: into (kind) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-structproperty")]
+pub trait IStructPropertyMethods : IStructProperty { # [doc = "`get_kind()` overload"] fn get_kind (self ,) -> crate :: app :: structproperty :: StructProperty_Kind { unsafe { let __receiver = < StructProperty as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __StructProperty_unity2_raw :: get_kind (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_kind(crate::app::structproperty::StructProperty_Kind)` overload"] fn set_kind (self , value : impl :: core :: convert :: Into < crate :: app :: structproperty :: StructProperty_Kind >) -> () { unsafe { let __receiver = < StructProperty as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __StructProperty_unity2_raw :: set_kind (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_property()` overload"] fn get_property (self ,) -> crate :: system :: reflection :: propertyinfo :: PropertyInfo { unsafe { let __receiver = < StructProperty as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __StructProperty_unity2_raw :: get_property (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_property(crate::system::reflection::propertyinfo::PropertyInfo)` overload"] fn set_property (self , value : impl :: core :: convert :: Into < crate :: system :: reflection :: propertyinfo :: PropertyInfo >) -> () { unsafe { let __receiver = < StructProperty as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __StructProperty_unity2_raw :: set_property (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_objProperty()` overload"] fn get_obj_property (self ,) -> crate :: system :: reflection :: propertyinfo :: PropertyInfo { unsafe { let __receiver = < StructProperty as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __StructProperty_unity2_raw :: get_obj_property (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_objProperty(crate::system::reflection::propertyinfo::PropertyInfo)` overload"] fn set_obj_property (self , value : impl :: core :: convert :: Into < crate :: system :: reflection :: propertyinfo :: PropertyInfo >) -> () { unsafe { let __receiver = < StructProperty as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __StructProperty_unity2_raw :: set_obj_property (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_isStruct()` overload"] fn get_is_struct (self ,) -> bool { unsafe { let __receiver = < StructProperty as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __StructProperty_unity2_raw :: get_is_struct (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_isStruct(bool)` overload"] fn set_is_struct (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < StructProperty as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __StructProperty_unity2_raw :: set_is_struct (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_isSetter()` overload"] fn get_is_setter (self ,) -> bool { unsafe { let __receiver = < StructProperty as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __StructProperty_unity2_raw :: get_is_setter (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_isSetter(bool)` overload"] fn set_is_setter (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < StructProperty as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __StructProperty_unity2_raw :: set_is_setter (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_setter()` overload"] fn get_setter (self ,) -> crate :: system :: object :: Object { unsafe { let __receiver = < StructProperty as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __StructProperty_unity2_raw :: get_setter (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_setter(crate::system::object::Object)` overload"] fn set_setter (self , value : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> () { unsafe { let __receiver = < StructProperty as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __StructProperty_unity2_raw :: set_setter (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } fn set_value < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity , M1 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > (self , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object > , value : impl :: core :: convert :: Into < M1 >) -> () { static OPEN : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { :: unity2 :: lookup :: method_info_on_class (< StructProperty as :: unity2 :: ClassIdentity > :: class () , "SetValue" , 2 ,) }) ; # [allow (clippy :: type_complexity)] static CACHE : :: std :: sync :: OnceLock < :: std :: sync :: Mutex < :: std :: collections :: HashMap < usize , & 'static :: unity2 :: il2cpp :: MethodInfo > , > , > = :: std :: sync :: OnceLock :: new () ; let _ = false ; let __open : & 'static :: unity2 :: il2cpp :: MethodInfo = match & * OPEN { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < StructProperty as :: unity2 :: ClassIdentity > :: NAME , "SetValue" , e) , } ; let __cache = CACHE . get_or_init (|| { :: std :: sync :: Mutex :: new (:: std :: collections :: HashMap :: new ()) }) ; let __key : usize = (< M0 as :: unity2 :: IlType > :: il_type () as * const _ as usize) ^ (< M1 as :: unity2 :: IlType > :: il_type () as * const _ as usize) ; let __inflated : & 'static :: unity2 :: il2cpp :: MethodInfo = { let mut __guard = __cache . lock () . unwrap () ; * __guard . entry (__key) . or_insert_with (|| { :: unity2 :: il2cpp :: generic :: create_generic_method_info (__open , & [< M0 as :: unity2 :: IlType > :: il_type () , < M1 as :: unity2 :: IlType > :: il_type ()] ,) }) } ; unsafe { let __receiver = < StructProperty as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let __f : extern "C" fn (StructProperty , crate :: system :: object :: Object , M1 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__inflated . method_ptr) ; let __mi_opaque : & 'static () = & * (__inflated as * const _ as * const ()) ; __f (__receiver , :: core :: convert :: Into :: into (obj) , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: Some (__mi_opaque) ,) } } # [doc = "`SetValue(crate::system::object::Object, crate::system::object::Object)` overload"] fn set_value_2 (self , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object > , value : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> () { unsafe { let __receiver = < StructProperty as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __StructProperty_unity2_raw :: set_value_2 (__receiver , :: core :: convert :: Into :: into (obj) , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < StructProperty as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __StructProperty_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-structproperty")]
+impl < __T : IStructProperty > IStructPropertyMethods for __T { }
+
+#[cfg(feature = "app-structproperty")]
+impl StructProperty { pub fn get_kind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __StructProperty_unity2_raw :: __lookup_get_kind :: get_method_info () } pub fn set_kind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __StructProperty_unity2_raw :: __lookup_set_kind :: get_method_info () } pub fn get_property_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __StructProperty_unity2_raw :: __lookup_get_property :: get_method_info () } pub fn set_property_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __StructProperty_unity2_raw :: __lookup_set_property :: get_method_info () } pub fn get_obj_property_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __StructProperty_unity2_raw :: __lookup_get_obj_property :: get_method_info () } pub fn set_obj_property_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __StructProperty_unity2_raw :: __lookup_set_obj_property :: get_method_info () } pub fn get_is_struct_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __StructProperty_unity2_raw :: __lookup_get_is_struct :: get_method_info () } pub fn set_is_struct_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __StructProperty_unity2_raw :: __lookup_set_is_struct :: get_method_info () } pub fn get_is_setter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __StructProperty_unity2_raw :: __lookup_get_is_setter :: get_method_info () } pub fn set_is_setter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __StructProperty_unity2_raw :: __lookup_set_is_setter :: get_method_info () } pub fn get_setter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __StructProperty_unity2_raw :: __lookup_get_setter :: get_method_info () } pub fn set_setter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __StructProperty_unity2_raw :: __lookup_set_setter :: get_method_info () } pub fn set_value_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __StructProperty_unity2_raw :: __lookup_set_value_2 :: get_method_info () } pub fn get_kind_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __StructProperty_unity2_raw :: __lookup_get_kind_2 :: get_method_info () } pub fn check_flag_kind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __StructProperty_unity2_raw :: __lookup_check_flag_kind :: get_method_info () } pub fn check_replace_kind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __StructProperty_unity2_raw :: __lookup_check_replace_kind :: get_method_info () } pub fn replace_kind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __StructProperty_unity2_raw :: __lookup_replace_kind :: get_method_info () } pub fn check_int_float_kind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __StructProperty_unity2_raw :: __lookup_check_int_float_kind :: get_method_info () } pub fn check_array_kind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __StructProperty_unity2_raw :: __lookup_check_array_kind :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __StructProperty_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-structproperty")]
 impl StructProperty {
-    #[doc = "`GetKind(::unity2::Il2CppString)` overload"]
-    pub fn get_kind_2(name: impl ::core::convert::Into<::unity2::Il2CppString>) -> crate::app::structproperty::StructProperty_Kind {
-        unsafe { __StructProperty_unity2_raw::get_kind_2(::core::convert::Into::into(name), ::core::option::Option::None) }
-    }
-
-    #[doc = "`CheckFlagKind(::unity2::Il2CppString)` overload"]
-    pub fn check_flag_kind(kind: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
-        unsafe { __StructProperty_unity2_raw::check_flag_kind(::core::convert::Into::into(kind), ::core::option::Option::None) }
-    }
-
-    #[doc = "`CheckReplaceKind(::unity2::Il2CppString)` overload"]
-    pub fn check_replace_kind(kind: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
-        unsafe { __StructProperty_unity2_raw::check_replace_kind(::core::convert::Into::into(kind), ::core::option::Option::None) }
-    }
-
-    #[doc = "`ReplaceKind(::unity2::Il2CppString)` overload"]
-    pub fn replace_kind(kind: impl ::core::convert::Into<::unity2::Il2CppString>) -> ::unity2::Il2CppString {
-        unsafe { __StructProperty_unity2_raw::replace_kind(::core::convert::Into::into(kind), ::core::option::Option::None) }
-    }
-
-    #[doc = "`CheckIntFloatKind(::unity2::Il2CppString)` overload"]
-    pub fn check_int_float_kind(kind: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
-        unsafe { __StructProperty_unity2_raw::check_int_float_kind(::core::convert::Into::into(kind), ::core::option::Option::None) }
-    }
-
-    #[doc = "`CheckArrayKind(::unity2::Il2CppString)` overload"]
-    pub fn check_array_kind(kind: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
-        unsafe { __StructProperty_unity2_raw::check_array_kind(::core::convert::Into::into(kind), ::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-structproperty")]
-pub trait IStructPropertyMethods: IStructProperty {
-    #[doc = "`get_kind()` overload"]
-    fn get_kind(self) -> crate::app::structproperty::StructProperty_Kind {
-        unsafe {
-            let __receiver = <StructProperty as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __StructProperty_unity2_raw::get_kind(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_kind(crate::app::structproperty::StructProperty_Kind)` overload"]
-    fn set_kind(self, value: impl ::core::convert::Into<crate::app::structproperty::StructProperty_Kind>) -> () {
-        unsafe {
-            let __receiver = <StructProperty as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __StructProperty_unity2_raw::set_kind(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_property()` overload"]
-    fn get_property(self) -> crate::system::reflection::propertyinfo::PropertyInfo {
-        unsafe {
-            let __receiver = <StructProperty as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __StructProperty_unity2_raw::get_property(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_property(crate::system::reflection::propertyinfo::PropertyInfo)` overload"]
-    fn set_property(self, value: impl ::core::convert::Into<crate::system::reflection::propertyinfo::PropertyInfo>) -> () {
-        unsafe {
-            let __receiver = <StructProperty as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __StructProperty_unity2_raw::set_property(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_objProperty()` overload"]
-    fn get_obj_property(self) -> crate::system::reflection::propertyinfo::PropertyInfo {
-        unsafe {
-            let __receiver = <StructProperty as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __StructProperty_unity2_raw::get_obj_property(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_objProperty(crate::system::reflection::propertyinfo::PropertyInfo)` overload"]
-    fn set_obj_property(self, value: impl ::core::convert::Into<crate::system::reflection::propertyinfo::PropertyInfo>) -> () {
-        unsafe {
-            let __receiver = <StructProperty as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __StructProperty_unity2_raw::set_obj_property(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_isStruct()` overload"]
-    fn get_is_struct(self) -> bool {
-        unsafe {
-            let __receiver = <StructProperty as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __StructProperty_unity2_raw::get_is_struct(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_isStruct(bool)` overload"]
-    fn set_is_struct(self, value: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver = <StructProperty as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __StructProperty_unity2_raw::set_is_struct(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_isSetter()` overload"]
-    fn get_is_setter(self) -> bool {
-        unsafe {
-            let __receiver = <StructProperty as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __StructProperty_unity2_raw::get_is_setter(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_isSetter(bool)` overload"]
-    fn set_is_setter(self, value: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver = <StructProperty as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __StructProperty_unity2_raw::set_is_setter(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_setter()` overload"]
-    fn get_setter(self) -> crate::system::object::Object {
-        unsafe {
-            let __receiver = <StructProperty as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __StructProperty_unity2_raw::get_setter(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_setter(crate::system::object::Object)` overload"]
-    fn set_setter(self, value: impl ::core::convert::Into<crate::system::object::Object>) -> () {
-        unsafe {
-            let __receiver = <StructProperty as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __StructProperty_unity2_raw::set_setter(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    fn set_value<
-        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
-        M1: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
-    >(
-        self,
-        obj: impl ::core::convert::Into<crate::system::object::Object>,
-        value: impl ::core::convert::Into<M1>,
-    ) -> () {
-        static OPEN: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            ::unity2::lookup::method_info_on_class(<StructProperty as ::unity2::ClassIdentity>::class(), "SetValue", 2)
-        });
-        #[allow(clippy::type_complexity)]
-        static CACHE: ::std::sync::OnceLock<::std::sync::Mutex<::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>>> =
-            ::std::sync::OnceLock::new();
-        let _ = false;
-        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
-            ::core::result::Result::Ok(mi) => *mi,
-            ::core::result::Result::Err(e) => {
-                panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StructProperty as ::unity2::ClassIdentity>::NAME,
-                    "SetValue",
-                    e
-                )
-            },
-        };
-        let __cache = CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
-        let __key: usize = (<M0 as ::unity2::IlType>::il_type() as *const _ as usize) ^ (<M1 as ::unity2::IlType>::il_type() as *const _ as usize);
-        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
-            let mut __guard = __cache.lock().unwrap();
-            *__guard.entry(__key).or_insert_with(|| {
-                ::unity2::il2cpp::generic::create_generic_method_info(__open, &[
-                    <M0 as ::unity2::IlType>::il_type(),
-                    <M1 as ::unity2::IlType>::il_type(),
-                ])
-            })
-        };
-        unsafe {
-            let __receiver = <StructProperty as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            let __f: extern "C" fn(StructProperty, crate::system::object::Object, M1, ::unity2::OptionalMethod) -> () =
-                ::core::mem::transmute(__inflated.method_ptr);
-            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
-            __f(
-                __receiver,
-                ::core::convert::Into::into(obj),
-                ::core::convert::Into::into(value),
-                ::core::option::Option::Some(__mi_opaque),
-            )
-        }
-    }
-    #[doc = "`SetValue(crate::system::object::Object, crate::system::object::Object)` overload"]
-    fn set_value_2(
-        self,
-        obj: impl ::core::convert::Into<crate::system::object::Object>,
-        value: impl ::core::convert::Into<crate::system::object::Object>,
-    ) -> () {
-        unsafe {
-            let __receiver = <StructProperty as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __StructProperty_unity2_raw::set_value_2(
-                __receiver,
-                ::core::convert::Into::into(obj),
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <StructProperty as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __StructProperty_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-structproperty")]
-impl<__T: IStructProperty> IStructPropertyMethods for __T {}
-
-#[cfg(feature = "app-structproperty")]
-impl StructProperty {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(StructProperty),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IStructPropertyMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (StructProperty) , :: core :: stringify ! (new) ,)) ; < Self as IStructPropertyMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-structproperty")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IStructProperty, IStructPropertyMethods, StructProperty, StructProperty_Kind};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::system::{object::IObject, r#enum::IEnum, valuetype::IValueType};
+    pub use super::StructProperty;
+    pub use super::IStructProperty;
+    pub use super::IStructPropertyMethods;
+    pub use super::StructProperty_Kind;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

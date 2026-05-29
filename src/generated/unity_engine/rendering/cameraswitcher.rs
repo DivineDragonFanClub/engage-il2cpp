@@ -2,345 +2,70 @@
 
 #[cfg(feature = "unity_engine-rendering-cameraswitcher-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/cameraswitcher/CameraSwitcher.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Rendering", name = "CameraSwitcher")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct CameraSwitcher {
-        #[offset(24)]
-        #[rename(name = "m_Cameras")]
-        pub m_cameras: ::unity2::Array<crate::unity_engine::camera::Camera>,
-        #[offset(32)]
-        #[rename(name = "m_CurrentCameraIndex")]
-        pub m_current_camera_index: i32,
-        #[offset(40)]
-        #[rename(name = "m_OriginalCamera")]
-        pub m_original_camera: crate::unity_engine::camera::Camera,
-        #[offset(48)]
-        #[rename(name = "m_OriginalCameraPosition")]
-        pub m_original_camera_position: crate::unity_engine::vector3::Vector3,
-        #[offset(60)]
-        #[rename(name = "m_OriginalCameraRotation")]
-        pub m_original_camera_rotation: crate::unity_engine::quaternion::Quaternion,
-        #[offset(80)]
-        #[rename(name = "m_CurrentCamera")]
-        pub m_current_camera: crate::unity_engine::camera::Camera,
-        #[offset(88)]
-        #[rename(name = "m_CameraNames")]
-        pub m_camera_names: ::unity2::Array<crate::unity_engine::guicontent::GUIContent>,
-        #[offset(96)]
-        #[rename(name = "m_CameraIndices")]
-        pub m_camera_indices: ::unity2::Array<i32>,
-        #[offset(104)]
-        #[rename(name = "m_DebugEntry")]
-        pub m_debug_entry: crate::unity_engine::rendering::debugui::DebugUI_EnumField,
-        #[offset(112)]
-        #[rename(name = "m_DebugEntryEnumIndex")]
-        pub m_debug_entry_enum_index: i32,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/cameraswitcher/CameraSwitcher.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering" , name = "CameraSwitcher")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct CameraSwitcher {
+# [offset (24)] # [rename (name = "m_Cameras")] pub m_cameras : :: unity2 :: Array < crate :: unity_engine :: camera :: Camera > ,
+# [offset (32)] # [rename (name = "m_CurrentCameraIndex")] pub m_current_camera_index : i32 ,
+# [offset (40)] # [rename (name = "m_OriginalCamera")] pub m_original_camera : crate :: unity_engine :: camera :: Camera ,
+# [offset (48)] # [rename (name = "m_OriginalCameraPosition")] pub m_original_camera_position : crate :: unity_engine :: vector3 :: Vector3 ,
+# [offset (60)] # [rename (name = "m_OriginalCameraRotation")] pub m_original_camera_rotation : crate :: unity_engine :: quaternion :: Quaternion ,
+# [offset (80)] # [rename (name = "m_CurrentCamera")] pub m_current_camera : crate :: unity_engine :: camera :: Camera ,
+# [offset (88)] # [rename (name = "m_CameraNames")] pub m_camera_names : :: unity2 :: Array < crate :: unity_engine :: guicontent :: GUIContent > ,
+# [offset (96)] # [rename (name = "m_CameraIndices")] pub m_camera_indices : :: unity2 :: Array < i32 > ,
+# [offset (104)] # [rename (name = "m_DebugEntry")] pub m_debug_entry : crate :: unity_engine :: rendering :: debugui :: DebugUI_EnumField ,
+# [offset (112)] # [rename (name = "m_DebugEntryEnumIndex")] pub m_debug_entry_enum_index : i32 ,
+}
+
 }
 
 #[cfg(feature = "unity_engine-rendering-cameraswitcher-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-cameraswitcher")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __CameraSwitcher_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_enable {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CameraSwitcher as ::unity2::ClassIdentity>::class(),
-                "OnEnable",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CameraSwitcher as ::unity2::ClassIdentity>::NAME,
-                        "OnEnable",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_enable(this: CameraSwitcher, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CameraSwitcher, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_enable::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_disable {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CameraSwitcher as ::unity2::ClassIdentity>::class(),
-                "OnDisable",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CameraSwitcher as ::unity2::ClassIdentity>::NAME,
-                        "OnDisable",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_disable(this: CameraSwitcher, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CameraSwitcher, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_disable::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_camera_count {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CameraSwitcher as ::unity2::ClassIdentity>::class(),
-                "GetCameraCount",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CameraSwitcher as ::unity2::ClassIdentity>::NAME,
-                        "GetCameraCount",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_camera_count(this: CameraSwitcher, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(CameraSwitcher, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_camera_count::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_next_camera {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CameraSwitcher as ::unity2::ClassIdentity>::class(),
-                "GetNextCamera",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CameraSwitcher as ::unity2::ClassIdentity>::NAME,
-                        "GetNextCamera",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_next_camera(this: CameraSwitcher, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::camera::Camera {
-        let inner: extern "C" fn(CameraSwitcher, ::unity2::OptionalMethod) -> crate::unity_engine::camera::Camera =
-            ::core::mem::transmute(__lookup_get_next_camera::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_camera_index {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CameraSwitcher as ::unity2::ClassIdentity>::class(),
-                "SetCameraIndex",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CameraSwitcher as ::unity2::ClassIdentity>::NAME,
-                        "SetCameraIndex",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_camera_index(this: CameraSwitcher, index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CameraSwitcher, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_camera_index::get_method_info().method_ptr);
-        inner(this, index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CameraSwitcher as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CameraSwitcher as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: CameraSwitcher, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CameraSwitcher, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __CameraSwitcher_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_enable { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CameraSwitcher as :: unity2 :: ClassIdentity > :: class () , "OnEnable" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CameraSwitcher as :: unity2 :: ClassIdentity > :: NAME , "OnEnable" , e) , } } } pub unsafe fn on_enable (this : CameraSwitcher , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CameraSwitcher , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_enable :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_disable { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CameraSwitcher as :: unity2 :: ClassIdentity > :: class () , "OnDisable" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CameraSwitcher as :: unity2 :: ClassIdentity > :: NAME , "OnDisable" , e) , } } } pub unsafe fn on_disable (this : CameraSwitcher , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CameraSwitcher , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_disable :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_camera_count { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CameraSwitcher as :: unity2 :: ClassIdentity > :: class () , "GetCameraCount" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CameraSwitcher as :: unity2 :: ClassIdentity > :: NAME , "GetCameraCount" , e) , } } } pub unsafe fn get_camera_count (this : CameraSwitcher , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (CameraSwitcher , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_camera_count :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_next_camera { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CameraSwitcher as :: unity2 :: ClassIdentity > :: class () , "GetNextCamera" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CameraSwitcher as :: unity2 :: ClassIdentity > :: NAME , "GetNextCamera" , e) , } } } pub unsafe fn get_next_camera (this : CameraSwitcher , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: camera :: Camera { let inner : extern "C" fn (CameraSwitcher , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: camera :: Camera = :: core :: mem :: transmute (__lookup_get_next_camera :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_camera_index { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CameraSwitcher as :: unity2 :: ClassIdentity > :: class () , "SetCameraIndex" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CameraSwitcher as :: unity2 :: ClassIdentity > :: NAME , "SetCameraIndex" , e) , } } } pub unsafe fn set_camera_index (this : CameraSwitcher , index : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CameraSwitcher , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_camera_index :: get_method_info () . method_ptr ,) ; inner (this , index , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CameraSwitcher as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CameraSwitcher as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : CameraSwitcher , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CameraSwitcher , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-rendering-cameraswitcher")]
-pub trait ICameraSwitcherMethods: ICameraSwitcher {
-    #[doc = "`OnEnable()` overload"]
-    fn on_enable(self) -> () {
-        unsafe {
-            let __receiver = <CameraSwitcher as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CameraSwitcher_unity2_raw::on_enable(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnDisable()` overload"]
-    fn on_disable(self) -> () {
-        unsafe {
-            let __receiver = <CameraSwitcher as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CameraSwitcher_unity2_raw::on_disable(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetCameraCount()` overload"]
-    fn get_camera_count(self) -> i32 {
-        unsafe {
-            let __receiver = <CameraSwitcher as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CameraSwitcher_unity2_raw::get_camera_count(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetNextCamera()` overload"]
-    fn get_next_camera(self) -> crate::unity_engine::camera::Camera {
-        unsafe {
-            let __receiver = <CameraSwitcher as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CameraSwitcher_unity2_raw::get_next_camera(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetCameraIndex(i32)` overload"]
-    fn set_camera_index(self, index: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver = <CameraSwitcher as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CameraSwitcher_unity2_raw::set_camera_index(__receiver, ::core::convert::Into::into(index), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <CameraSwitcher as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CameraSwitcher_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait ICameraSwitcherMethods : ICameraSwitcher { # [doc = "`OnEnable()` overload"] fn on_enable (self ,) -> () { unsafe { let __receiver = < CameraSwitcher as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CameraSwitcher_unity2_raw :: on_enable (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnDisable()` overload"] fn on_disable (self ,) -> () { unsafe { let __receiver = < CameraSwitcher as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CameraSwitcher_unity2_raw :: on_disable (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetCameraCount()` overload"] fn get_camera_count (self ,) -> i32 { unsafe { let __receiver = < CameraSwitcher as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CameraSwitcher_unity2_raw :: get_camera_count (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetNextCamera()` overload"] fn get_next_camera (self ,) -> crate :: unity_engine :: camera :: Camera { unsafe { let __receiver = < CameraSwitcher as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CameraSwitcher_unity2_raw :: get_next_camera (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetCameraIndex(i32)` overload"] fn set_camera_index (self , index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < CameraSwitcher as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CameraSwitcher_unity2_raw :: set_camera_index (__receiver , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CameraSwitcher as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CameraSwitcher_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-rendering-cameraswitcher")]
-impl<__T: ICameraSwitcher> ICameraSwitcherMethods for __T {}
+impl < __T : ICameraSwitcher > ICameraSwitcherMethods for __T { }
+
+#[cfg(feature = "unity_engine-rendering-cameraswitcher")]
+impl CameraSwitcher { pub fn on_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CameraSwitcher_unity2_raw :: __lookup_on_enable :: get_method_info () } pub fn on_disable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CameraSwitcher_unity2_raw :: __lookup_on_disable :: get_method_info () } pub fn get_camera_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CameraSwitcher_unity2_raw :: __lookup_get_camera_count :: get_method_info () } pub fn get_next_camera_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CameraSwitcher_unity2_raw :: __lookup_get_next_camera :: get_method_info () } pub fn set_camera_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CameraSwitcher_unity2_raw :: __lookup_set_camera_index :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CameraSwitcher_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-rendering-cameraswitcher")]
 impl CameraSwitcher {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(CameraSwitcher),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ICameraSwitcherMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CameraSwitcher) , :: core :: stringify ! (new) ,)) ; < Self as ICameraSwitcherMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "unity_engine-rendering-cameraswitcher")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{CameraSwitcher, ICameraSwitcher, ICameraSwitcherMethods};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        system::object::IObject,
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::CameraSwitcher;
+    pub use super::ICameraSwitcher;
+    pub use super::ICameraSwitcherMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

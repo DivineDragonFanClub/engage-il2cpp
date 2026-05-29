@@ -2,359 +2,77 @@
 
 #[cfg(feature = "combat-fxzex-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        valuetype::{IValueType, ValueType},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/fxzex/FXZEx.md"))]
-    #[::unity2::class(namespace = "Combat", name = "FXZEx")]
-    #[parent(crate::system::object::Object)]
-    pub struct FXZEx {
-        #[static_field]
-        #[rename(name = "layerMask")]
-        pub layer_mask: i32,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/fxzex/FXZEx_HitPoint.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct FXZEx_HitPoint {
-        pub pos: crate::unity_engine::vector3::Vector3,
-        pub nrm: crate::unity_engine::vector3::Vector3,
-        pub col_index: i32,
-    }
 
-    impl ::unity2::ClassIdentity for FXZEx_HitPoint {
-        const NAME: &'static str = "FXZEx.HitPoint";
-        const NAMESPACE: &'static str = "Combat";
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/fxzex/FXZEx.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "FXZEx")] # [parent (crate :: system :: object :: Object)] pub struct FXZEx {
+# [static_field] # [rename (name = "layerMask")] pub layer_mask : i32 ,
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/fxzex/FXZEx_HitPoint.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct FXZEx_HitPoint {
+    pub pos: crate :: unity_engine :: vector3 :: Vector3,
+    pub nrm: crate :: unity_engine :: vector3 :: Vector3,
+    pub col_index: i32,
+}
+
+
+impl ::unity2::ClassIdentity for FXZEx_HitPoint {
+    const NAMESPACE: &'static str = "Combat";
+
+    const NAME: &'static str = "FXZEx.HitPoint";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for FXZEx_HitPoint {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl ::unity2::IlType for FXZEx_HitPoint {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
+
+}
+
 }
 
 #[cfg(feature = "combat-fxzex-types")]
 pub use __types::*;
 
 #[cfg(feature = "combat-fxzex")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __FXZEx_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_layer_mask {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<FXZEx as ::unity2::ClassIdentity>::class(), "get_LayerMask", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FXZEx as ::unity2::ClassIdentity>::NAME,
-                        "get_LayerMask",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_layer_mask(__unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(__lookup_get_layer_mask::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_to_xhz {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<FXZEx as ::unity2::ClassIdentity>::class(), "ToXHZ", 1, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <FXZEx as ::unity2::ClassIdentity>::NAME, "ToXHZ", e),
-            }
-        }
-    }
-    pub unsafe fn to_xhz(
-        xyz: crate::unity_engine::vector3::Vector3,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::vector3::Vector3 {
-        let inner: extern "C" fn(crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 =
-            ::core::mem::transmute(__lookup_to_xhz::get_method_info().method_ptr);
-        inner(xyz, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_to_xhz_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::combat::fxz::FXZ as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<FXZEx as ::unity2::ClassIdentity>::class(), "ToXHZ", 1, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <FXZEx as ::unity2::ClassIdentity>::NAME, "ToXHZ", e),
-            }
-        }
-    }
-    pub unsafe fn to_xhz_2(xz: crate::combat::fxz::FXZ, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 {
-        let inner: extern "C" fn(crate::combat::fxz::FXZ, ::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 =
-            ::core::mem::transmute(__lookup_to_xhz_2::get_method_info().method_ptr);
-        inner(xz, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_sample_height {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<FXZEx as ::unity2::ClassIdentity>::class(), "SampleHeight", 1, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FXZEx as ::unity2::ClassIdentity>::NAME,
-                        "SampleHeight",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn sample_height(xyz: crate::unity_engine::vector3::Vector3, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_sample_height::get_method_info().method_ptr);
-        inner(xyz, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_sample_height_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::combat::fxz::FXZ as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<FXZEx as ::unity2::ClassIdentity>::class(), "SampleHeight", 1, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FXZEx as ::unity2::ClassIdentity>::NAME,
-                        "SampleHeight",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn sample_height_2(xz: crate::combat::fxz::FXZ, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(crate::combat::fxz::FXZ, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_sample_height_2::get_method_info().method_ptr);
-        inner(xz, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_to_abcd {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<FXZEx as ::unity2::ClassIdentity>::class(), "ToABCD", 1, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <FXZEx as ::unity2::ClassIdentity>::NAME, "ToABCD", e),
-            }
-        }
-    }
-    pub unsafe fn to_abcd(
-        xyz: crate::unity_engine::vector3::Vector3,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::vector4::Vector4 {
-        let inner: extern "C" fn(crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> crate::unity_engine::vector4::Vector4 =
-            ::core::mem::transmute(__lookup_to_abcd::get_method_info().method_ptr);
-        inner(xyz, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_to_wide_abcd {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<FXZEx as ::unity2::ClassIdentity>::class(), "ToWideABCD", 1, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FXZEx as ::unity2::ClassIdentity>::NAME,
-                        "ToWideABCD",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn to_wide_abcd(
-        center_pos: crate::unity_engine::vector3::Vector3,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::vector4::Vector4 {
-        let inner: extern "C" fn(crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> crate::unity_engine::vector4::Vector4 =
-            ::core::mem::transmute(__lookup_to_wide_abcd::get_method_info().method_ptr);
-        inner(center_pos, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_to_wide_abcd_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<FXZEx as ::unity2::ClassIdentity>::class(), "ToWideABCD", 2, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FXZEx as ::unity2::ClassIdentity>::NAME,
-                        "ToWideABCD",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn to_wide_abcd_2(
-        center_pos: crate::unity_engine::vector3::Vector3,
-        out_plane_is_flat: *mut bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::vector4::Vector4 {
-        let inner: extern "C" fn(
-            crate::unity_engine::vector3::Vector3,
-            *mut bool,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector4::Vector4 = ::core::mem::transmute(__lookup_to_wide_abcd_2::get_method_info().method_ptr);
-        inner(center_pos, out_plane_is_flat, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<FXZEx as ::unity2::ClassIdentity>::class(), ".cctor", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <FXZEx as ::unity2::ClassIdentity>::NAME, ".cctor", e),
-            }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __FXZEx_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_layer_mask { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FXZEx as :: unity2 :: ClassIdentity > :: class () , "get_LayerMask" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FXZEx as :: unity2 :: ClassIdentity > :: NAME , "get_LayerMask" , e) , } } } pub unsafe fn get_layer_mask (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_layer_mask :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_to_xhz { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FXZEx as :: unity2 :: ClassIdentity > :: class () , "ToXHZ" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FXZEx as :: unity2 :: ClassIdentity > :: NAME , "ToXHZ" , e) , } } } pub unsafe fn to_xhz (xyz : crate :: unity_engine :: vector3 :: Vector3 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 { let inner : extern "C" fn (crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute (__lookup_to_xhz :: get_method_info () . method_ptr ,) ; inner (xyz , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_to_xhz_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: fxz :: FXZ as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FXZEx as :: unity2 :: ClassIdentity > :: class () , "ToXHZ" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FXZEx as :: unity2 :: ClassIdentity > :: NAME , "ToXHZ" , e) , } } } pub unsafe fn to_xhz_2 (xz : crate :: combat :: fxz :: FXZ , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 { let inner : extern "C" fn (crate :: combat :: fxz :: FXZ , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute (__lookup_to_xhz_2 :: get_method_info () . method_ptr ,) ; inner (xz , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_sample_height { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FXZEx as :: unity2 :: ClassIdentity > :: class () , "SampleHeight" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FXZEx as :: unity2 :: ClassIdentity > :: NAME , "SampleHeight" , e) , } } } pub unsafe fn sample_height (xyz : crate :: unity_engine :: vector3 :: Vector3 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_sample_height :: get_method_info () . method_ptr ,) ; inner (xyz , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_sample_height_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: fxz :: FXZ as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FXZEx as :: unity2 :: ClassIdentity > :: class () , "SampleHeight" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FXZEx as :: unity2 :: ClassIdentity > :: NAME , "SampleHeight" , e) , } } } pub unsafe fn sample_height_2 (xz : crate :: combat :: fxz :: FXZ , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (crate :: combat :: fxz :: FXZ , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_sample_height_2 :: get_method_info () . method_ptr ,) ; inner (xz , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_to_abcd { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FXZEx as :: unity2 :: ClassIdentity > :: class () , "ToABCD" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FXZEx as :: unity2 :: ClassIdentity > :: NAME , "ToABCD" , e) , } } } pub unsafe fn to_abcd (xyz : crate :: unity_engine :: vector3 :: Vector3 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector4 :: Vector4 { let inner : extern "C" fn (crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector4 :: Vector4 = :: core :: mem :: transmute (__lookup_to_abcd :: get_method_info () . method_ptr ,) ; inner (xyz , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_to_wide_abcd { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FXZEx as :: unity2 :: ClassIdentity > :: class () , "ToWideABCD" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FXZEx as :: unity2 :: ClassIdentity > :: NAME , "ToWideABCD" , e) , } } } pub unsafe fn to_wide_abcd (center_pos : crate :: unity_engine :: vector3 :: Vector3 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector4 :: Vector4 { let inner : extern "C" fn (crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector4 :: Vector4 = :: core :: mem :: transmute (__lookup_to_wide_abcd :: get_method_info () . method_ptr ,) ; inner (center_pos , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_to_wide_abcd_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FXZEx as :: unity2 :: ClassIdentity > :: class () , "ToWideABCD" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FXZEx as :: unity2 :: ClassIdentity > :: NAME , "ToWideABCD" , e) , } } } pub unsafe fn to_wide_abcd_2 (center_pos : crate :: unity_engine :: vector3 :: Vector3 , out_plane_is_flat : * mut bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector4 :: Vector4 { let inner : extern "C" fn (crate :: unity_engine :: vector3 :: Vector3 , * mut bool , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector4 :: Vector4 = :: core :: mem :: transmute (__lookup_to_wide_abcd_2 :: get_method_info () . method_ptr ,) ; inner (center_pos , out_plane_is_flat , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FXZEx as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FXZEx as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
 
 #[cfg(feature = "combat-fxzex")]
-impl FXZEx {
-    #[doc = "`get_LayerMask()` overload"]
-    pub fn get_layer_mask() -> i32 {
-        unsafe { __FXZEx_unity2_raw::get_layer_mask(::core::option::Option::None) }
-    }
+impl FXZEx { # [doc = "`get_LayerMask()` overload"] pub fn get_layer_mask () -> i32 { unsafe { __FXZEx_unity2_raw :: get_layer_mask (:: core :: option :: Option :: None) } } # [doc = "`ToXHZ(crate::unity_engine::vector3::Vector3)` overload"] pub fn to_xhz (xyz : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { __FXZEx_unity2_raw :: to_xhz (:: core :: convert :: Into :: into (xyz) , :: core :: option :: Option :: None) } } # [doc = "`ToXHZ(crate::combat::fxz::FXZ)` overload"] pub fn to_xhz_2 (xz : impl :: core :: convert :: Into < crate :: combat :: fxz :: FXZ >) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { __FXZEx_unity2_raw :: to_xhz_2 (:: core :: convert :: Into :: into (xz) , :: core :: option :: Option :: None) } } # [doc = "`SampleHeight(crate::unity_engine::vector3::Vector3)` overload"] pub fn sample_height (xyz : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> f32 { unsafe { __FXZEx_unity2_raw :: sample_height (:: core :: convert :: Into :: into (xyz) , :: core :: option :: Option :: None) } } # [doc = "`SampleHeight(crate::combat::fxz::FXZ)` overload"] pub fn sample_height_2 (xz : impl :: core :: convert :: Into < crate :: combat :: fxz :: FXZ >) -> f32 { unsafe { __FXZEx_unity2_raw :: sample_height_2 (:: core :: convert :: Into :: into (xz) , :: core :: option :: Option :: None) } } # [doc = "`ToABCD(crate::unity_engine::vector3::Vector3)` overload"] pub fn to_abcd (xyz : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> crate :: unity_engine :: vector4 :: Vector4 { unsafe { __FXZEx_unity2_raw :: to_abcd (:: core :: convert :: Into :: into (xyz) , :: core :: option :: Option :: None) } } # [doc = "`ToWideABCD(crate::unity_engine::vector3::Vector3)` overload"] pub fn to_wide_abcd (center_pos : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> crate :: unity_engine :: vector4 :: Vector4 { unsafe { __FXZEx_unity2_raw :: to_wide_abcd (:: core :: convert :: Into :: into (center_pos) , :: core :: option :: Option :: None) } } # [doc = "`ToWideABCD(crate::unity_engine::vector3::Vector3, *mutbool)` overload"] pub fn to_wide_abcd_2 (center_pos : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> (crate :: unity_engine :: vector4 :: Vector4 , bool) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < bool > :: uninit () ; let __ret = { __FXZEx_unity2_raw :: to_wide_abcd_2 (:: core :: convert :: Into :: into (center_pos) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } ; (__ret , __out_0 . assume_init ()) } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { __FXZEx_unity2_raw :: cctor (:: core :: option :: Option :: None) } } }
 
-    #[doc = "`ToXHZ(crate::unity_engine::vector3::Vector3)` overload"]
-    pub fn to_xhz(xyz: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>) -> crate::unity_engine::vector3::Vector3 {
-        unsafe { __FXZEx_unity2_raw::to_xhz(::core::convert::Into::into(xyz), ::core::option::Option::None) }
-    }
-
-    #[doc = "`ToXHZ(crate::combat::fxz::FXZ)` overload"]
-    pub fn to_xhz_2(xz: impl ::core::convert::Into<crate::combat::fxz::FXZ>) -> crate::unity_engine::vector3::Vector3 {
-        unsafe { __FXZEx_unity2_raw::to_xhz_2(::core::convert::Into::into(xz), ::core::option::Option::None) }
-    }
-
-    #[doc = "`SampleHeight(crate::unity_engine::vector3::Vector3)` overload"]
-    pub fn sample_height(xyz: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>) -> f32 {
-        unsafe { __FXZEx_unity2_raw::sample_height(::core::convert::Into::into(xyz), ::core::option::Option::None) }
-    }
-
-    #[doc = "`SampleHeight(crate::combat::fxz::FXZ)` overload"]
-    pub fn sample_height_2(xz: impl ::core::convert::Into<crate::combat::fxz::FXZ>) -> f32 {
-        unsafe { __FXZEx_unity2_raw::sample_height_2(::core::convert::Into::into(xz), ::core::option::Option::None) }
-    }
-
-    #[doc = "`ToABCD(crate::unity_engine::vector3::Vector3)` overload"]
-    pub fn to_abcd(xyz: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>) -> crate::unity_engine::vector4::Vector4 {
-        unsafe { __FXZEx_unity2_raw::to_abcd(::core::convert::Into::into(xyz), ::core::option::Option::None) }
-    }
-
-    #[doc = "`ToWideABCD(crate::unity_engine::vector3::Vector3)` overload"]
-    pub fn to_wide_abcd(center_pos: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>) -> crate::unity_engine::vector4::Vector4 {
-        unsafe { __FXZEx_unity2_raw::to_wide_abcd(::core::convert::Into::into(center_pos), ::core::option::Option::None) }
-    }
-
-    #[doc = "`ToWideABCD(crate::unity_engine::vector3::Vector3, *mutbool)` overload"]
-    pub fn to_wide_abcd_2(
-        center_pos: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-    ) -> (crate::unity_engine::vector4::Vector4, bool) {
-        unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<bool>::uninit();
-            let __ret = {
-                __FXZEx_unity2_raw::to_wide_abcd_2(
-                    ::core::convert::Into::into(center_pos),
-                    __out_0.as_mut_ptr(),
-                    ::core::option::Option::None,
-                )
-            };
-            (__ret, __out_0.assume_init())
-        }
-    }
-
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __FXZEx_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
+#[cfg(feature = "combat-fxzex")]
+impl FXZEx { pub fn get_layer_mask_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FXZEx_unity2_raw :: __lookup_get_layer_mask :: get_method_info () } pub fn to_xhz_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FXZEx_unity2_raw :: __lookup_to_xhz :: get_method_info () } pub fn to_xhz_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FXZEx_unity2_raw :: __lookup_to_xhz_2 :: get_method_info () } pub fn sample_height_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FXZEx_unity2_raw :: __lookup_sample_height :: get_method_info () } pub fn sample_height_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FXZEx_unity2_raw :: __lookup_sample_height_2 :: get_method_info () } pub fn to_abcd_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FXZEx_unity2_raw :: __lookup_to_abcd :: get_method_info () } pub fn to_wide_abcd_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FXZEx_unity2_raw :: __lookup_to_wide_abcd :: get_method_info () } pub fn to_wide_abcd_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FXZEx_unity2_raw :: __lookup_to_wide_abcd_2 :: get_method_info () } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FXZEx_unity2_raw :: __lookup_cctor :: get_method_info () } }
 
 #[cfg(feature = "combat-fxzex")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{FXZEx, FXZEx_HitPoint, IFXZEx};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::system::{object::IObject, valuetype::IValueType};
+    pub use super::FXZEx;
+    pub use super::IFXZEx;
+    pub use super::FXZEx_HitPoint;
+    pub use crate::system::object::IObject;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

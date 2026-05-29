@@ -2,181 +2,54 @@
 
 #[cfg(feature = "app-interruptinspector-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::{
-            mapinspector::{IMapInspector, MapInspector},
-            scriptutil::{IScriptUtil, ScriptUtil},
-        },
-        system::object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/interruptinspector/InterruptInspector.md"))]
-    #[::unity2::class(namespace = "App", name = "InterruptInspector")]
-    #[parent(crate::app::mapinspector::MapInspector)]
-    pub struct InterruptInspector {
-        #[offset(48)]
-        #[rename(name = "m_Person")]
-        pub m_person: i32,
-        #[offset(52)]
-        #[rename(name = "m_Command")]
-        pub m_command: i32,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: mapinspector :: { IMapInspector , MapInspector }
+ ;
+ use crate :: app :: scriptutil :: { IScriptUtil , ScriptUtil }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/interruptinspector/InterruptInspector.md"))] # [:: unity2 :: class (namespace = "App" , name = "InterruptInspector")] # [parent (crate :: app :: mapinspector :: MapInspector)] pub struct InterruptInspector {
+# [offset (48)] # [rename (name = "m_Person")] pub m_person : i32 ,
+# [offset (52)] # [rename (name = "m_Command")] pub m_command : i32 ,
+}
+
 }
 
 #[cfg(feature = "app-interruptinspector-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-interruptinspector")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __InterruptInspector_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::mapinspector::MapInspector_Kind as ::unity2::IlType>::il_type(),
-                <::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InterruptInspector as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InterruptInspector as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: InterruptInspector,
-        kind: crate::app::mapinspector::MapInspector_Kind,
-        args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            InterruptInspector,
-            crate::app::mapinspector::MapInspector_Kind,
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, kind, args, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_eanble {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InterruptInspector as ::unity2::ClassIdentity>::class(),
-                "IsEanble",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InterruptInspector as ::unity2::ClassIdentity>::NAME,
-                        "IsEanble",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_eanble(this: InterruptInspector, person: i32, hash: i32, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(InterruptInspector, i32, i32, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_eanble::get_method_info().method_ptr);
-        inner(this, person, hash, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __InterruptInspector_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: mapinspector :: MapInspector_Kind as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InterruptInspector as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InterruptInspector as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : InterruptInspector , kind : crate :: app :: mapinspector :: MapInspector_Kind , args : :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (InterruptInspector , crate :: app :: mapinspector :: MapInspector_Kind , :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , kind , args , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_eanble { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InterruptInspector as :: unity2 :: ClassIdentity > :: class () , "IsEanble" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InterruptInspector as :: unity2 :: ClassIdentity > :: NAME , "IsEanble" , e) , } } } pub unsafe fn is_eanble (this : InterruptInspector , person : i32 , hash : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (InterruptInspector , i32 , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_eanble :: get_method_info () . method_ptr ,) ; inner (this , person , hash , __unity2_method_info) } }
 
 #[cfg(feature = "app-interruptinspector")]
-pub trait IInterruptInspectorMethods: IInterruptInspector {
-    #[doc = "`.ctor(crate::app::mapinspector::MapInspector_Kind, ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    fn ctor(
-        self,
-        kind: impl ::core::convert::Into<crate::app::mapinspector::MapInspector_Kind>,
-        args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>,
-    ) -> () {
-        unsafe {
-            let __receiver = <InterruptInspector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InterruptInspector_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(kind),
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`IsEanble(i32, i32)` overload"]
-    fn is_eanble(self, person: impl ::core::convert::Into<i32>, hash: impl ::core::convert::Into<i32>) -> bool {
-        unsafe {
-            let __receiver = <InterruptInspector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InterruptInspector_unity2_raw::is_eanble(
-                __receiver,
-                ::core::convert::Into::into(person),
-                ::core::convert::Into::into(hash),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+pub trait IInterruptInspectorMethods : IInterruptInspector { # [doc = "`.ctor(crate::app::mapinspector::MapInspector_Kind, ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"] fn ctor (self , kind : impl :: core :: convert :: Into < crate :: app :: mapinspector :: MapInspector_Kind > , args : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > >) -> () { unsafe { let __receiver = < InterruptInspector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __InterruptInspector_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (kind) , :: core :: convert :: Into :: into (args) , :: core :: option :: Option :: None) } } # [doc = "`IsEanble(i32, i32)` overload"] fn is_eanble (self , person : impl :: core :: convert :: Into < i32 > , hash : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { let __receiver = < InterruptInspector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __InterruptInspector_unity2_raw :: is_eanble (__receiver , :: core :: convert :: Into :: into (person) , :: core :: convert :: Into :: into (hash) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-interruptinspector")]
-impl<__T: IInterruptInspector> IInterruptInspectorMethods for __T {}
+impl < __T : IInterruptInspector > IInterruptInspectorMethods for __T { }
+
+#[cfg(feature = "app-interruptinspector")]
+impl InterruptInspector { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InterruptInspector_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn is_eanble_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InterruptInspector_unity2_raw :: __lookup_is_eanble :: get_method_info () } }
 
 #[cfg(feature = "app-interruptinspector")]
 impl InterruptInspector {
-    #[doc = "`.ctor(crate::app::mapinspector::MapInspector_Kind, ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` — overload selector"]
-    pub fn new(kind: crate::app::mapinspector::MapInspector_Kind, args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(InterruptInspector),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IInterruptInspectorMethods>::ctor(this, kind, args);
-        this
-    }
+# [doc = "`.ctor(crate::app::mapinspector::MapInspector_Kind, ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` — overload selector"] pub fn new (kind : crate :: app :: mapinspector :: MapInspector_Kind , args : :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue >) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (InterruptInspector) , :: core :: stringify ! (new) ,)) ; < Self as IInterruptInspectorMethods > :: ctor (this , kind , args) ; this }
 }
 
 #[cfg(feature = "app-interruptinspector")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IInterruptInspector, IInterruptInspectorMethods, InterruptInspector};
-    #[cfg(feature = "app-mapinspector")]
-    pub use crate::app::mapinspector::IMapInspectorMethods;
-    #[cfg(feature = "app-scriptutil")]
-    pub use crate::app::scriptutil::IScriptUtilMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::{
-        app::{mapinspector::IMapInspector, scriptutil::IScriptUtil},
-        system::object::IObject,
-    };
+    pub use super::InterruptInspector;
+    pub use super::IInterruptInspector;
+    pub use super::IInterruptInspectorMethods;
+    pub use crate::app::mapinspector::IMapInspector;
+    pub use crate::app::scriptutil::IScriptUtil;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "app-mapinspector")] pub use crate::app::mapinspector::IMapInspectorMethods;
+    #[cfg(feature = "app-scriptutil")] pub use crate::app::scriptutil::IScriptUtilMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

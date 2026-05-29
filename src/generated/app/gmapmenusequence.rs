@@ -2,8514 +2,935 @@
 
 #[cfg(feature = "app-gmapmenusequence-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::{
-            basicdialogitem::{BasicDialogItem, IBasicDialogItem},
-            basicdialogitemno::{BasicDialogItemNo, IBasicDialogItemNo},
-            basicdialogitemyes::{BasicDialogItemYes, IBasicDialogItemYes},
-            basicmenu::{BasicMenu, IBasicMenu},
-            basicmenuitem::{BasicMenuItem, IBasicMenuItem},
-            mapbasicmenuitem::{IMapBasicMenuItem, MapBasicMenuItem},
-            procinst::{IProcInst, ProcInst},
-            singletonprocinst_1::{ISingletonProcInst_1, SingletonProcInst_1},
-        },
-        system::{
-            object::{IObject, Object},
-            r#enum::{Enum, IEnum},
-            valuetype::{IValueType, ValueType},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SaveItem.md"))]
-    #[::unity2::class(namespace = "App", name = "GmapMenuSequence.GmapMenu.SaveItem")]
-    #[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]
-    pub struct GmapMenuSequence_GmapMenu_SaveItem {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: basicdialogitem :: { BasicDialogItem , IBasicDialogItem }
+ ;
+ use crate :: app :: basicdialogitemno :: { BasicDialogItemNo , IBasicDialogItemNo }
+ ;
+ use crate :: app :: basicdialogitemyes :: { BasicDialogItemYes , IBasicDialogItemYes }
+ ;
+ use crate :: app :: basicmenu :: { BasicMenu , IBasicMenu }
+ ;
+ use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
+ ;
+ use crate :: app :: mapbasicmenuitem :: { IMapBasicMenuItem , MapBasicMenuItem }
+ ;
+ use crate :: app :: procinst :: { IProcInst , ProcInst }
+ ;
+ use crate :: app :: singletonprocinst_1 :: { ISingletonProcInst_1 , SingletonProcInst_1 }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "GmapMenuSequence.GmapMenu.RankingItem.JumpToRankingSequence")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence {
-        #[offset(112)]
-        #[rename(name = "m_JumpFunc")]
-        pub m_jump_func: crate::system::action::Action,
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "GmapMenuSequence.GmapMenu")] # [parent (crate :: app :: basicmenu :: BasicMenu)] pub struct GmapMenuSequence_GmapMenu {}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "GmapMenuSequence.GmapMenu.SubSystemMenu.ResetItem")] # [parent (crate :: app :: gmapmenusequence :: GmapMenuSequence_GmapMenu_GmapMenuMenuItem)] pub struct GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem {}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "GmapMenuSequence.GmapMenu.SubFriendMenu.RelianceItem")] # [parent (crate :: app :: gmapmenusequence :: GmapMenuSequence_GmapMenu_GmapMenuMenuItem)] pub struct GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem {}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "GmapMenuSequence.GmapMenu.RankingItem.ConfirmSequence.NoMenuItem")] # [parent (crate :: app :: basicdialogitemno :: BasicDialogItemNo)] pub struct GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem {}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "GmapMenuSequence.GmapMenu.SubFriendMenu.RingbookItem")] # [parent (crate :: app :: gmapmenusequence :: GmapMenuSequence_GmapMenu_GmapMenuMenuItem)] pub struct GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem {}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_EnterChapterItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "GmapMenuSequence.GmapMenu.EnterChapterItem")] # [parent (crate :: app :: gmapmenusequence :: GmapMenuSequence_GmapMenu_GmapMenuMenuItem)] pub struct GmapMenuSequence_GmapMenu_EnterChapterItem {}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "GmapMenuSequence")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: gmapmenusequence :: GmapMenuSequence >)] pub struct GmapMenuSequence {
+# [offset (120)] # [rename (name = "m_OpenTopCallback")] pub m_open_top_callback : crate :: system :: action :: Action ,
+# [offset (128)] # [rename (name = "m_DecideCallback")] pub m_decide_callback : crate :: system :: action :: Action ,
+# [offset (136)] # [rename (name = "m_CloseCallback")] pub m_close_callback : crate :: system :: action :: Action ,
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_RankingItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "GmapMenuSequence.GmapMenu.RankingItem")] # [parent (crate :: app :: gmapmenusequence :: GmapMenuSequence_GmapMenu_GmapMenuMenuItem)] pub struct GmapMenuSequence_GmapMenu_RankingItem {}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GoToMapSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "GmapMenuSequence.GoToMapSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct GmapMenuSequence_GoToMapSequence {}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubShopMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "GmapMenuSequence.GmapMenu.SubShopMenu")] # [parent (crate :: app :: basicmenu :: BasicMenu)] pub struct GmapMenuSequence_GmapMenu_SubShopMenu {}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_GoToSolanelItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "GmapMenuSequence.GmapMenu.GoToSolanelItem")] # [parent (crate :: app :: gmapmenusequence :: GmapMenuSequence_GmapMenu_GmapMenuMenuItem)] pub struct GmapMenuSequence_GmapMenu_GoToSolanelItem {}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "GmapMenuSequence.GmapMenu.SubShopMenu.WeaponShopMenuItem")] # [parent (crate :: app :: gmapmenusequence :: GmapMenuSequence_GmapMenu_GmapMenuMenuItem)] pub struct GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem {}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gmapmenusequence/GmapMenuSequence_Label.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct GmapMenuSequence_Label  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for GmapMenuSequence_Label  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "GmapMenuSequence.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_ShopItem.md"))]
-    #[::unity2::class(namespace = "App", name = "GmapMenuSequence.GmapMenu.ShopItem")]
-    #[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]
-    pub struct GmapMenuSequence_GmapMenu_ShopItem {}
+}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu.md"))]
-    #[::unity2::class(namespace = "App", name = "GmapMenuSequence.GmapMenu")]
-    #[parent(crate::app::basicmenu::BasicMenu)]
-    pub struct GmapMenuSequence_GmapMenu {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_EnterChapterItem.md"))]
-    #[::unity2::class(namespace = "App", name = "GmapMenuSequence.GmapMenu.EnterChapterItem")]
-    #[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]
-    pub struct GmapMenuSequence_GmapMenu_EnterChapterItem {}
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gmapmenusequence/GmapMenuSequence_GoToMapSequence_Label.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct GmapMenuSequence_GoToMapSequence_Label {
-        pub value: i32,
+impl  ::unity2::IlType for GmapMenuSequence_Label  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::ClassIdentity for GmapMenuSequence_GoToMapSequence_Label {
-        const NAME: &'static str = "GmapMenuSequence.GoToMapSequence.Label";
-        const NAMESPACE: &'static str = "App";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  GmapMenuSequence_Label  {
+    pub fn top_menu() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl ::unity2::IlType for GmapMenuSequence_GoToMapSequence_Label {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+
+    pub fn enter_chapter() -> Self {
+        Self { value: 1 }
+
     }
 
-    impl GmapMenuSequence_GoToMapSequence_Label {
-        pub fn move_to_solanel() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn move_to_gmap() -> Self {
-            Self { value: 1 }
-        }
+    pub fn inventory() -> Self {
+        Self { value: 2 }
 
-        pub fn end() -> Self {
-            Self { value: 2 }
-        }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubSystemMenu.md"))]
-    #[::unity2::class(namespace = "App", name = "GmapMenuSequence.GmapMenu.SubSystemMenu")]
-    #[parent(crate::app::basicmenu::BasicMenu)]
-    pub struct GmapMenuSequence_GmapMenu_SubSystemMenu {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_GoToSolanelItem.md"))]
-    #[::unity2::class(namespace = "App", name = "GmapMenuSequence.GmapMenu.GoToSolanelItem")]
-    #[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]
-    pub struct GmapMenuSequence_GmapMenu_GoToSolanelItem {}
+    pub fn ring_select() -> Self {
+        Self { value: 3 }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem.md"))]
-    #[::unity2::class(namespace = "App", name = "GmapMenuSequence.GmapMenu.SubFriendMenu.RelianceItem")]
-    #[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]
-    pub struct GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem.md"))]
-    #[::unity2::class(namespace = "App", name = "GmapMenuSequence.GmapMenu.SubSystemMenu.ResetItem")]
-    #[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]
-    pub struct GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "GmapMenuSequence")]
-    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: gmapmenusequence :: GmapMenuSequence >)]
-    pub struct GmapMenuSequence {
-        #[offset(120)]
-        #[rename(name = "m_OpenTopCallback")]
-        pub m_open_top_callback: crate::system::action::Action,
-        #[offset(128)]
-        #[rename(name = "m_DecideCallback")]
-        pub m_decide_callback: crate::system::action::Action,
-        #[offset(136)]
-        #[rename(name = "m_CloseCallback")]
-        pub m_close_callback: crate::system::action::Action,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem.md"))]
-    #[::unity2::class(namespace = "App", name = "GmapMenuSequence.GmapMenu.SubSystemMenu.TutorialItem")]
-    #[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]
-    pub struct GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "GmapMenuSequence.GmapMenu.RankingItem.ConfirmSequence")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence {
-        #[offset(112)]
-        #[rename(name = "m_ResultFunc")]
-        pub m_result_func: crate::app::netenablesequence::NetEnableSequence_ResultFunction,
+    pub fn ranking() -> Self {
+        Self { value: 4 }
+
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem.md"))]
-    #[::unity2::class(namespace = "App", name = "GmapMenuSequence.GmapMenu.SubFriendMenu.KizunaItem")]
-    #[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]
-    pub struct GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "GmapMenuSequence.GmapMenu.RankingItem.ConfirmSequence.NoMenuItem")]
-    #[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
-    pub struct GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem {}
+    pub fn material_list() -> Self {
+        Self { value: 5 }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubFriendMenu.md"))]
-    #[::unity2::class(namespace = "App", name = "GmapMenuSequence.GmapMenu.SubFriendMenu")]
-    #[parent(crate::app::basicmenu::BasicMenu)]
-    pub struct GmapMenuSequence_GmapMenu_SubFriendMenu {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubShopMenu.md"))]
-    #[::unity2::class(namespace = "App", name = "GmapMenuSequence.GmapMenu.SubShopMenu")]
-    #[parent(crate::app::basicmenu::BasicMenu)]
-    pub struct GmapMenuSequence_GmapMenu_SubShopMenu {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem.md"))]
-    #[::unity2::class(namespace = "App", name = "GmapMenuSequence.GmapMenu.SubFriendMenu.NotebookItem")]
-    #[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]
-    pub struct GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_GmapMenuMenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "GmapMenuSequence.GmapMenu.GmapMenuMenuItem")]
-    #[parent(crate::app::mapbasicmenuitem::MapBasicMenuItem)]
-    pub struct GmapMenuSequence_GmapMenu_GmapMenuMenuItem {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "GmapMenuSequence.GmapMenu.SubShopMenu.ItemShopMenuItem")]
-    #[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]
-    pub struct GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GoToMapSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "GmapMenuSequence.GoToMapSequence")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct GmapMenuSequence_GoToMapSequence {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem.md"))]
-    #[::unity2::class(namespace = "App", name = "GmapMenuSequence.GmapMenu.SubFriendMenu.RingbookItem")]
-    #[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]
-    pub struct GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "GmapMenuSequence.GmapMenu.RankingItem.ConfirmSequence.YesMenuItem")]
-    #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
-    pub struct GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem {
-        #[offset(112)]
-        #[rename(name = "m_ResultFunc")]
-        pub m_result_func: crate::app::netenablesequence::NetEnableSequence_ResultFunction,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_FriendItem.md"))]
-    #[::unity2::class(namespace = "App", name = "GmapMenuSequence.GmapMenu.FriendItem")]
-    #[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]
-    pub struct GmapMenuSequence_GmapMenu_FriendItem {}
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gmapmenusequence/GmapMenuSequence_Label.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct GmapMenuSequence_Label {
-        pub value: i32,
+    pub fn save_data() -> Self {
+        Self { value: 6 }
+
     }
 
-    impl ::unity2::ClassIdentity for GmapMenuSequence_Label {
-        const NAME: &'static str = "GmapMenuSequence.Label";
-        const NAMESPACE: &'static str = "App";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+    pub fn go_to_solanel() -> Self {
+        Self { value: 7 }
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
     }
 
-    impl ::unity2::IlType for GmapMenuSequence_Label {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+
+    pub fn end() -> Self {
+        Self { value: 8 }
+
     }
 
-    impl GmapMenuSequence_Label {
-        pub fn top_menu() -> Self {
-            Self { value: 0 }
-        }
+}
 
-        pub fn enter_chapter() -> Self {
-            Self { value: 1 }
-        }
 
-        pub fn inventory() -> Self {
-            Self { value: 2 }
-        }
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_FriendItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "GmapMenuSequence.GmapMenu.FriendItem")] # [parent (crate :: app :: gmapmenusequence :: GmapMenuSequence_GmapMenu_GmapMenuMenuItem)] pub struct GmapMenuSequence_GmapMenu_FriendItem {}
 
-        pub fn ring_select() -> Self {
-            Self { value: 3 }
-        }
 
-        pub fn ranking() -> Self {
-            Self { value: 4 }
-        }
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SystemItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "GmapMenuSequence.GmapMenu.SystemItem")] # [parent (crate :: app :: gmapmenusequence :: GmapMenuSequence_GmapMenu_GmapMenuMenuItem)] pub struct GmapMenuSequence_GmapMenu_SystemItem {}
 
-        pub fn material_list() -> Self {
-            Self { value: 5 }
-        }
 
-        pub fn save_data() -> Self {
-            Self { value: 6 }
-        }
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "GmapMenuSequence.GmapMenu.SubShopMenu.ItemShopMenuItem")] # [parent (crate :: app :: gmapmenusequence :: GmapMenuSequence_GmapMenu_GmapMenuMenuItem)] pub struct GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem {}
 
-        pub fn go_to_solanel() -> Self {
-            Self { value: 7 }
-        }
 
-        pub fn end() -> Self {
-            Self { value: 8 }
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gmapmenusequence/GmapMenuSequence_GoToMapSequence_Label.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct GmapMenuSequence_GoToMapSequence_Label  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for GmapMenuSequence_GoToMapSequence_Label  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "GmapMenuSequence.GoToMapSequence.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_RankingItem.md"))]
-    #[::unity2::class(namespace = "App", name = "GmapMenuSequence.GmapMenu.RankingItem")]
-    #[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]
-    pub struct GmapMenuSequence_GmapMenu_RankingItem {}
+}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_MaterialListItem.md"))]
-    #[::unity2::class(namespace = "App", name = "GmapMenuSequence.GmapMenu.MaterialListItem")]
-    #[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]
-    pub struct GmapMenuSequence_GmapMenu_MaterialListItem {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem.md"))]
-    #[::unity2::class(namespace = "App", name = "GmapMenuSequence.GmapMenu.SubSystemMenu.ConfigItem")]
-    #[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]
-    pub struct GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem {}
+impl  ::unity2::IlType for GmapMenuSequence_GoToMapSequence_Label  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "GmapMenuSequence.GmapMenu.SubShopMenu.WeaponShopMenuItem")]
-    #[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]
-    pub struct GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem {}
+}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SystemItem.md"))]
-    #[::unity2::class(namespace = "App", name = "GmapMenuSequence.GmapMenu.SystemItem")]
-    #[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]
-    pub struct GmapMenuSequence_GmapMenu_SystemItem {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_GodItem.md"))]
-    #[::unity2::class(namespace = "App", name = "GmapMenuSequence.GmapMenu.GodItem")]
-    #[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]
-    pub struct GmapMenuSequence_GmapMenu_GodItem {}
+impl  GmapMenuSequence_GoToMapSequence_Label  {
+    pub fn move_to_solanel() -> Self {
+        Self { value: 0 }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_InventoryItem.md"))]
-    #[::unity2::class(namespace = "App", name = "GmapMenuSequence.GmapMenu.InventoryItem")]
-    #[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]
-    pub struct GmapMenuSequence_GmapMenu_InventoryItem {}
+    }
+
+
+    pub fn move_to_gmap() -> Self {
+        Self { value: 1 }
+
+    }
+
+
+    pub fn end() -> Self {
+        Self { value: 2 }
+
+    }
+
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_GodItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "GmapMenuSequence.GmapMenu.GodItem")] # [parent (crate :: app :: gmapmenusequence :: GmapMenuSequence_GmapMenu_GmapMenuMenuItem)] pub struct GmapMenuSequence_GmapMenu_GodItem {}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "GmapMenuSequence.GmapMenu.SubFriendMenu.KizunaItem")] # [parent (crate :: app :: gmapmenusequence :: GmapMenuSequence_GmapMenu_GmapMenuMenuItem)] pub struct GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem {}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "GmapMenuSequence.GmapMenu.SubSystemMenu.TutorialItem")] # [parent (crate :: app :: gmapmenusequence :: GmapMenuSequence_GmapMenu_GmapMenuMenuItem)] pub struct GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem {}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "GmapMenuSequence.GmapMenu.RankingItem.ConfirmSequence.YesMenuItem")] # [parent (crate :: app :: basicdialogitemyes :: BasicDialogItemYes)] pub struct GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem {
+# [offset (112)] # [rename (name = "m_ResultFunc")] pub m_result_func : crate :: app :: netenablesequence :: NetEnableSequence_ResultFunction ,
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "GmapMenuSequence.GmapMenu.SubSystemMenu.ConfigItem")] # [parent (crate :: app :: gmapmenusequence :: GmapMenuSequence_GmapMenu_GmapMenuMenuItem)] pub struct GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem {}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_ShopItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "GmapMenuSequence.GmapMenu.ShopItem")] # [parent (crate :: app :: gmapmenusequence :: GmapMenuSequence_GmapMenu_GmapMenuMenuItem)] pub struct GmapMenuSequence_GmapMenu_ShopItem {}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_MaterialListItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "GmapMenuSequence.GmapMenu.MaterialListItem")] # [parent (crate :: app :: gmapmenusequence :: GmapMenuSequence_GmapMenu_GmapMenuMenuItem)] pub struct GmapMenuSequence_GmapMenu_MaterialListItem {}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubSystemMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "GmapMenuSequence.GmapMenu.SubSystemMenu")] # [parent (crate :: app :: basicmenu :: BasicMenu)] pub struct GmapMenuSequence_GmapMenu_SubSystemMenu {}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "GmapMenuSequence.GmapMenu.SubFriendMenu.NotebookItem")] # [parent (crate :: app :: gmapmenusequence :: GmapMenuSequence_GmapMenu_GmapMenuMenuItem)] pub struct GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem {}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubFriendMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "GmapMenuSequence.GmapMenu.SubFriendMenu")] # [parent (crate :: app :: basicmenu :: BasicMenu)] pub struct GmapMenuSequence_GmapMenu_SubFriendMenu {}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_GmapMenuMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "GmapMenuSequence.GmapMenu.GmapMenuMenuItem")] # [parent (crate :: app :: mapbasicmenuitem :: MapBasicMenuItem)] pub struct GmapMenuSequence_GmapMenu_GmapMenuMenuItem {}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "GmapMenuSequence.GmapMenu.RankingItem.JumpToRankingSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence {
+# [offset (112)] # [rename (name = "m_JumpFunc")] pub m_jump_func : crate :: system :: action :: Action ,
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "GmapMenuSequence.GmapMenu.RankingItem.ConfirmSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence {
+# [offset (112)] # [rename (name = "m_ResultFunc")] pub m_result_func : crate :: app :: netenablesequence :: NetEnableSequence_ResultFunction ,
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SaveItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "GmapMenuSequence.GmapMenu.SaveItem")] # [parent (crate :: app :: gmapmenusequence :: GmapMenuSequence_GmapMenu_GmapMenuMenuItem)] pub struct GmapMenuSequence_GmapMenu_SaveItem {}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_InventoryItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "GmapMenuSequence.GmapMenu.InventoryItem")] # [parent (crate :: app :: gmapmenusequence :: GmapMenuSequence_GmapMenu_GmapMenuMenuItem)] pub struct GmapMenuSequence_GmapMenu_InventoryItem {}
+
 }
 
 #[cfg(feature = "app-gmapmenusequence-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-gmapmenusequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __GmapMenuSequence_GmapMenu_SaveItem_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_SaveItem as ::unity2::ClassIdentity>::class(),
-                "GetName",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_SaveItem as ::unity2::ClassIdentity>::NAME,
-                        "GetName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_name(this: GmapMenuSequence_GmapMenu_SaveItem, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(GmapMenuSequence_GmapMenu_SaveItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_help_text {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_SaveItem as ::unity2::ClassIdentity>::class(),
-                "GetHelpText",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_SaveItem as ::unity2::ClassIdentity>::NAME,
-                        "GetHelpText",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_help_text(this: GmapMenuSequence_GmapMenu_SaveItem, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(GmapMenuSequence_GmapMenu_SaveItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_help_text::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_build_attribute {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_SaveItem as ::unity2::ClassIdentity>::class(),
-                "BuildAttribute",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_SaveItem as ::unity2::ClassIdentity>::NAME,
-                        "BuildAttribute",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn build_attribute(
-        this: GmapMenuSequence_GmapMenu_SaveItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        let inner: extern "C" fn(GmapMenuSequence_GmapMenu_SaveItem, ::unity2::OptionalMethod) -> crate::app::basicmenuitem::BasicMenuItem_Attribute =
-            ::core::mem::transmute(__lookup_build_attribute::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_a_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_SaveItem as ::unity2::ClassIdentity>::class(),
-                "ACall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_SaveItem as ::unity2::ClassIdentity>::NAME,
-                        "ACall",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn a_call(
-        this: GmapMenuSequence_GmapMenu_SaveItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(GmapMenuSequence_GmapMenu_SaveItem, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
-            ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_SaveItem as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_SaveItem as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: GmapMenuSequence_GmapMenu_SaveItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GmapMenuSequence_GmapMenu_SaveItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __GmapMenuSequence_GmapMenu_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_enter_chapter_type { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu as :: unity2 :: ClassIdentity > :: class () , "get_EnterChapterType" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu as :: unity2 :: ClassIdentity > :: NAME , "get_EnterChapterType" , e) , } } } pub unsafe fn get_enter_chapter_type (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: gmap :: enterchapteryesnodialog :: EnterChapterYesNoDialog_Type { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: gmap :: enterchapteryesnodialog :: EnterChapterYesNoDialog_Type = :: core :: mem :: transmute (__lookup_get_enter_chapter_type :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > as :: unity2 :: IlType > :: il_type () , < crate :: app :: basicmenucontent :: BasicMenuContent as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : GmapMenuSequence_GmapMenu , menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , menu_content : crate :: app :: basicmenucontent :: BasicMenuContent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GmapMenuSequence_GmapMenu , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , crate :: app :: basicmenucontent :: BasicMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , menu_item_list , menu_content , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu as :: unity2 :: ClassIdentity > :: class () , "GetName" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu as :: unity2 :: ClassIdentity > :: NAME , "GetName" , e) , } } } pub unsafe fn get_name (this : GmapMenuSequence_GmapMenu , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (GmapMenuSequence_GmapMenu , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_name :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_bind { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu as :: unity2 :: ClassIdentity > :: class () , "CreateBind" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu as :: unity2 :: ClassIdentity > :: NAME , "CreateBind" , e) , } } } pub unsafe fn create_bind (super_ : crate :: app :: procinst :: ProcInst , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create_bind :: get_method_info () . method_ptr ,) ; inner (super_ , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_start_chapter_item { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu as :: unity2 :: ClassIdentity > :: class () , "AddStartChapterItem" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu as :: unity2 :: ClassIdentity > :: NAME , "AddStartChapterItem" , e) , } } } pub unsafe fn add_start_chapter_item (menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_start_chapter_item :: get_method_info () . method_ptr ,) ; inner (menu_item_list , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_resume { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu as :: unity2 :: ClassIdentity > :: class () , "OnResume" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu as :: unity2 :: ClassIdentity > :: NAME , "OnResume" , e) , } } } pub unsafe fn on_resume (this : GmapMenuSequence_GmapMenu , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GmapMenuSequence_GmapMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_resume :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_b_call { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu as :: unity2 :: ClassIdentity > :: class () , "BCall" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu as :: unity2 :: ClassIdentity > :: NAME , "BCall" , e) , } } } pub unsafe fn b_call (this : GmapMenuSequence_GmapMenu , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result { let inner : extern "C" fn (GmapMenuSequence_GmapMenu , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute (__lookup_b_call :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-gmapmenusequence")]
-pub trait IGmapMenuSequence_GmapMenu_SaveItemMethods: IGmapMenuSequence_GmapMenu_SaveItem {
-    #[doc = "`GetName()` overload"]
-    fn get_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_SaveItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_SaveItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetHelpText()` overload"]
-    fn get_help_text(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_SaveItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_SaveItem_unity2_raw::get_help_text(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`BuildAttribute()` overload"]
-    fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_SaveItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_SaveItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ACall()` overload"]
-    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_SaveItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_SaveItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_SaveItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_SaveItem_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+impl GmapMenuSequence_GmapMenu { # [doc = "`get_EnterChapterType()` overload"] pub fn get_enter_chapter_type () -> crate :: app :: gmap :: enterchapteryesnodialog :: EnterChapterYesNoDialog_Type { unsafe { __GmapMenuSequence_GmapMenu_unity2_raw :: get_enter_chapter_type (:: core :: option :: Option :: None) } } # [doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { __GmapMenuSequence_GmapMenu_unity2_raw :: create_bind (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } # [doc = "`AddStartChapterItem(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` overload"] pub fn add_start_chapter_item (menu_item_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > >) -> () { unsafe { __GmapMenuSequence_GmapMenu_unity2_raw :: add_start_chapter_item (:: core :: convert :: Into :: into (menu_item_list) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-gmapmenusequence")]
-impl<__T: IGmapMenuSequence_GmapMenu_SaveItem> IGmapMenuSequence_GmapMenu_SaveItemMethods for __T {}
+pub trait IGmapMenuSequence_GmapMenuMethods : IGmapMenuSequence_GmapMenu { # [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` overload"] fn ctor (self , menu_item_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > > , menu_content : impl :: core :: convert :: Into < crate :: app :: basicmenucontent :: BasicMenuContent >) -> () { unsafe { let __receiver = < GmapMenuSequence_GmapMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (menu_item_list) , :: core :: convert :: Into :: into (menu_content) , :: core :: option :: Option :: None) } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GmapMenuSequence_GmapMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_unity2_raw :: get_name (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnResume()` overload"] fn on_resume (self ,) -> () { unsafe { let __receiver = < GmapMenuSequence_GmapMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_unity2_raw :: on_resume (__receiver , :: core :: option :: Option :: None) } } # [doc = "`BCall()` overload"] fn b_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < GmapMenuSequence_GmapMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_unity2_raw :: b_call (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-gmapmenusequence")]
-impl GmapMenuSequence_GmapMenu_SaveItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GmapMenuSequence_GmapMenu_SaveItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGmapMenuSequence_GmapMenu_SaveItemMethods>::ctor(this);
-        this
-    }
-}
+impl < __T : IGmapMenuSequence_GmapMenu > IGmapMenuSequence_GmapMenuMethods for __T { }
 
 #[cfg(feature = "app-gmapmenusequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::action::Action as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence,
-        jump_func: crate::system::action::Action,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence,
-            crate::system::action::Action,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, jump_func, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_jump_to_ranking {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence as ::unity2::ClassIdentity>::class(),
-                "JumpToRanking",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence as ::unity2::ClassIdentity>::NAME,
-                        "JumpToRanking",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn jump_to_ranking(
-        this: GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_jump_to_ranking::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <crate::system::action::Action as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence as ::unity2::ClassIdentity>::NAME,
-                        "CreateBind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        jump_func: crate::system::action::Action,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::app::procinst::ProcInst, crate::system::action::Action, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
-        inner(super_, jump_func, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-impl GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::system::action::Action)` overload"]
-    pub fn create_bind(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        jump_func: impl ::core::convert::Into<crate::system::action::Action>,
-    ) -> () {
-        unsafe {
-            __GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence_unity2_raw::create_bind(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(jump_func),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-pub trait IGmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequenceMethods: IGmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence {
-    #[doc = "`.ctor(crate::system::action::Action)` overload"]
-    fn ctor(self, jump_func: impl ::core::convert::Into<crate::system::action::Action>) -> () {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(jump_func),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`JumpToRanking()` overload"]
-    fn jump_to_ranking(self) -> () {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence_unity2_raw::jump_to_ranking(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-impl<__T: IGmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence> IGmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequenceMethods for __T {}
-
-#[cfg(feature = "app-gmapmenusequence")]
-impl GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence {
-    #[doc = "`.ctor(crate::system::action::Action)` — overload selector"]
-    pub fn new(jump_func: crate::system::action::Action) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequenceMethods>::ctor(this, jump_func);
-        this
-    }
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __GmapMenuSequence_GmapMenu_ShopItem_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_ShopItem as ::unity2::ClassIdentity>::class(),
-                "GetName",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_ShopItem as ::unity2::ClassIdentity>::NAME,
-                        "GetName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_name(this: GmapMenuSequence_GmapMenu_ShopItem, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(GmapMenuSequence_GmapMenu_ShopItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_help_text {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_ShopItem as ::unity2::ClassIdentity>::class(),
-                "GetHelpText",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_ShopItem as ::unity2::ClassIdentity>::NAME,
-                        "GetHelpText",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_help_text(this: GmapMenuSequence_GmapMenu_ShopItem, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(GmapMenuSequence_GmapMenu_ShopItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_help_text::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_build_attribute {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_ShopItem as ::unity2::ClassIdentity>::class(),
-                "BuildAttribute",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_ShopItem as ::unity2::ClassIdentity>::NAME,
-                        "BuildAttribute",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn build_attribute(
-        this: GmapMenuSequence_GmapMenu_ShopItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        let inner: extern "C" fn(GmapMenuSequence_GmapMenu_ShopItem, ::unity2::OptionalMethod) -> crate::app::basicmenuitem::BasicMenuItem_Attribute =
-            ::core::mem::transmute(__lookup_build_attribute::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_a_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_ShopItem as ::unity2::ClassIdentity>::class(),
-                "ACall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_ShopItem as ::unity2::ClassIdentity>::NAME,
-                        "ACall",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn a_call(
-        this: GmapMenuSequence_GmapMenu_ShopItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(GmapMenuSequence_GmapMenu_ShopItem, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
-            ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_ShopItem as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_ShopItem as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: GmapMenuSequence_GmapMenu_ShopItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GmapMenuSequence_GmapMenu_ShopItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-pub trait IGmapMenuSequence_GmapMenu_ShopItemMethods: IGmapMenuSequence_GmapMenu_ShopItem {
-    #[doc = "`GetName()` overload"]
-    fn get_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_ShopItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_ShopItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetHelpText()` overload"]
-    fn get_help_text(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_ShopItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_ShopItem_unity2_raw::get_help_text(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`BuildAttribute()` overload"]
-    fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_ShopItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_ShopItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ACall()` overload"]
-    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_ShopItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_ShopItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_ShopItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_ShopItem_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-impl<__T: IGmapMenuSequence_GmapMenu_ShopItem> IGmapMenuSequence_GmapMenu_ShopItemMethods for __T {}
-
-#[cfg(feature = "app-gmapmenusequence")]
-impl GmapMenuSequence_GmapMenu_ShopItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GmapMenuSequence_GmapMenu_ShopItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGmapMenuSequence_GmapMenu_ShopItemMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __GmapMenuSequence_GmapMenu_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_enter_chapter_type {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu as ::unity2::ClassIdentity>::class(),
-                "get_EnterChapterType",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu as ::unity2::ClassIdentity>::NAME,
-                        "get_EnterChapterType",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_enter_chapter_type(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type =
-            ::core::mem::transmute(__lookup_get_enter_chapter_type::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> as ::unity2::IlType>::il_type(),
-                <crate::app::basicmenucontent::BasicMenuContent as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: GmapMenuSequence_GmapMenu,
-        menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
-        menu_content: crate::app::basicmenucontent::BasicMenuContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            GmapMenuSequence_GmapMenu,
-            crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
-            crate::app::basicmenucontent::BasicMenuContent,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, menu_item_list, menu_content, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu as ::unity2::ClassIdentity>::class(),
-                "GetName",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu as ::unity2::ClassIdentity>::NAME,
-                        "GetName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_name(this: GmapMenuSequence_GmapMenu, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(GmapMenuSequence_GmapMenu, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu as ::unity2::ClassIdentity>::NAME,
-                        "CreateBind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_bind(super_: crate::app::procinst::ProcInst, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
-        inner(super_, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_start_chapter_item {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::collections::generic::list_1::List_1<
-                crate::app::basicmenuitem::BasicMenuItem,
-            > as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu as ::unity2::ClassIdentity>::class(),
-                "AddStartChapterItem",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu as ::unity2::ClassIdentity>::NAME,
-                        "AddStartChapterItem",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_start_chapter_item(
-        menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_add_start_chapter_item::get_method_info().method_ptr);
-        inner(menu_item_list, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_resume {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu as ::unity2::ClassIdentity>::class(),
-                "OnResume",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu as ::unity2::ClassIdentity>::NAME,
-                        "OnResume",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_resume(this: GmapMenuSequence_GmapMenu, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GmapMenuSequence_GmapMenu, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_resume::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_b_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu as ::unity2::ClassIdentity>::class(),
-                "BCall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu as ::unity2::ClassIdentity>::NAME,
-                        "BCall",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn b_call(this: GmapMenuSequence_GmapMenu, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(GmapMenuSequence_GmapMenu, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
-            ::core::mem::transmute(__lookup_b_call::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+impl GmapMenuSequence_GmapMenu { pub fn get_enter_chapter_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_unity2_raw :: __lookup_get_enter_chapter_type :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_unity2_raw :: __lookup_get_name :: get_method_info () } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_unity2_raw :: __lookup_create_bind :: get_method_info () } pub fn add_start_chapter_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_unity2_raw :: __lookup_add_start_chapter_item :: get_method_info () } pub fn on_resume_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_unity2_raw :: __lookup_on_resume :: get_method_info () } pub fn b_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_unity2_raw :: __lookup_b_call :: get_method_info () } }
 
 #[cfg(feature = "app-gmapmenusequence")]
 impl GmapMenuSequence_GmapMenu {
-    #[doc = "`get_EnterChapterType()` overload"]
-    pub fn get_enter_chapter_type() -> crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type {
-        unsafe { __GmapMenuSequence_GmapMenu_unity2_raw::get_enter_chapter_type(::core::option::Option::None) }
-    }
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
-    pub fn create_bind(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
-        unsafe { __GmapMenuSequence_GmapMenu_unity2_raw::create_bind(::core::convert::Into::into(super_), ::core::option::Option::None) }
-    }
-
-    #[doc = "`AddStartChapterItem(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` overload"]
-    pub fn add_start_chapter_item(
-        menu_item_list: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>>,
-    ) -> () {
-        unsafe {
-            __GmapMenuSequence_GmapMenu_unity2_raw::add_start_chapter_item(::core::convert::Into::into(menu_item_list), ::core::option::Option::None)
-        }
-    }
+# [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` — overload selector"] pub fn new (menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , menu_content : crate :: app :: basicmenucontent :: BasicMenuContent) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GmapMenuSequence_GmapMenu) , :: core :: stringify ! (new) ,)) ; < Self as IGmapMenuSequence_GmapMenuMethods > :: ctor (this , menu_item_list , menu_content) ; this }
 }
 
 #[cfg(feature = "app-gmapmenusequence")]
-pub trait IGmapMenuSequence_GmapMenuMethods: IGmapMenuSequence_GmapMenu {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` overload"]
-    fn ctor(
-        self,
-        menu_item_list: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>>,
-        menu_content: impl ::core::convert::Into<crate::app::basicmenucontent::BasicMenuContent>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <GmapMenuSequence_GmapMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GmapMenuSequence_GmapMenu_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(menu_item_list),
-                ::core::convert::Into::into(menu_content),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetName()` overload"]
-    fn get_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver =
-                <GmapMenuSequence_GmapMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GmapMenuSequence_GmapMenu_unity2_raw::get_name(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnResume()` overload"]
-    fn on_resume(self) -> () {
-        unsafe {
-            let __receiver =
-                <GmapMenuSequence_GmapMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GmapMenuSequence_GmapMenu_unity2_raw::on_resume(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`BCall()` overload"]
-    fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver =
-                <GmapMenuSequence_GmapMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GmapMenuSequence_GmapMenu_unity2_raw::b_call(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem as :: unity2 :: ClassIdentity > :: class () , "GetName" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem as :: unity2 :: ClassIdentity > :: NAME , "GetName" , e) , } } } pub unsafe fn get_name (this : GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_name :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_help_text { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem as :: unity2 :: ClassIdentity > :: class () , "GetHelpText" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem as :: unity2 :: ClassIdentity > :: NAME , "GetHelpText" , e) , } } } pub unsafe fn get_help_text (this : GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_help_text :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_build_attribute { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem as :: unity2 :: ClassIdentity > :: class () , "BuildAttribute" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem as :: unity2 :: ClassIdentity > :: NAME , "BuildAttribute" , e) , } } } pub unsafe fn build_attribute (this : GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute (__lookup_build_attribute :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_a_call { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem as :: unity2 :: ClassIdentity > :: class () , "ACall" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem as :: unity2 :: ClassIdentity > :: NAME , "ACall" , e) , } } } pub unsafe fn a_call (this : GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute (__lookup_a_call :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_b_call { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem as :: unity2 :: ClassIdentity > :: class () , "BCall" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem as :: unity2 :: ClassIdentity > :: NAME , "BCall" , e) , } } } pub unsafe fn b_call (this : GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute (__lookup_b_call :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-gmapmenusequence")]
-impl<__T: IGmapMenuSequence_GmapMenu> IGmapMenuSequence_GmapMenuMethods for __T {}
+pub trait IGmapMenuSequence_GmapMenu_SubSystemMenu_ResetItemMethods : IGmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem { # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem_unity2_raw :: get_name (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetHelpText()` overload"] fn get_help_text (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem_unity2_raw :: get_help_text (__receiver , :: core :: option :: Option :: None) } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem_unity2_raw :: build_attribute (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem_unity2_raw :: a_call (__receiver , :: core :: option :: Option :: None) } } # [doc = "`BCall()` overload"] fn b_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem_unity2_raw :: b_call (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-gmapmenusequence")]
-impl GmapMenuSequence_GmapMenu {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` — overload selector"]
-    pub fn new(
-        menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
-        menu_content: crate::app::basicmenucontent::BasicMenuContent,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GmapMenuSequence_GmapMenu),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGmapMenuSequence_GmapMenuMethods>::ctor(this, menu_item_list, menu_content);
-        this
-    }
-}
+impl < __T : IGmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem > IGmapMenuSequence_GmapMenu_SubSystemMenu_ResetItemMethods for __T { }
 
 #[cfg(feature = "app-gmapmenusequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __GmapMenuSequence_GmapMenu_EnterChapterItem_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_type {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_EnterChapterItem as ::unity2::ClassIdentity>::class(),
-                "get_Type",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_EnterChapterItem as ::unity2::ClassIdentity>::NAME,
-                        "get_Type",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_type(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type =
-            ::core::mem::transmute(__lookup_get_type::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_type {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_EnterChapterItem as ::unity2::ClassIdentity>::class(),
-                "set_Type",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_EnterChapterItem as ::unity2::ClassIdentity>::NAME,
-                        "set_Type",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_type(
-        value: crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_type::get_method_info().method_ptr);
-        inner(value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_EnterChapterItem as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_EnterChapterItem as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: GmapMenuSequence_GmapMenu_EnterChapterItem,
-        r#type: crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            GmapMenuSequence_GmapMenu_EnterChapterItem,
-            crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, r#type, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_EnterChapterItem as ::unity2::ClassIdentity>::class(),
-                "GetName",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_EnterChapterItem as ::unity2::ClassIdentity>::NAME,
-                        "GetName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_name(
-        this: GmapMenuSequence_GmapMenu_EnterChapterItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(GmapMenuSequence_GmapMenu_EnterChapterItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_help_text {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_EnterChapterItem as ::unity2::ClassIdentity>::class(),
-                "GetHelpText",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_EnterChapterItem as ::unity2::ClassIdentity>::NAME,
-                        "GetHelpText",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_help_text(
-        this: GmapMenuSequence_GmapMenu_EnterChapterItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(GmapMenuSequence_GmapMenu_EnterChapterItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_help_text::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_build {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_EnterChapterItem as ::unity2::ClassIdentity>::class(),
-                "OnBuild",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_EnterChapterItem as ::unity2::ClassIdentity>::NAME,
-                        "OnBuild",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_build(this: GmapMenuSequence_GmapMenu_EnterChapterItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GmapMenuSequence_GmapMenu_EnterChapterItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_build::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_build_attribute {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_EnterChapterItem as ::unity2::ClassIdentity>::class(),
-                "BuildAttribute",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_EnterChapterItem as ::unity2::ClassIdentity>::NAME,
-                        "BuildAttribute",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn build_attribute(
-        this: GmapMenuSequence_GmapMenu_EnterChapterItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        let inner: extern "C" fn(
-            GmapMenuSequence_GmapMenu_EnterChapterItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute = ::core::mem::transmute(__lookup_build_attribute::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_a_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_EnterChapterItem as ::unity2::ClassIdentity>::class(),
-                "ACall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_EnterChapterItem as ::unity2::ClassIdentity>::NAME,
-                        "ACall",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn a_call(
-        this: GmapMenuSequence_GmapMenu_EnterChapterItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(GmapMenuSequence_GmapMenu_EnterChapterItem, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
-            ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-impl GmapMenuSequence_GmapMenu_EnterChapterItem {
-    #[doc = "`get_Type()` overload"]
-    pub fn get_type() -> crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type {
-        unsafe { __GmapMenuSequence_GmapMenu_EnterChapterItem_unity2_raw::get_type(::core::option::Option::None) }
-    }
-
-    #[doc = "`set_Type(crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type)` overload"]
-    pub fn set_type(value: impl ::core::convert::Into<crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type>) -> () {
-        unsafe { __GmapMenuSequence_GmapMenu_EnterChapterItem_unity2_raw::set_type(::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-pub trait IGmapMenuSequence_GmapMenu_EnterChapterItemMethods: IGmapMenuSequence_GmapMenu_EnterChapterItem {
-    #[doc = "`.ctor(crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type)` overload"]
-    fn ctor(self, r#type: impl ::core::convert::Into<crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type>) -> () {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_EnterChapterItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_EnterChapterItem_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(r#type),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetName()` overload"]
-    fn get_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_EnterChapterItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_EnterChapterItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetHelpText()` overload"]
-    fn get_help_text(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_EnterChapterItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_EnterChapterItem_unity2_raw::get_help_text(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnBuild()` overload"]
-    fn on_build(self) -> () {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_EnterChapterItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_EnterChapterItem_unity2_raw::on_build(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`BuildAttribute()` overload"]
-    fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_EnterChapterItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_EnterChapterItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ACall()` overload"]
-    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_EnterChapterItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_EnterChapterItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-impl<__T: IGmapMenuSequence_GmapMenu_EnterChapterItem> IGmapMenuSequence_GmapMenu_EnterChapterItemMethods for __T {}
-
-#[cfg(feature = "app-gmapmenusequence")]
-impl GmapMenuSequence_GmapMenu_EnterChapterItem {
-    #[doc = "`.ctor(crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type)` — overload selector"]
-    pub fn new(r#type: crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GmapMenuSequence_GmapMenu_EnterChapterItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGmapMenuSequence_GmapMenu_EnterChapterItemMethods>::ctor(this, r#type);
-        this
-    }
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __GmapMenuSequence_GmapMenu_SubSystemMenu_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> as ::unity2::IlType>::il_type(),
-                <crate::app::sortiesubmenucontent::SortieSubMenuContent as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_SubSystemMenu as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_SubSystemMenu as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: GmapMenuSequence_GmapMenu_SubSystemMenu,
-        menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
-        menu_content: crate::app::sortiesubmenucontent::SortieSubMenuContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            GmapMenuSequence_GmapMenu_SubSystemMenu,
-            crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
-            crate::app::sortiesubmenucontent::SortieSubMenuContent,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, menu_item_list, menu_content, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_SubSystemMenu as ::unity2::ClassIdentity>::class(),
-                "GetName",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_SubSystemMenu as ::unity2::ClassIdentity>::NAME,
-                        "GetName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_name(this: GmapMenuSequence_GmapMenu_SubSystemMenu, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(GmapMenuSequence_GmapMenu_SubSystemMenu, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::basicmenu::BasicMenu as ::unity2::IlType>::il_type(),
-                <crate::app::basicmenuitem::BasicMenuItem as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_SubSystemMenu as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_SubSystemMenu as ::unity2::ClassIdentity>::NAME,
-                        "CreateBind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_bind(
-        super_: crate::app::basicmenu::BasicMenu,
-        parent_menu_item: crate::app::basicmenuitem::BasicMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::app::basicmenu::BasicMenu, crate::app::basicmenuitem::BasicMenuItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
-        inner(super_, parent_menu_item, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-impl GmapMenuSequence_GmapMenu_SubSystemMenu {
-    #[doc = "`CreateBind(crate::app::basicmenu::BasicMenu, crate::app::basicmenuitem::BasicMenuItem)` overload"]
-    pub fn create_bind(
-        super_: impl ::core::convert::Into<crate::app::basicmenu::BasicMenu>,
-        parent_menu_item: impl ::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem>,
-    ) -> () {
-        unsafe {
-            __GmapMenuSequence_GmapMenu_SubSystemMenu_unity2_raw::create_bind(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(parent_menu_item),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-pub trait IGmapMenuSequence_GmapMenu_SubSystemMenuMethods: IGmapMenuSequence_GmapMenu_SubSystemMenu {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` overload"]
-    fn ctor(
-        self,
-        menu_item_list: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>>,
-        menu_content: impl ::core::convert::Into<crate::app::sortiesubmenucontent::SortieSubMenuContent>,
-    ) -> () {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_SubSystemMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_SubSystemMenu_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(menu_item_list),
-                ::core::convert::Into::into(menu_content),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetName()` overload"]
-    fn get_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_SubSystemMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_SubSystemMenu_unity2_raw::get_name(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-impl<__T: IGmapMenuSequence_GmapMenu_SubSystemMenu> IGmapMenuSequence_GmapMenu_SubSystemMenuMethods for __T {}
-
-#[cfg(feature = "app-gmapmenusequence")]
-impl GmapMenuSequence_GmapMenu_SubSystemMenu {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` — overload selector"]
-    pub fn new(
-        menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
-        menu_content: crate::app::sortiesubmenucontent::SortieSubMenuContent,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GmapMenuSequence_GmapMenu_SubSystemMenu),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGmapMenuSequence_GmapMenu_SubSystemMenuMethods>::ctor(this, menu_item_list, menu_content);
-        this
-    }
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __GmapMenuSequence_GmapMenu_GoToSolanelItem_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_GoToSolanelItem as ::unity2::ClassIdentity>::class(),
-                "GetName",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_GoToSolanelItem as ::unity2::ClassIdentity>::NAME,
-                        "GetName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_name(
-        this: GmapMenuSequence_GmapMenu_GoToSolanelItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(GmapMenuSequence_GmapMenu_GoToSolanelItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_help_text {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_GoToSolanelItem as ::unity2::ClassIdentity>::class(),
-                "GetHelpText",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_GoToSolanelItem as ::unity2::ClassIdentity>::NAME,
-                        "GetHelpText",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_help_text(
-        this: GmapMenuSequence_GmapMenu_GoToSolanelItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(GmapMenuSequence_GmapMenu_GoToSolanelItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_help_text::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_build_attribute {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_GoToSolanelItem as ::unity2::ClassIdentity>::class(),
-                "BuildAttribute",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_GoToSolanelItem as ::unity2::ClassIdentity>::NAME,
-                        "BuildAttribute",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn build_attribute(
-        this: GmapMenuSequence_GmapMenu_GoToSolanelItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        let inner: extern "C" fn(
-            GmapMenuSequence_GmapMenu_GoToSolanelItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute = ::core::mem::transmute(__lookup_build_attribute::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_a_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_GoToSolanelItem as ::unity2::ClassIdentity>::class(),
-                "ACall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_GoToSolanelItem as ::unity2::ClassIdentity>::NAME,
-                        "ACall",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn a_call(
-        this: GmapMenuSequence_GmapMenu_GoToSolanelItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(GmapMenuSequence_GmapMenu_GoToSolanelItem, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
-            ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_GoToSolanelItem as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_GoToSolanelItem as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: GmapMenuSequence_GmapMenu_GoToSolanelItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GmapMenuSequence_GmapMenu_GoToSolanelItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-pub trait IGmapMenuSequence_GmapMenu_GoToSolanelItemMethods: IGmapMenuSequence_GmapMenu_GoToSolanelItem {
-    #[doc = "`GetName()` overload"]
-    fn get_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_GoToSolanelItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_GoToSolanelItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetHelpText()` overload"]
-    fn get_help_text(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_GoToSolanelItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_GoToSolanelItem_unity2_raw::get_help_text(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`BuildAttribute()` overload"]
-    fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_GoToSolanelItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_GoToSolanelItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ACall()` overload"]
-    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_GoToSolanelItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_GoToSolanelItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_GoToSolanelItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_GoToSolanelItem_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-impl<__T: IGmapMenuSequence_GmapMenu_GoToSolanelItem> IGmapMenuSequence_GmapMenu_GoToSolanelItemMethods for __T {}
-
-#[cfg(feature = "app-gmapmenusequence")]
-impl GmapMenuSequence_GmapMenu_GoToSolanelItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GmapMenuSequence_GmapMenu_GoToSolanelItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGmapMenuSequence_GmapMenu_GoToSolanelItemMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem as ::unity2::ClassIdentity>::class(),
-                "GetName",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem as ::unity2::ClassIdentity>::NAME,
-                        "GetName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_name(
-        this: GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_help_text {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem as ::unity2::ClassIdentity>::class(),
-                "GetHelpText",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem as ::unity2::ClassIdentity>::NAME,
-                        "GetHelpText",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_help_text(
-        this: GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_help_text::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_build_attribute {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem as ::unity2::ClassIdentity>::class(),
-                "BuildAttribute",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem as ::unity2::ClassIdentity>::NAME,
-                        "BuildAttribute",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn build_attribute(
-        this: GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        let inner: extern "C" fn(
-            GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute = ::core::mem::transmute(__lookup_build_attribute::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_a_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem as ::unity2::ClassIdentity>::class(),
-                "ACall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem as ::unity2::ClassIdentity>::NAME,
-                        "ACall",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn a_call(
-        this: GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_b_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem as ::unity2::ClassIdentity>::class(),
-                "BCall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem as ::unity2::ClassIdentity>::NAME,
-                        "BCall",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn b_call(
-        this: GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(__lookup_b_call::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-pub trait IGmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItemMethods: IGmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem {
-    #[doc = "`GetName()` overload"]
-    fn get_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetHelpText()` overload"]
-    fn get_help_text(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem_unity2_raw::get_help_text(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`BuildAttribute()` overload"]
-    fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ACall()` overload"]
-    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`BCall()` overload"]
-    fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem_unity2_raw::b_call(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-impl<__T: IGmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem> IGmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItemMethods for __T {}
-
-#[cfg(feature = "app-gmapmenusequence")]
-impl GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItemMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem as ::unity2::ClassIdentity>::class(),
-                "GetName",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem as ::unity2::ClassIdentity>::NAME,
-                        "GetName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_name(
-        this: GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_help_text {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem as ::unity2::ClassIdentity>::class(),
-                "GetHelpText",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem as ::unity2::ClassIdentity>::NAME,
-                        "GetHelpText",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_help_text(
-        this: GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_help_text::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_build_attribute {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem as ::unity2::ClassIdentity>::class(),
-                "BuildAttribute",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem as ::unity2::ClassIdentity>::NAME,
-                        "BuildAttribute",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn build_attribute(
-        this: GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        let inner: extern "C" fn(
-            GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute = ::core::mem::transmute(__lookup_build_attribute::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_a_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem as ::unity2::ClassIdentity>::class(),
-                "ACall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem as ::unity2::ClassIdentity>::NAME,
-                        "ACall",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn a_call(
-        this: GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_b_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem as ::unity2::ClassIdentity>::class(),
-                "BCall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem as ::unity2::ClassIdentity>::NAME,
-                        "BCall",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn b_call(
-        this: GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(__lookup_b_call::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-pub trait IGmapMenuSequence_GmapMenu_SubSystemMenu_ResetItemMethods: IGmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem {
-    #[doc = "`GetName()` overload"]
-    fn get_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetHelpText()` overload"]
-    fn get_help_text(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem_unity2_raw::get_help_text(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`BuildAttribute()` overload"]
-    fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ACall()` overload"]
-    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`BCall()` overload"]
-    fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem_unity2_raw::b_call(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-impl<__T: IGmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem> IGmapMenuSequence_GmapMenu_SubSystemMenu_ResetItemMethods for __T {}
+impl GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem_unity2_raw :: __lookup_get_name :: get_method_info () } pub fn get_help_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem_unity2_raw :: __lookup_get_help_text :: get_method_info () } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem_unity2_raw :: __lookup_build_attribute :: get_method_info () } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem_unity2_raw :: __lookup_a_call :: get_method_info () } pub fn b_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem_unity2_raw :: __lookup_b_call :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-gmapmenusequence")]
 impl GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGmapMenuSequence_GmapMenu_SubSystemMenu_ResetItemMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem) , :: core :: stringify ! (new) ,)) ; < Self as IGmapMenuSequence_GmapMenu_SubSystemMenu_ResetItemMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-gmapmenusequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __GmapMenuSequence_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::action::Action as ::unity2::IlType>::il_type(),
-                <crate::system::action::Action as ::unity2::IlType>::il_type(),
-                <crate::system::action::Action as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: GmapMenuSequence,
-        open_top_callback: crate::system::action::Action,
-        decide_callback: crate::system::action::Action,
-        close_callback: crate::system::action::Action,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            GmapMenuSequence,
-            crate::system::action::Action,
-            crate::system::action::Action,
-            crate::system::action::Action,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, open_top_callback, decide_callback, close_callback, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_open_top_callback {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence as ::unity2::ClassIdentity>::class(),
-                "OpenTopCallback",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence as ::unity2::ClassIdentity>::NAME,
-                        "OpenTopCallback",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn open_top_callback(this: GmapMenuSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GmapMenuSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_open_top_callback::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <crate::system::action::Action as ::unity2::IlType>::il_type(),
-                <crate::system::action::Action as ::unity2::IlType>::il_type(),
-                <crate::system::action::Action as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                4,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence as ::unity2::ClassIdentity>::NAME,
-                        "CreateBind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        open_top_callback: crate::system::action::Action,
-        decide_callback: crate::system::action::Action,
-        close_callback: crate::system::action::Action,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::procinst::ProcInst {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            crate::system::action::Action,
-            crate::system::action::Action,
-            crate::system::action::Action,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::procinst::ProcInst = ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
-        inner(super_, open_top_callback, decide_callback, close_callback, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_shutdown {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence as ::unity2::ClassIdentity>::class(),
-                "OnShutdown",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence as ::unity2::ClassIdentity>::NAME,
-                        "OnShutdown",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_shutdown(this: GmapMenuSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GmapMenuSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_shutdown::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_init {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence as ::unity2::ClassIdentity>::class(),
-                "Init",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence as ::unity2::ClassIdentity>::NAME,
-                        "Init",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn init(this: GmapMenuSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GmapMenuSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_init::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_open_top_menu {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence as ::unity2::ClassIdentity>::class(),
-                "OpenTopMenu",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence as ::unity2::ClassIdentity>::NAME,
-                        "OpenTopMenu",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn open_top_menu(this: GmapMenuSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GmapMenuSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_open_top_menu::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_enter_chapter_dialog {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence as ::unity2::ClassIdentity>::class(),
-                "EnterChapterDialog",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence as ::unity2::ClassIdentity>::NAME,
-                        "EnterChapterDialog",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn enter_chapter_dialog(this: GmapMenuSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GmapMenuSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_enter_chapter_dialog::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_final {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence as ::unity2::ClassIdentity>::class(),
-                "Final",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence as ::unity2::ClassIdentity>::NAME,
-                        "Final",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn r#final(this: GmapMenuSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GmapMenuSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_final::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem as :: unity2 :: ClassIdentity > :: class () , "GetName" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem as :: unity2 :: ClassIdentity > :: NAME , "GetName" , e) , } } } pub unsafe fn get_name (this : GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_name :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_help_text { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem as :: unity2 :: ClassIdentity > :: class () , "GetHelpText" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem as :: unity2 :: ClassIdentity > :: NAME , "GetHelpText" , e) , } } } pub unsafe fn get_help_text (this : GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_help_text :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_build_attribute { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem as :: unity2 :: ClassIdentity > :: class () , "BuildAttribute" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem as :: unity2 :: ClassIdentity > :: NAME , "BuildAttribute" , e) , } } } pub unsafe fn build_attribute (this : GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute (__lookup_build_attribute :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_a_call { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem as :: unity2 :: ClassIdentity > :: class () , "ACall" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem as :: unity2 :: ClassIdentity > :: NAME , "ACall" , e) , } } } pub unsafe fn a_call (this : GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute (__lookup_a_call :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_b_call { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem as :: unity2 :: ClassIdentity > :: class () , "BCall" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem as :: unity2 :: ClassIdentity > :: NAME , "BCall" , e) , } } } pub unsafe fn b_call (this : GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute (__lookup_b_call :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-gmapmenusequence")]
+pub trait IGmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItemMethods : IGmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem { # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem_unity2_raw :: get_name (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetHelpText()` overload"] fn get_help_text (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem_unity2_raw :: get_help_text (__receiver , :: core :: option :: Option :: None) } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem_unity2_raw :: build_attribute (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem_unity2_raw :: a_call (__receiver , :: core :: option :: Option :: None) } } # [doc = "`BCall()` overload"] fn b_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem_unity2_raw :: b_call (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl < __T : IGmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem > IGmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItemMethods for __T { }
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem_unity2_raw :: __lookup_get_name :: get_method_info () } pub fn get_help_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem_unity2_raw :: __lookup_get_help_text :: get_method_info () } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem_unity2_raw :: __lookup_build_attribute :: get_method_info () } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem_unity2_raw :: __lookup_a_call :: get_method_info () } pub fn b_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem_unity2_raw :: __lookup_b_call :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem_unity2_raw :: __lookup_ctor :: get_method_info () } }
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem) , :: core :: stringify ! (new) ,)) ; < Self as IGmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItemMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-gmapmenusequence")]
-impl GmapMenuSequence {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::system::action::Action, crate::system::action::Action, crate::system::action::Action)` overload"]
-    pub fn create_bind(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        open_top_callback: impl ::core::convert::Into<crate::system::action::Action>,
-        decide_callback: impl ::core::convert::Into<crate::system::action::Action>,
-        close_callback: impl ::core::convert::Into<crate::system::action::Action>,
-    ) -> crate::app::procinst::ProcInst {
-        unsafe {
-            __GmapMenuSequence_unity2_raw::create_bind(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(open_top_callback),
-                ::core::convert::Into::into(decide_callback),
-                ::core::convert::Into::into(close_callback),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem as :: unity2 :: ClassIdentity > :: class () , "GetName" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem as :: unity2 :: ClassIdentity > :: NAME , "GetName" , e) , } } } pub unsafe fn get_name (this : GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_name :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-gmapmenusequence")]
-pub trait IGmapMenuSequenceMethods: IGmapMenuSequence {
-    #[doc = "`.ctor(crate::system::action::Action, crate::system::action::Action, crate::system::action::Action)` overload"]
-    fn ctor(
-        self,
-        open_top_callback: impl ::core::convert::Into<crate::system::action::Action>,
-        decide_callback: impl ::core::convert::Into<crate::system::action::Action>,
-        close_callback: impl ::core::convert::Into<crate::system::action::Action>,
-    ) -> () {
-        unsafe {
-            let __receiver = <GmapMenuSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GmapMenuSequence_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(open_top_callback),
-                ::core::convert::Into::into(decide_callback),
-                ::core::convert::Into::into(close_callback),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`OpenTopCallback()` overload"]
-    fn open_top_callback(self) -> () {
-        unsafe {
-            let __receiver = <GmapMenuSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GmapMenuSequence_unity2_raw::open_top_callback(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnShutdown()` overload"]
-    fn on_shutdown(self) -> () {
-        unsafe {
-            let __receiver = <GmapMenuSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GmapMenuSequence_unity2_raw::on_shutdown(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Init()` overload"]
-    fn init(self) -> () {
-        unsafe {
-            let __receiver = <GmapMenuSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GmapMenuSequence_unity2_raw::init(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OpenTopMenu()` overload"]
-    fn open_top_menu(self) -> () {
-        unsafe {
-            let __receiver = <GmapMenuSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GmapMenuSequence_unity2_raw::open_top_menu(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`EnterChapterDialog()` overload"]
-    fn enter_chapter_dialog(self) -> () {
-        unsafe {
-            let __receiver = <GmapMenuSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GmapMenuSequence_unity2_raw::enter_chapter_dialog(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Final()` overload"]
-    fn r#final(self) -> () {
-        unsafe {
-            let __receiver = <GmapMenuSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GmapMenuSequence_unity2_raw::r#final(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItemMethods : IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem { # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem_unity2_raw :: get_name (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-gmapmenusequence")]
-impl<__T: IGmapMenuSequence> IGmapMenuSequenceMethods for __T {}
+impl < __T : IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem > IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItemMethods for __T { }
 
 #[cfg(feature = "app-gmapmenusequence")]
-impl GmapMenuSequence {
-    #[doc = "`.ctor(crate::system::action::Action, crate::system::action::Action, crate::system::action::Action)` — overload selector"]
-    pub fn new(
-        open_top_callback: crate::system::action::Action,
-        decide_callback: crate::system::action::Action,
-        close_callback: crate::system::action::Action,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GmapMenuSequence),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGmapMenuSequenceMethods>::ctor(this, open_top_callback, decide_callback, close_callback);
-        this
-    }
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem as ::unity2::ClassIdentity>::class(),
-                "GetName",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem as ::unity2::ClassIdentity>::NAME,
-                        "GetName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_name(
-        this: GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_help_text {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem as ::unity2::ClassIdentity>::class(),
-                "GetHelpText",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem as ::unity2::ClassIdentity>::NAME,
-                        "GetHelpText",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_help_text(
-        this: GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_help_text::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_build_attribute {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem as ::unity2::ClassIdentity>::class(),
-                "BuildAttribute",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem as ::unity2::ClassIdentity>::NAME,
-                        "BuildAttribute",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn build_attribute(
-        this: GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        let inner: extern "C" fn(
-            GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute = ::core::mem::transmute(__lookup_build_attribute::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_a_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem as ::unity2::ClassIdentity>::class(),
-                "ACall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem as ::unity2::ClassIdentity>::NAME,
-                        "ACall",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn a_call(
-        this: GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_b_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem as ::unity2::ClassIdentity>::class(),
-                "BCall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem as ::unity2::ClassIdentity>::NAME,
-                        "BCall",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn b_call(
-        this: GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(__lookup_b_call::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-pub trait IGmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItemMethods: IGmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem {
-    #[doc = "`GetName()` overload"]
-    fn get_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetHelpText()` overload"]
-    fn get_help_text(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem_unity2_raw::get_help_text(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`BuildAttribute()` overload"]
-    fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ACall()` overload"]
-    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`BCall()` overload"]
-    fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem_unity2_raw::b_call(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-impl<__T: IGmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem> IGmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItemMethods for __T {}
-
-#[cfg(feature = "app-gmapmenusequence")]
-impl GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItemMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::netenablesequence::NetEnableSequence_ResultFunction as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence,
-        result_func: crate::app::netenablesequence::NetEnableSequence_ResultFunction,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence,
-            crate::app::netenablesequence::NetEnableSequence_ResultFunction,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, result_func, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_confirm {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence as ::unity2::ClassIdentity>::class(),
-                "Confirm",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence as ::unity2::ClassIdentity>::NAME,
-                        "Confirm",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn confirm(this: GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_confirm::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <crate::app::netenablesequence::NetEnableSequence_ResultFunction as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence as ::unity2::ClassIdentity>::NAME,
-                        "CreateBind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        result_func: crate::app::netenablesequence::NetEnableSequence_ResultFunction,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            crate::app::netenablesequence::NetEnableSequence_ResultFunction,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
-        inner(super_, result_func, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-impl GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::netenablesequence::NetEnableSequence_ResultFunction)` overload"]
-    pub fn create_bind(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        result_func: impl ::core::convert::Into<crate::app::netenablesequence::NetEnableSequence_ResultFunction>,
-    ) -> () {
-        unsafe {
-            __GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_unity2_raw::create_bind(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(result_func),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-pub trait IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequenceMethods: IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence {
-    #[doc = "`.ctor(crate::app::netenablesequence::NetEnableSequence_ResultFunction)` overload"]
-    fn ctor(self, result_func: impl ::core::convert::Into<crate::app::netenablesequence::NetEnableSequence_ResultFunction>) -> () {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(result_func),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Confirm()` overload"]
-    fn confirm(self) -> () {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_unity2_raw::confirm(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-impl<__T: IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence> IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequenceMethods for __T {}
-
-#[cfg(feature = "app-gmapmenusequence")]
-impl GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence {
-    #[doc = "`.ctor(crate::app::netenablesequence::NetEnableSequence_ResultFunction)` — overload selector"]
-    pub fn new(result_func: crate::app::netenablesequence::NetEnableSequence_ResultFunction) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequenceMethods>::ctor(this, result_func);
-        this
-    }
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem as ::unity2::ClassIdentity>::class(),
-                "GetName",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem as ::unity2::ClassIdentity>::NAME,
-                        "GetName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_name(
-        this: GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_help_text {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem as ::unity2::ClassIdentity>::class(),
-                "GetHelpText",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem as ::unity2::ClassIdentity>::NAME,
-                        "GetHelpText",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_help_text(
-        this: GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_help_text::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_build_attribute {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem as ::unity2::ClassIdentity>::class(),
-                "BuildAttribute",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem as ::unity2::ClassIdentity>::NAME,
-                        "BuildAttribute",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn build_attribute(
-        this: GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        let inner: extern "C" fn(
-            GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute = ::core::mem::transmute(__lookup_build_attribute::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_a_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem as ::unity2::ClassIdentity>::class(),
-                "ACall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem as ::unity2::ClassIdentity>::NAME,
-                        "ACall",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn a_call(
-        this: GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_b_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem as ::unity2::ClassIdentity>::class(),
-                "BCall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem as ::unity2::ClassIdentity>::NAME,
-                        "BCall",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn b_call(
-        this: GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(__lookup_b_call::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-pub trait IGmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItemMethods: IGmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem {
-    #[doc = "`GetName()` overload"]
-    fn get_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetHelpText()` overload"]
-    fn get_help_text(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem_unity2_raw::get_help_text(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`BuildAttribute()` overload"]
-    fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ACall()` overload"]
-    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`BCall()` overload"]
-    fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem_unity2_raw::b_call(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-impl<__T: IGmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem> IGmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItemMethods for __T {}
-
-#[cfg(feature = "app-gmapmenusequence")]
-impl GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItemMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem as ::unity2::ClassIdentity>::class(),
-                "GetName",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem as ::unity2::ClassIdentity>::NAME,
-                        "GetName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_name(
-        this: GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-pub trait IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItemMethods:
-    IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem
-{
-    #[doc = "`GetName()` overload"]
-    fn get_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-impl<__T: IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem> IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItemMethods
-    for __T
-{
-}
+impl GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem_unity2_raw :: __lookup_get_name :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-gmapmenusequence")]
 impl GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItemMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItemMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-gmapmenusequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __GmapMenuSequence_GmapMenu_SubFriendMenu_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> as ::unity2::IlType>::il_type(),
-                <crate::app::sortiesubmenucontent::SortieSubMenuContent as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_SubFriendMenu as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_SubFriendMenu as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: GmapMenuSequence_GmapMenu_SubFriendMenu,
-        menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
-        menu_content: crate::app::sortiesubmenucontent::SortieSubMenuContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            GmapMenuSequence_GmapMenu_SubFriendMenu,
-            crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
-            crate::app::sortiesubmenucontent::SortieSubMenuContent,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, menu_item_list, menu_content, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_SubFriendMenu as ::unity2::ClassIdentity>::class(),
-                "GetName",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_SubFriendMenu as ::unity2::ClassIdentity>::NAME,
-                        "GetName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_name(this: GmapMenuSequence_GmapMenu_SubFriendMenu, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(GmapMenuSequence_GmapMenu_SubFriendMenu, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::basicmenu::BasicMenu as ::unity2::IlType>::il_type(),
-                <crate::app::basicmenuitem::BasicMenuItem as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_SubFriendMenu as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_SubFriendMenu as ::unity2::ClassIdentity>::NAME,
-                        "CreateBind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_bind(
-        super_: crate::app::basicmenu::BasicMenu,
-        parent_menu_item: crate::app::basicmenuitem::BasicMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::app::basicmenu::BasicMenu, crate::app::basicmenuitem::BasicMenuItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
-        inner(super_, parent_menu_item, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem as :: unity2 :: ClassIdentity > :: class () , "GetName" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem as :: unity2 :: ClassIdentity > :: NAME , "GetName" , e) , } } } pub unsafe fn get_name (this : GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_name :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_help_text { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem as :: unity2 :: ClassIdentity > :: class () , "GetHelpText" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem as :: unity2 :: ClassIdentity > :: NAME , "GetHelpText" , e) , } } } pub unsafe fn get_help_text (this : GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_help_text :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_build_attribute { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem as :: unity2 :: ClassIdentity > :: class () , "BuildAttribute" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem as :: unity2 :: ClassIdentity > :: NAME , "BuildAttribute" , e) , } } } pub unsafe fn build_attribute (this : GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute (__lookup_build_attribute :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_a_call { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem as :: unity2 :: ClassIdentity > :: class () , "ACall" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem as :: unity2 :: ClassIdentity > :: NAME , "ACall" , e) , } } } pub unsafe fn a_call (this : GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute (__lookup_a_call :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_b_call { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem as :: unity2 :: ClassIdentity > :: class () , "BCall" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem as :: unity2 :: ClassIdentity > :: NAME , "BCall" , e) , } } } pub unsafe fn b_call (this : GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute (__lookup_b_call :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-gmapmenusequence")]
-impl GmapMenuSequence_GmapMenu_SubFriendMenu {
-    #[doc = "`CreateBind(crate::app::basicmenu::BasicMenu, crate::app::basicmenuitem::BasicMenuItem)` overload"]
-    pub fn create_bind(
-        super_: impl ::core::convert::Into<crate::app::basicmenu::BasicMenu>,
-        parent_menu_item: impl ::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem>,
-    ) -> () {
-        unsafe {
-            __GmapMenuSequence_GmapMenu_SubFriendMenu_unity2_raw::create_bind(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(parent_menu_item),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+pub trait IGmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItemMethods : IGmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem { # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem_unity2_raw :: get_name (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetHelpText()` overload"] fn get_help_text (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem_unity2_raw :: get_help_text (__receiver , :: core :: option :: Option :: None) } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem_unity2_raw :: build_attribute (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem_unity2_raw :: a_call (__receiver , :: core :: option :: Option :: None) } } # [doc = "`BCall()` overload"] fn b_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem_unity2_raw :: b_call (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-gmapmenusequence")]
-pub trait IGmapMenuSequence_GmapMenu_SubFriendMenuMethods: IGmapMenuSequence_GmapMenu_SubFriendMenu {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` overload"]
-    fn ctor(
-        self,
-        menu_item_list: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>>,
-        menu_content: impl ::core::convert::Into<crate::app::sortiesubmenucontent::SortieSubMenuContent>,
-    ) -> () {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_SubFriendMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_SubFriendMenu_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(menu_item_list),
-                ::core::convert::Into::into(menu_content),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetName()` overload"]
-    fn get_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_SubFriendMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_SubFriendMenu_unity2_raw::get_name(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+impl < __T : IGmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem > IGmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItemMethods for __T { }
 
 #[cfg(feature = "app-gmapmenusequence")]
-impl<__T: IGmapMenuSequence_GmapMenu_SubFriendMenu> IGmapMenuSequence_GmapMenu_SubFriendMenuMethods for __T {}
-
-#[cfg(feature = "app-gmapmenusequence")]
-impl GmapMenuSequence_GmapMenu_SubFriendMenu {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` — overload selector"]
-    pub fn new(
-        menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
-        menu_content: crate::app::sortiesubmenucontent::SortieSubMenuContent,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GmapMenuSequence_GmapMenu_SubFriendMenu),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGmapMenuSequence_GmapMenu_SubFriendMenuMethods>::ctor(this, menu_item_list, menu_content);
-        this
-    }
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __GmapMenuSequence_GmapMenu_SubShopMenu_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> as ::unity2::IlType>::il_type(),
-                <crate::app::sortiesubmenucontent::SortieSubMenuContent as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_SubShopMenu as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_SubShopMenu as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: GmapMenuSequence_GmapMenu_SubShopMenu,
-        menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
-        menu_content: crate::app::sortiesubmenucontent::SortieSubMenuContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            GmapMenuSequence_GmapMenu_SubShopMenu,
-            crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
-            crate::app::sortiesubmenucontent::SortieSubMenuContent,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, menu_item_list, menu_content, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_SubShopMenu as ::unity2::ClassIdentity>::class(),
-                "GetName",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_SubShopMenu as ::unity2::ClassIdentity>::NAME,
-                        "GetName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_name(this: GmapMenuSequence_GmapMenu_SubShopMenu, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(GmapMenuSequence_GmapMenu_SubShopMenu, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::basicmenu::BasicMenu as ::unity2::IlType>::il_type(),
-                <crate::app::basicmenuitem::BasicMenuItem as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_SubShopMenu as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_SubShopMenu as ::unity2::ClassIdentity>::NAME,
-                        "CreateBind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_bind(
-        super_: crate::app::basicmenu::BasicMenu,
-        parent_menu_item: crate::app::basicmenuitem::BasicMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::app::basicmenu::BasicMenu, crate::app::basicmenuitem::BasicMenuItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
-        inner(super_, parent_menu_item, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-impl GmapMenuSequence_GmapMenu_SubShopMenu {
-    #[doc = "`CreateBind(crate::app::basicmenu::BasicMenu, crate::app::basicmenuitem::BasicMenuItem)` overload"]
-    pub fn create_bind(
-        super_: impl ::core::convert::Into<crate::app::basicmenu::BasicMenu>,
-        parent_menu_item: impl ::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem>,
-    ) -> () {
-        unsafe {
-            __GmapMenuSequence_GmapMenu_SubShopMenu_unity2_raw::create_bind(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(parent_menu_item),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-pub trait IGmapMenuSequence_GmapMenu_SubShopMenuMethods: IGmapMenuSequence_GmapMenu_SubShopMenu {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` overload"]
-    fn ctor(
-        self,
-        menu_item_list: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>>,
-        menu_content: impl ::core::convert::Into<crate::app::sortiesubmenucontent::SortieSubMenuContent>,
-    ) -> () {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_SubShopMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_SubShopMenu_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(menu_item_list),
-                ::core::convert::Into::into(menu_content),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetName()` overload"]
-    fn get_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_SubShopMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_SubShopMenu_unity2_raw::get_name(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-impl<__T: IGmapMenuSequence_GmapMenu_SubShopMenu> IGmapMenuSequence_GmapMenu_SubShopMenuMethods for __T {}
-
-#[cfg(feature = "app-gmapmenusequence")]
-impl GmapMenuSequence_GmapMenu_SubShopMenu {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` — overload selector"]
-    pub fn new(
-        menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
-        menu_content: crate::app::sortiesubmenucontent::SortieSubMenuContent,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GmapMenuSequence_GmapMenu_SubShopMenu),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGmapMenuSequence_GmapMenu_SubShopMenuMethods>::ctor(this, menu_item_list, menu_content);
-        this
-    }
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem as ::unity2::ClassIdentity>::class(),
-                "GetName",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem as ::unity2::ClassIdentity>::NAME,
-                        "GetName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_name(
-        this: GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_help_text {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem as ::unity2::ClassIdentity>::class(),
-                "GetHelpText",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem as ::unity2::ClassIdentity>::NAME,
-                        "GetHelpText",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_help_text(
-        this: GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_help_text::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_build_attribute {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem as ::unity2::ClassIdentity>::class(),
-                "BuildAttribute",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem as ::unity2::ClassIdentity>::NAME,
-                        "BuildAttribute",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn build_attribute(
-        this: GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        let inner: extern "C" fn(
-            GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute = ::core::mem::transmute(__lookup_build_attribute::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_a_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem as ::unity2::ClassIdentity>::class(),
-                "ACall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem as ::unity2::ClassIdentity>::NAME,
-                        "ACall",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn a_call(
-        this: GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_b_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem as ::unity2::ClassIdentity>::class(),
-                "BCall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem as ::unity2::ClassIdentity>::NAME,
-                        "BCall",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn b_call(
-        this: GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(__lookup_b_call::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-pub trait IGmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItemMethods: IGmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem {
-    #[doc = "`GetName()` overload"]
-    fn get_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetHelpText()` overload"]
-    fn get_help_text(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem_unity2_raw::get_help_text(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`BuildAttribute()` overload"]
-    fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ACall()` overload"]
-    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`BCall()` overload"]
-    fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem_unity2_raw::b_call(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-impl<__T: IGmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem> IGmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItemMethods for __T {}
-
-#[cfg(feature = "app-gmapmenusequence")]
-impl GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItemMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __GmapMenuSequence_GmapMenu_GmapMenuMenuItem_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_map_attribute {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_GmapMenuMenuItem as ::unity2::ClassIdentity>::class(),
-                "GetMapAttribute",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_GmapMenuMenuItem as ::unity2::ClassIdentity>::NAME,
-                        "GetMapAttribute",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_map_attribute(
-        this: GmapMenuSequence_GmapMenu_GmapMenuMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        let inner: extern "C" fn(
-            GmapMenuSequence_GmapMenu_GmapMenuMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute = ::core::mem::transmute(__lookup_get_map_attribute::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_flag_id {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_GmapMenuMenuItem as ::unity2::ClassIdentity>::class(),
-                "get_FlagID",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_GmapMenuMenuItem as ::unity2::ClassIdentity>::NAME,
-                        "get_FlagID",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_flag_id(
-        this: GmapMenuSequence_GmapMenu_GmapMenuMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(GmapMenuSequence_GmapMenu_GmapMenuMenuItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_flag_id::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_a_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_GmapMenuMenuItem as ::unity2::ClassIdentity>::class(),
-                "ACall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_GmapMenuMenuItem as ::unity2::ClassIdentity>::NAME,
-                        "ACall",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn a_call(
-        this: GmapMenuSequence_GmapMenu_GmapMenuMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(GmapMenuSequence_GmapMenu_GmapMenuMenuItem, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
-            ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_help_visible {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_GmapMenuMenuItem as ::unity2::ClassIdentity>::class(),
-                "SetHelpVisible",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_GmapMenuMenuItem as ::unity2::ClassIdentity>::NAME,
-                        "SetHelpVisible",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_help_visible(
-        this: GmapMenuSequence_GmapMenu_GmapMenuMenuItem,
-        active: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(GmapMenuSequence_GmapMenu_GmapMenuMenuItem, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_help_visible::get_method_info().method_ptr);
-        inner(this, active, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_save_menu_select {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_GmapMenuMenuItem as ::unity2::ClassIdentity>::class(),
-                "SaveMenuSelect",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_GmapMenuMenuItem as ::unity2::ClassIdentity>::NAME,
-                        "SaveMenuSelect",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn save_menu_select(this: GmapMenuSequence_GmapMenu_GmapMenuMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GmapMenuSequence_GmapMenu_GmapMenuMenuItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_save_menu_select::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_help_text {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_GmapMenuMenuItem as ::unity2::ClassIdentity>::class(),
-                "GetHelpText",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_GmapMenuMenuItem as ::unity2::ClassIdentity>::NAME,
-                        "GetHelpText",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_help_text(
-        this: GmapMenuSequence_GmapMenu_GmapMenuMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(GmapMenuSequence_GmapMenu_GmapMenuMenuItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_help_text::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_select {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_GmapMenuMenuItem as ::unity2::ClassIdentity>::class(),
-                "OnSelect",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_GmapMenuMenuItem as ::unity2::ClassIdentity>::NAME,
-                        "OnSelect",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_select(this: GmapMenuSequence_GmapMenu_GmapMenuMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GmapMenuSequence_GmapMenu_GmapMenuMenuItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_select::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_deselect {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_GmapMenuMenuItem as ::unity2::ClassIdentity>::class(),
-                "OnDeselect",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_GmapMenuMenuItem as ::unity2::ClassIdentity>::NAME,
-                        "OnDeselect",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_deselect(this: GmapMenuSequence_GmapMenu_GmapMenuMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GmapMenuSequence_GmapMenu_GmapMenuMenuItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_deselect::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_GmapMenuMenuItem as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_GmapMenuMenuItem as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: GmapMenuSequence_GmapMenu_GmapMenuMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GmapMenuSequence_GmapMenu_GmapMenuMenuItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-pub trait IGmapMenuSequence_GmapMenu_GmapMenuMenuItemMethods: IGmapMenuSequence_GmapMenu_GmapMenuMenuItem {
-    #[doc = "`GetMapAttribute()` overload"]
-    fn get_map_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_GmapMenuMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_GmapMenuMenuItem_unity2_raw::get_map_attribute(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_FlagID()` overload"]
-    fn get_flag_id(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_GmapMenuMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_GmapMenuMenuItem_unity2_raw::get_flag_id(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ACall()` overload"]
-    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_GmapMenuMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_GmapMenuMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetHelpVisible(bool)` overload"]
-    fn set_help_visible(self, active: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_GmapMenuMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_GmapMenuMenuItem_unity2_raw::set_help_visible(
-                __receiver,
-                ::core::convert::Into::into(active),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SaveMenuSelect()` overload"]
-    fn save_menu_select(self) -> () {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_GmapMenuMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_GmapMenuMenuItem_unity2_raw::save_menu_select(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetHelpText()` overload"]
-    fn get_help_text(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_GmapMenuMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_GmapMenuMenuItem_unity2_raw::get_help_text(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnSelect()` overload"]
-    fn on_select(self) -> () {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_GmapMenuMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_GmapMenuMenuItem_unity2_raw::on_select(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnDeselect()` overload"]
-    fn on_deselect(self) -> () {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_GmapMenuMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_GmapMenuMenuItem_unity2_raw::on_deselect(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_GmapMenuMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_GmapMenuMenuItem_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-impl<__T: IGmapMenuSequence_GmapMenu_GmapMenuMenuItem> IGmapMenuSequence_GmapMenu_GmapMenuMenuItemMethods for __T {}
-
-#[cfg(feature = "app-gmapmenusequence")]
-impl GmapMenuSequence_GmapMenu_GmapMenuMenuItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GmapMenuSequence_GmapMenu_GmapMenuMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGmapMenuSequence_GmapMenu_GmapMenuMenuItemMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem as ::unity2::ClassIdentity>::class(),
-                "GetName",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem as ::unity2::ClassIdentity>::NAME,
-                        "GetName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_name(
-        this: GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_help_text {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem as ::unity2::ClassIdentity>::class(),
-                "GetHelpText",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem as ::unity2::ClassIdentity>::NAME,
-                        "GetHelpText",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_help_text(
-        this: GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_help_text::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_build_attribute {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem as ::unity2::ClassIdentity>::class(),
-                "BuildAttribute",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem as ::unity2::ClassIdentity>::NAME,
-                        "BuildAttribute",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn build_attribute(
-        this: GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        let inner: extern "C" fn(
-            GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute = ::core::mem::transmute(__lookup_build_attribute::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_a_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem as ::unity2::ClassIdentity>::class(),
-                "ACall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem as ::unity2::ClassIdentity>::NAME,
-                        "ACall",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn a_call(
-        this: GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_b_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem as ::unity2::ClassIdentity>::class(),
-                "BCall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem as ::unity2::ClassIdentity>::NAME,
-                        "BCall",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn b_call(
-        this: GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(__lookup_b_call::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-pub trait IGmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItemMethods: IGmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem {
-    #[doc = "`GetName()` overload"]
-    fn get_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetHelpText()` overload"]
-    fn get_help_text(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem_unity2_raw::get_help_text(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`BuildAttribute()` overload"]
-    fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ACall()` overload"]
-    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`BCall()` overload"]
-    fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem_unity2_raw::b_call(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-impl<__T: IGmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem> IGmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItemMethods for __T {}
-
-#[cfg(feature = "app-gmapmenusequence")]
-impl GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItemMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __GmapMenuSequence_GoToMapSequence_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_open_dialog {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GoToMapSequence as ::unity2::ClassIdentity>::class(),
-                "OpenDialog",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GoToMapSequence as ::unity2::ClassIdentity>::NAME,
-                        "OpenDialog",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn open_dialog(this: GmapMenuSequence_GoToMapSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GmapMenuSequence_GoToMapSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_open_dialog::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_move_solanel {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GoToMapSequence as ::unity2::ClassIdentity>::class(),
-                "MoveSolanel",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GoToMapSequence as ::unity2::ClassIdentity>::NAME,
-                        "MoveSolanel",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn move_solanel(this: GmapMenuSequence_GoToMapSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GmapMenuSequence_GoToMapSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_move_solanel::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_move_gmap {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GoToMapSequence as ::unity2::ClassIdentity>::class(),
-                "MoveGmap",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GoToMapSequence as ::unity2::ClassIdentity>::NAME,
-                        "MoveGmap",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn move_gmap(this: GmapMenuSequence_GoToMapSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GmapMenuSequence_GoToMapSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_move_gmap::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GoToMapSequence as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GoToMapSequence as ::unity2::ClassIdentity>::NAME,
-                        "CreateBind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_bind(super_: crate::app::procinst::ProcInst, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
-        inner(super_, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GoToMapSequence as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GoToMapSequence as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: GmapMenuSequence_GoToMapSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GmapMenuSequence_GoToMapSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-impl GmapMenuSequence_GoToMapSequence {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
-    pub fn create_bind(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
-        unsafe { __GmapMenuSequence_GoToMapSequence_unity2_raw::create_bind(::core::convert::Into::into(super_), ::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-pub trait IGmapMenuSequence_GoToMapSequenceMethods: IGmapMenuSequence_GoToMapSequence {
-    #[doc = "`OpenDialog()` overload"]
-    fn open_dialog(self) -> () {
-        unsafe {
-            let __receiver =
-                <GmapMenuSequence_GoToMapSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GmapMenuSequence_GoToMapSequence_unity2_raw::open_dialog(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`MoveSolanel()` overload"]
-    fn move_solanel(self) -> () {
-        unsafe {
-            let __receiver =
-                <GmapMenuSequence_GoToMapSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GmapMenuSequence_GoToMapSequence_unity2_raw::move_solanel(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`MoveGmap()` overload"]
-    fn move_gmap(self) -> () {
-        unsafe {
-            let __receiver =
-                <GmapMenuSequence_GoToMapSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GmapMenuSequence_GoToMapSequence_unity2_raw::move_gmap(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <GmapMenuSequence_GoToMapSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GmapMenuSequence_GoToMapSequence_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-impl<__T: IGmapMenuSequence_GoToMapSequence> IGmapMenuSequence_GoToMapSequenceMethods for __T {}
-
-#[cfg(feature = "app-gmapmenusequence")]
-impl GmapMenuSequence_GoToMapSequence {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GmapMenuSequence_GoToMapSequence),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGmapMenuSequence_GoToMapSequenceMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem as ::unity2::ClassIdentity>::class(),
-                "GetName",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem as ::unity2::ClassIdentity>::NAME,
-                        "GetName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_name(
-        this: GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_help_text {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem as ::unity2::ClassIdentity>::class(),
-                "GetHelpText",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem as ::unity2::ClassIdentity>::NAME,
-                        "GetHelpText",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_help_text(
-        this: GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_help_text::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_build_attribute {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem as ::unity2::ClassIdentity>::class(),
-                "BuildAttribute",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem as ::unity2::ClassIdentity>::NAME,
-                        "BuildAttribute",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn build_attribute(
-        this: GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        let inner: extern "C" fn(
-            GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute = ::core::mem::transmute(__lookup_build_attribute::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_a_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem as ::unity2::ClassIdentity>::class(),
-                "ACall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem as ::unity2::ClassIdentity>::NAME,
-                        "ACall",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn a_call(
-        this: GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_b_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem as ::unity2::ClassIdentity>::class(),
-                "BCall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem as ::unity2::ClassIdentity>::NAME,
-                        "BCall",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn b_call(
-        this: GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(__lookup_b_call::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-pub trait IGmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItemMethods: IGmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem {
-    #[doc = "`GetName()` overload"]
-    fn get_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetHelpText()` overload"]
-    fn get_help_text(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem_unity2_raw::get_help_text(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`BuildAttribute()` overload"]
-    fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ACall()` overload"]
-    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`BCall()` overload"]
-    fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem_unity2_raw::b_call(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-impl<__T: IGmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem> IGmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItemMethods for __T {}
+impl GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem_unity2_raw :: __lookup_get_name :: get_method_info () } pub fn get_help_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem_unity2_raw :: __lookup_get_help_text :: get_method_info () } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem_unity2_raw :: __lookup_build_attribute :: get_method_info () } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem_unity2_raw :: __lookup_a_call :: get_method_info () } pub fn b_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem_unity2_raw :: __lookup_b_call :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-gmapmenusequence")]
 impl GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItemMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem) , :: core :: stringify ! (new) ,)) ; < Self as IGmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItemMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-gmapmenusequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::netenablesequence::NetEnableSequence_ResultFunction as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem,
-        result_func: crate::app::netenablesequence::NetEnableSequence_ResultFunction,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem,
-            crate::app::netenablesequence::NetEnableSequence_ResultFunction,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, result_func, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem as ::unity2::ClassIdentity>::class(),
-                "GetName",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem as ::unity2::ClassIdentity>::NAME,
-                        "GetName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_name(
-        this: GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_a_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem as ::unity2::ClassIdentity>::class(),
-                "ACall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem as ::unity2::ClassIdentity>::NAME,
-                        "ACall",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn a_call(
-        this: GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __GmapMenuSequence_GmapMenu_EnterChapterItem_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_type { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_EnterChapterItem as :: unity2 :: ClassIdentity > :: class () , "get_Type" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_EnterChapterItem as :: unity2 :: ClassIdentity > :: NAME , "get_Type" , e) , } } } pub unsafe fn get_type (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: gmap :: enterchapteryesnodialog :: EnterChapterYesNoDialog_Type { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: gmap :: enterchapteryesnodialog :: EnterChapterYesNoDialog_Type = :: core :: mem :: transmute (__lookup_get_type :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_type { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: gmap :: enterchapteryesnodialog :: EnterChapterYesNoDialog_Type as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_EnterChapterItem as :: unity2 :: ClassIdentity > :: class () , "set_Type" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_EnterChapterItem as :: unity2 :: ClassIdentity > :: NAME , "set_Type" , e) , } } } pub unsafe fn set_type (value : crate :: app :: gmap :: enterchapteryesnodialog :: EnterChapterYesNoDialog_Type , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: gmap :: enterchapteryesnodialog :: EnterChapterYesNoDialog_Type , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_type :: get_method_info () . method_ptr ,) ; inner (value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: gmap :: enterchapteryesnodialog :: EnterChapterYesNoDialog_Type as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_EnterChapterItem as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_EnterChapterItem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : GmapMenuSequence_GmapMenu_EnterChapterItem , r#type : crate :: app :: gmap :: enterchapteryesnodialog :: EnterChapterYesNoDialog_Type , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_EnterChapterItem , crate :: app :: gmap :: enterchapteryesnodialog :: EnterChapterYesNoDialog_Type , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , r#type , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_EnterChapterItem as :: unity2 :: ClassIdentity > :: class () , "GetName" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_EnterChapterItem as :: unity2 :: ClassIdentity > :: NAME , "GetName" , e) , } } } pub unsafe fn get_name (this : GmapMenuSequence_GmapMenu_EnterChapterItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_EnterChapterItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_name :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_help_text { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_EnterChapterItem as :: unity2 :: ClassIdentity > :: class () , "GetHelpText" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_EnterChapterItem as :: unity2 :: ClassIdentity > :: NAME , "GetHelpText" , e) , } } } pub unsafe fn get_help_text (this : GmapMenuSequence_GmapMenu_EnterChapterItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_EnterChapterItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_help_text :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_build { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_EnterChapterItem as :: unity2 :: ClassIdentity > :: class () , "OnBuild" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_EnterChapterItem as :: unity2 :: ClassIdentity > :: NAME , "OnBuild" , e) , } } } pub unsafe fn on_build (this : GmapMenuSequence_GmapMenu_EnterChapterItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_EnterChapterItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_build :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_build_attribute { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_EnterChapterItem as :: unity2 :: ClassIdentity > :: class () , "BuildAttribute" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_EnterChapterItem as :: unity2 :: ClassIdentity > :: NAME , "BuildAttribute" , e) , } } } pub unsafe fn build_attribute (this : GmapMenuSequence_GmapMenu_EnterChapterItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_EnterChapterItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute (__lookup_build_attribute :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_a_call { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_EnterChapterItem as :: unity2 :: ClassIdentity > :: class () , "ACall" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_EnterChapterItem as :: unity2 :: ClassIdentity > :: NAME , "ACall" , e) , } } } pub unsafe fn a_call (this : GmapMenuSequence_GmapMenu_EnterChapterItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_EnterChapterItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute (__lookup_a_call :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl GmapMenuSequence_GmapMenu_EnterChapterItem { # [doc = "`get_Type()` overload"] pub fn get_type () -> crate :: app :: gmap :: enterchapteryesnodialog :: EnterChapterYesNoDialog_Type { unsafe { __GmapMenuSequence_GmapMenu_EnterChapterItem_unity2_raw :: get_type (:: core :: option :: Option :: None) } } # [doc = "`set_Type(crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type)` overload"] pub fn set_type (value : impl :: core :: convert :: Into < crate :: app :: gmap :: enterchapteryesnodialog :: EnterChapterYesNoDialog_Type >) -> () { unsafe { __GmapMenuSequence_GmapMenu_EnterChapterItem_unity2_raw :: set_type (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-gmapmenusequence")]
+pub trait IGmapMenuSequence_GmapMenu_EnterChapterItemMethods : IGmapMenuSequence_GmapMenu_EnterChapterItem { # [doc = "`.ctor(crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type)` overload"] fn ctor (self , r#type : impl :: core :: convert :: Into < crate :: app :: gmap :: enterchapteryesnodialog :: EnterChapterYesNoDialog_Type >) -> () { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_EnterChapterItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_EnterChapterItem_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_EnterChapterItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_EnterChapterItem_unity2_raw :: get_name (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetHelpText()` overload"] fn get_help_text (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_EnterChapterItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_EnterChapterItem_unity2_raw :: get_help_text (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnBuild()` overload"] fn on_build (self ,) -> () { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_EnterChapterItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_EnterChapterItem_unity2_raw :: on_build (__receiver , :: core :: option :: Option :: None) } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_EnterChapterItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_EnterChapterItem_unity2_raw :: build_attribute (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_EnterChapterItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_EnterChapterItem_unity2_raw :: a_call (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl < __T : IGmapMenuSequence_GmapMenu_EnterChapterItem > IGmapMenuSequence_GmapMenu_EnterChapterItemMethods for __T { }
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl GmapMenuSequence_GmapMenu_EnterChapterItem { pub fn get_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_EnterChapterItem_unity2_raw :: __lookup_get_type :: get_method_info () } pub fn set_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_EnterChapterItem_unity2_raw :: __lookup_set_type :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_EnterChapterItem_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_EnterChapterItem_unity2_raw :: __lookup_get_name :: get_method_info () } pub fn get_help_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_EnterChapterItem_unity2_raw :: __lookup_get_help_text :: get_method_info () } pub fn on_build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_EnterChapterItem_unity2_raw :: __lookup_on_build :: get_method_info () } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_EnterChapterItem_unity2_raw :: __lookup_build_attribute :: get_method_info () } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_EnterChapterItem_unity2_raw :: __lookup_a_call :: get_method_info () } }
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl GmapMenuSequence_GmapMenu_EnterChapterItem {
+# [doc = "`.ctor(crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type)` — overload selector"] pub fn new (r#type : crate :: app :: gmap :: enterchapteryesnodialog :: EnterChapterYesNoDialog_Type) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GmapMenuSequence_GmapMenu_EnterChapterItem) , :: core :: stringify ! (new) ,)) ; < Self as IGmapMenuSequence_GmapMenu_EnterChapterItemMethods > :: ctor (this , r#type) ; this }
 }
 
 #[cfg(feature = "app-gmapmenusequence")]
-pub trait IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItemMethods:
-    IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem
-{
-    #[doc = "`.ctor(crate::app::netenablesequence::NetEnableSequence_ResultFunction)` overload"]
-    fn ctor(self, result_func: impl ::core::convert::Into<crate::app::netenablesequence::NetEnableSequence_ResultFunction>) -> () {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(result_func),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetName()` overload"]
-    fn get_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ACall()` overload"]
-    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
-        }
-    }
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __GmapMenuSequence_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: action :: Action as :: unity2 :: IlType > :: il_type () , < crate :: system :: action :: Action as :: unity2 :: IlType > :: il_type () , < crate :: system :: action :: Action as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : GmapMenuSequence , open_top_callback : crate :: system :: action :: Action , decide_callback : crate :: system :: action :: Action , close_callback : crate :: system :: action :: Action , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GmapMenuSequence , crate :: system :: action :: Action , crate :: system :: action :: Action , crate :: system :: action :: Action , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , open_top_callback , decide_callback , close_callback , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_open_top_callback { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence as :: unity2 :: ClassIdentity > :: class () , "OpenTopCallback" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence as :: unity2 :: ClassIdentity > :: NAME , "OpenTopCallback" , e) , } } } pub unsafe fn open_top_callback (this : GmapMenuSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GmapMenuSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_open_top_callback :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_bind { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: system :: action :: Action as :: unity2 :: IlType > :: il_type () , < crate :: system :: action :: Action as :: unity2 :: IlType > :: il_type () , < crate :: system :: action :: Action as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence as :: unity2 :: ClassIdentity > :: class () , "CreateBind" , 4 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence as :: unity2 :: ClassIdentity > :: NAME , "CreateBind" , e) , } } } pub unsafe fn create_bind (super_ : crate :: app :: procinst :: ProcInst , open_top_callback : crate :: system :: action :: Action , decide_callback : crate :: system :: action :: Action , close_callback : crate :: system :: action :: Action , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: procinst :: ProcInst { let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: system :: action :: Action , crate :: system :: action :: Action , crate :: system :: action :: Action , :: unity2 :: OptionalMethod ,) -> crate :: app :: procinst :: ProcInst = :: core :: mem :: transmute (__lookup_create_bind :: get_method_info () . method_ptr ,) ; inner (super_ , open_top_callback , decide_callback , close_callback , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_shutdown { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence as :: unity2 :: ClassIdentity > :: class () , "OnShutdown" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence as :: unity2 :: ClassIdentity > :: NAME , "OnShutdown" , e) , } } } pub unsafe fn on_shutdown (this : GmapMenuSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GmapMenuSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_shutdown :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_init { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence as :: unity2 :: ClassIdentity > :: class () , "Init" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence as :: unity2 :: ClassIdentity > :: NAME , "Init" , e) , } } } pub unsafe fn init (this : GmapMenuSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GmapMenuSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_init :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_open_top_menu { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence as :: unity2 :: ClassIdentity > :: class () , "OpenTopMenu" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence as :: unity2 :: ClassIdentity > :: NAME , "OpenTopMenu" , e) , } } } pub unsafe fn open_top_menu (this : GmapMenuSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GmapMenuSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_open_top_menu :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_enter_chapter_dialog { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence as :: unity2 :: ClassIdentity > :: class () , "EnterChapterDialog" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence as :: unity2 :: ClassIdentity > :: NAME , "EnterChapterDialog" , e) , } } } pub unsafe fn enter_chapter_dialog (this : GmapMenuSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GmapMenuSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_enter_chapter_dialog :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_final { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence as :: unity2 :: ClassIdentity > :: class () , "Final" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence as :: unity2 :: ClassIdentity > :: NAME , "Final" , e) , } } } pub unsafe fn r#final (this : GmapMenuSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GmapMenuSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_final :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl GmapMenuSequence { # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::system::action::Action, crate::system::action::Action, crate::system::action::Action)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , open_top_callback : impl :: core :: convert :: Into < crate :: system :: action :: Action > , decide_callback : impl :: core :: convert :: Into < crate :: system :: action :: Action > , close_callback : impl :: core :: convert :: Into < crate :: system :: action :: Action >) -> crate :: app :: procinst :: ProcInst { unsafe { __GmapMenuSequence_unity2_raw :: create_bind (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (open_top_callback) , :: core :: convert :: Into :: into (decide_callback) , :: core :: convert :: Into :: into (close_callback) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-gmapmenusequence")]
+pub trait IGmapMenuSequenceMethods : IGmapMenuSequence { # [doc = "`.ctor(crate::system::action::Action, crate::system::action::Action, crate::system::action::Action)` overload"] fn ctor (self , open_top_callback : impl :: core :: convert :: Into < crate :: system :: action :: Action > , decide_callback : impl :: core :: convert :: Into < crate :: system :: action :: Action > , close_callback : impl :: core :: convert :: Into < crate :: system :: action :: Action >) -> () { unsafe { let __receiver = < GmapMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (open_top_callback) , :: core :: convert :: Into :: into (decide_callback) , :: core :: convert :: Into :: into (close_callback) , :: core :: option :: Option :: None) } } # [doc = "`OpenTopCallback()` overload"] fn open_top_callback (self ,) -> () { unsafe { let __receiver = < GmapMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_unity2_raw :: open_top_callback (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnShutdown()` overload"] fn on_shutdown (self ,) -> () { unsafe { let __receiver = < GmapMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_unity2_raw :: on_shutdown (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Init()` overload"] fn init (self ,) -> () { unsafe { let __receiver = < GmapMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_unity2_raw :: init (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OpenTopMenu()` overload"] fn open_top_menu (self ,) -> () { unsafe { let __receiver = < GmapMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_unity2_raw :: open_top_menu (__receiver , :: core :: option :: Option :: None) } } # [doc = "`EnterChapterDialog()` overload"] fn enter_chapter_dialog (self ,) -> () { unsafe { let __receiver = < GmapMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_unity2_raw :: enter_chapter_dialog (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Final()` overload"] fn r#final (self ,) -> () { unsafe { let __receiver = < GmapMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_unity2_raw :: r#final (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl < __T : IGmapMenuSequence > IGmapMenuSequenceMethods for __T { }
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl GmapMenuSequence { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn open_top_callback_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_unity2_raw :: __lookup_open_top_callback :: get_method_info () } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_unity2_raw :: __lookup_create_bind :: get_method_info () } pub fn on_shutdown_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_unity2_raw :: __lookup_on_shutdown :: get_method_info () } pub fn init_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_unity2_raw :: __lookup_init :: get_method_info () } pub fn open_top_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_unity2_raw :: __lookup_open_top_menu :: get_method_info () } pub fn enter_chapter_dialog_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_unity2_raw :: __lookup_enter_chapter_dialog :: get_method_info () } pub fn final_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_unity2_raw :: __lookup_final :: get_method_info () } }
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl GmapMenuSequence {
+# [doc = "`.ctor(crate::system::action::Action, crate::system::action::Action, crate::system::action::Action)` — overload selector"] pub fn new (open_top_callback : crate :: system :: action :: Action , decide_callback : crate :: system :: action :: Action , close_callback : crate :: system :: action :: Action) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GmapMenuSequence) , :: core :: stringify ! (new) ,)) ; < Self as IGmapMenuSequenceMethods > :: ctor (this , open_top_callback , decide_callback , close_callback) ; this }
 }
 
 #[cfg(feature = "app-gmapmenusequence")]
-impl<__T: IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem>
-    IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItemMethods for __T
-{
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __GmapMenuSequence_GmapMenu_RankingItem_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_RankingItem as :: unity2 :: ClassIdentity > :: class () , "GetName" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_RankingItem as :: unity2 :: ClassIdentity > :: NAME , "GetName" , e) , } } } pub unsafe fn get_name (this : GmapMenuSequence_GmapMenu_RankingItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_RankingItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_name :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_help_text { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_RankingItem as :: unity2 :: ClassIdentity > :: class () , "GetHelpText" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_RankingItem as :: unity2 :: ClassIdentity > :: NAME , "GetHelpText" , e) , } } } pub unsafe fn get_help_text (this : GmapMenuSequence_GmapMenu_RankingItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_RankingItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_help_text :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_build_attribute { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_RankingItem as :: unity2 :: ClassIdentity > :: class () , "BuildAttribute" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_RankingItem as :: unity2 :: ClassIdentity > :: NAME , "BuildAttribute" , e) , } } } pub unsafe fn build_attribute (this : GmapMenuSequence_GmapMenu_RankingItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_RankingItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute (__lookup_build_attribute :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_a_call { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_RankingItem as :: unity2 :: ClassIdentity > :: class () , "ACall" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_RankingItem as :: unity2 :: ClassIdentity > :: NAME , "ACall" , e) , } } } pub unsafe fn a_call (this : GmapMenuSequence_GmapMenu_RankingItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_RankingItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute (__lookup_a_call :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_RankingItem as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_RankingItem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : GmapMenuSequence_GmapMenu_RankingItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_RankingItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-gmapmenusequence")]
-impl GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem {
-    #[doc = "`.ctor(crate::app::netenablesequence::NetEnableSequence_ResultFunction)` — overload selector"]
-    pub fn new(result_func: crate::app::netenablesequence::NetEnableSequence_ResultFunction) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItemMethods>::ctor(this, result_func);
-        this
-    }
-}
+pub trait IGmapMenuSequence_GmapMenu_RankingItemMethods : IGmapMenuSequence_GmapMenu_RankingItem { # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_RankingItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_RankingItem_unity2_raw :: get_name (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetHelpText()` overload"] fn get_help_text (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_RankingItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_RankingItem_unity2_raw :: get_help_text (__receiver , :: core :: option :: Option :: None) } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_RankingItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_RankingItem_unity2_raw :: build_attribute (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_RankingItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_RankingItem_unity2_raw :: a_call (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_RankingItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_RankingItem_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-gmapmenusequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __GmapMenuSequence_GmapMenu_FriendItem_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_flag_id {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_FriendItem as ::unity2::ClassIdentity>::class(),
-                "get_FlagID",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_FriendItem as ::unity2::ClassIdentity>::NAME,
-                        "get_FlagID",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_flag_id(this: GmapMenuSequence_GmapMenu_FriendItem, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(GmapMenuSequence_GmapMenu_FriendItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_flag_id::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_FriendItem as ::unity2::ClassIdentity>::class(),
-                "GetName",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_FriendItem as ::unity2::ClassIdentity>::NAME,
-                        "GetName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_name(this: GmapMenuSequence_GmapMenu_FriendItem, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(GmapMenuSequence_GmapMenu_FriendItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_help_text {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_FriendItem as ::unity2::ClassIdentity>::class(),
-                "GetHelpText",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_FriendItem as ::unity2::ClassIdentity>::NAME,
-                        "GetHelpText",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_help_text(
-        this: GmapMenuSequence_GmapMenu_FriendItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(GmapMenuSequence_GmapMenu_FriendItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_help_text::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_map_attribute {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_FriendItem as ::unity2::ClassIdentity>::class(),
-                "GetMapAttribute",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_FriendItem as ::unity2::ClassIdentity>::NAME,
-                        "GetMapAttribute",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_map_attribute(
-        this: GmapMenuSequence_GmapMenu_FriendItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        let inner: extern "C" fn(
-            GmapMenuSequence_GmapMenu_FriendItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute = ::core::mem::transmute(__lookup_get_map_attribute::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_a_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_FriendItem as ::unity2::ClassIdentity>::class(),
-                "ACall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_FriendItem as ::unity2::ClassIdentity>::NAME,
-                        "ACall",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn a_call(
-        this: GmapMenuSequence_GmapMenu_FriendItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(GmapMenuSequence_GmapMenu_FriendItem, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
-            ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_FriendItem as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_FriendItem as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: GmapMenuSequence_GmapMenu_FriendItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GmapMenuSequence_GmapMenu_FriendItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+impl < __T : IGmapMenuSequence_GmapMenu_RankingItem > IGmapMenuSequence_GmapMenu_RankingItemMethods for __T { }
 
 #[cfg(feature = "app-gmapmenusequence")]
-pub trait IGmapMenuSequence_GmapMenu_FriendItemMethods: IGmapMenuSequence_GmapMenu_FriendItem {
-    #[doc = "`get_FlagID()` overload"]
-    fn get_flag_id(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_FriendItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_FriendItem_unity2_raw::get_flag_id(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetName()` overload"]
-    fn get_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_FriendItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_FriendItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetHelpText()` overload"]
-    fn get_help_text(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_FriendItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_FriendItem_unity2_raw::get_help_text(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetMapAttribute()` overload"]
-    fn get_map_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_FriendItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_FriendItem_unity2_raw::get_map_attribute(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ACall()` overload"]
-    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_FriendItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_FriendItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_FriendItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_FriendItem_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-impl<__T: IGmapMenuSequence_GmapMenu_FriendItem> IGmapMenuSequence_GmapMenu_FriendItemMethods for __T {}
-
-#[cfg(feature = "app-gmapmenusequence")]
-impl GmapMenuSequence_GmapMenu_FriendItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GmapMenuSequence_GmapMenu_FriendItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGmapMenuSequence_GmapMenu_FriendItemMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __GmapMenuSequence_GmapMenu_RankingItem_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_RankingItem as ::unity2::ClassIdentity>::class(),
-                "GetName",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_RankingItem as ::unity2::ClassIdentity>::NAME,
-                        "GetName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_name(this: GmapMenuSequence_GmapMenu_RankingItem, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(GmapMenuSequence_GmapMenu_RankingItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_help_text {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_RankingItem as ::unity2::ClassIdentity>::class(),
-                "GetHelpText",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_RankingItem as ::unity2::ClassIdentity>::NAME,
-                        "GetHelpText",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_help_text(
-        this: GmapMenuSequence_GmapMenu_RankingItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(GmapMenuSequence_GmapMenu_RankingItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_help_text::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_build_attribute {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_RankingItem as ::unity2::ClassIdentity>::class(),
-                "BuildAttribute",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_RankingItem as ::unity2::ClassIdentity>::NAME,
-                        "BuildAttribute",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn build_attribute(
-        this: GmapMenuSequence_GmapMenu_RankingItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        let inner: extern "C" fn(
-            GmapMenuSequence_GmapMenu_RankingItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute = ::core::mem::transmute(__lookup_build_attribute::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_a_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_RankingItem as ::unity2::ClassIdentity>::class(),
-                "ACall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_RankingItem as ::unity2::ClassIdentity>::NAME,
-                        "ACall",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn a_call(
-        this: GmapMenuSequence_GmapMenu_RankingItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(GmapMenuSequence_GmapMenu_RankingItem, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
-            ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_RankingItem as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_RankingItem as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: GmapMenuSequence_GmapMenu_RankingItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GmapMenuSequence_GmapMenu_RankingItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-pub trait IGmapMenuSequence_GmapMenu_RankingItemMethods: IGmapMenuSequence_GmapMenu_RankingItem {
-    #[doc = "`GetName()` overload"]
-    fn get_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_RankingItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_RankingItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetHelpText()` overload"]
-    fn get_help_text(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_RankingItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_RankingItem_unity2_raw::get_help_text(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`BuildAttribute()` overload"]
-    fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_RankingItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_RankingItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ACall()` overload"]
-    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_RankingItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_RankingItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_RankingItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_RankingItem_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-impl<__T: IGmapMenuSequence_GmapMenu_RankingItem> IGmapMenuSequence_GmapMenu_RankingItemMethods for __T {}
+impl GmapMenuSequence_GmapMenu_RankingItem { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_RankingItem_unity2_raw :: __lookup_get_name :: get_method_info () } pub fn get_help_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_RankingItem_unity2_raw :: __lookup_get_help_text :: get_method_info () } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_RankingItem_unity2_raw :: __lookup_build_attribute :: get_method_info () } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_RankingItem_unity2_raw :: __lookup_a_call :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_RankingItem_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-gmapmenusequence")]
 impl GmapMenuSequence_GmapMenu_RankingItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GmapMenuSequence_GmapMenu_RankingItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGmapMenuSequence_GmapMenu_RankingItemMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GmapMenuSequence_GmapMenu_RankingItem) , :: core :: stringify ! (new) ,)) ; < Self as IGmapMenuSequence_GmapMenu_RankingItemMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-gmapmenusequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __GmapMenuSequence_GmapMenu_MaterialListItem_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_MaterialListItem as ::unity2::ClassIdentity>::class(),
-                "GetName",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_MaterialListItem as ::unity2::ClassIdentity>::NAME,
-                        "GetName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_name(
-        this: GmapMenuSequence_GmapMenu_MaterialListItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(GmapMenuSequence_GmapMenu_MaterialListItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_help_text {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_MaterialListItem as ::unity2::ClassIdentity>::class(),
-                "GetHelpText",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_MaterialListItem as ::unity2::ClassIdentity>::NAME,
-                        "GetHelpText",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_help_text(
-        this: GmapMenuSequence_GmapMenu_MaterialListItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(GmapMenuSequence_GmapMenu_MaterialListItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_help_text::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_build_attribute {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_MaterialListItem as ::unity2::ClassIdentity>::class(),
-                "BuildAttribute",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_MaterialListItem as ::unity2::ClassIdentity>::NAME,
-                        "BuildAttribute",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn build_attribute(
-        this: GmapMenuSequence_GmapMenu_MaterialListItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        let inner: extern "C" fn(
-            GmapMenuSequence_GmapMenu_MaterialListItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute = ::core::mem::transmute(__lookup_build_attribute::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_a_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_MaterialListItem as ::unity2::ClassIdentity>::class(),
-                "ACall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_MaterialListItem as ::unity2::ClassIdentity>::NAME,
-                        "ACall",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn a_call(
-        this: GmapMenuSequence_GmapMenu_MaterialListItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(GmapMenuSequence_GmapMenu_MaterialListItem, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
-            ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_MaterialListItem as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_MaterialListItem as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: GmapMenuSequence_GmapMenu_MaterialListItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GmapMenuSequence_GmapMenu_MaterialListItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __GmapMenuSequence_GoToMapSequence_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_open_dialog { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GoToMapSequence as :: unity2 :: ClassIdentity > :: class () , "OpenDialog" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GoToMapSequence as :: unity2 :: ClassIdentity > :: NAME , "OpenDialog" , e) , } } } pub unsafe fn open_dialog (this : GmapMenuSequence_GoToMapSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GmapMenuSequence_GoToMapSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_open_dialog :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_move_solanel { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GoToMapSequence as :: unity2 :: ClassIdentity > :: class () , "MoveSolanel" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GoToMapSequence as :: unity2 :: ClassIdentity > :: NAME , "MoveSolanel" , e) , } } } pub unsafe fn move_solanel (this : GmapMenuSequence_GoToMapSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GmapMenuSequence_GoToMapSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_move_solanel :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_move_gmap { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GoToMapSequence as :: unity2 :: ClassIdentity > :: class () , "MoveGmap" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GoToMapSequence as :: unity2 :: ClassIdentity > :: NAME , "MoveGmap" , e) , } } } pub unsafe fn move_gmap (this : GmapMenuSequence_GoToMapSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GmapMenuSequence_GoToMapSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_move_gmap :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_bind { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GoToMapSequence as :: unity2 :: ClassIdentity > :: class () , "CreateBind" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GoToMapSequence as :: unity2 :: ClassIdentity > :: NAME , "CreateBind" , e) , } } } pub unsafe fn create_bind (super_ : crate :: app :: procinst :: ProcInst , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create_bind :: get_method_info () . method_ptr ,) ; inner (super_ , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GoToMapSequence as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GoToMapSequence as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : GmapMenuSequence_GoToMapSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GmapMenuSequence_GoToMapSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl GmapMenuSequence_GoToMapSequence { # [doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { __GmapMenuSequence_GoToMapSequence_unity2_raw :: create_bind (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-gmapmenusequence")]
+pub trait IGmapMenuSequence_GoToMapSequenceMethods : IGmapMenuSequence_GoToMapSequence { # [doc = "`OpenDialog()` overload"] fn open_dialog (self ,) -> () { unsafe { let __receiver = < GmapMenuSequence_GoToMapSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GoToMapSequence_unity2_raw :: open_dialog (__receiver , :: core :: option :: Option :: None) } } # [doc = "`MoveSolanel()` overload"] fn move_solanel (self ,) -> () { unsafe { let __receiver = < GmapMenuSequence_GoToMapSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GoToMapSequence_unity2_raw :: move_solanel (__receiver , :: core :: option :: Option :: None) } } # [doc = "`MoveGmap()` overload"] fn move_gmap (self ,) -> () { unsafe { let __receiver = < GmapMenuSequence_GoToMapSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GoToMapSequence_unity2_raw :: move_gmap (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GmapMenuSequence_GoToMapSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GoToMapSequence_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl < __T : IGmapMenuSequence_GoToMapSequence > IGmapMenuSequence_GoToMapSequenceMethods for __T { }
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl GmapMenuSequence_GoToMapSequence { pub fn open_dialog_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GoToMapSequence_unity2_raw :: __lookup_open_dialog :: get_method_info () } pub fn move_solanel_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GoToMapSequence_unity2_raw :: __lookup_move_solanel :: get_method_info () } pub fn move_gmap_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GoToMapSequence_unity2_raw :: __lookup_move_gmap :: get_method_info () } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GoToMapSequence_unity2_raw :: __lookup_create_bind :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GoToMapSequence_unity2_raw :: __lookup_ctor :: get_method_info () } }
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl GmapMenuSequence_GoToMapSequence {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GmapMenuSequence_GoToMapSequence) , :: core :: stringify ! (new) ,)) ; < Self as IGmapMenuSequence_GoToMapSequenceMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-gmapmenusequence")]
-pub trait IGmapMenuSequence_GmapMenu_MaterialListItemMethods: IGmapMenuSequence_GmapMenu_MaterialListItem {
-    #[doc = "`GetName()` overload"]
-    fn get_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_MaterialListItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_MaterialListItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetHelpText()` overload"]
-    fn get_help_text(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_MaterialListItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_MaterialListItem_unity2_raw::get_help_text(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`BuildAttribute()` overload"]
-    fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_MaterialListItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_MaterialListItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ACall()` overload"]
-    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_MaterialListItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_MaterialListItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_MaterialListItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_MaterialListItem_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __GmapMenuSequence_GmapMenu_SubShopMenu_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > as :: unity2 :: IlType > :: il_type () , < crate :: app :: sortiesubmenucontent :: SortieSubMenuContent as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_SubShopMenu as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_SubShopMenu as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : GmapMenuSequence_GmapMenu_SubShopMenu , menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , menu_content : crate :: app :: sortiesubmenucontent :: SortieSubMenuContent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_SubShopMenu , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , crate :: app :: sortiesubmenucontent :: SortieSubMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , menu_item_list , menu_content , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_SubShopMenu as :: unity2 :: ClassIdentity > :: class () , "GetName" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_SubShopMenu as :: unity2 :: ClassIdentity > :: NAME , "GetName" , e) , } } } pub unsafe fn get_name (this : GmapMenuSequence_GmapMenu_SubShopMenu , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_SubShopMenu , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_name :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_bind { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: basicmenu :: BasicMenu as :: unity2 :: IlType > :: il_type () , < crate :: app :: basicmenuitem :: BasicMenuItem as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_SubShopMenu as :: unity2 :: ClassIdentity > :: class () , "CreateBind" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_SubShopMenu as :: unity2 :: ClassIdentity > :: NAME , "CreateBind" , e) , } } } pub unsafe fn create_bind (super_ : crate :: app :: basicmenu :: BasicMenu , parent_menu_item : crate :: app :: basicmenuitem :: BasicMenuItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: basicmenu :: BasicMenu , crate :: app :: basicmenuitem :: BasicMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create_bind :: get_method_info () . method_ptr ,) ; inner (super_ , parent_menu_item , __unity2_method_info) } }
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl GmapMenuSequence_GmapMenu_SubShopMenu { # [doc = "`CreateBind(crate::app::basicmenu::BasicMenu, crate::app::basicmenuitem::BasicMenuItem)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: basicmenu :: BasicMenu > , parent_menu_item : impl :: core :: convert :: Into < crate :: app :: basicmenuitem :: BasicMenuItem >) -> () { unsafe { __GmapMenuSequence_GmapMenu_SubShopMenu_unity2_raw :: create_bind (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (parent_menu_item) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-gmapmenusequence")]
+pub trait IGmapMenuSequence_GmapMenu_SubShopMenuMethods : IGmapMenuSequence_GmapMenu_SubShopMenu { # [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` overload"] fn ctor (self , menu_item_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > > , menu_content : impl :: core :: convert :: Into < crate :: app :: sortiesubmenucontent :: SortieSubMenuContent >) -> () { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_SubShopMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_SubShopMenu_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (menu_item_list) , :: core :: convert :: Into :: into (menu_content) , :: core :: option :: Option :: None) } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_SubShopMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_SubShopMenu_unity2_raw :: get_name (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl < __T : IGmapMenuSequence_GmapMenu_SubShopMenu > IGmapMenuSequence_GmapMenu_SubShopMenuMethods for __T { }
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl GmapMenuSequence_GmapMenu_SubShopMenu { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_SubShopMenu_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_SubShopMenu_unity2_raw :: __lookup_get_name :: get_method_info () } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_SubShopMenu_unity2_raw :: __lookup_create_bind :: get_method_info () } }
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl GmapMenuSequence_GmapMenu_SubShopMenu {
+# [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` — overload selector"] pub fn new (menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , menu_content : crate :: app :: sortiesubmenucontent :: SortieSubMenuContent) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GmapMenuSequence_GmapMenu_SubShopMenu) , :: core :: stringify ! (new) ,)) ; < Self as IGmapMenuSequence_GmapMenu_SubShopMenuMethods > :: ctor (this , menu_item_list , menu_content) ; this }
 }
 
 #[cfg(feature = "app-gmapmenusequence")]
-impl<__T: IGmapMenuSequence_GmapMenu_MaterialListItem> IGmapMenuSequence_GmapMenu_MaterialListItemMethods for __T {}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __GmapMenuSequence_GmapMenu_GoToSolanelItem_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_GoToSolanelItem as :: unity2 :: ClassIdentity > :: class () , "GetName" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_GoToSolanelItem as :: unity2 :: ClassIdentity > :: NAME , "GetName" , e) , } } } pub unsafe fn get_name (this : GmapMenuSequence_GmapMenu_GoToSolanelItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_GoToSolanelItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_name :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_help_text { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_GoToSolanelItem as :: unity2 :: ClassIdentity > :: class () , "GetHelpText" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_GoToSolanelItem as :: unity2 :: ClassIdentity > :: NAME , "GetHelpText" , e) , } } } pub unsafe fn get_help_text (this : GmapMenuSequence_GmapMenu_GoToSolanelItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_GoToSolanelItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_help_text :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_build_attribute { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_GoToSolanelItem as :: unity2 :: ClassIdentity > :: class () , "BuildAttribute" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_GoToSolanelItem as :: unity2 :: ClassIdentity > :: NAME , "BuildAttribute" , e) , } } } pub unsafe fn build_attribute (this : GmapMenuSequence_GmapMenu_GoToSolanelItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_GoToSolanelItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute (__lookup_build_attribute :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_a_call { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_GoToSolanelItem as :: unity2 :: ClassIdentity > :: class () , "ACall" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_GoToSolanelItem as :: unity2 :: ClassIdentity > :: NAME , "ACall" , e) , } } } pub unsafe fn a_call (this : GmapMenuSequence_GmapMenu_GoToSolanelItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_GoToSolanelItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute (__lookup_a_call :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_GoToSolanelItem as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_GoToSolanelItem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : GmapMenuSequence_GmapMenu_GoToSolanelItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_GoToSolanelItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-gmapmenusequence")]
-impl GmapMenuSequence_GmapMenu_MaterialListItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GmapMenuSequence_GmapMenu_MaterialListItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGmapMenuSequence_GmapMenu_MaterialListItemMethods>::ctor(this);
-        this
-    }
+pub trait IGmapMenuSequence_GmapMenu_GoToSolanelItemMethods : IGmapMenuSequence_GmapMenu_GoToSolanelItem { # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_GoToSolanelItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_GoToSolanelItem_unity2_raw :: get_name (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetHelpText()` overload"] fn get_help_text (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_GoToSolanelItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_GoToSolanelItem_unity2_raw :: get_help_text (__receiver , :: core :: option :: Option :: None) } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_GoToSolanelItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_GoToSolanelItem_unity2_raw :: build_attribute (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_GoToSolanelItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_GoToSolanelItem_unity2_raw :: a_call (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_GoToSolanelItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_GoToSolanelItem_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl < __T : IGmapMenuSequence_GmapMenu_GoToSolanelItem > IGmapMenuSequence_GmapMenu_GoToSolanelItemMethods for __T { }
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl GmapMenuSequence_GmapMenu_GoToSolanelItem { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_GoToSolanelItem_unity2_raw :: __lookup_get_name :: get_method_info () } pub fn get_help_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_GoToSolanelItem_unity2_raw :: __lookup_get_help_text :: get_method_info () } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_GoToSolanelItem_unity2_raw :: __lookup_build_attribute :: get_method_info () } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_GoToSolanelItem_unity2_raw :: __lookup_a_call :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_GoToSolanelItem_unity2_raw :: __lookup_ctor :: get_method_info () } }
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl GmapMenuSequence_GmapMenu_GoToSolanelItem {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GmapMenuSequence_GmapMenu_GoToSolanelItem) , :: core :: stringify ! (new) ,)) ; < Self as IGmapMenuSequence_GmapMenu_GoToSolanelItemMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-gmapmenusequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem as ::unity2::ClassIdentity>::class(),
-                "GetName",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem as ::unity2::ClassIdentity>::NAME,
-                        "GetName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_name(
-        this: GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_help_text {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem as ::unity2::ClassIdentity>::class(),
-                "GetHelpText",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem as ::unity2::ClassIdentity>::NAME,
-                        "GetHelpText",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_help_text(
-        this: GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_help_text::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_build_attribute {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem as ::unity2::ClassIdentity>::class(),
-                "BuildAttribute",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem as ::unity2::ClassIdentity>::NAME,
-                        "BuildAttribute",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn build_attribute(
-        this: GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        let inner: extern "C" fn(
-            GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute = ::core::mem::transmute(__lookup_build_attribute::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_a_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem as ::unity2::ClassIdentity>::class(),
-                "ACall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem as ::unity2::ClassIdentity>::NAME,
-                        "ACall",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn a_call(
-        this: GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_b_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem as ::unity2::ClassIdentity>::class(),
-                "BCall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem as ::unity2::ClassIdentity>::NAME,
-                        "BCall",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn b_call(
-        this: GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(__lookup_b_call::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem as :: unity2 :: ClassIdentity > :: class () , "GetName" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem as :: unity2 :: ClassIdentity > :: NAME , "GetName" , e) , } } } pub unsafe fn get_name (this : GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_name :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_help_text { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem as :: unity2 :: ClassIdentity > :: class () , "GetHelpText" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem as :: unity2 :: ClassIdentity > :: NAME , "GetHelpText" , e) , } } } pub unsafe fn get_help_text (this : GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_help_text :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_build_attribute { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem as :: unity2 :: ClassIdentity > :: class () , "BuildAttribute" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem as :: unity2 :: ClassIdentity > :: NAME , "BuildAttribute" , e) , } } } pub unsafe fn build_attribute (this : GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute (__lookup_build_attribute :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_a_call { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem as :: unity2 :: ClassIdentity > :: class () , "ACall" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem as :: unity2 :: ClassIdentity > :: NAME , "ACall" , e) , } } } pub unsafe fn a_call (this : GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute (__lookup_a_call :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_b_call { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem as :: unity2 :: ClassIdentity > :: class () , "BCall" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem as :: unity2 :: ClassIdentity > :: NAME , "BCall" , e) , } } } pub unsafe fn b_call (this : GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute (__lookup_b_call :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-gmapmenusequence")]
-pub trait IGmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItemMethods: IGmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem {
-    #[doc = "`GetName()` overload"]
-    fn get_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetHelpText()` overload"]
-    fn get_help_text(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem_unity2_raw::get_help_text(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`BuildAttribute()` overload"]
-    fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ACall()` overload"]
-    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`BCall()` overload"]
-    fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem_unity2_raw::b_call(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IGmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItemMethods : IGmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem { # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem_unity2_raw :: get_name (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetHelpText()` overload"] fn get_help_text (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem_unity2_raw :: get_help_text (__receiver , :: core :: option :: Option :: None) } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem_unity2_raw :: build_attribute (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem_unity2_raw :: a_call (__receiver , :: core :: option :: Option :: None) } } # [doc = "`BCall()` overload"] fn b_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem_unity2_raw :: b_call (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-gmapmenusequence")]
-impl<__T: IGmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem> IGmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItemMethods for __T {}
+impl < __T : IGmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem > IGmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItemMethods for __T { }
 
 #[cfg(feature = "app-gmapmenusequence")]
-impl GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItemMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem as ::unity2::ClassIdentity>::class(),
-                "GetName",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem as ::unity2::ClassIdentity>::NAME,
-                        "GetName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_name(
-        this: GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_help_text {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem as ::unity2::ClassIdentity>::class(),
-                "GetHelpText",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem as ::unity2::ClassIdentity>::NAME,
-                        "GetHelpText",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_help_text(
-        this: GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_help_text::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_build_attribute {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem as ::unity2::ClassIdentity>::class(),
-                "BuildAttribute",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem as ::unity2::ClassIdentity>::NAME,
-                        "BuildAttribute",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn build_attribute(
-        this: GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        let inner: extern "C" fn(
-            GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute = ::core::mem::transmute(__lookup_build_attribute::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_a_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem as ::unity2::ClassIdentity>::class(),
-                "ACall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem as ::unity2::ClassIdentity>::NAME,
-                        "ACall",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn a_call(
-        this: GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_b_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem as ::unity2::ClassIdentity>::class(),
-                "BCall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem as ::unity2::ClassIdentity>::NAME,
-                        "BCall",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn b_call(
-        this: GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(__lookup_b_call::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-pub trait IGmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItemMethods: IGmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem {
-    #[doc = "`GetName()` overload"]
-    fn get_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetHelpText()` overload"]
-    fn get_help_text(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem_unity2_raw::get_help_text(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`BuildAttribute()` overload"]
-    fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ACall()` overload"]
-    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`BCall()` overload"]
-    fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem_unity2_raw::b_call(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-impl<__T: IGmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem> IGmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItemMethods for __T {}
+impl GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem_unity2_raw :: __lookup_get_name :: get_method_info () } pub fn get_help_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem_unity2_raw :: __lookup_get_help_text :: get_method_info () } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem_unity2_raw :: __lookup_build_attribute :: get_method_info () } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem_unity2_raw :: __lookup_a_call :: get_method_info () } pub fn b_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem_unity2_raw :: __lookup_b_call :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-gmapmenusequence")]
 impl GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItemMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IGmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItemMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-gmapmenusequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __GmapMenuSequence_GmapMenu_SystemItem_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_flag_id {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_SystemItem as ::unity2::ClassIdentity>::class(),
-                "get_FlagID",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_SystemItem as ::unity2::ClassIdentity>::NAME,
-                        "get_FlagID",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_flag_id(this: GmapMenuSequence_GmapMenu_SystemItem, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(GmapMenuSequence_GmapMenu_SystemItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_flag_id::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_SystemItem as ::unity2::ClassIdentity>::class(),
-                "GetName",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_SystemItem as ::unity2::ClassIdentity>::NAME,
-                        "GetName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_name(this: GmapMenuSequence_GmapMenu_SystemItem, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(GmapMenuSequence_GmapMenu_SystemItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_help_text {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_SystemItem as ::unity2::ClassIdentity>::class(),
-                "GetHelpText",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_SystemItem as ::unity2::ClassIdentity>::NAME,
-                        "GetHelpText",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_help_text(
-        this: GmapMenuSequence_GmapMenu_SystemItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(GmapMenuSequence_GmapMenu_SystemItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_help_text::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_map_attribute {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_SystemItem as ::unity2::ClassIdentity>::class(),
-                "GetMapAttribute",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_SystemItem as ::unity2::ClassIdentity>::NAME,
-                        "GetMapAttribute",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_map_attribute(
-        this: GmapMenuSequence_GmapMenu_SystemItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        let inner: extern "C" fn(
-            GmapMenuSequence_GmapMenu_SystemItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute = ::core::mem::transmute(__lookup_get_map_attribute::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_a_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_SystemItem as ::unity2::ClassIdentity>::class(),
-                "ACall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_SystemItem as ::unity2::ClassIdentity>::NAME,
-                        "ACall",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn a_call(
-        this: GmapMenuSequence_GmapMenu_SystemItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(GmapMenuSequence_GmapMenu_SystemItem, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
-            ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_SystemItem as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_SystemItem as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: GmapMenuSequence_GmapMenu_SystemItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GmapMenuSequence_GmapMenu_SystemItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __GmapMenuSequence_GmapMenu_FriendItem_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_flag_id { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_FriendItem as :: unity2 :: ClassIdentity > :: class () , "get_FlagID" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_FriendItem as :: unity2 :: ClassIdentity > :: NAME , "get_FlagID" , e) , } } } pub unsafe fn get_flag_id (this : GmapMenuSequence_GmapMenu_FriendItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_FriendItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_flag_id :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_FriendItem as :: unity2 :: ClassIdentity > :: class () , "GetName" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_FriendItem as :: unity2 :: ClassIdentity > :: NAME , "GetName" , e) , } } } pub unsafe fn get_name (this : GmapMenuSequence_GmapMenu_FriendItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_FriendItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_name :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_help_text { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_FriendItem as :: unity2 :: ClassIdentity > :: class () , "GetHelpText" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_FriendItem as :: unity2 :: ClassIdentity > :: NAME , "GetHelpText" , e) , } } } pub unsafe fn get_help_text (this : GmapMenuSequence_GmapMenu_FriendItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_FriendItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_help_text :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_map_attribute { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_FriendItem as :: unity2 :: ClassIdentity > :: class () , "GetMapAttribute" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_FriendItem as :: unity2 :: ClassIdentity > :: NAME , "GetMapAttribute" , e) , } } } pub unsafe fn get_map_attribute (this : GmapMenuSequence_GmapMenu_FriendItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_FriendItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute (__lookup_get_map_attribute :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_a_call { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_FriendItem as :: unity2 :: ClassIdentity > :: class () , "ACall" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_FriendItem as :: unity2 :: ClassIdentity > :: NAME , "ACall" , e) , } } } pub unsafe fn a_call (this : GmapMenuSequence_GmapMenu_FriendItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_FriendItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute (__lookup_a_call :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_FriendItem as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_FriendItem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : GmapMenuSequence_GmapMenu_FriendItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_FriendItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-gmapmenusequence")]
+pub trait IGmapMenuSequence_GmapMenu_FriendItemMethods : IGmapMenuSequence_GmapMenu_FriendItem { # [doc = "`get_FlagID()` overload"] fn get_flag_id (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_FriendItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_FriendItem_unity2_raw :: get_flag_id (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_FriendItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_FriendItem_unity2_raw :: get_name (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetHelpText()` overload"] fn get_help_text (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_FriendItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_FriendItem_unity2_raw :: get_help_text (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetMapAttribute()` overload"] fn get_map_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_FriendItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_FriendItem_unity2_raw :: get_map_attribute (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_FriendItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_FriendItem_unity2_raw :: a_call (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_FriendItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_FriendItem_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl < __T : IGmapMenuSequence_GmapMenu_FriendItem > IGmapMenuSequence_GmapMenu_FriendItemMethods for __T { }
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl GmapMenuSequence_GmapMenu_FriendItem { pub fn get_flag_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_FriendItem_unity2_raw :: __lookup_get_flag_id :: get_method_info () } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_FriendItem_unity2_raw :: __lookup_get_name :: get_method_info () } pub fn get_help_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_FriendItem_unity2_raw :: __lookup_get_help_text :: get_method_info () } pub fn get_map_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_FriendItem_unity2_raw :: __lookup_get_map_attribute :: get_method_info () } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_FriendItem_unity2_raw :: __lookup_a_call :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_FriendItem_unity2_raw :: __lookup_ctor :: get_method_info () } }
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl GmapMenuSequence_GmapMenu_FriendItem {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GmapMenuSequence_GmapMenu_FriendItem) , :: core :: stringify ! (new) ,)) ; < Self as IGmapMenuSequence_GmapMenu_FriendItemMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-gmapmenusequence")]
-pub trait IGmapMenuSequence_GmapMenu_SystemItemMethods: IGmapMenuSequence_GmapMenu_SystemItem {
-    #[doc = "`get_FlagID()` overload"]
-    fn get_flag_id(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_SystemItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_SystemItem_unity2_raw::get_flag_id(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetName()` overload"]
-    fn get_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_SystemItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_SystemItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetHelpText()` overload"]
-    fn get_help_text(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_SystemItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_SystemItem_unity2_raw::get_help_text(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetMapAttribute()` overload"]
-    fn get_map_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_SystemItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_SystemItem_unity2_raw::get_map_attribute(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ACall()` overload"]
-    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_SystemItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_SystemItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_SystemItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_SystemItem_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __GmapMenuSequence_GmapMenu_SystemItem_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_flag_id { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_SystemItem as :: unity2 :: ClassIdentity > :: class () , "get_FlagID" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_SystemItem as :: unity2 :: ClassIdentity > :: NAME , "get_FlagID" , e) , } } } pub unsafe fn get_flag_id (this : GmapMenuSequence_GmapMenu_SystemItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_SystemItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_flag_id :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_SystemItem as :: unity2 :: ClassIdentity > :: class () , "GetName" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_SystemItem as :: unity2 :: ClassIdentity > :: NAME , "GetName" , e) , } } } pub unsafe fn get_name (this : GmapMenuSequence_GmapMenu_SystemItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_SystemItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_name :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_help_text { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_SystemItem as :: unity2 :: ClassIdentity > :: class () , "GetHelpText" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_SystemItem as :: unity2 :: ClassIdentity > :: NAME , "GetHelpText" , e) , } } } pub unsafe fn get_help_text (this : GmapMenuSequence_GmapMenu_SystemItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_SystemItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_help_text :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_map_attribute { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_SystemItem as :: unity2 :: ClassIdentity > :: class () , "GetMapAttribute" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_SystemItem as :: unity2 :: ClassIdentity > :: NAME , "GetMapAttribute" , e) , } } } pub unsafe fn get_map_attribute (this : GmapMenuSequence_GmapMenu_SystemItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_SystemItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute (__lookup_get_map_attribute :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_a_call { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_SystemItem as :: unity2 :: ClassIdentity > :: class () , "ACall" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_SystemItem as :: unity2 :: ClassIdentity > :: NAME , "ACall" , e) , } } } pub unsafe fn a_call (this : GmapMenuSequence_GmapMenu_SystemItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_SystemItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute (__lookup_a_call :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_SystemItem as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_SystemItem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : GmapMenuSequence_GmapMenu_SystemItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_SystemItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-gmapmenusequence")]
-impl<__T: IGmapMenuSequence_GmapMenu_SystemItem> IGmapMenuSequence_GmapMenu_SystemItemMethods for __T {}
+pub trait IGmapMenuSequence_GmapMenu_SystemItemMethods : IGmapMenuSequence_GmapMenu_SystemItem { # [doc = "`get_FlagID()` overload"] fn get_flag_id (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_SystemItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_SystemItem_unity2_raw :: get_flag_id (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_SystemItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_SystemItem_unity2_raw :: get_name (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetHelpText()` overload"] fn get_help_text (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_SystemItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_SystemItem_unity2_raw :: get_help_text (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetMapAttribute()` overload"] fn get_map_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_SystemItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_SystemItem_unity2_raw :: get_map_attribute (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_SystemItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_SystemItem_unity2_raw :: a_call (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_SystemItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_SystemItem_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl < __T : IGmapMenuSequence_GmapMenu_SystemItem > IGmapMenuSequence_GmapMenu_SystemItemMethods for __T { }
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl GmapMenuSequence_GmapMenu_SystemItem { pub fn get_flag_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_SystemItem_unity2_raw :: __lookup_get_flag_id :: get_method_info () } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_SystemItem_unity2_raw :: __lookup_get_name :: get_method_info () } pub fn get_help_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_SystemItem_unity2_raw :: __lookup_get_help_text :: get_method_info () } pub fn get_map_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_SystemItem_unity2_raw :: __lookup_get_map_attribute :: get_method_info () } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_SystemItem_unity2_raw :: __lookup_a_call :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_SystemItem_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-gmapmenusequence")]
 impl GmapMenuSequence_GmapMenu_SystemItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GmapMenuSequence_GmapMenu_SystemItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGmapMenuSequence_GmapMenu_SystemItemMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GmapMenuSequence_GmapMenu_SystemItem) , :: core :: stringify ! (new) ,)) ; < Self as IGmapMenuSequence_GmapMenu_SystemItemMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-gmapmenusequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __GmapMenuSequence_GmapMenu_GodItem_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_GodItem as ::unity2::ClassIdentity>::class(),
-                "GetName",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_GodItem as ::unity2::ClassIdentity>::NAME,
-                        "GetName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_name(this: GmapMenuSequence_GmapMenu_GodItem, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(GmapMenuSequence_GmapMenu_GodItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_help_text {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_GodItem as ::unity2::ClassIdentity>::class(),
-                "GetHelpText",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_GodItem as ::unity2::ClassIdentity>::NAME,
-                        "GetHelpText",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_help_text(this: GmapMenuSequence_GmapMenu_GodItem, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(GmapMenuSequence_GmapMenu_GodItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_help_text::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_build_attribute {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_GodItem as ::unity2::ClassIdentity>::class(),
-                "BuildAttribute",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_GodItem as ::unity2::ClassIdentity>::NAME,
-                        "BuildAttribute",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn build_attribute(
-        this: GmapMenuSequence_GmapMenu_GodItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        let inner: extern "C" fn(GmapMenuSequence_GmapMenu_GodItem, ::unity2::OptionalMethod) -> crate::app::basicmenuitem::BasicMenuItem_Attribute =
-            ::core::mem::transmute(__lookup_build_attribute::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_a_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_GodItem as ::unity2::ClassIdentity>::class(),
-                "ACall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_GodItem as ::unity2::ClassIdentity>::NAME,
-                        "ACall",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn a_call(
-        this: GmapMenuSequence_GmapMenu_GodItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(GmapMenuSequence_GmapMenu_GodItem, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
-            ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_GodItem as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_GodItem as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: GmapMenuSequence_GmapMenu_GodItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GmapMenuSequence_GmapMenu_GodItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem as :: unity2 :: ClassIdentity > :: class () , "GetName" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem as :: unity2 :: ClassIdentity > :: NAME , "GetName" , e) , } } } pub unsafe fn get_name (this : GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_name :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_help_text { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem as :: unity2 :: ClassIdentity > :: class () , "GetHelpText" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem as :: unity2 :: ClassIdentity > :: NAME , "GetHelpText" , e) , } } } pub unsafe fn get_help_text (this : GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_help_text :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_build_attribute { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem as :: unity2 :: ClassIdentity > :: class () , "BuildAttribute" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem as :: unity2 :: ClassIdentity > :: NAME , "BuildAttribute" , e) , } } } pub unsafe fn build_attribute (this : GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute (__lookup_build_attribute :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_a_call { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem as :: unity2 :: ClassIdentity > :: class () , "ACall" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem as :: unity2 :: ClassIdentity > :: NAME , "ACall" , e) , } } } pub unsafe fn a_call (this : GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute (__lookup_a_call :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_b_call { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem as :: unity2 :: ClassIdentity > :: class () , "BCall" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem as :: unity2 :: ClassIdentity > :: NAME , "BCall" , e) , } } } pub unsafe fn b_call (this : GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute (__lookup_b_call :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-gmapmenusequence")]
+pub trait IGmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItemMethods : IGmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem { # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem_unity2_raw :: get_name (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetHelpText()` overload"] fn get_help_text (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem_unity2_raw :: get_help_text (__receiver , :: core :: option :: Option :: None) } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem_unity2_raw :: build_attribute (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem_unity2_raw :: a_call (__receiver , :: core :: option :: Option :: None) } } # [doc = "`BCall()` overload"] fn b_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem_unity2_raw :: b_call (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl < __T : IGmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem > IGmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItemMethods for __T { }
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem_unity2_raw :: __lookup_get_name :: get_method_info () } pub fn get_help_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem_unity2_raw :: __lookup_get_help_text :: get_method_info () } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem_unity2_raw :: __lookup_build_attribute :: get_method_info () } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem_unity2_raw :: __lookup_a_call :: get_method_info () } pub fn b_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem_unity2_raw :: __lookup_b_call :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem_unity2_raw :: __lookup_ctor :: get_method_info () } }
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IGmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItemMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-gmapmenusequence")]
-pub trait IGmapMenuSequence_GmapMenu_GodItemMethods: IGmapMenuSequence_GmapMenu_GodItem {
-    #[doc = "`GetName()` overload"]
-    fn get_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_GodItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_GodItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetHelpText()` overload"]
-    fn get_help_text(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_GodItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_GodItem_unity2_raw::get_help_text(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`BuildAttribute()` overload"]
-    fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_GodItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_GodItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ACall()` overload"]
-    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_GodItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_GodItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_GodItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_GodItem_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __GmapMenuSequence_GmapMenu_GodItem_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_GodItem as :: unity2 :: ClassIdentity > :: class () , "GetName" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_GodItem as :: unity2 :: ClassIdentity > :: NAME , "GetName" , e) , } } } pub unsafe fn get_name (this : GmapMenuSequence_GmapMenu_GodItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_GodItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_name :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_help_text { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_GodItem as :: unity2 :: ClassIdentity > :: class () , "GetHelpText" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_GodItem as :: unity2 :: ClassIdentity > :: NAME , "GetHelpText" , e) , } } } pub unsafe fn get_help_text (this : GmapMenuSequence_GmapMenu_GodItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_GodItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_help_text :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_build_attribute { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_GodItem as :: unity2 :: ClassIdentity > :: class () , "BuildAttribute" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_GodItem as :: unity2 :: ClassIdentity > :: NAME , "BuildAttribute" , e) , } } } pub unsafe fn build_attribute (this : GmapMenuSequence_GmapMenu_GodItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_GodItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute (__lookup_build_attribute :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_a_call { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_GodItem as :: unity2 :: ClassIdentity > :: class () , "ACall" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_GodItem as :: unity2 :: ClassIdentity > :: NAME , "ACall" , e) , } } } pub unsafe fn a_call (this : GmapMenuSequence_GmapMenu_GodItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_GodItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute (__lookup_a_call :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_GodItem as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_GodItem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : GmapMenuSequence_GmapMenu_GodItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_GodItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-gmapmenusequence")]
-impl<__T: IGmapMenuSequence_GmapMenu_GodItem> IGmapMenuSequence_GmapMenu_GodItemMethods for __T {}
+pub trait IGmapMenuSequence_GmapMenu_GodItemMethods : IGmapMenuSequence_GmapMenu_GodItem { # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_GodItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_GodItem_unity2_raw :: get_name (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetHelpText()` overload"] fn get_help_text (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_GodItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_GodItem_unity2_raw :: get_help_text (__receiver , :: core :: option :: Option :: None) } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_GodItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_GodItem_unity2_raw :: build_attribute (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_GodItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_GodItem_unity2_raw :: a_call (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_GodItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_GodItem_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl < __T : IGmapMenuSequence_GmapMenu_GodItem > IGmapMenuSequence_GmapMenu_GodItemMethods for __T { }
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl GmapMenuSequence_GmapMenu_GodItem { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_GodItem_unity2_raw :: __lookup_get_name :: get_method_info () } pub fn get_help_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_GodItem_unity2_raw :: __lookup_get_help_text :: get_method_info () } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_GodItem_unity2_raw :: __lookup_build_attribute :: get_method_info () } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_GodItem_unity2_raw :: __lookup_a_call :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_GodItem_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-gmapmenusequence")]
 impl GmapMenuSequence_GmapMenu_GodItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GmapMenuSequence_GmapMenu_GodItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGmapMenuSequence_GmapMenu_GodItemMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GmapMenuSequence_GmapMenu_GodItem) , :: core :: stringify ! (new) ,)) ; < Self as IGmapMenuSequence_GmapMenu_GodItemMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-gmapmenusequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __GmapMenuSequence_GmapMenu_InventoryItem_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_InventoryItem as ::unity2::ClassIdentity>::class(),
-                "GetName",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_InventoryItem as ::unity2::ClassIdentity>::NAME,
-                        "GetName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_name(this: GmapMenuSequence_GmapMenu_InventoryItem, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(GmapMenuSequence_GmapMenu_InventoryItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_help_text {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_InventoryItem as ::unity2::ClassIdentity>::class(),
-                "GetHelpText",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_InventoryItem as ::unity2::ClassIdentity>::NAME,
-                        "GetHelpText",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_help_text(
-        this: GmapMenuSequence_GmapMenu_InventoryItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(GmapMenuSequence_GmapMenu_InventoryItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_help_text::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_build_attribute {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_InventoryItem as ::unity2::ClassIdentity>::class(),
-                "BuildAttribute",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_InventoryItem as ::unity2::ClassIdentity>::NAME,
-                        "BuildAttribute",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn build_attribute(
-        this: GmapMenuSequence_GmapMenu_InventoryItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        let inner: extern "C" fn(
-            GmapMenuSequence_GmapMenu_InventoryItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute = ::core::mem::transmute(__lookup_build_attribute::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_a_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_InventoryItem as ::unity2::ClassIdentity>::class(),
-                "ACall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_InventoryItem as ::unity2::ClassIdentity>::NAME,
-                        "ACall",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn a_call(
-        this: GmapMenuSequence_GmapMenu_InventoryItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(GmapMenuSequence_GmapMenu_InventoryItem, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
-            ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMenuSequence_GmapMenu_InventoryItem as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMenuSequence_GmapMenu_InventoryItem as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: GmapMenuSequence_GmapMenu_InventoryItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GmapMenuSequence_GmapMenu_InventoryItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem as :: unity2 :: ClassIdentity > :: class () , "GetName" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem as :: unity2 :: ClassIdentity > :: NAME , "GetName" , e) , } } } pub unsafe fn get_name (this : GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_name :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_help_text { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem as :: unity2 :: ClassIdentity > :: class () , "GetHelpText" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem as :: unity2 :: ClassIdentity > :: NAME , "GetHelpText" , e) , } } } pub unsafe fn get_help_text (this : GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_help_text :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_build_attribute { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem as :: unity2 :: ClassIdentity > :: class () , "BuildAttribute" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem as :: unity2 :: ClassIdentity > :: NAME , "BuildAttribute" , e) , } } } pub unsafe fn build_attribute (this : GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute (__lookup_build_attribute :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_a_call { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem as :: unity2 :: ClassIdentity > :: class () , "ACall" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem as :: unity2 :: ClassIdentity > :: NAME , "ACall" , e) , } } } pub unsafe fn a_call (this : GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute (__lookup_a_call :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_b_call { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem as :: unity2 :: ClassIdentity > :: class () , "BCall" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem as :: unity2 :: ClassIdentity > :: NAME , "BCall" , e) , } } } pub unsafe fn b_call (this : GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute (__lookup_b_call :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-gmapmenusequence")]
+pub trait IGmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItemMethods : IGmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem { # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem_unity2_raw :: get_name (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetHelpText()` overload"] fn get_help_text (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem_unity2_raw :: get_help_text (__receiver , :: core :: option :: Option :: None) } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem_unity2_raw :: build_attribute (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem_unity2_raw :: a_call (__receiver , :: core :: option :: Option :: None) } } # [doc = "`BCall()` overload"] fn b_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem_unity2_raw :: b_call (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl < __T : IGmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem > IGmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItemMethods for __T { }
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem_unity2_raw :: __lookup_get_name :: get_method_info () } pub fn get_help_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem_unity2_raw :: __lookup_get_help_text :: get_method_info () } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem_unity2_raw :: __lookup_build_attribute :: get_method_info () } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem_unity2_raw :: __lookup_a_call :: get_method_info () } pub fn b_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem_unity2_raw :: __lookup_b_call :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem_unity2_raw :: __lookup_ctor :: get_method_info () } }
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem) , :: core :: stringify ! (new) ,)) ; < Self as IGmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItemMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-gmapmenusequence")]
-pub trait IGmapMenuSequence_GmapMenu_InventoryItemMethods: IGmapMenuSequence_GmapMenu_InventoryItem {
-    #[doc = "`GetName()` overload"]
-    fn get_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_InventoryItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_InventoryItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetHelpText()` overload"]
-    fn get_help_text(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_InventoryItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_InventoryItem_unity2_raw::get_help_text(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`BuildAttribute()` overload"]
-    fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_InventoryItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_InventoryItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ACall()` overload"]
-    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_InventoryItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_InventoryItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <GmapMenuSequence_GmapMenu_InventoryItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapMenuSequence_GmapMenu_InventoryItem_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem as :: unity2 :: ClassIdentity > :: class () , "GetName" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem as :: unity2 :: ClassIdentity > :: NAME , "GetName" , e) , } } } pub unsafe fn get_name (this : GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_name :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_help_text { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem as :: unity2 :: ClassIdentity > :: class () , "GetHelpText" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem as :: unity2 :: ClassIdentity > :: NAME , "GetHelpText" , e) , } } } pub unsafe fn get_help_text (this : GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_help_text :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_build_attribute { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem as :: unity2 :: ClassIdentity > :: class () , "BuildAttribute" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem as :: unity2 :: ClassIdentity > :: NAME , "BuildAttribute" , e) , } } } pub unsafe fn build_attribute (this : GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute (__lookup_build_attribute :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_a_call { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem as :: unity2 :: ClassIdentity > :: class () , "ACall" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem as :: unity2 :: ClassIdentity > :: NAME , "ACall" , e) , } } } pub unsafe fn a_call (this : GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute (__lookup_a_call :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_b_call { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem as :: unity2 :: ClassIdentity > :: class () , "BCall" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem as :: unity2 :: ClassIdentity > :: NAME , "BCall" , e) , } } } pub unsafe fn b_call (this : GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute (__lookup_b_call :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-gmapmenusequence")]
+pub trait IGmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItemMethods : IGmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem { # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem_unity2_raw :: get_name (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetHelpText()` overload"] fn get_help_text (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem_unity2_raw :: get_help_text (__receiver , :: core :: option :: Option :: None) } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem_unity2_raw :: build_attribute (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem_unity2_raw :: a_call (__receiver , :: core :: option :: Option :: None) } } # [doc = "`BCall()` overload"] fn b_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem_unity2_raw :: b_call (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl < __T : IGmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem > IGmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItemMethods for __T { }
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem_unity2_raw :: __lookup_get_name :: get_method_info () } pub fn get_help_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem_unity2_raw :: __lookup_get_help_text :: get_method_info () } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem_unity2_raw :: __lookup_build_attribute :: get_method_info () } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem_unity2_raw :: __lookup_a_call :: get_method_info () } pub fn b_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem_unity2_raw :: __lookup_b_call :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem_unity2_raw :: __lookup_ctor :: get_method_info () } }
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem) , :: core :: stringify ! (new) ,)) ; < Self as IGmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItemMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-gmapmenusequence")]
-impl<__T: IGmapMenuSequence_GmapMenu_InventoryItem> IGmapMenuSequence_GmapMenu_InventoryItemMethods for __T {}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: netenablesequence :: NetEnableSequence_ResultFunction as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem , result_func : crate :: app :: netenablesequence :: NetEnableSequence_ResultFunction , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem , crate :: app :: netenablesequence :: NetEnableSequence_ResultFunction , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , result_func , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem as :: unity2 :: ClassIdentity > :: class () , "GetName" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem as :: unity2 :: ClassIdentity > :: NAME , "GetName" , e) , } } } pub unsafe fn get_name (this : GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_name :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_a_call { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem as :: unity2 :: ClassIdentity > :: class () , "ACall" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem as :: unity2 :: ClassIdentity > :: NAME , "ACall" , e) , } } } pub unsafe fn a_call (this : GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute (__lookup_a_call :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-gmapmenusequence")]
+pub trait IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItemMethods : IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem { # [doc = "`.ctor(crate::app::netenablesequence::NetEnableSequence_ResultFunction)` overload"] fn ctor (self , result_func : impl :: core :: convert :: Into < crate :: app :: netenablesequence :: NetEnableSequence_ResultFunction >) -> () { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (result_func) , :: core :: option :: Option :: None) } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem_unity2_raw :: get_name (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem_unity2_raw :: a_call (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl < __T : IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem > IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItemMethods for __T { }
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem_unity2_raw :: __lookup_get_name :: get_method_info () } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem_unity2_raw :: __lookup_a_call :: get_method_info () } }
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem {
+# [doc = "`.ctor(crate::app::netenablesequence::NetEnableSequence_ResultFunction)` — overload selector"] pub fn new (result_func : crate :: app :: netenablesequence :: NetEnableSequence_ResultFunction) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItemMethods > :: ctor (this , result_func) ; this }
+}
+
+#[cfg(feature = "app-gmapmenusequence")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem as :: unity2 :: ClassIdentity > :: class () , "GetName" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem as :: unity2 :: ClassIdentity > :: NAME , "GetName" , e) , } } } pub unsafe fn get_name (this : GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_name :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_help_text { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem as :: unity2 :: ClassIdentity > :: class () , "GetHelpText" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem as :: unity2 :: ClassIdentity > :: NAME , "GetHelpText" , e) , } } } pub unsafe fn get_help_text (this : GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_help_text :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_build_attribute { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem as :: unity2 :: ClassIdentity > :: class () , "BuildAttribute" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem as :: unity2 :: ClassIdentity > :: NAME , "BuildAttribute" , e) , } } } pub unsafe fn build_attribute (this : GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute (__lookup_build_attribute :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_a_call { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem as :: unity2 :: ClassIdentity > :: class () , "ACall" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem as :: unity2 :: ClassIdentity > :: NAME , "ACall" , e) , } } } pub unsafe fn a_call (this : GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute (__lookup_a_call :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_b_call { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem as :: unity2 :: ClassIdentity > :: class () , "BCall" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem as :: unity2 :: ClassIdentity > :: NAME , "BCall" , e) , } } } pub unsafe fn b_call (this : GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute (__lookup_b_call :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-gmapmenusequence")]
+pub trait IGmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItemMethods : IGmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem { # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem_unity2_raw :: get_name (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetHelpText()` overload"] fn get_help_text (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem_unity2_raw :: get_help_text (__receiver , :: core :: option :: Option :: None) } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem_unity2_raw :: build_attribute (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem_unity2_raw :: a_call (__receiver , :: core :: option :: Option :: None) } } # [doc = "`BCall()` overload"] fn b_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem_unity2_raw :: b_call (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl < __T : IGmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem > IGmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItemMethods for __T { }
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem_unity2_raw :: __lookup_get_name :: get_method_info () } pub fn get_help_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem_unity2_raw :: __lookup_get_help_text :: get_method_info () } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem_unity2_raw :: __lookup_build_attribute :: get_method_info () } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem_unity2_raw :: __lookup_a_call :: get_method_info () } pub fn b_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem_unity2_raw :: __lookup_b_call :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem_unity2_raw :: __lookup_ctor :: get_method_info () } }
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem) , :: core :: stringify ! (new) ,)) ; < Self as IGmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItemMethods > :: ctor (this ,) ; this }
+}
+
+#[cfg(feature = "app-gmapmenusequence")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __GmapMenuSequence_GmapMenu_ShopItem_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_ShopItem as :: unity2 :: ClassIdentity > :: class () , "GetName" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_ShopItem as :: unity2 :: ClassIdentity > :: NAME , "GetName" , e) , } } } pub unsafe fn get_name (this : GmapMenuSequence_GmapMenu_ShopItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_ShopItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_name :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_help_text { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_ShopItem as :: unity2 :: ClassIdentity > :: class () , "GetHelpText" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_ShopItem as :: unity2 :: ClassIdentity > :: NAME , "GetHelpText" , e) , } } } pub unsafe fn get_help_text (this : GmapMenuSequence_GmapMenu_ShopItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_ShopItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_help_text :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_build_attribute { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_ShopItem as :: unity2 :: ClassIdentity > :: class () , "BuildAttribute" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_ShopItem as :: unity2 :: ClassIdentity > :: NAME , "BuildAttribute" , e) , } } } pub unsafe fn build_attribute (this : GmapMenuSequence_GmapMenu_ShopItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_ShopItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute (__lookup_build_attribute :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_a_call { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_ShopItem as :: unity2 :: ClassIdentity > :: class () , "ACall" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_ShopItem as :: unity2 :: ClassIdentity > :: NAME , "ACall" , e) , } } } pub unsafe fn a_call (this : GmapMenuSequence_GmapMenu_ShopItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_ShopItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute (__lookup_a_call :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_ShopItem as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_ShopItem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : GmapMenuSequence_GmapMenu_ShopItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_ShopItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-gmapmenusequence")]
+pub trait IGmapMenuSequence_GmapMenu_ShopItemMethods : IGmapMenuSequence_GmapMenu_ShopItem { # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_ShopItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_ShopItem_unity2_raw :: get_name (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetHelpText()` overload"] fn get_help_text (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_ShopItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_ShopItem_unity2_raw :: get_help_text (__receiver , :: core :: option :: Option :: None) } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_ShopItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_ShopItem_unity2_raw :: build_attribute (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_ShopItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_ShopItem_unity2_raw :: a_call (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_ShopItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_ShopItem_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl < __T : IGmapMenuSequence_GmapMenu_ShopItem > IGmapMenuSequence_GmapMenu_ShopItemMethods for __T { }
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl GmapMenuSequence_GmapMenu_ShopItem { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_ShopItem_unity2_raw :: __lookup_get_name :: get_method_info () } pub fn get_help_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_ShopItem_unity2_raw :: __lookup_get_help_text :: get_method_info () } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_ShopItem_unity2_raw :: __lookup_build_attribute :: get_method_info () } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_ShopItem_unity2_raw :: __lookup_a_call :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_ShopItem_unity2_raw :: __lookup_ctor :: get_method_info () } }
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl GmapMenuSequence_GmapMenu_ShopItem {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GmapMenuSequence_GmapMenu_ShopItem) , :: core :: stringify ! (new) ,)) ; < Self as IGmapMenuSequence_GmapMenu_ShopItemMethods > :: ctor (this ,) ; this }
+}
+
+#[cfg(feature = "app-gmapmenusequence")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __GmapMenuSequence_GmapMenu_MaterialListItem_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_MaterialListItem as :: unity2 :: ClassIdentity > :: class () , "GetName" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_MaterialListItem as :: unity2 :: ClassIdentity > :: NAME , "GetName" , e) , } } } pub unsafe fn get_name (this : GmapMenuSequence_GmapMenu_MaterialListItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_MaterialListItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_name :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_help_text { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_MaterialListItem as :: unity2 :: ClassIdentity > :: class () , "GetHelpText" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_MaterialListItem as :: unity2 :: ClassIdentity > :: NAME , "GetHelpText" , e) , } } } pub unsafe fn get_help_text (this : GmapMenuSequence_GmapMenu_MaterialListItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_MaterialListItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_help_text :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_build_attribute { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_MaterialListItem as :: unity2 :: ClassIdentity > :: class () , "BuildAttribute" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_MaterialListItem as :: unity2 :: ClassIdentity > :: NAME , "BuildAttribute" , e) , } } } pub unsafe fn build_attribute (this : GmapMenuSequence_GmapMenu_MaterialListItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_MaterialListItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute (__lookup_build_attribute :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_a_call { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_MaterialListItem as :: unity2 :: ClassIdentity > :: class () , "ACall" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_MaterialListItem as :: unity2 :: ClassIdentity > :: NAME , "ACall" , e) , } } } pub unsafe fn a_call (this : GmapMenuSequence_GmapMenu_MaterialListItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_MaterialListItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute (__lookup_a_call :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_MaterialListItem as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_MaterialListItem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : GmapMenuSequence_GmapMenu_MaterialListItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_MaterialListItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-gmapmenusequence")]
+pub trait IGmapMenuSequence_GmapMenu_MaterialListItemMethods : IGmapMenuSequence_GmapMenu_MaterialListItem { # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_MaterialListItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_MaterialListItem_unity2_raw :: get_name (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetHelpText()` overload"] fn get_help_text (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_MaterialListItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_MaterialListItem_unity2_raw :: get_help_text (__receiver , :: core :: option :: Option :: None) } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_MaterialListItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_MaterialListItem_unity2_raw :: build_attribute (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_MaterialListItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_MaterialListItem_unity2_raw :: a_call (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_MaterialListItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_MaterialListItem_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl < __T : IGmapMenuSequence_GmapMenu_MaterialListItem > IGmapMenuSequence_GmapMenu_MaterialListItemMethods for __T { }
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl GmapMenuSequence_GmapMenu_MaterialListItem { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_MaterialListItem_unity2_raw :: __lookup_get_name :: get_method_info () } pub fn get_help_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_MaterialListItem_unity2_raw :: __lookup_get_help_text :: get_method_info () } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_MaterialListItem_unity2_raw :: __lookup_build_attribute :: get_method_info () } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_MaterialListItem_unity2_raw :: __lookup_a_call :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_MaterialListItem_unity2_raw :: __lookup_ctor :: get_method_info () } }
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl GmapMenuSequence_GmapMenu_MaterialListItem {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GmapMenuSequence_GmapMenu_MaterialListItem) , :: core :: stringify ! (new) ,)) ; < Self as IGmapMenuSequence_GmapMenu_MaterialListItemMethods > :: ctor (this ,) ; this }
+}
+
+#[cfg(feature = "app-gmapmenusequence")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __GmapMenuSequence_GmapMenu_SubSystemMenu_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > as :: unity2 :: IlType > :: il_type () , < crate :: app :: sortiesubmenucontent :: SortieSubMenuContent as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_SubSystemMenu as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_SubSystemMenu as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : GmapMenuSequence_GmapMenu_SubSystemMenu , menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , menu_content : crate :: app :: sortiesubmenucontent :: SortieSubMenuContent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_SubSystemMenu , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , crate :: app :: sortiesubmenucontent :: SortieSubMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , menu_item_list , menu_content , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_SubSystemMenu as :: unity2 :: ClassIdentity > :: class () , "GetName" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_SubSystemMenu as :: unity2 :: ClassIdentity > :: NAME , "GetName" , e) , } } } pub unsafe fn get_name (this : GmapMenuSequence_GmapMenu_SubSystemMenu , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_SubSystemMenu , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_name :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_bind { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: basicmenu :: BasicMenu as :: unity2 :: IlType > :: il_type () , < crate :: app :: basicmenuitem :: BasicMenuItem as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_SubSystemMenu as :: unity2 :: ClassIdentity > :: class () , "CreateBind" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_SubSystemMenu as :: unity2 :: ClassIdentity > :: NAME , "CreateBind" , e) , } } } pub unsafe fn create_bind (super_ : crate :: app :: basicmenu :: BasicMenu , parent_menu_item : crate :: app :: basicmenuitem :: BasicMenuItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: basicmenu :: BasicMenu , crate :: app :: basicmenuitem :: BasicMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create_bind :: get_method_info () . method_ptr ,) ; inner (super_ , parent_menu_item , __unity2_method_info) } }
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl GmapMenuSequence_GmapMenu_SubSystemMenu { # [doc = "`CreateBind(crate::app::basicmenu::BasicMenu, crate::app::basicmenuitem::BasicMenuItem)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: basicmenu :: BasicMenu > , parent_menu_item : impl :: core :: convert :: Into < crate :: app :: basicmenuitem :: BasicMenuItem >) -> () { unsafe { __GmapMenuSequence_GmapMenu_SubSystemMenu_unity2_raw :: create_bind (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (parent_menu_item) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-gmapmenusequence")]
+pub trait IGmapMenuSequence_GmapMenu_SubSystemMenuMethods : IGmapMenuSequence_GmapMenu_SubSystemMenu { # [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` overload"] fn ctor (self , menu_item_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > > , menu_content : impl :: core :: convert :: Into < crate :: app :: sortiesubmenucontent :: SortieSubMenuContent >) -> () { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_SubSystemMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_SubSystemMenu_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (menu_item_list) , :: core :: convert :: Into :: into (menu_content) , :: core :: option :: Option :: None) } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_SubSystemMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_SubSystemMenu_unity2_raw :: get_name (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl < __T : IGmapMenuSequence_GmapMenu_SubSystemMenu > IGmapMenuSequence_GmapMenu_SubSystemMenuMethods for __T { }
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl GmapMenuSequence_GmapMenu_SubSystemMenu { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_SubSystemMenu_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_SubSystemMenu_unity2_raw :: __lookup_get_name :: get_method_info () } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_SubSystemMenu_unity2_raw :: __lookup_create_bind :: get_method_info () } }
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl GmapMenuSequence_GmapMenu_SubSystemMenu {
+# [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` — overload selector"] pub fn new (menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , menu_content : crate :: app :: sortiesubmenucontent :: SortieSubMenuContent) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GmapMenuSequence_GmapMenu_SubSystemMenu) , :: core :: stringify ! (new) ,)) ; < Self as IGmapMenuSequence_GmapMenu_SubSystemMenuMethods > :: ctor (this , menu_item_list , menu_content) ; this }
+}
+
+#[cfg(feature = "app-gmapmenusequence")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem as :: unity2 :: ClassIdentity > :: class () , "GetName" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem as :: unity2 :: ClassIdentity > :: NAME , "GetName" , e) , } } } pub unsafe fn get_name (this : GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_name :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_help_text { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem as :: unity2 :: ClassIdentity > :: class () , "GetHelpText" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem as :: unity2 :: ClassIdentity > :: NAME , "GetHelpText" , e) , } } } pub unsafe fn get_help_text (this : GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_help_text :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_build_attribute { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem as :: unity2 :: ClassIdentity > :: class () , "BuildAttribute" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem as :: unity2 :: ClassIdentity > :: NAME , "BuildAttribute" , e) , } } } pub unsafe fn build_attribute (this : GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute (__lookup_build_attribute :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_a_call { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem as :: unity2 :: ClassIdentity > :: class () , "ACall" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem as :: unity2 :: ClassIdentity > :: NAME , "ACall" , e) , } } } pub unsafe fn a_call (this : GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute (__lookup_a_call :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_b_call { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem as :: unity2 :: ClassIdentity > :: class () , "BCall" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem as :: unity2 :: ClassIdentity > :: NAME , "BCall" , e) , } } } pub unsafe fn b_call (this : GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute (__lookup_b_call :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-gmapmenusequence")]
+pub trait IGmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItemMethods : IGmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem { # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem_unity2_raw :: get_name (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetHelpText()` overload"] fn get_help_text (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem_unity2_raw :: get_help_text (__receiver , :: core :: option :: Option :: None) } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem_unity2_raw :: build_attribute (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem_unity2_raw :: a_call (__receiver , :: core :: option :: Option :: None) } } # [doc = "`BCall()` overload"] fn b_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem_unity2_raw :: b_call (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl < __T : IGmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem > IGmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItemMethods for __T { }
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem_unity2_raw :: __lookup_get_name :: get_method_info () } pub fn get_help_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem_unity2_raw :: __lookup_get_help_text :: get_method_info () } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem_unity2_raw :: __lookup_build_attribute :: get_method_info () } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem_unity2_raw :: __lookup_a_call :: get_method_info () } pub fn b_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem_unity2_raw :: __lookup_b_call :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem_unity2_raw :: __lookup_ctor :: get_method_info () } }
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem) , :: core :: stringify ! (new) ,)) ; < Self as IGmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItemMethods > :: ctor (this ,) ; this }
+}
+
+#[cfg(feature = "app-gmapmenusequence")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __GmapMenuSequence_GmapMenu_SubFriendMenu_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > as :: unity2 :: IlType > :: il_type () , < crate :: app :: sortiesubmenucontent :: SortieSubMenuContent as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_SubFriendMenu as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_SubFriendMenu as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : GmapMenuSequence_GmapMenu_SubFriendMenu , menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , menu_content : crate :: app :: sortiesubmenucontent :: SortieSubMenuContent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_SubFriendMenu , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , crate :: app :: sortiesubmenucontent :: SortieSubMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , menu_item_list , menu_content , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_SubFriendMenu as :: unity2 :: ClassIdentity > :: class () , "GetName" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_SubFriendMenu as :: unity2 :: ClassIdentity > :: NAME , "GetName" , e) , } } } pub unsafe fn get_name (this : GmapMenuSequence_GmapMenu_SubFriendMenu , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_SubFriendMenu , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_name :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_bind { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: basicmenu :: BasicMenu as :: unity2 :: IlType > :: il_type () , < crate :: app :: basicmenuitem :: BasicMenuItem as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_SubFriendMenu as :: unity2 :: ClassIdentity > :: class () , "CreateBind" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_SubFriendMenu as :: unity2 :: ClassIdentity > :: NAME , "CreateBind" , e) , } } } pub unsafe fn create_bind (super_ : crate :: app :: basicmenu :: BasicMenu , parent_menu_item : crate :: app :: basicmenuitem :: BasicMenuItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: basicmenu :: BasicMenu , crate :: app :: basicmenuitem :: BasicMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create_bind :: get_method_info () . method_ptr ,) ; inner (super_ , parent_menu_item , __unity2_method_info) } }
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl GmapMenuSequence_GmapMenu_SubFriendMenu { # [doc = "`CreateBind(crate::app::basicmenu::BasicMenu, crate::app::basicmenuitem::BasicMenuItem)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: basicmenu :: BasicMenu > , parent_menu_item : impl :: core :: convert :: Into < crate :: app :: basicmenuitem :: BasicMenuItem >) -> () { unsafe { __GmapMenuSequence_GmapMenu_SubFriendMenu_unity2_raw :: create_bind (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (parent_menu_item) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-gmapmenusequence")]
+pub trait IGmapMenuSequence_GmapMenu_SubFriendMenuMethods : IGmapMenuSequence_GmapMenu_SubFriendMenu { # [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` overload"] fn ctor (self , menu_item_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > > , menu_content : impl :: core :: convert :: Into < crate :: app :: sortiesubmenucontent :: SortieSubMenuContent >) -> () { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_SubFriendMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_SubFriendMenu_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (menu_item_list) , :: core :: convert :: Into :: into (menu_content) , :: core :: option :: Option :: None) } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_SubFriendMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_SubFriendMenu_unity2_raw :: get_name (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl < __T : IGmapMenuSequence_GmapMenu_SubFriendMenu > IGmapMenuSequence_GmapMenu_SubFriendMenuMethods for __T { }
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl GmapMenuSequence_GmapMenu_SubFriendMenu { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_SubFriendMenu_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_SubFriendMenu_unity2_raw :: __lookup_get_name :: get_method_info () } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_SubFriendMenu_unity2_raw :: __lookup_create_bind :: get_method_info () } }
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl GmapMenuSequence_GmapMenu_SubFriendMenu {
+# [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` — overload selector"] pub fn new (menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , menu_content : crate :: app :: sortiesubmenucontent :: SortieSubMenuContent) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GmapMenuSequence_GmapMenu_SubFriendMenu) , :: core :: stringify ! (new) ,)) ; < Self as IGmapMenuSequence_GmapMenu_SubFriendMenuMethods > :: ctor (this , menu_item_list , menu_content) ; this }
+}
+
+#[cfg(feature = "app-gmapmenusequence")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __GmapMenuSequence_GmapMenu_GmapMenuMenuItem_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_map_attribute { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_GmapMenuMenuItem as :: unity2 :: ClassIdentity > :: class () , "GetMapAttribute" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_GmapMenuMenuItem as :: unity2 :: ClassIdentity > :: NAME , "GetMapAttribute" , e) , } } } pub unsafe fn get_map_attribute (this : GmapMenuSequence_GmapMenu_GmapMenuMenuItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_GmapMenuMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute (__lookup_get_map_attribute :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_flag_id { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_GmapMenuMenuItem as :: unity2 :: ClassIdentity > :: class () , "get_FlagID" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_GmapMenuMenuItem as :: unity2 :: ClassIdentity > :: NAME , "get_FlagID" , e) , } } } pub unsafe fn get_flag_id (this : GmapMenuSequence_GmapMenu_GmapMenuMenuItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_GmapMenuMenuItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_flag_id :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_a_call { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_GmapMenuMenuItem as :: unity2 :: ClassIdentity > :: class () , "ACall" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_GmapMenuMenuItem as :: unity2 :: ClassIdentity > :: NAME , "ACall" , e) , } } } pub unsafe fn a_call (this : GmapMenuSequence_GmapMenu_GmapMenuMenuItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_GmapMenuMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute (__lookup_a_call :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_help_visible { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_GmapMenuMenuItem as :: unity2 :: ClassIdentity > :: class () , "SetHelpVisible" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_GmapMenuMenuItem as :: unity2 :: ClassIdentity > :: NAME , "SetHelpVisible" , e) , } } } pub unsafe fn set_help_visible (this : GmapMenuSequence_GmapMenu_GmapMenuMenuItem , active : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_GmapMenuMenuItem , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_help_visible :: get_method_info () . method_ptr ,) ; inner (this , active , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_save_menu_select { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_GmapMenuMenuItem as :: unity2 :: ClassIdentity > :: class () , "SaveMenuSelect" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_GmapMenuMenuItem as :: unity2 :: ClassIdentity > :: NAME , "SaveMenuSelect" , e) , } } } pub unsafe fn save_menu_select (this : GmapMenuSequence_GmapMenu_GmapMenuMenuItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_GmapMenuMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_save_menu_select :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_help_text { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_GmapMenuMenuItem as :: unity2 :: ClassIdentity > :: class () , "GetHelpText" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_GmapMenuMenuItem as :: unity2 :: ClassIdentity > :: NAME , "GetHelpText" , e) , } } } pub unsafe fn get_help_text (this : GmapMenuSequence_GmapMenu_GmapMenuMenuItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_GmapMenuMenuItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_help_text :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_select { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_GmapMenuMenuItem as :: unity2 :: ClassIdentity > :: class () , "OnSelect" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_GmapMenuMenuItem as :: unity2 :: ClassIdentity > :: NAME , "OnSelect" , e) , } } } pub unsafe fn on_select (this : GmapMenuSequence_GmapMenu_GmapMenuMenuItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_GmapMenuMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_select :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_deselect { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_GmapMenuMenuItem as :: unity2 :: ClassIdentity > :: class () , "OnDeselect" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_GmapMenuMenuItem as :: unity2 :: ClassIdentity > :: NAME , "OnDeselect" , e) , } } } pub unsafe fn on_deselect (this : GmapMenuSequence_GmapMenu_GmapMenuMenuItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_GmapMenuMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_deselect :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_GmapMenuMenuItem as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_GmapMenuMenuItem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : GmapMenuSequence_GmapMenu_GmapMenuMenuItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_GmapMenuMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-gmapmenusequence")]
+pub trait IGmapMenuSequence_GmapMenu_GmapMenuMenuItemMethods : IGmapMenuSequence_GmapMenu_GmapMenuMenuItem { # [doc = "`GetMapAttribute()` overload"] fn get_map_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_GmapMenuMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_GmapMenuMenuItem_unity2_raw :: get_map_attribute (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_FlagID()` overload"] fn get_flag_id (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_GmapMenuMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_GmapMenuMenuItem_unity2_raw :: get_flag_id (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_GmapMenuMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_GmapMenuMenuItem_unity2_raw :: a_call (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetHelpVisible(bool)` overload"] fn set_help_visible (self , active : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_GmapMenuMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_GmapMenuMenuItem_unity2_raw :: set_help_visible (__receiver , :: core :: convert :: Into :: into (active) , :: core :: option :: Option :: None) } } # [doc = "`SaveMenuSelect()` overload"] fn save_menu_select (self ,) -> () { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_GmapMenuMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_GmapMenuMenuItem_unity2_raw :: save_menu_select (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetHelpText()` overload"] fn get_help_text (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_GmapMenuMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_GmapMenuMenuItem_unity2_raw :: get_help_text (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnSelect()` overload"] fn on_select (self ,) -> () { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_GmapMenuMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_GmapMenuMenuItem_unity2_raw :: on_select (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnDeselect()` overload"] fn on_deselect (self ,) -> () { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_GmapMenuMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_GmapMenuMenuItem_unity2_raw :: on_deselect (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_GmapMenuMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_GmapMenuMenuItem_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl < __T : IGmapMenuSequence_GmapMenu_GmapMenuMenuItem > IGmapMenuSequence_GmapMenu_GmapMenuMenuItemMethods for __T { }
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl GmapMenuSequence_GmapMenu_GmapMenuMenuItem { pub fn get_map_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_GmapMenuMenuItem_unity2_raw :: __lookup_get_map_attribute :: get_method_info () } pub fn get_flag_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_GmapMenuMenuItem_unity2_raw :: __lookup_get_flag_id :: get_method_info () } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_GmapMenuMenuItem_unity2_raw :: __lookup_a_call :: get_method_info () } pub fn set_help_visible_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_GmapMenuMenuItem_unity2_raw :: __lookup_set_help_visible :: get_method_info () } pub fn save_menu_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_GmapMenuMenuItem_unity2_raw :: __lookup_save_menu_select :: get_method_info () } pub fn get_help_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_GmapMenuMenuItem_unity2_raw :: __lookup_get_help_text :: get_method_info () } pub fn on_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_GmapMenuMenuItem_unity2_raw :: __lookup_on_select :: get_method_info () } pub fn on_deselect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_GmapMenuMenuItem_unity2_raw :: __lookup_on_deselect :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_GmapMenuMenuItem_unity2_raw :: __lookup_ctor :: get_method_info () } }
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl GmapMenuSequence_GmapMenu_GmapMenuMenuItem {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GmapMenuSequence_GmapMenu_GmapMenuMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IGmapMenuSequence_GmapMenu_GmapMenuMenuItemMethods > :: ctor (this ,) ; this }
+}
+
+#[cfg(feature = "app-gmapmenusequence")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: action :: Action as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence , jump_func : crate :: system :: action :: Action , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence , crate :: system :: action :: Action , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , jump_func , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_jump_to_ranking { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence as :: unity2 :: ClassIdentity > :: class () , "JumpToRanking" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence as :: unity2 :: ClassIdentity > :: NAME , "JumpToRanking" , e) , } } } pub unsafe fn jump_to_ranking (this : GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_jump_to_ranking :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_bind { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: system :: action :: Action as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence as :: unity2 :: ClassIdentity > :: class () , "CreateBind" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence as :: unity2 :: ClassIdentity > :: NAME , "CreateBind" , e) , } } } pub unsafe fn create_bind (super_ : crate :: app :: procinst :: ProcInst , jump_func : crate :: system :: action :: Action , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: system :: action :: Action , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create_bind :: get_method_info () . method_ptr ,) ; inner (super_ , jump_func , __unity2_method_info) } }
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence { # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::system::action::Action)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , jump_func : impl :: core :: convert :: Into < crate :: system :: action :: Action >) -> () { unsafe { __GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence_unity2_raw :: create_bind (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (jump_func) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-gmapmenusequence")]
+pub trait IGmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequenceMethods : IGmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence { # [doc = "`.ctor(crate::system::action::Action)` overload"] fn ctor (self , jump_func : impl :: core :: convert :: Into < crate :: system :: action :: Action >) -> () { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (jump_func) , :: core :: option :: Option :: None) } } # [doc = "`JumpToRanking()` overload"] fn jump_to_ranking (self ,) -> () { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence_unity2_raw :: jump_to_ranking (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl < __T : IGmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence > IGmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequenceMethods for __T { }
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn jump_to_ranking_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence_unity2_raw :: __lookup_jump_to_ranking :: get_method_info () } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence_unity2_raw :: __lookup_create_bind :: get_method_info () } }
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence {
+# [doc = "`.ctor(crate::system::action::Action)` — overload selector"] pub fn new (jump_func : crate :: system :: action :: Action) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence) , :: core :: stringify ! (new) ,)) ; < Self as IGmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequenceMethods > :: ctor (this , jump_func) ; this }
+}
+
+#[cfg(feature = "app-gmapmenusequence")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: netenablesequence :: NetEnableSequence_ResultFunction as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence , result_func : crate :: app :: netenablesequence :: NetEnableSequence_ResultFunction , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence , crate :: app :: netenablesequence :: NetEnableSequence_ResultFunction , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , result_func , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_confirm { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence as :: unity2 :: ClassIdentity > :: class () , "Confirm" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence as :: unity2 :: ClassIdentity > :: NAME , "Confirm" , e) , } } } pub unsafe fn confirm (this : GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_confirm :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_bind { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: netenablesequence :: NetEnableSequence_ResultFunction as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence as :: unity2 :: ClassIdentity > :: class () , "CreateBind" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence as :: unity2 :: ClassIdentity > :: NAME , "CreateBind" , e) , } } } pub unsafe fn create_bind (super_ : crate :: app :: procinst :: ProcInst , result_func : crate :: app :: netenablesequence :: NetEnableSequence_ResultFunction , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: netenablesequence :: NetEnableSequence_ResultFunction , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create_bind :: get_method_info () . method_ptr ,) ; inner (super_ , result_func , __unity2_method_info) } }
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence { # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::netenablesequence::NetEnableSequence_ResultFunction)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , result_func : impl :: core :: convert :: Into < crate :: app :: netenablesequence :: NetEnableSequence_ResultFunction >) -> () { unsafe { __GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_unity2_raw :: create_bind (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (result_func) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-gmapmenusequence")]
+pub trait IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequenceMethods : IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence { # [doc = "`.ctor(crate::app::netenablesequence::NetEnableSequence_ResultFunction)` overload"] fn ctor (self , result_func : impl :: core :: convert :: Into < crate :: app :: netenablesequence :: NetEnableSequence_ResultFunction >) -> () { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (result_func) , :: core :: option :: Option :: None) } } # [doc = "`Confirm()` overload"] fn confirm (self ,) -> () { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_unity2_raw :: confirm (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl < __T : IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence > IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequenceMethods for __T { }
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn confirm_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_unity2_raw :: __lookup_confirm :: get_method_info () } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_unity2_raw :: __lookup_create_bind :: get_method_info () } }
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence {
+# [doc = "`.ctor(crate::app::netenablesequence::NetEnableSequence_ResultFunction)` — overload selector"] pub fn new (result_func : crate :: app :: netenablesequence :: NetEnableSequence_ResultFunction) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence) , :: core :: stringify ! (new) ,)) ; < Self as IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequenceMethods > :: ctor (this , result_func) ; this }
+}
+
+#[cfg(feature = "app-gmapmenusequence")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __GmapMenuSequence_GmapMenu_SaveItem_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_SaveItem as :: unity2 :: ClassIdentity > :: class () , "GetName" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_SaveItem as :: unity2 :: ClassIdentity > :: NAME , "GetName" , e) , } } } pub unsafe fn get_name (this : GmapMenuSequence_GmapMenu_SaveItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_SaveItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_name :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_help_text { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_SaveItem as :: unity2 :: ClassIdentity > :: class () , "GetHelpText" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_SaveItem as :: unity2 :: ClassIdentity > :: NAME , "GetHelpText" , e) , } } } pub unsafe fn get_help_text (this : GmapMenuSequence_GmapMenu_SaveItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_SaveItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_help_text :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_build_attribute { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_SaveItem as :: unity2 :: ClassIdentity > :: class () , "BuildAttribute" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_SaveItem as :: unity2 :: ClassIdentity > :: NAME , "BuildAttribute" , e) , } } } pub unsafe fn build_attribute (this : GmapMenuSequence_GmapMenu_SaveItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_SaveItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute (__lookup_build_attribute :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_a_call { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_SaveItem as :: unity2 :: ClassIdentity > :: class () , "ACall" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_SaveItem as :: unity2 :: ClassIdentity > :: NAME , "ACall" , e) , } } } pub unsafe fn a_call (this : GmapMenuSequence_GmapMenu_SaveItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_SaveItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute (__lookup_a_call :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_SaveItem as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_SaveItem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : GmapMenuSequence_GmapMenu_SaveItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_SaveItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-gmapmenusequence")]
+pub trait IGmapMenuSequence_GmapMenu_SaveItemMethods : IGmapMenuSequence_GmapMenu_SaveItem { # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_SaveItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_SaveItem_unity2_raw :: get_name (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetHelpText()` overload"] fn get_help_text (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_SaveItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_SaveItem_unity2_raw :: get_help_text (__receiver , :: core :: option :: Option :: None) } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_SaveItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_SaveItem_unity2_raw :: build_attribute (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_SaveItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_SaveItem_unity2_raw :: a_call (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_SaveItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_SaveItem_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl < __T : IGmapMenuSequence_GmapMenu_SaveItem > IGmapMenuSequence_GmapMenu_SaveItemMethods for __T { }
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl GmapMenuSequence_GmapMenu_SaveItem { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_SaveItem_unity2_raw :: __lookup_get_name :: get_method_info () } pub fn get_help_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_SaveItem_unity2_raw :: __lookup_get_help_text :: get_method_info () } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_SaveItem_unity2_raw :: __lookup_build_attribute :: get_method_info () } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_SaveItem_unity2_raw :: __lookup_a_call :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_SaveItem_unity2_raw :: __lookup_ctor :: get_method_info () } }
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl GmapMenuSequence_GmapMenu_SaveItem {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GmapMenuSequence_GmapMenu_SaveItem) , :: core :: stringify ! (new) ,)) ; < Self as IGmapMenuSequence_GmapMenu_SaveItemMethods > :: ctor (this ,) ; this }
+}
+
+#[cfg(feature = "app-gmapmenusequence")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __GmapMenuSequence_GmapMenu_InventoryItem_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_InventoryItem as :: unity2 :: ClassIdentity > :: class () , "GetName" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_InventoryItem as :: unity2 :: ClassIdentity > :: NAME , "GetName" , e) , } } } pub unsafe fn get_name (this : GmapMenuSequence_GmapMenu_InventoryItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_InventoryItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_name :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_help_text { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_InventoryItem as :: unity2 :: ClassIdentity > :: class () , "GetHelpText" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_InventoryItem as :: unity2 :: ClassIdentity > :: NAME , "GetHelpText" , e) , } } } pub unsafe fn get_help_text (this : GmapMenuSequence_GmapMenu_InventoryItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_InventoryItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_help_text :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_build_attribute { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_InventoryItem as :: unity2 :: ClassIdentity > :: class () , "BuildAttribute" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_InventoryItem as :: unity2 :: ClassIdentity > :: NAME , "BuildAttribute" , e) , } } } pub unsafe fn build_attribute (this : GmapMenuSequence_GmapMenu_InventoryItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_InventoryItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute (__lookup_build_attribute :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_a_call { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_InventoryItem as :: unity2 :: ClassIdentity > :: class () , "ACall" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_InventoryItem as :: unity2 :: ClassIdentity > :: NAME , "ACall" , e) , } } } pub unsafe fn a_call (this : GmapMenuSequence_GmapMenu_InventoryItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_InventoryItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute (__lookup_a_call :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMenuSequence_GmapMenu_InventoryItem as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMenuSequence_GmapMenu_InventoryItem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : GmapMenuSequence_GmapMenu_InventoryItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GmapMenuSequence_GmapMenu_InventoryItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-gmapmenusequence")]
+pub trait IGmapMenuSequence_GmapMenu_InventoryItemMethods : IGmapMenuSequence_GmapMenu_InventoryItem { # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_InventoryItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_InventoryItem_unity2_raw :: get_name (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetHelpText()` overload"] fn get_help_text (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_InventoryItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_InventoryItem_unity2_raw :: get_help_text (__receiver , :: core :: option :: Option :: None) } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_InventoryItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_InventoryItem_unity2_raw :: build_attribute (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_InventoryItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_InventoryItem_unity2_raw :: a_call (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GmapMenuSequence_GmapMenu_InventoryItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMenuSequence_GmapMenu_InventoryItem_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl < __T : IGmapMenuSequence_GmapMenu_InventoryItem > IGmapMenuSequence_GmapMenu_InventoryItemMethods for __T { }
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl GmapMenuSequence_GmapMenu_InventoryItem { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_InventoryItem_unity2_raw :: __lookup_get_name :: get_method_info () } pub fn get_help_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_InventoryItem_unity2_raw :: __lookup_get_help_text :: get_method_info () } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_InventoryItem_unity2_raw :: __lookup_build_attribute :: get_method_info () } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_InventoryItem_unity2_raw :: __lookup_a_call :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMenuSequence_GmapMenu_InventoryItem_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-gmapmenusequence")]
 impl GmapMenuSequence_GmapMenu_InventoryItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GmapMenuSequence_GmapMenu_InventoryItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGmapMenuSequence_GmapMenu_InventoryItemMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GmapMenuSequence_GmapMenu_InventoryItem) , :: core :: stringify ! (new) ,)) ; < Self as IGmapMenuSequence_GmapMenu_InventoryItemMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-gmapmenusequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{
-        GmapMenuSequence, GmapMenuSequence_GmapMenu, GmapMenuSequence_GmapMenu_EnterChapterItem, GmapMenuSequence_GmapMenu_FriendItem,
-        GmapMenuSequence_GmapMenu_GmapMenuMenuItem, GmapMenuSequence_GmapMenu_GoToSolanelItem, GmapMenuSequence_GmapMenu_GodItem,
-        GmapMenuSequence_GmapMenu_InventoryItem, GmapMenuSequence_GmapMenu_MaterialListItem, GmapMenuSequence_GmapMenu_RankingItem,
-        GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence, GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem,
-        GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem, GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence,
-        GmapMenuSequence_GmapMenu_SaveItem, GmapMenuSequence_GmapMenu_ShopItem, GmapMenuSequence_GmapMenu_SubFriendMenu,
-        GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem, GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem,
-        GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem, GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem,
-        GmapMenuSequence_GmapMenu_SubShopMenu, GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem,
-        GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem, GmapMenuSequence_GmapMenu_SubSystemMenu,
-        GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem, GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem,
-        GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem, GmapMenuSequence_GmapMenu_SystemItem, GmapMenuSequence_GoToMapSequence,
-        GmapMenuSequence_GoToMapSequence_Label, GmapMenuSequence_Label, IGmapMenuSequence, IGmapMenuSequenceMethods, IGmapMenuSequence_GmapMenu,
-        IGmapMenuSequence_GmapMenuMethods, IGmapMenuSequence_GmapMenu_EnterChapterItem, IGmapMenuSequence_GmapMenu_EnterChapterItemMethods,
-        IGmapMenuSequence_GmapMenu_FriendItem, IGmapMenuSequence_GmapMenu_FriendItemMethods, IGmapMenuSequence_GmapMenu_GmapMenuMenuItem,
-        IGmapMenuSequence_GmapMenu_GmapMenuMenuItemMethods, IGmapMenuSequence_GmapMenu_GoToSolanelItem,
-        IGmapMenuSequence_GmapMenu_GoToSolanelItemMethods, IGmapMenuSequence_GmapMenu_GodItem, IGmapMenuSequence_GmapMenu_GodItemMethods,
-        IGmapMenuSequence_GmapMenu_InventoryItem, IGmapMenuSequence_GmapMenu_InventoryItemMethods, IGmapMenuSequence_GmapMenu_MaterialListItem,
-        IGmapMenuSequence_GmapMenu_MaterialListItemMethods, IGmapMenuSequence_GmapMenu_RankingItem, IGmapMenuSequence_GmapMenu_RankingItemMethods,
-        IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence, IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequenceMethods,
-        IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem, IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItemMethods,
-        IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem,
-        IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItemMethods, IGmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence,
-        IGmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequenceMethods, IGmapMenuSequence_GmapMenu_SaveItem,
-        IGmapMenuSequence_GmapMenu_SaveItemMethods, IGmapMenuSequence_GmapMenu_ShopItem, IGmapMenuSequence_GmapMenu_ShopItemMethods,
-        IGmapMenuSequence_GmapMenu_SubFriendMenu, IGmapMenuSequence_GmapMenu_SubFriendMenuMethods,
-        IGmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem, IGmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItemMethods,
-        IGmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem, IGmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItemMethods,
-        IGmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem, IGmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItemMethods,
-        IGmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem, IGmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItemMethods,
-        IGmapMenuSequence_GmapMenu_SubShopMenu, IGmapMenuSequence_GmapMenu_SubShopMenuMethods,
-        IGmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem, IGmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItemMethods,
-        IGmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem, IGmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItemMethods,
-        IGmapMenuSequence_GmapMenu_SubSystemMenu, IGmapMenuSequence_GmapMenu_SubSystemMenuMethods,
-        IGmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem, IGmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItemMethods,
-        IGmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem, IGmapMenuSequence_GmapMenu_SubSystemMenu_ResetItemMethods,
-        IGmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem, IGmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItemMethods,
-        IGmapMenuSequence_GmapMenu_SystemItem, IGmapMenuSequence_GmapMenu_SystemItemMethods, IGmapMenuSequence_GoToMapSequence,
-        IGmapMenuSequence_GoToMapSequenceMethods,
-    };
-    #[cfg(feature = "app-basicdialogitem")]
-    pub use crate::app::basicdialogitem::IBasicDialogItemMethods;
-    #[cfg(feature = "app-basicdialogitemno")]
-    pub use crate::app::basicdialogitemno::IBasicDialogItemNoMethods;
-    #[cfg(feature = "app-basicdialogitemyes")]
-    pub use crate::app::basicdialogitemyes::IBasicDialogItemYesMethods;
-    #[cfg(feature = "app-basicmenu")]
-    pub use crate::app::basicmenu::IBasicMenuMethods;
-    #[cfg(feature = "app-basicmenuitem")]
-    pub use crate::app::basicmenuitem::IBasicMenuItemMethods;
-    #[cfg(feature = "app-mapbasicmenuitem")]
-    pub use crate::app::mapbasicmenuitem::IMapBasicMenuItemMethods;
-    #[cfg(feature = "app-procinst")]
-    pub use crate::app::procinst::IProcInstMethods;
-    #[cfg(feature = "app-singletonprocinst_1")]
-    pub use crate::app::singletonprocinst_1::ISingletonProcInst_1Methods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::{
-        app::{
-            basicdialogitem::IBasicDialogItem, basicdialogitemno::IBasicDialogItemNo, basicdialogitemyes::IBasicDialogItemYes, basicmenu::IBasicMenu,
-            basicmenuitem::IBasicMenuItem, mapbasicmenuitem::IMapBasicMenuItem, procinst::IProcInst, singletonprocinst_1::ISingletonProcInst_1,
-        },
-        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
-    };
+    pub use super::GmapMenuSequence_GmapMenu;
+    pub use super::IGmapMenuSequence_GmapMenu;
+    pub use super::IGmapMenuSequence_GmapMenuMethods;
+    pub use super::GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem;
+    pub use super::IGmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem;
+    pub use super::IGmapMenuSequence_GmapMenu_SubSystemMenu_ResetItemMethods;
+    pub use super::GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem;
+    pub use super::IGmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem;
+    pub use super::IGmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItemMethods;
+    pub use super::GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem;
+    pub use super::IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem;
+    pub use super::IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItemMethods;
+    pub use super::GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem;
+    pub use super::IGmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem;
+    pub use super::IGmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItemMethods;
+    pub use super::GmapMenuSequence_GmapMenu_EnterChapterItem;
+    pub use super::IGmapMenuSequence_GmapMenu_EnterChapterItem;
+    pub use super::IGmapMenuSequence_GmapMenu_EnterChapterItemMethods;
+    pub use super::GmapMenuSequence;
+    pub use super::IGmapMenuSequence;
+    pub use super::IGmapMenuSequenceMethods;
+    pub use super::GmapMenuSequence_GmapMenu_RankingItem;
+    pub use super::IGmapMenuSequence_GmapMenu_RankingItem;
+    pub use super::IGmapMenuSequence_GmapMenu_RankingItemMethods;
+    pub use super::GmapMenuSequence_GoToMapSequence;
+    pub use super::IGmapMenuSequence_GoToMapSequence;
+    pub use super::IGmapMenuSequence_GoToMapSequenceMethods;
+    pub use super::GmapMenuSequence_GmapMenu_SubShopMenu;
+    pub use super::IGmapMenuSequence_GmapMenu_SubShopMenu;
+    pub use super::IGmapMenuSequence_GmapMenu_SubShopMenuMethods;
+    pub use super::GmapMenuSequence_GmapMenu_GoToSolanelItem;
+    pub use super::IGmapMenuSequence_GmapMenu_GoToSolanelItem;
+    pub use super::IGmapMenuSequence_GmapMenu_GoToSolanelItemMethods;
+    pub use super::GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem;
+    pub use super::IGmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem;
+    pub use super::IGmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItemMethods;
+    pub use super::GmapMenuSequence_Label;
+    pub use super::GmapMenuSequence_GmapMenu_FriendItem;
+    pub use super::IGmapMenuSequence_GmapMenu_FriendItem;
+    pub use super::IGmapMenuSequence_GmapMenu_FriendItemMethods;
+    pub use super::GmapMenuSequence_GmapMenu_SystemItem;
+    pub use super::IGmapMenuSequence_GmapMenu_SystemItem;
+    pub use super::IGmapMenuSequence_GmapMenu_SystemItemMethods;
+    pub use super::GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem;
+    pub use super::IGmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem;
+    pub use super::IGmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItemMethods;
+    pub use super::GmapMenuSequence_GoToMapSequence_Label;
+    pub use super::GmapMenuSequence_GmapMenu_GodItem;
+    pub use super::IGmapMenuSequence_GmapMenu_GodItem;
+    pub use super::IGmapMenuSequence_GmapMenu_GodItemMethods;
+    pub use super::GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem;
+    pub use super::IGmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem;
+    pub use super::IGmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItemMethods;
+    pub use super::GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem;
+    pub use super::IGmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem;
+    pub use super::IGmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItemMethods;
+    pub use super::GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem;
+    pub use super::IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem;
+    pub use super::IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItemMethods;
+    pub use super::GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem;
+    pub use super::IGmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem;
+    pub use super::IGmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItemMethods;
+    pub use super::GmapMenuSequence_GmapMenu_ShopItem;
+    pub use super::IGmapMenuSequence_GmapMenu_ShopItem;
+    pub use super::IGmapMenuSequence_GmapMenu_ShopItemMethods;
+    pub use super::GmapMenuSequence_GmapMenu_MaterialListItem;
+    pub use super::IGmapMenuSequence_GmapMenu_MaterialListItem;
+    pub use super::IGmapMenuSequence_GmapMenu_MaterialListItemMethods;
+    pub use super::GmapMenuSequence_GmapMenu_SubSystemMenu;
+    pub use super::IGmapMenuSequence_GmapMenu_SubSystemMenu;
+    pub use super::IGmapMenuSequence_GmapMenu_SubSystemMenuMethods;
+    pub use super::GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem;
+    pub use super::IGmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem;
+    pub use super::IGmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItemMethods;
+    pub use super::GmapMenuSequence_GmapMenu_SubFriendMenu;
+    pub use super::IGmapMenuSequence_GmapMenu_SubFriendMenu;
+    pub use super::IGmapMenuSequence_GmapMenu_SubFriendMenuMethods;
+    pub use super::GmapMenuSequence_GmapMenu_GmapMenuMenuItem;
+    pub use super::IGmapMenuSequence_GmapMenu_GmapMenuMenuItem;
+    pub use super::IGmapMenuSequence_GmapMenu_GmapMenuMenuItemMethods;
+    pub use super::GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence;
+    pub use super::IGmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence;
+    pub use super::IGmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequenceMethods;
+    pub use super::GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence;
+    pub use super::IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence;
+    pub use super::IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequenceMethods;
+    pub use super::GmapMenuSequence_GmapMenu_SaveItem;
+    pub use super::IGmapMenuSequence_GmapMenu_SaveItem;
+    pub use super::IGmapMenuSequence_GmapMenu_SaveItemMethods;
+    pub use super::GmapMenuSequence_GmapMenu_InventoryItem;
+    pub use super::IGmapMenuSequence_GmapMenu_InventoryItem;
+    pub use super::IGmapMenuSequence_GmapMenu_InventoryItemMethods;
+    pub use crate::app::basicdialogitem::IBasicDialogItem;
+    pub use crate::app::basicdialogitemno::IBasicDialogItemNo;
+    pub use crate::app::basicdialogitemyes::IBasicDialogItemYes;
+    pub use crate::app::basicmenu::IBasicMenu;
+    pub use crate::app::basicmenuitem::IBasicMenuItem;
+    pub use crate::app::mapbasicmenuitem::IMapBasicMenuItem;
+    pub use crate::app::procinst::IProcInst;
+    pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "app-basicdialogitem")] pub use crate::app::basicdialogitem::IBasicDialogItemMethods;
+    #[cfg(feature = "app-basicdialogitemno")] pub use crate::app::basicdialogitemno::IBasicDialogItemNoMethods;
+    #[cfg(feature = "app-basicdialogitemyes")] pub use crate::app::basicdialogitemyes::IBasicDialogItemYesMethods;
+    #[cfg(feature = "app-basicmenu")] pub use crate::app::basicmenu::IBasicMenuMethods;
+    #[cfg(feature = "app-basicmenuitem")] pub use crate::app::basicmenuitem::IBasicMenuItemMethods;
+    #[cfg(feature = "app-mapbasicmenuitem")] pub use crate::app::mapbasicmenuitem::IMapBasicMenuItemMethods;
+    #[cfg(feature = "app-procinst")] pub use crate::app::procinst::IProcInstMethods;
+    #[cfg(feature = "app-singletonprocinst_1")] pub use crate::app::singletonprocinst_1::ISingletonProcInst_1Methods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

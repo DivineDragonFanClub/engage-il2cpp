@@ -2,211 +2,50 @@
 
 #[cfg(feature = "system-collections-generic-bithelper-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/bithelper/BitHelper.md"))]
-    #[::unity2::class(namespace = "System.Collections.Generic", name = "BitHelper")]
-    #[parent(crate::system::object::Object)]
-    pub struct BitHelper {
-        #[offset(16)]
-        #[rename(name = "_length")]
-        pub length: i32,
-        #[offset(32)]
-        #[rename(name = "_array")]
-        pub array: ::unity2::Array<i32>,
-        #[offset(40)]
-        #[rename(name = "_useStackAlloc")]
-        pub use_stack_alloc: bool,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/bithelper/BitHelper.md"))] # [:: unity2 :: class (namespace = "System.Collections.Generic" , name = "BitHelper")] # [parent (crate :: system :: object :: Object)] pub struct BitHelper {
+# [offset (16)] # [rename (name = "_length")] pub length : i32 ,
+# [offset (32)] # [rename (name = "_array")] pub array : :: unity2 :: Array < i32 > ,
+# [offset (40)] # [rename (name = "_useStackAlloc")] pub use_stack_alloc : bool ,
+}
+
 }
 
 #[cfg(feature = "system-collections-generic-bithelper-types")]
 pub use __types::*;
 
 #[cfg(feature = "system-collections-generic-bithelper")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __BitHelper_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Array<i32> as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<BitHelper as ::unity2::ClassIdentity>::class(), ".ctor", 2, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <BitHelper as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: BitHelper, bit_array: ::unity2::Array<i32>, length: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(BitHelper, ::unity2::Array<i32>, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, bit_array, length, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_mark_bit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<BitHelper as ::unity2::ClassIdentity>::class(), "MarkBit", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <BitHelper as ::unity2::ClassIdentity>::NAME,
-                        "MarkBit",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn mark_bit(this: BitHelper, bit_position: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(BitHelper, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_mark_bit::get_method_info().method_ptr);
-        inner(this, bit_position, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_marked {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<BitHelper as ::unity2::ClassIdentity>::class(), "IsMarked", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <BitHelper as ::unity2::ClassIdentity>::NAME,
-                        "IsMarked",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_marked(this: BitHelper, bit_position: i32, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(BitHelper, i32, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_marked::get_method_info().method_ptr);
-        inner(this, bit_position, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_to_int_array_length {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BitHelper as ::unity2::ClassIdentity>::class(),
-                "ToIntArrayLength",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <BitHelper as ::unity2::ClassIdentity>::NAME,
-                        "ToIntArrayLength",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn to_int_array_length(n: i32, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_to_int_array_length::get_method_info().method_ptr);
-        inner(n, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __BitHelper_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < i32 > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< BitHelper as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < BitHelper as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : BitHelper , bit_array : :: unity2 :: Array < i32 > , length : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (BitHelper , :: unity2 :: Array < i32 > , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , bit_array , length , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_mark_bit { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< BitHelper as :: unity2 :: ClassIdentity > :: class () , "MarkBit" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < BitHelper as :: unity2 :: ClassIdentity > :: NAME , "MarkBit" , e) , } } } pub unsafe fn mark_bit (this : BitHelper , bit_position : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (BitHelper , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_mark_bit :: get_method_info () . method_ptr ,) ; inner (this , bit_position , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_marked { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< BitHelper as :: unity2 :: ClassIdentity > :: class () , "IsMarked" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < BitHelper as :: unity2 :: ClassIdentity > :: NAME , "IsMarked" , e) , } } } pub unsafe fn is_marked (this : BitHelper , bit_position : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (BitHelper , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_marked :: get_method_info () . method_ptr ,) ; inner (this , bit_position , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_to_int_array_length { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< BitHelper as :: unity2 :: ClassIdentity > :: class () , "ToIntArrayLength" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < BitHelper as :: unity2 :: ClassIdentity > :: NAME , "ToIntArrayLength" , e) , } } } pub unsafe fn to_int_array_length (n : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_to_int_array_length :: get_method_info () . method_ptr ,) ; inner (n , __unity2_method_info) } }
+
+#[cfg(feature = "system-collections-generic-bithelper")]
+impl BitHelper { # [doc = "`ToIntArrayLength(i32)` overload"] pub fn to_int_array_length (n : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { __BitHelper_unity2_raw :: to_int_array_length (:: core :: convert :: Into :: into (n) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "system-collections-generic-bithelper")]
+pub trait IBitHelperMethods : IBitHelper { # [doc = "`.ctor(::unity2::Array<i32>, i32)` overload"] fn ctor (self , bit_array : impl :: core :: convert :: Into < :: unity2 :: Array < i32 > > , length : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < BitHelper as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __BitHelper_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (bit_array) , :: core :: convert :: Into :: into (length) , :: core :: option :: Option :: None) } } # [doc = "`MarkBit(i32)` overload"] fn mark_bit (self , bit_position : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < BitHelper as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __BitHelper_unity2_raw :: mark_bit (__receiver , :: core :: convert :: Into :: into (bit_position) , :: core :: option :: Option :: None) } } # [doc = "`IsMarked(i32)` overload"] fn is_marked (self , bit_position : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { let __receiver = < BitHelper as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __BitHelper_unity2_raw :: is_marked (__receiver , :: core :: convert :: Into :: into (bit_position) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "system-collections-generic-bithelper")]
+impl < __T : IBitHelper > IBitHelperMethods for __T { }
+
+#[cfg(feature = "system-collections-generic-bithelper")]
+impl BitHelper { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __BitHelper_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn mark_bit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __BitHelper_unity2_raw :: __lookup_mark_bit :: get_method_info () } pub fn is_marked_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __BitHelper_unity2_raw :: __lookup_is_marked :: get_method_info () } pub fn to_int_array_length_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __BitHelper_unity2_raw :: __lookup_to_int_array_length :: get_method_info () } }
 
 #[cfg(feature = "system-collections-generic-bithelper")]
 impl BitHelper {
-    #[doc = "`ToIntArrayLength(i32)` overload"]
-    pub fn to_int_array_length(n: impl ::core::convert::Into<i32>) -> i32 {
-        unsafe { __BitHelper_unity2_raw::to_int_array_length(::core::convert::Into::into(n), ::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "system-collections-generic-bithelper")]
-pub trait IBitHelperMethods: IBitHelper {
-    #[doc = "`.ctor(::unity2::Array<i32>, i32)` overload"]
-    fn ctor(self, bit_array: impl ::core::convert::Into<::unity2::Array<i32>>, length: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver = <BitHelper as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __BitHelper_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(bit_array),
-                ::core::convert::Into::into(length),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`MarkBit(i32)` overload"]
-    fn mark_bit(self, bit_position: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver = <BitHelper as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __BitHelper_unity2_raw::mark_bit(__receiver, ::core::convert::Into::into(bit_position), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsMarked(i32)` overload"]
-    fn is_marked(self, bit_position: impl ::core::convert::Into<i32>) -> bool {
-        unsafe {
-            let __receiver = <BitHelper as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __BitHelper_unity2_raw::is_marked(__receiver, ::core::convert::Into::into(bit_position), ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "system-collections-generic-bithelper")]
-impl<__T: IBitHelper> IBitHelperMethods for __T {}
-
-#[cfg(feature = "system-collections-generic-bithelper")]
-impl BitHelper {
-    #[doc = "`.ctor(::unity2::Array<i32>, i32)` — overload selector"]
-    pub fn new(bit_array: ::unity2::Array<i32>, length: i32) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(BitHelper), ::core::stringify!(new),));
-        <Self as IBitHelperMethods>::ctor(this, bit_array, length);
-        this
-    }
+# [doc = "`.ctor(::unity2::Array<i32>, i32)` — overload selector"] pub fn new (bit_array : :: unity2 :: Array < i32 > , length : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (BitHelper) , :: core :: stringify ! (new) ,)) ; < Self as IBitHelperMethods > :: ctor (this , bit_array , length) ; this }
 }
 
 #[cfg(feature = "system-collections-generic-bithelper")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{BitHelper, IBitHelper, IBitHelperMethods};
+    pub use super::BitHelper;
+    pub use super::IBitHelper;
+    pub use super::IBitHelperMethods;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

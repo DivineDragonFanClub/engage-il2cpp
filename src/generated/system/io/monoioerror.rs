@@ -2,144 +2,209 @@
 
 #[cfg(feature = "system-io-monoioerror-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        r#enum::{Enum, IEnum},
-        valuetype::{IValueType, ValueType},
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/io/monoioerror/MonoIOError.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct MonoIOError {
-        pub value: i32,
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/io/monoioerror/MonoIOError.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct MonoIOError  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for MonoIOError  {
+    const NAMESPACE: &'static str = "System.IO";
+
+    const NAME: &'static str = "MonoIOError";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    impl ::unity2::ClassIdentity for MonoIOError {
-        const NAME: &'static str = "MonoIOError";
-        const NAMESPACE: &'static str = "System.IO";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  ::unity2::IlType for MonoIOError  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::IlType for MonoIOError {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  MonoIOError  {
+    pub fn error_success() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl MonoIOError {
-        pub fn error_success() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn error_file_not_found() -> Self {
-            Self { value: 2 }
-        }
+    pub fn error_file_not_found() -> Self {
+        Self { value: 2 }
 
-        pub fn error_path_not_found() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn error_too_many_open_files() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn error_access_denied() -> Self {
-            Self { value: 5 }
-        }
-
-        pub fn error_invalid_handle() -> Self {
-            Self { value: 6 }
-        }
-
-        pub fn error_invalid_drive() -> Self {
-            Self { value: 15 }
-        }
-
-        pub fn error_not_same_device() -> Self {
-            Self { value: 17 }
-        }
-
-        pub fn error_no_more_files() -> Self {
-            Self { value: 18 }
-        }
-
-        pub fn error_not_ready() -> Self {
-            Self { value: 21 }
-        }
-
-        pub fn error_write_fault() -> Self {
-            Self { value: 29 }
-        }
-
-        pub fn error_read_fault() -> Self {
-            Self { value: 30 }
-        }
-
-        pub fn error_gen_failure() -> Self {
-            Self { value: 31 }
-        }
-
-        pub fn error_sharing_violation() -> Self {
-            Self { value: 32 }
-        }
-
-        pub fn error_lock_violation() -> Self {
-            Self { value: 33 }
-        }
-
-        pub fn error_handle_disk_full() -> Self {
-            Self { value: 39 }
-        }
-
-        pub fn error_file_exists() -> Self {
-            Self { value: 80 }
-        }
-
-        pub fn error_cannot_make() -> Self {
-            Self { value: 82 }
-        }
-
-        pub fn error_invalid_parameter() -> Self {
-            Self { value: 87 }
-        }
-
-        pub fn error_broken_pipe() -> Self {
-            Self { value: 109 }
-        }
-
-        pub fn error_invalid_name() -> Self {
-            Self { value: 123 }
-        }
-
-        pub fn error_dir_not_empty() -> Self {
-            Self { value: 145 }
-        }
-
-        pub fn error_already_exists() -> Self {
-            Self { value: 183 }
-        }
-
-        pub fn error_filename_exced_range() -> Self {
-            Self { value: 206 }
-        }
-
-        pub fn error_directory() -> Self {
-            Self { value: 267 }
-        }
-
-        pub fn error_encryption_failed() -> Self {
-            Self { value: 6000 }
-        }
     }
+
+
+    pub fn error_path_not_found() -> Self {
+        Self { value: 3 }
+
+    }
+
+
+    pub fn error_too_many_open_files() -> Self {
+        Self { value: 4 }
+
+    }
+
+
+    pub fn error_access_denied() -> Self {
+        Self { value: 5 }
+
+    }
+
+
+    pub fn error_invalid_handle() -> Self {
+        Self { value: 6 }
+
+    }
+
+
+    pub fn error_invalid_drive() -> Self {
+        Self { value: 15 }
+
+    }
+
+
+    pub fn error_not_same_device() -> Self {
+        Self { value: 17 }
+
+    }
+
+
+    pub fn error_no_more_files() -> Self {
+        Self { value: 18 }
+
+    }
+
+
+    pub fn error_not_ready() -> Self {
+        Self { value: 21 }
+
+    }
+
+
+    pub fn error_write_fault() -> Self {
+        Self { value: 29 }
+
+    }
+
+
+    pub fn error_read_fault() -> Self {
+        Self { value: 30 }
+
+    }
+
+
+    pub fn error_gen_failure() -> Self {
+        Self { value: 31 }
+
+    }
+
+
+    pub fn error_sharing_violation() -> Self {
+        Self { value: 32 }
+
+    }
+
+
+    pub fn error_lock_violation() -> Self {
+        Self { value: 33 }
+
+    }
+
+
+    pub fn error_handle_disk_full() -> Self {
+        Self { value: 39 }
+
+    }
+
+
+    pub fn error_file_exists() -> Self {
+        Self { value: 80 }
+
+    }
+
+
+    pub fn error_cannot_make() -> Self {
+        Self { value: 82 }
+
+    }
+
+
+    pub fn error_invalid_parameter() -> Self {
+        Self { value: 87 }
+
+    }
+
+
+    pub fn error_broken_pipe() -> Self {
+        Self { value: 109 }
+
+    }
+
+
+    pub fn error_invalid_name() -> Self {
+        Self { value: 123 }
+
+    }
+
+
+    pub fn error_dir_not_empty() -> Self {
+        Self { value: 145 }
+
+    }
+
+
+    pub fn error_already_exists() -> Self {
+        Self { value: 183 }
+
+    }
+
+
+    pub fn error_filename_exced_range() -> Self {
+        Self { value: 206 }
+
+    }
+
+
+    pub fn error_directory() -> Self {
+        Self { value: 267 }
+
+    }
+
+
+    pub fn error_encryption_failed() -> Self {
+        Self { value: 6000 }
+
+    }
+
+}
+
 }
 
 #[cfg(feature = "system-io-monoioerror-types")]
@@ -149,11 +214,10 @@ pub use __types::*;
 #[doc(hidden)]
 pub mod prelude {
     pub use super::MonoIOError;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::system::{object::IObject, r#enum::IEnum, valuetype::IValueType};
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

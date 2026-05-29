@@ -2,315 +2,107 @@
 
 #[cfg(feature = "app-versuscapture-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        r#enum::{Enum, IEnum},
-        valuetype::{IValueType, ValueType},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versuscapture/VersusCapture.md"))]
-    #[::unity2::class(namespace = "App", name = "VersusCapture")]
-    #[parent(crate::system::object::Object)]
-    pub struct VersusCapture {
-        #[static_field]
-        #[rename(name = "OpponentPos")]
-        pub opponent_pos: crate::unity_engine::vector3::Vector3,
-        #[static_field]
-        #[rename(name = "PlayerPos")]
-        pub player_pos: crate::unity_engine::vector3::Vector3,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/versuscapture/VersusCapture_Preset.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct VersusCapture_Preset {
-        pub value: i32,
-    }
 
-    impl ::unity2::ClassIdentity for VersusCapture_Preset {
-        const NAME: &'static str = "VersusCapture.Preset";
-        const NAMESPACE: &'static str = "App";
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versuscapture/VersusCapture.md"))] # [:: unity2 :: class (namespace = "App" , name = "VersusCapture")] # [parent (crate :: system :: object :: Object)] pub struct VersusCapture {
+# [static_field] # [rename (name = "OpponentPos")] pub opponent_pos : crate :: unity_engine :: vector3 :: Vector3 ,
+# [static_field] # [rename (name = "PlayerPos")] pub player_pos : crate :: unity_engine :: vector3 :: Vector3 ,
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/versuscapture/VersusCapture_Preset.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct VersusCapture_Preset  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for VersusCapture_Preset  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "VersusCapture.Preset";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for VersusCapture_Preset {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  ::unity2::IlType for VersusCapture_Preset  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl VersusCapture_Preset {
-        pub fn opponent() -> Self {
-            Self { value: 0 }
-        }
+}
 
-        pub fn player() -> Self {
-            Self { value: 1 }
-        }
+
+impl  VersusCapture_Preset  {
+    pub fn opponent() -> Self {
+        Self { value: 0 }
+
     }
+
+
+    pub fn player() -> Self {
+        Self { value: 1 }
+
+    }
+
+}
+
 }
 
 #[cfg(feature = "app-versuscapture-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-versuscapture")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __VersusCapture_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_do_capture {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::versuscapture::VersusCapture_Preset as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VersusCapture as ::unity2::ClassIdentity>::class(),
-                "DoCapture",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <VersusCapture as ::unity2::ClassIdentity>::NAME,
-                        "DoCapture",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn do_capture(
-        preset: crate::app::versuscapture::VersusCapture_Preset,
-        is_reverse: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::texture2d::Texture2D {
-        let inner: extern "C" fn(
-            crate::app::versuscapture::VersusCapture_Preset,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::texture2d::Texture2D = ::core::mem::transmute(__lookup_do_capture::get_method_info().method_ptr);
-        inner(preset, is_reverse, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_save_tex {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::texture2d::Texture2D as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VersusCapture as ::unity2::ClassIdentity>::class(),
-                "SaveTex",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <VersusCapture as ::unity2::ClassIdentity>::NAME,
-                        "SaveTex",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn save_tex(
-        tex: crate::unity_engine::texture2d::Texture2D,
-        file_name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::unity_engine::texture2d::Texture2D, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_save_tex::get_method_info().method_ptr);
-        inner(tex, file_name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_directory {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VersusCapture as ::unity2::ClassIdentity>::class(),
-                "GetDirectory",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <VersusCapture as ::unity2::ClassIdentity>::NAME,
-                        "GetDirectory",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_directory(__unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_directory::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<VersusCapture as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <VersusCapture as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: VersusCapture, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(VersusCapture, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<VersusCapture as ::unity2::ClassIdentity>::class(), ".cctor", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <VersusCapture as ::unity2::ClassIdentity>::NAME,
-                        ".cctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __VersusCapture_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_do_capture { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: versuscapture :: VersusCapture_Preset as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< VersusCapture as :: unity2 :: ClassIdentity > :: class () , "DoCapture" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < VersusCapture as :: unity2 :: ClassIdentity > :: NAME , "DoCapture" , e) , } } } pub unsafe fn do_capture (preset : crate :: app :: versuscapture :: VersusCapture_Preset , is_reverse : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: texture2d :: Texture2D { let inner : extern "C" fn (crate :: app :: versuscapture :: VersusCapture_Preset , bool , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: texture2d :: Texture2D = :: core :: mem :: transmute (__lookup_do_capture :: get_method_info () . method_ptr ,) ; inner (preset , is_reverse , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_save_tex { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: texture2d :: Texture2D as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< VersusCapture as :: unity2 :: ClassIdentity > :: class () , "SaveTex" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < VersusCapture as :: unity2 :: ClassIdentity > :: NAME , "SaveTex" , e) , } } } pub unsafe fn save_tex (tex : crate :: unity_engine :: texture2d :: Texture2D , file_name : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: unity_engine :: texture2d :: Texture2D , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_save_tex :: get_method_info () . method_ptr ,) ; inner (tex , file_name , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_directory { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< VersusCapture as :: unity2 :: ClassIdentity > :: class () , "GetDirectory" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < VersusCapture as :: unity2 :: ClassIdentity > :: NAME , "GetDirectory" , e) , } } } pub unsafe fn get_directory (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_directory :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< VersusCapture as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < VersusCapture as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : VersusCapture , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (VersusCapture , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< VersusCapture as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < VersusCapture as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
+
+#[cfg(feature = "app-versuscapture")]
+impl VersusCapture { # [doc = "`DoCapture(crate::app::versuscapture::VersusCapture_Preset, bool)` overload"] pub fn do_capture (preset : impl :: core :: convert :: Into < crate :: app :: versuscapture :: VersusCapture_Preset > , is_reverse : impl :: core :: convert :: Into < bool >) -> crate :: unity_engine :: texture2d :: Texture2D { unsafe { __VersusCapture_unity2_raw :: do_capture (:: core :: convert :: Into :: into (preset) , :: core :: convert :: Into :: into (is_reverse) , :: core :: option :: Option :: None) } } # [doc = "`SaveTex(crate::unity_engine::texture2d::Texture2D, ::unity2::Il2CppString)` overload"] pub fn save_tex (tex : impl :: core :: convert :: Into < crate :: unity_engine :: texture2d :: Texture2D > , file_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { __VersusCapture_unity2_raw :: save_tex (:: core :: convert :: Into :: into (tex) , :: core :: convert :: Into :: into (file_name) , :: core :: option :: Option :: None) } } # [doc = "`GetDirectory()` overload"] pub fn get_directory () -> :: unity2 :: Il2CppString { unsafe { __VersusCapture_unity2_raw :: get_directory (:: core :: option :: Option :: None) } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { __VersusCapture_unity2_raw :: cctor (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-versuscapture")]
+pub trait IVersusCaptureMethods : IVersusCapture { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < VersusCapture as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __VersusCapture_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-versuscapture")]
+impl < __T : IVersusCapture > IVersusCaptureMethods for __T { }
+
+#[cfg(feature = "app-versuscapture")]
+impl VersusCapture { pub fn do_capture_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __VersusCapture_unity2_raw :: __lookup_do_capture :: get_method_info () } pub fn save_tex_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __VersusCapture_unity2_raw :: __lookup_save_tex :: get_method_info () } pub fn get_directory_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __VersusCapture_unity2_raw :: __lookup_get_directory :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __VersusCapture_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __VersusCapture_unity2_raw :: __lookup_cctor :: get_method_info () } }
 
 #[cfg(feature = "app-versuscapture")]
 impl VersusCapture {
-    #[doc = "`DoCapture(crate::app::versuscapture::VersusCapture_Preset, bool)` overload"]
-    pub fn do_capture(
-        preset: impl ::core::convert::Into<crate::app::versuscapture::VersusCapture_Preset>,
-        is_reverse: impl ::core::convert::Into<bool>,
-    ) -> crate::unity_engine::texture2d::Texture2D {
-        unsafe {
-            __VersusCapture_unity2_raw::do_capture(
-                ::core::convert::Into::into(preset),
-                ::core::convert::Into::into(is_reverse),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`SaveTex(crate::unity_engine::texture2d::Texture2D, ::unity2::Il2CppString)` overload"]
-    pub fn save_tex(
-        tex: impl ::core::convert::Into<crate::unity_engine::texture2d::Texture2D>,
-        file_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
-        unsafe {
-            __VersusCapture_unity2_raw::save_tex(
-                ::core::convert::Into::into(tex),
-                ::core::convert::Into::into(file_name),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`GetDirectory()` overload"]
-    pub fn get_directory() -> ::unity2::Il2CppString {
-        unsafe { __VersusCapture_unity2_raw::get_directory(::core::option::Option::None) }
-    }
-
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __VersusCapture_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-versuscapture")]
-pub trait IVersusCaptureMethods: IVersusCapture {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <VersusCapture as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __VersusCapture_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-versuscapture")]
-impl<__T: IVersusCapture> IVersusCaptureMethods for __T {}
-
-#[cfg(feature = "app-versuscapture")]
-impl VersusCapture {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(VersusCapture), ::core::stringify!(new),));
-        <Self as IVersusCaptureMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (VersusCapture) , :: core :: stringify ! (new) ,)) ; < Self as IVersusCaptureMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-versuscapture")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IVersusCapture, IVersusCaptureMethods, VersusCapture, VersusCapture_Preset};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::system::{object::IObject, r#enum::IEnum, valuetype::IValueType};
+    pub use super::VersusCapture;
+    pub use super::IVersusCapture;
+    pub use super::IVersusCaptureMethods;
+    pub use super::VersusCapture_Preset;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

@@ -2,718 +2,110 @@
 
 #[cfg(feature = "app-procscenemanager-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::procinst::{IProcInst, ProcInst},
-        system::{
-            object::{IObject, Object},
-            r#enum::{Enum, IEnum},
-            valuetype::{IValueType, ValueType},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/procscenemanager/ProcSceneManager.md"))]
-    #[::unity2::class(namespace = "App", name = "ProcSceneManager")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct ProcSceneManager {
-        #[static_field]
-        #[rename(name = "Empty")]
-        pub empty: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "s_Handles")]
-        pub s_handles:
-            crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, crate::app::resourcehandle_2::ResourceHandle_2>,
-        #[static_field]
-        #[rename(name = "s_Releases")]
-        pub s_releases: crate::system::collections::generic::list_1::List_1<crate::app::resourcehandle_2::ResourceHandle_2>,
-        #[offset(112)]
-        #[rename(name = "m_Name")]
-        pub m_name: ::unity2::Il2CppString,
-        #[offset(120)]
-        #[rename(name = "m_Mode")]
-        pub m_mode: crate::unity_engine::scene_management::loadscenemode::LoadSceneMode,
-        #[offset(128)]
-        #[rename(name = "m_Empty")]
-        pub m_empty: crate::app::resourcehandle_2::ResourceHandle_2,
-        #[offset(136)]
-        #[rename(name = "m_Handle")]
-        pub m_handle: crate::app::resourcehandle_2::ResourceHandle_2,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: procinst :: { IProcInst , ProcInst }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/procscenemanager/ProcSceneManager_Label.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct ProcSceneManager_Label {
-        pub value: i32,
-    }
 
-    impl ::unity2::ClassIdentity for ProcSceneManager_Label {
-        const NAME: &'static str = "ProcSceneManager.Label";
-        const NAMESPACE: &'static str = "App";
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/procscenemanager/ProcSceneManager_Label.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct ProcSceneManager_Label  {
+    pub value: i32,
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+impl  ::unity2::ClassIdentity for ProcSceneManager_Label  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "ProcSceneManager.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for ProcSceneManager_Label {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  ::unity2::IlType for ProcSceneManager_Label  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ProcSceneManager_Label {
-        pub fn skip() -> Self {
-            Self { value: 0 }
-        }
+}
+
+
+impl  ProcSceneManager_Label  {
+    pub fn skip() -> Self {
+        Self { value: 0 }
+
     }
+
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/procscenemanager/ProcSceneManager.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProcSceneManager")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct ProcSceneManager {
+# [static_field] # [rename (name = "Empty")] pub empty : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "s_Handles")] pub s_handles : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , crate :: app :: resourcehandle_2 :: ResourceHandle_2 > ,
+# [static_field] # [rename (name = "s_Releases")] pub s_releases : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: resourcehandle_2 :: ResourceHandle_2 > ,
+# [offset (112)] # [rename (name = "m_Name")] pub m_name : :: unity2 :: Il2CppString ,
+# [offset (120)] # [rename (name = "m_Mode")] pub m_mode : crate :: unity_engine :: scene_management :: loadscenemode :: LoadSceneMode ,
+# [offset (128)] # [rename (name = "m_Empty")] pub m_empty : crate :: app :: resourcehandle_2 :: ResourceHandle_2 ,
+# [offset (136)] # [rename (name = "m_Handle")] pub m_handle : crate :: app :: resourcehandle_2 :: ResourceHandle_2 ,
+}
+
 }
 
 #[cfg(feature = "app-procscenemanager-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-procscenemanager")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ProcSceneManager_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::scene_management::loadscenemode::LoadSceneMode as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProcSceneManager as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProcSceneManager as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: ProcSceneManager,
-        name: ::unity2::Il2CppString,
-        mode: crate::unity_engine::scene_management::loadscenemode::LoadSceneMode,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ProcSceneManager,
-            ::unity2::Il2CppString,
-            crate::unity_engine::scene_management::loadscenemode::LoadSceneMode,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, name, mode, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_has_empty_scene {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProcSceneManager as ::unity2::ClassIdentity>::class(),
-                "HasEmptyScene",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProcSceneManager as ::unity2::ClassIdentity>::NAME,
-                        "HasEmptyScene",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn has_empty_scene(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_has_empty_scene::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_unload_branch {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProcSceneManager as ::unity2::ClassIdentity>::class(),
-                "UnloadBranch",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProcSceneManager as ::unity2::ClassIdentity>::NAME,
-                        "UnloadBranch",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn unload_branch(this: ProcSceneManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ProcSceneManager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_unload_branch::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_unload_async {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProcSceneManager as ::unity2::ClassIdentity>::class(),
-                "UnloadAsync",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProcSceneManager as ::unity2::ClassIdentity>::NAME,
-                        "UnloadAsync",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn unload_async(this: ProcSceneManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ProcSceneManager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_unload_async::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_wait_async {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProcSceneManager as ::unity2::ClassIdentity>::class(),
-                "WaitAsync",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProcSceneManager as ::unity2::ClassIdentity>::NAME,
-                        "WaitAsync",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn wait_async(this: ProcSceneManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ProcSceneManager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_wait_async::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_release {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProcSceneManager as ::unity2::ClassIdentity>::class(),
-                "Release",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProcSceneManager as ::unity2::ClassIdentity>::NAME,
-                        "Release",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn release(this: ProcSceneManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ProcSceneManager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_release::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_load_async {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProcSceneManager as ::unity2::ClassIdentity>::class(),
-                "LoadAsync",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProcSceneManager as ::unity2::ClassIdentity>::NAME,
-                        "LoadAsync",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn load_async(this: ProcSceneManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ProcSceneManager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_load_async::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_done_async {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProcSceneManager as ::unity2::ClassIdentity>::class(),
-                "DoneAsync",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProcSceneManager as ::unity2::ClassIdentity>::NAME,
-                        "DoneAsync",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn done_async(this: ProcSceneManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ProcSceneManager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_done_async::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_load_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::scene_management::loadscenemode::LoadSceneMode as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProcSceneManager as ::unity2::ClassIdentity>::class(),
-                "LoadBind",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProcSceneManager as ::unity2::ClassIdentity>::NAME,
-                        "LoadBind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn load_bind(
-        super_: crate::app::procinst::ProcInst,
-        name: ::unity2::Il2CppString,
-        mode: crate::unity_engine::scene_management::loadscenemode::LoadSceneMode,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            ::unity2::Il2CppString,
-            crate::unity_engine::scene_management::loadscenemode::LoadSceneMode,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_load_bind::get_method_info().method_ptr);
-        inner(super_, name, mode, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_unload_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProcSceneManager as ::unity2::ClassIdentity>::class(),
-                "UnloadBind",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProcSceneManager as ::unity2::ClassIdentity>::NAME,
-                        "UnloadBind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn unload_bind(super_: crate::app::procinst::ProcInst, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_unload_bind::get_method_info().method_ptr);
-        inner(super_, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_unload_bind_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProcSceneManager as ::unity2::ClassIdentity>::class(),
-                "UnloadBind",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProcSceneManager as ::unity2::ClassIdentity>::NAME,
-                        "UnloadBind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn unload_bind_2(
-        super_: crate::app::procinst::ProcInst,
-        name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_unload_bind_2::get_method_info().method_ptr);
-        inner(super_, name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_unload_bind_impl {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::scene_management::loadscenemode::LoadSceneMode as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProcSceneManager as ::unity2::ClassIdentity>::class(),
-                "UnloadBindImpl",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProcSceneManager as ::unity2::ClassIdentity>::NAME,
-                        "UnloadBindImpl",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn unload_bind_impl(
-        super_: crate::app::procinst::ProcInst,
-        name: ::unity2::Il2CppString,
-        mode: crate::unity_engine::scene_management::loadscenemode::LoadSceneMode,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            ::unity2::Il2CppString,
-            crate::unity_engine::scene_management::loadscenemode::LoadSceneMode,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_unload_bind_impl::get_method_info().method_ptr);
-        inner(super_, name, mode, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProcSceneManager as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProcSceneManager as ::unity2::ClassIdentity>::NAME,
-                        ".cctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ProcSceneManager_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: scene_management :: loadscenemode :: LoadSceneMode as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProcSceneManager as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProcSceneManager as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : ProcSceneManager , name : :: unity2 :: Il2CppString , mode : crate :: unity_engine :: scene_management :: loadscenemode :: LoadSceneMode , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ProcSceneManager , :: unity2 :: Il2CppString , crate :: unity_engine :: scene_management :: loadscenemode :: LoadSceneMode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , name , mode , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_has_empty_scene { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProcSceneManager as :: unity2 :: ClassIdentity > :: class () , "HasEmptyScene" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProcSceneManager as :: unity2 :: ClassIdentity > :: NAME , "HasEmptyScene" , e) , } } } pub unsafe fn has_empty_scene (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_has_empty_scene :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_unload_branch { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProcSceneManager as :: unity2 :: ClassIdentity > :: class () , "UnloadBranch" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProcSceneManager as :: unity2 :: ClassIdentity > :: NAME , "UnloadBranch" , e) , } } } pub unsafe fn unload_branch (this : ProcSceneManager , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ProcSceneManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_unload_branch :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_unload_async { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProcSceneManager as :: unity2 :: ClassIdentity > :: class () , "UnloadAsync" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProcSceneManager as :: unity2 :: ClassIdentity > :: NAME , "UnloadAsync" , e) , } } } pub unsafe fn unload_async (this : ProcSceneManager , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ProcSceneManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_unload_async :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_wait_async { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProcSceneManager as :: unity2 :: ClassIdentity > :: class () , "WaitAsync" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProcSceneManager as :: unity2 :: ClassIdentity > :: NAME , "WaitAsync" , e) , } } } pub unsafe fn wait_async (this : ProcSceneManager , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ProcSceneManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_wait_async :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_release { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProcSceneManager as :: unity2 :: ClassIdentity > :: class () , "Release" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProcSceneManager as :: unity2 :: ClassIdentity > :: NAME , "Release" , e) , } } } pub unsafe fn release (this : ProcSceneManager , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ProcSceneManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_release :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_load_async { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProcSceneManager as :: unity2 :: ClassIdentity > :: class () , "LoadAsync" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProcSceneManager as :: unity2 :: ClassIdentity > :: NAME , "LoadAsync" , e) , } } } pub unsafe fn load_async (this : ProcSceneManager , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ProcSceneManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_load_async :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_done_async { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProcSceneManager as :: unity2 :: ClassIdentity > :: class () , "DoneAsync" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProcSceneManager as :: unity2 :: ClassIdentity > :: NAME , "DoneAsync" , e) , } } } pub unsafe fn done_async (this : ProcSceneManager , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ProcSceneManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_done_async :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_load_bind { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: scene_management :: loadscenemode :: LoadSceneMode as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProcSceneManager as :: unity2 :: ClassIdentity > :: class () , "LoadBind" , 3 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProcSceneManager as :: unity2 :: ClassIdentity > :: NAME , "LoadBind" , e) , } } } pub unsafe fn load_bind (super_ : crate :: app :: procinst :: ProcInst , name : :: unity2 :: Il2CppString , mode : crate :: unity_engine :: scene_management :: loadscenemode :: LoadSceneMode , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: Il2CppString , crate :: unity_engine :: scene_management :: loadscenemode :: LoadSceneMode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_load_bind :: get_method_info () . method_ptr ,) ; inner (super_ , name , mode , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_unload_bind { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProcSceneManager as :: unity2 :: ClassIdentity > :: class () , "UnloadBind" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProcSceneManager as :: unity2 :: ClassIdentity > :: NAME , "UnloadBind" , e) , } } } pub unsafe fn unload_bind (super_ : crate :: app :: procinst :: ProcInst , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_unload_bind :: get_method_info () . method_ptr ,) ; inner (super_ , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_unload_bind_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProcSceneManager as :: unity2 :: ClassIdentity > :: class () , "UnloadBind" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProcSceneManager as :: unity2 :: ClassIdentity > :: NAME , "UnloadBind" , e) , } } } pub unsafe fn unload_bind_2 (super_ : crate :: app :: procinst :: ProcInst , name : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_unload_bind_2 :: get_method_info () . method_ptr ,) ; inner (super_ , name , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_unload_bind_impl { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: scene_management :: loadscenemode :: LoadSceneMode as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProcSceneManager as :: unity2 :: ClassIdentity > :: class () , "UnloadBindImpl" , 3 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProcSceneManager as :: unity2 :: ClassIdentity > :: NAME , "UnloadBindImpl" , e) , } } } pub unsafe fn unload_bind_impl (super_ : crate :: app :: procinst :: ProcInst , name : :: unity2 :: Il2CppString , mode : crate :: unity_engine :: scene_management :: loadscenemode :: LoadSceneMode , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: Il2CppString , crate :: unity_engine :: scene_management :: loadscenemode :: LoadSceneMode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_unload_bind_impl :: get_method_info () . method_ptr ,) ; inner (super_ , name , mode , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProcSceneManager as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProcSceneManager as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
+
+#[cfg(feature = "app-procscenemanager")]
+impl ProcSceneManager { # [doc = "`HasEmptyScene()` overload"] pub fn has_empty_scene () -> bool { unsafe { __ProcSceneManager_unity2_raw :: has_empty_scene (:: core :: option :: Option :: None) } } # [doc = "`LoadBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::unity_engine::scene_management::loadscenemode::LoadSceneMode)` overload"] pub fn load_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , mode : impl :: core :: convert :: Into < crate :: unity_engine :: scene_management :: loadscenemode :: LoadSceneMode >) -> () { unsafe { __ProcSceneManager_unity2_raw :: load_bind (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (mode) , :: core :: option :: Option :: None) } } # [doc = "`UnloadBind(crate::app::procinst::ProcInst)` overload"] pub fn unload_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { __ProcSceneManager_unity2_raw :: unload_bind (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } # [doc = "`UnloadBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString)` overload"] pub fn unload_bind_2 (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { __ProcSceneManager_unity2_raw :: unload_bind_2 (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } # [doc = "`UnloadBindImpl(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::unity_engine::scene_management::loadscenemode::LoadSceneMode)` overload"] pub fn unload_bind_impl (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , mode : impl :: core :: convert :: Into < crate :: unity_engine :: scene_management :: loadscenemode :: LoadSceneMode >) -> () { unsafe { __ProcSceneManager_unity2_raw :: unload_bind_impl (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (mode) , :: core :: option :: Option :: None) } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { __ProcSceneManager_unity2_raw :: cctor (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-procscenemanager")]
+pub trait IProcSceneManagerMethods : IProcSceneManager { # [doc = "`.ctor(::unity2::Il2CppString, crate::unity_engine::scene_management::loadscenemode::LoadSceneMode)` overload"] fn ctor (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , mode : impl :: core :: convert :: Into < crate :: unity_engine :: scene_management :: loadscenemode :: LoadSceneMode >) -> () { unsafe { let __receiver = < ProcSceneManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ProcSceneManager_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (mode) , :: core :: option :: Option :: None) } } # [doc = "`UnloadBranch()` overload"] fn unload_branch (self ,) -> () { unsafe { let __receiver = < ProcSceneManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ProcSceneManager_unity2_raw :: unload_branch (__receiver , :: core :: option :: Option :: None) } } # [doc = "`UnloadAsync()` overload"] fn unload_async (self ,) -> () { unsafe { let __receiver = < ProcSceneManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ProcSceneManager_unity2_raw :: unload_async (__receiver , :: core :: option :: Option :: None) } } # [doc = "`WaitAsync()` overload"] fn wait_async (self ,) -> () { unsafe { let __receiver = < ProcSceneManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ProcSceneManager_unity2_raw :: wait_async (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Release()` overload"] fn release (self ,) -> () { unsafe { let __receiver = < ProcSceneManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ProcSceneManager_unity2_raw :: release (__receiver , :: core :: option :: Option :: None) } } # [doc = "`LoadAsync()` overload"] fn load_async (self ,) -> () { unsafe { let __receiver = < ProcSceneManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ProcSceneManager_unity2_raw :: load_async (__receiver , :: core :: option :: Option :: None) } } # [doc = "`DoneAsync()` overload"] fn done_async (self ,) -> () { unsafe { let __receiver = < ProcSceneManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ProcSceneManager_unity2_raw :: done_async (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-procscenemanager")]
+impl < __T : IProcSceneManager > IProcSceneManagerMethods for __T { }
+
+#[cfg(feature = "app-procscenemanager")]
+impl ProcSceneManager { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProcSceneManager_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn has_empty_scene_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProcSceneManager_unity2_raw :: __lookup_has_empty_scene :: get_method_info () } pub fn unload_branch_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProcSceneManager_unity2_raw :: __lookup_unload_branch :: get_method_info () } pub fn unload_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProcSceneManager_unity2_raw :: __lookup_unload_async :: get_method_info () } pub fn wait_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProcSceneManager_unity2_raw :: __lookup_wait_async :: get_method_info () } pub fn release_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProcSceneManager_unity2_raw :: __lookup_release :: get_method_info () } pub fn load_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProcSceneManager_unity2_raw :: __lookup_load_async :: get_method_info () } pub fn done_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProcSceneManager_unity2_raw :: __lookup_done_async :: get_method_info () } pub fn load_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProcSceneManager_unity2_raw :: __lookup_load_bind :: get_method_info () } pub fn unload_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProcSceneManager_unity2_raw :: __lookup_unload_bind :: get_method_info () } pub fn unload_bind_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProcSceneManager_unity2_raw :: __lookup_unload_bind_2 :: get_method_info () } pub fn unload_bind_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProcSceneManager_unity2_raw :: __lookup_unload_bind_impl :: get_method_info () } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProcSceneManager_unity2_raw :: __lookup_cctor :: get_method_info () } }
 
 #[cfg(feature = "app-procscenemanager")]
 impl ProcSceneManager {
-    #[doc = "`HasEmptyScene()` overload"]
-    pub fn has_empty_scene() -> bool {
-        unsafe { __ProcSceneManager_unity2_raw::has_empty_scene(::core::option::Option::None) }
-    }
-
-    #[doc = "`LoadBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::unity_engine::scene_management::loadscenemode::LoadSceneMode)` overload"]
-    pub fn load_bind(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        mode: impl ::core::convert::Into<crate::unity_engine::scene_management::loadscenemode::LoadSceneMode>,
-    ) -> () {
-        unsafe {
-            __ProcSceneManager_unity2_raw::load_bind(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(name),
-                ::core::convert::Into::into(mode),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`UnloadBind(crate::app::procinst::ProcInst)` overload"]
-    pub fn unload_bind(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
-        unsafe { __ProcSceneManager_unity2_raw::unload_bind(::core::convert::Into::into(super_), ::core::option::Option::None) }
-    }
-
-    #[doc = "`UnloadBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString)` overload"]
-    pub fn unload_bind_2(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
-        unsafe {
-            __ProcSceneManager_unity2_raw::unload_bind_2(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(name),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`UnloadBindImpl(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::unity_engine::scene_management::loadscenemode::LoadSceneMode)` overload"]
-    pub fn unload_bind_impl(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        mode: impl ::core::convert::Into<crate::unity_engine::scene_management::loadscenemode::LoadSceneMode>,
-    ) -> () {
-        unsafe {
-            __ProcSceneManager_unity2_raw::unload_bind_impl(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(name),
-                ::core::convert::Into::into(mode),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __ProcSceneManager_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-procscenemanager")]
-pub trait IProcSceneManagerMethods: IProcSceneManager {
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::unity_engine::scene_management::loadscenemode::LoadSceneMode)` overload"]
-    fn ctor(
-        self,
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        mode: impl ::core::convert::Into<crate::unity_engine::scene_management::loadscenemode::LoadSceneMode>,
-    ) -> () {
-        unsafe {
-            let __receiver = <ProcSceneManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ProcSceneManager_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(name),
-                ::core::convert::Into::into(mode),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`UnloadBranch()` overload"]
-    fn unload_branch(self) -> () {
-        unsafe {
-            let __receiver = <ProcSceneManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ProcSceneManager_unity2_raw::unload_branch(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`UnloadAsync()` overload"]
-    fn unload_async(self) -> () {
-        unsafe {
-            let __receiver = <ProcSceneManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ProcSceneManager_unity2_raw::unload_async(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`WaitAsync()` overload"]
-    fn wait_async(self) -> () {
-        unsafe {
-            let __receiver = <ProcSceneManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ProcSceneManager_unity2_raw::wait_async(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Release()` overload"]
-    fn release(self) -> () {
-        unsafe {
-            let __receiver = <ProcSceneManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ProcSceneManager_unity2_raw::release(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`LoadAsync()` overload"]
-    fn load_async(self) -> () {
-        unsafe {
-            let __receiver = <ProcSceneManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ProcSceneManager_unity2_raw::load_async(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`DoneAsync()` overload"]
-    fn done_async(self) -> () {
-        unsafe {
-            let __receiver = <ProcSceneManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ProcSceneManager_unity2_raw::done_async(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-procscenemanager")]
-impl<__T: IProcSceneManager> IProcSceneManagerMethods for __T {}
-
-#[cfg(feature = "app-procscenemanager")]
-impl ProcSceneManager {
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::unity_engine::scene_management::loadscenemode::LoadSceneMode)` — overload selector"]
-    pub fn new(name: ::unity2::Il2CppString, mode: crate::unity_engine::scene_management::loadscenemode::LoadSceneMode) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ProcSceneManager),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IProcSceneManagerMethods>::ctor(this, name, mode);
-        this
-    }
+# [doc = "`.ctor(::unity2::Il2CppString, crate::unity_engine::scene_management::loadscenemode::LoadSceneMode)` — overload selector"] pub fn new (name : :: unity2 :: Il2CppString , mode : crate :: unity_engine :: scene_management :: loadscenemode :: LoadSceneMode) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProcSceneManager) , :: core :: stringify ! (new) ,)) ; < Self as IProcSceneManagerMethods > :: ctor (this , name , mode) ; this }
 }
 
 #[cfg(feature = "app-procscenemanager")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IProcSceneManager, IProcSceneManagerMethods, ProcSceneManager, ProcSceneManager_Label};
-    #[cfg(feature = "app-procinst")]
-    pub use crate::app::procinst::IProcInstMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::{
-        app::procinst::IProcInst,
-        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
-    };
+    pub use super::ProcSceneManager_Label;
+    pub use super::ProcSceneManager;
+    pub use super::IProcSceneManager;
+    pub use super::IProcSceneManagerMethods;
+    pub use crate::app::procinst::IProcInst;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "app-procinst")] pub use crate::app::procinst::IProcInstMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

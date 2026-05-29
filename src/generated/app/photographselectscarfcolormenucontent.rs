@@ -2,369 +2,66 @@
 
 #[cfg(feature = "app-photographselectscarfcolormenucontent-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::basicmenucontent::{BasicMenuContent, IBasicMenuContent},
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographselectscarfcolormenucontent/PhotographSelectScarfColorMenuContent.md"))]
-    #[::unity2::class(namespace = "App", name = "PhotographSelectScarfColorMenuContent")]
-    #[parent(crate::app::basicmenucontent::BasicMenuContent)]
-    pub struct PhotographSelectScarfColorMenuContent {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: basicmenucontent :: { BasicMenuContent , IBasicMenuContent }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographselectscarfcolormenucontent/PhotographSelectScarfColorMenuContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "PhotographSelectScarfColorMenuContent")] # [parent (crate :: app :: basicmenucontent :: BasicMenuContent)] pub struct PhotographSelectScarfColorMenuContent {}
+
 }
 
 #[cfg(feature = "app-photographselectscarfcolormenucontent-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-photographselectscarfcolormenucontent")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __PhotographSelectScarfColorMenuContent_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <crate::app::photographallmenucontent::PhotographAllMenuContent as ::unity2::IlType>::il_type(),
-                <crate::app::photographdisposmanager::PhotographDisposManager as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PhotographSelectScarfColorMenuContent as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PhotographSelectScarfColorMenuContent as ::unity2::ClassIdentity>::NAME,
-                        "CreateBind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        all_menu_content: crate::app::photographallmenucontent::PhotographAllMenuContent,
-        dispos_manager: crate::app::photographdisposmanager::PhotographDisposManager,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            crate::app::photographallmenucontent::PhotographAllMenuContent,
-            crate::app::photographdisposmanager::PhotographDisposManager,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
-        inner(super_, all_menu_content, dispos_manager, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_w {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PhotographSelectScarfColorMenuContent as ::unity2::ClassIdentity>::class(),
-                "CalcW",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PhotographSelectScarfColorMenuContent as ::unity2::ClassIdentity>::NAME,
-                        "CalcW",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn calc_w(this: PhotographSelectScarfColorMenuContent, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(PhotographSelectScarfColorMenuContent, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_calc_w::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_h {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PhotographSelectScarfColorMenuContent as ::unity2::ClassIdentity>::class(),
-                "CalcH",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PhotographSelectScarfColorMenuContent as ::unity2::ClassIdentity>::NAME,
-                        "CalcH",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn calc_h(this: PhotographSelectScarfColorMenuContent, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(PhotographSelectScarfColorMenuContent, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_calc_h::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_cursor_moved_pos_x {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PhotographSelectScarfColorMenuContent as ::unity2::ClassIdentity>::class(),
-                "CalcCursorMovedPosX",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PhotographSelectScarfColorMenuContent as ::unity2::ClassIdentity>::NAME,
-                        "CalcCursorMovedPosX",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn calc_cursor_moved_pos_x(
-        this: PhotographSelectScarfColorMenuContent,
-        menu_item_idx: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
-        let inner: extern "C" fn(PhotographSelectScarfColorMenuContent, i32, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_calc_cursor_moved_pos_x::get_method_info().method_ptr);
-        inner(this, menu_item_idx, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_cursor_moved_pos_y {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PhotographSelectScarfColorMenuContent as ::unity2::ClassIdentity>::class(),
-                "CalcCursorMovedPosY",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PhotographSelectScarfColorMenuContent as ::unity2::ClassIdentity>::NAME,
-                        "CalcCursorMovedPosY",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn calc_cursor_moved_pos_y(
-        this: PhotographSelectScarfColorMenuContent,
-        menu_item_idx: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
-        let inner: extern "C" fn(PhotographSelectScarfColorMenuContent, i32, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_calc_cursor_moved_pos_y::get_method_info().method_ptr);
-        inner(this, menu_item_idx, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PhotographSelectScarfColorMenuContent as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PhotographSelectScarfColorMenuContent as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: PhotographSelectScarfColorMenuContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(PhotographSelectScarfColorMenuContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __PhotographSelectScarfColorMenuContent_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_bind { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: photographallmenucontent :: PhotographAllMenuContent as :: unity2 :: IlType > :: il_type () , < crate :: app :: photographdisposmanager :: PhotographDisposManager as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PhotographSelectScarfColorMenuContent as :: unity2 :: ClassIdentity > :: class () , "CreateBind" , 3 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PhotographSelectScarfColorMenuContent as :: unity2 :: ClassIdentity > :: NAME , "CreateBind" , e) , } } } pub unsafe fn create_bind (super_ : crate :: app :: procinst :: ProcInst , all_menu_content : crate :: app :: photographallmenucontent :: PhotographAllMenuContent , dispos_manager : crate :: app :: photographdisposmanager :: PhotographDisposManager , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: photographallmenucontent :: PhotographAllMenuContent , crate :: app :: photographdisposmanager :: PhotographDisposManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create_bind :: get_method_info () . method_ptr ,) ; inner (super_ , all_menu_content , dispos_manager , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_calc_w { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PhotographSelectScarfColorMenuContent as :: unity2 :: ClassIdentity > :: class () , "CalcW" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PhotographSelectScarfColorMenuContent as :: unity2 :: ClassIdentity > :: NAME , "CalcW" , e) , } } } pub unsafe fn calc_w (this : PhotographSelectScarfColorMenuContent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (PhotographSelectScarfColorMenuContent , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_calc_w :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_calc_h { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PhotographSelectScarfColorMenuContent as :: unity2 :: ClassIdentity > :: class () , "CalcH" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PhotographSelectScarfColorMenuContent as :: unity2 :: ClassIdentity > :: NAME , "CalcH" , e) , } } } pub unsafe fn calc_h (this : PhotographSelectScarfColorMenuContent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (PhotographSelectScarfColorMenuContent , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_calc_h :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_calc_cursor_moved_pos_x { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PhotographSelectScarfColorMenuContent as :: unity2 :: ClassIdentity > :: class () , "CalcCursorMovedPosX" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PhotographSelectScarfColorMenuContent as :: unity2 :: ClassIdentity > :: NAME , "CalcCursorMovedPosX" , e) , } } } pub unsafe fn calc_cursor_moved_pos_x (this : PhotographSelectScarfColorMenuContent , menu_item_idx : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (PhotographSelectScarfColorMenuContent , i32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_calc_cursor_moved_pos_x :: get_method_info () . method_ptr ,) ; inner (this , menu_item_idx , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_calc_cursor_moved_pos_y { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PhotographSelectScarfColorMenuContent as :: unity2 :: ClassIdentity > :: class () , "CalcCursorMovedPosY" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PhotographSelectScarfColorMenuContent as :: unity2 :: ClassIdentity > :: NAME , "CalcCursorMovedPosY" , e) , } } } pub unsafe fn calc_cursor_moved_pos_y (this : PhotographSelectScarfColorMenuContent , menu_item_idx : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (PhotographSelectScarfColorMenuContent , i32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_calc_cursor_moved_pos_y :: get_method_info () . method_ptr ,) ; inner (this , menu_item_idx , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PhotographSelectScarfColorMenuContent as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PhotographSelectScarfColorMenuContent as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : PhotographSelectScarfColorMenuContent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (PhotographSelectScarfColorMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-photographselectscarfcolormenucontent")]
+impl PhotographSelectScarfColorMenuContent { # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::photographallmenucontent::PhotographAllMenuContent, crate::app::photographdisposmanager::PhotographDisposManager)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , all_menu_content : impl :: core :: convert :: Into < crate :: app :: photographallmenucontent :: PhotographAllMenuContent > , dispos_manager : impl :: core :: convert :: Into < crate :: app :: photographdisposmanager :: PhotographDisposManager >) -> () { unsafe { __PhotographSelectScarfColorMenuContent_unity2_raw :: create_bind (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (all_menu_content) , :: core :: convert :: Into :: into (dispos_manager) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-photographselectscarfcolormenucontent")]
+pub trait IPhotographSelectScarfColorMenuContentMethods : IPhotographSelectScarfColorMenuContent { # [doc = "`CalcW()` overload"] fn calc_w (self ,) -> f32 { unsafe { let __receiver = < PhotographSelectScarfColorMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __PhotographSelectScarfColorMenuContent_unity2_raw :: calc_w (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CalcH()` overload"] fn calc_h (self ,) -> f32 { unsafe { let __receiver = < PhotographSelectScarfColorMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __PhotographSelectScarfColorMenuContent_unity2_raw :: calc_h (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CalcCursorMovedPosX(i32)` overload"] fn calc_cursor_moved_pos_x (self , menu_item_idx : impl :: core :: convert :: Into < i32 >) -> f32 { unsafe { let __receiver = < PhotographSelectScarfColorMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __PhotographSelectScarfColorMenuContent_unity2_raw :: calc_cursor_moved_pos_x (__receiver , :: core :: convert :: Into :: into (menu_item_idx) , :: core :: option :: Option :: None) } } # [doc = "`CalcCursorMovedPosY(i32)` overload"] fn calc_cursor_moved_pos_y (self , menu_item_idx : impl :: core :: convert :: Into < i32 >) -> f32 { unsafe { let __receiver = < PhotographSelectScarfColorMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __PhotographSelectScarfColorMenuContent_unity2_raw :: calc_cursor_moved_pos_y (__receiver , :: core :: convert :: Into :: into (menu_item_idx) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < PhotographSelectScarfColorMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __PhotographSelectScarfColorMenuContent_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-photographselectscarfcolormenucontent")]
+impl < __T : IPhotographSelectScarfColorMenuContent > IPhotographSelectScarfColorMenuContentMethods for __T { }
+
+#[cfg(feature = "app-photographselectscarfcolormenucontent")]
+impl PhotographSelectScarfColorMenuContent { pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PhotographSelectScarfColorMenuContent_unity2_raw :: __lookup_create_bind :: get_method_info () } pub fn calc_w_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PhotographSelectScarfColorMenuContent_unity2_raw :: __lookup_calc_w :: get_method_info () } pub fn calc_h_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PhotographSelectScarfColorMenuContent_unity2_raw :: __lookup_calc_h :: get_method_info () } pub fn calc_cursor_moved_pos_x_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PhotographSelectScarfColorMenuContent_unity2_raw :: __lookup_calc_cursor_moved_pos_x :: get_method_info () } pub fn calc_cursor_moved_pos_y_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PhotographSelectScarfColorMenuContent_unity2_raw :: __lookup_calc_cursor_moved_pos_y :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PhotographSelectScarfColorMenuContent_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-photographselectscarfcolormenucontent")]
 impl PhotographSelectScarfColorMenuContent {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::photographallmenucontent::PhotographAllMenuContent, crate::app::photographdisposmanager::PhotographDisposManager)` overload"]
-    pub fn create_bind(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        all_menu_content: impl ::core::convert::Into<crate::app::photographallmenucontent::PhotographAllMenuContent>,
-        dispos_manager: impl ::core::convert::Into<crate::app::photographdisposmanager::PhotographDisposManager>,
-    ) -> () {
-        unsafe {
-            __PhotographSelectScarfColorMenuContent_unity2_raw::create_bind(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(all_menu_content),
-                ::core::convert::Into::into(dispos_manager),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-photographselectscarfcolormenucontent")]
-pub trait IPhotographSelectScarfColorMenuContentMethods: IPhotographSelectScarfColorMenuContent {
-    #[doc = "`CalcW()` overload"]
-    fn calc_w(self) -> f32 {
-        unsafe {
-            let __receiver = <PhotographSelectScarfColorMenuContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PhotographSelectScarfColorMenuContent_unity2_raw::calc_w(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CalcH()` overload"]
-    fn calc_h(self) -> f32 {
-        unsafe {
-            let __receiver = <PhotographSelectScarfColorMenuContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PhotographSelectScarfColorMenuContent_unity2_raw::calc_h(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CalcCursorMovedPosX(i32)` overload"]
-    fn calc_cursor_moved_pos_x(self, menu_item_idx: impl ::core::convert::Into<i32>) -> f32 {
-        unsafe {
-            let __receiver = <PhotographSelectScarfColorMenuContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PhotographSelectScarfColorMenuContent_unity2_raw::calc_cursor_moved_pos_x(
-                __receiver,
-                ::core::convert::Into::into(menu_item_idx),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CalcCursorMovedPosY(i32)` overload"]
-    fn calc_cursor_moved_pos_y(self, menu_item_idx: impl ::core::convert::Into<i32>) -> f32 {
-        unsafe {
-            let __receiver = <PhotographSelectScarfColorMenuContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PhotographSelectScarfColorMenuContent_unity2_raw::calc_cursor_moved_pos_y(
-                __receiver,
-                ::core::convert::Into::into(menu_item_idx),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <PhotographSelectScarfColorMenuContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PhotographSelectScarfColorMenuContent_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-photographselectscarfcolormenucontent")]
-impl<__T: IPhotographSelectScarfColorMenuContent> IPhotographSelectScarfColorMenuContentMethods for __T {}
-
-#[cfg(feature = "app-photographselectscarfcolormenucontent")]
-impl PhotographSelectScarfColorMenuContent {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(PhotographSelectScarfColorMenuContent),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IPhotographSelectScarfColorMenuContentMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (PhotographSelectScarfColorMenuContent) , :: core :: stringify ! (new) ,)) ; < Self as IPhotographSelectScarfColorMenuContentMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-photographselectscarfcolormenucontent")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IPhotographSelectScarfColorMenuContent, IPhotographSelectScarfColorMenuContentMethods, PhotographSelectScarfColorMenuContent};
-    #[cfg(feature = "app-basicmenucontent")]
-    pub use crate::app::basicmenucontent::IBasicMenuContentMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        app::basicmenucontent::IBasicMenuContent,
-        system::object::IObject,
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::PhotographSelectScarfColorMenuContent;
+    pub use super::IPhotographSelectScarfColorMenuContent;
+    pub use super::IPhotographSelectScarfColorMenuContentMethods;
+    pub use crate::app::basicmenucontent::IBasicMenuContent;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "app-basicmenucontent")] pub use crate::app::basicmenucontent::IBasicMenuContentMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

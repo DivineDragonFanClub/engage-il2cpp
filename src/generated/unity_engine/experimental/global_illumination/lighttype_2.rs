@@ -2,68 +2,95 @@
 
 #[cfg(feature = "unity_engine-experimental-global_illumination-lighttype_2-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        r#enum::{Enum, IEnum},
-        valuetype::{IValueType, ValueType},
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/global_illumination/lighttype_2/LightType_2.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct LightType_2 {
-        pub value: i32,
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/global_illumination/lighttype_2/LightType_2.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct LightType_2  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for LightType_2  {
+    const NAMESPACE: &'static str = "UnityEngine.Experimental.GlobalIllumination";
+
+    const NAME: &'static str = "LightType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    impl ::unity2::ClassIdentity for LightType_2 {
-        const NAME: &'static str = "LightType";
-        const NAMESPACE: &'static str = "UnityEngine.Experimental.GlobalIllumination";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  ::unity2::IlType for LightType_2  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::IlType for LightType_2 {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  LightType_2  {
+    pub fn directional() -> Self {
+        Self { value: 50462976 }
+
     }
 
-    impl LightType_2 {
-        pub fn directional() -> Self {
-            Self { value: 50462976 }
-        }
 
-        pub fn point() -> Self {
-            Self { value: 67305985 }
-        }
+    pub fn point() -> Self {
+        Self { value: 67305985 }
 
-        pub fn spot() -> Self {
-            Self { value: 84148994 }
-        }
-
-        pub fn rectangle() -> Self {
-            Self { value: 100992003 }
-        }
-
-        pub fn disc() -> Self {
-            Self { value: 394500 }
-        }
-
-        pub fn spot_pyramid_shape() -> Self {
-            Self { value: 16778757 }
-        }
-
-        pub fn spot_box_shape() -> Self {
-            Self { value: 33619974 }
-        }
     }
+
+
+    pub fn spot() -> Self {
+        Self { value: 84148994 }
+
+    }
+
+
+    pub fn rectangle() -> Self {
+        Self { value: 100992003 }
+
+    }
+
+
+    pub fn disc() -> Self {
+        Self { value: 394500 }
+
+    }
+
+
+    pub fn spot_pyramid_shape() -> Self {
+        Self { value: 16778757 }
+
+    }
+
+
+    pub fn spot_box_shape() -> Self {
+        Self { value: 33619974 }
+
+    }
+
+}
+
 }
 
 #[cfg(feature = "unity_engine-experimental-global_illumination-lighttype_2-types")]
@@ -73,11 +100,10 @@ pub use __types::*;
 #[doc(hidden)]
 pub mod prelude {
     pub use super::LightType_2;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::system::{object::IObject, r#enum::IEnum, valuetype::IValueType};
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

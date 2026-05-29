@@ -2,273 +2,54 @@
 
 #[cfg(feature = "app-sortiesequenceitemshop-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::{
-            hubitemshopsequence::{HubItemShopSequence, IHubItemShopSequence},
-            procinst::{IProcInst, ProcInst},
-        },
-        system::object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortiesequenceitemshop/SortieSequenceItemShop.md"))]
-    #[::unity2::class(namespace = "App", name = "SortieSequenceItemShop")]
-    #[parent(crate::app::hubitemshopsequence::HubItemShopSequence)]
-    pub struct SortieSequenceItemShop {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: hubitemshopsequence :: { HubItemShopSequence , IHubItemShopSequence }
+ ;
+ use crate :: app :: procinst :: { IProcInst , ProcInst }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortiesequenceitemshop/SortieSequenceItemShop.md"))] # [:: unity2 :: class (namespace = "App" , name = "SortieSequenceItemShop")] # [parent (crate :: app :: hubitemshopsequence :: HubItemShopSequence)] pub struct SortieSequenceItemShop {}
+
 }
 
 #[cfg(feature = "app-sortiesequenceitemshop-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-sortiesequenceitemshop")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __SortieSequenceItemShop_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieSequenceItemShop as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SortieSequenceItemShop as ::unity2::ClassIdentity>::NAME,
-                        "CreateBind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_bind(super_: crate::app::procinst::ProcInst, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
-        inner(super_, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_item_shop_top_menu {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieSequenceItemShop as ::unity2::ClassIdentity>::class(),
-                "CreateItemShopTopMenu",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SortieSequenceItemShop as ::unity2::ClassIdentity>::NAME,
-                        "CreateItemShopTopMenu",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_item_shop_top_menu(this: SortieSequenceItemShop, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SortieSequenceItemShop, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_create_item_shop_top_menu::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_item_shop_buy_menu {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieSequenceItemShop as ::unity2::ClassIdentity>::class(),
-                "CreateItemShopBuyMenu",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SortieSequenceItemShop as ::unity2::ClassIdentity>::NAME,
-                        "CreateItemShopBuyMenu",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_item_shop_buy_menu(this: SortieSequenceItemShop, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SortieSequenceItemShop, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_create_item_shop_buy_menu::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_dispose {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieSequenceItemShop as ::unity2::ClassIdentity>::class(),
-                "OnDispose",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SortieSequenceItemShop as ::unity2::ClassIdentity>::NAME,
-                        "OnDispose",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_dispose(this: SortieSequenceItemShop, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SortieSequenceItemShop, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_dispose::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieSequenceItemShop as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SortieSequenceItemShop as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: SortieSequenceItemShop, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SortieSequenceItemShop, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __SortieSequenceItemShop_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_bind { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SortieSequenceItemShop as :: unity2 :: ClassIdentity > :: class () , "CreateBind" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SortieSequenceItemShop as :: unity2 :: ClassIdentity > :: NAME , "CreateBind" , e) , } } } pub unsafe fn create_bind (super_ : crate :: app :: procinst :: ProcInst , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create_bind :: get_method_info () . method_ptr ,) ; inner (super_ , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_item_shop_top_menu { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SortieSequenceItemShop as :: unity2 :: ClassIdentity > :: class () , "CreateItemShopTopMenu" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SortieSequenceItemShop as :: unity2 :: ClassIdentity > :: NAME , "CreateItemShopTopMenu" , e) , } } } pub unsafe fn create_item_shop_top_menu (this : SortieSequenceItemShop , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SortieSequenceItemShop , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create_item_shop_top_menu :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_item_shop_buy_menu { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SortieSequenceItemShop as :: unity2 :: ClassIdentity > :: class () , "CreateItemShopBuyMenu" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SortieSequenceItemShop as :: unity2 :: ClassIdentity > :: NAME , "CreateItemShopBuyMenu" , e) , } } } pub unsafe fn create_item_shop_buy_menu (this : SortieSequenceItemShop , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SortieSequenceItemShop , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create_item_shop_buy_menu :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_dispose { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SortieSequenceItemShop as :: unity2 :: ClassIdentity > :: class () , "OnDispose" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SortieSequenceItemShop as :: unity2 :: ClassIdentity > :: NAME , "OnDispose" , e) , } } } pub unsafe fn on_dispose (this : SortieSequenceItemShop , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SortieSequenceItemShop , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_dispose :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SortieSequenceItemShop as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SortieSequenceItemShop as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : SortieSequenceItemShop , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SortieSequenceItemShop , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-sortiesequenceitemshop")]
+impl SortieSequenceItemShop { # [doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { __SortieSequenceItemShop_unity2_raw :: create_bind (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-sortiesequenceitemshop")]
+pub trait ISortieSequenceItemShopMethods : ISortieSequenceItemShop { # [doc = "`CreateItemShopTopMenu()` overload"] fn create_item_shop_top_menu (self ,) -> () { unsafe { let __receiver = < SortieSequenceItemShop as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SortieSequenceItemShop_unity2_raw :: create_item_shop_top_menu (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CreateItemShopBuyMenu()` overload"] fn create_item_shop_buy_menu (self ,) -> () { unsafe { let __receiver = < SortieSequenceItemShop as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SortieSequenceItemShop_unity2_raw :: create_item_shop_buy_menu (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnDispose()` overload"] fn on_dispose (self ,) -> () { unsafe { let __receiver = < SortieSequenceItemShop as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SortieSequenceItemShop_unity2_raw :: on_dispose (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < SortieSequenceItemShop as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SortieSequenceItemShop_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-sortiesequenceitemshop")]
+impl < __T : ISortieSequenceItemShop > ISortieSequenceItemShopMethods for __T { }
+
+#[cfg(feature = "app-sortiesequenceitemshop")]
+impl SortieSequenceItemShop { pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SortieSequenceItemShop_unity2_raw :: __lookup_create_bind :: get_method_info () } pub fn create_item_shop_top_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SortieSequenceItemShop_unity2_raw :: __lookup_create_item_shop_top_menu :: get_method_info () } pub fn create_item_shop_buy_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SortieSequenceItemShop_unity2_raw :: __lookup_create_item_shop_buy_menu :: get_method_info () } pub fn on_dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SortieSequenceItemShop_unity2_raw :: __lookup_on_dispose :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SortieSequenceItemShop_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-sortiesequenceitemshop")]
 impl SortieSequenceItemShop {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
-    pub fn create_bind(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
-        unsafe { __SortieSequenceItemShop_unity2_raw::create_bind(::core::convert::Into::into(super_), ::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-sortiesequenceitemshop")]
-pub trait ISortieSequenceItemShopMethods: ISortieSequenceItemShop {
-    #[doc = "`CreateItemShopTopMenu()` overload"]
-    fn create_item_shop_top_menu(self) -> () {
-        unsafe {
-            let __receiver =
-                <SortieSequenceItemShop as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SortieSequenceItemShop_unity2_raw::create_item_shop_top_menu(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CreateItemShopBuyMenu()` overload"]
-    fn create_item_shop_buy_menu(self) -> () {
-        unsafe {
-            let __receiver =
-                <SortieSequenceItemShop as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SortieSequenceItemShop_unity2_raw::create_item_shop_buy_menu(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnDispose()` overload"]
-    fn on_dispose(self) -> () {
-        unsafe {
-            let __receiver =
-                <SortieSequenceItemShop as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SortieSequenceItemShop_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <SortieSequenceItemShop as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SortieSequenceItemShop_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-sortiesequenceitemshop")]
-impl<__T: ISortieSequenceItemShop> ISortieSequenceItemShopMethods for __T {}
-
-#[cfg(feature = "app-sortiesequenceitemshop")]
-impl SortieSequenceItemShop {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SortieSequenceItemShop),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISortieSequenceItemShopMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SortieSequenceItemShop) , :: core :: stringify ! (new) ,)) ; < Self as ISortieSequenceItemShopMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-sortiesequenceitemshop")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{ISortieSequenceItemShop, ISortieSequenceItemShopMethods, SortieSequenceItemShop};
-    #[cfg(feature = "app-hubitemshopsequence")]
-    pub use crate::app::hubitemshopsequence::IHubItemShopSequenceMethods;
-    #[cfg(feature = "app-procinst")]
-    pub use crate::app::procinst::IProcInstMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::{
-        app::{hubitemshopsequence::IHubItemShopSequence, procinst::IProcInst},
-        system::object::IObject,
-    };
+    pub use super::SortieSequenceItemShop;
+    pub use super::ISortieSequenceItemShop;
+    pub use super::ISortieSequenceItemShopMethods;
+    pub use crate::app::hubitemshopsequence::IHubItemShopSequence;
+    pub use crate::app::procinst::IProcInst;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "app-hubitemshopsequence")] pub use crate::app::hubitemshopsequence::IHubItemShopSequenceMethods;
+    #[cfg(feature = "app-procinst")] pub use crate::app::procinst::IProcInstMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

@@ -2,421 +2,95 @@
 
 #[cfg(feature = "app-mapenvironment-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::singletonmonobehaviour_1::{ISingletonMonoBehaviour_1, SingletonMonoBehaviour_1},
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapenvironment/MapEnvironment_Param.md"))]
-    #[::unity2::class(namespace = "App", name = "MapEnvironment.Param")]
-    #[parent(crate::system::object::Object)]
-    pub struct MapEnvironment_Param {
-        #[offset(16)]
-        #[rename(name = "color")]
-        pub color: crate::unity_engine::color::Color,
-        #[offset(32)]
-        #[rename(name = "start")]
-        pub start: f32,
-        #[offset(36)]
-        #[rename(name = "end")]
-        pub end: f32,
-        #[offset(40)]
-        #[rename(name = "useDefaultShadowPreset")]
-        pub use_default_shadow_preset: bool,
-        #[offset(48)]
-        #[rename(name = "overrideShadowPresetData")]
-        pub override_shadow_preset_data: crate::unity_engine::rendering::universal::custom::customshadowdata::CustomShadowData,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: singletonmonobehaviour_1 :: { ISingletonMonoBehaviour_1 , SingletonMonoBehaviour_1 }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapenvironment/MapEnvironment.md"))]
-    #[::unity2::class(namespace = "App", name = "MapEnvironment")]
-    # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: mapenvironment :: MapEnvironment >)]
-    pub struct MapEnvironment {
-        #[offset(32)]
-        #[rename(name = "Bmap")]
-        pub bmap: crate::app::mapenvironment::MapEnvironment_Param,
-        #[offset(40)]
-        #[rename(name = "Combat")]
-        pub combat: crate::app::mapenvironment::MapEnvironment_Param,
-    }
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapenvironment/MapEnvironment_Param.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapEnvironment.Param")] # [parent (crate :: system :: object :: Object)] pub struct MapEnvironment_Param {
+# [offset (16)] # [rename (name = "color")] pub color : crate :: unity_engine :: color :: Color ,
+# [offset (32)] # [rename (name = "start")] pub start : f32 ,
+# [offset (36)] # [rename (name = "end")] pub end : f32 ,
+# [offset (40)] # [rename (name = "useDefaultShadowPreset")] pub use_default_shadow_preset : bool ,
+# [offset (48)] # [rename (name = "overrideShadowPresetData")] pub override_shadow_preset_data : crate :: unity_engine :: rendering :: universal :: custom :: customshadowdata :: CustomShadowData ,
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapenvironment/MapEnvironment.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapEnvironment")] # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: mapenvironment :: MapEnvironment >)] pub struct MapEnvironment {
+# [offset (32)] # [rename (name = "Bmap")] pub bmap : crate :: app :: mapenvironment :: MapEnvironment_Param ,
+# [offset (40)] # [rename (name = "Combat")] pub combat : crate :: app :: mapenvironment :: MapEnvironment_Param ,
+}
+
 }
 
 #[cfg(feature = "app-mapenvironment-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-mapenvironment")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapEnvironment_Param_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_write {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEnvironment_Param as ::unity2::ClassIdentity>::class(),
-                "Write",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapEnvironment_Param as ::unity2::ClassIdentity>::NAME,
-                        "Write",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn write(this: MapEnvironment_Param, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapEnvironment_Param, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_write::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_read {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEnvironment_Param as ::unity2::ClassIdentity>::class(),
-                "Read",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapEnvironment_Param as ::unity2::ClassIdentity>::NAME,
-                        "Read",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn read(this: MapEnvironment_Param, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapEnvironment_Param, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_read::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEnvironment_Param as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapEnvironment_Param as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: MapEnvironment_Param, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapEnvironment_Param, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MapEnvironment_Param_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_write { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapEnvironment_Param as :: unity2 :: ClassIdentity > :: class () , "Write" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapEnvironment_Param as :: unity2 :: ClassIdentity > :: NAME , "Write" , e) , } } } pub unsafe fn write (this : MapEnvironment_Param , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapEnvironment_Param , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_write :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_read { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapEnvironment_Param as :: unity2 :: ClassIdentity > :: class () , "Read" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapEnvironment_Param as :: unity2 :: ClassIdentity > :: NAME , "Read" , e) , } } } pub unsafe fn read (this : MapEnvironment_Param , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapEnvironment_Param , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_read :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapEnvironment_Param as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapEnvironment_Param as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : MapEnvironment_Param , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapEnvironment_Param , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-mapenvironment")]
-pub trait IMapEnvironment_ParamMethods: IMapEnvironment_Param {
-    #[doc = "`Write()` overload"]
-    fn write(self) -> () {
-        unsafe {
-            let __receiver =
-                <MapEnvironment_Param as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapEnvironment_Param_unity2_raw::write(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Read()` overload"]
-    fn read(self) -> () {
-        unsafe {
-            let __receiver =
-                <MapEnvironment_Param as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapEnvironment_Param_unity2_raw::read(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <MapEnvironment_Param as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapEnvironment_Param_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IMapEnvironment_ParamMethods : IMapEnvironment_Param { # [doc = "`Write()` overload"] fn write (self ,) -> () { unsafe { let __receiver = < MapEnvironment_Param as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapEnvironment_Param_unity2_raw :: write (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Read()` overload"] fn read (self ,) -> () { unsafe { let __receiver = < MapEnvironment_Param as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapEnvironment_Param_unity2_raw :: read (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapEnvironment_Param as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapEnvironment_Param_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-mapenvironment")]
-impl<__T: IMapEnvironment_Param> IMapEnvironment_ParamMethods for __T {}
+impl < __T : IMapEnvironment_Param > IMapEnvironment_ParamMethods for __T { }
+
+#[cfg(feature = "app-mapenvironment")]
+impl MapEnvironment_Param { pub fn write_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapEnvironment_Param_unity2_raw :: __lookup_write :: get_method_info () } pub fn read_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapEnvironment_Param_unity2_raw :: __lookup_read :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapEnvironment_Param_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-mapenvironment")]
 impl MapEnvironment_Param {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapEnvironment_Param),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapEnvironment_ParamMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapEnvironment_Param) , :: core :: stringify ! (new) ,)) ; < Self as IMapEnvironment_ParamMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-mapenvironment")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapEnvironment_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_start {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEnvironment as ::unity2::ClassIdentity>::class(),
-                "Start",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapEnvironment as ::unity2::ClassIdentity>::NAME,
-                        "Start",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn start(this: MapEnvironment, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapEnvironment, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_start::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_shadow_transition {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEnvironment as ::unity2::ClassIdentity>::class(),
-                "SetShadowTransition",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapEnvironment as ::unity2::ClassIdentity>::NAME,
-                        "SetShadowTransition",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_shadow_transition(this: MapEnvironment, transition: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapEnvironment, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_shadow_transition::get_method_info().method_ptr);
-        inner(this, transition, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_transition {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEnvironment as ::unity2::ClassIdentity>::class(),
-                "SetTransition",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapEnvironment as ::unity2::ClassIdentity>::NAME,
-                        "SetTransition",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_transition(this: MapEnvironment, transition: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapEnvironment, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_transition::get_method_info().method_ptr);
-        inner(this, transition, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEnvironment as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapEnvironment as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: MapEnvironment, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapEnvironment, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MapEnvironment_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_start { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapEnvironment as :: unity2 :: ClassIdentity > :: class () , "Start" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapEnvironment as :: unity2 :: ClassIdentity > :: NAME , "Start" , e) , } } } pub unsafe fn start (this : MapEnvironment , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapEnvironment , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_start :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_shadow_transition { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapEnvironment as :: unity2 :: ClassIdentity > :: class () , "SetShadowTransition" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapEnvironment as :: unity2 :: ClassIdentity > :: NAME , "SetShadowTransition" , e) , } } } pub unsafe fn set_shadow_transition (this : MapEnvironment , transition : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapEnvironment , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_shadow_transition :: get_method_info () . method_ptr ,) ; inner (this , transition , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_transition { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapEnvironment as :: unity2 :: ClassIdentity > :: class () , "SetTransition" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapEnvironment as :: unity2 :: ClassIdentity > :: NAME , "SetTransition" , e) , } } } pub unsafe fn set_transition (this : MapEnvironment , transition : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapEnvironment , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_transition :: get_method_info () . method_ptr ,) ; inner (this , transition , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapEnvironment as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapEnvironment as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : MapEnvironment , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapEnvironment , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-mapenvironment")]
-pub trait IMapEnvironmentMethods: IMapEnvironment {
-    #[doc = "`Start()` overload"]
-    fn start(self) -> () {
-        unsafe {
-            let __receiver = <MapEnvironment as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapEnvironment_unity2_raw::start(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetShadowTransition(f32)` overload"]
-    fn set_shadow_transition(self, transition: impl ::core::convert::Into<f32>) -> () {
-        unsafe {
-            let __receiver = <MapEnvironment as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapEnvironment_unity2_raw::set_shadow_transition(__receiver, ::core::convert::Into::into(transition), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetTransition(f32)` overload"]
-    fn set_transition(self, transition: impl ::core::convert::Into<f32>) -> () {
-        unsafe {
-            let __receiver = <MapEnvironment as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapEnvironment_unity2_raw::set_transition(__receiver, ::core::convert::Into::into(transition), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <MapEnvironment as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapEnvironment_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IMapEnvironmentMethods : IMapEnvironment { # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < MapEnvironment as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapEnvironment_unity2_raw :: start (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetShadowTransition(f32)` overload"] fn set_shadow_transition (self , transition : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < MapEnvironment as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapEnvironment_unity2_raw :: set_shadow_transition (__receiver , :: core :: convert :: Into :: into (transition) , :: core :: option :: Option :: None) } } # [doc = "`SetTransition(f32)` overload"] fn set_transition (self , transition : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < MapEnvironment as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapEnvironment_unity2_raw :: set_transition (__receiver , :: core :: convert :: Into :: into (transition) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapEnvironment as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapEnvironment_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-mapenvironment")]
-impl<__T: IMapEnvironment> IMapEnvironmentMethods for __T {}
+impl < __T : IMapEnvironment > IMapEnvironmentMethods for __T { }
+
+#[cfg(feature = "app-mapenvironment")]
+impl MapEnvironment { pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapEnvironment_unity2_raw :: __lookup_start :: get_method_info () } pub fn set_shadow_transition_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapEnvironment_unity2_raw :: __lookup_set_shadow_transition :: get_method_info () } pub fn set_transition_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapEnvironment_unity2_raw :: __lookup_set_transition :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapEnvironment_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-mapenvironment")]
 impl MapEnvironment {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapEnvironment),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapEnvironmentMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapEnvironment) , :: core :: stringify ! (new) ,)) ; < Self as IMapEnvironmentMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-mapenvironment")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{
-        IMapEnvironment, IMapEnvironmentMethods, IMapEnvironment_Param, IMapEnvironment_ParamMethods, MapEnvironment, MapEnvironment_Param,
-    };
-    #[cfg(feature = "app-singletonmonobehaviour_1")]
-    pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1Methods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1,
-        system::object::IObject,
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::MapEnvironment_Param;
+    pub use super::IMapEnvironment_Param;
+    pub use super::IMapEnvironment_ParamMethods;
+    pub use super::MapEnvironment;
+    pub use super::IMapEnvironment;
+    pub use super::IMapEnvironmentMethods;
+    pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "app-singletonmonobehaviour_1")] pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1Methods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

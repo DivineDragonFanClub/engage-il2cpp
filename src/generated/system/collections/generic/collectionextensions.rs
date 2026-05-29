@@ -2,140 +2,31 @@
 
 #[cfg(feature = "system-collections-generic-collectionextensions-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/collectionextensions/CollectionExtensions.md"))]
-    #[::unity2::class(namespace = "System.Collections.Generic", name = "CollectionExtensions")]
-    #[parent(crate::system::object::Object)]
-    pub struct CollectionExtensions {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/collectionextensions/CollectionExtensions.md"))] # [:: unity2 :: class (namespace = "System.Collections.Generic" , name = "CollectionExtensions")] # [parent (crate :: system :: object :: Object)] pub struct CollectionExtensions {}
+
 }
 
 #[cfg(feature = "system-collections-generic-collectionextensions-types")]
 pub use __types::*;
 
 #[cfg(feature = "system-collections-generic-collectionextensions")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __CollectionExtensions_unity2_raw {
-    use super::*;
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __CollectionExtensions_unity2_raw { use super :: * ; }
 
 #[cfg(feature = "system-collections-generic-collectionextensions")]
-impl CollectionExtensions {
-    pub fn get_value_or_default<
-        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
-        M1: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
-    >(
-        dictionary: impl ::core::convert::Into<crate::system::collections::generic::ireadonlydictionary_2::IReadOnlyDictionary_2<M0, M1>>,
-        key: impl ::core::convert::Into<M0>,
-    ) -> M1 {
-        static OPEN: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            ::unity2::lookup::method_info_on_class(<CollectionExtensions as ::unity2::ClassIdentity>::class(), "GetValueOrDefault", 2)
-        });
-        #[allow(clippy::type_complexity)]
-        static CACHE: ::std::sync::OnceLock<::std::sync::Mutex<::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>>> =
-            ::std::sync::OnceLock::new();
-        let _ = true;
-        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
-            ::core::result::Result::Ok(mi) => *mi,
-            ::core::result::Result::Err(e) => {
-                panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CollectionExtensions as ::unity2::ClassIdentity>::NAME,
-                    "GetValueOrDefault",
-                    e
-                )
-            },
-        };
-        let __cache = CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
-        let __key: usize = (<M0 as ::unity2::IlType>::il_type() as *const _ as usize) ^ (<M1 as ::unity2::IlType>::il_type() as *const _ as usize);
-        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
-            let mut __guard = __cache.lock().unwrap();
-            *__guard.entry(__key).or_insert_with(|| {
-                ::unity2::il2cpp::generic::create_generic_method_info(__open, &[
-                    <M0 as ::unity2::IlType>::il_type(),
-                    <M1 as ::unity2::IlType>::il_type(),
-                ])
-            })
-        };
-        unsafe {
-            let __f: extern "C" fn(
-                crate::system::collections::generic::ireadonlydictionary_2::IReadOnlyDictionary_2<M0, M1>,
-                M0,
-                ::unity2::OptionalMethod,
-            ) -> M1 = ::core::mem::transmute(__inflated.method_ptr);
-            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
-            __f(
-                ::core::convert::Into::into(dictionary),
-                ::core::convert::Into::into(key),
-                ::core::option::Option::Some(__mi_opaque),
-            )
-        }
-    }
-
-    pub fn get_value_or_default_2<
-        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
-        M1: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
-    >(
-        dictionary: impl ::core::convert::Into<crate::system::collections::generic::ireadonlydictionary_2::IReadOnlyDictionary_2<M0, M1>>,
-        key: impl ::core::convert::Into<M0>,
-        default_value: impl ::core::convert::Into<M1>,
-    ) -> M1 {
-        static OPEN: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            ::unity2::lookup::method_info_on_class(<CollectionExtensions as ::unity2::ClassIdentity>::class(), "GetValueOrDefault", 3)
-        });
-        #[allow(clippy::type_complexity)]
-        static CACHE: ::std::sync::OnceLock<::std::sync::Mutex<::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>>> =
-            ::std::sync::OnceLock::new();
-        let _ = true;
-        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
-            ::core::result::Result::Ok(mi) => *mi,
-            ::core::result::Result::Err(e) => {
-                panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CollectionExtensions as ::unity2::ClassIdentity>::NAME,
-                    "GetValueOrDefault",
-                    e
-                )
-            },
-        };
-        let __cache = CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
-        let __key: usize = (<M0 as ::unity2::IlType>::il_type() as *const _ as usize) ^ (<M1 as ::unity2::IlType>::il_type() as *const _ as usize);
-        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
-            let mut __guard = __cache.lock().unwrap();
-            *__guard.entry(__key).or_insert_with(|| {
-                ::unity2::il2cpp::generic::create_generic_method_info(__open, &[
-                    <M0 as ::unity2::IlType>::il_type(),
-                    <M1 as ::unity2::IlType>::il_type(),
-                ])
-            })
-        };
-        unsafe {
-            let __f: extern "C" fn(
-                crate::system::collections::generic::ireadonlydictionary_2::IReadOnlyDictionary_2<M0, M1>,
-                M0,
-                M1,
-                ::unity2::OptionalMethod,
-            ) -> M1 = ::core::mem::transmute(__inflated.method_ptr);
-            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
-            __f(
-                ::core::convert::Into::into(dictionary),
-                ::core::convert::Into::into(key),
-                ::core::convert::Into::into(default_value),
-                ::core::option::Option::Some(__mi_opaque),
-            )
-        }
-    }
-}
+impl CollectionExtensions { pub fn get_value_or_default < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity , M1 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > (dictionary : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: ireadonlydictionary_2 :: IReadOnlyDictionary_2 < M0 , M1 > > , key : impl :: core :: convert :: Into < M0 >) -> M1 { static OPEN : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { :: unity2 :: lookup :: method_info_on_class (< CollectionExtensions as :: unity2 :: ClassIdentity > :: class () , "GetValueOrDefault" , 2 ,) }) ; # [allow (clippy :: type_complexity)] static CACHE : :: std :: sync :: OnceLock < :: std :: sync :: Mutex < :: std :: collections :: HashMap < usize , & 'static :: unity2 :: il2cpp :: MethodInfo > , > , > = :: std :: sync :: OnceLock :: new () ; let _ = true ; let __open : & 'static :: unity2 :: il2cpp :: MethodInfo = match & * OPEN { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CollectionExtensions as :: unity2 :: ClassIdentity > :: NAME , "GetValueOrDefault" , e) , } ; let __cache = CACHE . get_or_init (|| { :: std :: sync :: Mutex :: new (:: std :: collections :: HashMap :: new ()) }) ; let __key : usize = (< M0 as :: unity2 :: IlType > :: il_type () as * const _ as usize) ^ (< M1 as :: unity2 :: IlType > :: il_type () as * const _ as usize) ; let __inflated : & 'static :: unity2 :: il2cpp :: MethodInfo = { let mut __guard = __cache . lock () . unwrap () ; * __guard . entry (__key) . or_insert_with (|| { :: unity2 :: il2cpp :: generic :: create_generic_method_info (__open , & [< M0 as :: unity2 :: IlType > :: il_type () , < M1 as :: unity2 :: IlType > :: il_type ()] ,) }) } ; unsafe { let __f : extern "C" fn (crate :: system :: collections :: generic :: ireadonlydictionary_2 :: IReadOnlyDictionary_2 < M0 , M1 > , M0 , :: unity2 :: OptionalMethod ,) -> M1 = :: core :: mem :: transmute (__inflated . method_ptr) ; let __mi_opaque : & 'static () = & * (__inflated as * const _ as * const ()) ; __f (:: core :: convert :: Into :: into (dictionary) , :: core :: convert :: Into :: into (key) , :: core :: option :: Option :: Some (__mi_opaque) ,) } } pub fn get_value_or_default_2 < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity , M1 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > (dictionary : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: ireadonlydictionary_2 :: IReadOnlyDictionary_2 < M0 , M1 > > , key : impl :: core :: convert :: Into < M0 > , default_value : impl :: core :: convert :: Into < M1 >) -> M1 { static OPEN : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { :: unity2 :: lookup :: method_info_on_class (< CollectionExtensions as :: unity2 :: ClassIdentity > :: class () , "GetValueOrDefault" , 3 ,) }) ; # [allow (clippy :: type_complexity)] static CACHE : :: std :: sync :: OnceLock < :: std :: sync :: Mutex < :: std :: collections :: HashMap < usize , & 'static :: unity2 :: il2cpp :: MethodInfo > , > , > = :: std :: sync :: OnceLock :: new () ; let _ = true ; let __open : & 'static :: unity2 :: il2cpp :: MethodInfo = match & * OPEN { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CollectionExtensions as :: unity2 :: ClassIdentity > :: NAME , "GetValueOrDefault" , e) , } ; let __cache = CACHE . get_or_init (|| { :: std :: sync :: Mutex :: new (:: std :: collections :: HashMap :: new ()) }) ; let __key : usize = (< M0 as :: unity2 :: IlType > :: il_type () as * const _ as usize) ^ (< M1 as :: unity2 :: IlType > :: il_type () as * const _ as usize) ; let __inflated : & 'static :: unity2 :: il2cpp :: MethodInfo = { let mut __guard = __cache . lock () . unwrap () ; * __guard . entry (__key) . or_insert_with (|| { :: unity2 :: il2cpp :: generic :: create_generic_method_info (__open , & [< M0 as :: unity2 :: IlType > :: il_type () , < M1 as :: unity2 :: IlType > :: il_type ()] ,) }) } ; unsafe { let __f : extern "C" fn (crate :: system :: collections :: generic :: ireadonlydictionary_2 :: IReadOnlyDictionary_2 < M0 , M1 > , M0 , M1 , :: unity2 :: OptionalMethod ,) -> M1 = :: core :: mem :: transmute (__inflated . method_ptr) ; let __mi_opaque : & 'static () = & * (__inflated as * const _ as * const ()) ; __f (:: core :: convert :: Into :: into (dictionary) , :: core :: convert :: Into :: into (key) , :: core :: convert :: Into :: into (default_value) , :: core :: option :: Option :: Some (__mi_opaque) ,) } } }
 
 #[cfg(feature = "system-collections-generic-collectionextensions")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{CollectionExtensions, ICollectionExtensions};
+    pub use super::CollectionExtensions;
+    pub use super::ICollectionExtensions;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

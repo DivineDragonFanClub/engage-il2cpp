@@ -2,1858 +2,242 @@
 
 #[cfg(feature = "root-tutoriallistroot-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::{
-            object::{IObject, Object},
-            r#enum::{Enum, IEnum},
-            valuetype::{IValueType, ValueType},
-        },
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/tutoriallistroot/TutorialListRoot_SequenceType.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct TutorialListRoot_SequenceType {
-        pub value: i32,
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/tutoriallistroot/TutorialListRoot.md"))] # [:: unity2 :: class (namespace = "" , name = "TutorialListRoot")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct TutorialListRoot {
+# [static_field] # [rename (name = "PrefabPath")] pub prefab_path : :: unity2 :: Il2CppString ,
+# [offset (24)] # [rename (name = "m_Seq")] pub m_seq : crate :: root :: tutoriallistroot :: TutorialListRoot_SequenceType ,
+# [offset (28)] # [rename (name = "m_FadeType")] pub m_fade_type : crate :: root :: tutoriallistroot :: TutorialListRoot_FadeType ,
+# [offset (32)] # [rename (name = "m_ImageAlpha")] pub m_image_alpha : f32 ,
+# [offset (40)] # [rename (name = "m_MainHandle")] pub m_main_handle : crate :: app :: tresourcehandle_1 :: TResourceHandle_1 < crate :: unity_engine :: u2d :: spriteatlas :: SpriteAtlas > ,
+# [offset (48)] # [rename (name = "m_SubHandle")] pub m_sub_handle : crate :: app :: tresourcehandle_1 :: TResourceHandle_1 < crate :: unity_engine :: u2d :: spriteatlas :: SpriteAtlas > ,
+# [offset (56)] # [rename (name = "m_MainSpriteAtlasPath")] pub m_main_sprite_atlas_path : :: unity2 :: Il2CppString ,
+# [offset (64)] # [rename (name = "m_SubSpriteAtlasPath")] pub m_sub_sprite_atlas_path : :: unity2 :: Il2CppString ,
+# [offset (72)] # [rename (name = "m_IsPrepareLoad")] pub m_is_prepare_load : bool ,
+# [offset (80)] # [rename (name = "m_MainSpriteAtlas")] pub m_main_sprite_atlas : crate :: unity_engine :: u2d :: spriteatlas :: SpriteAtlas ,
+# [offset (88)] # [rename (name = "m_SubSpriteAtlas")] pub m_sub_sprite_atlas : crate :: unity_engine :: u2d :: spriteatlas :: SpriteAtlas ,
+# [offset (96)] # [rename (name = "m_Sprite")] pub m_sprite : crate :: unity_engine :: sprite :: Sprite ,
+# [offset (104)] # [rename (name = "m_MenuContentObject")] pub m_menu_content_object : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (112)] # [rename (name = "m_RightArrow")] pub m_right_arrow : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (120)] # [rename (name = "m_LeftArrow")] pub m_left_arrow : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (128)] # [rename (name = "m_CategoryTitleText")] pub m_category_title_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (136)] # [rename (name = "m_TutorialTitleText")] pub m_tutorial_title_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (144)] # [rename (name = "m_MessageText")] pub m_message_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (152)] # [rename (name = "m_Page0Text")] pub m_page0_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (160)] # [rename (name = "m_Page1Text")] pub m_page1_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (168)] # [rename (name = "m_CaptureImage")] pub m_capture_image : crate :: unity_engine :: ui :: image :: Image ,
+# [offset (176)] # [rename (name = "m_WdwTutorialAnimator")] pub m_wdw_tutorial_animator : crate :: unity_engine :: animator :: Animator ,
+# [offset (184)] # [rename (name = "m_AlphaSpeed")] pub m_alpha_speed : f32 ,
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/tutoriallistroot/TutorialListRoot_FadeType.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct TutorialListRoot_FadeType  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for TutorialListRoot_FadeType  {
+    const NAMESPACE: &'static str = "";
+
+    const NAME: &'static str = "TutorialListRoot.FadeType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    impl ::unity2::ClassIdentity for TutorialListRoot_SequenceType {
-        const NAME: &'static str = "TutorialListRoot.SequenceType";
-        const NAMESPACE: &'static str = "";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  ::unity2::IlType for TutorialListRoot_FadeType  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::IlType for TutorialListRoot_SequenceType {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  TutorialListRoot_FadeType  {
+    pub fn none() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl TutorialListRoot_SequenceType {
-        pub fn idle() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn prepare_load() -> Self {
-            Self { value: 1 }
-        }
+    pub fn fade_in() -> Self {
+        Self { value: 1 }
 
-        pub fn load() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn wait() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn show() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn view() -> Self {
-            Self { value: 5 }
-        }
-
-        pub fn hide() -> Self {
-            Self { value: 6 }
-        }
-
-        pub fn prepare_unload() -> Self {
-            Self { value: 7 }
-        }
-
-        pub fn unload() -> Self {
-            Self { value: 8 }
-        }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/tutoriallistroot/TutorialListRoot.md"))]
-    #[::unity2::class(namespace = "", name = "TutorialListRoot")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct TutorialListRoot {
-        #[static_field]
-        #[rename(name = "PrefabPath")]
-        pub prefab_path: ::unity2::Il2CppString,
-        #[offset(24)]
-        #[rename(name = "m_Seq")]
-        pub m_seq: crate::root::tutoriallistroot::TutorialListRoot_SequenceType,
-        #[offset(28)]
-        #[rename(name = "m_FadeType")]
-        pub m_fade_type: crate::root::tutoriallistroot::TutorialListRoot_FadeType,
-        #[offset(32)]
-        #[rename(name = "m_ImageAlpha")]
-        pub m_image_alpha: f32,
-        #[offset(40)]
-        #[rename(name = "m_MainHandle")]
-        pub m_main_handle: crate::app::tresourcehandle_1::TResourceHandle_1<crate::unity_engine::u2d::spriteatlas::SpriteAtlas>,
-        #[offset(48)]
-        #[rename(name = "m_SubHandle")]
-        pub m_sub_handle: crate::app::tresourcehandle_1::TResourceHandle_1<crate::unity_engine::u2d::spriteatlas::SpriteAtlas>,
-        #[offset(56)]
-        #[rename(name = "m_MainSpriteAtlasPath")]
-        pub m_main_sprite_atlas_path: ::unity2::Il2CppString,
-        #[offset(64)]
-        #[rename(name = "m_SubSpriteAtlasPath")]
-        pub m_sub_sprite_atlas_path: ::unity2::Il2CppString,
-        #[offset(72)]
-        #[rename(name = "m_IsPrepareLoad")]
-        pub m_is_prepare_load: bool,
-        #[offset(80)]
-        #[rename(name = "m_MainSpriteAtlas")]
-        pub m_main_sprite_atlas: crate::unity_engine::u2d::spriteatlas::SpriteAtlas,
-        #[offset(88)]
-        #[rename(name = "m_SubSpriteAtlas")]
-        pub m_sub_sprite_atlas: crate::unity_engine::u2d::spriteatlas::SpriteAtlas,
-        #[offset(96)]
-        #[rename(name = "m_Sprite")]
-        pub m_sprite: crate::unity_engine::sprite::Sprite,
-        #[offset(104)]
-        #[rename(name = "m_MenuContentObject")]
-        pub m_menu_content_object: crate::unity_engine::gameobject::GameObject,
-        #[offset(112)]
-        #[rename(name = "m_RightArrow")]
-        pub m_right_arrow: crate::unity_engine::gameobject::GameObject,
-        #[offset(120)]
-        #[rename(name = "m_LeftArrow")]
-        pub m_left_arrow: crate::unity_engine::gameobject::GameObject,
-        #[offset(128)]
-        #[rename(name = "m_CategoryTitleText")]
-        pub m_category_title_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(136)]
-        #[rename(name = "m_TutorialTitleText")]
-        pub m_tutorial_title_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(144)]
-        #[rename(name = "m_MessageText")]
-        pub m_message_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(152)]
-        #[rename(name = "m_Page0Text")]
-        pub m_page0_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(160)]
-        #[rename(name = "m_Page1Text")]
-        pub m_page1_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(168)]
-        #[rename(name = "m_CaptureImage")]
-        pub m_capture_image: crate::unity_engine::ui::image::Image,
-        #[offset(176)]
-        #[rename(name = "m_WdwTutorialAnimator")]
-        pub m_wdw_tutorial_animator: crate::unity_engine::animator::Animator,
-        #[offset(184)]
-        #[rename(name = "m_AlphaSpeed")]
-        pub m_alpha_speed: f32,
+
+    pub fn fade_out() -> Self {
+        Self { value: 2 }
+
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/tutoriallistroot/TutorialListRoot_FadeType.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct TutorialListRoot_FadeType {
-        pub value: i32,
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/tutoriallistroot/TutorialListRoot_SequenceType.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct TutorialListRoot_SequenceType  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for TutorialListRoot_SequenceType  {
+    const NAMESPACE: &'static str = "";
+
+    const NAME: &'static str = "TutorialListRoot.SequenceType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    impl ::unity2::ClassIdentity for TutorialListRoot_FadeType {
-        const NAME: &'static str = "TutorialListRoot.FadeType";
-        const NAMESPACE: &'static str = "";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  ::unity2::IlType for TutorialListRoot_SequenceType  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::IlType for TutorialListRoot_FadeType {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  TutorialListRoot_SequenceType  {
+    pub fn idle() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl TutorialListRoot_FadeType {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn fade_in() -> Self {
-            Self { value: 1 }
-        }
+    pub fn prepare_load() -> Self {
+        Self { value: 1 }
 
-        pub fn fade_out() -> Self {
-            Self { value: 2 }
-        }
     }
+
+
+    pub fn load() -> Self {
+        Self { value: 2 }
+
+    }
+
+
+    pub fn wait() -> Self {
+        Self { value: 3 }
+
+    }
+
+
+    pub fn show() -> Self {
+        Self { value: 4 }
+
+    }
+
+
+    pub fn view() -> Self {
+        Self { value: 5 }
+
+    }
+
+
+    pub fn hide() -> Self {
+        Self { value: 6 }
+
+    }
+
+
+    pub fn prepare_unload() -> Self {
+        Self { value: 7 }
+
+    }
+
+
+    pub fn unload() -> Self {
+        Self { value: 8 }
+
+    }
+
+}
+
 }
 
 #[cfg(feature = "root-tutoriallistroot-types")]
 pub use __types::*;
 
 #[cfg(feature = "root-tutoriallistroot")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __TutorialListRoot_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_start {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TutorialListRoot as ::unity2::ClassIdentity>::class(),
-                "Start",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TutorialListRoot as ::unity2::ClassIdentity>::NAME,
-                        "Start",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn start(this: TutorialListRoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TutorialListRoot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_start::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_disable {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TutorialListRoot as ::unity2::ClassIdentity>::class(),
-                "OnDisable",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TutorialListRoot as ::unity2::ClassIdentity>::NAME,
-                        "OnDisable",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_disable(this: TutorialListRoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TutorialListRoot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_disable::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TutorialListRoot as ::unity2::ClassIdentity>::class(),
-                "Update",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TutorialListRoot as ::unity2::ClassIdentity>::NAME,
-                        "Update",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update(this: TutorialListRoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TutorialListRoot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_idle {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TutorialListRoot as ::unity2::ClassIdentity>::class(),
-                "Idle",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TutorialListRoot as ::unity2::ClassIdentity>::NAME,
-                        "Idle",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn idle(this: TutorialListRoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TutorialListRoot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_idle::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_prepare_load {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TutorialListRoot as ::unity2::ClassIdentity>::class(),
-                "PrepareLoad",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TutorialListRoot as ::unity2::ClassIdentity>::NAME,
-                        "PrepareLoad",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn prepare_load(this: TutorialListRoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TutorialListRoot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_prepare_load::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_load {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TutorialListRoot as ::unity2::ClassIdentity>::class(),
-                "Load",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TutorialListRoot as ::unity2::ClassIdentity>::NAME,
-                        "Load",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn load(this: TutorialListRoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TutorialListRoot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_load::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_show {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TutorialListRoot as ::unity2::ClassIdentity>::class(),
-                "Show",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TutorialListRoot as ::unity2::ClassIdentity>::NAME,
-                        "Show",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn show(this: TutorialListRoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TutorialListRoot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_show::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_hide {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TutorialListRoot as ::unity2::ClassIdentity>::class(),
-                "Hide",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TutorialListRoot as ::unity2::ClassIdentity>::NAME,
-                        "Hide",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn hide(this: TutorialListRoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TutorialListRoot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_hide::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_prepare_unload {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TutorialListRoot as ::unity2::ClassIdentity>::class(),
-                "PrepareUnload",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TutorialListRoot as ::unity2::ClassIdentity>::NAME,
-                        "PrepareUnload",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn prepare_unload(this: TutorialListRoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TutorialListRoot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_prepare_unload::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_unload {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TutorialListRoot as ::unity2::ClassIdentity>::class(),
-                "Unload",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TutorialListRoot as ::unity2::ClassIdentity>::NAME,
-                        "Unload",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn unload(this: TutorialListRoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TutorialListRoot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_unload::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update_alpha {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TutorialListRoot as ::unity2::ClassIdentity>::class(),
-                "UpdateAlpha",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TutorialListRoot as ::unity2::ClassIdentity>::NAME,
-                        "UpdateAlpha",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update_alpha(this: TutorialListRoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TutorialListRoot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update_alpha::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_load_prefab_async {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TutorialListRoot as ::unity2::ClassIdentity>::class(),
-                "LoadPrefabAsync",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TutorialListRoot as ::unity2::ClassIdentity>::NAME,
-                        "LoadPrefabAsync",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn load_prefab_async(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_load_prefab_async::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_unload_prefab {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TutorialListRoot as ::unity2::ClassIdentity>::class(),
-                "UnloadPrefab",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TutorialListRoot as ::unity2::ClassIdentity>::NAME,
-                        "UnloadPrefab",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn unload_prefab(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_unload_prefab::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_loading_prefab {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TutorialListRoot as ::unity2::ClassIdentity>::class(),
-                "IsLoadingPrefab",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TutorialListRoot as ::unity2::ClassIdentity>::NAME,
-                        "IsLoadingPrefab",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_loading_prefab(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_is_loading_prefab::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TutorialListRoot as ::unity2::ClassIdentity>::class(),
-                "Create",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TutorialListRoot as ::unity2::ClassIdentity>::NAME,
-                        "Create",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create(__unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::gameobject::GameObject {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::unity_engine::gameobject::GameObject =
-            ::core::mem::transmute(__lookup_create::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_menu_content {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TutorialListRoot as ::unity2::ClassIdentity>::class(),
-                "GetMenuContent",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TutorialListRoot as ::unity2::ClassIdentity>::NAME,
-                        "GetMenuContent",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_menu_content(
-        this: TutorialListRoot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::root::tutoriallistselectmenucontent::TutorialListSelectMenuContent {
-        let inner: extern "C" fn(
-            TutorialListRoot,
-            ::unity2::OptionalMethod,
-        ) -> crate::root::tutoriallistselectmenucontent::TutorialListSelectMenuContent =
-            ::core::mem::transmute(__lookup_get_menu_content::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_category_title_text {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TutorialListRoot as ::unity2::ClassIdentity>::class(),
-                "SetCategoryTitleText",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TutorialListRoot as ::unity2::ClassIdentity>::NAME,
-                        "SetCategoryTitleText",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_category_title_text(
-        this: TutorialListRoot,
-        text: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(TutorialListRoot, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_category_title_text::get_method_info().method_ptr);
-        inner(this, text, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_tutorial_title_text {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TutorialListRoot as ::unity2::ClassIdentity>::class(),
-                "SetTutorialTitleText",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TutorialListRoot as ::unity2::ClassIdentity>::NAME,
-                        "SetTutorialTitleText",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_tutorial_title_text(
-        this: TutorialListRoot,
-        text: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(TutorialListRoot, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_tutorial_title_text::get_method_info().method_ptr);
-        inner(this, text, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_message_text {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TutorialListRoot as ::unity2::ClassIdentity>::class(),
-                "SetMessageText",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TutorialListRoot as ::unity2::ClassIdentity>::NAME,
-                        "SetMessageText",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_message_text(this: TutorialListRoot, text: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TutorialListRoot, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_message_text::get_method_info().method_ptr);
-        inner(this, text, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_page0_text {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TutorialListRoot as ::unity2::ClassIdentity>::class(),
-                "SetPage0Text",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TutorialListRoot as ::unity2::ClassIdentity>::NAME,
-                        "SetPage0Text",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_page0_text(this: TutorialListRoot, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TutorialListRoot, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_page0_text::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_page1_text {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TutorialListRoot as ::unity2::ClassIdentity>::class(),
-                "SetPage1Text",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TutorialListRoot as ::unity2::ClassIdentity>::NAME,
-                        "SetPage1Text",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_page1_text(this: TutorialListRoot, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TutorialListRoot, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_page1_text::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_sprite {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::sprite::Sprite as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TutorialListRoot as ::unity2::ClassIdentity>::class(),
-                "SetSprite",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TutorialListRoot as ::unity2::ClassIdentity>::NAME,
-                        "SetSprite",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_sprite(
-        this: TutorialListRoot,
-        sprite: crate::unity_engine::sprite::Sprite,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(TutorialListRoot, crate::unity_engine::sprite::Sprite, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_sprite::get_method_info().method_ptr);
-        inner(this, sprite, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_fade_type {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::root::tutoriallistroot::TutorialListRoot_FadeType as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TutorialListRoot as ::unity2::ClassIdentity>::class(),
-                "SetFadeType",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TutorialListRoot as ::unity2::ClassIdentity>::NAME,
-                        "SetFadeType",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_fade_type(
-        this: TutorialListRoot,
-        fade_type: crate::root::tutoriallistroot::TutorialListRoot_FadeType,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(TutorialListRoot, crate::root::tutoriallistroot::TutorialListRoot_FadeType, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_fade_type::get_method_info().method_ptr);
-        inner(this, fade_type, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_alpha {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TutorialListRoot as ::unity2::ClassIdentity>::class(),
-                "SetAlpha",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TutorialListRoot as ::unity2::ClassIdentity>::NAME,
-                        "SetAlpha",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_alpha(this: TutorialListRoot, alpha: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TutorialListRoot, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_alpha::get_method_info().method_ptr);
-        inner(this, alpha, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_active_right_arrow {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TutorialListRoot as ::unity2::ClassIdentity>::class(),
-                "SetActiveRightArrow",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TutorialListRoot as ::unity2::ClassIdentity>::NAME,
-                        "SetActiveRightArrow",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_active_right_arrow(this: TutorialListRoot, enable: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TutorialListRoot, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_active_right_arrow::get_method_info().method_ptr);
-        inner(this, enable, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_active_left_arrow {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TutorialListRoot as ::unity2::ClassIdentity>::class(),
-                "SetActiveLeftArrow",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TutorialListRoot as ::unity2::ClassIdentity>::NAME,
-                        "SetActiveLeftArrow",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_active_left_arrow(this: TutorialListRoot, enable: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TutorialListRoot, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_active_left_arrow::get_method_info().method_ptr);
-        inner(this, enable, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_wdw_tutorial_animator {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TutorialListRoot as ::unity2::ClassIdentity>::class(),
-                "GetWdwTutorialAnimator",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TutorialListRoot as ::unity2::ClassIdentity>::NAME,
-                        "GetWdwTutorialAnimator",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_wdw_tutorial_animator(
-        this: TutorialListRoot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::animator::Animator {
-        let inner: extern "C" fn(TutorialListRoot, ::unity2::OptionalMethod) -> crate::unity_engine::animator::Animator =
-            ::core::mem::transmute(__lookup_get_wdw_tutorial_animator::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_seq {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TutorialListRoot as ::unity2::ClassIdentity>::class(),
-                "get_Seq",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TutorialListRoot as ::unity2::ClassIdentity>::NAME,
-                        "get_Seq",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_seq(
-        this: TutorialListRoot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::root::tutoriallistroot::TutorialListRoot_SequenceType {
-        let inner: extern "C" fn(TutorialListRoot, ::unity2::OptionalMethod) -> crate::root::tutoriallistroot::TutorialListRoot_SequenceType =
-            ::core::mem::transmute(__lookup_get_seq::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_seq {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::root::tutoriallistroot::TutorialListRoot_SequenceType as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TutorialListRoot as ::unity2::ClassIdentity>::class(),
-                "set_Seq",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TutorialListRoot as ::unity2::ClassIdentity>::NAME,
-                        "set_Seq",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_seq(
-        this: TutorialListRoot,
-        value: crate::root::tutoriallistroot::TutorialListRoot_SequenceType,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(TutorialListRoot, crate::root::tutoriallistroot::TutorialListRoot_SequenceType, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_seq::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_main_sprite_atlas_path {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TutorialListRoot as ::unity2::ClassIdentity>::class(),
-                "set_MainSpriteAtlasPath",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TutorialListRoot as ::unity2::ClassIdentity>::NAME,
-                        "set_MainSpriteAtlasPath",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_main_sprite_atlas_path(
-        this: TutorialListRoot,
-        value: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(TutorialListRoot, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_main_sprite_atlas_path::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_sub_sprite_atlas_path {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TutorialListRoot as ::unity2::ClassIdentity>::class(),
-                "set_SubSpriteAtlasPath",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TutorialListRoot as ::unity2::ClassIdentity>::NAME,
-                        "set_SubSpriteAtlasPath",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_sub_sprite_atlas_path(
-        this: TutorialListRoot,
-        value: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(TutorialListRoot, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_sub_sprite_atlas_path::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_handle {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TutorialListRoot as ::unity2::ClassIdentity>::class(),
-                "get_Handle",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TutorialListRoot as ::unity2::ClassIdentity>::NAME,
-                        "get_Handle",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_handle(
-        this: TutorialListRoot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::tresourcehandle_1::TResourceHandle_1<crate::unity_engine::u2d::spriteatlas::SpriteAtlas> {
-        let inner: extern "C" fn(
-            TutorialListRoot,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::tresourcehandle_1::TResourceHandle_1<crate::unity_engine::u2d::spriteatlas::SpriteAtlas> =
-            ::core::mem::transmute(__lookup_get_handle::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_is_prepare_load {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TutorialListRoot as ::unity2::ClassIdentity>::class(),
-                "set_IsPrepareLoad",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TutorialListRoot as ::unity2::ClassIdentity>::NAME,
-                        "set_IsPrepareLoad",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_is_prepare_load(this: TutorialListRoot, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TutorialListRoot, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_is_prepare_load::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_main_sprite_atlas {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TutorialListRoot as ::unity2::ClassIdentity>::class(),
-                "get_MainSpriteAtlas",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TutorialListRoot as ::unity2::ClassIdentity>::NAME,
-                        "get_MainSpriteAtlas",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_main_sprite_atlas(
-        this: TutorialListRoot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::u2d::spriteatlas::SpriteAtlas {
-        let inner: extern "C" fn(TutorialListRoot, ::unity2::OptionalMethod) -> crate::unity_engine::u2d::spriteatlas::SpriteAtlas =
-            ::core::mem::transmute(__lookup_get_main_sprite_atlas::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_sub_sprite_atlas {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TutorialListRoot as ::unity2::ClassIdentity>::class(),
-                "get_SubSpriteAtlas",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TutorialListRoot as ::unity2::ClassIdentity>::NAME,
-                        "get_SubSpriteAtlas",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_sub_sprite_atlas(
-        this: TutorialListRoot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::u2d::spriteatlas::SpriteAtlas {
-        let inner: extern "C" fn(TutorialListRoot, ::unity2::OptionalMethod) -> crate::unity_engine::u2d::spriteatlas::SpriteAtlas =
-            ::core::mem::transmute(__lookup_get_sub_sprite_atlas::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_opening_wdw_tutorial {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TutorialListRoot as ::unity2::ClassIdentity>::class(),
-                "IsOpeningWdwTutorial",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TutorialListRoot as ::unity2::ClassIdentity>::NAME,
-                        "IsOpeningWdwTutorial",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_opening_wdw_tutorial(this: TutorialListRoot, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(TutorialListRoot, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_opening_wdw_tutorial::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_close_wdw_tutorial {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TutorialListRoot as ::unity2::ClassIdentity>::class(),
-                "CloseWdwTutorial",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TutorialListRoot as ::unity2::ClassIdentity>::NAME,
-                        "CloseWdwTutorial",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn close_wdw_tutorial(this: TutorialListRoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TutorialListRoot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_close_wdw_tutorial::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_closing_wdw_tutorial {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TutorialListRoot as ::unity2::ClassIdentity>::class(),
-                "IsClosingWdwTutorial",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TutorialListRoot as ::unity2::ClassIdentity>::NAME,
-                        "IsClosingWdwTutorial",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_closing_wdw_tutorial(this: TutorialListRoot, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(TutorialListRoot, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_closing_wdw_tutorial::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TutorialListRoot as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TutorialListRoot as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: TutorialListRoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TutorialListRoot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __TutorialListRoot_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_start { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TutorialListRoot as :: unity2 :: ClassIdentity > :: class () , "Start" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TutorialListRoot as :: unity2 :: ClassIdentity > :: NAME , "Start" , e) , } } } pub unsafe fn start (this : TutorialListRoot , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TutorialListRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_start :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_disable { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TutorialListRoot as :: unity2 :: ClassIdentity > :: class () , "OnDisable" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TutorialListRoot as :: unity2 :: ClassIdentity > :: NAME , "OnDisable" , e) , } } } pub unsafe fn on_disable (this : TutorialListRoot , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TutorialListRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_disable :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TutorialListRoot as :: unity2 :: ClassIdentity > :: class () , "Update" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TutorialListRoot as :: unity2 :: ClassIdentity > :: NAME , "Update" , e) , } } } pub unsafe fn update (this : TutorialListRoot , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TutorialListRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_idle { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TutorialListRoot as :: unity2 :: ClassIdentity > :: class () , "Idle" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TutorialListRoot as :: unity2 :: ClassIdentity > :: NAME , "Idle" , e) , } } } pub unsafe fn idle (this : TutorialListRoot , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TutorialListRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_idle :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_prepare_load { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TutorialListRoot as :: unity2 :: ClassIdentity > :: class () , "PrepareLoad" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TutorialListRoot as :: unity2 :: ClassIdentity > :: NAME , "PrepareLoad" , e) , } } } pub unsafe fn prepare_load (this : TutorialListRoot , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TutorialListRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_prepare_load :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_load { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TutorialListRoot as :: unity2 :: ClassIdentity > :: class () , "Load" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TutorialListRoot as :: unity2 :: ClassIdentity > :: NAME , "Load" , e) , } } } pub unsafe fn load (this : TutorialListRoot , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TutorialListRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_load :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_show { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TutorialListRoot as :: unity2 :: ClassIdentity > :: class () , "Show" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TutorialListRoot as :: unity2 :: ClassIdentity > :: NAME , "Show" , e) , } } } pub unsafe fn show (this : TutorialListRoot , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TutorialListRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_show :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_hide { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TutorialListRoot as :: unity2 :: ClassIdentity > :: class () , "Hide" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TutorialListRoot as :: unity2 :: ClassIdentity > :: NAME , "Hide" , e) , } } } pub unsafe fn hide (this : TutorialListRoot , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TutorialListRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_hide :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_prepare_unload { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TutorialListRoot as :: unity2 :: ClassIdentity > :: class () , "PrepareUnload" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TutorialListRoot as :: unity2 :: ClassIdentity > :: NAME , "PrepareUnload" , e) , } } } pub unsafe fn prepare_unload (this : TutorialListRoot , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TutorialListRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_prepare_unload :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_unload { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TutorialListRoot as :: unity2 :: ClassIdentity > :: class () , "Unload" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TutorialListRoot as :: unity2 :: ClassIdentity > :: NAME , "Unload" , e) , } } } pub unsafe fn unload (this : TutorialListRoot , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TutorialListRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_unload :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update_alpha { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TutorialListRoot as :: unity2 :: ClassIdentity > :: class () , "UpdateAlpha" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TutorialListRoot as :: unity2 :: ClassIdentity > :: NAME , "UpdateAlpha" , e) , } } } pub unsafe fn update_alpha (this : TutorialListRoot , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TutorialListRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update_alpha :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_load_prefab_async { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TutorialListRoot as :: unity2 :: ClassIdentity > :: class () , "LoadPrefabAsync" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TutorialListRoot as :: unity2 :: ClassIdentity > :: NAME , "LoadPrefabAsync" , e) , } } } pub unsafe fn load_prefab_async (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_load_prefab_async :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_unload_prefab { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TutorialListRoot as :: unity2 :: ClassIdentity > :: class () , "UnloadPrefab" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TutorialListRoot as :: unity2 :: ClassIdentity > :: NAME , "UnloadPrefab" , e) , } } } pub unsafe fn unload_prefab (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_unload_prefab :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_loading_prefab { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TutorialListRoot as :: unity2 :: ClassIdentity > :: class () , "IsLoadingPrefab" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TutorialListRoot as :: unity2 :: ClassIdentity > :: NAME , "IsLoadingPrefab" , e) , } } } pub unsafe fn is_loading_prefab (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_loading_prefab :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TutorialListRoot as :: unity2 :: ClassIdentity > :: class () , "Create" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TutorialListRoot as :: unity2 :: ClassIdentity > :: NAME , "Create" , e) , } } } pub unsafe fn create (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute (__lookup_create :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_menu_content { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TutorialListRoot as :: unity2 :: ClassIdentity > :: class () , "GetMenuContent" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TutorialListRoot as :: unity2 :: ClassIdentity > :: NAME , "GetMenuContent" , e) , } } } pub unsafe fn get_menu_content (this : TutorialListRoot , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: root :: tutoriallistselectmenucontent :: TutorialListSelectMenuContent { let inner : extern "C" fn (TutorialListRoot , :: unity2 :: OptionalMethod ,) -> crate :: root :: tutoriallistselectmenucontent :: TutorialListSelectMenuContent = :: core :: mem :: transmute (__lookup_get_menu_content :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_category_title_text { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TutorialListRoot as :: unity2 :: ClassIdentity > :: class () , "SetCategoryTitleText" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TutorialListRoot as :: unity2 :: ClassIdentity > :: NAME , "SetCategoryTitleText" , e) , } } } pub unsafe fn set_category_title_text (this : TutorialListRoot , text : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TutorialListRoot , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_category_title_text :: get_method_info () . method_ptr ,) ; inner (this , text , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_tutorial_title_text { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TutorialListRoot as :: unity2 :: ClassIdentity > :: class () , "SetTutorialTitleText" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TutorialListRoot as :: unity2 :: ClassIdentity > :: NAME , "SetTutorialTitleText" , e) , } } } pub unsafe fn set_tutorial_title_text (this : TutorialListRoot , text : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TutorialListRoot , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_tutorial_title_text :: get_method_info () . method_ptr ,) ; inner (this , text , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_message_text { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TutorialListRoot as :: unity2 :: ClassIdentity > :: class () , "SetMessageText" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TutorialListRoot as :: unity2 :: ClassIdentity > :: NAME , "SetMessageText" , e) , } } } pub unsafe fn set_message_text (this : TutorialListRoot , text : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TutorialListRoot , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_message_text :: get_method_info () . method_ptr ,) ; inner (this , text , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_page0_text { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TutorialListRoot as :: unity2 :: ClassIdentity > :: class () , "SetPage0Text" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TutorialListRoot as :: unity2 :: ClassIdentity > :: NAME , "SetPage0Text" , e) , } } } pub unsafe fn set_page0_text (this : TutorialListRoot , value : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TutorialListRoot , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_page0_text :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_page1_text { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TutorialListRoot as :: unity2 :: ClassIdentity > :: class () , "SetPage1Text" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TutorialListRoot as :: unity2 :: ClassIdentity > :: NAME , "SetPage1Text" , e) , } } } pub unsafe fn set_page1_text (this : TutorialListRoot , value : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TutorialListRoot , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_page1_text :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_sprite { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: sprite :: Sprite as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TutorialListRoot as :: unity2 :: ClassIdentity > :: class () , "SetSprite" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TutorialListRoot as :: unity2 :: ClassIdentity > :: NAME , "SetSprite" , e) , } } } pub unsafe fn set_sprite (this : TutorialListRoot , sprite : crate :: unity_engine :: sprite :: Sprite , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TutorialListRoot , crate :: unity_engine :: sprite :: Sprite , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_sprite :: get_method_info () . method_ptr ,) ; inner (this , sprite , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_fade_type { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: root :: tutoriallistroot :: TutorialListRoot_FadeType as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TutorialListRoot as :: unity2 :: ClassIdentity > :: class () , "SetFadeType" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TutorialListRoot as :: unity2 :: ClassIdentity > :: NAME , "SetFadeType" , e) , } } } pub unsafe fn set_fade_type (this : TutorialListRoot , fade_type : crate :: root :: tutoriallistroot :: TutorialListRoot_FadeType , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TutorialListRoot , crate :: root :: tutoriallistroot :: TutorialListRoot_FadeType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_fade_type :: get_method_info () . method_ptr ,) ; inner (this , fade_type , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_alpha { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TutorialListRoot as :: unity2 :: ClassIdentity > :: class () , "SetAlpha" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TutorialListRoot as :: unity2 :: ClassIdentity > :: NAME , "SetAlpha" , e) , } } } pub unsafe fn set_alpha (this : TutorialListRoot , alpha : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TutorialListRoot , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_alpha :: get_method_info () . method_ptr ,) ; inner (this , alpha , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_active_right_arrow { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TutorialListRoot as :: unity2 :: ClassIdentity > :: class () , "SetActiveRightArrow" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TutorialListRoot as :: unity2 :: ClassIdentity > :: NAME , "SetActiveRightArrow" , e) , } } } pub unsafe fn set_active_right_arrow (this : TutorialListRoot , enable : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TutorialListRoot , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_active_right_arrow :: get_method_info () . method_ptr ,) ; inner (this , enable , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_active_left_arrow { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TutorialListRoot as :: unity2 :: ClassIdentity > :: class () , "SetActiveLeftArrow" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TutorialListRoot as :: unity2 :: ClassIdentity > :: NAME , "SetActiveLeftArrow" , e) , } } } pub unsafe fn set_active_left_arrow (this : TutorialListRoot , enable : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TutorialListRoot , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_active_left_arrow :: get_method_info () . method_ptr ,) ; inner (this , enable , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_wdw_tutorial_animator { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TutorialListRoot as :: unity2 :: ClassIdentity > :: class () , "GetWdwTutorialAnimator" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TutorialListRoot as :: unity2 :: ClassIdentity > :: NAME , "GetWdwTutorialAnimator" , e) , } } } pub unsafe fn get_wdw_tutorial_animator (this : TutorialListRoot , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: animator :: Animator { let inner : extern "C" fn (TutorialListRoot , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: animator :: Animator = :: core :: mem :: transmute (__lookup_get_wdw_tutorial_animator :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_seq { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TutorialListRoot as :: unity2 :: ClassIdentity > :: class () , "get_Seq" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TutorialListRoot as :: unity2 :: ClassIdentity > :: NAME , "get_Seq" , e) , } } } pub unsafe fn get_seq (this : TutorialListRoot , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: root :: tutoriallistroot :: TutorialListRoot_SequenceType { let inner : extern "C" fn (TutorialListRoot , :: unity2 :: OptionalMethod ,) -> crate :: root :: tutoriallistroot :: TutorialListRoot_SequenceType = :: core :: mem :: transmute (__lookup_get_seq :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_seq { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: root :: tutoriallistroot :: TutorialListRoot_SequenceType as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TutorialListRoot as :: unity2 :: ClassIdentity > :: class () , "set_Seq" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TutorialListRoot as :: unity2 :: ClassIdentity > :: NAME , "set_Seq" , e) , } } } pub unsafe fn set_seq (this : TutorialListRoot , value : crate :: root :: tutoriallistroot :: TutorialListRoot_SequenceType , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TutorialListRoot , crate :: root :: tutoriallistroot :: TutorialListRoot_SequenceType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_seq :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_main_sprite_atlas_path { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TutorialListRoot as :: unity2 :: ClassIdentity > :: class () , "set_MainSpriteAtlasPath" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TutorialListRoot as :: unity2 :: ClassIdentity > :: NAME , "set_MainSpriteAtlasPath" , e) , } } } pub unsafe fn set_main_sprite_atlas_path (this : TutorialListRoot , value : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TutorialListRoot , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_main_sprite_atlas_path :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_sub_sprite_atlas_path { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TutorialListRoot as :: unity2 :: ClassIdentity > :: class () , "set_SubSpriteAtlasPath" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TutorialListRoot as :: unity2 :: ClassIdentity > :: NAME , "set_SubSpriteAtlasPath" , e) , } } } pub unsafe fn set_sub_sprite_atlas_path (this : TutorialListRoot , value : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TutorialListRoot , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_sub_sprite_atlas_path :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_handle { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TutorialListRoot as :: unity2 :: ClassIdentity > :: class () , "get_Handle" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TutorialListRoot as :: unity2 :: ClassIdentity > :: NAME , "get_Handle" , e) , } } } pub unsafe fn get_handle (this : TutorialListRoot , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: tresourcehandle_1 :: TResourceHandle_1 < crate :: unity_engine :: u2d :: spriteatlas :: SpriteAtlas > { let inner : extern "C" fn (TutorialListRoot , :: unity2 :: OptionalMethod ,) -> crate :: app :: tresourcehandle_1 :: TResourceHandle_1 < crate :: unity_engine :: u2d :: spriteatlas :: SpriteAtlas > = :: core :: mem :: transmute (__lookup_get_handle :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_is_prepare_load { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TutorialListRoot as :: unity2 :: ClassIdentity > :: class () , "set_IsPrepareLoad" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TutorialListRoot as :: unity2 :: ClassIdentity > :: NAME , "set_IsPrepareLoad" , e) , } } } pub unsafe fn set_is_prepare_load (this : TutorialListRoot , value : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TutorialListRoot , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_is_prepare_load :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_main_sprite_atlas { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TutorialListRoot as :: unity2 :: ClassIdentity > :: class () , "get_MainSpriteAtlas" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TutorialListRoot as :: unity2 :: ClassIdentity > :: NAME , "get_MainSpriteAtlas" , e) , } } } pub unsafe fn get_main_sprite_atlas (this : TutorialListRoot , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: u2d :: spriteatlas :: SpriteAtlas { let inner : extern "C" fn (TutorialListRoot , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: u2d :: spriteatlas :: SpriteAtlas = :: core :: mem :: transmute (__lookup_get_main_sprite_atlas :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_sub_sprite_atlas { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TutorialListRoot as :: unity2 :: ClassIdentity > :: class () , "get_SubSpriteAtlas" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TutorialListRoot as :: unity2 :: ClassIdentity > :: NAME , "get_SubSpriteAtlas" , e) , } } } pub unsafe fn get_sub_sprite_atlas (this : TutorialListRoot , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: u2d :: spriteatlas :: SpriteAtlas { let inner : extern "C" fn (TutorialListRoot , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: u2d :: spriteatlas :: SpriteAtlas = :: core :: mem :: transmute (__lookup_get_sub_sprite_atlas :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_opening_wdw_tutorial { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TutorialListRoot as :: unity2 :: ClassIdentity > :: class () , "IsOpeningWdwTutorial" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TutorialListRoot as :: unity2 :: ClassIdentity > :: NAME , "IsOpeningWdwTutorial" , e) , } } } pub unsafe fn is_opening_wdw_tutorial (this : TutorialListRoot , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (TutorialListRoot , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_opening_wdw_tutorial :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_close_wdw_tutorial { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TutorialListRoot as :: unity2 :: ClassIdentity > :: class () , "CloseWdwTutorial" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TutorialListRoot as :: unity2 :: ClassIdentity > :: NAME , "CloseWdwTutorial" , e) , } } } pub unsafe fn close_wdw_tutorial (this : TutorialListRoot , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TutorialListRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_close_wdw_tutorial :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_closing_wdw_tutorial { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TutorialListRoot as :: unity2 :: ClassIdentity > :: class () , "IsClosingWdwTutorial" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TutorialListRoot as :: unity2 :: ClassIdentity > :: NAME , "IsClosingWdwTutorial" , e) , } } } pub unsafe fn is_closing_wdw_tutorial (this : TutorialListRoot , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (TutorialListRoot , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_closing_wdw_tutorial :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TutorialListRoot as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TutorialListRoot as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : TutorialListRoot , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TutorialListRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "root-tutoriallistroot")]
+impl TutorialListRoot { # [doc = "`LoadPrefabAsync()` overload"] pub fn load_prefab_async () -> () { unsafe { __TutorialListRoot_unity2_raw :: load_prefab_async (:: core :: option :: Option :: None) } } # [doc = "`UnloadPrefab()` overload"] pub fn unload_prefab () -> () { unsafe { __TutorialListRoot_unity2_raw :: unload_prefab (:: core :: option :: Option :: None) } } # [doc = "`IsLoadingPrefab()` overload"] pub fn is_loading_prefab () -> bool { unsafe { __TutorialListRoot_unity2_raw :: is_loading_prefab (:: core :: option :: Option :: None) } } # [doc = "`Create()` overload"] pub fn create () -> crate :: unity_engine :: gameobject :: GameObject { unsafe { __TutorialListRoot_unity2_raw :: create (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "root-tutoriallistroot")]
+pub trait ITutorialListRootMethods : ITutorialListRoot { # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < TutorialListRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TutorialListRoot_unity2_raw :: start (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnDisable()` overload"] fn on_disable (self ,) -> () { unsafe { let __receiver = < TutorialListRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TutorialListRoot_unity2_raw :: on_disable (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < TutorialListRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TutorialListRoot_unity2_raw :: update (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Idle()` overload"] fn idle (self ,) -> () { unsafe { let __receiver = < TutorialListRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TutorialListRoot_unity2_raw :: idle (__receiver , :: core :: option :: Option :: None) } } # [doc = "`PrepareLoad()` overload"] fn prepare_load (self ,) -> () { unsafe { let __receiver = < TutorialListRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TutorialListRoot_unity2_raw :: prepare_load (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Load()` overload"] fn load (self ,) -> () { unsafe { let __receiver = < TutorialListRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TutorialListRoot_unity2_raw :: load (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Show()` overload"] fn show (self ,) -> () { unsafe { let __receiver = < TutorialListRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TutorialListRoot_unity2_raw :: show (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Hide()` overload"] fn hide (self ,) -> () { unsafe { let __receiver = < TutorialListRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TutorialListRoot_unity2_raw :: hide (__receiver , :: core :: option :: Option :: None) } } # [doc = "`PrepareUnload()` overload"] fn prepare_unload (self ,) -> () { unsafe { let __receiver = < TutorialListRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TutorialListRoot_unity2_raw :: prepare_unload (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Unload()` overload"] fn unload (self ,) -> () { unsafe { let __receiver = < TutorialListRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TutorialListRoot_unity2_raw :: unload (__receiver , :: core :: option :: Option :: None) } } # [doc = "`UpdateAlpha()` overload"] fn update_alpha (self ,) -> () { unsafe { let __receiver = < TutorialListRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TutorialListRoot_unity2_raw :: update_alpha (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetMenuContent()` overload"] fn get_menu_content (self ,) -> crate :: root :: tutoriallistselectmenucontent :: TutorialListSelectMenuContent { unsafe { let __receiver = < TutorialListRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TutorialListRoot_unity2_raw :: get_menu_content (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetCategoryTitleText(::unity2::Il2CppString)` overload"] fn set_category_title_text (self , text : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < TutorialListRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TutorialListRoot_unity2_raw :: set_category_title_text (__receiver , :: core :: convert :: Into :: into (text) , :: core :: option :: Option :: None) } } # [doc = "`SetTutorialTitleText(::unity2::Il2CppString)` overload"] fn set_tutorial_title_text (self , text : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < TutorialListRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TutorialListRoot_unity2_raw :: set_tutorial_title_text (__receiver , :: core :: convert :: Into :: into (text) , :: core :: option :: Option :: None) } } # [doc = "`SetMessageText(::unity2::Il2CppString)` overload"] fn set_message_text (self , text : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < TutorialListRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TutorialListRoot_unity2_raw :: set_message_text (__receiver , :: core :: convert :: Into :: into (text) , :: core :: option :: Option :: None) } } # [doc = "`SetPage0Text(i32)` overload"] fn set_page0_text (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < TutorialListRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TutorialListRoot_unity2_raw :: set_page0_text (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`SetPage1Text(i32)` overload"] fn set_page1_text (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < TutorialListRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TutorialListRoot_unity2_raw :: set_page1_text (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`SetSprite(crate::unity_engine::sprite::Sprite)` overload"] fn set_sprite (self , sprite : impl :: core :: convert :: Into < crate :: unity_engine :: sprite :: Sprite >) -> () { unsafe { let __receiver = < TutorialListRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TutorialListRoot_unity2_raw :: set_sprite (__receiver , :: core :: convert :: Into :: into (sprite) , :: core :: option :: Option :: None) } } # [doc = "`SetFadeType(crate::root::tutoriallistroot::TutorialListRoot_FadeType)` overload"] fn set_fade_type (self , fade_type : impl :: core :: convert :: Into < crate :: root :: tutoriallistroot :: TutorialListRoot_FadeType >) -> () { unsafe { let __receiver = < TutorialListRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TutorialListRoot_unity2_raw :: set_fade_type (__receiver , :: core :: convert :: Into :: into (fade_type) , :: core :: option :: Option :: None) } } # [doc = "`SetAlpha(f32)` overload"] fn set_alpha (self , alpha : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < TutorialListRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TutorialListRoot_unity2_raw :: set_alpha (__receiver , :: core :: convert :: Into :: into (alpha) , :: core :: option :: Option :: None) } } # [doc = "`SetActiveRightArrow(bool)` overload"] fn set_active_right_arrow (self , enable : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < TutorialListRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TutorialListRoot_unity2_raw :: set_active_right_arrow (__receiver , :: core :: convert :: Into :: into (enable) , :: core :: option :: Option :: None) } } # [doc = "`SetActiveLeftArrow(bool)` overload"] fn set_active_left_arrow (self , enable : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < TutorialListRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TutorialListRoot_unity2_raw :: set_active_left_arrow (__receiver , :: core :: convert :: Into :: into (enable) , :: core :: option :: Option :: None) } } # [doc = "`GetWdwTutorialAnimator()` overload"] fn get_wdw_tutorial_animator (self ,) -> crate :: unity_engine :: animator :: Animator { unsafe { let __receiver = < TutorialListRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TutorialListRoot_unity2_raw :: get_wdw_tutorial_animator (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_Seq()` overload"] fn get_seq (self ,) -> crate :: root :: tutoriallistroot :: TutorialListRoot_SequenceType { unsafe { let __receiver = < TutorialListRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TutorialListRoot_unity2_raw :: get_seq (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_Seq(crate::root::tutoriallistroot::TutorialListRoot_SequenceType)` overload"] fn set_seq (self , value : impl :: core :: convert :: Into < crate :: root :: tutoriallistroot :: TutorialListRoot_SequenceType >) -> () { unsafe { let __receiver = < TutorialListRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TutorialListRoot_unity2_raw :: set_seq (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`set_MainSpriteAtlasPath(::unity2::Il2CppString)` overload"] fn set_main_sprite_atlas_path (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < TutorialListRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TutorialListRoot_unity2_raw :: set_main_sprite_atlas_path (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`set_SubSpriteAtlasPath(::unity2::Il2CppString)` overload"] fn set_sub_sprite_atlas_path (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < TutorialListRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TutorialListRoot_unity2_raw :: set_sub_sprite_atlas_path (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_Handle()` overload"] fn get_handle (self ,) -> crate :: app :: tresourcehandle_1 :: TResourceHandle_1 < crate :: unity_engine :: u2d :: spriteatlas :: SpriteAtlas > { unsafe { let __receiver = < TutorialListRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TutorialListRoot_unity2_raw :: get_handle (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_IsPrepareLoad(bool)` overload"] fn set_is_prepare_load (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < TutorialListRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TutorialListRoot_unity2_raw :: set_is_prepare_load (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_MainSpriteAtlas()` overload"] fn get_main_sprite_atlas (self ,) -> crate :: unity_engine :: u2d :: spriteatlas :: SpriteAtlas { unsafe { let __receiver = < TutorialListRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TutorialListRoot_unity2_raw :: get_main_sprite_atlas (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_SubSpriteAtlas()` overload"] fn get_sub_sprite_atlas (self ,) -> crate :: unity_engine :: u2d :: spriteatlas :: SpriteAtlas { unsafe { let __receiver = < TutorialListRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TutorialListRoot_unity2_raw :: get_sub_sprite_atlas (__receiver , :: core :: option :: Option :: None) } } # [doc = "`IsOpeningWdwTutorial()` overload"] fn is_opening_wdw_tutorial (self ,) -> bool { unsafe { let __receiver = < TutorialListRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TutorialListRoot_unity2_raw :: is_opening_wdw_tutorial (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CloseWdwTutorial()` overload"] fn close_wdw_tutorial (self ,) -> () { unsafe { let __receiver = < TutorialListRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TutorialListRoot_unity2_raw :: close_wdw_tutorial (__receiver , :: core :: option :: Option :: None) } } # [doc = "`IsClosingWdwTutorial()` overload"] fn is_closing_wdw_tutorial (self ,) -> bool { unsafe { let __receiver = < TutorialListRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TutorialListRoot_unity2_raw :: is_closing_wdw_tutorial (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TutorialListRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TutorialListRoot_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "root-tutoriallistroot")]
+impl < __T : ITutorialListRoot > ITutorialListRootMethods for __T { }
+
+#[cfg(feature = "root-tutoriallistroot")]
+impl TutorialListRoot { pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TutorialListRoot_unity2_raw :: __lookup_start :: get_method_info () } pub fn on_disable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TutorialListRoot_unity2_raw :: __lookup_on_disable :: get_method_info () } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TutorialListRoot_unity2_raw :: __lookup_update :: get_method_info () } pub fn idle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TutorialListRoot_unity2_raw :: __lookup_idle :: get_method_info () } pub fn prepare_load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TutorialListRoot_unity2_raw :: __lookup_prepare_load :: get_method_info () } pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TutorialListRoot_unity2_raw :: __lookup_load :: get_method_info () } pub fn show_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TutorialListRoot_unity2_raw :: __lookup_show :: get_method_info () } pub fn hide_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TutorialListRoot_unity2_raw :: __lookup_hide :: get_method_info () } pub fn prepare_unload_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TutorialListRoot_unity2_raw :: __lookup_prepare_unload :: get_method_info () } pub fn unload_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TutorialListRoot_unity2_raw :: __lookup_unload :: get_method_info () } pub fn update_alpha_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TutorialListRoot_unity2_raw :: __lookup_update_alpha :: get_method_info () } pub fn load_prefab_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TutorialListRoot_unity2_raw :: __lookup_load_prefab_async :: get_method_info () } pub fn unload_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TutorialListRoot_unity2_raw :: __lookup_unload_prefab :: get_method_info () } pub fn is_loading_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TutorialListRoot_unity2_raw :: __lookup_is_loading_prefab :: get_method_info () } pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TutorialListRoot_unity2_raw :: __lookup_create :: get_method_info () } pub fn get_menu_content_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TutorialListRoot_unity2_raw :: __lookup_get_menu_content :: get_method_info () } pub fn set_category_title_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TutorialListRoot_unity2_raw :: __lookup_set_category_title_text :: get_method_info () } pub fn set_tutorial_title_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TutorialListRoot_unity2_raw :: __lookup_set_tutorial_title_text :: get_method_info () } pub fn set_message_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TutorialListRoot_unity2_raw :: __lookup_set_message_text :: get_method_info () } pub fn set_page0_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TutorialListRoot_unity2_raw :: __lookup_set_page0_text :: get_method_info () } pub fn set_page1_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TutorialListRoot_unity2_raw :: __lookup_set_page1_text :: get_method_info () } pub fn set_sprite_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TutorialListRoot_unity2_raw :: __lookup_set_sprite :: get_method_info () } pub fn set_fade_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TutorialListRoot_unity2_raw :: __lookup_set_fade_type :: get_method_info () } pub fn set_alpha_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TutorialListRoot_unity2_raw :: __lookup_set_alpha :: get_method_info () } pub fn set_active_right_arrow_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TutorialListRoot_unity2_raw :: __lookup_set_active_right_arrow :: get_method_info () } pub fn set_active_left_arrow_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TutorialListRoot_unity2_raw :: __lookup_set_active_left_arrow :: get_method_info () } pub fn get_wdw_tutorial_animator_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TutorialListRoot_unity2_raw :: __lookup_get_wdw_tutorial_animator :: get_method_info () } pub fn get_seq_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TutorialListRoot_unity2_raw :: __lookup_get_seq :: get_method_info () } pub fn set_seq_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TutorialListRoot_unity2_raw :: __lookup_set_seq :: get_method_info () } pub fn set_main_sprite_atlas_path_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TutorialListRoot_unity2_raw :: __lookup_set_main_sprite_atlas_path :: get_method_info () } pub fn set_sub_sprite_atlas_path_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TutorialListRoot_unity2_raw :: __lookup_set_sub_sprite_atlas_path :: get_method_info () } pub fn get_handle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TutorialListRoot_unity2_raw :: __lookup_get_handle :: get_method_info () } pub fn set_is_prepare_load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TutorialListRoot_unity2_raw :: __lookup_set_is_prepare_load :: get_method_info () } pub fn get_main_sprite_atlas_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TutorialListRoot_unity2_raw :: __lookup_get_main_sprite_atlas :: get_method_info () } pub fn get_sub_sprite_atlas_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TutorialListRoot_unity2_raw :: __lookup_get_sub_sprite_atlas :: get_method_info () } pub fn is_opening_wdw_tutorial_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TutorialListRoot_unity2_raw :: __lookup_is_opening_wdw_tutorial :: get_method_info () } pub fn close_wdw_tutorial_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TutorialListRoot_unity2_raw :: __lookup_close_wdw_tutorial :: get_method_info () } pub fn is_closing_wdw_tutorial_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TutorialListRoot_unity2_raw :: __lookup_is_closing_wdw_tutorial :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TutorialListRoot_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "root-tutoriallistroot")]
 impl TutorialListRoot {
-    #[doc = "`LoadPrefabAsync()` overload"]
-    pub fn load_prefab_async() -> () {
-        unsafe { __TutorialListRoot_unity2_raw::load_prefab_async(::core::option::Option::None) }
-    }
-
-    #[doc = "`UnloadPrefab()` overload"]
-    pub fn unload_prefab() -> () {
-        unsafe { __TutorialListRoot_unity2_raw::unload_prefab(::core::option::Option::None) }
-    }
-
-    #[doc = "`IsLoadingPrefab()` overload"]
-    pub fn is_loading_prefab() -> bool {
-        unsafe { __TutorialListRoot_unity2_raw::is_loading_prefab(::core::option::Option::None) }
-    }
-
-    #[doc = "`Create()` overload"]
-    pub fn create() -> crate::unity_engine::gameobject::GameObject {
-        unsafe { __TutorialListRoot_unity2_raw::create(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "root-tutoriallistroot")]
-pub trait ITutorialListRootMethods: ITutorialListRoot {
-    #[doc = "`Start()` overload"]
-    fn start(self) -> () {
-        unsafe {
-            let __receiver = <TutorialListRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TutorialListRoot_unity2_raw::start(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnDisable()` overload"]
-    fn on_disable(self) -> () {
-        unsafe {
-            let __receiver = <TutorialListRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TutorialListRoot_unity2_raw::on_disable(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Update()` overload"]
-    fn update(self) -> () {
-        unsafe {
-            let __receiver = <TutorialListRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TutorialListRoot_unity2_raw::update(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Idle()` overload"]
-    fn idle(self) -> () {
-        unsafe {
-            let __receiver = <TutorialListRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TutorialListRoot_unity2_raw::idle(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`PrepareLoad()` overload"]
-    fn prepare_load(self) -> () {
-        unsafe {
-            let __receiver = <TutorialListRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TutorialListRoot_unity2_raw::prepare_load(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Load()` overload"]
-    fn load(self) -> () {
-        unsafe {
-            let __receiver = <TutorialListRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TutorialListRoot_unity2_raw::load(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Show()` overload"]
-    fn show(self) -> () {
-        unsafe {
-            let __receiver = <TutorialListRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TutorialListRoot_unity2_raw::show(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Hide()` overload"]
-    fn hide(self) -> () {
-        unsafe {
-            let __receiver = <TutorialListRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TutorialListRoot_unity2_raw::hide(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`PrepareUnload()` overload"]
-    fn prepare_unload(self) -> () {
-        unsafe {
-            let __receiver = <TutorialListRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TutorialListRoot_unity2_raw::prepare_unload(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Unload()` overload"]
-    fn unload(self) -> () {
-        unsafe {
-            let __receiver = <TutorialListRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TutorialListRoot_unity2_raw::unload(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`UpdateAlpha()` overload"]
-    fn update_alpha(self) -> () {
-        unsafe {
-            let __receiver = <TutorialListRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TutorialListRoot_unity2_raw::update_alpha(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetMenuContent()` overload"]
-    fn get_menu_content(self) -> crate::root::tutoriallistselectmenucontent::TutorialListSelectMenuContent {
-        unsafe {
-            let __receiver = <TutorialListRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TutorialListRoot_unity2_raw::get_menu_content(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetCategoryTitleText(::unity2::Il2CppString)` overload"]
-    fn set_category_title_text(self, text: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver = <TutorialListRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TutorialListRoot_unity2_raw::set_category_title_text(__receiver, ::core::convert::Into::into(text), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetTutorialTitleText(::unity2::Il2CppString)` overload"]
-    fn set_tutorial_title_text(self, text: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver = <TutorialListRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TutorialListRoot_unity2_raw::set_tutorial_title_text(__receiver, ::core::convert::Into::into(text), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetMessageText(::unity2::Il2CppString)` overload"]
-    fn set_message_text(self, text: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver = <TutorialListRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TutorialListRoot_unity2_raw::set_message_text(__receiver, ::core::convert::Into::into(text), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetPage0Text(i32)` overload"]
-    fn set_page0_text(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver = <TutorialListRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TutorialListRoot_unity2_raw::set_page0_text(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetPage1Text(i32)` overload"]
-    fn set_page1_text(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver = <TutorialListRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TutorialListRoot_unity2_raw::set_page1_text(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetSprite(crate::unity_engine::sprite::Sprite)` overload"]
-    fn set_sprite(self, sprite: impl ::core::convert::Into<crate::unity_engine::sprite::Sprite>) -> () {
-        unsafe {
-            let __receiver = <TutorialListRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TutorialListRoot_unity2_raw::set_sprite(__receiver, ::core::convert::Into::into(sprite), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetFadeType(crate::root::tutoriallistroot::TutorialListRoot_FadeType)` overload"]
-    fn set_fade_type(self, fade_type: impl ::core::convert::Into<crate::root::tutoriallistroot::TutorialListRoot_FadeType>) -> () {
-        unsafe {
-            let __receiver = <TutorialListRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TutorialListRoot_unity2_raw::set_fade_type(__receiver, ::core::convert::Into::into(fade_type), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetAlpha(f32)` overload"]
-    fn set_alpha(self, alpha: impl ::core::convert::Into<f32>) -> () {
-        unsafe {
-            let __receiver = <TutorialListRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TutorialListRoot_unity2_raw::set_alpha(__receiver, ::core::convert::Into::into(alpha), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetActiveRightArrow(bool)` overload"]
-    fn set_active_right_arrow(self, enable: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver = <TutorialListRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TutorialListRoot_unity2_raw::set_active_right_arrow(__receiver, ::core::convert::Into::into(enable), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetActiveLeftArrow(bool)` overload"]
-    fn set_active_left_arrow(self, enable: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver = <TutorialListRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TutorialListRoot_unity2_raw::set_active_left_arrow(__receiver, ::core::convert::Into::into(enable), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetWdwTutorialAnimator()` overload"]
-    fn get_wdw_tutorial_animator(self) -> crate::unity_engine::animator::Animator {
-        unsafe {
-            let __receiver = <TutorialListRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TutorialListRoot_unity2_raw::get_wdw_tutorial_animator(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Seq()` overload"]
-    fn get_seq(self) -> crate::root::tutoriallistroot::TutorialListRoot_SequenceType {
-        unsafe {
-            let __receiver = <TutorialListRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TutorialListRoot_unity2_raw::get_seq(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_Seq(crate::root::tutoriallistroot::TutorialListRoot_SequenceType)` overload"]
-    fn set_seq(self, value: impl ::core::convert::Into<crate::root::tutoriallistroot::TutorialListRoot_SequenceType>) -> () {
-        unsafe {
-            let __receiver = <TutorialListRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TutorialListRoot_unity2_raw::set_seq(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_MainSpriteAtlasPath(::unity2::Il2CppString)` overload"]
-    fn set_main_sprite_atlas_path(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver = <TutorialListRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TutorialListRoot_unity2_raw::set_main_sprite_atlas_path(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_SubSpriteAtlasPath(::unity2::Il2CppString)` overload"]
-    fn set_sub_sprite_atlas_path(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver = <TutorialListRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TutorialListRoot_unity2_raw::set_sub_sprite_atlas_path(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Handle()` overload"]
-    fn get_handle(self) -> crate::app::tresourcehandle_1::TResourceHandle_1<crate::unity_engine::u2d::spriteatlas::SpriteAtlas> {
-        unsafe {
-            let __receiver = <TutorialListRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TutorialListRoot_unity2_raw::get_handle(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_IsPrepareLoad(bool)` overload"]
-    fn set_is_prepare_load(self, value: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver = <TutorialListRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TutorialListRoot_unity2_raw::set_is_prepare_load(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_MainSpriteAtlas()` overload"]
-    fn get_main_sprite_atlas(self) -> crate::unity_engine::u2d::spriteatlas::SpriteAtlas {
-        unsafe {
-            let __receiver = <TutorialListRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TutorialListRoot_unity2_raw::get_main_sprite_atlas(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_SubSpriteAtlas()` overload"]
-    fn get_sub_sprite_atlas(self) -> crate::unity_engine::u2d::spriteatlas::SpriteAtlas {
-        unsafe {
-            let __receiver = <TutorialListRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TutorialListRoot_unity2_raw::get_sub_sprite_atlas(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsOpeningWdwTutorial()` overload"]
-    fn is_opening_wdw_tutorial(self) -> bool {
-        unsafe {
-            let __receiver = <TutorialListRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TutorialListRoot_unity2_raw::is_opening_wdw_tutorial(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CloseWdwTutorial()` overload"]
-    fn close_wdw_tutorial(self) -> () {
-        unsafe {
-            let __receiver = <TutorialListRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TutorialListRoot_unity2_raw::close_wdw_tutorial(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsClosingWdwTutorial()` overload"]
-    fn is_closing_wdw_tutorial(self) -> bool {
-        unsafe {
-            let __receiver = <TutorialListRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TutorialListRoot_unity2_raw::is_closing_wdw_tutorial(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <TutorialListRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TutorialListRoot_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "root-tutoriallistroot")]
-impl<__T: ITutorialListRoot> ITutorialListRootMethods for __T {}
-
-#[cfg(feature = "root-tutoriallistroot")]
-impl TutorialListRoot {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TutorialListRoot),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITutorialListRootMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TutorialListRoot) , :: core :: stringify ! (new) ,)) ; < Self as ITutorialListRootMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "root-tutoriallistroot")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{ITutorialListRoot, ITutorialListRootMethods, TutorialListRoot, TutorialListRoot_FadeType, TutorialListRoot_SequenceType};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::TutorialListRoot;
+    pub use super::ITutorialListRoot;
+    pub use super::ITutorialListRootMethods;
+    pub use super::TutorialListRoot_FadeType;
+    pub use super::TutorialListRoot_SequenceType;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

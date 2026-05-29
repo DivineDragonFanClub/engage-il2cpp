@@ -2,169 +2,34 @@
 
 #[cfg(feature = "unity_engine-resource_management-resource_providers-iinstanceprovider_interface-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/resource_providers/iinstanceprovider_interface/IInstanceProvider_Interface.md"))]
-    #[::unity2::class(namespace = "UnityEngine.ResourceManagement.ResourceProviders", name = "IInstanceProvider")]
-    pub struct IInstanceProvider_Interface {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/resource_providers/iinstanceprovider_interface/IInstanceProvider_Interface.md"))] # [:: unity2 :: class (namespace = "UnityEngine.ResourceManagement.ResourceProviders" , name = "IInstanceProvider")] pub struct IInstanceProvider_Interface {}
+
 }
 
 #[cfg(feature = "unity_engine-resource_management-resource_providers-iinstanceprovider_interface-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-resource_management-resource_providers-iinstanceprovider_interface")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __IInstanceProvider_Interface_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_provide_instance {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: gameobject :: GameObject > as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: resource_management :: resource_providers :: instantiationparameters :: InstantiationParameters as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <IInstanceProvider_Interface as ::unity2::ClassIdentity>::class(),
-                "ProvideInstance",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <IInstanceProvider_Interface as ::unity2::ClassIdentity>::NAME,
-                        "ProvideInstance",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn provide_instance(
-        this: IInstanceProvider_Interface,
-        resource_manager: crate::unity_engine::resource_management::resourcemanager::ResourceManager,
-        prefab_handle: crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<
-            crate::unity_engine::gameobject::GameObject,
-        >,
-        instantiate_parameters: crate::unity_engine::resource_management::resource_providers::instantiationparameters::InstantiationParameters,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::gameobject::GameObject {
-        let inner: extern "C" fn(
-            IInstanceProvider_Interface,
-            crate::unity_engine::resource_management::resourcemanager::ResourceManager,
-            crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<
-                crate::unity_engine::gameobject::GameObject,
-            >,
-            crate::unity_engine::resource_management::resource_providers::instantiationparameters::InstantiationParameters,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(__lookup_provide_instance::get_method_info().method_ptr);
-        inner(this, resource_manager, prefab_handle, instantiate_parameters, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_release_instance {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::resource_management::resourcemanager::ResourceManager as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <IInstanceProvider_Interface as ::unity2::ClassIdentity>::class(),
-                "ReleaseInstance",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <IInstanceProvider_Interface as ::unity2::ClassIdentity>::NAME,
-                        "ReleaseInstance",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn release_instance(
-        this: IInstanceProvider_Interface,
-        resource_manager: crate::unity_engine::resource_management::resourcemanager::ResourceManager,
-        instance: crate::unity_engine::gameobject::GameObject,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            IInstanceProvider_Interface,
-            crate::unity_engine::resource_management::resourcemanager::ResourceManager,
-            crate::unity_engine::gameobject::GameObject,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_release_instance::get_method_info().method_ptr);
-        inner(this, resource_manager, instance, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __IInstanceProvider_Interface_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_provide_instance { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: gameobject :: GameObject > as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: resource_management :: resource_providers :: instantiationparameters :: InstantiationParameters as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< IInstanceProvider_Interface as :: unity2 :: ClassIdentity > :: class () , "ProvideInstance" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < IInstanceProvider_Interface as :: unity2 :: ClassIdentity > :: NAME , "ProvideInstance" , e) , } } } pub unsafe fn provide_instance (this : IInstanceProvider_Interface , resource_manager : crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager , prefab_handle : crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: gameobject :: GameObject > , instantiate_parameters : crate :: unity_engine :: resource_management :: resource_providers :: instantiationparameters :: InstantiationParameters , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject { let inner : extern "C" fn (IInstanceProvider_Interface , crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager , crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: gameobject :: GameObject > , crate :: unity_engine :: resource_management :: resource_providers :: instantiationparameters :: InstantiationParameters , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute (__lookup_provide_instance :: get_method_info () . method_ptr ,) ; inner (this , resource_manager , prefab_handle , instantiate_parameters , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_release_instance { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: gameobject :: GameObject as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< IInstanceProvider_Interface as :: unity2 :: ClassIdentity > :: class () , "ReleaseInstance" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < IInstanceProvider_Interface as :: unity2 :: ClassIdentity > :: NAME , "ReleaseInstance" , e) , } } } pub unsafe fn release_instance (this : IInstanceProvider_Interface , resource_manager : crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager , instance : crate :: unity_engine :: gameobject :: GameObject , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (IInstanceProvider_Interface , crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_release_instance :: get_method_info () . method_ptr ,) ; inner (this , resource_manager , instance , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-resource_management-resource_providers-iinstanceprovider_interface")]
-pub trait IIInstanceProvider_InterfaceMethods: IIInstanceProvider_Interface {
-    #[doc = "`ProvideInstance(crate::unity_engine::resource_management::resourcemanager::ResourceManager, crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::gameobject::GameObject>, crate::unity_engine::resource_management::resource_providers::instantiationparameters::InstantiationParameters)` overload"]
-    fn provide_instance(
-        self,
-        resource_manager: impl ::core::convert::Into<crate::unity_engine::resource_management::resourcemanager::ResourceManager>,
-        prefab_handle: impl ::core::convert::Into<
-            crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<
-                crate::unity_engine::gameobject::GameObject,
-            >,
-        >,
-        instantiate_parameters: impl ::core::convert::Into<
-            crate::unity_engine::resource_management::resource_providers::instantiationparameters::InstantiationParameters,
-        >,
-    ) -> crate::unity_engine::gameobject::GameObject {
-        unsafe {
-            let __receiver =
-                <IInstanceProvider_Interface as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __IInstanceProvider_Interface_unity2_raw::provide_instance(
-                __receiver,
-                ::core::convert::Into::into(resource_manager),
-                ::core::convert::Into::into(prefab_handle),
-                ::core::convert::Into::into(instantiate_parameters),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ReleaseInstance(crate::unity_engine::resource_management::resourcemanager::ResourceManager, crate::unity_engine::gameobject::GameObject)` overload"]
-    fn release_instance(
-        self,
-        resource_manager: impl ::core::convert::Into<crate::unity_engine::resource_management::resourcemanager::ResourceManager>,
-        instance: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <IInstanceProvider_Interface as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __IInstanceProvider_Interface_unity2_raw::release_instance(
-                __receiver,
-                ::core::convert::Into::into(resource_manager),
-                ::core::convert::Into::into(instance),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+pub trait IIInstanceProvider_InterfaceMethods : IIInstanceProvider_Interface { # [doc = "`ProvideInstance(crate::unity_engine::resource_management::resourcemanager::ResourceManager, crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::gameobject::GameObject>, crate::unity_engine::resource_management::resource_providers::instantiationparameters::InstantiationParameters)` overload"] fn provide_instance (self , resource_manager : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager > , prefab_handle : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: gameobject :: GameObject > > , instantiate_parameters : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: resource_providers :: instantiationparameters :: InstantiationParameters >) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { let __receiver = < IInstanceProvider_Interface as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IInstanceProvider_Interface_unity2_raw :: provide_instance (__receiver , :: core :: convert :: Into :: into (resource_manager) , :: core :: convert :: Into :: into (prefab_handle) , :: core :: convert :: Into :: into (instantiate_parameters) , :: core :: option :: Option :: None) } } # [doc = "`ReleaseInstance(crate::unity_engine::resource_management::resourcemanager::ResourceManager, crate::unity_engine::gameobject::GameObject)` overload"] fn release_instance (self , resource_manager : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager > , instance : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> () { unsafe { let __receiver = < IInstanceProvider_Interface as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IInstanceProvider_Interface_unity2_raw :: release_instance (__receiver , :: core :: convert :: Into :: into (resource_manager) , :: core :: convert :: Into :: into (instance) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-resource_management-resource_providers-iinstanceprovider_interface")]
-impl<__T: IIInstanceProvider_Interface> IIInstanceProvider_InterfaceMethods for __T {}
+impl < __T : IIInstanceProvider_Interface > IIInstanceProvider_InterfaceMethods for __T { }
+
+#[cfg(feature = "unity_engine-resource_management-resource_providers-iinstanceprovider_interface")]
+impl IInstanceProvider_Interface { pub fn provide_instance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __IInstanceProvider_Interface_unity2_raw :: __lookup_provide_instance :: get_method_info () } pub fn release_instance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __IInstanceProvider_Interface_unity2_raw :: __lookup_release_instance :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-resource_management-resource_providers-iinstanceprovider_interface")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IIInstanceProvider_Interface, IIInstanceProvider_InterfaceMethods, IInstanceProvider_Interface};
+    pub use super::IInstanceProvider_Interface;
+    pub use super::IIInstanceProvider_Interface;
+    pub use super::IIInstanceProvider_InterfaceMethods;
 }

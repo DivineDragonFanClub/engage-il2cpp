@@ -2,564 +2,99 @@
 
 #[cfg(feature = "unity_engine-unitysynchronizationcontext-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        valuetype::{IValueType, ValueType},
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/unitysynchronizationcontext/UnitySynchronizationContext_WorkRequest.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct UnitySynchronizationContext_WorkRequest {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
 
-    impl ::unity2::ClassIdentity for UnitySynchronizationContext_WorkRequest {
-        const NAME: &'static str = "UnitySynchronizationContext.WorkRequest";
-        const NAMESPACE: &'static str = "UnityEngine";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/unitysynchronizationcontext/UnitySynchronizationContext_WorkRequest.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct UnitySynchronizationContext_WorkRequest {}
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+
+impl ::unity2::ClassIdentity for UnitySynchronizationContext_WorkRequest {
+    const NAMESPACE: &'static str = "UnityEngine";
+
+    const NAME: &'static str = "UnitySynchronizationContext.WorkRequest";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for UnitySynchronizationContext_WorkRequest {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl ::unity2::IlType for UnitySynchronizationContext_WorkRequest {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/unitysynchronizationcontext/UnitySynchronizationContext.md"))]
-    #[::unity2::class(namespace = "UnityEngine", name = "UnitySynchronizationContext")]
-    pub struct UnitySynchronizationContext {
-        #[offset(24)]
-        #[rename(name = "m_AsyncWorkQueue")]
-        pub m_async_work_queue: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::unitysynchronizationcontext::UnitySynchronizationContext_WorkRequest,
-        >,
-        #[offset(32)]
-        #[rename(name = "m_CurrentFrameWork")]
-        pub m_current_frame_work: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::unitysynchronizationcontext::UnitySynchronizationContext_WorkRequest,
-        >,
-        #[offset(40)]
-        #[rename(name = "m_MainThreadID")]
-        pub m_main_thread_id: i32,
-        #[offset(44)]
-        #[rename(name = "m_TrackedCount")]
-        pub m_tracked_count: i32,
-    }
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/unitysynchronizationcontext/UnitySynchronizationContext.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "UnitySynchronizationContext")] pub struct UnitySynchronizationContext {
+# [offset (24)] # [rename (name = "m_AsyncWorkQueue")] pub m_async_work_queue : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: unitysynchronizationcontext :: UnitySynchronizationContext_WorkRequest > ,
+# [offset (32)] # [rename (name = "m_CurrentFrameWork")] pub m_current_frame_work : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: unitysynchronizationcontext :: UnitySynchronizationContext_WorkRequest > ,
+# [offset (40)] # [rename (name = "m_MainThreadID")] pub m_main_thread_id : i32 ,
+# [offset (44)] # [rename (name = "m_TrackedCount")] pub m_tracked_count : i32 ,
+}
+
 }
 
 #[cfg(feature = "unity_engine-unitysynchronizationcontext-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-unitysynchronizationcontext")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __UnitySynchronizationContext_WorkRequest_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitySynchronizationContext_WorkRequest as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnitySynchronizationContext_WorkRequest as ::unity2::ClassIdentity>::NAME,
-                        "Invoke",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn invoke(this: UnitySynchronizationContext_WorkRequest, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(UnitySynchronizationContext_WorkRequest, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __UnitySynchronizationContext_WorkRequest_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_invoke { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitySynchronizationContext_WorkRequest as :: unity2 :: ClassIdentity > :: class () , "Invoke" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitySynchronizationContext_WorkRequest as :: unity2 :: ClassIdentity > :: NAME , "Invoke" , e) , } } } pub unsafe fn invoke (this : UnitySynchronizationContext_WorkRequest , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitySynchronizationContext_WorkRequest , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_invoke :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-unitysynchronizationcontext")]
-impl UnitySynchronizationContext_WorkRequest {
-    #[doc = "`Invoke()` overload"]
-    pub fn invoke(self) -> () {
-        unsafe { __UnitySynchronizationContext_WorkRequest_unity2_raw::invoke(self, ::core::option::Option::None) }
-    }
-}
+impl UnitySynchronizationContext_WorkRequest { # [doc = "`Invoke()` overload"] pub fn invoke (self ,) -> () { unsafe { __UnitySynchronizationContext_WorkRequest_unity2_raw :: invoke (self , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-unitysynchronizationcontext")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __UnitySynchronizationContext_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitySynchronizationContext as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnitySynchronizationContext as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: UnitySynchronizationContext, main_thread_id: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(UnitySynchronizationContext, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, main_thread_id, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::collections::generic::list_1::List_1<
-                    crate::unity_engine::unitysynchronizationcontext::UnitySynchronizationContext_WorkRequest,
-                > as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitySynchronizationContext as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnitySynchronizationContext as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor_2(
-        this: UnitySynchronizationContext,
-        queue: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::unitysynchronizationcontext::UnitySynchronizationContext_WorkRequest,
-        >,
-        main_thread_id: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            UnitySynchronizationContext,
-            crate::system::collections::generic::list_1::List_1<
-                crate::unity_engine::unitysynchronizationcontext::UnitySynchronizationContext_WorkRequest,
-            >,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
-        inner(this, queue, main_thread_id, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_operation_started {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitySynchronizationContext as ::unity2::ClassIdentity>::class(),
-                "OperationStarted",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnitySynchronizationContext as ::unity2::ClassIdentity>::NAME,
-                        "OperationStarted",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn operation_started(this: UnitySynchronizationContext, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(UnitySynchronizationContext, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_operation_started::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_operation_completed {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitySynchronizationContext as ::unity2::ClassIdentity>::class(),
-                "OperationCompleted",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnitySynchronizationContext as ::unity2::ClassIdentity>::NAME,
-                        "OperationCompleted",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn operation_completed(this: UnitySynchronizationContext, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(UnitySynchronizationContext, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_operation_completed::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_exec {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitySynchronizationContext as ::unity2::ClassIdentity>::class(),
-                "Exec",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnitySynchronizationContext as ::unity2::ClassIdentity>::NAME,
-                        "Exec",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn exec(this: UnitySynchronizationContext, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(UnitySynchronizationContext, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_exec::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_has_pending_tasks {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitySynchronizationContext as ::unity2::ClassIdentity>::class(),
-                "HasPendingTasks",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnitySynchronizationContext as ::unity2::ClassIdentity>::NAME,
-                        "HasPendingTasks",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn has_pending_tasks(this: UnitySynchronizationContext, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(UnitySynchronizationContext, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_has_pending_tasks::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_initialize_synchronization_context {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitySynchronizationContext as ::unity2::ClassIdentity>::class(),
-                "InitializeSynchronizationContext",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnitySynchronizationContext as ::unity2::ClassIdentity>::NAME,
-                        "InitializeSynchronizationContext",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn initialize_synchronization_context(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_initialize_synchronization_context::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_execute_tasks {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitySynchronizationContext as ::unity2::ClassIdentity>::class(),
-                "ExecuteTasks",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnitySynchronizationContext as ::unity2::ClassIdentity>::NAME,
-                        "ExecuteTasks",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn execute_tasks(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_execute_tasks::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_execute_pending_tasks {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i64 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitySynchronizationContext as ::unity2::ClassIdentity>::class(),
-                "ExecutePendingTasks",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnitySynchronizationContext as ::unity2::ClassIdentity>::NAME,
-                        "ExecutePendingTasks",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn execute_pending_tasks(milliseconds_timeout: i64, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(i64, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_execute_pending_tasks::get_method_info().method_ptr);
-        inner(milliseconds_timeout, __unity2_method_info)
-    }
-}
+impl UnitySynchronizationContext_WorkRequest { pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitySynchronizationContext_WorkRequest_unity2_raw :: __lookup_invoke :: get_method_info () } }
+
+#[cfg(feature = "unity_engine-unitysynchronizationcontext")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __UnitySynchronizationContext_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitySynchronizationContext as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitySynchronizationContext as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : UnitySynchronizationContext , main_thread_id : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitySynchronizationContext , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , main_thread_id , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: unitysynchronizationcontext :: UnitySynchronizationContext_WorkRequest > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitySynchronizationContext as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitySynchronizationContext as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor_2 (this : UnitySynchronizationContext , queue : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: unitysynchronizationcontext :: UnitySynchronizationContext_WorkRequest > , main_thread_id : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitySynchronizationContext , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: unitysynchronizationcontext :: UnitySynchronizationContext_WorkRequest > , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor_2 :: get_method_info () . method_ptr ,) ; inner (this , queue , main_thread_id , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_operation_started { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitySynchronizationContext as :: unity2 :: ClassIdentity > :: class () , "OperationStarted" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitySynchronizationContext as :: unity2 :: ClassIdentity > :: NAME , "OperationStarted" , e) , } } } pub unsafe fn operation_started (this : UnitySynchronizationContext , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitySynchronizationContext , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_operation_started :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_operation_completed { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitySynchronizationContext as :: unity2 :: ClassIdentity > :: class () , "OperationCompleted" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitySynchronizationContext as :: unity2 :: ClassIdentity > :: NAME , "OperationCompleted" , e) , } } } pub unsafe fn operation_completed (this : UnitySynchronizationContext , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitySynchronizationContext , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_operation_completed :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_exec { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitySynchronizationContext as :: unity2 :: ClassIdentity > :: class () , "Exec" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitySynchronizationContext as :: unity2 :: ClassIdentity > :: NAME , "Exec" , e) , } } } pub unsafe fn exec (this : UnitySynchronizationContext , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitySynchronizationContext , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_exec :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_has_pending_tasks { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitySynchronizationContext as :: unity2 :: ClassIdentity > :: class () , "HasPendingTasks" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitySynchronizationContext as :: unity2 :: ClassIdentity > :: NAME , "HasPendingTasks" , e) , } } } pub unsafe fn has_pending_tasks (this : UnitySynchronizationContext , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (UnitySynchronizationContext , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_has_pending_tasks :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_initialize_synchronization_context { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitySynchronizationContext as :: unity2 :: ClassIdentity > :: class () , "InitializeSynchronizationContext" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitySynchronizationContext as :: unity2 :: ClassIdentity > :: NAME , "InitializeSynchronizationContext" , e) , } } } pub unsafe fn initialize_synchronization_context (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_initialize_synchronization_context :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_execute_tasks { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitySynchronizationContext as :: unity2 :: ClassIdentity > :: class () , "ExecuteTasks" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitySynchronizationContext as :: unity2 :: ClassIdentity > :: NAME , "ExecuteTasks" , e) , } } } pub unsafe fn execute_tasks (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_execute_tasks :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_execute_pending_tasks { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i64 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitySynchronizationContext as :: unity2 :: ClassIdentity > :: class () , "ExecutePendingTasks" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitySynchronizationContext as :: unity2 :: ClassIdentity > :: NAME , "ExecutePendingTasks" , e) , } } } pub unsafe fn execute_pending_tasks (milliseconds_timeout : i64 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (i64 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_execute_pending_tasks :: get_method_info () . method_ptr ,) ; inner (milliseconds_timeout , __unity2_method_info) } }
+
+#[cfg(feature = "unity_engine-unitysynchronizationcontext")]
+impl UnitySynchronizationContext { # [doc = "`InitializeSynchronizationContext()` overload"] pub fn initialize_synchronization_context () -> () { unsafe { __UnitySynchronizationContext_unity2_raw :: initialize_synchronization_context (:: core :: option :: Option :: None) } } # [doc = "`ExecuteTasks()` overload"] pub fn execute_tasks () -> () { unsafe { __UnitySynchronizationContext_unity2_raw :: execute_tasks (:: core :: option :: Option :: None) } } # [doc = "`ExecutePendingTasks(i64)` overload"] pub fn execute_pending_tasks (milliseconds_timeout : impl :: core :: convert :: Into < i64 >) -> bool { unsafe { __UnitySynchronizationContext_unity2_raw :: execute_pending_tasks (:: core :: convert :: Into :: into (milliseconds_timeout) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-unitysynchronizationcontext")]
+pub trait IUnitySynchronizationContextMethods : IUnitySynchronizationContext { # [doc = "`.ctor(i32)` overload"] fn ctor (self , main_thread_id : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < UnitySynchronizationContext as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitySynchronizationContext_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (main_thread_id) , :: core :: option :: Option :: None) } } # [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::unity_engine::unitysynchronizationcontext::UnitySynchronizationContext_WorkRequest>, i32)` overload"] fn ctor_2 (self , queue : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: unitysynchronizationcontext :: UnitySynchronizationContext_WorkRequest > > , main_thread_id : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < UnitySynchronizationContext as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitySynchronizationContext_unity2_raw :: ctor_2 (__receiver , :: core :: convert :: Into :: into (queue) , :: core :: convert :: Into :: into (main_thread_id) , :: core :: option :: Option :: None) } } # [doc = "`OperationStarted()` overload"] fn operation_started (self ,) -> () { unsafe { let __receiver = < UnitySynchronizationContext as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitySynchronizationContext_unity2_raw :: operation_started (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OperationCompleted()` overload"] fn operation_completed (self ,) -> () { unsafe { let __receiver = < UnitySynchronizationContext as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitySynchronizationContext_unity2_raw :: operation_completed (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Exec()` overload"] fn exec (self ,) -> () { unsafe { let __receiver = < UnitySynchronizationContext as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitySynchronizationContext_unity2_raw :: exec (__receiver , :: core :: option :: Option :: None) } } # [doc = "`HasPendingTasks()` overload"] fn has_pending_tasks (self ,) -> bool { unsafe { let __receiver = < UnitySynchronizationContext as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitySynchronizationContext_unity2_raw :: has_pending_tasks (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-unitysynchronizationcontext")]
+impl < __T : IUnitySynchronizationContext > IUnitySynchronizationContextMethods for __T { }
+
+#[cfg(feature = "unity_engine-unitysynchronizationcontext")]
+impl UnitySynchronizationContext { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitySynchronizationContext_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitySynchronizationContext_unity2_raw :: __lookup_ctor_2 :: get_method_info () } pub fn operation_started_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitySynchronizationContext_unity2_raw :: __lookup_operation_started :: get_method_info () } pub fn operation_completed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitySynchronizationContext_unity2_raw :: __lookup_operation_completed :: get_method_info () } pub fn exec_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitySynchronizationContext_unity2_raw :: __lookup_exec :: get_method_info () } pub fn has_pending_tasks_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitySynchronizationContext_unity2_raw :: __lookup_has_pending_tasks :: get_method_info () } pub fn initialize_synchronization_context_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitySynchronizationContext_unity2_raw :: __lookup_initialize_synchronization_context :: get_method_info () } pub fn execute_tasks_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitySynchronizationContext_unity2_raw :: __lookup_execute_tasks :: get_method_info () } pub fn execute_pending_tasks_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitySynchronizationContext_unity2_raw :: __lookup_execute_pending_tasks :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-unitysynchronizationcontext")]
 impl UnitySynchronizationContext {
-    #[doc = "`InitializeSynchronizationContext()` overload"]
-    pub fn initialize_synchronization_context() -> () {
-        unsafe { __UnitySynchronizationContext_unity2_raw::initialize_synchronization_context(::core::option::Option::None) }
-    }
+# [doc = "`.ctor(i32)` — overload selector"] pub fn new (main_thread_id : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (UnitySynchronizationContext) , :: core :: stringify ! (new) ,)) ; < Self as IUnitySynchronizationContextMethods > :: ctor (this , main_thread_id) ; this }
 
-    #[doc = "`ExecuteTasks()` overload"]
-    pub fn execute_tasks() -> () {
-        unsafe { __UnitySynchronizationContext_unity2_raw::execute_tasks(::core::option::Option::None) }
-    }
-
-    #[doc = "`ExecutePendingTasks(i64)` overload"]
-    pub fn execute_pending_tasks(milliseconds_timeout: impl ::core::convert::Into<i64>) -> bool {
-        unsafe {
-            __UnitySynchronizationContext_unity2_raw::execute_pending_tasks(
-                ::core::convert::Into::into(milliseconds_timeout),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-unitysynchronizationcontext")]
-pub trait IUnitySynchronizationContextMethods: IUnitySynchronizationContext {
-    #[doc = "`.ctor(i32)` overload"]
-    fn ctor(self, main_thread_id: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver =
-                <UnitySynchronizationContext as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnitySynchronizationContext_unity2_raw::ctor(__receiver, ::core::convert::Into::into(main_thread_id), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::unity_engine::unitysynchronizationcontext::UnitySynchronizationContext_WorkRequest>, i32)` overload"]
-    fn ctor_2(
-        self,
-        queue: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::unity_engine::unitysynchronizationcontext::UnitySynchronizationContext_WorkRequest,
-            >,
-        >,
-        main_thread_id: impl ::core::convert::Into<i32>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <UnitySynchronizationContext as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnitySynchronizationContext_unity2_raw::ctor_2(
-                __receiver,
-                ::core::convert::Into::into(queue),
-                ::core::convert::Into::into(main_thread_id),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`OperationStarted()` overload"]
-    fn operation_started(self) -> () {
-        unsafe {
-            let __receiver =
-                <UnitySynchronizationContext as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnitySynchronizationContext_unity2_raw::operation_started(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OperationCompleted()` overload"]
-    fn operation_completed(self) -> () {
-        unsafe {
-            let __receiver =
-                <UnitySynchronizationContext as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnitySynchronizationContext_unity2_raw::operation_completed(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Exec()` overload"]
-    fn exec(self) -> () {
-        unsafe {
-            let __receiver =
-                <UnitySynchronizationContext as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnitySynchronizationContext_unity2_raw::exec(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`HasPendingTasks()` overload"]
-    fn has_pending_tasks(self) -> bool {
-        unsafe {
-            let __receiver =
-                <UnitySynchronizationContext as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnitySynchronizationContext_unity2_raw::has_pending_tasks(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-unitysynchronizationcontext")]
-impl<__T: IUnitySynchronizationContext> IUnitySynchronizationContextMethods for __T {}
-
-#[cfg(feature = "unity_engine-unitysynchronizationcontext")]
-impl UnitySynchronizationContext {
-    #[doc = "`.ctor(i32)` — overload selector"]
-    pub fn new(main_thread_id: i32) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(UnitySynchronizationContext),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IUnitySynchronizationContextMethods>::ctor(this, main_thread_id);
-        this
-    }
-
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::unity_engine::unitysynchronizationcontext::UnitySynchronizationContext_WorkRequest>, i32)` — overload selector"]
-    pub fn new_2(
-        queue: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::unitysynchronizationcontext::UnitySynchronizationContext_WorkRequest,
-        >,
-        main_thread_id: i32,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(UnitySynchronizationContext),
-                ::core::stringify!(new_2),
-            )
-        });
-        <Self as IUnitySynchronizationContextMethods>::ctor_2(this, queue, main_thread_id);
-        this
-    }
+# [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::unity_engine::unitysynchronizationcontext::UnitySynchronizationContext_WorkRequest>, i32)` — overload selector"] pub fn new_2 (queue : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: unitysynchronizationcontext :: UnitySynchronizationContext_WorkRequest > , main_thread_id : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (UnitySynchronizationContext) , :: core :: stringify ! (new_2) ,)) ; < Self as IUnitySynchronizationContextMethods > :: ctor_2 (this , queue , main_thread_id) ; this }
 }
 
 #[cfg(feature = "unity_engine-unitysynchronizationcontext")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{
-        IUnitySynchronizationContext, IUnitySynchronizationContextMethods, UnitySynchronizationContext, UnitySynchronizationContext_WorkRequest,
-    };
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::system::{object::IObject, valuetype::IValueType};
+    pub use super::UnitySynchronizationContext_WorkRequest;
+    pub use super::UnitySynchronizationContext;
+    pub use super::IUnitySynchronizationContext;
+    pub use super::IUnitySynchronizationContextMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

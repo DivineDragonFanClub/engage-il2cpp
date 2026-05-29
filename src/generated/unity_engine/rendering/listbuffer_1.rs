@@ -2,81 +2,74 @@
 
 #[cfg(feature = "unity_engine-rendering-listbuffer_1-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        valuetype::{IValueType, ValueType},
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/listbuffer_1/ListBuffer_1.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct ListBuffer_1<T0> {
-        pub _phantom: ::core::marker::PhantomData<(T0,)>,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
 
-    impl<T0: ::unity2::ClassIdentity> ::unity2::ClassIdentity for ListBuffer_1<T0> {
-        const NAME: &'static str = "ListBuffer`1";
-        const NAMESPACE: &'static str = "UnityEngine.Rendering";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/listbuffer_1/ListBuffer_1.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct ListBuffer_1<T0> { pub _phantom: ::core::marker::PhantomData<(T0,)> }
 
-            *CACHE.get_or_init(|| {
-                ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-                    .make_generic(&[<T0 as ::unity2::ClassIdentity>::class()])
-                    .expect("generic instantiation")
-            })
+
+impl<T0: ::unity2::ClassIdentity> ::unity2::ClassIdentity for ListBuffer_1<T0> {
+    const NAMESPACE: &'static str = "UnityEngine.Rendering";
+
+    const NAME: &'static str = "ListBuffer`1";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+            .make_generic(&[<T0 as ::unity2::ClassIdentity>::class()])
+            .expect("generic instantiation")
         }
+)
     }
 
-    impl<T0: ::unity2::ClassIdentity> ::unity2::IlType for ListBuffer_1<T0> {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl<T0: ::unity2::ClassIdentity> ::unity2::IlType for ListBuffer_1<T0> {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
+
+}
+
 }
 
 #[cfg(feature = "unity_engine-rendering-listbuffer_1-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-listbuffer_1")]
-#[::unity2::methods(value)]
-impl<T0: ::unity2::ClassIdentity> ListBuffer_1<T0> {
-    #[doc = "`get_Count()` overload"]
-    #[method(name = "get_Count", args = 0)]
-    pub fn get_count(self) -> i32;
+# [:: unity2 :: methods (value)] impl < T0 : :: unity2 :: ClassIdentity > ListBuffer_1 < T0 > {
+# [doc = "`get_Count()` overload"] # [method (name = "get_Count" , args = 0)] pub fn get_count (self ,) -> i32 ;
 
-    #[doc = "`get_Capacity()` overload"]
-    #[method(name = "get_Capacity", args = 0)]
-    pub fn get_capacity(self) -> i32;
+# [doc = "`get_Capacity()` overload"] # [method (name = "get_Capacity" , args = 0)] pub fn get_capacity (self ,) -> i32 ;
 
-    #[doc = "`get_Item(*muti32)` overload"]
-    #[method(name = "get_Item", args = 1)]
-    pub fn get_item(self, index: *mut i32) -> *mut T0;
+# [doc = "`get_Item(*muti32)` overload"] # [method (name = "get_Item" , args = 1)] pub fn get_item (self , index : * mut i32) -> * mut T0 ;
 
-    #[doc = "`GetUnchecked(*muti32)` overload"]
-    #[method(name = "GetUnchecked", args = 1)]
-    pub fn get_unchecked(self, index: *mut i32) -> *mut T0;
+# [doc = "`GetUnchecked(*muti32)` overload"] # [method (name = "GetUnchecked" , args = 1)] pub fn get_unchecked (self , index : * mut i32) -> * mut T0 ;
 
-    #[doc = "`TryAdd(*mutT0)` overload"]
-    #[method(name = "TryAdd", args = 1)]
-    pub fn try_add(self, value: *mut T0) -> bool;
+# [doc = "`TryAdd(*mutT0)` overload"] # [method (name = "TryAdd" , args = 1)] pub fn try_add (self , value : * mut T0) -> bool ;
 
-    #[doc = "`TryCopyTo(crate::unity_engine::rendering::listbuffer_1::ListBuffer_1<T0>)` overload"]
-    #[method(name = "TryCopyTo", args = 1)]
-    pub fn try_copy_to(self, other: crate::unity_engine::rendering::listbuffer_1::ListBuffer_1<T0>) -> bool;
+# [doc = "`TryCopyTo(crate::unity_engine::rendering::listbuffer_1::ListBuffer_1<T0>)` overload"] # [method (name = "TryCopyTo" , args = 1)] pub fn try_copy_to (self , other : crate :: unity_engine :: rendering :: listbuffer_1 :: ListBuffer_1 < T0 >) -> bool ;
 }
 
 #[cfg(feature = "unity_engine-rendering-listbuffer_1")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::ListBuffer_1;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::system::{object::IObject, valuetype::IValueType};
+    pub use crate::system::object::IObject;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

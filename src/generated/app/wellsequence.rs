@@ -2,2335 +2,354 @@
 
 #[cfg(feature = "app-wellsequence-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::{
-            basicdialogitem::{BasicDialogItem, IBasicDialogItem},
-            basicdialogitemyes::{BasicDialogItemYes, IBasicDialogItemYes},
-            basicmenuitem::{BasicMenuItem, IBasicMenuItem},
-            procinst::{IProcInst, ProcInst},
-        },
-        system::{
-            object::{IObject, Object},
-            r#enum::{Enum, IEnum},
-            valuetype::{IValueType, ValueType},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/wellsequence/WellSequence_ChangeDifficultyMenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "WellSequence.ChangeDifficultyMenuItem")]
-    #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
-    pub struct WellSequence_ChangeDifficultyMenuItem {
-        #[offset(112)]
-        #[rename(name = "YesEventHandler")]
-        pub yes_event_handler: crate::system::action::Action,
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: basicdialogitem :: { BasicDialogItem , IBasicDialogItem }
+ ;
+ use crate :: app :: basicdialogitemyes :: { BasicDialogItemYes , IBasicDialogItemYes }
+ ;
+ use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
+ ;
+ use crate :: app :: procinst :: { IProcInst , ProcInst }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/wellsequence/WellSequence_DialogItemGotoEvilFirst.md"))] # [:: unity2 :: class (namespace = "App" , name = "WellSequence.DialogItemGotoEvilFirst")] # [parent (crate :: app :: basicdialogitem :: BasicDialogItem)] pub struct WellSequence_DialogItemGotoEvilFirst {}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/wellsequence/WellSequence_EvilWeaponEventStates.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct WellSequence_EvilWeaponEventStates  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for WellSequence_EvilWeaponEventStates  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "WellSequence.EvilWeaponEventStates";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/wellsequence/WellSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "WellSequence")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct WellSequence {
-        #[static_field]
-        #[rename(name = "UseFlagName")]
-        pub use_flag_name: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "ExchangeLevelName")]
-        pub exchange_level_name: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "SeedName")]
-        pub seed_name: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "EvilWeaponState")]
-        pub evil_weapon_state: ::unity2::Il2CppString,
-        #[offset(112)]
-        #[rename(name = "m_TopMenuResult")]
-        pub m_top_menu_result: crate::app::welltopmenu::WellTopMenu_MenuResult,
-        #[static_field]
-        #[rename(name = "m_WellEffectManager")]
-        pub m_well_effect_manager: crate::unity_engine::gameobject::GameObject,
-        #[static_field]
-        #[rename(name = "EFF_NAME_TABLE")]
-        pub eff_name_table: ::unity2::Array<::unity2::Il2CppString>,
+}
+
+
+impl  ::unity2::IlType for WellSequence_EvilWeaponEventStates  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/wellsequence/WellSequence_EvilWeaponEventStates.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct WellSequence_EvilWeaponEventStates {
-        pub value: i32,
+}
+
+
+impl  WellSequence_EvilWeaponEventStates  {
+    pub fn none() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl ::unity2::ClassIdentity for WellSequence_EvilWeaponEventStates {
-        const NAME: &'static str = "WellSequence.EvilWeaponEventStates";
-        const NAMESPACE: &'static str = "App";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+    pub fn can_get() -> Self {
+        Self { value: 1 }
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
     }
 
-    impl ::unity2::IlType for WellSequence_EvilWeaponEventStates {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+
+    pub fn already_get() -> Self {
+        Self { value: 2 }
+
     }
 
-    impl WellSequence_EvilWeaponEventStates {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn can_get() -> Self {
-            Self { value: 1 }
-        }
+    pub fn already_talk() -> Self {
+        Self { value: 3 }
 
-        pub fn already_get() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn already_talk() -> Self {
-            Self { value: 3 }
-        }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/wellsequence/WellSequence_UseFlags.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct WellSequence_UseFlags {
-        pub value: i32,
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/wellsequence/WellSequence_UseFlags.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct WellSequence_UseFlags  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for WellSequence_UseFlags  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "WellSequence.UseFlags";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    impl ::unity2::ClassIdentity for WellSequence_UseFlags {
-        const NAME: &'static str = "WellSequence.UseFlags";
-        const NAMESPACE: &'static str = "App";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  ::unity2::IlType for WellSequence_UseFlags  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::IlType for WellSequence_UseFlags {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  WellSequence_UseFlags  {
+    pub fn not_use() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl WellSequence_UseFlags {
-        pub fn not_use() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn used() -> Self {
-            Self { value: 1 }
-        }
+    pub fn used() -> Self {
+        Self { value: 1 }
 
-        pub fn item_return() -> Self {
-            Self { value: 2 }
-        }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/wellsequence/WellSequence_DialogItemGotoEvilFirst.md"))]
-    #[::unity2::class(namespace = "App", name = "WellSequence.DialogItemGotoEvilFirst")]
-    #[parent(crate::app::basicdialogitem::BasicDialogItem)]
-    pub struct WellSequence_DialogItemGotoEvilFirst {}
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/wellsequence/WellSequence_Label.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct WellSequence_Label {
-        pub value: i32,
+    pub fn item_return() -> Self {
+        Self { value: 2 }
+
     }
 
-    impl ::unity2::ClassIdentity for WellSequence_Label {
-        const NAME: &'static str = "WellSequence.Label";
-        const NAMESPACE: &'static str = "App";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/wellsequence/WellSequence_ChangeDifficultyMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "WellSequence.ChangeDifficultyMenuItem")] # [parent (crate :: app :: basicdialogitemyes :: BasicDialogItemYes)] pub struct WellSequence_ChangeDifficultyMenuItem {
+# [offset (112)] # [rename (name = "YesEventHandler")] pub yes_event_handler : crate :: system :: action :: Action ,
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/wellsequence/WellSequence_Label.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct WellSequence_Label  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for WellSequence_Label  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "WellSequence.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for WellSequence_Label {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  ::unity2::IlType for WellSequence_Label  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl WellSequence_Label {
-        pub fn entry() -> Self {
-            Self { value: 0 }
-        }
+}
 
-        pub fn get_evil_weapons() -> Self {
-            Self { value: 1 }
-        }
 
-        pub fn evil_map_first_demo() -> Self {
-            Self { value: 2 }
-        }
+impl  WellSequence_Label  {
+    pub fn entry() -> Self {
+        Self { value: 0 }
 
-        pub fn get_exchange_item() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn top_menu() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn item_select() -> Self {
-            Self { value: 5 }
-        }
-
-        pub fn first_evil_map_confirm() -> Self {
-            Self { value: 6 }
-        }
-
-        pub fn evil_map_confirm() -> Self {
-            Self { value: 7 }
-        }
-
-        pub fn change_difficulty() -> Self {
-            Self { value: 8 }
-        }
-
-        pub fn change_difficulty_result() -> Self {
-            Self { value: 9 }
-        }
-
-        pub fn exit() -> Self {
-            Self { value: 10 }
-        }
-
-        pub fn end() -> Self {
-            Self { value: 11 }
-        }
     }
+
+
+    pub fn get_evil_weapons() -> Self {
+        Self { value: 1 }
+
+    }
+
+
+    pub fn evil_map_first_demo() -> Self {
+        Self { value: 2 }
+
+    }
+
+
+    pub fn get_exchange_item() -> Self {
+        Self { value: 3 }
+
+    }
+
+
+    pub fn top_menu() -> Self {
+        Self { value: 4 }
+
+    }
+
+
+    pub fn item_select() -> Self {
+        Self { value: 5 }
+
+    }
+
+
+    pub fn first_evil_map_confirm() -> Self {
+        Self { value: 6 }
+
+    }
+
+
+    pub fn evil_map_confirm() -> Self {
+        Self { value: 7 }
+
+    }
+
+
+    pub fn change_difficulty() -> Self {
+        Self { value: 8 }
+
+    }
+
+
+    pub fn change_difficulty_result() -> Self {
+        Self { value: 9 }
+
+    }
+
+
+    pub fn exit() -> Self {
+        Self { value: 10 }
+
+    }
+
+
+    pub fn end() -> Self {
+        Self { value: 11 }
+
+    }
+
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/wellsequence/WellSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "WellSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct WellSequence {
+# [static_field] # [rename (name = "UseFlagName")] pub use_flag_name : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "ExchangeLevelName")] pub exchange_level_name : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "SeedName")] pub seed_name : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "EvilWeaponState")] pub evil_weapon_state : :: unity2 :: Il2CppString ,
+# [offset (112)] # [rename (name = "m_TopMenuResult")] pub m_top_menu_result : crate :: app :: welltopmenu :: WellTopMenu_MenuResult ,
+# [static_field] # [rename (name = "m_WellEffectManager")] pub m_well_effect_manager : crate :: unity_engine :: gameobject :: GameObject ,
+# [static_field] # [rename (name = "EFF_NAME_TABLE")] pub eff_name_table : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
+}
+
 }
 
 #[cfg(feature = "app-wellsequence-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-wellsequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __WellSequence_ChangeDifficultyMenuItem_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::action::Action as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WellSequence_ChangeDifficultyMenuItem as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WellSequence_ChangeDifficultyMenuItem as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: WellSequence_ChangeDifficultyMenuItem,
-        yes_event_handler: crate::system::action::Action,
-        text: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            WellSequence_ChangeDifficultyMenuItem,
-            crate::system::action::Action,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, yes_event_handler, text, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_a_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WellSequence_ChangeDifficultyMenuItem as ::unity2::ClassIdentity>::class(),
-                "ACall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WellSequence_ChangeDifficultyMenuItem as ::unity2::ClassIdentity>::NAME,
-                        "ACall",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn a_call(
-        this: WellSequence_ChangeDifficultyMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(WellSequence_ChangeDifficultyMenuItem, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
-            ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __WellSequence_DialogItemGotoEvilFirst_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WellSequence_DialogItemGotoEvilFirst as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WellSequence_DialogItemGotoEvilFirst as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : WellSequence_DialogItemGotoEvilFirst , label : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (WellSequence_DialogItemGotoEvilFirst , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , label , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_a_call { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WellSequence_DialogItemGotoEvilFirst as :: unity2 :: ClassIdentity > :: class () , "ACall" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WellSequence_DialogItemGotoEvilFirst as :: unity2 :: ClassIdentity > :: NAME , "ACall" , e) , } } } pub unsafe fn a_call (this : WellSequence_DialogItemGotoEvilFirst , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result { let inner : extern "C" fn (WellSequence_DialogItemGotoEvilFirst , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute (__lookup_a_call :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-wellsequence")]
-pub trait IWellSequence_ChangeDifficultyMenuItemMethods: IWellSequence_ChangeDifficultyMenuItem {
-    #[doc = "`.ctor(crate::system::action::Action, ::unity2::Il2CppString)` overload"]
-    fn ctor(
-        self,
-        yes_event_handler: impl ::core::convert::Into<crate::system::action::Action>,
-        text: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
-        unsafe {
-            let __receiver = <WellSequence_ChangeDifficultyMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __WellSequence_ChangeDifficultyMenuItem_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(yes_event_handler),
-                ::core::convert::Into::into(text),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ACall()` overload"]
-    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = <WellSequence_ChangeDifficultyMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __WellSequence_ChangeDifficultyMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IWellSequence_DialogItemGotoEvilFirstMethods : IWellSequence_DialogItemGotoEvilFirst { # [doc = "`.ctor(::unity2::Il2CppString)` overload"] fn ctor (self , label : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < WellSequence_DialogItemGotoEvilFirst as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __WellSequence_DialogItemGotoEvilFirst_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (label) , :: core :: option :: Option :: None) } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < WellSequence_DialogItemGotoEvilFirst as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __WellSequence_DialogItemGotoEvilFirst_unity2_raw :: a_call (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-wellsequence")]
-impl<__T: IWellSequence_ChangeDifficultyMenuItem> IWellSequence_ChangeDifficultyMenuItemMethods for __T {}
+impl < __T : IWellSequence_DialogItemGotoEvilFirst > IWellSequence_DialogItemGotoEvilFirstMethods for __T { }
 
 #[cfg(feature = "app-wellsequence")]
-impl WellSequence_ChangeDifficultyMenuItem {
-    #[doc = "`.ctor(crate::system::action::Action, ::unity2::Il2CppString)` — overload selector"]
-    pub fn new(yes_event_handler: crate::system::action::Action, text: ::unity2::Il2CppString) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(WellSequence_ChangeDifficultyMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IWellSequence_ChangeDifficultyMenuItemMethods>::ctor(this, yes_event_handler, text);
-        this
-    }
-}
-
-#[cfg(feature = "app-wellsequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __WellSequence_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_global_flags {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WellSequence as ::unity2::ClassIdentity>::class(),
-                "CreateGlobalFlags",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WellSequence as ::unity2::ClassIdentity>::NAME,
-                        "CreateGlobalFlags",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_global_flags(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_create_global_flags::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_expected {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::collections::generic::list_1::List_1<crate::app::unititem::UnitItem> as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WellSequence as ::unity2::ClassIdentity>::class(),
-                "CalcExpected",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WellSequence as ::unity2::ClassIdentity>::NAME,
-                        "CalcExpected",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn calc_expected(
-        unit_item_list: crate::system::collections::generic::list_1::List_1<crate::app::unititem::UnitItem>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(
-            crate::system::collections::generic::list_1::List_1<crate::app::unititem::UnitItem>,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(__lookup_calc_expected::get_method_info().method_ptr);
-        inner(unit_item_list, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_variable {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WellSequence as ::unity2::ClassIdentity>::class(),
-                "get_Variable",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WellSequence as ::unity2::ClassIdentity>::NAME,
-                        "get_Variable",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_variable(__unity2_method_info: ::unity2::OptionalMethod) -> crate::app::gamevariable::GameVariable {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::app::gamevariable::GameVariable =
-            ::core::mem::transmute(__lookup_get_variable::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_use_flag {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WellSequence as ::unity2::ClassIdentity>::class(),
-                "get_UseFlag",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WellSequence as ::unity2::ClassIdentity>::NAME,
-                        "get_UseFlag",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_use_flag(__unity2_method_info: ::unity2::OptionalMethod) -> crate::app::wellsequence::WellSequence_UseFlags {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::app::wellsequence::WellSequence_UseFlags =
-            ::core::mem::transmute(__lookup_get_use_flag::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_use_flag {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::wellsequence::WellSequence_UseFlags as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WellSequence as ::unity2::ClassIdentity>::class(),
-                "set_UseFlag",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WellSequence as ::unity2::ClassIdentity>::NAME,
-                        "set_UseFlag",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_use_flag(value: crate::app::wellsequence::WellSequence_UseFlags, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(crate::app::wellsequence::WellSequence_UseFlags, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_use_flag::get_method_info().method_ptr);
-        inner(value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_exchange_level {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WellSequence as ::unity2::ClassIdentity>::class(),
-                "get_ExchangeLevel",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WellSequence as ::unity2::ClassIdentity>::NAME,
-                        "get_ExchangeLevel",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_exchange_level(__unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(__lookup_get_exchange_level::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_exchange_level {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WellSequence as ::unity2::ClassIdentity>::class(),
-                "set_ExchangeLevel",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WellSequence as ::unity2::ClassIdentity>::NAME,
-                        "set_ExchangeLevel",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_exchange_level(value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_exchange_level::get_method_info().method_ptr);
-        inner(value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_seed {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WellSequence as ::unity2::ClassIdentity>::class(),
-                "get_Seed",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WellSequence as ::unity2::ClassIdentity>::NAME,
-                        "get_Seed",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_seed(__unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(__lookup_get_seed::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_seed {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WellSequence as ::unity2::ClassIdentity>::class(),
-                "set_Seed",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WellSequence as ::unity2::ClassIdentity>::NAME,
-                        "set_Seed",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_seed(value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_set_seed::get_method_info().method_ptr);
-        inner(value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_evil_weapon_event_state {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WellSequence as ::unity2::ClassIdentity>::class(),
-                "get_EvilWeaponEventState",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WellSequence as ::unity2::ClassIdentity>::NAME,
-                        "get_EvilWeaponEventState",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_evil_weapon_event_state(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::wellsequence::WellSequence_EvilWeaponEventStates {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::app::wellsequence::WellSequence_EvilWeaponEventStates =
-            ::core::mem::transmute(__lookup_get_evil_weapon_event_state::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_evil_weapon_event_state {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::wellsequence::WellSequence_EvilWeaponEventStates as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WellSequence as ::unity2::ClassIdentity>::class(),
-                "set_EvilWeaponEventState",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WellSequence as ::unity2::ClassIdentity>::NAME,
-                        "set_EvilWeaponEventState",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_evil_weapon_event_state(
-        value: crate::app::wellsequence::WellSequence_EvilWeaponEventStates,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::app::wellsequence::WellSequence_EvilWeaponEventStates, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_evil_weapon_event_state::get_method_info().method_ptr);
-        inner(value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_exchange {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WellSequence as ::unity2::ClassIdentity>::class(),
-                "SetExchange",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WellSequence as ::unity2::ClassIdentity>::NAME,
-                        "SetExchange",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_exchange(level: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_set_exchange::get_method_info().method_ptr);
-        inner(level, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_map_clear {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WellSequence as ::unity2::ClassIdentity>::class(),
-                "MapClear",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WellSequence as ::unity2::ClassIdentity>::NAME,
-                        "MapClear",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn map_clear(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_map_clear::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_is_item_return {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WellSequence as ::unity2::ClassIdentity>::class(),
-                "get_IsItemReturn",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WellSequence as ::unity2::ClassIdentity>::NAME,
-                        "get_IsItemReturn",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_is_item_return(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_is_item_return::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_can_item_in {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WellSequence as ::unity2::ClassIdentity>::class(),
-                "get_CanItemIn",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WellSequence as ::unity2::ClassIdentity>::NAME,
-                        "get_CanItemIn",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_can_item_in(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_get_can_item_in::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_effect_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WellSequence as ::unity2::ClassIdentity>::class(),
-                "GetEffectName",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WellSequence as ::unity2::ClassIdentity>::NAME,
-                        "GetEffectName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_effect_name(__unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_effect_name::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_try_create_item_effect {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WellSequence as ::unity2::ClassIdentity>::class(),
-                "TryCreateItemEffect",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WellSequence as ::unity2::ClassIdentity>::NAME,
-                        "TryCreateItemEffect",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn try_create_item_effect(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_try_create_item_effect::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_try_fadeout_effect {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WellSequence as ::unity2::ClassIdentity>::class(),
-                "TryFadeoutEffect",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WellSequence as ::unity2::ClassIdentity>::NAME,
-                        "TryFadeoutEffect",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn try_fadeout_effect(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_try_fadeout_effect::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_try_destroy_effect {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WellSequence as ::unity2::ClassIdentity>::class(),
-                "TryDestroyEffect",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WellSequence as ::unity2::ClassIdentity>::NAME,
-                        "TryDestroyEffect",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn try_destroy_effect(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_try_destroy_effect::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WellSequence as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WellSequence as ::unity2::ClassIdentity>::NAME,
-                        "CreateBind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_bind(parent: crate::app::procinst::ProcInst, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
-        inner(parent, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_load_prefab_async {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WellSequence as ::unity2::ClassIdentity>::class(),
-                "LoadPrefabAsync",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WellSequence as ::unity2::ClassIdentity>::NAME,
-                        "LoadPrefabAsync",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn load_prefab_async(this: WellSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(WellSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_load_prefab_async::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_wait_load_prefab {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WellSequence as ::unity2::ClassIdentity>::class(),
-                "WaitLoadPrefab",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WellSequence as ::unity2::ClassIdentity>::NAME,
-                        "WaitLoadPrefab",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn wait_load_prefab(this: WellSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(WellSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_wait_load_prefab::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_unload_prefab {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WellSequence as ::unity2::ClassIdentity>::class(),
-                "UnloadPrefab",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WellSequence as ::unity2::ClassIdentity>::NAME,
-                        "UnloadPrefab",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn unload_prefab(this: WellSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(WellSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_unload_prefab::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_open_header {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WellSequence as ::unity2::ClassIdentity>::class(),
-                "OpenHeader",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WellSequence as ::unity2::ClassIdentity>::NAME,
-                        "OpenHeader",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn open_header(this: WellSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(WellSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_open_header::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_exit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<WellSequence as ::unity2::ClassIdentity>::class(), "Exit", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WellSequence as ::unity2::ClassIdentity>::NAME,
-                        "Exit",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn exit(this: WellSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(WellSequence, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_exit::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_top_menu {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WellSequence as ::unity2::ClassIdentity>::class(),
-                "CreateTopMenu",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WellSequence as ::unity2::ClassIdentity>::NAME,
-                        "CreateTopMenu",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_top_menu(this: WellSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(WellSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_create_top_menu::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_item_exchange {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <crate::app::random_2::Random_2 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WellSequence as ::unity2::ClassIdentity>::class(),
-                "CalcItemExchange",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WellSequence as ::unity2::ClassIdentity>::NAME,
-                        "CalcItemExchange",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn calc_item_exchange(
-        this: WellSequence,
-        level: i32,
-        random: crate::app::random_2::Random_2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData> {
-        let inner: extern "C" fn(
-            WellSequence,
-            i32,
-            crate::app::random_2::Random_2,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData> =
-            ::core::mem::transmute(__lookup_calc_item_exchange::get_method_info().method_ptr);
-        inner(this, level, random, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_item {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WellSequence as ::unity2::ClassIdentity>::class(),
-                "GetItem",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WellSequence as ::unity2::ClassIdentity>::NAME,
-                        "GetItem",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_item(this: WellSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(WellSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_get_item::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_check_cc_tutorial {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WellSequence as ::unity2::ClassIdentity>::class(),
-                "CheckCcTutorial",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WellSequence as ::unity2::ClassIdentity>::NAME,
-                        "CheckCcTutorial",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn check_cc_tutorial(this: WellSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(WellSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_check_cc_tutorial::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_item_select_menu {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WellSequence as ::unity2::ClassIdentity>::class(),
-                "CreateItemSelectMenu",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WellSequence as ::unity2::ClassIdentity>::NAME,
-                        "CreateItemSelectMenu",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_item_select_menu(this: WellSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(WellSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_create_item_select_menu::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_check_item_select_result {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WellSequence as ::unity2::ClassIdentity>::class(),
-                "CheckItemSelectResult",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WellSequence as ::unity2::ClassIdentity>::NAME,
-                        "CheckItemSelectResult",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn check_item_select_result(this: WellSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(WellSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_check_item_select_result::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_goto_evil_first_confirm_dialog {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WellSequence as ::unity2::ClassIdentity>::class(),
-                "CreateGotoEvilFirstConfirmDialog",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WellSequence as ::unity2::ClassIdentity>::NAME,
-                        "CreateGotoEvilFirstConfirmDialog",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_goto_evil_first_confirm_dialog(this: WellSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(WellSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_create_goto_evil_first_confirm_dialog::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_goto_evil_confirm_dialog {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WellSequence as ::unity2::ClassIdentity>::class(),
-                "CreateGotoEvilConfirmDialog",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WellSequence as ::unity2::ClassIdentity>::NAME,
-                        "CreateGotoEvilConfirmDialog",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_goto_evil_confirm_dialog(this: WellSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(WellSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_create_goto_evil_confirm_dialog::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_change_normal {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WellSequence as ::unity2::ClassIdentity>::class(),
-                "OnChangeNormal",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WellSequence as ::unity2::ClassIdentity>::NAME,
-                        "OnChangeNormal",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_change_normal(this: WellSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(WellSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_change_normal::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_change_hard {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WellSequence as ::unity2::ClassIdentity>::class(),
-                "OnChangeHard",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WellSequence as ::unity2::ClassIdentity>::NAME,
-                        "OnChangeHard",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_change_hard(this: WellSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(WellSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_change_hard::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_change_lunatic {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WellSequence as ::unity2::ClassIdentity>::class(),
-                "OnChangeLunatic",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WellSequence as ::unity2::ClassIdentity>::NAME,
-                        "OnChangeLunatic",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_change_lunatic(this: WellSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(WellSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_change_lunatic::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_change_difficulty_dialog {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WellSequence as ::unity2::ClassIdentity>::class(),
-                "CreateChangeDifficultyDialog",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WellSequence as ::unity2::ClassIdentity>::NAME,
-                        "CreateChangeDifficultyDialog",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_change_difficulty_dialog(this: WellSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(WellSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_create_change_difficulty_dialog::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_change_difficulty_result_dialog {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WellSequence as ::unity2::ClassIdentity>::class(),
-                "CreateChangeDifficultyResultDialog",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WellSequence as ::unity2::ClassIdentity>::NAME,
-                        "CreateChangeDifficultyResultDialog",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_change_difficulty_result_dialog(this: WellSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(WellSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_create_change_difficulty_result_dialog::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_branch {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<WellSequence as ::unity2::ClassIdentity>::class(), "Branch", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WellSequence as ::unity2::ClassIdentity>::NAME,
-                        "Branch",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn branch(this: WellSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(WellSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_branch::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_evil_weapon1 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WellSequence as ::unity2::ClassIdentity>::class(),
-                "GetEvilWeapon1",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WellSequence as ::unity2::ClassIdentity>::NAME,
-                        "GetEvilWeapon1",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_evil_weapon1(this: WellSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(WellSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_get_evil_weapon1::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_evil_weapon2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WellSequence as ::unity2::ClassIdentity>::class(),
-                "GetEvilWeapon2",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WellSequence as ::unity2::ClassIdentity>::NAME,
-                        "GetEvilWeapon2",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_evil_weapon2(this: WellSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(WellSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_get_evil_weapon2::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_evil_map_first_demo {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WellSequence as ::unity2::ClassIdentity>::class(),
-                "EvilMapFirstDemo",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WellSequence as ::unity2::ClassIdentity>::NAME,
-                        "EvilMapFirstDemo",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn evil_map_first_demo(
-        this: WellSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::ienumerator::IEnumerator {
-        let inner: extern "C" fn(WellSequence, ::unity2::OptionalMethod) -> crate::system::collections::ienumerator::IEnumerator =
-            ::core::mem::transmute(__lookup_evil_map_first_demo::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_first_tutorial {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WellSequence as ::unity2::ClassIdentity>::class(),
-                "FirstTutorial",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WellSequence as ::unity2::ClassIdentity>::NAME,
-                        "FirstTutorial",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn first_tutorial(this: WellSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(WellSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_first_tutorial::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_desc {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WellSequence as ::unity2::ClassIdentity>::class(),
-                "CreateDesc",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WellSequence as ::unity2::ClassIdentity>::NAME,
-                        "CreateDesc",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_desc(this: WellSequence, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Array<crate::app::procdesc::ProcDesc> {
-        let inner: extern "C" fn(WellSequence, ::unity2::OptionalMethod) -> ::unity2::Array<crate::app::procdesc::ProcDesc> =
-            ::core::mem::transmute(__lookup_create_desc::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<WellSequence as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WellSequence as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: WellSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(WellSequence, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<WellSequence as ::unity2::ClassIdentity>::class(), ".cctor", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WellSequence as ::unity2::ClassIdentity>::NAME,
-                        ".cctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-wellsequence")]
-impl WellSequence {
-    #[doc = "`CreateGlobalFlags()` overload"]
-    pub fn create_global_flags() -> () {
-        unsafe { __WellSequence_unity2_raw::create_global_flags(::core::option::Option::None) }
-    }
-
-    #[doc = "`CalcExpected(crate::system::collections::generic::list_1::List_1<crate::app::unititem::UnitItem>)` overload"]
-    pub fn calc_expected(
-        unit_item_list: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::unititem::UnitItem>>,
-    ) -> i32 {
-        unsafe { __WellSequence_unity2_raw::calc_expected(::core::convert::Into::into(unit_item_list), ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_Variable()` overload"]
-    pub fn get_variable() -> crate::app::gamevariable::GameVariable {
-        unsafe { __WellSequence_unity2_raw::get_variable(::core::option::Option::None) }
-    }
-
-    #[doc = "`get_UseFlag()` overload"]
-    pub fn get_use_flag() -> crate::app::wellsequence::WellSequence_UseFlags {
-        unsafe { __WellSequence_unity2_raw::get_use_flag(::core::option::Option::None) }
-    }
-
-    #[doc = "`set_UseFlag(crate::app::wellsequence::WellSequence_UseFlags)` overload"]
-    pub fn set_use_flag(value: impl ::core::convert::Into<crate::app::wellsequence::WellSequence_UseFlags>) -> () {
-        unsafe { __WellSequence_unity2_raw::set_use_flag(::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_ExchangeLevel()` overload"]
-    pub fn get_exchange_level() -> i32 {
-        unsafe { __WellSequence_unity2_raw::get_exchange_level(::core::option::Option::None) }
-    }
-
-    #[doc = "`set_ExchangeLevel(i32)` overload"]
-    pub fn set_exchange_level(value: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __WellSequence_unity2_raw::set_exchange_level(::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_Seed()` overload"]
-    pub fn get_seed() -> i32 {
-        unsafe { __WellSequence_unity2_raw::get_seed(::core::option::Option::None) }
-    }
-
-    #[doc = "`set_Seed(i32)` overload"]
-    pub fn set_seed(value: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __WellSequence_unity2_raw::set_seed(::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_EvilWeaponEventState()` overload"]
-    pub fn get_evil_weapon_event_state() -> crate::app::wellsequence::WellSequence_EvilWeaponEventStates {
-        unsafe { __WellSequence_unity2_raw::get_evil_weapon_event_state(::core::option::Option::None) }
-    }
-
-    #[doc = "`set_EvilWeaponEventState(crate::app::wellsequence::WellSequence_EvilWeaponEventStates)` overload"]
-    pub fn set_evil_weapon_event_state(value: impl ::core::convert::Into<crate::app::wellsequence::WellSequence_EvilWeaponEventStates>) -> () {
-        unsafe { __WellSequence_unity2_raw::set_evil_weapon_event_state(::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`SetExchange(i32)` overload"]
-    pub fn set_exchange(level: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __WellSequence_unity2_raw::set_exchange(::core::convert::Into::into(level), ::core::option::Option::None) }
-    }
-
-    #[doc = "`MapClear()` overload"]
-    pub fn map_clear() -> () {
-        unsafe { __WellSequence_unity2_raw::map_clear(::core::option::Option::None) }
-    }
-
-    #[doc = "`get_IsItemReturn()` overload"]
-    pub fn get_is_item_return() -> bool {
-        unsafe { __WellSequence_unity2_raw::get_is_item_return(::core::option::Option::None) }
-    }
-
-    #[doc = "`get_CanItemIn()` overload"]
-    pub fn get_can_item_in() -> bool {
-        unsafe { __WellSequence_unity2_raw::get_can_item_in(::core::option::Option::None) }
-    }
-
-    #[doc = "`GetEffectName()` overload"]
-    pub fn get_effect_name() -> ::unity2::Il2CppString {
-        unsafe { __WellSequence_unity2_raw::get_effect_name(::core::option::Option::None) }
-    }
-
-    #[doc = "`TryCreateItemEffect()` overload"]
-    pub fn try_create_item_effect() -> () {
-        unsafe { __WellSequence_unity2_raw::try_create_item_effect(::core::option::Option::None) }
-    }
-
-    #[doc = "`TryFadeoutEffect()` overload"]
-    pub fn try_fadeout_effect() -> () {
-        unsafe { __WellSequence_unity2_raw::try_fadeout_effect(::core::option::Option::None) }
-    }
-
-    #[doc = "`TryDestroyEffect()` overload"]
-    pub fn try_destroy_effect() -> () {
-        unsafe { __WellSequence_unity2_raw::try_destroy_effect(::core::option::Option::None) }
-    }
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
-    pub fn create_bind(parent: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
-        unsafe { __WellSequence_unity2_raw::create_bind(::core::convert::Into::into(parent), ::core::option::Option::None) }
-    }
-
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __WellSequence_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-wellsequence")]
-pub trait IWellSequenceMethods: IWellSequence {
-    #[doc = "`LoadPrefabAsync()` overload"]
-    fn load_prefab_async(self) -> () {
-        unsafe {
-            let __receiver = <WellSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __WellSequence_unity2_raw::load_prefab_async(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`WaitLoadPrefab()` overload"]
-    fn wait_load_prefab(self) -> () {
-        unsafe {
-            let __receiver = <WellSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __WellSequence_unity2_raw::wait_load_prefab(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`UnloadPrefab()` overload"]
-    fn unload_prefab(self) -> () {
-        unsafe {
-            let __receiver = <WellSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __WellSequence_unity2_raw::unload_prefab(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OpenHeader()` overload"]
-    fn open_header(self) -> () {
-        unsafe {
-            let __receiver = <WellSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __WellSequence_unity2_raw::open_header(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Exit()` overload"]
-    fn exit(self) -> () {
-        unsafe {
-            let __receiver = <WellSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __WellSequence_unity2_raw::exit(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CreateTopMenu()` overload"]
-    fn create_top_menu(self) -> () {
-        unsafe {
-            let __receiver = <WellSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __WellSequence_unity2_raw::create_top_menu(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CalcItemExchange(i32, crate::app::random_2::Random_2)` overload"]
-    fn calc_item_exchange(
-        self,
-        level: impl ::core::convert::Into<i32>,
-        random: impl ::core::convert::Into<crate::app::random_2::Random_2>,
-    ) -> crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData> {
-        unsafe {
-            let __receiver = <WellSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __WellSequence_unity2_raw::calc_item_exchange(
-                __receiver,
-                ::core::convert::Into::into(level),
-                ::core::convert::Into::into(random),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetItem()` overload"]
-    fn get_item(self) -> () {
-        unsafe {
-            let __receiver = <WellSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __WellSequence_unity2_raw::get_item(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CheckCcTutorial()` overload"]
-    fn check_cc_tutorial(self) -> () {
-        unsafe {
-            let __receiver = <WellSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __WellSequence_unity2_raw::check_cc_tutorial(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CreateItemSelectMenu()` overload"]
-    fn create_item_select_menu(self) -> () {
-        unsafe {
-            let __receiver = <WellSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __WellSequence_unity2_raw::create_item_select_menu(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CheckItemSelectResult()` overload"]
-    fn check_item_select_result(self) -> () {
-        unsafe {
-            let __receiver = <WellSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __WellSequence_unity2_raw::check_item_select_result(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CreateGotoEvilFirstConfirmDialog()` overload"]
-    fn create_goto_evil_first_confirm_dialog(self) -> () {
-        unsafe {
-            let __receiver = <WellSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __WellSequence_unity2_raw::create_goto_evil_first_confirm_dialog(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CreateGotoEvilConfirmDialog()` overload"]
-    fn create_goto_evil_confirm_dialog(self) -> () {
-        unsafe {
-            let __receiver = <WellSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __WellSequence_unity2_raw::create_goto_evil_confirm_dialog(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnChangeNormal()` overload"]
-    fn on_change_normal(self) -> () {
-        unsafe {
-            let __receiver = <WellSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __WellSequence_unity2_raw::on_change_normal(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnChangeHard()` overload"]
-    fn on_change_hard(self) -> () {
-        unsafe {
-            let __receiver = <WellSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __WellSequence_unity2_raw::on_change_hard(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnChangeLunatic()` overload"]
-    fn on_change_lunatic(self) -> () {
-        unsafe {
-            let __receiver = <WellSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __WellSequence_unity2_raw::on_change_lunatic(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CreateChangeDifficultyDialog()` overload"]
-    fn create_change_difficulty_dialog(self) -> () {
-        unsafe {
-            let __receiver = <WellSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __WellSequence_unity2_raw::create_change_difficulty_dialog(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CreateChangeDifficultyResultDialog()` overload"]
-    fn create_change_difficulty_result_dialog(self) -> () {
-        unsafe {
-            let __receiver = <WellSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __WellSequence_unity2_raw::create_change_difficulty_result_dialog(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Branch()` overload"]
-    fn branch(self) -> () {
-        unsafe {
-            let __receiver = <WellSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __WellSequence_unity2_raw::branch(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetEvilWeapon1()` overload"]
-    fn get_evil_weapon1(self) -> () {
-        unsafe {
-            let __receiver = <WellSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __WellSequence_unity2_raw::get_evil_weapon1(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetEvilWeapon2()` overload"]
-    fn get_evil_weapon2(self) -> () {
-        unsafe {
-            let __receiver = <WellSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __WellSequence_unity2_raw::get_evil_weapon2(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`EvilMapFirstDemo()` overload"]
-    fn evil_map_first_demo(self) -> crate::system::collections::ienumerator::IEnumerator {
-        unsafe {
-            let __receiver = <WellSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __WellSequence_unity2_raw::evil_map_first_demo(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`FirstTutorial()` overload"]
-    fn first_tutorial(self) -> () {
-        unsafe {
-            let __receiver = <WellSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __WellSequence_unity2_raw::first_tutorial(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CreateDesc()` overload"]
-    fn create_desc(self) -> ::unity2::Array<crate::app::procdesc::ProcDesc> {
-        unsafe {
-            let __receiver = <WellSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __WellSequence_unity2_raw::create_desc(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <WellSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __WellSequence_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-wellsequence")]
-impl<__T: IWellSequence> IWellSequenceMethods for __T {}
-
-#[cfg(feature = "app-wellsequence")]
-impl WellSequence {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(WellSequence), ::core::stringify!(new),));
-        <Self as IWellSequenceMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-wellsequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __WellSequence_DialogItemGotoEvilFirst_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WellSequence_DialogItemGotoEvilFirst as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WellSequence_DialogItemGotoEvilFirst as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: WellSequence_DialogItemGotoEvilFirst,
-        label: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(WellSequence_DialogItemGotoEvilFirst, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, label, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_a_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WellSequence_DialogItemGotoEvilFirst as ::unity2::ClassIdentity>::class(),
-                "ACall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WellSequence_DialogItemGotoEvilFirst as ::unity2::ClassIdentity>::NAME,
-                        "ACall",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn a_call(
-        this: WellSequence_DialogItemGotoEvilFirst,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(WellSequence_DialogItemGotoEvilFirst, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
-            ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-wellsequence")]
-pub trait IWellSequence_DialogItemGotoEvilFirstMethods: IWellSequence_DialogItemGotoEvilFirst {
-    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
-    fn ctor(self, label: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver = <WellSequence_DialogItemGotoEvilFirst as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __WellSequence_DialogItemGotoEvilFirst_unity2_raw::ctor(__receiver, ::core::convert::Into::into(label), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ACall()` overload"]
-    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = <WellSequence_DialogItemGotoEvilFirst as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __WellSequence_DialogItemGotoEvilFirst_unity2_raw::a_call(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-wellsequence")]
-impl<__T: IWellSequence_DialogItemGotoEvilFirst> IWellSequence_DialogItemGotoEvilFirstMethods for __T {}
+impl WellSequence_DialogItemGotoEvilFirst { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WellSequence_DialogItemGotoEvilFirst_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WellSequence_DialogItemGotoEvilFirst_unity2_raw :: __lookup_a_call :: get_method_info () } }
 
 #[cfg(feature = "app-wellsequence")]
 impl WellSequence_DialogItemGotoEvilFirst {
-    #[doc = "`.ctor(::unity2::Il2CppString)` — overload selector"]
-    pub fn new(label: ::unity2::Il2CppString) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(WellSequence_DialogItemGotoEvilFirst),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IWellSequence_DialogItemGotoEvilFirstMethods>::ctor(this, label);
-        this
-    }
+# [doc = "`.ctor(::unity2::Il2CppString)` — overload selector"] pub fn new (label : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (WellSequence_DialogItemGotoEvilFirst) , :: core :: stringify ! (new) ,)) ; < Self as IWellSequence_DialogItemGotoEvilFirstMethods > :: ctor (this , label) ; this }
+}
+
+#[cfg(feature = "app-wellsequence")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __WellSequence_ChangeDifficultyMenuItem_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: action :: Action as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WellSequence_ChangeDifficultyMenuItem as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WellSequence_ChangeDifficultyMenuItem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : WellSequence_ChangeDifficultyMenuItem , yes_event_handler : crate :: system :: action :: Action , text : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (WellSequence_ChangeDifficultyMenuItem , crate :: system :: action :: Action , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , yes_event_handler , text , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_a_call { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WellSequence_ChangeDifficultyMenuItem as :: unity2 :: ClassIdentity > :: class () , "ACall" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WellSequence_ChangeDifficultyMenuItem as :: unity2 :: ClassIdentity > :: NAME , "ACall" , e) , } } } pub unsafe fn a_call (this : WellSequence_ChangeDifficultyMenuItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result { let inner : extern "C" fn (WellSequence_ChangeDifficultyMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute (__lookup_a_call :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-wellsequence")]
+pub trait IWellSequence_ChangeDifficultyMenuItemMethods : IWellSequence_ChangeDifficultyMenuItem { # [doc = "`.ctor(crate::system::action::Action, ::unity2::Il2CppString)` overload"] fn ctor (self , yes_event_handler : impl :: core :: convert :: Into < crate :: system :: action :: Action > , text : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < WellSequence_ChangeDifficultyMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __WellSequence_ChangeDifficultyMenuItem_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (yes_event_handler) , :: core :: convert :: Into :: into (text) , :: core :: option :: Option :: None) } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < WellSequence_ChangeDifficultyMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __WellSequence_ChangeDifficultyMenuItem_unity2_raw :: a_call (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-wellsequence")]
+impl < __T : IWellSequence_ChangeDifficultyMenuItem > IWellSequence_ChangeDifficultyMenuItemMethods for __T { }
+
+#[cfg(feature = "app-wellsequence")]
+impl WellSequence_ChangeDifficultyMenuItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WellSequence_ChangeDifficultyMenuItem_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WellSequence_ChangeDifficultyMenuItem_unity2_raw :: __lookup_a_call :: get_method_info () } }
+
+#[cfg(feature = "app-wellsequence")]
+impl WellSequence_ChangeDifficultyMenuItem {
+# [doc = "`.ctor(crate::system::action::Action, ::unity2::Il2CppString)` — overload selector"] pub fn new (yes_event_handler : crate :: system :: action :: Action , text : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (WellSequence_ChangeDifficultyMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IWellSequence_ChangeDifficultyMenuItemMethods > :: ctor (this , yes_event_handler , text) ; this }
+}
+
+#[cfg(feature = "app-wellsequence")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __WellSequence_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_global_flags { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WellSequence as :: unity2 :: ClassIdentity > :: class () , "CreateGlobalFlags" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WellSequence as :: unity2 :: ClassIdentity > :: NAME , "CreateGlobalFlags" , e) , } } } pub unsafe fn create_global_flags (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create_global_flags :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_calc_expected { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unititem :: UnitItem > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WellSequence as :: unity2 :: ClassIdentity > :: class () , "CalcExpected" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WellSequence as :: unity2 :: ClassIdentity > :: NAME , "CalcExpected" , e) , } } } pub unsafe fn calc_expected (unit_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unititem :: UnitItem > , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unititem :: UnitItem > , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_calc_expected :: get_method_info () . method_ptr ,) ; inner (unit_item_list , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_variable { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WellSequence as :: unity2 :: ClassIdentity > :: class () , "get_Variable" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WellSequence as :: unity2 :: ClassIdentity > :: NAME , "get_Variable" , e) , } } } pub unsafe fn get_variable (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: gamevariable :: GameVariable { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: gamevariable :: GameVariable = :: core :: mem :: transmute (__lookup_get_variable :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_use_flag { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WellSequence as :: unity2 :: ClassIdentity > :: class () , "get_UseFlag" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WellSequence as :: unity2 :: ClassIdentity > :: NAME , "get_UseFlag" , e) , } } } pub unsafe fn get_use_flag (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: wellsequence :: WellSequence_UseFlags { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: wellsequence :: WellSequence_UseFlags = :: core :: mem :: transmute (__lookup_get_use_flag :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_use_flag { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: wellsequence :: WellSequence_UseFlags as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WellSequence as :: unity2 :: ClassIdentity > :: class () , "set_UseFlag" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WellSequence as :: unity2 :: ClassIdentity > :: NAME , "set_UseFlag" , e) , } } } pub unsafe fn set_use_flag (value : crate :: app :: wellsequence :: WellSequence_UseFlags , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: wellsequence :: WellSequence_UseFlags , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_use_flag :: get_method_info () . method_ptr ,) ; inner (value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_exchange_level { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WellSequence as :: unity2 :: ClassIdentity > :: class () , "get_ExchangeLevel" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WellSequence as :: unity2 :: ClassIdentity > :: NAME , "get_ExchangeLevel" , e) , } } } pub unsafe fn get_exchange_level (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_exchange_level :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_exchange_level { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WellSequence as :: unity2 :: ClassIdentity > :: class () , "set_ExchangeLevel" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WellSequence as :: unity2 :: ClassIdentity > :: NAME , "set_ExchangeLevel" , e) , } } } pub unsafe fn set_exchange_level (value : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_exchange_level :: get_method_info () . method_ptr ,) ; inner (value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_seed { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WellSequence as :: unity2 :: ClassIdentity > :: class () , "get_Seed" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WellSequence as :: unity2 :: ClassIdentity > :: NAME , "get_Seed" , e) , } } } pub unsafe fn get_seed (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_seed :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_seed { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WellSequence as :: unity2 :: ClassIdentity > :: class () , "set_Seed" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WellSequence as :: unity2 :: ClassIdentity > :: NAME , "set_Seed" , e) , } } } pub unsafe fn set_seed (value : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_seed :: get_method_info () . method_ptr ,) ; inner (value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_evil_weapon_event_state { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WellSequence as :: unity2 :: ClassIdentity > :: class () , "get_EvilWeaponEventState" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WellSequence as :: unity2 :: ClassIdentity > :: NAME , "get_EvilWeaponEventState" , e) , } } } pub unsafe fn get_evil_weapon_event_state (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: wellsequence :: WellSequence_EvilWeaponEventStates { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: wellsequence :: WellSequence_EvilWeaponEventStates = :: core :: mem :: transmute (__lookup_get_evil_weapon_event_state :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_evil_weapon_event_state { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: wellsequence :: WellSequence_EvilWeaponEventStates as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WellSequence as :: unity2 :: ClassIdentity > :: class () , "set_EvilWeaponEventState" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WellSequence as :: unity2 :: ClassIdentity > :: NAME , "set_EvilWeaponEventState" , e) , } } } pub unsafe fn set_evil_weapon_event_state (value : crate :: app :: wellsequence :: WellSequence_EvilWeaponEventStates , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: wellsequence :: WellSequence_EvilWeaponEventStates , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_evil_weapon_event_state :: get_method_info () . method_ptr ,) ; inner (value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_exchange { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WellSequence as :: unity2 :: ClassIdentity > :: class () , "SetExchange" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WellSequence as :: unity2 :: ClassIdentity > :: NAME , "SetExchange" , e) , } } } pub unsafe fn set_exchange (level : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_exchange :: get_method_info () . method_ptr ,) ; inner (level , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_map_clear { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WellSequence as :: unity2 :: ClassIdentity > :: class () , "MapClear" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WellSequence as :: unity2 :: ClassIdentity > :: NAME , "MapClear" , e) , } } } pub unsafe fn map_clear (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_map_clear :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_is_item_return { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WellSequence as :: unity2 :: ClassIdentity > :: class () , "get_IsItemReturn" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WellSequence as :: unity2 :: ClassIdentity > :: NAME , "get_IsItemReturn" , e) , } } } pub unsafe fn get_is_item_return (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_is_item_return :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_can_item_in { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WellSequence as :: unity2 :: ClassIdentity > :: class () , "get_CanItemIn" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WellSequence as :: unity2 :: ClassIdentity > :: NAME , "get_CanItemIn" , e) , } } } pub unsafe fn get_can_item_in (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_can_item_in :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_effect_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WellSequence as :: unity2 :: ClassIdentity > :: class () , "GetEffectName" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WellSequence as :: unity2 :: ClassIdentity > :: NAME , "GetEffectName" , e) , } } } pub unsafe fn get_effect_name (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_effect_name :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_try_create_item_effect { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WellSequence as :: unity2 :: ClassIdentity > :: class () , "TryCreateItemEffect" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WellSequence as :: unity2 :: ClassIdentity > :: NAME , "TryCreateItemEffect" , e) , } } } pub unsafe fn try_create_item_effect (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_try_create_item_effect :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_try_fadeout_effect { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WellSequence as :: unity2 :: ClassIdentity > :: class () , "TryFadeoutEffect" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WellSequence as :: unity2 :: ClassIdentity > :: NAME , "TryFadeoutEffect" , e) , } } } pub unsafe fn try_fadeout_effect (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_try_fadeout_effect :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_try_destroy_effect { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WellSequence as :: unity2 :: ClassIdentity > :: class () , "TryDestroyEffect" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WellSequence as :: unity2 :: ClassIdentity > :: NAME , "TryDestroyEffect" , e) , } } } pub unsafe fn try_destroy_effect (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_try_destroy_effect :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_bind { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WellSequence as :: unity2 :: ClassIdentity > :: class () , "CreateBind" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WellSequence as :: unity2 :: ClassIdentity > :: NAME , "CreateBind" , e) , } } } pub unsafe fn create_bind (parent : crate :: app :: procinst :: ProcInst , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create_bind :: get_method_info () . method_ptr ,) ; inner (parent , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_load_prefab_async { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WellSequence as :: unity2 :: ClassIdentity > :: class () , "LoadPrefabAsync" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WellSequence as :: unity2 :: ClassIdentity > :: NAME , "LoadPrefabAsync" , e) , } } } pub unsafe fn load_prefab_async (this : WellSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (WellSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_load_prefab_async :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_wait_load_prefab { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WellSequence as :: unity2 :: ClassIdentity > :: class () , "WaitLoadPrefab" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WellSequence as :: unity2 :: ClassIdentity > :: NAME , "WaitLoadPrefab" , e) , } } } pub unsafe fn wait_load_prefab (this : WellSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (WellSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_wait_load_prefab :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_unload_prefab { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WellSequence as :: unity2 :: ClassIdentity > :: class () , "UnloadPrefab" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WellSequence as :: unity2 :: ClassIdentity > :: NAME , "UnloadPrefab" , e) , } } } pub unsafe fn unload_prefab (this : WellSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (WellSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_unload_prefab :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_open_header { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WellSequence as :: unity2 :: ClassIdentity > :: class () , "OpenHeader" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WellSequence as :: unity2 :: ClassIdentity > :: NAME , "OpenHeader" , e) , } } } pub unsafe fn open_header (this : WellSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (WellSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_open_header :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_exit { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WellSequence as :: unity2 :: ClassIdentity > :: class () , "Exit" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WellSequence as :: unity2 :: ClassIdentity > :: NAME , "Exit" , e) , } } } pub unsafe fn exit (this : WellSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (WellSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_exit :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_top_menu { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WellSequence as :: unity2 :: ClassIdentity > :: class () , "CreateTopMenu" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WellSequence as :: unity2 :: ClassIdentity > :: NAME , "CreateTopMenu" , e) , } } } pub unsafe fn create_top_menu (this : WellSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (WellSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create_top_menu :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_calc_item_exchange { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < crate :: app :: random_2 :: Random_2 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WellSequence as :: unity2 :: ClassIdentity > :: class () , "CalcItemExchange" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WellSequence as :: unity2 :: ClassIdentity > :: NAME , "CalcItemExchange" , e) , } } } pub unsafe fn calc_item_exchange (this : WellSequence , level : i32 , random : crate :: app :: random_2 :: Random_2 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: itemdata :: ItemData > { let inner : extern "C" fn (WellSequence , i32 , crate :: app :: random_2 :: Random_2 , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: itemdata :: ItemData > = :: core :: mem :: transmute (__lookup_calc_item_exchange :: get_method_info () . method_ptr ,) ; inner (this , level , random , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_item { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WellSequence as :: unity2 :: ClassIdentity > :: class () , "GetItem" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WellSequence as :: unity2 :: ClassIdentity > :: NAME , "GetItem" , e) , } } } pub unsafe fn get_item (this : WellSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (WellSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_get_item :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_check_cc_tutorial { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WellSequence as :: unity2 :: ClassIdentity > :: class () , "CheckCcTutorial" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WellSequence as :: unity2 :: ClassIdentity > :: NAME , "CheckCcTutorial" , e) , } } } pub unsafe fn check_cc_tutorial (this : WellSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (WellSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_check_cc_tutorial :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_item_select_menu { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WellSequence as :: unity2 :: ClassIdentity > :: class () , "CreateItemSelectMenu" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WellSequence as :: unity2 :: ClassIdentity > :: NAME , "CreateItemSelectMenu" , e) , } } } pub unsafe fn create_item_select_menu (this : WellSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (WellSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create_item_select_menu :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_check_item_select_result { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WellSequence as :: unity2 :: ClassIdentity > :: class () , "CheckItemSelectResult" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WellSequence as :: unity2 :: ClassIdentity > :: NAME , "CheckItemSelectResult" , e) , } } } pub unsafe fn check_item_select_result (this : WellSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (WellSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_check_item_select_result :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_goto_evil_first_confirm_dialog { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WellSequence as :: unity2 :: ClassIdentity > :: class () , "CreateGotoEvilFirstConfirmDialog" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WellSequence as :: unity2 :: ClassIdentity > :: NAME , "CreateGotoEvilFirstConfirmDialog" , e) , } } } pub unsafe fn create_goto_evil_first_confirm_dialog (this : WellSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (WellSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create_goto_evil_first_confirm_dialog :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_goto_evil_confirm_dialog { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WellSequence as :: unity2 :: ClassIdentity > :: class () , "CreateGotoEvilConfirmDialog" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WellSequence as :: unity2 :: ClassIdentity > :: NAME , "CreateGotoEvilConfirmDialog" , e) , } } } pub unsafe fn create_goto_evil_confirm_dialog (this : WellSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (WellSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create_goto_evil_confirm_dialog :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_change_normal { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WellSequence as :: unity2 :: ClassIdentity > :: class () , "OnChangeNormal" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WellSequence as :: unity2 :: ClassIdentity > :: NAME , "OnChangeNormal" , e) , } } } pub unsafe fn on_change_normal (this : WellSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (WellSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_change_normal :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_change_hard { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WellSequence as :: unity2 :: ClassIdentity > :: class () , "OnChangeHard" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WellSequence as :: unity2 :: ClassIdentity > :: NAME , "OnChangeHard" , e) , } } } pub unsafe fn on_change_hard (this : WellSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (WellSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_change_hard :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_change_lunatic { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WellSequence as :: unity2 :: ClassIdentity > :: class () , "OnChangeLunatic" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WellSequence as :: unity2 :: ClassIdentity > :: NAME , "OnChangeLunatic" , e) , } } } pub unsafe fn on_change_lunatic (this : WellSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (WellSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_change_lunatic :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_change_difficulty_dialog { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WellSequence as :: unity2 :: ClassIdentity > :: class () , "CreateChangeDifficultyDialog" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WellSequence as :: unity2 :: ClassIdentity > :: NAME , "CreateChangeDifficultyDialog" , e) , } } } pub unsafe fn create_change_difficulty_dialog (this : WellSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (WellSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create_change_difficulty_dialog :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_change_difficulty_result_dialog { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WellSequence as :: unity2 :: ClassIdentity > :: class () , "CreateChangeDifficultyResultDialog" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WellSequence as :: unity2 :: ClassIdentity > :: NAME , "CreateChangeDifficultyResultDialog" , e) , } } } pub unsafe fn create_change_difficulty_result_dialog (this : WellSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (WellSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create_change_difficulty_result_dialog :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_branch { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WellSequence as :: unity2 :: ClassIdentity > :: class () , "Branch" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WellSequence as :: unity2 :: ClassIdentity > :: NAME , "Branch" , e) , } } } pub unsafe fn branch (this : WellSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (WellSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_branch :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_evil_weapon1 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WellSequence as :: unity2 :: ClassIdentity > :: class () , "GetEvilWeapon1" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WellSequence as :: unity2 :: ClassIdentity > :: NAME , "GetEvilWeapon1" , e) , } } } pub unsafe fn get_evil_weapon1 (this : WellSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (WellSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_get_evil_weapon1 :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_evil_weapon2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WellSequence as :: unity2 :: ClassIdentity > :: class () , "GetEvilWeapon2" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WellSequence as :: unity2 :: ClassIdentity > :: NAME , "GetEvilWeapon2" , e) , } } } pub unsafe fn get_evil_weapon2 (this : WellSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (WellSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_get_evil_weapon2 :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_evil_map_first_demo { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WellSequence as :: unity2 :: ClassIdentity > :: class () , "EvilMapFirstDemo" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WellSequence as :: unity2 :: ClassIdentity > :: NAME , "EvilMapFirstDemo" , e) , } } } pub unsafe fn evil_map_first_demo (this : WellSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { let inner : extern "C" fn (WellSequence , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute (__lookup_evil_map_first_demo :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_first_tutorial { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WellSequence as :: unity2 :: ClassIdentity > :: class () , "FirstTutorial" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WellSequence as :: unity2 :: ClassIdentity > :: NAME , "FirstTutorial" , e) , } } } pub unsafe fn first_tutorial (this : WellSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (WellSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_first_tutorial :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_desc { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WellSequence as :: unity2 :: ClassIdentity > :: class () , "CreateDesc" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WellSequence as :: unity2 :: ClassIdentity > :: NAME , "CreateDesc" , e) , } } } pub unsafe fn create_desc (this : WellSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > { let inner : extern "C" fn (WellSequence , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > = :: core :: mem :: transmute (__lookup_create_desc :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WellSequence as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WellSequence as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : WellSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (WellSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WellSequence as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WellSequence as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
+
+#[cfg(feature = "app-wellsequence")]
+impl WellSequence { # [doc = "`CreateGlobalFlags()` overload"] pub fn create_global_flags () -> () { unsafe { __WellSequence_unity2_raw :: create_global_flags (:: core :: option :: Option :: None) } } # [doc = "`CalcExpected(crate::system::collections::generic::list_1::List_1<crate::app::unititem::UnitItem>)` overload"] pub fn calc_expected (unit_item_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unititem :: UnitItem > >) -> i32 { unsafe { __WellSequence_unity2_raw :: calc_expected (:: core :: convert :: Into :: into (unit_item_list) , :: core :: option :: Option :: None) } } # [doc = "`get_Variable()` overload"] pub fn get_variable () -> crate :: app :: gamevariable :: GameVariable { unsafe { __WellSequence_unity2_raw :: get_variable (:: core :: option :: Option :: None) } } # [doc = "`get_UseFlag()` overload"] pub fn get_use_flag () -> crate :: app :: wellsequence :: WellSequence_UseFlags { unsafe { __WellSequence_unity2_raw :: get_use_flag (:: core :: option :: Option :: None) } } # [doc = "`set_UseFlag(crate::app::wellsequence::WellSequence_UseFlags)` overload"] pub fn set_use_flag (value : impl :: core :: convert :: Into < crate :: app :: wellsequence :: WellSequence_UseFlags >) -> () { unsafe { __WellSequence_unity2_raw :: set_use_flag (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_ExchangeLevel()` overload"] pub fn get_exchange_level () -> i32 { unsafe { __WellSequence_unity2_raw :: get_exchange_level (:: core :: option :: Option :: None) } } # [doc = "`set_ExchangeLevel(i32)` overload"] pub fn set_exchange_level (value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { __WellSequence_unity2_raw :: set_exchange_level (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_Seed()` overload"] pub fn get_seed () -> i32 { unsafe { __WellSequence_unity2_raw :: get_seed (:: core :: option :: Option :: None) } } # [doc = "`set_Seed(i32)` overload"] pub fn set_seed (value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { __WellSequence_unity2_raw :: set_seed (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_EvilWeaponEventState()` overload"] pub fn get_evil_weapon_event_state () -> crate :: app :: wellsequence :: WellSequence_EvilWeaponEventStates { unsafe { __WellSequence_unity2_raw :: get_evil_weapon_event_state (:: core :: option :: Option :: None) } } # [doc = "`set_EvilWeaponEventState(crate::app::wellsequence::WellSequence_EvilWeaponEventStates)` overload"] pub fn set_evil_weapon_event_state (value : impl :: core :: convert :: Into < crate :: app :: wellsequence :: WellSequence_EvilWeaponEventStates >) -> () { unsafe { __WellSequence_unity2_raw :: set_evil_weapon_event_state (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`SetExchange(i32)` overload"] pub fn set_exchange (level : impl :: core :: convert :: Into < i32 >) -> () { unsafe { __WellSequence_unity2_raw :: set_exchange (:: core :: convert :: Into :: into (level) , :: core :: option :: Option :: None) } } # [doc = "`MapClear()` overload"] pub fn map_clear () -> () { unsafe { __WellSequence_unity2_raw :: map_clear (:: core :: option :: Option :: None) } } # [doc = "`get_IsItemReturn()` overload"] pub fn get_is_item_return () -> bool { unsafe { __WellSequence_unity2_raw :: get_is_item_return (:: core :: option :: Option :: None) } } # [doc = "`get_CanItemIn()` overload"] pub fn get_can_item_in () -> bool { unsafe { __WellSequence_unity2_raw :: get_can_item_in (:: core :: option :: Option :: None) } } # [doc = "`GetEffectName()` overload"] pub fn get_effect_name () -> :: unity2 :: Il2CppString { unsafe { __WellSequence_unity2_raw :: get_effect_name (:: core :: option :: Option :: None) } } # [doc = "`TryCreateItemEffect()` overload"] pub fn try_create_item_effect () -> () { unsafe { __WellSequence_unity2_raw :: try_create_item_effect (:: core :: option :: Option :: None) } } # [doc = "`TryFadeoutEffect()` overload"] pub fn try_fadeout_effect () -> () { unsafe { __WellSequence_unity2_raw :: try_fadeout_effect (:: core :: option :: Option :: None) } } # [doc = "`TryDestroyEffect()` overload"] pub fn try_destroy_effect () -> () { unsafe { __WellSequence_unity2_raw :: try_destroy_effect (:: core :: option :: Option :: None) } } # [doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"] pub fn create_bind (parent : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { __WellSequence_unity2_raw :: create_bind (:: core :: convert :: Into :: into (parent) , :: core :: option :: Option :: None) } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { __WellSequence_unity2_raw :: cctor (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-wellsequence")]
+pub trait IWellSequenceMethods : IWellSequence { # [doc = "`LoadPrefabAsync()` overload"] fn load_prefab_async (self ,) -> () { unsafe { let __receiver = < WellSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __WellSequence_unity2_raw :: load_prefab_async (__receiver , :: core :: option :: Option :: None) } } # [doc = "`WaitLoadPrefab()` overload"] fn wait_load_prefab (self ,) -> () { unsafe { let __receiver = < WellSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __WellSequence_unity2_raw :: wait_load_prefab (__receiver , :: core :: option :: Option :: None) } } # [doc = "`UnloadPrefab()` overload"] fn unload_prefab (self ,) -> () { unsafe { let __receiver = < WellSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __WellSequence_unity2_raw :: unload_prefab (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OpenHeader()` overload"] fn open_header (self ,) -> () { unsafe { let __receiver = < WellSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __WellSequence_unity2_raw :: open_header (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Exit()` overload"] fn exit (self ,) -> () { unsafe { let __receiver = < WellSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __WellSequence_unity2_raw :: exit (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CreateTopMenu()` overload"] fn create_top_menu (self ,) -> () { unsafe { let __receiver = < WellSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __WellSequence_unity2_raw :: create_top_menu (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CalcItemExchange(i32, crate::app::random_2::Random_2)` overload"] fn calc_item_exchange (self , level : impl :: core :: convert :: Into < i32 > , random : impl :: core :: convert :: Into < crate :: app :: random_2 :: Random_2 >) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: itemdata :: ItemData > { unsafe { let __receiver = < WellSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __WellSequence_unity2_raw :: calc_item_exchange (__receiver , :: core :: convert :: Into :: into (level) , :: core :: convert :: Into :: into (random) , :: core :: option :: Option :: None) } } # [doc = "`GetItem()` overload"] fn get_item (self ,) -> () { unsafe { let __receiver = < WellSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __WellSequence_unity2_raw :: get_item (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CheckCcTutorial()` overload"] fn check_cc_tutorial (self ,) -> () { unsafe { let __receiver = < WellSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __WellSequence_unity2_raw :: check_cc_tutorial (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CreateItemSelectMenu()` overload"] fn create_item_select_menu (self ,) -> () { unsafe { let __receiver = < WellSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __WellSequence_unity2_raw :: create_item_select_menu (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CheckItemSelectResult()` overload"] fn check_item_select_result (self ,) -> () { unsafe { let __receiver = < WellSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __WellSequence_unity2_raw :: check_item_select_result (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CreateGotoEvilFirstConfirmDialog()` overload"] fn create_goto_evil_first_confirm_dialog (self ,) -> () { unsafe { let __receiver = < WellSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __WellSequence_unity2_raw :: create_goto_evil_first_confirm_dialog (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CreateGotoEvilConfirmDialog()` overload"] fn create_goto_evil_confirm_dialog (self ,) -> () { unsafe { let __receiver = < WellSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __WellSequence_unity2_raw :: create_goto_evil_confirm_dialog (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnChangeNormal()` overload"] fn on_change_normal (self ,) -> () { unsafe { let __receiver = < WellSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __WellSequence_unity2_raw :: on_change_normal (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnChangeHard()` overload"] fn on_change_hard (self ,) -> () { unsafe { let __receiver = < WellSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __WellSequence_unity2_raw :: on_change_hard (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnChangeLunatic()` overload"] fn on_change_lunatic (self ,) -> () { unsafe { let __receiver = < WellSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __WellSequence_unity2_raw :: on_change_lunatic (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CreateChangeDifficultyDialog()` overload"] fn create_change_difficulty_dialog (self ,) -> () { unsafe { let __receiver = < WellSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __WellSequence_unity2_raw :: create_change_difficulty_dialog (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CreateChangeDifficultyResultDialog()` overload"] fn create_change_difficulty_result_dialog (self ,) -> () { unsafe { let __receiver = < WellSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __WellSequence_unity2_raw :: create_change_difficulty_result_dialog (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Branch()` overload"] fn branch (self ,) -> () { unsafe { let __receiver = < WellSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __WellSequence_unity2_raw :: branch (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetEvilWeapon1()` overload"] fn get_evil_weapon1 (self ,) -> () { unsafe { let __receiver = < WellSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __WellSequence_unity2_raw :: get_evil_weapon1 (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetEvilWeapon2()` overload"] fn get_evil_weapon2 (self ,) -> () { unsafe { let __receiver = < WellSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __WellSequence_unity2_raw :: get_evil_weapon2 (__receiver , :: core :: option :: Option :: None) } } # [doc = "`EvilMapFirstDemo()` overload"] fn evil_map_first_demo (self ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { let __receiver = < WellSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __WellSequence_unity2_raw :: evil_map_first_demo (__receiver , :: core :: option :: Option :: None) } } # [doc = "`FirstTutorial()` overload"] fn first_tutorial (self ,) -> () { unsafe { let __receiver = < WellSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __WellSequence_unity2_raw :: first_tutorial (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CreateDesc()` overload"] fn create_desc (self ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > { unsafe { let __receiver = < WellSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __WellSequence_unity2_raw :: create_desc (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < WellSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __WellSequence_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-wellsequence")]
+impl < __T : IWellSequence > IWellSequenceMethods for __T { }
+
+#[cfg(feature = "app-wellsequence")]
+impl WellSequence { pub fn create_global_flags_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WellSequence_unity2_raw :: __lookup_create_global_flags :: get_method_info () } pub fn calc_expected_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WellSequence_unity2_raw :: __lookup_calc_expected :: get_method_info () } pub fn get_variable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WellSequence_unity2_raw :: __lookup_get_variable :: get_method_info () } pub fn get_use_flag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WellSequence_unity2_raw :: __lookup_get_use_flag :: get_method_info () } pub fn set_use_flag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WellSequence_unity2_raw :: __lookup_set_use_flag :: get_method_info () } pub fn get_exchange_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WellSequence_unity2_raw :: __lookup_get_exchange_level :: get_method_info () } pub fn set_exchange_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WellSequence_unity2_raw :: __lookup_set_exchange_level :: get_method_info () } pub fn get_seed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WellSequence_unity2_raw :: __lookup_get_seed :: get_method_info () } pub fn set_seed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WellSequence_unity2_raw :: __lookup_set_seed :: get_method_info () } pub fn get_evil_weapon_event_state_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WellSequence_unity2_raw :: __lookup_get_evil_weapon_event_state :: get_method_info () } pub fn set_evil_weapon_event_state_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WellSequence_unity2_raw :: __lookup_set_evil_weapon_event_state :: get_method_info () } pub fn set_exchange_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WellSequence_unity2_raw :: __lookup_set_exchange :: get_method_info () } pub fn map_clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WellSequence_unity2_raw :: __lookup_map_clear :: get_method_info () } pub fn get_is_item_return_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WellSequence_unity2_raw :: __lookup_get_is_item_return :: get_method_info () } pub fn get_can_item_in_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WellSequence_unity2_raw :: __lookup_get_can_item_in :: get_method_info () } pub fn get_effect_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WellSequence_unity2_raw :: __lookup_get_effect_name :: get_method_info () } pub fn try_create_item_effect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WellSequence_unity2_raw :: __lookup_try_create_item_effect :: get_method_info () } pub fn try_fadeout_effect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WellSequence_unity2_raw :: __lookup_try_fadeout_effect :: get_method_info () } pub fn try_destroy_effect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WellSequence_unity2_raw :: __lookup_try_destroy_effect :: get_method_info () } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WellSequence_unity2_raw :: __lookup_create_bind :: get_method_info () } pub fn load_prefab_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WellSequence_unity2_raw :: __lookup_load_prefab_async :: get_method_info () } pub fn wait_load_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WellSequence_unity2_raw :: __lookup_wait_load_prefab :: get_method_info () } pub fn unload_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WellSequence_unity2_raw :: __lookup_unload_prefab :: get_method_info () } pub fn open_header_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WellSequence_unity2_raw :: __lookup_open_header :: get_method_info () } pub fn exit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WellSequence_unity2_raw :: __lookup_exit :: get_method_info () } pub fn create_top_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WellSequence_unity2_raw :: __lookup_create_top_menu :: get_method_info () } pub fn calc_item_exchange_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WellSequence_unity2_raw :: __lookup_calc_item_exchange :: get_method_info () } pub fn get_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WellSequence_unity2_raw :: __lookup_get_item :: get_method_info () } pub fn check_cc_tutorial_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WellSequence_unity2_raw :: __lookup_check_cc_tutorial :: get_method_info () } pub fn create_item_select_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WellSequence_unity2_raw :: __lookup_create_item_select_menu :: get_method_info () } pub fn check_item_select_result_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WellSequence_unity2_raw :: __lookup_check_item_select_result :: get_method_info () } pub fn create_goto_evil_first_confirm_dialog_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WellSequence_unity2_raw :: __lookup_create_goto_evil_first_confirm_dialog :: get_method_info () } pub fn create_goto_evil_confirm_dialog_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WellSequence_unity2_raw :: __lookup_create_goto_evil_confirm_dialog :: get_method_info () } pub fn on_change_normal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WellSequence_unity2_raw :: __lookup_on_change_normal :: get_method_info () } pub fn on_change_hard_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WellSequence_unity2_raw :: __lookup_on_change_hard :: get_method_info () } pub fn on_change_lunatic_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WellSequence_unity2_raw :: __lookup_on_change_lunatic :: get_method_info () } pub fn create_change_difficulty_dialog_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WellSequence_unity2_raw :: __lookup_create_change_difficulty_dialog :: get_method_info () } pub fn create_change_difficulty_result_dialog_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WellSequence_unity2_raw :: __lookup_create_change_difficulty_result_dialog :: get_method_info () } pub fn branch_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WellSequence_unity2_raw :: __lookup_branch :: get_method_info () } pub fn get_evil_weapon1_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WellSequence_unity2_raw :: __lookup_get_evil_weapon1 :: get_method_info () } pub fn get_evil_weapon2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WellSequence_unity2_raw :: __lookup_get_evil_weapon2 :: get_method_info () } pub fn evil_map_first_demo_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WellSequence_unity2_raw :: __lookup_evil_map_first_demo :: get_method_info () } pub fn first_tutorial_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WellSequence_unity2_raw :: __lookup_first_tutorial :: get_method_info () } pub fn create_desc_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WellSequence_unity2_raw :: __lookup_create_desc :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WellSequence_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WellSequence_unity2_raw :: __lookup_cctor :: get_method_info () } }
+
+#[cfg(feature = "app-wellsequence")]
+impl WellSequence {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (WellSequence) , :: core :: stringify ! (new) ,)) ; < Self as IWellSequenceMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-wellsequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{
-        IWellSequence, IWellSequenceMethods, IWellSequence_ChangeDifficultyMenuItem, IWellSequence_ChangeDifficultyMenuItemMethods,
-        IWellSequence_DialogItemGotoEvilFirst, IWellSequence_DialogItemGotoEvilFirstMethods, WellSequence, WellSequence_ChangeDifficultyMenuItem,
-        WellSequence_DialogItemGotoEvilFirst, WellSequence_EvilWeaponEventStates, WellSequence_Label, WellSequence_UseFlags,
-    };
-    #[cfg(feature = "app-basicdialogitem")]
-    pub use crate::app::basicdialogitem::IBasicDialogItemMethods;
-    #[cfg(feature = "app-basicdialogitemyes")]
-    pub use crate::app::basicdialogitemyes::IBasicDialogItemYesMethods;
-    #[cfg(feature = "app-basicmenuitem")]
-    pub use crate::app::basicmenuitem::IBasicMenuItemMethods;
-    #[cfg(feature = "app-procinst")]
-    pub use crate::app::procinst::IProcInstMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::{
-        app::{basicdialogitem::IBasicDialogItem, basicdialogitemyes::IBasicDialogItemYes, basicmenuitem::IBasicMenuItem, procinst::IProcInst},
-        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
-    };
+    pub use super::WellSequence_DialogItemGotoEvilFirst;
+    pub use super::IWellSequence_DialogItemGotoEvilFirst;
+    pub use super::IWellSequence_DialogItemGotoEvilFirstMethods;
+    pub use super::WellSequence_EvilWeaponEventStates;
+    pub use super::WellSequence_UseFlags;
+    pub use super::WellSequence_ChangeDifficultyMenuItem;
+    pub use super::IWellSequence_ChangeDifficultyMenuItem;
+    pub use super::IWellSequence_ChangeDifficultyMenuItemMethods;
+    pub use super::WellSequence_Label;
+    pub use super::WellSequence;
+    pub use super::IWellSequence;
+    pub use super::IWellSequenceMethods;
+    pub use crate::app::basicdialogitem::IBasicDialogItem;
+    pub use crate::app::basicdialogitemyes::IBasicDialogItemYes;
+    pub use crate::app::basicmenuitem::IBasicMenuItem;
+    pub use crate::app::procinst::IProcInst;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "app-basicdialogitem")] pub use crate::app::basicdialogitem::IBasicDialogItemMethods;
+    #[cfg(feature = "app-basicdialogitemyes")] pub use crate::app::basicdialogitemyes::IBasicDialogItemYesMethods;
+    #[cfg(feature = "app-basicmenuitem")] pub use crate::app::basicmenuitem::IBasicMenuItemMethods;
+    #[cfg(feature = "app-procinst")] pub use crate::app::procinst::IProcInstMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

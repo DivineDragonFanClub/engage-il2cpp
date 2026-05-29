@@ -2,209 +2,62 @@
 
 #[cfg(feature = "app-hubminimaplayer-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubminimaplayer/HubMiniMapLayer.md"))]
-    #[::unity2::class(namespace = "App", name = "HubMiniMapLayer")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct HubMiniMapLayer {
-        #[offset(24)]
-        #[rename(name = "m_Layer")]
-        pub m_layer: i32,
-        #[offset(32)]
-        #[rename(name = "m_EnvSoundID")]
-        pub m_env_sound_id: ::unity2::Il2CppString,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubminimaplayer/HubMiniMapLayer.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubMiniMapLayer")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct HubMiniMapLayer {
+# [offset (24)] # [rename (name = "m_Layer")] pub m_layer : i32 ,
+# [offset (32)] # [rename (name = "m_EnvSoundID")] pub m_env_sound_id : :: unity2 :: Il2CppString ,
+}
+
 }
 
 #[cfg(feature = "app-hubminimaplayer-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-hubminimaplayer")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __HubMiniMapLayer_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_trigger_enter {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::collider::Collider as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubMiniMapLayer as ::unity2::ClassIdentity>::class(),
-                "OnTriggerEnter",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubMiniMapLayer as ::unity2::ClassIdentity>::NAME,
-                        "OnTriggerEnter",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_trigger_enter(
-        this: HubMiniMapLayer,
-        other: crate::unity_engine::collider::Collider,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubMiniMapLayer, crate::unity_engine::collider::Collider, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_trigger_enter::get_method_info().method_ptr);
-        inner(this, other, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_trigger_exit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::collider::Collider as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubMiniMapLayer as ::unity2::ClassIdentity>::class(),
-                "OnTriggerExit",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubMiniMapLayer as ::unity2::ClassIdentity>::NAME,
-                        "OnTriggerExit",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_trigger_exit(
-        this: HubMiniMapLayer,
-        other: crate::unity_engine::collider::Collider,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubMiniMapLayer, crate::unity_engine::collider::Collider, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_trigger_exit::get_method_info().method_ptr);
-        inner(this, other, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubMiniMapLayer as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubMiniMapLayer as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: HubMiniMapLayer, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(HubMiniMapLayer, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __HubMiniMapLayer_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_trigger_enter { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: collider :: Collider as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubMiniMapLayer as :: unity2 :: ClassIdentity > :: class () , "OnTriggerEnter" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubMiniMapLayer as :: unity2 :: ClassIdentity > :: NAME , "OnTriggerEnter" , e) , } } } pub unsafe fn on_trigger_enter (this : HubMiniMapLayer , other : crate :: unity_engine :: collider :: Collider , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HubMiniMapLayer , crate :: unity_engine :: collider :: Collider , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_trigger_enter :: get_method_info () . method_ptr ,) ; inner (this , other , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_trigger_exit { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: collider :: Collider as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubMiniMapLayer as :: unity2 :: ClassIdentity > :: class () , "OnTriggerExit" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubMiniMapLayer as :: unity2 :: ClassIdentity > :: NAME , "OnTriggerExit" , e) , } } } pub unsafe fn on_trigger_exit (this : HubMiniMapLayer , other : crate :: unity_engine :: collider :: Collider , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HubMiniMapLayer , crate :: unity_engine :: collider :: Collider , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_trigger_exit :: get_method_info () . method_ptr ,) ; inner (this , other , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubMiniMapLayer as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubMiniMapLayer as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : HubMiniMapLayer , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HubMiniMapLayer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-hubminimaplayer")]
-pub trait IHubMiniMapLayerMethods: IHubMiniMapLayer {
-    #[doc = "`OnTriggerEnter(crate::unity_engine::collider::Collider)` overload"]
-    fn on_trigger_enter(self, other: impl ::core::convert::Into<crate::unity_engine::collider::Collider>) -> () {
-        unsafe {
-            let __receiver = <HubMiniMapLayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubMiniMapLayer_unity2_raw::on_trigger_enter(__receiver, ::core::convert::Into::into(other), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnTriggerExit(crate::unity_engine::collider::Collider)` overload"]
-    fn on_trigger_exit(self, other: impl ::core::convert::Into<crate::unity_engine::collider::Collider>) -> () {
-        unsafe {
-            let __receiver = <HubMiniMapLayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubMiniMapLayer_unity2_raw::on_trigger_exit(__receiver, ::core::convert::Into::into(other), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <HubMiniMapLayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubMiniMapLayer_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IHubMiniMapLayerMethods : IHubMiniMapLayer { # [doc = "`OnTriggerEnter(crate::unity_engine::collider::Collider)` overload"] fn on_trigger_enter (self , other : impl :: core :: convert :: Into < crate :: unity_engine :: collider :: Collider >) -> () { unsafe { let __receiver = < HubMiniMapLayer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubMiniMapLayer_unity2_raw :: on_trigger_enter (__receiver , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } # [doc = "`OnTriggerExit(crate::unity_engine::collider::Collider)` overload"] fn on_trigger_exit (self , other : impl :: core :: convert :: Into < crate :: unity_engine :: collider :: Collider >) -> () { unsafe { let __receiver = < HubMiniMapLayer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubMiniMapLayer_unity2_raw :: on_trigger_exit (__receiver , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HubMiniMapLayer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubMiniMapLayer_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-hubminimaplayer")]
-impl<__T: IHubMiniMapLayer> IHubMiniMapLayerMethods for __T {}
+impl < __T : IHubMiniMapLayer > IHubMiniMapLayerMethods for __T { }
+
+#[cfg(feature = "app-hubminimaplayer")]
+impl HubMiniMapLayer { pub fn on_trigger_enter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubMiniMapLayer_unity2_raw :: __lookup_on_trigger_enter :: get_method_info () } pub fn on_trigger_exit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubMiniMapLayer_unity2_raw :: __lookup_on_trigger_exit :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubMiniMapLayer_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-hubminimaplayer")]
 impl HubMiniMapLayer {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(HubMiniMapLayer),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IHubMiniMapLayerMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubMiniMapLayer) , :: core :: stringify ! (new) ,)) ; < Self as IHubMiniMapLayerMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-hubminimaplayer")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{HubMiniMapLayer, IHubMiniMapLayer, IHubMiniMapLayerMethods};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        system::object::IObject,
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::HubMiniMapLayer;
+    pub use super::IHubMiniMapLayer;
+    pub use super::IHubMiniMapLayerMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

@@ -2,1193 +2,168 @@
 
 #[cfg(feature = "unity_engine-rendering-supportedrenderingfeatures-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        r#enum::{Enum, IEnum},
-        valuetype::{IValueType, ValueType},
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/supportedrenderingfeatures/SupportedRenderingFeatures_LightmapMixedBakeModes.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct SupportedRenderingFeatures_LightmapMixedBakeModes {
-        pub value: i32,
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/supportedrenderingfeatures/SupportedRenderingFeatures.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering" , name = "SupportedRenderingFeatures")] # [parent (crate :: system :: object :: Object)] pub struct SupportedRenderingFeatures {
+# [static_field] # [rename (name = "s_Active")] pub s_active : crate :: unity_engine :: rendering :: supportedrenderingfeatures :: SupportedRenderingFeatures ,
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/supportedrenderingfeatures/SupportedRenderingFeatures_LightmapMixedBakeModes.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct SupportedRenderingFeatures_LightmapMixedBakeModes  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for SupportedRenderingFeatures_LightmapMixedBakeModes  {
+    const NAMESPACE: &'static str = "UnityEngine.Rendering";
+
+    const NAME: &'static str = "SupportedRenderingFeatures.LightmapMixedBakeModes";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    impl ::unity2::ClassIdentity for SupportedRenderingFeatures_LightmapMixedBakeModes {
-        const NAME: &'static str = "SupportedRenderingFeatures.LightmapMixedBakeModes";
-        const NAMESPACE: &'static str = "UnityEngine.Rendering";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  ::unity2::IlType for SupportedRenderingFeatures_LightmapMixedBakeModes  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::IlType for SupportedRenderingFeatures_LightmapMixedBakeModes {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  SupportedRenderingFeatures_LightmapMixedBakeModes  {
+    pub fn none() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl SupportedRenderingFeatures_LightmapMixedBakeModes {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn indirect_only() -> Self {
-            Self { value: 1 }
-        }
+    pub fn indirect_only() -> Self {
+        Self { value: 1 }
 
-        pub fn subtractive() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn shadowmask() -> Self {
-            Self { value: 4 }
-        }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/supportedrenderingfeatures/SupportedRenderingFeatures_ReflectionProbeModes.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct SupportedRenderingFeatures_ReflectionProbeModes {
-        pub value: i32,
+
+    pub fn subtractive() -> Self {
+        Self { value: 2 }
+
     }
 
-    impl ::unity2::ClassIdentity for SupportedRenderingFeatures_ReflectionProbeModes {
-        const NAME: &'static str = "SupportedRenderingFeatures.ReflectionProbeModes";
-        const NAMESPACE: &'static str = "UnityEngine.Rendering";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+    pub fn shadowmask() -> Self {
+        Self { value: 4 }
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/supportedrenderingfeatures/SupportedRenderingFeatures_ReflectionProbeModes.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct SupportedRenderingFeatures_ReflectionProbeModes  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for SupportedRenderingFeatures_ReflectionProbeModes  {
+    const NAMESPACE: &'static str = "UnityEngine.Rendering";
+
+    const NAME: &'static str = "SupportedRenderingFeatures.ReflectionProbeModes";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for SupportedRenderingFeatures_ReflectionProbeModes {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  ::unity2::IlType for SupportedRenderingFeatures_ReflectionProbeModes  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl SupportedRenderingFeatures_ReflectionProbeModes {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
+}
 
-        pub fn rotation() -> Self {
-            Self { value: 1 }
-        }
+
+impl  SupportedRenderingFeatures_ReflectionProbeModes  {
+    pub fn none() -> Self {
+        Self { value: 0 }
+
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/supportedrenderingfeatures/SupportedRenderingFeatures.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Rendering", name = "SupportedRenderingFeatures")]
-    #[parent(crate::system::object::Object)]
-    pub struct SupportedRenderingFeatures {
-        #[static_field]
-        #[rename(name = "s_Active")]
-        pub s_active: crate::unity_engine::rendering::supportedrenderingfeatures::SupportedRenderingFeatures,
+
+    pub fn rotation() -> Self {
+        Self { value: 1 }
+
     }
+
+}
+
 }
 
 #[cfg(feature = "unity_engine-rendering-supportedrenderingfeatures-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-supportedrenderingfeatures")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __SupportedRenderingFeatures_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_active {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SupportedRenderingFeatures as ::unity2::ClassIdentity>::class(),
-                "get_active",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SupportedRenderingFeatures as ::unity2::ClassIdentity>::NAME,
-                        "get_active",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_active(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::rendering::supportedrenderingfeatures::SupportedRenderingFeatures {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::unity_engine::rendering::supportedrenderingfeatures::SupportedRenderingFeatures =
-            ::core::mem::transmute(__lookup_get_active::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_active {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::rendering::supportedrenderingfeatures::SupportedRenderingFeatures as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SupportedRenderingFeatures as ::unity2::ClassIdentity>::class(),
-                "set_active",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SupportedRenderingFeatures as ::unity2::ClassIdentity>::NAME,
-                        "set_active",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_active(
-        value: crate::unity_engine::rendering::supportedrenderingfeatures::SupportedRenderingFeatures,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::rendering::supportedrenderingfeatures::SupportedRenderingFeatures,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_set_active::get_method_info().method_ptr);
-        inner(value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_default_mixed_lighting_modes {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SupportedRenderingFeatures as ::unity2::ClassIdentity>::class(),
-                "get_defaultMixedLightingModes",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SupportedRenderingFeatures as ::unity2::ClassIdentity>::NAME,
-                        "get_defaultMixedLightingModes",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_default_mixed_lighting_modes(
-        this: SupportedRenderingFeatures,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::rendering::supportedrenderingfeatures::SupportedRenderingFeatures_LightmapMixedBakeModes {
-        let inner: extern "C" fn(
-            SupportedRenderingFeatures,
-            ::unity2::OptionalMethod,
-        )
-            -> crate::unity_engine::rendering::supportedrenderingfeatures::SupportedRenderingFeatures_LightmapMixedBakeModes =
-            ::core::mem::transmute(__lookup_get_default_mixed_lighting_modes::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_mixed_lighting_modes {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SupportedRenderingFeatures as ::unity2::ClassIdentity>::class(),
-                "get_mixedLightingModes",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SupportedRenderingFeatures as ::unity2::ClassIdentity>::NAME,
-                        "get_mixedLightingModes",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_mixed_lighting_modes(
-        this: SupportedRenderingFeatures,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::rendering::supportedrenderingfeatures::SupportedRenderingFeatures_LightmapMixedBakeModes {
-        let inner: extern "C" fn(
-            SupportedRenderingFeatures,
-            ::unity2::OptionalMethod,
-        )
-            -> crate::unity_engine::rendering::supportedrenderingfeatures::SupportedRenderingFeatures_LightmapMixedBakeModes =
-            ::core::mem::transmute(__lookup_get_mixed_lighting_modes::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_lightmap_bake_types {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SupportedRenderingFeatures as ::unity2::ClassIdentity>::class(),
-                "get_lightmapBakeTypes",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SupportedRenderingFeatures as ::unity2::ClassIdentity>::NAME,
-                        "get_lightmapBakeTypes",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_lightmap_bake_types(
-        this: SupportedRenderingFeatures,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::lightmapbaketype::LightmapBakeType {
-        let inner: extern "C" fn(SupportedRenderingFeatures, ::unity2::OptionalMethod) -> crate::unity_engine::lightmapbaketype::LightmapBakeType =
-            ::core::mem::transmute(__lookup_get_lightmap_bake_types::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_lightmaps_modes {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SupportedRenderingFeatures as ::unity2::ClassIdentity>::class(),
-                "get_lightmapsModes",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SupportedRenderingFeatures as ::unity2::ClassIdentity>::NAME,
-                        "get_lightmapsModes",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_lightmaps_modes(
-        this: SupportedRenderingFeatures,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::lightmapsmode::LightmapsMode {
-        let inner: extern "C" fn(SupportedRenderingFeatures, ::unity2::OptionalMethod) -> crate::unity_engine::lightmapsmode::LightmapsMode =
-            ::core::mem::transmute(__lookup_get_lightmaps_modes::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_enlighten {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SupportedRenderingFeatures as ::unity2::ClassIdentity>::class(),
-                "get_enlighten",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SupportedRenderingFeatures as ::unity2::ClassIdentity>::NAME,
-                        "get_enlighten",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_enlighten(this: SupportedRenderingFeatures, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(SupportedRenderingFeatures, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_enlighten::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_renders_ui_overlay {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SupportedRenderingFeatures as ::unity2::ClassIdentity>::class(),
-                "get_rendersUIOverlay",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SupportedRenderingFeatures as ::unity2::ClassIdentity>::NAME,
-                        "get_rendersUIOverlay",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_renders_ui_overlay(this: SupportedRenderingFeatures, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(SupportedRenderingFeatures, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_renders_ui_overlay::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_auto_ambient_probe_baking {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SupportedRenderingFeatures as ::unity2::ClassIdentity>::class(),
-                "get_autoAmbientProbeBaking",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SupportedRenderingFeatures as ::unity2::ClassIdentity>::NAME,
-                        "get_autoAmbientProbeBaking",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_auto_ambient_probe_baking(this: SupportedRenderingFeatures, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(SupportedRenderingFeatures, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_auto_ambient_probe_baking::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_auto_default_reflection_probe_baking {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SupportedRenderingFeatures as ::unity2::ClassIdentity>::class(),
-                "get_autoDefaultReflectionProbeBaking",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SupportedRenderingFeatures as ::unity2::ClassIdentity>::NAME,
-                        "get_autoDefaultReflectionProbeBaking",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_auto_default_reflection_probe_baking(this: SupportedRenderingFeatures, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(SupportedRenderingFeatures, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_auto_default_reflection_probe_baking::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_fallback_mixed_lighting_mode_by_ref {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SupportedRenderingFeatures as ::unity2::ClassIdentity>::class(),
-                "FallbackMixedLightingModeByRef",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SupportedRenderingFeatures as ::unity2::ClassIdentity>::NAME,
-                        "FallbackMixedLightingModeByRef",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn fallback_mixed_lighting_mode_by_ref(fallback_mode_ptr: ::unity2::IntPtr, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_fallback_mixed_lighting_mode_by_ref::get_method_info().method_ptr);
-        inner(fallback_mode_ptr, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_mixed_lighting_mode_supported {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::mixedlightingmode::MixedLightingMode as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SupportedRenderingFeatures as ::unity2::ClassIdentity>::class(),
-                "IsMixedLightingModeSupported",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SupportedRenderingFeatures as ::unity2::ClassIdentity>::NAME,
-                        "IsMixedLightingModeSupported",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_mixed_lighting_mode_supported(
-        mixed_mode: crate::unity_engine::mixedlightingmode::MixedLightingMode,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(crate::unity_engine::mixedlightingmode::MixedLightingMode, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_mixed_lighting_mode_supported::get_method_info().method_ptr);
-        inner(mixed_mode, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_mixed_lighting_mode_supported_by_ref {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::mixedlightingmode::MixedLightingMode as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SupportedRenderingFeatures as ::unity2::ClassIdentity>::class(),
-                "IsMixedLightingModeSupportedByRef",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SupportedRenderingFeatures as ::unity2::ClassIdentity>::NAME,
-                        "IsMixedLightingModeSupportedByRef",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_mixed_lighting_mode_supported_by_ref(
-        mixed_mode: crate::unity_engine::mixedlightingmode::MixedLightingMode,
-        is_supported_ptr: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::unity_engine::mixedlightingmode::MixedLightingMode, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_is_mixed_lighting_mode_supported_by_ref::get_method_info().method_ptr);
-        inner(mixed_mode, is_supported_ptr, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_lightmap_bake_type_supported {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::lightmapbaketype::LightmapBakeType as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SupportedRenderingFeatures as ::unity2::ClassIdentity>::class(),
-                "IsLightmapBakeTypeSupported",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SupportedRenderingFeatures as ::unity2::ClassIdentity>::NAME,
-                        "IsLightmapBakeTypeSupported",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_lightmap_bake_type_supported(
-        bake_type: crate::unity_engine::lightmapbaketype::LightmapBakeType,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(crate::unity_engine::lightmapbaketype::LightmapBakeType, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_lightmap_bake_type_supported::get_method_info().method_ptr);
-        inner(bake_type, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_lightmap_bake_type_supported_by_ref {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::lightmapbaketype::LightmapBakeType as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SupportedRenderingFeatures as ::unity2::ClassIdentity>::class(),
-                "IsLightmapBakeTypeSupportedByRef",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SupportedRenderingFeatures as ::unity2::ClassIdentity>::NAME,
-                        "IsLightmapBakeTypeSupportedByRef",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_lightmap_bake_type_supported_by_ref(
-        bake_type: crate::unity_engine::lightmapbaketype::LightmapBakeType,
-        is_supported_ptr: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::unity_engine::lightmapbaketype::LightmapBakeType, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_is_lightmap_bake_type_supported_by_ref::get_method_info().method_ptr);
-        inner(bake_type, is_supported_ptr, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_lightmaps_mode_supported_by_ref {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::lightmapsmode::LightmapsMode as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SupportedRenderingFeatures as ::unity2::ClassIdentity>::class(),
-                "IsLightmapsModeSupportedByRef",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SupportedRenderingFeatures as ::unity2::ClassIdentity>::NAME,
-                        "IsLightmapsModeSupportedByRef",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_lightmaps_mode_supported_by_ref(
-        mode: crate::unity_engine::lightmapsmode::LightmapsMode,
-        is_supported_ptr: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::unity_engine::lightmapsmode::LightmapsMode, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_is_lightmaps_mode_supported_by_ref::get_method_info().method_ptr);
-        inner(mode, is_supported_ptr, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_lightmapper_supported_by_ref {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type(), <::unity2::IntPtr as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SupportedRenderingFeatures as ::unity2::ClassIdentity>::class(),
-                "IsLightmapperSupportedByRef",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SupportedRenderingFeatures as ::unity2::ClassIdentity>::NAME,
-                        "IsLightmapperSupportedByRef",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_lightmapper_supported_by_ref(
-        lightmapper: i32,
-        is_supported_ptr: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(i32, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_is_lightmapper_supported_by_ref::get_method_info().method_ptr);
-        inner(lightmapper, is_supported_ptr, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_ui_overlay_rendered_by_srp {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SupportedRenderingFeatures as ::unity2::ClassIdentity>::class(),
-                "IsUIOverlayRenderedBySRP",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SupportedRenderingFeatures as ::unity2::ClassIdentity>::NAME,
-                        "IsUIOverlayRenderedBySRP",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_ui_overlay_rendered_by_srp(is_supported_ptr: ::unity2::IntPtr, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_is_ui_overlay_rendered_by_srp::get_method_info().method_ptr);
-        inner(is_supported_ptr, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_auto_ambient_probe_baking_supported {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SupportedRenderingFeatures as ::unity2::ClassIdentity>::class(),
-                "IsAutoAmbientProbeBakingSupported",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SupportedRenderingFeatures as ::unity2::ClassIdentity>::NAME,
-                        "IsAutoAmbientProbeBakingSupported",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_auto_ambient_probe_baking_supported(is_supported_ptr: ::unity2::IntPtr, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_is_auto_ambient_probe_baking_supported::get_method_info().method_ptr);
-        inner(is_supported_ptr, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_auto_default_reflection_probe_baking_supported {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SupportedRenderingFeatures as ::unity2::ClassIdentity>::class(),
-                "IsAutoDefaultReflectionProbeBakingSupported",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SupportedRenderingFeatures as ::unity2::ClassIdentity>::NAME,
-                        "IsAutoDefaultReflectionProbeBakingSupported",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_auto_default_reflection_probe_baking_supported(
-        is_supported_ptr: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_is_auto_default_reflection_probe_baking_supported::get_method_info().method_ptr);
-        inner(is_supported_ptr, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_fallback_lightmapper_by_ref {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SupportedRenderingFeatures as ::unity2::ClassIdentity>::class(),
-                "FallbackLightmapperByRef",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SupportedRenderingFeatures as ::unity2::ClassIdentity>::NAME,
-                        "FallbackLightmapperByRef",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn fallback_lightmapper_by_ref(lightmapper_ptr: ::unity2::IntPtr, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_fallback_lightmapper_by_ref::get_method_info().method_ptr);
-        inner(lightmapper_ptr, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SupportedRenderingFeatures as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SupportedRenderingFeatures as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: SupportedRenderingFeatures, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SupportedRenderingFeatures, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SupportedRenderingFeatures as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SupportedRenderingFeatures as ::unity2::ClassIdentity>::NAME,
-                        ".cctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __SupportedRenderingFeatures_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_active { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SupportedRenderingFeatures as :: unity2 :: ClassIdentity > :: class () , "get_active" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SupportedRenderingFeatures as :: unity2 :: ClassIdentity > :: NAME , "get_active" , e) , } } } pub unsafe fn get_active (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: supportedrenderingfeatures :: SupportedRenderingFeatures { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: supportedrenderingfeatures :: SupportedRenderingFeatures = :: core :: mem :: transmute (__lookup_get_active :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_active { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: supportedrenderingfeatures :: SupportedRenderingFeatures as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SupportedRenderingFeatures as :: unity2 :: ClassIdentity > :: class () , "set_active" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SupportedRenderingFeatures as :: unity2 :: ClassIdentity > :: NAME , "set_active" , e) , } } } pub unsafe fn set_active (value : crate :: unity_engine :: rendering :: supportedrenderingfeatures :: SupportedRenderingFeatures , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: unity_engine :: rendering :: supportedrenderingfeatures :: SupportedRenderingFeatures , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_active :: get_method_info () . method_ptr ,) ; inner (value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_default_mixed_lighting_modes { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SupportedRenderingFeatures as :: unity2 :: ClassIdentity > :: class () , "get_defaultMixedLightingModes" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SupportedRenderingFeatures as :: unity2 :: ClassIdentity > :: NAME , "get_defaultMixedLightingModes" , e) , } } } pub unsafe fn get_default_mixed_lighting_modes (this : SupportedRenderingFeatures , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: supportedrenderingfeatures :: SupportedRenderingFeatures_LightmapMixedBakeModes { let inner : extern "C" fn (SupportedRenderingFeatures , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: supportedrenderingfeatures :: SupportedRenderingFeatures_LightmapMixedBakeModes = :: core :: mem :: transmute (__lookup_get_default_mixed_lighting_modes :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_mixed_lighting_modes { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SupportedRenderingFeatures as :: unity2 :: ClassIdentity > :: class () , "get_mixedLightingModes" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SupportedRenderingFeatures as :: unity2 :: ClassIdentity > :: NAME , "get_mixedLightingModes" , e) , } } } pub unsafe fn get_mixed_lighting_modes (this : SupportedRenderingFeatures , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: supportedrenderingfeatures :: SupportedRenderingFeatures_LightmapMixedBakeModes { let inner : extern "C" fn (SupportedRenderingFeatures , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: supportedrenderingfeatures :: SupportedRenderingFeatures_LightmapMixedBakeModes = :: core :: mem :: transmute (__lookup_get_mixed_lighting_modes :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_lightmap_bake_types { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SupportedRenderingFeatures as :: unity2 :: ClassIdentity > :: class () , "get_lightmapBakeTypes" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SupportedRenderingFeatures as :: unity2 :: ClassIdentity > :: NAME , "get_lightmapBakeTypes" , e) , } } } pub unsafe fn get_lightmap_bake_types (this : SupportedRenderingFeatures , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: lightmapbaketype :: LightmapBakeType { let inner : extern "C" fn (SupportedRenderingFeatures , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: lightmapbaketype :: LightmapBakeType = :: core :: mem :: transmute (__lookup_get_lightmap_bake_types :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_lightmaps_modes { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SupportedRenderingFeatures as :: unity2 :: ClassIdentity > :: class () , "get_lightmapsModes" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SupportedRenderingFeatures as :: unity2 :: ClassIdentity > :: NAME , "get_lightmapsModes" , e) , } } } pub unsafe fn get_lightmaps_modes (this : SupportedRenderingFeatures , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: lightmapsmode :: LightmapsMode { let inner : extern "C" fn (SupportedRenderingFeatures , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: lightmapsmode :: LightmapsMode = :: core :: mem :: transmute (__lookup_get_lightmaps_modes :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_enlighten { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SupportedRenderingFeatures as :: unity2 :: ClassIdentity > :: class () , "get_enlighten" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SupportedRenderingFeatures as :: unity2 :: ClassIdentity > :: NAME , "get_enlighten" , e) , } } } pub unsafe fn get_enlighten (this : SupportedRenderingFeatures , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (SupportedRenderingFeatures , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_enlighten :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_renders_ui_overlay { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SupportedRenderingFeatures as :: unity2 :: ClassIdentity > :: class () , "get_rendersUIOverlay" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SupportedRenderingFeatures as :: unity2 :: ClassIdentity > :: NAME , "get_rendersUIOverlay" , e) , } } } pub unsafe fn get_renders_ui_overlay (this : SupportedRenderingFeatures , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (SupportedRenderingFeatures , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_renders_ui_overlay :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_auto_ambient_probe_baking { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SupportedRenderingFeatures as :: unity2 :: ClassIdentity > :: class () , "get_autoAmbientProbeBaking" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SupportedRenderingFeatures as :: unity2 :: ClassIdentity > :: NAME , "get_autoAmbientProbeBaking" , e) , } } } pub unsafe fn get_auto_ambient_probe_baking (this : SupportedRenderingFeatures , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (SupportedRenderingFeatures , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_auto_ambient_probe_baking :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_auto_default_reflection_probe_baking { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SupportedRenderingFeatures as :: unity2 :: ClassIdentity > :: class () , "get_autoDefaultReflectionProbeBaking" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SupportedRenderingFeatures as :: unity2 :: ClassIdentity > :: NAME , "get_autoDefaultReflectionProbeBaking" , e) , } } } pub unsafe fn get_auto_default_reflection_probe_baking (this : SupportedRenderingFeatures , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (SupportedRenderingFeatures , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_auto_default_reflection_probe_baking :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_fallback_mixed_lighting_mode_by_ref { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SupportedRenderingFeatures as :: unity2 :: ClassIdentity > :: class () , "FallbackMixedLightingModeByRef" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SupportedRenderingFeatures as :: unity2 :: ClassIdentity > :: NAME , "FallbackMixedLightingModeByRef" , e) , } } } pub unsafe fn fallback_mixed_lighting_mode_by_ref (fallback_mode_ptr : :: unity2 :: IntPtr , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_fallback_mixed_lighting_mode_by_ref :: get_method_info () . method_ptr ,) ; inner (fallback_mode_ptr , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_mixed_lighting_mode_supported { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: mixedlightingmode :: MixedLightingMode as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SupportedRenderingFeatures as :: unity2 :: ClassIdentity > :: class () , "IsMixedLightingModeSupported" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SupportedRenderingFeatures as :: unity2 :: ClassIdentity > :: NAME , "IsMixedLightingModeSupported" , e) , } } } pub unsafe fn is_mixed_lighting_mode_supported (mixed_mode : crate :: unity_engine :: mixedlightingmode :: MixedLightingMode , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (crate :: unity_engine :: mixedlightingmode :: MixedLightingMode , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_mixed_lighting_mode_supported :: get_method_info () . method_ptr ,) ; inner (mixed_mode , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_mixed_lighting_mode_supported_by_ref { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: mixedlightingmode :: MixedLightingMode as :: unity2 :: IlType > :: il_type () , < :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SupportedRenderingFeatures as :: unity2 :: ClassIdentity > :: class () , "IsMixedLightingModeSupportedByRef" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SupportedRenderingFeatures as :: unity2 :: ClassIdentity > :: NAME , "IsMixedLightingModeSupportedByRef" , e) , } } } pub unsafe fn is_mixed_lighting_mode_supported_by_ref (mixed_mode : crate :: unity_engine :: mixedlightingmode :: MixedLightingMode , is_supported_ptr : :: unity2 :: IntPtr , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: unity_engine :: mixedlightingmode :: MixedLightingMode , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_is_mixed_lighting_mode_supported_by_ref :: get_method_info () . method_ptr ,) ; inner (mixed_mode , is_supported_ptr , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_lightmap_bake_type_supported { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: lightmapbaketype :: LightmapBakeType as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SupportedRenderingFeatures as :: unity2 :: ClassIdentity > :: class () , "IsLightmapBakeTypeSupported" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SupportedRenderingFeatures as :: unity2 :: ClassIdentity > :: NAME , "IsLightmapBakeTypeSupported" , e) , } } } pub unsafe fn is_lightmap_bake_type_supported (bake_type : crate :: unity_engine :: lightmapbaketype :: LightmapBakeType , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (crate :: unity_engine :: lightmapbaketype :: LightmapBakeType , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_lightmap_bake_type_supported :: get_method_info () . method_ptr ,) ; inner (bake_type , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_lightmap_bake_type_supported_by_ref { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: lightmapbaketype :: LightmapBakeType as :: unity2 :: IlType > :: il_type () , < :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SupportedRenderingFeatures as :: unity2 :: ClassIdentity > :: class () , "IsLightmapBakeTypeSupportedByRef" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SupportedRenderingFeatures as :: unity2 :: ClassIdentity > :: NAME , "IsLightmapBakeTypeSupportedByRef" , e) , } } } pub unsafe fn is_lightmap_bake_type_supported_by_ref (bake_type : crate :: unity_engine :: lightmapbaketype :: LightmapBakeType , is_supported_ptr : :: unity2 :: IntPtr , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: unity_engine :: lightmapbaketype :: LightmapBakeType , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_is_lightmap_bake_type_supported_by_ref :: get_method_info () . method_ptr ,) ; inner (bake_type , is_supported_ptr , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_lightmaps_mode_supported_by_ref { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: lightmapsmode :: LightmapsMode as :: unity2 :: IlType > :: il_type () , < :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SupportedRenderingFeatures as :: unity2 :: ClassIdentity > :: class () , "IsLightmapsModeSupportedByRef" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SupportedRenderingFeatures as :: unity2 :: ClassIdentity > :: NAME , "IsLightmapsModeSupportedByRef" , e) , } } } pub unsafe fn is_lightmaps_mode_supported_by_ref (mode : crate :: unity_engine :: lightmapsmode :: LightmapsMode , is_supported_ptr : :: unity2 :: IntPtr , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: unity_engine :: lightmapsmode :: LightmapsMode , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_is_lightmaps_mode_supported_by_ref :: get_method_info () . method_ptr ,) ; inner (mode , is_supported_ptr , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_lightmapper_supported_by_ref { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SupportedRenderingFeatures as :: unity2 :: ClassIdentity > :: class () , "IsLightmapperSupportedByRef" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SupportedRenderingFeatures as :: unity2 :: ClassIdentity > :: NAME , "IsLightmapperSupportedByRef" , e) , } } } pub unsafe fn is_lightmapper_supported_by_ref (lightmapper : i32 , is_supported_ptr : :: unity2 :: IntPtr , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (i32 , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_is_lightmapper_supported_by_ref :: get_method_info () . method_ptr ,) ; inner (lightmapper , is_supported_ptr , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_ui_overlay_rendered_by_srp { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SupportedRenderingFeatures as :: unity2 :: ClassIdentity > :: class () , "IsUIOverlayRenderedBySRP" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SupportedRenderingFeatures as :: unity2 :: ClassIdentity > :: NAME , "IsUIOverlayRenderedBySRP" , e) , } } } pub unsafe fn is_ui_overlay_rendered_by_srp (is_supported_ptr : :: unity2 :: IntPtr , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_is_ui_overlay_rendered_by_srp :: get_method_info () . method_ptr ,) ; inner (is_supported_ptr , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_auto_ambient_probe_baking_supported { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SupportedRenderingFeatures as :: unity2 :: ClassIdentity > :: class () , "IsAutoAmbientProbeBakingSupported" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SupportedRenderingFeatures as :: unity2 :: ClassIdentity > :: NAME , "IsAutoAmbientProbeBakingSupported" , e) , } } } pub unsafe fn is_auto_ambient_probe_baking_supported (is_supported_ptr : :: unity2 :: IntPtr , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_is_auto_ambient_probe_baking_supported :: get_method_info () . method_ptr ,) ; inner (is_supported_ptr , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_auto_default_reflection_probe_baking_supported { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SupportedRenderingFeatures as :: unity2 :: ClassIdentity > :: class () , "IsAutoDefaultReflectionProbeBakingSupported" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SupportedRenderingFeatures as :: unity2 :: ClassIdentity > :: NAME , "IsAutoDefaultReflectionProbeBakingSupported" , e) , } } } pub unsafe fn is_auto_default_reflection_probe_baking_supported (is_supported_ptr : :: unity2 :: IntPtr , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_is_auto_default_reflection_probe_baking_supported :: get_method_info () . method_ptr ,) ; inner (is_supported_ptr , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_fallback_lightmapper_by_ref { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SupportedRenderingFeatures as :: unity2 :: ClassIdentity > :: class () , "FallbackLightmapperByRef" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SupportedRenderingFeatures as :: unity2 :: ClassIdentity > :: NAME , "FallbackLightmapperByRef" , e) , } } } pub unsafe fn fallback_lightmapper_by_ref (lightmapper_ptr : :: unity2 :: IntPtr , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_fallback_lightmapper_by_ref :: get_method_info () . method_ptr ,) ; inner (lightmapper_ptr , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SupportedRenderingFeatures as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SupportedRenderingFeatures as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : SupportedRenderingFeatures , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SupportedRenderingFeatures , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SupportedRenderingFeatures as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SupportedRenderingFeatures as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
+
+#[cfg(feature = "unity_engine-rendering-supportedrenderingfeatures")]
+impl SupportedRenderingFeatures { # [doc = "`get_active()` overload"] pub fn get_active () -> crate :: unity_engine :: rendering :: supportedrenderingfeatures :: SupportedRenderingFeatures { unsafe { __SupportedRenderingFeatures_unity2_raw :: get_active (:: core :: option :: Option :: None) } } # [doc = "`set_active(crate::unity_engine::rendering::supportedrenderingfeatures::SupportedRenderingFeatures)` overload"] pub fn set_active (value : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: supportedrenderingfeatures :: SupportedRenderingFeatures >) -> () { unsafe { __SupportedRenderingFeatures_unity2_raw :: set_active (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`FallbackMixedLightingModeByRef(::unity2::IntPtr)` overload"] pub fn fallback_mixed_lighting_mode_by_ref (fallback_mode_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { __SupportedRenderingFeatures_unity2_raw :: fallback_mixed_lighting_mode_by_ref (:: core :: convert :: Into :: into (fallback_mode_ptr) , :: core :: option :: Option :: None) } } # [doc = "`IsMixedLightingModeSupported(crate::unity_engine::mixedlightingmode::MixedLightingMode)` overload"] pub fn is_mixed_lighting_mode_supported (mixed_mode : impl :: core :: convert :: Into < crate :: unity_engine :: mixedlightingmode :: MixedLightingMode >) -> bool { unsafe { __SupportedRenderingFeatures_unity2_raw :: is_mixed_lighting_mode_supported (:: core :: convert :: Into :: into (mixed_mode) , :: core :: option :: Option :: None) } } # [doc = "`IsMixedLightingModeSupportedByRef(crate::unity_engine::mixedlightingmode::MixedLightingMode, ::unity2::IntPtr)` overload"] pub fn is_mixed_lighting_mode_supported_by_ref (mixed_mode : impl :: core :: convert :: Into < crate :: unity_engine :: mixedlightingmode :: MixedLightingMode > , is_supported_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { __SupportedRenderingFeatures_unity2_raw :: is_mixed_lighting_mode_supported_by_ref (:: core :: convert :: Into :: into (mixed_mode) , :: core :: convert :: Into :: into (is_supported_ptr) , :: core :: option :: Option :: None) } } # [doc = "`IsLightmapBakeTypeSupported(crate::unity_engine::lightmapbaketype::LightmapBakeType)` overload"] pub fn is_lightmap_bake_type_supported (bake_type : impl :: core :: convert :: Into < crate :: unity_engine :: lightmapbaketype :: LightmapBakeType >) -> bool { unsafe { __SupportedRenderingFeatures_unity2_raw :: is_lightmap_bake_type_supported (:: core :: convert :: Into :: into (bake_type) , :: core :: option :: Option :: None) } } # [doc = "`IsLightmapBakeTypeSupportedByRef(crate::unity_engine::lightmapbaketype::LightmapBakeType, ::unity2::IntPtr)` overload"] pub fn is_lightmap_bake_type_supported_by_ref (bake_type : impl :: core :: convert :: Into < crate :: unity_engine :: lightmapbaketype :: LightmapBakeType > , is_supported_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { __SupportedRenderingFeatures_unity2_raw :: is_lightmap_bake_type_supported_by_ref (:: core :: convert :: Into :: into (bake_type) , :: core :: convert :: Into :: into (is_supported_ptr) , :: core :: option :: Option :: None) } } # [doc = "`IsLightmapsModeSupportedByRef(crate::unity_engine::lightmapsmode::LightmapsMode, ::unity2::IntPtr)` overload"] pub fn is_lightmaps_mode_supported_by_ref (mode : impl :: core :: convert :: Into < crate :: unity_engine :: lightmapsmode :: LightmapsMode > , is_supported_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { __SupportedRenderingFeatures_unity2_raw :: is_lightmaps_mode_supported_by_ref (:: core :: convert :: Into :: into (mode) , :: core :: convert :: Into :: into (is_supported_ptr) , :: core :: option :: Option :: None) } } # [doc = "`IsLightmapperSupportedByRef(i32, ::unity2::IntPtr)` overload"] pub fn is_lightmapper_supported_by_ref (lightmapper : impl :: core :: convert :: Into < i32 > , is_supported_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { __SupportedRenderingFeatures_unity2_raw :: is_lightmapper_supported_by_ref (:: core :: convert :: Into :: into (lightmapper) , :: core :: convert :: Into :: into (is_supported_ptr) , :: core :: option :: Option :: None) } } # [doc = "`IsUIOverlayRenderedBySRP(::unity2::IntPtr)` overload"] pub fn is_ui_overlay_rendered_by_srp (is_supported_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { __SupportedRenderingFeatures_unity2_raw :: is_ui_overlay_rendered_by_srp (:: core :: convert :: Into :: into (is_supported_ptr) , :: core :: option :: Option :: None) } } # [doc = "`IsAutoAmbientProbeBakingSupported(::unity2::IntPtr)` overload"] pub fn is_auto_ambient_probe_baking_supported (is_supported_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { __SupportedRenderingFeatures_unity2_raw :: is_auto_ambient_probe_baking_supported (:: core :: convert :: Into :: into (is_supported_ptr) , :: core :: option :: Option :: None) } } # [doc = "`IsAutoDefaultReflectionProbeBakingSupported(::unity2::IntPtr)` overload"] pub fn is_auto_default_reflection_probe_baking_supported (is_supported_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { __SupportedRenderingFeatures_unity2_raw :: is_auto_default_reflection_probe_baking_supported (:: core :: convert :: Into :: into (is_supported_ptr) , :: core :: option :: Option :: None) } } # [doc = "`FallbackLightmapperByRef(::unity2::IntPtr)` overload"] pub fn fallback_lightmapper_by_ref (lightmapper_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { __SupportedRenderingFeatures_unity2_raw :: fallback_lightmapper_by_ref (:: core :: convert :: Into :: into (lightmapper_ptr) , :: core :: option :: Option :: None) } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { __SupportedRenderingFeatures_unity2_raw :: cctor (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-rendering-supportedrenderingfeatures")]
+pub trait ISupportedRenderingFeaturesMethods : ISupportedRenderingFeatures { # [doc = "`get_defaultMixedLightingModes()` overload"] fn get_default_mixed_lighting_modes (self ,) -> crate :: unity_engine :: rendering :: supportedrenderingfeatures :: SupportedRenderingFeatures_LightmapMixedBakeModes { unsafe { let __receiver = < SupportedRenderingFeatures as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SupportedRenderingFeatures_unity2_raw :: get_default_mixed_lighting_modes (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_mixedLightingModes()` overload"] fn get_mixed_lighting_modes (self ,) -> crate :: unity_engine :: rendering :: supportedrenderingfeatures :: SupportedRenderingFeatures_LightmapMixedBakeModes { unsafe { let __receiver = < SupportedRenderingFeatures as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SupportedRenderingFeatures_unity2_raw :: get_mixed_lighting_modes (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_lightmapBakeTypes()` overload"] fn get_lightmap_bake_types (self ,) -> crate :: unity_engine :: lightmapbaketype :: LightmapBakeType { unsafe { let __receiver = < SupportedRenderingFeatures as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SupportedRenderingFeatures_unity2_raw :: get_lightmap_bake_types (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_lightmapsModes()` overload"] fn get_lightmaps_modes (self ,) -> crate :: unity_engine :: lightmapsmode :: LightmapsMode { unsafe { let __receiver = < SupportedRenderingFeatures as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SupportedRenderingFeatures_unity2_raw :: get_lightmaps_modes (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_enlighten()` overload"] fn get_enlighten (self ,) -> bool { unsafe { let __receiver = < SupportedRenderingFeatures as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SupportedRenderingFeatures_unity2_raw :: get_enlighten (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_rendersUIOverlay()` overload"] fn get_renders_ui_overlay (self ,) -> bool { unsafe { let __receiver = < SupportedRenderingFeatures as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SupportedRenderingFeatures_unity2_raw :: get_renders_ui_overlay (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_autoAmbientProbeBaking()` overload"] fn get_auto_ambient_probe_baking (self ,) -> bool { unsafe { let __receiver = < SupportedRenderingFeatures as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SupportedRenderingFeatures_unity2_raw :: get_auto_ambient_probe_baking (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_autoDefaultReflectionProbeBaking()` overload"] fn get_auto_default_reflection_probe_baking (self ,) -> bool { unsafe { let __receiver = < SupportedRenderingFeatures as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SupportedRenderingFeatures_unity2_raw :: get_auto_default_reflection_probe_baking (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < SupportedRenderingFeatures as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SupportedRenderingFeatures_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-rendering-supportedrenderingfeatures")]
+impl < __T : ISupportedRenderingFeatures > ISupportedRenderingFeaturesMethods for __T { }
+
+#[cfg(feature = "unity_engine-rendering-supportedrenderingfeatures")]
+impl SupportedRenderingFeatures { pub fn get_active_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SupportedRenderingFeatures_unity2_raw :: __lookup_get_active :: get_method_info () } pub fn set_active_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SupportedRenderingFeatures_unity2_raw :: __lookup_set_active :: get_method_info () } pub fn get_default_mixed_lighting_modes_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SupportedRenderingFeatures_unity2_raw :: __lookup_get_default_mixed_lighting_modes :: get_method_info () } pub fn get_mixed_lighting_modes_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SupportedRenderingFeatures_unity2_raw :: __lookup_get_mixed_lighting_modes :: get_method_info () } pub fn get_lightmap_bake_types_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SupportedRenderingFeatures_unity2_raw :: __lookup_get_lightmap_bake_types :: get_method_info () } pub fn get_lightmaps_modes_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SupportedRenderingFeatures_unity2_raw :: __lookup_get_lightmaps_modes :: get_method_info () } pub fn get_enlighten_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SupportedRenderingFeatures_unity2_raw :: __lookup_get_enlighten :: get_method_info () } pub fn get_renders_ui_overlay_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SupportedRenderingFeatures_unity2_raw :: __lookup_get_renders_ui_overlay :: get_method_info () } pub fn get_auto_ambient_probe_baking_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SupportedRenderingFeatures_unity2_raw :: __lookup_get_auto_ambient_probe_baking :: get_method_info () } pub fn get_auto_default_reflection_probe_baking_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SupportedRenderingFeatures_unity2_raw :: __lookup_get_auto_default_reflection_probe_baking :: get_method_info () } pub fn fallback_mixed_lighting_mode_by_ref_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SupportedRenderingFeatures_unity2_raw :: __lookup_fallback_mixed_lighting_mode_by_ref :: get_method_info () } pub fn is_mixed_lighting_mode_supported_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SupportedRenderingFeatures_unity2_raw :: __lookup_is_mixed_lighting_mode_supported :: get_method_info () } pub fn is_mixed_lighting_mode_supported_by_ref_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SupportedRenderingFeatures_unity2_raw :: __lookup_is_mixed_lighting_mode_supported_by_ref :: get_method_info () } pub fn is_lightmap_bake_type_supported_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SupportedRenderingFeatures_unity2_raw :: __lookup_is_lightmap_bake_type_supported :: get_method_info () } pub fn is_lightmap_bake_type_supported_by_ref_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SupportedRenderingFeatures_unity2_raw :: __lookup_is_lightmap_bake_type_supported_by_ref :: get_method_info () } pub fn is_lightmaps_mode_supported_by_ref_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SupportedRenderingFeatures_unity2_raw :: __lookup_is_lightmaps_mode_supported_by_ref :: get_method_info () } pub fn is_lightmapper_supported_by_ref_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SupportedRenderingFeatures_unity2_raw :: __lookup_is_lightmapper_supported_by_ref :: get_method_info () } pub fn is_ui_overlay_rendered_by_srp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SupportedRenderingFeatures_unity2_raw :: __lookup_is_ui_overlay_rendered_by_srp :: get_method_info () } pub fn is_auto_ambient_probe_baking_supported_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SupportedRenderingFeatures_unity2_raw :: __lookup_is_auto_ambient_probe_baking_supported :: get_method_info () } pub fn is_auto_default_reflection_probe_baking_supported_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SupportedRenderingFeatures_unity2_raw :: __lookup_is_auto_default_reflection_probe_baking_supported :: get_method_info () } pub fn fallback_lightmapper_by_ref_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SupportedRenderingFeatures_unity2_raw :: __lookup_fallback_lightmapper_by_ref :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SupportedRenderingFeatures_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SupportedRenderingFeatures_unity2_raw :: __lookup_cctor :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-rendering-supportedrenderingfeatures")]
 impl SupportedRenderingFeatures {
-    #[doc = "`get_active()` overload"]
-    pub fn get_active() -> crate::unity_engine::rendering::supportedrenderingfeatures::SupportedRenderingFeatures {
-        unsafe { __SupportedRenderingFeatures_unity2_raw::get_active(::core::option::Option::None) }
-    }
-
-    #[doc = "`set_active(crate::unity_engine::rendering::supportedrenderingfeatures::SupportedRenderingFeatures)` overload"]
-    pub fn set_active(
-        value: impl ::core::convert::Into<crate::unity_engine::rendering::supportedrenderingfeatures::SupportedRenderingFeatures>,
-    ) -> () {
-        unsafe { __SupportedRenderingFeatures_unity2_raw::set_active(::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`FallbackMixedLightingModeByRef(::unity2::IntPtr)` overload"]
-    pub fn fallback_mixed_lighting_mode_by_ref(fallback_mode_ptr: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
-        unsafe {
-            __SupportedRenderingFeatures_unity2_raw::fallback_mixed_lighting_mode_by_ref(
-                ::core::convert::Into::into(fallback_mode_ptr),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`IsMixedLightingModeSupported(crate::unity_engine::mixedlightingmode::MixedLightingMode)` overload"]
-    pub fn is_mixed_lighting_mode_supported(
-        mixed_mode: impl ::core::convert::Into<crate::unity_engine::mixedlightingmode::MixedLightingMode>,
-    ) -> bool {
-        unsafe {
-            __SupportedRenderingFeatures_unity2_raw::is_mixed_lighting_mode_supported(
-                ::core::convert::Into::into(mixed_mode),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`IsMixedLightingModeSupportedByRef(crate::unity_engine::mixedlightingmode::MixedLightingMode, ::unity2::IntPtr)` overload"]
-    pub fn is_mixed_lighting_mode_supported_by_ref(
-        mixed_mode: impl ::core::convert::Into<crate::unity_engine::mixedlightingmode::MixedLightingMode>,
-        is_supported_ptr: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
-        unsafe {
-            __SupportedRenderingFeatures_unity2_raw::is_mixed_lighting_mode_supported_by_ref(
-                ::core::convert::Into::into(mixed_mode),
-                ::core::convert::Into::into(is_supported_ptr),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`IsLightmapBakeTypeSupported(crate::unity_engine::lightmapbaketype::LightmapBakeType)` overload"]
-    pub fn is_lightmap_bake_type_supported(bake_type: impl ::core::convert::Into<crate::unity_engine::lightmapbaketype::LightmapBakeType>) -> bool {
-        unsafe {
-            __SupportedRenderingFeatures_unity2_raw::is_lightmap_bake_type_supported(
-                ::core::convert::Into::into(bake_type),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`IsLightmapBakeTypeSupportedByRef(crate::unity_engine::lightmapbaketype::LightmapBakeType, ::unity2::IntPtr)` overload"]
-    pub fn is_lightmap_bake_type_supported_by_ref(
-        bake_type: impl ::core::convert::Into<crate::unity_engine::lightmapbaketype::LightmapBakeType>,
-        is_supported_ptr: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
-        unsafe {
-            __SupportedRenderingFeatures_unity2_raw::is_lightmap_bake_type_supported_by_ref(
-                ::core::convert::Into::into(bake_type),
-                ::core::convert::Into::into(is_supported_ptr),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`IsLightmapsModeSupportedByRef(crate::unity_engine::lightmapsmode::LightmapsMode, ::unity2::IntPtr)` overload"]
-    pub fn is_lightmaps_mode_supported_by_ref(
-        mode: impl ::core::convert::Into<crate::unity_engine::lightmapsmode::LightmapsMode>,
-        is_supported_ptr: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
-        unsafe {
-            __SupportedRenderingFeatures_unity2_raw::is_lightmaps_mode_supported_by_ref(
-                ::core::convert::Into::into(mode),
-                ::core::convert::Into::into(is_supported_ptr),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`IsLightmapperSupportedByRef(i32, ::unity2::IntPtr)` overload"]
-    pub fn is_lightmapper_supported_by_ref(
-        lightmapper: impl ::core::convert::Into<i32>,
-        is_supported_ptr: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
-        unsafe {
-            __SupportedRenderingFeatures_unity2_raw::is_lightmapper_supported_by_ref(
-                ::core::convert::Into::into(lightmapper),
-                ::core::convert::Into::into(is_supported_ptr),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`IsUIOverlayRenderedBySRP(::unity2::IntPtr)` overload"]
-    pub fn is_ui_overlay_rendered_by_srp(is_supported_ptr: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
-        unsafe {
-            __SupportedRenderingFeatures_unity2_raw::is_ui_overlay_rendered_by_srp(
-                ::core::convert::Into::into(is_supported_ptr),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`IsAutoAmbientProbeBakingSupported(::unity2::IntPtr)` overload"]
-    pub fn is_auto_ambient_probe_baking_supported(is_supported_ptr: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
-        unsafe {
-            __SupportedRenderingFeatures_unity2_raw::is_auto_ambient_probe_baking_supported(
-                ::core::convert::Into::into(is_supported_ptr),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`IsAutoDefaultReflectionProbeBakingSupported(::unity2::IntPtr)` overload"]
-    pub fn is_auto_default_reflection_probe_baking_supported(is_supported_ptr: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
-        unsafe {
-            __SupportedRenderingFeatures_unity2_raw::is_auto_default_reflection_probe_baking_supported(
-                ::core::convert::Into::into(is_supported_ptr),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`FallbackLightmapperByRef(::unity2::IntPtr)` overload"]
-    pub fn fallback_lightmapper_by_ref(lightmapper_ptr: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
-        unsafe {
-            __SupportedRenderingFeatures_unity2_raw::fallback_lightmapper_by_ref(
-                ::core::convert::Into::into(lightmapper_ptr),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __SupportedRenderingFeatures_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "unity_engine-rendering-supportedrenderingfeatures")]
-pub trait ISupportedRenderingFeaturesMethods: ISupportedRenderingFeatures {
-    #[doc = "`get_defaultMixedLightingModes()` overload"]
-    fn get_default_mixed_lighting_modes(
-        self,
-    ) -> crate::unity_engine::rendering::supportedrenderingfeatures::SupportedRenderingFeatures_LightmapMixedBakeModes {
-        unsafe {
-            let __receiver =
-                <SupportedRenderingFeatures as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SupportedRenderingFeatures_unity2_raw::get_default_mixed_lighting_modes(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_mixedLightingModes()` overload"]
-    fn get_mixed_lighting_modes(
-        self,
-    ) -> crate::unity_engine::rendering::supportedrenderingfeatures::SupportedRenderingFeatures_LightmapMixedBakeModes {
-        unsafe {
-            let __receiver =
-                <SupportedRenderingFeatures as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SupportedRenderingFeatures_unity2_raw::get_mixed_lighting_modes(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_lightmapBakeTypes()` overload"]
-    fn get_lightmap_bake_types(self) -> crate::unity_engine::lightmapbaketype::LightmapBakeType {
-        unsafe {
-            let __receiver =
-                <SupportedRenderingFeatures as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SupportedRenderingFeatures_unity2_raw::get_lightmap_bake_types(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_lightmapsModes()` overload"]
-    fn get_lightmaps_modes(self) -> crate::unity_engine::lightmapsmode::LightmapsMode {
-        unsafe {
-            let __receiver =
-                <SupportedRenderingFeatures as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SupportedRenderingFeatures_unity2_raw::get_lightmaps_modes(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_enlighten()` overload"]
-    fn get_enlighten(self) -> bool {
-        unsafe {
-            let __receiver =
-                <SupportedRenderingFeatures as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SupportedRenderingFeatures_unity2_raw::get_enlighten(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_rendersUIOverlay()` overload"]
-    fn get_renders_ui_overlay(self) -> bool {
-        unsafe {
-            let __receiver =
-                <SupportedRenderingFeatures as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SupportedRenderingFeatures_unity2_raw::get_renders_ui_overlay(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_autoAmbientProbeBaking()` overload"]
-    fn get_auto_ambient_probe_baking(self) -> bool {
-        unsafe {
-            let __receiver =
-                <SupportedRenderingFeatures as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SupportedRenderingFeatures_unity2_raw::get_auto_ambient_probe_baking(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_autoDefaultReflectionProbeBaking()` overload"]
-    fn get_auto_default_reflection_probe_baking(self) -> bool {
-        unsafe {
-            let __receiver =
-                <SupportedRenderingFeatures as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SupportedRenderingFeatures_unity2_raw::get_auto_default_reflection_probe_baking(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <SupportedRenderingFeatures as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SupportedRenderingFeatures_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-rendering-supportedrenderingfeatures")]
-impl<__T: ISupportedRenderingFeatures> ISupportedRenderingFeaturesMethods for __T {}
-
-#[cfg(feature = "unity_engine-rendering-supportedrenderingfeatures")]
-impl SupportedRenderingFeatures {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SupportedRenderingFeatures),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISupportedRenderingFeaturesMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SupportedRenderingFeatures) , :: core :: stringify ! (new) ,)) ; < Self as ISupportedRenderingFeaturesMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "unity_engine-rendering-supportedrenderingfeatures")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{
-        ISupportedRenderingFeatures, ISupportedRenderingFeaturesMethods, SupportedRenderingFeatures,
-        SupportedRenderingFeatures_LightmapMixedBakeModes, SupportedRenderingFeatures_ReflectionProbeModes,
-    };
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::system::{object::IObject, r#enum::IEnum, valuetype::IValueType};
+    pub use super::SupportedRenderingFeatures;
+    pub use super::ISupportedRenderingFeatures;
+    pub use super::ISupportedRenderingFeaturesMethods;
+    pub use super::SupportedRenderingFeatures_LightmapMixedBakeModes;
+    pub use super::SupportedRenderingFeatures_ReflectionProbeModes;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

@@ -2,657 +2,71 @@
 
 #[cfg(feature = "app-mapcombatviewersettings-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::{
-            object_2::{IObject_2, Object_2},
-            scriptableobject::{IScriptableObject, ScriptableObject},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapcombatviewersettings/MapCombatViewerSettings.md"))]
-    #[::unity2::class(namespace = "App", name = "MapCombatViewerSettings")]
-    #[parent(crate::unity_engine::scriptableobject::ScriptableObject)]
-    pub struct MapCombatViewerSettings {
-        #[offset(24)]
-        #[rename(name = "FieldName")]
-        pub field_name: ::unity2::Il2CppString,
-        #[offset(32)]
-        #[rename(name = "Characters")]
-        pub characters: ::unity2::Array<crate::app::characteridset::CharacterIdSet>,
-        #[offset(40)]
-        #[rename(name = "RandomPosition")]
-        pub random_position: bool,
-        #[offset(41)]
-        #[rename(name = "RandomCharacter")]
-        pub random_character: bool,
-        #[offset(42)]
-        #[rename(name = "PlayerAttack")]
-        pub player_attack: bool,
-        #[offset(43)]
-        #[rename(name = "EternalCombat")]
-        pub eternal_combat: bool,
-        #[offset(44)]
-        #[rename(name = "RepeatCombat")]
-        pub repeat_combat: bool,
-        #[offset(45)]
-        #[rename(name = "CharaSelectRandomly")]
-        pub chara_select_randomly: bool,
-        #[offset(48)]
-        #[rename(name = "SortiePreset")]
-        pub sortie_preset: i32,
-        #[offset(52)]
-        #[rename(name = "BattlePreset")]
-        pub battle_preset: i32,
-        #[offset(56)]
-        #[rename(name = "CombatSeed")]
-        pub combat_seed: u32,
-        #[static_field]
-        #[rename(name = "ChainAttackCount")]
-        pub chain_attack_count: i32,
-        #[static_field]
-        #[rename(name = "ChainGuardCount")]
-        pub chain_guard_count: i32,
-        #[static_field]
-        #[rename(name = "Id2Name")]
-        pub id2_name: ::unity2::Array<::unity2::Il2CppString>,
-        #[static_field]
-        #[rename(name = "SortiePresets")]
-        pub sortie_presets: ::unity2::Array<::unity2::Il2CppString>,
-        #[static_field]
-        #[rename(name = "BattlePresets")]
-        pub battle_presets: ::unity2::Array<::unity2::Il2CppString>,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+ use crate :: unity_engine :: scriptableobject :: { IScriptableObject , ScriptableObject }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapcombatviewersettings/MapCombatViewerSettings.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapCombatViewerSettings")] # [parent (crate :: unity_engine :: scriptableobject :: ScriptableObject)] pub struct MapCombatViewerSettings {
+# [offset (24)] # [rename (name = "FieldName")] pub field_name : :: unity2 :: Il2CppString ,
+# [offset (32)] # [rename (name = "Characters")] pub characters : :: unity2 :: Array < crate :: app :: characteridset :: CharacterIdSet > ,
+# [offset (40)] # [rename (name = "RandomPosition")] pub random_position : bool ,
+# [offset (41)] # [rename (name = "RandomCharacter")] pub random_character : bool ,
+# [offset (42)] # [rename (name = "PlayerAttack")] pub player_attack : bool ,
+# [offset (43)] # [rename (name = "EternalCombat")] pub eternal_combat : bool ,
+# [offset (44)] # [rename (name = "RepeatCombat")] pub repeat_combat : bool ,
+# [offset (45)] # [rename (name = "CharaSelectRandomly")] pub chara_select_randomly : bool ,
+# [offset (48)] # [rename (name = "SortiePreset")] pub sortie_preset : i32 ,
+# [offset (52)] # [rename (name = "BattlePreset")] pub battle_preset : i32 ,
+# [offset (56)] # [rename (name = "CombatSeed")] pub combat_seed : u32 ,
+# [static_field] # [rename (name = "ChainAttackCount")] pub chain_attack_count : i32 ,
+# [static_field] # [rename (name = "ChainGuardCount")] pub chain_guard_count : i32 ,
+# [static_field] # [rename (name = "Id2Name")] pub id2_name : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
+# [static_field] # [rename (name = "SortiePresets")] pub sortie_presets : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
+# [static_field] # [rename (name = "BattlePresets")] pub battle_presets : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
+}
+
 }
 
 #[cfg(feature = "app-mapcombatviewersettings-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-mapcombatviewersettings")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapCombatViewerSettings_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_need_refresh {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapCombatViewerSettings as ::unity2::ClassIdentity>::class(),
-                "get_NeedRefresh",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapCombatViewerSettings as ::unity2::ClassIdentity>::NAME,
-                        "get_NeedRefresh",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_need_refresh(this: MapCombatViewerSettings, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(MapCombatViewerSettings, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_need_refresh::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_need_refresh {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapCombatViewerSettings as ::unity2::ClassIdentity>::class(),
-                "set_NeedRefresh",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapCombatViewerSettings as ::unity2::ClassIdentity>::NAME,
-                        "set_NeedRefresh",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_need_refresh(this: MapCombatViewerSettings, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapCombatViewerSettings, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_need_refresh::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_initialize {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapCombatViewerSettings as ::unity2::ClassIdentity>::class(),
-                "Initialize",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapCombatViewerSettings as ::unity2::ClassIdentity>::NAME,
-                        "Initialize",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn initialize(this: MapCombatViewerSettings, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapCombatViewerSettings, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_initialize::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_hash {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapCombatViewerSettings as ::unity2::ClassIdentity>::class(),
-                "GetHash",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapCombatViewerSettings as ::unity2::ClassIdentity>::NAME,
-                        "GetHash",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_hash(this: MapCombatViewerSettings, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(MapCombatViewerSettings, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_hash::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_validate {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapCombatViewerSettings as ::unity2::ClassIdentity>::class(),
-                "Validate",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapCombatViewerSettings as ::unity2::ClassIdentity>::NAME,
-                        "Validate",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn validate(this: MapCombatViewerSettings, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapCombatViewerSettings, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_validate::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_load_sortie_preset {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapCombatViewerSettings as ::unity2::ClassIdentity>::class(),
-                "LoadSortiePreset",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapCombatViewerSettings as ::unity2::ClassIdentity>::NAME,
-                        "LoadSortiePreset",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn load_sortie_preset(this: MapCombatViewerSettings, preset_id: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapCombatViewerSettings, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_load_sortie_preset::get_method_info().method_ptr);
-        inner(this, preset_id, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_load_battle_preset {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapCombatViewerSettings as ::unity2::ClassIdentity>::class(),
-                "LoadBattlePreset",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapCombatViewerSettings as ::unity2::ClassIdentity>::NAME,
-                        "LoadBattlePreset",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn load_battle_preset(this: MapCombatViewerSettings, preset_id: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapCombatViewerSettings, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_load_battle_preset::get_method_info().method_ptr);
-        inner(this, preset_id, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_load_battle_preset_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::combat::combatrecord::CombatRecord as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapCombatViewerSettings as ::unity2::ClassIdentity>::class(),
-                "LoadBattlePreset",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapCombatViewerSettings as ::unity2::ClassIdentity>::NAME,
-                        "LoadBattlePreset",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn load_battle_preset_2(
-        this: MapCombatViewerSettings,
-        record: crate::combat::combatrecord::CombatRecord,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MapCombatViewerSettings, crate::combat::combatrecord::CombatRecord, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_load_battle_preset_2::get_method_info().method_ptr);
-        inner(this, record, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_character_random {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapCombatViewerSettings as ::unity2::ClassIdentity>::class(),
-                "SetCharacterRandom",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapCombatViewerSettings as ::unity2::ClassIdentity>::NAME,
-                        "SetCharacterRandom",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_character_random(this: MapCombatViewerSettings, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapCombatViewerSettings, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_character_random::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_setting_randam_character {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapCombatViewerSettings as ::unity2::ClassIdentity>::class(),
-                "SettingRandamCharacter",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapCombatViewerSettings as ::unity2::ClassIdentity>::NAME,
-                        "SettingRandamCharacter",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn setting_randam_character(this: MapCombatViewerSettings, side: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapCombatViewerSettings, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_setting_randam_character::get_method_info().method_ptr);
-        inner(this, side, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_character_param_random {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapCombatViewerSettings as ::unity2::ClassIdentity>::class(),
-                "SetCharacterParamRandom",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapCombatViewerSettings as ::unity2::ClassIdentity>::NAME,
-                        "SetCharacterParamRandom",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_character_param_random(this: MapCombatViewerSettings, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapCombatViewerSettings, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_character_param_random::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapCombatViewerSettings as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapCombatViewerSettings as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: MapCombatViewerSettings, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapCombatViewerSettings, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapCombatViewerSettings as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapCombatViewerSettings as ::unity2::ClassIdentity>::NAME,
-                        ".cctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MapCombatViewerSettings_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_need_refresh { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapCombatViewerSettings as :: unity2 :: ClassIdentity > :: class () , "get_NeedRefresh" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapCombatViewerSettings as :: unity2 :: ClassIdentity > :: NAME , "get_NeedRefresh" , e) , } } } pub unsafe fn get_need_refresh (this : MapCombatViewerSettings , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (MapCombatViewerSettings , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_need_refresh :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_need_refresh { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapCombatViewerSettings as :: unity2 :: ClassIdentity > :: class () , "set_NeedRefresh" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapCombatViewerSettings as :: unity2 :: ClassIdentity > :: NAME , "set_NeedRefresh" , e) , } } } pub unsafe fn set_need_refresh (this : MapCombatViewerSettings , value : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapCombatViewerSettings , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_need_refresh :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_initialize { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapCombatViewerSettings as :: unity2 :: ClassIdentity > :: class () , "Initialize" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapCombatViewerSettings as :: unity2 :: ClassIdentity > :: NAME , "Initialize" , e) , } } } pub unsafe fn initialize (this : MapCombatViewerSettings , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapCombatViewerSettings , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_initialize :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_hash { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapCombatViewerSettings as :: unity2 :: ClassIdentity > :: class () , "GetHash" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapCombatViewerSettings as :: unity2 :: ClassIdentity > :: NAME , "GetHash" , e) , } } } pub unsafe fn get_hash (this : MapCombatViewerSettings , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (MapCombatViewerSettings , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_hash :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_validate { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapCombatViewerSettings as :: unity2 :: ClassIdentity > :: class () , "Validate" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapCombatViewerSettings as :: unity2 :: ClassIdentity > :: NAME , "Validate" , e) , } } } pub unsafe fn validate (this : MapCombatViewerSettings , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapCombatViewerSettings , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_validate :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_load_sortie_preset { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapCombatViewerSettings as :: unity2 :: ClassIdentity > :: class () , "LoadSortiePreset" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapCombatViewerSettings as :: unity2 :: ClassIdentity > :: NAME , "LoadSortiePreset" , e) , } } } pub unsafe fn load_sortie_preset (this : MapCombatViewerSettings , preset_id : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapCombatViewerSettings , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_load_sortie_preset :: get_method_info () . method_ptr ,) ; inner (this , preset_id , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_load_battle_preset { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapCombatViewerSettings as :: unity2 :: ClassIdentity > :: class () , "LoadBattlePreset" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapCombatViewerSettings as :: unity2 :: ClassIdentity > :: NAME , "LoadBattlePreset" , e) , } } } pub unsafe fn load_battle_preset (this : MapCombatViewerSettings , preset_id : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapCombatViewerSettings , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_load_battle_preset :: get_method_info () . method_ptr ,) ; inner (this , preset_id , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_load_battle_preset_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: combatrecord :: CombatRecord as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapCombatViewerSettings as :: unity2 :: ClassIdentity > :: class () , "LoadBattlePreset" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapCombatViewerSettings as :: unity2 :: ClassIdentity > :: NAME , "LoadBattlePreset" , e) , } } } pub unsafe fn load_battle_preset_2 (this : MapCombatViewerSettings , record : crate :: combat :: combatrecord :: CombatRecord , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapCombatViewerSettings , crate :: combat :: combatrecord :: CombatRecord , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_load_battle_preset_2 :: get_method_info () . method_ptr ,) ; inner (this , record , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_character_random { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapCombatViewerSettings as :: unity2 :: ClassIdentity > :: class () , "SetCharacterRandom" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapCombatViewerSettings as :: unity2 :: ClassIdentity > :: NAME , "SetCharacterRandom" , e) , } } } pub unsafe fn set_character_random (this : MapCombatViewerSettings , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapCombatViewerSettings , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_character_random :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_setting_randam_character { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapCombatViewerSettings as :: unity2 :: ClassIdentity > :: class () , "SettingRandamCharacter" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapCombatViewerSettings as :: unity2 :: ClassIdentity > :: NAME , "SettingRandamCharacter" , e) , } } } pub unsafe fn setting_randam_character (this : MapCombatViewerSettings , side : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapCombatViewerSettings , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_setting_randam_character :: get_method_info () . method_ptr ,) ; inner (this , side , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_character_param_random { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapCombatViewerSettings as :: unity2 :: ClassIdentity > :: class () , "SetCharacterParamRandom" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapCombatViewerSettings as :: unity2 :: ClassIdentity > :: NAME , "SetCharacterParamRandom" , e) , } } } pub unsafe fn set_character_param_random (this : MapCombatViewerSettings , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapCombatViewerSettings , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_character_param_random :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapCombatViewerSettings as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapCombatViewerSettings as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : MapCombatViewerSettings , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapCombatViewerSettings , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapCombatViewerSettings as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapCombatViewerSettings as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
+
+#[cfg(feature = "app-mapcombatviewersettings")]
+impl MapCombatViewerSettings { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { __MapCombatViewerSettings_unity2_raw :: cctor (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-mapcombatviewersettings")]
+pub trait IMapCombatViewerSettingsMethods : IMapCombatViewerSettings { # [doc = "`get_NeedRefresh()` overload"] fn get_need_refresh (self ,) -> bool { unsafe { let __receiver = < MapCombatViewerSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapCombatViewerSettings_unity2_raw :: get_need_refresh (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_NeedRefresh(bool)` overload"] fn set_need_refresh (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < MapCombatViewerSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapCombatViewerSettings_unity2_raw :: set_need_refresh (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`Initialize()` overload"] fn initialize (self ,) -> () { unsafe { let __receiver = < MapCombatViewerSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapCombatViewerSettings_unity2_raw :: initialize (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetHash()` overload"] fn get_hash (self ,) -> i32 { unsafe { let __receiver = < MapCombatViewerSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapCombatViewerSettings_unity2_raw :: get_hash (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Validate()` overload"] fn validate (self ,) -> () { unsafe { let __receiver = < MapCombatViewerSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapCombatViewerSettings_unity2_raw :: validate (__receiver , :: core :: option :: Option :: None) } } # [doc = "`LoadSortiePreset(i32)` overload"] fn load_sortie_preset (self , preset_id : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapCombatViewerSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapCombatViewerSettings_unity2_raw :: load_sortie_preset (__receiver , :: core :: convert :: Into :: into (preset_id) , :: core :: option :: Option :: None) } } # [doc = "`LoadBattlePreset(i32)` overload"] fn load_battle_preset (self , preset_id : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapCombatViewerSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapCombatViewerSettings_unity2_raw :: load_battle_preset (__receiver , :: core :: convert :: Into :: into (preset_id) , :: core :: option :: Option :: None) } } # [doc = "`LoadBattlePreset(crate::combat::combatrecord::CombatRecord)` overload"] fn load_battle_preset_2 (self , record : impl :: core :: convert :: Into < crate :: combat :: combatrecord :: CombatRecord >) -> () { unsafe { let __receiver = < MapCombatViewerSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapCombatViewerSettings_unity2_raw :: load_battle_preset_2 (__receiver , :: core :: convert :: Into :: into (record) , :: core :: option :: Option :: None) } } # [doc = "`SetCharacterRandom()` overload"] fn set_character_random (self ,) -> () { unsafe { let __receiver = < MapCombatViewerSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapCombatViewerSettings_unity2_raw :: set_character_random (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SettingRandamCharacter(i32)` overload"] fn setting_randam_character (self , side : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapCombatViewerSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapCombatViewerSettings_unity2_raw :: setting_randam_character (__receiver , :: core :: convert :: Into :: into (side) , :: core :: option :: Option :: None) } } # [doc = "`SetCharacterParamRandom()` overload"] fn set_character_param_random (self ,) -> () { unsafe { let __receiver = < MapCombatViewerSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapCombatViewerSettings_unity2_raw :: set_character_param_random (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapCombatViewerSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapCombatViewerSettings_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-mapcombatviewersettings")]
+impl < __T : IMapCombatViewerSettings > IMapCombatViewerSettingsMethods for __T { }
+
+#[cfg(feature = "app-mapcombatviewersettings")]
+impl MapCombatViewerSettings { pub fn get_need_refresh_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapCombatViewerSettings_unity2_raw :: __lookup_get_need_refresh :: get_method_info () } pub fn set_need_refresh_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapCombatViewerSettings_unity2_raw :: __lookup_set_need_refresh :: get_method_info () } pub fn initialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapCombatViewerSettings_unity2_raw :: __lookup_initialize :: get_method_info () } pub fn get_hash_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapCombatViewerSettings_unity2_raw :: __lookup_get_hash :: get_method_info () } pub fn validate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapCombatViewerSettings_unity2_raw :: __lookup_validate :: get_method_info () } pub fn load_sortie_preset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapCombatViewerSettings_unity2_raw :: __lookup_load_sortie_preset :: get_method_info () } pub fn load_battle_preset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapCombatViewerSettings_unity2_raw :: __lookup_load_battle_preset :: get_method_info () } pub fn load_battle_preset_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapCombatViewerSettings_unity2_raw :: __lookup_load_battle_preset_2 :: get_method_info () } pub fn set_character_random_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapCombatViewerSettings_unity2_raw :: __lookup_set_character_random :: get_method_info () } pub fn setting_randam_character_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapCombatViewerSettings_unity2_raw :: __lookup_setting_randam_character :: get_method_info () } pub fn set_character_param_random_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapCombatViewerSettings_unity2_raw :: __lookup_set_character_param_random :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapCombatViewerSettings_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapCombatViewerSettings_unity2_raw :: __lookup_cctor :: get_method_info () } }
 
 #[cfg(feature = "app-mapcombatviewersettings")]
 impl MapCombatViewerSettings {
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __MapCombatViewerSettings_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-mapcombatviewersettings")]
-pub trait IMapCombatViewerSettingsMethods: IMapCombatViewerSettings {
-    #[doc = "`get_NeedRefresh()` overload"]
-    fn get_need_refresh(self) -> bool {
-        unsafe {
-            let __receiver =
-                <MapCombatViewerSettings as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapCombatViewerSettings_unity2_raw::get_need_refresh(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_NeedRefresh(bool)` overload"]
-    fn set_need_refresh(self, value: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver =
-                <MapCombatViewerSettings as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapCombatViewerSettings_unity2_raw::set_need_refresh(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Initialize()` overload"]
-    fn initialize(self) -> () {
-        unsafe {
-            let __receiver =
-                <MapCombatViewerSettings as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapCombatViewerSettings_unity2_raw::initialize(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetHash()` overload"]
-    fn get_hash(self) -> i32 {
-        unsafe {
-            let __receiver =
-                <MapCombatViewerSettings as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapCombatViewerSettings_unity2_raw::get_hash(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Validate()` overload"]
-    fn validate(self) -> () {
-        unsafe {
-            let __receiver =
-                <MapCombatViewerSettings as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapCombatViewerSettings_unity2_raw::validate(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`LoadSortiePreset(i32)` overload"]
-    fn load_sortie_preset(self, preset_id: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver =
-                <MapCombatViewerSettings as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapCombatViewerSettings_unity2_raw::load_sortie_preset(__receiver, ::core::convert::Into::into(preset_id), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`LoadBattlePreset(i32)` overload"]
-    fn load_battle_preset(self, preset_id: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver =
-                <MapCombatViewerSettings as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapCombatViewerSettings_unity2_raw::load_battle_preset(__receiver, ::core::convert::Into::into(preset_id), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`LoadBattlePreset(crate::combat::combatrecord::CombatRecord)` overload"]
-    fn load_battle_preset_2(self, record: impl ::core::convert::Into<crate::combat::combatrecord::CombatRecord>) -> () {
-        unsafe {
-            let __receiver =
-                <MapCombatViewerSettings as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapCombatViewerSettings_unity2_raw::load_battle_preset_2(__receiver, ::core::convert::Into::into(record), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetCharacterRandom()` overload"]
-    fn set_character_random(self) -> () {
-        unsafe {
-            let __receiver =
-                <MapCombatViewerSettings as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapCombatViewerSettings_unity2_raw::set_character_random(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SettingRandamCharacter(i32)` overload"]
-    fn setting_randam_character(self, side: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver =
-                <MapCombatViewerSettings as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapCombatViewerSettings_unity2_raw::setting_randam_character(
-                __receiver,
-                ::core::convert::Into::into(side),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetCharacterParamRandom()` overload"]
-    fn set_character_param_random(self) -> () {
-        unsafe {
-            let __receiver =
-                <MapCombatViewerSettings as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapCombatViewerSettings_unity2_raw::set_character_param_random(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <MapCombatViewerSettings as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapCombatViewerSettings_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-mapcombatviewersettings")]
-impl<__T: IMapCombatViewerSettings> IMapCombatViewerSettingsMethods for __T {}
-
-#[cfg(feature = "app-mapcombatviewersettings")]
-impl MapCombatViewerSettings {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapCombatViewerSettings),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapCombatViewerSettingsMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapCombatViewerSettings) , :: core :: stringify ! (new) ,)) ; < Self as IMapCombatViewerSettingsMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-mapcombatviewersettings")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IMapCombatViewerSettings, IMapCombatViewerSettingsMethods, MapCombatViewerSettings};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    #[cfg(feature = "unity_engine-scriptableobject")]
-    pub use crate::unity_engine::scriptableobject::IScriptableObjectMethods;
-    pub use crate::{
-        system::object::IObject,
-        unity_engine::{object_2::IObject_2, scriptableobject::IScriptableObject},
-    };
+    pub use super::MapCombatViewerSettings;
+    pub use super::IMapCombatViewerSettings;
+    pub use super::IMapCombatViewerSettingsMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::object_2::IObject_2;
+    pub use crate::unity_engine::scriptableobject::IScriptableObject;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
+    #[cfg(feature = "unity_engine-scriptableobject")] pub use crate::unity_engine::scriptableobject::IScriptableObjectMethods;
 }

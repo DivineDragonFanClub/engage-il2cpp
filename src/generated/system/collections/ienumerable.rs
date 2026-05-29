@@ -2,77 +2,34 @@
 
 #[cfg(feature = "system-collections-ienumerable-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/ienumerable/IEnumerable.md"))]
-    #[::unity2::class(namespace = "System.Collections", name = "IEnumerable")]
-    pub struct IEnumerable {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/ienumerable/IEnumerable.md"))] # [:: unity2 :: class (namespace = "System.Collections" , name = "IEnumerable")] pub struct IEnumerable {}
+
 }
 
 #[cfg(feature = "system-collections-ienumerable-types")]
 pub use __types::*;
 
 #[cfg(feature = "system-collections-ienumerable")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __IEnumerable_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_enumerator {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <IEnumerable as ::unity2::ClassIdentity>::class(),
-                "GetEnumerator",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <IEnumerable as ::unity2::ClassIdentity>::NAME,
-                        "GetEnumerator",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_enumerator(
-        this: IEnumerable,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::ienumerator::IEnumerator {
-        let inner: extern "C" fn(IEnumerable, ::unity2::OptionalMethod) -> crate::system::collections::ienumerator::IEnumerator =
-            ::core::mem::transmute(__lookup_get_enumerator::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __IEnumerable_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_enumerator { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< IEnumerable as :: unity2 :: ClassIdentity > :: class () , "GetEnumerator" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < IEnumerable as :: unity2 :: ClassIdentity > :: NAME , "GetEnumerator" , e) , } } } pub unsafe fn get_enumerator (this : IEnumerable , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { let inner : extern "C" fn (IEnumerable , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute (__lookup_get_enumerator :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "system-collections-ienumerable")]
-pub trait IIEnumerableMethods: IIEnumerable {
-    #[doc = "`GetEnumerator()` overload"]
-    fn get_enumerator(self) -> crate::system::collections::ienumerator::IEnumerator {
-        unsafe {
-            let __receiver = <IEnumerable as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __IEnumerable_unity2_raw::get_enumerator(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IIEnumerableMethods : IIEnumerable { # [doc = "`GetEnumerator()` overload"] fn get_enumerator (self ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { let __receiver = < IEnumerable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IEnumerable_unity2_raw :: get_enumerator (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "system-collections-ienumerable")]
-impl<__T: IIEnumerable> IIEnumerableMethods for __T {}
+impl < __T : IIEnumerable > IIEnumerableMethods for __T { }
+
+#[cfg(feature = "system-collections-ienumerable")]
+impl IEnumerable { pub fn get_enumerator_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __IEnumerable_unity2_raw :: __lookup_get_enumerator :: get_method_info () } }
 
 #[cfg(feature = "system-collections-ienumerable")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IEnumerable, IIEnumerable, IIEnumerableMethods};
+    pub use super::IEnumerable;
+    pub use super::IIEnumerable;
+    pub use super::IIEnumerableMethods;
 }

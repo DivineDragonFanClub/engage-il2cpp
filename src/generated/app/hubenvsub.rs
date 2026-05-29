@@ -2,526 +2,82 @@
 
 #[cfg(feature = "app-hubenvsub-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubenvsub/HubEnvSub.md"))]
-    #[::unity2::class(namespace = "App", name = "HubEnvSub")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct HubEnvSub {
-        #[offset(24)]
-        #[rename(name = "m_EditTimezoneType")]
-        pub m_edit_timezone_type: crate::app::hubutil::HubUtil_TimezoneType,
-        #[offset(28)]
-        #[rename(name = "m_MorningFogColor")]
-        pub m_morning_fog_color: crate::unity_engine::color::Color,
-        #[offset(44)]
-        #[rename(name = "m_MorningFogStart")]
-        pub m_morning_fog_start: f32,
-        #[offset(48)]
-        #[rename(name = "m_MorningFogEnd")]
-        pub m_morning_fog_end: f32,
-        #[offset(52)]
-        #[rename(name = "m_DayFogColor")]
-        pub m_day_fog_color: crate::unity_engine::color::Color,
-        #[offset(68)]
-        #[rename(name = "m_DayFogStart")]
-        pub m_day_fog_start: f32,
-        #[offset(72)]
-        #[rename(name = "m_DayFogEnd")]
-        pub m_day_fog_end: f32,
-        #[offset(76)]
-        #[rename(name = "m_EveningFogColor")]
-        pub m_evening_fog_color: crate::unity_engine::color::Color,
-        #[offset(92)]
-        #[rename(name = "m_EveningFogStart")]
-        pub m_evening_fog_start: f32,
-        #[offset(96)]
-        #[rename(name = "m_EveningFogEnd")]
-        pub m_evening_fog_end: f32,
-        #[offset(100)]
-        #[rename(name = "m_NightFogColor")]
-        pub m_night_fog_color: crate::unity_engine::color::Color,
-        #[offset(116)]
-        #[rename(name = "m_NightFogStart")]
-        pub m_night_fog_start: f32,
-        #[offset(120)]
-        #[rename(name = "m_NightFogEnd")]
-        pub m_night_fog_end: f32,
-        #[offset(128)]
-        #[rename(name = "m_Morning")]
-        pub m_morning: crate::unity_engine::gameobject::GameObject,
-        #[offset(136)]
-        #[rename(name = "m_Day")]
-        pub m_day: crate::unity_engine::gameobject::GameObject,
-        #[offset(144)]
-        #[rename(name = "m_Evening")]
-        pub m_evening: crate::unity_engine::gameobject::GameObject,
-        #[offset(152)]
-        #[rename(name = "m_Night")]
-        pub m_night: crate::unity_engine::gameobject::GameObject,
-        #[offset(160)]
-        #[rename(name = "m_TimezoneType")]
-        pub m_timezone_type: crate::app::hubutil::HubUtil_TimezoneType,
-        #[offset(164)]
-        #[rename(name = "m_PrevDepth")]
-        pub m_prev_depth: i32,
-        #[offset(168)]
-        #[rename(name = "m_PrevFogColor")]
-        pub m_prev_fog_color: crate::unity_engine::color::Color,
-        #[offset(184)]
-        #[rename(name = "m_PrevFogStart")]
-        pub m_prev_fog_start: f32,
-        #[offset(188)]
-        #[rename(name = "m_PrevFogEnd")]
-        pub m_prev_fog_end: f32,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubenvsub/HubEnvSub.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubEnvSub")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct HubEnvSub {
+# [offset (24)] # [rename (name = "m_EditTimezoneType")] pub m_edit_timezone_type : crate :: app :: hubutil :: HubUtil_TimezoneType ,
+# [offset (28)] # [rename (name = "m_MorningFogColor")] pub m_morning_fog_color : crate :: unity_engine :: color :: Color ,
+# [offset (44)] # [rename (name = "m_MorningFogStart")] pub m_morning_fog_start : f32 ,
+# [offset (48)] # [rename (name = "m_MorningFogEnd")] pub m_morning_fog_end : f32 ,
+# [offset (52)] # [rename (name = "m_DayFogColor")] pub m_day_fog_color : crate :: unity_engine :: color :: Color ,
+# [offset (68)] # [rename (name = "m_DayFogStart")] pub m_day_fog_start : f32 ,
+# [offset (72)] # [rename (name = "m_DayFogEnd")] pub m_day_fog_end : f32 ,
+# [offset (76)] # [rename (name = "m_EveningFogColor")] pub m_evening_fog_color : crate :: unity_engine :: color :: Color ,
+# [offset (92)] # [rename (name = "m_EveningFogStart")] pub m_evening_fog_start : f32 ,
+# [offset (96)] # [rename (name = "m_EveningFogEnd")] pub m_evening_fog_end : f32 ,
+# [offset (100)] # [rename (name = "m_NightFogColor")] pub m_night_fog_color : crate :: unity_engine :: color :: Color ,
+# [offset (116)] # [rename (name = "m_NightFogStart")] pub m_night_fog_start : f32 ,
+# [offset (120)] # [rename (name = "m_NightFogEnd")] pub m_night_fog_end : f32 ,
+# [offset (128)] # [rename (name = "m_Morning")] pub m_morning : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (136)] # [rename (name = "m_Day")] pub m_day : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (144)] # [rename (name = "m_Evening")] pub m_evening : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (152)] # [rename (name = "m_Night")] pub m_night : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (160)] # [rename (name = "m_TimezoneType")] pub m_timezone_type : crate :: app :: hubutil :: HubUtil_TimezoneType ,
+# [offset (164)] # [rename (name = "m_PrevDepth")] pub m_prev_depth : i32 ,
+# [offset (168)] # [rename (name = "m_PrevFogColor")] pub m_prev_fog_color : crate :: unity_engine :: color :: Color ,
+# [offset (184)] # [rename (name = "m_PrevFogStart")] pub m_prev_fog_start : f32 ,
+# [offset (188)] # [rename (name = "m_PrevFogEnd")] pub m_prev_fog_end : f32 ,
+}
+
 }
 
 #[cfg(feature = "app-hubenvsub-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-hubenvsub")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __HubEnvSub_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_morning {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubEnvSub as ::unity2::ClassIdentity>::class(),
-                "get_Morning",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubEnvSub as ::unity2::ClassIdentity>::NAME,
-                        "get_Morning",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_morning(this: HubEnvSub, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::gameobject::GameObject {
-        let inner: extern "C" fn(HubEnvSub, ::unity2::OptionalMethod) -> crate::unity_engine::gameobject::GameObject =
-            ::core::mem::transmute(__lookup_get_morning::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_day {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<HubEnvSub as ::unity2::ClassIdentity>::class(), "get_Day", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubEnvSub as ::unity2::ClassIdentity>::NAME,
-                        "get_Day",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_day(this: HubEnvSub, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::gameobject::GameObject {
-        let inner: extern "C" fn(HubEnvSub, ::unity2::OptionalMethod) -> crate::unity_engine::gameobject::GameObject =
-            ::core::mem::transmute(__lookup_get_day::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_evening {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubEnvSub as ::unity2::ClassIdentity>::class(),
-                "get_Evening",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubEnvSub as ::unity2::ClassIdentity>::NAME,
-                        "get_Evening",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_evening(this: HubEnvSub, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::gameobject::GameObject {
-        let inner: extern "C" fn(HubEnvSub, ::unity2::OptionalMethod) -> crate::unity_engine::gameobject::GameObject =
-            ::core::mem::transmute(__lookup_get_evening::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_night {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<HubEnvSub as ::unity2::ClassIdentity>::class(), "get_Night", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubEnvSub as ::unity2::ClassIdentity>::NAME,
-                        "get_Night",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_night(this: HubEnvSub, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::gameobject::GameObject {
-        let inner: extern "C" fn(HubEnvSub, ::unity2::OptionalMethod) -> crate::unity_engine::gameobject::GameObject =
-            ::core::mem::transmute(__lookup_get_night::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_push_params {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::hubutil::HubUtil_TimezoneType as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubEnvSub as ::unity2::ClassIdentity>::class(),
-                "PushParams",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubEnvSub as ::unity2::ClassIdentity>::NAME,
-                        "PushParams",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn push_params(
-        this: HubEnvSub,
-        timezone_type: crate::app::hubutil::HubUtil_TimezoneType,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubEnvSub, crate::app::hubutil::HubUtil_TimezoneType, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_push_params::get_method_info().method_ptr);
-        inner(this, timezone_type, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_pop_params {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<HubEnvSub as ::unity2::ClassIdentity>::class(), "PopParams", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubEnvSub as ::unity2::ClassIdentity>::NAME,
-                        "PopParams",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn pop_params(this: HubEnvSub, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(HubEnvSub, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_pop_params::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_apply_fog {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<HubEnvSub as ::unity2::ClassIdentity>::class(), "ApplyFog", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubEnvSub as ::unity2::ClassIdentity>::NAME,
-                        "ApplyFog",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn apply_fog(this: HubEnvSub, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(HubEnvSub, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_apply_fog::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_support_fog_stack {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubEnvSub as ::unity2::ClassIdentity>::class(),
-                "SupportFogStack",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubEnvSub as ::unity2::ClassIdentity>::NAME,
-                        "SupportFogStack",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn support_fog_stack(this: HubEnvSub, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(HubEnvSub, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_support_fog_stack::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_post_process_active {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubEnvSub as ::unity2::ClassIdentity>::class(),
-                "SetPostProcessActive",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubEnvSub as ::unity2::ClassIdentity>::NAME,
-                        "SetPostProcessActive",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_post_process_active(
-        this: HubEnvSub,
-        obj: crate::unity_engine::gameobject::GameObject,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubEnvSub, crate::unity_engine::gameobject::GameObject, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_post_process_active::get_method_info().method_ptr);
-        inner(this, obj, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<HubEnvSub as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubEnvSub as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: HubEnvSub, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(HubEnvSub, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __HubEnvSub_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_morning { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubEnvSub as :: unity2 :: ClassIdentity > :: class () , "get_Morning" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubEnvSub as :: unity2 :: ClassIdentity > :: NAME , "get_Morning" , e) , } } } pub unsafe fn get_morning (this : HubEnvSub , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject { let inner : extern "C" fn (HubEnvSub , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute (__lookup_get_morning :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_day { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubEnvSub as :: unity2 :: ClassIdentity > :: class () , "get_Day" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubEnvSub as :: unity2 :: ClassIdentity > :: NAME , "get_Day" , e) , } } } pub unsafe fn get_day (this : HubEnvSub , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject { let inner : extern "C" fn (HubEnvSub , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute (__lookup_get_day :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_evening { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubEnvSub as :: unity2 :: ClassIdentity > :: class () , "get_Evening" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubEnvSub as :: unity2 :: ClassIdentity > :: NAME , "get_Evening" , e) , } } } pub unsafe fn get_evening (this : HubEnvSub , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject { let inner : extern "C" fn (HubEnvSub , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute (__lookup_get_evening :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_night { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubEnvSub as :: unity2 :: ClassIdentity > :: class () , "get_Night" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubEnvSub as :: unity2 :: ClassIdentity > :: NAME , "get_Night" , e) , } } } pub unsafe fn get_night (this : HubEnvSub , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject { let inner : extern "C" fn (HubEnvSub , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute (__lookup_get_night :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_push_params { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: hubutil :: HubUtil_TimezoneType as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubEnvSub as :: unity2 :: ClassIdentity > :: class () , "PushParams" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubEnvSub as :: unity2 :: ClassIdentity > :: NAME , "PushParams" , e) , } } } pub unsafe fn push_params (this : HubEnvSub , timezone_type : crate :: app :: hubutil :: HubUtil_TimezoneType , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HubEnvSub , crate :: app :: hubutil :: HubUtil_TimezoneType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_push_params :: get_method_info () . method_ptr ,) ; inner (this , timezone_type , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_pop_params { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubEnvSub as :: unity2 :: ClassIdentity > :: class () , "PopParams" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubEnvSub as :: unity2 :: ClassIdentity > :: NAME , "PopParams" , e) , } } } pub unsafe fn pop_params (this : HubEnvSub , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HubEnvSub , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_pop_params :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_apply_fog { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubEnvSub as :: unity2 :: ClassIdentity > :: class () , "ApplyFog" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubEnvSub as :: unity2 :: ClassIdentity > :: NAME , "ApplyFog" , e) , } } } pub unsafe fn apply_fog (this : HubEnvSub , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HubEnvSub , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_apply_fog :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_support_fog_stack { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubEnvSub as :: unity2 :: ClassIdentity > :: class () , "SupportFogStack" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubEnvSub as :: unity2 :: ClassIdentity > :: NAME , "SupportFogStack" , e) , } } } pub unsafe fn support_fog_stack (this : HubEnvSub , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (HubEnvSub , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_support_fog_stack :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_post_process_active { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: gameobject :: GameObject as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubEnvSub as :: unity2 :: ClassIdentity > :: class () , "SetPostProcessActive" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubEnvSub as :: unity2 :: ClassIdentity > :: NAME , "SetPostProcessActive" , e) , } } } pub unsafe fn set_post_process_active (this : HubEnvSub , obj : crate :: unity_engine :: gameobject :: GameObject , value : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HubEnvSub , crate :: unity_engine :: gameobject :: GameObject , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_post_process_active :: get_method_info () . method_ptr ,) ; inner (this , obj , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubEnvSub as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubEnvSub as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : HubEnvSub , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HubEnvSub , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-hubenvsub")]
-pub trait IHubEnvSubMethods: IHubEnvSub {
-    #[doc = "`get_Morning()` overload"]
-    fn get_morning(self) -> crate::unity_engine::gameobject::GameObject {
-        unsafe {
-            let __receiver = <HubEnvSub as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubEnvSub_unity2_raw::get_morning(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Day()` overload"]
-    fn get_day(self) -> crate::unity_engine::gameobject::GameObject {
-        unsafe {
-            let __receiver = <HubEnvSub as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubEnvSub_unity2_raw::get_day(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Evening()` overload"]
-    fn get_evening(self) -> crate::unity_engine::gameobject::GameObject {
-        unsafe {
-            let __receiver = <HubEnvSub as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubEnvSub_unity2_raw::get_evening(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Night()` overload"]
-    fn get_night(self) -> crate::unity_engine::gameobject::GameObject {
-        unsafe {
-            let __receiver = <HubEnvSub as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubEnvSub_unity2_raw::get_night(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`PushParams(crate::app::hubutil::HubUtil_TimezoneType)` overload"]
-    fn push_params(self, timezone_type: impl ::core::convert::Into<crate::app::hubutil::HubUtil_TimezoneType>) -> () {
-        unsafe {
-            let __receiver = <HubEnvSub as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubEnvSub_unity2_raw::push_params(__receiver, ::core::convert::Into::into(timezone_type), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`PopParams()` overload"]
-    fn pop_params(self) -> () {
-        unsafe {
-            let __receiver = <HubEnvSub as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubEnvSub_unity2_raw::pop_params(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ApplyFog()` overload"]
-    fn apply_fog(self) -> () {
-        unsafe {
-            let __receiver = <HubEnvSub as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubEnvSub_unity2_raw::apply_fog(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SupportFogStack()` overload"]
-    fn support_fog_stack(self) -> bool {
-        unsafe {
-            let __receiver = <HubEnvSub as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubEnvSub_unity2_raw::support_fog_stack(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetPostProcessActive(crate::unity_engine::gameobject::GameObject, bool)` overload"]
-    fn set_post_process_active(
-        self,
-        obj: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-        value: impl ::core::convert::Into<bool>,
-    ) -> () {
-        unsafe {
-            let __receiver = <HubEnvSub as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubEnvSub_unity2_raw::set_post_process_active(
-                __receiver,
-                ::core::convert::Into::into(obj),
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <HubEnvSub as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubEnvSub_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IHubEnvSubMethods : IHubEnvSub { # [doc = "`get_Morning()` overload"] fn get_morning (self ,) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { let __receiver = < HubEnvSub as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubEnvSub_unity2_raw :: get_morning (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_Day()` overload"] fn get_day (self ,) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { let __receiver = < HubEnvSub as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubEnvSub_unity2_raw :: get_day (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_Evening()` overload"] fn get_evening (self ,) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { let __receiver = < HubEnvSub as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubEnvSub_unity2_raw :: get_evening (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_Night()` overload"] fn get_night (self ,) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { let __receiver = < HubEnvSub as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubEnvSub_unity2_raw :: get_night (__receiver , :: core :: option :: Option :: None) } } # [doc = "`PushParams(crate::app::hubutil::HubUtil_TimezoneType)` overload"] fn push_params (self , timezone_type : impl :: core :: convert :: Into < crate :: app :: hubutil :: HubUtil_TimezoneType >) -> () { unsafe { let __receiver = < HubEnvSub as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubEnvSub_unity2_raw :: push_params (__receiver , :: core :: convert :: Into :: into (timezone_type) , :: core :: option :: Option :: None) } } # [doc = "`PopParams()` overload"] fn pop_params (self ,) -> () { unsafe { let __receiver = < HubEnvSub as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubEnvSub_unity2_raw :: pop_params (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ApplyFog()` overload"] fn apply_fog (self ,) -> () { unsafe { let __receiver = < HubEnvSub as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubEnvSub_unity2_raw :: apply_fog (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SupportFogStack()` overload"] fn support_fog_stack (self ,) -> bool { unsafe { let __receiver = < HubEnvSub as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubEnvSub_unity2_raw :: support_fog_stack (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetPostProcessActive(crate::unity_engine::gameobject::GameObject, bool)` overload"] fn set_post_process_active (self , obj : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject > , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < HubEnvSub as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubEnvSub_unity2_raw :: set_post_process_active (__receiver , :: core :: convert :: Into :: into (obj) , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HubEnvSub as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubEnvSub_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-hubenvsub")]
-impl<__T: IHubEnvSub> IHubEnvSubMethods for __T {}
+impl < __T : IHubEnvSub > IHubEnvSubMethods for __T { }
+
+#[cfg(feature = "app-hubenvsub")]
+impl HubEnvSub { pub fn get_morning_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubEnvSub_unity2_raw :: __lookup_get_morning :: get_method_info () } pub fn get_day_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubEnvSub_unity2_raw :: __lookup_get_day :: get_method_info () } pub fn get_evening_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubEnvSub_unity2_raw :: __lookup_get_evening :: get_method_info () } pub fn get_night_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubEnvSub_unity2_raw :: __lookup_get_night :: get_method_info () } pub fn push_params_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubEnvSub_unity2_raw :: __lookup_push_params :: get_method_info () } pub fn pop_params_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubEnvSub_unity2_raw :: __lookup_pop_params :: get_method_info () } pub fn apply_fog_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubEnvSub_unity2_raw :: __lookup_apply_fog :: get_method_info () } pub fn support_fog_stack_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubEnvSub_unity2_raw :: __lookup_support_fog_stack :: get_method_info () } pub fn set_post_process_active_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubEnvSub_unity2_raw :: __lookup_set_post_process_active :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubEnvSub_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-hubenvsub")]
 impl HubEnvSub {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(HubEnvSub), ::core::stringify!(new),));
-        <Self as IHubEnvSubMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubEnvSub) , :: core :: stringify ! (new) ,)) ; < Self as IHubEnvSubMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-hubenvsub")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{HubEnvSub, IHubEnvSub, IHubEnvSubMethods};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        system::object::IObject,
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::HubEnvSub;
+    pub use super::IHubEnvSub;
+    pub use super::IHubEnvSubMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

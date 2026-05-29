@@ -2,479 +2,65 @@
 
 #[cfg(feature = "app-eventcharacteranimcontroller-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventcharacteranimcontroller/EventCharacterAnimController.md"))]
-    #[::unity2::class(namespace = "App", name = "EventCharacterAnimController")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct EventCharacterAnimController {
-        #[offset(24)]
-        #[rename(name = "m_character")]
-        pub m_character: crate::combat::character::Character,
-        #[offset(32)]
-        #[rename(name = "m_simpleAnimation")]
-        pub m_simple_animation: crate::app::eventcharactersimpleanimation::EventCharacterSimpleAnimation,
-        #[offset(40)]
-        #[rename(name = "m_animator")]
-        pub m_animator: crate::unity_engine::animator::Animator,
-        #[offset(48)]
-        #[rename(name = "m_curBodyAnimName")]
-        pub m_cur_body_anim_name: ::unity2::Il2CppString,
-        #[offset(56)]
-        #[rename(name = "m_resHandleDictionary")]
-        pub m_res_handle_dictionary: crate::system::collections::generic::dictionary_2::Dictionary_2<
-            ::unity2::Il2CppString,
-            crate::app::tresourcehandle_1::TResourceHandle_1<crate::unity_engine::animationclip::AnimationClip>,
-        >,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventcharacteranimcontroller/EventCharacterAnimController.md"))] # [:: unity2 :: class (namespace = "App" , name = "EventCharacterAnimController")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct EventCharacterAnimController {
+# [offset (24)] # [rename (name = "m_character")] pub m_character : crate :: combat :: character :: Character ,
+# [offset (32)] # [rename (name = "m_simpleAnimation")] pub m_simple_animation : crate :: app :: eventcharactersimpleanimation :: EventCharacterSimpleAnimation ,
+# [offset (40)] # [rename (name = "m_animator")] pub m_animator : crate :: unity_engine :: animator :: Animator ,
+# [offset (48)] # [rename (name = "m_curBodyAnimName")] pub m_cur_body_anim_name : :: unity2 :: Il2CppString ,
+# [offset (56)] # [rename (name = "m_resHandleDictionary")] pub m_res_handle_dictionary : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , crate :: app :: tresourcehandle_1 :: TResourceHandle_1 < crate :: unity_engine :: animationclip :: AnimationClip > > ,
+}
+
 }
 
 #[cfg(feature = "app-eventcharacteranimcontroller-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-eventcharacteranimcontroller")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __EventCharacterAnimController_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EventCharacterAnimController as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <EventCharacterAnimController as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: EventCharacterAnimController, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(EventCharacterAnimController, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_init {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EventCharacterAnimController as ::unity2::ClassIdentity>::class(),
-                "Init",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <EventCharacterAnimController as ::unity2::ClassIdentity>::NAME,
-                        "Init",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn init(this: EventCharacterAnimController, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(EventCharacterAnimController, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_init::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EventCharacterAnimController as ::unity2::ClassIdentity>::class(),
-                "Update",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <EventCharacterAnimController as ::unity2::ClassIdentity>::NAME,
-                        "Update",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update(this: EventCharacterAnimController, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(EventCharacterAnimController, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_load_body_anim_async {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EventCharacterAnimController as ::unity2::ClassIdentity>::class(),
-                "LoadBodyAnimAsync",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <EventCharacterAnimController as ::unity2::ClassIdentity>::NAME,
-                        "LoadBodyAnimAsync",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn load_body_anim_async(
-        this: EventCharacterAnimController,
-        body_anim_name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(EventCharacterAnimController, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_load_body_anim_async::get_method_info().method_ptr);
-        inner(this, body_anim_name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_loading_body_anim {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EventCharacterAnimController as ::unity2::ClassIdentity>::class(),
-                "IsLoadingBodyAnim",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <EventCharacterAnimController as ::unity2::ClassIdentity>::NAME,
-                        "IsLoadingBodyAnim",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_loading_body_anim(
-        this: EventCharacterAnimController,
-        body_anim_name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(EventCharacterAnimController, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_loading_body_anim::get_method_info().method_ptr);
-        inner(this, body_anim_name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_loaded_body_anim {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EventCharacterAnimController as ::unity2::ClassIdentity>::class(),
-                "IsLoadedBodyAnim",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <EventCharacterAnimController as ::unity2::ClassIdentity>::NAME,
-                        "IsLoadedBodyAnim",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_loaded_body_anim(
-        this: EventCharacterAnimController,
-        body_anim_name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(EventCharacterAnimController, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_loaded_body_anim::get_method_info().method_ptr);
-        inner(this, body_anim_name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_play_body_anim {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EventCharacterAnimController as ::unity2::ClassIdentity>::class(),
-                "PlayBodyAnim",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <EventCharacterAnimController as ::unity2::ClassIdentity>::NAME,
-                        "PlayBodyAnim",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn play_body_anim(
-        this: EventCharacterAnimController,
-        body_anim_name: ::unity2::Il2CppString,
-        fade_sec: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(EventCharacterAnimController, ::unity2::Il2CppString, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_play_body_anim::get_method_info().method_ptr);
-        inner(this, body_anim_name, fade_sec, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_co_play_body_anim {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EventCharacterAnimController as ::unity2::ClassIdentity>::class(),
-                "Co_PlayBodyAnim",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <EventCharacterAnimController as ::unity2::ClassIdentity>::NAME,
-                        "Co_PlayBodyAnim",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn co_play_body_anim(
-        this: EventCharacterAnimController,
-        body_anim_name: ::unity2::Il2CppString,
-        fade_sec: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::ienumerator::IEnumerator {
-        let inner: extern "C" fn(
-            EventCharacterAnimController,
-            ::unity2::Il2CppString,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::collections::ienumerator::IEnumerator = ::core::mem::transmute(__lookup_co_play_body_anim::get_method_info().method_ptr);
-        inner(this, body_anim_name, fade_sec, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __EventCharacterAnimController_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< EventCharacterAnimController as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < EventCharacterAnimController as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : EventCharacterAnimController , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (EventCharacterAnimController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_init { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< EventCharacterAnimController as :: unity2 :: ClassIdentity > :: class () , "Init" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < EventCharacterAnimController as :: unity2 :: ClassIdentity > :: NAME , "Init" , e) , } } } pub unsafe fn init (this : EventCharacterAnimController , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (EventCharacterAnimController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_init :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< EventCharacterAnimController as :: unity2 :: ClassIdentity > :: class () , "Update" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < EventCharacterAnimController as :: unity2 :: ClassIdentity > :: NAME , "Update" , e) , } } } pub unsafe fn update (this : EventCharacterAnimController , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (EventCharacterAnimController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_load_body_anim_async { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< EventCharacterAnimController as :: unity2 :: ClassIdentity > :: class () , "LoadBodyAnimAsync" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < EventCharacterAnimController as :: unity2 :: ClassIdentity > :: NAME , "LoadBodyAnimAsync" , e) , } } } pub unsafe fn load_body_anim_async (this : EventCharacterAnimController , body_anim_name : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (EventCharacterAnimController , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_load_body_anim_async :: get_method_info () . method_ptr ,) ; inner (this , body_anim_name , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_loading_body_anim { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< EventCharacterAnimController as :: unity2 :: ClassIdentity > :: class () , "IsLoadingBodyAnim" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < EventCharacterAnimController as :: unity2 :: ClassIdentity > :: NAME , "IsLoadingBodyAnim" , e) , } } } pub unsafe fn is_loading_body_anim (this : EventCharacterAnimController , body_anim_name : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (EventCharacterAnimController , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_loading_body_anim :: get_method_info () . method_ptr ,) ; inner (this , body_anim_name , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_loaded_body_anim { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< EventCharacterAnimController as :: unity2 :: ClassIdentity > :: class () , "IsLoadedBodyAnim" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < EventCharacterAnimController as :: unity2 :: ClassIdentity > :: NAME , "IsLoadedBodyAnim" , e) , } } } pub unsafe fn is_loaded_body_anim (this : EventCharacterAnimController , body_anim_name : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (EventCharacterAnimController , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_loaded_body_anim :: get_method_info () . method_ptr ,) ; inner (this , body_anim_name , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_play_body_anim { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< EventCharacterAnimController as :: unity2 :: ClassIdentity > :: class () , "PlayBodyAnim" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < EventCharacterAnimController as :: unity2 :: ClassIdentity > :: NAME , "PlayBodyAnim" , e) , } } } pub unsafe fn play_body_anim (this : EventCharacterAnimController , body_anim_name : :: unity2 :: Il2CppString , fade_sec : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (EventCharacterAnimController , :: unity2 :: Il2CppString , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_play_body_anim :: get_method_info () . method_ptr ,) ; inner (this , body_anim_name , fade_sec , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_co_play_body_anim { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< EventCharacterAnimController as :: unity2 :: ClassIdentity > :: class () , "Co_PlayBodyAnim" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < EventCharacterAnimController as :: unity2 :: ClassIdentity > :: NAME , "Co_PlayBodyAnim" , e) , } } } pub unsafe fn co_play_body_anim (this : EventCharacterAnimController , body_anim_name : :: unity2 :: Il2CppString , fade_sec : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { let inner : extern "C" fn (EventCharacterAnimController , :: unity2 :: Il2CppString , f32 , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute (__lookup_co_play_body_anim :: get_method_info () . method_ptr ,) ; inner (this , body_anim_name , fade_sec , __unity2_method_info) } }
 
 #[cfg(feature = "app-eventcharacteranimcontroller")]
-pub trait IEventCharacterAnimControllerMethods: IEventCharacterAnimController {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <EventCharacterAnimController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __EventCharacterAnimController_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Init()` overload"]
-    fn init(self) -> () {
-        unsafe {
-            let __receiver =
-                <EventCharacterAnimController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __EventCharacterAnimController_unity2_raw::init(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Update()` overload"]
-    fn update(self) -> () {
-        unsafe {
-            let __receiver =
-                <EventCharacterAnimController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __EventCharacterAnimController_unity2_raw::update(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`LoadBodyAnimAsync(::unity2::Il2CppString)` overload"]
-    fn load_body_anim_async(self, body_anim_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver =
-                <EventCharacterAnimController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __EventCharacterAnimController_unity2_raw::load_body_anim_async(
-                __receiver,
-                ::core::convert::Into::into(body_anim_name),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`IsLoadingBodyAnim(::unity2::Il2CppString)` overload"]
-    fn is_loading_body_anim(self, body_anim_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
-        unsafe {
-            let __receiver =
-                <EventCharacterAnimController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __EventCharacterAnimController_unity2_raw::is_loading_body_anim(
-                __receiver,
-                ::core::convert::Into::into(body_anim_name),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`IsLoadedBodyAnim(::unity2::Il2CppString)` overload"]
-    fn is_loaded_body_anim(self, body_anim_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
-        unsafe {
-            let __receiver =
-                <EventCharacterAnimController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __EventCharacterAnimController_unity2_raw::is_loaded_body_anim(
-                __receiver,
-                ::core::convert::Into::into(body_anim_name),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`PlayBodyAnim(::unity2::Il2CppString, f32)` overload"]
-    fn play_body_anim(self, body_anim_name: impl ::core::convert::Into<::unity2::Il2CppString>, fade_sec: impl ::core::convert::Into<f32>) -> () {
-        unsafe {
-            let __receiver =
-                <EventCharacterAnimController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __EventCharacterAnimController_unity2_raw::play_body_anim(
-                __receiver,
-                ::core::convert::Into::into(body_anim_name),
-                ::core::convert::Into::into(fade_sec),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Co_PlayBodyAnim(::unity2::Il2CppString, f32)` overload"]
-    fn co_play_body_anim(
-        self,
-        body_anim_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        fade_sec: impl ::core::convert::Into<f32>,
-    ) -> crate::system::collections::ienumerator::IEnumerator {
-        unsafe {
-            let __receiver =
-                <EventCharacterAnimController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __EventCharacterAnimController_unity2_raw::co_play_body_anim(
-                __receiver,
-                ::core::convert::Into::into(body_anim_name),
-                ::core::convert::Into::into(fade_sec),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+pub trait IEventCharacterAnimControllerMethods : IEventCharacterAnimController { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < EventCharacterAnimController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __EventCharacterAnimController_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Init()` overload"] fn init (self ,) -> () { unsafe { let __receiver = < EventCharacterAnimController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __EventCharacterAnimController_unity2_raw :: init (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < EventCharacterAnimController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __EventCharacterAnimController_unity2_raw :: update (__receiver , :: core :: option :: Option :: None) } } # [doc = "`LoadBodyAnimAsync(::unity2::Il2CppString)` overload"] fn load_body_anim_async (self , body_anim_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < EventCharacterAnimController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __EventCharacterAnimController_unity2_raw :: load_body_anim_async (__receiver , :: core :: convert :: Into :: into (body_anim_name) , :: core :: option :: Option :: None) } } # [doc = "`IsLoadingBodyAnim(::unity2::Il2CppString)` overload"] fn is_loading_body_anim (self , body_anim_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { let __receiver = < EventCharacterAnimController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __EventCharacterAnimController_unity2_raw :: is_loading_body_anim (__receiver , :: core :: convert :: Into :: into (body_anim_name) , :: core :: option :: Option :: None) } } # [doc = "`IsLoadedBodyAnim(::unity2::Il2CppString)` overload"] fn is_loaded_body_anim (self , body_anim_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { let __receiver = < EventCharacterAnimController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __EventCharacterAnimController_unity2_raw :: is_loaded_body_anim (__receiver , :: core :: convert :: Into :: into (body_anim_name) , :: core :: option :: Option :: None) } } # [doc = "`PlayBodyAnim(::unity2::Il2CppString, f32)` overload"] fn play_body_anim (self , body_anim_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , fade_sec : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < EventCharacterAnimController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __EventCharacterAnimController_unity2_raw :: play_body_anim (__receiver , :: core :: convert :: Into :: into (body_anim_name) , :: core :: convert :: Into :: into (fade_sec) , :: core :: option :: Option :: None) } } # [doc = "`Co_PlayBodyAnim(::unity2::Il2CppString, f32)` overload"] fn co_play_body_anim (self , body_anim_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , fade_sec : impl :: core :: convert :: Into < f32 >) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { let __receiver = < EventCharacterAnimController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __EventCharacterAnimController_unity2_raw :: co_play_body_anim (__receiver , :: core :: convert :: Into :: into (body_anim_name) , :: core :: convert :: Into :: into (fade_sec) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-eventcharacteranimcontroller")]
-impl<__T: IEventCharacterAnimController> IEventCharacterAnimControllerMethods for __T {}
+impl < __T : IEventCharacterAnimController > IEventCharacterAnimControllerMethods for __T { }
+
+#[cfg(feature = "app-eventcharacteranimcontroller")]
+impl EventCharacterAnimController { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __EventCharacterAnimController_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn init_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __EventCharacterAnimController_unity2_raw :: __lookup_init :: get_method_info () } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __EventCharacterAnimController_unity2_raw :: __lookup_update :: get_method_info () } pub fn load_body_anim_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __EventCharacterAnimController_unity2_raw :: __lookup_load_body_anim_async :: get_method_info () } pub fn is_loading_body_anim_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __EventCharacterAnimController_unity2_raw :: __lookup_is_loading_body_anim :: get_method_info () } pub fn is_loaded_body_anim_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __EventCharacterAnimController_unity2_raw :: __lookup_is_loaded_body_anim :: get_method_info () } pub fn play_body_anim_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __EventCharacterAnimController_unity2_raw :: __lookup_play_body_anim :: get_method_info () } pub fn co_play_body_anim_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __EventCharacterAnimController_unity2_raw :: __lookup_co_play_body_anim :: get_method_info () } }
 
 #[cfg(feature = "app-eventcharacteranimcontroller")]
 impl EventCharacterAnimController {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(EventCharacterAnimController),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IEventCharacterAnimControllerMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (EventCharacterAnimController) , :: core :: stringify ! (new) ,)) ; < Self as IEventCharacterAnimControllerMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-eventcharacteranimcontroller")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{EventCharacterAnimController, IEventCharacterAnimController, IEventCharacterAnimControllerMethods};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        system::object::IObject,
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::EventCharacterAnimController;
+    pub use super::IEventCharacterAnimController;
+    pub use super::IEventCharacterAnimControllerMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

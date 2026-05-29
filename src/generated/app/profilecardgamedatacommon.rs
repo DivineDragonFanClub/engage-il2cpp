@@ -2,314 +2,46 @@
 
 #[cfg(feature = "app-profilecardgamedatacommon-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardgamedatacommon/ProfileCardGameDataCommon.md"))]
-    #[::unity2::class(namespace = "App", name = "ProfileCardGameDataCommon")]
-    #[parent(crate::system::object::Object)]
-    pub struct ProfileCardGameDataCommon {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardgamedatacommon/ProfileCardGameDataCommon.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProfileCardGameDataCommon")] # [parent (crate :: system :: object :: Object)] pub struct ProfileCardGameDataCommon {}
+
 }
 
 #[cfg(feature = "app-profilecardgamedatacommon-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-profilecardgamedatacommon")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ProfileCardGameDataCommon_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_satisfied_condition {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::profilecardcondition::ProfileCardCondition as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCardGameDataCommon as ::unity2::ClassIdentity>::class(),
-                "IsSatisfiedCondition",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProfileCardGameDataCommon as ::unity2::ClassIdentity>::NAME,
-                        "IsSatisfiedCondition",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_satisfied_condition(
-        condition: crate::app::profilecardcondition::ProfileCardCondition,
-        arg: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(crate::app::profilecardcondition::ProfileCardCondition, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_satisfied_condition::get_method_info().method_ptr);
-        inner(condition, arg, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_set_language_efigs {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCardGameDataCommon as ::unity2::ClassIdentity>::class(),
-                "IsSetLanguageEFIGS",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProfileCardGameDataCommon as ::unity2::ClassIdentity>::NAME,
-                        "IsSetLanguageEFIGS",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_set_language_efigs(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_set_language_efigs::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_set_language_spanish {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCardGameDataCommon as ::unity2::ClassIdentity>::class(),
-                "IsSetLanguageSpanish",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProfileCardGameDataCommon as ::unity2::ClassIdentity>::NAME,
-                        "IsSetLanguageSpanish",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_set_language_spanish(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_set_language_spanish::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_set_language_korean {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCardGameDataCommon as ::unity2::ClassIdentity>::class(),
-                "IsSetLanguageKorean",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProfileCardGameDataCommon as ::unity2::ClassIdentity>::NAME,
-                        "IsSetLanguageKorean",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_set_language_korean(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_set_language_korean::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_compare {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCardGameDataCommon as ::unity2::ClassIdentity>::class(),
-                "Compare",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProfileCardGameDataCommon as ::unity2::ClassIdentity>::NAME,
-                        "Compare",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn compare(lhs: ::unity2::Il2CppString, rhs: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_compare::get_method_info().method_ptr);
-        inner(lhs, rhs, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCardGameDataCommon as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProfileCardGameDataCommon as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: ProfileCardGameDataCommon, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ProfileCardGameDataCommon, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ProfileCardGameDataCommon_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_satisfied_condition { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: profilecardcondition :: ProfileCardCondition as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileCardGameDataCommon as :: unity2 :: ClassIdentity > :: class () , "IsSatisfiedCondition" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileCardGameDataCommon as :: unity2 :: ClassIdentity > :: NAME , "IsSatisfiedCondition" , e) , } } } pub unsafe fn is_satisfied_condition (condition : crate :: app :: profilecardcondition :: ProfileCardCondition , arg : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (crate :: app :: profilecardcondition :: ProfileCardCondition , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_satisfied_condition :: get_method_info () . method_ptr ,) ; inner (condition , arg , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_set_language_efigs { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileCardGameDataCommon as :: unity2 :: ClassIdentity > :: class () , "IsSetLanguageEFIGS" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileCardGameDataCommon as :: unity2 :: ClassIdentity > :: NAME , "IsSetLanguageEFIGS" , e) , } } } pub unsafe fn is_set_language_efigs (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_set_language_efigs :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_set_language_spanish { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileCardGameDataCommon as :: unity2 :: ClassIdentity > :: class () , "IsSetLanguageSpanish" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileCardGameDataCommon as :: unity2 :: ClassIdentity > :: NAME , "IsSetLanguageSpanish" , e) , } } } pub unsafe fn is_set_language_spanish (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_set_language_spanish :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_set_language_korean { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileCardGameDataCommon as :: unity2 :: ClassIdentity > :: class () , "IsSetLanguageKorean" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileCardGameDataCommon as :: unity2 :: ClassIdentity > :: NAME , "IsSetLanguageKorean" , e) , } } } pub unsafe fn is_set_language_korean (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_set_language_korean :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_compare { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileCardGameDataCommon as :: unity2 :: ClassIdentity > :: class () , "Compare" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileCardGameDataCommon as :: unity2 :: ClassIdentity > :: NAME , "Compare" , e) , } } } pub unsafe fn compare (lhs : :: unity2 :: Il2CppString , rhs : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_compare :: get_method_info () . method_ptr ,) ; inner (lhs , rhs , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileCardGameDataCommon as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileCardGameDataCommon as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : ProfileCardGameDataCommon , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ProfileCardGameDataCommon , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-profilecardgamedatacommon")]
+impl ProfileCardGameDataCommon { # [doc = "`IsSatisfiedCondition(crate::app::profilecardcondition::ProfileCardCondition, ::unity2::Il2CppString)` overload"] pub fn is_satisfied_condition (condition : impl :: core :: convert :: Into < crate :: app :: profilecardcondition :: ProfileCardCondition > , arg : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { __ProfileCardGameDataCommon_unity2_raw :: is_satisfied_condition (:: core :: convert :: Into :: into (condition) , :: core :: convert :: Into :: into (arg) , :: core :: option :: Option :: None) } } # [doc = "`IsSetLanguageEFIGS()` overload"] pub fn is_set_language_efigs () -> bool { unsafe { __ProfileCardGameDataCommon_unity2_raw :: is_set_language_efigs (:: core :: option :: Option :: None) } } # [doc = "`IsSetLanguageSpanish()` overload"] pub fn is_set_language_spanish () -> bool { unsafe { __ProfileCardGameDataCommon_unity2_raw :: is_set_language_spanish (:: core :: option :: Option :: None) } } # [doc = "`IsSetLanguageKorean()` overload"] pub fn is_set_language_korean () -> bool { unsafe { __ProfileCardGameDataCommon_unity2_raw :: is_set_language_korean (:: core :: option :: Option :: None) } } # [doc = "`Compare(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"] pub fn compare (lhs : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , rhs : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> i32 { unsafe { __ProfileCardGameDataCommon_unity2_raw :: compare (:: core :: convert :: Into :: into (lhs) , :: core :: convert :: Into :: into (rhs) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-profilecardgamedatacommon")]
+pub trait IProfileCardGameDataCommonMethods : IProfileCardGameDataCommon { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ProfileCardGameDataCommon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ProfileCardGameDataCommon_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-profilecardgamedatacommon")]
+impl < __T : IProfileCardGameDataCommon > IProfileCardGameDataCommonMethods for __T { }
+
+#[cfg(feature = "app-profilecardgamedatacommon")]
+impl ProfileCardGameDataCommon { pub fn is_satisfied_condition_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProfileCardGameDataCommon_unity2_raw :: __lookup_is_satisfied_condition :: get_method_info () } pub fn is_set_language_efigs_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProfileCardGameDataCommon_unity2_raw :: __lookup_is_set_language_efigs :: get_method_info () } pub fn is_set_language_spanish_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProfileCardGameDataCommon_unity2_raw :: __lookup_is_set_language_spanish :: get_method_info () } pub fn is_set_language_korean_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProfileCardGameDataCommon_unity2_raw :: __lookup_is_set_language_korean :: get_method_info () } pub fn compare_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProfileCardGameDataCommon_unity2_raw :: __lookup_compare :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProfileCardGameDataCommon_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-profilecardgamedatacommon")]
 impl ProfileCardGameDataCommon {
-    #[doc = "`IsSatisfiedCondition(crate::app::profilecardcondition::ProfileCardCondition, ::unity2::Il2CppString)` overload"]
-    pub fn is_satisfied_condition(
-        condition: impl ::core::convert::Into<crate::app::profilecardcondition::ProfileCardCondition>,
-        arg: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> bool {
-        unsafe {
-            __ProfileCardGameDataCommon_unity2_raw::is_satisfied_condition(
-                ::core::convert::Into::into(condition),
-                ::core::convert::Into::into(arg),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`IsSetLanguageEFIGS()` overload"]
-    pub fn is_set_language_efigs() -> bool {
-        unsafe { __ProfileCardGameDataCommon_unity2_raw::is_set_language_efigs(::core::option::Option::None) }
-    }
-
-    #[doc = "`IsSetLanguageSpanish()` overload"]
-    pub fn is_set_language_spanish() -> bool {
-        unsafe { __ProfileCardGameDataCommon_unity2_raw::is_set_language_spanish(::core::option::Option::None) }
-    }
-
-    #[doc = "`IsSetLanguageKorean()` overload"]
-    pub fn is_set_language_korean() -> bool {
-        unsafe { __ProfileCardGameDataCommon_unity2_raw::is_set_language_korean(::core::option::Option::None) }
-    }
-
-    #[doc = "`Compare(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
-    pub fn compare(lhs: impl ::core::convert::Into<::unity2::Il2CppString>, rhs: impl ::core::convert::Into<::unity2::Il2CppString>) -> i32 {
-        unsafe {
-            __ProfileCardGameDataCommon_unity2_raw::compare(
-                ::core::convert::Into::into(lhs),
-                ::core::convert::Into::into(rhs),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-profilecardgamedatacommon")]
-pub trait IProfileCardGameDataCommonMethods: IProfileCardGameDataCommon {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <ProfileCardGameDataCommon as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ProfileCardGameDataCommon_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-profilecardgamedatacommon")]
-impl<__T: IProfileCardGameDataCommon> IProfileCardGameDataCommonMethods for __T {}
-
-#[cfg(feature = "app-profilecardgamedatacommon")]
-impl ProfileCardGameDataCommon {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ProfileCardGameDataCommon),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IProfileCardGameDataCommonMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProfileCardGameDataCommon) , :: core :: stringify ! (new) ,)) ; < Self as IProfileCardGameDataCommonMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-profilecardgamedatacommon")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IProfileCardGameDataCommon, IProfileCardGameDataCommonMethods, ProfileCardGameDataCommon};
+    pub use super::ProfileCardGameDataCommon;
+    pub use super::IProfileCardGameDataCommon;
+    pub use super::IProfileCardGameDataCommonMethods;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

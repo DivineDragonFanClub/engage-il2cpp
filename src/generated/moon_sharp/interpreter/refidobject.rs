@@ -2,208 +2,49 @@
 
 #[cfg(feature = "moon_sharp-interpreter-refidobject-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/refidobject/RefIdObject.md"))]
-    #[::unity2::class(namespace = "MoonSharp.Interpreter", name = "RefIdObject")]
-    #[parent(crate::system::object::Object)]
-    pub struct RefIdObject {
-        #[static_field]
-        #[rename(name = "s_RefIDCounter")]
-        pub s_ref_id_counter: i32,
-        #[offset(16)]
-        #[rename(name = "m_RefID")]
-        pub m_ref_id: i32,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/refidobject/RefIdObject.md"))] # [:: unity2 :: class (namespace = "MoonSharp.Interpreter" , name = "RefIdObject")] # [parent (crate :: system :: object :: Object)] pub struct RefIdObject {
+# [static_field] # [rename (name = "s_RefIDCounter")] pub s_ref_id_counter : i32 ,
+# [offset (16)] # [rename (name = "m_RefID")] pub m_ref_id : i32 ,
+}
+
 }
 
 #[cfg(feature = "moon_sharp-interpreter-refidobject-types")]
 pub use __types::*;
 
 #[cfg(feature = "moon_sharp-interpreter-refidobject")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RefIdObject_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_reference_id {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RefIdObject as ::unity2::ClassIdentity>::class(),
-                "get_ReferenceID",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RefIdObject as ::unity2::ClassIdentity>::NAME,
-                        "get_ReferenceID",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_reference_id(this: RefIdObject, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(RefIdObject, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_reference_id::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_format_type_string {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RefIdObject as ::unity2::ClassIdentity>::class(),
-                "FormatTypeString",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RefIdObject as ::unity2::ClassIdentity>::NAME,
-                        "FormatTypeString",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn format_type_string(
-        this: RefIdObject,
-        type_string: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(RefIdObject, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_format_type_string::get_method_info().method_ptr);
-        inner(this, type_string, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<RefIdObject as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RefIdObject as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: RefIdObject, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RefIdObject, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<RefIdObject as ::unity2::ClassIdentity>::class(), ".cctor", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RefIdObject as ::unity2::ClassIdentity>::NAME,
-                        ".cctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __RefIdObject_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_reference_id { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RefIdObject as :: unity2 :: ClassIdentity > :: class () , "get_ReferenceID" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefIdObject as :: unity2 :: ClassIdentity > :: NAME , "get_ReferenceID" , e) , } } } pub unsafe fn get_reference_id (this : RefIdObject , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (RefIdObject , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_reference_id :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_format_type_string { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RefIdObject as :: unity2 :: ClassIdentity > :: class () , "FormatTypeString" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefIdObject as :: unity2 :: ClassIdentity > :: NAME , "FormatTypeString" , e) , } } } pub unsafe fn format_type_string (this : RefIdObject , type_string : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (RefIdObject , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_format_type_string :: get_method_info () . method_ptr ,) ; inner (this , type_string , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RefIdObject as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefIdObject as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : RefIdObject , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RefIdObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RefIdObject as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefIdObject as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
+
+#[cfg(feature = "moon_sharp-interpreter-refidobject")]
+impl RefIdObject { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { __RefIdObject_unity2_raw :: cctor (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "moon_sharp-interpreter-refidobject")]
+pub trait IRefIdObjectMethods : IRefIdObject { # [doc = "`get_ReferenceID()` overload"] fn get_reference_id (self ,) -> i32 { unsafe { let __receiver = < RefIdObject as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RefIdObject_unity2_raw :: get_reference_id (__receiver , :: core :: option :: Option :: None) } } # [doc = "`FormatTypeString(::unity2::Il2CppString)` overload"] fn format_type_string (self , type_string : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < RefIdObject as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RefIdObject_unity2_raw :: format_type_string (__receiver , :: core :: convert :: Into :: into (type_string) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RefIdObject as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RefIdObject_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "moon_sharp-interpreter-refidobject")]
+impl < __T : IRefIdObject > IRefIdObjectMethods for __T { }
+
+#[cfg(feature = "moon_sharp-interpreter-refidobject")]
+impl RefIdObject { pub fn get_reference_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RefIdObject_unity2_raw :: __lookup_get_reference_id :: get_method_info () } pub fn format_type_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RefIdObject_unity2_raw :: __lookup_format_type_string :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RefIdObject_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RefIdObject_unity2_raw :: __lookup_cctor :: get_method_info () } }
 
 #[cfg(feature = "moon_sharp-interpreter-refidobject")]
 impl RefIdObject {
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __RefIdObject_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "moon_sharp-interpreter-refidobject")]
-pub trait IRefIdObjectMethods: IRefIdObject {
-    #[doc = "`get_ReferenceID()` overload"]
-    fn get_reference_id(self) -> i32 {
-        unsafe {
-            let __receiver = <RefIdObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RefIdObject_unity2_raw::get_reference_id(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`FormatTypeString(::unity2::Il2CppString)` overload"]
-    fn format_type_string(self, type_string: impl ::core::convert::Into<::unity2::Il2CppString>) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <RefIdObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RefIdObject_unity2_raw::format_type_string(__receiver, ::core::convert::Into::into(type_string), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <RefIdObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RefIdObject_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "moon_sharp-interpreter-refidobject")]
-impl<__T: IRefIdObject> IRefIdObjectMethods for __T {}
-
-#[cfg(feature = "moon_sharp-interpreter-refidobject")]
-impl RefIdObject {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(RefIdObject), ::core::stringify!(new),));
-        <Self as IRefIdObjectMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RefIdObject) , :: core :: stringify ! (new) ,)) ; < Self as IRefIdObjectMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "moon_sharp-interpreter-refidobject")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IRefIdObject, IRefIdObjectMethods, RefIdObject};
+    pub use super::RefIdObject;
+    pub use super::IRefIdObject;
+    pub use super::IRefIdObjectMethods;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

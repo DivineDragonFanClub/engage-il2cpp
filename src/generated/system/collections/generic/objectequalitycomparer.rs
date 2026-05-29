@@ -2,251 +2,48 @@
 
 #[cfg(feature = "system-collections-generic-objectequalitycomparer-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/objectequalitycomparer/ObjectEqualityComparer.md"))]
-    #[::unity2::class(namespace = "System.Collections.Generic", name = "ObjectEqualityComparer")]
-    #[parent(crate::system::object::Object)]
-    pub struct ObjectEqualityComparer {
-        #[static_field]
-        #[rename(name = "Default")]
-        pub default: crate::system::collections::generic::objectequalitycomparer::ObjectEqualityComparer,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/objectequalitycomparer/ObjectEqualityComparer.md"))] # [:: unity2 :: class (namespace = "System.Collections.Generic" , name = "ObjectEqualityComparer")] # [parent (crate :: system :: object :: Object)] pub struct ObjectEqualityComparer {
+# [static_field] # [rename (name = "Default")] pub default : crate :: system :: collections :: generic :: objectequalitycomparer :: ObjectEqualityComparer ,
+}
+
 }
 
 #[cfg(feature = "system-collections-generic-objectequalitycomparer-types")]
 pub use __types::*;
 
 #[cfg(feature = "system-collections-generic-objectequalitycomparer")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ObjectEqualityComparer_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ObjectEqualityComparer as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ObjectEqualityComparer as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: ObjectEqualityComparer, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ObjectEqualityComparer, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_system_collections_i_equality_comparer_get_hash_code {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ObjectEqualityComparer as ::unity2::ClassIdentity>::class(),
-                "System.Collections.IEqualityComparer.GetHashCode",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ObjectEqualityComparer as ::unity2::ClassIdentity>::NAME,
-                        "System.Collections.IEqualityComparer.GetHashCode",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn system_collections_i_equality_comparer_get_hash_code(
-        this: ObjectEqualityComparer,
-        obj: crate::system::object::Object,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(ObjectEqualityComparer, crate::system::object::Object, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_system_collections_i_equality_comparer_get_hash_code::get_method_info().method_ptr);
-        inner(this, obj, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_system_collections_i_equality_comparer_equals {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ObjectEqualityComparer as ::unity2::ClassIdentity>::class(),
-                "System.Collections.IEqualityComparer.Equals",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ObjectEqualityComparer as ::unity2::ClassIdentity>::NAME,
-                        "System.Collections.IEqualityComparer.Equals",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn system_collections_i_equality_comparer_equals(
-        this: ObjectEqualityComparer,
-        x: crate::system::object::Object,
-        y: crate::system::object::Object,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            ObjectEqualityComparer,
-            crate::system::object::Object,
-            crate::system::object::Object,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(__lookup_system_collections_i_equality_comparer_equals::get_method_info().method_ptr);
-        inner(this, x, y, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ObjectEqualityComparer as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ObjectEqualityComparer as ::unity2::ClassIdentity>::NAME,
-                        ".cctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ObjectEqualityComparer_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ObjectEqualityComparer as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ObjectEqualityComparer as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : ObjectEqualityComparer , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ObjectEqualityComparer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_system_collections_i_equality_comparer_get_hash_code { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ObjectEqualityComparer as :: unity2 :: ClassIdentity > :: class () , "System.Collections.IEqualityComparer.GetHashCode" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ObjectEqualityComparer as :: unity2 :: ClassIdentity > :: NAME , "System.Collections.IEqualityComparer.GetHashCode" , e) , } } } pub unsafe fn system_collections_i_equality_comparer_get_hash_code (this : ObjectEqualityComparer , obj : crate :: system :: object :: Object , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (ObjectEqualityComparer , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_system_collections_i_equality_comparer_get_hash_code :: get_method_info () . method_ptr ,) ; inner (this , obj , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_system_collections_i_equality_comparer_equals { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type () , < crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ObjectEqualityComparer as :: unity2 :: ClassIdentity > :: class () , "System.Collections.IEqualityComparer.Equals" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ObjectEqualityComparer as :: unity2 :: ClassIdentity > :: NAME , "System.Collections.IEqualityComparer.Equals" , e) , } } } pub unsafe fn system_collections_i_equality_comparer_equals (this : ObjectEqualityComparer , x : crate :: system :: object :: Object , y : crate :: system :: object :: Object , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (ObjectEqualityComparer , crate :: system :: object :: Object , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_system_collections_i_equality_comparer_equals :: get_method_info () . method_ptr ,) ; inner (this , x , y , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ObjectEqualityComparer as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ObjectEqualityComparer as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
+
+#[cfg(feature = "system-collections-generic-objectequalitycomparer")]
+impl ObjectEqualityComparer { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { __ObjectEqualityComparer_unity2_raw :: cctor (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "system-collections-generic-objectequalitycomparer")]
+pub trait IObjectEqualityComparerMethods : IObjectEqualityComparer { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ObjectEqualityComparer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ObjectEqualityComparer_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } # [doc = "`System.Collections.IEqualityComparer.GetHashCode(crate::system::object::Object)` overload"] fn system_collections_i_equality_comparer_get_hash_code (self , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> i32 { unsafe { let __receiver = < ObjectEqualityComparer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ObjectEqualityComparer_unity2_raw :: system_collections_i_equality_comparer_get_hash_code (__receiver , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } # [doc = "`System.Collections.IEqualityComparer.Equals(crate::system::object::Object, crate::system::object::Object)` overload"] fn system_collections_i_equality_comparer_equals (self , x : impl :: core :: convert :: Into < crate :: system :: object :: Object > , y : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { let __receiver = < ObjectEqualityComparer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ObjectEqualityComparer_unity2_raw :: system_collections_i_equality_comparer_equals (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (y) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "system-collections-generic-objectequalitycomparer")]
+impl < __T : IObjectEqualityComparer > IObjectEqualityComparerMethods for __T { }
+
+#[cfg(feature = "system-collections-generic-objectequalitycomparer")]
+impl ObjectEqualityComparer { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ObjectEqualityComparer_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn system_collections_i_equality_comparer_get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ObjectEqualityComparer_unity2_raw :: __lookup_system_collections_i_equality_comparer_get_hash_code :: get_method_info () } pub fn system_collections_i_equality_comparer_equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ObjectEqualityComparer_unity2_raw :: __lookup_system_collections_i_equality_comparer_equals :: get_method_info () } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ObjectEqualityComparer_unity2_raw :: __lookup_cctor :: get_method_info () } }
 
 #[cfg(feature = "system-collections-generic-objectequalitycomparer")]
 impl ObjectEqualityComparer {
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __ObjectEqualityComparer_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "system-collections-generic-objectequalitycomparer")]
-pub trait IObjectEqualityComparerMethods: IObjectEqualityComparer {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <ObjectEqualityComparer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ObjectEqualityComparer_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`System.Collections.IEqualityComparer.GetHashCode(crate::system::object::Object)` overload"]
-    fn system_collections_i_equality_comparer_get_hash_code(self, obj: impl ::core::convert::Into<crate::system::object::Object>) -> i32 {
-        unsafe {
-            let __receiver =
-                <ObjectEqualityComparer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ObjectEqualityComparer_unity2_raw::system_collections_i_equality_comparer_get_hash_code(
-                __receiver,
-                ::core::convert::Into::into(obj),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`System.Collections.IEqualityComparer.Equals(crate::system::object::Object, crate::system::object::Object)` overload"]
-    fn system_collections_i_equality_comparer_equals(
-        self,
-        x: impl ::core::convert::Into<crate::system::object::Object>,
-        y: impl ::core::convert::Into<crate::system::object::Object>,
-    ) -> bool {
-        unsafe {
-            let __receiver =
-                <ObjectEqualityComparer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ObjectEqualityComparer_unity2_raw::system_collections_i_equality_comparer_equals(
-                __receiver,
-                ::core::convert::Into::into(x),
-                ::core::convert::Into::into(y),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "system-collections-generic-objectequalitycomparer")]
-impl<__T: IObjectEqualityComparer> IObjectEqualityComparerMethods for __T {}
-
-#[cfg(feature = "system-collections-generic-objectequalitycomparer")]
-impl ObjectEqualityComparer {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ObjectEqualityComparer),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IObjectEqualityComparerMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ObjectEqualityComparer) , :: core :: stringify ! (new) ,)) ; < Self as IObjectEqualityComparerMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "system-collections-generic-objectequalitycomparer")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IObjectEqualityComparer, IObjectEqualityComparerMethods, ObjectEqualityComparer};
+    pub use super::ObjectEqualityComparer;
+    pub use super::IObjectEqualityComparer;
+    pub use super::IObjectEqualityComparerMethods;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

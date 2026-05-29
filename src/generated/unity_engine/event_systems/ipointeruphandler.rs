@@ -2,82 +2,34 @@
 
 #[cfg(feature = "unity_engine-event_systems-ipointeruphandler-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/ipointeruphandler/IPointerUpHandler.md"))]
-    #[::unity2::class(namespace = "UnityEngine.EventSystems", name = "IPointerUpHandler")]
-    pub struct IPointerUpHandler {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/ipointeruphandler/IPointerUpHandler.md"))] # [:: unity2 :: class (namespace = "UnityEngine.EventSystems" , name = "IPointerUpHandler")] pub struct IPointerUpHandler {}
+
 }
 
 #[cfg(feature = "unity_engine-event_systems-ipointeruphandler-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-event_systems-ipointeruphandler")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __IPointerUpHandler_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_pointer_up {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::event_systems::pointereventdata::PointerEventData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <IPointerUpHandler as ::unity2::ClassIdentity>::class(),
-                "OnPointerUp",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <IPointerUpHandler as ::unity2::ClassIdentity>::NAME,
-                        "OnPointerUp",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_pointer_up(
-        this: IPointerUpHandler,
-        event_data: crate::unity_engine::event_systems::pointereventdata::PointerEventData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            IPointerUpHandler,
-            crate::unity_engine::event_systems::pointereventdata::PointerEventData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_on_pointer_up::get_method_info().method_ptr);
-        inner(this, event_data, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __IPointerUpHandler_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_pointer_up { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< IPointerUpHandler as :: unity2 :: ClassIdentity > :: class () , "OnPointerUp" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < IPointerUpHandler as :: unity2 :: ClassIdentity > :: NAME , "OnPointerUp" , e) , } } } pub unsafe fn on_pointer_up (this : IPointerUpHandler , event_data : crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (IPointerUpHandler , crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_pointer_up :: get_method_info () . method_ptr ,) ; inner (this , event_data , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-event_systems-ipointeruphandler")]
-pub trait IIPointerUpHandlerMethods: IIPointerUpHandler {
-    #[doc = "`OnPointerUp(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]
-    fn on_pointer_up(self, event_data: impl ::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>) -> () {
-        unsafe {
-            let __receiver = <IPointerUpHandler as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __IPointerUpHandler_unity2_raw::on_pointer_up(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)
-        }
-    }
-}
+pub trait IIPointerUpHandlerMethods : IIPointerUpHandler { # [doc = "`OnPointerUp(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"] fn on_pointer_up (self , event_data : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData >) -> () { unsafe { let __receiver = < IPointerUpHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IPointerUpHandler_unity2_raw :: on_pointer_up (__receiver , :: core :: convert :: Into :: into (event_data) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-event_systems-ipointeruphandler")]
-impl<__T: IIPointerUpHandler> IIPointerUpHandlerMethods for __T {}
+impl < __T : IIPointerUpHandler > IIPointerUpHandlerMethods for __T { }
+
+#[cfg(feature = "unity_engine-event_systems-ipointeruphandler")]
+impl IPointerUpHandler { pub fn on_pointer_up_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __IPointerUpHandler_unity2_raw :: __lookup_on_pointer_up :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-event_systems-ipointeruphandler")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IIPointerUpHandler, IIPointerUpHandlerMethods, IPointerUpHandler};
+    pub use super::IPointerUpHandler;
+    pub use super::IIPointerUpHandler;
+    pub use super::IIPointerUpHandlerMethods;
 }

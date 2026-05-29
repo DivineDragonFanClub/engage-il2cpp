@@ -2,210 +2,59 @@
 
 #[cfg(feature = "moon_sharp-interpreter-tree-statements-foreachloopstatement-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        moon_sharp::interpreter::tree::{
-            nodebase::{INodeBase, NodeBase},
-            statement::{IStatement, Statement},
-        },
-        system::object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/tree/statements/foreachloopstatement/ForEachLoopStatement.md"))]
-    #[::unity2::class(namespace = "MoonSharp.Interpreter.Tree.Statements", name = "ForEachLoopStatement")]
-    #[parent(crate::moon_sharp::interpreter::tree::statement::Statement)]
-    pub struct ForEachLoopStatement {
-        #[offset(32)]
-        #[rename(name = "m_StackFrame")]
-        pub m_stack_frame: crate::moon_sharp::interpreter::execution::runtimescopeblock::RuntimeScopeBlock,
-        #[offset(40)]
-        #[rename(name = "m_Names")]
-        pub m_names: ::unity2::Array<crate::moon_sharp::interpreter::symbolref::SymbolRef>,
-        #[offset(48)]
-        #[rename(name = "m_NameExps")]
-        pub m_name_exps: ::unity2::Array<crate::moon_sharp::interpreter::tree::ivariable::IVariable>,
-        #[offset(56)]
-        #[rename(name = "m_RValues")]
-        pub m_r_values: crate::moon_sharp::interpreter::tree::expression::Expression,
-        #[offset(64)]
-        #[rename(name = "m_Block")]
-        pub m_block: crate::moon_sharp::interpreter::tree::statement::Statement,
-        #[offset(72)]
-        #[rename(name = "m_RefFor")]
-        pub m_ref_for: crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
-        #[offset(80)]
-        #[rename(name = "m_RefEnd")]
-        pub m_ref_end: crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: moon_sharp :: interpreter :: tree :: nodebase :: { INodeBase , NodeBase }
+ ;
+ use crate :: moon_sharp :: interpreter :: tree :: statement :: { IStatement , Statement }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/tree/statements/foreachloopstatement/ForEachLoopStatement.md"))] # [:: unity2 :: class (namespace = "MoonSharp.Interpreter.Tree.Statements" , name = "ForEachLoopStatement")] # [parent (crate :: moon_sharp :: interpreter :: tree :: statement :: Statement)] pub struct ForEachLoopStatement {
+# [offset (32)] # [rename (name = "m_StackFrame")] pub m_stack_frame : crate :: moon_sharp :: interpreter :: execution :: runtimescopeblock :: RuntimeScopeBlock ,
+# [offset (40)] # [rename (name = "m_Names")] pub m_names : :: unity2 :: Array < crate :: moon_sharp :: interpreter :: symbolref :: SymbolRef > ,
+# [offset (48)] # [rename (name = "m_NameExps")] pub m_name_exps : :: unity2 :: Array < crate :: moon_sharp :: interpreter :: tree :: ivariable :: IVariable > ,
+# [offset (56)] # [rename (name = "m_RValues")] pub m_r_values : crate :: moon_sharp :: interpreter :: tree :: expression :: Expression ,
+# [offset (64)] # [rename (name = "m_Block")] pub m_block : crate :: moon_sharp :: interpreter :: tree :: statement :: Statement ,
+# [offset (72)] # [rename (name = "m_RefFor")] pub m_ref_for : crate :: moon_sharp :: interpreter :: debugging :: sourceref :: SourceRef ,
+# [offset (80)] # [rename (name = "m_RefEnd")] pub m_ref_end : crate :: moon_sharp :: interpreter :: debugging :: sourceref :: SourceRef ,
+}
+
 }
 
 #[cfg(feature = "moon_sharp-interpreter-tree-statements-foreachloopstatement-types")]
 pub use __types::*;
 
 #[cfg(feature = "moon_sharp-interpreter-tree-statements-foreachloopstatement")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ForEachLoopStatement_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext as ::unity2::IlType>::il_type(),
-                <crate::moon_sharp::interpreter::tree::token::Token as ::unity2::IlType>::il_type(),
-                <crate::moon_sharp::interpreter::tree::token::Token as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ForEachLoopStatement as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ForEachLoopStatement as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: ForEachLoopStatement,
-        lcontext: crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,
-        first_name_token: crate::moon_sharp::interpreter::tree::token::Token,
-        for_token: crate::moon_sharp::interpreter::tree::token::Token,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ForEachLoopStatement,
-            crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,
-            crate::moon_sharp::interpreter::tree::token::Token,
-            crate::moon_sharp::interpreter::tree::token::Token,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, lcontext, first_name_token, for_token, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_compile {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ForEachLoopStatement as ::unity2::ClassIdentity>::class(),
-                "Compile",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ForEachLoopStatement as ::unity2::ClassIdentity>::NAME,
-                        "Compile",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn compile(
-        this: ForEachLoopStatement,
-        bc: crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ForEachLoopStatement,
-            crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_compile::get_method_info().method_ptr);
-        inner(this, bc, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ForEachLoopStatement_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: tree :: token :: Token as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: tree :: token :: Token as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ForEachLoopStatement as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ForEachLoopStatement as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : ForEachLoopStatement , lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext , first_name_token : crate :: moon_sharp :: interpreter :: tree :: token :: Token , for_token : crate :: moon_sharp :: interpreter :: tree :: token :: Token , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ForEachLoopStatement , crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext , crate :: moon_sharp :: interpreter :: tree :: token :: Token , crate :: moon_sharp :: interpreter :: tree :: token :: Token , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , lcontext , first_name_token , for_token , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_compile { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: execution :: vm :: bytecode :: ByteCode as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ForEachLoopStatement as :: unity2 :: ClassIdentity > :: class () , "Compile" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ForEachLoopStatement as :: unity2 :: ClassIdentity > :: NAME , "Compile" , e) , } } } pub unsafe fn compile (this : ForEachLoopStatement , bc : crate :: moon_sharp :: interpreter :: execution :: vm :: bytecode :: ByteCode , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ForEachLoopStatement , crate :: moon_sharp :: interpreter :: execution :: vm :: bytecode :: ByteCode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_compile :: get_method_info () . method_ptr ,) ; inner (this , bc , __unity2_method_info) } }
 
 #[cfg(feature = "moon_sharp-interpreter-tree-statements-foreachloopstatement")]
-pub trait IForEachLoopStatementMethods: IForEachLoopStatement {
-    #[doc = "`.ctor(crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext, crate::moon_sharp::interpreter::tree::token::Token, crate::moon_sharp::interpreter::tree::token::Token)` overload"]
-    fn ctor(
-        self,
-        lcontext: impl ::core::convert::Into<crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext>,
-        first_name_token: impl ::core::convert::Into<crate::moon_sharp::interpreter::tree::token::Token>,
-        for_token: impl ::core::convert::Into<crate::moon_sharp::interpreter::tree::token::Token>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <ForEachLoopStatement as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ForEachLoopStatement_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(lcontext),
-                ::core::convert::Into::into(first_name_token),
-                ::core::convert::Into::into(for_token),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Compile(crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode)` overload"]
-    fn compile(self, bc: impl ::core::convert::Into<crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode>) -> () {
-        unsafe {
-            let __receiver =
-                <ForEachLoopStatement as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ForEachLoopStatement_unity2_raw::compile(__receiver, ::core::convert::Into::into(bc), ::core::option::Option::None)
-        }
-    }
-}
+pub trait IForEachLoopStatementMethods : IForEachLoopStatement { # [doc = "`.ctor(crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext, crate::moon_sharp::interpreter::tree::token::Token, crate::moon_sharp::interpreter::tree::token::Token)` overload"] fn ctor (self , lcontext : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext > , first_name_token : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: tree :: token :: Token > , for_token : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: tree :: token :: Token >) -> () { unsafe { let __receiver = < ForEachLoopStatement as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ForEachLoopStatement_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (lcontext) , :: core :: convert :: Into :: into (first_name_token) , :: core :: convert :: Into :: into (for_token) , :: core :: option :: Option :: None) } } # [doc = "`Compile(crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode)` overload"] fn compile (self , bc : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: execution :: vm :: bytecode :: ByteCode >) -> () { unsafe { let __receiver = < ForEachLoopStatement as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ForEachLoopStatement_unity2_raw :: compile (__receiver , :: core :: convert :: Into :: into (bc) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "moon_sharp-interpreter-tree-statements-foreachloopstatement")]
-impl<__T: IForEachLoopStatement> IForEachLoopStatementMethods for __T {}
+impl < __T : IForEachLoopStatement > IForEachLoopStatementMethods for __T { }
+
+#[cfg(feature = "moon_sharp-interpreter-tree-statements-foreachloopstatement")]
+impl ForEachLoopStatement { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ForEachLoopStatement_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn compile_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ForEachLoopStatement_unity2_raw :: __lookup_compile :: get_method_info () } }
 
 #[cfg(feature = "moon_sharp-interpreter-tree-statements-foreachloopstatement")]
 impl ForEachLoopStatement {
-    #[doc = "`.ctor(crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext, crate::moon_sharp::interpreter::tree::token::Token, crate::moon_sharp::interpreter::tree::token::Token)` — overload selector"]
-    pub fn new(
-        lcontext: crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,
-        first_name_token: crate::moon_sharp::interpreter::tree::token::Token,
-        for_token: crate::moon_sharp::interpreter::tree::token::Token,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ForEachLoopStatement),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IForEachLoopStatementMethods>::ctor(this, lcontext, first_name_token, for_token);
-        this
-    }
+# [doc = "`.ctor(crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext, crate::moon_sharp::interpreter::tree::token::Token, crate::moon_sharp::interpreter::tree::token::Token)` — overload selector"] pub fn new (lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext , first_name_token : crate :: moon_sharp :: interpreter :: tree :: token :: Token , for_token : crate :: moon_sharp :: interpreter :: tree :: token :: Token) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ForEachLoopStatement) , :: core :: stringify ! (new) ,)) ; < Self as IForEachLoopStatementMethods > :: ctor (this , lcontext , first_name_token , for_token) ; this }
 }
 
 #[cfg(feature = "moon_sharp-interpreter-tree-statements-foreachloopstatement")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{ForEachLoopStatement, IForEachLoopStatement, IForEachLoopStatementMethods};
-    #[cfg(feature = "moon_sharp-interpreter-tree-nodebase")]
-    pub use crate::moon_sharp::interpreter::tree::nodebase::INodeBaseMethods;
-    #[cfg(feature = "moon_sharp-interpreter-tree-statement")]
-    pub use crate::moon_sharp::interpreter::tree::statement::IStatementMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::{
-        moon_sharp::interpreter::tree::{nodebase::INodeBase, statement::IStatement},
-        system::object::IObject,
-    };
+    pub use super::ForEachLoopStatement;
+    pub use super::IForEachLoopStatement;
+    pub use super::IForEachLoopStatementMethods;
+    pub use crate::moon_sharp::interpreter::tree::nodebase::INodeBase;
+    pub use crate::moon_sharp::interpreter::tree::statement::IStatement;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "moon_sharp-interpreter-tree-nodebase")] pub use crate::moon_sharp::interpreter::tree::nodebase::INodeBaseMethods;
+    #[cfg(feature = "moon_sharp-interpreter-tree-statement")] pub use crate::moon_sharp::interpreter::tree::statement::IStatementMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

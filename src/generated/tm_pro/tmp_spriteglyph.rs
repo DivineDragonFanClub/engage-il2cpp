@@ -2,300 +2,53 @@
 
 #[cfg(feature = "tm_pro-tmp_spriteglyph-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::text_core::glyph::{Glyph, IGlyph},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_spriteglyph/TMP_SpriteGlyph.md"))]
-    #[::unity2::class(namespace = "TMPro", name = "TMP_SpriteGlyph")]
-    #[parent(crate::unity_engine::text_core::glyph::Glyph)]
-    pub struct TMP_SpriteGlyph {
-        #[offset(64)]
-        #[rename(name = "sprite")]
-        pub sprite: crate::unity_engine::sprite::Sprite,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: text_core :: glyph :: { Glyph , IGlyph }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_spriteglyph/TMP_SpriteGlyph.md"))] # [:: unity2 :: class (namespace = "TMPro" , name = "TMP_SpriteGlyph")] # [parent (crate :: unity_engine :: text_core :: glyph :: Glyph)] pub struct TMP_SpriteGlyph {
+# [offset (64)] # [rename (name = "sprite")] pub sprite : crate :: unity_engine :: sprite :: Sprite ,
+}
+
 }
 
 #[cfg(feature = "tm_pro-tmp_spriteglyph-types")]
 pub use __types::*;
 
 #[cfg(feature = "tm_pro-tmp_spriteglyph")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __TMP_SpriteGlyph_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TMP_SpriteGlyph as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TMP_SpriteGlyph as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: TMP_SpriteGlyph, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TMP_SpriteGlyph, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <u32 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::text_core::glyphmetrics::GlyphMetrics as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::text_core::glyphrect::GlyphRect as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TMP_SpriteGlyph as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                5,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TMP_SpriteGlyph as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor_2(
-        this: TMP_SpriteGlyph,
-        index: u32,
-        metrics: crate::unity_engine::text_core::glyphmetrics::GlyphMetrics,
-        glyph_rect: crate::unity_engine::text_core::glyphrect::GlyphRect,
-        scale: f32,
-        atlas_index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            TMP_SpriteGlyph,
-            u32,
-            crate::unity_engine::text_core::glyphmetrics::GlyphMetrics,
-            crate::unity_engine::text_core::glyphrect::GlyphRect,
-            f32,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
-        inner(this, index, metrics, glyph_rect, scale, atlas_index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor_3 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <u32 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::text_core::glyphmetrics::GlyphMetrics as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::text_core::glyphrect::GlyphRect as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::sprite::Sprite as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TMP_SpriteGlyph as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                6,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TMP_SpriteGlyph as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor_3(
-        this: TMP_SpriteGlyph,
-        index: u32,
-        metrics: crate::unity_engine::text_core::glyphmetrics::GlyphMetrics,
-        glyph_rect: crate::unity_engine::text_core::glyphrect::GlyphRect,
-        scale: f32,
-        atlas_index: i32,
-        sprite: crate::unity_engine::sprite::Sprite,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            TMP_SpriteGlyph,
-            u32,
-            crate::unity_engine::text_core::glyphmetrics::GlyphMetrics,
-            crate::unity_engine::text_core::glyphrect::GlyphRect,
-            f32,
-            i32,
-            crate::unity_engine::sprite::Sprite,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor_3::get_method_info().method_ptr);
-        inner(this, index, metrics, glyph_rect, scale, atlas_index, sprite, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __TMP_SpriteGlyph_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TMP_SpriteGlyph as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TMP_SpriteGlyph as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : TMP_SpriteGlyph , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TMP_SpriteGlyph , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< u32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: text_core :: glyphmetrics :: GlyphMetrics as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: text_core :: glyphrect :: GlyphRect as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TMP_SpriteGlyph as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 5 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TMP_SpriteGlyph as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor_2 (this : TMP_SpriteGlyph , index : u32 , metrics : crate :: unity_engine :: text_core :: glyphmetrics :: GlyphMetrics , glyph_rect : crate :: unity_engine :: text_core :: glyphrect :: GlyphRect , scale : f32 , atlas_index : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TMP_SpriteGlyph , u32 , crate :: unity_engine :: text_core :: glyphmetrics :: GlyphMetrics , crate :: unity_engine :: text_core :: glyphrect :: GlyphRect , f32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor_2 :: get_method_info () . method_ptr ,) ; inner (this , index , metrics , glyph_rect , scale , atlas_index , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor_3 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< u32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: text_core :: glyphmetrics :: GlyphMetrics as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: text_core :: glyphrect :: GlyphRect as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: sprite :: Sprite as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TMP_SpriteGlyph as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 6 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TMP_SpriteGlyph as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor_3 (this : TMP_SpriteGlyph , index : u32 , metrics : crate :: unity_engine :: text_core :: glyphmetrics :: GlyphMetrics , glyph_rect : crate :: unity_engine :: text_core :: glyphrect :: GlyphRect , scale : f32 , atlas_index : i32 , sprite : crate :: unity_engine :: sprite :: Sprite , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TMP_SpriteGlyph , u32 , crate :: unity_engine :: text_core :: glyphmetrics :: GlyphMetrics , crate :: unity_engine :: text_core :: glyphrect :: GlyphRect , f32 , i32 , crate :: unity_engine :: sprite :: Sprite , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor_3 :: get_method_info () . method_ptr ,) ; inner (this , index , metrics , glyph_rect , scale , atlas_index , sprite , __unity2_method_info) } }
 
 #[cfg(feature = "tm_pro-tmp_spriteglyph")]
-pub trait ITMP_SpriteGlyphMethods: ITMP_SpriteGlyph {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <TMP_SpriteGlyph as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TMP_SpriteGlyph_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor(u32, crate::unity_engine::text_core::glyphmetrics::GlyphMetrics, crate::unity_engine::text_core::glyphrect::GlyphRect, f32, i32)` overload"]
-    fn ctor_2(
-        self,
-        index: impl ::core::convert::Into<u32>,
-        metrics: impl ::core::convert::Into<crate::unity_engine::text_core::glyphmetrics::GlyphMetrics>,
-        glyph_rect: impl ::core::convert::Into<crate::unity_engine::text_core::glyphrect::GlyphRect>,
-        scale: impl ::core::convert::Into<f32>,
-        atlas_index: impl ::core::convert::Into<i32>,
-    ) -> () {
-        unsafe {
-            let __receiver = <TMP_SpriteGlyph as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TMP_SpriteGlyph_unity2_raw::ctor_2(
-                __receiver,
-                ::core::convert::Into::into(index),
-                ::core::convert::Into::into(metrics),
-                ::core::convert::Into::into(glyph_rect),
-                ::core::convert::Into::into(scale),
-                ::core::convert::Into::into(atlas_index),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor(u32, crate::unity_engine::text_core::glyphmetrics::GlyphMetrics, crate::unity_engine::text_core::glyphrect::GlyphRect, f32, i32, crate::unity_engine::sprite::Sprite)` overload"]
-    fn ctor_3(
-        self,
-        index: impl ::core::convert::Into<u32>,
-        metrics: impl ::core::convert::Into<crate::unity_engine::text_core::glyphmetrics::GlyphMetrics>,
-        glyph_rect: impl ::core::convert::Into<crate::unity_engine::text_core::glyphrect::GlyphRect>,
-        scale: impl ::core::convert::Into<f32>,
-        atlas_index: impl ::core::convert::Into<i32>,
-        sprite: impl ::core::convert::Into<crate::unity_engine::sprite::Sprite>,
-    ) -> () {
-        unsafe {
-            let __receiver = <TMP_SpriteGlyph as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TMP_SpriteGlyph_unity2_raw::ctor_3(
-                __receiver,
-                ::core::convert::Into::into(index),
-                ::core::convert::Into::into(metrics),
-                ::core::convert::Into::into(glyph_rect),
-                ::core::convert::Into::into(scale),
-                ::core::convert::Into::into(atlas_index),
-                ::core::convert::Into::into(sprite),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+pub trait ITMP_SpriteGlyphMethods : ITMP_SpriteGlyph { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TMP_SpriteGlyph as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TMP_SpriteGlyph_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor(u32, crate::unity_engine::text_core::glyphmetrics::GlyphMetrics, crate::unity_engine::text_core::glyphrect::GlyphRect, f32, i32)` overload"] fn ctor_2 (self , index : impl :: core :: convert :: Into < u32 > , metrics : impl :: core :: convert :: Into < crate :: unity_engine :: text_core :: glyphmetrics :: GlyphMetrics > , glyph_rect : impl :: core :: convert :: Into < crate :: unity_engine :: text_core :: glyphrect :: GlyphRect > , scale : impl :: core :: convert :: Into < f32 > , atlas_index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < TMP_SpriteGlyph as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TMP_SpriteGlyph_unity2_raw :: ctor_2 (__receiver , :: core :: convert :: Into :: into (index) , :: core :: convert :: Into :: into (metrics) , :: core :: convert :: Into :: into (glyph_rect) , :: core :: convert :: Into :: into (scale) , :: core :: convert :: Into :: into (atlas_index) , :: core :: option :: Option :: None) } } # [doc = "`.ctor(u32, crate::unity_engine::text_core::glyphmetrics::GlyphMetrics, crate::unity_engine::text_core::glyphrect::GlyphRect, f32, i32, crate::unity_engine::sprite::Sprite)` overload"] fn ctor_3 (self , index : impl :: core :: convert :: Into < u32 > , metrics : impl :: core :: convert :: Into < crate :: unity_engine :: text_core :: glyphmetrics :: GlyphMetrics > , glyph_rect : impl :: core :: convert :: Into < crate :: unity_engine :: text_core :: glyphrect :: GlyphRect > , scale : impl :: core :: convert :: Into < f32 > , atlas_index : impl :: core :: convert :: Into < i32 > , sprite : impl :: core :: convert :: Into < crate :: unity_engine :: sprite :: Sprite >) -> () { unsafe { let __receiver = < TMP_SpriteGlyph as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TMP_SpriteGlyph_unity2_raw :: ctor_3 (__receiver , :: core :: convert :: Into :: into (index) , :: core :: convert :: Into :: into (metrics) , :: core :: convert :: Into :: into (glyph_rect) , :: core :: convert :: Into :: into (scale) , :: core :: convert :: Into :: into (atlas_index) , :: core :: convert :: Into :: into (sprite) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "tm_pro-tmp_spriteglyph")]
-impl<__T: ITMP_SpriteGlyph> ITMP_SpriteGlyphMethods for __T {}
+impl < __T : ITMP_SpriteGlyph > ITMP_SpriteGlyphMethods for __T { }
+
+#[cfg(feature = "tm_pro-tmp_spriteglyph")]
+impl TMP_SpriteGlyph { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TMP_SpriteGlyph_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TMP_SpriteGlyph_unity2_raw :: __lookup_ctor_2 :: get_method_info () } pub fn ctor_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TMP_SpriteGlyph_unity2_raw :: __lookup_ctor_3 :: get_method_info () } }
 
 #[cfg(feature = "tm_pro-tmp_spriteglyph")]
 impl TMP_SpriteGlyph {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TMP_SpriteGlyph),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITMP_SpriteGlyphMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TMP_SpriteGlyph) , :: core :: stringify ! (new) ,)) ; < Self as ITMP_SpriteGlyphMethods > :: ctor (this ,) ; this }
 
-    #[doc = "`.ctor(u32, crate::unity_engine::text_core::glyphmetrics::GlyphMetrics, crate::unity_engine::text_core::glyphrect::GlyphRect, f32, i32)` — overload selector"]
-    pub fn new_2(
-        index: u32,
-        metrics: crate::unity_engine::text_core::glyphmetrics::GlyphMetrics,
-        glyph_rect: crate::unity_engine::text_core::glyphrect::GlyphRect,
-        scale: f32,
-        atlas_index: i32,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TMP_SpriteGlyph),
-                ::core::stringify!(new_2),
-            )
-        });
-        <Self as ITMP_SpriteGlyphMethods>::ctor_2(this, index, metrics, glyph_rect, scale, atlas_index);
-        this
-    }
+# [doc = "`.ctor(u32, crate::unity_engine::text_core::glyphmetrics::GlyphMetrics, crate::unity_engine::text_core::glyphrect::GlyphRect, f32, i32)` — overload selector"] pub fn new_2 (index : u32 , metrics : crate :: unity_engine :: text_core :: glyphmetrics :: GlyphMetrics , glyph_rect : crate :: unity_engine :: text_core :: glyphrect :: GlyphRect , scale : f32 , atlas_index : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TMP_SpriteGlyph) , :: core :: stringify ! (new_2) ,)) ; < Self as ITMP_SpriteGlyphMethods > :: ctor_2 (this , index , metrics , glyph_rect , scale , atlas_index) ; this }
 
-    #[doc = "`.ctor(u32, crate::unity_engine::text_core::glyphmetrics::GlyphMetrics, crate::unity_engine::text_core::glyphrect::GlyphRect, f32, i32, crate::unity_engine::sprite::Sprite)` — overload selector"]
-    pub fn new_3(
-        index: u32,
-        metrics: crate::unity_engine::text_core::glyphmetrics::GlyphMetrics,
-        glyph_rect: crate::unity_engine::text_core::glyphrect::GlyphRect,
-        scale: f32,
-        atlas_index: i32,
-        sprite: crate::unity_engine::sprite::Sprite,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TMP_SpriteGlyph),
-                ::core::stringify!(new_3),
-            )
-        });
-        <Self as ITMP_SpriteGlyphMethods>::ctor_3(this, index, metrics, glyph_rect, scale, atlas_index, sprite);
-        this
-    }
+# [doc = "`.ctor(u32, crate::unity_engine::text_core::glyphmetrics::GlyphMetrics, crate::unity_engine::text_core::glyphrect::GlyphRect, f32, i32, crate::unity_engine::sprite::Sprite)` — overload selector"] pub fn new_3 (index : u32 , metrics : crate :: unity_engine :: text_core :: glyphmetrics :: GlyphMetrics , glyph_rect : crate :: unity_engine :: text_core :: glyphrect :: GlyphRect , scale : f32 , atlas_index : i32 , sprite : crate :: unity_engine :: sprite :: Sprite) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TMP_SpriteGlyph) , :: core :: stringify ! (new_3) ,)) ; < Self as ITMP_SpriteGlyphMethods > :: ctor_3 (this , index , metrics , glyph_rect , scale , atlas_index , sprite) ; this }
 }
 
 #[cfg(feature = "tm_pro-tmp_spriteglyph")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{ITMP_SpriteGlyph, ITMP_SpriteGlyphMethods, TMP_SpriteGlyph};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-text_core-glyph")]
-    pub use crate::unity_engine::text_core::glyph::IGlyphMethods;
-    pub use crate::{system::object::IObject, unity_engine::text_core::glyph::IGlyph};
+    pub use super::TMP_SpriteGlyph;
+    pub use super::ITMP_SpriteGlyph;
+    pub use super::ITMP_SpriteGlyphMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::text_core::glyph::IGlyph;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-text_core-glyph")] pub use crate::unity_engine::text_core::glyph::IGlyphMethods;
 }

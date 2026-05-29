@@ -2,354 +2,50 @@
 
 #[cfg(feature = "root-mapsequenceresume-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::procinst::{IProcInst, ProcInst},
-        system::object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/mapsequenceresume/MapSequenceResume.md"))]
-    #[::unity2::class(namespace = "", name = "MapSequenceResume")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct MapSequenceResume {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: procinst :: { IProcInst , ProcInst }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/mapsequenceresume/MapSequenceResume.md"))] # [:: unity2 :: class (namespace = "" , name = "MapSequenceResume")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct MapSequenceResume {}
+
 }
 
 #[cfg(feature = "root-mapsequenceresume-types")]
 pub use __types::*;
 
 #[cfg(feature = "root-mapsequenceresume")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapSequenceResume_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_route {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceResume as ::unity2::ClassIdentity>::class(),
-                "CreateRoute",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceResume as ::unity2::ClassIdentity>::NAME,
-                        "CreateRoute",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_route(unit: crate::app::unit::Unit, goal_x: i32, goal_z: i32, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(crate::app::unit::Unit, i32, i32, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_create_route::get_method_info().method_ptr);
-        inner(unit, goal_x, goal_z, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_move_unit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceResume as ::unity2::ClassIdentity>::class(),
-                "MoveUnit",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceResume as ::unity2::ClassIdentity>::NAME,
-                        "MoveUnit",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn move_unit(this: MapSequenceResume, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapSequenceResume, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_move_unit::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_wait_moving_unit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceResume as ::unity2::ClassIdentity>::class(),
-                "WaitMovingUnit",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceResume as ::unity2::ClassIdentity>::NAME,
-                        "WaitMovingUnit",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn wait_moving_unit(this: MapSequenceResume, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapSequenceResume, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_wait_moving_unit::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_post_move_unit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceResume as ::unity2::ClassIdentity>::class(),
-                "PostMoveUnit",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceResume as ::unity2::ClassIdentity>::NAME,
-                        "PostMoveUnit",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn post_move_unit(this: MapSequenceResume, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapSequenceResume, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_post_move_unit::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_resume_branch {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceResume as ::unity2::ClassIdentity>::class(),
-                "ResumeBranch",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceResume as ::unity2::ClassIdentity>::NAME,
-                        "ResumeBranch",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn resume_branch(this: MapSequenceResume, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapSequenceResume, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_resume_branch::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceResume as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceResume as ::unity2::ClassIdentity>::NAME,
-                        "CreateBind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_bind(super_: crate::app::procinst::ProcInst, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
-        inner(super_, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceResume as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceResume as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: MapSequenceResume, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapSequenceResume, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MapSequenceResume_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_route { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceResume as :: unity2 :: ClassIdentity > :: class () , "CreateRoute" , 3 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceResume as :: unity2 :: ClassIdentity > :: NAME , "CreateRoute" , e) , } } } pub unsafe fn create_route (unit : crate :: app :: unit :: Unit , goal_x : i32 , goal_z : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (crate :: app :: unit :: Unit , i32 , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_create_route :: get_method_info () . method_ptr ,) ; inner (unit , goal_x , goal_z , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_move_unit { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceResume as :: unity2 :: ClassIdentity > :: class () , "MoveUnit" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceResume as :: unity2 :: ClassIdentity > :: NAME , "MoveUnit" , e) , } } } pub unsafe fn move_unit (this : MapSequenceResume , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapSequenceResume , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_move_unit :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_wait_moving_unit { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceResume as :: unity2 :: ClassIdentity > :: class () , "WaitMovingUnit" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceResume as :: unity2 :: ClassIdentity > :: NAME , "WaitMovingUnit" , e) , } } } pub unsafe fn wait_moving_unit (this : MapSequenceResume , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapSequenceResume , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_wait_moving_unit :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_post_move_unit { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceResume as :: unity2 :: ClassIdentity > :: class () , "PostMoveUnit" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceResume as :: unity2 :: ClassIdentity > :: NAME , "PostMoveUnit" , e) , } } } pub unsafe fn post_move_unit (this : MapSequenceResume , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapSequenceResume , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_post_move_unit :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_resume_branch { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceResume as :: unity2 :: ClassIdentity > :: class () , "ResumeBranch" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceResume as :: unity2 :: ClassIdentity > :: NAME , "ResumeBranch" , e) , } } } pub unsafe fn resume_branch (this : MapSequenceResume , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapSequenceResume , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_resume_branch :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_bind { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceResume as :: unity2 :: ClassIdentity > :: class () , "CreateBind" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceResume as :: unity2 :: ClassIdentity > :: NAME , "CreateBind" , e) , } } } pub unsafe fn create_bind (super_ : crate :: app :: procinst :: ProcInst , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create_bind :: get_method_info () . method_ptr ,) ; inner (super_ , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceResume as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceResume as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : MapSequenceResume , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapSequenceResume , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "root-mapsequenceresume")]
+impl MapSequenceResume { # [doc = "`CreateRoute(crate::app::unit::Unit, i32, i32)` overload"] pub fn create_route (unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , goal_x : impl :: core :: convert :: Into < i32 > , goal_z : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { __MapSequenceResume_unity2_raw :: create_route (:: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (goal_x) , :: core :: convert :: Into :: into (goal_z) , :: core :: option :: Option :: None) } } # [doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { __MapSequenceResume_unity2_raw :: create_bind (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "root-mapsequenceresume")]
+pub trait IMapSequenceResumeMethods : IMapSequenceResume { # [doc = "`MoveUnit()` overload"] fn move_unit (self ,) -> () { unsafe { let __receiver = < MapSequenceResume as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceResume_unity2_raw :: move_unit (__receiver , :: core :: option :: Option :: None) } } # [doc = "`WaitMovingUnit()` overload"] fn wait_moving_unit (self ,) -> () { unsafe { let __receiver = < MapSequenceResume as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceResume_unity2_raw :: wait_moving_unit (__receiver , :: core :: option :: Option :: None) } } # [doc = "`PostMoveUnit()` overload"] fn post_move_unit (self ,) -> () { unsafe { let __receiver = < MapSequenceResume as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceResume_unity2_raw :: post_move_unit (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ResumeBranch()` overload"] fn resume_branch (self ,) -> () { unsafe { let __receiver = < MapSequenceResume as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceResume_unity2_raw :: resume_branch (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapSequenceResume as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceResume_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "root-mapsequenceresume")]
+impl < __T : IMapSequenceResume > IMapSequenceResumeMethods for __T { }
+
+#[cfg(feature = "root-mapsequenceresume")]
+impl MapSequenceResume { pub fn create_route_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceResume_unity2_raw :: __lookup_create_route :: get_method_info () } pub fn move_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceResume_unity2_raw :: __lookup_move_unit :: get_method_info () } pub fn wait_moving_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceResume_unity2_raw :: __lookup_wait_moving_unit :: get_method_info () } pub fn post_move_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceResume_unity2_raw :: __lookup_post_move_unit :: get_method_info () } pub fn resume_branch_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceResume_unity2_raw :: __lookup_resume_branch :: get_method_info () } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceResume_unity2_raw :: __lookup_create_bind :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceResume_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "root-mapsequenceresume")]
 impl MapSequenceResume {
-    #[doc = "`CreateRoute(crate::app::unit::Unit, i32, i32)` overload"]
-    pub fn create_route(
-        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-        goal_x: impl ::core::convert::Into<i32>,
-        goal_z: impl ::core::convert::Into<i32>,
-    ) -> bool {
-        unsafe {
-            __MapSequenceResume_unity2_raw::create_route(
-                ::core::convert::Into::into(unit),
-                ::core::convert::Into::into(goal_x),
-                ::core::convert::Into::into(goal_z),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
-    pub fn create_bind(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
-        unsafe { __MapSequenceResume_unity2_raw::create_bind(::core::convert::Into::into(super_), ::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "root-mapsequenceresume")]
-pub trait IMapSequenceResumeMethods: IMapSequenceResume {
-    #[doc = "`MoveUnit()` overload"]
-    fn move_unit(self) -> () {
-        unsafe {
-            let __receiver = <MapSequenceResume as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSequenceResume_unity2_raw::move_unit(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`WaitMovingUnit()` overload"]
-    fn wait_moving_unit(self) -> () {
-        unsafe {
-            let __receiver = <MapSequenceResume as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSequenceResume_unity2_raw::wait_moving_unit(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`PostMoveUnit()` overload"]
-    fn post_move_unit(self) -> () {
-        unsafe {
-            let __receiver = <MapSequenceResume as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSequenceResume_unity2_raw::post_move_unit(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ResumeBranch()` overload"]
-    fn resume_branch(self) -> () {
-        unsafe {
-            let __receiver = <MapSequenceResume as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSequenceResume_unity2_raw::resume_branch(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <MapSequenceResume as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSequenceResume_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "root-mapsequenceresume")]
-impl<__T: IMapSequenceResume> IMapSequenceResumeMethods for __T {}
-
-#[cfg(feature = "root-mapsequenceresume")]
-impl MapSequenceResume {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapSequenceResume),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapSequenceResumeMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapSequenceResume) , :: core :: stringify ! (new) ,)) ; < Self as IMapSequenceResumeMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "root-mapsequenceresume")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IMapSequenceResume, IMapSequenceResumeMethods, MapSequenceResume};
-    #[cfg(feature = "app-procinst")]
-    pub use crate::app::procinst::IProcInstMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::{app::procinst::IProcInst, system::object::IObject};
+    pub use super::MapSequenceResume;
+    pub use super::IMapSequenceResume;
+    pub use super::IMapSequenceResumeMethods;
+    pub use crate::app::procinst::IProcInst;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "app-procinst")] pub use crate::app::procinst::IProcInstMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

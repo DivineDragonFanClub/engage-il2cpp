@@ -2,158 +2,34 @@
 
 #[cfg(feature = "combat-combatstylefuncs-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/combatstylefuncs/CombatStyleFuncs.md"))]
-    #[::unity2::class(namespace = "Combat", name = "CombatStyleFuncs")]
-    #[parent(crate::system::object::Object)]
-    pub struct CombatStyleFuncs {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/combatstylefuncs/CombatStyleFuncs.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "CombatStyleFuncs")] # [parent (crate :: system :: object :: Object)] pub struct CombatStyleFuncs {}
+
 }
 
 #[cfg(feature = "combat-combatstylefuncs-types")]
 pub use __types::*;
 
 #[cfg(feature = "combat-combatstylefuncs")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __CombatStyleFuncs_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_make_style1st {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::combat::combatrecord::CombatRecord as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CombatStyleFuncs as ::unity2::ClassIdentity>::class(),
-                "MakeStyle1st",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CombatStyleFuncs as ::unity2::ClassIdentity>::NAME,
-                        "MakeStyle1st",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn make_style1st(
-        record: crate::combat::combatrecord::CombatRecord,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::combat::combatstyle::CombatStyle {
-        let inner: extern "C" fn(crate::combat::combatrecord::CombatRecord, ::unity2::OptionalMethod) -> crate::combat::combatstyle::CombatStyle =
-            ::core::mem::transmute(__lookup_make_style1st::get_method_info().method_ptr);
-        inner(record, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_make_style2nd {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::combat::combatrecord::CombatRecord as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CombatStyleFuncs as ::unity2::ClassIdentity>::class(),
-                "MakeStyle2nd",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CombatStyleFuncs as ::unity2::ClassIdentity>::NAME,
-                        "MakeStyle2nd",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn make_style2nd(
-        record: crate::combat::combatrecord::CombatRecord,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::combat::combatstyle::CombatStyle {
-        let inner: extern "C" fn(crate::combat::combatrecord::CombatRecord, ::unity2::OptionalMethod) -> crate::combat::combatstyle::CombatStyle =
-            ::core::mem::transmute(__lookup_make_style2nd::get_method_info().method_ptr);
-        inner(record, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_shoot_style {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::combat::combatrecord::CombatRecord as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CombatStyleFuncs as ::unity2::ClassIdentity>::class(),
-                "GetShootStyle",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CombatStyleFuncs as ::unity2::ClassIdentity>::NAME,
-                        "GetShootStyle",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_shoot_style(
-        record: crate::combat::combatrecord::CombatRecord,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::combat::combatstyle::CombatStyle {
-        let inner: extern "C" fn(crate::combat::combatrecord::CombatRecord, ::unity2::OptionalMethod) -> crate::combat::combatstyle::CombatStyle =
-            ::core::mem::transmute(__lookup_get_shoot_style::get_method_info().method_ptr);
-        inner(record, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __CombatStyleFuncs_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_make_style1st { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: combatrecord :: CombatRecord as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CombatStyleFuncs as :: unity2 :: ClassIdentity > :: class () , "MakeStyle1st" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CombatStyleFuncs as :: unity2 :: ClassIdentity > :: NAME , "MakeStyle1st" , e) , } } } pub unsafe fn make_style1st (record : crate :: combat :: combatrecord :: CombatRecord , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: combat :: combatstyle :: CombatStyle { let inner : extern "C" fn (crate :: combat :: combatrecord :: CombatRecord , :: unity2 :: OptionalMethod ,) -> crate :: combat :: combatstyle :: CombatStyle = :: core :: mem :: transmute (__lookup_make_style1st :: get_method_info () . method_ptr ,) ; inner (record , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_make_style2nd { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: combatrecord :: CombatRecord as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CombatStyleFuncs as :: unity2 :: ClassIdentity > :: class () , "MakeStyle2nd" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CombatStyleFuncs as :: unity2 :: ClassIdentity > :: NAME , "MakeStyle2nd" , e) , } } } pub unsafe fn make_style2nd (record : crate :: combat :: combatrecord :: CombatRecord , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: combat :: combatstyle :: CombatStyle { let inner : extern "C" fn (crate :: combat :: combatrecord :: CombatRecord , :: unity2 :: OptionalMethod ,) -> crate :: combat :: combatstyle :: CombatStyle = :: core :: mem :: transmute (__lookup_make_style2nd :: get_method_info () . method_ptr ,) ; inner (record , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_shoot_style { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: combatrecord :: CombatRecord as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CombatStyleFuncs as :: unity2 :: ClassIdentity > :: class () , "GetShootStyle" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CombatStyleFuncs as :: unity2 :: ClassIdentity > :: NAME , "GetShootStyle" , e) , } } } pub unsafe fn get_shoot_style (record : crate :: combat :: combatrecord :: CombatRecord , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: combat :: combatstyle :: CombatStyle { let inner : extern "C" fn (crate :: combat :: combatrecord :: CombatRecord , :: unity2 :: OptionalMethod ,) -> crate :: combat :: combatstyle :: CombatStyle = :: core :: mem :: transmute (__lookup_get_shoot_style :: get_method_info () . method_ptr ,) ; inner (record , __unity2_method_info) } }
 
 #[cfg(feature = "combat-combatstylefuncs")]
-impl CombatStyleFuncs {
-    #[doc = "`MakeStyle1st(crate::combat::combatrecord::CombatRecord)` overload"]
-    pub fn make_style1st(record: impl ::core::convert::Into<crate::combat::combatrecord::CombatRecord>) -> crate::combat::combatstyle::CombatStyle {
-        unsafe { __CombatStyleFuncs_unity2_raw::make_style1st(::core::convert::Into::into(record), ::core::option::Option::None) }
-    }
+impl CombatStyleFuncs { # [doc = "`MakeStyle1st(crate::combat::combatrecord::CombatRecord)` overload"] pub fn make_style1st (record : impl :: core :: convert :: Into < crate :: combat :: combatrecord :: CombatRecord >) -> crate :: combat :: combatstyle :: CombatStyle { unsafe { __CombatStyleFuncs_unity2_raw :: make_style1st (:: core :: convert :: Into :: into (record) , :: core :: option :: Option :: None) } } # [doc = "`MakeStyle2nd(crate::combat::combatrecord::CombatRecord)` overload"] pub fn make_style2nd (record : impl :: core :: convert :: Into < crate :: combat :: combatrecord :: CombatRecord >) -> crate :: combat :: combatstyle :: CombatStyle { unsafe { __CombatStyleFuncs_unity2_raw :: make_style2nd (:: core :: convert :: Into :: into (record) , :: core :: option :: Option :: None) } } # [doc = "`GetShootStyle(crate::combat::combatrecord::CombatRecord)` overload"] pub fn get_shoot_style (record : impl :: core :: convert :: Into < crate :: combat :: combatrecord :: CombatRecord >) -> crate :: combat :: combatstyle :: CombatStyle { unsafe { __CombatStyleFuncs_unity2_raw :: get_shoot_style (:: core :: convert :: Into :: into (record) , :: core :: option :: Option :: None) } } }
 
-    #[doc = "`MakeStyle2nd(crate::combat::combatrecord::CombatRecord)` overload"]
-    pub fn make_style2nd(record: impl ::core::convert::Into<crate::combat::combatrecord::CombatRecord>) -> crate::combat::combatstyle::CombatStyle {
-        unsafe { __CombatStyleFuncs_unity2_raw::make_style2nd(::core::convert::Into::into(record), ::core::option::Option::None) }
-    }
-
-    #[doc = "`GetShootStyle(crate::combat::combatrecord::CombatRecord)` overload"]
-    pub fn get_shoot_style(record: impl ::core::convert::Into<crate::combat::combatrecord::CombatRecord>) -> crate::combat::combatstyle::CombatStyle {
-        unsafe { __CombatStyleFuncs_unity2_raw::get_shoot_style(::core::convert::Into::into(record), ::core::option::Option::None) }
-    }
-}
+#[cfg(feature = "combat-combatstylefuncs")]
+impl CombatStyleFuncs { pub fn make_style1st_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CombatStyleFuncs_unity2_raw :: __lookup_make_style1st :: get_method_info () } pub fn make_style2nd_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CombatStyleFuncs_unity2_raw :: __lookup_make_style2nd :: get_method_info () } pub fn get_shoot_style_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CombatStyleFuncs_unity2_raw :: __lookup_get_shoot_style :: get_method_info () } }
 
 #[cfg(feature = "combat-combatstylefuncs")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{CombatStyleFuncs, ICombatStyleFuncs};
+    pub use super::CombatStyleFuncs;
+    pub use super::ICombatStyleFuncs;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

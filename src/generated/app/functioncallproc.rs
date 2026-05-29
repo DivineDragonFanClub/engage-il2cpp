@@ -2,212 +2,52 @@
 
 #[cfg(feature = "app-functioncallproc-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::procinst::{IProcInst, ProcInst},
-        system::object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/functioncallproc/FunctionCallProc.md"))]
-    #[::unity2::class(namespace = "App", name = "FunctionCallProc")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct FunctionCallProc {
-        #[offset(112)]
-        #[rename(name = "m_Callback")]
-        pub m_callback: crate::app::procvoidmethod::ProcVoidMethod,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: procinst :: { IProcInst , ProcInst }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/functioncallproc/FunctionCallProc.md"))] # [:: unity2 :: class (namespace = "App" , name = "FunctionCallProc")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct FunctionCallProc {
+# [offset (112)] # [rename (name = "m_Callback")] pub m_callback : crate :: app :: procvoidmethod :: ProcVoidMethod ,
+}
+
 }
 
 #[cfg(feature = "app-functioncallproc-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-functioncallproc")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __FunctionCallProc_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <crate::app::procvoidmethod::ProcVoidMethod as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FunctionCallProc as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FunctionCallProc as ::unity2::ClassIdentity>::NAME,
-                        "CreateBind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        callback: crate::app::procvoidmethod::ProcVoidMethod,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::procinst::ProcInst {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            crate::app::procvoidmethod::ProcVoidMethod,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::procinst::ProcInst = ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
-        inner(super_, callback, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_desc {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FunctionCallProc as ::unity2::ClassIdentity>::class(),
-                "CreateDesc",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FunctionCallProc as ::unity2::ClassIdentity>::NAME,
-                        "CreateDesc",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_desc(
-        this: FunctionCallProc,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Array<crate::app::procdesc::ProcDesc> {
-        let inner: extern "C" fn(FunctionCallProc, ::unity2::OptionalMethod) -> ::unity2::Array<crate::app::procdesc::ProcDesc> =
-            ::core::mem::transmute(__lookup_create_desc::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::procvoidmethod::ProcVoidMethod as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FunctionCallProc as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FunctionCallProc as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: FunctionCallProc,
-        callback: crate::app::procvoidmethod::ProcVoidMethod,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(FunctionCallProc, crate::app::procvoidmethod::ProcVoidMethod, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, callback, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __FunctionCallProc_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_bind { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: procvoidmethod :: ProcVoidMethod as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FunctionCallProc as :: unity2 :: ClassIdentity > :: class () , "CreateBind" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FunctionCallProc as :: unity2 :: ClassIdentity > :: NAME , "CreateBind" , e) , } } } pub unsafe fn create_bind (super_ : crate :: app :: procinst :: ProcInst , callback : crate :: app :: procvoidmethod :: ProcVoidMethod , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: procinst :: ProcInst { let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: procvoidmethod :: ProcVoidMethod , :: unity2 :: OptionalMethod ,) -> crate :: app :: procinst :: ProcInst = :: core :: mem :: transmute (__lookup_create_bind :: get_method_info () . method_ptr ,) ; inner (super_ , callback , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_desc { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FunctionCallProc as :: unity2 :: ClassIdentity > :: class () , "CreateDesc" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FunctionCallProc as :: unity2 :: ClassIdentity > :: NAME , "CreateDesc" , e) , } } } pub unsafe fn create_desc (this : FunctionCallProc , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > { let inner : extern "C" fn (FunctionCallProc , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > = :: core :: mem :: transmute (__lookup_create_desc :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procvoidmethod :: ProcVoidMethod as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FunctionCallProc as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FunctionCallProc as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : FunctionCallProc , callback : crate :: app :: procvoidmethod :: ProcVoidMethod , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FunctionCallProc , crate :: app :: procvoidmethod :: ProcVoidMethod , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , callback , __unity2_method_info) } }
+
+#[cfg(feature = "app-functioncallproc")]
+impl FunctionCallProc { # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::procvoidmethod::ProcVoidMethod)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , callback : impl :: core :: convert :: Into < crate :: app :: procvoidmethod :: ProcVoidMethod >) -> crate :: app :: procinst :: ProcInst { unsafe { __FunctionCallProc_unity2_raw :: create_bind (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (callback) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-functioncallproc")]
+pub trait IFunctionCallProcMethods : IFunctionCallProc { # [doc = "`CreateDesc()` overload"] fn create_desc (self ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > { unsafe { let __receiver = < FunctionCallProc as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FunctionCallProc_unity2_raw :: create_desc (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor(crate::app::procvoidmethod::ProcVoidMethod)` overload"] fn ctor (self , callback : impl :: core :: convert :: Into < crate :: app :: procvoidmethod :: ProcVoidMethod >) -> () { unsafe { let __receiver = < FunctionCallProc as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FunctionCallProc_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (callback) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-functioncallproc")]
+impl < __T : IFunctionCallProc > IFunctionCallProcMethods for __T { }
+
+#[cfg(feature = "app-functioncallproc")]
+impl FunctionCallProc { pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FunctionCallProc_unity2_raw :: __lookup_create_bind :: get_method_info () } pub fn create_desc_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FunctionCallProc_unity2_raw :: __lookup_create_desc :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FunctionCallProc_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-functioncallproc")]
 impl FunctionCallProc {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::procvoidmethod::ProcVoidMethod)` overload"]
-    pub fn create_bind(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        callback: impl ::core::convert::Into<crate::app::procvoidmethod::ProcVoidMethod>,
-    ) -> crate::app::procinst::ProcInst {
-        unsafe {
-            __FunctionCallProc_unity2_raw::create_bind(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(callback),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-functioncallproc")]
-pub trait IFunctionCallProcMethods: IFunctionCallProc {
-    #[doc = "`CreateDesc()` overload"]
-    fn create_desc(self) -> ::unity2::Array<crate::app::procdesc::ProcDesc> {
-        unsafe {
-            let __receiver = <FunctionCallProc as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FunctionCallProc_unity2_raw::create_desc(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor(crate::app::procvoidmethod::ProcVoidMethod)` overload"]
-    fn ctor(self, callback: impl ::core::convert::Into<crate::app::procvoidmethod::ProcVoidMethod>) -> () {
-        unsafe {
-            let __receiver = <FunctionCallProc as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FunctionCallProc_unity2_raw::ctor(__receiver, ::core::convert::Into::into(callback), ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-functioncallproc")]
-impl<__T: IFunctionCallProc> IFunctionCallProcMethods for __T {}
-
-#[cfg(feature = "app-functioncallproc")]
-impl FunctionCallProc {
-    #[doc = "`.ctor(crate::app::procvoidmethod::ProcVoidMethod)` — overload selector"]
-    pub fn new(callback: crate::app::procvoidmethod::ProcVoidMethod) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(FunctionCallProc),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IFunctionCallProcMethods>::ctor(this, callback);
-        this
-    }
+# [doc = "`.ctor(crate::app::procvoidmethod::ProcVoidMethod)` — overload selector"] pub fn new (callback : crate :: app :: procvoidmethod :: ProcVoidMethod) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FunctionCallProc) , :: core :: stringify ! (new) ,)) ; < Self as IFunctionCallProcMethods > :: ctor (this , callback) ; this }
 }
 
 #[cfg(feature = "app-functioncallproc")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{FunctionCallProc, IFunctionCallProc, IFunctionCallProcMethods};
-    #[cfg(feature = "app-procinst")]
-    pub use crate::app::procinst::IProcInstMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::{app::procinst::IProcInst, system::object::IObject};
+    pub use super::FunctionCallProc;
+    pub use super::IFunctionCallProc;
+    pub use super::IFunctionCallProcMethods;
+    pub use crate::app::procinst::IProcInst;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "app-procinst")] pub use crate::app::procinst::IProcInstMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

@@ -2,15 +2,15 @@
 
 #[cfg(feature = "system-reflection-emit-signaturehelper-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/emit/signaturehelper/SignatureHelper.md"))]
-    #[::unity2::class(namespace = "System.Reflection.Emit", name = "SignatureHelper")]
-    #[parent(crate::system::object::Object)]
-    pub struct SignatureHelper {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/emit/signaturehelper/SignatureHelper.md"))] # [:: unity2 :: class (namespace = "System.Reflection.Emit" , name = "SignatureHelper")] # [parent (crate :: system :: object :: Object)] pub struct SignatureHelper {}
+
 }
 
 #[cfg(feature = "system-reflection-emit-signaturehelper-types")]
@@ -19,8 +19,8 @@ pub use __types::*;
 #[cfg(feature = "system-reflection-emit-signaturehelper")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{ISignatureHelper, SignatureHelper};
+    pub use super::SignatureHelper;
+    pub use super::ISignatureHelper;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

@@ -2,314 +2,52 @@
 
 #[cfg(feature = "app-debugstream-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::stream_2::{IStream_2, Stream_2},
-        system::object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugstream/DebugStream.md"))]
-    #[::unity2::class(namespace = "App", name = "DebugStream")]
-    #[parent(crate::app::stream_2::Stream_2)]
-    pub struct DebugStream {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: stream_2 :: { IStream_2 , Stream_2 }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugstream/DebugStream.md"))] # [:: unity2 :: class (namespace = "App" , name = "DebugStream")] # [parent (crate :: app :: stream_2 :: Stream_2)] pub struct DebugStream {}
+
 }
 
 #[cfg(feature = "app-debugstream-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-debugstream")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __DebugStream_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<DebugStream as ::unity2::ClassIdentity>::class(), ".ctor", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DebugStream as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: DebugStream, size: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DebugStream, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, size, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<u8> as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<DebugStream as ::unity2::ClassIdentity>::class(), ".ctor", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DebugStream as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor_2(this: DebugStream, buffer: ::unity2::Array<u8>, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DebugStream, ::unity2::Array<u8>, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
-        inner(this, buffer, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_save {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<DebugStream as ::unity2::ClassIdentity>::class(), "Save", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DebugStream as ::unity2::ClassIdentity>::NAME,
-                        "Save",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn save(this: DebugStream, name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DebugStream, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_save::get_method_info().method_ptr);
-        inner(this, name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_load {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<DebugStream as ::unity2::ClassIdentity>::class(), "Load", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DebugStream as ::unity2::ClassIdentity>::NAME,
-                        "Load",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn load(this: DebugStream, name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(DebugStream, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_load::get_method_info().method_ptr);
-        inner(this, name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_write_members {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugStream as ::unity2::ClassIdentity>::class(),
-                "WriteMembers",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DebugStream as ::unity2::ClassIdentity>::NAME,
-                        "WriteMembers",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn write_members(this: DebugStream, obj: crate::system::object::Object, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DebugStream, crate::system::object::Object, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_write_members::get_method_info().method_ptr);
-        inner(this, obj, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_read_members {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugStream as ::unity2::ClassIdentity>::class(),
-                "ReadMembers",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DebugStream as ::unity2::ClassIdentity>::NAME,
-                        "ReadMembers",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn read_members(this: DebugStream, obj: crate::system::object::Object, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DebugStream, crate::system::object::Object, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_read_members::get_method_info().method_ptr);
-        inner(this, obj, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_delete {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<DebugStream as ::unity2::ClassIdentity>::class(), "Delete", 1, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DebugStream as ::unity2::ClassIdentity>::NAME,
-                        "Delete",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn delete(name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_delete::get_method_info().method_ptr);
-        inner(name, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __DebugStream_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DebugStream as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DebugStream as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : DebugStream , size : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DebugStream , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , size , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < u8 > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DebugStream as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DebugStream as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor_2 (this : DebugStream , buffer : :: unity2 :: Array < u8 > , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DebugStream , :: unity2 :: Array < u8 > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor_2 :: get_method_info () . method_ptr ,) ; inner (this , buffer , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_save { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DebugStream as :: unity2 :: ClassIdentity > :: class () , "Save" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DebugStream as :: unity2 :: ClassIdentity > :: NAME , "Save" , e) , } } } pub unsafe fn save (this : DebugStream , name : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DebugStream , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_save :: get_method_info () . method_ptr ,) ; inner (this , name , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_load { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DebugStream as :: unity2 :: ClassIdentity > :: class () , "Load" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DebugStream as :: unity2 :: ClassIdentity > :: NAME , "Load" , e) , } } } pub unsafe fn load (this : DebugStream , name : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (DebugStream , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_load :: get_method_info () . method_ptr ,) ; inner (this , name , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_write_members { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DebugStream as :: unity2 :: ClassIdentity > :: class () , "WriteMembers" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DebugStream as :: unity2 :: ClassIdentity > :: NAME , "WriteMembers" , e) , } } } pub unsafe fn write_members (this : DebugStream , obj : crate :: system :: object :: Object , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DebugStream , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_write_members :: get_method_info () . method_ptr ,) ; inner (this , obj , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_read_members { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DebugStream as :: unity2 :: ClassIdentity > :: class () , "ReadMembers" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DebugStream as :: unity2 :: ClassIdentity > :: NAME , "ReadMembers" , e) , } } } pub unsafe fn read_members (this : DebugStream , obj : crate :: system :: object :: Object , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DebugStream , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_read_members :: get_method_info () . method_ptr ,) ; inner (this , obj , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_delete { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DebugStream as :: unity2 :: ClassIdentity > :: class () , "Delete" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DebugStream as :: unity2 :: ClassIdentity > :: NAME , "Delete" , e) , } } } pub unsafe fn delete (name : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_delete :: get_method_info () . method_ptr ,) ; inner (name , __unity2_method_info) } }
+
+#[cfg(feature = "app-debugstream")]
+impl DebugStream { # [doc = "`Delete(::unity2::Il2CppString)` overload"] pub fn delete (name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { __DebugStream_unity2_raw :: delete (:: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-debugstream")]
+pub trait IDebugStreamMethods : IDebugStream { # [doc = "`.ctor(i32)` overload"] fn ctor (self , size : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < DebugStream as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DebugStream_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (size) , :: core :: option :: Option :: None) } } # [doc = "`.ctor(::unity2::Array<u8>)` overload"] fn ctor_2 (self , buffer : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > >) -> () { unsafe { let __receiver = < DebugStream as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DebugStream_unity2_raw :: ctor_2 (__receiver , :: core :: convert :: Into :: into (buffer) , :: core :: option :: Option :: None) } } # [doc = "`Save(::unity2::Il2CppString)` overload"] fn save (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < DebugStream as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DebugStream_unity2_raw :: save (__receiver , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } # [doc = "`Load(::unity2::Il2CppString)` overload"] fn load (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { let __receiver = < DebugStream as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DebugStream_unity2_raw :: load (__receiver , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } # [doc = "`WriteMembers(crate::system::object::Object)` overload"] fn write_members (self , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> () { unsafe { let __receiver = < DebugStream as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DebugStream_unity2_raw :: write_members (__receiver , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } # [doc = "`ReadMembers(crate::system::object::Object)` overload"] fn read_members (self , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> () { unsafe { let __receiver = < DebugStream as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DebugStream_unity2_raw :: read_members (__receiver , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-debugstream")]
+impl < __T : IDebugStream > IDebugStreamMethods for __T { }
+
+#[cfg(feature = "app-debugstream")]
+impl DebugStream { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DebugStream_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DebugStream_unity2_raw :: __lookup_ctor_2 :: get_method_info () } pub fn save_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DebugStream_unity2_raw :: __lookup_save :: get_method_info () } pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DebugStream_unity2_raw :: __lookup_load :: get_method_info () } pub fn write_members_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DebugStream_unity2_raw :: __lookup_write_members :: get_method_info () } pub fn read_members_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DebugStream_unity2_raw :: __lookup_read_members :: get_method_info () } pub fn delete_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DebugStream_unity2_raw :: __lookup_delete :: get_method_info () } }
 
 #[cfg(feature = "app-debugstream")]
 impl DebugStream {
-    #[doc = "`Delete(::unity2::Il2CppString)` overload"]
-    pub fn delete(name: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe { __DebugStream_unity2_raw::delete(::core::convert::Into::into(name), ::core::option::Option::None) }
-    }
-}
+# [doc = "`.ctor(i32)` — overload selector"] pub fn new (size : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DebugStream) , :: core :: stringify ! (new) ,)) ; < Self as IDebugStreamMethods > :: ctor (this , size) ; this }
 
-#[cfg(feature = "app-debugstream")]
-pub trait IDebugStreamMethods: IDebugStream {
-    #[doc = "`.ctor(i32)` overload"]
-    fn ctor(self, size: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver = <DebugStream as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DebugStream_unity2_raw::ctor(__receiver, ::core::convert::Into::into(size), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor(::unity2::Array<u8>)` overload"]
-    fn ctor_2(self, buffer: impl ::core::convert::Into<::unity2::Array<u8>>) -> () {
-        unsafe {
-            let __receiver = <DebugStream as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DebugStream_unity2_raw::ctor_2(__receiver, ::core::convert::Into::into(buffer), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Save(::unity2::Il2CppString)` overload"]
-    fn save(self, name: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver = <DebugStream as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DebugStream_unity2_raw::save(__receiver, ::core::convert::Into::into(name), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Load(::unity2::Il2CppString)` overload"]
-    fn load(self, name: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
-        unsafe {
-            let __receiver = <DebugStream as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DebugStream_unity2_raw::load(__receiver, ::core::convert::Into::into(name), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`WriteMembers(crate::system::object::Object)` overload"]
-    fn write_members(self, obj: impl ::core::convert::Into<crate::system::object::Object>) -> () {
-        unsafe {
-            let __receiver = <DebugStream as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DebugStream_unity2_raw::write_members(__receiver, ::core::convert::Into::into(obj), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ReadMembers(crate::system::object::Object)` overload"]
-    fn read_members(self, obj: impl ::core::convert::Into<crate::system::object::Object>) -> () {
-        unsafe {
-            let __receiver = <DebugStream as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DebugStream_unity2_raw::read_members(__receiver, ::core::convert::Into::into(obj), ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-debugstream")]
-impl<__T: IDebugStream> IDebugStreamMethods for __T {}
-
-#[cfg(feature = "app-debugstream")]
-impl DebugStream {
-    #[doc = "`.ctor(i32)` — overload selector"]
-    pub fn new(size: i32) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(DebugStream), ::core::stringify!(new),));
-        <Self as IDebugStreamMethods>::ctor(this, size);
-        this
-    }
-
-    #[doc = "`.ctor(::unity2::Array<u8>)` — overload selector"]
-    pub fn new_2(buffer: ::unity2::Array<u8>) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(DebugStream), ::core::stringify!(new_2),));
-        <Self as IDebugStreamMethods>::ctor_2(this, buffer);
-        this
-    }
+# [doc = "`.ctor(::unity2::Array<u8>)` — overload selector"] pub fn new_2 (buffer : :: unity2 :: Array < u8 >) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DebugStream) , :: core :: stringify ! (new_2) ,)) ; < Self as IDebugStreamMethods > :: ctor_2 (this , buffer) ; this }
 }
 
 #[cfg(feature = "app-debugstream")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{DebugStream, IDebugStream, IDebugStreamMethods};
-    #[cfg(feature = "app-stream_2")]
-    pub use crate::app::stream_2::IStream_2Methods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::{app::stream_2::IStream_2, system::object::IObject};
+    pub use super::DebugStream;
+    pub use super::IDebugStream;
+    pub use super::IDebugStreamMethods;
+    pub use crate::app::stream_2::IStream_2;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "app-stream_2")] pub use crate::app::stream_2::IStream_2Methods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

@@ -2,327 +2,46 @@
 
 #[cfg(feature = "moon_sharp-interpreter-core_lib-tableiteratorsmodule-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/core_lib/tableiteratorsmodule/TableIteratorsModule.md"))]
-    #[::unity2::class(namespace = "MoonSharp.Interpreter.CoreLib", name = "TableIteratorsModule")]
-    #[parent(crate::system::object::Object)]
-    pub struct TableIteratorsModule {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/core_lib/tableiteratorsmodule/TableIteratorsModule.md"))] # [:: unity2 :: class (namespace = "MoonSharp.Interpreter.CoreLib" , name = "TableIteratorsModule")] # [parent (crate :: system :: object :: Object)] pub struct TableIteratorsModule {}
+
 }
 
 #[cfg(feature = "moon_sharp-interpreter-core_lib-tableiteratorsmodule-types")]
 pub use __types::*;
 
 #[cfg(feature = "moon_sharp-interpreter-core_lib-tableiteratorsmodule")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __TableIteratorsModule_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ipairs {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext as ::unity2::IlType>::il_type(),
-                <crate::moon_sharp::interpreter::callbackarguments::CallbackArguments as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TableIteratorsModule as ::unity2::ClassIdentity>::class(),
-                "ipairs",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TableIteratorsModule as ::unity2::ClassIdentity>::NAME,
-                        "ipairs",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ipairs(
-        execution_context: crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
-        args: crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
-        let inner: extern "C" fn(
-            crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
-            crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
-            ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(__lookup_ipairs::get_method_info().method_ptr);
-        inner(execution_context, args, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_pairs {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext as ::unity2::IlType>::il_type(),
-                <crate::moon_sharp::interpreter::callbackarguments::CallbackArguments as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TableIteratorsModule as ::unity2::ClassIdentity>::class(),
-                "pairs",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TableIteratorsModule as ::unity2::ClassIdentity>::NAME,
-                        "pairs",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn pairs(
-        execution_context: crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
-        args: crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
-        let inner: extern "C" fn(
-            crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
-            crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
-            ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(__lookup_pairs::get_method_info().method_ptr);
-        inner(execution_context, args, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_next {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext as ::unity2::IlType>::il_type(),
-                <crate::moon_sharp::interpreter::callbackarguments::CallbackArguments as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TableIteratorsModule as ::unity2::ClassIdentity>::class(),
-                "next",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TableIteratorsModule as ::unity2::ClassIdentity>::NAME,
-                        "next",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn next(
-        execution_context: crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
-        args: crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
-        let inner: extern "C" fn(
-            crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
-            crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
-            ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(__lookup_next::get_method_info().method_ptr);
-        inner(execution_context, args, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_next_i {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext as ::unity2::IlType>::il_type(),
-                <crate::moon_sharp::interpreter::callbackarguments::CallbackArguments as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TableIteratorsModule as ::unity2::ClassIdentity>::class(),
-                "__next_i",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TableIteratorsModule as ::unity2::ClassIdentity>::NAME,
-                        "__next_i",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn next_i(
-        execution_context: crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
-        args: crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
-        let inner: extern "C" fn(
-            crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
-            crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
-            ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(__lookup_next_i::get_method_info().method_ptr);
-        inner(execution_context, args, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TableIteratorsModule as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TableIteratorsModule as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: TableIteratorsModule, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TableIteratorsModule, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __TableIteratorsModule_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ipairs { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: callbackarguments :: CallbackArguments as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TableIteratorsModule as :: unity2 :: ClassIdentity > :: class () , "ipairs" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TableIteratorsModule as :: unity2 :: ClassIdentity > :: NAME , "ipairs" , e) , } } } pub unsafe fn ipairs (execution_context : crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext , args : crate :: moon_sharp :: interpreter :: callbackarguments :: CallbackArguments , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue { let inner : extern "C" fn (crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext , crate :: moon_sharp :: interpreter :: callbackarguments :: CallbackArguments , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue = :: core :: mem :: transmute (__lookup_ipairs :: get_method_info () . method_ptr ,) ; inner (execution_context , args , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_pairs { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: callbackarguments :: CallbackArguments as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TableIteratorsModule as :: unity2 :: ClassIdentity > :: class () , "pairs" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TableIteratorsModule as :: unity2 :: ClassIdentity > :: NAME , "pairs" , e) , } } } pub unsafe fn pairs (execution_context : crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext , args : crate :: moon_sharp :: interpreter :: callbackarguments :: CallbackArguments , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue { let inner : extern "C" fn (crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext , crate :: moon_sharp :: interpreter :: callbackarguments :: CallbackArguments , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue = :: core :: mem :: transmute (__lookup_pairs :: get_method_info () . method_ptr ,) ; inner (execution_context , args , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_next { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: callbackarguments :: CallbackArguments as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TableIteratorsModule as :: unity2 :: ClassIdentity > :: class () , "next" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TableIteratorsModule as :: unity2 :: ClassIdentity > :: NAME , "next" , e) , } } } pub unsafe fn next (execution_context : crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext , args : crate :: moon_sharp :: interpreter :: callbackarguments :: CallbackArguments , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue { let inner : extern "C" fn (crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext , crate :: moon_sharp :: interpreter :: callbackarguments :: CallbackArguments , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue = :: core :: mem :: transmute (__lookup_next :: get_method_info () . method_ptr ,) ; inner (execution_context , args , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_next_i { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: callbackarguments :: CallbackArguments as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TableIteratorsModule as :: unity2 :: ClassIdentity > :: class () , "__next_i" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TableIteratorsModule as :: unity2 :: ClassIdentity > :: NAME , "__next_i" , e) , } } } pub unsafe fn next_i (execution_context : crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext , args : crate :: moon_sharp :: interpreter :: callbackarguments :: CallbackArguments , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue { let inner : extern "C" fn (crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext , crate :: moon_sharp :: interpreter :: callbackarguments :: CallbackArguments , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue = :: core :: mem :: transmute (__lookup_next_i :: get_method_info () . method_ptr ,) ; inner (execution_context , args , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TableIteratorsModule as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TableIteratorsModule as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : TableIteratorsModule , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TableIteratorsModule , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "moon_sharp-interpreter-core_lib-tableiteratorsmodule")]
+impl TableIteratorsModule { # [doc = "`ipairs(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext, crate::moon_sharp::interpreter::callbackarguments::CallbackArguments)` overload"] pub fn ipairs (execution_context : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext > , args : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: callbackarguments :: CallbackArguments >) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue { unsafe { __TableIteratorsModule_unity2_raw :: ipairs (:: core :: convert :: Into :: into (execution_context) , :: core :: convert :: Into :: into (args) , :: core :: option :: Option :: None) } } # [doc = "`pairs(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext, crate::moon_sharp::interpreter::callbackarguments::CallbackArguments)` overload"] pub fn pairs (execution_context : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext > , args : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: callbackarguments :: CallbackArguments >) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue { unsafe { __TableIteratorsModule_unity2_raw :: pairs (:: core :: convert :: Into :: into (execution_context) , :: core :: convert :: Into :: into (args) , :: core :: option :: Option :: None) } } # [doc = "`next(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext, crate::moon_sharp::interpreter::callbackarguments::CallbackArguments)` overload"] pub fn next (execution_context : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext > , args : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: callbackarguments :: CallbackArguments >) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue { unsafe { __TableIteratorsModule_unity2_raw :: next (:: core :: convert :: Into :: into (execution_context) , :: core :: convert :: Into :: into (args) , :: core :: option :: Option :: None) } } # [doc = "`__next_i(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext, crate::moon_sharp::interpreter::callbackarguments::CallbackArguments)` overload"] pub fn next_i (execution_context : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext > , args : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: callbackarguments :: CallbackArguments >) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue { unsafe { __TableIteratorsModule_unity2_raw :: next_i (:: core :: convert :: Into :: into (execution_context) , :: core :: convert :: Into :: into (args) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "moon_sharp-interpreter-core_lib-tableiteratorsmodule")]
+pub trait ITableIteratorsModuleMethods : ITableIteratorsModule { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TableIteratorsModule as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TableIteratorsModule_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "moon_sharp-interpreter-core_lib-tableiteratorsmodule")]
+impl < __T : ITableIteratorsModule > ITableIteratorsModuleMethods for __T { }
+
+#[cfg(feature = "moon_sharp-interpreter-core_lib-tableiteratorsmodule")]
+impl TableIteratorsModule { pub fn ipairs_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TableIteratorsModule_unity2_raw :: __lookup_ipairs :: get_method_info () } pub fn pairs_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TableIteratorsModule_unity2_raw :: __lookup_pairs :: get_method_info () } pub fn next_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TableIteratorsModule_unity2_raw :: __lookup_next :: get_method_info () } pub fn next_i_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TableIteratorsModule_unity2_raw :: __lookup_next_i :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TableIteratorsModule_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "moon_sharp-interpreter-core_lib-tableiteratorsmodule")]
 impl TableIteratorsModule {
-    #[doc = "`ipairs(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext, crate::moon_sharp::interpreter::callbackarguments::CallbackArguments)` overload"]
-    pub fn ipairs(
-        execution_context: impl ::core::convert::Into<crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext>,
-        args: impl ::core::convert::Into<crate::moon_sharp::interpreter::callbackarguments::CallbackArguments>,
-    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
-        unsafe {
-            __TableIteratorsModule_unity2_raw::ipairs(
-                ::core::convert::Into::into(execution_context),
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`pairs(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext, crate::moon_sharp::interpreter::callbackarguments::CallbackArguments)` overload"]
-    pub fn pairs(
-        execution_context: impl ::core::convert::Into<crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext>,
-        args: impl ::core::convert::Into<crate::moon_sharp::interpreter::callbackarguments::CallbackArguments>,
-    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
-        unsafe {
-            __TableIteratorsModule_unity2_raw::pairs(
-                ::core::convert::Into::into(execution_context),
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`next(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext, crate::moon_sharp::interpreter::callbackarguments::CallbackArguments)` overload"]
-    pub fn next(
-        execution_context: impl ::core::convert::Into<crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext>,
-        args: impl ::core::convert::Into<crate::moon_sharp::interpreter::callbackarguments::CallbackArguments>,
-    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
-        unsafe {
-            __TableIteratorsModule_unity2_raw::next(
-                ::core::convert::Into::into(execution_context),
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`__next_i(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext, crate::moon_sharp::interpreter::callbackarguments::CallbackArguments)` overload"]
-    pub fn next_i(
-        execution_context: impl ::core::convert::Into<crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext>,
-        args: impl ::core::convert::Into<crate::moon_sharp::interpreter::callbackarguments::CallbackArguments>,
-    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
-        unsafe {
-            __TableIteratorsModule_unity2_raw::next_i(
-                ::core::convert::Into::into(execution_context),
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "moon_sharp-interpreter-core_lib-tableiteratorsmodule")]
-pub trait ITableIteratorsModuleMethods: ITableIteratorsModule {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <TableIteratorsModule as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TableIteratorsModule_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "moon_sharp-interpreter-core_lib-tableiteratorsmodule")]
-impl<__T: ITableIteratorsModule> ITableIteratorsModuleMethods for __T {}
-
-#[cfg(feature = "moon_sharp-interpreter-core_lib-tableiteratorsmodule")]
-impl TableIteratorsModule {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TableIteratorsModule),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITableIteratorsModuleMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TableIteratorsModule) , :: core :: stringify ! (new) ,)) ; < Self as ITableIteratorsModuleMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "moon_sharp-interpreter-core_lib-tableiteratorsmodule")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{ITableIteratorsModule, ITableIteratorsModuleMethods, TableIteratorsModule};
+    pub use super::TableIteratorsModule;
+    pub use super::ITableIteratorsModule;
+    pub use super::ITableIteratorsModuleMethods;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

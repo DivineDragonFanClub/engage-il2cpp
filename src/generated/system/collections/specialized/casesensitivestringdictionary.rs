@@ -2,155 +2,47 @@
 
 #[cfg(feature = "system-collections-specialized-casesensitivestringdictionary-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        collections::specialized::stringdictionary::{IStringDictionary, StringDictionary},
-        object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/specialized/casesensitivestringdictionary/CaseSensitiveStringDictionary.md"))]
-    #[::unity2::class(namespace = "System.Collections.Specialized", name = "CaseSensitiveStringDictionary")]
-    #[parent(crate::system::collections::specialized::stringdictionary::StringDictionary)]
-    pub struct CaseSensitiveStringDictionary {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: collections :: specialized :: stringdictionary :: { IStringDictionary , StringDictionary }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/specialized/casesensitivestringdictionary/CaseSensitiveStringDictionary.md"))] # [:: unity2 :: class (namespace = "System.Collections.Specialized" , name = "CaseSensitiveStringDictionary")] # [parent (crate :: system :: collections :: specialized :: stringdictionary :: StringDictionary)] pub struct CaseSensitiveStringDictionary {}
+
 }
 
 #[cfg(feature = "system-collections-specialized-casesensitivestringdictionary-types")]
 pub use __types::*;
 
 #[cfg(feature = "system-collections-specialized-casesensitivestringdictionary")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __CaseSensitiveStringDictionary_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CaseSensitiveStringDictionary as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CaseSensitiveStringDictionary as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: CaseSensitiveStringDictionary, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CaseSensitiveStringDictionary, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CaseSensitiveStringDictionary as ::unity2::ClassIdentity>::class(),
-                "Add",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CaseSensitiveStringDictionary as ::unity2::ClassIdentity>::NAME,
-                        "Add",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add(
-        this: CaseSensitiveStringDictionary,
-        key: ::unity2::Il2CppString,
-        value: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(CaseSensitiveStringDictionary, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add::get_method_info().method_ptr);
-        inner(this, key, value, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __CaseSensitiveStringDictionary_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CaseSensitiveStringDictionary as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CaseSensitiveStringDictionary as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : CaseSensitiveStringDictionary , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CaseSensitiveStringDictionary , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CaseSensitiveStringDictionary as :: unity2 :: ClassIdentity > :: class () , "Add" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CaseSensitiveStringDictionary as :: unity2 :: ClassIdentity > :: NAME , "Add" , e) , } } } pub unsafe fn add (this : CaseSensitiveStringDictionary , key : :: unity2 :: Il2CppString , value : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CaseSensitiveStringDictionary , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add :: get_method_info () . method_ptr ,) ; inner (this , key , value , __unity2_method_info) } }
 
 #[cfg(feature = "system-collections-specialized-casesensitivestringdictionary")]
-pub trait ICaseSensitiveStringDictionaryMethods: ICaseSensitiveStringDictionary {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <CaseSensitiveStringDictionary as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CaseSensitiveStringDictionary_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Add(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
-    fn add(self, key: impl ::core::convert::Into<::unity2::Il2CppString>, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver =
-                <CaseSensitiveStringDictionary as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CaseSensitiveStringDictionary_unity2_raw::add(
-                __receiver,
-                ::core::convert::Into::into(key),
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+pub trait ICaseSensitiveStringDictionaryMethods : ICaseSensitiveStringDictionary { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CaseSensitiveStringDictionary as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CaseSensitiveStringDictionary_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Add(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"] fn add (self , key : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < CaseSensitiveStringDictionary as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CaseSensitiveStringDictionary_unity2_raw :: add (__receiver , :: core :: convert :: Into :: into (key) , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "system-collections-specialized-casesensitivestringdictionary")]
-impl<__T: ICaseSensitiveStringDictionary> ICaseSensitiveStringDictionaryMethods for __T {}
+impl < __T : ICaseSensitiveStringDictionary > ICaseSensitiveStringDictionaryMethods for __T { }
+
+#[cfg(feature = "system-collections-specialized-casesensitivestringdictionary")]
+impl CaseSensitiveStringDictionary { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CaseSensitiveStringDictionary_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn add_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CaseSensitiveStringDictionary_unity2_raw :: __lookup_add :: get_method_info () } }
 
 #[cfg(feature = "system-collections-specialized-casesensitivestringdictionary")]
 impl CaseSensitiveStringDictionary {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(CaseSensitiveStringDictionary),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ICaseSensitiveStringDictionaryMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CaseSensitiveStringDictionary) , :: core :: stringify ! (new) ,)) ; < Self as ICaseSensitiveStringDictionaryMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "system-collections-specialized-casesensitivestringdictionary")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{CaseSensitiveStringDictionary, ICaseSensitiveStringDictionary, ICaseSensitiveStringDictionaryMethods};
-    #[cfg(feature = "system-collections-specialized-stringdictionary")]
-    pub use crate::system::collections::specialized::stringdictionary::IStringDictionaryMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::system::{collections::specialized::stringdictionary::IStringDictionary, object::IObject};
+    pub use super::CaseSensitiveStringDictionary;
+    pub use super::ICaseSensitiveStringDictionary;
+    pub use super::ICaseSensitiveStringDictionaryMethods;
+    pub use crate::system::collections::specialized::stringdictionary::IStringDictionary;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-collections-specialized-stringdictionary")] pub use crate::system::collections::specialized::stringdictionary::IStringDictionaryMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

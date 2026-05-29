@@ -2,58 +2,41 @@
 
 #[cfg(feature = "app-scriptableassetbundle_1-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::irawassetbundle_1::{IIRawAssetBundle_1, IRawAssetBundle_1},
-        system::object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/scriptableassetbundle_1/ScriptableAssetBundle_1.md"))]
-    #[::unity2::class(namespace = "App", name = "ScriptableAssetBundle`1")]
-    # [parent (crate :: app :: irawassetbundle_1 :: IRawAssetBundle_1 < T0 >)]
-    #[parent(crate::system::object::Object)]
-    pub struct ScriptableAssetBundle_1<T0: ::unity2::ClassIdentity> {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: irawassetbundle_1 :: { IIRawAssetBundle_1 , IRawAssetBundle_1 }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/scriptableassetbundle_1/ScriptableAssetBundle_1.md"))] # [:: unity2 :: class (namespace = "App" , name = "ScriptableAssetBundle`1")] # [parent (crate :: app :: irawassetbundle_1 :: IRawAssetBundle_1 < T0 >)] # [parent (crate :: system :: object :: Object)] pub struct ScriptableAssetBundle_1 < T0 : :: unity2 :: ClassIdentity > {}
+
 }
 
 #[cfg(feature = "app-scriptableassetbundle_1-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-scriptableassetbundle_1")]
-#[::unity2::methods]
-impl<T0: ::unity2::ClassIdentity> ScriptableAssetBundle_1<T0> {
-    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, path: ::unity2::Il2CppString) -> ();
+# [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity > ScriptableAssetBundle_1 < T0 > {
+# [doc = "`.ctor(::unity2::Il2CppString)` overload"] # [method (name = ".ctor" , args = 1)] pub fn ctor (self , path : :: unity2 :: Il2CppString) -> () ;
 }
 
 #[cfg(feature = "app-scriptableassetbundle_1")]
-impl<T0: ::unity2::ClassIdentity> ScriptableAssetBundle_1<T0> {
-    #[doc = "`.ctor(::unity2::Il2CppString)` — overload selector"]
-    pub fn new(path: ::unity2::Il2CppString) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ScriptableAssetBundle_1),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IScriptableAssetBundle_1Methods<T0>>::ctor(this, path);
-        this
-    }
+impl < T0 : :: unity2 :: ClassIdentity > ScriptableAssetBundle_1 < T0 > {
+# [doc = "`.ctor(::unity2::Il2CppString)` — overload selector"] pub fn new (path : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ScriptableAssetBundle_1) , :: core :: stringify ! (new) ,)) ; < Self as IScriptableAssetBundle_1Methods < T0 > > :: ctor (this , path) ; this }
 }
 
 #[cfg(feature = "app-scriptableassetbundle_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IScriptableAssetBundle_1, IScriptableAssetBundle_1Methods, ScriptableAssetBundle_1};
-    #[cfg(feature = "app-irawassetbundle_1")]
-    pub use crate::app::irawassetbundle_1::IIRawAssetBundle_1Methods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::{
-        app::irawassetbundle_1::{IIRawAssetBundle_1, IRawAssetBundle_1},
-        system::object::IObject,
-    };
+    pub use super::ScriptableAssetBundle_1;
+    pub use super::IScriptableAssetBundle_1;
+    pub use super::IScriptableAssetBundle_1Methods;
+    pub use crate::app::irawassetbundle_1::IIRawAssetBundle_1;
+    pub use crate::app::irawassetbundle_1::IRawAssetBundle_1;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "app-irawassetbundle_1")] pub use crate::app::irawassetbundle_1::IIRawAssetBundle_1Methods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

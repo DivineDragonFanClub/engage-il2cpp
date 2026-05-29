@@ -2,348 +2,66 @@
 
 #[cfg(feature = "app-dishresultdialogparamcontent-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dishresultdialogparamcontent/DishResultDialogParamContent.md"))]
-    #[::unity2::class(namespace = "App", name = "DishResultDialogParamContent")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct DishResultDialogParamContent {
-        #[offset(24)]
-        #[rename(name = "m_TitleText")]
-        pub m_title_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(32)]
-        #[rename(name = "m_ValueObject")]
-        pub m_value_object: crate::unity_engine::gameobject::GameObject,
-        #[offset(40)]
-        #[rename(name = "m_UpObject")]
-        pub m_up_object: crate::unity_engine::gameobject::GameObject,
-        #[offset(48)]
-        #[rename(name = "m_DownObject")]
-        pub m_down_object: crate::unity_engine::gameobject::GameObject,
-        #[offset(56)]
-        #[rename(name = "m_NothingObject")]
-        pub m_nothing_object: crate::unity_engine::gameobject::GameObject,
-        #[offset(64)]
-        #[rename(name = "m_ValueText")]
-        pub m_value_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dishresultdialogparamcontent/DishResultDialogParamContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "DishResultDialogParamContent")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct DishResultDialogParamContent {
+# [offset (24)] # [rename (name = "m_TitleText")] pub m_title_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (32)] # [rename (name = "m_ValueObject")] pub m_value_object : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (40)] # [rename (name = "m_UpObject")] pub m_up_object : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (48)] # [rename (name = "m_DownObject")] pub m_down_object : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (56)] # [rename (name = "m_NothingObject")] pub m_nothing_object : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (64)] # [rename (name = "m_ValueText")] pub m_value_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+}
+
 }
 
 #[cfg(feature = "app-dishresultdialogparamcontent-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-dishresultdialogparamcontent")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __DishResultDialogParamContent_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_awake {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DishResultDialogParamContent as ::unity2::ClassIdentity>::class(),
-                "Awake",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DishResultDialogParamContent as ::unity2::ClassIdentity>::NAME,
-                        "Awake",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn awake(this: DishResultDialogParamContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DishResultDialogParamContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_awake::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_enhance {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::capabilitydefinition::CapabilityDefinition_Type as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DishResultDialogParamContent as ::unity2::ClassIdentity>::class(),
-                "SetEnhance",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DishResultDialogParamContent as ::unity2::ClassIdentity>::NAME,
-                        "SetEnhance",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_enhance(
-        this: DishResultDialogParamContent,
-        r#type: crate::app::capabilitydefinition::CapabilityDefinition_Type,
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            DishResultDialogParamContent,
-            crate::app::capabilitydefinition::CapabilityDefinition_Type,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(__lookup_set_enhance::get_method_info().method_ptr);
-        inner(this, r#type, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_bonus {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::capabilitydefinition::CapabilityDefinition_Type as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DishResultDialogParamContent as ::unity2::ClassIdentity>::class(),
-                "SetBonus",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DishResultDialogParamContent as ::unity2::ClassIdentity>::NAME,
-                        "SetBonus",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_bonus(
-        this: DishResultDialogParamContent,
-        r#type: crate::app::capabilitydefinition::CapabilityDefinition_Type,
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            DishResultDialogParamContent,
-            crate::app::capabilitydefinition::CapabilityDefinition_Type,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(__lookup_set_bonus::get_method_info().method_ptr);
-        inner(this, r#type, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_title {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::capabilitydefinition::CapabilityDefinition_Type as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DishResultDialogParamContent as ::unity2::ClassIdentity>::class(),
-                "SetTitle",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DishResultDialogParamContent as ::unity2::ClassIdentity>::NAME,
-                        "SetTitle",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_title(
-        this: DishResultDialogParamContent,
-        r#type: crate::app::capabilitydefinition::CapabilityDefinition_Type,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            DishResultDialogParamContent,
-            crate::app::capabilitydefinition::CapabilityDefinition_Type,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_set_title::get_method_info().method_ptr);
-        inner(this, r#type, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DishResultDialogParamContent as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DishResultDialogParamContent as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: DishResultDialogParamContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DishResultDialogParamContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __DishResultDialogParamContent_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_awake { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DishResultDialogParamContent as :: unity2 :: ClassIdentity > :: class () , "Awake" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DishResultDialogParamContent as :: unity2 :: ClassIdentity > :: NAME , "Awake" , e) , } } } pub unsafe fn awake (this : DishResultDialogParamContent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DishResultDialogParamContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_awake :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_enhance { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: capabilitydefinition :: CapabilityDefinition_Type as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DishResultDialogParamContent as :: unity2 :: ClassIdentity > :: class () , "SetEnhance" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DishResultDialogParamContent as :: unity2 :: ClassIdentity > :: NAME , "SetEnhance" , e) , } } } pub unsafe fn set_enhance (this : DishResultDialogParamContent , r#type : crate :: app :: capabilitydefinition :: CapabilityDefinition_Type , value : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (DishResultDialogParamContent , crate :: app :: capabilitydefinition :: CapabilityDefinition_Type , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_set_enhance :: get_method_info () . method_ptr ,) ; inner (this , r#type , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_bonus { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: capabilitydefinition :: CapabilityDefinition_Type as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DishResultDialogParamContent as :: unity2 :: ClassIdentity > :: class () , "SetBonus" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DishResultDialogParamContent as :: unity2 :: ClassIdentity > :: NAME , "SetBonus" , e) , } } } pub unsafe fn set_bonus (this : DishResultDialogParamContent , r#type : crate :: app :: capabilitydefinition :: CapabilityDefinition_Type , value : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (DishResultDialogParamContent , crate :: app :: capabilitydefinition :: CapabilityDefinition_Type , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_set_bonus :: get_method_info () . method_ptr ,) ; inner (this , r#type , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_title { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: capabilitydefinition :: CapabilityDefinition_Type as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DishResultDialogParamContent as :: unity2 :: ClassIdentity > :: class () , "SetTitle" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DishResultDialogParamContent as :: unity2 :: ClassIdentity > :: NAME , "SetTitle" , e) , } } } pub unsafe fn set_title (this : DishResultDialogParamContent , r#type : crate :: app :: capabilitydefinition :: CapabilityDefinition_Type , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DishResultDialogParamContent , crate :: app :: capabilitydefinition :: CapabilityDefinition_Type , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_title :: get_method_info () . method_ptr ,) ; inner (this , r#type , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DishResultDialogParamContent as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DishResultDialogParamContent as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : DishResultDialogParamContent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DishResultDialogParamContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-dishresultdialogparamcontent")]
-pub trait IDishResultDialogParamContentMethods: IDishResultDialogParamContent {
-    #[doc = "`Awake()` overload"]
-    fn awake(self) -> () {
-        unsafe {
-            let __receiver =
-                <DishResultDialogParamContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DishResultDialogParamContent_unity2_raw::awake(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetEnhance(crate::app::capabilitydefinition::CapabilityDefinition_Type, i32)` overload"]
-    fn set_enhance(
-        self,
-        r#type: impl ::core::convert::Into<crate::app::capabilitydefinition::CapabilityDefinition_Type>,
-        value: impl ::core::convert::Into<i32>,
-    ) -> bool {
-        unsafe {
-            let __receiver =
-                <DishResultDialogParamContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DishResultDialogParamContent_unity2_raw::set_enhance(
-                __receiver,
-                ::core::convert::Into::into(r#type),
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetBonus(crate::app::capabilitydefinition::CapabilityDefinition_Type, i32)` overload"]
-    fn set_bonus(
-        self,
-        r#type: impl ::core::convert::Into<crate::app::capabilitydefinition::CapabilityDefinition_Type>,
-        value: impl ::core::convert::Into<i32>,
-    ) -> bool {
-        unsafe {
-            let __receiver =
-                <DishResultDialogParamContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DishResultDialogParamContent_unity2_raw::set_bonus(
-                __receiver,
-                ::core::convert::Into::into(r#type),
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetTitle(crate::app::capabilitydefinition::CapabilityDefinition_Type)` overload"]
-    fn set_title(self, r#type: impl ::core::convert::Into<crate::app::capabilitydefinition::CapabilityDefinition_Type>) -> () {
-        unsafe {
-            let __receiver =
-                <DishResultDialogParamContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DishResultDialogParamContent_unity2_raw::set_title(__receiver, ::core::convert::Into::into(r#type), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <DishResultDialogParamContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DishResultDialogParamContent_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IDishResultDialogParamContentMethods : IDishResultDialogParamContent { # [doc = "`Awake()` overload"] fn awake (self ,) -> () { unsafe { let __receiver = < DishResultDialogParamContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DishResultDialogParamContent_unity2_raw :: awake (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetEnhance(crate::app::capabilitydefinition::CapabilityDefinition_Type, i32)` overload"] fn set_enhance (self , r#type : impl :: core :: convert :: Into < crate :: app :: capabilitydefinition :: CapabilityDefinition_Type > , value : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { let __receiver = < DishResultDialogParamContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DishResultDialogParamContent_unity2_raw :: set_enhance (__receiver , :: core :: convert :: Into :: into (r#type) , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`SetBonus(crate::app::capabilitydefinition::CapabilityDefinition_Type, i32)` overload"] fn set_bonus (self , r#type : impl :: core :: convert :: Into < crate :: app :: capabilitydefinition :: CapabilityDefinition_Type > , value : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { let __receiver = < DishResultDialogParamContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DishResultDialogParamContent_unity2_raw :: set_bonus (__receiver , :: core :: convert :: Into :: into (r#type) , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`SetTitle(crate::app::capabilitydefinition::CapabilityDefinition_Type)` overload"] fn set_title (self , r#type : impl :: core :: convert :: Into < crate :: app :: capabilitydefinition :: CapabilityDefinition_Type >) -> () { unsafe { let __receiver = < DishResultDialogParamContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DishResultDialogParamContent_unity2_raw :: set_title (__receiver , :: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DishResultDialogParamContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DishResultDialogParamContent_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-dishresultdialogparamcontent")]
-impl<__T: IDishResultDialogParamContent> IDishResultDialogParamContentMethods for __T {}
+impl < __T : IDishResultDialogParamContent > IDishResultDialogParamContentMethods for __T { }
+
+#[cfg(feature = "app-dishresultdialogparamcontent")]
+impl DishResultDialogParamContent { pub fn awake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DishResultDialogParamContent_unity2_raw :: __lookup_awake :: get_method_info () } pub fn set_enhance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DishResultDialogParamContent_unity2_raw :: __lookup_set_enhance :: get_method_info () } pub fn set_bonus_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DishResultDialogParamContent_unity2_raw :: __lookup_set_bonus :: get_method_info () } pub fn set_title_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DishResultDialogParamContent_unity2_raw :: __lookup_set_title :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DishResultDialogParamContent_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-dishresultdialogparamcontent")]
 impl DishResultDialogParamContent {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DishResultDialogParamContent),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDishResultDialogParamContentMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DishResultDialogParamContent) , :: core :: stringify ! (new) ,)) ; < Self as IDishResultDialogParamContentMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-dishresultdialogparamcontent")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{DishResultDialogParamContent, IDishResultDialogParamContent, IDishResultDialogParamContentMethods};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        system::object::IObject,
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::DishResultDialogParamContent;
+    pub use super::IDishResultDialogParamContent;
+    pub use super::IDishResultDialogParamContentMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

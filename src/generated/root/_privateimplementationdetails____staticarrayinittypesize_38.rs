@@ -2,35 +2,46 @@
 
 #[cfg(feature = "root-_privateimplementationdetails____staticarrayinittypesize_38-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        valuetype::{IValueType, ValueType},
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/_privateimplementationdetails____staticarrayinittypesize_38/_PrivateImplementationDetails____StaticArrayInitTypeSize_38.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct _PrivateImplementationDetails____StaticArrayInitTypeSize_38 {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
 
-    impl ::unity2::ClassIdentity for _PrivateImplementationDetails____StaticArrayInitTypeSize_38 {
-        const NAME: &'static str = "<PrivateImplementationDetails>.__StaticArrayInitTypeSize=38";
-        const NAMESPACE: &'static str = "";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/_privateimplementationdetails____staticarrayinittypesize_38/_PrivateImplementationDetails____StaticArrayInitTypeSize_38.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct _PrivateImplementationDetails____StaticArrayInitTypeSize_38 {}
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+
+impl ::unity2::ClassIdentity for _PrivateImplementationDetails____StaticArrayInitTypeSize_38 {
+    const NAMESPACE: &'static str = "";
+
+    const NAME: &'static str = "<PrivateImplementationDetails>.__StaticArrayInitTypeSize=38";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for _PrivateImplementationDetails____StaticArrayInitTypeSize_38 {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl ::unity2::IlType for _PrivateImplementationDetails____StaticArrayInitTypeSize_38 {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
+
+}
+
 }
 
 #[cfg(feature = "root-_privateimplementationdetails____staticarrayinittypesize_38-types")]
@@ -40,9 +51,8 @@ pub use __types::*;
 #[doc(hidden)]
 pub mod prelude {
     pub use super::_PrivateImplementationDetails____StaticArrayInitTypeSize_38;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::system::{object::IObject, valuetype::IValueType};
+    pub use crate::system::object::IObject;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

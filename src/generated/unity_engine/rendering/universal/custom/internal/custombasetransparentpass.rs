@@ -2,450 +2,63 @@
 
 #[cfg(feature = "unity_engine-rendering-universal-custom-internal-custombasetransparentpass-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::rendering::universal::scriptablerenderpass::{IScriptableRenderPass, ScriptableRenderPass},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/custom/internal/custombasetransparentpass/CustomBaseTransparentPass.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Rendering.Universal.Custom.Internal", name = "CustomBaseTransparentPass")]
-    #[parent(crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass)]
-    pub struct CustomBaseTransparentPass {
-        #[offset(112)]
-        #[rename(name = "m_FilteringSettings")]
-        pub m_filtering_settings: crate::unity_engine::rendering::filteringsettings::FilteringSettings,
-        #[offset(136)]
-        #[rename(name = "m_RenderStateBlock")]
-        pub m_render_state_block: crate::unity_engine::rendering::renderstateblock::RenderStateBlock,
-        #[offset(244)]
-        #[rename(name = "m_DefaultShaderTagId")]
-        pub m_default_shader_tag_id: crate::unity_engine::rendering::shadertagid::ShaderTagId,
-        #[offset(248)]
-        #[rename(name = "m_ShaderTagIdList")]
-        pub m_shader_tag_id_list: crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::shadertagid::ShaderTagId>,
-        #[offset(256)]
-        #[rename(name = "m_UnlitShaderTagId")]
-        pub m_unlit_shader_tag_id: crate::unity_engine::rendering::shadertagid::ShaderTagId,
-        #[offset(264)]
-        #[rename(name = "m_ProfilerTag")]
-        pub m_profiler_tag: ::unity2::Il2CppString,
-        #[offset(272)]
-        #[rename(name = "m_ProfilingSampler")]
-        pub m_profiling_sampler: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
-        #[static_field]
-        #[rename(name = "s_DrawObjectPassDataPropID")]
-        pub s_draw_object_pass_data_prop_id: i32,
-        #[offset(280)]
-        #[rename(name = "m_NoOverrideStateShaderTagIdList")]
-        pub m_no_override_state_shader_tag_id_list:
-            crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::shadertagid::ShaderTagId>,
-        #[offset(288)]
-        #[rename(name = "m_MixedResolutionEnabled")]
-        pub m_mixed_resolution_enabled: bool,
-        #[offset(289)]
-        #[rename(name = "m_ShouldSetEffectDepth")]
-        pub m_should_set_effect_depth: bool,
-        #[offset(296)]
-        #[rename(name = "m_EffectDepthId")]
-        pub m_effect_depth_id: crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: rendering :: universal :: scriptablerenderpass :: { IScriptableRenderPass , ScriptableRenderPass }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/custom/internal/custombasetransparentpass/CustomBaseTransparentPass.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.Universal.Custom.Internal" , name = "CustomBaseTransparentPass")] # [parent (crate :: unity_engine :: rendering :: universal :: scriptablerenderpass :: ScriptableRenderPass)] pub struct CustomBaseTransparentPass {
+# [offset (112)] # [rename (name = "m_FilteringSettings")] pub m_filtering_settings : crate :: unity_engine :: rendering :: filteringsettings :: FilteringSettings ,
+# [offset (136)] # [rename (name = "m_RenderStateBlock")] pub m_render_state_block : crate :: unity_engine :: rendering :: renderstateblock :: RenderStateBlock ,
+# [offset (244)] # [rename (name = "m_DefaultShaderTagId")] pub m_default_shader_tag_id : crate :: unity_engine :: rendering :: shadertagid :: ShaderTagId ,
+# [offset (248)] # [rename (name = "m_ShaderTagIdList")] pub m_shader_tag_id_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: rendering :: shadertagid :: ShaderTagId > ,
+# [offset (256)] # [rename (name = "m_UnlitShaderTagId")] pub m_unlit_shader_tag_id : crate :: unity_engine :: rendering :: shadertagid :: ShaderTagId ,
+# [offset (264)] # [rename (name = "m_ProfilerTag")] pub m_profiler_tag : :: unity2 :: Il2CppString ,
+# [offset (272)] # [rename (name = "m_ProfilingSampler")] pub m_profiling_sampler : crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler ,
+# [static_field] # [rename (name = "s_DrawObjectPassDataPropID")] pub s_draw_object_pass_data_prop_id : i32 ,
+# [offset (280)] # [rename (name = "m_NoOverrideStateShaderTagIdList")] pub m_no_override_state_shader_tag_id_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: rendering :: shadertagid :: ShaderTagId > ,
+# [offset (288)] # [rename (name = "m_MixedResolutionEnabled")] pub m_mixed_resolution_enabled : bool ,
+# [offset (289)] # [rename (name = "m_ShouldSetEffectDepth")] pub m_should_set_effect_depth : bool ,
+# [offset (296)] # [rename (name = "m_EffectDepthId")] pub m_effect_depth_id : crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier ,
+}
+
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-custom-internal-custombasetransparentpass-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-universal-custom-internal-custombasetransparentpass")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __CustomBaseTransparentPass_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_status_rendering_flag {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CustomBaseTransparentPass as ::unity2::ClassIdentity>::class(),
-                "get_statusRenderingFlag",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CustomBaseTransparentPass as ::unity2::ClassIdentity>::NAME,
-                        "get_statusRenderingFlag",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_status_rendering_flag(this: CustomBaseTransparentPass, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(CustomBaseTransparentPass, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_status_rendering_flag::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_status_rendering_flag {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CustomBaseTransparentPass as ::unity2::ClassIdentity>::class(),
-                "set_statusRenderingFlag",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CustomBaseTransparentPass as ::unity2::ClassIdentity>::NAME,
-                        "set_statusRenderingFlag",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_status_rendering_flag(this: CustomBaseTransparentPass, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CustomBaseTransparentPass, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_status_rendering_flag::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::rendering::renderqueuerange::RenderQueueRange as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::layermask::LayerMask as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CustomBaseTransparentPass as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                4,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CustomBaseTransparentPass as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: CustomBaseTransparentPass,
-        profiler_tag: ::unity2::Il2CppString,
-        evt: crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent,
-        render_queue_range: crate::unity_engine::rendering::renderqueuerange::RenderQueueRange,
-        layer_mask: crate::unity_engine::layermask::LayerMask,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            CustomBaseTransparentPass,
-            ::unity2::Il2CppString,
-            crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent,
-            crate::unity_engine::rendering::renderqueuerange::RenderQueueRange,
-            crate::unity_engine::layermask::LayerMask,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, profiler_tag, evt, render_queue_range, layer_mask, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_mixed_resolution_enabled {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CustomBaseTransparentPass as ::unity2::ClassIdentity>::class(),
-                "SetMixedResolutionEnabled",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CustomBaseTransparentPass as ::unity2::ClassIdentity>::NAME,
-                        "SetMixedResolutionEnabled",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_mixed_resolution_enabled(this: CustomBaseTransparentPass, enabled: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CustomBaseTransparentPass, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_mixed_resolution_enabled::get_method_info().method_ptr);
-        inner(this, enabled, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_effect_depth {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CustomBaseTransparentPass as ::unity2::ClassIdentity>::class(),
-                "SetEffectDepth",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CustomBaseTransparentPass as ::unity2::ClassIdentity>::NAME,
-                        "SetEffectDepth",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_effect_depth(this: CustomBaseTransparentPass, id: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CustomBaseTransparentPass, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_effect_depth::get_method_info().method_ptr);
-        inner(this, id, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_execute {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::rendering::universal::renderingdata::RenderingData as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CustomBaseTransparentPass as ::unity2::ClassIdentity>::class(),
-                "Execute",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CustomBaseTransparentPass as ::unity2::ClassIdentity>::NAME,
-                        "Execute",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn execute(
-        this: CustomBaseTransparentPass,
-        context: crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
-        rendering_data: *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            CustomBaseTransparentPass,
-            crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
-            *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_execute::get_method_info().method_ptr);
-        inner(this, context, rendering_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CustomBaseTransparentPass as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CustomBaseTransparentPass as ::unity2::ClassIdentity>::NAME,
-                        ".cctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __CustomBaseTransparentPass_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_status_rendering_flag { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CustomBaseTransparentPass as :: unity2 :: ClassIdentity > :: class () , "get_statusRenderingFlag" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CustomBaseTransparentPass as :: unity2 :: ClassIdentity > :: NAME , "get_statusRenderingFlag" , e) , } } } pub unsafe fn get_status_rendering_flag (this : CustomBaseTransparentPass , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (CustomBaseTransparentPass , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_status_rendering_flag :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_status_rendering_flag { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CustomBaseTransparentPass as :: unity2 :: ClassIdentity > :: class () , "set_statusRenderingFlag" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CustomBaseTransparentPass as :: unity2 :: ClassIdentity > :: NAME , "set_statusRenderingFlag" , e) , } } } pub unsafe fn set_status_rendering_flag (this : CustomBaseTransparentPass , value : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CustomBaseTransparentPass , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_status_rendering_flag :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: renderpassevent :: RenderPassEvent as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: renderqueuerange :: RenderQueueRange as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: layermask :: LayerMask as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CustomBaseTransparentPass as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 4 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CustomBaseTransparentPass as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : CustomBaseTransparentPass , profiler_tag : :: unity2 :: Il2CppString , evt : crate :: unity_engine :: rendering :: universal :: renderpassevent :: RenderPassEvent , render_queue_range : crate :: unity_engine :: rendering :: renderqueuerange :: RenderQueueRange , layer_mask : crate :: unity_engine :: layermask :: LayerMask , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CustomBaseTransparentPass , :: unity2 :: Il2CppString , crate :: unity_engine :: rendering :: universal :: renderpassevent :: RenderPassEvent , crate :: unity_engine :: rendering :: renderqueuerange :: RenderQueueRange , crate :: unity_engine :: layermask :: LayerMask , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , profiler_tag , evt , render_queue_range , layer_mask , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_mixed_resolution_enabled { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CustomBaseTransparentPass as :: unity2 :: ClassIdentity > :: class () , "SetMixedResolutionEnabled" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CustomBaseTransparentPass as :: unity2 :: ClassIdentity > :: NAME , "SetMixedResolutionEnabled" , e) , } } } pub unsafe fn set_mixed_resolution_enabled (this : CustomBaseTransparentPass , enabled : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CustomBaseTransparentPass , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_mixed_resolution_enabled :: get_method_info () . method_ptr ,) ; inner (this , enabled , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_effect_depth { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CustomBaseTransparentPass as :: unity2 :: ClassIdentity > :: class () , "SetEffectDepth" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CustomBaseTransparentPass as :: unity2 :: ClassIdentity > :: NAME , "SetEffectDepth" , e) , } } } pub unsafe fn set_effect_depth (this : CustomBaseTransparentPass , id : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CustomBaseTransparentPass , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_effect_depth :: get_method_info () . method_ptr ,) ; inner (this , id , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_execute { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CustomBaseTransparentPass as :: unity2 :: ClassIdentity > :: class () , "Execute" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CustomBaseTransparentPass as :: unity2 :: ClassIdentity > :: NAME , "Execute" , e) , } } } pub unsafe fn execute (this : CustomBaseTransparentPass , context : crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext , rendering_data : * mut crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CustomBaseTransparentPass , crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext , * mut crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_execute :: get_method_info () . method_ptr ,) ; inner (this , context , rendering_data , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CustomBaseTransparentPass as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CustomBaseTransparentPass as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
+
+#[cfg(feature = "unity_engine-rendering-universal-custom-internal-custombasetransparentpass")]
+impl CustomBaseTransparentPass { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { __CustomBaseTransparentPass_unity2_raw :: cctor (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-rendering-universal-custom-internal-custombasetransparentpass")]
+pub trait ICustomBaseTransparentPassMethods : ICustomBaseTransparentPass { # [doc = "`get_statusRenderingFlag()` overload"] fn get_status_rendering_flag (self ,) -> bool { unsafe { let __receiver = < CustomBaseTransparentPass as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CustomBaseTransparentPass_unity2_raw :: get_status_rendering_flag (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_statusRenderingFlag(bool)` overload"] fn set_status_rendering_flag (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < CustomBaseTransparentPass as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CustomBaseTransparentPass_unity2_raw :: set_status_rendering_flag (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`.ctor(::unity2::Il2CppString, crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent, crate::unity_engine::rendering::renderqueuerange::RenderQueueRange, crate::unity_engine::layermask::LayerMask)` overload"] fn ctor (self , profiler_tag : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , evt : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: universal :: renderpassevent :: RenderPassEvent > , render_queue_range : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: renderqueuerange :: RenderQueueRange > , layer_mask : impl :: core :: convert :: Into < crate :: unity_engine :: layermask :: LayerMask >) -> () { unsafe { let __receiver = < CustomBaseTransparentPass as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CustomBaseTransparentPass_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (profiler_tag) , :: core :: convert :: Into :: into (evt) , :: core :: convert :: Into :: into (render_queue_range) , :: core :: convert :: Into :: into (layer_mask) , :: core :: option :: Option :: None) } } # [doc = "`SetMixedResolutionEnabled(bool)` overload"] fn set_mixed_resolution_enabled (self , enabled : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < CustomBaseTransparentPass as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CustomBaseTransparentPass_unity2_raw :: set_mixed_resolution_enabled (__receiver , :: core :: convert :: Into :: into (enabled) , :: core :: option :: Option :: None) } } # [doc = "`SetEffectDepth(i32)` overload"] fn set_effect_depth (self , id : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < CustomBaseTransparentPass as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CustomBaseTransparentPass_unity2_raw :: set_effect_depth (__receiver , :: core :: convert :: Into :: into (id) , :: core :: option :: Option :: None) } } # [doc = "`Execute(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, *mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"] fn execute (self , context : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext >) -> crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData { unsafe { let __receiver = < CustomBaseTransparentPass as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData > :: uninit () ; __CustomBaseTransparentPass_unity2_raw :: execute (__receiver , :: core :: convert :: Into :: into (context) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) ; __out_0 . assume_init () } } }
+
+#[cfg(feature = "unity_engine-rendering-universal-custom-internal-custombasetransparentpass")]
+impl < __T : ICustomBaseTransparentPass > ICustomBaseTransparentPassMethods for __T { }
+
+#[cfg(feature = "unity_engine-rendering-universal-custom-internal-custombasetransparentpass")]
+impl CustomBaseTransparentPass { pub fn get_status_rendering_flag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CustomBaseTransparentPass_unity2_raw :: __lookup_get_status_rendering_flag :: get_method_info () } pub fn set_status_rendering_flag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CustomBaseTransparentPass_unity2_raw :: __lookup_set_status_rendering_flag :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CustomBaseTransparentPass_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn set_mixed_resolution_enabled_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CustomBaseTransparentPass_unity2_raw :: __lookup_set_mixed_resolution_enabled :: get_method_info () } pub fn set_effect_depth_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CustomBaseTransparentPass_unity2_raw :: __lookup_set_effect_depth :: get_method_info () } pub fn execute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CustomBaseTransparentPass_unity2_raw :: __lookup_execute :: get_method_info () } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CustomBaseTransparentPass_unity2_raw :: __lookup_cctor :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-rendering-universal-custom-internal-custombasetransparentpass")]
 impl CustomBaseTransparentPass {
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __CustomBaseTransparentPass_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-custom-internal-custombasetransparentpass")]
-pub trait ICustomBaseTransparentPassMethods: ICustomBaseTransparentPass {
-    #[doc = "`get_statusRenderingFlag()` overload"]
-    fn get_status_rendering_flag(self) -> bool {
-        unsafe {
-            let __receiver =
-                <CustomBaseTransparentPass as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CustomBaseTransparentPass_unity2_raw::get_status_rendering_flag(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_statusRenderingFlag(bool)` overload"]
-    fn set_status_rendering_flag(self, value: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver =
-                <CustomBaseTransparentPass as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CustomBaseTransparentPass_unity2_raw::set_status_rendering_flag(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent, crate::unity_engine::rendering::renderqueuerange::RenderQueueRange, crate::unity_engine::layermask::LayerMask)` overload"]
-    fn ctor(
-        self,
-        profiler_tag: impl ::core::convert::Into<::unity2::Il2CppString>,
-        evt: impl ::core::convert::Into<crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent>,
-        render_queue_range: impl ::core::convert::Into<crate::unity_engine::rendering::renderqueuerange::RenderQueueRange>,
-        layer_mask: impl ::core::convert::Into<crate::unity_engine::layermask::LayerMask>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <CustomBaseTransparentPass as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CustomBaseTransparentPass_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(profiler_tag),
-                ::core::convert::Into::into(evt),
-                ::core::convert::Into::into(render_queue_range),
-                ::core::convert::Into::into(layer_mask),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetMixedResolutionEnabled(bool)` overload"]
-    fn set_mixed_resolution_enabled(self, enabled: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver =
-                <CustomBaseTransparentPass as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CustomBaseTransparentPass_unity2_raw::set_mixed_resolution_enabled(
-                __receiver,
-                ::core::convert::Into::into(enabled),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetEffectDepth(i32)` overload"]
-    fn set_effect_depth(self, id: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver =
-                <CustomBaseTransparentPass as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CustomBaseTransparentPass_unity2_raw::set_effect_depth(__receiver, ::core::convert::Into::into(id), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Execute(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, *mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"]
-    fn execute(
-        self,
-        context: impl ::core::convert::Into<crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext>,
-    ) -> crate::unity_engine::rendering::universal::renderingdata::RenderingData {
-        unsafe {
-            let __receiver =
-                <CustomBaseTransparentPass as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::universal::renderingdata::RenderingData>::uninit();
-            __CustomBaseTransparentPass_unity2_raw::execute(
-                __receiver,
-                ::core::convert::Into::into(context),
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
-            __out_0.assume_init()
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-custom-internal-custombasetransparentpass")]
-impl<__T: ICustomBaseTransparentPass> ICustomBaseTransparentPassMethods for __T {}
-
-#[cfg(feature = "unity_engine-rendering-universal-custom-internal-custombasetransparentpass")]
-impl CustomBaseTransparentPass {
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent, crate::unity_engine::rendering::renderqueuerange::RenderQueueRange, crate::unity_engine::layermask::LayerMask)` — overload selector"]
-    pub fn new(
-        profiler_tag: ::unity2::Il2CppString,
-        evt: crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent,
-        render_queue_range: crate::unity_engine::rendering::renderqueuerange::RenderQueueRange,
-        layer_mask: crate::unity_engine::layermask::LayerMask,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(CustomBaseTransparentPass),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ICustomBaseTransparentPassMethods>::ctor(this, profiler_tag, evt, render_queue_range, layer_mask);
-        this
-    }
+# [doc = "`.ctor(::unity2::Il2CppString, crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent, crate::unity_engine::rendering::renderqueuerange::RenderQueueRange, crate::unity_engine::layermask::LayerMask)` — overload selector"] pub fn new (profiler_tag : :: unity2 :: Il2CppString , evt : crate :: unity_engine :: rendering :: universal :: renderpassevent :: RenderPassEvent , render_queue_range : crate :: unity_engine :: rendering :: renderqueuerange :: RenderQueueRange , layer_mask : crate :: unity_engine :: layermask :: LayerMask) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CustomBaseTransparentPass) , :: core :: stringify ! (new) ,)) ; < Self as ICustomBaseTransparentPassMethods > :: ctor (this , profiler_tag , evt , render_queue_range , layer_mask) ; this }
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-custom-internal-custombasetransparentpass")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{CustomBaseTransparentPass, ICustomBaseTransparentPass, ICustomBaseTransparentPassMethods};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-rendering-universal-scriptablerenderpass")]
-    pub use crate::unity_engine::rendering::universal::scriptablerenderpass::IScriptableRenderPassMethods;
-    pub use crate::{system::object::IObject, unity_engine::rendering::universal::scriptablerenderpass::IScriptableRenderPass};
+    pub use super::CustomBaseTransparentPass;
+    pub use super::ICustomBaseTransparentPass;
+    pub use super::ICustomBaseTransparentPassMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::rendering::universal::scriptablerenderpass::IScriptableRenderPass;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-rendering-universal-scriptablerenderpass")] pub use crate::unity_engine::rendering::universal::scriptablerenderpass::IScriptableRenderPassMethods;
 }

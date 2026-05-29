@@ -2,240 +2,51 @@
 
 #[cfg(feature = "app-dragonridetestcoursemenu-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::menuitem::{IMenuItem, MenuItem},
-        system::object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonridetestcoursemenu/DragonRideTestCourseMenu.md"))]
-    #[::unity2::class(namespace = "App", name = "DragonRideTestCourseMenu")]
-    #[parent(crate::app::menuitem::MenuItem)]
-    pub struct DragonRideTestCourseMenu {
-        #[offset(32)]
-        #[rename(name = "m_CameraComp")]
-        pub m_camera_comp: crate::app::dragonridecamera::DragonRideCamera,
-        #[offset(40)]
-        #[rename(name = "m_PatternList")]
-        pub m_pattern_list: crate::app::structarraylist_1::StructArrayList_1<crate::app::dragonridetargetpatterndata::DragonRideTargetPatternData>,
-        #[offset(48)]
-        #[rename(name = "m_PatternCount")]
-        pub m_pattern_count: i32,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: menuitem :: { IMenuItem , MenuItem }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonridetestcoursemenu/DragonRideTestCourseMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "DragonRideTestCourseMenu")] # [parent (crate :: app :: menuitem :: MenuItem)] pub struct DragonRideTestCourseMenu {
+# [offset (32)] # [rename (name = "m_CameraComp")] pub m_camera_comp : crate :: app :: dragonridecamera :: DragonRideCamera ,
+# [offset (40)] # [rename (name = "m_PatternList")] pub m_pattern_list : crate :: app :: structarraylist_1 :: StructArrayList_1 < crate :: app :: dragonridetargetpatterndata :: DragonRideTargetPatternData > ,
+# [offset (48)] # [rename (name = "m_PatternCount")] pub m_pattern_count : i32 ,
+}
+
 }
 
 #[cfg(feature = "app-dragonridetestcoursemenu-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-dragonridetestcoursemenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __DragonRideTestCourseMenu_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DragonRideTestCourseMenu as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DragonRideTestCourseMenu as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: DragonRideTestCourseMenu, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DragonRideTestCourseMenu, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DragonRideTestCourseMenu as ::unity2::ClassIdentity>::class(),
-                "GetName",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DragonRideTestCourseMenu as ::unity2::ClassIdentity>::NAME,
-                        "GetName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_name(this: DragonRideTestCourseMenu, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(DragonRideTestCourseMenu, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_a_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DragonRideTestCourseMenu as ::unity2::ClassIdentity>::class(),
-                "ACall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DragonRideTestCourseMenu as ::unity2::ClassIdentity>::NAME,
-                        "ACall",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn a_call(this: DragonRideTestCourseMenu, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::menuitem::MenuItem_Result {
-        let inner: extern "C" fn(DragonRideTestCourseMenu, ::unity2::OptionalMethod) -> crate::app::menuitem::MenuItem_Result =
-            ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_left_right {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type(), <bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DragonRideTestCourseMenu as ::unity2::ClassIdentity>::class(),
-                "OnLeftRight",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DragonRideTestCourseMenu as ::unity2::ClassIdentity>::NAME,
-                        "OnLeftRight",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_left_right(this: DragonRideTestCourseMenu, step: i32, is_trigger: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DragonRideTestCourseMenu, i32, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_left_right::get_method_info().method_ptr);
-        inner(this, step, is_trigger, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __DragonRideTestCourseMenu_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DragonRideTestCourseMenu as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DragonRideTestCourseMenu as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : DragonRideTestCourseMenu , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DragonRideTestCourseMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DragonRideTestCourseMenu as :: unity2 :: ClassIdentity > :: class () , "GetName" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DragonRideTestCourseMenu as :: unity2 :: ClassIdentity > :: NAME , "GetName" , e) , } } } pub unsafe fn get_name (this : DragonRideTestCourseMenu , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (DragonRideTestCourseMenu , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_name :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_a_call { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DragonRideTestCourseMenu as :: unity2 :: ClassIdentity > :: class () , "ACall" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DragonRideTestCourseMenu as :: unity2 :: ClassIdentity > :: NAME , "ACall" , e) , } } } pub unsafe fn a_call (this : DragonRideTestCourseMenu , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: menuitem :: MenuItem_Result { let inner : extern "C" fn (DragonRideTestCourseMenu , :: unity2 :: OptionalMethod ,) -> crate :: app :: menuitem :: MenuItem_Result = :: core :: mem :: transmute (__lookup_a_call :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_left_right { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DragonRideTestCourseMenu as :: unity2 :: ClassIdentity > :: class () , "OnLeftRight" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DragonRideTestCourseMenu as :: unity2 :: ClassIdentity > :: NAME , "OnLeftRight" , e) , } } } pub unsafe fn on_left_right (this : DragonRideTestCourseMenu , step : i32 , is_trigger : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DragonRideTestCourseMenu , i32 , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_left_right :: get_method_info () . method_ptr ,) ; inner (this , step , is_trigger , __unity2_method_info) } }
 
 #[cfg(feature = "app-dragonridetestcoursemenu")]
-pub trait IDragonRideTestCourseMenuMethods: IDragonRideTestCourseMenu {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <DragonRideTestCourseMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DragonRideTestCourseMenu_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetName()` overload"]
-    fn get_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver =
-                <DragonRideTestCourseMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DragonRideTestCourseMenu_unity2_raw::get_name(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ACall()` overload"]
-    fn a_call(self) -> crate::app::menuitem::MenuItem_Result {
-        unsafe {
-            let __receiver =
-                <DragonRideTestCourseMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DragonRideTestCourseMenu_unity2_raw::a_call(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnLeftRight(i32, bool)` overload"]
-    fn on_left_right(self, step: impl ::core::convert::Into<i32>, is_trigger: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver =
-                <DragonRideTestCourseMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DragonRideTestCourseMenu_unity2_raw::on_left_right(
-                __receiver,
-                ::core::convert::Into::into(step),
-                ::core::convert::Into::into(is_trigger),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+pub trait IDragonRideTestCourseMenuMethods : IDragonRideTestCourseMenu { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DragonRideTestCourseMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DragonRideTestCourseMenu_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < DragonRideTestCourseMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DragonRideTestCourseMenu_unity2_raw :: get_name (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: menuitem :: MenuItem_Result { unsafe { let __receiver = < DragonRideTestCourseMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DragonRideTestCourseMenu_unity2_raw :: a_call (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnLeftRight(i32, bool)` overload"] fn on_left_right (self , step : impl :: core :: convert :: Into < i32 > , is_trigger : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < DragonRideTestCourseMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DragonRideTestCourseMenu_unity2_raw :: on_left_right (__receiver , :: core :: convert :: Into :: into (step) , :: core :: convert :: Into :: into (is_trigger) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-dragonridetestcoursemenu")]
-impl<__T: IDragonRideTestCourseMenu> IDragonRideTestCourseMenuMethods for __T {}
+impl < __T : IDragonRideTestCourseMenu > IDragonRideTestCourseMenuMethods for __T { }
+
+#[cfg(feature = "app-dragonridetestcoursemenu")]
+impl DragonRideTestCourseMenu { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DragonRideTestCourseMenu_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DragonRideTestCourseMenu_unity2_raw :: __lookup_get_name :: get_method_info () } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DragonRideTestCourseMenu_unity2_raw :: __lookup_a_call :: get_method_info () } pub fn on_left_right_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DragonRideTestCourseMenu_unity2_raw :: __lookup_on_left_right :: get_method_info () } }
 
 #[cfg(feature = "app-dragonridetestcoursemenu")]
 impl DragonRideTestCourseMenu {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DragonRideTestCourseMenu),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDragonRideTestCourseMenuMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DragonRideTestCourseMenu) , :: core :: stringify ! (new) ,)) ; < Self as IDragonRideTestCourseMenuMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-dragonridetestcoursemenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{DragonRideTestCourseMenu, IDragonRideTestCourseMenu, IDragonRideTestCourseMenuMethods};
-    #[cfg(feature = "app-menuitem")]
-    pub use crate::app::menuitem::IMenuItemMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::{app::menuitem::IMenuItem, system::object::IObject};
+    pub use super::DragonRideTestCourseMenu;
+    pub use super::IDragonRideTestCourseMenu;
+    pub use super::IDragonRideTestCourseMenuMethods;
+    pub use crate::app::menuitem::IMenuItem;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "app-menuitem")] pub use crate::app::menuitem::IMenuItemMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

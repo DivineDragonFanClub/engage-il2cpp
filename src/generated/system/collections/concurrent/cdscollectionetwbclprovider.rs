@@ -2,184 +2,44 @@
 
 #[cfg(feature = "system-collections-concurrent-cdscollectionetwbclprovider-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/concurrent/cdscollectionetwbclprovider/CDSCollectionETWBCLProvider.md"))]
-    #[::unity2::class(namespace = "System.Collections.Concurrent", name = "CDSCollectionETWBCLProvider")]
-    pub struct CDSCollectionETWBCLProvider {
-        #[static_field]
-        #[rename(name = "Log")]
-        pub log: crate::system::collections::concurrent::cdscollectionetwbclprovider::CDSCollectionETWBCLProvider,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/concurrent/cdscollectionetwbclprovider/CDSCollectionETWBCLProvider.md"))] # [:: unity2 :: class (namespace = "System.Collections.Concurrent" , name = "CDSCollectionETWBCLProvider")] pub struct CDSCollectionETWBCLProvider {
+# [static_field] # [rename (name = "Log")] pub log : crate :: system :: collections :: concurrent :: cdscollectionetwbclprovider :: CDSCollectionETWBCLProvider ,
+}
+
 }
 
 #[cfg(feature = "system-collections-concurrent-cdscollectionetwbclprovider-types")]
 pub use __types::*;
 
 #[cfg(feature = "system-collections-concurrent-cdscollectionetwbclprovider")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __CDSCollectionETWBCLProvider_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CDSCollectionETWBCLProvider as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CDSCollectionETWBCLProvider as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: CDSCollectionETWBCLProvider, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CDSCollectionETWBCLProvider, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_concurrent_dictionary_acquiring_all_locks {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CDSCollectionETWBCLProvider as ::unity2::ClassIdentity>::class(),
-                "ConcurrentDictionary_AcquiringAllLocks",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CDSCollectionETWBCLProvider as ::unity2::ClassIdentity>::NAME,
-                        "ConcurrentDictionary_AcquiringAllLocks",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn concurrent_dictionary_acquiring_all_locks(
-        this: CDSCollectionETWBCLProvider,
-        num_of_buckets: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(CDSCollectionETWBCLProvider, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_concurrent_dictionary_acquiring_all_locks::get_method_info().method_ptr);
-        inner(this, num_of_buckets, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CDSCollectionETWBCLProvider as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CDSCollectionETWBCLProvider as ::unity2::ClassIdentity>::NAME,
-                        ".cctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __CDSCollectionETWBCLProvider_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CDSCollectionETWBCLProvider as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CDSCollectionETWBCLProvider as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : CDSCollectionETWBCLProvider , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CDSCollectionETWBCLProvider , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_concurrent_dictionary_acquiring_all_locks { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CDSCollectionETWBCLProvider as :: unity2 :: ClassIdentity > :: class () , "ConcurrentDictionary_AcquiringAllLocks" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CDSCollectionETWBCLProvider as :: unity2 :: ClassIdentity > :: NAME , "ConcurrentDictionary_AcquiringAllLocks" , e) , } } } pub unsafe fn concurrent_dictionary_acquiring_all_locks (this : CDSCollectionETWBCLProvider , num_of_buckets : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CDSCollectionETWBCLProvider , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_concurrent_dictionary_acquiring_all_locks :: get_method_info () . method_ptr ,) ; inner (this , num_of_buckets , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CDSCollectionETWBCLProvider as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CDSCollectionETWBCLProvider as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
+
+#[cfg(feature = "system-collections-concurrent-cdscollectionetwbclprovider")]
+impl CDSCollectionETWBCLProvider { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { __CDSCollectionETWBCLProvider_unity2_raw :: cctor (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "system-collections-concurrent-cdscollectionetwbclprovider")]
+pub trait ICDSCollectionETWBCLProviderMethods : ICDSCollectionETWBCLProvider { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CDSCollectionETWBCLProvider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CDSCollectionETWBCLProvider_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ConcurrentDictionary_AcquiringAllLocks(i32)` overload"] fn concurrent_dictionary_acquiring_all_locks (self , num_of_buckets : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < CDSCollectionETWBCLProvider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CDSCollectionETWBCLProvider_unity2_raw :: concurrent_dictionary_acquiring_all_locks (__receiver , :: core :: convert :: Into :: into (num_of_buckets) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "system-collections-concurrent-cdscollectionetwbclprovider")]
+impl < __T : ICDSCollectionETWBCLProvider > ICDSCollectionETWBCLProviderMethods for __T { }
+
+#[cfg(feature = "system-collections-concurrent-cdscollectionetwbclprovider")]
+impl CDSCollectionETWBCLProvider { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CDSCollectionETWBCLProvider_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn concurrent_dictionary_acquiring_all_locks_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CDSCollectionETWBCLProvider_unity2_raw :: __lookup_concurrent_dictionary_acquiring_all_locks :: get_method_info () } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CDSCollectionETWBCLProvider_unity2_raw :: __lookup_cctor :: get_method_info () } }
 
 #[cfg(feature = "system-collections-concurrent-cdscollectionetwbclprovider")]
 impl CDSCollectionETWBCLProvider {
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __CDSCollectionETWBCLProvider_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "system-collections-concurrent-cdscollectionetwbclprovider")]
-pub trait ICDSCollectionETWBCLProviderMethods: ICDSCollectionETWBCLProvider {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <CDSCollectionETWBCLProvider as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CDSCollectionETWBCLProvider_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ConcurrentDictionary_AcquiringAllLocks(i32)` overload"]
-    fn concurrent_dictionary_acquiring_all_locks(self, num_of_buckets: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver =
-                <CDSCollectionETWBCLProvider as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CDSCollectionETWBCLProvider_unity2_raw::concurrent_dictionary_acquiring_all_locks(
-                __receiver,
-                ::core::convert::Into::into(num_of_buckets),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "system-collections-concurrent-cdscollectionetwbclprovider")]
-impl<__T: ICDSCollectionETWBCLProvider> ICDSCollectionETWBCLProviderMethods for __T {}
-
-#[cfg(feature = "system-collections-concurrent-cdscollectionetwbclprovider")]
-impl CDSCollectionETWBCLProvider {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(CDSCollectionETWBCLProvider),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ICDSCollectionETWBCLProviderMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CDSCollectionETWBCLProvider) , :: core :: stringify ! (new) ,)) ; < Self as ICDSCollectionETWBCLProviderMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "system-collections-concurrent-cdscollectionetwbclprovider")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{CDSCollectionETWBCLProvider, ICDSCollectionETWBCLProvider, ICDSCollectionETWBCLProviderMethods};
+    pub use super::CDSCollectionETWBCLProvider;
+    pub use super::ICDSCollectionETWBCLProvider;
+    pub use super::ICDSCollectionETWBCLProviderMethods;
 }

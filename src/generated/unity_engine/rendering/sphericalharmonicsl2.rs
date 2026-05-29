@@ -2,312 +2,97 @@
 
 #[cfg(feature = "unity_engine-rendering-sphericalharmonicsl2-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        valuetype::{IValueType, ValueType},
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/sphericalharmonicsl2/SphericalHarmonicsL2.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct SphericalHarmonicsL2 {
-        pub shr0: f32,
-        pub shr1: f32,
-        pub shr2: f32,
-        pub shr3: f32,
-        pub shr4: f32,
-        pub shr5: f32,
-        pub shr6: f32,
-        pub shr7: f32,
-        pub shr8: f32,
-        pub shg0: f32,
-        pub shg1: f32,
-        pub shg2: f32,
-        pub shg3: f32,
-        pub shg4: f32,
-        pub shg5: f32,
-        pub shg6: f32,
-        pub shg7: f32,
-        pub shg8: f32,
-        pub shb0: f32,
-        pub shb1: f32,
-        pub shb2: f32,
-        pub shb3: f32,
-        pub shb4: f32,
-        pub shb5: f32,
-        pub shb6: f32,
-        pub shb7: f32,
-        pub shb8: f32,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
 
-    impl ::unity2::ClassIdentity for SphericalHarmonicsL2 {
-        const NAME: &'static str = "SphericalHarmonicsL2";
-        const NAMESPACE: &'static str = "UnityEngine.Rendering";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/sphericalharmonicsl2/SphericalHarmonicsL2.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct SphericalHarmonicsL2 {
+    pub shr0: f32,
+    pub shr1: f32,
+    pub shr2: f32,
+    pub shr3: f32,
+    pub shr4: f32,
+    pub shr5: f32,
+    pub shr6: f32,
+    pub shr7: f32,
+    pub shr8: f32,
+    pub shg0: f32,
+    pub shg1: f32,
+    pub shg2: f32,
+    pub shg3: f32,
+    pub shg4: f32,
+    pub shg5: f32,
+    pub shg6: f32,
+    pub shg7: f32,
+    pub shg8: f32,
+    pub shb0: f32,
+    pub shb1: f32,
+    pub shb2: f32,
+    pub shb3: f32,
+    pub shb4: f32,
+    pub shb5: f32,
+    pub shb6: f32,
+    pub shb7: f32,
+    pub shb8: f32,
+}
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+
+impl ::unity2::ClassIdentity for SphericalHarmonicsL2 {
+    const NAMESPACE: &'static str = "UnityEngine.Rendering";
+
+    const NAME: &'static str = "SphericalHarmonicsL2";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for SphericalHarmonicsL2 {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl ::unity2::IlType for SphericalHarmonicsL2 {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
+
+}
+
 }
 
 #[cfg(feature = "unity_engine-rendering-sphericalharmonicsl2-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-sphericalharmonicsl2")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __SphericalHarmonicsL2_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_item {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SphericalHarmonicsL2 as ::unity2::ClassIdentity>::class(),
-                "get_Item",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SphericalHarmonicsL2 as ::unity2::ClassIdentity>::NAME,
-                        "get_Item",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_item(this: SphericalHarmonicsL2, rgb: i32, coefficient: i32, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(SphericalHarmonicsL2, i32, i32, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_get_item::get_method_info().method_ptr);
-        inner(this, rgb, coefficient, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_hash_code {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SphericalHarmonicsL2 as ::unity2::ClassIdentity>::class(),
-                "GetHashCode",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SphericalHarmonicsL2 as ::unity2::ClassIdentity>::NAME,
-                        "GetHashCode",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_hash_code(this: SphericalHarmonicsL2, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(SphericalHarmonicsL2, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_hash_code::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_equals {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SphericalHarmonicsL2 as ::unity2::ClassIdentity>::class(),
-                "Equals",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SphericalHarmonicsL2 as ::unity2::ClassIdentity>::NAME,
-                        "Equals",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn equals(this: SphericalHarmonicsL2, other: crate::system::object::Object, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(SphericalHarmonicsL2, crate::system::object::Object, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_equals::get_method_info().method_ptr);
-        inner(this, other, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_equals_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::rendering::sphericalharmonicsl2::SphericalHarmonicsL2 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SphericalHarmonicsL2 as ::unity2::ClassIdentity>::class(),
-                "Equals",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SphericalHarmonicsL2 as ::unity2::ClassIdentity>::NAME,
-                        "Equals",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn equals_2(
-        this: SphericalHarmonicsL2,
-        other: crate::unity_engine::rendering::sphericalharmonicsl2::SphericalHarmonicsL2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            SphericalHarmonicsL2,
-            crate::unity_engine::rendering::sphericalharmonicsl2::SphericalHarmonicsL2,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(__lookup_equals_2::get_method_info().method_ptr);
-        inner(this, other, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_op_equality {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::rendering::sphericalharmonicsl2::SphericalHarmonicsL2 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::rendering::sphericalharmonicsl2::SphericalHarmonicsL2 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SphericalHarmonicsL2 as ::unity2::ClassIdentity>::class(),
-                "op_Equality",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SphericalHarmonicsL2 as ::unity2::ClassIdentity>::NAME,
-                        "op_Equality",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn op_equality(
-        lhs: crate::unity_engine::rendering::sphericalharmonicsl2::SphericalHarmonicsL2,
-        rhs: crate::unity_engine::rendering::sphericalharmonicsl2::SphericalHarmonicsL2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            crate::unity_engine::rendering::sphericalharmonicsl2::SphericalHarmonicsL2,
-            crate::unity_engine::rendering::sphericalharmonicsl2::SphericalHarmonicsL2,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(__lookup_op_equality::get_method_info().method_ptr);
-        inner(lhs, rhs, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __SphericalHarmonicsL2_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_item { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SphericalHarmonicsL2 as :: unity2 :: ClassIdentity > :: class () , "get_Item" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SphericalHarmonicsL2 as :: unity2 :: ClassIdentity > :: NAME , "get_Item" , e) , } } } pub unsafe fn get_item (this : SphericalHarmonicsL2 , rgb : i32 , coefficient : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (SphericalHarmonicsL2 , i32 , i32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_get_item :: get_method_info () . method_ptr ,) ; inner (this , rgb , coefficient , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_hash_code { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SphericalHarmonicsL2 as :: unity2 :: ClassIdentity > :: class () , "GetHashCode" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SphericalHarmonicsL2 as :: unity2 :: ClassIdentity > :: NAME , "GetHashCode" , e) , } } } pub unsafe fn get_hash_code (this : SphericalHarmonicsL2 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (SphericalHarmonicsL2 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_hash_code :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_equals { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SphericalHarmonicsL2 as :: unity2 :: ClassIdentity > :: class () , "Equals" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SphericalHarmonicsL2 as :: unity2 :: ClassIdentity > :: NAME , "Equals" , e) , } } } pub unsafe fn equals (this : SphericalHarmonicsL2 , other : crate :: system :: object :: Object , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (SphericalHarmonicsL2 , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_equals :: get_method_info () . method_ptr ,) ; inner (this , other , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_equals_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: sphericalharmonicsl2 :: SphericalHarmonicsL2 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SphericalHarmonicsL2 as :: unity2 :: ClassIdentity > :: class () , "Equals" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SphericalHarmonicsL2 as :: unity2 :: ClassIdentity > :: NAME , "Equals" , e) , } } } pub unsafe fn equals_2 (this : SphericalHarmonicsL2 , other : crate :: unity_engine :: rendering :: sphericalharmonicsl2 :: SphericalHarmonicsL2 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (SphericalHarmonicsL2 , crate :: unity_engine :: rendering :: sphericalharmonicsl2 :: SphericalHarmonicsL2 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_equals_2 :: get_method_info () . method_ptr ,) ; inner (this , other , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_op_equality { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: sphericalharmonicsl2 :: SphericalHarmonicsL2 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: sphericalharmonicsl2 :: SphericalHarmonicsL2 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SphericalHarmonicsL2 as :: unity2 :: ClassIdentity > :: class () , "op_Equality" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SphericalHarmonicsL2 as :: unity2 :: ClassIdentity > :: NAME , "op_Equality" , e) , } } } pub unsafe fn op_equality (lhs : crate :: unity_engine :: rendering :: sphericalharmonicsl2 :: SphericalHarmonicsL2 , rhs : crate :: unity_engine :: rendering :: sphericalharmonicsl2 :: SphericalHarmonicsL2 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (crate :: unity_engine :: rendering :: sphericalharmonicsl2 :: SphericalHarmonicsL2 , crate :: unity_engine :: rendering :: sphericalharmonicsl2 :: SphericalHarmonicsL2 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_op_equality :: get_method_info () . method_ptr ,) ; inner (lhs , rhs , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-rendering-sphericalharmonicsl2")]
-impl SphericalHarmonicsL2 {
-    #[doc = "`op_Equality(crate::unity_engine::rendering::sphericalharmonicsl2::SphericalHarmonicsL2, crate::unity_engine::rendering::sphericalharmonicsl2::SphericalHarmonicsL2)` overload"]
-    pub fn op_equality(
-        lhs: impl ::core::convert::Into<crate::unity_engine::rendering::sphericalharmonicsl2::SphericalHarmonicsL2>,
-        rhs: impl ::core::convert::Into<crate::unity_engine::rendering::sphericalharmonicsl2::SphericalHarmonicsL2>,
-    ) -> bool {
-        unsafe {
-            __SphericalHarmonicsL2_unity2_raw::op_equality(
-                ::core::convert::Into::into(lhs),
-                ::core::convert::Into::into(rhs),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+impl SphericalHarmonicsL2 { # [doc = "`op_Equality(crate::unity_engine::rendering::sphericalharmonicsl2::SphericalHarmonicsL2, crate::unity_engine::rendering::sphericalharmonicsl2::SphericalHarmonicsL2)` overload"] pub fn op_equality (lhs : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: sphericalharmonicsl2 :: SphericalHarmonicsL2 > , rhs : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: sphericalharmonicsl2 :: SphericalHarmonicsL2 >) -> bool { unsafe { __SphericalHarmonicsL2_unity2_raw :: op_equality (:: core :: convert :: Into :: into (lhs) , :: core :: convert :: Into :: into (rhs) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-rendering-sphericalharmonicsl2")]
-impl SphericalHarmonicsL2 {
-    #[doc = "`get_Item(i32, i32)` overload"]
-    pub fn get_item(self, rgb: impl ::core::convert::Into<i32>, coefficient: impl ::core::convert::Into<i32>) -> f32 {
-        unsafe {
-            __SphericalHarmonicsL2_unity2_raw::get_item(
-                self,
-                ::core::convert::Into::into(rgb),
-                ::core::convert::Into::into(coefficient),
-                ::core::option::Option::None,
-            )
-        }
-    }
+impl SphericalHarmonicsL2 { # [doc = "`get_Item(i32, i32)` overload"] pub fn get_item (self , rgb : impl :: core :: convert :: Into < i32 > , coefficient : impl :: core :: convert :: Into < i32 >) -> f32 { unsafe { __SphericalHarmonicsL2_unity2_raw :: get_item (self , :: core :: convert :: Into :: into (rgb) , :: core :: convert :: Into :: into (coefficient) , :: core :: option :: Option :: None) } } # [doc = "`GetHashCode()` overload"] pub fn get_hash_code (self ,) -> i32 { unsafe { __SphericalHarmonicsL2_unity2_raw :: get_hash_code (self , :: core :: option :: Option :: None) } } # [doc = "`Equals(crate::system::object::Object)` overload"] pub fn equals (self , other : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { __SphericalHarmonicsL2_unity2_raw :: equals (self , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } # [doc = "`Equals(crate::unity_engine::rendering::sphericalharmonicsl2::SphericalHarmonicsL2)` overload"] pub fn equals_2 (self , other : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: sphericalharmonicsl2 :: SphericalHarmonicsL2 >) -> bool { unsafe { __SphericalHarmonicsL2_unity2_raw :: equals_2 (self , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } }
 
-    #[doc = "`GetHashCode()` overload"]
-    pub fn get_hash_code(self) -> i32 {
-        unsafe { __SphericalHarmonicsL2_unity2_raw::get_hash_code(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`Equals(crate::system::object::Object)` overload"]
-    pub fn equals(self, other: impl ::core::convert::Into<crate::system::object::Object>) -> bool {
-        unsafe { __SphericalHarmonicsL2_unity2_raw::equals(self, ::core::convert::Into::into(other), ::core::option::Option::None) }
-    }
-
-    #[doc = "`Equals(crate::unity_engine::rendering::sphericalharmonicsl2::SphericalHarmonicsL2)` overload"]
-    pub fn equals_2(self, other: impl ::core::convert::Into<crate::unity_engine::rendering::sphericalharmonicsl2::SphericalHarmonicsL2>) -> bool {
-        unsafe { __SphericalHarmonicsL2_unity2_raw::equals_2(self, ::core::convert::Into::into(other), ::core::option::Option::None) }
-    }
-}
+#[cfg(feature = "unity_engine-rendering-sphericalharmonicsl2")]
+impl SphericalHarmonicsL2 { pub fn get_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SphericalHarmonicsL2_unity2_raw :: __lookup_get_item :: get_method_info () } pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SphericalHarmonicsL2_unity2_raw :: __lookup_get_hash_code :: get_method_info () } pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SphericalHarmonicsL2_unity2_raw :: __lookup_equals :: get_method_info () } pub fn equals_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SphericalHarmonicsL2_unity2_raw :: __lookup_equals_2 :: get_method_info () } pub fn op_equality_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SphericalHarmonicsL2_unity2_raw :: __lookup_op_equality :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-rendering-sphericalharmonicsl2")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::SphericalHarmonicsL2;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::system::{object::IObject, valuetype::IValueType};
+    pub use crate::system::object::IObject;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

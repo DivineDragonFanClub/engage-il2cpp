@@ -2,400 +2,71 @@
 
 #[cfg(feature = "unity_engine-animations-animatorcontrollerplayable-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        valuetype::{IValueType, ValueType},
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/animations/animatorcontrollerplayable/AnimatorControllerPlayable.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct AnimatorControllerPlayable {
-        pub m_handle: crate::unity_engine::playables::playablehandle::PlayableHandle,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
 
-    impl ::unity2::ClassIdentity for AnimatorControllerPlayable {
-        const NAME: &'static str = "AnimatorControllerPlayable";
-        const NAMESPACE: &'static str = "UnityEngine.Animations";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/animations/animatorcontrollerplayable/AnimatorControllerPlayable.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct AnimatorControllerPlayable {
+    pub m_handle: crate :: unity_engine :: playables :: playablehandle :: PlayableHandle,
+}
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+
+impl ::unity2::ClassIdentity for AnimatorControllerPlayable {
+    const NAMESPACE: &'static str = "UnityEngine.Animations";
+
+    const NAME: &'static str = "AnimatorControllerPlayable";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for AnimatorControllerPlayable {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl ::unity2::IlType for AnimatorControllerPlayable {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
+
+}
+
 }
 
 #[cfg(feature = "unity_engine-animations-animatorcontrollerplayable-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-animations-animatorcontrollerplayable")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AnimatorControllerPlayable_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::playables::playablehandle::PlayableHandle as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AnimatorControllerPlayable as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AnimatorControllerPlayable as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: AnimatorControllerPlayable,
-        handle: crate::unity_engine::playables::playablehandle::PlayableHandle,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            AnimatorControllerPlayable,
-            crate::unity_engine::playables::playablehandle::PlayableHandle,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, handle, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_handle {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AnimatorControllerPlayable as ::unity2::ClassIdentity>::class(),
-                "GetHandle",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AnimatorControllerPlayable as ::unity2::ClassIdentity>::NAME,
-                        "GetHandle",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_handle(
-        this: AnimatorControllerPlayable,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::playables::playablehandle::PlayableHandle {
-        let inner: extern "C" fn(
-            AnimatorControllerPlayable,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::playables::playablehandle::PlayableHandle =
-            ::core::mem::transmute(__lookup_get_handle::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_handle {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::playables::playablehandle::PlayableHandle as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AnimatorControllerPlayable as ::unity2::ClassIdentity>::class(),
-                "SetHandle",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AnimatorControllerPlayable as ::unity2::ClassIdentity>::NAME,
-                        "SetHandle",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_handle(
-        this: AnimatorControllerPlayable,
-        handle: crate::unity_engine::playables::playablehandle::PlayableHandle,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            AnimatorControllerPlayable,
-            crate::unity_engine::playables::playablehandle::PlayableHandle,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_set_handle::get_method_info().method_ptr);
-        inner(this, handle, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_equals {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::animations::animatorcontrollerplayable::AnimatorControllerPlayable as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AnimatorControllerPlayable as ::unity2::ClassIdentity>::class(),
-                "Equals",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AnimatorControllerPlayable as ::unity2::ClassIdentity>::NAME,
-                        "Equals",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn equals(
-        this: AnimatorControllerPlayable,
-        other: crate::unity_engine::animations::animatorcontrollerplayable::AnimatorControllerPlayable,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            AnimatorControllerPlayable,
-            crate::unity_engine::animations::animatorcontrollerplayable::AnimatorControllerPlayable,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(__lookup_equals::get_method_info().method_ptr);
-        inner(this, other, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_float {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AnimatorControllerPlayable as ::unity2::ClassIdentity>::class(),
-                "SetFloat",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AnimatorControllerPlayable as ::unity2::ClassIdentity>::NAME,
-                        "SetFloat",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_float(
-        this: AnimatorControllerPlayable,
-        name: ::unity2::Il2CppString,
-        value: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(AnimatorControllerPlayable, ::unity2::Il2CppString, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_float::get_method_info().method_ptr);
-        inner(this, name, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_float_string {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::playables::playablehandle::PlayableHandle as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AnimatorControllerPlayable as ::unity2::ClassIdentity>::class(),
-                "SetFloatString",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AnimatorControllerPlayable as ::unity2::ClassIdentity>::NAME,
-                        "SetFloatString",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_float_string(
-        handle: *mut crate::unity_engine::playables::playablehandle::PlayableHandle,
-        name: ::unity2::Il2CppString,
-        value: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            *mut crate::unity_engine::playables::playablehandle::PlayableHandle,
-            ::unity2::Il2CppString,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_set_float_string::get_method_info().method_ptr);
-        inner(handle, name, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AnimatorControllerPlayable as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AnimatorControllerPlayable as ::unity2::ClassIdentity>::NAME,
-                        ".cctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __AnimatorControllerPlayable_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playablehandle :: PlayableHandle as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AnimatorControllerPlayable as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AnimatorControllerPlayable as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : AnimatorControllerPlayable , handle : crate :: unity_engine :: playables :: playablehandle :: PlayableHandle , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AnimatorControllerPlayable , crate :: unity_engine :: playables :: playablehandle :: PlayableHandle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , handle , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_handle { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AnimatorControllerPlayable as :: unity2 :: ClassIdentity > :: class () , "GetHandle" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AnimatorControllerPlayable as :: unity2 :: ClassIdentity > :: NAME , "GetHandle" , e) , } } } pub unsafe fn get_handle (this : AnimatorControllerPlayable , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: playables :: playablehandle :: PlayableHandle { let inner : extern "C" fn (AnimatorControllerPlayable , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: playables :: playablehandle :: PlayableHandle = :: core :: mem :: transmute (__lookup_get_handle :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_handle { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playablehandle :: PlayableHandle as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AnimatorControllerPlayable as :: unity2 :: ClassIdentity > :: class () , "SetHandle" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AnimatorControllerPlayable as :: unity2 :: ClassIdentity > :: NAME , "SetHandle" , e) , } } } pub unsafe fn set_handle (this : AnimatorControllerPlayable , handle : crate :: unity_engine :: playables :: playablehandle :: PlayableHandle , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AnimatorControllerPlayable , crate :: unity_engine :: playables :: playablehandle :: PlayableHandle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_handle :: get_method_info () . method_ptr ,) ; inner (this , handle , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_equals { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: animations :: animatorcontrollerplayable :: AnimatorControllerPlayable as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AnimatorControllerPlayable as :: unity2 :: ClassIdentity > :: class () , "Equals" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AnimatorControllerPlayable as :: unity2 :: ClassIdentity > :: NAME , "Equals" , e) , } } } pub unsafe fn equals (this : AnimatorControllerPlayable , other : crate :: unity_engine :: animations :: animatorcontrollerplayable :: AnimatorControllerPlayable , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (AnimatorControllerPlayable , crate :: unity_engine :: animations :: animatorcontrollerplayable :: AnimatorControllerPlayable , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_equals :: get_method_info () . method_ptr ,) ; inner (this , other , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_float { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AnimatorControllerPlayable as :: unity2 :: ClassIdentity > :: class () , "SetFloat" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AnimatorControllerPlayable as :: unity2 :: ClassIdentity > :: NAME , "SetFloat" , e) , } } } pub unsafe fn set_float (this : AnimatorControllerPlayable , name : :: unity2 :: Il2CppString , value : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AnimatorControllerPlayable , :: unity2 :: Il2CppString , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_float :: get_method_info () . method_ptr ,) ; inner (this , name , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_float_string { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playablehandle :: PlayableHandle as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AnimatorControllerPlayable as :: unity2 :: ClassIdentity > :: class () , "SetFloatString" , 3 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AnimatorControllerPlayable as :: unity2 :: ClassIdentity > :: NAME , "SetFloatString" , e) , } } } pub unsafe fn set_float_string (handle : * mut crate :: unity_engine :: playables :: playablehandle :: PlayableHandle , name : :: unity2 :: Il2CppString , value : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (* mut crate :: unity_engine :: playables :: playablehandle :: PlayableHandle , :: unity2 :: Il2CppString , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_float_string :: get_method_info () . method_ptr ,) ; inner (handle , name , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AnimatorControllerPlayable as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AnimatorControllerPlayable as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-animations-animatorcontrollerplayable")]
-impl AnimatorControllerPlayable {
-    #[doc = "`SetFloatString(*mutcrate::unity_engine::playables::playablehandle::PlayableHandle, ::unity2::Il2CppString, f32)` overload"]
-    pub fn set_float_string(
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        value: impl ::core::convert::Into<f32>,
-    ) -> crate::unity_engine::playables::playablehandle::PlayableHandle {
-        unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::playables::playablehandle::PlayableHandle>::uninit();
-            __AnimatorControllerPlayable_unity2_raw::set_float_string(
-                __out_0.as_mut_ptr(),
-                ::core::convert::Into::into(name),
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            );
-            __out_0.assume_init()
-        }
-    }
-
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __AnimatorControllerPlayable_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
+impl AnimatorControllerPlayable { # [doc = "`SetFloatString(*mutcrate::unity_engine::playables::playablehandle::PlayableHandle, ::unity2::Il2CppString, f32)` overload"] pub fn set_float_string (name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , value : impl :: core :: convert :: Into < f32 >) -> crate :: unity_engine :: playables :: playablehandle :: PlayableHandle { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: playables :: playablehandle :: PlayableHandle > :: uninit () ; __AnimatorControllerPlayable_unity2_raw :: set_float_string (__out_0 . as_mut_ptr () , :: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) ; __out_0 . assume_init () } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { __AnimatorControllerPlayable_unity2_raw :: cctor (:: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-animations-animatorcontrollerplayable")]
-impl AnimatorControllerPlayable {
-    #[doc = "`.ctor(crate::unity_engine::playables::playablehandle::PlayableHandle)` overload"]
-    pub fn ctor(self, handle: impl ::core::convert::Into<crate::unity_engine::playables::playablehandle::PlayableHandle>) -> () {
-        unsafe { __AnimatorControllerPlayable_unity2_raw::ctor(self, ::core::convert::Into::into(handle), ::core::option::Option::None) }
-    }
+impl AnimatorControllerPlayable { # [doc = "`.ctor(crate::unity_engine::playables::playablehandle::PlayableHandle)` overload"] pub fn ctor (self , handle : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playablehandle :: PlayableHandle >) -> () { unsafe { __AnimatorControllerPlayable_unity2_raw :: ctor (self , :: core :: convert :: Into :: into (handle) , :: core :: option :: Option :: None) } } # [doc = "`GetHandle()` overload"] pub fn get_handle (self ,) -> crate :: unity_engine :: playables :: playablehandle :: PlayableHandle { unsafe { __AnimatorControllerPlayable_unity2_raw :: get_handle (self , :: core :: option :: Option :: None) } } # [doc = "`SetHandle(crate::unity_engine::playables::playablehandle::PlayableHandle)` overload"] pub fn set_handle (self , handle : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playablehandle :: PlayableHandle >) -> () { unsafe { __AnimatorControllerPlayable_unity2_raw :: set_handle (self , :: core :: convert :: Into :: into (handle) , :: core :: option :: Option :: None) } } # [doc = "`Equals(crate::unity_engine::animations::animatorcontrollerplayable::AnimatorControllerPlayable)` overload"] pub fn equals (self , other : impl :: core :: convert :: Into < crate :: unity_engine :: animations :: animatorcontrollerplayable :: AnimatorControllerPlayable >) -> bool { unsafe { __AnimatorControllerPlayable_unity2_raw :: equals (self , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } # [doc = "`SetFloat(::unity2::Il2CppString, f32)` overload"] pub fn set_float (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { __AnimatorControllerPlayable_unity2_raw :: set_float (self , :: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } }
 
-    #[doc = "`GetHandle()` overload"]
-    pub fn get_handle(self) -> crate::unity_engine::playables::playablehandle::PlayableHandle {
-        unsafe { __AnimatorControllerPlayable_unity2_raw::get_handle(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`SetHandle(crate::unity_engine::playables::playablehandle::PlayableHandle)` overload"]
-    pub fn set_handle(self, handle: impl ::core::convert::Into<crate::unity_engine::playables::playablehandle::PlayableHandle>) -> () {
-        unsafe { __AnimatorControllerPlayable_unity2_raw::set_handle(self, ::core::convert::Into::into(handle), ::core::option::Option::None) }
-    }
-
-    #[doc = "`Equals(crate::unity_engine::animations::animatorcontrollerplayable::AnimatorControllerPlayable)` overload"]
-    pub fn equals(
-        self,
-        other: impl ::core::convert::Into<crate::unity_engine::animations::animatorcontrollerplayable::AnimatorControllerPlayable>,
-    ) -> bool {
-        unsafe { __AnimatorControllerPlayable_unity2_raw::equals(self, ::core::convert::Into::into(other), ::core::option::Option::None) }
-    }
-
-    #[doc = "`SetFloat(::unity2::Il2CppString, f32)` overload"]
-    pub fn set_float(self, name: impl ::core::convert::Into<::unity2::Il2CppString>, value: impl ::core::convert::Into<f32>) -> () {
-        unsafe {
-            __AnimatorControllerPlayable_unity2_raw::set_float(
-                self,
-                ::core::convert::Into::into(name),
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+#[cfg(feature = "unity_engine-animations-animatorcontrollerplayable")]
+impl AnimatorControllerPlayable { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AnimatorControllerPlayable_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn get_handle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AnimatorControllerPlayable_unity2_raw :: __lookup_get_handle :: get_method_info () } pub fn set_handle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AnimatorControllerPlayable_unity2_raw :: __lookup_set_handle :: get_method_info () } pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AnimatorControllerPlayable_unity2_raw :: __lookup_equals :: get_method_info () } pub fn set_float_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AnimatorControllerPlayable_unity2_raw :: __lookup_set_float :: get_method_info () } pub fn set_float_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AnimatorControllerPlayable_unity2_raw :: __lookup_set_float_string :: get_method_info () } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AnimatorControllerPlayable_unity2_raw :: __lookup_cctor :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-animations-animatorcontrollerplayable")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::AnimatorControllerPlayable;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::system::{object::IObject, valuetype::IValueType};
+    pub use crate::system::object::IObject;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

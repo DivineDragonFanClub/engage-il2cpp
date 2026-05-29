@@ -2,213 +2,69 @@
 
 #[cfg(feature = "unity_engine-experimental-rendering-rendererlist-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        valuetype::{IValueType, ValueType},
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/rendering/rendererlist/RendererList.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct RendererList {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
 
-    impl ::unity2::ClassIdentity for RendererList {
-        const NAME: &'static str = "RendererList";
-        const NAMESPACE: &'static str = "UnityEngine.Experimental.Rendering";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/rendering/rendererlist/RendererList.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct RendererList {}
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+
+impl ::unity2::ClassIdentity for RendererList {
+    const NAMESPACE: &'static str = "UnityEngine.Experimental.Rendering";
+
+    const NAME: &'static str = "RendererList";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for RendererList {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl ::unity2::IlType for RendererList {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
+
+}
+
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-rendererlist-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-experimental-rendering-rendererlist")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RendererList_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_is_valid {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RendererList as ::unity2::ClassIdentity>::class(),
-                "get_isValid",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RendererList as ::unity2::ClassIdentity>::NAME,
-                        "get_isValid",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_is_valid(this: RendererList, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(RendererList, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_is_valid::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_is_valid {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RendererList as ::unity2::ClassIdentity>::class(),
-                "set_isValid",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RendererList as ::unity2::ClassIdentity>::NAME,
-                        "set_isValid",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_is_valid(this: RendererList, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RendererList, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_is_valid::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::experimental::rendering::rendererlistdesc::RendererListDesc as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<RendererList as ::unity2::ClassIdentity>::class(), "Create", 1, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RendererList as ::unity2::ClassIdentity>::NAME,
-                        "Create",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create(
-        desc: *mut crate::unity_engine::experimental::rendering::rendererlistdesc::RendererListDesc,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::experimental::rendering::rendererlist::RendererList {
-        let inner: extern "C" fn(
-            *mut crate::unity_engine::experimental::rendering::rendererlistdesc::RendererListDesc,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::experimental::rendering::rendererlist::RendererList =
-            ::core::mem::transmute(__lookup_create::get_method_info().method_ptr);
-        inner(desc, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<RendererList as ::unity2::ClassIdentity>::class(), ".cctor", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RendererList as ::unity2::ClassIdentity>::NAME,
-                        ".cctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __RendererList_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_is_valid { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RendererList as :: unity2 :: ClassIdentity > :: class () , "get_isValid" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RendererList as :: unity2 :: ClassIdentity > :: NAME , "get_isValid" , e) , } } } pub unsafe fn get_is_valid (this : RendererList , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (RendererList , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_is_valid :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_is_valid { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RendererList as :: unity2 :: ClassIdentity > :: class () , "set_isValid" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RendererList as :: unity2 :: ClassIdentity > :: NAME , "set_isValid" , e) , } } } pub unsafe fn set_is_valid (this : RendererList , value : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RendererList , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_is_valid :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: rendererlistdesc :: RendererListDesc as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RendererList as :: unity2 :: ClassIdentity > :: class () , "Create" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RendererList as :: unity2 :: ClassIdentity > :: NAME , "Create" , e) , } } } pub unsafe fn create (desc : * mut crate :: unity_engine :: experimental :: rendering :: rendererlistdesc :: RendererListDesc , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: rendererlist :: RendererList { let inner : extern "C" fn (* mut crate :: unity_engine :: experimental :: rendering :: rendererlistdesc :: RendererListDesc , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: rendererlist :: RendererList = :: core :: mem :: transmute (__lookup_create :: get_method_info () . method_ptr ,) ; inner (desc , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RendererList as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RendererList as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-experimental-rendering-rendererlist")]
-impl RendererList {
-    #[doc = "`Create(*mutcrate::unity_engine::experimental::rendering::rendererlistdesc::RendererListDesc)` overload"]
-    pub fn create() -> (
-        crate::unity_engine::experimental::rendering::rendererlist::RendererList,
-        crate::unity_engine::experimental::rendering::rendererlistdesc::RendererListDesc,
-    ) {
-        unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::experimental::rendering::rendererlistdesc::RendererListDesc>::uninit();
-            let __ret = { __RendererList_unity2_raw::create(__out_0.as_mut_ptr(), ::core::option::Option::None) };
-            (__ret, __out_0.assume_init())
-        }
-    }
-
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __RendererList_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
+impl RendererList { # [doc = "`Create(*mutcrate::unity_engine::experimental::rendering::rendererlistdesc::RendererListDesc)` overload"] pub fn create () -> (crate :: unity_engine :: experimental :: rendering :: rendererlist :: RendererList , crate :: unity_engine :: experimental :: rendering :: rendererlistdesc :: RendererListDesc) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: experimental :: rendering :: rendererlistdesc :: RendererListDesc > :: uninit () ; let __ret = { __RendererList_unity2_raw :: create (__out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } ; (__ret , __out_0 . assume_init ()) } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { __RendererList_unity2_raw :: cctor (:: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-experimental-rendering-rendererlist")]
-impl RendererList {
-    #[doc = "`get_isValid()` overload"]
-    pub fn get_is_valid(self) -> bool {
-        unsafe { __RendererList_unity2_raw::get_is_valid(self, ::core::option::Option::None) }
-    }
+impl RendererList { # [doc = "`get_isValid()` overload"] pub fn get_is_valid (self ,) -> bool { unsafe { __RendererList_unity2_raw :: get_is_valid (self , :: core :: option :: Option :: None) } } # [doc = "`set_isValid(bool)` overload"] pub fn set_is_valid (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { __RendererList_unity2_raw :: set_is_valid (self , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } }
 
-    #[doc = "`set_isValid(bool)` overload"]
-    pub fn set_is_valid(self, value: impl ::core::convert::Into<bool>) -> () {
-        unsafe { __RendererList_unity2_raw::set_is_valid(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-}
+#[cfg(feature = "unity_engine-experimental-rendering-rendererlist")]
+impl RendererList { pub fn get_is_valid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RendererList_unity2_raw :: __lookup_get_is_valid :: get_method_info () } pub fn set_is_valid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RendererList_unity2_raw :: __lookup_set_is_valid :: get_method_info () } pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RendererList_unity2_raw :: __lookup_create :: get_method_info () } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RendererList_unity2_raw :: __lookup_cctor :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-experimental-rendering-rendererlist")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::RendererList;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::system::{object::IObject, valuetype::IValueType};
+    pub use crate::system::object::IObject;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

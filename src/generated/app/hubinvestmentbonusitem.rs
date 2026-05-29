@@ -2,316 +2,58 @@
 
 #[cfg(feature = "app-hubinvestmentbonusitem-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::{
-            structbase::{IStructBase, StructBase},
-            structdataarray_1::{IStructDataArray_1, StructDataArray_1},
-            structtemplate_1::{IStructTemplate_1, StructTemplate_1},
-        },
-        system::object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubinvestmentbonusitem/HubInvestmentBonusItem.md"))]
-    #[::unity2::class(namespace = "App", name = "HubInvestmentBonusItem")]
-    # [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < crate :: app :: hubinvestmentbonusitem :: HubInvestmentBonusItem >)]
-    pub struct HubInvestmentBonusItem {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: structbase :: { IStructBase , StructBase }
+ ;
+ use crate :: app :: structdataarray_1 :: { IStructDataArray_1 , StructDataArray_1 }
+ ;
+ use crate :: app :: structtemplate_1 :: { IStructTemplate_1 , StructTemplate_1 }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubinvestmentbonusitem/HubInvestmentBonusItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubInvestmentBonusItem")] # [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < crate :: app :: hubinvestmentbonusitem :: HubInvestmentBonusItem >)] pub struct HubInvestmentBonusItem {}
+
 }
 
 #[cfg(feature = "app-hubinvestmentbonusitem-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-hubinvestmentbonusitem")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __HubInvestmentBonusItem_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_load {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubInvestmentBonusItem as ::unity2::ClassIdentity>::class(),
-                "Load",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubInvestmentBonusItem as ::unity2::ClassIdentity>::NAME,
-                        "Load",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn load(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_load::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_item_id {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubInvestmentBonusItem as ::unity2::ClassIdentity>::class(),
-                "get_ItemId",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubInvestmentBonusItem as ::unity2::ClassIdentity>::NAME,
-                        "get_ItemId",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_item_id(this: HubInvestmentBonusItem, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(HubInvestmentBonusItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_item_id::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_item_id {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubInvestmentBonusItem as ::unity2::ClassIdentity>::class(),
-                "set_ItemId",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubInvestmentBonusItem as ::unity2::ClassIdentity>::NAME,
-                        "set_ItemId",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_item_id(this: HubInvestmentBonusItem, value: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(HubInvestmentBonusItem, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_item_id::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_num {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubInvestmentBonusItem as ::unity2::ClassIdentity>::class(),
-                "get_Num",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubInvestmentBonusItem as ::unity2::ClassIdentity>::NAME,
-                        "get_Num",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_num(this: HubInvestmentBonusItem, __unity2_method_info: ::unity2::OptionalMethod) -> u8 {
-        let inner: extern "C" fn(HubInvestmentBonusItem, ::unity2::OptionalMethod) -> u8 =
-            ::core::mem::transmute(__lookup_get_num::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_num {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u8 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubInvestmentBonusItem as ::unity2::ClassIdentity>::class(),
-                "set_Num",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubInvestmentBonusItem as ::unity2::ClassIdentity>::NAME,
-                        "set_Num",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_num(this: HubInvestmentBonusItem, value: u8, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(HubInvestmentBonusItem, u8, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_num::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubInvestmentBonusItem as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubInvestmentBonusItem as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: HubInvestmentBonusItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(HubInvestmentBonusItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __HubInvestmentBonusItem_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_load { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubInvestmentBonusItem as :: unity2 :: ClassIdentity > :: class () , "Load" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubInvestmentBonusItem as :: unity2 :: ClassIdentity > :: NAME , "Load" , e) , } } } pub unsafe fn load (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_load :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_item_id { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubInvestmentBonusItem as :: unity2 :: ClassIdentity > :: class () , "get_ItemId" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubInvestmentBonusItem as :: unity2 :: ClassIdentity > :: NAME , "get_ItemId" , e) , } } } pub unsafe fn get_item_id (this : HubInvestmentBonusItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (HubInvestmentBonusItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_item_id :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_item_id { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubInvestmentBonusItem as :: unity2 :: ClassIdentity > :: class () , "set_ItemId" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubInvestmentBonusItem as :: unity2 :: ClassIdentity > :: NAME , "set_ItemId" , e) , } } } pub unsafe fn set_item_id (this : HubInvestmentBonusItem , value : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HubInvestmentBonusItem , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_item_id :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_num { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubInvestmentBonusItem as :: unity2 :: ClassIdentity > :: class () , "get_Num" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubInvestmentBonusItem as :: unity2 :: ClassIdentity > :: NAME , "get_Num" , e) , } } } pub unsafe fn get_num (this : HubInvestmentBonusItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> u8 { let inner : extern "C" fn (HubInvestmentBonusItem , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute (__lookup_get_num :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_num { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< u8 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubInvestmentBonusItem as :: unity2 :: ClassIdentity > :: class () , "set_Num" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubInvestmentBonusItem as :: unity2 :: ClassIdentity > :: NAME , "set_Num" , e) , } } } pub unsafe fn set_num (this : HubInvestmentBonusItem , value : u8 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HubInvestmentBonusItem , u8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_num :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubInvestmentBonusItem as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubInvestmentBonusItem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : HubInvestmentBonusItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HubInvestmentBonusItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-hubinvestmentbonusitem")]
+impl HubInvestmentBonusItem { # [doc = "`Load()` overload"] pub fn load () -> () { unsafe { __HubInvestmentBonusItem_unity2_raw :: load (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-hubinvestmentbonusitem")]
+pub trait IHubInvestmentBonusItemMethods : IHubInvestmentBonusItem { # [doc = "`get_ItemId()` overload"] fn get_item_id (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubInvestmentBonusItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubInvestmentBonusItem_unity2_raw :: get_item_id (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_ItemId(::unity2::Il2CppString)` overload"] fn set_item_id (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < HubInvestmentBonusItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubInvestmentBonusItem_unity2_raw :: set_item_id (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_Num()` overload"] fn get_num (self ,) -> u8 { unsafe { let __receiver = < HubInvestmentBonusItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubInvestmentBonusItem_unity2_raw :: get_num (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_Num(u8)` overload"] fn set_num (self , value : impl :: core :: convert :: Into < u8 >) -> () { unsafe { let __receiver = < HubInvestmentBonusItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubInvestmentBonusItem_unity2_raw :: set_num (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HubInvestmentBonusItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubInvestmentBonusItem_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-hubinvestmentbonusitem")]
+impl < __T : IHubInvestmentBonusItem > IHubInvestmentBonusItemMethods for __T { }
+
+#[cfg(feature = "app-hubinvestmentbonusitem")]
+impl HubInvestmentBonusItem { pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubInvestmentBonusItem_unity2_raw :: __lookup_load :: get_method_info () } pub fn get_item_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubInvestmentBonusItem_unity2_raw :: __lookup_get_item_id :: get_method_info () } pub fn set_item_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubInvestmentBonusItem_unity2_raw :: __lookup_set_item_id :: get_method_info () } pub fn get_num_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubInvestmentBonusItem_unity2_raw :: __lookup_get_num :: get_method_info () } pub fn set_num_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubInvestmentBonusItem_unity2_raw :: __lookup_set_num :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubInvestmentBonusItem_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-hubinvestmentbonusitem")]
 impl HubInvestmentBonusItem {
-    #[doc = "`Load()` overload"]
-    pub fn load() -> () {
-        unsafe { __HubInvestmentBonusItem_unity2_raw::load(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-hubinvestmentbonusitem")]
-pub trait IHubInvestmentBonusItemMethods: IHubInvestmentBonusItem {
-    #[doc = "`get_ItemId()` overload"]
-    fn get_item_id(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver =
-                <HubInvestmentBonusItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubInvestmentBonusItem_unity2_raw::get_item_id(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_ItemId(::unity2::Il2CppString)` overload"]
-    fn set_item_id(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver =
-                <HubInvestmentBonusItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubInvestmentBonusItem_unity2_raw::set_item_id(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Num()` overload"]
-    fn get_num(self) -> u8 {
-        unsafe {
-            let __receiver =
-                <HubInvestmentBonusItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubInvestmentBonusItem_unity2_raw::get_num(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_Num(u8)` overload"]
-    fn set_num(self, value: impl ::core::convert::Into<u8>) -> () {
-        unsafe {
-            let __receiver =
-                <HubInvestmentBonusItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubInvestmentBonusItem_unity2_raw::set_num(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <HubInvestmentBonusItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubInvestmentBonusItem_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-hubinvestmentbonusitem")]
-impl<__T: IHubInvestmentBonusItem> IHubInvestmentBonusItemMethods for __T {}
-
-#[cfg(feature = "app-hubinvestmentbonusitem")]
-impl HubInvestmentBonusItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(HubInvestmentBonusItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IHubInvestmentBonusItemMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubInvestmentBonusItem) , :: core :: stringify ! (new) ,)) ; < Self as IHubInvestmentBonusItemMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-hubinvestmentbonusitem")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{HubInvestmentBonusItem, IHubInvestmentBonusItem, IHubInvestmentBonusItemMethods};
-    #[cfg(feature = "app-structbase")]
-    pub use crate::app::structbase::IStructBaseMethods;
-    #[cfg(feature = "app-structdataarray_1")]
-    pub use crate::app::structdataarray_1::IStructDataArray_1Methods;
-    #[cfg(feature = "app-structtemplate_1")]
-    pub use crate::app::structtemplate_1::IStructTemplate_1Methods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::{
-        app::{structbase::IStructBase, structdataarray_1::IStructDataArray_1, structtemplate_1::IStructTemplate_1},
-        system::object::IObject,
-    };
+    pub use super::HubInvestmentBonusItem;
+    pub use super::IHubInvestmentBonusItem;
+    pub use super::IHubInvestmentBonusItemMethods;
+    pub use crate::app::structbase::IStructBase;
+    pub use crate::app::structdataarray_1::IStructDataArray_1;
+    pub use crate::app::structtemplate_1::IStructTemplate_1;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "app-structbase")] pub use crate::app::structbase::IStructBaseMethods;
+    #[cfg(feature = "app-structdataarray_1")] pub use crate::app::structdataarray_1::IStructDataArray_1Methods;
+    #[cfg(feature = "app-structtemplate_1")] pub use crate::app::structtemplate_1::IStructTemplate_1Methods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

@@ -2,126 +2,72 @@
 
 #[cfg(feature = "tm_pro-tmp_vertex-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        valuetype::{IValueType, ValueType},
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_vertex/TMP_Vertex.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct TMP_Vertex {
-        pub position: crate::unity_engine::vector3::Vector3,
-        pub uv: crate::unity_engine::vector2::Vector2,
-        pub uv2: crate::unity_engine::vector2::Vector2,
-        pub uv4: crate::unity_engine::vector2::Vector2,
-        pub color: crate::unity_engine::color32::Color32,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
 
-    impl ::unity2::ClassIdentity for TMP_Vertex {
-        const NAME: &'static str = "TMP_Vertex";
-        const NAMESPACE: &'static str = "TMPro";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_vertex/TMP_Vertex.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct TMP_Vertex {
+    pub position: crate :: unity_engine :: vector3 :: Vector3,
+    pub uv: crate :: unity_engine :: vector2 :: Vector2,
+    pub uv2: crate :: unity_engine :: vector2 :: Vector2,
+    pub uv4: crate :: unity_engine :: vector2 :: Vector2,
+    pub color: crate :: unity_engine :: color32 :: Color32,
+}
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+
+impl ::unity2::ClassIdentity for TMP_Vertex {
+    const NAMESPACE: &'static str = "TMPro";
+
+    const NAME: &'static str = "TMP_Vertex";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for TMP_Vertex {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl ::unity2::IlType for TMP_Vertex {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
+
+}
+
 }
 
 #[cfg(feature = "tm_pro-tmp_vertex-types")]
 pub use __types::*;
 
 #[cfg(feature = "tm_pro-tmp_vertex")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __TMP_Vertex_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_zero {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<TMP_Vertex as ::unity2::ClassIdentity>::class(), "get_zero", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TMP_Vertex as ::unity2::ClassIdentity>::NAME,
-                        "get_zero",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_zero(__unity2_method_info: ::unity2::OptionalMethod) -> crate::tm_pro::tmp_vertex::TMP_Vertex {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::tm_pro::tmp_vertex::TMP_Vertex =
-            ::core::mem::transmute(__lookup_get_zero::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<TMP_Vertex as ::unity2::ClassIdentity>::class(), ".cctor", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TMP_Vertex as ::unity2::ClassIdentity>::NAME,
-                        ".cctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __TMP_Vertex_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_zero { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TMP_Vertex as :: unity2 :: ClassIdentity > :: class () , "get_zero" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TMP_Vertex as :: unity2 :: ClassIdentity > :: NAME , "get_zero" , e) , } } } pub unsafe fn get_zero (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: tm_pro :: tmp_vertex :: TMP_Vertex { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: tm_pro :: tmp_vertex :: TMP_Vertex = :: core :: mem :: transmute (__lookup_get_zero :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TMP_Vertex as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TMP_Vertex as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
 
 #[cfg(feature = "tm_pro-tmp_vertex")]
-impl TMP_Vertex {
-    #[doc = "`get_zero()` overload"]
-    pub fn get_zero() -> crate::tm_pro::tmp_vertex::TMP_Vertex {
-        unsafe { __TMP_Vertex_unity2_raw::get_zero(::core::option::Option::None) }
-    }
+impl TMP_Vertex { # [doc = "`get_zero()` overload"] pub fn get_zero () -> crate :: tm_pro :: tmp_vertex :: TMP_Vertex { unsafe { __TMP_Vertex_unity2_raw :: get_zero (:: core :: option :: Option :: None) } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { __TMP_Vertex_unity2_raw :: cctor (:: core :: option :: Option :: None) } } }
 
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __TMP_Vertex_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
+#[cfg(feature = "tm_pro-tmp_vertex")]
+impl TMP_Vertex { pub fn get_zero_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TMP_Vertex_unity2_raw :: __lookup_get_zero :: get_method_info () } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TMP_Vertex_unity2_raw :: __lookup_cctor :: get_method_info () } }
 
 #[cfg(feature = "tm_pro-tmp_vertex")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::TMP_Vertex;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::system::{object::IObject, valuetype::IValueType};
+    pub use crate::system::object::IObject;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

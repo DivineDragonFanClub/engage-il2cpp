@@ -2,74 +2,34 @@
 
 #[cfg(feature = "system-collections-ihashcodeprovider-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/ihashcodeprovider/IHashCodeProvider.md"))]
-    #[::unity2::class(namespace = "System.Collections", name = "IHashCodeProvider")]
-    pub struct IHashCodeProvider {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/ihashcodeprovider/IHashCodeProvider.md"))] # [:: unity2 :: class (namespace = "System.Collections" , name = "IHashCodeProvider")] pub struct IHashCodeProvider {}
+
 }
 
 #[cfg(feature = "system-collections-ihashcodeprovider-types")]
 pub use __types::*;
 
 #[cfg(feature = "system-collections-ihashcodeprovider")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __IHashCodeProvider_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_hash_code {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <IHashCodeProvider as ::unity2::ClassIdentity>::class(),
-                "GetHashCode",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <IHashCodeProvider as ::unity2::ClassIdentity>::NAME,
-                        "GetHashCode",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_hash_code(this: IHashCodeProvider, obj: crate::system::object::Object, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(IHashCodeProvider, crate::system::object::Object, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_hash_code::get_method_info().method_ptr);
-        inner(this, obj, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __IHashCodeProvider_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_hash_code { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< IHashCodeProvider as :: unity2 :: ClassIdentity > :: class () , "GetHashCode" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < IHashCodeProvider as :: unity2 :: ClassIdentity > :: NAME , "GetHashCode" , e) , } } } pub unsafe fn get_hash_code (this : IHashCodeProvider , obj : crate :: system :: object :: Object , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (IHashCodeProvider , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_hash_code :: get_method_info () . method_ptr ,) ; inner (this , obj , __unity2_method_info) } }
 
 #[cfg(feature = "system-collections-ihashcodeprovider")]
-pub trait IIHashCodeProviderMethods: IIHashCodeProvider {
-    #[doc = "`GetHashCode(crate::system::object::Object)` overload"]
-    fn get_hash_code(self, obj: impl ::core::convert::Into<crate::system::object::Object>) -> i32 {
-        unsafe {
-            let __receiver = <IHashCodeProvider as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __IHashCodeProvider_unity2_raw::get_hash_code(__receiver, ::core::convert::Into::into(obj), ::core::option::Option::None)
-        }
-    }
-}
+pub trait IIHashCodeProviderMethods : IIHashCodeProvider { # [doc = "`GetHashCode(crate::system::object::Object)` overload"] fn get_hash_code (self , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> i32 { unsafe { let __receiver = < IHashCodeProvider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IHashCodeProvider_unity2_raw :: get_hash_code (__receiver , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "system-collections-ihashcodeprovider")]
-impl<__T: IIHashCodeProvider> IIHashCodeProviderMethods for __T {}
+impl < __T : IIHashCodeProvider > IIHashCodeProviderMethods for __T { }
+
+#[cfg(feature = "system-collections-ihashcodeprovider")]
+impl IHashCodeProvider { pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __IHashCodeProvider_unity2_raw :: __lookup_get_hash_code :: get_method_info () } }
 
 #[cfg(feature = "system-collections-ihashcodeprovider")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IHashCodeProvider, IIHashCodeProvider, IIHashCodeProviderMethods};
+    pub use super::IHashCodeProvider;
+    pub use super::IIHashCodeProvider;
+    pub use super::IIHashCodeProviderMethods;
 }

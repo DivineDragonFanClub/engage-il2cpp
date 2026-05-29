@@ -2,181 +2,45 @@
 
 #[cfg(feature = "system-io-filestreamasyncresult-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/filestreamasyncresult/FileStreamAsyncResult.md"))]
-    #[::unity2::class(namespace = "System.IO", name = "FileStreamAsyncResult")]
-    #[parent(crate::system::object::Object)]
-    pub struct FileStreamAsyncResult {
-        #[offset(16)]
-        #[rename(name = "state")]
-        pub state: ::unity2::IlInstance,
-        #[offset(24)]
-        #[rename(name = "completed")]
-        pub completed: bool,
-        #[offset(48)]
-        #[rename(name = "completedSynch")]
-        pub completed_synch: bool,
-        #[offset(52)]
-        #[rename(name = "Count")]
-        pub count: i32,
-        #[offset(56)]
-        #[rename(name = "OriginalCount")]
-        pub original_count: i32,
-        #[offset(60)]
-        #[rename(name = "BytesRead")]
-        pub bytes_read: i32,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/filestreamasyncresult/FileStreamAsyncResult.md"))] # [:: unity2 :: class (namespace = "System.IO" , name = "FileStreamAsyncResult")] # [parent (crate :: system :: object :: Object)] pub struct FileStreamAsyncResult {
+# [offset (16)] # [rename (name = "state")] pub state : :: unity2 :: IlInstance ,
+# [offset (24)] # [rename (name = "completed")] pub completed : bool ,
+# [offset (48)] # [rename (name = "completedSynch")] pub completed_synch : bool ,
+# [offset (52)] # [rename (name = "Count")] pub count : i32 ,
+# [offset (56)] # [rename (name = "OriginalCount")] pub original_count : i32 ,
+# [offset (60)] # [rename (name = "BytesRead")] pub bytes_read : i32 ,
+}
+
 }
 
 #[cfg(feature = "system-io-filestreamasyncresult-types")]
 pub use __types::*;
 
 #[cfg(feature = "system-io-filestreamasyncresult")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __FileStreamAsyncResult_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_async_state {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FileStreamAsyncResult as ::unity2::ClassIdentity>::class(),
-                "get_AsyncState",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FileStreamAsyncResult as ::unity2::ClassIdentity>::NAME,
-                        "get_AsyncState",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_async_state(this: FileStreamAsyncResult, __unity2_method_info: ::unity2::OptionalMethod) -> crate::system::object::Object {
-        let inner: extern "C" fn(FileStreamAsyncResult, ::unity2::OptionalMethod) -> crate::system::object::Object =
-            ::core::mem::transmute(__lookup_get_async_state::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_completed_synchronously {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FileStreamAsyncResult as ::unity2::ClassIdentity>::class(),
-                "get_CompletedSynchronously",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FileStreamAsyncResult as ::unity2::ClassIdentity>::NAME,
-                        "get_CompletedSynchronously",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_completed_synchronously(this: FileStreamAsyncResult, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(FileStreamAsyncResult, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_completed_synchronously::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_is_completed {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FileStreamAsyncResult as ::unity2::ClassIdentity>::class(),
-                "get_IsCompleted",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FileStreamAsyncResult as ::unity2::ClassIdentity>::NAME,
-                        "get_IsCompleted",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_is_completed(this: FileStreamAsyncResult, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(FileStreamAsyncResult, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_is_completed::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __FileStreamAsyncResult_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_async_state { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FileStreamAsyncResult as :: unity2 :: ClassIdentity > :: class () , "get_AsyncState" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FileStreamAsyncResult as :: unity2 :: ClassIdentity > :: NAME , "get_AsyncState" , e) , } } } pub unsafe fn get_async_state (this : FileStreamAsyncResult , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object { let inner : extern "C" fn (FileStreamAsyncResult , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute (__lookup_get_async_state :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_completed_synchronously { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FileStreamAsyncResult as :: unity2 :: ClassIdentity > :: class () , "get_CompletedSynchronously" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FileStreamAsyncResult as :: unity2 :: ClassIdentity > :: NAME , "get_CompletedSynchronously" , e) , } } } pub unsafe fn get_completed_synchronously (this : FileStreamAsyncResult , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (FileStreamAsyncResult , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_completed_synchronously :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_is_completed { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FileStreamAsyncResult as :: unity2 :: ClassIdentity > :: class () , "get_IsCompleted" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FileStreamAsyncResult as :: unity2 :: ClassIdentity > :: NAME , "get_IsCompleted" , e) , } } } pub unsafe fn get_is_completed (this : FileStreamAsyncResult , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (FileStreamAsyncResult , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_is_completed :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "system-io-filestreamasyncresult")]
-pub trait IFileStreamAsyncResultMethods: IFileStreamAsyncResult {
-    #[doc = "`get_AsyncState()` overload"]
-    fn get_async_state(self) -> crate::system::object::Object {
-        unsafe {
-            let __receiver =
-                <FileStreamAsyncResult as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FileStreamAsyncResult_unity2_raw::get_async_state(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_CompletedSynchronously()` overload"]
-    fn get_completed_synchronously(self) -> bool {
-        unsafe {
-            let __receiver =
-                <FileStreamAsyncResult as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FileStreamAsyncResult_unity2_raw::get_completed_synchronously(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_IsCompleted()` overload"]
-    fn get_is_completed(self) -> bool {
-        unsafe {
-            let __receiver =
-                <FileStreamAsyncResult as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FileStreamAsyncResult_unity2_raw::get_is_completed(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IFileStreamAsyncResultMethods : IFileStreamAsyncResult { # [doc = "`get_AsyncState()` overload"] fn get_async_state (self ,) -> crate :: system :: object :: Object { unsafe { let __receiver = < FileStreamAsyncResult as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FileStreamAsyncResult_unity2_raw :: get_async_state (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_CompletedSynchronously()` overload"] fn get_completed_synchronously (self ,) -> bool { unsafe { let __receiver = < FileStreamAsyncResult as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FileStreamAsyncResult_unity2_raw :: get_completed_synchronously (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_IsCompleted()` overload"] fn get_is_completed (self ,) -> bool { unsafe { let __receiver = < FileStreamAsyncResult as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FileStreamAsyncResult_unity2_raw :: get_is_completed (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "system-io-filestreamasyncresult")]
-impl<__T: IFileStreamAsyncResult> IFileStreamAsyncResultMethods for __T {}
+impl < __T : IFileStreamAsyncResult > IFileStreamAsyncResultMethods for __T { }
+
+#[cfg(feature = "system-io-filestreamasyncresult")]
+impl FileStreamAsyncResult { pub fn get_async_state_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FileStreamAsyncResult_unity2_raw :: __lookup_get_async_state :: get_method_info () } pub fn get_completed_synchronously_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FileStreamAsyncResult_unity2_raw :: __lookup_get_completed_synchronously :: get_method_info () } pub fn get_is_completed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FileStreamAsyncResult_unity2_raw :: __lookup_get_is_completed :: get_method_info () } }
 
 #[cfg(feature = "system-io-filestreamasyncresult")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{FileStreamAsyncResult, IFileStreamAsyncResult, IFileStreamAsyncResultMethods};
+    pub use super::FileStreamAsyncResult;
+    pub use super::IFileStreamAsyncResult;
+    pub use super::IFileStreamAsyncResultMethods;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

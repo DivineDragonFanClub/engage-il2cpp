@@ -2,73 +2,34 @@
 
 #[cfg(feature = "combat-hitstoputility-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/hitstoputility/HitStopUtility.md"))]
-    #[::unity2::class(namespace = "Combat", name = "HitStopUtility")]
-    #[parent(crate::system::object::Object)]
-    pub struct HitStopUtility {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/hitstoputility/HitStopUtility.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "HitStopUtility")] # [parent (crate :: system :: object :: Object)] pub struct HitStopUtility {}
+
 }
 
 #[cfg(feature = "combat-hitstoputility-types")]
 pub use __types::*;
 
 #[cfg(feature = "combat-hitstoputility")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __HitStopUtility_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_hit_stop_base_time {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::combat::phase::Phase as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HitStopUtility as ::unity2::ClassIdentity>::class(),
-                "CalcHitStopBaseTime",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HitStopUtility as ::unity2::ClassIdentity>::NAME,
-                        "CalcHitStopBaseTime",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn calc_hit_stop_base_time(phase: crate::combat::phase::Phase, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(crate::combat::phase::Phase, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_calc_hit_stop_base_time::get_method_info().method_ptr);
-        inner(phase, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __HitStopUtility_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_calc_hit_stop_base_time { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: phase :: Phase as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HitStopUtility as :: unity2 :: ClassIdentity > :: class () , "CalcHitStopBaseTime" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HitStopUtility as :: unity2 :: ClassIdentity > :: NAME , "CalcHitStopBaseTime" , e) , } } } pub unsafe fn calc_hit_stop_base_time (phase : crate :: combat :: phase :: Phase , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (crate :: combat :: phase :: Phase , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_calc_hit_stop_base_time :: get_method_info () . method_ptr ,) ; inner (phase , __unity2_method_info) } }
 
 #[cfg(feature = "combat-hitstoputility")]
-impl HitStopUtility {
-    #[doc = "`CalcHitStopBaseTime(crate::combat::phase::Phase)` overload"]
-    pub fn calc_hit_stop_base_time(phase: impl ::core::convert::Into<crate::combat::phase::Phase>) -> f32 {
-        unsafe { __HitStopUtility_unity2_raw::calc_hit_stop_base_time(::core::convert::Into::into(phase), ::core::option::Option::None) }
-    }
-}
+impl HitStopUtility { # [doc = "`CalcHitStopBaseTime(crate::combat::phase::Phase)` overload"] pub fn calc_hit_stop_base_time (phase : impl :: core :: convert :: Into < crate :: combat :: phase :: Phase >) -> f32 { unsafe { __HitStopUtility_unity2_raw :: calc_hit_stop_base_time (:: core :: convert :: Into :: into (phase) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "combat-hitstoputility")]
+impl HitStopUtility { pub fn calc_hit_stop_base_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HitStopUtility_unity2_raw :: __lookup_calc_hit_stop_base_time :: get_method_info () } }
 
 #[cfg(feature = "combat-hitstoputility")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{HitStopUtility, IHitStopUtility};
+    pub use super::HitStopUtility;
+    pub use super::IHitStopUtility;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

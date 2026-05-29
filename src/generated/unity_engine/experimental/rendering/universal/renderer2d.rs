@@ -2,597 +2,67 @@
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-renderer2d-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::rendering::universal::scriptablerenderer::{IScriptableRenderer, ScriptableRenderer},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/renderer2d/Renderer2D.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Experimental.Rendering.Universal", name = "Renderer2D")]
-    #[parent(crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer)]
-    pub struct Renderer2D {
-        #[offset(144)]
-        #[rename(name = "m_ColorGradingLutPass")]
-        pub m_color_grading_lut_pass: crate::unity_engine::rendering::universal::internal::colorgradinglutpass::ColorGradingLutPass,
-        #[offset(152)]
-        #[rename(name = "m_Render2DLightingPass")]
-        pub m_render2_d_lighting_pass: crate::unity_engine::experimental::rendering::universal::render2dlightingpass::Render2DLightingPass,
-        #[offset(160)]
-        #[rename(name = "m_PostProcessPass")]
-        pub m_post_process_pass: crate::unity_engine::rendering::universal::internal::postprocesspass::PostProcessPass,
-        #[offset(168)]
-        #[rename(name = "m_FinalBlitPass")]
-        pub m_final_blit_pass: crate::unity_engine::rendering::universal::internal::finalblitpass::FinalBlitPass,
-        #[offset(176)]
-        #[rename(name = "m_FinalPostProcessPass")]
-        pub m_final_post_process_pass: crate::unity_engine::rendering::universal::internal::postprocesspass::PostProcessPass,
-        #[offset(184)]
-        #[rename(name = "m_LightCullResult")]
-        pub m_light_cull_result: crate::unity_engine::experimental::rendering::universal::light2dcullresult::Light2DCullResult,
-        #[static_field]
-        #[rename(name = "m_ProfilingSampler")]
-        pub m_profiling_sampler: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
-        #[offset(192)]
-        #[rename(name = "m_UseDepthStencilBuffer")]
-        pub m_use_depth_stencil_buffer: bool,
-        #[offset(193)]
-        #[rename(name = "m_CreateColorTexture")]
-        pub m_create_color_texture: bool,
-        #[offset(194)]
-        #[rename(name = "m_CreateDepthTexture")]
-        pub m_create_depth_texture: bool,
-        #[offset(200)]
-        #[rename(name = "k_ColorTextureHandle")]
-        pub k_color_texture_handle: crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
-        #[offset(248)]
-        #[rename(name = "k_DepthTextureHandle")]
-        pub k_depth_texture_handle: crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
-        #[offset(296)]
-        #[rename(name = "k_AfterPostProcessColorHandle")]
-        pub k_after_post_process_color_handle: crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
-        #[offset(344)]
-        #[rename(name = "k_ColorGradingLutHandle")]
-        pub k_color_grading_lut_handle: crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
-        #[offset(392)]
-        #[rename(name = "m_BlitMaterial")]
-        pub m_blit_material: crate::unity_engine::material::Material,
-        #[offset(400)]
-        #[rename(name = "m_Renderer2DData")]
-        pub m_renderer2_d_data: crate::unity_engine::experimental::rendering::universal::renderer2ddata::Renderer2DData,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: rendering :: universal :: scriptablerenderer :: { IScriptableRenderer , ScriptableRenderer }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/renderer2d/Renderer2D.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Experimental.Rendering.Universal" , name = "Renderer2D")] # [parent (crate :: unity_engine :: rendering :: universal :: scriptablerenderer :: ScriptableRenderer)] pub struct Renderer2D {
+# [offset (144)] # [rename (name = "m_ColorGradingLutPass")] pub m_color_grading_lut_pass : crate :: unity_engine :: rendering :: universal :: internal :: colorgradinglutpass :: ColorGradingLutPass ,
+# [offset (152)] # [rename (name = "m_Render2DLightingPass")] pub m_render2_d_lighting_pass : crate :: unity_engine :: experimental :: rendering :: universal :: render2dlightingpass :: Render2DLightingPass ,
+# [offset (160)] # [rename (name = "m_PostProcessPass")] pub m_post_process_pass : crate :: unity_engine :: rendering :: universal :: internal :: postprocesspass :: PostProcessPass ,
+# [offset (168)] # [rename (name = "m_FinalBlitPass")] pub m_final_blit_pass : crate :: unity_engine :: rendering :: universal :: internal :: finalblitpass :: FinalBlitPass ,
+# [offset (176)] # [rename (name = "m_FinalPostProcessPass")] pub m_final_post_process_pass : crate :: unity_engine :: rendering :: universal :: internal :: postprocesspass :: PostProcessPass ,
+# [offset (184)] # [rename (name = "m_LightCullResult")] pub m_light_cull_result : crate :: unity_engine :: experimental :: rendering :: universal :: light2dcullresult :: Light2DCullResult ,
+# [static_field] # [rename (name = "m_ProfilingSampler")] pub m_profiling_sampler : crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler ,
+# [offset (192)] # [rename (name = "m_UseDepthStencilBuffer")] pub m_use_depth_stencil_buffer : bool ,
+# [offset (193)] # [rename (name = "m_CreateColorTexture")] pub m_create_color_texture : bool ,
+# [offset (194)] # [rename (name = "m_CreateDepthTexture")] pub m_create_depth_texture : bool ,
+# [offset (200)] # [rename (name = "k_ColorTextureHandle")] pub k_color_texture_handle : crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle ,
+# [offset (248)] # [rename (name = "k_DepthTextureHandle")] pub k_depth_texture_handle : crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle ,
+# [offset (296)] # [rename (name = "k_AfterPostProcessColorHandle")] pub k_after_post_process_color_handle : crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle ,
+# [offset (344)] # [rename (name = "k_ColorGradingLutHandle")] pub k_color_grading_lut_handle : crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle ,
+# [offset (392)] # [rename (name = "m_BlitMaterial")] pub m_blit_material : crate :: unity_engine :: material :: Material ,
+# [offset (400)] # [rename (name = "m_Renderer2DData")] pub m_renderer2_d_data : crate :: unity_engine :: experimental :: rendering :: universal :: renderer2ddata :: Renderer2DData ,
+}
+
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-renderer2d-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-renderer2d")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __Renderer2D_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_create_color_texture {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Renderer2D as ::unity2::ClassIdentity>::class(),
-                "get_createColorTexture",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Renderer2D as ::unity2::ClassIdentity>::NAME,
-                        "get_createColorTexture",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_create_color_texture(this: Renderer2D, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(Renderer2D, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_create_color_texture::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_create_depth_texture {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Renderer2D as ::unity2::ClassIdentity>::class(),
-                "get_createDepthTexture",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Renderer2D as ::unity2::ClassIdentity>::NAME,
-                        "get_createDepthTexture",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_create_depth_texture(this: Renderer2D, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(Renderer2D, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_create_depth_texture::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::experimental::rendering::universal::renderer2ddata::Renderer2DData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<Renderer2D as ::unity2::ClassIdentity>::class(), ".ctor", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Renderer2D as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: Renderer2D,
-        data: crate::unity_engine::experimental::rendering::universal::renderer2ddata::Renderer2DData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            Renderer2D,
-            crate::unity_engine::experimental::rendering::universal::renderer2ddata::Renderer2DData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_dispose {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<Renderer2D as ::unity2::ClassIdentity>::class(), "Dispose", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Renderer2D as ::unity2::ClassIdentity>::NAME,
-                        "Dispose",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn dispose(this: Renderer2D, disposing: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Renderer2D, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_dispose::get_method_info().method_ptr);
-        inner(this, disposing, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_renderer2_d_data {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Renderer2D as ::unity2::ClassIdentity>::class(),
-                "GetRenderer2DData",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Renderer2D as ::unity2::ClassIdentity>::NAME,
-                        "GetRenderer2DData",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_renderer2_d_data(
-        this: Renderer2D,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::experimental::rendering::universal::renderer2ddata::Renderer2DData {
-        let inner: extern "C" fn(
-            Renderer2D,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::experimental::rendering::universal::renderer2ddata::Renderer2DData =
-            ::core::mem::transmute(__lookup_get_renderer2_d_data::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_render_textures {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::rendering::universal::cameradata::CameraData as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::filtermode::FilterMode as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::rendering::commandbuffer::CommandBuffer as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Renderer2D as ::unity2::ClassIdentity>::class(),
-                "CreateRenderTextures",
-                6,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Renderer2D as ::unity2::ClassIdentity>::NAME,
-                        "CreateRenderTextures",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_render_textures(
-        this: Renderer2D,
-        camera_data: *mut crate::unity_engine::rendering::universal::cameradata::CameraData,
-        force_create_color_texture: bool,
-        color_texture_filter_mode: crate::unity_engine::filtermode::FilterMode,
-        cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
-        color_target_handle: *mut crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
-        depth_target_handle: *mut crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            Renderer2D,
-            *mut crate::unity_engine::rendering::universal::cameradata::CameraData,
-            bool,
-            crate::unity_engine::filtermode::FilterMode,
-            crate::unity_engine::rendering::commandbuffer::CommandBuffer,
-            *mut crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
-            *mut crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_create_render_textures::get_method_info().method_ptr);
-        inner(
-            this,
-            camera_data,
-            force_create_color_texture,
-            color_texture_filter_mode,
-            cmd,
-            color_target_handle,
-            depth_target_handle,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_setup {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::rendering::universal::renderingdata::RenderingData as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<Renderer2D as ::unity2::ClassIdentity>::class(), "Setup", 2, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Renderer2D as ::unity2::ClassIdentity>::NAME,
-                        "Setup",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn setup(
-        this: Renderer2D,
-        context: crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
-        rendering_data: *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            Renderer2D,
-            crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
-            *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_setup::get_method_info().method_ptr);
-        inner(this, context, rendering_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_setup_culling_parameters {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::rendering::scriptablecullingparameters::ScriptableCullingParameters as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::rendering::universal::cameradata::CameraData as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Renderer2D as ::unity2::ClassIdentity>::class(),
-                "SetupCullingParameters",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Renderer2D as ::unity2::ClassIdentity>::NAME,
-                        "SetupCullingParameters",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn setup_culling_parameters(
-        this: Renderer2D,
-        culling_parameters: *mut crate::unity_engine::rendering::scriptablecullingparameters::ScriptableCullingParameters,
-        camera_data: *mut crate::unity_engine::rendering::universal::cameradata::CameraData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            Renderer2D,
-            *mut crate::unity_engine::rendering::scriptablecullingparameters::ScriptableCullingParameters,
-            *mut crate::unity_engine::rendering::universal::cameradata::CameraData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_setup_culling_parameters::get_method_info().method_ptr);
-        inner(this, culling_parameters, camera_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_finish_rendering {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::rendering::commandbuffer::CommandBuffer as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Renderer2D as ::unity2::ClassIdentity>::class(),
-                "FinishRendering",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Renderer2D as ::unity2::ClassIdentity>::NAME,
-                        "FinishRendering",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn finish_rendering(
-        this: Renderer2D,
-        cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(Renderer2D, crate::unity_engine::rendering::commandbuffer::CommandBuffer, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_finish_rendering::get_method_info().method_ptr);
-        inner(this, cmd, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Renderer2D as ::unity2::ClassIdentity>::class(), ".cctor", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Renderer2D as ::unity2::ClassIdentity>::NAME,
-                        ".cctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __Renderer2D_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_create_color_texture { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Renderer2D as :: unity2 :: ClassIdentity > :: class () , "get_createColorTexture" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Renderer2D as :: unity2 :: ClassIdentity > :: NAME , "get_createColorTexture" , e) , } } } pub unsafe fn get_create_color_texture (this : Renderer2D , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (Renderer2D , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_create_color_texture :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_create_depth_texture { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Renderer2D as :: unity2 :: ClassIdentity > :: class () , "get_createDepthTexture" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Renderer2D as :: unity2 :: ClassIdentity > :: NAME , "get_createDepthTexture" , e) , } } } pub unsafe fn get_create_depth_texture (this : Renderer2D , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (Renderer2D , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_create_depth_texture :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: universal :: renderer2ddata :: Renderer2DData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Renderer2D as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Renderer2D as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : Renderer2D , data : crate :: unity_engine :: experimental :: rendering :: universal :: renderer2ddata :: Renderer2DData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Renderer2D , crate :: unity_engine :: experimental :: rendering :: universal :: renderer2ddata :: Renderer2DData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , data , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_dispose { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Renderer2D as :: unity2 :: ClassIdentity > :: class () , "Dispose" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Renderer2D as :: unity2 :: ClassIdentity > :: NAME , "Dispose" , e) , } } } pub unsafe fn dispose (this : Renderer2D , disposing : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Renderer2D , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_dispose :: get_method_info () . method_ptr ,) ; inner (this , disposing , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_renderer2_d_data { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Renderer2D as :: unity2 :: ClassIdentity > :: class () , "GetRenderer2DData" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Renderer2D as :: unity2 :: ClassIdentity > :: NAME , "GetRenderer2DData" , e) , } } } pub unsafe fn get_renderer2_d_data (this : Renderer2D , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: universal :: renderer2ddata :: Renderer2DData { let inner : extern "C" fn (Renderer2D , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: universal :: renderer2ddata :: Renderer2DData = :: core :: mem :: transmute (__lookup_get_renderer2_d_data :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_render_textures { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: universal :: cameradata :: CameraData as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: filtermode :: FilterMode as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Renderer2D as :: unity2 :: ClassIdentity > :: class () , "CreateRenderTextures" , 6 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Renderer2D as :: unity2 :: ClassIdentity > :: NAME , "CreateRenderTextures" , e) , } } } pub unsafe fn create_render_textures (this : Renderer2D , camera_data : * mut crate :: unity_engine :: rendering :: universal :: cameradata :: CameraData , force_create_color_texture : bool , color_texture_filter_mode : crate :: unity_engine :: filtermode :: FilterMode , cmd : crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer , color_target_handle : * mut crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle , depth_target_handle : * mut crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Renderer2D , * mut crate :: unity_engine :: rendering :: universal :: cameradata :: CameraData , bool , crate :: unity_engine :: filtermode :: FilterMode , crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer , * mut crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle , * mut crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create_render_textures :: get_method_info () . method_ptr ,) ; inner (this , camera_data , force_create_color_texture , color_texture_filter_mode , cmd , color_target_handle , depth_target_handle , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_setup { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Renderer2D as :: unity2 :: ClassIdentity > :: class () , "Setup" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Renderer2D as :: unity2 :: ClassIdentity > :: NAME , "Setup" , e) , } } } pub unsafe fn setup (this : Renderer2D , context : crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext , rendering_data : * mut crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Renderer2D , crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext , * mut crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_setup :: get_method_info () . method_ptr ,) ; inner (this , context , rendering_data , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_setup_culling_parameters { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: scriptablecullingparameters :: ScriptableCullingParameters as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: cameradata :: CameraData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Renderer2D as :: unity2 :: ClassIdentity > :: class () , "SetupCullingParameters" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Renderer2D as :: unity2 :: ClassIdentity > :: NAME , "SetupCullingParameters" , e) , } } } pub unsafe fn setup_culling_parameters (this : Renderer2D , culling_parameters : * mut crate :: unity_engine :: rendering :: scriptablecullingparameters :: ScriptableCullingParameters , camera_data : * mut crate :: unity_engine :: rendering :: universal :: cameradata :: CameraData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Renderer2D , * mut crate :: unity_engine :: rendering :: scriptablecullingparameters :: ScriptableCullingParameters , * mut crate :: unity_engine :: rendering :: universal :: cameradata :: CameraData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_setup_culling_parameters :: get_method_info () . method_ptr ,) ; inner (this , culling_parameters , camera_data , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_finish_rendering { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Renderer2D as :: unity2 :: ClassIdentity > :: class () , "FinishRendering" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Renderer2D as :: unity2 :: ClassIdentity > :: NAME , "FinishRendering" , e) , } } } pub unsafe fn finish_rendering (this : Renderer2D , cmd : crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Renderer2D , crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_finish_rendering :: get_method_info () . method_ptr ,) ; inner (this , cmd , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Renderer2D as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Renderer2D as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
+
+#[cfg(feature = "unity_engine-experimental-rendering-universal-renderer2d")]
+impl Renderer2D { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { __Renderer2D_unity2_raw :: cctor (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-experimental-rendering-universal-renderer2d")]
+pub trait IRenderer2DMethods : IRenderer2D { # [doc = "`get_createColorTexture()` overload"] fn get_create_color_texture (self ,) -> bool { unsafe { let __receiver = < Renderer2D as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Renderer2D_unity2_raw :: get_create_color_texture (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_createDepthTexture()` overload"] fn get_create_depth_texture (self ,) -> bool { unsafe { let __receiver = < Renderer2D as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Renderer2D_unity2_raw :: get_create_depth_texture (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor(crate::unity_engine::experimental::rendering::universal::renderer2ddata::Renderer2DData)` overload"] fn ctor (self , data : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: universal :: renderer2ddata :: Renderer2DData >) -> () { unsafe { let __receiver = < Renderer2D as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Renderer2D_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (data) , :: core :: option :: Option :: None) } } # [doc = "`Dispose(bool)` overload"] fn dispose (self , disposing : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < Renderer2D as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Renderer2D_unity2_raw :: dispose (__receiver , :: core :: convert :: Into :: into (disposing) , :: core :: option :: Option :: None) } } # [doc = "`GetRenderer2DData()` overload"] fn get_renderer2_d_data (self ,) -> crate :: unity_engine :: experimental :: rendering :: universal :: renderer2ddata :: Renderer2DData { unsafe { let __receiver = < Renderer2D as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Renderer2D_unity2_raw :: get_renderer2_d_data (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CreateRenderTextures(*mutcrate::unity_engine::rendering::universal::cameradata::CameraData, bool, crate::unity_engine::filtermode::FilterMode, crate::unity_engine::rendering::commandbuffer::CommandBuffer, *mutcrate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle, *mutcrate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle)` overload"] fn create_render_textures (self , force_create_color_texture : impl :: core :: convert :: Into < bool > , color_texture_filter_mode : impl :: core :: convert :: Into < crate :: unity_engine :: filtermode :: FilterMode > , cmd : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer >) -> (crate :: unity_engine :: rendering :: universal :: cameradata :: CameraData , crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle , crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle) { unsafe { let __receiver = < Renderer2D as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: rendering :: universal :: cameradata :: CameraData > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle > :: uninit () ; let mut __out_2 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle > :: uninit () ; __Renderer2D_unity2_raw :: create_render_textures (__receiver , __out_0 . as_mut_ptr () , :: core :: convert :: Into :: into (force_create_color_texture) , :: core :: convert :: Into :: into (color_texture_filter_mode) , :: core :: convert :: Into :: into (cmd) , __out_1 . as_mut_ptr () , __out_2 . as_mut_ptr () , :: core :: option :: Option :: None) ; (__out_0 . assume_init () , __out_1 . assume_init () , __out_2 . assume_init ()) } } # [doc = "`Setup(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, *mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"] fn setup (self , context : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext >) -> crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData { unsafe { let __receiver = < Renderer2D as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData > :: uninit () ; __Renderer2D_unity2_raw :: setup (__receiver , :: core :: convert :: Into :: into (context) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) ; __out_0 . assume_init () } } # [doc = "`SetupCullingParameters(*mutcrate::unity_engine::rendering::scriptablecullingparameters::ScriptableCullingParameters, *mutcrate::unity_engine::rendering::universal::cameradata::CameraData)` overload"] fn setup_culling_parameters (self ,) -> (crate :: unity_engine :: rendering :: scriptablecullingparameters :: ScriptableCullingParameters , crate :: unity_engine :: rendering :: universal :: cameradata :: CameraData) { unsafe { let __receiver = < Renderer2D as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: rendering :: scriptablecullingparameters :: ScriptableCullingParameters > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: rendering :: universal :: cameradata :: CameraData > :: uninit () ; __Renderer2D_unity2_raw :: setup_culling_parameters (__receiver , __out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: option :: Option :: None) ; (__out_0 . assume_init () , __out_1 . assume_init ()) } } # [doc = "`FinishRendering(crate::unity_engine::rendering::commandbuffer::CommandBuffer)` overload"] fn finish_rendering (self , cmd : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer >) -> () { unsafe { let __receiver = < Renderer2D as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Renderer2D_unity2_raw :: finish_rendering (__receiver , :: core :: convert :: Into :: into (cmd) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-experimental-rendering-universal-renderer2d")]
+impl < __T : IRenderer2D > IRenderer2DMethods for __T { }
+
+#[cfg(feature = "unity_engine-experimental-rendering-universal-renderer2d")]
+impl Renderer2D { pub fn get_create_color_texture_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Renderer2D_unity2_raw :: __lookup_get_create_color_texture :: get_method_info () } pub fn get_create_depth_texture_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Renderer2D_unity2_raw :: __lookup_get_create_depth_texture :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Renderer2D_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Renderer2D_unity2_raw :: __lookup_dispose :: get_method_info () } pub fn get_renderer2_d_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Renderer2D_unity2_raw :: __lookup_get_renderer2_d_data :: get_method_info () } pub fn create_render_textures_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Renderer2D_unity2_raw :: __lookup_create_render_textures :: get_method_info () } pub fn setup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Renderer2D_unity2_raw :: __lookup_setup :: get_method_info () } pub fn setup_culling_parameters_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Renderer2D_unity2_raw :: __lookup_setup_culling_parameters :: get_method_info () } pub fn finish_rendering_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Renderer2D_unity2_raw :: __lookup_finish_rendering :: get_method_info () } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Renderer2D_unity2_raw :: __lookup_cctor :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-renderer2d")]
 impl Renderer2D {
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __Renderer2D_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "unity_engine-experimental-rendering-universal-renderer2d")]
-pub trait IRenderer2DMethods: IRenderer2D {
-    #[doc = "`get_createColorTexture()` overload"]
-    fn get_create_color_texture(self) -> bool {
-        unsafe {
-            let __receiver = <Renderer2D as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Renderer2D_unity2_raw::get_create_color_texture(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_createDepthTexture()` overload"]
-    fn get_create_depth_texture(self) -> bool {
-        unsafe {
-            let __receiver = <Renderer2D as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Renderer2D_unity2_raw::get_create_depth_texture(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor(crate::unity_engine::experimental::rendering::universal::renderer2ddata::Renderer2DData)` overload"]
-    fn ctor(self, data: impl ::core::convert::Into<crate::unity_engine::experimental::rendering::universal::renderer2ddata::Renderer2DData>) -> () {
-        unsafe {
-            let __receiver = <Renderer2D as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Renderer2D_unity2_raw::ctor(__receiver, ::core::convert::Into::into(data), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Dispose(bool)` overload"]
-    fn dispose(self, disposing: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver = <Renderer2D as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Renderer2D_unity2_raw::dispose(__receiver, ::core::convert::Into::into(disposing), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetRenderer2DData()` overload"]
-    fn get_renderer2_d_data(self) -> crate::unity_engine::experimental::rendering::universal::renderer2ddata::Renderer2DData {
-        unsafe {
-            let __receiver = <Renderer2D as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Renderer2D_unity2_raw::get_renderer2_d_data(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CreateRenderTextures(*mutcrate::unity_engine::rendering::universal::cameradata::CameraData, bool, crate::unity_engine::filtermode::FilterMode, crate::unity_engine::rendering::commandbuffer::CommandBuffer, *mutcrate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle, *mutcrate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle)` overload"]
-    fn create_render_textures(
-        self,
-        force_create_color_texture: impl ::core::convert::Into<bool>,
-        color_texture_filter_mode: impl ::core::convert::Into<crate::unity_engine::filtermode::FilterMode>,
-        cmd: impl ::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>,
-    ) -> (
-        crate::unity_engine::rendering::universal::cameradata::CameraData,
-        crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
-        crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
-    ) {
-        unsafe {
-            let __receiver = <Renderer2D as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::universal::cameradata::CameraData>::uninit();
-            let mut __out_1 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle>::uninit();
-            let mut __out_2 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle>::uninit();
-            __Renderer2D_unity2_raw::create_render_textures(
-                __receiver,
-                __out_0.as_mut_ptr(),
-                ::core::convert::Into::into(force_create_color_texture),
-                ::core::convert::Into::into(color_texture_filter_mode),
-                ::core::convert::Into::into(cmd),
-                __out_1.as_mut_ptr(),
-                __out_2.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
-            (__out_0.assume_init(), __out_1.assume_init(), __out_2.assume_init())
-        }
-    }
-    #[doc = "`Setup(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, *mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"]
-    fn setup(
-        self,
-        context: impl ::core::convert::Into<crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext>,
-    ) -> crate::unity_engine::rendering::universal::renderingdata::RenderingData {
-        unsafe {
-            let __receiver = <Renderer2D as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::universal::renderingdata::RenderingData>::uninit();
-            __Renderer2D_unity2_raw::setup(
-                __receiver,
-                ::core::convert::Into::into(context),
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
-            __out_0.assume_init()
-        }
-    }
-    #[doc = "`SetupCullingParameters(*mutcrate::unity_engine::rendering::scriptablecullingparameters::ScriptableCullingParameters, *mutcrate::unity_engine::rendering::universal::cameradata::CameraData)` overload"]
-    fn setup_culling_parameters(
-        self,
-    ) -> (
-        crate::unity_engine::rendering::scriptablecullingparameters::ScriptableCullingParameters,
-        crate::unity_engine::rendering::universal::cameradata::CameraData,
-    ) {
-        unsafe {
-            let __receiver = <Renderer2D as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::rendering::scriptablecullingparameters::ScriptableCullingParameters>::uninit();
-            let mut __out_1 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::universal::cameradata::CameraData>::uninit();
-            __Renderer2D_unity2_raw::setup_culling_parameters(__receiver, __out_0.as_mut_ptr(), __out_1.as_mut_ptr(), ::core::option::Option::None);
-            (__out_0.assume_init(), __out_1.assume_init())
-        }
-    }
-    #[doc = "`FinishRendering(crate::unity_engine::rendering::commandbuffer::CommandBuffer)` overload"]
-    fn finish_rendering(self, cmd: impl ::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>) -> () {
-        unsafe {
-            let __receiver = <Renderer2D as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Renderer2D_unity2_raw::finish_rendering(__receiver, ::core::convert::Into::into(cmd), ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-experimental-rendering-universal-renderer2d")]
-impl<__T: IRenderer2D> IRenderer2DMethods for __T {}
-
-#[cfg(feature = "unity_engine-experimental-rendering-universal-renderer2d")]
-impl Renderer2D {
-    #[doc = "`.ctor(crate::unity_engine::experimental::rendering::universal::renderer2ddata::Renderer2DData)` — overload selector"]
-    pub fn new(data: crate::unity_engine::experimental::rendering::universal::renderer2ddata::Renderer2DData) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(Renderer2D), ::core::stringify!(new),));
-        <Self as IRenderer2DMethods>::ctor(this, data);
-        this
-    }
+# [doc = "`.ctor(crate::unity_engine::experimental::rendering::universal::renderer2ddata::Renderer2DData)` — overload selector"] pub fn new (data : crate :: unity_engine :: experimental :: rendering :: universal :: renderer2ddata :: Renderer2DData) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Renderer2D) , :: core :: stringify ! (new) ,)) ; < Self as IRenderer2DMethods > :: ctor (this , data) ; this }
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-renderer2d")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IRenderer2D, IRenderer2DMethods, Renderer2D};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-rendering-universal-scriptablerenderer")]
-    pub use crate::unity_engine::rendering::universal::scriptablerenderer::IScriptableRendererMethods;
-    pub use crate::{system::object::IObject, unity_engine::rendering::universal::scriptablerenderer::IScriptableRenderer};
+    pub use super::Renderer2D;
+    pub use super::IRenderer2D;
+    pub use super::IRenderer2DMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::rendering::universal::scriptablerenderer::IScriptableRenderer;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-rendering-universal-scriptablerenderer")] pub use crate::unity_engine::rendering::universal::scriptablerenderer::IScriptableRendererMethods;
 }

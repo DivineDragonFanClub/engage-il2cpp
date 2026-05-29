@@ -2,52 +2,39 @@
 
 #[cfg(feature = "system-collections-generic-icollection_1-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/icollection_1/ICollection_1.md"))]
-    #[::unity2::class(namespace = "System.Collections.Generic", name = "ICollection`1")]
-    pub struct ICollection_1<T0: ::unity2::ClassIdentity> {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/icollection_1/ICollection_1.md"))] # [:: unity2 :: class (namespace = "System.Collections.Generic" , name = "ICollection`1")] pub struct ICollection_1 < T0 : :: unity2 :: ClassIdentity > {}
+
 }
 
 #[cfg(feature = "system-collections-generic-icollection_1-types")]
 pub use __types::*;
 
 #[cfg(feature = "system-collections-generic-icollection_1")]
-#[::unity2::methods]
-impl<T0: ::unity2::ClassIdentity> ICollection_1<T0> {
-    #[doc = "`get_Count()` overload"]
-    #[method(name = "get_Count", args = 0)]
-    pub fn get_count(self) -> i32;
+# [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity > ICollection_1 < T0 > {
+# [doc = "`get_Count()` overload"] # [method (name = "get_Count" , args = 0)] pub fn get_count (self ,) -> i32 ;
 
-    #[doc = "`get_IsReadOnly()` overload"]
-    #[method(name = "get_IsReadOnly", args = 0)]
-    pub fn get_is_read_only(self) -> bool;
+# [doc = "`get_IsReadOnly()` overload"] # [method (name = "get_IsReadOnly" , args = 0)] pub fn get_is_read_only (self ,) -> bool ;
 
-    #[doc = "`Add(T0)` overload"]
-    #[method(name = "Add", args = 1)]
-    pub fn add(self, item: T0) -> ();
+# [doc = "`Add(T0)` overload"] # [method (name = "Add" , args = 1)] pub fn add (self , item : T0) -> () ;
 
-    #[doc = "`Clear()` overload"]
-    #[method(name = "Clear", args = 0)]
-    pub fn clear(self) -> ();
+# [doc = "`Clear()` overload"] # [method (name = "Clear" , args = 0)] pub fn clear (self ,) -> () ;
 
-    #[doc = "`Contains(T0)` overload"]
-    #[method(name = "Contains", args = 1)]
-    pub fn contains(self, item: T0) -> bool;
+# [doc = "`Contains(T0)` overload"] # [method (name = "Contains" , args = 1)] pub fn contains (self , item : T0) -> bool ;
 
-    #[doc = "`CopyTo(::unity2::Array<T0>, i32)` overload"]
-    #[method(name = "CopyTo", args = 2)]
-    pub fn copy_to(self, array: ::unity2::Array<T0>, array_index: i32) -> ();
+# [doc = "`CopyTo(::unity2::Array<T0>, i32)` overload"] # [method (name = "CopyTo" , args = 2)] pub fn copy_to (self , array : :: unity2 :: Array < T0 > , array_index : i32) -> () ;
 
-    #[doc = "`Remove(T0)` overload"]
-    #[method(name = "Remove", args = 1)]
-    pub fn remove(self, item: T0) -> bool;
+# [doc = "`Remove(T0)` overload"] # [method (name = "Remove" , args = 1)] pub fn remove (self , item : T0) -> bool ;
 }
 
 #[cfg(feature = "system-collections-generic-icollection_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{ICollection_1, IICollection_1, IICollection_1Methods};
+    pub use super::ICollection_1;
+    pub use super::IICollection_1;
+    pub use super::IICollection_1Methods;
 }

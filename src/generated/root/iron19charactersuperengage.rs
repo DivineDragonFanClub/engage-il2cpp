@@ -2,474 +2,72 @@
 
 #[cfg(feature = "root-iron19charactersuperengage-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/iron19charactersuperengage/Iron19CharacterSuperEngage.md"))]
-    #[::unity2::class(namespace = "", name = "Iron19CharacterSuperEngage")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct Iron19CharacterSuperEngage {
-        #[static_field]
-        #[rename(name = "EditorPrefsDisable")]
-        pub editor_prefs_disable: ::unity2::Il2CppString,
-        #[offset(24)]
-        #[rename(name = "m_bInitialized")]
-        pub m_b_initialized: bool,
-        #[offset(25)]
-        #[rename(name = "m_Dirty")]
-        pub m_dirty: bool,
-        #[offset(32)]
-        #[rename(name = "m_ModifiableMaterials")]
-        pub m_modifiable_materials: crate::system::collections::generic::list_1::List_1<crate::unity_engine::material::Material>,
-        #[offset(40)]
-        #[rename(name = "m_InstancedMaterials")]
-        pub m_instanced_materials: crate::system::collections::generic::list_1::List_1<crate::unity_engine::material::Material>,
-        #[offset(48)]
-        #[rename(name = "m_isSuperEngage")]
-        pub m_is_super_engage: bool,
-        #[static_field]
-        #[rename(name = "SUPER_ENGAGE_KEYWORD")]
-        pub super_engage_keyword: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "SUPER_ENGAGE_PROPERTY_NAME")]
-        pub super_engage_property_name: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "m_superEngagePropertyID")]
-        pub m_super_engage_property_id: i32,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/iron19charactersuperengage/Iron19CharacterSuperEngage.md"))] # [:: unity2 :: class (namespace = "" , name = "Iron19CharacterSuperEngage")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct Iron19CharacterSuperEngage {
+# [static_field] # [rename (name = "EditorPrefsDisable")] pub editor_prefs_disable : :: unity2 :: Il2CppString ,
+# [offset (24)] # [rename (name = "m_bInitialized")] pub m_b_initialized : bool ,
+# [offset (25)] # [rename (name = "m_Dirty")] pub m_dirty : bool ,
+# [offset (32)] # [rename (name = "m_ModifiableMaterials")] pub m_modifiable_materials : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: material :: Material > ,
+# [offset (40)] # [rename (name = "m_InstancedMaterials")] pub m_instanced_materials : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: material :: Material > ,
+# [offset (48)] # [rename (name = "m_isSuperEngage")] pub m_is_super_engage : bool ,
+# [static_field] # [rename (name = "SUPER_ENGAGE_KEYWORD")] pub super_engage_keyword : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "SUPER_ENGAGE_PROPERTY_NAME")] pub super_engage_property_name : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "m_superEngagePropertyID")] pub m_super_engage_property_id : i32 ,
+}
+
 }
 
 #[cfg(feature = "root-iron19charactersuperengage-types")]
 pub use __types::*;
 
 #[cfg(feature = "root-iron19charactersuperengage")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __Iron19CharacterSuperEngage_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_super_engage {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Iron19CharacterSuperEngage as ::unity2::ClassIdentity>::class(),
-                "IsSuperEngage",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Iron19CharacterSuperEngage as ::unity2::ClassIdentity>::NAME,
-                        "IsSuperEngage",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_super_engage(this: Iron19CharacterSuperEngage, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(Iron19CharacterSuperEngage, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_super_engage::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_start {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Iron19CharacterSuperEngage as ::unity2::ClassIdentity>::class(),
-                "Start",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Iron19CharacterSuperEngage as ::unity2::ClassIdentity>::NAME,
-                        "Start",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn start(this: Iron19CharacterSuperEngage, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Iron19CharacterSuperEngage, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_start::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update_materials {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Iron19CharacterSuperEngage as ::unity2::ClassIdentity>::class(),
-                "UpdateMaterials",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Iron19CharacterSuperEngage as ::unity2::ClassIdentity>::NAME,
-                        "UpdateMaterials",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update_materials(this: Iron19CharacterSuperEngage, is_force: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Iron19CharacterSuperEngage, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update_materials::get_method_info().method_ptr);
-        inner(this, is_force, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_destroy {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Iron19CharacterSuperEngage as ::unity2::ClassIdentity>::class(),
-                "OnDestroy",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Iron19CharacterSuperEngage as ::unity2::ClassIdentity>::NAME,
-                        "OnDestroy",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_destroy(this: Iron19CharacterSuperEngage, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Iron19CharacterSuperEngage, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_destroy::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_super_engage {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Iron19CharacterSuperEngage as ::unity2::ClassIdentity>::class(),
-                "SetSuperEngage",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Iron19CharacterSuperEngage as ::unity2::ClassIdentity>::NAME,
-                        "SetSuperEngage",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_super_engage(this: Iron19CharacterSuperEngage, is_super_engage: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Iron19CharacterSuperEngage, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_super_engage::get_method_info().method_ptr);
-        inner(this, is_super_engage, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_my_update {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Iron19CharacterSuperEngage as ::unity2::ClassIdentity>::class(),
-                "MyUpdate",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Iron19CharacterSuperEngage as ::unity2::ClassIdentity>::NAME,
-                        "MyUpdate",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn my_update(this: Iron19CharacterSuperEngage, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Iron19CharacterSuperEngage, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_my_update::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update_shader {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Iron19CharacterSuperEngage as ::unity2::ClassIdentity>::class(),
-                "UpdateShader",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Iron19CharacterSuperEngage as ::unity2::ClassIdentity>::NAME,
-                        "UpdateShader",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update_shader(this: Iron19CharacterSuperEngage, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Iron19CharacterSuperEngage, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update_shader::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Iron19CharacterSuperEngage as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Iron19CharacterSuperEngage as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: Iron19CharacterSuperEngage, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Iron19CharacterSuperEngage, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Iron19CharacterSuperEngage as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Iron19CharacterSuperEngage as ::unity2::ClassIdentity>::NAME,
-                        ".cctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __Iron19CharacterSuperEngage_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_super_engage { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Iron19CharacterSuperEngage as :: unity2 :: ClassIdentity > :: class () , "IsSuperEngage" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Iron19CharacterSuperEngage as :: unity2 :: ClassIdentity > :: NAME , "IsSuperEngage" , e) , } } } pub unsafe fn is_super_engage (this : Iron19CharacterSuperEngage , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (Iron19CharacterSuperEngage , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_super_engage :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_start { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Iron19CharacterSuperEngage as :: unity2 :: ClassIdentity > :: class () , "Start" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Iron19CharacterSuperEngage as :: unity2 :: ClassIdentity > :: NAME , "Start" , e) , } } } pub unsafe fn start (this : Iron19CharacterSuperEngage , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Iron19CharacterSuperEngage , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_start :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update_materials { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Iron19CharacterSuperEngage as :: unity2 :: ClassIdentity > :: class () , "UpdateMaterials" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Iron19CharacterSuperEngage as :: unity2 :: ClassIdentity > :: NAME , "UpdateMaterials" , e) , } } } pub unsafe fn update_materials (this : Iron19CharacterSuperEngage , is_force : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Iron19CharacterSuperEngage , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update_materials :: get_method_info () . method_ptr ,) ; inner (this , is_force , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_destroy { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Iron19CharacterSuperEngage as :: unity2 :: ClassIdentity > :: class () , "OnDestroy" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Iron19CharacterSuperEngage as :: unity2 :: ClassIdentity > :: NAME , "OnDestroy" , e) , } } } pub unsafe fn on_destroy (this : Iron19CharacterSuperEngage , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Iron19CharacterSuperEngage , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_destroy :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_super_engage { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Iron19CharacterSuperEngage as :: unity2 :: ClassIdentity > :: class () , "SetSuperEngage" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Iron19CharacterSuperEngage as :: unity2 :: ClassIdentity > :: NAME , "SetSuperEngage" , e) , } } } pub unsafe fn set_super_engage (this : Iron19CharacterSuperEngage , is_super_engage : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Iron19CharacterSuperEngage , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_super_engage :: get_method_info () . method_ptr ,) ; inner (this , is_super_engage , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_my_update { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Iron19CharacterSuperEngage as :: unity2 :: ClassIdentity > :: class () , "MyUpdate" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Iron19CharacterSuperEngage as :: unity2 :: ClassIdentity > :: NAME , "MyUpdate" , e) , } } } pub unsafe fn my_update (this : Iron19CharacterSuperEngage , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Iron19CharacterSuperEngage , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_my_update :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update_shader { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Iron19CharacterSuperEngage as :: unity2 :: ClassIdentity > :: class () , "UpdateShader" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Iron19CharacterSuperEngage as :: unity2 :: ClassIdentity > :: NAME , "UpdateShader" , e) , } } } pub unsafe fn update_shader (this : Iron19CharacterSuperEngage , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Iron19CharacterSuperEngage , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update_shader :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Iron19CharacterSuperEngage as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Iron19CharacterSuperEngage as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : Iron19CharacterSuperEngage , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Iron19CharacterSuperEngage , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Iron19CharacterSuperEngage as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Iron19CharacterSuperEngage as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
+
+#[cfg(feature = "root-iron19charactersuperengage")]
+impl Iron19CharacterSuperEngage { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { __Iron19CharacterSuperEngage_unity2_raw :: cctor (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "root-iron19charactersuperengage")]
+pub trait IIron19CharacterSuperEngageMethods : IIron19CharacterSuperEngage { # [doc = "`IsSuperEngage()` overload"] fn is_super_engage (self ,) -> bool { unsafe { let __receiver = < Iron19CharacterSuperEngage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Iron19CharacterSuperEngage_unity2_raw :: is_super_engage (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < Iron19CharacterSuperEngage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Iron19CharacterSuperEngage_unity2_raw :: start (__receiver , :: core :: option :: Option :: None) } } # [doc = "`UpdateMaterials(bool)` overload"] fn update_materials (self , is_force : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < Iron19CharacterSuperEngage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Iron19CharacterSuperEngage_unity2_raw :: update_materials (__receiver , :: core :: convert :: Into :: into (is_force) , :: core :: option :: Option :: None) } } # [doc = "`OnDestroy()` overload"] fn on_destroy (self ,) -> () { unsafe { let __receiver = < Iron19CharacterSuperEngage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Iron19CharacterSuperEngage_unity2_raw :: on_destroy (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetSuperEngage(bool)` overload"] fn set_super_engage (self , is_super_engage : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < Iron19CharacterSuperEngage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Iron19CharacterSuperEngage_unity2_raw :: set_super_engage (__receiver , :: core :: convert :: Into :: into (is_super_engage) , :: core :: option :: Option :: None) } } # [doc = "`MyUpdate()` overload"] fn my_update (self ,) -> () { unsafe { let __receiver = < Iron19CharacterSuperEngage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Iron19CharacterSuperEngage_unity2_raw :: my_update (__receiver , :: core :: option :: Option :: None) } } # [doc = "`UpdateShader()` overload"] fn update_shader (self ,) -> () { unsafe { let __receiver = < Iron19CharacterSuperEngage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Iron19CharacterSuperEngage_unity2_raw :: update_shader (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Iron19CharacterSuperEngage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Iron19CharacterSuperEngage_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "root-iron19charactersuperengage")]
+impl < __T : IIron19CharacterSuperEngage > IIron19CharacterSuperEngageMethods for __T { }
+
+#[cfg(feature = "root-iron19charactersuperengage")]
+impl Iron19CharacterSuperEngage { pub fn is_super_engage_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Iron19CharacterSuperEngage_unity2_raw :: __lookup_is_super_engage :: get_method_info () } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Iron19CharacterSuperEngage_unity2_raw :: __lookup_start :: get_method_info () } pub fn update_materials_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Iron19CharacterSuperEngage_unity2_raw :: __lookup_update_materials :: get_method_info () } pub fn on_destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Iron19CharacterSuperEngage_unity2_raw :: __lookup_on_destroy :: get_method_info () } pub fn set_super_engage_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Iron19CharacterSuperEngage_unity2_raw :: __lookup_set_super_engage :: get_method_info () } pub fn my_update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Iron19CharacterSuperEngage_unity2_raw :: __lookup_my_update :: get_method_info () } pub fn update_shader_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Iron19CharacterSuperEngage_unity2_raw :: __lookup_update_shader :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Iron19CharacterSuperEngage_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Iron19CharacterSuperEngage_unity2_raw :: __lookup_cctor :: get_method_info () } }
 
 #[cfg(feature = "root-iron19charactersuperengage")]
 impl Iron19CharacterSuperEngage {
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __Iron19CharacterSuperEngage_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "root-iron19charactersuperengage")]
-pub trait IIron19CharacterSuperEngageMethods: IIron19CharacterSuperEngage {
-    #[doc = "`IsSuperEngage()` overload"]
-    fn is_super_engage(self) -> bool {
-        unsafe {
-            let __receiver =
-                <Iron19CharacterSuperEngage as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Iron19CharacterSuperEngage_unity2_raw::is_super_engage(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Start()` overload"]
-    fn start(self) -> () {
-        unsafe {
-            let __receiver =
-                <Iron19CharacterSuperEngage as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Iron19CharacterSuperEngage_unity2_raw::start(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`UpdateMaterials(bool)` overload"]
-    fn update_materials(self, is_force: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver =
-                <Iron19CharacterSuperEngage as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Iron19CharacterSuperEngage_unity2_raw::update_materials(__receiver, ::core::convert::Into::into(is_force), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnDestroy()` overload"]
-    fn on_destroy(self) -> () {
-        unsafe {
-            let __receiver =
-                <Iron19CharacterSuperEngage as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Iron19CharacterSuperEngage_unity2_raw::on_destroy(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetSuperEngage(bool)` overload"]
-    fn set_super_engage(self, is_super_engage: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver =
-                <Iron19CharacterSuperEngage as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Iron19CharacterSuperEngage_unity2_raw::set_super_engage(
-                __receiver,
-                ::core::convert::Into::into(is_super_engage),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`MyUpdate()` overload"]
-    fn my_update(self) -> () {
-        unsafe {
-            let __receiver =
-                <Iron19CharacterSuperEngage as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Iron19CharacterSuperEngage_unity2_raw::my_update(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`UpdateShader()` overload"]
-    fn update_shader(self) -> () {
-        unsafe {
-            let __receiver =
-                <Iron19CharacterSuperEngage as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Iron19CharacterSuperEngage_unity2_raw::update_shader(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <Iron19CharacterSuperEngage as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Iron19CharacterSuperEngage_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "root-iron19charactersuperengage")]
-impl<__T: IIron19CharacterSuperEngage> IIron19CharacterSuperEngageMethods for __T {}
-
-#[cfg(feature = "root-iron19charactersuperengage")]
-impl Iron19CharacterSuperEngage {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Iron19CharacterSuperEngage),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IIron19CharacterSuperEngageMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Iron19CharacterSuperEngage) , :: core :: stringify ! (new) ,)) ; < Self as IIron19CharacterSuperEngageMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "root-iron19charactersuperengage")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IIron19CharacterSuperEngage, IIron19CharacterSuperEngageMethods, Iron19CharacterSuperEngage};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        system::object::IObject,
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::Iron19CharacterSuperEngage;
+    pub use super::IIron19CharacterSuperEngage;
+    pub use super::IIron19CharacterSuperEngageMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

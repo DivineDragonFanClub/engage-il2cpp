@@ -2,304 +2,168 @@
 
 #[cfg(feature = "app-myroomeventclip-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::{
-            object::{IObject, Object},
-            r#enum::{Enum, IEnum},
-            valuetype::{IValueType, ValueType},
-        },
-        unity_engine::{
-            object_2::{IObject_2, Object_2},
-            playables::playableasset::{IPlayableAsset, PlayableAsset},
-            scriptableobject::{IScriptableObject, ScriptableObject},
-        },
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/myroomeventclip/MyRoomEventClip_EventClipType.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct MyRoomEventClip_EventClipType {
-        pub value: i32,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+ use crate :: unity_engine :: playables :: playableasset :: { IPlayableAsset , PlayableAsset }
+ ;
+ use crate :: unity_engine :: scriptableobject :: { IScriptableObject , ScriptableObject }
+ ;
 
-    impl ::unity2::ClassIdentity for MyRoomEventClip_EventClipType {
-        const NAME: &'static str = "MyRoomEventClip.EventClipType";
-        const NAMESPACE: &'static str = "App";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/myroomeventclip/MyRoomEventClip_EventClipType.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct MyRoomEventClip_EventClipType  {
+    pub value: i32,
+}
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+
+impl  ::unity2::ClassIdentity for MyRoomEventClip_EventClipType  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MyRoomEventClip.EventClipType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for MyRoomEventClip_EventClipType {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+}
+
+
+impl  ::unity2::IlType for MyRoomEventClip_EventClipType  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  MyRoomEventClip_EventClipType  {
+    pub fn effect() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn sound() -> Self {
+        Self { value: 1 }
+
+    }
+
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomeventclip/MyRoomEventClip.md"))] # [:: unity2 :: class (namespace = "App" , name = "MyRoomEventClip")] # [parent (crate :: unity_engine :: playables :: playableasset :: PlayableAsset)] pub struct MyRoomEventClip {
+# [offset (24)] # [rename (name = "eventType")] pub event_type : crate :: app :: myroomeventclip :: MyRoomEventClip_EventClipType ,
+# [offset (28)] # [rename (name = "eventLayer")] pub event_layer : crate :: app :: myroomeventclip :: MyRoomEventClip_EventClipLayer ,
+# [offset (32)] # [rename (name = "eventName")] pub event_name : :: unity2 :: Il2CppString ,
+# [offset (40)] # [rename (name = "isOut")] pub is_out : bool ,
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/myroomeventclip/MyRoomEventClip_EventClipLayer.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct MyRoomEventClip_EventClipLayer  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for MyRoomEventClip_EventClipLayer  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MyRoomEventClip.EventClipLayer";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl MyRoomEventClip_EventClipType {
-        pub fn effect() -> Self {
-            Self { value: 0 }
-        }
+}
 
-        pub fn sound() -> Self {
-            Self { value: 1 }
-        }
+
+impl  ::unity2::IlType for MyRoomEventClip_EventClipLayer  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomeventclip/MyRoomEventClip.md"))]
-    #[::unity2::class(namespace = "App", name = "MyRoomEventClip")]
-    #[parent(crate::unity_engine::playables::playableasset::PlayableAsset)]
-    pub struct MyRoomEventClip {
-        #[offset(24)]
-        #[rename(name = "eventType")]
-        pub event_type: crate::app::myroomeventclip::MyRoomEventClip_EventClipType,
-        #[offset(28)]
-        #[rename(name = "eventLayer")]
-        pub event_layer: crate::app::myroomeventclip::MyRoomEventClip_EventClipLayer,
-        #[offset(32)]
-        #[rename(name = "eventName")]
-        pub event_name: ::unity2::Il2CppString,
-        #[offset(40)]
-        #[rename(name = "isOut")]
-        pub is_out: bool,
+}
+
+
+impl  MyRoomEventClip_EventClipLayer  {
+    pub fn background() -> Self {
+        Self { value: 0 }
+
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/myroomeventclip/MyRoomEventClip_EventClipLayer.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct MyRoomEventClip_EventClipLayer {
-        pub value: i32,
+
+    pub fn foreground() -> Self {
+        Self { value: 1 }
+
     }
 
-    impl ::unity2::ClassIdentity for MyRoomEventClip_EventClipLayer {
-        const NAME: &'static str = "MyRoomEventClip.EventClipLayer";
-        const NAMESPACE: &'static str = "App";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for MyRoomEventClip_EventClipLayer {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    impl MyRoomEventClip_EventClipLayer {
-        pub fn background() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn foreground() -> Self {
-            Self { value: 1 }
-        }
-    }
 }
 
 #[cfg(feature = "app-myroomeventclip-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-myroomeventclip")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MyRoomEventClip_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_clip_caps {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MyRoomEventClip as ::unity2::ClassIdentity>::class(),
-                "get_clipCaps",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MyRoomEventClip as ::unity2::ClassIdentity>::NAME,
-                        "get_clipCaps",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_clip_caps(
-        this: MyRoomEventClip,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::timeline::clipcaps::ClipCaps {
-        let inner: extern "C" fn(MyRoomEventClip, ::unity2::OptionalMethod) -> crate::unity_engine::timeline::clipcaps::ClipCaps =
-            ::core::mem::transmute(__lookup_get_clip_caps::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_playable {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::playables::playablegraph::PlayableGraph as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MyRoomEventClip as ::unity2::ClassIdentity>::class(),
-                "CreatePlayable",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MyRoomEventClip as ::unity2::ClassIdentity>::NAME,
-                        "CreatePlayable",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_playable(
-        this: MyRoomEventClip,
-        graph: crate::unity_engine::playables::playablegraph::PlayableGraph,
-        owner: crate::unity_engine::gameobject::GameObject,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::playables::playable::Playable {
-        let inner: extern "C" fn(
-            MyRoomEventClip,
-            crate::unity_engine::playables::playablegraph::PlayableGraph,
-            crate::unity_engine::gameobject::GameObject,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::playables::playable::Playable = ::core::mem::transmute(__lookup_create_playable::get_method_info().method_ptr);
-        inner(this, graph, owner, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MyRoomEventClip as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MyRoomEventClip as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: MyRoomEventClip, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MyRoomEventClip, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MyRoomEventClip_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_clip_caps { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MyRoomEventClip as :: unity2 :: ClassIdentity > :: class () , "get_clipCaps" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MyRoomEventClip as :: unity2 :: ClassIdentity > :: NAME , "get_clipCaps" , e) , } } } pub unsafe fn get_clip_caps (this : MyRoomEventClip , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: timeline :: clipcaps :: ClipCaps { let inner : extern "C" fn (MyRoomEventClip , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: timeline :: clipcaps :: ClipCaps = :: core :: mem :: transmute (__lookup_get_clip_caps :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_playable { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playablegraph :: PlayableGraph as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: gameobject :: GameObject as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MyRoomEventClip as :: unity2 :: ClassIdentity > :: class () , "CreatePlayable" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MyRoomEventClip as :: unity2 :: ClassIdentity > :: NAME , "CreatePlayable" , e) , } } } pub unsafe fn create_playable (this : MyRoomEventClip , graph : crate :: unity_engine :: playables :: playablegraph :: PlayableGraph , owner : crate :: unity_engine :: gameobject :: GameObject , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: playables :: playable :: Playable { let inner : extern "C" fn (MyRoomEventClip , crate :: unity_engine :: playables :: playablegraph :: PlayableGraph , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: playables :: playable :: Playable = :: core :: mem :: transmute (__lookup_create_playable :: get_method_info () . method_ptr ,) ; inner (this , graph , owner , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MyRoomEventClip as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MyRoomEventClip as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : MyRoomEventClip , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MyRoomEventClip , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-myroomeventclip")]
-pub trait IMyRoomEventClipMethods: IMyRoomEventClip {
-    #[doc = "`get_clipCaps()` overload"]
-    fn get_clip_caps(self) -> crate::unity_engine::timeline::clipcaps::ClipCaps {
-        unsafe {
-            let __receiver = <MyRoomEventClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MyRoomEventClip_unity2_raw::get_clip_caps(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CreatePlayable(crate::unity_engine::playables::playablegraph::PlayableGraph, crate::unity_engine::gameobject::GameObject)` overload"]
-    fn create_playable(
-        self,
-        graph: impl ::core::convert::Into<crate::unity_engine::playables::playablegraph::PlayableGraph>,
-        owner: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-    ) -> crate::unity_engine::playables::playable::Playable {
-        unsafe {
-            let __receiver = <MyRoomEventClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MyRoomEventClip_unity2_raw::create_playable(
-                __receiver,
-                ::core::convert::Into::into(graph),
-                ::core::convert::Into::into(owner),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <MyRoomEventClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MyRoomEventClip_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IMyRoomEventClipMethods : IMyRoomEventClip { # [doc = "`get_clipCaps()` overload"] fn get_clip_caps (self ,) -> crate :: unity_engine :: timeline :: clipcaps :: ClipCaps { unsafe { let __receiver = < MyRoomEventClip as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MyRoomEventClip_unity2_raw :: get_clip_caps (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CreatePlayable(crate::unity_engine::playables::playablegraph::PlayableGraph, crate::unity_engine::gameobject::GameObject)` overload"] fn create_playable (self , graph : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playablegraph :: PlayableGraph > , owner : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> crate :: unity_engine :: playables :: playable :: Playable { unsafe { let __receiver = < MyRoomEventClip as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MyRoomEventClip_unity2_raw :: create_playable (__receiver , :: core :: convert :: Into :: into (graph) , :: core :: convert :: Into :: into (owner) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MyRoomEventClip as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MyRoomEventClip_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-myroomeventclip")]
-impl<__T: IMyRoomEventClip> IMyRoomEventClipMethods for __T {}
+impl < __T : IMyRoomEventClip > IMyRoomEventClipMethods for __T { }
+
+#[cfg(feature = "app-myroomeventclip")]
+impl MyRoomEventClip { pub fn get_clip_caps_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MyRoomEventClip_unity2_raw :: __lookup_get_clip_caps :: get_method_info () } pub fn create_playable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MyRoomEventClip_unity2_raw :: __lookup_create_playable :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MyRoomEventClip_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-myroomeventclip")]
 impl MyRoomEventClip {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MyRoomEventClip),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMyRoomEventClipMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MyRoomEventClip) , :: core :: stringify ! (new) ,)) ; < Self as IMyRoomEventClipMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-myroomeventclip")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IMyRoomEventClip, IMyRoomEventClipMethods, MyRoomEventClip, MyRoomEventClip_EventClipLayer, MyRoomEventClip_EventClipType};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    #[cfg(feature = "unity_engine-playables-playableasset")]
-    pub use crate::unity_engine::playables::playableasset::IPlayableAssetMethods;
-    #[cfg(feature = "unity_engine-scriptableobject")]
-    pub use crate::unity_engine::scriptableobject::IScriptableObjectMethods;
-    pub use crate::{
-        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
-        unity_engine::{object_2::IObject_2, playables::playableasset::IPlayableAsset, scriptableobject::IScriptableObject},
-    };
+    pub use super::MyRoomEventClip_EventClipType;
+    pub use super::MyRoomEventClip;
+    pub use super::IMyRoomEventClip;
+    pub use super::IMyRoomEventClipMethods;
+    pub use super::MyRoomEventClip_EventClipLayer;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    pub use crate::unity_engine::object_2::IObject_2;
+    pub use crate::unity_engine::playables::playableasset::IPlayableAsset;
+    pub use crate::unity_engine::scriptableobject::IScriptableObject;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
+    #[cfg(feature = "unity_engine-playables-playableasset")] pub use crate::unity_engine::playables::playableasset::IPlayableAssetMethods;
+    #[cfg(feature = "unity_engine-scriptableobject")] pub use crate::unity_engine::scriptableobject::IScriptableObjectMethods;
 }

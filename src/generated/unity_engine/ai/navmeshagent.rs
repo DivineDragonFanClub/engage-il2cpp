@@ -2,457 +2,50 @@
 
 #[cfg(feature = "unity_engine-ai-navmeshagent-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ai/navmeshagent/NavMeshAgent.md"))]
-    #[::unity2::class(namespace = "UnityEngine.AI", name = "NavMeshAgent")]
-    #[parent(crate::unity_engine::behaviour::Behaviour)]
-    pub struct NavMeshAgent {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ai/navmeshagent/NavMeshAgent.md"))] # [:: unity2 :: class (namespace = "UnityEngine.AI" , name = "NavMeshAgent")] # [parent (crate :: unity_engine :: behaviour :: Behaviour)] pub struct NavMeshAgent {}
+
 }
 
 #[cfg(feature = "unity_engine-ai-navmeshagent-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-ai-navmeshagent")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __NavMeshAgent_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_destination {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NavMeshAgent as ::unity2::ClassIdentity>::class(),
-                "SetDestination",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <NavMeshAgent as ::unity2::ClassIdentity>::NAME,
-                        "SetDestination",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_destination(
-        this: NavMeshAgent,
-        target: crate::unity_engine::vector3::Vector3,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(NavMeshAgent, crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_set_destination::get_method_info().method_ptr);
-        inner(this, target, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_steering_target {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NavMeshAgent as ::unity2::ClassIdentity>::class(),
-                "get_steeringTarget",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <NavMeshAgent as ::unity2::ClassIdentity>::NAME,
-                        "get_steeringTarget",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_steering_target(this: NavMeshAgent, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 {
-        let inner: extern "C" fn(NavMeshAgent, ::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 =
-            ::core::mem::transmute(__lookup_get_steering_target::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calculate_path {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::ai::navmeshpath::NavMeshPath as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NavMeshAgent as ::unity2::ClassIdentity>::class(),
-                "CalculatePath",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <NavMeshAgent as ::unity2::ClassIdentity>::NAME,
-                        "CalculatePath",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn calculate_path(
-        this: NavMeshAgent,
-        target_position: crate::unity_engine::vector3::Vector3,
-        path: crate::unity_engine::ai::navmeshpath::NavMeshPath,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            NavMeshAgent,
-            crate::unity_engine::vector3::Vector3,
-            crate::unity_engine::ai::navmeshpath::NavMeshPath,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(__lookup_calculate_path::get_method_info().method_ptr);
-        inner(this, target_position, path, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calculate_path_internal {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::ai::navmeshpath::NavMeshPath as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NavMeshAgent as ::unity2::ClassIdentity>::class(),
-                "CalculatePathInternal",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <NavMeshAgent as ::unity2::ClassIdentity>::NAME,
-                        "CalculatePathInternal",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn calculate_path_internal(
-        this: NavMeshAgent,
-        target_position: crate::unity_engine::vector3::Vector3,
-        path: crate::unity_engine::ai::navmeshpath::NavMeshPath,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            NavMeshAgent,
-            crate::unity_engine::vector3::Vector3,
-            crate::unity_engine::ai::navmeshpath::NavMeshPath,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(__lookup_calculate_path_internal::get_method_info().method_ptr);
-        inner(this, target_position, path, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_speed {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NavMeshAgent as ::unity2::ClassIdentity>::class(),
-                "set_speed",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <NavMeshAgent as ::unity2::ClassIdentity>::NAME,
-                        "set_speed",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_speed(this: NavMeshAgent, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(NavMeshAgent, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_speed::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_destination_injected {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NavMeshAgent as ::unity2::ClassIdentity>::class(),
-                "SetDestination_Injected",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <NavMeshAgent as ::unity2::ClassIdentity>::NAME,
-                        "SetDestination_Injected",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_destination_injected(
-        this: NavMeshAgent,
-        target: *mut crate::unity_engine::vector3::Vector3,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(NavMeshAgent, *mut crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_set_destination_injected::get_method_info().method_ptr);
-        inner(this, target, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_steering_target_injected {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NavMeshAgent as ::unity2::ClassIdentity>::class(),
-                "get_steeringTarget_Injected",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <NavMeshAgent as ::unity2::ClassIdentity>::NAME,
-                        "get_steeringTarget_Injected",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_steering_target_injected(
-        this: NavMeshAgent,
-        ret: *mut crate::unity_engine::vector3::Vector3,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(NavMeshAgent, *mut crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_get_steering_target_injected::get_method_info().method_ptr);
-        inner(this, ret, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calculate_path_internal_injected {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::ai::navmeshpath::NavMeshPath as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NavMeshAgent as ::unity2::ClassIdentity>::class(),
-                "CalculatePathInternal_Injected",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <NavMeshAgent as ::unity2::ClassIdentity>::NAME,
-                        "CalculatePathInternal_Injected",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn calculate_path_internal_injected(
-        this: NavMeshAgent,
-        target_position: *mut crate::unity_engine::vector3::Vector3,
-        path: crate::unity_engine::ai::navmeshpath::NavMeshPath,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            NavMeshAgent,
-            *mut crate::unity_engine::vector3::Vector3,
-            crate::unity_engine::ai::navmeshpath::NavMeshPath,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(__lookup_calculate_path_internal_injected::get_method_info().method_ptr);
-        inner(this, target_position, path, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __NavMeshAgent_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_destination { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< NavMeshAgent as :: unity2 :: ClassIdentity > :: class () , "SetDestination" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NavMeshAgent as :: unity2 :: ClassIdentity > :: NAME , "SetDestination" , e) , } } } pub unsafe fn set_destination (this : NavMeshAgent , target : crate :: unity_engine :: vector3 :: Vector3 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (NavMeshAgent , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_set_destination :: get_method_info () . method_ptr ,) ; inner (this , target , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_steering_target { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< NavMeshAgent as :: unity2 :: ClassIdentity > :: class () , "get_steeringTarget" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NavMeshAgent as :: unity2 :: ClassIdentity > :: NAME , "get_steeringTarget" , e) , } } } pub unsafe fn get_steering_target (this : NavMeshAgent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 { let inner : extern "C" fn (NavMeshAgent , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute (__lookup_get_steering_target :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_calculate_path { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: ai :: navmeshpath :: NavMeshPath as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< NavMeshAgent as :: unity2 :: ClassIdentity > :: class () , "CalculatePath" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NavMeshAgent as :: unity2 :: ClassIdentity > :: NAME , "CalculatePath" , e) , } } } pub unsafe fn calculate_path (this : NavMeshAgent , target_position : crate :: unity_engine :: vector3 :: Vector3 , path : crate :: unity_engine :: ai :: navmeshpath :: NavMeshPath , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (NavMeshAgent , crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: ai :: navmeshpath :: NavMeshPath , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_calculate_path :: get_method_info () . method_ptr ,) ; inner (this , target_position , path , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_calculate_path_internal { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: ai :: navmeshpath :: NavMeshPath as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< NavMeshAgent as :: unity2 :: ClassIdentity > :: class () , "CalculatePathInternal" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NavMeshAgent as :: unity2 :: ClassIdentity > :: NAME , "CalculatePathInternal" , e) , } } } pub unsafe fn calculate_path_internal (this : NavMeshAgent , target_position : crate :: unity_engine :: vector3 :: Vector3 , path : crate :: unity_engine :: ai :: navmeshpath :: NavMeshPath , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (NavMeshAgent , crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: ai :: navmeshpath :: NavMeshPath , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_calculate_path_internal :: get_method_info () . method_ptr ,) ; inner (this , target_position , path , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_speed { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< NavMeshAgent as :: unity2 :: ClassIdentity > :: class () , "set_speed" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NavMeshAgent as :: unity2 :: ClassIdentity > :: NAME , "set_speed" , e) , } } } pub unsafe fn set_speed (this : NavMeshAgent , value : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (NavMeshAgent , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_speed :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_destination_injected { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< NavMeshAgent as :: unity2 :: ClassIdentity > :: class () , "SetDestination_Injected" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NavMeshAgent as :: unity2 :: ClassIdentity > :: NAME , "SetDestination_Injected" , e) , } } } pub unsafe fn set_destination_injected (this : NavMeshAgent , target : * mut crate :: unity_engine :: vector3 :: Vector3 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (NavMeshAgent , * mut crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_set_destination_injected :: get_method_info () . method_ptr ,) ; inner (this , target , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_steering_target_injected { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< NavMeshAgent as :: unity2 :: ClassIdentity > :: class () , "get_steeringTarget_Injected" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NavMeshAgent as :: unity2 :: ClassIdentity > :: NAME , "get_steeringTarget_Injected" , e) , } } } pub unsafe fn get_steering_target_injected (this : NavMeshAgent , ret : * mut crate :: unity_engine :: vector3 :: Vector3 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (NavMeshAgent , * mut crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_get_steering_target_injected :: get_method_info () . method_ptr ,) ; inner (this , ret , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_calculate_path_internal_injected { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: ai :: navmeshpath :: NavMeshPath as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< NavMeshAgent as :: unity2 :: ClassIdentity > :: class () , "CalculatePathInternal_Injected" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NavMeshAgent as :: unity2 :: ClassIdentity > :: NAME , "CalculatePathInternal_Injected" , e) , } } } pub unsafe fn calculate_path_internal_injected (this : NavMeshAgent , target_position : * mut crate :: unity_engine :: vector3 :: Vector3 , path : crate :: unity_engine :: ai :: navmeshpath :: NavMeshPath , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (NavMeshAgent , * mut crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: ai :: navmeshpath :: NavMeshPath , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_calculate_path_internal_injected :: get_method_info () . method_ptr ,) ; inner (this , target_position , path , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-ai-navmeshagent")]
-pub trait INavMeshAgentMethods: INavMeshAgent {
-    #[doc = "`SetDestination(crate::unity_engine::vector3::Vector3)` overload"]
-    fn set_destination(self, target: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>) -> bool {
-        unsafe {
-            let __receiver = <NavMeshAgent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __NavMeshAgent_unity2_raw::set_destination(__receiver, ::core::convert::Into::into(target), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_steeringTarget()` overload"]
-    fn get_steering_target(self) -> crate::unity_engine::vector3::Vector3 {
-        unsafe {
-            let __receiver = <NavMeshAgent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __NavMeshAgent_unity2_raw::get_steering_target(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CalculatePath(crate::unity_engine::vector3::Vector3, crate::unity_engine::ai::navmeshpath::NavMeshPath)` overload"]
-    fn calculate_path(
-        self,
-        target_position: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-        path: impl ::core::convert::Into<crate::unity_engine::ai::navmeshpath::NavMeshPath>,
-    ) -> bool {
-        unsafe {
-            let __receiver = <NavMeshAgent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __NavMeshAgent_unity2_raw::calculate_path(
-                __receiver,
-                ::core::convert::Into::into(target_position),
-                ::core::convert::Into::into(path),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CalculatePathInternal(crate::unity_engine::vector3::Vector3, crate::unity_engine::ai::navmeshpath::NavMeshPath)` overload"]
-    fn calculate_path_internal(
-        self,
-        target_position: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-        path: impl ::core::convert::Into<crate::unity_engine::ai::navmeshpath::NavMeshPath>,
-    ) -> bool {
-        unsafe {
-            let __receiver = <NavMeshAgent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __NavMeshAgent_unity2_raw::calculate_path_internal(
-                __receiver,
-                ::core::convert::Into::into(target_position),
-                ::core::convert::Into::into(path),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`set_speed(f32)` overload"]
-    fn set_speed(self, value: impl ::core::convert::Into<f32>) -> () {
-        unsafe {
-            let __receiver = <NavMeshAgent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __NavMeshAgent_unity2_raw::set_speed(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetDestination_Injected(*mutcrate::unity_engine::vector3::Vector3)` overload"]
-    fn set_destination_injected(self) -> (bool, crate::unity_engine::vector3::Vector3) {
-        unsafe {
-            let __receiver = <NavMeshAgent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
-            let __ret = { __NavMeshAgent_unity2_raw::set_destination_injected(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None) };
-            (__ret, __out_0.assume_init())
-        }
-    }
-    #[doc = "`get_steeringTarget_Injected(*mutcrate::unity_engine::vector3::Vector3)` overload"]
-    fn get_steering_target_injected(self) -> crate::unity_engine::vector3::Vector3 {
-        unsafe {
-            let __receiver = <NavMeshAgent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
-            __NavMeshAgent_unity2_raw::get_steering_target_injected(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None);
-            __out_0.assume_init()
-        }
-    }
-    #[doc = "`CalculatePathInternal_Injected(*mutcrate::unity_engine::vector3::Vector3, crate::unity_engine::ai::navmeshpath::NavMeshPath)` overload"]
-    fn calculate_path_internal_injected(
-        self,
-        path: impl ::core::convert::Into<crate::unity_engine::ai::navmeshpath::NavMeshPath>,
-    ) -> (bool, crate::unity_engine::vector3::Vector3) {
-        unsafe {
-            let __receiver = <NavMeshAgent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
-            let __ret = {
-                __NavMeshAgent_unity2_raw::calculate_path_internal_injected(
-                    __receiver,
-                    __out_0.as_mut_ptr(),
-                    ::core::convert::Into::into(path),
-                    ::core::option::Option::None,
-                )
-            };
-            (__ret, __out_0.assume_init())
-        }
-    }
-}
+pub trait INavMeshAgentMethods : INavMeshAgent { # [doc = "`SetDestination(crate::unity_engine::vector3::Vector3)` overload"] fn set_destination (self , target : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> bool { unsafe { let __receiver = < NavMeshAgent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __NavMeshAgent_unity2_raw :: set_destination (__receiver , :: core :: convert :: Into :: into (target) , :: core :: option :: Option :: None) } } # [doc = "`get_steeringTarget()` overload"] fn get_steering_target (self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < NavMeshAgent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __NavMeshAgent_unity2_raw :: get_steering_target (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CalculatePath(crate::unity_engine::vector3::Vector3, crate::unity_engine::ai::navmeshpath::NavMeshPath)` overload"] fn calculate_path (self , target_position : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , path : impl :: core :: convert :: Into < crate :: unity_engine :: ai :: navmeshpath :: NavMeshPath >) -> bool { unsafe { let __receiver = < NavMeshAgent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __NavMeshAgent_unity2_raw :: calculate_path (__receiver , :: core :: convert :: Into :: into (target_position) , :: core :: convert :: Into :: into (path) , :: core :: option :: Option :: None) } } # [doc = "`CalculatePathInternal(crate::unity_engine::vector3::Vector3, crate::unity_engine::ai::navmeshpath::NavMeshPath)` overload"] fn calculate_path_internal (self , target_position : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , path : impl :: core :: convert :: Into < crate :: unity_engine :: ai :: navmeshpath :: NavMeshPath >) -> bool { unsafe { let __receiver = < NavMeshAgent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __NavMeshAgent_unity2_raw :: calculate_path_internal (__receiver , :: core :: convert :: Into :: into (target_position) , :: core :: convert :: Into :: into (path) , :: core :: option :: Option :: None) } } # [doc = "`set_speed(f32)` overload"] fn set_speed (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < NavMeshAgent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __NavMeshAgent_unity2_raw :: set_speed (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`SetDestination_Injected(*mutcrate::unity_engine::vector3::Vector3)` overload"] fn set_destination_injected (self ,) -> (bool , crate :: unity_engine :: vector3 :: Vector3) { unsafe { let __receiver = < NavMeshAgent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector3 :: Vector3 > :: uninit () ; let __ret = { __NavMeshAgent_unity2_raw :: set_destination_injected (__receiver , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } ; (__ret , __out_0 . assume_init ()) } } # [doc = "`get_steeringTarget_Injected(*mutcrate::unity_engine::vector3::Vector3)` overload"] fn get_steering_target_injected (self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < NavMeshAgent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector3 :: Vector3 > :: uninit () ; __NavMeshAgent_unity2_raw :: get_steering_target_injected (__receiver , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) ; __out_0 . assume_init () } } # [doc = "`CalculatePathInternal_Injected(*mutcrate::unity_engine::vector3::Vector3, crate::unity_engine::ai::navmeshpath::NavMeshPath)` overload"] fn calculate_path_internal_injected (self , path : impl :: core :: convert :: Into < crate :: unity_engine :: ai :: navmeshpath :: NavMeshPath >) -> (bool , crate :: unity_engine :: vector3 :: Vector3) { unsafe { let __receiver = < NavMeshAgent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector3 :: Vector3 > :: uninit () ; let __ret = { __NavMeshAgent_unity2_raw :: calculate_path_internal_injected (__receiver , __out_0 . as_mut_ptr () , :: core :: convert :: Into :: into (path) , :: core :: option :: Option :: None) } ; (__ret , __out_0 . assume_init ()) } } }
 
 #[cfg(feature = "unity_engine-ai-navmeshagent")]
-impl<__T: INavMeshAgent> INavMeshAgentMethods for __T {}
+impl < __T : INavMeshAgent > INavMeshAgentMethods for __T { }
+
+#[cfg(feature = "unity_engine-ai-navmeshagent")]
+impl NavMeshAgent { pub fn set_destination_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __NavMeshAgent_unity2_raw :: __lookup_set_destination :: get_method_info () } pub fn get_steering_target_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __NavMeshAgent_unity2_raw :: __lookup_get_steering_target :: get_method_info () } pub fn calculate_path_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __NavMeshAgent_unity2_raw :: __lookup_calculate_path :: get_method_info () } pub fn calculate_path_internal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __NavMeshAgent_unity2_raw :: __lookup_calculate_path_internal :: get_method_info () } pub fn set_speed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __NavMeshAgent_unity2_raw :: __lookup_set_speed :: get_method_info () } pub fn set_destination_injected_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __NavMeshAgent_unity2_raw :: __lookup_set_destination_injected :: get_method_info () } pub fn get_steering_target_injected_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __NavMeshAgent_unity2_raw :: __lookup_get_steering_target_injected :: get_method_info () } pub fn calculate_path_internal_injected_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __NavMeshAgent_unity2_raw :: __lookup_calculate_path_internal_injected :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-ai-navmeshagent")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{INavMeshAgent, INavMeshAgentMethods, NavMeshAgent};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        system::object::IObject,
-        unity_engine::{behaviour::IBehaviour, component::IComponent, object_2::IObject_2},
-    };
+    pub use super::NavMeshAgent;
+    pub use super::INavMeshAgent;
+    pub use super::INavMeshAgentMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

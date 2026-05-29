@@ -2,21 +2,19 @@
 
 #[cfg(feature = "unity_engine-assetbundlerecompressoperation-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::{
-            asyncoperation::{AsyncOperation, IAsyncOperation},
-            yieldinstruction::{IYieldInstruction, YieldInstruction},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/assetbundlerecompressoperation/AssetBundleRecompressOperation.md"))]
-    #[::unity2::class(namespace = "UnityEngine", name = "AssetBundleRecompressOperation")]
-    #[parent(crate::unity_engine::asyncoperation::AsyncOperation)]
-    pub struct AssetBundleRecompressOperation {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: asyncoperation :: { AsyncOperation , IAsyncOperation }
+ ;
+ use crate :: unity_engine :: yieldinstruction :: { IYieldInstruction , YieldInstruction }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/assetbundlerecompressoperation/AssetBundleRecompressOperation.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "AssetBundleRecompressOperation")] # [parent (crate :: unity_engine :: asyncoperation :: AsyncOperation)] pub struct AssetBundleRecompressOperation {}
+
 }
 
 #[cfg(feature = "unity_engine-assetbundlerecompressoperation-types")]
@@ -25,15 +23,12 @@ pub use __types::*;
 #[cfg(feature = "unity_engine-assetbundlerecompressoperation")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{AssetBundleRecompressOperation, IAssetBundleRecompressOperation};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-asyncoperation")]
-    pub use crate::unity_engine::asyncoperation::IAsyncOperationMethods;
-    #[cfg(feature = "unity_engine-yieldinstruction")]
-    pub use crate::unity_engine::yieldinstruction::IYieldInstructionMethods;
-    pub use crate::{
-        system::object::IObject,
-        unity_engine::{asyncoperation::IAsyncOperation, yieldinstruction::IYieldInstruction},
-    };
+    pub use super::AssetBundleRecompressOperation;
+    pub use super::IAssetBundleRecompressOperation;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::asyncoperation::IAsyncOperation;
+    pub use crate::unity_engine::yieldinstruction::IYieldInstruction;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-asyncoperation")] pub use crate::unity_engine::asyncoperation::IAsyncOperationMethods;
+    #[cfg(feature = "unity_engine-yieldinstruction")] pub use crate::unity_engine::yieldinstruction::IYieldInstructionMethods;
 }

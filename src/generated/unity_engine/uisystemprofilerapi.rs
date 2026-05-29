@@ -2,215 +2,92 @@
 
 #[cfg(feature = "unity_engine-uisystemprofilerapi-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        r#enum::{Enum, IEnum},
-        valuetype::{IValueType, ValueType},
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/uisystemprofilerapi/UISystemProfilerApi_SampleType.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct UISystemProfilerApi_SampleType {
-        pub value: i32,
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/uisystemprofilerapi/UISystemProfilerApi_SampleType.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct UISystemProfilerApi_SampleType  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for UISystemProfilerApi_SampleType  {
+    const NAMESPACE: &'static str = "UnityEngine";
+
+    const NAME: &'static str = "UISystemProfilerApi.SampleType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    impl ::unity2::ClassIdentity for UISystemProfilerApi_SampleType {
-        const NAME: &'static str = "UISystemProfilerApi.SampleType";
-        const NAMESPACE: &'static str = "UnityEngine";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  ::unity2::IlType for UISystemProfilerApi_SampleType  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::IlType for UISystemProfilerApi_SampleType {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  UISystemProfilerApi_SampleType  {
+    pub fn layout() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl UISystemProfilerApi_SampleType {
-        pub fn layout() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn render() -> Self {
-            Self { value: 1 }
-        }
+    pub fn render() -> Self {
+        Self { value: 1 }
+
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/uisystemprofilerapi/UISystemProfilerApi.md"))]
-    #[::unity2::class(namespace = "UnityEngine", name = "UISystemProfilerApi")]
-    #[parent(crate::system::object::Object)]
-    pub struct UISystemProfilerApi {}
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/uisystemprofilerapi/UISystemProfilerApi.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "UISystemProfilerApi")] # [parent (crate :: system :: object :: Object)] pub struct UISystemProfilerApi {}
+
 }
 
 #[cfg(feature = "unity_engine-uisystemprofilerapi-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-uisystemprofilerapi")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __UISystemProfilerApi_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_begin_sample {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::uisystemprofilerapi::UISystemProfilerApi_SampleType as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UISystemProfilerApi as ::unity2::ClassIdentity>::class(),
-                "BeginSample",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UISystemProfilerApi as ::unity2::ClassIdentity>::NAME,
-                        "BeginSample",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn begin_sample(
-        r#type: crate::unity_engine::uisystemprofilerapi::UISystemProfilerApi_SampleType,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::unity_engine::uisystemprofilerapi::UISystemProfilerApi_SampleType, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_begin_sample::get_method_info().method_ptr);
-        inner(r#type, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_end_sample {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::uisystemprofilerapi::UISystemProfilerApi_SampleType as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UISystemProfilerApi as ::unity2::ClassIdentity>::class(),
-                "EndSample",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UISystemProfilerApi as ::unity2::ClassIdentity>::NAME,
-                        "EndSample",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn end_sample(
-        r#type: crate::unity_engine::uisystemprofilerapi::UISystemProfilerApi_SampleType,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::unity_engine::uisystemprofilerapi::UISystemProfilerApi_SampleType, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_end_sample::get_method_info().method_ptr);
-        inner(r#type, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_marker {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::object_2::Object_2 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UISystemProfilerApi as ::unity2::ClassIdentity>::class(),
-                "AddMarker",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UISystemProfilerApi as ::unity2::ClassIdentity>::NAME,
-                        "AddMarker",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_marker(
-        name: ::unity2::Il2CppString,
-        obj: crate::unity_engine::object_2::Object_2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(::unity2::Il2CppString, crate::unity_engine::object_2::Object_2, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add_marker::get_method_info().method_ptr);
-        inner(name, obj, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __UISystemProfilerApi_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_begin_sample { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: uisystemprofilerapi :: UISystemProfilerApi_SampleType as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UISystemProfilerApi as :: unity2 :: ClassIdentity > :: class () , "BeginSample" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UISystemProfilerApi as :: unity2 :: ClassIdentity > :: NAME , "BeginSample" , e) , } } } pub unsafe fn begin_sample (r#type : crate :: unity_engine :: uisystemprofilerapi :: UISystemProfilerApi_SampleType , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: unity_engine :: uisystemprofilerapi :: UISystemProfilerApi_SampleType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_begin_sample :: get_method_info () . method_ptr ,) ; inner (r#type , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_end_sample { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: uisystemprofilerapi :: UISystemProfilerApi_SampleType as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UISystemProfilerApi as :: unity2 :: ClassIdentity > :: class () , "EndSample" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UISystemProfilerApi as :: unity2 :: ClassIdentity > :: NAME , "EndSample" , e) , } } } pub unsafe fn end_sample (r#type : crate :: unity_engine :: uisystemprofilerapi :: UISystemProfilerApi_SampleType , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: unity_engine :: uisystemprofilerapi :: UISystemProfilerApi_SampleType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_end_sample :: get_method_info () . method_ptr ,) ; inner (r#type , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_marker { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: object_2 :: Object_2 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UISystemProfilerApi as :: unity2 :: ClassIdentity > :: class () , "AddMarker" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UISystemProfilerApi as :: unity2 :: ClassIdentity > :: NAME , "AddMarker" , e) , } } } pub unsafe fn add_marker (name : :: unity2 :: Il2CppString , obj : crate :: unity_engine :: object_2 :: Object_2 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: Il2CppString , crate :: unity_engine :: object_2 :: Object_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_marker :: get_method_info () . method_ptr ,) ; inner (name , obj , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-uisystemprofilerapi")]
-impl UISystemProfilerApi {
-    #[doc = "`BeginSample(crate::unity_engine::uisystemprofilerapi::UISystemProfilerApi_SampleType)` overload"]
-    pub fn begin_sample(r#type: impl ::core::convert::Into<crate::unity_engine::uisystemprofilerapi::UISystemProfilerApi_SampleType>) -> () {
-        unsafe { __UISystemProfilerApi_unity2_raw::begin_sample(::core::convert::Into::into(r#type), ::core::option::Option::None) }
-    }
+impl UISystemProfilerApi { # [doc = "`BeginSample(crate::unity_engine::uisystemprofilerapi::UISystemProfilerApi_SampleType)` overload"] pub fn begin_sample (r#type : impl :: core :: convert :: Into < crate :: unity_engine :: uisystemprofilerapi :: UISystemProfilerApi_SampleType >) -> () { unsafe { __UISystemProfilerApi_unity2_raw :: begin_sample (:: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } # [doc = "`EndSample(crate::unity_engine::uisystemprofilerapi::UISystemProfilerApi_SampleType)` overload"] pub fn end_sample (r#type : impl :: core :: convert :: Into < crate :: unity_engine :: uisystemprofilerapi :: UISystemProfilerApi_SampleType >) -> () { unsafe { __UISystemProfilerApi_unity2_raw :: end_sample (:: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } # [doc = "`AddMarker(::unity2::Il2CppString, crate::unity_engine::object_2::Object_2)` overload"] pub fn add_marker (name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , obj : impl :: core :: convert :: Into < crate :: unity_engine :: object_2 :: Object_2 >) -> () { unsafe { __UISystemProfilerApi_unity2_raw :: add_marker (:: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } }
 
-    #[doc = "`EndSample(crate::unity_engine::uisystemprofilerapi::UISystemProfilerApi_SampleType)` overload"]
-    pub fn end_sample(r#type: impl ::core::convert::Into<crate::unity_engine::uisystemprofilerapi::UISystemProfilerApi_SampleType>) -> () {
-        unsafe { __UISystemProfilerApi_unity2_raw::end_sample(::core::convert::Into::into(r#type), ::core::option::Option::None) }
-    }
-
-    #[doc = "`AddMarker(::unity2::Il2CppString, crate::unity_engine::object_2::Object_2)` overload"]
-    pub fn add_marker(
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        obj: impl ::core::convert::Into<crate::unity_engine::object_2::Object_2>,
-    ) -> () {
-        unsafe {
-            __UISystemProfilerApi_unity2_raw::add_marker(
-                ::core::convert::Into::into(name),
-                ::core::convert::Into::into(obj),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+#[cfg(feature = "unity_engine-uisystemprofilerapi")]
+impl UISystemProfilerApi { pub fn begin_sample_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UISystemProfilerApi_unity2_raw :: __lookup_begin_sample :: get_method_info () } pub fn end_sample_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UISystemProfilerApi_unity2_raw :: __lookup_end_sample :: get_method_info () } pub fn add_marker_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UISystemProfilerApi_unity2_raw :: __lookup_add_marker :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-uisystemprofilerapi")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IUISystemProfilerApi, UISystemProfilerApi, UISystemProfilerApi_SampleType};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::system::{object::IObject, r#enum::IEnum, valuetype::IValueType};
+    pub use super::UISystemProfilerApi_SampleType;
+    pub use super::UISystemProfilerApi;
+    pub use super::IUISystemProfilerApi;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

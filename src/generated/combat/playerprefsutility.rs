@@ -2,75 +2,34 @@
 
 #[cfg(feature = "combat-playerprefsutility-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/playerprefsutility/PlayerPrefsUtility.md"))]
-    #[::unity2::class(namespace = "Combat", name = "PlayerPrefsUtility")]
-    #[parent(crate::system::object::Object)]
-    pub struct PlayerPrefsUtility {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/playerprefsutility/PlayerPrefsUtility.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "PlayerPrefsUtility")] # [parent (crate :: system :: object :: Object)] pub struct PlayerPrefsUtility {}
+
 }
 
 #[cfg(feature = "combat-playerprefsutility-types")]
 pub use __types::*;
 
 #[cfg(feature = "combat-playerprefsutility")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __PlayerPrefsUtility_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_keys {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PlayerPrefsUtility as ::unity2::ClassIdentity>::class(),
-                "GetKeys",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PlayerPrefsUtility as ::unity2::ClassIdentity>::NAME,
-                        "GetKeys",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_keys(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString> {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString> =
-            ::core::mem::transmute(__lookup_get_keys::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __PlayerPrefsUtility_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_keys { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PlayerPrefsUtility as :: unity2 :: ClassIdentity > :: class () , "GetKeys" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PlayerPrefsUtility as :: unity2 :: ClassIdentity > :: NAME , "GetKeys" , e) , } } } pub unsafe fn get_keys (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > = :: core :: mem :: transmute (__lookup_get_keys :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
 
 #[cfg(feature = "combat-playerprefsutility")]
-impl PlayerPrefsUtility {
-    #[doc = "`GetKeys()` overload"]
-    pub fn get_keys() -> crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString> {
-        unsafe { __PlayerPrefsUtility_unity2_raw::get_keys(::core::option::Option::None) }
-    }
-}
+impl PlayerPrefsUtility { # [doc = "`GetKeys()` overload"] pub fn get_keys () -> crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > { unsafe { __PlayerPrefsUtility_unity2_raw :: get_keys (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "combat-playerprefsutility")]
+impl PlayerPrefsUtility { pub fn get_keys_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PlayerPrefsUtility_unity2_raw :: __lookup_get_keys :: get_method_info () } }
 
 #[cfg(feature = "combat-playerprefsutility")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IPlayerPrefsUtility, PlayerPrefsUtility};
+    pub use super::PlayerPrefsUtility;
+    pub use super::IPlayerPrefsUtility;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

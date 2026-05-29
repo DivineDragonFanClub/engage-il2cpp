@@ -2,417 +2,44 @@
 
 #[cfg(feature = "system-multicastdelegate-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        delegate::{Delegate, IDelegate},
-        object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/multicastdelegate/MulticastDelegate.md"))]
-    #[::unity2::class(namespace = "System", name = "MulticastDelegate")]
-    #[parent(crate::system::delegate::Delegate)]
-    pub struct MulticastDelegate {
-        #[offset(104)]
-        #[rename(name = "delegates")]
-        pub delegates: ::unity2::Array<crate::system::delegate::Delegate>,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: delegate :: { Delegate , IDelegate }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/multicastdelegate/MulticastDelegate.md"))] # [:: unity2 :: class (namespace = "System" , name = "MulticastDelegate")] # [parent (crate :: system :: delegate :: Delegate)] pub struct MulticastDelegate {
+# [offset (104)] # [rename (name = "delegates")] pub delegates : :: unity2 :: Array < crate :: system :: delegate :: Delegate > ,
+}
+
 }
 
 #[cfg(feature = "system-multicastdelegate-types")]
 pub use __types::*;
 
 #[cfg(feature = "system-multicastdelegate")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MulticastDelegate_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_dynamic_invoke_impl {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Array<crate::system::object::Object> as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MulticastDelegate as ::unity2::ClassIdentity>::class(),
-                "DynamicInvokeImpl",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MulticastDelegate as ::unity2::ClassIdentity>::NAME,
-                        "DynamicInvokeImpl",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn dynamic_invoke_impl(
-        this: MulticastDelegate,
-        args: ::unity2::Array<crate::system::object::Object>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::object::Object {
-        let inner: extern "C" fn(
-            MulticastDelegate,
-            ::unity2::Array<crate::system::object::Object>,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::object::Object = ::core::mem::transmute(__lookup_dynamic_invoke_impl::get_method_info().method_ptr);
-        inner(this, args, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_equals {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MulticastDelegate as ::unity2::ClassIdentity>::class(),
-                "Equals",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MulticastDelegate as ::unity2::ClassIdentity>::NAME,
-                        "Equals",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn equals(this: MulticastDelegate, obj: crate::system::object::Object, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(MulticastDelegate, crate::system::object::Object, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_equals::get_method_info().method_ptr);
-        inner(this, obj, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_hash_code {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MulticastDelegate as ::unity2::ClassIdentity>::class(),
-                "GetHashCode",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MulticastDelegate as ::unity2::ClassIdentity>::NAME,
-                        "GetHashCode",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_hash_code(this: MulticastDelegate, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(MulticastDelegate, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_hash_code::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_method_impl {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MulticastDelegate as ::unity2::ClassIdentity>::class(),
-                "GetMethodImpl",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MulticastDelegate as ::unity2::ClassIdentity>::NAME,
-                        "GetMethodImpl",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_method_impl(
-        this: MulticastDelegate,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::reflection::methodinfo::MethodInfo {
-        let inner: extern "C" fn(MulticastDelegate, ::unity2::OptionalMethod) -> crate::system::reflection::methodinfo::MethodInfo =
-            ::core::mem::transmute(__lookup_get_method_impl::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_invocation_list {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MulticastDelegate as ::unity2::ClassIdentity>::class(),
-                "GetInvocationList",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MulticastDelegate as ::unity2::ClassIdentity>::NAME,
-                        "GetInvocationList",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_invocation_list(
-        this: MulticastDelegate,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Array<crate::system::delegate::Delegate> {
-        let inner: extern "C" fn(MulticastDelegate, ::unity2::OptionalMethod) -> ::unity2::Array<crate::system::delegate::Delegate> =
-            ::core::mem::transmute(__lookup_get_invocation_list::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_combine_impl {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::delegate::Delegate as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MulticastDelegate as ::unity2::ClassIdentity>::class(),
-                "CombineImpl",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MulticastDelegate as ::unity2::ClassIdentity>::NAME,
-                        "CombineImpl",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn combine_impl(
-        this: MulticastDelegate,
-        follow: crate::system::delegate::Delegate,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::delegate::Delegate {
-        let inner: extern "C" fn(
-            MulticastDelegate,
-            crate::system::delegate::Delegate,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::delegate::Delegate = ::core::mem::transmute(__lookup_combine_impl::get_method_info().method_ptr);
-        inner(this, follow, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_last_index_of {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Array<crate::system::delegate::Delegate> as ::unity2::IlType>::il_type(),
-                <::unity2::Array<crate::system::delegate::Delegate> as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MulticastDelegate as ::unity2::ClassIdentity>::class(),
-                "LastIndexOf",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MulticastDelegate as ::unity2::ClassIdentity>::NAME,
-                        "LastIndexOf",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn last_index_of(
-        this: MulticastDelegate,
-        haystack: ::unity2::Array<crate::system::delegate::Delegate>,
-        needle: ::unity2::Array<crate::system::delegate::Delegate>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(
-            MulticastDelegate,
-            ::unity2::Array<crate::system::delegate::Delegate>,
-            ::unity2::Array<crate::system::delegate::Delegate>,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(__lookup_last_index_of::get_method_info().method_ptr);
-        inner(this, haystack, needle, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_remove_impl {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::delegate::Delegate as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MulticastDelegate as ::unity2::ClassIdentity>::class(),
-                "RemoveImpl",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MulticastDelegate as ::unity2::ClassIdentity>::NAME,
-                        "RemoveImpl",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn remove_impl(
-        this: MulticastDelegate,
-        value: crate::system::delegate::Delegate,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::delegate::Delegate {
-        let inner: extern "C" fn(
-            MulticastDelegate,
-            crate::system::delegate::Delegate,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::delegate::Delegate = ::core::mem::transmute(__lookup_remove_impl::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MulticastDelegate_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_dynamic_invoke_impl { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: system :: object :: Object > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MulticastDelegate as :: unity2 :: ClassIdentity > :: class () , "DynamicInvokeImpl" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MulticastDelegate as :: unity2 :: ClassIdentity > :: NAME , "DynamicInvokeImpl" , e) , } } } pub unsafe fn dynamic_invoke_impl (this : MulticastDelegate , args : :: unity2 :: Array < crate :: system :: object :: Object > , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object { let inner : extern "C" fn (MulticastDelegate , :: unity2 :: Array < crate :: system :: object :: Object > , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute (__lookup_dynamic_invoke_impl :: get_method_info () . method_ptr ,) ; inner (this , args , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_equals { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MulticastDelegate as :: unity2 :: ClassIdentity > :: class () , "Equals" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MulticastDelegate as :: unity2 :: ClassIdentity > :: NAME , "Equals" , e) , } } } pub unsafe fn equals (this : MulticastDelegate , obj : crate :: system :: object :: Object , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (MulticastDelegate , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_equals :: get_method_info () . method_ptr ,) ; inner (this , obj , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_hash_code { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MulticastDelegate as :: unity2 :: ClassIdentity > :: class () , "GetHashCode" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MulticastDelegate as :: unity2 :: ClassIdentity > :: NAME , "GetHashCode" , e) , } } } pub unsafe fn get_hash_code (this : MulticastDelegate , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (MulticastDelegate , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_hash_code :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_method_impl { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MulticastDelegate as :: unity2 :: ClassIdentity > :: class () , "GetMethodImpl" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MulticastDelegate as :: unity2 :: ClassIdentity > :: NAME , "GetMethodImpl" , e) , } } } pub unsafe fn get_method_impl (this : MulticastDelegate , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: methodinfo :: MethodInfo { let inner : extern "C" fn (MulticastDelegate , :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: methodinfo :: MethodInfo = :: core :: mem :: transmute (__lookup_get_method_impl :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_invocation_list { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MulticastDelegate as :: unity2 :: ClassIdentity > :: class () , "GetInvocationList" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MulticastDelegate as :: unity2 :: ClassIdentity > :: NAME , "GetInvocationList" , e) , } } } pub unsafe fn get_invocation_list (this : MulticastDelegate , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: system :: delegate :: Delegate > { let inner : extern "C" fn (MulticastDelegate , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: system :: delegate :: Delegate > = :: core :: mem :: transmute (__lookup_get_invocation_list :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_combine_impl { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: delegate :: Delegate as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MulticastDelegate as :: unity2 :: ClassIdentity > :: class () , "CombineImpl" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MulticastDelegate as :: unity2 :: ClassIdentity > :: NAME , "CombineImpl" , e) , } } } pub unsafe fn combine_impl (this : MulticastDelegate , follow : crate :: system :: delegate :: Delegate , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: delegate :: Delegate { let inner : extern "C" fn (MulticastDelegate , crate :: system :: delegate :: Delegate , :: unity2 :: OptionalMethod ,) -> crate :: system :: delegate :: Delegate = :: core :: mem :: transmute (__lookup_combine_impl :: get_method_info () . method_ptr ,) ; inner (this , follow , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_last_index_of { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: system :: delegate :: Delegate > as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: system :: delegate :: Delegate > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MulticastDelegate as :: unity2 :: ClassIdentity > :: class () , "LastIndexOf" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MulticastDelegate as :: unity2 :: ClassIdentity > :: NAME , "LastIndexOf" , e) , } } } pub unsafe fn last_index_of (this : MulticastDelegate , haystack : :: unity2 :: Array < crate :: system :: delegate :: Delegate > , needle : :: unity2 :: Array < crate :: system :: delegate :: Delegate > , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (MulticastDelegate , :: unity2 :: Array < crate :: system :: delegate :: Delegate > , :: unity2 :: Array < crate :: system :: delegate :: Delegate > , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_last_index_of :: get_method_info () . method_ptr ,) ; inner (this , haystack , needle , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_remove_impl { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: delegate :: Delegate as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MulticastDelegate as :: unity2 :: ClassIdentity > :: class () , "RemoveImpl" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MulticastDelegate as :: unity2 :: ClassIdentity > :: NAME , "RemoveImpl" , e) , } } } pub unsafe fn remove_impl (this : MulticastDelegate , value : crate :: system :: delegate :: Delegate , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: delegate :: Delegate { let inner : extern "C" fn (MulticastDelegate , crate :: system :: delegate :: Delegate , :: unity2 :: OptionalMethod ,) -> crate :: system :: delegate :: Delegate = :: core :: mem :: transmute (__lookup_remove_impl :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } }
 
 #[cfg(feature = "system-multicastdelegate")]
-pub trait IMulticastDelegateMethods: IMulticastDelegate {
-    #[doc = "`DynamicInvokeImpl(::unity2::Array<crate::system::object::Object>)` overload"]
-    fn dynamic_invoke_impl(self, args: impl ::core::convert::Into<::unity2::Array<crate::system::object::Object>>) -> crate::system::object::Object {
-        unsafe {
-            let __receiver = <MulticastDelegate as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MulticastDelegate_unity2_raw::dynamic_invoke_impl(__receiver, ::core::convert::Into::into(args), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Equals(crate::system::object::Object)` overload"]
-    fn equals(self, obj: impl ::core::convert::Into<crate::system::object::Object>) -> bool {
-        unsafe {
-            let __receiver = <MulticastDelegate as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MulticastDelegate_unity2_raw::equals(__receiver, ::core::convert::Into::into(obj), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetHashCode()` overload"]
-    fn get_hash_code(self) -> i32 {
-        unsafe {
-            let __receiver = <MulticastDelegate as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MulticastDelegate_unity2_raw::get_hash_code(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetMethodImpl()` overload"]
-    fn get_method_impl(self) -> crate::system::reflection::methodinfo::MethodInfo {
-        unsafe {
-            let __receiver = <MulticastDelegate as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MulticastDelegate_unity2_raw::get_method_impl(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetInvocationList()` overload"]
-    fn get_invocation_list(self) -> ::unity2::Array<crate::system::delegate::Delegate> {
-        unsafe {
-            let __receiver = <MulticastDelegate as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MulticastDelegate_unity2_raw::get_invocation_list(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CombineImpl(crate::system::delegate::Delegate)` overload"]
-    fn combine_impl(self, follow: impl ::core::convert::Into<crate::system::delegate::Delegate>) -> crate::system::delegate::Delegate {
-        unsafe {
-            let __receiver = <MulticastDelegate as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MulticastDelegate_unity2_raw::combine_impl(__receiver, ::core::convert::Into::into(follow), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`LastIndexOf(::unity2::Array<crate::system::delegate::Delegate>, ::unity2::Array<crate::system::delegate::Delegate>)` overload"]
-    fn last_index_of(
-        self,
-        haystack: impl ::core::convert::Into<::unity2::Array<crate::system::delegate::Delegate>>,
-        needle: impl ::core::convert::Into<::unity2::Array<crate::system::delegate::Delegate>>,
-    ) -> i32 {
-        unsafe {
-            let __receiver = <MulticastDelegate as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MulticastDelegate_unity2_raw::last_index_of(
-                __receiver,
-                ::core::convert::Into::into(haystack),
-                ::core::convert::Into::into(needle),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`RemoveImpl(crate::system::delegate::Delegate)` overload"]
-    fn remove_impl(self, value: impl ::core::convert::Into<crate::system::delegate::Delegate>) -> crate::system::delegate::Delegate {
-        unsafe {
-            let __receiver = <MulticastDelegate as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MulticastDelegate_unity2_raw::remove_impl(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-}
+pub trait IMulticastDelegateMethods : IMulticastDelegate { # [doc = "`DynamicInvokeImpl(::unity2::Array<crate::system::object::Object>)` overload"] fn dynamic_invoke_impl (self , args : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: system :: object :: Object > >) -> crate :: system :: object :: Object { unsafe { let __receiver = < MulticastDelegate as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MulticastDelegate_unity2_raw :: dynamic_invoke_impl (__receiver , :: core :: convert :: Into :: into (args) , :: core :: option :: Option :: None) } } # [doc = "`Equals(crate::system::object::Object)` overload"] fn equals (self , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { let __receiver = < MulticastDelegate as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MulticastDelegate_unity2_raw :: equals (__receiver , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } # [doc = "`GetHashCode()` overload"] fn get_hash_code (self ,) -> i32 { unsafe { let __receiver = < MulticastDelegate as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MulticastDelegate_unity2_raw :: get_hash_code (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetMethodImpl()` overload"] fn get_method_impl (self ,) -> crate :: system :: reflection :: methodinfo :: MethodInfo { unsafe { let __receiver = < MulticastDelegate as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MulticastDelegate_unity2_raw :: get_method_impl (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetInvocationList()` overload"] fn get_invocation_list (self ,) -> :: unity2 :: Array < crate :: system :: delegate :: Delegate > { unsafe { let __receiver = < MulticastDelegate as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MulticastDelegate_unity2_raw :: get_invocation_list (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CombineImpl(crate::system::delegate::Delegate)` overload"] fn combine_impl (self , follow : impl :: core :: convert :: Into < crate :: system :: delegate :: Delegate >) -> crate :: system :: delegate :: Delegate { unsafe { let __receiver = < MulticastDelegate as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MulticastDelegate_unity2_raw :: combine_impl (__receiver , :: core :: convert :: Into :: into (follow) , :: core :: option :: Option :: None) } } # [doc = "`LastIndexOf(::unity2::Array<crate::system::delegate::Delegate>, ::unity2::Array<crate::system::delegate::Delegate>)` overload"] fn last_index_of (self , haystack : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: system :: delegate :: Delegate > > , needle : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: system :: delegate :: Delegate > >) -> i32 { unsafe { let __receiver = < MulticastDelegate as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MulticastDelegate_unity2_raw :: last_index_of (__receiver , :: core :: convert :: Into :: into (haystack) , :: core :: convert :: Into :: into (needle) , :: core :: option :: Option :: None) } } # [doc = "`RemoveImpl(crate::system::delegate::Delegate)` overload"] fn remove_impl (self , value : impl :: core :: convert :: Into < crate :: system :: delegate :: Delegate >) -> crate :: system :: delegate :: Delegate { unsafe { let __receiver = < MulticastDelegate as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MulticastDelegate_unity2_raw :: remove_impl (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "system-multicastdelegate")]
-impl<__T: IMulticastDelegate> IMulticastDelegateMethods for __T {}
+impl < __T : IMulticastDelegate > IMulticastDelegateMethods for __T { }
+
+#[cfg(feature = "system-multicastdelegate")]
+impl MulticastDelegate { pub fn dynamic_invoke_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MulticastDelegate_unity2_raw :: __lookup_dynamic_invoke_impl :: get_method_info () } pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MulticastDelegate_unity2_raw :: __lookup_equals :: get_method_info () } pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MulticastDelegate_unity2_raw :: __lookup_get_hash_code :: get_method_info () } pub fn get_method_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MulticastDelegate_unity2_raw :: __lookup_get_method_impl :: get_method_info () } pub fn get_invocation_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MulticastDelegate_unity2_raw :: __lookup_get_invocation_list :: get_method_info () } pub fn combine_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MulticastDelegate_unity2_raw :: __lookup_combine_impl :: get_method_info () } pub fn last_index_of_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MulticastDelegate_unity2_raw :: __lookup_last_index_of :: get_method_info () } pub fn remove_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MulticastDelegate_unity2_raw :: __lookup_remove_impl :: get_method_info () } }
 
 #[cfg(feature = "system-multicastdelegate")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IMulticastDelegate, IMulticastDelegateMethods, MulticastDelegate};
-    #[cfg(feature = "system-delegate")]
-    pub use crate::system::delegate::IDelegateMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::system::{delegate::IDelegate, object::IObject};
+    pub use super::MulticastDelegate;
+    pub use super::IMulticastDelegate;
+    pub use super::IMulticastDelegateMethods;
+    pub use crate::system::delegate::IDelegate;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-delegate")] pub use crate::system::delegate::IDelegateMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

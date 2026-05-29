@@ -2,15 +2,15 @@
 
 #[cfg(feature = "system-reflection-emit-eventbuilder-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/emit/eventbuilder/EventBuilder.md"))]
-    #[::unity2::class(namespace = "System.Reflection.Emit", name = "EventBuilder")]
-    #[parent(crate::system::object::Object)]
-    pub struct EventBuilder {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/emit/eventbuilder/EventBuilder.md"))] # [:: unity2 :: class (namespace = "System.Reflection.Emit" , name = "EventBuilder")] # [parent (crate :: system :: object :: Object)] pub struct EventBuilder {}
+
 }
 
 #[cfg(feature = "system-reflection-emit-eventbuilder-types")]
@@ -19,8 +19,8 @@ pub use __types::*;
 #[cfg(feature = "system-reflection-emit-eventbuilder")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{EventBuilder, IEventBuilder};
+    pub use super::EventBuilder;
+    pub use super::IEventBuilder;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

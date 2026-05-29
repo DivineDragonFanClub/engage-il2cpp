@@ -2,19 +2,17 @@
 
 #[cfg(feature = "combat-animatorlayer-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/animatorlayer/AnimatorLayer.md"))]
-    #[::unity2::class(namespace = "Combat", name = "AnimatorLayer")]
-    #[parent(crate::system::object::Object)]
-    pub struct AnimatorLayer {
-        #[static_field]
-        #[rename(name = "Default")]
-        pub default: i32,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/animatorlayer/AnimatorLayer.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "AnimatorLayer")] # [parent (crate :: system :: object :: Object)] pub struct AnimatorLayer {
+# [static_field] # [rename (name = "Default")] pub default : i32 ,
+}
+
 }
 
 #[cfg(feature = "combat-animatorlayer-types")]
@@ -23,8 +21,8 @@ pub use __types::*;
 #[cfg(feature = "combat-animatorlayer")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{AnimatorLayer, IAnimatorLayer};
+    pub use super::AnimatorLayer;
+    pub use super::IAnimatorLayer;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

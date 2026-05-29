@@ -2,1277 +2,261 @@
 
 #[cfg(feature = "app-sortieselectionunitmanager-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::singletonclass_1::{ISingletonClass_1, SingletonClass_1},
-        system::{
-            object::{IObject, Object},
-            r#enum::{Enum, IEnum},
-            valuetype::{IValueType, ValueType},
-        },
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortieselectionunitmanager/SortieSelectionUnitManager_Modes.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct SortieSelectionUnitManager_Modes {
-        pub value: i32,
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: singletonclass_1 :: { ISingletonClass_1 , SingletonClass_1 }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortieselectionunitmanager/SortieSelectionUnitManager_UnitSelectSubMenu.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct SortieSelectionUnitManager_UnitSelectSubMenu  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for SortieSelectionUnitManager_UnitSelectSubMenu  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "SortieSelectionUnitManager.UnitSelectSubMenu";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    impl ::unity2::ClassIdentity for SortieSelectionUnitManager_Modes {
-        const NAME: &'static str = "SortieSelectionUnitManager.Modes";
-        const NAMESPACE: &'static str = "App";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  ::unity2::IlType for SortieSelectionUnitManager_UnitSelectSubMenu  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::IlType for SortieSelectionUnitManager_Modes {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  SortieSelectionUnitManager_UnitSelectSubMenu  {
+    pub fn inventory() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl SortieSelectionUnitManager_Modes {
-        pub fn sortie() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn inventory() -> Self {
-            Self { value: 1 }
-        }
+    pub fn trade() -> Self {
+        Self { value: 1 }
 
-        pub fn ring_select() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn skill_inherite() -> Self {
-            Self { value: 3 }
-        }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortieselectionunitmanager/SortieSelectionUnitManager_UnitSelectSubMenu.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct SortieSelectionUnitManager_UnitSelectSubMenu {
-        pub value: i32,
+
+    pub fn entrust() -> Self {
+        Self { value: 2 }
+
     }
 
-    impl ::unity2::ClassIdentity for SortieSelectionUnitManager_UnitSelectSubMenu {
-        const NAME: &'static str = "SortieSelectionUnitManager.UnitSelectSubMenu";
-        const NAMESPACE: &'static str = "App";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+    pub fn store_all() -> Self {
+        Self { value: 3 }
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
     }
 
-    impl ::unity2::IlType for SortieSelectionUnitManager_UnitSelectSubMenu {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+
+    pub fn skill() -> Self {
+        Self { value: 4 }
+
     }
 
-    impl SortieSelectionUnitManager_UnitSelectSubMenu {
-        pub fn inventory() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn trade() -> Self {
-            Self { value: 1 }
-        }
+    pub fn class_change() -> Self {
+        Self { value: 5 }
 
-        pub fn entrust() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn store_all() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn skill() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn class_change() -> Self {
-            Self { value: 5 }
-        }
-
-        pub fn none() -> Self {
-            Self { value: 6 }
-        }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortieselectionunitmanager/SortieSelectionUnitManager.md"))]
-    #[::unity2::class(namespace = "App", name = "SortieSelectionUnitManager")]
-    # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: sortieselectionunitmanager :: SortieSelectionUnitManager >)]
-    pub struct SortieSelectionUnitManager {
-        #[offset(28)]
-        #[rename(name = "m_Mode")]
-        pub m_mode: crate::app::sortieselectionunitmanager::SortieSelectionUnitManager_Modes,
-        #[offset(32)]
-        #[rename(name = "m_InventoryMode")]
-        pub m_inventory_mode: crate::app::sortieselectionunitmanager::SortieSelectionUnitManager_InventoryModes,
-        #[offset(40)]
-        #[rename(name = "m_Unit")]
-        pub m_unit: crate::app::unit::Unit,
-        #[offset(48)]
-        #[rename(name = "m_MenuSelect")]
-        pub m_menu_select: crate::app::basicmenuselect::BasicMenuSelect,
-        #[offset(56)]
-        #[rename(name = "m_statusUpdate")]
-        pub m_status_update: bool,
-        #[offset(60)]
-        #[rename(name = "m_openItemSubMenu")]
-        pub m_open_item_sub_menu: crate::app::sortieselectionunitmanager::SortieSelectionUnitManager_UnitSelectSubMenu,
-        #[offset(64)]
-        #[rename(name = "m_menuBg")]
-        pub m_menu_bg: crate::unity_engine::gameobject::GameObject,
+
+    pub fn none() -> Self {
+        Self { value: 6 }
+
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortieselectionunitmanager/SortieSelectionUnitManager_InventoryModes.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct SortieSelectionUnitManager_InventoryModes {
-        pub value: i32,
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortieselectionunitmanager/SortieSelectionUnitManager.md"))] # [:: unity2 :: class (namespace = "App" , name = "SortieSelectionUnitManager")] # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: sortieselectionunitmanager :: SortieSelectionUnitManager >)] pub struct SortieSelectionUnitManager {
+# [offset (28)] # [rename (name = "m_Mode")] pub m_mode : crate :: app :: sortieselectionunitmanager :: SortieSelectionUnitManager_Modes ,
+# [offset (32)] # [rename (name = "m_InventoryMode")] pub m_inventory_mode : crate :: app :: sortieselectionunitmanager :: SortieSelectionUnitManager_InventoryModes ,
+# [offset (40)] # [rename (name = "m_Unit")] pub m_unit : crate :: app :: unit :: Unit ,
+# [offset (48)] # [rename (name = "m_MenuSelect")] pub m_menu_select : crate :: app :: basicmenuselect :: BasicMenuSelect ,
+# [offset (56)] # [rename (name = "m_statusUpdate")] pub m_status_update : bool ,
+# [offset (60)] # [rename (name = "m_openItemSubMenu")] pub m_open_item_sub_menu : crate :: app :: sortieselectionunitmanager :: SortieSelectionUnitManager_UnitSelectSubMenu ,
+# [offset (64)] # [rename (name = "m_menuBg")] pub m_menu_bg : crate :: unity_engine :: gameobject :: GameObject ,
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortieselectionunitmanager/SortieSelectionUnitManager_InventoryModes.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct SortieSelectionUnitManager_InventoryModes  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for SortieSelectionUnitManager_InventoryModes  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "SortieSelectionUnitManager.InventoryModes";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    impl ::unity2::ClassIdentity for SortieSelectionUnitManager_InventoryModes {
-        const NAME: &'static str = "SortieSelectionUnitManager.InventoryModes";
-        const NAMESPACE: &'static str = "App";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  ::unity2::IlType for SortieSelectionUnitManager_InventoryModes  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::IlType for SortieSelectionUnitManager_InventoryModes {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  SortieSelectionUnitManager_InventoryModes  {
+    pub fn none() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl SortieSelectionUnitManager_InventoryModes {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn inventory() -> Self {
-            Self { value: 1 }
-        }
+    pub fn inventory() -> Self {
+        Self { value: 1 }
 
-        pub fn trade() -> Self {
-            Self { value: 2 }
-        }
     }
+
+
+    pub fn trade() -> Self {
+        Self { value: 2 }
+
+    }
+
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortieselectionunitmanager/SortieSelectionUnitManager_Modes.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct SortieSelectionUnitManager_Modes  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for SortieSelectionUnitManager_Modes  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "SortieSelectionUnitManager.Modes";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for SortieSelectionUnitManager_Modes  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  SortieSelectionUnitManager_Modes  {
+    pub fn sortie() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn inventory() -> Self {
+        Self { value: 1 }
+
+    }
+
+
+    pub fn ring_select() -> Self {
+        Self { value: 2 }
+
+    }
+
+
+    pub fn skill_inherite() -> Self {
+        Self { value: 3 }
+
+    }
+
+}
+
 }
 
 #[cfg(feature = "app-sortieselectionunitmanager-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-sortieselectionunitmanager")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __SortieSelectionUnitManager_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieSelectionUnitManager as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SortieSelectionUnitManager as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: SortieSelectionUnitManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SortieSelectionUnitManager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_reset {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieSelectionUnitManager as ::unity2::ClassIdentity>::class(),
-                "Reset",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SortieSelectionUnitManager as ::unity2::ClassIdentity>::NAME,
-                        "Reset",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn reset(this: SortieSelectionUnitManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SortieSelectionUnitManager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_reset::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_mode_sortie {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieSelectionUnitManager as ::unity2::ClassIdentity>::class(),
-                "IsModeSortie",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SortieSelectionUnitManager as ::unity2::ClassIdentity>::NAME,
-                        "IsModeSortie",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_mode_sortie(this: SortieSelectionUnitManager, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(SortieSelectionUnitManager, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_mode_sortie::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_mode_inventory {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieSelectionUnitManager as ::unity2::ClassIdentity>::class(),
-                "IsModeInventory",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SortieSelectionUnitManager as ::unity2::ClassIdentity>::NAME,
-                        "IsModeInventory",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_mode_inventory(this: SortieSelectionUnitManager, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(SortieSelectionUnitManager, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_mode_inventory::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_mode_ring_select {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieSelectionUnitManager as ::unity2::ClassIdentity>::class(),
-                "IsModeRingSelect",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SortieSelectionUnitManager as ::unity2::ClassIdentity>::NAME,
-                        "IsModeRingSelect",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_mode_ring_select(this: SortieSelectionUnitManager, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(SortieSelectionUnitManager, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_mode_ring_select::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_inventory_mode_none {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieSelectionUnitManager as ::unity2::ClassIdentity>::class(),
-                "IsInventoryModeNone",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SortieSelectionUnitManager as ::unity2::ClassIdentity>::NAME,
-                        "IsInventoryModeNone",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_inventory_mode_none(this: SortieSelectionUnitManager, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(SortieSelectionUnitManager, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_inventory_mode_none::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_inventory_mode_inventory {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieSelectionUnitManager as ::unity2::ClassIdentity>::class(),
-                "IsInventoryModeInventory",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SortieSelectionUnitManager as ::unity2::ClassIdentity>::NAME,
-                        "IsInventoryModeInventory",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_inventory_mode_inventory(this: SortieSelectionUnitManager, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(SortieSelectionUnitManager, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_inventory_mode_inventory::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_inventory_mode_trade {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieSelectionUnitManager as ::unity2::ClassIdentity>::class(),
-                "IsInventoryModeTrade",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SortieSelectionUnitManager as ::unity2::ClassIdentity>::NAME,
-                        "IsInventoryModeTrade",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_inventory_mode_trade(this: SortieSelectionUnitManager, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(SortieSelectionUnitManager, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_inventory_mode_trade::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_reset_inventory_mode {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieSelectionUnitManager as ::unity2::ClassIdentity>::class(),
-                "ResetInventoryMode",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SortieSelectionUnitManager as ::unity2::ClassIdentity>::NAME,
-                        "ResetInventoryMode",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn reset_inventory_mode(this: SortieSelectionUnitManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SortieSelectionUnitManager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_reset_inventory_mode::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_bg_on {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieSelectionUnitManager as ::unity2::ClassIdentity>::class(),
-                "BgOn",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SortieSelectionUnitManager as ::unity2::ClassIdentity>::NAME,
-                        "BgOn",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn bg_on(this: SortieSelectionUnitManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SortieSelectionUnitManager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_bg_on::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_bg_off {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieSelectionUnitManager as ::unity2::ClassIdentity>::class(),
-                "BgOff",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SortieSelectionUnitManager as ::unity2::ClassIdentity>::NAME,
-                        "BgOff",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn bg_off(this: SortieSelectionUnitManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SortieSelectionUnitManager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_bg_off::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_mode {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieSelectionUnitManager as ::unity2::ClassIdentity>::class(),
-                "get_Mode",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SortieSelectionUnitManager as ::unity2::ClassIdentity>::NAME,
-                        "get_Mode",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_mode(
-        this: SortieSelectionUnitManager,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::sortieselectionunitmanager::SortieSelectionUnitManager_Modes {
-        let inner: extern "C" fn(
-            SortieSelectionUnitManager,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::sortieselectionunitmanager::SortieSelectionUnitManager_Modes =
-            ::core::mem::transmute(__lookup_get_mode::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_mode {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::sortieselectionunitmanager::SortieSelectionUnitManager_Modes as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieSelectionUnitManager as ::unity2::ClassIdentity>::class(),
-                "set_Mode",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SortieSelectionUnitManager as ::unity2::ClassIdentity>::NAME,
-                        "set_Mode",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_mode(
-        this: SortieSelectionUnitManager,
-        value: crate::app::sortieselectionunitmanager::SortieSelectionUnitManager_Modes,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            SortieSelectionUnitManager,
-            crate::app::sortieselectionunitmanager::SortieSelectionUnitManager_Modes,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_set_mode::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_inventory_mode {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieSelectionUnitManager as ::unity2::ClassIdentity>::class(),
-                "get_InventoryMode",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SortieSelectionUnitManager as ::unity2::ClassIdentity>::NAME,
-                        "get_InventoryMode",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_inventory_mode(
-        this: SortieSelectionUnitManager,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::sortieselectionunitmanager::SortieSelectionUnitManager_InventoryModes {
-        let inner: extern "C" fn(
-            SortieSelectionUnitManager,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::sortieselectionunitmanager::SortieSelectionUnitManager_InventoryModes =
-            ::core::mem::transmute(__lookup_get_inventory_mode::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_inventory_mode {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::sortieselectionunitmanager::SortieSelectionUnitManager_InventoryModes as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieSelectionUnitManager as ::unity2::ClassIdentity>::class(),
-                "set_InventoryMode",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SortieSelectionUnitManager as ::unity2::ClassIdentity>::NAME,
-                        "set_InventoryMode",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_inventory_mode(
-        this: SortieSelectionUnitManager,
-        value: crate::app::sortieselectionunitmanager::SortieSelectionUnitManager_InventoryModes,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            SortieSelectionUnitManager,
-            crate::app::sortieselectionunitmanager::SortieSelectionUnitManager_InventoryModes,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_set_inventory_mode::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_unit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieSelectionUnitManager as ::unity2::ClassIdentity>::class(),
-                "get_Unit",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SortieSelectionUnitManager as ::unity2::ClassIdentity>::NAME,
-                        "get_Unit",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_unit(this: SortieSelectionUnitManager, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::unit::Unit {
-        let inner: extern "C" fn(SortieSelectionUnitManager, ::unity2::OptionalMethod) -> crate::app::unit::Unit =
-            ::core::mem::transmute(__lookup_get_unit::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_unit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieSelectionUnitManager as ::unity2::ClassIdentity>::class(),
-                "set_Unit",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SortieSelectionUnitManager as ::unity2::ClassIdentity>::NAME,
-                        "set_Unit",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_unit(this: SortieSelectionUnitManager, value: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SortieSelectionUnitManager, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_unit::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_menu_select {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieSelectionUnitManager as ::unity2::ClassIdentity>::class(),
-                "get_MenuSelect",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SortieSelectionUnitManager as ::unity2::ClassIdentity>::NAME,
-                        "get_MenuSelect",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_menu_select(
-        this: SortieSelectionUnitManager,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenuselect::BasicMenuSelect {
-        let inner: extern "C" fn(SortieSelectionUnitManager, ::unity2::OptionalMethod) -> crate::app::basicmenuselect::BasicMenuSelect =
-            ::core::mem::transmute(__lookup_get_menu_select::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_status_force_update {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieSelectionUnitManager as ::unity2::ClassIdentity>::class(),
-                "get_StatusForceUpdate",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SortieSelectionUnitManager as ::unity2::ClassIdentity>::NAME,
-                        "get_StatusForceUpdate",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_status_force_update(this: SortieSelectionUnitManager, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(SortieSelectionUnitManager, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_status_force_update::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_status_force_update {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieSelectionUnitManager as ::unity2::ClassIdentity>::class(),
-                "set_StatusForceUpdate",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SortieSelectionUnitManager as ::unity2::ClassIdentity>::NAME,
-                        "set_StatusForceUpdate",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_status_force_update(this: SortieSelectionUnitManager, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SortieSelectionUnitManager, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_status_force_update::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_open_sub_menu {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieSelectionUnitManager as ::unity2::ClassIdentity>::class(),
-                "get_OpenSubMenu",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SortieSelectionUnitManager as ::unity2::ClassIdentity>::NAME,
-                        "get_OpenSubMenu",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_open_sub_menu(
-        this: SortieSelectionUnitManager,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::sortieselectionunitmanager::SortieSelectionUnitManager_UnitSelectSubMenu {
-        let inner: extern "C" fn(
-            SortieSelectionUnitManager,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::sortieselectionunitmanager::SortieSelectionUnitManager_UnitSelectSubMenu =
-            ::core::mem::transmute(__lookup_get_open_sub_menu::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_open_sub_menu {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::sortieselectionunitmanager::SortieSelectionUnitManager_UnitSelectSubMenu as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieSelectionUnitManager as ::unity2::ClassIdentity>::class(),
-                "set_OpenSubMenu",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SortieSelectionUnitManager as ::unity2::ClassIdentity>::NAME,
-                        "set_OpenSubMenu",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_open_sub_menu(
-        this: SortieSelectionUnitManager,
-        value: crate::app::sortieselectionunitmanager::SortieSelectionUnitManager_UnitSelectSubMenu,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            SortieSelectionUnitManager,
-            crate::app::sortieselectionunitmanager::SortieSelectionUnitManager_UnitSelectSubMenu,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_set_open_sub_menu::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_menu_bg {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieSelectionUnitManager as ::unity2::ClassIdentity>::class(),
-                "get_MenuBg",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SortieSelectionUnitManager as ::unity2::ClassIdentity>::NAME,
-                        "get_MenuBg",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_menu_bg(
-        this: SortieSelectionUnitManager,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::gameobject::GameObject {
-        let inner: extern "C" fn(SortieSelectionUnitManager, ::unity2::OptionalMethod) -> crate::unity_engine::gameobject::GameObject =
-            ::core::mem::transmute(__lookup_get_menu_bg::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_menu_bg {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieSelectionUnitManager as ::unity2::ClassIdentity>::class(),
-                "set_MenuBg",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SortieSelectionUnitManager as ::unity2::ClassIdentity>::NAME,
-                        "set_MenuBg",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_menu_bg(
-        this: SortieSelectionUnitManager,
-        value: crate::unity_engine::gameobject::GameObject,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(SortieSelectionUnitManager, crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_menu_bg::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __SortieSelectionUnitManager_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SortieSelectionUnitManager as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SortieSelectionUnitManager as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : SortieSelectionUnitManager , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SortieSelectionUnitManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_reset { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SortieSelectionUnitManager as :: unity2 :: ClassIdentity > :: class () , "Reset" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SortieSelectionUnitManager as :: unity2 :: ClassIdentity > :: NAME , "Reset" , e) , } } } pub unsafe fn reset (this : SortieSelectionUnitManager , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SortieSelectionUnitManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_reset :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_mode_sortie { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SortieSelectionUnitManager as :: unity2 :: ClassIdentity > :: class () , "IsModeSortie" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SortieSelectionUnitManager as :: unity2 :: ClassIdentity > :: NAME , "IsModeSortie" , e) , } } } pub unsafe fn is_mode_sortie (this : SortieSelectionUnitManager , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (SortieSelectionUnitManager , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_mode_sortie :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_mode_inventory { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SortieSelectionUnitManager as :: unity2 :: ClassIdentity > :: class () , "IsModeInventory" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SortieSelectionUnitManager as :: unity2 :: ClassIdentity > :: NAME , "IsModeInventory" , e) , } } } pub unsafe fn is_mode_inventory (this : SortieSelectionUnitManager , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (SortieSelectionUnitManager , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_mode_inventory :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_mode_ring_select { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SortieSelectionUnitManager as :: unity2 :: ClassIdentity > :: class () , "IsModeRingSelect" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SortieSelectionUnitManager as :: unity2 :: ClassIdentity > :: NAME , "IsModeRingSelect" , e) , } } } pub unsafe fn is_mode_ring_select (this : SortieSelectionUnitManager , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (SortieSelectionUnitManager , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_mode_ring_select :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_inventory_mode_none { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SortieSelectionUnitManager as :: unity2 :: ClassIdentity > :: class () , "IsInventoryModeNone" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SortieSelectionUnitManager as :: unity2 :: ClassIdentity > :: NAME , "IsInventoryModeNone" , e) , } } } pub unsafe fn is_inventory_mode_none (this : SortieSelectionUnitManager , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (SortieSelectionUnitManager , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_inventory_mode_none :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_inventory_mode_inventory { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SortieSelectionUnitManager as :: unity2 :: ClassIdentity > :: class () , "IsInventoryModeInventory" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SortieSelectionUnitManager as :: unity2 :: ClassIdentity > :: NAME , "IsInventoryModeInventory" , e) , } } } pub unsafe fn is_inventory_mode_inventory (this : SortieSelectionUnitManager , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (SortieSelectionUnitManager , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_inventory_mode_inventory :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_inventory_mode_trade { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SortieSelectionUnitManager as :: unity2 :: ClassIdentity > :: class () , "IsInventoryModeTrade" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SortieSelectionUnitManager as :: unity2 :: ClassIdentity > :: NAME , "IsInventoryModeTrade" , e) , } } } pub unsafe fn is_inventory_mode_trade (this : SortieSelectionUnitManager , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (SortieSelectionUnitManager , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_inventory_mode_trade :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_reset_inventory_mode { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SortieSelectionUnitManager as :: unity2 :: ClassIdentity > :: class () , "ResetInventoryMode" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SortieSelectionUnitManager as :: unity2 :: ClassIdentity > :: NAME , "ResetInventoryMode" , e) , } } } pub unsafe fn reset_inventory_mode (this : SortieSelectionUnitManager , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SortieSelectionUnitManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_reset_inventory_mode :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_bg_on { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SortieSelectionUnitManager as :: unity2 :: ClassIdentity > :: class () , "BgOn" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SortieSelectionUnitManager as :: unity2 :: ClassIdentity > :: NAME , "BgOn" , e) , } } } pub unsafe fn bg_on (this : SortieSelectionUnitManager , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SortieSelectionUnitManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_bg_on :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_bg_off { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SortieSelectionUnitManager as :: unity2 :: ClassIdentity > :: class () , "BgOff" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SortieSelectionUnitManager as :: unity2 :: ClassIdentity > :: NAME , "BgOff" , e) , } } } pub unsafe fn bg_off (this : SortieSelectionUnitManager , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SortieSelectionUnitManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_bg_off :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_mode { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SortieSelectionUnitManager as :: unity2 :: ClassIdentity > :: class () , "get_Mode" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SortieSelectionUnitManager as :: unity2 :: ClassIdentity > :: NAME , "get_Mode" , e) , } } } pub unsafe fn get_mode (this : SortieSelectionUnitManager , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: sortieselectionunitmanager :: SortieSelectionUnitManager_Modes { let inner : extern "C" fn (SortieSelectionUnitManager , :: unity2 :: OptionalMethod ,) -> crate :: app :: sortieselectionunitmanager :: SortieSelectionUnitManager_Modes = :: core :: mem :: transmute (__lookup_get_mode :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_mode { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: sortieselectionunitmanager :: SortieSelectionUnitManager_Modes as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SortieSelectionUnitManager as :: unity2 :: ClassIdentity > :: class () , "set_Mode" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SortieSelectionUnitManager as :: unity2 :: ClassIdentity > :: NAME , "set_Mode" , e) , } } } pub unsafe fn set_mode (this : SortieSelectionUnitManager , value : crate :: app :: sortieselectionunitmanager :: SortieSelectionUnitManager_Modes , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SortieSelectionUnitManager , crate :: app :: sortieselectionunitmanager :: SortieSelectionUnitManager_Modes , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_mode :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_inventory_mode { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SortieSelectionUnitManager as :: unity2 :: ClassIdentity > :: class () , "get_InventoryMode" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SortieSelectionUnitManager as :: unity2 :: ClassIdentity > :: NAME , "get_InventoryMode" , e) , } } } pub unsafe fn get_inventory_mode (this : SortieSelectionUnitManager , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: sortieselectionunitmanager :: SortieSelectionUnitManager_InventoryModes { let inner : extern "C" fn (SortieSelectionUnitManager , :: unity2 :: OptionalMethod ,) -> crate :: app :: sortieselectionunitmanager :: SortieSelectionUnitManager_InventoryModes = :: core :: mem :: transmute (__lookup_get_inventory_mode :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_inventory_mode { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: sortieselectionunitmanager :: SortieSelectionUnitManager_InventoryModes as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SortieSelectionUnitManager as :: unity2 :: ClassIdentity > :: class () , "set_InventoryMode" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SortieSelectionUnitManager as :: unity2 :: ClassIdentity > :: NAME , "set_InventoryMode" , e) , } } } pub unsafe fn set_inventory_mode (this : SortieSelectionUnitManager , value : crate :: app :: sortieselectionunitmanager :: SortieSelectionUnitManager_InventoryModes , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SortieSelectionUnitManager , crate :: app :: sortieselectionunitmanager :: SortieSelectionUnitManager_InventoryModes , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_inventory_mode :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_unit { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SortieSelectionUnitManager as :: unity2 :: ClassIdentity > :: class () , "get_Unit" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SortieSelectionUnitManager as :: unity2 :: ClassIdentity > :: NAME , "get_Unit" , e) , } } } pub unsafe fn get_unit (this : SortieSelectionUnitManager , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit { let inner : extern "C" fn (SortieSelectionUnitManager , :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit = :: core :: mem :: transmute (__lookup_get_unit :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_unit { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SortieSelectionUnitManager as :: unity2 :: ClassIdentity > :: class () , "set_Unit" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SortieSelectionUnitManager as :: unity2 :: ClassIdentity > :: NAME , "set_Unit" , e) , } } } pub unsafe fn set_unit (this : SortieSelectionUnitManager , value : crate :: app :: unit :: Unit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SortieSelectionUnitManager , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_unit :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_menu_select { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SortieSelectionUnitManager as :: unity2 :: ClassIdentity > :: class () , "get_MenuSelect" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SortieSelectionUnitManager as :: unity2 :: ClassIdentity > :: NAME , "get_MenuSelect" , e) , } } } pub unsafe fn get_menu_select (this : SortieSelectionUnitManager , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuselect :: BasicMenuSelect { let inner : extern "C" fn (SortieSelectionUnitManager , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuselect :: BasicMenuSelect = :: core :: mem :: transmute (__lookup_get_menu_select :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_status_force_update { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SortieSelectionUnitManager as :: unity2 :: ClassIdentity > :: class () , "get_StatusForceUpdate" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SortieSelectionUnitManager as :: unity2 :: ClassIdentity > :: NAME , "get_StatusForceUpdate" , e) , } } } pub unsafe fn get_status_force_update (this : SortieSelectionUnitManager , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (SortieSelectionUnitManager , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_status_force_update :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_status_force_update { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SortieSelectionUnitManager as :: unity2 :: ClassIdentity > :: class () , "set_StatusForceUpdate" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SortieSelectionUnitManager as :: unity2 :: ClassIdentity > :: NAME , "set_StatusForceUpdate" , e) , } } } pub unsafe fn set_status_force_update (this : SortieSelectionUnitManager , value : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SortieSelectionUnitManager , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_status_force_update :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_open_sub_menu { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SortieSelectionUnitManager as :: unity2 :: ClassIdentity > :: class () , "get_OpenSubMenu" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SortieSelectionUnitManager as :: unity2 :: ClassIdentity > :: NAME , "get_OpenSubMenu" , e) , } } } pub unsafe fn get_open_sub_menu (this : SortieSelectionUnitManager , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: sortieselectionunitmanager :: SortieSelectionUnitManager_UnitSelectSubMenu { let inner : extern "C" fn (SortieSelectionUnitManager , :: unity2 :: OptionalMethod ,) -> crate :: app :: sortieselectionunitmanager :: SortieSelectionUnitManager_UnitSelectSubMenu = :: core :: mem :: transmute (__lookup_get_open_sub_menu :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_open_sub_menu { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: sortieselectionunitmanager :: SortieSelectionUnitManager_UnitSelectSubMenu as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SortieSelectionUnitManager as :: unity2 :: ClassIdentity > :: class () , "set_OpenSubMenu" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SortieSelectionUnitManager as :: unity2 :: ClassIdentity > :: NAME , "set_OpenSubMenu" , e) , } } } pub unsafe fn set_open_sub_menu (this : SortieSelectionUnitManager , value : crate :: app :: sortieselectionunitmanager :: SortieSelectionUnitManager_UnitSelectSubMenu , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SortieSelectionUnitManager , crate :: app :: sortieselectionunitmanager :: SortieSelectionUnitManager_UnitSelectSubMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_open_sub_menu :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_menu_bg { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SortieSelectionUnitManager as :: unity2 :: ClassIdentity > :: class () , "get_MenuBg" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SortieSelectionUnitManager as :: unity2 :: ClassIdentity > :: NAME , "get_MenuBg" , e) , } } } pub unsafe fn get_menu_bg (this : SortieSelectionUnitManager , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject { let inner : extern "C" fn (SortieSelectionUnitManager , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute (__lookup_get_menu_bg :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_menu_bg { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: gameobject :: GameObject as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SortieSelectionUnitManager as :: unity2 :: ClassIdentity > :: class () , "set_MenuBg" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SortieSelectionUnitManager as :: unity2 :: ClassIdentity > :: NAME , "set_MenuBg" , e) , } } } pub unsafe fn set_menu_bg (this : SortieSelectionUnitManager , value : crate :: unity_engine :: gameobject :: GameObject , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SortieSelectionUnitManager , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_menu_bg :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } }
 
 #[cfg(feature = "app-sortieselectionunitmanager")]
-pub trait ISortieSelectionUnitManagerMethods: ISortieSelectionUnitManager {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <SortieSelectionUnitManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SortieSelectionUnitManager_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Reset()` overload"]
-    fn reset(self) -> () {
-        unsafe {
-            let __receiver =
-                <SortieSelectionUnitManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SortieSelectionUnitManager_unity2_raw::reset(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsModeSortie()` overload"]
-    fn is_mode_sortie(self) -> bool {
-        unsafe {
-            let __receiver =
-                <SortieSelectionUnitManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SortieSelectionUnitManager_unity2_raw::is_mode_sortie(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsModeInventory()` overload"]
-    fn is_mode_inventory(self) -> bool {
-        unsafe {
-            let __receiver =
-                <SortieSelectionUnitManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SortieSelectionUnitManager_unity2_raw::is_mode_inventory(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsModeRingSelect()` overload"]
-    fn is_mode_ring_select(self) -> bool {
-        unsafe {
-            let __receiver =
-                <SortieSelectionUnitManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SortieSelectionUnitManager_unity2_raw::is_mode_ring_select(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsInventoryModeNone()` overload"]
-    fn is_inventory_mode_none(self) -> bool {
-        unsafe {
-            let __receiver =
-                <SortieSelectionUnitManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SortieSelectionUnitManager_unity2_raw::is_inventory_mode_none(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsInventoryModeInventory()` overload"]
-    fn is_inventory_mode_inventory(self) -> bool {
-        unsafe {
-            let __receiver =
-                <SortieSelectionUnitManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SortieSelectionUnitManager_unity2_raw::is_inventory_mode_inventory(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsInventoryModeTrade()` overload"]
-    fn is_inventory_mode_trade(self) -> bool {
-        unsafe {
-            let __receiver =
-                <SortieSelectionUnitManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SortieSelectionUnitManager_unity2_raw::is_inventory_mode_trade(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ResetInventoryMode()` overload"]
-    fn reset_inventory_mode(self) -> () {
-        unsafe {
-            let __receiver =
-                <SortieSelectionUnitManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SortieSelectionUnitManager_unity2_raw::reset_inventory_mode(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`BgOn()` overload"]
-    fn bg_on(self) -> () {
-        unsafe {
-            let __receiver =
-                <SortieSelectionUnitManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SortieSelectionUnitManager_unity2_raw::bg_on(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`BgOff()` overload"]
-    fn bg_off(self) -> () {
-        unsafe {
-            let __receiver =
-                <SortieSelectionUnitManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SortieSelectionUnitManager_unity2_raw::bg_off(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Mode()` overload"]
-    fn get_mode(self) -> crate::app::sortieselectionunitmanager::SortieSelectionUnitManager_Modes {
-        unsafe {
-            let __receiver =
-                <SortieSelectionUnitManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SortieSelectionUnitManager_unity2_raw::get_mode(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_Mode(crate::app::sortieselectionunitmanager::SortieSelectionUnitManager_Modes)` overload"]
-    fn set_mode(self, value: impl ::core::convert::Into<crate::app::sortieselectionunitmanager::SortieSelectionUnitManager_Modes>) -> () {
-        unsafe {
-            let __receiver =
-                <SortieSelectionUnitManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SortieSelectionUnitManager_unity2_raw::set_mode(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_InventoryMode()` overload"]
-    fn get_inventory_mode(self) -> crate::app::sortieselectionunitmanager::SortieSelectionUnitManager_InventoryModes {
-        unsafe {
-            let __receiver =
-                <SortieSelectionUnitManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SortieSelectionUnitManager_unity2_raw::get_inventory_mode(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_InventoryMode(crate::app::sortieselectionunitmanager::SortieSelectionUnitManager_InventoryModes)` overload"]
-    fn set_inventory_mode(
-        self,
-        value: impl ::core::convert::Into<crate::app::sortieselectionunitmanager::SortieSelectionUnitManager_InventoryModes>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <SortieSelectionUnitManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SortieSelectionUnitManager_unity2_raw::set_inventory_mode(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Unit()` overload"]
-    fn get_unit(self) -> crate::app::unit::Unit {
-        unsafe {
-            let __receiver =
-                <SortieSelectionUnitManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SortieSelectionUnitManager_unity2_raw::get_unit(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_Unit(crate::app::unit::Unit)` overload"]
-    fn set_unit(self, value: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
-        unsafe {
-            let __receiver =
-                <SortieSelectionUnitManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SortieSelectionUnitManager_unity2_raw::set_unit(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_MenuSelect()` overload"]
-    fn get_menu_select(self) -> crate::app::basicmenuselect::BasicMenuSelect {
-        unsafe {
-            let __receiver =
-                <SortieSelectionUnitManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SortieSelectionUnitManager_unity2_raw::get_menu_select(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_StatusForceUpdate()` overload"]
-    fn get_status_force_update(self) -> bool {
-        unsafe {
-            let __receiver =
-                <SortieSelectionUnitManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SortieSelectionUnitManager_unity2_raw::get_status_force_update(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_StatusForceUpdate(bool)` overload"]
-    fn set_status_force_update(self, value: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver =
-                <SortieSelectionUnitManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SortieSelectionUnitManager_unity2_raw::set_status_force_update(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_OpenSubMenu()` overload"]
-    fn get_open_sub_menu(self) -> crate::app::sortieselectionunitmanager::SortieSelectionUnitManager_UnitSelectSubMenu {
-        unsafe {
-            let __receiver =
-                <SortieSelectionUnitManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SortieSelectionUnitManager_unity2_raw::get_open_sub_menu(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_OpenSubMenu(crate::app::sortieselectionunitmanager::SortieSelectionUnitManager_UnitSelectSubMenu)` overload"]
-    fn set_open_sub_menu(
-        self,
-        value: impl ::core::convert::Into<crate::app::sortieselectionunitmanager::SortieSelectionUnitManager_UnitSelectSubMenu>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <SortieSelectionUnitManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SortieSelectionUnitManager_unity2_raw::set_open_sub_menu(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_MenuBg()` overload"]
-    fn get_menu_bg(self) -> crate::unity_engine::gameobject::GameObject {
-        unsafe {
-            let __receiver =
-                <SortieSelectionUnitManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SortieSelectionUnitManager_unity2_raw::get_menu_bg(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_MenuBg(crate::unity_engine::gameobject::GameObject)` overload"]
-    fn set_menu_bg(self, value: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>) -> () {
-        unsafe {
-            let __receiver =
-                <SortieSelectionUnitManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SortieSelectionUnitManager_unity2_raw::set_menu_bg(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-}
+pub trait ISortieSelectionUnitManagerMethods : ISortieSelectionUnitManager { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < SortieSelectionUnitManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SortieSelectionUnitManager_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Reset()` overload"] fn reset (self ,) -> () { unsafe { let __receiver = < SortieSelectionUnitManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SortieSelectionUnitManager_unity2_raw :: reset (__receiver , :: core :: option :: Option :: None) } } # [doc = "`IsModeSortie()` overload"] fn is_mode_sortie (self ,) -> bool { unsafe { let __receiver = < SortieSelectionUnitManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SortieSelectionUnitManager_unity2_raw :: is_mode_sortie (__receiver , :: core :: option :: Option :: None) } } # [doc = "`IsModeInventory()` overload"] fn is_mode_inventory (self ,) -> bool { unsafe { let __receiver = < SortieSelectionUnitManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SortieSelectionUnitManager_unity2_raw :: is_mode_inventory (__receiver , :: core :: option :: Option :: None) } } # [doc = "`IsModeRingSelect()` overload"] fn is_mode_ring_select (self ,) -> bool { unsafe { let __receiver = < SortieSelectionUnitManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SortieSelectionUnitManager_unity2_raw :: is_mode_ring_select (__receiver , :: core :: option :: Option :: None) } } # [doc = "`IsInventoryModeNone()` overload"] fn is_inventory_mode_none (self ,) -> bool { unsafe { let __receiver = < SortieSelectionUnitManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SortieSelectionUnitManager_unity2_raw :: is_inventory_mode_none (__receiver , :: core :: option :: Option :: None) } } # [doc = "`IsInventoryModeInventory()` overload"] fn is_inventory_mode_inventory (self ,) -> bool { unsafe { let __receiver = < SortieSelectionUnitManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SortieSelectionUnitManager_unity2_raw :: is_inventory_mode_inventory (__receiver , :: core :: option :: Option :: None) } } # [doc = "`IsInventoryModeTrade()` overload"] fn is_inventory_mode_trade (self ,) -> bool { unsafe { let __receiver = < SortieSelectionUnitManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SortieSelectionUnitManager_unity2_raw :: is_inventory_mode_trade (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ResetInventoryMode()` overload"] fn reset_inventory_mode (self ,) -> () { unsafe { let __receiver = < SortieSelectionUnitManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SortieSelectionUnitManager_unity2_raw :: reset_inventory_mode (__receiver , :: core :: option :: Option :: None) } } # [doc = "`BgOn()` overload"] fn bg_on (self ,) -> () { unsafe { let __receiver = < SortieSelectionUnitManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SortieSelectionUnitManager_unity2_raw :: bg_on (__receiver , :: core :: option :: Option :: None) } } # [doc = "`BgOff()` overload"] fn bg_off (self ,) -> () { unsafe { let __receiver = < SortieSelectionUnitManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SortieSelectionUnitManager_unity2_raw :: bg_off (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_Mode()` overload"] fn get_mode (self ,) -> crate :: app :: sortieselectionunitmanager :: SortieSelectionUnitManager_Modes { unsafe { let __receiver = < SortieSelectionUnitManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SortieSelectionUnitManager_unity2_raw :: get_mode (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_Mode(crate::app::sortieselectionunitmanager::SortieSelectionUnitManager_Modes)` overload"] fn set_mode (self , value : impl :: core :: convert :: Into < crate :: app :: sortieselectionunitmanager :: SortieSelectionUnitManager_Modes >) -> () { unsafe { let __receiver = < SortieSelectionUnitManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SortieSelectionUnitManager_unity2_raw :: set_mode (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_InventoryMode()` overload"] fn get_inventory_mode (self ,) -> crate :: app :: sortieselectionunitmanager :: SortieSelectionUnitManager_InventoryModes { unsafe { let __receiver = < SortieSelectionUnitManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SortieSelectionUnitManager_unity2_raw :: get_inventory_mode (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_InventoryMode(crate::app::sortieselectionunitmanager::SortieSelectionUnitManager_InventoryModes)` overload"] fn set_inventory_mode (self , value : impl :: core :: convert :: Into < crate :: app :: sortieselectionunitmanager :: SortieSelectionUnitManager_InventoryModes >) -> () { unsafe { let __receiver = < SortieSelectionUnitManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SortieSelectionUnitManager_unity2_raw :: set_inventory_mode (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_Unit()` overload"] fn get_unit (self ,) -> crate :: app :: unit :: Unit { unsafe { let __receiver = < SortieSelectionUnitManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SortieSelectionUnitManager_unity2_raw :: get_unit (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_Unit(crate::app::unit::Unit)` overload"] fn set_unit (self , value : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < SortieSelectionUnitManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SortieSelectionUnitManager_unity2_raw :: set_unit (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_MenuSelect()` overload"] fn get_menu_select (self ,) -> crate :: app :: basicmenuselect :: BasicMenuSelect { unsafe { let __receiver = < SortieSelectionUnitManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SortieSelectionUnitManager_unity2_raw :: get_menu_select (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_StatusForceUpdate()` overload"] fn get_status_force_update (self ,) -> bool { unsafe { let __receiver = < SortieSelectionUnitManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SortieSelectionUnitManager_unity2_raw :: get_status_force_update (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_StatusForceUpdate(bool)` overload"] fn set_status_force_update (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < SortieSelectionUnitManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SortieSelectionUnitManager_unity2_raw :: set_status_force_update (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_OpenSubMenu()` overload"] fn get_open_sub_menu (self ,) -> crate :: app :: sortieselectionunitmanager :: SortieSelectionUnitManager_UnitSelectSubMenu { unsafe { let __receiver = < SortieSelectionUnitManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SortieSelectionUnitManager_unity2_raw :: get_open_sub_menu (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_OpenSubMenu(crate::app::sortieselectionunitmanager::SortieSelectionUnitManager_UnitSelectSubMenu)` overload"] fn set_open_sub_menu (self , value : impl :: core :: convert :: Into < crate :: app :: sortieselectionunitmanager :: SortieSelectionUnitManager_UnitSelectSubMenu >) -> () { unsafe { let __receiver = < SortieSelectionUnitManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SortieSelectionUnitManager_unity2_raw :: set_open_sub_menu (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_MenuBg()` overload"] fn get_menu_bg (self ,) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { let __receiver = < SortieSelectionUnitManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SortieSelectionUnitManager_unity2_raw :: get_menu_bg (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_MenuBg(crate::unity_engine::gameobject::GameObject)` overload"] fn set_menu_bg (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> () { unsafe { let __receiver = < SortieSelectionUnitManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SortieSelectionUnitManager_unity2_raw :: set_menu_bg (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-sortieselectionunitmanager")]
-impl<__T: ISortieSelectionUnitManager> ISortieSelectionUnitManagerMethods for __T {}
+impl < __T : ISortieSelectionUnitManager > ISortieSelectionUnitManagerMethods for __T { }
+
+#[cfg(feature = "app-sortieselectionunitmanager")]
+impl SortieSelectionUnitManager { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SortieSelectionUnitManager_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn reset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SortieSelectionUnitManager_unity2_raw :: __lookup_reset :: get_method_info () } pub fn is_mode_sortie_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SortieSelectionUnitManager_unity2_raw :: __lookup_is_mode_sortie :: get_method_info () } pub fn is_mode_inventory_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SortieSelectionUnitManager_unity2_raw :: __lookup_is_mode_inventory :: get_method_info () } pub fn is_mode_ring_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SortieSelectionUnitManager_unity2_raw :: __lookup_is_mode_ring_select :: get_method_info () } pub fn is_inventory_mode_none_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SortieSelectionUnitManager_unity2_raw :: __lookup_is_inventory_mode_none :: get_method_info () } pub fn is_inventory_mode_inventory_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SortieSelectionUnitManager_unity2_raw :: __lookup_is_inventory_mode_inventory :: get_method_info () } pub fn is_inventory_mode_trade_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SortieSelectionUnitManager_unity2_raw :: __lookup_is_inventory_mode_trade :: get_method_info () } pub fn reset_inventory_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SortieSelectionUnitManager_unity2_raw :: __lookup_reset_inventory_mode :: get_method_info () } pub fn bg_on_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SortieSelectionUnitManager_unity2_raw :: __lookup_bg_on :: get_method_info () } pub fn bg_off_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SortieSelectionUnitManager_unity2_raw :: __lookup_bg_off :: get_method_info () } pub fn get_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SortieSelectionUnitManager_unity2_raw :: __lookup_get_mode :: get_method_info () } pub fn set_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SortieSelectionUnitManager_unity2_raw :: __lookup_set_mode :: get_method_info () } pub fn get_inventory_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SortieSelectionUnitManager_unity2_raw :: __lookup_get_inventory_mode :: get_method_info () } pub fn set_inventory_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SortieSelectionUnitManager_unity2_raw :: __lookup_set_inventory_mode :: get_method_info () } pub fn get_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SortieSelectionUnitManager_unity2_raw :: __lookup_get_unit :: get_method_info () } pub fn set_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SortieSelectionUnitManager_unity2_raw :: __lookup_set_unit :: get_method_info () } pub fn get_menu_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SortieSelectionUnitManager_unity2_raw :: __lookup_get_menu_select :: get_method_info () } pub fn get_status_force_update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SortieSelectionUnitManager_unity2_raw :: __lookup_get_status_force_update :: get_method_info () } pub fn set_status_force_update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SortieSelectionUnitManager_unity2_raw :: __lookup_set_status_force_update :: get_method_info () } pub fn get_open_sub_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SortieSelectionUnitManager_unity2_raw :: __lookup_get_open_sub_menu :: get_method_info () } pub fn set_open_sub_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SortieSelectionUnitManager_unity2_raw :: __lookup_set_open_sub_menu :: get_method_info () } pub fn get_menu_bg_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SortieSelectionUnitManager_unity2_raw :: __lookup_get_menu_bg :: get_method_info () } pub fn set_menu_bg_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SortieSelectionUnitManager_unity2_raw :: __lookup_set_menu_bg :: get_method_info () } }
 
 #[cfg(feature = "app-sortieselectionunitmanager")]
 impl SortieSelectionUnitManager {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SortieSelectionUnitManager),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISortieSelectionUnitManagerMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SortieSelectionUnitManager) , :: core :: stringify ! (new) ,)) ; < Self as ISortieSelectionUnitManagerMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-sortieselectionunitmanager")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{
-        ISortieSelectionUnitManager, ISortieSelectionUnitManagerMethods, SortieSelectionUnitManager, SortieSelectionUnitManager_InventoryModes,
-        SortieSelectionUnitManager_Modes, SortieSelectionUnitManager_UnitSelectSubMenu,
-    };
-    #[cfg(feature = "app-singletonclass_1")]
-    pub use crate::app::singletonclass_1::ISingletonClass_1Methods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::{
-        app::singletonclass_1::ISingletonClass_1,
-        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
-    };
+    pub use super::SortieSelectionUnitManager_UnitSelectSubMenu;
+    pub use super::SortieSelectionUnitManager;
+    pub use super::ISortieSelectionUnitManager;
+    pub use super::ISortieSelectionUnitManagerMethods;
+    pub use super::SortieSelectionUnitManager_InventoryModes;
+    pub use super::SortieSelectionUnitManager_Modes;
+    pub use crate::app::singletonclass_1::ISingletonClass_1;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "app-singletonclass_1")] pub use crate::app::singletonclass_1::ISingletonClass_1Methods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

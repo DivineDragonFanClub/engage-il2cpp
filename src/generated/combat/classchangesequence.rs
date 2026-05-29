@@ -2,1113 +2,121 @@
 
 #[cfg(feature = "combat-classchangesequence-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::{
-            procinst::{IProcInst, ProcInst},
-            singletonprocinst_1::{ISingletonProcInst_1, SingletonProcInst_1},
-        },
-        system::{
-            object::{IObject, Object},
-            r#enum::{Enum, IEnum},
-            valuetype::{IValueType, ValueType},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/classchangesequence/ClassChangeSequence.md"))]
-    #[::unity2::class(namespace = "Combat", name = "ClassChangeSequence")]
-    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: combat :: classchangesequence :: ClassChangeSequence >)]
-    pub struct ClassChangeSequence {
-        #[static_field]
-        #[rename(name = "SceneName")]
-        pub scene_name: ::unity2::Il2CppString,
-        #[offset(120)]
-        #[rename(name = "m_Before")]
-        pub m_before: crate::app::unit::Unit,
-        #[offset(128)]
-        #[rename(name = "m_After")]
-        pub m_after: crate::app::unit::Unit,
-        #[offset(144)]
-        #[rename(name = "m_Status")]
-        pub m_status: ::unity2::Array<crate::combat::charactergamestatus::CharacterGameStatus>,
-        #[offset(152)]
-        #[rename(name = "m_Characters")]
-        pub m_characters: ::unity2::Array<crate::combat::character::Character>,
-        #[offset(160)]
-        #[rename(name = "m_ZoneHandle")]
-        pub m_zone_handle: crate::app::resourcehandle_2::ResourceHandle_2,
-        #[offset(168)]
-        #[rename(name = "m_ChangeEffect")]
-        pub m_change_effect: crate::unity_engine::gameobject::GameObject,
-        #[offset(176)]
-        #[rename(name = "m_GameObjects")]
-        pub m_game_objects: crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: procinst :: { IProcInst , ProcInst }
+ ;
+ use crate :: app :: singletonprocinst_1 :: { ISingletonProcInst_1 , SingletonProcInst_1 }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/classchangesequence/ClassChangeSequence_Label.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct ClassChangeSequence_Label {
-        pub value: i32,
-    }
 
-    impl ::unity2::ClassIdentity for ClassChangeSequence_Label {
-        const NAME: &'static str = "ClassChangeSequence.Label";
-        const NAMESPACE: &'static str = "Combat";
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/classchangesequence/ClassChangeSequence_Label.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct ClassChangeSequence_Label  {
+    pub value: i32,
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+impl  ::unity2::ClassIdentity for ClassChangeSequence_Label  {
+    const NAMESPACE: &'static str = "Combat";
+
+    const NAME: &'static str = "ClassChangeSequence.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for ClassChangeSequence_Label {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  ::unity2::IlType for ClassChangeSequence_Label  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ClassChangeSequence_Label {
-        pub fn skip_fade_in() -> Self {
-            Self { value: 0 }
-        }
+}
 
-        pub fn skip_fade_out() -> Self {
-            Self { value: 1 }
-        }
+
+impl  ClassChangeSequence_Label  {
+    pub fn skip_fade_in() -> Self {
+        Self { value: 0 }
+
     }
+
+
+    pub fn skip_fade_out() -> Self {
+        Self { value: 1 }
+
+    }
+
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/classchangesequence/ClassChangeSequence.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "ClassChangeSequence")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: combat :: classchangesequence :: ClassChangeSequence >)] pub struct ClassChangeSequence {
+# [static_field] # [rename (name = "SceneName")] pub scene_name : :: unity2 :: Il2CppString ,
+# [offset (120)] # [rename (name = "m_Before")] pub m_before : crate :: app :: unit :: Unit ,
+# [offset (128)] # [rename (name = "m_After")] pub m_after : crate :: app :: unit :: Unit ,
+# [offset (144)] # [rename (name = "m_Status")] pub m_status : :: unity2 :: Array < crate :: combat :: charactergamestatus :: CharacterGameStatus > ,
+# [offset (152)] # [rename (name = "m_Characters")] pub m_characters : :: unity2 :: Array < crate :: combat :: character :: Character > ,
+# [offset (160)] # [rename (name = "m_ZoneHandle")] pub m_zone_handle : crate :: app :: resourcehandle_2 :: ResourceHandle_2 ,
+# [offset (168)] # [rename (name = "m_ChangeEffect")] pub m_change_effect : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (176)] # [rename (name = "m_GameObjects")] pub m_game_objects : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: gameobject :: GameObject > ,
+}
+
 }
 
 #[cfg(feature = "combat-classchangesequence-types")]
 pub use __types::*;
 
 #[cfg(feature = "combat-classchangesequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ClassChangeSequence_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_global_asset_path {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ClassChangeSequence as ::unity2::ClassIdentity>::class(),
-                "get_GlobalAssetPath",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ClassChangeSequence as ::unity2::ClassIdentity>::NAME,
-                        "get_GlobalAssetPath",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_global_asset_path(this: ClassChangeSequence, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(ClassChangeSequence, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_global_asset_path::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_exist {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ClassChangeSequence as ::unity2::ClassIdentity>::class(),
-                "IsExist",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ClassChangeSequence as ::unity2::ClassIdentity>::NAME,
-                        "IsExist",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_exist(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_is_exist::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-                <crate::app::viewmode::ViewMode_Mode as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ClassChangeSequence as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                5,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ClassChangeSequence as ::unity2::ClassIdentity>::NAME,
-                        "CreateBind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        before: crate::app::unit::Unit,
-        after: crate::app::unit::Unit,
-        do_fade: bool,
-        camera_mode: crate::app::viewmode::ViewMode_Mode,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            crate::app::unit::Unit,
-            crate::app::unit::Unit,
-            bool,
-            crate::app::viewmode::ViewMode_Mode,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
-        inner(super_, before, after, do_fade, camera_mode, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_return_mode {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ClassChangeSequence as ::unity2::ClassIdentity>::class(),
-                "get_ReturnMode",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ClassChangeSequence as ::unity2::ClassIdentity>::NAME,
-                        "get_ReturnMode",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_return_mode(this: ClassChangeSequence, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::viewmode::ViewMode_Mode {
-        let inner: extern "C" fn(ClassChangeSequence, ::unity2::OptionalMethod) -> crate::app::viewmode::ViewMode_Mode =
-            ::core::mem::transmute(__lookup_get_return_mode::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-                <crate::app::viewmode::ViewMode_Mode as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ClassChangeSequence as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ClassChangeSequence as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: ClassChangeSequence,
-        before: crate::app::unit::Unit,
-        after: crate::app::unit::Unit,
-        camera_mode: crate::app::viewmode::ViewMode_Mode,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ClassChangeSequence,
-            crate::app::unit::Unit,
-            crate::app::unit::Unit,
-            crate::app::viewmode::ViewMode_Mode,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, before, after, camera_mode, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_load {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ClassChangeSequence as ::unity2::ClassIdentity>::class(),
-                "Load",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ClassChangeSequence as ::unity2::ClassIdentity>::NAME,
-                        "Load",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn load(
-        this: ClassChangeSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::ienumerator::IEnumerator {
-        let inner: extern "C" fn(ClassChangeSequence, ::unity2::OptionalMethod) -> crate::system::collections::ienumerator::IEnumerator =
-            ::core::mem::transmute(__lookup_load::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_change_animation {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ClassChangeSequence as ::unity2::ClassIdentity>::class(),
-                "ChangeAnimation",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ClassChangeSequence as ::unity2::ClassIdentity>::NAME,
-                        "ChangeAnimation",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn change_animation(
-        this: ClassChangeSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::ienumerator::IEnumerator {
-        let inner: extern "C" fn(ClassChangeSequence, ::unity2::OptionalMethod) -> crate::system::collections::ienumerator::IEnumerator =
-            ::core::mem::transmute(__lookup_change_animation::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_change {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ClassChangeSequence as ::unity2::ClassIdentity>::class(),
-                "Change",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ClassChangeSequence as ::unity2::ClassIdentity>::NAME,
-                        "Change",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn change(this: ClassChangeSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ClassChangeSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_change::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_pose_animation {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ClassChangeSequence as ::unity2::ClassIdentity>::class(),
-                "PoseAnimation",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ClassChangeSequence as ::unity2::ClassIdentity>::NAME,
-                        "PoseAnimation",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn pose_animation(
-        this: ClassChangeSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::ienumerator::IEnumerator {
-        let inner: extern "C" fn(ClassChangeSequence, ::unity2::OptionalMethod) -> crate::system::collections::ienumerator::IEnumerator =
-            ::core::mem::transmute(__lookup_pose_animation::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_telop {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ClassChangeSequence as ::unity2::ClassIdentity>::class(),
-                "Telop",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ClassChangeSequence as ::unity2::ClassIdentity>::NAME,
-                        "Telop",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn telop(this: ClassChangeSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ClassChangeSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_telop::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_display_params {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ClassChangeSequence as ::unity2::ClassIdentity>::class(),
-                "DisplayParams",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ClassChangeSequence as ::unity2::ClassIdentity>::NAME,
-                        "DisplayParams",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn display_params(this: ClassChangeSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ClassChangeSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_display_params::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_exit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ClassChangeSequence as ::unity2::ClassIdentity>::class(),
-                "Exit",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ClassChangeSequence as ::unity2::ClassIdentity>::NAME,
-                        "Exit",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn exit(this: ClassChangeSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ClassChangeSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_exit::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_character_loading {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ClassChangeSequence as ::unity2::ClassIdentity>::class(),
-                "IsCharacterLoading",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ClassChangeSequence as ::unity2::ClassIdentity>::NAME,
-                        "IsCharacterLoading",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_character_loading(this: ClassChangeSequence, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(ClassChangeSequence, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_character_loading::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_exit_after {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ClassChangeSequence as ::unity2::ClassIdentity>::class(),
-                "ExitAfter",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ClassChangeSequence as ::unity2::ClassIdentity>::NAME,
-                        "ExitAfter",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn exit_after(this: ClassChangeSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ClassChangeSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_exit_after::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_start_before_bgm {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ClassChangeSequence as ::unity2::ClassIdentity>::class(),
-                "StartBeforeBGM",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ClassChangeSequence as ::unity2::ClassIdentity>::NAME,
-                        "StartBeforeBGM",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn start_before_bgm(this: ClassChangeSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ClassChangeSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_start_before_bgm::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_start_skip_bgm {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ClassChangeSequence as ::unity2::ClassIdentity>::class(),
-                "StartSkipBGM",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ClassChangeSequence as ::unity2::ClassIdentity>::NAME,
-                        "StartSkipBGM",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn start_skip_bgm(this: ClassChangeSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ClassChangeSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_start_skip_bgm::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_start_after_bgm {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ClassChangeSequence as ::unity2::ClassIdentity>::class(),
-                "StartAfterBGM",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ClassChangeSequence as ::unity2::ClassIdentity>::NAME,
-                        "StartAfterBGM",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn start_after_bgm(this: ClassChangeSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ClassChangeSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_start_after_bgm::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_resume_bgm {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ClassChangeSequence as ::unity2::ClassIdentity>::class(),
-                "ResumeBGM",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ClassChangeSequence as ::unity2::ClassIdentity>::NAME,
-                        "ResumeBGM",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn resume_bgm(this: ClassChangeSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ClassChangeSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_resume_bgm::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_start_se {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ClassChangeSequence as ::unity2::ClassIdentity>::class(),
-                "StartSE",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ClassChangeSequence as ::unity2::ClassIdentity>::NAME,
-                        "StartSE",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn start_se(this: ClassChangeSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ClassChangeSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_start_se::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_stop_se {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ClassChangeSequence as ::unity2::ClassIdentity>::class(),
-                "StopSE",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ClassChangeSequence as ::unity2::ClassIdentity>::NAME,
-                        "StopSE",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn stop_se(this: ClassChangeSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ClassChangeSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_stop_se::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_setup_game_status {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ClassChangeSequence as ::unity2::ClassIdentity>::class(),
-                "SetupGameStatus",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ClassChangeSequence as ::unity2::ClassIdentity>::NAME,
-                        "SetupGameStatus",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn setup_game_status(this: ClassChangeSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ClassChangeSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_setup_game_status::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_character {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <crate::combat::preloadanims::PreloadAnims as ::unity2::IlType>::il_type(),
-                <crate::combat::basecombatlocation::BaseCombatLocation as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ClassChangeSequence as ::unity2::ClassIdentity>::class(),
-                "CreateCharacter",
-                4,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ClassChangeSequence as ::unity2::ClassIdentity>::NAME,
-                        "CreateCharacter",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_character(
-        this: ClassChangeSequence,
-        side: i32,
-        preload_anim: crate::combat::preloadanims::PreloadAnims,
-        locator: crate::combat::basecombatlocation::BaseCombatLocation,
-        visible: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::ienumerator::IEnumerator {
-        let inner: extern "C" fn(
-            ClassChangeSequence,
-            i32,
-            crate::combat::preloadanims::PreloadAnims,
-            crate::combat::basecombatlocation::BaseCombatLocation,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::collections::ienumerator::IEnumerator = ::core::mem::transmute(__lookup_create_character::get_method_info().method_ptr);
-        inner(this, side, preload_anim, locator, visible, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ClassChangeSequence_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_global_asset_path { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ClassChangeSequence as :: unity2 :: ClassIdentity > :: class () , "get_GlobalAssetPath" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ClassChangeSequence as :: unity2 :: ClassIdentity > :: NAME , "get_GlobalAssetPath" , e) , } } } pub unsafe fn get_global_asset_path (this : ClassChangeSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (ClassChangeSequence , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_global_asset_path :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_exist { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ClassChangeSequence as :: unity2 :: ClassIdentity > :: class () , "IsExist" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ClassChangeSequence as :: unity2 :: ClassIdentity > :: NAME , "IsExist" , e) , } } } pub unsafe fn is_exist (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_exist :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_bind { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < crate :: app :: viewmode :: ViewMode_Mode as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ClassChangeSequence as :: unity2 :: ClassIdentity > :: class () , "CreateBind" , 5 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ClassChangeSequence as :: unity2 :: ClassIdentity > :: NAME , "CreateBind" , e) , } } } pub unsafe fn create_bind (super_ : crate :: app :: procinst :: ProcInst , before : crate :: app :: unit :: Unit , after : crate :: app :: unit :: Unit , do_fade : bool , camera_mode : crate :: app :: viewmode :: ViewMode_Mode , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: unit :: Unit , crate :: app :: unit :: Unit , bool , crate :: app :: viewmode :: ViewMode_Mode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create_bind :: get_method_info () . method_ptr ,) ; inner (super_ , before , after , do_fade , camera_mode , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_return_mode { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ClassChangeSequence as :: unity2 :: ClassIdentity > :: class () , "get_ReturnMode" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ClassChangeSequence as :: unity2 :: ClassIdentity > :: NAME , "get_ReturnMode" , e) , } } } pub unsafe fn get_return_mode (this : ClassChangeSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: viewmode :: ViewMode_Mode { let inner : extern "C" fn (ClassChangeSequence , :: unity2 :: OptionalMethod ,) -> crate :: app :: viewmode :: ViewMode_Mode = :: core :: mem :: transmute (__lookup_get_return_mode :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < crate :: app :: viewmode :: ViewMode_Mode as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ClassChangeSequence as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ClassChangeSequence as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : ClassChangeSequence , before : crate :: app :: unit :: Unit , after : crate :: app :: unit :: Unit , camera_mode : crate :: app :: viewmode :: ViewMode_Mode , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ClassChangeSequence , crate :: app :: unit :: Unit , crate :: app :: unit :: Unit , crate :: app :: viewmode :: ViewMode_Mode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , before , after , camera_mode , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_load { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ClassChangeSequence as :: unity2 :: ClassIdentity > :: class () , "Load" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ClassChangeSequence as :: unity2 :: ClassIdentity > :: NAME , "Load" , e) , } } } pub unsafe fn load (this : ClassChangeSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { let inner : extern "C" fn (ClassChangeSequence , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute (__lookup_load :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_change_animation { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ClassChangeSequence as :: unity2 :: ClassIdentity > :: class () , "ChangeAnimation" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ClassChangeSequence as :: unity2 :: ClassIdentity > :: NAME , "ChangeAnimation" , e) , } } } pub unsafe fn change_animation (this : ClassChangeSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { let inner : extern "C" fn (ClassChangeSequence , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute (__lookup_change_animation :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_change { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ClassChangeSequence as :: unity2 :: ClassIdentity > :: class () , "Change" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ClassChangeSequence as :: unity2 :: ClassIdentity > :: NAME , "Change" , e) , } } } pub unsafe fn change (this : ClassChangeSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ClassChangeSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_change :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_pose_animation { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ClassChangeSequence as :: unity2 :: ClassIdentity > :: class () , "PoseAnimation" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ClassChangeSequence as :: unity2 :: ClassIdentity > :: NAME , "PoseAnimation" , e) , } } } pub unsafe fn pose_animation (this : ClassChangeSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { let inner : extern "C" fn (ClassChangeSequence , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute (__lookup_pose_animation :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_telop { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ClassChangeSequence as :: unity2 :: ClassIdentity > :: class () , "Telop" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ClassChangeSequence as :: unity2 :: ClassIdentity > :: NAME , "Telop" , e) , } } } pub unsafe fn telop (this : ClassChangeSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ClassChangeSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_telop :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_display_params { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ClassChangeSequence as :: unity2 :: ClassIdentity > :: class () , "DisplayParams" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ClassChangeSequence as :: unity2 :: ClassIdentity > :: NAME , "DisplayParams" , e) , } } } pub unsafe fn display_params (this : ClassChangeSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ClassChangeSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_display_params :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_exit { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ClassChangeSequence as :: unity2 :: ClassIdentity > :: class () , "Exit" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ClassChangeSequence as :: unity2 :: ClassIdentity > :: NAME , "Exit" , e) , } } } pub unsafe fn exit (this : ClassChangeSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ClassChangeSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_exit :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_character_loading { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ClassChangeSequence as :: unity2 :: ClassIdentity > :: class () , "IsCharacterLoading" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ClassChangeSequence as :: unity2 :: ClassIdentity > :: NAME , "IsCharacterLoading" , e) , } } } pub unsafe fn is_character_loading (this : ClassChangeSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (ClassChangeSequence , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_character_loading :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_exit_after { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ClassChangeSequence as :: unity2 :: ClassIdentity > :: class () , "ExitAfter" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ClassChangeSequence as :: unity2 :: ClassIdentity > :: NAME , "ExitAfter" , e) , } } } pub unsafe fn exit_after (this : ClassChangeSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ClassChangeSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_exit_after :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_start_before_bgm { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ClassChangeSequence as :: unity2 :: ClassIdentity > :: class () , "StartBeforeBGM" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ClassChangeSequence as :: unity2 :: ClassIdentity > :: NAME , "StartBeforeBGM" , e) , } } } pub unsafe fn start_before_bgm (this : ClassChangeSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ClassChangeSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_start_before_bgm :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_start_skip_bgm { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ClassChangeSequence as :: unity2 :: ClassIdentity > :: class () , "StartSkipBGM" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ClassChangeSequence as :: unity2 :: ClassIdentity > :: NAME , "StartSkipBGM" , e) , } } } pub unsafe fn start_skip_bgm (this : ClassChangeSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ClassChangeSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_start_skip_bgm :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_start_after_bgm { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ClassChangeSequence as :: unity2 :: ClassIdentity > :: class () , "StartAfterBGM" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ClassChangeSequence as :: unity2 :: ClassIdentity > :: NAME , "StartAfterBGM" , e) , } } } pub unsafe fn start_after_bgm (this : ClassChangeSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ClassChangeSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_start_after_bgm :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_resume_bgm { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ClassChangeSequence as :: unity2 :: ClassIdentity > :: class () , "ResumeBGM" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ClassChangeSequence as :: unity2 :: ClassIdentity > :: NAME , "ResumeBGM" , e) , } } } pub unsafe fn resume_bgm (this : ClassChangeSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ClassChangeSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_resume_bgm :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_start_se { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ClassChangeSequence as :: unity2 :: ClassIdentity > :: class () , "StartSE" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ClassChangeSequence as :: unity2 :: ClassIdentity > :: NAME , "StartSE" , e) , } } } pub unsafe fn start_se (this : ClassChangeSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ClassChangeSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_start_se :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_stop_se { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ClassChangeSequence as :: unity2 :: ClassIdentity > :: class () , "StopSE" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ClassChangeSequence as :: unity2 :: ClassIdentity > :: NAME , "StopSE" , e) , } } } pub unsafe fn stop_se (this : ClassChangeSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ClassChangeSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_stop_se :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_setup_game_status { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ClassChangeSequence as :: unity2 :: ClassIdentity > :: class () , "SetupGameStatus" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ClassChangeSequence as :: unity2 :: ClassIdentity > :: NAME , "SetupGameStatus" , e) , } } } pub unsafe fn setup_game_status (this : ClassChangeSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ClassChangeSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_setup_game_status :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_character { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < crate :: combat :: preloadanims :: PreloadAnims as :: unity2 :: IlType > :: il_type () , < crate :: combat :: basecombatlocation :: BaseCombatLocation as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ClassChangeSequence as :: unity2 :: ClassIdentity > :: class () , "CreateCharacter" , 4 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ClassChangeSequence as :: unity2 :: ClassIdentity > :: NAME , "CreateCharacter" , e) , } } } pub unsafe fn create_character (this : ClassChangeSequence , side : i32 , preload_anim : crate :: combat :: preloadanims :: PreloadAnims , locator : crate :: combat :: basecombatlocation :: BaseCombatLocation , visible : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { let inner : extern "C" fn (ClassChangeSequence , i32 , crate :: combat :: preloadanims :: PreloadAnims , crate :: combat :: basecombatlocation :: BaseCombatLocation , bool , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute (__lookup_create_character :: get_method_info () . method_ptr ,) ; inner (this , side , preload_anim , locator , visible , __unity2_method_info) } }
+
+#[cfg(feature = "combat-classchangesequence")]
+impl ClassChangeSequence { # [doc = "`IsExist()` overload"] pub fn is_exist () -> bool { unsafe { __ClassChangeSequence_unity2_raw :: is_exist (:: core :: option :: Option :: None) } } # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::unit::Unit, crate::app::unit::Unit, bool, crate::app::viewmode::ViewMode_Mode)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , before : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , after : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , do_fade : impl :: core :: convert :: Into < bool > , camera_mode : impl :: core :: convert :: Into < crate :: app :: viewmode :: ViewMode_Mode >) -> () { unsafe { __ClassChangeSequence_unity2_raw :: create_bind (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (before) , :: core :: convert :: Into :: into (after) , :: core :: convert :: Into :: into (do_fade) , :: core :: convert :: Into :: into (camera_mode) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "combat-classchangesequence")]
+pub trait IClassChangeSequenceMethods : IClassChangeSequence { # [doc = "`get_GlobalAssetPath()` overload"] fn get_global_asset_path (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ClassChangeSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ClassChangeSequence_unity2_raw :: get_global_asset_path (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_ReturnMode()` overload"] fn get_return_mode (self ,) -> crate :: app :: viewmode :: ViewMode_Mode { unsafe { let __receiver = < ClassChangeSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ClassChangeSequence_unity2_raw :: get_return_mode (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor(crate::app::unit::Unit, crate::app::unit::Unit, crate::app::viewmode::ViewMode_Mode)` overload"] fn ctor (self , before : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , after : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , camera_mode : impl :: core :: convert :: Into < crate :: app :: viewmode :: ViewMode_Mode >) -> () { unsafe { let __receiver = < ClassChangeSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ClassChangeSequence_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (before) , :: core :: convert :: Into :: into (after) , :: core :: convert :: Into :: into (camera_mode) , :: core :: option :: Option :: None) } } # [doc = "`Load()` overload"] fn load (self ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { let __receiver = < ClassChangeSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ClassChangeSequence_unity2_raw :: load (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ChangeAnimation()` overload"] fn change_animation (self ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { let __receiver = < ClassChangeSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ClassChangeSequence_unity2_raw :: change_animation (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Change()` overload"] fn change (self ,) -> () { unsafe { let __receiver = < ClassChangeSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ClassChangeSequence_unity2_raw :: change (__receiver , :: core :: option :: Option :: None) } } # [doc = "`PoseAnimation()` overload"] fn pose_animation (self ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { let __receiver = < ClassChangeSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ClassChangeSequence_unity2_raw :: pose_animation (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Telop()` overload"] fn telop (self ,) -> () { unsafe { let __receiver = < ClassChangeSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ClassChangeSequence_unity2_raw :: telop (__receiver , :: core :: option :: Option :: None) } } # [doc = "`DisplayParams()` overload"] fn display_params (self ,) -> () { unsafe { let __receiver = < ClassChangeSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ClassChangeSequence_unity2_raw :: display_params (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Exit()` overload"] fn exit (self ,) -> () { unsafe { let __receiver = < ClassChangeSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ClassChangeSequence_unity2_raw :: exit (__receiver , :: core :: option :: Option :: None) } } # [doc = "`IsCharacterLoading()` overload"] fn is_character_loading (self ,) -> bool { unsafe { let __receiver = < ClassChangeSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ClassChangeSequence_unity2_raw :: is_character_loading (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ExitAfter()` overload"] fn exit_after (self ,) -> () { unsafe { let __receiver = < ClassChangeSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ClassChangeSequence_unity2_raw :: exit_after (__receiver , :: core :: option :: Option :: None) } } # [doc = "`StartBeforeBGM()` overload"] fn start_before_bgm (self ,) -> () { unsafe { let __receiver = < ClassChangeSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ClassChangeSequence_unity2_raw :: start_before_bgm (__receiver , :: core :: option :: Option :: None) } } # [doc = "`StartSkipBGM()` overload"] fn start_skip_bgm (self ,) -> () { unsafe { let __receiver = < ClassChangeSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ClassChangeSequence_unity2_raw :: start_skip_bgm (__receiver , :: core :: option :: Option :: None) } } # [doc = "`StartAfterBGM()` overload"] fn start_after_bgm (self ,) -> () { unsafe { let __receiver = < ClassChangeSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ClassChangeSequence_unity2_raw :: start_after_bgm (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ResumeBGM()` overload"] fn resume_bgm (self ,) -> () { unsafe { let __receiver = < ClassChangeSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ClassChangeSequence_unity2_raw :: resume_bgm (__receiver , :: core :: option :: Option :: None) } } # [doc = "`StartSE()` overload"] fn start_se (self ,) -> () { unsafe { let __receiver = < ClassChangeSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ClassChangeSequence_unity2_raw :: start_se (__receiver , :: core :: option :: Option :: None) } } # [doc = "`StopSE()` overload"] fn stop_se (self ,) -> () { unsafe { let __receiver = < ClassChangeSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ClassChangeSequence_unity2_raw :: stop_se (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetupGameStatus()` overload"] fn setup_game_status (self ,) -> () { unsafe { let __receiver = < ClassChangeSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ClassChangeSequence_unity2_raw :: setup_game_status (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CreateCharacter(i32, crate::combat::preloadanims::PreloadAnims, crate::combat::basecombatlocation::BaseCombatLocation, bool)` overload"] fn create_character (self , side : impl :: core :: convert :: Into < i32 > , preload_anim : impl :: core :: convert :: Into < crate :: combat :: preloadanims :: PreloadAnims > , locator : impl :: core :: convert :: Into < crate :: combat :: basecombatlocation :: BaseCombatLocation > , visible : impl :: core :: convert :: Into < bool >) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { let __receiver = < ClassChangeSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ClassChangeSequence_unity2_raw :: create_character (__receiver , :: core :: convert :: Into :: into (side) , :: core :: convert :: Into :: into (preload_anim) , :: core :: convert :: Into :: into (locator) , :: core :: convert :: Into :: into (visible) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "combat-classchangesequence")]
+impl < __T : IClassChangeSequence > IClassChangeSequenceMethods for __T { }
+
+#[cfg(feature = "combat-classchangesequence")]
+impl ClassChangeSequence { pub fn get_global_asset_path_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ClassChangeSequence_unity2_raw :: __lookup_get_global_asset_path :: get_method_info () } pub fn is_exist_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ClassChangeSequence_unity2_raw :: __lookup_is_exist :: get_method_info () } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ClassChangeSequence_unity2_raw :: __lookup_create_bind :: get_method_info () } pub fn get_return_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ClassChangeSequence_unity2_raw :: __lookup_get_return_mode :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ClassChangeSequence_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ClassChangeSequence_unity2_raw :: __lookup_load :: get_method_info () } pub fn change_animation_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ClassChangeSequence_unity2_raw :: __lookup_change_animation :: get_method_info () } pub fn change_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ClassChangeSequence_unity2_raw :: __lookup_change :: get_method_info () } pub fn pose_animation_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ClassChangeSequence_unity2_raw :: __lookup_pose_animation :: get_method_info () } pub fn telop_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ClassChangeSequence_unity2_raw :: __lookup_telop :: get_method_info () } pub fn display_params_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ClassChangeSequence_unity2_raw :: __lookup_display_params :: get_method_info () } pub fn exit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ClassChangeSequence_unity2_raw :: __lookup_exit :: get_method_info () } pub fn is_character_loading_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ClassChangeSequence_unity2_raw :: __lookup_is_character_loading :: get_method_info () } pub fn exit_after_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ClassChangeSequence_unity2_raw :: __lookup_exit_after :: get_method_info () } pub fn start_before_bgm_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ClassChangeSequence_unity2_raw :: __lookup_start_before_bgm :: get_method_info () } pub fn start_skip_bgm_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ClassChangeSequence_unity2_raw :: __lookup_start_skip_bgm :: get_method_info () } pub fn start_after_bgm_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ClassChangeSequence_unity2_raw :: __lookup_start_after_bgm :: get_method_info () } pub fn resume_bgm_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ClassChangeSequence_unity2_raw :: __lookup_resume_bgm :: get_method_info () } pub fn start_se_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ClassChangeSequence_unity2_raw :: __lookup_start_se :: get_method_info () } pub fn stop_se_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ClassChangeSequence_unity2_raw :: __lookup_stop_se :: get_method_info () } pub fn setup_game_status_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ClassChangeSequence_unity2_raw :: __lookup_setup_game_status :: get_method_info () } pub fn create_character_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ClassChangeSequence_unity2_raw :: __lookup_create_character :: get_method_info () } }
 
 #[cfg(feature = "combat-classchangesequence")]
 impl ClassChangeSequence {
-    #[doc = "`IsExist()` overload"]
-    pub fn is_exist() -> bool {
-        unsafe { __ClassChangeSequence_unity2_raw::is_exist(::core::option::Option::None) }
-    }
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::unit::Unit, crate::app::unit::Unit, bool, crate::app::viewmode::ViewMode_Mode)` overload"]
-    pub fn create_bind(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        before: impl ::core::convert::Into<crate::app::unit::Unit>,
-        after: impl ::core::convert::Into<crate::app::unit::Unit>,
-        do_fade: impl ::core::convert::Into<bool>,
-        camera_mode: impl ::core::convert::Into<crate::app::viewmode::ViewMode_Mode>,
-    ) -> () {
-        unsafe {
-            __ClassChangeSequence_unity2_raw::create_bind(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(before),
-                ::core::convert::Into::into(after),
-                ::core::convert::Into::into(do_fade),
-                ::core::convert::Into::into(camera_mode),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "combat-classchangesequence")]
-pub trait IClassChangeSequenceMethods: IClassChangeSequence {
-    #[doc = "`get_GlobalAssetPath()` overload"]
-    fn get_global_asset_path(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <ClassChangeSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ClassChangeSequence_unity2_raw::get_global_asset_path(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_ReturnMode()` overload"]
-    fn get_return_mode(self) -> crate::app::viewmode::ViewMode_Mode {
-        unsafe {
-            let __receiver = <ClassChangeSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ClassChangeSequence_unity2_raw::get_return_mode(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor(crate::app::unit::Unit, crate::app::unit::Unit, crate::app::viewmode::ViewMode_Mode)` overload"]
-    fn ctor(
-        self,
-        before: impl ::core::convert::Into<crate::app::unit::Unit>,
-        after: impl ::core::convert::Into<crate::app::unit::Unit>,
-        camera_mode: impl ::core::convert::Into<crate::app::viewmode::ViewMode_Mode>,
-    ) -> () {
-        unsafe {
-            let __receiver = <ClassChangeSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ClassChangeSequence_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(before),
-                ::core::convert::Into::into(after),
-                ::core::convert::Into::into(camera_mode),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Load()` overload"]
-    fn load(self) -> crate::system::collections::ienumerator::IEnumerator {
-        unsafe {
-            let __receiver = <ClassChangeSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ClassChangeSequence_unity2_raw::load(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ChangeAnimation()` overload"]
-    fn change_animation(self) -> crate::system::collections::ienumerator::IEnumerator {
-        unsafe {
-            let __receiver = <ClassChangeSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ClassChangeSequence_unity2_raw::change_animation(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Change()` overload"]
-    fn change(self) -> () {
-        unsafe {
-            let __receiver = <ClassChangeSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ClassChangeSequence_unity2_raw::change(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`PoseAnimation()` overload"]
-    fn pose_animation(self) -> crate::system::collections::ienumerator::IEnumerator {
-        unsafe {
-            let __receiver = <ClassChangeSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ClassChangeSequence_unity2_raw::pose_animation(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Telop()` overload"]
-    fn telop(self) -> () {
-        unsafe {
-            let __receiver = <ClassChangeSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ClassChangeSequence_unity2_raw::telop(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`DisplayParams()` overload"]
-    fn display_params(self) -> () {
-        unsafe {
-            let __receiver = <ClassChangeSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ClassChangeSequence_unity2_raw::display_params(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Exit()` overload"]
-    fn exit(self) -> () {
-        unsafe {
-            let __receiver = <ClassChangeSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ClassChangeSequence_unity2_raw::exit(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsCharacterLoading()` overload"]
-    fn is_character_loading(self) -> bool {
-        unsafe {
-            let __receiver = <ClassChangeSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ClassChangeSequence_unity2_raw::is_character_loading(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ExitAfter()` overload"]
-    fn exit_after(self) -> () {
-        unsafe {
-            let __receiver = <ClassChangeSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ClassChangeSequence_unity2_raw::exit_after(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`StartBeforeBGM()` overload"]
-    fn start_before_bgm(self) -> () {
-        unsafe {
-            let __receiver = <ClassChangeSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ClassChangeSequence_unity2_raw::start_before_bgm(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`StartSkipBGM()` overload"]
-    fn start_skip_bgm(self) -> () {
-        unsafe {
-            let __receiver = <ClassChangeSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ClassChangeSequence_unity2_raw::start_skip_bgm(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`StartAfterBGM()` overload"]
-    fn start_after_bgm(self) -> () {
-        unsafe {
-            let __receiver = <ClassChangeSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ClassChangeSequence_unity2_raw::start_after_bgm(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ResumeBGM()` overload"]
-    fn resume_bgm(self) -> () {
-        unsafe {
-            let __receiver = <ClassChangeSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ClassChangeSequence_unity2_raw::resume_bgm(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`StartSE()` overload"]
-    fn start_se(self) -> () {
-        unsafe {
-            let __receiver = <ClassChangeSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ClassChangeSequence_unity2_raw::start_se(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`StopSE()` overload"]
-    fn stop_se(self) -> () {
-        unsafe {
-            let __receiver = <ClassChangeSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ClassChangeSequence_unity2_raw::stop_se(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetupGameStatus()` overload"]
-    fn setup_game_status(self) -> () {
-        unsafe {
-            let __receiver = <ClassChangeSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ClassChangeSequence_unity2_raw::setup_game_status(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CreateCharacter(i32, crate::combat::preloadanims::PreloadAnims, crate::combat::basecombatlocation::BaseCombatLocation, bool)` overload"]
-    fn create_character(
-        self,
-        side: impl ::core::convert::Into<i32>,
-        preload_anim: impl ::core::convert::Into<crate::combat::preloadanims::PreloadAnims>,
-        locator: impl ::core::convert::Into<crate::combat::basecombatlocation::BaseCombatLocation>,
-        visible: impl ::core::convert::Into<bool>,
-    ) -> crate::system::collections::ienumerator::IEnumerator {
-        unsafe {
-            let __receiver = <ClassChangeSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ClassChangeSequence_unity2_raw::create_character(
-                __receiver,
-                ::core::convert::Into::into(side),
-                ::core::convert::Into::into(preload_anim),
-                ::core::convert::Into::into(locator),
-                ::core::convert::Into::into(visible),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "combat-classchangesequence")]
-impl<__T: IClassChangeSequence> IClassChangeSequenceMethods for __T {}
-
-#[cfg(feature = "combat-classchangesequence")]
-impl ClassChangeSequence {
-    #[doc = "`.ctor(crate::app::unit::Unit, crate::app::unit::Unit, crate::app::viewmode::ViewMode_Mode)` — overload selector"]
-    pub fn new(before: crate::app::unit::Unit, after: crate::app::unit::Unit, camera_mode: crate::app::viewmode::ViewMode_Mode) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ClassChangeSequence),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IClassChangeSequenceMethods>::ctor(this, before, after, camera_mode);
-        this
-    }
+# [doc = "`.ctor(crate::app::unit::Unit, crate::app::unit::Unit, crate::app::viewmode::ViewMode_Mode)` — overload selector"] pub fn new (before : crate :: app :: unit :: Unit , after : crate :: app :: unit :: Unit , camera_mode : crate :: app :: viewmode :: ViewMode_Mode) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ClassChangeSequence) , :: core :: stringify ! (new) ,)) ; < Self as IClassChangeSequenceMethods > :: ctor (this , before , after , camera_mode) ; this }
 }
 
 #[cfg(feature = "combat-classchangesequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{ClassChangeSequence, ClassChangeSequence_Label, IClassChangeSequence, IClassChangeSequenceMethods};
-    #[cfg(feature = "app-procinst")]
-    pub use crate::app::procinst::IProcInstMethods;
-    #[cfg(feature = "app-singletonprocinst_1")]
-    pub use crate::app::singletonprocinst_1::ISingletonProcInst_1Methods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::{
-        app::{procinst::IProcInst, singletonprocinst_1::ISingletonProcInst_1},
-        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
-    };
+    pub use super::ClassChangeSequence_Label;
+    pub use super::ClassChangeSequence;
+    pub use super::IClassChangeSequence;
+    pub use super::IClassChangeSequenceMethods;
+    pub use crate::app::procinst::IProcInst;
+    pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "app-procinst")] pub use crate::app::procinst::IProcInstMethods;
+    #[cfg(feature = "app-singletonprocinst_1")] pub use crate::app::singletonprocinst_1::ISingletonProcInst_1Methods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

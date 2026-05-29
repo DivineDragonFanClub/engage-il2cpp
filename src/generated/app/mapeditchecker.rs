@@ -2,863 +2,97 @@
 
 #[cfg(feature = "app-mapeditchecker-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        valuetype::{IValueType, ValueType},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapeditchecker/MapEditChecker.md"))]
-    #[::unity2::class(namespace = "App", name = "MapEditChecker")]
-    #[parent(crate::system::object::Object)]
-    pub struct MapEditChecker {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapeditchecker/MapEditChecker_CheckRange.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct MapEditChecker_CheckRange {
-        pub min_x: i32,
-        pub max_x: i32,
-        pub min_z: i32,
-        pub max_z: i32,
-    }
 
-    impl ::unity2::ClassIdentity for MapEditChecker_CheckRange {
-        const NAME: &'static str = "MapEditChecker.CheckRange";
-        const NAMESPACE: &'static str = "App";
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapeditchecker/MapEditChecker.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapEditChecker")] # [parent (crate :: system :: object :: Object)] pub struct MapEditChecker {}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapeditchecker/MapEditChecker_CheckRange.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct MapEditChecker_CheckRange {
+    pub min_x: i32,
+    pub max_x: i32,
+    pub min_z: i32,
+    pub max_z: i32,
+}
+
+
+impl ::unity2::ClassIdentity for MapEditChecker_CheckRange {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapEditChecker.CheckRange";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for MapEditChecker_CheckRange {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl ::unity2::IlType for MapEditChecker_CheckRange {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
+
+}
+
 }
 
 #[cfg(feature = "app-mapeditchecker-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-mapeditchecker")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapEditChecker_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_check {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<MapEditChecker as ::unity2::ClassIdentity>::class(), "Check", 1, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapEditChecker as ::unity2::ClassIdentity>::NAME,
-                        "Check",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn check(is_opponent: bool, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(bool, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_check::get_method_info().method_ptr);
-        inner(is_opponent, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_size_x {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEditChecker as ::unity2::ClassIdentity>::class(),
-                "get_SizeX",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapEditChecker as ::unity2::ClassIdentity>::NAME,
-                        "get_SizeX",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_size_x(__unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(__lookup_get_size_x::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_size_z {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEditChecker as ::unity2::ClassIdentity>::class(),
-                "get_SizeZ",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapEditChecker as ::unity2::ClassIdentity>::NAME,
-                        "get_SizeZ",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_size_z(__unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(__lookup_get_size_z::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_unit_count {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEditChecker as ::unity2::ClassIdentity>::class(),
-                "GetUnitCount",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapEditChecker as ::unity2::ClassIdentity>::NAME,
-                        "GetUnitCount",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_unit_count(__unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(__lookup_get_unit_count::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_opponent_count {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEditChecker as ::unity2::ClassIdentity>::class(),
-                "GetOpponentCount",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapEditChecker as ::unity2::ClassIdentity>::NAME,
-                        "GetOpponentCount",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_opponent_count(__unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(__lookup_get_opponent_count::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_can_move {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEditChecker as ::unity2::ClassIdentity>::class(),
-                "CanMove",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapEditChecker as ::unity2::ClassIdentity>::NAME,
-                        "CanMove",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn can_move(x: i32, z: i32, breakable_is_true: bool, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(i32, i32, bool, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_can_move::get_method_info().method_ptr);
-        inner(x, z, breakable_is_true, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_can_move_breakable {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEditChecker as ::unity2::ClassIdentity>::class(),
-                "CanMoveBreakable",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapEditChecker as ::unity2::ClassIdentity>::NAME,
-                        "CanMoveBreakable",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn can_move_breakable(x: i32, z: i32, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(i32, i32, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_can_move_breakable::get_method_info().method_ptr);
-        inner(x, z, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_terrain {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEditChecker as ::unity2::ClassIdentity>::class(),
-                "GetTerrain",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapEditChecker as ::unity2::ClassIdentity>::NAME,
-                        "GetTerrain",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_terrain(x: i32, z: i32, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::terraindata_2::TerrainData_2 {
-        let inner: extern "C" fn(i32, i32, ::unity2::OptionalMethod) -> crate::app::terraindata_2::TerrainData_2 =
-            ::core::mem::transmute(__lookup_get_terrain::get_method_info().method_ptr);
-        inner(x, z, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_exists_unit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEditChecker as ::unity2::ClassIdentity>::class(),
-                "ExistsUnit",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapEditChecker as ::unity2::ClassIdentity>::NAME,
-                        "ExistsUnit",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn exists_unit(x: i32, z: i32, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(i32, i32, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_exists_unit::get_method_info().method_ptr);
-        inner(x, z, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_check_my_map {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEditChecker as ::unity2::ClassIdentity>::class(),
-                "CheckMyMap",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapEditChecker as ::unity2::ClassIdentity>::NAME,
-                        "CheckMyMap",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn check_my_map(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_check_my_map::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_check_opponent_map {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEditChecker as ::unity2::ClassIdentity>::class(),
-                "CheckOpponentMap",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapEditChecker as ::unity2::ClassIdentity>::NAME,
-                        "CheckOpponentMap",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn check_opponent_map(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_check_opponent_map::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_check_recursive {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::mappos::MapPos as ::unity2::IlType>::il_type(),
-                <crate::app::mapeditchecker::MapEditChecker_CheckRange as ::unity2::IlType>::il_type(),
-                <crate::system::collections::generic::hashset_1::HashSet_1<crate::app::mappos::MapPos> as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEditChecker as ::unity2::ClassIdentity>::class(),
-                "CheckRecursive",
-                4,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapEditChecker as ::unity2::ClassIdentity>::NAME,
-                        "CheckRecursive",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn check_recursive(
-        pos: crate::app::mappos::MapPos,
-        range: crate::app::mapeditchecker::MapEditChecker_CheckRange,
-        reach_set: crate::system::collections::generic::hashset_1::HashSet_1<crate::app::mappos::MapPos>,
-        total_count: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(
-            crate::app::mappos::MapPos,
-            crate::app::mapeditchecker::MapEditChecker_CheckRange,
-            crate::system::collections::generic::hashset_1::HashSet_1<crate::app::mappos::MapPos>,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(__lookup_check_recursive::get_method_info().method_ptr);
-        inner(pos, range, reach_set, total_count, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEditChecker as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapEditChecker as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: MapEditChecker, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapEditChecker, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MapEditChecker_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_check { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapEditChecker as :: unity2 :: ClassIdentity > :: class () , "Check" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapEditChecker as :: unity2 :: ClassIdentity > :: NAME , "Check" , e) , } } } pub unsafe fn check (is_opponent : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (bool , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_check :: get_method_info () . method_ptr ,) ; inner (is_opponent , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_size_x { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapEditChecker as :: unity2 :: ClassIdentity > :: class () , "get_SizeX" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapEditChecker as :: unity2 :: ClassIdentity > :: NAME , "get_SizeX" , e) , } } } pub unsafe fn get_size_x (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_size_x :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_size_z { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapEditChecker as :: unity2 :: ClassIdentity > :: class () , "get_SizeZ" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapEditChecker as :: unity2 :: ClassIdentity > :: NAME , "get_SizeZ" , e) , } } } pub unsafe fn get_size_z (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_size_z :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_unit_count { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapEditChecker as :: unity2 :: ClassIdentity > :: class () , "GetUnitCount" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapEditChecker as :: unity2 :: ClassIdentity > :: NAME , "GetUnitCount" , e) , } } } pub unsafe fn get_unit_count (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_unit_count :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_opponent_count { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapEditChecker as :: unity2 :: ClassIdentity > :: class () , "GetOpponentCount" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapEditChecker as :: unity2 :: ClassIdentity > :: NAME , "GetOpponentCount" , e) , } } } pub unsafe fn get_opponent_count (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_opponent_count :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_can_move { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapEditChecker as :: unity2 :: ClassIdentity > :: class () , "CanMove" , 3 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapEditChecker as :: unity2 :: ClassIdentity > :: NAME , "CanMove" , e) , } } } pub unsafe fn can_move (x : i32 , z : i32 , breakable_is_true : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (i32 , i32 , bool , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_can_move :: get_method_info () . method_ptr ,) ; inner (x , z , breakable_is_true , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_can_move_breakable { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapEditChecker as :: unity2 :: ClassIdentity > :: class () , "CanMoveBreakable" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapEditChecker as :: unity2 :: ClassIdentity > :: NAME , "CanMoveBreakable" , e) , } } } pub unsafe fn can_move_breakable (x : i32 , z : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (i32 , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_can_move_breakable :: get_method_info () . method_ptr ,) ; inner (x , z , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_terrain { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapEditChecker as :: unity2 :: ClassIdentity > :: class () , "GetTerrain" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapEditChecker as :: unity2 :: ClassIdentity > :: NAME , "GetTerrain" , e) , } } } pub unsafe fn get_terrain (x : i32 , z : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: terraindata_2 :: TerrainData_2 { let inner : extern "C" fn (i32 , i32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: terraindata_2 :: TerrainData_2 = :: core :: mem :: transmute (__lookup_get_terrain :: get_method_info () . method_ptr ,) ; inner (x , z , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_exists_unit { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapEditChecker as :: unity2 :: ClassIdentity > :: class () , "ExistsUnit" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapEditChecker as :: unity2 :: ClassIdentity > :: NAME , "ExistsUnit" , e) , } } } pub unsafe fn exists_unit (x : i32 , z : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (i32 , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_exists_unit :: get_method_info () . method_ptr ,) ; inner (x , z , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_check_my_map { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapEditChecker as :: unity2 :: ClassIdentity > :: class () , "CheckMyMap" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapEditChecker as :: unity2 :: ClassIdentity > :: NAME , "CheckMyMap" , e) , } } } pub unsafe fn check_my_map (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_check_my_map :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_check_opponent_map { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapEditChecker as :: unity2 :: ClassIdentity > :: class () , "CheckOpponentMap" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapEditChecker as :: unity2 :: ClassIdentity > :: NAME , "CheckOpponentMap" , e) , } } } pub unsafe fn check_opponent_map (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_check_opponent_map :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_check_recursive { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: mappos :: MapPos as :: unity2 :: IlType > :: il_type () , < crate :: app :: mapeditchecker :: MapEditChecker_CheckRange as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: hashset_1 :: HashSet_1 < crate :: app :: mappos :: MapPos > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapEditChecker as :: unity2 :: ClassIdentity > :: class () , "CheckRecursive" , 4 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapEditChecker as :: unity2 :: ClassIdentity > :: NAME , "CheckRecursive" , e) , } } } pub unsafe fn check_recursive (pos : crate :: app :: mappos :: MapPos , range : crate :: app :: mapeditchecker :: MapEditChecker_CheckRange , reach_set : crate :: system :: collections :: generic :: hashset_1 :: HashSet_1 < crate :: app :: mappos :: MapPos > , total_count : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (crate :: app :: mappos :: MapPos , crate :: app :: mapeditchecker :: MapEditChecker_CheckRange , crate :: system :: collections :: generic :: hashset_1 :: HashSet_1 < crate :: app :: mappos :: MapPos > , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_check_recursive :: get_method_info () . method_ptr ,) ; inner (pos , range , reach_set , total_count , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapEditChecker as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapEditChecker as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : MapEditChecker , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapEditChecker , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-mapeditchecker")]
+impl MapEditChecker { # [doc = "`Check(bool)` overload"] pub fn check (is_opponent : impl :: core :: convert :: Into < bool >) -> bool { unsafe { __MapEditChecker_unity2_raw :: check (:: core :: convert :: Into :: into (is_opponent) , :: core :: option :: Option :: None) } } # [doc = "`get_SizeX()` overload"] pub fn get_size_x () -> i32 { unsafe { __MapEditChecker_unity2_raw :: get_size_x (:: core :: option :: Option :: None) } } # [doc = "`get_SizeZ()` overload"] pub fn get_size_z () -> i32 { unsafe { __MapEditChecker_unity2_raw :: get_size_z (:: core :: option :: Option :: None) } } # [doc = "`GetUnitCount()` overload"] pub fn get_unit_count () -> i32 { unsafe { __MapEditChecker_unity2_raw :: get_unit_count (:: core :: option :: Option :: None) } } # [doc = "`GetOpponentCount()` overload"] pub fn get_opponent_count () -> i32 { unsafe { __MapEditChecker_unity2_raw :: get_opponent_count (:: core :: option :: Option :: None) } } # [doc = "`CanMove(i32, i32, bool)` overload"] pub fn can_move (x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 > , breakable_is_true : impl :: core :: convert :: Into < bool >) -> bool { unsafe { __MapEditChecker_unity2_raw :: can_move (:: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: convert :: Into :: into (breakable_is_true) , :: core :: option :: Option :: None) } } # [doc = "`CanMoveBreakable(i32, i32)` overload"] pub fn can_move_breakable (x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { __MapEditChecker_unity2_raw :: can_move_breakable (:: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } # [doc = "`GetTerrain(i32, i32)` overload"] pub fn get_terrain (x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 >) -> crate :: app :: terraindata_2 :: TerrainData_2 { unsafe { __MapEditChecker_unity2_raw :: get_terrain (:: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } # [doc = "`ExistsUnit(i32, i32)` overload"] pub fn exists_unit (x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { __MapEditChecker_unity2_raw :: exists_unit (:: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } # [doc = "`CheckMyMap()` overload"] pub fn check_my_map () -> bool { unsafe { __MapEditChecker_unity2_raw :: check_my_map (:: core :: option :: Option :: None) } } # [doc = "`CheckOpponentMap()` overload"] pub fn check_opponent_map () -> bool { unsafe { __MapEditChecker_unity2_raw :: check_opponent_map (:: core :: option :: Option :: None) } } # [doc = "`CheckRecursive(crate::app::mappos::MapPos, crate::app::mapeditchecker::MapEditChecker_CheckRange, crate::system::collections::generic::hashset_1::HashSet_1<crate::app::mappos::MapPos>, i32)` overload"] pub fn check_recursive (pos : impl :: core :: convert :: Into < crate :: app :: mappos :: MapPos > , range : impl :: core :: convert :: Into < crate :: app :: mapeditchecker :: MapEditChecker_CheckRange > , reach_set : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: hashset_1 :: HashSet_1 < crate :: app :: mappos :: MapPos > > , total_count : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { __MapEditChecker_unity2_raw :: check_recursive (:: core :: convert :: Into :: into (pos) , :: core :: convert :: Into :: into (range) , :: core :: convert :: Into :: into (reach_set) , :: core :: convert :: Into :: into (total_count) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-mapeditchecker")]
+pub trait IMapEditCheckerMethods : IMapEditChecker { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapEditChecker as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapEditChecker_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-mapeditchecker")]
+impl < __T : IMapEditChecker > IMapEditCheckerMethods for __T { }
+
+#[cfg(feature = "app-mapeditchecker")]
+impl MapEditChecker { pub fn check_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapEditChecker_unity2_raw :: __lookup_check :: get_method_info () } pub fn get_size_x_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapEditChecker_unity2_raw :: __lookup_get_size_x :: get_method_info () } pub fn get_size_z_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapEditChecker_unity2_raw :: __lookup_get_size_z :: get_method_info () } pub fn get_unit_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapEditChecker_unity2_raw :: __lookup_get_unit_count :: get_method_info () } pub fn get_opponent_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapEditChecker_unity2_raw :: __lookup_get_opponent_count :: get_method_info () } pub fn can_move_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapEditChecker_unity2_raw :: __lookup_can_move :: get_method_info () } pub fn can_move_breakable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapEditChecker_unity2_raw :: __lookup_can_move_breakable :: get_method_info () } pub fn get_terrain_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapEditChecker_unity2_raw :: __lookup_get_terrain :: get_method_info () } pub fn exists_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapEditChecker_unity2_raw :: __lookup_exists_unit :: get_method_info () } pub fn check_my_map_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapEditChecker_unity2_raw :: __lookup_check_my_map :: get_method_info () } pub fn check_opponent_map_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapEditChecker_unity2_raw :: __lookup_check_opponent_map :: get_method_info () } pub fn check_recursive_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapEditChecker_unity2_raw :: __lookup_check_recursive :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapEditChecker_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-mapeditchecker")]
 impl MapEditChecker {
-    #[doc = "`Check(bool)` overload"]
-    pub fn check(is_opponent: impl ::core::convert::Into<bool>) -> bool {
-        unsafe { __MapEditChecker_unity2_raw::check(::core::convert::Into::into(is_opponent), ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_SizeX()` overload"]
-    pub fn get_size_x() -> i32 {
-        unsafe { __MapEditChecker_unity2_raw::get_size_x(::core::option::Option::None) }
-    }
-
-    #[doc = "`get_SizeZ()` overload"]
-    pub fn get_size_z() -> i32 {
-        unsafe { __MapEditChecker_unity2_raw::get_size_z(::core::option::Option::None) }
-    }
-
-    #[doc = "`GetUnitCount()` overload"]
-    pub fn get_unit_count() -> i32 {
-        unsafe { __MapEditChecker_unity2_raw::get_unit_count(::core::option::Option::None) }
-    }
-
-    #[doc = "`GetOpponentCount()` overload"]
-    pub fn get_opponent_count() -> i32 {
-        unsafe { __MapEditChecker_unity2_raw::get_opponent_count(::core::option::Option::None) }
-    }
-
-    #[doc = "`CanMove(i32, i32, bool)` overload"]
-    pub fn can_move(
-        x: impl ::core::convert::Into<i32>,
-        z: impl ::core::convert::Into<i32>,
-        breakable_is_true: impl ::core::convert::Into<bool>,
-    ) -> bool {
-        unsafe {
-            __MapEditChecker_unity2_raw::can_move(
-                ::core::convert::Into::into(x),
-                ::core::convert::Into::into(z),
-                ::core::convert::Into::into(breakable_is_true),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`CanMoveBreakable(i32, i32)` overload"]
-    pub fn can_move_breakable(x: impl ::core::convert::Into<i32>, z: impl ::core::convert::Into<i32>) -> bool {
-        unsafe {
-            __MapEditChecker_unity2_raw::can_move_breakable(
-                ::core::convert::Into::into(x),
-                ::core::convert::Into::into(z),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`GetTerrain(i32, i32)` overload"]
-    pub fn get_terrain(x: impl ::core::convert::Into<i32>, z: impl ::core::convert::Into<i32>) -> crate::app::terraindata_2::TerrainData_2 {
-        unsafe {
-            __MapEditChecker_unity2_raw::get_terrain(
-                ::core::convert::Into::into(x),
-                ::core::convert::Into::into(z),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`ExistsUnit(i32, i32)` overload"]
-    pub fn exists_unit(x: impl ::core::convert::Into<i32>, z: impl ::core::convert::Into<i32>) -> bool {
-        unsafe {
-            __MapEditChecker_unity2_raw::exists_unit(
-                ::core::convert::Into::into(x),
-                ::core::convert::Into::into(z),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`CheckMyMap()` overload"]
-    pub fn check_my_map() -> bool {
-        unsafe { __MapEditChecker_unity2_raw::check_my_map(::core::option::Option::None) }
-    }
-
-    #[doc = "`CheckOpponentMap()` overload"]
-    pub fn check_opponent_map() -> bool {
-        unsafe { __MapEditChecker_unity2_raw::check_opponent_map(::core::option::Option::None) }
-    }
-
-    #[doc = "`CheckRecursive(crate::app::mappos::MapPos, crate::app::mapeditchecker::MapEditChecker_CheckRange, crate::system::collections::generic::hashset_1::HashSet_1<crate::app::mappos::MapPos>, i32)` overload"]
-    pub fn check_recursive(
-        pos: impl ::core::convert::Into<crate::app::mappos::MapPos>,
-        range: impl ::core::convert::Into<crate::app::mapeditchecker::MapEditChecker_CheckRange>,
-        reach_set: impl ::core::convert::Into<crate::system::collections::generic::hashset_1::HashSet_1<crate::app::mappos::MapPos>>,
-        total_count: impl ::core::convert::Into<i32>,
-    ) -> i32 {
-        unsafe {
-            __MapEditChecker_unity2_raw::check_recursive(
-                ::core::convert::Into::into(pos),
-                ::core::convert::Into::into(range),
-                ::core::convert::Into::into(reach_set),
-                ::core::convert::Into::into(total_count),
-                ::core::option::Option::None,
-            )
-        }
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapEditChecker) , :: core :: stringify ! (new) ,)) ; < Self as IMapEditCheckerMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-mapeditchecker")]
-pub trait IMapEditCheckerMethods: IMapEditChecker {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <MapEditChecker as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapEditChecker_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MapEditChecker_CheckRange_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapEditChecker_CheckRange as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 4 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapEditChecker_CheckRange as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : MapEditChecker_CheckRange , x1 : i32 , x2 : i32 , z1 : i32 , z2 : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapEditChecker_CheckRange , i32 , i32 , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , x1 , x2 , z1 , z2 , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_range { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: mappos :: MapPos as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapEditChecker_CheckRange as :: unity2 :: ClassIdentity > :: class () , "IsRange" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapEditChecker_CheckRange as :: unity2 :: ClassIdentity > :: NAME , "IsRange" , e) , } } } pub unsafe fn is_range (this : MapEditChecker_CheckRange , pos : crate :: app :: mappos :: MapPos , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (MapEditChecker_CheckRange , crate :: app :: mappos :: MapPos , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_range :: get_method_info () . method_ptr ,) ; inner (this , pos , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_range_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapEditChecker_CheckRange as :: unity2 :: ClassIdentity > :: class () , "IsRange" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapEditChecker_CheckRange as :: unity2 :: ClassIdentity > :: NAME , "IsRange" , e) , } } } pub unsafe fn is_range_2 (this : MapEditChecker_CheckRange , x : i32 , z : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (MapEditChecker_CheckRange , i32 , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_range_2 :: get_method_info () . method_ptr ,) ; inner (this , x , z , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_dispose { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapEditChecker_CheckRange as :: unity2 :: ClassIdentity > :: class () , "Dispose" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapEditChecker_CheckRange as :: unity2 :: ClassIdentity > :: NAME , "Dispose" , e) , } } } pub unsafe fn dispose (this : MapEditChecker_CheckRange , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapEditChecker_CheckRange , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_dispose :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_to_string { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapEditChecker_CheckRange as :: unity2 :: ClassIdentity > :: class () , "ToString" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapEditChecker_CheckRange as :: unity2 :: ClassIdentity > :: NAME , "ToString" , e) , } } } pub unsafe fn to_string (this : MapEditChecker_CheckRange , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (MapEditChecker_CheckRange , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_to_string :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-mapeditchecker")]
-impl<__T: IMapEditChecker> IMapEditCheckerMethods for __T {}
+impl MapEditChecker_CheckRange { # [doc = "`.ctor(i32, i32, i32, i32)` overload"] pub fn ctor (self , x1 : impl :: core :: convert :: Into < i32 > , x2 : impl :: core :: convert :: Into < i32 > , z1 : impl :: core :: convert :: Into < i32 > , z2 : impl :: core :: convert :: Into < i32 >) -> () { unsafe { __MapEditChecker_CheckRange_unity2_raw :: ctor (self , :: core :: convert :: Into :: into (x1) , :: core :: convert :: Into :: into (x2) , :: core :: convert :: Into :: into (z1) , :: core :: convert :: Into :: into (z2) , :: core :: option :: Option :: None) } } # [doc = "`IsRange(crate::app::mappos::MapPos)` overload"] pub fn is_range (self , pos : impl :: core :: convert :: Into < crate :: app :: mappos :: MapPos >) -> bool { unsafe { __MapEditChecker_CheckRange_unity2_raw :: is_range (self , :: core :: convert :: Into :: into (pos) , :: core :: option :: Option :: None) } } # [doc = "`IsRange(i32, i32)` overload"] pub fn is_range_2 (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { __MapEditChecker_CheckRange_unity2_raw :: is_range_2 (self , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } # [doc = "`Dispose()` overload"] pub fn dispose (self ,) -> () { unsafe { __MapEditChecker_CheckRange_unity2_raw :: dispose (self , :: core :: option :: Option :: None) } } # [doc = "`ToString()` overload"] pub fn to_string (self ,) -> :: unity2 :: Il2CppString { unsafe { __MapEditChecker_CheckRange_unity2_raw :: to_string (self , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-mapeditchecker")]
-impl MapEditChecker {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapEditChecker),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapEditCheckerMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-mapeditchecker")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapEditChecker_CheckRange_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEditChecker_CheckRange as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                4,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapEditChecker_CheckRange as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: MapEditChecker_CheckRange, x1: i32, x2: i32, z1: i32, z2: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapEditChecker_CheckRange, i32, i32, i32, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, x1, x2, z1, z2, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_range {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::mappos::MapPos as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEditChecker_CheckRange as ::unity2::ClassIdentity>::class(),
-                "IsRange",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapEditChecker_CheckRange as ::unity2::ClassIdentity>::NAME,
-                        "IsRange",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_range(this: MapEditChecker_CheckRange, pos: crate::app::mappos::MapPos, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(MapEditChecker_CheckRange, crate::app::mappos::MapPos, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_range::get_method_info().method_ptr);
-        inner(this, pos, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_range_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEditChecker_CheckRange as ::unity2::ClassIdentity>::class(),
-                "IsRange",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapEditChecker_CheckRange as ::unity2::ClassIdentity>::NAME,
-                        "IsRange",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_range_2(this: MapEditChecker_CheckRange, x: i32, z: i32, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(MapEditChecker_CheckRange, i32, i32, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_range_2::get_method_info().method_ptr);
-        inner(this, x, z, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_dispose {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEditChecker_CheckRange as ::unity2::ClassIdentity>::class(),
-                "Dispose",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapEditChecker_CheckRange as ::unity2::ClassIdentity>::NAME,
-                        "Dispose",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn dispose(this: MapEditChecker_CheckRange, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapEditChecker_CheckRange, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_dispose::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_to_string {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEditChecker_CheckRange as ::unity2::ClassIdentity>::class(),
-                "ToString",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapEditChecker_CheckRange as ::unity2::ClassIdentity>::NAME,
-                        "ToString",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn to_string(this: MapEditChecker_CheckRange, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(MapEditChecker_CheckRange, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_to_string::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-mapeditchecker")]
-impl MapEditChecker_CheckRange {
-    #[doc = "`.ctor(i32, i32, i32, i32)` overload"]
-    pub fn ctor(
-        self,
-        x1: impl ::core::convert::Into<i32>,
-        x2: impl ::core::convert::Into<i32>,
-        z1: impl ::core::convert::Into<i32>,
-        z2: impl ::core::convert::Into<i32>,
-    ) -> () {
-        unsafe {
-            __MapEditChecker_CheckRange_unity2_raw::ctor(
-                self,
-                ::core::convert::Into::into(x1),
-                ::core::convert::Into::into(x2),
-                ::core::convert::Into::into(z1),
-                ::core::convert::Into::into(z2),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`IsRange(crate::app::mappos::MapPos)` overload"]
-    pub fn is_range(self, pos: impl ::core::convert::Into<crate::app::mappos::MapPos>) -> bool {
-        unsafe { __MapEditChecker_CheckRange_unity2_raw::is_range(self, ::core::convert::Into::into(pos), ::core::option::Option::None) }
-    }
-
-    #[doc = "`IsRange(i32, i32)` overload"]
-    pub fn is_range_2(self, x: impl ::core::convert::Into<i32>, z: impl ::core::convert::Into<i32>) -> bool {
-        unsafe {
-            __MapEditChecker_CheckRange_unity2_raw::is_range_2(
-                self,
-                ::core::convert::Into::into(x),
-                ::core::convert::Into::into(z),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`Dispose()` overload"]
-    pub fn dispose(self) -> () {
-        unsafe { __MapEditChecker_CheckRange_unity2_raw::dispose(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`ToString()` overload"]
-    pub fn to_string(self) -> ::unity2::Il2CppString {
-        unsafe { __MapEditChecker_CheckRange_unity2_raw::to_string(self, ::core::option::Option::None) }
-    }
-}
+impl MapEditChecker_CheckRange { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapEditChecker_CheckRange_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn is_range_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapEditChecker_CheckRange_unity2_raw :: __lookup_is_range :: get_method_info () } pub fn is_range_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapEditChecker_CheckRange_unity2_raw :: __lookup_is_range_2 :: get_method_info () } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapEditChecker_CheckRange_unity2_raw :: __lookup_dispose :: get_method_info () } pub fn to_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapEditChecker_CheckRange_unity2_raw :: __lookup_to_string :: get_method_info () } }
 
 #[cfg(feature = "app-mapeditchecker")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IMapEditChecker, IMapEditCheckerMethods, MapEditChecker, MapEditChecker_CheckRange};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::system::{object::IObject, valuetype::IValueType};
+    pub use super::MapEditChecker;
+    pub use super::IMapEditChecker;
+    pub use super::IMapEditCheckerMethods;
+    pub use super::MapEditChecker_CheckRange;
+    pub use crate::system::object::IObject;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

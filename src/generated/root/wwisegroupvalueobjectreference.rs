@@ -2,298 +2,55 @@
 
 #[cfg(feature = "root-wwisegroupvalueobjectreference-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        root::wwiseobjectreference::{IWwiseObjectReference, WwiseObjectReference},
-        system::object::{IObject, Object},
-        unity_engine::{
-            object_2::{IObject_2, Object_2},
-            scriptableobject::{IScriptableObject, ScriptableObject},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/wwisegroupvalueobjectreference/WwiseGroupValueObjectReference.md"))]
-    #[::unity2::class(namespace = "", name = "WwiseGroupValueObjectReference")]
-    #[parent(crate::root::wwiseobjectreference::WwiseObjectReference)]
-    pub struct WwiseGroupValueObjectReference {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: root :: wwiseobjectreference :: { IWwiseObjectReference , WwiseObjectReference }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+ use crate :: unity_engine :: scriptableobject :: { IScriptableObject , ScriptableObject }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/wwisegroupvalueobjectreference/WwiseGroupValueObjectReference.md"))] # [:: unity2 :: class (namespace = "" , name = "WwiseGroupValueObjectReference")] # [parent (crate :: root :: wwiseobjectreference :: WwiseObjectReference)] pub struct WwiseGroupValueObjectReference {}
+
 }
 
 #[cfg(feature = "root-wwisegroupvalueobjectreference-types")]
 pub use __types::*;
 
 #[cfg(feature = "root-wwisegroupvalueobjectreference")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __WwiseGroupValueObjectReference_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_group_object_reference {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WwiseGroupValueObjectReference as ::unity2::ClassIdentity>::class(),
-                "get_GroupObjectReference",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WwiseGroupValueObjectReference as ::unity2::ClassIdentity>::NAME,
-                        "get_GroupObjectReference",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_group_object_reference(
-        this: WwiseGroupValueObjectReference,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::root::wwiseobjectreference::WwiseObjectReference {
-        let inner: extern "C" fn(
-            WwiseGroupValueObjectReference,
-            ::unity2::OptionalMethod,
-        ) -> crate::root::wwiseobjectreference::WwiseObjectReference =
-            ::core::mem::transmute(__lookup_get_group_object_reference::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_group_object_reference {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::root::wwiseobjectreference::WwiseObjectReference as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WwiseGroupValueObjectReference as ::unity2::ClassIdentity>::class(),
-                "set_GroupObjectReference",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WwiseGroupValueObjectReference as ::unity2::ClassIdentity>::NAME,
-                        "set_GroupObjectReference",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_group_object_reference(
-        this: WwiseGroupValueObjectReference,
-        value: crate::root::wwiseobjectreference::WwiseObjectReference,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            WwiseGroupValueObjectReference,
-            crate::root::wwiseobjectreference::WwiseObjectReference,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_set_group_object_reference::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_group_wwise_object_type {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WwiseGroupValueObjectReference as ::unity2::ClassIdentity>::class(),
-                "get_GroupWwiseObjectType",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WwiseGroupValueObjectReference as ::unity2::ClassIdentity>::NAME,
-                        "get_GroupWwiseObjectType",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_group_wwise_object_type(
-        this: WwiseGroupValueObjectReference,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::root::wwiseobjecttype::WwiseObjectType {
-        let inner: extern "C" fn(WwiseGroupValueObjectReference, ::unity2::OptionalMethod) -> crate::root::wwiseobjecttype::WwiseObjectType =
-            ::core::mem::transmute(__lookup_get_group_wwise_object_type::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_display_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WwiseGroupValueObjectReference as ::unity2::ClassIdentity>::class(),
-                "get_DisplayName",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WwiseGroupValueObjectReference as ::unity2::ClassIdentity>::NAME,
-                        "get_DisplayName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_display_name(this: WwiseGroupValueObjectReference, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(WwiseGroupValueObjectReference, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_display_name::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WwiseGroupValueObjectReference as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WwiseGroupValueObjectReference as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: WwiseGroupValueObjectReference, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(WwiseGroupValueObjectReference, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __WwiseGroupValueObjectReference_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_group_object_reference { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WwiseGroupValueObjectReference as :: unity2 :: ClassIdentity > :: class () , "get_GroupObjectReference" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WwiseGroupValueObjectReference as :: unity2 :: ClassIdentity > :: NAME , "get_GroupObjectReference" , e) , } } } pub unsafe fn get_group_object_reference (this : WwiseGroupValueObjectReference , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: root :: wwiseobjectreference :: WwiseObjectReference { let inner : extern "C" fn (WwiseGroupValueObjectReference , :: unity2 :: OptionalMethod ,) -> crate :: root :: wwiseobjectreference :: WwiseObjectReference = :: core :: mem :: transmute (__lookup_get_group_object_reference :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_group_object_reference { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: root :: wwiseobjectreference :: WwiseObjectReference as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WwiseGroupValueObjectReference as :: unity2 :: ClassIdentity > :: class () , "set_GroupObjectReference" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WwiseGroupValueObjectReference as :: unity2 :: ClassIdentity > :: NAME , "set_GroupObjectReference" , e) , } } } pub unsafe fn set_group_object_reference (this : WwiseGroupValueObjectReference , value : crate :: root :: wwiseobjectreference :: WwiseObjectReference , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (WwiseGroupValueObjectReference , crate :: root :: wwiseobjectreference :: WwiseObjectReference , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_group_object_reference :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_group_wwise_object_type { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WwiseGroupValueObjectReference as :: unity2 :: ClassIdentity > :: class () , "get_GroupWwiseObjectType" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WwiseGroupValueObjectReference as :: unity2 :: ClassIdentity > :: NAME , "get_GroupWwiseObjectType" , e) , } } } pub unsafe fn get_group_wwise_object_type (this : WwiseGroupValueObjectReference , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: root :: wwiseobjecttype :: WwiseObjectType { let inner : extern "C" fn (WwiseGroupValueObjectReference , :: unity2 :: OptionalMethod ,) -> crate :: root :: wwiseobjecttype :: WwiseObjectType = :: core :: mem :: transmute (__lookup_get_group_wwise_object_type :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_display_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WwiseGroupValueObjectReference as :: unity2 :: ClassIdentity > :: class () , "get_DisplayName" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WwiseGroupValueObjectReference as :: unity2 :: ClassIdentity > :: NAME , "get_DisplayName" , e) , } } } pub unsafe fn get_display_name (this : WwiseGroupValueObjectReference , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (WwiseGroupValueObjectReference , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_display_name :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WwiseGroupValueObjectReference as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WwiseGroupValueObjectReference as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : WwiseGroupValueObjectReference , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (WwiseGroupValueObjectReference , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "root-wwisegroupvalueobjectreference")]
-pub trait IWwiseGroupValueObjectReferenceMethods: IWwiseGroupValueObjectReference {
-    #[doc = "`get_GroupObjectReference()` overload"]
-    fn get_group_object_reference(self) -> crate::root::wwiseobjectreference::WwiseObjectReference {
-        unsafe {
-            let __receiver =
-                <WwiseGroupValueObjectReference as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __WwiseGroupValueObjectReference_unity2_raw::get_group_object_reference(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_GroupObjectReference(crate::root::wwiseobjectreference::WwiseObjectReference)` overload"]
-    fn set_group_object_reference(self, value: impl ::core::convert::Into<crate::root::wwiseobjectreference::WwiseObjectReference>) -> () {
-        unsafe {
-            let __receiver =
-                <WwiseGroupValueObjectReference as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __WwiseGroupValueObjectReference_unity2_raw::set_group_object_reference(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_GroupWwiseObjectType()` overload"]
-    fn get_group_wwise_object_type(self) -> crate::root::wwiseobjecttype::WwiseObjectType {
-        unsafe {
-            let __receiver =
-                <WwiseGroupValueObjectReference as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __WwiseGroupValueObjectReference_unity2_raw::get_group_wwise_object_type(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_DisplayName()` overload"]
-    fn get_display_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver =
-                <WwiseGroupValueObjectReference as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __WwiseGroupValueObjectReference_unity2_raw::get_display_name(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <WwiseGroupValueObjectReference as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __WwiseGroupValueObjectReference_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IWwiseGroupValueObjectReferenceMethods : IWwiseGroupValueObjectReference { # [doc = "`get_GroupObjectReference()` overload"] fn get_group_object_reference (self ,) -> crate :: root :: wwiseobjectreference :: WwiseObjectReference { unsafe { let __receiver = < WwiseGroupValueObjectReference as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __WwiseGroupValueObjectReference_unity2_raw :: get_group_object_reference (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_GroupObjectReference(crate::root::wwiseobjectreference::WwiseObjectReference)` overload"] fn set_group_object_reference (self , value : impl :: core :: convert :: Into < crate :: root :: wwiseobjectreference :: WwiseObjectReference >) -> () { unsafe { let __receiver = < WwiseGroupValueObjectReference as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __WwiseGroupValueObjectReference_unity2_raw :: set_group_object_reference (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_GroupWwiseObjectType()` overload"] fn get_group_wwise_object_type (self ,) -> crate :: root :: wwiseobjecttype :: WwiseObjectType { unsafe { let __receiver = < WwiseGroupValueObjectReference as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __WwiseGroupValueObjectReference_unity2_raw :: get_group_wwise_object_type (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_DisplayName()` overload"] fn get_display_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < WwiseGroupValueObjectReference as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __WwiseGroupValueObjectReference_unity2_raw :: get_display_name (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < WwiseGroupValueObjectReference as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __WwiseGroupValueObjectReference_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "root-wwisegroupvalueobjectreference")]
-impl<__T: IWwiseGroupValueObjectReference> IWwiseGroupValueObjectReferenceMethods for __T {}
+impl < __T : IWwiseGroupValueObjectReference > IWwiseGroupValueObjectReferenceMethods for __T { }
+
+#[cfg(feature = "root-wwisegroupvalueobjectreference")]
+impl WwiseGroupValueObjectReference { pub fn get_group_object_reference_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WwiseGroupValueObjectReference_unity2_raw :: __lookup_get_group_object_reference :: get_method_info () } pub fn set_group_object_reference_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WwiseGroupValueObjectReference_unity2_raw :: __lookup_set_group_object_reference :: get_method_info () } pub fn get_group_wwise_object_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WwiseGroupValueObjectReference_unity2_raw :: __lookup_get_group_wwise_object_type :: get_method_info () } pub fn get_display_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WwiseGroupValueObjectReference_unity2_raw :: __lookup_get_display_name :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WwiseGroupValueObjectReference_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "root-wwisegroupvalueobjectreference")]
 impl WwiseGroupValueObjectReference {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(WwiseGroupValueObjectReference),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IWwiseGroupValueObjectReferenceMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (WwiseGroupValueObjectReference) , :: core :: stringify ! (new) ,)) ; < Self as IWwiseGroupValueObjectReferenceMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "root-wwisegroupvalueobjectreference")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IWwiseGroupValueObjectReference, IWwiseGroupValueObjectReferenceMethods, WwiseGroupValueObjectReference};
-    #[cfg(feature = "root-wwiseobjectreference")]
-    pub use crate::root::wwiseobjectreference::IWwiseObjectReferenceMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    #[cfg(feature = "unity_engine-scriptableobject")]
-    pub use crate::unity_engine::scriptableobject::IScriptableObjectMethods;
-    pub use crate::{
-        root::wwiseobjectreference::IWwiseObjectReference,
-        system::object::IObject,
-        unity_engine::{object_2::IObject_2, scriptableobject::IScriptableObject},
-    };
+    pub use super::WwiseGroupValueObjectReference;
+    pub use super::IWwiseGroupValueObjectReference;
+    pub use super::IWwiseGroupValueObjectReferenceMethods;
+    pub use crate::root::wwiseobjectreference::IWwiseObjectReference;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::object_2::IObject_2;
+    pub use crate::unity_engine::scriptableobject::IScriptableObject;
+    #[cfg(feature = "root-wwiseobjectreference")] pub use crate::root::wwiseobjectreference::IWwiseObjectReferenceMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
+    #[cfg(feature = "unity_engine-scriptableobject")] pub use crate::unity_engine::scriptableobject::IScriptableObjectMethods;
 }

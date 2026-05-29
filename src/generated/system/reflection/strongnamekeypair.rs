@@ -2,103 +2,43 @@
 
 #[cfg(feature = "system-reflection-strongnamekeypair-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/strongnamekeypair/StrongNameKeyPair.md"))]
-    #[::unity2::class(namespace = "System.Reflection", name = "StrongNameKeyPair")]
-    #[parent(crate::system::object::Object)]
-    pub struct StrongNameKeyPair {
-        #[offset(16)]
-        #[rename(name = "_publicKey")]
-        pub public_key: ::unity2::Array<u8>,
-        #[offset(24)]
-        #[rename(name = "_keyPairContainer")]
-        pub key_pair_container: ::unity2::Il2CppString,
-        #[offset(32)]
-        #[rename(name = "_keyPairExported")]
-        pub key_pair_exported: bool,
-        #[offset(40)]
-        #[rename(name = "_keyPairArray")]
-        pub key_pair_array: ::unity2::Array<u8>,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/strongnamekeypair/StrongNameKeyPair.md"))] # [:: unity2 :: class (namespace = "System.Reflection" , name = "StrongNameKeyPair")] # [parent (crate :: system :: object :: Object)] pub struct StrongNameKeyPair {
+# [offset (16)] # [rename (name = "_publicKey")] pub public_key : :: unity2 :: Array < u8 > ,
+# [offset (24)] # [rename (name = "_keyPairContainer")] pub key_pair_container : :: unity2 :: Il2CppString ,
+# [offset (32)] # [rename (name = "_keyPairExported")] pub key_pair_exported : bool ,
+# [offset (40)] # [rename (name = "_keyPairArray")] pub key_pair_array : :: unity2 :: Array < u8 > ,
+}
+
 }
 
 #[cfg(feature = "system-reflection-strongnamekeypair-types")]
 pub use __types::*;
 
 #[cfg(feature = "system-reflection-strongnamekeypair")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __StrongNameKeyPair_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_system_runtime_serialization_i_deserialization_callback_on_deserialization {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <StrongNameKeyPair as ::unity2::ClassIdentity>::class(),
-                "System.Runtime.Serialization.IDeserializationCallback.OnDeserialization",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <StrongNameKeyPair as ::unity2::ClassIdentity>::NAME,
-                        "System.Runtime.Serialization.IDeserializationCallback.OnDeserialization",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn system_runtime_serialization_i_deserialization_callback_on_deserialization(
-        this: StrongNameKeyPair,
-        sender: crate::system::object::Object,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(StrongNameKeyPair, crate::system::object::Object, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_system_runtime_serialization_i_deserialization_callback_on_deserialization::get_method_info().method_ptr);
-        inner(this, sender, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __StrongNameKeyPair_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_system_runtime_serialization_i_deserialization_callback_on_deserialization { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< StrongNameKeyPair as :: unity2 :: ClassIdentity > :: class () , "System.Runtime.Serialization.IDeserializationCallback.OnDeserialization" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < StrongNameKeyPair as :: unity2 :: ClassIdentity > :: NAME , "System.Runtime.Serialization.IDeserializationCallback.OnDeserialization" , e) , } } } pub unsafe fn system_runtime_serialization_i_deserialization_callback_on_deserialization (this : StrongNameKeyPair , sender : crate :: system :: object :: Object , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (StrongNameKeyPair , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_system_runtime_serialization_i_deserialization_callback_on_deserialization :: get_method_info () . method_ptr ,) ; inner (this , sender , __unity2_method_info) } }
 
 #[cfg(feature = "system-reflection-strongnamekeypair")]
-pub trait IStrongNameKeyPairMethods: IStrongNameKeyPair {
-    #[doc = "`System.Runtime.Serialization.IDeserializationCallback.OnDeserialization(crate::system::object::Object)` overload"]
-    fn system_runtime_serialization_i_deserialization_callback_on_deserialization(
-        self,
-        sender: impl ::core::convert::Into<crate::system::object::Object>,
-    ) -> () {
-        unsafe {
-            let __receiver = <StrongNameKeyPair as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __StrongNameKeyPair_unity2_raw::system_runtime_serialization_i_deserialization_callback_on_deserialization(
-                __receiver,
-                ::core::convert::Into::into(sender),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+pub trait IStrongNameKeyPairMethods : IStrongNameKeyPair { # [doc = "`System.Runtime.Serialization.IDeserializationCallback.OnDeserialization(crate::system::object::Object)` overload"] fn system_runtime_serialization_i_deserialization_callback_on_deserialization (self , sender : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> () { unsafe { let __receiver = < StrongNameKeyPair as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __StrongNameKeyPair_unity2_raw :: system_runtime_serialization_i_deserialization_callback_on_deserialization (__receiver , :: core :: convert :: Into :: into (sender) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "system-reflection-strongnamekeypair")]
-impl<__T: IStrongNameKeyPair> IStrongNameKeyPairMethods for __T {}
+impl < __T : IStrongNameKeyPair > IStrongNameKeyPairMethods for __T { }
+
+#[cfg(feature = "system-reflection-strongnamekeypair")]
+impl StrongNameKeyPair { pub fn system_runtime_serialization_i_deserialization_callback_on_deserialization_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __StrongNameKeyPair_unity2_raw :: __lookup_system_runtime_serialization_i_deserialization_callback_on_deserialization :: get_method_info () } }
 
 #[cfg(feature = "system-reflection-strongnamekeypair")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IStrongNameKeyPair, IStrongNameKeyPairMethods, StrongNameKeyPair};
+    pub use super::StrongNameKeyPair;
+    pub use super::IStrongNameKeyPair;
+    pub use super::IStrongNameKeyPairMethods;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

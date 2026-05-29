@@ -2,206 +2,50 @@
 
 #[cfg(feature = "system-io-stringresulthandler-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        io::searchresulthandler_1::{ISearchResultHandler_1, SearchResultHandler_1},
-        object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/stringresulthandler/StringResultHandler.md"))]
-    #[::unity2::class(namespace = "System.IO", name = "StringResultHandler")]
-    # [parent (crate :: system :: io :: searchresulthandler_1 :: SearchResultHandler_1 < :: unity2 :: Il2CppString >)]
-    pub struct StringResultHandler {
-        #[offset(16)]
-        #[rename(name = "_includeFiles")]
-        pub include_files: bool,
-        #[offset(17)]
-        #[rename(name = "_includeDirs")]
-        pub include_dirs: bool,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: io :: searchresulthandler_1 :: { ISearchResultHandler_1 , SearchResultHandler_1 }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/stringresulthandler/StringResultHandler.md"))] # [:: unity2 :: class (namespace = "System.IO" , name = "StringResultHandler")] # [parent (crate :: system :: io :: searchresulthandler_1 :: SearchResultHandler_1 < :: unity2 :: Il2CppString >)] pub struct StringResultHandler {
+# [offset (16)] # [rename (name = "_includeFiles")] pub include_files : bool ,
+# [offset (17)] # [rename (name = "_includeDirs")] pub include_dirs : bool ,
+}
+
 }
 
 #[cfg(feature = "system-io-stringresulthandler-types")]
 pub use __types::*;
 
 #[cfg(feature = "system-io-stringresulthandler")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __StringResultHandler_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type(), <bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <StringResultHandler as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <StringResultHandler as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: StringResultHandler, include_files: bool, include_dirs: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(StringResultHandler, bool, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, include_files, include_dirs, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_result_included {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::io::searchresult::SearchResult as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <StringResultHandler as ::unity2::ClassIdentity>::class(),
-                "IsResultIncluded",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <StringResultHandler as ::unity2::ClassIdentity>::NAME,
-                        "IsResultIncluded",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_result_included(
-        this: StringResultHandler,
-        result: crate::system::io::searchresult::SearchResult,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(StringResultHandler, crate::system::io::searchresult::SearchResult, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_result_included::get_method_info().method_ptr);
-        inner(this, result, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_object {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::io::searchresult::SearchResult as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <StringResultHandler as ::unity2::ClassIdentity>::class(),
-                "CreateObject",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <StringResultHandler as ::unity2::ClassIdentity>::NAME,
-                        "CreateObject",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_object(
-        this: StringResultHandler,
-        result: crate::system::io::searchresult::SearchResult,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            StringResultHandler,
-            crate::system::io::searchresult::SearchResult,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(__lookup_create_object::get_method_info().method_ptr);
-        inner(this, result, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __StringResultHandler_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< StringResultHandler as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < StringResultHandler as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : StringResultHandler , include_files : bool , include_dirs : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (StringResultHandler , bool , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , include_files , include_dirs , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_result_included { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: io :: searchresult :: SearchResult as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< StringResultHandler as :: unity2 :: ClassIdentity > :: class () , "IsResultIncluded" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < StringResultHandler as :: unity2 :: ClassIdentity > :: NAME , "IsResultIncluded" , e) , } } } pub unsafe fn is_result_included (this : StringResultHandler , result : crate :: system :: io :: searchresult :: SearchResult , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (StringResultHandler , crate :: system :: io :: searchresult :: SearchResult , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_result_included :: get_method_info () . method_ptr ,) ; inner (this , result , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_object { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: io :: searchresult :: SearchResult as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< StringResultHandler as :: unity2 :: ClassIdentity > :: class () , "CreateObject" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < StringResultHandler as :: unity2 :: ClassIdentity > :: NAME , "CreateObject" , e) , } } } pub unsafe fn create_object (this : StringResultHandler , result : crate :: system :: io :: searchresult :: SearchResult , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (StringResultHandler , crate :: system :: io :: searchresult :: SearchResult , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_create_object :: get_method_info () . method_ptr ,) ; inner (this , result , __unity2_method_info) } }
 
 #[cfg(feature = "system-io-stringresulthandler")]
-pub trait IStringResultHandlerMethods: IStringResultHandler {
-    #[doc = "`.ctor(bool, bool)` overload"]
-    fn ctor(self, include_files: impl ::core::convert::Into<bool>, include_dirs: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver = <StringResultHandler as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __StringResultHandler_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(include_files),
-                ::core::convert::Into::into(include_dirs),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`IsResultIncluded(crate::system::io::searchresult::SearchResult)` overload"]
-    fn is_result_included(self, result: impl ::core::convert::Into<crate::system::io::searchresult::SearchResult>) -> bool {
-        unsafe {
-            let __receiver = <StringResultHandler as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __StringResultHandler_unity2_raw::is_result_included(__receiver, ::core::convert::Into::into(result), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CreateObject(crate::system::io::searchresult::SearchResult)` overload"]
-    fn create_object(self, result: impl ::core::convert::Into<crate::system::io::searchresult::SearchResult>) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <StringResultHandler as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __StringResultHandler_unity2_raw::create_object(__receiver, ::core::convert::Into::into(result), ::core::option::Option::None)
-        }
-    }
-}
+pub trait IStringResultHandlerMethods : IStringResultHandler { # [doc = "`.ctor(bool, bool)` overload"] fn ctor (self , include_files : impl :: core :: convert :: Into < bool > , include_dirs : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < StringResultHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __StringResultHandler_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (include_files) , :: core :: convert :: Into :: into (include_dirs) , :: core :: option :: Option :: None) } } # [doc = "`IsResultIncluded(crate::system::io::searchresult::SearchResult)` overload"] fn is_result_included (self , result : impl :: core :: convert :: Into < crate :: system :: io :: searchresult :: SearchResult >) -> bool { unsafe { let __receiver = < StringResultHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __StringResultHandler_unity2_raw :: is_result_included (__receiver , :: core :: convert :: Into :: into (result) , :: core :: option :: Option :: None) } } # [doc = "`CreateObject(crate::system::io::searchresult::SearchResult)` overload"] fn create_object (self , result : impl :: core :: convert :: Into < crate :: system :: io :: searchresult :: SearchResult >) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < StringResultHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __StringResultHandler_unity2_raw :: create_object (__receiver , :: core :: convert :: Into :: into (result) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "system-io-stringresulthandler")]
-impl<__T: IStringResultHandler> IStringResultHandlerMethods for __T {}
+impl < __T : IStringResultHandler > IStringResultHandlerMethods for __T { }
+
+#[cfg(feature = "system-io-stringresulthandler")]
+impl StringResultHandler { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __StringResultHandler_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn is_result_included_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __StringResultHandler_unity2_raw :: __lookup_is_result_included :: get_method_info () } pub fn create_object_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __StringResultHandler_unity2_raw :: __lookup_create_object :: get_method_info () } }
 
 #[cfg(feature = "system-io-stringresulthandler")]
 impl StringResultHandler {
-    #[doc = "`.ctor(bool, bool)` — overload selector"]
-    pub fn new(include_files: bool, include_dirs: bool) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(StringResultHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IStringResultHandlerMethods>::ctor(this, include_files, include_dirs);
-        this
-    }
+# [doc = "`.ctor(bool, bool)` — overload selector"] pub fn new (include_files : bool , include_dirs : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (StringResultHandler) , :: core :: stringify ! (new) ,)) ; < Self as IStringResultHandlerMethods > :: ctor (this , include_files , include_dirs) ; this }
 }
 
 #[cfg(feature = "system-io-stringresulthandler")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IStringResultHandler, IStringResultHandlerMethods, StringResultHandler};
-    #[cfg(feature = "system-io-searchresulthandler_1")]
-    pub use crate::system::io::searchresulthandler_1::ISearchResultHandler_1Methods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::system::{io::searchresulthandler_1::ISearchResultHandler_1, object::IObject};
+    pub use super::StringResultHandler;
+    pub use super::IStringResultHandler;
+    pub use super::IStringResultHandlerMethods;
+    pub use crate::system::io::searchresulthandler_1::ISearchResultHandler_1;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-io-searchresulthandler_1")] pub use crate::system::io::searchresulthandler_1::ISearchResultHandler_1Methods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

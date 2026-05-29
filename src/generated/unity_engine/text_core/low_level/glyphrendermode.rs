@@ -2,80 +2,113 @@
 
 #[cfg(feature = "unity_engine-text_core-low_level-glyphrendermode-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        r#enum::{Enum, IEnum},
-        valuetype::{IValueType, ValueType},
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/text_core/low_level/glyphrendermode/GlyphRenderMode.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct GlyphRenderMode {
-        pub value: i32,
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/text_core/low_level/glyphrendermode/GlyphRenderMode.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct GlyphRenderMode  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for GlyphRenderMode  {
+    const NAMESPACE: &'static str = "UnityEngine.TextCore.LowLevel";
+
+    const NAME: &'static str = "GlyphRenderMode";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    impl ::unity2::ClassIdentity for GlyphRenderMode {
-        const NAME: &'static str = "GlyphRenderMode";
-        const NAMESPACE: &'static str = "UnityEngine.TextCore.LowLevel";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  ::unity2::IlType for GlyphRenderMode  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::IlType for GlyphRenderMode {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  GlyphRenderMode  {
+    pub fn smooth_hinted() -> Self {
+        Self { value: 4121 }
+
     }
 
-    impl GlyphRenderMode {
-        pub fn smooth_hinted() -> Self {
-            Self { value: 4121 }
-        }
 
-        pub fn smooth() -> Self {
-            Self { value: 4117 }
-        }
+    pub fn smooth() -> Self {
+        Self { value: 4117 }
 
-        pub fn raster_hinted() -> Self {
-            Self { value: 4122 }
-        }
-
-        pub fn raster() -> Self {
-            Self { value: 4118 }
-        }
-
-        pub fn sdf() -> Self {
-            Self { value: 4134 }
-        }
-
-        pub fn sdf8() -> Self {
-            Self { value: 8230 }
-        }
-
-        pub fn sdf16() -> Self {
-            Self { value: 16422 }
-        }
-
-        pub fn sdf32() -> Self {
-            Self { value: 32806 }
-        }
-
-        pub fn sdfaa_hinted() -> Self {
-            Self { value: 4169 }
-        }
-
-        pub fn sdfaa() -> Self {
-            Self { value: 4165 }
-        }
     }
+
+
+    pub fn raster_hinted() -> Self {
+        Self { value: 4122 }
+
+    }
+
+
+    pub fn raster() -> Self {
+        Self { value: 4118 }
+
+    }
+
+
+    pub fn sdf() -> Self {
+        Self { value: 4134 }
+
+    }
+
+
+    pub fn sdf8() -> Self {
+        Self { value: 8230 }
+
+    }
+
+
+    pub fn sdf16() -> Self {
+        Self { value: 16422 }
+
+    }
+
+
+    pub fn sdf32() -> Self {
+        Self { value: 32806 }
+
+    }
+
+
+    pub fn sdfaa_hinted() -> Self {
+        Self { value: 4169 }
+
+    }
+
+
+    pub fn sdfaa() -> Self {
+        Self { value: 4165 }
+
+    }
+
+}
+
 }
 
 #[cfg(feature = "unity_engine-text_core-low_level-glyphrendermode-types")]
@@ -85,11 +118,10 @@ pub use __types::*;
 #[doc(hidden)]
 pub mod prelude {
     pub use super::GlyphRenderMode;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::system::{object::IObject, r#enum::IEnum, valuetype::IValueType};
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

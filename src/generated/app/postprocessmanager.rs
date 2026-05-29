@@ -2,479 +2,70 @@
 
 #[cfg(feature = "app-postprocessmanager-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::singletonmonobehaviour_1::{ISingletonMonoBehaviour_1, SingletonMonoBehaviour_1},
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/postprocessmanager/PostProcessManager.md"))]
-    #[::unity2::class(namespace = "App", name = "PostProcessManager")]
-    # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: postprocessmanager :: PostProcessManager >)]
-    pub struct PostProcessManager {
-        #[offset(32)]
-        #[rename(name = "m_Root")]
-        pub m_root: crate::unity_engine::rendering::volume::Volume,
-        #[offset(40)]
-        #[rename(name = "m_Bmap")]
-        pub m_bmap: crate::unity_engine::rendering::volume::Volume,
-        #[offset(48)]
-        #[rename(name = "m_Combat")]
-        pub m_combat: crate::unity_engine::rendering::volume::Volume,
-        #[offset(56)]
-        #[rename(name = "BmapCombatChangeTime")]
-        pub bmap_combat_change_time: f32,
-        #[offset(64)]
-        #[rename(name = "CurveInterpolate")]
-        pub curve_interpolate: crate::unity_engine::animationcurve::AnimationCurve,
-        #[offset(72)]
-        #[rename(name = "CurveBlur")]
-        pub curve_blur: crate::unity_engine::animationcurve::AnimationCurve,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: singletonmonobehaviour_1 :: { ISingletonMonoBehaviour_1 , SingletonMonoBehaviour_1 }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/postprocessmanager/PostProcessManager.md"))] # [:: unity2 :: class (namespace = "App" , name = "PostProcessManager")] # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: postprocessmanager :: PostProcessManager >)] pub struct PostProcessManager {
+# [offset (32)] # [rename (name = "m_Root")] pub m_root : crate :: unity_engine :: rendering :: volume :: Volume ,
+# [offset (40)] # [rename (name = "m_Bmap")] pub m_bmap : crate :: unity_engine :: rendering :: volume :: Volume ,
+# [offset (48)] # [rename (name = "m_Combat")] pub m_combat : crate :: unity_engine :: rendering :: volume :: Volume ,
+# [offset (56)] # [rename (name = "BmapCombatChangeTime")] pub bmap_combat_change_time : f32 ,
+# [offset (64)] # [rename (name = "CurveInterpolate")] pub curve_interpolate : crate :: unity_engine :: animationcurve :: AnimationCurve ,
+# [offset (72)] # [rename (name = "CurveBlur")] pub curve_blur : crate :: unity_engine :: animationcurve :: AnimationCurve ,
+}
+
 }
 
 #[cfg(feature = "app-postprocessmanager-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-postprocessmanager")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __PostProcessManager_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_start {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PostProcessManager as ::unity2::ClassIdentity>::class(),
-                "Start",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PostProcessManager as ::unity2::ClassIdentity>::NAME,
-                        "Start",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn start(this: PostProcessManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(PostProcessManager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_start::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_try_add_custom_radial_blur {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PostProcessManager as ::unity2::ClassIdentity>::class(),
-                "TryAddCustomRadialBlur",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PostProcessManager as ::unity2::ClassIdentity>::NAME,
-                        "TryAddCustomRadialBlur",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn try_add_custom_radial_blur(this: PostProcessManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(PostProcessManager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_try_add_custom_radial_blur::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_weight {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::rendering::volume::Volume as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PostProcessManager as ::unity2::ClassIdentity>::class(),
-                "SetWeight",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PostProcessManager as ::unity2::ClassIdentity>::NAME,
-                        "SetWeight",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_weight(
-        this: PostProcessManager,
-        volume: crate::unity_engine::rendering::volume::Volume,
-        weight: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(PostProcessManager, crate::unity_engine::rendering::volume::Volume, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_weight::get_method_info().method_ptr);
-        inner(this, volume, weight, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_enabled {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::rendering::volume::Volume as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PostProcessManager as ::unity2::ClassIdentity>::class(),
-                "SetEnabled",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PostProcessManager as ::unity2::ClassIdentity>::NAME,
-                        "SetEnabled",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_enabled(
-        this: PostProcessManager,
-        volume: crate::unity_engine::rendering::volume::Volume,
-        enabled: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(PostProcessManager, crate::unity_engine::rendering::volume::Volume, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_enabled::get_method_info().method_ptr);
-        inner(this, volume, enabled, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_layer {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::rendering::volume::Volume as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PostProcessManager as ::unity2::ClassIdentity>::class(),
-                "SetLayer",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PostProcessManager as ::unity2::ClassIdentity>::NAME,
-                        "SetLayer",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_layer(
-        this: PostProcessManager,
-        volume: crate::unity_engine::rendering::volume::Volume,
-        layer: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            PostProcessManager,
-            crate::unity_engine::rendering::volume::Volume,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_set_layer::get_method_info().method_ptr);
-        inner(this, volume, layer, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_volume {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PostProcessManager as ::unity2::ClassIdentity>::class(),
-                "GetVolume",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PostProcessManager as ::unity2::ClassIdentity>::NAME,
-                        "GetVolume",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_volume(
-        this: PostProcessManager,
-        name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::rendering::volume::Volume {
-        let inner: extern "C" fn(
-            PostProcessManager,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::rendering::volume::Volume = ::core::mem::transmute(__lookup_get_volume::get_method_info().method_ptr);
-        inner(this, name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_transition {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PostProcessManager as ::unity2::ClassIdentity>::class(),
-                "SetTransition",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PostProcessManager as ::unity2::ClassIdentity>::NAME,
-                        "SetTransition",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_transition(this: PostProcessManager, transition: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(PostProcessManager, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_transition::get_method_info().method_ptr);
-        inner(this, transition, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PostProcessManager as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PostProcessManager as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: PostProcessManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(PostProcessManager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __PostProcessManager_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_start { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PostProcessManager as :: unity2 :: ClassIdentity > :: class () , "Start" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PostProcessManager as :: unity2 :: ClassIdentity > :: NAME , "Start" , e) , } } } pub unsafe fn start (this : PostProcessManager , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (PostProcessManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_start :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_try_add_custom_radial_blur { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PostProcessManager as :: unity2 :: ClassIdentity > :: class () , "TryAddCustomRadialBlur" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PostProcessManager as :: unity2 :: ClassIdentity > :: NAME , "TryAddCustomRadialBlur" , e) , } } } pub unsafe fn try_add_custom_radial_blur (this : PostProcessManager , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (PostProcessManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_try_add_custom_radial_blur :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_weight { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: volume :: Volume as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PostProcessManager as :: unity2 :: ClassIdentity > :: class () , "SetWeight" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PostProcessManager as :: unity2 :: ClassIdentity > :: NAME , "SetWeight" , e) , } } } pub unsafe fn set_weight (this : PostProcessManager , volume : crate :: unity_engine :: rendering :: volume :: Volume , weight : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (PostProcessManager , crate :: unity_engine :: rendering :: volume :: Volume , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_weight :: get_method_info () . method_ptr ,) ; inner (this , volume , weight , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_enabled { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: volume :: Volume as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PostProcessManager as :: unity2 :: ClassIdentity > :: class () , "SetEnabled" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PostProcessManager as :: unity2 :: ClassIdentity > :: NAME , "SetEnabled" , e) , } } } pub unsafe fn set_enabled (this : PostProcessManager , volume : crate :: unity_engine :: rendering :: volume :: Volume , enabled : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (PostProcessManager , crate :: unity_engine :: rendering :: volume :: Volume , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_enabled :: get_method_info () . method_ptr ,) ; inner (this , volume , enabled , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_layer { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: volume :: Volume as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PostProcessManager as :: unity2 :: ClassIdentity > :: class () , "SetLayer" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PostProcessManager as :: unity2 :: ClassIdentity > :: NAME , "SetLayer" , e) , } } } pub unsafe fn set_layer (this : PostProcessManager , volume : crate :: unity_engine :: rendering :: volume :: Volume , layer : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (PostProcessManager , crate :: unity_engine :: rendering :: volume :: Volume , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_layer :: get_method_info () . method_ptr ,) ; inner (this , volume , layer , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_volume { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PostProcessManager as :: unity2 :: ClassIdentity > :: class () , "GetVolume" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PostProcessManager as :: unity2 :: ClassIdentity > :: NAME , "GetVolume" , e) , } } } pub unsafe fn get_volume (this : PostProcessManager , name : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: volume :: Volume { let inner : extern "C" fn (PostProcessManager , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: volume :: Volume = :: core :: mem :: transmute (__lookup_get_volume :: get_method_info () . method_ptr ,) ; inner (this , name , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_transition { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PostProcessManager as :: unity2 :: ClassIdentity > :: class () , "SetTransition" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PostProcessManager as :: unity2 :: ClassIdentity > :: NAME , "SetTransition" , e) , } } } pub unsafe fn set_transition (this : PostProcessManager , transition : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (PostProcessManager , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_transition :: get_method_info () . method_ptr ,) ; inner (this , transition , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PostProcessManager as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PostProcessManager as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : PostProcessManager , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (PostProcessManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-postprocessmanager")]
-pub trait IPostProcessManagerMethods: IPostProcessManager {
-    #[doc = "`Start()` overload"]
-    fn start(self) -> () {
-        unsafe {
-            let __receiver = <PostProcessManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __PostProcessManager_unity2_raw::start(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`TryAddCustomRadialBlur()` overload"]
-    fn try_add_custom_radial_blur(self) -> () {
-        unsafe {
-            let __receiver = <PostProcessManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __PostProcessManager_unity2_raw::try_add_custom_radial_blur(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetWeight(crate::unity_engine::rendering::volume::Volume, f32)` overload"]
-    fn set_weight(
-        self,
-        volume: impl ::core::convert::Into<crate::unity_engine::rendering::volume::Volume>,
-        weight: impl ::core::convert::Into<f32>,
-    ) -> () {
-        unsafe {
-            let __receiver = <PostProcessManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __PostProcessManager_unity2_raw::set_weight(
-                __receiver,
-                ::core::convert::Into::into(volume),
-                ::core::convert::Into::into(weight),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetEnabled(crate::unity_engine::rendering::volume::Volume, bool)` overload"]
-    fn set_enabled(
-        self,
-        volume: impl ::core::convert::Into<crate::unity_engine::rendering::volume::Volume>,
-        enabled: impl ::core::convert::Into<bool>,
-    ) -> () {
-        unsafe {
-            let __receiver = <PostProcessManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __PostProcessManager_unity2_raw::set_enabled(
-                __receiver,
-                ::core::convert::Into::into(volume),
-                ::core::convert::Into::into(enabled),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetLayer(crate::unity_engine::rendering::volume::Volume, ::unity2::Il2CppString)` overload"]
-    fn set_layer(
-        self,
-        volume: impl ::core::convert::Into<crate::unity_engine::rendering::volume::Volume>,
-        layer: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
-        unsafe {
-            let __receiver = <PostProcessManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __PostProcessManager_unity2_raw::set_layer(
-                __receiver,
-                ::core::convert::Into::into(volume),
-                ::core::convert::Into::into(layer),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetVolume(::unity2::Il2CppString)` overload"]
-    fn get_volume(self, name: impl ::core::convert::Into<::unity2::Il2CppString>) -> crate::unity_engine::rendering::volume::Volume {
-        unsafe {
-            let __receiver = <PostProcessManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __PostProcessManager_unity2_raw::get_volume(__receiver, ::core::convert::Into::into(name), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetTransition(f32)` overload"]
-    fn set_transition(self, transition: impl ::core::convert::Into<f32>) -> () {
-        unsafe {
-            let __receiver = <PostProcessManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __PostProcessManager_unity2_raw::set_transition(__receiver, ::core::convert::Into::into(transition), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <PostProcessManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __PostProcessManager_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IPostProcessManagerMethods : IPostProcessManager { # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < PostProcessManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __PostProcessManager_unity2_raw :: start (__receiver , :: core :: option :: Option :: None) } } # [doc = "`TryAddCustomRadialBlur()` overload"] fn try_add_custom_radial_blur (self ,) -> () { unsafe { let __receiver = < PostProcessManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __PostProcessManager_unity2_raw :: try_add_custom_radial_blur (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetWeight(crate::unity_engine::rendering::volume::Volume, f32)` overload"] fn set_weight (self , volume : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: volume :: Volume > , weight : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < PostProcessManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __PostProcessManager_unity2_raw :: set_weight (__receiver , :: core :: convert :: Into :: into (volume) , :: core :: convert :: Into :: into (weight) , :: core :: option :: Option :: None) } } # [doc = "`SetEnabled(crate::unity_engine::rendering::volume::Volume, bool)` overload"] fn set_enabled (self , volume : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: volume :: Volume > , enabled : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < PostProcessManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __PostProcessManager_unity2_raw :: set_enabled (__receiver , :: core :: convert :: Into :: into (volume) , :: core :: convert :: Into :: into (enabled) , :: core :: option :: Option :: None) } } # [doc = "`SetLayer(crate::unity_engine::rendering::volume::Volume, ::unity2::Il2CppString)` overload"] fn set_layer (self , volume : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: volume :: Volume > , layer : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < PostProcessManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __PostProcessManager_unity2_raw :: set_layer (__receiver , :: core :: convert :: Into :: into (volume) , :: core :: convert :: Into :: into (layer) , :: core :: option :: Option :: None) } } # [doc = "`GetVolume(::unity2::Il2CppString)` overload"] fn get_volume (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: unity_engine :: rendering :: volume :: Volume { unsafe { let __receiver = < PostProcessManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __PostProcessManager_unity2_raw :: get_volume (__receiver , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } # [doc = "`SetTransition(f32)` overload"] fn set_transition (self , transition : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < PostProcessManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __PostProcessManager_unity2_raw :: set_transition (__receiver , :: core :: convert :: Into :: into (transition) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < PostProcessManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __PostProcessManager_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-postprocessmanager")]
-impl<__T: IPostProcessManager> IPostProcessManagerMethods for __T {}
+impl < __T : IPostProcessManager > IPostProcessManagerMethods for __T { }
+
+#[cfg(feature = "app-postprocessmanager")]
+impl PostProcessManager { pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PostProcessManager_unity2_raw :: __lookup_start :: get_method_info () } pub fn try_add_custom_radial_blur_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PostProcessManager_unity2_raw :: __lookup_try_add_custom_radial_blur :: get_method_info () } pub fn set_weight_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PostProcessManager_unity2_raw :: __lookup_set_weight :: get_method_info () } pub fn set_enabled_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PostProcessManager_unity2_raw :: __lookup_set_enabled :: get_method_info () } pub fn set_layer_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PostProcessManager_unity2_raw :: __lookup_set_layer :: get_method_info () } pub fn get_volume_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PostProcessManager_unity2_raw :: __lookup_get_volume :: get_method_info () } pub fn set_transition_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PostProcessManager_unity2_raw :: __lookup_set_transition :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PostProcessManager_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-postprocessmanager")]
 impl PostProcessManager {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(PostProcessManager),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IPostProcessManagerMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (PostProcessManager) , :: core :: stringify ! (new) ,)) ; < Self as IPostProcessManagerMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-postprocessmanager")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IPostProcessManager, IPostProcessManagerMethods, PostProcessManager};
-    #[cfg(feature = "app-singletonmonobehaviour_1")]
-    pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1Methods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1,
-        system::object::IObject,
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::PostProcessManager;
+    pub use super::IPostProcessManager;
+    pub use super::IPostProcessManagerMethods;
+    pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "app-singletonmonobehaviour_1")] pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1Methods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

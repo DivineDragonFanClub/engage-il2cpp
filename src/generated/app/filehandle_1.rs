@@ -2,97 +2,64 @@
 
 #[cfg(feature = "app-filehandle_1-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::filecommon::{FileCommon, IFileCommon},
-        system::object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/filehandle_1/FileHandle_1.md"))]
-    #[::unity2::class(namespace = "App", name = "FileHandle`1")]
-    #[parent(crate::app::filecommon::FileCommon)]
-    #[parent(crate::system::object::Object)]
-    pub struct FileHandle_1<T0: ::unity2::ClassIdentity> {
-        #[rename(name = "m_Data")]
-        pub m_data: crate::app::filedata::FileData,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: filecommon :: { FileCommon , IFileCommon }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/filehandle_1/FileHandle_1.md"))] # [:: unity2 :: class (namespace = "App" , name = "FileHandle`1")] # [parent (crate :: app :: filecommon :: FileCommon)] # [parent (crate :: system :: object :: Object)] pub struct FileHandle_1 < T0 : :: unity2 :: ClassIdentity > {
+# [rename (name = "m_Data")] pub m_data : crate :: app :: filedata :: FileData ,
+}
+
 }
 
 #[cfg(feature = "app-filehandle_1-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-filehandle_1")]
-#[::unity2::methods]
-impl<T0: ::unity2::ClassIdentity> FileHandle_1<T0> {
-    #[doc = "`Load(::unity2::Il2CppString)` overload"]
-    #[method(name = "Load", args = 1)]
-    pub fn load(self, path: ::unity2::Il2CppString) -> bool;
+# [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity > FileHandle_1 < T0 > {
+# [doc = "`Load(::unity2::Il2CppString)` overload"] # [method (name = "Load" , args = 1)] pub fn load (self , path : :: unity2 :: Il2CppString) -> bool ;
 
-    #[doc = "`LoadAsync(::unity2::Il2CppString)` overload"]
-    #[method(name = "LoadAsync", args = 1)]
-    pub fn load_async(self, path: ::unity2::Il2CppString) -> ();
+# [doc = "`LoadAsync(::unity2::Il2CppString)` overload"] # [method (name = "LoadAsync" , args = 1)] pub fn load_async (self , path : :: unity2 :: Il2CppString) -> () ;
 
-    #[doc = "`Unload()` overload"]
-    #[method(name = "Unload", args = 0)]
-    pub fn unload(self) -> ();
+# [doc = "`Unload()` overload"] # [method (name = "Unload" , args = 0)] pub fn unload (self ,) -> () ;
 
-    #[doc = "`Dump()` overload"]
-    #[method(name = "Dump", args = 0)]
-    pub fn dump(self) -> ();
+# [doc = "`Dump()` overload"] # [method (name = "Dump" , args = 0)] pub fn dump (self ,) -> () ;
 
-    #[doc = "`IsLoading()` overload"]
-    #[method(name = "IsLoading", args = 0)]
-    pub fn is_loading(self) -> bool;
+# [doc = "`IsLoading()` overload"] # [method (name = "IsLoading" , args = 0)] pub fn is_loading (self ,) -> bool ;
 
-    #[doc = "`IsValid()` overload"]
-    #[method(name = "IsValid", args = 0)]
-    pub fn is_valid(self) -> bool;
+# [doc = "`IsValid()` overload"] # [method (name = "IsValid" , args = 0)] pub fn is_valid (self ,) -> bool ;
 
-    #[doc = "`GetData()` overload"]
-    #[method(name = "GetData", args = 0)]
-    pub fn get_data(self) -> ::unity2::Array<u8>;
+# [doc = "`GetData()` overload"] # [method (name = "GetData" , args = 0)] pub fn get_data (self ,) -> :: unity2 :: Array < u8 > ;
 
-    #[doc = "`GetSize()` overload"]
-    #[method(name = "GetSize", args = 0)]
-    pub fn get_size(self) -> i32;
+# [doc = "`GetSize()` overload"] # [method (name = "GetSize" , args = 0)] pub fn get_size (self ,) -> i32 ;
 
-    #[doc = "`GetPath()` overload"]
-    #[method(name = "GetPath", args = 0)]
-    pub fn get_path(self) -> ::unity2::Il2CppString;
+# [doc = "`GetPath()` overload"] # [method (name = "GetPath" , args = 0)] pub fn get_path (self ,) -> :: unity2 :: Il2CppString ;
 
-    #[doc = "`Dispose()` overload"]
-    #[method(name = "Dispose", args = 0)]
-    pub fn dispose(self) -> ();
+# [doc = "`Dispose()` overload"] # [method (name = "Dispose" , args = 0)] pub fn dispose (self ,) -> () ;
 
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+# [doc = "`.ctor()` overload"] # [method (name = ".ctor" , args = 0)] pub fn ctor (self ,) -> () ;
 
-    #[doc = "`Finalize()` overload"]
-    #[method(name = "Finalize", args = 0)]
-    pub fn finalize(self) -> ();
+# [doc = "`Finalize()` overload"] # [method (name = "Finalize" , args = 0)] pub fn finalize (self ,) -> () ;
 }
 
 #[cfg(feature = "app-filehandle_1")]
-impl<T0: ::unity2::ClassIdentity> FileHandle_1<T0> {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(FileHandle_1), ::core::stringify!(new),));
-        <Self as IFileHandle_1Methods<T0>>::ctor(this);
-        this
-    }
+impl < T0 : :: unity2 :: ClassIdentity > FileHandle_1 < T0 > {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FileHandle_1) , :: core :: stringify ! (new) ,)) ; < Self as IFileHandle_1Methods < T0 > > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-filehandle_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{FileHandle_1, IFileHandle_1, IFileHandle_1Methods};
-    #[cfg(feature = "app-filecommon")]
-    pub use crate::app::filecommon::IFileCommonMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::{app::filecommon::IFileCommon, system::object::IObject};
+    pub use super::FileHandle_1;
+    pub use super::IFileHandle_1;
+    pub use super::IFileHandle_1Methods;
+    pub use crate::app::filecommon::IFileCommon;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "app-filecommon")] pub use crate::app::filecommon::IFileCommonMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

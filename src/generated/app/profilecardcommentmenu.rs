@@ -2,487 +2,91 @@
 
 #[cfg(feature = "app-profilecardcommentmenu-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::procinst::{IProcInst, ProcInst},
-        system::{
-            delegate::{Delegate, IDelegate},
-            multicastdelegate::{IMulticastDelegate, MulticastDelegate},
-            object::{IObject, Object},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardcommentmenu/ProfileCardCommentMenu_DisposeEventHandler.md"))]
-    #[::unity2::class(namespace = "App", name = "ProfileCardCommentMenu.DisposeEventHandler")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct ProfileCardCommentMenu_DisposeEventHandler {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: procinst :: { IProcInst , ProcInst }
+ ;
+ use crate :: system :: delegate :: { Delegate , IDelegate }
+ ;
+ use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardcommentmenu/ProfileCardCommentMenu.md"))]
-    #[::unity2::class(namespace = "App", name = "ProfileCardCommentMenu")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct ProfileCardCommentMenu {
-        #[offset(112)]
-        #[rename(name = "m_DisposeEventHandler")]
-        pub m_dispose_event_handler: crate::app::profilecardcommentmenu::ProfileCardCommentMenu_DisposeEventHandler,
-        #[offset(120)]
-        #[rename(name = "m_MessageSelectMenuContent")]
-        pub m_message_select_menu_content: crate::app::profilecardmessageselectmenucontent::ProfileCardMessageSelectMenuContent,
-        #[offset(128)]
-        #[rename(name = "m_MessageListMenuContent")]
-        pub m_message_list_menu_content: crate::app::profilecardmessagelistmenucontent::ProfileCardMessageListMenuContent,
-        #[offset(136)]
-        #[rename(name = "m_ProfileCardRoot")]
-        pub m_profile_card_root: crate::app::profilecardroot::ProfileCardRoot,
-        #[offset(144)]
-        #[rename(name = "m_ProfileCardCommentIndexMenu")]
-        pub m_profile_card_comment_index_menu: crate::app::profilecardcommentindexmenu::ProfileCardCommentIndexMenu,
-        #[offset(152)]
-        #[rename(name = "m_ProfileCardCommentListMenu")]
-        pub m_profile_card_comment_list_menu: crate::app::profilecardcommentlistmenu::ProfileCardCommentListMenu,
-        #[offset(160)]
-        #[rename(name = "m_MyProfileCardTemp")]
-        pub m_my_profile_card_temp: crate::app::profilecard::ProfileCard,
-        #[offset(168)]
-        #[rename(name = "m_CommentTempArray")]
-        pub m_comment_temp_array: ::unity2::Array<crate::app::profilecardcommentdata::ProfileCardCommentData>,
-        #[offset(184)]
-        #[rename(name = "m_DecidedMessageIndex")]
-        pub m_decided_message_index: i32,
-    }
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardcommentmenu/ProfileCardCommentMenu_DisposeEventHandler.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProfileCardCommentMenu.DisposeEventHandler")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct ProfileCardCommentMenu_DisposeEventHandler {}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardcommentmenu/ProfileCardCommentMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProfileCardCommentMenu")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct ProfileCardCommentMenu {
+# [offset (112)] # [rename (name = "m_DisposeEventHandler")] pub m_dispose_event_handler : crate :: app :: profilecardcommentmenu :: ProfileCardCommentMenu_DisposeEventHandler ,
+# [offset (120)] # [rename (name = "m_MessageSelectMenuContent")] pub m_message_select_menu_content : crate :: app :: profilecardmessageselectmenucontent :: ProfileCardMessageSelectMenuContent ,
+# [offset (128)] # [rename (name = "m_MessageListMenuContent")] pub m_message_list_menu_content : crate :: app :: profilecardmessagelistmenucontent :: ProfileCardMessageListMenuContent ,
+# [offset (136)] # [rename (name = "m_ProfileCardRoot")] pub m_profile_card_root : crate :: app :: profilecardroot :: ProfileCardRoot ,
+# [offset (144)] # [rename (name = "m_ProfileCardCommentIndexMenu")] pub m_profile_card_comment_index_menu : crate :: app :: profilecardcommentindexmenu :: ProfileCardCommentIndexMenu ,
+# [offset (152)] # [rename (name = "m_ProfileCardCommentListMenu")] pub m_profile_card_comment_list_menu : crate :: app :: profilecardcommentlistmenu :: ProfileCardCommentListMenu ,
+# [offset (160)] # [rename (name = "m_MyProfileCardTemp")] pub m_my_profile_card_temp : crate :: app :: profilecard :: ProfileCard ,
+# [offset (168)] # [rename (name = "m_CommentTempArray")] pub m_comment_temp_array : :: unity2 :: Array < crate :: app :: profilecardcommentdata :: ProfileCardCommentData > ,
+# [offset (184)] # [rename (name = "m_DecidedMessageIndex")] pub m_decided_message_index : i32 ,
+}
+
 }
 
 #[cfg(feature = "app-profilecardcommentmenu-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-profilecardcommentmenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ProfileCardCommentMenu_DisposeEventHandler_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCardCommentMenu_DisposeEventHandler as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProfileCardCommentMenu_DisposeEventHandler as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: ProfileCardCommentMenu_DisposeEventHandler,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ProfileCardCommentMenu_DisposeEventHandler,
-            crate::system::object::Object,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCardCommentMenu_DisposeEventHandler as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProfileCardCommentMenu_DisposeEventHandler as ::unity2::ClassIdentity>::NAME,
-                        "Invoke",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn invoke(this: ProfileCardCommentMenu_DisposeEventHandler, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ProfileCardCommentMenu_DisposeEventHandler, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ProfileCardCommentMenu_DisposeEventHandler_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type () , < :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileCardCommentMenu_DisposeEventHandler as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileCardCommentMenu_DisposeEventHandler as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : ProfileCardCommentMenu_DisposeEventHandler , object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ProfileCardCommentMenu_DisposeEventHandler , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , object , method , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_invoke { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileCardCommentMenu_DisposeEventHandler as :: unity2 :: ClassIdentity > :: class () , "Invoke" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileCardCommentMenu_DisposeEventHandler as :: unity2 :: ClassIdentity > :: NAME , "Invoke" , e) , } } } pub unsafe fn invoke (this : ProfileCardCommentMenu_DisposeEventHandler , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ProfileCardCommentMenu_DisposeEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_invoke :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-profilecardcommentmenu")]
-pub trait IProfileCardCommentMenu_DisposeEventHandlerMethods: IProfileCardCommentMenu_DisposeEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
-        unsafe {
-            let __receiver = <ProfileCardCommentMenu_DisposeEventHandler as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ProfileCardCommentMenu_DisposeEventHandler_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invoke()` overload"]
-    fn invoke(self) -> () {
-        unsafe {
-            let __receiver = <ProfileCardCommentMenu_DisposeEventHandler as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ProfileCardCommentMenu_DisposeEventHandler_unity2_raw::invoke(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IProfileCardCommentMenu_DisposeEventHandlerMethods : IProfileCardCommentMenu_DisposeEventHandler { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < ProfileCardCommentMenu_DisposeEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ProfileCardCommentMenu_DisposeEventHandler_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } # [doc = "`Invoke()` overload"] fn invoke (self ,) -> () { unsafe { let __receiver = < ProfileCardCommentMenu_DisposeEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ProfileCardCommentMenu_DisposeEventHandler_unity2_raw :: invoke (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-profilecardcommentmenu")]
-impl<__T: IProfileCardCommentMenu_DisposeEventHandler> IProfileCardCommentMenu_DisposeEventHandlerMethods for __T {}
+impl < __T : IProfileCardCommentMenu_DisposeEventHandler > IProfileCardCommentMenu_DisposeEventHandlerMethods for __T { }
+
+#[cfg(feature = "app-profilecardcommentmenu")]
+impl ProfileCardCommentMenu_DisposeEventHandler { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProfileCardCommentMenu_DisposeEventHandler_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProfileCardCommentMenu_DisposeEventHandler_unity2_raw :: __lookup_invoke :: get_method_info () } }
 
 #[cfg(feature = "app-profilecardcommentmenu")]
 impl ProfileCardCommentMenu_DisposeEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ProfileCardCommentMenu_DisposeEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IProfileCardCommentMenu_DisposeEventHandlerMethods>::ctor(this, object, method);
-        this
-    }
+# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProfileCardCommentMenu_DisposeEventHandler) , :: core :: stringify ! (new) ,)) ; < Self as IProfileCardCommentMenu_DisposeEventHandlerMethods > :: ctor (this , object , method) ; this }
 }
 
 #[cfg(feature = "app-profilecardcommentmenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ProfileCardCommentMenu_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <crate::app::profilecardmessageselectmenucontent::ProfileCardMessageSelectMenuContent as ::unity2::IlType>::il_type(),
-                <crate::app::profilecardmessagelistmenucontent::ProfileCardMessageListMenuContent as ::unity2::IlType>::il_type(),
-                <crate::app::profilecardroot::ProfileCardRoot as ::unity2::IlType>::il_type(),
-                <crate::app::profilecard::ProfileCard as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <crate::app::profilecardcommentmenu::ProfileCardCommentMenu_DisposeEventHandler as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCardCommentMenu as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                7,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProfileCardCommentMenu as ::unity2::ClassIdentity>::NAME,
-                        "CreateBind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        message_select_menu_content: crate::app::profilecardmessageselectmenucontent::ProfileCardMessageSelectMenuContent,
-        message_list_menu_content: crate::app::profilecardmessagelistmenucontent::ProfileCardMessageListMenuContent,
-        profile_card_root: crate::app::profilecardroot::ProfileCardRoot,
-        my_profile_card_temp: crate::app::profilecard::ProfileCard,
-        initial_index: i32,
-        dispose_event_handler: crate::app::profilecardcommentmenu::ProfileCardCommentMenu_DisposeEventHandler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::profilecardcommentmenu::ProfileCardCommentMenu {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            crate::app::profilecardmessageselectmenucontent::ProfileCardMessageSelectMenuContent,
-            crate::app::profilecardmessagelistmenucontent::ProfileCardMessageListMenuContent,
-            crate::app::profilecardroot::ProfileCardRoot,
-            crate::app::profilecard::ProfileCard,
-            i32,
-            crate::app::profilecardcommentmenu::ProfileCardCommentMenu_DisposeEventHandler,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::profilecardcommentmenu::ProfileCardCommentMenu = ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
-        inner(
-            super_,
-            message_select_menu_content,
-            message_list_menu_content,
-            profile_card_root,
-            my_profile_card_temp,
-            initial_index,
-            dispose_event_handler,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <crate::app::profilecardmessageselectmenucontent::ProfileCardMessageSelectMenuContent as ::unity2::IlType>::il_type(),
-                <crate::app::profilecardmessagelistmenucontent::ProfileCardMessageListMenuContent as ::unity2::IlType>::il_type(),
-                <crate::app::profilecardroot::ProfileCardRoot as ::unity2::IlType>::il_type(),
-                <crate::app::profilecard::ProfileCard as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <crate::app::profilecardcommentmenu::ProfileCardCommentMenu_DisposeEventHandler as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCardCommentMenu as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                7,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProfileCardCommentMenu as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: ProfileCardCommentMenu,
-        super_: crate::app::procinst::ProcInst,
-        message_select_menu_content: crate::app::profilecardmessageselectmenucontent::ProfileCardMessageSelectMenuContent,
-        message_list_menu_content: crate::app::profilecardmessagelistmenucontent::ProfileCardMessageListMenuContent,
-        profile_card_root: crate::app::profilecardroot::ProfileCardRoot,
-        profile_card: crate::app::profilecard::ProfileCard,
-        initial_index: i32,
-        dispose_event_handler: crate::app::profilecardcommentmenu::ProfileCardCommentMenu_DisposeEventHandler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ProfileCardCommentMenu,
-            crate::app::procinst::ProcInst,
-            crate::app::profilecardmessageselectmenucontent::ProfileCardMessageSelectMenuContent,
-            crate::app::profilecardmessagelistmenucontent::ProfileCardMessageListMenuContent,
-            crate::app::profilecardroot::ProfileCardRoot,
-            crate::app::profilecard::ProfileCard,
-            i32,
-            crate::app::profilecardcommentmenu::ProfileCardCommentMenu_DisposeEventHandler,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(
-            this,
-            super_,
-            message_select_menu_content,
-            message_list_menu_content,
-            profile_card_root,
-            profile_card,
-            initial_index,
-            dispose_event_handler,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_dispose_children {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCardCommentMenu as ::unity2::ClassIdentity>::class(),
-                "OnDisposeChildren",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProfileCardCommentMenu as ::unity2::ClassIdentity>::NAME,
-                        "OnDisposeChildren",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_dispose_children(this: ProfileCardCommentMenu, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ProfileCardCommentMenu, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_dispose_children::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ProfileCardCommentMenu_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_bind { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: profilecardmessageselectmenucontent :: ProfileCardMessageSelectMenuContent as :: unity2 :: IlType > :: il_type () , < crate :: app :: profilecardmessagelistmenucontent :: ProfileCardMessageListMenuContent as :: unity2 :: IlType > :: il_type () , < crate :: app :: profilecardroot :: ProfileCardRoot as :: unity2 :: IlType > :: il_type () , < crate :: app :: profilecard :: ProfileCard as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: app :: profilecardcommentmenu :: ProfileCardCommentMenu_DisposeEventHandler as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileCardCommentMenu as :: unity2 :: ClassIdentity > :: class () , "CreateBind" , 7 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileCardCommentMenu as :: unity2 :: ClassIdentity > :: NAME , "CreateBind" , e) , } } } pub unsafe fn create_bind (super_ : crate :: app :: procinst :: ProcInst , message_select_menu_content : crate :: app :: profilecardmessageselectmenucontent :: ProfileCardMessageSelectMenuContent , message_list_menu_content : crate :: app :: profilecardmessagelistmenucontent :: ProfileCardMessageListMenuContent , profile_card_root : crate :: app :: profilecardroot :: ProfileCardRoot , my_profile_card_temp : crate :: app :: profilecard :: ProfileCard , initial_index : i32 , dispose_event_handler : crate :: app :: profilecardcommentmenu :: ProfileCardCommentMenu_DisposeEventHandler , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: profilecardcommentmenu :: ProfileCardCommentMenu { let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: profilecardmessageselectmenucontent :: ProfileCardMessageSelectMenuContent , crate :: app :: profilecardmessagelistmenucontent :: ProfileCardMessageListMenuContent , crate :: app :: profilecardroot :: ProfileCardRoot , crate :: app :: profilecard :: ProfileCard , i32 , crate :: app :: profilecardcommentmenu :: ProfileCardCommentMenu_DisposeEventHandler , :: unity2 :: OptionalMethod ,) -> crate :: app :: profilecardcommentmenu :: ProfileCardCommentMenu = :: core :: mem :: transmute (__lookup_create_bind :: get_method_info () . method_ptr ,) ; inner (super_ , message_select_menu_content , message_list_menu_content , profile_card_root , my_profile_card_temp , initial_index , dispose_event_handler , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: profilecardmessageselectmenucontent :: ProfileCardMessageSelectMenuContent as :: unity2 :: IlType > :: il_type () , < crate :: app :: profilecardmessagelistmenucontent :: ProfileCardMessageListMenuContent as :: unity2 :: IlType > :: il_type () , < crate :: app :: profilecardroot :: ProfileCardRoot as :: unity2 :: IlType > :: il_type () , < crate :: app :: profilecard :: ProfileCard as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: app :: profilecardcommentmenu :: ProfileCardCommentMenu_DisposeEventHandler as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileCardCommentMenu as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 7 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileCardCommentMenu as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : ProfileCardCommentMenu , super_ : crate :: app :: procinst :: ProcInst , message_select_menu_content : crate :: app :: profilecardmessageselectmenucontent :: ProfileCardMessageSelectMenuContent , message_list_menu_content : crate :: app :: profilecardmessagelistmenucontent :: ProfileCardMessageListMenuContent , profile_card_root : crate :: app :: profilecardroot :: ProfileCardRoot , profile_card : crate :: app :: profilecard :: ProfileCard , initial_index : i32 , dispose_event_handler : crate :: app :: profilecardcommentmenu :: ProfileCardCommentMenu_DisposeEventHandler , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ProfileCardCommentMenu , crate :: app :: procinst :: ProcInst , crate :: app :: profilecardmessageselectmenucontent :: ProfileCardMessageSelectMenuContent , crate :: app :: profilecardmessagelistmenucontent :: ProfileCardMessageListMenuContent , crate :: app :: profilecardroot :: ProfileCardRoot , crate :: app :: profilecard :: ProfileCard , i32 , crate :: app :: profilecardcommentmenu :: ProfileCardCommentMenu_DisposeEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , super_ , message_select_menu_content , message_list_menu_content , profile_card_root , profile_card , initial_index , dispose_event_handler , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_dispose_children { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileCardCommentMenu as :: unity2 :: ClassIdentity > :: class () , "OnDisposeChildren" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileCardCommentMenu as :: unity2 :: ClassIdentity > :: NAME , "OnDisposeChildren" , e) , } } } pub unsafe fn on_dispose_children (this : ProfileCardCommentMenu , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ProfileCardCommentMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_dispose_children :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-profilecardcommentmenu")]
+impl ProfileCardCommentMenu { # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::profilecardmessageselectmenucontent::ProfileCardMessageSelectMenuContent, crate::app::profilecardmessagelistmenucontent::ProfileCardMessageListMenuContent, crate::app::profilecardroot::ProfileCardRoot, crate::app::profilecard::ProfileCard, i32, crate::app::profilecardcommentmenu::ProfileCardCommentMenu_DisposeEventHandler)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , message_select_menu_content : impl :: core :: convert :: Into < crate :: app :: profilecardmessageselectmenucontent :: ProfileCardMessageSelectMenuContent > , message_list_menu_content : impl :: core :: convert :: Into < crate :: app :: profilecardmessagelistmenucontent :: ProfileCardMessageListMenuContent > , profile_card_root : impl :: core :: convert :: Into < crate :: app :: profilecardroot :: ProfileCardRoot > , my_profile_card_temp : impl :: core :: convert :: Into < crate :: app :: profilecard :: ProfileCard > , initial_index : impl :: core :: convert :: Into < i32 > , dispose_event_handler : impl :: core :: convert :: Into < crate :: app :: profilecardcommentmenu :: ProfileCardCommentMenu_DisposeEventHandler >) -> crate :: app :: profilecardcommentmenu :: ProfileCardCommentMenu { unsafe { __ProfileCardCommentMenu_unity2_raw :: create_bind (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (message_select_menu_content) , :: core :: convert :: Into :: into (message_list_menu_content) , :: core :: convert :: Into :: into (profile_card_root) , :: core :: convert :: Into :: into (my_profile_card_temp) , :: core :: convert :: Into :: into (initial_index) , :: core :: convert :: Into :: into (dispose_event_handler) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-profilecardcommentmenu")]
+pub trait IProfileCardCommentMenuMethods : IProfileCardCommentMenu { # [doc = "`.ctor(crate::app::procinst::ProcInst, crate::app::profilecardmessageselectmenucontent::ProfileCardMessageSelectMenuContent, crate::app::profilecardmessagelistmenucontent::ProfileCardMessageListMenuContent, crate::app::profilecardroot::ProfileCardRoot, crate::app::profilecard::ProfileCard, i32, crate::app::profilecardcommentmenu::ProfileCardCommentMenu_DisposeEventHandler)` overload"] fn ctor (self , super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , message_select_menu_content : impl :: core :: convert :: Into < crate :: app :: profilecardmessageselectmenucontent :: ProfileCardMessageSelectMenuContent > , message_list_menu_content : impl :: core :: convert :: Into < crate :: app :: profilecardmessagelistmenucontent :: ProfileCardMessageListMenuContent > , profile_card_root : impl :: core :: convert :: Into < crate :: app :: profilecardroot :: ProfileCardRoot > , profile_card : impl :: core :: convert :: Into < crate :: app :: profilecard :: ProfileCard > , initial_index : impl :: core :: convert :: Into < i32 > , dispose_event_handler : impl :: core :: convert :: Into < crate :: app :: profilecardcommentmenu :: ProfileCardCommentMenu_DisposeEventHandler >) -> () { unsafe { let __receiver = < ProfileCardCommentMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ProfileCardCommentMenu_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (message_select_menu_content) , :: core :: convert :: Into :: into (message_list_menu_content) , :: core :: convert :: Into :: into (profile_card_root) , :: core :: convert :: Into :: into (profile_card) , :: core :: convert :: Into :: into (initial_index) , :: core :: convert :: Into :: into (dispose_event_handler) , :: core :: option :: Option :: None) } } # [doc = "`OnDisposeChildren()` overload"] fn on_dispose_children (self ,) -> () { unsafe { let __receiver = < ProfileCardCommentMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ProfileCardCommentMenu_unity2_raw :: on_dispose_children (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-profilecardcommentmenu")]
+impl < __T : IProfileCardCommentMenu > IProfileCardCommentMenuMethods for __T { }
+
+#[cfg(feature = "app-profilecardcommentmenu")]
+impl ProfileCardCommentMenu { pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProfileCardCommentMenu_unity2_raw :: __lookup_create_bind :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProfileCardCommentMenu_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn on_dispose_children_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProfileCardCommentMenu_unity2_raw :: __lookup_on_dispose_children :: get_method_info () } }
 
 #[cfg(feature = "app-profilecardcommentmenu")]
 impl ProfileCardCommentMenu {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::profilecardmessageselectmenucontent::ProfileCardMessageSelectMenuContent, crate::app::profilecardmessagelistmenucontent::ProfileCardMessageListMenuContent, crate::app::profilecardroot::ProfileCardRoot, crate::app::profilecard::ProfileCard, i32, crate::app::profilecardcommentmenu::ProfileCardCommentMenu_DisposeEventHandler)` overload"]
-    pub fn create_bind(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        message_select_menu_content: impl ::core::convert::Into<crate::app::profilecardmessageselectmenucontent::ProfileCardMessageSelectMenuContent>,
-        message_list_menu_content: impl ::core::convert::Into<crate::app::profilecardmessagelistmenucontent::ProfileCardMessageListMenuContent>,
-        profile_card_root: impl ::core::convert::Into<crate::app::profilecardroot::ProfileCardRoot>,
-        my_profile_card_temp: impl ::core::convert::Into<crate::app::profilecard::ProfileCard>,
-        initial_index: impl ::core::convert::Into<i32>,
-        dispose_event_handler: impl ::core::convert::Into<crate::app::profilecardcommentmenu::ProfileCardCommentMenu_DisposeEventHandler>,
-    ) -> crate::app::profilecardcommentmenu::ProfileCardCommentMenu {
-        unsafe {
-            __ProfileCardCommentMenu_unity2_raw::create_bind(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(message_select_menu_content),
-                ::core::convert::Into::into(message_list_menu_content),
-                ::core::convert::Into::into(profile_card_root),
-                ::core::convert::Into::into(my_profile_card_temp),
-                ::core::convert::Into::into(initial_index),
-                ::core::convert::Into::into(dispose_event_handler),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-profilecardcommentmenu")]
-pub trait IProfileCardCommentMenuMethods: IProfileCardCommentMenu {
-    #[doc = "`.ctor(crate::app::procinst::ProcInst, crate::app::profilecardmessageselectmenucontent::ProfileCardMessageSelectMenuContent, crate::app::profilecardmessagelistmenucontent::ProfileCardMessageListMenuContent, crate::app::profilecardroot::ProfileCardRoot, crate::app::profilecard::ProfileCard, i32, crate::app::profilecardcommentmenu::ProfileCardCommentMenu_DisposeEventHandler)` overload"]
-    fn ctor(
-        self,
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        message_select_menu_content: impl ::core::convert::Into<crate::app::profilecardmessageselectmenucontent::ProfileCardMessageSelectMenuContent>,
-        message_list_menu_content: impl ::core::convert::Into<crate::app::profilecardmessagelistmenucontent::ProfileCardMessageListMenuContent>,
-        profile_card_root: impl ::core::convert::Into<crate::app::profilecardroot::ProfileCardRoot>,
-        profile_card: impl ::core::convert::Into<crate::app::profilecard::ProfileCard>,
-        initial_index: impl ::core::convert::Into<i32>,
-        dispose_event_handler: impl ::core::convert::Into<crate::app::profilecardcommentmenu::ProfileCardCommentMenu_DisposeEventHandler>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <ProfileCardCommentMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ProfileCardCommentMenu_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(message_select_menu_content),
-                ::core::convert::Into::into(message_list_menu_content),
-                ::core::convert::Into::into(profile_card_root),
-                ::core::convert::Into::into(profile_card),
-                ::core::convert::Into::into(initial_index),
-                ::core::convert::Into::into(dispose_event_handler),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`OnDisposeChildren()` overload"]
-    fn on_dispose_children(self) -> () {
-        unsafe {
-            let __receiver =
-                <ProfileCardCommentMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ProfileCardCommentMenu_unity2_raw::on_dispose_children(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-profilecardcommentmenu")]
-impl<__T: IProfileCardCommentMenu> IProfileCardCommentMenuMethods for __T {}
-
-#[cfg(feature = "app-profilecardcommentmenu")]
-impl ProfileCardCommentMenu {
-    #[doc = "`.ctor(crate::app::procinst::ProcInst, crate::app::profilecardmessageselectmenucontent::ProfileCardMessageSelectMenuContent, crate::app::profilecardmessagelistmenucontent::ProfileCardMessageListMenuContent, crate::app::profilecardroot::ProfileCardRoot, crate::app::profilecard::ProfileCard, i32, crate::app::profilecardcommentmenu::ProfileCardCommentMenu_DisposeEventHandler)` — overload selector"]
-    pub fn new(
-        super_: crate::app::procinst::ProcInst,
-        message_select_menu_content: crate::app::profilecardmessageselectmenucontent::ProfileCardMessageSelectMenuContent,
-        message_list_menu_content: crate::app::profilecardmessagelistmenucontent::ProfileCardMessageListMenuContent,
-        profile_card_root: crate::app::profilecardroot::ProfileCardRoot,
-        profile_card: crate::app::profilecard::ProfileCard,
-        initial_index: i32,
-        dispose_event_handler: crate::app::profilecardcommentmenu::ProfileCardCommentMenu_DisposeEventHandler,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ProfileCardCommentMenu),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IProfileCardCommentMenuMethods>::ctor(
-            this,
-            super_,
-            message_select_menu_content,
-            message_list_menu_content,
-            profile_card_root,
-            profile_card,
-            initial_index,
-            dispose_event_handler,
-        );
-        this
-    }
+# [doc = "`.ctor(crate::app::procinst::ProcInst, crate::app::profilecardmessageselectmenucontent::ProfileCardMessageSelectMenuContent, crate::app::profilecardmessagelistmenucontent::ProfileCardMessageListMenuContent, crate::app::profilecardroot::ProfileCardRoot, crate::app::profilecard::ProfileCard, i32, crate::app::profilecardcommentmenu::ProfileCardCommentMenu_DisposeEventHandler)` — overload selector"] pub fn new (super_ : crate :: app :: procinst :: ProcInst , message_select_menu_content : crate :: app :: profilecardmessageselectmenucontent :: ProfileCardMessageSelectMenuContent , message_list_menu_content : crate :: app :: profilecardmessagelistmenucontent :: ProfileCardMessageListMenuContent , profile_card_root : crate :: app :: profilecardroot :: ProfileCardRoot , profile_card : crate :: app :: profilecard :: ProfileCard , initial_index : i32 , dispose_event_handler : crate :: app :: profilecardcommentmenu :: ProfileCardCommentMenu_DisposeEventHandler) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProfileCardCommentMenu) , :: core :: stringify ! (new) ,)) ; < Self as IProfileCardCommentMenuMethods > :: ctor (this , super_ , message_select_menu_content , message_list_menu_content , profile_card_root , profile_card , initial_index , dispose_event_handler) ; this }
 }
 
 #[cfg(feature = "app-profilecardcommentmenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{
-        IProfileCardCommentMenu, IProfileCardCommentMenuMethods, IProfileCardCommentMenu_DisposeEventHandler,
-        IProfileCardCommentMenu_DisposeEventHandlerMethods, ProfileCardCommentMenu, ProfileCardCommentMenu_DisposeEventHandler,
-    };
-    #[cfg(feature = "app-procinst")]
-    pub use crate::app::procinst::IProcInstMethods;
-    #[cfg(feature = "system-delegate")]
-    pub use crate::system::delegate::IDelegateMethods;
-    #[cfg(feature = "system-multicastdelegate")]
-    pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::{
-        app::procinst::IProcInst,
-        system::{delegate::IDelegate, multicastdelegate::IMulticastDelegate, object::IObject},
-    };
+    pub use super::ProfileCardCommentMenu_DisposeEventHandler;
+    pub use super::IProfileCardCommentMenu_DisposeEventHandler;
+    pub use super::IProfileCardCommentMenu_DisposeEventHandlerMethods;
+    pub use super::ProfileCardCommentMenu;
+    pub use super::IProfileCardCommentMenu;
+    pub use super::IProfileCardCommentMenuMethods;
+    pub use crate::app::procinst::IProcInst;
+    pub use crate::system::delegate::IDelegate;
+    pub use crate::system::multicastdelegate::IMulticastDelegate;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "app-procinst")] pub use crate::app::procinst::IProcInstMethods;
+    #[cfg(feature = "system-delegate")] pub use crate::system::delegate::IDelegateMethods;
+    #[cfg(feature = "system-multicastdelegate")] pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

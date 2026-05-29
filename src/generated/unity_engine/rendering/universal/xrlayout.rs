@@ -2,164 +2,69 @@
 
 #[cfg(feature = "unity_engine-rendering-universal-xrlayout-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        valuetype::{IValueType, ValueType},
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/xrlayout/XRLayout.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct XRLayout {
-        pub camera: crate::unity_engine::camera::Camera,
-        pub xr_system: crate::unity_engine::rendering::universal::xrsystem::XRSystem,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
 
-    impl ::unity2::ClassIdentity for XRLayout {
-        const NAME: &'static str = "XRLayout";
-        const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/xrlayout/XRLayout.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct XRLayout {
+    pub camera: crate :: unity_engine :: camera :: Camera,
+    pub xr_system: crate :: unity_engine :: rendering :: universal :: xrsystem :: XRSystem,
+}
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+
+impl ::unity2::ClassIdentity for XRLayout {
+    const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal";
+
+    const NAME: &'static str = "XRLayout";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for XRLayout {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl ::unity2::IlType for XRLayout {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
+
+}
+
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-xrlayout-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-universal-xrlayout")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __XRLayout_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_pass {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::rendering::universal::xrpasscreateinfo::XRPassCreateInfo as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<XRLayout as ::unity2::ClassIdentity>::class(), "CreatePass", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <XRLayout as ::unity2::ClassIdentity>::NAME,
-                        "CreatePass",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_pass(
-        this: XRLayout,
-        pass_create_info: crate::unity_engine::rendering::universal::xrpasscreateinfo::XRPassCreateInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::rendering::universal::xrpass::XRPass {
-        let inner: extern "C" fn(
-            XRLayout,
-            crate::unity_engine::rendering::universal::xrpasscreateinfo::XRPassCreateInfo,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::rendering::universal::xrpass::XRPass = ::core::mem::transmute(__lookup_create_pass::get_method_info().method_ptr);
-        inner(this, pass_create_info, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_view_to_pass {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::rendering::universal::xrviewcreateinfo::XRViewCreateInfo as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::rendering::universal::xrpass::XRPass as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <XRLayout as ::unity2::ClassIdentity>::class(),
-                "AddViewToPass",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <XRLayout as ::unity2::ClassIdentity>::NAME,
-                        "AddViewToPass",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_view_to_pass(
-        this: XRLayout,
-        view_create_info: crate::unity_engine::rendering::universal::xrviewcreateinfo::XRViewCreateInfo,
-        pass: crate::unity_engine::rendering::universal::xrpass::XRPass,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            XRLayout,
-            crate::unity_engine::rendering::universal::xrviewcreateinfo::XRViewCreateInfo,
-            crate::unity_engine::rendering::universal::xrpass::XRPass,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_add_view_to_pass::get_method_info().method_ptr);
-        inner(this, view_create_info, pass, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __XRLayout_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_pass { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: universal :: xrpasscreateinfo :: XRPassCreateInfo as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< XRLayout as :: unity2 :: ClassIdentity > :: class () , "CreatePass" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < XRLayout as :: unity2 :: ClassIdentity > :: NAME , "CreatePass" , e) , } } } pub unsafe fn create_pass (this : XRLayout , pass_create_info : crate :: unity_engine :: rendering :: universal :: xrpasscreateinfo :: XRPassCreateInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: universal :: xrpass :: XRPass { let inner : extern "C" fn (XRLayout , crate :: unity_engine :: rendering :: universal :: xrpasscreateinfo :: XRPassCreateInfo , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: universal :: xrpass :: XRPass = :: core :: mem :: transmute (__lookup_create_pass :: get_method_info () . method_ptr ,) ; inner (this , pass_create_info , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_view_to_pass { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: universal :: xrviewcreateinfo :: XRViewCreateInfo as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: xrpass :: XRPass as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< XRLayout as :: unity2 :: ClassIdentity > :: class () , "AddViewToPass" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < XRLayout as :: unity2 :: ClassIdentity > :: NAME , "AddViewToPass" , e) , } } } pub unsafe fn add_view_to_pass (this : XRLayout , view_create_info : crate :: unity_engine :: rendering :: universal :: xrviewcreateinfo :: XRViewCreateInfo , pass : crate :: unity_engine :: rendering :: universal :: xrpass :: XRPass , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (XRLayout , crate :: unity_engine :: rendering :: universal :: xrviewcreateinfo :: XRViewCreateInfo , crate :: unity_engine :: rendering :: universal :: xrpass :: XRPass , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_view_to_pass :: get_method_info () . method_ptr ,) ; inner (this , view_create_info , pass , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-rendering-universal-xrlayout")]
-impl XRLayout {
-    #[doc = "`CreatePass(crate::unity_engine::rendering::universal::xrpasscreateinfo::XRPassCreateInfo)` overload"]
-    pub fn create_pass(
-        self,
-        pass_create_info: impl ::core::convert::Into<crate::unity_engine::rendering::universal::xrpasscreateinfo::XRPassCreateInfo>,
-    ) -> crate::unity_engine::rendering::universal::xrpass::XRPass {
-        unsafe { __XRLayout_unity2_raw::create_pass(self, ::core::convert::Into::into(pass_create_info), ::core::option::Option::None) }
-    }
+impl XRLayout { # [doc = "`CreatePass(crate::unity_engine::rendering::universal::xrpasscreateinfo::XRPassCreateInfo)` overload"] pub fn create_pass (self , pass_create_info : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: universal :: xrpasscreateinfo :: XRPassCreateInfo >) -> crate :: unity_engine :: rendering :: universal :: xrpass :: XRPass { unsafe { __XRLayout_unity2_raw :: create_pass (self , :: core :: convert :: Into :: into (pass_create_info) , :: core :: option :: Option :: None) } } # [doc = "`AddViewToPass(crate::unity_engine::rendering::universal::xrviewcreateinfo::XRViewCreateInfo, crate::unity_engine::rendering::universal::xrpass::XRPass)` overload"] pub fn add_view_to_pass (self , view_create_info : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: universal :: xrviewcreateinfo :: XRViewCreateInfo > , pass : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: universal :: xrpass :: XRPass >) -> () { unsafe { __XRLayout_unity2_raw :: add_view_to_pass (self , :: core :: convert :: Into :: into (view_create_info) , :: core :: convert :: Into :: into (pass) , :: core :: option :: Option :: None) } } }
 
-    #[doc = "`AddViewToPass(crate::unity_engine::rendering::universal::xrviewcreateinfo::XRViewCreateInfo, crate::unity_engine::rendering::universal::xrpass::XRPass)` overload"]
-    pub fn add_view_to_pass(
-        self,
-        view_create_info: impl ::core::convert::Into<crate::unity_engine::rendering::universal::xrviewcreateinfo::XRViewCreateInfo>,
-        pass: impl ::core::convert::Into<crate::unity_engine::rendering::universal::xrpass::XRPass>,
-    ) -> () {
-        unsafe {
-            __XRLayout_unity2_raw::add_view_to_pass(
-                self,
-                ::core::convert::Into::into(view_create_info),
-                ::core::convert::Into::into(pass),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+#[cfg(feature = "unity_engine-rendering-universal-xrlayout")]
+impl XRLayout { pub fn create_pass_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __XRLayout_unity2_raw :: __lookup_create_pass :: get_method_info () } pub fn add_view_to_pass_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __XRLayout_unity2_raw :: __lookup_add_view_to_pass :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-rendering-universal-xrlayout")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::XRLayout;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::system::{object::IObject, valuetype::IValueType};
+    pub use crate::system::object::IObject;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

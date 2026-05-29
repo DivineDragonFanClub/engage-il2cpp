@@ -2,15 +2,15 @@
 
 #[cfg(feature = "system-io-filesystemenumerablehelpers-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/filesystemenumerablehelpers/FileSystemEnumerableHelpers.md"))]
-    #[::unity2::class(namespace = "System.IO", name = "FileSystemEnumerableHelpers")]
-    #[parent(crate::system::object::Object)]
-    pub struct FileSystemEnumerableHelpers {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/filesystemenumerablehelpers/FileSystemEnumerableHelpers.md"))] # [:: unity2 :: class (namespace = "System.IO" , name = "FileSystemEnumerableHelpers")] # [parent (crate :: system :: object :: Object)] pub struct FileSystemEnumerableHelpers {}
+
 }
 
 #[cfg(feature = "system-io-filesystemenumerablehelpers-types")]
@@ -19,8 +19,8 @@ pub use __types::*;
 #[cfg(feature = "system-io-filesystemenumerablehelpers")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{FileSystemEnumerableHelpers, IFileSystemEnumerableHelpers};
+    pub use super::FileSystemEnumerableHelpers;
+    pub use super::IFileSystemEnumerableHelpers;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

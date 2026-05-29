@@ -2,15 +2,15 @@
 
 #[cfg(feature = "moon_sharp-interpreter-debugging-namespacedoc_8-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/debugging/namespacedoc_8/NamespaceDoc_8.md"))]
-    #[::unity2::class(namespace = "MoonSharp.Interpreter.Debugging", name = "NamespaceDoc")]
-    #[parent(crate::system::object::Object)]
-    pub struct NamespaceDoc_8 {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/debugging/namespacedoc_8/NamespaceDoc_8.md"))] # [:: unity2 :: class (namespace = "MoonSharp.Interpreter.Debugging" , name = "NamespaceDoc")] # [parent (crate :: system :: object :: Object)] pub struct NamespaceDoc_8 {}
+
 }
 
 #[cfg(feature = "moon_sharp-interpreter-debugging-namespacedoc_8-types")]
@@ -19,8 +19,8 @@ pub use __types::*;
 #[cfg(feature = "moon_sharp-interpreter-debugging-namespacedoc_8")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{INamespaceDoc_8, NamespaceDoc_8};
+    pub use super::NamespaceDoc_8;
+    pub use super::INamespaceDoc_8;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

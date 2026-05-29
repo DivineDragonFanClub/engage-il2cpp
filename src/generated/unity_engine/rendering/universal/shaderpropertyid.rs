@@ -2,166 +2,66 @@
 
 #[cfg(feature = "unity_engine-rendering-universal-shaderpropertyid-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/shaderpropertyid/ShaderPropertyId.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Rendering.Universal", name = "ShaderPropertyId")]
-    #[parent(crate::system::object::Object)]
-    pub struct ShaderPropertyId {
-        #[static_field]
-        #[rename(name = "glossyEnvironmentColor")]
-        pub glossy_environment_color: i32,
-        #[static_field]
-        #[rename(name = "subtractiveShadowColor")]
-        pub subtractive_shadow_color: i32,
-        #[static_field]
-        #[rename(name = "ambientSkyColor")]
-        pub ambient_sky_color: i32,
-        #[static_field]
-        #[rename(name = "ambientEquatorColor")]
-        pub ambient_equator_color: i32,
-        #[static_field]
-        #[rename(name = "ambientGroundColor")]
-        pub ambient_ground_color: i32,
-        #[static_field]
-        #[rename(name = "time")]
-        pub time: i32,
-        #[static_field]
-        #[rename(name = "sinTime")]
-        pub sin_time: i32,
-        #[static_field]
-        #[rename(name = "cosTime")]
-        pub cos_time: i32,
-        #[static_field]
-        #[rename(name = "deltaTime")]
-        pub delta_time: i32,
-        #[static_field]
-        #[rename(name = "timeParameters")]
-        pub time_parameters: i32,
-        #[static_field]
-        #[rename(name = "scaledScreenParams")]
-        pub scaled_screen_params: i32,
-        #[static_field]
-        #[rename(name = "worldSpaceCameraPos")]
-        pub world_space_camera_pos: i32,
-        #[static_field]
-        #[rename(name = "screenParams")]
-        pub screen_params: i32,
-        #[static_field]
-        #[rename(name = "projectionParams")]
-        pub projection_params: i32,
-        #[static_field]
-        #[rename(name = "zBufferParams")]
-        pub z_buffer_params: i32,
-        #[static_field]
-        #[rename(name = "orthoParams")]
-        pub ortho_params: i32,
-        #[static_field]
-        #[rename(name = "viewMatrix")]
-        pub view_matrix: i32,
-        #[static_field]
-        #[rename(name = "projectionMatrix")]
-        pub projection_matrix: i32,
-        #[static_field]
-        #[rename(name = "viewAndProjectionMatrix")]
-        pub view_and_projection_matrix: i32,
-        #[static_field]
-        #[rename(name = "inverseViewMatrix")]
-        pub inverse_view_matrix: i32,
-        #[static_field]
-        #[rename(name = "inverseProjectionMatrix")]
-        pub inverse_projection_matrix: i32,
-        #[static_field]
-        #[rename(name = "inverseViewAndProjectionMatrix")]
-        pub inverse_view_and_projection_matrix: i32,
-        #[static_field]
-        #[rename(name = "cameraProjectionMatrix")]
-        pub camera_projection_matrix: i32,
-        #[static_field]
-        #[rename(name = "inverseCameraProjectionMatrix")]
-        pub inverse_camera_projection_matrix: i32,
-        #[static_field]
-        #[rename(name = "worldToCameraMatrix")]
-        pub world_to_camera_matrix: i32,
-        #[static_field]
-        #[rename(name = "cameraToWorldMatrix")]
-        pub camera_to_world_matrix: i32,
-        #[static_field]
-        #[rename(name = "sourceTex")]
-        pub source_tex: i32,
-        #[static_field]
-        #[rename(name = "scaleBias")]
-        pub scale_bias: i32,
-        #[static_field]
-        #[rename(name = "scaleBiasRt")]
-        pub scale_bias_rt: i32,
-        #[static_field]
-        #[rename(name = "autoReductionParams")]
-        pub auto_reduction_params: i32,
-        #[static_field]
-        #[rename(name = "customAlpha")]
-        pub custom_alpha: i32,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/shaderpropertyid/ShaderPropertyId.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.Universal" , name = "ShaderPropertyId")] # [parent (crate :: system :: object :: Object)] pub struct ShaderPropertyId {
+# [static_field] # [rename (name = "glossyEnvironmentColor")] pub glossy_environment_color : i32 ,
+# [static_field] # [rename (name = "subtractiveShadowColor")] pub subtractive_shadow_color : i32 ,
+# [static_field] # [rename (name = "ambientSkyColor")] pub ambient_sky_color : i32 ,
+# [static_field] # [rename (name = "ambientEquatorColor")] pub ambient_equator_color : i32 ,
+# [static_field] # [rename (name = "ambientGroundColor")] pub ambient_ground_color : i32 ,
+# [static_field] # [rename (name = "time")] pub time : i32 ,
+# [static_field] # [rename (name = "sinTime")] pub sin_time : i32 ,
+# [static_field] # [rename (name = "cosTime")] pub cos_time : i32 ,
+# [static_field] # [rename (name = "deltaTime")] pub delta_time : i32 ,
+# [static_field] # [rename (name = "timeParameters")] pub time_parameters : i32 ,
+# [static_field] # [rename (name = "scaledScreenParams")] pub scaled_screen_params : i32 ,
+# [static_field] # [rename (name = "worldSpaceCameraPos")] pub world_space_camera_pos : i32 ,
+# [static_field] # [rename (name = "screenParams")] pub screen_params : i32 ,
+# [static_field] # [rename (name = "projectionParams")] pub projection_params : i32 ,
+# [static_field] # [rename (name = "zBufferParams")] pub z_buffer_params : i32 ,
+# [static_field] # [rename (name = "orthoParams")] pub ortho_params : i32 ,
+# [static_field] # [rename (name = "viewMatrix")] pub view_matrix : i32 ,
+# [static_field] # [rename (name = "projectionMatrix")] pub projection_matrix : i32 ,
+# [static_field] # [rename (name = "viewAndProjectionMatrix")] pub view_and_projection_matrix : i32 ,
+# [static_field] # [rename (name = "inverseViewMatrix")] pub inverse_view_matrix : i32 ,
+# [static_field] # [rename (name = "inverseProjectionMatrix")] pub inverse_projection_matrix : i32 ,
+# [static_field] # [rename (name = "inverseViewAndProjectionMatrix")] pub inverse_view_and_projection_matrix : i32 ,
+# [static_field] # [rename (name = "cameraProjectionMatrix")] pub camera_projection_matrix : i32 ,
+# [static_field] # [rename (name = "inverseCameraProjectionMatrix")] pub inverse_camera_projection_matrix : i32 ,
+# [static_field] # [rename (name = "worldToCameraMatrix")] pub world_to_camera_matrix : i32 ,
+# [static_field] # [rename (name = "cameraToWorldMatrix")] pub camera_to_world_matrix : i32 ,
+# [static_field] # [rename (name = "sourceTex")] pub source_tex : i32 ,
+# [static_field] # [rename (name = "scaleBias")] pub scale_bias : i32 ,
+# [static_field] # [rename (name = "scaleBiasRt")] pub scale_bias_rt : i32 ,
+# [static_field] # [rename (name = "autoReductionParams")] pub auto_reduction_params : i32 ,
+# [static_field] # [rename (name = "customAlpha")] pub custom_alpha : i32 ,
+}
+
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-shaderpropertyid-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-universal-shaderpropertyid")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ShaderPropertyId_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ShaderPropertyId as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ShaderPropertyId as ::unity2::ClassIdentity>::NAME,
-                        ".cctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ShaderPropertyId_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ShaderPropertyId as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ShaderPropertyId as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-rendering-universal-shaderpropertyid")]
-impl ShaderPropertyId {
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __ShaderPropertyId_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
+impl ShaderPropertyId { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { __ShaderPropertyId_unity2_raw :: cctor (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-rendering-universal-shaderpropertyid")]
+impl ShaderPropertyId { pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ShaderPropertyId_unity2_raw :: __lookup_cctor :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-rendering-universal-shaderpropertyid")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IShaderPropertyId, ShaderPropertyId};
+    pub use super::ShaderPropertyId;
+    pub use super::IShaderPropertyId;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

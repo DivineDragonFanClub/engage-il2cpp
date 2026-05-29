@@ -2,168 +2,53 @@
 
 #[cfg(feature = "moon_sharp-interpreter-tree-statements-compositestatement-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        moon_sharp::interpreter::tree::{
-            nodebase::{INodeBase, NodeBase},
-            statement::{IStatement, Statement},
-        },
-        system::object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/tree/statements/compositestatement/CompositeStatement.md"))]
-    #[::unity2::class(namespace = "MoonSharp.Interpreter.Tree.Statements", name = "CompositeStatement")]
-    #[parent(crate::moon_sharp::interpreter::tree::statement::Statement)]
-    pub struct CompositeStatement {
-        #[offset(32)]
-        #[rename(name = "m_Statements")]
-        pub m_statements: crate::system::collections::generic::list_1::List_1<crate::moon_sharp::interpreter::tree::statement::Statement>,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: moon_sharp :: interpreter :: tree :: nodebase :: { INodeBase , NodeBase }
+ ;
+ use crate :: moon_sharp :: interpreter :: tree :: statement :: { IStatement , Statement }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/tree/statements/compositestatement/CompositeStatement.md"))] # [:: unity2 :: class (namespace = "MoonSharp.Interpreter.Tree.Statements" , name = "CompositeStatement")] # [parent (crate :: moon_sharp :: interpreter :: tree :: statement :: Statement)] pub struct CompositeStatement {
+# [offset (32)] # [rename (name = "m_Statements")] pub m_statements : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: moon_sharp :: interpreter :: tree :: statement :: Statement > ,
+}
+
 }
 
 #[cfg(feature = "moon_sharp-interpreter-tree-statements-compositestatement-types")]
 pub use __types::*;
 
 #[cfg(feature = "moon_sharp-interpreter-tree-statements-compositestatement")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __CompositeStatement_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CompositeStatement as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CompositeStatement as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: CompositeStatement,
-        lcontext: crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            CompositeStatement,
-            crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, lcontext, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_compile {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CompositeStatement as ::unity2::ClassIdentity>::class(),
-                "Compile",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CompositeStatement as ::unity2::ClassIdentity>::NAME,
-                        "Compile",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn compile(
-        this: CompositeStatement,
-        bc: crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            CompositeStatement,
-            crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_compile::get_method_info().method_ptr);
-        inner(this, bc, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __CompositeStatement_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CompositeStatement as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CompositeStatement as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : CompositeStatement , lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CompositeStatement , crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , lcontext , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_compile { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: execution :: vm :: bytecode :: ByteCode as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CompositeStatement as :: unity2 :: ClassIdentity > :: class () , "Compile" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CompositeStatement as :: unity2 :: ClassIdentity > :: NAME , "Compile" , e) , } } } pub unsafe fn compile (this : CompositeStatement , bc : crate :: moon_sharp :: interpreter :: execution :: vm :: bytecode :: ByteCode , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CompositeStatement , crate :: moon_sharp :: interpreter :: execution :: vm :: bytecode :: ByteCode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_compile :: get_method_info () . method_ptr ,) ; inner (this , bc , __unity2_method_info) } }
 
 #[cfg(feature = "moon_sharp-interpreter-tree-statements-compositestatement")]
-pub trait ICompositeStatementMethods: ICompositeStatement {
-    #[doc = "`.ctor(crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext)` overload"]
-    fn ctor(self, lcontext: impl ::core::convert::Into<crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext>) -> () {
-        unsafe {
-            let __receiver = <CompositeStatement as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CompositeStatement_unity2_raw::ctor(__receiver, ::core::convert::Into::into(lcontext), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Compile(crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode)` overload"]
-    fn compile(self, bc: impl ::core::convert::Into<crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode>) -> () {
-        unsafe {
-            let __receiver = <CompositeStatement as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CompositeStatement_unity2_raw::compile(__receiver, ::core::convert::Into::into(bc), ::core::option::Option::None)
-        }
-    }
-}
+pub trait ICompositeStatementMethods : ICompositeStatement { # [doc = "`.ctor(crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext)` overload"] fn ctor (self , lcontext : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext >) -> () { unsafe { let __receiver = < CompositeStatement as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CompositeStatement_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (lcontext) , :: core :: option :: Option :: None) } } # [doc = "`Compile(crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode)` overload"] fn compile (self , bc : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: execution :: vm :: bytecode :: ByteCode >) -> () { unsafe { let __receiver = < CompositeStatement as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CompositeStatement_unity2_raw :: compile (__receiver , :: core :: convert :: Into :: into (bc) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "moon_sharp-interpreter-tree-statements-compositestatement")]
-impl<__T: ICompositeStatement> ICompositeStatementMethods for __T {}
+impl < __T : ICompositeStatement > ICompositeStatementMethods for __T { }
+
+#[cfg(feature = "moon_sharp-interpreter-tree-statements-compositestatement")]
+impl CompositeStatement { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CompositeStatement_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn compile_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CompositeStatement_unity2_raw :: __lookup_compile :: get_method_info () } }
 
 #[cfg(feature = "moon_sharp-interpreter-tree-statements-compositestatement")]
 impl CompositeStatement {
-    #[doc = "`.ctor(crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext)` — overload selector"]
-    pub fn new(lcontext: crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(CompositeStatement),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ICompositeStatementMethods>::ctor(this, lcontext);
-        this
-    }
+# [doc = "`.ctor(crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext)` — overload selector"] pub fn new (lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CompositeStatement) , :: core :: stringify ! (new) ,)) ; < Self as ICompositeStatementMethods > :: ctor (this , lcontext) ; this }
 }
 
 #[cfg(feature = "moon_sharp-interpreter-tree-statements-compositestatement")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{CompositeStatement, ICompositeStatement, ICompositeStatementMethods};
-    #[cfg(feature = "moon_sharp-interpreter-tree-nodebase")]
-    pub use crate::moon_sharp::interpreter::tree::nodebase::INodeBaseMethods;
-    #[cfg(feature = "moon_sharp-interpreter-tree-statement")]
-    pub use crate::moon_sharp::interpreter::tree::statement::IStatementMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::{
-        moon_sharp::interpreter::tree::{nodebase::INodeBase, statement::IStatement},
-        system::object::IObject,
-    };
+    pub use super::CompositeStatement;
+    pub use super::ICompositeStatement;
+    pub use super::ICompositeStatementMethods;
+    pub use crate::moon_sharp::interpreter::tree::nodebase::INodeBase;
+    pub use crate::moon_sharp::interpreter::tree::statement::IStatement;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "moon_sharp-interpreter-tree-nodebase")] pub use crate::moon_sharp::interpreter::tree::nodebase::INodeBaseMethods;
+    #[cfg(feature = "moon_sharp-interpreter-tree-statement")] pub use crate::moon_sharp::interpreter::tree::statement::IStatementMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

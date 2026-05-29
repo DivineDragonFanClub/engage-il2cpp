@@ -2,358 +2,51 @@
 
 #[cfg(feature = "unity_engine-rendering-universal-internal-screenspaceshadowresolvepass-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::rendering::universal::scriptablerenderpass::{IScriptableRenderPass, ScriptableRenderPass},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/screenspaceshadowresolvepass/ScreenSpaceShadowResolvePass.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Rendering.Universal.Internal", name = "ScreenSpaceShadowResolvePass")]
-    #[parent(crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass)]
-    pub struct ScreenSpaceShadowResolvePass {
-        #[offset(112)]
-        #[rename(name = "m_ScreenSpaceShadowsMaterial")]
-        pub m_screen_space_shadows_material: crate::unity_engine::material::Material,
-        #[offset(120)]
-        #[rename(name = "m_ScreenSpaceShadowmap")]
-        pub m_screen_space_shadowmap: crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
-        #[offset(168)]
-        #[rename(name = "m_RenderTextureDescriptor")]
-        pub m_render_texture_descriptor: crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: rendering :: universal :: scriptablerenderpass :: { IScriptableRenderPass , ScriptableRenderPass }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/screenspaceshadowresolvepass/ScreenSpaceShadowResolvePass.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.Universal.Internal" , name = "ScreenSpaceShadowResolvePass")] # [parent (crate :: unity_engine :: rendering :: universal :: scriptablerenderpass :: ScriptableRenderPass)] pub struct ScreenSpaceShadowResolvePass {
+# [offset (112)] # [rename (name = "m_ScreenSpaceShadowsMaterial")] pub m_screen_space_shadows_material : crate :: unity_engine :: material :: Material ,
+# [offset (120)] # [rename (name = "m_ScreenSpaceShadowmap")] pub m_screen_space_shadowmap : crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle ,
+# [offset (168)] # [rename (name = "m_RenderTextureDescriptor")] pub m_render_texture_descriptor : crate :: unity_engine :: rendertexturedescriptor :: RenderTextureDescriptor ,
+}
+
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-internal-screenspaceshadowresolvepass-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-universal-internal-screenspaceshadowresolvepass")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ScreenSpaceShadowResolvePass_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::material::Material as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ScreenSpaceShadowResolvePass as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ScreenSpaceShadowResolvePass as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: ScreenSpaceShadowResolvePass,
-        evt: crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent,
-        screenspace_shadows_material: crate::unity_engine::material::Material,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ScreenSpaceShadowResolvePass,
-            crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent,
-            crate::unity_engine::material::Material,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, evt, screenspace_shadows_material, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_setup {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ScreenSpaceShadowResolvePass as ::unity2::ClassIdentity>::class(),
-                "Setup",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ScreenSpaceShadowResolvePass as ::unity2::ClassIdentity>::NAME,
-                        "Setup",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn setup(
-        this: ScreenSpaceShadowResolvePass,
-        base_descriptor: crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ScreenSpaceShadowResolvePass,
-            crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_setup::get_method_info().method_ptr);
-        inner(this, base_descriptor, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_configure {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::rendering::commandbuffer::CommandBuffer as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ScreenSpaceShadowResolvePass as ::unity2::ClassIdentity>::class(),
-                "Configure",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ScreenSpaceShadowResolvePass as ::unity2::ClassIdentity>::NAME,
-                        "Configure",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn configure(
-        this: ScreenSpaceShadowResolvePass,
-        cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
-        camera_texture_descriptor: crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ScreenSpaceShadowResolvePass,
-            crate::unity_engine::rendering::commandbuffer::CommandBuffer,
-            crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_configure::get_method_info().method_ptr);
-        inner(this, cmd, camera_texture_descriptor, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_execute {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::rendering::universal::renderingdata::RenderingData as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ScreenSpaceShadowResolvePass as ::unity2::ClassIdentity>::class(),
-                "Execute",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ScreenSpaceShadowResolvePass as ::unity2::ClassIdentity>::NAME,
-                        "Execute",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn execute(
-        this: ScreenSpaceShadowResolvePass,
-        context: crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
-        rendering_data: *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ScreenSpaceShadowResolvePass,
-            crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
-            *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_execute::get_method_info().method_ptr);
-        inner(this, context, rendering_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_camera_cleanup {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::rendering::commandbuffer::CommandBuffer as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ScreenSpaceShadowResolvePass as ::unity2::ClassIdentity>::class(),
-                "OnCameraCleanup",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ScreenSpaceShadowResolvePass as ::unity2::ClassIdentity>::NAME,
-                        "OnCameraCleanup",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_camera_cleanup(
-        this: ScreenSpaceShadowResolvePass,
-        cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ScreenSpaceShadowResolvePass,
-            crate::unity_engine::rendering::commandbuffer::CommandBuffer,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_on_camera_cleanup::get_method_info().method_ptr);
-        inner(this, cmd, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ScreenSpaceShadowResolvePass_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: universal :: renderpassevent :: RenderPassEvent as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: material :: Material as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ScreenSpaceShadowResolvePass as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ScreenSpaceShadowResolvePass as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : ScreenSpaceShadowResolvePass , evt : crate :: unity_engine :: rendering :: universal :: renderpassevent :: RenderPassEvent , screenspace_shadows_material : crate :: unity_engine :: material :: Material , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ScreenSpaceShadowResolvePass , crate :: unity_engine :: rendering :: universal :: renderpassevent :: RenderPassEvent , crate :: unity_engine :: material :: Material , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , evt , screenspace_shadows_material , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_setup { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendertexturedescriptor :: RenderTextureDescriptor as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ScreenSpaceShadowResolvePass as :: unity2 :: ClassIdentity > :: class () , "Setup" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ScreenSpaceShadowResolvePass as :: unity2 :: ClassIdentity > :: NAME , "Setup" , e) , } } } pub unsafe fn setup (this : ScreenSpaceShadowResolvePass , base_descriptor : crate :: unity_engine :: rendertexturedescriptor :: RenderTextureDescriptor , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ScreenSpaceShadowResolvePass , crate :: unity_engine :: rendertexturedescriptor :: RenderTextureDescriptor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_setup :: get_method_info () . method_ptr ,) ; inner (this , base_descriptor , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_configure { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendertexturedescriptor :: RenderTextureDescriptor as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ScreenSpaceShadowResolvePass as :: unity2 :: ClassIdentity > :: class () , "Configure" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ScreenSpaceShadowResolvePass as :: unity2 :: ClassIdentity > :: NAME , "Configure" , e) , } } } pub unsafe fn configure (this : ScreenSpaceShadowResolvePass , cmd : crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer , camera_texture_descriptor : crate :: unity_engine :: rendertexturedescriptor :: RenderTextureDescriptor , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ScreenSpaceShadowResolvePass , crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer , crate :: unity_engine :: rendertexturedescriptor :: RenderTextureDescriptor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_configure :: get_method_info () . method_ptr ,) ; inner (this , cmd , camera_texture_descriptor , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_execute { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ScreenSpaceShadowResolvePass as :: unity2 :: ClassIdentity > :: class () , "Execute" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ScreenSpaceShadowResolvePass as :: unity2 :: ClassIdentity > :: NAME , "Execute" , e) , } } } pub unsafe fn execute (this : ScreenSpaceShadowResolvePass , context : crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext , rendering_data : * mut crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ScreenSpaceShadowResolvePass , crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext , * mut crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_execute :: get_method_info () . method_ptr ,) ; inner (this , context , rendering_data , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_camera_cleanup { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ScreenSpaceShadowResolvePass as :: unity2 :: ClassIdentity > :: class () , "OnCameraCleanup" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ScreenSpaceShadowResolvePass as :: unity2 :: ClassIdentity > :: NAME , "OnCameraCleanup" , e) , } } } pub unsafe fn on_camera_cleanup (this : ScreenSpaceShadowResolvePass , cmd : crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ScreenSpaceShadowResolvePass , crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_camera_cleanup :: get_method_info () . method_ptr ,) ; inner (this , cmd , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-rendering-universal-internal-screenspaceshadowresolvepass")]
-pub trait IScreenSpaceShadowResolvePassMethods: IScreenSpaceShadowResolvePass {
-    #[doc = "`.ctor(crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent, crate::unity_engine::material::Material)` overload"]
-    fn ctor(
-        self,
-        evt: impl ::core::convert::Into<crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent>,
-        screenspace_shadows_material: impl ::core::convert::Into<crate::unity_engine::material::Material>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <ScreenSpaceShadowResolvePass as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ScreenSpaceShadowResolvePass_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(evt),
-                ::core::convert::Into::into(screenspace_shadows_material),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Setup(crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor)` overload"]
-    fn setup(self, base_descriptor: impl ::core::convert::Into<crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor>) -> () {
-        unsafe {
-            let __receiver =
-                <ScreenSpaceShadowResolvePass as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ScreenSpaceShadowResolvePass_unity2_raw::setup(__receiver, ::core::convert::Into::into(base_descriptor), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Configure(crate::unity_engine::rendering::commandbuffer::CommandBuffer, crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor)` overload"]
-    fn configure(
-        self,
-        cmd: impl ::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>,
-        camera_texture_descriptor: impl ::core::convert::Into<crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <ScreenSpaceShadowResolvePass as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ScreenSpaceShadowResolvePass_unity2_raw::configure(
-                __receiver,
-                ::core::convert::Into::into(cmd),
-                ::core::convert::Into::into(camera_texture_descriptor),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Execute(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, *mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"]
-    fn execute(
-        self,
-        context: impl ::core::convert::Into<crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext>,
-    ) -> crate::unity_engine::rendering::universal::renderingdata::RenderingData {
-        unsafe {
-            let __receiver =
-                <ScreenSpaceShadowResolvePass as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::universal::renderingdata::RenderingData>::uninit();
-            __ScreenSpaceShadowResolvePass_unity2_raw::execute(
-                __receiver,
-                ::core::convert::Into::into(context),
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
-            __out_0.assume_init()
-        }
-    }
-    #[doc = "`OnCameraCleanup(crate::unity_engine::rendering::commandbuffer::CommandBuffer)` overload"]
-    fn on_camera_cleanup(self, cmd: impl ::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>) -> () {
-        unsafe {
-            let __receiver =
-                <ScreenSpaceShadowResolvePass as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ScreenSpaceShadowResolvePass_unity2_raw::on_camera_cleanup(__receiver, ::core::convert::Into::into(cmd), ::core::option::Option::None)
-        }
-    }
-}
+pub trait IScreenSpaceShadowResolvePassMethods : IScreenSpaceShadowResolvePass { # [doc = "`.ctor(crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent, crate::unity_engine::material::Material)` overload"] fn ctor (self , evt : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: universal :: renderpassevent :: RenderPassEvent > , screenspace_shadows_material : impl :: core :: convert :: Into < crate :: unity_engine :: material :: Material >) -> () { unsafe { let __receiver = < ScreenSpaceShadowResolvePass as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ScreenSpaceShadowResolvePass_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (evt) , :: core :: convert :: Into :: into (screenspace_shadows_material) , :: core :: option :: Option :: None) } } # [doc = "`Setup(crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor)` overload"] fn setup (self , base_descriptor : impl :: core :: convert :: Into < crate :: unity_engine :: rendertexturedescriptor :: RenderTextureDescriptor >) -> () { unsafe { let __receiver = < ScreenSpaceShadowResolvePass as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ScreenSpaceShadowResolvePass_unity2_raw :: setup (__receiver , :: core :: convert :: Into :: into (base_descriptor) , :: core :: option :: Option :: None) } } # [doc = "`Configure(crate::unity_engine::rendering::commandbuffer::CommandBuffer, crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor)` overload"] fn configure (self , cmd : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer > , camera_texture_descriptor : impl :: core :: convert :: Into < crate :: unity_engine :: rendertexturedescriptor :: RenderTextureDescriptor >) -> () { unsafe { let __receiver = < ScreenSpaceShadowResolvePass as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ScreenSpaceShadowResolvePass_unity2_raw :: configure (__receiver , :: core :: convert :: Into :: into (cmd) , :: core :: convert :: Into :: into (camera_texture_descriptor) , :: core :: option :: Option :: None) } } # [doc = "`Execute(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, *mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"] fn execute (self , context : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext >) -> crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData { unsafe { let __receiver = < ScreenSpaceShadowResolvePass as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData > :: uninit () ; __ScreenSpaceShadowResolvePass_unity2_raw :: execute (__receiver , :: core :: convert :: Into :: into (context) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) ; __out_0 . assume_init () } } # [doc = "`OnCameraCleanup(crate::unity_engine::rendering::commandbuffer::CommandBuffer)` overload"] fn on_camera_cleanup (self , cmd : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer >) -> () { unsafe { let __receiver = < ScreenSpaceShadowResolvePass as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ScreenSpaceShadowResolvePass_unity2_raw :: on_camera_cleanup (__receiver , :: core :: convert :: Into :: into (cmd) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-rendering-universal-internal-screenspaceshadowresolvepass")]
-impl<__T: IScreenSpaceShadowResolvePass> IScreenSpaceShadowResolvePassMethods for __T {}
+impl < __T : IScreenSpaceShadowResolvePass > IScreenSpaceShadowResolvePassMethods for __T { }
+
+#[cfg(feature = "unity_engine-rendering-universal-internal-screenspaceshadowresolvepass")]
+impl ScreenSpaceShadowResolvePass { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ScreenSpaceShadowResolvePass_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn setup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ScreenSpaceShadowResolvePass_unity2_raw :: __lookup_setup :: get_method_info () } pub fn configure_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ScreenSpaceShadowResolvePass_unity2_raw :: __lookup_configure :: get_method_info () } pub fn execute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ScreenSpaceShadowResolvePass_unity2_raw :: __lookup_execute :: get_method_info () } pub fn on_camera_cleanup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ScreenSpaceShadowResolvePass_unity2_raw :: __lookup_on_camera_cleanup :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-rendering-universal-internal-screenspaceshadowresolvepass")]
 impl ScreenSpaceShadowResolvePass {
-    #[doc = "`.ctor(crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent, crate::unity_engine::material::Material)` — overload selector"]
-    pub fn new(
-        evt: crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent,
-        screenspace_shadows_material: crate::unity_engine::material::Material,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ScreenSpaceShadowResolvePass),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IScreenSpaceShadowResolvePassMethods>::ctor(this, evt, screenspace_shadows_material);
-        this
-    }
+# [doc = "`.ctor(crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent, crate::unity_engine::material::Material)` — overload selector"] pub fn new (evt : crate :: unity_engine :: rendering :: universal :: renderpassevent :: RenderPassEvent , screenspace_shadows_material : crate :: unity_engine :: material :: Material) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ScreenSpaceShadowResolvePass) , :: core :: stringify ! (new) ,)) ; < Self as IScreenSpaceShadowResolvePassMethods > :: ctor (this , evt , screenspace_shadows_material) ; this }
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-internal-screenspaceshadowresolvepass")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IScreenSpaceShadowResolvePass, IScreenSpaceShadowResolvePassMethods, ScreenSpaceShadowResolvePass};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-rendering-universal-scriptablerenderpass")]
-    pub use crate::unity_engine::rendering::universal::scriptablerenderpass::IScriptableRenderPassMethods;
-    pub use crate::{system::object::IObject, unity_engine::rendering::universal::scriptablerenderpass::IScriptableRenderPass};
+    pub use super::ScreenSpaceShadowResolvePass;
+    pub use super::IScreenSpaceShadowResolvePass;
+    pub use super::IScreenSpaceShadowResolvePassMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::rendering::universal::scriptablerenderpass::IScriptableRenderPass;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-rendering-universal-scriptablerenderpass")] pub use crate::unity_engine::rendering::universal::scriptablerenderpass::IScriptableRenderPassMethods;
 }

@@ -2,793 +2,276 @@
 
 #[cfg(feature = "app-cooking-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        r#enum::{Enum, IEnum},
-        valuetype::{IValueType, ValueType},
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/cooking/Cooking_Quality.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct Cooking_Quality {
-        pub value: i32,
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/cooking/Cooking_ConversationType.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct Cooking_ConversationType  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for Cooking_ConversationType  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "Cooking.ConversationType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    impl ::unity2::ClassIdentity for Cooking_Quality {
-        const NAME: &'static str = "Cooking.Quality";
-        const NAMESPACE: &'static str = "App";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  ::unity2::IlType for Cooking_ConversationType  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::IlType for Cooking_Quality {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  Cooking_ConversationType  {
+    pub fn about_delicious() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl Cooking_Quality {
-        pub fn special1() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn special2() -> Self {
-            Self { value: 1 }
-        }
+    pub fn monologue() -> Self {
+        Self { value: 1 }
 
-        pub fn special3() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn common() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn bad() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn num() -> Self {
-            Self { value: 5 }
-        }
-
-        pub fn none() -> Self {
-            Self { value: 6 }
-        }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking/Cooking.md"))]
-    #[::unity2::class(namespace = "App", name = "Cooking")]
-    #[parent(crate::system::object::Object)]
-    pub struct Cooking {}
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/cooking/Cooking_Order.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct Cooking_Order {
-        pub value: i32,
+    pub fn dialogue() -> Self {
+        Self { value: 2 }
+
     }
 
-    impl ::unity2::ClassIdentity for Cooking_Order {
-        const NAME: &'static str = "Cooking.Order";
-        const NAMESPACE: &'static str = "App";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+    pub fn num() -> Self {
+        Self { value: 3 }
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
     }
 
-    impl ::unity2::IlType for Cooking_Order {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/cooking/Cooking_Order.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct Cooking_Order  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for Cooking_Order  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "Cooking.Order";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl Cooking_Order {
-        pub fn before() -> Self {
-            Self { value: 0 }
-        }
+}
 
-        pub fn after() -> Self {
-            Self { value: 1 }
-        }
+
+impl  ::unity2::IlType for Cooking_Order  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking/Cooking_Probability.md"))]
-    #[::unity2::class(namespace = "App", name = "Cooking.Probability")]
-    #[parent(crate::system::object::Object)]
-    pub struct Cooking_Probability {
-        #[static_field]
-        #[rename(name = "BaseProbability")]
-        pub base_probability: ::unity2::Array<f32>,
-        #[static_field]
-        #[rename(name = "ProbabilityCorrections")]
-        pub probability_corrections: ::unity2::Array<::unity2::Array<f32>>,
-        #[static_field]
-        #[rename(name = "ProbabilityFromFoodstuff")]
-        pub probability_from_foodstuff: ::unity2::Array<::unity2::Array<f32>>,
+}
+
+
+impl  Cooking_Order  {
+    pub fn before() -> Self {
+        Self { value: 0 }
+
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/cooking/Cooking_ConversationType.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct Cooking_ConversationType {
-        pub value: i32,
+
+    pub fn after() -> Self {
+        Self { value: 1 }
+
     }
 
-    impl ::unity2::ClassIdentity for Cooking_ConversationType {
-        const NAME: &'static str = "Cooking.ConversationType";
-        const NAMESPACE: &'static str = "App";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking/Cooking_Probability.md"))] # [:: unity2 :: class (namespace = "App" , name = "Cooking.Probability")] # [parent (crate :: system :: object :: Object)] pub struct Cooking_Probability {
+# [static_field] # [rename (name = "BaseProbability")] pub base_probability : :: unity2 :: Array < f32 > ,
+# [static_field] # [rename (name = "ProbabilityCorrections")] pub probability_corrections : :: unity2 :: Array < :: unity2 :: Array < f32 > > ,
+# [static_field] # [rename (name = "ProbabilityFromFoodstuff")] pub probability_from_foodstuff : :: unity2 :: Array < :: unity2 :: Array < f32 > > ,
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/cooking/Cooking_Quality.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct Cooking_Quality  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for Cooking_Quality  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "Cooking.Quality";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for Cooking_ConversationType {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  ::unity2::IlType for Cooking_Quality  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl Cooking_ConversationType {
-        pub fn about_delicious() -> Self {
-            Self { value: 0 }
-        }
+}
 
-        pub fn monologue() -> Self {
-            Self { value: 1 }
-        }
 
-        pub fn dialogue() -> Self {
-            Self { value: 2 }
-        }
+impl  Cooking_Quality  {
+    pub fn special1() -> Self {
+        Self { value: 0 }
 
-        pub fn num() -> Self {
-            Self { value: 3 }
-        }
     }
+
+
+    pub fn special2() -> Self {
+        Self { value: 1 }
+
+    }
+
+
+    pub fn special3() -> Self {
+        Self { value: 2 }
+
+    }
+
+
+    pub fn common() -> Self {
+        Self { value: 3 }
+
+    }
+
+
+    pub fn bad() -> Self {
+        Self { value: 4 }
+
+    }
+
+
+    pub fn num() -> Self {
+        Self { value: 5 }
+
+    }
+
+
+    pub fn none() -> Self {
+        Self { value: 6 }
+
+    }
+
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking/Cooking.md"))] # [:: unity2 :: class (namespace = "App" , name = "Cooking")] # [parent (crate :: system :: object :: Object)] pub struct Cooking {}
+
 }
 
 #[cfg(feature = "app-cooking-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-cooking")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __Cooking_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cook {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-                <crate::app::fooddata::FoodData as ::unity2::IlType>::il_type(),
-                <::unity2::Array<crate::app::foodstuffdata::FoodstuffData> as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<Cooking as ::unity2::ClassIdentity>::class(), "Cook", 3, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Cooking as ::unity2::ClassIdentity>::NAME, "Cook", e),
-            }
-        }
-    }
-    pub unsafe fn cook(
-        unit: crate::app::unit::Unit,
-        food_data: crate::app::fooddata::FoodData,
-        foodstuffs: ::unity2::Array<crate::app::foodstuffdata::FoodstuffData>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::dish::Dish {
-        let inner: extern "C" fn(
-            crate::app::unit::Unit,
-            crate::app::fooddata::FoodData,
-            ::unity2::Array<crate::app::foodstuffdata::FoodstuffData>,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::dish::Dish = ::core::mem::transmute(__lookup_cook::get_method_info().method_ptr);
-        inner(unit, food_data, foodstuffs, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_difficulty {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-                <crate::app::fooddata::FoodData as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Cooking as ::unity2::ClassIdentity>::class(),
-                "GetDifficulty",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Cooking as ::unity2::ClassIdentity>::NAME,
-                        "GetDifficulty",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_difficulty(
-        unit: crate::app::unit::Unit,
-        food_data: crate::app::fooddata::FoodData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::cookdata::CookData_Difficulty {
-        let inner: extern "C" fn(
-            crate::app::unit::Unit,
-            crate::app::fooddata::FoodData,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::cookdata::CookData_Difficulty = ::core::mem::transmute(__lookup_get_difficulty::get_method_info().method_ptr);
-        inner(unit, food_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_determine_quality {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::cookdata::CookData_Difficulty as ::unity2::IlType>::il_type(),
-                <::unity2::Array<crate::app::foodstuffdata::FoodstuffData> as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Cooking as ::unity2::ClassIdentity>::class(),
-                "DetermineQuality",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Cooking as ::unity2::ClassIdentity>::NAME,
-                        "DetermineQuality",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn determine_quality(
-        difficulty: crate::app::cookdata::CookData_Difficulty,
-        foodstuffs: ::unity2::Array<crate::app::foodstuffdata::FoodstuffData>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::cooking::Cooking_Quality {
-        let inner: extern "C" fn(
-            crate::app::cookdata::CookData_Difficulty,
-            ::unity2::Array<crate::app::foodstuffdata::FoodstuffData>,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::cooking::Cooking_Quality = ::core::mem::transmute(__lookup_determine_quality::get_method_info().method_ptr);
-        inner(difficulty, foodstuffs, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_determine_taste {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-                <crate::app::cooking::Cooking_Quality as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Cooking as ::unity2::ClassIdentity>::class(),
-                "DetermineTaste",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Cooking as ::unity2::ClassIdentity>::NAME,
-                        "DetermineTaste",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn determine_taste(
-        unit: crate::app::unit::Unit,
-        quality: crate::app::cooking::Cooking_Quality,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::tastedata::TasteData {
-        let inner: extern "C" fn(
-            crate::app::unit::Unit,
-            crate::app::cooking::Cooking_Quality,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::tastedata::TasteData = ::core::mem::transmute(__lookup_determine_taste::get_method_info().method_ptr);
-        inner(unit, quality, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_try_get_dialogue_mid {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-                <crate::app::cooking::Cooking_Order as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Cooking as ::unity2::ClassIdentity>::class(),
-                "TryGetDialogueMid",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Cooking as ::unity2::ClassIdentity>::NAME,
-                        "TryGetDialogueMid",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn try_get_dialogue_mid(
-        unit: crate::app::unit::Unit,
-        to_unit: crate::app::unit::Unit,
-        order: crate::app::cooking::Cooking_Order,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            crate::app::unit::Unit,
-            crate::app::unit::Unit,
-            crate::app::cooking::Cooking_Order,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(__lookup_try_get_dialogue_mid::get_method_info().method_ptr);
-        inner(unit, to_unit, order, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_try_get_name_type {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-                <crate::app::nametypedata::NameTypeData_Type as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Cooking as ::unity2::ClassIdentity>::class(),
-                "TryGetNameType",
-                4,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Cooking as ::unity2::ClassIdentity>::NAME,
-                        "TryGetNameType",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn try_get_name_type(
-        from: crate::app::unit::Unit,
-        to: crate::app::unit::Unit,
-        r#type: *mut crate::app::nametypedata::NameTypeData_Type,
-        suffix: *mut ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            crate::app::unit::Unit,
-            crate::app::unit::Unit,
-            *mut crate::app::nametypedata::NameTypeData_Type,
-            *mut ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(__lookup_try_get_name_type::get_method_info().method_ptr);
-        inner(from, to, r#type, suffix, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_throw_away_bento {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Cooking as ::unity2::ClassIdentity>::class(),
-                "ThrowAwayBento",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Cooking as ::unity2::ClassIdentity>::NAME,
-                        "ThrowAwayBento",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn throw_away_bento(super_: crate::app::procinst::ProcInst, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_throw_away_bento::get_method_info().method_ptr);
-        inner(super_, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Cooking as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Cooking as ::unity2::ClassIdentity>::NAME, ".ctor", e),
-            }
-        }
-    }
-    pub unsafe fn ctor(this: Cooking, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Cooking, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __Cooking_Probability_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_probabilities { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: cookdata :: CookData_Difficulty as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: app :: foodstuffdata :: FoodstuffData > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Cooking_Probability as :: unity2 :: ClassIdentity > :: class () , "GetProbabilities" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Cooking_Probability as :: unity2 :: ClassIdentity > :: NAME , "GetProbabilities" , e) , } } } pub unsafe fn get_probabilities (difficulty : crate :: app :: cookdata :: CookData_Difficulty , foodstuffs : :: unity2 :: Array < crate :: app :: foodstuffdata :: FoodstuffData > , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < f32 > { let inner : extern "C" fn (crate :: app :: cookdata :: CookData_Difficulty , :: unity2 :: Array < crate :: app :: foodstuffdata :: FoodstuffData > , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < f32 > = :: core :: mem :: transmute (__lookup_get_probabilities :: get_method_info () . method_ptr ,) ; inner (difficulty , foodstuffs , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Cooking_Probability as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Cooking_Probability as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : Cooking_Probability , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Cooking_Probability , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Cooking_Probability as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Cooking_Probability as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
 
 #[cfg(feature = "app-cooking")]
-impl Cooking {
-    #[doc = "`Cook(crate::app::unit::Unit, crate::app::fooddata::FoodData, ::unity2::Array<crate::app::foodstuffdata::FoodstuffData>)` overload"]
-    pub fn cook(
-        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-        food_data: impl ::core::convert::Into<crate::app::fooddata::FoodData>,
-        foodstuffs: impl ::core::convert::Into<::unity2::Array<crate::app::foodstuffdata::FoodstuffData>>,
-    ) -> crate::app::dish::Dish {
-        unsafe {
-            __Cooking_unity2_raw::cook(
-                ::core::convert::Into::into(unit),
-                ::core::convert::Into::into(food_data),
-                ::core::convert::Into::into(foodstuffs),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`GetDifficulty(crate::app::unit::Unit, crate::app::fooddata::FoodData)` overload"]
-    pub fn get_difficulty(
-        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-        food_data: impl ::core::convert::Into<crate::app::fooddata::FoodData>,
-    ) -> crate::app::cookdata::CookData_Difficulty {
-        unsafe {
-            __Cooking_unity2_raw::get_difficulty(
-                ::core::convert::Into::into(unit),
-                ::core::convert::Into::into(food_data),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`DetermineQuality(crate::app::cookdata::CookData_Difficulty, ::unity2::Array<crate::app::foodstuffdata::FoodstuffData>)` overload"]
-    pub fn determine_quality(
-        difficulty: impl ::core::convert::Into<crate::app::cookdata::CookData_Difficulty>,
-        foodstuffs: impl ::core::convert::Into<::unity2::Array<crate::app::foodstuffdata::FoodstuffData>>,
-    ) -> crate::app::cooking::Cooking_Quality {
-        unsafe {
-            __Cooking_unity2_raw::determine_quality(
-                ::core::convert::Into::into(difficulty),
-                ::core::convert::Into::into(foodstuffs),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`DetermineTaste(crate::app::unit::Unit, crate::app::cooking::Cooking_Quality)` overload"]
-    pub fn determine_taste(
-        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-        quality: impl ::core::convert::Into<crate::app::cooking::Cooking_Quality>,
-    ) -> crate::app::tastedata::TasteData {
-        unsafe {
-            __Cooking_unity2_raw::determine_taste(
-                ::core::convert::Into::into(unit),
-                ::core::convert::Into::into(quality),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`TryGetDialogueMid(crate::app::unit::Unit, crate::app::unit::Unit, crate::app::cooking::Cooking_Order)` overload"]
-    pub fn try_get_dialogue_mid(
-        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-        to_unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-        order: impl ::core::convert::Into<crate::app::cooking::Cooking_Order>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __Cooking_unity2_raw::try_get_dialogue_mid(
-                ::core::convert::Into::into(unit),
-                ::core::convert::Into::into(to_unit),
-                ::core::convert::Into::into(order),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`TryGetNameType(crate::app::unit::Unit, crate::app::unit::Unit, *mutcrate::app::nametypedata::NameTypeData_Type, *mut::unity2::Il2CppString)` overload"]
-    pub fn try_get_name_type(
-        from: impl ::core::convert::Into<crate::app::unit::Unit>,
-        to: impl ::core::convert::Into<crate::app::unit::Unit>,
-    ) -> (bool, crate::app::nametypedata::NameTypeData_Type, ::unity2::Il2CppString) {
-        unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<crate::app::nametypedata::NameTypeData_Type>::uninit();
-            let mut __out_1 = ::core::mem::MaybeUninit::<::unity2::Il2CppString>::uninit();
-            let __ret = {
-                __Cooking_unity2_raw::try_get_name_type(
-                    ::core::convert::Into::into(from),
-                    ::core::convert::Into::into(to),
-                    __out_0.as_mut_ptr(),
-                    __out_1.as_mut_ptr(),
-                    ::core::option::Option::None,
-                )
-            };
-            (__ret, __out_0.assume_init(), __out_1.assume_init())
-        }
-    }
-
-    #[doc = "`ThrowAwayBento(crate::app::procinst::ProcInst)` overload"]
-    pub fn throw_away_bento(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
-        unsafe { __Cooking_unity2_raw::throw_away_bento(::core::convert::Into::into(super_), ::core::option::Option::None) }
-    }
-}
+impl Cooking_Probability { # [doc = "`GetProbabilities(crate::app::cookdata::CookData_Difficulty, ::unity2::Array<crate::app::foodstuffdata::FoodstuffData>)` overload"] pub fn get_probabilities (difficulty : impl :: core :: convert :: Into < crate :: app :: cookdata :: CookData_Difficulty > , foodstuffs : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: app :: foodstuffdata :: FoodstuffData > >) -> crate :: system :: collections :: generic :: list_1 :: List_1 < f32 > { unsafe { __Cooking_Probability_unity2_raw :: get_probabilities (:: core :: convert :: Into :: into (difficulty) , :: core :: convert :: Into :: into (foodstuffs) , :: core :: option :: Option :: None) } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { __Cooking_Probability_unity2_raw :: cctor (:: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-cooking")]
-pub trait ICookingMethods: ICooking {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <Cooking as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Cooking_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait ICooking_ProbabilityMethods : ICooking_Probability { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Cooking_Probability as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Cooking_Probability_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-cooking")]
-impl<__T: ICooking> ICookingMethods for __T {}
+impl < __T : ICooking_Probability > ICooking_ProbabilityMethods for __T { }
 
 #[cfg(feature = "app-cooking")]
-impl Cooking {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(Cooking), ::core::stringify!(new),));
-        <Self as ICookingMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-cooking")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __Cooking_Probability_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_probabilities {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::cookdata::CookData_Difficulty as ::unity2::IlType>::il_type(),
-                <::unity2::Array<crate::app::foodstuffdata::FoodstuffData> as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Cooking_Probability as ::unity2::ClassIdentity>::class(),
-                "GetProbabilities",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Cooking_Probability as ::unity2::ClassIdentity>::NAME,
-                        "GetProbabilities",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_probabilities(
-        difficulty: crate::app::cookdata::CookData_Difficulty,
-        foodstuffs: ::unity2::Array<crate::app::foodstuffdata::FoodstuffData>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::list_1::List_1<f32> {
-        let inner: extern "C" fn(
-            crate::app::cookdata::CookData_Difficulty,
-            ::unity2::Array<crate::app::foodstuffdata::FoodstuffData>,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::collections::generic::list_1::List_1<f32> =
-            ::core::mem::transmute(__lookup_get_probabilities::get_method_info().method_ptr);
-        inner(difficulty, foodstuffs, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Cooking_Probability as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Cooking_Probability as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: Cooking_Probability, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Cooking_Probability, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Cooking_Probability as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Cooking_Probability as ::unity2::ClassIdentity>::NAME,
-                        ".cctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
+impl Cooking_Probability { pub fn get_probabilities_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Cooking_Probability_unity2_raw :: __lookup_get_probabilities :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Cooking_Probability_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Cooking_Probability_unity2_raw :: __lookup_cctor :: get_method_info () } }
 
 #[cfg(feature = "app-cooking")]
 impl Cooking_Probability {
-    #[doc = "`GetProbabilities(crate::app::cookdata::CookData_Difficulty, ::unity2::Array<crate::app::foodstuffdata::FoodstuffData>)` overload"]
-    pub fn get_probabilities(
-        difficulty: impl ::core::convert::Into<crate::app::cookdata::CookData_Difficulty>,
-        foodstuffs: impl ::core::convert::Into<::unity2::Array<crate::app::foodstuffdata::FoodstuffData>>,
-    ) -> crate::system::collections::generic::list_1::List_1<f32> {
-        unsafe {
-            __Cooking_Probability_unity2_raw::get_probabilities(
-                ::core::convert::Into::into(difficulty),
-                ::core::convert::Into::into(foodstuffs),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __Cooking_Probability_unity2_raw::cctor(::core::option::Option::None) }
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Cooking_Probability) , :: core :: stringify ! (new) ,)) ; < Self as ICooking_ProbabilityMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-cooking")]
-pub trait ICooking_ProbabilityMethods: ICooking_Probability {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <Cooking_Probability as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Cooking_Probability_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __Cooking_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cook { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < crate :: app :: fooddata :: FoodData as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: app :: foodstuffdata :: FoodstuffData > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Cooking as :: unity2 :: ClassIdentity > :: class () , "Cook" , 3 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Cooking as :: unity2 :: ClassIdentity > :: NAME , "Cook" , e) , } } } pub unsafe fn cook (unit : crate :: app :: unit :: Unit , food_data : crate :: app :: fooddata :: FoodData , foodstuffs : :: unity2 :: Array < crate :: app :: foodstuffdata :: FoodstuffData > , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: dish :: Dish { let inner : extern "C" fn (crate :: app :: unit :: Unit , crate :: app :: fooddata :: FoodData , :: unity2 :: Array < crate :: app :: foodstuffdata :: FoodstuffData > , :: unity2 :: OptionalMethod ,) -> crate :: app :: dish :: Dish = :: core :: mem :: transmute (__lookup_cook :: get_method_info () . method_ptr ,) ; inner (unit , food_data , foodstuffs , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_difficulty { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < crate :: app :: fooddata :: FoodData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Cooking as :: unity2 :: ClassIdentity > :: class () , "GetDifficulty" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Cooking as :: unity2 :: ClassIdentity > :: NAME , "GetDifficulty" , e) , } } } pub unsafe fn get_difficulty (unit : crate :: app :: unit :: Unit , food_data : crate :: app :: fooddata :: FoodData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: cookdata :: CookData_Difficulty { let inner : extern "C" fn (crate :: app :: unit :: Unit , crate :: app :: fooddata :: FoodData , :: unity2 :: OptionalMethod ,) -> crate :: app :: cookdata :: CookData_Difficulty = :: core :: mem :: transmute (__lookup_get_difficulty :: get_method_info () . method_ptr ,) ; inner (unit , food_data , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_determine_quality { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: cookdata :: CookData_Difficulty as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: app :: foodstuffdata :: FoodstuffData > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Cooking as :: unity2 :: ClassIdentity > :: class () , "DetermineQuality" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Cooking as :: unity2 :: ClassIdentity > :: NAME , "DetermineQuality" , e) , } } } pub unsafe fn determine_quality (difficulty : crate :: app :: cookdata :: CookData_Difficulty , foodstuffs : :: unity2 :: Array < crate :: app :: foodstuffdata :: FoodstuffData > , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: cooking :: Cooking_Quality { let inner : extern "C" fn (crate :: app :: cookdata :: CookData_Difficulty , :: unity2 :: Array < crate :: app :: foodstuffdata :: FoodstuffData > , :: unity2 :: OptionalMethod ,) -> crate :: app :: cooking :: Cooking_Quality = :: core :: mem :: transmute (__lookup_determine_quality :: get_method_info () . method_ptr ,) ; inner (difficulty , foodstuffs , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_determine_taste { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < crate :: app :: cooking :: Cooking_Quality as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Cooking as :: unity2 :: ClassIdentity > :: class () , "DetermineTaste" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Cooking as :: unity2 :: ClassIdentity > :: NAME , "DetermineTaste" , e) , } } } pub unsafe fn determine_taste (unit : crate :: app :: unit :: Unit , quality : crate :: app :: cooking :: Cooking_Quality , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: tastedata :: TasteData { let inner : extern "C" fn (crate :: app :: unit :: Unit , crate :: app :: cooking :: Cooking_Quality , :: unity2 :: OptionalMethod ,) -> crate :: app :: tastedata :: TasteData = :: core :: mem :: transmute (__lookup_determine_taste :: get_method_info () . method_ptr ,) ; inner (unit , quality , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_try_get_dialogue_mid { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < crate :: app :: cooking :: Cooking_Order as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Cooking as :: unity2 :: ClassIdentity > :: class () , "TryGetDialogueMid" , 3 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Cooking as :: unity2 :: ClassIdentity > :: NAME , "TryGetDialogueMid" , e) , } } } pub unsafe fn try_get_dialogue_mid (unit : crate :: app :: unit :: Unit , to_unit : crate :: app :: unit :: Unit , order : crate :: app :: cooking :: Cooking_Order , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (crate :: app :: unit :: Unit , crate :: app :: unit :: Unit , crate :: app :: cooking :: Cooking_Order , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_try_get_dialogue_mid :: get_method_info () . method_ptr ,) ; inner (unit , to_unit , order , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_try_get_name_type { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < crate :: app :: nametypedata :: NameTypeData_Type as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Cooking as :: unity2 :: ClassIdentity > :: class () , "TryGetNameType" , 4 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Cooking as :: unity2 :: ClassIdentity > :: NAME , "TryGetNameType" , e) , } } } pub unsafe fn try_get_name_type (from : crate :: app :: unit :: Unit , to : crate :: app :: unit :: Unit , r#type : * mut crate :: app :: nametypedata :: NameTypeData_Type , suffix : * mut :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (crate :: app :: unit :: Unit , crate :: app :: unit :: Unit , * mut crate :: app :: nametypedata :: NameTypeData_Type , * mut :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_try_get_name_type :: get_method_info () . method_ptr ,) ; inner (from , to , r#type , suffix , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_throw_away_bento { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Cooking as :: unity2 :: ClassIdentity > :: class () , "ThrowAwayBento" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Cooking as :: unity2 :: ClassIdentity > :: NAME , "ThrowAwayBento" , e) , } } } pub unsafe fn throw_away_bento (super_ : crate :: app :: procinst :: ProcInst , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_throw_away_bento :: get_method_info () . method_ptr ,) ; inner (super_ , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Cooking as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Cooking as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : Cooking , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Cooking , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-cooking")]
-impl<__T: ICooking_Probability> ICooking_ProbabilityMethods for __T {}
+impl Cooking { # [doc = "`Cook(crate::app::unit::Unit, crate::app::fooddata::FoodData, ::unity2::Array<crate::app::foodstuffdata::FoodstuffData>)` overload"] pub fn cook (unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , food_data : impl :: core :: convert :: Into < crate :: app :: fooddata :: FoodData > , foodstuffs : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: app :: foodstuffdata :: FoodstuffData > >) -> crate :: app :: dish :: Dish { unsafe { __Cooking_unity2_raw :: cook (:: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (food_data) , :: core :: convert :: Into :: into (foodstuffs) , :: core :: option :: Option :: None) } } # [doc = "`GetDifficulty(crate::app::unit::Unit, crate::app::fooddata::FoodData)` overload"] pub fn get_difficulty (unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , food_data : impl :: core :: convert :: Into < crate :: app :: fooddata :: FoodData >) -> crate :: app :: cookdata :: CookData_Difficulty { unsafe { __Cooking_unity2_raw :: get_difficulty (:: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (food_data) , :: core :: option :: Option :: None) } } # [doc = "`DetermineQuality(crate::app::cookdata::CookData_Difficulty, ::unity2::Array<crate::app::foodstuffdata::FoodstuffData>)` overload"] pub fn determine_quality (difficulty : impl :: core :: convert :: Into < crate :: app :: cookdata :: CookData_Difficulty > , foodstuffs : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: app :: foodstuffdata :: FoodstuffData > >) -> crate :: app :: cooking :: Cooking_Quality { unsafe { __Cooking_unity2_raw :: determine_quality (:: core :: convert :: Into :: into (difficulty) , :: core :: convert :: Into :: into (foodstuffs) , :: core :: option :: Option :: None) } } # [doc = "`DetermineTaste(crate::app::unit::Unit, crate::app::cooking::Cooking_Quality)` overload"] pub fn determine_taste (unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , quality : impl :: core :: convert :: Into < crate :: app :: cooking :: Cooking_Quality >) -> crate :: app :: tastedata :: TasteData { unsafe { __Cooking_unity2_raw :: determine_taste (:: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (quality) , :: core :: option :: Option :: None) } } # [doc = "`TryGetDialogueMid(crate::app::unit::Unit, crate::app::unit::Unit, crate::app::cooking::Cooking_Order)` overload"] pub fn try_get_dialogue_mid (unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , to_unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , order : impl :: core :: convert :: Into < crate :: app :: cooking :: Cooking_Order >) -> :: unity2 :: Il2CppString { unsafe { __Cooking_unity2_raw :: try_get_dialogue_mid (:: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (to_unit) , :: core :: convert :: Into :: into (order) , :: core :: option :: Option :: None) } } # [doc = "`TryGetNameType(crate::app::unit::Unit, crate::app::unit::Unit, *mutcrate::app::nametypedata::NameTypeData_Type, *mut::unity2::Il2CppString)` overload"] pub fn try_get_name_type (from : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , to : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> (bool , crate :: app :: nametypedata :: NameTypeData_Type , :: unity2 :: Il2CppString) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: app :: nametypedata :: NameTypeData_Type > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < :: unity2 :: Il2CppString > :: uninit () ; let __ret = { __Cooking_unity2_raw :: try_get_name_type (:: core :: convert :: Into :: into (from) , :: core :: convert :: Into :: into (to) , __out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: option :: Option :: None) } ; (__ret , __out_0 . assume_init () , __out_1 . assume_init ()) } } # [doc = "`ThrowAwayBento(crate::app::procinst::ProcInst)` overload"] pub fn throw_away_bento (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { __Cooking_unity2_raw :: throw_away_bento (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-cooking")]
-impl Cooking_Probability {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Cooking_Probability),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ICooking_ProbabilityMethods>::ctor(this);
-        this
-    }
+pub trait ICookingMethods : ICooking { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Cooking as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Cooking_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-cooking")]
+impl < __T : ICooking > ICookingMethods for __T { }
+
+#[cfg(feature = "app-cooking")]
+impl Cooking { pub fn cook_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Cooking_unity2_raw :: __lookup_cook :: get_method_info () } pub fn get_difficulty_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Cooking_unity2_raw :: __lookup_get_difficulty :: get_method_info () } pub fn determine_quality_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Cooking_unity2_raw :: __lookup_determine_quality :: get_method_info () } pub fn determine_taste_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Cooking_unity2_raw :: __lookup_determine_taste :: get_method_info () } pub fn try_get_dialogue_mid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Cooking_unity2_raw :: __lookup_try_get_dialogue_mid :: get_method_info () } pub fn try_get_name_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Cooking_unity2_raw :: __lookup_try_get_name_type :: get_method_info () } pub fn throw_away_bento_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Cooking_unity2_raw :: __lookup_throw_away_bento :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Cooking_unity2_raw :: __lookup_ctor :: get_method_info () } }
+
+#[cfg(feature = "app-cooking")]
+impl Cooking {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Cooking) , :: core :: stringify ! (new) ,)) ; < Self as ICookingMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-cooking")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{
-        Cooking, Cooking_ConversationType, Cooking_Order, Cooking_Probability, Cooking_Quality, ICooking, ICookingMethods, ICooking_Probability,
-        ICooking_ProbabilityMethods,
-    };
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::system::{object::IObject, r#enum::IEnum, valuetype::IValueType};
+    pub use super::Cooking_ConversationType;
+    pub use super::Cooking_Order;
+    pub use super::Cooking_Probability;
+    pub use super::ICooking_Probability;
+    pub use super::ICooking_ProbabilityMethods;
+    pub use super::Cooking_Quality;
+    pub use super::Cooking;
+    pub use super::ICooking;
+    pub use super::ICookingMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

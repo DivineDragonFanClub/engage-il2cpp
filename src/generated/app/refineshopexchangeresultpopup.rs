@@ -2,257 +2,67 @@
 
 #[cfg(feature = "app-refineshopexchangeresultpopup-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshopexchangeresultpopup/RefineShopExchangeResultPopup.md"))]
-    #[::unity2::class(namespace = "App", name = "RefineShopExchangeResultPopup")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct RefineShopExchangeResultPopup {
-        #[offset(24)]
-        #[rename(name = "m_TargetIconImage")]
-        pub m_target_icon_image: crate::unity_engine::ui::image::Image,
-        #[offset(32)]
-        #[rename(name = "m_TargetNameText")]
-        pub m_target_name_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(40)]
-        #[rename(name = "m_TargetValueText")]
-        pub m_target_value_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(48)]
-        #[rename(name = "m_SourceIconImage")]
-        pub m_source_icon_image: crate::unity_engine::ui::image::Image,
-        #[offset(56)]
-        #[rename(name = "m_SourceNameText")]
-        pub m_source_name_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(64)]
-        #[rename(name = "m_SourceValueText")]
-        pub m_source_value_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(72)]
-        #[rename(name = "m_Animator")]
-        pub m_animator: crate::unity_engine::animator::Animator,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshopexchangeresultpopup/RefineShopExchangeResultPopup.md"))] # [:: unity2 :: class (namespace = "App" , name = "RefineShopExchangeResultPopup")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct RefineShopExchangeResultPopup {
+# [offset (24)] # [rename (name = "m_TargetIconImage")] pub m_target_icon_image : crate :: unity_engine :: ui :: image :: Image ,
+# [offset (32)] # [rename (name = "m_TargetNameText")] pub m_target_name_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (40)] # [rename (name = "m_TargetValueText")] pub m_target_value_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (48)] # [rename (name = "m_SourceIconImage")] pub m_source_icon_image : crate :: unity_engine :: ui :: image :: Image ,
+# [offset (56)] # [rename (name = "m_SourceNameText")] pub m_source_name_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (64)] # [rename (name = "m_SourceValueText")] pub m_source_value_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (72)] # [rename (name = "m_Animator")] pub m_animator : crate :: unity_engine :: animator :: Animator ,
+}
+
 }
 
 #[cfg(feature = "app-refineshopexchangeresultpopup-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-refineshopexchangeresultpopup")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RefineShopExchangeResultPopup_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_open {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RefineShopExchangeResultPopup as ::unity2::ClassIdentity>::class(),
-                "Open",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RefineShopExchangeResultPopup as ::unity2::ClassIdentity>::NAME,
-                        "Open",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn open(this: RefineShopExchangeResultPopup, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RefineShopExchangeResultPopup, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_open::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_data {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::itemrefineexchangedata::ItemRefineExchangeData as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <crate::app::itemrefineexchangedata::ItemRefineExchangeData as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RefineShopExchangeResultPopup as ::unity2::ClassIdentity>::class(),
-                "SetData",
-                4,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RefineShopExchangeResultPopup as ::unity2::ClassIdentity>::NAME,
-                        "SetData",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_data(
-        this: RefineShopExchangeResultPopup,
-        target_material_data: crate::app::itemrefineexchangedata::ItemRefineExchangeData,
-        target_material_count: i32,
-        source_material_data: crate::app::itemrefineexchangedata::ItemRefineExchangeData,
-        source_material_count: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RefineShopExchangeResultPopup,
-            crate::app::itemrefineexchangedata::ItemRefineExchangeData,
-            i32,
-            crate::app::itemrefineexchangedata::ItemRefineExchangeData,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_set_data::get_method_info().method_ptr);
-        inner(
-            this,
-            target_material_data,
-            target_material_count,
-            source_material_data,
-            source_material_count,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RefineShopExchangeResultPopup as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RefineShopExchangeResultPopup as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: RefineShopExchangeResultPopup, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RefineShopExchangeResultPopup, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __RefineShopExchangeResultPopup_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_open { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RefineShopExchangeResultPopup as :: unity2 :: ClassIdentity > :: class () , "Open" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefineShopExchangeResultPopup as :: unity2 :: ClassIdentity > :: NAME , "Open" , e) , } } } pub unsafe fn open (this : RefineShopExchangeResultPopup , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RefineShopExchangeResultPopup , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_open :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_data { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: itemrefineexchangedata :: ItemRefineExchangeData as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: app :: itemrefineexchangedata :: ItemRefineExchangeData as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RefineShopExchangeResultPopup as :: unity2 :: ClassIdentity > :: class () , "SetData" , 4 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefineShopExchangeResultPopup as :: unity2 :: ClassIdentity > :: NAME , "SetData" , e) , } } } pub unsafe fn set_data (this : RefineShopExchangeResultPopup , target_material_data : crate :: app :: itemrefineexchangedata :: ItemRefineExchangeData , target_material_count : i32 , source_material_data : crate :: app :: itemrefineexchangedata :: ItemRefineExchangeData , source_material_count : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RefineShopExchangeResultPopup , crate :: app :: itemrefineexchangedata :: ItemRefineExchangeData , i32 , crate :: app :: itemrefineexchangedata :: ItemRefineExchangeData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_data :: get_method_info () . method_ptr ,) ; inner (this , target_material_data , target_material_count , source_material_data , source_material_count , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RefineShopExchangeResultPopup as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefineShopExchangeResultPopup as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : RefineShopExchangeResultPopup , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RefineShopExchangeResultPopup , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-refineshopexchangeresultpopup")]
-pub trait IRefineShopExchangeResultPopupMethods: IRefineShopExchangeResultPopup {
-    #[doc = "`Open()` overload"]
-    fn open(self) -> () {
-        unsafe {
-            let __receiver =
-                <RefineShopExchangeResultPopup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RefineShopExchangeResultPopup_unity2_raw::open(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetData(crate::app::itemrefineexchangedata::ItemRefineExchangeData, i32, crate::app::itemrefineexchangedata::ItemRefineExchangeData, i32)` overload"]
-    fn set_data(
-        self,
-        target_material_data: impl ::core::convert::Into<crate::app::itemrefineexchangedata::ItemRefineExchangeData>,
-        target_material_count: impl ::core::convert::Into<i32>,
-        source_material_data: impl ::core::convert::Into<crate::app::itemrefineexchangedata::ItemRefineExchangeData>,
-        source_material_count: impl ::core::convert::Into<i32>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <RefineShopExchangeResultPopup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RefineShopExchangeResultPopup_unity2_raw::set_data(
-                __receiver,
-                ::core::convert::Into::into(target_material_data),
-                ::core::convert::Into::into(target_material_count),
-                ::core::convert::Into::into(source_material_data),
-                ::core::convert::Into::into(source_material_count),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <RefineShopExchangeResultPopup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RefineShopExchangeResultPopup_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IRefineShopExchangeResultPopupMethods : IRefineShopExchangeResultPopup { # [doc = "`Open()` overload"] fn open (self ,) -> () { unsafe { let __receiver = < RefineShopExchangeResultPopup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RefineShopExchangeResultPopup_unity2_raw :: open (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetData(crate::app::itemrefineexchangedata::ItemRefineExchangeData, i32, crate::app::itemrefineexchangedata::ItemRefineExchangeData, i32)` overload"] fn set_data (self , target_material_data : impl :: core :: convert :: Into < crate :: app :: itemrefineexchangedata :: ItemRefineExchangeData > , target_material_count : impl :: core :: convert :: Into < i32 > , source_material_data : impl :: core :: convert :: Into < crate :: app :: itemrefineexchangedata :: ItemRefineExchangeData > , source_material_count : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < RefineShopExchangeResultPopup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RefineShopExchangeResultPopup_unity2_raw :: set_data (__receiver , :: core :: convert :: Into :: into (target_material_data) , :: core :: convert :: Into :: into (target_material_count) , :: core :: convert :: Into :: into (source_material_data) , :: core :: convert :: Into :: into (source_material_count) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RefineShopExchangeResultPopup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RefineShopExchangeResultPopup_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-refineshopexchangeresultpopup")]
-impl<__T: IRefineShopExchangeResultPopup> IRefineShopExchangeResultPopupMethods for __T {}
+impl < __T : IRefineShopExchangeResultPopup > IRefineShopExchangeResultPopupMethods for __T { }
+
+#[cfg(feature = "app-refineshopexchangeresultpopup")]
+impl RefineShopExchangeResultPopup { pub fn open_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RefineShopExchangeResultPopup_unity2_raw :: __lookup_open :: get_method_info () } pub fn set_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RefineShopExchangeResultPopup_unity2_raw :: __lookup_set_data :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RefineShopExchangeResultPopup_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-refineshopexchangeresultpopup")]
 impl RefineShopExchangeResultPopup {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RefineShopExchangeResultPopup),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRefineShopExchangeResultPopupMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RefineShopExchangeResultPopup) , :: core :: stringify ! (new) ,)) ; < Self as IRefineShopExchangeResultPopupMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-refineshopexchangeresultpopup")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IRefineShopExchangeResultPopup, IRefineShopExchangeResultPopupMethods, RefineShopExchangeResultPopup};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        system::object::IObject,
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::RefineShopExchangeResultPopup;
+    pub use super::IRefineShopExchangeResultPopup;
+    pub use super::IRefineShopExchangeResultPopupMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

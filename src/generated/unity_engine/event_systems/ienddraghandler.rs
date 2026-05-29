@@ -2,82 +2,34 @@
 
 #[cfg(feature = "unity_engine-event_systems-ienddraghandler-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/ienddraghandler/IEndDragHandler.md"))]
-    #[::unity2::class(namespace = "UnityEngine.EventSystems", name = "IEndDragHandler")]
-    pub struct IEndDragHandler {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/ienddraghandler/IEndDragHandler.md"))] # [:: unity2 :: class (namespace = "UnityEngine.EventSystems" , name = "IEndDragHandler")] pub struct IEndDragHandler {}
+
 }
 
 #[cfg(feature = "unity_engine-event_systems-ienddraghandler-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-event_systems-ienddraghandler")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __IEndDragHandler_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_end_drag {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::event_systems::pointereventdata::PointerEventData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <IEndDragHandler as ::unity2::ClassIdentity>::class(),
-                "OnEndDrag",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <IEndDragHandler as ::unity2::ClassIdentity>::NAME,
-                        "OnEndDrag",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_end_drag(
-        this: IEndDragHandler,
-        event_data: crate::unity_engine::event_systems::pointereventdata::PointerEventData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            IEndDragHandler,
-            crate::unity_engine::event_systems::pointereventdata::PointerEventData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_on_end_drag::get_method_info().method_ptr);
-        inner(this, event_data, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __IEndDragHandler_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_end_drag { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< IEndDragHandler as :: unity2 :: ClassIdentity > :: class () , "OnEndDrag" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < IEndDragHandler as :: unity2 :: ClassIdentity > :: NAME , "OnEndDrag" , e) , } } } pub unsafe fn on_end_drag (this : IEndDragHandler , event_data : crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (IEndDragHandler , crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_end_drag :: get_method_info () . method_ptr ,) ; inner (this , event_data , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-event_systems-ienddraghandler")]
-pub trait IIEndDragHandlerMethods: IIEndDragHandler {
-    #[doc = "`OnEndDrag(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]
-    fn on_end_drag(self, event_data: impl ::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>) -> () {
-        unsafe {
-            let __receiver = <IEndDragHandler as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __IEndDragHandler_unity2_raw::on_end_drag(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)
-        }
-    }
-}
+pub trait IIEndDragHandlerMethods : IIEndDragHandler { # [doc = "`OnEndDrag(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"] fn on_end_drag (self , event_data : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData >) -> () { unsafe { let __receiver = < IEndDragHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IEndDragHandler_unity2_raw :: on_end_drag (__receiver , :: core :: convert :: Into :: into (event_data) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-event_systems-ienddraghandler")]
-impl<__T: IIEndDragHandler> IIEndDragHandlerMethods for __T {}
+impl < __T : IIEndDragHandler > IIEndDragHandlerMethods for __T { }
+
+#[cfg(feature = "unity_engine-event_systems-ienddraghandler")]
+impl IEndDragHandler { pub fn on_end_drag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __IEndDragHandler_unity2_raw :: __lookup_on_end_drag :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-event_systems-ienddraghandler")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IEndDragHandler, IIEndDragHandler, IIEndDragHandlerMethods};
+    pub use super::IEndDragHandler;
+    pub use super::IIEndDragHandler;
+    pub use super::IIEndDragHandlerMethods;
 }

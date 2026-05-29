@@ -2,197 +2,34 @@
 
 #[cfg(feature = "combat-combatstyleexmethods-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/combatstyleexmethods/CombatStyleExMethods.md"))]
-    #[::unity2::class(namespace = "Combat", name = "CombatStyleExMethods")]
-    #[parent(crate::system::object::Object)]
-    pub struct CombatStyleExMethods {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/combatstyleexmethods/CombatStyleExMethods.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "CombatStyleExMethods")] # [parent (crate :: system :: object :: Object)] pub struct CombatStyleExMethods {}
+
 }
 
 #[cfg(feature = "combat-combatstyleexmethods-types")]
 pub use __types::*;
 
 #[cfg(feature = "combat-combatstyleexmethods")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __CombatStyleExMethods_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_any {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::combat::combatstyle::CombatStyle as ::unity2::IlType>::il_type(),
-                <crate::combat::combatstyle::CombatStyle as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CombatStyleExMethods as ::unity2::ClassIdentity>::class(),
-                "Any",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CombatStyleExMethods as ::unity2::ClassIdentity>::NAME,
-                        "Any",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn any(
-        lhs: crate::combat::combatstyle::CombatStyle,
-        rhs: crate::combat::combatstyle::CombatStyle,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(crate::combat::combatstyle::CombatStyle, crate::combat::combatstyle::CombatStyle, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_any::get_method_info().method_ptr);
-        inner(lhs, rhs, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_none_of {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::combat::combatstyle::CombatStyle as ::unity2::IlType>::il_type(),
-                <crate::combat::combatstyle::CombatStyle as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CombatStyleExMethods as ::unity2::ClassIdentity>::class(),
-                "NoneOf",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CombatStyleExMethods as ::unity2::ClassIdentity>::NAME,
-                        "NoneOf",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn none_of(
-        lhs: crate::combat::combatstyle::CombatStyle,
-        rhs: crate::combat::combatstyle::CombatStyle,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(crate::combat::combatstyle::CombatStyle, crate::combat::combatstyle::CombatStyle, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_none_of::get_method_info().method_ptr);
-        inner(lhs, rhs, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_all {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::combat::combatstyle::CombatStyle as ::unity2::IlType>::il_type(),
-                <crate::combat::combatstyle::CombatStyle as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CombatStyleExMethods as ::unity2::ClassIdentity>::class(),
-                "All",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CombatStyleExMethods as ::unity2::ClassIdentity>::NAME,
-                        "All",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn all(
-        lhs: crate::combat::combatstyle::CombatStyle,
-        rhs: crate::combat::combatstyle::CombatStyle,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(crate::combat::combatstyle::CombatStyle, crate::combat::combatstyle::CombatStyle, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_all::get_method_info().method_ptr);
-        inner(lhs, rhs, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __CombatStyleExMethods_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_any { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: combatstyle :: CombatStyle as :: unity2 :: IlType > :: il_type () , < crate :: combat :: combatstyle :: CombatStyle as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CombatStyleExMethods as :: unity2 :: ClassIdentity > :: class () , "Any" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CombatStyleExMethods as :: unity2 :: ClassIdentity > :: NAME , "Any" , e) , } } } pub unsafe fn any (lhs : crate :: combat :: combatstyle :: CombatStyle , rhs : crate :: combat :: combatstyle :: CombatStyle , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (crate :: combat :: combatstyle :: CombatStyle , crate :: combat :: combatstyle :: CombatStyle , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_any :: get_method_info () . method_ptr ,) ; inner (lhs , rhs , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_none_of { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: combatstyle :: CombatStyle as :: unity2 :: IlType > :: il_type () , < crate :: combat :: combatstyle :: CombatStyle as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CombatStyleExMethods as :: unity2 :: ClassIdentity > :: class () , "NoneOf" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CombatStyleExMethods as :: unity2 :: ClassIdentity > :: NAME , "NoneOf" , e) , } } } pub unsafe fn none_of (lhs : crate :: combat :: combatstyle :: CombatStyle , rhs : crate :: combat :: combatstyle :: CombatStyle , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (crate :: combat :: combatstyle :: CombatStyle , crate :: combat :: combatstyle :: CombatStyle , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_none_of :: get_method_info () . method_ptr ,) ; inner (lhs , rhs , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_all { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: combatstyle :: CombatStyle as :: unity2 :: IlType > :: il_type () , < crate :: combat :: combatstyle :: CombatStyle as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CombatStyleExMethods as :: unity2 :: ClassIdentity > :: class () , "All" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CombatStyleExMethods as :: unity2 :: ClassIdentity > :: NAME , "All" , e) , } } } pub unsafe fn all (lhs : crate :: combat :: combatstyle :: CombatStyle , rhs : crate :: combat :: combatstyle :: CombatStyle , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (crate :: combat :: combatstyle :: CombatStyle , crate :: combat :: combatstyle :: CombatStyle , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_all :: get_method_info () . method_ptr ,) ; inner (lhs , rhs , __unity2_method_info) } }
 
 #[cfg(feature = "combat-combatstyleexmethods")]
-impl CombatStyleExMethods {
-    #[doc = "`Any(crate::combat::combatstyle::CombatStyle, crate::combat::combatstyle::CombatStyle)` overload"]
-    pub fn any(
-        lhs: impl ::core::convert::Into<crate::combat::combatstyle::CombatStyle>,
-        rhs: impl ::core::convert::Into<crate::combat::combatstyle::CombatStyle>,
-    ) -> bool {
-        unsafe {
-            __CombatStyleExMethods_unity2_raw::any(
-                ::core::convert::Into::into(lhs),
-                ::core::convert::Into::into(rhs),
-                ::core::option::Option::None,
-            )
-        }
-    }
+impl CombatStyleExMethods { # [doc = "`Any(crate::combat::combatstyle::CombatStyle, crate::combat::combatstyle::CombatStyle)` overload"] pub fn any (lhs : impl :: core :: convert :: Into < crate :: combat :: combatstyle :: CombatStyle > , rhs : impl :: core :: convert :: Into < crate :: combat :: combatstyle :: CombatStyle >) -> bool { unsafe { __CombatStyleExMethods_unity2_raw :: any (:: core :: convert :: Into :: into (lhs) , :: core :: convert :: Into :: into (rhs) , :: core :: option :: Option :: None) } } # [doc = "`NoneOf(crate::combat::combatstyle::CombatStyle, crate::combat::combatstyle::CombatStyle)` overload"] pub fn none_of (lhs : impl :: core :: convert :: Into < crate :: combat :: combatstyle :: CombatStyle > , rhs : impl :: core :: convert :: Into < crate :: combat :: combatstyle :: CombatStyle >) -> bool { unsafe { __CombatStyleExMethods_unity2_raw :: none_of (:: core :: convert :: Into :: into (lhs) , :: core :: convert :: Into :: into (rhs) , :: core :: option :: Option :: None) } } # [doc = "`All(crate::combat::combatstyle::CombatStyle, crate::combat::combatstyle::CombatStyle)` overload"] pub fn all (lhs : impl :: core :: convert :: Into < crate :: combat :: combatstyle :: CombatStyle > , rhs : impl :: core :: convert :: Into < crate :: combat :: combatstyle :: CombatStyle >) -> bool { unsafe { __CombatStyleExMethods_unity2_raw :: all (:: core :: convert :: Into :: into (lhs) , :: core :: convert :: Into :: into (rhs) , :: core :: option :: Option :: None) } } }
 
-    #[doc = "`NoneOf(crate::combat::combatstyle::CombatStyle, crate::combat::combatstyle::CombatStyle)` overload"]
-    pub fn none_of(
-        lhs: impl ::core::convert::Into<crate::combat::combatstyle::CombatStyle>,
-        rhs: impl ::core::convert::Into<crate::combat::combatstyle::CombatStyle>,
-    ) -> bool {
-        unsafe {
-            __CombatStyleExMethods_unity2_raw::none_of(
-                ::core::convert::Into::into(lhs),
-                ::core::convert::Into::into(rhs),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`All(crate::combat::combatstyle::CombatStyle, crate::combat::combatstyle::CombatStyle)` overload"]
-    pub fn all(
-        lhs: impl ::core::convert::Into<crate::combat::combatstyle::CombatStyle>,
-        rhs: impl ::core::convert::Into<crate::combat::combatstyle::CombatStyle>,
-    ) -> bool {
-        unsafe {
-            __CombatStyleExMethods_unity2_raw::all(
-                ::core::convert::Into::into(lhs),
-                ::core::convert::Into::into(rhs),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+#[cfg(feature = "combat-combatstyleexmethods")]
+impl CombatStyleExMethods { pub fn any_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CombatStyleExMethods_unity2_raw :: __lookup_any :: get_method_info () } pub fn none_of_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CombatStyleExMethods_unity2_raw :: __lookup_none_of :: get_method_info () } pub fn all_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CombatStyleExMethods_unity2_raw :: __lookup_all :: get_method_info () } }
 
 #[cfg(feature = "combat-combatstyleexmethods")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{CombatStyleExMethods, ICombatStyleExMethods};
+    pub use super::CombatStyleExMethods;
+    pub use super::ICombatStyleExMethods;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

@@ -2,1272 +2,140 @@
 
 #[cfg(feature = "app-friendlistdata-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::{
-            structbase::{IStructBase, StructBase},
-            structdata_1::{IStructData_1, StructData_1},
-            structtemplate_1::{IStructTemplate_1, StructTemplate_1},
-        },
-        system::{
-            object::{IObject, Object},
-            r#enum::{Enum, IEnum},
-            valuetype::{IValueType, ValueType},
-        },
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/friendlistdata/FriendListData_States.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct FriendListData_States {
-        pub value: i32,
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: structbase :: { IStructBase , StructBase }
+ ;
+ use crate :: app :: structdata_1 :: { IStructData_1 , StructData_1 }
+ ;
+ use crate :: app :: structtemplate_1 :: { IStructTemplate_1 , StructTemplate_1 }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/friendlistdata/FriendListData_States.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct FriendListData_States  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for FriendListData_States  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "FriendListData.States";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    impl ::unity2::ClassIdentity for FriendListData_States {
-        const NAME: &'static str = "FriendListData.States";
-        const NAMESPACE: &'static str = "App";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  ::unity2::IlType for FriendListData_States  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::IlType for FriendListData_States {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  FriendListData_States  {
+    pub fn hide() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl FriendListData_States {
-        pub fn hide() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn level_none() -> Self {
-            Self { value: 1 }
-        }
+    pub fn level_none() -> Self {
+        Self { value: 1 }
 
-        pub fn level_c() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn level_b() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn level_a() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn level_a_plus() -> Self {
-            Self { value: 5 }
-        }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/friendlistdata/FriendListData.md"))]
-    #[::unity2::class(namespace = "App", name = "FriendListData")]
-    # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: friendlistdata :: FriendListData >)]
-    pub struct FriendListData {}
+
+    pub fn level_c() -> Self {
+        Self { value: 2 }
+
+    }
+
+
+    pub fn level_b() -> Self {
+        Self { value: 3 }
+
+    }
+
+
+    pub fn level_a() -> Self {
+        Self { value: 4 }
+
+    }
+
+
+    pub fn level_a_plus() -> Self {
+        Self { value: 5 }
+
+    }
+
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/friendlistdata/FriendListData.md"))] # [:: unity2 :: class (namespace = "App" , name = "FriendListData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: friendlistdata :: FriendListData >)] pub struct FriendListData {}
+
 }
 
 #[cfg(feature = "app-friendlistdata-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-friendlistdata")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __FriendListData_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_load {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<FriendListData as ::unity2::ClassIdentity>::class(), "Load", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FriendListData as ::unity2::ClassIdentity>::NAME,
-                        "Load",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn load(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_load::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_flid {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FriendListData as ::unity2::ClassIdentity>::class(),
-                "get_FLID",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FriendListData as ::unity2::ClassIdentity>::NAME,
-                        "get_FLID",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_flid(this: FriendListData, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(FriendListData, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_flid::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_flid {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FriendListData as ::unity2::ClassIdentity>::class(),
-                "set_FLID",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FriendListData as ::unity2::ClassIdentity>::NAME,
-                        "set_FLID",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_flid(this: FriendListData, value: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(FriendListData, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_flid::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_pid {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FriendListData as ::unity2::ClassIdentity>::class(),
-                "get_PID",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FriendListData as ::unity2::ClassIdentity>::NAME,
-                        "get_PID",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_pid(this: FriendListData, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(FriendListData, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_pid::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_pid {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FriendListData as ::unity2::ClassIdentity>::class(),
-                "set_PID",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FriendListData as ::unity2::ClassIdentity>::NAME,
-                        "set_PID",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_pid(this: FriendListData, value: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(FriendListData, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_pid::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_level {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FriendListData as ::unity2::ClassIdentity>::class(),
-                "get_Level",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FriendListData as ::unity2::ClassIdentity>::NAME,
-                        "get_Level",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_level(this: FriendListData, __unity2_method_info: ::unity2::OptionalMethod) -> i8 {
-        let inner: extern "C" fn(FriendListData, ::unity2::OptionalMethod) -> i8 =
-            ::core::mem::transmute(__lookup_get_level::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_level {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i8 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FriendListData as ::unity2::ClassIdentity>::class(),
-                "set_Level",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FriendListData as ::unity2::ClassIdentity>::NAME,
-                        "set_Level",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_level(this: FriendListData, value: i8, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(FriendListData, i8, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_level::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_content_text {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FriendListData as ::unity2::ClassIdentity>::class(),
-                "get_ContentText",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FriendListData as ::unity2::ClassIdentity>::NAME,
-                        "get_ContentText",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_content_text(this: FriendListData, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(FriendListData, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_content_text::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_content_text {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FriendListData as ::unity2::ClassIdentity>::class(),
-                "set_ContentText",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FriendListData as ::unity2::ClassIdentity>::NAME,
-                        "set_ContentText",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_content_text(this: FriendListData, value: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(FriendListData, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_content_text::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_stamp_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FriendListData as ::unity2::ClassIdentity>::class(),
-                "get_StampName",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FriendListData as ::unity2::ClassIdentity>::NAME,
-                        "get_StampName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_stamp_name(this: FriendListData, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(FriendListData, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_stamp_name::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_stamp_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FriendListData as ::unity2::ClassIdentity>::class(),
-                "set_StampName",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FriendListData as ::unity2::ClassIdentity>::NAME,
-                        "set_StampName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_stamp_name(this: FriendListData, value: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(FriendListData, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_stamp_name::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_image_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FriendListData as ::unity2::ClassIdentity>::class(),
-                "get_ImageName",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FriendListData as ::unity2::ClassIdentity>::NAME,
-                        "get_ImageName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_image_name(this: FriendListData, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(FriendListData, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_image_name::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_image_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FriendListData as ::unity2::ClassIdentity>::class(),
-                "set_ImageName",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FriendListData as ::unity2::ClassIdentity>::NAME,
-                        "set_ImageName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_image_name(this: FriendListData, value: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(FriendListData, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_image_name::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_image_name_s {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FriendListData as ::unity2::ClassIdentity>::class(),
-                "get_ImageNameS",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FriendListData as ::unity2::ClassIdentity>::NAME,
-                        "get_ImageNameS",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_image_name_s(this: FriendListData, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(FriendListData, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_image_name_s::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_image_name_s {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FriendListData as ::unity2::ClassIdentity>::class(),
-                "set_ImageNameS",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FriendListData as ::unity2::ClassIdentity>::NAME,
-                        "set_ImageNameS",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_image_name_s(this: FriendListData, value: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(FriendListData, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_image_name_s::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_country {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FriendListData as ::unity2::ClassIdentity>::class(),
-                "get_Country",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FriendListData as ::unity2::ClassIdentity>::NAME,
-                        "get_Country",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_country(this: FriendListData, __unity2_method_info: ::unity2::OptionalMethod) -> i8 {
-        let inner: extern "C" fn(FriendListData, ::unity2::OptionalMethod) -> i8 =
-            ::core::mem::transmute(__lookup_get_country::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_country {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i8 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FriendListData as ::unity2::ClassIdentity>::class(),
-                "set_Country",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FriendListData as ::unity2::ClassIdentity>::NAME,
-                        "set_Country",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_country(this: FriendListData, value: i8, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(FriendListData, i8, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_country::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_debug_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FriendListData as ::unity2::ClassIdentity>::class(),
-                "GetDebugName",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FriendListData as ::unity2::ClassIdentity>::NAME,
-                        "GetDebugName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_debug_name(this: FriendListData, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(FriendListData, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_debug_name::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_flag_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::persondata::PersonData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FriendListData as ::unity2::ClassIdentity>::class(),
-                "GetFlagName",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FriendListData as ::unity2::ClassIdentity>::NAME,
-                        "GetFlagName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_flag_name(
-        person: crate::app::persondata::PersonData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(crate::app::persondata::PersonData, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_flag_name::get_method_info().method_ptr);
-        inner(person, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_state {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FriendListData as ::unity2::ClassIdentity>::class(),
-                "GetState",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FriendListData as ::unity2::ClassIdentity>::NAME,
-                        "GetState",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_state(
-        pid: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::friendlistdata::FriendListData_States {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> crate::app::friendlistdata::FriendListData_States =
-            ::core::mem::transmute(__lookup_get_state::get_method_info().method_ptr);
-        inner(pid, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_state_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::persondata::PersonData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FriendListData as ::unity2::ClassIdentity>::class(),
-                "GetState",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FriendListData as ::unity2::ClassIdentity>::NAME,
-                        "GetState",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_state_2(
-        person: crate::app::persondata::PersonData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::friendlistdata::FriendListData_States {
-        let inner: extern "C" fn(crate::app::persondata::PersonData, ::unity2::OptionalMethod) -> crate::app::friendlistdata::FriendListData_States =
-            ::core::mem::transmute(__lookup_get_state_2::get_method_info().method_ptr);
-        inner(person, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_state {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::app::friendlistdata::FriendListData_States as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FriendListData as ::unity2::ClassIdentity>::class(),
-                "SetState",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FriendListData as ::unity2::ClassIdentity>::NAME,
-                        "SetState",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_state(
-        pid: ::unity2::Il2CppString,
-        state: crate::app::friendlistdata::FriendListData_States,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(::unity2::Il2CppString, crate::app::friendlistdata::FriendListData_States, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_state::get_method_info().method_ptr);
-        inner(pid, state, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_state_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::persondata::PersonData as ::unity2::IlType>::il_type(),
-                <crate::app::friendlistdata::FriendListData_States as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FriendListData as ::unity2::ClassIdentity>::class(),
-                "SetState",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FriendListData as ::unity2::ClassIdentity>::NAME,
-                        "SetState",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_state_2(
-        person: crate::app::persondata::PersonData,
-        state: crate::app::friendlistdata::FriendListData_States,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::app::persondata::PersonData,
-            crate::app::friendlistdata::FriendListData_States,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_set_state_2::get_method_info().method_ptr);
-        inner(person, state, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update_state {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FriendListData as ::unity2::ClassIdentity>::class(),
-                "UpdateState",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FriendListData as ::unity2::ClassIdentity>::NAME,
-                        "UpdateState",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update_state(pid: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update_state::get_method_info().method_ptr);
-        inner(pid, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update_state_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::persondata::PersonData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FriendListData as ::unity2::ClassIdentity>::class(),
-                "UpdateState",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FriendListData as ::unity2::ClassIdentity>::NAME,
-                        "UpdateState",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update_state_2(person: crate::app::persondata::PersonData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(crate::app::persondata::PersonData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update_state_2::get_method_info().method_ptr);
-        inner(person, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update_state_for_mascot {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::friendlistdata::FriendListData_States as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FriendListData as ::unity2::ClassIdentity>::class(),
-                "UpdateStateForMascot",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FriendListData as ::unity2::ClassIdentity>::NAME,
-                        "UpdateStateForMascot",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update_state_for_mascot(
-        state: crate::app::friendlistdata::FriendListData_States,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::app::friendlistdata::FriendListData_States, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update_state_for_mascot::get_method_info().method_ptr);
-        inner(state, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_regist_global_flags {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FriendListData as ::unity2::ClassIdentity>::class(),
-                "RegistGlobalFlags",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FriendListData as ::unity2::ClassIdentity>::NAME,
-                        "RegistGlobalFlags",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn regist_global_flags(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_regist_global_flags::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FriendListData as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FriendListData as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: FriendListData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(FriendListData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __FriendListData_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_load { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FriendListData as :: unity2 :: ClassIdentity > :: class () , "Load" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FriendListData as :: unity2 :: ClassIdentity > :: NAME , "Load" , e) , } } } pub unsafe fn load (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_load :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_flid { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FriendListData as :: unity2 :: ClassIdentity > :: class () , "get_FLID" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FriendListData as :: unity2 :: ClassIdentity > :: NAME , "get_FLID" , e) , } } } pub unsafe fn get_flid (this : FriendListData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (FriendListData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_flid :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_flid { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FriendListData as :: unity2 :: ClassIdentity > :: class () , "set_FLID" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FriendListData as :: unity2 :: ClassIdentity > :: NAME , "set_FLID" , e) , } } } pub unsafe fn set_flid (this : FriendListData , value : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FriendListData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_flid :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_pid { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FriendListData as :: unity2 :: ClassIdentity > :: class () , "get_PID" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FriendListData as :: unity2 :: ClassIdentity > :: NAME , "get_PID" , e) , } } } pub unsafe fn get_pid (this : FriendListData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (FriendListData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_pid :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_pid { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FriendListData as :: unity2 :: ClassIdentity > :: class () , "set_PID" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FriendListData as :: unity2 :: ClassIdentity > :: NAME , "set_PID" , e) , } } } pub unsafe fn set_pid (this : FriendListData , value : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FriendListData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_pid :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_level { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FriendListData as :: unity2 :: ClassIdentity > :: class () , "get_Level" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FriendListData as :: unity2 :: ClassIdentity > :: NAME , "get_Level" , e) , } } } pub unsafe fn get_level (this : FriendListData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i8 { let inner : extern "C" fn (FriendListData , :: unity2 :: OptionalMethod ,) -> i8 = :: core :: mem :: transmute (__lookup_get_level :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_level { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i8 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FriendListData as :: unity2 :: ClassIdentity > :: class () , "set_Level" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FriendListData as :: unity2 :: ClassIdentity > :: NAME , "set_Level" , e) , } } } pub unsafe fn set_level (this : FriendListData , value : i8 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FriendListData , i8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_level :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_content_text { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FriendListData as :: unity2 :: ClassIdentity > :: class () , "get_ContentText" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FriendListData as :: unity2 :: ClassIdentity > :: NAME , "get_ContentText" , e) , } } } pub unsafe fn get_content_text (this : FriendListData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (FriendListData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_content_text :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_content_text { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FriendListData as :: unity2 :: ClassIdentity > :: class () , "set_ContentText" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FriendListData as :: unity2 :: ClassIdentity > :: NAME , "set_ContentText" , e) , } } } pub unsafe fn set_content_text (this : FriendListData , value : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FriendListData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_content_text :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_stamp_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FriendListData as :: unity2 :: ClassIdentity > :: class () , "get_StampName" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FriendListData as :: unity2 :: ClassIdentity > :: NAME , "get_StampName" , e) , } } } pub unsafe fn get_stamp_name (this : FriendListData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (FriendListData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_stamp_name :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_stamp_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FriendListData as :: unity2 :: ClassIdentity > :: class () , "set_StampName" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FriendListData as :: unity2 :: ClassIdentity > :: NAME , "set_StampName" , e) , } } } pub unsafe fn set_stamp_name (this : FriendListData , value : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FriendListData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_stamp_name :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_image_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FriendListData as :: unity2 :: ClassIdentity > :: class () , "get_ImageName" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FriendListData as :: unity2 :: ClassIdentity > :: NAME , "get_ImageName" , e) , } } } pub unsafe fn get_image_name (this : FriendListData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (FriendListData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_image_name :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_image_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FriendListData as :: unity2 :: ClassIdentity > :: class () , "set_ImageName" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FriendListData as :: unity2 :: ClassIdentity > :: NAME , "set_ImageName" , e) , } } } pub unsafe fn set_image_name (this : FriendListData , value : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FriendListData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_image_name :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_image_name_s { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FriendListData as :: unity2 :: ClassIdentity > :: class () , "get_ImageNameS" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FriendListData as :: unity2 :: ClassIdentity > :: NAME , "get_ImageNameS" , e) , } } } pub unsafe fn get_image_name_s (this : FriendListData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (FriendListData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_image_name_s :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_image_name_s { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FriendListData as :: unity2 :: ClassIdentity > :: class () , "set_ImageNameS" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FriendListData as :: unity2 :: ClassIdentity > :: NAME , "set_ImageNameS" , e) , } } } pub unsafe fn set_image_name_s (this : FriendListData , value : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FriendListData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_image_name_s :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_country { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FriendListData as :: unity2 :: ClassIdentity > :: class () , "get_Country" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FriendListData as :: unity2 :: ClassIdentity > :: NAME , "get_Country" , e) , } } } pub unsafe fn get_country (this : FriendListData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i8 { let inner : extern "C" fn (FriendListData , :: unity2 :: OptionalMethod ,) -> i8 = :: core :: mem :: transmute (__lookup_get_country :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_country { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i8 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FriendListData as :: unity2 :: ClassIdentity > :: class () , "set_Country" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FriendListData as :: unity2 :: ClassIdentity > :: NAME , "set_Country" , e) , } } } pub unsafe fn set_country (this : FriendListData , value : i8 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FriendListData , i8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_country :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_debug_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FriendListData as :: unity2 :: ClassIdentity > :: class () , "GetDebugName" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FriendListData as :: unity2 :: ClassIdentity > :: NAME , "GetDebugName" , e) , } } } pub unsafe fn get_debug_name (this : FriendListData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (FriendListData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_debug_name :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_flag_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: persondata :: PersonData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FriendListData as :: unity2 :: ClassIdentity > :: class () , "GetFlagName" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FriendListData as :: unity2 :: ClassIdentity > :: NAME , "GetFlagName" , e) , } } } pub unsafe fn get_flag_name (person : crate :: app :: persondata :: PersonData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (crate :: app :: persondata :: PersonData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_flag_name :: get_method_info () . method_ptr ,) ; inner (person , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_state { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FriendListData as :: unity2 :: ClassIdentity > :: class () , "GetState" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FriendListData as :: unity2 :: ClassIdentity > :: NAME , "GetState" , e) , } } } pub unsafe fn get_state (pid : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: friendlistdata :: FriendListData_States { let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: app :: friendlistdata :: FriendListData_States = :: core :: mem :: transmute (__lookup_get_state :: get_method_info () . method_ptr ,) ; inner (pid , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_state_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: persondata :: PersonData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FriendListData as :: unity2 :: ClassIdentity > :: class () , "GetState" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FriendListData as :: unity2 :: ClassIdentity > :: NAME , "GetState" , e) , } } } pub unsafe fn get_state_2 (person : crate :: app :: persondata :: PersonData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: friendlistdata :: FriendListData_States { let inner : extern "C" fn (crate :: app :: persondata :: PersonData , :: unity2 :: OptionalMethod ,) -> crate :: app :: friendlistdata :: FriendListData_States = :: core :: mem :: transmute (__lookup_get_state_2 :: get_method_info () . method_ptr ,) ; inner (person , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_state { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: app :: friendlistdata :: FriendListData_States as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FriendListData as :: unity2 :: ClassIdentity > :: class () , "SetState" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FriendListData as :: unity2 :: ClassIdentity > :: NAME , "SetState" , e) , } } } pub unsafe fn set_state (pid : :: unity2 :: Il2CppString , state : crate :: app :: friendlistdata :: FriendListData_States , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: Il2CppString , crate :: app :: friendlistdata :: FriendListData_States , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_state :: get_method_info () . method_ptr ,) ; inner (pid , state , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_state_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: persondata :: PersonData as :: unity2 :: IlType > :: il_type () , < crate :: app :: friendlistdata :: FriendListData_States as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FriendListData as :: unity2 :: ClassIdentity > :: class () , "SetState" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FriendListData as :: unity2 :: ClassIdentity > :: NAME , "SetState" , e) , } } } pub unsafe fn set_state_2 (person : crate :: app :: persondata :: PersonData , state : crate :: app :: friendlistdata :: FriendListData_States , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: persondata :: PersonData , crate :: app :: friendlistdata :: FriendListData_States , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_state_2 :: get_method_info () . method_ptr ,) ; inner (person , state , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update_state { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FriendListData as :: unity2 :: ClassIdentity > :: class () , "UpdateState" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FriendListData as :: unity2 :: ClassIdentity > :: NAME , "UpdateState" , e) , } } } pub unsafe fn update_state (pid : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update_state :: get_method_info () . method_ptr ,) ; inner (pid , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update_state_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: persondata :: PersonData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FriendListData as :: unity2 :: ClassIdentity > :: class () , "UpdateState" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FriendListData as :: unity2 :: ClassIdentity > :: NAME , "UpdateState" , e) , } } } pub unsafe fn update_state_2 (person : crate :: app :: persondata :: PersonData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: persondata :: PersonData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update_state_2 :: get_method_info () . method_ptr ,) ; inner (person , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update_state_for_mascot { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: friendlistdata :: FriendListData_States as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FriendListData as :: unity2 :: ClassIdentity > :: class () , "UpdateStateForMascot" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FriendListData as :: unity2 :: ClassIdentity > :: NAME , "UpdateStateForMascot" , e) , } } } pub unsafe fn update_state_for_mascot (state : crate :: app :: friendlistdata :: FriendListData_States , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: friendlistdata :: FriendListData_States , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update_state_for_mascot :: get_method_info () . method_ptr ,) ; inner (state , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_regist_global_flags { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FriendListData as :: unity2 :: ClassIdentity > :: class () , "RegistGlobalFlags" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FriendListData as :: unity2 :: ClassIdentity > :: NAME , "RegistGlobalFlags" , e) , } } } pub unsafe fn regist_global_flags (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_regist_global_flags :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FriendListData as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FriendListData as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : FriendListData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FriendListData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-friendlistdata")]
+impl FriendListData { # [doc = "`Load()` overload"] pub fn load () -> () { unsafe { __FriendListData_unity2_raw :: load (:: core :: option :: Option :: None) } } # [doc = "`GetFlagName(crate::app::persondata::PersonData)` overload"] pub fn get_flag_name (person : impl :: core :: convert :: Into < crate :: app :: persondata :: PersonData >) -> :: unity2 :: Il2CppString { unsafe { __FriendListData_unity2_raw :: get_flag_name (:: core :: convert :: Into :: into (person) , :: core :: option :: Option :: None) } } # [doc = "`GetState(::unity2::Il2CppString)` overload"] pub fn get_state (pid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: app :: friendlistdata :: FriendListData_States { unsafe { __FriendListData_unity2_raw :: get_state (:: core :: convert :: Into :: into (pid) , :: core :: option :: Option :: None) } } # [doc = "`GetState(crate::app::persondata::PersonData)` overload"] pub fn get_state_2 (person : impl :: core :: convert :: Into < crate :: app :: persondata :: PersonData >) -> crate :: app :: friendlistdata :: FriendListData_States { unsafe { __FriendListData_unity2_raw :: get_state_2 (:: core :: convert :: Into :: into (person) , :: core :: option :: Option :: None) } } # [doc = "`SetState(::unity2::Il2CppString, crate::app::friendlistdata::FriendListData_States)` overload"] pub fn set_state (pid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , state : impl :: core :: convert :: Into < crate :: app :: friendlistdata :: FriendListData_States >) -> () { unsafe { __FriendListData_unity2_raw :: set_state (:: core :: convert :: Into :: into (pid) , :: core :: convert :: Into :: into (state) , :: core :: option :: Option :: None) } } # [doc = "`SetState(crate::app::persondata::PersonData, crate::app::friendlistdata::FriendListData_States)` overload"] pub fn set_state_2 (person : impl :: core :: convert :: Into < crate :: app :: persondata :: PersonData > , state : impl :: core :: convert :: Into < crate :: app :: friendlistdata :: FriendListData_States >) -> () { unsafe { __FriendListData_unity2_raw :: set_state_2 (:: core :: convert :: Into :: into (person) , :: core :: convert :: Into :: into (state) , :: core :: option :: Option :: None) } } # [doc = "`UpdateState(::unity2::Il2CppString)` overload"] pub fn update_state (pid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { __FriendListData_unity2_raw :: update_state (:: core :: convert :: Into :: into (pid) , :: core :: option :: Option :: None) } } # [doc = "`UpdateState(crate::app::persondata::PersonData)` overload"] pub fn update_state_2 (person : impl :: core :: convert :: Into < crate :: app :: persondata :: PersonData >) -> () { unsafe { __FriendListData_unity2_raw :: update_state_2 (:: core :: convert :: Into :: into (person) , :: core :: option :: Option :: None) } } # [doc = "`UpdateStateForMascot(crate::app::friendlistdata::FriendListData_States)` overload"] pub fn update_state_for_mascot (state : impl :: core :: convert :: Into < crate :: app :: friendlistdata :: FriendListData_States >) -> () { unsafe { __FriendListData_unity2_raw :: update_state_for_mascot (:: core :: convert :: Into :: into (state) , :: core :: option :: Option :: None) } } # [doc = "`RegistGlobalFlags()` overload"] pub fn regist_global_flags () -> () { unsafe { __FriendListData_unity2_raw :: regist_global_flags (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-friendlistdata")]
+pub trait IFriendListDataMethods : IFriendListData { # [doc = "`get_FLID()` overload"] fn get_flid (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < FriendListData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FriendListData_unity2_raw :: get_flid (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_FLID(::unity2::Il2CppString)` overload"] fn set_flid (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < FriendListData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FriendListData_unity2_raw :: set_flid (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_PID()` overload"] fn get_pid (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < FriendListData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FriendListData_unity2_raw :: get_pid (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_PID(::unity2::Il2CppString)` overload"] fn set_pid (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < FriendListData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FriendListData_unity2_raw :: set_pid (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_Level()` overload"] fn get_level (self ,) -> i8 { unsafe { let __receiver = < FriendListData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FriendListData_unity2_raw :: get_level (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_Level(i8)` overload"] fn set_level (self , value : impl :: core :: convert :: Into < i8 >) -> () { unsafe { let __receiver = < FriendListData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FriendListData_unity2_raw :: set_level (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_ContentText()` overload"] fn get_content_text (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < FriendListData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FriendListData_unity2_raw :: get_content_text (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_ContentText(::unity2::Il2CppString)` overload"] fn set_content_text (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < FriendListData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FriendListData_unity2_raw :: set_content_text (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_StampName()` overload"] fn get_stamp_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < FriendListData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FriendListData_unity2_raw :: get_stamp_name (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_StampName(::unity2::Il2CppString)` overload"] fn set_stamp_name (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < FriendListData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FriendListData_unity2_raw :: set_stamp_name (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_ImageName()` overload"] fn get_image_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < FriendListData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FriendListData_unity2_raw :: get_image_name (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_ImageName(::unity2::Il2CppString)` overload"] fn set_image_name (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < FriendListData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FriendListData_unity2_raw :: set_image_name (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_ImageNameS()` overload"] fn get_image_name_s (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < FriendListData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FriendListData_unity2_raw :: get_image_name_s (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_ImageNameS(::unity2::Il2CppString)` overload"] fn set_image_name_s (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < FriendListData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FriendListData_unity2_raw :: set_image_name_s (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_Country()` overload"] fn get_country (self ,) -> i8 { unsafe { let __receiver = < FriendListData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FriendListData_unity2_raw :: get_country (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_Country(i8)` overload"] fn set_country (self , value : impl :: core :: convert :: Into < i8 >) -> () { unsafe { let __receiver = < FriendListData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FriendListData_unity2_raw :: set_country (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`GetDebugName()` overload"] fn get_debug_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < FriendListData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FriendListData_unity2_raw :: get_debug_name (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < FriendListData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FriendListData_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-friendlistdata")]
+impl < __T : IFriendListData > IFriendListDataMethods for __T { }
+
+#[cfg(feature = "app-friendlistdata")]
+impl FriendListData { pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FriendListData_unity2_raw :: __lookup_load :: get_method_info () } pub fn get_flid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FriendListData_unity2_raw :: __lookup_get_flid :: get_method_info () } pub fn set_flid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FriendListData_unity2_raw :: __lookup_set_flid :: get_method_info () } pub fn get_pid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FriendListData_unity2_raw :: __lookup_get_pid :: get_method_info () } pub fn set_pid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FriendListData_unity2_raw :: __lookup_set_pid :: get_method_info () } pub fn get_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FriendListData_unity2_raw :: __lookup_get_level :: get_method_info () } pub fn set_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FriendListData_unity2_raw :: __lookup_set_level :: get_method_info () } pub fn get_content_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FriendListData_unity2_raw :: __lookup_get_content_text :: get_method_info () } pub fn set_content_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FriendListData_unity2_raw :: __lookup_set_content_text :: get_method_info () } pub fn get_stamp_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FriendListData_unity2_raw :: __lookup_get_stamp_name :: get_method_info () } pub fn set_stamp_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FriendListData_unity2_raw :: __lookup_set_stamp_name :: get_method_info () } pub fn get_image_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FriendListData_unity2_raw :: __lookup_get_image_name :: get_method_info () } pub fn set_image_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FriendListData_unity2_raw :: __lookup_set_image_name :: get_method_info () } pub fn get_image_name_s_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FriendListData_unity2_raw :: __lookup_get_image_name_s :: get_method_info () } pub fn set_image_name_s_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FriendListData_unity2_raw :: __lookup_set_image_name_s :: get_method_info () } pub fn get_country_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FriendListData_unity2_raw :: __lookup_get_country :: get_method_info () } pub fn set_country_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FriendListData_unity2_raw :: __lookup_set_country :: get_method_info () } pub fn get_debug_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FriendListData_unity2_raw :: __lookup_get_debug_name :: get_method_info () } pub fn get_flag_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FriendListData_unity2_raw :: __lookup_get_flag_name :: get_method_info () } pub fn get_state_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FriendListData_unity2_raw :: __lookup_get_state :: get_method_info () } pub fn get_state_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FriendListData_unity2_raw :: __lookup_get_state_2 :: get_method_info () } pub fn set_state_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FriendListData_unity2_raw :: __lookup_set_state :: get_method_info () } pub fn set_state_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FriendListData_unity2_raw :: __lookup_set_state_2 :: get_method_info () } pub fn update_state_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FriendListData_unity2_raw :: __lookup_update_state :: get_method_info () } pub fn update_state_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FriendListData_unity2_raw :: __lookup_update_state_2 :: get_method_info () } pub fn update_state_for_mascot_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FriendListData_unity2_raw :: __lookup_update_state_for_mascot :: get_method_info () } pub fn regist_global_flags_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FriendListData_unity2_raw :: __lookup_regist_global_flags :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FriendListData_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-friendlistdata")]
 impl FriendListData {
-    #[doc = "`Load()` overload"]
-    pub fn load() -> () {
-        unsafe { __FriendListData_unity2_raw::load(::core::option::Option::None) }
-    }
-
-    #[doc = "`GetFlagName(crate::app::persondata::PersonData)` overload"]
-    pub fn get_flag_name(person: impl ::core::convert::Into<crate::app::persondata::PersonData>) -> ::unity2::Il2CppString {
-        unsafe { __FriendListData_unity2_raw::get_flag_name(::core::convert::Into::into(person), ::core::option::Option::None) }
-    }
-
-    #[doc = "`GetState(::unity2::Il2CppString)` overload"]
-    pub fn get_state(pid: impl ::core::convert::Into<::unity2::Il2CppString>) -> crate::app::friendlistdata::FriendListData_States {
-        unsafe { __FriendListData_unity2_raw::get_state(::core::convert::Into::into(pid), ::core::option::Option::None) }
-    }
-
-    #[doc = "`GetState(crate::app::persondata::PersonData)` overload"]
-    pub fn get_state_2(person: impl ::core::convert::Into<crate::app::persondata::PersonData>) -> crate::app::friendlistdata::FriendListData_States {
-        unsafe { __FriendListData_unity2_raw::get_state_2(::core::convert::Into::into(person), ::core::option::Option::None) }
-    }
-
-    #[doc = "`SetState(::unity2::Il2CppString, crate::app::friendlistdata::FriendListData_States)` overload"]
-    pub fn set_state(
-        pid: impl ::core::convert::Into<::unity2::Il2CppString>,
-        state: impl ::core::convert::Into<crate::app::friendlistdata::FriendListData_States>,
-    ) -> () {
-        unsafe {
-            __FriendListData_unity2_raw::set_state(
-                ::core::convert::Into::into(pid),
-                ::core::convert::Into::into(state),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`SetState(crate::app::persondata::PersonData, crate::app::friendlistdata::FriendListData_States)` overload"]
-    pub fn set_state_2(
-        person: impl ::core::convert::Into<crate::app::persondata::PersonData>,
-        state: impl ::core::convert::Into<crate::app::friendlistdata::FriendListData_States>,
-    ) -> () {
-        unsafe {
-            __FriendListData_unity2_raw::set_state_2(
-                ::core::convert::Into::into(person),
-                ::core::convert::Into::into(state),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`UpdateState(::unity2::Il2CppString)` overload"]
-    pub fn update_state(pid: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe { __FriendListData_unity2_raw::update_state(::core::convert::Into::into(pid), ::core::option::Option::None) }
-    }
-
-    #[doc = "`UpdateState(crate::app::persondata::PersonData)` overload"]
-    pub fn update_state_2(person: impl ::core::convert::Into<crate::app::persondata::PersonData>) -> () {
-        unsafe { __FriendListData_unity2_raw::update_state_2(::core::convert::Into::into(person), ::core::option::Option::None) }
-    }
-
-    #[doc = "`UpdateStateForMascot(crate::app::friendlistdata::FriendListData_States)` overload"]
-    pub fn update_state_for_mascot(state: impl ::core::convert::Into<crate::app::friendlistdata::FriendListData_States>) -> () {
-        unsafe { __FriendListData_unity2_raw::update_state_for_mascot(::core::convert::Into::into(state), ::core::option::Option::None) }
-    }
-
-    #[doc = "`RegistGlobalFlags()` overload"]
-    pub fn regist_global_flags() -> () {
-        unsafe { __FriendListData_unity2_raw::regist_global_flags(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-friendlistdata")]
-pub trait IFriendListDataMethods: IFriendListData {
-    #[doc = "`get_FLID()` overload"]
-    fn get_flid(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <FriendListData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FriendListData_unity2_raw::get_flid(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_FLID(::unity2::Il2CppString)` overload"]
-    fn set_flid(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver = <FriendListData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FriendListData_unity2_raw::set_flid(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_PID()` overload"]
-    fn get_pid(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <FriendListData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FriendListData_unity2_raw::get_pid(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_PID(::unity2::Il2CppString)` overload"]
-    fn set_pid(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver = <FriendListData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FriendListData_unity2_raw::set_pid(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Level()` overload"]
-    fn get_level(self) -> i8 {
-        unsafe {
-            let __receiver = <FriendListData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FriendListData_unity2_raw::get_level(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_Level(i8)` overload"]
-    fn set_level(self, value: impl ::core::convert::Into<i8>) -> () {
-        unsafe {
-            let __receiver = <FriendListData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FriendListData_unity2_raw::set_level(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_ContentText()` overload"]
-    fn get_content_text(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <FriendListData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FriendListData_unity2_raw::get_content_text(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_ContentText(::unity2::Il2CppString)` overload"]
-    fn set_content_text(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver = <FriendListData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FriendListData_unity2_raw::set_content_text(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_StampName()` overload"]
-    fn get_stamp_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <FriendListData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FriendListData_unity2_raw::get_stamp_name(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_StampName(::unity2::Il2CppString)` overload"]
-    fn set_stamp_name(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver = <FriendListData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FriendListData_unity2_raw::set_stamp_name(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_ImageName()` overload"]
-    fn get_image_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <FriendListData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FriendListData_unity2_raw::get_image_name(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_ImageName(::unity2::Il2CppString)` overload"]
-    fn set_image_name(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver = <FriendListData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FriendListData_unity2_raw::set_image_name(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_ImageNameS()` overload"]
-    fn get_image_name_s(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <FriendListData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FriendListData_unity2_raw::get_image_name_s(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_ImageNameS(::unity2::Il2CppString)` overload"]
-    fn set_image_name_s(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver = <FriendListData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FriendListData_unity2_raw::set_image_name_s(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Country()` overload"]
-    fn get_country(self) -> i8 {
-        unsafe {
-            let __receiver = <FriendListData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FriendListData_unity2_raw::get_country(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_Country(i8)` overload"]
-    fn set_country(self, value: impl ::core::convert::Into<i8>) -> () {
-        unsafe {
-            let __receiver = <FriendListData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FriendListData_unity2_raw::set_country(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetDebugName()` overload"]
-    fn get_debug_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <FriendListData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FriendListData_unity2_raw::get_debug_name(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <FriendListData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FriendListData_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-friendlistdata")]
-impl<__T: IFriendListData> IFriendListDataMethods for __T {}
-
-#[cfg(feature = "app-friendlistdata")]
-impl FriendListData {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(FriendListData),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IFriendListDataMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FriendListData) , :: core :: stringify ! (new) ,)) ; < Self as IFriendListDataMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-friendlistdata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{FriendListData, FriendListData_States, IFriendListData, IFriendListDataMethods};
-    #[cfg(feature = "app-structbase")]
-    pub use crate::app::structbase::IStructBaseMethods;
-    #[cfg(feature = "app-structdata_1")]
-    pub use crate::app::structdata_1::IStructData_1Methods;
-    #[cfg(feature = "app-structtemplate_1")]
-    pub use crate::app::structtemplate_1::IStructTemplate_1Methods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::{
-        app::{structbase::IStructBase, structdata_1::IStructData_1, structtemplate_1::IStructTemplate_1},
-        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
-    };
+    pub use super::FriendListData_States;
+    pub use super::FriendListData;
+    pub use super::IFriendListData;
+    pub use super::IFriendListDataMethods;
+    pub use crate::app::structbase::IStructBase;
+    pub use crate::app::structdata_1::IStructData_1;
+    pub use crate::app::structtemplate_1::IStructTemplate_1;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "app-structbase")] pub use crate::app::structbase::IStructBaseMethods;
+    #[cfg(feature = "app-structdata_1")] pub use crate::app::structdata_1::IStructData_1Methods;
+    #[cfg(feature = "app-structtemplate_1")] pub use crate::app::structtemplate_1::IStructTemplate_1Methods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

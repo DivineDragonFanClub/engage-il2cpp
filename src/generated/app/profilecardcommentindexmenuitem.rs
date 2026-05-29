@@ -2,304 +2,49 @@
 
 #[cfg(feature = "app-profilecardcommentindexmenuitem-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::basicmenuitem::{BasicMenuItem, IBasicMenuItem},
-        system::object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardcommentindexmenuitem/ProfileCardCommentIndexMenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "ProfileCardCommentIndexMenuItem")]
-    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
-    pub struct ProfileCardCommentIndexMenuItem {
-        #[offset(112)]
-        #[rename(name = "m_DecideEventHandler")]
-        pub m_decide_event_handler: crate::app::profilecardcommentindexmenu::ProfileCardCommentIndexMenu_DecideEventHandler,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardcommentindexmenuitem/ProfileCardCommentIndexMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProfileCardCommentIndexMenuItem")] # [parent (crate :: app :: basicmenuitem :: BasicMenuItem)] pub struct ProfileCardCommentIndexMenuItem {
+# [offset (112)] # [rename (name = "m_DecideEventHandler")] pub m_decide_event_handler : crate :: app :: profilecardcommentindexmenu :: ProfileCardCommentIndexMenu_DecideEventHandler ,
+}
+
 }
 
 #[cfg(feature = "app-profilecardcommentindexmenuitem-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-profilecardcommentindexmenuitem")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ProfileCardCommentIndexMenuItem_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_m_mid {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCardCommentIndexMenuItem as ::unity2::ClassIdentity>::class(),
-                "get_m_Mid",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProfileCardCommentIndexMenuItem as ::unity2::ClassIdentity>::NAME,
-                        "get_m_Mid",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_m_mid(this: ProfileCardCommentIndexMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(ProfileCardCommentIndexMenuItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_m_mid::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_m_mid {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCardCommentIndexMenuItem as ::unity2::ClassIdentity>::class(),
-                "set_m_Mid",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProfileCardCommentIndexMenuItem as ::unity2::ClassIdentity>::NAME,
-                        "set_m_Mid",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_m_mid(
-        this: ProfileCardCommentIndexMenuItem,
-        value: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(ProfileCardCommentIndexMenuItem, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_m_mid::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::app::profilecardcommentindexmenu::ProfileCardCommentIndexMenu_DecideEventHandler as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCardCommentIndexMenuItem as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProfileCardCommentIndexMenuItem as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: ProfileCardCommentIndexMenuItem,
-        mid: ::unity2::Il2CppString,
-        decide_event_handler: crate::app::profilecardcommentindexmenu::ProfileCardCommentIndexMenu_DecideEventHandler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ProfileCardCommentIndexMenuItem,
-            ::unity2::Il2CppString,
-            crate::app::profilecardcommentindexmenu::ProfileCardCommentIndexMenu_DecideEventHandler,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, mid, decide_event_handler, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_message {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCardCommentIndexMenuItem as ::unity2::ClassIdentity>::class(),
-                "SetMessage",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProfileCardCommentIndexMenuItem as ::unity2::ClassIdentity>::NAME,
-                        "SetMessage",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_message(
-        this: ProfileCardCommentIndexMenuItem,
-        mid: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(ProfileCardCommentIndexMenuItem, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_message::get_method_info().method_ptr);
-        inner(this, mid, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_a_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCardCommentIndexMenuItem as ::unity2::ClassIdentity>::class(),
-                "ACall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProfileCardCommentIndexMenuItem as ::unity2::ClassIdentity>::NAME,
-                        "ACall",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn a_call(
-        this: ProfileCardCommentIndexMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(ProfileCardCommentIndexMenuItem, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
-            ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ProfileCardCommentIndexMenuItem_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_m_mid { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileCardCommentIndexMenuItem as :: unity2 :: ClassIdentity > :: class () , "get_m_Mid" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileCardCommentIndexMenuItem as :: unity2 :: ClassIdentity > :: NAME , "get_m_Mid" , e) , } } } pub unsafe fn get_m_mid (this : ProfileCardCommentIndexMenuItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (ProfileCardCommentIndexMenuItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_m_mid :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_m_mid { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileCardCommentIndexMenuItem as :: unity2 :: ClassIdentity > :: class () , "set_m_Mid" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileCardCommentIndexMenuItem as :: unity2 :: ClassIdentity > :: NAME , "set_m_Mid" , e) , } } } pub unsafe fn set_m_mid (this : ProfileCardCommentIndexMenuItem , value : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ProfileCardCommentIndexMenuItem , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_m_mid :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: app :: profilecardcommentindexmenu :: ProfileCardCommentIndexMenu_DecideEventHandler as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileCardCommentIndexMenuItem as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileCardCommentIndexMenuItem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : ProfileCardCommentIndexMenuItem , mid : :: unity2 :: Il2CppString , decide_event_handler : crate :: app :: profilecardcommentindexmenu :: ProfileCardCommentIndexMenu_DecideEventHandler , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ProfileCardCommentIndexMenuItem , :: unity2 :: Il2CppString , crate :: app :: profilecardcommentindexmenu :: ProfileCardCommentIndexMenu_DecideEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , mid , decide_event_handler , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_message { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileCardCommentIndexMenuItem as :: unity2 :: ClassIdentity > :: class () , "SetMessage" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileCardCommentIndexMenuItem as :: unity2 :: ClassIdentity > :: NAME , "SetMessage" , e) , } } } pub unsafe fn set_message (this : ProfileCardCommentIndexMenuItem , mid : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ProfileCardCommentIndexMenuItem , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_message :: get_method_info () . method_ptr ,) ; inner (this , mid , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_a_call { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileCardCommentIndexMenuItem as :: unity2 :: ClassIdentity > :: class () , "ACall" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileCardCommentIndexMenuItem as :: unity2 :: ClassIdentity > :: NAME , "ACall" , e) , } } } pub unsafe fn a_call (this : ProfileCardCommentIndexMenuItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result { let inner : extern "C" fn (ProfileCardCommentIndexMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute (__lookup_a_call :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-profilecardcommentindexmenuitem")]
-pub trait IProfileCardCommentIndexMenuItemMethods: IProfileCardCommentIndexMenuItem {
-    #[doc = "`get_m_Mid()` overload"]
-    fn get_m_mid(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver =
-                <ProfileCardCommentIndexMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ProfileCardCommentIndexMenuItem_unity2_raw::get_m_mid(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_m_Mid(::unity2::Il2CppString)` overload"]
-    fn set_m_mid(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver =
-                <ProfileCardCommentIndexMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ProfileCardCommentIndexMenuItem_unity2_raw::set_m_mid(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::app::profilecardcommentindexmenu::ProfileCardCommentIndexMenu_DecideEventHandler)` overload"]
-    fn ctor(
-        self,
-        mid: impl ::core::convert::Into<::unity2::Il2CppString>,
-        decide_event_handler: impl ::core::convert::Into<crate::app::profilecardcommentindexmenu::ProfileCardCommentIndexMenu_DecideEventHandler>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <ProfileCardCommentIndexMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ProfileCardCommentIndexMenuItem_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(mid),
-                ::core::convert::Into::into(decide_event_handler),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetMessage(::unity2::Il2CppString)` overload"]
-    fn set_message(self, mid: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver =
-                <ProfileCardCommentIndexMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ProfileCardCommentIndexMenuItem_unity2_raw::set_message(__receiver, ::core::convert::Into::into(mid), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ACall()` overload"]
-    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver =
-                <ProfileCardCommentIndexMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ProfileCardCommentIndexMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IProfileCardCommentIndexMenuItemMethods : IProfileCardCommentIndexMenuItem { # [doc = "`get_m_Mid()` overload"] fn get_m_mid (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ProfileCardCommentIndexMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ProfileCardCommentIndexMenuItem_unity2_raw :: get_m_mid (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_m_Mid(::unity2::Il2CppString)` overload"] fn set_m_mid (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < ProfileCardCommentIndexMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ProfileCardCommentIndexMenuItem_unity2_raw :: set_m_mid (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`.ctor(::unity2::Il2CppString, crate::app::profilecardcommentindexmenu::ProfileCardCommentIndexMenu_DecideEventHandler)` overload"] fn ctor (self , mid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , decide_event_handler : impl :: core :: convert :: Into < crate :: app :: profilecardcommentindexmenu :: ProfileCardCommentIndexMenu_DecideEventHandler >) -> () { unsafe { let __receiver = < ProfileCardCommentIndexMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ProfileCardCommentIndexMenuItem_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (mid) , :: core :: convert :: Into :: into (decide_event_handler) , :: core :: option :: Option :: None) } } # [doc = "`SetMessage(::unity2::Il2CppString)` overload"] fn set_message (self , mid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < ProfileCardCommentIndexMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ProfileCardCommentIndexMenuItem_unity2_raw :: set_message (__receiver , :: core :: convert :: Into :: into (mid) , :: core :: option :: Option :: None) } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < ProfileCardCommentIndexMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ProfileCardCommentIndexMenuItem_unity2_raw :: a_call (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-profilecardcommentindexmenuitem")]
-impl<__T: IProfileCardCommentIndexMenuItem> IProfileCardCommentIndexMenuItemMethods for __T {}
+impl < __T : IProfileCardCommentIndexMenuItem > IProfileCardCommentIndexMenuItemMethods for __T { }
+
+#[cfg(feature = "app-profilecardcommentindexmenuitem")]
+impl ProfileCardCommentIndexMenuItem { pub fn get_m_mid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProfileCardCommentIndexMenuItem_unity2_raw :: __lookup_get_m_mid :: get_method_info () } pub fn set_m_mid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProfileCardCommentIndexMenuItem_unity2_raw :: __lookup_set_m_mid :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProfileCardCommentIndexMenuItem_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn set_message_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProfileCardCommentIndexMenuItem_unity2_raw :: __lookup_set_message :: get_method_info () } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProfileCardCommentIndexMenuItem_unity2_raw :: __lookup_a_call :: get_method_info () } }
 
 #[cfg(feature = "app-profilecardcommentindexmenuitem")]
 impl ProfileCardCommentIndexMenuItem {
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::app::profilecardcommentindexmenu::ProfileCardCommentIndexMenu_DecideEventHandler)` — overload selector"]
-    pub fn new(
-        mid: ::unity2::Il2CppString,
-        decide_event_handler: crate::app::profilecardcommentindexmenu::ProfileCardCommentIndexMenu_DecideEventHandler,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ProfileCardCommentIndexMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IProfileCardCommentIndexMenuItemMethods>::ctor(this, mid, decide_event_handler);
-        this
-    }
+# [doc = "`.ctor(::unity2::Il2CppString, crate::app::profilecardcommentindexmenu::ProfileCardCommentIndexMenu_DecideEventHandler)` — overload selector"] pub fn new (mid : :: unity2 :: Il2CppString , decide_event_handler : crate :: app :: profilecardcommentindexmenu :: ProfileCardCommentIndexMenu_DecideEventHandler) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProfileCardCommentIndexMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IProfileCardCommentIndexMenuItemMethods > :: ctor (this , mid , decide_event_handler) ; this }
 }
 
 #[cfg(feature = "app-profilecardcommentindexmenuitem")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IProfileCardCommentIndexMenuItem, IProfileCardCommentIndexMenuItemMethods, ProfileCardCommentIndexMenuItem};
-    #[cfg(feature = "app-basicmenuitem")]
-    pub use crate::app::basicmenuitem::IBasicMenuItemMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::{app::basicmenuitem::IBasicMenuItem, system::object::IObject};
+    pub use super::ProfileCardCommentIndexMenuItem;
+    pub use super::IProfileCardCommentIndexMenuItem;
+    pub use super::IProfileCardCommentIndexMenuItemMethods;
+    pub use crate::app::basicmenuitem::IBasicMenuItem;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "app-basicmenuitem")] pub use crate::app::basicmenuitem::IBasicMenuItemMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

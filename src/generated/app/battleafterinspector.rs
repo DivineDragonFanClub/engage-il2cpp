@@ -2,120 +2,55 @@
 
 #[cfg(feature = "app-battleafterinspector-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::{
-            eachinspector::{EachInspector, IEachInspector},
-            mapinspector::{IMapInspector, MapInspector},
-            scriptutil::{IScriptUtil, ScriptUtil},
-        },
-        system::object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battleafterinspector/BattleAfterInspector.md"))]
-    #[::unity2::class(namespace = "App", name = "BattleAfterInspector")]
-    #[parent(crate::app::eachinspector::EachInspector)]
-    pub struct BattleAfterInspector {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: eachinspector :: { EachInspector , IEachInspector }
+ ;
+ use crate :: app :: mapinspector :: { IMapInspector , MapInspector }
+ ;
+ use crate :: app :: scriptutil :: { IScriptUtil , ScriptUtil }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battleafterinspector/BattleAfterInspector.md"))] # [:: unity2 :: class (namespace = "App" , name = "BattleAfterInspector")] # [parent (crate :: app :: eachinspector :: EachInspector)] pub struct BattleAfterInspector {}
+
 }
 
 #[cfg(feature = "app-battleafterinspector-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-battleafterinspector")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __BattleAfterInspector_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleAfterInspector as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <BattleAfterInspector as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: BattleAfterInspector,
-        args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            BattleAfterInspector,
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, args, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __BattleAfterInspector_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< BattleAfterInspector as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < BattleAfterInspector as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : BattleAfterInspector , args : :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (BattleAfterInspector , :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , args , __unity2_method_info) } }
 
 #[cfg(feature = "app-battleafterinspector")]
-pub trait IBattleAfterInspectorMethods: IBattleAfterInspector {
-    #[doc = "`.ctor(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    fn ctor(self, args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
-        unsafe {
-            let __receiver =
-                <BattleAfterInspector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __BattleAfterInspector_unity2_raw::ctor(__receiver, ::core::convert::Into::into(args), ::core::option::Option::None)
-        }
-    }
-}
+pub trait IBattleAfterInspectorMethods : IBattleAfterInspector { # [doc = "`.ctor(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"] fn ctor (self , args : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > >) -> () { unsafe { let __receiver = < BattleAfterInspector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __BattleAfterInspector_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (args) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-battleafterinspector")]
-impl<__T: IBattleAfterInspector> IBattleAfterInspectorMethods for __T {}
+impl < __T : IBattleAfterInspector > IBattleAfterInspectorMethods for __T { }
+
+#[cfg(feature = "app-battleafterinspector")]
+impl BattleAfterInspector { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __BattleAfterInspector_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-battleafterinspector")]
 impl BattleAfterInspector {
-    #[doc = "`.ctor(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` — overload selector"]
-    pub fn new(args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(BattleAfterInspector),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IBattleAfterInspectorMethods>::ctor(this, args);
-        this
-    }
+# [doc = "`.ctor(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` — overload selector"] pub fn new (args : :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue >) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (BattleAfterInspector) , :: core :: stringify ! (new) ,)) ; < Self as IBattleAfterInspectorMethods > :: ctor (this , args) ; this }
 }
 
 #[cfg(feature = "app-battleafterinspector")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{BattleAfterInspector, IBattleAfterInspector, IBattleAfterInspectorMethods};
-    #[cfg(feature = "app-eachinspector")]
-    pub use crate::app::eachinspector::IEachInspectorMethods;
-    #[cfg(feature = "app-mapinspector")]
-    pub use crate::app::mapinspector::IMapInspectorMethods;
-    #[cfg(feature = "app-scriptutil")]
-    pub use crate::app::scriptutil::IScriptUtilMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::{
-        app::{eachinspector::IEachInspector, mapinspector::IMapInspector, scriptutil::IScriptUtil},
-        system::object::IObject,
-    };
+    pub use super::BattleAfterInspector;
+    pub use super::IBattleAfterInspector;
+    pub use super::IBattleAfterInspectorMethods;
+    pub use crate::app::eachinspector::IEachInspector;
+    pub use crate::app::mapinspector::IMapInspector;
+    pub use crate::app::scriptutil::IScriptUtil;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "app-eachinspector")] pub use crate::app::eachinspector::IEachInspectorMethods;
+    #[cfg(feature = "app-mapinspector")] pub use crate::app::mapinspector::IMapInspectorMethods;
+    #[cfg(feature = "app-scriptutil")] pub use crate::app::scriptutil::IScriptUtilMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

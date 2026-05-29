@@ -2,251 +2,76 @@
 
 #[cfg(feature = "app-classchangejobmenucontent-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::basicmenucontent::{BasicMenuContent, IBasicMenuContent},
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/classchangejobmenucontent/ClassChangeJobMenuContent.md"))]
-    #[::unity2::class(namespace = "App", name = "ClassChangeJobMenuContent")]
-    #[parent(crate::app::basicmenucontent::BasicMenuContent)]
-    pub struct ClassChangeJobMenuContent {
-        #[offset(232)]
-        #[rename(name = "m_CostTextLevel")]
-        pub m_cost_text_level: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(240)]
-        #[rename(name = "m_CostWeaponIconObjList")]
-        pub m_cost_weapon_icon_obj_list: crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>,
-        #[offset(248)]
-        #[rename(name = "m_CostWeaponText")]
-        pub m_cost_weapon_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(256)]
-        #[rename(name = "m_CostItemImage")]
-        pub m_cost_item_image: crate::unity_engine::ui::image::Image,
-        #[offset(264)]
-        #[rename(name = "m_CostItemTitle")]
-        pub m_cost_item_title: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(272)]
-        #[rename(name = "m_CostItemValue")]
-        pub m_cost_item_value: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(280)]
-        #[rename(name = "m_HelpText")]
-        pub m_help_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(288)]
-        #[rename(name = "m_SkillRoodObj")]
-        pub m_skill_rood_obj: crate::unity_engine::gameobject::GameObject,
-        #[offset(296)]
-        #[rename(name = "m_SkillImage")]
-        pub m_skill_image: crate::unity_engine::ui::image::Image,
-        #[offset(304)]
-        #[rename(name = "m_SkillName")]
-        pub m_skill_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(312)]
-        #[rename(name = "m_SkillGetLevel")]
-        pub m_skill_get_level: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(320)]
-        #[rename(name = "m_SkillHelpText")]
-        pub m_skill_help_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: basicmenucontent :: { BasicMenuContent , IBasicMenuContent }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/classchangejobmenucontent/ClassChangeJobMenuContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "ClassChangeJobMenuContent")] # [parent (crate :: app :: basicmenucontent :: BasicMenuContent)] pub struct ClassChangeJobMenuContent {
+# [offset (232)] # [rename (name = "m_CostTextLevel")] pub m_cost_text_level : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (240)] # [rename (name = "m_CostWeaponIconObjList")] pub m_cost_weapon_icon_obj_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: gameobject :: GameObject > ,
+# [offset (248)] # [rename (name = "m_CostWeaponText")] pub m_cost_weapon_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (256)] # [rename (name = "m_CostItemImage")] pub m_cost_item_image : crate :: unity_engine :: ui :: image :: Image ,
+# [offset (264)] # [rename (name = "m_CostItemTitle")] pub m_cost_item_title : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (272)] # [rename (name = "m_CostItemValue")] pub m_cost_item_value : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (280)] # [rename (name = "m_HelpText")] pub m_help_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (288)] # [rename (name = "m_SkillRoodObj")] pub m_skill_rood_obj : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (296)] # [rename (name = "m_SkillImage")] pub m_skill_image : crate :: unity_engine :: ui :: image :: Image ,
+# [offset (304)] # [rename (name = "m_SkillName")] pub m_skill_name : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (312)] # [rename (name = "m_SkillGetLevel")] pub m_skill_get_level : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (320)] # [rename (name = "m_SkillHelpText")] pub m_skill_help_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+}
+
 }
 
 #[cfg(feature = "app-classchangejobmenucontent-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-classchangejobmenucontent")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ClassChangeJobMenuContent_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_cursor_moved_pos_y {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ClassChangeJobMenuContent as ::unity2::ClassIdentity>::class(),
-                "CalcCursorMovedPosY",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ClassChangeJobMenuContent as ::unity2::ClassIdentity>::NAME,
-                        "CalcCursorMovedPosY",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn calc_cursor_moved_pos_y(
-        this: ClassChangeJobMenuContent,
-        menu_item_index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
-        let inner: extern "C" fn(ClassChangeJobMenuContent, i32, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_calc_cursor_moved_pos_y::get_method_info().method_ptr);
-        inner(this, menu_item_index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_job_details {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::classchange::ClassChange_ChangeJobData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ClassChangeJobMenuContent as ::unity2::ClassIdentity>::class(),
-                "SetJobDetails",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ClassChangeJobMenuContent as ::unity2::ClassIdentity>::NAME,
-                        "SetJobDetails",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_job_details(
-        this: ClassChangeJobMenuContent,
-        data: crate::app::classchange::ClassChange_ChangeJobData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(ClassChangeJobMenuContent, crate::app::classchange::ClassChange_ChangeJobData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_job_details::get_method_info().method_ptr);
-        inner(this, data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ClassChangeJobMenuContent as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ClassChangeJobMenuContent as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: ClassChangeJobMenuContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ClassChangeJobMenuContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ClassChangeJobMenuContent_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_calc_cursor_moved_pos_y { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ClassChangeJobMenuContent as :: unity2 :: ClassIdentity > :: class () , "CalcCursorMovedPosY" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ClassChangeJobMenuContent as :: unity2 :: ClassIdentity > :: NAME , "CalcCursorMovedPosY" , e) , } } } pub unsafe fn calc_cursor_moved_pos_y (this : ClassChangeJobMenuContent , menu_item_index : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (ClassChangeJobMenuContent , i32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_calc_cursor_moved_pos_y :: get_method_info () . method_ptr ,) ; inner (this , menu_item_index , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_job_details { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: classchange :: ClassChange_ChangeJobData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ClassChangeJobMenuContent as :: unity2 :: ClassIdentity > :: class () , "SetJobDetails" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ClassChangeJobMenuContent as :: unity2 :: ClassIdentity > :: NAME , "SetJobDetails" , e) , } } } pub unsafe fn set_job_details (this : ClassChangeJobMenuContent , data : crate :: app :: classchange :: ClassChange_ChangeJobData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ClassChangeJobMenuContent , crate :: app :: classchange :: ClassChange_ChangeJobData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_job_details :: get_method_info () . method_ptr ,) ; inner (this , data , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ClassChangeJobMenuContent as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ClassChangeJobMenuContent as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : ClassChangeJobMenuContent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ClassChangeJobMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-classchangejobmenucontent")]
-pub trait IClassChangeJobMenuContentMethods: IClassChangeJobMenuContent {
-    #[doc = "`CalcCursorMovedPosY(i32)` overload"]
-    fn calc_cursor_moved_pos_y(self, menu_item_index: impl ::core::convert::Into<i32>) -> f32 {
-        unsafe {
-            let __receiver =
-                <ClassChangeJobMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ClassChangeJobMenuContent_unity2_raw::calc_cursor_moved_pos_y(
-                __receiver,
-                ::core::convert::Into::into(menu_item_index),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetJobDetails(crate::app::classchange::ClassChange_ChangeJobData)` overload"]
-    fn set_job_details(self, data: impl ::core::convert::Into<crate::app::classchange::ClassChange_ChangeJobData>) -> () {
-        unsafe {
-            let __receiver =
-                <ClassChangeJobMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ClassChangeJobMenuContent_unity2_raw::set_job_details(__receiver, ::core::convert::Into::into(data), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <ClassChangeJobMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ClassChangeJobMenuContent_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IClassChangeJobMenuContentMethods : IClassChangeJobMenuContent { # [doc = "`CalcCursorMovedPosY(i32)` overload"] fn calc_cursor_moved_pos_y (self , menu_item_index : impl :: core :: convert :: Into < i32 >) -> f32 { unsafe { let __receiver = < ClassChangeJobMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ClassChangeJobMenuContent_unity2_raw :: calc_cursor_moved_pos_y (__receiver , :: core :: convert :: Into :: into (menu_item_index) , :: core :: option :: Option :: None) } } # [doc = "`SetJobDetails(crate::app::classchange::ClassChange_ChangeJobData)` overload"] fn set_job_details (self , data : impl :: core :: convert :: Into < crate :: app :: classchange :: ClassChange_ChangeJobData >) -> () { unsafe { let __receiver = < ClassChangeJobMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ClassChangeJobMenuContent_unity2_raw :: set_job_details (__receiver , :: core :: convert :: Into :: into (data) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ClassChangeJobMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ClassChangeJobMenuContent_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-classchangejobmenucontent")]
-impl<__T: IClassChangeJobMenuContent> IClassChangeJobMenuContentMethods for __T {}
+impl < __T : IClassChangeJobMenuContent > IClassChangeJobMenuContentMethods for __T { }
+
+#[cfg(feature = "app-classchangejobmenucontent")]
+impl ClassChangeJobMenuContent { pub fn calc_cursor_moved_pos_y_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ClassChangeJobMenuContent_unity2_raw :: __lookup_calc_cursor_moved_pos_y :: get_method_info () } pub fn set_job_details_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ClassChangeJobMenuContent_unity2_raw :: __lookup_set_job_details :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ClassChangeJobMenuContent_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-classchangejobmenucontent")]
 impl ClassChangeJobMenuContent {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ClassChangeJobMenuContent),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IClassChangeJobMenuContentMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ClassChangeJobMenuContent) , :: core :: stringify ! (new) ,)) ; < Self as IClassChangeJobMenuContentMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-classchangejobmenucontent")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{ClassChangeJobMenuContent, IClassChangeJobMenuContent, IClassChangeJobMenuContentMethods};
-    #[cfg(feature = "app-basicmenucontent")]
-    pub use crate::app::basicmenucontent::IBasicMenuContentMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        app::basicmenucontent::IBasicMenuContent,
-        system::object::IObject,
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::ClassChangeJobMenuContent;
+    pub use super::IClassChangeJobMenuContent;
+    pub use super::IClassChangeJobMenuContentMethods;
+    pub use crate::app::basicmenucontent::IBasicMenuContent;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "app-basicmenucontent")] pub use crate::app::basicmenucontent::IBasicMenuContentMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

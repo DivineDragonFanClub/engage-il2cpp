@@ -2,468 +2,50 @@
 
 #[cfg(feature = "system-reflection-emit-constructorbuilder-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        reflection::{
-            constructorinfo::{ConstructorInfo, IConstructorInfo},
-            memberinfo::{IMemberInfo, MemberInfo},
-            methodbase::{IMethodBase, MethodBase},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/emit/constructorbuilder/ConstructorBuilder.md"))]
-    #[::unity2::class(namespace = "System.Reflection.Emit", name = "ConstructorBuilder")]
-    #[parent(crate::system::reflection::constructorinfo::ConstructorInfo)]
-    pub struct ConstructorBuilder {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: reflection :: constructorinfo :: { ConstructorInfo , IConstructorInfo }
+ ;
+ use crate :: system :: reflection :: memberinfo :: { IMemberInfo , MemberInfo }
+ ;
+ use crate :: system :: reflection :: methodbase :: { IMethodBase , MethodBase }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/emit/constructorbuilder/ConstructorBuilder.md"))] # [:: unity2 :: class (namespace = "System.Reflection.Emit" , name = "ConstructorBuilder")] # [parent (crate :: system :: reflection :: constructorinfo :: ConstructorInfo)] pub struct ConstructorBuilder {}
+
 }
 
 #[cfg(feature = "system-reflection-emit-constructorbuilder-types")]
 pub use __types::*;
 
 #[cfg(feature = "system-reflection-emit-constructorbuilder")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ConstructorBuilder_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_attributes {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ConstructorBuilder as ::unity2::ClassIdentity>::class(),
-                "get_Attributes",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ConstructorBuilder as ::unity2::ClassIdentity>::NAME,
-                        "get_Attributes",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_attributes(
-        this: ConstructorBuilder,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::reflection::methodattributes::MethodAttributes {
-        let inner: extern "C" fn(ConstructorBuilder, ::unity2::OptionalMethod) -> crate::system::reflection::methodattributes::MethodAttributes =
-            ::core::mem::transmute(__lookup_get_attributes::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_declaring_type {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ConstructorBuilder as ::unity2::ClassIdentity>::class(),
-                "get_DeclaringType",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ConstructorBuilder as ::unity2::ClassIdentity>::NAME,
-                        "get_DeclaringType",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_declaring_type(this: ConstructorBuilder, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::SystemType {
-        let inner: extern "C" fn(ConstructorBuilder, ::unity2::OptionalMethod) -> ::unity2::SystemType =
-            ::core::mem::transmute(__lookup_get_declaring_type::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ConstructorBuilder as ::unity2::ClassIdentity>::class(),
-                "get_Name",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ConstructorBuilder as ::unity2::ClassIdentity>::NAME,
-                        "get_Name",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_name(this: ConstructorBuilder, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(ConstructorBuilder, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_parameters {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ConstructorBuilder as ::unity2::ClassIdentity>::class(),
-                "GetParameters",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ConstructorBuilder as ::unity2::ClassIdentity>::NAME,
-                        "GetParameters",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_parameters(
-        this: ConstructorBuilder,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Array<crate::system::reflection::parameterinfo::ParameterInfo> {
-        let inner: extern "C" fn(
-            ConstructorBuilder,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Array<crate::system::reflection::parameterinfo::ParameterInfo> =
-            ::core::mem::transmute(__lookup_get_parameters::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_reflected_type {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ConstructorBuilder as ::unity2::ClassIdentity>::class(),
-                "get_ReflectedType",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ConstructorBuilder as ::unity2::ClassIdentity>::NAME,
-                        "get_ReflectedType",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_reflected_type(this: ConstructorBuilder, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::SystemType {
-        let inner: extern "C" fn(ConstructorBuilder, ::unity2::OptionalMethod) -> ::unity2::SystemType =
-            ::core::mem::transmute(__lookup_get_reflected_type::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_custom_attributes {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ConstructorBuilder as ::unity2::ClassIdentity>::class(),
-                "GetCustomAttributes",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ConstructorBuilder as ::unity2::ClassIdentity>::NAME,
-                        "GetCustomAttributes",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_custom_attributes(
-        this: ConstructorBuilder,
-        inherit: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Array<crate::system::object::Object> {
-        let inner: extern "C" fn(ConstructorBuilder, bool, ::unity2::OptionalMethod) -> ::unity2::Array<crate::system::object::Object> =
-            ::core::mem::transmute(__lookup_get_custom_attributes::get_method_info().method_ptr);
-        inner(this, inherit, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_custom_attributes_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::SystemType as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ConstructorBuilder as ::unity2::ClassIdentity>::class(),
-                "GetCustomAttributes",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ConstructorBuilder as ::unity2::ClassIdentity>::NAME,
-                        "GetCustomAttributes",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_custom_attributes_2(
-        this: ConstructorBuilder,
-        attribute_type: ::unity2::SystemType,
-        inherit: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Array<crate::system::object::Object> {
-        let inner: extern "C" fn(
-            ConstructorBuilder,
-            ::unity2::SystemType,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Array<crate::system::object::Object> = ::core::mem::transmute(__lookup_get_custom_attributes_2::get_method_info().method_ptr);
-        inner(this, attribute_type, inherit, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_method_implementation_flags {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ConstructorBuilder as ::unity2::ClassIdentity>::class(),
-                "GetMethodImplementationFlags",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ConstructorBuilder as ::unity2::ClassIdentity>::NAME,
-                        "GetMethodImplementationFlags",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_method_implementation_flags(
-        this: ConstructorBuilder,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::reflection::methodimplattributes::MethodImplAttributes {
-        let inner: extern "C" fn(
-            ConstructorBuilder,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::reflection::methodimplattributes::MethodImplAttributes =
-            ::core::mem::transmute(__lookup_get_method_implementation_flags::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_defined {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::SystemType as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ConstructorBuilder as ::unity2::ClassIdentity>::class(),
-                "IsDefined",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ConstructorBuilder as ::unity2::ClassIdentity>::NAME,
-                        "IsDefined",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_defined(
-        this: ConstructorBuilder,
-        attribute_type: ::unity2::SystemType,
-        inherit: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(ConstructorBuilder, ::unity2::SystemType, bool, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_defined::get_method_info().method_ptr);
-        inner(this, attribute_type, inherit, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ConstructorBuilder_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_attributes { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ConstructorBuilder as :: unity2 :: ClassIdentity > :: class () , "get_Attributes" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ConstructorBuilder as :: unity2 :: ClassIdentity > :: NAME , "get_Attributes" , e) , } } } pub unsafe fn get_attributes (this : ConstructorBuilder , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: methodattributes :: MethodAttributes { let inner : extern "C" fn (ConstructorBuilder , :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: methodattributes :: MethodAttributes = :: core :: mem :: transmute (__lookup_get_attributes :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_declaring_type { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ConstructorBuilder as :: unity2 :: ClassIdentity > :: class () , "get_DeclaringType" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ConstructorBuilder as :: unity2 :: ClassIdentity > :: NAME , "get_DeclaringType" , e) , } } } pub unsafe fn get_declaring_type (this : ConstructorBuilder , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: SystemType { let inner : extern "C" fn (ConstructorBuilder , :: unity2 :: OptionalMethod ,) -> :: unity2 :: SystemType = :: core :: mem :: transmute (__lookup_get_declaring_type :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ConstructorBuilder as :: unity2 :: ClassIdentity > :: class () , "get_Name" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ConstructorBuilder as :: unity2 :: ClassIdentity > :: NAME , "get_Name" , e) , } } } pub unsafe fn get_name (this : ConstructorBuilder , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (ConstructorBuilder , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_name :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_parameters { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ConstructorBuilder as :: unity2 :: ClassIdentity > :: class () , "GetParameters" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ConstructorBuilder as :: unity2 :: ClassIdentity > :: NAME , "GetParameters" , e) , } } } pub unsafe fn get_parameters (this : ConstructorBuilder , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: system :: reflection :: parameterinfo :: ParameterInfo > { let inner : extern "C" fn (ConstructorBuilder , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: system :: reflection :: parameterinfo :: ParameterInfo > = :: core :: mem :: transmute (__lookup_get_parameters :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_reflected_type { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ConstructorBuilder as :: unity2 :: ClassIdentity > :: class () , "get_ReflectedType" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ConstructorBuilder as :: unity2 :: ClassIdentity > :: NAME , "get_ReflectedType" , e) , } } } pub unsafe fn get_reflected_type (this : ConstructorBuilder , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: SystemType { let inner : extern "C" fn (ConstructorBuilder , :: unity2 :: OptionalMethod ,) -> :: unity2 :: SystemType = :: core :: mem :: transmute (__lookup_get_reflected_type :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_custom_attributes { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ConstructorBuilder as :: unity2 :: ClassIdentity > :: class () , "GetCustomAttributes" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ConstructorBuilder as :: unity2 :: ClassIdentity > :: NAME , "GetCustomAttributes" , e) , } } } pub unsafe fn get_custom_attributes (this : ConstructorBuilder , inherit : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: system :: object :: Object > { let inner : extern "C" fn (ConstructorBuilder , bool , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: system :: object :: Object > = :: core :: mem :: transmute (__lookup_get_custom_attributes :: get_method_info () . method_ptr ,) ; inner (this , inherit , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_custom_attributes_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: SystemType as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ConstructorBuilder as :: unity2 :: ClassIdentity > :: class () , "GetCustomAttributes" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ConstructorBuilder as :: unity2 :: ClassIdentity > :: NAME , "GetCustomAttributes" , e) , } } } pub unsafe fn get_custom_attributes_2 (this : ConstructorBuilder , attribute_type : :: unity2 :: SystemType , inherit : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: system :: object :: Object > { let inner : extern "C" fn (ConstructorBuilder , :: unity2 :: SystemType , bool , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: system :: object :: Object > = :: core :: mem :: transmute (__lookup_get_custom_attributes_2 :: get_method_info () . method_ptr ,) ; inner (this , attribute_type , inherit , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_method_implementation_flags { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ConstructorBuilder as :: unity2 :: ClassIdentity > :: class () , "GetMethodImplementationFlags" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ConstructorBuilder as :: unity2 :: ClassIdentity > :: NAME , "GetMethodImplementationFlags" , e) , } } } pub unsafe fn get_method_implementation_flags (this : ConstructorBuilder , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: methodimplattributes :: MethodImplAttributes { let inner : extern "C" fn (ConstructorBuilder , :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: methodimplattributes :: MethodImplAttributes = :: core :: mem :: transmute (__lookup_get_method_implementation_flags :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_defined { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: SystemType as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ConstructorBuilder as :: unity2 :: ClassIdentity > :: class () , "IsDefined" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ConstructorBuilder as :: unity2 :: ClassIdentity > :: NAME , "IsDefined" , e) , } } } pub unsafe fn is_defined (this : ConstructorBuilder , attribute_type : :: unity2 :: SystemType , inherit : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (ConstructorBuilder , :: unity2 :: SystemType , bool , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_defined :: get_method_info () . method_ptr ,) ; inner (this , attribute_type , inherit , __unity2_method_info) } }
 
 #[cfg(feature = "system-reflection-emit-constructorbuilder")]
-pub trait IConstructorBuilderMethods: IConstructorBuilder {
-    #[doc = "`get_Attributes()` overload"]
-    fn get_attributes(self) -> crate::system::reflection::methodattributes::MethodAttributes {
-        unsafe {
-            let __receiver = <ConstructorBuilder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ConstructorBuilder_unity2_raw::get_attributes(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_DeclaringType()` overload"]
-    fn get_declaring_type(self) -> ::unity2::SystemType {
-        unsafe {
-            let __receiver = <ConstructorBuilder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ConstructorBuilder_unity2_raw::get_declaring_type(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Name()` overload"]
-    fn get_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <ConstructorBuilder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ConstructorBuilder_unity2_raw::get_name(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetParameters()` overload"]
-    fn get_parameters(self) -> ::unity2::Array<crate::system::reflection::parameterinfo::ParameterInfo> {
-        unsafe {
-            let __receiver = <ConstructorBuilder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ConstructorBuilder_unity2_raw::get_parameters(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_ReflectedType()` overload"]
-    fn get_reflected_type(self) -> ::unity2::SystemType {
-        unsafe {
-            let __receiver = <ConstructorBuilder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ConstructorBuilder_unity2_raw::get_reflected_type(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetCustomAttributes(bool)` overload"]
-    fn get_custom_attributes(self, inherit: impl ::core::convert::Into<bool>) -> ::unity2::Array<crate::system::object::Object> {
-        unsafe {
-            let __receiver = <ConstructorBuilder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ConstructorBuilder_unity2_raw::get_custom_attributes(__receiver, ::core::convert::Into::into(inherit), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetCustomAttributes(::unity2::SystemType, bool)` overload"]
-    fn get_custom_attributes_2(
-        self,
-        attribute_type: impl ::core::convert::Into<::unity2::SystemType>,
-        inherit: impl ::core::convert::Into<bool>,
-    ) -> ::unity2::Array<crate::system::object::Object> {
-        unsafe {
-            let __receiver = <ConstructorBuilder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ConstructorBuilder_unity2_raw::get_custom_attributes_2(
-                __receiver,
-                ::core::convert::Into::into(attribute_type),
-                ::core::convert::Into::into(inherit),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetMethodImplementationFlags()` overload"]
-    fn get_method_implementation_flags(self) -> crate::system::reflection::methodimplattributes::MethodImplAttributes {
-        unsafe {
-            let __receiver = <ConstructorBuilder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ConstructorBuilder_unity2_raw::get_method_implementation_flags(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsDefined(::unity2::SystemType, bool)` overload"]
-    fn is_defined(self, attribute_type: impl ::core::convert::Into<::unity2::SystemType>, inherit: impl ::core::convert::Into<bool>) -> bool {
-        unsafe {
-            let __receiver = <ConstructorBuilder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ConstructorBuilder_unity2_raw::is_defined(
-                __receiver,
-                ::core::convert::Into::into(attribute_type),
-                ::core::convert::Into::into(inherit),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+pub trait IConstructorBuilderMethods : IConstructorBuilder { # [doc = "`get_Attributes()` overload"] fn get_attributes (self ,) -> crate :: system :: reflection :: methodattributes :: MethodAttributes { unsafe { let __receiver = < ConstructorBuilder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ConstructorBuilder_unity2_raw :: get_attributes (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_DeclaringType()` overload"] fn get_declaring_type (self ,) -> :: unity2 :: SystemType { unsafe { let __receiver = < ConstructorBuilder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ConstructorBuilder_unity2_raw :: get_declaring_type (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_Name()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ConstructorBuilder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ConstructorBuilder_unity2_raw :: get_name (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetParameters()` overload"] fn get_parameters (self ,) -> :: unity2 :: Array < crate :: system :: reflection :: parameterinfo :: ParameterInfo > { unsafe { let __receiver = < ConstructorBuilder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ConstructorBuilder_unity2_raw :: get_parameters (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_ReflectedType()` overload"] fn get_reflected_type (self ,) -> :: unity2 :: SystemType { unsafe { let __receiver = < ConstructorBuilder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ConstructorBuilder_unity2_raw :: get_reflected_type (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetCustomAttributes(bool)` overload"] fn get_custom_attributes (self , inherit : impl :: core :: convert :: Into < bool >) -> :: unity2 :: Array < crate :: system :: object :: Object > { unsafe { let __receiver = < ConstructorBuilder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ConstructorBuilder_unity2_raw :: get_custom_attributes (__receiver , :: core :: convert :: Into :: into (inherit) , :: core :: option :: Option :: None) } } # [doc = "`GetCustomAttributes(::unity2::SystemType, bool)` overload"] fn get_custom_attributes_2 (self , attribute_type : impl :: core :: convert :: Into < :: unity2 :: SystemType > , inherit : impl :: core :: convert :: Into < bool >) -> :: unity2 :: Array < crate :: system :: object :: Object > { unsafe { let __receiver = < ConstructorBuilder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ConstructorBuilder_unity2_raw :: get_custom_attributes_2 (__receiver , :: core :: convert :: Into :: into (attribute_type) , :: core :: convert :: Into :: into (inherit) , :: core :: option :: Option :: None) } } # [doc = "`GetMethodImplementationFlags()` overload"] fn get_method_implementation_flags (self ,) -> crate :: system :: reflection :: methodimplattributes :: MethodImplAttributes { unsafe { let __receiver = < ConstructorBuilder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ConstructorBuilder_unity2_raw :: get_method_implementation_flags (__receiver , :: core :: option :: Option :: None) } } # [doc = "`IsDefined(::unity2::SystemType, bool)` overload"] fn is_defined (self , attribute_type : impl :: core :: convert :: Into < :: unity2 :: SystemType > , inherit : impl :: core :: convert :: Into < bool >) -> bool { unsafe { let __receiver = < ConstructorBuilder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ConstructorBuilder_unity2_raw :: is_defined (__receiver , :: core :: convert :: Into :: into (attribute_type) , :: core :: convert :: Into :: into (inherit) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "system-reflection-emit-constructorbuilder")]
-impl<__T: IConstructorBuilder> IConstructorBuilderMethods for __T {}
+impl < __T : IConstructorBuilder > IConstructorBuilderMethods for __T { }
+
+#[cfg(feature = "system-reflection-emit-constructorbuilder")]
+impl ConstructorBuilder { pub fn get_attributes_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ConstructorBuilder_unity2_raw :: __lookup_get_attributes :: get_method_info () } pub fn get_declaring_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ConstructorBuilder_unity2_raw :: __lookup_get_declaring_type :: get_method_info () } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ConstructorBuilder_unity2_raw :: __lookup_get_name :: get_method_info () } pub fn get_parameters_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ConstructorBuilder_unity2_raw :: __lookup_get_parameters :: get_method_info () } pub fn get_reflected_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ConstructorBuilder_unity2_raw :: __lookup_get_reflected_type :: get_method_info () } pub fn get_custom_attributes_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ConstructorBuilder_unity2_raw :: __lookup_get_custom_attributes :: get_method_info () } pub fn get_custom_attributes_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ConstructorBuilder_unity2_raw :: __lookup_get_custom_attributes_2 :: get_method_info () } pub fn get_method_implementation_flags_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ConstructorBuilder_unity2_raw :: __lookup_get_method_implementation_flags :: get_method_info () } pub fn is_defined_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ConstructorBuilder_unity2_raw :: __lookup_is_defined :: get_method_info () } }
 
 #[cfg(feature = "system-reflection-emit-constructorbuilder")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{ConstructorBuilder, IConstructorBuilder, IConstructorBuilderMethods};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-reflection-constructorinfo")]
-    pub use crate::system::reflection::constructorinfo::IConstructorInfoMethods;
-    #[cfg(feature = "system-reflection-memberinfo")]
-    pub use crate::system::reflection::memberinfo::IMemberInfoMethods;
-    #[cfg(feature = "system-reflection-methodbase")]
-    pub use crate::system::reflection::methodbase::IMethodBaseMethods;
-    pub use crate::system::{
-        object::IObject,
-        reflection::{constructorinfo::IConstructorInfo, memberinfo::IMemberInfo, methodbase::IMethodBase},
-    };
+    pub use super::ConstructorBuilder;
+    pub use super::IConstructorBuilder;
+    pub use super::IConstructorBuilderMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::system::reflection::constructorinfo::IConstructorInfo;
+    pub use crate::system::reflection::memberinfo::IMemberInfo;
+    pub use crate::system::reflection::methodbase::IMethodBase;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-reflection-constructorinfo")] pub use crate::system::reflection::constructorinfo::IConstructorInfoMethods;
+    #[cfg(feature = "system-reflection-memberinfo")] pub use crate::system::reflection::memberinfo::IMemberInfoMethods;
+    #[cfg(feature = "system-reflection-methodbase")] pub use crate::system::reflection::methodbase::IMethodBaseMethods;
 }

@@ -2,190 +2,46 @@
 
 #[cfg(feature = "app-refreshreliancesetter-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshreliancesetter/RefreshRelianceSetter.md"))]
-    #[::unity2::class(namespace = "App", name = "RefreshRelianceSetter")]
-    #[parent(crate::system::object::Object)]
-    pub struct RefreshRelianceSetter {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshreliancesetter/RefreshRelianceSetter.md"))] # [:: unity2 :: class (namespace = "App" , name = "RefreshRelianceSetter")] # [parent (crate :: system :: object :: Object)] pub struct RefreshRelianceSetter {}
+
 }
 
 #[cfg(feature = "app-refreshreliancesetter-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-refreshreliancesetter")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RefreshRelianceSetter_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_data {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::ui::image::Image as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::ui::image::Image as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::ui::image::Image as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::ui::image::Image as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::ui::image::Image as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RefreshRelianceSetter as ::unity2::ClassIdentity>::class(),
-                "SetData",
-                7,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RefreshRelianceSetter as ::unity2::ClassIdentity>::NAME,
-                        "SetData",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_data(
-        unit0: crate::app::unit::Unit,
-        unit1: crate::app::unit::Unit,
-        rank_c_image: crate::unity_engine::ui::image::Image,
-        rank_b_image: crate::unity_engine::ui::image::Image,
-        rank_a_image: crate::unity_engine::ui::image::Image,
-        rank_s_image: crate::unity_engine::ui::image::Image,
-        rank_none_image: crate::unity_engine::ui::image::Image,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::app::unit::Unit,
-            crate::app::unit::Unit,
-            crate::unity_engine::ui::image::Image,
-            crate::unity_engine::ui::image::Image,
-            crate::unity_engine::ui::image::Image,
-            crate::unity_engine::ui::image::Image,
-            crate::unity_engine::ui::image::Image,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_set_data::get_method_info().method_ptr);
-        inner(
-            unit0,
-            unit1,
-            rank_c_image,
-            rank_b_image,
-            rank_a_image,
-            rank_s_image,
-            rank_none_image,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RefreshRelianceSetter as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RefreshRelianceSetter as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: RefreshRelianceSetter, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RefreshRelianceSetter, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __RefreshRelianceSetter_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_data { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: ui :: image :: Image as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: ui :: image :: Image as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: ui :: image :: Image as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: ui :: image :: Image as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: ui :: image :: Image as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RefreshRelianceSetter as :: unity2 :: ClassIdentity > :: class () , "SetData" , 7 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefreshRelianceSetter as :: unity2 :: ClassIdentity > :: NAME , "SetData" , e) , } } } pub unsafe fn set_data (unit0 : crate :: app :: unit :: Unit , unit1 : crate :: app :: unit :: Unit , rank_c_image : crate :: unity_engine :: ui :: image :: Image , rank_b_image : crate :: unity_engine :: ui :: image :: Image , rank_a_image : crate :: unity_engine :: ui :: image :: Image , rank_s_image : crate :: unity_engine :: ui :: image :: Image , rank_none_image : crate :: unity_engine :: ui :: image :: Image , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: unit :: Unit , crate :: app :: unit :: Unit , crate :: unity_engine :: ui :: image :: Image , crate :: unity_engine :: ui :: image :: Image , crate :: unity_engine :: ui :: image :: Image , crate :: unity_engine :: ui :: image :: Image , crate :: unity_engine :: ui :: image :: Image , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_data :: get_method_info () . method_ptr ,) ; inner (unit0 , unit1 , rank_c_image , rank_b_image , rank_a_image , rank_s_image , rank_none_image , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RefreshRelianceSetter as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefreshRelianceSetter as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : RefreshRelianceSetter , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RefreshRelianceSetter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-refreshreliancesetter")]
+impl RefreshRelianceSetter { # [doc = "`SetData(crate::app::unit::Unit, crate::app::unit::Unit, crate::unity_engine::ui::image::Image, crate::unity_engine::ui::image::Image, crate::unity_engine::ui::image::Image, crate::unity_engine::ui::image::Image, crate::unity_engine::ui::image::Image)` overload"] pub fn set_data (unit0 : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , unit1 : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , rank_c_image : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: image :: Image > , rank_b_image : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: image :: Image > , rank_a_image : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: image :: Image > , rank_s_image : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: image :: Image > , rank_none_image : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: image :: Image >) -> () { unsafe { __RefreshRelianceSetter_unity2_raw :: set_data (:: core :: convert :: Into :: into (unit0) , :: core :: convert :: Into :: into (unit1) , :: core :: convert :: Into :: into (rank_c_image) , :: core :: convert :: Into :: into (rank_b_image) , :: core :: convert :: Into :: into (rank_a_image) , :: core :: convert :: Into :: into (rank_s_image) , :: core :: convert :: Into :: into (rank_none_image) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-refreshreliancesetter")]
+pub trait IRefreshRelianceSetterMethods : IRefreshRelianceSetter { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RefreshRelianceSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RefreshRelianceSetter_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-refreshreliancesetter")]
+impl < __T : IRefreshRelianceSetter > IRefreshRelianceSetterMethods for __T { }
+
+#[cfg(feature = "app-refreshreliancesetter")]
+impl RefreshRelianceSetter { pub fn set_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RefreshRelianceSetter_unity2_raw :: __lookup_set_data :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RefreshRelianceSetter_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-refreshreliancesetter")]
 impl RefreshRelianceSetter {
-    #[doc = "`SetData(crate::app::unit::Unit, crate::app::unit::Unit, crate::unity_engine::ui::image::Image, crate::unity_engine::ui::image::Image, crate::unity_engine::ui::image::Image, crate::unity_engine::ui::image::Image, crate::unity_engine::ui::image::Image)` overload"]
-    pub fn set_data(
-        unit0: impl ::core::convert::Into<crate::app::unit::Unit>,
-        unit1: impl ::core::convert::Into<crate::app::unit::Unit>,
-        rank_c_image: impl ::core::convert::Into<crate::unity_engine::ui::image::Image>,
-        rank_b_image: impl ::core::convert::Into<crate::unity_engine::ui::image::Image>,
-        rank_a_image: impl ::core::convert::Into<crate::unity_engine::ui::image::Image>,
-        rank_s_image: impl ::core::convert::Into<crate::unity_engine::ui::image::Image>,
-        rank_none_image: impl ::core::convert::Into<crate::unity_engine::ui::image::Image>,
-    ) -> () {
-        unsafe {
-            __RefreshRelianceSetter_unity2_raw::set_data(
-                ::core::convert::Into::into(unit0),
-                ::core::convert::Into::into(unit1),
-                ::core::convert::Into::into(rank_c_image),
-                ::core::convert::Into::into(rank_b_image),
-                ::core::convert::Into::into(rank_a_image),
-                ::core::convert::Into::into(rank_s_image),
-                ::core::convert::Into::into(rank_none_image),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-refreshreliancesetter")]
-pub trait IRefreshRelianceSetterMethods: IRefreshRelianceSetter {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <RefreshRelianceSetter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RefreshRelianceSetter_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-refreshreliancesetter")]
-impl<__T: IRefreshRelianceSetter> IRefreshRelianceSetterMethods for __T {}
-
-#[cfg(feature = "app-refreshreliancesetter")]
-impl RefreshRelianceSetter {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RefreshRelianceSetter),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRefreshRelianceSetterMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RefreshRelianceSetter) , :: core :: stringify ! (new) ,)) ; < Self as IRefreshRelianceSetterMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-refreshreliancesetter")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IRefreshRelianceSetter, IRefreshRelianceSetterMethods, RefreshRelianceSetter};
+    pub use super::RefreshRelianceSetter;
+    pub use super::IRefreshRelianceSetter;
+    pub use super::IRefreshRelianceSetterMethods;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

@@ -2,76 +2,36 @@
 
 #[cfg(feature = "combat-expansionoffset2d-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/expansionoffset2d/ExpansionOffset2D.md"))]
-    #[::unity2::class(namespace = "Combat", name = "ExpansionOffset2D")]
-    #[parent(crate::system::object::Object)]
-    pub struct ExpansionOffset2D {
-        #[static_field]
-        #[rename(name = "XY")]
-        pub xy: ::unity2::Array<f32>,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/expansionoffset2d/ExpansionOffset2D.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "ExpansionOffset2D")] # [parent (crate :: system :: object :: Object)] pub struct ExpansionOffset2D {
+# [static_field] # [rename (name = "XY")] pub xy : :: unity2 :: Array < f32 > ,
+}
+
 }
 
 #[cfg(feature = "combat-expansionoffset2d-types")]
 pub use __types::*;
 
 #[cfg(feature = "combat-expansionoffset2d")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ExpansionOffset2D_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ExpansionOffset2D as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ExpansionOffset2D as ::unity2::ClassIdentity>::NAME,
-                        ".cctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ExpansionOffset2D_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ExpansionOffset2D as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ExpansionOffset2D as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
 
 #[cfg(feature = "combat-expansionoffset2d")]
-impl ExpansionOffset2D {
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __ExpansionOffset2D_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
+impl ExpansionOffset2D { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { __ExpansionOffset2D_unity2_raw :: cctor (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "combat-expansionoffset2d")]
+impl ExpansionOffset2D { pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ExpansionOffset2D_unity2_raw :: __lookup_cctor :: get_method_info () } }
 
 #[cfg(feature = "combat-expansionoffset2d")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{ExpansionOffset2D, IExpansionOffset2D};
+    pub use super::ExpansionOffset2D;
+    pub use super::IExpansionOffset2D;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

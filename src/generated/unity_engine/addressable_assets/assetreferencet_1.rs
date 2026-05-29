@@ -2,71 +2,48 @@
 
 #[cfg(feature = "unity_engine-addressable_assets-assetreferencet_1-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::addressable_assets::assetreference::{AssetReference, IAssetReference},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addressable_assets/assetreferencet_1/AssetReferenceT_1.md"))]
-    #[::unity2::class(namespace = "UnityEngine.AddressableAssets", name = "AssetReferenceT`1")]
-    #[parent(crate::unity_engine::addressable_assets::assetreference::AssetReference)]
-    #[parent(crate::system::object::Object)]
-    pub struct AssetReferenceT_1<T0: ::unity2::ClassIdentity> {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: addressable_assets :: assetreference :: { AssetReference , IAssetReference }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addressable_assets/assetreferencet_1/AssetReferenceT_1.md"))] # [:: unity2 :: class (namespace = "UnityEngine.AddressableAssets" , name = "AssetReferenceT`1")] # [parent (crate :: unity_engine :: addressable_assets :: assetreference :: AssetReference)] # [parent (crate :: system :: object :: Object)] pub struct AssetReferenceT_1 < T0 : :: unity2 :: ClassIdentity > {}
+
 }
 
 #[cfg(feature = "unity_engine-addressable_assets-assetreferencet_1-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-addressable_assets-assetreferencet_1")]
-#[::unity2::methods]
-impl<T0: ::unity2::ClassIdentity> AssetReferenceT_1<T0> {
-    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, guid: ::unity2::Il2CppString) -> ();
+# [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity > AssetReferenceT_1 < T0 > {
+# [doc = "`.ctor(::unity2::Il2CppString)` overload"] # [method (name = ".ctor" , args = 1)] pub fn ctor (self , guid : :: unity2 :: Il2CppString) -> () ;
 
-    #[doc = "`LoadAsset()` overload"]
-    #[method(name = "LoadAsset", args = 0)]
-    pub fn load_asset(self) -> crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<T0>;
+# [doc = "`LoadAsset()` overload"] # [method (name = "LoadAsset" , args = 0)] pub fn load_asset (self ,) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < T0 > ;
 
-    #[doc = "`LoadAssetAsync()` overload"]
-    #[method(name = "LoadAssetAsync", args = 0)]
-    pub fn load_asset_async(self) -> crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<T0>;
+# [doc = "`LoadAssetAsync()` overload"] # [method (name = "LoadAssetAsync" , args = 0)] pub fn load_asset_async (self ,) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < T0 > ;
 
-    #[doc = "`ValidateAsset(crate::unity_engine::object_2::Object_2)` overload"]
-    #[method(name = "ValidateAsset", args = 1)]
-    pub fn validate_asset(self, obj: crate::unity_engine::object_2::Object_2) -> bool;
+# [doc = "`ValidateAsset(crate::unity_engine::object_2::Object_2)` overload"] # [method (name = "ValidateAsset" , args = 1)] pub fn validate_asset (self , obj : crate :: unity_engine :: object_2 :: Object_2) -> bool ;
 
-    #[doc = "`ValidateAsset(::unity2::Il2CppString)` overload"]
-    #[method(name = "ValidateAsset", args = 1)]
-    pub fn validate_asset_2(self, main_asset_path: ::unity2::Il2CppString) -> bool;
+# [doc = "`ValidateAsset(::unity2::Il2CppString)` overload"] # [method (name = "ValidateAsset" , args = 1)] pub fn validate_asset_2 (self , main_asset_path : :: unity2 :: Il2CppString) -> bool ;
 }
 
 #[cfg(feature = "unity_engine-addressable_assets-assetreferencet_1")]
-impl<T0: ::unity2::ClassIdentity> AssetReferenceT_1<T0> {
-    #[doc = "`.ctor(::unity2::Il2CppString)` — overload selector"]
-    pub fn new(guid: ::unity2::Il2CppString) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AssetReferenceT_1),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAssetReferenceT_1Methods<T0>>::ctor(this, guid);
-        this
-    }
+impl < T0 : :: unity2 :: ClassIdentity > AssetReferenceT_1 < T0 > {
+# [doc = "`.ctor(::unity2::Il2CppString)` — overload selector"] pub fn new (guid : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AssetReferenceT_1) , :: core :: stringify ! (new) ,)) ; < Self as IAssetReferenceT_1Methods < T0 > > :: ctor (this , guid) ; this }
 }
 
 #[cfg(feature = "unity_engine-addressable_assets-assetreferencet_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{AssetReferenceT_1, IAssetReferenceT_1, IAssetReferenceT_1Methods};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-addressable_assets-assetreference")]
-    pub use crate::unity_engine::addressable_assets::assetreference::IAssetReferenceMethods;
-    pub use crate::{system::object::IObject, unity_engine::addressable_assets::assetreference::IAssetReference};
+    pub use super::AssetReferenceT_1;
+    pub use super::IAssetReferenceT_1;
+    pub use super::IAssetReferenceT_1Methods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::addressable_assets::assetreference::IAssetReference;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-addressable_assets-assetreference")] pub use crate::unity_engine::addressable_assets::assetreference::IAssetReferenceMethods;
 }

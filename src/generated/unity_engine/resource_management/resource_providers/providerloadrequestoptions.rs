@@ -2,314 +2,46 @@
 
 #[cfg(feature = "unity_engine-resource_management-resource_providers-providerloadrequestoptions-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/resource_providers/providerloadrequestoptions/ProviderLoadRequestOptions.md"))]
-    #[::unity2::class(namespace = "UnityEngine.ResourceManagement.ResourceProviders", name = "ProviderLoadRequestOptions")]
-    #[parent(crate::system::object::Object)]
-    pub struct ProviderLoadRequestOptions {
-        #[offset(16)]
-        #[rename(name = "m_IgnoreFailures")]
-        pub m_ignore_failures: bool,
-        #[offset(20)]
-        #[rename(name = "m_WebRequestTimeout")]
-        pub m_web_request_timeout: i32,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/resource_providers/providerloadrequestoptions/ProviderLoadRequestOptions.md"))] # [:: unity2 :: class (namespace = "UnityEngine.ResourceManagement.ResourceProviders" , name = "ProviderLoadRequestOptions")] # [parent (crate :: system :: object :: Object)] pub struct ProviderLoadRequestOptions {
+# [offset (16)] # [rename (name = "m_IgnoreFailures")] pub m_ignore_failures : bool ,
+# [offset (20)] # [rename (name = "m_WebRequestTimeout")] pub m_web_request_timeout : i32 ,
+}
+
 }
 
 #[cfg(feature = "unity_engine-resource_management-resource_providers-providerloadrequestoptions-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-resource_management-resource_providers-providerloadrequestoptions")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ProviderLoadRequestOptions_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_copy {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProviderLoadRequestOptions as ::unity2::ClassIdentity>::class(),
-                "Copy",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProviderLoadRequestOptions as ::unity2::ClassIdentity>::NAME,
-                        "Copy",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn copy(
-        this: ProviderLoadRequestOptions,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::resource_management::resource_providers::providerloadrequestoptions::ProviderLoadRequestOptions {
-        let inner : extern "C" fn (ProviderLoadRequestOptions , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: resource_management :: resource_providers :: providerloadrequestoptions :: ProviderLoadRequestOptions = :: core :: mem :: transmute (__lookup_copy :: get_method_info () . method_ptr ,) ;
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_ignore_failures {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProviderLoadRequestOptions as ::unity2::ClassIdentity>::class(),
-                "get_IgnoreFailures",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProviderLoadRequestOptions as ::unity2::ClassIdentity>::NAME,
-                        "get_IgnoreFailures",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_ignore_failures(this: ProviderLoadRequestOptions, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(ProviderLoadRequestOptions, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_ignore_failures::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_ignore_failures {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProviderLoadRequestOptions as ::unity2::ClassIdentity>::class(),
-                "set_IgnoreFailures",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProviderLoadRequestOptions as ::unity2::ClassIdentity>::NAME,
-                        "set_IgnoreFailures",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_ignore_failures(this: ProviderLoadRequestOptions, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ProviderLoadRequestOptions, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_ignore_failures::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_web_request_timeout {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProviderLoadRequestOptions as ::unity2::ClassIdentity>::class(),
-                "get_WebRequestTimeout",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProviderLoadRequestOptions as ::unity2::ClassIdentity>::NAME,
-                        "get_WebRequestTimeout",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_web_request_timeout(this: ProviderLoadRequestOptions, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(ProviderLoadRequestOptions, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_web_request_timeout::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_web_request_timeout {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProviderLoadRequestOptions as ::unity2::ClassIdentity>::class(),
-                "set_WebRequestTimeout",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProviderLoadRequestOptions as ::unity2::ClassIdentity>::NAME,
-                        "set_WebRequestTimeout",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_web_request_timeout(this: ProviderLoadRequestOptions, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ProviderLoadRequestOptions, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_web_request_timeout::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProviderLoadRequestOptions as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProviderLoadRequestOptions as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: ProviderLoadRequestOptions, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ProviderLoadRequestOptions, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ProviderLoadRequestOptions_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_copy { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProviderLoadRequestOptions as :: unity2 :: ClassIdentity > :: class () , "Copy" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProviderLoadRequestOptions as :: unity2 :: ClassIdentity > :: NAME , "Copy" , e) , } } } pub unsafe fn copy (this : ProviderLoadRequestOptions , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: resource_management :: resource_providers :: providerloadrequestoptions :: ProviderLoadRequestOptions { let inner : extern "C" fn (ProviderLoadRequestOptions , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: resource_management :: resource_providers :: providerloadrequestoptions :: ProviderLoadRequestOptions = :: core :: mem :: transmute (__lookup_copy :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_ignore_failures { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProviderLoadRequestOptions as :: unity2 :: ClassIdentity > :: class () , "get_IgnoreFailures" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProviderLoadRequestOptions as :: unity2 :: ClassIdentity > :: NAME , "get_IgnoreFailures" , e) , } } } pub unsafe fn get_ignore_failures (this : ProviderLoadRequestOptions , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (ProviderLoadRequestOptions , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_ignore_failures :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_ignore_failures { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProviderLoadRequestOptions as :: unity2 :: ClassIdentity > :: class () , "set_IgnoreFailures" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProviderLoadRequestOptions as :: unity2 :: ClassIdentity > :: NAME , "set_IgnoreFailures" , e) , } } } pub unsafe fn set_ignore_failures (this : ProviderLoadRequestOptions , value : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ProviderLoadRequestOptions , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_ignore_failures :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_web_request_timeout { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProviderLoadRequestOptions as :: unity2 :: ClassIdentity > :: class () , "get_WebRequestTimeout" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProviderLoadRequestOptions as :: unity2 :: ClassIdentity > :: NAME , "get_WebRequestTimeout" , e) , } } } pub unsafe fn get_web_request_timeout (this : ProviderLoadRequestOptions , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (ProviderLoadRequestOptions , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_web_request_timeout :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_web_request_timeout { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProviderLoadRequestOptions as :: unity2 :: ClassIdentity > :: class () , "set_WebRequestTimeout" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProviderLoadRequestOptions as :: unity2 :: ClassIdentity > :: NAME , "set_WebRequestTimeout" , e) , } } } pub unsafe fn set_web_request_timeout (this : ProviderLoadRequestOptions , value : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ProviderLoadRequestOptions , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_web_request_timeout :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProviderLoadRequestOptions as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProviderLoadRequestOptions as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : ProviderLoadRequestOptions , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ProviderLoadRequestOptions , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-resource_management-resource_providers-providerloadrequestoptions")]
-pub trait IProviderLoadRequestOptionsMethods: IProviderLoadRequestOptions {
-    #[doc = "`Copy()` overload"]
-    fn copy(self) -> crate::unity_engine::resource_management::resource_providers::providerloadrequestoptions::ProviderLoadRequestOptions {
-        unsafe {
-            let __receiver =
-                <ProviderLoadRequestOptions as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ProviderLoadRequestOptions_unity2_raw::copy(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_IgnoreFailures()` overload"]
-    fn get_ignore_failures(self) -> bool {
-        unsafe {
-            let __receiver =
-                <ProviderLoadRequestOptions as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ProviderLoadRequestOptions_unity2_raw::get_ignore_failures(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_IgnoreFailures(bool)` overload"]
-    fn set_ignore_failures(self, value: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver =
-                <ProviderLoadRequestOptions as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ProviderLoadRequestOptions_unity2_raw::set_ignore_failures(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_WebRequestTimeout()` overload"]
-    fn get_web_request_timeout(self) -> i32 {
-        unsafe {
-            let __receiver =
-                <ProviderLoadRequestOptions as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ProviderLoadRequestOptions_unity2_raw::get_web_request_timeout(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_WebRequestTimeout(i32)` overload"]
-    fn set_web_request_timeout(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver =
-                <ProviderLoadRequestOptions as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ProviderLoadRequestOptions_unity2_raw::set_web_request_timeout(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <ProviderLoadRequestOptions as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ProviderLoadRequestOptions_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IProviderLoadRequestOptionsMethods : IProviderLoadRequestOptions { # [doc = "`Copy()` overload"] fn copy (self ,) -> crate :: unity_engine :: resource_management :: resource_providers :: providerloadrequestoptions :: ProviderLoadRequestOptions { unsafe { let __receiver = < ProviderLoadRequestOptions as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ProviderLoadRequestOptions_unity2_raw :: copy (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_IgnoreFailures()` overload"] fn get_ignore_failures (self ,) -> bool { unsafe { let __receiver = < ProviderLoadRequestOptions as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ProviderLoadRequestOptions_unity2_raw :: get_ignore_failures (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_IgnoreFailures(bool)` overload"] fn set_ignore_failures (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < ProviderLoadRequestOptions as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ProviderLoadRequestOptions_unity2_raw :: set_ignore_failures (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_WebRequestTimeout()` overload"] fn get_web_request_timeout (self ,) -> i32 { unsafe { let __receiver = < ProviderLoadRequestOptions as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ProviderLoadRequestOptions_unity2_raw :: get_web_request_timeout (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_WebRequestTimeout(i32)` overload"] fn set_web_request_timeout (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < ProviderLoadRequestOptions as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ProviderLoadRequestOptions_unity2_raw :: set_web_request_timeout (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ProviderLoadRequestOptions as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ProviderLoadRequestOptions_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-resource_management-resource_providers-providerloadrequestoptions")]
-impl<__T: IProviderLoadRequestOptions> IProviderLoadRequestOptionsMethods for __T {}
+impl < __T : IProviderLoadRequestOptions > IProviderLoadRequestOptionsMethods for __T { }
+
+#[cfg(feature = "unity_engine-resource_management-resource_providers-providerloadrequestoptions")]
+impl ProviderLoadRequestOptions { pub fn copy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProviderLoadRequestOptions_unity2_raw :: __lookup_copy :: get_method_info () } pub fn get_ignore_failures_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProviderLoadRequestOptions_unity2_raw :: __lookup_get_ignore_failures :: get_method_info () } pub fn set_ignore_failures_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProviderLoadRequestOptions_unity2_raw :: __lookup_set_ignore_failures :: get_method_info () } pub fn get_web_request_timeout_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProviderLoadRequestOptions_unity2_raw :: __lookup_get_web_request_timeout :: get_method_info () } pub fn set_web_request_timeout_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProviderLoadRequestOptions_unity2_raw :: __lookup_set_web_request_timeout :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProviderLoadRequestOptions_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-resource_management-resource_providers-providerloadrequestoptions")]
 impl ProviderLoadRequestOptions {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ProviderLoadRequestOptions),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IProviderLoadRequestOptionsMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProviderLoadRequestOptions) , :: core :: stringify ! (new) ,)) ; < Self as IProviderLoadRequestOptionsMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "unity_engine-resource_management-resource_providers-providerloadrequestoptions")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IProviderLoadRequestOptions, IProviderLoadRequestOptionsMethods, ProviderLoadRequestOptions};
+    pub use super::ProviderLoadRequestOptions;
+    pub use super::IProviderLoadRequestOptions;
+    pub use super::IProviderLoadRequestOptionsMethods;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

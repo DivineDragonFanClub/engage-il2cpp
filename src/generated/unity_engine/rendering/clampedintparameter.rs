@@ -2,227 +2,59 @@
 
 #[cfg(feature = "unity_engine-rendering-clampedintparameter-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::rendering::{
-            intparameter::{IIntParameter, IntParameter},
-            volumeparameter::{IVolumeParameter, VolumeParameter},
-            volumeparameter_1::{IVolumeParameter_1, VolumeParameter_1},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/clampedintparameter/ClampedIntParameter.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Rendering", name = "ClampedIntParameter")]
-    #[parent(crate::unity_engine::rendering::intparameter::IntParameter)]
-    pub struct ClampedIntParameter {
-        #[offset(24)]
-        #[rename(name = "min")]
-        pub min: i32,
-        #[offset(28)]
-        #[rename(name = "max")]
-        pub max: i32,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: rendering :: intparameter :: { IIntParameter , IntParameter }
+ ;
+ use crate :: unity_engine :: rendering :: volumeparameter :: { IVolumeParameter , VolumeParameter }
+ ;
+ use crate :: unity_engine :: rendering :: volumeparameter_1 :: { IVolumeParameter_1 , VolumeParameter_1 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/clampedintparameter/ClampedIntParameter.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering" , name = "ClampedIntParameter")] # [parent (crate :: unity_engine :: rendering :: intparameter :: IntParameter)] pub struct ClampedIntParameter {
+# [offset (24)] # [rename (name = "min")] pub min : i32 ,
+# [offset (28)] # [rename (name = "max")] pub max : i32 ,
+}
+
 }
 
 #[cfg(feature = "unity_engine-rendering-clampedintparameter-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-clampedintparameter")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ClampedIntParameter_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_value {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ClampedIntParameter as ::unity2::ClassIdentity>::class(),
-                "get_value",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ClampedIntParameter as ::unity2::ClassIdentity>::NAME,
-                        "get_value",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_value(this: ClampedIntParameter, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(ClampedIntParameter, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_value::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_value {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ClampedIntParameter as ::unity2::ClassIdentity>::class(),
-                "set_value",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ClampedIntParameter as ::unity2::ClassIdentity>::NAME,
-                        "set_value",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_value(this: ClampedIntParameter, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ClampedIntParameter, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_value::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ClampedIntParameter as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                4,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ClampedIntParameter as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: ClampedIntParameter,
-        value: i32,
-        min: i32,
-        max: i32,
-        override_state: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(ClampedIntParameter, i32, i32, i32, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, value, min, max, override_state, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ClampedIntParameter_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_value { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ClampedIntParameter as :: unity2 :: ClassIdentity > :: class () , "get_value" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ClampedIntParameter as :: unity2 :: ClassIdentity > :: NAME , "get_value" , e) , } } } pub unsafe fn get_value (this : ClampedIntParameter , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (ClampedIntParameter , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_value :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_value { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ClampedIntParameter as :: unity2 :: ClassIdentity > :: class () , "set_value" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ClampedIntParameter as :: unity2 :: ClassIdentity > :: NAME , "set_value" , e) , } } } pub unsafe fn set_value (this : ClampedIntParameter , value : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ClampedIntParameter , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_value :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ClampedIntParameter as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 4 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ClampedIntParameter as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : ClampedIntParameter , value : i32 , min : i32 , max : i32 , override_state : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ClampedIntParameter , i32 , i32 , i32 , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , value , min , max , override_state , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-rendering-clampedintparameter")]
-pub trait IClampedIntParameterMethods: IClampedIntParameter {
-    #[doc = "`get_value()` overload"]
-    fn get_value(self) -> i32 {
-        unsafe {
-            let __receiver = <ClampedIntParameter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ClampedIntParameter_unity2_raw::get_value(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_value(i32)` overload"]
-    fn set_value(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver = <ClampedIntParameter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ClampedIntParameter_unity2_raw::set_value(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor(i32, i32, i32, bool)` overload"]
-    fn ctor(
-        self,
-        value: impl ::core::convert::Into<i32>,
-        min: impl ::core::convert::Into<i32>,
-        max: impl ::core::convert::Into<i32>,
-        override_state: impl ::core::convert::Into<bool>,
-    ) -> () {
-        unsafe {
-            let __receiver = <ClampedIntParameter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ClampedIntParameter_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::convert::Into::into(min),
-                ::core::convert::Into::into(max),
-                ::core::convert::Into::into(override_state),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+pub trait IClampedIntParameterMethods : IClampedIntParameter { # [doc = "`get_value()` overload"] fn get_value (self ,) -> i32 { unsafe { let __receiver = < ClampedIntParameter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ClampedIntParameter_unity2_raw :: get_value (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_value(i32)` overload"] fn set_value (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < ClampedIntParameter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ClampedIntParameter_unity2_raw :: set_value (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`.ctor(i32, i32, i32, bool)` overload"] fn ctor (self , value : impl :: core :: convert :: Into < i32 > , min : impl :: core :: convert :: Into < i32 > , max : impl :: core :: convert :: Into < i32 > , override_state : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < ClampedIntParameter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ClampedIntParameter_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (value) , :: core :: convert :: Into :: into (min) , :: core :: convert :: Into :: into (max) , :: core :: convert :: Into :: into (override_state) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-rendering-clampedintparameter")]
-impl<__T: IClampedIntParameter> IClampedIntParameterMethods for __T {}
+impl < __T : IClampedIntParameter > IClampedIntParameterMethods for __T { }
+
+#[cfg(feature = "unity_engine-rendering-clampedintparameter")]
+impl ClampedIntParameter { pub fn get_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ClampedIntParameter_unity2_raw :: __lookup_get_value :: get_method_info () } pub fn set_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ClampedIntParameter_unity2_raw :: __lookup_set_value :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ClampedIntParameter_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-rendering-clampedintparameter")]
 impl ClampedIntParameter {
-    #[doc = "`.ctor(i32, i32, i32, bool)` — overload selector"]
-    pub fn new(value: i32, min: i32, max: i32, override_state: bool) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ClampedIntParameter),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IClampedIntParameterMethods>::ctor(this, value, min, max, override_state);
-        this
-    }
+# [doc = "`.ctor(i32, i32, i32, bool)` — overload selector"] pub fn new (value : i32 , min : i32 , max : i32 , override_state : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ClampedIntParameter) , :: core :: stringify ! (new) ,)) ; < Self as IClampedIntParameterMethods > :: ctor (this , value , min , max , override_state) ; this }
 }
 
 #[cfg(feature = "unity_engine-rendering-clampedintparameter")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{ClampedIntParameter, IClampedIntParameter, IClampedIntParameterMethods};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-rendering-intparameter")]
-    pub use crate::unity_engine::rendering::intparameter::IIntParameterMethods;
-    #[cfg(feature = "unity_engine-rendering-volumeparameter")]
-    pub use crate::unity_engine::rendering::volumeparameter::IVolumeParameterMethods;
-    #[cfg(feature = "unity_engine-rendering-volumeparameter_1")]
-    pub use crate::unity_engine::rendering::volumeparameter_1::IVolumeParameter_1Methods;
-    pub use crate::{
-        system::object::IObject,
-        unity_engine::rendering::{
-            intparameter::{IIntParameter, IntParameter},
-            volumeparameter::IVolumeParameter,
-            volumeparameter_1::IVolumeParameter_1,
-        },
-    };
+    pub use super::ClampedIntParameter;
+    pub use super::IClampedIntParameter;
+    pub use super::IClampedIntParameterMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::rendering::intparameter::IIntParameter;
+    pub use crate::unity_engine::rendering::intparameter::IntParameter;
+    pub use crate::unity_engine::rendering::volumeparameter::IVolumeParameter;
+    pub use crate::unity_engine::rendering::volumeparameter_1::IVolumeParameter_1;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-rendering-intparameter")] pub use crate::unity_engine::rendering::intparameter::IIntParameterMethods;
+    #[cfg(feature = "unity_engine-rendering-volumeparameter")] pub use crate::unity_engine::rendering::volumeparameter::IVolumeParameterMethods;
+    #[cfg(feature = "unity_engine-rendering-volumeparameter_1")] pub use crate::unity_engine::rendering::volumeparameter_1::IVolumeParameter_1Methods;
 }

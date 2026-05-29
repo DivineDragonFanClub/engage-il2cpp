@@ -2,540 +2,77 @@
 
 #[cfg(feature = "combat-characterlyingpegasus-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        combat::characterlying::{CharacterLying, ICharacterLying},
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/characterlyingpegasus/CharacterLyingPegasus.md"))]
-    #[::unity2::class(namespace = "Combat", name = "CharacterLyingPegasus")]
-    #[parent(crate::combat::characterlying::CharacterLying)]
-    pub struct CharacterLyingPegasus {
-        #[offset(33)]
-        #[rename(name = "m_WasHumanLanded")]
-        pub m_was_human_landed: bool,
-        #[offset(34)]
-        #[rename(name = "m_WasRideLanded")]
-        pub m_was_ride_landed: bool,
-        #[offset(36)]
-        #[rename(name = "m_HumanOrient")]
-        pub m_human_orient: crate::combat::tr::TR,
-        #[offset(64)]
-        #[rename(name = "m_RideOrient")]
-        pub m_ride_orient: crate::combat::tr::TR,
-        #[offset(92)]
-        #[rename(name = "m_SkipFrames")]
-        pub m_skip_frames: i32,
-        #[offset(96)]
-        #[rename(name = "m_RidePushedLocalRotation")]
-        pub m_ride_pushed_local_rotation: crate::unity_engine::quaternion::Quaternion,
-        #[offset(112)]
-        #[rename(name = "m_IsCollide")]
-        pub m_is_collide: bool,
-        #[offset(116)]
-        #[rename(name = "m_LastSafetyCTransXZ")]
-        pub m_last_safety_c_trans_xz: crate::combat::fxz::FXZ,
-        #[offset(124)]
-        #[rename(name = "m_LastLookAtRideLoc")]
-        pub m_last_look_at_ride_loc: crate::combat::fxz::FXZ,
-        #[offset(136)]
-        #[rename(name = "c_hip_ride_jnt")]
-        pub c_hip_ride_jnt: crate::unity_engine::transform::Transform,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: combat :: characterlying :: { CharacterLying , ICharacterLying }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/characterlyingpegasus/CharacterLyingPegasus.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "CharacterLyingPegasus")] # [parent (crate :: combat :: characterlying :: CharacterLying)] pub struct CharacterLyingPegasus {
+# [offset (33)] # [rename (name = "m_WasHumanLanded")] pub m_was_human_landed : bool ,
+# [offset (34)] # [rename (name = "m_WasRideLanded")] pub m_was_ride_landed : bool ,
+# [offset (36)] # [rename (name = "m_HumanOrient")] pub m_human_orient : crate :: combat :: tr :: TR ,
+# [offset (64)] # [rename (name = "m_RideOrient")] pub m_ride_orient : crate :: combat :: tr :: TR ,
+# [offset (92)] # [rename (name = "m_SkipFrames")] pub m_skip_frames : i32 ,
+# [offset (96)] # [rename (name = "m_RidePushedLocalRotation")] pub m_ride_pushed_local_rotation : crate :: unity_engine :: quaternion :: Quaternion ,
+# [offset (112)] # [rename (name = "m_IsCollide")] pub m_is_collide : bool ,
+# [offset (116)] # [rename (name = "m_LastSafetyCTransXZ")] pub m_last_safety_c_trans_xz : crate :: combat :: fxz :: FXZ ,
+# [offset (124)] # [rename (name = "m_LastLookAtRideLoc")] pub m_last_look_at_ride_loc : crate :: combat :: fxz :: FXZ ,
+# [offset (136)] # [rename (name = "c_hip_ride_jnt")] pub c_hip_ride_jnt : crate :: unity_engine :: transform :: Transform ,
+}
+
 }
 
 #[cfg(feature = "combat-characterlyingpegasus-types")]
 pub use __types::*;
 
 #[cfg(feature = "combat-characterlyingpegasus")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __CharacterLyingPegasus_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_need_to_work {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::combat::character::Character as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharacterLyingPegasus as ::unity2::ClassIdentity>::class(),
-                "IsNeedToWork",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CharacterLyingPegasus as ::unity2::ClassIdentity>::NAME,
-                        "IsNeedToWork",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_need_to_work(chr: crate::combat::character::Character, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(crate::combat::character::Character, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_need_to_work::get_method_info().method_ptr);
-        inner(chr, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_my_start {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharacterLyingPegasus as ::unity2::ClassIdentity>::class(),
-                "MyStart",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CharacterLyingPegasus as ::unity2::ClassIdentity>::NAME,
-                        "MyStart",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn my_start(this: CharacterLyingPegasus, die_hash: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CharacterLyingPegasus, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_my_start::get_method_info().method_ptr);
-        inner(this, die_hash, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_make_my_dead_pose {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharacterLyingPegasus as ::unity2::ClassIdentity>::class(),
-                "MakeMyDeadPose",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CharacterLyingPegasus as ::unity2::ClassIdentity>::NAME,
-                        "MakeMyDeadPose",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn make_my_dead_pose(this: CharacterLyingPegasus, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CharacterLyingPegasus, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_make_my_dead_pose::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_my_update {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharacterLyingPegasus as ::unity2::ClassIdentity>::class(),
-                "MyUpdate",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CharacterLyingPegasus as ::unity2::ClassIdentity>::NAME,
-                        "MyUpdate",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn my_update(this: CharacterLyingPegasus, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CharacterLyingPegasus, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_my_update::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_my_late_update {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharacterLyingPegasus as ::unity2::ClassIdentity>::class(),
-                "MyLateUpdate",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CharacterLyingPegasus as ::unity2::ClassIdentity>::NAME,
-                        "MyLateUpdate",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn my_late_update(this: CharacterLyingPegasus, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CharacterLyingPegasus, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_my_late_update::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_ground_tr {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharacterLyingPegasus as ::unity2::ClassIdentity>::class(),
-                "GetGroundTR",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CharacterLyingPegasus as ::unity2::ClassIdentity>::NAME,
-                        "GetGroundTR",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_ground_tr(
-        pos: *mut crate::unity_engine::vector3::Vector3,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::combat::tr::TR {
-        let inner: extern "C" fn(*mut crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> crate::combat::tr::TR =
-            ::core::mem::transmute(__lookup_get_ground_tr::get_method_info().method_ptr);
-        inner(pos, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_ground_tr_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::vector4::Vector4 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharacterLyingPegasus as ::unity2::ClassIdentity>::class(),
-                "GetGroundTR",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CharacterLyingPegasus as ::unity2::ClassIdentity>::NAME,
-                        "GetGroundTR",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_ground_tr_2(
-        pos: *mut crate::unity_engine::vector3::Vector3,
-        abcd: *mut crate::unity_engine::vector4::Vector4,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::combat::tr::TR {
-        let inner: extern "C" fn(
-            *mut crate::unity_engine::vector3::Vector3,
-            *mut crate::unity_engine::vector4::Vector4,
-            ::unity2::OptionalMethod,
-        ) -> crate::combat::tr::TR = ::core::mem::transmute(__lookup_get_ground_tr_2::get_method_info().method_ptr);
-        inner(pos, abcd, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_land_human {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharacterLyingPegasus as ::unity2::ClassIdentity>::class(),
-                "OnLandHuman",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CharacterLyingPegasus as ::unity2::ClassIdentity>::NAME,
-                        "OnLandHuman",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_land_human(this: CharacterLyingPegasus, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CharacterLyingPegasus, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_land_human::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_land_pegasus {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharacterLyingPegasus as ::unity2::ClassIdentity>::class(),
-                "OnLandPegasus",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CharacterLyingPegasus as ::unity2::ClassIdentity>::NAME,
-                        "OnLandPegasus",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_land_pegasus(this: CharacterLyingPegasus, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CharacterLyingPegasus, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_land_pegasus::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharacterLyingPegasus as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CharacterLyingPegasus as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: CharacterLyingPegasus, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CharacterLyingPegasus, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __CharacterLyingPegasus_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_need_to_work { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: character :: Character as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CharacterLyingPegasus as :: unity2 :: ClassIdentity > :: class () , "IsNeedToWork" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CharacterLyingPegasus as :: unity2 :: ClassIdentity > :: NAME , "IsNeedToWork" , e) , } } } pub unsafe fn is_need_to_work (chr : crate :: combat :: character :: Character , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (crate :: combat :: character :: Character , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_need_to_work :: get_method_info () . method_ptr ,) ; inner (chr , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_my_start { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CharacterLyingPegasus as :: unity2 :: ClassIdentity > :: class () , "MyStart" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CharacterLyingPegasus as :: unity2 :: ClassIdentity > :: NAME , "MyStart" , e) , } } } pub unsafe fn my_start (this : CharacterLyingPegasus , die_hash : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CharacterLyingPegasus , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_my_start :: get_method_info () . method_ptr ,) ; inner (this , die_hash , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_make_my_dead_pose { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CharacterLyingPegasus as :: unity2 :: ClassIdentity > :: class () , "MakeMyDeadPose" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CharacterLyingPegasus as :: unity2 :: ClassIdentity > :: NAME , "MakeMyDeadPose" , e) , } } } pub unsafe fn make_my_dead_pose (this : CharacterLyingPegasus , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CharacterLyingPegasus , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_make_my_dead_pose :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_my_update { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CharacterLyingPegasus as :: unity2 :: ClassIdentity > :: class () , "MyUpdate" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CharacterLyingPegasus as :: unity2 :: ClassIdentity > :: NAME , "MyUpdate" , e) , } } } pub unsafe fn my_update (this : CharacterLyingPegasus , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CharacterLyingPegasus , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_my_update :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_my_late_update { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CharacterLyingPegasus as :: unity2 :: ClassIdentity > :: class () , "MyLateUpdate" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CharacterLyingPegasus as :: unity2 :: ClassIdentity > :: NAME , "MyLateUpdate" , e) , } } } pub unsafe fn my_late_update (this : CharacterLyingPegasus , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CharacterLyingPegasus , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_my_late_update :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_ground_tr { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CharacterLyingPegasus as :: unity2 :: ClassIdentity > :: class () , "GetGroundTR" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CharacterLyingPegasus as :: unity2 :: ClassIdentity > :: NAME , "GetGroundTR" , e) , } } } pub unsafe fn get_ground_tr (pos : * mut crate :: unity_engine :: vector3 :: Vector3 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: combat :: tr :: TR { let inner : extern "C" fn (* mut crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> crate :: combat :: tr :: TR = :: core :: mem :: transmute (__lookup_get_ground_tr :: get_method_info () . method_ptr ,) ; inner (pos , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_ground_tr_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector4 :: Vector4 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CharacterLyingPegasus as :: unity2 :: ClassIdentity > :: class () , "GetGroundTR" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CharacterLyingPegasus as :: unity2 :: ClassIdentity > :: NAME , "GetGroundTR" , e) , } } } pub unsafe fn get_ground_tr_2 (pos : * mut crate :: unity_engine :: vector3 :: Vector3 , abcd : * mut crate :: unity_engine :: vector4 :: Vector4 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: combat :: tr :: TR { let inner : extern "C" fn (* mut crate :: unity_engine :: vector3 :: Vector3 , * mut crate :: unity_engine :: vector4 :: Vector4 , :: unity2 :: OptionalMethod ,) -> crate :: combat :: tr :: TR = :: core :: mem :: transmute (__lookup_get_ground_tr_2 :: get_method_info () . method_ptr ,) ; inner (pos , abcd , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_land_human { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CharacterLyingPegasus as :: unity2 :: ClassIdentity > :: class () , "OnLandHuman" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CharacterLyingPegasus as :: unity2 :: ClassIdentity > :: NAME , "OnLandHuman" , e) , } } } pub unsafe fn on_land_human (this : CharacterLyingPegasus , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CharacterLyingPegasus , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_land_human :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_land_pegasus { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CharacterLyingPegasus as :: unity2 :: ClassIdentity > :: class () , "OnLandPegasus" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CharacterLyingPegasus as :: unity2 :: ClassIdentity > :: NAME , "OnLandPegasus" , e) , } } } pub unsafe fn on_land_pegasus (this : CharacterLyingPegasus , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CharacterLyingPegasus , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_land_pegasus :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CharacterLyingPegasus as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CharacterLyingPegasus as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : CharacterLyingPegasus , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CharacterLyingPegasus , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "combat-characterlyingpegasus")]
+impl CharacterLyingPegasus { # [doc = "`IsNeedToWork(crate::combat::character::Character)` overload"] pub fn is_need_to_work (chr : impl :: core :: convert :: Into < crate :: combat :: character :: Character >) -> bool { unsafe { __CharacterLyingPegasus_unity2_raw :: is_need_to_work (:: core :: convert :: Into :: into (chr) , :: core :: option :: Option :: None) } } # [doc = "`GetGroundTR(*mutcrate::unity_engine::vector3::Vector3)` overload"] pub fn get_ground_tr () -> (crate :: combat :: tr :: TR , crate :: unity_engine :: vector3 :: Vector3) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector3 :: Vector3 > :: uninit () ; let __ret = { __CharacterLyingPegasus_unity2_raw :: get_ground_tr (__out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } ; (__ret , __out_0 . assume_init ()) } } # [doc = "`GetGroundTR(*mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::vector4::Vector4)` overload"] pub fn get_ground_tr_2 () -> (crate :: combat :: tr :: TR , crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector4 :: Vector4) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector3 :: Vector3 > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector4 :: Vector4 > :: uninit () ; let __ret = { __CharacterLyingPegasus_unity2_raw :: get_ground_tr_2 (__out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: option :: Option :: None) } ; (__ret , __out_0 . assume_init () , __out_1 . assume_init ()) } } }
+
+#[cfg(feature = "combat-characterlyingpegasus")]
+pub trait ICharacterLyingPegasusMethods : ICharacterLyingPegasus { # [doc = "`MyStart(i32)` overload"] fn my_start (self , die_hash : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < CharacterLyingPegasus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CharacterLyingPegasus_unity2_raw :: my_start (__receiver , :: core :: convert :: Into :: into (die_hash) , :: core :: option :: Option :: None) } } # [doc = "`MakeMyDeadPose()` overload"] fn make_my_dead_pose (self ,) -> () { unsafe { let __receiver = < CharacterLyingPegasus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CharacterLyingPegasus_unity2_raw :: make_my_dead_pose (__receiver , :: core :: option :: Option :: None) } } # [doc = "`MyUpdate()` overload"] fn my_update (self ,) -> () { unsafe { let __receiver = < CharacterLyingPegasus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CharacterLyingPegasus_unity2_raw :: my_update (__receiver , :: core :: option :: Option :: None) } } # [doc = "`MyLateUpdate()` overload"] fn my_late_update (self ,) -> () { unsafe { let __receiver = < CharacterLyingPegasus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CharacterLyingPegasus_unity2_raw :: my_late_update (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnLandHuman()` overload"] fn on_land_human (self ,) -> () { unsafe { let __receiver = < CharacterLyingPegasus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CharacterLyingPegasus_unity2_raw :: on_land_human (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnLandPegasus()` overload"] fn on_land_pegasus (self ,) -> () { unsafe { let __receiver = < CharacterLyingPegasus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CharacterLyingPegasus_unity2_raw :: on_land_pegasus (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CharacterLyingPegasus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CharacterLyingPegasus_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "combat-characterlyingpegasus")]
+impl < __T : ICharacterLyingPegasus > ICharacterLyingPegasusMethods for __T { }
+
+#[cfg(feature = "combat-characterlyingpegasus")]
+impl CharacterLyingPegasus { pub fn is_need_to_work_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CharacterLyingPegasus_unity2_raw :: __lookup_is_need_to_work :: get_method_info () } pub fn my_start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CharacterLyingPegasus_unity2_raw :: __lookup_my_start :: get_method_info () } pub fn make_my_dead_pose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CharacterLyingPegasus_unity2_raw :: __lookup_make_my_dead_pose :: get_method_info () } pub fn my_update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CharacterLyingPegasus_unity2_raw :: __lookup_my_update :: get_method_info () } pub fn my_late_update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CharacterLyingPegasus_unity2_raw :: __lookup_my_late_update :: get_method_info () } pub fn get_ground_tr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CharacterLyingPegasus_unity2_raw :: __lookup_get_ground_tr :: get_method_info () } pub fn get_ground_tr_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CharacterLyingPegasus_unity2_raw :: __lookup_get_ground_tr_2 :: get_method_info () } pub fn on_land_human_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CharacterLyingPegasus_unity2_raw :: __lookup_on_land_human :: get_method_info () } pub fn on_land_pegasus_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CharacterLyingPegasus_unity2_raw :: __lookup_on_land_pegasus :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CharacterLyingPegasus_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "combat-characterlyingpegasus")]
 impl CharacterLyingPegasus {
-    #[doc = "`IsNeedToWork(crate::combat::character::Character)` overload"]
-    pub fn is_need_to_work(chr: impl ::core::convert::Into<crate::combat::character::Character>) -> bool {
-        unsafe { __CharacterLyingPegasus_unity2_raw::is_need_to_work(::core::convert::Into::into(chr), ::core::option::Option::None) }
-    }
-
-    #[doc = "`GetGroundTR(*mutcrate::unity_engine::vector3::Vector3)` overload"]
-    pub fn get_ground_tr() -> (crate::combat::tr::TR, crate::unity_engine::vector3::Vector3) {
-        unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
-            let __ret = { __CharacterLyingPegasus_unity2_raw::get_ground_tr(__out_0.as_mut_ptr(), ::core::option::Option::None) };
-            (__ret, __out_0.assume_init())
-        }
-    }
-
-    #[doc = "`GetGroundTR(*mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::vector4::Vector4)` overload"]
-    pub fn get_ground_tr_2() -> (
-        crate::combat::tr::TR,
-        crate::unity_engine::vector3::Vector3,
-        crate::unity_engine::vector4::Vector4,
-    ) {
-        unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
-            let mut __out_1 = ::core::mem::MaybeUninit::<crate::unity_engine::vector4::Vector4>::uninit();
-            let __ret =
-                { __CharacterLyingPegasus_unity2_raw::get_ground_tr_2(__out_0.as_mut_ptr(), __out_1.as_mut_ptr(), ::core::option::Option::None) };
-            (__ret, __out_0.assume_init(), __out_1.assume_init())
-        }
-    }
-}
-
-#[cfg(feature = "combat-characterlyingpegasus")]
-pub trait ICharacterLyingPegasusMethods: ICharacterLyingPegasus {
-    #[doc = "`MyStart(i32)` overload"]
-    fn my_start(self, die_hash: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver =
-                <CharacterLyingPegasus as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CharacterLyingPegasus_unity2_raw::my_start(__receiver, ::core::convert::Into::into(die_hash), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`MakeMyDeadPose()` overload"]
-    fn make_my_dead_pose(self) -> () {
-        unsafe {
-            let __receiver =
-                <CharacterLyingPegasus as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CharacterLyingPegasus_unity2_raw::make_my_dead_pose(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`MyUpdate()` overload"]
-    fn my_update(self) -> () {
-        unsafe {
-            let __receiver =
-                <CharacterLyingPegasus as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CharacterLyingPegasus_unity2_raw::my_update(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`MyLateUpdate()` overload"]
-    fn my_late_update(self) -> () {
-        unsafe {
-            let __receiver =
-                <CharacterLyingPegasus as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CharacterLyingPegasus_unity2_raw::my_late_update(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnLandHuman()` overload"]
-    fn on_land_human(self) -> () {
-        unsafe {
-            let __receiver =
-                <CharacterLyingPegasus as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CharacterLyingPegasus_unity2_raw::on_land_human(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnLandPegasus()` overload"]
-    fn on_land_pegasus(self) -> () {
-        unsafe {
-            let __receiver =
-                <CharacterLyingPegasus as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CharacterLyingPegasus_unity2_raw::on_land_pegasus(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <CharacterLyingPegasus as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CharacterLyingPegasus_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "combat-characterlyingpegasus")]
-impl<__T: ICharacterLyingPegasus> ICharacterLyingPegasusMethods for __T {}
-
-#[cfg(feature = "combat-characterlyingpegasus")]
-impl CharacterLyingPegasus {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(CharacterLyingPegasus),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ICharacterLyingPegasusMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CharacterLyingPegasus) , :: core :: stringify ! (new) ,)) ; < Self as ICharacterLyingPegasusMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "combat-characterlyingpegasus")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{CharacterLyingPegasus, ICharacterLyingPegasus, ICharacterLyingPegasusMethods};
-    #[cfg(feature = "combat-characterlying")]
-    pub use crate::combat::characterlying::ICharacterLyingMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        combat::characterlying::ICharacterLying,
-        system::object::IObject,
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::CharacterLyingPegasus;
+    pub use super::ICharacterLyingPegasus;
+    pub use super::ICharacterLyingPegasusMethods;
+    pub use crate::combat::characterlying::ICharacterLying;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "combat-characterlying")] pub use crate::combat::characterlying::ICharacterLyingMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

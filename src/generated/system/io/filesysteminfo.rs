@@ -2,346 +2,45 @@
 
 #[cfg(feature = "system-io-filesysteminfo-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/filesysteminfo/FileSystemInfo.md"))]
-    #[::unity2::class(namespace = "System.IO", name = "FileSystemInfo")]
-    pub struct FileSystemInfo {
-        #[offset(24)]
-        #[rename(name = "_data")]
-        pub data: crate::system::io::monoiostat::MonoIOStat,
-        #[offset(64)]
-        #[rename(name = "_dataInitialised")]
-        pub data_initialised: i32,
-        #[offset(72)]
-        #[rename(name = "FullPath")]
-        pub full_path: ::unity2::Il2CppString,
-        #[offset(80)]
-        #[rename(name = "OriginalPath")]
-        pub original_path: ::unity2::Il2CppString,
-        #[offset(88)]
-        #[rename(name = "_displayPath")]
-        pub display_path_field: ::unity2::Il2CppString,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/filesysteminfo/FileSystemInfo.md"))] # [:: unity2 :: class (namespace = "System.IO" , name = "FileSystemInfo")] pub struct FileSystemInfo {
+# [offset (24)] # [rename (name = "_data")] pub data : crate :: system :: io :: monoiostat :: MonoIOStat ,
+# [offset (64)] # [rename (name = "_dataInitialised")] pub data_initialised : i32 ,
+# [offset (72)] # [rename (name = "FullPath")] pub full_path : :: unity2 :: Il2CppString ,
+# [offset (80)] # [rename (name = "OriginalPath")] pub original_path : :: unity2 :: Il2CppString ,
+# [offset (88)] # [rename (name = "_displayPath")] pub display_path_field : :: unity2 :: Il2CppString ,
+}
+
 }
 
 #[cfg(feature = "system-io-filesysteminfo-types")]
 pub use __types::*;
 
 #[cfg(feature = "system-io-filesysteminfo")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __FileSystemInfo_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FileSystemInfo as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FileSystemInfo as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: FileSystemInfo, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(FileSystemInfo, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_full_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FileSystemInfo as ::unity2::ClassIdentity>::class(),
-                "get_FullName",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FileSystemInfo as ::unity2::ClassIdentity>::NAME,
-                        "get_FullName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_full_name(this: FileSystemInfo, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(FileSystemInfo, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_full_name::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FileSystemInfo as ::unity2::ClassIdentity>::class(),
-                "get_Name",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FileSystemInfo as ::unity2::ClassIdentity>::NAME,
-                        "get_Name",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_name(this: FileSystemInfo, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(FileSystemInfo, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_exists {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FileSystemInfo as ::unity2::ClassIdentity>::class(),
-                "get_Exists",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FileSystemInfo as ::unity2::ClassIdentity>::NAME,
-                        "get_Exists",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_exists(this: FileSystemInfo, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(FileSystemInfo, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_exists::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_refresh {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FileSystemInfo as ::unity2::ClassIdentity>::class(),
-                "Refresh",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FileSystemInfo as ::unity2::ClassIdentity>::NAME,
-                        "Refresh",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn refresh(this: FileSystemInfo, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(FileSystemInfo, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_refresh::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_display_path {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FileSystemInfo as ::unity2::ClassIdentity>::class(),
-                "get_DisplayPath",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FileSystemInfo as ::unity2::ClassIdentity>::NAME,
-                        "get_DisplayPath",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_display_path(this: FileSystemInfo, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(FileSystemInfo, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_display_path::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_display_path {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FileSystemInfo as ::unity2::ClassIdentity>::class(),
-                "set_DisplayPath",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FileSystemInfo as ::unity2::ClassIdentity>::NAME,
-                        "set_DisplayPath",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_display_path(this: FileSystemInfo, value: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(FileSystemInfo, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_display_path::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __FileSystemInfo_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FileSystemInfo as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FileSystemInfo as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : FileSystemInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FileSystemInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_full_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FileSystemInfo as :: unity2 :: ClassIdentity > :: class () , "get_FullName" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FileSystemInfo as :: unity2 :: ClassIdentity > :: NAME , "get_FullName" , e) , } } } pub unsafe fn get_full_name (this : FileSystemInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (FileSystemInfo , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_full_name :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FileSystemInfo as :: unity2 :: ClassIdentity > :: class () , "get_Name" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FileSystemInfo as :: unity2 :: ClassIdentity > :: NAME , "get_Name" , e) , } } } pub unsafe fn get_name (this : FileSystemInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (FileSystemInfo , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_name :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_exists { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FileSystemInfo as :: unity2 :: ClassIdentity > :: class () , "get_Exists" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FileSystemInfo as :: unity2 :: ClassIdentity > :: NAME , "get_Exists" , e) , } } } pub unsafe fn get_exists (this : FileSystemInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (FileSystemInfo , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_exists :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_refresh { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FileSystemInfo as :: unity2 :: ClassIdentity > :: class () , "Refresh" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FileSystemInfo as :: unity2 :: ClassIdentity > :: NAME , "Refresh" , e) , } } } pub unsafe fn refresh (this : FileSystemInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FileSystemInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_refresh :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_display_path { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FileSystemInfo as :: unity2 :: ClassIdentity > :: class () , "get_DisplayPath" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FileSystemInfo as :: unity2 :: ClassIdentity > :: NAME , "get_DisplayPath" , e) , } } } pub unsafe fn get_display_path (this : FileSystemInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (FileSystemInfo , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_display_path :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_display_path { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FileSystemInfo as :: unity2 :: ClassIdentity > :: class () , "set_DisplayPath" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FileSystemInfo as :: unity2 :: ClassIdentity > :: NAME , "set_DisplayPath" , e) , } } } pub unsafe fn set_display_path (this : FileSystemInfo , value : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FileSystemInfo , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_display_path :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } }
 
 #[cfg(feature = "system-io-filesysteminfo")]
-pub trait IFileSystemInfoMethods: IFileSystemInfo {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <FileSystemInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FileSystemInfo_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_FullName()` overload"]
-    fn get_full_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <FileSystemInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FileSystemInfo_unity2_raw::get_full_name(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Name()` overload"]
-    fn get_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <FileSystemInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FileSystemInfo_unity2_raw::get_name(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Exists()` overload"]
-    fn get_exists(self) -> bool {
-        unsafe {
-            let __receiver = <FileSystemInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FileSystemInfo_unity2_raw::get_exists(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Refresh()` overload"]
-    fn refresh(self) -> () {
-        unsafe {
-            let __receiver = <FileSystemInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FileSystemInfo_unity2_raw::refresh(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_DisplayPath()` overload"]
-    fn get_display_path(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <FileSystemInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FileSystemInfo_unity2_raw::get_display_path(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_DisplayPath(::unity2::Il2CppString)` overload"]
-    fn set_display_path(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver = <FileSystemInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FileSystemInfo_unity2_raw::set_display_path(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-}
+pub trait IFileSystemInfoMethods : IFileSystemInfo { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < FileSystemInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FileSystemInfo_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_FullName()` overload"] fn get_full_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < FileSystemInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FileSystemInfo_unity2_raw :: get_full_name (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_Name()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < FileSystemInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FileSystemInfo_unity2_raw :: get_name (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_Exists()` overload"] fn get_exists (self ,) -> bool { unsafe { let __receiver = < FileSystemInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FileSystemInfo_unity2_raw :: get_exists (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Refresh()` overload"] fn refresh (self ,) -> () { unsafe { let __receiver = < FileSystemInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FileSystemInfo_unity2_raw :: refresh (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_DisplayPath()` overload"] fn get_display_path (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < FileSystemInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FileSystemInfo_unity2_raw :: get_display_path (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_DisplayPath(::unity2::Il2CppString)` overload"] fn set_display_path (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < FileSystemInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FileSystemInfo_unity2_raw :: set_display_path (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "system-io-filesysteminfo")]
-impl<__T: IFileSystemInfo> IFileSystemInfoMethods for __T {}
+impl < __T : IFileSystemInfo > IFileSystemInfoMethods for __T { }
+
+#[cfg(feature = "system-io-filesysteminfo")]
+impl FileSystemInfo { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FileSystemInfo_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn get_full_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FileSystemInfo_unity2_raw :: __lookup_get_full_name :: get_method_info () } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FileSystemInfo_unity2_raw :: __lookup_get_name :: get_method_info () } pub fn get_exists_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FileSystemInfo_unity2_raw :: __lookup_get_exists :: get_method_info () } pub fn refresh_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FileSystemInfo_unity2_raw :: __lookup_refresh :: get_method_info () } pub fn get_display_path_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FileSystemInfo_unity2_raw :: __lookup_get_display_path :: get_method_info () } pub fn set_display_path_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FileSystemInfo_unity2_raw :: __lookup_set_display_path :: get_method_info () } }
 
 #[cfg(feature = "system-io-filesysteminfo")]
 impl FileSystemInfo {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(FileSystemInfo),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IFileSystemInfoMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FileSystemInfo) , :: core :: stringify ! (new) ,)) ; < Self as IFileSystemInfoMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "system-io-filesysteminfo")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{FileSystemInfo, IFileSystemInfo, IFileSystemInfoMethods};
+    pub use super::FileSystemInfo;
+    pub use super::IFileSystemInfo;
+    pub use super::IFileSystemInfoMethods;
 }

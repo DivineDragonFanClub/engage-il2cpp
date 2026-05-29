@@ -2,134 +2,47 @@
 
 #[cfg(feature = "app-water-meshcontainer-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/water/meshcontainer/MeshContainer.md"))]
-    #[::unity2::class(namespace = "App.Water", name = "MeshContainer")]
-    #[parent(crate::system::object::Object)]
-    pub struct MeshContainer {
-        #[offset(16)]
-        #[rename(name = "mesh")]
-        pub mesh: crate::unity_engine::mesh::Mesh,
-        #[offset(24)]
-        #[rename(name = "vertices")]
-        pub vertices: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
-        #[offset(32)]
-        #[rename(name = "normals")]
-        pub normals: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/water/meshcontainer/MeshContainer.md"))] # [:: unity2 :: class (namespace = "App.Water" , name = "MeshContainer")] # [parent (crate :: system :: object :: Object)] pub struct MeshContainer {
+# [offset (16)] # [rename (name = "mesh")] pub mesh : crate :: unity_engine :: mesh :: Mesh ,
+# [offset (24)] # [rename (name = "vertices")] pub vertices : :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > ,
+# [offset (32)] # [rename (name = "normals")] pub normals : :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > ,
+}
+
 }
 
 #[cfg(feature = "app-water-meshcontainer-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-water-meshcontainer")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MeshContainer_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::mesh::Mesh as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<MeshContainer as ::unity2::ClassIdentity>::class(), ".ctor", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MeshContainer as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: MeshContainer, m: crate::unity_engine::mesh::Mesh, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MeshContainer, crate::unity_engine::mesh::Mesh, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, m, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MeshContainer as ::unity2::ClassIdentity>::class(),
-                "Update",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MeshContainer as ::unity2::ClassIdentity>::NAME,
-                        "Update",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update(this: MeshContainer, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MeshContainer, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MeshContainer_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: mesh :: Mesh as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MeshContainer as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MeshContainer as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : MeshContainer , m : crate :: unity_engine :: mesh :: Mesh , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MeshContainer , crate :: unity_engine :: mesh :: Mesh , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , m , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MeshContainer as :: unity2 :: ClassIdentity > :: class () , "Update" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MeshContainer as :: unity2 :: ClassIdentity > :: NAME , "Update" , e) , } } } pub unsafe fn update (this : MeshContainer , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MeshContainer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-water-meshcontainer")]
-pub trait IMeshContainerMethods: IMeshContainer {
-    #[doc = "`.ctor(crate::unity_engine::mesh::Mesh)` overload"]
-    fn ctor(self, m: impl ::core::convert::Into<crate::unity_engine::mesh::Mesh>) -> () {
-        unsafe {
-            let __receiver = <MeshContainer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MeshContainer_unity2_raw::ctor(__receiver, ::core::convert::Into::into(m), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Update()` overload"]
-    fn update(self) -> () {
-        unsafe {
-            let __receiver = <MeshContainer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MeshContainer_unity2_raw::update(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IMeshContainerMethods : IMeshContainer { # [doc = "`.ctor(crate::unity_engine::mesh::Mesh)` overload"] fn ctor (self , m : impl :: core :: convert :: Into < crate :: unity_engine :: mesh :: Mesh >) -> () { unsafe { let __receiver = < MeshContainer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MeshContainer_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (m) , :: core :: option :: Option :: None) } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < MeshContainer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MeshContainer_unity2_raw :: update (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-water-meshcontainer")]
-impl<__T: IMeshContainer> IMeshContainerMethods for __T {}
+impl < __T : IMeshContainer > IMeshContainerMethods for __T { }
+
+#[cfg(feature = "app-water-meshcontainer")]
+impl MeshContainer { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MeshContainer_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MeshContainer_unity2_raw :: __lookup_update :: get_method_info () } }
 
 #[cfg(feature = "app-water-meshcontainer")]
 impl MeshContainer {
-    #[doc = "`.ctor(crate::unity_engine::mesh::Mesh)` — overload selector"]
-    pub fn new(m: crate::unity_engine::mesh::Mesh) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(MeshContainer), ::core::stringify!(new),));
-        <Self as IMeshContainerMethods>::ctor(this, m);
-        this
-    }
+# [doc = "`.ctor(crate::unity_engine::mesh::Mesh)` — overload selector"] pub fn new (m : crate :: unity_engine :: mesh :: Mesh) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MeshContainer) , :: core :: stringify ! (new) ,)) ; < Self as IMeshContainerMethods > :: ctor (this , m) ; this }
 }
 
 #[cfg(feature = "app-water-meshcontainer")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IMeshContainer, IMeshContainerMethods, MeshContainer};
+    pub use super::MeshContainer;
+    pub use super::IMeshContainer;
+    pub use super::IMeshContainerMethods;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

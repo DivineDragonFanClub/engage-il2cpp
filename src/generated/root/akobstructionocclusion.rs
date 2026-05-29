@@ -2,557 +2,95 @@
 
 #[cfg(feature = "root-akobstructionocclusion-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akobstructionocclusion/AkObstructionOcclusion.md"))]
-    #[::unity2::class(namespace = "", name = "AkObstructionOcclusion")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct AkObstructionOcclusion {
-        #[offset(24)]
-        #[rename(name = "listenersToRemove")]
-        pub listeners_to_remove: crate::system::collections::generic::list_1::List_1<crate::root::akaudiolistener::AkAudioListener>,
-        #[offset(32)]
-        #[rename(name = "currentListenerList")]
-        pub current_listener_list: crate::system::collections::generic::list_1::List_1<crate::root::akaudiolistener::AkAudioListener>,
-        #[offset(40)]
-        #[rename(name = "ObstructionOcclusionValues")]
-        pub obstruction_occlusion_values: crate::system::collections::generic::dictionary_2::Dictionary_2<
-            crate::root::akaudiolistener::AkAudioListener,
-            crate::root::akobstructionocclusion::AkObstructionOcclusion_ObstructionOcclusionValue,
-        >,
-        #[offset(48)]
-        #[rename(name = "fadeRate")]
-        pub fade_rate: f32,
-        #[offset(52)]
-        #[rename(name = "fadeTime")]
-        pub fade_time: f32,
-        #[offset(56)]
-        #[rename(name = "LayerMask")]
-        pub layer_mask: crate::unity_engine::layermask::LayerMask,
-        #[offset(60)]
-        #[rename(name = "maxDistance")]
-        pub max_distance: f32,
-        #[offset(64)]
-        #[rename(name = "refreshInterval")]
-        pub refresh_interval: f32,
-        #[offset(68)]
-        #[rename(name = "refreshTime")]
-        pub refresh_time: f32,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akobstructionocclusion/AkObstructionOcclusion_ObstructionOcclusionValue.md"))]
-    #[::unity2::class(namespace = "", name = "AkObstructionOcclusion.ObstructionOcclusionValue")]
-    #[parent(crate::system::object::Object)]
-    pub struct AkObstructionOcclusion_ObstructionOcclusionValue {
-        #[offset(16)]
-        #[rename(name = "currentValue")]
-        pub current_value: f32,
-        #[offset(20)]
-        #[rename(name = "targetValue")]
-        pub target_value: f32,
-    }
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akobstructionocclusion/AkObstructionOcclusion.md"))] # [:: unity2 :: class (namespace = "" , name = "AkObstructionOcclusion")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct AkObstructionOcclusion {
+# [offset (24)] # [rename (name = "listenersToRemove")] pub listeners_to_remove : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: root :: akaudiolistener :: AkAudioListener > ,
+# [offset (32)] # [rename (name = "currentListenerList")] pub current_listener_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: root :: akaudiolistener :: AkAudioListener > ,
+# [offset (40)] # [rename (name = "ObstructionOcclusionValues")] pub obstruction_occlusion_values : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < crate :: root :: akaudiolistener :: AkAudioListener , crate :: root :: akobstructionocclusion :: AkObstructionOcclusion_ObstructionOcclusionValue > ,
+# [offset (48)] # [rename (name = "fadeRate")] pub fade_rate : f32 ,
+# [offset (52)] # [rename (name = "fadeTime")] pub fade_time : f32 ,
+# [offset (56)] # [rename (name = "LayerMask")] pub layer_mask : crate :: unity_engine :: layermask :: LayerMask ,
+# [offset (60)] # [rename (name = "maxDistance")] pub max_distance : f32 ,
+# [offset (64)] # [rename (name = "refreshInterval")] pub refresh_interval : f32 ,
+# [offset (68)] # [rename (name = "refreshTime")] pub refresh_time : f32 ,
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akobstructionocclusion/AkObstructionOcclusion_ObstructionOcclusionValue.md"))] # [:: unity2 :: class (namespace = "" , name = "AkObstructionOcclusion.ObstructionOcclusionValue")] # [parent (crate :: system :: object :: Object)] pub struct AkObstructionOcclusion_ObstructionOcclusionValue {
+# [offset (16)] # [rename (name = "currentValue")] pub current_value : f32 ,
+# [offset (20)] # [rename (name = "targetValue")] pub target_value : f32 ,
+}
+
 }
 
 #[cfg(feature = "root-akobstructionocclusion-types")]
 pub use __types::*;
 
 #[cfg(feature = "root-akobstructionocclusion")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AkObstructionOcclusion_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_init_intervals_and_fade_rates {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkObstructionOcclusion as ::unity2::ClassIdentity>::class(),
-                "InitIntervalsAndFadeRates",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkObstructionOcclusion as ::unity2::ClassIdentity>::NAME,
-                        "InitIntervalsAndFadeRates",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn init_intervals_and_fade_rates(this: AkObstructionOcclusion, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AkObstructionOcclusion, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_init_intervals_and_fade_rates::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update_current_listener_list {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkObstructionOcclusion as ::unity2::ClassIdentity>::class(),
-                "UpdateCurrentListenerList",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkObstructionOcclusion as ::unity2::ClassIdentity>::NAME,
-                        "UpdateCurrentListenerList",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update_current_listener_list(this: AkObstructionOcclusion, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AkObstructionOcclusion, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update_current_listener_list::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update_obstruction_occlusion_values {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkObstructionOcclusion as ::unity2::ClassIdentity>::class(),
-                "UpdateObstructionOcclusionValues",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkObstructionOcclusion as ::unity2::ClassIdentity>::NAME,
-                        "UpdateObstructionOcclusionValues",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update_obstruction_occlusion_values(this: AkObstructionOcclusion, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AkObstructionOcclusion, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update_obstruction_occlusion_values::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cast_rays {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkObstructionOcclusion as ::unity2::ClassIdentity>::class(),
-                "CastRays",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkObstructionOcclusion as ::unity2::ClassIdentity>::NAME,
-                        "CastRays",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cast_rays(this: AkObstructionOcclusion, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AkObstructionOcclusion, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_cast_rays::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_obstruction_occlusion {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::collections::generic::keyvaluepair_2::KeyValuePair_2<
-                crate::root::akaudiolistener::AkAudioListener,
-                crate::root::akobstructionocclusion::AkObstructionOcclusion_ObstructionOcclusionValue,
-            > as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkObstructionOcclusion as ::unity2::ClassIdentity>::class(),
-                "SetObstructionOcclusion",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkObstructionOcclusion as ::unity2::ClassIdentity>::NAME,
-                        "SetObstructionOcclusion",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_obstruction_occlusion(
-        this: AkObstructionOcclusion,
-        obs_occ_pair: crate::system::collections::generic::keyvaluepair_2::KeyValuePair_2<
-            crate::root::akaudiolistener::AkAudioListener,
-            crate::root::akobstructionocclusion::AkObstructionOcclusion_ObstructionOcclusionValue,
-        >,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            AkObstructionOcclusion,
-            crate::system::collections::generic::keyvaluepair_2::KeyValuePair_2<
-                crate::root::akaudiolistener::AkAudioListener,
-                crate::root::akobstructionocclusion::AkObstructionOcclusion_ObstructionOcclusionValue,
-            >,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_set_obstruction_occlusion::get_method_info().method_ptr);
-        inner(this, obs_occ_pair, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkObstructionOcclusion as ::unity2::ClassIdentity>::class(),
-                "Update",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkObstructionOcclusion as ::unity2::ClassIdentity>::NAME,
-                        "Update",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update(this: AkObstructionOcclusion, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AkObstructionOcclusion, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkObstructionOcclusion as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkObstructionOcclusion as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: AkObstructionOcclusion, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AkObstructionOcclusion, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __AkObstructionOcclusion_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_init_intervals_and_fade_rates { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkObstructionOcclusion as :: unity2 :: ClassIdentity > :: class () , "InitIntervalsAndFadeRates" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkObstructionOcclusion as :: unity2 :: ClassIdentity > :: NAME , "InitIntervalsAndFadeRates" , e) , } } } pub unsafe fn init_intervals_and_fade_rates (this : AkObstructionOcclusion , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkObstructionOcclusion , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_init_intervals_and_fade_rates :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update_current_listener_list { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkObstructionOcclusion as :: unity2 :: ClassIdentity > :: class () , "UpdateCurrentListenerList" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkObstructionOcclusion as :: unity2 :: ClassIdentity > :: NAME , "UpdateCurrentListenerList" , e) , } } } pub unsafe fn update_current_listener_list (this : AkObstructionOcclusion , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkObstructionOcclusion , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update_current_listener_list :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update_obstruction_occlusion_values { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkObstructionOcclusion as :: unity2 :: ClassIdentity > :: class () , "UpdateObstructionOcclusionValues" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkObstructionOcclusion as :: unity2 :: ClassIdentity > :: NAME , "UpdateObstructionOcclusionValues" , e) , } } } pub unsafe fn update_obstruction_occlusion_values (this : AkObstructionOcclusion , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkObstructionOcclusion , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update_obstruction_occlusion_values :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cast_rays { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkObstructionOcclusion as :: unity2 :: ClassIdentity > :: class () , "CastRays" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkObstructionOcclusion as :: unity2 :: ClassIdentity > :: NAME , "CastRays" , e) , } } } pub unsafe fn cast_rays (this : AkObstructionOcclusion , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkObstructionOcclusion , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cast_rays :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_obstruction_occlusion { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: keyvaluepair_2 :: KeyValuePair_2 < crate :: root :: akaudiolistener :: AkAudioListener , crate :: root :: akobstructionocclusion :: AkObstructionOcclusion_ObstructionOcclusionValue > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkObstructionOcclusion as :: unity2 :: ClassIdentity > :: class () , "SetObstructionOcclusion" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkObstructionOcclusion as :: unity2 :: ClassIdentity > :: NAME , "SetObstructionOcclusion" , e) , } } } pub unsafe fn set_obstruction_occlusion (this : AkObstructionOcclusion , obs_occ_pair : crate :: system :: collections :: generic :: keyvaluepair_2 :: KeyValuePair_2 < crate :: root :: akaudiolistener :: AkAudioListener , crate :: root :: akobstructionocclusion :: AkObstructionOcclusion_ObstructionOcclusionValue > , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkObstructionOcclusion , crate :: system :: collections :: generic :: keyvaluepair_2 :: KeyValuePair_2 < crate :: root :: akaudiolistener :: AkAudioListener , crate :: root :: akobstructionocclusion :: AkObstructionOcclusion_ObstructionOcclusionValue > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_obstruction_occlusion :: get_method_info () . method_ptr ,) ; inner (this , obs_occ_pair , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkObstructionOcclusion as :: unity2 :: ClassIdentity > :: class () , "Update" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkObstructionOcclusion as :: unity2 :: ClassIdentity > :: NAME , "Update" , e) , } } } pub unsafe fn update (this : AkObstructionOcclusion , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkObstructionOcclusion , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkObstructionOcclusion as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkObstructionOcclusion as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : AkObstructionOcclusion , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkObstructionOcclusion , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "root-akobstructionocclusion")]
-pub trait IAkObstructionOcclusionMethods: IAkObstructionOcclusion {
-    #[doc = "`InitIntervalsAndFadeRates()` overload"]
-    fn init_intervals_and_fade_rates(self) -> () {
-        unsafe {
-            let __receiver =
-                <AkObstructionOcclusion as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkObstructionOcclusion_unity2_raw::init_intervals_and_fade_rates(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`UpdateCurrentListenerList()` overload"]
-    fn update_current_listener_list(self) -> () {
-        unsafe {
-            let __receiver =
-                <AkObstructionOcclusion as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkObstructionOcclusion_unity2_raw::update_current_listener_list(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`UpdateObstructionOcclusionValues()` overload"]
-    fn update_obstruction_occlusion_values(self) -> () {
-        unsafe {
-            let __receiver =
-                <AkObstructionOcclusion as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkObstructionOcclusion_unity2_raw::update_obstruction_occlusion_values(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CastRays()` overload"]
-    fn cast_rays(self) -> () {
-        unsafe {
-            let __receiver =
-                <AkObstructionOcclusion as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkObstructionOcclusion_unity2_raw::cast_rays(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetObstructionOcclusion(crate::system::collections::generic::keyvaluepair_2::KeyValuePair_2<crate::root::akaudiolistener::AkAudioListener,crate::root::akobstructionocclusion::AkObstructionOcclusion_ObstructionOcclusionValue>)` overload"]
-    fn set_obstruction_occlusion(
-        self,
-        obs_occ_pair: impl ::core::convert::Into<
-            crate::system::collections::generic::keyvaluepair_2::KeyValuePair_2<
-                crate::root::akaudiolistener::AkAudioListener,
-                crate::root::akobstructionocclusion::AkObstructionOcclusion_ObstructionOcclusionValue,
-            >,
-        >,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <AkObstructionOcclusion as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkObstructionOcclusion_unity2_raw::set_obstruction_occlusion(
-                __receiver,
-                ::core::convert::Into::into(obs_occ_pair),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Update()` overload"]
-    fn update(self) -> () {
-        unsafe {
-            let __receiver =
-                <AkObstructionOcclusion as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkObstructionOcclusion_unity2_raw::update(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <AkObstructionOcclusion as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkObstructionOcclusion_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IAkObstructionOcclusionMethods : IAkObstructionOcclusion { # [doc = "`InitIntervalsAndFadeRates()` overload"] fn init_intervals_and_fade_rates (self ,) -> () { unsafe { let __receiver = < AkObstructionOcclusion as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkObstructionOcclusion_unity2_raw :: init_intervals_and_fade_rates (__receiver , :: core :: option :: Option :: None) } } # [doc = "`UpdateCurrentListenerList()` overload"] fn update_current_listener_list (self ,) -> () { unsafe { let __receiver = < AkObstructionOcclusion as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkObstructionOcclusion_unity2_raw :: update_current_listener_list (__receiver , :: core :: option :: Option :: None) } } # [doc = "`UpdateObstructionOcclusionValues()` overload"] fn update_obstruction_occlusion_values (self ,) -> () { unsafe { let __receiver = < AkObstructionOcclusion as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkObstructionOcclusion_unity2_raw :: update_obstruction_occlusion_values (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CastRays()` overload"] fn cast_rays (self ,) -> () { unsafe { let __receiver = < AkObstructionOcclusion as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkObstructionOcclusion_unity2_raw :: cast_rays (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetObstructionOcclusion(crate::system::collections::generic::keyvaluepair_2::KeyValuePair_2<crate::root::akaudiolistener::AkAudioListener,crate::root::akobstructionocclusion::AkObstructionOcclusion_ObstructionOcclusionValue>)` overload"] fn set_obstruction_occlusion (self , obs_occ_pair : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: keyvaluepair_2 :: KeyValuePair_2 < crate :: root :: akaudiolistener :: AkAudioListener , crate :: root :: akobstructionocclusion :: AkObstructionOcclusion_ObstructionOcclusionValue > >) -> () { unsafe { let __receiver = < AkObstructionOcclusion as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkObstructionOcclusion_unity2_raw :: set_obstruction_occlusion (__receiver , :: core :: convert :: Into :: into (obs_occ_pair) , :: core :: option :: Option :: None) } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < AkObstructionOcclusion as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkObstructionOcclusion_unity2_raw :: update (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AkObstructionOcclusion as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkObstructionOcclusion_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "root-akobstructionocclusion")]
-impl<__T: IAkObstructionOcclusion> IAkObstructionOcclusionMethods for __T {}
+impl < __T : IAkObstructionOcclusion > IAkObstructionOcclusionMethods for __T { }
+
+#[cfg(feature = "root-akobstructionocclusion")]
+impl AkObstructionOcclusion { pub fn init_intervals_and_fade_rates_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkObstructionOcclusion_unity2_raw :: __lookup_init_intervals_and_fade_rates :: get_method_info () } pub fn update_current_listener_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkObstructionOcclusion_unity2_raw :: __lookup_update_current_listener_list :: get_method_info () } pub fn update_obstruction_occlusion_values_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkObstructionOcclusion_unity2_raw :: __lookup_update_obstruction_occlusion_values :: get_method_info () } pub fn cast_rays_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkObstructionOcclusion_unity2_raw :: __lookup_cast_rays :: get_method_info () } pub fn set_obstruction_occlusion_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkObstructionOcclusion_unity2_raw :: __lookup_set_obstruction_occlusion :: get_method_info () } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkObstructionOcclusion_unity2_raw :: __lookup_update :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkObstructionOcclusion_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "root-akobstructionocclusion")]
 impl AkObstructionOcclusion {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AkObstructionOcclusion),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAkObstructionOcclusionMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkObstructionOcclusion) , :: core :: stringify ! (new) ,)) ; < Self as IAkObstructionOcclusionMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "root-akobstructionocclusion")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AkObstructionOcclusion_ObstructionOcclusionValue_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkObstructionOcclusion_ObstructionOcclusionValue as ::unity2::ClassIdentity>::class(),
-                "Update",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkObstructionOcclusion_ObstructionOcclusionValue as ::unity2::ClassIdentity>::NAME,
-                        "Update",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update(
-        this: AkObstructionOcclusion_ObstructionOcclusionValue,
-        fade_rate: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(AkObstructionOcclusion_ObstructionOcclusionValue, f32, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_update::get_method_info().method_ptr);
-        inner(this, fade_rate, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkObstructionOcclusion_ObstructionOcclusionValue as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkObstructionOcclusion_ObstructionOcclusionValue as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: AkObstructionOcclusion_ObstructionOcclusionValue, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AkObstructionOcclusion_ObstructionOcclusionValue, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __AkObstructionOcclusion_ObstructionOcclusionValue_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkObstructionOcclusion_ObstructionOcclusionValue as :: unity2 :: ClassIdentity > :: class () , "Update" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkObstructionOcclusion_ObstructionOcclusionValue as :: unity2 :: ClassIdentity > :: NAME , "Update" , e) , } } } pub unsafe fn update (this : AkObstructionOcclusion_ObstructionOcclusionValue , fade_rate : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (AkObstructionOcclusion_ObstructionOcclusionValue , f32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_update :: get_method_info () . method_ptr ,) ; inner (this , fade_rate , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkObstructionOcclusion_ObstructionOcclusionValue as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkObstructionOcclusion_ObstructionOcclusionValue as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : AkObstructionOcclusion_ObstructionOcclusionValue , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkObstructionOcclusion_ObstructionOcclusionValue , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "root-akobstructionocclusion")]
-pub trait IAkObstructionOcclusion_ObstructionOcclusionValueMethods: IAkObstructionOcclusion_ObstructionOcclusionValue {
-    #[doc = "`Update(f32)` overload"]
-    fn update(self, fade_rate: impl ::core::convert::Into<f32>) -> bool {
-        unsafe {
-            let __receiver = <AkObstructionOcclusion_ObstructionOcclusionValue as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AkObstructionOcclusion_ObstructionOcclusionValue_unity2_raw::update(
-                __receiver,
-                ::core::convert::Into::into(fade_rate),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <AkObstructionOcclusion_ObstructionOcclusionValue as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AkObstructionOcclusion_ObstructionOcclusionValue_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IAkObstructionOcclusion_ObstructionOcclusionValueMethods : IAkObstructionOcclusion_ObstructionOcclusionValue { # [doc = "`Update(f32)` overload"] fn update (self , fade_rate : impl :: core :: convert :: Into < f32 >) -> bool { unsafe { let __receiver = < AkObstructionOcclusion_ObstructionOcclusionValue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkObstructionOcclusion_ObstructionOcclusionValue_unity2_raw :: update (__receiver , :: core :: convert :: Into :: into (fade_rate) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AkObstructionOcclusion_ObstructionOcclusionValue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkObstructionOcclusion_ObstructionOcclusionValue_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "root-akobstructionocclusion")]
-impl<__T: IAkObstructionOcclusion_ObstructionOcclusionValue> IAkObstructionOcclusion_ObstructionOcclusionValueMethods for __T {}
+impl < __T : IAkObstructionOcclusion_ObstructionOcclusionValue > IAkObstructionOcclusion_ObstructionOcclusionValueMethods for __T { }
+
+#[cfg(feature = "root-akobstructionocclusion")]
+impl AkObstructionOcclusion_ObstructionOcclusionValue { pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkObstructionOcclusion_ObstructionOcclusionValue_unity2_raw :: __lookup_update :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkObstructionOcclusion_ObstructionOcclusionValue_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "root-akobstructionocclusion")]
 impl AkObstructionOcclusion_ObstructionOcclusionValue {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AkObstructionOcclusion_ObstructionOcclusionValue),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAkObstructionOcclusion_ObstructionOcclusionValueMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkObstructionOcclusion_ObstructionOcclusionValue) , :: core :: stringify ! (new) ,)) ; < Self as IAkObstructionOcclusion_ObstructionOcclusionValueMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "root-akobstructionocclusion")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{
-        AkObstructionOcclusion, AkObstructionOcclusion_ObstructionOcclusionValue, IAkObstructionOcclusion, IAkObstructionOcclusionMethods,
-        IAkObstructionOcclusion_ObstructionOcclusionValue, IAkObstructionOcclusion_ObstructionOcclusionValueMethods,
-    };
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        system::object::IObject,
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::AkObstructionOcclusion;
+    pub use super::IAkObstructionOcclusion;
+    pub use super::IAkObstructionOcclusionMethods;
+    pub use super::AkObstructionOcclusion_ObstructionOcclusionValue;
+    pub use super::IAkObstructionOcclusion_ObstructionOcclusionValue;
+    pub use super::IAkObstructionOcclusion_ObstructionOcclusionValueMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

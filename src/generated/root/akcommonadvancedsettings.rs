@@ -2,506 +2,84 @@
 
 #[cfg(feature = "root-akcommonadvancedsettings-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akcommonadvancedsettings/AkCommonAdvancedSettings_SpatialAudioSettings.md"))]
-    #[::unity2::class(namespace = "", name = "AkCommonAdvancedSettings.SpatialAudioSettings")]
-    #[parent(crate::system::object::Object)]
-    pub struct AkCommonAdvancedSettings_SpatialAudioSettings {
-        #[offset(16)]
-        #[rename(name = "m_DiffractionShadowAttenuationFactor")]
-        pub m_diffraction_shadow_attenuation_factor: f32,
-        #[offset(20)]
-        #[rename(name = "m_DiffractionShadowDegrees")]
-        pub m_diffraction_shadow_degrees: f32,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akcommonadvancedsettings/AkCommonAdvancedSettings.md"))]
-    #[::unity2::class(namespace = "", name = "AkCommonAdvancedSettings")]
-    #[parent(crate::system::object::Object)]
-    pub struct AkCommonAdvancedSettings {
-        #[offset(16)]
-        #[rename(name = "m_IOMemorySize")]
-        pub m_io_memory_size: u32,
-        #[offset(20)]
-        #[rename(name = "m_TargetAutoStreamBufferLengthMs")]
-        pub m_target_auto_stream_buffer_length_ms: f32,
-        #[offset(24)]
-        #[rename(name = "m_UseStreamCache")]
-        pub m_use_stream_cache: bool,
-        #[offset(28)]
-        #[rename(name = "m_MaximumPinnedBytesInCache")]
-        pub m_maximum_pinned_bytes_in_cache: u32,
-        #[offset(32)]
-        #[rename(name = "m_EnableGameSyncPreparation")]
-        pub m_enable_game_sync_preparation: bool,
-        #[offset(36)]
-        #[rename(name = "m_ContinuousPlaybackLookAhead")]
-        pub m_continuous_playback_look_ahead: u32,
-        #[offset(40)]
-        #[rename(name = "m_MonitorQueuePoolSize")]
-        pub m_monitor_queue_pool_size: u32,
-        #[offset(44)]
-        #[rename(name = "m_MaximumHardwareTimeoutMs")]
-        pub m_maximum_hardware_timeout_ms: u32,
-        #[offset(48)]
-        #[rename(name = "m_DebugOutOfRangeCheckEnabled")]
-        pub m_debug_out_of_range_check_enabled: bool,
-        #[offset(52)]
-        #[rename(name = "m_DebugOutOfRangeLimit")]
-        pub m_debug_out_of_range_limit: f32,
-        #[offset(56)]
-        #[rename(name = "m_SpatialAudioSettings")]
-        pub m_spatial_audio_settings: crate::root::akcommonadvancedsettings::AkCommonAdvancedSettings_SpatialAudioSettings,
-        #[offset(64)]
-        #[rename(name = "m_RenderDuringFocusLoss")]
-        pub m_render_during_focus_loss: bool,
-        #[offset(72)]
-        #[rename(name = "m_SoundBankPersistentDataPath")]
-        pub m_sound_bank_persistent_data_path: ::unity2::Il2CppString,
-        #[offset(80)]
-        #[rename(name = "m_UseAsyncOpen")]
-        pub m_use_async_open: bool,
-    }
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akcommonadvancedsettings/AkCommonAdvancedSettings_SpatialAudioSettings.md"))] # [:: unity2 :: class (namespace = "" , name = "AkCommonAdvancedSettings.SpatialAudioSettings")] # [parent (crate :: system :: object :: Object)] pub struct AkCommonAdvancedSettings_SpatialAudioSettings {
+# [offset (16)] # [rename (name = "m_DiffractionShadowAttenuationFactor")] pub m_diffraction_shadow_attenuation_factor : f32 ,
+# [offset (20)] # [rename (name = "m_DiffractionShadowDegrees")] pub m_diffraction_shadow_degrees : f32 ,
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akcommonadvancedsettings/AkCommonAdvancedSettings.md"))] # [:: unity2 :: class (namespace = "" , name = "AkCommonAdvancedSettings")] # [parent (crate :: system :: object :: Object)] pub struct AkCommonAdvancedSettings {
+# [offset (16)] # [rename (name = "m_IOMemorySize")] pub m_io_memory_size : u32 ,
+# [offset (20)] # [rename (name = "m_TargetAutoStreamBufferLengthMs")] pub m_target_auto_stream_buffer_length_ms : f32 ,
+# [offset (24)] # [rename (name = "m_UseStreamCache")] pub m_use_stream_cache : bool ,
+# [offset (28)] # [rename (name = "m_MaximumPinnedBytesInCache")] pub m_maximum_pinned_bytes_in_cache : u32 ,
+# [offset (32)] # [rename (name = "m_EnableGameSyncPreparation")] pub m_enable_game_sync_preparation : bool ,
+# [offset (36)] # [rename (name = "m_ContinuousPlaybackLookAhead")] pub m_continuous_playback_look_ahead : u32 ,
+# [offset (40)] # [rename (name = "m_MonitorQueuePoolSize")] pub m_monitor_queue_pool_size : u32 ,
+# [offset (44)] # [rename (name = "m_MaximumHardwareTimeoutMs")] pub m_maximum_hardware_timeout_ms : u32 ,
+# [offset (48)] # [rename (name = "m_DebugOutOfRangeCheckEnabled")] pub m_debug_out_of_range_check_enabled : bool ,
+# [offset (52)] # [rename (name = "m_DebugOutOfRangeLimit")] pub m_debug_out_of_range_limit : f32 ,
+# [offset (56)] # [rename (name = "m_SpatialAudioSettings")] pub m_spatial_audio_settings : crate :: root :: akcommonadvancedsettings :: AkCommonAdvancedSettings_SpatialAudioSettings ,
+# [offset (64)] # [rename (name = "m_RenderDuringFocusLoss")] pub m_render_during_focus_loss : bool ,
+# [offset (72)] # [rename (name = "m_SoundBankPersistentDataPath")] pub m_sound_bank_persistent_data_path : :: unity2 :: Il2CppString ,
+# [offset (80)] # [rename (name = "m_UseAsyncOpen")] pub m_use_async_open : bool ,
+}
+
 }
 
 #[cfg(feature = "root-akcommonadvancedsettings-types")]
 pub use __types::*;
 
 #[cfg(feature = "root-akcommonadvancedsettings")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AkCommonAdvancedSettings_SpatialAudioSettings_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkCommonAdvancedSettings_SpatialAudioSettings as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkCommonAdvancedSettings_SpatialAudioSettings as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: AkCommonAdvancedSettings_SpatialAudioSettings, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AkCommonAdvancedSettings_SpatialAudioSettings, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __AkCommonAdvancedSettings_SpatialAudioSettings_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkCommonAdvancedSettings_SpatialAudioSettings as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkCommonAdvancedSettings_SpatialAudioSettings as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : AkCommonAdvancedSettings_SpatialAudioSettings , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkCommonAdvancedSettings_SpatialAudioSettings , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "root-akcommonadvancedsettings")]
-pub trait IAkCommonAdvancedSettings_SpatialAudioSettingsMethods: IAkCommonAdvancedSettings_SpatialAudioSettings {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <AkCommonAdvancedSettings_SpatialAudioSettings as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AkCommonAdvancedSettings_SpatialAudioSettings_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IAkCommonAdvancedSettings_SpatialAudioSettingsMethods : IAkCommonAdvancedSettings_SpatialAudioSettings { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AkCommonAdvancedSettings_SpatialAudioSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkCommonAdvancedSettings_SpatialAudioSettings_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "root-akcommonadvancedsettings")]
-impl<__T: IAkCommonAdvancedSettings_SpatialAudioSettings> IAkCommonAdvancedSettings_SpatialAudioSettingsMethods for __T {}
+impl < __T : IAkCommonAdvancedSettings_SpatialAudioSettings > IAkCommonAdvancedSettings_SpatialAudioSettingsMethods for __T { }
+
+#[cfg(feature = "root-akcommonadvancedsettings")]
+impl AkCommonAdvancedSettings_SpatialAudioSettings { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkCommonAdvancedSettings_SpatialAudioSettings_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "root-akcommonadvancedsettings")]
 impl AkCommonAdvancedSettings_SpatialAudioSettings {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AkCommonAdvancedSettings_SpatialAudioSettings),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAkCommonAdvancedSettings_SpatialAudioSettingsMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkCommonAdvancedSettings_SpatialAudioSettings) , :: core :: stringify ! (new) ,)) ; < Self as IAkCommonAdvancedSettings_SpatialAudioSettingsMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "root-akcommonadvancedsettings")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AkCommonAdvancedSettings_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_copy_to {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::root::akdevicesettings::AkDeviceSettings as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkCommonAdvancedSettings as ::unity2::ClassIdentity>::class(),
-                "CopyTo",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkCommonAdvancedSettings as ::unity2::ClassIdentity>::NAME,
-                        "CopyTo",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn copy_to(
-        this: AkCommonAdvancedSettings,
-        settings: crate::root::akdevicesettings::AkDeviceSettings,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(AkCommonAdvancedSettings, crate::root::akdevicesettings::AkDeviceSettings, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_copy_to::get_method_info().method_ptr);
-        inner(this, settings, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_copy_to_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::root::akinitsettings::AkInitSettings as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkCommonAdvancedSettings as ::unity2::ClassIdentity>::class(),
-                "CopyTo",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkCommonAdvancedSettings as ::unity2::ClassIdentity>::NAME,
-                        "CopyTo",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn copy_to_2(
-        this: AkCommonAdvancedSettings,
-        settings: crate::root::akinitsettings::AkInitSettings,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(AkCommonAdvancedSettings, crate::root::akinitsettings::AkInitSettings, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_copy_to_2::get_method_info().method_ptr);
-        inner(this, settings, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_copy_to_3 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::root::akplatforminitsettings::AkPlatformInitSettings as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkCommonAdvancedSettings as ::unity2::ClassIdentity>::class(),
-                "CopyTo",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkCommonAdvancedSettings as ::unity2::ClassIdentity>::NAME,
-                        "CopyTo",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn copy_to_3(
-        this: AkCommonAdvancedSettings,
-        settings: crate::root::akplatforminitsettings::AkPlatformInitSettings,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            AkCommonAdvancedSettings,
-            crate::root::akplatforminitsettings::AkPlatformInitSettings,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_copy_to_3::get_method_info().method_ptr);
-        inner(this, settings, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_copy_to_4 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::root::akspatialaudioinitsettings::AkSpatialAudioInitSettings as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkCommonAdvancedSettings as ::unity2::ClassIdentity>::class(),
-                "CopyTo",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkCommonAdvancedSettings as ::unity2::ClassIdentity>::NAME,
-                        "CopyTo",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn copy_to_4(
-        this: AkCommonAdvancedSettings,
-        settings: crate::root::akspatialaudioinitsettings::AkSpatialAudioInitSettings,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            AkCommonAdvancedSettings,
-            crate::root::akspatialaudioinitsettings::AkSpatialAudioInitSettings,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_copy_to_4::get_method_info().method_ptr);
-        inner(this, settings, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_copy_to_5 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::root::akunityplatformspecificsettings::AkUnityPlatformSpecificSettings as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkCommonAdvancedSettings as ::unity2::ClassIdentity>::class(),
-                "CopyTo",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkCommonAdvancedSettings as ::unity2::ClassIdentity>::NAME,
-                        "CopyTo",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn copy_to_5(
-        this: AkCommonAdvancedSettings,
-        settings: crate::root::akunityplatformspecificsettings::AkUnityPlatformSpecificSettings,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            AkCommonAdvancedSettings,
-            crate::root::akunityplatformspecificsettings::AkUnityPlatformSpecificSettings,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_copy_to_5::get_method_info().method_ptr);
-        inner(this, settings, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_validate {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkCommonAdvancedSettings as ::unity2::ClassIdentity>::class(),
-                "Validate",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkCommonAdvancedSettings as ::unity2::ClassIdentity>::NAME,
-                        "Validate",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn validate(this: AkCommonAdvancedSettings, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AkCommonAdvancedSettings, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_validate::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkCommonAdvancedSettings as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkCommonAdvancedSettings as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: AkCommonAdvancedSettings, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AkCommonAdvancedSettings, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __AkCommonAdvancedSettings_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_copy_to { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: root :: akdevicesettings :: AkDeviceSettings as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkCommonAdvancedSettings as :: unity2 :: ClassIdentity > :: class () , "CopyTo" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkCommonAdvancedSettings as :: unity2 :: ClassIdentity > :: NAME , "CopyTo" , e) , } } } pub unsafe fn copy_to (this : AkCommonAdvancedSettings , settings : crate :: root :: akdevicesettings :: AkDeviceSettings , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkCommonAdvancedSettings , crate :: root :: akdevicesettings :: AkDeviceSettings , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_copy_to :: get_method_info () . method_ptr ,) ; inner (this , settings , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_copy_to_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: root :: akinitsettings :: AkInitSettings as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkCommonAdvancedSettings as :: unity2 :: ClassIdentity > :: class () , "CopyTo" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkCommonAdvancedSettings as :: unity2 :: ClassIdentity > :: NAME , "CopyTo" , e) , } } } pub unsafe fn copy_to_2 (this : AkCommonAdvancedSettings , settings : crate :: root :: akinitsettings :: AkInitSettings , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkCommonAdvancedSettings , crate :: root :: akinitsettings :: AkInitSettings , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_copy_to_2 :: get_method_info () . method_ptr ,) ; inner (this , settings , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_copy_to_3 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: root :: akplatforminitsettings :: AkPlatformInitSettings as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkCommonAdvancedSettings as :: unity2 :: ClassIdentity > :: class () , "CopyTo" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkCommonAdvancedSettings as :: unity2 :: ClassIdentity > :: NAME , "CopyTo" , e) , } } } pub unsafe fn copy_to_3 (this : AkCommonAdvancedSettings , settings : crate :: root :: akplatforminitsettings :: AkPlatformInitSettings , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkCommonAdvancedSettings , crate :: root :: akplatforminitsettings :: AkPlatformInitSettings , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_copy_to_3 :: get_method_info () . method_ptr ,) ; inner (this , settings , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_copy_to_4 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: root :: akspatialaudioinitsettings :: AkSpatialAudioInitSettings as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkCommonAdvancedSettings as :: unity2 :: ClassIdentity > :: class () , "CopyTo" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkCommonAdvancedSettings as :: unity2 :: ClassIdentity > :: NAME , "CopyTo" , e) , } } } pub unsafe fn copy_to_4 (this : AkCommonAdvancedSettings , settings : crate :: root :: akspatialaudioinitsettings :: AkSpatialAudioInitSettings , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkCommonAdvancedSettings , crate :: root :: akspatialaudioinitsettings :: AkSpatialAudioInitSettings , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_copy_to_4 :: get_method_info () . method_ptr ,) ; inner (this , settings , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_copy_to_5 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: root :: akunityplatformspecificsettings :: AkUnityPlatformSpecificSettings as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkCommonAdvancedSettings as :: unity2 :: ClassIdentity > :: class () , "CopyTo" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkCommonAdvancedSettings as :: unity2 :: ClassIdentity > :: NAME , "CopyTo" , e) , } } } pub unsafe fn copy_to_5 (this : AkCommonAdvancedSettings , settings : crate :: root :: akunityplatformspecificsettings :: AkUnityPlatformSpecificSettings , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkCommonAdvancedSettings , crate :: root :: akunityplatformspecificsettings :: AkUnityPlatformSpecificSettings , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_copy_to_5 :: get_method_info () . method_ptr ,) ; inner (this , settings , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_validate { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkCommonAdvancedSettings as :: unity2 :: ClassIdentity > :: class () , "Validate" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkCommonAdvancedSettings as :: unity2 :: ClassIdentity > :: NAME , "Validate" , e) , } } } pub unsafe fn validate (this : AkCommonAdvancedSettings , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkCommonAdvancedSettings , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_validate :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkCommonAdvancedSettings as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkCommonAdvancedSettings as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : AkCommonAdvancedSettings , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkCommonAdvancedSettings , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "root-akcommonadvancedsettings")]
-pub trait IAkCommonAdvancedSettingsMethods: IAkCommonAdvancedSettings {
-    #[doc = "`CopyTo(crate::root::akdevicesettings::AkDeviceSettings)` overload"]
-    fn copy_to(self, settings: impl ::core::convert::Into<crate::root::akdevicesettings::AkDeviceSettings>) -> () {
-        unsafe {
-            let __receiver =
-                <AkCommonAdvancedSettings as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkCommonAdvancedSettings_unity2_raw::copy_to(__receiver, ::core::convert::Into::into(settings), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CopyTo(crate::root::akinitsettings::AkInitSettings)` overload"]
-    fn copy_to_2(self, settings: impl ::core::convert::Into<crate::root::akinitsettings::AkInitSettings>) -> () {
-        unsafe {
-            let __receiver =
-                <AkCommonAdvancedSettings as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkCommonAdvancedSettings_unity2_raw::copy_to_2(__receiver, ::core::convert::Into::into(settings), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CopyTo(crate::root::akplatforminitsettings::AkPlatformInitSettings)` overload"]
-    fn copy_to_3(self, settings: impl ::core::convert::Into<crate::root::akplatforminitsettings::AkPlatformInitSettings>) -> () {
-        unsafe {
-            let __receiver =
-                <AkCommonAdvancedSettings as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkCommonAdvancedSettings_unity2_raw::copy_to_3(__receiver, ::core::convert::Into::into(settings), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CopyTo(crate::root::akspatialaudioinitsettings::AkSpatialAudioInitSettings)` overload"]
-    fn copy_to_4(self, settings: impl ::core::convert::Into<crate::root::akspatialaudioinitsettings::AkSpatialAudioInitSettings>) -> () {
-        unsafe {
-            let __receiver =
-                <AkCommonAdvancedSettings as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkCommonAdvancedSettings_unity2_raw::copy_to_4(__receiver, ::core::convert::Into::into(settings), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CopyTo(crate::root::akunityplatformspecificsettings::AkUnityPlatformSpecificSettings)` overload"]
-    fn copy_to_5(self, settings: impl ::core::convert::Into<crate::root::akunityplatformspecificsettings::AkUnityPlatformSpecificSettings>) -> () {
-        unsafe {
-            let __receiver =
-                <AkCommonAdvancedSettings as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkCommonAdvancedSettings_unity2_raw::copy_to_5(__receiver, ::core::convert::Into::into(settings), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Validate()` overload"]
-    fn validate(self) -> () {
-        unsafe {
-            let __receiver =
-                <AkCommonAdvancedSettings as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkCommonAdvancedSettings_unity2_raw::validate(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <AkCommonAdvancedSettings as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkCommonAdvancedSettings_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IAkCommonAdvancedSettingsMethods : IAkCommonAdvancedSettings { # [doc = "`CopyTo(crate::root::akdevicesettings::AkDeviceSettings)` overload"] fn copy_to (self , settings : impl :: core :: convert :: Into < crate :: root :: akdevicesettings :: AkDeviceSettings >) -> () { unsafe { let __receiver = < AkCommonAdvancedSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkCommonAdvancedSettings_unity2_raw :: copy_to (__receiver , :: core :: convert :: Into :: into (settings) , :: core :: option :: Option :: None) } } # [doc = "`CopyTo(crate::root::akinitsettings::AkInitSettings)` overload"] fn copy_to_2 (self , settings : impl :: core :: convert :: Into < crate :: root :: akinitsettings :: AkInitSettings >) -> () { unsafe { let __receiver = < AkCommonAdvancedSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkCommonAdvancedSettings_unity2_raw :: copy_to_2 (__receiver , :: core :: convert :: Into :: into (settings) , :: core :: option :: Option :: None) } } # [doc = "`CopyTo(crate::root::akplatforminitsettings::AkPlatformInitSettings)` overload"] fn copy_to_3 (self , settings : impl :: core :: convert :: Into < crate :: root :: akplatforminitsettings :: AkPlatformInitSettings >) -> () { unsafe { let __receiver = < AkCommonAdvancedSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkCommonAdvancedSettings_unity2_raw :: copy_to_3 (__receiver , :: core :: convert :: Into :: into (settings) , :: core :: option :: Option :: None) } } # [doc = "`CopyTo(crate::root::akspatialaudioinitsettings::AkSpatialAudioInitSettings)` overload"] fn copy_to_4 (self , settings : impl :: core :: convert :: Into < crate :: root :: akspatialaudioinitsettings :: AkSpatialAudioInitSettings >) -> () { unsafe { let __receiver = < AkCommonAdvancedSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkCommonAdvancedSettings_unity2_raw :: copy_to_4 (__receiver , :: core :: convert :: Into :: into (settings) , :: core :: option :: Option :: None) } } # [doc = "`CopyTo(crate::root::akunityplatformspecificsettings::AkUnityPlatformSpecificSettings)` overload"] fn copy_to_5 (self , settings : impl :: core :: convert :: Into < crate :: root :: akunityplatformspecificsettings :: AkUnityPlatformSpecificSettings >) -> () { unsafe { let __receiver = < AkCommonAdvancedSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkCommonAdvancedSettings_unity2_raw :: copy_to_5 (__receiver , :: core :: convert :: Into :: into (settings) , :: core :: option :: Option :: None) } } # [doc = "`Validate()` overload"] fn validate (self ,) -> () { unsafe { let __receiver = < AkCommonAdvancedSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkCommonAdvancedSettings_unity2_raw :: validate (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AkCommonAdvancedSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkCommonAdvancedSettings_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "root-akcommonadvancedsettings")]
-impl<__T: IAkCommonAdvancedSettings> IAkCommonAdvancedSettingsMethods for __T {}
+impl < __T : IAkCommonAdvancedSettings > IAkCommonAdvancedSettingsMethods for __T { }
+
+#[cfg(feature = "root-akcommonadvancedsettings")]
+impl AkCommonAdvancedSettings { pub fn copy_to_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkCommonAdvancedSettings_unity2_raw :: __lookup_copy_to :: get_method_info () } pub fn copy_to_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkCommonAdvancedSettings_unity2_raw :: __lookup_copy_to_2 :: get_method_info () } pub fn copy_to_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkCommonAdvancedSettings_unity2_raw :: __lookup_copy_to_3 :: get_method_info () } pub fn copy_to_4_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkCommonAdvancedSettings_unity2_raw :: __lookup_copy_to_4 :: get_method_info () } pub fn copy_to_5_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkCommonAdvancedSettings_unity2_raw :: __lookup_copy_to_5 :: get_method_info () } pub fn validate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkCommonAdvancedSettings_unity2_raw :: __lookup_validate :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkCommonAdvancedSettings_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "root-akcommonadvancedsettings")]
 impl AkCommonAdvancedSettings {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AkCommonAdvancedSettings),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAkCommonAdvancedSettingsMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkCommonAdvancedSettings) , :: core :: stringify ! (new) ,)) ; < Self as IAkCommonAdvancedSettingsMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "root-akcommonadvancedsettings")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{
-        AkCommonAdvancedSettings, AkCommonAdvancedSettings_SpatialAudioSettings, IAkCommonAdvancedSettings, IAkCommonAdvancedSettingsMethods,
-        IAkCommonAdvancedSettings_SpatialAudioSettings, IAkCommonAdvancedSettings_SpatialAudioSettingsMethods,
-    };
+    pub use super::AkCommonAdvancedSettings_SpatialAudioSettings;
+    pub use super::IAkCommonAdvancedSettings_SpatialAudioSettings;
+    pub use super::IAkCommonAdvancedSettings_SpatialAudioSettingsMethods;
+    pub use super::AkCommonAdvancedSettings;
+    pub use super::IAkCommonAdvancedSettings;
+    pub use super::IAkCommonAdvancedSettingsMethods;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

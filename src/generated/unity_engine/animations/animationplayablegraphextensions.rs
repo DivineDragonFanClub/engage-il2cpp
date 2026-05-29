@@ -2,219 +2,34 @@
 
 #[cfg(feature = "unity_engine-animations-animationplayablegraphextensions-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/animations/animationplayablegraphextensions/AnimationPlayableGraphExtensions.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Animations", name = "AnimationPlayableGraphExtensions")]
-    #[parent(crate::system::object::Object)]
-    pub struct AnimationPlayableGraphExtensions {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/animations/animationplayablegraphextensions/AnimationPlayableGraphExtensions.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Animations" , name = "AnimationPlayableGraphExtensions")] # [parent (crate :: system :: object :: Object)] pub struct AnimationPlayableGraphExtensions {}
+
 }
 
 #[cfg(feature = "unity_engine-animations-animationplayablegraphextensions-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-animations-animationplayablegraphextensions")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AnimationPlayableGraphExtensions_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_sync_update_and_time_mode {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::playables::playablegraph::PlayableGraph as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::animator::Animator as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AnimationPlayableGraphExtensions as ::unity2::ClassIdentity>::class(),
-                "SyncUpdateAndTimeMode",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AnimationPlayableGraphExtensions as ::unity2::ClassIdentity>::NAME,
-                        "SyncUpdateAndTimeMode",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn sync_update_and_time_mode(
-        graph: crate::unity_engine::playables::playablegraph::PlayableGraph,
-        animator: crate::unity_engine::animator::Animator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::playables::playablegraph::PlayableGraph,
-            crate::unity_engine::animator::Animator,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_sync_update_and_time_mode::get_method_info().method_ptr);
-        inner(graph, animator, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_internal_create_animation_output {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::playables::playablegraph::PlayableGraph as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AnimationPlayableGraphExtensions as ::unity2::ClassIdentity>::class(),
-                "InternalCreateAnimationOutput",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AnimationPlayableGraphExtensions as ::unity2::ClassIdentity>::NAME,
-                        "InternalCreateAnimationOutput",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn internal_create_animation_output(
-        graph: *mut crate::unity_engine::playables::playablegraph::PlayableGraph,
-        name: ::unity2::Il2CppString,
-        handle: *mut crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            *mut crate::unity_engine::playables::playablegraph::PlayableGraph,
-            ::unity2::Il2CppString,
-            *mut crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(__lookup_internal_create_animation_output::get_method_info().method_ptr);
-        inner(graph, name, handle, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_internal_sync_update_and_time_mode {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::playables::playablegraph::PlayableGraph as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::animator::Animator as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AnimationPlayableGraphExtensions as ::unity2::ClassIdentity>::class(),
-                "InternalSyncUpdateAndTimeMode",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AnimationPlayableGraphExtensions as ::unity2::ClassIdentity>::NAME,
-                        "InternalSyncUpdateAndTimeMode",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn internal_sync_update_and_time_mode(
-        graph: *mut crate::unity_engine::playables::playablegraph::PlayableGraph,
-        animator: crate::unity_engine::animator::Animator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            *mut crate::unity_engine::playables::playablegraph::PlayableGraph,
-            crate::unity_engine::animator::Animator,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_internal_sync_update_and_time_mode::get_method_info().method_ptr);
-        inner(graph, animator, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __AnimationPlayableGraphExtensions_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_sync_update_and_time_mode { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playablegraph :: PlayableGraph as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: animator :: Animator as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AnimationPlayableGraphExtensions as :: unity2 :: ClassIdentity > :: class () , "SyncUpdateAndTimeMode" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AnimationPlayableGraphExtensions as :: unity2 :: ClassIdentity > :: NAME , "SyncUpdateAndTimeMode" , e) , } } } pub unsafe fn sync_update_and_time_mode (graph : crate :: unity_engine :: playables :: playablegraph :: PlayableGraph , animator : crate :: unity_engine :: animator :: Animator , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: unity_engine :: playables :: playablegraph :: PlayableGraph , crate :: unity_engine :: animator :: Animator , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_sync_update_and_time_mode :: get_method_info () . method_ptr ,) ; inner (graph , animator , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_internal_create_animation_output { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playablegraph :: PlayableGraph as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: playables :: playableoutputhandle :: PlayableOutputHandle as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AnimationPlayableGraphExtensions as :: unity2 :: ClassIdentity > :: class () , "InternalCreateAnimationOutput" , 3 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AnimationPlayableGraphExtensions as :: unity2 :: ClassIdentity > :: NAME , "InternalCreateAnimationOutput" , e) , } } } pub unsafe fn internal_create_animation_output (graph : * mut crate :: unity_engine :: playables :: playablegraph :: PlayableGraph , name : :: unity2 :: Il2CppString , handle : * mut crate :: unity_engine :: playables :: playableoutputhandle :: PlayableOutputHandle , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (* mut crate :: unity_engine :: playables :: playablegraph :: PlayableGraph , :: unity2 :: Il2CppString , * mut crate :: unity_engine :: playables :: playableoutputhandle :: PlayableOutputHandle , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_internal_create_animation_output :: get_method_info () . method_ptr ,) ; inner (graph , name , handle , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_internal_sync_update_and_time_mode { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playablegraph :: PlayableGraph as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: animator :: Animator as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AnimationPlayableGraphExtensions as :: unity2 :: ClassIdentity > :: class () , "InternalSyncUpdateAndTimeMode" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AnimationPlayableGraphExtensions as :: unity2 :: ClassIdentity > :: NAME , "InternalSyncUpdateAndTimeMode" , e) , } } } pub unsafe fn internal_sync_update_and_time_mode (graph : * mut crate :: unity_engine :: playables :: playablegraph :: PlayableGraph , animator : crate :: unity_engine :: animator :: Animator , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (* mut crate :: unity_engine :: playables :: playablegraph :: PlayableGraph , crate :: unity_engine :: animator :: Animator , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_internal_sync_update_and_time_mode :: get_method_info () . method_ptr ,) ; inner (graph , animator , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-animations-animationplayablegraphextensions")]
-impl AnimationPlayableGraphExtensions {
-    #[doc = "`SyncUpdateAndTimeMode(crate::unity_engine::playables::playablegraph::PlayableGraph, crate::unity_engine::animator::Animator)` overload"]
-    pub fn sync_update_and_time_mode(
-        graph: impl ::core::convert::Into<crate::unity_engine::playables::playablegraph::PlayableGraph>,
-        animator: impl ::core::convert::Into<crate::unity_engine::animator::Animator>,
-    ) -> () {
-        unsafe {
-            __AnimationPlayableGraphExtensions_unity2_raw::sync_update_and_time_mode(
-                ::core::convert::Into::into(graph),
-                ::core::convert::Into::into(animator),
-                ::core::option::Option::None,
-            )
-        }
-    }
+impl AnimationPlayableGraphExtensions { # [doc = "`SyncUpdateAndTimeMode(crate::unity_engine::playables::playablegraph::PlayableGraph, crate::unity_engine::animator::Animator)` overload"] pub fn sync_update_and_time_mode (graph : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playablegraph :: PlayableGraph > , animator : impl :: core :: convert :: Into < crate :: unity_engine :: animator :: Animator >) -> () { unsafe { __AnimationPlayableGraphExtensions_unity2_raw :: sync_update_and_time_mode (:: core :: convert :: Into :: into (graph) , :: core :: convert :: Into :: into (animator) , :: core :: option :: Option :: None) } } # [doc = "`InternalCreateAnimationOutput(*mutcrate::unity_engine::playables::playablegraph::PlayableGraph, ::unity2::Il2CppString, *mutcrate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle)` overload"] pub fn internal_create_animation_output (name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> (bool , crate :: unity_engine :: playables :: playablegraph :: PlayableGraph , crate :: unity_engine :: playables :: playableoutputhandle :: PlayableOutputHandle) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: playables :: playablegraph :: PlayableGraph > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: playables :: playableoutputhandle :: PlayableOutputHandle > :: uninit () ; let __ret = { __AnimationPlayableGraphExtensions_unity2_raw :: internal_create_animation_output (__out_0 . as_mut_ptr () , :: core :: convert :: Into :: into (name) , __out_1 . as_mut_ptr () , :: core :: option :: Option :: None) } ; (__ret , __out_0 . assume_init () , __out_1 . assume_init ()) } } # [doc = "`InternalSyncUpdateAndTimeMode(*mutcrate::unity_engine::playables::playablegraph::PlayableGraph, crate::unity_engine::animator::Animator)` overload"] pub fn internal_sync_update_and_time_mode (animator : impl :: core :: convert :: Into < crate :: unity_engine :: animator :: Animator >) -> crate :: unity_engine :: playables :: playablegraph :: PlayableGraph { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: playables :: playablegraph :: PlayableGraph > :: uninit () ; __AnimationPlayableGraphExtensions_unity2_raw :: internal_sync_update_and_time_mode (__out_0 . as_mut_ptr () , :: core :: convert :: Into :: into (animator) , :: core :: option :: Option :: None) ; __out_0 . assume_init () } } }
 
-    #[doc = "`InternalCreateAnimationOutput(*mutcrate::unity_engine::playables::playablegraph::PlayableGraph, ::unity2::Il2CppString, *mutcrate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle)` overload"]
-    pub fn internal_create_animation_output(
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> (
-        bool,
-        crate::unity_engine::playables::playablegraph::PlayableGraph,
-        crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle,
-    ) {
-        unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::playables::playablegraph::PlayableGraph>::uninit();
-            let mut __out_1 = ::core::mem::MaybeUninit::<crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle>::uninit();
-            let __ret = {
-                __AnimationPlayableGraphExtensions_unity2_raw::internal_create_animation_output(
-                    __out_0.as_mut_ptr(),
-                    ::core::convert::Into::into(name),
-                    __out_1.as_mut_ptr(),
-                    ::core::option::Option::None,
-                )
-            };
-            (__ret, __out_0.assume_init(), __out_1.assume_init())
-        }
-    }
-
-    #[doc = "`InternalSyncUpdateAndTimeMode(*mutcrate::unity_engine::playables::playablegraph::PlayableGraph, crate::unity_engine::animator::Animator)` overload"]
-    pub fn internal_sync_update_and_time_mode(
-        animator: impl ::core::convert::Into<crate::unity_engine::animator::Animator>,
-    ) -> crate::unity_engine::playables::playablegraph::PlayableGraph {
-        unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::playables::playablegraph::PlayableGraph>::uninit();
-            __AnimationPlayableGraphExtensions_unity2_raw::internal_sync_update_and_time_mode(
-                __out_0.as_mut_ptr(),
-                ::core::convert::Into::into(animator),
-                ::core::option::Option::None,
-            );
-            __out_0.assume_init()
-        }
-    }
-}
+#[cfg(feature = "unity_engine-animations-animationplayablegraphextensions")]
+impl AnimationPlayableGraphExtensions { pub fn sync_update_and_time_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AnimationPlayableGraphExtensions_unity2_raw :: __lookup_sync_update_and_time_mode :: get_method_info () } pub fn internal_create_animation_output_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AnimationPlayableGraphExtensions_unity2_raw :: __lookup_internal_create_animation_output :: get_method_info () } pub fn internal_sync_update_and_time_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AnimationPlayableGraphExtensions_unity2_raw :: __lookup_internal_sync_update_and_time_mode :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-animations-animationplayablegraphextensions")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{AnimationPlayableGraphExtensions, IAnimationPlayableGraphExtensions};
+    pub use super::AnimationPlayableGraphExtensions;
+    pub use super::IAnimationPlayableGraphExtensions;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

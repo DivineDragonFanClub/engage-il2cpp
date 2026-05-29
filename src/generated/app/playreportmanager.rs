@@ -2,369 +2,50 @@
 
 #[cfg(feature = "app-playreportmanager-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/playreportmanager/PlayReportManager.md"))]
-    #[::unity2::class(namespace = "App", name = "PlayReportManager")]
-    #[parent(crate::system::object::Object)]
-    pub struct PlayReportManager {
-        #[static_field]
-        #[rename(name = "s_ReportCommon")]
-        pub s_report_common: crate::app::playreportcommon::PlayReportCommon,
-        #[static_field]
-        #[rename(name = "s_ReportID")]
-        pub s_report_id: u64,
-        #[static_field]
-        #[rename(name = "s_ReportValue")]
-        pub s_report_value: u64,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/playreportmanager/PlayReportManager.md"))] # [:: unity2 :: class (namespace = "App" , name = "PlayReportManager")] # [parent (crate :: system :: object :: Object)] pub struct PlayReportManager {
+# [static_field] # [rename (name = "s_ReportCommon")] pub s_report_common : crate :: app :: playreportcommon :: PlayReportCommon ,
+# [static_field] # [rename (name = "s_ReportID")] pub s_report_id : u64 ,
+# [static_field] # [rename (name = "s_ReportValue")] pub s_report_value : u64 ,
+}
+
 }
 
 #[cfg(feature = "app-playreportmanager-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-playreportmanager")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __PlayReportManager_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_initialize {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PlayReportManager as ::unity2::ClassIdentity>::class(),
-                "Initialize",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PlayReportManager as ::unity2::ClassIdentity>::NAME,
-                        "Initialize",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn initialize(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_initialize::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_report_chapter_clear {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PlayReportManager as ::unity2::ClassIdentity>::class(),
-                "ReportChapterClear",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PlayReportManager as ::unity2::ClassIdentity>::NAME,
-                        "ReportChapterClear",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn report_chapter_clear(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_report_chapter_clear::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_report_sortie {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PlayReportManager as ::unity2::ClassIdentity>::class(),
-                "ReportSortie",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PlayReportManager as ::unity2::ClassIdentity>::NAME,
-                        "ReportSortie",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn report_sortie(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_report_sortie::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_request_immediate_transmission {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PlayReportManager as ::unity2::ClassIdentity>::class(),
-                "RequestImmediateTransmission",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PlayReportManager as ::unity2::ClassIdentity>::NAME,
-                        "RequestImmediateTransmission",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn request_immediate_transmission(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_request_immediate_transmission::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_report_id {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PlayReportManager as ::unity2::ClassIdentity>::class(),
-                "GetReportID",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PlayReportManager as ::unity2::ClassIdentity>::NAME,
-                        "GetReportID",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_report_id(__unity2_method_info: ::unity2::OptionalMethod) -> u64 {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> u64 = ::core::mem::transmute(__lookup_get_report_id::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update_report_id {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PlayReportManager as ::unity2::ClassIdentity>::class(),
-                "UpdateReportID",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PlayReportManager as ::unity2::ClassIdentity>::NAME,
-                        "UpdateReportID",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update_report_id(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_update_report_id::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PlayReportManager as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PlayReportManager as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: PlayReportManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(PlayReportManager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PlayReportManager as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PlayReportManager as ::unity2::ClassIdentity>::NAME,
-                        ".cctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __PlayReportManager_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_initialize { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PlayReportManager as :: unity2 :: ClassIdentity > :: class () , "Initialize" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PlayReportManager as :: unity2 :: ClassIdentity > :: NAME , "Initialize" , e) , } } } pub unsafe fn initialize (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_initialize :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_report_chapter_clear { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PlayReportManager as :: unity2 :: ClassIdentity > :: class () , "ReportChapterClear" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PlayReportManager as :: unity2 :: ClassIdentity > :: NAME , "ReportChapterClear" , e) , } } } pub unsafe fn report_chapter_clear (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_report_chapter_clear :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_report_sortie { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PlayReportManager as :: unity2 :: ClassIdentity > :: class () , "ReportSortie" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PlayReportManager as :: unity2 :: ClassIdentity > :: NAME , "ReportSortie" , e) , } } } pub unsafe fn report_sortie (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_report_sortie :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_request_immediate_transmission { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PlayReportManager as :: unity2 :: ClassIdentity > :: class () , "RequestImmediateTransmission" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PlayReportManager as :: unity2 :: ClassIdentity > :: NAME , "RequestImmediateTransmission" , e) , } } } pub unsafe fn request_immediate_transmission (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_request_immediate_transmission :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_report_id { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PlayReportManager as :: unity2 :: ClassIdentity > :: class () , "GetReportID" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PlayReportManager as :: unity2 :: ClassIdentity > :: NAME , "GetReportID" , e) , } } } pub unsafe fn get_report_id (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> u64 { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> u64 = :: core :: mem :: transmute (__lookup_get_report_id :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update_report_id { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PlayReportManager as :: unity2 :: ClassIdentity > :: class () , "UpdateReportID" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PlayReportManager as :: unity2 :: ClassIdentity > :: NAME , "UpdateReportID" , e) , } } } pub unsafe fn update_report_id (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update_report_id :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PlayReportManager as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PlayReportManager as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : PlayReportManager , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (PlayReportManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PlayReportManager as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PlayReportManager as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
+
+#[cfg(feature = "app-playreportmanager")]
+impl PlayReportManager { # [doc = "`Initialize()` overload"] pub fn initialize () -> () { unsafe { __PlayReportManager_unity2_raw :: initialize (:: core :: option :: Option :: None) } } # [doc = "`ReportChapterClear()` overload"] pub fn report_chapter_clear () -> () { unsafe { __PlayReportManager_unity2_raw :: report_chapter_clear (:: core :: option :: Option :: None) } } # [doc = "`ReportSortie()` overload"] pub fn report_sortie () -> () { unsafe { __PlayReportManager_unity2_raw :: report_sortie (:: core :: option :: Option :: None) } } # [doc = "`RequestImmediateTransmission()` overload"] pub fn request_immediate_transmission () -> () { unsafe { __PlayReportManager_unity2_raw :: request_immediate_transmission (:: core :: option :: Option :: None) } } # [doc = "`GetReportID()` overload"] pub fn get_report_id () -> u64 { unsafe { __PlayReportManager_unity2_raw :: get_report_id (:: core :: option :: Option :: None) } } # [doc = "`UpdateReportID()` overload"] pub fn update_report_id () -> () { unsafe { __PlayReportManager_unity2_raw :: update_report_id (:: core :: option :: Option :: None) } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { __PlayReportManager_unity2_raw :: cctor (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-playreportmanager")]
+pub trait IPlayReportManagerMethods : IPlayReportManager { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < PlayReportManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __PlayReportManager_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-playreportmanager")]
+impl < __T : IPlayReportManager > IPlayReportManagerMethods for __T { }
+
+#[cfg(feature = "app-playreportmanager")]
+impl PlayReportManager { pub fn initialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PlayReportManager_unity2_raw :: __lookup_initialize :: get_method_info () } pub fn report_chapter_clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PlayReportManager_unity2_raw :: __lookup_report_chapter_clear :: get_method_info () } pub fn report_sortie_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PlayReportManager_unity2_raw :: __lookup_report_sortie :: get_method_info () } pub fn request_immediate_transmission_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PlayReportManager_unity2_raw :: __lookup_request_immediate_transmission :: get_method_info () } pub fn get_report_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PlayReportManager_unity2_raw :: __lookup_get_report_id :: get_method_info () } pub fn update_report_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PlayReportManager_unity2_raw :: __lookup_update_report_id :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PlayReportManager_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PlayReportManager_unity2_raw :: __lookup_cctor :: get_method_info () } }
 
 #[cfg(feature = "app-playreportmanager")]
 impl PlayReportManager {
-    #[doc = "`Initialize()` overload"]
-    pub fn initialize() -> () {
-        unsafe { __PlayReportManager_unity2_raw::initialize(::core::option::Option::None) }
-    }
-
-    #[doc = "`ReportChapterClear()` overload"]
-    pub fn report_chapter_clear() -> () {
-        unsafe { __PlayReportManager_unity2_raw::report_chapter_clear(::core::option::Option::None) }
-    }
-
-    #[doc = "`ReportSortie()` overload"]
-    pub fn report_sortie() -> () {
-        unsafe { __PlayReportManager_unity2_raw::report_sortie(::core::option::Option::None) }
-    }
-
-    #[doc = "`RequestImmediateTransmission()` overload"]
-    pub fn request_immediate_transmission() -> () {
-        unsafe { __PlayReportManager_unity2_raw::request_immediate_transmission(::core::option::Option::None) }
-    }
-
-    #[doc = "`GetReportID()` overload"]
-    pub fn get_report_id() -> u64 {
-        unsafe { __PlayReportManager_unity2_raw::get_report_id(::core::option::Option::None) }
-    }
-
-    #[doc = "`UpdateReportID()` overload"]
-    pub fn update_report_id() -> () {
-        unsafe { __PlayReportManager_unity2_raw::update_report_id(::core::option::Option::None) }
-    }
-
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __PlayReportManager_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-playreportmanager")]
-pub trait IPlayReportManagerMethods: IPlayReportManager {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <PlayReportManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __PlayReportManager_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-playreportmanager")]
-impl<__T: IPlayReportManager> IPlayReportManagerMethods for __T {}
-
-#[cfg(feature = "app-playreportmanager")]
-impl PlayReportManager {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(PlayReportManager),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IPlayReportManagerMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (PlayReportManager) , :: core :: stringify ! (new) ,)) ; < Self as IPlayReportManagerMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-playreportmanager")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IPlayReportManager, IPlayReportManagerMethods, PlayReportManager};
+    pub use super::PlayReportManager;
+    pub use super::IPlayReportManager;
+    pub use super::IPlayReportManagerMethods;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

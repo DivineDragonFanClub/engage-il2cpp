@@ -2,132 +2,71 @@
 
 #[cfg(feature = "unity_engine-rendering-shaderkeyword-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        valuetype::{IValueType, ValueType},
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/shaderkeyword/ShaderKeyword.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct ShaderKeyword {
-        pub m_keyword_index: i32,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
 
-    impl ::unity2::ClassIdentity for ShaderKeyword {
-        const NAME: &'static str = "ShaderKeyword";
-        const NAMESPACE: &'static str = "UnityEngine.Rendering";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/shaderkeyword/ShaderKeyword.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct ShaderKeyword {
+    pub m_keyword_index: i32,
+}
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+
+impl ::unity2::ClassIdentity for ShaderKeyword {
+    const NAMESPACE: &'static str = "UnityEngine.Rendering";
+
+    const NAME: &'static str = "ShaderKeyword";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for ShaderKeyword {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl ::unity2::IlType for ShaderKeyword {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
+
+}
+
 }
 
 #[cfg(feature = "unity_engine-rendering-shaderkeyword-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-shaderkeyword")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ShaderKeyword_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_global_keyword_index {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ShaderKeyword as ::unity2::ClassIdentity>::class(),
-                "GetGlobalKeywordIndex",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ShaderKeyword as ::unity2::ClassIdentity>::NAME,
-                        "GetGlobalKeywordIndex",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_global_keyword_index(keyword: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_global_keyword_index::get_method_info().method_ptr);
-        inner(keyword, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<ShaderKeyword as ::unity2::ClassIdentity>::class(), ".ctor", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ShaderKeyword as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: ShaderKeyword, keyword_name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ShaderKeyword, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, keyword_name, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ShaderKeyword_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_global_keyword_index { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ShaderKeyword as :: unity2 :: ClassIdentity > :: class () , "GetGlobalKeywordIndex" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ShaderKeyword as :: unity2 :: ClassIdentity > :: NAME , "GetGlobalKeywordIndex" , e) , } } } pub unsafe fn get_global_keyword_index (keyword : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_global_keyword_index :: get_method_info () . method_ptr ,) ; inner (keyword , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ShaderKeyword as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ShaderKeyword as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : ShaderKeyword , keyword_name : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ShaderKeyword , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , keyword_name , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-rendering-shaderkeyword")]
-impl ShaderKeyword {
-    #[doc = "`GetGlobalKeywordIndex(::unity2::Il2CppString)` overload"]
-    pub fn get_global_keyword_index(keyword: impl ::core::convert::Into<::unity2::Il2CppString>) -> i32 {
-        unsafe { __ShaderKeyword_unity2_raw::get_global_keyword_index(::core::convert::Into::into(keyword), ::core::option::Option::None) }
-    }
-}
+impl ShaderKeyword { # [doc = "`GetGlobalKeywordIndex(::unity2::Il2CppString)` overload"] pub fn get_global_keyword_index (keyword : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> i32 { unsafe { __ShaderKeyword_unity2_raw :: get_global_keyword_index (:: core :: convert :: Into :: into (keyword) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-rendering-shaderkeyword")]
-impl ShaderKeyword {
-    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
-    pub fn ctor(self, keyword_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe { __ShaderKeyword_unity2_raw::ctor(self, ::core::convert::Into::into(keyword_name), ::core::option::Option::None) }
-    }
-}
+impl ShaderKeyword { # [doc = "`.ctor(::unity2::Il2CppString)` overload"] pub fn ctor (self , keyword_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { __ShaderKeyword_unity2_raw :: ctor (self , :: core :: convert :: Into :: into (keyword_name) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-rendering-shaderkeyword")]
+impl ShaderKeyword { pub fn get_global_keyword_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ShaderKeyword_unity2_raw :: __lookup_get_global_keyword_index :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ShaderKeyword_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-rendering-shaderkeyword")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::ShaderKeyword;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::system::{object::IObject, valuetype::IValueType};
+    pub use crate::system::object::IObject;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

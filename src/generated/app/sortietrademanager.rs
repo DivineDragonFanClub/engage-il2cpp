@@ -2,740 +2,139 @@
 
 #[cfg(feature = "app-sortietrademanager-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::singletonclass_1::{ISingletonClass_1, SingletonClass_1},
-        system::{
-            object::{IObject, Object},
-            r#enum::{Enum, IEnum},
-            valuetype::{IValueType, ValueType},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortietrademanager/SortieTradeManager_Side.md"))]
-    #[::unity2::class(namespace = "App", name = "SortieTradeManager.Side")]
-    #[parent(crate::system::object::Object)]
-    pub struct SortieTradeManager_Side {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: singletonclass_1 :: { ISingletonClass_1 , SingletonClass_1 }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortietrademanager/SortieTradeManager_SideId.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct SortieTradeManager_SideId {
-        pub value: i32,
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortietrademanager/SortieTradeManager_Side.md"))] # [:: unity2 :: class (namespace = "App" , name = "SortieTradeManager.Side")] # [parent (crate :: system :: object :: Object)] pub struct SortieTradeManager_Side {}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortietrademanager/SortieTradeManager_SideId.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct SortieTradeManager_SideId  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for SortieTradeManager_SideId  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "SortieTradeManager.SideId";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    impl ::unity2::ClassIdentity for SortieTradeManager_SideId {
-        const NAME: &'static str = "SortieTradeManager.SideId";
-        const NAMESPACE: &'static str = "App";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  ::unity2::IlType for SortieTradeManager_SideId  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::IlType for SortieTradeManager_SideId {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  SortieTradeManager_SideId  {
+    pub fn none() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl SortieTradeManager_SideId {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn from() -> Self {
-            Self { value: 1 }
-        }
+    pub fn from() -> Self {
+        Self { value: 1 }
 
-        pub fn to() -> Self {
-            Self { value: 2 }
-        }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortietrademanager/SortieTradeManager.md"))]
-    #[::unity2::class(namespace = "App", name = "SortieTradeManager")]
-    # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: sortietrademanager :: SortieTradeManager >)]
-    pub struct SortieTradeManager {
-        #[offset(32)]
-        #[rename(name = "m_From")]
-        pub m_from: crate::app::sortietrademanager::SortieTradeManager_Side,
-        #[offset(40)]
-        #[rename(name = "m_To")]
-        pub m_to: crate::app::sortietrademanager::SortieTradeManager_Side,
-        #[offset(48)]
-        #[rename(name = "m_SelectSide")]
-        pub m_select_side: crate::app::sortietrademanager::SortieTradeManager_SideId,
-        #[offset(52)]
-        #[rename(name = "m_IsFirstSelected")]
-        pub m_is_first_selected: bool,
+
+    pub fn to() -> Self {
+        Self { value: 2 }
+
     }
+
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortietrademanager/SortieTradeManager.md"))] # [:: unity2 :: class (namespace = "App" , name = "SortieTradeManager")] # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: sortietrademanager :: SortieTradeManager >)] pub struct SortieTradeManager {
+# [offset (32)] # [rename (name = "m_From")] pub m_from : crate :: app :: sortietrademanager :: SortieTradeManager_Side ,
+# [offset (40)] # [rename (name = "m_To")] pub m_to : crate :: app :: sortietrademanager :: SortieTradeManager_Side ,
+# [offset (48)] # [rename (name = "m_SelectSide")] pub m_select_side : crate :: app :: sortietrademanager :: SortieTradeManager_SideId ,
+# [offset (52)] # [rename (name = "m_IsFirstSelected")] pub m_is_first_selected : bool ,
+}
+
 }
 
 #[cfg(feature = "app-sortietrademanager-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-sortietrademanager")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __SortieTradeManager_Side_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_reset {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieTradeManager_Side as ::unity2::ClassIdentity>::class(),
-                "Reset",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SortieTradeManager_Side as ::unity2::ClassIdentity>::NAME,
-                        "Reset",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn reset(this: SortieTradeManager_Side, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SortieTradeManager_Side, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_reset::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_unit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieTradeManager_Side as ::unity2::ClassIdentity>::class(),
-                "get_Unit",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SortieTradeManager_Side as ::unity2::ClassIdentity>::NAME,
-                        "get_Unit",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_unit(this: SortieTradeManager_Side, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::unit::Unit {
-        let inner: extern "C" fn(SortieTradeManager_Side, ::unity2::OptionalMethod) -> crate::app::unit::Unit =
-            ::core::mem::transmute(__lookup_get_unit::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_unit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieTradeManager_Side as ::unity2::ClassIdentity>::class(),
-                "set_Unit",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SortieTradeManager_Side as ::unity2::ClassIdentity>::NAME,
-                        "set_Unit",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_unit(this: SortieTradeManager_Side, value: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SortieTradeManager_Side, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_unit::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_owner_item_index {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieTradeManager_Side as ::unity2::ClassIdentity>::class(),
-                "get_OwnerItemIndex",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SortieTradeManager_Side as ::unity2::ClassIdentity>::NAME,
-                        "get_OwnerItemIndex",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_owner_item_index(this: SortieTradeManager_Side, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(SortieTradeManager_Side, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_owner_item_index::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_owner_item_index {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieTradeManager_Side as ::unity2::ClassIdentity>::class(),
-                "set_OwnerItemIndex",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SortieTradeManager_Side as ::unity2::ClassIdentity>::NAME,
-                        "set_OwnerItemIndex",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_owner_item_index(this: SortieTradeManager_Side, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SortieTradeManager_Side, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_owner_item_index::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieTradeManager_Side as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SortieTradeManager_Side as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: SortieTradeManager_Side, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SortieTradeManager_Side, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __SortieTradeManager_Side_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_reset { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SortieTradeManager_Side as :: unity2 :: ClassIdentity > :: class () , "Reset" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SortieTradeManager_Side as :: unity2 :: ClassIdentity > :: NAME , "Reset" , e) , } } } pub unsafe fn reset (this : SortieTradeManager_Side , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SortieTradeManager_Side , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_reset :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_unit { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SortieTradeManager_Side as :: unity2 :: ClassIdentity > :: class () , "get_Unit" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SortieTradeManager_Side as :: unity2 :: ClassIdentity > :: NAME , "get_Unit" , e) , } } } pub unsafe fn get_unit (this : SortieTradeManager_Side , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit { let inner : extern "C" fn (SortieTradeManager_Side , :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit = :: core :: mem :: transmute (__lookup_get_unit :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_unit { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SortieTradeManager_Side as :: unity2 :: ClassIdentity > :: class () , "set_Unit" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SortieTradeManager_Side as :: unity2 :: ClassIdentity > :: NAME , "set_Unit" , e) , } } } pub unsafe fn set_unit (this : SortieTradeManager_Side , value : crate :: app :: unit :: Unit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SortieTradeManager_Side , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_unit :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_owner_item_index { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SortieTradeManager_Side as :: unity2 :: ClassIdentity > :: class () , "get_OwnerItemIndex" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SortieTradeManager_Side as :: unity2 :: ClassIdentity > :: NAME , "get_OwnerItemIndex" , e) , } } } pub unsafe fn get_owner_item_index (this : SortieTradeManager_Side , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (SortieTradeManager_Side , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_owner_item_index :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_owner_item_index { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SortieTradeManager_Side as :: unity2 :: ClassIdentity > :: class () , "set_OwnerItemIndex" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SortieTradeManager_Side as :: unity2 :: ClassIdentity > :: NAME , "set_OwnerItemIndex" , e) , } } } pub unsafe fn set_owner_item_index (this : SortieTradeManager_Side , value : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SortieTradeManager_Side , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_owner_item_index :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SortieTradeManager_Side as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SortieTradeManager_Side as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : SortieTradeManager_Side , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SortieTradeManager_Side , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-sortietrademanager")]
-pub trait ISortieTradeManager_SideMethods: ISortieTradeManager_Side {
-    #[doc = "`Reset()` overload"]
-    fn reset(self) -> () {
-        unsafe {
-            let __receiver =
-                <SortieTradeManager_Side as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SortieTradeManager_Side_unity2_raw::reset(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Unit()` overload"]
-    fn get_unit(self) -> crate::app::unit::Unit {
-        unsafe {
-            let __receiver =
-                <SortieTradeManager_Side as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SortieTradeManager_Side_unity2_raw::get_unit(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_Unit(crate::app::unit::Unit)` overload"]
-    fn set_unit(self, value: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
-        unsafe {
-            let __receiver =
-                <SortieTradeManager_Side as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SortieTradeManager_Side_unity2_raw::set_unit(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_OwnerItemIndex()` overload"]
-    fn get_owner_item_index(self) -> i32 {
-        unsafe {
-            let __receiver =
-                <SortieTradeManager_Side as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SortieTradeManager_Side_unity2_raw::get_owner_item_index(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_OwnerItemIndex(i32)` overload"]
-    fn set_owner_item_index(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver =
-                <SortieTradeManager_Side as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SortieTradeManager_Side_unity2_raw::set_owner_item_index(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <SortieTradeManager_Side as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SortieTradeManager_Side_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait ISortieTradeManager_SideMethods : ISortieTradeManager_Side { # [doc = "`Reset()` overload"] fn reset (self ,) -> () { unsafe { let __receiver = < SortieTradeManager_Side as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SortieTradeManager_Side_unity2_raw :: reset (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_Unit()` overload"] fn get_unit (self ,) -> crate :: app :: unit :: Unit { unsafe { let __receiver = < SortieTradeManager_Side as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SortieTradeManager_Side_unity2_raw :: get_unit (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_Unit(crate::app::unit::Unit)` overload"] fn set_unit (self , value : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < SortieTradeManager_Side as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SortieTradeManager_Side_unity2_raw :: set_unit (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_OwnerItemIndex()` overload"] fn get_owner_item_index (self ,) -> i32 { unsafe { let __receiver = < SortieTradeManager_Side as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SortieTradeManager_Side_unity2_raw :: get_owner_item_index (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_OwnerItemIndex(i32)` overload"] fn set_owner_item_index (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < SortieTradeManager_Side as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SortieTradeManager_Side_unity2_raw :: set_owner_item_index (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < SortieTradeManager_Side as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SortieTradeManager_Side_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-sortietrademanager")]
-impl<__T: ISortieTradeManager_Side> ISortieTradeManager_SideMethods for __T {}
+impl < __T : ISortieTradeManager_Side > ISortieTradeManager_SideMethods for __T { }
+
+#[cfg(feature = "app-sortietrademanager")]
+impl SortieTradeManager_Side { pub fn reset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SortieTradeManager_Side_unity2_raw :: __lookup_reset :: get_method_info () } pub fn get_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SortieTradeManager_Side_unity2_raw :: __lookup_get_unit :: get_method_info () } pub fn set_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SortieTradeManager_Side_unity2_raw :: __lookup_set_unit :: get_method_info () } pub fn get_owner_item_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SortieTradeManager_Side_unity2_raw :: __lookup_get_owner_item_index :: get_method_info () } pub fn set_owner_item_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SortieTradeManager_Side_unity2_raw :: __lookup_set_owner_item_index :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SortieTradeManager_Side_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-sortietrademanager")]
 impl SortieTradeManager_Side {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SortieTradeManager_Side),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISortieTradeManager_SideMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SortieTradeManager_Side) , :: core :: stringify ! (new) ,)) ; < Self as ISortieTradeManager_SideMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-sortietrademanager")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __SortieTradeManager_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieTradeManager as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SortieTradeManager as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: SortieTradeManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SortieTradeManager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_reset {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieTradeManager as ::unity2::ClassIdentity>::class(),
-                "Reset",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SortieTradeManager as ::unity2::ClassIdentity>::NAME,
-                        "Reset",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn reset(this: SortieTradeManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SortieTradeManager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_reset::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_from {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieTradeManager as ::unity2::ClassIdentity>::class(),
-                "get_From",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SortieTradeManager as ::unity2::ClassIdentity>::NAME,
-                        "get_From",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_from(
-        this: SortieTradeManager,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::sortietrademanager::SortieTradeManager_Side {
-        let inner: extern "C" fn(SortieTradeManager, ::unity2::OptionalMethod) -> crate::app::sortietrademanager::SortieTradeManager_Side =
-            ::core::mem::transmute(__lookup_get_from::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_to {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieTradeManager as ::unity2::ClassIdentity>::class(),
-                "get_To",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SortieTradeManager as ::unity2::ClassIdentity>::NAME,
-                        "get_To",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_to(
-        this: SortieTradeManager,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::sortietrademanager::SortieTradeManager_Side {
-        let inner: extern "C" fn(SortieTradeManager, ::unity2::OptionalMethod) -> crate::app::sortietrademanager::SortieTradeManager_Side =
-            ::core::mem::transmute(__lookup_get_to::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_select_side {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieTradeManager as ::unity2::ClassIdentity>::class(),
-                "get_SelectSide",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SortieTradeManager as ::unity2::ClassIdentity>::NAME,
-                        "get_SelectSide",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_select_side(
-        this: SortieTradeManager,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::sortietrademanager::SortieTradeManager_SideId {
-        let inner: extern "C" fn(SortieTradeManager, ::unity2::OptionalMethod) -> crate::app::sortietrademanager::SortieTradeManager_SideId =
-            ::core::mem::transmute(__lookup_get_select_side::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_select_side {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::sortietrademanager::SortieTradeManager_SideId as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieTradeManager as ::unity2::ClassIdentity>::class(),
-                "set_SelectSide",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SortieTradeManager as ::unity2::ClassIdentity>::NAME,
-                        "set_SelectSide",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_select_side(
-        this: SortieTradeManager,
-        value: crate::app::sortietrademanager::SortieTradeManager_SideId,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(SortieTradeManager, crate::app::sortietrademanager::SortieTradeManager_SideId, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_select_side::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_is_first_selected {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieTradeManager as ::unity2::ClassIdentity>::class(),
-                "get_IsFirstSelected",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SortieTradeManager as ::unity2::ClassIdentity>::NAME,
-                        "get_IsFirstSelected",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_is_first_selected(this: SortieTradeManager, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(SortieTradeManager, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_is_first_selected::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_is_first_selected {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieTradeManager as ::unity2::ClassIdentity>::class(),
-                "set_IsFirstSelected",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SortieTradeManager as ::unity2::ClassIdentity>::NAME,
-                        "set_IsFirstSelected",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_is_first_selected(this: SortieTradeManager, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SortieTradeManager, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_is_first_selected::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __SortieTradeManager_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SortieTradeManager as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SortieTradeManager as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : SortieTradeManager , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SortieTradeManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_reset { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SortieTradeManager as :: unity2 :: ClassIdentity > :: class () , "Reset" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SortieTradeManager as :: unity2 :: ClassIdentity > :: NAME , "Reset" , e) , } } } pub unsafe fn reset (this : SortieTradeManager , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SortieTradeManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_reset :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_from { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SortieTradeManager as :: unity2 :: ClassIdentity > :: class () , "get_From" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SortieTradeManager as :: unity2 :: ClassIdentity > :: NAME , "get_From" , e) , } } } pub unsafe fn get_from (this : SortieTradeManager , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: sortietrademanager :: SortieTradeManager_Side { let inner : extern "C" fn (SortieTradeManager , :: unity2 :: OptionalMethod ,) -> crate :: app :: sortietrademanager :: SortieTradeManager_Side = :: core :: mem :: transmute (__lookup_get_from :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_to { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SortieTradeManager as :: unity2 :: ClassIdentity > :: class () , "get_To" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SortieTradeManager as :: unity2 :: ClassIdentity > :: NAME , "get_To" , e) , } } } pub unsafe fn get_to (this : SortieTradeManager , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: sortietrademanager :: SortieTradeManager_Side { let inner : extern "C" fn (SortieTradeManager , :: unity2 :: OptionalMethod ,) -> crate :: app :: sortietrademanager :: SortieTradeManager_Side = :: core :: mem :: transmute (__lookup_get_to :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_select_side { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SortieTradeManager as :: unity2 :: ClassIdentity > :: class () , "get_SelectSide" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SortieTradeManager as :: unity2 :: ClassIdentity > :: NAME , "get_SelectSide" , e) , } } } pub unsafe fn get_select_side (this : SortieTradeManager , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: sortietrademanager :: SortieTradeManager_SideId { let inner : extern "C" fn (SortieTradeManager , :: unity2 :: OptionalMethod ,) -> crate :: app :: sortietrademanager :: SortieTradeManager_SideId = :: core :: mem :: transmute (__lookup_get_select_side :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_select_side { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: sortietrademanager :: SortieTradeManager_SideId as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SortieTradeManager as :: unity2 :: ClassIdentity > :: class () , "set_SelectSide" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SortieTradeManager as :: unity2 :: ClassIdentity > :: NAME , "set_SelectSide" , e) , } } } pub unsafe fn set_select_side (this : SortieTradeManager , value : crate :: app :: sortietrademanager :: SortieTradeManager_SideId , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SortieTradeManager , crate :: app :: sortietrademanager :: SortieTradeManager_SideId , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_select_side :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_is_first_selected { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SortieTradeManager as :: unity2 :: ClassIdentity > :: class () , "get_IsFirstSelected" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SortieTradeManager as :: unity2 :: ClassIdentity > :: NAME , "get_IsFirstSelected" , e) , } } } pub unsafe fn get_is_first_selected (this : SortieTradeManager , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (SortieTradeManager , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_is_first_selected :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_is_first_selected { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SortieTradeManager as :: unity2 :: ClassIdentity > :: class () , "set_IsFirstSelected" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SortieTradeManager as :: unity2 :: ClassIdentity > :: NAME , "set_IsFirstSelected" , e) , } } } pub unsafe fn set_is_first_selected (this : SortieTradeManager , value : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SortieTradeManager , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_is_first_selected :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } }
 
 #[cfg(feature = "app-sortietrademanager")]
-pub trait ISortieTradeManagerMethods: ISortieTradeManager {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <SortieTradeManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SortieTradeManager_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Reset()` overload"]
-    fn reset(self) -> () {
-        unsafe {
-            let __receiver = <SortieTradeManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SortieTradeManager_unity2_raw::reset(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_From()` overload"]
-    fn get_from(self) -> crate::app::sortietrademanager::SortieTradeManager_Side {
-        unsafe {
-            let __receiver = <SortieTradeManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SortieTradeManager_unity2_raw::get_from(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_To()` overload"]
-    fn get_to(self) -> crate::app::sortietrademanager::SortieTradeManager_Side {
-        unsafe {
-            let __receiver = <SortieTradeManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SortieTradeManager_unity2_raw::get_to(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_SelectSide()` overload"]
-    fn get_select_side(self) -> crate::app::sortietrademanager::SortieTradeManager_SideId {
-        unsafe {
-            let __receiver = <SortieTradeManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SortieTradeManager_unity2_raw::get_select_side(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_SelectSide(crate::app::sortietrademanager::SortieTradeManager_SideId)` overload"]
-    fn set_select_side(self, value: impl ::core::convert::Into<crate::app::sortietrademanager::SortieTradeManager_SideId>) -> () {
-        unsafe {
-            let __receiver = <SortieTradeManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SortieTradeManager_unity2_raw::set_select_side(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_IsFirstSelected()` overload"]
-    fn get_is_first_selected(self) -> bool {
-        unsafe {
-            let __receiver = <SortieTradeManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SortieTradeManager_unity2_raw::get_is_first_selected(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_IsFirstSelected(bool)` overload"]
-    fn set_is_first_selected(self, value: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver = <SortieTradeManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SortieTradeManager_unity2_raw::set_is_first_selected(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-}
+pub trait ISortieTradeManagerMethods : ISortieTradeManager { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < SortieTradeManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SortieTradeManager_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Reset()` overload"] fn reset (self ,) -> () { unsafe { let __receiver = < SortieTradeManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SortieTradeManager_unity2_raw :: reset (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_From()` overload"] fn get_from (self ,) -> crate :: app :: sortietrademanager :: SortieTradeManager_Side { unsafe { let __receiver = < SortieTradeManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SortieTradeManager_unity2_raw :: get_from (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_To()` overload"] fn get_to (self ,) -> crate :: app :: sortietrademanager :: SortieTradeManager_Side { unsafe { let __receiver = < SortieTradeManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SortieTradeManager_unity2_raw :: get_to (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_SelectSide()` overload"] fn get_select_side (self ,) -> crate :: app :: sortietrademanager :: SortieTradeManager_SideId { unsafe { let __receiver = < SortieTradeManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SortieTradeManager_unity2_raw :: get_select_side (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_SelectSide(crate::app::sortietrademanager::SortieTradeManager_SideId)` overload"] fn set_select_side (self , value : impl :: core :: convert :: Into < crate :: app :: sortietrademanager :: SortieTradeManager_SideId >) -> () { unsafe { let __receiver = < SortieTradeManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SortieTradeManager_unity2_raw :: set_select_side (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_IsFirstSelected()` overload"] fn get_is_first_selected (self ,) -> bool { unsafe { let __receiver = < SortieTradeManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SortieTradeManager_unity2_raw :: get_is_first_selected (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_IsFirstSelected(bool)` overload"] fn set_is_first_selected (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < SortieTradeManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SortieTradeManager_unity2_raw :: set_is_first_selected (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-sortietrademanager")]
-impl<__T: ISortieTradeManager> ISortieTradeManagerMethods for __T {}
+impl < __T : ISortieTradeManager > ISortieTradeManagerMethods for __T { }
+
+#[cfg(feature = "app-sortietrademanager")]
+impl SortieTradeManager { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SortieTradeManager_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn reset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SortieTradeManager_unity2_raw :: __lookup_reset :: get_method_info () } pub fn get_from_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SortieTradeManager_unity2_raw :: __lookup_get_from :: get_method_info () } pub fn get_to_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SortieTradeManager_unity2_raw :: __lookup_get_to :: get_method_info () } pub fn get_select_side_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SortieTradeManager_unity2_raw :: __lookup_get_select_side :: get_method_info () } pub fn set_select_side_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SortieTradeManager_unity2_raw :: __lookup_set_select_side :: get_method_info () } pub fn get_is_first_selected_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SortieTradeManager_unity2_raw :: __lookup_get_is_first_selected :: get_method_info () } pub fn set_is_first_selected_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SortieTradeManager_unity2_raw :: __lookup_set_is_first_selected :: get_method_info () } }
 
 #[cfg(feature = "app-sortietrademanager")]
 impl SortieTradeManager {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SortieTradeManager),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISortieTradeManagerMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SortieTradeManager) , :: core :: stringify ! (new) ,)) ; < Self as ISortieTradeManagerMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-sortietrademanager")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{
-        ISortieTradeManager, ISortieTradeManagerMethods, ISortieTradeManager_Side, ISortieTradeManager_SideMethods, SortieTradeManager,
-        SortieTradeManager_Side, SortieTradeManager_SideId,
-    };
-    #[cfg(feature = "app-singletonclass_1")]
-    pub use crate::app::singletonclass_1::ISingletonClass_1Methods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::{
-        app::singletonclass_1::ISingletonClass_1,
-        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
-    };
+    pub use super::SortieTradeManager_Side;
+    pub use super::ISortieTradeManager_Side;
+    pub use super::ISortieTradeManager_SideMethods;
+    pub use super::SortieTradeManager_SideId;
+    pub use super::SortieTradeManager;
+    pub use super::ISortieTradeManager;
+    pub use super::ISortieTradeManagerMethods;
+    pub use crate::app::singletonclass_1::ISingletonClass_1;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "app-singletonclass_1")] pub use crate::app::singletonclass_1::ISingletonClass_1Methods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

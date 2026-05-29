@@ -2,169 +2,72 @@
 
 #[cfg(feature = "unity_engine-rendering-universal-xrview-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        valuetype::{IValueType, ValueType},
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/xrview/XRView.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct XRView {
-        pub proj_matrix: crate::unity_engine::matrix4x4::Matrix4x4,
-        pub view_matrix: crate::unity_engine::matrix4x4::Matrix4x4,
-        pub viewport: crate::unity_engine::rect::Rect,
-        pub occlusion_mesh: crate::unity_engine::mesh::Mesh,
-        pub texture_array_slice: i32,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
 
-    impl ::unity2::ClassIdentity for XRView {
-        const NAME: &'static str = "XRView";
-        const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/xrview/XRView.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct XRView {
+    pub proj_matrix: crate :: unity_engine :: matrix4x4 :: Matrix4x4,
+    pub view_matrix: crate :: unity_engine :: matrix4x4 :: Matrix4x4,
+    pub viewport: crate :: unity_engine :: rect :: Rect,
+    pub occlusion_mesh: crate :: unity_engine :: mesh :: Mesh,
+    pub texture_array_slice: i32,
+}
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+
+impl ::unity2::ClassIdentity for XRView {
+    const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal";
+
+    const NAME: &'static str = "XRView";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for XRView {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl ::unity2::IlType for XRView {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
+
+}
+
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-xrview-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-universal-xrview")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __XRView_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<XRView as ::unity2::ClassIdentity>::class(), ".ctor", 4, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <XRView as ::unity2::ClassIdentity>::NAME, ".ctor", e),
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: XRView,
-        proj: crate::unity_engine::matrix4x4::Matrix4x4,
-        view: crate::unity_engine::matrix4x4::Matrix4x4,
-        vp: crate::unity_engine::rect::Rect,
-        dst_slice: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            XRView,
-            crate::unity_engine::matrix4x4::Matrix4x4,
-            crate::unity_engine::matrix4x4::Matrix4x4,
-            crate::unity_engine::rect::Rect,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, proj, view, vp, dst_slice, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderPass as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderParameter as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<XRView as ::unity2::ClassIdentity>::class(), ".ctor", 2, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <XRView as ::unity2::ClassIdentity>::NAME, ".ctor", e),
-            }
-        }
-    }
-    pub unsafe fn ctor_2(
-        this: XRView,
-        render_pass: crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderPass,
-        render_parameter: crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderParameter,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            XRView,
-            crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderPass,
-            crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderParameter,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
-        inner(this, render_pass, render_parameter, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __XRView_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: matrix4x4 :: Matrix4x4 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: matrix4x4 :: Matrix4x4 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rect :: Rect as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< XRView as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 4 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < XRView as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : XRView , proj : crate :: unity_engine :: matrix4x4 :: Matrix4x4 , view : crate :: unity_engine :: matrix4x4 :: Matrix4x4 , vp : crate :: unity_engine :: rect :: Rect , dst_slice : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (XRView , crate :: unity_engine :: matrix4x4 :: Matrix4x4 , crate :: unity_engine :: matrix4x4 :: Matrix4x4 , crate :: unity_engine :: rect :: Rect , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , proj , view , vp , dst_slice , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRRenderPass as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRRenderParameter as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< XRView as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < XRView as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor_2 (this : XRView , render_pass : crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRRenderPass , render_parameter : crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRRenderParameter , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (XRView , crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRRenderPass , crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRRenderParameter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor_2 :: get_method_info () . method_ptr ,) ; inner (this , render_pass , render_parameter , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-rendering-universal-xrview")]
-impl XRView {
-    #[doc = "`.ctor(crate::unity_engine::matrix4x4::Matrix4x4, crate::unity_engine::matrix4x4::Matrix4x4, crate::unity_engine::rect::Rect, i32)` overload"]
-    pub fn ctor(
-        self,
-        proj: impl ::core::convert::Into<crate::unity_engine::matrix4x4::Matrix4x4>,
-        view: impl ::core::convert::Into<crate::unity_engine::matrix4x4::Matrix4x4>,
-        vp: impl ::core::convert::Into<crate::unity_engine::rect::Rect>,
-        dst_slice: impl ::core::convert::Into<i32>,
-    ) -> () {
-        unsafe {
-            __XRView_unity2_raw::ctor(
-                self,
-                ::core::convert::Into::into(proj),
-                ::core::convert::Into::into(view),
-                ::core::convert::Into::into(vp),
-                ::core::convert::Into::into(dst_slice),
-                ::core::option::Option::None,
-            )
-        }
-    }
+impl XRView { # [doc = "`.ctor(crate::unity_engine::matrix4x4::Matrix4x4, crate::unity_engine::matrix4x4::Matrix4x4, crate::unity_engine::rect::Rect, i32)` overload"] pub fn ctor (self , proj : impl :: core :: convert :: Into < crate :: unity_engine :: matrix4x4 :: Matrix4x4 > , view : impl :: core :: convert :: Into < crate :: unity_engine :: matrix4x4 :: Matrix4x4 > , vp : impl :: core :: convert :: Into < crate :: unity_engine :: rect :: Rect > , dst_slice : impl :: core :: convert :: Into < i32 >) -> () { unsafe { __XRView_unity2_raw :: ctor (self , :: core :: convert :: Into :: into (proj) , :: core :: convert :: Into :: into (view) , :: core :: convert :: Into :: into (vp) , :: core :: convert :: Into :: into (dst_slice) , :: core :: option :: Option :: None) } } # [doc = "`.ctor(crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderPass, crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderParameter)` overload"] pub fn ctor_2 (self , render_pass : impl :: core :: convert :: Into < crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRRenderPass > , render_parameter : impl :: core :: convert :: Into < crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRRenderParameter >) -> () { unsafe { __XRView_unity2_raw :: ctor_2 (self , :: core :: convert :: Into :: into (render_pass) , :: core :: convert :: Into :: into (render_parameter) , :: core :: option :: Option :: None) } } }
 
-    #[doc = "`.ctor(crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderPass, crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderParameter)` overload"]
-    pub fn ctor_2(
-        self,
-        render_pass: impl ::core::convert::Into<crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderPass>,
-        render_parameter: impl ::core::convert::Into<crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderParameter>,
-    ) -> () {
-        unsafe {
-            __XRView_unity2_raw::ctor_2(
-                self,
-                ::core::convert::Into::into(render_pass),
-                ::core::convert::Into::into(render_parameter),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+#[cfg(feature = "unity_engine-rendering-universal-xrview")]
+impl XRView { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __XRView_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __XRView_unity2_raw :: __lookup_ctor_2 :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-rendering-universal-xrview")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::XRView;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::system::{object::IObject, valuetype::IValueType};
+    pub use crate::system::object::IObject;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

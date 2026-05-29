@@ -2,186 +2,77 @@
 
 #[cfg(feature = "tm_pro-tmp_fontstylestack-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        valuetype::{IValueType, ValueType},
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_fontstylestack/TMP_FontStyleStack.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct TMP_FontStyleStack {
-        pub bold: u8,
-        pub italic: u8,
-        pub underline: u8,
-        pub strikethrough: u8,
-        pub highlight: u8,
-        pub superscript: u8,
-        pub subscript: u8,
-        pub uppercase: u8,
-        pub lowercase: u8,
-        pub smallcaps: u8,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
 
-    impl ::unity2::ClassIdentity for TMP_FontStyleStack {
-        const NAME: &'static str = "TMP_FontStyleStack";
-        const NAMESPACE: &'static str = "TMPro";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_fontstylestack/TMP_FontStyleStack.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct TMP_FontStyleStack {
+    pub bold: u8,
+    pub italic: u8,
+    pub underline: u8,
+    pub strikethrough: u8,
+    pub highlight: u8,
+    pub superscript: u8,
+    pub subscript: u8,
+    pub uppercase: u8,
+    pub lowercase: u8,
+    pub smallcaps: u8,
+}
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+
+impl ::unity2::ClassIdentity for TMP_FontStyleStack {
+    const NAMESPACE: &'static str = "TMPro";
+
+    const NAME: &'static str = "TMP_FontStyleStack";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for TMP_FontStyleStack {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl ::unity2::IlType for TMP_FontStyleStack {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
+
+}
+
 }
 
 #[cfg(feature = "tm_pro-tmp_fontstylestack-types")]
 pub use __types::*;
 
 #[cfg(feature = "tm_pro-tmp_fontstylestack")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __TMP_FontStyleStack_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_clear {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TMP_FontStyleStack as ::unity2::ClassIdentity>::class(),
-                "Clear",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TMP_FontStyleStack as ::unity2::ClassIdentity>::NAME,
-                        "Clear",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn clear(this: TMP_FontStyleStack, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TMP_FontStyleStack, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::tm_pro::fontstyles::FontStyles as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TMP_FontStyleStack as ::unity2::ClassIdentity>::class(),
-                "Add",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TMP_FontStyleStack as ::unity2::ClassIdentity>::NAME,
-                        "Add",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add(this: TMP_FontStyleStack, style: crate::tm_pro::fontstyles::FontStyles, __unity2_method_info: ::unity2::OptionalMethod) -> u8 {
-        let inner: extern "C" fn(TMP_FontStyleStack, crate::tm_pro::fontstyles::FontStyles, ::unity2::OptionalMethod) -> u8 =
-            ::core::mem::transmute(__lookup_add::get_method_info().method_ptr);
-        inner(this, style, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_remove {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::tm_pro::fontstyles::FontStyles as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TMP_FontStyleStack as ::unity2::ClassIdentity>::class(),
-                "Remove",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TMP_FontStyleStack as ::unity2::ClassIdentity>::NAME,
-                        "Remove",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn remove(
-        this: TMP_FontStyleStack,
-        style: crate::tm_pro::fontstyles::FontStyles,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u8 {
-        let inner: extern "C" fn(TMP_FontStyleStack, crate::tm_pro::fontstyles::FontStyles, ::unity2::OptionalMethod) -> u8 =
-            ::core::mem::transmute(__lookup_remove::get_method_info().method_ptr);
-        inner(this, style, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __TMP_FontStyleStack_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_clear { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TMP_FontStyleStack as :: unity2 :: ClassIdentity > :: class () , "Clear" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TMP_FontStyleStack as :: unity2 :: ClassIdentity > :: NAME , "Clear" , e) , } } } pub unsafe fn clear (this : TMP_FontStyleStack , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TMP_FontStyleStack , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_clear :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: tm_pro :: fontstyles :: FontStyles as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TMP_FontStyleStack as :: unity2 :: ClassIdentity > :: class () , "Add" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TMP_FontStyleStack as :: unity2 :: ClassIdentity > :: NAME , "Add" , e) , } } } pub unsafe fn add (this : TMP_FontStyleStack , style : crate :: tm_pro :: fontstyles :: FontStyles , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> u8 { let inner : extern "C" fn (TMP_FontStyleStack , crate :: tm_pro :: fontstyles :: FontStyles , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute (__lookup_add :: get_method_info () . method_ptr ,) ; inner (this , style , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_remove { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: tm_pro :: fontstyles :: FontStyles as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TMP_FontStyleStack as :: unity2 :: ClassIdentity > :: class () , "Remove" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TMP_FontStyleStack as :: unity2 :: ClassIdentity > :: NAME , "Remove" , e) , } } } pub unsafe fn remove (this : TMP_FontStyleStack , style : crate :: tm_pro :: fontstyles :: FontStyles , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> u8 { let inner : extern "C" fn (TMP_FontStyleStack , crate :: tm_pro :: fontstyles :: FontStyles , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute (__lookup_remove :: get_method_info () . method_ptr ,) ; inner (this , style , __unity2_method_info) } }
 
 #[cfg(feature = "tm_pro-tmp_fontstylestack")]
-impl TMP_FontStyleStack {
-    #[doc = "`Clear()` overload"]
-    pub fn clear(self) -> () {
-        unsafe { __TMP_FontStyleStack_unity2_raw::clear(self, ::core::option::Option::None) }
-    }
+impl TMP_FontStyleStack { # [doc = "`Clear()` overload"] pub fn clear (self ,) -> () { unsafe { __TMP_FontStyleStack_unity2_raw :: clear (self , :: core :: option :: Option :: None) } } # [doc = "`Add(crate::tm_pro::fontstyles::FontStyles)` overload"] pub fn add (self , style : impl :: core :: convert :: Into < crate :: tm_pro :: fontstyles :: FontStyles >) -> u8 { unsafe { __TMP_FontStyleStack_unity2_raw :: add (self , :: core :: convert :: Into :: into (style) , :: core :: option :: Option :: None) } } # [doc = "`Remove(crate::tm_pro::fontstyles::FontStyles)` overload"] pub fn remove (self , style : impl :: core :: convert :: Into < crate :: tm_pro :: fontstyles :: FontStyles >) -> u8 { unsafe { __TMP_FontStyleStack_unity2_raw :: remove (self , :: core :: convert :: Into :: into (style) , :: core :: option :: Option :: None) } } }
 
-    #[doc = "`Add(crate::tm_pro::fontstyles::FontStyles)` overload"]
-    pub fn add(self, style: impl ::core::convert::Into<crate::tm_pro::fontstyles::FontStyles>) -> u8 {
-        unsafe { __TMP_FontStyleStack_unity2_raw::add(self, ::core::convert::Into::into(style), ::core::option::Option::None) }
-    }
-
-    #[doc = "`Remove(crate::tm_pro::fontstyles::FontStyles)` overload"]
-    pub fn remove(self, style: impl ::core::convert::Into<crate::tm_pro::fontstyles::FontStyles>) -> u8 {
-        unsafe { __TMP_FontStyleStack_unity2_raw::remove(self, ::core::convert::Into::into(style), ::core::option::Option::None) }
-    }
-}
+#[cfg(feature = "tm_pro-tmp_fontstylestack")]
+impl TMP_FontStyleStack { pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TMP_FontStyleStack_unity2_raw :: __lookup_clear :: get_method_info () } pub fn add_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TMP_FontStyleStack_unity2_raw :: __lookup_add :: get_method_info () } pub fn remove_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TMP_FontStyleStack_unity2_raw :: __lookup_remove :: get_method_info () } }
 
 #[cfg(feature = "tm_pro-tmp_fontstylestack")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::TMP_FontStyleStack;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::system::{object::IObject, valuetype::IValueType};
+    pub use crate::system::object::IObject;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

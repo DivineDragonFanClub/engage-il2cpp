@@ -2,111 +2,34 @@
 
 #[cfg(feature = "unity_engine-rendering-universal-componentutility-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/componentutility/ComponentUtility.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Rendering.Universal", name = "ComponentUtility")]
-    #[parent(crate::system::object::Object)]
-    pub struct ComponentUtility {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/componentutility/ComponentUtility.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.Universal" , name = "ComponentUtility")] # [parent (crate :: system :: object :: Object)] pub struct ComponentUtility {}
+
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-componentutility-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-universal-componentutility")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ComponentUtility_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_universal_camera {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::camera::Camera as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ComponentUtility as ::unity2::ClassIdentity>::class(),
-                "IsUniversalCamera",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ComponentUtility as ::unity2::ClassIdentity>::NAME,
-                        "IsUniversalCamera",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_universal_camera(camera: crate::unity_engine::camera::Camera, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(crate::unity_engine::camera::Camera, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_universal_camera::get_method_info().method_ptr);
-        inner(camera, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_universal_light {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::light::Light as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ComponentUtility as ::unity2::ClassIdentity>::class(),
-                "IsUniversalLight",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ComponentUtility as ::unity2::ClassIdentity>::NAME,
-                        "IsUniversalLight",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_universal_light(light: crate::unity_engine::light::Light, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(crate::unity_engine::light::Light, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_universal_light::get_method_info().method_ptr);
-        inner(light, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ComponentUtility_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_universal_camera { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: camera :: Camera as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ComponentUtility as :: unity2 :: ClassIdentity > :: class () , "IsUniversalCamera" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ComponentUtility as :: unity2 :: ClassIdentity > :: NAME , "IsUniversalCamera" , e) , } } } pub unsafe fn is_universal_camera (camera : crate :: unity_engine :: camera :: Camera , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (crate :: unity_engine :: camera :: Camera , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_universal_camera :: get_method_info () . method_ptr ,) ; inner (camera , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_universal_light { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: light :: Light as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ComponentUtility as :: unity2 :: ClassIdentity > :: class () , "IsUniversalLight" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ComponentUtility as :: unity2 :: ClassIdentity > :: NAME , "IsUniversalLight" , e) , } } } pub unsafe fn is_universal_light (light : crate :: unity_engine :: light :: Light , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (crate :: unity_engine :: light :: Light , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_universal_light :: get_method_info () . method_ptr ,) ; inner (light , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-rendering-universal-componentutility")]
-impl ComponentUtility {
-    #[doc = "`IsUniversalCamera(crate::unity_engine::camera::Camera)` overload"]
-    pub fn is_universal_camera(camera: impl ::core::convert::Into<crate::unity_engine::camera::Camera>) -> bool {
-        unsafe { __ComponentUtility_unity2_raw::is_universal_camera(::core::convert::Into::into(camera), ::core::option::Option::None) }
-    }
+impl ComponentUtility { # [doc = "`IsUniversalCamera(crate::unity_engine::camera::Camera)` overload"] pub fn is_universal_camera (camera : impl :: core :: convert :: Into < crate :: unity_engine :: camera :: Camera >) -> bool { unsafe { __ComponentUtility_unity2_raw :: is_universal_camera (:: core :: convert :: Into :: into (camera) , :: core :: option :: Option :: None) } } # [doc = "`IsUniversalLight(crate::unity_engine::light::Light)` overload"] pub fn is_universal_light (light : impl :: core :: convert :: Into < crate :: unity_engine :: light :: Light >) -> bool { unsafe { __ComponentUtility_unity2_raw :: is_universal_light (:: core :: convert :: Into :: into (light) , :: core :: option :: Option :: None) } } }
 
-    #[doc = "`IsUniversalLight(crate::unity_engine::light::Light)` overload"]
-    pub fn is_universal_light(light: impl ::core::convert::Into<crate::unity_engine::light::Light>) -> bool {
-        unsafe { __ComponentUtility_unity2_raw::is_universal_light(::core::convert::Into::into(light), ::core::option::Option::None) }
-    }
-}
+#[cfg(feature = "unity_engine-rendering-universal-componentutility")]
+impl ComponentUtility { pub fn is_universal_camera_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ComponentUtility_unity2_raw :: __lookup_is_universal_camera :: get_method_info () } pub fn is_universal_light_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ComponentUtility_unity2_raw :: __lookup_is_universal_light :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-rendering-universal-componentutility")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{ComponentUtility, IComponentUtility};
+    pub use super::ComponentUtility;
+    pub use super::IComponentUtility;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

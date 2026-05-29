@@ -2,590 +2,104 @@
 
 #[cfg(feature = "unity_engine-xr-xrsettings-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        r#enum::{Enum, IEnum},
-        valuetype::{IValueType, ValueType},
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/xr/xrsettings/XRSettings_StereoRenderingMode.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct XRSettings_StereoRenderingMode {
-        pub value: i32,
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/xr/xrsettings/XRSettings_StereoRenderingMode.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct XRSettings_StereoRenderingMode  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for XRSettings_StereoRenderingMode  {
+    const NAMESPACE: &'static str = "UnityEngine.XR";
+
+    const NAME: &'static str = "XRSettings.StereoRenderingMode";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    impl ::unity2::ClassIdentity for XRSettings_StereoRenderingMode {
-        const NAME: &'static str = "XRSettings.StereoRenderingMode";
-        const NAMESPACE: &'static str = "UnityEngine.XR";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  ::unity2::IlType for XRSettings_StereoRenderingMode  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::IlType for XRSettings_StereoRenderingMode {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  XRSettings_StereoRenderingMode  {
+    pub fn multi_pass() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl XRSettings_StereoRenderingMode {
-        pub fn multi_pass() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn single_pass() -> Self {
-            Self { value: 1 }
-        }
+    pub fn single_pass() -> Self {
+        Self { value: 1 }
 
-        pub fn single_pass_instanced() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn single_pass_multiview() -> Self {
-            Self { value: 3 }
-        }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/xr/xrsettings/XRSettings.md"))]
-    #[::unity2::class(namespace = "UnityEngine.XR", name = "XRSettings")]
-    #[parent(crate::system::object::Object)]
-    pub struct XRSettings {}
+
+    pub fn single_pass_instanced() -> Self {
+        Self { value: 2 }
+
+    }
+
+
+    pub fn single_pass_multiview() -> Self {
+        Self { value: 3 }
+
+    }
+
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/xr/xrsettings/XRSettings.md"))] # [:: unity2 :: class (namespace = "UnityEngine.XR" , name = "XRSettings")] # [parent (crate :: system :: object :: Object)] pub struct XRSettings {}
+
 }
 
 #[cfg(feature = "unity_engine-xr-xrsettings-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-xr-xrsettings")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __XRSettings_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_enabled {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <XRSettings as ::unity2::ClassIdentity>::class(),
-                "get_enabled",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <XRSettings as ::unity2::ClassIdentity>::NAME,
-                        "get_enabled",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_enabled(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_get_enabled::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_is_device_active {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <XRSettings as ::unity2::ClassIdentity>::class(),
-                "get_isDeviceActive",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <XRSettings as ::unity2::ClassIdentity>::NAME,
-                        "get_isDeviceActive",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_is_device_active(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_is_device_active::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_eye_texture_resolution_scale {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <XRSettings as ::unity2::ClassIdentity>::class(),
-                "get_eyeTextureResolutionScale",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <XRSettings as ::unity2::ClassIdentity>::NAME,
-                        "get_eyeTextureResolutionScale",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_eye_texture_resolution_scale(__unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_get_eye_texture_resolution_scale::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_eye_texture_resolution_scale {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <XRSettings as ::unity2::ClassIdentity>::class(),
-                "set_eyeTextureResolutionScale",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <XRSettings as ::unity2::ClassIdentity>::NAME,
-                        "set_eyeTextureResolutionScale",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_eye_texture_resolution_scale(value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_eye_texture_resolution_scale::get_method_info().method_ptr);
-        inner(value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_eye_texture_width {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <XRSettings as ::unity2::ClassIdentity>::class(),
-                "get_eyeTextureWidth",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <XRSettings as ::unity2::ClassIdentity>::NAME,
-                        "get_eyeTextureWidth",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_eye_texture_width(__unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_eye_texture_width::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_eye_texture_height {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <XRSettings as ::unity2::ClassIdentity>::class(),
-                "get_eyeTextureHeight",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <XRSettings as ::unity2::ClassIdentity>::NAME,
-                        "get_eyeTextureHeight",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_eye_texture_height(__unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_eye_texture_height::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_eye_texture_desc {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <XRSettings as ::unity2::ClassIdentity>::class(),
-                "get_eyeTextureDesc",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <XRSettings as ::unity2::ClassIdentity>::NAME,
-                        "get_eyeTextureDesc",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_eye_texture_desc(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor =
-            ::core::mem::transmute(__lookup_get_eye_texture_desc::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_render_viewport_scale {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <XRSettings as ::unity2::ClassIdentity>::class(),
-                "get_renderViewportScale",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <XRSettings as ::unity2::ClassIdentity>::NAME,
-                        "get_renderViewportScale",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_render_viewport_scale(__unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_get_render_viewport_scale::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_render_viewport_scale_internal {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <XRSettings as ::unity2::ClassIdentity>::class(),
-                "get_renderViewportScaleInternal",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <XRSettings as ::unity2::ClassIdentity>::NAME,
-                        "get_renderViewportScaleInternal",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_render_viewport_scale_internal(__unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_get_render_viewport_scale_internal::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_loaded_device_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <XRSettings as ::unity2::ClassIdentity>::class(),
-                "get_loadedDeviceName",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <XRSettings as ::unity2::ClassIdentity>::NAME,
-                        "get_loadedDeviceName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_loaded_device_name(__unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_loaded_device_name::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_supported_devices {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <XRSettings as ::unity2::ClassIdentity>::class(),
-                "get_supportedDevices",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <XRSettings as ::unity2::ClassIdentity>::NAME,
-                        "get_supportedDevices",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_supported_devices(__unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Array<::unity2::Il2CppString> {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> ::unity2::Array<::unity2::Il2CppString> =
-            ::core::mem::transmute(__lookup_get_supported_devices::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_stereo_rendering_mode {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <XRSettings as ::unity2::ClassIdentity>::class(),
-                "get_stereoRenderingMode",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <XRSettings as ::unity2::ClassIdentity>::NAME,
-                        "get_stereoRenderingMode",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_stereo_rendering_mode(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::xr::xrsettings::XRSettings_StereoRenderingMode {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::unity_engine::xr::xrsettings::XRSettings_StereoRenderingMode =
-            ::core::mem::transmute(__lookup_get_stereo_rendering_mode::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_eye_texture_desc_injected {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <XRSettings as ::unity2::ClassIdentity>::class(),
-                "get_eyeTextureDesc_Injected",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <XRSettings as ::unity2::ClassIdentity>::NAME,
-                        "get_eyeTextureDesc_Injected",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_eye_texture_desc_injected(
-        ret: *mut crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(*mut crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_get_eye_texture_desc_injected::get_method_info().method_ptr);
-        inner(ret, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __XRSettings_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_enabled { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< XRSettings as :: unity2 :: ClassIdentity > :: class () , "get_enabled" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < XRSettings as :: unity2 :: ClassIdentity > :: NAME , "get_enabled" , e) , } } } pub unsafe fn get_enabled (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_enabled :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_is_device_active { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< XRSettings as :: unity2 :: ClassIdentity > :: class () , "get_isDeviceActive" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < XRSettings as :: unity2 :: ClassIdentity > :: NAME , "get_isDeviceActive" , e) , } } } pub unsafe fn get_is_device_active (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_is_device_active :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_eye_texture_resolution_scale { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< XRSettings as :: unity2 :: ClassIdentity > :: class () , "get_eyeTextureResolutionScale" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < XRSettings as :: unity2 :: ClassIdentity > :: NAME , "get_eyeTextureResolutionScale" , e) , } } } pub unsafe fn get_eye_texture_resolution_scale (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_get_eye_texture_resolution_scale :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_eye_texture_resolution_scale { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< XRSettings as :: unity2 :: ClassIdentity > :: class () , "set_eyeTextureResolutionScale" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < XRSettings as :: unity2 :: ClassIdentity > :: NAME , "set_eyeTextureResolutionScale" , e) , } } } pub unsafe fn set_eye_texture_resolution_scale (value : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_eye_texture_resolution_scale :: get_method_info () . method_ptr ,) ; inner (value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_eye_texture_width { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< XRSettings as :: unity2 :: ClassIdentity > :: class () , "get_eyeTextureWidth" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < XRSettings as :: unity2 :: ClassIdentity > :: NAME , "get_eyeTextureWidth" , e) , } } } pub unsafe fn get_eye_texture_width (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_eye_texture_width :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_eye_texture_height { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< XRSettings as :: unity2 :: ClassIdentity > :: class () , "get_eyeTextureHeight" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < XRSettings as :: unity2 :: ClassIdentity > :: NAME , "get_eyeTextureHeight" , e) , } } } pub unsafe fn get_eye_texture_height (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_eye_texture_height :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_eye_texture_desc { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< XRSettings as :: unity2 :: ClassIdentity > :: class () , "get_eyeTextureDesc" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < XRSettings as :: unity2 :: ClassIdentity > :: NAME , "get_eyeTextureDesc" , e) , } } } pub unsafe fn get_eye_texture_desc (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendertexturedescriptor :: RenderTextureDescriptor { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendertexturedescriptor :: RenderTextureDescriptor = :: core :: mem :: transmute (__lookup_get_eye_texture_desc :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_render_viewport_scale { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< XRSettings as :: unity2 :: ClassIdentity > :: class () , "get_renderViewportScale" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < XRSettings as :: unity2 :: ClassIdentity > :: NAME , "get_renderViewportScale" , e) , } } } pub unsafe fn get_render_viewport_scale (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_get_render_viewport_scale :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_render_viewport_scale_internal { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< XRSettings as :: unity2 :: ClassIdentity > :: class () , "get_renderViewportScaleInternal" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < XRSettings as :: unity2 :: ClassIdentity > :: NAME , "get_renderViewportScaleInternal" , e) , } } } pub unsafe fn get_render_viewport_scale_internal (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_get_render_viewport_scale_internal :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_loaded_device_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< XRSettings as :: unity2 :: ClassIdentity > :: class () , "get_loadedDeviceName" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < XRSettings as :: unity2 :: ClassIdentity > :: NAME , "get_loadedDeviceName" , e) , } } } pub unsafe fn get_loaded_device_name (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_loaded_device_name :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_supported_devices { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< XRSettings as :: unity2 :: ClassIdentity > :: class () , "get_supportedDevices" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < XRSettings as :: unity2 :: ClassIdentity > :: NAME , "get_supportedDevices" , e) , } } } pub unsafe fn get_supported_devices (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > = :: core :: mem :: transmute (__lookup_get_supported_devices :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_stereo_rendering_mode { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< XRSettings as :: unity2 :: ClassIdentity > :: class () , "get_stereoRenderingMode" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < XRSettings as :: unity2 :: ClassIdentity > :: NAME , "get_stereoRenderingMode" , e) , } } } pub unsafe fn get_stereo_rendering_mode (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: xr :: xrsettings :: XRSettings_StereoRenderingMode { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: xr :: xrsettings :: XRSettings_StereoRenderingMode = :: core :: mem :: transmute (__lookup_get_stereo_rendering_mode :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_eye_texture_desc_injected { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendertexturedescriptor :: RenderTextureDescriptor as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< XRSettings as :: unity2 :: ClassIdentity > :: class () , "get_eyeTextureDesc_Injected" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < XRSettings as :: unity2 :: ClassIdentity > :: NAME , "get_eyeTextureDesc_Injected" , e) , } } } pub unsafe fn get_eye_texture_desc_injected (ret : * mut crate :: unity_engine :: rendertexturedescriptor :: RenderTextureDescriptor , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (* mut crate :: unity_engine :: rendertexturedescriptor :: RenderTextureDescriptor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_get_eye_texture_desc_injected :: get_method_info () . method_ptr ,) ; inner (ret , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-xr-xrsettings")]
-impl XRSettings {
-    #[doc = "`get_enabled()` overload"]
-    pub fn get_enabled() -> bool {
-        unsafe { __XRSettings_unity2_raw::get_enabled(::core::option::Option::None) }
-    }
+impl XRSettings { # [doc = "`get_enabled()` overload"] pub fn get_enabled () -> bool { unsafe { __XRSettings_unity2_raw :: get_enabled (:: core :: option :: Option :: None) } } # [doc = "`get_isDeviceActive()` overload"] pub fn get_is_device_active () -> bool { unsafe { __XRSettings_unity2_raw :: get_is_device_active (:: core :: option :: Option :: None) } } # [doc = "`get_eyeTextureResolutionScale()` overload"] pub fn get_eye_texture_resolution_scale () -> f32 { unsafe { __XRSettings_unity2_raw :: get_eye_texture_resolution_scale (:: core :: option :: Option :: None) } } # [doc = "`set_eyeTextureResolutionScale(f32)` overload"] pub fn set_eye_texture_resolution_scale (value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { __XRSettings_unity2_raw :: set_eye_texture_resolution_scale (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_eyeTextureWidth()` overload"] pub fn get_eye_texture_width () -> i32 { unsafe { __XRSettings_unity2_raw :: get_eye_texture_width (:: core :: option :: Option :: None) } } # [doc = "`get_eyeTextureHeight()` overload"] pub fn get_eye_texture_height () -> i32 { unsafe { __XRSettings_unity2_raw :: get_eye_texture_height (:: core :: option :: Option :: None) } } # [doc = "`get_eyeTextureDesc()` overload"] pub fn get_eye_texture_desc () -> crate :: unity_engine :: rendertexturedescriptor :: RenderTextureDescriptor { unsafe { __XRSettings_unity2_raw :: get_eye_texture_desc (:: core :: option :: Option :: None) } } # [doc = "`get_renderViewportScale()` overload"] pub fn get_render_viewport_scale () -> f32 { unsafe { __XRSettings_unity2_raw :: get_render_viewport_scale (:: core :: option :: Option :: None) } } # [doc = "`get_renderViewportScaleInternal()` overload"] pub fn get_render_viewport_scale_internal () -> f32 { unsafe { __XRSettings_unity2_raw :: get_render_viewport_scale_internal (:: core :: option :: Option :: None) } } # [doc = "`get_loadedDeviceName()` overload"] pub fn get_loaded_device_name () -> :: unity2 :: Il2CppString { unsafe { __XRSettings_unity2_raw :: get_loaded_device_name (:: core :: option :: Option :: None) } } # [doc = "`get_supportedDevices()` overload"] pub fn get_supported_devices () -> :: unity2 :: Array < :: unity2 :: Il2CppString > { unsafe { __XRSettings_unity2_raw :: get_supported_devices (:: core :: option :: Option :: None) } } # [doc = "`get_stereoRenderingMode()` overload"] pub fn get_stereo_rendering_mode () -> crate :: unity_engine :: xr :: xrsettings :: XRSettings_StereoRenderingMode { unsafe { __XRSettings_unity2_raw :: get_stereo_rendering_mode (:: core :: option :: Option :: None) } } # [doc = "`get_eyeTextureDesc_Injected(*mutcrate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor)` overload"] pub fn get_eye_texture_desc_injected () -> crate :: unity_engine :: rendertexturedescriptor :: RenderTextureDescriptor { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: rendertexturedescriptor :: RenderTextureDescriptor > :: uninit () ; __XRSettings_unity2_raw :: get_eye_texture_desc_injected (__out_0 . as_mut_ptr () , :: core :: option :: Option :: None) ; __out_0 . assume_init () } } }
 
-    #[doc = "`get_isDeviceActive()` overload"]
-    pub fn get_is_device_active() -> bool {
-        unsafe { __XRSettings_unity2_raw::get_is_device_active(::core::option::Option::None) }
-    }
-
-    #[doc = "`get_eyeTextureResolutionScale()` overload"]
-    pub fn get_eye_texture_resolution_scale() -> f32 {
-        unsafe { __XRSettings_unity2_raw::get_eye_texture_resolution_scale(::core::option::Option::None) }
-    }
-
-    #[doc = "`set_eyeTextureResolutionScale(f32)` overload"]
-    pub fn set_eye_texture_resolution_scale(value: impl ::core::convert::Into<f32>) -> () {
-        unsafe { __XRSettings_unity2_raw::set_eye_texture_resolution_scale(::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_eyeTextureWidth()` overload"]
-    pub fn get_eye_texture_width() -> i32 {
-        unsafe { __XRSettings_unity2_raw::get_eye_texture_width(::core::option::Option::None) }
-    }
-
-    #[doc = "`get_eyeTextureHeight()` overload"]
-    pub fn get_eye_texture_height() -> i32 {
-        unsafe { __XRSettings_unity2_raw::get_eye_texture_height(::core::option::Option::None) }
-    }
-
-    #[doc = "`get_eyeTextureDesc()` overload"]
-    pub fn get_eye_texture_desc() -> crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor {
-        unsafe { __XRSettings_unity2_raw::get_eye_texture_desc(::core::option::Option::None) }
-    }
-
-    #[doc = "`get_renderViewportScale()` overload"]
-    pub fn get_render_viewport_scale() -> f32 {
-        unsafe { __XRSettings_unity2_raw::get_render_viewport_scale(::core::option::Option::None) }
-    }
-
-    #[doc = "`get_renderViewportScaleInternal()` overload"]
-    pub fn get_render_viewport_scale_internal() -> f32 {
-        unsafe { __XRSettings_unity2_raw::get_render_viewport_scale_internal(::core::option::Option::None) }
-    }
-
-    #[doc = "`get_loadedDeviceName()` overload"]
-    pub fn get_loaded_device_name() -> ::unity2::Il2CppString {
-        unsafe { __XRSettings_unity2_raw::get_loaded_device_name(::core::option::Option::None) }
-    }
-
-    #[doc = "`get_supportedDevices()` overload"]
-    pub fn get_supported_devices() -> ::unity2::Array<::unity2::Il2CppString> {
-        unsafe { __XRSettings_unity2_raw::get_supported_devices(::core::option::Option::None) }
-    }
-
-    #[doc = "`get_stereoRenderingMode()` overload"]
-    pub fn get_stereo_rendering_mode() -> crate::unity_engine::xr::xrsettings::XRSettings_StereoRenderingMode {
-        unsafe { __XRSettings_unity2_raw::get_stereo_rendering_mode(::core::option::Option::None) }
-    }
-
-    #[doc = "`get_eyeTextureDesc_Injected(*mutcrate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor)` overload"]
-    pub fn get_eye_texture_desc_injected() -> crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor {
-        unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor>::uninit();
-            __XRSettings_unity2_raw::get_eye_texture_desc_injected(__out_0.as_mut_ptr(), ::core::option::Option::None);
-            __out_0.assume_init()
-        }
-    }
-}
+#[cfg(feature = "unity_engine-xr-xrsettings")]
+impl XRSettings { pub fn get_enabled_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __XRSettings_unity2_raw :: __lookup_get_enabled :: get_method_info () } pub fn get_is_device_active_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __XRSettings_unity2_raw :: __lookup_get_is_device_active :: get_method_info () } pub fn get_eye_texture_resolution_scale_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __XRSettings_unity2_raw :: __lookup_get_eye_texture_resolution_scale :: get_method_info () } pub fn set_eye_texture_resolution_scale_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __XRSettings_unity2_raw :: __lookup_set_eye_texture_resolution_scale :: get_method_info () } pub fn get_eye_texture_width_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __XRSettings_unity2_raw :: __lookup_get_eye_texture_width :: get_method_info () } pub fn get_eye_texture_height_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __XRSettings_unity2_raw :: __lookup_get_eye_texture_height :: get_method_info () } pub fn get_eye_texture_desc_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __XRSettings_unity2_raw :: __lookup_get_eye_texture_desc :: get_method_info () } pub fn get_render_viewport_scale_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __XRSettings_unity2_raw :: __lookup_get_render_viewport_scale :: get_method_info () } pub fn get_render_viewport_scale_internal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __XRSettings_unity2_raw :: __lookup_get_render_viewport_scale_internal :: get_method_info () } pub fn get_loaded_device_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __XRSettings_unity2_raw :: __lookup_get_loaded_device_name :: get_method_info () } pub fn get_supported_devices_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __XRSettings_unity2_raw :: __lookup_get_supported_devices :: get_method_info () } pub fn get_stereo_rendering_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __XRSettings_unity2_raw :: __lookup_get_stereo_rendering_mode :: get_method_info () } pub fn get_eye_texture_desc_injected_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __XRSettings_unity2_raw :: __lookup_get_eye_texture_desc_injected :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-xr-xrsettings")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IXRSettings, XRSettings, XRSettings_StereoRenderingMode};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::system::{object::IObject, r#enum::IEnum, valuetype::IValueType};
+    pub use super::XRSettings_StereoRenderingMode;
+    pub use super::XRSettings;
+    pub use super::IXRSettings;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

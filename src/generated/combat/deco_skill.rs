@@ -2,439 +2,53 @@
 
 #[cfg(feature = "combat-deco_skill-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        combat::decorator::{Decorator, IDecorator},
-        system::object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/deco_skill/Deco_Skill.md"))]
-    #[::unity2::class(namespace = "Combat", name = "Deco_Skill")]
-    #[parent(crate::combat::decorator::Decorator)]
-    pub struct Deco_Skill {
-        #[offset(40)]
-        #[rename(name = "m_Pair")]
-        pub m_pair: crate::combat::skillstack::SkillStack_Packet,
-        #[offset(48)]
-        #[rename(name = "m_bNameShown")]
-        pub m_b_name_shown: bool,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: combat :: decorator :: { Decorator , IDecorator }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/deco_skill/Deco_Skill.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "Deco_Skill")] # [parent (crate :: combat :: decorator :: Decorator)] pub struct Deco_Skill {
+# [offset (40)] # [rename (name = "m_Pair")] pub m_pair : crate :: combat :: skillstack :: SkillStack_Packet ,
+# [offset (48)] # [rename (name = "m_bNameShown")] pub m_b_name_shown : bool ,
+}
+
 }
 
 #[cfg(feature = "combat-deco_skill-types")]
 pub use __types::*;
 
 #[cfg(feature = "combat-deco_skill")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __Deco_Skill_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Deco_Skill as ::unity2::ClassIdentity>::class(), "get_Name", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Deco_Skill as ::unity2::ClassIdentity>::NAME,
-                        "get_Name",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_name(this: Deco_Skill, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(Deco_Skill, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_pair {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::combat::skillstack::SkillStack_Packet as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<Deco_Skill as ::unity2::ClassIdentity>::class(), "set_Pair", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Deco_Skill as ::unity2::ClassIdentity>::NAME,
-                        "set_Pair",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_pair(
-        this: Deco_Skill,
-        value: crate::combat::skillstack::SkillStack_Packet,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(Deco_Skill, crate::combat::skillstack::SkillStack_Packet, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_pair::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_available {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::combat::decoratorargs::DecoratorArgs as ::unity2::IlType>::il_type(),
-                <crate::combat::skillstack::SkillStack_Packet as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Deco_Skill as ::unity2::ClassIdentity>::class(),
-                "IsAvailable",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Deco_Skill as ::unity2::ClassIdentity>::NAME,
-                        "IsAvailable",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_available(
-        that: crate::combat::decoratorargs::DecoratorArgs,
-        pair: crate::combat::skillstack::SkillStack_Packet,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            crate::combat::decoratorargs::DecoratorArgs,
-            crate::combat::skillstack::SkillStack_Packet,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(__lookup_is_available::get_method_info().method_ptr);
-        inner(that, pair, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_enter {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Deco_Skill as ::unity2::ClassIdentity>::class(), "OnEnter", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Deco_Skill as ::unity2::ClassIdentity>::NAME,
-                        "OnEnter",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_enter(this: Deco_Skill, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Deco_Skill, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_enter::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_enter_attack {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Deco_Skill as ::unity2::ClassIdentity>::class(),
-                "OnEnterAttack",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Deco_Skill as ::unity2::ClassIdentity>::NAME,
-                        "OnEnterAttack",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_enter_attack(this: Deco_Skill, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Deco_Skill, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_enter_attack::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_enemy_damage {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::animationevent::AnimationEvent as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Deco_Skill as ::unity2::ClassIdentity>::class(),
-                "OnEnemyDamage_",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Deco_Skill as ::unity2::ClassIdentity>::NAME,
-                        "OnEnemyDamage_",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_enemy_damage(
-        this: Deco_Skill,
-        ev: crate::unity_engine::animationevent::AnimationEvent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(Deco_Skill, crate::unity_engine::animationevent::AnimationEvent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_enemy_damage::get_method_info().method_ptr);
-        inner(this, ev, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_draw_skill_damages {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::combat::phase::Phase as ::unity2::IlType>::il_type(),
-                <crate::combat::skillstack::SkillStack as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Deco_Skill as ::unity2::ClassIdentity>::class(),
-                "DrawSkillDamages",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Deco_Skill as ::unity2::ClassIdentity>::NAME,
-                        "DrawSkillDamages",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn draw_skill_damages(
-        phase: crate::combat::phase::Phase,
-        skills: crate::combat::skillstack::SkillStack,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::combat::phase::Phase, crate::combat::skillstack::SkillStack, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_draw_skill_damages::get_method_info().method_ptr);
-        inner(phase, skills, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_subspace {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::combat::character::Character as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Deco_Skill as ::unity2::ClassIdentity>::class(),
-                "IsSubspace",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Deco_Skill as ::unity2::ClassIdentity>::NAME,
-                        "IsSubspace",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_subspace(c: crate::combat::character::Character, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(crate::combat::character::Character, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_subspace::get_method_info().method_ptr);
-        inner(c, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Deco_Skill as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Deco_Skill as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: Deco_Skill, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Deco_Skill, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __Deco_Skill_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Deco_Skill as :: unity2 :: ClassIdentity > :: class () , "get_Name" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Deco_Skill as :: unity2 :: ClassIdentity > :: NAME , "get_Name" , e) , } } } pub unsafe fn get_name (this : Deco_Skill , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (Deco_Skill , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_name :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_pair { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: skillstack :: SkillStack_Packet as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Deco_Skill as :: unity2 :: ClassIdentity > :: class () , "set_Pair" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Deco_Skill as :: unity2 :: ClassIdentity > :: NAME , "set_Pair" , e) , } } } pub unsafe fn set_pair (this : Deco_Skill , value : crate :: combat :: skillstack :: SkillStack_Packet , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Deco_Skill , crate :: combat :: skillstack :: SkillStack_Packet , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_pair :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_available { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: decoratorargs :: DecoratorArgs as :: unity2 :: IlType > :: il_type () , < crate :: combat :: skillstack :: SkillStack_Packet as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Deco_Skill as :: unity2 :: ClassIdentity > :: class () , "IsAvailable" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Deco_Skill as :: unity2 :: ClassIdentity > :: NAME , "IsAvailable" , e) , } } } pub unsafe fn is_available (that : crate :: combat :: decoratorargs :: DecoratorArgs , pair : crate :: combat :: skillstack :: SkillStack_Packet , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (crate :: combat :: decoratorargs :: DecoratorArgs , crate :: combat :: skillstack :: SkillStack_Packet , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_available :: get_method_info () . method_ptr ,) ; inner (that , pair , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_enter { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Deco_Skill as :: unity2 :: ClassIdentity > :: class () , "OnEnter" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Deco_Skill as :: unity2 :: ClassIdentity > :: NAME , "OnEnter" , e) , } } } pub unsafe fn on_enter (this : Deco_Skill , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Deco_Skill , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_enter :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_enter_attack { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Deco_Skill as :: unity2 :: ClassIdentity > :: class () , "OnEnterAttack" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Deco_Skill as :: unity2 :: ClassIdentity > :: NAME , "OnEnterAttack" , e) , } } } pub unsafe fn on_enter_attack (this : Deco_Skill , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Deco_Skill , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_enter_attack :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_enemy_damage { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: animationevent :: AnimationEvent as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Deco_Skill as :: unity2 :: ClassIdentity > :: class () , "OnEnemyDamage_" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Deco_Skill as :: unity2 :: ClassIdentity > :: NAME , "OnEnemyDamage_" , e) , } } } pub unsafe fn on_enemy_damage (this : Deco_Skill , ev : crate :: unity_engine :: animationevent :: AnimationEvent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Deco_Skill , crate :: unity_engine :: animationevent :: AnimationEvent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_enemy_damage :: get_method_info () . method_ptr ,) ; inner (this , ev , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_draw_skill_damages { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: phase :: Phase as :: unity2 :: IlType > :: il_type () , < crate :: combat :: skillstack :: SkillStack as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Deco_Skill as :: unity2 :: ClassIdentity > :: class () , "DrawSkillDamages" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Deco_Skill as :: unity2 :: ClassIdentity > :: NAME , "DrawSkillDamages" , e) , } } } pub unsafe fn draw_skill_damages (phase : crate :: combat :: phase :: Phase , skills : crate :: combat :: skillstack :: SkillStack , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: combat :: phase :: Phase , crate :: combat :: skillstack :: SkillStack , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_draw_skill_damages :: get_method_info () . method_ptr ,) ; inner (phase , skills , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_subspace { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: character :: Character as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Deco_Skill as :: unity2 :: ClassIdentity > :: class () , "IsSubspace" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Deco_Skill as :: unity2 :: ClassIdentity > :: NAME , "IsSubspace" , e) , } } } pub unsafe fn is_subspace (c : crate :: combat :: character :: Character , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (crate :: combat :: character :: Character , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_subspace :: get_method_info () . method_ptr ,) ; inner (c , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Deco_Skill as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Deco_Skill as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : Deco_Skill , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Deco_Skill , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "combat-deco_skill")]
+impl Deco_Skill { # [doc = "`IsAvailable(crate::combat::decoratorargs::DecoratorArgs, crate::combat::skillstack::SkillStack_Packet)` overload"] pub fn is_available (that : impl :: core :: convert :: Into < crate :: combat :: decoratorargs :: DecoratorArgs > , pair : impl :: core :: convert :: Into < crate :: combat :: skillstack :: SkillStack_Packet >) -> bool { unsafe { __Deco_Skill_unity2_raw :: is_available (:: core :: convert :: Into :: into (that) , :: core :: convert :: Into :: into (pair) , :: core :: option :: Option :: None) } } # [doc = "`DrawSkillDamages(crate::combat::phase::Phase, crate::combat::skillstack::SkillStack)` overload"] pub fn draw_skill_damages (phase : impl :: core :: convert :: Into < crate :: combat :: phase :: Phase > , skills : impl :: core :: convert :: Into < crate :: combat :: skillstack :: SkillStack >) -> () { unsafe { __Deco_Skill_unity2_raw :: draw_skill_damages (:: core :: convert :: Into :: into (phase) , :: core :: convert :: Into :: into (skills) , :: core :: option :: Option :: None) } } # [doc = "`IsSubspace(crate::combat::character::Character)` overload"] pub fn is_subspace (c : impl :: core :: convert :: Into < crate :: combat :: character :: Character >) -> bool { unsafe { __Deco_Skill_unity2_raw :: is_subspace (:: core :: convert :: Into :: into (c) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "combat-deco_skill")]
+pub trait IDeco_SkillMethods : IDeco_Skill { # [doc = "`get_Name()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < Deco_Skill as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Deco_Skill_unity2_raw :: get_name (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_Pair(crate::combat::skillstack::SkillStack_Packet)` overload"] fn set_pair (self , value : impl :: core :: convert :: Into < crate :: combat :: skillstack :: SkillStack_Packet >) -> () { unsafe { let __receiver = < Deco_Skill as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Deco_Skill_unity2_raw :: set_pair (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`OnEnter()` overload"] fn on_enter (self ,) -> () { unsafe { let __receiver = < Deco_Skill as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Deco_Skill_unity2_raw :: on_enter (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnEnterAttack()` overload"] fn on_enter_attack (self ,) -> () { unsafe { let __receiver = < Deco_Skill as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Deco_Skill_unity2_raw :: on_enter_attack (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnEnemyDamage_(crate::unity_engine::animationevent::AnimationEvent)` overload"] fn on_enemy_damage (self , ev : impl :: core :: convert :: Into < crate :: unity_engine :: animationevent :: AnimationEvent >) -> () { unsafe { let __receiver = < Deco_Skill as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Deco_Skill_unity2_raw :: on_enemy_damage (__receiver , :: core :: convert :: Into :: into (ev) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Deco_Skill as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Deco_Skill_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "combat-deco_skill")]
+impl < __T : IDeco_Skill > IDeco_SkillMethods for __T { }
+
+#[cfg(feature = "combat-deco_skill")]
+impl Deco_Skill { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Deco_Skill_unity2_raw :: __lookup_get_name :: get_method_info () } pub fn set_pair_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Deco_Skill_unity2_raw :: __lookup_set_pair :: get_method_info () } pub fn is_available_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Deco_Skill_unity2_raw :: __lookup_is_available :: get_method_info () } pub fn on_enter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Deco_Skill_unity2_raw :: __lookup_on_enter :: get_method_info () } pub fn on_enter_attack_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Deco_Skill_unity2_raw :: __lookup_on_enter_attack :: get_method_info () } pub fn on_enemy_damage_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Deco_Skill_unity2_raw :: __lookup_on_enemy_damage :: get_method_info () } pub fn draw_skill_damages_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Deco_Skill_unity2_raw :: __lookup_draw_skill_damages :: get_method_info () } pub fn is_subspace_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Deco_Skill_unity2_raw :: __lookup_is_subspace :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Deco_Skill_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "combat-deco_skill")]
 impl Deco_Skill {
-    #[doc = "`IsAvailable(crate::combat::decoratorargs::DecoratorArgs, crate::combat::skillstack::SkillStack_Packet)` overload"]
-    pub fn is_available(
-        that: impl ::core::convert::Into<crate::combat::decoratorargs::DecoratorArgs>,
-        pair: impl ::core::convert::Into<crate::combat::skillstack::SkillStack_Packet>,
-    ) -> bool {
-        unsafe {
-            __Deco_Skill_unity2_raw::is_available(
-                ::core::convert::Into::into(that),
-                ::core::convert::Into::into(pair),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`DrawSkillDamages(crate::combat::phase::Phase, crate::combat::skillstack::SkillStack)` overload"]
-    pub fn draw_skill_damages(
-        phase: impl ::core::convert::Into<crate::combat::phase::Phase>,
-        skills: impl ::core::convert::Into<crate::combat::skillstack::SkillStack>,
-    ) -> () {
-        unsafe {
-            __Deco_Skill_unity2_raw::draw_skill_damages(
-                ::core::convert::Into::into(phase),
-                ::core::convert::Into::into(skills),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`IsSubspace(crate::combat::character::Character)` overload"]
-    pub fn is_subspace(c: impl ::core::convert::Into<crate::combat::character::Character>) -> bool {
-        unsafe { __Deco_Skill_unity2_raw::is_subspace(::core::convert::Into::into(c), ::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "combat-deco_skill")]
-pub trait IDeco_SkillMethods: IDeco_Skill {
-    #[doc = "`get_Name()` overload"]
-    fn get_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <Deco_Skill as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Deco_Skill_unity2_raw::get_name(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_Pair(crate::combat::skillstack::SkillStack_Packet)` overload"]
-    fn set_pair(self, value: impl ::core::convert::Into<crate::combat::skillstack::SkillStack_Packet>) -> () {
-        unsafe {
-            let __receiver = <Deco_Skill as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Deco_Skill_unity2_raw::set_pair(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnEnter()` overload"]
-    fn on_enter(self) -> () {
-        unsafe {
-            let __receiver = <Deco_Skill as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Deco_Skill_unity2_raw::on_enter(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnEnterAttack()` overload"]
-    fn on_enter_attack(self) -> () {
-        unsafe {
-            let __receiver = <Deco_Skill as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Deco_Skill_unity2_raw::on_enter_attack(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnEnemyDamage_(crate::unity_engine::animationevent::AnimationEvent)` overload"]
-    fn on_enemy_damage(self, ev: impl ::core::convert::Into<crate::unity_engine::animationevent::AnimationEvent>) -> () {
-        unsafe {
-            let __receiver = <Deco_Skill as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Deco_Skill_unity2_raw::on_enemy_damage(__receiver, ::core::convert::Into::into(ev), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <Deco_Skill as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Deco_Skill_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "combat-deco_skill")]
-impl<__T: IDeco_Skill> IDeco_SkillMethods for __T {}
-
-#[cfg(feature = "combat-deco_skill")]
-impl Deco_Skill {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(Deco_Skill), ::core::stringify!(new),));
-        <Self as IDeco_SkillMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Deco_Skill) , :: core :: stringify ! (new) ,)) ; < Self as IDeco_SkillMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "combat-deco_skill")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{Deco_Skill, IDeco_Skill, IDeco_SkillMethods};
-    #[cfg(feature = "combat-decorator")]
-    pub use crate::combat::decorator::IDecoratorMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::{combat::decorator::IDecorator, system::object::IObject};
+    pub use super::Deco_Skill;
+    pub use super::IDeco_Skill;
+    pub use super::IDeco_SkillMethods;
+    pub use crate::combat::decorator::IDecorator;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "combat-decorator")] pub use crate::combat::decorator::IDecoratorMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

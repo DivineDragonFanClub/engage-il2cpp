@@ -2,702 +2,109 @@
 
 #[cfg(feature = "app-inventorypoolitemmenucontent-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::basicmenucontent::{BasicMenuContent, IBasicMenuContent},
-        system::{
-            object::{IObject, Object},
-            valuetype::{IValueType, ValueType},
-        },
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/inventorypoolitemmenucontent/InventoryPoolItemMenuContent.md"))]
-    #[::unity2::class(namespace = "App", name = "InventoryPoolItemMenuContent")]
-    #[parent(crate::app::basicmenucontent::BasicMenuContent)]
-    pub struct InventoryPoolItemMenuContent {
-        #[offset(232)]
-        #[rename(name = "m_MenuTitleText")]
-        pub m_menu_title_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(240)]
-        #[rename(name = "m_TransporterText")]
-        pub m_transporter_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(248)]
-        #[rename(name = "m_StockValueText")]
-        pub m_stock_value_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(256)]
-        #[rename(name = "m_StockValueMaxText")]
-        pub m_stock_value_max_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(264)]
-        #[rename(name = "m_KindBgName")]
-        pub m_kind_bg_name: crate::system::collections::generic::list_1::List_1<
-            crate::app::inventorypoolitemmenucontent::InventoryPoolItemMenuContent_KindBgNameClass,
-        >,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: basicmenucontent :: { BasicMenuContent , IBasicMenuContent }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/inventorypoolitemmenucontent/InventoryPoolItemMenuContent_KindBgNameClass.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct InventoryPoolItemMenuContent_KindBgNameClass {
-        pub m_kind: crate::app::itemdata::ItemData_Kinds,
-        pub m_bg: crate::unity_engine::ui::image::Image,
-    }
 
-    impl ::unity2::ClassIdentity for InventoryPoolItemMenuContent_KindBgNameClass {
-        const NAME: &'static str = "InventoryPoolItemMenuContent.KindBgNameClass";
-        const NAMESPACE: &'static str = "App";
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/inventorypoolitemmenucontent/InventoryPoolItemMenuContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "InventoryPoolItemMenuContent")] # [parent (crate :: app :: basicmenucontent :: BasicMenuContent)] pub struct InventoryPoolItemMenuContent {
+# [offset (232)] # [rename (name = "m_MenuTitleText")] pub m_menu_title_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (240)] # [rename (name = "m_TransporterText")] pub m_transporter_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (248)] # [rename (name = "m_StockValueText")] pub m_stock_value_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (256)] # [rename (name = "m_StockValueMaxText")] pub m_stock_value_max_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (264)] # [rename (name = "m_KindBgName")] pub m_kind_bg_name : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: inventorypoolitemmenucontent :: InventoryPoolItemMenuContent_KindBgNameClass > ,
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/inventorypoolitemmenucontent/InventoryPoolItemMenuContent_KindBgNameClass.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct InventoryPoolItemMenuContent_KindBgNameClass {
+    pub m_kind: crate :: app :: itemdata :: ItemData_Kinds,
+    pub m_bg: crate :: unity_engine :: ui :: image :: Image,
+}
+
+
+impl ::unity2::ClassIdentity for InventoryPoolItemMenuContent_KindBgNameClass {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "InventoryPoolItemMenuContent.KindBgNameClass";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for InventoryPoolItemMenuContent_KindBgNameClass {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl ::unity2::IlType for InventoryPoolItemMenuContent_KindBgNameClass {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
+
+}
+
 }
 
 #[cfg(feature = "app-inventorypoolitemmenucontent-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-inventorypoolitemmenucontent")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __InventoryPoolItemMenuContent_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_start {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InventoryPoolItemMenuContent as ::unity2::ClassIdentity>::class(),
-                "Start",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InventoryPoolItemMenuContent as ::unity2::ClassIdentity>::NAME,
-                        "Start",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn start(this: InventoryPoolItemMenuContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(InventoryPoolItemMenuContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_start::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_menu_item_content_max {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InventoryPoolItemMenuContent as ::unity2::ClassIdentity>::class(),
-                "GetMenuItemContentMax",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InventoryPoolItemMenuContent as ::unity2::ClassIdentity>::NAME,
-                        "GetMenuItemContentMax",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_menu_item_content_max(this: InventoryPoolItemMenuContent, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(InventoryPoolItemMenuContent, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_menu_item_content_max::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_cursor_moved_pos_y {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InventoryPoolItemMenuContent as ::unity2::ClassIdentity>::class(),
-                "CalcCursorMovedPosY",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InventoryPoolItemMenuContent as ::unity2::ClassIdentity>::NAME,
-                        "CalcCursorMovedPosY",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn calc_cursor_moved_pos_y(
-        this: InventoryPoolItemMenuContent,
-        menu_item_index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
-        let inner: extern "C" fn(InventoryPoolItemMenuContent, i32, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_calc_cursor_moved_pos_y::get_method_info().method_ptr);
-        inner(this, menu_item_index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_kind_num {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InventoryPoolItemMenuContent as ::unity2::ClassIdentity>::class(),
-                "GetKindNum",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InventoryPoolItemMenuContent as ::unity2::ClassIdentity>::NAME,
-                        "GetKindNum",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_kind_num(this: InventoryPoolItemMenuContent, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(InventoryPoolItemMenuContent, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_kind_num::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_first_kind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InventoryPoolItemMenuContent as ::unity2::ClassIdentity>::class(),
-                "GetFirstKind",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InventoryPoolItemMenuContent as ::unity2::ClassIdentity>::NAME,
-                        "GetFirstKind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_first_kind(
-        this: InventoryPoolItemMenuContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::itemdata::ItemData_Kinds {
-        let inner: extern "C" fn(InventoryPoolItemMenuContent, ::unity2::OptionalMethod) -> crate::app::itemdata::ItemData_Kinds =
-            ::core::mem::transmute(__lookup_get_first_kind::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_last_kind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InventoryPoolItemMenuContent as ::unity2::ClassIdentity>::class(),
-                "GetLastKind",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InventoryPoolItemMenuContent as ::unity2::ClassIdentity>::NAME,
-                        "GetLastKind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_last_kind(
-        this: InventoryPoolItemMenuContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::itemdata::ItemData_Kinds {
-        let inner: extern "C" fn(InventoryPoolItemMenuContent, ::unity2::OptionalMethod) -> crate::app::itemdata::ItemData_Kinds =
-            ::core::mem::transmute(__lookup_get_last_kind::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_next_kind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::itemdata::ItemData_Kinds as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InventoryPoolItemMenuContent as ::unity2::ClassIdentity>::class(),
-                "GetNextKind",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InventoryPoolItemMenuContent as ::unity2::ClassIdentity>::NAME,
-                        "GetNextKind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_next_kind(
-        this: InventoryPoolItemMenuContent,
-        kind: crate::app::itemdata::ItemData_Kinds,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::itemdata::ItemData_Kinds {
-        let inner: extern "C" fn(
-            InventoryPoolItemMenuContent,
-            crate::app::itemdata::ItemData_Kinds,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::itemdata::ItemData_Kinds = ::core::mem::transmute(__lookup_get_next_kind::get_method_info().method_ptr);
-        inner(this, kind, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_prev_kind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::itemdata::ItemData_Kinds as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InventoryPoolItemMenuContent as ::unity2::ClassIdentity>::class(),
-                "GetPrevKind",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InventoryPoolItemMenuContent as ::unity2::ClassIdentity>::NAME,
-                        "GetPrevKind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_prev_kind(
-        this: InventoryPoolItemMenuContent,
-        kind: crate::app::itemdata::ItemData_Kinds,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::itemdata::ItemData_Kinds {
-        let inner: extern "C" fn(
-            InventoryPoolItemMenuContent,
-            crate::app::itemdata::ItemData_Kinds,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::itemdata::ItemData_Kinds = ::core::mem::transmute(__lookup_get_prev_kind::get_method_info().method_ptr);
-        inner(this, kind, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_kind_index {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::itemdata::ItemData_Kinds as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InventoryPoolItemMenuContent as ::unity2::ClassIdentity>::class(),
-                "GetKindIndex",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InventoryPoolItemMenuContent as ::unity2::ClassIdentity>::NAME,
-                        "GetKindIndex",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_kind_index(
-        this: InventoryPoolItemMenuContent,
-        kind: crate::app::itemdata::ItemData_Kinds,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(InventoryPoolItemMenuContent, crate::app::itemdata::ItemData_Kinds, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_kind_index::get_method_info().method_ptr);
-        inner(this, kind, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_kind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::itemdata::ItemData_Kinds as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InventoryPoolItemMenuContent as ::unity2::ClassIdentity>::class(),
-                "SetKind",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InventoryPoolItemMenuContent as ::unity2::ClassIdentity>::NAME,
-                        "SetKind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_kind(
-        this: InventoryPoolItemMenuContent,
-        kind: crate::app::itemdata::ItemData_Kinds,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(InventoryPoolItemMenuContent, crate::app::itemdata::ItemData_Kinds, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_kind::get_method_info().method_ptr);
-        inner(this, kind, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_stock_value {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InventoryPoolItemMenuContent as ::unity2::ClassIdentity>::class(),
-                "SetStockValue",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InventoryPoolItemMenuContent as ::unity2::ClassIdentity>::NAME,
-                        "SetStockValue",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_stock_value(this: InventoryPoolItemMenuContent, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(InventoryPoolItemMenuContent, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_stock_value::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_stock_value_max {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InventoryPoolItemMenuContent as ::unity2::ClassIdentity>::class(),
-                "SetStockValueMax",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InventoryPoolItemMenuContent as ::unity2::ClassIdentity>::NAME,
-                        "SetStockValueMax",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_stock_value_max(this: InventoryPoolItemMenuContent, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(InventoryPoolItemMenuContent, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_stock_value_max::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InventoryPoolItemMenuContent as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InventoryPoolItemMenuContent as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: InventoryPoolItemMenuContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(InventoryPoolItemMenuContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __InventoryPoolItemMenuContent_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_start { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InventoryPoolItemMenuContent as :: unity2 :: ClassIdentity > :: class () , "Start" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InventoryPoolItemMenuContent as :: unity2 :: ClassIdentity > :: NAME , "Start" , e) , } } } pub unsafe fn start (this : InventoryPoolItemMenuContent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (InventoryPoolItemMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_start :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_menu_item_content_max { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InventoryPoolItemMenuContent as :: unity2 :: ClassIdentity > :: class () , "GetMenuItemContentMax" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InventoryPoolItemMenuContent as :: unity2 :: ClassIdentity > :: NAME , "GetMenuItemContentMax" , e) , } } } pub unsafe fn get_menu_item_content_max (this : InventoryPoolItemMenuContent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (InventoryPoolItemMenuContent , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_menu_item_content_max :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_calc_cursor_moved_pos_y { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InventoryPoolItemMenuContent as :: unity2 :: ClassIdentity > :: class () , "CalcCursorMovedPosY" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InventoryPoolItemMenuContent as :: unity2 :: ClassIdentity > :: NAME , "CalcCursorMovedPosY" , e) , } } } pub unsafe fn calc_cursor_moved_pos_y (this : InventoryPoolItemMenuContent , menu_item_index : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (InventoryPoolItemMenuContent , i32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_calc_cursor_moved_pos_y :: get_method_info () . method_ptr ,) ; inner (this , menu_item_index , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_kind_num { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InventoryPoolItemMenuContent as :: unity2 :: ClassIdentity > :: class () , "GetKindNum" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InventoryPoolItemMenuContent as :: unity2 :: ClassIdentity > :: NAME , "GetKindNum" , e) , } } } pub unsafe fn get_kind_num (this : InventoryPoolItemMenuContent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (InventoryPoolItemMenuContent , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_kind_num :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_first_kind { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InventoryPoolItemMenuContent as :: unity2 :: ClassIdentity > :: class () , "GetFirstKind" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InventoryPoolItemMenuContent as :: unity2 :: ClassIdentity > :: NAME , "GetFirstKind" , e) , } } } pub unsafe fn get_first_kind (this : InventoryPoolItemMenuContent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: itemdata :: ItemData_Kinds { let inner : extern "C" fn (InventoryPoolItemMenuContent , :: unity2 :: OptionalMethod ,) -> crate :: app :: itemdata :: ItemData_Kinds = :: core :: mem :: transmute (__lookup_get_first_kind :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_last_kind { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InventoryPoolItemMenuContent as :: unity2 :: ClassIdentity > :: class () , "GetLastKind" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InventoryPoolItemMenuContent as :: unity2 :: ClassIdentity > :: NAME , "GetLastKind" , e) , } } } pub unsafe fn get_last_kind (this : InventoryPoolItemMenuContent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: itemdata :: ItemData_Kinds { let inner : extern "C" fn (InventoryPoolItemMenuContent , :: unity2 :: OptionalMethod ,) -> crate :: app :: itemdata :: ItemData_Kinds = :: core :: mem :: transmute (__lookup_get_last_kind :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_next_kind { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: itemdata :: ItemData_Kinds as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InventoryPoolItemMenuContent as :: unity2 :: ClassIdentity > :: class () , "GetNextKind" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InventoryPoolItemMenuContent as :: unity2 :: ClassIdentity > :: NAME , "GetNextKind" , e) , } } } pub unsafe fn get_next_kind (this : InventoryPoolItemMenuContent , kind : crate :: app :: itemdata :: ItemData_Kinds , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: itemdata :: ItemData_Kinds { let inner : extern "C" fn (InventoryPoolItemMenuContent , crate :: app :: itemdata :: ItemData_Kinds , :: unity2 :: OptionalMethod ,) -> crate :: app :: itemdata :: ItemData_Kinds = :: core :: mem :: transmute (__lookup_get_next_kind :: get_method_info () . method_ptr ,) ; inner (this , kind , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_prev_kind { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: itemdata :: ItemData_Kinds as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InventoryPoolItemMenuContent as :: unity2 :: ClassIdentity > :: class () , "GetPrevKind" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InventoryPoolItemMenuContent as :: unity2 :: ClassIdentity > :: NAME , "GetPrevKind" , e) , } } } pub unsafe fn get_prev_kind (this : InventoryPoolItemMenuContent , kind : crate :: app :: itemdata :: ItemData_Kinds , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: itemdata :: ItemData_Kinds { let inner : extern "C" fn (InventoryPoolItemMenuContent , crate :: app :: itemdata :: ItemData_Kinds , :: unity2 :: OptionalMethod ,) -> crate :: app :: itemdata :: ItemData_Kinds = :: core :: mem :: transmute (__lookup_get_prev_kind :: get_method_info () . method_ptr ,) ; inner (this , kind , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_kind_index { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: itemdata :: ItemData_Kinds as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InventoryPoolItemMenuContent as :: unity2 :: ClassIdentity > :: class () , "GetKindIndex" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InventoryPoolItemMenuContent as :: unity2 :: ClassIdentity > :: NAME , "GetKindIndex" , e) , } } } pub unsafe fn get_kind_index (this : InventoryPoolItemMenuContent , kind : crate :: app :: itemdata :: ItemData_Kinds , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (InventoryPoolItemMenuContent , crate :: app :: itemdata :: ItemData_Kinds , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_kind_index :: get_method_info () . method_ptr ,) ; inner (this , kind , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_kind { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: itemdata :: ItemData_Kinds as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InventoryPoolItemMenuContent as :: unity2 :: ClassIdentity > :: class () , "SetKind" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InventoryPoolItemMenuContent as :: unity2 :: ClassIdentity > :: NAME , "SetKind" , e) , } } } pub unsafe fn set_kind (this : InventoryPoolItemMenuContent , kind : crate :: app :: itemdata :: ItemData_Kinds , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (InventoryPoolItemMenuContent , crate :: app :: itemdata :: ItemData_Kinds , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_kind :: get_method_info () . method_ptr ,) ; inner (this , kind , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_stock_value { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InventoryPoolItemMenuContent as :: unity2 :: ClassIdentity > :: class () , "SetStockValue" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InventoryPoolItemMenuContent as :: unity2 :: ClassIdentity > :: NAME , "SetStockValue" , e) , } } } pub unsafe fn set_stock_value (this : InventoryPoolItemMenuContent , value : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (InventoryPoolItemMenuContent , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_stock_value :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_stock_value_max { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InventoryPoolItemMenuContent as :: unity2 :: ClassIdentity > :: class () , "SetStockValueMax" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InventoryPoolItemMenuContent as :: unity2 :: ClassIdentity > :: NAME , "SetStockValueMax" , e) , } } } pub unsafe fn set_stock_value_max (this : InventoryPoolItemMenuContent , value : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (InventoryPoolItemMenuContent , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_stock_value_max :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InventoryPoolItemMenuContent as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InventoryPoolItemMenuContent as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : InventoryPoolItemMenuContent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (InventoryPoolItemMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-inventorypoolitemmenucontent")]
-pub trait IInventoryPoolItemMenuContentMethods: IInventoryPoolItemMenuContent {
-    #[doc = "`Start()` overload"]
-    fn start(self) -> () {
-        unsafe {
-            let __receiver =
-                <InventoryPoolItemMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InventoryPoolItemMenuContent_unity2_raw::start(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetMenuItemContentMax()` overload"]
-    fn get_menu_item_content_max(self) -> i32 {
-        unsafe {
-            let __receiver =
-                <InventoryPoolItemMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InventoryPoolItemMenuContent_unity2_raw::get_menu_item_content_max(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CalcCursorMovedPosY(i32)` overload"]
-    fn calc_cursor_moved_pos_y(self, menu_item_index: impl ::core::convert::Into<i32>) -> f32 {
-        unsafe {
-            let __receiver =
-                <InventoryPoolItemMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InventoryPoolItemMenuContent_unity2_raw::calc_cursor_moved_pos_y(
-                __receiver,
-                ::core::convert::Into::into(menu_item_index),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetKindNum()` overload"]
-    fn get_kind_num(self) -> i32 {
-        unsafe {
-            let __receiver =
-                <InventoryPoolItemMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InventoryPoolItemMenuContent_unity2_raw::get_kind_num(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetFirstKind()` overload"]
-    fn get_first_kind(self) -> crate::app::itemdata::ItemData_Kinds {
-        unsafe {
-            let __receiver =
-                <InventoryPoolItemMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InventoryPoolItemMenuContent_unity2_raw::get_first_kind(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetLastKind()` overload"]
-    fn get_last_kind(self) -> crate::app::itemdata::ItemData_Kinds {
-        unsafe {
-            let __receiver =
-                <InventoryPoolItemMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InventoryPoolItemMenuContent_unity2_raw::get_last_kind(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetNextKind(crate::app::itemdata::ItemData_Kinds)` overload"]
-    fn get_next_kind(self, kind: impl ::core::convert::Into<crate::app::itemdata::ItemData_Kinds>) -> crate::app::itemdata::ItemData_Kinds {
-        unsafe {
-            let __receiver =
-                <InventoryPoolItemMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InventoryPoolItemMenuContent_unity2_raw::get_next_kind(__receiver, ::core::convert::Into::into(kind), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetPrevKind(crate::app::itemdata::ItemData_Kinds)` overload"]
-    fn get_prev_kind(self, kind: impl ::core::convert::Into<crate::app::itemdata::ItemData_Kinds>) -> crate::app::itemdata::ItemData_Kinds {
-        unsafe {
-            let __receiver =
-                <InventoryPoolItemMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InventoryPoolItemMenuContent_unity2_raw::get_prev_kind(__receiver, ::core::convert::Into::into(kind), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetKindIndex(crate::app::itemdata::ItemData_Kinds)` overload"]
-    fn get_kind_index(self, kind: impl ::core::convert::Into<crate::app::itemdata::ItemData_Kinds>) -> i32 {
-        unsafe {
-            let __receiver =
-                <InventoryPoolItemMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InventoryPoolItemMenuContent_unity2_raw::get_kind_index(__receiver, ::core::convert::Into::into(kind), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetKind(crate::app::itemdata::ItemData_Kinds)` overload"]
-    fn set_kind(self, kind: impl ::core::convert::Into<crate::app::itemdata::ItemData_Kinds>) -> () {
-        unsafe {
-            let __receiver =
-                <InventoryPoolItemMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InventoryPoolItemMenuContent_unity2_raw::set_kind(__receiver, ::core::convert::Into::into(kind), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetStockValue(i32)` overload"]
-    fn set_stock_value(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver =
-                <InventoryPoolItemMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InventoryPoolItemMenuContent_unity2_raw::set_stock_value(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetStockValueMax(i32)` overload"]
-    fn set_stock_value_max(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver =
-                <InventoryPoolItemMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InventoryPoolItemMenuContent_unity2_raw::set_stock_value_max(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <InventoryPoolItemMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InventoryPoolItemMenuContent_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IInventoryPoolItemMenuContentMethods : IInventoryPoolItemMenuContent { # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < InventoryPoolItemMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __InventoryPoolItemMenuContent_unity2_raw :: start (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetMenuItemContentMax()` overload"] fn get_menu_item_content_max (self ,) -> i32 { unsafe { let __receiver = < InventoryPoolItemMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __InventoryPoolItemMenuContent_unity2_raw :: get_menu_item_content_max (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CalcCursorMovedPosY(i32)` overload"] fn calc_cursor_moved_pos_y (self , menu_item_index : impl :: core :: convert :: Into < i32 >) -> f32 { unsafe { let __receiver = < InventoryPoolItemMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __InventoryPoolItemMenuContent_unity2_raw :: calc_cursor_moved_pos_y (__receiver , :: core :: convert :: Into :: into (menu_item_index) , :: core :: option :: Option :: None) } } # [doc = "`GetKindNum()` overload"] fn get_kind_num (self ,) -> i32 { unsafe { let __receiver = < InventoryPoolItemMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __InventoryPoolItemMenuContent_unity2_raw :: get_kind_num (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetFirstKind()` overload"] fn get_first_kind (self ,) -> crate :: app :: itemdata :: ItemData_Kinds { unsafe { let __receiver = < InventoryPoolItemMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __InventoryPoolItemMenuContent_unity2_raw :: get_first_kind (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetLastKind()` overload"] fn get_last_kind (self ,) -> crate :: app :: itemdata :: ItemData_Kinds { unsafe { let __receiver = < InventoryPoolItemMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __InventoryPoolItemMenuContent_unity2_raw :: get_last_kind (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetNextKind(crate::app::itemdata::ItemData_Kinds)` overload"] fn get_next_kind (self , kind : impl :: core :: convert :: Into < crate :: app :: itemdata :: ItemData_Kinds >) -> crate :: app :: itemdata :: ItemData_Kinds { unsafe { let __receiver = < InventoryPoolItemMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __InventoryPoolItemMenuContent_unity2_raw :: get_next_kind (__receiver , :: core :: convert :: Into :: into (kind) , :: core :: option :: Option :: None) } } # [doc = "`GetPrevKind(crate::app::itemdata::ItemData_Kinds)` overload"] fn get_prev_kind (self , kind : impl :: core :: convert :: Into < crate :: app :: itemdata :: ItemData_Kinds >) -> crate :: app :: itemdata :: ItemData_Kinds { unsafe { let __receiver = < InventoryPoolItemMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __InventoryPoolItemMenuContent_unity2_raw :: get_prev_kind (__receiver , :: core :: convert :: Into :: into (kind) , :: core :: option :: Option :: None) } } # [doc = "`GetKindIndex(crate::app::itemdata::ItemData_Kinds)` overload"] fn get_kind_index (self , kind : impl :: core :: convert :: Into < crate :: app :: itemdata :: ItemData_Kinds >) -> i32 { unsafe { let __receiver = < InventoryPoolItemMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __InventoryPoolItemMenuContent_unity2_raw :: get_kind_index (__receiver , :: core :: convert :: Into :: into (kind) , :: core :: option :: Option :: None) } } # [doc = "`SetKind(crate::app::itemdata::ItemData_Kinds)` overload"] fn set_kind (self , kind : impl :: core :: convert :: Into < crate :: app :: itemdata :: ItemData_Kinds >) -> () { unsafe { let __receiver = < InventoryPoolItemMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __InventoryPoolItemMenuContent_unity2_raw :: set_kind (__receiver , :: core :: convert :: Into :: into (kind) , :: core :: option :: Option :: None) } } # [doc = "`SetStockValue(i32)` overload"] fn set_stock_value (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < InventoryPoolItemMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __InventoryPoolItemMenuContent_unity2_raw :: set_stock_value (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`SetStockValueMax(i32)` overload"] fn set_stock_value_max (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < InventoryPoolItemMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __InventoryPoolItemMenuContent_unity2_raw :: set_stock_value_max (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < InventoryPoolItemMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __InventoryPoolItemMenuContent_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-inventorypoolitemmenucontent")]
-impl<__T: IInventoryPoolItemMenuContent> IInventoryPoolItemMenuContentMethods for __T {}
+impl < __T : IInventoryPoolItemMenuContent > IInventoryPoolItemMenuContentMethods for __T { }
+
+#[cfg(feature = "app-inventorypoolitemmenucontent")]
+impl InventoryPoolItemMenuContent { pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InventoryPoolItemMenuContent_unity2_raw :: __lookup_start :: get_method_info () } pub fn get_menu_item_content_max_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InventoryPoolItemMenuContent_unity2_raw :: __lookup_get_menu_item_content_max :: get_method_info () } pub fn calc_cursor_moved_pos_y_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InventoryPoolItemMenuContent_unity2_raw :: __lookup_calc_cursor_moved_pos_y :: get_method_info () } pub fn get_kind_num_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InventoryPoolItemMenuContent_unity2_raw :: __lookup_get_kind_num :: get_method_info () } pub fn get_first_kind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InventoryPoolItemMenuContent_unity2_raw :: __lookup_get_first_kind :: get_method_info () } pub fn get_last_kind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InventoryPoolItemMenuContent_unity2_raw :: __lookup_get_last_kind :: get_method_info () } pub fn get_next_kind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InventoryPoolItemMenuContent_unity2_raw :: __lookup_get_next_kind :: get_method_info () } pub fn get_prev_kind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InventoryPoolItemMenuContent_unity2_raw :: __lookup_get_prev_kind :: get_method_info () } pub fn get_kind_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InventoryPoolItemMenuContent_unity2_raw :: __lookup_get_kind_index :: get_method_info () } pub fn set_kind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InventoryPoolItemMenuContent_unity2_raw :: __lookup_set_kind :: get_method_info () } pub fn set_stock_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InventoryPoolItemMenuContent_unity2_raw :: __lookup_set_stock_value :: get_method_info () } pub fn set_stock_value_max_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InventoryPoolItemMenuContent_unity2_raw :: __lookup_set_stock_value_max :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InventoryPoolItemMenuContent_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-inventorypoolitemmenucontent")]
 impl InventoryPoolItemMenuContent {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(InventoryPoolItemMenuContent),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IInventoryPoolItemMenuContentMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (InventoryPoolItemMenuContent) , :: core :: stringify ! (new) ,)) ; < Self as IInventoryPoolItemMenuContentMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-inventorypoolitemmenucontent")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{
-        IInventoryPoolItemMenuContent, IInventoryPoolItemMenuContentMethods, InventoryPoolItemMenuContent,
-        InventoryPoolItemMenuContent_KindBgNameClass,
-    };
-    #[cfg(feature = "app-basicmenucontent")]
-    pub use crate::app::basicmenucontent::IBasicMenuContentMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        app::basicmenucontent::IBasicMenuContent,
-        system::{object::IObject, valuetype::IValueType},
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::InventoryPoolItemMenuContent;
+    pub use super::IInventoryPoolItemMenuContent;
+    pub use super::IInventoryPoolItemMenuContentMethods;
+    pub use super::InventoryPoolItemMenuContent_KindBgNameClass;
+    pub use crate::app::basicmenucontent::IBasicMenuContent;
+    pub use crate::system::object::IObject;
+    pub use crate::system::valuetype::IValueType;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "app-basicmenucontent")] pub use crate::app::basicmenucontent::IBasicMenuContentMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

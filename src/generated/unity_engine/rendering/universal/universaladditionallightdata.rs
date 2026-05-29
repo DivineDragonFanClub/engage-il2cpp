@@ -2,425 +2,68 @@
 
 #[cfg(feature = "unity_engine-rendering-universal-universaladditionallightdata-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/universaladditionallightdata/UniversalAdditionalLightData.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Rendering.Universal", name = "UniversalAdditionalLightData")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct UniversalAdditionalLightData {
-        #[offset(24)]
-        #[rename(name = "m_UsePipelineSettings")]
-        pub m_use_pipeline_settings: bool,
-        #[offset(28)]
-        #[rename(name = "m_CustomIntensity")]
-        pub m_custom_intensity: f32,
-        #[static_field]
-        #[rename(name = "CustomMode_Default")]
-        pub custom_mode_default: i32,
-        #[static_field]
-        #[rename(name = "CustomMode_Batch")]
-        pub custom_mode_batch: i32,
-        #[offset(32)]
-        #[rename(name = "m_CustomMode")]
-        pub m_custom_mode: i32,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/universaladditionallightdata/UniversalAdditionalLightData.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.Universal" , name = "UniversalAdditionalLightData")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct UniversalAdditionalLightData {
+# [offset (24)] # [rename (name = "m_UsePipelineSettings")] pub m_use_pipeline_settings : bool ,
+# [offset (28)] # [rename (name = "m_CustomIntensity")] pub m_custom_intensity : f32 ,
+# [static_field] # [rename (name = "CustomMode_Default")] pub custom_mode_default : i32 ,
+# [static_field] # [rename (name = "CustomMode_Batch")] pub custom_mode_batch : i32 ,
+# [offset (32)] # [rename (name = "m_CustomMode")] pub m_custom_mode : i32 ,
+}
+
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-universaladditionallightdata-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-universal-universaladditionallightdata")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __UniversalAdditionalLightData_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_use_pipeline_settings {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UniversalAdditionalLightData as ::unity2::ClassIdentity>::class(),
-                "get_usePipelineSettings",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UniversalAdditionalLightData as ::unity2::ClassIdentity>::NAME,
-                        "get_usePipelineSettings",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_use_pipeline_settings(this: UniversalAdditionalLightData, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(UniversalAdditionalLightData, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_use_pipeline_settings::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_use_pipeline_settings {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UniversalAdditionalLightData as ::unity2::ClassIdentity>::class(),
-                "set_usePipelineSettings",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UniversalAdditionalLightData as ::unity2::ClassIdentity>::NAME,
-                        "set_usePipelineSettings",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_use_pipeline_settings(this: UniversalAdditionalLightData, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(UniversalAdditionalLightData, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_use_pipeline_settings::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_custom_intensity {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UniversalAdditionalLightData as ::unity2::ClassIdentity>::class(),
-                "get_customIntensity",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UniversalAdditionalLightData as ::unity2::ClassIdentity>::NAME,
-                        "get_customIntensity",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_custom_intensity(this: UniversalAdditionalLightData, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(UniversalAdditionalLightData, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_get_custom_intensity::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_custom_intensity {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UniversalAdditionalLightData as ::unity2::ClassIdentity>::class(),
-                "set_customIntensity",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UniversalAdditionalLightData as ::unity2::ClassIdentity>::NAME,
-                        "set_customIntensity",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_custom_intensity(this: UniversalAdditionalLightData, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(UniversalAdditionalLightData, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_custom_intensity::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_custom_mode {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UniversalAdditionalLightData as ::unity2::ClassIdentity>::class(),
-                "get_customMode",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UniversalAdditionalLightData as ::unity2::ClassIdentity>::NAME,
-                        "get_customMode",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_custom_mode(this: UniversalAdditionalLightData, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(UniversalAdditionalLightData, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_custom_mode::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_custom_mode {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UniversalAdditionalLightData as ::unity2::ClassIdentity>::class(),
-                "set_customMode",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UniversalAdditionalLightData as ::unity2::ClassIdentity>::NAME,
-                        "set_customMode",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_custom_mode(this: UniversalAdditionalLightData, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(UniversalAdditionalLightData, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_custom_mode::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UniversalAdditionalLightData as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UniversalAdditionalLightData as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: UniversalAdditionalLightData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(UniversalAdditionalLightData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UniversalAdditionalLightData as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UniversalAdditionalLightData as ::unity2::ClassIdentity>::NAME,
-                        ".cctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __UniversalAdditionalLightData_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_use_pipeline_settings { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UniversalAdditionalLightData as :: unity2 :: ClassIdentity > :: class () , "get_usePipelineSettings" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UniversalAdditionalLightData as :: unity2 :: ClassIdentity > :: NAME , "get_usePipelineSettings" , e) , } } } pub unsafe fn get_use_pipeline_settings (this : UniversalAdditionalLightData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (UniversalAdditionalLightData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_use_pipeline_settings :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_use_pipeline_settings { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UniversalAdditionalLightData as :: unity2 :: ClassIdentity > :: class () , "set_usePipelineSettings" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UniversalAdditionalLightData as :: unity2 :: ClassIdentity > :: NAME , "set_usePipelineSettings" , e) , } } } pub unsafe fn set_use_pipeline_settings (this : UniversalAdditionalLightData , value : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UniversalAdditionalLightData , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_use_pipeline_settings :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_custom_intensity { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UniversalAdditionalLightData as :: unity2 :: ClassIdentity > :: class () , "get_customIntensity" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UniversalAdditionalLightData as :: unity2 :: ClassIdentity > :: NAME , "get_customIntensity" , e) , } } } pub unsafe fn get_custom_intensity (this : UniversalAdditionalLightData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (UniversalAdditionalLightData , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_get_custom_intensity :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_custom_intensity { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UniversalAdditionalLightData as :: unity2 :: ClassIdentity > :: class () , "set_customIntensity" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UniversalAdditionalLightData as :: unity2 :: ClassIdentity > :: NAME , "set_customIntensity" , e) , } } } pub unsafe fn set_custom_intensity (this : UniversalAdditionalLightData , value : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UniversalAdditionalLightData , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_custom_intensity :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_custom_mode { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UniversalAdditionalLightData as :: unity2 :: ClassIdentity > :: class () , "get_customMode" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UniversalAdditionalLightData as :: unity2 :: ClassIdentity > :: NAME , "get_customMode" , e) , } } } pub unsafe fn get_custom_mode (this : UniversalAdditionalLightData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (UniversalAdditionalLightData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_custom_mode :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_custom_mode { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UniversalAdditionalLightData as :: unity2 :: ClassIdentity > :: class () , "set_customMode" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UniversalAdditionalLightData as :: unity2 :: ClassIdentity > :: NAME , "set_customMode" , e) , } } } pub unsafe fn set_custom_mode (this : UniversalAdditionalLightData , value : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UniversalAdditionalLightData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_custom_mode :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UniversalAdditionalLightData as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UniversalAdditionalLightData as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : UniversalAdditionalLightData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UniversalAdditionalLightData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UniversalAdditionalLightData as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UniversalAdditionalLightData as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
+
+#[cfg(feature = "unity_engine-rendering-universal-universaladditionallightdata")]
+impl UniversalAdditionalLightData { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { __UniversalAdditionalLightData_unity2_raw :: cctor (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-rendering-universal-universaladditionallightdata")]
+pub trait IUniversalAdditionalLightDataMethods : IUniversalAdditionalLightData { # [doc = "`get_usePipelineSettings()` overload"] fn get_use_pipeline_settings (self ,) -> bool { unsafe { let __receiver = < UniversalAdditionalLightData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UniversalAdditionalLightData_unity2_raw :: get_use_pipeline_settings (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_usePipelineSettings(bool)` overload"] fn set_use_pipeline_settings (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < UniversalAdditionalLightData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UniversalAdditionalLightData_unity2_raw :: set_use_pipeline_settings (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_customIntensity()` overload"] fn get_custom_intensity (self ,) -> f32 { unsafe { let __receiver = < UniversalAdditionalLightData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UniversalAdditionalLightData_unity2_raw :: get_custom_intensity (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_customIntensity(f32)` overload"] fn set_custom_intensity (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < UniversalAdditionalLightData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UniversalAdditionalLightData_unity2_raw :: set_custom_intensity (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_customMode()` overload"] fn get_custom_mode (self ,) -> i32 { unsafe { let __receiver = < UniversalAdditionalLightData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UniversalAdditionalLightData_unity2_raw :: get_custom_mode (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_customMode(i32)` overload"] fn set_custom_mode (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < UniversalAdditionalLightData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UniversalAdditionalLightData_unity2_raw :: set_custom_mode (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < UniversalAdditionalLightData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UniversalAdditionalLightData_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-rendering-universal-universaladditionallightdata")]
+impl < __T : IUniversalAdditionalLightData > IUniversalAdditionalLightDataMethods for __T { }
+
+#[cfg(feature = "unity_engine-rendering-universal-universaladditionallightdata")]
+impl UniversalAdditionalLightData { pub fn get_use_pipeline_settings_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UniversalAdditionalLightData_unity2_raw :: __lookup_get_use_pipeline_settings :: get_method_info () } pub fn set_use_pipeline_settings_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UniversalAdditionalLightData_unity2_raw :: __lookup_set_use_pipeline_settings :: get_method_info () } pub fn get_custom_intensity_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UniversalAdditionalLightData_unity2_raw :: __lookup_get_custom_intensity :: get_method_info () } pub fn set_custom_intensity_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UniversalAdditionalLightData_unity2_raw :: __lookup_set_custom_intensity :: get_method_info () } pub fn get_custom_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UniversalAdditionalLightData_unity2_raw :: __lookup_get_custom_mode :: get_method_info () } pub fn set_custom_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UniversalAdditionalLightData_unity2_raw :: __lookup_set_custom_mode :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UniversalAdditionalLightData_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UniversalAdditionalLightData_unity2_raw :: __lookup_cctor :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-rendering-universal-universaladditionallightdata")]
 impl UniversalAdditionalLightData {
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __UniversalAdditionalLightData_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-universaladditionallightdata")]
-pub trait IUniversalAdditionalLightDataMethods: IUniversalAdditionalLightData {
-    #[doc = "`get_usePipelineSettings()` overload"]
-    fn get_use_pipeline_settings(self) -> bool {
-        unsafe {
-            let __receiver =
-                <UniversalAdditionalLightData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UniversalAdditionalLightData_unity2_raw::get_use_pipeline_settings(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_usePipelineSettings(bool)` overload"]
-    fn set_use_pipeline_settings(self, value: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver =
-                <UniversalAdditionalLightData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UniversalAdditionalLightData_unity2_raw::set_use_pipeline_settings(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_customIntensity()` overload"]
-    fn get_custom_intensity(self) -> f32 {
-        unsafe {
-            let __receiver =
-                <UniversalAdditionalLightData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UniversalAdditionalLightData_unity2_raw::get_custom_intensity(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_customIntensity(f32)` overload"]
-    fn set_custom_intensity(self, value: impl ::core::convert::Into<f32>) -> () {
-        unsafe {
-            let __receiver =
-                <UniversalAdditionalLightData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UniversalAdditionalLightData_unity2_raw::set_custom_intensity(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_customMode()` overload"]
-    fn get_custom_mode(self) -> i32 {
-        unsafe {
-            let __receiver =
-                <UniversalAdditionalLightData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UniversalAdditionalLightData_unity2_raw::get_custom_mode(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_customMode(i32)` overload"]
-    fn set_custom_mode(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver =
-                <UniversalAdditionalLightData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UniversalAdditionalLightData_unity2_raw::set_custom_mode(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <UniversalAdditionalLightData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UniversalAdditionalLightData_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-universaladditionallightdata")]
-impl<__T: IUniversalAdditionalLightData> IUniversalAdditionalLightDataMethods for __T {}
-
-#[cfg(feature = "unity_engine-rendering-universal-universaladditionallightdata")]
-impl UniversalAdditionalLightData {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(UniversalAdditionalLightData),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IUniversalAdditionalLightDataMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (UniversalAdditionalLightData) , :: core :: stringify ! (new) ,)) ; < Self as IUniversalAdditionalLightDataMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-universaladditionallightdata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IUniversalAdditionalLightData, IUniversalAdditionalLightDataMethods, UniversalAdditionalLightData};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        system::object::IObject,
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::UniversalAdditionalLightData;
+    pub use super::IUniversalAdditionalLightData;
+    pub use super::IUniversalAdditionalLightDataMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

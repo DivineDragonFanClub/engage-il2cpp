@@ -2,253 +2,58 @@
 
 #[cfg(feature = "moon_sharp-interpreter-core_lib-io-standardiofileuserdatabase-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        moon_sharp::interpreter::{
-            core_lib::io::{
-                fileuserdatabase::{FileUserDataBase, IFileUserDataBase},
-                streamfileuserdatabase::{IStreamFileUserDataBase, StreamFileUserDataBase},
-            },
-            refidobject::{IRefIdObject, RefIdObject},
-        },
-        system::object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/core_lib/io/standardiofileuserdatabase/StandardIOFileUserDataBase.md"))]
-    #[::unity2::class(namespace = "MoonSharp.Interpreter.CoreLib.IO", name = "StandardIOFileUserDataBase")]
-    #[parent(crate::moon_sharp::interpreter::core_lib::io::streamfileuserdatabase::StreamFileUserDataBase)]
-    pub struct StandardIOFileUserDataBase {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: moon_sharp :: interpreter :: core_lib :: io :: fileuserdatabase :: { FileUserDataBase , IFileUserDataBase }
+ ;
+ use crate :: moon_sharp :: interpreter :: core_lib :: io :: streamfileuserdatabase :: { IStreamFileUserDataBase , StreamFileUserDataBase }
+ ;
+ use crate :: moon_sharp :: interpreter :: refidobject :: { IRefIdObject , RefIdObject }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/core_lib/io/standardiofileuserdatabase/StandardIOFileUserDataBase.md"))] # [:: unity2 :: class (namespace = "MoonSharp.Interpreter.CoreLib.IO" , name = "StandardIOFileUserDataBase")] # [parent (crate :: moon_sharp :: interpreter :: core_lib :: io :: streamfileuserdatabase :: StreamFileUserDataBase)] pub struct StandardIOFileUserDataBase {}
+
 }
 
 #[cfg(feature = "moon_sharp-interpreter-core_lib-io-standardiofileuserdatabase-types")]
 pub use __types::*;
 
 #[cfg(feature = "moon_sharp-interpreter-core_lib-io-standardiofileuserdatabase")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __StandardIOFileUserDataBase_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_close {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <StandardIOFileUserDataBase as ::unity2::ClassIdentity>::class(),
-                "Close",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <StandardIOFileUserDataBase as ::unity2::ClassIdentity>::NAME,
-                        "Close",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn close(this: StandardIOFileUserDataBase, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(StandardIOFileUserDataBase, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_close::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_input_stream {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::io::stream::Stream as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <StandardIOFileUserDataBase as ::unity2::ClassIdentity>::class(),
-                "CreateInputStream",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <StandardIOFileUserDataBase as ::unity2::ClassIdentity>::NAME,
-                        "CreateInputStream",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_input_stream(
-        stream: crate::system::io::stream::Stream,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::moon_sharp::interpreter::core_lib::io::standardiofileuserdatabase::StandardIOFileUserDataBase {
-        let inner: extern "C" fn(
-            crate::system::io::stream::Stream,
-            ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::core_lib::io::standardiofileuserdatabase::StandardIOFileUserDataBase =
-            ::core::mem::transmute(__lookup_create_input_stream::get_method_info().method_ptr);
-        inner(stream, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_output_stream {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::io::stream::Stream as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <StandardIOFileUserDataBase as ::unity2::ClassIdentity>::class(),
-                "CreateOutputStream",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <StandardIOFileUserDataBase as ::unity2::ClassIdentity>::NAME,
-                        "CreateOutputStream",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_output_stream(
-        stream: crate::system::io::stream::Stream,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::moon_sharp::interpreter::core_lib::io::standardiofileuserdatabase::StandardIOFileUserDataBase {
-        let inner: extern "C" fn(
-            crate::system::io::stream::Stream,
-            ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::core_lib::io::standardiofileuserdatabase::StandardIOFileUserDataBase =
-            ::core::mem::transmute(__lookup_create_output_stream::get_method_info().method_ptr);
-        inner(stream, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <StandardIOFileUserDataBase as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <StandardIOFileUserDataBase as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: StandardIOFileUserDataBase, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(StandardIOFileUserDataBase, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __StandardIOFileUserDataBase_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_close { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< StandardIOFileUserDataBase as :: unity2 :: ClassIdentity > :: class () , "Close" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < StandardIOFileUserDataBase as :: unity2 :: ClassIdentity > :: NAME , "Close" , e) , } } } pub unsafe fn close (this : StandardIOFileUserDataBase , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (StandardIOFileUserDataBase , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_close :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_input_stream { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: io :: stream :: Stream as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< StandardIOFileUserDataBase as :: unity2 :: ClassIdentity > :: class () , "CreateInputStream" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < StandardIOFileUserDataBase as :: unity2 :: ClassIdentity > :: NAME , "CreateInputStream" , e) , } } } pub unsafe fn create_input_stream (stream : crate :: system :: io :: stream :: Stream , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: core_lib :: io :: standardiofileuserdatabase :: StandardIOFileUserDataBase { let inner : extern "C" fn (crate :: system :: io :: stream :: Stream , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: core_lib :: io :: standardiofileuserdatabase :: StandardIOFileUserDataBase = :: core :: mem :: transmute (__lookup_create_input_stream :: get_method_info () . method_ptr ,) ; inner (stream , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_output_stream { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: io :: stream :: Stream as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< StandardIOFileUserDataBase as :: unity2 :: ClassIdentity > :: class () , "CreateOutputStream" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < StandardIOFileUserDataBase as :: unity2 :: ClassIdentity > :: NAME , "CreateOutputStream" , e) , } } } pub unsafe fn create_output_stream (stream : crate :: system :: io :: stream :: Stream , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: core_lib :: io :: standardiofileuserdatabase :: StandardIOFileUserDataBase { let inner : extern "C" fn (crate :: system :: io :: stream :: Stream , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: core_lib :: io :: standardiofileuserdatabase :: StandardIOFileUserDataBase = :: core :: mem :: transmute (__lookup_create_output_stream :: get_method_info () . method_ptr ,) ; inner (stream , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< StandardIOFileUserDataBase as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < StandardIOFileUserDataBase as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : StandardIOFileUserDataBase , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (StandardIOFileUserDataBase , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "moon_sharp-interpreter-core_lib-io-standardiofileuserdatabase")]
+impl StandardIOFileUserDataBase { # [doc = "`CreateInputStream(crate::system::io::stream::Stream)` overload"] pub fn create_input_stream (stream : impl :: core :: convert :: Into < crate :: system :: io :: stream :: Stream >) -> crate :: moon_sharp :: interpreter :: core_lib :: io :: standardiofileuserdatabase :: StandardIOFileUserDataBase { unsafe { __StandardIOFileUserDataBase_unity2_raw :: create_input_stream (:: core :: convert :: Into :: into (stream) , :: core :: option :: Option :: None) } } # [doc = "`CreateOutputStream(crate::system::io::stream::Stream)` overload"] pub fn create_output_stream (stream : impl :: core :: convert :: Into < crate :: system :: io :: stream :: Stream >) -> crate :: moon_sharp :: interpreter :: core_lib :: io :: standardiofileuserdatabase :: StandardIOFileUserDataBase { unsafe { __StandardIOFileUserDataBase_unity2_raw :: create_output_stream (:: core :: convert :: Into :: into (stream) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "moon_sharp-interpreter-core_lib-io-standardiofileuserdatabase")]
+pub trait IStandardIOFileUserDataBaseMethods : IStandardIOFileUserDataBase { # [doc = "`Close()` overload"] fn close (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < StandardIOFileUserDataBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __StandardIOFileUserDataBase_unity2_raw :: close (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < StandardIOFileUserDataBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __StandardIOFileUserDataBase_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "moon_sharp-interpreter-core_lib-io-standardiofileuserdatabase")]
+impl < __T : IStandardIOFileUserDataBase > IStandardIOFileUserDataBaseMethods for __T { }
+
+#[cfg(feature = "moon_sharp-interpreter-core_lib-io-standardiofileuserdatabase")]
+impl StandardIOFileUserDataBase { pub fn close_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __StandardIOFileUserDataBase_unity2_raw :: __lookup_close :: get_method_info () } pub fn create_input_stream_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __StandardIOFileUserDataBase_unity2_raw :: __lookup_create_input_stream :: get_method_info () } pub fn create_output_stream_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __StandardIOFileUserDataBase_unity2_raw :: __lookup_create_output_stream :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __StandardIOFileUserDataBase_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "moon_sharp-interpreter-core_lib-io-standardiofileuserdatabase")]
 impl StandardIOFileUserDataBase {
-    #[doc = "`CreateInputStream(crate::system::io::stream::Stream)` overload"]
-    pub fn create_input_stream(
-        stream: impl ::core::convert::Into<crate::system::io::stream::Stream>,
-    ) -> crate::moon_sharp::interpreter::core_lib::io::standardiofileuserdatabase::StandardIOFileUserDataBase {
-        unsafe { __StandardIOFileUserDataBase_unity2_raw::create_input_stream(::core::convert::Into::into(stream), ::core::option::Option::None) }
-    }
-
-    #[doc = "`CreateOutputStream(crate::system::io::stream::Stream)` overload"]
-    pub fn create_output_stream(
-        stream: impl ::core::convert::Into<crate::system::io::stream::Stream>,
-    ) -> crate::moon_sharp::interpreter::core_lib::io::standardiofileuserdatabase::StandardIOFileUserDataBase {
-        unsafe { __StandardIOFileUserDataBase_unity2_raw::create_output_stream(::core::convert::Into::into(stream), ::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "moon_sharp-interpreter-core_lib-io-standardiofileuserdatabase")]
-pub trait IStandardIOFileUserDataBaseMethods: IStandardIOFileUserDataBase {
-    #[doc = "`Close()` overload"]
-    fn close(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver =
-                <StandardIOFileUserDataBase as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __StandardIOFileUserDataBase_unity2_raw::close(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <StandardIOFileUserDataBase as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __StandardIOFileUserDataBase_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "moon_sharp-interpreter-core_lib-io-standardiofileuserdatabase")]
-impl<__T: IStandardIOFileUserDataBase> IStandardIOFileUserDataBaseMethods for __T {}
-
-#[cfg(feature = "moon_sharp-interpreter-core_lib-io-standardiofileuserdatabase")]
-impl StandardIOFileUserDataBase {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(StandardIOFileUserDataBase),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IStandardIOFileUserDataBaseMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (StandardIOFileUserDataBase) , :: core :: stringify ! (new) ,)) ; < Self as IStandardIOFileUserDataBaseMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "moon_sharp-interpreter-core_lib-io-standardiofileuserdatabase")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IStandardIOFileUserDataBase, IStandardIOFileUserDataBaseMethods, StandardIOFileUserDataBase};
-    #[cfg(feature = "moon_sharp-interpreter-core_lib-io-fileuserdatabase")]
-    pub use crate::moon_sharp::interpreter::core_lib::io::fileuserdatabase::IFileUserDataBaseMethods;
-    #[cfg(feature = "moon_sharp-interpreter-core_lib-io-streamfileuserdatabase")]
-    pub use crate::moon_sharp::interpreter::core_lib::io::streamfileuserdatabase::IStreamFileUserDataBaseMethods;
-    #[cfg(feature = "moon_sharp-interpreter-refidobject")]
-    pub use crate::moon_sharp::interpreter::refidobject::IRefIdObjectMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::{
-        moon_sharp::interpreter::{
-            core_lib::io::{fileuserdatabase::IFileUserDataBase, streamfileuserdatabase::IStreamFileUserDataBase},
-            refidobject::IRefIdObject,
-        },
-        system::object::IObject,
-    };
+    pub use super::StandardIOFileUserDataBase;
+    pub use super::IStandardIOFileUserDataBase;
+    pub use super::IStandardIOFileUserDataBaseMethods;
+    pub use crate::moon_sharp::interpreter::core_lib::io::fileuserdatabase::IFileUserDataBase;
+    pub use crate::moon_sharp::interpreter::core_lib::io::streamfileuserdatabase::IStreamFileUserDataBase;
+    pub use crate::moon_sharp::interpreter::refidobject::IRefIdObject;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "moon_sharp-interpreter-core_lib-io-fileuserdatabase")] pub use crate::moon_sharp::interpreter::core_lib::io::fileuserdatabase::IFileUserDataBaseMethods;
+    #[cfg(feature = "moon_sharp-interpreter-core_lib-io-streamfileuserdatabase")] pub use crate::moon_sharp::interpreter::core_lib::io::streamfileuserdatabase::IStreamFileUserDataBaseMethods;
+    #[cfg(feature = "moon_sharp-interpreter-refidobject")] pub use crate::moon_sharp::interpreter::refidobject::IRefIdObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

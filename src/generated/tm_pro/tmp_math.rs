@@ -2,165 +2,43 @@
 
 #[cfg(feature = "tm_pro-tmp_math-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_math/TMP_Math.md"))]
-    #[::unity2::class(namespace = "TMPro", name = "TMP_Math")]
-    #[parent(crate::system::object::Object)]
-    pub struct TMP_Math {
-        #[static_field]
-        #[rename(name = "FLOAT_MAX")]
-        pub float_max: f32,
-        #[static_field]
-        #[rename(name = "FLOAT_MIN")]
-        pub float_min: f32,
-        #[static_field]
-        #[rename(name = "INT_MAX")]
-        pub int_max: i32,
-        #[static_field]
-        #[rename(name = "INT_MIN")]
-        pub int_min: i32,
-        #[static_field]
-        #[rename(name = "FLOAT_UNSET")]
-        pub float_unset: f32,
-        #[static_field]
-        #[rename(name = "INT_UNSET")]
-        pub int_unset: i32,
-        #[static_field]
-        #[rename(name = "MAX_16BIT")]
-        pub max_16bit: crate::unity_engine::vector2::Vector2,
-        #[static_field]
-        #[rename(name = "MIN_16BIT")]
-        pub min_16bit: crate::unity_engine::vector2::Vector2,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_math/TMP_Math.md"))] # [:: unity2 :: class (namespace = "TMPro" , name = "TMP_Math")] # [parent (crate :: system :: object :: Object)] pub struct TMP_Math {
+# [static_field] # [rename (name = "FLOAT_MAX")] pub float_max : f32 ,
+# [static_field] # [rename (name = "FLOAT_MIN")] pub float_min : f32 ,
+# [static_field] # [rename (name = "INT_MAX")] pub int_max : i32 ,
+# [static_field] # [rename (name = "INT_MIN")] pub int_min : i32 ,
+# [static_field] # [rename (name = "FLOAT_UNSET")] pub float_unset : f32 ,
+# [static_field] # [rename (name = "INT_UNSET")] pub int_unset : i32 ,
+# [static_field] # [rename (name = "MAX_16BIT")] pub max_16bit : crate :: unity_engine :: vector2 :: Vector2 ,
+# [static_field] # [rename (name = "MIN_16BIT")] pub min_16bit : crate :: unity_engine :: vector2 :: Vector2 ,
+}
+
 }
 
 #[cfg(feature = "tm_pro-tmp_math-types")]
 pub use __types::*;
 
 #[cfg(feature = "tm_pro-tmp_math")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __TMP_Math_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_approximately {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type(), <f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TMP_Math as ::unity2::ClassIdentity>::class(),
-                "Approximately",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TMP_Math as ::unity2::ClassIdentity>::NAME,
-                        "Approximately",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn approximately(a: f32, b: f32, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(f32, f32, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_approximately::get_method_info().method_ptr);
-        inner(a, b, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_mod {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<TMP_Math as ::unity2::ClassIdentity>::class(), "Mod", 2, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <TMP_Math as ::unity2::ClassIdentity>::NAME, "Mod", e),
-            }
-        }
-    }
-    pub unsafe fn r#mod(a: i32, b: i32, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(i32, i32, ::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(__lookup_mod::get_method_info().method_ptr);
-        inner(a, b, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<TMP_Math as ::unity2::ClassIdentity>::class(), ".cctor", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TMP_Math as ::unity2::ClassIdentity>::NAME,
-                        ".cctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __TMP_Math_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_approximately { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< f32 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TMP_Math as :: unity2 :: ClassIdentity > :: class () , "Approximately" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TMP_Math as :: unity2 :: ClassIdentity > :: NAME , "Approximately" , e) , } } } pub unsafe fn approximately (a : f32 , b : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (f32 , f32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_approximately :: get_method_info () . method_ptr ,) ; inner (a , b , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_mod { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TMP_Math as :: unity2 :: ClassIdentity > :: class () , "Mod" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TMP_Math as :: unity2 :: ClassIdentity > :: NAME , "Mod" , e) , } } } pub unsafe fn r#mod (a : i32 , b : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (i32 , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_mod :: get_method_info () . method_ptr ,) ; inner (a , b , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TMP_Math as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TMP_Math as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
 
 #[cfg(feature = "tm_pro-tmp_math")]
-impl TMP_Math {
-    #[doc = "`Approximately(f32, f32)` overload"]
-    pub fn approximately(a: impl ::core::convert::Into<f32>, b: impl ::core::convert::Into<f32>) -> bool {
-        unsafe {
-            __TMP_Math_unity2_raw::approximately(
-                ::core::convert::Into::into(a),
-                ::core::convert::Into::into(b),
-                ::core::option::Option::None,
-            )
-        }
-    }
+impl TMP_Math { # [doc = "`Approximately(f32, f32)` overload"] pub fn approximately (a : impl :: core :: convert :: Into < f32 > , b : impl :: core :: convert :: Into < f32 >) -> bool { unsafe { __TMP_Math_unity2_raw :: approximately (:: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: option :: Option :: None) } } # [doc = "`Mod(i32, i32)` overload"] pub fn r#mod (a : impl :: core :: convert :: Into < i32 > , b : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { __TMP_Math_unity2_raw :: r#mod (:: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: option :: Option :: None) } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { __TMP_Math_unity2_raw :: cctor (:: core :: option :: Option :: None) } } }
 
-    #[doc = "`Mod(i32, i32)` overload"]
-    pub fn r#mod(a: impl ::core::convert::Into<i32>, b: impl ::core::convert::Into<i32>) -> i32 {
-        unsafe {
-            __TMP_Math_unity2_raw::r#mod(
-                ::core::convert::Into::into(a),
-                ::core::convert::Into::into(b),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __TMP_Math_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
+#[cfg(feature = "tm_pro-tmp_math")]
+impl TMP_Math { pub fn approximately_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TMP_Math_unity2_raw :: __lookup_approximately :: get_method_info () } pub fn mod_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TMP_Math_unity2_raw :: __lookup_mod :: get_method_info () } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TMP_Math_unity2_raw :: __lookup_cctor :: get_method_info () } }
 
 #[cfg(feature = "tm_pro-tmp_math")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{ITMP_Math, TMP_Math};
+    pub use super::TMP_Math;
+    pub use super::ITMP_Math;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

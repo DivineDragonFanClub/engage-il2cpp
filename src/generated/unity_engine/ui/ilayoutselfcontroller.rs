@@ -2,13 +2,13 @@
 
 #[cfg(feature = "unity_engine-ui-ilayoutselfcontroller-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/ilayoutselfcontroller/ILayoutSelfController.md"))]
-    #[::unity2::class(namespace = "UnityEngine.UI", name = "ILayoutSelfController")]
-    pub struct ILayoutSelfController {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/ilayoutselfcontroller/ILayoutSelfController.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "ILayoutSelfController")] pub struct ILayoutSelfController {}
+
 }
 
 #[cfg(feature = "unity_engine-ui-ilayoutselfcontroller-types")]
@@ -17,5 +17,6 @@ pub use __types::*;
 #[cfg(feature = "unity_engine-ui-ilayoutselfcontroller")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IILayoutSelfController, ILayoutSelfController};
+    pub use super::ILayoutSelfController;
+    pub use super::IILayoutSelfController;
 }

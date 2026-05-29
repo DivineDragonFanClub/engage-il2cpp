@@ -2,168 +2,47 @@
 
 #[cfg(feature = "app-groupenditem-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::menuitem::{IMenuItem, MenuItem},
-        system::object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/groupenditem/GroupEndItem.md"))]
-    #[::unity2::class(namespace = "App", name = "GroupEndItem")]
-    #[parent(crate::app::menuitem::MenuItem)]
-    pub struct GroupEndItem {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: menuitem :: { IMenuItem , MenuItem }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/groupenditem/GroupEndItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "GroupEndItem")] # [parent (crate :: app :: menuitem :: MenuItem)] pub struct GroupEndItem {}
+
 }
 
 #[cfg(feature = "app-groupenditem-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-groupenditem")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __GroupEndItem_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_kind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GroupEndItem as ::unity2::ClassIdentity>::class(),
-                "GetKind",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GroupEndItem as ::unity2::ClassIdentity>::NAME,
-                        "GetKind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_kind(this: GroupEndItem, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::menuitem::MenuItem_Kind {
-        let inner: extern "C" fn(GroupEndItem, ::unity2::OptionalMethod) -> crate::app::menuitem::MenuItem_Kind =
-            ::core::mem::transmute(__lookup_get_kind::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_visible {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GroupEndItem as ::unity2::ClassIdentity>::class(),
-                "IsVisible",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GroupEndItem as ::unity2::ClassIdentity>::NAME,
-                        "IsVisible",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_visible(this: GroupEndItem, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(GroupEndItem, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_visible::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<GroupEndItem as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GroupEndItem as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: GroupEndItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GroupEndItem, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __GroupEndItem_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_kind { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GroupEndItem as :: unity2 :: ClassIdentity > :: class () , "GetKind" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GroupEndItem as :: unity2 :: ClassIdentity > :: NAME , "GetKind" , e) , } } } pub unsafe fn get_kind (this : GroupEndItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: menuitem :: MenuItem_Kind { let inner : extern "C" fn (GroupEndItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: menuitem :: MenuItem_Kind = :: core :: mem :: transmute (__lookup_get_kind :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_visible { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GroupEndItem as :: unity2 :: ClassIdentity > :: class () , "IsVisible" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GroupEndItem as :: unity2 :: ClassIdentity > :: NAME , "IsVisible" , e) , } } } pub unsafe fn is_visible (this : GroupEndItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (GroupEndItem , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_visible :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GroupEndItem as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GroupEndItem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : GroupEndItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GroupEndItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-groupenditem")]
-pub trait IGroupEndItemMethods: IGroupEndItem {
-    #[doc = "`GetKind()` overload"]
-    fn get_kind(self) -> crate::app::menuitem::MenuItem_Kind {
-        unsafe {
-            let __receiver = <GroupEndItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GroupEndItem_unity2_raw::get_kind(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsVisible()` overload"]
-    fn is_visible(self) -> bool {
-        unsafe {
-            let __receiver = <GroupEndItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GroupEndItem_unity2_raw::is_visible(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <GroupEndItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GroupEndItem_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IGroupEndItemMethods : IGroupEndItem { # [doc = "`GetKind()` overload"] fn get_kind (self ,) -> crate :: app :: menuitem :: MenuItem_Kind { unsafe { let __receiver = < GroupEndItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GroupEndItem_unity2_raw :: get_kind (__receiver , :: core :: option :: Option :: None) } } # [doc = "`IsVisible()` overload"] fn is_visible (self ,) -> bool { unsafe { let __receiver = < GroupEndItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GroupEndItem_unity2_raw :: is_visible (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GroupEndItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GroupEndItem_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-groupenditem")]
-impl<__T: IGroupEndItem> IGroupEndItemMethods for __T {}
+impl < __T : IGroupEndItem > IGroupEndItemMethods for __T { }
+
+#[cfg(feature = "app-groupenditem")]
+impl GroupEndItem { pub fn get_kind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GroupEndItem_unity2_raw :: __lookup_get_kind :: get_method_info () } pub fn is_visible_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GroupEndItem_unity2_raw :: __lookup_is_visible :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GroupEndItem_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-groupenditem")]
 impl GroupEndItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(GroupEndItem), ::core::stringify!(new),));
-        <Self as IGroupEndItemMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GroupEndItem) , :: core :: stringify ! (new) ,)) ; < Self as IGroupEndItemMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-groupenditem")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{GroupEndItem, IGroupEndItem, IGroupEndItemMethods};
-    #[cfg(feature = "app-menuitem")]
-    pub use crate::app::menuitem::IMenuItemMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::{app::menuitem::IMenuItem, system::object::IObject};
+    pub use super::GroupEndItem;
+    pub use super::IGroupEndItem;
+    pub use super::IGroupEndItemMethods;
+    pub use crate::app::menuitem::IMenuItem;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "app-menuitem")] pub use crate::app::menuitem::IMenuItemMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

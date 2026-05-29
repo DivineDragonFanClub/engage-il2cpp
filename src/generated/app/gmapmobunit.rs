@@ -2,390 +2,45 @@
 
 #[cfg(feature = "app-gmapmobunit-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmobunit/GmapMobUnit.md"))]
-    #[::unity2::class(namespace = "App", name = "GmapMobUnit")]
-    #[parent(crate::system::object::Object)]
-    pub struct GmapMobUnit {
-        #[offset(16)]
-        #[rename(name = "m_Unit")]
-        pub m_unit: crate::app::unit::Unit,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmobunit/GmapMobUnit.md"))] # [:: unity2 :: class (namespace = "App" , name = "GmapMobUnit")] # [parent (crate :: system :: object :: Object)] pub struct GmapMobUnit {
+# [offset (16)] # [rename (name = "m_Unit")] pub m_unit : crate :: app :: unit :: Unit ,
+}
+
 }
 
 #[cfg(feature = "app-gmapmobunit-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-gmapmobunit")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __GmapMobUnit_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_actor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMobUnit as ::unity2::ClassIdentity>::class(),
-                "get_Actor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMobUnit as ::unity2::ClassIdentity>::NAME,
-                        "get_Actor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_actor(this: GmapMobUnit, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::unitactor::UnitActor {
-        let inner: extern "C" fn(GmapMobUnit, ::unity2::OptionalMethod) -> crate::app::unitactor::UnitActor =
-            ::core::mem::transmute(__lookup_get_actor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<GmapMobUnit as ::unity2::ClassIdentity>::class(), ".ctor", 3, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMobUnit as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: GmapMobUnit,
-        pid: ::unity2::Il2CppString,
-        jid: ::unity2::Il2CppString,
-        iid: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            GmapMobUnit,
-            ::unity2::Il2CppString,
-            ::unity2::Il2CppString,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, pid, jid, iid, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_unit_from_unit_pool {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMobUnit as ::unity2::ClassIdentity>::class(),
-                "SetUnitFromUnitPool",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMobUnit as ::unity2::ClassIdentity>::NAME,
-                        "SetUnitFromUnitPool",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_unit_from_unit_pool(
-        this: GmapMobUnit,
-        pid: ::unity2::Il2CppString,
-        jid: ::unity2::Il2CppString,
-        iid: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            GmapMobUnit,
-            ::unity2::Il2CppString,
-            ::unity2::Il2CppString,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_set_unit_from_unit_pool::get_method_info().method_ptr);
-        inner(this, pid, jid, iid, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_position {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <f32 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMobUnit as ::unity2::ClassIdentity>::class(),
-                "SetPosition",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMobUnit as ::unity2::ClassIdentity>::NAME,
-                        "SetPosition",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_position(this: GmapMobUnit, x: f32, y: f32, z: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GmapMobUnit, f32, f32, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_position::get_method_info().method_ptr);
-        inner(this, x, y, z, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_load_actor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMobUnit as ::unity2::ClassIdentity>::class(),
-                "LoadActor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMobUnit as ::unity2::ClassIdentity>::NAME,
-                        "LoadActor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn load_actor(this: GmapMobUnit, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GmapMobUnit, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_load_actor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_loading {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMobUnit as ::unity2::ClassIdentity>::class(),
-                "IsLoading",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMobUnit as ::unity2::ClassIdentity>::NAME,
-                        "IsLoading",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_loading(this: GmapMobUnit, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(GmapMobUnit, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_loading::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_unload_unit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapMobUnit as ::unity2::ClassIdentity>::class(),
-                "UnloadUnit",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapMobUnit as ::unity2::ClassIdentity>::NAME,
-                        "UnloadUnit",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn unload_unit(this: GmapMobUnit, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GmapMobUnit, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_unload_unit::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __GmapMobUnit_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_actor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMobUnit as :: unity2 :: ClassIdentity > :: class () , "get_Actor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMobUnit as :: unity2 :: ClassIdentity > :: NAME , "get_Actor" , e) , } } } pub unsafe fn get_actor (this : GmapMobUnit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: unitactor :: UnitActor { let inner : extern "C" fn (GmapMobUnit , :: unity2 :: OptionalMethod ,) -> crate :: app :: unitactor :: UnitActor = :: core :: mem :: transmute (__lookup_get_actor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMobUnit as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMobUnit as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : GmapMobUnit , pid : :: unity2 :: Il2CppString , jid : :: unity2 :: Il2CppString , iid : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GmapMobUnit , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , pid , jid , iid , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_unit_from_unit_pool { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMobUnit as :: unity2 :: ClassIdentity > :: class () , "SetUnitFromUnitPool" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMobUnit as :: unity2 :: ClassIdentity > :: NAME , "SetUnitFromUnitPool" , e) , } } } pub unsafe fn set_unit_from_unit_pool (this : GmapMobUnit , pid : :: unity2 :: Il2CppString , jid : :: unity2 :: Il2CppString , iid : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GmapMobUnit , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_unit_from_unit_pool :: get_method_info () . method_ptr ,) ; inner (this , pid , jid , iid , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_position { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< f32 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMobUnit as :: unity2 :: ClassIdentity > :: class () , "SetPosition" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMobUnit as :: unity2 :: ClassIdentity > :: NAME , "SetPosition" , e) , } } } pub unsafe fn set_position (this : GmapMobUnit , x : f32 , y : f32 , z : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GmapMobUnit , f32 , f32 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_position :: get_method_info () . method_ptr ,) ; inner (this , x , y , z , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_load_actor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMobUnit as :: unity2 :: ClassIdentity > :: class () , "LoadActor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMobUnit as :: unity2 :: ClassIdentity > :: NAME , "LoadActor" , e) , } } } pub unsafe fn load_actor (this : GmapMobUnit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GmapMobUnit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_load_actor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_loading { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMobUnit as :: unity2 :: ClassIdentity > :: class () , "IsLoading" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMobUnit as :: unity2 :: ClassIdentity > :: NAME , "IsLoading" , e) , } } } pub unsafe fn is_loading (this : GmapMobUnit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (GmapMobUnit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_loading :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_unload_unit { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapMobUnit as :: unity2 :: ClassIdentity > :: class () , "UnloadUnit" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapMobUnit as :: unity2 :: ClassIdentity > :: NAME , "UnloadUnit" , e) , } } } pub unsafe fn unload_unit (this : GmapMobUnit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GmapMobUnit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_unload_unit :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-gmapmobunit")]
-pub trait IGmapMobUnitMethods: IGmapMobUnit {
-    #[doc = "`get_Actor()` overload"]
-    fn get_actor(self) -> crate::app::unitactor::UnitActor {
-        unsafe {
-            let __receiver = <GmapMobUnit as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GmapMobUnit_unity2_raw::get_actor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
-    fn ctor(
-        self,
-        pid: impl ::core::convert::Into<::unity2::Il2CppString>,
-        jid: impl ::core::convert::Into<::unity2::Il2CppString>,
-        iid: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
-        unsafe {
-            let __receiver = <GmapMobUnit as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GmapMobUnit_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(pid),
-                ::core::convert::Into::into(jid),
-                ::core::convert::Into::into(iid),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetUnitFromUnitPool(::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
-    fn set_unit_from_unit_pool(
-        self,
-        pid: impl ::core::convert::Into<::unity2::Il2CppString>,
-        jid: impl ::core::convert::Into<::unity2::Il2CppString>,
-        iid: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
-        unsafe {
-            let __receiver = <GmapMobUnit as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GmapMobUnit_unity2_raw::set_unit_from_unit_pool(
-                __receiver,
-                ::core::convert::Into::into(pid),
-                ::core::convert::Into::into(jid),
-                ::core::convert::Into::into(iid),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetPosition(f32, f32, f32)` overload"]
-    fn set_position(self, x: impl ::core::convert::Into<f32>, y: impl ::core::convert::Into<f32>, z: impl ::core::convert::Into<f32>) -> () {
-        unsafe {
-            let __receiver = <GmapMobUnit as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GmapMobUnit_unity2_raw::set_position(
-                __receiver,
-                ::core::convert::Into::into(x),
-                ::core::convert::Into::into(y),
-                ::core::convert::Into::into(z),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`LoadActor()` overload"]
-    fn load_actor(self) -> () {
-        unsafe {
-            let __receiver = <GmapMobUnit as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GmapMobUnit_unity2_raw::load_actor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsLoading()` overload"]
-    fn is_loading(self) -> bool {
-        unsafe {
-            let __receiver = <GmapMobUnit as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GmapMobUnit_unity2_raw::is_loading(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`UnloadUnit()` overload"]
-    fn unload_unit(self) -> () {
-        unsafe {
-            let __receiver = <GmapMobUnit as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GmapMobUnit_unity2_raw::unload_unit(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IGmapMobUnitMethods : IGmapMobUnit { # [doc = "`get_Actor()` overload"] fn get_actor (self ,) -> crate :: app :: unitactor :: UnitActor { unsafe { let __receiver = < GmapMobUnit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMobUnit_unity2_raw :: get_actor (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"] fn ctor (self , pid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , jid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , iid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < GmapMobUnit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMobUnit_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (pid) , :: core :: convert :: Into :: into (jid) , :: core :: convert :: Into :: into (iid) , :: core :: option :: Option :: None) } } # [doc = "`SetUnitFromUnitPool(::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"] fn set_unit_from_unit_pool (self , pid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , jid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , iid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < GmapMobUnit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMobUnit_unity2_raw :: set_unit_from_unit_pool (__receiver , :: core :: convert :: Into :: into (pid) , :: core :: convert :: Into :: into (jid) , :: core :: convert :: Into :: into (iid) , :: core :: option :: Option :: None) } } # [doc = "`SetPosition(f32, f32, f32)` overload"] fn set_position (self , x : impl :: core :: convert :: Into < f32 > , y : impl :: core :: convert :: Into < f32 > , z : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < GmapMobUnit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMobUnit_unity2_raw :: set_position (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (y) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } # [doc = "`LoadActor()` overload"] fn load_actor (self ,) -> () { unsafe { let __receiver = < GmapMobUnit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMobUnit_unity2_raw :: load_actor (__receiver , :: core :: option :: Option :: None) } } # [doc = "`IsLoading()` overload"] fn is_loading (self ,) -> bool { unsafe { let __receiver = < GmapMobUnit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMobUnit_unity2_raw :: is_loading (__receiver , :: core :: option :: Option :: None) } } # [doc = "`UnloadUnit()` overload"] fn unload_unit (self ,) -> () { unsafe { let __receiver = < GmapMobUnit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapMobUnit_unity2_raw :: unload_unit (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-gmapmobunit")]
-impl<__T: IGmapMobUnit> IGmapMobUnitMethods for __T {}
+impl < __T : IGmapMobUnit > IGmapMobUnitMethods for __T { }
+
+#[cfg(feature = "app-gmapmobunit")]
+impl GmapMobUnit { pub fn get_actor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMobUnit_unity2_raw :: __lookup_get_actor :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMobUnit_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn set_unit_from_unit_pool_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMobUnit_unity2_raw :: __lookup_set_unit_from_unit_pool :: get_method_info () } pub fn set_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMobUnit_unity2_raw :: __lookup_set_position :: get_method_info () } pub fn load_actor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMobUnit_unity2_raw :: __lookup_load_actor :: get_method_info () } pub fn is_loading_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMobUnit_unity2_raw :: __lookup_is_loading :: get_method_info () } pub fn unload_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapMobUnit_unity2_raw :: __lookup_unload_unit :: get_method_info () } }
 
 #[cfg(feature = "app-gmapmobunit")]
 impl GmapMobUnit {
-    #[doc = "`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString)` — overload selector"]
-    pub fn new(pid: ::unity2::Il2CppString, jid: ::unity2::Il2CppString, iid: ::unity2::Il2CppString) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(GmapMobUnit), ::core::stringify!(new),));
-        <Self as IGmapMobUnitMethods>::ctor(this, pid, jid, iid);
-        this
-    }
+# [doc = "`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString)` — overload selector"] pub fn new (pid : :: unity2 :: Il2CppString , jid : :: unity2 :: Il2CppString , iid : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GmapMobUnit) , :: core :: stringify ! (new) ,)) ; < Self as IGmapMobUnitMethods > :: ctor (this , pid , jid , iid) ; this }
 }
 
 #[cfg(feature = "app-gmapmobunit")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{GmapMobUnit, IGmapMobUnit, IGmapMobUnitMethods};
+    pub use super::GmapMobUnit;
+    pub use super::IGmapMobUnit;
+    pub use super::IGmapMobUnitMethods;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

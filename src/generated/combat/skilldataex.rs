@@ -2,195 +2,34 @@
 
 #[cfg(feature = "combat-skilldataex-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/skilldataex/SkillDataEx.md"))]
-    #[::unity2::class(namespace = "Combat", name = "SkillDataEx")]
-    #[parent(crate::system::object::Object)]
-    pub struct SkillDataEx {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/skilldataex/SkillDataEx.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "SkillDataEx")] # [parent (crate :: system :: object :: Object)] pub struct SkillDataEx {}
+
 }
 
 #[cfg(feature = "combat-skilldataex-types")]
 pub use __types::*;
 
 #[cfg(feature = "combat-skilldataex")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __SkillDataEx_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_has_skill_effect {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::skilldata::SkillData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillDataEx as ::unity2::ClassIdentity>::class(),
-                "HasSkillEffect",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SkillDataEx as ::unity2::ClassIdentity>::NAME,
-                        "HasSkillEffect",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn has_skill_effect(skill: crate::app::skilldata::SkillData, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(crate::app::skilldata::SkillData, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_has_skill_effect::get_method_info().method_ptr);
-        inner(skill, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_activate_effect_prefab {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::skilldata::SkillData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillDataEx as ::unity2::ClassIdentity>::class(),
-                "GetActivateEffectPrefab",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SkillDataEx as ::unity2::ClassIdentity>::NAME,
-                        "GetActivateEffectPrefab",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_activate_effect_prefab(
-        skill: crate::app::skilldata::SkillData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::gameobject::GameObject {
-        let inner: extern "C" fn(crate::app::skilldata::SkillData, ::unity2::OptionalMethod) -> crate::unity_engine::gameobject::GameObject =
-            ::core::mem::transmute(__lookup_get_activate_effect_prefab::get_method_info().method_ptr);
-        inner(skill, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_hit_effect_prefab {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::skilldata::SkillData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillDataEx as ::unity2::ClassIdentity>::class(),
-                "GetHitEffectPrefab",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SkillDataEx as ::unity2::ClassIdentity>::NAME,
-                        "GetHitEffectPrefab",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_hit_effect_prefab(
-        skill: crate::app::skilldata::SkillData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::gameobject::GameObject {
-        let inner: extern "C" fn(crate::app::skilldata::SkillData, ::unity2::OptionalMethod) -> crate::unity_engine::gameobject::GameObject =
-            ::core::mem::transmute(__lookup_get_hit_effect_prefab::get_method_info().method_ptr);
-        inner(skill, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_preload_for_adhoc_asset_loader {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::skilldata::SkillData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillDataEx as ::unity2::ClassIdentity>::class(),
-                "PreloadForAdhocAssetLoader",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SkillDataEx as ::unity2::ClassIdentity>::NAME,
-                        "PreloadForAdhocAssetLoader",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn preload_for_adhoc_asset_loader(skill: crate::app::skilldata::SkillData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(crate::app::skilldata::SkillData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_preload_for_adhoc_asset_loader::get_method_info().method_ptr);
-        inner(skill, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __SkillDataEx_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_has_skill_effect { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: skilldata :: SkillData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillDataEx as :: unity2 :: ClassIdentity > :: class () , "HasSkillEffect" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillDataEx as :: unity2 :: ClassIdentity > :: NAME , "HasSkillEffect" , e) , } } } pub unsafe fn has_skill_effect (skill : crate :: app :: skilldata :: SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (crate :: app :: skilldata :: SkillData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_has_skill_effect :: get_method_info () . method_ptr ,) ; inner (skill , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_activate_effect_prefab { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: skilldata :: SkillData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillDataEx as :: unity2 :: ClassIdentity > :: class () , "GetActivateEffectPrefab" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillDataEx as :: unity2 :: ClassIdentity > :: NAME , "GetActivateEffectPrefab" , e) , } } } pub unsafe fn get_activate_effect_prefab (skill : crate :: app :: skilldata :: SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject { let inner : extern "C" fn (crate :: app :: skilldata :: SkillData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute (__lookup_get_activate_effect_prefab :: get_method_info () . method_ptr ,) ; inner (skill , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_hit_effect_prefab { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: skilldata :: SkillData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillDataEx as :: unity2 :: ClassIdentity > :: class () , "GetHitEffectPrefab" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillDataEx as :: unity2 :: ClassIdentity > :: NAME , "GetHitEffectPrefab" , e) , } } } pub unsafe fn get_hit_effect_prefab (skill : crate :: app :: skilldata :: SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject { let inner : extern "C" fn (crate :: app :: skilldata :: SkillData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute (__lookup_get_hit_effect_prefab :: get_method_info () . method_ptr ,) ; inner (skill , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_preload_for_adhoc_asset_loader { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: skilldata :: SkillData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillDataEx as :: unity2 :: ClassIdentity > :: class () , "PreloadForAdhocAssetLoader" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillDataEx as :: unity2 :: ClassIdentity > :: NAME , "PreloadForAdhocAssetLoader" , e) , } } } pub unsafe fn preload_for_adhoc_asset_loader (skill : crate :: app :: skilldata :: SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: skilldata :: SkillData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_preload_for_adhoc_asset_loader :: get_method_info () . method_ptr ,) ; inner (skill , __unity2_method_info) } }
 
 #[cfg(feature = "combat-skilldataex")]
-impl SkillDataEx {
-    #[doc = "`HasSkillEffect(crate::app::skilldata::SkillData)` overload"]
-    pub fn has_skill_effect(skill: impl ::core::convert::Into<crate::app::skilldata::SkillData>) -> bool {
-        unsafe { __SkillDataEx_unity2_raw::has_skill_effect(::core::convert::Into::into(skill), ::core::option::Option::None) }
-    }
+impl SkillDataEx { # [doc = "`HasSkillEffect(crate::app::skilldata::SkillData)` overload"] pub fn has_skill_effect (skill : impl :: core :: convert :: Into < crate :: app :: skilldata :: SkillData >) -> bool { unsafe { __SkillDataEx_unity2_raw :: has_skill_effect (:: core :: convert :: Into :: into (skill) , :: core :: option :: Option :: None) } } # [doc = "`GetActivateEffectPrefab(crate::app::skilldata::SkillData)` overload"] pub fn get_activate_effect_prefab (skill : impl :: core :: convert :: Into < crate :: app :: skilldata :: SkillData >) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { __SkillDataEx_unity2_raw :: get_activate_effect_prefab (:: core :: convert :: Into :: into (skill) , :: core :: option :: Option :: None) } } # [doc = "`GetHitEffectPrefab(crate::app::skilldata::SkillData)` overload"] pub fn get_hit_effect_prefab (skill : impl :: core :: convert :: Into < crate :: app :: skilldata :: SkillData >) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { __SkillDataEx_unity2_raw :: get_hit_effect_prefab (:: core :: convert :: Into :: into (skill) , :: core :: option :: Option :: None) } } # [doc = "`PreloadForAdhocAssetLoader(crate::app::skilldata::SkillData)` overload"] pub fn preload_for_adhoc_asset_loader (skill : impl :: core :: convert :: Into < crate :: app :: skilldata :: SkillData >) -> () { unsafe { __SkillDataEx_unity2_raw :: preload_for_adhoc_asset_loader (:: core :: convert :: Into :: into (skill) , :: core :: option :: Option :: None) } } }
 
-    #[doc = "`GetActivateEffectPrefab(crate::app::skilldata::SkillData)` overload"]
-    pub fn get_activate_effect_prefab(
-        skill: impl ::core::convert::Into<crate::app::skilldata::SkillData>,
-    ) -> crate::unity_engine::gameobject::GameObject {
-        unsafe { __SkillDataEx_unity2_raw::get_activate_effect_prefab(::core::convert::Into::into(skill), ::core::option::Option::None) }
-    }
-
-    #[doc = "`GetHitEffectPrefab(crate::app::skilldata::SkillData)` overload"]
-    pub fn get_hit_effect_prefab(skill: impl ::core::convert::Into<crate::app::skilldata::SkillData>) -> crate::unity_engine::gameobject::GameObject {
-        unsafe { __SkillDataEx_unity2_raw::get_hit_effect_prefab(::core::convert::Into::into(skill), ::core::option::Option::None) }
-    }
-
-    #[doc = "`PreloadForAdhocAssetLoader(crate::app::skilldata::SkillData)` overload"]
-    pub fn preload_for_adhoc_asset_loader(skill: impl ::core::convert::Into<crate::app::skilldata::SkillData>) -> () {
-        unsafe { __SkillDataEx_unity2_raw::preload_for_adhoc_asset_loader(::core::convert::Into::into(skill), ::core::option::Option::None) }
-    }
-}
+#[cfg(feature = "combat-skilldataex")]
+impl SkillDataEx { pub fn has_skill_effect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SkillDataEx_unity2_raw :: __lookup_has_skill_effect :: get_method_info () } pub fn get_activate_effect_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SkillDataEx_unity2_raw :: __lookup_get_activate_effect_prefab :: get_method_info () } pub fn get_hit_effect_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SkillDataEx_unity2_raw :: __lookup_get_hit_effect_prefab :: get_method_info () } pub fn preload_for_adhoc_asset_loader_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SkillDataEx_unity2_raw :: __lookup_preload_for_adhoc_asset_loader :: get_method_info () } }
 
 #[cfg(feature = "combat-skilldataex")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{ISkillDataEx, SkillDataEx};
+    pub use super::SkillDataEx;
+    pub use super::ISkillDataEx;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

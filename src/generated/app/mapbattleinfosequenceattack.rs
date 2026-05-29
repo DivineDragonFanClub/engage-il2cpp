@@ -2,558 +2,73 @@
 
 #[cfg(feature = "app-mapbattleinfosequenceattack-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapbattleinfosequenceattack/MapBattleInfoSequenceAttack.md"))]
-    #[::unity2::class(namespace = "App", name = "MapBattleInfoSequenceAttack")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct MapBattleInfoSequenceAttack {
-        #[offset(24)]
-        #[rename(name = "m_DefenseDamage")]
-        pub m_defense_damage: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(32)]
-        #[rename(name = "m_DefenseArrow")]
-        pub m_defense_arrow: crate::unity_engine::ui::image::Image,
-        #[offset(40)]
-        #[rename(name = "m_DefenseDead")]
-        pub m_defense_dead: crate::unity_engine::ui::image::Image,
-        #[offset(48)]
-        #[rename(name = "m_OffenseDamage")]
-        pub m_offense_damage: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(56)]
-        #[rename(name = "m_OffenseArrow")]
-        pub m_offense_arrow: crate::unity_engine::ui::image::Image,
-        #[offset(64)]
-        #[rename(name = "m_OffenseDead")]
-        pub m_offense_dead: crate::unity_engine::ui::image::Image,
-        #[offset(72)]
-        #[rename(name = "m_DefenseResult")]
-        pub m_defense_result: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(80)]
-        #[rename(name = "m_OffenseResult")]
-        pub m_offense_result: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(88)]
-        #[rename(name = "m_DamageMaterial")]
-        pub m_damage_material: crate::unity_engine::material::Material,
-        #[offset(96)]
-        #[rename(name = "m_HealMaterial")]
-        pub m_heal_material: crate::unity_engine::material::Material,
-        #[offset(104)]
-        #[rename(name = "m_ArrowSprite")]
-        pub m_arrow_sprite: ::unity2::Array<crate::unity_engine::sprite::Sprite>,
-        #[offset(112)]
-        #[rename(name = "m_InstDamageMaterial")]
-        pub m_inst_damage_material: crate::unity_engine::material::Material,
-        #[offset(120)]
-        #[rename(name = "m_InstHealMaterial")]
-        pub m_inst_heal_material: crate::unity_engine::material::Material,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapbattleinfosequenceattack/MapBattleInfoSequenceAttack.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapBattleInfoSequenceAttack")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct MapBattleInfoSequenceAttack {
+# [offset (24)] # [rename (name = "m_DefenseDamage")] pub m_defense_damage : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (32)] # [rename (name = "m_DefenseArrow")] pub m_defense_arrow : crate :: unity_engine :: ui :: image :: Image ,
+# [offset (40)] # [rename (name = "m_DefenseDead")] pub m_defense_dead : crate :: unity_engine :: ui :: image :: Image ,
+# [offset (48)] # [rename (name = "m_OffenseDamage")] pub m_offense_damage : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (56)] # [rename (name = "m_OffenseArrow")] pub m_offense_arrow : crate :: unity_engine :: ui :: image :: Image ,
+# [offset (64)] # [rename (name = "m_OffenseDead")] pub m_offense_dead : crate :: unity_engine :: ui :: image :: Image ,
+# [offset (72)] # [rename (name = "m_DefenseResult")] pub m_defense_result : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (80)] # [rename (name = "m_OffenseResult")] pub m_offense_result : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (88)] # [rename (name = "m_DamageMaterial")] pub m_damage_material : crate :: unity_engine :: material :: Material ,
+# [offset (96)] # [rename (name = "m_HealMaterial")] pub m_heal_material : crate :: unity_engine :: material :: Material ,
+# [offset (104)] # [rename (name = "m_ArrowSprite")] pub m_arrow_sprite : :: unity2 :: Array < crate :: unity_engine :: sprite :: Sprite > ,
+# [offset (112)] # [rename (name = "m_InstDamageMaterial")] pub m_inst_damage_material : crate :: unity_engine :: material :: Material ,
+# [offset (120)] # [rename (name = "m_InstHealMaterial")] pub m_inst_heal_material : crate :: unity_engine :: material :: Material ,
+}
+
 }
 
 #[cfg(feature = "app-mapbattleinfosequenceattack-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-mapbattleinfosequenceattack")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapBattleInfoSequenceAttack_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_awake {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapBattleInfoSequenceAttack as ::unity2::ClassIdentity>::class(),
-                "Awake",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapBattleInfoSequenceAttack as ::unity2::ClassIdentity>::NAME,
-                        "Awake",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn awake(this: MapBattleInfoSequenceAttack, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapBattleInfoSequenceAttack, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_awake::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_setup {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::mapbattleinfosequence::MapBattleInfoSequence_AttackInfo as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapBattleInfoSequenceAttack as ::unity2::ClassIdentity>::class(),
-                "Setup",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapBattleInfoSequenceAttack as ::unity2::ClassIdentity>::NAME,
-                        "Setup",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn setup(
-        this: MapBattleInfoSequenceAttack,
-        attack: crate::app::mapbattleinfosequence::MapBattleInfoSequence_AttackInfo,
-        is_hide: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MapBattleInfoSequenceAttack,
-            crate::app::mapbattleinfosequence::MapBattleInfoSequence_AttackInfo,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_setup::get_method_info().method_ptr);
-        inner(this, attack, is_hide, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_arrow {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <bool as ::unity2::IlType>::il_type(),
-                <crate::app::force::Force_Type as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapBattleInfoSequenceAttack as ::unity2::ClassIdentity>::class(),
-                "SetArrow",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapBattleInfoSequenceAttack as ::unity2::ClassIdentity>::NAME,
-                        "SetArrow",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_arrow(
-        this: MapBattleInfoSequenceAttack,
-        is_offense: bool,
-        force_type: crate::app::force::Force_Type,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MapBattleInfoSequenceAttack, bool, crate::app::force::Force_Type, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_arrow::get_method_info().method_ptr);
-        inner(this, is_offense, force_type, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_receive_damage {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::battleside::BattleSide_Type as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapBattleInfoSequenceAttack as ::unity2::ClassIdentity>::class(),
-                "SetReceiveDamage",
-                5,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapBattleInfoSequenceAttack as ::unity2::ClassIdentity>::NAME,
-                        "SetReceiveDamage",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_receive_damage(
-        this: MapBattleInfoSequenceAttack,
-        side_type: crate::app::battleside::BattleSide_Type,
-        atk_string: ::unity2::Il2CppString,
-        is_heal: bool,
-        receive_first_damage: i32,
-        is_hide: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MapBattleInfoSequenceAttack,
-            crate::app::battleside::BattleSide_Type,
-            ::unity2::Il2CppString,
-            bool,
-            i32,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_set_receive_damage::get_method_info().method_ptr);
-        inner(this, side_type, atk_string, is_heal, receive_first_damage, is_hide, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_send_damage {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::battleside::BattleSide_Type as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapBattleInfoSequenceAttack as ::unity2::ClassIdentity>::class(),
-                "SetSendDamage",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapBattleInfoSequenceAttack as ::unity2::ClassIdentity>::NAME,
-                        "SetSendDamage",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_send_damage(
-        this: MapBattleInfoSequenceAttack,
-        side_type: crate::app::battleside::BattleSide_Type,
-        atk: i32,
-        send_first_damage: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MapBattleInfoSequenceAttack, crate::app::battleside::BattleSide_Type, i32, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_send_damage::get_method_info().method_ptr);
-        inner(this, side_type, atk, send_first_damage, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_scene_result {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::mapbattleinfosequence::MapBattleInfoSequence_AttackInfo_SceneResult as ::unity2::IlType>::il_type(),
-                <crate::app::mapbattleinfosequence::MapBattleInfoSequence_AttackInfo_SceneResult as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapBattleInfoSequenceAttack as ::unity2::ClassIdentity>::class(),
-                "SetSceneResult",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapBattleInfoSequenceAttack as ::unity2::ClassIdentity>::NAME,
-                        "SetSceneResult",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_scene_result(
-        this: MapBattleInfoSequenceAttack,
-        offense: crate::app::mapbattleinfosequence::MapBattleInfoSequence_AttackInfo_SceneResult,
-        defense: crate::app::mapbattleinfosequence::MapBattleInfoSequence_AttackInfo_SceneResult,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MapBattleInfoSequenceAttack,
-            crate::app::mapbattleinfosequence::MapBattleInfoSequence_AttackInfo_SceneResult,
-            crate::app::mapbattleinfosequence::MapBattleInfoSequence_AttackInfo_SceneResult,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_set_scene_result::get_method_info().method_ptr);
-        inner(this, offense, defense, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_death {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::battleside::BattleSide_Type as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapBattleInfoSequenceAttack as ::unity2::ClassIdentity>::class(),
-                "SetDeath",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapBattleInfoSequenceAttack as ::unity2::ClassIdentity>::NAME,
-                        "SetDeath",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_death(
-        this: MapBattleInfoSequenceAttack,
-        side: crate::app::battleside::BattleSide_Type,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MapBattleInfoSequenceAttack, crate::app::battleside::BattleSide_Type, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_death::get_method_info().method_ptr);
-        inner(this, side, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapBattleInfoSequenceAttack as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapBattleInfoSequenceAttack as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: MapBattleInfoSequenceAttack, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapBattleInfoSequenceAttack, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MapBattleInfoSequenceAttack_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_awake { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapBattleInfoSequenceAttack as :: unity2 :: ClassIdentity > :: class () , "Awake" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapBattleInfoSequenceAttack as :: unity2 :: ClassIdentity > :: NAME , "Awake" , e) , } } } pub unsafe fn awake (this : MapBattleInfoSequenceAttack , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapBattleInfoSequenceAttack , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_awake :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_setup { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: mapbattleinfosequence :: MapBattleInfoSequence_AttackInfo as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapBattleInfoSequenceAttack as :: unity2 :: ClassIdentity > :: class () , "Setup" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapBattleInfoSequenceAttack as :: unity2 :: ClassIdentity > :: NAME , "Setup" , e) , } } } pub unsafe fn setup (this : MapBattleInfoSequenceAttack , attack : crate :: app :: mapbattleinfosequence :: MapBattleInfoSequence_AttackInfo , is_hide : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapBattleInfoSequenceAttack , crate :: app :: mapbattleinfosequence :: MapBattleInfoSequence_AttackInfo , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_setup :: get_method_info () . method_ptr ,) ; inner (this , attack , is_hide , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_arrow { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type () , < crate :: app :: force :: Force_Type as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapBattleInfoSequenceAttack as :: unity2 :: ClassIdentity > :: class () , "SetArrow" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapBattleInfoSequenceAttack as :: unity2 :: ClassIdentity > :: NAME , "SetArrow" , e) , } } } pub unsafe fn set_arrow (this : MapBattleInfoSequenceAttack , is_offense : bool , force_type : crate :: app :: force :: Force_Type , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapBattleInfoSequenceAttack , bool , crate :: app :: force :: Force_Type , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_arrow :: get_method_info () . method_ptr ,) ; inner (this , is_offense , force_type , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_receive_damage { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: battleside :: BattleSide_Type as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapBattleInfoSequenceAttack as :: unity2 :: ClassIdentity > :: class () , "SetReceiveDamage" , 5 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapBattleInfoSequenceAttack as :: unity2 :: ClassIdentity > :: NAME , "SetReceiveDamage" , e) , } } } pub unsafe fn set_receive_damage (this : MapBattleInfoSequenceAttack , side_type : crate :: app :: battleside :: BattleSide_Type , atk_string : :: unity2 :: Il2CppString , is_heal : bool , receive_first_damage : i32 , is_hide : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapBattleInfoSequenceAttack , crate :: app :: battleside :: BattleSide_Type , :: unity2 :: Il2CppString , bool , i32 , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_receive_damage :: get_method_info () . method_ptr ,) ; inner (this , side_type , atk_string , is_heal , receive_first_damage , is_hide , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_send_damage { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: battleside :: BattleSide_Type as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapBattleInfoSequenceAttack as :: unity2 :: ClassIdentity > :: class () , "SetSendDamage" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapBattleInfoSequenceAttack as :: unity2 :: ClassIdentity > :: NAME , "SetSendDamage" , e) , } } } pub unsafe fn set_send_damage (this : MapBattleInfoSequenceAttack , side_type : crate :: app :: battleside :: BattleSide_Type , atk : i32 , send_first_damage : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapBattleInfoSequenceAttack , crate :: app :: battleside :: BattleSide_Type , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_send_damage :: get_method_info () . method_ptr ,) ; inner (this , side_type , atk , send_first_damage , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_scene_result { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: mapbattleinfosequence :: MapBattleInfoSequence_AttackInfo_SceneResult as :: unity2 :: IlType > :: il_type () , < crate :: app :: mapbattleinfosequence :: MapBattleInfoSequence_AttackInfo_SceneResult as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapBattleInfoSequenceAttack as :: unity2 :: ClassIdentity > :: class () , "SetSceneResult" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapBattleInfoSequenceAttack as :: unity2 :: ClassIdentity > :: NAME , "SetSceneResult" , e) , } } } pub unsafe fn set_scene_result (this : MapBattleInfoSequenceAttack , offense : crate :: app :: mapbattleinfosequence :: MapBattleInfoSequence_AttackInfo_SceneResult , defense : crate :: app :: mapbattleinfosequence :: MapBattleInfoSequence_AttackInfo_SceneResult , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapBattleInfoSequenceAttack , crate :: app :: mapbattleinfosequence :: MapBattleInfoSequence_AttackInfo_SceneResult , crate :: app :: mapbattleinfosequence :: MapBattleInfoSequence_AttackInfo_SceneResult , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_scene_result :: get_method_info () . method_ptr ,) ; inner (this , offense , defense , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_death { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: battleside :: BattleSide_Type as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapBattleInfoSequenceAttack as :: unity2 :: ClassIdentity > :: class () , "SetDeath" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapBattleInfoSequenceAttack as :: unity2 :: ClassIdentity > :: NAME , "SetDeath" , e) , } } } pub unsafe fn set_death (this : MapBattleInfoSequenceAttack , side : crate :: app :: battleside :: BattleSide_Type , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapBattleInfoSequenceAttack , crate :: app :: battleside :: BattleSide_Type , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_death :: get_method_info () . method_ptr ,) ; inner (this , side , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapBattleInfoSequenceAttack as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapBattleInfoSequenceAttack as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : MapBattleInfoSequenceAttack , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapBattleInfoSequenceAttack , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-mapbattleinfosequenceattack")]
-pub trait IMapBattleInfoSequenceAttackMethods: IMapBattleInfoSequenceAttack {
-    #[doc = "`Awake()` overload"]
-    fn awake(self) -> () {
-        unsafe {
-            let __receiver =
-                <MapBattleInfoSequenceAttack as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapBattleInfoSequenceAttack_unity2_raw::awake(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Setup(crate::app::mapbattleinfosequence::MapBattleInfoSequence_AttackInfo, bool)` overload"]
-    fn setup(
-        self,
-        attack: impl ::core::convert::Into<crate::app::mapbattleinfosequence::MapBattleInfoSequence_AttackInfo>,
-        is_hide: impl ::core::convert::Into<bool>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <MapBattleInfoSequenceAttack as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapBattleInfoSequenceAttack_unity2_raw::setup(
-                __receiver,
-                ::core::convert::Into::into(attack),
-                ::core::convert::Into::into(is_hide),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetArrow(bool, crate::app::force::Force_Type)` overload"]
-    fn set_arrow(self, is_offense: impl ::core::convert::Into<bool>, force_type: impl ::core::convert::Into<crate::app::force::Force_Type>) -> () {
-        unsafe {
-            let __receiver =
-                <MapBattleInfoSequenceAttack as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapBattleInfoSequenceAttack_unity2_raw::set_arrow(
-                __receiver,
-                ::core::convert::Into::into(is_offense),
-                ::core::convert::Into::into(force_type),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetReceiveDamage(crate::app::battleside::BattleSide_Type, ::unity2::Il2CppString, bool, i32, bool)` overload"]
-    fn set_receive_damage(
-        self,
-        side_type: impl ::core::convert::Into<crate::app::battleside::BattleSide_Type>,
-        atk_string: impl ::core::convert::Into<::unity2::Il2CppString>,
-        is_heal: impl ::core::convert::Into<bool>,
-        receive_first_damage: impl ::core::convert::Into<i32>,
-        is_hide: impl ::core::convert::Into<bool>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <MapBattleInfoSequenceAttack as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapBattleInfoSequenceAttack_unity2_raw::set_receive_damage(
-                __receiver,
-                ::core::convert::Into::into(side_type),
-                ::core::convert::Into::into(atk_string),
-                ::core::convert::Into::into(is_heal),
-                ::core::convert::Into::into(receive_first_damage),
-                ::core::convert::Into::into(is_hide),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetSendDamage(crate::app::battleside::BattleSide_Type, i32, i32)` overload"]
-    fn set_send_damage(
-        self,
-        side_type: impl ::core::convert::Into<crate::app::battleside::BattleSide_Type>,
-        atk: impl ::core::convert::Into<i32>,
-        send_first_damage: impl ::core::convert::Into<i32>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <MapBattleInfoSequenceAttack as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapBattleInfoSequenceAttack_unity2_raw::set_send_damage(
-                __receiver,
-                ::core::convert::Into::into(side_type),
-                ::core::convert::Into::into(atk),
-                ::core::convert::Into::into(send_first_damage),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetSceneResult(crate::app::mapbattleinfosequence::MapBattleInfoSequence_AttackInfo_SceneResult, crate::app::mapbattleinfosequence::MapBattleInfoSequence_AttackInfo_SceneResult)` overload"]
-    fn set_scene_result(
-        self,
-        offense: impl ::core::convert::Into<crate::app::mapbattleinfosequence::MapBattleInfoSequence_AttackInfo_SceneResult>,
-        defense: impl ::core::convert::Into<crate::app::mapbattleinfosequence::MapBattleInfoSequence_AttackInfo_SceneResult>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <MapBattleInfoSequenceAttack as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapBattleInfoSequenceAttack_unity2_raw::set_scene_result(
-                __receiver,
-                ::core::convert::Into::into(offense),
-                ::core::convert::Into::into(defense),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetDeath(crate::app::battleside::BattleSide_Type)` overload"]
-    fn set_death(self, side: impl ::core::convert::Into<crate::app::battleside::BattleSide_Type>) -> () {
-        unsafe {
-            let __receiver =
-                <MapBattleInfoSequenceAttack as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapBattleInfoSequenceAttack_unity2_raw::set_death(__receiver, ::core::convert::Into::into(side), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <MapBattleInfoSequenceAttack as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapBattleInfoSequenceAttack_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IMapBattleInfoSequenceAttackMethods : IMapBattleInfoSequenceAttack { # [doc = "`Awake()` overload"] fn awake (self ,) -> () { unsafe { let __receiver = < MapBattleInfoSequenceAttack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapBattleInfoSequenceAttack_unity2_raw :: awake (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Setup(crate::app::mapbattleinfosequence::MapBattleInfoSequence_AttackInfo, bool)` overload"] fn setup (self , attack : impl :: core :: convert :: Into < crate :: app :: mapbattleinfosequence :: MapBattleInfoSequence_AttackInfo > , is_hide : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < MapBattleInfoSequenceAttack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapBattleInfoSequenceAttack_unity2_raw :: setup (__receiver , :: core :: convert :: Into :: into (attack) , :: core :: convert :: Into :: into (is_hide) , :: core :: option :: Option :: None) } } # [doc = "`SetArrow(bool, crate::app::force::Force_Type)` overload"] fn set_arrow (self , is_offense : impl :: core :: convert :: Into < bool > , force_type : impl :: core :: convert :: Into < crate :: app :: force :: Force_Type >) -> () { unsafe { let __receiver = < MapBattleInfoSequenceAttack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapBattleInfoSequenceAttack_unity2_raw :: set_arrow (__receiver , :: core :: convert :: Into :: into (is_offense) , :: core :: convert :: Into :: into (force_type) , :: core :: option :: Option :: None) } } # [doc = "`SetReceiveDamage(crate::app::battleside::BattleSide_Type, ::unity2::Il2CppString, bool, i32, bool)` overload"] fn set_receive_damage (self , side_type : impl :: core :: convert :: Into < crate :: app :: battleside :: BattleSide_Type > , atk_string : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , is_heal : impl :: core :: convert :: Into < bool > , receive_first_damage : impl :: core :: convert :: Into < i32 > , is_hide : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < MapBattleInfoSequenceAttack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapBattleInfoSequenceAttack_unity2_raw :: set_receive_damage (__receiver , :: core :: convert :: Into :: into (side_type) , :: core :: convert :: Into :: into (atk_string) , :: core :: convert :: Into :: into (is_heal) , :: core :: convert :: Into :: into (receive_first_damage) , :: core :: convert :: Into :: into (is_hide) , :: core :: option :: Option :: None) } } # [doc = "`SetSendDamage(crate::app::battleside::BattleSide_Type, i32, i32)` overload"] fn set_send_damage (self , side_type : impl :: core :: convert :: Into < crate :: app :: battleside :: BattleSide_Type > , atk : impl :: core :: convert :: Into < i32 > , send_first_damage : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapBattleInfoSequenceAttack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapBattleInfoSequenceAttack_unity2_raw :: set_send_damage (__receiver , :: core :: convert :: Into :: into (side_type) , :: core :: convert :: Into :: into (atk) , :: core :: convert :: Into :: into (send_first_damage) , :: core :: option :: Option :: None) } } # [doc = "`SetSceneResult(crate::app::mapbattleinfosequence::MapBattleInfoSequence_AttackInfo_SceneResult, crate::app::mapbattleinfosequence::MapBattleInfoSequence_AttackInfo_SceneResult)` overload"] fn set_scene_result (self , offense : impl :: core :: convert :: Into < crate :: app :: mapbattleinfosequence :: MapBattleInfoSequence_AttackInfo_SceneResult > , defense : impl :: core :: convert :: Into < crate :: app :: mapbattleinfosequence :: MapBattleInfoSequence_AttackInfo_SceneResult >) -> () { unsafe { let __receiver = < MapBattleInfoSequenceAttack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapBattleInfoSequenceAttack_unity2_raw :: set_scene_result (__receiver , :: core :: convert :: Into :: into (offense) , :: core :: convert :: Into :: into (defense) , :: core :: option :: Option :: None) } } # [doc = "`SetDeath(crate::app::battleside::BattleSide_Type)` overload"] fn set_death (self , side : impl :: core :: convert :: Into < crate :: app :: battleside :: BattleSide_Type >) -> () { unsafe { let __receiver = < MapBattleInfoSequenceAttack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapBattleInfoSequenceAttack_unity2_raw :: set_death (__receiver , :: core :: convert :: Into :: into (side) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapBattleInfoSequenceAttack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapBattleInfoSequenceAttack_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-mapbattleinfosequenceattack")]
-impl<__T: IMapBattleInfoSequenceAttack> IMapBattleInfoSequenceAttackMethods for __T {}
+impl < __T : IMapBattleInfoSequenceAttack > IMapBattleInfoSequenceAttackMethods for __T { }
+
+#[cfg(feature = "app-mapbattleinfosequenceattack")]
+impl MapBattleInfoSequenceAttack { pub fn awake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapBattleInfoSequenceAttack_unity2_raw :: __lookup_awake :: get_method_info () } pub fn setup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapBattleInfoSequenceAttack_unity2_raw :: __lookup_setup :: get_method_info () } pub fn set_arrow_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapBattleInfoSequenceAttack_unity2_raw :: __lookup_set_arrow :: get_method_info () } pub fn set_receive_damage_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapBattleInfoSequenceAttack_unity2_raw :: __lookup_set_receive_damage :: get_method_info () } pub fn set_send_damage_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapBattleInfoSequenceAttack_unity2_raw :: __lookup_set_send_damage :: get_method_info () } pub fn set_scene_result_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapBattleInfoSequenceAttack_unity2_raw :: __lookup_set_scene_result :: get_method_info () } pub fn set_death_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapBattleInfoSequenceAttack_unity2_raw :: __lookup_set_death :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapBattleInfoSequenceAttack_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-mapbattleinfosequenceattack")]
 impl MapBattleInfoSequenceAttack {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapBattleInfoSequenceAttack),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapBattleInfoSequenceAttackMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapBattleInfoSequenceAttack) , :: core :: stringify ! (new) ,)) ; < Self as IMapBattleInfoSequenceAttackMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-mapbattleinfosequenceattack")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IMapBattleInfoSequenceAttack, IMapBattleInfoSequenceAttackMethods, MapBattleInfoSequenceAttack};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        system::object::IObject,
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::MapBattleInfoSequenceAttack;
+    pub use super::IMapBattleInfoSequenceAttack;
+    pub use super::IMapBattleInfoSequenceAttackMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

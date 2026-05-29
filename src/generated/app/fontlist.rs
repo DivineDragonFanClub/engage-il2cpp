@@ -2,152 +2,61 @@
 
 #[cfg(feature = "app-fontlist-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::singletonscriptableobject_1::{ISingletonScriptableObject_1, SingletonScriptableObject_1},
-        system::object::{IObject, Object},
-        unity_engine::{
-            object_2::{IObject_2, Object_2},
-            scriptableobject::{IScriptableObject, ScriptableObject},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fontlist/FontList.md"))]
-    #[::unity2::class(namespace = "App", name = "FontList")]
-    # [parent (crate :: app :: singletonscriptableobject_1 :: SingletonScriptableObject_1 < crate :: app :: fontlist :: FontList >)]
-    pub struct FontList {
-        #[offset(24)]
-        #[rename(name = "m_FontArray")]
-        pub m_font_array: ::unity2::Array<crate::tm_pro::tmp_fontasset::TMP_FontAsset>,
-        #[offset(32)]
-        #[rename(name = "m_ReplaceCharactar")]
-        pub m_replace_charactar: u16,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: singletonscriptableobject_1 :: { ISingletonScriptableObject_1 , SingletonScriptableObject_1 }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+ use crate :: unity_engine :: scriptableobject :: { IScriptableObject , ScriptableObject }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fontlist/FontList.md"))] # [:: unity2 :: class (namespace = "App" , name = "FontList")] # [parent (crate :: app :: singletonscriptableobject_1 :: SingletonScriptableObject_1 < crate :: app :: fontlist :: FontList >)] pub struct FontList {
+# [offset (24)] # [rename (name = "m_FontArray")] pub m_font_array : :: unity2 :: Array < crate :: tm_pro :: tmp_fontasset :: TMP_FontAsset > ,
+# [offset (32)] # [rename (name = "m_ReplaceCharactar")] pub m_replace_charactar : u16 ,
+}
+
 }
 
 #[cfg(feature = "app-fontlist-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-fontlist")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __FontList_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_check_font_exist {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FontList as ::unity2::ClassIdentity>::class(),
-                "CheckFontExist",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FontList as ::unity2::ClassIdentity>::NAME,
-                        "CheckFontExist",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn check_font_exist(text: *mut ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(*mut ::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_check_font_exist::get_method_info().method_ptr);
-        inner(text, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<FontList as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FontList as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: FontList, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(FontList, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __FontList_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_check_font_exist { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FontList as :: unity2 :: ClassIdentity > :: class () , "CheckFontExist" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FontList as :: unity2 :: ClassIdentity > :: NAME , "CheckFontExist" , e) , } } } pub unsafe fn check_font_exist (text : * mut :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (* mut :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_check_font_exist :: get_method_info () . method_ptr ,) ; inner (text , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FontList as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FontList as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : FontList , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FontList , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-fontlist")]
+impl FontList { # [doc = "`CheckFontExist(*mut::unity2::Il2CppString)` overload"] pub fn check_font_exist () -> (bool , :: unity2 :: Il2CppString) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < :: unity2 :: Il2CppString > :: uninit () ; let __ret = { __FontList_unity2_raw :: check_font_exist (__out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } ; (__ret , __out_0 . assume_init ()) } } }
+
+#[cfg(feature = "app-fontlist")]
+pub trait IFontListMethods : IFontList { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < FontList as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FontList_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-fontlist")]
+impl < __T : IFontList > IFontListMethods for __T { }
+
+#[cfg(feature = "app-fontlist")]
+impl FontList { pub fn check_font_exist_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FontList_unity2_raw :: __lookup_check_font_exist :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FontList_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-fontlist")]
 impl FontList {
-    #[doc = "`CheckFontExist(*mut::unity2::Il2CppString)` overload"]
-    pub fn check_font_exist() -> (bool, ::unity2::Il2CppString) {
-        unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<::unity2::Il2CppString>::uninit();
-            let __ret = { __FontList_unity2_raw::check_font_exist(__out_0.as_mut_ptr(), ::core::option::Option::None) };
-            (__ret, __out_0.assume_init())
-        }
-    }
-}
-
-#[cfg(feature = "app-fontlist")]
-pub trait IFontListMethods: IFontList {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <FontList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FontList_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-fontlist")]
-impl<__T: IFontList> IFontListMethods for __T {}
-
-#[cfg(feature = "app-fontlist")]
-impl FontList {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(FontList), ::core::stringify!(new),));
-        <Self as IFontListMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FontList) , :: core :: stringify ! (new) ,)) ; < Self as IFontListMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-fontlist")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{FontList, IFontList, IFontListMethods};
-    #[cfg(feature = "app-singletonscriptableobject_1")]
-    pub use crate::app::singletonscriptableobject_1::ISingletonScriptableObject_1Methods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    #[cfg(feature = "unity_engine-scriptableobject")]
-    pub use crate::unity_engine::scriptableobject::IScriptableObjectMethods;
-    pub use crate::{
-        app::singletonscriptableobject_1::ISingletonScriptableObject_1,
-        system::object::IObject,
-        unity_engine::{object_2::IObject_2, scriptableobject::IScriptableObject},
-    };
+    pub use super::FontList;
+    pub use super::IFontList;
+    pub use super::IFontListMethods;
+    pub use crate::app::singletonscriptableobject_1::ISingletonScriptableObject_1;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::object_2::IObject_2;
+    pub use crate::unity_engine::scriptableobject::IScriptableObject;
+    #[cfg(feature = "app-singletonscriptableobject_1")] pub use crate::app::singletonscriptableobject_1::ISingletonScriptableObject_1Methods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
+    #[cfg(feature = "unity_engine-scriptableobject")] pub use crate::unity_engine::scriptableobject::IScriptableObjectMethods;
 }

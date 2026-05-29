@@ -2,159 +2,34 @@
 
 #[cfg(feature = "tm_pro-itextelement-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/itextelement/ITextElement.md"))]
-    #[::unity2::class(namespace = "TMPro", name = "ITextElement")]
-    pub struct ITextElement {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/itextelement/ITextElement.md"))] # [:: unity2 :: class (namespace = "TMPro" , name = "ITextElement")] pub struct ITextElement {}
+
 }
 
 #[cfg(feature = "tm_pro-itextelement-types")]
 pub use __types::*;
 
 #[cfg(feature = "tm_pro-itextelement")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ITextElement_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_shared_material {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ITextElement as ::unity2::ClassIdentity>::class(),
-                "get_sharedMaterial",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ITextElement as ::unity2::ClassIdentity>::NAME,
-                        "get_sharedMaterial",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_shared_material(this: ITextElement, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::material::Material {
-        let inner: extern "C" fn(ITextElement, ::unity2::OptionalMethod) -> crate::unity_engine::material::Material =
-            ::core::mem::transmute(__lookup_get_shared_material::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_rebuild {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::ui::canvasupdate::CanvasUpdate as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ITextElement as ::unity2::ClassIdentity>::class(),
-                "Rebuild",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ITextElement as ::unity2::ClassIdentity>::NAME,
-                        "Rebuild",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn rebuild(
-        this: ITextElement,
-        update: crate::unity_engine::ui::canvasupdate::CanvasUpdate,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(ITextElement, crate::unity_engine::ui::canvasupdate::CanvasUpdate, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_rebuild::get_method_info().method_ptr);
-        inner(this, update, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_instance_id {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ITextElement as ::unity2::ClassIdentity>::class(),
-                "GetInstanceID",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ITextElement as ::unity2::ClassIdentity>::NAME,
-                        "GetInstanceID",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_instance_id(this: ITextElement, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(ITextElement, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_instance_id::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ITextElement_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_shared_material { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ITextElement as :: unity2 :: ClassIdentity > :: class () , "get_sharedMaterial" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ITextElement as :: unity2 :: ClassIdentity > :: NAME , "get_sharedMaterial" , e) , } } } pub unsafe fn get_shared_material (this : ITextElement , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: material :: Material { let inner : extern "C" fn (ITextElement , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: material :: Material = :: core :: mem :: transmute (__lookup_get_shared_material :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_rebuild { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: ui :: canvasupdate :: CanvasUpdate as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ITextElement as :: unity2 :: ClassIdentity > :: class () , "Rebuild" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ITextElement as :: unity2 :: ClassIdentity > :: NAME , "Rebuild" , e) , } } } pub unsafe fn rebuild (this : ITextElement , update : crate :: unity_engine :: ui :: canvasupdate :: CanvasUpdate , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ITextElement , crate :: unity_engine :: ui :: canvasupdate :: CanvasUpdate , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_rebuild :: get_method_info () . method_ptr ,) ; inner (this , update , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_instance_id { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ITextElement as :: unity2 :: ClassIdentity > :: class () , "GetInstanceID" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ITextElement as :: unity2 :: ClassIdentity > :: NAME , "GetInstanceID" , e) , } } } pub unsafe fn get_instance_id (this : ITextElement , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (ITextElement , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_instance_id :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "tm_pro-itextelement")]
-pub trait IITextElementMethods: IITextElement {
-    #[doc = "`get_sharedMaterial()` overload"]
-    fn get_shared_material(self) -> crate::unity_engine::material::Material {
-        unsafe {
-            let __receiver = <ITextElement as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ITextElement_unity2_raw::get_shared_material(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Rebuild(crate::unity_engine::ui::canvasupdate::CanvasUpdate)` overload"]
-    fn rebuild(self, update: impl ::core::convert::Into<crate::unity_engine::ui::canvasupdate::CanvasUpdate>) -> () {
-        unsafe {
-            let __receiver = <ITextElement as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ITextElement_unity2_raw::rebuild(__receiver, ::core::convert::Into::into(update), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetInstanceID()` overload"]
-    fn get_instance_id(self) -> i32 {
-        unsafe {
-            let __receiver = <ITextElement as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ITextElement_unity2_raw::get_instance_id(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IITextElementMethods : IITextElement { # [doc = "`get_sharedMaterial()` overload"] fn get_shared_material (self ,) -> crate :: unity_engine :: material :: Material { unsafe { let __receiver = < ITextElement as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ITextElement_unity2_raw :: get_shared_material (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Rebuild(crate::unity_engine::ui::canvasupdate::CanvasUpdate)` overload"] fn rebuild (self , update : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: canvasupdate :: CanvasUpdate >) -> () { unsafe { let __receiver = < ITextElement as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ITextElement_unity2_raw :: rebuild (__receiver , :: core :: convert :: Into :: into (update) , :: core :: option :: Option :: None) } } # [doc = "`GetInstanceID()` overload"] fn get_instance_id (self ,) -> i32 { unsafe { let __receiver = < ITextElement as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ITextElement_unity2_raw :: get_instance_id (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "tm_pro-itextelement")]
-impl<__T: IITextElement> IITextElementMethods for __T {}
+impl < __T : IITextElement > IITextElementMethods for __T { }
+
+#[cfg(feature = "tm_pro-itextelement")]
+impl ITextElement { pub fn get_shared_material_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ITextElement_unity2_raw :: __lookup_get_shared_material :: get_method_info () } pub fn rebuild_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ITextElement_unity2_raw :: __lookup_rebuild :: get_method_info () } pub fn get_instance_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ITextElement_unity2_raw :: __lookup_get_instance_id :: get_method_info () } }
 
 #[cfg(feature = "tm_pro-itextelement")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IITextElement, IITextElementMethods, ITextElement};
+    pub use super::ITextElement;
+    pub use super::IITextElement;
+    pub use super::IITextElementMethods;
 }

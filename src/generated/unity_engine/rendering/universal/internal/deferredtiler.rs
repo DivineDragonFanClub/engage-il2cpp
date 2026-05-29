@@ -2,963 +2,162 @@
 
 #[cfg(feature = "unity_engine-rendering-universal-internal-deferredtiler-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        r#enum::{Enum, IEnum},
-        valuetype::{IValueType, ValueType},
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/internal/deferredtiler/DeferredTiler_PrePunctualLight.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct DeferredTiler_PrePunctualLight {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
 
-    impl ::unity2::ClassIdentity for DeferredTiler_PrePunctualLight {
-        const NAME: &'static str = "DeferredTiler.PrePunctualLight";
-        const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal.Internal";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/internal/deferredtiler/DeferredTiler_ClipResult.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct DeferredTiler_ClipResult  {
+    pub value: i32,
+}
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+
+impl  ::unity2::ClassIdentity for DeferredTiler_ClipResult  {
+    const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal.Internal";
+
+    const NAME: &'static str = "DeferredTiler.ClipResult";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for DeferredTiler_PrePunctualLight {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  ::unity2::IlType for DeferredTiler_ClipResult  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/internal/deferredtiler/DeferredTiler.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct DeferredTiler {}
+}
 
-    impl ::unity2::ClassIdentity for DeferredTiler {
-        const NAME: &'static str = "DeferredTiler";
-        const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal.Internal";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+impl  DeferredTiler_ClipResult  {
+    pub fn unknown() -> Self {
+        Self { value: 0 }
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
     }
 
-    impl ::unity2::IlType for DeferredTiler {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+
+    pub fn r#in() -> Self {
+        Self { value: 1 }
+
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/internal/deferredtiler/DeferredTiler_ClipResult.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct DeferredTiler_ClipResult {
-        pub value: i32,
+
+    pub fn out() -> Self {
+        Self { value: 2 }
+
     }
 
-    impl ::unity2::ClassIdentity for DeferredTiler_ClipResult {
-        const NAME: &'static str = "DeferredTiler.ClipResult";
-        const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal.Internal";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/internal/deferredtiler/DeferredTiler_PrePunctualLight.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct DeferredTiler_PrePunctualLight {}
+
+
+impl ::unity2::ClassIdentity for DeferredTiler_PrePunctualLight {
+    const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal.Internal";
+
+    const NAME: &'static str = "DeferredTiler.PrePunctualLight";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for DeferredTiler_ClipResult {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl ::unity2::IlType for DeferredTiler_PrePunctualLight {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl DeferredTiler_ClipResult {
-        pub fn unknown() -> Self {
-            Self { value: 0 }
-        }
+}
 
-        pub fn r#in() -> Self {
-            Self { value: 1 }
-        }
 
-        pub fn out() -> Self {
-            Self { value: 2 }
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/internal/deferredtiler/DeferredTiler.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct DeferredTiler {}
+
+
+impl ::unity2::ClassIdentity for DeferredTiler {
+    const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal.Internal";
+
+    const NAME: &'static str = "DeferredTiler";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
+
+}
+
+
+impl ::unity2::IlType for DeferredTiler {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-internal-deferredtiler-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-universal-internal-deferredtiler")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __DeferredTiler_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<DeferredTiler as ::unity2::ClassIdentity>::class(), ".ctor", 4, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DeferredTiler as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: DeferredTiler,
-        tile_pixel_width: i32,
-        tile_pixel_height: i32,
-        avg_light_per_tile: i32,
-        tiler_level: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(DeferredTiler, i32, i32, i32, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(
-            this,
-            tile_pixel_width,
-            tile_pixel_height,
-            avg_light_per_tile,
-            tiler_level,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_tiler_level {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DeferredTiler as ::unity2::ClassIdentity>::class(),
-                "get_TilerLevel",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DeferredTiler as ::unity2::ClassIdentity>::NAME,
-                        "get_TilerLevel",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_tiler_level(this: DeferredTiler, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(DeferredTiler, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_tiler_level::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_tile_x_count {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DeferredTiler as ::unity2::ClassIdentity>::class(),
-                "get_TileXCount",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DeferredTiler as ::unity2::ClassIdentity>::NAME,
-                        "get_TileXCount",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_tile_x_count(this: DeferredTiler, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(DeferredTiler, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_tile_x_count::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_tile_y_count {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DeferredTiler as ::unity2::ClassIdentity>::class(),
-                "get_TileYCount",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DeferredTiler as ::unity2::ClassIdentity>::NAME,
-                        "get_TileYCount",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_tile_y_count(this: DeferredTiler, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(DeferredTiler, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_tile_y_count::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_tile_pixel_width {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DeferredTiler as ::unity2::ClassIdentity>::class(),
-                "get_TilePixelWidth",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DeferredTiler as ::unity2::ClassIdentity>::NAME,
-                        "get_TilePixelWidth",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_tile_pixel_width(this: DeferredTiler, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(DeferredTiler, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_tile_pixel_width::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_tile_pixel_height {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DeferredTiler as ::unity2::ClassIdentity>::class(),
-                "get_TilePixelHeight",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DeferredTiler as ::unity2::ClassIdentity>::NAME,
-                        "get_TilePixelHeight",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_tile_pixel_height(this: DeferredTiler, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(DeferredTiler, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_tile_pixel_height::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_tile_header_size {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DeferredTiler as ::unity2::ClassIdentity>::class(),
-                "get_TileHeaderSize",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DeferredTiler as ::unity2::ClassIdentity>::NAME,
-                        "get_TileHeaderSize",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_tile_header_size(this: DeferredTiler, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(DeferredTiler, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_tile_header_size::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_max_light_per_tile {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DeferredTiler as ::unity2::ClassIdentity>::class(),
-                "get_MaxLightPerTile",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DeferredTiler as ::unity2::ClassIdentity>::NAME,
-                        "get_MaxLightPerTile",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_max_light_per_tile(this: DeferredTiler, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(DeferredTiler, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_max_light_per_tile::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_tile_data_capacity {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DeferredTiler as ::unity2::ClassIdentity>::class(),
-                "get_TileDataCapacity",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DeferredTiler as ::unity2::ClassIdentity>::NAME,
-                        "get_TileDataCapacity",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_tile_data_capacity(this: DeferredTiler, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(DeferredTiler, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_tile_data_capacity::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_tile_offset_and_count {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DeferredTiler as ::unity2::ClassIdentity>::class(),
-                "GetTileOffsetAndCount",
-                4,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DeferredTiler as ::unity2::ClassIdentity>::NAME,
-                        "GetTileOffsetAndCount",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_tile_offset_and_count(
-        this: DeferredTiler,
-        i: i32,
-        j: i32,
-        offset: *mut i32,
-        count: *mut i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(DeferredTiler, i32, i32, *mut i32, *mut i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_get_tile_offset_and_count::get_method_info().method_ptr);
-        inner(this, i, j, offset, count, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_tile_header_offset {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DeferredTiler as ::unity2::ClassIdentity>::class(),
-                "GetTileHeaderOffset",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DeferredTiler as ::unity2::ClassIdentity>::NAME,
-                        "GetTileHeaderOffset",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_tile_header_offset(this: DeferredTiler, i: i32, j: i32, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(DeferredTiler, i32, i32, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_tile_header_offset::get_method_info().method_ptr);
-        inner(this, i, j, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_setup {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<DeferredTiler as ::unity2::ClassIdentity>::class(), "Setup", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DeferredTiler as ::unity2::ClassIdentity>::NAME,
-                        "Setup",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn setup(this: DeferredTiler, tile_data_capacity: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DeferredTiler, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_setup::get_method_info().method_ptr);
-        inner(this, tile_data_capacity, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_camera_cleanup {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DeferredTiler as ::unity2::ClassIdentity>::class(),
-                "OnCameraCleanup",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DeferredTiler as ::unity2::ClassIdentity>::NAME,
-                        "OnCameraCleanup",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_camera_cleanup(this: DeferredTiler, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DeferredTiler, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_camera_cleanup::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_precompute_tiles {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DeferredTiler as ::unity2::ClassIdentity>::class(),
-                "PrecomputeTiles",
-                4,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DeferredTiler as ::unity2::ClassIdentity>::NAME,
-                        "PrecomputeTiles",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn precompute_tiles(
-        this: DeferredTiler,
-        proj: crate::unity_engine::matrix4x4::Matrix4x4,
-        is_orthographic: bool,
-        render_width: i32,
-        render_height: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(DeferredTiler, crate::unity_engine::matrix4x4::Matrix4x4, bool, i32, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_precompute_tiles::get_method_info().method_ptr);
-        inner(this, proj, is_orthographic, render_width, render_height, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_signed_sq {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DeferredTiler as ::unity2::ClassIdentity>::class(),
-                "SignedSq",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DeferredTiler as ::unity2::ClassIdentity>::NAME,
-                        "SignedSq",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn signed_sq(f: f32, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(f32, ::unity2::OptionalMethod) -> f32 = ::core::mem::transmute(__lookup_signed_sq::get_method_info().method_ptr);
-        inner(f, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_min2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type(), <f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<DeferredTiler as ::unity2::ClassIdentity>::class(), "min2", 2, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DeferredTiler as ::unity2::ClassIdentity>::NAME,
-                        "min2",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn min2(a: f32, b: f32, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(f32, f32, ::unity2::OptionalMethod) -> f32 = ::core::mem::transmute(__lookup_min2::get_method_info().method_ptr);
-        inner(a, b, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_max2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type(), <f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<DeferredTiler as ::unity2::ClassIdentity>::class(), "max2", 2, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DeferredTiler as ::unity2::ClassIdentity>::NAME,
-                        "max2",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn max2(a: f32, b: f32, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(f32, f32, ::unity2::OptionalMethod) -> f32 = ::core::mem::transmute(__lookup_max2::get_method_info().method_ptr);
-        inner(a, b, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_max3 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <f32 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<DeferredTiler as ::unity2::ClassIdentity>::class(), "max3", 3, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DeferredTiler as ::unity2::ClassIdentity>::NAME,
-                        "max3",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn max3(a: f32, b: f32, c: f32, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(f32, f32, f32, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_max3::get_method_info().method_ptr);
-        inner(a, b, c, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_f32tof16 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DeferredTiler as ::unity2::ClassIdentity>::class(),
-                "_f32tof16",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DeferredTiler as ::unity2::ClassIdentity>::NAME,
-                        "_f32tof16",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn f32tof16(x: f32, __unity2_method_info: ::unity2::OptionalMethod) -> u32 {
-        let inner: extern "C" fn(f32, ::unity2::OptionalMethod) -> u32 = ::core::mem::transmute(__lookup_f32tof16::get_method_info().method_ptr);
-        inner(x, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_align {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<DeferredTiler as ::unity2::ClassIdentity>::class(), "Align", 2, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DeferredTiler as ::unity2::ClassIdentity>::NAME,
-                        "Align",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn align(s: i32, alignment: i32, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(i32, i32, ::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(__lookup_align::get_method_info().method_ptr);
-        inner(s, alignment, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __DeferredTiler_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DeferredTiler as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 4 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DeferredTiler as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : DeferredTiler , tile_pixel_width : i32 , tile_pixel_height : i32 , avg_light_per_tile : i32 , tiler_level : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DeferredTiler , i32 , i32 , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , tile_pixel_width , tile_pixel_height , avg_light_per_tile , tiler_level , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_tiler_level { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DeferredTiler as :: unity2 :: ClassIdentity > :: class () , "get_TilerLevel" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DeferredTiler as :: unity2 :: ClassIdentity > :: NAME , "get_TilerLevel" , e) , } } } pub unsafe fn get_tiler_level (this : DeferredTiler , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (DeferredTiler , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_tiler_level :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_tile_x_count { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DeferredTiler as :: unity2 :: ClassIdentity > :: class () , "get_TileXCount" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DeferredTiler as :: unity2 :: ClassIdentity > :: NAME , "get_TileXCount" , e) , } } } pub unsafe fn get_tile_x_count (this : DeferredTiler , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (DeferredTiler , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_tile_x_count :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_tile_y_count { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DeferredTiler as :: unity2 :: ClassIdentity > :: class () , "get_TileYCount" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DeferredTiler as :: unity2 :: ClassIdentity > :: NAME , "get_TileYCount" , e) , } } } pub unsafe fn get_tile_y_count (this : DeferredTiler , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (DeferredTiler , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_tile_y_count :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_tile_pixel_width { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DeferredTiler as :: unity2 :: ClassIdentity > :: class () , "get_TilePixelWidth" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DeferredTiler as :: unity2 :: ClassIdentity > :: NAME , "get_TilePixelWidth" , e) , } } } pub unsafe fn get_tile_pixel_width (this : DeferredTiler , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (DeferredTiler , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_tile_pixel_width :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_tile_pixel_height { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DeferredTiler as :: unity2 :: ClassIdentity > :: class () , "get_TilePixelHeight" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DeferredTiler as :: unity2 :: ClassIdentity > :: NAME , "get_TilePixelHeight" , e) , } } } pub unsafe fn get_tile_pixel_height (this : DeferredTiler , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (DeferredTiler , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_tile_pixel_height :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_tile_header_size { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DeferredTiler as :: unity2 :: ClassIdentity > :: class () , "get_TileHeaderSize" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DeferredTiler as :: unity2 :: ClassIdentity > :: NAME , "get_TileHeaderSize" , e) , } } } pub unsafe fn get_tile_header_size (this : DeferredTiler , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (DeferredTiler , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_tile_header_size :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_max_light_per_tile { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DeferredTiler as :: unity2 :: ClassIdentity > :: class () , "get_MaxLightPerTile" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DeferredTiler as :: unity2 :: ClassIdentity > :: NAME , "get_MaxLightPerTile" , e) , } } } pub unsafe fn get_max_light_per_tile (this : DeferredTiler , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (DeferredTiler , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_max_light_per_tile :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_tile_data_capacity { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DeferredTiler as :: unity2 :: ClassIdentity > :: class () , "get_TileDataCapacity" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DeferredTiler as :: unity2 :: ClassIdentity > :: NAME , "get_TileDataCapacity" , e) , } } } pub unsafe fn get_tile_data_capacity (this : DeferredTiler , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (DeferredTiler , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_tile_data_capacity :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_tile_offset_and_count { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DeferredTiler as :: unity2 :: ClassIdentity > :: class () , "GetTileOffsetAndCount" , 4 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DeferredTiler as :: unity2 :: ClassIdentity > :: NAME , "GetTileOffsetAndCount" , e) , } } } pub unsafe fn get_tile_offset_and_count (this : DeferredTiler , i : i32 , j : i32 , offset : * mut i32 , count : * mut i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DeferredTiler , i32 , i32 , * mut i32 , * mut i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_get_tile_offset_and_count :: get_method_info () . method_ptr ,) ; inner (this , i , j , offset , count , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_tile_header_offset { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DeferredTiler as :: unity2 :: ClassIdentity > :: class () , "GetTileHeaderOffset" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DeferredTiler as :: unity2 :: ClassIdentity > :: NAME , "GetTileHeaderOffset" , e) , } } } pub unsafe fn get_tile_header_offset (this : DeferredTiler , i : i32 , j : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (DeferredTiler , i32 , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_tile_header_offset :: get_method_info () . method_ptr ,) ; inner (this , i , j , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_setup { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DeferredTiler as :: unity2 :: ClassIdentity > :: class () , "Setup" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DeferredTiler as :: unity2 :: ClassIdentity > :: NAME , "Setup" , e) , } } } pub unsafe fn setup (this : DeferredTiler , tile_data_capacity : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DeferredTiler , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_setup :: get_method_info () . method_ptr ,) ; inner (this , tile_data_capacity , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_camera_cleanup { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DeferredTiler as :: unity2 :: ClassIdentity > :: class () , "OnCameraCleanup" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DeferredTiler as :: unity2 :: ClassIdentity > :: NAME , "OnCameraCleanup" , e) , } } } pub unsafe fn on_camera_cleanup (this : DeferredTiler , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DeferredTiler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_camera_cleanup :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_precompute_tiles { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: matrix4x4 :: Matrix4x4 as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DeferredTiler as :: unity2 :: ClassIdentity > :: class () , "PrecomputeTiles" , 4 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DeferredTiler as :: unity2 :: ClassIdentity > :: NAME , "PrecomputeTiles" , e) , } } } pub unsafe fn precompute_tiles (this : DeferredTiler , proj : crate :: unity_engine :: matrix4x4 :: Matrix4x4 , is_orthographic : bool , render_width : i32 , render_height : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DeferredTiler , crate :: unity_engine :: matrix4x4 :: Matrix4x4 , bool , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_precompute_tiles :: get_method_info () . method_ptr ,) ; inner (this , proj , is_orthographic , render_width , render_height , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_signed_sq { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DeferredTiler as :: unity2 :: ClassIdentity > :: class () , "SignedSq" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DeferredTiler as :: unity2 :: ClassIdentity > :: NAME , "SignedSq" , e) , } } } pub unsafe fn signed_sq (f : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (f32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_signed_sq :: get_method_info () . method_ptr ,) ; inner (f , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_min2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< f32 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DeferredTiler as :: unity2 :: ClassIdentity > :: class () , "min2" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DeferredTiler as :: unity2 :: ClassIdentity > :: NAME , "min2" , e) , } } } pub unsafe fn min2 (a : f32 , b : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (f32 , f32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_min2 :: get_method_info () . method_ptr ,) ; inner (a , b , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_max2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< f32 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DeferredTiler as :: unity2 :: ClassIdentity > :: class () , "max2" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DeferredTiler as :: unity2 :: ClassIdentity > :: NAME , "max2" , e) , } } } pub unsafe fn max2 (a : f32 , b : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (f32 , f32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_max2 :: get_method_info () . method_ptr ,) ; inner (a , b , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_max3 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< f32 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DeferredTiler as :: unity2 :: ClassIdentity > :: class () , "max3" , 3 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DeferredTiler as :: unity2 :: ClassIdentity > :: NAME , "max3" , e) , } } } pub unsafe fn max3 (a : f32 , b : f32 , c : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (f32 , f32 , f32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_max3 :: get_method_info () . method_ptr ,) ; inner (a , b , c , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_f32tof16 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DeferredTiler as :: unity2 :: ClassIdentity > :: class () , "_f32tof16" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DeferredTiler as :: unity2 :: ClassIdentity > :: NAME , "_f32tof16" , e) , } } } pub unsafe fn f32tof16 (x : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> u32 { let inner : extern "C" fn (f32 , :: unity2 :: OptionalMethod ,) -> u32 = :: core :: mem :: transmute (__lookup_f32tof16 :: get_method_info () . method_ptr ,) ; inner (x , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_align { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DeferredTiler as :: unity2 :: ClassIdentity > :: class () , "Align" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DeferredTiler as :: unity2 :: ClassIdentity > :: NAME , "Align" , e) , } } } pub unsafe fn align (s : i32 , alignment : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (i32 , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_align :: get_method_info () . method_ptr ,) ; inner (s , alignment , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-rendering-universal-internal-deferredtiler")]
-impl DeferredTiler {
-    #[doc = "`SignedSq(f32)` overload"]
-    pub fn signed_sq(f: impl ::core::convert::Into<f32>) -> f32 {
-        unsafe { __DeferredTiler_unity2_raw::signed_sq(::core::convert::Into::into(f), ::core::option::Option::None) }
-    }
-
-    #[doc = "`min2(f32, f32)` overload"]
-    pub fn min2(a: impl ::core::convert::Into<f32>, b: impl ::core::convert::Into<f32>) -> f32 {
-        unsafe {
-            __DeferredTiler_unity2_raw::min2(
-                ::core::convert::Into::into(a),
-                ::core::convert::Into::into(b),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`max2(f32, f32)` overload"]
-    pub fn max2(a: impl ::core::convert::Into<f32>, b: impl ::core::convert::Into<f32>) -> f32 {
-        unsafe {
-            __DeferredTiler_unity2_raw::max2(
-                ::core::convert::Into::into(a),
-                ::core::convert::Into::into(b),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`max3(f32, f32, f32)` overload"]
-    pub fn max3(a: impl ::core::convert::Into<f32>, b: impl ::core::convert::Into<f32>, c: impl ::core::convert::Into<f32>) -> f32 {
-        unsafe {
-            __DeferredTiler_unity2_raw::max3(
-                ::core::convert::Into::into(a),
-                ::core::convert::Into::into(b),
-                ::core::convert::Into::into(c),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`_f32tof16(f32)` overload"]
-    pub fn f32tof16(x: impl ::core::convert::Into<f32>) -> u32 {
-        unsafe { __DeferredTiler_unity2_raw::f32tof16(::core::convert::Into::into(x), ::core::option::Option::None) }
-    }
-
-    #[doc = "`Align(i32, i32)` overload"]
-    pub fn align(s: impl ::core::convert::Into<i32>, alignment: impl ::core::convert::Into<i32>) -> i32 {
-        unsafe {
-            __DeferredTiler_unity2_raw::align(
-                ::core::convert::Into::into(s),
-                ::core::convert::Into::into(alignment),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+impl DeferredTiler { # [doc = "`SignedSq(f32)` overload"] pub fn signed_sq (f : impl :: core :: convert :: Into < f32 >) -> f32 { unsafe { __DeferredTiler_unity2_raw :: signed_sq (:: core :: convert :: Into :: into (f) , :: core :: option :: Option :: None) } } # [doc = "`min2(f32, f32)` overload"] pub fn min2 (a : impl :: core :: convert :: Into < f32 > , b : impl :: core :: convert :: Into < f32 >) -> f32 { unsafe { __DeferredTiler_unity2_raw :: min2 (:: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: option :: Option :: None) } } # [doc = "`max2(f32, f32)` overload"] pub fn max2 (a : impl :: core :: convert :: Into < f32 > , b : impl :: core :: convert :: Into < f32 >) -> f32 { unsafe { __DeferredTiler_unity2_raw :: max2 (:: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: option :: Option :: None) } } # [doc = "`max3(f32, f32, f32)` overload"] pub fn max3 (a : impl :: core :: convert :: Into < f32 > , b : impl :: core :: convert :: Into < f32 > , c : impl :: core :: convert :: Into < f32 >) -> f32 { unsafe { __DeferredTiler_unity2_raw :: max3 (:: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: convert :: Into :: into (c) , :: core :: option :: Option :: None) } } # [doc = "`_f32tof16(f32)` overload"] pub fn f32tof16 (x : impl :: core :: convert :: Into < f32 >) -> u32 { unsafe { __DeferredTiler_unity2_raw :: f32tof16 (:: core :: convert :: Into :: into (x) , :: core :: option :: Option :: None) } } # [doc = "`Align(i32, i32)` overload"] pub fn align (s : impl :: core :: convert :: Into < i32 > , alignment : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { __DeferredTiler_unity2_raw :: align (:: core :: convert :: Into :: into (s) , :: core :: convert :: Into :: into (alignment) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-rendering-universal-internal-deferredtiler")]
-impl DeferredTiler {
-    #[doc = "`.ctor(i32, i32, i32, i32)` overload"]
-    pub fn ctor(
-        self,
-        tile_pixel_width: impl ::core::convert::Into<i32>,
-        tile_pixel_height: impl ::core::convert::Into<i32>,
-        avg_light_per_tile: impl ::core::convert::Into<i32>,
-        tiler_level: impl ::core::convert::Into<i32>,
-    ) -> () {
-        unsafe {
-            __DeferredTiler_unity2_raw::ctor(
-                self,
-                ::core::convert::Into::into(tile_pixel_width),
-                ::core::convert::Into::into(tile_pixel_height),
-                ::core::convert::Into::into(avg_light_per_tile),
-                ::core::convert::Into::into(tiler_level),
-                ::core::option::Option::None,
-            )
-        }
-    }
+impl DeferredTiler { # [doc = "`.ctor(i32, i32, i32, i32)` overload"] pub fn ctor (self , tile_pixel_width : impl :: core :: convert :: Into < i32 > , tile_pixel_height : impl :: core :: convert :: Into < i32 > , avg_light_per_tile : impl :: core :: convert :: Into < i32 > , tiler_level : impl :: core :: convert :: Into < i32 >) -> () { unsafe { __DeferredTiler_unity2_raw :: ctor (self , :: core :: convert :: Into :: into (tile_pixel_width) , :: core :: convert :: Into :: into (tile_pixel_height) , :: core :: convert :: Into :: into (avg_light_per_tile) , :: core :: convert :: Into :: into (tiler_level) , :: core :: option :: Option :: None) } } # [doc = "`get_TilerLevel()` overload"] pub fn get_tiler_level (self ,) -> i32 { unsafe { __DeferredTiler_unity2_raw :: get_tiler_level (self , :: core :: option :: Option :: None) } } # [doc = "`get_TileXCount()` overload"] pub fn get_tile_x_count (self ,) -> i32 { unsafe { __DeferredTiler_unity2_raw :: get_tile_x_count (self , :: core :: option :: Option :: None) } } # [doc = "`get_TileYCount()` overload"] pub fn get_tile_y_count (self ,) -> i32 { unsafe { __DeferredTiler_unity2_raw :: get_tile_y_count (self , :: core :: option :: Option :: None) } } # [doc = "`get_TilePixelWidth()` overload"] pub fn get_tile_pixel_width (self ,) -> i32 { unsafe { __DeferredTiler_unity2_raw :: get_tile_pixel_width (self , :: core :: option :: Option :: None) } } # [doc = "`get_TilePixelHeight()` overload"] pub fn get_tile_pixel_height (self ,) -> i32 { unsafe { __DeferredTiler_unity2_raw :: get_tile_pixel_height (self , :: core :: option :: Option :: None) } } # [doc = "`get_TileHeaderSize()` overload"] pub fn get_tile_header_size (self ,) -> i32 { unsafe { __DeferredTiler_unity2_raw :: get_tile_header_size (self , :: core :: option :: Option :: None) } } # [doc = "`get_MaxLightPerTile()` overload"] pub fn get_max_light_per_tile (self ,) -> i32 { unsafe { __DeferredTiler_unity2_raw :: get_max_light_per_tile (self , :: core :: option :: Option :: None) } } # [doc = "`get_TileDataCapacity()` overload"] pub fn get_tile_data_capacity (self ,) -> i32 { unsafe { __DeferredTiler_unity2_raw :: get_tile_data_capacity (self , :: core :: option :: Option :: None) } } # [doc = "`GetTileOffsetAndCount(i32, i32, *muti32, *muti32)` overload"] pub fn get_tile_offset_and_count (self , i : impl :: core :: convert :: Into < i32 > , j : impl :: core :: convert :: Into < i32 >) -> (i32 , i32) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < i32 > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < i32 > :: uninit () ; __DeferredTiler_unity2_raw :: get_tile_offset_and_count (self , :: core :: convert :: Into :: into (i) , :: core :: convert :: Into :: into (j) , __out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: option :: Option :: None) ; (__out_0 . assume_init () , __out_1 . assume_init ()) } } # [doc = "`GetTileHeaderOffset(i32, i32)` overload"] pub fn get_tile_header_offset (self , i : impl :: core :: convert :: Into < i32 > , j : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { __DeferredTiler_unity2_raw :: get_tile_header_offset (self , :: core :: convert :: Into :: into (i) , :: core :: convert :: Into :: into (j) , :: core :: option :: Option :: None) } } # [doc = "`Setup(i32)` overload"] pub fn setup (self , tile_data_capacity : impl :: core :: convert :: Into < i32 >) -> () { unsafe { __DeferredTiler_unity2_raw :: setup (self , :: core :: convert :: Into :: into (tile_data_capacity) , :: core :: option :: Option :: None) } } # [doc = "`OnCameraCleanup()` overload"] pub fn on_camera_cleanup (self ,) -> () { unsafe { __DeferredTiler_unity2_raw :: on_camera_cleanup (self , :: core :: option :: Option :: None) } } # [doc = "`PrecomputeTiles(crate::unity_engine::matrix4x4::Matrix4x4, bool, i32, i32)` overload"] pub fn precompute_tiles (self , proj : impl :: core :: convert :: Into < crate :: unity_engine :: matrix4x4 :: Matrix4x4 > , is_orthographic : impl :: core :: convert :: Into < bool > , render_width : impl :: core :: convert :: Into < i32 > , render_height : impl :: core :: convert :: Into < i32 >) -> () { unsafe { __DeferredTiler_unity2_raw :: precompute_tiles (self , :: core :: convert :: Into :: into (proj) , :: core :: convert :: Into :: into (is_orthographic) , :: core :: convert :: Into :: into (render_width) , :: core :: convert :: Into :: into (render_height) , :: core :: option :: Option :: None) } } }
 
-    #[doc = "`get_TilerLevel()` overload"]
-    pub fn get_tiler_level(self) -> i32 {
-        unsafe { __DeferredTiler_unity2_raw::get_tiler_level(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_TileXCount()` overload"]
-    pub fn get_tile_x_count(self) -> i32 {
-        unsafe { __DeferredTiler_unity2_raw::get_tile_x_count(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_TileYCount()` overload"]
-    pub fn get_tile_y_count(self) -> i32 {
-        unsafe { __DeferredTiler_unity2_raw::get_tile_y_count(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_TilePixelWidth()` overload"]
-    pub fn get_tile_pixel_width(self) -> i32 {
-        unsafe { __DeferredTiler_unity2_raw::get_tile_pixel_width(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_TilePixelHeight()` overload"]
-    pub fn get_tile_pixel_height(self) -> i32 {
-        unsafe { __DeferredTiler_unity2_raw::get_tile_pixel_height(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_TileHeaderSize()` overload"]
-    pub fn get_tile_header_size(self) -> i32 {
-        unsafe { __DeferredTiler_unity2_raw::get_tile_header_size(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_MaxLightPerTile()` overload"]
-    pub fn get_max_light_per_tile(self) -> i32 {
-        unsafe { __DeferredTiler_unity2_raw::get_max_light_per_tile(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_TileDataCapacity()` overload"]
-    pub fn get_tile_data_capacity(self) -> i32 {
-        unsafe { __DeferredTiler_unity2_raw::get_tile_data_capacity(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`GetTileOffsetAndCount(i32, i32, *muti32, *muti32)` overload"]
-    pub fn get_tile_offset_and_count(self, i: impl ::core::convert::Into<i32>, j: impl ::core::convert::Into<i32>) -> (i32, i32) {
-        unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<i32>::uninit();
-            let mut __out_1 = ::core::mem::MaybeUninit::<i32>::uninit();
-            __DeferredTiler_unity2_raw::get_tile_offset_and_count(
-                self,
-                ::core::convert::Into::into(i),
-                ::core::convert::Into::into(j),
-                __out_0.as_mut_ptr(),
-                __out_1.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
-            (__out_0.assume_init(), __out_1.assume_init())
-        }
-    }
-
-    #[doc = "`GetTileHeaderOffset(i32, i32)` overload"]
-    pub fn get_tile_header_offset(self, i: impl ::core::convert::Into<i32>, j: impl ::core::convert::Into<i32>) -> i32 {
-        unsafe {
-            __DeferredTiler_unity2_raw::get_tile_header_offset(
-                self,
-                ::core::convert::Into::into(i),
-                ::core::convert::Into::into(j),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`Setup(i32)` overload"]
-    pub fn setup(self, tile_data_capacity: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __DeferredTiler_unity2_raw::setup(self, ::core::convert::Into::into(tile_data_capacity), ::core::option::Option::None) }
-    }
-
-    #[doc = "`OnCameraCleanup()` overload"]
-    pub fn on_camera_cleanup(self) -> () {
-        unsafe { __DeferredTiler_unity2_raw::on_camera_cleanup(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`PrecomputeTiles(crate::unity_engine::matrix4x4::Matrix4x4, bool, i32, i32)` overload"]
-    pub fn precompute_tiles(
-        self,
-        proj: impl ::core::convert::Into<crate::unity_engine::matrix4x4::Matrix4x4>,
-        is_orthographic: impl ::core::convert::Into<bool>,
-        render_width: impl ::core::convert::Into<i32>,
-        render_height: impl ::core::convert::Into<i32>,
-    ) -> () {
-        unsafe {
-            __DeferredTiler_unity2_raw::precompute_tiles(
-                self,
-                ::core::convert::Into::into(proj),
-                ::core::convert::Into::into(is_orthographic),
-                ::core::convert::Into::into(render_width),
-                ::core::convert::Into::into(render_height),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+#[cfg(feature = "unity_engine-rendering-universal-internal-deferredtiler")]
+impl DeferredTiler { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DeferredTiler_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn get_tiler_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DeferredTiler_unity2_raw :: __lookup_get_tiler_level :: get_method_info () } pub fn get_tile_x_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DeferredTiler_unity2_raw :: __lookup_get_tile_x_count :: get_method_info () } pub fn get_tile_y_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DeferredTiler_unity2_raw :: __lookup_get_tile_y_count :: get_method_info () } pub fn get_tile_pixel_width_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DeferredTiler_unity2_raw :: __lookup_get_tile_pixel_width :: get_method_info () } pub fn get_tile_pixel_height_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DeferredTiler_unity2_raw :: __lookup_get_tile_pixel_height :: get_method_info () } pub fn get_tile_header_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DeferredTiler_unity2_raw :: __lookup_get_tile_header_size :: get_method_info () } pub fn get_max_light_per_tile_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DeferredTiler_unity2_raw :: __lookup_get_max_light_per_tile :: get_method_info () } pub fn get_tile_data_capacity_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DeferredTiler_unity2_raw :: __lookup_get_tile_data_capacity :: get_method_info () } pub fn get_tile_offset_and_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DeferredTiler_unity2_raw :: __lookup_get_tile_offset_and_count :: get_method_info () } pub fn get_tile_header_offset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DeferredTiler_unity2_raw :: __lookup_get_tile_header_offset :: get_method_info () } pub fn setup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DeferredTiler_unity2_raw :: __lookup_setup :: get_method_info () } pub fn on_camera_cleanup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DeferredTiler_unity2_raw :: __lookup_on_camera_cleanup :: get_method_info () } pub fn precompute_tiles_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DeferredTiler_unity2_raw :: __lookup_precompute_tiles :: get_method_info () } pub fn signed_sq_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DeferredTiler_unity2_raw :: __lookup_signed_sq :: get_method_info () } pub fn min2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DeferredTiler_unity2_raw :: __lookup_min2 :: get_method_info () } pub fn max2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DeferredTiler_unity2_raw :: __lookup_max2 :: get_method_info () } pub fn max3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DeferredTiler_unity2_raw :: __lookup_max3 :: get_method_info () } pub fn f32tof16_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DeferredTiler_unity2_raw :: __lookup_f32tof16 :: get_method_info () } pub fn align_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DeferredTiler_unity2_raw :: __lookup_align :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-rendering-universal-internal-deferredtiler")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{DeferredTiler, DeferredTiler_ClipResult, DeferredTiler_PrePunctualLight};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::system::{object::IObject, r#enum::IEnum, valuetype::IValueType};
+    pub use super::DeferredTiler_ClipResult;
+    pub use super::DeferredTiler_PrePunctualLight;
+    pub use super::DeferredTiler;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

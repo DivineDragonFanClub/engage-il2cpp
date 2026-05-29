@@ -2,108 +2,66 @@
 
 #[cfg(feature = "app-procscenesequence_1-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::{
-            procinst::{IProcInst, ProcInst},
-            singletonprocinst_1::{ISingletonProcInst_1, SingletonProcInst_1},
-        },
-        system::object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/procscenesequence_1/ProcSceneSequence_1.md"))]
-    #[::unity2::class(namespace = "App", name = "ProcSceneSequence`1")]
-    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < T0 >)]
-    #[parent(crate::app::procinst::ProcInst)]
-    #[parent(crate::system::object::Object)]
-    pub struct ProcSceneSequence_1<T0: ::unity2::ClassIdentity> {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: procinst :: { IProcInst , ProcInst }
+ ;
+ use crate :: app :: singletonprocinst_1 :: { ISingletonProcInst_1 , SingletonProcInst_1 }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/procscenesequence_1/ProcSceneSequence_1.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProcSceneSequence`1")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < T0 >)] # [parent (crate :: app :: procinst :: ProcInst)] # [parent (crate :: system :: object :: Object)] pub struct ProcSceneSequence_1 < T0 : :: unity2 :: ClassIdentity > {}
+
 }
 
 #[cfg(feature = "app-procscenesequence_1-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-procscenesequence_1")]
-#[::unity2::methods]
-impl<T0: ::unity2::ClassIdentity> ProcSceneSequence_1<T0> {
-    #[doc = "`get_SceneName()` overload"]
-    #[method(name = "get_SceneName", args = 0)]
-    pub fn get_scene_name(self) -> ::unity2::Il2CppString;
+# [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity > ProcSceneSequence_1 < T0 > {
+# [doc = "`get_SceneName()` overload"] # [method (name = "get_SceneName" , args = 0)] pub fn get_scene_name (self ,) -> :: unity2 :: Il2CppString ;
 
-    #[doc = "`set_SceneName(::unity2::Il2CppString)` overload"]
-    #[method(name = "set_SceneName", args = 1)]
-    pub fn set_scene_name(self, value: ::unity2::Il2CppString) -> ();
+# [doc = "`set_SceneName(::unity2::Il2CppString)` overload"] # [method (name = "set_SceneName" , args = 1)] pub fn set_scene_name (self , value : :: unity2 :: Il2CppString) -> () ;
 
-    #[doc = "`get_SceneMode()` overload"]
-    #[method(name = "get_SceneMode", args = 0)]
-    pub fn get_scene_mode(self) -> crate::unity_engine::scene_management::loadscenemode::LoadSceneMode;
+# [doc = "`get_SceneMode()` overload"] # [method (name = "get_SceneMode" , args = 0)] pub fn get_scene_mode (self ,) -> crate :: unity_engine :: scene_management :: loadscenemode :: LoadSceneMode ;
 
-    #[doc = "`set_SceneMode(crate::unity_engine::scene_management::loadscenemode::LoadSceneMode)` overload"]
-    #[method(name = "set_SceneMode", args = 1)]
-    pub fn set_scene_mode(self, value: crate::unity_engine::scene_management::loadscenemode::LoadSceneMode) -> ();
+# [doc = "`set_SceneMode(crate::unity_engine::scene_management::loadscenemode::LoadSceneMode)` overload"] # [method (name = "set_SceneMode" , args = 1)] pub fn set_scene_mode (self , value : crate :: unity_engine :: scene_management :: loadscenemode :: LoadSceneMode) -> () ;
 
-    #[doc = "`LoadScene()` overload"]
-    #[method(name = "LoadScene", args = 0)]
-    pub fn load_scene(self) -> ();
+# [doc = "`LoadScene()` overload"] # [method (name = "LoadScene" , args = 0)] pub fn load_scene (self ,) -> () ;
 
-    #[doc = "`LoadScene(::unity2::Il2CppString, crate::unity_engine::scene_management::loadscenemode::LoadSceneMode)` overload"]
-    #[method(name = "LoadScene", args = 2)]
-    pub fn load_scene_2(self, name: ::unity2::Il2CppString, mode: crate::unity_engine::scene_management::loadscenemode::LoadSceneMode) -> ();
+# [doc = "`LoadScene(::unity2::Il2CppString, crate::unity_engine::scene_management::loadscenemode::LoadSceneMode)` overload"] # [method (name = "LoadScene" , args = 2)] pub fn load_scene_2 (self , name : :: unity2 :: Il2CppString , mode : crate :: unity_engine :: scene_management :: loadscenemode :: LoadSceneMode) -> () ;
 
-    #[doc = "`UnloadScene()` overload"]
-    #[method(name = "UnloadScene", args = 0)]
-    pub fn unload_scene(self) -> ();
+# [doc = "`UnloadScene()` overload"] # [method (name = "UnloadScene" , args = 0)] pub fn unload_scene (self ,) -> () ;
 
-    #[doc = "`UnloadScene(::unity2::Il2CppString)` overload"]
-    #[method(name = "UnloadScene", args = 1)]
-    pub fn unload_scene_2(self, name: ::unity2::Il2CppString) -> ();
+# [doc = "`UnloadScene(::unity2::Il2CppString)` overload"] # [method (name = "UnloadScene" , args = 1)] pub fn unload_scene_2 (self , name : :: unity2 :: Il2CppString) -> () ;
 
-    #[doc = "`BindLoading()` overload"]
-    #[method(name = "BindLoading", args = 0)]
-    pub fn bind_loading(self) -> ();
+# [doc = "`BindLoading()` overload"] # [method (name = "BindLoading" , args = 0)] pub fn bind_loading (self ,) -> () ;
 
-    #[doc = "`UnbindLoading()` overload"]
-    #[method(name = "UnbindLoading", args = 0)]
-    pub fn unbind_loading(self) -> ();
+# [doc = "`UnbindLoading()` overload"] # [method (name = "UnbindLoading" , args = 0)] pub fn unbind_loading (self ,) -> () ;
 
-    #[doc = "`get_LoadingMode()` overload"]
-    #[method(name = "get_LoadingMode", args = 0)]
-    pub fn get_loading_mode(self) -> crate::app::loadingmanager::LoadingManager_Modes;
+# [doc = "`get_LoadingMode()` overload"] # [method (name = "get_LoadingMode" , args = 0)] pub fn get_loading_mode (self ,) -> crate :: app :: loadingmanager :: LoadingManager_Modes ;
 
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+# [doc = "`.ctor()` overload"] # [method (name = ".ctor" , args = 0)] pub fn ctor (self ,) -> () ;
 }
 
 #[cfg(feature = "app-procscenesequence_1")]
-impl<T0: ::unity2::ClassIdentity> ProcSceneSequence_1<T0> {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ProcSceneSequence_1),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IProcSceneSequence_1Methods<T0>>::ctor(this);
-        this
-    }
+impl < T0 : :: unity2 :: ClassIdentity > ProcSceneSequence_1 < T0 > {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProcSceneSequence_1) , :: core :: stringify ! (new) ,)) ; < Self as IProcSceneSequence_1Methods < T0 > > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-procscenesequence_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IProcSceneSequence_1, IProcSceneSequence_1Methods, ProcSceneSequence_1};
-    #[cfg(feature = "app-procinst")]
-    pub use crate::app::procinst::IProcInstMethods;
-    #[cfg(feature = "app-singletonprocinst_1")]
-    pub use crate::app::singletonprocinst_1::ISingletonProcInst_1Methods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::{
-        app::{procinst::IProcInst, singletonprocinst_1::ISingletonProcInst_1},
-        system::object::IObject,
-    };
+    pub use super::ProcSceneSequence_1;
+    pub use super::IProcSceneSequence_1;
+    pub use super::IProcSceneSequence_1Methods;
+    pub use crate::app::procinst::IProcInst;
+    pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "app-procinst")] pub use crate::app::procinst::IProcInstMethods;
+    #[cfg(feature = "app-singletonprocinst_1")] pub use crate::app::singletonprocinst_1::ISingletonProcInst_1Methods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

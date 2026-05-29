@@ -2,151 +2,49 @@
 
 #[cfg(feature = "app-forcetexturesetter-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/forcetexturesetter/ForceTextureSetter.md"))]
-    #[::unity2::class(namespace = "App", name = "ForceTextureSetter")]
-    #[parent(crate::system::object::Object)]
-    pub struct ForceTextureSetter {
-        #[offset(16)]
-        #[rename(name = "m_image")]
-        pub m_image: crate::unity_engine::ui::image::Image,
-        #[offset(24)]
-        #[rename(name = "m_playerTexture")]
-        pub m_player_texture: crate::unity_engine::sprite::Sprite,
-        #[offset(32)]
-        #[rename(name = "m_enemyTexture")]
-        pub m_enemy_texture: crate::unity_engine::sprite::Sprite,
-        #[offset(40)]
-        #[rename(name = "m_allyTexture")]
-        pub m_ally_texture: crate::unity_engine::sprite::Sprite,
-        #[offset(48)]
-        #[rename(name = "m_f4thTexture")]
-        pub m_f4th_texture: crate::unity_engine::sprite::Sprite,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/forcetexturesetter/ForceTextureSetter.md"))] # [:: unity2 :: class (namespace = "App" , name = "ForceTextureSetter")] # [parent (crate :: system :: object :: Object)] pub struct ForceTextureSetter {
+# [offset (16)] # [rename (name = "m_image")] pub m_image : crate :: unity_engine :: ui :: image :: Image ,
+# [offset (24)] # [rename (name = "m_playerTexture")] pub m_player_texture : crate :: unity_engine :: sprite :: Sprite ,
+# [offset (32)] # [rename (name = "m_enemyTexture")] pub m_enemy_texture : crate :: unity_engine :: sprite :: Sprite ,
+# [offset (40)] # [rename (name = "m_allyTexture")] pub m_ally_texture : crate :: unity_engine :: sprite :: Sprite ,
+# [offset (48)] # [rename (name = "m_f4thTexture")] pub m_f4th_texture : crate :: unity_engine :: sprite :: Sprite ,
+}
+
 }
 
 #[cfg(feature = "app-forcetexturesetter-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-forcetexturesetter")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ForceTextureSetter_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_texture {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::force::Force_Type as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ForceTextureSetter as ::unity2::ClassIdentity>::class(),
-                "SetTexture",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ForceTextureSetter as ::unity2::ClassIdentity>::NAME,
-                        "SetTexture",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_texture(this: ForceTextureSetter, r#type: crate::app::force::Force_Type, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ForceTextureSetter, crate::app::force::Force_Type, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_texture::get_method_info().method_ptr);
-        inner(this, r#type, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ForceTextureSetter as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ForceTextureSetter as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: ForceTextureSetter, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ForceTextureSetter, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ForceTextureSetter_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_texture { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: force :: Force_Type as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ForceTextureSetter as :: unity2 :: ClassIdentity > :: class () , "SetTexture" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ForceTextureSetter as :: unity2 :: ClassIdentity > :: NAME , "SetTexture" , e) , } } } pub unsafe fn set_texture (this : ForceTextureSetter , r#type : crate :: app :: force :: Force_Type , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ForceTextureSetter , crate :: app :: force :: Force_Type , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_texture :: get_method_info () . method_ptr ,) ; inner (this , r#type , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ForceTextureSetter as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ForceTextureSetter as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : ForceTextureSetter , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ForceTextureSetter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-forcetexturesetter")]
-pub trait IForceTextureSetterMethods: IForceTextureSetter {
-    #[doc = "`SetTexture(crate::app::force::Force_Type)` overload"]
-    fn set_texture(self, r#type: impl ::core::convert::Into<crate::app::force::Force_Type>) -> () {
-        unsafe {
-            let __receiver = <ForceTextureSetter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ForceTextureSetter_unity2_raw::set_texture(__receiver, ::core::convert::Into::into(r#type), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <ForceTextureSetter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ForceTextureSetter_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IForceTextureSetterMethods : IForceTextureSetter { # [doc = "`SetTexture(crate::app::force::Force_Type)` overload"] fn set_texture (self , r#type : impl :: core :: convert :: Into < crate :: app :: force :: Force_Type >) -> () { unsafe { let __receiver = < ForceTextureSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ForceTextureSetter_unity2_raw :: set_texture (__receiver , :: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ForceTextureSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ForceTextureSetter_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-forcetexturesetter")]
-impl<__T: IForceTextureSetter> IForceTextureSetterMethods for __T {}
+impl < __T : IForceTextureSetter > IForceTextureSetterMethods for __T { }
+
+#[cfg(feature = "app-forcetexturesetter")]
+impl ForceTextureSetter { pub fn set_texture_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ForceTextureSetter_unity2_raw :: __lookup_set_texture :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ForceTextureSetter_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-forcetexturesetter")]
 impl ForceTextureSetter {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ForceTextureSetter),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IForceTextureSetterMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ForceTextureSetter) , :: core :: stringify ! (new) ,)) ; < Self as IForceTextureSetterMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-forcetexturesetter")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{ForceTextureSetter, IForceTextureSetter, IForceTextureSetterMethods};
+    pub use super::ForceTextureSetter;
+    pub use super::IForceTextureSetter;
+    pub use super::IForceTextureSetterMethods;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

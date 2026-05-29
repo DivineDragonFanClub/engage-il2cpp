@@ -2,480 +2,73 @@
 
 #[cfg(feature = "app-myroomwakeupselectmenuitemcontent-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::basicmenuitemcontent::{BasicMenuItemContent, IBasicMenuItemContent},
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomwakeupselectmenuitemcontent/MyRoomWakeupSelectMenuItemContent.md"))]
-    #[::unity2::class(namespace = "App", name = "MyRoomWakeupSelectMenuItemContent")]
-    #[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]
-    pub struct MyRoomWakeupSelectMenuItemContent {
-        #[static_field]
-        #[rename(name = "TYPE_MAX")]
-        pub type_max: i32,
-        #[offset(72)]
-        #[rename(name = "m_Icon")]
-        pub m_icon: crate::unity_engine::gameobject::GameObject,
-        #[offset(80)]
-        #[rename(name = "m_Name")]
-        pub m_name: crate::unity_engine::gameobject::GameObject,
-        #[offset(88)]
-        #[rename(name = "m_RankObjects")]
-        pub m_rank_objects: ::unity2::Array<crate::unity_engine::gameobject::GameObject>,
-        #[offset(96)]
-        #[rename(name = "m_Frame")]
-        pub m_frame: crate::unity_engine::gameobject::GameObject,
-        #[offset(104)]
-        #[rename(name = "m_Image")]
-        pub m_image: crate::unity_engine::ui::image::Image,
-        #[offset(112)]
-        #[rename(name = "m_RankImages")]
-        pub m_rank_images: ::unity2::Array<crate::unity_engine::ui::image::Image>,
-        #[offset(120)]
-        #[rename(name = "m_RankImagesBase")]
-        pub m_rank_images_base: ::unity2::Array<crate::unity_engine::ui::image::Image>,
-        #[offset(128)]
-        #[rename(name = "m_RankImagesNumber")]
-        pub m_rank_images_number: ::unity2::Array<crate::tm_pro::textmeshprougui::TextMeshProUGUI>,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: basicmenuitemcontent :: { BasicMenuItemContent , IBasicMenuItemContent }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomwakeupselectmenuitemcontent/MyRoomWakeupSelectMenuItemContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "MyRoomWakeupSelectMenuItemContent")] # [parent (crate :: app :: basicmenuitemcontent :: BasicMenuItemContent)] pub struct MyRoomWakeupSelectMenuItemContent {
+# [static_field] # [rename (name = "TYPE_MAX")] pub type_max : i32 ,
+# [offset (72)] # [rename (name = "m_Icon")] pub m_icon : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (80)] # [rename (name = "m_Name")] pub m_name : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (88)] # [rename (name = "m_RankObjects")] pub m_rank_objects : :: unity2 :: Array < crate :: unity_engine :: gameobject :: GameObject > ,
+# [offset (96)] # [rename (name = "m_Frame")] pub m_frame : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (104)] # [rename (name = "m_Image")] pub m_image : crate :: unity_engine :: ui :: image :: Image ,
+# [offset (112)] # [rename (name = "m_RankImages")] pub m_rank_images : :: unity2 :: Array < crate :: unity_engine :: ui :: image :: Image > ,
+# [offset (120)] # [rename (name = "m_RankImagesBase")] pub m_rank_images_base : :: unity2 :: Array < crate :: unity_engine :: ui :: image :: Image > ,
+# [offset (128)] # [rename (name = "m_RankImagesNumber")] pub m_rank_images_number : :: unity2 :: Array < crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI > ,
+}
+
 }
 
 #[cfg(feature = "app-myroomwakeupselectmenuitemcontent-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-myroomwakeupselectmenuitemcontent")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MyRoomWakeupSelectMenuItemContent_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_setup_objects {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MyRoomWakeupSelectMenuItemContent as ::unity2::ClassIdentity>::class(),
-                "SetupObjects",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MyRoomWakeupSelectMenuItemContent as ::unity2::ClassIdentity>::NAME,
-                        "SetupObjects",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn setup_objects(this: MyRoomWakeupSelectMenuItemContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MyRoomWakeupSelectMenuItemContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_setup_objects::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_rank_color {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::ui::image::Image as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::ui::image::Image as ::unity2::IlType>::il_type(),
-                <crate::tm_pro::textmeshprougui::TextMeshProUGUI as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MyRoomWakeupSelectMenuItemContent as ::unity2::ClassIdentity>::class(),
-                "SetRankColor",
-                4,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MyRoomWakeupSelectMenuItemContent as ::unity2::ClassIdentity>::NAME,
-                        "SetRankColor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_rank_color(
-        this: MyRoomWakeupSelectMenuItemContent,
-        rank_image: crate::unity_engine::ui::image::Image,
-        base_image: crate::unity_engine::ui::image::Image,
-        number_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        color: crate::unity_engine::color::Color,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MyRoomWakeupSelectMenuItemContent,
-            crate::unity_engine::ui::image::Image,
-            crate::unity_engine::ui::image::Image,
-            crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-            crate::unity_engine::color::Color,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_set_rank_color::get_method_info().method_ptr);
-        inner(this, rank_image, base_image, number_text, color, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_command_color {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MyRoomWakeupSelectMenuItemContent as ::unity2::ClassIdentity>::class(),
-                "GetCommandColor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MyRoomWakeupSelectMenuItemContent as ::unity2::ClassIdentity>::NAME,
-                        "GetCommandColor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_command_color(
-        this: MyRoomWakeupSelectMenuItemContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::color::Color {
-        let inner: extern "C" fn(MyRoomWakeupSelectMenuItemContent, ::unity2::OptionalMethod) -> crate::unity_engine::color::Color =
-            ::core::mem::transmute(__lookup_get_command_color::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_build {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::basicmenuitem::BasicMenuItem as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MyRoomWakeupSelectMenuItemContent as ::unity2::ClassIdentity>::class(),
-                "Build",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MyRoomWakeupSelectMenuItemContent as ::unity2::ClassIdentity>::NAME,
-                        "Build",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn build(
-        this: MyRoomWakeupSelectMenuItemContent,
-        menu_item: crate::app::basicmenuitem::BasicMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MyRoomWakeupSelectMenuItemContent, crate::app::basicmenuitem::BasicMenuItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_build::get_method_info().method_ptr);
-        inner(this, menu_item, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_build_text {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MyRoomWakeupSelectMenuItemContent as ::unity2::ClassIdentity>::class(),
-                "BuildText",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MyRoomWakeupSelectMenuItemContent as ::unity2::ClassIdentity>::NAME,
-                        "BuildText",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn build_text(this: MyRoomWakeupSelectMenuItemContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MyRoomWakeupSelectMenuItemContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_build_text::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update_text_color {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MyRoomWakeupSelectMenuItemContent as ::unity2::ClassIdentity>::class(),
-                "UpdateTextColor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MyRoomWakeupSelectMenuItemContent as ::unity2::ClassIdentity>::NAME,
-                        "UpdateTextColor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update_text_color(this: MyRoomWakeupSelectMenuItemContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MyRoomWakeupSelectMenuItemContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update_text_color::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MyRoomWakeupSelectMenuItemContent as ::unity2::ClassIdentity>::class(),
-                "Update",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MyRoomWakeupSelectMenuItemContent as ::unity2::ClassIdentity>::NAME,
-                        "Update",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update(this: MyRoomWakeupSelectMenuItemContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MyRoomWakeupSelectMenuItemContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MyRoomWakeupSelectMenuItemContent as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MyRoomWakeupSelectMenuItemContent as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: MyRoomWakeupSelectMenuItemContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MyRoomWakeupSelectMenuItemContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MyRoomWakeupSelectMenuItemContent_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_setup_objects { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MyRoomWakeupSelectMenuItemContent as :: unity2 :: ClassIdentity > :: class () , "SetupObjects" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MyRoomWakeupSelectMenuItemContent as :: unity2 :: ClassIdentity > :: NAME , "SetupObjects" , e) , } } } pub unsafe fn setup_objects (this : MyRoomWakeupSelectMenuItemContent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MyRoomWakeupSelectMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_setup_objects :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_rank_color { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: ui :: image :: Image as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: ui :: image :: Image as :: unity2 :: IlType > :: il_type () , < crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: color :: Color as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MyRoomWakeupSelectMenuItemContent as :: unity2 :: ClassIdentity > :: class () , "SetRankColor" , 4 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MyRoomWakeupSelectMenuItemContent as :: unity2 :: ClassIdentity > :: NAME , "SetRankColor" , e) , } } } pub unsafe fn set_rank_color (this : MyRoomWakeupSelectMenuItemContent , rank_image : crate :: unity_engine :: ui :: image :: Image , base_image : crate :: unity_engine :: ui :: image :: Image , number_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI , color : crate :: unity_engine :: color :: Color , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MyRoomWakeupSelectMenuItemContent , crate :: unity_engine :: ui :: image :: Image , crate :: unity_engine :: ui :: image :: Image , crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI , crate :: unity_engine :: color :: Color , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_rank_color :: get_method_info () . method_ptr ,) ; inner (this , rank_image , base_image , number_text , color , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_command_color { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MyRoomWakeupSelectMenuItemContent as :: unity2 :: ClassIdentity > :: class () , "GetCommandColor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MyRoomWakeupSelectMenuItemContent as :: unity2 :: ClassIdentity > :: NAME , "GetCommandColor" , e) , } } } pub unsafe fn get_command_color (this : MyRoomWakeupSelectMenuItemContent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: color :: Color { let inner : extern "C" fn (MyRoomWakeupSelectMenuItemContent , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: color :: Color = :: core :: mem :: transmute (__lookup_get_command_color :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_build { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: basicmenuitem :: BasicMenuItem as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MyRoomWakeupSelectMenuItemContent as :: unity2 :: ClassIdentity > :: class () , "Build" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MyRoomWakeupSelectMenuItemContent as :: unity2 :: ClassIdentity > :: NAME , "Build" , e) , } } } pub unsafe fn build (this : MyRoomWakeupSelectMenuItemContent , menu_item : crate :: app :: basicmenuitem :: BasicMenuItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MyRoomWakeupSelectMenuItemContent , crate :: app :: basicmenuitem :: BasicMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_build :: get_method_info () . method_ptr ,) ; inner (this , menu_item , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_build_text { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MyRoomWakeupSelectMenuItemContent as :: unity2 :: ClassIdentity > :: class () , "BuildText" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MyRoomWakeupSelectMenuItemContent as :: unity2 :: ClassIdentity > :: NAME , "BuildText" , e) , } } } pub unsafe fn build_text (this : MyRoomWakeupSelectMenuItemContent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MyRoomWakeupSelectMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_build_text :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update_text_color { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MyRoomWakeupSelectMenuItemContent as :: unity2 :: ClassIdentity > :: class () , "UpdateTextColor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MyRoomWakeupSelectMenuItemContent as :: unity2 :: ClassIdentity > :: NAME , "UpdateTextColor" , e) , } } } pub unsafe fn update_text_color (this : MyRoomWakeupSelectMenuItemContent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MyRoomWakeupSelectMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update_text_color :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MyRoomWakeupSelectMenuItemContent as :: unity2 :: ClassIdentity > :: class () , "Update" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MyRoomWakeupSelectMenuItemContent as :: unity2 :: ClassIdentity > :: NAME , "Update" , e) , } } } pub unsafe fn update (this : MyRoomWakeupSelectMenuItemContent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MyRoomWakeupSelectMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MyRoomWakeupSelectMenuItemContent as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MyRoomWakeupSelectMenuItemContent as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : MyRoomWakeupSelectMenuItemContent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MyRoomWakeupSelectMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-myroomwakeupselectmenuitemcontent")]
-pub trait IMyRoomWakeupSelectMenuItemContentMethods: IMyRoomWakeupSelectMenuItemContent {
-    #[doc = "`SetupObjects()` overload"]
-    fn setup_objects(self) -> () {
-        unsafe {
-            let __receiver = <MyRoomWakeupSelectMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomWakeupSelectMenuItemContent_unity2_raw::setup_objects(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetRankColor(crate::unity_engine::ui::image::Image, crate::unity_engine::ui::image::Image, crate::tm_pro::textmeshprougui::TextMeshProUGUI, crate::unity_engine::color::Color)` overload"]
-    fn set_rank_color(
-        self,
-        rank_image: impl ::core::convert::Into<crate::unity_engine::ui::image::Image>,
-        base_image: impl ::core::convert::Into<crate::unity_engine::ui::image::Image>,
-        number_text: impl ::core::convert::Into<crate::tm_pro::textmeshprougui::TextMeshProUGUI>,
-        color: impl ::core::convert::Into<crate::unity_engine::color::Color>,
-    ) -> () {
-        unsafe {
-            let __receiver = <MyRoomWakeupSelectMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomWakeupSelectMenuItemContent_unity2_raw::set_rank_color(
-                __receiver,
-                ::core::convert::Into::into(rank_image),
-                ::core::convert::Into::into(base_image),
-                ::core::convert::Into::into(number_text),
-                ::core::convert::Into::into(color),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetCommandColor()` overload"]
-    fn get_command_color(self) -> crate::unity_engine::color::Color {
-        unsafe {
-            let __receiver = <MyRoomWakeupSelectMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomWakeupSelectMenuItemContent_unity2_raw::get_command_color(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Build(crate::app::basicmenuitem::BasicMenuItem)` overload"]
-    fn build(self, menu_item: impl ::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem>) -> () {
-        unsafe {
-            let __receiver = <MyRoomWakeupSelectMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomWakeupSelectMenuItemContent_unity2_raw::build(__receiver, ::core::convert::Into::into(menu_item), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`BuildText()` overload"]
-    fn build_text(self) -> () {
-        unsafe {
-            let __receiver = <MyRoomWakeupSelectMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomWakeupSelectMenuItemContent_unity2_raw::build_text(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`UpdateTextColor()` overload"]
-    fn update_text_color(self) -> () {
-        unsafe {
-            let __receiver = <MyRoomWakeupSelectMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomWakeupSelectMenuItemContent_unity2_raw::update_text_color(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Update()` overload"]
-    fn update(self) -> () {
-        unsafe {
-            let __receiver = <MyRoomWakeupSelectMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomWakeupSelectMenuItemContent_unity2_raw::update(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <MyRoomWakeupSelectMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomWakeupSelectMenuItemContent_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IMyRoomWakeupSelectMenuItemContentMethods : IMyRoomWakeupSelectMenuItemContent { # [doc = "`SetupObjects()` overload"] fn setup_objects (self ,) -> () { unsafe { let __receiver = < MyRoomWakeupSelectMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MyRoomWakeupSelectMenuItemContent_unity2_raw :: setup_objects (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetRankColor(crate::unity_engine::ui::image::Image, crate::unity_engine::ui::image::Image, crate::tm_pro::textmeshprougui::TextMeshProUGUI, crate::unity_engine::color::Color)` overload"] fn set_rank_color (self , rank_image : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: image :: Image > , base_image : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: image :: Image > , number_text : impl :: core :: convert :: Into < crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI > , color : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color >) -> () { unsafe { let __receiver = < MyRoomWakeupSelectMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MyRoomWakeupSelectMenuItemContent_unity2_raw :: set_rank_color (__receiver , :: core :: convert :: Into :: into (rank_image) , :: core :: convert :: Into :: into (base_image) , :: core :: convert :: Into :: into (number_text) , :: core :: convert :: Into :: into (color) , :: core :: option :: Option :: None) } } # [doc = "`GetCommandColor()` overload"] fn get_command_color (self ,) -> crate :: unity_engine :: color :: Color { unsafe { let __receiver = < MyRoomWakeupSelectMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MyRoomWakeupSelectMenuItemContent_unity2_raw :: get_command_color (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Build(crate::app::basicmenuitem::BasicMenuItem)` overload"] fn build (self , menu_item : impl :: core :: convert :: Into < crate :: app :: basicmenuitem :: BasicMenuItem >) -> () { unsafe { let __receiver = < MyRoomWakeupSelectMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MyRoomWakeupSelectMenuItemContent_unity2_raw :: build (__receiver , :: core :: convert :: Into :: into (menu_item) , :: core :: option :: Option :: None) } } # [doc = "`BuildText()` overload"] fn build_text (self ,) -> () { unsafe { let __receiver = < MyRoomWakeupSelectMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MyRoomWakeupSelectMenuItemContent_unity2_raw :: build_text (__receiver , :: core :: option :: Option :: None) } } # [doc = "`UpdateTextColor()` overload"] fn update_text_color (self ,) -> () { unsafe { let __receiver = < MyRoomWakeupSelectMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MyRoomWakeupSelectMenuItemContent_unity2_raw :: update_text_color (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < MyRoomWakeupSelectMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MyRoomWakeupSelectMenuItemContent_unity2_raw :: update (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MyRoomWakeupSelectMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MyRoomWakeupSelectMenuItemContent_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-myroomwakeupselectmenuitemcontent")]
-impl<__T: IMyRoomWakeupSelectMenuItemContent> IMyRoomWakeupSelectMenuItemContentMethods for __T {}
+impl < __T : IMyRoomWakeupSelectMenuItemContent > IMyRoomWakeupSelectMenuItemContentMethods for __T { }
+
+#[cfg(feature = "app-myroomwakeupselectmenuitemcontent")]
+impl MyRoomWakeupSelectMenuItemContent { pub fn setup_objects_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MyRoomWakeupSelectMenuItemContent_unity2_raw :: __lookup_setup_objects :: get_method_info () } pub fn set_rank_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MyRoomWakeupSelectMenuItemContent_unity2_raw :: __lookup_set_rank_color :: get_method_info () } pub fn get_command_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MyRoomWakeupSelectMenuItemContent_unity2_raw :: __lookup_get_command_color :: get_method_info () } pub fn build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MyRoomWakeupSelectMenuItemContent_unity2_raw :: __lookup_build :: get_method_info () } pub fn build_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MyRoomWakeupSelectMenuItemContent_unity2_raw :: __lookup_build_text :: get_method_info () } pub fn update_text_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MyRoomWakeupSelectMenuItemContent_unity2_raw :: __lookup_update_text_color :: get_method_info () } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MyRoomWakeupSelectMenuItemContent_unity2_raw :: __lookup_update :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MyRoomWakeupSelectMenuItemContent_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-myroomwakeupselectmenuitemcontent")]
 impl MyRoomWakeupSelectMenuItemContent {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MyRoomWakeupSelectMenuItemContent),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMyRoomWakeupSelectMenuItemContentMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MyRoomWakeupSelectMenuItemContent) , :: core :: stringify ! (new) ,)) ; < Self as IMyRoomWakeupSelectMenuItemContentMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-myroomwakeupselectmenuitemcontent")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IMyRoomWakeupSelectMenuItemContent, IMyRoomWakeupSelectMenuItemContentMethods, MyRoomWakeupSelectMenuItemContent};
-    #[cfg(feature = "app-basicmenuitemcontent")]
-    pub use crate::app::basicmenuitemcontent::IBasicMenuItemContentMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        app::basicmenuitemcontent::IBasicMenuItemContent,
-        system::object::IObject,
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::MyRoomWakeupSelectMenuItemContent;
+    pub use super::IMyRoomWakeupSelectMenuItemContent;
+    pub use super::IMyRoomWakeupSelectMenuItemContentMethods;
+    pub use crate::app::basicmenuitemcontent::IBasicMenuItemContent;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "app-basicmenuitemcontent")] pub use crate::app::basicmenuitemcontent::IBasicMenuItemContentMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

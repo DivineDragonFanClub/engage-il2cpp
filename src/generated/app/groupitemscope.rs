@@ -2,365 +2,47 @@
 
 #[cfg(feature = "app-groupitemscope-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/groupitemscope/GroupItemScope.md"))]
-    #[::unity2::class(namespace = "App", name = "GroupItemScope")]
-    #[parent(crate::system::object::Object)]
-    pub struct GroupItemScope {
-        #[offset(16)]
-        #[rename(name = "m_Menu")]
-        pub m_menu: crate::app::debugmenu::DebugMenu,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/groupitemscope/GroupItemScope.md"))] # [:: unity2 :: class (namespace = "App" , name = "GroupItemScope")] # [parent (crate :: system :: object :: Object)] pub struct GroupItemScope {
+# [offset (16)] # [rename (name = "m_Menu")] pub m_menu : crate :: app :: debugmenu :: DebugMenu ,
+}
+
 }
 
 #[cfg(feature = "app-groupitemscope-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-groupitemscope")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __GroupItemScope_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::debugmenu::DebugMenu as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::app::menuitem::MenuItem_State as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GroupItemScope as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GroupItemScope as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: GroupItemScope,
-        menu: crate::app::debugmenu::DebugMenu,
-        name: ::unity2::Il2CppString,
-        state: crate::app::menuitem::MenuItem_State,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            GroupItemScope,
-            crate::app::debugmenu::DebugMenu,
-            ::unity2::Il2CppString,
-            crate::app::menuitem::MenuItem_State,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, menu, name, state, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::debugmenu::DebugMenu as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::app::menuitem::MenuItem_State as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GroupItemScope as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                4,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GroupItemScope as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor_2(
-        this: GroupItemScope,
-        menu: crate::app::debugmenu::DebugMenu,
-        name: ::unity2::Il2CppString,
-        english: ::unity2::Il2CppString,
-        state: crate::app::menuitem::MenuItem_State,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            GroupItemScope,
-            crate::app::debugmenu::DebugMenu,
-            ::unity2::Il2CppString,
-            ::unity2::Il2CppString,
-            crate::app::menuitem::MenuItem_State,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
-        inner(this, menu, name, english, state, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_setup {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::debugmenu::DebugMenu as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::app::menuitem::MenuItem_State as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GroupItemScope as ::unity2::ClassIdentity>::class(),
-                "Setup",
-                4,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GroupItemScope as ::unity2::ClassIdentity>::NAME,
-                        "Setup",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn setup(
-        this: GroupItemScope,
-        menu: crate::app::debugmenu::DebugMenu,
-        name: ::unity2::Il2CppString,
-        english: ::unity2::Il2CppString,
-        state: crate::app::menuitem::MenuItem_State,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            GroupItemScope,
-            crate::app::debugmenu::DebugMenu,
-            ::unity2::Il2CppString,
-            ::unity2::Il2CppString,
-            crate::app::menuitem::MenuItem_State,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_setup::get_method_info().method_ptr);
-        inner(this, menu, name, english, state, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_finalize {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GroupItemScope as ::unity2::ClassIdentity>::class(),
-                "Finalize",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GroupItemScope as ::unity2::ClassIdentity>::NAME,
-                        "Finalize",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn finalize(this: GroupItemScope, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GroupItemScope, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_finalize::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_dispose {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GroupItemScope as ::unity2::ClassIdentity>::class(),
-                "Dispose",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GroupItemScope as ::unity2::ClassIdentity>::NAME,
-                        "Dispose",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn dispose(this: GroupItemScope, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GroupItemScope, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_dispose::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __GroupItemScope_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: debugmenu :: DebugMenu as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: app :: menuitem :: MenuItem_State as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GroupItemScope as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GroupItemScope as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : GroupItemScope , menu : crate :: app :: debugmenu :: DebugMenu , name : :: unity2 :: Il2CppString , state : crate :: app :: menuitem :: MenuItem_State , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GroupItemScope , crate :: app :: debugmenu :: DebugMenu , :: unity2 :: Il2CppString , crate :: app :: menuitem :: MenuItem_State , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , menu , name , state , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: debugmenu :: DebugMenu as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: app :: menuitem :: MenuItem_State as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GroupItemScope as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 4 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GroupItemScope as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor_2 (this : GroupItemScope , menu : crate :: app :: debugmenu :: DebugMenu , name : :: unity2 :: Il2CppString , english : :: unity2 :: Il2CppString , state : crate :: app :: menuitem :: MenuItem_State , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GroupItemScope , crate :: app :: debugmenu :: DebugMenu , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , crate :: app :: menuitem :: MenuItem_State , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor_2 :: get_method_info () . method_ptr ,) ; inner (this , menu , name , english , state , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_setup { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: debugmenu :: DebugMenu as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: app :: menuitem :: MenuItem_State as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GroupItemScope as :: unity2 :: ClassIdentity > :: class () , "Setup" , 4 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GroupItemScope as :: unity2 :: ClassIdentity > :: NAME , "Setup" , e) , } } } pub unsafe fn setup (this : GroupItemScope , menu : crate :: app :: debugmenu :: DebugMenu , name : :: unity2 :: Il2CppString , english : :: unity2 :: Il2CppString , state : crate :: app :: menuitem :: MenuItem_State , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GroupItemScope , crate :: app :: debugmenu :: DebugMenu , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , crate :: app :: menuitem :: MenuItem_State , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_setup :: get_method_info () . method_ptr ,) ; inner (this , menu , name , english , state , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_finalize { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GroupItemScope as :: unity2 :: ClassIdentity > :: class () , "Finalize" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GroupItemScope as :: unity2 :: ClassIdentity > :: NAME , "Finalize" , e) , } } } pub unsafe fn finalize (this : GroupItemScope , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GroupItemScope , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_finalize :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_dispose { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GroupItemScope as :: unity2 :: ClassIdentity > :: class () , "Dispose" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GroupItemScope as :: unity2 :: ClassIdentity > :: NAME , "Dispose" , e) , } } } pub unsafe fn dispose (this : GroupItemScope , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GroupItemScope , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_dispose :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-groupitemscope")]
-pub trait IGroupItemScopeMethods: IGroupItemScope {
-    #[doc = "`.ctor(crate::app::debugmenu::DebugMenu, ::unity2::Il2CppString, crate::app::menuitem::MenuItem_State)` overload"]
-    fn ctor(
-        self,
-        menu: impl ::core::convert::Into<crate::app::debugmenu::DebugMenu>,
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        state: impl ::core::convert::Into<crate::app::menuitem::MenuItem_State>,
-    ) -> () {
-        unsafe {
-            let __receiver = <GroupItemScope as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GroupItemScope_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(menu),
-                ::core::convert::Into::into(name),
-                ::core::convert::Into::into(state),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor(crate::app::debugmenu::DebugMenu, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::app::menuitem::MenuItem_State)` overload"]
-    fn ctor_2(
-        self,
-        menu: impl ::core::convert::Into<crate::app::debugmenu::DebugMenu>,
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        english: impl ::core::convert::Into<::unity2::Il2CppString>,
-        state: impl ::core::convert::Into<crate::app::menuitem::MenuItem_State>,
-    ) -> () {
-        unsafe {
-            let __receiver = <GroupItemScope as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GroupItemScope_unity2_raw::ctor_2(
-                __receiver,
-                ::core::convert::Into::into(menu),
-                ::core::convert::Into::into(name),
-                ::core::convert::Into::into(english),
-                ::core::convert::Into::into(state),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Setup(crate::app::debugmenu::DebugMenu, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::app::menuitem::MenuItem_State)` overload"]
-    fn setup(
-        self,
-        menu: impl ::core::convert::Into<crate::app::debugmenu::DebugMenu>,
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        english: impl ::core::convert::Into<::unity2::Il2CppString>,
-        state: impl ::core::convert::Into<crate::app::menuitem::MenuItem_State>,
-    ) -> () {
-        unsafe {
-            let __receiver = <GroupItemScope as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GroupItemScope_unity2_raw::setup(
-                __receiver,
-                ::core::convert::Into::into(menu),
-                ::core::convert::Into::into(name),
-                ::core::convert::Into::into(english),
-                ::core::convert::Into::into(state),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Finalize()` overload"]
-    fn finalize(self) -> () {
-        unsafe {
-            let __receiver = <GroupItemScope as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GroupItemScope_unity2_raw::finalize(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Dispose()` overload"]
-    fn dispose(self) -> () {
-        unsafe {
-            let __receiver = <GroupItemScope as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GroupItemScope_unity2_raw::dispose(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IGroupItemScopeMethods : IGroupItemScope { # [doc = "`.ctor(crate::app::debugmenu::DebugMenu, ::unity2::Il2CppString, crate::app::menuitem::MenuItem_State)` overload"] fn ctor (self , menu : impl :: core :: convert :: Into < crate :: app :: debugmenu :: DebugMenu > , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , state : impl :: core :: convert :: Into < crate :: app :: menuitem :: MenuItem_State >) -> () { unsafe { let __receiver = < GroupItemScope as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GroupItemScope_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (menu) , :: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (state) , :: core :: option :: Option :: None) } } # [doc = "`.ctor(crate::app::debugmenu::DebugMenu, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::app::menuitem::MenuItem_State)` overload"] fn ctor_2 (self , menu : impl :: core :: convert :: Into < crate :: app :: debugmenu :: DebugMenu > , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , english : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , state : impl :: core :: convert :: Into < crate :: app :: menuitem :: MenuItem_State >) -> () { unsafe { let __receiver = < GroupItemScope as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GroupItemScope_unity2_raw :: ctor_2 (__receiver , :: core :: convert :: Into :: into (menu) , :: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (english) , :: core :: convert :: Into :: into (state) , :: core :: option :: Option :: None) } } # [doc = "`Setup(crate::app::debugmenu::DebugMenu, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::app::menuitem::MenuItem_State)` overload"] fn setup (self , menu : impl :: core :: convert :: Into < crate :: app :: debugmenu :: DebugMenu > , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , english : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , state : impl :: core :: convert :: Into < crate :: app :: menuitem :: MenuItem_State >) -> () { unsafe { let __receiver = < GroupItemScope as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GroupItemScope_unity2_raw :: setup (__receiver , :: core :: convert :: Into :: into (menu) , :: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (english) , :: core :: convert :: Into :: into (state) , :: core :: option :: Option :: None) } } # [doc = "`Finalize()` overload"] fn finalize (self ,) -> () { unsafe { let __receiver = < GroupItemScope as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GroupItemScope_unity2_raw :: finalize (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Dispose()` overload"] fn dispose (self ,) -> () { unsafe { let __receiver = < GroupItemScope as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GroupItemScope_unity2_raw :: dispose (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-groupitemscope")]
-impl<__T: IGroupItemScope> IGroupItemScopeMethods for __T {}
+impl < __T : IGroupItemScope > IGroupItemScopeMethods for __T { }
+
+#[cfg(feature = "app-groupitemscope")]
+impl GroupItemScope { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GroupItemScope_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GroupItemScope_unity2_raw :: __lookup_ctor_2 :: get_method_info () } pub fn setup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GroupItemScope_unity2_raw :: __lookup_setup :: get_method_info () } pub fn finalize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GroupItemScope_unity2_raw :: __lookup_finalize :: get_method_info () } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GroupItemScope_unity2_raw :: __lookup_dispose :: get_method_info () } }
 
 #[cfg(feature = "app-groupitemscope")]
 impl GroupItemScope {
-    #[doc = "`.ctor(crate::app::debugmenu::DebugMenu, ::unity2::Il2CppString, crate::app::menuitem::MenuItem_State)` — overload selector"]
-    pub fn new(menu: crate::app::debugmenu::DebugMenu, name: ::unity2::Il2CppString, state: crate::app::menuitem::MenuItem_State) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GroupItemScope),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGroupItemScopeMethods>::ctor(this, menu, name, state);
-        this
-    }
+# [doc = "`.ctor(crate::app::debugmenu::DebugMenu, ::unity2::Il2CppString, crate::app::menuitem::MenuItem_State)` — overload selector"] pub fn new (menu : crate :: app :: debugmenu :: DebugMenu , name : :: unity2 :: Il2CppString , state : crate :: app :: menuitem :: MenuItem_State) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GroupItemScope) , :: core :: stringify ! (new) ,)) ; < Self as IGroupItemScopeMethods > :: ctor (this , menu , name , state) ; this }
 
-    #[doc = "`.ctor(crate::app::debugmenu::DebugMenu, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::app::menuitem::MenuItem_State)` — overload selector"]
-    pub fn new_2(
-        menu: crate::app::debugmenu::DebugMenu,
-        name: ::unity2::Il2CppString,
-        english: ::unity2::Il2CppString,
-        state: crate::app::menuitem::MenuItem_State,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GroupItemScope),
-                ::core::stringify!(new_2),
-            )
-        });
-        <Self as IGroupItemScopeMethods>::ctor_2(this, menu, name, english, state);
-        this
-    }
+# [doc = "`.ctor(crate::app::debugmenu::DebugMenu, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::app::menuitem::MenuItem_State)` — overload selector"] pub fn new_2 (menu : crate :: app :: debugmenu :: DebugMenu , name : :: unity2 :: Il2CppString , english : :: unity2 :: Il2CppString , state : crate :: app :: menuitem :: MenuItem_State) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GroupItemScope) , :: core :: stringify ! (new_2) ,)) ; < Self as IGroupItemScopeMethods > :: ctor_2 (this , menu , name , english , state) ; this }
 }
 
 #[cfg(feature = "app-groupitemscope")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{GroupItemScope, IGroupItemScope, IGroupItemScopeMethods};
+    pub use super::GroupItemScope;
+    pub use super::IGroupItemScope;
+    pub use super::IGroupItemScopeMethods;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

@@ -2,543 +2,66 @@
 
 #[cfg(feature = "app-accessoryequipmentinfo-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/accessoryequipmentinfo/AccessoryEquipmentInfo.md"))]
-    #[::unity2::class(namespace = "App", name = "AccessoryEquipmentInfo")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct AccessoryEquipmentInfo {
-        #[offset(24)]
-        #[rename(name = "m_ContentObject")]
-        pub m_content_object: crate::unity_engine::gameobject::GameObject,
-        #[offset(32)]
-        #[rename(name = "m_CursorObject")]
-        pub m_cursor_object: crate::unity_engine::gameobject::GameObject,
-        #[offset(40)]
-        #[rename(name = "m_MenuItemList")]
-        pub m_menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/accessoryequipmentinfo/AccessoryEquipmentInfo.md"))] # [:: unity2 :: class (namespace = "App" , name = "AccessoryEquipmentInfo")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct AccessoryEquipmentInfo {
+# [offset (24)] # [rename (name = "m_ContentObject")] pub m_content_object : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (32)] # [rename (name = "m_CursorObject")] pub m_cursor_object : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (40)] # [rename (name = "m_MenuItemList")] pub m_menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > ,
+}
+
 }
 
 #[cfg(feature = "app-accessoryequipmentinfo-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-accessoryequipmentinfo")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AccessoryEquipmentInfo_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AccessoryEquipmentInfo as ::unity2::ClassIdentity>::class(),
-                "Create",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AccessoryEquipmentInfo as ::unity2::ClassIdentity>::NAME,
-                        "Create",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_create::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AccessoryEquipmentInfo as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AccessoryEquipmentInfo as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: AccessoryEquipmentInfo, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AccessoryEquipmentInfo, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_open {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AccessoryEquipmentInfo as ::unity2::ClassIdentity>::class(),
-                "Open",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AccessoryEquipmentInfo as ::unity2::ClassIdentity>::NAME,
-                        "Open",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn open(this: AccessoryEquipmentInfo, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AccessoryEquipmentInfo, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_open::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_close {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AccessoryEquipmentInfo as ::unity2::ClassIdentity>::class(),
-                "Close",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AccessoryEquipmentInfo as ::unity2::ClassIdentity>::NAME,
-                        "Close",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn close(this: AccessoryEquipmentInfo, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AccessoryEquipmentInfo, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_close::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_build {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AccessoryEquipmentInfo as ::unity2::ClassIdentity>::class(),
-                "Build",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AccessoryEquipmentInfo as ::unity2::ClassIdentity>::NAME,
-                        "Build",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn build(this: AccessoryEquipmentInfo, default_unit: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AccessoryEquipmentInfo, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_build::get_method_info().method_ptr);
-        inner(this, default_unit, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_data {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AccessoryEquipmentInfo as ::unity2::ClassIdentity>::class(),
-                "SetData",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AccessoryEquipmentInfo as ::unity2::ClassIdentity>::NAME,
-                        "SetData",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_data(this: AccessoryEquipmentInfo, unit: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AccessoryEquipmentInfo, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_data::get_method_info().method_ptr);
-        inner(this, unit, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_item_content_max {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AccessoryEquipmentInfo as ::unity2::ClassIdentity>::class(),
-                "GetItemContentMax",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AccessoryEquipmentInfo as ::unity2::ClassIdentity>::NAME,
-                        "GetItemContentMax",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_item_content_max(this: AccessoryEquipmentInfo, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AccessoryEquipmentInfo, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_item_content_max::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_show_cursor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AccessoryEquipmentInfo as ::unity2::ClassIdentity>::class(),
-                "ShowCursor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AccessoryEquipmentInfo as ::unity2::ClassIdentity>::NAME,
-                        "ShowCursor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn show_cursor(this: AccessoryEquipmentInfo, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AccessoryEquipmentInfo, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_show_cursor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_show_cursor_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::accessorydata::AccessoryData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AccessoryEquipmentInfo as ::unity2::ClassIdentity>::class(),
-                "ShowCursor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AccessoryEquipmentInfo as ::unity2::ClassIdentity>::NAME,
-                        "ShowCursor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn show_cursor_2(
-        this: AccessoryEquipmentInfo,
-        accessory_data: crate::app::accessorydata::AccessoryData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(AccessoryEquipmentInfo, crate::app::accessorydata::AccessoryData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_show_cursor_2::get_method_info().method_ptr);
-        inner(this, accessory_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_show_cursor_3 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::accessorydata::AccessoryData_Kinds as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AccessoryEquipmentInfo as ::unity2::ClassIdentity>::class(),
-                "ShowCursor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AccessoryEquipmentInfo as ::unity2::ClassIdentity>::NAME,
-                        "ShowCursor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn show_cursor_3(
-        this: AccessoryEquipmentInfo,
-        kind: crate::app::accessorydata::AccessoryData_Kinds,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(AccessoryEquipmentInfo, crate::app::accessorydata::AccessoryData_Kinds, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_show_cursor_3::get_method_info().method_ptr);
-        inner(this, kind, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_hide_cursor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AccessoryEquipmentInfo as ::unity2::ClassIdentity>::class(),
-                "HideCursor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AccessoryEquipmentInfo as ::unity2::ClassIdentity>::NAME,
-                        "HideCursor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn hide_cursor(this: AccessoryEquipmentInfo, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AccessoryEquipmentInfo, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_hide_cursor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __AccessoryEquipmentInfo_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AccessoryEquipmentInfo as :: unity2 :: ClassIdentity > :: class () , "Create" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AccessoryEquipmentInfo as :: unity2 :: ClassIdentity > :: NAME , "Create" , e) , } } } pub unsafe fn create (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AccessoryEquipmentInfo as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AccessoryEquipmentInfo as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : AccessoryEquipmentInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AccessoryEquipmentInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_open { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AccessoryEquipmentInfo as :: unity2 :: ClassIdentity > :: class () , "Open" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AccessoryEquipmentInfo as :: unity2 :: ClassIdentity > :: NAME , "Open" , e) , } } } pub unsafe fn open (this : AccessoryEquipmentInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AccessoryEquipmentInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_open :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_close { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AccessoryEquipmentInfo as :: unity2 :: ClassIdentity > :: class () , "Close" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AccessoryEquipmentInfo as :: unity2 :: ClassIdentity > :: NAME , "Close" , e) , } } } pub unsafe fn close (this : AccessoryEquipmentInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AccessoryEquipmentInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_close :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_build { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AccessoryEquipmentInfo as :: unity2 :: ClassIdentity > :: class () , "Build" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AccessoryEquipmentInfo as :: unity2 :: ClassIdentity > :: NAME , "Build" , e) , } } } pub unsafe fn build (this : AccessoryEquipmentInfo , default_unit : crate :: app :: unit :: Unit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AccessoryEquipmentInfo , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_build :: get_method_info () . method_ptr ,) ; inner (this , default_unit , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_data { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AccessoryEquipmentInfo as :: unity2 :: ClassIdentity > :: class () , "SetData" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AccessoryEquipmentInfo as :: unity2 :: ClassIdentity > :: NAME , "SetData" , e) , } } } pub unsafe fn set_data (this : AccessoryEquipmentInfo , unit : crate :: app :: unit :: Unit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AccessoryEquipmentInfo , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_data :: get_method_info () . method_ptr ,) ; inner (this , unit , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_item_content_max { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AccessoryEquipmentInfo as :: unity2 :: ClassIdentity > :: class () , "GetItemContentMax" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AccessoryEquipmentInfo as :: unity2 :: ClassIdentity > :: NAME , "GetItemContentMax" , e) , } } } pub unsafe fn get_item_content_max (this : AccessoryEquipmentInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (AccessoryEquipmentInfo , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_item_content_max :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_show_cursor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AccessoryEquipmentInfo as :: unity2 :: ClassIdentity > :: class () , "ShowCursor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AccessoryEquipmentInfo as :: unity2 :: ClassIdentity > :: NAME , "ShowCursor" , e) , } } } pub unsafe fn show_cursor (this : AccessoryEquipmentInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AccessoryEquipmentInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_show_cursor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_show_cursor_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: accessorydata :: AccessoryData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AccessoryEquipmentInfo as :: unity2 :: ClassIdentity > :: class () , "ShowCursor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AccessoryEquipmentInfo as :: unity2 :: ClassIdentity > :: NAME , "ShowCursor" , e) , } } } pub unsafe fn show_cursor_2 (this : AccessoryEquipmentInfo , accessory_data : crate :: app :: accessorydata :: AccessoryData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AccessoryEquipmentInfo , crate :: app :: accessorydata :: AccessoryData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_show_cursor_2 :: get_method_info () . method_ptr ,) ; inner (this , accessory_data , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_show_cursor_3 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: accessorydata :: AccessoryData_Kinds as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AccessoryEquipmentInfo as :: unity2 :: ClassIdentity > :: class () , "ShowCursor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AccessoryEquipmentInfo as :: unity2 :: ClassIdentity > :: NAME , "ShowCursor" , e) , } } } pub unsafe fn show_cursor_3 (this : AccessoryEquipmentInfo , kind : crate :: app :: accessorydata :: AccessoryData_Kinds , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AccessoryEquipmentInfo , crate :: app :: accessorydata :: AccessoryData_Kinds , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_show_cursor_3 :: get_method_info () . method_ptr ,) ; inner (this , kind , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_hide_cursor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AccessoryEquipmentInfo as :: unity2 :: ClassIdentity > :: class () , "HideCursor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AccessoryEquipmentInfo as :: unity2 :: ClassIdentity > :: NAME , "HideCursor" , e) , } } } pub unsafe fn hide_cursor (this : AccessoryEquipmentInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AccessoryEquipmentInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_hide_cursor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-accessoryequipmentinfo")]
+impl AccessoryEquipmentInfo { # [doc = "`Create()` overload"] pub fn create () -> () { unsafe { __AccessoryEquipmentInfo_unity2_raw :: create (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-accessoryequipmentinfo")]
+pub trait IAccessoryEquipmentInfoMethods : IAccessoryEquipmentInfo { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AccessoryEquipmentInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AccessoryEquipmentInfo_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Open()` overload"] fn open (self ,) -> () { unsafe { let __receiver = < AccessoryEquipmentInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AccessoryEquipmentInfo_unity2_raw :: open (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Close()` overload"] fn close (self ,) -> () { unsafe { let __receiver = < AccessoryEquipmentInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AccessoryEquipmentInfo_unity2_raw :: close (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Build(crate::app::unit::Unit)` overload"] fn build (self , default_unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < AccessoryEquipmentInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AccessoryEquipmentInfo_unity2_raw :: build (__receiver , :: core :: convert :: Into :: into (default_unit) , :: core :: option :: Option :: None) } } # [doc = "`SetData(crate::app::unit::Unit)` overload"] fn set_data (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < AccessoryEquipmentInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AccessoryEquipmentInfo_unity2_raw :: set_data (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } # [doc = "`GetItemContentMax()` overload"] fn get_item_content_max (self ,) -> i32 { unsafe { let __receiver = < AccessoryEquipmentInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AccessoryEquipmentInfo_unity2_raw :: get_item_content_max (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ShowCursor()` overload"] fn show_cursor (self ,) -> () { unsafe { let __receiver = < AccessoryEquipmentInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AccessoryEquipmentInfo_unity2_raw :: show_cursor (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ShowCursor(crate::app::accessorydata::AccessoryData)` overload"] fn show_cursor_2 (self , accessory_data : impl :: core :: convert :: Into < crate :: app :: accessorydata :: AccessoryData >) -> () { unsafe { let __receiver = < AccessoryEquipmentInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AccessoryEquipmentInfo_unity2_raw :: show_cursor_2 (__receiver , :: core :: convert :: Into :: into (accessory_data) , :: core :: option :: Option :: None) } } # [doc = "`ShowCursor(crate::app::accessorydata::AccessoryData_Kinds)` overload"] fn show_cursor_3 (self , kind : impl :: core :: convert :: Into < crate :: app :: accessorydata :: AccessoryData_Kinds >) -> () { unsafe { let __receiver = < AccessoryEquipmentInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AccessoryEquipmentInfo_unity2_raw :: show_cursor_3 (__receiver , :: core :: convert :: Into :: into (kind) , :: core :: option :: Option :: None) } } # [doc = "`HideCursor()` overload"] fn hide_cursor (self ,) -> () { unsafe { let __receiver = < AccessoryEquipmentInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AccessoryEquipmentInfo_unity2_raw :: hide_cursor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-accessoryequipmentinfo")]
+impl < __T : IAccessoryEquipmentInfo > IAccessoryEquipmentInfoMethods for __T { }
+
+#[cfg(feature = "app-accessoryequipmentinfo")]
+impl AccessoryEquipmentInfo { pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AccessoryEquipmentInfo_unity2_raw :: __lookup_create :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AccessoryEquipmentInfo_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn open_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AccessoryEquipmentInfo_unity2_raw :: __lookup_open :: get_method_info () } pub fn close_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AccessoryEquipmentInfo_unity2_raw :: __lookup_close :: get_method_info () } pub fn build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AccessoryEquipmentInfo_unity2_raw :: __lookup_build :: get_method_info () } pub fn set_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AccessoryEquipmentInfo_unity2_raw :: __lookup_set_data :: get_method_info () } pub fn get_item_content_max_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AccessoryEquipmentInfo_unity2_raw :: __lookup_get_item_content_max :: get_method_info () } pub fn show_cursor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AccessoryEquipmentInfo_unity2_raw :: __lookup_show_cursor :: get_method_info () } pub fn show_cursor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AccessoryEquipmentInfo_unity2_raw :: __lookup_show_cursor_2 :: get_method_info () } pub fn show_cursor_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AccessoryEquipmentInfo_unity2_raw :: __lookup_show_cursor_3 :: get_method_info () } pub fn hide_cursor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AccessoryEquipmentInfo_unity2_raw :: __lookup_hide_cursor :: get_method_info () } }
 
 #[cfg(feature = "app-accessoryequipmentinfo")]
 impl AccessoryEquipmentInfo {
-    #[doc = "`Create()` overload"]
-    pub fn create() -> () {
-        unsafe { __AccessoryEquipmentInfo_unity2_raw::create(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-accessoryequipmentinfo")]
-pub trait IAccessoryEquipmentInfoMethods: IAccessoryEquipmentInfo {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <AccessoryEquipmentInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AccessoryEquipmentInfo_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Open()` overload"]
-    fn open(self) -> () {
-        unsafe {
-            let __receiver =
-                <AccessoryEquipmentInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AccessoryEquipmentInfo_unity2_raw::open(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Close()` overload"]
-    fn close(self) -> () {
-        unsafe {
-            let __receiver =
-                <AccessoryEquipmentInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AccessoryEquipmentInfo_unity2_raw::close(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Build(crate::app::unit::Unit)` overload"]
-    fn build(self, default_unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
-        unsafe {
-            let __receiver =
-                <AccessoryEquipmentInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AccessoryEquipmentInfo_unity2_raw::build(__receiver, ::core::convert::Into::into(default_unit), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetData(crate::app::unit::Unit)` overload"]
-    fn set_data(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
-        unsafe {
-            let __receiver =
-                <AccessoryEquipmentInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AccessoryEquipmentInfo_unity2_raw::set_data(__receiver, ::core::convert::Into::into(unit), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetItemContentMax()` overload"]
-    fn get_item_content_max(self) -> i32 {
-        unsafe {
-            let __receiver =
-                <AccessoryEquipmentInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AccessoryEquipmentInfo_unity2_raw::get_item_content_max(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ShowCursor()` overload"]
-    fn show_cursor(self) -> () {
-        unsafe {
-            let __receiver =
-                <AccessoryEquipmentInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AccessoryEquipmentInfo_unity2_raw::show_cursor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ShowCursor(crate::app::accessorydata::AccessoryData)` overload"]
-    fn show_cursor_2(self, accessory_data: impl ::core::convert::Into<crate::app::accessorydata::AccessoryData>) -> () {
-        unsafe {
-            let __receiver =
-                <AccessoryEquipmentInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AccessoryEquipmentInfo_unity2_raw::show_cursor_2(__receiver, ::core::convert::Into::into(accessory_data), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ShowCursor(crate::app::accessorydata::AccessoryData_Kinds)` overload"]
-    fn show_cursor_3(self, kind: impl ::core::convert::Into<crate::app::accessorydata::AccessoryData_Kinds>) -> () {
-        unsafe {
-            let __receiver =
-                <AccessoryEquipmentInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AccessoryEquipmentInfo_unity2_raw::show_cursor_3(__receiver, ::core::convert::Into::into(kind), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`HideCursor()` overload"]
-    fn hide_cursor(self) -> () {
-        unsafe {
-            let __receiver =
-                <AccessoryEquipmentInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AccessoryEquipmentInfo_unity2_raw::hide_cursor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-accessoryequipmentinfo")]
-impl<__T: IAccessoryEquipmentInfo> IAccessoryEquipmentInfoMethods for __T {}
-
-#[cfg(feature = "app-accessoryequipmentinfo")]
-impl AccessoryEquipmentInfo {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AccessoryEquipmentInfo),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAccessoryEquipmentInfoMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AccessoryEquipmentInfo) , :: core :: stringify ! (new) ,)) ; < Self as IAccessoryEquipmentInfoMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-accessoryequipmentinfo")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{AccessoryEquipmentInfo, IAccessoryEquipmentInfo, IAccessoryEquipmentInfoMethods};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        system::object::IObject,
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::AccessoryEquipmentInfo;
+    pub use super::IAccessoryEquipmentInfo;
+    pub use super::IAccessoryEquipmentInfoMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

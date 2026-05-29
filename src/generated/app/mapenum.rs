@@ -2,1980 +2,250 @@
 
 #[cfg(feature = "app-mapenum-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        valuetype::{IValueType, ValueType},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapenum/MapEnum.md"))]
-    #[::unity2::class(namespace = "App", name = "MapEnum")]
-    #[parent(crate::system::object::Object)]
-    pub struct MapEnum {
-        #[static_field]
-        #[rename(name = "s_AreaEnumerator")]
-        pub s_area_enumerator: crate::app::mapenum::MapEnum_AreaEnumerator,
-        #[static_field]
-        #[rename(name = "s_RangeEnumerator")]
-        pub s_range_enumerator: crate::app::mapenum::MapEnum_RangeEnumerator,
-        #[static_field]
-        #[rename(name = "s_MoveEnumerator")]
-        pub s_move_enumerator: crate::app::mapenum::MapEnum_MoveEnumerator,
-        #[static_field]
-        #[rename(name = "s_CellEnumerator")]
-        pub s_cell_enumerator: crate::app::mapenum::MapEnum_CellEnumerator,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapenum/MapEnum_AreaEnumerator.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct MapEnum_AreaEnumerator {
-        pub m_current: crate::app::mappos::MapPos,
-        pub m_min_x: i32,
-        pub m_min_z: i32,
-        pub m_max_x: i32,
-        pub m_max_z: i32,
-    }
 
-    impl ::unity2::ClassIdentity for MapEnum_AreaEnumerator {
-        const NAME: &'static str = "MapEnum.AreaEnumerator";
-        const NAMESPACE: &'static str = "App";
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapenum/MapEnum_MoveEnumerator.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct MapEnum_MoveEnumerator {
+    pub m_current: crate :: app :: maprange :: MapRange,
+    pub m_min_x: i32,
+    pub m_min_z: i32,
+    pub m_max_x: i32,
+    pub m_max_z: i32,
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+impl ::unity2::ClassIdentity for MapEnum_MoveEnumerator {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapEnum.MoveEnumerator";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for MapEnum_AreaEnumerator {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+}
+
+
+impl ::unity2::IlType for MapEnum_MoveEnumerator {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapenum/MapEnum_RangeEnumerator.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct MapEnum_RangeEnumerator {
+    pub m_current: crate :: app :: maprange :: MapRange,
+    pub m_pivot_x: i32,
+    pub m_pivot_z: i32,
+    pub m_min_x: i32,
+    pub m_min_z: i32,
+    pub m_max_x: i32,
+    pub m_max_z: i32,
+    pub m_near: i32,
+    pub m_far: i32,
+}
+
+
+impl ::unity2::ClassIdentity for MapEnum_RangeEnumerator {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapEnum.RangeEnumerator";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapenum/MapEnum_CellEnumerator.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct MapEnum_CellEnumerator {
-        pub m_current: crate::app::mappos::MapPos,
-        pub m_x: i32,
-        pub m_z: i32,
-        pub m_size: i32,
+}
+
+
+impl ::unity2::IlType for MapEnum_RangeEnumerator {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::ClassIdentity for MapEnum_CellEnumerator {
-        const NAME: &'static str = "MapEnum.CellEnumerator";
-        const NAMESPACE: &'static str = "App";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapenum/MapEnum.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapEnum")] # [parent (crate :: system :: object :: Object)] pub struct MapEnum {
+# [static_field] # [rename (name = "s_AreaEnumerator")] pub s_area_enumerator : crate :: app :: mapenum :: MapEnum_AreaEnumerator ,
+# [static_field] # [rename (name = "s_RangeEnumerator")] pub s_range_enumerator : crate :: app :: mapenum :: MapEnum_RangeEnumerator ,
+# [static_field] # [rename (name = "s_MoveEnumerator")] pub s_move_enumerator : crate :: app :: mapenum :: MapEnum_MoveEnumerator ,
+# [static_field] # [rename (name = "s_CellEnumerator")] pub s_cell_enumerator : crate :: app :: mapenum :: MapEnum_CellEnumerator ,
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapenum/MapEnum_CellEnumerator.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct MapEnum_CellEnumerator {
+    pub m_current: crate :: app :: mappos :: MapPos,
+    pub m_x: i32,
+    pub m_z: i32,
+    pub m_size: i32,
+}
+
+
+impl ::unity2::ClassIdentity for MapEnum_CellEnumerator {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapEnum.CellEnumerator";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for MapEnum_CellEnumerator {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+}
+
+
+impl ::unity2::IlType for MapEnum_CellEnumerator {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapenum/MapEnum_AreaEnumerator.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct MapEnum_AreaEnumerator {
+    pub m_current: crate :: app :: mappos :: MapPos,
+    pub m_min_x: i32,
+    pub m_min_z: i32,
+    pub m_max_x: i32,
+    pub m_max_z: i32,
+}
+
+
+impl ::unity2::ClassIdentity for MapEnum_AreaEnumerator {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapEnum.AreaEnumerator";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapenum/MapEnum_RangeEnumerator.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct MapEnum_RangeEnumerator {
-        pub m_current: crate::app::maprange::MapRange,
-        pub m_pivot_x: i32,
-        pub m_pivot_z: i32,
-        pub m_min_x: i32,
-        pub m_min_z: i32,
-        pub m_max_x: i32,
-        pub m_max_z: i32,
-        pub m_near: i32,
-        pub m_far: i32,
+}
+
+
+impl ::unity2::IlType for MapEnum_AreaEnumerator {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::ClassIdentity for MapEnum_RangeEnumerator {
-        const NAME: &'static str = "MapEnum.RangeEnumerator";
-        const NAMESPACE: &'static str = "App";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for MapEnum_RangeEnumerator {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapenum/MapEnum_MoveEnumerator.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct MapEnum_MoveEnumerator {
-        pub m_current: crate::app::maprange::MapRange,
-        pub m_min_x: i32,
-        pub m_min_z: i32,
-        pub m_max_x: i32,
-        pub m_max_z: i32,
-    }
-
-    impl ::unity2::ClassIdentity for MapEnum_MoveEnumerator {
-        const NAME: &'static str = "MapEnum.MoveEnumerator";
-        const NAMESPACE: &'static str = "App";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for MapEnum_MoveEnumerator {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
 }
 
 #[cfg(feature = "app-mapenum-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-mapenum")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapEnum_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_full {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<MapEnum as ::unity2::ClassIdentity>::class(), "GetFull", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapEnum as ::unity2::ClassIdentity>::NAME,
-                        "GetFull",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_full(__unity2_method_info: ::unity2::OptionalMethod) -> crate::app::mapenum::MapEnum_AreaEnumerator {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::app::mapenum::MapEnum_AreaEnumerator =
-            ::core::mem::transmute(__lookup_get_full::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_play_area {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<MapEnum as ::unity2::ClassIdentity>::class(), "GetPlayArea", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapEnum as ::unity2::ClassIdentity>::NAME,
-                        "GetPlayArea",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_play_area(__unity2_method_info: ::unity2::OptionalMethod) -> crate::app::mapenum::MapEnum_AreaEnumerator {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::app::mapenum::MapEnum_AreaEnumerator =
-            ::core::mem::transmute(__lookup_get_play_area::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_area {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<MapEnum as ::unity2::ClassIdentity>::class(), "GetArea", 4, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapEnum as ::unity2::ClassIdentity>::NAME,
-                        "GetArea",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_area(
-        x: i32,
-        z: i32,
-        w: i32,
-        h: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::mapenum::MapEnum_AreaEnumerator {
-        let inner: extern "C" fn(i32, i32, i32, i32, ::unity2::OptionalMethod) -> crate::app::mapenum::MapEnum_AreaEnumerator =
-            ::core::mem::transmute(__lookup_get_area::get_method_info().method_ptr);
-        inner(x, z, w, h, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_range {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<MapEnum as ::unity2::ClassIdentity>::class(), "GetRange", 3, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapEnum as ::unity2::ClassIdentity>::NAME,
-                        "GetRange",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_range(
-        x: i32,
-        z: i32,
-        range: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::mapenum::MapEnum_RangeEnumerator {
-        let inner: extern "C" fn(i32, i32, i32, ::unity2::OptionalMethod) -> crate::app::mapenum::MapEnum_RangeEnumerator =
-            ::core::mem::transmute(__lookup_get_range::get_method_info().method_ptr);
-        inner(x, z, range, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_range_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<MapEnum as ::unity2::ClassIdentity>::class(), "GetRange", 4, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapEnum as ::unity2::ClassIdentity>::NAME,
-                        "GetRange",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_range_2(
-        x: i32,
-        z: i32,
-        near: i32,
-        far: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::mapenum::MapEnum_RangeEnumerator {
-        let inner: extern "C" fn(i32, i32, i32, i32, ::unity2::OptionalMethod) -> crate::app::mapenum::MapEnum_RangeEnumerator =
-            ::core::mem::transmute(__lookup_get_range_2::get_method_info().method_ptr);
-        inner(x, z, near, far, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_around {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<MapEnum as ::unity2::ClassIdentity>::class(), "GetAround", 2, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapEnum as ::unity2::ClassIdentity>::NAME,
-                        "GetAround",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_around(x: i32, z: i32, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::mapenum::MapEnum_RangeEnumerator {
-        let inner: extern "C" fn(i32, i32, ::unity2::OptionalMethod) -> crate::app::mapenum::MapEnum_RangeEnumerator =
-            ::core::mem::transmute(__lookup_get_around::get_method_info().method_ptr);
-        inner(x, z, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_move {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<MapEnum as ::unity2::ClassIdentity>::class(), "GetMove", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapEnum as ::unity2::ClassIdentity>::NAME,
-                        "GetMove",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_move(__unity2_method_info: ::unity2::OptionalMethod) -> crate::app::mapenum::MapEnum_MoveEnumerator {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::app::mapenum::MapEnum_MoveEnumerator =
-            ::core::mem::transmute(__lookup_get_move::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_cell {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<MapEnum as ::unity2::ClassIdentity>::class(), "GetCell", 1, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapEnum as ::unity2::ClassIdentity>::NAME,
-                        "GetCell",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_cell(
-        unit: crate::app::unit::Unit,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::mapenum::MapEnum_CellEnumerator {
-        let inner: extern "C" fn(crate::app::unit::Unit, ::unity2::OptionalMethod) -> crate::app::mapenum::MapEnum_CellEnumerator =
-            ::core::mem::transmute(__lookup_get_cell::get_method_info().method_ptr);
-        inner(unit, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_cell_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<MapEnum as ::unity2::ClassIdentity>::class(), "GetCell", 3, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapEnum as ::unity2::ClassIdentity>::NAME,
-                        "GetCell",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_cell_2(
-        unit: crate::app::unit::Unit,
-        x: i32,
-        z: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::mapenum::MapEnum_CellEnumerator {
-        let inner: extern "C" fn(crate::app::unit::Unit, i32, i32, ::unity2::OptionalMethod) -> crate::app::mapenum::MapEnum_CellEnumerator =
-            ::core::mem::transmute(__lookup_get_cell_2::get_method_info().method_ptr);
-        inner(unit, x, z, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<MapEnum as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <MapEnum as ::unity2::ClassIdentity>::NAME, ".ctor", e),
-            }
-        }
-    }
-    pub unsafe fn ctor(this: MapEnum, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapEnum, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MapEnum_MoveEnumerator_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_setup { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapEnum_MoveEnumerator as :: unity2 :: ClassIdentity > :: class () , "Setup" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapEnum_MoveEnumerator as :: unity2 :: ClassIdentity > :: NAME , "Setup" , e) , } } } pub unsafe fn setup (this : MapEnum_MoveEnumerator , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: mapenum :: MapEnum_MoveEnumerator { let inner : extern "C" fn (MapEnum_MoveEnumerator , :: unity2 :: OptionalMethod ,) -> crate :: app :: mapenum :: MapEnum_MoveEnumerator = :: core :: mem :: transmute (__lookup_setup :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_dispose { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapEnum_MoveEnumerator as :: unity2 :: ClassIdentity > :: class () , "Dispose" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapEnum_MoveEnumerator as :: unity2 :: ClassIdentity > :: NAME , "Dispose" , e) , } } } pub unsafe fn dispose (this : MapEnum_MoveEnumerator , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapEnum_MoveEnumerator , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_dispose :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_current { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapEnum_MoveEnumerator as :: unity2 :: ClassIdentity > :: class () , "get_Current" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapEnum_MoveEnumerator as :: unity2 :: ClassIdentity > :: NAME , "get_Current" , e) , } } } pub unsafe fn get_current (this : MapEnum_MoveEnumerator , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: maprange :: MapRange { let inner : extern "C" fn (MapEnum_MoveEnumerator , :: unity2 :: OptionalMethod ,) -> crate :: app :: maprange :: MapRange = :: core :: mem :: transmute (__lookup_get_current :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_system_collections_i_enumerator_get_current { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapEnum_MoveEnumerator as :: unity2 :: ClassIdentity > :: class () , "System.Collections.IEnumerator.get_Current" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapEnum_MoveEnumerator as :: unity2 :: ClassIdentity > :: NAME , "System.Collections.IEnumerator.get_Current" , e) , } } } pub unsafe fn system_collections_i_enumerator_get_current (this : MapEnum_MoveEnumerator , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object { let inner : extern "C" fn (MapEnum_MoveEnumerator , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute (__lookup_system_collections_i_enumerator_get_current :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_move_next { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapEnum_MoveEnumerator as :: unity2 :: ClassIdentity > :: class () , "MoveNext" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapEnum_MoveEnumerator as :: unity2 :: ClassIdentity > :: NAME , "MoveNext" , e) , } } } pub unsafe fn move_next (this : MapEnum_MoveEnumerator , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (MapEnum_MoveEnumerator , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_move_next :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_reset { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapEnum_MoveEnumerator as :: unity2 :: ClassIdentity > :: class () , "Reset" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapEnum_MoveEnumerator as :: unity2 :: ClassIdentity > :: NAME , "Reset" , e) , } } } pub unsafe fn reset (this : MapEnum_MoveEnumerator , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapEnum_MoveEnumerator , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_reset :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_system_collections_i_enumerable_get_enumerator { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapEnum_MoveEnumerator as :: unity2 :: ClassIdentity > :: class () , "System.Collections.IEnumerable.GetEnumerator" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapEnum_MoveEnumerator as :: unity2 :: ClassIdentity > :: NAME , "System.Collections.IEnumerable.GetEnumerator" , e) , } } } pub unsafe fn system_collections_i_enumerable_get_enumerator (this : MapEnum_MoveEnumerator , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { let inner : extern "C" fn (MapEnum_MoveEnumerator , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute (__lookup_system_collections_i_enumerable_get_enumerator :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_enumerator { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapEnum_MoveEnumerator as :: unity2 :: ClassIdentity > :: class () , "GetEnumerator" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapEnum_MoveEnumerator as :: unity2 :: ClassIdentity > :: NAME , "GetEnumerator" , e) , } } } pub unsafe fn get_enumerator (this : MapEnum_MoveEnumerator , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: mapenum :: MapEnum_MoveEnumerator { let inner : extern "C" fn (MapEnum_MoveEnumerator , :: unity2 :: OptionalMethod ,) -> crate :: app :: mapenum :: MapEnum_MoveEnumerator = :: core :: mem :: transmute (__lookup_get_enumerator :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-mapenum")]
+impl MapEnum_MoveEnumerator { # [doc = "`Setup()` overload"] pub fn setup (self ,) -> crate :: app :: mapenum :: MapEnum_MoveEnumerator { unsafe { __MapEnum_MoveEnumerator_unity2_raw :: setup (self , :: core :: option :: Option :: None) } } # [doc = "`Dispose()` overload"] pub fn dispose (self ,) -> () { unsafe { __MapEnum_MoveEnumerator_unity2_raw :: dispose (self , :: core :: option :: Option :: None) } } # [doc = "`get_Current()` overload"] pub fn get_current (self ,) -> crate :: app :: maprange :: MapRange { unsafe { __MapEnum_MoveEnumerator_unity2_raw :: get_current (self , :: core :: option :: Option :: None) } } # [doc = "`System.Collections.IEnumerator.get_Current()` overload"] pub fn system_collections_i_enumerator_get_current (self ,) -> crate :: system :: object :: Object { unsafe { __MapEnum_MoveEnumerator_unity2_raw :: system_collections_i_enumerator_get_current (self , :: core :: option :: Option :: None) } } # [doc = "`MoveNext()` overload"] pub fn move_next (self ,) -> bool { unsafe { __MapEnum_MoveEnumerator_unity2_raw :: move_next (self , :: core :: option :: Option :: None) } } # [doc = "`Reset()` overload"] pub fn reset (self ,) -> () { unsafe { __MapEnum_MoveEnumerator_unity2_raw :: reset (self , :: core :: option :: Option :: None) } } # [doc = "`System.Collections.IEnumerable.GetEnumerator()` overload"] pub fn system_collections_i_enumerable_get_enumerator (self ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { __MapEnum_MoveEnumerator_unity2_raw :: system_collections_i_enumerable_get_enumerator (self , :: core :: option :: Option :: None) } } # [doc = "`GetEnumerator()` overload"] pub fn get_enumerator (self ,) -> crate :: app :: mapenum :: MapEnum_MoveEnumerator { unsafe { __MapEnum_MoveEnumerator_unity2_raw :: get_enumerator (self , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-mapenum")]
+impl MapEnum_MoveEnumerator { pub fn setup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapEnum_MoveEnumerator_unity2_raw :: __lookup_setup :: get_method_info () } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapEnum_MoveEnumerator_unity2_raw :: __lookup_dispose :: get_method_info () } pub fn get_current_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapEnum_MoveEnumerator_unity2_raw :: __lookup_get_current :: get_method_info () } pub fn system_collections_i_enumerator_get_current_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapEnum_MoveEnumerator_unity2_raw :: __lookup_system_collections_i_enumerator_get_current :: get_method_info () } pub fn move_next_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapEnum_MoveEnumerator_unity2_raw :: __lookup_move_next :: get_method_info () } pub fn reset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapEnum_MoveEnumerator_unity2_raw :: __lookup_reset :: get_method_info () } pub fn system_collections_i_enumerable_get_enumerator_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapEnum_MoveEnumerator_unity2_raw :: __lookup_system_collections_i_enumerable_get_enumerator :: get_method_info () } pub fn get_enumerator_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapEnum_MoveEnumerator_unity2_raw :: __lookup_get_enumerator :: get_method_info () } }
+
+#[cfg(feature = "app-mapenum")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MapEnum_RangeEnumerator_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_setup { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapEnum_RangeEnumerator as :: unity2 :: ClassIdentity > :: class () , "Setup" , 4 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapEnum_RangeEnumerator as :: unity2 :: ClassIdentity > :: NAME , "Setup" , e) , } } } pub unsafe fn setup (this : MapEnum_RangeEnumerator , x : i32 , z : i32 , near : i32 , far : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: mapenum :: MapEnum_RangeEnumerator { let inner : extern "C" fn (MapEnum_RangeEnumerator , i32 , i32 , i32 , i32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: mapenum :: MapEnum_RangeEnumerator = :: core :: mem :: transmute (__lookup_setup :: get_method_info () . method_ptr ,) ; inner (this , x , z , near , far , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_dispose { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapEnum_RangeEnumerator as :: unity2 :: ClassIdentity > :: class () , "Dispose" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapEnum_RangeEnumerator as :: unity2 :: ClassIdentity > :: NAME , "Dispose" , e) , } } } pub unsafe fn dispose (this : MapEnum_RangeEnumerator , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapEnum_RangeEnumerator , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_dispose :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_current { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapEnum_RangeEnumerator as :: unity2 :: ClassIdentity > :: class () , "get_Current" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapEnum_RangeEnumerator as :: unity2 :: ClassIdentity > :: NAME , "get_Current" , e) , } } } pub unsafe fn get_current (this : MapEnum_RangeEnumerator , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: maprange :: MapRange { let inner : extern "C" fn (MapEnum_RangeEnumerator , :: unity2 :: OptionalMethod ,) -> crate :: app :: maprange :: MapRange = :: core :: mem :: transmute (__lookup_get_current :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_system_collections_i_enumerator_get_current { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapEnum_RangeEnumerator as :: unity2 :: ClassIdentity > :: class () , "System.Collections.IEnumerator.get_Current" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapEnum_RangeEnumerator as :: unity2 :: ClassIdentity > :: NAME , "System.Collections.IEnumerator.get_Current" , e) , } } } pub unsafe fn system_collections_i_enumerator_get_current (this : MapEnum_RangeEnumerator , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object { let inner : extern "C" fn (MapEnum_RangeEnumerator , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute (__lookup_system_collections_i_enumerator_get_current :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_move_next { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapEnum_RangeEnumerator as :: unity2 :: ClassIdentity > :: class () , "MoveNext" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapEnum_RangeEnumerator as :: unity2 :: ClassIdentity > :: NAME , "MoveNext" , e) , } } } pub unsafe fn move_next (this : MapEnum_RangeEnumerator , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (MapEnum_RangeEnumerator , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_move_next :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_reset { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapEnum_RangeEnumerator as :: unity2 :: ClassIdentity > :: class () , "Reset" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapEnum_RangeEnumerator as :: unity2 :: ClassIdentity > :: NAME , "Reset" , e) , } } } pub unsafe fn reset (this : MapEnum_RangeEnumerator , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapEnum_RangeEnumerator , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_reset :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_system_collections_i_enumerable_get_enumerator { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapEnum_RangeEnumerator as :: unity2 :: ClassIdentity > :: class () , "System.Collections.IEnumerable.GetEnumerator" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapEnum_RangeEnumerator as :: unity2 :: ClassIdentity > :: NAME , "System.Collections.IEnumerable.GetEnumerator" , e) , } } } pub unsafe fn system_collections_i_enumerable_get_enumerator (this : MapEnum_RangeEnumerator , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { let inner : extern "C" fn (MapEnum_RangeEnumerator , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute (__lookup_system_collections_i_enumerable_get_enumerator :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_enumerator { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapEnum_RangeEnumerator as :: unity2 :: ClassIdentity > :: class () , "GetEnumerator" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapEnum_RangeEnumerator as :: unity2 :: ClassIdentity > :: NAME , "GetEnumerator" , e) , } } } pub unsafe fn get_enumerator (this : MapEnum_RangeEnumerator , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: mapenum :: MapEnum_RangeEnumerator { let inner : extern "C" fn (MapEnum_RangeEnumerator , :: unity2 :: OptionalMethod ,) -> crate :: app :: mapenum :: MapEnum_RangeEnumerator = :: core :: mem :: transmute (__lookup_get_enumerator :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-mapenum")]
+impl MapEnum_RangeEnumerator { # [doc = "`Setup(i32, i32, i32, i32)` overload"] pub fn setup (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 > , near : impl :: core :: convert :: Into < i32 > , far : impl :: core :: convert :: Into < i32 >) -> crate :: app :: mapenum :: MapEnum_RangeEnumerator { unsafe { __MapEnum_RangeEnumerator_unity2_raw :: setup (self , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: convert :: Into :: into (near) , :: core :: convert :: Into :: into (far) , :: core :: option :: Option :: None) } } # [doc = "`Dispose()` overload"] pub fn dispose (self ,) -> () { unsafe { __MapEnum_RangeEnumerator_unity2_raw :: dispose (self , :: core :: option :: Option :: None) } } # [doc = "`get_Current()` overload"] pub fn get_current (self ,) -> crate :: app :: maprange :: MapRange { unsafe { __MapEnum_RangeEnumerator_unity2_raw :: get_current (self , :: core :: option :: Option :: None) } } # [doc = "`System.Collections.IEnumerator.get_Current()` overload"] pub fn system_collections_i_enumerator_get_current (self ,) -> crate :: system :: object :: Object { unsafe { __MapEnum_RangeEnumerator_unity2_raw :: system_collections_i_enumerator_get_current (self , :: core :: option :: Option :: None) } } # [doc = "`MoveNext()` overload"] pub fn move_next (self ,) -> bool { unsafe { __MapEnum_RangeEnumerator_unity2_raw :: move_next (self , :: core :: option :: Option :: None) } } # [doc = "`Reset()` overload"] pub fn reset (self ,) -> () { unsafe { __MapEnum_RangeEnumerator_unity2_raw :: reset (self , :: core :: option :: Option :: None) } } # [doc = "`System.Collections.IEnumerable.GetEnumerator()` overload"] pub fn system_collections_i_enumerable_get_enumerator (self ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { __MapEnum_RangeEnumerator_unity2_raw :: system_collections_i_enumerable_get_enumerator (self , :: core :: option :: Option :: None) } } # [doc = "`GetEnumerator()` overload"] pub fn get_enumerator (self ,) -> crate :: app :: mapenum :: MapEnum_RangeEnumerator { unsafe { __MapEnum_RangeEnumerator_unity2_raw :: get_enumerator (self , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-mapenum")]
+impl MapEnum_RangeEnumerator { pub fn setup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapEnum_RangeEnumerator_unity2_raw :: __lookup_setup :: get_method_info () } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapEnum_RangeEnumerator_unity2_raw :: __lookup_dispose :: get_method_info () } pub fn get_current_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapEnum_RangeEnumerator_unity2_raw :: __lookup_get_current :: get_method_info () } pub fn system_collections_i_enumerator_get_current_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapEnum_RangeEnumerator_unity2_raw :: __lookup_system_collections_i_enumerator_get_current :: get_method_info () } pub fn move_next_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapEnum_RangeEnumerator_unity2_raw :: __lookup_move_next :: get_method_info () } pub fn reset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapEnum_RangeEnumerator_unity2_raw :: __lookup_reset :: get_method_info () } pub fn system_collections_i_enumerable_get_enumerator_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapEnum_RangeEnumerator_unity2_raw :: __lookup_system_collections_i_enumerable_get_enumerator :: get_method_info () } pub fn get_enumerator_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapEnum_RangeEnumerator_unity2_raw :: __lookup_get_enumerator :: get_method_info () } }
+
+#[cfg(feature = "app-mapenum")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MapEnum_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_full { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapEnum as :: unity2 :: ClassIdentity > :: class () , "GetFull" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapEnum as :: unity2 :: ClassIdentity > :: NAME , "GetFull" , e) , } } } pub unsafe fn get_full (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: mapenum :: MapEnum_AreaEnumerator { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: mapenum :: MapEnum_AreaEnumerator = :: core :: mem :: transmute (__lookup_get_full :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_play_area { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapEnum as :: unity2 :: ClassIdentity > :: class () , "GetPlayArea" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapEnum as :: unity2 :: ClassIdentity > :: NAME , "GetPlayArea" , e) , } } } pub unsafe fn get_play_area (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: mapenum :: MapEnum_AreaEnumerator { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: mapenum :: MapEnum_AreaEnumerator = :: core :: mem :: transmute (__lookup_get_play_area :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_area { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapEnum as :: unity2 :: ClassIdentity > :: class () , "GetArea" , 4 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapEnum as :: unity2 :: ClassIdentity > :: NAME , "GetArea" , e) , } } } pub unsafe fn get_area (x : i32 , z : i32 , w : i32 , h : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: mapenum :: MapEnum_AreaEnumerator { let inner : extern "C" fn (i32 , i32 , i32 , i32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: mapenum :: MapEnum_AreaEnumerator = :: core :: mem :: transmute (__lookup_get_area :: get_method_info () . method_ptr ,) ; inner (x , z , w , h , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_range { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapEnum as :: unity2 :: ClassIdentity > :: class () , "GetRange" , 3 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapEnum as :: unity2 :: ClassIdentity > :: NAME , "GetRange" , e) , } } } pub unsafe fn get_range (x : i32 , z : i32 , range : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: mapenum :: MapEnum_RangeEnumerator { let inner : extern "C" fn (i32 , i32 , i32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: mapenum :: MapEnum_RangeEnumerator = :: core :: mem :: transmute (__lookup_get_range :: get_method_info () . method_ptr ,) ; inner (x , z , range , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_range_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapEnum as :: unity2 :: ClassIdentity > :: class () , "GetRange" , 4 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapEnum as :: unity2 :: ClassIdentity > :: NAME , "GetRange" , e) , } } } pub unsafe fn get_range_2 (x : i32 , z : i32 , near : i32 , far : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: mapenum :: MapEnum_RangeEnumerator { let inner : extern "C" fn (i32 , i32 , i32 , i32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: mapenum :: MapEnum_RangeEnumerator = :: core :: mem :: transmute (__lookup_get_range_2 :: get_method_info () . method_ptr ,) ; inner (x , z , near , far , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_around { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapEnum as :: unity2 :: ClassIdentity > :: class () , "GetAround" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapEnum as :: unity2 :: ClassIdentity > :: NAME , "GetAround" , e) , } } } pub unsafe fn get_around (x : i32 , z : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: mapenum :: MapEnum_RangeEnumerator { let inner : extern "C" fn (i32 , i32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: mapenum :: MapEnum_RangeEnumerator = :: core :: mem :: transmute (__lookup_get_around :: get_method_info () . method_ptr ,) ; inner (x , z , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_move { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapEnum as :: unity2 :: ClassIdentity > :: class () , "GetMove" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapEnum as :: unity2 :: ClassIdentity > :: NAME , "GetMove" , e) , } } } pub unsafe fn get_move (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: mapenum :: MapEnum_MoveEnumerator { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: mapenum :: MapEnum_MoveEnumerator = :: core :: mem :: transmute (__lookup_get_move :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_cell { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapEnum as :: unity2 :: ClassIdentity > :: class () , "GetCell" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapEnum as :: unity2 :: ClassIdentity > :: NAME , "GetCell" , e) , } } } pub unsafe fn get_cell (unit : crate :: app :: unit :: Unit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: mapenum :: MapEnum_CellEnumerator { let inner : extern "C" fn (crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> crate :: app :: mapenum :: MapEnum_CellEnumerator = :: core :: mem :: transmute (__lookup_get_cell :: get_method_info () . method_ptr ,) ; inner (unit , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_cell_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapEnum as :: unity2 :: ClassIdentity > :: class () , "GetCell" , 3 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapEnum as :: unity2 :: ClassIdentity > :: NAME , "GetCell" , e) , } } } pub unsafe fn get_cell_2 (unit : crate :: app :: unit :: Unit , x : i32 , z : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: mapenum :: MapEnum_CellEnumerator { let inner : extern "C" fn (crate :: app :: unit :: Unit , i32 , i32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: mapenum :: MapEnum_CellEnumerator = :: core :: mem :: transmute (__lookup_get_cell_2 :: get_method_info () . method_ptr ,) ; inner (unit , x , z , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapEnum as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapEnum as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : MapEnum , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapEnum , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-mapenum")]
+impl MapEnum { # [doc = "`GetFull()` overload"] pub fn get_full () -> crate :: app :: mapenum :: MapEnum_AreaEnumerator { unsafe { __MapEnum_unity2_raw :: get_full (:: core :: option :: Option :: None) } } # [doc = "`GetPlayArea()` overload"] pub fn get_play_area () -> crate :: app :: mapenum :: MapEnum_AreaEnumerator { unsafe { __MapEnum_unity2_raw :: get_play_area (:: core :: option :: Option :: None) } } # [doc = "`GetArea(i32, i32, i32, i32)` overload"] pub fn get_area (x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 > , w : impl :: core :: convert :: Into < i32 > , h : impl :: core :: convert :: Into < i32 >) -> crate :: app :: mapenum :: MapEnum_AreaEnumerator { unsafe { __MapEnum_unity2_raw :: get_area (:: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: convert :: Into :: into (w) , :: core :: convert :: Into :: into (h) , :: core :: option :: Option :: None) } } # [doc = "`GetRange(i32, i32, i32)` overload"] pub fn get_range (x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 > , range : impl :: core :: convert :: Into < i32 >) -> crate :: app :: mapenum :: MapEnum_RangeEnumerator { unsafe { __MapEnum_unity2_raw :: get_range (:: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: convert :: Into :: into (range) , :: core :: option :: Option :: None) } } # [doc = "`GetRange(i32, i32, i32, i32)` overload"] pub fn get_range_2 (x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 > , near : impl :: core :: convert :: Into < i32 > , far : impl :: core :: convert :: Into < i32 >) -> crate :: app :: mapenum :: MapEnum_RangeEnumerator { unsafe { __MapEnum_unity2_raw :: get_range_2 (:: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: convert :: Into :: into (near) , :: core :: convert :: Into :: into (far) , :: core :: option :: Option :: None) } } # [doc = "`GetAround(i32, i32)` overload"] pub fn get_around (x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 >) -> crate :: app :: mapenum :: MapEnum_RangeEnumerator { unsafe { __MapEnum_unity2_raw :: get_around (:: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } # [doc = "`GetMove()` overload"] pub fn get_move () -> crate :: app :: mapenum :: MapEnum_MoveEnumerator { unsafe { __MapEnum_unity2_raw :: get_move (:: core :: option :: Option :: None) } } # [doc = "`GetCell(crate::app::unit::Unit)` overload"] pub fn get_cell (unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> crate :: app :: mapenum :: MapEnum_CellEnumerator { unsafe { __MapEnum_unity2_raw :: get_cell (:: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } # [doc = "`GetCell(crate::app::unit::Unit, i32, i32)` overload"] pub fn get_cell_2 (unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 >) -> crate :: app :: mapenum :: MapEnum_CellEnumerator { unsafe { __MapEnum_unity2_raw :: get_cell_2 (:: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-mapenum")]
+pub trait IMapEnumMethods : IMapEnum { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapEnum as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapEnum_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-mapenum")]
+impl < __T : IMapEnum > IMapEnumMethods for __T { }
+
+#[cfg(feature = "app-mapenum")]
+impl MapEnum { pub fn get_full_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapEnum_unity2_raw :: __lookup_get_full :: get_method_info () } pub fn get_play_area_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapEnum_unity2_raw :: __lookup_get_play_area :: get_method_info () } pub fn get_area_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapEnum_unity2_raw :: __lookup_get_area :: get_method_info () } pub fn get_range_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapEnum_unity2_raw :: __lookup_get_range :: get_method_info () } pub fn get_range_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapEnum_unity2_raw :: __lookup_get_range_2 :: get_method_info () } pub fn get_around_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapEnum_unity2_raw :: __lookup_get_around :: get_method_info () } pub fn get_move_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapEnum_unity2_raw :: __lookup_get_move :: get_method_info () } pub fn get_cell_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapEnum_unity2_raw :: __lookup_get_cell :: get_method_info () } pub fn get_cell_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapEnum_unity2_raw :: __lookup_get_cell_2 :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapEnum_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-mapenum")]
 impl MapEnum {
-    #[doc = "`GetFull()` overload"]
-    pub fn get_full() -> crate::app::mapenum::MapEnum_AreaEnumerator {
-        unsafe { __MapEnum_unity2_raw::get_full(::core::option::Option::None) }
-    }
-
-    #[doc = "`GetPlayArea()` overload"]
-    pub fn get_play_area() -> crate::app::mapenum::MapEnum_AreaEnumerator {
-        unsafe { __MapEnum_unity2_raw::get_play_area(::core::option::Option::None) }
-    }
-
-    #[doc = "`GetArea(i32, i32, i32, i32)` overload"]
-    pub fn get_area(
-        x: impl ::core::convert::Into<i32>,
-        z: impl ::core::convert::Into<i32>,
-        w: impl ::core::convert::Into<i32>,
-        h: impl ::core::convert::Into<i32>,
-    ) -> crate::app::mapenum::MapEnum_AreaEnumerator {
-        unsafe {
-            __MapEnum_unity2_raw::get_area(
-                ::core::convert::Into::into(x),
-                ::core::convert::Into::into(z),
-                ::core::convert::Into::into(w),
-                ::core::convert::Into::into(h),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`GetRange(i32, i32, i32)` overload"]
-    pub fn get_range(
-        x: impl ::core::convert::Into<i32>,
-        z: impl ::core::convert::Into<i32>,
-        range: impl ::core::convert::Into<i32>,
-    ) -> crate::app::mapenum::MapEnum_RangeEnumerator {
-        unsafe {
-            __MapEnum_unity2_raw::get_range(
-                ::core::convert::Into::into(x),
-                ::core::convert::Into::into(z),
-                ::core::convert::Into::into(range),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`GetRange(i32, i32, i32, i32)` overload"]
-    pub fn get_range_2(
-        x: impl ::core::convert::Into<i32>,
-        z: impl ::core::convert::Into<i32>,
-        near: impl ::core::convert::Into<i32>,
-        far: impl ::core::convert::Into<i32>,
-    ) -> crate::app::mapenum::MapEnum_RangeEnumerator {
-        unsafe {
-            __MapEnum_unity2_raw::get_range_2(
-                ::core::convert::Into::into(x),
-                ::core::convert::Into::into(z),
-                ::core::convert::Into::into(near),
-                ::core::convert::Into::into(far),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`GetAround(i32, i32)` overload"]
-    pub fn get_around(x: impl ::core::convert::Into<i32>, z: impl ::core::convert::Into<i32>) -> crate::app::mapenum::MapEnum_RangeEnumerator {
-        unsafe {
-            __MapEnum_unity2_raw::get_around(
-                ::core::convert::Into::into(x),
-                ::core::convert::Into::into(z),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`GetMove()` overload"]
-    pub fn get_move() -> crate::app::mapenum::MapEnum_MoveEnumerator {
-        unsafe { __MapEnum_unity2_raw::get_move(::core::option::Option::None) }
-    }
-
-    #[doc = "`GetCell(crate::app::unit::Unit)` overload"]
-    pub fn get_cell(unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> crate::app::mapenum::MapEnum_CellEnumerator {
-        unsafe { __MapEnum_unity2_raw::get_cell(::core::convert::Into::into(unit), ::core::option::Option::None) }
-    }
-
-    #[doc = "`GetCell(crate::app::unit::Unit, i32, i32)` overload"]
-    pub fn get_cell_2(
-        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-        x: impl ::core::convert::Into<i32>,
-        z: impl ::core::convert::Into<i32>,
-    ) -> crate::app::mapenum::MapEnum_CellEnumerator {
-        unsafe {
-            __MapEnum_unity2_raw::get_cell_2(
-                ::core::convert::Into::into(unit),
-                ::core::convert::Into::into(x),
-                ::core::convert::Into::into(z),
-                ::core::option::Option::None,
-            )
-        }
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapEnum) , :: core :: stringify ! (new) ,)) ; < Self as IMapEnumMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-mapenum")]
-pub trait IMapEnumMethods: IMapEnum {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <MapEnum as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapEnum_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MapEnum_CellEnumerator_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_setup { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapEnum_CellEnumerator as :: unity2 :: ClassIdentity > :: class () , "Setup" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapEnum_CellEnumerator as :: unity2 :: ClassIdentity > :: NAME , "Setup" , e) , } } } pub unsafe fn setup (this : MapEnum_CellEnumerator , x : i32 , z : i32 , size : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: mapenum :: MapEnum_CellEnumerator { let inner : extern "C" fn (MapEnum_CellEnumerator , i32 , i32 , i32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: mapenum :: MapEnum_CellEnumerator = :: core :: mem :: transmute (__lookup_setup :: get_method_info () . method_ptr ,) ; inner (this , x , z , size , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_dispose { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapEnum_CellEnumerator as :: unity2 :: ClassIdentity > :: class () , "Dispose" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapEnum_CellEnumerator as :: unity2 :: ClassIdentity > :: NAME , "Dispose" , e) , } } } pub unsafe fn dispose (this : MapEnum_CellEnumerator , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapEnum_CellEnumerator , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_dispose :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_current { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapEnum_CellEnumerator as :: unity2 :: ClassIdentity > :: class () , "get_Current" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapEnum_CellEnumerator as :: unity2 :: ClassIdentity > :: NAME , "get_Current" , e) , } } } pub unsafe fn get_current (this : MapEnum_CellEnumerator , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: mappos :: MapPos { let inner : extern "C" fn (MapEnum_CellEnumerator , :: unity2 :: OptionalMethod ,) -> crate :: app :: mappos :: MapPos = :: core :: mem :: transmute (__lookup_get_current :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_system_collections_i_enumerator_get_current { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapEnum_CellEnumerator as :: unity2 :: ClassIdentity > :: class () , "System.Collections.IEnumerator.get_Current" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapEnum_CellEnumerator as :: unity2 :: ClassIdentity > :: NAME , "System.Collections.IEnumerator.get_Current" , e) , } } } pub unsafe fn system_collections_i_enumerator_get_current (this : MapEnum_CellEnumerator , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object { let inner : extern "C" fn (MapEnum_CellEnumerator , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute (__lookup_system_collections_i_enumerator_get_current :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_move_next { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapEnum_CellEnumerator as :: unity2 :: ClassIdentity > :: class () , "MoveNext" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapEnum_CellEnumerator as :: unity2 :: ClassIdentity > :: NAME , "MoveNext" , e) , } } } pub unsafe fn move_next (this : MapEnum_CellEnumerator , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (MapEnum_CellEnumerator , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_move_next :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_reset { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapEnum_CellEnumerator as :: unity2 :: ClassIdentity > :: class () , "Reset" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapEnum_CellEnumerator as :: unity2 :: ClassIdentity > :: NAME , "Reset" , e) , } } } pub unsafe fn reset (this : MapEnum_CellEnumerator , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapEnum_CellEnumerator , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_reset :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_system_collections_i_enumerable_get_enumerator { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapEnum_CellEnumerator as :: unity2 :: ClassIdentity > :: class () , "System.Collections.IEnumerable.GetEnumerator" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapEnum_CellEnumerator as :: unity2 :: ClassIdentity > :: NAME , "System.Collections.IEnumerable.GetEnumerator" , e) , } } } pub unsafe fn system_collections_i_enumerable_get_enumerator (this : MapEnum_CellEnumerator , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { let inner : extern "C" fn (MapEnum_CellEnumerator , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute (__lookup_system_collections_i_enumerable_get_enumerator :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_enumerator { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapEnum_CellEnumerator as :: unity2 :: ClassIdentity > :: class () , "GetEnumerator" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapEnum_CellEnumerator as :: unity2 :: ClassIdentity > :: NAME , "GetEnumerator" , e) , } } } pub unsafe fn get_enumerator (this : MapEnum_CellEnumerator , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: mapenum :: MapEnum_CellEnumerator { let inner : extern "C" fn (MapEnum_CellEnumerator , :: unity2 :: OptionalMethod ,) -> crate :: app :: mapenum :: MapEnum_CellEnumerator = :: core :: mem :: transmute (__lookup_get_enumerator :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-mapenum")]
-impl<__T: IMapEnum> IMapEnumMethods for __T {}
+impl MapEnum_CellEnumerator { # [doc = "`Setup(i32, i32, i32)` overload"] pub fn setup (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 > , size : impl :: core :: convert :: Into < i32 >) -> crate :: app :: mapenum :: MapEnum_CellEnumerator { unsafe { __MapEnum_CellEnumerator_unity2_raw :: setup (self , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: convert :: Into :: into (size) , :: core :: option :: Option :: None) } } # [doc = "`Dispose()` overload"] pub fn dispose (self ,) -> () { unsafe { __MapEnum_CellEnumerator_unity2_raw :: dispose (self , :: core :: option :: Option :: None) } } # [doc = "`get_Current()` overload"] pub fn get_current (self ,) -> crate :: app :: mappos :: MapPos { unsafe { __MapEnum_CellEnumerator_unity2_raw :: get_current (self , :: core :: option :: Option :: None) } } # [doc = "`System.Collections.IEnumerator.get_Current()` overload"] pub fn system_collections_i_enumerator_get_current (self ,) -> crate :: system :: object :: Object { unsafe { __MapEnum_CellEnumerator_unity2_raw :: system_collections_i_enumerator_get_current (self , :: core :: option :: Option :: None) } } # [doc = "`MoveNext()` overload"] pub fn move_next (self ,) -> bool { unsafe { __MapEnum_CellEnumerator_unity2_raw :: move_next (self , :: core :: option :: Option :: None) } } # [doc = "`Reset()` overload"] pub fn reset (self ,) -> () { unsafe { __MapEnum_CellEnumerator_unity2_raw :: reset (self , :: core :: option :: Option :: None) } } # [doc = "`System.Collections.IEnumerable.GetEnumerator()` overload"] pub fn system_collections_i_enumerable_get_enumerator (self ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { __MapEnum_CellEnumerator_unity2_raw :: system_collections_i_enumerable_get_enumerator (self , :: core :: option :: Option :: None) } } # [doc = "`GetEnumerator()` overload"] pub fn get_enumerator (self ,) -> crate :: app :: mapenum :: MapEnum_CellEnumerator { unsafe { __MapEnum_CellEnumerator_unity2_raw :: get_enumerator (self , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-mapenum")]
-impl MapEnum {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(MapEnum), ::core::stringify!(new),));
-        <Self as IMapEnumMethods>::ctor(this);
-        this
-    }
-}
+impl MapEnum_CellEnumerator { pub fn setup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapEnum_CellEnumerator_unity2_raw :: __lookup_setup :: get_method_info () } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapEnum_CellEnumerator_unity2_raw :: __lookup_dispose :: get_method_info () } pub fn get_current_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapEnum_CellEnumerator_unity2_raw :: __lookup_get_current :: get_method_info () } pub fn system_collections_i_enumerator_get_current_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapEnum_CellEnumerator_unity2_raw :: __lookup_system_collections_i_enumerator_get_current :: get_method_info () } pub fn move_next_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapEnum_CellEnumerator_unity2_raw :: __lookup_move_next :: get_method_info () } pub fn reset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapEnum_CellEnumerator_unity2_raw :: __lookup_reset :: get_method_info () } pub fn system_collections_i_enumerable_get_enumerator_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapEnum_CellEnumerator_unity2_raw :: __lookup_system_collections_i_enumerable_get_enumerator :: get_method_info () } pub fn get_enumerator_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapEnum_CellEnumerator_unity2_raw :: __lookup_get_enumerator :: get_method_info () } }
 
 #[cfg(feature = "app-mapenum")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapEnum_AreaEnumerator_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_setup {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEnum_AreaEnumerator as ::unity2::ClassIdentity>::class(),
-                "Setup",
-                4,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapEnum_AreaEnumerator as ::unity2::ClassIdentity>::NAME,
-                        "Setup",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn setup(
-        this: MapEnum_AreaEnumerator,
-        x: i32,
-        z: i32,
-        w: i32,
-        h: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::mapenum::MapEnum_AreaEnumerator {
-        let inner: extern "C" fn(
-            MapEnum_AreaEnumerator,
-            i32,
-            i32,
-            i32,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::mapenum::MapEnum_AreaEnumerator = ::core::mem::transmute(__lookup_setup::get_method_info().method_ptr);
-        inner(this, x, z, w, h, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_dispose {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEnum_AreaEnumerator as ::unity2::ClassIdentity>::class(),
-                "Dispose",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapEnum_AreaEnumerator as ::unity2::ClassIdentity>::NAME,
-                        "Dispose",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn dispose(this: MapEnum_AreaEnumerator, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapEnum_AreaEnumerator, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_dispose::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_current {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEnum_AreaEnumerator as ::unity2::ClassIdentity>::class(),
-                "get_Current",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapEnum_AreaEnumerator as ::unity2::ClassIdentity>::NAME,
-                        "get_Current",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_current(this: MapEnum_AreaEnumerator, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::mappos::MapPos {
-        let inner: extern "C" fn(MapEnum_AreaEnumerator, ::unity2::OptionalMethod) -> crate::app::mappos::MapPos =
-            ::core::mem::transmute(__lookup_get_current::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_system_collections_i_enumerator_get_current {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEnum_AreaEnumerator as ::unity2::ClassIdentity>::class(),
-                "System.Collections.IEnumerator.get_Current",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapEnum_AreaEnumerator as ::unity2::ClassIdentity>::NAME,
-                        "System.Collections.IEnumerator.get_Current",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn system_collections_i_enumerator_get_current(
-        this: MapEnum_AreaEnumerator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::object::Object {
-        let inner: extern "C" fn(MapEnum_AreaEnumerator, ::unity2::OptionalMethod) -> crate::system::object::Object =
-            ::core::mem::transmute(__lookup_system_collections_i_enumerator_get_current::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_move_next {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEnum_AreaEnumerator as ::unity2::ClassIdentity>::class(),
-                "MoveNext",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapEnum_AreaEnumerator as ::unity2::ClassIdentity>::NAME,
-                        "MoveNext",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn move_next(this: MapEnum_AreaEnumerator, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(MapEnum_AreaEnumerator, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_move_next::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_reset {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEnum_AreaEnumerator as ::unity2::ClassIdentity>::class(),
-                "Reset",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapEnum_AreaEnumerator as ::unity2::ClassIdentity>::NAME,
-                        "Reset",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn reset(this: MapEnum_AreaEnumerator, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapEnum_AreaEnumerator, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_reset::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_system_collections_i_enumerable_get_enumerator {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEnum_AreaEnumerator as ::unity2::ClassIdentity>::class(),
-                "System.Collections.IEnumerable.GetEnumerator",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapEnum_AreaEnumerator as ::unity2::ClassIdentity>::NAME,
-                        "System.Collections.IEnumerable.GetEnumerator",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn system_collections_i_enumerable_get_enumerator(
-        this: MapEnum_AreaEnumerator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::ienumerator::IEnumerator {
-        let inner: extern "C" fn(MapEnum_AreaEnumerator, ::unity2::OptionalMethod) -> crate::system::collections::ienumerator::IEnumerator =
-            ::core::mem::transmute(__lookup_system_collections_i_enumerable_get_enumerator::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_enumerator {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEnum_AreaEnumerator as ::unity2::ClassIdentity>::class(),
-                "GetEnumerator",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapEnum_AreaEnumerator as ::unity2::ClassIdentity>::NAME,
-                        "GetEnumerator",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_enumerator(
-        this: MapEnum_AreaEnumerator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::mapenum::MapEnum_AreaEnumerator {
-        let inner: extern "C" fn(MapEnum_AreaEnumerator, ::unity2::OptionalMethod) -> crate::app::mapenum::MapEnum_AreaEnumerator =
-            ::core::mem::transmute(__lookup_get_enumerator::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MapEnum_AreaEnumerator_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_setup { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapEnum_AreaEnumerator as :: unity2 :: ClassIdentity > :: class () , "Setup" , 4 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapEnum_AreaEnumerator as :: unity2 :: ClassIdentity > :: NAME , "Setup" , e) , } } } pub unsafe fn setup (this : MapEnum_AreaEnumerator , x : i32 , z : i32 , w : i32 , h : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: mapenum :: MapEnum_AreaEnumerator { let inner : extern "C" fn (MapEnum_AreaEnumerator , i32 , i32 , i32 , i32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: mapenum :: MapEnum_AreaEnumerator = :: core :: mem :: transmute (__lookup_setup :: get_method_info () . method_ptr ,) ; inner (this , x , z , w , h , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_dispose { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapEnum_AreaEnumerator as :: unity2 :: ClassIdentity > :: class () , "Dispose" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapEnum_AreaEnumerator as :: unity2 :: ClassIdentity > :: NAME , "Dispose" , e) , } } } pub unsafe fn dispose (this : MapEnum_AreaEnumerator , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapEnum_AreaEnumerator , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_dispose :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_current { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapEnum_AreaEnumerator as :: unity2 :: ClassIdentity > :: class () , "get_Current" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapEnum_AreaEnumerator as :: unity2 :: ClassIdentity > :: NAME , "get_Current" , e) , } } } pub unsafe fn get_current (this : MapEnum_AreaEnumerator , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: mappos :: MapPos { let inner : extern "C" fn (MapEnum_AreaEnumerator , :: unity2 :: OptionalMethod ,) -> crate :: app :: mappos :: MapPos = :: core :: mem :: transmute (__lookup_get_current :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_system_collections_i_enumerator_get_current { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapEnum_AreaEnumerator as :: unity2 :: ClassIdentity > :: class () , "System.Collections.IEnumerator.get_Current" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapEnum_AreaEnumerator as :: unity2 :: ClassIdentity > :: NAME , "System.Collections.IEnumerator.get_Current" , e) , } } } pub unsafe fn system_collections_i_enumerator_get_current (this : MapEnum_AreaEnumerator , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object { let inner : extern "C" fn (MapEnum_AreaEnumerator , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute (__lookup_system_collections_i_enumerator_get_current :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_move_next { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapEnum_AreaEnumerator as :: unity2 :: ClassIdentity > :: class () , "MoveNext" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapEnum_AreaEnumerator as :: unity2 :: ClassIdentity > :: NAME , "MoveNext" , e) , } } } pub unsafe fn move_next (this : MapEnum_AreaEnumerator , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (MapEnum_AreaEnumerator , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_move_next :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_reset { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapEnum_AreaEnumerator as :: unity2 :: ClassIdentity > :: class () , "Reset" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapEnum_AreaEnumerator as :: unity2 :: ClassIdentity > :: NAME , "Reset" , e) , } } } pub unsafe fn reset (this : MapEnum_AreaEnumerator , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapEnum_AreaEnumerator , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_reset :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_system_collections_i_enumerable_get_enumerator { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapEnum_AreaEnumerator as :: unity2 :: ClassIdentity > :: class () , "System.Collections.IEnumerable.GetEnumerator" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapEnum_AreaEnumerator as :: unity2 :: ClassIdentity > :: NAME , "System.Collections.IEnumerable.GetEnumerator" , e) , } } } pub unsafe fn system_collections_i_enumerable_get_enumerator (this : MapEnum_AreaEnumerator , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { let inner : extern "C" fn (MapEnum_AreaEnumerator , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute (__lookup_system_collections_i_enumerable_get_enumerator :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_enumerator { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapEnum_AreaEnumerator as :: unity2 :: ClassIdentity > :: class () , "GetEnumerator" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapEnum_AreaEnumerator as :: unity2 :: ClassIdentity > :: NAME , "GetEnumerator" , e) , } } } pub unsafe fn get_enumerator (this : MapEnum_AreaEnumerator , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: mapenum :: MapEnum_AreaEnumerator { let inner : extern "C" fn (MapEnum_AreaEnumerator , :: unity2 :: OptionalMethod ,) -> crate :: app :: mapenum :: MapEnum_AreaEnumerator = :: core :: mem :: transmute (__lookup_get_enumerator :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-mapenum")]
-impl MapEnum_AreaEnumerator {
-    #[doc = "`Setup(i32, i32, i32, i32)` overload"]
-    pub fn setup(
-        self,
-        x: impl ::core::convert::Into<i32>,
-        z: impl ::core::convert::Into<i32>,
-        w: impl ::core::convert::Into<i32>,
-        h: impl ::core::convert::Into<i32>,
-    ) -> crate::app::mapenum::MapEnum_AreaEnumerator {
-        unsafe {
-            __MapEnum_AreaEnumerator_unity2_raw::setup(
-                self,
-                ::core::convert::Into::into(x),
-                ::core::convert::Into::into(z),
-                ::core::convert::Into::into(w),
-                ::core::convert::Into::into(h),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`Dispose()` overload"]
-    pub fn dispose(self) -> () {
-        unsafe { __MapEnum_AreaEnumerator_unity2_raw::dispose(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_Current()` overload"]
-    pub fn get_current(self) -> crate::app::mappos::MapPos {
-        unsafe { __MapEnum_AreaEnumerator_unity2_raw::get_current(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`System.Collections.IEnumerator.get_Current()` overload"]
-    pub fn system_collections_i_enumerator_get_current(self) -> crate::system::object::Object {
-        unsafe { __MapEnum_AreaEnumerator_unity2_raw::system_collections_i_enumerator_get_current(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`MoveNext()` overload"]
-    pub fn move_next(self) -> bool {
-        unsafe { __MapEnum_AreaEnumerator_unity2_raw::move_next(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`Reset()` overload"]
-    pub fn reset(self) -> () {
-        unsafe { __MapEnum_AreaEnumerator_unity2_raw::reset(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`System.Collections.IEnumerable.GetEnumerator()` overload"]
-    pub fn system_collections_i_enumerable_get_enumerator(self) -> crate::system::collections::ienumerator::IEnumerator {
-        unsafe { __MapEnum_AreaEnumerator_unity2_raw::system_collections_i_enumerable_get_enumerator(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`GetEnumerator()` overload"]
-    pub fn get_enumerator(self) -> crate::app::mapenum::MapEnum_AreaEnumerator {
-        unsafe { __MapEnum_AreaEnumerator_unity2_raw::get_enumerator(self, ::core::option::Option::None) }
-    }
-}
+impl MapEnum_AreaEnumerator { # [doc = "`Setup(i32, i32, i32, i32)` overload"] pub fn setup (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 > , w : impl :: core :: convert :: Into < i32 > , h : impl :: core :: convert :: Into < i32 >) -> crate :: app :: mapenum :: MapEnum_AreaEnumerator { unsafe { __MapEnum_AreaEnumerator_unity2_raw :: setup (self , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: convert :: Into :: into (w) , :: core :: convert :: Into :: into (h) , :: core :: option :: Option :: None) } } # [doc = "`Dispose()` overload"] pub fn dispose (self ,) -> () { unsafe { __MapEnum_AreaEnumerator_unity2_raw :: dispose (self , :: core :: option :: Option :: None) } } # [doc = "`get_Current()` overload"] pub fn get_current (self ,) -> crate :: app :: mappos :: MapPos { unsafe { __MapEnum_AreaEnumerator_unity2_raw :: get_current (self , :: core :: option :: Option :: None) } } # [doc = "`System.Collections.IEnumerator.get_Current()` overload"] pub fn system_collections_i_enumerator_get_current (self ,) -> crate :: system :: object :: Object { unsafe { __MapEnum_AreaEnumerator_unity2_raw :: system_collections_i_enumerator_get_current (self , :: core :: option :: Option :: None) } } # [doc = "`MoveNext()` overload"] pub fn move_next (self ,) -> bool { unsafe { __MapEnum_AreaEnumerator_unity2_raw :: move_next (self , :: core :: option :: Option :: None) } } # [doc = "`Reset()` overload"] pub fn reset (self ,) -> () { unsafe { __MapEnum_AreaEnumerator_unity2_raw :: reset (self , :: core :: option :: Option :: None) } } # [doc = "`System.Collections.IEnumerable.GetEnumerator()` overload"] pub fn system_collections_i_enumerable_get_enumerator (self ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { __MapEnum_AreaEnumerator_unity2_raw :: system_collections_i_enumerable_get_enumerator (self , :: core :: option :: Option :: None) } } # [doc = "`GetEnumerator()` overload"] pub fn get_enumerator (self ,) -> crate :: app :: mapenum :: MapEnum_AreaEnumerator { unsafe { __MapEnum_AreaEnumerator_unity2_raw :: get_enumerator (self , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-mapenum")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapEnum_CellEnumerator_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_setup {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEnum_CellEnumerator as ::unity2::ClassIdentity>::class(),
-                "Setup",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapEnum_CellEnumerator as ::unity2::ClassIdentity>::NAME,
-                        "Setup",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn setup(
-        this: MapEnum_CellEnumerator,
-        x: i32,
-        z: i32,
-        size: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::mapenum::MapEnum_CellEnumerator {
-        let inner: extern "C" fn(MapEnum_CellEnumerator, i32, i32, i32, ::unity2::OptionalMethod) -> crate::app::mapenum::MapEnum_CellEnumerator =
-            ::core::mem::transmute(__lookup_setup::get_method_info().method_ptr);
-        inner(this, x, z, size, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_dispose {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEnum_CellEnumerator as ::unity2::ClassIdentity>::class(),
-                "Dispose",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapEnum_CellEnumerator as ::unity2::ClassIdentity>::NAME,
-                        "Dispose",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn dispose(this: MapEnum_CellEnumerator, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapEnum_CellEnumerator, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_dispose::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_current {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEnum_CellEnumerator as ::unity2::ClassIdentity>::class(),
-                "get_Current",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapEnum_CellEnumerator as ::unity2::ClassIdentity>::NAME,
-                        "get_Current",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_current(this: MapEnum_CellEnumerator, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::mappos::MapPos {
-        let inner: extern "C" fn(MapEnum_CellEnumerator, ::unity2::OptionalMethod) -> crate::app::mappos::MapPos =
-            ::core::mem::transmute(__lookup_get_current::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_system_collections_i_enumerator_get_current {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEnum_CellEnumerator as ::unity2::ClassIdentity>::class(),
-                "System.Collections.IEnumerator.get_Current",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapEnum_CellEnumerator as ::unity2::ClassIdentity>::NAME,
-                        "System.Collections.IEnumerator.get_Current",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn system_collections_i_enumerator_get_current(
-        this: MapEnum_CellEnumerator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::object::Object {
-        let inner: extern "C" fn(MapEnum_CellEnumerator, ::unity2::OptionalMethod) -> crate::system::object::Object =
-            ::core::mem::transmute(__lookup_system_collections_i_enumerator_get_current::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_move_next {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEnum_CellEnumerator as ::unity2::ClassIdentity>::class(),
-                "MoveNext",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapEnum_CellEnumerator as ::unity2::ClassIdentity>::NAME,
-                        "MoveNext",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn move_next(this: MapEnum_CellEnumerator, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(MapEnum_CellEnumerator, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_move_next::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_reset {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEnum_CellEnumerator as ::unity2::ClassIdentity>::class(),
-                "Reset",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapEnum_CellEnumerator as ::unity2::ClassIdentity>::NAME,
-                        "Reset",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn reset(this: MapEnum_CellEnumerator, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapEnum_CellEnumerator, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_reset::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_system_collections_i_enumerable_get_enumerator {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEnum_CellEnumerator as ::unity2::ClassIdentity>::class(),
-                "System.Collections.IEnumerable.GetEnumerator",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapEnum_CellEnumerator as ::unity2::ClassIdentity>::NAME,
-                        "System.Collections.IEnumerable.GetEnumerator",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn system_collections_i_enumerable_get_enumerator(
-        this: MapEnum_CellEnumerator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::ienumerator::IEnumerator {
-        let inner: extern "C" fn(MapEnum_CellEnumerator, ::unity2::OptionalMethod) -> crate::system::collections::ienumerator::IEnumerator =
-            ::core::mem::transmute(__lookup_system_collections_i_enumerable_get_enumerator::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_enumerator {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEnum_CellEnumerator as ::unity2::ClassIdentity>::class(),
-                "GetEnumerator",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapEnum_CellEnumerator as ::unity2::ClassIdentity>::NAME,
-                        "GetEnumerator",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_enumerator(
-        this: MapEnum_CellEnumerator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::mapenum::MapEnum_CellEnumerator {
-        let inner: extern "C" fn(MapEnum_CellEnumerator, ::unity2::OptionalMethod) -> crate::app::mapenum::MapEnum_CellEnumerator =
-            ::core::mem::transmute(__lookup_get_enumerator::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-mapenum")]
-impl MapEnum_CellEnumerator {
-    #[doc = "`Setup(i32, i32, i32)` overload"]
-    pub fn setup(
-        self,
-        x: impl ::core::convert::Into<i32>,
-        z: impl ::core::convert::Into<i32>,
-        size: impl ::core::convert::Into<i32>,
-    ) -> crate::app::mapenum::MapEnum_CellEnumerator {
-        unsafe {
-            __MapEnum_CellEnumerator_unity2_raw::setup(
-                self,
-                ::core::convert::Into::into(x),
-                ::core::convert::Into::into(z),
-                ::core::convert::Into::into(size),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`Dispose()` overload"]
-    pub fn dispose(self) -> () {
-        unsafe { __MapEnum_CellEnumerator_unity2_raw::dispose(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_Current()` overload"]
-    pub fn get_current(self) -> crate::app::mappos::MapPos {
-        unsafe { __MapEnum_CellEnumerator_unity2_raw::get_current(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`System.Collections.IEnumerator.get_Current()` overload"]
-    pub fn system_collections_i_enumerator_get_current(self) -> crate::system::object::Object {
-        unsafe { __MapEnum_CellEnumerator_unity2_raw::system_collections_i_enumerator_get_current(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`MoveNext()` overload"]
-    pub fn move_next(self) -> bool {
-        unsafe { __MapEnum_CellEnumerator_unity2_raw::move_next(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`Reset()` overload"]
-    pub fn reset(self) -> () {
-        unsafe { __MapEnum_CellEnumerator_unity2_raw::reset(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`System.Collections.IEnumerable.GetEnumerator()` overload"]
-    pub fn system_collections_i_enumerable_get_enumerator(self) -> crate::system::collections::ienumerator::IEnumerator {
-        unsafe { __MapEnum_CellEnumerator_unity2_raw::system_collections_i_enumerable_get_enumerator(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`GetEnumerator()` overload"]
-    pub fn get_enumerator(self) -> crate::app::mapenum::MapEnum_CellEnumerator {
-        unsafe { __MapEnum_CellEnumerator_unity2_raw::get_enumerator(self, ::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-mapenum")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapEnum_RangeEnumerator_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_setup {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEnum_RangeEnumerator as ::unity2::ClassIdentity>::class(),
-                "Setup",
-                4,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapEnum_RangeEnumerator as ::unity2::ClassIdentity>::NAME,
-                        "Setup",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn setup(
-        this: MapEnum_RangeEnumerator,
-        x: i32,
-        z: i32,
-        near: i32,
-        far: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::mapenum::MapEnum_RangeEnumerator {
-        let inner: extern "C" fn(
-            MapEnum_RangeEnumerator,
-            i32,
-            i32,
-            i32,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::mapenum::MapEnum_RangeEnumerator = ::core::mem::transmute(__lookup_setup::get_method_info().method_ptr);
-        inner(this, x, z, near, far, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_dispose {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEnum_RangeEnumerator as ::unity2::ClassIdentity>::class(),
-                "Dispose",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapEnum_RangeEnumerator as ::unity2::ClassIdentity>::NAME,
-                        "Dispose",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn dispose(this: MapEnum_RangeEnumerator, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapEnum_RangeEnumerator, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_dispose::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_current {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEnum_RangeEnumerator as ::unity2::ClassIdentity>::class(),
-                "get_Current",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapEnum_RangeEnumerator as ::unity2::ClassIdentity>::NAME,
-                        "get_Current",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_current(this: MapEnum_RangeEnumerator, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::maprange::MapRange {
-        let inner: extern "C" fn(MapEnum_RangeEnumerator, ::unity2::OptionalMethod) -> crate::app::maprange::MapRange =
-            ::core::mem::transmute(__lookup_get_current::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_system_collections_i_enumerator_get_current {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEnum_RangeEnumerator as ::unity2::ClassIdentity>::class(),
-                "System.Collections.IEnumerator.get_Current",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapEnum_RangeEnumerator as ::unity2::ClassIdentity>::NAME,
-                        "System.Collections.IEnumerator.get_Current",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn system_collections_i_enumerator_get_current(
-        this: MapEnum_RangeEnumerator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::object::Object {
-        let inner: extern "C" fn(MapEnum_RangeEnumerator, ::unity2::OptionalMethod) -> crate::system::object::Object =
-            ::core::mem::transmute(__lookup_system_collections_i_enumerator_get_current::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_move_next {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEnum_RangeEnumerator as ::unity2::ClassIdentity>::class(),
-                "MoveNext",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapEnum_RangeEnumerator as ::unity2::ClassIdentity>::NAME,
-                        "MoveNext",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn move_next(this: MapEnum_RangeEnumerator, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(MapEnum_RangeEnumerator, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_move_next::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_reset {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEnum_RangeEnumerator as ::unity2::ClassIdentity>::class(),
-                "Reset",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapEnum_RangeEnumerator as ::unity2::ClassIdentity>::NAME,
-                        "Reset",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn reset(this: MapEnum_RangeEnumerator, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapEnum_RangeEnumerator, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_reset::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_system_collections_i_enumerable_get_enumerator {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEnum_RangeEnumerator as ::unity2::ClassIdentity>::class(),
-                "System.Collections.IEnumerable.GetEnumerator",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapEnum_RangeEnumerator as ::unity2::ClassIdentity>::NAME,
-                        "System.Collections.IEnumerable.GetEnumerator",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn system_collections_i_enumerable_get_enumerator(
-        this: MapEnum_RangeEnumerator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::ienumerator::IEnumerator {
-        let inner: extern "C" fn(MapEnum_RangeEnumerator, ::unity2::OptionalMethod) -> crate::system::collections::ienumerator::IEnumerator =
-            ::core::mem::transmute(__lookup_system_collections_i_enumerable_get_enumerator::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_enumerator {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEnum_RangeEnumerator as ::unity2::ClassIdentity>::class(),
-                "GetEnumerator",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapEnum_RangeEnumerator as ::unity2::ClassIdentity>::NAME,
-                        "GetEnumerator",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_enumerator(
-        this: MapEnum_RangeEnumerator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::mapenum::MapEnum_RangeEnumerator {
-        let inner: extern "C" fn(MapEnum_RangeEnumerator, ::unity2::OptionalMethod) -> crate::app::mapenum::MapEnum_RangeEnumerator =
-            ::core::mem::transmute(__lookup_get_enumerator::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-mapenum")]
-impl MapEnum_RangeEnumerator {
-    #[doc = "`Setup(i32, i32, i32, i32)` overload"]
-    pub fn setup(
-        self,
-        x: impl ::core::convert::Into<i32>,
-        z: impl ::core::convert::Into<i32>,
-        near: impl ::core::convert::Into<i32>,
-        far: impl ::core::convert::Into<i32>,
-    ) -> crate::app::mapenum::MapEnum_RangeEnumerator {
-        unsafe {
-            __MapEnum_RangeEnumerator_unity2_raw::setup(
-                self,
-                ::core::convert::Into::into(x),
-                ::core::convert::Into::into(z),
-                ::core::convert::Into::into(near),
-                ::core::convert::Into::into(far),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`Dispose()` overload"]
-    pub fn dispose(self) -> () {
-        unsafe { __MapEnum_RangeEnumerator_unity2_raw::dispose(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_Current()` overload"]
-    pub fn get_current(self) -> crate::app::maprange::MapRange {
-        unsafe { __MapEnum_RangeEnumerator_unity2_raw::get_current(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`System.Collections.IEnumerator.get_Current()` overload"]
-    pub fn system_collections_i_enumerator_get_current(self) -> crate::system::object::Object {
-        unsafe { __MapEnum_RangeEnumerator_unity2_raw::system_collections_i_enumerator_get_current(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`MoveNext()` overload"]
-    pub fn move_next(self) -> bool {
-        unsafe { __MapEnum_RangeEnumerator_unity2_raw::move_next(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`Reset()` overload"]
-    pub fn reset(self) -> () {
-        unsafe { __MapEnum_RangeEnumerator_unity2_raw::reset(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`System.Collections.IEnumerable.GetEnumerator()` overload"]
-    pub fn system_collections_i_enumerable_get_enumerator(self) -> crate::system::collections::ienumerator::IEnumerator {
-        unsafe { __MapEnum_RangeEnumerator_unity2_raw::system_collections_i_enumerable_get_enumerator(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`GetEnumerator()` overload"]
-    pub fn get_enumerator(self) -> crate::app::mapenum::MapEnum_RangeEnumerator {
-        unsafe { __MapEnum_RangeEnumerator_unity2_raw::get_enumerator(self, ::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-mapenum")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapEnum_MoveEnumerator_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_setup {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEnum_MoveEnumerator as ::unity2::ClassIdentity>::class(),
-                "Setup",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapEnum_MoveEnumerator as ::unity2::ClassIdentity>::NAME,
-                        "Setup",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn setup(this: MapEnum_MoveEnumerator, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::mapenum::MapEnum_MoveEnumerator {
-        let inner: extern "C" fn(MapEnum_MoveEnumerator, ::unity2::OptionalMethod) -> crate::app::mapenum::MapEnum_MoveEnumerator =
-            ::core::mem::transmute(__lookup_setup::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_dispose {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEnum_MoveEnumerator as ::unity2::ClassIdentity>::class(),
-                "Dispose",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapEnum_MoveEnumerator as ::unity2::ClassIdentity>::NAME,
-                        "Dispose",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn dispose(this: MapEnum_MoveEnumerator, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapEnum_MoveEnumerator, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_dispose::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_current {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEnum_MoveEnumerator as ::unity2::ClassIdentity>::class(),
-                "get_Current",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapEnum_MoveEnumerator as ::unity2::ClassIdentity>::NAME,
-                        "get_Current",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_current(this: MapEnum_MoveEnumerator, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::maprange::MapRange {
-        let inner: extern "C" fn(MapEnum_MoveEnumerator, ::unity2::OptionalMethod) -> crate::app::maprange::MapRange =
-            ::core::mem::transmute(__lookup_get_current::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_system_collections_i_enumerator_get_current {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEnum_MoveEnumerator as ::unity2::ClassIdentity>::class(),
-                "System.Collections.IEnumerator.get_Current",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapEnum_MoveEnumerator as ::unity2::ClassIdentity>::NAME,
-                        "System.Collections.IEnumerator.get_Current",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn system_collections_i_enumerator_get_current(
-        this: MapEnum_MoveEnumerator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::object::Object {
-        let inner: extern "C" fn(MapEnum_MoveEnumerator, ::unity2::OptionalMethod) -> crate::system::object::Object =
-            ::core::mem::transmute(__lookup_system_collections_i_enumerator_get_current::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_move_next {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEnum_MoveEnumerator as ::unity2::ClassIdentity>::class(),
-                "MoveNext",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapEnum_MoveEnumerator as ::unity2::ClassIdentity>::NAME,
-                        "MoveNext",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn move_next(this: MapEnum_MoveEnumerator, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(MapEnum_MoveEnumerator, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_move_next::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_reset {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEnum_MoveEnumerator as ::unity2::ClassIdentity>::class(),
-                "Reset",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapEnum_MoveEnumerator as ::unity2::ClassIdentity>::NAME,
-                        "Reset",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn reset(this: MapEnum_MoveEnumerator, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapEnum_MoveEnumerator, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_reset::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_system_collections_i_enumerable_get_enumerator {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEnum_MoveEnumerator as ::unity2::ClassIdentity>::class(),
-                "System.Collections.IEnumerable.GetEnumerator",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapEnum_MoveEnumerator as ::unity2::ClassIdentity>::NAME,
-                        "System.Collections.IEnumerable.GetEnumerator",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn system_collections_i_enumerable_get_enumerator(
-        this: MapEnum_MoveEnumerator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::ienumerator::IEnumerator {
-        let inner: extern "C" fn(MapEnum_MoveEnumerator, ::unity2::OptionalMethod) -> crate::system::collections::ienumerator::IEnumerator =
-            ::core::mem::transmute(__lookup_system_collections_i_enumerable_get_enumerator::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_enumerator {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEnum_MoveEnumerator as ::unity2::ClassIdentity>::class(),
-                "GetEnumerator",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapEnum_MoveEnumerator as ::unity2::ClassIdentity>::NAME,
-                        "GetEnumerator",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_enumerator(
-        this: MapEnum_MoveEnumerator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::mapenum::MapEnum_MoveEnumerator {
-        let inner: extern "C" fn(MapEnum_MoveEnumerator, ::unity2::OptionalMethod) -> crate::app::mapenum::MapEnum_MoveEnumerator =
-            ::core::mem::transmute(__lookup_get_enumerator::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-mapenum")]
-impl MapEnum_MoveEnumerator {
-    #[doc = "`Setup()` overload"]
-    pub fn setup(self) -> crate::app::mapenum::MapEnum_MoveEnumerator {
-        unsafe { __MapEnum_MoveEnumerator_unity2_raw::setup(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`Dispose()` overload"]
-    pub fn dispose(self) -> () {
-        unsafe { __MapEnum_MoveEnumerator_unity2_raw::dispose(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_Current()` overload"]
-    pub fn get_current(self) -> crate::app::maprange::MapRange {
-        unsafe { __MapEnum_MoveEnumerator_unity2_raw::get_current(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`System.Collections.IEnumerator.get_Current()` overload"]
-    pub fn system_collections_i_enumerator_get_current(self) -> crate::system::object::Object {
-        unsafe { __MapEnum_MoveEnumerator_unity2_raw::system_collections_i_enumerator_get_current(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`MoveNext()` overload"]
-    pub fn move_next(self) -> bool {
-        unsafe { __MapEnum_MoveEnumerator_unity2_raw::move_next(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`Reset()` overload"]
-    pub fn reset(self) -> () {
-        unsafe { __MapEnum_MoveEnumerator_unity2_raw::reset(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`System.Collections.IEnumerable.GetEnumerator()` overload"]
-    pub fn system_collections_i_enumerable_get_enumerator(self) -> crate::system::collections::ienumerator::IEnumerator {
-        unsafe { __MapEnum_MoveEnumerator_unity2_raw::system_collections_i_enumerable_get_enumerator(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`GetEnumerator()` overload"]
-    pub fn get_enumerator(self) -> crate::app::mapenum::MapEnum_MoveEnumerator {
-        unsafe { __MapEnum_MoveEnumerator_unity2_raw::get_enumerator(self, ::core::option::Option::None) }
-    }
-}
+impl MapEnum_AreaEnumerator { pub fn setup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapEnum_AreaEnumerator_unity2_raw :: __lookup_setup :: get_method_info () } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapEnum_AreaEnumerator_unity2_raw :: __lookup_dispose :: get_method_info () } pub fn get_current_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapEnum_AreaEnumerator_unity2_raw :: __lookup_get_current :: get_method_info () } pub fn system_collections_i_enumerator_get_current_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapEnum_AreaEnumerator_unity2_raw :: __lookup_system_collections_i_enumerator_get_current :: get_method_info () } pub fn move_next_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapEnum_AreaEnumerator_unity2_raw :: __lookup_move_next :: get_method_info () } pub fn reset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapEnum_AreaEnumerator_unity2_raw :: __lookup_reset :: get_method_info () } pub fn system_collections_i_enumerable_get_enumerator_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapEnum_AreaEnumerator_unity2_raw :: __lookup_system_collections_i_enumerable_get_enumerator :: get_method_info () } pub fn get_enumerator_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapEnum_AreaEnumerator_unity2_raw :: __lookup_get_enumerator :: get_method_info () } }
 
 #[cfg(feature = "app-mapenum")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{
-        IMapEnum, IMapEnumMethods, MapEnum, MapEnum_AreaEnumerator, MapEnum_CellEnumerator, MapEnum_MoveEnumerator, MapEnum_RangeEnumerator,
-    };
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::system::{object::IObject, valuetype::IValueType};
+    pub use super::MapEnum_MoveEnumerator;
+    pub use super::MapEnum_RangeEnumerator;
+    pub use super::MapEnum;
+    pub use super::IMapEnum;
+    pub use super::IMapEnumMethods;
+    pub use super::MapEnum_CellEnumerator;
+    pub use super::MapEnum_AreaEnumerator;
+    pub use crate::system::object::IObject;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

@@ -2,316 +2,58 @@
 
 #[cfg(feature = "app-hubinvestmentbonusfood-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::{
-            structbase::{IStructBase, StructBase},
-            structdataarray_1::{IStructDataArray_1, StructDataArray_1},
-            structtemplate_1::{IStructTemplate_1, StructTemplate_1},
-        },
-        system::object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubinvestmentbonusfood/HubInvestmentBonusFood.md"))]
-    #[::unity2::class(namespace = "App", name = "HubInvestmentBonusFood")]
-    # [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < crate :: app :: hubinvestmentbonusfood :: HubInvestmentBonusFood >)]
-    pub struct HubInvestmentBonusFood {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: structbase :: { IStructBase , StructBase }
+ ;
+ use crate :: app :: structdataarray_1 :: { IStructDataArray_1 , StructDataArray_1 }
+ ;
+ use crate :: app :: structtemplate_1 :: { IStructTemplate_1 , StructTemplate_1 }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubinvestmentbonusfood/HubInvestmentBonusFood.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubInvestmentBonusFood")] # [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < crate :: app :: hubinvestmentbonusfood :: HubInvestmentBonusFood >)] pub struct HubInvestmentBonusFood {}
+
 }
 
 #[cfg(feature = "app-hubinvestmentbonusfood-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-hubinvestmentbonusfood")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __HubInvestmentBonusFood_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_load {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubInvestmentBonusFood as ::unity2::ClassIdentity>::class(),
-                "Load",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubInvestmentBonusFood as ::unity2::ClassIdentity>::NAME,
-                        "Load",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn load(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_load::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_foodstuff {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubInvestmentBonusFood as ::unity2::ClassIdentity>::class(),
-                "get_Foodstuff",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubInvestmentBonusFood as ::unity2::ClassIdentity>::NAME,
-                        "get_Foodstuff",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_foodstuff(this: HubInvestmentBonusFood, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(HubInvestmentBonusFood, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_foodstuff::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_foodstuff {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubInvestmentBonusFood as ::unity2::ClassIdentity>::class(),
-                "set_Foodstuff",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubInvestmentBonusFood as ::unity2::ClassIdentity>::NAME,
-                        "set_Foodstuff",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_foodstuff(this: HubInvestmentBonusFood, value: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(HubInvestmentBonusFood, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_foodstuff::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_num {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubInvestmentBonusFood as ::unity2::ClassIdentity>::class(),
-                "get_Num",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubInvestmentBonusFood as ::unity2::ClassIdentity>::NAME,
-                        "get_Num",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_num(this: HubInvestmentBonusFood, __unity2_method_info: ::unity2::OptionalMethod) -> u8 {
-        let inner: extern "C" fn(HubInvestmentBonusFood, ::unity2::OptionalMethod) -> u8 =
-            ::core::mem::transmute(__lookup_get_num::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_num {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u8 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubInvestmentBonusFood as ::unity2::ClassIdentity>::class(),
-                "set_Num",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubInvestmentBonusFood as ::unity2::ClassIdentity>::NAME,
-                        "set_Num",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_num(this: HubInvestmentBonusFood, value: u8, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(HubInvestmentBonusFood, u8, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_num::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubInvestmentBonusFood as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubInvestmentBonusFood as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: HubInvestmentBonusFood, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(HubInvestmentBonusFood, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __HubInvestmentBonusFood_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_load { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubInvestmentBonusFood as :: unity2 :: ClassIdentity > :: class () , "Load" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubInvestmentBonusFood as :: unity2 :: ClassIdentity > :: NAME , "Load" , e) , } } } pub unsafe fn load (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_load :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_foodstuff { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubInvestmentBonusFood as :: unity2 :: ClassIdentity > :: class () , "get_Foodstuff" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubInvestmentBonusFood as :: unity2 :: ClassIdentity > :: NAME , "get_Foodstuff" , e) , } } } pub unsafe fn get_foodstuff (this : HubInvestmentBonusFood , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (HubInvestmentBonusFood , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_foodstuff :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_foodstuff { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubInvestmentBonusFood as :: unity2 :: ClassIdentity > :: class () , "set_Foodstuff" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubInvestmentBonusFood as :: unity2 :: ClassIdentity > :: NAME , "set_Foodstuff" , e) , } } } pub unsafe fn set_foodstuff (this : HubInvestmentBonusFood , value : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HubInvestmentBonusFood , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_foodstuff :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_num { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubInvestmentBonusFood as :: unity2 :: ClassIdentity > :: class () , "get_Num" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubInvestmentBonusFood as :: unity2 :: ClassIdentity > :: NAME , "get_Num" , e) , } } } pub unsafe fn get_num (this : HubInvestmentBonusFood , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> u8 { let inner : extern "C" fn (HubInvestmentBonusFood , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute (__lookup_get_num :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_num { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< u8 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubInvestmentBonusFood as :: unity2 :: ClassIdentity > :: class () , "set_Num" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubInvestmentBonusFood as :: unity2 :: ClassIdentity > :: NAME , "set_Num" , e) , } } } pub unsafe fn set_num (this : HubInvestmentBonusFood , value : u8 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HubInvestmentBonusFood , u8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_num :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubInvestmentBonusFood as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubInvestmentBonusFood as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : HubInvestmentBonusFood , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HubInvestmentBonusFood , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-hubinvestmentbonusfood")]
+impl HubInvestmentBonusFood { # [doc = "`Load()` overload"] pub fn load () -> () { unsafe { __HubInvestmentBonusFood_unity2_raw :: load (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-hubinvestmentbonusfood")]
+pub trait IHubInvestmentBonusFoodMethods : IHubInvestmentBonusFood { # [doc = "`get_Foodstuff()` overload"] fn get_foodstuff (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubInvestmentBonusFood as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubInvestmentBonusFood_unity2_raw :: get_foodstuff (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_Foodstuff(::unity2::Il2CppString)` overload"] fn set_foodstuff (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < HubInvestmentBonusFood as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubInvestmentBonusFood_unity2_raw :: set_foodstuff (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_Num()` overload"] fn get_num (self ,) -> u8 { unsafe { let __receiver = < HubInvestmentBonusFood as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubInvestmentBonusFood_unity2_raw :: get_num (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_Num(u8)` overload"] fn set_num (self , value : impl :: core :: convert :: Into < u8 >) -> () { unsafe { let __receiver = < HubInvestmentBonusFood as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubInvestmentBonusFood_unity2_raw :: set_num (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HubInvestmentBonusFood as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubInvestmentBonusFood_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-hubinvestmentbonusfood")]
+impl < __T : IHubInvestmentBonusFood > IHubInvestmentBonusFoodMethods for __T { }
+
+#[cfg(feature = "app-hubinvestmentbonusfood")]
+impl HubInvestmentBonusFood { pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubInvestmentBonusFood_unity2_raw :: __lookup_load :: get_method_info () } pub fn get_foodstuff_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubInvestmentBonusFood_unity2_raw :: __lookup_get_foodstuff :: get_method_info () } pub fn set_foodstuff_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubInvestmentBonusFood_unity2_raw :: __lookup_set_foodstuff :: get_method_info () } pub fn get_num_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubInvestmentBonusFood_unity2_raw :: __lookup_get_num :: get_method_info () } pub fn set_num_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubInvestmentBonusFood_unity2_raw :: __lookup_set_num :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubInvestmentBonusFood_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-hubinvestmentbonusfood")]
 impl HubInvestmentBonusFood {
-    #[doc = "`Load()` overload"]
-    pub fn load() -> () {
-        unsafe { __HubInvestmentBonusFood_unity2_raw::load(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-hubinvestmentbonusfood")]
-pub trait IHubInvestmentBonusFoodMethods: IHubInvestmentBonusFood {
-    #[doc = "`get_Foodstuff()` overload"]
-    fn get_foodstuff(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver =
-                <HubInvestmentBonusFood as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubInvestmentBonusFood_unity2_raw::get_foodstuff(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_Foodstuff(::unity2::Il2CppString)` overload"]
-    fn set_foodstuff(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver =
-                <HubInvestmentBonusFood as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubInvestmentBonusFood_unity2_raw::set_foodstuff(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Num()` overload"]
-    fn get_num(self) -> u8 {
-        unsafe {
-            let __receiver =
-                <HubInvestmentBonusFood as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubInvestmentBonusFood_unity2_raw::get_num(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_Num(u8)` overload"]
-    fn set_num(self, value: impl ::core::convert::Into<u8>) -> () {
-        unsafe {
-            let __receiver =
-                <HubInvestmentBonusFood as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubInvestmentBonusFood_unity2_raw::set_num(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <HubInvestmentBonusFood as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubInvestmentBonusFood_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-hubinvestmentbonusfood")]
-impl<__T: IHubInvestmentBonusFood> IHubInvestmentBonusFoodMethods for __T {}
-
-#[cfg(feature = "app-hubinvestmentbonusfood")]
-impl HubInvestmentBonusFood {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(HubInvestmentBonusFood),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IHubInvestmentBonusFoodMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubInvestmentBonusFood) , :: core :: stringify ! (new) ,)) ; < Self as IHubInvestmentBonusFoodMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-hubinvestmentbonusfood")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{HubInvestmentBonusFood, IHubInvestmentBonusFood, IHubInvestmentBonusFoodMethods};
-    #[cfg(feature = "app-structbase")]
-    pub use crate::app::structbase::IStructBaseMethods;
-    #[cfg(feature = "app-structdataarray_1")]
-    pub use crate::app::structdataarray_1::IStructDataArray_1Methods;
-    #[cfg(feature = "app-structtemplate_1")]
-    pub use crate::app::structtemplate_1::IStructTemplate_1Methods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::{
-        app::{structbase::IStructBase, structdataarray_1::IStructDataArray_1, structtemplate_1::IStructTemplate_1},
-        system::object::IObject,
-    };
+    pub use super::HubInvestmentBonusFood;
+    pub use super::IHubInvestmentBonusFood;
+    pub use super::IHubInvestmentBonusFoodMethods;
+    pub use crate::app::structbase::IStructBase;
+    pub use crate::app::structdataarray_1::IStructDataArray_1;
+    pub use crate::app::structtemplate_1::IStructTemplate_1;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "app-structbase")] pub use crate::app::structbase::IStructBaseMethods;
+    #[cfg(feature = "app-structdataarray_1")] pub use crate::app::structdataarray_1::IStructDataArray_1Methods;
+    #[cfg(feature = "app-structtemplate_1")] pub use crate::app::structtemplate_1::IStructTemplate_1Methods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

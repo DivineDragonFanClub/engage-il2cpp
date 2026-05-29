@@ -2,820 +2,143 @@
 
 #[cfg(feature = "app-relayreplayplayername-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::singletonmonobehaviour_1::{ISingletonMonoBehaviour_1, SingletonMonoBehaviour_1},
-        system::{
-            object::{IObject, Object},
-            r#enum::{Enum, IEnum},
-            valuetype::{IValueType, ValueType},
-        },
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayreplayplayername/RelayReplayPlayerName.md"))]
-    #[::unity2::class(namespace = "App", name = "RelayReplayPlayerName")]
-    # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: relayreplayplayername :: RelayReplayPlayerName >)]
-    pub struct RelayReplayPlayerName {
-        #[offset(32)]
-        #[rename(name = "m_Text")]
-        pub m_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[static_field]
-        #[rename(name = "PrefabPath")]
-        pub prefab_path: ::unity2::Il2CppString,
-        #[offset(40)]
-        #[rename(name = "m_CanvasManager")]
-        pub m_canvas_manager: crate::app::canvasmanager::CanvasManager,
-        #[offset(48)]
-        #[rename(name = "m_Animator")]
-        pub m_animator: crate::unity_engine::animator::Animator,
-        #[offset(56)]
-        #[rename(name = "m_Seq")]
-        pub m_seq: crate::app::relayreplayplayername::RelayReplayPlayerName_Seq,
-        #[offset(60)]
-        #[rename(name = "m_IsReqClose")]
-        pub m_is_req_close: bool,
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: singletonmonobehaviour_1 :: { ISingletonMonoBehaviour_1 , SingletonMonoBehaviour_1 }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relayreplayplayername/RelayReplayPlayerName_Seq.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct RelayReplayPlayerName_Seq  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for RelayReplayPlayerName_Seq  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "RelayReplayPlayerName.Seq";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relayreplayplayername/RelayReplayPlayerName_Seq.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct RelayReplayPlayerName_Seq {
-        pub value: i32,
+}
+
+
+impl  ::unity2::IlType for RelayReplayPlayerName_Seq  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::ClassIdentity for RelayReplayPlayerName_Seq {
-        const NAME: &'static str = "RelayReplayPlayerName.Seq";
-        const NAMESPACE: &'static str = "App";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  RelayReplayPlayerName_Seq  {
+    pub fn hide() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl ::unity2::IlType for RelayReplayPlayerName_Seq {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+
+    pub fn opening() -> Self {
+        Self { value: 1 }
+
     }
 
-    impl RelayReplayPlayerName_Seq {
-        pub fn hide() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn opening() -> Self {
-            Self { value: 1 }
-        }
+    pub fn show() -> Self {
+        Self { value: 2 }
 
-        pub fn show() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn closing() -> Self {
-            Self { value: 3 }
-        }
     }
+
+
+    pub fn closing() -> Self {
+        Self { value: 3 }
+
+    }
+
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayreplayplayername/RelayReplayPlayerName.md"))] # [:: unity2 :: class (namespace = "App" , name = "RelayReplayPlayerName")] # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: relayreplayplayername :: RelayReplayPlayerName >)] pub struct RelayReplayPlayerName {
+# [offset (32)] # [rename (name = "m_Text")] pub m_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [static_field] # [rename (name = "PrefabPath")] pub prefab_path : :: unity2 :: Il2CppString ,
+# [offset (40)] # [rename (name = "m_CanvasManager")] pub m_canvas_manager : crate :: app :: canvasmanager :: CanvasManager ,
+# [offset (48)] # [rename (name = "m_Animator")] pub m_animator : crate :: unity_engine :: animator :: Animator ,
+# [offset (56)] # [rename (name = "m_Seq")] pub m_seq : crate :: app :: relayreplayplayername :: RelayReplayPlayerName_Seq ,
+# [offset (60)] # [rename (name = "m_IsReqClose")] pub m_is_req_close : bool ,
+}
+
 }
 
 #[cfg(feature = "app-relayreplayplayername-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-relayreplayplayername")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RelayReplayPlayerName_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_awake {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayReplayPlayerName as ::unity2::ClassIdentity>::class(),
-                "Awake",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RelayReplayPlayerName as ::unity2::ClassIdentity>::NAME,
-                        "Awake",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn awake(this: RelayReplayPlayerName, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RelayReplayPlayerName, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_awake::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayReplayPlayerName as ::unity2::ClassIdentity>::class(),
-                "Update",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RelayReplayPlayerName as ::unity2::ClassIdentity>::NAME,
-                        "Update",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update(this: RelayReplayPlayerName, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RelayReplayPlayerName, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_show_impl {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayReplayPlayerName as ::unity2::ClassIdentity>::class(),
-                "ShowImpl",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RelayReplayPlayerName as ::unity2::ClassIdentity>::NAME,
-                        "ShowImpl",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn show_impl(this: RelayReplayPlayerName, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RelayReplayPlayerName, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_show_impl::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_hide_impl {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayReplayPlayerName as ::unity2::ClassIdentity>::class(),
-                "HideImpl",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RelayReplayPlayerName as ::unity2::ClassIdentity>::NAME,
-                        "HideImpl",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn hide_impl(this: RelayReplayPlayerName, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RelayReplayPlayerName, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_hide_impl::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update_player_name_impl {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayReplayPlayerName as ::unity2::ClassIdentity>::class(),
-                "UpdatePlayerNameImpl",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RelayReplayPlayerName as ::unity2::ClassIdentity>::NAME,
-                        "UpdatePlayerNameImpl",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update_player_name_impl(this: RelayReplayPlayerName, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RelayReplayPlayerName, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update_player_name_impl::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_opening {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayReplayPlayerName as ::unity2::ClassIdentity>::class(),
-                "IsOpening",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RelayReplayPlayerName as ::unity2::ClassIdentity>::NAME,
-                        "IsOpening",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_opening(this: RelayReplayPlayerName, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(RelayReplayPlayerName, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_opening::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_closing {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayReplayPlayerName as ::unity2::ClassIdentity>::class(),
-                "IsClosing",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RelayReplayPlayerName as ::unity2::ClassIdentity>::NAME,
-                        "IsClosing",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_closing(this: RelayReplayPlayerName, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(RelayReplayPlayerName, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_closing::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_closed {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayReplayPlayerName as ::unity2::ClassIdentity>::class(),
-                "IsClosed",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RelayReplayPlayerName as ::unity2::ClassIdentity>::NAME,
-                        "IsClosed",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_closed(this: RelayReplayPlayerName, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(RelayReplayPlayerName, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_closed::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_bool {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayReplayPlayerName as ::unity2::ClassIdentity>::class(),
-                "GetBool",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RelayReplayPlayerName as ::unity2::ClassIdentity>::NAME,
-                        "GetBool",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_bool(this: RelayReplayPlayerName, name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(RelayReplayPlayerName, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_bool::get_method_info().method_ptr);
-        inner(this, name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_try_show {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayReplayPlayerName as ::unity2::ClassIdentity>::class(),
-                "TryShow",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RelayReplayPlayerName as ::unity2::ClassIdentity>::NAME,
-                        "TryShow",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn try_show(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_try_show::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_try_hide {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayReplayPlayerName as ::unity2::ClassIdentity>::class(),
-                "TryHide",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RelayReplayPlayerName as ::unity2::ClassIdentity>::NAME,
-                        "TryHide",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn try_hide(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_try_hide::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_try_update_player_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayReplayPlayerName as ::unity2::ClassIdentity>::class(),
-                "TryUpdatePlayerName",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RelayReplayPlayerName as ::unity2::ClassIdentity>::NAME,
-                        "TryUpdatePlayerName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn try_update_player_name(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_try_update_player_name::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_try_create_async {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayReplayPlayerName as ::unity2::ClassIdentity>::class(),
-                "TryCreateAsync",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RelayReplayPlayerName as ::unity2::ClassIdentity>::NAME,
-                        "TryCreateAsync",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn try_create_async(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_try_create_async::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_creating {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayReplayPlayerName as ::unity2::ClassIdentity>::class(),
-                "IsCreating",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RelayReplayPlayerName as ::unity2::ClassIdentity>::NAME,
-                        "IsCreating",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_creating(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_is_creating::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_try_destroy {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayReplayPlayerName as ::unity2::ClassIdentity>::class(),
-                "TryDestroy",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RelayReplayPlayerName as ::unity2::ClassIdentity>::NAME,
-                        "TryDestroy",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn try_destroy(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_try_destroy::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_required {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayReplayPlayerName as ::unity2::ClassIdentity>::class(),
-                "IsRequired",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RelayReplayPlayerName as ::unity2::ClassIdentity>::NAME,
-                        "IsRequired",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_required(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_is_required::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayReplayPlayerName as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RelayReplayPlayerName as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: RelayReplayPlayerName, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RelayReplayPlayerName, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __RelayReplayPlayerName_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_awake { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RelayReplayPlayerName as :: unity2 :: ClassIdentity > :: class () , "Awake" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RelayReplayPlayerName as :: unity2 :: ClassIdentity > :: NAME , "Awake" , e) , } } } pub unsafe fn awake (this : RelayReplayPlayerName , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RelayReplayPlayerName , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_awake :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RelayReplayPlayerName as :: unity2 :: ClassIdentity > :: class () , "Update" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RelayReplayPlayerName as :: unity2 :: ClassIdentity > :: NAME , "Update" , e) , } } } pub unsafe fn update (this : RelayReplayPlayerName , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RelayReplayPlayerName , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_show_impl { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RelayReplayPlayerName as :: unity2 :: ClassIdentity > :: class () , "ShowImpl" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RelayReplayPlayerName as :: unity2 :: ClassIdentity > :: NAME , "ShowImpl" , e) , } } } pub unsafe fn show_impl (this : RelayReplayPlayerName , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RelayReplayPlayerName , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_show_impl :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_hide_impl { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RelayReplayPlayerName as :: unity2 :: ClassIdentity > :: class () , "HideImpl" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RelayReplayPlayerName as :: unity2 :: ClassIdentity > :: NAME , "HideImpl" , e) , } } } pub unsafe fn hide_impl (this : RelayReplayPlayerName , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RelayReplayPlayerName , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_hide_impl :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update_player_name_impl { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RelayReplayPlayerName as :: unity2 :: ClassIdentity > :: class () , "UpdatePlayerNameImpl" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RelayReplayPlayerName as :: unity2 :: ClassIdentity > :: NAME , "UpdatePlayerNameImpl" , e) , } } } pub unsafe fn update_player_name_impl (this : RelayReplayPlayerName , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RelayReplayPlayerName , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update_player_name_impl :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_opening { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RelayReplayPlayerName as :: unity2 :: ClassIdentity > :: class () , "IsOpening" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RelayReplayPlayerName as :: unity2 :: ClassIdentity > :: NAME , "IsOpening" , e) , } } } pub unsafe fn is_opening (this : RelayReplayPlayerName , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (RelayReplayPlayerName , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_opening :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_closing { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RelayReplayPlayerName as :: unity2 :: ClassIdentity > :: class () , "IsClosing" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RelayReplayPlayerName as :: unity2 :: ClassIdentity > :: NAME , "IsClosing" , e) , } } } pub unsafe fn is_closing (this : RelayReplayPlayerName , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (RelayReplayPlayerName , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_closing :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_closed { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RelayReplayPlayerName as :: unity2 :: ClassIdentity > :: class () , "IsClosed" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RelayReplayPlayerName as :: unity2 :: ClassIdentity > :: NAME , "IsClosed" , e) , } } } pub unsafe fn is_closed (this : RelayReplayPlayerName , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (RelayReplayPlayerName , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_closed :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_bool { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RelayReplayPlayerName as :: unity2 :: ClassIdentity > :: class () , "GetBool" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RelayReplayPlayerName as :: unity2 :: ClassIdentity > :: NAME , "GetBool" , e) , } } } pub unsafe fn get_bool (this : RelayReplayPlayerName , name : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (RelayReplayPlayerName , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_bool :: get_method_info () . method_ptr ,) ; inner (this , name , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_try_show { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RelayReplayPlayerName as :: unity2 :: ClassIdentity > :: class () , "TryShow" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RelayReplayPlayerName as :: unity2 :: ClassIdentity > :: NAME , "TryShow" , e) , } } } pub unsafe fn try_show (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_try_show :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_try_hide { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RelayReplayPlayerName as :: unity2 :: ClassIdentity > :: class () , "TryHide" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RelayReplayPlayerName as :: unity2 :: ClassIdentity > :: NAME , "TryHide" , e) , } } } pub unsafe fn try_hide (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_try_hide :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_try_update_player_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RelayReplayPlayerName as :: unity2 :: ClassIdentity > :: class () , "TryUpdatePlayerName" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RelayReplayPlayerName as :: unity2 :: ClassIdentity > :: NAME , "TryUpdatePlayerName" , e) , } } } pub unsafe fn try_update_player_name (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_try_update_player_name :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_try_create_async { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RelayReplayPlayerName as :: unity2 :: ClassIdentity > :: class () , "TryCreateAsync" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RelayReplayPlayerName as :: unity2 :: ClassIdentity > :: NAME , "TryCreateAsync" , e) , } } } pub unsafe fn try_create_async (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_try_create_async :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_creating { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RelayReplayPlayerName as :: unity2 :: ClassIdentity > :: class () , "IsCreating" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RelayReplayPlayerName as :: unity2 :: ClassIdentity > :: NAME , "IsCreating" , e) , } } } pub unsafe fn is_creating (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_creating :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_try_destroy { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RelayReplayPlayerName as :: unity2 :: ClassIdentity > :: class () , "TryDestroy" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RelayReplayPlayerName as :: unity2 :: ClassIdentity > :: NAME , "TryDestroy" , e) , } } } pub unsafe fn try_destroy (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_try_destroy :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_required { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RelayReplayPlayerName as :: unity2 :: ClassIdentity > :: class () , "IsRequired" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RelayReplayPlayerName as :: unity2 :: ClassIdentity > :: NAME , "IsRequired" , e) , } } } pub unsafe fn is_required (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_required :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RelayReplayPlayerName as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RelayReplayPlayerName as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : RelayReplayPlayerName , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RelayReplayPlayerName , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-relayreplayplayername")]
+impl RelayReplayPlayerName { # [doc = "`TryShow()` overload"] pub fn try_show () -> () { unsafe { __RelayReplayPlayerName_unity2_raw :: try_show (:: core :: option :: Option :: None) } } # [doc = "`TryHide()` overload"] pub fn try_hide () -> () { unsafe { __RelayReplayPlayerName_unity2_raw :: try_hide (:: core :: option :: Option :: None) } } # [doc = "`TryUpdatePlayerName()` overload"] pub fn try_update_player_name () -> () { unsafe { __RelayReplayPlayerName_unity2_raw :: try_update_player_name (:: core :: option :: Option :: None) } } # [doc = "`TryCreateAsync()` overload"] pub fn try_create_async () -> () { unsafe { __RelayReplayPlayerName_unity2_raw :: try_create_async (:: core :: option :: Option :: None) } } # [doc = "`IsCreating()` overload"] pub fn is_creating () -> bool { unsafe { __RelayReplayPlayerName_unity2_raw :: is_creating (:: core :: option :: Option :: None) } } # [doc = "`TryDestroy()` overload"] pub fn try_destroy () -> () { unsafe { __RelayReplayPlayerName_unity2_raw :: try_destroy (:: core :: option :: Option :: None) } } # [doc = "`IsRequired()` overload"] pub fn is_required () -> bool { unsafe { __RelayReplayPlayerName_unity2_raw :: is_required (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-relayreplayplayername")]
+pub trait IRelayReplayPlayerNameMethods : IRelayReplayPlayerName { # [doc = "`Awake()` overload"] fn awake (self ,) -> () { unsafe { let __receiver = < RelayReplayPlayerName as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RelayReplayPlayerName_unity2_raw :: awake (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < RelayReplayPlayerName as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RelayReplayPlayerName_unity2_raw :: update (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ShowImpl()` overload"] fn show_impl (self ,) -> () { unsafe { let __receiver = < RelayReplayPlayerName as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RelayReplayPlayerName_unity2_raw :: show_impl (__receiver , :: core :: option :: Option :: None) } } # [doc = "`HideImpl()` overload"] fn hide_impl (self ,) -> () { unsafe { let __receiver = < RelayReplayPlayerName as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RelayReplayPlayerName_unity2_raw :: hide_impl (__receiver , :: core :: option :: Option :: None) } } # [doc = "`UpdatePlayerNameImpl()` overload"] fn update_player_name_impl (self ,) -> () { unsafe { let __receiver = < RelayReplayPlayerName as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RelayReplayPlayerName_unity2_raw :: update_player_name_impl (__receiver , :: core :: option :: Option :: None) } } # [doc = "`IsOpening()` overload"] fn is_opening (self ,) -> bool { unsafe { let __receiver = < RelayReplayPlayerName as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RelayReplayPlayerName_unity2_raw :: is_opening (__receiver , :: core :: option :: Option :: None) } } # [doc = "`IsClosing()` overload"] fn is_closing (self ,) -> bool { unsafe { let __receiver = < RelayReplayPlayerName as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RelayReplayPlayerName_unity2_raw :: is_closing (__receiver , :: core :: option :: Option :: None) } } # [doc = "`IsClosed()` overload"] fn is_closed (self ,) -> bool { unsafe { let __receiver = < RelayReplayPlayerName as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RelayReplayPlayerName_unity2_raw :: is_closed (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetBool(::unity2::Il2CppString)` overload"] fn get_bool (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { let __receiver = < RelayReplayPlayerName as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RelayReplayPlayerName_unity2_raw :: get_bool (__receiver , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RelayReplayPlayerName as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RelayReplayPlayerName_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-relayreplayplayername")]
+impl < __T : IRelayReplayPlayerName > IRelayReplayPlayerNameMethods for __T { }
+
+#[cfg(feature = "app-relayreplayplayername")]
+impl RelayReplayPlayerName { pub fn awake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RelayReplayPlayerName_unity2_raw :: __lookup_awake :: get_method_info () } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RelayReplayPlayerName_unity2_raw :: __lookup_update :: get_method_info () } pub fn show_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RelayReplayPlayerName_unity2_raw :: __lookup_show_impl :: get_method_info () } pub fn hide_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RelayReplayPlayerName_unity2_raw :: __lookup_hide_impl :: get_method_info () } pub fn update_player_name_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RelayReplayPlayerName_unity2_raw :: __lookup_update_player_name_impl :: get_method_info () } pub fn is_opening_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RelayReplayPlayerName_unity2_raw :: __lookup_is_opening :: get_method_info () } pub fn is_closing_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RelayReplayPlayerName_unity2_raw :: __lookup_is_closing :: get_method_info () } pub fn is_closed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RelayReplayPlayerName_unity2_raw :: __lookup_is_closed :: get_method_info () } pub fn get_bool_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RelayReplayPlayerName_unity2_raw :: __lookup_get_bool :: get_method_info () } pub fn try_show_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RelayReplayPlayerName_unity2_raw :: __lookup_try_show :: get_method_info () } pub fn try_hide_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RelayReplayPlayerName_unity2_raw :: __lookup_try_hide :: get_method_info () } pub fn try_update_player_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RelayReplayPlayerName_unity2_raw :: __lookup_try_update_player_name :: get_method_info () } pub fn try_create_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RelayReplayPlayerName_unity2_raw :: __lookup_try_create_async :: get_method_info () } pub fn is_creating_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RelayReplayPlayerName_unity2_raw :: __lookup_is_creating :: get_method_info () } pub fn try_destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RelayReplayPlayerName_unity2_raw :: __lookup_try_destroy :: get_method_info () } pub fn is_required_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RelayReplayPlayerName_unity2_raw :: __lookup_is_required :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RelayReplayPlayerName_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-relayreplayplayername")]
 impl RelayReplayPlayerName {
-    #[doc = "`TryShow()` overload"]
-    pub fn try_show() -> () {
-        unsafe { __RelayReplayPlayerName_unity2_raw::try_show(::core::option::Option::None) }
-    }
-
-    #[doc = "`TryHide()` overload"]
-    pub fn try_hide() -> () {
-        unsafe { __RelayReplayPlayerName_unity2_raw::try_hide(::core::option::Option::None) }
-    }
-
-    #[doc = "`TryUpdatePlayerName()` overload"]
-    pub fn try_update_player_name() -> () {
-        unsafe { __RelayReplayPlayerName_unity2_raw::try_update_player_name(::core::option::Option::None) }
-    }
-
-    #[doc = "`TryCreateAsync()` overload"]
-    pub fn try_create_async() -> () {
-        unsafe { __RelayReplayPlayerName_unity2_raw::try_create_async(::core::option::Option::None) }
-    }
-
-    #[doc = "`IsCreating()` overload"]
-    pub fn is_creating() -> bool {
-        unsafe { __RelayReplayPlayerName_unity2_raw::is_creating(::core::option::Option::None) }
-    }
-
-    #[doc = "`TryDestroy()` overload"]
-    pub fn try_destroy() -> () {
-        unsafe { __RelayReplayPlayerName_unity2_raw::try_destroy(::core::option::Option::None) }
-    }
-
-    #[doc = "`IsRequired()` overload"]
-    pub fn is_required() -> bool {
-        unsafe { __RelayReplayPlayerName_unity2_raw::is_required(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-relayreplayplayername")]
-pub trait IRelayReplayPlayerNameMethods: IRelayReplayPlayerName {
-    #[doc = "`Awake()` overload"]
-    fn awake(self) -> () {
-        unsafe {
-            let __receiver =
-                <RelayReplayPlayerName as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RelayReplayPlayerName_unity2_raw::awake(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Update()` overload"]
-    fn update(self) -> () {
-        unsafe {
-            let __receiver =
-                <RelayReplayPlayerName as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RelayReplayPlayerName_unity2_raw::update(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ShowImpl()` overload"]
-    fn show_impl(self) -> () {
-        unsafe {
-            let __receiver =
-                <RelayReplayPlayerName as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RelayReplayPlayerName_unity2_raw::show_impl(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`HideImpl()` overload"]
-    fn hide_impl(self) -> () {
-        unsafe {
-            let __receiver =
-                <RelayReplayPlayerName as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RelayReplayPlayerName_unity2_raw::hide_impl(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`UpdatePlayerNameImpl()` overload"]
-    fn update_player_name_impl(self) -> () {
-        unsafe {
-            let __receiver =
-                <RelayReplayPlayerName as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RelayReplayPlayerName_unity2_raw::update_player_name_impl(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsOpening()` overload"]
-    fn is_opening(self) -> bool {
-        unsafe {
-            let __receiver =
-                <RelayReplayPlayerName as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RelayReplayPlayerName_unity2_raw::is_opening(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsClosing()` overload"]
-    fn is_closing(self) -> bool {
-        unsafe {
-            let __receiver =
-                <RelayReplayPlayerName as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RelayReplayPlayerName_unity2_raw::is_closing(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsClosed()` overload"]
-    fn is_closed(self) -> bool {
-        unsafe {
-            let __receiver =
-                <RelayReplayPlayerName as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RelayReplayPlayerName_unity2_raw::is_closed(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetBool(::unity2::Il2CppString)` overload"]
-    fn get_bool(self, name: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
-        unsafe {
-            let __receiver =
-                <RelayReplayPlayerName as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RelayReplayPlayerName_unity2_raw::get_bool(__receiver, ::core::convert::Into::into(name), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <RelayReplayPlayerName as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RelayReplayPlayerName_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-relayreplayplayername")]
-impl<__T: IRelayReplayPlayerName> IRelayReplayPlayerNameMethods for __T {}
-
-#[cfg(feature = "app-relayreplayplayername")]
-impl RelayReplayPlayerName {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RelayReplayPlayerName),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRelayReplayPlayerNameMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RelayReplayPlayerName) , :: core :: stringify ! (new) ,)) ; < Self as IRelayReplayPlayerNameMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-relayreplayplayername")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IRelayReplayPlayerName, IRelayReplayPlayerNameMethods, RelayReplayPlayerName, RelayReplayPlayerName_Seq};
-    #[cfg(feature = "app-singletonmonobehaviour_1")]
-    pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1Methods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1,
-        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::RelayReplayPlayerName_Seq;
+    pub use super::RelayReplayPlayerName;
+    pub use super::IRelayReplayPlayerName;
+    pub use super::IRelayReplayPlayerNameMethods;
+    pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "app-singletonmonobehaviour_1")] pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1Methods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

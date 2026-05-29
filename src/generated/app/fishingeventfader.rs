@@ -2,508 +2,67 @@
 
 #[cfg(feature = "app-fishingeventfader-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishingeventfader/FishingEventFader.md"))]
-    #[::unity2::class(namespace = "App", name = "FishingEventFader")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct FishingEventFader {
-        #[offset(24)]
-        #[rename(name = "m_Color")]
-        pub m_color: crate::unity_engine::color::Color,
-        #[offset(40)]
-        #[rename(name = "m_Layer")]
-        pub m_layer: crate::unity_engine::gameobject::GameObject,
-        #[offset(48)]
-        #[rename(name = "m_Image")]
-        pub m_image: crate::unity_engine::ui::image::Image,
-        #[offset(56)]
-        #[rename(name = "m_Timer")]
-        pub m_timer: f32,
-        #[offset(60)]
-        #[rename(name = "m_FinishTime")]
-        pub m_finish_time: f32,
-        #[offset(64)]
-        #[rename(name = "IsFadeIn")]
-        pub is_fade_in: bool,
-        #[offset(72)]
-        #[rename(name = "m_FadeTimeList")]
-        pub m_fade_time_list: ::unity2::Array<f32>,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishingeventfader/FishingEventFader.md"))] # [:: unity2 :: class (namespace = "App" , name = "FishingEventFader")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct FishingEventFader {
+# [offset (24)] # [rename (name = "m_Color")] pub m_color : crate :: unity_engine :: color :: Color ,
+# [offset (40)] # [rename (name = "m_Layer")] pub m_layer : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (48)] # [rename (name = "m_Image")] pub m_image : crate :: unity_engine :: ui :: image :: Image ,
+# [offset (56)] # [rename (name = "m_Timer")] pub m_timer : f32 ,
+# [offset (60)] # [rename (name = "m_FinishTime")] pub m_finish_time : f32 ,
+# [offset (64)] # [rename (name = "IsFadeIn")] pub is_fade_in : bool ,
+# [offset (72)] # [rename (name = "m_FadeTimeList")] pub m_fade_time_list : :: unity2 :: Array < f32 > ,
+}
+
 }
 
 #[cfg(feature = "app-fishingeventfader-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-fishingeventfader")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __FishingEventFader_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_is_run {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FishingEventFader as ::unity2::ClassIdentity>::class(),
-                "get_IsRun",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FishingEventFader as ::unity2::ClassIdentity>::NAME,
-                        "get_IsRun",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_is_run(this: FishingEventFader, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(FishingEventFader, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_is_run::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_is_run {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FishingEventFader as ::unity2::ClassIdentity>::class(),
-                "set_IsRun",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FishingEventFader as ::unity2::ClassIdentity>::NAME,
-                        "set_IsRun",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_is_run(this: FishingEventFader, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(FishingEventFader, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_is_run::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FishingEventFader as ::unity2::ClassIdentity>::class(),
-                "Create",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FishingEventFader as ::unity2::ClassIdentity>::NAME,
-                        "Create",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create(this: FishingEventFader, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(FishingEventFader, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_create::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_destroy {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FishingEventFader as ::unity2::ClassIdentity>::class(),
-                "Destroy",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FishingEventFader as ::unity2::ClassIdentity>::NAME,
-                        "Destroy",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn destroy(this: FishingEventFader, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(FishingEventFader, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_destroy::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_fade_in {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::fishing::fadetype::FadeType as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FishingEventFader as ::unity2::ClassIdentity>::class(),
-                "FadeIn",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FishingEventFader as ::unity2::ClassIdentity>::NAME,
-                        "FadeIn",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn fade_in(
-        this: FishingEventFader,
-        r#type: crate::app::fishing::fadetype::FadeType,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(FishingEventFader, crate::app::fishing::fadetype::FadeType, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_fade_in::get_method_info().method_ptr);
-        inner(this, r#type, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_fade_out {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::fishing::fadetype::FadeType as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FishingEventFader as ::unity2::ClassIdentity>::class(),
-                "FadeOut",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FishingEventFader as ::unity2::ClassIdentity>::NAME,
-                        "FadeOut",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn fade_out(
-        this: FishingEventFader,
-        r#type: crate::app::fishing::fadetype::FadeType,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(FishingEventFader, crate::app::fishing::fadetype::FadeType, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_fade_out::get_method_info().method_ptr);
-        inner(this, r#type, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_color {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::color::Color as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FishingEventFader as ::unity2::ClassIdentity>::class(),
-                "SetColor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FishingEventFader as ::unity2::ClassIdentity>::NAME,
-                        "SetColor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_color(this: FishingEventFader, set: crate::unity_engine::color::Color, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(FishingEventFader, crate::unity_engine::color::Color, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_color::get_method_info().method_ptr);
-        inner(this, set, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_fade_time {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::fishing::fadetype::FadeType as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FishingEventFader as ::unity2::ClassIdentity>::class(),
-                "GetFadeTime",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FishingEventFader as ::unity2::ClassIdentity>::NAME,
-                        "GetFadeTime",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_fade_time(
-        this: FishingEventFader,
-        r#type: crate::app::fishing::fadetype::FadeType,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
-        let inner: extern "C" fn(FishingEventFader, crate::app::fishing::fadetype::FadeType, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_get_fade_time::get_method_info().method_ptr);
-        inner(this, r#type, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_late_update {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FishingEventFader as ::unity2::ClassIdentity>::class(),
-                "LateUpdate",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FishingEventFader as ::unity2::ClassIdentity>::NAME,
-                        "LateUpdate",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn late_update(this: FishingEventFader, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(FishingEventFader, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_late_update::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FishingEventFader as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FishingEventFader as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: FishingEventFader, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(FishingEventFader, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __FishingEventFader_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_is_run { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FishingEventFader as :: unity2 :: ClassIdentity > :: class () , "get_IsRun" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FishingEventFader as :: unity2 :: ClassIdentity > :: NAME , "get_IsRun" , e) , } } } pub unsafe fn get_is_run (this : FishingEventFader , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (FishingEventFader , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_is_run :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_is_run { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FishingEventFader as :: unity2 :: ClassIdentity > :: class () , "set_IsRun" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FishingEventFader as :: unity2 :: ClassIdentity > :: NAME , "set_IsRun" , e) , } } } pub unsafe fn set_is_run (this : FishingEventFader , value : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FishingEventFader , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_is_run :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FishingEventFader as :: unity2 :: ClassIdentity > :: class () , "Create" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FishingEventFader as :: unity2 :: ClassIdentity > :: NAME , "Create" , e) , } } } pub unsafe fn create (this : FishingEventFader , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FishingEventFader , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_destroy { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FishingEventFader as :: unity2 :: ClassIdentity > :: class () , "Destroy" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FishingEventFader as :: unity2 :: ClassIdentity > :: NAME , "Destroy" , e) , } } } pub unsafe fn destroy (this : FishingEventFader , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FishingEventFader , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_destroy :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_fade_in { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: fishing :: fadetype :: FadeType as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FishingEventFader as :: unity2 :: ClassIdentity > :: class () , "FadeIn" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FishingEventFader as :: unity2 :: ClassIdentity > :: NAME , "FadeIn" , e) , } } } pub unsafe fn fade_in (this : FishingEventFader , r#type : crate :: app :: fishing :: fadetype :: FadeType , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FishingEventFader , crate :: app :: fishing :: fadetype :: FadeType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_fade_in :: get_method_info () . method_ptr ,) ; inner (this , r#type , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_fade_out { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: fishing :: fadetype :: FadeType as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FishingEventFader as :: unity2 :: ClassIdentity > :: class () , "FadeOut" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FishingEventFader as :: unity2 :: ClassIdentity > :: NAME , "FadeOut" , e) , } } } pub unsafe fn fade_out (this : FishingEventFader , r#type : crate :: app :: fishing :: fadetype :: FadeType , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FishingEventFader , crate :: app :: fishing :: fadetype :: FadeType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_fade_out :: get_method_info () . method_ptr ,) ; inner (this , r#type , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_color { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: color :: Color as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FishingEventFader as :: unity2 :: ClassIdentity > :: class () , "SetColor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FishingEventFader as :: unity2 :: ClassIdentity > :: NAME , "SetColor" , e) , } } } pub unsafe fn set_color (this : FishingEventFader , set : crate :: unity_engine :: color :: Color , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FishingEventFader , crate :: unity_engine :: color :: Color , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_color :: get_method_info () . method_ptr ,) ; inner (this , set , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_fade_time { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: fishing :: fadetype :: FadeType as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FishingEventFader as :: unity2 :: ClassIdentity > :: class () , "GetFadeTime" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FishingEventFader as :: unity2 :: ClassIdentity > :: NAME , "GetFadeTime" , e) , } } } pub unsafe fn get_fade_time (this : FishingEventFader , r#type : crate :: app :: fishing :: fadetype :: FadeType , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (FishingEventFader , crate :: app :: fishing :: fadetype :: FadeType , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_get_fade_time :: get_method_info () . method_ptr ,) ; inner (this , r#type , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_late_update { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FishingEventFader as :: unity2 :: ClassIdentity > :: class () , "LateUpdate" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FishingEventFader as :: unity2 :: ClassIdentity > :: NAME , "LateUpdate" , e) , } } } pub unsafe fn late_update (this : FishingEventFader , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FishingEventFader , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_late_update :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FishingEventFader as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FishingEventFader as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : FishingEventFader , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FishingEventFader , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-fishingeventfader")]
-pub trait IFishingEventFaderMethods: IFishingEventFader {
-    #[doc = "`get_IsRun()` overload"]
-    fn get_is_run(self) -> bool {
-        unsafe {
-            let __receiver = <FishingEventFader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FishingEventFader_unity2_raw::get_is_run(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_IsRun(bool)` overload"]
-    fn set_is_run(self, value: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver = <FishingEventFader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FishingEventFader_unity2_raw::set_is_run(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Create()` overload"]
-    fn create(self) -> () {
-        unsafe {
-            let __receiver = <FishingEventFader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FishingEventFader_unity2_raw::create(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Destroy()` overload"]
-    fn destroy(self) -> () {
-        unsafe {
-            let __receiver = <FishingEventFader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FishingEventFader_unity2_raw::destroy(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`FadeIn(crate::app::fishing::fadetype::FadeType)` overload"]
-    fn fade_in(self, r#type: impl ::core::convert::Into<crate::app::fishing::fadetype::FadeType>) -> () {
-        unsafe {
-            let __receiver = <FishingEventFader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FishingEventFader_unity2_raw::fade_in(__receiver, ::core::convert::Into::into(r#type), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`FadeOut(crate::app::fishing::fadetype::FadeType)` overload"]
-    fn fade_out(self, r#type: impl ::core::convert::Into<crate::app::fishing::fadetype::FadeType>) -> () {
-        unsafe {
-            let __receiver = <FishingEventFader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FishingEventFader_unity2_raw::fade_out(__receiver, ::core::convert::Into::into(r#type), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetColor(crate::unity_engine::color::Color)` overload"]
-    fn set_color(self, set: impl ::core::convert::Into<crate::unity_engine::color::Color>) -> () {
-        unsafe {
-            let __receiver = <FishingEventFader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FishingEventFader_unity2_raw::set_color(__receiver, ::core::convert::Into::into(set), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetFadeTime(crate::app::fishing::fadetype::FadeType)` overload"]
-    fn get_fade_time(self, r#type: impl ::core::convert::Into<crate::app::fishing::fadetype::FadeType>) -> f32 {
-        unsafe {
-            let __receiver = <FishingEventFader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FishingEventFader_unity2_raw::get_fade_time(__receiver, ::core::convert::Into::into(r#type), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`LateUpdate()` overload"]
-    fn late_update(self) -> () {
-        unsafe {
-            let __receiver = <FishingEventFader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FishingEventFader_unity2_raw::late_update(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <FishingEventFader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FishingEventFader_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IFishingEventFaderMethods : IFishingEventFader { # [doc = "`get_IsRun()` overload"] fn get_is_run (self ,) -> bool { unsafe { let __receiver = < FishingEventFader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FishingEventFader_unity2_raw :: get_is_run (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_IsRun(bool)` overload"] fn set_is_run (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < FishingEventFader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FishingEventFader_unity2_raw :: set_is_run (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`Create()` overload"] fn create (self ,) -> () { unsafe { let __receiver = < FishingEventFader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FishingEventFader_unity2_raw :: create (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Destroy()` overload"] fn destroy (self ,) -> () { unsafe { let __receiver = < FishingEventFader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FishingEventFader_unity2_raw :: destroy (__receiver , :: core :: option :: Option :: None) } } # [doc = "`FadeIn(crate::app::fishing::fadetype::FadeType)` overload"] fn fade_in (self , r#type : impl :: core :: convert :: Into < crate :: app :: fishing :: fadetype :: FadeType >) -> () { unsafe { let __receiver = < FishingEventFader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FishingEventFader_unity2_raw :: fade_in (__receiver , :: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } # [doc = "`FadeOut(crate::app::fishing::fadetype::FadeType)` overload"] fn fade_out (self , r#type : impl :: core :: convert :: Into < crate :: app :: fishing :: fadetype :: FadeType >) -> () { unsafe { let __receiver = < FishingEventFader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FishingEventFader_unity2_raw :: fade_out (__receiver , :: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } # [doc = "`SetColor(crate::unity_engine::color::Color)` overload"] fn set_color (self , set : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color >) -> () { unsafe { let __receiver = < FishingEventFader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FishingEventFader_unity2_raw :: set_color (__receiver , :: core :: convert :: Into :: into (set) , :: core :: option :: Option :: None) } } # [doc = "`GetFadeTime(crate::app::fishing::fadetype::FadeType)` overload"] fn get_fade_time (self , r#type : impl :: core :: convert :: Into < crate :: app :: fishing :: fadetype :: FadeType >) -> f32 { unsafe { let __receiver = < FishingEventFader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FishingEventFader_unity2_raw :: get_fade_time (__receiver , :: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } # [doc = "`LateUpdate()` overload"] fn late_update (self ,) -> () { unsafe { let __receiver = < FishingEventFader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FishingEventFader_unity2_raw :: late_update (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < FishingEventFader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FishingEventFader_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-fishingeventfader")]
-impl<__T: IFishingEventFader> IFishingEventFaderMethods for __T {}
+impl < __T : IFishingEventFader > IFishingEventFaderMethods for __T { }
+
+#[cfg(feature = "app-fishingeventfader")]
+impl FishingEventFader { pub fn get_is_run_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FishingEventFader_unity2_raw :: __lookup_get_is_run :: get_method_info () } pub fn set_is_run_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FishingEventFader_unity2_raw :: __lookup_set_is_run :: get_method_info () } pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FishingEventFader_unity2_raw :: __lookup_create :: get_method_info () } pub fn destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FishingEventFader_unity2_raw :: __lookup_destroy :: get_method_info () } pub fn fade_in_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FishingEventFader_unity2_raw :: __lookup_fade_in :: get_method_info () } pub fn fade_out_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FishingEventFader_unity2_raw :: __lookup_fade_out :: get_method_info () } pub fn set_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FishingEventFader_unity2_raw :: __lookup_set_color :: get_method_info () } pub fn get_fade_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FishingEventFader_unity2_raw :: __lookup_get_fade_time :: get_method_info () } pub fn late_update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FishingEventFader_unity2_raw :: __lookup_late_update :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FishingEventFader_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-fishingeventfader")]
 impl FishingEventFader {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(FishingEventFader),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IFishingEventFaderMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FishingEventFader) , :: core :: stringify ! (new) ,)) ; < Self as IFishingEventFaderMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-fishingeventfader")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{FishingEventFader, IFishingEventFader, IFishingEventFaderMethods};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        system::object::IObject,
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::FishingEventFader;
+    pub use super::IFishingEventFader;
+    pub use super::IFishingEventFaderMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

@@ -2,567 +2,126 @@
 
 #[cfg(feature = "unity_engine-textasset-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::{
-            object::{IObject, Object},
-            r#enum::{Enum, IEnum},
-            valuetype::{IValueType, ValueType},
-        },
-        unity_engine::object_2::{IObject_2, Object_2},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/textasset/TextAsset.md"))]
-    #[::unity2::class(namespace = "UnityEngine", name = "TextAsset")]
-    #[parent(crate::unity_engine::object_2::Object_2)]
-    pub struct TextAsset {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/textasset/TextAsset_CreateOptions.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct TextAsset_CreateOptions {
-        pub value: i32,
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/textasset/TextAsset.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "TextAsset")] # [parent (crate :: unity_engine :: object_2 :: Object_2)] pub struct TextAsset {}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/textasset/TextAsset_EncodingUtility.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "TextAsset.EncodingUtility")] # [parent (crate :: system :: object :: Object)] pub struct TextAsset_EncodingUtility {}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/textasset/TextAsset_CreateOptions.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct TextAsset_CreateOptions  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for TextAsset_CreateOptions  {
+    const NAMESPACE: &'static str = "UnityEngine";
+
+    const NAME: &'static str = "TextAsset.CreateOptions";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    impl ::unity2::ClassIdentity for TextAsset_CreateOptions {
-        const NAME: &'static str = "TextAsset.CreateOptions";
-        const NAMESPACE: &'static str = "UnityEngine";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  ::unity2::IlType for TextAsset_CreateOptions  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::IlType for TextAsset_CreateOptions {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  TextAsset_CreateOptions  {
+    pub fn none() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl TextAsset_CreateOptions {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn create_native_object() -> Self {
-            Self { value: 1 }
-        }
+    pub fn create_native_object() -> Self {
+        Self { value: 1 }
+
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/textasset/TextAsset_EncodingUtility.md"))]
-    #[::unity2::class(namespace = "UnityEngine", name = "TextAsset.EncodingUtility")]
-    #[parent(crate::system::object::Object)]
-    pub struct TextAsset_EncodingUtility {}
+}
+
 }
 
 #[cfg(feature = "unity_engine-textasset-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-textasset")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __TextAsset_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_bytes {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<TextAsset as ::unity2::ClassIdentity>::class(), "get_bytes", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TextAsset as ::unity2::ClassIdentity>::NAME,
-                        "get_bytes",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_bytes(this: TextAsset, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Array<u8> {
-        let inner: extern "C" fn(TextAsset, ::unity2::OptionalMethod) -> ::unity2::Array<u8> =
-            ::core::mem::transmute(__lookup_get_bytes::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_preview_bytes {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TextAsset as ::unity2::ClassIdentity>::class(),
-                "GetPreviewBytes",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TextAsset as ::unity2::ClassIdentity>::NAME,
-                        "GetPreviewBytes",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_preview_bytes(this: TextAsset, max_byte_count: i32, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Array<u8> {
-        let inner: extern "C" fn(TextAsset, i32, ::unity2::OptionalMethod) -> ::unity2::Array<u8> =
-            ::core::mem::transmute(__lookup_get_preview_bytes::get_method_info().method_ptr);
-        inner(this, max_byte_count, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_internal_create_instance {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::textasset::TextAsset as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TextAsset as ::unity2::ClassIdentity>::class(),
-                "Internal_CreateInstance",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TextAsset as ::unity2::ClassIdentity>::NAME,
-                        "Internal_CreateInstance",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn internal_create_instance(
-        self_: crate::unity_engine::textasset::TextAsset,
-        text: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::unity_engine::textasset::TextAsset, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_internal_create_instance::get_method_info().method_ptr);
-        inner(self_, text, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_text {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<TextAsset as ::unity2::ClassIdentity>::class(), "get_text", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TextAsset as ::unity2::ClassIdentity>::NAME,
-                        "get_text",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_text(this: TextAsset, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(TextAsset, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_text::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_to_string {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<TextAsset as ::unity2::ClassIdentity>::class(), "ToString", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TextAsset as ::unity2::ClassIdentity>::NAME,
-                        "ToString",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn to_string(this: TextAsset, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(TextAsset, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_to_string::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<TextAsset as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TextAsset as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: TextAsset, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TextAsset, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<TextAsset as ::unity2::ClassIdentity>::class(), ".ctor", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TextAsset as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor_2(this: TextAsset, text: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TextAsset, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
-        inner(this, text, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor_3 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::textasset::TextAsset_CreateOptions as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<TextAsset as ::unity2::ClassIdentity>::class(), ".ctor", 2, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TextAsset as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor_3(
-        this: TextAsset,
-        options: crate::unity_engine::textasset::TextAsset_CreateOptions,
-        text: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            TextAsset,
-            crate::unity_engine::textasset::TextAsset_CreateOptions,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor_3::get_method_info().method_ptr);
-        inner(this, options, text, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_preview {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TextAsset as ::unity2::ClassIdentity>::class(),
-                "GetPreview",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TextAsset as ::unity2::ClassIdentity>::NAME,
-                        "GetPreview",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_preview(this: TextAsset, max_chars: i32, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(TextAsset, i32, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_preview::get_method_info().method_ptr);
-        inner(this, max_chars, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_decode_string {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<u8> as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TextAsset as ::unity2::ClassIdentity>::class(),
-                "DecodeString",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TextAsset as ::unity2::ClassIdentity>::NAME,
-                        "DecodeString",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn decode_string(bytes: ::unity2::Array<u8>, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(::unity2::Array<u8>, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_decode_string::get_method_info().method_ptr);
-        inner(bytes, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __TextAsset_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_bytes { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TextAsset as :: unity2 :: ClassIdentity > :: class () , "get_bytes" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TextAsset as :: unity2 :: ClassIdentity > :: NAME , "get_bytes" , e) , } } } pub unsafe fn get_bytes (this : TextAsset , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < u8 > { let inner : extern "C" fn (TextAsset , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < u8 > = :: core :: mem :: transmute (__lookup_get_bytes :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_preview_bytes { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TextAsset as :: unity2 :: ClassIdentity > :: class () , "GetPreviewBytes" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TextAsset as :: unity2 :: ClassIdentity > :: NAME , "GetPreviewBytes" , e) , } } } pub unsafe fn get_preview_bytes (this : TextAsset , max_byte_count : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < u8 > { let inner : extern "C" fn (TextAsset , i32 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < u8 > = :: core :: mem :: transmute (__lookup_get_preview_bytes :: get_method_info () . method_ptr ,) ; inner (this , max_byte_count , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_internal_create_instance { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: textasset :: TextAsset as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TextAsset as :: unity2 :: ClassIdentity > :: class () , "Internal_CreateInstance" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TextAsset as :: unity2 :: ClassIdentity > :: NAME , "Internal_CreateInstance" , e) , } } } pub unsafe fn internal_create_instance (self_ : crate :: unity_engine :: textasset :: TextAsset , text : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: unity_engine :: textasset :: TextAsset , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_internal_create_instance :: get_method_info () . method_ptr ,) ; inner (self_ , text , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_text { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TextAsset as :: unity2 :: ClassIdentity > :: class () , "get_text" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TextAsset as :: unity2 :: ClassIdentity > :: NAME , "get_text" , e) , } } } pub unsafe fn get_text (this : TextAsset , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (TextAsset , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_text :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_to_string { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TextAsset as :: unity2 :: ClassIdentity > :: class () , "ToString" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TextAsset as :: unity2 :: ClassIdentity > :: NAME , "ToString" , e) , } } } pub unsafe fn to_string (this : TextAsset , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (TextAsset , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_to_string :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TextAsset as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TextAsset as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : TextAsset , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TextAsset , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TextAsset as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TextAsset as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor_2 (this : TextAsset , text : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TextAsset , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor_2 :: get_method_info () . method_ptr ,) ; inner (this , text , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor_3 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: textasset :: TextAsset_CreateOptions as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TextAsset as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TextAsset as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor_3 (this : TextAsset , options : crate :: unity_engine :: textasset :: TextAsset_CreateOptions , text : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TextAsset , crate :: unity_engine :: textasset :: TextAsset_CreateOptions , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor_3 :: get_method_info () . method_ptr ,) ; inner (this , options , text , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_preview { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TextAsset as :: unity2 :: ClassIdentity > :: class () , "GetPreview" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TextAsset as :: unity2 :: ClassIdentity > :: NAME , "GetPreview" , e) , } } } pub unsafe fn get_preview (this : TextAsset , max_chars : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (TextAsset , i32 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_preview :: get_method_info () . method_ptr ,) ; inner (this , max_chars , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_decode_string { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < u8 > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TextAsset as :: unity2 :: ClassIdentity > :: class () , "DecodeString" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TextAsset as :: unity2 :: ClassIdentity > :: NAME , "DecodeString" , e) , } } } pub unsafe fn decode_string (bytes : :: unity2 :: Array < u8 > , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (:: unity2 :: Array < u8 > , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_decode_string :: get_method_info () . method_ptr ,) ; inner (bytes , __unity2_method_info) } }
+
+#[cfg(feature = "unity_engine-textasset")]
+impl TextAsset { # [doc = "`Internal_CreateInstance(crate::unity_engine::textasset::TextAsset, ::unity2::Il2CppString)` overload"] pub fn internal_create_instance (self_ : impl :: core :: convert :: Into < crate :: unity_engine :: textasset :: TextAsset > , text : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { __TextAsset_unity2_raw :: internal_create_instance (:: core :: convert :: Into :: into (self_) , :: core :: convert :: Into :: into (text) , :: core :: option :: Option :: None) } } # [doc = "`DecodeString(::unity2::Array<u8>)` overload"] pub fn decode_string (bytes : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > >) -> :: unity2 :: Il2CppString { unsafe { __TextAsset_unity2_raw :: decode_string (:: core :: convert :: Into :: into (bytes) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-textasset")]
+pub trait ITextAssetMethods : ITextAsset { # [doc = "`get_bytes()` overload"] fn get_bytes (self ,) -> :: unity2 :: Array < u8 > { unsafe { let __receiver = < TextAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TextAsset_unity2_raw :: get_bytes (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetPreviewBytes(i32)` overload"] fn get_preview_bytes (self , max_byte_count : impl :: core :: convert :: Into < i32 >) -> :: unity2 :: Array < u8 > { unsafe { let __receiver = < TextAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TextAsset_unity2_raw :: get_preview_bytes (__receiver , :: core :: convert :: Into :: into (max_byte_count) , :: core :: option :: Option :: None) } } # [doc = "`get_text()` overload"] fn get_text (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < TextAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TextAsset_unity2_raw :: get_text (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ToString()` overload"] fn to_string (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < TextAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TextAsset_unity2_raw :: to_string (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TextAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TextAsset_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor(::unity2::Il2CppString)` overload"] fn ctor_2 (self , text : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < TextAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TextAsset_unity2_raw :: ctor_2 (__receiver , :: core :: convert :: Into :: into (text) , :: core :: option :: Option :: None) } } # [doc = "`.ctor(crate::unity_engine::textasset::TextAsset_CreateOptions, ::unity2::Il2CppString)` overload"] fn ctor_3 (self , options : impl :: core :: convert :: Into < crate :: unity_engine :: textasset :: TextAsset_CreateOptions > , text : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < TextAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TextAsset_unity2_raw :: ctor_3 (__receiver , :: core :: convert :: Into :: into (options) , :: core :: convert :: Into :: into (text) , :: core :: option :: Option :: None) } } # [doc = "`GetPreview(i32)` overload"] fn get_preview (self , max_chars : impl :: core :: convert :: Into < i32 >) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < TextAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TextAsset_unity2_raw :: get_preview (__receiver , :: core :: convert :: Into :: into (max_chars) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-textasset")]
+impl < __T : ITextAsset > ITextAssetMethods for __T { }
+
+#[cfg(feature = "unity_engine-textasset")]
+impl TextAsset { pub fn get_bytes_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TextAsset_unity2_raw :: __lookup_get_bytes :: get_method_info () } pub fn get_preview_bytes_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TextAsset_unity2_raw :: __lookup_get_preview_bytes :: get_method_info () } pub fn internal_create_instance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TextAsset_unity2_raw :: __lookup_internal_create_instance :: get_method_info () } pub fn get_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TextAsset_unity2_raw :: __lookup_get_text :: get_method_info () } pub fn to_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TextAsset_unity2_raw :: __lookup_to_string :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TextAsset_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TextAsset_unity2_raw :: __lookup_ctor_2 :: get_method_info () } pub fn ctor_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TextAsset_unity2_raw :: __lookup_ctor_3 :: get_method_info () } pub fn get_preview_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TextAsset_unity2_raw :: __lookup_get_preview :: get_method_info () } pub fn decode_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TextAsset_unity2_raw :: __lookup_decode_string :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-textasset")]
 impl TextAsset {
-    #[doc = "`Internal_CreateInstance(crate::unity_engine::textasset::TextAsset, ::unity2::Il2CppString)` overload"]
-    pub fn internal_create_instance(
-        self_: impl ::core::convert::Into<crate::unity_engine::textasset::TextAsset>,
-        text: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
-        unsafe {
-            __TextAsset_unity2_raw::internal_create_instance(
-                ::core::convert::Into::into(self_),
-                ::core::convert::Into::into(text),
-                ::core::option::Option::None,
-            )
-        }
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TextAsset) , :: core :: stringify ! (new) ,)) ; < Self as ITextAssetMethods > :: ctor (this ,) ; this }
 
-    #[doc = "`DecodeString(::unity2::Array<u8>)` overload"]
-    pub fn decode_string(bytes: impl ::core::convert::Into<::unity2::Array<u8>>) -> ::unity2::Il2CppString {
-        unsafe { __TextAsset_unity2_raw::decode_string(::core::convert::Into::into(bytes), ::core::option::Option::None) }
-    }
+# [doc = "`.ctor(::unity2::Il2CppString)` — overload selector"] pub fn new_2 (text : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TextAsset) , :: core :: stringify ! (new_2) ,)) ; < Self as ITextAssetMethods > :: ctor_2 (this , text) ; this }
+
+# [doc = "`.ctor(crate::unity_engine::textasset::TextAsset_CreateOptions, ::unity2::Il2CppString)` — overload selector"] pub fn new_3 (options : crate :: unity_engine :: textasset :: TextAsset_CreateOptions , text : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TextAsset) , :: core :: stringify ! (new_3) ,)) ; < Self as ITextAssetMethods > :: ctor_3 (this , options , text) ; this }
 }
 
 #[cfg(feature = "unity_engine-textasset")]
-pub trait ITextAssetMethods: ITextAsset {
-    #[doc = "`get_bytes()` overload"]
-    fn get_bytes(self) -> ::unity2::Array<u8> {
-        unsafe {
-            let __receiver = <TextAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TextAsset_unity2_raw::get_bytes(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetPreviewBytes(i32)` overload"]
-    fn get_preview_bytes(self, max_byte_count: impl ::core::convert::Into<i32>) -> ::unity2::Array<u8> {
-        unsafe {
-            let __receiver = <TextAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TextAsset_unity2_raw::get_preview_bytes(__receiver, ::core::convert::Into::into(max_byte_count), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_text()` overload"]
-    fn get_text(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <TextAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TextAsset_unity2_raw::get_text(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ToString()` overload"]
-    fn to_string(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <TextAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TextAsset_unity2_raw::to_string(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <TextAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TextAsset_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
-    fn ctor_2(self, text: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver = <TextAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TextAsset_unity2_raw::ctor_2(__receiver, ::core::convert::Into::into(text), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor(crate::unity_engine::textasset::TextAsset_CreateOptions, ::unity2::Il2CppString)` overload"]
-    fn ctor_3(
-        self,
-        options: impl ::core::convert::Into<crate::unity_engine::textasset::TextAsset_CreateOptions>,
-        text: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
-        unsafe {
-            let __receiver = <TextAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TextAsset_unity2_raw::ctor_3(
-                __receiver,
-                ::core::convert::Into::into(options),
-                ::core::convert::Into::into(text),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetPreview(i32)` overload"]
-    fn get_preview(self, max_chars: impl ::core::convert::Into<i32>) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <TextAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TextAsset_unity2_raw::get_preview(__receiver, ::core::convert::Into::into(max_chars), ::core::option::Option::None)
-        }
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __TextAsset_EncodingUtility_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TextAsset_EncodingUtility as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TextAsset_EncodingUtility as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-textasset")]
-impl<__T: ITextAsset> ITextAssetMethods for __T {}
+impl TextAsset_EncodingUtility { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { __TextAsset_EncodingUtility_unity2_raw :: cctor (:: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-textasset")]
-impl TextAsset {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(TextAsset), ::core::stringify!(new),));
-        <Self as ITextAssetMethods>::ctor(this);
-        this
-    }
-
-    #[doc = "`.ctor(::unity2::Il2CppString)` — overload selector"]
-    pub fn new_2(text: ::unity2::Il2CppString) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(TextAsset), ::core::stringify!(new_2),));
-        <Self as ITextAssetMethods>::ctor_2(this, text);
-        this
-    }
-
-    #[doc = "`.ctor(crate::unity_engine::textasset::TextAsset_CreateOptions, ::unity2::Il2CppString)` — overload selector"]
-    pub fn new_3(options: crate::unity_engine::textasset::TextAsset_CreateOptions, text: ::unity2::Il2CppString) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(TextAsset), ::core::stringify!(new_3),));
-        <Self as ITextAssetMethods>::ctor_3(this, options, text);
-        this
-    }
-}
-
-#[cfg(feature = "unity_engine-textasset")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __TextAsset_EncodingUtility_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TextAsset_EncodingUtility as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TextAsset_EncodingUtility as ::unity2::ClassIdentity>::NAME,
-                        ".cctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
-
-#[cfg(feature = "unity_engine-textasset")]
-impl TextAsset_EncodingUtility {
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __TextAsset_EncodingUtility_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
+impl TextAsset_EncodingUtility { pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TextAsset_EncodingUtility_unity2_raw :: __lookup_cctor :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-textasset")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{ITextAsset, ITextAssetMethods, ITextAsset_EncodingUtility, TextAsset, TextAsset_CreateOptions, TextAsset_EncodingUtility};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
-        unity_engine::object_2::IObject_2,
-    };
+    pub use super::TextAsset;
+    pub use super::ITextAsset;
+    pub use super::ITextAssetMethods;
+    pub use super::TextAsset_EncodingUtility;
+    pub use super::ITextAsset_EncodingUtility;
+    pub use super::TextAsset_CreateOptions;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

@@ -2,757 +2,164 @@
 
 #[cfg(feature = "tm_pro-colortween_2-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::{
-            object::{IObject, Object},
-            r#enum::{Enum, IEnum},
-            valuetype::{IValueType, ValueType},
-        },
-        unity_engine::events::{
-            unityevent_1::{IUnityEvent_1, UnityEvent_1},
-            unityeventbase::{IUnityEventBase, UnityEventBase},
-        },
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/colortween_2/ColorTween_2.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct ColorTween_2 {
-        pub m_target: crate::tm_pro::colortween_2::ColorTween_ColorTweenCallback_2,
-        pub m_start_color: crate::unity_engine::color::Color,
-        pub m_target_color: crate::unity_engine::color::Color,
-        pub m_tween_mode: crate::tm_pro::colortween_2::ColorTween_ColorTweenMode_2,
-        pub m_duration: f32,
-        pub m_ignore_time_scale: bool,
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+ use crate :: unity_engine :: events :: unityevent_1 :: { IUnityEvent_1 , UnityEvent_1 }
+ ;
+ use crate :: unity_engine :: events :: unityeventbase :: { IUnityEventBase , UnityEventBase }
+ ;
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/colortween_2/ColorTween_ColorTweenMode_2.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct ColorTween_ColorTweenMode_2  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for ColorTween_ColorTweenMode_2  {
+    const NAMESPACE: &'static str = "TMPro";
+
+    const NAME: &'static str = "ColorTween.ColorTweenMode";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    impl ::unity2::ClassIdentity for ColorTween_2 {
-        const NAME: &'static str = "ColorTween";
-        const NAMESPACE: &'static str = "TMPro";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  ::unity2::IlType for ColorTween_ColorTweenMode_2  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::IlType for ColorTween_2 {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  ColorTween_ColorTweenMode_2  {
+    pub fn all() -> Self {
+        Self { value: 0 }
+
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/colortween_2/ColorTween_ColorTweenCallback_2.md"))]
-    #[::unity2::class(namespace = "TMPro", name = "ColorTween.ColorTweenCallback")]
-    # [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < crate :: unity_engine :: color :: Color >)]
-    pub struct ColorTween_ColorTweenCallback_2 {}
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/colortween_2/ColorTween_ColorTweenMode_2.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct ColorTween_ColorTweenMode_2 {
-        pub value: i32,
+    pub fn rgb() -> Self {
+        Self { value: 1 }
+
     }
 
-    impl ::unity2::ClassIdentity for ColorTween_ColorTweenMode_2 {
-        const NAME: &'static str = "ColorTween.ColorTweenMode";
-        const NAMESPACE: &'static str = "TMPro";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+    pub fn alpha() -> Self {
+        Self { value: 2 }
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
     }
 
-    impl ::unity2::IlType for ColorTween_ColorTweenMode_2 {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/colortween_2/ColorTween_2.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct ColorTween_2 {
+    pub m_target: crate :: tm_pro :: colortween_2 :: ColorTween_ColorTweenCallback_2,
+    pub m_start_color: crate :: unity_engine :: color :: Color,
+    pub m_target_color: crate :: unity_engine :: color :: Color,
+    pub m_tween_mode: crate :: tm_pro :: colortween_2 :: ColorTween_ColorTweenMode_2,
+    pub m_duration: f32,
+    pub m_ignore_time_scale: bool,
+}
+
+
+impl ::unity2::ClassIdentity for ColorTween_2 {
+    const NAMESPACE: &'static str = "TMPro";
+
+    const NAME: &'static str = "ColorTween";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ColorTween_ColorTweenMode_2 {
-        pub fn all() -> Self {
-            Self { value: 0 }
-        }
+}
 
-        pub fn rgb() -> Self {
-            Self { value: 1 }
-        }
 
-        pub fn alpha() -> Self {
-            Self { value: 2 }
-        }
+impl ::unity2::IlType for ColorTween_2 {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
+
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/colortween_2/ColorTween_ColorTweenCallback_2.md"))] # [:: unity2 :: class (namespace = "TMPro" , name = "ColorTween.ColorTweenCallback")] # [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < crate :: unity_engine :: color :: Color >)] pub struct ColorTween_ColorTweenCallback_2 {}
+
 }
 
 #[cfg(feature = "tm_pro-colortween_2-types")]
 pub use __types::*;
 
 #[cfg(feature = "tm_pro-colortween_2")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ColorTween_2_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_start_color {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ColorTween_2 as ::unity2::ClassIdentity>::class(),
-                "get_startColor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ColorTween_2 as ::unity2::ClassIdentity>::NAME,
-                        "get_startColor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_start_color(this: ColorTween_2, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::color::Color {
-        let inner: extern "C" fn(ColorTween_2, ::unity2::OptionalMethod) -> crate::unity_engine::color::Color =
-            ::core::mem::transmute(__lookup_get_start_color::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_start_color {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::color::Color as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ColorTween_2 as ::unity2::ClassIdentity>::class(),
-                "set_startColor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ColorTween_2 as ::unity2::ClassIdentity>::NAME,
-                        "set_startColor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_start_color(
-        this: ColorTween_2,
-        value: crate::unity_engine::color::Color,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(ColorTween_2, crate::unity_engine::color::Color, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_start_color::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_target_color {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ColorTween_2 as ::unity2::ClassIdentity>::class(),
-                "get_targetColor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ColorTween_2 as ::unity2::ClassIdentity>::NAME,
-                        "get_targetColor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_target_color(this: ColorTween_2, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::color::Color {
-        let inner: extern "C" fn(ColorTween_2, ::unity2::OptionalMethod) -> crate::unity_engine::color::Color =
-            ::core::mem::transmute(__lookup_get_target_color::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_target_color {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::color::Color as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ColorTween_2 as ::unity2::ClassIdentity>::class(),
-                "set_targetColor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ColorTween_2 as ::unity2::ClassIdentity>::NAME,
-                        "set_targetColor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_target_color(
-        this: ColorTween_2,
-        value: crate::unity_engine::color::Color,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(ColorTween_2, crate::unity_engine::color::Color, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_target_color::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_tween_mode {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ColorTween_2 as ::unity2::ClassIdentity>::class(),
-                "get_tweenMode",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ColorTween_2 as ::unity2::ClassIdentity>::NAME,
-                        "get_tweenMode",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_tween_mode(
-        this: ColorTween_2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::tm_pro::colortween_2::ColorTween_ColorTweenMode_2 {
-        let inner: extern "C" fn(ColorTween_2, ::unity2::OptionalMethod) -> crate::tm_pro::colortween_2::ColorTween_ColorTweenMode_2 =
-            ::core::mem::transmute(__lookup_get_tween_mode::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_tween_mode {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::tm_pro::colortween_2::ColorTween_ColorTweenMode_2 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ColorTween_2 as ::unity2::ClassIdentity>::class(),
-                "set_tweenMode",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ColorTween_2 as ::unity2::ClassIdentity>::NAME,
-                        "set_tweenMode",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_tween_mode(
-        this: ColorTween_2,
-        value: crate::tm_pro::colortween_2::ColorTween_ColorTweenMode_2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(ColorTween_2, crate::tm_pro::colortween_2::ColorTween_ColorTweenMode_2, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_tween_mode::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_duration {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ColorTween_2 as ::unity2::ClassIdentity>::class(),
-                "get_duration",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ColorTween_2 as ::unity2::ClassIdentity>::NAME,
-                        "get_duration",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_duration(this: ColorTween_2, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(ColorTween_2, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_get_duration::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_duration {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ColorTween_2 as ::unity2::ClassIdentity>::class(),
-                "set_duration",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ColorTween_2 as ::unity2::ClassIdentity>::NAME,
-                        "set_duration",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_duration(this: ColorTween_2, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ColorTween_2, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_duration::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_ignore_time_scale {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ColorTween_2 as ::unity2::ClassIdentity>::class(),
-                "get_ignoreTimeScale",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ColorTween_2 as ::unity2::ClassIdentity>::NAME,
-                        "get_ignoreTimeScale",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_ignore_time_scale(this: ColorTween_2, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(ColorTween_2, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_ignore_time_scale::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_ignore_time_scale {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ColorTween_2 as ::unity2::ClassIdentity>::class(),
-                "set_ignoreTimeScale",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ColorTween_2 as ::unity2::ClassIdentity>::NAME,
-                        "set_ignoreTimeScale",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_ignore_time_scale(this: ColorTween_2, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ColorTween_2, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_ignore_time_scale::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_tween_value {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ColorTween_2 as ::unity2::ClassIdentity>::class(),
-                "TweenValue",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ColorTween_2 as ::unity2::ClassIdentity>::NAME,
-                        "TweenValue",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn tween_value(this: ColorTween_2, float_percentage: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ColorTween_2, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_tween_value::get_method_info().method_ptr);
-        inner(this, float_percentage, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_on_changed_callback {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::events::unityaction_1::UnityAction_1<
-                crate::unity_engine::color::Color,
-            > as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ColorTween_2 as ::unity2::ClassIdentity>::class(),
-                "AddOnChangedCallback",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ColorTween_2 as ::unity2::ClassIdentity>::NAME,
-                        "AddOnChangedCallback",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_on_changed_callback(
-        this: ColorTween_2,
-        callback: crate::unity_engine::events::unityaction_1::UnityAction_1<crate::unity_engine::color::Color>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ColorTween_2,
-            crate::unity_engine::events::unityaction_1::UnityAction_1<crate::unity_engine::color::Color>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_add_on_changed_callback::get_method_info().method_ptr);
-        inner(this, callback, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_ignore_timescale {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ColorTween_2 as ::unity2::ClassIdentity>::class(),
-                "GetIgnoreTimescale",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ColorTween_2 as ::unity2::ClassIdentity>::NAME,
-                        "GetIgnoreTimescale",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_ignore_timescale(this: ColorTween_2, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(ColorTween_2, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_ignore_timescale::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_valid_target {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ColorTween_2 as ::unity2::ClassIdentity>::class(),
-                "ValidTarget",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ColorTween_2 as ::unity2::ClassIdentity>::NAME,
-                        "ValidTarget",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn valid_target(this: ColorTween_2, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(ColorTween_2, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_valid_target::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ColorTween_2_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_start_color { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ColorTween_2 as :: unity2 :: ClassIdentity > :: class () , "get_startColor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ColorTween_2 as :: unity2 :: ClassIdentity > :: NAME , "get_startColor" , e) , } } } pub unsafe fn get_start_color (this : ColorTween_2 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: color :: Color { let inner : extern "C" fn (ColorTween_2 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: color :: Color = :: core :: mem :: transmute (__lookup_get_start_color :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_start_color { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: color :: Color as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ColorTween_2 as :: unity2 :: ClassIdentity > :: class () , "set_startColor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ColorTween_2 as :: unity2 :: ClassIdentity > :: NAME , "set_startColor" , e) , } } } pub unsafe fn set_start_color (this : ColorTween_2 , value : crate :: unity_engine :: color :: Color , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ColorTween_2 , crate :: unity_engine :: color :: Color , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_start_color :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_target_color { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ColorTween_2 as :: unity2 :: ClassIdentity > :: class () , "get_targetColor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ColorTween_2 as :: unity2 :: ClassIdentity > :: NAME , "get_targetColor" , e) , } } } pub unsafe fn get_target_color (this : ColorTween_2 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: color :: Color { let inner : extern "C" fn (ColorTween_2 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: color :: Color = :: core :: mem :: transmute (__lookup_get_target_color :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_target_color { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: color :: Color as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ColorTween_2 as :: unity2 :: ClassIdentity > :: class () , "set_targetColor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ColorTween_2 as :: unity2 :: ClassIdentity > :: NAME , "set_targetColor" , e) , } } } pub unsafe fn set_target_color (this : ColorTween_2 , value : crate :: unity_engine :: color :: Color , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ColorTween_2 , crate :: unity_engine :: color :: Color , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_target_color :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_tween_mode { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ColorTween_2 as :: unity2 :: ClassIdentity > :: class () , "get_tweenMode" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ColorTween_2 as :: unity2 :: ClassIdentity > :: NAME , "get_tweenMode" , e) , } } } pub unsafe fn get_tween_mode (this : ColorTween_2 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: tm_pro :: colortween_2 :: ColorTween_ColorTweenMode_2 { let inner : extern "C" fn (ColorTween_2 , :: unity2 :: OptionalMethod ,) -> crate :: tm_pro :: colortween_2 :: ColorTween_ColorTweenMode_2 = :: core :: mem :: transmute (__lookup_get_tween_mode :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_tween_mode { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: tm_pro :: colortween_2 :: ColorTween_ColorTweenMode_2 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ColorTween_2 as :: unity2 :: ClassIdentity > :: class () , "set_tweenMode" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ColorTween_2 as :: unity2 :: ClassIdentity > :: NAME , "set_tweenMode" , e) , } } } pub unsafe fn set_tween_mode (this : ColorTween_2 , value : crate :: tm_pro :: colortween_2 :: ColorTween_ColorTweenMode_2 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ColorTween_2 , crate :: tm_pro :: colortween_2 :: ColorTween_ColorTweenMode_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_tween_mode :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_duration { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ColorTween_2 as :: unity2 :: ClassIdentity > :: class () , "get_duration" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ColorTween_2 as :: unity2 :: ClassIdentity > :: NAME , "get_duration" , e) , } } } pub unsafe fn get_duration (this : ColorTween_2 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (ColorTween_2 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_get_duration :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_duration { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ColorTween_2 as :: unity2 :: ClassIdentity > :: class () , "set_duration" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ColorTween_2 as :: unity2 :: ClassIdentity > :: NAME , "set_duration" , e) , } } } pub unsafe fn set_duration (this : ColorTween_2 , value : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ColorTween_2 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_duration :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_ignore_time_scale { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ColorTween_2 as :: unity2 :: ClassIdentity > :: class () , "get_ignoreTimeScale" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ColorTween_2 as :: unity2 :: ClassIdentity > :: NAME , "get_ignoreTimeScale" , e) , } } } pub unsafe fn get_ignore_time_scale (this : ColorTween_2 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (ColorTween_2 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_ignore_time_scale :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_ignore_time_scale { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ColorTween_2 as :: unity2 :: ClassIdentity > :: class () , "set_ignoreTimeScale" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ColorTween_2 as :: unity2 :: ClassIdentity > :: NAME , "set_ignoreTimeScale" , e) , } } } pub unsafe fn set_ignore_time_scale (this : ColorTween_2 , value : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ColorTween_2 , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_ignore_time_scale :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_tween_value { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ColorTween_2 as :: unity2 :: ClassIdentity > :: class () , "TweenValue" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ColorTween_2 as :: unity2 :: ClassIdentity > :: NAME , "TweenValue" , e) , } } } pub unsafe fn tween_value (this : ColorTween_2 , float_percentage : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ColorTween_2 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_tween_value :: get_method_info () . method_ptr ,) ; inner (this , float_percentage , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_on_changed_callback { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: events :: unityaction_1 :: UnityAction_1 < crate :: unity_engine :: color :: Color > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ColorTween_2 as :: unity2 :: ClassIdentity > :: class () , "AddOnChangedCallback" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ColorTween_2 as :: unity2 :: ClassIdentity > :: NAME , "AddOnChangedCallback" , e) , } } } pub unsafe fn add_on_changed_callback (this : ColorTween_2 , callback : crate :: unity_engine :: events :: unityaction_1 :: UnityAction_1 < crate :: unity_engine :: color :: Color > , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ColorTween_2 , crate :: unity_engine :: events :: unityaction_1 :: UnityAction_1 < crate :: unity_engine :: color :: Color > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_on_changed_callback :: get_method_info () . method_ptr ,) ; inner (this , callback , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_ignore_timescale { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ColorTween_2 as :: unity2 :: ClassIdentity > :: class () , "GetIgnoreTimescale" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ColorTween_2 as :: unity2 :: ClassIdentity > :: NAME , "GetIgnoreTimescale" , e) , } } } pub unsafe fn get_ignore_timescale (this : ColorTween_2 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (ColorTween_2 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_ignore_timescale :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_valid_target { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ColorTween_2 as :: unity2 :: ClassIdentity > :: class () , "ValidTarget" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ColorTween_2 as :: unity2 :: ClassIdentity > :: NAME , "ValidTarget" , e) , } } } pub unsafe fn valid_target (this : ColorTween_2 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (ColorTween_2 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_valid_target :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "tm_pro-colortween_2")]
-impl ColorTween_2 {
-    #[doc = "`get_startColor()` overload"]
-    pub fn get_start_color(self) -> crate::unity_engine::color::Color {
-        unsafe { __ColorTween_2_unity2_raw::get_start_color(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_startColor(crate::unity_engine::color::Color)` overload"]
-    pub fn set_start_color(self, value: impl ::core::convert::Into<crate::unity_engine::color::Color>) -> () {
-        unsafe { __ColorTween_2_unity2_raw::set_start_color(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_targetColor()` overload"]
-    pub fn get_target_color(self) -> crate::unity_engine::color::Color {
-        unsafe { __ColorTween_2_unity2_raw::get_target_color(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_targetColor(crate::unity_engine::color::Color)` overload"]
-    pub fn set_target_color(self, value: impl ::core::convert::Into<crate::unity_engine::color::Color>) -> () {
-        unsafe { __ColorTween_2_unity2_raw::set_target_color(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_tweenMode()` overload"]
-    pub fn get_tween_mode(self) -> crate::tm_pro::colortween_2::ColorTween_ColorTweenMode_2 {
-        unsafe { __ColorTween_2_unity2_raw::get_tween_mode(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_tweenMode(crate::tm_pro::colortween_2::ColorTween_ColorTweenMode_2)` overload"]
-    pub fn set_tween_mode(self, value: impl ::core::convert::Into<crate::tm_pro::colortween_2::ColorTween_ColorTweenMode_2>) -> () {
-        unsafe { __ColorTween_2_unity2_raw::set_tween_mode(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_duration()` overload"]
-    pub fn get_duration(self) -> f32 {
-        unsafe { __ColorTween_2_unity2_raw::get_duration(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_duration(f32)` overload"]
-    pub fn set_duration(self, value: impl ::core::convert::Into<f32>) -> () {
-        unsafe { __ColorTween_2_unity2_raw::set_duration(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_ignoreTimeScale()` overload"]
-    pub fn get_ignore_time_scale(self) -> bool {
-        unsafe { __ColorTween_2_unity2_raw::get_ignore_time_scale(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_ignoreTimeScale(bool)` overload"]
-    pub fn set_ignore_time_scale(self, value: impl ::core::convert::Into<bool>) -> () {
-        unsafe { __ColorTween_2_unity2_raw::set_ignore_time_scale(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`TweenValue(f32)` overload"]
-    pub fn tween_value(self, float_percentage: impl ::core::convert::Into<f32>) -> () {
-        unsafe { __ColorTween_2_unity2_raw::tween_value(self, ::core::convert::Into::into(float_percentage), ::core::option::Option::None) }
-    }
-
-    #[doc = "`AddOnChangedCallback(crate::unity_engine::events::unityaction_1::UnityAction_1<crate::unity_engine::color::Color>)` overload"]
-    pub fn add_on_changed_callback(
-        self,
-        callback: impl ::core::convert::Into<crate::unity_engine::events::unityaction_1::UnityAction_1<crate::unity_engine::color::Color>>,
-    ) -> () {
-        unsafe { __ColorTween_2_unity2_raw::add_on_changed_callback(self, ::core::convert::Into::into(callback), ::core::option::Option::None) }
-    }
-
-    #[doc = "`GetIgnoreTimescale()` overload"]
-    pub fn get_ignore_timescale(self) -> bool {
-        unsafe { __ColorTween_2_unity2_raw::get_ignore_timescale(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`ValidTarget()` overload"]
-    pub fn valid_target(self) -> bool {
-        unsafe { __ColorTween_2_unity2_raw::valid_target(self, ::core::option::Option::None) }
-    }
-}
+impl ColorTween_2 { # [doc = "`get_startColor()` overload"] pub fn get_start_color (self ,) -> crate :: unity_engine :: color :: Color { unsafe { __ColorTween_2_unity2_raw :: get_start_color (self , :: core :: option :: Option :: None) } } # [doc = "`set_startColor(crate::unity_engine::color::Color)` overload"] pub fn set_start_color (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color >) -> () { unsafe { __ColorTween_2_unity2_raw :: set_start_color (self , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_targetColor()` overload"] pub fn get_target_color (self ,) -> crate :: unity_engine :: color :: Color { unsafe { __ColorTween_2_unity2_raw :: get_target_color (self , :: core :: option :: Option :: None) } } # [doc = "`set_targetColor(crate::unity_engine::color::Color)` overload"] pub fn set_target_color (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color >) -> () { unsafe { __ColorTween_2_unity2_raw :: set_target_color (self , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_tweenMode()` overload"] pub fn get_tween_mode (self ,) -> crate :: tm_pro :: colortween_2 :: ColorTween_ColorTweenMode_2 { unsafe { __ColorTween_2_unity2_raw :: get_tween_mode (self , :: core :: option :: Option :: None) } } # [doc = "`set_tweenMode(crate::tm_pro::colortween_2::ColorTween_ColorTweenMode_2)` overload"] pub fn set_tween_mode (self , value : impl :: core :: convert :: Into < crate :: tm_pro :: colortween_2 :: ColorTween_ColorTweenMode_2 >) -> () { unsafe { __ColorTween_2_unity2_raw :: set_tween_mode (self , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_duration()` overload"] pub fn get_duration (self ,) -> f32 { unsafe { __ColorTween_2_unity2_raw :: get_duration (self , :: core :: option :: Option :: None) } } # [doc = "`set_duration(f32)` overload"] pub fn set_duration (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { __ColorTween_2_unity2_raw :: set_duration (self , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_ignoreTimeScale()` overload"] pub fn get_ignore_time_scale (self ,) -> bool { unsafe { __ColorTween_2_unity2_raw :: get_ignore_time_scale (self , :: core :: option :: Option :: None) } } # [doc = "`set_ignoreTimeScale(bool)` overload"] pub fn set_ignore_time_scale (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { __ColorTween_2_unity2_raw :: set_ignore_time_scale (self , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`TweenValue(f32)` overload"] pub fn tween_value (self , float_percentage : impl :: core :: convert :: Into < f32 >) -> () { unsafe { __ColorTween_2_unity2_raw :: tween_value (self , :: core :: convert :: Into :: into (float_percentage) , :: core :: option :: Option :: None) } } # [doc = "`AddOnChangedCallback(crate::unity_engine::events::unityaction_1::UnityAction_1<crate::unity_engine::color::Color>)` overload"] pub fn add_on_changed_callback (self , callback : impl :: core :: convert :: Into < crate :: unity_engine :: events :: unityaction_1 :: UnityAction_1 < crate :: unity_engine :: color :: Color > >) -> () { unsafe { __ColorTween_2_unity2_raw :: add_on_changed_callback (self , :: core :: convert :: Into :: into (callback) , :: core :: option :: Option :: None) } } # [doc = "`GetIgnoreTimescale()` overload"] pub fn get_ignore_timescale (self ,) -> bool { unsafe { __ColorTween_2_unity2_raw :: get_ignore_timescale (self , :: core :: option :: Option :: None) } } # [doc = "`ValidTarget()` overload"] pub fn valid_target (self ,) -> bool { unsafe { __ColorTween_2_unity2_raw :: valid_target (self , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "tm_pro-colortween_2")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ColorTween_ColorTweenCallback_2_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ColorTween_ColorTweenCallback_2 as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ColorTween_ColorTweenCallback_2 as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: ColorTween_ColorTweenCallback_2, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ColorTween_ColorTweenCallback_2, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+impl ColorTween_2 { pub fn get_start_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ColorTween_2_unity2_raw :: __lookup_get_start_color :: get_method_info () } pub fn set_start_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ColorTween_2_unity2_raw :: __lookup_set_start_color :: get_method_info () } pub fn get_target_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ColorTween_2_unity2_raw :: __lookup_get_target_color :: get_method_info () } pub fn set_target_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ColorTween_2_unity2_raw :: __lookup_set_target_color :: get_method_info () } pub fn get_tween_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ColorTween_2_unity2_raw :: __lookup_get_tween_mode :: get_method_info () } pub fn set_tween_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ColorTween_2_unity2_raw :: __lookup_set_tween_mode :: get_method_info () } pub fn get_duration_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ColorTween_2_unity2_raw :: __lookup_get_duration :: get_method_info () } pub fn set_duration_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ColorTween_2_unity2_raw :: __lookup_set_duration :: get_method_info () } pub fn get_ignore_time_scale_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ColorTween_2_unity2_raw :: __lookup_get_ignore_time_scale :: get_method_info () } pub fn set_ignore_time_scale_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ColorTween_2_unity2_raw :: __lookup_set_ignore_time_scale :: get_method_info () } pub fn tween_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ColorTween_2_unity2_raw :: __lookup_tween_value :: get_method_info () } pub fn add_on_changed_callback_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ColorTween_2_unity2_raw :: __lookup_add_on_changed_callback :: get_method_info () } pub fn get_ignore_timescale_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ColorTween_2_unity2_raw :: __lookup_get_ignore_timescale :: get_method_info () } pub fn valid_target_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ColorTween_2_unity2_raw :: __lookup_valid_target :: get_method_info () } }
 
 #[cfg(feature = "tm_pro-colortween_2")]
-pub trait IColorTween_ColorTweenCallback_2Methods: IColorTween_ColorTweenCallback_2 {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <ColorTween_ColorTweenCallback_2 as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ColorTween_ColorTweenCallback_2_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ColorTween_ColorTweenCallback_2_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ColorTween_ColorTweenCallback_2 as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ColorTween_ColorTweenCallback_2 as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : ColorTween_ColorTweenCallback_2 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ColorTween_ColorTweenCallback_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "tm_pro-colortween_2")]
-impl<__T: IColorTween_ColorTweenCallback_2> IColorTween_ColorTweenCallback_2Methods for __T {}
+pub trait IColorTween_ColorTweenCallback_2Methods : IColorTween_ColorTweenCallback_2 { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ColorTween_ColorTweenCallback_2 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ColorTween_ColorTweenCallback_2_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "tm_pro-colortween_2")]
+impl < __T : IColorTween_ColorTweenCallback_2 > IColorTween_ColorTweenCallback_2Methods for __T { }
+
+#[cfg(feature = "tm_pro-colortween_2")]
+impl ColorTween_ColorTweenCallback_2 { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ColorTween_ColorTweenCallback_2_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "tm_pro-colortween_2")]
 impl ColorTween_ColorTweenCallback_2 {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ColorTween_ColorTweenCallback_2),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IColorTween_ColorTweenCallback_2Methods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ColorTween_ColorTweenCallback_2) , :: core :: stringify ! (new) ,)) ; < Self as IColorTween_ColorTweenCallback_2Methods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "tm_pro-colortween_2")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{
-        ColorTween_2, ColorTween_ColorTweenCallback_2, ColorTween_ColorTweenMode_2, IColorTween_ColorTweenCallback_2,
-        IColorTween_ColorTweenCallback_2Methods,
-    };
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    #[cfg(feature = "unity_engine-events-unityevent_1")]
-    pub use crate::unity_engine::events::unityevent_1::IUnityEvent_1Methods;
-    #[cfg(feature = "unity_engine-events-unityeventbase")]
-    pub use crate::unity_engine::events::unityeventbase::IUnityEventBaseMethods;
-    pub use crate::{
-        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
-        unity_engine::events::{unityevent_1::IUnityEvent_1, unityeventbase::IUnityEventBase},
-    };
+    pub use super::ColorTween_ColorTweenMode_2;
+    pub use super::ColorTween_2;
+    pub use super::ColorTween_ColorTweenCallback_2;
+    pub use super::IColorTween_ColorTweenCallback_2;
+    pub use super::IColorTween_ColorTweenCallback_2Methods;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    pub use crate::unity_engine::events::unityevent_1::IUnityEvent_1;
+    pub use crate::unity_engine::events::unityeventbase::IUnityEventBase;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
+    #[cfg(feature = "unity_engine-events-unityevent_1")] pub use crate::unity_engine::events::unityevent_1::IUnityEvent_1Methods;
+    #[cfg(feature = "unity_engine-events-unityeventbase")] pub use crate::unity_engine::events::unityeventbase::IUnityEventBaseMethods;
 }

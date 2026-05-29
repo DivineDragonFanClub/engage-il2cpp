@@ -2,583 +2,65 @@
 
 #[cfg(feature = "app-fishingcharaimagerender-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishingcharaimagerender/FishingCharaImageRender.md"))]
-    #[::unity2::class(namespace = "App", name = "FishingCharaImageRender")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct FishingCharaImageRender {
-        #[offset(24)]
-        #[rename(name = "m_Camera")]
-        pub m_camera: crate::unity_engine::camera::Camera,
-        #[offset(32)]
-        #[rename(name = "m_Chara")]
-        pub m_chara: crate::combat::character::Character,
-        #[offset(40)]
-        #[rename(name = "m_Sola")]
-        pub m_sola: crate::combat::character::Character,
-        #[offset(48)]
-        #[rename(name = "m_Lure")]
-        pub m_lure: crate::unity_engine::gameobject::GameObject,
-        #[offset(56)]
-        #[rename(name = "m_IsPlayingHitAnime")]
-        pub m_is_playing_hit_anime: bool,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishingcharaimagerender/FishingCharaImageRender.md"))] # [:: unity2 :: class (namespace = "App" , name = "FishingCharaImageRender")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct FishingCharaImageRender {
+# [offset (24)] # [rename (name = "m_Camera")] pub m_camera : crate :: unity_engine :: camera :: Camera ,
+# [offset (32)] # [rename (name = "m_Chara")] pub m_chara : crate :: combat :: character :: Character ,
+# [offset (40)] # [rename (name = "m_Sola")] pub m_sola : crate :: combat :: character :: Character ,
+# [offset (48)] # [rename (name = "m_Lure")] pub m_lure : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (56)] # [rename (name = "m_IsPlayingHitAnime")] pub m_is_playing_hit_anime : bool ,
+}
+
 }
 
 #[cfg(feature = "app-fishingcharaimagerender-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-fishingcharaimagerender")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __FishingCharaImageRender_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FishingCharaImageRender as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FishingCharaImageRender as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: FishingCharaImageRender, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(FishingCharaImageRender, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_destroy {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FishingCharaImageRender as ::unity2::ClassIdentity>::class(),
-                "OnDestroy",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FishingCharaImageRender as ::unity2::ClassIdentity>::NAME,
-                        "OnDestroy",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_destroy(this: FishingCharaImageRender, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(FishingCharaImageRender, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_destroy::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FishingCharaImageRender as ::unity2::ClassIdentity>::class(),
-                "Update",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FishingCharaImageRender as ::unity2::ClassIdentity>::NAME,
-                        "Update",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update(this: FishingCharaImageRender, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(FishingCharaImageRender, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_layer {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FishingCharaImageRender as ::unity2::ClassIdentity>::class(),
-                "SetLayer",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FishingCharaImageRender as ::unity2::ClassIdentity>::NAME,
-                        "SetLayer",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_layer(
-        this: FishingCharaImageRender,
-        obj: crate::unity_engine::gameobject::GameObject,
-        set_layer: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(FishingCharaImageRender, crate::unity_engine::gameobject::GameObject, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_layer::get_method_info().method_ptr);
-        inner(this, obj, set_layer, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_play_chara_anime {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FishingCharaImageRender as ::unity2::ClassIdentity>::class(),
-                "PlayCharaAnime",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FishingCharaImageRender as ::unity2::ClassIdentity>::NAME,
-                        "PlayCharaAnime",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn play_chara_anime(
-        this: FishingCharaImageRender,
-        name: ::unity2::Il2CppString,
-        face_state: ::unity2::Il2CppString,
-        change_soon: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(FishingCharaImageRender, ::unity2::Il2CppString, ::unity2::Il2CppString, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_play_chara_anime::get_method_info().method_ptr);
-        inner(this, name, face_state, change_soon, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_start_hit_anime {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FishingCharaImageRender as ::unity2::ClassIdentity>::class(),
-                "StartHitAnime",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FishingCharaImageRender as ::unity2::ClassIdentity>::NAME,
-                        "StartHitAnime",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn start_hit_anime(this: FishingCharaImageRender, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(FishingCharaImageRender, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_start_hit_anime::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_start_assist_anime {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FishingCharaImageRender as ::unity2::ClassIdentity>::class(),
-                "StartAssistAnime",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FishingCharaImageRender as ::unity2::ClassIdentity>::NAME,
-                        "StartAssistAnime",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn start_assist_anime(this: FishingCharaImageRender, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(FishingCharaImageRender, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_start_assist_anime::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_init {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FishingCharaImageRender as ::unity2::ClassIdentity>::class(),
-                "Init",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FishingCharaImageRender as ::unity2::ClassIdentity>::NAME,
-                        "Init",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn init(this: FishingCharaImageRender, rod_id: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(FishingCharaImageRender, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_init::get_method_info().method_ptr);
-        inner(this, rod_id, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_change_rod_type {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FishingCharaImageRender as ::unity2::ClassIdentity>::class(),
-                "ChangeRodType",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FishingCharaImageRender as ::unity2::ClassIdentity>::NAME,
-                        "ChangeRodType",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn change_rod_type(
-        this: FishingCharaImageRender,
-        rod_id: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(FishingCharaImageRender, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_change_rod_type::get_method_info().method_ptr);
-        inner(this, rod_id, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_sola_visible {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FishingCharaImageRender as ::unity2::ClassIdentity>::class(),
-                "SetSolaVisible",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FishingCharaImageRender as ::unity2::ClassIdentity>::NAME,
-                        "SetSolaVisible",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_sola_visible(this: FishingCharaImageRender, set: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(FishingCharaImageRender, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_sola_visible::get_method_info().method_ptr);
-        inner(this, set, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_play_sola_anime {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FishingCharaImageRender as ::unity2::ClassIdentity>::class(),
-                "PlaySolaAnime",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FishingCharaImageRender as ::unity2::ClassIdentity>::NAME,
-                        "PlaySolaAnime",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn play_sola_anime(this: FishingCharaImageRender, name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(FishingCharaImageRender, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_play_sola_anime::get_method_info().method_ptr);
-        inner(this, name, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __FishingCharaImageRender_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FishingCharaImageRender as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FishingCharaImageRender as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : FishingCharaImageRender , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FishingCharaImageRender , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_destroy { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FishingCharaImageRender as :: unity2 :: ClassIdentity > :: class () , "OnDestroy" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FishingCharaImageRender as :: unity2 :: ClassIdentity > :: NAME , "OnDestroy" , e) , } } } pub unsafe fn on_destroy (this : FishingCharaImageRender , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FishingCharaImageRender , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_destroy :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FishingCharaImageRender as :: unity2 :: ClassIdentity > :: class () , "Update" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FishingCharaImageRender as :: unity2 :: ClassIdentity > :: NAME , "Update" , e) , } } } pub unsafe fn update (this : FishingCharaImageRender , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FishingCharaImageRender , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_layer { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: gameobject :: GameObject as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FishingCharaImageRender as :: unity2 :: ClassIdentity > :: class () , "SetLayer" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FishingCharaImageRender as :: unity2 :: ClassIdentity > :: NAME , "SetLayer" , e) , } } } pub unsafe fn set_layer (this : FishingCharaImageRender , obj : crate :: unity_engine :: gameobject :: GameObject , set_layer : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FishingCharaImageRender , crate :: unity_engine :: gameobject :: GameObject , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_layer :: get_method_info () . method_ptr ,) ; inner (this , obj , set_layer , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_play_chara_anime { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FishingCharaImageRender as :: unity2 :: ClassIdentity > :: class () , "PlayCharaAnime" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FishingCharaImageRender as :: unity2 :: ClassIdentity > :: NAME , "PlayCharaAnime" , e) , } } } pub unsafe fn play_chara_anime (this : FishingCharaImageRender , name : :: unity2 :: Il2CppString , face_state : :: unity2 :: Il2CppString , change_soon : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FishingCharaImageRender , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_play_chara_anime :: get_method_info () . method_ptr ,) ; inner (this , name , face_state , change_soon , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_start_hit_anime { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FishingCharaImageRender as :: unity2 :: ClassIdentity > :: class () , "StartHitAnime" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FishingCharaImageRender as :: unity2 :: ClassIdentity > :: NAME , "StartHitAnime" , e) , } } } pub unsafe fn start_hit_anime (this : FishingCharaImageRender , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FishingCharaImageRender , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_start_hit_anime :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_start_assist_anime { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FishingCharaImageRender as :: unity2 :: ClassIdentity > :: class () , "StartAssistAnime" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FishingCharaImageRender as :: unity2 :: ClassIdentity > :: NAME , "StartAssistAnime" , e) , } } } pub unsafe fn start_assist_anime (this : FishingCharaImageRender , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FishingCharaImageRender , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_start_assist_anime :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_init { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FishingCharaImageRender as :: unity2 :: ClassIdentity > :: class () , "Init" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FishingCharaImageRender as :: unity2 :: ClassIdentity > :: NAME , "Init" , e) , } } } pub unsafe fn init (this : FishingCharaImageRender , rod_id : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FishingCharaImageRender , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_init :: get_method_info () . method_ptr ,) ; inner (this , rod_id , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_change_rod_type { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FishingCharaImageRender as :: unity2 :: ClassIdentity > :: class () , "ChangeRodType" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FishingCharaImageRender as :: unity2 :: ClassIdentity > :: NAME , "ChangeRodType" , e) , } } } pub unsafe fn change_rod_type (this : FishingCharaImageRender , rod_id : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FishingCharaImageRender , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_change_rod_type :: get_method_info () . method_ptr ,) ; inner (this , rod_id , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_sola_visible { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FishingCharaImageRender as :: unity2 :: ClassIdentity > :: class () , "SetSolaVisible" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FishingCharaImageRender as :: unity2 :: ClassIdentity > :: NAME , "SetSolaVisible" , e) , } } } pub unsafe fn set_sola_visible (this : FishingCharaImageRender , set : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FishingCharaImageRender , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_sola_visible :: get_method_info () . method_ptr ,) ; inner (this , set , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_play_sola_anime { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FishingCharaImageRender as :: unity2 :: ClassIdentity > :: class () , "PlaySolaAnime" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FishingCharaImageRender as :: unity2 :: ClassIdentity > :: NAME , "PlaySolaAnime" , e) , } } } pub unsafe fn play_sola_anime (this : FishingCharaImageRender , name : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FishingCharaImageRender , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_play_sola_anime :: get_method_info () . method_ptr ,) ; inner (this , name , __unity2_method_info) } }
 
 #[cfg(feature = "app-fishingcharaimagerender")]
-pub trait IFishingCharaImageRenderMethods: IFishingCharaImageRender {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <FishingCharaImageRender as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FishingCharaImageRender_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnDestroy()` overload"]
-    fn on_destroy(self) -> () {
-        unsafe {
-            let __receiver =
-                <FishingCharaImageRender as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FishingCharaImageRender_unity2_raw::on_destroy(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Update()` overload"]
-    fn update(self) -> () {
-        unsafe {
-            let __receiver =
-                <FishingCharaImageRender as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FishingCharaImageRender_unity2_raw::update(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetLayer(crate::unity_engine::gameobject::GameObject, i32)` overload"]
-    fn set_layer(
-        self,
-        obj: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-        set_layer: impl ::core::convert::Into<i32>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <FishingCharaImageRender as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FishingCharaImageRender_unity2_raw::set_layer(
-                __receiver,
-                ::core::convert::Into::into(obj),
-                ::core::convert::Into::into(set_layer),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`PlayCharaAnime(::unity2::Il2CppString, ::unity2::Il2CppString, bool)` overload"]
-    fn play_chara_anime(
-        self,
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        face_state: impl ::core::convert::Into<::unity2::Il2CppString>,
-        change_soon: impl ::core::convert::Into<bool>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <FishingCharaImageRender as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FishingCharaImageRender_unity2_raw::play_chara_anime(
-                __receiver,
-                ::core::convert::Into::into(name),
-                ::core::convert::Into::into(face_state),
-                ::core::convert::Into::into(change_soon),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`StartHitAnime()` overload"]
-    fn start_hit_anime(self) -> () {
-        unsafe {
-            let __receiver =
-                <FishingCharaImageRender as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FishingCharaImageRender_unity2_raw::start_hit_anime(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`StartAssistAnime()` overload"]
-    fn start_assist_anime(self) -> () {
-        unsafe {
-            let __receiver =
-                <FishingCharaImageRender as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FishingCharaImageRender_unity2_raw::start_assist_anime(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Init(::unity2::Il2CppString)` overload"]
-    fn init(self, rod_id: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver =
-                <FishingCharaImageRender as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FishingCharaImageRender_unity2_raw::init(__receiver, ::core::convert::Into::into(rod_id), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ChangeRodType(::unity2::Il2CppString)` overload"]
-    fn change_rod_type(self, rod_id: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver =
-                <FishingCharaImageRender as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FishingCharaImageRender_unity2_raw::change_rod_type(__receiver, ::core::convert::Into::into(rod_id), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetSolaVisible(bool)` overload"]
-    fn set_sola_visible(self, set: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver =
-                <FishingCharaImageRender as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FishingCharaImageRender_unity2_raw::set_sola_visible(__receiver, ::core::convert::Into::into(set), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`PlaySolaAnime(::unity2::Il2CppString)` overload"]
-    fn play_sola_anime(self, name: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver =
-                <FishingCharaImageRender as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FishingCharaImageRender_unity2_raw::play_sola_anime(__receiver, ::core::convert::Into::into(name), ::core::option::Option::None)
-        }
-    }
-}
+pub trait IFishingCharaImageRenderMethods : IFishingCharaImageRender { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < FishingCharaImageRender as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FishingCharaImageRender_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnDestroy()` overload"] fn on_destroy (self ,) -> () { unsafe { let __receiver = < FishingCharaImageRender as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FishingCharaImageRender_unity2_raw :: on_destroy (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < FishingCharaImageRender as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FishingCharaImageRender_unity2_raw :: update (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetLayer(crate::unity_engine::gameobject::GameObject, i32)` overload"] fn set_layer (self , obj : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject > , set_layer : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < FishingCharaImageRender as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FishingCharaImageRender_unity2_raw :: set_layer (__receiver , :: core :: convert :: Into :: into (obj) , :: core :: convert :: Into :: into (set_layer) , :: core :: option :: Option :: None) } } # [doc = "`PlayCharaAnime(::unity2::Il2CppString, ::unity2::Il2CppString, bool)` overload"] fn play_chara_anime (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , face_state : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , change_soon : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < FishingCharaImageRender as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FishingCharaImageRender_unity2_raw :: play_chara_anime (__receiver , :: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (face_state) , :: core :: convert :: Into :: into (change_soon) , :: core :: option :: Option :: None) } } # [doc = "`StartHitAnime()` overload"] fn start_hit_anime (self ,) -> () { unsafe { let __receiver = < FishingCharaImageRender as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FishingCharaImageRender_unity2_raw :: start_hit_anime (__receiver , :: core :: option :: Option :: None) } } # [doc = "`StartAssistAnime()` overload"] fn start_assist_anime (self ,) -> () { unsafe { let __receiver = < FishingCharaImageRender as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FishingCharaImageRender_unity2_raw :: start_assist_anime (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Init(::unity2::Il2CppString)` overload"] fn init (self , rod_id : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < FishingCharaImageRender as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FishingCharaImageRender_unity2_raw :: init (__receiver , :: core :: convert :: Into :: into (rod_id) , :: core :: option :: Option :: None) } } # [doc = "`ChangeRodType(::unity2::Il2CppString)` overload"] fn change_rod_type (self , rod_id : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < FishingCharaImageRender as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FishingCharaImageRender_unity2_raw :: change_rod_type (__receiver , :: core :: convert :: Into :: into (rod_id) , :: core :: option :: Option :: None) } } # [doc = "`SetSolaVisible(bool)` overload"] fn set_sola_visible (self , set : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < FishingCharaImageRender as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FishingCharaImageRender_unity2_raw :: set_sola_visible (__receiver , :: core :: convert :: Into :: into (set) , :: core :: option :: Option :: None) } } # [doc = "`PlaySolaAnime(::unity2::Il2CppString)` overload"] fn play_sola_anime (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < FishingCharaImageRender as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FishingCharaImageRender_unity2_raw :: play_sola_anime (__receiver , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-fishingcharaimagerender")]
-impl<__T: IFishingCharaImageRender> IFishingCharaImageRenderMethods for __T {}
+impl < __T : IFishingCharaImageRender > IFishingCharaImageRenderMethods for __T { }
+
+#[cfg(feature = "app-fishingcharaimagerender")]
+impl FishingCharaImageRender { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FishingCharaImageRender_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn on_destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FishingCharaImageRender_unity2_raw :: __lookup_on_destroy :: get_method_info () } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FishingCharaImageRender_unity2_raw :: __lookup_update :: get_method_info () } pub fn set_layer_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FishingCharaImageRender_unity2_raw :: __lookup_set_layer :: get_method_info () } pub fn play_chara_anime_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FishingCharaImageRender_unity2_raw :: __lookup_play_chara_anime :: get_method_info () } pub fn start_hit_anime_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FishingCharaImageRender_unity2_raw :: __lookup_start_hit_anime :: get_method_info () } pub fn start_assist_anime_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FishingCharaImageRender_unity2_raw :: __lookup_start_assist_anime :: get_method_info () } pub fn init_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FishingCharaImageRender_unity2_raw :: __lookup_init :: get_method_info () } pub fn change_rod_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FishingCharaImageRender_unity2_raw :: __lookup_change_rod_type :: get_method_info () } pub fn set_sola_visible_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FishingCharaImageRender_unity2_raw :: __lookup_set_sola_visible :: get_method_info () } pub fn play_sola_anime_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FishingCharaImageRender_unity2_raw :: __lookup_play_sola_anime :: get_method_info () } }
 
 #[cfg(feature = "app-fishingcharaimagerender")]
 impl FishingCharaImageRender {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(FishingCharaImageRender),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IFishingCharaImageRenderMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FishingCharaImageRender) , :: core :: stringify ! (new) ,)) ; < Self as IFishingCharaImageRenderMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-fishingcharaimagerender")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{FishingCharaImageRender, IFishingCharaImageRender, IFishingCharaImageRenderMethods};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        system::object::IObject,
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::FishingCharaImageRender;
+    pub use super::IFishingCharaImageRender;
+    pub use super::IFishingCharaImageRenderMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

@@ -2,375 +2,64 @@
 
 #[cfg(feature = "app-water-planarreflectionv2-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/water/planarreflectionv2/PlanarReflectionV2.md"))]
-    #[::unity2::class(namespace = "App.Water", name = "PlanarReflectionV2")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct PlanarReflectionV2 {
-        #[offset(24)]
-        #[rename(name = "m_ReflectionManager")]
-        pub m_reflection_manager: crate::app::water::reflectionmanager::ReflectionManager,
-        #[offset(32)]
-        #[rename(name = "m_SharedMaterial")]
-        pub m_shared_material: crate::unity_engine::material::Material,
-        #[offset(40)]
-        #[rename(name = "reflectionCameraNumber")]
-        pub reflection_camera_number: i16,
-        #[static_field]
-        #[rename(name = "reflectionSampler")]
-        pub reflection_sampler: ::unity2::Il2CppString,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/water/planarreflectionv2/PlanarReflectionV2.md"))] # [:: unity2 :: class (namespace = "App.Water" , name = "PlanarReflectionV2")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct PlanarReflectionV2 {
+# [offset (24)] # [rename (name = "m_ReflectionManager")] pub m_reflection_manager : crate :: app :: water :: reflectionmanager :: ReflectionManager ,
+# [offset (32)] # [rename (name = "m_SharedMaterial")] pub m_shared_material : crate :: unity_engine :: material :: Material ,
+# [offset (40)] # [rename (name = "reflectionCameraNumber")] pub reflection_camera_number : i16 ,
+# [static_field] # [rename (name = "reflectionSampler")] pub reflection_sampler : :: unity2 :: Il2CppString ,
+}
+
 }
 
 #[cfg(feature = "app-water-planarreflectionv2-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-water-planarreflectionv2")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __PlanarReflectionV2_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_start {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PlanarReflectionV2 as ::unity2::ClassIdentity>::class(),
-                "Start",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PlanarReflectionV2 as ::unity2::ClassIdentity>::NAME,
-                        "Start",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn start(this: PlanarReflectionV2, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(PlanarReflectionV2, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_start::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_water_tile_being_rendered {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::camera::Camera as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PlanarReflectionV2 as ::unity2::ClassIdentity>::class(),
-                "WaterTileBeingRendered",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PlanarReflectionV2 as ::unity2::ClassIdentity>::NAME,
-                        "WaterTileBeingRendered",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn water_tile_being_rendered(
-        this: PlanarReflectionV2,
-        tr: crate::unity_engine::transform::Transform,
-        current_cam: crate::unity_engine::camera::Camera,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            PlanarReflectionV2,
-            crate::unity_engine::transform::Transform,
-            crate::unity_engine::camera::Camera,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_water_tile_being_rendered::get_method_info().method_ptr);
-        inner(this, tr, current_cam, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_reflection_texture {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PlanarReflectionV2 as ::unity2::ClassIdentity>::class(),
-                "GetReflectionTexture",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PlanarReflectionV2 as ::unity2::ClassIdentity>::NAME,
-                        "GetReflectionTexture",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_reflection_texture(
-        this: PlanarReflectionV2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::rendertexture::RenderTexture {
-        let inner: extern "C" fn(PlanarReflectionV2, ::unity2::OptionalMethod) -> crate::unity_engine::rendertexture::RenderTexture =
-            ::core::mem::transmute(__lookup_get_reflection_texture::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_render_reflection {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::camera::Camera as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PlanarReflectionV2 as ::unity2::ClassIdentity>::class(),
-                "RenderReflection",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PlanarReflectionV2 as ::unity2::ClassIdentity>::NAME,
-                        "RenderReflection",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn render_reflection(
-        this: PlanarReflectionV2,
-        tr: crate::unity_engine::transform::Transform,
-        current_cam: crate::unity_engine::camera::Camera,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            PlanarReflectionV2,
-            crate::unity_engine::transform::Transform,
-            crate::unity_engine::camera::Camera,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(__lookup_render_reflection::get_method_info().method_ptr);
-        inner(this, tr, current_cam, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_reflection_manager {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PlanarReflectionV2 as ::unity2::ClassIdentity>::class(),
-                "GetReflectionManager",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PlanarReflectionV2 as ::unity2::ClassIdentity>::NAME,
-                        "GetReflectionManager",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_reflection_manager(
-        this: PlanarReflectionV2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::water::reflectionmanager::ReflectionManager {
-        let inner: extern "C" fn(PlanarReflectionV2, ::unity2::OptionalMethod) -> crate::app::water::reflectionmanager::ReflectionManager =
-            ::core::mem::transmute(__lookup_get_reflection_manager::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PlanarReflectionV2 as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PlanarReflectionV2 as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: PlanarReflectionV2, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(PlanarReflectionV2, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __PlanarReflectionV2_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_start { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PlanarReflectionV2 as :: unity2 :: ClassIdentity > :: class () , "Start" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PlanarReflectionV2 as :: unity2 :: ClassIdentity > :: NAME , "Start" , e) , } } } pub unsafe fn start (this : PlanarReflectionV2 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (PlanarReflectionV2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_start :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_water_tile_being_rendered { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: transform :: Transform as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: camera :: Camera as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PlanarReflectionV2 as :: unity2 :: ClassIdentity > :: class () , "WaterTileBeingRendered" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PlanarReflectionV2 as :: unity2 :: ClassIdentity > :: NAME , "WaterTileBeingRendered" , e) , } } } pub unsafe fn water_tile_being_rendered (this : PlanarReflectionV2 , tr : crate :: unity_engine :: transform :: Transform , current_cam : crate :: unity_engine :: camera :: Camera , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (PlanarReflectionV2 , crate :: unity_engine :: transform :: Transform , crate :: unity_engine :: camera :: Camera , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_water_tile_being_rendered :: get_method_info () . method_ptr ,) ; inner (this , tr , current_cam , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_reflection_texture { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PlanarReflectionV2 as :: unity2 :: ClassIdentity > :: class () , "GetReflectionTexture" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PlanarReflectionV2 as :: unity2 :: ClassIdentity > :: NAME , "GetReflectionTexture" , e) , } } } pub unsafe fn get_reflection_texture (this : PlanarReflectionV2 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendertexture :: RenderTexture { let inner : extern "C" fn (PlanarReflectionV2 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendertexture :: RenderTexture = :: core :: mem :: transmute (__lookup_get_reflection_texture :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_render_reflection { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: transform :: Transform as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: camera :: Camera as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PlanarReflectionV2 as :: unity2 :: ClassIdentity > :: class () , "RenderReflection" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PlanarReflectionV2 as :: unity2 :: ClassIdentity > :: NAME , "RenderReflection" , e) , } } } pub unsafe fn render_reflection (this : PlanarReflectionV2 , tr : crate :: unity_engine :: transform :: Transform , current_cam : crate :: unity_engine :: camera :: Camera , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (PlanarReflectionV2 , crate :: unity_engine :: transform :: Transform , crate :: unity_engine :: camera :: Camera , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_render_reflection :: get_method_info () . method_ptr ,) ; inner (this , tr , current_cam , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_reflection_manager { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PlanarReflectionV2 as :: unity2 :: ClassIdentity > :: class () , "GetReflectionManager" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PlanarReflectionV2 as :: unity2 :: ClassIdentity > :: NAME , "GetReflectionManager" , e) , } } } pub unsafe fn get_reflection_manager (this : PlanarReflectionV2 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: water :: reflectionmanager :: ReflectionManager { let inner : extern "C" fn (PlanarReflectionV2 , :: unity2 :: OptionalMethod ,) -> crate :: app :: water :: reflectionmanager :: ReflectionManager = :: core :: mem :: transmute (__lookup_get_reflection_manager :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PlanarReflectionV2 as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PlanarReflectionV2 as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : PlanarReflectionV2 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (PlanarReflectionV2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-water-planarreflectionv2")]
-pub trait IPlanarReflectionV2Methods: IPlanarReflectionV2 {
-    #[doc = "`Start()` overload"]
-    fn start(self) -> () {
-        unsafe {
-            let __receiver = <PlanarReflectionV2 as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __PlanarReflectionV2_unity2_raw::start(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`WaterTileBeingRendered(crate::unity_engine::transform::Transform, crate::unity_engine::camera::Camera)` overload"]
-    fn water_tile_being_rendered(
-        self,
-        tr: impl ::core::convert::Into<crate::unity_engine::transform::Transform>,
-        current_cam: impl ::core::convert::Into<crate::unity_engine::camera::Camera>,
-    ) -> () {
-        unsafe {
-            let __receiver = <PlanarReflectionV2 as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __PlanarReflectionV2_unity2_raw::water_tile_being_rendered(
-                __receiver,
-                ::core::convert::Into::into(tr),
-                ::core::convert::Into::into(current_cam),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetReflectionTexture()` overload"]
-    fn get_reflection_texture(self) -> crate::unity_engine::rendertexture::RenderTexture {
-        unsafe {
-            let __receiver = <PlanarReflectionV2 as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __PlanarReflectionV2_unity2_raw::get_reflection_texture(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`RenderReflection(crate::unity_engine::transform::Transform, crate::unity_engine::camera::Camera)` overload"]
-    fn render_reflection(
-        self,
-        tr: impl ::core::convert::Into<crate::unity_engine::transform::Transform>,
-        current_cam: impl ::core::convert::Into<crate::unity_engine::camera::Camera>,
-    ) -> bool {
-        unsafe {
-            let __receiver = <PlanarReflectionV2 as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __PlanarReflectionV2_unity2_raw::render_reflection(
-                __receiver,
-                ::core::convert::Into::into(tr),
-                ::core::convert::Into::into(current_cam),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetReflectionManager()` overload"]
-    fn get_reflection_manager(self) -> crate::app::water::reflectionmanager::ReflectionManager {
-        unsafe {
-            let __receiver = <PlanarReflectionV2 as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __PlanarReflectionV2_unity2_raw::get_reflection_manager(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <PlanarReflectionV2 as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __PlanarReflectionV2_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IPlanarReflectionV2Methods : IPlanarReflectionV2 { # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < PlanarReflectionV2 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __PlanarReflectionV2_unity2_raw :: start (__receiver , :: core :: option :: Option :: None) } } # [doc = "`WaterTileBeingRendered(crate::unity_engine::transform::Transform, crate::unity_engine::camera::Camera)` overload"] fn water_tile_being_rendered (self , tr : impl :: core :: convert :: Into < crate :: unity_engine :: transform :: Transform > , current_cam : impl :: core :: convert :: Into < crate :: unity_engine :: camera :: Camera >) -> () { unsafe { let __receiver = < PlanarReflectionV2 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __PlanarReflectionV2_unity2_raw :: water_tile_being_rendered (__receiver , :: core :: convert :: Into :: into (tr) , :: core :: convert :: Into :: into (current_cam) , :: core :: option :: Option :: None) } } # [doc = "`GetReflectionTexture()` overload"] fn get_reflection_texture (self ,) -> crate :: unity_engine :: rendertexture :: RenderTexture { unsafe { let __receiver = < PlanarReflectionV2 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __PlanarReflectionV2_unity2_raw :: get_reflection_texture (__receiver , :: core :: option :: Option :: None) } } # [doc = "`RenderReflection(crate::unity_engine::transform::Transform, crate::unity_engine::camera::Camera)` overload"] fn render_reflection (self , tr : impl :: core :: convert :: Into < crate :: unity_engine :: transform :: Transform > , current_cam : impl :: core :: convert :: Into < crate :: unity_engine :: camera :: Camera >) -> bool { unsafe { let __receiver = < PlanarReflectionV2 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __PlanarReflectionV2_unity2_raw :: render_reflection (__receiver , :: core :: convert :: Into :: into (tr) , :: core :: convert :: Into :: into (current_cam) , :: core :: option :: Option :: None) } } # [doc = "`GetReflectionManager()` overload"] fn get_reflection_manager (self ,) -> crate :: app :: water :: reflectionmanager :: ReflectionManager { unsafe { let __receiver = < PlanarReflectionV2 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __PlanarReflectionV2_unity2_raw :: get_reflection_manager (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < PlanarReflectionV2 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __PlanarReflectionV2_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-water-planarreflectionv2")]
-impl<__T: IPlanarReflectionV2> IPlanarReflectionV2Methods for __T {}
+impl < __T : IPlanarReflectionV2 > IPlanarReflectionV2Methods for __T { }
+
+#[cfg(feature = "app-water-planarreflectionv2")]
+impl PlanarReflectionV2 { pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PlanarReflectionV2_unity2_raw :: __lookup_start :: get_method_info () } pub fn water_tile_being_rendered_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PlanarReflectionV2_unity2_raw :: __lookup_water_tile_being_rendered :: get_method_info () } pub fn get_reflection_texture_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PlanarReflectionV2_unity2_raw :: __lookup_get_reflection_texture :: get_method_info () } pub fn render_reflection_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PlanarReflectionV2_unity2_raw :: __lookup_render_reflection :: get_method_info () } pub fn get_reflection_manager_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PlanarReflectionV2_unity2_raw :: __lookup_get_reflection_manager :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PlanarReflectionV2_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-water-planarreflectionv2")]
 impl PlanarReflectionV2 {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(PlanarReflectionV2),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IPlanarReflectionV2Methods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (PlanarReflectionV2) , :: core :: stringify ! (new) ,)) ; < Self as IPlanarReflectionV2Methods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-water-planarreflectionv2")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IPlanarReflectionV2, IPlanarReflectionV2Methods, PlanarReflectionV2};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        system::object::IObject,
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::PlanarReflectionV2;
+    pub use super::IPlanarReflectionV2;
+    pub use super::IPlanarReflectionV2Methods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

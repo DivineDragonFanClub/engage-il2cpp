@@ -2,111 +2,34 @@
 
 #[cfg(feature = "unity_engine-profiling-profiler-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/profiling/profiler/Profiler.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Profiling", name = "Profiler")]
-    #[parent(crate::system::object::Object)]
-    pub struct Profiler {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/profiling/profiler/Profiler.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Profiling" , name = "Profiler")] # [parent (crate :: system :: object :: Object)] pub struct Profiler {}
+
 }
 
 #[cfg(feature = "unity_engine-profiling-profiler-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-profiling-profiler")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __Profiler_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_runtime_memory_size_long {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::object_2::Object_2 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Profiler as ::unity2::ClassIdentity>::class(),
-                "GetRuntimeMemorySizeLong",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Profiler as ::unity2::ClassIdentity>::NAME,
-                        "GetRuntimeMemorySizeLong",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_runtime_memory_size_long(o: crate::unity_engine::object_2::Object_2, __unity2_method_info: ::unity2::OptionalMethod) -> i64 {
-        let inner: extern "C" fn(crate::unity_engine::object_2::Object_2, ::unity2::OptionalMethod) -> i64 =
-            ::core::mem::transmute(__lookup_get_runtime_memory_size_long::get_method_info().method_ptr);
-        inner(o, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_mono_used_size_long {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Profiler as ::unity2::ClassIdentity>::class(),
-                "GetMonoUsedSizeLong",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Profiler as ::unity2::ClassIdentity>::NAME,
-                        "GetMonoUsedSizeLong",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_mono_used_size_long(__unity2_method_info: ::unity2::OptionalMethod) -> i64 {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> i64 =
-            ::core::mem::transmute(__lookup_get_mono_used_size_long::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __Profiler_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_runtime_memory_size_long { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: object_2 :: Object_2 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Profiler as :: unity2 :: ClassIdentity > :: class () , "GetRuntimeMemorySizeLong" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Profiler as :: unity2 :: ClassIdentity > :: NAME , "GetRuntimeMemorySizeLong" , e) , } } } pub unsafe fn get_runtime_memory_size_long (o : crate :: unity_engine :: object_2 :: Object_2 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i64 { let inner : extern "C" fn (crate :: unity_engine :: object_2 :: Object_2 , :: unity2 :: OptionalMethod ,) -> i64 = :: core :: mem :: transmute (__lookup_get_runtime_memory_size_long :: get_method_info () . method_ptr ,) ; inner (o , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_mono_used_size_long { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Profiler as :: unity2 :: ClassIdentity > :: class () , "GetMonoUsedSizeLong" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Profiler as :: unity2 :: ClassIdentity > :: NAME , "GetMonoUsedSizeLong" , e) , } } } pub unsafe fn get_mono_used_size_long (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> i64 { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i64 = :: core :: mem :: transmute (__lookup_get_mono_used_size_long :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-profiling-profiler")]
-impl Profiler {
-    #[doc = "`GetRuntimeMemorySizeLong(crate::unity_engine::object_2::Object_2)` overload"]
-    pub fn get_runtime_memory_size_long(o: impl ::core::convert::Into<crate::unity_engine::object_2::Object_2>) -> i64 {
-        unsafe { __Profiler_unity2_raw::get_runtime_memory_size_long(::core::convert::Into::into(o), ::core::option::Option::None) }
-    }
+impl Profiler { # [doc = "`GetRuntimeMemorySizeLong(crate::unity_engine::object_2::Object_2)` overload"] pub fn get_runtime_memory_size_long (o : impl :: core :: convert :: Into < crate :: unity_engine :: object_2 :: Object_2 >) -> i64 { unsafe { __Profiler_unity2_raw :: get_runtime_memory_size_long (:: core :: convert :: Into :: into (o) , :: core :: option :: Option :: None) } } # [doc = "`GetMonoUsedSizeLong()` overload"] pub fn get_mono_used_size_long () -> i64 { unsafe { __Profiler_unity2_raw :: get_mono_used_size_long (:: core :: option :: Option :: None) } } }
 
-    #[doc = "`GetMonoUsedSizeLong()` overload"]
-    pub fn get_mono_used_size_long() -> i64 {
-        unsafe { __Profiler_unity2_raw::get_mono_used_size_long(::core::option::Option::None) }
-    }
-}
+#[cfg(feature = "unity_engine-profiling-profiler")]
+impl Profiler { pub fn get_runtime_memory_size_long_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Profiler_unity2_raw :: __lookup_get_runtime_memory_size_long :: get_method_info () } pub fn get_mono_used_size_long_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Profiler_unity2_raw :: __lookup_get_mono_used_size_long :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-profiling-profiler")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IProfiler, Profiler};
+    pub use super::Profiler;
+    pub use super::IProfiler;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

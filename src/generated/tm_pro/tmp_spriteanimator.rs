@@ -2,434 +2,62 @@
 
 #[cfg(feature = "tm_pro-tmp_spriteanimator-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_spriteanimator/TMP_SpriteAnimator.md"))]
-    #[::unity2::class(namespace = "TMPro", name = "TMP_SpriteAnimator")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct TMP_SpriteAnimator {
-        #[offset(24)]
-        #[rename(name = "m_animations")]
-        pub m_animations: crate::system::collections::generic::dictionary_2::Dictionary_2<i32, bool>,
-        #[offset(32)]
-        #[rename(name = "m_TextComponent")]
-        pub m_text_component: crate::tm_pro::tmp_text::TMP_Text,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_spriteanimator/TMP_SpriteAnimator.md"))] # [:: unity2 :: class (namespace = "TMPro" , name = "TMP_SpriteAnimator")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct TMP_SpriteAnimator {
+# [offset (24)] # [rename (name = "m_animations")] pub m_animations : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < i32 , bool > ,
+# [offset (32)] # [rename (name = "m_TextComponent")] pub m_text_component : crate :: tm_pro :: tmp_text :: TMP_Text ,
+}
+
 }
 
 #[cfg(feature = "tm_pro-tmp_spriteanimator-types")]
 pub use __types::*;
 
 #[cfg(feature = "tm_pro-tmp_spriteanimator")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __TMP_SpriteAnimator_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_awake {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TMP_SpriteAnimator as ::unity2::ClassIdentity>::class(),
-                "Awake",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TMP_SpriteAnimator as ::unity2::ClassIdentity>::NAME,
-                        "Awake",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn awake(this: TMP_SpriteAnimator, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TMP_SpriteAnimator, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_awake::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_enable {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TMP_SpriteAnimator as ::unity2::ClassIdentity>::class(),
-                "OnEnable",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TMP_SpriteAnimator as ::unity2::ClassIdentity>::NAME,
-                        "OnEnable",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_enable(this: TMP_SpriteAnimator, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TMP_SpriteAnimator, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_enable::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_disable {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TMP_SpriteAnimator as ::unity2::ClassIdentity>::class(),
-                "OnDisable",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TMP_SpriteAnimator as ::unity2::ClassIdentity>::NAME,
-                        "OnDisable",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_disable(this: TMP_SpriteAnimator, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TMP_SpriteAnimator, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_disable::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_stop_all_animations {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TMP_SpriteAnimator as ::unity2::ClassIdentity>::class(),
-                "StopAllAnimations",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TMP_SpriteAnimator as ::unity2::ClassIdentity>::NAME,
-                        "StopAllAnimations",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn stop_all_animations(this: TMP_SpriteAnimator, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TMP_SpriteAnimator, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_stop_all_animations::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_do_sprite_animation {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TMP_SpriteAnimator as ::unity2::ClassIdentity>::class(),
-                "DoSpriteAnimation",
-                5,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TMP_SpriteAnimator as ::unity2::ClassIdentity>::NAME,
-                        "DoSpriteAnimation",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn do_sprite_animation(
-        this: TMP_SpriteAnimator,
-        current_character: i32,
-        sprite_asset: crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset,
-        start: i32,
-        end: i32,
-        framerate: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            TMP_SpriteAnimator,
-            i32,
-            crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset,
-            i32,
-            i32,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_do_sprite_animation::get_method_info().method_ptr);
-        inner(this, current_character, sprite_asset, start, end, framerate, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_do_sprite_animation_internal {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TMP_SpriteAnimator as ::unity2::ClassIdentity>::class(),
-                "DoSpriteAnimationInternal",
-                5,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TMP_SpriteAnimator as ::unity2::ClassIdentity>::NAME,
-                        "DoSpriteAnimationInternal",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn do_sprite_animation_internal(
-        this: TMP_SpriteAnimator,
-        current_character: i32,
-        sprite_asset: crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset,
-        start: i32,
-        end: i32,
-        framerate: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::ienumerator::IEnumerator {
-        let inner: extern "C" fn(
-            TMP_SpriteAnimator,
-            i32,
-            crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset,
-            i32,
-            i32,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::collections::ienumerator::IEnumerator =
-            ::core::mem::transmute(__lookup_do_sprite_animation_internal::get_method_info().method_ptr);
-        inner(this, current_character, sprite_asset, start, end, framerate, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TMP_SpriteAnimator as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TMP_SpriteAnimator as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: TMP_SpriteAnimator, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TMP_SpriteAnimator, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __TMP_SpriteAnimator_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_awake { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TMP_SpriteAnimator as :: unity2 :: ClassIdentity > :: class () , "Awake" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TMP_SpriteAnimator as :: unity2 :: ClassIdentity > :: NAME , "Awake" , e) , } } } pub unsafe fn awake (this : TMP_SpriteAnimator , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TMP_SpriteAnimator , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_awake :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_enable { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TMP_SpriteAnimator as :: unity2 :: ClassIdentity > :: class () , "OnEnable" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TMP_SpriteAnimator as :: unity2 :: ClassIdentity > :: NAME , "OnEnable" , e) , } } } pub unsafe fn on_enable (this : TMP_SpriteAnimator , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TMP_SpriteAnimator , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_enable :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_disable { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TMP_SpriteAnimator as :: unity2 :: ClassIdentity > :: class () , "OnDisable" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TMP_SpriteAnimator as :: unity2 :: ClassIdentity > :: NAME , "OnDisable" , e) , } } } pub unsafe fn on_disable (this : TMP_SpriteAnimator , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TMP_SpriteAnimator , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_disable :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_stop_all_animations { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TMP_SpriteAnimator as :: unity2 :: ClassIdentity > :: class () , "StopAllAnimations" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TMP_SpriteAnimator as :: unity2 :: ClassIdentity > :: NAME , "StopAllAnimations" , e) , } } } pub unsafe fn stop_all_animations (this : TMP_SpriteAnimator , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TMP_SpriteAnimator , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_stop_all_animations :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_do_sprite_animation { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < crate :: tm_pro :: tmp_spriteasset :: TMP_SpriteAsset as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TMP_SpriteAnimator as :: unity2 :: ClassIdentity > :: class () , "DoSpriteAnimation" , 5 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TMP_SpriteAnimator as :: unity2 :: ClassIdentity > :: NAME , "DoSpriteAnimation" , e) , } } } pub unsafe fn do_sprite_animation (this : TMP_SpriteAnimator , current_character : i32 , sprite_asset : crate :: tm_pro :: tmp_spriteasset :: TMP_SpriteAsset , start : i32 , end : i32 , framerate : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TMP_SpriteAnimator , i32 , crate :: tm_pro :: tmp_spriteasset :: TMP_SpriteAsset , i32 , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_do_sprite_animation :: get_method_info () . method_ptr ,) ; inner (this , current_character , sprite_asset , start , end , framerate , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_do_sprite_animation_internal { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < crate :: tm_pro :: tmp_spriteasset :: TMP_SpriteAsset as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TMP_SpriteAnimator as :: unity2 :: ClassIdentity > :: class () , "DoSpriteAnimationInternal" , 5 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TMP_SpriteAnimator as :: unity2 :: ClassIdentity > :: NAME , "DoSpriteAnimationInternal" , e) , } } } pub unsafe fn do_sprite_animation_internal (this : TMP_SpriteAnimator , current_character : i32 , sprite_asset : crate :: tm_pro :: tmp_spriteasset :: TMP_SpriteAsset , start : i32 , end : i32 , framerate : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { let inner : extern "C" fn (TMP_SpriteAnimator , i32 , crate :: tm_pro :: tmp_spriteasset :: TMP_SpriteAsset , i32 , i32 , i32 , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute (__lookup_do_sprite_animation_internal :: get_method_info () . method_ptr ,) ; inner (this , current_character , sprite_asset , start , end , framerate , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TMP_SpriteAnimator as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TMP_SpriteAnimator as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : TMP_SpriteAnimator , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TMP_SpriteAnimator , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "tm_pro-tmp_spriteanimator")]
-pub trait ITMP_SpriteAnimatorMethods: ITMP_SpriteAnimator {
-    #[doc = "`Awake()` overload"]
-    fn awake(self) -> () {
-        unsafe {
-            let __receiver = <TMP_SpriteAnimator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TMP_SpriteAnimator_unity2_raw::awake(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnEnable()` overload"]
-    fn on_enable(self) -> () {
-        unsafe {
-            let __receiver = <TMP_SpriteAnimator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TMP_SpriteAnimator_unity2_raw::on_enable(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnDisable()` overload"]
-    fn on_disable(self) -> () {
-        unsafe {
-            let __receiver = <TMP_SpriteAnimator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TMP_SpriteAnimator_unity2_raw::on_disable(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`StopAllAnimations()` overload"]
-    fn stop_all_animations(self) -> () {
-        unsafe {
-            let __receiver = <TMP_SpriteAnimator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TMP_SpriteAnimator_unity2_raw::stop_all_animations(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`DoSpriteAnimation(i32, crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset, i32, i32, i32)` overload"]
-    fn do_sprite_animation(
-        self,
-        current_character: impl ::core::convert::Into<i32>,
-        sprite_asset: impl ::core::convert::Into<crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset>,
-        start: impl ::core::convert::Into<i32>,
-        end: impl ::core::convert::Into<i32>,
-        framerate: impl ::core::convert::Into<i32>,
-    ) -> () {
-        unsafe {
-            let __receiver = <TMP_SpriteAnimator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TMP_SpriteAnimator_unity2_raw::do_sprite_animation(
-                __receiver,
-                ::core::convert::Into::into(current_character),
-                ::core::convert::Into::into(sprite_asset),
-                ::core::convert::Into::into(start),
-                ::core::convert::Into::into(end),
-                ::core::convert::Into::into(framerate),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`DoSpriteAnimationInternal(i32, crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset, i32, i32, i32)` overload"]
-    fn do_sprite_animation_internal(
-        self,
-        current_character: impl ::core::convert::Into<i32>,
-        sprite_asset: impl ::core::convert::Into<crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset>,
-        start: impl ::core::convert::Into<i32>,
-        end: impl ::core::convert::Into<i32>,
-        framerate: impl ::core::convert::Into<i32>,
-    ) -> crate::system::collections::ienumerator::IEnumerator {
-        unsafe {
-            let __receiver = <TMP_SpriteAnimator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TMP_SpriteAnimator_unity2_raw::do_sprite_animation_internal(
-                __receiver,
-                ::core::convert::Into::into(current_character),
-                ::core::convert::Into::into(sprite_asset),
-                ::core::convert::Into::into(start),
-                ::core::convert::Into::into(end),
-                ::core::convert::Into::into(framerate),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <TMP_SpriteAnimator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TMP_SpriteAnimator_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait ITMP_SpriteAnimatorMethods : ITMP_SpriteAnimator { # [doc = "`Awake()` overload"] fn awake (self ,) -> () { unsafe { let __receiver = < TMP_SpriteAnimator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TMP_SpriteAnimator_unity2_raw :: awake (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnEnable()` overload"] fn on_enable (self ,) -> () { unsafe { let __receiver = < TMP_SpriteAnimator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TMP_SpriteAnimator_unity2_raw :: on_enable (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnDisable()` overload"] fn on_disable (self ,) -> () { unsafe { let __receiver = < TMP_SpriteAnimator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TMP_SpriteAnimator_unity2_raw :: on_disable (__receiver , :: core :: option :: Option :: None) } } # [doc = "`StopAllAnimations()` overload"] fn stop_all_animations (self ,) -> () { unsafe { let __receiver = < TMP_SpriteAnimator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TMP_SpriteAnimator_unity2_raw :: stop_all_animations (__receiver , :: core :: option :: Option :: None) } } # [doc = "`DoSpriteAnimation(i32, crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset, i32, i32, i32)` overload"] fn do_sprite_animation (self , current_character : impl :: core :: convert :: Into < i32 > , sprite_asset : impl :: core :: convert :: Into < crate :: tm_pro :: tmp_spriteasset :: TMP_SpriteAsset > , start : impl :: core :: convert :: Into < i32 > , end : impl :: core :: convert :: Into < i32 > , framerate : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < TMP_SpriteAnimator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TMP_SpriteAnimator_unity2_raw :: do_sprite_animation (__receiver , :: core :: convert :: Into :: into (current_character) , :: core :: convert :: Into :: into (sprite_asset) , :: core :: convert :: Into :: into (start) , :: core :: convert :: Into :: into (end) , :: core :: convert :: Into :: into (framerate) , :: core :: option :: Option :: None) } } # [doc = "`DoSpriteAnimationInternal(i32, crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset, i32, i32, i32)` overload"] fn do_sprite_animation_internal (self , current_character : impl :: core :: convert :: Into < i32 > , sprite_asset : impl :: core :: convert :: Into < crate :: tm_pro :: tmp_spriteasset :: TMP_SpriteAsset > , start : impl :: core :: convert :: Into < i32 > , end : impl :: core :: convert :: Into < i32 > , framerate : impl :: core :: convert :: Into < i32 >) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { let __receiver = < TMP_SpriteAnimator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TMP_SpriteAnimator_unity2_raw :: do_sprite_animation_internal (__receiver , :: core :: convert :: Into :: into (current_character) , :: core :: convert :: Into :: into (sprite_asset) , :: core :: convert :: Into :: into (start) , :: core :: convert :: Into :: into (end) , :: core :: convert :: Into :: into (framerate) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TMP_SpriteAnimator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TMP_SpriteAnimator_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "tm_pro-tmp_spriteanimator")]
-impl<__T: ITMP_SpriteAnimator> ITMP_SpriteAnimatorMethods for __T {}
+impl < __T : ITMP_SpriteAnimator > ITMP_SpriteAnimatorMethods for __T { }
+
+#[cfg(feature = "tm_pro-tmp_spriteanimator")]
+impl TMP_SpriteAnimator { pub fn awake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TMP_SpriteAnimator_unity2_raw :: __lookup_awake :: get_method_info () } pub fn on_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TMP_SpriteAnimator_unity2_raw :: __lookup_on_enable :: get_method_info () } pub fn on_disable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TMP_SpriteAnimator_unity2_raw :: __lookup_on_disable :: get_method_info () } pub fn stop_all_animations_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TMP_SpriteAnimator_unity2_raw :: __lookup_stop_all_animations :: get_method_info () } pub fn do_sprite_animation_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TMP_SpriteAnimator_unity2_raw :: __lookup_do_sprite_animation :: get_method_info () } pub fn do_sprite_animation_internal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TMP_SpriteAnimator_unity2_raw :: __lookup_do_sprite_animation_internal :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TMP_SpriteAnimator_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "tm_pro-tmp_spriteanimator")]
 impl TMP_SpriteAnimator {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TMP_SpriteAnimator),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITMP_SpriteAnimatorMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TMP_SpriteAnimator) , :: core :: stringify ! (new) ,)) ; < Self as ITMP_SpriteAnimatorMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "tm_pro-tmp_spriteanimator")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{ITMP_SpriteAnimator, ITMP_SpriteAnimatorMethods, TMP_SpriteAnimator};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        system::object::IObject,
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::TMP_SpriteAnimator;
+    pub use super::ITMP_SpriteAnimator;
+    pub use super::ITMP_SpriteAnimatorMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

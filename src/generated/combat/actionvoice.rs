@@ -2,192 +2,53 @@
 
 #[cfg(feature = "combat-actionvoice-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        combat::{
-            actionbase::{ActionBase, IActionBase},
-            state::{IState, State},
-        },
-        system::object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/actionvoice/ActionVoice.md"))]
-    #[::unity2::class(namespace = "Combat", name = "ActionVoice")]
-    #[parent(crate::combat::actionbase::ActionBase)]
-    pub struct ActionVoice {
-        #[offset(40)]
-        #[rename(name = "m_Name")]
-        pub m_name: ::unity2::Il2CppString,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: combat :: actionbase :: { ActionBase , IActionBase }
+ ;
+ use crate :: combat :: state :: { IState , State }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/actionvoice/ActionVoice.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "ActionVoice")] # [parent (crate :: combat :: actionbase :: ActionBase)] pub struct ActionVoice {
+# [offset (40)] # [rename (name = "m_Name")] pub m_name : :: unity2 :: Il2CppString ,
+}
+
 }
 
 #[cfg(feature = "combat-actionvoice-types")]
 pub use __types::*;
 
 #[cfg(feature = "combat-actionvoice")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ActionVoice_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ActionVoice as ::unity2::ClassIdentity>::class(),
-                "get_Name",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ActionVoice as ::unity2::ClassIdentity>::NAME,
-                        "get_Name",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_name(this: ActionVoice, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(ActionVoice, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::combat::character::Character as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<ActionVoice as ::unity2::ClassIdentity>::class(), ".ctor", 2, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ActionVoice as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: ActionVoice,
-        chr: crate::combat::character::Character,
-        name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(ActionVoice, crate::combat::character::Character, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, chr, name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_enter {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<ActionVoice as ::unity2::ClassIdentity>::class(), "OnEnter", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ActionVoice as ::unity2::ClassIdentity>::NAME,
-                        "OnEnter",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_enter(this: ActionVoice, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ActionVoice, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_enter::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ActionVoice_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ActionVoice as :: unity2 :: ClassIdentity > :: class () , "get_Name" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ActionVoice as :: unity2 :: ClassIdentity > :: NAME , "get_Name" , e) , } } } pub unsafe fn get_name (this : ActionVoice , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (ActionVoice , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_name :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: character :: Character as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ActionVoice as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ActionVoice as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : ActionVoice , chr : crate :: combat :: character :: Character , name : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ActionVoice , crate :: combat :: character :: Character , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , chr , name , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_enter { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ActionVoice as :: unity2 :: ClassIdentity > :: class () , "OnEnter" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ActionVoice as :: unity2 :: ClassIdentity > :: NAME , "OnEnter" , e) , } } } pub unsafe fn on_enter (this : ActionVoice , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ActionVoice , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_enter :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "combat-actionvoice")]
-pub trait IActionVoiceMethods: IActionVoice {
-    #[doc = "`get_Name()` overload"]
-    fn get_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <ActionVoice as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ActionVoice_unity2_raw::get_name(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor(crate::combat::character::Character, ::unity2::Il2CppString)` overload"]
-    fn ctor(
-        self,
-        chr: impl ::core::convert::Into<crate::combat::character::Character>,
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
-        unsafe {
-            let __receiver = <ActionVoice as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ActionVoice_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(chr),
-                ::core::convert::Into::into(name),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`OnEnter()` overload"]
-    fn on_enter(self) -> () {
-        unsafe {
-            let __receiver = <ActionVoice as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ActionVoice_unity2_raw::on_enter(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IActionVoiceMethods : IActionVoice { # [doc = "`get_Name()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ActionVoice as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ActionVoice_unity2_raw :: get_name (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor(crate::combat::character::Character, ::unity2::Il2CppString)` overload"] fn ctor (self , chr : impl :: core :: convert :: Into < crate :: combat :: character :: Character > , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < ActionVoice as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ActionVoice_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (chr) , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } # [doc = "`OnEnter()` overload"] fn on_enter (self ,) -> () { unsafe { let __receiver = < ActionVoice as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ActionVoice_unity2_raw :: on_enter (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "combat-actionvoice")]
-impl<__T: IActionVoice> IActionVoiceMethods for __T {}
+impl < __T : IActionVoice > IActionVoiceMethods for __T { }
+
+#[cfg(feature = "combat-actionvoice")]
+impl ActionVoice { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ActionVoice_unity2_raw :: __lookup_get_name :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ActionVoice_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn on_enter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ActionVoice_unity2_raw :: __lookup_on_enter :: get_method_info () } }
 
 #[cfg(feature = "combat-actionvoice")]
 impl ActionVoice {
-    #[doc = "`.ctor(crate::combat::character::Character, ::unity2::Il2CppString)` — overload selector"]
-    pub fn new(chr: crate::combat::character::Character, name: ::unity2::Il2CppString) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(ActionVoice), ::core::stringify!(new),));
-        <Self as IActionVoiceMethods>::ctor(this, chr, name);
-        this
-    }
+# [doc = "`.ctor(crate::combat::character::Character, ::unity2::Il2CppString)` — overload selector"] pub fn new (chr : crate :: combat :: character :: Character , name : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ActionVoice) , :: core :: stringify ! (new) ,)) ; < Self as IActionVoiceMethods > :: ctor (this , chr , name) ; this }
 }
 
 #[cfg(feature = "combat-actionvoice")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{ActionVoice, IActionVoice, IActionVoiceMethods};
-    #[cfg(feature = "combat-actionbase")]
-    pub use crate::combat::actionbase::IActionBaseMethods;
-    #[cfg(feature = "combat-state")]
-    pub use crate::combat::state::IStateMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::{
-        combat::{actionbase::IActionBase, state::IState},
-        system::object::IObject,
-    };
+    pub use super::ActionVoice;
+    pub use super::IActionVoice;
+    pub use super::IActionVoiceMethods;
+    pub use crate::combat::actionbase::IActionBase;
+    pub use crate::combat::state::IState;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "combat-actionbase")] pub use crate::combat::actionbase::IActionBaseMethods;
+    #[cfg(feature = "combat-state")] pub use crate::combat::state::IStateMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

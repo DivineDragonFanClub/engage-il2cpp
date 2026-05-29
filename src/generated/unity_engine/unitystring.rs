@@ -2,86 +2,34 @@
 
 #[cfg(feature = "unity_engine-unitystring-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/unitystring/UnityString.md"))]
-    #[::unity2::class(namespace = "UnityEngine", name = "UnityString")]
-    #[parent(crate::system::object::Object)]
-    pub struct UnityString {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/unitystring/UnityString.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "UnityString")] # [parent (crate :: system :: object :: Object)] pub struct UnityString {}
+
 }
 
 #[cfg(feature = "unity_engine-unitystring-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-unitystring")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __UnityString_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_format {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <::unity2::Array<crate::system::object::Object> as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<UnityString as ::unity2::ClassIdentity>::class(), "Format", 2, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnityString as ::unity2::ClassIdentity>::NAME,
-                        "Format",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn format(
-        fmt: ::unity2::Il2CppString,
-        args: ::unity2::Array<crate::system::object::Object>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            ::unity2::Array<crate::system::object::Object>,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(__lookup_format::get_method_info().method_ptr);
-        inner(fmt, args, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __UnityString_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_format { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: system :: object :: Object > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnityString as :: unity2 :: ClassIdentity > :: class () , "Format" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnityString as :: unity2 :: ClassIdentity > :: NAME , "Format" , e) , } } } pub unsafe fn format (fmt : :: unity2 :: Il2CppString , args : :: unity2 :: Array < crate :: system :: object :: Object > , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: Array < crate :: system :: object :: Object > , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_format :: get_method_info () . method_ptr ,) ; inner (fmt , args , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-unitystring")]
-impl UnityString {
-    #[doc = "`Format(::unity2::Il2CppString, ::unity2::Array<crate::system::object::Object>)` overload"]
-    pub fn format(
-        fmt: impl ::core::convert::Into<::unity2::Il2CppString>,
-        args: impl ::core::convert::Into<::unity2::Array<crate::system::object::Object>>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __UnityString_unity2_raw::format(
-                ::core::convert::Into::into(fmt),
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+impl UnityString { # [doc = "`Format(::unity2::Il2CppString, ::unity2::Array<crate::system::object::Object>)` overload"] pub fn format (fmt : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , args : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: system :: object :: Object > >) -> :: unity2 :: Il2CppString { unsafe { __UnityString_unity2_raw :: format (:: core :: convert :: Into :: into (fmt) , :: core :: convert :: Into :: into (args) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-unitystring")]
+impl UnityString { pub fn format_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnityString_unity2_raw :: __lookup_format :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-unitystring")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IUnityString, UnityString};
+    pub use super::UnityString;
+    pub use super::IUnityString;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

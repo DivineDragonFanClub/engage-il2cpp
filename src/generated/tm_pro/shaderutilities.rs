@@ -2,624 +2,103 @@
 
 #[cfg(feature = "tm_pro-shaderutilities-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/shaderutilities/ShaderUtilities.md"))]
-    #[::unity2::class(namespace = "TMPro", name = "ShaderUtilities")]
-    #[parent(crate::system::object::Object)]
-    pub struct ShaderUtilities {
-        #[static_field]
-        #[rename(name = "ID_MainTex")]
-        pub id_main_tex: i32,
-        #[static_field]
-        #[rename(name = "ID_FaceTex")]
-        pub id_face_tex: i32,
-        #[static_field]
-        #[rename(name = "ID_FaceColor")]
-        pub id_face_color: i32,
-        #[static_field]
-        #[rename(name = "ID_FaceDilate")]
-        pub id_face_dilate: i32,
-        #[static_field]
-        #[rename(name = "ID_Shininess")]
-        pub id_shininess: i32,
-        #[static_field]
-        #[rename(name = "ID_UnderlayColor")]
-        pub id_underlay_color: i32,
-        #[static_field]
-        #[rename(name = "ID_UnderlayOffsetX")]
-        pub id_underlay_offset_x: i32,
-        #[static_field]
-        #[rename(name = "ID_UnderlayOffsetY")]
-        pub id_underlay_offset_y: i32,
-        #[static_field]
-        #[rename(name = "ID_UnderlayDilate")]
-        pub id_underlay_dilate: i32,
-        #[static_field]
-        #[rename(name = "ID_UnderlaySoftness")]
-        pub id_underlay_softness: i32,
-        #[static_field]
-        #[rename(name = "ID_UnderlayOffset")]
-        pub id_underlay_offset: i32,
-        #[static_field]
-        #[rename(name = "ID_UnderlayIsoPerimeter")]
-        pub id_underlay_iso_perimeter: i32,
-        #[static_field]
-        #[rename(name = "ID_WeightNormal")]
-        pub id_weight_normal: i32,
-        #[static_field]
-        #[rename(name = "ID_WeightBold")]
-        pub id_weight_bold: i32,
-        #[static_field]
-        #[rename(name = "ID_OutlineTex")]
-        pub id_outline_tex: i32,
-        #[static_field]
-        #[rename(name = "ID_OutlineWidth")]
-        pub id_outline_width: i32,
-        #[static_field]
-        #[rename(name = "ID_OutlineSoftness")]
-        pub id_outline_softness: i32,
-        #[static_field]
-        #[rename(name = "ID_OutlineColor")]
-        pub id_outline_color: i32,
-        #[static_field]
-        #[rename(name = "ID_Outline2Color")]
-        pub id_outline2_color: i32,
-        #[static_field]
-        #[rename(name = "ID_Outline2Width")]
-        pub id_outline2_width: i32,
-        #[static_field]
-        #[rename(name = "ID_Padding")]
-        pub id_padding: i32,
-        #[static_field]
-        #[rename(name = "ID_GradientScale")]
-        pub id_gradient_scale: i32,
-        #[static_field]
-        #[rename(name = "ID_ScaleX")]
-        pub id_scale_x: i32,
-        #[static_field]
-        #[rename(name = "ID_ScaleY")]
-        pub id_scale_y: i32,
-        #[static_field]
-        #[rename(name = "ID_PerspectiveFilter")]
-        pub id_perspective_filter: i32,
-        #[static_field]
-        #[rename(name = "ID_Sharpness")]
-        pub id_sharpness: i32,
-        #[static_field]
-        #[rename(name = "ID_TextureWidth")]
-        pub id_texture_width: i32,
-        #[static_field]
-        #[rename(name = "ID_TextureHeight")]
-        pub id_texture_height: i32,
-        #[static_field]
-        #[rename(name = "ID_BevelAmount")]
-        pub id_bevel_amount: i32,
-        #[static_field]
-        #[rename(name = "ID_GlowColor")]
-        pub id_glow_color: i32,
-        #[static_field]
-        #[rename(name = "ID_GlowOffset")]
-        pub id_glow_offset: i32,
-        #[static_field]
-        #[rename(name = "ID_GlowPower")]
-        pub id_glow_power: i32,
-        #[static_field]
-        #[rename(name = "ID_GlowOuter")]
-        pub id_glow_outer: i32,
-        #[static_field]
-        #[rename(name = "ID_GlowInner")]
-        pub id_glow_inner: i32,
-        #[static_field]
-        #[rename(name = "ID_LightAngle")]
-        pub id_light_angle: i32,
-        #[static_field]
-        #[rename(name = "ID_EnvMap")]
-        pub id_env_map: i32,
-        #[static_field]
-        #[rename(name = "ID_EnvMatrix")]
-        pub id_env_matrix: i32,
-        #[static_field]
-        #[rename(name = "ID_EnvMatrixRotation")]
-        pub id_env_matrix_rotation: i32,
-        #[static_field]
-        #[rename(name = "ID_MaskCoord")]
-        pub id_mask_coord: i32,
-        #[static_field]
-        #[rename(name = "ID_ClipRect")]
-        pub id_clip_rect: i32,
-        #[static_field]
-        #[rename(name = "ID_MaskSoftnessX")]
-        pub id_mask_softness_x: i32,
-        #[static_field]
-        #[rename(name = "ID_MaskSoftnessY")]
-        pub id_mask_softness_y: i32,
-        #[static_field]
-        #[rename(name = "ID_VertexOffsetX")]
-        pub id_vertex_offset_x: i32,
-        #[static_field]
-        #[rename(name = "ID_VertexOffsetY")]
-        pub id_vertex_offset_y: i32,
-        #[static_field]
-        #[rename(name = "ID_UseClipRect")]
-        pub id_use_clip_rect: i32,
-        #[static_field]
-        #[rename(name = "ID_StencilID")]
-        pub id_stencil_id: i32,
-        #[static_field]
-        #[rename(name = "ID_StencilOp")]
-        pub id_stencil_op: i32,
-        #[static_field]
-        #[rename(name = "ID_StencilComp")]
-        pub id_stencil_comp: i32,
-        #[static_field]
-        #[rename(name = "ID_StencilReadMask")]
-        pub id_stencil_read_mask: i32,
-        #[static_field]
-        #[rename(name = "ID_StencilWriteMask")]
-        pub id_stencil_write_mask: i32,
-        #[static_field]
-        #[rename(name = "ID_ShaderFlags")]
-        pub id_shader_flags: i32,
-        #[static_field]
-        #[rename(name = "ID_ScaleRatio_A")]
-        pub id_scale_ratio_a: i32,
-        #[static_field]
-        #[rename(name = "ID_ScaleRatio_B")]
-        pub id_scale_ratio_b: i32,
-        #[static_field]
-        #[rename(name = "ID_ScaleRatio_C")]
-        pub id_scale_ratio_c: i32,
-        #[static_field]
-        #[rename(name = "Keyword_Bevel")]
-        pub keyword_bevel: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "Keyword_Glow")]
-        pub keyword_glow: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "Keyword_Underlay")]
-        pub keyword_underlay: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "Keyword_Ratios")]
-        pub keyword_ratios: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "Keyword_MASK_SOFT")]
-        pub keyword_mask_soft: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "Keyword_MASK_HARD")]
-        pub keyword_mask_hard: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "Keyword_MASK_TEX")]
-        pub keyword_mask_tex: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "Keyword_Outline")]
-        pub keyword_outline: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "ShaderTag_ZTestMode")]
-        pub shader_tag_z_test_mode: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "ShaderTag_CullMode")]
-        pub shader_tag_cull_mode: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "m_clamp")]
-        pub m_clamp: f32,
-        #[static_field]
-        #[rename(name = "isInitialized")]
-        pub is_initialized: bool,
-        #[static_field]
-        #[rename(name = "k_ShaderRef_MobileSDF")]
-        pub k_shader_ref_mobile_sdf: crate::unity_engine::shader::Shader,
-        #[static_field]
-        #[rename(name = "k_ShaderRef_MobileBitmap")]
-        pub k_shader_ref_mobile_bitmap: crate::unity_engine::shader::Shader,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/shaderutilities/ShaderUtilities.md"))] # [:: unity2 :: class (namespace = "TMPro" , name = "ShaderUtilities")] # [parent (crate :: system :: object :: Object)] pub struct ShaderUtilities {
+# [static_field] # [rename (name = "ID_MainTex")] pub id_main_tex : i32 ,
+# [static_field] # [rename (name = "ID_FaceTex")] pub id_face_tex : i32 ,
+# [static_field] # [rename (name = "ID_FaceColor")] pub id_face_color : i32 ,
+# [static_field] # [rename (name = "ID_FaceDilate")] pub id_face_dilate : i32 ,
+# [static_field] # [rename (name = "ID_Shininess")] pub id_shininess : i32 ,
+# [static_field] # [rename (name = "ID_UnderlayColor")] pub id_underlay_color : i32 ,
+# [static_field] # [rename (name = "ID_UnderlayOffsetX")] pub id_underlay_offset_x : i32 ,
+# [static_field] # [rename (name = "ID_UnderlayOffsetY")] pub id_underlay_offset_y : i32 ,
+# [static_field] # [rename (name = "ID_UnderlayDilate")] pub id_underlay_dilate : i32 ,
+# [static_field] # [rename (name = "ID_UnderlaySoftness")] pub id_underlay_softness : i32 ,
+# [static_field] # [rename (name = "ID_UnderlayOffset")] pub id_underlay_offset : i32 ,
+# [static_field] # [rename (name = "ID_UnderlayIsoPerimeter")] pub id_underlay_iso_perimeter : i32 ,
+# [static_field] # [rename (name = "ID_WeightNormal")] pub id_weight_normal : i32 ,
+# [static_field] # [rename (name = "ID_WeightBold")] pub id_weight_bold : i32 ,
+# [static_field] # [rename (name = "ID_OutlineTex")] pub id_outline_tex : i32 ,
+# [static_field] # [rename (name = "ID_OutlineWidth")] pub id_outline_width : i32 ,
+# [static_field] # [rename (name = "ID_OutlineSoftness")] pub id_outline_softness : i32 ,
+# [static_field] # [rename (name = "ID_OutlineColor")] pub id_outline_color : i32 ,
+# [static_field] # [rename (name = "ID_Outline2Color")] pub id_outline2_color : i32 ,
+# [static_field] # [rename (name = "ID_Outline2Width")] pub id_outline2_width : i32 ,
+# [static_field] # [rename (name = "ID_Padding")] pub id_padding : i32 ,
+# [static_field] # [rename (name = "ID_GradientScale")] pub id_gradient_scale : i32 ,
+# [static_field] # [rename (name = "ID_ScaleX")] pub id_scale_x : i32 ,
+# [static_field] # [rename (name = "ID_ScaleY")] pub id_scale_y : i32 ,
+# [static_field] # [rename (name = "ID_PerspectiveFilter")] pub id_perspective_filter : i32 ,
+# [static_field] # [rename (name = "ID_Sharpness")] pub id_sharpness : i32 ,
+# [static_field] # [rename (name = "ID_TextureWidth")] pub id_texture_width : i32 ,
+# [static_field] # [rename (name = "ID_TextureHeight")] pub id_texture_height : i32 ,
+# [static_field] # [rename (name = "ID_BevelAmount")] pub id_bevel_amount : i32 ,
+# [static_field] # [rename (name = "ID_GlowColor")] pub id_glow_color : i32 ,
+# [static_field] # [rename (name = "ID_GlowOffset")] pub id_glow_offset : i32 ,
+# [static_field] # [rename (name = "ID_GlowPower")] pub id_glow_power : i32 ,
+# [static_field] # [rename (name = "ID_GlowOuter")] pub id_glow_outer : i32 ,
+# [static_field] # [rename (name = "ID_GlowInner")] pub id_glow_inner : i32 ,
+# [static_field] # [rename (name = "ID_LightAngle")] pub id_light_angle : i32 ,
+# [static_field] # [rename (name = "ID_EnvMap")] pub id_env_map : i32 ,
+# [static_field] # [rename (name = "ID_EnvMatrix")] pub id_env_matrix : i32 ,
+# [static_field] # [rename (name = "ID_EnvMatrixRotation")] pub id_env_matrix_rotation : i32 ,
+# [static_field] # [rename (name = "ID_MaskCoord")] pub id_mask_coord : i32 ,
+# [static_field] # [rename (name = "ID_ClipRect")] pub id_clip_rect : i32 ,
+# [static_field] # [rename (name = "ID_MaskSoftnessX")] pub id_mask_softness_x : i32 ,
+# [static_field] # [rename (name = "ID_MaskSoftnessY")] pub id_mask_softness_y : i32 ,
+# [static_field] # [rename (name = "ID_VertexOffsetX")] pub id_vertex_offset_x : i32 ,
+# [static_field] # [rename (name = "ID_VertexOffsetY")] pub id_vertex_offset_y : i32 ,
+# [static_field] # [rename (name = "ID_UseClipRect")] pub id_use_clip_rect : i32 ,
+# [static_field] # [rename (name = "ID_StencilID")] pub id_stencil_id : i32 ,
+# [static_field] # [rename (name = "ID_StencilOp")] pub id_stencil_op : i32 ,
+# [static_field] # [rename (name = "ID_StencilComp")] pub id_stencil_comp : i32 ,
+# [static_field] # [rename (name = "ID_StencilReadMask")] pub id_stencil_read_mask : i32 ,
+# [static_field] # [rename (name = "ID_StencilWriteMask")] pub id_stencil_write_mask : i32 ,
+# [static_field] # [rename (name = "ID_ShaderFlags")] pub id_shader_flags : i32 ,
+# [static_field] # [rename (name = "ID_ScaleRatio_A")] pub id_scale_ratio_a : i32 ,
+# [static_field] # [rename (name = "ID_ScaleRatio_B")] pub id_scale_ratio_b : i32 ,
+# [static_field] # [rename (name = "ID_ScaleRatio_C")] pub id_scale_ratio_c : i32 ,
+# [static_field] # [rename (name = "Keyword_Bevel")] pub keyword_bevel : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "Keyword_Glow")] pub keyword_glow : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "Keyword_Underlay")] pub keyword_underlay : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "Keyword_Ratios")] pub keyword_ratios : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "Keyword_MASK_SOFT")] pub keyword_mask_soft : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "Keyword_MASK_HARD")] pub keyword_mask_hard : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "Keyword_MASK_TEX")] pub keyword_mask_tex : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "Keyword_Outline")] pub keyword_outline : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "ShaderTag_ZTestMode")] pub shader_tag_z_test_mode : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "ShaderTag_CullMode")] pub shader_tag_cull_mode : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "m_clamp")] pub m_clamp : f32 ,
+# [static_field] # [rename (name = "isInitialized")] pub is_initialized : bool ,
+# [static_field] # [rename (name = "k_ShaderRef_MobileSDF")] pub k_shader_ref_mobile_sdf : crate :: unity_engine :: shader :: Shader ,
+# [static_field] # [rename (name = "k_ShaderRef_MobileBitmap")] pub k_shader_ref_mobile_bitmap : crate :: unity_engine :: shader :: Shader ,
+}
+
 }
 
 #[cfg(feature = "tm_pro-shaderutilities-types")]
 pub use __types::*;
 
 #[cfg(feature = "tm_pro-shaderutilities")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ShaderUtilities_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_shader_ref_mobile_sdf {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ShaderUtilities as ::unity2::ClassIdentity>::class(),
-                "get_ShaderRef_MobileSDF",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ShaderUtilities as ::unity2::ClassIdentity>::NAME,
-                        "get_ShaderRef_MobileSDF",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_shader_ref_mobile_sdf(__unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::shader::Shader {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::unity_engine::shader::Shader =
-            ::core::mem::transmute(__lookup_get_shader_ref_mobile_sdf::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_shader_ref_mobile_bitmap {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ShaderUtilities as ::unity2::ClassIdentity>::class(),
-                "get_ShaderRef_MobileBitmap",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ShaderUtilities as ::unity2::ClassIdentity>::NAME,
-                        "get_ShaderRef_MobileBitmap",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_shader_ref_mobile_bitmap(__unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::shader::Shader {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::unity_engine::shader::Shader =
-            ::core::mem::transmute(__lookup_get_shader_ref_mobile_bitmap::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ShaderUtilities as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ShaderUtilities as ::unity2::ClassIdentity>::NAME,
-                        ".cctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_shader_property_i_ds {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ShaderUtilities as ::unity2::ClassIdentity>::class(),
-                "GetShaderPropertyIDs",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ShaderUtilities as ::unity2::ClassIdentity>::NAME,
-                        "GetShaderPropertyIDs",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_shader_property_i_ds(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_get_shader_property_i_ds::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update_shader_ratios {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::material::Material as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ShaderUtilities as ::unity2::ClassIdentity>::class(),
-                "UpdateShaderRatios",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ShaderUtilities as ::unity2::ClassIdentity>::NAME,
-                        "UpdateShaderRatios",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update_shader_ratios(mat: crate::unity_engine::material::Material, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(crate::unity_engine::material::Material, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update_shader_ratios::get_method_info().method_ptr);
-        inner(mat, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_font_extent {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::material::Material as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ShaderUtilities as ::unity2::ClassIdentity>::class(),
-                "GetFontExtent",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ShaderUtilities as ::unity2::ClassIdentity>::NAME,
-                        "GetFontExtent",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_font_extent(
-        material: crate::unity_engine::material::Material,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::vector4::Vector4 {
-        let inner: extern "C" fn(crate::unity_engine::material::Material, ::unity2::OptionalMethod) -> crate::unity_engine::vector4::Vector4 =
-            ::core::mem::transmute(__lookup_get_font_extent::get_method_info().method_ptr);
-        inner(material, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_masking_enabled {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::material::Material as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ShaderUtilities as ::unity2::ClassIdentity>::class(),
-                "IsMaskingEnabled",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ShaderUtilities as ::unity2::ClassIdentity>::NAME,
-                        "IsMaskingEnabled",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_masking_enabled(material: crate::unity_engine::material::Material, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(crate::unity_engine::material::Material, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_masking_enabled::get_method_info().method_ptr);
-        inner(material, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_padding {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::material::Material as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ShaderUtilities as ::unity2::ClassIdentity>::class(),
-                "GetPadding",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ShaderUtilities as ::unity2::ClassIdentity>::NAME,
-                        "GetPadding",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_padding(
-        material: crate::unity_engine::material::Material,
-        enable_extra_padding: bool,
-        is_bold: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
-        let inner: extern "C" fn(crate::unity_engine::material::Material, bool, bool, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_get_padding::get_method_info().method_ptr);
-        inner(material, enable_extra_padding, is_bold, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_padding_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Array<crate::unity_engine::material::Material> as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ShaderUtilities as ::unity2::ClassIdentity>::class(),
-                "GetPadding",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ShaderUtilities as ::unity2::ClassIdentity>::NAME,
-                        "GetPadding",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_padding_2(
-        materials: ::unity2::Array<crate::unity_engine::material::Material>,
-        enable_extra_padding: bool,
-        is_bold: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
-        let inner: extern "C" fn(::unity2::Array<crate::unity_engine::material::Material>, bool, bool, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_get_padding_2::get_method_info().method_ptr);
-        inner(materials, enable_extra_padding, is_bold, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ShaderUtilities_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_shader_ref_mobile_sdf { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ShaderUtilities as :: unity2 :: ClassIdentity > :: class () , "get_ShaderRef_MobileSDF" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ShaderUtilities as :: unity2 :: ClassIdentity > :: NAME , "get_ShaderRef_MobileSDF" , e) , } } } pub unsafe fn get_shader_ref_mobile_sdf (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: shader :: Shader { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: shader :: Shader = :: core :: mem :: transmute (__lookup_get_shader_ref_mobile_sdf :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_shader_ref_mobile_bitmap { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ShaderUtilities as :: unity2 :: ClassIdentity > :: class () , "get_ShaderRef_MobileBitmap" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ShaderUtilities as :: unity2 :: ClassIdentity > :: NAME , "get_ShaderRef_MobileBitmap" , e) , } } } pub unsafe fn get_shader_ref_mobile_bitmap (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: shader :: Shader { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: shader :: Shader = :: core :: mem :: transmute (__lookup_get_shader_ref_mobile_bitmap :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ShaderUtilities as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ShaderUtilities as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_shader_property_i_ds { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ShaderUtilities as :: unity2 :: ClassIdentity > :: class () , "GetShaderPropertyIDs" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ShaderUtilities as :: unity2 :: ClassIdentity > :: NAME , "GetShaderPropertyIDs" , e) , } } } pub unsafe fn get_shader_property_i_ds (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_get_shader_property_i_ds :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update_shader_ratios { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: material :: Material as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ShaderUtilities as :: unity2 :: ClassIdentity > :: class () , "UpdateShaderRatios" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ShaderUtilities as :: unity2 :: ClassIdentity > :: NAME , "UpdateShaderRatios" , e) , } } } pub unsafe fn update_shader_ratios (mat : crate :: unity_engine :: material :: Material , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: unity_engine :: material :: Material , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update_shader_ratios :: get_method_info () . method_ptr ,) ; inner (mat , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_font_extent { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: material :: Material as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ShaderUtilities as :: unity2 :: ClassIdentity > :: class () , "GetFontExtent" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ShaderUtilities as :: unity2 :: ClassIdentity > :: NAME , "GetFontExtent" , e) , } } } pub unsafe fn get_font_extent (material : crate :: unity_engine :: material :: Material , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector4 :: Vector4 { let inner : extern "C" fn (crate :: unity_engine :: material :: Material , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector4 :: Vector4 = :: core :: mem :: transmute (__lookup_get_font_extent :: get_method_info () . method_ptr ,) ; inner (material , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_masking_enabled { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: material :: Material as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ShaderUtilities as :: unity2 :: ClassIdentity > :: class () , "IsMaskingEnabled" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ShaderUtilities as :: unity2 :: ClassIdentity > :: NAME , "IsMaskingEnabled" , e) , } } } pub unsafe fn is_masking_enabled (material : crate :: unity_engine :: material :: Material , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (crate :: unity_engine :: material :: Material , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_masking_enabled :: get_method_info () . method_ptr ,) ; inner (material , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_padding { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: material :: Material as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ShaderUtilities as :: unity2 :: ClassIdentity > :: class () , "GetPadding" , 3 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ShaderUtilities as :: unity2 :: ClassIdentity > :: NAME , "GetPadding" , e) , } } } pub unsafe fn get_padding (material : crate :: unity_engine :: material :: Material , enable_extra_padding : bool , is_bold : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (crate :: unity_engine :: material :: Material , bool , bool , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_get_padding :: get_method_info () . method_ptr ,) ; inner (material , enable_extra_padding , is_bold , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_padding_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: unity_engine :: material :: Material > as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ShaderUtilities as :: unity2 :: ClassIdentity > :: class () , "GetPadding" , 3 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ShaderUtilities as :: unity2 :: ClassIdentity > :: NAME , "GetPadding" , e) , } } } pub unsafe fn get_padding_2 (materials : :: unity2 :: Array < crate :: unity_engine :: material :: Material > , enable_extra_padding : bool , is_bold : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (:: unity2 :: Array < crate :: unity_engine :: material :: Material > , bool , bool , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_get_padding_2 :: get_method_info () . method_ptr ,) ; inner (materials , enable_extra_padding , is_bold , __unity2_method_info) } }
 
 #[cfg(feature = "tm_pro-shaderutilities")]
-impl ShaderUtilities {
-    #[doc = "`get_ShaderRef_MobileSDF()` overload"]
-    pub fn get_shader_ref_mobile_sdf() -> crate::unity_engine::shader::Shader {
-        unsafe { __ShaderUtilities_unity2_raw::get_shader_ref_mobile_sdf(::core::option::Option::None) }
-    }
+impl ShaderUtilities { # [doc = "`get_ShaderRef_MobileSDF()` overload"] pub fn get_shader_ref_mobile_sdf () -> crate :: unity_engine :: shader :: Shader { unsafe { __ShaderUtilities_unity2_raw :: get_shader_ref_mobile_sdf (:: core :: option :: Option :: None) } } # [doc = "`get_ShaderRef_MobileBitmap()` overload"] pub fn get_shader_ref_mobile_bitmap () -> crate :: unity_engine :: shader :: Shader { unsafe { __ShaderUtilities_unity2_raw :: get_shader_ref_mobile_bitmap (:: core :: option :: Option :: None) } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { __ShaderUtilities_unity2_raw :: cctor (:: core :: option :: Option :: None) } } # [doc = "`GetShaderPropertyIDs()` overload"] pub fn get_shader_property_i_ds () -> () { unsafe { __ShaderUtilities_unity2_raw :: get_shader_property_i_ds (:: core :: option :: Option :: None) } } # [doc = "`UpdateShaderRatios(crate::unity_engine::material::Material)` overload"] pub fn update_shader_ratios (mat : impl :: core :: convert :: Into < crate :: unity_engine :: material :: Material >) -> () { unsafe { __ShaderUtilities_unity2_raw :: update_shader_ratios (:: core :: convert :: Into :: into (mat) , :: core :: option :: Option :: None) } } # [doc = "`GetFontExtent(crate::unity_engine::material::Material)` overload"] pub fn get_font_extent (material : impl :: core :: convert :: Into < crate :: unity_engine :: material :: Material >) -> crate :: unity_engine :: vector4 :: Vector4 { unsafe { __ShaderUtilities_unity2_raw :: get_font_extent (:: core :: convert :: Into :: into (material) , :: core :: option :: Option :: None) } } # [doc = "`IsMaskingEnabled(crate::unity_engine::material::Material)` overload"] pub fn is_masking_enabled (material : impl :: core :: convert :: Into < crate :: unity_engine :: material :: Material >) -> bool { unsafe { __ShaderUtilities_unity2_raw :: is_masking_enabled (:: core :: convert :: Into :: into (material) , :: core :: option :: Option :: None) } } # [doc = "`GetPadding(crate::unity_engine::material::Material, bool, bool)` overload"] pub fn get_padding (material : impl :: core :: convert :: Into < crate :: unity_engine :: material :: Material > , enable_extra_padding : impl :: core :: convert :: Into < bool > , is_bold : impl :: core :: convert :: Into < bool >) -> f32 { unsafe { __ShaderUtilities_unity2_raw :: get_padding (:: core :: convert :: Into :: into (material) , :: core :: convert :: Into :: into (enable_extra_padding) , :: core :: convert :: Into :: into (is_bold) , :: core :: option :: Option :: None) } } # [doc = "`GetPadding(::unity2::Array<crate::unity_engine::material::Material>, bool, bool)` overload"] pub fn get_padding_2 (materials : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: unity_engine :: material :: Material > > , enable_extra_padding : impl :: core :: convert :: Into < bool > , is_bold : impl :: core :: convert :: Into < bool >) -> f32 { unsafe { __ShaderUtilities_unity2_raw :: get_padding_2 (:: core :: convert :: Into :: into (materials) , :: core :: convert :: Into :: into (enable_extra_padding) , :: core :: convert :: Into :: into (is_bold) , :: core :: option :: Option :: None) } } }
 
-    #[doc = "`get_ShaderRef_MobileBitmap()` overload"]
-    pub fn get_shader_ref_mobile_bitmap() -> crate::unity_engine::shader::Shader {
-        unsafe { __ShaderUtilities_unity2_raw::get_shader_ref_mobile_bitmap(::core::option::Option::None) }
-    }
-
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __ShaderUtilities_unity2_raw::cctor(::core::option::Option::None) }
-    }
-
-    #[doc = "`GetShaderPropertyIDs()` overload"]
-    pub fn get_shader_property_i_ds() -> () {
-        unsafe { __ShaderUtilities_unity2_raw::get_shader_property_i_ds(::core::option::Option::None) }
-    }
-
-    #[doc = "`UpdateShaderRatios(crate::unity_engine::material::Material)` overload"]
-    pub fn update_shader_ratios(mat: impl ::core::convert::Into<crate::unity_engine::material::Material>) -> () {
-        unsafe { __ShaderUtilities_unity2_raw::update_shader_ratios(::core::convert::Into::into(mat), ::core::option::Option::None) }
-    }
-
-    #[doc = "`GetFontExtent(crate::unity_engine::material::Material)` overload"]
-    pub fn get_font_extent(material: impl ::core::convert::Into<crate::unity_engine::material::Material>) -> crate::unity_engine::vector4::Vector4 {
-        unsafe { __ShaderUtilities_unity2_raw::get_font_extent(::core::convert::Into::into(material), ::core::option::Option::None) }
-    }
-
-    #[doc = "`IsMaskingEnabled(crate::unity_engine::material::Material)` overload"]
-    pub fn is_masking_enabled(material: impl ::core::convert::Into<crate::unity_engine::material::Material>) -> bool {
-        unsafe { __ShaderUtilities_unity2_raw::is_masking_enabled(::core::convert::Into::into(material), ::core::option::Option::None) }
-    }
-
-    #[doc = "`GetPadding(crate::unity_engine::material::Material, bool, bool)` overload"]
-    pub fn get_padding(
-        material: impl ::core::convert::Into<crate::unity_engine::material::Material>,
-        enable_extra_padding: impl ::core::convert::Into<bool>,
-        is_bold: impl ::core::convert::Into<bool>,
-    ) -> f32 {
-        unsafe {
-            __ShaderUtilities_unity2_raw::get_padding(
-                ::core::convert::Into::into(material),
-                ::core::convert::Into::into(enable_extra_padding),
-                ::core::convert::Into::into(is_bold),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`GetPadding(::unity2::Array<crate::unity_engine::material::Material>, bool, bool)` overload"]
-    pub fn get_padding_2(
-        materials: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::material::Material>>,
-        enable_extra_padding: impl ::core::convert::Into<bool>,
-        is_bold: impl ::core::convert::Into<bool>,
-    ) -> f32 {
-        unsafe {
-            __ShaderUtilities_unity2_raw::get_padding_2(
-                ::core::convert::Into::into(materials),
-                ::core::convert::Into::into(enable_extra_padding),
-                ::core::convert::Into::into(is_bold),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+#[cfg(feature = "tm_pro-shaderutilities")]
+impl ShaderUtilities { pub fn get_shader_ref_mobile_sdf_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ShaderUtilities_unity2_raw :: __lookup_get_shader_ref_mobile_sdf :: get_method_info () } pub fn get_shader_ref_mobile_bitmap_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ShaderUtilities_unity2_raw :: __lookup_get_shader_ref_mobile_bitmap :: get_method_info () } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ShaderUtilities_unity2_raw :: __lookup_cctor :: get_method_info () } pub fn get_shader_property_i_ds_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ShaderUtilities_unity2_raw :: __lookup_get_shader_property_i_ds :: get_method_info () } pub fn update_shader_ratios_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ShaderUtilities_unity2_raw :: __lookup_update_shader_ratios :: get_method_info () } pub fn get_font_extent_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ShaderUtilities_unity2_raw :: __lookup_get_font_extent :: get_method_info () } pub fn is_masking_enabled_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ShaderUtilities_unity2_raw :: __lookup_is_masking_enabled :: get_method_info () } pub fn get_padding_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ShaderUtilities_unity2_raw :: __lookup_get_padding :: get_method_info () } pub fn get_padding_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ShaderUtilities_unity2_raw :: __lookup_get_padding_2 :: get_method_info () } }
 
 #[cfg(feature = "tm_pro-shaderutilities")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IShaderUtilities, ShaderUtilities};
+    pub use super::ShaderUtilities;
+    pub use super::IShaderUtilities;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

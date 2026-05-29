@@ -2,1010 +2,173 @@
 
 #[cfg(feature = "app-unitinfoviewersetting-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::{
-            object::{IObject, Object},
-            r#enum::{Enum, IEnum},
-            valuetype::{IValueType, ValueType},
-        },
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitinfoviewersetting/UnitInfoViewerSetting.md"))]
-    #[::unity2::class(namespace = "App", name = "UnitInfoViewerSetting")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct UnitInfoViewerSetting {
-        #[offset(24)]
-        #[rename(name = "m_LeftUnit")]
-        pub m_left_unit: crate::app::unitinfoviewersetting::UnitInfoViewerSetting_UnitData,
-        #[offset(32)]
-        #[rename(name = "m_RightUnit")]
-        pub m_right_unit: crate::app::unitinfoviewersetting::UnitInfoViewerSetting_UnitData,
-        #[offset(40)]
-        #[rename(name = "m_IsCharaOnlyTransition")]
-        pub m_is_chara_only_transition: bool,
-        #[offset(44)]
-        #[rename(name = "m_Seq")]
-        pub m_seq: crate::app::unitinfoviewersetting::UnitInfoViewerSetting_Seq,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitinfoviewersetting/UnitInfoViewerSetting_Seq.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct UnitInfoViewerSetting_Seq {
-        pub value: i32,
-    }
 
-    impl ::unity2::ClassIdentity for UnitInfoViewerSetting_Seq {
-        const NAME: &'static str = "UnitInfoViewerSetting.Seq";
-        const NAMESPACE: &'static str = "App";
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitinfoviewersetting/UnitInfoViewerSetting_UnitData.md"))] # [:: unity2 :: class (namespace = "App" , name = "UnitInfoViewerSetting.UnitData")] # [parent (crate :: system :: object :: Object)] pub struct UnitInfoViewerSetting_UnitData {
+# [offset (16)] # [rename (name = "person")] pub person : :: unity2 :: Il2CppString ,
+# [offset (24)] # [rename (name = "job")] pub job : :: unity2 :: Il2CppString ,
+# [offset (32)] # [rename (name = "weapon")] pub weapon : :: unity2 :: Il2CppString ,
+# [offset (40)] # [rename (name = "force")] pub force : :: unity2 :: Il2CppString ,
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitinfoviewersetting/UnitInfoViewerSetting_Seq.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct UnitInfoViewerSetting_Seq  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for UnitInfoViewerSetting_Seq  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "UnitInfoViewerSetting.Seq";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for UnitInfoViewerSetting_Seq {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  ::unity2::IlType for UnitInfoViewerSetting_Seq  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl UnitInfoViewerSetting_Seq {
-        pub fn wait_hiding_canvas() -> Self {
-            Self { value: 0 }
-        }
+}
 
-        pub fn wait_reshowing_canvas() -> Self {
-            Self { value: 1 }
-        }
 
-        pub fn normal() -> Self {
-            Self { value: 2 }
-        }
+impl  UnitInfoViewerSetting_Seq  {
+    pub fn wait_hiding_canvas() -> Self {
+        Self { value: 0 }
+
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitinfoviewersetting/UnitInfoViewerSetting_UnitData.md"))]
-    #[::unity2::class(namespace = "App", name = "UnitInfoViewerSetting.UnitData")]
-    #[parent(crate::system::object::Object)]
-    pub struct UnitInfoViewerSetting_UnitData {
-        #[offset(16)]
-        #[rename(name = "person")]
-        pub person: ::unity2::Il2CppString,
-        #[offset(24)]
-        #[rename(name = "job")]
-        pub job: ::unity2::Il2CppString,
-        #[offset(32)]
-        #[rename(name = "weapon")]
-        pub weapon: ::unity2::Il2CppString,
-        #[offset(40)]
-        #[rename(name = "force")]
-        pub force: ::unity2::Il2CppString,
+
+    pub fn wait_reshowing_canvas() -> Self {
+        Self { value: 1 }
+
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitinfoviewersetting/UnitInfoViewerSetting_ForceList.md"))]
-    #[::unity2::class(namespace = "App", name = "UnitInfoViewerSetting.ForceList")]
-    #[parent(crate::system::object::Object)]
-    pub struct UnitInfoViewerSetting_ForceList {
-        #[static_field]
-        #[rename(name = "Types")]
-        pub types: ::unity2::Array<crate::app::force::Force_Type>,
-        #[static_field]
-        #[rename(name = "Names")]
-        pub names: ::unity2::Array<::unity2::Il2CppString>,
+
+    pub fn normal() -> Self {
+        Self { value: 2 }
+
     }
+
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitinfoviewersetting/UnitInfoViewerSetting_ForceList.md"))] # [:: unity2 :: class (namespace = "App" , name = "UnitInfoViewerSetting.ForceList")] # [parent (crate :: system :: object :: Object)] pub struct UnitInfoViewerSetting_ForceList {
+# [static_field] # [rename (name = "Types")] pub types : :: unity2 :: Array < crate :: app :: force :: Force_Type > ,
+# [static_field] # [rename (name = "Names")] pub names : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitinfoviewersetting/UnitInfoViewerSetting.md"))] # [:: unity2 :: class (namespace = "App" , name = "UnitInfoViewerSetting")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct UnitInfoViewerSetting {
+# [offset (24)] # [rename (name = "m_LeftUnit")] pub m_left_unit : crate :: app :: unitinfoviewersetting :: UnitInfoViewerSetting_UnitData ,
+# [offset (32)] # [rename (name = "m_RightUnit")] pub m_right_unit : crate :: app :: unitinfoviewersetting :: UnitInfoViewerSetting_UnitData ,
+# [offset (40)] # [rename (name = "m_IsCharaOnlyTransition")] pub m_is_chara_only_transition : bool ,
+# [offset (44)] # [rename (name = "m_Seq")] pub m_seq : crate :: app :: unitinfoviewersetting :: UnitInfoViewerSetting_Seq ,
+}
+
 }
 
 #[cfg(feature = "app-unitinfoviewersetting-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-unitinfoviewersetting")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __UnitInfoViewerSetting_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_start {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitInfoViewerSetting as ::unity2::ClassIdentity>::class(),
-                "Start",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnitInfoViewerSetting as ::unity2::ClassIdentity>::NAME,
-                        "Start",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn start(this: UnitInfoViewerSetting, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(UnitInfoViewerSetting, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_start::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_destroy {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitInfoViewerSetting as ::unity2::ClassIdentity>::class(),
-                "OnDestroy",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnitInfoViewerSetting as ::unity2::ClassIdentity>::NAME,
-                        "OnDestroy",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_destroy(this: UnitInfoViewerSetting, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(UnitInfoViewerSetting, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_destroy::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitInfoViewerSetting as ::unity2::ClassIdentity>::class(),
-                "Update",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnitInfoViewerSetting as ::unity2::ClassIdentity>::NAME,
-                        "Update",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update(this: UnitInfoViewerSetting, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(UnitInfoViewerSetting, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_unit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unitinfo::UnitInfo_Side as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitInfoViewerSetting as ::unity2::ClassIdentity>::class(),
-                "CreateUnit",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnitInfoViewerSetting as ::unity2::ClassIdentity>::NAME,
-                        "CreateUnit",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_unit(
-        this: UnitInfoViewerSetting,
-        side: crate::app::unitinfo::UnitInfo_Side,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(UnitInfoViewerSetting, crate::app::unitinfo::UnitInfo_Side, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_create_unit::get_method_info().method_ptr);
-        inner(this, side, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_person {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::unitinfoviewersetting::UnitInfoViewerSetting_UnitData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitInfoViewerSetting as ::unity2::ClassIdentity>::class(),
-                "GetPerson",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnitInfoViewerSetting as ::unity2::ClassIdentity>::NAME,
-                        "GetPerson",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_person(
-        this: UnitInfoViewerSetting,
-        unit_data: crate::app::unitinfoviewersetting::UnitInfoViewerSetting_UnitData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::persondata::PersonData {
-        let inner: extern "C" fn(
-            UnitInfoViewerSetting,
-            crate::app::unitinfoviewersetting::UnitInfoViewerSetting_UnitData,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::persondata::PersonData = ::core::mem::transmute(__lookup_get_person::get_method_info().method_ptr);
-        inner(this, unit_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_job {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::unitinfoviewersetting::UnitInfoViewerSetting_UnitData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitInfoViewerSetting as ::unity2::ClassIdentity>::class(),
-                "GetJob",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnitInfoViewerSetting as ::unity2::ClassIdentity>::NAME,
-                        "GetJob",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_job(
-        this: UnitInfoViewerSetting,
-        unit_data: crate::app::unitinfoviewersetting::UnitInfoViewerSetting_UnitData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::jobdata::JobData {
-        let inner: extern "C" fn(
-            UnitInfoViewerSetting,
-            crate::app::unitinfoviewersetting::UnitInfoViewerSetting_UnitData,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::jobdata::JobData = ::core::mem::transmute(__lookup_get_job::get_method_info().method_ptr);
-        inner(this, unit_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_weapon {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::unitinfoviewersetting::UnitInfoViewerSetting_UnitData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitInfoViewerSetting as ::unity2::ClassIdentity>::class(),
-                "GetWeapon",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnitInfoViewerSetting as ::unity2::ClassIdentity>::NAME,
-                        "GetWeapon",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_weapon(
-        this: UnitInfoViewerSetting,
-        unit_data: crate::app::unitinfoviewersetting::UnitInfoViewerSetting_UnitData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::itemdata::ItemData {
-        let inner: extern "C" fn(
-            UnitInfoViewerSetting,
-            crate::app::unitinfoviewersetting::UnitInfoViewerSetting_UnitData,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::itemdata::ItemData = ::core::mem::transmute(__lookup_get_weapon::get_method_info().method_ptr);
-        inner(this, unit_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_hiding_canvs {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitInfoViewerSetting as ::unity2::ClassIdentity>::class(),
-                "IsHidingCanvs",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnitInfoViewerSetting as ::unity2::ClassIdentity>::NAME,
-                        "IsHidingCanvs",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_hiding_canvs(this: UnitInfoViewerSetting, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(UnitInfoViewerSetting, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_hiding_canvs::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_show_canvas {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitInfoViewerSetting as ::unity2::ClassIdentity>::class(),
-                "ShowCanvas",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnitInfoViewerSetting as ::unity2::ClassIdentity>::NAME,
-                        "ShowCanvas",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn show_canvas(this: UnitInfoViewerSetting, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(UnitInfoViewerSetting, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_show_canvas::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_chara_only_on {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitInfoViewerSetting as ::unity2::ClassIdentity>::class(),
-                "CharaOnlyOn",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnitInfoViewerSetting as ::unity2::ClassIdentity>::NAME,
-                        "CharaOnlyOn",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn chara_only_on(this: UnitInfoViewerSetting, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(UnitInfoViewerSetting, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_chara_only_on::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_chara_only_off {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitInfoViewerSetting as ::unity2::ClassIdentity>::class(),
-                "CharaOnlyOff",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnitInfoViewerSetting as ::unity2::ClassIdentity>::NAME,
-                        "CharaOnlyOff",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn chara_only_off(this: UnitInfoViewerSetting, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(UnitInfoViewerSetting, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_chara_only_off::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_chara_only_transition {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitInfoViewerSetting as ::unity2::ClassIdentity>::class(),
-                "IsCharaOnlyTransition",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnitInfoViewerSetting as ::unity2::ClassIdentity>::NAME,
-                        "IsCharaOnlyTransition",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_chara_only_transition(this: UnitInfoViewerSetting, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(UnitInfoViewerSetting, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_chara_only_transition::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_has_unit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitInfoViewerSetting as ::unity2::ClassIdentity>::class(),
-                "HasUnit",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnitInfoViewerSetting as ::unity2::ClassIdentity>::NAME,
-                        "HasUnit",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn has_unit(this: UnitInfoViewerSetting, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(UnitInfoViewerSetting, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_has_unit::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitInfoViewerSetting as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnitInfoViewerSetting as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: UnitInfoViewerSetting, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(UnitInfoViewerSetting, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __UnitInfoViewerSetting_UnitData_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitInfoViewerSetting_UnitData as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitInfoViewerSetting_UnitData as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : UnitInfoViewerSetting_UnitData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitInfoViewerSetting_UnitData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-unitinfoviewersetting")]
-pub trait IUnitInfoViewerSettingMethods: IUnitInfoViewerSetting {
-    #[doc = "`Start()` overload"]
-    fn start(self) -> () {
-        unsafe {
-            let __receiver =
-                <UnitInfoViewerSetting as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnitInfoViewerSetting_unity2_raw::start(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnDestroy()` overload"]
-    fn on_destroy(self) -> () {
-        unsafe {
-            let __receiver =
-                <UnitInfoViewerSetting as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnitInfoViewerSetting_unity2_raw::on_destroy(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Update()` overload"]
-    fn update(self) -> () {
-        unsafe {
-            let __receiver =
-                <UnitInfoViewerSetting as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnitInfoViewerSetting_unity2_raw::update(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CreateUnit(crate::app::unitinfo::UnitInfo_Side)` overload"]
-    fn create_unit(self, side: impl ::core::convert::Into<crate::app::unitinfo::UnitInfo_Side>) -> () {
-        unsafe {
-            let __receiver =
-                <UnitInfoViewerSetting as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnitInfoViewerSetting_unity2_raw::create_unit(__receiver, ::core::convert::Into::into(side), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetPerson(crate::app::unitinfoviewersetting::UnitInfoViewerSetting_UnitData)` overload"]
-    fn get_person(
-        self,
-        unit_data: impl ::core::convert::Into<crate::app::unitinfoviewersetting::UnitInfoViewerSetting_UnitData>,
-    ) -> crate::app::persondata::PersonData {
-        unsafe {
-            let __receiver =
-                <UnitInfoViewerSetting as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnitInfoViewerSetting_unity2_raw::get_person(__receiver, ::core::convert::Into::into(unit_data), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetJob(crate::app::unitinfoviewersetting::UnitInfoViewerSetting_UnitData)` overload"]
-    fn get_job(
-        self,
-        unit_data: impl ::core::convert::Into<crate::app::unitinfoviewersetting::UnitInfoViewerSetting_UnitData>,
-    ) -> crate::app::jobdata::JobData {
-        unsafe {
-            let __receiver =
-                <UnitInfoViewerSetting as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnitInfoViewerSetting_unity2_raw::get_job(__receiver, ::core::convert::Into::into(unit_data), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetWeapon(crate::app::unitinfoviewersetting::UnitInfoViewerSetting_UnitData)` overload"]
-    fn get_weapon(
-        self,
-        unit_data: impl ::core::convert::Into<crate::app::unitinfoviewersetting::UnitInfoViewerSetting_UnitData>,
-    ) -> crate::app::itemdata::ItemData {
-        unsafe {
-            let __receiver =
-                <UnitInfoViewerSetting as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnitInfoViewerSetting_unity2_raw::get_weapon(__receiver, ::core::convert::Into::into(unit_data), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsHidingCanvs()` overload"]
-    fn is_hiding_canvs(self) -> bool {
-        unsafe {
-            let __receiver =
-                <UnitInfoViewerSetting as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnitInfoViewerSetting_unity2_raw::is_hiding_canvs(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ShowCanvas()` overload"]
-    fn show_canvas(self) -> () {
-        unsafe {
-            let __receiver =
-                <UnitInfoViewerSetting as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnitInfoViewerSetting_unity2_raw::show_canvas(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CharaOnlyOn()` overload"]
-    fn chara_only_on(self) -> () {
-        unsafe {
-            let __receiver =
-                <UnitInfoViewerSetting as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnitInfoViewerSetting_unity2_raw::chara_only_on(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CharaOnlyOff()` overload"]
-    fn chara_only_off(self) -> () {
-        unsafe {
-            let __receiver =
-                <UnitInfoViewerSetting as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnitInfoViewerSetting_unity2_raw::chara_only_off(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsCharaOnlyTransition()` overload"]
-    fn is_chara_only_transition(self) -> bool {
-        unsafe {
-            let __receiver =
-                <UnitInfoViewerSetting as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnitInfoViewerSetting_unity2_raw::is_chara_only_transition(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`HasUnit()` overload"]
-    fn has_unit(self) -> bool {
-        unsafe {
-            let __receiver =
-                <UnitInfoViewerSetting as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnitInfoViewerSetting_unity2_raw::has_unit(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <UnitInfoViewerSetting as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnitInfoViewerSetting_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IUnitInfoViewerSetting_UnitDataMethods : IUnitInfoViewerSetting_UnitData { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < UnitInfoViewerSetting_UnitData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitInfoViewerSetting_UnitData_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-unitinfoviewersetting")]
-impl<__T: IUnitInfoViewerSetting> IUnitInfoViewerSettingMethods for __T {}
+impl < __T : IUnitInfoViewerSetting_UnitData > IUnitInfoViewerSetting_UnitDataMethods for __T { }
 
 #[cfg(feature = "app-unitinfoviewersetting")]
-impl UnitInfoViewerSetting {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(UnitInfoViewerSetting),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IUnitInfoViewerSettingMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-unitinfoviewersetting")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __UnitInfoViewerSetting_UnitData_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitInfoViewerSetting_UnitData as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnitInfoViewerSetting_UnitData as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: UnitInfoViewerSetting_UnitData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(UnitInfoViewerSetting_UnitData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-unitinfoviewersetting")]
-pub trait IUnitInfoViewerSetting_UnitDataMethods: IUnitInfoViewerSetting_UnitData {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <UnitInfoViewerSetting_UnitData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnitInfoViewerSetting_UnitData_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-unitinfoviewersetting")]
-impl<__T: IUnitInfoViewerSetting_UnitData> IUnitInfoViewerSetting_UnitDataMethods for __T {}
+impl UnitInfoViewerSetting_UnitData { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitInfoViewerSetting_UnitData_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-unitinfoviewersetting")]
 impl UnitInfoViewerSetting_UnitData {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(UnitInfoViewerSetting_UnitData),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IUnitInfoViewerSetting_UnitDataMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (UnitInfoViewerSetting_UnitData) , :: core :: stringify ! (new) ,)) ; < Self as IUnitInfoViewerSetting_UnitDataMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-unitinfoviewersetting")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __UnitInfoViewerSetting_ForceList_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_index {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitInfoViewerSetting_ForceList as ::unity2::ClassIdentity>::class(),
-                "GetIndex",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnitInfoViewerSetting_ForceList as ::unity2::ClassIdentity>::NAME,
-                        "GetIndex",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_index(name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_index::get_method_info().method_ptr);
-        inner(name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_force_type {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitInfoViewerSetting_ForceList as ::unity2::ClassIdentity>::class(),
-                "GetForceType",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnitInfoViewerSetting_ForceList as ::unity2::ClassIdentity>::NAME,
-                        "GetForceType",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_force_type(name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::force::Force_Type {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> crate::app::force::Force_Type =
-            ::core::mem::transmute(__lookup_get_force_type::get_method_info().method_ptr);
-        inner(name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::force::Force_Type as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitInfoViewerSetting_ForceList as ::unity2::ClassIdentity>::class(),
-                "GetName",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnitInfoViewerSetting_ForceList as ::unity2::ClassIdentity>::NAME,
-                        "GetName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_name(force_type: crate::app::force::Force_Type, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(crate::app::force::Force_Type, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
-        inner(force_type, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitInfoViewerSetting_ForceList as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnitInfoViewerSetting_ForceList as ::unity2::ClassIdentity>::NAME,
-                        ".cctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __UnitInfoViewerSetting_ForceList_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_index { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitInfoViewerSetting_ForceList as :: unity2 :: ClassIdentity > :: class () , "GetIndex" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitInfoViewerSetting_ForceList as :: unity2 :: ClassIdentity > :: NAME , "GetIndex" , e) , } } } pub unsafe fn get_index (name : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_index :: get_method_info () . method_ptr ,) ; inner (name , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_force_type { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitInfoViewerSetting_ForceList as :: unity2 :: ClassIdentity > :: class () , "GetForceType" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitInfoViewerSetting_ForceList as :: unity2 :: ClassIdentity > :: NAME , "GetForceType" , e) , } } } pub unsafe fn get_force_type (name : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: force :: Force_Type { let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: app :: force :: Force_Type = :: core :: mem :: transmute (__lookup_get_force_type :: get_method_info () . method_ptr ,) ; inner (name , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: force :: Force_Type as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitInfoViewerSetting_ForceList as :: unity2 :: ClassIdentity > :: class () , "GetName" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitInfoViewerSetting_ForceList as :: unity2 :: ClassIdentity > :: NAME , "GetName" , e) , } } } pub unsafe fn get_name (force_type : crate :: app :: force :: Force_Type , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (crate :: app :: force :: Force_Type , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_name :: get_method_info () . method_ptr ,) ; inner (force_type , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitInfoViewerSetting_ForceList as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitInfoViewerSetting_ForceList as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
 
 #[cfg(feature = "app-unitinfoviewersetting")]
-impl UnitInfoViewerSetting_ForceList {
-    #[doc = "`GetIndex(::unity2::Il2CppString)` overload"]
-    pub fn get_index(name: impl ::core::convert::Into<::unity2::Il2CppString>) -> i32 {
-        unsafe { __UnitInfoViewerSetting_ForceList_unity2_raw::get_index(::core::convert::Into::into(name), ::core::option::Option::None) }
-    }
+impl UnitInfoViewerSetting_ForceList { # [doc = "`GetIndex(::unity2::Il2CppString)` overload"] pub fn get_index (name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> i32 { unsafe { __UnitInfoViewerSetting_ForceList_unity2_raw :: get_index (:: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } # [doc = "`GetForceType(::unity2::Il2CppString)` overload"] pub fn get_force_type (name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: app :: force :: Force_Type { unsafe { __UnitInfoViewerSetting_ForceList_unity2_raw :: get_force_type (:: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } # [doc = "`GetName(crate::app::force::Force_Type)` overload"] pub fn get_name (force_type : impl :: core :: convert :: Into < crate :: app :: force :: Force_Type >) -> :: unity2 :: Il2CppString { unsafe { __UnitInfoViewerSetting_ForceList_unity2_raw :: get_name (:: core :: convert :: Into :: into (force_type) , :: core :: option :: Option :: None) } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { __UnitInfoViewerSetting_ForceList_unity2_raw :: cctor (:: core :: option :: Option :: None) } } }
 
-    #[doc = "`GetForceType(::unity2::Il2CppString)` overload"]
-    pub fn get_force_type(name: impl ::core::convert::Into<::unity2::Il2CppString>) -> crate::app::force::Force_Type {
-        unsafe { __UnitInfoViewerSetting_ForceList_unity2_raw::get_force_type(::core::convert::Into::into(name), ::core::option::Option::None) }
-    }
+#[cfg(feature = "app-unitinfoviewersetting")]
+impl UnitInfoViewerSetting_ForceList { pub fn get_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitInfoViewerSetting_ForceList_unity2_raw :: __lookup_get_index :: get_method_info () } pub fn get_force_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitInfoViewerSetting_ForceList_unity2_raw :: __lookup_get_force_type :: get_method_info () } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitInfoViewerSetting_ForceList_unity2_raw :: __lookup_get_name :: get_method_info () } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitInfoViewerSetting_ForceList_unity2_raw :: __lookup_cctor :: get_method_info () } }
 
-    #[doc = "`GetName(crate::app::force::Force_Type)` overload"]
-    pub fn get_name(force_type: impl ::core::convert::Into<crate::app::force::Force_Type>) -> ::unity2::Il2CppString {
-        unsafe { __UnitInfoViewerSetting_ForceList_unity2_raw::get_name(::core::convert::Into::into(force_type), ::core::option::Option::None) }
-    }
+#[cfg(feature = "app-unitinfoviewersetting")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __UnitInfoViewerSetting_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_start { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitInfoViewerSetting as :: unity2 :: ClassIdentity > :: class () , "Start" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitInfoViewerSetting as :: unity2 :: ClassIdentity > :: NAME , "Start" , e) , } } } pub unsafe fn start (this : UnitInfoViewerSetting , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitInfoViewerSetting , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_start :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_destroy { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitInfoViewerSetting as :: unity2 :: ClassIdentity > :: class () , "OnDestroy" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitInfoViewerSetting as :: unity2 :: ClassIdentity > :: NAME , "OnDestroy" , e) , } } } pub unsafe fn on_destroy (this : UnitInfoViewerSetting , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitInfoViewerSetting , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_destroy :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitInfoViewerSetting as :: unity2 :: ClassIdentity > :: class () , "Update" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitInfoViewerSetting as :: unity2 :: ClassIdentity > :: NAME , "Update" , e) , } } } pub unsafe fn update (this : UnitInfoViewerSetting , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitInfoViewerSetting , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_unit { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unitinfo :: UnitInfo_Side as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitInfoViewerSetting as :: unity2 :: ClassIdentity > :: class () , "CreateUnit" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitInfoViewerSetting as :: unity2 :: ClassIdentity > :: NAME , "CreateUnit" , e) , } } } pub unsafe fn create_unit (this : UnitInfoViewerSetting , side : crate :: app :: unitinfo :: UnitInfo_Side , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitInfoViewerSetting , crate :: app :: unitinfo :: UnitInfo_Side , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create_unit :: get_method_info () . method_ptr ,) ; inner (this , side , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_person { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unitinfoviewersetting :: UnitInfoViewerSetting_UnitData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitInfoViewerSetting as :: unity2 :: ClassIdentity > :: class () , "GetPerson" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitInfoViewerSetting as :: unity2 :: ClassIdentity > :: NAME , "GetPerson" , e) , } } } pub unsafe fn get_person (this : UnitInfoViewerSetting , unit_data : crate :: app :: unitinfoviewersetting :: UnitInfoViewerSetting_UnitData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: persondata :: PersonData { let inner : extern "C" fn (UnitInfoViewerSetting , crate :: app :: unitinfoviewersetting :: UnitInfoViewerSetting_UnitData , :: unity2 :: OptionalMethod ,) -> crate :: app :: persondata :: PersonData = :: core :: mem :: transmute (__lookup_get_person :: get_method_info () . method_ptr ,) ; inner (this , unit_data , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_job { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unitinfoviewersetting :: UnitInfoViewerSetting_UnitData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitInfoViewerSetting as :: unity2 :: ClassIdentity > :: class () , "GetJob" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitInfoViewerSetting as :: unity2 :: ClassIdentity > :: NAME , "GetJob" , e) , } } } pub unsafe fn get_job (this : UnitInfoViewerSetting , unit_data : crate :: app :: unitinfoviewersetting :: UnitInfoViewerSetting_UnitData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: jobdata :: JobData { let inner : extern "C" fn (UnitInfoViewerSetting , crate :: app :: unitinfoviewersetting :: UnitInfoViewerSetting_UnitData , :: unity2 :: OptionalMethod ,) -> crate :: app :: jobdata :: JobData = :: core :: mem :: transmute (__lookup_get_job :: get_method_info () . method_ptr ,) ; inner (this , unit_data , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_weapon { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unitinfoviewersetting :: UnitInfoViewerSetting_UnitData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitInfoViewerSetting as :: unity2 :: ClassIdentity > :: class () , "GetWeapon" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitInfoViewerSetting as :: unity2 :: ClassIdentity > :: NAME , "GetWeapon" , e) , } } } pub unsafe fn get_weapon (this : UnitInfoViewerSetting , unit_data : crate :: app :: unitinfoviewersetting :: UnitInfoViewerSetting_UnitData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: itemdata :: ItemData { let inner : extern "C" fn (UnitInfoViewerSetting , crate :: app :: unitinfoviewersetting :: UnitInfoViewerSetting_UnitData , :: unity2 :: OptionalMethod ,) -> crate :: app :: itemdata :: ItemData = :: core :: mem :: transmute (__lookup_get_weapon :: get_method_info () . method_ptr ,) ; inner (this , unit_data , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_hiding_canvs { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitInfoViewerSetting as :: unity2 :: ClassIdentity > :: class () , "IsHidingCanvs" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitInfoViewerSetting as :: unity2 :: ClassIdentity > :: NAME , "IsHidingCanvs" , e) , } } } pub unsafe fn is_hiding_canvs (this : UnitInfoViewerSetting , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (UnitInfoViewerSetting , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_hiding_canvs :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_show_canvas { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitInfoViewerSetting as :: unity2 :: ClassIdentity > :: class () , "ShowCanvas" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitInfoViewerSetting as :: unity2 :: ClassIdentity > :: NAME , "ShowCanvas" , e) , } } } pub unsafe fn show_canvas (this : UnitInfoViewerSetting , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitInfoViewerSetting , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_show_canvas :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_chara_only_on { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitInfoViewerSetting as :: unity2 :: ClassIdentity > :: class () , "CharaOnlyOn" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitInfoViewerSetting as :: unity2 :: ClassIdentity > :: NAME , "CharaOnlyOn" , e) , } } } pub unsafe fn chara_only_on (this : UnitInfoViewerSetting , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitInfoViewerSetting , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_chara_only_on :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_chara_only_off { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitInfoViewerSetting as :: unity2 :: ClassIdentity > :: class () , "CharaOnlyOff" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitInfoViewerSetting as :: unity2 :: ClassIdentity > :: NAME , "CharaOnlyOff" , e) , } } } pub unsafe fn chara_only_off (this : UnitInfoViewerSetting , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitInfoViewerSetting , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_chara_only_off :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_chara_only_transition { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitInfoViewerSetting as :: unity2 :: ClassIdentity > :: class () , "IsCharaOnlyTransition" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitInfoViewerSetting as :: unity2 :: ClassIdentity > :: NAME , "IsCharaOnlyTransition" , e) , } } } pub unsafe fn is_chara_only_transition (this : UnitInfoViewerSetting , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (UnitInfoViewerSetting , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_chara_only_transition :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_has_unit { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitInfoViewerSetting as :: unity2 :: ClassIdentity > :: class () , "HasUnit" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitInfoViewerSetting as :: unity2 :: ClassIdentity > :: NAME , "HasUnit" , e) , } } } pub unsafe fn has_unit (this : UnitInfoViewerSetting , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (UnitInfoViewerSetting , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_has_unit :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitInfoViewerSetting as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitInfoViewerSetting as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : UnitInfoViewerSetting , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitInfoViewerSetting , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __UnitInfoViewerSetting_ForceList_unity2_raw::cctor(::core::option::Option::None) }
-    }
+#[cfg(feature = "app-unitinfoviewersetting")]
+pub trait IUnitInfoViewerSettingMethods : IUnitInfoViewerSetting { # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < UnitInfoViewerSetting as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitInfoViewerSetting_unity2_raw :: start (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnDestroy()` overload"] fn on_destroy (self ,) -> () { unsafe { let __receiver = < UnitInfoViewerSetting as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitInfoViewerSetting_unity2_raw :: on_destroy (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < UnitInfoViewerSetting as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitInfoViewerSetting_unity2_raw :: update (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CreateUnit(crate::app::unitinfo::UnitInfo_Side)` overload"] fn create_unit (self , side : impl :: core :: convert :: Into < crate :: app :: unitinfo :: UnitInfo_Side >) -> () { unsafe { let __receiver = < UnitInfoViewerSetting as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitInfoViewerSetting_unity2_raw :: create_unit (__receiver , :: core :: convert :: Into :: into (side) , :: core :: option :: Option :: None) } } # [doc = "`GetPerson(crate::app::unitinfoviewersetting::UnitInfoViewerSetting_UnitData)` overload"] fn get_person (self , unit_data : impl :: core :: convert :: Into < crate :: app :: unitinfoviewersetting :: UnitInfoViewerSetting_UnitData >) -> crate :: app :: persondata :: PersonData { unsafe { let __receiver = < UnitInfoViewerSetting as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitInfoViewerSetting_unity2_raw :: get_person (__receiver , :: core :: convert :: Into :: into (unit_data) , :: core :: option :: Option :: None) } } # [doc = "`GetJob(crate::app::unitinfoviewersetting::UnitInfoViewerSetting_UnitData)` overload"] fn get_job (self , unit_data : impl :: core :: convert :: Into < crate :: app :: unitinfoviewersetting :: UnitInfoViewerSetting_UnitData >) -> crate :: app :: jobdata :: JobData { unsafe { let __receiver = < UnitInfoViewerSetting as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitInfoViewerSetting_unity2_raw :: get_job (__receiver , :: core :: convert :: Into :: into (unit_data) , :: core :: option :: Option :: None) } } # [doc = "`GetWeapon(crate::app::unitinfoviewersetting::UnitInfoViewerSetting_UnitData)` overload"] fn get_weapon (self , unit_data : impl :: core :: convert :: Into < crate :: app :: unitinfoviewersetting :: UnitInfoViewerSetting_UnitData >) -> crate :: app :: itemdata :: ItemData { unsafe { let __receiver = < UnitInfoViewerSetting as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitInfoViewerSetting_unity2_raw :: get_weapon (__receiver , :: core :: convert :: Into :: into (unit_data) , :: core :: option :: Option :: None) } } # [doc = "`IsHidingCanvs()` overload"] fn is_hiding_canvs (self ,) -> bool { unsafe { let __receiver = < UnitInfoViewerSetting as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitInfoViewerSetting_unity2_raw :: is_hiding_canvs (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ShowCanvas()` overload"] fn show_canvas (self ,) -> () { unsafe { let __receiver = < UnitInfoViewerSetting as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitInfoViewerSetting_unity2_raw :: show_canvas (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CharaOnlyOn()` overload"] fn chara_only_on (self ,) -> () { unsafe { let __receiver = < UnitInfoViewerSetting as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitInfoViewerSetting_unity2_raw :: chara_only_on (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CharaOnlyOff()` overload"] fn chara_only_off (self ,) -> () { unsafe { let __receiver = < UnitInfoViewerSetting as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitInfoViewerSetting_unity2_raw :: chara_only_off (__receiver , :: core :: option :: Option :: None) } } # [doc = "`IsCharaOnlyTransition()` overload"] fn is_chara_only_transition (self ,) -> bool { unsafe { let __receiver = < UnitInfoViewerSetting as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitInfoViewerSetting_unity2_raw :: is_chara_only_transition (__receiver , :: core :: option :: Option :: None) } } # [doc = "`HasUnit()` overload"] fn has_unit (self ,) -> bool { unsafe { let __receiver = < UnitInfoViewerSetting as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitInfoViewerSetting_unity2_raw :: has_unit (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < UnitInfoViewerSetting as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitInfoViewerSetting_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-unitinfoviewersetting")]
+impl < __T : IUnitInfoViewerSetting > IUnitInfoViewerSettingMethods for __T { }
+
+#[cfg(feature = "app-unitinfoviewersetting")]
+impl UnitInfoViewerSetting { pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitInfoViewerSetting_unity2_raw :: __lookup_start :: get_method_info () } pub fn on_destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitInfoViewerSetting_unity2_raw :: __lookup_on_destroy :: get_method_info () } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitInfoViewerSetting_unity2_raw :: __lookup_update :: get_method_info () } pub fn create_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitInfoViewerSetting_unity2_raw :: __lookup_create_unit :: get_method_info () } pub fn get_person_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitInfoViewerSetting_unity2_raw :: __lookup_get_person :: get_method_info () } pub fn get_job_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitInfoViewerSetting_unity2_raw :: __lookup_get_job :: get_method_info () } pub fn get_weapon_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitInfoViewerSetting_unity2_raw :: __lookup_get_weapon :: get_method_info () } pub fn is_hiding_canvs_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitInfoViewerSetting_unity2_raw :: __lookup_is_hiding_canvs :: get_method_info () } pub fn show_canvas_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitInfoViewerSetting_unity2_raw :: __lookup_show_canvas :: get_method_info () } pub fn chara_only_on_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitInfoViewerSetting_unity2_raw :: __lookup_chara_only_on :: get_method_info () } pub fn chara_only_off_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitInfoViewerSetting_unity2_raw :: __lookup_chara_only_off :: get_method_info () } pub fn is_chara_only_transition_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitInfoViewerSetting_unity2_raw :: __lookup_is_chara_only_transition :: get_method_info () } pub fn has_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitInfoViewerSetting_unity2_raw :: __lookup_has_unit :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitInfoViewerSetting_unity2_raw :: __lookup_ctor :: get_method_info () } }
+
+#[cfg(feature = "app-unitinfoviewersetting")]
+impl UnitInfoViewerSetting {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (UnitInfoViewerSetting) , :: core :: stringify ! (new) ,)) ; < Self as IUnitInfoViewerSettingMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-unitinfoviewersetting")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{
-        IUnitInfoViewerSetting, IUnitInfoViewerSettingMethods, IUnitInfoViewerSetting_ForceList, IUnitInfoViewerSetting_UnitData,
-        IUnitInfoViewerSetting_UnitDataMethods, UnitInfoViewerSetting, UnitInfoViewerSetting_ForceList, UnitInfoViewerSetting_Seq,
-        UnitInfoViewerSetting_UnitData,
-    };
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::UnitInfoViewerSetting_UnitData;
+    pub use super::IUnitInfoViewerSetting_UnitData;
+    pub use super::IUnitInfoViewerSetting_UnitDataMethods;
+    pub use super::UnitInfoViewerSetting_Seq;
+    pub use super::UnitInfoViewerSetting_ForceList;
+    pub use super::IUnitInfoViewerSetting_ForceList;
+    pub use super::UnitInfoViewerSetting;
+    pub use super::IUnitInfoViewerSetting;
+    pub use super::IUnitInfoViewerSettingMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

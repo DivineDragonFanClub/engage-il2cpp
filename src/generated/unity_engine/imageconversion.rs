@@ -2,283 +2,34 @@
 
 #[cfg(feature = "unity_engine-imageconversion-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/imageconversion/ImageConversion.md"))]
-    #[::unity2::class(namespace = "UnityEngine", name = "ImageConversion")]
-    #[parent(crate::system::object::Object)]
-    pub struct ImageConversion {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/imageconversion/ImageConversion.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "ImageConversion")] # [parent (crate :: system :: object :: Object)] pub struct ImageConversion {}
+
 }
 
 #[cfg(feature = "unity_engine-imageconversion-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-imageconversion")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ImageConversion_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_encode_to_png {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::texture2d::Texture2D as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ImageConversion as ::unity2::ClassIdentity>::class(),
-                "EncodeToPNG",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ImageConversion as ::unity2::ClassIdentity>::NAME,
-                        "EncodeToPNG",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn encode_to_png(
-        tex: crate::unity_engine::texture2d::Texture2D,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Array<u8> {
-        let inner: extern "C" fn(crate::unity_engine::texture2d::Texture2D, ::unity2::OptionalMethod) -> ::unity2::Array<u8> =
-            ::core::mem::transmute(__lookup_encode_to_png::get_method_info().method_ptr);
-        inner(tex, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_encode_to_jpg {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::texture2d::Texture2D as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ImageConversion as ::unity2::ClassIdentity>::class(),
-                "EncodeToJPG",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ImageConversion as ::unity2::ClassIdentity>::NAME,
-                        "EncodeToJPG",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn encode_to_jpg(
-        tex: crate::unity_engine::texture2d::Texture2D,
-        quality: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Array<u8> {
-        let inner: extern "C" fn(crate::unity_engine::texture2d::Texture2D, i32, ::unity2::OptionalMethod) -> ::unity2::Array<u8> =
-            ::core::mem::transmute(__lookup_encode_to_jpg::get_method_info().method_ptr);
-        inner(tex, quality, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_encode_to_jpg_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::texture2d::Texture2D as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ImageConversion as ::unity2::ClassIdentity>::class(),
-                "EncodeToJPG",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ImageConversion as ::unity2::ClassIdentity>::NAME,
-                        "EncodeToJPG",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn encode_to_jpg_2(
-        tex: crate::unity_engine::texture2d::Texture2D,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Array<u8> {
-        let inner: extern "C" fn(crate::unity_engine::texture2d::Texture2D, ::unity2::OptionalMethod) -> ::unity2::Array<u8> =
-            ::core::mem::transmute(__lookup_encode_to_jpg_2::get_method_info().method_ptr);
-        inner(tex, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_load_image {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::texture2d::Texture2D as ::unity2::IlType>::il_type(),
-                <::unity2::Array<u8> as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ImageConversion as ::unity2::ClassIdentity>::class(),
-                "LoadImage",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ImageConversion as ::unity2::ClassIdentity>::NAME,
-                        "LoadImage",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn load_image(
-        tex: crate::unity_engine::texture2d::Texture2D,
-        data: ::unity2::Array<u8>,
-        mark_non_readable: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(crate::unity_engine::texture2d::Texture2D, ::unity2::Array<u8>, bool, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_load_image::get_method_info().method_ptr);
-        inner(tex, data, mark_non_readable, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_load_image_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::texture2d::Texture2D as ::unity2::IlType>::il_type(),
-                <::unity2::Array<u8> as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ImageConversion as ::unity2::ClassIdentity>::class(),
-                "LoadImage",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ImageConversion as ::unity2::ClassIdentity>::NAME,
-                        "LoadImage",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn load_image_2(
-        tex: crate::unity_engine::texture2d::Texture2D,
-        data: ::unity2::Array<u8>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(crate::unity_engine::texture2d::Texture2D, ::unity2::Array<u8>, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_load_image_2::get_method_info().method_ptr);
-        inner(tex, data, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ImageConversion_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_encode_to_png { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: texture2d :: Texture2D as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ImageConversion as :: unity2 :: ClassIdentity > :: class () , "EncodeToPNG" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ImageConversion as :: unity2 :: ClassIdentity > :: NAME , "EncodeToPNG" , e) , } } } pub unsafe fn encode_to_png (tex : crate :: unity_engine :: texture2d :: Texture2D , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < u8 > { let inner : extern "C" fn (crate :: unity_engine :: texture2d :: Texture2D , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < u8 > = :: core :: mem :: transmute (__lookup_encode_to_png :: get_method_info () . method_ptr ,) ; inner (tex , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_encode_to_jpg { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: texture2d :: Texture2D as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ImageConversion as :: unity2 :: ClassIdentity > :: class () , "EncodeToJPG" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ImageConversion as :: unity2 :: ClassIdentity > :: NAME , "EncodeToJPG" , e) , } } } pub unsafe fn encode_to_jpg (tex : crate :: unity_engine :: texture2d :: Texture2D , quality : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < u8 > { let inner : extern "C" fn (crate :: unity_engine :: texture2d :: Texture2D , i32 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < u8 > = :: core :: mem :: transmute (__lookup_encode_to_jpg :: get_method_info () . method_ptr ,) ; inner (tex , quality , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_encode_to_jpg_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: texture2d :: Texture2D as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ImageConversion as :: unity2 :: ClassIdentity > :: class () , "EncodeToJPG" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ImageConversion as :: unity2 :: ClassIdentity > :: NAME , "EncodeToJPG" , e) , } } } pub unsafe fn encode_to_jpg_2 (tex : crate :: unity_engine :: texture2d :: Texture2D , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < u8 > { let inner : extern "C" fn (crate :: unity_engine :: texture2d :: Texture2D , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < u8 > = :: core :: mem :: transmute (__lookup_encode_to_jpg_2 :: get_method_info () . method_ptr ,) ; inner (tex , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_load_image { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: texture2d :: Texture2D as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < u8 > as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ImageConversion as :: unity2 :: ClassIdentity > :: class () , "LoadImage" , 3 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ImageConversion as :: unity2 :: ClassIdentity > :: NAME , "LoadImage" , e) , } } } pub unsafe fn load_image (tex : crate :: unity_engine :: texture2d :: Texture2D , data : :: unity2 :: Array < u8 > , mark_non_readable : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (crate :: unity_engine :: texture2d :: Texture2D , :: unity2 :: Array < u8 > , bool , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_load_image :: get_method_info () . method_ptr ,) ; inner (tex , data , mark_non_readable , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_load_image_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: texture2d :: Texture2D as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < u8 > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ImageConversion as :: unity2 :: ClassIdentity > :: class () , "LoadImage" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ImageConversion as :: unity2 :: ClassIdentity > :: NAME , "LoadImage" , e) , } } } pub unsafe fn load_image_2 (tex : crate :: unity_engine :: texture2d :: Texture2D , data : :: unity2 :: Array < u8 > , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (crate :: unity_engine :: texture2d :: Texture2D , :: unity2 :: Array < u8 > , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_load_image_2 :: get_method_info () . method_ptr ,) ; inner (tex , data , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-imageconversion")]
-impl ImageConversion {
-    #[doc = "`EncodeToPNG(crate::unity_engine::texture2d::Texture2D)` overload"]
-    pub fn encode_to_png(tex: impl ::core::convert::Into<crate::unity_engine::texture2d::Texture2D>) -> ::unity2::Array<u8> {
-        unsafe { __ImageConversion_unity2_raw::encode_to_png(::core::convert::Into::into(tex), ::core::option::Option::None) }
-    }
+impl ImageConversion { # [doc = "`EncodeToPNG(crate::unity_engine::texture2d::Texture2D)` overload"] pub fn encode_to_png (tex : impl :: core :: convert :: Into < crate :: unity_engine :: texture2d :: Texture2D >) -> :: unity2 :: Array < u8 > { unsafe { __ImageConversion_unity2_raw :: encode_to_png (:: core :: convert :: Into :: into (tex) , :: core :: option :: Option :: None) } } # [doc = "`EncodeToJPG(crate::unity_engine::texture2d::Texture2D, i32)` overload"] pub fn encode_to_jpg (tex : impl :: core :: convert :: Into < crate :: unity_engine :: texture2d :: Texture2D > , quality : impl :: core :: convert :: Into < i32 >) -> :: unity2 :: Array < u8 > { unsafe { __ImageConversion_unity2_raw :: encode_to_jpg (:: core :: convert :: Into :: into (tex) , :: core :: convert :: Into :: into (quality) , :: core :: option :: Option :: None) } } # [doc = "`EncodeToJPG(crate::unity_engine::texture2d::Texture2D)` overload"] pub fn encode_to_jpg_2 (tex : impl :: core :: convert :: Into < crate :: unity_engine :: texture2d :: Texture2D >) -> :: unity2 :: Array < u8 > { unsafe { __ImageConversion_unity2_raw :: encode_to_jpg_2 (:: core :: convert :: Into :: into (tex) , :: core :: option :: Option :: None) } } # [doc = "`LoadImage(crate::unity_engine::texture2d::Texture2D, ::unity2::Array<u8>, bool)` overload"] pub fn load_image (tex : impl :: core :: convert :: Into < crate :: unity_engine :: texture2d :: Texture2D > , data : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > > , mark_non_readable : impl :: core :: convert :: Into < bool >) -> bool { unsafe { __ImageConversion_unity2_raw :: load_image (:: core :: convert :: Into :: into (tex) , :: core :: convert :: Into :: into (data) , :: core :: convert :: Into :: into (mark_non_readable) , :: core :: option :: Option :: None) } } # [doc = "`LoadImage(crate::unity_engine::texture2d::Texture2D, ::unity2::Array<u8>)` overload"] pub fn load_image_2 (tex : impl :: core :: convert :: Into < crate :: unity_engine :: texture2d :: Texture2D > , data : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > >) -> bool { unsafe { __ImageConversion_unity2_raw :: load_image_2 (:: core :: convert :: Into :: into (tex) , :: core :: convert :: Into :: into (data) , :: core :: option :: Option :: None) } } }
 
-    #[doc = "`EncodeToJPG(crate::unity_engine::texture2d::Texture2D, i32)` overload"]
-    pub fn encode_to_jpg(
-        tex: impl ::core::convert::Into<crate::unity_engine::texture2d::Texture2D>,
-        quality: impl ::core::convert::Into<i32>,
-    ) -> ::unity2::Array<u8> {
-        unsafe {
-            __ImageConversion_unity2_raw::encode_to_jpg(
-                ::core::convert::Into::into(tex),
-                ::core::convert::Into::into(quality),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`EncodeToJPG(crate::unity_engine::texture2d::Texture2D)` overload"]
-    pub fn encode_to_jpg_2(tex: impl ::core::convert::Into<crate::unity_engine::texture2d::Texture2D>) -> ::unity2::Array<u8> {
-        unsafe { __ImageConversion_unity2_raw::encode_to_jpg_2(::core::convert::Into::into(tex), ::core::option::Option::None) }
-    }
-
-    #[doc = "`LoadImage(crate::unity_engine::texture2d::Texture2D, ::unity2::Array<u8>, bool)` overload"]
-    pub fn load_image(
-        tex: impl ::core::convert::Into<crate::unity_engine::texture2d::Texture2D>,
-        data: impl ::core::convert::Into<::unity2::Array<u8>>,
-        mark_non_readable: impl ::core::convert::Into<bool>,
-    ) -> bool {
-        unsafe {
-            __ImageConversion_unity2_raw::load_image(
-                ::core::convert::Into::into(tex),
-                ::core::convert::Into::into(data),
-                ::core::convert::Into::into(mark_non_readable),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`LoadImage(crate::unity_engine::texture2d::Texture2D, ::unity2::Array<u8>)` overload"]
-    pub fn load_image_2(
-        tex: impl ::core::convert::Into<crate::unity_engine::texture2d::Texture2D>,
-        data: impl ::core::convert::Into<::unity2::Array<u8>>,
-    ) -> bool {
-        unsafe {
-            __ImageConversion_unity2_raw::load_image_2(
-                ::core::convert::Into::into(tex),
-                ::core::convert::Into::into(data),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+#[cfg(feature = "unity_engine-imageconversion")]
+impl ImageConversion { pub fn encode_to_png_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ImageConversion_unity2_raw :: __lookup_encode_to_png :: get_method_info () } pub fn encode_to_jpg_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ImageConversion_unity2_raw :: __lookup_encode_to_jpg :: get_method_info () } pub fn encode_to_jpg_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ImageConversion_unity2_raw :: __lookup_encode_to_jpg_2 :: get_method_info () } pub fn load_image_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ImageConversion_unity2_raw :: __lookup_load_image :: get_method_info () } pub fn load_image_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ImageConversion_unity2_raw :: __lookup_load_image_2 :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-imageconversion")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IImageConversion, ImageConversion};
+    pub use super::ImageConversion;
+    pub use super::IImageConversion;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

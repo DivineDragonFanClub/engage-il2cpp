@@ -2,209 +2,53 @@
 
 #[cfg(feature = "app-interpolatorfloat-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::{
-            interpolator_1::{IInterpolator_1, Interpolator_1},
-            interpolatortime::{IInterpolatorTime, InterpolatorTime},
-        },
-        system::object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/interpolatorfloat/InterpolatorFloat.md"))]
-    #[::unity2::class(namespace = "App", name = "InterpolatorFloat")]
-    # [parent (crate :: app :: interpolator_1 :: Interpolator_1 < f32 >)]
-    pub struct InterpolatorFloat {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: interpolator_1 :: { IInterpolator_1 , Interpolator_1 }
+ ;
+ use crate :: app :: interpolatortime :: { IInterpolatorTime , InterpolatorTime }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/interpolatorfloat/InterpolatorFloat.md"))] # [:: unity2 :: class (namespace = "App" , name = "InterpolatorFloat")] # [parent (crate :: app :: interpolator_1 :: Interpolator_1 < f32 >)] pub struct InterpolatorFloat {}
+
 }
 
 #[cfg(feature = "app-interpolatorfloat-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-interpolatorfloat")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __InterpolatorFloat_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::curve::Curve_Type as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InterpolatorFloat as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InterpolatorFloat as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: InterpolatorFloat,
-        r#type: crate::app::curve::Curve_Type,
-        num: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(InterpolatorFloat, crate::app::curve::Curve_Type, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, r#type, num, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_value {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InterpolatorFloat as ::unity2::ClassIdentity>::class(),
-                "get_Value",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InterpolatorFloat as ::unity2::ClassIdentity>::NAME,
-                        "get_Value",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_value(this: InterpolatorFloat, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(InterpolatorFloat, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_get_value::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_equal {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type(), <f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InterpolatorFloat as ::unity2::ClassIdentity>::class(),
-                "IsEqual",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InterpolatorFloat as ::unity2::ClassIdentity>::NAME,
-                        "IsEqual",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_equal(this: InterpolatorFloat, a: f32, b: f32, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(InterpolatorFloat, f32, f32, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_equal::get_method_info().method_ptr);
-        inner(this, a, b, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __InterpolatorFloat_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: curve :: Curve_Type as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InterpolatorFloat as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InterpolatorFloat as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : InterpolatorFloat , r#type : crate :: app :: curve :: Curve_Type , num : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (InterpolatorFloat , crate :: app :: curve :: Curve_Type , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , r#type , num , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_value { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InterpolatorFloat as :: unity2 :: ClassIdentity > :: class () , "get_Value" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InterpolatorFloat as :: unity2 :: ClassIdentity > :: NAME , "get_Value" , e) , } } } pub unsafe fn get_value (this : InterpolatorFloat , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (InterpolatorFloat , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_get_value :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_equal { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< f32 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InterpolatorFloat as :: unity2 :: ClassIdentity > :: class () , "IsEqual" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InterpolatorFloat as :: unity2 :: ClassIdentity > :: NAME , "IsEqual" , e) , } } } pub unsafe fn is_equal (this : InterpolatorFloat , a : f32 , b : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (InterpolatorFloat , f32 , f32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_equal :: get_method_info () . method_ptr ,) ; inner (this , a , b , __unity2_method_info) } }
 
 #[cfg(feature = "app-interpolatorfloat")]
-pub trait IInterpolatorFloatMethods: IInterpolatorFloat {
-    #[doc = "`.ctor(crate::app::curve::Curve_Type, i32)` overload"]
-    fn ctor(self, r#type: impl ::core::convert::Into<crate::app::curve::Curve_Type>, num: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver = <InterpolatorFloat as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InterpolatorFloat_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(r#type),
-                ::core::convert::Into::into(num),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_Value()` overload"]
-    fn get_value(self) -> f32 {
-        unsafe {
-            let __receiver = <InterpolatorFloat as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InterpolatorFloat_unity2_raw::get_value(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsEqual(f32, f32)` overload"]
-    fn is_equal(self, a: impl ::core::convert::Into<f32>, b: impl ::core::convert::Into<f32>) -> bool {
-        unsafe {
-            let __receiver = <InterpolatorFloat as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InterpolatorFloat_unity2_raw::is_equal(
-                __receiver,
-                ::core::convert::Into::into(a),
-                ::core::convert::Into::into(b),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+pub trait IInterpolatorFloatMethods : IInterpolatorFloat { # [doc = "`.ctor(crate::app::curve::Curve_Type, i32)` overload"] fn ctor (self , r#type : impl :: core :: convert :: Into < crate :: app :: curve :: Curve_Type > , num : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < InterpolatorFloat as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __InterpolatorFloat_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (r#type) , :: core :: convert :: Into :: into (num) , :: core :: option :: Option :: None) } } # [doc = "`get_Value()` overload"] fn get_value (self ,) -> f32 { unsafe { let __receiver = < InterpolatorFloat as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __InterpolatorFloat_unity2_raw :: get_value (__receiver , :: core :: option :: Option :: None) } } # [doc = "`IsEqual(f32, f32)` overload"] fn is_equal (self , a : impl :: core :: convert :: Into < f32 > , b : impl :: core :: convert :: Into < f32 >) -> bool { unsafe { let __receiver = < InterpolatorFloat as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __InterpolatorFloat_unity2_raw :: is_equal (__receiver , :: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-interpolatorfloat")]
-impl<__T: IInterpolatorFloat> IInterpolatorFloatMethods for __T {}
+impl < __T : IInterpolatorFloat > IInterpolatorFloatMethods for __T { }
+
+#[cfg(feature = "app-interpolatorfloat")]
+impl InterpolatorFloat { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InterpolatorFloat_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn get_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InterpolatorFloat_unity2_raw :: __lookup_get_value :: get_method_info () } pub fn is_equal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InterpolatorFloat_unity2_raw :: __lookup_is_equal :: get_method_info () } }
 
 #[cfg(feature = "app-interpolatorfloat")]
 impl InterpolatorFloat {
-    #[doc = "`.ctor(crate::app::curve::Curve_Type, i32)` — overload selector"]
-    pub fn new(r#type: crate::app::curve::Curve_Type, num: i32) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(InterpolatorFloat),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IInterpolatorFloatMethods>::ctor(this, r#type, num);
-        this
-    }
+# [doc = "`.ctor(crate::app::curve::Curve_Type, i32)` — overload selector"] pub fn new (r#type : crate :: app :: curve :: Curve_Type , num : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (InterpolatorFloat) , :: core :: stringify ! (new) ,)) ; < Self as IInterpolatorFloatMethods > :: ctor (this , r#type , num) ; this }
 }
 
 #[cfg(feature = "app-interpolatorfloat")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IInterpolatorFloat, IInterpolatorFloatMethods, InterpolatorFloat};
-    #[cfg(feature = "app-interpolator_1")]
-    pub use crate::app::interpolator_1::IInterpolator_1Methods;
-    #[cfg(feature = "app-interpolatortime")]
-    pub use crate::app::interpolatortime::IInterpolatorTimeMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::{
-        app::{
-            interpolator_1::{IInterpolator_1, Interpolator_1},
-            interpolatortime::{IInterpolatorTime, InterpolatorTime},
-        },
-        system::object::IObject,
-    };
+    pub use super::InterpolatorFloat;
+    pub use super::IInterpolatorFloat;
+    pub use super::IInterpolatorFloatMethods;
+    pub use crate::app::interpolator_1::IInterpolator_1;
+    pub use crate::app::interpolator_1::Interpolator_1;
+    pub use crate::app::interpolatortime::IInterpolatorTime;
+    pub use crate::app::interpolatortime::InterpolatorTime;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "app-interpolator_1")] pub use crate::app::interpolator_1::IInterpolator_1Methods;
+    #[cfg(feature = "app-interpolatortime")] pub use crate::app::interpolatortime::IInterpolatorTimeMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

@@ -2,350 +2,65 @@
 
 #[cfg(feature = "app-classchangeroot-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/classchangeroot/ClassChangeRoot.md"))]
-    #[::unity2::class(namespace = "App", name = "ClassChangeRoot")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct ClassChangeRoot {
-        #[offset(24)]
-        #[rename(name = "m_MenuContent")]
-        pub m_menu_content: crate::app::classchangejobmenucontent::ClassChangeJobMenuContent,
-        #[offset(32)]
-        #[rename(name = "m_UnitName")]
-        pub m_unit_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(40)]
-        #[rename(name = "m_UnitInfoBefore")]
-        pub m_unit_info_before: crate::app::unitstatussetter::UnitStatusSetter,
-        #[offset(48)]
-        #[rename(name = "m_UnitInfoAfter")]
-        pub m_unit_info_after: crate::app::unitstatussetter::UnitStatusSetter,
-        #[offset(56)]
-        #[rename(name = "m_WeaponIconList")]
-        pub m_weapon_icon_list: crate::system::collections::generic::list_1::List_1<crate::unity_engine::ui::image::Image>,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/classchangeroot/ClassChangeRoot.md"))] # [:: unity2 :: class (namespace = "App" , name = "ClassChangeRoot")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct ClassChangeRoot {
+# [offset (24)] # [rename (name = "m_MenuContent")] pub m_menu_content : crate :: app :: classchangejobmenucontent :: ClassChangeJobMenuContent ,
+# [offset (32)] # [rename (name = "m_UnitName")] pub m_unit_name : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (40)] # [rename (name = "m_UnitInfoBefore")] pub m_unit_info_before : crate :: app :: unitstatussetter :: UnitStatusSetter ,
+# [offset (48)] # [rename (name = "m_UnitInfoAfter")] pub m_unit_info_after : crate :: app :: unitstatussetter :: UnitStatusSetter ,
+# [offset (56)] # [rename (name = "m_WeaponIconList")] pub m_weapon_icon_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: ui :: image :: Image > ,
+}
+
 }
 
 #[cfg(feature = "app-classchangeroot-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-classchangeroot")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ClassChangeRoot_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_start {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ClassChangeRoot as ::unity2::ClassIdentity>::class(),
-                "Start",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ClassChangeRoot as ::unity2::ClassIdentity>::NAME,
-                        "Start",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn start(this: ClassChangeRoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ClassChangeRoot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_start::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_init_unit_info_all {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ClassChangeRoot as ::unity2::ClassIdentity>::class(),
-                "InitUnitInfoAll",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ClassChangeRoot as ::unity2::ClassIdentity>::NAME,
-                        "InitUnitInfoAll",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn init_unit_info_all(this: ClassChangeRoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ClassChangeRoot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_init_unit_info_all::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_menu_content {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ClassChangeRoot as ::unity2::ClassIdentity>::class(),
-                "GetMenuContent",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ClassChangeRoot as ::unity2::ClassIdentity>::NAME,
-                        "GetMenuContent",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_menu_content(
-        this: ClassChangeRoot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::classchangejobmenucontent::ClassChangeJobMenuContent {
-        let inner: extern "C" fn(ClassChangeRoot, ::unity2::OptionalMethod) -> crate::app::classchangejobmenucontent::ClassChangeJobMenuContent =
-            ::core::mem::transmute(__lookup_get_menu_content::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_unit_info_after {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ClassChangeRoot as ::unity2::ClassIdentity>::class(),
-                "SetUnitInfoAfter",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ClassChangeRoot as ::unity2::ClassIdentity>::NAME,
-                        "SetUnitInfoAfter",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_unit_info_after(
-        this: ClassChangeRoot,
-        before: crate::app::unit::Unit,
-        after: crate::app::unit::Unit,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(ClassChangeRoot, crate::app::unit::Unit, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_unit_info_after::get_method_info().method_ptr);
-        inner(this, before, after, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_unit_info_before {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ClassChangeRoot as ::unity2::ClassIdentity>::class(),
-                "SetUnitInfoBefore",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ClassChangeRoot as ::unity2::ClassIdentity>::NAME,
-                        "SetUnitInfoBefore",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_unit_info_before(this: ClassChangeRoot, unit: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ClassChangeRoot, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_unit_info_before::get_method_info().method_ptr);
-        inner(this, unit, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ClassChangeRoot as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ClassChangeRoot as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: ClassChangeRoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ClassChangeRoot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ClassChangeRoot_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_start { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ClassChangeRoot as :: unity2 :: ClassIdentity > :: class () , "Start" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ClassChangeRoot as :: unity2 :: ClassIdentity > :: NAME , "Start" , e) , } } } pub unsafe fn start (this : ClassChangeRoot , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ClassChangeRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_start :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_init_unit_info_all { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ClassChangeRoot as :: unity2 :: ClassIdentity > :: class () , "InitUnitInfoAll" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ClassChangeRoot as :: unity2 :: ClassIdentity > :: NAME , "InitUnitInfoAll" , e) , } } } pub unsafe fn init_unit_info_all (this : ClassChangeRoot , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ClassChangeRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_init_unit_info_all :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_menu_content { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ClassChangeRoot as :: unity2 :: ClassIdentity > :: class () , "GetMenuContent" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ClassChangeRoot as :: unity2 :: ClassIdentity > :: NAME , "GetMenuContent" , e) , } } } pub unsafe fn get_menu_content (this : ClassChangeRoot , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: classchangejobmenucontent :: ClassChangeJobMenuContent { let inner : extern "C" fn (ClassChangeRoot , :: unity2 :: OptionalMethod ,) -> crate :: app :: classchangejobmenucontent :: ClassChangeJobMenuContent = :: core :: mem :: transmute (__lookup_get_menu_content :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_unit_info_after { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ClassChangeRoot as :: unity2 :: ClassIdentity > :: class () , "SetUnitInfoAfter" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ClassChangeRoot as :: unity2 :: ClassIdentity > :: NAME , "SetUnitInfoAfter" , e) , } } } pub unsafe fn set_unit_info_after (this : ClassChangeRoot , before : crate :: app :: unit :: Unit , after : crate :: app :: unit :: Unit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ClassChangeRoot , crate :: app :: unit :: Unit , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_unit_info_after :: get_method_info () . method_ptr ,) ; inner (this , before , after , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_unit_info_before { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ClassChangeRoot as :: unity2 :: ClassIdentity > :: class () , "SetUnitInfoBefore" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ClassChangeRoot as :: unity2 :: ClassIdentity > :: NAME , "SetUnitInfoBefore" , e) , } } } pub unsafe fn set_unit_info_before (this : ClassChangeRoot , unit : crate :: app :: unit :: Unit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ClassChangeRoot , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_unit_info_before :: get_method_info () . method_ptr ,) ; inner (this , unit , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ClassChangeRoot as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ClassChangeRoot as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : ClassChangeRoot , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ClassChangeRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-classchangeroot")]
-pub trait IClassChangeRootMethods: IClassChangeRoot {
-    #[doc = "`Start()` overload"]
-    fn start(self) -> () {
-        unsafe {
-            let __receiver = <ClassChangeRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ClassChangeRoot_unity2_raw::start(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`InitUnitInfoAll()` overload"]
-    fn init_unit_info_all(self) -> () {
-        unsafe {
-            let __receiver = <ClassChangeRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ClassChangeRoot_unity2_raw::init_unit_info_all(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetMenuContent()` overload"]
-    fn get_menu_content(self) -> crate::app::classchangejobmenucontent::ClassChangeJobMenuContent {
-        unsafe {
-            let __receiver = <ClassChangeRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ClassChangeRoot_unity2_raw::get_menu_content(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetUnitInfoAfter(crate::app::unit::Unit, crate::app::unit::Unit)` overload"]
-    fn set_unit_info_after(
-        self,
-        before: impl ::core::convert::Into<crate::app::unit::Unit>,
-        after: impl ::core::convert::Into<crate::app::unit::Unit>,
-    ) -> () {
-        unsafe {
-            let __receiver = <ClassChangeRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ClassChangeRoot_unity2_raw::set_unit_info_after(
-                __receiver,
-                ::core::convert::Into::into(before),
-                ::core::convert::Into::into(after),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetUnitInfoBefore(crate::app::unit::Unit)` overload"]
-    fn set_unit_info_before(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
-        unsafe {
-            let __receiver = <ClassChangeRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ClassChangeRoot_unity2_raw::set_unit_info_before(__receiver, ::core::convert::Into::into(unit), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <ClassChangeRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ClassChangeRoot_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IClassChangeRootMethods : IClassChangeRoot { # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < ClassChangeRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ClassChangeRoot_unity2_raw :: start (__receiver , :: core :: option :: Option :: None) } } # [doc = "`InitUnitInfoAll()` overload"] fn init_unit_info_all (self ,) -> () { unsafe { let __receiver = < ClassChangeRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ClassChangeRoot_unity2_raw :: init_unit_info_all (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetMenuContent()` overload"] fn get_menu_content (self ,) -> crate :: app :: classchangejobmenucontent :: ClassChangeJobMenuContent { unsafe { let __receiver = < ClassChangeRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ClassChangeRoot_unity2_raw :: get_menu_content (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetUnitInfoAfter(crate::app::unit::Unit, crate::app::unit::Unit)` overload"] fn set_unit_info_after (self , before : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , after : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < ClassChangeRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ClassChangeRoot_unity2_raw :: set_unit_info_after (__receiver , :: core :: convert :: Into :: into (before) , :: core :: convert :: Into :: into (after) , :: core :: option :: Option :: None) } } # [doc = "`SetUnitInfoBefore(crate::app::unit::Unit)` overload"] fn set_unit_info_before (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < ClassChangeRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ClassChangeRoot_unity2_raw :: set_unit_info_before (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ClassChangeRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ClassChangeRoot_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-classchangeroot")]
-impl<__T: IClassChangeRoot> IClassChangeRootMethods for __T {}
+impl < __T : IClassChangeRoot > IClassChangeRootMethods for __T { }
+
+#[cfg(feature = "app-classchangeroot")]
+impl ClassChangeRoot { pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ClassChangeRoot_unity2_raw :: __lookup_start :: get_method_info () } pub fn init_unit_info_all_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ClassChangeRoot_unity2_raw :: __lookup_init_unit_info_all :: get_method_info () } pub fn get_menu_content_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ClassChangeRoot_unity2_raw :: __lookup_get_menu_content :: get_method_info () } pub fn set_unit_info_after_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ClassChangeRoot_unity2_raw :: __lookup_set_unit_info_after :: get_method_info () } pub fn set_unit_info_before_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ClassChangeRoot_unity2_raw :: __lookup_set_unit_info_before :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ClassChangeRoot_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-classchangeroot")]
 impl ClassChangeRoot {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ClassChangeRoot),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IClassChangeRootMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ClassChangeRoot) , :: core :: stringify ! (new) ,)) ; < Self as IClassChangeRootMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-classchangeroot")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{ClassChangeRoot, IClassChangeRoot, IClassChangeRootMethods};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        system::object::IObject,
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::ClassChangeRoot;
+    pub use super::IClassChangeRoot;
+    pub use super::IClassChangeRootMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

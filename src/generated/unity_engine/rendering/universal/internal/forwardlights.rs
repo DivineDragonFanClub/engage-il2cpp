@@ -2,602 +2,87 @@
 
 #[cfg(feature = "unity_engine-rendering-universal-internal-forwardlights-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/forwardlights/ForwardLights.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Rendering.Universal.Internal", name = "ForwardLights")]
-    #[parent(crate::system::object::Object)]
-    pub struct ForwardLights {
-        #[static_field]
-        #[rename(name = "k_CustomSpecCubeCount")]
-        pub k_custom_spec_cube_count: i32,
-        #[offset(16)]
-        #[rename(name = "m_AdditionalLightsBufferId")]
-        pub m_additional_lights_buffer_id: i32,
-        #[offset(20)]
-        #[rename(name = "m_AdditionalLightsIndicesId")]
-        pub m_additional_lights_indices_id: i32,
-        #[static_field]
-        #[rename(name = "k_SetupLightConstants")]
-        pub k_setup_light_constants: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "m_ProfilingSampler")]
-        pub m_profiling_sampler: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
-        #[offset(24)]
-        #[rename(name = "m_MixedLightingSetup")]
-        pub m_mixed_lighting_setup: crate::unity_engine::rendering::universal::mixedlightingsetup::MixedLightingSetup,
-        #[offset(32)]
-        #[rename(name = "m_AdditionalLightPositions")]
-        pub m_additional_light_positions: ::unity2::Array<crate::unity_engine::vector4::Vector4>,
-        #[offset(40)]
-        #[rename(name = "m_AdditionalLightColors")]
-        pub m_additional_light_colors: ::unity2::Array<crate::unity_engine::vector4::Vector4>,
-        #[offset(48)]
-        #[rename(name = "m_AdditionalLightAttenuations")]
-        pub m_additional_light_attenuations: ::unity2::Array<crate::unity_engine::vector4::Vector4>,
-        #[offset(56)]
-        #[rename(name = "m_AdditionalLightSpotDirections")]
-        pub m_additional_light_spot_directions: ::unity2::Array<crate::unity_engine::vector4::Vector4>,
-        #[offset(64)]
-        #[rename(name = "m_AdditionalLightOcclusionProbeChannels")]
-        pub m_additional_light_occlusion_probe_channels: ::unity2::Array<crate::unity_engine::vector4::Vector4>,
-        #[offset(72)]
-        #[rename(name = "m_UseStructuredBuffer")]
-        pub m_use_structured_buffer: bool,
-        #[static_field]
-        #[rename(name = "k_BatchSimpleLightMaxCount")]
-        pub k_batch_simple_light_max_count: i32,
-        #[offset(80)]
-        #[rename(name = "m_BatchSimpleLightPositions")]
-        pub m_batch_simple_light_positions: ::unity2::Array<crate::unity_engine::vector4::Vector4>,
-        #[offset(88)]
-        #[rename(name = "m_BatchSimpleLightColors")]
-        pub m_batch_simple_light_colors: ::unity2::Array<crate::unity_engine::vector4::Vector4>,
-        #[offset(96)]
-        #[rename(name = "m_BatchSimpleLightAttenuations")]
-        pub m_batch_simple_light_attenuations: ::unity2::Array<crate::unity_engine::vector4::Vector4>,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/forwardlights/ForwardLights_LightConstantBuffer.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Rendering.Universal.Internal", name = "ForwardLights.LightConstantBuffer")]
-    #[parent(crate::system::object::Object)]
-    pub struct ForwardLights_LightConstantBuffer {
-        #[static_field]
-        #[rename(name = "_MainLightPosition")]
-        pub main_light_position: i32,
-        #[static_field]
-        #[rename(name = "_MainLightColor")]
-        pub main_light_color: i32,
-        #[static_field]
-        #[rename(name = "_MainLightOcclusionProbesChannel")]
-        pub main_light_occlusion_probes_channel: i32,
-        #[static_field]
-        #[rename(name = "_CharaLightPosition")]
-        pub chara_light_position: i32,
-        #[static_field]
-        #[rename(name = "_CharaLightColor")]
-        pub chara_light_color: i32,
-        #[static_field]
-        #[rename(name = "_AdditionalLightsCount")]
-        pub additional_lights_count: i32,
-        #[static_field]
-        #[rename(name = "_AdditionalLightsPosition")]
-        pub additional_lights_position: i32,
-        #[static_field]
-        #[rename(name = "_AdditionalLightsColor")]
-        pub additional_lights_color: i32,
-        #[static_field]
-        #[rename(name = "_AdditionalLightsAttenuation")]
-        pub additional_lights_attenuation: i32,
-        #[static_field]
-        #[rename(name = "_AdditionalLightsSpotDir")]
-        pub additional_lights_spot_dir: i32,
-        #[static_field]
-        #[rename(name = "_AdditionalLightOcclusionProbeChannel")]
-        pub additional_light_occlusion_probe_channel: i32,
-        #[static_field]
-        #[rename(name = "_BatchSimpleLightsPosition")]
-        pub batch_simple_lights_position: i32,
-        #[static_field]
-        #[rename(name = "_BatchSimpleLightsColor")]
-        pub batch_simple_lights_color: i32,
-        #[static_field]
-        #[rename(name = "_BatchSimpleLightsAttenuation")]
-        pub batch_simple_lights_attenuation: i32,
-        #[static_field]
-        #[rename(name = "_SpecCubeBoxMax")]
-        pub spec_cube_box_max: ::unity2::Array<i32>,
-        #[static_field]
-        #[rename(name = "_SpecCubeBoxMin")]
-        pub spec_cube_box_min: ::unity2::Array<i32>,
-        #[static_field]
-        #[rename(name = "_SpecCubePos")]
-        pub spec_cube_pos: ::unity2::Array<i32>,
-        #[static_field]
-        #[rename(name = "_SpecCubeTex")]
-        pub spec_cube_tex: ::unity2::Array<i32>,
-    }
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/forwardlights/ForwardLights.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.Universal.Internal" , name = "ForwardLights")] # [parent (crate :: system :: object :: Object)] pub struct ForwardLights {
+# [static_field] # [rename (name = "k_CustomSpecCubeCount")] pub k_custom_spec_cube_count : i32 ,
+# [offset (16)] # [rename (name = "m_AdditionalLightsBufferId")] pub m_additional_lights_buffer_id : i32 ,
+# [offset (20)] # [rename (name = "m_AdditionalLightsIndicesId")] pub m_additional_lights_indices_id : i32 ,
+# [static_field] # [rename (name = "k_SetupLightConstants")] pub k_setup_light_constants : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "m_ProfilingSampler")] pub m_profiling_sampler : crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler ,
+# [offset (24)] # [rename (name = "m_MixedLightingSetup")] pub m_mixed_lighting_setup : crate :: unity_engine :: rendering :: universal :: mixedlightingsetup :: MixedLightingSetup ,
+# [offset (32)] # [rename (name = "m_AdditionalLightPositions")] pub m_additional_light_positions : :: unity2 :: Array < crate :: unity_engine :: vector4 :: Vector4 > ,
+# [offset (40)] # [rename (name = "m_AdditionalLightColors")] pub m_additional_light_colors : :: unity2 :: Array < crate :: unity_engine :: vector4 :: Vector4 > ,
+# [offset (48)] # [rename (name = "m_AdditionalLightAttenuations")] pub m_additional_light_attenuations : :: unity2 :: Array < crate :: unity_engine :: vector4 :: Vector4 > ,
+# [offset (56)] # [rename (name = "m_AdditionalLightSpotDirections")] pub m_additional_light_spot_directions : :: unity2 :: Array < crate :: unity_engine :: vector4 :: Vector4 > ,
+# [offset (64)] # [rename (name = "m_AdditionalLightOcclusionProbeChannels")] pub m_additional_light_occlusion_probe_channels : :: unity2 :: Array < crate :: unity_engine :: vector4 :: Vector4 > ,
+# [offset (72)] # [rename (name = "m_UseStructuredBuffer")] pub m_use_structured_buffer : bool ,
+# [static_field] # [rename (name = "k_BatchSimpleLightMaxCount")] pub k_batch_simple_light_max_count : i32 ,
+# [offset (80)] # [rename (name = "m_BatchSimpleLightPositions")] pub m_batch_simple_light_positions : :: unity2 :: Array < crate :: unity_engine :: vector4 :: Vector4 > ,
+# [offset (88)] # [rename (name = "m_BatchSimpleLightColors")] pub m_batch_simple_light_colors : :: unity2 :: Array < crate :: unity_engine :: vector4 :: Vector4 > ,
+# [offset (96)] # [rename (name = "m_BatchSimpleLightAttenuations")] pub m_batch_simple_light_attenuations : :: unity2 :: Array < crate :: unity_engine :: vector4 :: Vector4 > ,
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/forwardlights/ForwardLights_LightConstantBuffer.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.Universal.Internal" , name = "ForwardLights.LightConstantBuffer")] # [parent (crate :: system :: object :: Object)] pub struct ForwardLights_LightConstantBuffer {
+# [static_field] # [rename (name = "_MainLightPosition")] pub main_light_position : i32 ,
+# [static_field] # [rename (name = "_MainLightColor")] pub main_light_color : i32 ,
+# [static_field] # [rename (name = "_MainLightOcclusionProbesChannel")] pub main_light_occlusion_probes_channel : i32 ,
+# [static_field] # [rename (name = "_CharaLightPosition")] pub chara_light_position : i32 ,
+# [static_field] # [rename (name = "_CharaLightColor")] pub chara_light_color : i32 ,
+# [static_field] # [rename (name = "_AdditionalLightsCount")] pub additional_lights_count : i32 ,
+# [static_field] # [rename (name = "_AdditionalLightsPosition")] pub additional_lights_position : i32 ,
+# [static_field] # [rename (name = "_AdditionalLightsColor")] pub additional_lights_color : i32 ,
+# [static_field] # [rename (name = "_AdditionalLightsAttenuation")] pub additional_lights_attenuation : i32 ,
+# [static_field] # [rename (name = "_AdditionalLightsSpotDir")] pub additional_lights_spot_dir : i32 ,
+# [static_field] # [rename (name = "_AdditionalLightOcclusionProbeChannel")] pub additional_light_occlusion_probe_channel : i32 ,
+# [static_field] # [rename (name = "_BatchSimpleLightsPosition")] pub batch_simple_lights_position : i32 ,
+# [static_field] # [rename (name = "_BatchSimpleLightsColor")] pub batch_simple_lights_color : i32 ,
+# [static_field] # [rename (name = "_BatchSimpleLightsAttenuation")] pub batch_simple_lights_attenuation : i32 ,
+# [static_field] # [rename (name = "_SpecCubeBoxMax")] pub spec_cube_box_max : :: unity2 :: Array < i32 > ,
+# [static_field] # [rename (name = "_SpecCubeBoxMin")] pub spec_cube_box_min : :: unity2 :: Array < i32 > ,
+# [static_field] # [rename (name = "_SpecCubePos")] pub spec_cube_pos : :: unity2 :: Array < i32 > ,
+# [static_field] # [rename (name = "_SpecCubeTex")] pub spec_cube_tex : :: unity2 :: Array < i32 > ,
+}
+
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-internal-forwardlights-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-universal-internal-forwardlights")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ForwardLights_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<ForwardLights as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ForwardLights as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: ForwardLights, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ForwardLights, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_setup {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::rendering::universal::renderingdata::RenderingData as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<ForwardLights as ::unity2::ClassIdentity>::class(), "Setup", 2, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ForwardLights as ::unity2::ClassIdentity>::NAME,
-                        "Setup",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn setup(
-        this: ForwardLights,
-        context: crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
-        rendering_data: *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ForwardLights,
-            crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
-            *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_setup::get_method_info().method_ptr);
-        inner(this, context, rendering_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_setup_shader_light_constants {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::rendering::commandbuffer::CommandBuffer as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::rendering::universal::renderingdata::RenderingData as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ForwardLights as ::unity2::ClassIdentity>::class(),
-                "SetupShaderLightConstants",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ForwardLights as ::unity2::ClassIdentity>::NAME,
-                        "SetupShaderLightConstants",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn setup_shader_light_constants(
-        this: ForwardLights,
-        cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
-        rendering_data: *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ForwardLights,
-            crate::unity_engine::rendering::commandbuffer::CommandBuffer,
-            *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_setup_shader_light_constants::get_method_info().method_ptr);
-        inner(this, cmd, rendering_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_setup_main_light_constants {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::rendering::commandbuffer::CommandBuffer as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::rendering::universal::lightdata::LightData as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ForwardLights as ::unity2::ClassIdentity>::class(),
-                "SetupMainLightConstants",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ForwardLights as ::unity2::ClassIdentity>::NAME,
-                        "SetupMainLightConstants",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn setup_main_light_constants(
-        this: ForwardLights,
-        cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
-        light_data: *mut crate::unity_engine::rendering::universal::lightdata::LightData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ForwardLights,
-            crate::unity_engine::rendering::commandbuffer::CommandBuffer,
-            *mut crate::unity_engine::rendering::universal::lightdata::LightData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_setup_main_light_constants::get_method_info().method_ptr);
-        inner(this, cmd, light_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_setup_chara_light_constants {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::rendering::commandbuffer::CommandBuffer as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::rendering::universal::lightdata::LightData as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::rendering::universal::cameradata::CameraData as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ForwardLights as ::unity2::ClassIdentity>::class(),
-                "SetupCharaLightConstants",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ForwardLights as ::unity2::ClassIdentity>::NAME,
-                        "SetupCharaLightConstants",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn setup_chara_light_constants(
-        this: ForwardLights,
-        cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
-        light_data: *mut crate::unity_engine::rendering::universal::lightdata::LightData,
-        camera_data: *mut crate::unity_engine::rendering::universal::cameradata::CameraData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ForwardLights,
-            crate::unity_engine::rendering::commandbuffer::CommandBuffer,
-            *mut crate::unity_engine::rendering::universal::lightdata::LightData,
-            *mut crate::unity_engine::rendering::universal::cameradata::CameraData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_setup_chara_light_constants::get_method_info().method_ptr);
-        inner(this, cmd, light_data, camera_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_setup_additional_light_constants {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::rendering::commandbuffer::CommandBuffer as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::rendering::universal::renderingdata::RenderingData as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ForwardLights as ::unity2::ClassIdentity>::class(),
-                "SetupAdditionalLightConstants",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ForwardLights as ::unity2::ClassIdentity>::NAME,
-                        "SetupAdditionalLightConstants",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn setup_additional_light_constants(
-        this: ForwardLights,
-        cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
-        rendering_data: *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ForwardLights,
-            crate::unity_engine::rendering::commandbuffer::CommandBuffer,
-            *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_setup_additional_light_constants::get_method_info().method_ptr);
-        inner(this, cmd, rendering_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_setup_per_object_light_indices {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::rendering::cullingresults::CullingResults as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::rendering::universal::lightdata::LightData as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ForwardLights as ::unity2::ClassIdentity>::class(),
-                "SetupPerObjectLightIndices",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ForwardLights as ::unity2::ClassIdentity>::NAME,
-                        "SetupPerObjectLightIndices",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn setup_per_object_light_indices(
-        this: ForwardLights,
-        cull_results: crate::unity_engine::rendering::cullingresults::CullingResults,
-        light_data: *mut crate::unity_engine::rendering::universal::lightdata::LightData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(
-            ForwardLights,
-            crate::unity_engine::rendering::cullingresults::CullingResults,
-            *mut crate::unity_engine::rendering::universal::lightdata::LightData,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(__lookup_setup_per_object_light_indices::get_method_info().method_ptr);
-        inner(this, cull_results, light_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<ForwardLights as ::unity2::ClassIdentity>::class(), ".cctor", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ForwardLights as ::unity2::ClassIdentity>::NAME,
-                        ".cctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ForwardLights_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ForwardLights as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ForwardLights as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : ForwardLights , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ForwardLights , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_setup { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ForwardLights as :: unity2 :: ClassIdentity > :: class () , "Setup" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ForwardLights as :: unity2 :: ClassIdentity > :: NAME , "Setup" , e) , } } } pub unsafe fn setup (this : ForwardLights , context : crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext , rendering_data : * mut crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ForwardLights , crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext , * mut crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_setup :: get_method_info () . method_ptr ,) ; inner (this , context , rendering_data , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_setup_shader_light_constants { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ForwardLights as :: unity2 :: ClassIdentity > :: class () , "SetupShaderLightConstants" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ForwardLights as :: unity2 :: ClassIdentity > :: NAME , "SetupShaderLightConstants" , e) , } } } pub unsafe fn setup_shader_light_constants (this : ForwardLights , cmd : crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer , rendering_data : * mut crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ForwardLights , crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer , * mut crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_setup_shader_light_constants :: get_method_info () . method_ptr ,) ; inner (this , cmd , rendering_data , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_setup_main_light_constants { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: lightdata :: LightData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ForwardLights as :: unity2 :: ClassIdentity > :: class () , "SetupMainLightConstants" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ForwardLights as :: unity2 :: ClassIdentity > :: NAME , "SetupMainLightConstants" , e) , } } } pub unsafe fn setup_main_light_constants (this : ForwardLights , cmd : crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer , light_data : * mut crate :: unity_engine :: rendering :: universal :: lightdata :: LightData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ForwardLights , crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer , * mut crate :: unity_engine :: rendering :: universal :: lightdata :: LightData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_setup_main_light_constants :: get_method_info () . method_ptr ,) ; inner (this , cmd , light_data , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_setup_chara_light_constants { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: lightdata :: LightData as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: cameradata :: CameraData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ForwardLights as :: unity2 :: ClassIdentity > :: class () , "SetupCharaLightConstants" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ForwardLights as :: unity2 :: ClassIdentity > :: NAME , "SetupCharaLightConstants" , e) , } } } pub unsafe fn setup_chara_light_constants (this : ForwardLights , cmd : crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer , light_data : * mut crate :: unity_engine :: rendering :: universal :: lightdata :: LightData , camera_data : * mut crate :: unity_engine :: rendering :: universal :: cameradata :: CameraData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ForwardLights , crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer , * mut crate :: unity_engine :: rendering :: universal :: lightdata :: LightData , * mut crate :: unity_engine :: rendering :: universal :: cameradata :: CameraData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_setup_chara_light_constants :: get_method_info () . method_ptr ,) ; inner (this , cmd , light_data , camera_data , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_setup_additional_light_constants { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ForwardLights as :: unity2 :: ClassIdentity > :: class () , "SetupAdditionalLightConstants" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ForwardLights as :: unity2 :: ClassIdentity > :: NAME , "SetupAdditionalLightConstants" , e) , } } } pub unsafe fn setup_additional_light_constants (this : ForwardLights , cmd : crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer , rendering_data : * mut crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ForwardLights , crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer , * mut crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_setup_additional_light_constants :: get_method_info () . method_ptr ,) ; inner (this , cmd , rendering_data , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_setup_per_object_light_indices { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: cullingresults :: CullingResults as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: lightdata :: LightData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ForwardLights as :: unity2 :: ClassIdentity > :: class () , "SetupPerObjectLightIndices" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ForwardLights as :: unity2 :: ClassIdentity > :: NAME , "SetupPerObjectLightIndices" , e) , } } } pub unsafe fn setup_per_object_light_indices (this : ForwardLights , cull_results : crate :: unity_engine :: rendering :: cullingresults :: CullingResults , light_data : * mut crate :: unity_engine :: rendering :: universal :: lightdata :: LightData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (ForwardLights , crate :: unity_engine :: rendering :: cullingresults :: CullingResults , * mut crate :: unity_engine :: rendering :: universal :: lightdata :: LightData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_setup_per_object_light_indices :: get_method_info () . method_ptr ,) ; inner (this , cull_results , light_data , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ForwardLights as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ForwardLights as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
+
+#[cfg(feature = "unity_engine-rendering-universal-internal-forwardlights")]
+impl ForwardLights { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { __ForwardLights_unity2_raw :: cctor (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-rendering-universal-internal-forwardlights")]
+pub trait IForwardLightsMethods : IForwardLights { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ForwardLights as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ForwardLights_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Setup(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, *mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"] fn setup (self , context : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext >) -> crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData { unsafe { let __receiver = < ForwardLights as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData > :: uninit () ; __ForwardLights_unity2_raw :: setup (__receiver , :: core :: convert :: Into :: into (context) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) ; __out_0 . assume_init () } } # [doc = "`SetupShaderLightConstants(crate::unity_engine::rendering::commandbuffer::CommandBuffer, *mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"] fn setup_shader_light_constants (self , cmd : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer >) -> crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData { unsafe { let __receiver = < ForwardLights as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData > :: uninit () ; __ForwardLights_unity2_raw :: setup_shader_light_constants (__receiver , :: core :: convert :: Into :: into (cmd) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) ; __out_0 . assume_init () } } # [doc = "`SetupMainLightConstants(crate::unity_engine::rendering::commandbuffer::CommandBuffer, *mutcrate::unity_engine::rendering::universal::lightdata::LightData)` overload"] fn setup_main_light_constants (self , cmd : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer >) -> crate :: unity_engine :: rendering :: universal :: lightdata :: LightData { unsafe { let __receiver = < ForwardLights as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: rendering :: universal :: lightdata :: LightData > :: uninit () ; __ForwardLights_unity2_raw :: setup_main_light_constants (__receiver , :: core :: convert :: Into :: into (cmd) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) ; __out_0 . assume_init () } } # [doc = "`SetupCharaLightConstants(crate::unity_engine::rendering::commandbuffer::CommandBuffer, *mutcrate::unity_engine::rendering::universal::lightdata::LightData, *mutcrate::unity_engine::rendering::universal::cameradata::CameraData)` overload"] fn setup_chara_light_constants (self , cmd : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer >) -> (crate :: unity_engine :: rendering :: universal :: lightdata :: LightData , crate :: unity_engine :: rendering :: universal :: cameradata :: CameraData) { unsafe { let __receiver = < ForwardLights as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: rendering :: universal :: lightdata :: LightData > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: rendering :: universal :: cameradata :: CameraData > :: uninit () ; __ForwardLights_unity2_raw :: setup_chara_light_constants (__receiver , :: core :: convert :: Into :: into (cmd) , __out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: option :: Option :: None) ; (__out_0 . assume_init () , __out_1 . assume_init ()) } } # [doc = "`SetupAdditionalLightConstants(crate::unity_engine::rendering::commandbuffer::CommandBuffer, *mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"] fn setup_additional_light_constants (self , cmd : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer >) -> crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData { unsafe { let __receiver = < ForwardLights as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData > :: uninit () ; __ForwardLights_unity2_raw :: setup_additional_light_constants (__receiver , :: core :: convert :: Into :: into (cmd) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) ; __out_0 . assume_init () } } # [doc = "`SetupPerObjectLightIndices(crate::unity_engine::rendering::cullingresults::CullingResults, *mutcrate::unity_engine::rendering::universal::lightdata::LightData)` overload"] fn setup_per_object_light_indices (self , cull_results : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: cullingresults :: CullingResults >) -> (i32 , crate :: unity_engine :: rendering :: universal :: lightdata :: LightData) { unsafe { let __receiver = < ForwardLights as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: rendering :: universal :: lightdata :: LightData > :: uninit () ; let __ret = { __ForwardLights_unity2_raw :: setup_per_object_light_indices (__receiver , :: core :: convert :: Into :: into (cull_results) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } ; (__ret , __out_0 . assume_init ()) } } }
+
+#[cfg(feature = "unity_engine-rendering-universal-internal-forwardlights")]
+impl < __T : IForwardLights > IForwardLightsMethods for __T { }
+
+#[cfg(feature = "unity_engine-rendering-universal-internal-forwardlights")]
+impl ForwardLights { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ForwardLights_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn setup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ForwardLights_unity2_raw :: __lookup_setup :: get_method_info () } pub fn setup_shader_light_constants_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ForwardLights_unity2_raw :: __lookup_setup_shader_light_constants :: get_method_info () } pub fn setup_main_light_constants_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ForwardLights_unity2_raw :: __lookup_setup_main_light_constants :: get_method_info () } pub fn setup_chara_light_constants_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ForwardLights_unity2_raw :: __lookup_setup_chara_light_constants :: get_method_info () } pub fn setup_additional_light_constants_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ForwardLights_unity2_raw :: __lookup_setup_additional_light_constants :: get_method_info () } pub fn setup_per_object_light_indices_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ForwardLights_unity2_raw :: __lookup_setup_per_object_light_indices :: get_method_info () } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ForwardLights_unity2_raw :: __lookup_cctor :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-rendering-universal-internal-forwardlights")]
 impl ForwardLights {
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __ForwardLights_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-internal-forwardlights")]
-pub trait IForwardLightsMethods: IForwardLights {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <ForwardLights as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ForwardLights_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Setup(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, *mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"]
-    fn setup(
-        self,
-        context: impl ::core::convert::Into<crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext>,
-    ) -> crate::unity_engine::rendering::universal::renderingdata::RenderingData {
-        unsafe {
-            let __receiver = <ForwardLights as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::universal::renderingdata::RenderingData>::uninit();
-            __ForwardLights_unity2_raw::setup(
-                __receiver,
-                ::core::convert::Into::into(context),
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
-            __out_0.assume_init()
-        }
-    }
-    #[doc = "`SetupShaderLightConstants(crate::unity_engine::rendering::commandbuffer::CommandBuffer, *mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"]
-    fn setup_shader_light_constants(
-        self,
-        cmd: impl ::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>,
-    ) -> crate::unity_engine::rendering::universal::renderingdata::RenderingData {
-        unsafe {
-            let __receiver = <ForwardLights as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::universal::renderingdata::RenderingData>::uninit();
-            __ForwardLights_unity2_raw::setup_shader_light_constants(
-                __receiver,
-                ::core::convert::Into::into(cmd),
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
-            __out_0.assume_init()
-        }
-    }
-    #[doc = "`SetupMainLightConstants(crate::unity_engine::rendering::commandbuffer::CommandBuffer, *mutcrate::unity_engine::rendering::universal::lightdata::LightData)` overload"]
-    fn setup_main_light_constants(
-        self,
-        cmd: impl ::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>,
-    ) -> crate::unity_engine::rendering::universal::lightdata::LightData {
-        unsafe {
-            let __receiver = <ForwardLights as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::universal::lightdata::LightData>::uninit();
-            __ForwardLights_unity2_raw::setup_main_light_constants(
-                __receiver,
-                ::core::convert::Into::into(cmd),
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
-            __out_0.assume_init()
-        }
-    }
-    #[doc = "`SetupCharaLightConstants(crate::unity_engine::rendering::commandbuffer::CommandBuffer, *mutcrate::unity_engine::rendering::universal::lightdata::LightData, *mutcrate::unity_engine::rendering::universal::cameradata::CameraData)` overload"]
-    fn setup_chara_light_constants(
-        self,
-        cmd: impl ::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>,
-    ) -> (
-        crate::unity_engine::rendering::universal::lightdata::LightData,
-        crate::unity_engine::rendering::universal::cameradata::CameraData,
-    ) {
-        unsafe {
-            let __receiver = <ForwardLights as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::universal::lightdata::LightData>::uninit();
-            let mut __out_1 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::universal::cameradata::CameraData>::uninit();
-            __ForwardLights_unity2_raw::setup_chara_light_constants(
-                __receiver,
-                ::core::convert::Into::into(cmd),
-                __out_0.as_mut_ptr(),
-                __out_1.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
-            (__out_0.assume_init(), __out_1.assume_init())
-        }
-    }
-    #[doc = "`SetupAdditionalLightConstants(crate::unity_engine::rendering::commandbuffer::CommandBuffer, *mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"]
-    fn setup_additional_light_constants(
-        self,
-        cmd: impl ::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>,
-    ) -> crate::unity_engine::rendering::universal::renderingdata::RenderingData {
-        unsafe {
-            let __receiver = <ForwardLights as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::universal::renderingdata::RenderingData>::uninit();
-            __ForwardLights_unity2_raw::setup_additional_light_constants(
-                __receiver,
-                ::core::convert::Into::into(cmd),
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
-            __out_0.assume_init()
-        }
-    }
-    #[doc = "`SetupPerObjectLightIndices(crate::unity_engine::rendering::cullingresults::CullingResults, *mutcrate::unity_engine::rendering::universal::lightdata::LightData)` overload"]
-    fn setup_per_object_light_indices(
-        self,
-        cull_results: impl ::core::convert::Into<crate::unity_engine::rendering::cullingresults::CullingResults>,
-    ) -> (i32, crate::unity_engine::rendering::universal::lightdata::LightData) {
-        unsafe {
-            let __receiver = <ForwardLights as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::universal::lightdata::LightData>::uninit();
-            let __ret = {
-                __ForwardLights_unity2_raw::setup_per_object_light_indices(
-                    __receiver,
-                    ::core::convert::Into::into(cull_results),
-                    __out_0.as_mut_ptr(),
-                    ::core::option::Option::None,
-                )
-            };
-            (__ret, __out_0.assume_init())
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-internal-forwardlights")]
-impl<__T: IForwardLights> IForwardLightsMethods for __T {}
-
-#[cfg(feature = "unity_engine-rendering-universal-internal-forwardlights")]
-impl ForwardLights {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(ForwardLights), ::core::stringify!(new),));
-        <Self as IForwardLightsMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ForwardLights) , :: core :: stringify ! (new) ,)) ; < Self as IForwardLightsMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-internal-forwardlights")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{ForwardLights, ForwardLights_LightConstantBuffer, IForwardLights, IForwardLightsMethods, IForwardLights_LightConstantBuffer};
+    pub use super::ForwardLights;
+    pub use super::IForwardLights;
+    pub use super::IForwardLightsMethods;
+    pub use super::ForwardLights_LightConstantBuffer;
+    pub use super::IForwardLights_LightConstantBuffer;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

@@ -2,321 +2,462 @@
 
 #[cfg(feature = "unity_engine-player_loop-fixedupdate-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        valuetype::{IValueType, ValueType},
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/fixedupdate/FixedUpdate.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct FixedUpdate {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
 
-    impl ::unity2::ClassIdentity for FixedUpdate {
-        const NAME: &'static str = "FixedUpdate";
-        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/fixedupdate/FixedUpdate_LegacyFixedAnimationUpdate.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct FixedUpdate_LegacyFixedAnimationUpdate {}
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+
+impl ::unity2::ClassIdentity for FixedUpdate_LegacyFixedAnimationUpdate {
+    const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
+
+    const NAME: &'static str = "FixedUpdate.LegacyFixedAnimationUpdate";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for FixedUpdate {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl ::unity2::IlType for FixedUpdate_LegacyFixedAnimationUpdate {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/fixedupdate/FixedUpdate_LegacyFixedAnimationUpdate.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct FixedUpdate_LegacyFixedAnimationUpdate {}
+}
 
-    impl ::unity2::ClassIdentity for FixedUpdate_LegacyFixedAnimationUpdate {
-        const NAME: &'static str = "FixedUpdate.LegacyFixedAnimationUpdate";
-        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/fixedupdate/FixedUpdate_Physics2DFixedUpdate.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct FixedUpdate_Physics2DFixedUpdate {}
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+
+impl ::unity2::ClassIdentity for FixedUpdate_Physics2DFixedUpdate {
+    const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
+
+    const NAME: &'static str = "FixedUpdate.Physics2DFixedUpdate";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for FixedUpdate_LegacyFixedAnimationUpdate {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl ::unity2::IlType for FixedUpdate_Physics2DFixedUpdate {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/fixedupdate/FixedUpdate_DirectorFixedSampleTime.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct FixedUpdate_DirectorFixedSampleTime {}
+}
 
-    impl ::unity2::ClassIdentity for FixedUpdate_DirectorFixedSampleTime {
-        const NAME: &'static str = "FixedUpdate.DirectorFixedSampleTime";
-        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/fixedupdate/FixedUpdate_DirectorFixedUpdatePostPhysics.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct FixedUpdate_DirectorFixedUpdatePostPhysics {}
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+
+impl ::unity2::ClassIdentity for FixedUpdate_DirectorFixedUpdatePostPhysics {
+    const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
+
+    const NAME: &'static str = "FixedUpdate.DirectorFixedUpdatePostPhysics";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for FixedUpdate_DirectorFixedSampleTime {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl ::unity2::IlType for FixedUpdate_DirectorFixedUpdatePostPhysics {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/fixedupdate/FixedUpdate_PhysicsClothFixedUpdate.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct FixedUpdate_PhysicsClothFixedUpdate {}
+}
 
-    impl ::unity2::ClassIdentity for FixedUpdate_PhysicsClothFixedUpdate {
-        const NAME: &'static str = "FixedUpdate.PhysicsClothFixedUpdate";
-        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/fixedupdate/FixedUpdate_DirectorFixedSampleTime.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct FixedUpdate_DirectorFixedSampleTime {}
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+
+impl ::unity2::ClassIdentity for FixedUpdate_DirectorFixedSampleTime {
+    const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
+
+    const NAME: &'static str = "FixedUpdate.DirectorFixedSampleTime";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for FixedUpdate_PhysicsClothFixedUpdate {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl ::unity2::IlType for FixedUpdate_DirectorFixedSampleTime {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/fixedupdate/FixedUpdate_Physics2DFixedUpdate.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct FixedUpdate_Physics2DFixedUpdate {}
+}
 
-    impl ::unity2::ClassIdentity for FixedUpdate_Physics2DFixedUpdate {
-        const NAME: &'static str = "FixedUpdate.Physics2DFixedUpdate";
-        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/fixedupdate/FixedUpdate_ClearLines.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct FixedUpdate_ClearLines {}
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+
+impl ::unity2::ClassIdentity for FixedUpdate_ClearLines {
+    const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
+
+    const NAME: &'static str = "FixedUpdate.ClearLines";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for FixedUpdate_Physics2DFixedUpdate {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl ::unity2::IlType for FixedUpdate_ClearLines {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/fixedupdate/FixedUpdate_PhysicsFixedUpdate.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct FixedUpdate_PhysicsFixedUpdate {}
+}
 
-    impl ::unity2::ClassIdentity for FixedUpdate_PhysicsFixedUpdate {
-        const NAME: &'static str = "FixedUpdate.PhysicsFixedUpdate";
-        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/fixedupdate/FixedUpdate_AudioFixedUpdate.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct FixedUpdate_AudioFixedUpdate {}
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+
+impl ::unity2::ClassIdentity for FixedUpdate_AudioFixedUpdate {
+    const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
+
+    const NAME: &'static str = "FixedUpdate.AudioFixedUpdate";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for FixedUpdate_PhysicsFixedUpdate {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl ::unity2::IlType for FixedUpdate_AudioFixedUpdate {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/fixedupdate/FixedUpdate_ClearLines.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct FixedUpdate_ClearLines {}
+}
 
-    impl ::unity2::ClassIdentity for FixedUpdate_ClearLines {
-        const NAME: &'static str = "FixedUpdate.ClearLines";
-        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/fixedupdate/FixedUpdate_ScriptRunDelayedFixedFrameRate.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct FixedUpdate_ScriptRunDelayedFixedFrameRate {}
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+
+impl ::unity2::ClassIdentity for FixedUpdate_ScriptRunDelayedFixedFrameRate {
+    const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
+
+    const NAME: &'static str = "FixedUpdate.ScriptRunDelayedFixedFrameRate";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for FixedUpdate_ClearLines {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl ::unity2::IlType for FixedUpdate_ScriptRunDelayedFixedFrameRate {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/fixedupdate/FixedUpdate_DirectorFixedUpdatePostPhysics.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct FixedUpdate_DirectorFixedUpdatePostPhysics {}
+}
 
-    impl ::unity2::ClassIdentity for FixedUpdate_DirectorFixedUpdatePostPhysics {
-        const NAME: &'static str = "FixedUpdate.DirectorFixedUpdatePostPhysics";
-        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/fixedupdate/FixedUpdate_NewInputFixedUpdate.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct FixedUpdate_NewInputFixedUpdate {}
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+
+impl ::unity2::ClassIdentity for FixedUpdate_NewInputFixedUpdate {
+    const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
+
+    const NAME: &'static str = "FixedUpdate.NewInputFixedUpdate";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for FixedUpdate_DirectorFixedUpdatePostPhysics {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl ::unity2::IlType for FixedUpdate_NewInputFixedUpdate {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/fixedupdate/FixedUpdate_NewInputFixedUpdate.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct FixedUpdate_NewInputFixedUpdate {}
+}
 
-    impl ::unity2::ClassIdentity for FixedUpdate_NewInputFixedUpdate {
-        const NAME: &'static str = "FixedUpdate.NewInputFixedUpdate";
-        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/fixedupdate/FixedUpdate_DirectorFixedUpdate.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct FixedUpdate_DirectorFixedUpdate {}
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+
+impl ::unity2::ClassIdentity for FixedUpdate_DirectorFixedUpdate {
+    const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
+
+    const NAME: &'static str = "FixedUpdate.DirectorFixedUpdate";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for FixedUpdate_NewInputFixedUpdate {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl ::unity2::IlType for FixedUpdate_DirectorFixedUpdate {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/fixedupdate/FixedUpdate_ScriptRunBehaviourFixedUpdate.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct FixedUpdate_ScriptRunBehaviourFixedUpdate {}
+}
 
-    impl ::unity2::ClassIdentity for FixedUpdate_ScriptRunBehaviourFixedUpdate {
-        const NAME: &'static str = "FixedUpdate.ScriptRunBehaviourFixedUpdate";
-        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/fixedupdate/FixedUpdate.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct FixedUpdate {}
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+
+impl ::unity2::ClassIdentity for FixedUpdate {
+    const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
+
+    const NAME: &'static str = "FixedUpdate";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for FixedUpdate_ScriptRunBehaviourFixedUpdate {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl ::unity2::IlType for FixedUpdate {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/fixedupdate/FixedUpdate_AudioFixedUpdate.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct FixedUpdate_AudioFixedUpdate {}
+}
 
-    impl ::unity2::ClassIdentity for FixedUpdate_AudioFixedUpdate {
-        const NAME: &'static str = "FixedUpdate.AudioFixedUpdate";
-        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/fixedupdate/FixedUpdate_XRFixedUpdate.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct FixedUpdate_XRFixedUpdate {}
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+
+impl ::unity2::ClassIdentity for FixedUpdate_XRFixedUpdate {
+    const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
+
+    const NAME: &'static str = "FixedUpdate.XRFixedUpdate";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for FixedUpdate_AudioFixedUpdate {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl ::unity2::IlType for FixedUpdate_XRFixedUpdate {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/fixedupdate/FixedUpdate_DirectorFixedUpdate.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct FixedUpdate_DirectorFixedUpdate {}
+}
 
-    impl ::unity2::ClassIdentity for FixedUpdate_DirectorFixedUpdate {
-        const NAME: &'static str = "FixedUpdate.DirectorFixedUpdate";
-        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/fixedupdate/FixedUpdate_PhysicsFixedUpdate.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct FixedUpdate_PhysicsFixedUpdate {}
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+
+impl ::unity2::ClassIdentity for FixedUpdate_PhysicsFixedUpdate {
+    const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
+
+    const NAME: &'static str = "FixedUpdate.PhysicsFixedUpdate";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for FixedUpdate_DirectorFixedUpdate {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl ::unity2::IlType for FixedUpdate_PhysicsFixedUpdate {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/fixedupdate/FixedUpdate_ScriptRunDelayedFixedFrameRate.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct FixedUpdate_ScriptRunDelayedFixedFrameRate {}
+}
 
-    impl ::unity2::ClassIdentity for FixedUpdate_ScriptRunDelayedFixedFrameRate {
-        const NAME: &'static str = "FixedUpdate.ScriptRunDelayedFixedFrameRate";
-        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/fixedupdate/FixedUpdate_ScriptRunBehaviourFixedUpdate.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct FixedUpdate_ScriptRunBehaviourFixedUpdate {}
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+
+impl ::unity2::ClassIdentity for FixedUpdate_ScriptRunBehaviourFixedUpdate {
+    const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
+
+    const NAME: &'static str = "FixedUpdate.ScriptRunBehaviourFixedUpdate";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for FixedUpdate_ScriptRunDelayedFixedFrameRate {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl ::unity2::IlType for FixedUpdate_ScriptRunBehaviourFixedUpdate {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/fixedupdate/FixedUpdate_XRFixedUpdate.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct FixedUpdate_XRFixedUpdate {}
+}
 
-    impl ::unity2::ClassIdentity for FixedUpdate_XRFixedUpdate {
-        const NAME: &'static str = "FixedUpdate.XRFixedUpdate";
-        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/fixedupdate/FixedUpdate_PhysicsClothFixedUpdate.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct FixedUpdate_PhysicsClothFixedUpdate {}
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+
+impl ::unity2::ClassIdentity for FixedUpdate_PhysicsClothFixedUpdate {
+    const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
+
+    const NAME: &'static str = "FixedUpdate.PhysicsClothFixedUpdate";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for FixedUpdate_XRFixedUpdate {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl ::unity2::IlType for FixedUpdate_PhysicsClothFixedUpdate {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
+
+}
+
 }
 
 #[cfg(feature = "unity_engine-player_loop-fixedupdate-types")]
@@ -325,15 +466,22 @@ pub use __types::*;
 #[cfg(feature = "unity_engine-player_loop-fixedupdate")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{
-        FixedUpdate, FixedUpdate_AudioFixedUpdate, FixedUpdate_ClearLines, FixedUpdate_DirectorFixedSampleTime, FixedUpdate_DirectorFixedUpdate,
-        FixedUpdate_DirectorFixedUpdatePostPhysics, FixedUpdate_LegacyFixedAnimationUpdate, FixedUpdate_NewInputFixedUpdate,
-        FixedUpdate_Physics2DFixedUpdate, FixedUpdate_PhysicsClothFixedUpdate, FixedUpdate_PhysicsFixedUpdate,
-        FixedUpdate_ScriptRunBehaviourFixedUpdate, FixedUpdate_ScriptRunDelayedFixedFrameRate, FixedUpdate_XRFixedUpdate,
-    };
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::system::{object::IObject, valuetype::IValueType};
+    pub use super::FixedUpdate_LegacyFixedAnimationUpdate;
+    pub use super::FixedUpdate_Physics2DFixedUpdate;
+    pub use super::FixedUpdate_DirectorFixedUpdatePostPhysics;
+    pub use super::FixedUpdate_DirectorFixedSampleTime;
+    pub use super::FixedUpdate_ClearLines;
+    pub use super::FixedUpdate_AudioFixedUpdate;
+    pub use super::FixedUpdate_ScriptRunDelayedFixedFrameRate;
+    pub use super::FixedUpdate_NewInputFixedUpdate;
+    pub use super::FixedUpdate_DirectorFixedUpdate;
+    pub use super::FixedUpdate;
+    pub use super::FixedUpdate_XRFixedUpdate;
+    pub use super::FixedUpdate_PhysicsFixedUpdate;
+    pub use super::FixedUpdate_ScriptRunBehaviourFixedUpdate;
+    pub use super::FixedUpdate_PhysicsClothFixedUpdate;
+    pub use crate::system::object::IObject;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

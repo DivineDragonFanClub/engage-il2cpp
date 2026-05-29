@@ -2,52 +2,36 @@
 
 #[cfg(feature = "system-collections-generic-nullableequalitycomparer_1-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/nullableequalitycomparer_1/NullableEqualityComparer_1.md"))]
-    #[::unity2::class(namespace = "System.Collections.Generic", name = "NullableEqualityComparer`1")]
-    pub struct NullableEqualityComparer_1<T0: ::unity2::ClassIdentity> {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/nullableequalitycomparer_1/NullableEqualityComparer_1.md"))] # [:: unity2 :: class (namespace = "System.Collections.Generic" , name = "NullableEqualityComparer`1")] pub struct NullableEqualityComparer_1 < T0 : :: unity2 :: ClassIdentity > {}
+
 }
 
 #[cfg(feature = "system-collections-generic-nullableequalitycomparer_1-types")]
 pub use __types::*;
 
 #[cfg(feature = "system-collections-generic-nullableequalitycomparer_1")]
-#[::unity2::methods]
-impl<T0: ::unity2::ClassIdentity> NullableEqualityComparer_1<T0> {
-    #[doc = "`Equals(crate::system::object::Object)` overload"]
-    #[method(name = "Equals", args = 1)]
-    pub fn equals(self, obj: crate::system::object::Object) -> bool;
+# [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity > NullableEqualityComparer_1 < T0 > {
+# [doc = "`Equals(crate::system::object::Object)` overload"] # [method (name = "Equals" , args = 1)] pub fn equals (self , obj : crate :: system :: object :: Object) -> bool ;
 
-    #[doc = "`GetHashCode()` overload"]
-    #[method(name = "GetHashCode", args = 0)]
-    pub fn get_hash_code(self) -> i32;
+# [doc = "`GetHashCode()` overload"] # [method (name = "GetHashCode" , args = 0)] pub fn get_hash_code (self ,) -> i32 ;
 
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+# [doc = "`.ctor()` overload"] # [method (name = ".ctor" , args = 0)] pub fn ctor (self ,) -> () ;
 }
 
 #[cfg(feature = "system-collections-generic-nullableequalitycomparer_1")]
-impl<T0: ::unity2::ClassIdentity> NullableEqualityComparer_1<T0> {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(NullableEqualityComparer_1),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as INullableEqualityComparer_1Methods<T0>>::ctor(this);
-        this
-    }
+impl < T0 : :: unity2 :: ClassIdentity > NullableEqualityComparer_1 < T0 > {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (NullableEqualityComparer_1) , :: core :: stringify ! (new) ,)) ; < Self as INullableEqualityComparer_1Methods < T0 > > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "system-collections-generic-nullableequalitycomparer_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{INullableEqualityComparer_1, INullableEqualityComparer_1Methods, NullableEqualityComparer_1};
+    pub use super::NullableEqualityComparer_1;
+    pub use super::INullableEqualityComparer_1;
+    pub use super::INullableEqualityComparer_1Methods;
 }

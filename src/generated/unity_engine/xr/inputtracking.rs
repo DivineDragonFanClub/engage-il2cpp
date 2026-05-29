@@ -2,196 +2,109 @@
 
 #[cfg(feature = "unity_engine-xr-inputtracking-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        r#enum::{Enum, IEnum},
-        valuetype::{IValueType, ValueType},
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/xr/inputtracking/InputTracking_TrackingStateEventType.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct InputTracking_TrackingStateEventType {
-        pub value: i32,
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/xr/inputtracking/InputTracking.md"))] # [:: unity2 :: class (namespace = "UnityEngine.XR" , name = "InputTracking")] # [parent (crate :: system :: object :: Object)] pub struct InputTracking {
+# [static_field] # [rename (name = "trackingAcquired")] pub tracking_acquired : crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: xr :: xrnodestate :: XRNodeState > ,
+# [static_field] # [rename (name = "trackingLost")] pub tracking_lost : crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: xr :: xrnodestate :: XRNodeState > ,
+# [static_field] # [rename (name = "nodeAdded")] pub node_added : crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: xr :: xrnodestate :: XRNodeState > ,
+# [static_field] # [rename (name = "nodeRemoved")] pub node_removed : crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: xr :: xrnodestate :: XRNodeState > ,
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/xr/inputtracking/InputTracking_TrackingStateEventType.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct InputTracking_TrackingStateEventType  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for InputTracking_TrackingStateEventType  {
+    const NAMESPACE: &'static str = "UnityEngine.XR";
+
+    const NAME: &'static str = "InputTracking.TrackingStateEventType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    impl ::unity2::ClassIdentity for InputTracking_TrackingStateEventType {
-        const NAME: &'static str = "InputTracking.TrackingStateEventType";
-        const NAMESPACE: &'static str = "UnityEngine.XR";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  ::unity2::IlType for InputTracking_TrackingStateEventType  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::IlType for InputTracking_TrackingStateEventType {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  InputTracking_TrackingStateEventType  {
+    pub fn node_added() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl InputTracking_TrackingStateEventType {
-        pub fn node_added() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn node_removed() -> Self {
-            Self { value: 1 }
-        }
+    pub fn node_removed() -> Self {
+        Self { value: 1 }
 
-        pub fn tracking_acquired() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn tracking_lost() -> Self {
-            Self { value: 3 }
-        }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/xr/inputtracking/InputTracking.md"))]
-    #[::unity2::class(namespace = "UnityEngine.XR", name = "InputTracking")]
-    #[parent(crate::system::object::Object)]
-    pub struct InputTracking {
-        #[static_field]
-        #[rename(name = "trackingAcquired")]
-        pub tracking_acquired: crate::system::action_1::Action_1<crate::unity_engine::xr::xrnodestate::XRNodeState>,
-        #[static_field]
-        #[rename(name = "trackingLost")]
-        pub tracking_lost: crate::system::action_1::Action_1<crate::unity_engine::xr::xrnodestate::XRNodeState>,
-        #[static_field]
-        #[rename(name = "nodeAdded")]
-        pub node_added: crate::system::action_1::Action_1<crate::unity_engine::xr::xrnodestate::XRNodeState>,
-        #[static_field]
-        #[rename(name = "nodeRemoved")]
-        pub node_removed: crate::system::action_1::Action_1<crate::unity_engine::xr::xrnodestate::XRNodeState>,
+
+    pub fn tracking_acquired() -> Self {
+        Self { value: 2 }
+
     }
+
+
+    pub fn tracking_lost() -> Self {
+        Self { value: 3 }
+
+    }
+
+}
+
 }
 
 #[cfg(feature = "unity_engine-xr-inputtracking-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-xr-inputtracking")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __InputTracking_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke_tracking_event {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::xr::inputtracking::InputTracking_TrackingStateEventType as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::xr::xrnode::XRNode as ::unity2::IlType>::il_type(),
-                <i64 as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InputTracking as ::unity2::ClassIdentity>::class(),
-                "InvokeTrackingEvent",
-                4,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InputTracking as ::unity2::ClassIdentity>::NAME,
-                        "InvokeTrackingEvent",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn invoke_tracking_event(
-        event_type: crate::unity_engine::xr::inputtracking::InputTracking_TrackingStateEventType,
-        node_type: crate::unity_engine::xr::xrnode::XRNode,
-        unique_id: i64,
-        tracked: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::xr::inputtracking::InputTracking_TrackingStateEventType,
-            crate::unity_engine::xr::xrnode::XRNode,
-            i64,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_invoke_tracking_event::get_method_info().method_ptr);
-        inner(event_type, node_type, unique_id, tracked, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<InputTracking as ::unity2::ClassIdentity>::class(), ".cctor", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InputTracking as ::unity2::ClassIdentity>::NAME,
-                        ".cctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __InputTracking_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_invoke_tracking_event { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: xr :: inputtracking :: InputTracking_TrackingStateEventType as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: xr :: xrnode :: XRNode as :: unity2 :: IlType > :: il_type () , < i64 as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InputTracking as :: unity2 :: ClassIdentity > :: class () , "InvokeTrackingEvent" , 4 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InputTracking as :: unity2 :: ClassIdentity > :: NAME , "InvokeTrackingEvent" , e) , } } } pub unsafe fn invoke_tracking_event (event_type : crate :: unity_engine :: xr :: inputtracking :: InputTracking_TrackingStateEventType , node_type : crate :: unity_engine :: xr :: xrnode :: XRNode , unique_id : i64 , tracked : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: unity_engine :: xr :: inputtracking :: InputTracking_TrackingStateEventType , crate :: unity_engine :: xr :: xrnode :: XRNode , i64 , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_invoke_tracking_event :: get_method_info () . method_ptr ,) ; inner (event_type , node_type , unique_id , tracked , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InputTracking as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InputTracking as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-xr-inputtracking")]
-impl InputTracking {
-    #[doc = "`InvokeTrackingEvent(crate::unity_engine::xr::inputtracking::InputTracking_TrackingStateEventType, crate::unity_engine::xr::xrnode::XRNode, i64, bool)` overload"]
-    pub fn invoke_tracking_event(
-        event_type: impl ::core::convert::Into<crate::unity_engine::xr::inputtracking::InputTracking_TrackingStateEventType>,
-        node_type: impl ::core::convert::Into<crate::unity_engine::xr::xrnode::XRNode>,
-        unique_id: impl ::core::convert::Into<i64>,
-        tracked: impl ::core::convert::Into<bool>,
-    ) -> () {
-        unsafe {
-            __InputTracking_unity2_raw::invoke_tracking_event(
-                ::core::convert::Into::into(event_type),
-                ::core::convert::Into::into(node_type),
-                ::core::convert::Into::into(unique_id),
-                ::core::convert::Into::into(tracked),
-                ::core::option::Option::None,
-            )
-        }
-    }
+impl InputTracking { # [doc = "`InvokeTrackingEvent(crate::unity_engine::xr::inputtracking::InputTracking_TrackingStateEventType, crate::unity_engine::xr::xrnode::XRNode, i64, bool)` overload"] pub fn invoke_tracking_event (event_type : impl :: core :: convert :: Into < crate :: unity_engine :: xr :: inputtracking :: InputTracking_TrackingStateEventType > , node_type : impl :: core :: convert :: Into < crate :: unity_engine :: xr :: xrnode :: XRNode > , unique_id : impl :: core :: convert :: Into < i64 > , tracked : impl :: core :: convert :: Into < bool >) -> () { unsafe { __InputTracking_unity2_raw :: invoke_tracking_event (:: core :: convert :: Into :: into (event_type) , :: core :: convert :: Into :: into (node_type) , :: core :: convert :: Into :: into (unique_id) , :: core :: convert :: Into :: into (tracked) , :: core :: option :: Option :: None) } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { __InputTracking_unity2_raw :: cctor (:: core :: option :: Option :: None) } } }
 
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __InputTracking_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
+#[cfg(feature = "unity_engine-xr-inputtracking")]
+impl InputTracking { pub fn invoke_tracking_event_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InputTracking_unity2_raw :: __lookup_invoke_tracking_event :: get_method_info () } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InputTracking_unity2_raw :: __lookup_cctor :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-xr-inputtracking")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IInputTracking, InputTracking, InputTracking_TrackingStateEventType};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::system::{object::IObject, r#enum::IEnum, valuetype::IValueType};
+    pub use super::InputTracking;
+    pub use super::IInputTracking;
+    pub use super::InputTracking_TrackingStateEventType;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

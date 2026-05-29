@@ -2,73 +2,34 @@
 
 #[cfg(feature = "unity_engine-subsystemdescriptorbindings-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/subsystemdescriptorbindings/SubsystemDescriptorBindings.md"))]
-    #[::unity2::class(namespace = "UnityEngine", name = "SubsystemDescriptorBindings")]
-    #[parent(crate::system::object::Object)]
-    pub struct SubsystemDescriptorBindings {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/subsystemdescriptorbindings/SubsystemDescriptorBindings.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "SubsystemDescriptorBindings")] # [parent (crate :: system :: object :: Object)] pub struct SubsystemDescriptorBindings {}
+
 }
 
 #[cfg(feature = "unity_engine-subsystemdescriptorbindings-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-subsystemdescriptorbindings")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __SubsystemDescriptorBindings_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_id {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SubsystemDescriptorBindings as ::unity2::ClassIdentity>::class(),
-                "GetId",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SubsystemDescriptorBindings as ::unity2::ClassIdentity>::NAME,
-                        "GetId",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_id(descriptor_ptr: ::unity2::IntPtr, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(::unity2::IntPtr, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_id::get_method_info().method_ptr);
-        inner(descriptor_ptr, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __SubsystemDescriptorBindings_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_id { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SubsystemDescriptorBindings as :: unity2 :: ClassIdentity > :: class () , "GetId" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SubsystemDescriptorBindings as :: unity2 :: ClassIdentity > :: NAME , "GetId" , e) , } } } pub unsafe fn get_id (descriptor_ptr : :: unity2 :: IntPtr , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (:: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_id :: get_method_info () . method_ptr ,) ; inner (descriptor_ptr , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-subsystemdescriptorbindings")]
-impl SubsystemDescriptorBindings {
-    #[doc = "`GetId(::unity2::IntPtr)` overload"]
-    pub fn get_id(descriptor_ptr: impl ::core::convert::Into<::unity2::IntPtr>) -> ::unity2::Il2CppString {
-        unsafe { __SubsystemDescriptorBindings_unity2_raw::get_id(::core::convert::Into::into(descriptor_ptr), ::core::option::Option::None) }
-    }
-}
+impl SubsystemDescriptorBindings { # [doc = "`GetId(::unity2::IntPtr)` overload"] pub fn get_id (descriptor_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> :: unity2 :: Il2CppString { unsafe { __SubsystemDescriptorBindings_unity2_raw :: get_id (:: core :: convert :: Into :: into (descriptor_ptr) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-subsystemdescriptorbindings")]
+impl SubsystemDescriptorBindings { pub fn get_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SubsystemDescriptorBindings_unity2_raw :: __lookup_get_id :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-subsystemdescriptorbindings")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{ISubsystemDescriptorBindings, SubsystemDescriptorBindings};
+    pub use super::SubsystemDescriptorBindings;
+    pub use super::ISubsystemDescriptorBindings;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

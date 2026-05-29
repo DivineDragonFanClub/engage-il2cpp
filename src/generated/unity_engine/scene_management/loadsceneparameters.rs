@@ -2,106 +2,69 @@
 
 #[cfg(feature = "unity_engine-scene_management-loadsceneparameters-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        valuetype::{IValueType, ValueType},
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/scene_management/loadsceneparameters/LoadSceneParameters.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct LoadSceneParameters {
-        pub m_load_scene_mode: crate::unity_engine::scene_management::loadscenemode::LoadSceneMode,
-        pub m_local_physics_mode: crate::unity_engine::scene_management::localphysicsmode::LocalPhysicsMode,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
 
-    impl ::unity2::ClassIdentity for LoadSceneParameters {
-        const NAME: &'static str = "LoadSceneParameters";
-        const NAMESPACE: &'static str = "UnityEngine.SceneManagement";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/scene_management/loadsceneparameters/LoadSceneParameters.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct LoadSceneParameters {
+    pub m_load_scene_mode: crate :: unity_engine :: scene_management :: loadscenemode :: LoadSceneMode,
+    pub m_local_physics_mode: crate :: unity_engine :: scene_management :: localphysicsmode :: LocalPhysicsMode,
+}
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+
+impl ::unity2::ClassIdentity for LoadSceneParameters {
+    const NAMESPACE: &'static str = "UnityEngine.SceneManagement";
+
+    const NAME: &'static str = "LoadSceneParameters";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for LoadSceneParameters {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl ::unity2::IlType for LoadSceneParameters {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
+
+}
+
 }
 
 #[cfg(feature = "unity_engine-scene_management-loadsceneparameters-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-scene_management-loadsceneparameters")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __LoadSceneParameters_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_load_scene_mode {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::scene_management::loadscenemode::LoadSceneMode as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <LoadSceneParameters as ::unity2::ClassIdentity>::class(),
-                "set_loadSceneMode",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <LoadSceneParameters as ::unity2::ClassIdentity>::NAME,
-                        "set_loadSceneMode",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_load_scene_mode(
-        this: LoadSceneParameters,
-        value: crate::unity_engine::scene_management::loadscenemode::LoadSceneMode,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            LoadSceneParameters,
-            crate::unity_engine::scene_management::loadscenemode::LoadSceneMode,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_set_load_scene_mode::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __LoadSceneParameters_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_load_scene_mode { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: scene_management :: loadscenemode :: LoadSceneMode as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LoadSceneParameters as :: unity2 :: ClassIdentity > :: class () , "set_loadSceneMode" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LoadSceneParameters as :: unity2 :: ClassIdentity > :: NAME , "set_loadSceneMode" , e) , } } } pub unsafe fn set_load_scene_mode (this : LoadSceneParameters , value : crate :: unity_engine :: scene_management :: loadscenemode :: LoadSceneMode , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (LoadSceneParameters , crate :: unity_engine :: scene_management :: loadscenemode :: LoadSceneMode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_load_scene_mode :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-scene_management-loadsceneparameters")]
-impl LoadSceneParameters {
-    #[doc = "`set_loadSceneMode(crate::unity_engine::scene_management::loadscenemode::LoadSceneMode)` overload"]
-    pub fn set_load_scene_mode(self, value: impl ::core::convert::Into<crate::unity_engine::scene_management::loadscenemode::LoadSceneMode>) -> () {
-        unsafe { __LoadSceneParameters_unity2_raw::set_load_scene_mode(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-}
+impl LoadSceneParameters { # [doc = "`set_loadSceneMode(crate::unity_engine::scene_management::loadscenemode::LoadSceneMode)` overload"] pub fn set_load_scene_mode (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: scene_management :: loadscenemode :: LoadSceneMode >) -> () { unsafe { __LoadSceneParameters_unity2_raw :: set_load_scene_mode (self , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-scene_management-loadsceneparameters")]
+impl LoadSceneParameters { pub fn set_load_scene_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __LoadSceneParameters_unity2_raw :: __lookup_set_load_scene_mode :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-scene_management-loadsceneparameters")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::LoadSceneParameters;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::system::{object::IObject, valuetype::IValueType};
+    pub use crate::system::object::IObject;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

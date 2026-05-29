@@ -2,348 +2,46 @@
 
 #[cfg(feature = "app-gmap-gmappathcollection-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmap/gmappathcollection/GmapPathCollection.md"))]
-    #[::unity2::class(namespace = "App.Gmap", name = "GmapPathCollection")]
-    #[parent(crate::system::object::Object)]
-    pub struct GmapPathCollection {
-        #[offset(16)]
-        #[rename(name = "m_Root")]
-        pub m_root: crate::unity_engine::gameobject::GameObject,
-        #[offset(24)]
-        #[rename(name = "m_PathList")]
-        pub m_path_list: crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmap/gmappathcollection/GmapPathCollection.md"))] # [:: unity2 :: class (namespace = "App.Gmap" , name = "GmapPathCollection")] # [parent (crate :: system :: object :: Object)] pub struct GmapPathCollection {
+# [offset (16)] # [rename (name = "m_Root")] pub m_root : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (24)] # [rename (name = "m_PathList")] pub m_path_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: gameobject :: GameObject > ,
+}
+
 }
 
 #[cfg(feature = "app-gmap-gmappathcollection-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-gmap-gmappathcollection")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __GmapPathCollection_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapPathCollection as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapPathCollection as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: GmapPathCollection,
-        root: crate::unity_engine::gameobject::GameObject,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(GmapPathCollection, crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, root, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update_visible {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapPathCollection as ::unity2::ClassIdentity>::class(),
-                "UpdateVisible",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapPathCollection as ::unity2::ClassIdentity>::NAME,
-                        "UpdateVisible",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update_visible(this: GmapPathCollection, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GmapPathCollection, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update_visible::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_child {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapPathCollection as ::unity2::ClassIdentity>::class(),
-                "SetChild",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapPathCollection as ::unity2::ClassIdentity>::NAME,
-                        "SetChild",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_child(
-        this: GmapPathCollection,
-        path_object: crate::unity_engine::gameobject::GameObject,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(GmapPathCollection, crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_child::get_method_info().method_ptr);
-        inner(this, path_object, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_for_each {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::action_1::Action_1<crate::unity_engine::gameobject::GameObject> as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapPathCollection as ::unity2::ClassIdentity>::class(),
-                "ForEach",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapPathCollection as ::unity2::ClassIdentity>::NAME,
-                        "ForEach",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn for_each(
-        this: GmapPathCollection,
-        action: crate::system::action_1::Action_1<crate::unity_engine::gameobject::GameObject>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            GmapPathCollection,
-            crate::system::action_1::Action_1<crate::unity_engine::gameobject::GameObject>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_for_each::get_method_info().method_ptr);
-        inner(this, action, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update_path_list {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapPathCollection as ::unity2::ClassIdentity>::class(),
-                "UpdatePathList",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapPathCollection as ::unity2::ClassIdentity>::NAME,
-                        "UpdatePathList",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update_path_list(this: GmapPathCollection, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GmapPathCollection, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update_path_list::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_check_appear_gmap_path {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::gmapspot::GmapSpot as ::unity2::IlType>::il_type(),
-                <crate::app::gmapspot::GmapSpot as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapPathCollection as ::unity2::ClassIdentity>::class(),
-                "CheckAppearGmapPath",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GmapPathCollection as ::unity2::ClassIdentity>::NAME,
-                        "CheckAppearGmapPath",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn check_appear_gmap_path(
-        this: GmapPathCollection,
-        start_spot: *mut crate::app::gmapspot::GmapSpot,
-        appear_spot: *mut crate::app::gmapspot::GmapSpot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::gameobject::GameObject {
-        let inner: extern "C" fn(
-            GmapPathCollection,
-            *mut crate::app::gmapspot::GmapSpot,
-            *mut crate::app::gmapspot::GmapSpot,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(__lookup_check_appear_gmap_path::get_method_info().method_ptr);
-        inner(this, start_spot, appear_spot, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __GmapPathCollection_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: gameobject :: GameObject as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapPathCollection as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapPathCollection as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : GmapPathCollection , root : crate :: unity_engine :: gameobject :: GameObject , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GmapPathCollection , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , root , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update_visible { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapPathCollection as :: unity2 :: ClassIdentity > :: class () , "UpdateVisible" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapPathCollection as :: unity2 :: ClassIdentity > :: NAME , "UpdateVisible" , e) , } } } pub unsafe fn update_visible (this : GmapPathCollection , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GmapPathCollection , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update_visible :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_child { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: gameobject :: GameObject as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapPathCollection as :: unity2 :: ClassIdentity > :: class () , "SetChild" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapPathCollection as :: unity2 :: ClassIdentity > :: NAME , "SetChild" , e) , } } } pub unsafe fn set_child (this : GmapPathCollection , path_object : crate :: unity_engine :: gameobject :: GameObject , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GmapPathCollection , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_child :: get_method_info () . method_ptr ,) ; inner (this , path_object , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_for_each { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: gameobject :: GameObject > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapPathCollection as :: unity2 :: ClassIdentity > :: class () , "ForEach" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapPathCollection as :: unity2 :: ClassIdentity > :: NAME , "ForEach" , e) , } } } pub unsafe fn for_each (this : GmapPathCollection , action : crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: gameobject :: GameObject > , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GmapPathCollection , crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: gameobject :: GameObject > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_for_each :: get_method_info () . method_ptr ,) ; inner (this , action , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update_path_list { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapPathCollection as :: unity2 :: ClassIdentity > :: class () , "UpdatePathList" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapPathCollection as :: unity2 :: ClassIdentity > :: NAME , "UpdatePathList" , e) , } } } pub unsafe fn update_path_list (this : GmapPathCollection , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GmapPathCollection , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update_path_list :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_check_appear_gmap_path { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: gmapspot :: GmapSpot as :: unity2 :: IlType > :: il_type () , < crate :: app :: gmapspot :: GmapSpot as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapPathCollection as :: unity2 :: ClassIdentity > :: class () , "CheckAppearGmapPath" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapPathCollection as :: unity2 :: ClassIdentity > :: NAME , "CheckAppearGmapPath" , e) , } } } pub unsafe fn check_appear_gmap_path (this : GmapPathCollection , start_spot : * mut crate :: app :: gmapspot :: GmapSpot , appear_spot : * mut crate :: app :: gmapspot :: GmapSpot , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject { let inner : extern "C" fn (GmapPathCollection , * mut crate :: app :: gmapspot :: GmapSpot , * mut crate :: app :: gmapspot :: GmapSpot , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute (__lookup_check_appear_gmap_path :: get_method_info () . method_ptr ,) ; inner (this , start_spot , appear_spot , __unity2_method_info) } }
 
 #[cfg(feature = "app-gmap-gmappathcollection")]
-pub trait IGmapPathCollectionMethods: IGmapPathCollection {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
-    fn ctor(self, root: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>) -> () {
-        unsafe {
-            let __receiver = <GmapPathCollection as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GmapPathCollection_unity2_raw::ctor(__receiver, ::core::convert::Into::into(root), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`UpdateVisible()` overload"]
-    fn update_visible(self) -> () {
-        unsafe {
-            let __receiver = <GmapPathCollection as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GmapPathCollection_unity2_raw::update_visible(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetChild(crate::unity_engine::gameobject::GameObject)` overload"]
-    fn set_child(self, path_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>) -> () {
-        unsafe {
-            let __receiver = <GmapPathCollection as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GmapPathCollection_unity2_raw::set_child(__receiver, ::core::convert::Into::into(path_object), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ForEach(crate::system::action_1::Action_1<crate::unity_engine::gameobject::GameObject>)` overload"]
-    fn for_each(self, action: impl ::core::convert::Into<crate::system::action_1::Action_1<crate::unity_engine::gameobject::GameObject>>) -> () {
-        unsafe {
-            let __receiver = <GmapPathCollection as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GmapPathCollection_unity2_raw::for_each(__receiver, ::core::convert::Into::into(action), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`UpdatePathList()` overload"]
-    fn update_path_list(self) -> () {
-        unsafe {
-            let __receiver = <GmapPathCollection as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GmapPathCollection_unity2_raw::update_path_list(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CheckAppearGmapPath(*mutcrate::app::gmapspot::GmapSpot, *mutcrate::app::gmapspot::GmapSpot)` overload"]
-    fn check_appear_gmap_path(
-        self,
-    ) -> (
-        crate::unity_engine::gameobject::GameObject,
-        crate::app::gmapspot::GmapSpot,
-        crate::app::gmapspot::GmapSpot,
-    ) {
-        unsafe {
-            let __receiver = <GmapPathCollection as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            let mut __out_0 = ::core::mem::MaybeUninit::<crate::app::gmapspot::GmapSpot>::uninit();
-            let mut __out_1 = ::core::mem::MaybeUninit::<crate::app::gmapspot::GmapSpot>::uninit();
-            let __ret = {
-                __GmapPathCollection_unity2_raw::check_appear_gmap_path(
-                    __receiver,
-                    __out_0.as_mut_ptr(),
-                    __out_1.as_mut_ptr(),
-                    ::core::option::Option::None,
-                )
-            };
-            (__ret, __out_0.assume_init(), __out_1.assume_init())
-        }
-    }
-}
+pub trait IGmapPathCollectionMethods : IGmapPathCollection { # [doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"] fn ctor (self , root : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> () { unsafe { let __receiver = < GmapPathCollection as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapPathCollection_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (root) , :: core :: option :: Option :: None) } } # [doc = "`UpdateVisible()` overload"] fn update_visible (self ,) -> () { unsafe { let __receiver = < GmapPathCollection as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapPathCollection_unity2_raw :: update_visible (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetChild(crate::unity_engine::gameobject::GameObject)` overload"] fn set_child (self , path_object : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> () { unsafe { let __receiver = < GmapPathCollection as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapPathCollection_unity2_raw :: set_child (__receiver , :: core :: convert :: Into :: into (path_object) , :: core :: option :: Option :: None) } } # [doc = "`ForEach(crate::system::action_1::Action_1<crate::unity_engine::gameobject::GameObject>)` overload"] fn for_each (self , action : impl :: core :: convert :: Into < crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: gameobject :: GameObject > >) -> () { unsafe { let __receiver = < GmapPathCollection as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapPathCollection_unity2_raw :: for_each (__receiver , :: core :: convert :: Into :: into (action) , :: core :: option :: Option :: None) } } # [doc = "`UpdatePathList()` overload"] fn update_path_list (self ,) -> () { unsafe { let __receiver = < GmapPathCollection as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapPathCollection_unity2_raw :: update_path_list (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CheckAppearGmapPath(*mutcrate::app::gmapspot::GmapSpot, *mutcrate::app::gmapspot::GmapSpot)` overload"] fn check_appear_gmap_path (self ,) -> (crate :: unity_engine :: gameobject :: GameObject , crate :: app :: gmapspot :: GmapSpot , crate :: app :: gmapspot :: GmapSpot) { unsafe { let __receiver = < GmapPathCollection as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: app :: gmapspot :: GmapSpot > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < crate :: app :: gmapspot :: GmapSpot > :: uninit () ; let __ret = { __GmapPathCollection_unity2_raw :: check_appear_gmap_path (__receiver , __out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: option :: Option :: None) } ; (__ret , __out_0 . assume_init () , __out_1 . assume_init ()) } } }
 
 #[cfg(feature = "app-gmap-gmappathcollection")]
-impl<__T: IGmapPathCollection> IGmapPathCollectionMethods for __T {}
+impl < __T : IGmapPathCollection > IGmapPathCollectionMethods for __T { }
+
+#[cfg(feature = "app-gmap-gmappathcollection")]
+impl GmapPathCollection { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapPathCollection_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn update_visible_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapPathCollection_unity2_raw :: __lookup_update_visible :: get_method_info () } pub fn set_child_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapPathCollection_unity2_raw :: __lookup_set_child :: get_method_info () } pub fn for_each_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapPathCollection_unity2_raw :: __lookup_for_each :: get_method_info () } pub fn update_path_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapPathCollection_unity2_raw :: __lookup_update_path_list :: get_method_info () } pub fn check_appear_gmap_path_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapPathCollection_unity2_raw :: __lookup_check_appear_gmap_path :: get_method_info () } }
 
 #[cfg(feature = "app-gmap-gmappathcollection")]
 impl GmapPathCollection {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
-    pub fn new(root: crate::unity_engine::gameobject::GameObject) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GmapPathCollection),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGmapPathCollectionMethods>::ctor(this, root);
-        this
-    }
+# [doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"] pub fn new (root : crate :: unity_engine :: gameobject :: GameObject) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GmapPathCollection) , :: core :: stringify ! (new) ,)) ; < Self as IGmapPathCollectionMethods > :: ctor (this , root) ; this }
 }
 
 #[cfg(feature = "app-gmap-gmappathcollection")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{GmapPathCollection, IGmapPathCollection, IGmapPathCollectionMethods};
+    pub use super::GmapPathCollection;
+    pub use super::IGmapPathCollection;
+    pub use super::IGmapPathCollectionMethods;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

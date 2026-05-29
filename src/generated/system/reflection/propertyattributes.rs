@@ -2,72 +2,101 @@
 
 #[cfg(feature = "system-reflection-propertyattributes-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        r#enum::{Enum, IEnum},
-        valuetype::{IValueType, ValueType},
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/reflection/propertyattributes/PropertyAttributes.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct PropertyAttributes {
-        pub value: i32,
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/reflection/propertyattributes/PropertyAttributes.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct PropertyAttributes  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for PropertyAttributes  {
+    const NAMESPACE: &'static str = "System.Reflection";
+
+    const NAME: &'static str = "PropertyAttributes";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    impl ::unity2::ClassIdentity for PropertyAttributes {
-        const NAME: &'static str = "PropertyAttributes";
-        const NAMESPACE: &'static str = "System.Reflection";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  ::unity2::IlType for PropertyAttributes  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::IlType for PropertyAttributes {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  PropertyAttributes  {
+    pub fn none() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl PropertyAttributes {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn special_name() -> Self {
-            Self { value: 512 }
-        }
+    pub fn special_name() -> Self {
+        Self { value: 512 }
 
-        pub fn reserved_mask() -> Self {
-            Self { value: 62464 }
-        }
-
-        pub fn rt_special_name() -> Self {
-            Self { value: 1024 }
-        }
-
-        pub fn has_default() -> Self {
-            Self { value: 4096 }
-        }
-
-        pub fn reserved2() -> Self {
-            Self { value: 8192 }
-        }
-
-        pub fn reserved3() -> Self {
-            Self { value: 16384 }
-        }
-
-        pub fn reserved4() -> Self {
-            Self { value: 32768 }
-        }
     }
+
+
+    pub fn reserved_mask() -> Self {
+        Self { value: 62464 }
+
+    }
+
+
+    pub fn rt_special_name() -> Self {
+        Self { value: 1024 }
+
+    }
+
+
+    pub fn has_default() -> Self {
+        Self { value: 4096 }
+
+    }
+
+
+    pub fn reserved2() -> Self {
+        Self { value: 8192 }
+
+    }
+
+
+    pub fn reserved3() -> Self {
+        Self { value: 16384 }
+
+    }
+
+
+    pub fn reserved4() -> Self {
+        Self { value: 32768 }
+
+    }
+
+}
+
 }
 
 #[cfg(feature = "system-reflection-propertyattributes-types")]
@@ -77,11 +106,10 @@ pub use __types::*;
 #[doc(hidden)]
 pub mod prelude {
     pub use super::PropertyAttributes;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::system::{object::IObject, r#enum::IEnum, valuetype::IValueType};
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

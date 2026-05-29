@@ -2,198 +2,34 @@
 
 #[cfg(feature = "unity_engine-iplayereditorconnectionnative-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/iplayereditorconnectionnative/IPlayerEditorConnectionNative.md"))]
-    #[::unity2::class(namespace = "UnityEngine", name = "IPlayerEditorConnectionNative")]
-    pub struct IPlayerEditorConnectionNative {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/iplayereditorconnectionnative/IPlayerEditorConnectionNative.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "IPlayerEditorConnectionNative")] pub struct IPlayerEditorConnectionNative {}
+
 }
 
 #[cfg(feature = "unity_engine-iplayereditorconnectionnative-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-iplayereditorconnectionnative")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __IPlayerEditorConnectionNative_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_initialize {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <IPlayerEditorConnectionNative as ::unity2::ClassIdentity>::class(),
-                "Initialize",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <IPlayerEditorConnectionNative as ::unity2::ClassIdentity>::NAME,
-                        "Initialize",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn initialize(this: IPlayerEditorConnectionNative, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(IPlayerEditorConnectionNative, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_initialize::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_disconnect_all {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <IPlayerEditorConnectionNative as ::unity2::ClassIdentity>::class(),
-                "DisconnectAll",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <IPlayerEditorConnectionNative as ::unity2::ClassIdentity>::NAME,
-                        "DisconnectAll",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn disconnect_all(this: IPlayerEditorConnectionNative, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(IPlayerEditorConnectionNative, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_disconnect_all::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_poll {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <IPlayerEditorConnectionNative as ::unity2::ClassIdentity>::class(),
-                "Poll",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <IPlayerEditorConnectionNative as ::unity2::ClassIdentity>::NAME,
-                        "Poll",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn poll(this: IPlayerEditorConnectionNative, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(IPlayerEditorConnectionNative, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_poll::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_connected {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <IPlayerEditorConnectionNative as ::unity2::ClassIdentity>::class(),
-                "IsConnected",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <IPlayerEditorConnectionNative as ::unity2::ClassIdentity>::NAME,
-                        "IsConnected",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_connected(this: IPlayerEditorConnectionNative, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(IPlayerEditorConnectionNative, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_connected::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __IPlayerEditorConnectionNative_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_initialize { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< IPlayerEditorConnectionNative as :: unity2 :: ClassIdentity > :: class () , "Initialize" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < IPlayerEditorConnectionNative as :: unity2 :: ClassIdentity > :: NAME , "Initialize" , e) , } } } pub unsafe fn initialize (this : IPlayerEditorConnectionNative , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (IPlayerEditorConnectionNative , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_initialize :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_disconnect_all { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< IPlayerEditorConnectionNative as :: unity2 :: ClassIdentity > :: class () , "DisconnectAll" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < IPlayerEditorConnectionNative as :: unity2 :: ClassIdentity > :: NAME , "DisconnectAll" , e) , } } } pub unsafe fn disconnect_all (this : IPlayerEditorConnectionNative , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (IPlayerEditorConnectionNative , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_disconnect_all :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_poll { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< IPlayerEditorConnectionNative as :: unity2 :: ClassIdentity > :: class () , "Poll" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < IPlayerEditorConnectionNative as :: unity2 :: ClassIdentity > :: NAME , "Poll" , e) , } } } pub unsafe fn poll (this : IPlayerEditorConnectionNative , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (IPlayerEditorConnectionNative , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_poll :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_connected { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< IPlayerEditorConnectionNative as :: unity2 :: ClassIdentity > :: class () , "IsConnected" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < IPlayerEditorConnectionNative as :: unity2 :: ClassIdentity > :: NAME , "IsConnected" , e) , } } } pub unsafe fn is_connected (this : IPlayerEditorConnectionNative , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (IPlayerEditorConnectionNative , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_connected :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-iplayereditorconnectionnative")]
-pub trait IIPlayerEditorConnectionNativeMethods: IIPlayerEditorConnectionNative {
-    #[doc = "`Initialize()` overload"]
-    fn initialize(self) -> () {
-        unsafe {
-            let __receiver =
-                <IPlayerEditorConnectionNative as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __IPlayerEditorConnectionNative_unity2_raw::initialize(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`DisconnectAll()` overload"]
-    fn disconnect_all(self) -> () {
-        unsafe {
-            let __receiver =
-                <IPlayerEditorConnectionNative as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __IPlayerEditorConnectionNative_unity2_raw::disconnect_all(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Poll()` overload"]
-    fn poll(self) -> () {
-        unsafe {
-            let __receiver =
-                <IPlayerEditorConnectionNative as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __IPlayerEditorConnectionNative_unity2_raw::poll(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsConnected()` overload"]
-    fn is_connected(self) -> bool {
-        unsafe {
-            let __receiver =
-                <IPlayerEditorConnectionNative as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __IPlayerEditorConnectionNative_unity2_raw::is_connected(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IIPlayerEditorConnectionNativeMethods : IIPlayerEditorConnectionNative { # [doc = "`Initialize()` overload"] fn initialize (self ,) -> () { unsafe { let __receiver = < IPlayerEditorConnectionNative as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IPlayerEditorConnectionNative_unity2_raw :: initialize (__receiver , :: core :: option :: Option :: None) } } # [doc = "`DisconnectAll()` overload"] fn disconnect_all (self ,) -> () { unsafe { let __receiver = < IPlayerEditorConnectionNative as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IPlayerEditorConnectionNative_unity2_raw :: disconnect_all (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Poll()` overload"] fn poll (self ,) -> () { unsafe { let __receiver = < IPlayerEditorConnectionNative as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IPlayerEditorConnectionNative_unity2_raw :: poll (__receiver , :: core :: option :: Option :: None) } } # [doc = "`IsConnected()` overload"] fn is_connected (self ,) -> bool { unsafe { let __receiver = < IPlayerEditorConnectionNative as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IPlayerEditorConnectionNative_unity2_raw :: is_connected (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-iplayereditorconnectionnative")]
-impl<__T: IIPlayerEditorConnectionNative> IIPlayerEditorConnectionNativeMethods for __T {}
+impl < __T : IIPlayerEditorConnectionNative > IIPlayerEditorConnectionNativeMethods for __T { }
+
+#[cfg(feature = "unity_engine-iplayereditorconnectionnative")]
+impl IPlayerEditorConnectionNative { pub fn initialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __IPlayerEditorConnectionNative_unity2_raw :: __lookup_initialize :: get_method_info () } pub fn disconnect_all_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __IPlayerEditorConnectionNative_unity2_raw :: __lookup_disconnect_all :: get_method_info () } pub fn poll_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __IPlayerEditorConnectionNative_unity2_raw :: __lookup_poll :: get_method_info () } pub fn is_connected_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __IPlayerEditorConnectionNative_unity2_raw :: __lookup_is_connected :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-iplayereditorconnectionnative")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IIPlayerEditorConnectionNative, IIPlayerEditorConnectionNativeMethods, IPlayerEditorConnectionNative};
+    pub use super::IPlayerEditorConnectionNative;
+    pub use super::IIPlayerEditorConnectionNative;
+    pub use super::IIPlayerEditorConnectionNativeMethods;
 }

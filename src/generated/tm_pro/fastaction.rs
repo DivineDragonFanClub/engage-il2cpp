@@ -2,194 +2,46 @@
 
 #[cfg(feature = "tm_pro-fastaction-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/fastaction/FastAction.md"))]
-    #[::unity2::class(namespace = "TMPro", name = "FastAction")]
-    #[parent(crate::system::object::Object)]
-    pub struct FastAction {
-        #[offset(16)]
-        #[rename(name = "delegates")]
-        pub delegates: crate::system::collections::generic::linkedlist_1::LinkedList_1<crate::system::action::Action>,
-        #[offset(24)]
-        #[rename(name = "lookup")]
-        pub lookup: crate::system::collections::generic::dictionary_2::Dictionary_2<
-            crate::system::action::Action,
-            crate::system::collections::generic::linkedlistnode_1::LinkedListNode_1<crate::system::action::Action>,
-        >,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/fastaction/FastAction.md"))] # [:: unity2 :: class (namespace = "TMPro" , name = "FastAction")] # [parent (crate :: system :: object :: Object)] pub struct FastAction {
+# [offset (16)] # [rename (name = "delegates")] pub delegates : crate :: system :: collections :: generic :: linkedlist_1 :: LinkedList_1 < crate :: system :: action :: Action > ,
+# [offset (24)] # [rename (name = "lookup")] pub lookup : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < crate :: system :: action :: Action , crate :: system :: collections :: generic :: linkedlistnode_1 :: LinkedListNode_1 < crate :: system :: action :: Action > > ,
+}
+
 }
 
 #[cfg(feature = "tm_pro-fastaction-types")]
 pub use __types::*;
 
 #[cfg(feature = "tm_pro-fastaction")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __FastAction_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::action::Action as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<FastAction as ::unity2::ClassIdentity>::class(), "Add", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FastAction as ::unity2::ClassIdentity>::NAME,
-                        "Add",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add(this: FastAction, rhs: crate::system::action::Action, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(FastAction, crate::system::action::Action, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add::get_method_info().method_ptr);
-        inner(this, rhs, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_remove {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::action::Action as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<FastAction as ::unity2::ClassIdentity>::class(), "Remove", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FastAction as ::unity2::ClassIdentity>::NAME,
-                        "Remove",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn remove(this: FastAction, rhs: crate::system::action::Action, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(FastAction, crate::system::action::Action, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_remove::get_method_info().method_ptr);
-        inner(this, rhs, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<FastAction as ::unity2::ClassIdentity>::class(), "Call", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FastAction as ::unity2::ClassIdentity>::NAME,
-                        "Call",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn call(this: FastAction, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(FastAction, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_call::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<FastAction as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FastAction as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: FastAction, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(FastAction, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __FastAction_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: action :: Action as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FastAction as :: unity2 :: ClassIdentity > :: class () , "Add" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FastAction as :: unity2 :: ClassIdentity > :: NAME , "Add" , e) , } } } pub unsafe fn add (this : FastAction , rhs : crate :: system :: action :: Action , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FastAction , crate :: system :: action :: Action , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add :: get_method_info () . method_ptr ,) ; inner (this , rhs , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_remove { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: action :: Action as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FastAction as :: unity2 :: ClassIdentity > :: class () , "Remove" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FastAction as :: unity2 :: ClassIdentity > :: NAME , "Remove" , e) , } } } pub unsafe fn remove (this : FastAction , rhs : crate :: system :: action :: Action , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FastAction , crate :: system :: action :: Action , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_remove :: get_method_info () . method_ptr ,) ; inner (this , rhs , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_call { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FastAction as :: unity2 :: ClassIdentity > :: class () , "Call" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FastAction as :: unity2 :: ClassIdentity > :: NAME , "Call" , e) , } } } pub unsafe fn call (this : FastAction , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FastAction , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_call :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FastAction as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FastAction as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : FastAction , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FastAction , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "tm_pro-fastaction")]
-pub trait IFastActionMethods: IFastAction {
-    #[doc = "`Add(crate::system::action::Action)` overload"]
-    fn add(self, rhs: impl ::core::convert::Into<crate::system::action::Action>) -> () {
-        unsafe {
-            let __receiver = <FastAction as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FastAction_unity2_raw::add(__receiver, ::core::convert::Into::into(rhs), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Remove(crate::system::action::Action)` overload"]
-    fn remove(self, rhs: impl ::core::convert::Into<crate::system::action::Action>) -> () {
-        unsafe {
-            let __receiver = <FastAction as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FastAction_unity2_raw::remove(__receiver, ::core::convert::Into::into(rhs), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Call()` overload"]
-    fn call(self) -> () {
-        unsafe {
-            let __receiver = <FastAction as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FastAction_unity2_raw::call(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <FastAction as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FastAction_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IFastActionMethods : IFastAction { # [doc = "`Add(crate::system::action::Action)` overload"] fn add (self , rhs : impl :: core :: convert :: Into < crate :: system :: action :: Action >) -> () { unsafe { let __receiver = < FastAction as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FastAction_unity2_raw :: add (__receiver , :: core :: convert :: Into :: into (rhs) , :: core :: option :: Option :: None) } } # [doc = "`Remove(crate::system::action::Action)` overload"] fn remove (self , rhs : impl :: core :: convert :: Into < crate :: system :: action :: Action >) -> () { unsafe { let __receiver = < FastAction as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FastAction_unity2_raw :: remove (__receiver , :: core :: convert :: Into :: into (rhs) , :: core :: option :: Option :: None) } } # [doc = "`Call()` overload"] fn call (self ,) -> () { unsafe { let __receiver = < FastAction as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FastAction_unity2_raw :: call (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < FastAction as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FastAction_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "tm_pro-fastaction")]
-impl<__T: IFastAction> IFastActionMethods for __T {}
+impl < __T : IFastAction > IFastActionMethods for __T { }
+
+#[cfg(feature = "tm_pro-fastaction")]
+impl FastAction { pub fn add_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FastAction_unity2_raw :: __lookup_add :: get_method_info () } pub fn remove_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FastAction_unity2_raw :: __lookup_remove :: get_method_info () } pub fn call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FastAction_unity2_raw :: __lookup_call :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FastAction_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "tm_pro-fastaction")]
 impl FastAction {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(FastAction), ::core::stringify!(new),));
-        <Self as IFastActionMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FastAction) , :: core :: stringify ! (new) ,)) ; < Self as IFastActionMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "tm_pro-fastaction")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{FastAction, IFastAction, IFastActionMethods};
+    pub use super::FastAction;
+    pub use super::IFastAction;
+    pub use super::IFastActionMethods;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

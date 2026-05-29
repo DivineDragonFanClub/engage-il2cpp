@@ -2,337 +2,64 @@
 
 #[cfg(feature = "unity_engine-resource_management-diagnostics-diagnosticeventcollector-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/diagnostics/diagnosticeventcollector/DiagnosticEventCollector.md"))]
-    #[::unity2::class(namespace = "UnityEngine.ResourceManagement.Diagnostics", name = "DiagnosticEventCollector")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct DiagnosticEventCollector {
-        #[static_field]
-        #[rename(name = "s_Collector")]
-        pub s_collector: crate::unity_engine::resource_management::diagnostics::diagnosticeventcollector::DiagnosticEventCollector,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/diagnostics/diagnosticeventcollector/DiagnosticEventCollector.md"))] # [:: unity2 :: class (namespace = "UnityEngine.ResourceManagement.Diagnostics" , name = "DiagnosticEventCollector")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct DiagnosticEventCollector {
+# [static_field] # [rename (name = "s_Collector")] pub s_collector : crate :: unity_engine :: resource_management :: diagnostics :: diagnosticeventcollector :: DiagnosticEventCollector ,
+}
+
 }
 
 #[cfg(feature = "unity_engine-resource_management-diagnostics-diagnosticeventcollector-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-resource_management-diagnostics-diagnosticeventcollector")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __DiagnosticEventCollector_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_find_or_create_global_instance {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DiagnosticEventCollector as ::unity2::ClassIdentity>::class(),
-                "FindOrCreateGlobalInstance",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DiagnosticEventCollector as ::unity2::ClassIdentity>::NAME,
-                        "FindOrCreateGlobalInstance",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn find_or_create_global_instance(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::resource_management::diagnostics::diagnosticeventcollector::DiagnosticEventCollector {
-        let inner: extern "C" fn(
-            ::unity2::OptionalMethod,
-        )
-            -> crate::unity_engine::resource_management::diagnostics::diagnosticeventcollector::DiagnosticEventCollector =
-            ::core::mem::transmute(__lookup_find_or_create_global_instance::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_register_event_handler {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: resource_management :: diagnostics :: diagnosticevent :: DiagnosticEvent > as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DiagnosticEventCollector as ::unity2::ClassIdentity>::class(),
-                "RegisterEventHandler",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DiagnosticEventCollector as ::unity2::ClassIdentity>::NAME,
-                        "RegisterEventHandler",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn register_event_handler(
-        handler: crate::system::action_1::Action_1<crate::unity_engine::resource_management::diagnostics::diagnosticevent::DiagnosticEvent>,
-        register: bool,
-        create: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            crate::system::action_1::Action_1<crate::unity_engine::resource_management::diagnostics::diagnosticevent::DiagnosticEvent>,
-            bool,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(__lookup_register_event_handler::get_method_info().method_ptr);
-        inner(handler, register, create, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_unregister_event_handler {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::action_1::Action_1<
-                crate::unity_engine::resource_management::diagnostics::diagnosticevent::DiagnosticEvent,
-            > as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DiagnosticEventCollector as ::unity2::ClassIdentity>::class(),
-                "UnregisterEventHandler",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DiagnosticEventCollector as ::unity2::ClassIdentity>::NAME,
-                        "UnregisterEventHandler",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn unregister_event_handler(
-        this: DiagnosticEventCollector,
-        handler: crate::system::action_1::Action_1<crate::unity_engine::resource_management::diagnostics::diagnosticevent::DiagnosticEvent>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            DiagnosticEventCollector,
-            crate::system::action_1::Action_1<crate::unity_engine::resource_management::diagnostics::diagnosticevent::DiagnosticEvent>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_unregister_event_handler::get_method_info().method_ptr);
-        inner(this, handler, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_post_event {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::resource_management::diagnostics::diagnosticevent::DiagnosticEvent as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DiagnosticEventCollector as ::unity2::ClassIdentity>::class(),
-                "PostEvent",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DiagnosticEventCollector as ::unity2::ClassIdentity>::NAME,
-                        "PostEvent",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn post_event(
-        this: DiagnosticEventCollector,
-        diagnostic_event: crate::unity_engine::resource_management::diagnostics::diagnosticevent::DiagnosticEvent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            DiagnosticEventCollector,
-            crate::unity_engine::resource_management::diagnostics::diagnosticevent::DiagnosticEvent,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_post_event::get_method_info().method_ptr);
-        inner(this, diagnostic_event, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DiagnosticEventCollector as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DiagnosticEventCollector as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: DiagnosticEventCollector, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DiagnosticEventCollector, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __DiagnosticEventCollector_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_find_or_create_global_instance { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DiagnosticEventCollector as :: unity2 :: ClassIdentity > :: class () , "FindOrCreateGlobalInstance" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DiagnosticEventCollector as :: unity2 :: ClassIdentity > :: NAME , "FindOrCreateGlobalInstance" , e) , } } } pub unsafe fn find_or_create_global_instance (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: resource_management :: diagnostics :: diagnosticeventcollector :: DiagnosticEventCollector { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: resource_management :: diagnostics :: diagnosticeventcollector :: DiagnosticEventCollector = :: core :: mem :: transmute (__lookup_find_or_create_global_instance :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_register_event_handler { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: resource_management :: diagnostics :: diagnosticevent :: DiagnosticEvent > as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DiagnosticEventCollector as :: unity2 :: ClassIdentity > :: class () , "RegisterEventHandler" , 3 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DiagnosticEventCollector as :: unity2 :: ClassIdentity > :: NAME , "RegisterEventHandler" , e) , } } } pub unsafe fn register_event_handler (handler : crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: resource_management :: diagnostics :: diagnosticevent :: DiagnosticEvent > , register : bool , create : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: resource_management :: diagnostics :: diagnosticevent :: DiagnosticEvent > , bool , bool , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_register_event_handler :: get_method_info () . method_ptr ,) ; inner (handler , register , create , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_unregister_event_handler { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: resource_management :: diagnostics :: diagnosticevent :: DiagnosticEvent > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DiagnosticEventCollector as :: unity2 :: ClassIdentity > :: class () , "UnregisterEventHandler" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DiagnosticEventCollector as :: unity2 :: ClassIdentity > :: NAME , "UnregisterEventHandler" , e) , } } } pub unsafe fn unregister_event_handler (this : DiagnosticEventCollector , handler : crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: resource_management :: diagnostics :: diagnosticevent :: DiagnosticEvent > , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DiagnosticEventCollector , crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: resource_management :: diagnostics :: diagnosticevent :: DiagnosticEvent > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_unregister_event_handler :: get_method_info () . method_ptr ,) ; inner (this , handler , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_post_event { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: resource_management :: diagnostics :: diagnosticevent :: DiagnosticEvent as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DiagnosticEventCollector as :: unity2 :: ClassIdentity > :: class () , "PostEvent" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DiagnosticEventCollector as :: unity2 :: ClassIdentity > :: NAME , "PostEvent" , e) , } } } pub unsafe fn post_event (this : DiagnosticEventCollector , diagnostic_event : crate :: unity_engine :: resource_management :: diagnostics :: diagnosticevent :: DiagnosticEvent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DiagnosticEventCollector , crate :: unity_engine :: resource_management :: diagnostics :: diagnosticevent :: DiagnosticEvent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_post_event :: get_method_info () . method_ptr ,) ; inner (this , diagnostic_event , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DiagnosticEventCollector as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DiagnosticEventCollector as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : DiagnosticEventCollector , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DiagnosticEventCollector , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "unity_engine-resource_management-diagnostics-diagnosticeventcollector")]
+impl DiagnosticEventCollector { # [doc = "`FindOrCreateGlobalInstance()` overload"] pub fn find_or_create_global_instance () -> crate :: unity_engine :: resource_management :: diagnostics :: diagnosticeventcollector :: DiagnosticEventCollector { unsafe { __DiagnosticEventCollector_unity2_raw :: find_or_create_global_instance (:: core :: option :: Option :: None) } } # [doc = "`RegisterEventHandler(crate::system::action_1::Action_1<crate::unity_engine::resource_management::diagnostics::diagnosticevent::DiagnosticEvent>, bool, bool)` overload"] pub fn register_event_handler (handler : impl :: core :: convert :: Into < crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: resource_management :: diagnostics :: diagnosticevent :: DiagnosticEvent > > , register : impl :: core :: convert :: Into < bool > , create : impl :: core :: convert :: Into < bool >) -> bool { unsafe { __DiagnosticEventCollector_unity2_raw :: register_event_handler (:: core :: convert :: Into :: into (handler) , :: core :: convert :: Into :: into (register) , :: core :: convert :: Into :: into (create) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-resource_management-diagnostics-diagnosticeventcollector")]
+pub trait IDiagnosticEventCollectorMethods : IDiagnosticEventCollector { # [doc = "`UnregisterEventHandler(crate::system::action_1::Action_1<crate::unity_engine::resource_management::diagnostics::diagnosticevent::DiagnosticEvent>)` overload"] fn unregister_event_handler (self , handler : impl :: core :: convert :: Into < crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: resource_management :: diagnostics :: diagnosticevent :: DiagnosticEvent > >) -> () { unsafe { let __receiver = < DiagnosticEventCollector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DiagnosticEventCollector_unity2_raw :: unregister_event_handler (__receiver , :: core :: convert :: Into :: into (handler) , :: core :: option :: Option :: None) } } # [doc = "`PostEvent(crate::unity_engine::resource_management::diagnostics::diagnosticevent::DiagnosticEvent)` overload"] fn post_event (self , diagnostic_event : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: diagnostics :: diagnosticevent :: DiagnosticEvent >) -> () { unsafe { let __receiver = < DiagnosticEventCollector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DiagnosticEventCollector_unity2_raw :: post_event (__receiver , :: core :: convert :: Into :: into (diagnostic_event) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DiagnosticEventCollector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DiagnosticEventCollector_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-resource_management-diagnostics-diagnosticeventcollector")]
+impl < __T : IDiagnosticEventCollector > IDiagnosticEventCollectorMethods for __T { }
+
+#[cfg(feature = "unity_engine-resource_management-diagnostics-diagnosticeventcollector")]
+impl DiagnosticEventCollector { pub fn find_or_create_global_instance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DiagnosticEventCollector_unity2_raw :: __lookup_find_or_create_global_instance :: get_method_info () } pub fn register_event_handler_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DiagnosticEventCollector_unity2_raw :: __lookup_register_event_handler :: get_method_info () } pub fn unregister_event_handler_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DiagnosticEventCollector_unity2_raw :: __lookup_unregister_event_handler :: get_method_info () } pub fn post_event_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DiagnosticEventCollector_unity2_raw :: __lookup_post_event :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DiagnosticEventCollector_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-resource_management-diagnostics-diagnosticeventcollector")]
 impl DiagnosticEventCollector {
-    #[doc = "`FindOrCreateGlobalInstance()` overload"]
-    pub fn find_or_create_global_instance(
-    ) -> crate::unity_engine::resource_management::diagnostics::diagnosticeventcollector::DiagnosticEventCollector {
-        unsafe { __DiagnosticEventCollector_unity2_raw::find_or_create_global_instance(::core::option::Option::None) }
-    }
-
-    #[doc = "`RegisterEventHandler(crate::system::action_1::Action_1<crate::unity_engine::resource_management::diagnostics::diagnosticevent::DiagnosticEvent>, bool, bool)` overload"]
-    pub fn register_event_handler(
-        handler: impl ::core::convert::Into<
-            crate::system::action_1::Action_1<crate::unity_engine::resource_management::diagnostics::diagnosticevent::DiagnosticEvent>,
-        >,
-        register: impl ::core::convert::Into<bool>,
-        create: impl ::core::convert::Into<bool>,
-    ) -> bool {
-        unsafe {
-            __DiagnosticEventCollector_unity2_raw::register_event_handler(
-                ::core::convert::Into::into(handler),
-                ::core::convert::Into::into(register),
-                ::core::convert::Into::into(create),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-resource_management-diagnostics-diagnosticeventcollector")]
-pub trait IDiagnosticEventCollectorMethods: IDiagnosticEventCollector {
-    #[doc = "`UnregisterEventHandler(crate::system::action_1::Action_1<crate::unity_engine::resource_management::diagnostics::diagnosticevent::DiagnosticEvent>)` overload"]
-    fn unregister_event_handler(
-        self,
-        handler: impl ::core::convert::Into<
-            crate::system::action_1::Action_1<crate::unity_engine::resource_management::diagnostics::diagnosticevent::DiagnosticEvent>,
-        >,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <DiagnosticEventCollector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DiagnosticEventCollector_unity2_raw::unregister_event_handler(
-                __receiver,
-                ::core::convert::Into::into(handler),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`PostEvent(crate::unity_engine::resource_management::diagnostics::diagnosticevent::DiagnosticEvent)` overload"]
-    fn post_event(
-        self,
-        diagnostic_event: impl ::core::convert::Into<crate::unity_engine::resource_management::diagnostics::diagnosticevent::DiagnosticEvent>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <DiagnosticEventCollector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DiagnosticEventCollector_unity2_raw::post_event(__receiver, ::core::convert::Into::into(diagnostic_event), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <DiagnosticEventCollector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DiagnosticEventCollector_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-resource_management-diagnostics-diagnosticeventcollector")]
-impl<__T: IDiagnosticEventCollector> IDiagnosticEventCollectorMethods for __T {}
-
-#[cfg(feature = "unity_engine-resource_management-diagnostics-diagnosticeventcollector")]
-impl DiagnosticEventCollector {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DiagnosticEventCollector),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDiagnosticEventCollectorMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DiagnosticEventCollector) , :: core :: stringify ! (new) ,)) ; < Self as IDiagnosticEventCollectorMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "unity_engine-resource_management-diagnostics-diagnosticeventcollector")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{DiagnosticEventCollector, IDiagnosticEventCollector, IDiagnosticEventCollectorMethods};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        system::object::IObject,
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::DiagnosticEventCollector;
+    pub use super::IDiagnosticEventCollector;
+    pub use super::IDiagnosticEventCollectorMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

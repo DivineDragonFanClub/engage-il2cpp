@@ -2,198 +2,58 @@
 
 #[cfg(feature = "unity_engine-rendering-universal-paniniprojection-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::{
-            object_2::{IObject_2, Object_2},
-            rendering::volumecomponent::{IVolumeComponent, VolumeComponent},
-            scriptableobject::{IScriptableObject, ScriptableObject},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/paniniprojection/PaniniProjection.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Rendering.Universal", name = "PaniniProjection")]
-    #[parent(crate::unity_engine::rendering::volumecomponent::VolumeComponent)]
-    pub struct PaniniProjection {
-        #[offset(56)]
-        #[rename(name = "distance")]
-        pub distance: crate::unity_engine::rendering::clampedfloatparameter::ClampedFloatParameter,
-        #[offset(64)]
-        #[rename(name = "cropToFit")]
-        pub crop_to_fit: crate::unity_engine::rendering::clampedfloatparameter::ClampedFloatParameter,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+ use crate :: unity_engine :: rendering :: volumecomponent :: { IVolumeComponent , VolumeComponent }
+ ;
+ use crate :: unity_engine :: scriptableobject :: { IScriptableObject , ScriptableObject }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/paniniprojection/PaniniProjection.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.Universal" , name = "PaniniProjection")] # [parent (crate :: unity_engine :: rendering :: volumecomponent :: VolumeComponent)] pub struct PaniniProjection {
+# [offset (56)] # [rename (name = "distance")] pub distance : crate :: unity_engine :: rendering :: clampedfloatparameter :: ClampedFloatParameter ,
+# [offset (64)] # [rename (name = "cropToFit")] pub crop_to_fit : crate :: unity_engine :: rendering :: clampedfloatparameter :: ClampedFloatParameter ,
+}
+
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-paniniprojection-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-universal-paniniprojection")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __PaniniProjection_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_active {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PaniniProjection as ::unity2::ClassIdentity>::class(),
-                "IsActive",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PaniniProjection as ::unity2::ClassIdentity>::NAME,
-                        "IsActive",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_active(this: PaniniProjection, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(PaniniProjection, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_active::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_tile_compatible {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PaniniProjection as ::unity2::ClassIdentity>::class(),
-                "IsTileCompatible",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PaniniProjection as ::unity2::ClassIdentity>::NAME,
-                        "IsTileCompatible",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_tile_compatible(this: PaniniProjection, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(PaniniProjection, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_tile_compatible::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PaniniProjection as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PaniniProjection as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: PaniniProjection, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(PaniniProjection, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __PaniniProjection_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_active { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PaniniProjection as :: unity2 :: ClassIdentity > :: class () , "IsActive" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PaniniProjection as :: unity2 :: ClassIdentity > :: NAME , "IsActive" , e) , } } } pub unsafe fn is_active (this : PaniniProjection , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (PaniniProjection , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_active :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_tile_compatible { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PaniniProjection as :: unity2 :: ClassIdentity > :: class () , "IsTileCompatible" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PaniniProjection as :: unity2 :: ClassIdentity > :: NAME , "IsTileCompatible" , e) , } } } pub unsafe fn is_tile_compatible (this : PaniniProjection , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (PaniniProjection , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_tile_compatible :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PaniniProjection as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PaniniProjection as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : PaniniProjection , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (PaniniProjection , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-rendering-universal-paniniprojection")]
-pub trait IPaniniProjectionMethods: IPaniniProjection {
-    #[doc = "`IsActive()` overload"]
-    fn is_active(self) -> bool {
-        unsafe {
-            let __receiver = <PaniniProjection as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __PaniniProjection_unity2_raw::is_active(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsTileCompatible()` overload"]
-    fn is_tile_compatible(self) -> bool {
-        unsafe {
-            let __receiver = <PaniniProjection as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __PaniniProjection_unity2_raw::is_tile_compatible(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <PaniniProjection as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __PaniniProjection_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IPaniniProjectionMethods : IPaniniProjection { # [doc = "`IsActive()` overload"] fn is_active (self ,) -> bool { unsafe { let __receiver = < PaniniProjection as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __PaniniProjection_unity2_raw :: is_active (__receiver , :: core :: option :: Option :: None) } } # [doc = "`IsTileCompatible()` overload"] fn is_tile_compatible (self ,) -> bool { unsafe { let __receiver = < PaniniProjection as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __PaniniProjection_unity2_raw :: is_tile_compatible (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < PaniniProjection as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __PaniniProjection_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-rendering-universal-paniniprojection")]
-impl<__T: IPaniniProjection> IPaniniProjectionMethods for __T {}
+impl < __T : IPaniniProjection > IPaniniProjectionMethods for __T { }
+
+#[cfg(feature = "unity_engine-rendering-universal-paniniprojection")]
+impl PaniniProjection { pub fn is_active_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PaniniProjection_unity2_raw :: __lookup_is_active :: get_method_info () } pub fn is_tile_compatible_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PaniniProjection_unity2_raw :: __lookup_is_tile_compatible :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PaniniProjection_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-rendering-universal-paniniprojection")]
 impl PaniniProjection {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(PaniniProjection),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IPaniniProjectionMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (PaniniProjection) , :: core :: stringify ! (new) ,)) ; < Self as IPaniniProjectionMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-paniniprojection")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IPaniniProjection, IPaniniProjectionMethods, PaniniProjection};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    #[cfg(feature = "unity_engine-rendering-volumecomponent")]
-    pub use crate::unity_engine::rendering::volumecomponent::IVolumeComponentMethods;
-    #[cfg(feature = "unity_engine-scriptableobject")]
-    pub use crate::unity_engine::scriptableobject::IScriptableObjectMethods;
-    pub use crate::{
-        system::object::IObject,
-        unity_engine::{object_2::IObject_2, rendering::volumecomponent::IVolumeComponent, scriptableobject::IScriptableObject},
-    };
+    pub use super::PaniniProjection;
+    pub use super::IPaniniProjection;
+    pub use super::IPaniniProjectionMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::object_2::IObject_2;
+    pub use crate::unity_engine::rendering::volumecomponent::IVolumeComponent;
+    pub use crate::unity_engine::scriptableobject::IScriptableObject;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
+    #[cfg(feature = "unity_engine-rendering-volumecomponent")] pub use crate::unity_engine::rendering::volumecomponent::IVolumeComponentMethods;
+    #[cfg(feature = "unity_engine-scriptableobject")] pub use crate::unity_engine::scriptableobject::IScriptableObjectMethods;
 }

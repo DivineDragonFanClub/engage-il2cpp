@@ -2,193 +2,65 @@
 
 #[cfg(feature = "unity_engine-rendering-universal-bloom-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::{
-            object_2::{IObject_2, Object_2},
-            rendering::volumecomponent::{IVolumeComponent, VolumeComponent},
-            scriptableobject::{IScriptableObject, ScriptableObject},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/bloom/Bloom.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Rendering.Universal", name = "Bloom")]
-    #[parent(crate::unity_engine::rendering::volumecomponent::VolumeComponent)]
-    pub struct Bloom {
-        #[offset(56)]
-        #[rename(name = "threshold")]
-        pub threshold: crate::unity_engine::rendering::minfloatparameter::MinFloatParameter,
-        #[offset(64)]
-        #[rename(name = "intensity")]
-        pub intensity: crate::unity_engine::rendering::minfloatparameter::MinFloatParameter,
-        #[offset(72)]
-        #[rename(name = "scatter")]
-        pub scatter: crate::unity_engine::rendering::clampedfloatparameter::ClampedFloatParameter,
-        #[offset(80)]
-        #[rename(name = "clamp")]
-        pub clamp: crate::unity_engine::rendering::minfloatparameter::MinFloatParameter,
-        #[offset(88)]
-        #[rename(name = "tint")]
-        pub tint: crate::unity_engine::rendering::colorparameter::ColorParameter,
-        #[offset(96)]
-        #[rename(name = "highQualityFiltering")]
-        pub high_quality_filtering: crate::unity_engine::rendering::boolparameter::BoolParameter,
-        #[offset(104)]
-        #[rename(name = "skipIterations")]
-        pub skip_iterations: crate::unity_engine::rendering::clampedintparameter::ClampedIntParameter,
-        #[offset(112)]
-        #[rename(name = "dirtTexture")]
-        pub dirt_texture: crate::unity_engine::rendering::textureparameter::TextureParameter,
-        #[offset(120)]
-        #[rename(name = "dirtIntensity")]
-        pub dirt_intensity: crate::unity_engine::rendering::minfloatparameter::MinFloatParameter,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+ use crate :: unity_engine :: rendering :: volumecomponent :: { IVolumeComponent , VolumeComponent }
+ ;
+ use crate :: unity_engine :: scriptableobject :: { IScriptableObject , ScriptableObject }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/bloom/Bloom.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.Universal" , name = "Bloom")] # [parent (crate :: unity_engine :: rendering :: volumecomponent :: VolumeComponent)] pub struct Bloom {
+# [offset (56)] # [rename (name = "threshold")] pub threshold : crate :: unity_engine :: rendering :: minfloatparameter :: MinFloatParameter ,
+# [offset (64)] # [rename (name = "intensity")] pub intensity : crate :: unity_engine :: rendering :: minfloatparameter :: MinFloatParameter ,
+# [offset (72)] # [rename (name = "scatter")] pub scatter : crate :: unity_engine :: rendering :: clampedfloatparameter :: ClampedFloatParameter ,
+# [offset (80)] # [rename (name = "clamp")] pub clamp : crate :: unity_engine :: rendering :: minfloatparameter :: MinFloatParameter ,
+# [offset (88)] # [rename (name = "tint")] pub tint : crate :: unity_engine :: rendering :: colorparameter :: ColorParameter ,
+# [offset (96)] # [rename (name = "highQualityFiltering")] pub high_quality_filtering : crate :: unity_engine :: rendering :: boolparameter :: BoolParameter ,
+# [offset (104)] # [rename (name = "skipIterations")] pub skip_iterations : crate :: unity_engine :: rendering :: clampedintparameter :: ClampedIntParameter ,
+# [offset (112)] # [rename (name = "dirtTexture")] pub dirt_texture : crate :: unity_engine :: rendering :: textureparameter :: TextureParameter ,
+# [offset (120)] # [rename (name = "dirtIntensity")] pub dirt_intensity : crate :: unity_engine :: rendering :: minfloatparameter :: MinFloatParameter ,
+}
+
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-bloom-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-universal-bloom")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __Bloom_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_active {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Bloom as ::unity2::ClassIdentity>::class(), "IsActive", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Bloom as ::unity2::ClassIdentity>::NAME,
-                        "IsActive",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_active(this: Bloom, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(Bloom, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_is_active::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_tile_compatible {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Bloom as ::unity2::ClassIdentity>::class(),
-                "IsTileCompatible",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Bloom as ::unity2::ClassIdentity>::NAME,
-                        "IsTileCompatible",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_tile_compatible(this: Bloom, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(Bloom, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_tile_compatible::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Bloom as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Bloom as ::unity2::ClassIdentity>::NAME, ".ctor", e),
-            }
-        }
-    }
-    pub unsafe fn ctor(this: Bloom, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Bloom, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __Bloom_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_active { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Bloom as :: unity2 :: ClassIdentity > :: class () , "IsActive" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Bloom as :: unity2 :: ClassIdentity > :: NAME , "IsActive" , e) , } } } pub unsafe fn is_active (this : Bloom , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (Bloom , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_active :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_tile_compatible { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Bloom as :: unity2 :: ClassIdentity > :: class () , "IsTileCompatible" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Bloom as :: unity2 :: ClassIdentity > :: NAME , "IsTileCompatible" , e) , } } } pub unsafe fn is_tile_compatible (this : Bloom , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (Bloom , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_tile_compatible :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Bloom as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Bloom as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : Bloom , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Bloom , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-rendering-universal-bloom")]
-pub trait IBloomMethods: IBloom {
-    #[doc = "`IsActive()` overload"]
-    fn is_active(self) -> bool {
-        unsafe {
-            let __receiver = <Bloom as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Bloom_unity2_raw::is_active(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsTileCompatible()` overload"]
-    fn is_tile_compatible(self) -> bool {
-        unsafe {
-            let __receiver = <Bloom as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Bloom_unity2_raw::is_tile_compatible(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <Bloom as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Bloom_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IBloomMethods : IBloom { # [doc = "`IsActive()` overload"] fn is_active (self ,) -> bool { unsafe { let __receiver = < Bloom as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Bloom_unity2_raw :: is_active (__receiver , :: core :: option :: Option :: None) } } # [doc = "`IsTileCompatible()` overload"] fn is_tile_compatible (self ,) -> bool { unsafe { let __receiver = < Bloom as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Bloom_unity2_raw :: is_tile_compatible (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Bloom as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Bloom_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-rendering-universal-bloom")]
-impl<__T: IBloom> IBloomMethods for __T {}
+impl < __T : IBloom > IBloomMethods for __T { }
+
+#[cfg(feature = "unity_engine-rendering-universal-bloom")]
+impl Bloom { pub fn is_active_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Bloom_unity2_raw :: __lookup_is_active :: get_method_info () } pub fn is_tile_compatible_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Bloom_unity2_raw :: __lookup_is_tile_compatible :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Bloom_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-rendering-universal-bloom")]
 impl Bloom {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(Bloom), ::core::stringify!(new),));
-        <Self as IBloomMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Bloom) , :: core :: stringify ! (new) ,)) ; < Self as IBloomMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-bloom")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{Bloom, IBloom, IBloomMethods};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    #[cfg(feature = "unity_engine-rendering-volumecomponent")]
-    pub use crate::unity_engine::rendering::volumecomponent::IVolumeComponentMethods;
-    #[cfg(feature = "unity_engine-scriptableobject")]
-    pub use crate::unity_engine::scriptableobject::IScriptableObjectMethods;
-    pub use crate::{
-        system::object::IObject,
-        unity_engine::{object_2::IObject_2, rendering::volumecomponent::IVolumeComponent, scriptableobject::IScriptableObject},
-    };
+    pub use super::Bloom;
+    pub use super::IBloom;
+    pub use super::IBloomMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::object_2::IObject_2;
+    pub use crate::unity_engine::rendering::volumecomponent::IVolumeComponent;
+    pub use crate::unity_engine::scriptableobject::IScriptableObject;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
+    #[cfg(feature = "unity_engine-rendering-volumecomponent")] pub use crate::unity_engine::rendering::volumecomponent::IVolumeComponentMethods;
+    #[cfg(feature = "unity_engine-scriptableobject")] pub use crate::unity_engine::scriptableobject::IScriptableObjectMethods;
 }

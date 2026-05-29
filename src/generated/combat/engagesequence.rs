@@ -2,843 +2,150 @@
 
 #[cfg(feature = "combat-engagesequence-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::procinst::{IProcInst, ProcInst},
-        system::{
-            object::{IObject, Object},
-            r#enum::{Enum, IEnum},
-            valuetype::{IValueType, ValueType},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/engagesequence/EngageSequence.md"))]
-    #[::unity2::class(namespace = "Combat", name = "EngageSequence")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct EngageSequence {
-        #[offset(112)]
-        #[rename(name = "m_Master")]
-        pub m_master: crate::combat::engagesequence::EngageSequence_Cast,
-        #[offset(120)]
-        #[rename(name = "m_Grandew")]
-        pub m_grandew: crate::combat::engagesequence::EngageSequence_Cast,
-        #[offset(144)]
-        #[rename(name = "m_CamGO")]
-        pub m_cam_go: crate::unity_engine::gameobject::GameObject,
-        #[offset(152)]
-        #[rename(name = "m_bSetupDone")]
-        pub m_b_setup_done: bool,
-        #[offset(153)]
-        #[rename(name = "m_bSkipped")]
-        pub m_b_skipped: bool,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: procinst :: { IProcInst , ProcInst }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/engagesequence/EngageSequence_Cast.md"))]
-    #[::unity2::class(namespace = "Combat", name = "EngageSequence.Cast")]
-    #[parent(crate::system::object::Object)]
-    pub struct EngageSequence_Cast {
-        #[offset(16)]
-        #[rename(name = "Unit")]
-        pub unit: crate::app::unit::Unit,
-        #[offset(24)]
-        #[rename(name = "God")]
-        pub god: crate::app::godunit::GodUnit,
-        #[offset(32)]
-        #[rename(name = "GameStatus")]
-        pub game_status: crate::combat::charactergamestatus::CharacterGameStatus,
-        #[offset(40)]
-        #[rename(name = "Character")]
-        pub character: crate::combat::character::Character,
-    }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/engagesequence/EngageSequence_Mode.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct EngageSequence_Mode {
-        pub value: i32,
-    }
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/engagesequence/EngageSequence_Mode.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct EngageSequence_Mode  {
+    pub value: i32,
+}
 
-    impl ::unity2::ClassIdentity for EngageSequence_Mode {
-        const NAME: &'static str = "EngageSequence.Mode";
-        const NAMESPACE: &'static str = "Combat";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+impl  ::unity2::ClassIdentity for EngageSequence_Mode  {
+    const NAMESPACE: &'static str = "Combat";
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    const NAME: &'static str = "EngageSequence.Mode";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for EngageSequence_Mode {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  ::unity2::IlType for EngageSequence_Mode  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl EngageSequence_Mode {
-        pub fn not_work() -> Self {
-            Self { value: 0 }
-        }
+}
 
-        pub fn engage() -> Self {
-            Self { value: 1 }
-        }
 
-        pub fn engage_plus() -> Self {
-            Self { value: 2 }
-        }
+impl  EngageSequence_Mode  {
+    pub fn not_work() -> Self {
+        Self { value: 0 }
+
     }
+
+
+    pub fn engage() -> Self {
+        Self { value: 1 }
+
+    }
+
+
+    pub fn engage_plus() -> Self {
+        Self { value: 2 }
+
+    }
+
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/engagesequence/EngageSequence.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "EngageSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct EngageSequence {
+# [offset (112)] # [rename (name = "m_Master")] pub m_master : crate :: combat :: engagesequence :: EngageSequence_Cast ,
+# [offset (120)] # [rename (name = "m_Grandew")] pub m_grandew : crate :: combat :: engagesequence :: EngageSequence_Cast ,
+# [offset (144)] # [rename (name = "m_CamGO")] pub m_cam_go : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (152)] # [rename (name = "m_bSetupDone")] pub m_b_setup_done : bool ,
+# [offset (153)] # [rename (name = "m_bSkipped")] pub m_b_skipped : bool ,
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/engagesequence/EngageSequence_Cast.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "EngageSequence.Cast")] # [parent (crate :: system :: object :: Object)] pub struct EngageSequence_Cast {
+# [offset (16)] # [rename (name = "Unit")] pub unit : crate :: app :: unit :: Unit ,
+# [offset (24)] # [rename (name = "God")] pub god : crate :: app :: godunit :: GodUnit ,
+# [offset (32)] # [rename (name = "GameStatus")] pub game_status : crate :: combat :: charactergamestatus :: CharacterGameStatus ,
+# [offset (40)] # [rename (name = "Character")] pub character : crate :: combat :: character :: Character ,
+}
+
 }
 
 #[cfg(feature = "combat-engagesequence-types")]
 pub use __types::*;
 
 #[cfg(feature = "combat-engagesequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __EngageSequence_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_mode {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EngageSequence as ::unity2::ClassIdentity>::class(),
-                "GetMode",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <EngageSequence as ::unity2::ClassIdentity>::NAME,
-                        "GetMode",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_mode(__unity2_method_info: ::unity2::OptionalMethod) -> crate::combat::engagesequence::EngageSequence_Mode {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::combat::engagesequence::EngageSequence_Mode =
-            ::core::mem::transmute(__lookup_get_mode::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_exist {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EngageSequence as ::unity2::ClassIdentity>::class(),
-                "IsExist",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <EngageSequence as ::unity2::ClassIdentity>::NAME,
-                        "IsExist",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_exist(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_is_exist::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EngageSequence as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <EngageSequence as ::unity2::ClassIdentity>::NAME,
-                        "CreateBind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        unit1: crate::app::unit::Unit,
-        unit2: crate::app::unit::Unit,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::app::procinst::ProcInst, crate::app::unit::Unit, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
-        inner(super_, unit1, unit2, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cretea_combat_borders {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EngageSequence as ::unity2::ClassIdentity>::class(),
-                "CreteaCombatBorders",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <EngageSequence as ::unity2::ClassIdentity>::NAME,
-                        "CreteaCombatBorders",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cretea_combat_borders(this: EngageSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(EngageSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_cretea_combat_borders::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_delete_combat_borders {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EngageSequence as ::unity2::ClassIdentity>::class(),
-                "DeleteCombatBorders",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <EngageSequence as ::unity2::ClassIdentity>::NAME,
-                        "DeleteCombatBorders",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn delete_combat_borders(this: EngageSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(EngageSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_delete_combat_borders::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_setup_done {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EngageSequence as ::unity2::ClassIdentity>::class(),
-                "IsSetupDone",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <EngageSequence as ::unity2::ClassIdentity>::NAME,
-                        "IsSetupDone",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_setup_done(this: EngageSequence, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(EngageSequence, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_setup_done::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_wait_finish {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EngageSequence as ::unity2::ClassIdentity>::class(),
-                "WaitFinish",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <EngageSequence as ::unity2::ClassIdentity>::NAME,
-                        "WaitFinish",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn wait_finish(
-        this: EngageSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::ienumerator::IEnumerator {
-        let inner: extern "C" fn(EngageSequence, ::unity2::OptionalMethod) -> crate::system::collections::ienumerator::IEnumerator =
-            ::core::mem::transmute(__lookup_wait_finish::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EngageSequence as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <EngageSequence as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: EngageSequence,
-        unit1: crate::app::unit::Unit,
-        unit2: crate::app::unit::Unit,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(EngageSequence, crate::app::unit::Unit, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, unit1, unit2, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_load_and_setup_and_run {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EngageSequence as ::unity2::ClassIdentity>::class(),
-                "LoadAndSetupAndRun",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <EngageSequence as ::unity2::ClassIdentity>::NAME,
-                        "LoadAndSetupAndRun",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn load_and_setup_and_run(
-        this: EngageSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::ienumerator::IEnumerator {
-        let inner: extern "C" fn(EngageSequence, ::unity2::OptionalMethod) -> crate::system::collections::ienumerator::IEnumerator =
-            ::core::mem::transmute(__lookup_load_and_setup_and_run::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_height_offset {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::combat::character::Character as ::unity2::IlType>::il_type(),
-                <crate::combat::character::Character as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EngageSequence as ::unity2::ClassIdentity>::class(),
-                "CalcHeightOffset",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <EngageSequence as ::unity2::ClassIdentity>::NAME,
-                        "CalcHeightOffset",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn calc_height_offset(
-        this: EngageSequence,
-        c: crate::combat::character::Character,
-        g: crate::combat::character::Character,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
-        let inner: extern "C" fn(
-            EngageSequence,
-            crate::combat::character::Character,
-            crate::combat::character::Character,
-            ::unity2::OptionalMethod,
-        ) -> f32 = ::core::mem::transmute(__lookup_calc_height_offset::get_method_info().method_ptr);
-        inner(this, c, g, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_exit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<EngageSequence as ::unity2::ClassIdentity>::class(), "Exit", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <EngageSequence as ::unity2::ClassIdentity>::NAME,
-                        "Exit",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn exit(this: EngageSequence, __unity2_method_info: ::unity2::OptionalMethod) -> crate::system::collections::ienumerator::IEnumerator {
-        let inner: extern "C" fn(EngageSequence, ::unity2::OptionalMethod) -> crate::system::collections::ienumerator::IEnumerator =
-            ::core::mem::transmute(__lookup_exit::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __EngageSequence_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_mode { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< EngageSequence as :: unity2 :: ClassIdentity > :: class () , "GetMode" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < EngageSequence as :: unity2 :: ClassIdentity > :: NAME , "GetMode" , e) , } } } pub unsafe fn get_mode (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: combat :: engagesequence :: EngageSequence_Mode { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: combat :: engagesequence :: EngageSequence_Mode = :: core :: mem :: transmute (__lookup_get_mode :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_exist { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< EngageSequence as :: unity2 :: ClassIdentity > :: class () , "IsExist" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < EngageSequence as :: unity2 :: ClassIdentity > :: NAME , "IsExist" , e) , } } } pub unsafe fn is_exist (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_exist :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_bind { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< EngageSequence as :: unity2 :: ClassIdentity > :: class () , "CreateBind" , 3 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < EngageSequence as :: unity2 :: ClassIdentity > :: NAME , "CreateBind" , e) , } } } pub unsafe fn create_bind (super_ : crate :: app :: procinst :: ProcInst , unit1 : crate :: app :: unit :: Unit , unit2 : crate :: app :: unit :: Unit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: unit :: Unit , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create_bind :: get_method_info () . method_ptr ,) ; inner (super_ , unit1 , unit2 , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cretea_combat_borders { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< EngageSequence as :: unity2 :: ClassIdentity > :: class () , "CreteaCombatBorders" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < EngageSequence as :: unity2 :: ClassIdentity > :: NAME , "CreteaCombatBorders" , e) , } } } pub unsafe fn cretea_combat_borders (this : EngageSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (EngageSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cretea_combat_borders :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_delete_combat_borders { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< EngageSequence as :: unity2 :: ClassIdentity > :: class () , "DeleteCombatBorders" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < EngageSequence as :: unity2 :: ClassIdentity > :: NAME , "DeleteCombatBorders" , e) , } } } pub unsafe fn delete_combat_borders (this : EngageSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (EngageSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_delete_combat_borders :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_setup_done { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< EngageSequence as :: unity2 :: ClassIdentity > :: class () , "IsSetupDone" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < EngageSequence as :: unity2 :: ClassIdentity > :: NAME , "IsSetupDone" , e) , } } } pub unsafe fn is_setup_done (this : EngageSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (EngageSequence , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_setup_done :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_wait_finish { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< EngageSequence as :: unity2 :: ClassIdentity > :: class () , "WaitFinish" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < EngageSequence as :: unity2 :: ClassIdentity > :: NAME , "WaitFinish" , e) , } } } pub unsafe fn wait_finish (this : EngageSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { let inner : extern "C" fn (EngageSequence , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute (__lookup_wait_finish :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< EngageSequence as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < EngageSequence as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : EngageSequence , unit1 : crate :: app :: unit :: Unit , unit2 : crate :: app :: unit :: Unit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (EngageSequence , crate :: app :: unit :: Unit , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , unit1 , unit2 , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_load_and_setup_and_run { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< EngageSequence as :: unity2 :: ClassIdentity > :: class () , "LoadAndSetupAndRun" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < EngageSequence as :: unity2 :: ClassIdentity > :: NAME , "LoadAndSetupAndRun" , e) , } } } pub unsafe fn load_and_setup_and_run (this : EngageSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { let inner : extern "C" fn (EngageSequence , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute (__lookup_load_and_setup_and_run :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_calc_height_offset { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: character :: Character as :: unity2 :: IlType > :: il_type () , < crate :: combat :: character :: Character as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< EngageSequence as :: unity2 :: ClassIdentity > :: class () , "CalcHeightOffset" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < EngageSequence as :: unity2 :: ClassIdentity > :: NAME , "CalcHeightOffset" , e) , } } } pub unsafe fn calc_height_offset (this : EngageSequence , c : crate :: combat :: character :: Character , g : crate :: combat :: character :: Character , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (EngageSequence , crate :: combat :: character :: Character , crate :: combat :: character :: Character , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_calc_height_offset :: get_method_info () . method_ptr ,) ; inner (this , c , g , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_exit { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< EngageSequence as :: unity2 :: ClassIdentity > :: class () , "Exit" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < EngageSequence as :: unity2 :: ClassIdentity > :: NAME , "Exit" , e) , } } } pub unsafe fn exit (this : EngageSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { let inner : extern "C" fn (EngageSequence , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute (__lookup_exit :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "combat-engagesequence")]
+impl EngageSequence { # [doc = "`GetMode()` overload"] pub fn get_mode () -> crate :: combat :: engagesequence :: EngageSequence_Mode { unsafe { __EngageSequence_unity2_raw :: get_mode (:: core :: option :: Option :: None) } } # [doc = "`IsExist()` overload"] pub fn is_exist () -> bool { unsafe { __EngageSequence_unity2_raw :: is_exist (:: core :: option :: Option :: None) } } # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::unit::Unit, crate::app::unit::Unit)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , unit1 : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , unit2 : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { __EngageSequence_unity2_raw :: create_bind (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (unit1) , :: core :: convert :: Into :: into (unit2) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "combat-engagesequence")]
+pub trait IEngageSequenceMethods : IEngageSequence { # [doc = "`CreteaCombatBorders()` overload"] fn cretea_combat_borders (self ,) -> () { unsafe { let __receiver = < EngageSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __EngageSequence_unity2_raw :: cretea_combat_borders (__receiver , :: core :: option :: Option :: None) } } # [doc = "`DeleteCombatBorders()` overload"] fn delete_combat_borders (self ,) -> () { unsafe { let __receiver = < EngageSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __EngageSequence_unity2_raw :: delete_combat_borders (__receiver , :: core :: option :: Option :: None) } } # [doc = "`IsSetupDone()` overload"] fn is_setup_done (self ,) -> bool { unsafe { let __receiver = < EngageSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __EngageSequence_unity2_raw :: is_setup_done (__receiver , :: core :: option :: Option :: None) } } # [doc = "`WaitFinish()` overload"] fn wait_finish (self ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { let __receiver = < EngageSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __EngageSequence_unity2_raw :: wait_finish (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor(crate::app::unit::Unit, crate::app::unit::Unit)` overload"] fn ctor (self , unit1 : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , unit2 : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < EngageSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __EngageSequence_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (unit1) , :: core :: convert :: Into :: into (unit2) , :: core :: option :: Option :: None) } } # [doc = "`LoadAndSetupAndRun()` overload"] fn load_and_setup_and_run (self ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { let __receiver = < EngageSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __EngageSequence_unity2_raw :: load_and_setup_and_run (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CalcHeightOffset(crate::combat::character::Character, crate::combat::character::Character)` overload"] fn calc_height_offset (self , c : impl :: core :: convert :: Into < crate :: combat :: character :: Character > , g : impl :: core :: convert :: Into < crate :: combat :: character :: Character >) -> f32 { unsafe { let __receiver = < EngageSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __EngageSequence_unity2_raw :: calc_height_offset (__receiver , :: core :: convert :: Into :: into (c) , :: core :: convert :: Into :: into (g) , :: core :: option :: Option :: None) } } # [doc = "`Exit()` overload"] fn exit (self ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { let __receiver = < EngageSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __EngageSequence_unity2_raw :: exit (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "combat-engagesequence")]
+impl < __T : IEngageSequence > IEngageSequenceMethods for __T { }
+
+#[cfg(feature = "combat-engagesequence")]
+impl EngageSequence { pub fn get_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __EngageSequence_unity2_raw :: __lookup_get_mode :: get_method_info () } pub fn is_exist_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __EngageSequence_unity2_raw :: __lookup_is_exist :: get_method_info () } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __EngageSequence_unity2_raw :: __lookup_create_bind :: get_method_info () } pub fn cretea_combat_borders_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __EngageSequence_unity2_raw :: __lookup_cretea_combat_borders :: get_method_info () } pub fn delete_combat_borders_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __EngageSequence_unity2_raw :: __lookup_delete_combat_borders :: get_method_info () } pub fn is_setup_done_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __EngageSequence_unity2_raw :: __lookup_is_setup_done :: get_method_info () } pub fn wait_finish_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __EngageSequence_unity2_raw :: __lookup_wait_finish :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __EngageSequence_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn load_and_setup_and_run_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __EngageSequence_unity2_raw :: __lookup_load_and_setup_and_run :: get_method_info () } pub fn calc_height_offset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __EngageSequence_unity2_raw :: __lookup_calc_height_offset :: get_method_info () } pub fn exit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __EngageSequence_unity2_raw :: __lookup_exit :: get_method_info () } }
 
 #[cfg(feature = "combat-engagesequence")]
 impl EngageSequence {
-    #[doc = "`GetMode()` overload"]
-    pub fn get_mode() -> crate::combat::engagesequence::EngageSequence_Mode {
-        unsafe { __EngageSequence_unity2_raw::get_mode(::core::option::Option::None) }
-    }
-
-    #[doc = "`IsExist()` overload"]
-    pub fn is_exist() -> bool {
-        unsafe { __EngageSequence_unity2_raw::is_exist(::core::option::Option::None) }
-    }
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::unit::Unit, crate::app::unit::Unit)` overload"]
-    pub fn create_bind(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        unit1: impl ::core::convert::Into<crate::app::unit::Unit>,
-        unit2: impl ::core::convert::Into<crate::app::unit::Unit>,
-    ) -> () {
-        unsafe {
-            __EngageSequence_unity2_raw::create_bind(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(unit1),
-                ::core::convert::Into::into(unit2),
-                ::core::option::Option::None,
-            )
-        }
-    }
+# [doc = "`.ctor(crate::app::unit::Unit, crate::app::unit::Unit)` — overload selector"] pub fn new (unit1 : crate :: app :: unit :: Unit , unit2 : crate :: app :: unit :: Unit) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (EngageSequence) , :: core :: stringify ! (new) ,)) ; < Self as IEngageSequenceMethods > :: ctor (this , unit1 , unit2) ; this }
 }
 
 #[cfg(feature = "combat-engagesequence")]
-pub trait IEngageSequenceMethods: IEngageSequence {
-    #[doc = "`CreteaCombatBorders()` overload"]
-    fn cretea_combat_borders(self) -> () {
-        unsafe {
-            let __receiver = <EngageSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __EngageSequence_unity2_raw::cretea_combat_borders(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`DeleteCombatBorders()` overload"]
-    fn delete_combat_borders(self) -> () {
-        unsafe {
-            let __receiver = <EngageSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __EngageSequence_unity2_raw::delete_combat_borders(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsSetupDone()` overload"]
-    fn is_setup_done(self) -> bool {
-        unsafe {
-            let __receiver = <EngageSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __EngageSequence_unity2_raw::is_setup_done(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`WaitFinish()` overload"]
-    fn wait_finish(self) -> crate::system::collections::ienumerator::IEnumerator {
-        unsafe {
-            let __receiver = <EngageSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __EngageSequence_unity2_raw::wait_finish(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor(crate::app::unit::Unit, crate::app::unit::Unit)` overload"]
-    fn ctor(self, unit1: impl ::core::convert::Into<crate::app::unit::Unit>, unit2: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
-        unsafe {
-            let __receiver = <EngageSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __EngageSequence_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(unit1),
-                ::core::convert::Into::into(unit2),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`LoadAndSetupAndRun()` overload"]
-    fn load_and_setup_and_run(self) -> crate::system::collections::ienumerator::IEnumerator {
-        unsafe {
-            let __receiver = <EngageSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __EngageSequence_unity2_raw::load_and_setup_and_run(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CalcHeightOffset(crate::combat::character::Character, crate::combat::character::Character)` overload"]
-    fn calc_height_offset(
-        self,
-        c: impl ::core::convert::Into<crate::combat::character::Character>,
-        g: impl ::core::convert::Into<crate::combat::character::Character>,
-    ) -> f32 {
-        unsafe {
-            let __receiver = <EngageSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __EngageSequence_unity2_raw::calc_height_offset(
-                __receiver,
-                ::core::convert::Into::into(c),
-                ::core::convert::Into::into(g),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Exit()` overload"]
-    fn exit(self) -> crate::system::collections::ienumerator::IEnumerator {
-        unsafe {
-            let __receiver = <EngageSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __EngageSequence_unity2_raw::exit(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __EngageSequence_Cast_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< EngageSequence_Cast as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < EngageSequence_Cast as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : EngageSequence_Cast , unit : crate :: app :: unit :: Unit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (EngageSequence_Cast , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , unit , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: godunit :: GodUnit as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< EngageSequence_Cast as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < EngageSequence_Cast as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor_2 (this : EngageSequence_Cast , god : crate :: app :: godunit :: GodUnit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (EngageSequence_Cast , crate :: app :: godunit :: GodUnit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor_2 :: get_method_info () . method_ptr ,) ; inner (this , god , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_import { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < :: unity2 :: Il2CppString > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< EngageSequence_Cast as :: unity2 :: ClassIdentity > :: class () , "Import" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < EngageSequence_Cast as :: unity2 :: ClassIdentity > :: NAME , "Import" , e) , } } } pub unsafe fn import (this : EngageSequence_Cast , conditions : :: unity2 :: Array < :: unity2 :: Il2CppString > , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (EngageSequence_Cast , :: unity2 :: Array < :: unity2 :: Il2CppString > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_import :: get_method_info () . method_ptr ,) ; inner (this , conditions , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_dispose { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< EngageSequence_Cast as :: unity2 :: ClassIdentity > :: class () , "Dispose" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < EngageSequence_Cast as :: unity2 :: ClassIdentity > :: NAME , "Dispose" , e) , } } } pub unsafe fn dispose (this : EngageSequence_Cast , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (EngageSequence_Cast , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_dispose :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "combat-engagesequence")]
-impl<__T: IEngageSequence> IEngageSequenceMethods for __T {}
+pub trait IEngageSequence_CastMethods : IEngageSequence_Cast { # [doc = "`.ctor(crate::app::unit::Unit)` overload"] fn ctor (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < EngageSequence_Cast as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __EngageSequence_Cast_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } # [doc = "`.ctor(crate::app::godunit::GodUnit)` overload"] fn ctor_2 (self , god : impl :: core :: convert :: Into < crate :: app :: godunit :: GodUnit >) -> () { unsafe { let __receiver = < EngageSequence_Cast as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __EngageSequence_Cast_unity2_raw :: ctor_2 (__receiver , :: core :: convert :: Into :: into (god) , :: core :: option :: Option :: None) } } # [doc = "`Import(::unity2::Array<::unity2::Il2CppString>)` overload"] fn import (self , conditions : impl :: core :: convert :: Into < :: unity2 :: Array < :: unity2 :: Il2CppString > >) -> () { unsafe { let __receiver = < EngageSequence_Cast as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __EngageSequence_Cast_unity2_raw :: import (__receiver , :: core :: convert :: Into :: into (conditions) , :: core :: option :: Option :: None) } } # [doc = "`Dispose()` overload"] fn dispose (self ,) -> () { unsafe { let __receiver = < EngageSequence_Cast as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __EngageSequence_Cast_unity2_raw :: dispose (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "combat-engagesequence")]
-impl EngageSequence {
-    #[doc = "`.ctor(crate::app::unit::Unit, crate::app::unit::Unit)` — overload selector"]
-    pub fn new(unit1: crate::app::unit::Unit, unit2: crate::app::unit::Unit) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(EngageSequence),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IEngageSequenceMethods>::ctor(this, unit1, unit2);
-        this
-    }
-}
+impl < __T : IEngageSequence_Cast > IEngageSequence_CastMethods for __T { }
 
 #[cfg(feature = "combat-engagesequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __EngageSequence_Cast_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EngageSequence_Cast as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <EngageSequence_Cast as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: EngageSequence_Cast, unit: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(EngageSequence_Cast, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, unit, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::godunit::GodUnit as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EngageSequence_Cast as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <EngageSequence_Cast as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor_2(this: EngageSequence_Cast, god: crate::app::godunit::GodUnit, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(EngageSequence_Cast, crate::app::godunit::GodUnit, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
-        inner(this, god, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_import {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<::unity2::Il2CppString> as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EngageSequence_Cast as ::unity2::ClassIdentity>::class(),
-                "Import",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <EngageSequence_Cast as ::unity2::ClassIdentity>::NAME,
-                        "Import",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn import(
-        this: EngageSequence_Cast,
-        conditions: ::unity2::Array<::unity2::Il2CppString>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(EngageSequence_Cast, ::unity2::Array<::unity2::Il2CppString>, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_import::get_method_info().method_ptr);
-        inner(this, conditions, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_dispose {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EngageSequence_Cast as ::unity2::ClassIdentity>::class(),
-                "Dispose",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <EngageSequence_Cast as ::unity2::ClassIdentity>::NAME,
-                        "Dispose",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn dispose(this: EngageSequence_Cast, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(EngageSequence_Cast, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_dispose::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "combat-engagesequence")]
-pub trait IEngageSequence_CastMethods: IEngageSequence_Cast {
-    #[doc = "`.ctor(crate::app::unit::Unit)` overload"]
-    fn ctor(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
-        unsafe {
-            let __receiver = <EngageSequence_Cast as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __EngageSequence_Cast_unity2_raw::ctor(__receiver, ::core::convert::Into::into(unit), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor(crate::app::godunit::GodUnit)` overload"]
-    fn ctor_2(self, god: impl ::core::convert::Into<crate::app::godunit::GodUnit>) -> () {
-        unsafe {
-            let __receiver = <EngageSequence_Cast as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __EngageSequence_Cast_unity2_raw::ctor_2(__receiver, ::core::convert::Into::into(god), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Import(::unity2::Array<::unity2::Il2CppString>)` overload"]
-    fn import(self, conditions: impl ::core::convert::Into<::unity2::Array<::unity2::Il2CppString>>) -> () {
-        unsafe {
-            let __receiver = <EngageSequence_Cast as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __EngageSequence_Cast_unity2_raw::import(__receiver, ::core::convert::Into::into(conditions), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Dispose()` overload"]
-    fn dispose(self) -> () {
-        unsafe {
-            let __receiver = <EngageSequence_Cast as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __EngageSequence_Cast_unity2_raw::dispose(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "combat-engagesequence")]
-impl<__T: IEngageSequence_Cast> IEngageSequence_CastMethods for __T {}
+impl EngageSequence_Cast { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __EngageSequence_Cast_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __EngageSequence_Cast_unity2_raw :: __lookup_ctor_2 :: get_method_info () } pub fn import_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __EngageSequence_Cast_unity2_raw :: __lookup_import :: get_method_info () } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __EngageSequence_Cast_unity2_raw :: __lookup_dispose :: get_method_info () } }
 
 #[cfg(feature = "combat-engagesequence")]
 impl EngageSequence_Cast {
-    #[doc = "`.ctor(crate::app::unit::Unit)` — overload selector"]
-    pub fn new(unit: crate::app::unit::Unit) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(EngageSequence_Cast),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IEngageSequence_CastMethods>::ctor(this, unit);
-        this
-    }
+# [doc = "`.ctor(crate::app::unit::Unit)` — overload selector"] pub fn new (unit : crate :: app :: unit :: Unit) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (EngageSequence_Cast) , :: core :: stringify ! (new) ,)) ; < Self as IEngageSequence_CastMethods > :: ctor (this , unit) ; this }
 
-    #[doc = "`.ctor(crate::app::godunit::GodUnit)` — overload selector"]
-    pub fn new_2(god: crate::app::godunit::GodUnit) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(EngageSequence_Cast),
-                ::core::stringify!(new_2),
-            )
-        });
-        <Self as IEngageSequence_CastMethods>::ctor_2(this, god);
-        this
-    }
+# [doc = "`.ctor(crate::app::godunit::GodUnit)` — overload selector"] pub fn new_2 (god : crate :: app :: godunit :: GodUnit) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (EngageSequence_Cast) , :: core :: stringify ! (new_2) ,)) ; < Self as IEngageSequence_CastMethods > :: ctor_2 (this , god) ; this }
 }
 
 #[cfg(feature = "combat-engagesequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{
-        EngageSequence, EngageSequence_Cast, EngageSequence_Mode, IEngageSequence, IEngageSequenceMethods, IEngageSequence_Cast,
-        IEngageSequence_CastMethods,
-    };
-    #[cfg(feature = "app-procinst")]
-    pub use crate::app::procinst::IProcInstMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::{
-        app::procinst::IProcInst,
-        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
-    };
+    pub use super::EngageSequence_Mode;
+    pub use super::EngageSequence;
+    pub use super::IEngageSequence;
+    pub use super::IEngageSequenceMethods;
+    pub use super::EngageSequence_Cast;
+    pub use super::IEngageSequence_Cast;
+    pub use super::IEngageSequence_CastMethods;
+    pub use crate::app::procinst::IProcInst;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "app-procinst")] pub use crate::app::procinst::IProcInstMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

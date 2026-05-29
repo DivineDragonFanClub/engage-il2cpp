@@ -2,503 +2,62 @@
 
 #[cfg(feature = "app-weaponshopdata-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::{
-            shopdatabase_1::{IShopDataBase_1, ShopDataBase_1},
-            structbase::{IStructBase, StructBase},
-            structdataarray_1::{IStructDataArray_1, StructDataArray_1},
-            structtemplate_1::{IStructTemplate_1, StructTemplate_1},
-        },
-        system::object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/weaponshopdata/WeaponShopData.md"))]
-    #[::unity2::class(namespace = "App", name = "WeaponShopData")]
-    # [parent (crate :: app :: shopdatabase_1 :: ShopDataBase_1 < crate :: app :: weaponshopdata :: WeaponShopData >)]
-    pub struct WeaponShopData {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: shopdatabase_1 :: { IShopDataBase_1 , ShopDataBase_1 }
+ ;
+ use crate :: app :: structbase :: { IStructBase , StructBase }
+ ;
+ use crate :: app :: structdataarray_1 :: { IStructDataArray_1 , StructDataArray_1 }
+ ;
+ use crate :: app :: structtemplate_1 :: { IStructTemplate_1 , StructTemplate_1 }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/weaponshopdata/WeaponShopData.md"))] # [:: unity2 :: class (namespace = "App" , name = "WeaponShopData")] # [parent (crate :: app :: shopdatabase_1 :: ShopDataBase_1 < crate :: app :: weaponshopdata :: WeaponShopData >)] pub struct WeaponShopData {}
+
 }
 
 #[cfg(feature = "app-weaponshopdata-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-weaponshopdata")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __WeaponShopData_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_load {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<WeaponShopData as ::unity2::ClassIdentity>::class(), "Load", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WeaponShopData as ::unity2::ClassIdentity>::NAME,
-                        "Load",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn load(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_load::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_stock_added_key_impl {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WeaponShopData as ::unity2::ClassIdentity>::class(),
-                "GetStockAddedKeyImpl",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WeaponShopData as ::unity2::ClassIdentity>::NAME,
-                        "GetStockAddedKeyImpl",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_stock_added_key_impl(
-        condition: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_stock_added_key_impl::get_method_info().method_ptr);
-        inner(condition, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_stock_key_impl {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WeaponShopData as ::unity2::ClassIdentity>::class(),
-                "GetStockKeyImpl",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WeaponShopData as ::unity2::ClassIdentity>::NAME,
-                        "GetStockKeyImpl",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_stock_key_impl(iid: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_stock_key_impl::get_method_info().method_ptr);
-        inner(iid, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_build {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WeaponShopData as ::unity2::ClassIdentity>::class(),
-                "OnBuild",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WeaponShopData as ::unity2::ClassIdentity>::NAME,
-                        "OnBuild",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_build(this: WeaponShopData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(WeaponShopData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_build::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_regist {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WeaponShopData as ::unity2::ClassIdentity>::class(),
-                "Regist",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WeaponShopData as ::unity2::ClassIdentity>::NAME,
-                        "Regist",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn regist(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_regist::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_setup_content_list {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WeaponShopData as ::unity2::ClassIdentity>::class(),
-                "SetupContentList",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WeaponShopData as ::unity2::ClassIdentity>::NAME,
-                        "SetupContentList",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn setup_content_list(__unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Array<crate::app::shopcontent::ShopContent> {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> ::unity2::Array<crate::app::shopcontent::ShopContent> =
-            ::core::mem::transmute(__lookup_setup_content_list::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_exist_additional_stock {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WeaponShopData as ::unity2::ClassIdentity>::class(),
-                "IsExistAdditionalStock",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WeaponShopData as ::unity2::ClassIdentity>::NAME,
-                        "IsExistAdditionalStock",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_exist_additional_stock(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_exist_additional_stock::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_purchase {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WeaponShopData as ::unity2::ClassIdentity>::class(),
-                "Purchase",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WeaponShopData as ::unity2::ClassIdentity>::NAME,
-                        "Purchase",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn purchase(iid: ::unity2::Il2CppString, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::Il2CppString, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_purchase::get_method_info().method_ptr);
-        inner(iid, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_stock_num {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WeaponShopData as ::unity2::ClassIdentity>::class(),
-                "GetStockNum",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WeaponShopData as ::unity2::ClassIdentity>::NAME,
-                        "GetStockNum",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_stock_num(iid: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_stock_num::get_method_info().method_ptr);
-        inner(iid, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_infinity {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WeaponShopData as ::unity2::ClassIdentity>::class(),
-                "IsInfinity",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WeaponShopData as ::unity2::ClassIdentity>::NAME,
-                        "IsInfinity",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_infinity(iid: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_infinity::get_method_info().method_ptr);
-        inner(iid, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WeaponShopData as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WeaponShopData as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: WeaponShopData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(WeaponShopData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __WeaponShopData_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_load { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WeaponShopData as :: unity2 :: ClassIdentity > :: class () , "Load" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WeaponShopData as :: unity2 :: ClassIdentity > :: NAME , "Load" , e) , } } } pub unsafe fn load (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_load :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_stock_added_key_impl { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WeaponShopData as :: unity2 :: ClassIdentity > :: class () , "GetStockAddedKeyImpl" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WeaponShopData as :: unity2 :: ClassIdentity > :: NAME , "GetStockAddedKeyImpl" , e) , } } } pub unsafe fn get_stock_added_key_impl (condition : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_stock_added_key_impl :: get_method_info () . method_ptr ,) ; inner (condition , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_stock_key_impl { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WeaponShopData as :: unity2 :: ClassIdentity > :: class () , "GetStockKeyImpl" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WeaponShopData as :: unity2 :: ClassIdentity > :: NAME , "GetStockKeyImpl" , e) , } } } pub unsafe fn get_stock_key_impl (iid : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_stock_key_impl :: get_method_info () . method_ptr ,) ; inner (iid , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_build { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WeaponShopData as :: unity2 :: ClassIdentity > :: class () , "OnBuild" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WeaponShopData as :: unity2 :: ClassIdentity > :: NAME , "OnBuild" , e) , } } } pub unsafe fn on_build (this : WeaponShopData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (WeaponShopData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_build :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_regist { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WeaponShopData as :: unity2 :: ClassIdentity > :: class () , "Regist" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WeaponShopData as :: unity2 :: ClassIdentity > :: NAME , "Regist" , e) , } } } pub unsafe fn regist (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_regist :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_setup_content_list { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WeaponShopData as :: unity2 :: ClassIdentity > :: class () , "SetupContentList" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WeaponShopData as :: unity2 :: ClassIdentity > :: NAME , "SetupContentList" , e) , } } } pub unsafe fn setup_content_list (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: app :: shopcontent :: ShopContent > { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: app :: shopcontent :: ShopContent > = :: core :: mem :: transmute (__lookup_setup_content_list :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_exist_additional_stock { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WeaponShopData as :: unity2 :: ClassIdentity > :: class () , "IsExistAdditionalStock" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WeaponShopData as :: unity2 :: ClassIdentity > :: NAME , "IsExistAdditionalStock" , e) , } } } pub unsafe fn is_exist_additional_stock (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_exist_additional_stock :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_purchase { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WeaponShopData as :: unity2 :: ClassIdentity > :: class () , "Purchase" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WeaponShopData as :: unity2 :: ClassIdentity > :: NAME , "Purchase" , e) , } } } pub unsafe fn purchase (iid : :: unity2 :: Il2CppString , value : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: Il2CppString , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_purchase :: get_method_info () . method_ptr ,) ; inner (iid , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_stock_num { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WeaponShopData as :: unity2 :: ClassIdentity > :: class () , "GetStockNum" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WeaponShopData as :: unity2 :: ClassIdentity > :: NAME , "GetStockNum" , e) , } } } pub unsafe fn get_stock_num (iid : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_stock_num :: get_method_info () . method_ptr ,) ; inner (iid , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_infinity { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WeaponShopData as :: unity2 :: ClassIdentity > :: class () , "IsInfinity" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WeaponShopData as :: unity2 :: ClassIdentity > :: NAME , "IsInfinity" , e) , } } } pub unsafe fn is_infinity (iid : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_infinity :: get_method_info () . method_ptr ,) ; inner (iid , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WeaponShopData as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WeaponShopData as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : WeaponShopData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (WeaponShopData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-weaponshopdata")]
+impl WeaponShopData { # [doc = "`Load()` overload"] pub fn load () -> () { unsafe { __WeaponShopData_unity2_raw :: load (:: core :: option :: Option :: None) } } # [doc = "`GetStockAddedKeyImpl(::unity2::Il2CppString)` overload"] pub fn get_stock_added_key_impl (condition : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Il2CppString { unsafe { __WeaponShopData_unity2_raw :: get_stock_added_key_impl (:: core :: convert :: Into :: into (condition) , :: core :: option :: Option :: None) } } # [doc = "`GetStockKeyImpl(::unity2::Il2CppString)` overload"] pub fn get_stock_key_impl (iid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Il2CppString { unsafe { __WeaponShopData_unity2_raw :: get_stock_key_impl (:: core :: convert :: Into :: into (iid) , :: core :: option :: Option :: None) } } # [doc = "`Regist()` overload"] pub fn regist () -> () { unsafe { __WeaponShopData_unity2_raw :: regist (:: core :: option :: Option :: None) } } # [doc = "`SetupContentList()` overload"] pub fn setup_content_list () -> :: unity2 :: Array < crate :: app :: shopcontent :: ShopContent > { unsafe { __WeaponShopData_unity2_raw :: setup_content_list (:: core :: option :: Option :: None) } } # [doc = "`IsExistAdditionalStock()` overload"] pub fn is_exist_additional_stock () -> bool { unsafe { __WeaponShopData_unity2_raw :: is_exist_additional_stock (:: core :: option :: Option :: None) } } # [doc = "`Purchase(::unity2::Il2CppString, i32)` overload"] pub fn purchase (iid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { __WeaponShopData_unity2_raw :: purchase (:: core :: convert :: Into :: into (iid) , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`GetStockNum(::unity2::Il2CppString)` overload"] pub fn get_stock_num (iid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> i32 { unsafe { __WeaponShopData_unity2_raw :: get_stock_num (:: core :: convert :: Into :: into (iid) , :: core :: option :: Option :: None) } } # [doc = "`IsInfinity(::unity2::Il2CppString)` overload"] pub fn is_infinity (iid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { __WeaponShopData_unity2_raw :: is_infinity (:: core :: convert :: Into :: into (iid) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-weaponshopdata")]
+pub trait IWeaponShopDataMethods : IWeaponShopData { # [doc = "`OnBuild()` overload"] fn on_build (self ,) -> () { unsafe { let __receiver = < WeaponShopData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __WeaponShopData_unity2_raw :: on_build (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < WeaponShopData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __WeaponShopData_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-weaponshopdata")]
+impl < __T : IWeaponShopData > IWeaponShopDataMethods for __T { }
+
+#[cfg(feature = "app-weaponshopdata")]
+impl WeaponShopData { pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WeaponShopData_unity2_raw :: __lookup_load :: get_method_info () } pub fn get_stock_added_key_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WeaponShopData_unity2_raw :: __lookup_get_stock_added_key_impl :: get_method_info () } pub fn get_stock_key_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WeaponShopData_unity2_raw :: __lookup_get_stock_key_impl :: get_method_info () } pub fn on_build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WeaponShopData_unity2_raw :: __lookup_on_build :: get_method_info () } pub fn regist_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WeaponShopData_unity2_raw :: __lookup_regist :: get_method_info () } pub fn setup_content_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WeaponShopData_unity2_raw :: __lookup_setup_content_list :: get_method_info () } pub fn is_exist_additional_stock_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WeaponShopData_unity2_raw :: __lookup_is_exist_additional_stock :: get_method_info () } pub fn purchase_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WeaponShopData_unity2_raw :: __lookup_purchase :: get_method_info () } pub fn get_stock_num_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WeaponShopData_unity2_raw :: __lookup_get_stock_num :: get_method_info () } pub fn is_infinity_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WeaponShopData_unity2_raw :: __lookup_is_infinity :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WeaponShopData_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-weaponshopdata")]
 impl WeaponShopData {
-    #[doc = "`Load()` overload"]
-    pub fn load() -> () {
-        unsafe { __WeaponShopData_unity2_raw::load(::core::option::Option::None) }
-    }
-
-    #[doc = "`GetStockAddedKeyImpl(::unity2::Il2CppString)` overload"]
-    pub fn get_stock_added_key_impl(condition: impl ::core::convert::Into<::unity2::Il2CppString>) -> ::unity2::Il2CppString {
-        unsafe { __WeaponShopData_unity2_raw::get_stock_added_key_impl(::core::convert::Into::into(condition), ::core::option::Option::None) }
-    }
-
-    #[doc = "`GetStockKeyImpl(::unity2::Il2CppString)` overload"]
-    pub fn get_stock_key_impl(iid: impl ::core::convert::Into<::unity2::Il2CppString>) -> ::unity2::Il2CppString {
-        unsafe { __WeaponShopData_unity2_raw::get_stock_key_impl(::core::convert::Into::into(iid), ::core::option::Option::None) }
-    }
-
-    #[doc = "`Regist()` overload"]
-    pub fn regist() -> () {
-        unsafe { __WeaponShopData_unity2_raw::regist(::core::option::Option::None) }
-    }
-
-    #[doc = "`SetupContentList()` overload"]
-    pub fn setup_content_list() -> ::unity2::Array<crate::app::shopcontent::ShopContent> {
-        unsafe { __WeaponShopData_unity2_raw::setup_content_list(::core::option::Option::None) }
-    }
-
-    #[doc = "`IsExistAdditionalStock()` overload"]
-    pub fn is_exist_additional_stock() -> bool {
-        unsafe { __WeaponShopData_unity2_raw::is_exist_additional_stock(::core::option::Option::None) }
-    }
-
-    #[doc = "`Purchase(::unity2::Il2CppString, i32)` overload"]
-    pub fn purchase(iid: impl ::core::convert::Into<::unity2::Il2CppString>, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            __WeaponShopData_unity2_raw::purchase(
-                ::core::convert::Into::into(iid),
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`GetStockNum(::unity2::Il2CppString)` overload"]
-    pub fn get_stock_num(iid: impl ::core::convert::Into<::unity2::Il2CppString>) -> i32 {
-        unsafe { __WeaponShopData_unity2_raw::get_stock_num(::core::convert::Into::into(iid), ::core::option::Option::None) }
-    }
-
-    #[doc = "`IsInfinity(::unity2::Il2CppString)` overload"]
-    pub fn is_infinity(iid: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
-        unsafe { __WeaponShopData_unity2_raw::is_infinity(::core::convert::Into::into(iid), ::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-weaponshopdata")]
-pub trait IWeaponShopDataMethods: IWeaponShopData {
-    #[doc = "`OnBuild()` overload"]
-    fn on_build(self) -> () {
-        unsafe {
-            let __receiver = <WeaponShopData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __WeaponShopData_unity2_raw::on_build(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <WeaponShopData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __WeaponShopData_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-weaponshopdata")]
-impl<__T: IWeaponShopData> IWeaponShopDataMethods for __T {}
-
-#[cfg(feature = "app-weaponshopdata")]
-impl WeaponShopData {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(WeaponShopData),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IWeaponShopDataMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (WeaponShopData) , :: core :: stringify ! (new) ,)) ; < Self as IWeaponShopDataMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-weaponshopdata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IWeaponShopData, IWeaponShopDataMethods, WeaponShopData};
-    #[cfg(feature = "app-shopdatabase_1")]
-    pub use crate::app::shopdatabase_1::IShopDataBase_1Methods;
-    #[cfg(feature = "app-structbase")]
-    pub use crate::app::structbase::IStructBaseMethods;
-    #[cfg(feature = "app-structdataarray_1")]
-    pub use crate::app::structdataarray_1::IStructDataArray_1Methods;
-    #[cfg(feature = "app-structtemplate_1")]
-    pub use crate::app::structtemplate_1::IStructTemplate_1Methods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::{
-        app::{shopdatabase_1::IShopDataBase_1, structbase::IStructBase, structdataarray_1::IStructDataArray_1, structtemplate_1::IStructTemplate_1},
-        system::object::IObject,
-    };
+    pub use super::WeaponShopData;
+    pub use super::IWeaponShopData;
+    pub use super::IWeaponShopDataMethods;
+    pub use crate::app::shopdatabase_1::IShopDataBase_1;
+    pub use crate::app::structbase::IStructBase;
+    pub use crate::app::structdataarray_1::IStructDataArray_1;
+    pub use crate::app::structtemplate_1::IStructTemplate_1;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "app-shopdatabase_1")] pub use crate::app::shopdatabase_1::IShopDataBase_1Methods;
+    #[cfg(feature = "app-structbase")] pub use crate::app::structbase::IStructBaseMethods;
+    #[cfg(feature = "app-structdataarray_1")] pub use crate::app::structdataarray_1::IStructDataArray_1Methods;
+    #[cfg(feature = "app-structtemplate_1")] pub use crate::app::structtemplate_1::IStructTemplate_1Methods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

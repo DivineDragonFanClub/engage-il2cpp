@@ -2,15 +2,15 @@
 
 #[cfg(feature = "system-reflection-emit-ilgenerator-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/emit/ilgenerator/ILGenerator.md"))]
-    #[::unity2::class(namespace = "System.Reflection.Emit", name = "ILGenerator")]
-    #[parent(crate::system::object::Object)]
-    pub struct ILGenerator {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/emit/ilgenerator/ILGenerator.md"))] # [:: unity2 :: class (namespace = "System.Reflection.Emit" , name = "ILGenerator")] # [parent (crate :: system :: object :: Object)] pub struct ILGenerator {}
+
 }
 
 #[cfg(feature = "system-reflection-emit-ilgenerator-types")]
@@ -19,8 +19,8 @@ pub use __types::*;
 #[cfg(feature = "system-reflection-emit-ilgenerator")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IILGenerator, ILGenerator};
+    pub use super::ILGenerator;
+    pub use super::IILGenerator;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

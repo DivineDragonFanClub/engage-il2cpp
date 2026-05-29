@@ -2,201 +2,50 @@
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphdebugparams-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/render_graph_module/rendergraphdebugparams/RenderGraphDebugParams.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Experimental.Rendering.RenderGraphModule", name = "RenderGraphDebugParams")]
-    #[parent(crate::system::object::Object)]
-    pub struct RenderGraphDebugParams {
-        #[offset(16)]
-        #[rename(name = "clearRenderTargetsAtCreation")]
-        pub clear_render_targets_at_creation: bool,
-        #[offset(17)]
-        #[rename(name = "clearRenderTargetsAtRelease")]
-        pub clear_render_targets_at_release: bool,
-        #[offset(18)]
-        #[rename(name = "disablePassCulling")]
-        pub disable_pass_culling: bool,
-        #[offset(19)]
-        #[rename(name = "immediateMode")]
-        pub immediate_mode: bool,
-        #[offset(20)]
-        #[rename(name = "logFrameInformation")]
-        pub log_frame_information: bool,
-        #[offset(21)]
-        #[rename(name = "logResources")]
-        pub log_resources: bool,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/render_graph_module/rendergraphdebugparams/RenderGraphDebugParams.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Experimental.Rendering.RenderGraphModule" , name = "RenderGraphDebugParams")] # [parent (crate :: system :: object :: Object)] pub struct RenderGraphDebugParams {
+# [offset (16)] # [rename (name = "clearRenderTargetsAtCreation")] pub clear_render_targets_at_creation : bool ,
+# [offset (17)] # [rename (name = "clearRenderTargetsAtRelease")] pub clear_render_targets_at_release : bool ,
+# [offset (18)] # [rename (name = "disablePassCulling")] pub disable_pass_culling : bool ,
+# [offset (19)] # [rename (name = "immediateMode")] pub immediate_mode : bool ,
+# [offset (20)] # [rename (name = "logFrameInformation")] pub log_frame_information : bool ,
+# [offset (21)] # [rename (name = "logResources")] pub log_resources : bool ,
+}
+
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphdebugparams-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphdebugparams")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RenderGraphDebugParams_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_register_debug {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RenderGraphDebugParams as ::unity2::ClassIdentity>::class(),
-                "RegisterDebug",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RenderGraphDebugParams as ::unity2::ClassIdentity>::NAME,
-                        "RegisterDebug",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn register_debug(this: RenderGraphDebugParams, name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RenderGraphDebugParams, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_register_debug::get_method_info().method_ptr);
-        inner(this, name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_un_register_debug {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RenderGraphDebugParams as ::unity2::ClassIdentity>::class(),
-                "UnRegisterDebug",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RenderGraphDebugParams as ::unity2::ClassIdentity>::NAME,
-                        "UnRegisterDebug",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn un_register_debug(
-        this: RenderGraphDebugParams,
-        name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RenderGraphDebugParams, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_un_register_debug::get_method_info().method_ptr);
-        inner(this, name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RenderGraphDebugParams as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RenderGraphDebugParams as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: RenderGraphDebugParams, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RenderGraphDebugParams, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __RenderGraphDebugParams_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_register_debug { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RenderGraphDebugParams as :: unity2 :: ClassIdentity > :: class () , "RegisterDebug" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RenderGraphDebugParams as :: unity2 :: ClassIdentity > :: NAME , "RegisterDebug" , e) , } } } pub unsafe fn register_debug (this : RenderGraphDebugParams , name : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RenderGraphDebugParams , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_register_debug :: get_method_info () . method_ptr ,) ; inner (this , name , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_un_register_debug { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RenderGraphDebugParams as :: unity2 :: ClassIdentity > :: class () , "UnRegisterDebug" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RenderGraphDebugParams as :: unity2 :: ClassIdentity > :: NAME , "UnRegisterDebug" , e) , } } } pub unsafe fn un_register_debug (this : RenderGraphDebugParams , name : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RenderGraphDebugParams , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_un_register_debug :: get_method_info () . method_ptr ,) ; inner (this , name , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RenderGraphDebugParams as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RenderGraphDebugParams as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : RenderGraphDebugParams , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RenderGraphDebugParams , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphdebugparams")]
-pub trait IRenderGraphDebugParamsMethods: IRenderGraphDebugParams {
-    #[doc = "`RegisterDebug(::unity2::Il2CppString)` overload"]
-    fn register_debug(self, name: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver =
-                <RenderGraphDebugParams as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RenderGraphDebugParams_unity2_raw::register_debug(__receiver, ::core::convert::Into::into(name), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`UnRegisterDebug(::unity2::Il2CppString)` overload"]
-    fn un_register_debug(self, name: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver =
-                <RenderGraphDebugParams as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RenderGraphDebugParams_unity2_raw::un_register_debug(__receiver, ::core::convert::Into::into(name), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <RenderGraphDebugParams as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RenderGraphDebugParams_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IRenderGraphDebugParamsMethods : IRenderGraphDebugParams { # [doc = "`RegisterDebug(::unity2::Il2CppString)` overload"] fn register_debug (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < RenderGraphDebugParams as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RenderGraphDebugParams_unity2_raw :: register_debug (__receiver , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } # [doc = "`UnRegisterDebug(::unity2::Il2CppString)` overload"] fn un_register_debug (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < RenderGraphDebugParams as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RenderGraphDebugParams_unity2_raw :: un_register_debug (__receiver , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RenderGraphDebugParams as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RenderGraphDebugParams_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphdebugparams")]
-impl<__T: IRenderGraphDebugParams> IRenderGraphDebugParamsMethods for __T {}
+impl < __T : IRenderGraphDebugParams > IRenderGraphDebugParamsMethods for __T { }
+
+#[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphdebugparams")]
+impl RenderGraphDebugParams { pub fn register_debug_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RenderGraphDebugParams_unity2_raw :: __lookup_register_debug :: get_method_info () } pub fn un_register_debug_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RenderGraphDebugParams_unity2_raw :: __lookup_un_register_debug :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RenderGraphDebugParams_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphdebugparams")]
 impl RenderGraphDebugParams {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RenderGraphDebugParams),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRenderGraphDebugParamsMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RenderGraphDebugParams) , :: core :: stringify ! (new) ,)) ; < Self as IRenderGraphDebugParamsMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphdebugparams")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IRenderGraphDebugParams, IRenderGraphDebugParamsMethods, RenderGraphDebugParams};
+    pub use super::RenderGraphDebugParams;
+    pub use super::IRenderGraphDebugParams;
+    pub use super::IRenderGraphDebugParamsMethods;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

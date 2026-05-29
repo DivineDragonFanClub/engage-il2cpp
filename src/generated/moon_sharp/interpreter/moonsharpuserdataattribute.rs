@@ -2,187 +2,39 @@
 
 #[cfg(feature = "moon_sharp-interpreter-moonsharpuserdataattribute-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/moonsharpuserdataattribute/MoonSharpUserDataAttribute.md"))]
-    #[::unity2::class(namespace = "MoonSharp.Interpreter", name = "MoonSharpUserDataAttribute")]
-    pub struct MoonSharpUserDataAttribute {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/moonsharpuserdataattribute/MoonSharpUserDataAttribute.md"))] # [:: unity2 :: class (namespace = "MoonSharp.Interpreter" , name = "MoonSharpUserDataAttribute")] pub struct MoonSharpUserDataAttribute {}
+
 }
 
 #[cfg(feature = "moon_sharp-interpreter-moonsharpuserdataattribute-types")]
 pub use __types::*;
 
 #[cfg(feature = "moon_sharp-interpreter-moonsharpuserdataattribute")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MoonSharpUserDataAttribute_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_access_mode {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MoonSharpUserDataAttribute as ::unity2::ClassIdentity>::class(),
-                "get_AccessMode",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MoonSharpUserDataAttribute as ::unity2::ClassIdentity>::NAME,
-                        "get_AccessMode",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_access_mode(
-        this: MoonSharpUserDataAttribute,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode {
-        let inner: extern "C" fn(
-            MoonSharpUserDataAttribute,
-            ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode =
-            ::core::mem::transmute(__lookup_get_access_mode::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_access_mode {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MoonSharpUserDataAttribute as ::unity2::ClassIdentity>::class(),
-                "set_AccessMode",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MoonSharpUserDataAttribute as ::unity2::ClassIdentity>::NAME,
-                        "set_AccessMode",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_access_mode(
-        this: MoonSharpUserDataAttribute,
-        value: crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MoonSharpUserDataAttribute,
-            crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_set_access_mode::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MoonSharpUserDataAttribute as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MoonSharpUserDataAttribute as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: MoonSharpUserDataAttribute, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MoonSharpUserDataAttribute, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MoonSharpUserDataAttribute_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_access_mode { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MoonSharpUserDataAttribute as :: unity2 :: ClassIdentity > :: class () , "get_AccessMode" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MoonSharpUserDataAttribute as :: unity2 :: ClassIdentity > :: NAME , "get_AccessMode" , e) , } } } pub unsafe fn get_access_mode (this : MoonSharpUserDataAttribute , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: interopaccessmode :: InteropAccessMode { let inner : extern "C" fn (MoonSharpUserDataAttribute , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: interopaccessmode :: InteropAccessMode = :: core :: mem :: transmute (__lookup_get_access_mode :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_access_mode { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: interopaccessmode :: InteropAccessMode as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MoonSharpUserDataAttribute as :: unity2 :: ClassIdentity > :: class () , "set_AccessMode" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MoonSharpUserDataAttribute as :: unity2 :: ClassIdentity > :: NAME , "set_AccessMode" , e) , } } } pub unsafe fn set_access_mode (this : MoonSharpUserDataAttribute , value : crate :: moon_sharp :: interpreter :: interopaccessmode :: InteropAccessMode , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MoonSharpUserDataAttribute , crate :: moon_sharp :: interpreter :: interopaccessmode :: InteropAccessMode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_access_mode :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MoonSharpUserDataAttribute as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MoonSharpUserDataAttribute as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : MoonSharpUserDataAttribute , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MoonSharpUserDataAttribute , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "moon_sharp-interpreter-moonsharpuserdataattribute")]
-pub trait IMoonSharpUserDataAttributeMethods: IMoonSharpUserDataAttribute {
-    #[doc = "`get_AccessMode()` overload"]
-    fn get_access_mode(self) -> crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode {
-        unsafe {
-            let __receiver =
-                <MoonSharpUserDataAttribute as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MoonSharpUserDataAttribute_unity2_raw::get_access_mode(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_AccessMode(crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode)` overload"]
-    fn set_access_mode(self, value: impl ::core::convert::Into<crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode>) -> () {
-        unsafe {
-            let __receiver =
-                <MoonSharpUserDataAttribute as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MoonSharpUserDataAttribute_unity2_raw::set_access_mode(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <MoonSharpUserDataAttribute as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MoonSharpUserDataAttribute_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IMoonSharpUserDataAttributeMethods : IMoonSharpUserDataAttribute { # [doc = "`get_AccessMode()` overload"] fn get_access_mode (self ,) -> crate :: moon_sharp :: interpreter :: interopaccessmode :: InteropAccessMode { unsafe { let __receiver = < MoonSharpUserDataAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MoonSharpUserDataAttribute_unity2_raw :: get_access_mode (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_AccessMode(crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode)` overload"] fn set_access_mode (self , value : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: interopaccessmode :: InteropAccessMode >) -> () { unsafe { let __receiver = < MoonSharpUserDataAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MoonSharpUserDataAttribute_unity2_raw :: set_access_mode (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MoonSharpUserDataAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MoonSharpUserDataAttribute_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "moon_sharp-interpreter-moonsharpuserdataattribute")]
-impl<__T: IMoonSharpUserDataAttribute> IMoonSharpUserDataAttributeMethods for __T {}
+impl < __T : IMoonSharpUserDataAttribute > IMoonSharpUserDataAttributeMethods for __T { }
+
+#[cfg(feature = "moon_sharp-interpreter-moonsharpuserdataattribute")]
+impl MoonSharpUserDataAttribute { pub fn get_access_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MoonSharpUserDataAttribute_unity2_raw :: __lookup_get_access_mode :: get_method_info () } pub fn set_access_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MoonSharpUserDataAttribute_unity2_raw :: __lookup_set_access_mode :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MoonSharpUserDataAttribute_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "moon_sharp-interpreter-moonsharpuserdataattribute")]
 impl MoonSharpUserDataAttribute {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MoonSharpUserDataAttribute),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMoonSharpUserDataAttributeMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MoonSharpUserDataAttribute) , :: core :: stringify ! (new) ,)) ; < Self as IMoonSharpUserDataAttributeMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "moon_sharp-interpreter-moonsharpuserdataattribute")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IMoonSharpUserDataAttribute, IMoonSharpUserDataAttributeMethods, MoonSharpUserDataAttribute};
+    pub use super::MoonSharpUserDataAttribute;
+    pub use super::IMoonSharpUserDataAttribute;
+    pub use super::IMoonSharpUserDataAttributeMethods;
 }

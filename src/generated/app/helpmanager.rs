@@ -2,1272 +2,416 @@
 
 #[cfg(feature = "app-helpmanager-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::singletonmonobehaviour_1::{ISingletonMonoBehaviour_1, SingletonMonoBehaviour_1},
-        system::{
-            object::{IObject, Object},
-            r#enum::{Enum, IEnum},
-            valuetype::{IValueType, ValueType},
-        },
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/helpmanager/HelpManager_SituationType.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct HelpManager_SituationType {
-        pub value: i32,
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: singletonmonobehaviour_1 :: { ISingletonMonoBehaviour_1 , SingletonMonoBehaviour_1 }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/helpmanager/HelpManager.md"))] # [:: unity2 :: class (namespace = "App" , name = "HelpManager")] # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: helpmanager :: HelpManager >)] pub struct HelpManager {
+# [offset (32)] # [rename (name = "m_HelpParamSetter")] pub m_help_param_setter : crate :: app :: helpparamsetter :: HelpParamSetter ,
+# [offset (40)] # [rename (name = "m_HelpList")] pub m_help_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: helpitemlist :: HelpItemList > ,
+# [offset (48)] # [rename (name = "m_ItemList")] pub m_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: helpmanager :: HelpManager_Item > ,
+# [offset (56)] # [rename (name = "m_CurrentIndex")] pub m_current_index : i32 ,
+# [offset (60)] # [rename (name = "m_SituationType")] pub m_situation_type : crate :: app :: helpmanager :: HelpManager_SituationType ,
+# [offset (64)] # [rename (name = "m_PreviousDir")] pub m_previous_dir : crate :: app :: helpmanager :: HelpManager_Item_Dir ,
+# [offset (68)] # [rename (name = "m_AxisPos")] pub m_axis_pos : crate :: unity_engine :: vector2 :: Vector2 ,
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/helpmanager/HelpManager_Item.md"))] # [:: unity2 :: class (namespace = "App" , name = "HelpManager.Item")] # [parent (crate :: system :: object :: Object)] pub struct HelpManager_Item {
+# [offset (16)] # [rename (name = "self")] pub self_ : crate :: app :: helpitembase :: HelpItemBase ,
+# [offset (24)] # [rename (name = "pos")] pub pos : crate :: unity_engine :: vector2 :: Vector2 ,
+# [offset (32)] # [rename (name = "dirLine")] pub dir_line : :: unity2 :: Array < :: unity2 :: Array < crate :: unity_engine :: vector2 :: Vector2 > > ,
+# [offset (40)] # [rename (name = "isMoveToNoTouchItem")] pub is_move_to_no_touch_item : :: unity2 :: Array < bool > ,
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/helpmanager/HelpManager_HelpItemType.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct HelpManager_HelpItemType  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for HelpManager_HelpItemType  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "HelpManager.HelpItemType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    impl ::unity2::ClassIdentity for HelpManager_SituationType {
-        const NAME: &'static str = "HelpManager.SituationType";
-        const NAMESPACE: &'static str = "App";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  ::unity2::IlType for HelpManager_HelpItemType  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::IlType for HelpManager_SituationType {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  HelpManager_HelpItemType  {
+    pub fn none() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl HelpManager_SituationType {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn unit_status() -> Self {
-            Self { value: 1 }
-        }
+    pub fn unit_name() -> Self {
+        Self { value: 1 }
 
-        pub fn ring_select() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn unit_info() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn battle_info() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn battle_engage_info() -> Self {
-            Self { value: 5 }
-        }
-
-        pub fn battle_alternate_info() -> Self {
-            Self { value: 6 }
-        }
-
-        pub fn only_map_terrain_info() -> Self {
-            Self { value: 7 }
-        }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/helpmanager/HelpManager.md"))]
-    #[::unity2::class(namespace = "App", name = "HelpManager")]
-    # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: helpmanager :: HelpManager >)]
-    pub struct HelpManager {
-        #[offset(32)]
-        #[rename(name = "m_HelpParamSetter")]
-        pub m_help_param_setter: crate::app::helpparamsetter::HelpParamSetter,
-        #[offset(40)]
-        #[rename(name = "m_HelpList")]
-        pub m_help_list: crate::system::collections::generic::list_1::List_1<crate::app::helpitemlist::HelpItemList>,
-        #[offset(48)]
-        #[rename(name = "m_ItemList")]
-        pub m_item_list: crate::system::collections::generic::list_1::List_1<crate::app::helpmanager::HelpManager_Item>,
-        #[offset(56)]
-        #[rename(name = "m_CurrentIndex")]
-        pub m_current_index: i32,
-        #[offset(60)]
-        #[rename(name = "m_SituationType")]
-        pub m_situation_type: crate::app::helpmanager::HelpManager_SituationType,
-        #[offset(64)]
-        #[rename(name = "m_PreviousDir")]
-        pub m_previous_dir: crate::app::helpmanager::HelpManager_Item_Dir,
-        #[offset(68)]
-        #[rename(name = "m_AxisPos")]
-        pub m_axis_pos: crate::unity_engine::vector2::Vector2,
+
+    pub fn god_name() -> Self {
+        Self { value: 2 }
+
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/helpmanager/HelpManager_Item_Dir.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct HelpManager_Item_Dir {
-        pub value: i32,
+
+    pub fn bond_lv() -> Self {
+        Self { value: 3 }
+
     }
 
-    impl ::unity2::ClassIdentity for HelpManager_Item_Dir {
-        const NAME: &'static str = "HelpManager.Item.Dir";
-        const NAMESPACE: &'static str = "App";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+    pub fn job_title() -> Self {
+        Self { value: 4 }
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
     }
 
-    impl ::unity2::IlType for HelpManager_Item_Dir {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+
+    pub fn efficacy() -> Self {
+        Self { value: 5 }
+
     }
 
-    impl HelpManager_Item_Dir {
-        pub fn up() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn down() -> Self {
-            Self { value: 1 }
-        }
+    pub fn battle_type() -> Self {
+        Self { value: 6 }
 
-        pub fn right() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn left() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn num() -> Self {
-            Self { value: 4 }
-        }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/helpmanager/HelpManager_HelpItemType.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct HelpManager_HelpItemType {
-        pub value: i32,
+
+    pub fn unit_lv() -> Self {
+        Self { value: 7 }
+
     }
 
-    impl ::unity2::ClassIdentity for HelpManager_HelpItemType {
-        const NAME: &'static str = "HelpManager.HelpItemType";
-        const NAMESPACE: &'static str = "App";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+    pub fn r#move() -> Self {
+        Self { value: 8 }
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
     }
 
-    impl ::unity2::IlType for HelpManager_HelpItemType {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+
+    pub fn weapon_lv() -> Self {
+        Self { value: 9 }
+
     }
 
-    impl HelpManager_HelpItemType {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn unit_name() -> Self {
-            Self { value: 1 }
-        }
+    pub fn parameter() -> Self {
+        Self { value: 10 }
 
-        pub fn god_name() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn bond_lv() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn job_title() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn efficacy() -> Self {
-            Self { value: 5 }
-        }
-
-        pub fn battle_type() -> Self {
-            Self { value: 6 }
-        }
-
-        pub fn unit_lv() -> Self {
-            Self { value: 7 }
-        }
-
-        pub fn r#move() -> Self {
-            Self { value: 8 }
-        }
-
-        pub fn weapon_lv() -> Self {
-            Self { value: 9 }
-        }
-
-        pub fn parameter() -> Self {
-            Self { value: 10 }
-        }
-
-        pub fn hp() -> Self {
-            Self { value: 11 }
-        }
-
-        pub fn hp_stock() -> Self {
-            Self { value: 12 }
-        }
-
-        pub fn weapon_item() -> Self {
-            Self { value: 13 }
-        }
-
-        pub fn god_weapon_item() -> Self {
-            Self { value: 14 }
-        }
-
-        pub fn skill() -> Self {
-            Self { value: 15 }
-        }
-
-        pub fn god_skill() -> Self {
-            Self { value: 16 }
-        }
-
-        pub fn terrain_info_skill() -> Self {
-            Self { value: 17 }
-        }
-
-        pub fn enchantment() -> Self {
-            Self { value: 18 }
-        }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/helpmanager/HelpManager_Item.md"))]
-    #[::unity2::class(namespace = "App", name = "HelpManager.Item")]
-    #[parent(crate::system::object::Object)]
-    pub struct HelpManager_Item {
-        #[offset(16)]
-        #[rename(name = "self")]
-        pub self_: crate::app::helpitembase::HelpItemBase,
-        #[offset(24)]
-        #[rename(name = "pos")]
-        pub pos: crate::unity_engine::vector2::Vector2,
-        #[offset(32)]
-        #[rename(name = "dirLine")]
-        pub dir_line: ::unity2::Array<::unity2::Array<crate::unity_engine::vector2::Vector2>>,
-        #[offset(40)]
-        #[rename(name = "isMoveToNoTouchItem")]
-        pub is_move_to_no_touch_item: ::unity2::Array<bool>,
+
+    pub fn hp() -> Self {
+        Self { value: 11 }
+
     }
+
+
+    pub fn hp_stock() -> Self {
+        Self { value: 12 }
+
+    }
+
+
+    pub fn weapon_item() -> Self {
+        Self { value: 13 }
+
+    }
+
+
+    pub fn god_weapon_item() -> Self {
+        Self { value: 14 }
+
+    }
+
+
+    pub fn skill() -> Self {
+        Self { value: 15 }
+
+    }
+
+
+    pub fn god_skill() -> Self {
+        Self { value: 16 }
+
+    }
+
+
+    pub fn terrain_info_skill() -> Self {
+        Self { value: 17 }
+
+    }
+
+
+    pub fn enchantment() -> Self {
+        Self { value: 18 }
+
+    }
+
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/helpmanager/HelpManager_Item_Dir.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct HelpManager_Item_Dir  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for HelpManager_Item_Dir  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "HelpManager.Item.Dir";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for HelpManager_Item_Dir  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  HelpManager_Item_Dir  {
+    pub fn up() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn down() -> Self {
+        Self { value: 1 }
+
+    }
+
+
+    pub fn right() -> Self {
+        Self { value: 2 }
+
+    }
+
+
+    pub fn left() -> Self {
+        Self { value: 3 }
+
+    }
+
+
+    pub fn num() -> Self {
+        Self { value: 4 }
+
+    }
+
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/helpmanager/HelpManager_SituationType.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct HelpManager_SituationType  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for HelpManager_SituationType  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "HelpManager.SituationType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for HelpManager_SituationType  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  HelpManager_SituationType  {
+    pub fn none() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn unit_status() -> Self {
+        Self { value: 1 }
+
+    }
+
+
+    pub fn ring_select() -> Self {
+        Self { value: 2 }
+
+    }
+
+
+    pub fn unit_info() -> Self {
+        Self { value: 3 }
+
+    }
+
+
+    pub fn battle_info() -> Self {
+        Self { value: 4 }
+
+    }
+
+
+    pub fn battle_engage_info() -> Self {
+        Self { value: 5 }
+
+    }
+
+
+    pub fn battle_alternate_info() -> Self {
+        Self { value: 6 }
+
+    }
+
+
+    pub fn only_map_terrain_info() -> Self {
+        Self { value: 7 }
+
+    }
+
+}
+
 }
 
 #[cfg(feature = "app-helpmanager-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-helpmanager")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __HelpManager_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::helpitemlist::HelpItemList as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<HelpManager as ::unity2::ClassIdentity>::class(), "Add", 1, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HelpManager as ::unity2::ClassIdentity>::NAME,
-                        "Add",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add(list: crate::app::helpitemlist::HelpItemList, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(crate::app::helpitemlist::HelpItemList, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add::get_method_info().method_ptr);
-        inner(list, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_remove {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::helpitemlist::HelpItemList as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<HelpManager as ::unity2::ClassIdentity>::class(), "Remove", 1, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HelpManager as ::unity2::ClassIdentity>::NAME,
-                        "Remove",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn remove(list: crate::app::helpitemlist::HelpItemList, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(crate::app::helpitemlist::HelpItemList, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_remove::get_method_info().method_ptr);
-        inner(list, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_setup {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <bool as ::unity2::IlType>::il_type(),
-                <crate::app::godunit::GodUnit as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-                <crate::app::unitring::UnitRing as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<HelpManager as ::unity2::ClassIdentity>::class(), "Setup", 6, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HelpManager as ::unity2::ClassIdentity>::NAME,
-                        "Setup",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn setup(
-        this: HelpManager,
-        is_temp_god: bool,
-        temp_god: crate::app::godunit::GodUnit,
-        is_temp_ring: bool,
-        temp_ring: crate::app::unitring::UnitRing,
-        is_temp_unit: bool,
-        temp_unit: crate::app::unit::Unit,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            HelpManager,
-            bool,
-            crate::app::godunit::GodUnit,
-            bool,
-            crate::app::unitring::UnitRing,
-            bool,
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(__lookup_setup::get_method_info().method_ptr);
-        inner(
-            this,
-            is_temp_god,
-            temp_god,
-            is_temp_ring,
-            temp_ring,
-            is_temp_unit,
-            temp_unit,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_contents {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HelpManager as ::unity2::ClassIdentity>::class(),
-                "SetContents",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HelpManager as ::unity2::ClassIdentity>::NAME,
-                        "SetContents",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_contents(this: HelpManager, immediate: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(HelpManager, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_contents::get_method_info().method_ptr);
-        inner(this, immediate, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_up {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<HelpManager as ::unity2::ClassIdentity>::class(), "Up", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HelpManager as ::unity2::ClassIdentity>::NAME,
-                        "Up",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn up(this: HelpManager, is_trigger: bool, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(HelpManager, bool, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_up::get_method_info().method_ptr);
-        inner(this, is_trigger, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_down {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<HelpManager as ::unity2::ClassIdentity>::class(), "Down", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HelpManager as ::unity2::ClassIdentity>::NAME,
-                        "Down",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn down(this: HelpManager, is_trigger: bool, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(HelpManager, bool, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_down::get_method_info().method_ptr);
-        inner(this, is_trigger, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_left {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<HelpManager as ::unity2::ClassIdentity>::class(), "Left", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HelpManager as ::unity2::ClassIdentity>::NAME,
-                        "Left",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn left(this: HelpManager, is_trigger: bool, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(HelpManager, bool, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_left::get_method_info().method_ptr);
-        inner(this, is_trigger, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_right {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<HelpManager as ::unity2::ClassIdentity>::class(), "Right", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HelpManager as ::unity2::ClassIdentity>::NAME,
-                        "Right",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn right(this: HelpManager, is_trigger: bool, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(HelpManager, bool, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_right::get_method_info().method_ptr);
-        inner(this, is_trigger, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_dot {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<HelpManager as ::unity2::ClassIdentity>::class(), "Dot", 2, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HelpManager as ::unity2::ClassIdentity>::NAME,
-                        "Dot",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn dot(
-        this: HelpManager,
-        ab: crate::unity_engine::vector2::Vector2,
-        p: crate::unity_engine::vector2::Vector2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
-        let inner: extern "C" fn(
-            HelpManager,
-            crate::unity_engine::vector2::Vector2,
-            crate::unity_engine::vector2::Vector2,
-            ::unity2::OptionalMethod,
-        ) -> f32 = ::core::mem::transmute(__lookup_dot::get_method_info().method_ptr);
-        inner(this, ab, p, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_search_dest_item {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HelpManager as ::unity2::ClassIdentity>::class(),
-                "SearchDestItem",
-                9,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HelpManager as ::unity2::ClassIdentity>::NAME,
-                        "SearchDestItem",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn search_dest_item(
-        this: HelpManager,
-        dir_idx: i32,
-        pair_dir_idx: i32,
-        cur_pos: crate::unity_engine::vector2::Vector2,
-        cur_a: crate::unity_engine::vector2::Vector2,
-        cur_b: crate::unity_engine::vector2::Vector2,
-        cur_ab: crate::unity_engine::vector2::Vector2,
-        is_move_to_no_touch_item: bool,
-        is_loop: bool,
-        loop_limit: crate::unity_engine::vector2::Vector2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            HelpManager,
-            i32,
-            i32,
-            crate::unity_engine::vector2::Vector2,
-            crate::unity_engine::vector2::Vector2,
-            crate::unity_engine::vector2::Vector2,
-            crate::unity_engine::vector2::Vector2,
-            bool,
-            bool,
-            crate::unity_engine::vector2::Vector2,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(__lookup_search_dest_item::get_method_info().method_ptr);
-        inner(
-            this,
-            dir_idx,
-            pair_dir_idx,
-            cur_pos,
-            cur_a,
-            cur_b,
-            cur_ab,
-            is_move_to_no_touch_item,
-            is_loop,
-            loop_limit,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_move_impl {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::helpmanager::HelpManager_Item_Dir as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HelpManager as ::unity2::ClassIdentity>::class(),
-                "MoveImpl",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HelpManager as ::unity2::ClassIdentity>::NAME,
-                        "MoveImpl",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn move_impl(
-        this: HelpManager,
-        dir: crate::app::helpmanager::HelpManager_Item_Dir,
-        is_trigger: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(HelpManager, crate::app::helpmanager::HelpManager_Item_Dir, bool, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_move_impl::get_method_info().method_ptr);
-        inner(this, dir, is_trigger, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_help_valid {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::helpitembase::HelpItemBase as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HelpManager as ::unity2::ClassIdentity>::class(),
-                "IsHelpValid",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HelpManager as ::unity2::ClassIdentity>::NAME,
-                        "IsHelpValid",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_help_valid(
-        this: HelpManager,
-        hib: crate::app::helpitembase::HelpItemBase,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(HelpManager, crate::app::helpitembase::HelpItemBase, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_help_valid::get_method_info().method_ptr);
-        inner(this, hib, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_start_item_priority {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::helpitembase::HelpItemBase as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HelpManager as ::unity2::ClassIdentity>::class(),
-                "StartItemPriority",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HelpManager as ::unity2::ClassIdentity>::NAME,
-                        "StartItemPriority",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn start_item_priority(
-        this: HelpManager,
-        hib: crate::app::helpitembase::HelpItemBase,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(HelpManager, crate::app::helpitembase::HelpItemBase, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_start_item_priority::get_method_info().method_ptr);
-        inner(this, hib, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_start_item_const_priority {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::helpitembase::HelpItemBase as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HelpManager as ::unity2::ClassIdentity>::class(),
-                "StartItemConstPriority",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HelpManager as ::unity2::ClassIdentity>::NAME,
-                        "StartItemConstPriority",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn start_item_const_priority(
-        this: HelpManager,
-        hib: crate::app::helpitembase::HelpItemBase,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(HelpManager, crate::app::helpitembase::HelpItemBase, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_start_item_const_priority::get_method_info().method_ptr);
-        inner(this, hib, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<HelpManager as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HelpManager as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: HelpManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(HelpManager, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __HelpManager_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: helpitemlist :: HelpItemList as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HelpManager as :: unity2 :: ClassIdentity > :: class () , "Add" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HelpManager as :: unity2 :: ClassIdentity > :: NAME , "Add" , e) , } } } pub unsafe fn add (list : crate :: app :: helpitemlist :: HelpItemList , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: helpitemlist :: HelpItemList , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add :: get_method_info () . method_ptr ,) ; inner (list , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_remove { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: helpitemlist :: HelpItemList as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HelpManager as :: unity2 :: ClassIdentity > :: class () , "Remove" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HelpManager as :: unity2 :: ClassIdentity > :: NAME , "Remove" , e) , } } } pub unsafe fn remove (list : crate :: app :: helpitemlist :: HelpItemList , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: helpitemlist :: HelpItemList , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_remove :: get_method_info () . method_ptr ,) ; inner (list , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_setup { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type () , < crate :: app :: godunit :: GodUnit as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < crate :: app :: unitring :: UnitRing as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HelpManager as :: unity2 :: ClassIdentity > :: class () , "Setup" , 6 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HelpManager as :: unity2 :: ClassIdentity > :: NAME , "Setup" , e) , } } } pub unsafe fn setup (this : HelpManager , is_temp_god : bool , temp_god : crate :: app :: godunit :: GodUnit , is_temp_ring : bool , temp_ring : crate :: app :: unitring :: UnitRing , is_temp_unit : bool , temp_unit : crate :: app :: unit :: Unit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (HelpManager , bool , crate :: app :: godunit :: GodUnit , bool , crate :: app :: unitring :: UnitRing , bool , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_setup :: get_method_info () . method_ptr ,) ; inner (this , is_temp_god , temp_god , is_temp_ring , temp_ring , is_temp_unit , temp_unit , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_contents { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HelpManager as :: unity2 :: ClassIdentity > :: class () , "SetContents" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HelpManager as :: unity2 :: ClassIdentity > :: NAME , "SetContents" , e) , } } } pub unsafe fn set_contents (this : HelpManager , immediate : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HelpManager , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_contents :: get_method_info () . method_ptr ,) ; inner (this , immediate , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_up { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HelpManager as :: unity2 :: ClassIdentity > :: class () , "Up" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HelpManager as :: unity2 :: ClassIdentity > :: NAME , "Up" , e) , } } } pub unsafe fn up (this : HelpManager , is_trigger : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (HelpManager , bool , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_up :: get_method_info () . method_ptr ,) ; inner (this , is_trigger , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_down { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HelpManager as :: unity2 :: ClassIdentity > :: class () , "Down" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HelpManager as :: unity2 :: ClassIdentity > :: NAME , "Down" , e) , } } } pub unsafe fn down (this : HelpManager , is_trigger : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (HelpManager , bool , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_down :: get_method_info () . method_ptr ,) ; inner (this , is_trigger , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_left { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HelpManager as :: unity2 :: ClassIdentity > :: class () , "Left" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HelpManager as :: unity2 :: ClassIdentity > :: NAME , "Left" , e) , } } } pub unsafe fn left (this : HelpManager , is_trigger : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (HelpManager , bool , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_left :: get_method_info () . method_ptr ,) ; inner (this , is_trigger , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_right { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HelpManager as :: unity2 :: ClassIdentity > :: class () , "Right" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HelpManager as :: unity2 :: ClassIdentity > :: NAME , "Right" , e) , } } } pub unsafe fn right (this : HelpManager , is_trigger : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (HelpManager , bool , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_right :: get_method_info () . method_ptr ,) ; inner (this , is_trigger , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_dot { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector2 :: Vector2 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector2 :: Vector2 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HelpManager as :: unity2 :: ClassIdentity > :: class () , "Dot" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HelpManager as :: unity2 :: ClassIdentity > :: NAME , "Dot" , e) , } } } pub unsafe fn dot (this : HelpManager , ab : crate :: unity_engine :: vector2 :: Vector2 , p : crate :: unity_engine :: vector2 :: Vector2 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (HelpManager , crate :: unity_engine :: vector2 :: Vector2 , crate :: unity_engine :: vector2 :: Vector2 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_dot :: get_method_info () . method_ptr ,) ; inner (this , ab , p , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_search_dest_item { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector2 :: Vector2 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector2 :: Vector2 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector2 :: Vector2 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector2 :: Vector2 as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector2 :: Vector2 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HelpManager as :: unity2 :: ClassIdentity > :: class () , "SearchDestItem" , 9 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HelpManager as :: unity2 :: ClassIdentity > :: NAME , "SearchDestItem" , e) , } } } pub unsafe fn search_dest_item (this : HelpManager , dir_idx : i32 , pair_dir_idx : i32 , cur_pos : crate :: unity_engine :: vector2 :: Vector2 , cur_a : crate :: unity_engine :: vector2 :: Vector2 , cur_b : crate :: unity_engine :: vector2 :: Vector2 , cur_ab : crate :: unity_engine :: vector2 :: Vector2 , is_move_to_no_touch_item : bool , is_loop : bool , loop_limit : crate :: unity_engine :: vector2 :: Vector2 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (HelpManager , i32 , i32 , crate :: unity_engine :: vector2 :: Vector2 , crate :: unity_engine :: vector2 :: Vector2 , crate :: unity_engine :: vector2 :: Vector2 , crate :: unity_engine :: vector2 :: Vector2 , bool , bool , crate :: unity_engine :: vector2 :: Vector2 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_search_dest_item :: get_method_info () . method_ptr ,) ; inner (this , dir_idx , pair_dir_idx , cur_pos , cur_a , cur_b , cur_ab , is_move_to_no_touch_item , is_loop , loop_limit , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_move_impl { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: helpmanager :: HelpManager_Item_Dir as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HelpManager as :: unity2 :: ClassIdentity > :: class () , "MoveImpl" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HelpManager as :: unity2 :: ClassIdentity > :: NAME , "MoveImpl" , e) , } } } pub unsafe fn move_impl (this : HelpManager , dir : crate :: app :: helpmanager :: HelpManager_Item_Dir , is_trigger : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (HelpManager , crate :: app :: helpmanager :: HelpManager_Item_Dir , bool , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_move_impl :: get_method_info () . method_ptr ,) ; inner (this , dir , is_trigger , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_help_valid { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: helpitembase :: HelpItemBase as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HelpManager as :: unity2 :: ClassIdentity > :: class () , "IsHelpValid" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HelpManager as :: unity2 :: ClassIdentity > :: NAME , "IsHelpValid" , e) , } } } pub unsafe fn is_help_valid (this : HelpManager , hib : crate :: app :: helpitembase :: HelpItemBase , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (HelpManager , crate :: app :: helpitembase :: HelpItemBase , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_help_valid :: get_method_info () . method_ptr ,) ; inner (this , hib , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_start_item_priority { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: helpitembase :: HelpItemBase as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HelpManager as :: unity2 :: ClassIdentity > :: class () , "StartItemPriority" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HelpManager as :: unity2 :: ClassIdentity > :: NAME , "StartItemPriority" , e) , } } } pub unsafe fn start_item_priority (this : HelpManager , hib : crate :: app :: helpitembase :: HelpItemBase , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (HelpManager , crate :: app :: helpitembase :: HelpItemBase , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_start_item_priority :: get_method_info () . method_ptr ,) ; inner (this , hib , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_start_item_const_priority { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: helpitembase :: HelpItemBase as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HelpManager as :: unity2 :: ClassIdentity > :: class () , "StartItemConstPriority" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HelpManager as :: unity2 :: ClassIdentity > :: NAME , "StartItemConstPriority" , e) , } } } pub unsafe fn start_item_const_priority (this : HelpManager , hib : crate :: app :: helpitembase :: HelpItemBase , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (HelpManager , crate :: app :: helpitembase :: HelpItemBase , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_start_item_const_priority :: get_method_info () . method_ptr ,) ; inner (this , hib , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HelpManager as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HelpManager as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : HelpManager , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HelpManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-helpmanager")]
+impl HelpManager { # [doc = "`Add(crate::app::helpitemlist::HelpItemList)` overload"] pub fn add (list : impl :: core :: convert :: Into < crate :: app :: helpitemlist :: HelpItemList >) -> () { unsafe { __HelpManager_unity2_raw :: add (:: core :: convert :: Into :: into (list) , :: core :: option :: Option :: None) } } # [doc = "`Remove(crate::app::helpitemlist::HelpItemList)` overload"] pub fn remove (list : impl :: core :: convert :: Into < crate :: app :: helpitemlist :: HelpItemList >) -> () { unsafe { __HelpManager_unity2_raw :: remove (:: core :: convert :: Into :: into (list) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-helpmanager")]
+pub trait IHelpManagerMethods : IHelpManager { # [doc = "`Setup(bool, crate::app::godunit::GodUnit, bool, crate::app::unitring::UnitRing, bool, crate::app::unit::Unit)` overload"] fn setup (self , is_temp_god : impl :: core :: convert :: Into < bool > , temp_god : impl :: core :: convert :: Into < crate :: app :: godunit :: GodUnit > , is_temp_ring : impl :: core :: convert :: Into < bool > , temp_ring : impl :: core :: convert :: Into < crate :: app :: unitring :: UnitRing > , is_temp_unit : impl :: core :: convert :: Into < bool > , temp_unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> bool { unsafe { let __receiver = < HelpManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HelpManager_unity2_raw :: setup (__receiver , :: core :: convert :: Into :: into (is_temp_god) , :: core :: convert :: Into :: into (temp_god) , :: core :: convert :: Into :: into (is_temp_ring) , :: core :: convert :: Into :: into (temp_ring) , :: core :: convert :: Into :: into (is_temp_unit) , :: core :: convert :: Into :: into (temp_unit) , :: core :: option :: Option :: None) } } # [doc = "`SetContents(bool)` overload"] fn set_contents (self , immediate : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < HelpManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HelpManager_unity2_raw :: set_contents (__receiver , :: core :: convert :: Into :: into (immediate) , :: core :: option :: Option :: None) } } # [doc = "`Up(bool)` overload"] fn up (self , is_trigger : impl :: core :: convert :: Into < bool >) -> bool { unsafe { let __receiver = < HelpManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HelpManager_unity2_raw :: up (__receiver , :: core :: convert :: Into :: into (is_trigger) , :: core :: option :: Option :: None) } } # [doc = "`Down(bool)` overload"] fn down (self , is_trigger : impl :: core :: convert :: Into < bool >) -> bool { unsafe { let __receiver = < HelpManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HelpManager_unity2_raw :: down (__receiver , :: core :: convert :: Into :: into (is_trigger) , :: core :: option :: Option :: None) } } # [doc = "`Left(bool)` overload"] fn left (self , is_trigger : impl :: core :: convert :: Into < bool >) -> bool { unsafe { let __receiver = < HelpManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HelpManager_unity2_raw :: left (__receiver , :: core :: convert :: Into :: into (is_trigger) , :: core :: option :: Option :: None) } } # [doc = "`Right(bool)` overload"] fn right (self , is_trigger : impl :: core :: convert :: Into < bool >) -> bool { unsafe { let __receiver = < HelpManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HelpManager_unity2_raw :: right (__receiver , :: core :: convert :: Into :: into (is_trigger) , :: core :: option :: Option :: None) } } # [doc = "`Dot(crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2)` overload"] fn dot (self , ab : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 > , p : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 >) -> f32 { unsafe { let __receiver = < HelpManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HelpManager_unity2_raw :: dot (__receiver , :: core :: convert :: Into :: into (ab) , :: core :: convert :: Into :: into (p) , :: core :: option :: Option :: None) } } # [doc = "`SearchDestItem(i32, i32, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, bool, bool, crate::unity_engine::vector2::Vector2)` overload"] fn search_dest_item (self , dir_idx : impl :: core :: convert :: Into < i32 > , pair_dir_idx : impl :: core :: convert :: Into < i32 > , cur_pos : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 > , cur_a : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 > , cur_b : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 > , cur_ab : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 > , is_move_to_no_touch_item : impl :: core :: convert :: Into < bool > , is_loop : impl :: core :: convert :: Into < bool > , loop_limit : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 >) -> bool { unsafe { let __receiver = < HelpManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HelpManager_unity2_raw :: search_dest_item (__receiver , :: core :: convert :: Into :: into (dir_idx) , :: core :: convert :: Into :: into (pair_dir_idx) , :: core :: convert :: Into :: into (cur_pos) , :: core :: convert :: Into :: into (cur_a) , :: core :: convert :: Into :: into (cur_b) , :: core :: convert :: Into :: into (cur_ab) , :: core :: convert :: Into :: into (is_move_to_no_touch_item) , :: core :: convert :: Into :: into (is_loop) , :: core :: convert :: Into :: into (loop_limit) , :: core :: option :: Option :: None) } } # [doc = "`MoveImpl(crate::app::helpmanager::HelpManager_Item_Dir, bool)` overload"] fn move_impl (self , dir : impl :: core :: convert :: Into < crate :: app :: helpmanager :: HelpManager_Item_Dir > , is_trigger : impl :: core :: convert :: Into < bool >) -> bool { unsafe { let __receiver = < HelpManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HelpManager_unity2_raw :: move_impl (__receiver , :: core :: convert :: Into :: into (dir) , :: core :: convert :: Into :: into (is_trigger) , :: core :: option :: Option :: None) } } # [doc = "`IsHelpValid(crate::app::helpitembase::HelpItemBase)` overload"] fn is_help_valid (self , hib : impl :: core :: convert :: Into < crate :: app :: helpitembase :: HelpItemBase >) -> bool { unsafe { let __receiver = < HelpManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HelpManager_unity2_raw :: is_help_valid (__receiver , :: core :: convert :: Into :: into (hib) , :: core :: option :: Option :: None) } } # [doc = "`StartItemPriority(crate::app::helpitembase::HelpItemBase)` overload"] fn start_item_priority (self , hib : impl :: core :: convert :: Into < crate :: app :: helpitembase :: HelpItemBase >) -> i32 { unsafe { let __receiver = < HelpManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HelpManager_unity2_raw :: start_item_priority (__receiver , :: core :: convert :: Into :: into (hib) , :: core :: option :: Option :: None) } } # [doc = "`StartItemConstPriority(crate::app::helpitembase::HelpItemBase)` overload"] fn start_item_const_priority (self , hib : impl :: core :: convert :: Into < crate :: app :: helpitembase :: HelpItemBase >) -> i32 { unsafe { let __receiver = < HelpManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HelpManager_unity2_raw :: start_item_const_priority (__receiver , :: core :: convert :: Into :: into (hib) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HelpManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HelpManager_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-helpmanager")]
+impl < __T : IHelpManager > IHelpManagerMethods for __T { }
+
+#[cfg(feature = "app-helpmanager")]
+impl HelpManager { pub fn add_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HelpManager_unity2_raw :: __lookup_add :: get_method_info () } pub fn remove_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HelpManager_unity2_raw :: __lookup_remove :: get_method_info () } pub fn setup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HelpManager_unity2_raw :: __lookup_setup :: get_method_info () } pub fn set_contents_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HelpManager_unity2_raw :: __lookup_set_contents :: get_method_info () } pub fn up_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HelpManager_unity2_raw :: __lookup_up :: get_method_info () } pub fn down_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HelpManager_unity2_raw :: __lookup_down :: get_method_info () } pub fn left_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HelpManager_unity2_raw :: __lookup_left :: get_method_info () } pub fn right_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HelpManager_unity2_raw :: __lookup_right :: get_method_info () } pub fn dot_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HelpManager_unity2_raw :: __lookup_dot :: get_method_info () } pub fn search_dest_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HelpManager_unity2_raw :: __lookup_search_dest_item :: get_method_info () } pub fn move_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HelpManager_unity2_raw :: __lookup_move_impl :: get_method_info () } pub fn is_help_valid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HelpManager_unity2_raw :: __lookup_is_help_valid :: get_method_info () } pub fn start_item_priority_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HelpManager_unity2_raw :: __lookup_start_item_priority :: get_method_info () } pub fn start_item_const_priority_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HelpManager_unity2_raw :: __lookup_start_item_const_priority :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HelpManager_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-helpmanager")]
 impl HelpManager {
-    #[doc = "`Add(crate::app::helpitemlist::HelpItemList)` overload"]
-    pub fn add(list: impl ::core::convert::Into<crate::app::helpitemlist::HelpItemList>) -> () {
-        unsafe { __HelpManager_unity2_raw::add(::core::convert::Into::into(list), ::core::option::Option::None) }
-    }
-
-    #[doc = "`Remove(crate::app::helpitemlist::HelpItemList)` overload"]
-    pub fn remove(list: impl ::core::convert::Into<crate::app::helpitemlist::HelpItemList>) -> () {
-        unsafe { __HelpManager_unity2_raw::remove(::core::convert::Into::into(list), ::core::option::Option::None) }
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HelpManager) , :: core :: stringify ! (new) ,)) ; < Self as IHelpManagerMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-helpmanager")]
-pub trait IHelpManagerMethods: IHelpManager {
-    #[doc = "`Setup(bool, crate::app::godunit::GodUnit, bool, crate::app::unitring::UnitRing, bool, crate::app::unit::Unit)` overload"]
-    fn setup(
-        self,
-        is_temp_god: impl ::core::convert::Into<bool>,
-        temp_god: impl ::core::convert::Into<crate::app::godunit::GodUnit>,
-        is_temp_ring: impl ::core::convert::Into<bool>,
-        temp_ring: impl ::core::convert::Into<crate::app::unitring::UnitRing>,
-        is_temp_unit: impl ::core::convert::Into<bool>,
-        temp_unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-    ) -> bool {
-        unsafe {
-            let __receiver = <HelpManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HelpManager_unity2_raw::setup(
-                __receiver,
-                ::core::convert::Into::into(is_temp_god),
-                ::core::convert::Into::into(temp_god),
-                ::core::convert::Into::into(is_temp_ring),
-                ::core::convert::Into::into(temp_ring),
-                ::core::convert::Into::into(is_temp_unit),
-                ::core::convert::Into::into(temp_unit),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetContents(bool)` overload"]
-    fn set_contents(self, immediate: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver = <HelpManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HelpManager_unity2_raw::set_contents(__receiver, ::core::convert::Into::into(immediate), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Up(bool)` overload"]
-    fn up(self, is_trigger: impl ::core::convert::Into<bool>) -> bool {
-        unsafe {
-            let __receiver = <HelpManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HelpManager_unity2_raw::up(__receiver, ::core::convert::Into::into(is_trigger), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Down(bool)` overload"]
-    fn down(self, is_trigger: impl ::core::convert::Into<bool>) -> bool {
-        unsafe {
-            let __receiver = <HelpManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HelpManager_unity2_raw::down(__receiver, ::core::convert::Into::into(is_trigger), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Left(bool)` overload"]
-    fn left(self, is_trigger: impl ::core::convert::Into<bool>) -> bool {
-        unsafe {
-            let __receiver = <HelpManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HelpManager_unity2_raw::left(__receiver, ::core::convert::Into::into(is_trigger), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Right(bool)` overload"]
-    fn right(self, is_trigger: impl ::core::convert::Into<bool>) -> bool {
-        unsafe {
-            let __receiver = <HelpManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HelpManager_unity2_raw::right(__receiver, ::core::convert::Into::into(is_trigger), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Dot(crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2)` overload"]
-    fn dot(
-        self,
-        ab: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
-        p: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
-    ) -> f32 {
-        unsafe {
-            let __receiver = <HelpManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HelpManager_unity2_raw::dot(
-                __receiver,
-                ::core::convert::Into::into(ab),
-                ::core::convert::Into::into(p),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SearchDestItem(i32, i32, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, bool, bool, crate::unity_engine::vector2::Vector2)` overload"]
-    fn search_dest_item(
-        self,
-        dir_idx: impl ::core::convert::Into<i32>,
-        pair_dir_idx: impl ::core::convert::Into<i32>,
-        cur_pos: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
-        cur_a: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
-        cur_b: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
-        cur_ab: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
-        is_move_to_no_touch_item: impl ::core::convert::Into<bool>,
-        is_loop: impl ::core::convert::Into<bool>,
-        loop_limit: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
-    ) -> bool {
-        unsafe {
-            let __receiver = <HelpManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HelpManager_unity2_raw::search_dest_item(
-                __receiver,
-                ::core::convert::Into::into(dir_idx),
-                ::core::convert::Into::into(pair_dir_idx),
-                ::core::convert::Into::into(cur_pos),
-                ::core::convert::Into::into(cur_a),
-                ::core::convert::Into::into(cur_b),
-                ::core::convert::Into::into(cur_ab),
-                ::core::convert::Into::into(is_move_to_no_touch_item),
-                ::core::convert::Into::into(is_loop),
-                ::core::convert::Into::into(loop_limit),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`MoveImpl(crate::app::helpmanager::HelpManager_Item_Dir, bool)` overload"]
-    fn move_impl(
-        self,
-        dir: impl ::core::convert::Into<crate::app::helpmanager::HelpManager_Item_Dir>,
-        is_trigger: impl ::core::convert::Into<bool>,
-    ) -> bool {
-        unsafe {
-            let __receiver = <HelpManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HelpManager_unity2_raw::move_impl(
-                __receiver,
-                ::core::convert::Into::into(dir),
-                ::core::convert::Into::into(is_trigger),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`IsHelpValid(crate::app::helpitembase::HelpItemBase)` overload"]
-    fn is_help_valid(self, hib: impl ::core::convert::Into<crate::app::helpitembase::HelpItemBase>) -> bool {
-        unsafe {
-            let __receiver = <HelpManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HelpManager_unity2_raw::is_help_valid(__receiver, ::core::convert::Into::into(hib), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`StartItemPriority(crate::app::helpitembase::HelpItemBase)` overload"]
-    fn start_item_priority(self, hib: impl ::core::convert::Into<crate::app::helpitembase::HelpItemBase>) -> i32 {
-        unsafe {
-            let __receiver = <HelpManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HelpManager_unity2_raw::start_item_priority(__receiver, ::core::convert::Into::into(hib), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`StartItemConstPriority(crate::app::helpitembase::HelpItemBase)` overload"]
-    fn start_item_const_priority(self, hib: impl ::core::convert::Into<crate::app::helpitembase::HelpItemBase>) -> i32 {
-        unsafe {
-            let __receiver = <HelpManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HelpManager_unity2_raw::start_item_const_priority(__receiver, ::core::convert::Into::into(hib), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <HelpManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HelpManager_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __HelpManager_Item_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: helpitembase :: HelpItemBase as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HelpManager_Item as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HelpManager_Item as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : HelpManager_Item , item : crate :: app :: helpitembase :: HelpItemBase , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HelpManager_Item , crate :: app :: helpitembase :: HelpItemBase , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , item , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_up { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HelpManager_Item as :: unity2 :: ClassIdentity > :: class () , "get_Up" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HelpManager_Item as :: unity2 :: ClassIdentity > :: NAME , "get_Up" , e) , } } } pub unsafe fn get_up (this : HelpManager_Item , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (HelpManager_Item , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_get_up :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_down { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HelpManager_Item as :: unity2 :: ClassIdentity > :: class () , "get_Down" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HelpManager_Item as :: unity2 :: ClassIdentity > :: NAME , "get_Down" , e) , } } } pub unsafe fn get_down (this : HelpManager_Item , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (HelpManager_Item , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_get_down :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_left { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HelpManager_Item as :: unity2 :: ClassIdentity > :: class () , "get_Left" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HelpManager_Item as :: unity2 :: ClassIdentity > :: NAME , "get_Left" , e) , } } } pub unsafe fn get_left (this : HelpManager_Item , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (HelpManager_Item , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_get_left :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_right { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HelpManager_Item as :: unity2 :: ClassIdentity > :: class () , "get_Right" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HelpManager_Item as :: unity2 :: ClassIdentity > :: NAME , "get_Right" , e) , } } } pub unsafe fn get_right (this : HelpManager_Item , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (HelpManager_Item , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_get_right :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-helpmanager")]
-impl<__T: IHelpManager> IHelpManagerMethods for __T {}
+pub trait IHelpManager_ItemMethods : IHelpManager_Item { # [doc = "`.ctor(crate::app::helpitembase::HelpItemBase)` overload"] fn ctor (self , item : impl :: core :: convert :: Into < crate :: app :: helpitembase :: HelpItemBase >) -> () { unsafe { let __receiver = < HelpManager_Item as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HelpManager_Item_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (item) , :: core :: option :: Option :: None) } } # [doc = "`get_Up()` overload"] fn get_up (self ,) -> f32 { unsafe { let __receiver = < HelpManager_Item as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HelpManager_Item_unity2_raw :: get_up (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_Down()` overload"] fn get_down (self ,) -> f32 { unsafe { let __receiver = < HelpManager_Item as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HelpManager_Item_unity2_raw :: get_down (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_Left()` overload"] fn get_left (self ,) -> f32 { unsafe { let __receiver = < HelpManager_Item as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HelpManager_Item_unity2_raw :: get_left (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_Right()` overload"] fn get_right (self ,) -> f32 { unsafe { let __receiver = < HelpManager_Item as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HelpManager_Item_unity2_raw :: get_right (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-helpmanager")]
-impl HelpManager {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(HelpManager), ::core::stringify!(new),));
-        <Self as IHelpManagerMethods>::ctor(this);
-        this
-    }
-}
+impl < __T : IHelpManager_Item > IHelpManager_ItemMethods for __T { }
 
 #[cfg(feature = "app-helpmanager")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __HelpManager_Item_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::helpitembase::HelpItemBase as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HelpManager_Item as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HelpManager_Item as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: HelpManager_Item, item: crate::app::helpitembase::HelpItemBase, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(HelpManager_Item, crate::app::helpitembase::HelpItemBase, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, item, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_up {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HelpManager_Item as ::unity2::ClassIdentity>::class(),
-                "get_Up",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HelpManager_Item as ::unity2::ClassIdentity>::NAME,
-                        "get_Up",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_up(this: HelpManager_Item, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(HelpManager_Item, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_get_up::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_down {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HelpManager_Item as ::unity2::ClassIdentity>::class(),
-                "get_Down",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HelpManager_Item as ::unity2::ClassIdentity>::NAME,
-                        "get_Down",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_down(this: HelpManager_Item, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(HelpManager_Item, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_get_down::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_left {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HelpManager_Item as ::unity2::ClassIdentity>::class(),
-                "get_Left",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HelpManager_Item as ::unity2::ClassIdentity>::NAME,
-                        "get_Left",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_left(this: HelpManager_Item, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(HelpManager_Item, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_get_left::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_right {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HelpManager_Item as ::unity2::ClassIdentity>::class(),
-                "get_Right",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HelpManager_Item as ::unity2::ClassIdentity>::NAME,
-                        "get_Right",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_right(this: HelpManager_Item, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(HelpManager_Item, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_get_right::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-helpmanager")]
-pub trait IHelpManager_ItemMethods: IHelpManager_Item {
-    #[doc = "`.ctor(crate::app::helpitembase::HelpItemBase)` overload"]
-    fn ctor(self, item: impl ::core::convert::Into<crate::app::helpitembase::HelpItemBase>) -> () {
-        unsafe {
-            let __receiver = <HelpManager_Item as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HelpManager_Item_unity2_raw::ctor(__receiver, ::core::convert::Into::into(item), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Up()` overload"]
-    fn get_up(self) -> f32 {
-        unsafe {
-            let __receiver = <HelpManager_Item as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HelpManager_Item_unity2_raw::get_up(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Down()` overload"]
-    fn get_down(self) -> f32 {
-        unsafe {
-            let __receiver = <HelpManager_Item as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HelpManager_Item_unity2_raw::get_down(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Left()` overload"]
-    fn get_left(self) -> f32 {
-        unsafe {
-            let __receiver = <HelpManager_Item as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HelpManager_Item_unity2_raw::get_left(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Right()` overload"]
-    fn get_right(self) -> f32 {
-        unsafe {
-            let __receiver = <HelpManager_Item as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HelpManager_Item_unity2_raw::get_right(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-helpmanager")]
-impl<__T: IHelpManager_Item> IHelpManager_ItemMethods for __T {}
+impl HelpManager_Item { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HelpManager_Item_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn get_up_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HelpManager_Item_unity2_raw :: __lookup_get_up :: get_method_info () } pub fn get_down_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HelpManager_Item_unity2_raw :: __lookup_get_down :: get_method_info () } pub fn get_left_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HelpManager_Item_unity2_raw :: __lookup_get_left :: get_method_info () } pub fn get_right_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HelpManager_Item_unity2_raw :: __lookup_get_right :: get_method_info () } }
 
 #[cfg(feature = "app-helpmanager")]
 impl HelpManager_Item {
-    #[doc = "`.ctor(crate::app::helpitembase::HelpItemBase)` — overload selector"]
-    pub fn new(item: crate::app::helpitembase::HelpItemBase) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(HelpManager_Item),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IHelpManager_ItemMethods>::ctor(this, item);
-        this
-    }
+# [doc = "`.ctor(crate::app::helpitembase::HelpItemBase)` — overload selector"] pub fn new (item : crate :: app :: helpitembase :: HelpItemBase) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HelpManager_Item) , :: core :: stringify ! (new) ,)) ; < Self as IHelpManager_ItemMethods > :: ctor (this , item) ; this }
 }
 
 #[cfg(feature = "app-helpmanager")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{
-        HelpManager, HelpManager_HelpItemType, HelpManager_Item, HelpManager_Item_Dir, HelpManager_SituationType, IHelpManager, IHelpManagerMethods,
-        IHelpManager_Item, IHelpManager_ItemMethods,
-    };
-    #[cfg(feature = "app-singletonmonobehaviour_1")]
-    pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1Methods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1,
-        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::HelpManager;
+    pub use super::IHelpManager;
+    pub use super::IHelpManagerMethods;
+    pub use super::HelpManager_Item;
+    pub use super::IHelpManager_Item;
+    pub use super::IHelpManager_ItemMethods;
+    pub use super::HelpManager_HelpItemType;
+    pub use super::HelpManager_Item_Dir;
+    pub use super::HelpManager_SituationType;
+    pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "app-singletonmonobehaviour_1")] pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1Methods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

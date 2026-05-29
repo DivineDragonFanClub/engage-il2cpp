@@ -2,22 +2,18 @@
 
 #[cfg(feature = "app-nexintegersettings-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexintegersettings/NexIntegerSettings.md"))]
-    #[::unity2::class(namespace = "App", name = "NexIntegerSettings")]
-    #[parent(crate::system::object::Object)]
-    pub struct NexIntegerSettings {
-        #[static_field]
-        #[rename(name = "DefaultIndex")]
-        pub default_index: u32,
-        #[static_field]
-        #[rename(name = "DailyTicketCountKey")]
-        pub daily_ticket_count_key: u16,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexintegersettings/NexIntegerSettings.md"))] # [:: unity2 :: class (namespace = "App" , name = "NexIntegerSettings")] # [parent (crate :: system :: object :: Object)] pub struct NexIntegerSettings {
+# [static_field] # [rename (name = "DefaultIndex")] pub default_index : u32 ,
+# [static_field] # [rename (name = "DailyTicketCountKey")] pub daily_ticket_count_key : u16 ,
+}
+
 }
 
 #[cfg(feature = "app-nexintegersettings-types")]
@@ -26,8 +22,8 @@ pub use __types::*;
 #[cfg(feature = "app-nexintegersettings")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{INexIntegerSettings, NexIntegerSettings};
+    pub use super::NexIntegerSettings;
+    pub use super::INexIntegerSettings;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

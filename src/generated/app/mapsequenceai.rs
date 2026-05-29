@@ -2,1213 +2,153 @@
 
 #[cfg(feature = "app-mapsequenceai-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::{
-            procinst::{IProcInst, ProcInst},
-            singletonprocinst_1::{ISingletonProcInst_1, SingletonProcInst_1},
-        },
-        system::{
-            object::{IObject, Object},
-            r#enum::{Enum, IEnum},
-            valuetype::{IValueType, ValueType},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequenceai/MapSequenceAI.md"))]
-    #[::unity2::class(namespace = "App", name = "MapSequenceAI")]
-    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: mapsequenceai :: MapSequenceAI >)]
-    pub struct MapSequenceAI {
-        #[static_field]
-        #[rename(name = "s_AiThread")]
-        pub s_ai_thread: crate::app::mapaithread::MapAiThread,
-        #[offset(116)]
-        #[rename(name = "m_LastMindX")]
-        pub m_last_mind_x: i32,
-        #[offset(120)]
-        #[rename(name = "m_LastMindZ")]
-        pub m_last_mind_z: i32,
-        #[offset(124)]
-        #[rename(name = "m_IsOrderUnitEngageOrGodChange")]
-        pub m_is_order_unit_engage_or_god_change: bool,
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: procinst :: { IProcInst , ProcInst }
+ ;
+ use crate :: app :: singletonprocinst_1 :: { ISingletonProcInst_1 , SingletonProcInst_1 }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequenceai/MapSequenceAI_Label.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct MapSequenceAI_Label  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for MapSequenceAI_Label  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapSequenceAI.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequenceai/MapSequenceAI_Label.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct MapSequenceAI_Label {
-        pub value: i32,
+}
+
+
+impl  ::unity2::IlType for MapSequenceAI_Label  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::ClassIdentity for MapSequenceAI_Label {
-        const NAME: &'static str = "MapSequenceAI.Label";
-        const NAMESPACE: &'static str = "App";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  MapSequenceAI_Label  {
+    pub fn think() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl ::unity2::IlType for MapSequenceAI_Label {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+
+    pub fn mind() -> Self {
+        Self { value: 1 }
+
     }
 
-    impl MapSequenceAI_Label {
-        pub fn think() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn mind() -> Self {
-            Self { value: 1 }
-        }
+    pub fn engage_start() -> Self {
+        Self { value: 2 }
 
-        pub fn engage_start() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn engage_link() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn engage_rewarp() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn god_change() -> Self {
-            Self { value: 5 }
-        }
-
-        pub fn entrust_cancel() -> Self {
-            Self { value: 6 }
-        }
-
-        pub fn end() -> Self {
-            Self { value: 7 }
-        }
     }
+
+
+    pub fn engage_link() -> Self {
+        Self { value: 3 }
+
+    }
+
+
+    pub fn engage_rewarp() -> Self {
+        Self { value: 4 }
+
+    }
+
+
+    pub fn god_change() -> Self {
+        Self { value: 5 }
+
+    }
+
+
+    pub fn entrust_cancel() -> Self {
+        Self { value: 6 }
+
+    }
+
+
+    pub fn end() -> Self {
+        Self { value: 7 }
+
+    }
+
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequenceai/MapSequenceAI.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapSequenceAI")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: mapsequenceai :: MapSequenceAI >)] pub struct MapSequenceAI {
+# [static_field] # [rename (name = "s_AiThread")] pub s_ai_thread : crate :: app :: mapaithread :: MapAiThread ,
+# [offset (116)] # [rename (name = "m_LastMindX")] pub m_last_mind_x : i32 ,
+# [offset (120)] # [rename (name = "m_LastMindZ")] pub m_last_mind_z : i32 ,
+# [offset (124)] # [rename (name = "m_IsOrderUnitEngageOrGodChange")] pub m_is_order_unit_engage_or_god_change : bool ,
+}
+
 }
 
 #[cfg(feature = "app-mapsequenceai-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-mapsequenceai")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapSequenceAI_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_jump_for_remove {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceAI as ::unity2::ClassIdentity>::class(),
-                "JumpForRemove",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceAI as ::unity2::ClassIdentity>::NAME,
-                        "JumpForRemove",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn jump_for_remove(this: MapSequenceAI, unit: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapSequenceAI, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_jump_for_remove::get_method_info().method_ptr);
-        inner(this, unit, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_jump_for_remagic {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceAI as ::unity2::ClassIdentity>::class(),
-                "JumpForRemagic",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceAI as ::unity2::ClassIdentity>::NAME,
-                        "JumpForRemagic",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn jump_for_remagic(this: MapSequenceAI, unit: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapSequenceAI, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_jump_for_remagic::get_method_info().method_ptr);
-        inner(this, unit, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_jump_for_rerewarp {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceAI as ::unity2::ClassIdentity>::class(),
-                "JumpForRerewarp",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceAI as ::unity2::ClassIdentity>::NAME,
-                        "JumpForRerewarp",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn jump_for_rerewarp(this: MapSequenceAI, unit: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapSequenceAI, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_jump_for_rerewarp::get_method_info().method_ptr);
-        inner(this, unit, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<MapSequenceAI as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceAI as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: MapSequenceAI, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapSequenceAI, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_setup {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<MapSequenceAI as ::unity2::ClassIdentity>::class(), "Setup", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceAI as ::unity2::ClassIdentity>::NAME,
-                        "Setup",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn setup(this: MapSequenceAI, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapSequenceAI, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_setup::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cleanup {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceAI as ::unity2::ClassIdentity>::class(),
-                "Cleanup",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceAI as ::unity2::ClassIdentity>::NAME,
-                        "Cleanup",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cleanup(this: MapSequenceAI, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapSequenceAI, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_cleanup::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_persistent {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceAI as ::unity2::ClassIdentity>::class(),
-                "OnPersistent",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceAI as ::unity2::ClassIdentity>::NAME,
-                        "OnPersistent",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_persistent(this: MapSequenceAI, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapSequenceAI, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_persistent::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_think {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<MapSequenceAI as ::unity2::ClassIdentity>::class(), "Think", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceAI as ::unity2::ClassIdentity>::NAME,
-                        "Think",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn think(this: MapSequenceAI, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapSequenceAI, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_think::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_wait {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<MapSequenceAI as ::unity2::ClassIdentity>::class(), "Wait", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceAI as ::unity2::ClassIdentity>::NAME,
-                        "Wait",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn wait(this: MapSequenceAI, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(MapSequenceAI, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_wait::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_focus {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<MapSequenceAI as ::unity2::ClassIdentity>::class(), "Focus", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceAI as ::unity2::ClassIdentity>::NAME,
-                        "Focus",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn focus(this: MapSequenceAI, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapSequenceAI, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_focus::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_pickup_event {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceAI as ::unity2::ClassIdentity>::class(),
-                "PickupEvent",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceAI as ::unity2::ClassIdentity>::NAME,
-                        "PickupEvent",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn pickup_event(this: MapSequenceAI, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapSequenceAI, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_pickup_event::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_pre_mind_branch {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceAI as ::unity2::ClassIdentity>::class(),
-                "PreMindBranch",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceAI as ::unity2::ClassIdentity>::NAME,
-                        "PreMindBranch",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn pre_mind_branch(this: MapSequenceAI, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapSequenceAI, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_pre_mind_branch::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_mind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<MapSequenceAI as ::unity2::ClassIdentity>::class(), "Mind", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceAI as ::unity2::ClassIdentity>::NAME,
-                        "Mind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn mind(this: MapSequenceAI, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapSequenceAI, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_mind::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_game_end_branch {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceAI as ::unity2::ClassIdentity>::class(),
-                "GameEndBranch",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceAI as ::unity2::ClassIdentity>::NAME,
-                        "GameEndBranch",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn game_end_branch(this: MapSequenceAI, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapSequenceAI, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_game_end_branch::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_fixed {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<MapSequenceAI as ::unity2::ClassIdentity>::class(), "Fixed", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceAI as ::unity2::ClassIdentity>::NAME,
-                        "Fixed",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn fixed(this: MapSequenceAI, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapSequenceAI, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_fixed::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_skipped_camera {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceAI as ::unity2::ClassIdentity>::class(),
-                "SetSkippedCamera",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceAI as ::unity2::ClassIdentity>::NAME,
-                        "SetSkippedCamera",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_skipped_camera(this: MapSequenceAI, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapSequenceAI, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_skipped_camera::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_post_engage {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceAI as ::unity2::ClassIdentity>::class(),
-                "PostEngage",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceAI as ::unity2::ClassIdentity>::NAME,
-                        "PostEngage",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn post_engage(this: MapSequenceAI, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapSequenceAI, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_post_engage::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_prepare_engage_rewarp {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceAI as ::unity2::ClassIdentity>::class(),
-                "PrepareEngageRewarp",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceAI as ::unity2::ClassIdentity>::NAME,
-                        "PrepareEngageRewarp",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn prepare_engage_rewarp(this: MapSequenceAI, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapSequenceAI, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_prepare_engage_rewarp::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_post_god_change {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceAI as ::unity2::ClassIdentity>::class(),
-                "PostGodChange",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceAI as ::unity2::ClassIdentity>::NAME,
-                        "PostGodChange",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn post_god_change(this: MapSequenceAI, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapSequenceAI, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_post_god_change::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_check_entrust_cancel {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceAI as ::unity2::ClassIdentity>::class(),
-                "CheckEntrustCancel",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceAI as ::unity2::ClassIdentity>::NAME,
-                        "CheckEntrustCancel",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn check_entrust_cancel(this: MapSequenceAI, think: bool, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(MapSequenceAI, bool, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_check_entrust_cancel::get_method_info().method_ptr);
-        inner(this, think, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_entrust_cancel {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceAI as ::unity2::ClassIdentity>::class(),
-                "EntrustCancel",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceAI as ::unity2::ClassIdentity>::NAME,
-                        "EntrustCancel",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn entrust_cancel(this: MapSequenceAI, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapSequenceAI, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_entrust_cancel::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_history_pickup {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceAI as ::unity2::ClassIdentity>::class(),
-                "HistoryPickup",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceAI as ::unity2::ClassIdentity>::NAME,
-                        "HistoryPickup",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn history_pickup(this: MapSequenceAI, unit: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapSequenceAI, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_history_pickup::get_method_info().method_ptr);
-        inner(this, unit, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_equip_short_after_long_range {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceAI as ::unity2::ClassIdentity>::class(),
-                "EquipShortAfterLongRange",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceAI as ::unity2::ClassIdentity>::NAME,
-                        "EquipShortAfterLongRange",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn equip_short_after_long_range(this: MapSequenceAI, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapSequenceAI, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_equip_short_after_long_range::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_skip_trigger {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceAI as ::unity2::ClassIdentity>::class(),
-                "IsSkipTrigger",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceAI as ::unity2::ClassIdentity>::NAME,
-                        "IsSkipTrigger",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_skip_trigger(this: MapSequenceAI, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(MapSequenceAI, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_skip_trigger::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_try_skip {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceAI as ::unity2::ClassIdentity>::class(),
-                "TrySkip",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceAI as ::unity2::ClassIdentity>::NAME,
-                        "TrySkip",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn try_skip(this: MapSequenceAI, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapSequenceAI, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_try_skip::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceAI as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceAI as ::unity2::ClassIdentity>::NAME,
-                        "CreateBind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_bind(super_: crate::app::procinst::ProcInst, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
-        inner(super_, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_initialize_thread {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceAI as ::unity2::ClassIdentity>::class(),
-                "InitializeThread",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceAI as ::unity2::ClassIdentity>::NAME,
-                        "InitializeThread",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn initialize_thread(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_initialize_thread::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_finalize_thread {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceAI as ::unity2::ClassIdentity>::class(),
-                "FinalizeThread",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceAI as ::unity2::ClassIdentity>::NAME,
-                        "FinalizeThread",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn finalize_thread(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_finalize_thread::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MapSequenceAI_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_jump_for_remove { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceAI as :: unity2 :: ClassIdentity > :: class () , "JumpForRemove" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceAI as :: unity2 :: ClassIdentity > :: NAME , "JumpForRemove" , e) , } } } pub unsafe fn jump_for_remove (this : MapSequenceAI , unit : crate :: app :: unit :: Unit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapSequenceAI , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_jump_for_remove :: get_method_info () . method_ptr ,) ; inner (this , unit , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_jump_for_remagic { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceAI as :: unity2 :: ClassIdentity > :: class () , "JumpForRemagic" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceAI as :: unity2 :: ClassIdentity > :: NAME , "JumpForRemagic" , e) , } } } pub unsafe fn jump_for_remagic (this : MapSequenceAI , unit : crate :: app :: unit :: Unit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapSequenceAI , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_jump_for_remagic :: get_method_info () . method_ptr ,) ; inner (this , unit , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_jump_for_rerewarp { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceAI as :: unity2 :: ClassIdentity > :: class () , "JumpForRerewarp" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceAI as :: unity2 :: ClassIdentity > :: NAME , "JumpForRerewarp" , e) , } } } pub unsafe fn jump_for_rerewarp (this : MapSequenceAI , unit : crate :: app :: unit :: Unit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapSequenceAI , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_jump_for_rerewarp :: get_method_info () . method_ptr ,) ; inner (this , unit , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceAI as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceAI as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : MapSequenceAI , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapSequenceAI , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_setup { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceAI as :: unity2 :: ClassIdentity > :: class () , "Setup" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceAI as :: unity2 :: ClassIdentity > :: NAME , "Setup" , e) , } } } pub unsafe fn setup (this : MapSequenceAI , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapSequenceAI , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_setup :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cleanup { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceAI as :: unity2 :: ClassIdentity > :: class () , "Cleanup" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceAI as :: unity2 :: ClassIdentity > :: NAME , "Cleanup" , e) , } } } pub unsafe fn cleanup (this : MapSequenceAI , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapSequenceAI , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cleanup :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_persistent { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceAI as :: unity2 :: ClassIdentity > :: class () , "OnPersistent" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceAI as :: unity2 :: ClassIdentity > :: NAME , "OnPersistent" , e) , } } } pub unsafe fn on_persistent (this : MapSequenceAI , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapSequenceAI , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_persistent :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_think { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceAI as :: unity2 :: ClassIdentity > :: class () , "Think" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceAI as :: unity2 :: ClassIdentity > :: NAME , "Think" , e) , } } } pub unsafe fn think (this : MapSequenceAI , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapSequenceAI , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_think :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_wait { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceAI as :: unity2 :: ClassIdentity > :: class () , "Wait" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceAI as :: unity2 :: ClassIdentity > :: NAME , "Wait" , e) , } } } pub unsafe fn wait (this : MapSequenceAI , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (MapSequenceAI , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_wait :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_focus { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceAI as :: unity2 :: ClassIdentity > :: class () , "Focus" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceAI as :: unity2 :: ClassIdentity > :: NAME , "Focus" , e) , } } } pub unsafe fn focus (this : MapSequenceAI , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapSequenceAI , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_focus :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_pickup_event { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceAI as :: unity2 :: ClassIdentity > :: class () , "PickupEvent" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceAI as :: unity2 :: ClassIdentity > :: NAME , "PickupEvent" , e) , } } } pub unsafe fn pickup_event (this : MapSequenceAI , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapSequenceAI , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_pickup_event :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_pre_mind_branch { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceAI as :: unity2 :: ClassIdentity > :: class () , "PreMindBranch" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceAI as :: unity2 :: ClassIdentity > :: NAME , "PreMindBranch" , e) , } } } pub unsafe fn pre_mind_branch (this : MapSequenceAI , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapSequenceAI , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_pre_mind_branch :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_mind { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceAI as :: unity2 :: ClassIdentity > :: class () , "Mind" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceAI as :: unity2 :: ClassIdentity > :: NAME , "Mind" , e) , } } } pub unsafe fn mind (this : MapSequenceAI , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapSequenceAI , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_mind :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_game_end_branch { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceAI as :: unity2 :: ClassIdentity > :: class () , "GameEndBranch" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceAI as :: unity2 :: ClassIdentity > :: NAME , "GameEndBranch" , e) , } } } pub unsafe fn game_end_branch (this : MapSequenceAI , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapSequenceAI , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_game_end_branch :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_fixed { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceAI as :: unity2 :: ClassIdentity > :: class () , "Fixed" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceAI as :: unity2 :: ClassIdentity > :: NAME , "Fixed" , e) , } } } pub unsafe fn fixed (this : MapSequenceAI , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapSequenceAI , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_fixed :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_skipped_camera { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceAI as :: unity2 :: ClassIdentity > :: class () , "SetSkippedCamera" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceAI as :: unity2 :: ClassIdentity > :: NAME , "SetSkippedCamera" , e) , } } } pub unsafe fn set_skipped_camera (this : MapSequenceAI , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapSequenceAI , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_skipped_camera :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_post_engage { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceAI as :: unity2 :: ClassIdentity > :: class () , "PostEngage" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceAI as :: unity2 :: ClassIdentity > :: NAME , "PostEngage" , e) , } } } pub unsafe fn post_engage (this : MapSequenceAI , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapSequenceAI , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_post_engage :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_prepare_engage_rewarp { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceAI as :: unity2 :: ClassIdentity > :: class () , "PrepareEngageRewarp" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceAI as :: unity2 :: ClassIdentity > :: NAME , "PrepareEngageRewarp" , e) , } } } pub unsafe fn prepare_engage_rewarp (this : MapSequenceAI , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapSequenceAI , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_prepare_engage_rewarp :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_post_god_change { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceAI as :: unity2 :: ClassIdentity > :: class () , "PostGodChange" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceAI as :: unity2 :: ClassIdentity > :: NAME , "PostGodChange" , e) , } } } pub unsafe fn post_god_change (this : MapSequenceAI , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapSequenceAI , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_post_god_change :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_check_entrust_cancel { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceAI as :: unity2 :: ClassIdentity > :: class () , "CheckEntrustCancel" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceAI as :: unity2 :: ClassIdentity > :: NAME , "CheckEntrustCancel" , e) , } } } pub unsafe fn check_entrust_cancel (this : MapSequenceAI , think : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (MapSequenceAI , bool , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_check_entrust_cancel :: get_method_info () . method_ptr ,) ; inner (this , think , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_entrust_cancel { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceAI as :: unity2 :: ClassIdentity > :: class () , "EntrustCancel" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceAI as :: unity2 :: ClassIdentity > :: NAME , "EntrustCancel" , e) , } } } pub unsafe fn entrust_cancel (this : MapSequenceAI , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapSequenceAI , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_entrust_cancel :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_history_pickup { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceAI as :: unity2 :: ClassIdentity > :: class () , "HistoryPickup" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceAI as :: unity2 :: ClassIdentity > :: NAME , "HistoryPickup" , e) , } } } pub unsafe fn history_pickup (this : MapSequenceAI , unit : crate :: app :: unit :: Unit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapSequenceAI , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_history_pickup :: get_method_info () . method_ptr ,) ; inner (this , unit , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_equip_short_after_long_range { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceAI as :: unity2 :: ClassIdentity > :: class () , "EquipShortAfterLongRange" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceAI as :: unity2 :: ClassIdentity > :: NAME , "EquipShortAfterLongRange" , e) , } } } pub unsafe fn equip_short_after_long_range (this : MapSequenceAI , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapSequenceAI , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_equip_short_after_long_range :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_skip_trigger { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceAI as :: unity2 :: ClassIdentity > :: class () , "IsSkipTrigger" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceAI as :: unity2 :: ClassIdentity > :: NAME , "IsSkipTrigger" , e) , } } } pub unsafe fn is_skip_trigger (this : MapSequenceAI , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (MapSequenceAI , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_skip_trigger :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_try_skip { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceAI as :: unity2 :: ClassIdentity > :: class () , "TrySkip" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceAI as :: unity2 :: ClassIdentity > :: NAME , "TrySkip" , e) , } } } pub unsafe fn try_skip (this : MapSequenceAI , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapSequenceAI , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_try_skip :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_bind { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceAI as :: unity2 :: ClassIdentity > :: class () , "CreateBind" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceAI as :: unity2 :: ClassIdentity > :: NAME , "CreateBind" , e) , } } } pub unsafe fn create_bind (super_ : crate :: app :: procinst :: ProcInst , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create_bind :: get_method_info () . method_ptr ,) ; inner (super_ , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_initialize_thread { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceAI as :: unity2 :: ClassIdentity > :: class () , "InitializeThread" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceAI as :: unity2 :: ClassIdentity > :: NAME , "InitializeThread" , e) , } } } pub unsafe fn initialize_thread (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_initialize_thread :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_finalize_thread { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceAI as :: unity2 :: ClassIdentity > :: class () , "FinalizeThread" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceAI as :: unity2 :: ClassIdentity > :: NAME , "FinalizeThread" , e) , } } } pub unsafe fn finalize_thread (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_finalize_thread :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
+
+#[cfg(feature = "app-mapsequenceai")]
+impl MapSequenceAI { # [doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { __MapSequenceAI_unity2_raw :: create_bind (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } # [doc = "`InitializeThread()` overload"] pub fn initialize_thread () -> () { unsafe { __MapSequenceAI_unity2_raw :: initialize_thread (:: core :: option :: Option :: None) } } # [doc = "`FinalizeThread()` overload"] pub fn finalize_thread () -> () { unsafe { __MapSequenceAI_unity2_raw :: finalize_thread (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-mapsequenceai")]
+pub trait IMapSequenceAIMethods : IMapSequenceAI { # [doc = "`JumpForRemove(crate::app::unit::Unit)` overload"] fn jump_for_remove (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < MapSequenceAI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceAI_unity2_raw :: jump_for_remove (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } # [doc = "`JumpForRemagic(crate::app::unit::Unit)` overload"] fn jump_for_remagic (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < MapSequenceAI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceAI_unity2_raw :: jump_for_remagic (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } # [doc = "`JumpForRerewarp(crate::app::unit::Unit)` overload"] fn jump_for_rerewarp (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < MapSequenceAI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceAI_unity2_raw :: jump_for_rerewarp (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapSequenceAI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceAI_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Setup()` overload"] fn setup (self ,) -> () { unsafe { let __receiver = < MapSequenceAI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceAI_unity2_raw :: setup (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Cleanup()` overload"] fn cleanup (self ,) -> () { unsafe { let __receiver = < MapSequenceAI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceAI_unity2_raw :: cleanup (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnPersistent()` overload"] fn on_persistent (self ,) -> () { unsafe { let __receiver = < MapSequenceAI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceAI_unity2_raw :: on_persistent (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Think()` overload"] fn think (self ,) -> () { unsafe { let __receiver = < MapSequenceAI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceAI_unity2_raw :: think (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Wait()` overload"] fn wait (self ,) -> bool { unsafe { let __receiver = < MapSequenceAI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceAI_unity2_raw :: wait (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Focus()` overload"] fn focus (self ,) -> () { unsafe { let __receiver = < MapSequenceAI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceAI_unity2_raw :: focus (__receiver , :: core :: option :: Option :: None) } } # [doc = "`PickupEvent()` overload"] fn pickup_event (self ,) -> () { unsafe { let __receiver = < MapSequenceAI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceAI_unity2_raw :: pickup_event (__receiver , :: core :: option :: Option :: None) } } # [doc = "`PreMindBranch()` overload"] fn pre_mind_branch (self ,) -> () { unsafe { let __receiver = < MapSequenceAI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceAI_unity2_raw :: pre_mind_branch (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Mind()` overload"] fn mind (self ,) -> () { unsafe { let __receiver = < MapSequenceAI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceAI_unity2_raw :: mind (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GameEndBranch()` overload"] fn game_end_branch (self ,) -> () { unsafe { let __receiver = < MapSequenceAI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceAI_unity2_raw :: game_end_branch (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Fixed()` overload"] fn fixed (self ,) -> () { unsafe { let __receiver = < MapSequenceAI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceAI_unity2_raw :: fixed (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetSkippedCamera()` overload"] fn set_skipped_camera (self ,) -> () { unsafe { let __receiver = < MapSequenceAI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceAI_unity2_raw :: set_skipped_camera (__receiver , :: core :: option :: Option :: None) } } # [doc = "`PostEngage()` overload"] fn post_engage (self ,) -> () { unsafe { let __receiver = < MapSequenceAI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceAI_unity2_raw :: post_engage (__receiver , :: core :: option :: Option :: None) } } # [doc = "`PrepareEngageRewarp()` overload"] fn prepare_engage_rewarp (self ,) -> () { unsafe { let __receiver = < MapSequenceAI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceAI_unity2_raw :: prepare_engage_rewarp (__receiver , :: core :: option :: Option :: None) } } # [doc = "`PostGodChange()` overload"] fn post_god_change (self ,) -> () { unsafe { let __receiver = < MapSequenceAI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceAI_unity2_raw :: post_god_change (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CheckEntrustCancel(bool)` overload"] fn check_entrust_cancel (self , think : impl :: core :: convert :: Into < bool >) -> bool { unsafe { let __receiver = < MapSequenceAI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceAI_unity2_raw :: check_entrust_cancel (__receiver , :: core :: convert :: Into :: into (think) , :: core :: option :: Option :: None) } } # [doc = "`EntrustCancel()` overload"] fn entrust_cancel (self ,) -> () { unsafe { let __receiver = < MapSequenceAI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceAI_unity2_raw :: entrust_cancel (__receiver , :: core :: option :: Option :: None) } } # [doc = "`HistoryPickup(crate::app::unit::Unit)` overload"] fn history_pickup (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < MapSequenceAI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceAI_unity2_raw :: history_pickup (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } # [doc = "`EquipShortAfterLongRange()` overload"] fn equip_short_after_long_range (self ,) -> () { unsafe { let __receiver = < MapSequenceAI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceAI_unity2_raw :: equip_short_after_long_range (__receiver , :: core :: option :: Option :: None) } } # [doc = "`IsSkipTrigger()` overload"] fn is_skip_trigger (self ,) -> bool { unsafe { let __receiver = < MapSequenceAI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceAI_unity2_raw :: is_skip_trigger (__receiver , :: core :: option :: Option :: None) } } # [doc = "`TrySkip()` overload"] fn try_skip (self ,) -> () { unsafe { let __receiver = < MapSequenceAI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceAI_unity2_raw :: try_skip (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-mapsequenceai")]
+impl < __T : IMapSequenceAI > IMapSequenceAIMethods for __T { }
+
+#[cfg(feature = "app-mapsequenceai")]
+impl MapSequenceAI { pub fn jump_for_remove_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceAI_unity2_raw :: __lookup_jump_for_remove :: get_method_info () } pub fn jump_for_remagic_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceAI_unity2_raw :: __lookup_jump_for_remagic :: get_method_info () } pub fn jump_for_rerewarp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceAI_unity2_raw :: __lookup_jump_for_rerewarp :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceAI_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn setup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceAI_unity2_raw :: __lookup_setup :: get_method_info () } pub fn cleanup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceAI_unity2_raw :: __lookup_cleanup :: get_method_info () } pub fn on_persistent_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceAI_unity2_raw :: __lookup_on_persistent :: get_method_info () } pub fn think_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceAI_unity2_raw :: __lookup_think :: get_method_info () } pub fn wait_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceAI_unity2_raw :: __lookup_wait :: get_method_info () } pub fn focus_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceAI_unity2_raw :: __lookup_focus :: get_method_info () } pub fn pickup_event_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceAI_unity2_raw :: __lookup_pickup_event :: get_method_info () } pub fn pre_mind_branch_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceAI_unity2_raw :: __lookup_pre_mind_branch :: get_method_info () } pub fn mind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceAI_unity2_raw :: __lookup_mind :: get_method_info () } pub fn game_end_branch_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceAI_unity2_raw :: __lookup_game_end_branch :: get_method_info () } pub fn fixed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceAI_unity2_raw :: __lookup_fixed :: get_method_info () } pub fn set_skipped_camera_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceAI_unity2_raw :: __lookup_set_skipped_camera :: get_method_info () } pub fn post_engage_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceAI_unity2_raw :: __lookup_post_engage :: get_method_info () } pub fn prepare_engage_rewarp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceAI_unity2_raw :: __lookup_prepare_engage_rewarp :: get_method_info () } pub fn post_god_change_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceAI_unity2_raw :: __lookup_post_god_change :: get_method_info () } pub fn check_entrust_cancel_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceAI_unity2_raw :: __lookup_check_entrust_cancel :: get_method_info () } pub fn entrust_cancel_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceAI_unity2_raw :: __lookup_entrust_cancel :: get_method_info () } pub fn history_pickup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceAI_unity2_raw :: __lookup_history_pickup :: get_method_info () } pub fn equip_short_after_long_range_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceAI_unity2_raw :: __lookup_equip_short_after_long_range :: get_method_info () } pub fn is_skip_trigger_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceAI_unity2_raw :: __lookup_is_skip_trigger :: get_method_info () } pub fn try_skip_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceAI_unity2_raw :: __lookup_try_skip :: get_method_info () } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceAI_unity2_raw :: __lookup_create_bind :: get_method_info () } pub fn initialize_thread_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceAI_unity2_raw :: __lookup_initialize_thread :: get_method_info () } pub fn finalize_thread_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceAI_unity2_raw :: __lookup_finalize_thread :: get_method_info () } }
 
 #[cfg(feature = "app-mapsequenceai")]
 impl MapSequenceAI {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
-    pub fn create_bind(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
-        unsafe { __MapSequenceAI_unity2_raw::create_bind(::core::convert::Into::into(super_), ::core::option::Option::None) }
-    }
-
-    #[doc = "`InitializeThread()` overload"]
-    pub fn initialize_thread() -> () {
-        unsafe { __MapSequenceAI_unity2_raw::initialize_thread(::core::option::Option::None) }
-    }
-
-    #[doc = "`FinalizeThread()` overload"]
-    pub fn finalize_thread() -> () {
-        unsafe { __MapSequenceAI_unity2_raw::finalize_thread(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-mapsequenceai")]
-pub trait IMapSequenceAIMethods: IMapSequenceAI {
-    #[doc = "`JumpForRemove(crate::app::unit::Unit)` overload"]
-    fn jump_for_remove(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
-        unsafe {
-            let __receiver = <MapSequenceAI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSequenceAI_unity2_raw::jump_for_remove(__receiver, ::core::convert::Into::into(unit), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`JumpForRemagic(crate::app::unit::Unit)` overload"]
-    fn jump_for_remagic(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
-        unsafe {
-            let __receiver = <MapSequenceAI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSequenceAI_unity2_raw::jump_for_remagic(__receiver, ::core::convert::Into::into(unit), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`JumpForRerewarp(crate::app::unit::Unit)` overload"]
-    fn jump_for_rerewarp(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
-        unsafe {
-            let __receiver = <MapSequenceAI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSequenceAI_unity2_raw::jump_for_rerewarp(__receiver, ::core::convert::Into::into(unit), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <MapSequenceAI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSequenceAI_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Setup()` overload"]
-    fn setup(self) -> () {
-        unsafe {
-            let __receiver = <MapSequenceAI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSequenceAI_unity2_raw::setup(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Cleanup()` overload"]
-    fn cleanup(self) -> () {
-        unsafe {
-            let __receiver = <MapSequenceAI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSequenceAI_unity2_raw::cleanup(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnPersistent()` overload"]
-    fn on_persistent(self) -> () {
-        unsafe {
-            let __receiver = <MapSequenceAI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSequenceAI_unity2_raw::on_persistent(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Think()` overload"]
-    fn think(self) -> () {
-        unsafe {
-            let __receiver = <MapSequenceAI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSequenceAI_unity2_raw::think(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Wait()` overload"]
-    fn wait(self) -> bool {
-        unsafe {
-            let __receiver = <MapSequenceAI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSequenceAI_unity2_raw::wait(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Focus()` overload"]
-    fn focus(self) -> () {
-        unsafe {
-            let __receiver = <MapSequenceAI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSequenceAI_unity2_raw::focus(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`PickupEvent()` overload"]
-    fn pickup_event(self) -> () {
-        unsafe {
-            let __receiver = <MapSequenceAI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSequenceAI_unity2_raw::pickup_event(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`PreMindBranch()` overload"]
-    fn pre_mind_branch(self) -> () {
-        unsafe {
-            let __receiver = <MapSequenceAI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSequenceAI_unity2_raw::pre_mind_branch(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Mind()` overload"]
-    fn mind(self) -> () {
-        unsafe {
-            let __receiver = <MapSequenceAI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSequenceAI_unity2_raw::mind(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GameEndBranch()` overload"]
-    fn game_end_branch(self) -> () {
-        unsafe {
-            let __receiver = <MapSequenceAI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSequenceAI_unity2_raw::game_end_branch(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Fixed()` overload"]
-    fn fixed(self) -> () {
-        unsafe {
-            let __receiver = <MapSequenceAI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSequenceAI_unity2_raw::fixed(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetSkippedCamera()` overload"]
-    fn set_skipped_camera(self) -> () {
-        unsafe {
-            let __receiver = <MapSequenceAI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSequenceAI_unity2_raw::set_skipped_camera(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`PostEngage()` overload"]
-    fn post_engage(self) -> () {
-        unsafe {
-            let __receiver = <MapSequenceAI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSequenceAI_unity2_raw::post_engage(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`PrepareEngageRewarp()` overload"]
-    fn prepare_engage_rewarp(self) -> () {
-        unsafe {
-            let __receiver = <MapSequenceAI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSequenceAI_unity2_raw::prepare_engage_rewarp(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`PostGodChange()` overload"]
-    fn post_god_change(self) -> () {
-        unsafe {
-            let __receiver = <MapSequenceAI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSequenceAI_unity2_raw::post_god_change(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CheckEntrustCancel(bool)` overload"]
-    fn check_entrust_cancel(self, think: impl ::core::convert::Into<bool>) -> bool {
-        unsafe {
-            let __receiver = <MapSequenceAI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSequenceAI_unity2_raw::check_entrust_cancel(__receiver, ::core::convert::Into::into(think), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`EntrustCancel()` overload"]
-    fn entrust_cancel(self) -> () {
-        unsafe {
-            let __receiver = <MapSequenceAI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSequenceAI_unity2_raw::entrust_cancel(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`HistoryPickup(crate::app::unit::Unit)` overload"]
-    fn history_pickup(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
-        unsafe {
-            let __receiver = <MapSequenceAI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSequenceAI_unity2_raw::history_pickup(__receiver, ::core::convert::Into::into(unit), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`EquipShortAfterLongRange()` overload"]
-    fn equip_short_after_long_range(self) -> () {
-        unsafe {
-            let __receiver = <MapSequenceAI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSequenceAI_unity2_raw::equip_short_after_long_range(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsSkipTrigger()` overload"]
-    fn is_skip_trigger(self) -> bool {
-        unsafe {
-            let __receiver = <MapSequenceAI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSequenceAI_unity2_raw::is_skip_trigger(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`TrySkip()` overload"]
-    fn try_skip(self) -> () {
-        unsafe {
-            let __receiver = <MapSequenceAI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSequenceAI_unity2_raw::try_skip(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-mapsequenceai")]
-impl<__T: IMapSequenceAI> IMapSequenceAIMethods for __T {}
-
-#[cfg(feature = "app-mapsequenceai")]
-impl MapSequenceAI {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(MapSequenceAI), ::core::stringify!(new),));
-        <Self as IMapSequenceAIMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapSequenceAI) , :: core :: stringify ! (new) ,)) ; < Self as IMapSequenceAIMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-mapsequenceai")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IMapSequenceAI, IMapSequenceAIMethods, MapSequenceAI, MapSequenceAI_Label};
-    #[cfg(feature = "app-procinst")]
-    pub use crate::app::procinst::IProcInstMethods;
-    #[cfg(feature = "app-singletonprocinst_1")]
-    pub use crate::app::singletonprocinst_1::ISingletonProcInst_1Methods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::{
-        app::{procinst::IProcInst, singletonprocinst_1::ISingletonProcInst_1},
-        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
-    };
+    pub use super::MapSequenceAI_Label;
+    pub use super::MapSequenceAI;
+    pub use super::IMapSequenceAI;
+    pub use super::IMapSequenceAIMethods;
+    pub use crate::app::procinst::IProcInst;
+    pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "app-procinst")] pub use crate::app::procinst::IProcInstMethods;
+    #[cfg(feature = "app-singletonprocinst_1")] pub use crate::app::singletonprocinst_1::ISingletonProcInst_1Methods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

@@ -2,517 +2,58 @@
 
 #[cfg(feature = "app-dragonridetargetmanager-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::singletonclass_1::{ISingletonClass_1, SingletonClass_1},
-        system::object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonridetargetmanager/DragonRideTargetManager.md"))]
-    #[::unity2::class(namespace = "App", name = "DragonRideTargetManager")]
-    # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: dragonridetargetmanager :: DragonRideTargetManager >)]
-    pub struct DragonRideTargetManager {
-        #[offset(28)]
-        #[rename(name = "MaxArrayCount")]
-        pub max_array_count: i32,
-        #[offset(32)]
-        #[rename(name = "m_Prefab")]
-        pub m_prefab: crate::app::resourcegameobject::ResourceGameObject,
-        #[offset(40)]
-        #[rename(name = "m_ReserveTargetParent")]
-        pub m_reserve_target_parent: crate::unity_engine::gameobject::GameObject,
-        #[offset(48)]
-        #[rename(name = "m_ReturnTargetCount")]
-        pub m_return_target_count: i32,
-        #[offset(56)]
-        #[rename(name = "m_ReservePopupParent")]
-        pub m_reserve_popup_parent: crate::unity_engine::gameobject::GameObject,
-        #[offset(64)]
-        #[rename(name = "m_ReturnPopupCount")]
-        pub m_return_popup_count: i32,
-        #[offset(72)]
-        #[rename(name = "m_TargetArray")]
-        pub m_target_array: ::unity2::Array<crate::unity_engine::gameobject::GameObject>,
-        #[offset(80)]
-        #[rename(name = "m_PopupArray")]
-        pub m_popup_array: ::unity2::Array<crate::unity_engine::gameobject::GameObject>,
-        #[offset(88)]
-        #[rename(name = "m_ObjUseCount")]
-        pub m_obj_use_count: i32,
-        #[offset(92)]
-        #[rename(name = "m_PopupUseCount")]
-        pub m_popup_use_count: i32,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: singletonclass_1 :: { ISingletonClass_1 , SingletonClass_1 }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonridetargetmanager/DragonRideTargetManager.md"))] # [:: unity2 :: class (namespace = "App" , name = "DragonRideTargetManager")] # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: dragonridetargetmanager :: DragonRideTargetManager >)] pub struct DragonRideTargetManager {
+# [offset (28)] # [rename (name = "MaxArrayCount")] pub max_array_count : i32 ,
+# [offset (32)] # [rename (name = "m_Prefab")] pub m_prefab : crate :: app :: resourcegameobject :: ResourceGameObject ,
+# [offset (40)] # [rename (name = "m_ReserveTargetParent")] pub m_reserve_target_parent : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (48)] # [rename (name = "m_ReturnTargetCount")] pub m_return_target_count : i32 ,
+# [offset (56)] # [rename (name = "m_ReservePopupParent")] pub m_reserve_popup_parent : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (64)] # [rename (name = "m_ReturnPopupCount")] pub m_return_popup_count : i32 ,
+# [offset (72)] # [rename (name = "m_TargetArray")] pub m_target_array : :: unity2 :: Array < crate :: unity_engine :: gameobject :: GameObject > ,
+# [offset (80)] # [rename (name = "m_PopupArray")] pub m_popup_array : :: unity2 :: Array < crate :: unity_engine :: gameobject :: GameObject > ,
+# [offset (88)] # [rename (name = "m_ObjUseCount")] pub m_obj_use_count : i32 ,
+# [offset (92)] # [rename (name = "m_PopupUseCount")] pub m_popup_use_count : i32 ,
+}
+
 }
 
 #[cfg(feature = "app-dragonridetargetmanager-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-dragonridetargetmanager")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __DragonRideTargetManager_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DragonRideTargetManager as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DragonRideTargetManager as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: DragonRideTargetManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DragonRideTargetManager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_destruct {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DragonRideTargetManager as ::unity2::ClassIdentity>::class(),
-                "Destruct",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DragonRideTargetManager as ::unity2::ClassIdentity>::NAME,
-                        "Destruct",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn destruct(this: DragonRideTargetManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DragonRideTargetManager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_destruct::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_tick {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DragonRideTargetManager as ::unity2::ClassIdentity>::class(),
-                "Tick",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DragonRideTargetManager as ::unity2::ClassIdentity>::NAME,
-                        "Tick",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn tick(this: DragonRideTargetManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DragonRideTargetManager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_tick::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_max_count {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DragonRideTargetManager as ::unity2::ClassIdentity>::class(),
-                "GetMaxCount",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DragonRideTargetManager as ::unity2::ClassIdentity>::NAME,
-                        "GetMaxCount",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_max_count(this: DragonRideTargetManager, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(DragonRideTargetManager, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_max_count::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_rental_target {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DragonRideTargetManager as ::unity2::ClassIdentity>::class(),
-                "RentalTarget",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DragonRideTargetManager as ::unity2::ClassIdentity>::NAME,
-                        "RentalTarget",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn rental_target(
-        this: DragonRideTargetManager,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::gameobject::GameObject {
-        let inner: extern "C" fn(DragonRideTargetManager, ::unity2::OptionalMethod) -> crate::unity_engine::gameobject::GameObject =
-            ::core::mem::transmute(__lookup_rental_target::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_rental_popup {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DragonRideTargetManager as ::unity2::ClassIdentity>::class(),
-                "RentalPopup",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DragonRideTargetManager as ::unity2::ClassIdentity>::NAME,
-                        "RentalPopup",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn rental_popup(
-        this: DragonRideTargetManager,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::gameobject::GameObject {
-        let inner: extern "C" fn(DragonRideTargetManager, ::unity2::OptionalMethod) -> crate::unity_engine::gameobject::GameObject =
-            ::core::mem::transmute(__lookup_rental_popup::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_check_reserve_list_condition {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DragonRideTargetManager as ::unity2::ClassIdentity>::class(),
-                "CheckReserveListCondition",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DragonRideTargetManager as ::unity2::ClassIdentity>::NAME,
-                        "CheckReserveListCondition",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn check_reserve_list_condition(this: DragonRideTargetManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DragonRideTargetManager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_check_reserve_list_condition::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_return_reserve_target {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DragonRideTargetManager as ::unity2::ClassIdentity>::class(),
-                "ReturnReserveTarget",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DragonRideTargetManager as ::unity2::ClassIdentity>::NAME,
-                        "ReturnReserveTarget",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn return_reserve_target(
-        this: DragonRideTargetManager,
-        target: crate::unity_engine::gameobject::GameObject,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(DragonRideTargetManager, crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_return_reserve_target::get_method_info().method_ptr);
-        inner(this, target, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_return_reserve_popup {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DragonRideTargetManager as ::unity2::ClassIdentity>::class(),
-                "ReturnReservePopup",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DragonRideTargetManager as ::unity2::ClassIdentity>::NAME,
-                        "ReturnReservePopup",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn return_reserve_popup(
-        this: DragonRideTargetManager,
-        target: crate::unity_engine::gameobject::GameObject,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(DragonRideTargetManager, crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_return_reserve_popup::get_method_info().method_ptr);
-        inner(this, target, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_hide_all_target {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DragonRideTargetManager as ::unity2::ClassIdentity>::class(),
-                "HideAllTarget",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DragonRideTargetManager as ::unity2::ClassIdentity>::NAME,
-                        "HideAllTarget",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn hide_all_target(this: DragonRideTargetManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DragonRideTargetManager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_hide_all_target::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __DragonRideTargetManager_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DragonRideTargetManager as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DragonRideTargetManager as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : DragonRideTargetManager , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DragonRideTargetManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_destruct { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DragonRideTargetManager as :: unity2 :: ClassIdentity > :: class () , "Destruct" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DragonRideTargetManager as :: unity2 :: ClassIdentity > :: NAME , "Destruct" , e) , } } } pub unsafe fn destruct (this : DragonRideTargetManager , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DragonRideTargetManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_destruct :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_tick { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DragonRideTargetManager as :: unity2 :: ClassIdentity > :: class () , "Tick" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DragonRideTargetManager as :: unity2 :: ClassIdentity > :: NAME , "Tick" , e) , } } } pub unsafe fn tick (this : DragonRideTargetManager , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DragonRideTargetManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_tick :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_max_count { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DragonRideTargetManager as :: unity2 :: ClassIdentity > :: class () , "GetMaxCount" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DragonRideTargetManager as :: unity2 :: ClassIdentity > :: NAME , "GetMaxCount" , e) , } } } pub unsafe fn get_max_count (this : DragonRideTargetManager , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (DragonRideTargetManager , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_max_count :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_rental_target { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DragonRideTargetManager as :: unity2 :: ClassIdentity > :: class () , "RentalTarget" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DragonRideTargetManager as :: unity2 :: ClassIdentity > :: NAME , "RentalTarget" , e) , } } } pub unsafe fn rental_target (this : DragonRideTargetManager , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject { let inner : extern "C" fn (DragonRideTargetManager , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute (__lookup_rental_target :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_rental_popup { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DragonRideTargetManager as :: unity2 :: ClassIdentity > :: class () , "RentalPopup" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DragonRideTargetManager as :: unity2 :: ClassIdentity > :: NAME , "RentalPopup" , e) , } } } pub unsafe fn rental_popup (this : DragonRideTargetManager , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject { let inner : extern "C" fn (DragonRideTargetManager , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute (__lookup_rental_popup :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_check_reserve_list_condition { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DragonRideTargetManager as :: unity2 :: ClassIdentity > :: class () , "CheckReserveListCondition" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DragonRideTargetManager as :: unity2 :: ClassIdentity > :: NAME , "CheckReserveListCondition" , e) , } } } pub unsafe fn check_reserve_list_condition (this : DragonRideTargetManager , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DragonRideTargetManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_check_reserve_list_condition :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_return_reserve_target { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: gameobject :: GameObject as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DragonRideTargetManager as :: unity2 :: ClassIdentity > :: class () , "ReturnReserveTarget" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DragonRideTargetManager as :: unity2 :: ClassIdentity > :: NAME , "ReturnReserveTarget" , e) , } } } pub unsafe fn return_reserve_target (this : DragonRideTargetManager , target : crate :: unity_engine :: gameobject :: GameObject , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DragonRideTargetManager , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_return_reserve_target :: get_method_info () . method_ptr ,) ; inner (this , target , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_return_reserve_popup { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: gameobject :: GameObject as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DragonRideTargetManager as :: unity2 :: ClassIdentity > :: class () , "ReturnReservePopup" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DragonRideTargetManager as :: unity2 :: ClassIdentity > :: NAME , "ReturnReservePopup" , e) , } } } pub unsafe fn return_reserve_popup (this : DragonRideTargetManager , target : crate :: unity_engine :: gameobject :: GameObject , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DragonRideTargetManager , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_return_reserve_popup :: get_method_info () . method_ptr ,) ; inner (this , target , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_hide_all_target { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DragonRideTargetManager as :: unity2 :: ClassIdentity > :: class () , "HideAllTarget" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DragonRideTargetManager as :: unity2 :: ClassIdentity > :: NAME , "HideAllTarget" , e) , } } } pub unsafe fn hide_all_target (this : DragonRideTargetManager , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DragonRideTargetManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_hide_all_target :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-dragonridetargetmanager")]
-pub trait IDragonRideTargetManagerMethods: IDragonRideTargetManager {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <DragonRideTargetManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DragonRideTargetManager_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Destruct()` overload"]
-    fn destruct(self) -> () {
-        unsafe {
-            let __receiver =
-                <DragonRideTargetManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DragonRideTargetManager_unity2_raw::destruct(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Tick()` overload"]
-    fn tick(self) -> () {
-        unsafe {
-            let __receiver =
-                <DragonRideTargetManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DragonRideTargetManager_unity2_raw::tick(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetMaxCount()` overload"]
-    fn get_max_count(self) -> i32 {
-        unsafe {
-            let __receiver =
-                <DragonRideTargetManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DragonRideTargetManager_unity2_raw::get_max_count(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`RentalTarget()` overload"]
-    fn rental_target(self) -> crate::unity_engine::gameobject::GameObject {
-        unsafe {
-            let __receiver =
-                <DragonRideTargetManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DragonRideTargetManager_unity2_raw::rental_target(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`RentalPopup()` overload"]
-    fn rental_popup(self) -> crate::unity_engine::gameobject::GameObject {
-        unsafe {
-            let __receiver =
-                <DragonRideTargetManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DragonRideTargetManager_unity2_raw::rental_popup(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CheckReserveListCondition()` overload"]
-    fn check_reserve_list_condition(self) -> () {
-        unsafe {
-            let __receiver =
-                <DragonRideTargetManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DragonRideTargetManager_unity2_raw::check_reserve_list_condition(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ReturnReserveTarget(crate::unity_engine::gameobject::GameObject)` overload"]
-    fn return_reserve_target(self, target: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>) -> () {
-        unsafe {
-            let __receiver =
-                <DragonRideTargetManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DragonRideTargetManager_unity2_raw::return_reserve_target(__receiver, ::core::convert::Into::into(target), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ReturnReservePopup(crate::unity_engine::gameobject::GameObject)` overload"]
-    fn return_reserve_popup(self, target: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>) -> () {
-        unsafe {
-            let __receiver =
-                <DragonRideTargetManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DragonRideTargetManager_unity2_raw::return_reserve_popup(__receiver, ::core::convert::Into::into(target), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`HideAllTarget()` overload"]
-    fn hide_all_target(self) -> () {
-        unsafe {
-            let __receiver =
-                <DragonRideTargetManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DragonRideTargetManager_unity2_raw::hide_all_target(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IDragonRideTargetManagerMethods : IDragonRideTargetManager { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DragonRideTargetManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DragonRideTargetManager_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Destruct()` overload"] fn destruct (self ,) -> () { unsafe { let __receiver = < DragonRideTargetManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DragonRideTargetManager_unity2_raw :: destruct (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Tick()` overload"] fn tick (self ,) -> () { unsafe { let __receiver = < DragonRideTargetManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DragonRideTargetManager_unity2_raw :: tick (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetMaxCount()` overload"] fn get_max_count (self ,) -> i32 { unsafe { let __receiver = < DragonRideTargetManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DragonRideTargetManager_unity2_raw :: get_max_count (__receiver , :: core :: option :: Option :: None) } } # [doc = "`RentalTarget()` overload"] fn rental_target (self ,) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { let __receiver = < DragonRideTargetManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DragonRideTargetManager_unity2_raw :: rental_target (__receiver , :: core :: option :: Option :: None) } } # [doc = "`RentalPopup()` overload"] fn rental_popup (self ,) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { let __receiver = < DragonRideTargetManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DragonRideTargetManager_unity2_raw :: rental_popup (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CheckReserveListCondition()` overload"] fn check_reserve_list_condition (self ,) -> () { unsafe { let __receiver = < DragonRideTargetManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DragonRideTargetManager_unity2_raw :: check_reserve_list_condition (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ReturnReserveTarget(crate::unity_engine::gameobject::GameObject)` overload"] fn return_reserve_target (self , target : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> () { unsafe { let __receiver = < DragonRideTargetManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DragonRideTargetManager_unity2_raw :: return_reserve_target (__receiver , :: core :: convert :: Into :: into (target) , :: core :: option :: Option :: None) } } # [doc = "`ReturnReservePopup(crate::unity_engine::gameobject::GameObject)` overload"] fn return_reserve_popup (self , target : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> () { unsafe { let __receiver = < DragonRideTargetManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DragonRideTargetManager_unity2_raw :: return_reserve_popup (__receiver , :: core :: convert :: Into :: into (target) , :: core :: option :: Option :: None) } } # [doc = "`HideAllTarget()` overload"] fn hide_all_target (self ,) -> () { unsafe { let __receiver = < DragonRideTargetManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DragonRideTargetManager_unity2_raw :: hide_all_target (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-dragonridetargetmanager")]
-impl<__T: IDragonRideTargetManager> IDragonRideTargetManagerMethods for __T {}
+impl < __T : IDragonRideTargetManager > IDragonRideTargetManagerMethods for __T { }
+
+#[cfg(feature = "app-dragonridetargetmanager")]
+impl DragonRideTargetManager { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DragonRideTargetManager_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn destruct_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DragonRideTargetManager_unity2_raw :: __lookup_destruct :: get_method_info () } pub fn tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DragonRideTargetManager_unity2_raw :: __lookup_tick :: get_method_info () } pub fn get_max_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DragonRideTargetManager_unity2_raw :: __lookup_get_max_count :: get_method_info () } pub fn rental_target_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DragonRideTargetManager_unity2_raw :: __lookup_rental_target :: get_method_info () } pub fn rental_popup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DragonRideTargetManager_unity2_raw :: __lookup_rental_popup :: get_method_info () } pub fn check_reserve_list_condition_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DragonRideTargetManager_unity2_raw :: __lookup_check_reserve_list_condition :: get_method_info () } pub fn return_reserve_target_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DragonRideTargetManager_unity2_raw :: __lookup_return_reserve_target :: get_method_info () } pub fn return_reserve_popup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DragonRideTargetManager_unity2_raw :: __lookup_return_reserve_popup :: get_method_info () } pub fn hide_all_target_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DragonRideTargetManager_unity2_raw :: __lookup_hide_all_target :: get_method_info () } }
 
 #[cfg(feature = "app-dragonridetargetmanager")]
 impl DragonRideTargetManager {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DragonRideTargetManager),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDragonRideTargetManagerMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DragonRideTargetManager) , :: core :: stringify ! (new) ,)) ; < Self as IDragonRideTargetManagerMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-dragonridetargetmanager")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{DragonRideTargetManager, IDragonRideTargetManager, IDragonRideTargetManagerMethods};
-    #[cfg(feature = "app-singletonclass_1")]
-    pub use crate::app::singletonclass_1::ISingletonClass_1Methods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::{app::singletonclass_1::ISingletonClass_1, system::object::IObject};
+    pub use super::DragonRideTargetManager;
+    pub use super::IDragonRideTargetManager;
+    pub use super::IDragonRideTargetManagerMethods;
+    pub use crate::app::singletonclass_1::ISingletonClass_1;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "app-singletonclass_1")] pub use crate::app::singletonclass_1::ISingletonClass_1Methods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

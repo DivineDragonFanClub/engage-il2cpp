@@ -2,576 +2,150 @@
 
 #[cfg(feature = "unity_engine-rendering-universal-custom-reflectionrendererdata-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::{
-            object::{IObject, Object},
-            r#enum::{Enum, IEnum},
-            valuetype::{IValueType, ValueType},
-        },
-        unity_engine::{
-            object_2::{IObject_2, Object_2},
-            rendering::universal::scriptablerendererdata::{IScriptableRendererData, ScriptableRendererData},
-            scriptableobject::{IScriptableObject, ScriptableObject},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/custom/reflectionrendererdata/ReflectionRendererData.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Rendering.Universal.Custom", name = "ReflectionRendererData")]
-    #[parent(crate::unity_engine::rendering::universal::scriptablerendererdata::ScriptableRendererData)]
-    pub struct ReflectionRendererData {
-        #[offset(48)]
-        #[rename(name = "postProcessData")]
-        pub post_process_data: crate::unity_engine::rendering::universal::postprocessdata::PostProcessData,
-        #[offset(56)]
-        #[rename(name = "shaders")]
-        pub shaders: crate::unity_engine::rendering::universal::custom::reflectionrendererdata::ReflectionRendererData_ShaderResources,
-        #[offset(64)]
-        #[rename(name = "m_OpaqueLayerMask")]
-        pub m_opaque_layer_mask: crate::unity_engine::layermask::LayerMask,
-        #[offset(68)]
-        #[rename(name = "m_TransparentLayerMask")]
-        pub m_transparent_layer_mask: crate::unity_engine::layermask::LayerMask,
-        #[offset(72)]
-        #[rename(name = "m_ReflectionTarget")]
-        pub m_reflection_target: crate::unity_engine::rendering::universal::custom::reflectionrendererdata::ReflectionRendererData_ReflectionTarget,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+ use crate :: unity_engine :: rendering :: universal :: scriptablerendererdata :: { IScriptableRendererData , ScriptableRendererData }
+ ;
+ use crate :: unity_engine :: scriptableobject :: { IScriptableObject , ScriptableObject }
+ ;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/custom/reflectionrendererdata/ReflectionRendererData_ReflectionTarget.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct ReflectionRendererData_ReflectionTarget {
-        pub value: i32,
-    }
 
-    impl ::unity2::ClassIdentity for ReflectionRendererData_ReflectionTarget {
-        const NAME: &'static str = "ReflectionRendererData.ReflectionTarget";
-        const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal.Custom";
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/custom/reflectionrendererdata/ReflectionRendererData_ShaderResources.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.Universal.Custom" , name = "ReflectionRendererData.ShaderResources")] # [parent (crate :: system :: object :: Object)] pub struct ReflectionRendererData_ShaderResources {
+# [offset (16)] # [rename (name = "blitPS")] pub blit_ps : crate :: unity_engine :: shader :: Shader ,
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/custom/reflectionrendererdata/ReflectionRendererData_ReflectionTarget.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct ReflectionRendererData_ReflectionTarget  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for ReflectionRendererData_ReflectionTarget  {
+    const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal.Custom";
+
+    const NAME: &'static str = "ReflectionRendererData.ReflectionTarget";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for ReflectionRendererData_ReflectionTarget {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  ::unity2::IlType for ReflectionRendererData_ReflectionTarget  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ReflectionRendererData_ReflectionTarget {
-        pub fn chara() -> Self {
-            Self { value: 0 }
-        }
+}
 
-        pub fn chara_map() -> Self {
-            Self { value: 1 }
-        }
 
-        pub fn chara_special_reflection() -> Self {
-            Self { value: 2 }
-        }
+impl  ReflectionRendererData_ReflectionTarget  {
+    pub fn chara() -> Self {
+        Self { value: 0 }
+
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/custom/reflectionrendererdata/ReflectionRendererData_ShaderResources.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Rendering.Universal.Custom", name = "ReflectionRendererData.ShaderResources")]
-    #[parent(crate::system::object::Object)]
-    pub struct ReflectionRendererData_ShaderResources {
-        #[offset(16)]
-        #[rename(name = "blitPS")]
-        pub blit_ps: crate::unity_engine::shader::Shader,
+
+    pub fn chara_map() -> Self {
+        Self { value: 1 }
+
     }
+
+
+    pub fn chara_special_reflection() -> Self {
+        Self { value: 2 }
+
+    }
+
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/custom/reflectionrendererdata/ReflectionRendererData.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.Universal.Custom" , name = "ReflectionRendererData")] # [parent (crate :: unity_engine :: rendering :: universal :: scriptablerendererdata :: ScriptableRendererData)] pub struct ReflectionRendererData {
+# [offset (48)] # [rename (name = "postProcessData")] pub post_process_data : crate :: unity_engine :: rendering :: universal :: postprocessdata :: PostProcessData ,
+# [offset (56)] # [rename (name = "shaders")] pub shaders : crate :: unity_engine :: rendering :: universal :: custom :: reflectionrendererdata :: ReflectionRendererData_ShaderResources ,
+# [offset (64)] # [rename (name = "m_OpaqueLayerMask")] pub m_opaque_layer_mask : crate :: unity_engine :: layermask :: LayerMask ,
+# [offset (68)] # [rename (name = "m_TransparentLayerMask")] pub m_transparent_layer_mask : crate :: unity_engine :: layermask :: LayerMask ,
+# [offset (72)] # [rename (name = "m_ReflectionTarget")] pub m_reflection_target : crate :: unity_engine :: rendering :: universal :: custom :: reflectionrendererdata :: ReflectionRendererData_ReflectionTarget ,
+}
+
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-custom-reflectionrendererdata-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-universal-custom-reflectionrendererdata")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ReflectionRendererData_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ReflectionRendererData as ::unity2::ClassIdentity>::class(),
-                "Create",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ReflectionRendererData as ::unity2::ClassIdentity>::NAME,
-                        "Create",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create(
-        this: ReflectionRendererData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer {
-        let inner: extern "C" fn(
-            ReflectionRendererData,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer =
-            ::core::mem::transmute(__lookup_create::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_opaque_layer_mask {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ReflectionRendererData as ::unity2::ClassIdentity>::class(),
-                "get_opaqueLayerMask",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ReflectionRendererData as ::unity2::ClassIdentity>::NAME,
-                        "get_opaqueLayerMask",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_opaque_layer_mask(
-        this: ReflectionRendererData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::layermask::LayerMask {
-        let inner: extern "C" fn(ReflectionRendererData, ::unity2::OptionalMethod) -> crate::unity_engine::layermask::LayerMask =
-            ::core::mem::transmute(__lookup_get_opaque_layer_mask::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_opaque_layer_mask {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::layermask::LayerMask as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ReflectionRendererData as ::unity2::ClassIdentity>::class(),
-                "set_opaqueLayerMask",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ReflectionRendererData as ::unity2::ClassIdentity>::NAME,
-                        "set_opaqueLayerMask",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_opaque_layer_mask(
-        this: ReflectionRendererData,
-        value: crate::unity_engine::layermask::LayerMask,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(ReflectionRendererData, crate::unity_engine::layermask::LayerMask, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_opaque_layer_mask::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_transparent_layer_mask {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ReflectionRendererData as ::unity2::ClassIdentity>::class(),
-                "get_transparentLayerMask",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ReflectionRendererData as ::unity2::ClassIdentity>::NAME,
-                        "get_transparentLayerMask",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_transparent_layer_mask(
-        this: ReflectionRendererData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::layermask::LayerMask {
-        let inner: extern "C" fn(ReflectionRendererData, ::unity2::OptionalMethod) -> crate::unity_engine::layermask::LayerMask =
-            ::core::mem::transmute(__lookup_get_transparent_layer_mask::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_transparent_layer_mask {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::layermask::LayerMask as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ReflectionRendererData as ::unity2::ClassIdentity>::class(),
-                "set_transparentLayerMask",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ReflectionRendererData as ::unity2::ClassIdentity>::NAME,
-                        "set_transparentLayerMask",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_transparent_layer_mask(
-        this: ReflectionRendererData,
-        value: crate::unity_engine::layermask::LayerMask,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(ReflectionRendererData, crate::unity_engine::layermask::LayerMask, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_transparent_layer_mask::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_reflection_target {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ReflectionRendererData as ::unity2::ClassIdentity>::class(),
-                "get_reflectionTarget",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ReflectionRendererData as ::unity2::ClassIdentity>::NAME,
-                        "get_reflectionTarget",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_reflection_target(
-        this: ReflectionRendererData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::rendering::universal::custom::reflectionrendererdata::ReflectionRendererData_ReflectionTarget {
-        let inner : extern "C" fn (ReflectionRendererData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: universal :: custom :: reflectionrendererdata :: ReflectionRendererData_ReflectionTarget = :: core :: mem :: transmute (__lookup_get_reflection_target :: get_method_info () . method_ptr ,) ;
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_enable {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ReflectionRendererData as ::unity2::ClassIdentity>::class(),
-                "OnEnable",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ReflectionRendererData as ::unity2::ClassIdentity>::NAME,
-                        "OnEnable",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_enable(this: ReflectionRendererData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ReflectionRendererData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_enable::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ReflectionRendererData as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ReflectionRendererData as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: ReflectionRendererData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ReflectionRendererData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ReflectionRendererData_ShaderResources_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ReflectionRendererData_ShaderResources as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ReflectionRendererData_ShaderResources as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : ReflectionRendererData_ShaderResources , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ReflectionRendererData_ShaderResources , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-rendering-universal-custom-reflectionrendererdata")]
-pub trait IReflectionRendererDataMethods: IReflectionRendererData {
-    #[doc = "`Create()` overload"]
-    fn create(self) -> crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer {
-        unsafe {
-            let __receiver =
-                <ReflectionRendererData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ReflectionRendererData_unity2_raw::create(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_opaqueLayerMask()` overload"]
-    fn get_opaque_layer_mask(self) -> crate::unity_engine::layermask::LayerMask {
-        unsafe {
-            let __receiver =
-                <ReflectionRendererData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ReflectionRendererData_unity2_raw::get_opaque_layer_mask(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_opaqueLayerMask(crate::unity_engine::layermask::LayerMask)` overload"]
-    fn set_opaque_layer_mask(self, value: impl ::core::convert::Into<crate::unity_engine::layermask::LayerMask>) -> () {
-        unsafe {
-            let __receiver =
-                <ReflectionRendererData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ReflectionRendererData_unity2_raw::set_opaque_layer_mask(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_transparentLayerMask()` overload"]
-    fn get_transparent_layer_mask(self) -> crate::unity_engine::layermask::LayerMask {
-        unsafe {
-            let __receiver =
-                <ReflectionRendererData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ReflectionRendererData_unity2_raw::get_transparent_layer_mask(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_transparentLayerMask(crate::unity_engine::layermask::LayerMask)` overload"]
-    fn set_transparent_layer_mask(self, value: impl ::core::convert::Into<crate::unity_engine::layermask::LayerMask>) -> () {
-        unsafe {
-            let __receiver =
-                <ReflectionRendererData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ReflectionRendererData_unity2_raw::set_transparent_layer_mask(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_reflectionTarget()` overload"]
-    fn get_reflection_target(
-        self,
-    ) -> crate::unity_engine::rendering::universal::custom::reflectionrendererdata::ReflectionRendererData_ReflectionTarget {
-        unsafe {
-            let __receiver =
-                <ReflectionRendererData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ReflectionRendererData_unity2_raw::get_reflection_target(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnEnable()` overload"]
-    fn on_enable(self) -> () {
-        unsafe {
-            let __receiver =
-                <ReflectionRendererData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ReflectionRendererData_unity2_raw::on_enable(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <ReflectionRendererData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ReflectionRendererData_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IReflectionRendererData_ShaderResourcesMethods : IReflectionRendererData_ShaderResources { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ReflectionRendererData_ShaderResources as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ReflectionRendererData_ShaderResources_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-rendering-universal-custom-reflectionrendererdata")]
-impl<__T: IReflectionRendererData> IReflectionRendererDataMethods for __T {}
+impl < __T : IReflectionRendererData_ShaderResources > IReflectionRendererData_ShaderResourcesMethods for __T { }
 
 #[cfg(feature = "unity_engine-rendering-universal-custom-reflectionrendererdata")]
-impl ReflectionRendererData {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ReflectionRendererData),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IReflectionRendererDataMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-custom-reflectionrendererdata")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ReflectionRendererData_ShaderResources_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ReflectionRendererData_ShaderResources as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ReflectionRendererData_ShaderResources as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: ReflectionRendererData_ShaderResources, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ReflectionRendererData_ShaderResources, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-custom-reflectionrendererdata")]
-pub trait IReflectionRendererData_ShaderResourcesMethods: IReflectionRendererData_ShaderResources {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <ReflectionRendererData_ShaderResources as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ReflectionRendererData_ShaderResources_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-custom-reflectionrendererdata")]
-impl<__T: IReflectionRendererData_ShaderResources> IReflectionRendererData_ShaderResourcesMethods for __T {}
+impl ReflectionRendererData_ShaderResources { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ReflectionRendererData_ShaderResources_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-rendering-universal-custom-reflectionrendererdata")]
 impl ReflectionRendererData_ShaderResources {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ReflectionRendererData_ShaderResources),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IReflectionRendererData_ShaderResourcesMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ReflectionRendererData_ShaderResources) , :: core :: stringify ! (new) ,)) ; < Self as IReflectionRendererData_ShaderResourcesMethods > :: ctor (this ,) ; this }
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-custom-reflectionrendererdata")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ReflectionRendererData_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ReflectionRendererData as :: unity2 :: ClassIdentity > :: class () , "Create" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ReflectionRendererData as :: unity2 :: ClassIdentity > :: NAME , "Create" , e) , } } } pub unsafe fn create (this : ReflectionRendererData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: universal :: scriptablerenderer :: ScriptableRenderer { let inner : extern "C" fn (ReflectionRendererData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: universal :: scriptablerenderer :: ScriptableRenderer = :: core :: mem :: transmute (__lookup_create :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_opaque_layer_mask { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ReflectionRendererData as :: unity2 :: ClassIdentity > :: class () , "get_opaqueLayerMask" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ReflectionRendererData as :: unity2 :: ClassIdentity > :: NAME , "get_opaqueLayerMask" , e) , } } } pub unsafe fn get_opaque_layer_mask (this : ReflectionRendererData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: layermask :: LayerMask { let inner : extern "C" fn (ReflectionRendererData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: layermask :: LayerMask = :: core :: mem :: transmute (__lookup_get_opaque_layer_mask :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_opaque_layer_mask { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: layermask :: LayerMask as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ReflectionRendererData as :: unity2 :: ClassIdentity > :: class () , "set_opaqueLayerMask" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ReflectionRendererData as :: unity2 :: ClassIdentity > :: NAME , "set_opaqueLayerMask" , e) , } } } pub unsafe fn set_opaque_layer_mask (this : ReflectionRendererData , value : crate :: unity_engine :: layermask :: LayerMask , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ReflectionRendererData , crate :: unity_engine :: layermask :: LayerMask , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_opaque_layer_mask :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_transparent_layer_mask { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ReflectionRendererData as :: unity2 :: ClassIdentity > :: class () , "get_transparentLayerMask" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ReflectionRendererData as :: unity2 :: ClassIdentity > :: NAME , "get_transparentLayerMask" , e) , } } } pub unsafe fn get_transparent_layer_mask (this : ReflectionRendererData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: layermask :: LayerMask { let inner : extern "C" fn (ReflectionRendererData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: layermask :: LayerMask = :: core :: mem :: transmute (__lookup_get_transparent_layer_mask :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_transparent_layer_mask { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: layermask :: LayerMask as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ReflectionRendererData as :: unity2 :: ClassIdentity > :: class () , "set_transparentLayerMask" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ReflectionRendererData as :: unity2 :: ClassIdentity > :: NAME , "set_transparentLayerMask" , e) , } } } pub unsafe fn set_transparent_layer_mask (this : ReflectionRendererData , value : crate :: unity_engine :: layermask :: LayerMask , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ReflectionRendererData , crate :: unity_engine :: layermask :: LayerMask , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_transparent_layer_mask :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_reflection_target { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ReflectionRendererData as :: unity2 :: ClassIdentity > :: class () , "get_reflectionTarget" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ReflectionRendererData as :: unity2 :: ClassIdentity > :: NAME , "get_reflectionTarget" , e) , } } } pub unsafe fn get_reflection_target (this : ReflectionRendererData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: universal :: custom :: reflectionrendererdata :: ReflectionRendererData_ReflectionTarget { let inner : extern "C" fn (ReflectionRendererData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: universal :: custom :: reflectionrendererdata :: ReflectionRendererData_ReflectionTarget = :: core :: mem :: transmute (__lookup_get_reflection_target :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_enable { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ReflectionRendererData as :: unity2 :: ClassIdentity > :: class () , "OnEnable" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ReflectionRendererData as :: unity2 :: ClassIdentity > :: NAME , "OnEnable" , e) , } } } pub unsafe fn on_enable (this : ReflectionRendererData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ReflectionRendererData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_enable :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ReflectionRendererData as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ReflectionRendererData as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : ReflectionRendererData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ReflectionRendererData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "unity_engine-rendering-universal-custom-reflectionrendererdata")]
+pub trait IReflectionRendererDataMethods : IReflectionRendererData { # [doc = "`Create()` overload"] fn create (self ,) -> crate :: unity_engine :: rendering :: universal :: scriptablerenderer :: ScriptableRenderer { unsafe { let __receiver = < ReflectionRendererData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ReflectionRendererData_unity2_raw :: create (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_opaqueLayerMask()` overload"] fn get_opaque_layer_mask (self ,) -> crate :: unity_engine :: layermask :: LayerMask { unsafe { let __receiver = < ReflectionRendererData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ReflectionRendererData_unity2_raw :: get_opaque_layer_mask (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_opaqueLayerMask(crate::unity_engine::layermask::LayerMask)` overload"] fn set_opaque_layer_mask (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: layermask :: LayerMask >) -> () { unsafe { let __receiver = < ReflectionRendererData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ReflectionRendererData_unity2_raw :: set_opaque_layer_mask (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_transparentLayerMask()` overload"] fn get_transparent_layer_mask (self ,) -> crate :: unity_engine :: layermask :: LayerMask { unsafe { let __receiver = < ReflectionRendererData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ReflectionRendererData_unity2_raw :: get_transparent_layer_mask (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_transparentLayerMask(crate::unity_engine::layermask::LayerMask)` overload"] fn set_transparent_layer_mask (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: layermask :: LayerMask >) -> () { unsafe { let __receiver = < ReflectionRendererData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ReflectionRendererData_unity2_raw :: set_transparent_layer_mask (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_reflectionTarget()` overload"] fn get_reflection_target (self ,) -> crate :: unity_engine :: rendering :: universal :: custom :: reflectionrendererdata :: ReflectionRendererData_ReflectionTarget { unsafe { let __receiver = < ReflectionRendererData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ReflectionRendererData_unity2_raw :: get_reflection_target (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnEnable()` overload"] fn on_enable (self ,) -> () { unsafe { let __receiver = < ReflectionRendererData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ReflectionRendererData_unity2_raw :: on_enable (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ReflectionRendererData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ReflectionRendererData_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-rendering-universal-custom-reflectionrendererdata")]
+impl < __T : IReflectionRendererData > IReflectionRendererDataMethods for __T { }
+
+#[cfg(feature = "unity_engine-rendering-universal-custom-reflectionrendererdata")]
+impl ReflectionRendererData { pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ReflectionRendererData_unity2_raw :: __lookup_create :: get_method_info () } pub fn get_opaque_layer_mask_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ReflectionRendererData_unity2_raw :: __lookup_get_opaque_layer_mask :: get_method_info () } pub fn set_opaque_layer_mask_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ReflectionRendererData_unity2_raw :: __lookup_set_opaque_layer_mask :: get_method_info () } pub fn get_transparent_layer_mask_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ReflectionRendererData_unity2_raw :: __lookup_get_transparent_layer_mask :: get_method_info () } pub fn set_transparent_layer_mask_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ReflectionRendererData_unity2_raw :: __lookup_set_transparent_layer_mask :: get_method_info () } pub fn get_reflection_target_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ReflectionRendererData_unity2_raw :: __lookup_get_reflection_target :: get_method_info () } pub fn on_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ReflectionRendererData_unity2_raw :: __lookup_on_enable :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ReflectionRendererData_unity2_raw :: __lookup_ctor :: get_method_info () } }
+
+#[cfg(feature = "unity_engine-rendering-universal-custom-reflectionrendererdata")]
+impl ReflectionRendererData {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ReflectionRendererData) , :: core :: stringify ! (new) ,)) ; < Self as IReflectionRendererDataMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-custom-reflectionrendererdata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{
-        IReflectionRendererData, IReflectionRendererDataMethods, IReflectionRendererData_ShaderResources,
-        IReflectionRendererData_ShaderResourcesMethods, ReflectionRendererData, ReflectionRendererData_ReflectionTarget,
-        ReflectionRendererData_ShaderResources,
-    };
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    #[cfg(feature = "unity_engine-rendering-universal-scriptablerendererdata")]
-    pub use crate::unity_engine::rendering::universal::scriptablerendererdata::IScriptableRendererDataMethods;
-    #[cfg(feature = "unity_engine-scriptableobject")]
-    pub use crate::unity_engine::scriptableobject::IScriptableObjectMethods;
-    pub use crate::{
-        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
-        unity_engine::{
-            object_2::IObject_2, rendering::universal::scriptablerendererdata::IScriptableRendererData, scriptableobject::IScriptableObject,
-        },
-    };
+    pub use super::ReflectionRendererData_ShaderResources;
+    pub use super::IReflectionRendererData_ShaderResources;
+    pub use super::IReflectionRendererData_ShaderResourcesMethods;
+    pub use super::ReflectionRendererData_ReflectionTarget;
+    pub use super::ReflectionRendererData;
+    pub use super::IReflectionRendererData;
+    pub use super::IReflectionRendererDataMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    pub use crate::unity_engine::object_2::IObject_2;
+    pub use crate::unity_engine::rendering::universal::scriptablerendererdata::IScriptableRendererData;
+    pub use crate::unity_engine::scriptableobject::IScriptableObject;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
+    #[cfg(feature = "unity_engine-rendering-universal-scriptablerendererdata")] pub use crate::unity_engine::rendering::universal::scriptablerendererdata::IScriptableRendererDataMethods;
+    #[cfg(feature = "unity_engine-scriptableobject")] pub use crate::unity_engine::scriptableobject::IScriptableObjectMethods;
 }

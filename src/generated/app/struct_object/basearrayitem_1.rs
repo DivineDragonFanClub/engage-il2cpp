@@ -2,79 +2,52 @@
 
 #[cfg(feature = "app-struct_object-basearrayitem_1-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::struct_object::{
-            baseitem::{BaseItem, IBaseItem},
-            basepiece::{BasePiece, IBasePiece},
-        },
-        system::object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/struct_object/basearrayitem_1/BaseArrayItem_1.md"))]
-    #[::unity2::class(namespace = "App.StructObject", name = "BaseArrayItem`1")]
-    #[parent(crate::app::struct_object::baseitem::BaseItem)]
-    #[parent(crate::app::struct_object::basepiece::BasePiece)]
-    #[parent(crate::system::object::Object)]
-    pub struct BaseArrayItem_1<T0: ::unity2::ClassIdentity> {
-        #[rename(name = "_Pieces")]
-        pub pieces_field: crate::system::collections::generic::list_1::List_1<T0>,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: struct_object :: baseitem :: { BaseItem , IBaseItem }
+ ;
+ use crate :: app :: struct_object :: basepiece :: { BasePiece , IBasePiece }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/struct_object/basearrayitem_1/BaseArrayItem_1.md"))] # [:: unity2 :: class (namespace = "App.StructObject" , name = "BaseArrayItem`1")] # [parent (crate :: app :: struct_object :: baseitem :: BaseItem)] # [parent (crate :: app :: struct_object :: basepiece :: BasePiece)] # [parent (crate :: system :: object :: Object)] pub struct BaseArrayItem_1 < T0 : :: unity2 :: ClassIdentity > {
+# [rename (name = "_Pieces")] pub pieces_field : crate :: system :: collections :: generic :: list_1 :: List_1 < T0 > ,
+}
+
 }
 
 #[cfg(feature = "app-struct_object-basearrayitem_1-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-struct_object-basearrayitem_1")]
-#[::unity2::methods]
-impl<T0: ::unity2::ClassIdentity> BaseArrayItem_1<T0> {
-    #[doc = "`get_Pieces()` overload"]
-    #[method(name = "get_Pieces", args = 0)]
-    pub fn get_pieces(self) -> crate::system::collections::generic::list_1::List_1<T0>;
+# [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity > BaseArrayItem_1 < T0 > {
+# [doc = "`get_Pieces()` overload"] # [method (name = "get_Pieces" , args = 0)] pub fn get_pieces (self ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < T0 > ;
 
-    #[doc = "`set_Pieces(crate::system::collections::generic::list_1::List_1<T0>)` overload"]
-    #[method(name = "set_Pieces", args = 1)]
-    pub fn set_pieces(self, value: crate::system::collections::generic::list_1::List_1<T0>) -> ();
+# [doc = "`set_Pieces(crate::system::collections::generic::list_1::List_1<T0>)` overload"] # [method (name = "set_Pieces" , args = 1)] pub fn set_pieces (self , value : crate :: system :: collections :: generic :: list_1 :: List_1 < T0 >) -> () ;
 
-    #[doc = "`AddPiece(crate::system::object::Object)` overload"]
-    #[method(name = "AddPiece", args = 1)]
-    pub fn add_piece(self, piece: crate::system::object::Object) -> ();
+# [doc = "`AddPiece(crate::system::object::Object)` overload"] # [method (name = "AddPiece" , args = 1)] pub fn add_piece (self , piece : crate :: system :: object :: Object) -> () ;
 
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+# [doc = "`.ctor()` overload"] # [method (name = ".ctor" , args = 0)] pub fn ctor (self ,) -> () ;
 }
 
 #[cfg(feature = "app-struct_object-basearrayitem_1")]
-impl<T0: ::unity2::ClassIdentity> BaseArrayItem_1<T0> {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(BaseArrayItem_1),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IBaseArrayItem_1Methods<T0>>::ctor(this);
-        this
-    }
+impl < T0 : :: unity2 :: ClassIdentity > BaseArrayItem_1 < T0 > {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (BaseArrayItem_1) , :: core :: stringify ! (new) ,)) ; < Self as IBaseArrayItem_1Methods < T0 > > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-struct_object-basearrayitem_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{BaseArrayItem_1, IBaseArrayItem_1, IBaseArrayItem_1Methods};
-    #[cfg(feature = "app-struct_object-baseitem")]
-    pub use crate::app::struct_object::baseitem::IBaseItemMethods;
-    #[cfg(feature = "app-struct_object-basepiece")]
-    pub use crate::app::struct_object::basepiece::IBasePieceMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::{
-        app::struct_object::{baseitem::IBaseItem, basepiece::IBasePiece},
-        system::object::IObject,
-    };
+    pub use super::BaseArrayItem_1;
+    pub use super::IBaseArrayItem_1;
+    pub use super::IBaseArrayItem_1Methods;
+    pub use crate::app::struct_object::baseitem::IBaseItem;
+    pub use crate::app::struct_object::basepiece::IBasePiece;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "app-struct_object-baseitem")] pub use crate::app::struct_object::baseitem::IBaseItemMethods;
+    #[cfg(feature = "app-struct_object-basepiece")] pub use crate::app::struct_object::basepiece::IBasePieceMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

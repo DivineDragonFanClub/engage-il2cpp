@@ -2,259 +2,67 @@
 
 #[cfg(feature = "combat-magicsub-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/magicsub/MagicSub.md"))]
-    #[::unity2::class(namespace = "Combat", name = "MagicSub")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct MagicSub {
-        #[offset(24)]
-        #[rename(name = "BulletSettings")]
-        pub bullet_settings: crate::combat::magicbulletsettings::MagicBulletSettings,
-        #[offset(32)]
-        #[rename(name = "Trackヒット時処理")]
-        pub trackヒット時処理: crate::combat::magicsignaltrack::MagicSignalTrack,
-        #[offset(40)]
-        #[rename(name = "Trackミス時処理")]
-        pub trackミス時処理: crate::combat::magicsignaltrack::MagicSignalTrack,
-        #[offset(48)]
-        #[rename(name = "Trackガード時処理")]
-        pub trackガード時処理: crate::combat::magicsignaltrack::MagicSignalTrack,
-        #[offset(56)]
-        #[rename(name = "Trackパリィ時処理")]
-        pub trackパリィ時処理: crate::combat::magicsignaltrack::MagicSignalTrack,
-        #[offset(64)]
-        #[rename(name = "Track衝突時処理")]
-        pub track衝突時処理: crate::combat::magicsignaltrack::MagicSignalTrack,
-        #[offset(72)]
-        #[rename(name = "Track自然消滅処理")]
-        pub track自然消滅処理: crate::combat::magicsignaltrack::MagicSignalTrack,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/magicsub/MagicSub.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "MagicSub")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct MagicSub {
+# [offset (24)] # [rename (name = "BulletSettings")] pub bullet_settings : crate :: combat :: magicbulletsettings :: MagicBulletSettings ,
+# [offset (32)] # [rename (name = "Trackヒット時処理")] pub trackヒット時処理 : crate :: combat :: magicsignaltrack :: MagicSignalTrack ,
+# [offset (40)] # [rename (name = "Trackミス時処理")] pub trackミス時処理 : crate :: combat :: magicsignaltrack :: MagicSignalTrack ,
+# [offset (48)] # [rename (name = "Trackガード時処理")] pub trackガード時処理 : crate :: combat :: magicsignaltrack :: MagicSignalTrack ,
+# [offset (56)] # [rename (name = "Trackパリィ時処理")] pub trackパリィ時処理 : crate :: combat :: magicsignaltrack :: MagicSignalTrack ,
+# [offset (64)] # [rename (name = "Track衝突時処理")] pub track衝突時処理 : crate :: combat :: magicsignaltrack :: MagicSignalTrack ,
+# [offset (72)] # [rename (name = "Track自然消滅処理")] pub track自然消滅処理 : crate :: combat :: magicsignaltrack :: MagicSignalTrack ,
+}
+
 }
 
 #[cfg(feature = "combat-magicsub-types")]
 pub use __types::*;
 
 #[cfg(feature = "combat-magicsub")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MagicSub_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_track {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<MagicSub as ::unity2::ClassIdentity>::class(), "Track", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MagicSub as ::unity2::ClassIdentity>::NAME,
-                        "Track",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn track(this: MagicSub, i: i32, __unity2_method_info: ::unity2::OptionalMethod) -> crate::combat::magicsignaltrack::MagicSignalTrack {
-        let inner: extern "C" fn(MagicSub, i32, ::unity2::OptionalMethod) -> crate::combat::magicsignaltrack::MagicSignalTrack =
-            ::core::mem::transmute(__lookup_track::get_method_info().method_ptr);
-        inner(this, i, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_setup {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::combat::character::Character as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<MagicSub as ::unity2::ClassIdentity>::class(), "Setup", 3, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MagicSub as ::unity2::ClassIdentity>::NAME,
-                        "Setup",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn setup(
-        this: MagicSub,
-        chr: crate::combat::character::Character,
-        initial_start_pos: *mut crate::unity_engine::vector3::Vector3,
-        initial_end_pos: *mut crate::unity_engine::vector3::Vector3,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MagicSub,
-            crate::combat::character::Character,
-            *mut crate::unity_engine::vector3::Vector3,
-            *mut crate::unity_engine::vector3::Vector3,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_setup::get_method_info().method_ptr);
-        inner(this, chr, initial_start_pos, initial_end_pos, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_manual_update {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MagicSub as ::unity2::ClassIdentity>::class(),
-                "ManualUpdate",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MagicSub as ::unity2::ClassIdentity>::NAME,
-                        "ManualUpdate",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn manual_update(this: MagicSub, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MagicSub, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_manual_update::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<MagicSub as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MagicSub as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: MagicSub, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MagicSub, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MagicSub_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_track { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MagicSub as :: unity2 :: ClassIdentity > :: class () , "Track" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MagicSub as :: unity2 :: ClassIdentity > :: NAME , "Track" , e) , } } } pub unsafe fn track (this : MagicSub , i : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: combat :: magicsignaltrack :: MagicSignalTrack { let inner : extern "C" fn (MagicSub , i32 , :: unity2 :: OptionalMethod ,) -> crate :: combat :: magicsignaltrack :: MagicSignalTrack = :: core :: mem :: transmute (__lookup_track :: get_method_info () . method_ptr ,) ; inner (this , i , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_setup { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: character :: Character as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MagicSub as :: unity2 :: ClassIdentity > :: class () , "Setup" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MagicSub as :: unity2 :: ClassIdentity > :: NAME , "Setup" , e) , } } } pub unsafe fn setup (this : MagicSub , chr : crate :: combat :: character :: Character , initial_start_pos : * mut crate :: unity_engine :: vector3 :: Vector3 , initial_end_pos : * mut crate :: unity_engine :: vector3 :: Vector3 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MagicSub , crate :: combat :: character :: Character , * mut crate :: unity_engine :: vector3 :: Vector3 , * mut crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_setup :: get_method_info () . method_ptr ,) ; inner (this , chr , initial_start_pos , initial_end_pos , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_manual_update { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MagicSub as :: unity2 :: ClassIdentity > :: class () , "ManualUpdate" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MagicSub as :: unity2 :: ClassIdentity > :: NAME , "ManualUpdate" , e) , } } } pub unsafe fn manual_update (this : MagicSub , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MagicSub , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_manual_update :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MagicSub as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MagicSub as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : MagicSub , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MagicSub , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "combat-magicsub")]
-pub trait IMagicSubMethods: IMagicSub {
-    #[doc = "`Track(i32)` overload"]
-    fn track(self, i: impl ::core::convert::Into<i32>) -> crate::combat::magicsignaltrack::MagicSignalTrack {
-        unsafe {
-            let __receiver = <MagicSub as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MagicSub_unity2_raw::track(__receiver, ::core::convert::Into::into(i), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Setup(crate::combat::character::Character, *mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::vector3::Vector3)` overload"]
-    fn setup(
-        self,
-        chr: impl ::core::convert::Into<crate::combat::character::Character>,
-    ) -> (crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3) {
-        unsafe {
-            let __receiver = <MagicSub as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
-            let mut __out_1 = ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
-            __MagicSub_unity2_raw::setup(
-                __receiver,
-                ::core::convert::Into::into(chr),
-                __out_0.as_mut_ptr(),
-                __out_1.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
-            (__out_0.assume_init(), __out_1.assume_init())
-        }
-    }
-    #[doc = "`ManualUpdate()` overload"]
-    fn manual_update(self) -> () {
-        unsafe {
-            let __receiver = <MagicSub as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MagicSub_unity2_raw::manual_update(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <MagicSub as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MagicSub_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IMagicSubMethods : IMagicSub { # [doc = "`Track(i32)` overload"] fn track (self , i : impl :: core :: convert :: Into < i32 >) -> crate :: combat :: magicsignaltrack :: MagicSignalTrack { unsafe { let __receiver = < MagicSub as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MagicSub_unity2_raw :: track (__receiver , :: core :: convert :: Into :: into (i) , :: core :: option :: Option :: None) } } # [doc = "`Setup(crate::combat::character::Character, *mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::vector3::Vector3)` overload"] fn setup (self , chr : impl :: core :: convert :: Into < crate :: combat :: character :: Character >) -> (crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector3 :: Vector3) { unsafe { let __receiver = < MagicSub as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector3 :: Vector3 > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector3 :: Vector3 > :: uninit () ; __MagicSub_unity2_raw :: setup (__receiver , :: core :: convert :: Into :: into (chr) , __out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: option :: Option :: None) ; (__out_0 . assume_init () , __out_1 . assume_init ()) } } # [doc = "`ManualUpdate()` overload"] fn manual_update (self ,) -> () { unsafe { let __receiver = < MagicSub as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MagicSub_unity2_raw :: manual_update (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MagicSub as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MagicSub_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "combat-magicsub")]
-impl<__T: IMagicSub> IMagicSubMethods for __T {}
+impl < __T : IMagicSub > IMagicSubMethods for __T { }
+
+#[cfg(feature = "combat-magicsub")]
+impl MagicSub { pub fn track_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MagicSub_unity2_raw :: __lookup_track :: get_method_info () } pub fn setup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MagicSub_unity2_raw :: __lookup_setup :: get_method_info () } pub fn manual_update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MagicSub_unity2_raw :: __lookup_manual_update :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MagicSub_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "combat-magicsub")]
 impl MagicSub {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(MagicSub), ::core::stringify!(new),));
-        <Self as IMagicSubMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MagicSub) , :: core :: stringify ! (new) ,)) ; < Self as IMagicSubMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "combat-magicsub")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IMagicSub, IMagicSubMethods, MagicSub};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        system::object::IObject,
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::MagicSub;
+    pub use super::IMagicSub;
+    pub use super::IMagicSubMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

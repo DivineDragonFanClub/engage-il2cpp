@@ -2,1244 +2,159 @@
 
 #[cfg(feature = "root-aktimelineeventplayablebehavior-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::{
-            object::{IObject, Object},
-            r#enum::{Enum, IEnum},
-            valuetype::{IValueType, ValueType},
-        },
-        unity_engine::playables::playablebehaviour::{IPlayableBehaviour, PlayableBehaviour},
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/aktimelineeventplayablebehavior/AkTimelineEventPlayableBehavior_Actions.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct AkTimelineEventPlayableBehavior_Actions {
-        pub value: i32,
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+ use crate :: unity_engine :: playables :: playablebehaviour :: { IPlayableBehaviour , PlayableBehaviour }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/aktimelineeventplayablebehavior/AkTimelineEventPlayableBehavior.md"))] # [:: unity2 :: class (namespace = "" , name = "AkTimelineEventPlayableBehavior")] # [parent (crate :: unity_engine :: playables :: playablebehaviour :: PlayableBehaviour)] pub struct AkTimelineEventPlayableBehavior {
+# [offset (16)] # [rename (name = "currentDuration")] pub current_duration : f32 ,
+# [offset (20)] # [rename (name = "currentDurationProportion")] pub current_duration_proportion : f32 ,
+# [offset (24)] # [rename (name = "eventIsPlaying")] pub event_is_playing : bool ,
+# [offset (25)] # [rename (name = "fadeinTriggered")] pub fadein_triggered : bool ,
+# [offset (26)] # [rename (name = "fadeoutTriggered")] pub fadeout_triggered : bool ,
+# [offset (28)] # [rename (name = "previousEventStartTime")] pub previous_event_start_time : f32 ,
+# [static_field] # [rename (name = "CallbackFlags")] pub callback_flags : u32 ,
+# [offset (32)] # [rename (name = "requiredActions")] pub required_actions : crate :: root :: aktimelineeventplayablebehavior :: AkTimelineEventPlayableBehavior_Actions ,
+# [static_field] # [rename (name = "scrubPlaybackLengthMs")] pub scrub_playback_length_ms : i32 ,
+# [offset (48)] # [rename (name = "eventDurationMax")] pub event_duration_max : f32 ,
+# [offset (52)] # [rename (name = "eventDurationMin")] pub event_duration_min : f32 ,
+# [offset (56)] # [rename (name = "blendInDuration")] pub blend_in_duration : f32 ,
+# [offset (60)] # [rename (name = "blendOutDuration")] pub blend_out_duration : f32 ,
+# [offset (64)] # [rename (name = "easeInDuration")] pub ease_in_duration : f32 ,
+# [offset (68)] # [rename (name = "easeOutDuration")] pub ease_out_duration : f32 ,
+# [offset (72)] # [rename (name = "blendInCurve")] pub blend_in_curve : crate :: root :: akcurveinterpolation :: AkCurveInterpolation ,
+# [offset (76)] # [rename (name = "blendOutCurve")] pub blend_out_curve : crate :: root :: akcurveinterpolation :: AkCurveInterpolation ,
+# [offset (80)] # [rename (name = "eventObject")] pub event_object : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (88)] # [rename (name = "retriggerEvent")] pub retrigger_event_field : bool ,
+# [offset (89)] # [rename (name = "wasScrubbingAndRequiresRetrigger")] pub was_scrubbing_and_requires_retrigger : bool ,
+# [offset (90)] # [rename (name = "StopEventAtClipEnd")] pub stop_event_at_clip_end : bool ,
+# [offset (91)] # [rename (name = "PrintDebugInformation")] pub print_debug_information : bool ,
+# [static_field] # [rename (name = "alph")] pub alph : f32 ,
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/aktimelineeventplayablebehavior/AkTimelineEventPlayableBehavior_Actions.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct AkTimelineEventPlayableBehavior_Actions  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for AkTimelineEventPlayableBehavior_Actions  {
+    const NAMESPACE: &'static str = "";
+
+    const NAME: &'static str = "AkTimelineEventPlayableBehavior.Actions";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    impl ::unity2::ClassIdentity for AkTimelineEventPlayableBehavior_Actions {
-        const NAME: &'static str = "AkTimelineEventPlayableBehavior.Actions";
-        const NAMESPACE: &'static str = "";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  ::unity2::IlType for AkTimelineEventPlayableBehavior_Actions  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::IlType for AkTimelineEventPlayableBehavior_Actions {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  AkTimelineEventPlayableBehavior_Actions  {
+    pub fn none() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl AkTimelineEventPlayableBehavior_Actions {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn playback() -> Self {
-            Self { value: 1 }
-        }
+    pub fn playback() -> Self {
+        Self { value: 1 }
 
-        pub fn retrigger() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn delayed_stop() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn seek() -> Self {
-            Self { value: 8 }
-        }
-
-        pub fn fade_in() -> Self {
-            Self { value: 16 }
-        }
-
-        pub fn fade_out() -> Self {
-            Self { value: 32 }
-        }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/aktimelineeventplayablebehavior/AkTimelineEventPlayableBehavior.md"))]
-    #[::unity2::class(namespace = "", name = "AkTimelineEventPlayableBehavior")]
-    #[parent(crate::unity_engine::playables::playablebehaviour::PlayableBehaviour)]
-    pub struct AkTimelineEventPlayableBehavior {
-        #[offset(16)]
-        #[rename(name = "currentDuration")]
-        pub current_duration: f32,
-        #[offset(20)]
-        #[rename(name = "currentDurationProportion")]
-        pub current_duration_proportion: f32,
-        #[offset(24)]
-        #[rename(name = "eventIsPlaying")]
-        pub event_is_playing: bool,
-        #[offset(25)]
-        #[rename(name = "fadeinTriggered")]
-        pub fadein_triggered: bool,
-        #[offset(26)]
-        #[rename(name = "fadeoutTriggered")]
-        pub fadeout_triggered: bool,
-        #[offset(28)]
-        #[rename(name = "previousEventStartTime")]
-        pub previous_event_start_time: f32,
-        #[static_field]
-        #[rename(name = "CallbackFlags")]
-        pub callback_flags: u32,
-        #[offset(32)]
-        #[rename(name = "requiredActions")]
-        pub required_actions: crate::root::aktimelineeventplayablebehavior::AkTimelineEventPlayableBehavior_Actions,
-        #[static_field]
-        #[rename(name = "scrubPlaybackLengthMs")]
-        pub scrub_playback_length_ms: i32,
-        #[offset(48)]
-        #[rename(name = "eventDurationMax")]
-        pub event_duration_max: f32,
-        #[offset(52)]
-        #[rename(name = "eventDurationMin")]
-        pub event_duration_min: f32,
-        #[offset(56)]
-        #[rename(name = "blendInDuration")]
-        pub blend_in_duration: f32,
-        #[offset(60)]
-        #[rename(name = "blendOutDuration")]
-        pub blend_out_duration: f32,
-        #[offset(64)]
-        #[rename(name = "easeInDuration")]
-        pub ease_in_duration: f32,
-        #[offset(68)]
-        #[rename(name = "easeOutDuration")]
-        pub ease_out_duration: f32,
-        #[offset(72)]
-        #[rename(name = "blendInCurve")]
-        pub blend_in_curve: crate::root::akcurveinterpolation::AkCurveInterpolation,
-        #[offset(76)]
-        #[rename(name = "blendOutCurve")]
-        pub blend_out_curve: crate::root::akcurveinterpolation::AkCurveInterpolation,
-        #[offset(80)]
-        #[rename(name = "eventObject")]
-        pub event_object: crate::unity_engine::gameobject::GameObject,
-        #[offset(88)]
-        #[rename(name = "retriggerEvent")]
-        pub retrigger_event_field: bool,
-        #[offset(89)]
-        #[rename(name = "wasScrubbingAndRequiresRetrigger")]
-        pub was_scrubbing_and_requires_retrigger: bool,
-        #[offset(90)]
-        #[rename(name = "StopEventAtClipEnd")]
-        pub stop_event_at_clip_end: bool,
-        #[offset(91)]
-        #[rename(name = "PrintDebugInformation")]
-        pub print_debug_information: bool,
-        #[static_field]
-        #[rename(name = "alph")]
-        pub alph: f32,
+
+    pub fn retrigger() -> Self {
+        Self { value: 2 }
+
     }
+
+
+    pub fn delayed_stop() -> Self {
+        Self { value: 4 }
+
+    }
+
+
+    pub fn seek() -> Self {
+        Self { value: 8 }
+
+    }
+
+
+    pub fn fade_in() -> Self {
+        Self { value: 16 }
+
+    }
+
+
+    pub fn fade_out() -> Self {
+        Self { value: 32 }
+
+    }
+
+}
+
 }
 
 #[cfg(feature = "root-aktimelineeventplayablebehavior-types")]
 pub use __types::*;
 
 #[cfg(feature = "root-aktimelineeventplayablebehavior")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AkTimelineEventPlayableBehavior_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_callback_handler {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <crate::root::akcallbacktype::AkCallbackType as ::unity2::IlType>::il_type(),
-                <crate::root::akcallbackinfo::AkCallbackInfo as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkTimelineEventPlayableBehavior as ::unity2::ClassIdentity>::class(),
-                "CallbackHandler",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkTimelineEventPlayableBehavior as ::unity2::ClassIdentity>::NAME,
-                        "CallbackHandler",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn callback_handler(
-        this: AkTimelineEventPlayableBehavior,
-        in_cookie: crate::system::object::Object,
-        in_type: crate::root::akcallbacktype::AkCallbackType,
-        in_info: crate::root::akcallbackinfo::AkCallbackInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            AkTimelineEventPlayableBehavior,
-            crate::system::object::Object,
-            crate::root::akcallbacktype::AkCallbackType,
-            crate::root::akcallbackinfo::AkCallbackInfo,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_callback_handler::get_method_info().method_ptr);
-        inner(this, in_cookie, in_type, in_info, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_scrubbing {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::playables::playable::Playable as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::playables::framedata::FrameData as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkTimelineEventPlayableBehavior as ::unity2::ClassIdentity>::class(),
-                "IsScrubbing",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkTimelineEventPlayableBehavior as ::unity2::ClassIdentity>::NAME,
-                        "IsScrubbing",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_scrubbing(
-        this: AkTimelineEventPlayableBehavior,
-        playable: crate::unity_engine::playables::playable::Playable,
-        info: crate::unity_engine::playables::framedata::FrameData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            AkTimelineEventPlayableBehavior,
-            crate::unity_engine::playables::playable::Playable,
-            crate::unity_engine::playables::framedata::FrameData,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(__lookup_is_scrubbing::get_method_info().method_ptr);
-        inner(this, playable, info, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_print_info {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::playables::playable::Playable as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::playables::framedata::FrameData as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkTimelineEventPlayableBehavior as ::unity2::ClassIdentity>::class(),
-                "PrintInfo",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkTimelineEventPlayableBehavior as ::unity2::ClassIdentity>::NAME,
-                        "PrintInfo",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn print_info(
-        this: AkTimelineEventPlayableBehavior,
-        function_name: ::unity2::Il2CppString,
-        playable: crate::unity_engine::playables::playable::Playable,
-        info: crate::unity_engine::playables::framedata::FrameData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            AkTimelineEventPlayableBehavior,
-            ::unity2::Il2CppString,
-            crate::unity_engine::playables::playable::Playable,
-            crate::unity_engine::playables::framedata::FrameData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_print_info::get_method_info().method_ptr);
-        inner(this, function_name, playable, info, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_prepare_frame {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::playables::playable::Playable as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::playables::framedata::FrameData as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkTimelineEventPlayableBehavior as ::unity2::ClassIdentity>::class(),
-                "PrepareFrame",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkTimelineEventPlayableBehavior as ::unity2::ClassIdentity>::NAME,
-                        "PrepareFrame",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn prepare_frame(
-        this: AkTimelineEventPlayableBehavior,
-        playable: crate::unity_engine::playables::playable::Playable,
-        info: crate::unity_engine::playables::framedata::FrameData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            AkTimelineEventPlayableBehavior,
-            crate::unity_engine::playables::playable::Playable,
-            crate::unity_engine::playables::framedata::FrameData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_prepare_frame::get_method_info().method_ptr);
-        inner(this, playable, info, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_behaviour_play {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::playables::playable::Playable as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::playables::framedata::FrameData as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkTimelineEventPlayableBehavior as ::unity2::ClassIdentity>::class(),
-                "OnBehaviourPlay",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkTimelineEventPlayableBehavior as ::unity2::ClassIdentity>::NAME,
-                        "OnBehaviourPlay",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_behaviour_play(
-        this: AkTimelineEventPlayableBehavior,
-        playable: crate::unity_engine::playables::playable::Playable,
-        info: crate::unity_engine::playables::framedata::FrameData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            AkTimelineEventPlayableBehavior,
-            crate::unity_engine::playables::playable::Playable,
-            crate::unity_engine::playables::framedata::FrameData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_on_behaviour_play::get_method_info().method_ptr);
-        inner(this, playable, info, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_behaviour_pause {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::playables::playable::Playable as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::playables::framedata::FrameData as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkTimelineEventPlayableBehavior as ::unity2::ClassIdentity>::class(),
-                "OnBehaviourPause",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkTimelineEventPlayableBehavior as ::unity2::ClassIdentity>::NAME,
-                        "OnBehaviourPause",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_behaviour_pause(
-        this: AkTimelineEventPlayableBehavior,
-        playable: crate::unity_engine::playables::playable::Playable,
-        info: crate::unity_engine::playables::framedata::FrameData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            AkTimelineEventPlayableBehavior,
-            crate::unity_engine::playables::playable::Playable,
-            crate::unity_engine::playables::framedata::FrameData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_on_behaviour_pause::get_method_info().method_ptr);
-        inner(this, playable, info, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_process_frame {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::playables::playable::Playable as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::playables::framedata::FrameData as ::unity2::IlType>::il_type(),
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkTimelineEventPlayableBehavior as ::unity2::ClassIdentity>::class(),
-                "ProcessFrame",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkTimelineEventPlayableBehavior as ::unity2::ClassIdentity>::NAME,
-                        "ProcessFrame",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn process_frame(
-        this: AkTimelineEventPlayableBehavior,
-        playable: crate::unity_engine::playables::playable::Playable,
-        info: crate::unity_engine::playables::framedata::FrameData,
-        player_data: crate::system::object::Object,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            AkTimelineEventPlayableBehavior,
-            crate::unity_engine::playables::playable::Playable,
-            crate::unity_engine::playables::framedata::FrameData,
-            crate::system::object::Object,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_process_frame::get_method_info().method_ptr);
-        inner(this, playable, info, player_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_should_play {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::playables::playable::Playable as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkTimelineEventPlayableBehavior as ::unity2::ClassIdentity>::class(),
-                "ShouldPlay",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkTimelineEventPlayableBehavior as ::unity2::ClassIdentity>::NAME,
-                        "ShouldPlay",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn should_play(
-        this: AkTimelineEventPlayableBehavior,
-        playable: crate::unity_engine::playables::playable::Playable,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            AkTimelineEventPlayableBehavior,
-            crate::unity_engine::playables::playable::Playable,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(__lookup_should_play::get_method_info().method_ptr);
-        inner(this, playable, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_check_for_fade_in_fade_out {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::playables::playable::Playable as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkTimelineEventPlayableBehavior as ::unity2::ClassIdentity>::class(),
-                "CheckForFadeInFadeOut",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkTimelineEventPlayableBehavior as ::unity2::ClassIdentity>::NAME,
-                        "CheckForFadeInFadeOut",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn check_for_fade_in_fade_out(
-        this: AkTimelineEventPlayableBehavior,
-        playable: crate::unity_engine::playables::playable::Playable,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            AkTimelineEventPlayableBehavior,
-            crate::unity_engine::playables::playable::Playable,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_check_for_fade_in_fade_out::get_method_info().method_ptr);
-        inner(this, playable, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_check_for_fade_out {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::playables::playable::Playable as ::unity2::IlType>::il_type(),
-                <f64 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkTimelineEventPlayableBehavior as ::unity2::ClassIdentity>::class(),
-                "CheckForFadeOut",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkTimelineEventPlayableBehavior as ::unity2::ClassIdentity>::NAME,
-                        "CheckForFadeOut",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn check_for_fade_out(
-        this: AkTimelineEventPlayableBehavior,
-        playable: crate::unity_engine::playables::playable::Playable,
-        current_clip_time: f64,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            AkTimelineEventPlayableBehavior,
-            crate::unity_engine::playables::playable::Playable,
-            f64,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_check_for_fade_out::get_method_info().method_ptr);
-        inner(this, playable, current_clip_time, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_trigger_fade_in {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::playables::playable::Playable as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkTimelineEventPlayableBehavior as ::unity2::ClassIdentity>::class(),
-                "TriggerFadeIn",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkTimelineEventPlayableBehavior as ::unity2::ClassIdentity>::NAME,
-                        "TriggerFadeIn",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn trigger_fade_in(
-        this: AkTimelineEventPlayableBehavior,
-        playable: crate::unity_engine::playables::playable::Playable,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            AkTimelineEventPlayableBehavior,
-            crate::unity_engine::playables::playable::Playable,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_trigger_fade_in::get_method_info().method_ptr);
-        inner(this, playable, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_trigger_fade_out {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::playables::playable::Playable as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkTimelineEventPlayableBehavior as ::unity2::ClassIdentity>::class(),
-                "TriggerFadeOut",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkTimelineEventPlayableBehavior as ::unity2::ClassIdentity>::NAME,
-                        "TriggerFadeOut",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn trigger_fade_out(
-        this: AkTimelineEventPlayableBehavior,
-        playable: crate::unity_engine::playables::playable::Playable,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            AkTimelineEventPlayableBehavior,
-            crate::unity_engine::playables::playable::Playable,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_trigger_fade_out::get_method_info().method_ptr);
-        inner(this, playable, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_stop_event {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkTimelineEventPlayableBehavior as ::unity2::ClassIdentity>::class(),
-                "StopEvent",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkTimelineEventPlayableBehavior as ::unity2::ClassIdentity>::NAME,
-                        "StopEvent",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn stop_event(this: AkTimelineEventPlayableBehavior, transition: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AkTimelineEventPlayableBehavior, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_stop_event::get_method_info().method_ptr);
-        inner(this, transition, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_post_event {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkTimelineEventPlayableBehavior as ::unity2::ClassIdentity>::class(),
-                "PostEvent",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkTimelineEventPlayableBehavior as ::unity2::ClassIdentity>::NAME,
-                        "PostEvent",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn post_event(this: AkTimelineEventPlayableBehavior, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(AkTimelineEventPlayableBehavior, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_post_event::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_play_event {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkTimelineEventPlayableBehavior as ::unity2::ClassIdentity>::class(),
-                "PlayEvent",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkTimelineEventPlayableBehavior as ::unity2::ClassIdentity>::NAME,
-                        "PlayEvent",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn play_event(this: AkTimelineEventPlayableBehavior, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AkTimelineEventPlayableBehavior, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_play_event::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_retrigger_event {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::playables::playable::Playable as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkTimelineEventPlayableBehavior as ::unity2::ClassIdentity>::class(),
-                "RetriggerEvent",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkTimelineEventPlayableBehavior as ::unity2::ClassIdentity>::NAME,
-                        "RetriggerEvent",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn retrigger_event(
-        this: AkTimelineEventPlayableBehavior,
-        playable: crate::unity_engine::playables::playable::Playable,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            AkTimelineEventPlayableBehavior,
-            crate::unity_engine::playables::playable::Playable,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_retrigger_event::get_method_info().method_ptr);
-        inner(this, playable, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_proportional_time {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::playables::playable::Playable as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkTimelineEventPlayableBehavior as ::unity2::ClassIdentity>::class(),
-                "GetProportionalTime",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkTimelineEventPlayableBehavior as ::unity2::ClassIdentity>::NAME,
-                        "GetProportionalTime",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_proportional_time(
-        this: AkTimelineEventPlayableBehavior,
-        playable: crate::unity_engine::playables::playable::Playable,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
-        let inner: extern "C" fn(
-            AkTimelineEventPlayableBehavior,
-            crate::unity_engine::playables::playable::Playable,
-            ::unity2::OptionalMethod,
-        ) -> f32 = ::core::mem::transmute(__lookup_get_proportional_time::get_method_info().method_ptr);
-        inner(this, playable, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_seek_to_time {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::playables::playable::Playable as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkTimelineEventPlayableBehavior as ::unity2::ClassIdentity>::class(),
-                "SeekToTime",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkTimelineEventPlayableBehavior as ::unity2::ClassIdentity>::NAME,
-                        "SeekToTime",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn seek_to_time(
-        this: AkTimelineEventPlayableBehavior,
-        playable: crate::unity_engine::playables::playable::Playable,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
-        let inner: extern "C" fn(
-            AkTimelineEventPlayableBehavior,
-            crate::unity_engine::playables::playable::Playable,
-            ::unity2::OptionalMethod,
-        ) -> f32 = ::core::mem::transmute(__lookup_seek_to_time::get_method_info().method_ptr);
-        inner(this, playable, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkTimelineEventPlayableBehavior as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkTimelineEventPlayableBehavior as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: AkTimelineEventPlayableBehavior, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AkTimelineEventPlayableBehavior, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __AkTimelineEventPlayableBehavior_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_callback_handler { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type () , < crate :: root :: akcallbacktype :: AkCallbackType as :: unity2 :: IlType > :: il_type () , < crate :: root :: akcallbackinfo :: AkCallbackInfo as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkTimelineEventPlayableBehavior as :: unity2 :: ClassIdentity > :: class () , "CallbackHandler" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkTimelineEventPlayableBehavior as :: unity2 :: ClassIdentity > :: NAME , "CallbackHandler" , e) , } } } pub unsafe fn callback_handler (this : AkTimelineEventPlayableBehavior , in_cookie : crate :: system :: object :: Object , in_type : crate :: root :: akcallbacktype :: AkCallbackType , in_info : crate :: root :: akcallbackinfo :: AkCallbackInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkTimelineEventPlayableBehavior , crate :: system :: object :: Object , crate :: root :: akcallbacktype :: AkCallbackType , crate :: root :: akcallbackinfo :: AkCallbackInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_callback_handler :: get_method_info () . method_ptr ,) ; inner (this , in_cookie , in_type , in_info , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_scrubbing { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playable :: Playable as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: playables :: framedata :: FrameData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkTimelineEventPlayableBehavior as :: unity2 :: ClassIdentity > :: class () , "IsScrubbing" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkTimelineEventPlayableBehavior as :: unity2 :: ClassIdentity > :: NAME , "IsScrubbing" , e) , } } } pub unsafe fn is_scrubbing (this : AkTimelineEventPlayableBehavior , playable : crate :: unity_engine :: playables :: playable :: Playable , info : crate :: unity_engine :: playables :: framedata :: FrameData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (AkTimelineEventPlayableBehavior , crate :: unity_engine :: playables :: playable :: Playable , crate :: unity_engine :: playables :: framedata :: FrameData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_scrubbing :: get_method_info () . method_ptr ,) ; inner (this , playable , info , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_print_info { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: playables :: playable :: Playable as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: playables :: framedata :: FrameData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkTimelineEventPlayableBehavior as :: unity2 :: ClassIdentity > :: class () , "PrintInfo" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkTimelineEventPlayableBehavior as :: unity2 :: ClassIdentity > :: NAME , "PrintInfo" , e) , } } } pub unsafe fn print_info (this : AkTimelineEventPlayableBehavior , function_name : :: unity2 :: Il2CppString , playable : crate :: unity_engine :: playables :: playable :: Playable , info : crate :: unity_engine :: playables :: framedata :: FrameData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkTimelineEventPlayableBehavior , :: unity2 :: Il2CppString , crate :: unity_engine :: playables :: playable :: Playable , crate :: unity_engine :: playables :: framedata :: FrameData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_print_info :: get_method_info () . method_ptr ,) ; inner (this , function_name , playable , info , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_prepare_frame { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playable :: Playable as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: playables :: framedata :: FrameData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkTimelineEventPlayableBehavior as :: unity2 :: ClassIdentity > :: class () , "PrepareFrame" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkTimelineEventPlayableBehavior as :: unity2 :: ClassIdentity > :: NAME , "PrepareFrame" , e) , } } } pub unsafe fn prepare_frame (this : AkTimelineEventPlayableBehavior , playable : crate :: unity_engine :: playables :: playable :: Playable , info : crate :: unity_engine :: playables :: framedata :: FrameData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkTimelineEventPlayableBehavior , crate :: unity_engine :: playables :: playable :: Playable , crate :: unity_engine :: playables :: framedata :: FrameData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_prepare_frame :: get_method_info () . method_ptr ,) ; inner (this , playable , info , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_behaviour_play { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playable :: Playable as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: playables :: framedata :: FrameData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkTimelineEventPlayableBehavior as :: unity2 :: ClassIdentity > :: class () , "OnBehaviourPlay" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkTimelineEventPlayableBehavior as :: unity2 :: ClassIdentity > :: NAME , "OnBehaviourPlay" , e) , } } } pub unsafe fn on_behaviour_play (this : AkTimelineEventPlayableBehavior , playable : crate :: unity_engine :: playables :: playable :: Playable , info : crate :: unity_engine :: playables :: framedata :: FrameData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkTimelineEventPlayableBehavior , crate :: unity_engine :: playables :: playable :: Playable , crate :: unity_engine :: playables :: framedata :: FrameData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_behaviour_play :: get_method_info () . method_ptr ,) ; inner (this , playable , info , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_behaviour_pause { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playable :: Playable as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: playables :: framedata :: FrameData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkTimelineEventPlayableBehavior as :: unity2 :: ClassIdentity > :: class () , "OnBehaviourPause" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkTimelineEventPlayableBehavior as :: unity2 :: ClassIdentity > :: NAME , "OnBehaviourPause" , e) , } } } pub unsafe fn on_behaviour_pause (this : AkTimelineEventPlayableBehavior , playable : crate :: unity_engine :: playables :: playable :: Playable , info : crate :: unity_engine :: playables :: framedata :: FrameData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkTimelineEventPlayableBehavior , crate :: unity_engine :: playables :: playable :: Playable , crate :: unity_engine :: playables :: framedata :: FrameData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_behaviour_pause :: get_method_info () . method_ptr ,) ; inner (this , playable , info , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_process_frame { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playable :: Playable as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: playables :: framedata :: FrameData as :: unity2 :: IlType > :: il_type () , < crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkTimelineEventPlayableBehavior as :: unity2 :: ClassIdentity > :: class () , "ProcessFrame" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkTimelineEventPlayableBehavior as :: unity2 :: ClassIdentity > :: NAME , "ProcessFrame" , e) , } } } pub unsafe fn process_frame (this : AkTimelineEventPlayableBehavior , playable : crate :: unity_engine :: playables :: playable :: Playable , info : crate :: unity_engine :: playables :: framedata :: FrameData , player_data : crate :: system :: object :: Object , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkTimelineEventPlayableBehavior , crate :: unity_engine :: playables :: playable :: Playable , crate :: unity_engine :: playables :: framedata :: FrameData , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_process_frame :: get_method_info () . method_ptr ,) ; inner (this , playable , info , player_data , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_should_play { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playable :: Playable as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkTimelineEventPlayableBehavior as :: unity2 :: ClassIdentity > :: class () , "ShouldPlay" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkTimelineEventPlayableBehavior as :: unity2 :: ClassIdentity > :: NAME , "ShouldPlay" , e) , } } } pub unsafe fn should_play (this : AkTimelineEventPlayableBehavior , playable : crate :: unity_engine :: playables :: playable :: Playable , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (AkTimelineEventPlayableBehavior , crate :: unity_engine :: playables :: playable :: Playable , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_should_play :: get_method_info () . method_ptr ,) ; inner (this , playable , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_check_for_fade_in_fade_out { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playable :: Playable as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkTimelineEventPlayableBehavior as :: unity2 :: ClassIdentity > :: class () , "CheckForFadeInFadeOut" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkTimelineEventPlayableBehavior as :: unity2 :: ClassIdentity > :: NAME , "CheckForFadeInFadeOut" , e) , } } } pub unsafe fn check_for_fade_in_fade_out (this : AkTimelineEventPlayableBehavior , playable : crate :: unity_engine :: playables :: playable :: Playable , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkTimelineEventPlayableBehavior , crate :: unity_engine :: playables :: playable :: Playable , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_check_for_fade_in_fade_out :: get_method_info () . method_ptr ,) ; inner (this , playable , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_check_for_fade_out { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playable :: Playable as :: unity2 :: IlType > :: il_type () , < f64 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkTimelineEventPlayableBehavior as :: unity2 :: ClassIdentity > :: class () , "CheckForFadeOut" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkTimelineEventPlayableBehavior as :: unity2 :: ClassIdentity > :: NAME , "CheckForFadeOut" , e) , } } } pub unsafe fn check_for_fade_out (this : AkTimelineEventPlayableBehavior , playable : crate :: unity_engine :: playables :: playable :: Playable , current_clip_time : f64 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkTimelineEventPlayableBehavior , crate :: unity_engine :: playables :: playable :: Playable , f64 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_check_for_fade_out :: get_method_info () . method_ptr ,) ; inner (this , playable , current_clip_time , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_trigger_fade_in { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playable :: Playable as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkTimelineEventPlayableBehavior as :: unity2 :: ClassIdentity > :: class () , "TriggerFadeIn" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkTimelineEventPlayableBehavior as :: unity2 :: ClassIdentity > :: NAME , "TriggerFadeIn" , e) , } } } pub unsafe fn trigger_fade_in (this : AkTimelineEventPlayableBehavior , playable : crate :: unity_engine :: playables :: playable :: Playable , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkTimelineEventPlayableBehavior , crate :: unity_engine :: playables :: playable :: Playable , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_trigger_fade_in :: get_method_info () . method_ptr ,) ; inner (this , playable , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_trigger_fade_out { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playable :: Playable as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkTimelineEventPlayableBehavior as :: unity2 :: ClassIdentity > :: class () , "TriggerFadeOut" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkTimelineEventPlayableBehavior as :: unity2 :: ClassIdentity > :: NAME , "TriggerFadeOut" , e) , } } } pub unsafe fn trigger_fade_out (this : AkTimelineEventPlayableBehavior , playable : crate :: unity_engine :: playables :: playable :: Playable , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkTimelineEventPlayableBehavior , crate :: unity_engine :: playables :: playable :: Playable , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_trigger_fade_out :: get_method_info () . method_ptr ,) ; inner (this , playable , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_stop_event { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkTimelineEventPlayableBehavior as :: unity2 :: ClassIdentity > :: class () , "StopEvent" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkTimelineEventPlayableBehavior as :: unity2 :: ClassIdentity > :: NAME , "StopEvent" , e) , } } } pub unsafe fn stop_event (this : AkTimelineEventPlayableBehavior , transition : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkTimelineEventPlayableBehavior , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_stop_event :: get_method_info () . method_ptr ,) ; inner (this , transition , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_post_event { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkTimelineEventPlayableBehavior as :: unity2 :: ClassIdentity > :: class () , "PostEvent" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkTimelineEventPlayableBehavior as :: unity2 :: ClassIdentity > :: NAME , "PostEvent" , e) , } } } pub unsafe fn post_event (this : AkTimelineEventPlayableBehavior , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (AkTimelineEventPlayableBehavior , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_post_event :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_play_event { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkTimelineEventPlayableBehavior as :: unity2 :: ClassIdentity > :: class () , "PlayEvent" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkTimelineEventPlayableBehavior as :: unity2 :: ClassIdentity > :: NAME , "PlayEvent" , e) , } } } pub unsafe fn play_event (this : AkTimelineEventPlayableBehavior , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkTimelineEventPlayableBehavior , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_play_event :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_retrigger_event { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playable :: Playable as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkTimelineEventPlayableBehavior as :: unity2 :: ClassIdentity > :: class () , "RetriggerEvent" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkTimelineEventPlayableBehavior as :: unity2 :: ClassIdentity > :: NAME , "RetriggerEvent" , e) , } } } pub unsafe fn retrigger_event (this : AkTimelineEventPlayableBehavior , playable : crate :: unity_engine :: playables :: playable :: Playable , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkTimelineEventPlayableBehavior , crate :: unity_engine :: playables :: playable :: Playable , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_retrigger_event :: get_method_info () . method_ptr ,) ; inner (this , playable , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_proportional_time { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playable :: Playable as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkTimelineEventPlayableBehavior as :: unity2 :: ClassIdentity > :: class () , "GetProportionalTime" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkTimelineEventPlayableBehavior as :: unity2 :: ClassIdentity > :: NAME , "GetProportionalTime" , e) , } } } pub unsafe fn get_proportional_time (this : AkTimelineEventPlayableBehavior , playable : crate :: unity_engine :: playables :: playable :: Playable , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (AkTimelineEventPlayableBehavior , crate :: unity_engine :: playables :: playable :: Playable , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_get_proportional_time :: get_method_info () . method_ptr ,) ; inner (this , playable , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_seek_to_time { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playable :: Playable as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkTimelineEventPlayableBehavior as :: unity2 :: ClassIdentity > :: class () , "SeekToTime" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkTimelineEventPlayableBehavior as :: unity2 :: ClassIdentity > :: NAME , "SeekToTime" , e) , } } } pub unsafe fn seek_to_time (this : AkTimelineEventPlayableBehavior , playable : crate :: unity_engine :: playables :: playable :: Playable , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (AkTimelineEventPlayableBehavior , crate :: unity_engine :: playables :: playable :: Playable , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_seek_to_time :: get_method_info () . method_ptr ,) ; inner (this , playable , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkTimelineEventPlayableBehavior as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkTimelineEventPlayableBehavior as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : AkTimelineEventPlayableBehavior , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkTimelineEventPlayableBehavior , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "root-aktimelineeventplayablebehavior")]
-pub trait IAkTimelineEventPlayableBehaviorMethods: IAkTimelineEventPlayableBehavior {
-    #[doc = "`CallbackHandler(crate::system::object::Object, crate::root::akcallbacktype::AkCallbackType, crate::root::akcallbackinfo::AkCallbackInfo)` overload"]
-    fn callback_handler(
-        self,
-        in_cookie: impl ::core::convert::Into<crate::system::object::Object>,
-        in_type: impl ::core::convert::Into<crate::root::akcallbacktype::AkCallbackType>,
-        in_info: impl ::core::convert::Into<crate::root::akcallbackinfo::AkCallbackInfo>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <AkTimelineEventPlayableBehavior as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkTimelineEventPlayableBehavior_unity2_raw::callback_handler(
-                __receiver,
-                ::core::convert::Into::into(in_cookie),
-                ::core::convert::Into::into(in_type),
-                ::core::convert::Into::into(in_info),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`IsScrubbing(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::framedata::FrameData)` overload"]
-    fn is_scrubbing(
-        self,
-        playable: impl ::core::convert::Into<crate::unity_engine::playables::playable::Playable>,
-        info: impl ::core::convert::Into<crate::unity_engine::playables::framedata::FrameData>,
-    ) -> bool {
-        unsafe {
-            let __receiver =
-                <AkTimelineEventPlayableBehavior as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkTimelineEventPlayableBehavior_unity2_raw::is_scrubbing(
-                __receiver,
-                ::core::convert::Into::into(playable),
-                ::core::convert::Into::into(info),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`PrintInfo(::unity2::Il2CppString, crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::framedata::FrameData)` overload"]
-    fn print_info(
-        self,
-        function_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        playable: impl ::core::convert::Into<crate::unity_engine::playables::playable::Playable>,
-        info: impl ::core::convert::Into<crate::unity_engine::playables::framedata::FrameData>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <AkTimelineEventPlayableBehavior as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkTimelineEventPlayableBehavior_unity2_raw::print_info(
-                __receiver,
-                ::core::convert::Into::into(function_name),
-                ::core::convert::Into::into(playable),
-                ::core::convert::Into::into(info),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`PrepareFrame(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::framedata::FrameData)` overload"]
-    fn prepare_frame(
-        self,
-        playable: impl ::core::convert::Into<crate::unity_engine::playables::playable::Playable>,
-        info: impl ::core::convert::Into<crate::unity_engine::playables::framedata::FrameData>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <AkTimelineEventPlayableBehavior as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkTimelineEventPlayableBehavior_unity2_raw::prepare_frame(
-                __receiver,
-                ::core::convert::Into::into(playable),
-                ::core::convert::Into::into(info),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`OnBehaviourPlay(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::framedata::FrameData)` overload"]
-    fn on_behaviour_play(
-        self,
-        playable: impl ::core::convert::Into<crate::unity_engine::playables::playable::Playable>,
-        info: impl ::core::convert::Into<crate::unity_engine::playables::framedata::FrameData>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <AkTimelineEventPlayableBehavior as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkTimelineEventPlayableBehavior_unity2_raw::on_behaviour_play(
-                __receiver,
-                ::core::convert::Into::into(playable),
-                ::core::convert::Into::into(info),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`OnBehaviourPause(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::framedata::FrameData)` overload"]
-    fn on_behaviour_pause(
-        self,
-        playable: impl ::core::convert::Into<crate::unity_engine::playables::playable::Playable>,
-        info: impl ::core::convert::Into<crate::unity_engine::playables::framedata::FrameData>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <AkTimelineEventPlayableBehavior as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkTimelineEventPlayableBehavior_unity2_raw::on_behaviour_pause(
-                __receiver,
-                ::core::convert::Into::into(playable),
-                ::core::convert::Into::into(info),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ProcessFrame(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::framedata::FrameData, crate::system::object::Object)` overload"]
-    fn process_frame(
-        self,
-        playable: impl ::core::convert::Into<crate::unity_engine::playables::playable::Playable>,
-        info: impl ::core::convert::Into<crate::unity_engine::playables::framedata::FrameData>,
-        player_data: impl ::core::convert::Into<crate::system::object::Object>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <AkTimelineEventPlayableBehavior as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkTimelineEventPlayableBehavior_unity2_raw::process_frame(
-                __receiver,
-                ::core::convert::Into::into(playable),
-                ::core::convert::Into::into(info),
-                ::core::convert::Into::into(player_data),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ShouldPlay(crate::unity_engine::playables::playable::Playable)` overload"]
-    fn should_play(self, playable: impl ::core::convert::Into<crate::unity_engine::playables::playable::Playable>) -> bool {
-        unsafe {
-            let __receiver =
-                <AkTimelineEventPlayableBehavior as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkTimelineEventPlayableBehavior_unity2_raw::should_play(__receiver, ::core::convert::Into::into(playable), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CheckForFadeInFadeOut(crate::unity_engine::playables::playable::Playable)` overload"]
-    fn check_for_fade_in_fade_out(self, playable: impl ::core::convert::Into<crate::unity_engine::playables::playable::Playable>) -> () {
-        unsafe {
-            let __receiver =
-                <AkTimelineEventPlayableBehavior as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkTimelineEventPlayableBehavior_unity2_raw::check_for_fade_in_fade_out(
-                __receiver,
-                ::core::convert::Into::into(playable),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CheckForFadeOut(crate::unity_engine::playables::playable::Playable, f64)` overload"]
-    fn check_for_fade_out(
-        self,
-        playable: impl ::core::convert::Into<crate::unity_engine::playables::playable::Playable>,
-        current_clip_time: impl ::core::convert::Into<f64>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <AkTimelineEventPlayableBehavior as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkTimelineEventPlayableBehavior_unity2_raw::check_for_fade_out(
-                __receiver,
-                ::core::convert::Into::into(playable),
-                ::core::convert::Into::into(current_clip_time),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`TriggerFadeIn(crate::unity_engine::playables::playable::Playable)` overload"]
-    fn trigger_fade_in(self, playable: impl ::core::convert::Into<crate::unity_engine::playables::playable::Playable>) -> () {
-        unsafe {
-            let __receiver =
-                <AkTimelineEventPlayableBehavior as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkTimelineEventPlayableBehavior_unity2_raw::trigger_fade_in(
-                __receiver,
-                ::core::convert::Into::into(playable),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`TriggerFadeOut(crate::unity_engine::playables::playable::Playable)` overload"]
-    fn trigger_fade_out(self, playable: impl ::core::convert::Into<crate::unity_engine::playables::playable::Playable>) -> () {
-        unsafe {
-            let __receiver =
-                <AkTimelineEventPlayableBehavior as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkTimelineEventPlayableBehavior_unity2_raw::trigger_fade_out(
-                __receiver,
-                ::core::convert::Into::into(playable),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`StopEvent(i32)` overload"]
-    fn stop_event(self, transition: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver =
-                <AkTimelineEventPlayableBehavior as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkTimelineEventPlayableBehavior_unity2_raw::stop_event(
-                __receiver,
-                ::core::convert::Into::into(transition),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`PostEvent()` overload"]
-    fn post_event(self) -> bool {
-        unsafe {
-            let __receiver =
-                <AkTimelineEventPlayableBehavior as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkTimelineEventPlayableBehavior_unity2_raw::post_event(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`PlayEvent()` overload"]
-    fn play_event(self) -> () {
-        unsafe {
-            let __receiver =
-                <AkTimelineEventPlayableBehavior as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkTimelineEventPlayableBehavior_unity2_raw::play_event(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`RetriggerEvent(crate::unity_engine::playables::playable::Playable)` overload"]
-    fn retrigger_event(self, playable: impl ::core::convert::Into<crate::unity_engine::playables::playable::Playable>) -> () {
-        unsafe {
-            let __receiver =
-                <AkTimelineEventPlayableBehavior as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkTimelineEventPlayableBehavior_unity2_raw::retrigger_event(
-                __receiver,
-                ::core::convert::Into::into(playable),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetProportionalTime(crate::unity_engine::playables::playable::Playable)` overload"]
-    fn get_proportional_time(self, playable: impl ::core::convert::Into<crate::unity_engine::playables::playable::Playable>) -> f32 {
-        unsafe {
-            let __receiver =
-                <AkTimelineEventPlayableBehavior as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkTimelineEventPlayableBehavior_unity2_raw::get_proportional_time(
-                __receiver,
-                ::core::convert::Into::into(playable),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SeekToTime(crate::unity_engine::playables::playable::Playable)` overload"]
-    fn seek_to_time(self, playable: impl ::core::convert::Into<crate::unity_engine::playables::playable::Playable>) -> f32 {
-        unsafe {
-            let __receiver =
-                <AkTimelineEventPlayableBehavior as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkTimelineEventPlayableBehavior_unity2_raw::seek_to_time(
-                __receiver,
-                ::core::convert::Into::into(playable),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <AkTimelineEventPlayableBehavior as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkTimelineEventPlayableBehavior_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IAkTimelineEventPlayableBehaviorMethods : IAkTimelineEventPlayableBehavior { # [doc = "`CallbackHandler(crate::system::object::Object, crate::root::akcallbacktype::AkCallbackType, crate::root::akcallbackinfo::AkCallbackInfo)` overload"] fn callback_handler (self , in_cookie : impl :: core :: convert :: Into < crate :: system :: object :: Object > , in_type : impl :: core :: convert :: Into < crate :: root :: akcallbacktype :: AkCallbackType > , in_info : impl :: core :: convert :: Into < crate :: root :: akcallbackinfo :: AkCallbackInfo >) -> () { unsafe { let __receiver = < AkTimelineEventPlayableBehavior as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkTimelineEventPlayableBehavior_unity2_raw :: callback_handler (__receiver , :: core :: convert :: Into :: into (in_cookie) , :: core :: convert :: Into :: into (in_type) , :: core :: convert :: Into :: into (in_info) , :: core :: option :: Option :: None) } } # [doc = "`IsScrubbing(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::framedata::FrameData)` overload"] fn is_scrubbing (self , playable : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playable :: Playable > , info : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: framedata :: FrameData >) -> bool { unsafe { let __receiver = < AkTimelineEventPlayableBehavior as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkTimelineEventPlayableBehavior_unity2_raw :: is_scrubbing (__receiver , :: core :: convert :: Into :: into (playable) , :: core :: convert :: Into :: into (info) , :: core :: option :: Option :: None) } } # [doc = "`PrintInfo(::unity2::Il2CppString, crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::framedata::FrameData)` overload"] fn print_info (self , function_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , playable : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playable :: Playable > , info : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: framedata :: FrameData >) -> () { unsafe { let __receiver = < AkTimelineEventPlayableBehavior as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkTimelineEventPlayableBehavior_unity2_raw :: print_info (__receiver , :: core :: convert :: Into :: into (function_name) , :: core :: convert :: Into :: into (playable) , :: core :: convert :: Into :: into (info) , :: core :: option :: Option :: None) } } # [doc = "`PrepareFrame(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::framedata::FrameData)` overload"] fn prepare_frame (self , playable : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playable :: Playable > , info : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: framedata :: FrameData >) -> () { unsafe { let __receiver = < AkTimelineEventPlayableBehavior as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkTimelineEventPlayableBehavior_unity2_raw :: prepare_frame (__receiver , :: core :: convert :: Into :: into (playable) , :: core :: convert :: Into :: into (info) , :: core :: option :: Option :: None) } } # [doc = "`OnBehaviourPlay(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::framedata::FrameData)` overload"] fn on_behaviour_play (self , playable : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playable :: Playable > , info : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: framedata :: FrameData >) -> () { unsafe { let __receiver = < AkTimelineEventPlayableBehavior as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkTimelineEventPlayableBehavior_unity2_raw :: on_behaviour_play (__receiver , :: core :: convert :: Into :: into (playable) , :: core :: convert :: Into :: into (info) , :: core :: option :: Option :: None) } } # [doc = "`OnBehaviourPause(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::framedata::FrameData)` overload"] fn on_behaviour_pause (self , playable : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playable :: Playable > , info : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: framedata :: FrameData >) -> () { unsafe { let __receiver = < AkTimelineEventPlayableBehavior as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkTimelineEventPlayableBehavior_unity2_raw :: on_behaviour_pause (__receiver , :: core :: convert :: Into :: into (playable) , :: core :: convert :: Into :: into (info) , :: core :: option :: Option :: None) } } # [doc = "`ProcessFrame(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::framedata::FrameData, crate::system::object::Object)` overload"] fn process_frame (self , playable : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playable :: Playable > , info : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: framedata :: FrameData > , player_data : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> () { unsafe { let __receiver = < AkTimelineEventPlayableBehavior as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkTimelineEventPlayableBehavior_unity2_raw :: process_frame (__receiver , :: core :: convert :: Into :: into (playable) , :: core :: convert :: Into :: into (info) , :: core :: convert :: Into :: into (player_data) , :: core :: option :: Option :: None) } } # [doc = "`ShouldPlay(crate::unity_engine::playables::playable::Playable)` overload"] fn should_play (self , playable : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playable :: Playable >) -> bool { unsafe { let __receiver = < AkTimelineEventPlayableBehavior as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkTimelineEventPlayableBehavior_unity2_raw :: should_play (__receiver , :: core :: convert :: Into :: into (playable) , :: core :: option :: Option :: None) } } # [doc = "`CheckForFadeInFadeOut(crate::unity_engine::playables::playable::Playable)` overload"] fn check_for_fade_in_fade_out (self , playable : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playable :: Playable >) -> () { unsafe { let __receiver = < AkTimelineEventPlayableBehavior as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkTimelineEventPlayableBehavior_unity2_raw :: check_for_fade_in_fade_out (__receiver , :: core :: convert :: Into :: into (playable) , :: core :: option :: Option :: None) } } # [doc = "`CheckForFadeOut(crate::unity_engine::playables::playable::Playable, f64)` overload"] fn check_for_fade_out (self , playable : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playable :: Playable > , current_clip_time : impl :: core :: convert :: Into < f64 >) -> () { unsafe { let __receiver = < AkTimelineEventPlayableBehavior as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkTimelineEventPlayableBehavior_unity2_raw :: check_for_fade_out (__receiver , :: core :: convert :: Into :: into (playable) , :: core :: convert :: Into :: into (current_clip_time) , :: core :: option :: Option :: None) } } # [doc = "`TriggerFadeIn(crate::unity_engine::playables::playable::Playable)` overload"] fn trigger_fade_in (self , playable : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playable :: Playable >) -> () { unsafe { let __receiver = < AkTimelineEventPlayableBehavior as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkTimelineEventPlayableBehavior_unity2_raw :: trigger_fade_in (__receiver , :: core :: convert :: Into :: into (playable) , :: core :: option :: Option :: None) } } # [doc = "`TriggerFadeOut(crate::unity_engine::playables::playable::Playable)` overload"] fn trigger_fade_out (self , playable : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playable :: Playable >) -> () { unsafe { let __receiver = < AkTimelineEventPlayableBehavior as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkTimelineEventPlayableBehavior_unity2_raw :: trigger_fade_out (__receiver , :: core :: convert :: Into :: into (playable) , :: core :: option :: Option :: None) } } # [doc = "`StopEvent(i32)` overload"] fn stop_event (self , transition : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < AkTimelineEventPlayableBehavior as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkTimelineEventPlayableBehavior_unity2_raw :: stop_event (__receiver , :: core :: convert :: Into :: into (transition) , :: core :: option :: Option :: None) } } # [doc = "`PostEvent()` overload"] fn post_event (self ,) -> bool { unsafe { let __receiver = < AkTimelineEventPlayableBehavior as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkTimelineEventPlayableBehavior_unity2_raw :: post_event (__receiver , :: core :: option :: Option :: None) } } # [doc = "`PlayEvent()` overload"] fn play_event (self ,) -> () { unsafe { let __receiver = < AkTimelineEventPlayableBehavior as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkTimelineEventPlayableBehavior_unity2_raw :: play_event (__receiver , :: core :: option :: Option :: None) } } # [doc = "`RetriggerEvent(crate::unity_engine::playables::playable::Playable)` overload"] fn retrigger_event (self , playable : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playable :: Playable >) -> () { unsafe { let __receiver = < AkTimelineEventPlayableBehavior as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkTimelineEventPlayableBehavior_unity2_raw :: retrigger_event (__receiver , :: core :: convert :: Into :: into (playable) , :: core :: option :: Option :: None) } } # [doc = "`GetProportionalTime(crate::unity_engine::playables::playable::Playable)` overload"] fn get_proportional_time (self , playable : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playable :: Playable >) -> f32 { unsafe { let __receiver = < AkTimelineEventPlayableBehavior as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkTimelineEventPlayableBehavior_unity2_raw :: get_proportional_time (__receiver , :: core :: convert :: Into :: into (playable) , :: core :: option :: Option :: None) } } # [doc = "`SeekToTime(crate::unity_engine::playables::playable::Playable)` overload"] fn seek_to_time (self , playable : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playable :: Playable >) -> f32 { unsafe { let __receiver = < AkTimelineEventPlayableBehavior as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkTimelineEventPlayableBehavior_unity2_raw :: seek_to_time (__receiver , :: core :: convert :: Into :: into (playable) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AkTimelineEventPlayableBehavior as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkTimelineEventPlayableBehavior_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "root-aktimelineeventplayablebehavior")]
-impl<__T: IAkTimelineEventPlayableBehavior> IAkTimelineEventPlayableBehaviorMethods for __T {}
+impl < __T : IAkTimelineEventPlayableBehavior > IAkTimelineEventPlayableBehaviorMethods for __T { }
+
+#[cfg(feature = "root-aktimelineeventplayablebehavior")]
+impl AkTimelineEventPlayableBehavior { pub fn callback_handler_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkTimelineEventPlayableBehavior_unity2_raw :: __lookup_callback_handler :: get_method_info () } pub fn is_scrubbing_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkTimelineEventPlayableBehavior_unity2_raw :: __lookup_is_scrubbing :: get_method_info () } pub fn print_info_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkTimelineEventPlayableBehavior_unity2_raw :: __lookup_print_info :: get_method_info () } pub fn prepare_frame_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkTimelineEventPlayableBehavior_unity2_raw :: __lookup_prepare_frame :: get_method_info () } pub fn on_behaviour_play_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkTimelineEventPlayableBehavior_unity2_raw :: __lookup_on_behaviour_play :: get_method_info () } pub fn on_behaviour_pause_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkTimelineEventPlayableBehavior_unity2_raw :: __lookup_on_behaviour_pause :: get_method_info () } pub fn process_frame_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkTimelineEventPlayableBehavior_unity2_raw :: __lookup_process_frame :: get_method_info () } pub fn should_play_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkTimelineEventPlayableBehavior_unity2_raw :: __lookup_should_play :: get_method_info () } pub fn check_for_fade_in_fade_out_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkTimelineEventPlayableBehavior_unity2_raw :: __lookup_check_for_fade_in_fade_out :: get_method_info () } pub fn check_for_fade_out_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkTimelineEventPlayableBehavior_unity2_raw :: __lookup_check_for_fade_out :: get_method_info () } pub fn trigger_fade_in_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkTimelineEventPlayableBehavior_unity2_raw :: __lookup_trigger_fade_in :: get_method_info () } pub fn trigger_fade_out_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkTimelineEventPlayableBehavior_unity2_raw :: __lookup_trigger_fade_out :: get_method_info () } pub fn stop_event_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkTimelineEventPlayableBehavior_unity2_raw :: __lookup_stop_event :: get_method_info () } pub fn post_event_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkTimelineEventPlayableBehavior_unity2_raw :: __lookup_post_event :: get_method_info () } pub fn play_event_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkTimelineEventPlayableBehavior_unity2_raw :: __lookup_play_event :: get_method_info () } pub fn retrigger_event_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkTimelineEventPlayableBehavior_unity2_raw :: __lookup_retrigger_event :: get_method_info () } pub fn get_proportional_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkTimelineEventPlayableBehavior_unity2_raw :: __lookup_get_proportional_time :: get_method_info () } pub fn seek_to_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkTimelineEventPlayableBehavior_unity2_raw :: __lookup_seek_to_time :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkTimelineEventPlayableBehavior_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "root-aktimelineeventplayablebehavior")]
 impl AkTimelineEventPlayableBehavior {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AkTimelineEventPlayableBehavior),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAkTimelineEventPlayableBehaviorMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkTimelineEventPlayableBehavior) , :: core :: stringify ! (new) ,)) ; < Self as IAkTimelineEventPlayableBehaviorMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "root-aktimelineeventplayablebehavior")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{
-        AkTimelineEventPlayableBehavior, AkTimelineEventPlayableBehavior_Actions, IAkTimelineEventPlayableBehavior,
-        IAkTimelineEventPlayableBehaviorMethods,
-    };
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    #[cfg(feature = "unity_engine-playables-playablebehaviour")]
-    pub use crate::unity_engine::playables::playablebehaviour::IPlayableBehaviourMethods;
-    pub use crate::{
-        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
-        unity_engine::playables::playablebehaviour::IPlayableBehaviour,
-    };
+    pub use super::AkTimelineEventPlayableBehavior;
+    pub use super::IAkTimelineEventPlayableBehavior;
+    pub use super::IAkTimelineEventPlayableBehaviorMethods;
+    pub use super::AkTimelineEventPlayableBehavior_Actions;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    pub use crate::unity_engine::playables::playablebehaviour::IPlayableBehaviour;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
+    #[cfg(feature = "unity_engine-playables-playablebehaviour")] pub use crate::unity_engine::playables::playablebehaviour::IPlayableBehaviourMethods;
 }

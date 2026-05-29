@@ -2,296 +2,87 @@
 
 #[cfg(feature = "unity_engine-timeline-animationoutputweightprocessor-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        valuetype::{IValueType, ValueType},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/animationoutputweightprocessor/AnimationOutputWeightProcessor.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Timeline", name = "AnimationOutputWeightProcessor")]
-    #[parent(crate::system::object::Object)]
-    pub struct AnimationOutputWeightProcessor {
-        #[offset(16)]
-        #[rename(name = "m_Output")]
-        pub m_output: crate::unity_engine::animations::animationplayableoutput::AnimationPlayableOutput,
-        #[offset(32)]
-        #[rename(name = "m_Mixers")]
-        pub m_mixers: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::timeline::animationoutputweightprocessor::AnimationOutputWeightProcessor_WeightInfo,
-        >,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/timeline/animationoutputweightprocessor/AnimationOutputWeightProcessor_WeightInfo.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct AnimationOutputWeightProcessor_WeightInfo {
-        pub mixer: crate::unity_engine::playables::playable::Playable,
-        pub parent_mixer: crate::unity_engine::playables::playable::Playable,
-        pub port: i32,
-    }
 
-    impl ::unity2::ClassIdentity for AnimationOutputWeightProcessor_WeightInfo {
-        const NAME: &'static str = "AnimationOutputWeightProcessor.WeightInfo";
-        const NAMESPACE: &'static str = "UnityEngine.Timeline";
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/timeline/animationoutputweightprocessor/AnimationOutputWeightProcessor_WeightInfo.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct AnimationOutputWeightProcessor_WeightInfo {
+    pub mixer: crate :: unity_engine :: playables :: playable :: Playable,
+    pub parent_mixer: crate :: unity_engine :: playables :: playable :: Playable,
+    pub port: i32,
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+impl ::unity2::ClassIdentity for AnimationOutputWeightProcessor_WeightInfo {
+    const NAMESPACE: &'static str = "UnityEngine.Timeline";
+
+    const NAME: &'static str = "AnimationOutputWeightProcessor.WeightInfo";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for AnimationOutputWeightProcessor_WeightInfo {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl ::unity2::IlType for AnimationOutputWeightProcessor_WeightInfo {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
+
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/animationoutputweightprocessor/AnimationOutputWeightProcessor.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Timeline" , name = "AnimationOutputWeightProcessor")] # [parent (crate :: system :: object :: Object)] pub struct AnimationOutputWeightProcessor {
+# [offset (16)] # [rename (name = "m_Output")] pub m_output : crate :: unity_engine :: animations :: animationplayableoutput :: AnimationPlayableOutput ,
+# [offset (32)] # [rename (name = "m_Mixers")] pub m_mixers : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: timeline :: animationoutputweightprocessor :: AnimationOutputWeightProcessor_WeightInfo > ,
+}
+
 }
 
 #[cfg(feature = "unity_engine-timeline-animationoutputweightprocessor-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-timeline-animationoutputweightprocessor")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AnimationOutputWeightProcessor_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::animations::animationplayableoutput::AnimationPlayableOutput as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AnimationOutputWeightProcessor as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AnimationOutputWeightProcessor as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: AnimationOutputWeightProcessor,
-        output: crate::unity_engine::animations::animationplayableoutput::AnimationPlayableOutput,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            AnimationOutputWeightProcessor,
-            crate::unity_engine::animations::animationplayableoutput::AnimationPlayableOutput,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, output, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_find_mixers {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AnimationOutputWeightProcessor as ::unity2::ClassIdentity>::class(),
-                "FindMixers",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AnimationOutputWeightProcessor as ::unity2::ClassIdentity>::NAME,
-                        "FindMixers",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn find_mixers(this: AnimationOutputWeightProcessor, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AnimationOutputWeightProcessor, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_find_mixers::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_find_mixers_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::playables::playable::Playable as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::playables::playable::Playable as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AnimationOutputWeightProcessor as ::unity2::ClassIdentity>::class(),
-                "FindMixers",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AnimationOutputWeightProcessor as ::unity2::ClassIdentity>::NAME,
-                        "FindMixers",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn find_mixers_2(
-        this: AnimationOutputWeightProcessor,
-        parent: crate::unity_engine::playables::playable::Playable,
-        port: i32,
-        node: crate::unity_engine::playables::playable::Playable,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            AnimationOutputWeightProcessor,
-            crate::unity_engine::playables::playable::Playable,
-            i32,
-            crate::unity_engine::playables::playable::Playable,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_find_mixers_2::get_method_info().method_ptr);
-        inner(this, parent, port, node, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_evaluate {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AnimationOutputWeightProcessor as ::unity2::ClassIdentity>::class(),
-                "Evaluate",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AnimationOutputWeightProcessor as ::unity2::ClassIdentity>::NAME,
-                        "Evaluate",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn evaluate(this: AnimationOutputWeightProcessor, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AnimationOutputWeightProcessor, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_evaluate::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __AnimationOutputWeightProcessor_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: animations :: animationplayableoutput :: AnimationPlayableOutput as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AnimationOutputWeightProcessor as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AnimationOutputWeightProcessor as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : AnimationOutputWeightProcessor , output : crate :: unity_engine :: animations :: animationplayableoutput :: AnimationPlayableOutput , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AnimationOutputWeightProcessor , crate :: unity_engine :: animations :: animationplayableoutput :: AnimationPlayableOutput , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , output , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_find_mixers { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AnimationOutputWeightProcessor as :: unity2 :: ClassIdentity > :: class () , "FindMixers" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AnimationOutputWeightProcessor as :: unity2 :: ClassIdentity > :: NAME , "FindMixers" , e) , } } } pub unsafe fn find_mixers (this : AnimationOutputWeightProcessor , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AnimationOutputWeightProcessor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_find_mixers :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_find_mixers_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playable :: Playable as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: playables :: playable :: Playable as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AnimationOutputWeightProcessor as :: unity2 :: ClassIdentity > :: class () , "FindMixers" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AnimationOutputWeightProcessor as :: unity2 :: ClassIdentity > :: NAME , "FindMixers" , e) , } } } pub unsafe fn find_mixers_2 (this : AnimationOutputWeightProcessor , parent : crate :: unity_engine :: playables :: playable :: Playable , port : i32 , node : crate :: unity_engine :: playables :: playable :: Playable , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AnimationOutputWeightProcessor , crate :: unity_engine :: playables :: playable :: Playable , i32 , crate :: unity_engine :: playables :: playable :: Playable , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_find_mixers_2 :: get_method_info () . method_ptr ,) ; inner (this , parent , port , node , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_evaluate { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AnimationOutputWeightProcessor as :: unity2 :: ClassIdentity > :: class () , "Evaluate" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AnimationOutputWeightProcessor as :: unity2 :: ClassIdentity > :: NAME , "Evaluate" , e) , } } } pub unsafe fn evaluate (this : AnimationOutputWeightProcessor , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AnimationOutputWeightProcessor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_evaluate :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-timeline-animationoutputweightprocessor")]
-pub trait IAnimationOutputWeightProcessorMethods: IAnimationOutputWeightProcessor {
-    #[doc = "`.ctor(crate::unity_engine::animations::animationplayableoutput::AnimationPlayableOutput)` overload"]
-    fn ctor(self, output: impl ::core::convert::Into<crate::unity_engine::animations::animationplayableoutput::AnimationPlayableOutput>) -> () {
-        unsafe {
-            let __receiver =
-                <AnimationOutputWeightProcessor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AnimationOutputWeightProcessor_unity2_raw::ctor(__receiver, ::core::convert::Into::into(output), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`FindMixers()` overload"]
-    fn find_mixers(self) -> () {
-        unsafe {
-            let __receiver =
-                <AnimationOutputWeightProcessor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AnimationOutputWeightProcessor_unity2_raw::find_mixers(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`FindMixers(crate::unity_engine::playables::playable::Playable, i32, crate::unity_engine::playables::playable::Playable)` overload"]
-    fn find_mixers_2(
-        self,
-        parent: impl ::core::convert::Into<crate::unity_engine::playables::playable::Playable>,
-        port: impl ::core::convert::Into<i32>,
-        node: impl ::core::convert::Into<crate::unity_engine::playables::playable::Playable>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <AnimationOutputWeightProcessor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AnimationOutputWeightProcessor_unity2_raw::find_mixers_2(
-                __receiver,
-                ::core::convert::Into::into(parent),
-                ::core::convert::Into::into(port),
-                ::core::convert::Into::into(node),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Evaluate()` overload"]
-    fn evaluate(self) -> () {
-        unsafe {
-            let __receiver =
-                <AnimationOutputWeightProcessor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AnimationOutputWeightProcessor_unity2_raw::evaluate(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IAnimationOutputWeightProcessorMethods : IAnimationOutputWeightProcessor { # [doc = "`.ctor(crate::unity_engine::animations::animationplayableoutput::AnimationPlayableOutput)` overload"] fn ctor (self , output : impl :: core :: convert :: Into < crate :: unity_engine :: animations :: animationplayableoutput :: AnimationPlayableOutput >) -> () { unsafe { let __receiver = < AnimationOutputWeightProcessor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AnimationOutputWeightProcessor_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (output) , :: core :: option :: Option :: None) } } # [doc = "`FindMixers()` overload"] fn find_mixers (self ,) -> () { unsafe { let __receiver = < AnimationOutputWeightProcessor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AnimationOutputWeightProcessor_unity2_raw :: find_mixers (__receiver , :: core :: option :: Option :: None) } } # [doc = "`FindMixers(crate::unity_engine::playables::playable::Playable, i32, crate::unity_engine::playables::playable::Playable)` overload"] fn find_mixers_2 (self , parent : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playable :: Playable > , port : impl :: core :: convert :: Into < i32 > , node : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playable :: Playable >) -> () { unsafe { let __receiver = < AnimationOutputWeightProcessor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AnimationOutputWeightProcessor_unity2_raw :: find_mixers_2 (__receiver , :: core :: convert :: Into :: into (parent) , :: core :: convert :: Into :: into (port) , :: core :: convert :: Into :: into (node) , :: core :: option :: Option :: None) } } # [doc = "`Evaluate()` overload"] fn evaluate (self ,) -> () { unsafe { let __receiver = < AnimationOutputWeightProcessor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AnimationOutputWeightProcessor_unity2_raw :: evaluate (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-timeline-animationoutputweightprocessor")]
-impl<__T: IAnimationOutputWeightProcessor> IAnimationOutputWeightProcessorMethods for __T {}
+impl < __T : IAnimationOutputWeightProcessor > IAnimationOutputWeightProcessorMethods for __T { }
+
+#[cfg(feature = "unity_engine-timeline-animationoutputweightprocessor")]
+impl AnimationOutputWeightProcessor { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AnimationOutputWeightProcessor_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn find_mixers_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AnimationOutputWeightProcessor_unity2_raw :: __lookup_find_mixers :: get_method_info () } pub fn find_mixers_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AnimationOutputWeightProcessor_unity2_raw :: __lookup_find_mixers_2 :: get_method_info () } pub fn evaluate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AnimationOutputWeightProcessor_unity2_raw :: __lookup_evaluate :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-timeline-animationoutputweightprocessor")]
 impl AnimationOutputWeightProcessor {
-    #[doc = "`.ctor(crate::unity_engine::animations::animationplayableoutput::AnimationPlayableOutput)` — overload selector"]
-    pub fn new(output: crate::unity_engine::animations::animationplayableoutput::AnimationPlayableOutput) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AnimationOutputWeightProcessor),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAnimationOutputWeightProcessorMethods>::ctor(this, output);
-        this
-    }
+# [doc = "`.ctor(crate::unity_engine::animations::animationplayableoutput::AnimationPlayableOutput)` — overload selector"] pub fn new (output : crate :: unity_engine :: animations :: animationplayableoutput :: AnimationPlayableOutput) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AnimationOutputWeightProcessor) , :: core :: stringify ! (new) ,)) ; < Self as IAnimationOutputWeightProcessorMethods > :: ctor (this , output) ; this }
 }
 
 #[cfg(feature = "unity_engine-timeline-animationoutputweightprocessor")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{
-        AnimationOutputWeightProcessor, AnimationOutputWeightProcessor_WeightInfo, IAnimationOutputWeightProcessor,
-        IAnimationOutputWeightProcessorMethods,
-    };
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::system::{object::IObject, valuetype::IValueType};
+    pub use super::AnimationOutputWeightProcessor_WeightInfo;
+    pub use super::AnimationOutputWeightProcessor;
+    pub use super::IAnimationOutputWeightProcessor;
+    pub use super::IAnimationOutputWeightProcessorMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

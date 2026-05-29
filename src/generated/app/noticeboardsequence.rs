@@ -2,612 +2,135 @@
 
 #[cfg(feature = "app-noticeboardsequence-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::procinst::{IProcInst, ProcInst},
-        system::{
-            object::{IObject, Object},
-            r#enum::{Enum, IEnum},
-            valuetype::{IValueType, ValueType},
-        },
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/noticeboardsequence/NoticeBoardSequence_Label.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct NoticeBoardSequence_Label {
-        pub value: i32,
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: procinst :: { IProcInst , ProcInst }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/noticeboardsequence/NoticeBoardSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "NoticeBoardSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct NoticeBoardSequence {
+# [offset (112)] # [rename (name = "m_TopMenuResult")] pub m_top_menu_result : crate :: app :: noticeboardtopmenu :: NoticeBoardTopMenu_Result2 ,
+# [offset (116)] # [rename (name = "m_InfoMenuResult")] pub m_info_menu_result : crate :: app :: solanelinfomenu :: SolanelInfoMenu_InfoResult ,
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/noticeboardsequence/NoticeBoardSequence_Label.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct NoticeBoardSequence_Label  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for NoticeBoardSequence_Label  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "NoticeBoardSequence.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    impl ::unity2::ClassIdentity for NoticeBoardSequence_Label {
-        const NAME: &'static str = "NoticeBoardSequence.Label";
-        const NAMESPACE: &'static str = "App";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  ::unity2::IlType for NoticeBoardSequence_Label  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::IlType for NoticeBoardSequence_Label {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  NoticeBoardSequence_Label  {
+    pub fn entry() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl NoticeBoardSequence_Label {
-        pub fn entry() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn top() -> Self {
-            Self { value: 1 }
-        }
+    pub fn top() -> Self {
+        Self { value: 1 }
 
-        pub fn investment() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn solanel_info() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn achievement() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn end() -> Self {
-            Self { value: 5 }
-        }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/noticeboardsequence/NoticeBoardSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "NoticeBoardSequence")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct NoticeBoardSequence {
-        #[offset(112)]
-        #[rename(name = "m_TopMenuResult")]
-        pub m_top_menu_result: crate::app::noticeboardtopmenu::NoticeBoardTopMenu_Result2,
-        #[offset(116)]
-        #[rename(name = "m_InfoMenuResult")]
-        pub m_info_menu_result: crate::app::solanelinfomenu::SolanelInfoMenu_InfoResult,
+
+    pub fn investment() -> Self {
+        Self { value: 2 }
+
     }
+
+
+    pub fn solanel_info() -> Self {
+        Self { value: 3 }
+
+    }
+
+
+    pub fn achievement() -> Self {
+        Self { value: 4 }
+
+    }
+
+
+    pub fn end() -> Self {
+        Self { value: 5 }
+
+    }
+
+}
+
 }
 
 #[cfg(feature = "app-noticeboardsequence-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-noticeboardsequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __NoticeBoardSequence_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NoticeBoardSequence as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <NoticeBoardSequence as ::unity2::ClassIdentity>::NAME,
-                        "CreateBind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_bind(super_: crate::app::procinst::ProcInst, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
-        inner(super_, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NoticeBoardSequence as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <NoticeBoardSequence as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: NoticeBoardSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(NoticeBoardSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_desc {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NoticeBoardSequence as ::unity2::ClassIdentity>::class(),
-                "CreateDesc",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <NoticeBoardSequence as ::unity2::ClassIdentity>::NAME,
-                        "CreateDesc",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_desc(
-        this: NoticeBoardSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Array<crate::app::procdesc::ProcDesc> {
-        let inner: extern "C" fn(NoticeBoardSequence, ::unity2::OptionalMethod) -> ::unity2::Array<crate::app::procdesc::ProcDesc> =
-            ::core::mem::transmute(__lookup_create_desc::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_load_resources {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NoticeBoardSequence as ::unity2::ClassIdentity>::class(),
-                "LoadResources",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <NoticeBoardSequence as ::unity2::ClassIdentity>::NAME,
-                        "LoadResources",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn load_resources(this: NoticeBoardSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(NoticeBoardSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_load_resources::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_loading_resources {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NoticeBoardSequence as ::unity2::ClassIdentity>::class(),
-                "IsLoadingResources",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <NoticeBoardSequence as ::unity2::ClassIdentity>::NAME,
-                        "IsLoadingResources",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_loading_resources(this: NoticeBoardSequence, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(NoticeBoardSequence, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_loading_resources::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_start_sequence {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NoticeBoardSequence as ::unity2::ClassIdentity>::class(),
-                "StartSequence",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <NoticeBoardSequence as ::unity2::ClassIdentity>::NAME,
-                        "StartSequence",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn start_sequence(this: NoticeBoardSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(NoticeBoardSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_start_sequence::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_top_menu {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NoticeBoardSequence as ::unity2::ClassIdentity>::class(),
-                "CreateTopMenu",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <NoticeBoardSequence as ::unity2::ClassIdentity>::NAME,
-                        "CreateTopMenu",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_top_menu(this: NoticeBoardSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(NoticeBoardSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_create_top_menu::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_end_sequence {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NoticeBoardSequence as ::unity2::ClassIdentity>::class(),
-                "EndSequence",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <NoticeBoardSequence as ::unity2::ClassIdentity>::NAME,
-                        "EndSequence",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn end_sequence(this: NoticeBoardSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(NoticeBoardSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_end_sequence::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_investment {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NoticeBoardSequence as ::unity2::ClassIdentity>::class(),
-                "CreateInvestment",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <NoticeBoardSequence as ::unity2::ClassIdentity>::NAME,
-                        "CreateInvestment",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_investment(this: NoticeBoardSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(NoticeBoardSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_create_investment::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_solanel_info {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NoticeBoardSequence as ::unity2::ClassIdentity>::class(),
-                "CreateSolanelInfo",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <NoticeBoardSequence as ::unity2::ClassIdentity>::NAME,
-                        "CreateSolanelInfo",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_solanel_info(this: NoticeBoardSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(NoticeBoardSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_create_solanel_info::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_achievement {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NoticeBoardSequence as ::unity2::ClassIdentity>::class(),
-                "CreateAchievement",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <NoticeBoardSequence as ::unity2::ClassIdentity>::NAME,
-                        "CreateAchievement",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_achievement(this: NoticeBoardSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(NoticeBoardSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_create_achievement::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_return_title {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NoticeBoardSequence as ::unity2::ClassIdentity>::class(),
-                "ReturnTitle",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <NoticeBoardSequence as ::unity2::ClassIdentity>::NAME,
-                        "ReturnTitle",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn return_title(this: NoticeBoardSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(NoticeBoardSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_return_title::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __NoticeBoardSequence_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_bind { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< NoticeBoardSequence as :: unity2 :: ClassIdentity > :: class () , "CreateBind" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NoticeBoardSequence as :: unity2 :: ClassIdentity > :: NAME , "CreateBind" , e) , } } } pub unsafe fn create_bind (super_ : crate :: app :: procinst :: ProcInst , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create_bind :: get_method_info () . method_ptr ,) ; inner (super_ , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< NoticeBoardSequence as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NoticeBoardSequence as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : NoticeBoardSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (NoticeBoardSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_desc { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< NoticeBoardSequence as :: unity2 :: ClassIdentity > :: class () , "CreateDesc" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NoticeBoardSequence as :: unity2 :: ClassIdentity > :: NAME , "CreateDesc" , e) , } } } pub unsafe fn create_desc (this : NoticeBoardSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > { let inner : extern "C" fn (NoticeBoardSequence , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > = :: core :: mem :: transmute (__lookup_create_desc :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_load_resources { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< NoticeBoardSequence as :: unity2 :: ClassIdentity > :: class () , "LoadResources" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NoticeBoardSequence as :: unity2 :: ClassIdentity > :: NAME , "LoadResources" , e) , } } } pub unsafe fn load_resources (this : NoticeBoardSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (NoticeBoardSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_load_resources :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_loading_resources { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< NoticeBoardSequence as :: unity2 :: ClassIdentity > :: class () , "IsLoadingResources" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NoticeBoardSequence as :: unity2 :: ClassIdentity > :: NAME , "IsLoadingResources" , e) , } } } pub unsafe fn is_loading_resources (this : NoticeBoardSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (NoticeBoardSequence , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_loading_resources :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_start_sequence { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< NoticeBoardSequence as :: unity2 :: ClassIdentity > :: class () , "StartSequence" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NoticeBoardSequence as :: unity2 :: ClassIdentity > :: NAME , "StartSequence" , e) , } } } pub unsafe fn start_sequence (this : NoticeBoardSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (NoticeBoardSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_start_sequence :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_top_menu { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< NoticeBoardSequence as :: unity2 :: ClassIdentity > :: class () , "CreateTopMenu" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NoticeBoardSequence as :: unity2 :: ClassIdentity > :: NAME , "CreateTopMenu" , e) , } } } pub unsafe fn create_top_menu (this : NoticeBoardSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (NoticeBoardSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create_top_menu :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_end_sequence { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< NoticeBoardSequence as :: unity2 :: ClassIdentity > :: class () , "EndSequence" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NoticeBoardSequence as :: unity2 :: ClassIdentity > :: NAME , "EndSequence" , e) , } } } pub unsafe fn end_sequence (this : NoticeBoardSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (NoticeBoardSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_end_sequence :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_investment { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< NoticeBoardSequence as :: unity2 :: ClassIdentity > :: class () , "CreateInvestment" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NoticeBoardSequence as :: unity2 :: ClassIdentity > :: NAME , "CreateInvestment" , e) , } } } pub unsafe fn create_investment (this : NoticeBoardSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (NoticeBoardSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create_investment :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_solanel_info { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< NoticeBoardSequence as :: unity2 :: ClassIdentity > :: class () , "CreateSolanelInfo" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NoticeBoardSequence as :: unity2 :: ClassIdentity > :: NAME , "CreateSolanelInfo" , e) , } } } pub unsafe fn create_solanel_info (this : NoticeBoardSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (NoticeBoardSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create_solanel_info :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_achievement { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< NoticeBoardSequence as :: unity2 :: ClassIdentity > :: class () , "CreateAchievement" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NoticeBoardSequence as :: unity2 :: ClassIdentity > :: NAME , "CreateAchievement" , e) , } } } pub unsafe fn create_achievement (this : NoticeBoardSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (NoticeBoardSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create_achievement :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_return_title { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< NoticeBoardSequence as :: unity2 :: ClassIdentity > :: class () , "ReturnTitle" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NoticeBoardSequence as :: unity2 :: ClassIdentity > :: NAME , "ReturnTitle" , e) , } } } pub unsafe fn return_title (this : NoticeBoardSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (NoticeBoardSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_return_title :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-noticeboardsequence")]
+impl NoticeBoardSequence { # [doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { __NoticeBoardSequence_unity2_raw :: create_bind (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-noticeboardsequence")]
+pub trait INoticeBoardSequenceMethods : INoticeBoardSequence { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < NoticeBoardSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __NoticeBoardSequence_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CreateDesc()` overload"] fn create_desc (self ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > { unsafe { let __receiver = < NoticeBoardSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __NoticeBoardSequence_unity2_raw :: create_desc (__receiver , :: core :: option :: Option :: None) } } # [doc = "`LoadResources()` overload"] fn load_resources (self ,) -> () { unsafe { let __receiver = < NoticeBoardSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __NoticeBoardSequence_unity2_raw :: load_resources (__receiver , :: core :: option :: Option :: None) } } # [doc = "`IsLoadingResources()` overload"] fn is_loading_resources (self ,) -> bool { unsafe { let __receiver = < NoticeBoardSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __NoticeBoardSequence_unity2_raw :: is_loading_resources (__receiver , :: core :: option :: Option :: None) } } # [doc = "`StartSequence()` overload"] fn start_sequence (self ,) -> () { unsafe { let __receiver = < NoticeBoardSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __NoticeBoardSequence_unity2_raw :: start_sequence (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CreateTopMenu()` overload"] fn create_top_menu (self ,) -> () { unsafe { let __receiver = < NoticeBoardSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __NoticeBoardSequence_unity2_raw :: create_top_menu (__receiver , :: core :: option :: Option :: None) } } # [doc = "`EndSequence()` overload"] fn end_sequence (self ,) -> () { unsafe { let __receiver = < NoticeBoardSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __NoticeBoardSequence_unity2_raw :: end_sequence (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CreateInvestment()` overload"] fn create_investment (self ,) -> () { unsafe { let __receiver = < NoticeBoardSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __NoticeBoardSequence_unity2_raw :: create_investment (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CreateSolanelInfo()` overload"] fn create_solanel_info (self ,) -> () { unsafe { let __receiver = < NoticeBoardSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __NoticeBoardSequence_unity2_raw :: create_solanel_info (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CreateAchievement()` overload"] fn create_achievement (self ,) -> () { unsafe { let __receiver = < NoticeBoardSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __NoticeBoardSequence_unity2_raw :: create_achievement (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ReturnTitle()` overload"] fn return_title (self ,) -> () { unsafe { let __receiver = < NoticeBoardSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __NoticeBoardSequence_unity2_raw :: return_title (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-noticeboardsequence")]
+impl < __T : INoticeBoardSequence > INoticeBoardSequenceMethods for __T { }
+
+#[cfg(feature = "app-noticeboardsequence")]
+impl NoticeBoardSequence { pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __NoticeBoardSequence_unity2_raw :: __lookup_create_bind :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __NoticeBoardSequence_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn create_desc_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __NoticeBoardSequence_unity2_raw :: __lookup_create_desc :: get_method_info () } pub fn load_resources_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __NoticeBoardSequence_unity2_raw :: __lookup_load_resources :: get_method_info () } pub fn is_loading_resources_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __NoticeBoardSequence_unity2_raw :: __lookup_is_loading_resources :: get_method_info () } pub fn start_sequence_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __NoticeBoardSequence_unity2_raw :: __lookup_start_sequence :: get_method_info () } pub fn create_top_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __NoticeBoardSequence_unity2_raw :: __lookup_create_top_menu :: get_method_info () } pub fn end_sequence_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __NoticeBoardSequence_unity2_raw :: __lookup_end_sequence :: get_method_info () } pub fn create_investment_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __NoticeBoardSequence_unity2_raw :: __lookup_create_investment :: get_method_info () } pub fn create_solanel_info_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __NoticeBoardSequence_unity2_raw :: __lookup_create_solanel_info :: get_method_info () } pub fn create_achievement_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __NoticeBoardSequence_unity2_raw :: __lookup_create_achievement :: get_method_info () } pub fn return_title_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __NoticeBoardSequence_unity2_raw :: __lookup_return_title :: get_method_info () } }
 
 #[cfg(feature = "app-noticeboardsequence")]
 impl NoticeBoardSequence {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
-    pub fn create_bind(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
-        unsafe { __NoticeBoardSequence_unity2_raw::create_bind(::core::convert::Into::into(super_), ::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-noticeboardsequence")]
-pub trait INoticeBoardSequenceMethods: INoticeBoardSequence {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <NoticeBoardSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __NoticeBoardSequence_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CreateDesc()` overload"]
-    fn create_desc(self) -> ::unity2::Array<crate::app::procdesc::ProcDesc> {
-        unsafe {
-            let __receiver = <NoticeBoardSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __NoticeBoardSequence_unity2_raw::create_desc(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`LoadResources()` overload"]
-    fn load_resources(self) -> () {
-        unsafe {
-            let __receiver = <NoticeBoardSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __NoticeBoardSequence_unity2_raw::load_resources(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsLoadingResources()` overload"]
-    fn is_loading_resources(self) -> bool {
-        unsafe {
-            let __receiver = <NoticeBoardSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __NoticeBoardSequence_unity2_raw::is_loading_resources(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`StartSequence()` overload"]
-    fn start_sequence(self) -> () {
-        unsafe {
-            let __receiver = <NoticeBoardSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __NoticeBoardSequence_unity2_raw::start_sequence(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CreateTopMenu()` overload"]
-    fn create_top_menu(self) -> () {
-        unsafe {
-            let __receiver = <NoticeBoardSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __NoticeBoardSequence_unity2_raw::create_top_menu(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`EndSequence()` overload"]
-    fn end_sequence(self) -> () {
-        unsafe {
-            let __receiver = <NoticeBoardSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __NoticeBoardSequence_unity2_raw::end_sequence(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CreateInvestment()` overload"]
-    fn create_investment(self) -> () {
-        unsafe {
-            let __receiver = <NoticeBoardSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __NoticeBoardSequence_unity2_raw::create_investment(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CreateSolanelInfo()` overload"]
-    fn create_solanel_info(self) -> () {
-        unsafe {
-            let __receiver = <NoticeBoardSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __NoticeBoardSequence_unity2_raw::create_solanel_info(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CreateAchievement()` overload"]
-    fn create_achievement(self) -> () {
-        unsafe {
-            let __receiver = <NoticeBoardSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __NoticeBoardSequence_unity2_raw::create_achievement(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ReturnTitle()` overload"]
-    fn return_title(self) -> () {
-        unsafe {
-            let __receiver = <NoticeBoardSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __NoticeBoardSequence_unity2_raw::return_title(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-noticeboardsequence")]
-impl<__T: INoticeBoardSequence> INoticeBoardSequenceMethods for __T {}
-
-#[cfg(feature = "app-noticeboardsequence")]
-impl NoticeBoardSequence {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(NoticeBoardSequence),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as INoticeBoardSequenceMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (NoticeBoardSequence) , :: core :: stringify ! (new) ,)) ; < Self as INoticeBoardSequenceMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-noticeboardsequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{INoticeBoardSequence, INoticeBoardSequenceMethods, NoticeBoardSequence, NoticeBoardSequence_Label};
-    #[cfg(feature = "app-procinst")]
-    pub use crate::app::procinst::IProcInstMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::{
-        app::procinst::IProcInst,
-        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
-    };
+    pub use super::NoticeBoardSequence;
+    pub use super::INoticeBoardSequence;
+    pub use super::INoticeBoardSequenceMethods;
+    pub use super::NoticeBoardSequence_Label;
+    pub use crate::app::procinst::IProcInst;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "app-procinst")] pub use crate::app::procinst::IProcInstMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

@@ -2,135 +2,34 @@
 
 #[cfg(feature = "unity_engine-ui-multipledisplayutilities-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/multipledisplayutilities/MultipleDisplayUtilities.md"))]
-    #[::unity2::class(namespace = "UnityEngine.UI", name = "MultipleDisplayUtilities")]
-    #[parent(crate::system::object::Object)]
-    pub struct MultipleDisplayUtilities {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/multipledisplayutilities/MultipleDisplayUtilities.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "MultipleDisplayUtilities")] # [parent (crate :: system :: object :: Object)] pub struct MultipleDisplayUtilities {}
+
 }
 
 #[cfg(feature = "unity_engine-ui-multipledisplayutilities-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-ui-multipledisplayutilities")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MultipleDisplayUtilities_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_relative_mouse_position_for_drag {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::event_systems::pointereventdata::PointerEventData as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MultipleDisplayUtilities as ::unity2::ClassIdentity>::class(),
-                "GetRelativeMousePositionForDrag",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MultipleDisplayUtilities as ::unity2::ClassIdentity>::NAME,
-                        "GetRelativeMousePositionForDrag",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_relative_mouse_position_for_drag(
-        event_data: crate::unity_engine::event_systems::pointereventdata::PointerEventData,
-        position: *mut crate::unity_engine::vector2::Vector2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            crate::unity_engine::event_systems::pointereventdata::PointerEventData,
-            *mut crate::unity_engine::vector2::Vector2,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(__lookup_get_relative_mouse_position_for_drag::get_method_info().method_ptr);
-        inner(event_data, position, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_mouse_position_relative_to_main_display_resolution {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MultipleDisplayUtilities as ::unity2::ClassIdentity>::class(),
-                "GetMousePositionRelativeToMainDisplayResolution",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MultipleDisplayUtilities as ::unity2::ClassIdentity>::NAME,
-                        "GetMousePositionRelativeToMainDisplayResolution",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_mouse_position_relative_to_main_display_resolution(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::vector2::Vector2 {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::unity_engine::vector2::Vector2 =
-            ::core::mem::transmute(__lookup_get_mouse_position_relative_to_main_display_resolution::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MultipleDisplayUtilities_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_relative_mouse_position_for_drag { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector2 :: Vector2 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MultipleDisplayUtilities as :: unity2 :: ClassIdentity > :: class () , "GetRelativeMousePositionForDrag" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MultipleDisplayUtilities as :: unity2 :: ClassIdentity > :: NAME , "GetRelativeMousePositionForDrag" , e) , } } } pub unsafe fn get_relative_mouse_position_for_drag (event_data : crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData , position : * mut crate :: unity_engine :: vector2 :: Vector2 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData , * mut crate :: unity_engine :: vector2 :: Vector2 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_relative_mouse_position_for_drag :: get_method_info () . method_ptr ,) ; inner (event_data , position , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_mouse_position_relative_to_main_display_resolution { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MultipleDisplayUtilities as :: unity2 :: ClassIdentity > :: class () , "GetMousePositionRelativeToMainDisplayResolution" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MultipleDisplayUtilities as :: unity2 :: ClassIdentity > :: NAME , "GetMousePositionRelativeToMainDisplayResolution" , e) , } } } pub unsafe fn get_mouse_position_relative_to_main_display_resolution (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector2 :: Vector2 { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector2 :: Vector2 = :: core :: mem :: transmute (__lookup_get_mouse_position_relative_to_main_display_resolution :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-ui-multipledisplayutilities")]
-impl MultipleDisplayUtilities {
-    #[doc = "`GetRelativeMousePositionForDrag(crate::unity_engine::event_systems::pointereventdata::PointerEventData, *mutcrate::unity_engine::vector2::Vector2)` overload"]
-    pub fn get_relative_mouse_position_for_drag(
-        event_data: impl ::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>,
-    ) -> (bool, crate::unity_engine::vector2::Vector2) {
-        unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::vector2::Vector2>::uninit();
-            let __ret = {
-                __MultipleDisplayUtilities_unity2_raw::get_relative_mouse_position_for_drag(
-                    ::core::convert::Into::into(event_data),
-                    __out_0.as_mut_ptr(),
-                    ::core::option::Option::None,
-                )
-            };
-            (__ret, __out_0.assume_init())
-        }
-    }
+impl MultipleDisplayUtilities { # [doc = "`GetRelativeMousePositionForDrag(crate::unity_engine::event_systems::pointereventdata::PointerEventData, *mutcrate::unity_engine::vector2::Vector2)` overload"] pub fn get_relative_mouse_position_for_drag (event_data : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData >) -> (bool , crate :: unity_engine :: vector2 :: Vector2) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector2 :: Vector2 > :: uninit () ; let __ret = { __MultipleDisplayUtilities_unity2_raw :: get_relative_mouse_position_for_drag (:: core :: convert :: Into :: into (event_data) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } ; (__ret , __out_0 . assume_init ()) } } # [doc = "`GetMousePositionRelativeToMainDisplayResolution()` overload"] pub fn get_mouse_position_relative_to_main_display_resolution () -> crate :: unity_engine :: vector2 :: Vector2 { unsafe { __MultipleDisplayUtilities_unity2_raw :: get_mouse_position_relative_to_main_display_resolution (:: core :: option :: Option :: None) } } }
 
-    #[doc = "`GetMousePositionRelativeToMainDisplayResolution()` overload"]
-    pub fn get_mouse_position_relative_to_main_display_resolution() -> crate::unity_engine::vector2::Vector2 {
-        unsafe { __MultipleDisplayUtilities_unity2_raw::get_mouse_position_relative_to_main_display_resolution(::core::option::Option::None) }
-    }
-}
+#[cfg(feature = "unity_engine-ui-multipledisplayutilities")]
+impl MultipleDisplayUtilities { pub fn get_relative_mouse_position_for_drag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MultipleDisplayUtilities_unity2_raw :: __lookup_get_relative_mouse_position_for_drag :: get_method_info () } pub fn get_mouse_position_relative_to_main_display_resolution_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MultipleDisplayUtilities_unity2_raw :: __lookup_get_mouse_position_relative_to_main_display_resolution :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-ui-multipledisplayutilities")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IMultipleDisplayUtilities, MultipleDisplayUtilities};
+    pub use super::MultipleDisplayUtilities;
+    pub use super::IMultipleDisplayUtilities;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

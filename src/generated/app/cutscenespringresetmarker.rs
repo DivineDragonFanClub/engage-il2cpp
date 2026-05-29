@@ -2,156 +2,55 @@
 
 #[cfg(feature = "app-cutscenespringresetmarker-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::{
-            object_2::{IObject_2, Object_2},
-            scriptableobject::{IScriptableObject, ScriptableObject},
-            timeline::marker::{IMarker, Marker},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cutscenespringresetmarker/CutSceneSpringResetMarker.md"))]
-    #[::unity2::class(namespace = "App", name = "CutSceneSpringResetMarker")]
-    #[parent(crate::unity_engine::timeline::marker::Marker)]
-    pub struct CutSceneSpringResetMarker {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+ use crate :: unity_engine :: scriptableobject :: { IScriptableObject , ScriptableObject }
+ ;
+ use crate :: unity_engine :: timeline :: marker :: { IMarker , Marker }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cutscenespringresetmarker/CutSceneSpringResetMarker.md"))] # [:: unity2 :: class (namespace = "App" , name = "CutSceneSpringResetMarker")] # [parent (crate :: unity_engine :: timeline :: marker :: Marker)] pub struct CutSceneSpringResetMarker {}
+
 }
 
 #[cfg(feature = "app-cutscenespringresetmarker-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-cutscenespringresetmarker")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __CutSceneSpringResetMarker_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_id {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CutSceneSpringResetMarker as ::unity2::ClassIdentity>::class(),
-                "get_id",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CutSceneSpringResetMarker as ::unity2::ClassIdentity>::NAME,
-                        "get_id",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_id(
-        this: CutSceneSpringResetMarker,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::propertyname::PropertyName {
-        let inner: extern "C" fn(CutSceneSpringResetMarker, ::unity2::OptionalMethod) -> crate::unity_engine::propertyname::PropertyName =
-            ::core::mem::transmute(__lookup_get_id::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CutSceneSpringResetMarker as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CutSceneSpringResetMarker as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: CutSceneSpringResetMarker, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CutSceneSpringResetMarker, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __CutSceneSpringResetMarker_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_id { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CutSceneSpringResetMarker as :: unity2 :: ClassIdentity > :: class () , "get_id" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CutSceneSpringResetMarker as :: unity2 :: ClassIdentity > :: NAME , "get_id" , e) , } } } pub unsafe fn get_id (this : CutSceneSpringResetMarker , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: propertyname :: PropertyName { let inner : extern "C" fn (CutSceneSpringResetMarker , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: propertyname :: PropertyName = :: core :: mem :: transmute (__lookup_get_id :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CutSceneSpringResetMarker as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CutSceneSpringResetMarker as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : CutSceneSpringResetMarker , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CutSceneSpringResetMarker , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-cutscenespringresetmarker")]
-pub trait ICutSceneSpringResetMarkerMethods: ICutSceneSpringResetMarker {
-    #[doc = "`get_id()` overload"]
-    fn get_id(self) -> crate::unity_engine::propertyname::PropertyName {
-        unsafe {
-            let __receiver =
-                <CutSceneSpringResetMarker as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CutSceneSpringResetMarker_unity2_raw::get_id(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <CutSceneSpringResetMarker as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CutSceneSpringResetMarker_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait ICutSceneSpringResetMarkerMethods : ICutSceneSpringResetMarker { # [doc = "`get_id()` overload"] fn get_id (self ,) -> crate :: unity_engine :: propertyname :: PropertyName { unsafe { let __receiver = < CutSceneSpringResetMarker as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CutSceneSpringResetMarker_unity2_raw :: get_id (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CutSceneSpringResetMarker as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CutSceneSpringResetMarker_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-cutscenespringresetmarker")]
-impl<__T: ICutSceneSpringResetMarker> ICutSceneSpringResetMarkerMethods for __T {}
+impl < __T : ICutSceneSpringResetMarker > ICutSceneSpringResetMarkerMethods for __T { }
+
+#[cfg(feature = "app-cutscenespringresetmarker")]
+impl CutSceneSpringResetMarker { pub fn get_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CutSceneSpringResetMarker_unity2_raw :: __lookup_get_id :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CutSceneSpringResetMarker_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-cutscenespringresetmarker")]
 impl CutSceneSpringResetMarker {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(CutSceneSpringResetMarker),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ICutSceneSpringResetMarkerMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CutSceneSpringResetMarker) , :: core :: stringify ! (new) ,)) ; < Self as ICutSceneSpringResetMarkerMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-cutscenespringresetmarker")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{CutSceneSpringResetMarker, ICutSceneSpringResetMarker, ICutSceneSpringResetMarkerMethods};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    #[cfg(feature = "unity_engine-scriptableobject")]
-    pub use crate::unity_engine::scriptableobject::IScriptableObjectMethods;
-    #[cfg(feature = "unity_engine-timeline-marker")]
-    pub use crate::unity_engine::timeline::marker::IMarkerMethods;
-    pub use crate::{
-        system::object::IObject,
-        unity_engine::{object_2::IObject_2, scriptableobject::IScriptableObject, timeline::marker::IMarker},
-    };
+    pub use super::CutSceneSpringResetMarker;
+    pub use super::ICutSceneSpringResetMarker;
+    pub use super::ICutSceneSpringResetMarkerMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::object_2::IObject_2;
+    pub use crate::unity_engine::scriptableobject::IScriptableObject;
+    pub use crate::unity_engine::timeline::marker::IMarker;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
+    #[cfg(feature = "unity_engine-scriptableobject")] pub use crate::unity_engine::scriptableobject::IScriptableObjectMethods;
+    #[cfg(feature = "unity_engine-timeline-marker")] pub use crate::unity_engine::timeline::marker::IMarkerMethods;
 }

@@ -2,47 +2,58 @@
 
 #[cfg(feature = "unity_engine-experimental-global_illumination-rectanglelight-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        valuetype::{IValueType, ValueType},
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/global_illumination/rectanglelight/RectangleLight.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct RectangleLight {
-        pub instance_id: i32,
-        pub shadow: bool,
-        pub mode: crate::unity_engine::experimental::global_illumination::lightmode::LightMode,
-        pub position: crate::unity_engine::vector3::Vector3,
-        pub orientation: crate::unity_engine::quaternion::Quaternion,
-        pub color: crate::unity_engine::experimental::global_illumination::linearcolor::LinearColor,
-        pub indirect_color: crate::unity_engine::experimental::global_illumination::linearcolor::LinearColor,
-        pub range: f32,
-        pub width: f32,
-        pub height: f32,
-        pub falloff: crate::unity_engine::experimental::global_illumination::fallofftype::FalloffType,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
 
-    impl ::unity2::ClassIdentity for RectangleLight {
-        const NAME: &'static str = "RectangleLight";
-        const NAMESPACE: &'static str = "UnityEngine.Experimental.GlobalIllumination";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/global_illumination/rectanglelight/RectangleLight.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct RectangleLight {
+    pub instance_id: i32,
+    pub shadow: bool,
+    pub mode: crate :: unity_engine :: experimental :: global_illumination :: lightmode :: LightMode,
+    pub position: crate :: unity_engine :: vector3 :: Vector3,
+    pub orientation: crate :: unity_engine :: quaternion :: Quaternion,
+    pub color: crate :: unity_engine :: experimental :: global_illumination :: linearcolor :: LinearColor,
+    pub indirect_color: crate :: unity_engine :: experimental :: global_illumination :: linearcolor :: LinearColor,
+    pub range: f32,
+    pub width: f32,
+    pub height: f32,
+    pub falloff: crate :: unity_engine :: experimental :: global_illumination :: fallofftype :: FalloffType,
+}
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+
+impl ::unity2::ClassIdentity for RectangleLight {
+    const NAMESPACE: &'static str = "UnityEngine.Experimental.GlobalIllumination";
+
+    const NAME: &'static str = "RectangleLight";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for RectangleLight {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl ::unity2::IlType for RectangleLight {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
+
+}
+
 }
 
 #[cfg(feature = "unity_engine-experimental-global_illumination-rectanglelight-types")]
@@ -52,9 +63,8 @@ pub use __types::*;
 #[doc(hidden)]
 pub mod prelude {
     pub use super::RectangleLight;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::system::{object::IObject, valuetype::IValueType};
+    pub use crate::system::object::IObject;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

@@ -2,15 +2,15 @@
 
 #[cfg(feature = "system-collections-generic-stackdebugview_1-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/stackdebugview_1/StackDebugView_1.md"))]
-    #[::unity2::class(namespace = "System.Collections.Generic", name = "StackDebugView`1")]
-    #[parent(crate::system::object::Object)]
-    pub struct StackDebugView_1<T0: ::unity2::ClassIdentity> {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/stackdebugview_1/StackDebugView_1.md"))] # [:: unity2 :: class (namespace = "System.Collections.Generic" , name = "StackDebugView`1")] # [parent (crate :: system :: object :: Object)] pub struct StackDebugView_1 < T0 : :: unity2 :: ClassIdentity > {}
+
 }
 
 #[cfg(feature = "system-collections-generic-stackdebugview_1-types")]
@@ -19,8 +19,8 @@ pub use __types::*;
 #[cfg(feature = "system-collections-generic-stackdebugview_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IStackDebugView_1, StackDebugView_1};
+    pub use super::StackDebugView_1;
+    pub use super::IStackDebugView_1;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

@@ -2,672 +2,148 @@
 
 #[cfg(feature = "unity_engine-ui-navigation-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        r#enum::{Enum, IEnum},
-        valuetype::{IValueType, ValueType},
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/navigation/Navigation.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct Navigation {
-        pub m_mode: crate::unity_engine::ui::navigation::Navigation_Mode,
-        pub m_wrap_around: bool,
-        pub m_select_on_up: crate::unity_engine::ui::selectable::Selectable,
-        pub m_select_on_down: crate::unity_engine::ui::selectable::Selectable,
-        pub m_select_on_left: crate::unity_engine::ui::selectable::Selectable,
-        pub m_select_on_right: crate::unity_engine::ui::selectable::Selectable,
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/navigation/Navigation_Mode.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct Navigation_Mode  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for Navigation_Mode  {
+    const NAMESPACE: &'static str = "UnityEngine.UI";
+
+    const NAME: &'static str = "Navigation.Mode";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    impl ::unity2::ClassIdentity for Navigation {
-        const NAME: &'static str = "Navigation";
-        const NAMESPACE: &'static str = "UnityEngine.UI";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  ::unity2::IlType for Navigation_Mode  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::IlType for Navigation {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  Navigation_Mode  {
+    pub fn none() -> Self {
+        Self { value: 0 }
+
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/navigation/Navigation_Mode.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct Navigation_Mode {
-        pub value: i32,
+
+    pub fn horizontal() -> Self {
+        Self { value: 1 }
+
     }
 
-    impl ::unity2::ClassIdentity for Navigation_Mode {
-        const NAME: &'static str = "Navigation.Mode";
-        const NAMESPACE: &'static str = "UnityEngine.UI";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+    pub fn vertical() -> Self {
+        Self { value: 2 }
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
     }
 
-    impl ::unity2::IlType for Navigation_Mode {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+
+    pub fn automatic() -> Self {
+        Self { value: 3 }
+
     }
 
-    impl Navigation_Mode {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn horizontal() -> Self {
-            Self { value: 1 }
-        }
+    pub fn explicit() -> Self {
+        Self { value: 4 }
 
-        pub fn vertical() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn automatic() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn explicit() -> Self {
-            Self { value: 4 }
-        }
     }
+
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/navigation/Navigation.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct Navigation {
+    pub m_mode: crate :: unity_engine :: ui :: navigation :: Navigation_Mode,
+    pub m_wrap_around: bool,
+    pub m_select_on_up: crate :: unity_engine :: ui :: selectable :: Selectable,
+    pub m_select_on_down: crate :: unity_engine :: ui :: selectable :: Selectable,
+    pub m_select_on_left: crate :: unity_engine :: ui :: selectable :: Selectable,
+    pub m_select_on_right: crate :: unity_engine :: ui :: selectable :: Selectable,
+}
+
+
+impl ::unity2::ClassIdentity for Navigation {
+    const NAMESPACE: &'static str = "UnityEngine.UI";
+
+    const NAME: &'static str = "Navigation";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl ::unity2::IlType for Navigation {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
 }
 
 #[cfg(feature = "unity_engine-ui-navigation-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-ui-navigation")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __Navigation_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_mode {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Navigation as ::unity2::ClassIdentity>::class(), "get_mode", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Navigation as ::unity2::ClassIdentity>::NAME,
-                        "get_mode",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_mode(this: Navigation, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::ui::navigation::Navigation_Mode {
-        let inner: extern "C" fn(Navigation, ::unity2::OptionalMethod) -> crate::unity_engine::ui::navigation::Navigation_Mode =
-            ::core::mem::transmute(__lookup_get_mode::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_mode {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::ui::navigation::Navigation_Mode as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<Navigation as ::unity2::ClassIdentity>::class(), "set_mode", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Navigation as ::unity2::ClassIdentity>::NAME,
-                        "set_mode",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_mode(
-        this: Navigation,
-        value: crate::unity_engine::ui::navigation::Navigation_Mode,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(Navigation, crate::unity_engine::ui::navigation::Navigation_Mode, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_mode::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_wrap_around {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Navigation as ::unity2::ClassIdentity>::class(),
-                "get_wrapAround",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Navigation as ::unity2::ClassIdentity>::NAME,
-                        "get_wrapAround",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_wrap_around(this: Navigation, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(Navigation, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_wrap_around::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_wrap_around {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Navigation as ::unity2::ClassIdentity>::class(),
-                "set_wrapAround",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Navigation as ::unity2::ClassIdentity>::NAME,
-                        "set_wrapAround",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_wrap_around(this: Navigation, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Navigation, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_wrap_around::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_select_on_up {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Navigation as ::unity2::ClassIdentity>::class(),
-                "get_selectOnUp",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Navigation as ::unity2::ClassIdentity>::NAME,
-                        "get_selectOnUp",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_select_on_up(
-        this: Navigation,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::ui::selectable::Selectable {
-        let inner: extern "C" fn(Navigation, ::unity2::OptionalMethod) -> crate::unity_engine::ui::selectable::Selectable =
-            ::core::mem::transmute(__lookup_get_select_on_up::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_select_on_up {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::ui::selectable::Selectable as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Navigation as ::unity2::ClassIdentity>::class(),
-                "set_selectOnUp",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Navigation as ::unity2::ClassIdentity>::NAME,
-                        "set_selectOnUp",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_select_on_up(
-        this: Navigation,
-        value: crate::unity_engine::ui::selectable::Selectable,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(Navigation, crate::unity_engine::ui::selectable::Selectable, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_select_on_up::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_select_on_down {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Navigation as ::unity2::ClassIdentity>::class(),
-                "get_selectOnDown",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Navigation as ::unity2::ClassIdentity>::NAME,
-                        "get_selectOnDown",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_select_on_down(
-        this: Navigation,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::ui::selectable::Selectable {
-        let inner: extern "C" fn(Navigation, ::unity2::OptionalMethod) -> crate::unity_engine::ui::selectable::Selectable =
-            ::core::mem::transmute(__lookup_get_select_on_down::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_select_on_down {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::ui::selectable::Selectable as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Navigation as ::unity2::ClassIdentity>::class(),
-                "set_selectOnDown",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Navigation as ::unity2::ClassIdentity>::NAME,
-                        "set_selectOnDown",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_select_on_down(
-        this: Navigation,
-        value: crate::unity_engine::ui::selectable::Selectable,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(Navigation, crate::unity_engine::ui::selectable::Selectable, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_select_on_down::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_select_on_left {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Navigation as ::unity2::ClassIdentity>::class(),
-                "get_selectOnLeft",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Navigation as ::unity2::ClassIdentity>::NAME,
-                        "get_selectOnLeft",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_select_on_left(
-        this: Navigation,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::ui::selectable::Selectable {
-        let inner: extern "C" fn(Navigation, ::unity2::OptionalMethod) -> crate::unity_engine::ui::selectable::Selectable =
-            ::core::mem::transmute(__lookup_get_select_on_left::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_select_on_left {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::ui::selectable::Selectable as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Navigation as ::unity2::ClassIdentity>::class(),
-                "set_selectOnLeft",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Navigation as ::unity2::ClassIdentity>::NAME,
-                        "set_selectOnLeft",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_select_on_left(
-        this: Navigation,
-        value: crate::unity_engine::ui::selectable::Selectable,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(Navigation, crate::unity_engine::ui::selectable::Selectable, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_select_on_left::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_select_on_right {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Navigation as ::unity2::ClassIdentity>::class(),
-                "get_selectOnRight",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Navigation as ::unity2::ClassIdentity>::NAME,
-                        "get_selectOnRight",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_select_on_right(
-        this: Navigation,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::ui::selectable::Selectable {
-        let inner: extern "C" fn(Navigation, ::unity2::OptionalMethod) -> crate::unity_engine::ui::selectable::Selectable =
-            ::core::mem::transmute(__lookup_get_select_on_right::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_select_on_right {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::ui::selectable::Selectable as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Navigation as ::unity2::ClassIdentity>::class(),
-                "set_selectOnRight",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Navigation as ::unity2::ClassIdentity>::NAME,
-                        "set_selectOnRight",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_select_on_right(
-        this: Navigation,
-        value: crate::unity_engine::ui::selectable::Selectable,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(Navigation, crate::unity_engine::ui::selectable::Selectable, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_select_on_right::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_default_navigation {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Navigation as ::unity2::ClassIdentity>::class(),
-                "get_defaultNavigation",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Navigation as ::unity2::ClassIdentity>::NAME,
-                        "get_defaultNavigation",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_default_navigation(__unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::ui::navigation::Navigation {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::unity_engine::ui::navigation::Navigation =
-            ::core::mem::transmute(__lookup_get_default_navigation::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_equals {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::ui::navigation::Navigation as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<Navigation as ::unity2::ClassIdentity>::class(), "Equals", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Navigation as ::unity2::ClassIdentity>::NAME,
-                        "Equals",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn equals(
-        this: Navigation,
-        other: crate::unity_engine::ui::navigation::Navigation,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(Navigation, crate::unity_engine::ui::navigation::Navigation, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_equals::get_method_info().method_ptr);
-        inner(this, other, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __Navigation_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_mode { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Navigation as :: unity2 :: ClassIdentity > :: class () , "get_mode" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Navigation as :: unity2 :: ClassIdentity > :: NAME , "get_mode" , e) , } } } pub unsafe fn get_mode (this : Navigation , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: navigation :: Navigation_Mode { let inner : extern "C" fn (Navigation , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: navigation :: Navigation_Mode = :: core :: mem :: transmute (__lookup_get_mode :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_mode { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: ui :: navigation :: Navigation_Mode as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Navigation as :: unity2 :: ClassIdentity > :: class () , "set_mode" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Navigation as :: unity2 :: ClassIdentity > :: NAME , "set_mode" , e) , } } } pub unsafe fn set_mode (this : Navigation , value : crate :: unity_engine :: ui :: navigation :: Navigation_Mode , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Navigation , crate :: unity_engine :: ui :: navigation :: Navigation_Mode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_mode :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_wrap_around { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Navigation as :: unity2 :: ClassIdentity > :: class () , "get_wrapAround" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Navigation as :: unity2 :: ClassIdentity > :: NAME , "get_wrapAround" , e) , } } } pub unsafe fn get_wrap_around (this : Navigation , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (Navigation , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_wrap_around :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_wrap_around { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Navigation as :: unity2 :: ClassIdentity > :: class () , "set_wrapAround" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Navigation as :: unity2 :: ClassIdentity > :: NAME , "set_wrapAround" , e) , } } } pub unsafe fn set_wrap_around (this : Navigation , value : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Navigation , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_wrap_around :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_select_on_up { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Navigation as :: unity2 :: ClassIdentity > :: class () , "get_selectOnUp" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Navigation as :: unity2 :: ClassIdentity > :: NAME , "get_selectOnUp" , e) , } } } pub unsafe fn get_select_on_up (this : Navigation , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: selectable :: Selectable { let inner : extern "C" fn (Navigation , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: selectable :: Selectable = :: core :: mem :: transmute (__lookup_get_select_on_up :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_select_on_up { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: ui :: selectable :: Selectable as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Navigation as :: unity2 :: ClassIdentity > :: class () , "set_selectOnUp" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Navigation as :: unity2 :: ClassIdentity > :: NAME , "set_selectOnUp" , e) , } } } pub unsafe fn set_select_on_up (this : Navigation , value : crate :: unity_engine :: ui :: selectable :: Selectable , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Navigation , crate :: unity_engine :: ui :: selectable :: Selectable , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_select_on_up :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_select_on_down { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Navigation as :: unity2 :: ClassIdentity > :: class () , "get_selectOnDown" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Navigation as :: unity2 :: ClassIdentity > :: NAME , "get_selectOnDown" , e) , } } } pub unsafe fn get_select_on_down (this : Navigation , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: selectable :: Selectable { let inner : extern "C" fn (Navigation , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: selectable :: Selectable = :: core :: mem :: transmute (__lookup_get_select_on_down :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_select_on_down { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: ui :: selectable :: Selectable as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Navigation as :: unity2 :: ClassIdentity > :: class () , "set_selectOnDown" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Navigation as :: unity2 :: ClassIdentity > :: NAME , "set_selectOnDown" , e) , } } } pub unsafe fn set_select_on_down (this : Navigation , value : crate :: unity_engine :: ui :: selectable :: Selectable , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Navigation , crate :: unity_engine :: ui :: selectable :: Selectable , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_select_on_down :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_select_on_left { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Navigation as :: unity2 :: ClassIdentity > :: class () , "get_selectOnLeft" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Navigation as :: unity2 :: ClassIdentity > :: NAME , "get_selectOnLeft" , e) , } } } pub unsafe fn get_select_on_left (this : Navigation , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: selectable :: Selectable { let inner : extern "C" fn (Navigation , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: selectable :: Selectable = :: core :: mem :: transmute (__lookup_get_select_on_left :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_select_on_left { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: ui :: selectable :: Selectable as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Navigation as :: unity2 :: ClassIdentity > :: class () , "set_selectOnLeft" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Navigation as :: unity2 :: ClassIdentity > :: NAME , "set_selectOnLeft" , e) , } } } pub unsafe fn set_select_on_left (this : Navigation , value : crate :: unity_engine :: ui :: selectable :: Selectable , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Navigation , crate :: unity_engine :: ui :: selectable :: Selectable , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_select_on_left :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_select_on_right { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Navigation as :: unity2 :: ClassIdentity > :: class () , "get_selectOnRight" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Navigation as :: unity2 :: ClassIdentity > :: NAME , "get_selectOnRight" , e) , } } } pub unsafe fn get_select_on_right (this : Navigation , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: selectable :: Selectable { let inner : extern "C" fn (Navigation , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: selectable :: Selectable = :: core :: mem :: transmute (__lookup_get_select_on_right :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_select_on_right { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: ui :: selectable :: Selectable as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Navigation as :: unity2 :: ClassIdentity > :: class () , "set_selectOnRight" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Navigation as :: unity2 :: ClassIdentity > :: NAME , "set_selectOnRight" , e) , } } } pub unsafe fn set_select_on_right (this : Navigation , value : crate :: unity_engine :: ui :: selectable :: Selectable , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Navigation , crate :: unity_engine :: ui :: selectable :: Selectable , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_select_on_right :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_default_navigation { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Navigation as :: unity2 :: ClassIdentity > :: class () , "get_defaultNavigation" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Navigation as :: unity2 :: ClassIdentity > :: NAME , "get_defaultNavigation" , e) , } } } pub unsafe fn get_default_navigation (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: navigation :: Navigation { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: navigation :: Navigation = :: core :: mem :: transmute (__lookup_get_default_navigation :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_equals { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: ui :: navigation :: Navigation as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Navigation as :: unity2 :: ClassIdentity > :: class () , "Equals" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Navigation as :: unity2 :: ClassIdentity > :: NAME , "Equals" , e) , } } } pub unsafe fn equals (this : Navigation , other : crate :: unity_engine :: ui :: navigation :: Navigation , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (Navigation , crate :: unity_engine :: ui :: navigation :: Navigation , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_equals :: get_method_info () . method_ptr ,) ; inner (this , other , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-ui-navigation")]
-impl Navigation {
-    #[doc = "`get_defaultNavigation()` overload"]
-    pub fn get_default_navigation() -> crate::unity_engine::ui::navigation::Navigation {
-        unsafe { __Navigation_unity2_raw::get_default_navigation(::core::option::Option::None) }
-    }
-}
+impl Navigation { # [doc = "`get_defaultNavigation()` overload"] pub fn get_default_navigation () -> crate :: unity_engine :: ui :: navigation :: Navigation { unsafe { __Navigation_unity2_raw :: get_default_navigation (:: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-ui-navigation")]
-impl Navigation {
-    #[doc = "`get_mode()` overload"]
-    pub fn get_mode(self) -> crate::unity_engine::ui::navigation::Navigation_Mode {
-        unsafe { __Navigation_unity2_raw::get_mode(self, ::core::option::Option::None) }
-    }
+impl Navigation { # [doc = "`get_mode()` overload"] pub fn get_mode (self ,) -> crate :: unity_engine :: ui :: navigation :: Navigation_Mode { unsafe { __Navigation_unity2_raw :: get_mode (self , :: core :: option :: Option :: None) } } # [doc = "`set_mode(crate::unity_engine::ui::navigation::Navigation_Mode)` overload"] pub fn set_mode (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: navigation :: Navigation_Mode >) -> () { unsafe { __Navigation_unity2_raw :: set_mode (self , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_wrapAround()` overload"] pub fn get_wrap_around (self ,) -> bool { unsafe { __Navigation_unity2_raw :: get_wrap_around (self , :: core :: option :: Option :: None) } } # [doc = "`set_wrapAround(bool)` overload"] pub fn set_wrap_around (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { __Navigation_unity2_raw :: set_wrap_around (self , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_selectOnUp()` overload"] pub fn get_select_on_up (self ,) -> crate :: unity_engine :: ui :: selectable :: Selectable { unsafe { __Navigation_unity2_raw :: get_select_on_up (self , :: core :: option :: Option :: None) } } # [doc = "`set_selectOnUp(crate::unity_engine::ui::selectable::Selectable)` overload"] pub fn set_select_on_up (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: selectable :: Selectable >) -> () { unsafe { __Navigation_unity2_raw :: set_select_on_up (self , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_selectOnDown()` overload"] pub fn get_select_on_down (self ,) -> crate :: unity_engine :: ui :: selectable :: Selectable { unsafe { __Navigation_unity2_raw :: get_select_on_down (self , :: core :: option :: Option :: None) } } # [doc = "`set_selectOnDown(crate::unity_engine::ui::selectable::Selectable)` overload"] pub fn set_select_on_down (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: selectable :: Selectable >) -> () { unsafe { __Navigation_unity2_raw :: set_select_on_down (self , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_selectOnLeft()` overload"] pub fn get_select_on_left (self ,) -> crate :: unity_engine :: ui :: selectable :: Selectable { unsafe { __Navigation_unity2_raw :: get_select_on_left (self , :: core :: option :: Option :: None) } } # [doc = "`set_selectOnLeft(crate::unity_engine::ui::selectable::Selectable)` overload"] pub fn set_select_on_left (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: selectable :: Selectable >) -> () { unsafe { __Navigation_unity2_raw :: set_select_on_left (self , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_selectOnRight()` overload"] pub fn get_select_on_right (self ,) -> crate :: unity_engine :: ui :: selectable :: Selectable { unsafe { __Navigation_unity2_raw :: get_select_on_right (self , :: core :: option :: Option :: None) } } # [doc = "`set_selectOnRight(crate::unity_engine::ui::selectable::Selectable)` overload"] pub fn set_select_on_right (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: selectable :: Selectable >) -> () { unsafe { __Navigation_unity2_raw :: set_select_on_right (self , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`Equals(crate::unity_engine::ui::navigation::Navigation)` overload"] pub fn equals (self , other : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: navigation :: Navigation >) -> bool { unsafe { __Navigation_unity2_raw :: equals (self , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } }
 
-    #[doc = "`set_mode(crate::unity_engine::ui::navigation::Navigation_Mode)` overload"]
-    pub fn set_mode(self, value: impl ::core::convert::Into<crate::unity_engine::ui::navigation::Navigation_Mode>) -> () {
-        unsafe { __Navigation_unity2_raw::set_mode(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_wrapAround()` overload"]
-    pub fn get_wrap_around(self) -> bool {
-        unsafe { __Navigation_unity2_raw::get_wrap_around(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_wrapAround(bool)` overload"]
-    pub fn set_wrap_around(self, value: impl ::core::convert::Into<bool>) -> () {
-        unsafe { __Navigation_unity2_raw::set_wrap_around(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_selectOnUp()` overload"]
-    pub fn get_select_on_up(self) -> crate::unity_engine::ui::selectable::Selectable {
-        unsafe { __Navigation_unity2_raw::get_select_on_up(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_selectOnUp(crate::unity_engine::ui::selectable::Selectable)` overload"]
-    pub fn set_select_on_up(self, value: impl ::core::convert::Into<crate::unity_engine::ui::selectable::Selectable>) -> () {
-        unsafe { __Navigation_unity2_raw::set_select_on_up(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_selectOnDown()` overload"]
-    pub fn get_select_on_down(self) -> crate::unity_engine::ui::selectable::Selectable {
-        unsafe { __Navigation_unity2_raw::get_select_on_down(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_selectOnDown(crate::unity_engine::ui::selectable::Selectable)` overload"]
-    pub fn set_select_on_down(self, value: impl ::core::convert::Into<crate::unity_engine::ui::selectable::Selectable>) -> () {
-        unsafe { __Navigation_unity2_raw::set_select_on_down(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_selectOnLeft()` overload"]
-    pub fn get_select_on_left(self) -> crate::unity_engine::ui::selectable::Selectable {
-        unsafe { __Navigation_unity2_raw::get_select_on_left(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_selectOnLeft(crate::unity_engine::ui::selectable::Selectable)` overload"]
-    pub fn set_select_on_left(self, value: impl ::core::convert::Into<crate::unity_engine::ui::selectable::Selectable>) -> () {
-        unsafe { __Navigation_unity2_raw::set_select_on_left(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_selectOnRight()` overload"]
-    pub fn get_select_on_right(self) -> crate::unity_engine::ui::selectable::Selectable {
-        unsafe { __Navigation_unity2_raw::get_select_on_right(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_selectOnRight(crate::unity_engine::ui::selectable::Selectable)` overload"]
-    pub fn set_select_on_right(self, value: impl ::core::convert::Into<crate::unity_engine::ui::selectable::Selectable>) -> () {
-        unsafe { __Navigation_unity2_raw::set_select_on_right(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`Equals(crate::unity_engine::ui::navigation::Navigation)` overload"]
-    pub fn equals(self, other: impl ::core::convert::Into<crate::unity_engine::ui::navigation::Navigation>) -> bool {
-        unsafe { __Navigation_unity2_raw::equals(self, ::core::convert::Into::into(other), ::core::option::Option::None) }
-    }
-}
+#[cfg(feature = "unity_engine-ui-navigation")]
+impl Navigation { pub fn get_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Navigation_unity2_raw :: __lookup_get_mode :: get_method_info () } pub fn set_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Navigation_unity2_raw :: __lookup_set_mode :: get_method_info () } pub fn get_wrap_around_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Navigation_unity2_raw :: __lookup_get_wrap_around :: get_method_info () } pub fn set_wrap_around_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Navigation_unity2_raw :: __lookup_set_wrap_around :: get_method_info () } pub fn get_select_on_up_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Navigation_unity2_raw :: __lookup_get_select_on_up :: get_method_info () } pub fn set_select_on_up_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Navigation_unity2_raw :: __lookup_set_select_on_up :: get_method_info () } pub fn get_select_on_down_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Navigation_unity2_raw :: __lookup_get_select_on_down :: get_method_info () } pub fn set_select_on_down_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Navigation_unity2_raw :: __lookup_set_select_on_down :: get_method_info () } pub fn get_select_on_left_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Navigation_unity2_raw :: __lookup_get_select_on_left :: get_method_info () } pub fn set_select_on_left_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Navigation_unity2_raw :: __lookup_set_select_on_left :: get_method_info () } pub fn get_select_on_right_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Navigation_unity2_raw :: __lookup_get_select_on_right :: get_method_info () } pub fn set_select_on_right_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Navigation_unity2_raw :: __lookup_set_select_on_right :: get_method_info () } pub fn get_default_navigation_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Navigation_unity2_raw :: __lookup_get_default_navigation :: get_method_info () } pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Navigation_unity2_raw :: __lookup_equals :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-ui-navigation")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{Navigation, Navigation_Mode};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::system::{object::IObject, r#enum::IEnum, valuetype::IValueType};
+    pub use super::Navigation_Mode;
+    pub use super::Navigation;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

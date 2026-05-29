@@ -2,772 +2,144 @@
 
 #[cfg(feature = "app-skipindicator-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::singletonmonobehaviour_1::{ISingletonMonoBehaviour_1, SingletonMonoBehaviour_1},
-        system::{
-            object::{IObject, Object},
-            r#enum::{Enum, IEnum},
-            valuetype::{IValueType, ValueType},
-        },
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/skipindicator/SkipIndicator_Seq.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct SkipIndicator_Seq {
-        pub value: i32,
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: singletonmonobehaviour_1 :: { ISingletonMonoBehaviour_1 , SingletonMonoBehaviour_1 }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/skipindicator/SkipIndicator_Seq.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct SkipIndicator_Seq  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for SkipIndicator_Seq  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "SkipIndicator.Seq";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    impl ::unity2::ClassIdentity for SkipIndicator_Seq {
-        const NAME: &'static str = "SkipIndicator.Seq";
-        const NAMESPACE: &'static str = "App";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  ::unity2::IlType for SkipIndicator_Seq  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::IlType for SkipIndicator_Seq {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  SkipIndicator_Seq  {
+    pub fn hide() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl SkipIndicator_Seq {
-        pub fn hide() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn opening() -> Self {
-            Self { value: 1 }
-        }
+    pub fn opening() -> Self {
+        Self { value: 1 }
 
-        pub fn show() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn closing() -> Self {
-            Self { value: 3 }
-        }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/skipindicator/SkipIndicator.md"))]
-    #[::unity2::class(namespace = "App", name = "SkipIndicator")]
-    # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: skipindicator :: SkipIndicator >)]
-    pub struct SkipIndicator {
-        #[offset(32)]
-        #[rename(name = "m_Skip")]
-        pub m_skip: crate::unity_engine::gameobject::GameObject,
-        #[offset(40)]
-        #[rename(name = "m_Auto")]
-        pub m_auto: crate::unity_engine::gameobject::GameObject,
-        #[offset(48)]
-        #[rename(name = "m_Error")]
-        pub m_error: crate::unity_engine::gameobject::GameObject,
-        #[offset(56)]
-        #[rename(name = "m_CanvasManager")]
-        pub m_canvas_manager: crate::app::canvasmanager::CanvasManager,
-        #[offset(64)]
-        #[rename(name = "m_Animator")]
-        pub m_animator: crate::unity_engine::animator::Animator,
-        #[offset(72)]
-        #[rename(name = "m_Seq")]
-        pub m_seq: crate::app::skipindicator::SkipIndicator_Seq,
-        #[offset(76)]
-        #[rename(name = "m_IsReqClose")]
-        pub m_is_req_close: bool,
+
+    pub fn show() -> Self {
+        Self { value: 2 }
+
     }
+
+
+    pub fn closing() -> Self {
+        Self { value: 3 }
+
+    }
+
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/skipindicator/SkipIndicator.md"))] # [:: unity2 :: class (namespace = "App" , name = "SkipIndicator")] # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: skipindicator :: SkipIndicator >)] pub struct SkipIndicator {
+# [offset (32)] # [rename (name = "m_Skip")] pub m_skip : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (40)] # [rename (name = "m_Auto")] pub m_auto : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (48)] # [rename (name = "m_Error")] pub m_error : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (56)] # [rename (name = "m_CanvasManager")] pub m_canvas_manager : crate :: app :: canvasmanager :: CanvasManager ,
+# [offset (64)] # [rename (name = "m_Animator")] pub m_animator : crate :: unity_engine :: animator :: Animator ,
+# [offset (72)] # [rename (name = "m_Seq")] pub m_seq : crate :: app :: skipindicator :: SkipIndicator_Seq ,
+# [offset (76)] # [rename (name = "m_IsReqClose")] pub m_is_req_close : bool ,
+}
+
 }
 
 #[cfg(feature = "app-skipindicator-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-skipindicator")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __SkipIndicator_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_awake {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<SkipIndicator as ::unity2::ClassIdentity>::class(), "Awake", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SkipIndicator as ::unity2::ClassIdentity>::NAME,
-                        "Awake",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn awake(this: SkipIndicator, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SkipIndicator, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_awake::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkipIndicator as ::unity2::ClassIdentity>::class(),
-                "Update",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SkipIndicator as ::unity2::ClassIdentity>::NAME,
-                        "Update",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update(this: SkipIndicator, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SkipIndicator, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_show_skip_impl {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkipIndicator as ::unity2::ClassIdentity>::class(),
-                "ShowSkipImpl",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SkipIndicator as ::unity2::ClassIdentity>::NAME,
-                        "ShowSkipImpl",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn show_skip_impl(this: SkipIndicator, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SkipIndicator, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_show_skip_impl::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_show_auto_impl {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkipIndicator as ::unity2::ClassIdentity>::class(),
-                "ShowAutoImpl",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SkipIndicator as ::unity2::ClassIdentity>::NAME,
-                        "ShowAutoImpl",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn show_auto_impl(this: SkipIndicator, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SkipIndicator, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_show_auto_impl::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_show_error_impl {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkipIndicator as ::unity2::ClassIdentity>::class(),
-                "ShowErrorImpl",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SkipIndicator as ::unity2::ClassIdentity>::NAME,
-                        "ShowErrorImpl",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn show_error_impl(this: SkipIndicator, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SkipIndicator, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_show_error_impl::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_hide_impl {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkipIndicator as ::unity2::ClassIdentity>::class(),
-                "HideImpl",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SkipIndicator as ::unity2::ClassIdentity>::NAME,
-                        "HideImpl",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn hide_impl(this: SkipIndicator, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SkipIndicator, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_hide_impl::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_show {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <bool as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<SkipIndicator as ::unity2::ClassIdentity>::class(), "Show", 3, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SkipIndicator as ::unity2::ClassIdentity>::NAME,
-                        "Show",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn show(
-        this: SkipIndicator,
-        is_show_skip: bool,
-        is_show_auto: bool,
-        is_show_error: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(SkipIndicator, bool, bool, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_show::get_method_info().method_ptr);
-        inner(this, is_show_skip, is_show_auto, is_show_error, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_opening {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkipIndicator as ::unity2::ClassIdentity>::class(),
-                "IsOpening",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SkipIndicator as ::unity2::ClassIdentity>::NAME,
-                        "IsOpening",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_opening(this: SkipIndicator, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(SkipIndicator, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_opening::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_closing {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkipIndicator as ::unity2::ClassIdentity>::class(),
-                "IsClosing",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SkipIndicator as ::unity2::ClassIdentity>::NAME,
-                        "IsClosing",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_closing(this: SkipIndicator, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(SkipIndicator, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_closing::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_closed {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkipIndicator as ::unity2::ClassIdentity>::class(),
-                "IsClosed",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SkipIndicator as ::unity2::ClassIdentity>::NAME,
-                        "IsClosed",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_closed(this: SkipIndicator, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(SkipIndicator, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_closed::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_bool {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkipIndicator as ::unity2::ClassIdentity>::class(),
-                "GetBool",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SkipIndicator as ::unity2::ClassIdentity>::NAME,
-                        "GetBool",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_bool(this: SkipIndicator, name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(SkipIndicator, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_bool::get_method_info().method_ptr);
-        inner(this, name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_show_skip {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkipIndicator as ::unity2::ClassIdentity>::class(),
-                "ShowSkip",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SkipIndicator as ::unity2::ClassIdentity>::NAME,
-                        "ShowSkip",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn show_skip(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_show_skip::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_show_auto {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkipIndicator as ::unity2::ClassIdentity>::class(),
-                "ShowAuto",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SkipIndicator as ::unity2::ClassIdentity>::NAME,
-                        "ShowAuto",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn show_auto(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_show_auto::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_show_error {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkipIndicator as ::unity2::ClassIdentity>::class(),
-                "ShowError",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SkipIndicator as ::unity2::ClassIdentity>::NAME,
-                        "ShowError",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn show_error(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_show_error::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_hide {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<SkipIndicator as ::unity2::ClassIdentity>::class(), "Hide", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SkipIndicator as ::unity2::ClassIdentity>::NAME,
-                        "Hide",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn hide(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_hide::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<SkipIndicator as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SkipIndicator as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: SkipIndicator, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SkipIndicator, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __SkipIndicator_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_awake { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkipIndicator as :: unity2 :: ClassIdentity > :: class () , "Awake" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkipIndicator as :: unity2 :: ClassIdentity > :: NAME , "Awake" , e) , } } } pub unsafe fn awake (this : SkipIndicator , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkipIndicator , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_awake :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkipIndicator as :: unity2 :: ClassIdentity > :: class () , "Update" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkipIndicator as :: unity2 :: ClassIdentity > :: NAME , "Update" , e) , } } } pub unsafe fn update (this : SkipIndicator , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkipIndicator , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_show_skip_impl { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkipIndicator as :: unity2 :: ClassIdentity > :: class () , "ShowSkipImpl" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkipIndicator as :: unity2 :: ClassIdentity > :: NAME , "ShowSkipImpl" , e) , } } } pub unsafe fn show_skip_impl (this : SkipIndicator , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkipIndicator , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_show_skip_impl :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_show_auto_impl { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkipIndicator as :: unity2 :: ClassIdentity > :: class () , "ShowAutoImpl" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkipIndicator as :: unity2 :: ClassIdentity > :: NAME , "ShowAutoImpl" , e) , } } } pub unsafe fn show_auto_impl (this : SkipIndicator , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkipIndicator , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_show_auto_impl :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_show_error_impl { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkipIndicator as :: unity2 :: ClassIdentity > :: class () , "ShowErrorImpl" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkipIndicator as :: unity2 :: ClassIdentity > :: NAME , "ShowErrorImpl" , e) , } } } pub unsafe fn show_error_impl (this : SkipIndicator , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkipIndicator , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_show_error_impl :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_hide_impl { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkipIndicator as :: unity2 :: ClassIdentity > :: class () , "HideImpl" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkipIndicator as :: unity2 :: ClassIdentity > :: NAME , "HideImpl" , e) , } } } pub unsafe fn hide_impl (this : SkipIndicator , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkipIndicator , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_hide_impl :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_show { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkipIndicator as :: unity2 :: ClassIdentity > :: class () , "Show" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkipIndicator as :: unity2 :: ClassIdentity > :: NAME , "Show" , e) , } } } pub unsafe fn show (this : SkipIndicator , is_show_skip : bool , is_show_auto : bool , is_show_error : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkipIndicator , bool , bool , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_show :: get_method_info () . method_ptr ,) ; inner (this , is_show_skip , is_show_auto , is_show_error , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_opening { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkipIndicator as :: unity2 :: ClassIdentity > :: class () , "IsOpening" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkipIndicator as :: unity2 :: ClassIdentity > :: NAME , "IsOpening" , e) , } } } pub unsafe fn is_opening (this : SkipIndicator , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (SkipIndicator , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_opening :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_closing { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkipIndicator as :: unity2 :: ClassIdentity > :: class () , "IsClosing" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkipIndicator as :: unity2 :: ClassIdentity > :: NAME , "IsClosing" , e) , } } } pub unsafe fn is_closing (this : SkipIndicator , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (SkipIndicator , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_closing :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_closed { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkipIndicator as :: unity2 :: ClassIdentity > :: class () , "IsClosed" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkipIndicator as :: unity2 :: ClassIdentity > :: NAME , "IsClosed" , e) , } } } pub unsafe fn is_closed (this : SkipIndicator , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (SkipIndicator , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_closed :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_bool { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkipIndicator as :: unity2 :: ClassIdentity > :: class () , "GetBool" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkipIndicator as :: unity2 :: ClassIdentity > :: NAME , "GetBool" , e) , } } } pub unsafe fn get_bool (this : SkipIndicator , name : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (SkipIndicator , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_bool :: get_method_info () . method_ptr ,) ; inner (this , name , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_show_skip { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkipIndicator as :: unity2 :: ClassIdentity > :: class () , "ShowSkip" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkipIndicator as :: unity2 :: ClassIdentity > :: NAME , "ShowSkip" , e) , } } } pub unsafe fn show_skip (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_show_skip :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_show_auto { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkipIndicator as :: unity2 :: ClassIdentity > :: class () , "ShowAuto" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkipIndicator as :: unity2 :: ClassIdentity > :: NAME , "ShowAuto" , e) , } } } pub unsafe fn show_auto (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_show_auto :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_show_error { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkipIndicator as :: unity2 :: ClassIdentity > :: class () , "ShowError" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkipIndicator as :: unity2 :: ClassIdentity > :: NAME , "ShowError" , e) , } } } pub unsafe fn show_error (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_show_error :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_hide { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkipIndicator as :: unity2 :: ClassIdentity > :: class () , "Hide" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkipIndicator as :: unity2 :: ClassIdentity > :: NAME , "Hide" , e) , } } } pub unsafe fn hide (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_hide :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkipIndicator as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkipIndicator as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : SkipIndicator , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkipIndicator , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-skipindicator")]
+impl SkipIndicator { # [doc = "`ShowSkip()` overload"] pub fn show_skip () -> () { unsafe { __SkipIndicator_unity2_raw :: show_skip (:: core :: option :: Option :: None) } } # [doc = "`ShowAuto()` overload"] pub fn show_auto () -> () { unsafe { __SkipIndicator_unity2_raw :: show_auto (:: core :: option :: Option :: None) } } # [doc = "`ShowError()` overload"] pub fn show_error () -> () { unsafe { __SkipIndicator_unity2_raw :: show_error (:: core :: option :: Option :: None) } } # [doc = "`Hide()` overload"] pub fn hide () -> () { unsafe { __SkipIndicator_unity2_raw :: hide (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-skipindicator")]
+pub trait ISkipIndicatorMethods : ISkipIndicator { # [doc = "`Awake()` overload"] fn awake (self ,) -> () { unsafe { let __receiver = < SkipIndicator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SkipIndicator_unity2_raw :: awake (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < SkipIndicator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SkipIndicator_unity2_raw :: update (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ShowSkipImpl()` overload"] fn show_skip_impl (self ,) -> () { unsafe { let __receiver = < SkipIndicator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SkipIndicator_unity2_raw :: show_skip_impl (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ShowAutoImpl()` overload"] fn show_auto_impl (self ,) -> () { unsafe { let __receiver = < SkipIndicator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SkipIndicator_unity2_raw :: show_auto_impl (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ShowErrorImpl()` overload"] fn show_error_impl (self ,) -> () { unsafe { let __receiver = < SkipIndicator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SkipIndicator_unity2_raw :: show_error_impl (__receiver , :: core :: option :: Option :: None) } } # [doc = "`HideImpl()` overload"] fn hide_impl (self ,) -> () { unsafe { let __receiver = < SkipIndicator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SkipIndicator_unity2_raw :: hide_impl (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Show(bool, bool, bool)` overload"] fn show (self , is_show_skip : impl :: core :: convert :: Into < bool > , is_show_auto : impl :: core :: convert :: Into < bool > , is_show_error : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < SkipIndicator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SkipIndicator_unity2_raw :: show (__receiver , :: core :: convert :: Into :: into (is_show_skip) , :: core :: convert :: Into :: into (is_show_auto) , :: core :: convert :: Into :: into (is_show_error) , :: core :: option :: Option :: None) } } # [doc = "`IsOpening()` overload"] fn is_opening (self ,) -> bool { unsafe { let __receiver = < SkipIndicator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SkipIndicator_unity2_raw :: is_opening (__receiver , :: core :: option :: Option :: None) } } # [doc = "`IsClosing()` overload"] fn is_closing (self ,) -> bool { unsafe { let __receiver = < SkipIndicator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SkipIndicator_unity2_raw :: is_closing (__receiver , :: core :: option :: Option :: None) } } # [doc = "`IsClosed()` overload"] fn is_closed (self ,) -> bool { unsafe { let __receiver = < SkipIndicator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SkipIndicator_unity2_raw :: is_closed (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetBool(::unity2::Il2CppString)` overload"] fn get_bool (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { let __receiver = < SkipIndicator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SkipIndicator_unity2_raw :: get_bool (__receiver , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < SkipIndicator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SkipIndicator_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-skipindicator")]
+impl < __T : ISkipIndicator > ISkipIndicatorMethods for __T { }
+
+#[cfg(feature = "app-skipindicator")]
+impl SkipIndicator { pub fn awake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SkipIndicator_unity2_raw :: __lookup_awake :: get_method_info () } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SkipIndicator_unity2_raw :: __lookup_update :: get_method_info () } pub fn show_skip_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SkipIndicator_unity2_raw :: __lookup_show_skip_impl :: get_method_info () } pub fn show_auto_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SkipIndicator_unity2_raw :: __lookup_show_auto_impl :: get_method_info () } pub fn show_error_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SkipIndicator_unity2_raw :: __lookup_show_error_impl :: get_method_info () } pub fn hide_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SkipIndicator_unity2_raw :: __lookup_hide_impl :: get_method_info () } pub fn show_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SkipIndicator_unity2_raw :: __lookup_show :: get_method_info () } pub fn is_opening_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SkipIndicator_unity2_raw :: __lookup_is_opening :: get_method_info () } pub fn is_closing_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SkipIndicator_unity2_raw :: __lookup_is_closing :: get_method_info () } pub fn is_closed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SkipIndicator_unity2_raw :: __lookup_is_closed :: get_method_info () } pub fn get_bool_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SkipIndicator_unity2_raw :: __lookup_get_bool :: get_method_info () } pub fn show_skip_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SkipIndicator_unity2_raw :: __lookup_show_skip :: get_method_info () } pub fn show_auto_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SkipIndicator_unity2_raw :: __lookup_show_auto :: get_method_info () } pub fn show_error_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SkipIndicator_unity2_raw :: __lookup_show_error :: get_method_info () } pub fn hide_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SkipIndicator_unity2_raw :: __lookup_hide :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SkipIndicator_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-skipindicator")]
 impl SkipIndicator {
-    #[doc = "`ShowSkip()` overload"]
-    pub fn show_skip() -> () {
-        unsafe { __SkipIndicator_unity2_raw::show_skip(::core::option::Option::None) }
-    }
-
-    #[doc = "`ShowAuto()` overload"]
-    pub fn show_auto() -> () {
-        unsafe { __SkipIndicator_unity2_raw::show_auto(::core::option::Option::None) }
-    }
-
-    #[doc = "`ShowError()` overload"]
-    pub fn show_error() -> () {
-        unsafe { __SkipIndicator_unity2_raw::show_error(::core::option::Option::None) }
-    }
-
-    #[doc = "`Hide()` overload"]
-    pub fn hide() -> () {
-        unsafe { __SkipIndicator_unity2_raw::hide(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-skipindicator")]
-pub trait ISkipIndicatorMethods: ISkipIndicator {
-    #[doc = "`Awake()` overload"]
-    fn awake(self) -> () {
-        unsafe {
-            let __receiver = <SkipIndicator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SkipIndicator_unity2_raw::awake(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Update()` overload"]
-    fn update(self) -> () {
-        unsafe {
-            let __receiver = <SkipIndicator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SkipIndicator_unity2_raw::update(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ShowSkipImpl()` overload"]
-    fn show_skip_impl(self) -> () {
-        unsafe {
-            let __receiver = <SkipIndicator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SkipIndicator_unity2_raw::show_skip_impl(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ShowAutoImpl()` overload"]
-    fn show_auto_impl(self) -> () {
-        unsafe {
-            let __receiver = <SkipIndicator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SkipIndicator_unity2_raw::show_auto_impl(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ShowErrorImpl()` overload"]
-    fn show_error_impl(self) -> () {
-        unsafe {
-            let __receiver = <SkipIndicator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SkipIndicator_unity2_raw::show_error_impl(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`HideImpl()` overload"]
-    fn hide_impl(self) -> () {
-        unsafe {
-            let __receiver = <SkipIndicator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SkipIndicator_unity2_raw::hide_impl(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Show(bool, bool, bool)` overload"]
-    fn show(
-        self,
-        is_show_skip: impl ::core::convert::Into<bool>,
-        is_show_auto: impl ::core::convert::Into<bool>,
-        is_show_error: impl ::core::convert::Into<bool>,
-    ) -> () {
-        unsafe {
-            let __receiver = <SkipIndicator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SkipIndicator_unity2_raw::show(
-                __receiver,
-                ::core::convert::Into::into(is_show_skip),
-                ::core::convert::Into::into(is_show_auto),
-                ::core::convert::Into::into(is_show_error),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`IsOpening()` overload"]
-    fn is_opening(self) -> bool {
-        unsafe {
-            let __receiver = <SkipIndicator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SkipIndicator_unity2_raw::is_opening(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsClosing()` overload"]
-    fn is_closing(self) -> bool {
-        unsafe {
-            let __receiver = <SkipIndicator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SkipIndicator_unity2_raw::is_closing(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsClosed()` overload"]
-    fn is_closed(self) -> bool {
-        unsafe {
-            let __receiver = <SkipIndicator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SkipIndicator_unity2_raw::is_closed(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetBool(::unity2::Il2CppString)` overload"]
-    fn get_bool(self, name: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
-        unsafe {
-            let __receiver = <SkipIndicator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SkipIndicator_unity2_raw::get_bool(__receiver, ::core::convert::Into::into(name), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <SkipIndicator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SkipIndicator_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-skipindicator")]
-impl<__T: ISkipIndicator> ISkipIndicatorMethods for __T {}
-
-#[cfg(feature = "app-skipindicator")]
-impl SkipIndicator {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(SkipIndicator), ::core::stringify!(new),));
-        <Self as ISkipIndicatorMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SkipIndicator) , :: core :: stringify ! (new) ,)) ; < Self as ISkipIndicatorMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-skipindicator")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{ISkipIndicator, ISkipIndicatorMethods, SkipIndicator, SkipIndicator_Seq};
-    #[cfg(feature = "app-singletonmonobehaviour_1")]
-    pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1Methods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1,
-        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::SkipIndicator_Seq;
+    pub use super::SkipIndicator;
+    pub use super::ISkipIndicator;
+    pub use super::ISkipIndicatorMethods;
+    pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "app-singletonmonobehaviour_1")] pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1Methods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

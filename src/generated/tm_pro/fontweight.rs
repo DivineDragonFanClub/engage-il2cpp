@@ -2,76 +2,107 @@
 
 #[cfg(feature = "tm_pro-fontweight-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        r#enum::{Enum, IEnum},
-        valuetype::{IValueType, ValueType},
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/fontweight/FontWeight.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct FontWeight {
-        pub value: i32,
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/fontweight/FontWeight.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct FontWeight  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for FontWeight  {
+    const NAMESPACE: &'static str = "TMPro";
+
+    const NAME: &'static str = "FontWeight";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    impl ::unity2::ClassIdentity for FontWeight {
-        const NAME: &'static str = "FontWeight";
-        const NAMESPACE: &'static str = "TMPro";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  ::unity2::IlType for FontWeight  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::IlType for FontWeight {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  FontWeight  {
+    pub fn thin() -> Self {
+        Self { value: 100 }
+
     }
 
-    impl FontWeight {
-        pub fn thin() -> Self {
-            Self { value: 100 }
-        }
 
-        pub fn extra_light() -> Self {
-            Self { value: 200 }
-        }
+    pub fn extra_light() -> Self {
+        Self { value: 200 }
 
-        pub fn light() -> Self {
-            Self { value: 300 }
-        }
-
-        pub fn regular() -> Self {
-            Self { value: 400 }
-        }
-
-        pub fn medium() -> Self {
-            Self { value: 500 }
-        }
-
-        pub fn semi_bold() -> Self {
-            Self { value: 600 }
-        }
-
-        pub fn bold() -> Self {
-            Self { value: 700 }
-        }
-
-        pub fn heavy() -> Self {
-            Self { value: 800 }
-        }
-
-        pub fn black() -> Self {
-            Self { value: 900 }
-        }
     }
+
+
+    pub fn light() -> Self {
+        Self { value: 300 }
+
+    }
+
+
+    pub fn regular() -> Self {
+        Self { value: 400 }
+
+    }
+
+
+    pub fn medium() -> Self {
+        Self { value: 500 }
+
+    }
+
+
+    pub fn semi_bold() -> Self {
+        Self { value: 600 }
+
+    }
+
+
+    pub fn bold() -> Self {
+        Self { value: 700 }
+
+    }
+
+
+    pub fn heavy() -> Self {
+        Self { value: 800 }
+
+    }
+
+
+    pub fn black() -> Self {
+        Self { value: 900 }
+
+    }
+
+}
+
 }
 
 #[cfg(feature = "tm_pro-fontweight-types")]
@@ -81,11 +112,10 @@ pub use __types::*;
 #[doc(hidden)]
 pub mod prelude {
     pub use super::FontWeight;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::system::{object::IObject, r#enum::IEnum, valuetype::IValueType};
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

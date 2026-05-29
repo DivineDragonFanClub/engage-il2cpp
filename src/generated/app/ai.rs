@@ -2,1298 +2,143 @@
 
 #[cfg(feature = "app-ai-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::singletonclass_1::{ISingletonClass_1, SingletonClass_1},
-        system::{
-            object::{IObject, Object},
-            r#enum::{Enum, IEnum},
-            valuetype::{IValueType, ValueType},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ai/AI.md"))]
-    #[::unity2::class(namespace = "App", name = "AI")]
-    # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: ai :: AI >)]
-    pub struct AI {
-        #[offset(32)]
-        #[rename(name = "m_Order")]
-        pub m_order: crate::app::aiorder::AIOrder,
-        #[offset(40)]
-        #[rename(name = "m_Think")]
-        pub m_think: crate::app::aithink::AIThink,
-        #[offset(48)]
-        #[rename(name = "m_Cannon")]
-        pub m_cannon: crate::app::aicannon::AICannon,
-        #[offset(56)]
-        #[rename(name = "m_InterruptAttack")]
-        pub m_interrupt_attack: crate::app::aiinterruptattack::AIInterruptAttack,
-        #[offset(64)]
-        #[rename(name = "m_Seq")]
-        pub m_seq: crate::app::ai::AI_Seq,
-        #[offset(68)]
-        #[rename(name = "m_Crossfire")]
-        pub m_crossfire: bool,
-        #[offset(69)]
-        #[rename(name = "m_IsTargetUpdate")]
-        pub m_is_target_update: bool,
-        #[offset(70)]
-        #[rename(name = "m_IsVersus")]
-        pub m_is_versus: bool,
-        #[offset(71)]
-        #[rename(name = "m_IsVersusCasual")]
-        pub m_is_versus_casual: bool,
-        #[offset(72)]
-        #[rename(name = "m_IsVersusRankedOrMock")]
-        pub m_is_versus_ranked_or_mock: bool,
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: singletonclass_1 :: { ISingletonClass_1 , SingletonClass_1 }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ai/AI_Seq.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct AI_Seq  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for AI_Seq  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "AI.Seq";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ai/AI_Seq.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct AI_Seq {
-        pub value: i32,
+}
+
+
+impl  ::unity2::IlType for AI_Seq  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::ClassIdentity for AI_Seq {
-        const NAME: &'static str = "AI.Seq";
-        const NAMESPACE: &'static str = "App";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  AI_Seq  {
+    pub fn initialize() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl ::unity2::IlType for AI_Seq {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+
+    pub fn order() -> Self {
+        Self { value: 1 }
+
     }
 
-    impl AI_Seq {
-        pub fn initialize() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn order() -> Self {
-            Self { value: 1 }
-        }
+    pub fn processing() -> Self {
+        Self { value: 2 }
 
-        pub fn processing() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn crossfire() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn interrupt_attack() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn finalize() -> Self {
-            Self { value: 5 }
-        }
     }
+
+
+    pub fn crossfire() -> Self {
+        Self { value: 3 }
+
+    }
+
+
+    pub fn interrupt_attack() -> Self {
+        Self { value: 4 }
+
+    }
+
+
+    pub fn finalize() -> Self {
+        Self { value: 5 }
+
+    }
+
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ai/AI.md"))] # [:: unity2 :: class (namespace = "App" , name = "AI")] # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: ai :: AI >)] pub struct AI {
+# [offset (32)] # [rename (name = "m_Order")] pub m_order : crate :: app :: aiorder :: AIOrder ,
+# [offset (40)] # [rename (name = "m_Think")] pub m_think : crate :: app :: aithink :: AIThink ,
+# [offset (48)] # [rename (name = "m_Cannon")] pub m_cannon : crate :: app :: aicannon :: AICannon ,
+# [offset (56)] # [rename (name = "m_InterruptAttack")] pub m_interrupt_attack : crate :: app :: aiinterruptattack :: AIInterruptAttack ,
+# [offset (64)] # [rename (name = "m_Seq")] pub m_seq : crate :: app :: ai :: AI_Seq ,
+# [offset (68)] # [rename (name = "m_Crossfire")] pub m_crossfire : bool ,
+# [offset (69)] # [rename (name = "m_IsTargetUpdate")] pub m_is_target_update : bool ,
+# [offset (70)] # [rename (name = "m_IsVersus")] pub m_is_versus : bool ,
+# [offset (71)] # [rename (name = "m_IsVersusCasual")] pub m_is_versus_casual : bool ,
+# [offset (72)] # [rename (name = "m_IsVersusRankedOrMock")] pub m_is_versus_ranked_or_mock : bool ,
+}
+
 }
 
 #[cfg(feature = "app-ai-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-ai")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AI_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<AI as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <AI as ::unity2::ClassIdentity>::NAME, ".ctor", e),
-            }
-        }
-    }
-    pub unsafe fn ctor(this: AI, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AI, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_order {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<AI as ::unity2::ClassIdentity>::class(), "get_Order", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <AI as ::unity2::ClassIdentity>::NAME, "get_Order", e),
-            }
-        }
-    }
-    pub unsafe fn get_order(this: AI, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::aiorder::AIOrder {
-        let inner: extern "C" fn(AI, ::unity2::OptionalMethod) -> crate::app::aiorder::AIOrder =
-            ::core::mem::transmute(__lookup_get_order::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_think {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<AI as ::unity2::ClassIdentity>::class(), "get_Think", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <AI as ::unity2::ClassIdentity>::NAME, "get_Think", e),
-            }
-        }
-    }
-    pub unsafe fn get_think(this: AI, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::aithink::AIThink {
-        let inner: extern "C" fn(AI, ::unity2::OptionalMethod) -> crate::app::aithink::AIThink =
-            ::core::mem::transmute(__lookup_get_think::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_cannon {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<AI as ::unity2::ClassIdentity>::class(), "get_Cannon", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <AI as ::unity2::ClassIdentity>::NAME, "get_Cannon", e),
-            }
-        }
-    }
-    pub unsafe fn get_cannon(this: AI, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::aicannon::AICannon {
-        let inner: extern "C" fn(AI, ::unity2::OptionalMethod) -> crate::app::aicannon::AICannon =
-            ::core::mem::transmute(__lookup_get_cannon::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_interrupt_attack {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AI as ::unity2::ClassIdentity>::class(),
-                "get_InterruptAttack",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AI as ::unity2::ClassIdentity>::NAME,
-                        "get_InterruptAttack",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_interrupt_attack(this: AI, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::aiinterruptattack::AIInterruptAttack {
-        let inner: extern "C" fn(AI, ::unity2::OptionalMethod) -> crate::app::aiinterruptattack::AIInterruptAttack =
-            ::core::mem::transmute(__lookup_get_interrupt_attack::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_seq {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::ai::AI_Seq as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<AI as ::unity2::ClassIdentity>::class(), "SetSeq", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <AI as ::unity2::ClassIdentity>::NAME, "SetSeq", e),
-            }
-        }
-    }
-    pub unsafe fn set_seq(this: AI, seq: crate::app::ai::AI_Seq, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AI, crate::app::ai::AI_Seq, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_seq::get_method_info().method_ptr);
-        inner(this, seq, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_crossfire {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<AI as ::unity2::ClassIdentity>::class(), "SetCrossfire", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AI as ::unity2::ClassIdentity>::NAME,
-                        "SetCrossfire",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_crossfire(this: AI, enable: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AI, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_crossfire::get_method_info().method_ptr);
-        inner(this, enable, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_versus {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<AI as ::unity2::ClassIdentity>::class(), "IsVersus", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <AI as ::unity2::ClassIdentity>::NAME, "IsVersus", e),
-            }
-        }
-    }
-    pub unsafe fn is_versus(this: AI, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(AI, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_is_versus::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_versus_casual {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<AI as ::unity2::ClassIdentity>::class(), "IsVersusCasual", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AI as ::unity2::ClassIdentity>::NAME,
-                        "IsVersusCasual",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_versus_casual(this: AI, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(AI, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_versus_casual::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_versus_ranked_or_mock {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AI as ::unity2::ClassIdentity>::class(),
-                "IsVersusRankedOrMock",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AI as ::unity2::ClassIdentity>::NAME,
-                        "IsVersusRankedOrMock",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_versus_ranked_or_mock(this: AI, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(AI, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_versus_ranked_or_mock::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_entrust {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<AI as ::unity2::ClassIdentity>::class(), "IsEntrust", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <AI as ::unity2::ClassIdentity>::NAME, "IsEntrust", e),
-            }
-        }
-    }
-    pub unsafe fn is_entrust(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_is_entrust::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_rand {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<AI as ::unity2::ClassIdentity>::class(), "Rand", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <AI as ::unity2::ClassIdentity>::NAME, "Rand", e),
-            }
-        }
-    }
-    pub unsafe fn rand(__unity2_method_info: ::unity2::OptionalMethod) -> crate::app::random_2::Random_2 {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::app::random_2::Random_2 =
-            ::core::mem::transmute(__lookup_rand::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_random {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<AI as ::unity2::ClassIdentity>::class(), "IsRandom", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <AI as ::unity2::ClassIdentity>::NAME, "IsRandom", e),
-            }
-        }
-    }
-    pub unsafe fn is_random(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_is_random::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_processing {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<AI as ::unity2::ClassIdentity>::class(), "Processing", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <AI as ::unity2::ClassIdentity>::NAME, "Processing", e),
-            }
-        }
-    }
-    pub unsafe fn processing(this: AI, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AI, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_processing::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_setup_for_engage_or_god_change {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AI as ::unity2::ClassIdentity>::class(),
-                "SetupForEngageOrGodChange",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AI as ::unity2::ClassIdentity>::NAME,
-                        "SetupForEngageOrGodChange",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn setup_for_engage_or_god_change(this: AI, unit: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AI, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_setup_for_engage_or_god_change::get_method_info().method_ptr);
-        inner(this, unit, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_order_unit_engage_or_god_change {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AI as ::unity2::ClassIdentity>::class(),
-                "IsOrderUnitEngageOrGodChange",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AI as ::unity2::ClassIdentity>::NAME,
-                        "IsOrderUnitEngageOrGodChange",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_order_unit_engage_or_god_change(this: AI, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(AI, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_order_unit_engage_or_god_change::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_setup_for_remove {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<AI as ::unity2::ClassIdentity>::class(), "SetupForRemove", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AI as ::unity2::ClassIdentity>::NAME,
-                        "SetupForRemove",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn setup_for_remove(this: AI, unit: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AI, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_setup_for_remove::get_method_info().method_ptr);
-        inner(this, unit, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_order_unit_remove {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AI as ::unity2::ClassIdentity>::class(),
-                "IsOrderUnitRemove",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AI as ::unity2::ClassIdentity>::NAME,
-                        "IsOrderUnitRemove",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_order_unit_remove(this: AI, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(AI, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_order_unit_remove::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_setup_for_remagic {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<AI as ::unity2::ClassIdentity>::class(), "SetupForRemagic", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AI as ::unity2::ClassIdentity>::NAME,
-                        "SetupForRemagic",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn setup_for_remagic(this: AI, unit: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AI, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_setup_for_remagic::get_method_info().method_ptr);
-        inner(this, unit, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_order_unit_remagic {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AI as ::unity2::ClassIdentity>::class(),
-                "IsOrderUnitRemagic",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AI as ::unity2::ClassIdentity>::NAME,
-                        "IsOrderUnitRemagic",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_order_unit_remagic(this: AI, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(AI, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_order_unit_remagic::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_setup_for_rerewarp {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<AI as ::unity2::ClassIdentity>::class(), "SetupForRerewarp", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AI as ::unity2::ClassIdentity>::NAME,
-                        "SetupForRerewarp",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn setup_for_rerewarp(this: AI, unit: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AI, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_setup_for_rerewarp::get_method_info().method_ptr);
-        inner(this, unit, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_order_unit_rerewarp {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AI as ::unity2::ClassIdentity>::class(),
-                "IsOrderUnitRerewarp",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AI as ::unity2::ClassIdentity>::NAME,
-                        "IsOrderUnitRerewarp",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_order_unit_rerewarp(this: AI, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(AI, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_order_unit_rerewarp::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_i_initialize {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<AI as ::unity2::ClassIdentity>::class(), "iInitialize", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AI as ::unity2::ClassIdentity>::NAME,
-                        "iInitialize",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn i_initialize(this: AI, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AI, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_i_initialize::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_i_processing {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<AI as ::unity2::ClassIdentity>::class(), "iProcessing", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AI as ::unity2::ClassIdentity>::NAME,
-                        "iProcessing",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn i_processing(this: AI, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(AI, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_i_processing::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_i_processing_remove {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AI as ::unity2::ClassIdentity>::class(),
-                "iProcessingRemove",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AI as ::unity2::ClassIdentity>::NAME,
-                        "iProcessingRemove",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn i_processing_remove(this: AI, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(AI, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_i_processing_remove::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_i_processing_remagic {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AI as ::unity2::ClassIdentity>::class(),
-                "iProcessingRemagic",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AI as ::unity2::ClassIdentity>::NAME,
-                        "iProcessingRemagic",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn i_processing_remagic(this: AI, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(AI, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_i_processing_remagic::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_i_processing_rerewarp {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AI as ::unity2::ClassIdentity>::class(),
-                "iProcessingRerewarp",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AI as ::unity2::ClassIdentity>::NAME,
-                        "iProcessingRerewarp",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn i_processing_rerewarp(this: AI, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(AI, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_i_processing_rerewarp::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_i_crossfire {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<AI as ::unity2::ClassIdentity>::class(), "iCrossfire", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <AI as ::unity2::ClassIdentity>::NAME, "iCrossfire", e),
-            }
-        }
-    }
-    pub unsafe fn i_crossfire(this: AI, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(AI, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_i_crossfire::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_i_interrupt_attack {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<AI as ::unity2::ClassIdentity>::class(), "iInterruptAttack", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AI as ::unity2::ClassIdentity>::NAME,
-                        "iInterruptAttack",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn i_interrupt_attack(this: AI, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(AI, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_i_interrupt_attack::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_completion {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<AI as ::unity2::ClassIdentity>::class(), "Completion", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <AI as ::unity2::ClassIdentity>::NAME, "Completion", e),
-            }
-        }
-    }
-    pub unsafe fn completion(this: AI, unit: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AI, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_completion::get_method_info().method_ptr);
-        inner(this, unit, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_i_finalize {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<AI as ::unity2::ClassIdentity>::class(), "iFinalize", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <AI as ::unity2::ClassIdentity>::NAME, "iFinalize", e),
-            }
-        }
-    }
-    pub unsafe fn i_finalize(this: AI, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AI, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_i_finalize::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_dbg_plc_prepare {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<AI as ::unity2::ClassIdentity>::class(), "DbgPLCPrepare", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AI as ::unity2::ClassIdentity>::NAME,
-                        "DbgPLCPrepare",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn dbg_plc_prepare(this: AI, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AI, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_dbg_plc_prepare::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_dbg_plc_add_log {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<AI as ::unity2::ClassIdentity>::class(), "DbgPLCAddLog", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AI as ::unity2::ClassIdentity>::NAME,
-                        "DbgPLCAddLog",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn dbg_plc_add_log(this: AI, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AI, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_dbg_plc_add_log::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_dbg_plc_unknown_seq {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<AI as ::unity2::ClassIdentity>::class(), "DbgPLCUnknownSeq", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AI as ::unity2::ClassIdentity>::NAME,
-                        "DbgPLCUnknownSeq",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn dbg_plc_unknown_seq(this: AI, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AI, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_dbg_plc_unknown_seq::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_dbg_plc_check_loop_count {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AI as ::unity2::ClassIdentity>::class(),
-                "DbgPLCCheckLoopCount",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AI as ::unity2::ClassIdentity>::NAME,
-                        "DbgPLCCheckLoopCount",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn dbg_plc_check_loop_count(this: AI, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AI, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_dbg_plc_check_loop_count::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __AI_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AI as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AI as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : AI , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AI , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_order { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AI as :: unity2 :: ClassIdentity > :: class () , "get_Order" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AI as :: unity2 :: ClassIdentity > :: NAME , "get_Order" , e) , } } } pub unsafe fn get_order (this : AI , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: aiorder :: AIOrder { let inner : extern "C" fn (AI , :: unity2 :: OptionalMethod ,) -> crate :: app :: aiorder :: AIOrder = :: core :: mem :: transmute (__lookup_get_order :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_think { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AI as :: unity2 :: ClassIdentity > :: class () , "get_Think" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AI as :: unity2 :: ClassIdentity > :: NAME , "get_Think" , e) , } } } pub unsafe fn get_think (this : AI , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: aithink :: AIThink { let inner : extern "C" fn (AI , :: unity2 :: OptionalMethod ,) -> crate :: app :: aithink :: AIThink = :: core :: mem :: transmute (__lookup_get_think :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_cannon { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AI as :: unity2 :: ClassIdentity > :: class () , "get_Cannon" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AI as :: unity2 :: ClassIdentity > :: NAME , "get_Cannon" , e) , } } } pub unsafe fn get_cannon (this : AI , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: aicannon :: AICannon { let inner : extern "C" fn (AI , :: unity2 :: OptionalMethod ,) -> crate :: app :: aicannon :: AICannon = :: core :: mem :: transmute (__lookup_get_cannon :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_interrupt_attack { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AI as :: unity2 :: ClassIdentity > :: class () , "get_InterruptAttack" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AI as :: unity2 :: ClassIdentity > :: NAME , "get_InterruptAttack" , e) , } } } pub unsafe fn get_interrupt_attack (this : AI , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: aiinterruptattack :: AIInterruptAttack { let inner : extern "C" fn (AI , :: unity2 :: OptionalMethod ,) -> crate :: app :: aiinterruptattack :: AIInterruptAttack = :: core :: mem :: transmute (__lookup_get_interrupt_attack :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_seq { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: ai :: AI_Seq as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AI as :: unity2 :: ClassIdentity > :: class () , "SetSeq" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AI as :: unity2 :: ClassIdentity > :: NAME , "SetSeq" , e) , } } } pub unsafe fn set_seq (this : AI , seq : crate :: app :: ai :: AI_Seq , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AI , crate :: app :: ai :: AI_Seq , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_seq :: get_method_info () . method_ptr ,) ; inner (this , seq , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_crossfire { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AI as :: unity2 :: ClassIdentity > :: class () , "SetCrossfire" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AI as :: unity2 :: ClassIdentity > :: NAME , "SetCrossfire" , e) , } } } pub unsafe fn set_crossfire (this : AI , enable : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AI , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_crossfire :: get_method_info () . method_ptr ,) ; inner (this , enable , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_versus { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AI as :: unity2 :: ClassIdentity > :: class () , "IsVersus" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AI as :: unity2 :: ClassIdentity > :: NAME , "IsVersus" , e) , } } } pub unsafe fn is_versus (this : AI , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (AI , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_versus :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_versus_casual { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AI as :: unity2 :: ClassIdentity > :: class () , "IsVersusCasual" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AI as :: unity2 :: ClassIdentity > :: NAME , "IsVersusCasual" , e) , } } } pub unsafe fn is_versus_casual (this : AI , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (AI , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_versus_casual :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_versus_ranked_or_mock { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AI as :: unity2 :: ClassIdentity > :: class () , "IsVersusRankedOrMock" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AI as :: unity2 :: ClassIdentity > :: NAME , "IsVersusRankedOrMock" , e) , } } } pub unsafe fn is_versus_ranked_or_mock (this : AI , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (AI , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_versus_ranked_or_mock :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_entrust { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AI as :: unity2 :: ClassIdentity > :: class () , "IsEntrust" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AI as :: unity2 :: ClassIdentity > :: NAME , "IsEntrust" , e) , } } } pub unsafe fn is_entrust (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_entrust :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_rand { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AI as :: unity2 :: ClassIdentity > :: class () , "Rand" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AI as :: unity2 :: ClassIdentity > :: NAME , "Rand" , e) , } } } pub unsafe fn rand (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: random_2 :: Random_2 { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: random_2 :: Random_2 = :: core :: mem :: transmute (__lookup_rand :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_random { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AI as :: unity2 :: ClassIdentity > :: class () , "IsRandom" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AI as :: unity2 :: ClassIdentity > :: NAME , "IsRandom" , e) , } } } pub unsafe fn is_random (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_random :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_processing { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AI as :: unity2 :: ClassIdentity > :: class () , "Processing" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AI as :: unity2 :: ClassIdentity > :: NAME , "Processing" , e) , } } } pub unsafe fn processing (this : AI , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AI , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_processing :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_setup_for_engage_or_god_change { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AI as :: unity2 :: ClassIdentity > :: class () , "SetupForEngageOrGodChange" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AI as :: unity2 :: ClassIdentity > :: NAME , "SetupForEngageOrGodChange" , e) , } } } pub unsafe fn setup_for_engage_or_god_change (this : AI , unit : crate :: app :: unit :: Unit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AI , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_setup_for_engage_or_god_change :: get_method_info () . method_ptr ,) ; inner (this , unit , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_order_unit_engage_or_god_change { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AI as :: unity2 :: ClassIdentity > :: class () , "IsOrderUnitEngageOrGodChange" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AI as :: unity2 :: ClassIdentity > :: NAME , "IsOrderUnitEngageOrGodChange" , e) , } } } pub unsafe fn is_order_unit_engage_or_god_change (this : AI , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (AI , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_order_unit_engage_or_god_change :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_setup_for_remove { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AI as :: unity2 :: ClassIdentity > :: class () , "SetupForRemove" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AI as :: unity2 :: ClassIdentity > :: NAME , "SetupForRemove" , e) , } } } pub unsafe fn setup_for_remove (this : AI , unit : crate :: app :: unit :: Unit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AI , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_setup_for_remove :: get_method_info () . method_ptr ,) ; inner (this , unit , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_order_unit_remove { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AI as :: unity2 :: ClassIdentity > :: class () , "IsOrderUnitRemove" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AI as :: unity2 :: ClassIdentity > :: NAME , "IsOrderUnitRemove" , e) , } } } pub unsafe fn is_order_unit_remove (this : AI , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (AI , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_order_unit_remove :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_setup_for_remagic { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AI as :: unity2 :: ClassIdentity > :: class () , "SetupForRemagic" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AI as :: unity2 :: ClassIdentity > :: NAME , "SetupForRemagic" , e) , } } } pub unsafe fn setup_for_remagic (this : AI , unit : crate :: app :: unit :: Unit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AI , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_setup_for_remagic :: get_method_info () . method_ptr ,) ; inner (this , unit , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_order_unit_remagic { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AI as :: unity2 :: ClassIdentity > :: class () , "IsOrderUnitRemagic" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AI as :: unity2 :: ClassIdentity > :: NAME , "IsOrderUnitRemagic" , e) , } } } pub unsafe fn is_order_unit_remagic (this : AI , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (AI , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_order_unit_remagic :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_setup_for_rerewarp { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AI as :: unity2 :: ClassIdentity > :: class () , "SetupForRerewarp" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AI as :: unity2 :: ClassIdentity > :: NAME , "SetupForRerewarp" , e) , } } } pub unsafe fn setup_for_rerewarp (this : AI , unit : crate :: app :: unit :: Unit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AI , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_setup_for_rerewarp :: get_method_info () . method_ptr ,) ; inner (this , unit , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_order_unit_rerewarp { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AI as :: unity2 :: ClassIdentity > :: class () , "IsOrderUnitRerewarp" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AI as :: unity2 :: ClassIdentity > :: NAME , "IsOrderUnitRerewarp" , e) , } } } pub unsafe fn is_order_unit_rerewarp (this : AI , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (AI , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_order_unit_rerewarp :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_i_initialize { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AI as :: unity2 :: ClassIdentity > :: class () , "iInitialize" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AI as :: unity2 :: ClassIdentity > :: NAME , "iInitialize" , e) , } } } pub unsafe fn i_initialize (this : AI , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AI , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_i_initialize :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_i_processing { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AI as :: unity2 :: ClassIdentity > :: class () , "iProcessing" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AI as :: unity2 :: ClassIdentity > :: NAME , "iProcessing" , e) , } } } pub unsafe fn i_processing (this : AI , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (AI , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_i_processing :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_i_processing_remove { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AI as :: unity2 :: ClassIdentity > :: class () , "iProcessingRemove" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AI as :: unity2 :: ClassIdentity > :: NAME , "iProcessingRemove" , e) , } } } pub unsafe fn i_processing_remove (this : AI , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (AI , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_i_processing_remove :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_i_processing_remagic { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AI as :: unity2 :: ClassIdentity > :: class () , "iProcessingRemagic" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AI as :: unity2 :: ClassIdentity > :: NAME , "iProcessingRemagic" , e) , } } } pub unsafe fn i_processing_remagic (this : AI , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (AI , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_i_processing_remagic :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_i_processing_rerewarp { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AI as :: unity2 :: ClassIdentity > :: class () , "iProcessingRerewarp" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AI as :: unity2 :: ClassIdentity > :: NAME , "iProcessingRerewarp" , e) , } } } pub unsafe fn i_processing_rerewarp (this : AI , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (AI , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_i_processing_rerewarp :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_i_crossfire { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AI as :: unity2 :: ClassIdentity > :: class () , "iCrossfire" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AI as :: unity2 :: ClassIdentity > :: NAME , "iCrossfire" , e) , } } } pub unsafe fn i_crossfire (this : AI , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (AI , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_i_crossfire :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_i_interrupt_attack { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AI as :: unity2 :: ClassIdentity > :: class () , "iInterruptAttack" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AI as :: unity2 :: ClassIdentity > :: NAME , "iInterruptAttack" , e) , } } } pub unsafe fn i_interrupt_attack (this : AI , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (AI , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_i_interrupt_attack :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_completion { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AI as :: unity2 :: ClassIdentity > :: class () , "Completion" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AI as :: unity2 :: ClassIdentity > :: NAME , "Completion" , e) , } } } pub unsafe fn completion (this : AI , unit : crate :: app :: unit :: Unit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AI , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_completion :: get_method_info () . method_ptr ,) ; inner (this , unit , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_i_finalize { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AI as :: unity2 :: ClassIdentity > :: class () , "iFinalize" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AI as :: unity2 :: ClassIdentity > :: NAME , "iFinalize" , e) , } } } pub unsafe fn i_finalize (this : AI , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AI , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_i_finalize :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_dbg_plc_prepare { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AI as :: unity2 :: ClassIdentity > :: class () , "DbgPLCPrepare" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AI as :: unity2 :: ClassIdentity > :: NAME , "DbgPLCPrepare" , e) , } } } pub unsafe fn dbg_plc_prepare (this : AI , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AI , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_dbg_plc_prepare :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_dbg_plc_add_log { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AI as :: unity2 :: ClassIdentity > :: class () , "DbgPLCAddLog" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AI as :: unity2 :: ClassIdentity > :: NAME , "DbgPLCAddLog" , e) , } } } pub unsafe fn dbg_plc_add_log (this : AI , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AI , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_dbg_plc_add_log :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_dbg_plc_unknown_seq { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AI as :: unity2 :: ClassIdentity > :: class () , "DbgPLCUnknownSeq" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AI as :: unity2 :: ClassIdentity > :: NAME , "DbgPLCUnknownSeq" , e) , } } } pub unsafe fn dbg_plc_unknown_seq (this : AI , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AI , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_dbg_plc_unknown_seq :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_dbg_plc_check_loop_count { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AI as :: unity2 :: ClassIdentity > :: class () , "DbgPLCCheckLoopCount" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AI as :: unity2 :: ClassIdentity > :: NAME , "DbgPLCCheckLoopCount" , e) , } } } pub unsafe fn dbg_plc_check_loop_count (this : AI , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AI , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_dbg_plc_check_loop_count :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-ai")]
+impl AI { # [doc = "`IsEntrust()` overload"] pub fn is_entrust () -> bool { unsafe { __AI_unity2_raw :: is_entrust (:: core :: option :: Option :: None) } } # [doc = "`Rand()` overload"] pub fn rand () -> crate :: app :: random_2 :: Random_2 { unsafe { __AI_unity2_raw :: rand (:: core :: option :: Option :: None) } } # [doc = "`IsRandom()` overload"] pub fn is_random () -> bool { unsafe { __AI_unity2_raw :: is_random (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-ai")]
+pub trait IAIMethods : IAI { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AI_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_Order()` overload"] fn get_order (self ,) -> crate :: app :: aiorder :: AIOrder { unsafe { let __receiver = < AI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AI_unity2_raw :: get_order (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_Think()` overload"] fn get_think (self ,) -> crate :: app :: aithink :: AIThink { unsafe { let __receiver = < AI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AI_unity2_raw :: get_think (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_Cannon()` overload"] fn get_cannon (self ,) -> crate :: app :: aicannon :: AICannon { unsafe { let __receiver = < AI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AI_unity2_raw :: get_cannon (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_InterruptAttack()` overload"] fn get_interrupt_attack (self ,) -> crate :: app :: aiinterruptattack :: AIInterruptAttack { unsafe { let __receiver = < AI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AI_unity2_raw :: get_interrupt_attack (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetSeq(crate::app::ai::AI_Seq)` overload"] fn set_seq (self , seq : impl :: core :: convert :: Into < crate :: app :: ai :: AI_Seq >) -> () { unsafe { let __receiver = < AI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AI_unity2_raw :: set_seq (__receiver , :: core :: convert :: Into :: into (seq) , :: core :: option :: Option :: None) } } # [doc = "`SetCrossfire(bool)` overload"] fn set_crossfire (self , enable : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < AI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AI_unity2_raw :: set_crossfire (__receiver , :: core :: convert :: Into :: into (enable) , :: core :: option :: Option :: None) } } # [doc = "`IsVersus()` overload"] fn is_versus (self ,) -> bool { unsafe { let __receiver = < AI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AI_unity2_raw :: is_versus (__receiver , :: core :: option :: Option :: None) } } # [doc = "`IsVersusCasual()` overload"] fn is_versus_casual (self ,) -> bool { unsafe { let __receiver = < AI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AI_unity2_raw :: is_versus_casual (__receiver , :: core :: option :: Option :: None) } } # [doc = "`IsVersusRankedOrMock()` overload"] fn is_versus_ranked_or_mock (self ,) -> bool { unsafe { let __receiver = < AI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AI_unity2_raw :: is_versus_ranked_or_mock (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Processing()` overload"] fn processing (self ,) -> () { unsafe { let __receiver = < AI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AI_unity2_raw :: processing (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetupForEngageOrGodChange(crate::app::unit::Unit)` overload"] fn setup_for_engage_or_god_change (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < AI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AI_unity2_raw :: setup_for_engage_or_god_change (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } # [doc = "`IsOrderUnitEngageOrGodChange()` overload"] fn is_order_unit_engage_or_god_change (self ,) -> bool { unsafe { let __receiver = < AI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AI_unity2_raw :: is_order_unit_engage_or_god_change (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetupForRemove(crate::app::unit::Unit)` overload"] fn setup_for_remove (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < AI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AI_unity2_raw :: setup_for_remove (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } # [doc = "`IsOrderUnitRemove()` overload"] fn is_order_unit_remove (self ,) -> bool { unsafe { let __receiver = < AI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AI_unity2_raw :: is_order_unit_remove (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetupForRemagic(crate::app::unit::Unit)` overload"] fn setup_for_remagic (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < AI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AI_unity2_raw :: setup_for_remagic (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } # [doc = "`IsOrderUnitRemagic()` overload"] fn is_order_unit_remagic (self ,) -> bool { unsafe { let __receiver = < AI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AI_unity2_raw :: is_order_unit_remagic (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetupForRerewarp(crate::app::unit::Unit)` overload"] fn setup_for_rerewarp (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < AI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AI_unity2_raw :: setup_for_rerewarp (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } # [doc = "`IsOrderUnitRerewarp()` overload"] fn is_order_unit_rerewarp (self ,) -> bool { unsafe { let __receiver = < AI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AI_unity2_raw :: is_order_unit_rerewarp (__receiver , :: core :: option :: Option :: None) } } # [doc = "`iInitialize()` overload"] fn i_initialize (self ,) -> () { unsafe { let __receiver = < AI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AI_unity2_raw :: i_initialize (__receiver , :: core :: option :: Option :: None) } } # [doc = "`iProcessing()` overload"] fn i_processing (self ,) -> bool { unsafe { let __receiver = < AI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AI_unity2_raw :: i_processing (__receiver , :: core :: option :: Option :: None) } } # [doc = "`iProcessingRemove()` overload"] fn i_processing_remove (self ,) -> bool { unsafe { let __receiver = < AI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AI_unity2_raw :: i_processing_remove (__receiver , :: core :: option :: Option :: None) } } # [doc = "`iProcessingRemagic()` overload"] fn i_processing_remagic (self ,) -> bool { unsafe { let __receiver = < AI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AI_unity2_raw :: i_processing_remagic (__receiver , :: core :: option :: Option :: None) } } # [doc = "`iProcessingRerewarp()` overload"] fn i_processing_rerewarp (self ,) -> bool { unsafe { let __receiver = < AI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AI_unity2_raw :: i_processing_rerewarp (__receiver , :: core :: option :: Option :: None) } } # [doc = "`iCrossfire()` overload"] fn i_crossfire (self ,) -> bool { unsafe { let __receiver = < AI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AI_unity2_raw :: i_crossfire (__receiver , :: core :: option :: Option :: None) } } # [doc = "`iInterruptAttack()` overload"] fn i_interrupt_attack (self ,) -> bool { unsafe { let __receiver = < AI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AI_unity2_raw :: i_interrupt_attack (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Completion(crate::app::unit::Unit)` overload"] fn completion (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < AI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AI_unity2_raw :: completion (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } # [doc = "`iFinalize()` overload"] fn i_finalize (self ,) -> () { unsafe { let __receiver = < AI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AI_unity2_raw :: i_finalize (__receiver , :: core :: option :: Option :: None) } } # [doc = "`DbgPLCPrepare()` overload"] fn dbg_plc_prepare (self ,) -> () { unsafe { let __receiver = < AI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AI_unity2_raw :: dbg_plc_prepare (__receiver , :: core :: option :: Option :: None) } } # [doc = "`DbgPLCAddLog()` overload"] fn dbg_plc_add_log (self ,) -> () { unsafe { let __receiver = < AI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AI_unity2_raw :: dbg_plc_add_log (__receiver , :: core :: option :: Option :: None) } } # [doc = "`DbgPLCUnknownSeq()` overload"] fn dbg_plc_unknown_seq (self ,) -> () { unsafe { let __receiver = < AI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AI_unity2_raw :: dbg_plc_unknown_seq (__receiver , :: core :: option :: Option :: None) } } # [doc = "`DbgPLCCheckLoopCount()` overload"] fn dbg_plc_check_loop_count (self ,) -> () { unsafe { let __receiver = < AI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AI_unity2_raw :: dbg_plc_check_loop_count (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-ai")]
+impl < __T : IAI > IAIMethods for __T { }
+
+#[cfg(feature = "app-ai")]
+impl AI { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AI_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn get_order_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AI_unity2_raw :: __lookup_get_order :: get_method_info () } pub fn get_think_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AI_unity2_raw :: __lookup_get_think :: get_method_info () } pub fn get_cannon_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AI_unity2_raw :: __lookup_get_cannon :: get_method_info () } pub fn get_interrupt_attack_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AI_unity2_raw :: __lookup_get_interrupt_attack :: get_method_info () } pub fn set_seq_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AI_unity2_raw :: __lookup_set_seq :: get_method_info () } pub fn set_crossfire_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AI_unity2_raw :: __lookup_set_crossfire :: get_method_info () } pub fn is_versus_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AI_unity2_raw :: __lookup_is_versus :: get_method_info () } pub fn is_versus_casual_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AI_unity2_raw :: __lookup_is_versus_casual :: get_method_info () } pub fn is_versus_ranked_or_mock_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AI_unity2_raw :: __lookup_is_versus_ranked_or_mock :: get_method_info () } pub fn is_entrust_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AI_unity2_raw :: __lookup_is_entrust :: get_method_info () } pub fn rand_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AI_unity2_raw :: __lookup_rand :: get_method_info () } pub fn is_random_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AI_unity2_raw :: __lookup_is_random :: get_method_info () } pub fn processing_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AI_unity2_raw :: __lookup_processing :: get_method_info () } pub fn setup_for_engage_or_god_change_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AI_unity2_raw :: __lookup_setup_for_engage_or_god_change :: get_method_info () } pub fn is_order_unit_engage_or_god_change_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AI_unity2_raw :: __lookup_is_order_unit_engage_or_god_change :: get_method_info () } pub fn setup_for_remove_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AI_unity2_raw :: __lookup_setup_for_remove :: get_method_info () } pub fn is_order_unit_remove_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AI_unity2_raw :: __lookup_is_order_unit_remove :: get_method_info () } pub fn setup_for_remagic_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AI_unity2_raw :: __lookup_setup_for_remagic :: get_method_info () } pub fn is_order_unit_remagic_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AI_unity2_raw :: __lookup_is_order_unit_remagic :: get_method_info () } pub fn setup_for_rerewarp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AI_unity2_raw :: __lookup_setup_for_rerewarp :: get_method_info () } pub fn is_order_unit_rerewarp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AI_unity2_raw :: __lookup_is_order_unit_rerewarp :: get_method_info () } pub fn i_initialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AI_unity2_raw :: __lookup_i_initialize :: get_method_info () } pub fn i_processing_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AI_unity2_raw :: __lookup_i_processing :: get_method_info () } pub fn i_processing_remove_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AI_unity2_raw :: __lookup_i_processing_remove :: get_method_info () } pub fn i_processing_remagic_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AI_unity2_raw :: __lookup_i_processing_remagic :: get_method_info () } pub fn i_processing_rerewarp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AI_unity2_raw :: __lookup_i_processing_rerewarp :: get_method_info () } pub fn i_crossfire_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AI_unity2_raw :: __lookup_i_crossfire :: get_method_info () } pub fn i_interrupt_attack_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AI_unity2_raw :: __lookup_i_interrupt_attack :: get_method_info () } pub fn completion_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AI_unity2_raw :: __lookup_completion :: get_method_info () } pub fn i_finalize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AI_unity2_raw :: __lookup_i_finalize :: get_method_info () } pub fn dbg_plc_prepare_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AI_unity2_raw :: __lookup_dbg_plc_prepare :: get_method_info () } pub fn dbg_plc_add_log_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AI_unity2_raw :: __lookup_dbg_plc_add_log :: get_method_info () } pub fn dbg_plc_unknown_seq_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AI_unity2_raw :: __lookup_dbg_plc_unknown_seq :: get_method_info () } pub fn dbg_plc_check_loop_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AI_unity2_raw :: __lookup_dbg_plc_check_loop_count :: get_method_info () } }
 
 #[cfg(feature = "app-ai")]
 impl AI {
-    #[doc = "`IsEntrust()` overload"]
-    pub fn is_entrust() -> bool {
-        unsafe { __AI_unity2_raw::is_entrust(::core::option::Option::None) }
-    }
-
-    #[doc = "`Rand()` overload"]
-    pub fn rand() -> crate::app::random_2::Random_2 {
-        unsafe { __AI_unity2_raw::rand(::core::option::Option::None) }
-    }
-
-    #[doc = "`IsRandom()` overload"]
-    pub fn is_random() -> bool {
-        unsafe { __AI_unity2_raw::is_random(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-ai")]
-pub trait IAIMethods: IAI {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <AI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AI_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Order()` overload"]
-    fn get_order(self) -> crate::app::aiorder::AIOrder {
-        unsafe {
-            let __receiver = <AI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AI_unity2_raw::get_order(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Think()` overload"]
-    fn get_think(self) -> crate::app::aithink::AIThink {
-        unsafe {
-            let __receiver = <AI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AI_unity2_raw::get_think(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Cannon()` overload"]
-    fn get_cannon(self) -> crate::app::aicannon::AICannon {
-        unsafe {
-            let __receiver = <AI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AI_unity2_raw::get_cannon(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_InterruptAttack()` overload"]
-    fn get_interrupt_attack(self) -> crate::app::aiinterruptattack::AIInterruptAttack {
-        unsafe {
-            let __receiver = <AI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AI_unity2_raw::get_interrupt_attack(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetSeq(crate::app::ai::AI_Seq)` overload"]
-    fn set_seq(self, seq: impl ::core::convert::Into<crate::app::ai::AI_Seq>) -> () {
-        unsafe {
-            let __receiver = <AI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AI_unity2_raw::set_seq(__receiver, ::core::convert::Into::into(seq), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetCrossfire(bool)` overload"]
-    fn set_crossfire(self, enable: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver = <AI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AI_unity2_raw::set_crossfire(__receiver, ::core::convert::Into::into(enable), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsVersus()` overload"]
-    fn is_versus(self) -> bool {
-        unsafe {
-            let __receiver = <AI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AI_unity2_raw::is_versus(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsVersusCasual()` overload"]
-    fn is_versus_casual(self) -> bool {
-        unsafe {
-            let __receiver = <AI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AI_unity2_raw::is_versus_casual(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsVersusRankedOrMock()` overload"]
-    fn is_versus_ranked_or_mock(self) -> bool {
-        unsafe {
-            let __receiver = <AI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AI_unity2_raw::is_versus_ranked_or_mock(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Processing()` overload"]
-    fn processing(self) -> () {
-        unsafe {
-            let __receiver = <AI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AI_unity2_raw::processing(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetupForEngageOrGodChange(crate::app::unit::Unit)` overload"]
-    fn setup_for_engage_or_god_change(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
-        unsafe {
-            let __receiver = <AI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AI_unity2_raw::setup_for_engage_or_god_change(__receiver, ::core::convert::Into::into(unit), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsOrderUnitEngageOrGodChange()` overload"]
-    fn is_order_unit_engage_or_god_change(self) -> bool {
-        unsafe {
-            let __receiver = <AI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AI_unity2_raw::is_order_unit_engage_or_god_change(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetupForRemove(crate::app::unit::Unit)` overload"]
-    fn setup_for_remove(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
-        unsafe {
-            let __receiver = <AI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AI_unity2_raw::setup_for_remove(__receiver, ::core::convert::Into::into(unit), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsOrderUnitRemove()` overload"]
-    fn is_order_unit_remove(self) -> bool {
-        unsafe {
-            let __receiver = <AI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AI_unity2_raw::is_order_unit_remove(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetupForRemagic(crate::app::unit::Unit)` overload"]
-    fn setup_for_remagic(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
-        unsafe {
-            let __receiver = <AI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AI_unity2_raw::setup_for_remagic(__receiver, ::core::convert::Into::into(unit), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsOrderUnitRemagic()` overload"]
-    fn is_order_unit_remagic(self) -> bool {
-        unsafe {
-            let __receiver = <AI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AI_unity2_raw::is_order_unit_remagic(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetupForRerewarp(crate::app::unit::Unit)` overload"]
-    fn setup_for_rerewarp(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
-        unsafe {
-            let __receiver = <AI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AI_unity2_raw::setup_for_rerewarp(__receiver, ::core::convert::Into::into(unit), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsOrderUnitRerewarp()` overload"]
-    fn is_order_unit_rerewarp(self) -> bool {
-        unsafe {
-            let __receiver = <AI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AI_unity2_raw::is_order_unit_rerewarp(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`iInitialize()` overload"]
-    fn i_initialize(self) -> () {
-        unsafe {
-            let __receiver = <AI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AI_unity2_raw::i_initialize(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`iProcessing()` overload"]
-    fn i_processing(self) -> bool {
-        unsafe {
-            let __receiver = <AI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AI_unity2_raw::i_processing(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`iProcessingRemove()` overload"]
-    fn i_processing_remove(self) -> bool {
-        unsafe {
-            let __receiver = <AI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AI_unity2_raw::i_processing_remove(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`iProcessingRemagic()` overload"]
-    fn i_processing_remagic(self) -> bool {
-        unsafe {
-            let __receiver = <AI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AI_unity2_raw::i_processing_remagic(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`iProcessingRerewarp()` overload"]
-    fn i_processing_rerewarp(self) -> bool {
-        unsafe {
-            let __receiver = <AI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AI_unity2_raw::i_processing_rerewarp(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`iCrossfire()` overload"]
-    fn i_crossfire(self) -> bool {
-        unsafe {
-            let __receiver = <AI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AI_unity2_raw::i_crossfire(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`iInterruptAttack()` overload"]
-    fn i_interrupt_attack(self) -> bool {
-        unsafe {
-            let __receiver = <AI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AI_unity2_raw::i_interrupt_attack(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Completion(crate::app::unit::Unit)` overload"]
-    fn completion(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
-        unsafe {
-            let __receiver = <AI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AI_unity2_raw::completion(__receiver, ::core::convert::Into::into(unit), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`iFinalize()` overload"]
-    fn i_finalize(self) -> () {
-        unsafe {
-            let __receiver = <AI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AI_unity2_raw::i_finalize(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`DbgPLCPrepare()` overload"]
-    fn dbg_plc_prepare(self) -> () {
-        unsafe {
-            let __receiver = <AI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AI_unity2_raw::dbg_plc_prepare(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`DbgPLCAddLog()` overload"]
-    fn dbg_plc_add_log(self) -> () {
-        unsafe {
-            let __receiver = <AI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AI_unity2_raw::dbg_plc_add_log(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`DbgPLCUnknownSeq()` overload"]
-    fn dbg_plc_unknown_seq(self) -> () {
-        unsafe {
-            let __receiver = <AI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AI_unity2_raw::dbg_plc_unknown_seq(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`DbgPLCCheckLoopCount()` overload"]
-    fn dbg_plc_check_loop_count(self) -> () {
-        unsafe {
-            let __receiver = <AI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AI_unity2_raw::dbg_plc_check_loop_count(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-ai")]
-impl<__T: IAI> IAIMethods for __T {}
-
-#[cfg(feature = "app-ai")]
-impl AI {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(AI), ::core::stringify!(new),));
-        <Self as IAIMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AI) , :: core :: stringify ! (new) ,)) ; < Self as IAIMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-ai")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{AI_Seq, IAIMethods, AI, IAI};
-    #[cfg(feature = "app-singletonclass_1")]
-    pub use crate::app::singletonclass_1::ISingletonClass_1Methods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::{
-        app::singletonclass_1::ISingletonClass_1,
-        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
-    };
+    pub use super::AI_Seq;
+    pub use super::AI;
+    pub use super::IAI;
+    pub use super::IAIMethods;
+    pub use crate::app::singletonclass_1::ISingletonClass_1;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "app-singletonclass_1")] pub use crate::app::singletonclass_1::ISingletonClass_1Methods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

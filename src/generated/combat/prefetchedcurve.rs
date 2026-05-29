@@ -2,175 +2,57 @@
 
 #[cfg(feature = "combat-prefetchedcurve-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::{
-            object_2::{IObject_2, Object_2},
-            scriptableobject::{IScriptableObject, ScriptableObject},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/prefetchedcurve/PrefetchedCurve.md"))]
-    #[::unity2::class(namespace = "Combat", name = "PrefetchedCurve")]
-    #[parent(crate::unity_engine::scriptableobject::ScriptableObject)]
-    pub struct PrefetchedCurve {
-        #[offset(24)]
-        #[rename(name = "RightHand")]
-        pub right_hand: crate::combat::trailtrack::TrailTrack,
-        #[offset(32)]
-        #[rename(name = "LeftHand")]
-        pub left_hand: crate::combat::trailtrack::TrailTrack,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+ use crate :: unity_engine :: scriptableobject :: { IScriptableObject , ScriptableObject }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/prefetchedcurve/PrefetchedCurve.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "PrefetchedCurve")] # [parent (crate :: unity_engine :: scriptableobject :: ScriptableObject)] pub struct PrefetchedCurve {
+# [offset (24)] # [rename (name = "RightHand")] pub right_hand : crate :: combat :: trailtrack :: TrailTrack ,
+# [offset (32)] # [rename (name = "LeftHand")] pub left_hand : crate :: combat :: trailtrack :: TrailTrack ,
+}
+
 }
 
 #[cfg(feature = "combat-prefetchedcurve-types")]
 pub use __types::*;
 
 #[cfg(feature = "combat-prefetchedcurve")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __PrefetchedCurve_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_equals {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::combat::prefetchedcurve::PrefetchedCurve as ::unity2::IlType>::il_type(),
-                <crate::combat::prefetchedcurve::PrefetchedCurve as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PrefetchedCurve as ::unity2::ClassIdentity>::class(),
-                "Equals",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PrefetchedCurve as ::unity2::ClassIdentity>::NAME,
-                        "Equals",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn equals(
-        a: crate::combat::prefetchedcurve::PrefetchedCurve,
-        b: crate::combat::prefetchedcurve::PrefetchedCurve,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            crate::combat::prefetchedcurve::PrefetchedCurve,
-            crate::combat::prefetchedcurve::PrefetchedCurve,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(__lookup_equals::get_method_info().method_ptr);
-        inner(a, b, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PrefetchedCurve as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PrefetchedCurve as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: PrefetchedCurve, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(PrefetchedCurve, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __PrefetchedCurve_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_equals { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: prefetchedcurve :: PrefetchedCurve as :: unity2 :: IlType > :: il_type () , < crate :: combat :: prefetchedcurve :: PrefetchedCurve as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PrefetchedCurve as :: unity2 :: ClassIdentity > :: class () , "Equals" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PrefetchedCurve as :: unity2 :: ClassIdentity > :: NAME , "Equals" , e) , } } } pub unsafe fn equals (a : crate :: combat :: prefetchedcurve :: PrefetchedCurve , b : crate :: combat :: prefetchedcurve :: PrefetchedCurve , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (crate :: combat :: prefetchedcurve :: PrefetchedCurve , crate :: combat :: prefetchedcurve :: PrefetchedCurve , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_equals :: get_method_info () . method_ptr ,) ; inner (a , b , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PrefetchedCurve as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PrefetchedCurve as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : PrefetchedCurve , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (PrefetchedCurve , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "combat-prefetchedcurve")]
+impl PrefetchedCurve { # [doc = "`Equals(crate::combat::prefetchedcurve::PrefetchedCurve, crate::combat::prefetchedcurve::PrefetchedCurve)` overload"] pub fn equals (a : impl :: core :: convert :: Into < crate :: combat :: prefetchedcurve :: PrefetchedCurve > , b : impl :: core :: convert :: Into < crate :: combat :: prefetchedcurve :: PrefetchedCurve >) -> bool { unsafe { __PrefetchedCurve_unity2_raw :: equals (:: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "combat-prefetchedcurve")]
+pub trait IPrefetchedCurveMethods : IPrefetchedCurve { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < PrefetchedCurve as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __PrefetchedCurve_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "combat-prefetchedcurve")]
+impl < __T : IPrefetchedCurve > IPrefetchedCurveMethods for __T { }
+
+#[cfg(feature = "combat-prefetchedcurve")]
+impl PrefetchedCurve { pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PrefetchedCurve_unity2_raw :: __lookup_equals :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PrefetchedCurve_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "combat-prefetchedcurve")]
 impl PrefetchedCurve {
-    #[doc = "`Equals(crate::combat::prefetchedcurve::PrefetchedCurve, crate::combat::prefetchedcurve::PrefetchedCurve)` overload"]
-    pub fn equals(
-        a: impl ::core::convert::Into<crate::combat::prefetchedcurve::PrefetchedCurve>,
-        b: impl ::core::convert::Into<crate::combat::prefetchedcurve::PrefetchedCurve>,
-    ) -> bool {
-        unsafe {
-            __PrefetchedCurve_unity2_raw::equals(
-                ::core::convert::Into::into(a),
-                ::core::convert::Into::into(b),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "combat-prefetchedcurve")]
-pub trait IPrefetchedCurveMethods: IPrefetchedCurve {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <PrefetchedCurve as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __PrefetchedCurve_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "combat-prefetchedcurve")]
-impl<__T: IPrefetchedCurve> IPrefetchedCurveMethods for __T {}
-
-#[cfg(feature = "combat-prefetchedcurve")]
-impl PrefetchedCurve {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(PrefetchedCurve),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IPrefetchedCurveMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (PrefetchedCurve) , :: core :: stringify ! (new) ,)) ; < Self as IPrefetchedCurveMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "combat-prefetchedcurve")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IPrefetchedCurve, IPrefetchedCurveMethods, PrefetchedCurve};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    #[cfg(feature = "unity_engine-scriptableobject")]
-    pub use crate::unity_engine::scriptableobject::IScriptableObjectMethods;
-    pub use crate::{
-        system::object::IObject,
-        unity_engine::{object_2::IObject_2, scriptableobject::IScriptableObject},
-    };
+    pub use super::PrefetchedCurve;
+    pub use super::IPrefetchedCurve;
+    pub use super::IPrefetchedCurveMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::object_2::IObject_2;
+    pub use crate::unity_engine::scriptableobject::IScriptableObject;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
+    #[cfg(feature = "unity_engine-scriptableobject")] pub use crate::unity_engine::scriptableobject::IScriptableObjectMethods;
 }

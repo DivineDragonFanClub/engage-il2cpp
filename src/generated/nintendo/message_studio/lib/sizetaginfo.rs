@@ -2,238 +2,43 @@
 
 #[cfg(feature = "nintendo-message_studio-lib-sizetaginfo-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/nintendo/message_studio/lib/sizetaginfo/SizeTagInfo.md"))]
-    #[::unity2::class(namespace = "Nintendo.MessageStudio.Lib", name = "SizeTagInfo")]
-    #[parent(crate::system::object::Object)]
-    pub struct SizeTagInfo {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/nintendo/message_studio/lib/sizetaginfo/SizeTagInfo.md"))] # [:: unity2 :: class (namespace = "Nintendo.MessageStudio.Lib" , name = "SizeTagInfo")] # [parent (crate :: system :: object :: Object)] pub struct SizeTagInfo {}
+
 }
 
 #[cfg(feature = "nintendo-message_studio-lib-sizetaginfo-types")]
 pub use __types::*;
 
 #[cfg(feature = "nintendo-message_studio-lib-sizetaginfo")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __SizeTagInfo_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_tag {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<SizeTagInfo as ::unity2::ClassIdentity>::class(), "get_Tag", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SizeTagInfo as ::unity2::ClassIdentity>::NAME,
-                        "get_Tag",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_tag(this: SizeTagInfo, __unity2_method_info: ::unity2::OptionalMethod) -> u16 {
-        let inner: extern "C" fn(SizeTagInfo, ::unity2::OptionalMethod) -> u16 =
-            ::core::mem::transmute(__lookup_get_tag::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_tag_group {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SizeTagInfo as ::unity2::ClassIdentity>::class(),
-                "get_TagGroup",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SizeTagInfo as ::unity2::ClassIdentity>::NAME,
-                        "get_TagGroup",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_tag_group(this: SizeTagInfo, __unity2_method_info: ::unity2::OptionalMethod) -> u16 {
-        let inner: extern "C" fn(SizeTagInfo, ::unity2::OptionalMethod) -> u16 =
-            ::core::mem::transmute(__lookup_get_tag_group::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_size {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SizeTagInfo as ::unity2::ClassIdentity>::class(),
-                "get_Size",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SizeTagInfo as ::unity2::ClassIdentity>::NAME,
-                        "get_Size",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_size(this: SizeTagInfo, __unity2_method_info: ::unity2::OptionalMethod) -> u16 {
-        let inner: extern "C" fn(SizeTagInfo, ::unity2::OptionalMethod) -> u16 =
-            ::core::mem::transmute(__lookup_get_size::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_size {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SizeTagInfo as ::unity2::ClassIdentity>::class(),
-                "set_Size",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SizeTagInfo as ::unity2::ClassIdentity>::NAME,
-                        "set_Size",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_size(this: SizeTagInfo, value: u16, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SizeTagInfo, u16, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_size::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<u8> as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<SizeTagInfo as ::unity2::ClassIdentity>::class(), ".ctor", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SizeTagInfo as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: SizeTagInfo, param: ::unity2::Array<u8>, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SizeTagInfo, ::unity2::Array<u8>, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, param, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __SizeTagInfo_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_tag { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SizeTagInfo as :: unity2 :: ClassIdentity > :: class () , "get_Tag" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SizeTagInfo as :: unity2 :: ClassIdentity > :: NAME , "get_Tag" , e) , } } } pub unsafe fn get_tag (this : SizeTagInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> u16 { let inner : extern "C" fn (SizeTagInfo , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute (__lookup_get_tag :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_tag_group { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SizeTagInfo as :: unity2 :: ClassIdentity > :: class () , "get_TagGroup" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SizeTagInfo as :: unity2 :: ClassIdentity > :: NAME , "get_TagGroup" , e) , } } } pub unsafe fn get_tag_group (this : SizeTagInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> u16 { let inner : extern "C" fn (SizeTagInfo , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute (__lookup_get_tag_group :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_size { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SizeTagInfo as :: unity2 :: ClassIdentity > :: class () , "get_Size" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SizeTagInfo as :: unity2 :: ClassIdentity > :: NAME , "get_Size" , e) , } } } pub unsafe fn get_size (this : SizeTagInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> u16 { let inner : extern "C" fn (SizeTagInfo , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute (__lookup_get_size :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_size { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< u16 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SizeTagInfo as :: unity2 :: ClassIdentity > :: class () , "set_Size" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SizeTagInfo as :: unity2 :: ClassIdentity > :: NAME , "set_Size" , e) , } } } pub unsafe fn set_size (this : SizeTagInfo , value : u16 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SizeTagInfo , u16 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_size :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < u8 > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SizeTagInfo as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SizeTagInfo as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : SizeTagInfo , param : :: unity2 :: Array < u8 > , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SizeTagInfo , :: unity2 :: Array < u8 > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , param , __unity2_method_info) } }
 
 #[cfg(feature = "nintendo-message_studio-lib-sizetaginfo")]
-pub trait ISizeTagInfoMethods: ISizeTagInfo {
-    #[doc = "`get_Tag()` overload"]
-    fn get_tag(self) -> u16 {
-        unsafe {
-            let __receiver = <SizeTagInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SizeTagInfo_unity2_raw::get_tag(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_TagGroup()` overload"]
-    fn get_tag_group(self) -> u16 {
-        unsafe {
-            let __receiver = <SizeTagInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SizeTagInfo_unity2_raw::get_tag_group(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Size()` overload"]
-    fn get_size(self) -> u16 {
-        unsafe {
-            let __receiver = <SizeTagInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SizeTagInfo_unity2_raw::get_size(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_Size(u16)` overload"]
-    fn set_size(self, value: impl ::core::convert::Into<u16>) -> () {
-        unsafe {
-            let __receiver = <SizeTagInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SizeTagInfo_unity2_raw::set_size(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor(::unity2::Array<u8>)` overload"]
-    fn ctor(self, param: impl ::core::convert::Into<::unity2::Array<u8>>) -> () {
-        unsafe {
-            let __receiver = <SizeTagInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SizeTagInfo_unity2_raw::ctor(__receiver, ::core::convert::Into::into(param), ::core::option::Option::None)
-        }
-    }
-}
+pub trait ISizeTagInfoMethods : ISizeTagInfo { # [doc = "`get_Tag()` overload"] fn get_tag (self ,) -> u16 { unsafe { let __receiver = < SizeTagInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SizeTagInfo_unity2_raw :: get_tag (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_TagGroup()` overload"] fn get_tag_group (self ,) -> u16 { unsafe { let __receiver = < SizeTagInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SizeTagInfo_unity2_raw :: get_tag_group (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_Size()` overload"] fn get_size (self ,) -> u16 { unsafe { let __receiver = < SizeTagInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SizeTagInfo_unity2_raw :: get_size (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_Size(u16)` overload"] fn set_size (self , value : impl :: core :: convert :: Into < u16 >) -> () { unsafe { let __receiver = < SizeTagInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SizeTagInfo_unity2_raw :: set_size (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`.ctor(::unity2::Array<u8>)` overload"] fn ctor (self , param : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > >) -> () { unsafe { let __receiver = < SizeTagInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SizeTagInfo_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (param) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "nintendo-message_studio-lib-sizetaginfo")]
-impl<__T: ISizeTagInfo> ISizeTagInfoMethods for __T {}
+impl < __T : ISizeTagInfo > ISizeTagInfoMethods for __T { }
+
+#[cfg(feature = "nintendo-message_studio-lib-sizetaginfo")]
+impl SizeTagInfo { pub fn get_tag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SizeTagInfo_unity2_raw :: __lookup_get_tag :: get_method_info () } pub fn get_tag_group_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SizeTagInfo_unity2_raw :: __lookup_get_tag_group :: get_method_info () } pub fn get_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SizeTagInfo_unity2_raw :: __lookup_get_size :: get_method_info () } pub fn set_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SizeTagInfo_unity2_raw :: __lookup_set_size :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SizeTagInfo_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "nintendo-message_studio-lib-sizetaginfo")]
 impl SizeTagInfo {
-    #[doc = "`.ctor(::unity2::Array<u8>)` — overload selector"]
-    pub fn new(param: ::unity2::Array<u8>) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(SizeTagInfo), ::core::stringify!(new),));
-        <Self as ISizeTagInfoMethods>::ctor(this, param);
-        this
-    }
+# [doc = "`.ctor(::unity2::Array<u8>)` — overload selector"] pub fn new (param : :: unity2 :: Array < u8 >) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SizeTagInfo) , :: core :: stringify ! (new) ,)) ; < Self as ISizeTagInfoMethods > :: ctor (this , param) ; this }
 }
 
 #[cfg(feature = "nintendo-message_studio-lib-sizetaginfo")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{ISizeTagInfo, ISizeTagInfoMethods, SizeTagInfo};
+    pub use super::SizeTagInfo;
+    pub use super::ISizeTagInfo;
+    pub use super::ISizeTagInfoMethods;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

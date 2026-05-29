@@ -2,923 +2,130 @@
 
 #[cfg(feature = "app-effectsequence-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::{
-            structbase::{IStructBase, StructBase},
-            structdata_1::{IStructData_1, StructData_1},
-            structtemplate_1::{IStructTemplate_1, StructTemplate_1},
-        },
-        system::{
-            object::{IObject, Object},
-            r#enum::{Enum, IEnum},
-            valuetype::{IValueType, ValueType},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/effectsequence/EffectSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "EffectSequence")]
-    # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: effectsequence :: EffectSequence >)]
-    pub struct EffectSequence {
-        #[offset(64)]
-        #[rename(name = "m_Effects")]
-        pub m_effects: ::unity2::Array<crate::app::effectdata::EffectData>,
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: structbase :: { IStructBase , StructBase }
+ ;
+ use crate :: app :: structdata_1 :: { IStructData_1 , StructData_1 }
+ ;
+ use crate :: app :: structtemplate_1 :: { IStructTemplate_1 , StructTemplate_1 }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/effectsequence/EffectSequence_Kind.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct EffectSequence_Kind  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for EffectSequence_Kind  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "EffectSequence.Kind";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/effectsequence/EffectSequence_Kind.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct EffectSequence_Kind {
-        pub value: i32,
+}
+
+
+impl  ::unity2::IlType for EffectSequence_Kind  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::ClassIdentity for EffectSequence_Kind {
-        const NAME: &'static str = "EffectSequence.Kind";
-        const NAMESPACE: &'static str = "App";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  EffectSequence_Kind  {
+    pub fn active() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl ::unity2::IlType for EffectSequence_Kind {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+
+    pub fn shoot() -> Self {
+        Self { value: 1 }
+
     }
 
-    impl EffectSequence_Kind {
-        pub fn active() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn shoot() -> Self {
-            Self { value: 1 }
-        }
+    pub fn hit() -> Self {
+        Self { value: 2 }
 
-        pub fn hit() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn num() -> Self {
-            Self { value: 3 }
-        }
     }
+
+
+    pub fn num() -> Self {
+        Self { value: 3 }
+
+    }
+
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/effectsequence/EffectSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "EffectSequence")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: effectsequence :: EffectSequence >)] pub struct EffectSequence {
+# [offset (64)] # [rename (name = "m_Effects")] pub m_effects : :: unity2 :: Array < crate :: app :: effectdata :: EffectData > ,
+}
+
 }
 
 #[cfg(feature = "app-effectsequence-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-effectsequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __EffectSequence_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_load {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<EffectSequence as ::unity2::ClassIdentity>::class(), "Load", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <EffectSequence as ::unity2::ClassIdentity>::NAME,
-                        "Load",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn load(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_load::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_sequence {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EffectSequence as ::unity2::ClassIdentity>::class(),
-                "get_Sequence",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <EffectSequence as ::unity2::ClassIdentity>::NAME,
-                        "get_Sequence",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_sequence(this: EffectSequence, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(EffectSequence, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_sequence::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_sequence {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EffectSequence as ::unity2::ClassIdentity>::class(),
-                "set_Sequence",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <EffectSequence as ::unity2::ClassIdentity>::NAME,
-                        "set_Sequence",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_sequence(this: EffectSequence, value: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(EffectSequence, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_sequence::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_active {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EffectSequence as ::unity2::ClassIdentity>::class(),
-                "get_Active",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <EffectSequence as ::unity2::ClassIdentity>::NAME,
-                        "get_Active",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_active(this: EffectSequence, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(EffectSequence, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_active::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_active {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EffectSequence as ::unity2::ClassIdentity>::class(),
-                "set_Active",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <EffectSequence as ::unity2::ClassIdentity>::NAME,
-                        "set_Active",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_active(this: EffectSequence, value: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(EffectSequence, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_active::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_shoot {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EffectSequence as ::unity2::ClassIdentity>::class(),
-                "get_Shoot",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <EffectSequence as ::unity2::ClassIdentity>::NAME,
-                        "get_Shoot",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_shoot(this: EffectSequence, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(EffectSequence, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_shoot::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_shoot {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EffectSequence as ::unity2::ClassIdentity>::class(),
-                "set_Shoot",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <EffectSequence as ::unity2::ClassIdentity>::NAME,
-                        "set_Shoot",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_shoot(this: EffectSequence, value: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(EffectSequence, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_shoot::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_hit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EffectSequence as ::unity2::ClassIdentity>::class(),
-                "get_Hit",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <EffectSequence as ::unity2::ClassIdentity>::NAME,
-                        "get_Hit",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_hit(this: EffectSequence, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(EffectSequence, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_hit::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_hit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EffectSequence as ::unity2::ClassIdentity>::class(),
-                "set_Hit",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <EffectSequence as ::unity2::ClassIdentity>::NAME,
-                        "set_Hit",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_hit(this: EffectSequence, value: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(EffectSequence, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_hit::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_data {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::effectsequence::EffectSequence_Kind as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EffectSequence as ::unity2::ClassIdentity>::class(),
-                "GetData",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <EffectSequence as ::unity2::ClassIdentity>::NAME,
-                        "GetData",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_data(
-        this: EffectSequence,
-        kind: crate::app::effectsequence::EffectSequence_Kind,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::effectdata::EffectData {
-        let inner: extern "C" fn(
-            EffectSequence,
-            crate::app::effectsequence::EffectSequence_Kind,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::effectdata::EffectData = ::core::mem::transmute(__lookup_get_data::get_method_info().method_ptr);
-        inner(this, kind, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_play_sequence {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::effectdata::EffectData_Modes as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EffectSequence as ::unity2::ClassIdentity>::class(),
-                "PlaySequence",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <EffectSequence as ::unity2::ClassIdentity>::NAME,
-                        "PlaySequence",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn play_sequence(
-        this: EffectSequence,
-        mode: crate::app::effectdata::EffectData_Modes,
-        parent: crate::unity_engine::gameobject::GameObject,
-        position: crate::unity_engine::vector3::Vector3,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            EffectSequence,
-            crate::app::effectdata::EffectData_Modes,
-            crate::unity_engine::gameobject::GameObject,
-            crate::unity_engine::vector3::Vector3,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_play_sequence::get_method_info().method_ptr);
-        inner(this, mode, parent, position, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_play_sequence_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::effectdata::EffectData_Modes as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::quaternion::Quaternion as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EffectSequence as ::unity2::ClassIdentity>::class(),
-                "PlaySequence",
-                4,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <EffectSequence as ::unity2::ClassIdentity>::NAME,
-                        "PlaySequence",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn play_sequence_2(
-        this: EffectSequence,
-        mode: crate::app::effectdata::EffectData_Modes,
-        parent: crate::unity_engine::gameobject::GameObject,
-        position: crate::unity_engine::vector3::Vector3,
-        rotation: crate::unity_engine::quaternion::Quaternion,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            EffectSequence,
-            crate::app::effectdata::EffectData_Modes,
-            crate::unity_engine::gameobject::GameObject,
-            crate::unity_engine::vector3::Vector3,
-            crate::unity_engine::quaternion::Quaternion,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_play_sequence_2::get_method_info().method_ptr);
-        inner(this, mode, parent, position, rotation, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_play_shoot {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::effectdata::EffectData_Modes as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EffectSequence as ::unity2::ClassIdentity>::class(),
-                "PlayShoot",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <EffectSequence as ::unity2::ClassIdentity>::NAME,
-                        "PlayShoot",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn play_shoot(
-        this: EffectSequence,
-        mode: crate::app::effectdata::EffectData_Modes,
-        parent: crate::unity_engine::gameobject::GameObject,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            EffectSequence,
-            crate::app::effectdata::EffectData_Modes,
-            crate::unity_engine::gameobject::GameObject,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_play_shoot::get_method_info().method_ptr);
-        inner(this, mode, parent, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_play_impl {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::effectsequence::EffectSequence_Kind as ::unity2::IlType>::il_type(),
-                <crate::app::effectdata::EffectData_Modes as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EffectSequence as ::unity2::ClassIdentity>::class(),
-                "PlayImpl",
-                4,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <EffectSequence as ::unity2::ClassIdentity>::NAME,
-                        "PlayImpl",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn play_impl(
-        this: EffectSequence,
-        kind: crate::app::effectsequence::EffectSequence_Kind,
-        mode: crate::app::effectdata::EffectData_Modes,
-        parent: crate::unity_engine::gameobject::GameObject,
-        delay_time: *mut f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::resourceobject::ResourceObject {
-        let inner: extern "C" fn(
-            EffectSequence,
-            crate::app::effectsequence::EffectSequence_Kind,
-            crate::app::effectdata::EffectData_Modes,
-            crate::unity_engine::gameobject::GameObject,
-            *mut f32,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::resourceobject::ResourceObject = ::core::mem::transmute(__lookup_play_impl::get_method_info().method_ptr);
-        inner(this, kind, mode, parent, delay_time, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_try_get_data {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EffectSequence as ::unity2::ClassIdentity>::class(),
-                "TryGetData",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <EffectSequence as ::unity2::ClassIdentity>::NAME,
-                        "TryGetData",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn try_get_data(
-        this: EffectSequence,
-        name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::effectdata::EffectData {
-        let inner: extern "C" fn(EffectSequence, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> crate::app::effectdata::EffectData =
-            ::core::mem::transmute(__lookup_try_get_data::get_method_info().method_ptr);
-        inner(this, name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_build {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EffectSequence as ::unity2::ClassIdentity>::class(),
-                "OnBuild",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <EffectSequence as ::unity2::ClassIdentity>::NAME,
-                        "OnBuild",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_build(this: EffectSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(EffectSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_build::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EffectSequence as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <EffectSequence as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: EffectSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(EffectSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __EffectSequence_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_load { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< EffectSequence as :: unity2 :: ClassIdentity > :: class () , "Load" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < EffectSequence as :: unity2 :: ClassIdentity > :: NAME , "Load" , e) , } } } pub unsafe fn load (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_load :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_sequence { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< EffectSequence as :: unity2 :: ClassIdentity > :: class () , "get_Sequence" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < EffectSequence as :: unity2 :: ClassIdentity > :: NAME , "get_Sequence" , e) , } } } pub unsafe fn get_sequence (this : EffectSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (EffectSequence , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_sequence :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_sequence { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< EffectSequence as :: unity2 :: ClassIdentity > :: class () , "set_Sequence" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < EffectSequence as :: unity2 :: ClassIdentity > :: NAME , "set_Sequence" , e) , } } } pub unsafe fn set_sequence (this : EffectSequence , value : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (EffectSequence , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_sequence :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_active { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< EffectSequence as :: unity2 :: ClassIdentity > :: class () , "get_Active" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < EffectSequence as :: unity2 :: ClassIdentity > :: NAME , "get_Active" , e) , } } } pub unsafe fn get_active (this : EffectSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (EffectSequence , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_active :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_active { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< EffectSequence as :: unity2 :: ClassIdentity > :: class () , "set_Active" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < EffectSequence as :: unity2 :: ClassIdentity > :: NAME , "set_Active" , e) , } } } pub unsafe fn set_active (this : EffectSequence , value : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (EffectSequence , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_active :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_shoot { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< EffectSequence as :: unity2 :: ClassIdentity > :: class () , "get_Shoot" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < EffectSequence as :: unity2 :: ClassIdentity > :: NAME , "get_Shoot" , e) , } } } pub unsafe fn get_shoot (this : EffectSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (EffectSequence , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_shoot :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_shoot { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< EffectSequence as :: unity2 :: ClassIdentity > :: class () , "set_Shoot" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < EffectSequence as :: unity2 :: ClassIdentity > :: NAME , "set_Shoot" , e) , } } } pub unsafe fn set_shoot (this : EffectSequence , value : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (EffectSequence , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_shoot :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_hit { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< EffectSequence as :: unity2 :: ClassIdentity > :: class () , "get_Hit" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < EffectSequence as :: unity2 :: ClassIdentity > :: NAME , "get_Hit" , e) , } } } pub unsafe fn get_hit (this : EffectSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (EffectSequence , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_hit :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_hit { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< EffectSequence as :: unity2 :: ClassIdentity > :: class () , "set_Hit" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < EffectSequence as :: unity2 :: ClassIdentity > :: NAME , "set_Hit" , e) , } } } pub unsafe fn set_hit (this : EffectSequence , value : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (EffectSequence , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_hit :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_data { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: effectsequence :: EffectSequence_Kind as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< EffectSequence as :: unity2 :: ClassIdentity > :: class () , "GetData" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < EffectSequence as :: unity2 :: ClassIdentity > :: NAME , "GetData" , e) , } } } pub unsafe fn get_data (this : EffectSequence , kind : crate :: app :: effectsequence :: EffectSequence_Kind , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: effectdata :: EffectData { let inner : extern "C" fn (EffectSequence , crate :: app :: effectsequence :: EffectSequence_Kind , :: unity2 :: OptionalMethod ,) -> crate :: app :: effectdata :: EffectData = :: core :: mem :: transmute (__lookup_get_data :: get_method_info () . method_ptr ,) ; inner (this , kind , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_play_sequence { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: effectdata :: EffectData_Modes as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: gameobject :: GameObject as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< EffectSequence as :: unity2 :: ClassIdentity > :: class () , "PlaySequence" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < EffectSequence as :: unity2 :: ClassIdentity > :: NAME , "PlaySequence" , e) , } } } pub unsafe fn play_sequence (this : EffectSequence , mode : crate :: app :: effectdata :: EffectData_Modes , parent : crate :: unity_engine :: gameobject :: GameObject , position : crate :: unity_engine :: vector3 :: Vector3 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (EffectSequence , crate :: app :: effectdata :: EffectData_Modes , crate :: unity_engine :: gameobject :: GameObject , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_play_sequence :: get_method_info () . method_ptr ,) ; inner (this , mode , parent , position , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_play_sequence_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: effectdata :: EffectData_Modes as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: gameobject :: GameObject as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: quaternion :: Quaternion as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< EffectSequence as :: unity2 :: ClassIdentity > :: class () , "PlaySequence" , 4 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < EffectSequence as :: unity2 :: ClassIdentity > :: NAME , "PlaySequence" , e) , } } } pub unsafe fn play_sequence_2 (this : EffectSequence , mode : crate :: app :: effectdata :: EffectData_Modes , parent : crate :: unity_engine :: gameobject :: GameObject , position : crate :: unity_engine :: vector3 :: Vector3 , rotation : crate :: unity_engine :: quaternion :: Quaternion , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (EffectSequence , crate :: app :: effectdata :: EffectData_Modes , crate :: unity_engine :: gameobject :: GameObject , crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: quaternion :: Quaternion , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_play_sequence_2 :: get_method_info () . method_ptr ,) ; inner (this , mode , parent , position , rotation , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_play_shoot { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: effectdata :: EffectData_Modes as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: gameobject :: GameObject as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< EffectSequence as :: unity2 :: ClassIdentity > :: class () , "PlayShoot" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < EffectSequence as :: unity2 :: ClassIdentity > :: NAME , "PlayShoot" , e) , } } } pub unsafe fn play_shoot (this : EffectSequence , mode : crate :: app :: effectdata :: EffectData_Modes , parent : crate :: unity_engine :: gameobject :: GameObject , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (EffectSequence , crate :: app :: effectdata :: EffectData_Modes , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_play_shoot :: get_method_info () . method_ptr ,) ; inner (this , mode , parent , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_play_impl { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: effectsequence :: EffectSequence_Kind as :: unity2 :: IlType > :: il_type () , < crate :: app :: effectdata :: EffectData_Modes as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: gameobject :: GameObject as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< EffectSequence as :: unity2 :: ClassIdentity > :: class () , "PlayImpl" , 4 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < EffectSequence as :: unity2 :: ClassIdentity > :: NAME , "PlayImpl" , e) , } } } pub unsafe fn play_impl (this : EffectSequence , kind : crate :: app :: effectsequence :: EffectSequence_Kind , mode : crate :: app :: effectdata :: EffectData_Modes , parent : crate :: unity_engine :: gameobject :: GameObject , delay_time : * mut f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: resourceobject :: ResourceObject { let inner : extern "C" fn (EffectSequence , crate :: app :: effectsequence :: EffectSequence_Kind , crate :: app :: effectdata :: EffectData_Modes , crate :: unity_engine :: gameobject :: GameObject , * mut f32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: resourceobject :: ResourceObject = :: core :: mem :: transmute (__lookup_play_impl :: get_method_info () . method_ptr ,) ; inner (this , kind , mode , parent , delay_time , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_try_get_data { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< EffectSequence as :: unity2 :: ClassIdentity > :: class () , "TryGetData" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < EffectSequence as :: unity2 :: ClassIdentity > :: NAME , "TryGetData" , e) , } } } pub unsafe fn try_get_data (this : EffectSequence , name : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: effectdata :: EffectData { let inner : extern "C" fn (EffectSequence , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: app :: effectdata :: EffectData = :: core :: mem :: transmute (__lookup_try_get_data :: get_method_info () . method_ptr ,) ; inner (this , name , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_build { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< EffectSequence as :: unity2 :: ClassIdentity > :: class () , "OnBuild" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < EffectSequence as :: unity2 :: ClassIdentity > :: NAME , "OnBuild" , e) , } } } pub unsafe fn on_build (this : EffectSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (EffectSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_build :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< EffectSequence as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < EffectSequence as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : EffectSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (EffectSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-effectsequence")]
+impl EffectSequence { # [doc = "`Load()` overload"] pub fn load () -> () { unsafe { __EffectSequence_unity2_raw :: load (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-effectsequence")]
+pub trait IEffectSequenceMethods : IEffectSequence { # [doc = "`get_Sequence()` overload"] fn get_sequence (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < EffectSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __EffectSequence_unity2_raw :: get_sequence (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_Sequence(::unity2::Il2CppString)` overload"] fn set_sequence (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < EffectSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __EffectSequence_unity2_raw :: set_sequence (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_Active()` overload"] fn get_active (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < EffectSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __EffectSequence_unity2_raw :: get_active (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_Active(::unity2::Il2CppString)` overload"] fn set_active (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < EffectSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __EffectSequence_unity2_raw :: set_active (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_Shoot()` overload"] fn get_shoot (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < EffectSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __EffectSequence_unity2_raw :: get_shoot (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_Shoot(::unity2::Il2CppString)` overload"] fn set_shoot (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < EffectSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __EffectSequence_unity2_raw :: set_shoot (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_Hit()` overload"] fn get_hit (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < EffectSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __EffectSequence_unity2_raw :: get_hit (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_Hit(::unity2::Il2CppString)` overload"] fn set_hit (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < EffectSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __EffectSequence_unity2_raw :: set_hit (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`GetData(crate::app::effectsequence::EffectSequence_Kind)` overload"] fn get_data (self , kind : impl :: core :: convert :: Into < crate :: app :: effectsequence :: EffectSequence_Kind >) -> crate :: app :: effectdata :: EffectData { unsafe { let __receiver = < EffectSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __EffectSequence_unity2_raw :: get_data (__receiver , :: core :: convert :: Into :: into (kind) , :: core :: option :: Option :: None) } } # [doc = "`PlaySequence(crate::app::effectdata::EffectData_Modes, crate::unity_engine::gameobject::GameObject, crate::unity_engine::vector3::Vector3)` overload"] fn play_sequence (self , mode : impl :: core :: convert :: Into < crate :: app :: effectdata :: EffectData_Modes > , parent : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject > , position : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> () { unsafe { let __receiver = < EffectSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __EffectSequence_unity2_raw :: play_sequence (__receiver , :: core :: convert :: Into :: into (mode) , :: core :: convert :: Into :: into (parent) , :: core :: convert :: Into :: into (position) , :: core :: option :: Option :: None) } } # [doc = "`PlaySequence(crate::app::effectdata::EffectData_Modes, crate::unity_engine::gameobject::GameObject, crate::unity_engine::vector3::Vector3, crate::unity_engine::quaternion::Quaternion)` overload"] fn play_sequence_2 (self , mode : impl :: core :: convert :: Into < crate :: app :: effectdata :: EffectData_Modes > , parent : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject > , position : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , rotation : impl :: core :: convert :: Into < crate :: unity_engine :: quaternion :: Quaternion >) -> () { unsafe { let __receiver = < EffectSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __EffectSequence_unity2_raw :: play_sequence_2 (__receiver , :: core :: convert :: Into :: into (mode) , :: core :: convert :: Into :: into (parent) , :: core :: convert :: Into :: into (position) , :: core :: convert :: Into :: into (rotation) , :: core :: option :: Option :: None) } } # [doc = "`PlayShoot(crate::app::effectdata::EffectData_Modes, crate::unity_engine::gameobject::GameObject)` overload"] fn play_shoot (self , mode : impl :: core :: convert :: Into < crate :: app :: effectdata :: EffectData_Modes > , parent : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> () { unsafe { let __receiver = < EffectSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __EffectSequence_unity2_raw :: play_shoot (__receiver , :: core :: convert :: Into :: into (mode) , :: core :: convert :: Into :: into (parent) , :: core :: option :: Option :: None) } } # [doc = "`PlayImpl(crate::app::effectsequence::EffectSequence_Kind, crate::app::effectdata::EffectData_Modes, crate::unity_engine::gameobject::GameObject, *mutf32)` overload"] fn play_impl (self , kind : impl :: core :: convert :: Into < crate :: app :: effectsequence :: EffectSequence_Kind > , mode : impl :: core :: convert :: Into < crate :: app :: effectdata :: EffectData_Modes > , parent : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> (crate :: app :: resourceobject :: ResourceObject , f32) { unsafe { let __receiver = < EffectSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < f32 > :: uninit () ; let __ret = { __EffectSequence_unity2_raw :: play_impl (__receiver , :: core :: convert :: Into :: into (kind) , :: core :: convert :: Into :: into (mode) , :: core :: convert :: Into :: into (parent) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } ; (__ret , __out_0 . assume_init ()) } } # [doc = "`TryGetData(::unity2::Il2CppString)` overload"] fn try_get_data (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: app :: effectdata :: EffectData { unsafe { let __receiver = < EffectSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __EffectSequence_unity2_raw :: try_get_data (__receiver , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } # [doc = "`OnBuild()` overload"] fn on_build (self ,) -> () { unsafe { let __receiver = < EffectSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __EffectSequence_unity2_raw :: on_build (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < EffectSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __EffectSequence_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-effectsequence")]
+impl < __T : IEffectSequence > IEffectSequenceMethods for __T { }
+
+#[cfg(feature = "app-effectsequence")]
+impl EffectSequence { pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __EffectSequence_unity2_raw :: __lookup_load :: get_method_info () } pub fn get_sequence_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __EffectSequence_unity2_raw :: __lookup_get_sequence :: get_method_info () } pub fn set_sequence_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __EffectSequence_unity2_raw :: __lookup_set_sequence :: get_method_info () } pub fn get_active_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __EffectSequence_unity2_raw :: __lookup_get_active :: get_method_info () } pub fn set_active_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __EffectSequence_unity2_raw :: __lookup_set_active :: get_method_info () } pub fn get_shoot_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __EffectSequence_unity2_raw :: __lookup_get_shoot :: get_method_info () } pub fn set_shoot_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __EffectSequence_unity2_raw :: __lookup_set_shoot :: get_method_info () } pub fn get_hit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __EffectSequence_unity2_raw :: __lookup_get_hit :: get_method_info () } pub fn set_hit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __EffectSequence_unity2_raw :: __lookup_set_hit :: get_method_info () } pub fn get_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __EffectSequence_unity2_raw :: __lookup_get_data :: get_method_info () } pub fn play_sequence_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __EffectSequence_unity2_raw :: __lookup_play_sequence :: get_method_info () } pub fn play_sequence_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __EffectSequence_unity2_raw :: __lookup_play_sequence_2 :: get_method_info () } pub fn play_shoot_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __EffectSequence_unity2_raw :: __lookup_play_shoot :: get_method_info () } pub fn play_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __EffectSequence_unity2_raw :: __lookup_play_impl :: get_method_info () } pub fn try_get_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __EffectSequence_unity2_raw :: __lookup_try_get_data :: get_method_info () } pub fn on_build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __EffectSequence_unity2_raw :: __lookup_on_build :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __EffectSequence_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-effectsequence")]
 impl EffectSequence {
-    #[doc = "`Load()` overload"]
-    pub fn load() -> () {
-        unsafe { __EffectSequence_unity2_raw::load(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-effectsequence")]
-pub trait IEffectSequenceMethods: IEffectSequence {
-    #[doc = "`get_Sequence()` overload"]
-    fn get_sequence(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <EffectSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __EffectSequence_unity2_raw::get_sequence(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_Sequence(::unity2::Il2CppString)` overload"]
-    fn set_sequence(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver = <EffectSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __EffectSequence_unity2_raw::set_sequence(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Active()` overload"]
-    fn get_active(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <EffectSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __EffectSequence_unity2_raw::get_active(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_Active(::unity2::Il2CppString)` overload"]
-    fn set_active(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver = <EffectSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __EffectSequence_unity2_raw::set_active(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Shoot()` overload"]
-    fn get_shoot(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <EffectSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __EffectSequence_unity2_raw::get_shoot(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_Shoot(::unity2::Il2CppString)` overload"]
-    fn set_shoot(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver = <EffectSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __EffectSequence_unity2_raw::set_shoot(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Hit()` overload"]
-    fn get_hit(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <EffectSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __EffectSequence_unity2_raw::get_hit(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_Hit(::unity2::Il2CppString)` overload"]
-    fn set_hit(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver = <EffectSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __EffectSequence_unity2_raw::set_hit(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetData(crate::app::effectsequence::EffectSequence_Kind)` overload"]
-    fn get_data(self, kind: impl ::core::convert::Into<crate::app::effectsequence::EffectSequence_Kind>) -> crate::app::effectdata::EffectData {
-        unsafe {
-            let __receiver = <EffectSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __EffectSequence_unity2_raw::get_data(__receiver, ::core::convert::Into::into(kind), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`PlaySequence(crate::app::effectdata::EffectData_Modes, crate::unity_engine::gameobject::GameObject, crate::unity_engine::vector3::Vector3)` overload"]
-    fn play_sequence(
-        self,
-        mode: impl ::core::convert::Into<crate::app::effectdata::EffectData_Modes>,
-        parent: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-        position: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-    ) -> () {
-        unsafe {
-            let __receiver = <EffectSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __EffectSequence_unity2_raw::play_sequence(
-                __receiver,
-                ::core::convert::Into::into(mode),
-                ::core::convert::Into::into(parent),
-                ::core::convert::Into::into(position),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`PlaySequence(crate::app::effectdata::EffectData_Modes, crate::unity_engine::gameobject::GameObject, crate::unity_engine::vector3::Vector3, crate::unity_engine::quaternion::Quaternion)` overload"]
-    fn play_sequence_2(
-        self,
-        mode: impl ::core::convert::Into<crate::app::effectdata::EffectData_Modes>,
-        parent: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-        position: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-        rotation: impl ::core::convert::Into<crate::unity_engine::quaternion::Quaternion>,
-    ) -> () {
-        unsafe {
-            let __receiver = <EffectSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __EffectSequence_unity2_raw::play_sequence_2(
-                __receiver,
-                ::core::convert::Into::into(mode),
-                ::core::convert::Into::into(parent),
-                ::core::convert::Into::into(position),
-                ::core::convert::Into::into(rotation),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`PlayShoot(crate::app::effectdata::EffectData_Modes, crate::unity_engine::gameobject::GameObject)` overload"]
-    fn play_shoot(
-        self,
-        mode: impl ::core::convert::Into<crate::app::effectdata::EffectData_Modes>,
-        parent: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-    ) -> () {
-        unsafe {
-            let __receiver = <EffectSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __EffectSequence_unity2_raw::play_shoot(
-                __receiver,
-                ::core::convert::Into::into(mode),
-                ::core::convert::Into::into(parent),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`PlayImpl(crate::app::effectsequence::EffectSequence_Kind, crate::app::effectdata::EffectData_Modes, crate::unity_engine::gameobject::GameObject, *mutf32)` overload"]
-    fn play_impl(
-        self,
-        kind: impl ::core::convert::Into<crate::app::effectsequence::EffectSequence_Kind>,
-        mode: impl ::core::convert::Into<crate::app::effectdata::EffectData_Modes>,
-        parent: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-    ) -> (crate::app::resourceobject::ResourceObject, f32) {
-        unsafe {
-            let __receiver = <EffectSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            let mut __out_0 = ::core::mem::MaybeUninit::<f32>::uninit();
-            let __ret = {
-                __EffectSequence_unity2_raw::play_impl(
-                    __receiver,
-                    ::core::convert::Into::into(kind),
-                    ::core::convert::Into::into(mode),
-                    ::core::convert::Into::into(parent),
-                    __out_0.as_mut_ptr(),
-                    ::core::option::Option::None,
-                )
-            };
-            (__ret, __out_0.assume_init())
-        }
-    }
-    #[doc = "`TryGetData(::unity2::Il2CppString)` overload"]
-    fn try_get_data(self, name: impl ::core::convert::Into<::unity2::Il2CppString>) -> crate::app::effectdata::EffectData {
-        unsafe {
-            let __receiver = <EffectSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __EffectSequence_unity2_raw::try_get_data(__receiver, ::core::convert::Into::into(name), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnBuild()` overload"]
-    fn on_build(self) -> () {
-        unsafe {
-            let __receiver = <EffectSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __EffectSequence_unity2_raw::on_build(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <EffectSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __EffectSequence_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-effectsequence")]
-impl<__T: IEffectSequence> IEffectSequenceMethods for __T {}
-
-#[cfg(feature = "app-effectsequence")]
-impl EffectSequence {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(EffectSequence),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IEffectSequenceMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (EffectSequence) , :: core :: stringify ! (new) ,)) ; < Self as IEffectSequenceMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-effectsequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{EffectSequence, EffectSequence_Kind, IEffectSequence, IEffectSequenceMethods};
-    #[cfg(feature = "app-structbase")]
-    pub use crate::app::structbase::IStructBaseMethods;
-    #[cfg(feature = "app-structdata_1")]
-    pub use crate::app::structdata_1::IStructData_1Methods;
-    #[cfg(feature = "app-structtemplate_1")]
-    pub use crate::app::structtemplate_1::IStructTemplate_1Methods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::{
-        app::{structbase::IStructBase, structdata_1::IStructData_1, structtemplate_1::IStructTemplate_1},
-        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
-    };
+    pub use super::EffectSequence_Kind;
+    pub use super::EffectSequence;
+    pub use super::IEffectSequence;
+    pub use super::IEffectSequenceMethods;
+    pub use crate::app::structbase::IStructBase;
+    pub use crate::app::structdata_1::IStructData_1;
+    pub use crate::app::structtemplate_1::IStructTemplate_1;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "app-structbase")] pub use crate::app::structbase::IStructBaseMethods;
+    #[cfg(feature = "app-structdata_1")] pub use crate::app::structdata_1::IStructData_1Methods;
+    #[cfg(feature = "app-structtemplate_1")] pub use crate::app::structtemplate_1::IStructTemplate_1Methods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

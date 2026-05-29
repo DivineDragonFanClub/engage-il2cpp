@@ -2,208 +2,67 @@
 
 #[cfg(feature = "app-helpitemequipitem-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::{
-            helpitembase::{HelpItemBase, IHelpItemBase},
-            helpitemunititem::{HelpItemUnitItem, IHelpItemUnitItem},
-        },
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/helpitemequipitem/HelpItemEquipItem.md"))]
-    #[::unity2::class(namespace = "App", name = "HelpItemEquipItem")]
-    #[parent(crate::app::helpitemunititem::HelpItemUnitItem)]
-    pub struct HelpItemEquipItem {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: helpitembase :: { HelpItemBase , IHelpItemBase }
+ ;
+ use crate :: app :: helpitemunititem :: { HelpItemUnitItem , IHelpItemUnitItem }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/helpitemequipitem/HelpItemEquipItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "HelpItemEquipItem")] # [parent (crate :: app :: helpitemunititem :: HelpItemUnitItem)] pub struct HelpItemEquipItem {}
+
 }
 
 #[cfg(feature = "app-helpitemequipitem-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-helpitemequipitem")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __HelpItemEquipItem_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_valid {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HelpItemEquipItem as ::unity2::ClassIdentity>::class(),
-                "IsValid",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HelpItemEquipItem as ::unity2::ClassIdentity>::NAME,
-                        "IsValid",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_valid(this: HelpItemEquipItem, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(HelpItemEquipItem, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_valid::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_contents {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::helpparamsetter::HelpParamSetter as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HelpItemEquipItem as ::unity2::ClassIdentity>::class(),
-                "SetContents",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HelpItemEquipItem as ::unity2::ClassIdentity>::NAME,
-                        "SetContents",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_contents(
-        this: HelpItemEquipItem,
-        setter: crate::app::helpparamsetter::HelpParamSetter,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HelpItemEquipItem, crate::app::helpparamsetter::HelpParamSetter, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_contents::get_method_info().method_ptr);
-        inner(this, setter, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HelpItemEquipItem as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HelpItemEquipItem as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: HelpItemEquipItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(HelpItemEquipItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __HelpItemEquipItem_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_valid { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HelpItemEquipItem as :: unity2 :: ClassIdentity > :: class () , "IsValid" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HelpItemEquipItem as :: unity2 :: ClassIdentity > :: NAME , "IsValid" , e) , } } } pub unsafe fn is_valid (this : HelpItemEquipItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (HelpItemEquipItem , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_valid :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_contents { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: helpparamsetter :: HelpParamSetter as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HelpItemEquipItem as :: unity2 :: ClassIdentity > :: class () , "SetContents" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HelpItemEquipItem as :: unity2 :: ClassIdentity > :: NAME , "SetContents" , e) , } } } pub unsafe fn set_contents (this : HelpItemEquipItem , setter : crate :: app :: helpparamsetter :: HelpParamSetter , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HelpItemEquipItem , crate :: app :: helpparamsetter :: HelpParamSetter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_contents :: get_method_info () . method_ptr ,) ; inner (this , setter , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HelpItemEquipItem as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HelpItemEquipItem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : HelpItemEquipItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HelpItemEquipItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-helpitemequipitem")]
-pub trait IHelpItemEquipItemMethods: IHelpItemEquipItem {
-    #[doc = "`IsValid()` overload"]
-    fn is_valid(self) -> bool {
-        unsafe {
-            let __receiver = <HelpItemEquipItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HelpItemEquipItem_unity2_raw::is_valid(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetContents(crate::app::helpparamsetter::HelpParamSetter)` overload"]
-    fn set_contents(self, setter: impl ::core::convert::Into<crate::app::helpparamsetter::HelpParamSetter>) -> () {
-        unsafe {
-            let __receiver = <HelpItemEquipItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HelpItemEquipItem_unity2_raw::set_contents(__receiver, ::core::convert::Into::into(setter), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <HelpItemEquipItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HelpItemEquipItem_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IHelpItemEquipItemMethods : IHelpItemEquipItem { # [doc = "`IsValid()` overload"] fn is_valid (self ,) -> bool { unsafe { let __receiver = < HelpItemEquipItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HelpItemEquipItem_unity2_raw :: is_valid (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetContents(crate::app::helpparamsetter::HelpParamSetter)` overload"] fn set_contents (self , setter : impl :: core :: convert :: Into < crate :: app :: helpparamsetter :: HelpParamSetter >) -> () { unsafe { let __receiver = < HelpItemEquipItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HelpItemEquipItem_unity2_raw :: set_contents (__receiver , :: core :: convert :: Into :: into (setter) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HelpItemEquipItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HelpItemEquipItem_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-helpitemequipitem")]
-impl<__T: IHelpItemEquipItem> IHelpItemEquipItemMethods for __T {}
+impl < __T : IHelpItemEquipItem > IHelpItemEquipItemMethods for __T { }
+
+#[cfg(feature = "app-helpitemequipitem")]
+impl HelpItemEquipItem { pub fn is_valid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HelpItemEquipItem_unity2_raw :: __lookup_is_valid :: get_method_info () } pub fn set_contents_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HelpItemEquipItem_unity2_raw :: __lookup_set_contents :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HelpItemEquipItem_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-helpitemequipitem")]
 impl HelpItemEquipItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(HelpItemEquipItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IHelpItemEquipItemMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HelpItemEquipItem) , :: core :: stringify ! (new) ,)) ; < Self as IHelpItemEquipItemMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-helpitemequipitem")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{HelpItemEquipItem, IHelpItemEquipItem, IHelpItemEquipItemMethods};
-    #[cfg(feature = "app-helpitembase")]
-    pub use crate::app::helpitembase::IHelpItemBaseMethods;
-    #[cfg(feature = "app-helpitemunititem")]
-    pub use crate::app::helpitemunititem::IHelpItemUnitItemMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        app::{helpitembase::IHelpItemBase, helpitemunititem::IHelpItemUnitItem},
-        system::object::IObject,
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::HelpItemEquipItem;
+    pub use super::IHelpItemEquipItem;
+    pub use super::IHelpItemEquipItemMethods;
+    pub use crate::app::helpitembase::IHelpItemBase;
+    pub use crate::app::helpitemunititem::IHelpItemUnitItem;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "app-helpitembase")] pub use crate::app::helpitembase::IHelpItemBaseMethods;
+    #[cfg(feature = "app-helpitemunititem")] pub use crate::app::helpitemunititem::IHelpItemUnitItemMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

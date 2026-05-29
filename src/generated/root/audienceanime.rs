@@ -2,204 +2,50 @@
 
 #[cfg(feature = "root-audienceanime-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/audienceanime/AudienceAnime.md"))]
-    #[::unity2::class(namespace = "", name = "AudienceAnime")]
-    #[parent(crate::system::object::Object)]
-    pub struct AudienceAnime {
-        #[offset(16)]
-        #[rename(name = "m_Pattern")]
-        pub m_pattern: i32,
-        #[offset(20)]
-        #[rename(name = "m_Now")]
-        pub m_now: i32,
-        #[offset(24)]
-        #[rename(name = "m_Speed")]
-        pub m_speed: f32,
-        #[offset(32)]
-        #[rename(name = "m_Material")]
-        pub m_material: crate::unity_engine::material::Material,
-        #[offset(40)]
-        #[rename(name = "m_PatternInv")]
-        pub m_pattern_inv: f32,
-        #[offset(44)]
-        #[rename(name = "m_Timer")]
-        pub m_timer: f32,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/audienceanime/AudienceAnime.md"))] # [:: unity2 :: class (namespace = "" , name = "AudienceAnime")] # [parent (crate :: system :: object :: Object)] pub struct AudienceAnime {
+# [offset (16)] # [rename (name = "m_Pattern")] pub m_pattern : i32 ,
+# [offset (20)] # [rename (name = "m_Now")] pub m_now : i32 ,
+# [offset (24)] # [rename (name = "m_Speed")] pub m_speed : f32 ,
+# [offset (32)] # [rename (name = "m_Material")] pub m_material : crate :: unity_engine :: material :: Material ,
+# [offset (40)] # [rename (name = "m_PatternInv")] pub m_pattern_inv : f32 ,
+# [offset (44)] # [rename (name = "m_Timer")] pub m_timer : f32 ,
+}
+
 }
 
 #[cfg(feature = "root-audienceanime-types")]
 pub use __types::*;
 
 #[cfg(feature = "root-audienceanime")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AudienceAnime_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::material::Material as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<AudienceAnime as ::unity2::ClassIdentity>::class(), ".ctor", 3, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AudienceAnime as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: AudienceAnime,
-        material: crate::unity_engine::material::Material,
-        pattern: i32,
-        speed: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(AudienceAnime, crate::unity_engine::material::Material, i32, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, material, pattern, speed, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_material {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AudienceAnime as ::unity2::ClassIdentity>::class(),
-                "GetMaterial",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AudienceAnime as ::unity2::ClassIdentity>::NAME,
-                        "GetMaterial",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_material(this: AudienceAnime, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::material::Material {
-        let inner: extern "C" fn(AudienceAnime, ::unity2::OptionalMethod) -> crate::unity_engine::material::Material =
-            ::core::mem::transmute(__lookup_get_material::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AudienceAnime as ::unity2::ClassIdentity>::class(),
-                "Update",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AudienceAnime as ::unity2::ClassIdentity>::NAME,
-                        "Update",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update(this: AudienceAnime, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AudienceAnime, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __AudienceAnime_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: material :: Material as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AudienceAnime as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AudienceAnime as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : AudienceAnime , material : crate :: unity_engine :: material :: Material , pattern : i32 , speed : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AudienceAnime , crate :: unity_engine :: material :: Material , i32 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , material , pattern , speed , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_material { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AudienceAnime as :: unity2 :: ClassIdentity > :: class () , "GetMaterial" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AudienceAnime as :: unity2 :: ClassIdentity > :: NAME , "GetMaterial" , e) , } } } pub unsafe fn get_material (this : AudienceAnime , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: material :: Material { let inner : extern "C" fn (AudienceAnime , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: material :: Material = :: core :: mem :: transmute (__lookup_get_material :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AudienceAnime as :: unity2 :: ClassIdentity > :: class () , "Update" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AudienceAnime as :: unity2 :: ClassIdentity > :: NAME , "Update" , e) , } } } pub unsafe fn update (this : AudienceAnime , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AudienceAnime , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "root-audienceanime")]
-pub trait IAudienceAnimeMethods: IAudienceAnime {
-    #[doc = "`.ctor(crate::unity_engine::material::Material, i32, f32)` overload"]
-    fn ctor(
-        self,
-        material: impl ::core::convert::Into<crate::unity_engine::material::Material>,
-        pattern: impl ::core::convert::Into<i32>,
-        speed: impl ::core::convert::Into<f32>,
-    ) -> () {
-        unsafe {
-            let __receiver = <AudienceAnime as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AudienceAnime_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(material),
-                ::core::convert::Into::into(pattern),
-                ::core::convert::Into::into(speed),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetMaterial()` overload"]
-    fn get_material(self) -> crate::unity_engine::material::Material {
-        unsafe {
-            let __receiver = <AudienceAnime as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AudienceAnime_unity2_raw::get_material(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Update()` overload"]
-    fn update(self) -> () {
-        unsafe {
-            let __receiver = <AudienceAnime as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AudienceAnime_unity2_raw::update(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IAudienceAnimeMethods : IAudienceAnime { # [doc = "`.ctor(crate::unity_engine::material::Material, i32, f32)` overload"] fn ctor (self , material : impl :: core :: convert :: Into < crate :: unity_engine :: material :: Material > , pattern : impl :: core :: convert :: Into < i32 > , speed : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < AudienceAnime as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AudienceAnime_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (material) , :: core :: convert :: Into :: into (pattern) , :: core :: convert :: Into :: into (speed) , :: core :: option :: Option :: None) } } # [doc = "`GetMaterial()` overload"] fn get_material (self ,) -> crate :: unity_engine :: material :: Material { unsafe { let __receiver = < AudienceAnime as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AudienceAnime_unity2_raw :: get_material (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < AudienceAnime as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AudienceAnime_unity2_raw :: update (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "root-audienceanime")]
-impl<__T: IAudienceAnime> IAudienceAnimeMethods for __T {}
+impl < __T : IAudienceAnime > IAudienceAnimeMethods for __T { }
+
+#[cfg(feature = "root-audienceanime")]
+impl AudienceAnime { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AudienceAnime_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn get_material_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AudienceAnime_unity2_raw :: __lookup_get_material :: get_method_info () } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AudienceAnime_unity2_raw :: __lookup_update :: get_method_info () } }
 
 #[cfg(feature = "root-audienceanime")]
 impl AudienceAnime {
-    #[doc = "`.ctor(crate::unity_engine::material::Material, i32, f32)` — overload selector"]
-    pub fn new(material: crate::unity_engine::material::Material, pattern: i32, speed: f32) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(AudienceAnime), ::core::stringify!(new),));
-        <Self as IAudienceAnimeMethods>::ctor(this, material, pattern, speed);
-        this
-    }
+# [doc = "`.ctor(crate::unity_engine::material::Material, i32, f32)` — overload selector"] pub fn new (material : crate :: unity_engine :: material :: Material , pattern : i32 , speed : f32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AudienceAnime) , :: core :: stringify ! (new) ,)) ; < Self as IAudienceAnimeMethods > :: ctor (this , material , pattern , speed) ; this }
 }
 
 #[cfg(feature = "root-audienceanime")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{AudienceAnime, IAudienceAnime, IAudienceAnimeMethods};
+    pub use super::AudienceAnime;
+    pub use super::IAudienceAnime;
+    pub use super::IAudienceAnimeMethods;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

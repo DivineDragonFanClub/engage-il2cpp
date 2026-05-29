@@ -2,1042 +2,141 @@
 
 #[cfg(feature = "app-rewindsequence-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::{
-            procinst::{IProcInst, ProcInst},
-            singletonprocinst_1::{ISingletonProcInst_1, SingletonProcInst_1},
-        },
-        system::{
-            object::{IObject, Object},
-            r#enum::{Enum, IEnum},
-            valuetype::{IValueType, ValueType},
-        },
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/rewindsequence/RewindSequence_Label.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct RewindSequence_Label {
-        pub value: i32,
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: procinst :: { IProcInst , ProcInst }
+ ;
+ use crate :: app :: singletonprocinst_1 :: { ISingletonProcInst_1 , SingletonProcInst_1 }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rewindsequence/RewindSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "RewindSequence")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: rewindsequence :: RewindSequence >)] pub struct RewindSequence {
+# [static_field] # [rename (name = "EffectForStartPath")] pub effect_for_start_path : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "EffectForStart_Sec")] pub effect_for_start_sec : f32 ,
+# [static_field] # [rename (name = "EffectUnitForStart_Sec")] pub effect_unit_for_start_sec : f32 ,
+# [static_field] # [rename (name = "EffectForExecuteRewind_Sec")] pub effect_for_execute_rewind_sec : f32 ,
+# [static_field] # [rename (name = "EffectForCancelRewind_Sec")] pub effect_for_cancel_rewind_sec : f32 ,
+# [offset (114)] # [rename (name = "m_IsRewindToPhaseBegin")] pub m_is_rewind_to_phase_begin : bool ,
+# [offset (116)] # [rename (name = "m_WaitTime")] pub m_wait_time : f32 ,
+# [offset (120)] # [rename (name = "m_EffectForStartObject")] pub m_effect_for_start_object : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (128)] # [rename (name = "m_CursorInitX")] pub m_cursor_init_x : i32 ,
+# [offset (132)] # [rename (name = "m_CursorInitZ")] pub m_cursor_init_z : i32 ,
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/rewindsequence/RewindSequence_Label.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct RewindSequence_Label  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for RewindSequence_Label  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "RewindSequence.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    impl ::unity2::ClassIdentity for RewindSequence_Label {
-        const NAME: &'static str = "RewindSequence.Label";
-        const NAMESPACE: &'static str = "App";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  ::unity2::IlType for RewindSequence_Label  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::IlType for RewindSequence_Label {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  RewindSequence_Label  {
+    pub fn start() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl RewindSequence_Label {
-        pub fn start() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn menu() -> Self {
-            Self { value: 1 }
-        }
+    pub fn menu() -> Self {
+        Self { value: 1 }
 
-        pub fn execute_rewind() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn cancel_rewind() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn end() -> Self {
-            Self { value: 4 }
-        }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rewindsequence/RewindSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "RewindSequence")]
-    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: rewindsequence :: RewindSequence >)]
-    pub struct RewindSequence {
-        #[static_field]
-        #[rename(name = "EffectForStartPath")]
-        pub effect_for_start_path: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "EffectForStart_Sec")]
-        pub effect_for_start_sec: f32,
-        #[static_field]
-        #[rename(name = "EffectUnitForStart_Sec")]
-        pub effect_unit_for_start_sec: f32,
-        #[static_field]
-        #[rename(name = "EffectForExecuteRewind_Sec")]
-        pub effect_for_execute_rewind_sec: f32,
-        #[static_field]
-        #[rename(name = "EffectForCancelRewind_Sec")]
-        pub effect_for_cancel_rewind_sec: f32,
-        #[offset(114)]
-        #[rename(name = "m_IsRewindToPhaseBegin")]
-        pub m_is_rewind_to_phase_begin: bool,
-        #[offset(116)]
-        #[rename(name = "m_WaitTime")]
-        pub m_wait_time: f32,
-        #[offset(120)]
-        #[rename(name = "m_EffectForStartObject")]
-        pub m_effect_for_start_object: crate::unity_engine::gameobject::GameObject,
-        #[offset(128)]
-        #[rename(name = "m_CursorInitX")]
-        pub m_cursor_init_x: i32,
-        #[offset(132)]
-        #[rename(name = "m_CursorInitZ")]
-        pub m_cursor_init_z: i32,
+
+    pub fn execute_rewind() -> Self {
+        Self { value: 2 }
+
     }
+
+
+    pub fn cancel_rewind() -> Self {
+        Self { value: 3 }
+
+    }
+
+
+    pub fn end() -> Self {
+        Self { value: 4 }
+
+    }
+
+}
+
 }
 
 #[cfg(feature = "app-rewindsequence-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-rewindsequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RewindSequence_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RewindSequence as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RewindSequence as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: RewindSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RewindSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_create {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RewindSequence as ::unity2::ClassIdentity>::class(),
-                "OnCreate",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RewindSequence as ::unity2::ClassIdentity>::NAME,
-                        "OnCreate",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_create(this: RewindSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RewindSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_create::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_dispose {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RewindSequence as ::unity2::ClassIdentity>::class(),
-                "OnDispose",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RewindSequence as ::unity2::ClassIdentity>::NAME,
-                        "OnDispose",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_dispose(this: RewindSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RewindSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_dispose::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_load_resource {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RewindSequence as ::unity2::ClassIdentity>::class(),
-                "LoadResource",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RewindSequence as ::unity2::ClassIdentity>::NAME,
-                        "LoadResource",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn load_resource(this: RewindSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RewindSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_load_resource::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_unload_resource {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RewindSequence as ::unity2::ClassIdentity>::class(),
-                "UnloadResource",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RewindSequence as ::unity2::ClassIdentity>::NAME,
-                        "UnloadResource",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn unload_resource(this: RewindSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RewindSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_unload_resource::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_loading_resource {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RewindSequence as ::unity2::ClassIdentity>::class(),
-                "IsLoadingResource",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RewindSequence as ::unity2::ClassIdentity>::NAME,
-                        "IsLoadingResource",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_loading_resource(this: RewindSequence, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(RewindSequence, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_loading_resource::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_init_effect_for_start {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RewindSequence as ::unity2::ClassIdentity>::class(),
-                "InitEffectForStart",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RewindSequence as ::unity2::ClassIdentity>::NAME,
-                        "InitEffectForStart",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn init_effect_for_start(this: RewindSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RewindSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_init_effect_for_start::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_wait_effect_for_start {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RewindSequence as ::unity2::ClassIdentity>::class(),
-                "WaitEffectForStart",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RewindSequence as ::unity2::ClassIdentity>::NAME,
-                        "WaitEffectForStart",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn wait_effect_for_start(this: RewindSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RewindSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_wait_effect_for_start::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_start {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RewindSequence as ::unity2::ClassIdentity>::class(),
-                "Start",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RewindSequence as ::unity2::ClassIdentity>::NAME,
-                        "Start",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn start(this: RewindSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RewindSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_start::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_menu {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RewindSequence as ::unity2::ClassIdentity>::class(),
-                "CreateMenu",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RewindSequence as ::unity2::ClassIdentity>::NAME,
-                        "CreateMenu",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_menu(this: RewindSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RewindSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_create_menu::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_init_effect_for_execute_rewind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RewindSequence as ::unity2::ClassIdentity>::class(),
-                "InitEffectForExecuteRewind",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RewindSequence as ::unity2::ClassIdentity>::NAME,
-                        "InitEffectForExecuteRewind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn init_effect_for_execute_rewind(this: RewindSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RewindSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_init_effect_for_execute_rewind::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_wait_effect_for_execute_rewind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RewindSequence as ::unity2::ClassIdentity>::class(),
-                "WaitEffectForExecuteRewind",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RewindSequence as ::unity2::ClassIdentity>::NAME,
-                        "WaitEffectForExecuteRewind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn wait_effect_for_execute_rewind(this: RewindSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RewindSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_wait_effect_for_execute_rewind::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_execute_rewind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RewindSequence as ::unity2::ClassIdentity>::class(),
-                "ExecuteRewind",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RewindSequence as ::unity2::ClassIdentity>::NAME,
-                        "ExecuteRewind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn execute_rewind(this: RewindSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RewindSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_execute_rewind::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_init_effect_for_cancel_rewind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RewindSequence as ::unity2::ClassIdentity>::class(),
-                "InitEffectForCancelRewind",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RewindSequence as ::unity2::ClassIdentity>::NAME,
-                        "InitEffectForCancelRewind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn init_effect_for_cancel_rewind(this: RewindSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RewindSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_init_effect_for_cancel_rewind::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_wait_effect_for_cancel_rewind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RewindSequence as ::unity2::ClassIdentity>::class(),
-                "WaitEffectForCancelRewind",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RewindSequence as ::unity2::ClassIdentity>::NAME,
-                        "WaitEffectForCancelRewind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn wait_effect_for_cancel_rewind(this: RewindSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RewindSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_wait_effect_for_cancel_rewind::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_return_map_cursor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RewindSequence as ::unity2::ClassIdentity>::class(),
-                "ReturnMapCursor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RewindSequence as ::unity2::ClassIdentity>::NAME,
-                        "ReturnMapCursor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn return_map_cursor(this: RewindSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RewindSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_return_map_cursor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cancel_rewind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RewindSequence as ::unity2::ClassIdentity>::class(),
-                "CancelRewind",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RewindSequence as ::unity2::ClassIdentity>::NAME,
-                        "CancelRewind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cancel_rewind(this: RewindSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RewindSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_cancel_rewind::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_desc {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RewindSequence as ::unity2::ClassIdentity>::class(),
-                "GetDesc",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RewindSequence as ::unity2::ClassIdentity>::NAME,
-                        "GetDesc",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_desc(this: RewindSequence, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Array<crate::app::procdesc::ProcDesc> {
-        let inner: extern "C" fn(RewindSequence, ::unity2::OptionalMethod) -> ::unity2::Array<crate::app::procdesc::ProcDesc> =
-            ::core::mem::transmute(__lookup_get_desc::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_rewind_to_phase_begin {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RewindSequence as ::unity2::ClassIdentity>::class(),
-                "SetRewindToPhaseBegin",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RewindSequence as ::unity2::ClassIdentity>::NAME,
-                        "SetRewindToPhaseBegin",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_rewind_to_phase_begin(
-        this: RewindSequence,
-        is_rewind_to_phase_begin: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RewindSequence, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_rewind_to_phase_begin::get_method_info().method_ptr);
-        inner(this, is_rewind_to_phase_begin, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_jump_to_execute_rewind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RewindSequence as ::unity2::ClassIdentity>::class(),
-                "JumpToExecuteRewind",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RewindSequence as ::unity2::ClassIdentity>::NAME,
-                        "JumpToExecuteRewind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn jump_to_execute_rewind(this: RewindSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RewindSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_jump_to_execute_rewind::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_jump_to_cancel_rewind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RewindSequence as ::unity2::ClassIdentity>::class(),
-                "JumpToCancelRewind",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RewindSequence as ::unity2::ClassIdentity>::NAME,
-                        "JumpToCancelRewind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn jump_to_cancel_rewind(this: RewindSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RewindSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_jump_to_cancel_rewind::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RewindSequence as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RewindSequence as ::unity2::ClassIdentity>::NAME,
-                        "CreateBind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_bind(super_: crate::app::procinst::ProcInst, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
-        inner(super_, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __RewindSequence_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RewindSequence as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RewindSequence as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : RewindSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RewindSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_create { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RewindSequence as :: unity2 :: ClassIdentity > :: class () , "OnCreate" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RewindSequence as :: unity2 :: ClassIdentity > :: NAME , "OnCreate" , e) , } } } pub unsafe fn on_create (this : RewindSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RewindSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_create :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_dispose { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RewindSequence as :: unity2 :: ClassIdentity > :: class () , "OnDispose" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RewindSequence as :: unity2 :: ClassIdentity > :: NAME , "OnDispose" , e) , } } } pub unsafe fn on_dispose (this : RewindSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RewindSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_dispose :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_load_resource { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RewindSequence as :: unity2 :: ClassIdentity > :: class () , "LoadResource" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RewindSequence as :: unity2 :: ClassIdentity > :: NAME , "LoadResource" , e) , } } } pub unsafe fn load_resource (this : RewindSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RewindSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_load_resource :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_unload_resource { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RewindSequence as :: unity2 :: ClassIdentity > :: class () , "UnloadResource" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RewindSequence as :: unity2 :: ClassIdentity > :: NAME , "UnloadResource" , e) , } } } pub unsafe fn unload_resource (this : RewindSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RewindSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_unload_resource :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_loading_resource { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RewindSequence as :: unity2 :: ClassIdentity > :: class () , "IsLoadingResource" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RewindSequence as :: unity2 :: ClassIdentity > :: NAME , "IsLoadingResource" , e) , } } } pub unsafe fn is_loading_resource (this : RewindSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (RewindSequence , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_loading_resource :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_init_effect_for_start { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RewindSequence as :: unity2 :: ClassIdentity > :: class () , "InitEffectForStart" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RewindSequence as :: unity2 :: ClassIdentity > :: NAME , "InitEffectForStart" , e) , } } } pub unsafe fn init_effect_for_start (this : RewindSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RewindSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_init_effect_for_start :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_wait_effect_for_start { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RewindSequence as :: unity2 :: ClassIdentity > :: class () , "WaitEffectForStart" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RewindSequence as :: unity2 :: ClassIdentity > :: NAME , "WaitEffectForStart" , e) , } } } pub unsafe fn wait_effect_for_start (this : RewindSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RewindSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_wait_effect_for_start :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_start { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RewindSequence as :: unity2 :: ClassIdentity > :: class () , "Start" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RewindSequence as :: unity2 :: ClassIdentity > :: NAME , "Start" , e) , } } } pub unsafe fn start (this : RewindSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RewindSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_start :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_menu { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RewindSequence as :: unity2 :: ClassIdentity > :: class () , "CreateMenu" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RewindSequence as :: unity2 :: ClassIdentity > :: NAME , "CreateMenu" , e) , } } } pub unsafe fn create_menu (this : RewindSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RewindSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create_menu :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_init_effect_for_execute_rewind { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RewindSequence as :: unity2 :: ClassIdentity > :: class () , "InitEffectForExecuteRewind" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RewindSequence as :: unity2 :: ClassIdentity > :: NAME , "InitEffectForExecuteRewind" , e) , } } } pub unsafe fn init_effect_for_execute_rewind (this : RewindSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RewindSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_init_effect_for_execute_rewind :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_wait_effect_for_execute_rewind { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RewindSequence as :: unity2 :: ClassIdentity > :: class () , "WaitEffectForExecuteRewind" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RewindSequence as :: unity2 :: ClassIdentity > :: NAME , "WaitEffectForExecuteRewind" , e) , } } } pub unsafe fn wait_effect_for_execute_rewind (this : RewindSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RewindSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_wait_effect_for_execute_rewind :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_execute_rewind { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RewindSequence as :: unity2 :: ClassIdentity > :: class () , "ExecuteRewind" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RewindSequence as :: unity2 :: ClassIdentity > :: NAME , "ExecuteRewind" , e) , } } } pub unsafe fn execute_rewind (this : RewindSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RewindSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_execute_rewind :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_init_effect_for_cancel_rewind { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RewindSequence as :: unity2 :: ClassIdentity > :: class () , "InitEffectForCancelRewind" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RewindSequence as :: unity2 :: ClassIdentity > :: NAME , "InitEffectForCancelRewind" , e) , } } } pub unsafe fn init_effect_for_cancel_rewind (this : RewindSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RewindSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_init_effect_for_cancel_rewind :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_wait_effect_for_cancel_rewind { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RewindSequence as :: unity2 :: ClassIdentity > :: class () , "WaitEffectForCancelRewind" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RewindSequence as :: unity2 :: ClassIdentity > :: NAME , "WaitEffectForCancelRewind" , e) , } } } pub unsafe fn wait_effect_for_cancel_rewind (this : RewindSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RewindSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_wait_effect_for_cancel_rewind :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_return_map_cursor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RewindSequence as :: unity2 :: ClassIdentity > :: class () , "ReturnMapCursor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RewindSequence as :: unity2 :: ClassIdentity > :: NAME , "ReturnMapCursor" , e) , } } } pub unsafe fn return_map_cursor (this : RewindSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RewindSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_return_map_cursor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cancel_rewind { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RewindSequence as :: unity2 :: ClassIdentity > :: class () , "CancelRewind" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RewindSequence as :: unity2 :: ClassIdentity > :: NAME , "CancelRewind" , e) , } } } pub unsafe fn cancel_rewind (this : RewindSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RewindSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cancel_rewind :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_desc { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RewindSequence as :: unity2 :: ClassIdentity > :: class () , "GetDesc" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RewindSequence as :: unity2 :: ClassIdentity > :: NAME , "GetDesc" , e) , } } } pub unsafe fn get_desc (this : RewindSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > { let inner : extern "C" fn (RewindSequence , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > = :: core :: mem :: transmute (__lookup_get_desc :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_rewind_to_phase_begin { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RewindSequence as :: unity2 :: ClassIdentity > :: class () , "SetRewindToPhaseBegin" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RewindSequence as :: unity2 :: ClassIdentity > :: NAME , "SetRewindToPhaseBegin" , e) , } } } pub unsafe fn set_rewind_to_phase_begin (this : RewindSequence , is_rewind_to_phase_begin : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RewindSequence , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_rewind_to_phase_begin :: get_method_info () . method_ptr ,) ; inner (this , is_rewind_to_phase_begin , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_jump_to_execute_rewind { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RewindSequence as :: unity2 :: ClassIdentity > :: class () , "JumpToExecuteRewind" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RewindSequence as :: unity2 :: ClassIdentity > :: NAME , "JumpToExecuteRewind" , e) , } } } pub unsafe fn jump_to_execute_rewind (this : RewindSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RewindSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_jump_to_execute_rewind :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_jump_to_cancel_rewind { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RewindSequence as :: unity2 :: ClassIdentity > :: class () , "JumpToCancelRewind" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RewindSequence as :: unity2 :: ClassIdentity > :: NAME , "JumpToCancelRewind" , e) , } } } pub unsafe fn jump_to_cancel_rewind (this : RewindSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RewindSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_jump_to_cancel_rewind :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_bind { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RewindSequence as :: unity2 :: ClassIdentity > :: class () , "CreateBind" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RewindSequence as :: unity2 :: ClassIdentity > :: NAME , "CreateBind" , e) , } } } pub unsafe fn create_bind (super_ : crate :: app :: procinst :: ProcInst , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create_bind :: get_method_info () . method_ptr ,) ; inner (super_ , __unity2_method_info) } }
+
+#[cfg(feature = "app-rewindsequence")]
+impl RewindSequence { # [doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { __RewindSequence_unity2_raw :: create_bind (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-rewindsequence")]
+pub trait IRewindSequenceMethods : IRewindSequence { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RewindSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RewindSequence_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnCreate()` overload"] fn on_create (self ,) -> () { unsafe { let __receiver = < RewindSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RewindSequence_unity2_raw :: on_create (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnDispose()` overload"] fn on_dispose (self ,) -> () { unsafe { let __receiver = < RewindSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RewindSequence_unity2_raw :: on_dispose (__receiver , :: core :: option :: Option :: None) } } # [doc = "`LoadResource()` overload"] fn load_resource (self ,) -> () { unsafe { let __receiver = < RewindSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RewindSequence_unity2_raw :: load_resource (__receiver , :: core :: option :: Option :: None) } } # [doc = "`UnloadResource()` overload"] fn unload_resource (self ,) -> () { unsafe { let __receiver = < RewindSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RewindSequence_unity2_raw :: unload_resource (__receiver , :: core :: option :: Option :: None) } } # [doc = "`IsLoadingResource()` overload"] fn is_loading_resource (self ,) -> bool { unsafe { let __receiver = < RewindSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RewindSequence_unity2_raw :: is_loading_resource (__receiver , :: core :: option :: Option :: None) } } # [doc = "`InitEffectForStart()` overload"] fn init_effect_for_start (self ,) -> () { unsafe { let __receiver = < RewindSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RewindSequence_unity2_raw :: init_effect_for_start (__receiver , :: core :: option :: Option :: None) } } # [doc = "`WaitEffectForStart()` overload"] fn wait_effect_for_start (self ,) -> () { unsafe { let __receiver = < RewindSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RewindSequence_unity2_raw :: wait_effect_for_start (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < RewindSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RewindSequence_unity2_raw :: start (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CreateMenu()` overload"] fn create_menu (self ,) -> () { unsafe { let __receiver = < RewindSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RewindSequence_unity2_raw :: create_menu (__receiver , :: core :: option :: Option :: None) } } # [doc = "`InitEffectForExecuteRewind()` overload"] fn init_effect_for_execute_rewind (self ,) -> () { unsafe { let __receiver = < RewindSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RewindSequence_unity2_raw :: init_effect_for_execute_rewind (__receiver , :: core :: option :: Option :: None) } } # [doc = "`WaitEffectForExecuteRewind()` overload"] fn wait_effect_for_execute_rewind (self ,) -> () { unsafe { let __receiver = < RewindSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RewindSequence_unity2_raw :: wait_effect_for_execute_rewind (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ExecuteRewind()` overload"] fn execute_rewind (self ,) -> () { unsafe { let __receiver = < RewindSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RewindSequence_unity2_raw :: execute_rewind (__receiver , :: core :: option :: Option :: None) } } # [doc = "`InitEffectForCancelRewind()` overload"] fn init_effect_for_cancel_rewind (self ,) -> () { unsafe { let __receiver = < RewindSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RewindSequence_unity2_raw :: init_effect_for_cancel_rewind (__receiver , :: core :: option :: Option :: None) } } # [doc = "`WaitEffectForCancelRewind()` overload"] fn wait_effect_for_cancel_rewind (self ,) -> () { unsafe { let __receiver = < RewindSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RewindSequence_unity2_raw :: wait_effect_for_cancel_rewind (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ReturnMapCursor()` overload"] fn return_map_cursor (self ,) -> () { unsafe { let __receiver = < RewindSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RewindSequence_unity2_raw :: return_map_cursor (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CancelRewind()` overload"] fn cancel_rewind (self ,) -> () { unsafe { let __receiver = < RewindSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RewindSequence_unity2_raw :: cancel_rewind (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetDesc()` overload"] fn get_desc (self ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > { unsafe { let __receiver = < RewindSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RewindSequence_unity2_raw :: get_desc (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetRewindToPhaseBegin(bool)` overload"] fn set_rewind_to_phase_begin (self , is_rewind_to_phase_begin : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < RewindSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RewindSequence_unity2_raw :: set_rewind_to_phase_begin (__receiver , :: core :: convert :: Into :: into (is_rewind_to_phase_begin) , :: core :: option :: Option :: None) } } # [doc = "`JumpToExecuteRewind()` overload"] fn jump_to_execute_rewind (self ,) -> () { unsafe { let __receiver = < RewindSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RewindSequence_unity2_raw :: jump_to_execute_rewind (__receiver , :: core :: option :: Option :: None) } } # [doc = "`JumpToCancelRewind()` overload"] fn jump_to_cancel_rewind (self ,) -> () { unsafe { let __receiver = < RewindSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RewindSequence_unity2_raw :: jump_to_cancel_rewind (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-rewindsequence")]
+impl < __T : IRewindSequence > IRewindSequenceMethods for __T { }
+
+#[cfg(feature = "app-rewindsequence")]
+impl RewindSequence { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RewindSequence_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn on_create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RewindSequence_unity2_raw :: __lookup_on_create :: get_method_info () } pub fn on_dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RewindSequence_unity2_raw :: __lookup_on_dispose :: get_method_info () } pub fn load_resource_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RewindSequence_unity2_raw :: __lookup_load_resource :: get_method_info () } pub fn unload_resource_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RewindSequence_unity2_raw :: __lookup_unload_resource :: get_method_info () } pub fn is_loading_resource_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RewindSequence_unity2_raw :: __lookup_is_loading_resource :: get_method_info () } pub fn init_effect_for_start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RewindSequence_unity2_raw :: __lookup_init_effect_for_start :: get_method_info () } pub fn wait_effect_for_start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RewindSequence_unity2_raw :: __lookup_wait_effect_for_start :: get_method_info () } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RewindSequence_unity2_raw :: __lookup_start :: get_method_info () } pub fn create_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RewindSequence_unity2_raw :: __lookup_create_menu :: get_method_info () } pub fn init_effect_for_execute_rewind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RewindSequence_unity2_raw :: __lookup_init_effect_for_execute_rewind :: get_method_info () } pub fn wait_effect_for_execute_rewind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RewindSequence_unity2_raw :: __lookup_wait_effect_for_execute_rewind :: get_method_info () } pub fn execute_rewind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RewindSequence_unity2_raw :: __lookup_execute_rewind :: get_method_info () } pub fn init_effect_for_cancel_rewind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RewindSequence_unity2_raw :: __lookup_init_effect_for_cancel_rewind :: get_method_info () } pub fn wait_effect_for_cancel_rewind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RewindSequence_unity2_raw :: __lookup_wait_effect_for_cancel_rewind :: get_method_info () } pub fn return_map_cursor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RewindSequence_unity2_raw :: __lookup_return_map_cursor :: get_method_info () } pub fn cancel_rewind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RewindSequence_unity2_raw :: __lookup_cancel_rewind :: get_method_info () } pub fn get_desc_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RewindSequence_unity2_raw :: __lookup_get_desc :: get_method_info () } pub fn set_rewind_to_phase_begin_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RewindSequence_unity2_raw :: __lookup_set_rewind_to_phase_begin :: get_method_info () } pub fn jump_to_execute_rewind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RewindSequence_unity2_raw :: __lookup_jump_to_execute_rewind :: get_method_info () } pub fn jump_to_cancel_rewind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RewindSequence_unity2_raw :: __lookup_jump_to_cancel_rewind :: get_method_info () } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RewindSequence_unity2_raw :: __lookup_create_bind :: get_method_info () } }
 
 #[cfg(feature = "app-rewindsequence")]
 impl RewindSequence {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
-    pub fn create_bind(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
-        unsafe { __RewindSequence_unity2_raw::create_bind(::core::convert::Into::into(super_), ::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-rewindsequence")]
-pub trait IRewindSequenceMethods: IRewindSequence {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <RewindSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RewindSequence_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnCreate()` overload"]
-    fn on_create(self) -> () {
-        unsafe {
-            let __receiver = <RewindSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RewindSequence_unity2_raw::on_create(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnDispose()` overload"]
-    fn on_dispose(self) -> () {
-        unsafe {
-            let __receiver = <RewindSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RewindSequence_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`LoadResource()` overload"]
-    fn load_resource(self) -> () {
-        unsafe {
-            let __receiver = <RewindSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RewindSequence_unity2_raw::load_resource(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`UnloadResource()` overload"]
-    fn unload_resource(self) -> () {
-        unsafe {
-            let __receiver = <RewindSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RewindSequence_unity2_raw::unload_resource(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsLoadingResource()` overload"]
-    fn is_loading_resource(self) -> bool {
-        unsafe {
-            let __receiver = <RewindSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RewindSequence_unity2_raw::is_loading_resource(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`InitEffectForStart()` overload"]
-    fn init_effect_for_start(self) -> () {
-        unsafe {
-            let __receiver = <RewindSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RewindSequence_unity2_raw::init_effect_for_start(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`WaitEffectForStart()` overload"]
-    fn wait_effect_for_start(self) -> () {
-        unsafe {
-            let __receiver = <RewindSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RewindSequence_unity2_raw::wait_effect_for_start(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Start()` overload"]
-    fn start(self) -> () {
-        unsafe {
-            let __receiver = <RewindSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RewindSequence_unity2_raw::start(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CreateMenu()` overload"]
-    fn create_menu(self) -> () {
-        unsafe {
-            let __receiver = <RewindSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RewindSequence_unity2_raw::create_menu(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`InitEffectForExecuteRewind()` overload"]
-    fn init_effect_for_execute_rewind(self) -> () {
-        unsafe {
-            let __receiver = <RewindSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RewindSequence_unity2_raw::init_effect_for_execute_rewind(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`WaitEffectForExecuteRewind()` overload"]
-    fn wait_effect_for_execute_rewind(self) -> () {
-        unsafe {
-            let __receiver = <RewindSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RewindSequence_unity2_raw::wait_effect_for_execute_rewind(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ExecuteRewind()` overload"]
-    fn execute_rewind(self) -> () {
-        unsafe {
-            let __receiver = <RewindSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RewindSequence_unity2_raw::execute_rewind(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`InitEffectForCancelRewind()` overload"]
-    fn init_effect_for_cancel_rewind(self) -> () {
-        unsafe {
-            let __receiver = <RewindSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RewindSequence_unity2_raw::init_effect_for_cancel_rewind(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`WaitEffectForCancelRewind()` overload"]
-    fn wait_effect_for_cancel_rewind(self) -> () {
-        unsafe {
-            let __receiver = <RewindSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RewindSequence_unity2_raw::wait_effect_for_cancel_rewind(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ReturnMapCursor()` overload"]
-    fn return_map_cursor(self) -> () {
-        unsafe {
-            let __receiver = <RewindSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RewindSequence_unity2_raw::return_map_cursor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CancelRewind()` overload"]
-    fn cancel_rewind(self) -> () {
-        unsafe {
-            let __receiver = <RewindSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RewindSequence_unity2_raw::cancel_rewind(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetDesc()` overload"]
-    fn get_desc(self) -> ::unity2::Array<crate::app::procdesc::ProcDesc> {
-        unsafe {
-            let __receiver = <RewindSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RewindSequence_unity2_raw::get_desc(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetRewindToPhaseBegin(bool)` overload"]
-    fn set_rewind_to_phase_begin(self, is_rewind_to_phase_begin: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver = <RewindSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RewindSequence_unity2_raw::set_rewind_to_phase_begin(
-                __receiver,
-                ::core::convert::Into::into(is_rewind_to_phase_begin),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`JumpToExecuteRewind()` overload"]
-    fn jump_to_execute_rewind(self) -> () {
-        unsafe {
-            let __receiver = <RewindSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RewindSequence_unity2_raw::jump_to_execute_rewind(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`JumpToCancelRewind()` overload"]
-    fn jump_to_cancel_rewind(self) -> () {
-        unsafe {
-            let __receiver = <RewindSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RewindSequence_unity2_raw::jump_to_cancel_rewind(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-rewindsequence")]
-impl<__T: IRewindSequence> IRewindSequenceMethods for __T {}
-
-#[cfg(feature = "app-rewindsequence")]
-impl RewindSequence {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RewindSequence),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRewindSequenceMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RewindSequence) , :: core :: stringify ! (new) ,)) ; < Self as IRewindSequenceMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-rewindsequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IRewindSequence, IRewindSequenceMethods, RewindSequence, RewindSequence_Label};
-    #[cfg(feature = "app-procinst")]
-    pub use crate::app::procinst::IProcInstMethods;
-    #[cfg(feature = "app-singletonprocinst_1")]
-    pub use crate::app::singletonprocinst_1::ISingletonProcInst_1Methods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::{
-        app::{procinst::IProcInst, singletonprocinst_1::ISingletonProcInst_1},
-        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
-    };
+    pub use super::RewindSequence;
+    pub use super::IRewindSequence;
+    pub use super::IRewindSequenceMethods;
+    pub use super::RewindSequence_Label;
+    pub use crate::app::procinst::IProcInst;
+    pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "app-procinst")] pub use crate::app::procinst::IProcInstMethods;
+    #[cfg(feature = "app-singletonprocinst_1")] pub use crate::app::singletonprocinst_1::ISingletonProcInst_1Methods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

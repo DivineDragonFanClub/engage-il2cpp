@@ -2,350 +2,85 @@
 
 #[cfg(feature = "unity_engine-rendering-freecamera-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/freecamera/FreeCamera.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Rendering", name = "FreeCamera")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct FreeCamera {
-        #[offset(24)]
-        #[rename(name = "m_LookSpeedController")]
-        pub m_look_speed_controller: f32,
-        #[offset(28)]
-        #[rename(name = "m_LookSpeedMouse")]
-        pub m_look_speed_mouse: f32,
-        #[offset(32)]
-        #[rename(name = "m_MoveSpeed")]
-        pub m_move_speed: f32,
-        #[offset(36)]
-        #[rename(name = "m_MoveSpeedIncrement")]
-        pub m_move_speed_increment: f32,
-        #[offset(40)]
-        #[rename(name = "m_Turbo")]
-        pub m_turbo: f32,
-        #[static_field]
-        #[rename(name = "kMouseX")]
-        pub k_mouse_x: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "kMouseY")]
-        pub k_mouse_y: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "kRightStickX")]
-        pub k_right_stick_x: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "kRightStickY")]
-        pub k_right_stick_y: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "kVertical")]
-        pub k_vertical: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "kHorizontal")]
-        pub k_horizontal: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "kYAxis")]
-        pub k_y_axis: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "kSpeedAxis")]
-        pub k_speed_axis: ::unity2::Il2CppString,
-        #[offset(44)]
-        #[rename(name = "inputRotateAxisX")]
-        pub input_rotate_axis_x: f32,
-        #[offset(48)]
-        #[rename(name = "inputRotateAxisY")]
-        pub input_rotate_axis_y: f32,
-        #[offset(52)]
-        #[rename(name = "inputChangeSpeed")]
-        pub input_change_speed: f32,
-        #[offset(56)]
-        #[rename(name = "inputVertical")]
-        pub input_vertical: f32,
-        #[offset(60)]
-        #[rename(name = "inputHorizontal")]
-        pub input_horizontal: f32,
-        #[offset(64)]
-        #[rename(name = "inputYAxis")]
-        pub input_y_axis: f32,
-        #[offset(68)]
-        #[rename(name = "leftShiftBoost")]
-        pub left_shift_boost: bool,
-        #[offset(69)]
-        #[rename(name = "leftShift")]
-        pub left_shift: bool,
-        #[offset(70)]
-        #[rename(name = "fire1")]
-        pub fire1: bool,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/freecamera/FreeCamera.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering" , name = "FreeCamera")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct FreeCamera {
+# [offset (24)] # [rename (name = "m_LookSpeedController")] pub m_look_speed_controller : f32 ,
+# [offset (28)] # [rename (name = "m_LookSpeedMouse")] pub m_look_speed_mouse : f32 ,
+# [offset (32)] # [rename (name = "m_MoveSpeed")] pub m_move_speed : f32 ,
+# [offset (36)] # [rename (name = "m_MoveSpeedIncrement")] pub m_move_speed_increment : f32 ,
+# [offset (40)] # [rename (name = "m_Turbo")] pub m_turbo : f32 ,
+# [static_field] # [rename (name = "kMouseX")] pub k_mouse_x : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "kMouseY")] pub k_mouse_y : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "kRightStickX")] pub k_right_stick_x : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "kRightStickY")] pub k_right_stick_y : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "kVertical")] pub k_vertical : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "kHorizontal")] pub k_horizontal : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "kYAxis")] pub k_y_axis : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "kSpeedAxis")] pub k_speed_axis : :: unity2 :: Il2CppString ,
+# [offset (44)] # [rename (name = "inputRotateAxisX")] pub input_rotate_axis_x : f32 ,
+# [offset (48)] # [rename (name = "inputRotateAxisY")] pub input_rotate_axis_y : f32 ,
+# [offset (52)] # [rename (name = "inputChangeSpeed")] pub input_change_speed : f32 ,
+# [offset (56)] # [rename (name = "inputVertical")] pub input_vertical : f32 ,
+# [offset (60)] # [rename (name = "inputHorizontal")] pub input_horizontal : f32 ,
+# [offset (64)] # [rename (name = "inputYAxis")] pub input_y_axis : f32 ,
+# [offset (68)] # [rename (name = "leftShiftBoost")] pub left_shift_boost : bool ,
+# [offset (69)] # [rename (name = "leftShift")] pub left_shift : bool ,
+# [offset (70)] # [rename (name = "fire1")] pub fire1 : bool ,
+}
+
 }
 
 #[cfg(feature = "unity_engine-rendering-freecamera-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-freecamera")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __FreeCamera_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_enable {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<FreeCamera as ::unity2::ClassIdentity>::class(), "OnEnable", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FreeCamera as ::unity2::ClassIdentity>::NAME,
-                        "OnEnable",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_enable(this: FreeCamera, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(FreeCamera, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_enable::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_register_inputs {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FreeCamera as ::unity2::ClassIdentity>::class(),
-                "RegisterInputs",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FreeCamera as ::unity2::ClassIdentity>::NAME,
-                        "RegisterInputs",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn register_inputs(this: FreeCamera, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(FreeCamera, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_register_inputs::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update_inputs {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FreeCamera as ::unity2::ClassIdentity>::class(),
-                "UpdateInputs",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FreeCamera as ::unity2::ClassIdentity>::NAME,
-                        "UpdateInputs",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update_inputs(this: FreeCamera, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(FreeCamera, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update_inputs::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<FreeCamera as ::unity2::ClassIdentity>::class(), "Update", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FreeCamera as ::unity2::ClassIdentity>::NAME,
-                        "Update",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update(this: FreeCamera, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(FreeCamera, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_update::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<FreeCamera as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FreeCamera as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: FreeCamera, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(FreeCamera, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<FreeCamera as ::unity2::ClassIdentity>::class(), ".cctor", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FreeCamera as ::unity2::ClassIdentity>::NAME,
-                        ".cctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __FreeCamera_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_enable { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FreeCamera as :: unity2 :: ClassIdentity > :: class () , "OnEnable" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FreeCamera as :: unity2 :: ClassIdentity > :: NAME , "OnEnable" , e) , } } } pub unsafe fn on_enable (this : FreeCamera , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FreeCamera , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_enable :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_register_inputs { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FreeCamera as :: unity2 :: ClassIdentity > :: class () , "RegisterInputs" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FreeCamera as :: unity2 :: ClassIdentity > :: NAME , "RegisterInputs" , e) , } } } pub unsafe fn register_inputs (this : FreeCamera , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FreeCamera , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_register_inputs :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update_inputs { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FreeCamera as :: unity2 :: ClassIdentity > :: class () , "UpdateInputs" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FreeCamera as :: unity2 :: ClassIdentity > :: NAME , "UpdateInputs" , e) , } } } pub unsafe fn update_inputs (this : FreeCamera , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FreeCamera , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update_inputs :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FreeCamera as :: unity2 :: ClassIdentity > :: class () , "Update" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FreeCamera as :: unity2 :: ClassIdentity > :: NAME , "Update" , e) , } } } pub unsafe fn update (this : FreeCamera , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FreeCamera , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FreeCamera as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FreeCamera as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : FreeCamera , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FreeCamera , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FreeCamera as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FreeCamera as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
+
+#[cfg(feature = "unity_engine-rendering-freecamera")]
+impl FreeCamera { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { __FreeCamera_unity2_raw :: cctor (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-rendering-freecamera")]
+pub trait IFreeCameraMethods : IFreeCamera { # [doc = "`OnEnable()` overload"] fn on_enable (self ,) -> () { unsafe { let __receiver = < FreeCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FreeCamera_unity2_raw :: on_enable (__receiver , :: core :: option :: Option :: None) } } # [doc = "`RegisterInputs()` overload"] fn register_inputs (self ,) -> () { unsafe { let __receiver = < FreeCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FreeCamera_unity2_raw :: register_inputs (__receiver , :: core :: option :: Option :: None) } } # [doc = "`UpdateInputs()` overload"] fn update_inputs (self ,) -> () { unsafe { let __receiver = < FreeCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FreeCamera_unity2_raw :: update_inputs (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < FreeCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FreeCamera_unity2_raw :: update (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < FreeCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FreeCamera_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-rendering-freecamera")]
+impl < __T : IFreeCamera > IFreeCameraMethods for __T { }
+
+#[cfg(feature = "unity_engine-rendering-freecamera")]
+impl FreeCamera { pub fn on_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FreeCamera_unity2_raw :: __lookup_on_enable :: get_method_info () } pub fn register_inputs_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FreeCamera_unity2_raw :: __lookup_register_inputs :: get_method_info () } pub fn update_inputs_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FreeCamera_unity2_raw :: __lookup_update_inputs :: get_method_info () } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FreeCamera_unity2_raw :: __lookup_update :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FreeCamera_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FreeCamera_unity2_raw :: __lookup_cctor :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-rendering-freecamera")]
 impl FreeCamera {
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __FreeCamera_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "unity_engine-rendering-freecamera")]
-pub trait IFreeCameraMethods: IFreeCamera {
-    #[doc = "`OnEnable()` overload"]
-    fn on_enable(self) -> () {
-        unsafe {
-            let __receiver = <FreeCamera as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FreeCamera_unity2_raw::on_enable(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`RegisterInputs()` overload"]
-    fn register_inputs(self) -> () {
-        unsafe {
-            let __receiver = <FreeCamera as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FreeCamera_unity2_raw::register_inputs(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`UpdateInputs()` overload"]
-    fn update_inputs(self) -> () {
-        unsafe {
-            let __receiver = <FreeCamera as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FreeCamera_unity2_raw::update_inputs(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Update()` overload"]
-    fn update(self) -> () {
-        unsafe {
-            let __receiver = <FreeCamera as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FreeCamera_unity2_raw::update(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <FreeCamera as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FreeCamera_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-rendering-freecamera")]
-impl<__T: IFreeCamera> IFreeCameraMethods for __T {}
-
-#[cfg(feature = "unity_engine-rendering-freecamera")]
-impl FreeCamera {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(FreeCamera), ::core::stringify!(new),));
-        <Self as IFreeCameraMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FreeCamera) , :: core :: stringify ! (new) ,)) ; < Self as IFreeCameraMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "unity_engine-rendering-freecamera")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{FreeCamera, IFreeCamera, IFreeCameraMethods};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        system::object::IObject,
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::FreeCamera;
+    pub use super::IFreeCamera;
+    pub use super::IFreeCameraMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

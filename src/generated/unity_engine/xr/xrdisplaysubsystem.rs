@@ -2,1476 +2,298 @@
 
 #[cfg(feature = "unity_engine-xr-xrdisplaysubsystem-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::{
-            object::{IObject, Object},
-            r#enum::{Enum, IEnum},
-            valuetype::{IValueType, ValueType},
-        },
-        unity_engine::{
-            integratedsubsystem::{IIntegratedSubsystem, IntegratedSubsystem},
-            integratedsubsystem_1::{IIntegratedSubsystem_1, IntegratedSubsystem_1},
-        },
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/xr/xrdisplaysubsystem/XRDisplaySubsystem_XRBlitParams.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct XRDisplaySubsystem_XRBlitParams {
-        pub src_tex: crate::unity_engine::rendertexture::RenderTexture,
-        pub src_tex_array_slice: i32,
-        pub src_rect: crate::unity_engine::rect::Rect,
-        pub dest_rect: crate::unity_engine::rect::Rect,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+ use crate :: unity_engine :: integratedsubsystem :: { IIntegratedSubsystem , IntegratedSubsystem }
+ ;
+ use crate :: unity_engine :: integratedsubsystem_1 :: { IIntegratedSubsystem_1 , IntegratedSubsystem_1 }
+ ;
 
-    impl ::unity2::ClassIdentity for XRDisplaySubsystem_XRBlitParams {
-        const NAME: &'static str = "XRDisplaySubsystem.XRBlitParams";
-        const NAMESPACE: &'static str = "UnityEngine.XR";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/xr/xrdisplaysubsystem/XRDisplaySubsystem.md"))] # [:: unity2 :: class (namespace = "UnityEngine.XR" , name = "XRDisplaySubsystem")] # [parent (crate :: unity_engine :: integratedsubsystem_1 :: IntegratedSubsystem_1 < crate :: unity_engine :: xr :: xrdisplaysubsystemdescriptor :: XRDisplaySubsystemDescriptor >)] pub struct XRDisplaySubsystem {
+# [offset (32)] # [rename (name = "displayFocusChanged")] pub display_focus_changed : crate :: system :: action_1 :: Action_1 < bool > ,
+}
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/xr/xrdisplaysubsystem/XRDisplaySubsystem_XRRenderPass.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct XRDisplaySubsystem_XRRenderPass {
+    pub display_subsystem_instance: :: unity2 :: IntPtr,
+    pub render_pass_index: i32,
+    pub render_target: crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier,
+    pub render_target_desc: crate :: unity_engine :: rendertexturedescriptor :: RenderTextureDescriptor,
+    pub should_fill_out_depth: bool,
+    pub culling_pass_index: i32,
+}
+
+
+impl ::unity2::ClassIdentity for XRDisplaySubsystem_XRRenderPass {
+    const NAMESPACE: &'static str = "UnityEngine.XR";
+
+    const NAME: &'static str = "XRDisplaySubsystem.XRRenderPass";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for XRDisplaySubsystem_XRBlitParams {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+}
+
+
+impl ::unity2::IlType for XRDisplaySubsystem_XRRenderPass {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/xr/xrdisplaysubsystem/XRDisplaySubsystem_XRBlitParams.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct XRDisplaySubsystem_XRBlitParams {
+    pub src_tex: crate :: unity_engine :: rendertexture :: RenderTexture,
+    pub src_tex_array_slice: i32,
+    pub src_rect: crate :: unity_engine :: rect :: Rect,
+    pub dest_rect: crate :: unity_engine :: rect :: Rect,
+}
+
+
+impl ::unity2::ClassIdentity for XRDisplaySubsystem_XRBlitParams {
+    const NAMESPACE: &'static str = "UnityEngine.XR";
+
+    const NAME: &'static str = "XRDisplaySubsystem.XRBlitParams";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/xr/xrdisplaysubsystem/XRDisplaySubsystem_XRRenderPass.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct XRDisplaySubsystem_XRRenderPass {
-        pub display_subsystem_instance: ::unity2::IntPtr,
-        pub render_pass_index: i32,
-        pub render_target: crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-        pub render_target_desc: crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor,
-        pub should_fill_out_depth: bool,
-        pub culling_pass_index: i32,
+}
+
+
+impl ::unity2::IlType for XRDisplaySubsystem_XRBlitParams {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::ClassIdentity for XRDisplaySubsystem_XRRenderPass {
-        const NAME: &'static str = "XRDisplaySubsystem.XRRenderPass";
-        const NAMESPACE: &'static str = "UnityEngine.XR";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/xr/xrdisplaysubsystem/XRDisplaySubsystem_TextureLayout.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct XRDisplaySubsystem_TextureLayout  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for XRDisplaySubsystem_TextureLayout  {
+    const NAMESPACE: &'static str = "UnityEngine.XR";
+
+    const NAME: &'static str = "XRDisplaySubsystem.TextureLayout";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for XRDisplaySubsystem_XRRenderPass {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+}
+
+
+impl  ::unity2::IlType for XRDisplaySubsystem_TextureLayout  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  XRDisplaySubsystem_TextureLayout  {
+    pub fn texture2_d_array() -> Self {
+        Self { value: 1 }
+
+    }
+
+
+    pub fn single_texture2_d() -> Self {
+        Self { value: 2 }
+
+    }
+
+
+    pub fn separate_texture2_ds() -> Self {
+        Self { value: 4 }
+
+    }
+
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/xr/xrdisplaysubsystem/XRDisplaySubsystem_XRRenderParameter.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct XRDisplaySubsystem_XRRenderParameter {
+    pub view: crate :: unity_engine :: matrix4x4 :: Matrix4x4,
+    pub projection: crate :: unity_engine :: matrix4x4 :: Matrix4x4,
+    pub viewport: crate :: unity_engine :: rect :: Rect,
+    pub occlusion_mesh: crate :: unity_engine :: mesh :: Mesh,
+    pub texture_array_slice: i32,
+}
+
+
+impl ::unity2::ClassIdentity for XRDisplaySubsystem_XRRenderParameter {
+    const NAMESPACE: &'static str = "UnityEngine.XR";
+
+    const NAME: &'static str = "XRDisplaySubsystem.XRRenderParameter";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/xr/xrdisplaysubsystem/XRDisplaySubsystem.md"))]
-    #[::unity2::class(namespace = "UnityEngine.XR", name = "XRDisplaySubsystem")]
-    # [parent (crate :: unity_engine :: integratedsubsystem_1 :: IntegratedSubsystem_1 < crate :: unity_engine :: xr :: xrdisplaysubsystemdescriptor :: XRDisplaySubsystemDescriptor >)]
-    pub struct XRDisplaySubsystem {
-        #[offset(32)]
-        #[rename(name = "displayFocusChanged")]
-        pub display_focus_changed: crate::system::action_1::Action_1<bool>,
+}
+
+
+impl ::unity2::IlType for XRDisplaySubsystem_XRRenderParameter {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/xr/xrdisplaysubsystem/XRDisplaySubsystem_XRRenderParameter.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct XRDisplaySubsystem_XRRenderParameter {
-        pub view: crate::unity_engine::matrix4x4::Matrix4x4,
-        pub projection: crate::unity_engine::matrix4x4::Matrix4x4,
-        pub viewport: crate::unity_engine::rect::Rect,
-        pub occlusion_mesh: crate::unity_engine::mesh::Mesh,
-        pub texture_array_slice: i32,
-    }
+}
 
-    impl ::unity2::ClassIdentity for XRDisplaySubsystem_XRRenderParameter {
-        const NAME: &'static str = "XRDisplaySubsystem.XRRenderParameter";
-        const NAMESPACE: &'static str = "UnityEngine.XR";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/xr/xrdisplaysubsystem/XRDisplaySubsystem_XRMirrorViewBlitDesc.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct XRDisplaySubsystem_XRMirrorViewBlitDesc {
+    pub display_subsystem_instance: :: unity2 :: IntPtr,
+    pub native_blit_available: bool,
+    pub native_blit_invalid_states: bool,
+    pub blit_params_count: i32,
+}
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+
+impl ::unity2::ClassIdentity for XRDisplaySubsystem_XRMirrorViewBlitDesc {
+    const NAMESPACE: &'static str = "UnityEngine.XR";
+
+    const NAME: &'static str = "XRDisplaySubsystem.XRMirrorViewBlitDesc";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for XRDisplaySubsystem_XRRenderParameter {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl ::unity2::IlType for XRDisplaySubsystem_XRMirrorViewBlitDesc {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/xr/xrdisplaysubsystem/XRDisplaySubsystem_TextureLayout.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct XRDisplaySubsystem_TextureLayout {
-        pub value: i32,
-    }
+}
 
-    impl ::unity2::ClassIdentity for XRDisplaySubsystem_TextureLayout {
-        const NAME: &'static str = "XRDisplaySubsystem.TextureLayout";
-        const NAMESPACE: &'static str = "UnityEngine.XR";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for XRDisplaySubsystem_TextureLayout {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    impl XRDisplaySubsystem_TextureLayout {
-        pub fn texture2_d_array() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn single_texture2_d() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn separate_texture2_ds() -> Self {
-            Self { value: 4 }
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/xr/xrdisplaysubsystem/XRDisplaySubsystem_XRMirrorViewBlitDesc.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct XRDisplaySubsystem_XRMirrorViewBlitDesc {
-        pub display_subsystem_instance: ::unity2::IntPtr,
-        pub native_blit_available: bool,
-        pub native_blit_invalid_states: bool,
-        pub blit_params_count: i32,
-    }
-
-    impl ::unity2::ClassIdentity for XRDisplaySubsystem_XRMirrorViewBlitDesc {
-        const NAME: &'static str = "XRDisplaySubsystem.XRMirrorViewBlitDesc";
-        const NAMESPACE: &'static str = "UnityEngine.XR";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for XRDisplaySubsystem_XRMirrorViewBlitDesc {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
 }
 
 #[cfg(feature = "unity_engine-xr-xrdisplaysubsystem-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-xr-xrdisplaysubsystem")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __XRDisplaySubsystem_XRRenderPass_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_render_parameter {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::camera::Camera as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderParameter as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <XRDisplaySubsystem_XRRenderPass as ::unity2::ClassIdentity>::class(),
-                "GetRenderParameter",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <XRDisplaySubsystem_XRRenderPass as ::unity2::ClassIdentity>::NAME,
-                        "GetRenderParameter",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_render_parameter(
-        this: XRDisplaySubsystem_XRRenderPass,
-        camera: crate::unity_engine::camera::Camera,
-        render_parameter_index: i32,
-        render_parameter: *mut crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderParameter,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            XRDisplaySubsystem_XRRenderPass,
-            crate::unity_engine::camera::Camera,
-            i32,
-            *mut crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderParameter,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_get_render_parameter::get_method_info().method_ptr);
-        inner(this, camera, render_parameter_index, render_parameter, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_render_parameter_count {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <XRDisplaySubsystem_XRRenderPass as ::unity2::ClassIdentity>::class(),
-                "GetRenderParameterCount",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <XRDisplaySubsystem_XRRenderPass as ::unity2::ClassIdentity>::NAME,
-                        "GetRenderParameterCount",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_render_parameter_count(this: XRDisplaySubsystem_XRRenderPass, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(XRDisplaySubsystem_XRRenderPass, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_render_parameter_count::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_render_parameter_injected {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderPass as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::camera::Camera as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderParameter as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <XRDisplaySubsystem_XRRenderPass as ::unity2::ClassIdentity>::class(),
-                "GetRenderParameter_Injected",
-                4,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <XRDisplaySubsystem_XRRenderPass as ::unity2::ClassIdentity>::NAME,
-                        "GetRenderParameter_Injected",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_render_parameter_injected(
-        unity_self: *mut crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderPass,
-        camera: crate::unity_engine::camera::Camera,
-        render_parameter_index: i32,
-        render_parameter: *mut crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderParameter,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            *mut crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderPass,
-            crate::unity_engine::camera::Camera,
-            i32,
-            *mut crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderParameter,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_get_render_parameter_injected::get_method_info().method_ptr);
-        inner(unity_self, camera, render_parameter_index, render_parameter, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_render_parameter_count_injected {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderPass as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <XRDisplaySubsystem_XRRenderPass as ::unity2::ClassIdentity>::class(),
-                "GetRenderParameterCount_Injected",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <XRDisplaySubsystem_XRRenderPass as ::unity2::ClassIdentity>::NAME,
-                        "GetRenderParameterCount_Injected",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_render_parameter_count_injected(
-        unity_self: *mut crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderPass,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(*mut crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderPass, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_render_parameter_count_injected::get_method_info().method_ptr);
-        inner(unity_self, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __XRDisplaySubsystem_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_invoke_display_focus_changed { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< XRDisplaySubsystem as :: unity2 :: ClassIdentity > :: class () , "InvokeDisplayFocusChanged" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < XRDisplaySubsystem as :: unity2 :: ClassIdentity > :: NAME , "InvokeDisplayFocusChanged" , e) , } } } pub unsafe fn invoke_display_focus_changed (this : XRDisplaySubsystem , focus : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (XRDisplaySubsystem , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_invoke_display_focus_changed :: get_method_info () . method_ptr ,) ; inner (this , focus , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_scale_of_all_render_targets { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< XRDisplaySubsystem as :: unity2 :: ClassIdentity > :: class () , "set_scaleOfAllRenderTargets" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < XRDisplaySubsystem as :: unity2 :: ClassIdentity > :: NAME , "set_scaleOfAllRenderTargets" , e) , } } } pub unsafe fn set_scale_of_all_render_targets (this : XRDisplaySubsystem , value : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (XRDisplaySubsystem , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_scale_of_all_render_targets :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_z_near { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< XRDisplaySubsystem as :: unity2 :: ClassIdentity > :: class () , "set_zNear" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < XRDisplaySubsystem as :: unity2 :: ClassIdentity > :: NAME , "set_zNear" , e) , } } } pub unsafe fn set_z_near (this : XRDisplaySubsystem , value : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (XRDisplaySubsystem , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_z_near :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_z_far { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< XRDisplaySubsystem as :: unity2 :: ClassIdentity > :: class () , "set_zFar" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < XRDisplaySubsystem as :: unity2 :: ClassIdentity > :: NAME , "set_zFar" , e) , } } } pub unsafe fn set_z_far (this : XRDisplaySubsystem , value : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (XRDisplaySubsystem , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_z_far :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_s_rgb { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< XRDisplaySubsystem as :: unity2 :: ClassIdentity > :: class () , "set_sRGB" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < XRDisplaySubsystem as :: unity2 :: ClassIdentity > :: NAME , "set_sRGB" , e) , } } } pub unsafe fn set_s_rgb (this : XRDisplaySubsystem , value : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (XRDisplaySubsystem , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_s_rgb :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_texture_layout { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_TextureLayout as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< XRDisplaySubsystem as :: unity2 :: ClassIdentity > :: class () , "set_textureLayout" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < XRDisplaySubsystem as :: unity2 :: ClassIdentity > :: NAME , "set_textureLayout" , e) , } } } pub unsafe fn set_texture_layout (this : XRDisplaySubsystem , value : crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_TextureLayout , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (XRDisplaySubsystem , crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_TextureLayout , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_texture_layout :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_msaa_level { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< XRDisplaySubsystem as :: unity2 :: ClassIdentity > :: class () , "SetMSAALevel" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < XRDisplaySubsystem as :: unity2 :: ClassIdentity > :: NAME , "SetMSAALevel" , e) , } } } pub unsafe fn set_msaa_level (this : XRDisplaySubsystem , level : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (XRDisplaySubsystem , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_msaa_level :: get_method_info () . method_ptr ,) ; inner (this , level , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_disable_legacy_renderer { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< XRDisplaySubsystem as :: unity2 :: ClassIdentity > :: class () , "set_disableLegacyRenderer" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < XRDisplaySubsystem as :: unity2 :: ClassIdentity > :: NAME , "set_disableLegacyRenderer" , e) , } } } pub unsafe fn set_disable_legacy_renderer (this : XRDisplaySubsystem , value : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (XRDisplaySubsystem , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_disable_legacy_renderer :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_render_pass_count { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< XRDisplaySubsystem as :: unity2 :: ClassIdentity > :: class () , "GetRenderPassCount" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < XRDisplaySubsystem as :: unity2 :: ClassIdentity > :: NAME , "GetRenderPassCount" , e) , } } } pub unsafe fn get_render_pass_count (this : XRDisplaySubsystem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (XRDisplaySubsystem , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_render_pass_count :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_render_pass { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRRenderPass as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< XRDisplaySubsystem as :: unity2 :: ClassIdentity > :: class () , "GetRenderPass" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < XRDisplaySubsystem as :: unity2 :: ClassIdentity > :: NAME , "GetRenderPass" , e) , } } } pub unsafe fn get_render_pass (this : XRDisplaySubsystem , render_pass_index : i32 , render_pass : * mut crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRRenderPass , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (XRDisplaySubsystem , i32 , * mut crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRRenderPass , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_get_render_pass :: get_method_info () . method_ptr ,) ; inner (this , render_pass_index , render_pass , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_internal_try_get_render_pass { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRRenderPass as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< XRDisplaySubsystem as :: unity2 :: ClassIdentity > :: class () , "Internal_TryGetRenderPass" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < XRDisplaySubsystem as :: unity2 :: ClassIdentity > :: NAME , "Internal_TryGetRenderPass" , e) , } } } pub unsafe fn internal_try_get_render_pass (this : XRDisplaySubsystem , render_pass_index : i32 , render_pass : * mut crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRRenderPass , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (XRDisplaySubsystem , i32 , * mut crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRRenderPass , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_internal_try_get_render_pass :: get_method_info () . method_ptr ,) ; inner (this , render_pass_index , render_pass , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_culling_parameters { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: camera :: Camera as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: scriptablecullingparameters :: ScriptableCullingParameters as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< XRDisplaySubsystem as :: unity2 :: ClassIdentity > :: class () , "GetCullingParameters" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < XRDisplaySubsystem as :: unity2 :: ClassIdentity > :: NAME , "GetCullingParameters" , e) , } } } pub unsafe fn get_culling_parameters (this : XRDisplaySubsystem , camera : crate :: unity_engine :: camera :: Camera , culling_pass_index : i32 , scriptable_culling_parameters : * mut crate :: unity_engine :: rendering :: scriptablecullingparameters :: ScriptableCullingParameters , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (XRDisplaySubsystem , crate :: unity_engine :: camera :: Camera , i32 , * mut crate :: unity_engine :: rendering :: scriptablecullingparameters :: ScriptableCullingParameters , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_get_culling_parameters :: get_method_info () . method_ptr ,) ; inner (this , camera , culling_pass_index , scriptable_culling_parameters , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_internal_try_get_culling_params { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: camera :: Camera as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: scriptablecullingparameters :: ScriptableCullingParameters as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< XRDisplaySubsystem as :: unity2 :: ClassIdentity > :: class () , "Internal_TryGetCullingParams" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < XRDisplaySubsystem as :: unity2 :: ClassIdentity > :: NAME , "Internal_TryGetCullingParams" , e) , } } } pub unsafe fn internal_try_get_culling_params (this : XRDisplaySubsystem , camera : crate :: unity_engine :: camera :: Camera , culling_pass_index : i32 , scriptable_culling_parameters : * mut crate :: unity_engine :: rendering :: scriptablecullingparameters :: ScriptableCullingParameters , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (XRDisplaySubsystem , crate :: unity_engine :: camera :: Camera , i32 , * mut crate :: unity_engine :: rendering :: scriptablecullingparameters :: ScriptableCullingParameters , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_internal_try_get_culling_params :: get_method_info () . method_ptr ,) ; inner (this , camera , culling_pass_index , scriptable_culling_parameters , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_preferred_mirror_blit_mode { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< XRDisplaySubsystem as :: unity2 :: ClassIdentity > :: class () , "GetPreferredMirrorBlitMode" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < XRDisplaySubsystem as :: unity2 :: ClassIdentity > :: NAME , "GetPreferredMirrorBlitMode" , e) , } } } pub unsafe fn get_preferred_mirror_blit_mode (this : XRDisplaySubsystem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (XRDisplaySubsystem , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_preferred_mirror_blit_mode :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_mirror_view_blit_desc { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendertexture :: RenderTexture as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRMirrorViewBlitDesc as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< XRDisplaySubsystem as :: unity2 :: ClassIdentity > :: class () , "GetMirrorViewBlitDesc" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < XRDisplaySubsystem as :: unity2 :: ClassIdentity > :: NAME , "GetMirrorViewBlitDesc" , e) , } } } pub unsafe fn get_mirror_view_blit_desc (this : XRDisplaySubsystem , mirror_rt : crate :: unity_engine :: rendertexture :: RenderTexture , out_desc : * mut crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRMirrorViewBlitDesc , mode : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (XRDisplaySubsystem , crate :: unity_engine :: rendertexture :: RenderTexture , * mut crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRMirrorViewBlitDesc , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_mirror_view_blit_desc :: get_method_info () . method_ptr ,) ; inner (this , mirror_rt , out_desc , mode , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_graphics_thread_mirror_view_blit { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< XRDisplaySubsystem as :: unity2 :: ClassIdentity > :: class () , "AddGraphicsThreadMirrorViewBlit" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < XRDisplaySubsystem as :: unity2 :: ClassIdentity > :: NAME , "AddGraphicsThreadMirrorViewBlit" , e) , } } } pub unsafe fn add_graphics_thread_mirror_view_blit (this : XRDisplaySubsystem , cmd : crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer , allow_graphics_state_invalidate : bool , mode : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (XRDisplaySubsystem , crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer , bool , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_add_graphics_thread_mirror_view_blit :: get_method_info () . method_ptr ,) ; inner (this , cmd , allow_graphics_state_invalidate , mode , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< XRDisplaySubsystem as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < XRDisplaySubsystem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : XRDisplaySubsystem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (XRDisplaySubsystem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-xr-xrdisplaysubsystem")]
-impl XRDisplaySubsystem_XRRenderPass {
-    #[doc = "`GetRenderParameter_Injected(*mutcrate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderPass, crate::unity_engine::camera::Camera, i32, *mutcrate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderParameter)` overload"]
-    pub fn get_render_parameter_injected(
-        camera: impl ::core::convert::Into<crate::unity_engine::camera::Camera>,
-        render_parameter_index: impl ::core::convert::Into<i32>,
-    ) -> (
-        crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderPass,
-        crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderParameter,
-    ) {
-        unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderPass>::uninit();
-            let mut __out_1 = ::core::mem::MaybeUninit::<crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderParameter>::uninit();
-            __XRDisplaySubsystem_XRRenderPass_unity2_raw::get_render_parameter_injected(
-                __out_0.as_mut_ptr(),
-                ::core::convert::Into::into(camera),
-                ::core::convert::Into::into(render_parameter_index),
-                __out_1.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
-            (__out_0.assume_init(), __out_1.assume_init())
-        }
-    }
-
-    #[doc = "`GetRenderParameterCount_Injected(*mutcrate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderPass)` overload"]
-    pub fn get_render_parameter_count_injected() -> (i32, crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderPass) {
-        unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderPass>::uninit();
-            let __ret = {
-                __XRDisplaySubsystem_XRRenderPass_unity2_raw::get_render_parameter_count_injected(__out_0.as_mut_ptr(), ::core::option::Option::None)
-            };
-            (__ret, __out_0.assume_init())
-        }
-    }
-}
+pub trait IXRDisplaySubsystemMethods : IXRDisplaySubsystem { # [doc = "`InvokeDisplayFocusChanged(bool)` overload"] fn invoke_display_focus_changed (self , focus : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < XRDisplaySubsystem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __XRDisplaySubsystem_unity2_raw :: invoke_display_focus_changed (__receiver , :: core :: convert :: Into :: into (focus) , :: core :: option :: Option :: None) } } # [doc = "`set_scaleOfAllRenderTargets(f32)` overload"] fn set_scale_of_all_render_targets (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < XRDisplaySubsystem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __XRDisplaySubsystem_unity2_raw :: set_scale_of_all_render_targets (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`set_zNear(f32)` overload"] fn set_z_near (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < XRDisplaySubsystem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __XRDisplaySubsystem_unity2_raw :: set_z_near (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`set_zFar(f32)` overload"] fn set_z_far (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < XRDisplaySubsystem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __XRDisplaySubsystem_unity2_raw :: set_z_far (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`set_sRGB(bool)` overload"] fn set_s_rgb (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < XRDisplaySubsystem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __XRDisplaySubsystem_unity2_raw :: set_s_rgb (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`set_textureLayout(crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_TextureLayout)` overload"] fn set_texture_layout (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_TextureLayout >) -> () { unsafe { let __receiver = < XRDisplaySubsystem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __XRDisplaySubsystem_unity2_raw :: set_texture_layout (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`SetMSAALevel(i32)` overload"] fn set_msaa_level (self , level : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < XRDisplaySubsystem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __XRDisplaySubsystem_unity2_raw :: set_msaa_level (__receiver , :: core :: convert :: Into :: into (level) , :: core :: option :: Option :: None) } } # [doc = "`set_disableLegacyRenderer(bool)` overload"] fn set_disable_legacy_renderer (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < XRDisplaySubsystem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __XRDisplaySubsystem_unity2_raw :: set_disable_legacy_renderer (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`GetRenderPassCount()` overload"] fn get_render_pass_count (self ,) -> i32 { unsafe { let __receiver = < XRDisplaySubsystem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __XRDisplaySubsystem_unity2_raw :: get_render_pass_count (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetRenderPass(i32, *mutcrate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderPass)` overload"] fn get_render_pass (self , render_pass_index : impl :: core :: convert :: Into < i32 >) -> crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRRenderPass { unsafe { let __receiver = < XRDisplaySubsystem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRRenderPass > :: uninit () ; __XRDisplaySubsystem_unity2_raw :: get_render_pass (__receiver , :: core :: convert :: Into :: into (render_pass_index) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) ; __out_0 . assume_init () } } # [doc = "`Internal_TryGetRenderPass(i32, *mutcrate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderPass)` overload"] fn internal_try_get_render_pass (self , render_pass_index : impl :: core :: convert :: Into < i32 >) -> (bool , crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRRenderPass) { unsafe { let __receiver = < XRDisplaySubsystem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRRenderPass > :: uninit () ; let __ret = { __XRDisplaySubsystem_unity2_raw :: internal_try_get_render_pass (__receiver , :: core :: convert :: Into :: into (render_pass_index) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } ; (__ret , __out_0 . assume_init ()) } } # [doc = "`GetCullingParameters(crate::unity_engine::camera::Camera, i32, *mutcrate::unity_engine::rendering::scriptablecullingparameters::ScriptableCullingParameters)` overload"] fn get_culling_parameters (self , camera : impl :: core :: convert :: Into < crate :: unity_engine :: camera :: Camera > , culling_pass_index : impl :: core :: convert :: Into < i32 >) -> crate :: unity_engine :: rendering :: scriptablecullingparameters :: ScriptableCullingParameters { unsafe { let __receiver = < XRDisplaySubsystem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: rendering :: scriptablecullingparameters :: ScriptableCullingParameters > :: uninit () ; __XRDisplaySubsystem_unity2_raw :: get_culling_parameters (__receiver , :: core :: convert :: Into :: into (camera) , :: core :: convert :: Into :: into (culling_pass_index) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) ; __out_0 . assume_init () } } # [doc = "`Internal_TryGetCullingParams(crate::unity_engine::camera::Camera, i32, *mutcrate::unity_engine::rendering::scriptablecullingparameters::ScriptableCullingParameters)` overload"] fn internal_try_get_culling_params (self , camera : impl :: core :: convert :: Into < crate :: unity_engine :: camera :: Camera > , culling_pass_index : impl :: core :: convert :: Into < i32 >) -> (bool , crate :: unity_engine :: rendering :: scriptablecullingparameters :: ScriptableCullingParameters) { unsafe { let __receiver = < XRDisplaySubsystem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: rendering :: scriptablecullingparameters :: ScriptableCullingParameters > :: uninit () ; let __ret = { __XRDisplaySubsystem_unity2_raw :: internal_try_get_culling_params (__receiver , :: core :: convert :: Into :: into (camera) , :: core :: convert :: Into :: into (culling_pass_index) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } ; (__ret , __out_0 . assume_init ()) } } # [doc = "`GetPreferredMirrorBlitMode()` overload"] fn get_preferred_mirror_blit_mode (self ,) -> i32 { unsafe { let __receiver = < XRDisplaySubsystem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __XRDisplaySubsystem_unity2_raw :: get_preferred_mirror_blit_mode (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetMirrorViewBlitDesc(crate::unity_engine::rendertexture::RenderTexture, *mutcrate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRMirrorViewBlitDesc, i32)` overload"] fn get_mirror_view_blit_desc (self , mirror_rt : impl :: core :: convert :: Into < crate :: unity_engine :: rendertexture :: RenderTexture > , mode : impl :: core :: convert :: Into < i32 >) -> (bool , crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRMirrorViewBlitDesc) { unsafe { let __receiver = < XRDisplaySubsystem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRMirrorViewBlitDesc > :: uninit () ; let __ret = { __XRDisplaySubsystem_unity2_raw :: get_mirror_view_blit_desc (__receiver , :: core :: convert :: Into :: into (mirror_rt) , __out_0 . as_mut_ptr () , :: core :: convert :: Into :: into (mode) , :: core :: option :: Option :: None) } ; (__ret , __out_0 . assume_init ()) } } # [doc = "`AddGraphicsThreadMirrorViewBlit(crate::unity_engine::rendering::commandbuffer::CommandBuffer, bool, i32)` overload"] fn add_graphics_thread_mirror_view_blit (self , cmd : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer > , allow_graphics_state_invalidate : impl :: core :: convert :: Into < bool > , mode : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { let __receiver = < XRDisplaySubsystem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __XRDisplaySubsystem_unity2_raw :: add_graphics_thread_mirror_view_blit (__receiver , :: core :: convert :: Into :: into (cmd) , :: core :: convert :: Into :: into (allow_graphics_state_invalidate) , :: core :: convert :: Into :: into (mode) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < XRDisplaySubsystem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __XRDisplaySubsystem_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-xr-xrdisplaysubsystem")]
-impl XRDisplaySubsystem_XRRenderPass {
-    #[doc = "`GetRenderParameter(crate::unity_engine::camera::Camera, i32, *mutcrate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderParameter)` overload"]
-    pub fn get_render_parameter(
-        self,
-        camera: impl ::core::convert::Into<crate::unity_engine::camera::Camera>,
-        render_parameter_index: impl ::core::convert::Into<i32>,
-    ) -> crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderParameter {
-        unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderParameter>::uninit();
-            __XRDisplaySubsystem_XRRenderPass_unity2_raw::get_render_parameter(
-                self,
-                ::core::convert::Into::into(camera),
-                ::core::convert::Into::into(render_parameter_index),
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
-            __out_0.assume_init()
-        }
-    }
-
-    #[doc = "`GetRenderParameterCount()` overload"]
-    pub fn get_render_parameter_count(self) -> i32 {
-        unsafe { __XRDisplaySubsystem_XRRenderPass_unity2_raw::get_render_parameter_count(self, ::core::option::Option::None) }
-    }
-}
+impl < __T : IXRDisplaySubsystem > IXRDisplaySubsystemMethods for __T { }
 
 #[cfg(feature = "unity_engine-xr-xrdisplaysubsystem")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __XRDisplaySubsystem_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke_display_focus_changed {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <XRDisplaySubsystem as ::unity2::ClassIdentity>::class(),
-                "InvokeDisplayFocusChanged",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <XRDisplaySubsystem as ::unity2::ClassIdentity>::NAME,
-                        "InvokeDisplayFocusChanged",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn invoke_display_focus_changed(this: XRDisplaySubsystem, focus: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(XRDisplaySubsystem, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_invoke_display_focus_changed::get_method_info().method_ptr);
-        inner(this, focus, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_scale_of_all_render_targets {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <XRDisplaySubsystem as ::unity2::ClassIdentity>::class(),
-                "set_scaleOfAllRenderTargets",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <XRDisplaySubsystem as ::unity2::ClassIdentity>::NAME,
-                        "set_scaleOfAllRenderTargets",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_scale_of_all_render_targets(this: XRDisplaySubsystem, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(XRDisplaySubsystem, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_scale_of_all_render_targets::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_z_near {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <XRDisplaySubsystem as ::unity2::ClassIdentity>::class(),
-                "set_zNear",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <XRDisplaySubsystem as ::unity2::ClassIdentity>::NAME,
-                        "set_zNear",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_z_near(this: XRDisplaySubsystem, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(XRDisplaySubsystem, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_z_near::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_z_far {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <XRDisplaySubsystem as ::unity2::ClassIdentity>::class(),
-                "set_zFar",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <XRDisplaySubsystem as ::unity2::ClassIdentity>::NAME,
-                        "set_zFar",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_z_far(this: XRDisplaySubsystem, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(XRDisplaySubsystem, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_z_far::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_s_rgb {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <XRDisplaySubsystem as ::unity2::ClassIdentity>::class(),
-                "set_sRGB",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <XRDisplaySubsystem as ::unity2::ClassIdentity>::NAME,
-                        "set_sRGB",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_s_rgb(this: XRDisplaySubsystem, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(XRDisplaySubsystem, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_s_rgb::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_texture_layout {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_TextureLayout as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <XRDisplaySubsystem as ::unity2::ClassIdentity>::class(),
-                "set_textureLayout",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <XRDisplaySubsystem as ::unity2::ClassIdentity>::NAME,
-                        "set_textureLayout",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_texture_layout(
-        this: XRDisplaySubsystem,
-        value: crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_TextureLayout,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            XRDisplaySubsystem,
-            crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_TextureLayout,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_set_texture_layout::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_msaa_level {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <XRDisplaySubsystem as ::unity2::ClassIdentity>::class(),
-                "SetMSAALevel",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <XRDisplaySubsystem as ::unity2::ClassIdentity>::NAME,
-                        "SetMSAALevel",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_msaa_level(this: XRDisplaySubsystem, level: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(XRDisplaySubsystem, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_msaa_level::get_method_info().method_ptr);
-        inner(this, level, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_disable_legacy_renderer {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <XRDisplaySubsystem as ::unity2::ClassIdentity>::class(),
-                "set_disableLegacyRenderer",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <XRDisplaySubsystem as ::unity2::ClassIdentity>::NAME,
-                        "set_disableLegacyRenderer",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_disable_legacy_renderer(this: XRDisplaySubsystem, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(XRDisplaySubsystem, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_disable_legacy_renderer::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_render_pass_count {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <XRDisplaySubsystem as ::unity2::ClassIdentity>::class(),
-                "GetRenderPassCount",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <XRDisplaySubsystem as ::unity2::ClassIdentity>::NAME,
-                        "GetRenderPassCount",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_render_pass_count(this: XRDisplaySubsystem, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(XRDisplaySubsystem, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_render_pass_count::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_render_pass {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderPass as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <XRDisplaySubsystem as ::unity2::ClassIdentity>::class(),
-                "GetRenderPass",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <XRDisplaySubsystem as ::unity2::ClassIdentity>::NAME,
-                        "GetRenderPass",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_render_pass(
-        this: XRDisplaySubsystem,
-        render_pass_index: i32,
-        render_pass: *mut crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderPass,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            XRDisplaySubsystem,
-            i32,
-            *mut crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderPass,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_get_render_pass::get_method_info().method_ptr);
-        inner(this, render_pass_index, render_pass, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_internal_try_get_render_pass {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderPass as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <XRDisplaySubsystem as ::unity2::ClassIdentity>::class(),
-                "Internal_TryGetRenderPass",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <XRDisplaySubsystem as ::unity2::ClassIdentity>::NAME,
-                        "Internal_TryGetRenderPass",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn internal_try_get_render_pass(
-        this: XRDisplaySubsystem,
-        render_pass_index: i32,
-        render_pass: *mut crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderPass,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            XRDisplaySubsystem,
-            i32,
-            *mut crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderPass,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(__lookup_internal_try_get_render_pass::get_method_info().method_ptr);
-        inner(this, render_pass_index, render_pass, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_culling_parameters {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::camera::Camera as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::rendering::scriptablecullingparameters::ScriptableCullingParameters as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <XRDisplaySubsystem as ::unity2::ClassIdentity>::class(),
-                "GetCullingParameters",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <XRDisplaySubsystem as ::unity2::ClassIdentity>::NAME,
-                        "GetCullingParameters",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_culling_parameters(
-        this: XRDisplaySubsystem,
-        camera: crate::unity_engine::camera::Camera,
-        culling_pass_index: i32,
-        scriptable_culling_parameters: *mut crate::unity_engine::rendering::scriptablecullingparameters::ScriptableCullingParameters,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            XRDisplaySubsystem,
-            crate::unity_engine::camera::Camera,
-            i32,
-            *mut crate::unity_engine::rendering::scriptablecullingparameters::ScriptableCullingParameters,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_get_culling_parameters::get_method_info().method_ptr);
-        inner(this, camera, culling_pass_index, scriptable_culling_parameters, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_internal_try_get_culling_params {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::camera::Camera as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::rendering::scriptablecullingparameters::ScriptableCullingParameters as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <XRDisplaySubsystem as ::unity2::ClassIdentity>::class(),
-                "Internal_TryGetCullingParams",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <XRDisplaySubsystem as ::unity2::ClassIdentity>::NAME,
-                        "Internal_TryGetCullingParams",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn internal_try_get_culling_params(
-        this: XRDisplaySubsystem,
-        camera: crate::unity_engine::camera::Camera,
-        culling_pass_index: i32,
-        scriptable_culling_parameters: *mut crate::unity_engine::rendering::scriptablecullingparameters::ScriptableCullingParameters,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            XRDisplaySubsystem,
-            crate::unity_engine::camera::Camera,
-            i32,
-            *mut crate::unity_engine::rendering::scriptablecullingparameters::ScriptableCullingParameters,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(__lookup_internal_try_get_culling_params::get_method_info().method_ptr);
-        inner(this, camera, culling_pass_index, scriptable_culling_parameters, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_preferred_mirror_blit_mode {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <XRDisplaySubsystem as ::unity2::ClassIdentity>::class(),
-                "GetPreferredMirrorBlitMode",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <XRDisplaySubsystem as ::unity2::ClassIdentity>::NAME,
-                        "GetPreferredMirrorBlitMode",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_preferred_mirror_blit_mode(this: XRDisplaySubsystem, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(XRDisplaySubsystem, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_preferred_mirror_blit_mode::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_mirror_view_blit_desc {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::rendertexture::RenderTexture as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRMirrorViewBlitDesc as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <XRDisplaySubsystem as ::unity2::ClassIdentity>::class(),
-                "GetMirrorViewBlitDesc",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <XRDisplaySubsystem as ::unity2::ClassIdentity>::NAME,
-                        "GetMirrorViewBlitDesc",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_mirror_view_blit_desc(
-        this: XRDisplaySubsystem,
-        mirror_rt: crate::unity_engine::rendertexture::RenderTexture,
-        out_desc: *mut crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRMirrorViewBlitDesc,
-        mode: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            XRDisplaySubsystem,
-            crate::unity_engine::rendertexture::RenderTexture,
-            *mut crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRMirrorViewBlitDesc,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(__lookup_get_mirror_view_blit_desc::get_method_info().method_ptr);
-        inner(this, mirror_rt, out_desc, mode, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_graphics_thread_mirror_view_blit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::rendering::commandbuffer::CommandBuffer as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <XRDisplaySubsystem as ::unity2::ClassIdentity>::class(),
-                "AddGraphicsThreadMirrorViewBlit",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <XRDisplaySubsystem as ::unity2::ClassIdentity>::NAME,
-                        "AddGraphicsThreadMirrorViewBlit",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_graphics_thread_mirror_view_blit(
-        this: XRDisplaySubsystem,
-        cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
-        allow_graphics_state_invalidate: bool,
-        mode: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            XRDisplaySubsystem,
-            crate::unity_engine::rendering::commandbuffer::CommandBuffer,
-            bool,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(__lookup_add_graphics_thread_mirror_view_blit::get_method_info().method_ptr);
-        inner(this, cmd, allow_graphics_state_invalidate, mode, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <XRDisplaySubsystem as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <XRDisplaySubsystem as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: XRDisplaySubsystem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(XRDisplaySubsystem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "unity_engine-xr-xrdisplaysubsystem")]
-pub trait IXRDisplaySubsystemMethods: IXRDisplaySubsystem {
-    #[doc = "`InvokeDisplayFocusChanged(bool)` overload"]
-    fn invoke_display_focus_changed(self, focus: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver = <XRDisplaySubsystem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __XRDisplaySubsystem_unity2_raw::invoke_display_focus_changed(
-                __receiver,
-                ::core::convert::Into::into(focus),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`set_scaleOfAllRenderTargets(f32)` overload"]
-    fn set_scale_of_all_render_targets(self, value: impl ::core::convert::Into<f32>) -> () {
-        unsafe {
-            let __receiver = <XRDisplaySubsystem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __XRDisplaySubsystem_unity2_raw::set_scale_of_all_render_targets(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`set_zNear(f32)` overload"]
-    fn set_z_near(self, value: impl ::core::convert::Into<f32>) -> () {
-        unsafe {
-            let __receiver = <XRDisplaySubsystem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __XRDisplaySubsystem_unity2_raw::set_z_near(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_zFar(f32)` overload"]
-    fn set_z_far(self, value: impl ::core::convert::Into<f32>) -> () {
-        unsafe {
-            let __receiver = <XRDisplaySubsystem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __XRDisplaySubsystem_unity2_raw::set_z_far(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_sRGB(bool)` overload"]
-    fn set_s_rgb(self, value: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver = <XRDisplaySubsystem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __XRDisplaySubsystem_unity2_raw::set_s_rgb(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_textureLayout(crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_TextureLayout)` overload"]
-    fn set_texture_layout(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_TextureLayout>,
-    ) -> () {
-        unsafe {
-            let __receiver = <XRDisplaySubsystem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __XRDisplaySubsystem_unity2_raw::set_texture_layout(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetMSAALevel(i32)` overload"]
-    fn set_msaa_level(self, level: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver = <XRDisplaySubsystem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __XRDisplaySubsystem_unity2_raw::set_msaa_level(__receiver, ::core::convert::Into::into(level), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_disableLegacyRenderer(bool)` overload"]
-    fn set_disable_legacy_renderer(self, value: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver = <XRDisplaySubsystem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __XRDisplaySubsystem_unity2_raw::set_disable_legacy_renderer(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetRenderPassCount()` overload"]
-    fn get_render_pass_count(self) -> i32 {
-        unsafe {
-            let __receiver = <XRDisplaySubsystem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __XRDisplaySubsystem_unity2_raw::get_render_pass_count(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetRenderPass(i32, *mutcrate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderPass)` overload"]
-    fn get_render_pass(
-        self,
-        render_pass_index: impl ::core::convert::Into<i32>,
-    ) -> crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderPass {
-        unsafe {
-            let __receiver = <XRDisplaySubsystem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderPass>::uninit();
-            __XRDisplaySubsystem_unity2_raw::get_render_pass(
-                __receiver,
-                ::core::convert::Into::into(render_pass_index),
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
-            __out_0.assume_init()
-        }
-    }
-    #[doc = "`Internal_TryGetRenderPass(i32, *mutcrate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderPass)` overload"]
-    fn internal_try_get_render_pass(
-        self,
-        render_pass_index: impl ::core::convert::Into<i32>,
-    ) -> (bool, crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderPass) {
-        unsafe {
-            let __receiver = <XRDisplaySubsystem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderPass>::uninit();
-            let __ret = {
-                __XRDisplaySubsystem_unity2_raw::internal_try_get_render_pass(
-                    __receiver,
-                    ::core::convert::Into::into(render_pass_index),
-                    __out_0.as_mut_ptr(),
-                    ::core::option::Option::None,
-                )
-            };
-            (__ret, __out_0.assume_init())
-        }
-    }
-    #[doc = "`GetCullingParameters(crate::unity_engine::camera::Camera, i32, *mutcrate::unity_engine::rendering::scriptablecullingparameters::ScriptableCullingParameters)` overload"]
-    fn get_culling_parameters(
-        self,
-        camera: impl ::core::convert::Into<crate::unity_engine::camera::Camera>,
-        culling_pass_index: impl ::core::convert::Into<i32>,
-    ) -> crate::unity_engine::rendering::scriptablecullingparameters::ScriptableCullingParameters {
-        unsafe {
-            let __receiver = <XRDisplaySubsystem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::rendering::scriptablecullingparameters::ScriptableCullingParameters>::uninit();
-            __XRDisplaySubsystem_unity2_raw::get_culling_parameters(
-                __receiver,
-                ::core::convert::Into::into(camera),
-                ::core::convert::Into::into(culling_pass_index),
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
-            __out_0.assume_init()
-        }
-    }
-    #[doc = "`Internal_TryGetCullingParams(crate::unity_engine::camera::Camera, i32, *mutcrate::unity_engine::rendering::scriptablecullingparameters::ScriptableCullingParameters)` overload"]
-    fn internal_try_get_culling_params(
-        self,
-        camera: impl ::core::convert::Into<crate::unity_engine::camera::Camera>,
-        culling_pass_index: impl ::core::convert::Into<i32>,
-    ) -> (
-        bool,
-        crate::unity_engine::rendering::scriptablecullingparameters::ScriptableCullingParameters,
-    ) {
-        unsafe {
-            let __receiver = <XRDisplaySubsystem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::rendering::scriptablecullingparameters::ScriptableCullingParameters>::uninit();
-            let __ret = {
-                __XRDisplaySubsystem_unity2_raw::internal_try_get_culling_params(
-                    __receiver,
-                    ::core::convert::Into::into(camera),
-                    ::core::convert::Into::into(culling_pass_index),
-                    __out_0.as_mut_ptr(),
-                    ::core::option::Option::None,
-                )
-            };
-            (__ret, __out_0.assume_init())
-        }
-    }
-    #[doc = "`GetPreferredMirrorBlitMode()` overload"]
-    fn get_preferred_mirror_blit_mode(self) -> i32 {
-        unsafe {
-            let __receiver = <XRDisplaySubsystem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __XRDisplaySubsystem_unity2_raw::get_preferred_mirror_blit_mode(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetMirrorViewBlitDesc(crate::unity_engine::rendertexture::RenderTexture, *mutcrate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRMirrorViewBlitDesc, i32)` overload"]
-    fn get_mirror_view_blit_desc(
-        self,
-        mirror_rt: impl ::core::convert::Into<crate::unity_engine::rendertexture::RenderTexture>,
-        mode: impl ::core::convert::Into<i32>,
-    ) -> (bool, crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRMirrorViewBlitDesc) {
-        unsafe {
-            let __receiver = <XRDisplaySubsystem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRMirrorViewBlitDesc>::uninit();
-            let __ret = {
-                __XRDisplaySubsystem_unity2_raw::get_mirror_view_blit_desc(
-                    __receiver,
-                    ::core::convert::Into::into(mirror_rt),
-                    __out_0.as_mut_ptr(),
-                    ::core::convert::Into::into(mode),
-                    ::core::option::Option::None,
-                )
-            };
-            (__ret, __out_0.assume_init())
-        }
-    }
-    #[doc = "`AddGraphicsThreadMirrorViewBlit(crate::unity_engine::rendering::commandbuffer::CommandBuffer, bool, i32)` overload"]
-    fn add_graphics_thread_mirror_view_blit(
-        self,
-        cmd: impl ::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>,
-        allow_graphics_state_invalidate: impl ::core::convert::Into<bool>,
-        mode: impl ::core::convert::Into<i32>,
-    ) -> bool {
-        unsafe {
-            let __receiver = <XRDisplaySubsystem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __XRDisplaySubsystem_unity2_raw::add_graphics_thread_mirror_view_blit(
-                __receiver,
-                ::core::convert::Into::into(cmd),
-                ::core::convert::Into::into(allow_graphics_state_invalidate),
-                ::core::convert::Into::into(mode),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <XRDisplaySubsystem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __XRDisplaySubsystem_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-xr-xrdisplaysubsystem")]
-impl<__T: IXRDisplaySubsystem> IXRDisplaySubsystemMethods for __T {}
+impl XRDisplaySubsystem { pub fn invoke_display_focus_changed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __XRDisplaySubsystem_unity2_raw :: __lookup_invoke_display_focus_changed :: get_method_info () } pub fn set_scale_of_all_render_targets_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __XRDisplaySubsystem_unity2_raw :: __lookup_set_scale_of_all_render_targets :: get_method_info () } pub fn set_z_near_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __XRDisplaySubsystem_unity2_raw :: __lookup_set_z_near :: get_method_info () } pub fn set_z_far_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __XRDisplaySubsystem_unity2_raw :: __lookup_set_z_far :: get_method_info () } pub fn set_s_rgb_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __XRDisplaySubsystem_unity2_raw :: __lookup_set_s_rgb :: get_method_info () } pub fn set_texture_layout_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __XRDisplaySubsystem_unity2_raw :: __lookup_set_texture_layout :: get_method_info () } pub fn set_msaa_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __XRDisplaySubsystem_unity2_raw :: __lookup_set_msaa_level :: get_method_info () } pub fn set_disable_legacy_renderer_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __XRDisplaySubsystem_unity2_raw :: __lookup_set_disable_legacy_renderer :: get_method_info () } pub fn get_render_pass_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __XRDisplaySubsystem_unity2_raw :: __lookup_get_render_pass_count :: get_method_info () } pub fn get_render_pass_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __XRDisplaySubsystem_unity2_raw :: __lookup_get_render_pass :: get_method_info () } pub fn internal_try_get_render_pass_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __XRDisplaySubsystem_unity2_raw :: __lookup_internal_try_get_render_pass :: get_method_info () } pub fn get_culling_parameters_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __XRDisplaySubsystem_unity2_raw :: __lookup_get_culling_parameters :: get_method_info () } pub fn internal_try_get_culling_params_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __XRDisplaySubsystem_unity2_raw :: __lookup_internal_try_get_culling_params :: get_method_info () } pub fn get_preferred_mirror_blit_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __XRDisplaySubsystem_unity2_raw :: __lookup_get_preferred_mirror_blit_mode :: get_method_info () } pub fn get_mirror_view_blit_desc_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __XRDisplaySubsystem_unity2_raw :: __lookup_get_mirror_view_blit_desc :: get_method_info () } pub fn add_graphics_thread_mirror_view_blit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __XRDisplaySubsystem_unity2_raw :: __lookup_add_graphics_thread_mirror_view_blit :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __XRDisplaySubsystem_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-xr-xrdisplaysubsystem")]
 impl XRDisplaySubsystem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(XRDisplaySubsystem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IXRDisplaySubsystemMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (XRDisplaySubsystem) , :: core :: stringify ! (new) ,)) ; < Self as IXRDisplaySubsystemMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "unity_engine-xr-xrdisplaysubsystem")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __XRDisplaySubsystem_XRMirrorViewBlitDesc_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_blit_parameter {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRBlitParams as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <XRDisplaySubsystem_XRMirrorViewBlitDesc as ::unity2::ClassIdentity>::class(),
-                "GetBlitParameter",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <XRDisplaySubsystem_XRMirrorViewBlitDesc as ::unity2::ClassIdentity>::NAME,
-                        "GetBlitParameter",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_blit_parameter(
-        this: XRDisplaySubsystem_XRMirrorViewBlitDesc,
-        blit_parameter_index: i32,
-        blit_parameter: *mut crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRBlitParams,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            XRDisplaySubsystem_XRMirrorViewBlitDesc,
-            i32,
-            *mut crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRBlitParams,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_get_blit_parameter::get_method_info().method_ptr);
-        inner(this, blit_parameter_index, blit_parameter, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_blit_parameter_injected {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRMirrorViewBlitDesc as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRBlitParams as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <XRDisplaySubsystem_XRMirrorViewBlitDesc as ::unity2::ClassIdentity>::class(),
-                "GetBlitParameter_Injected",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <XRDisplaySubsystem_XRMirrorViewBlitDesc as ::unity2::ClassIdentity>::NAME,
-                        "GetBlitParameter_Injected",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_blit_parameter_injected(
-        unity_self: *mut crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRMirrorViewBlitDesc,
-        blit_parameter_index: i32,
-        blit_parameter: *mut crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRBlitParams,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            *mut crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRMirrorViewBlitDesc,
-            i32,
-            *mut crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRBlitParams,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_get_blit_parameter_injected::get_method_info().method_ptr);
-        inner(unity_self, blit_parameter_index, blit_parameter, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __XRDisplaySubsystem_XRRenderPass_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_render_parameter { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: camera :: Camera as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRRenderParameter as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< XRDisplaySubsystem_XRRenderPass as :: unity2 :: ClassIdentity > :: class () , "GetRenderParameter" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < XRDisplaySubsystem_XRRenderPass as :: unity2 :: ClassIdentity > :: NAME , "GetRenderParameter" , e) , } } } pub unsafe fn get_render_parameter (this : XRDisplaySubsystem_XRRenderPass , camera : crate :: unity_engine :: camera :: Camera , render_parameter_index : i32 , render_parameter : * mut crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRRenderParameter , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (XRDisplaySubsystem_XRRenderPass , crate :: unity_engine :: camera :: Camera , i32 , * mut crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRRenderParameter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_get_render_parameter :: get_method_info () . method_ptr ,) ; inner (this , camera , render_parameter_index , render_parameter , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_render_parameter_count { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< XRDisplaySubsystem_XRRenderPass as :: unity2 :: ClassIdentity > :: class () , "GetRenderParameterCount" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < XRDisplaySubsystem_XRRenderPass as :: unity2 :: ClassIdentity > :: NAME , "GetRenderParameterCount" , e) , } } } pub unsafe fn get_render_parameter_count (this : XRDisplaySubsystem_XRRenderPass , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (XRDisplaySubsystem_XRRenderPass , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_render_parameter_count :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_render_parameter_injected { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRRenderPass as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: camera :: Camera as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRRenderParameter as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< XRDisplaySubsystem_XRRenderPass as :: unity2 :: ClassIdentity > :: class () , "GetRenderParameter_Injected" , 4 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < XRDisplaySubsystem_XRRenderPass as :: unity2 :: ClassIdentity > :: NAME , "GetRenderParameter_Injected" , e) , } } } pub unsafe fn get_render_parameter_injected (unity_self : * mut crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRRenderPass , camera : crate :: unity_engine :: camera :: Camera , render_parameter_index : i32 , render_parameter : * mut crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRRenderParameter , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (* mut crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRRenderPass , crate :: unity_engine :: camera :: Camera , i32 , * mut crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRRenderParameter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_get_render_parameter_injected :: get_method_info () . method_ptr ,) ; inner (unity_self , camera , render_parameter_index , render_parameter , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_render_parameter_count_injected { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRRenderPass as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< XRDisplaySubsystem_XRRenderPass as :: unity2 :: ClassIdentity > :: class () , "GetRenderParameterCount_Injected" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < XRDisplaySubsystem_XRRenderPass as :: unity2 :: ClassIdentity > :: NAME , "GetRenderParameterCount_Injected" , e) , } } } pub unsafe fn get_render_parameter_count_injected (unity_self : * mut crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRRenderPass , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (* mut crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRRenderPass , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_render_parameter_count_injected :: get_method_info () . method_ptr ,) ; inner (unity_self , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-xr-xrdisplaysubsystem")]
-impl XRDisplaySubsystem_XRMirrorViewBlitDesc {
-    #[doc = "`GetBlitParameter_Injected(*mutcrate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRMirrorViewBlitDesc, i32, *mutcrate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRBlitParams)` overload"]
-    pub fn get_blit_parameter_injected(
-        blit_parameter_index: impl ::core::convert::Into<i32>,
-    ) -> (
-        crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRMirrorViewBlitDesc,
-        crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRBlitParams,
-    ) {
-        unsafe {
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRMirrorViewBlitDesc>::uninit();
-            let mut __out_1 = ::core::mem::MaybeUninit::<crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRBlitParams>::uninit();
-            __XRDisplaySubsystem_XRMirrorViewBlitDesc_unity2_raw::get_blit_parameter_injected(
-                __out_0.as_mut_ptr(),
-                ::core::convert::Into::into(blit_parameter_index),
-                __out_1.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
-            (__out_0.assume_init(), __out_1.assume_init())
-        }
-    }
-}
+impl XRDisplaySubsystem_XRRenderPass { # [doc = "`GetRenderParameter_Injected(*mutcrate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderPass, crate::unity_engine::camera::Camera, i32, *mutcrate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderParameter)` overload"] pub fn get_render_parameter_injected (camera : impl :: core :: convert :: Into < crate :: unity_engine :: camera :: Camera > , render_parameter_index : impl :: core :: convert :: Into < i32 >) -> (crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRRenderPass , crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRRenderParameter) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRRenderPass > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRRenderParameter > :: uninit () ; __XRDisplaySubsystem_XRRenderPass_unity2_raw :: get_render_parameter_injected (__out_0 . as_mut_ptr () , :: core :: convert :: Into :: into (camera) , :: core :: convert :: Into :: into (render_parameter_index) , __out_1 . as_mut_ptr () , :: core :: option :: Option :: None) ; (__out_0 . assume_init () , __out_1 . assume_init ()) } } # [doc = "`GetRenderParameterCount_Injected(*mutcrate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderPass)` overload"] pub fn get_render_parameter_count_injected () -> (i32 , crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRRenderPass) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRRenderPass > :: uninit () ; let __ret = { __XRDisplaySubsystem_XRRenderPass_unity2_raw :: get_render_parameter_count_injected (__out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } ; (__ret , __out_0 . assume_init ()) } } }
 
 #[cfg(feature = "unity_engine-xr-xrdisplaysubsystem")]
-impl XRDisplaySubsystem_XRMirrorViewBlitDesc {
-    #[doc = "`GetBlitParameter(i32, *mutcrate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRBlitParams)` overload"]
-    pub fn get_blit_parameter(
-        self,
-        blit_parameter_index: impl ::core::convert::Into<i32>,
-    ) -> crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRBlitParams {
-        unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRBlitParams>::uninit();
-            __XRDisplaySubsystem_XRMirrorViewBlitDesc_unity2_raw::get_blit_parameter(
-                self,
-                ::core::convert::Into::into(blit_parameter_index),
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
-            __out_0.assume_init()
-        }
-    }
-}
+impl XRDisplaySubsystem_XRRenderPass { # [doc = "`GetRenderParameter(crate::unity_engine::camera::Camera, i32, *mutcrate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderParameter)` overload"] pub fn get_render_parameter (self , camera : impl :: core :: convert :: Into < crate :: unity_engine :: camera :: Camera > , render_parameter_index : impl :: core :: convert :: Into < i32 >) -> crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRRenderParameter { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRRenderParameter > :: uninit () ; __XRDisplaySubsystem_XRRenderPass_unity2_raw :: get_render_parameter (self , :: core :: convert :: Into :: into (camera) , :: core :: convert :: Into :: into (render_parameter_index) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) ; __out_0 . assume_init () } } # [doc = "`GetRenderParameterCount()` overload"] pub fn get_render_parameter_count (self ,) -> i32 { unsafe { __XRDisplaySubsystem_XRRenderPass_unity2_raw :: get_render_parameter_count (self , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-xr-xrdisplaysubsystem")]
+impl XRDisplaySubsystem_XRRenderPass { pub fn get_render_parameter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __XRDisplaySubsystem_XRRenderPass_unity2_raw :: __lookup_get_render_parameter :: get_method_info () } pub fn get_render_parameter_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __XRDisplaySubsystem_XRRenderPass_unity2_raw :: __lookup_get_render_parameter_count :: get_method_info () } pub fn get_render_parameter_injected_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __XRDisplaySubsystem_XRRenderPass_unity2_raw :: __lookup_get_render_parameter_injected :: get_method_info () } pub fn get_render_parameter_count_injected_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __XRDisplaySubsystem_XRRenderPass_unity2_raw :: __lookup_get_render_parameter_count_injected :: get_method_info () } }
+
+#[cfg(feature = "unity_engine-xr-xrdisplaysubsystem")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __XRDisplaySubsystem_XRMirrorViewBlitDesc_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_blit_parameter { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRBlitParams as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< XRDisplaySubsystem_XRMirrorViewBlitDesc as :: unity2 :: ClassIdentity > :: class () , "GetBlitParameter" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < XRDisplaySubsystem_XRMirrorViewBlitDesc as :: unity2 :: ClassIdentity > :: NAME , "GetBlitParameter" , e) , } } } pub unsafe fn get_blit_parameter (this : XRDisplaySubsystem_XRMirrorViewBlitDesc , blit_parameter_index : i32 , blit_parameter : * mut crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRBlitParams , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (XRDisplaySubsystem_XRMirrorViewBlitDesc , i32 , * mut crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRBlitParams , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_get_blit_parameter :: get_method_info () . method_ptr ,) ; inner (this , blit_parameter_index , blit_parameter , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_blit_parameter_injected { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRMirrorViewBlitDesc as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRBlitParams as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< XRDisplaySubsystem_XRMirrorViewBlitDesc as :: unity2 :: ClassIdentity > :: class () , "GetBlitParameter_Injected" , 3 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < XRDisplaySubsystem_XRMirrorViewBlitDesc as :: unity2 :: ClassIdentity > :: NAME , "GetBlitParameter_Injected" , e) , } } } pub unsafe fn get_blit_parameter_injected (unity_self : * mut crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRMirrorViewBlitDesc , blit_parameter_index : i32 , blit_parameter : * mut crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRBlitParams , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (* mut crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRMirrorViewBlitDesc , i32 , * mut crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRBlitParams , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_get_blit_parameter_injected :: get_method_info () . method_ptr ,) ; inner (unity_self , blit_parameter_index , blit_parameter , __unity2_method_info) } }
+
+#[cfg(feature = "unity_engine-xr-xrdisplaysubsystem")]
+impl XRDisplaySubsystem_XRMirrorViewBlitDesc { # [doc = "`GetBlitParameter_Injected(*mutcrate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRMirrorViewBlitDesc, i32, *mutcrate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRBlitParams)` overload"] pub fn get_blit_parameter_injected (blit_parameter_index : impl :: core :: convert :: Into < i32 >) -> (crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRMirrorViewBlitDesc , crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRBlitParams) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRMirrorViewBlitDesc > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRBlitParams > :: uninit () ; __XRDisplaySubsystem_XRMirrorViewBlitDesc_unity2_raw :: get_blit_parameter_injected (__out_0 . as_mut_ptr () , :: core :: convert :: Into :: into (blit_parameter_index) , __out_1 . as_mut_ptr () , :: core :: option :: Option :: None) ; (__out_0 . assume_init () , __out_1 . assume_init ()) } } }
+
+#[cfg(feature = "unity_engine-xr-xrdisplaysubsystem")]
+impl XRDisplaySubsystem_XRMirrorViewBlitDesc { # [doc = "`GetBlitParameter(i32, *mutcrate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRBlitParams)` overload"] pub fn get_blit_parameter (self , blit_parameter_index : impl :: core :: convert :: Into < i32 >) -> crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRBlitParams { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRBlitParams > :: uninit () ; __XRDisplaySubsystem_XRMirrorViewBlitDesc_unity2_raw :: get_blit_parameter (self , :: core :: convert :: Into :: into (blit_parameter_index) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) ; __out_0 . assume_init () } } }
+
+#[cfg(feature = "unity_engine-xr-xrdisplaysubsystem")]
+impl XRDisplaySubsystem_XRMirrorViewBlitDesc { pub fn get_blit_parameter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __XRDisplaySubsystem_XRMirrorViewBlitDesc_unity2_raw :: __lookup_get_blit_parameter :: get_method_info () } pub fn get_blit_parameter_injected_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __XRDisplaySubsystem_XRMirrorViewBlitDesc_unity2_raw :: __lookup_get_blit_parameter_injected :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-xr-xrdisplaysubsystem")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{
-        IXRDisplaySubsystem, IXRDisplaySubsystemMethods, XRDisplaySubsystem, XRDisplaySubsystem_TextureLayout, XRDisplaySubsystem_XRBlitParams,
-        XRDisplaySubsystem_XRMirrorViewBlitDesc, XRDisplaySubsystem_XRRenderParameter, XRDisplaySubsystem_XRRenderPass,
-    };
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    #[cfg(feature = "unity_engine-integratedsubsystem")]
-    pub use crate::unity_engine::integratedsubsystem::IIntegratedSubsystemMethods;
-    #[cfg(feature = "unity_engine-integratedsubsystem_1")]
-    pub use crate::unity_engine::integratedsubsystem_1::IIntegratedSubsystem_1Methods;
-    pub use crate::{
-        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
-        unity_engine::{
-            integratedsubsystem::{IIntegratedSubsystem, IntegratedSubsystem},
-            integratedsubsystem_1::{IIntegratedSubsystem_1, IntegratedSubsystem_1},
-        },
-    };
+    pub use super::XRDisplaySubsystem;
+    pub use super::IXRDisplaySubsystem;
+    pub use super::IXRDisplaySubsystemMethods;
+    pub use super::XRDisplaySubsystem_XRRenderPass;
+    pub use super::XRDisplaySubsystem_XRBlitParams;
+    pub use super::XRDisplaySubsystem_TextureLayout;
+    pub use super::XRDisplaySubsystem_XRRenderParameter;
+    pub use super::XRDisplaySubsystem_XRMirrorViewBlitDesc;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    pub use crate::unity_engine::integratedsubsystem::IIntegratedSubsystem;
+    pub use crate::unity_engine::integratedsubsystem::IntegratedSubsystem;
+    pub use crate::unity_engine::integratedsubsystem_1::IIntegratedSubsystem_1;
+    pub use crate::unity_engine::integratedsubsystem_1::IntegratedSubsystem_1;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
+    #[cfg(feature = "unity_engine-integratedsubsystem")] pub use crate::unity_engine::integratedsubsystem::IIntegratedSubsystemMethods;
+    #[cfg(feature = "unity_engine-integratedsubsystem_1")] pub use crate::unity_engine::integratedsubsystem_1::IIntegratedSubsystem_1Methods;
 }

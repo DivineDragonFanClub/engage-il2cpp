@@ -2,1020 +2,146 @@
 
 #[cfg(feature = "unity_engine-ui-aspectratiofitter-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::{
-            object::{IObject, Object},
-            r#enum::{Enum, IEnum},
-            valuetype::{IValueType, ValueType},
-        },
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            event_systems::uibehaviour::{IUIBehaviour, UIBehaviour},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/aspectratiofitter/AspectRatioFitter_AspectMode.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct AspectRatioFitter_AspectMode {
-        pub value: i32,
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: event_systems :: uibehaviour :: { IUIBehaviour , UIBehaviour }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/aspectratiofitter/AspectRatioFitter_AspectMode.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct AspectRatioFitter_AspectMode  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for AspectRatioFitter_AspectMode  {
+    const NAMESPACE: &'static str = "UnityEngine.UI";
+
+    const NAME: &'static str = "AspectRatioFitter.AspectMode";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    impl ::unity2::ClassIdentity for AspectRatioFitter_AspectMode {
-        const NAME: &'static str = "AspectRatioFitter.AspectMode";
-        const NAMESPACE: &'static str = "UnityEngine.UI";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  ::unity2::IlType for AspectRatioFitter_AspectMode  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::IlType for AspectRatioFitter_AspectMode {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  AspectRatioFitter_AspectMode  {
+    pub fn none() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl AspectRatioFitter_AspectMode {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn width_controls_height() -> Self {
-            Self { value: 1 }
-        }
+    pub fn width_controls_height() -> Self {
+        Self { value: 1 }
 
-        pub fn height_controls_width() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn fit_in_parent() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn envelope_parent() -> Self {
-            Self { value: 4 }
-        }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/aspectratiofitter/AspectRatioFitter.md"))]
-    #[::unity2::class(namespace = "UnityEngine.UI", name = "AspectRatioFitter")]
-    #[parent(crate::unity_engine::event_systems::uibehaviour::UIBehaviour)]
-    pub struct AspectRatioFitter {
-        #[offset(24)]
-        #[rename(name = "m_AspectMode")]
-        pub m_aspect_mode: crate::unity_engine::ui::aspectratiofitter::AspectRatioFitter_AspectMode,
-        #[offset(28)]
-        #[rename(name = "m_AspectRatio")]
-        pub m_aspect_ratio: f32,
-        #[offset(32)]
-        #[rename(name = "m_Rect")]
-        pub m_rect: crate::unity_engine::recttransform::RectTransform,
-        #[offset(40)]
-        #[rename(name = "m_DelayedSetDirty")]
-        pub m_delayed_set_dirty: bool,
-        #[offset(41)]
-        #[rename(name = "m_DoesParentExist")]
-        pub m_does_parent_exist: bool,
-        #[offset(42)]
-        #[rename(name = "m_Tracker")]
-        pub m_tracker: crate::unity_engine::drivenrecttransformtracker::DrivenRectTransformTracker,
+
+    pub fn height_controls_width() -> Self {
+        Self { value: 2 }
+
     }
+
+
+    pub fn fit_in_parent() -> Self {
+        Self { value: 3 }
+
+    }
+
+
+    pub fn envelope_parent() -> Self {
+        Self { value: 4 }
+
+    }
+
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/aspectratiofitter/AspectRatioFitter.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "AspectRatioFitter")] # [parent (crate :: unity_engine :: event_systems :: uibehaviour :: UIBehaviour)] pub struct AspectRatioFitter {
+# [offset (24)] # [rename (name = "m_AspectMode")] pub m_aspect_mode : crate :: unity_engine :: ui :: aspectratiofitter :: AspectRatioFitter_AspectMode ,
+# [offset (28)] # [rename (name = "m_AspectRatio")] pub m_aspect_ratio : f32 ,
+# [offset (32)] # [rename (name = "m_Rect")] pub m_rect : crate :: unity_engine :: recttransform :: RectTransform ,
+# [offset (40)] # [rename (name = "m_DelayedSetDirty")] pub m_delayed_set_dirty : bool ,
+# [offset (41)] # [rename (name = "m_DoesParentExist")] pub m_does_parent_exist : bool ,
+# [offset (42)] # [rename (name = "m_Tracker")] pub m_tracker : crate :: unity_engine :: drivenrecttransformtracker :: DrivenRectTransformTracker ,
+}
+
 }
 
 #[cfg(feature = "unity_engine-ui-aspectratiofitter-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-ui-aspectratiofitter")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AspectRatioFitter_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_aspect_mode {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AspectRatioFitter as ::unity2::ClassIdentity>::class(),
-                "get_aspectMode",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AspectRatioFitter as ::unity2::ClassIdentity>::NAME,
-                        "get_aspectMode",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_aspect_mode(
-        this: AspectRatioFitter,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::ui::aspectratiofitter::AspectRatioFitter_AspectMode {
-        let inner: extern "C" fn(
-            AspectRatioFitter,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::ui::aspectratiofitter::AspectRatioFitter_AspectMode =
-            ::core::mem::transmute(__lookup_get_aspect_mode::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_aspect_mode {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::ui::aspectratiofitter::AspectRatioFitter_AspectMode as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AspectRatioFitter as ::unity2::ClassIdentity>::class(),
-                "set_aspectMode",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AspectRatioFitter as ::unity2::ClassIdentity>::NAME,
-                        "set_aspectMode",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_aspect_mode(
-        this: AspectRatioFitter,
-        value: crate::unity_engine::ui::aspectratiofitter::AspectRatioFitter_AspectMode,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            AspectRatioFitter,
-            crate::unity_engine::ui::aspectratiofitter::AspectRatioFitter_AspectMode,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_set_aspect_mode::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_aspect_ratio {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AspectRatioFitter as ::unity2::ClassIdentity>::class(),
-                "get_aspectRatio",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AspectRatioFitter as ::unity2::ClassIdentity>::NAME,
-                        "get_aspectRatio",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_aspect_ratio(this: AspectRatioFitter, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(AspectRatioFitter, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_get_aspect_ratio::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_aspect_ratio {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AspectRatioFitter as ::unity2::ClassIdentity>::class(),
-                "set_aspectRatio",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AspectRatioFitter as ::unity2::ClassIdentity>::NAME,
-                        "set_aspectRatio",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_aspect_ratio(this: AspectRatioFitter, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AspectRatioFitter, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_aspect_ratio::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_rect_transform {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AspectRatioFitter as ::unity2::ClassIdentity>::class(),
-                "get_rectTransform",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AspectRatioFitter as ::unity2::ClassIdentity>::NAME,
-                        "get_rectTransform",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_rect_transform(
-        this: AspectRatioFitter,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::recttransform::RectTransform {
-        let inner: extern "C" fn(AspectRatioFitter, ::unity2::OptionalMethod) -> crate::unity_engine::recttransform::RectTransform =
-            ::core::mem::transmute(__lookup_get_rect_transform::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AspectRatioFitter as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AspectRatioFitter as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: AspectRatioFitter, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AspectRatioFitter, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_enable {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AspectRatioFitter as ::unity2::ClassIdentity>::class(),
-                "OnEnable",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AspectRatioFitter as ::unity2::ClassIdentity>::NAME,
-                        "OnEnable",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_enable(this: AspectRatioFitter, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AspectRatioFitter, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_enable::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_start {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AspectRatioFitter as ::unity2::ClassIdentity>::class(),
-                "Start",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AspectRatioFitter as ::unity2::ClassIdentity>::NAME,
-                        "Start",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn start(this: AspectRatioFitter, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AspectRatioFitter, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_start::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_disable {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AspectRatioFitter as ::unity2::ClassIdentity>::class(),
-                "OnDisable",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AspectRatioFitter as ::unity2::ClassIdentity>::NAME,
-                        "OnDisable",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_disable(this: AspectRatioFitter, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AspectRatioFitter, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_disable::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_transform_parent_changed {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AspectRatioFitter as ::unity2::ClassIdentity>::class(),
-                "OnTransformParentChanged",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AspectRatioFitter as ::unity2::ClassIdentity>::NAME,
-                        "OnTransformParentChanged",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_transform_parent_changed(this: AspectRatioFitter, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AspectRatioFitter, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_transform_parent_changed::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AspectRatioFitter as ::unity2::ClassIdentity>::class(),
-                "Update",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AspectRatioFitter as ::unity2::ClassIdentity>::NAME,
-                        "Update",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update(this: AspectRatioFitter, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AspectRatioFitter, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_rect_transform_dimensions_change {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AspectRatioFitter as ::unity2::ClassIdentity>::class(),
-                "OnRectTransformDimensionsChange",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AspectRatioFitter as ::unity2::ClassIdentity>::NAME,
-                        "OnRectTransformDimensionsChange",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_rect_transform_dimensions_change(this: AspectRatioFitter, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AspectRatioFitter, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_rect_transform_dimensions_change::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update_rect {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AspectRatioFitter as ::unity2::ClassIdentity>::class(),
-                "UpdateRect",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AspectRatioFitter as ::unity2::ClassIdentity>::NAME,
-                        "UpdateRect",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update_rect(this: AspectRatioFitter, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AspectRatioFitter, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update_rect::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_size_delta_to_produce_size {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AspectRatioFitter as ::unity2::ClassIdentity>::class(),
-                "GetSizeDeltaToProduceSize",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AspectRatioFitter as ::unity2::ClassIdentity>::NAME,
-                        "GetSizeDeltaToProduceSize",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_size_delta_to_produce_size(
-        this: AspectRatioFitter,
-        size: f32,
-        axis: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
-        let inner: extern "C" fn(AspectRatioFitter, f32, i32, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_get_size_delta_to_produce_size::get_method_info().method_ptr);
-        inner(this, size, axis, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_parent_size {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AspectRatioFitter as ::unity2::ClassIdentity>::class(),
-                "GetParentSize",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AspectRatioFitter as ::unity2::ClassIdentity>::NAME,
-                        "GetParentSize",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_parent_size(this: AspectRatioFitter, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::vector2::Vector2 {
-        let inner: extern "C" fn(AspectRatioFitter, ::unity2::OptionalMethod) -> crate::unity_engine::vector2::Vector2 =
-            ::core::mem::transmute(__lookup_get_parent_size::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_layout_horizontal {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AspectRatioFitter as ::unity2::ClassIdentity>::class(),
-                "SetLayoutHorizontal",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AspectRatioFitter as ::unity2::ClassIdentity>::NAME,
-                        "SetLayoutHorizontal",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_layout_horizontal(this: AspectRatioFitter, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AspectRatioFitter, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_layout_horizontal::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_layout_vertical {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AspectRatioFitter as ::unity2::ClassIdentity>::class(),
-                "SetLayoutVertical",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AspectRatioFitter as ::unity2::ClassIdentity>::NAME,
-                        "SetLayoutVertical",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_layout_vertical(this: AspectRatioFitter, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AspectRatioFitter, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_layout_vertical::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_dirty {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AspectRatioFitter as ::unity2::ClassIdentity>::class(),
-                "SetDirty",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AspectRatioFitter as ::unity2::ClassIdentity>::NAME,
-                        "SetDirty",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_dirty(this: AspectRatioFitter, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AspectRatioFitter, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_dirty::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_component_valid_on_object {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AspectRatioFitter as ::unity2::ClassIdentity>::class(),
-                "IsComponentValidOnObject",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AspectRatioFitter as ::unity2::ClassIdentity>::NAME,
-                        "IsComponentValidOnObject",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_component_valid_on_object(this: AspectRatioFitter, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(AspectRatioFitter, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_component_valid_on_object::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_aspect_mode_valid {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AspectRatioFitter as ::unity2::ClassIdentity>::class(),
-                "IsAspectModeValid",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AspectRatioFitter as ::unity2::ClassIdentity>::NAME,
-                        "IsAspectModeValid",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_aspect_mode_valid(this: AspectRatioFitter, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(AspectRatioFitter, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_aspect_mode_valid::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_does_parent_exists {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AspectRatioFitter as ::unity2::ClassIdentity>::class(),
-                "DoesParentExists",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AspectRatioFitter as ::unity2::ClassIdentity>::NAME,
-                        "DoesParentExists",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn does_parent_exists(this: AspectRatioFitter, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(AspectRatioFitter, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_does_parent_exists::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __AspectRatioFitter_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_aspect_mode { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AspectRatioFitter as :: unity2 :: ClassIdentity > :: class () , "get_aspectMode" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AspectRatioFitter as :: unity2 :: ClassIdentity > :: NAME , "get_aspectMode" , e) , } } } pub unsafe fn get_aspect_mode (this : AspectRatioFitter , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: aspectratiofitter :: AspectRatioFitter_AspectMode { let inner : extern "C" fn (AspectRatioFitter , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: aspectratiofitter :: AspectRatioFitter_AspectMode = :: core :: mem :: transmute (__lookup_get_aspect_mode :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_aspect_mode { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: ui :: aspectratiofitter :: AspectRatioFitter_AspectMode as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AspectRatioFitter as :: unity2 :: ClassIdentity > :: class () , "set_aspectMode" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AspectRatioFitter as :: unity2 :: ClassIdentity > :: NAME , "set_aspectMode" , e) , } } } pub unsafe fn set_aspect_mode (this : AspectRatioFitter , value : crate :: unity_engine :: ui :: aspectratiofitter :: AspectRatioFitter_AspectMode , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AspectRatioFitter , crate :: unity_engine :: ui :: aspectratiofitter :: AspectRatioFitter_AspectMode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_aspect_mode :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_aspect_ratio { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AspectRatioFitter as :: unity2 :: ClassIdentity > :: class () , "get_aspectRatio" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AspectRatioFitter as :: unity2 :: ClassIdentity > :: NAME , "get_aspectRatio" , e) , } } } pub unsafe fn get_aspect_ratio (this : AspectRatioFitter , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (AspectRatioFitter , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_get_aspect_ratio :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_aspect_ratio { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AspectRatioFitter as :: unity2 :: ClassIdentity > :: class () , "set_aspectRatio" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AspectRatioFitter as :: unity2 :: ClassIdentity > :: NAME , "set_aspectRatio" , e) , } } } pub unsafe fn set_aspect_ratio (this : AspectRatioFitter , value : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AspectRatioFitter , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_aspect_ratio :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_rect_transform { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AspectRatioFitter as :: unity2 :: ClassIdentity > :: class () , "get_rectTransform" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AspectRatioFitter as :: unity2 :: ClassIdentity > :: NAME , "get_rectTransform" , e) , } } } pub unsafe fn get_rect_transform (this : AspectRatioFitter , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: recttransform :: RectTransform { let inner : extern "C" fn (AspectRatioFitter , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: recttransform :: RectTransform = :: core :: mem :: transmute (__lookup_get_rect_transform :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AspectRatioFitter as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AspectRatioFitter as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : AspectRatioFitter , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AspectRatioFitter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_enable { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AspectRatioFitter as :: unity2 :: ClassIdentity > :: class () , "OnEnable" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AspectRatioFitter as :: unity2 :: ClassIdentity > :: NAME , "OnEnable" , e) , } } } pub unsafe fn on_enable (this : AspectRatioFitter , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AspectRatioFitter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_enable :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_start { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AspectRatioFitter as :: unity2 :: ClassIdentity > :: class () , "Start" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AspectRatioFitter as :: unity2 :: ClassIdentity > :: NAME , "Start" , e) , } } } pub unsafe fn start (this : AspectRatioFitter , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AspectRatioFitter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_start :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_disable { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AspectRatioFitter as :: unity2 :: ClassIdentity > :: class () , "OnDisable" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AspectRatioFitter as :: unity2 :: ClassIdentity > :: NAME , "OnDisable" , e) , } } } pub unsafe fn on_disable (this : AspectRatioFitter , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AspectRatioFitter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_disable :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_transform_parent_changed { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AspectRatioFitter as :: unity2 :: ClassIdentity > :: class () , "OnTransformParentChanged" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AspectRatioFitter as :: unity2 :: ClassIdentity > :: NAME , "OnTransformParentChanged" , e) , } } } pub unsafe fn on_transform_parent_changed (this : AspectRatioFitter , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AspectRatioFitter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_transform_parent_changed :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AspectRatioFitter as :: unity2 :: ClassIdentity > :: class () , "Update" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AspectRatioFitter as :: unity2 :: ClassIdentity > :: NAME , "Update" , e) , } } } pub unsafe fn update (this : AspectRatioFitter , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AspectRatioFitter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_rect_transform_dimensions_change { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AspectRatioFitter as :: unity2 :: ClassIdentity > :: class () , "OnRectTransformDimensionsChange" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AspectRatioFitter as :: unity2 :: ClassIdentity > :: NAME , "OnRectTransformDimensionsChange" , e) , } } } pub unsafe fn on_rect_transform_dimensions_change (this : AspectRatioFitter , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AspectRatioFitter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_rect_transform_dimensions_change :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update_rect { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AspectRatioFitter as :: unity2 :: ClassIdentity > :: class () , "UpdateRect" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AspectRatioFitter as :: unity2 :: ClassIdentity > :: NAME , "UpdateRect" , e) , } } } pub unsafe fn update_rect (this : AspectRatioFitter , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AspectRatioFitter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update_rect :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_size_delta_to_produce_size { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< f32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AspectRatioFitter as :: unity2 :: ClassIdentity > :: class () , "GetSizeDeltaToProduceSize" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AspectRatioFitter as :: unity2 :: ClassIdentity > :: NAME , "GetSizeDeltaToProduceSize" , e) , } } } pub unsafe fn get_size_delta_to_produce_size (this : AspectRatioFitter , size : f32 , axis : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (AspectRatioFitter , f32 , i32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_get_size_delta_to_produce_size :: get_method_info () . method_ptr ,) ; inner (this , size , axis , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_parent_size { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AspectRatioFitter as :: unity2 :: ClassIdentity > :: class () , "GetParentSize" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AspectRatioFitter as :: unity2 :: ClassIdentity > :: NAME , "GetParentSize" , e) , } } } pub unsafe fn get_parent_size (this : AspectRatioFitter , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector2 :: Vector2 { let inner : extern "C" fn (AspectRatioFitter , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector2 :: Vector2 = :: core :: mem :: transmute (__lookup_get_parent_size :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_layout_horizontal { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AspectRatioFitter as :: unity2 :: ClassIdentity > :: class () , "SetLayoutHorizontal" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AspectRatioFitter as :: unity2 :: ClassIdentity > :: NAME , "SetLayoutHorizontal" , e) , } } } pub unsafe fn set_layout_horizontal (this : AspectRatioFitter , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AspectRatioFitter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_layout_horizontal :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_layout_vertical { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AspectRatioFitter as :: unity2 :: ClassIdentity > :: class () , "SetLayoutVertical" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AspectRatioFitter as :: unity2 :: ClassIdentity > :: NAME , "SetLayoutVertical" , e) , } } } pub unsafe fn set_layout_vertical (this : AspectRatioFitter , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AspectRatioFitter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_layout_vertical :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_dirty { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AspectRatioFitter as :: unity2 :: ClassIdentity > :: class () , "SetDirty" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AspectRatioFitter as :: unity2 :: ClassIdentity > :: NAME , "SetDirty" , e) , } } } pub unsafe fn set_dirty (this : AspectRatioFitter , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AspectRatioFitter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_dirty :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_component_valid_on_object { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AspectRatioFitter as :: unity2 :: ClassIdentity > :: class () , "IsComponentValidOnObject" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AspectRatioFitter as :: unity2 :: ClassIdentity > :: NAME , "IsComponentValidOnObject" , e) , } } } pub unsafe fn is_component_valid_on_object (this : AspectRatioFitter , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (AspectRatioFitter , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_component_valid_on_object :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_aspect_mode_valid { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AspectRatioFitter as :: unity2 :: ClassIdentity > :: class () , "IsAspectModeValid" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AspectRatioFitter as :: unity2 :: ClassIdentity > :: NAME , "IsAspectModeValid" , e) , } } } pub unsafe fn is_aspect_mode_valid (this : AspectRatioFitter , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (AspectRatioFitter , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_aspect_mode_valid :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_does_parent_exists { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AspectRatioFitter as :: unity2 :: ClassIdentity > :: class () , "DoesParentExists" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AspectRatioFitter as :: unity2 :: ClassIdentity > :: NAME , "DoesParentExists" , e) , } } } pub unsafe fn does_parent_exists (this : AspectRatioFitter , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (AspectRatioFitter , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_does_parent_exists :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-ui-aspectratiofitter")]
-pub trait IAspectRatioFitterMethods: IAspectRatioFitter {
-    #[doc = "`get_aspectMode()` overload"]
-    fn get_aspect_mode(self) -> crate::unity_engine::ui::aspectratiofitter::AspectRatioFitter_AspectMode {
-        unsafe {
-            let __receiver = <AspectRatioFitter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AspectRatioFitter_unity2_raw::get_aspect_mode(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_aspectMode(crate::unity_engine::ui::aspectratiofitter::AspectRatioFitter_AspectMode)` overload"]
-    fn set_aspect_mode(self, value: impl ::core::convert::Into<crate::unity_engine::ui::aspectratiofitter::AspectRatioFitter_AspectMode>) -> () {
-        unsafe {
-            let __receiver = <AspectRatioFitter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AspectRatioFitter_unity2_raw::set_aspect_mode(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_aspectRatio()` overload"]
-    fn get_aspect_ratio(self) -> f32 {
-        unsafe {
-            let __receiver = <AspectRatioFitter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AspectRatioFitter_unity2_raw::get_aspect_ratio(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_aspectRatio(f32)` overload"]
-    fn set_aspect_ratio(self, value: impl ::core::convert::Into<f32>) -> () {
-        unsafe {
-            let __receiver = <AspectRatioFitter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AspectRatioFitter_unity2_raw::set_aspect_ratio(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_rectTransform()` overload"]
-    fn get_rect_transform(self) -> crate::unity_engine::recttransform::RectTransform {
-        unsafe {
-            let __receiver = <AspectRatioFitter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AspectRatioFitter_unity2_raw::get_rect_transform(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <AspectRatioFitter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AspectRatioFitter_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnEnable()` overload"]
-    fn on_enable(self) -> () {
-        unsafe {
-            let __receiver = <AspectRatioFitter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AspectRatioFitter_unity2_raw::on_enable(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Start()` overload"]
-    fn start(self) -> () {
-        unsafe {
-            let __receiver = <AspectRatioFitter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AspectRatioFitter_unity2_raw::start(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnDisable()` overload"]
-    fn on_disable(self) -> () {
-        unsafe {
-            let __receiver = <AspectRatioFitter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AspectRatioFitter_unity2_raw::on_disable(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnTransformParentChanged()` overload"]
-    fn on_transform_parent_changed(self) -> () {
-        unsafe {
-            let __receiver = <AspectRatioFitter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AspectRatioFitter_unity2_raw::on_transform_parent_changed(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Update()` overload"]
-    fn update(self) -> () {
-        unsafe {
-            let __receiver = <AspectRatioFitter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AspectRatioFitter_unity2_raw::update(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnRectTransformDimensionsChange()` overload"]
-    fn on_rect_transform_dimensions_change(self) -> () {
-        unsafe {
-            let __receiver = <AspectRatioFitter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AspectRatioFitter_unity2_raw::on_rect_transform_dimensions_change(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`UpdateRect()` overload"]
-    fn update_rect(self) -> () {
-        unsafe {
-            let __receiver = <AspectRatioFitter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AspectRatioFitter_unity2_raw::update_rect(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetSizeDeltaToProduceSize(f32, i32)` overload"]
-    fn get_size_delta_to_produce_size(self, size: impl ::core::convert::Into<f32>, axis: impl ::core::convert::Into<i32>) -> f32 {
-        unsafe {
-            let __receiver = <AspectRatioFitter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AspectRatioFitter_unity2_raw::get_size_delta_to_produce_size(
-                __receiver,
-                ::core::convert::Into::into(size),
-                ::core::convert::Into::into(axis),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetParentSize()` overload"]
-    fn get_parent_size(self) -> crate::unity_engine::vector2::Vector2 {
-        unsafe {
-            let __receiver = <AspectRatioFitter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AspectRatioFitter_unity2_raw::get_parent_size(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetLayoutHorizontal()` overload"]
-    fn set_layout_horizontal(self) -> () {
-        unsafe {
-            let __receiver = <AspectRatioFitter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AspectRatioFitter_unity2_raw::set_layout_horizontal(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetLayoutVertical()` overload"]
-    fn set_layout_vertical(self) -> () {
-        unsafe {
-            let __receiver = <AspectRatioFitter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AspectRatioFitter_unity2_raw::set_layout_vertical(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetDirty()` overload"]
-    fn set_dirty(self) -> () {
-        unsafe {
-            let __receiver = <AspectRatioFitter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AspectRatioFitter_unity2_raw::set_dirty(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsComponentValidOnObject()` overload"]
-    fn is_component_valid_on_object(self) -> bool {
-        unsafe {
-            let __receiver = <AspectRatioFitter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AspectRatioFitter_unity2_raw::is_component_valid_on_object(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsAspectModeValid()` overload"]
-    fn is_aspect_mode_valid(self) -> bool {
-        unsafe {
-            let __receiver = <AspectRatioFitter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AspectRatioFitter_unity2_raw::is_aspect_mode_valid(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`DoesParentExists()` overload"]
-    fn does_parent_exists(self) -> bool {
-        unsafe {
-            let __receiver = <AspectRatioFitter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AspectRatioFitter_unity2_raw::does_parent_exists(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IAspectRatioFitterMethods : IAspectRatioFitter { # [doc = "`get_aspectMode()` overload"] fn get_aspect_mode (self ,) -> crate :: unity_engine :: ui :: aspectratiofitter :: AspectRatioFitter_AspectMode { unsafe { let __receiver = < AspectRatioFitter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AspectRatioFitter_unity2_raw :: get_aspect_mode (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_aspectMode(crate::unity_engine::ui::aspectratiofitter::AspectRatioFitter_AspectMode)` overload"] fn set_aspect_mode (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: aspectratiofitter :: AspectRatioFitter_AspectMode >) -> () { unsafe { let __receiver = < AspectRatioFitter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AspectRatioFitter_unity2_raw :: set_aspect_mode (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_aspectRatio()` overload"] fn get_aspect_ratio (self ,) -> f32 { unsafe { let __receiver = < AspectRatioFitter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AspectRatioFitter_unity2_raw :: get_aspect_ratio (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_aspectRatio(f32)` overload"] fn set_aspect_ratio (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < AspectRatioFitter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AspectRatioFitter_unity2_raw :: set_aspect_ratio (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_rectTransform()` overload"] fn get_rect_transform (self ,) -> crate :: unity_engine :: recttransform :: RectTransform { unsafe { let __receiver = < AspectRatioFitter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AspectRatioFitter_unity2_raw :: get_rect_transform (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AspectRatioFitter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AspectRatioFitter_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnEnable()` overload"] fn on_enable (self ,) -> () { unsafe { let __receiver = < AspectRatioFitter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AspectRatioFitter_unity2_raw :: on_enable (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < AspectRatioFitter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AspectRatioFitter_unity2_raw :: start (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnDisable()` overload"] fn on_disable (self ,) -> () { unsafe { let __receiver = < AspectRatioFitter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AspectRatioFitter_unity2_raw :: on_disable (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnTransformParentChanged()` overload"] fn on_transform_parent_changed (self ,) -> () { unsafe { let __receiver = < AspectRatioFitter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AspectRatioFitter_unity2_raw :: on_transform_parent_changed (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < AspectRatioFitter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AspectRatioFitter_unity2_raw :: update (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnRectTransformDimensionsChange()` overload"] fn on_rect_transform_dimensions_change (self ,) -> () { unsafe { let __receiver = < AspectRatioFitter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AspectRatioFitter_unity2_raw :: on_rect_transform_dimensions_change (__receiver , :: core :: option :: Option :: None) } } # [doc = "`UpdateRect()` overload"] fn update_rect (self ,) -> () { unsafe { let __receiver = < AspectRatioFitter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AspectRatioFitter_unity2_raw :: update_rect (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetSizeDeltaToProduceSize(f32, i32)` overload"] fn get_size_delta_to_produce_size (self , size : impl :: core :: convert :: Into < f32 > , axis : impl :: core :: convert :: Into < i32 >) -> f32 { unsafe { let __receiver = < AspectRatioFitter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AspectRatioFitter_unity2_raw :: get_size_delta_to_produce_size (__receiver , :: core :: convert :: Into :: into (size) , :: core :: convert :: Into :: into (axis) , :: core :: option :: Option :: None) } } # [doc = "`GetParentSize()` overload"] fn get_parent_size (self ,) -> crate :: unity_engine :: vector2 :: Vector2 { unsafe { let __receiver = < AspectRatioFitter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AspectRatioFitter_unity2_raw :: get_parent_size (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetLayoutHorizontal()` overload"] fn set_layout_horizontal (self ,) -> () { unsafe { let __receiver = < AspectRatioFitter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AspectRatioFitter_unity2_raw :: set_layout_horizontal (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetLayoutVertical()` overload"] fn set_layout_vertical (self ,) -> () { unsafe { let __receiver = < AspectRatioFitter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AspectRatioFitter_unity2_raw :: set_layout_vertical (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetDirty()` overload"] fn set_dirty (self ,) -> () { unsafe { let __receiver = < AspectRatioFitter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AspectRatioFitter_unity2_raw :: set_dirty (__receiver , :: core :: option :: Option :: None) } } # [doc = "`IsComponentValidOnObject()` overload"] fn is_component_valid_on_object (self ,) -> bool { unsafe { let __receiver = < AspectRatioFitter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AspectRatioFitter_unity2_raw :: is_component_valid_on_object (__receiver , :: core :: option :: Option :: None) } } # [doc = "`IsAspectModeValid()` overload"] fn is_aspect_mode_valid (self ,) -> bool { unsafe { let __receiver = < AspectRatioFitter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AspectRatioFitter_unity2_raw :: is_aspect_mode_valid (__receiver , :: core :: option :: Option :: None) } } # [doc = "`DoesParentExists()` overload"] fn does_parent_exists (self ,) -> bool { unsafe { let __receiver = < AspectRatioFitter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AspectRatioFitter_unity2_raw :: does_parent_exists (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-ui-aspectratiofitter")]
-impl<__T: IAspectRatioFitter> IAspectRatioFitterMethods for __T {}
+impl < __T : IAspectRatioFitter > IAspectRatioFitterMethods for __T { }
+
+#[cfg(feature = "unity_engine-ui-aspectratiofitter")]
+impl AspectRatioFitter { pub fn get_aspect_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AspectRatioFitter_unity2_raw :: __lookup_get_aspect_mode :: get_method_info () } pub fn set_aspect_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AspectRatioFitter_unity2_raw :: __lookup_set_aspect_mode :: get_method_info () } pub fn get_aspect_ratio_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AspectRatioFitter_unity2_raw :: __lookup_get_aspect_ratio :: get_method_info () } pub fn set_aspect_ratio_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AspectRatioFitter_unity2_raw :: __lookup_set_aspect_ratio :: get_method_info () } pub fn get_rect_transform_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AspectRatioFitter_unity2_raw :: __lookup_get_rect_transform :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AspectRatioFitter_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn on_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AspectRatioFitter_unity2_raw :: __lookup_on_enable :: get_method_info () } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AspectRatioFitter_unity2_raw :: __lookup_start :: get_method_info () } pub fn on_disable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AspectRatioFitter_unity2_raw :: __lookup_on_disable :: get_method_info () } pub fn on_transform_parent_changed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AspectRatioFitter_unity2_raw :: __lookup_on_transform_parent_changed :: get_method_info () } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AspectRatioFitter_unity2_raw :: __lookup_update :: get_method_info () } pub fn on_rect_transform_dimensions_change_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AspectRatioFitter_unity2_raw :: __lookup_on_rect_transform_dimensions_change :: get_method_info () } pub fn update_rect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AspectRatioFitter_unity2_raw :: __lookup_update_rect :: get_method_info () } pub fn get_size_delta_to_produce_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AspectRatioFitter_unity2_raw :: __lookup_get_size_delta_to_produce_size :: get_method_info () } pub fn get_parent_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AspectRatioFitter_unity2_raw :: __lookup_get_parent_size :: get_method_info () } pub fn set_layout_horizontal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AspectRatioFitter_unity2_raw :: __lookup_set_layout_horizontal :: get_method_info () } pub fn set_layout_vertical_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AspectRatioFitter_unity2_raw :: __lookup_set_layout_vertical :: get_method_info () } pub fn set_dirty_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AspectRatioFitter_unity2_raw :: __lookup_set_dirty :: get_method_info () } pub fn is_component_valid_on_object_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AspectRatioFitter_unity2_raw :: __lookup_is_component_valid_on_object :: get_method_info () } pub fn is_aspect_mode_valid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AspectRatioFitter_unity2_raw :: __lookup_is_aspect_mode_valid :: get_method_info () } pub fn does_parent_exists_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AspectRatioFitter_unity2_raw :: __lookup_does_parent_exists :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-ui-aspectratiofitter")]
 impl AspectRatioFitter {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AspectRatioFitter),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAspectRatioFitterMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AspectRatioFitter) , :: core :: stringify ! (new) ,)) ; < Self as IAspectRatioFitterMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "unity_engine-ui-aspectratiofitter")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{AspectRatioFitter, AspectRatioFitter_AspectMode, IAspectRatioFitter, IAspectRatioFitterMethods};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-event_systems-uibehaviour")]
-    pub use crate::unity_engine::event_systems::uibehaviour::IUIBehaviourMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
-        unity_engine::{
-            behaviour::IBehaviour, component::IComponent, event_systems::uibehaviour::IUIBehaviour, monobehaviour::IMonoBehaviour,
-            object_2::IObject_2,
-        },
-    };
+    pub use super::AspectRatioFitter_AspectMode;
+    pub use super::AspectRatioFitter;
+    pub use super::IAspectRatioFitter;
+    pub use super::IAspectRatioFitterMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::event_systems::uibehaviour::IUIBehaviour;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-event_systems-uibehaviour")] pub use crate::unity_engine::event_systems::uibehaviour::IUIBehaviourMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

@@ -2,163 +2,44 @@
 
 #[cfg(feature = "unity_engine-addcomponentmenu-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addcomponentmenu/AddComponentMenu.md"))]
-    #[::unity2::class(namespace = "UnityEngine", name = "AddComponentMenu")]
-    pub struct AddComponentMenu {
-        #[offset(16)]
-        #[rename(name = "m_AddComponentMenu")]
-        pub m_add_component_menu: ::unity2::Il2CppString,
-        #[offset(24)]
-        #[rename(name = "m_Ordering")]
-        pub m_ordering: i32,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addcomponentmenu/AddComponentMenu.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "AddComponentMenu")] pub struct AddComponentMenu {
+# [offset (16)] # [rename (name = "m_AddComponentMenu")] pub m_add_component_menu : :: unity2 :: Il2CppString ,
+# [offset (24)] # [rename (name = "m_Ordering")] pub m_ordering : i32 ,
+}
+
 }
 
 #[cfg(feature = "unity_engine-addcomponentmenu-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-addcomponentmenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AddComponentMenu_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AddComponentMenu as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AddComponentMenu as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: AddComponentMenu, menu_name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AddComponentMenu, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, menu_name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AddComponentMenu as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AddComponentMenu as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor_2(
-        this: AddComponentMenu,
-        menu_name: ::unity2::Il2CppString,
-        order: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(AddComponentMenu, ::unity2::Il2CppString, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
-        inner(this, menu_name, order, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __AddComponentMenu_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AddComponentMenu as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AddComponentMenu as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : AddComponentMenu , menu_name : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AddComponentMenu , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , menu_name , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AddComponentMenu as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AddComponentMenu as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor_2 (this : AddComponentMenu , menu_name : :: unity2 :: Il2CppString , order : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AddComponentMenu , :: unity2 :: Il2CppString , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor_2 :: get_method_info () . method_ptr ,) ; inner (this , menu_name , order , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-addcomponentmenu")]
-pub trait IAddComponentMenuMethods: IAddComponentMenu {
-    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
-    fn ctor(self, menu_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver = <AddComponentMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AddComponentMenu_unity2_raw::ctor(__receiver, ::core::convert::Into::into(menu_name), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor(::unity2::Il2CppString, i32)` overload"]
-    fn ctor_2(self, menu_name: impl ::core::convert::Into<::unity2::Il2CppString>, order: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver = <AddComponentMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AddComponentMenu_unity2_raw::ctor_2(
-                __receiver,
-                ::core::convert::Into::into(menu_name),
-                ::core::convert::Into::into(order),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+pub trait IAddComponentMenuMethods : IAddComponentMenu { # [doc = "`.ctor(::unity2::Il2CppString)` overload"] fn ctor (self , menu_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < AddComponentMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AddComponentMenu_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (menu_name) , :: core :: option :: Option :: None) } } # [doc = "`.ctor(::unity2::Il2CppString, i32)` overload"] fn ctor_2 (self , menu_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , order : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < AddComponentMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AddComponentMenu_unity2_raw :: ctor_2 (__receiver , :: core :: convert :: Into :: into (menu_name) , :: core :: convert :: Into :: into (order) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-addcomponentmenu")]
-impl<__T: IAddComponentMenu> IAddComponentMenuMethods for __T {}
+impl < __T : IAddComponentMenu > IAddComponentMenuMethods for __T { }
+
+#[cfg(feature = "unity_engine-addcomponentmenu")]
+impl AddComponentMenu { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AddComponentMenu_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AddComponentMenu_unity2_raw :: __lookup_ctor_2 :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-addcomponentmenu")]
 impl AddComponentMenu {
-    #[doc = "`.ctor(::unity2::Il2CppString)` — overload selector"]
-    pub fn new(menu_name: ::unity2::Il2CppString) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AddComponentMenu),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAddComponentMenuMethods>::ctor(this, menu_name);
-        this
-    }
+# [doc = "`.ctor(::unity2::Il2CppString)` — overload selector"] pub fn new (menu_name : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AddComponentMenu) , :: core :: stringify ! (new) ,)) ; < Self as IAddComponentMenuMethods > :: ctor (this , menu_name) ; this }
 
-    #[doc = "`.ctor(::unity2::Il2CppString, i32)` — overload selector"]
-    pub fn new_2(menu_name: ::unity2::Il2CppString, order: i32) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AddComponentMenu),
-                ::core::stringify!(new_2),
-            )
-        });
-        <Self as IAddComponentMenuMethods>::ctor_2(this, menu_name, order);
-        this
-    }
+# [doc = "`.ctor(::unity2::Il2CppString, i32)` — overload selector"] pub fn new_2 (menu_name : :: unity2 :: Il2CppString , order : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AddComponentMenu) , :: core :: stringify ! (new_2) ,)) ; < Self as IAddComponentMenuMethods > :: ctor_2 (this , menu_name , order) ; this }
 }
 
 #[cfg(feature = "unity_engine-addcomponentmenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{AddComponentMenu, IAddComponentMenu, IAddComponentMenuMethods};
+    pub use super::AddComponentMenu;
+    pub use super::IAddComponentMenu;
+    pub use super::IAddComponentMenuMethods;
 }

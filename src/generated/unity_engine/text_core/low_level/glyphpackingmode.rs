@@ -2,60 +2,83 @@
 
 #[cfg(feature = "unity_engine-text_core-low_level-glyphpackingmode-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        r#enum::{Enum, IEnum},
-        valuetype::{IValueType, ValueType},
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/text_core/low_level/glyphpackingmode/GlyphPackingMode.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct GlyphPackingMode {
-        pub value: i32,
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/text_core/low_level/glyphpackingmode/GlyphPackingMode.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct GlyphPackingMode  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for GlyphPackingMode  {
+    const NAMESPACE: &'static str = "UnityEngine.TextCore.LowLevel";
+
+    const NAME: &'static str = "GlyphPackingMode";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    impl ::unity2::ClassIdentity for GlyphPackingMode {
-        const NAME: &'static str = "GlyphPackingMode";
-        const NAMESPACE: &'static str = "UnityEngine.TextCore.LowLevel";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  ::unity2::IlType for GlyphPackingMode  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::IlType for GlyphPackingMode {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  GlyphPackingMode  {
+    pub fn best_short_side_fit() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl GlyphPackingMode {
-        pub fn best_short_side_fit() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn best_long_side_fit() -> Self {
-            Self { value: 1 }
-        }
+    pub fn best_long_side_fit() -> Self {
+        Self { value: 1 }
 
-        pub fn best_area_fit() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn bottom_left_rule() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn contact_point_rule() -> Self {
-            Self { value: 4 }
-        }
     }
+
+
+    pub fn best_area_fit() -> Self {
+        Self { value: 2 }
+
+    }
+
+
+    pub fn bottom_left_rule() -> Self {
+        Self { value: 3 }
+
+    }
+
+
+    pub fn contact_point_rule() -> Self {
+        Self { value: 4 }
+
+    }
+
+}
+
 }
 
 #[cfg(feature = "unity_engine-text_core-low_level-glyphpackingmode-types")]
@@ -65,11 +88,10 @@ pub use __types::*;
 #[doc(hidden)]
 pub mod prelude {
     pub use super::GlyphPackingMode;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::system::{object::IObject, r#enum::IEnum, valuetype::IValueType};
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

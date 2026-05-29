@@ -2,1010 +2,247 @@
 
 #[cfg(feature = "app-mapsequencenet-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::procinst::{IProcInst, ProcInst},
-        system::{
-            object::{IObject, Object},
-            r#enum::{Enum, IEnum},
-            valuetype::{IValueType, ValueType},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencenet/MapSequenceNet_ProcUpload.md"))]
-    #[::unity2::class(namespace = "App", name = "MapSequenceNet.ProcUpload")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct MapSequenceNet_ProcUpload {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: procinst :: { IProcInst , ProcInst }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencenet/MapSequenceNet.md"))]
-    #[::unity2::class(namespace = "App", name = "MapSequenceNet")]
-    #[parent(crate::system::object::Object)]
-    pub struct MapSequenceNet {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencenet/MapSequenceNet_ProcShowError_ProcDelayedHideError.md"))]
-    #[::unity2::class(namespace = "App", name = "MapSequenceNet.ProcShowError.ProcDelayedHideError")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct MapSequenceNet_ProcShowError_ProcDelayedHideError {}
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencenet/MapSequenceNet_ProcUpload_Label.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct MapSequenceNet_ProcUpload_Label  {
+    pub value: i32,
+}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencenet/MapSequenceNet_ProcDownload.md"))]
-    #[::unity2::class(namespace = "App", name = "MapSequenceNet.ProcDownload")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct MapSequenceNet_ProcDownload {}
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencenet/MapSequenceNet_ProcDownload_Label.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct MapSequenceNet_ProcDownload_Label {
-        pub value: i32,
-    }
+impl  ::unity2::ClassIdentity for MapSequenceNet_ProcUpload_Label  {
+    const NAMESPACE: &'static str = "App";
 
-    impl ::unity2::ClassIdentity for MapSequenceNet_ProcDownload_Label {
-        const NAME: &'static str = "MapSequenceNet.ProcDownload.Label";
-        const NAMESPACE: &'static str = "App";
+    const NAME: &'static str = "MapSequenceNet.ProcUpload.Label";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for MapSequenceNet_ProcDownload_Label {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+}
+
+
+impl  ::unity2::IlType for MapSequenceNet_ProcUpload_Label  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  MapSequenceNet_ProcUpload_Label  {
+    pub fn ranking() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn end() -> Self {
+        Self { value: 1 }
+
+    }
+
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencenet/MapSequenceNet_ProcDownload.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapSequenceNet.ProcDownload")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct MapSequenceNet_ProcDownload {}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencenet/MapSequenceNet_ProcShowError.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapSequenceNet.ProcShowError")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct MapSequenceNet_ProcShowError {
+# [static_field] # [rename (name = "WaitSec")] pub wait_sec : f32 ,
+# [static_field] # [rename (name = "WaitDelayedSec")] pub wait_delayed_sec : f32 ,
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencenet/MapSequenceNet_ProcDownload_Label.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct MapSequenceNet_ProcDownload_Label  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for MapSequenceNet_ProcDownload_Label  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapSequenceNet.ProcDownload.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl MapSequenceNet_ProcDownload_Label {
-        pub fn end() -> Self {
-            Self { value: 0 }
-        }
+}
+
+
+impl  ::unity2::IlType for MapSequenceNet_ProcDownload_Label  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencenet/MapSequenceNet_ProcShowError.md"))]
-    #[::unity2::class(namespace = "App", name = "MapSequenceNet.ProcShowError")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct MapSequenceNet_ProcShowError {
-        #[static_field]
-        #[rename(name = "WaitSec")]
-        pub wait_sec: f32,
-        #[static_field]
-        #[rename(name = "WaitDelayedSec")]
-        pub wait_delayed_sec: f32,
+}
+
+
+impl  MapSequenceNet_ProcDownload_Label  {
+    pub fn end() -> Self {
+        Self { value: 0 }
+
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencenet/MapSequenceNet_ProcUpload_Label.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct MapSequenceNet_ProcUpload_Label {
-        pub value: i32,
-    }
+}
 
-    impl ::unity2::ClassIdentity for MapSequenceNet_ProcUpload_Label {
-        const NAME: &'static str = "MapSequenceNet.ProcUpload.Label";
-        const NAMESPACE: &'static str = "App";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencenet/MapSequenceNet_ProcShowError_ProcDelayedHideError.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapSequenceNet.ProcShowError.ProcDelayedHideError")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct MapSequenceNet_ProcShowError_ProcDelayedHideError {}
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
 
-    impl ::unity2::IlType for MapSequenceNet_ProcUpload_Label {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencenet/MapSequenceNet.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapSequenceNet")] # [parent (crate :: system :: object :: Object)] pub struct MapSequenceNet {}
 
-    impl MapSequenceNet_ProcUpload_Label {
-        pub fn ranking() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn end() -> Self {
-            Self { value: 1 }
-        }
-    }
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencenet/MapSequenceNet_ProcUpload.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapSequenceNet.ProcUpload")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct MapSequenceNet_ProcUpload {}
+
 }
 
 #[cfg(feature = "app-mapsequencenet-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-mapsequencenet")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapSequenceNet_ProcUpload_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_upload_kill_bonus {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceNet_ProcUpload as ::unity2::ClassIdentity>::class(),
-                "UploadKillBonus",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceNet_ProcUpload as ::unity2::ClassIdentity>::NAME,
-                        "UploadKillBonus",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn upload_kill_bonus(this: MapSequenceNet_ProcUpload, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapSequenceNet_ProcUpload, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_upload_kill_bonus::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_postupload_kill_bonus {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceNet_ProcUpload as ::unity2::ClassIdentity>::class(),
-                "PostuploadKillBonus",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceNet_ProcUpload as ::unity2::ClassIdentity>::NAME,
-                        "PostuploadKillBonus",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn postupload_kill_bonus(this: MapSequenceNet_ProcUpload, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapSequenceNet_ProcUpload, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_postupload_kill_bonus::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_upload_ranking {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceNet_ProcUpload as ::unity2::ClassIdentity>::class(),
-                "UploadRanking",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceNet_ProcUpload as ::unity2::ClassIdentity>::NAME,
-                        "UploadRanking",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn upload_ranking(this: MapSequenceNet_ProcUpload, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapSequenceNet_ProcUpload, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_upload_ranking::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_postupload_ranking {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceNet_ProcUpload as ::unity2::ClassIdentity>::class(),
-                "PostuploadRanking",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceNet_ProcUpload as ::unity2::ClassIdentity>::NAME,
-                        "PostuploadRanking",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn postupload_ranking(this: MapSequenceNet_ProcUpload, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapSequenceNet_ProcUpload, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_postupload_ranking::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceNet_ProcUpload as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceNet_ProcUpload as ::unity2::ClassIdentity>::NAME,
-                        "CreateBind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_bind(super_: crate::app::procinst::ProcInst, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
-        inner(super_, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceNet_ProcUpload as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceNet_ProcUpload as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: MapSequenceNet_ProcUpload, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapSequenceNet_ProcUpload, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MapSequenceNet_ProcDownload_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_download { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceNet_ProcDownload as :: unity2 :: ClassIdentity > :: class () , "Download" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceNet_ProcDownload as :: unity2 :: ClassIdentity > :: NAME , "Download" , e) , } } } pub unsafe fn download (this : MapSequenceNet_ProcDownload , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapSequenceNet_ProcDownload , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_download :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_postdownload { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceNet_ProcDownload as :: unity2 :: ClassIdentity > :: class () , "Postdownload" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceNet_ProcDownload as :: unity2 :: ClassIdentity > :: NAME , "Postdownload" , e) , } } } pub unsafe fn postdownload (this : MapSequenceNet_ProcDownload , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapSequenceNet_ProcDownload , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_postdownload :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_bind { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceNet_ProcDownload as :: unity2 :: ClassIdentity > :: class () , "CreateBind" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceNet_ProcDownload as :: unity2 :: ClassIdentity > :: NAME , "CreateBind" , e) , } } } pub unsafe fn create_bind (super_ : crate :: app :: procinst :: ProcInst , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create_bind :: get_method_info () . method_ptr ,) ; inner (super_ , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceNet_ProcDownload as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceNet_ProcDownload as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : MapSequenceNet_ProcDownload , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapSequenceNet_ProcDownload , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-mapsequencenet")]
-impl MapSequenceNet_ProcUpload {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
-    pub fn create_bind(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
-        unsafe { __MapSequenceNet_ProcUpload_unity2_raw::create_bind(::core::convert::Into::into(super_), ::core::option::Option::None) }
-    }
-}
+impl MapSequenceNet_ProcDownload { # [doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { __MapSequenceNet_ProcDownload_unity2_raw :: create_bind (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-mapsequencenet")]
-pub trait IMapSequenceNet_ProcUploadMethods: IMapSequenceNet_ProcUpload {
-    #[doc = "`UploadKillBonus()` overload"]
-    fn upload_kill_bonus(self) -> () {
-        unsafe {
-            let __receiver =
-                <MapSequenceNet_ProcUpload as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSequenceNet_ProcUpload_unity2_raw::upload_kill_bonus(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`PostuploadKillBonus()` overload"]
-    fn postupload_kill_bonus(self) -> () {
-        unsafe {
-            let __receiver =
-                <MapSequenceNet_ProcUpload as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSequenceNet_ProcUpload_unity2_raw::postupload_kill_bonus(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`UploadRanking()` overload"]
-    fn upload_ranking(self) -> () {
-        unsafe {
-            let __receiver =
-                <MapSequenceNet_ProcUpload as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSequenceNet_ProcUpload_unity2_raw::upload_ranking(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`PostuploadRanking()` overload"]
-    fn postupload_ranking(self) -> () {
-        unsafe {
-            let __receiver =
-                <MapSequenceNet_ProcUpload as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSequenceNet_ProcUpload_unity2_raw::postupload_ranking(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <MapSequenceNet_ProcUpload as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSequenceNet_ProcUpload_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IMapSequenceNet_ProcDownloadMethods : IMapSequenceNet_ProcDownload { # [doc = "`Download()` overload"] fn download (self ,) -> () { unsafe { let __receiver = < MapSequenceNet_ProcDownload as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceNet_ProcDownload_unity2_raw :: download (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Postdownload()` overload"] fn postdownload (self ,) -> () { unsafe { let __receiver = < MapSequenceNet_ProcDownload as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceNet_ProcDownload_unity2_raw :: postdownload (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapSequenceNet_ProcDownload as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceNet_ProcDownload_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-mapsequencenet")]
-impl<__T: IMapSequenceNet_ProcUpload> IMapSequenceNet_ProcUploadMethods for __T {}
+impl < __T : IMapSequenceNet_ProcDownload > IMapSequenceNet_ProcDownloadMethods for __T { }
 
 #[cfg(feature = "app-mapsequencenet")]
-impl MapSequenceNet_ProcUpload {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapSequenceNet_ProcUpload),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapSequenceNet_ProcUploadMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-mapsequencenet")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapSequenceNet_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_download {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceNet as ::unity2::ClassIdentity>::class(),
-                "Download",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceNet as ::unity2::ClassIdentity>::NAME,
-                        "Download",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn download(super_: crate::app::procinst::ProcInst, is_resume: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(crate::app::procinst::ProcInst, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_download::get_method_info().method_ptr);
-        inner(super_, is_resume, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_upload {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceNet as ::unity2::ClassIdentity>::class(),
-                "Upload",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceNet as ::unity2::ClassIdentity>::NAME,
-                        "Upload",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn upload(super_: crate::app::procinst::ProcInst, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_upload::get_method_info().method_ptr);
-        inner(super_, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-mapsequencenet")]
-impl MapSequenceNet {
-    #[doc = "`Download(crate::app::procinst::ProcInst, bool)` overload"]
-    pub fn download(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>, is_resume: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            __MapSequenceNet_unity2_raw::download(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(is_resume),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`Upload(crate::app::procinst::ProcInst)` overload"]
-    pub fn upload(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
-        unsafe { __MapSequenceNet_unity2_raw::upload(::core::convert::Into::into(super_), ::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-mapsequencenet")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapSequenceNet_ProcShowError_ProcDelayedHideError_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_hide {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceNet_ProcShowError_ProcDelayedHideError as ::unity2::ClassIdentity>::class(),
-                "Hide",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceNet_ProcShowError_ProcDelayedHideError as ::unity2::ClassIdentity>::NAME,
-                        "Hide",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn hide(this: MapSequenceNet_ProcShowError_ProcDelayedHideError, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapSequenceNet_ProcShowError_ProcDelayedHideError, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_hide::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceNet_ProcShowError_ProcDelayedHideError as ::unity2::ClassIdentity>::class(),
-                "Create",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceNet_ProcShowError_ProcDelayedHideError as ::unity2::ClassIdentity>::NAME,
-                        "Create",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_create::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceNet_ProcShowError_ProcDelayedHideError as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceNet_ProcShowError_ProcDelayedHideError as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: MapSequenceNet_ProcShowError_ProcDelayedHideError, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapSequenceNet_ProcShowError_ProcDelayedHideError, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-mapsequencenet")]
-impl MapSequenceNet_ProcShowError_ProcDelayedHideError {
-    #[doc = "`Create()` overload"]
-    pub fn create() -> () {
-        unsafe { __MapSequenceNet_ProcShowError_ProcDelayedHideError_unity2_raw::create(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-mapsequencenet")]
-pub trait IMapSequenceNet_ProcShowError_ProcDelayedHideErrorMethods: IMapSequenceNet_ProcShowError_ProcDelayedHideError {
-    #[doc = "`Hide()` overload"]
-    fn hide(self) -> () {
-        unsafe {
-            let __receiver = <MapSequenceNet_ProcShowError_ProcDelayedHideError as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapSequenceNet_ProcShowError_ProcDelayedHideError_unity2_raw::hide(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <MapSequenceNet_ProcShowError_ProcDelayedHideError as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapSequenceNet_ProcShowError_ProcDelayedHideError_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-mapsequencenet")]
-impl<__T: IMapSequenceNet_ProcShowError_ProcDelayedHideError> IMapSequenceNet_ProcShowError_ProcDelayedHideErrorMethods for __T {}
-
-#[cfg(feature = "app-mapsequencenet")]
-impl MapSequenceNet_ProcShowError_ProcDelayedHideError {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapSequenceNet_ProcShowError_ProcDelayedHideError),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapSequenceNet_ProcShowError_ProcDelayedHideErrorMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-mapsequencenet")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapSequenceNet_ProcDownload_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_download {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceNet_ProcDownload as ::unity2::ClassIdentity>::class(),
-                "Download",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceNet_ProcDownload as ::unity2::ClassIdentity>::NAME,
-                        "Download",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn download(this: MapSequenceNet_ProcDownload, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapSequenceNet_ProcDownload, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_download::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_postdownload {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceNet_ProcDownload as ::unity2::ClassIdentity>::class(),
-                "Postdownload",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceNet_ProcDownload as ::unity2::ClassIdentity>::NAME,
-                        "Postdownload",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn postdownload(this: MapSequenceNet_ProcDownload, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapSequenceNet_ProcDownload, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_postdownload::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceNet_ProcDownload as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceNet_ProcDownload as ::unity2::ClassIdentity>::NAME,
-                        "CreateBind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_bind(super_: crate::app::procinst::ProcInst, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
-        inner(super_, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceNet_ProcDownload as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceNet_ProcDownload as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: MapSequenceNet_ProcDownload, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapSequenceNet_ProcDownload, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+impl MapSequenceNet_ProcDownload { pub fn download_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceNet_ProcDownload_unity2_raw :: __lookup_download :: get_method_info () } pub fn postdownload_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceNet_ProcDownload_unity2_raw :: __lookup_postdownload :: get_method_info () } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceNet_ProcDownload_unity2_raw :: __lookup_create_bind :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceNet_ProcDownload_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-mapsequencenet")]
 impl MapSequenceNet_ProcDownload {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
-    pub fn create_bind(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
-        unsafe { __MapSequenceNet_ProcDownload_unity2_raw::create_bind(::core::convert::Into::into(super_), ::core::option::Option::None) }
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapSequenceNet_ProcDownload) , :: core :: stringify ! (new) ,)) ; < Self as IMapSequenceNet_ProcDownloadMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-mapsequencenet")]
-pub trait IMapSequenceNet_ProcDownloadMethods: IMapSequenceNet_ProcDownload {
-    #[doc = "`Download()` overload"]
-    fn download(self) -> () {
-        unsafe {
-            let __receiver =
-                <MapSequenceNet_ProcDownload as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSequenceNet_ProcDownload_unity2_raw::download(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Postdownload()` overload"]
-    fn postdownload(self) -> () {
-        unsafe {
-            let __receiver =
-                <MapSequenceNet_ProcDownload as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSequenceNet_ProcDownload_unity2_raw::postdownload(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <MapSequenceNet_ProcDownload as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSequenceNet_ProcDownload_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MapSequenceNet_ProcShowError_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_show { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceNet_ProcShowError as :: unity2 :: ClassIdentity > :: class () , "Show" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceNet_ProcShowError as :: unity2 :: ClassIdentity > :: NAME , "Show" , e) , } } } pub unsafe fn show (this : MapSequenceNet_ProcShowError , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapSequenceNet_ProcShowError , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_show :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_bind { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceNet_ProcShowError as :: unity2 :: ClassIdentity > :: class () , "CreateBind" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceNet_ProcShowError as :: unity2 :: ClassIdentity > :: NAME , "CreateBind" , e) , } } } pub unsafe fn create_bind (super_ : crate :: app :: procinst :: ProcInst , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create_bind :: get_method_info () . method_ptr ,) ; inner (super_ , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceNet_ProcShowError as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceNet_ProcShowError as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : MapSequenceNet_ProcShowError , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapSequenceNet_ProcShowError , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-mapsequencenet")]
-impl<__T: IMapSequenceNet_ProcDownload> IMapSequenceNet_ProcDownloadMethods for __T {}
+impl MapSequenceNet_ProcShowError { # [doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { __MapSequenceNet_ProcShowError_unity2_raw :: create_bind (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-mapsequencenet")]
-impl MapSequenceNet_ProcDownload {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapSequenceNet_ProcDownload),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapSequenceNet_ProcDownloadMethods>::ctor(this);
-        this
-    }
-}
+pub trait IMapSequenceNet_ProcShowErrorMethods : IMapSequenceNet_ProcShowError { # [doc = "`Show()` overload"] fn show (self ,) -> () { unsafe { let __receiver = < MapSequenceNet_ProcShowError as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceNet_ProcShowError_unity2_raw :: show (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapSequenceNet_ProcShowError as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceNet_ProcShowError_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-mapsequencenet")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapSequenceNet_ProcShowError_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_show {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceNet_ProcShowError as ::unity2::ClassIdentity>::class(),
-                "Show",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceNet_ProcShowError as ::unity2::ClassIdentity>::NAME,
-                        "Show",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn show(this: MapSequenceNet_ProcShowError, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapSequenceNet_ProcShowError, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_show::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceNet_ProcShowError as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceNet_ProcShowError as ::unity2::ClassIdentity>::NAME,
-                        "CreateBind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_bind(super_: crate::app::procinst::ProcInst, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
-        inner(super_, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceNet_ProcShowError as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceNet_ProcShowError as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: MapSequenceNet_ProcShowError, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapSequenceNet_ProcShowError, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+impl < __T : IMapSequenceNet_ProcShowError > IMapSequenceNet_ProcShowErrorMethods for __T { }
+
+#[cfg(feature = "app-mapsequencenet")]
+impl MapSequenceNet_ProcShowError { pub fn show_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceNet_ProcShowError_unity2_raw :: __lookup_show :: get_method_info () } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceNet_ProcShowError_unity2_raw :: __lookup_create_bind :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceNet_ProcShowError_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-mapsequencenet")]
 impl MapSequenceNet_ProcShowError {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
-    pub fn create_bind(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
-        unsafe { __MapSequenceNet_ProcShowError_unity2_raw::create_bind(::core::convert::Into::into(super_), ::core::option::Option::None) }
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapSequenceNet_ProcShowError) , :: core :: stringify ! (new) ,)) ; < Self as IMapSequenceNet_ProcShowErrorMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-mapsequencenet")]
-pub trait IMapSequenceNet_ProcShowErrorMethods: IMapSequenceNet_ProcShowError {
-    #[doc = "`Show()` overload"]
-    fn show(self) -> () {
-        unsafe {
-            let __receiver =
-                <MapSequenceNet_ProcShowError as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSequenceNet_ProcShowError_unity2_raw::show(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <MapSequenceNet_ProcShowError as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSequenceNet_ProcShowError_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MapSequenceNet_ProcShowError_ProcDelayedHideError_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_hide { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceNet_ProcShowError_ProcDelayedHideError as :: unity2 :: ClassIdentity > :: class () , "Hide" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceNet_ProcShowError_ProcDelayedHideError as :: unity2 :: ClassIdentity > :: NAME , "Hide" , e) , } } } pub unsafe fn hide (this : MapSequenceNet_ProcShowError_ProcDelayedHideError , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapSequenceNet_ProcShowError_ProcDelayedHideError , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_hide :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceNet_ProcShowError_ProcDelayedHideError as :: unity2 :: ClassIdentity > :: class () , "Create" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceNet_ProcShowError_ProcDelayedHideError as :: unity2 :: ClassIdentity > :: NAME , "Create" , e) , } } } pub unsafe fn create (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceNet_ProcShowError_ProcDelayedHideError as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceNet_ProcShowError_ProcDelayedHideError as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : MapSequenceNet_ProcShowError_ProcDelayedHideError , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapSequenceNet_ProcShowError_ProcDelayedHideError , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-mapsequencenet")]
+impl MapSequenceNet_ProcShowError_ProcDelayedHideError { # [doc = "`Create()` overload"] pub fn create () -> () { unsafe { __MapSequenceNet_ProcShowError_ProcDelayedHideError_unity2_raw :: create (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-mapsequencenet")]
+pub trait IMapSequenceNet_ProcShowError_ProcDelayedHideErrorMethods : IMapSequenceNet_ProcShowError_ProcDelayedHideError { # [doc = "`Hide()` overload"] fn hide (self ,) -> () { unsafe { let __receiver = < MapSequenceNet_ProcShowError_ProcDelayedHideError as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceNet_ProcShowError_ProcDelayedHideError_unity2_raw :: hide (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapSequenceNet_ProcShowError_ProcDelayedHideError as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceNet_ProcShowError_ProcDelayedHideError_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-mapsequencenet")]
+impl < __T : IMapSequenceNet_ProcShowError_ProcDelayedHideError > IMapSequenceNet_ProcShowError_ProcDelayedHideErrorMethods for __T { }
+
+#[cfg(feature = "app-mapsequencenet")]
+impl MapSequenceNet_ProcShowError_ProcDelayedHideError { pub fn hide_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceNet_ProcShowError_ProcDelayedHideError_unity2_raw :: __lookup_hide :: get_method_info () } pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceNet_ProcShowError_ProcDelayedHideError_unity2_raw :: __lookup_create :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceNet_ProcShowError_ProcDelayedHideError_unity2_raw :: __lookup_ctor :: get_method_info () } }
+
+#[cfg(feature = "app-mapsequencenet")]
+impl MapSequenceNet_ProcShowError_ProcDelayedHideError {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapSequenceNet_ProcShowError_ProcDelayedHideError) , :: core :: stringify ! (new) ,)) ; < Self as IMapSequenceNet_ProcShowError_ProcDelayedHideErrorMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-mapsequencenet")]
-impl<__T: IMapSequenceNet_ProcShowError> IMapSequenceNet_ProcShowErrorMethods for __T {}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MapSequenceNet_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_download { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceNet as :: unity2 :: ClassIdentity > :: class () , "Download" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceNet as :: unity2 :: ClassIdentity > :: NAME , "Download" , e) , } } } pub unsafe fn download (super_ : crate :: app :: procinst :: ProcInst , is_resume : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_download :: get_method_info () . method_ptr ,) ; inner (super_ , is_resume , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_upload { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceNet as :: unity2 :: ClassIdentity > :: class () , "Upload" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceNet as :: unity2 :: ClassIdentity > :: NAME , "Upload" , e) , } } } pub unsafe fn upload (super_ : crate :: app :: procinst :: ProcInst , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_upload :: get_method_info () . method_ptr ,) ; inner (super_ , __unity2_method_info) } }
 
 #[cfg(feature = "app-mapsequencenet")]
-impl MapSequenceNet_ProcShowError {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapSequenceNet_ProcShowError),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapSequenceNet_ProcShowErrorMethods>::ctor(this);
-        this
-    }
+impl MapSequenceNet { # [doc = "`Download(crate::app::procinst::ProcInst, bool)` overload"] pub fn download (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , is_resume : impl :: core :: convert :: Into < bool >) -> () { unsafe { __MapSequenceNet_unity2_raw :: download (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (is_resume) , :: core :: option :: Option :: None) } } # [doc = "`Upload(crate::app::procinst::ProcInst)` overload"] pub fn upload (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { __MapSequenceNet_unity2_raw :: upload (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-mapsequencenet")]
+impl MapSequenceNet { pub fn download_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceNet_unity2_raw :: __lookup_download :: get_method_info () } pub fn upload_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceNet_unity2_raw :: __lookup_upload :: get_method_info () } }
+
+#[cfg(feature = "app-mapsequencenet")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MapSequenceNet_ProcUpload_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_upload_kill_bonus { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceNet_ProcUpload as :: unity2 :: ClassIdentity > :: class () , "UploadKillBonus" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceNet_ProcUpload as :: unity2 :: ClassIdentity > :: NAME , "UploadKillBonus" , e) , } } } pub unsafe fn upload_kill_bonus (this : MapSequenceNet_ProcUpload , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapSequenceNet_ProcUpload , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_upload_kill_bonus :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_postupload_kill_bonus { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceNet_ProcUpload as :: unity2 :: ClassIdentity > :: class () , "PostuploadKillBonus" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceNet_ProcUpload as :: unity2 :: ClassIdentity > :: NAME , "PostuploadKillBonus" , e) , } } } pub unsafe fn postupload_kill_bonus (this : MapSequenceNet_ProcUpload , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapSequenceNet_ProcUpload , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_postupload_kill_bonus :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_upload_ranking { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceNet_ProcUpload as :: unity2 :: ClassIdentity > :: class () , "UploadRanking" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceNet_ProcUpload as :: unity2 :: ClassIdentity > :: NAME , "UploadRanking" , e) , } } } pub unsafe fn upload_ranking (this : MapSequenceNet_ProcUpload , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapSequenceNet_ProcUpload , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_upload_ranking :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_postupload_ranking { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceNet_ProcUpload as :: unity2 :: ClassIdentity > :: class () , "PostuploadRanking" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceNet_ProcUpload as :: unity2 :: ClassIdentity > :: NAME , "PostuploadRanking" , e) , } } } pub unsafe fn postupload_ranking (this : MapSequenceNet_ProcUpload , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapSequenceNet_ProcUpload , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_postupload_ranking :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_bind { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceNet_ProcUpload as :: unity2 :: ClassIdentity > :: class () , "CreateBind" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceNet_ProcUpload as :: unity2 :: ClassIdentity > :: NAME , "CreateBind" , e) , } } } pub unsafe fn create_bind (super_ : crate :: app :: procinst :: ProcInst , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create_bind :: get_method_info () . method_ptr ,) ; inner (super_ , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceNet_ProcUpload as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceNet_ProcUpload as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : MapSequenceNet_ProcUpload , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapSequenceNet_ProcUpload , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-mapsequencenet")]
+impl MapSequenceNet_ProcUpload { # [doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { __MapSequenceNet_ProcUpload_unity2_raw :: create_bind (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-mapsequencenet")]
+pub trait IMapSequenceNet_ProcUploadMethods : IMapSequenceNet_ProcUpload { # [doc = "`UploadKillBonus()` overload"] fn upload_kill_bonus (self ,) -> () { unsafe { let __receiver = < MapSequenceNet_ProcUpload as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceNet_ProcUpload_unity2_raw :: upload_kill_bonus (__receiver , :: core :: option :: Option :: None) } } # [doc = "`PostuploadKillBonus()` overload"] fn postupload_kill_bonus (self ,) -> () { unsafe { let __receiver = < MapSequenceNet_ProcUpload as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceNet_ProcUpload_unity2_raw :: postupload_kill_bonus (__receiver , :: core :: option :: Option :: None) } } # [doc = "`UploadRanking()` overload"] fn upload_ranking (self ,) -> () { unsafe { let __receiver = < MapSequenceNet_ProcUpload as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceNet_ProcUpload_unity2_raw :: upload_ranking (__receiver , :: core :: option :: Option :: None) } } # [doc = "`PostuploadRanking()` overload"] fn postupload_ranking (self ,) -> () { unsafe { let __receiver = < MapSequenceNet_ProcUpload as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceNet_ProcUpload_unity2_raw :: postupload_ranking (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapSequenceNet_ProcUpload as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceNet_ProcUpload_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-mapsequencenet")]
+impl < __T : IMapSequenceNet_ProcUpload > IMapSequenceNet_ProcUploadMethods for __T { }
+
+#[cfg(feature = "app-mapsequencenet")]
+impl MapSequenceNet_ProcUpload { pub fn upload_kill_bonus_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceNet_ProcUpload_unity2_raw :: __lookup_upload_kill_bonus :: get_method_info () } pub fn postupload_kill_bonus_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceNet_ProcUpload_unity2_raw :: __lookup_postupload_kill_bonus :: get_method_info () } pub fn upload_ranking_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceNet_ProcUpload_unity2_raw :: __lookup_upload_ranking :: get_method_info () } pub fn postupload_ranking_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceNet_ProcUpload_unity2_raw :: __lookup_postupload_ranking :: get_method_info () } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceNet_ProcUpload_unity2_raw :: __lookup_create_bind :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceNet_ProcUpload_unity2_raw :: __lookup_ctor :: get_method_info () } }
+
+#[cfg(feature = "app-mapsequencenet")]
+impl MapSequenceNet_ProcUpload {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapSequenceNet_ProcUpload) , :: core :: stringify ! (new) ,)) ; < Self as IMapSequenceNet_ProcUploadMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-mapsequencenet")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{
-        IMapSequenceNet, IMapSequenceNet_ProcDownload, IMapSequenceNet_ProcDownloadMethods, IMapSequenceNet_ProcShowError,
-        IMapSequenceNet_ProcShowErrorMethods, IMapSequenceNet_ProcShowError_ProcDelayedHideError,
-        IMapSequenceNet_ProcShowError_ProcDelayedHideErrorMethods, IMapSequenceNet_ProcUpload, IMapSequenceNet_ProcUploadMethods, MapSequenceNet,
-        MapSequenceNet_ProcDownload, MapSequenceNet_ProcDownload_Label, MapSequenceNet_ProcShowError,
-        MapSequenceNet_ProcShowError_ProcDelayedHideError, MapSequenceNet_ProcUpload, MapSequenceNet_ProcUpload_Label,
-    };
-    #[cfg(feature = "app-procinst")]
-    pub use crate::app::procinst::IProcInstMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::{
-        app::procinst::IProcInst,
-        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
-    };
+    pub use super::MapSequenceNet_ProcUpload_Label;
+    pub use super::MapSequenceNet_ProcDownload;
+    pub use super::IMapSequenceNet_ProcDownload;
+    pub use super::IMapSequenceNet_ProcDownloadMethods;
+    pub use super::MapSequenceNet_ProcShowError;
+    pub use super::IMapSequenceNet_ProcShowError;
+    pub use super::IMapSequenceNet_ProcShowErrorMethods;
+    pub use super::MapSequenceNet_ProcDownload_Label;
+    pub use super::MapSequenceNet_ProcShowError_ProcDelayedHideError;
+    pub use super::IMapSequenceNet_ProcShowError_ProcDelayedHideError;
+    pub use super::IMapSequenceNet_ProcShowError_ProcDelayedHideErrorMethods;
+    pub use super::MapSequenceNet;
+    pub use super::IMapSequenceNet;
+    pub use super::MapSequenceNet_ProcUpload;
+    pub use super::IMapSequenceNet_ProcUpload;
+    pub use super::IMapSequenceNet_ProcUploadMethods;
+    pub use crate::app::procinst::IProcInst;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "app-procinst")] pub use crate::app::procinst::IProcInstMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

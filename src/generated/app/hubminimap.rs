@@ -2,1731 +2,197 @@
 
 #[cfg(feature = "app-hubminimap-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::{
-            object::{IObject, Object},
-            r#enum::{Enum, IEnum},
-            valuetype::{IValueType, ValueType},
-        },
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubminimap/HubMiniMap_IconData.md"))]
-    #[::unity2::class(namespace = "App", name = "HubMiniMap.IconData")]
-    #[parent(crate::system::object::Object)]
-    pub struct HubMiniMap_IconData {
-        #[offset(16)]
-        #[rename(name = "access")]
-        pub access: crate::app::hubaccess::HubAccess,
-        #[offset(24)]
-        #[rename(name = "iconS")]
-        pub icon_s: crate::unity_engine::gameobject::GameObject,
-        #[offset(32)]
-        #[rename(name = "iconL")]
-        pub icon_l: crate::unity_engine::gameobject::GameObject,
-        #[offset(40)]
-        #[rename(name = "iconSRect")]
-        pub icon_s_rect: crate::unity_engine::recttransform::RectTransform,
-        #[offset(48)]
-        #[rename(name = "iconLRect")]
-        pub icon_l_rect: crate::unity_engine::recttransform::RectTransform,
-        #[offset(56)]
-        #[rename(name = "imageS")]
-        pub image_s: crate::unity_engine::ui::image::Image,
-        #[offset(64)]
-        #[rename(name = "imageL")]
-        pub image_l: crate::unity_engine::ui::image::Image,
-        #[offset(72)]
-        #[rename(name = "talkS")]
-        pub talk_s: crate::unity_engine::ui::image::Image,
-        #[offset(80)]
-        #[rename(name = "talkL")]
-        pub talk_l: crate::unity_engine::ui::image::Image,
-        #[offset(88)]
-        #[rename(name = "m_active")]
-        pub m_active: bool,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubminimap/HubMiniMap.md"))]
-    #[::unity2::class(namespace = "App", name = "HubMiniMap")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct HubMiniMap {
-        #[offset(40)]
-        #[rename(name = "m_initialized")]
-        pub m_initialized: bool,
-        #[offset(48)]
-        #[rename(name = "m_res")]
-        pub m_res: crate::app::resourcehandle_2::ResourceHandle_2,
-        #[offset(56)]
-        #[rename(name = "m_image")]
-        pub m_image: crate::app::resourcehandle_2::ResourceHandle_2,
-        #[offset(64)]
-        #[rename(name = "m_prevMapMode")]
-        pub m_prev_map_mode: crate::app::hubminimap::HubMiniMap_MapMode,
-        #[offset(72)]
-        #[rename(name = "m_icon")]
-        pub m_icon: crate::app::spriteatlasmanager_2::SpriteAtlasManager_2,
-        #[offset(80)]
-        #[rename(name = "m_gameRoot")]
-        pub m_game_root: crate::unity_engine::gameobject::GameObject,
-        #[offset(88)]
-        #[rename(name = "m_root")]
-        pub m_root: crate::unity_engine::gameobject::GameObject,
-        #[offset(96)]
-        #[rename(name = "m_iconPoint")]
-        pub m_icon_point: crate::unity_engine::gameobject::GameObject,
-        #[offset(104)]
-        #[rename(name = "m_iconLueur")]
-        pub m_icon_lueur: crate::unity_engine::gameobject::GameObject,
-        #[offset(112)]
-        #[rename(name = "m_iconItem")]
-        pub m_icon_item: crate::unity_engine::gameobject::GameObject,
-        #[offset(120)]
-        #[rename(name = "m_iconUnit")]
-        pub m_icon_unit: crate::unity_engine::gameobject::GameObject,
-        #[offset(128)]
-        #[rename(name = "m_cameraArea")]
-        pub m_camera_area: crate::unity_engine::gameobject::GameObject,
-        #[offset(136)]
-        #[rename(name = "m_mapS")]
-        pub m_map_s: crate::unity_engine::gameobject::GameObject,
-        #[offset(144)]
-        #[rename(name = "m_rotate")]
-        pub m_rotate: crate::unity_engine::gameobject::GameObject,
-        #[offset(152)]
-        #[rename(name = "m_imageS")]
-        pub m_image_s: crate::unity_engine::gameobject::GameObject,
-        #[offset(160)]
-        #[rename(name = "m_playerMarkerS")]
-        pub m_player_marker_s: crate::unity_engine::gameobject::GameObject,
-        #[offset(168)]
-        #[rename(name = "m_playerCameraS")]
-        pub m_player_camera_s: crate::unity_engine::gameobject::GameObject,
-        #[offset(176)]
-        #[rename(name = "m_mascotMarkerS")]
-        pub m_mascot_marker_s: crate::unity_engine::gameobject::GameObject,
-        #[offset(184)]
-        #[rename(name = "m_mapL")]
-        pub m_map_l: crate::unity_engine::gameobject::GameObject,
-        #[offset(192)]
-        #[rename(name = "m_imageL")]
-        pub m_image_l: crate::unity_engine::gameobject::GameObject,
-        #[offset(200)]
-        #[rename(name = "m_playerMarkerL")]
-        pub m_player_marker_l: crate::unity_engine::gameobject::GameObject,
-        #[offset(208)]
-        #[rename(name = "m_playerCameraL")]
-        pub m_player_camera_l: crate::unity_engine::gameobject::GameObject,
-        #[offset(216)]
-        #[rename(name = "m_mascotMarkerL")]
-        pub m_mascot_marker_l: crate::unity_engine::gameobject::GameObject,
-        #[offset(224)]
-        #[rename(name = "m_cafeS")]
-        pub m_cafe_s: crate::unity_engine::gameobject::GameObject,
-        #[offset(232)]
-        #[rename(name = "m_cafeL")]
-        pub m_cafe_l: crate::unity_engine::gameobject::GameObject,
-        #[offset(240)]
-        #[rename(name = "m_caveS")]
-        pub m_cave_s: crate::unity_engine::gameobject::GameObject,
-        #[offset(248)]
-        #[rename(name = "m_caveL")]
-        pub m_cave_l: crate::unity_engine::gameobject::GameObject,
-        #[offset(256)]
-        #[rename(name = "m_talkReliance")]
-        pub m_talk_reliance: crate::unity_engine::sprite::Sprite,
-        #[offset(264)]
-        #[rename(name = "m_talkStory")]
-        pub m_talk_story: crate::unity_engine::sprite::Sprite,
-        #[offset(272)]
-        #[rename(name = "m_center")]
-        pub m_center: crate::unity_engine::vector3::Vector3,
-        #[offset(284)]
-        #[rename(name = "m_size")]
-        pub m_size: crate::unity_engine::vector3::Vector3,
-        #[offset(296)]
-        #[rename(name = "m_reverse")]
-        pub m_reverse: bool,
-        #[offset(304)]
-        #[rename(name = "m_rt")]
-        pub m_rt: crate::unity_engine::recttransform::RectTransform,
-        #[offset(312)]
-        #[rename(name = "m_uv")]
-        pub m_uv: crate::unity_engine::rect::Rect,
-        #[offset(328)]
-        #[rename(name = "m_offsetX")]
-        pub m_offset_x: f32,
-        #[offset(332)]
-        #[rename(name = "m_offsetY")]
-        pub m_offset_y: f32,
-        #[offset(336)]
-        #[rename(name = "m_systemShow")]
-        pub m_system_show: bool,
-        #[offset(344)]
-        #[rename(name = "m_Layer")]
-        pub m_layer: crate::system::collections::generic::list_1::List_1<i32>,
-        #[offset(352)]
-        #[rename(name = "m_iconList")]
-        pub m_icon_list: crate::system::collections::generic::list_1::List_1<crate::app::hubminimap::HubMiniMap_IconData>,
-    }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubminimap/HubMiniMap_MapMode.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct HubMiniMap_MapMode {
-        pub value: i32,
-    }
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubminimap/HubMiniMap.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubMiniMap")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct HubMiniMap {
+# [offset (40)] # [rename (name = "m_initialized")] pub m_initialized : bool ,
+# [offset (48)] # [rename (name = "m_res")] pub m_res : crate :: app :: resourcehandle_2 :: ResourceHandle_2 ,
+# [offset (56)] # [rename (name = "m_image")] pub m_image : crate :: app :: resourcehandle_2 :: ResourceHandle_2 ,
+# [offset (64)] # [rename (name = "m_prevMapMode")] pub m_prev_map_mode : crate :: app :: hubminimap :: HubMiniMap_MapMode ,
+# [offset (72)] # [rename (name = "m_icon")] pub m_icon : crate :: app :: spriteatlasmanager_2 :: SpriteAtlasManager_2 ,
+# [offset (80)] # [rename (name = "m_gameRoot")] pub m_game_root : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (88)] # [rename (name = "m_root")] pub m_root : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (96)] # [rename (name = "m_iconPoint")] pub m_icon_point : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (104)] # [rename (name = "m_iconLueur")] pub m_icon_lueur : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (112)] # [rename (name = "m_iconItem")] pub m_icon_item : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (120)] # [rename (name = "m_iconUnit")] pub m_icon_unit : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (128)] # [rename (name = "m_cameraArea")] pub m_camera_area : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (136)] # [rename (name = "m_mapS")] pub m_map_s : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (144)] # [rename (name = "m_rotate")] pub m_rotate : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (152)] # [rename (name = "m_imageS")] pub m_image_s : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (160)] # [rename (name = "m_playerMarkerS")] pub m_player_marker_s : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (168)] # [rename (name = "m_playerCameraS")] pub m_player_camera_s : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (176)] # [rename (name = "m_mascotMarkerS")] pub m_mascot_marker_s : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (184)] # [rename (name = "m_mapL")] pub m_map_l : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (192)] # [rename (name = "m_imageL")] pub m_image_l : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (200)] # [rename (name = "m_playerMarkerL")] pub m_player_marker_l : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (208)] # [rename (name = "m_playerCameraL")] pub m_player_camera_l : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (216)] # [rename (name = "m_mascotMarkerL")] pub m_mascot_marker_l : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (224)] # [rename (name = "m_cafeS")] pub m_cafe_s : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (232)] # [rename (name = "m_cafeL")] pub m_cafe_l : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (240)] # [rename (name = "m_caveS")] pub m_cave_s : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (248)] # [rename (name = "m_caveL")] pub m_cave_l : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (256)] # [rename (name = "m_talkReliance")] pub m_talk_reliance : crate :: unity_engine :: sprite :: Sprite ,
+# [offset (264)] # [rename (name = "m_talkStory")] pub m_talk_story : crate :: unity_engine :: sprite :: Sprite ,
+# [offset (272)] # [rename (name = "m_center")] pub m_center : crate :: unity_engine :: vector3 :: Vector3 ,
+# [offset (284)] # [rename (name = "m_size")] pub m_size : crate :: unity_engine :: vector3 :: Vector3 ,
+# [offset (296)] # [rename (name = "m_reverse")] pub m_reverse : bool ,
+# [offset (304)] # [rename (name = "m_rt")] pub m_rt : crate :: unity_engine :: recttransform :: RectTransform ,
+# [offset (312)] # [rename (name = "m_uv")] pub m_uv : crate :: unity_engine :: rect :: Rect ,
+# [offset (328)] # [rename (name = "m_offsetX")] pub m_offset_x : f32 ,
+# [offset (332)] # [rename (name = "m_offsetY")] pub m_offset_y : f32 ,
+# [offset (336)] # [rename (name = "m_systemShow")] pub m_system_show : bool ,
+# [offset (344)] # [rename (name = "m_Layer")] pub m_layer : crate :: system :: collections :: generic :: list_1 :: List_1 < i32 > ,
+# [offset (352)] # [rename (name = "m_iconList")] pub m_icon_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: hubminimap :: HubMiniMap_IconData > ,
+}
 
-    impl ::unity2::ClassIdentity for HubMiniMap_MapMode {
-        const NAME: &'static str = "HubMiniMap.MapMode";
-        const NAMESPACE: &'static str = "App";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubminimap/HubMiniMap_MapMode.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct HubMiniMap_MapMode  {
+    pub value: i32,
+}
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+
+impl  ::unity2::ClassIdentity for HubMiniMap_MapMode  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "HubMiniMap.MapMode";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for HubMiniMap_MapMode {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  ::unity2::IlType for HubMiniMap_MapMode  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl HubMiniMap_MapMode {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
+}
 
-        pub fn small() -> Self {
-            Self { value: 1 }
-        }
 
-        pub fn large() -> Self {
-            Self { value: 2 }
-        }
+impl  HubMiniMap_MapMode  {
+    pub fn none() -> Self {
+        Self { value: 0 }
+
     }
+
+
+    pub fn small() -> Self {
+        Self { value: 1 }
+
+    }
+
+
+    pub fn large() -> Self {
+        Self { value: 2 }
+
+    }
+
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubminimap/HubMiniMap_IconData.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubMiniMap.IconData")] # [parent (crate :: system :: object :: Object)] pub struct HubMiniMap_IconData {
+# [offset (16)] # [rename (name = "access")] pub access : crate :: app :: hubaccess :: HubAccess ,
+# [offset (24)] # [rename (name = "iconS")] pub icon_s : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (32)] # [rename (name = "iconL")] pub icon_l : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (40)] # [rename (name = "iconSRect")] pub icon_s_rect : crate :: unity_engine :: recttransform :: RectTransform ,
+# [offset (48)] # [rename (name = "iconLRect")] pub icon_l_rect : crate :: unity_engine :: recttransform :: RectTransform ,
+# [offset (56)] # [rename (name = "imageS")] pub image_s : crate :: unity_engine :: ui :: image :: Image ,
+# [offset (64)] # [rename (name = "imageL")] pub image_l : crate :: unity_engine :: ui :: image :: Image ,
+# [offset (72)] # [rename (name = "talkS")] pub talk_s : crate :: unity_engine :: ui :: image :: Image ,
+# [offset (80)] # [rename (name = "talkL")] pub talk_l : crate :: unity_engine :: ui :: image :: Image ,
+# [offset (88)] # [rename (name = "m_active")] pub m_active : bool ,
+}
+
 }
 
 #[cfg(feature = "app-hubminimap-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-hubminimap")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __HubMiniMap_IconData_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_active {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubMiniMap_IconData as ::unity2::ClassIdentity>::class(),
-                "SetActive",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubMiniMap_IconData as ::unity2::ClassIdentity>::NAME,
-                        "SetActive",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_active(this: HubMiniMap_IconData, active: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(HubMiniMap_IconData, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_active::get_method_info().method_ptr);
-        inner(this, active, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubMiniMap_IconData as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubMiniMap_IconData as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: HubMiniMap_IconData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(HubMiniMap_IconData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __HubMiniMap_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_next_change_mode { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubMiniMap as :: unity2 :: ClassIdentity > :: class () , "NextChangeMode" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubMiniMap as :: unity2 :: ClassIdentity > :: NAME , "NextChangeMode" , e) , } } } pub unsafe fn next_change_mode (this : HubMiniMap , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HubMiniMap , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_next_change_mode :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_show_system_menu { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubMiniMap as :: unity2 :: ClassIdentity > :: class () , "ShowSystemMenu" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubMiniMap as :: unity2 :: ClassIdentity > :: NAME , "ShowSystemMenu" , e) , } } } pub unsafe fn show_system_menu (this : HubMiniMap , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HubMiniMap , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_show_system_menu :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_hide_system_menu { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubMiniMap as :: unity2 :: ClassIdentity > :: class () , "HideSystemMenu" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubMiniMap as :: unity2 :: ClassIdentity > :: NAME , "HideSystemMenu" , e) , } } } pub unsafe fn hide_system_menu (this : HubMiniMap , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HubMiniMap , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_hide_system_menu :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_show { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubMiniMap as :: unity2 :: ClassIdentity > :: class () , "Show" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubMiniMap as :: unity2 :: ClassIdentity > :: NAME , "Show" , e) , } } } pub unsafe fn show (this : HubMiniMap , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HubMiniMap , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_show :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_hide { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubMiniMap as :: unity2 :: ClassIdentity > :: class () , "Hide" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubMiniMap as :: unity2 :: ClassIdentity > :: NAME , "Hide" , e) , } } } pub unsafe fn hide (this : HubMiniMap , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HubMiniMap , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_hide :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_push_layer { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubMiniMap as :: unity2 :: ClassIdentity > :: class () , "PushLayer" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubMiniMap as :: unity2 :: ClassIdentity > :: NAME , "PushLayer" , e) , } } } pub unsafe fn push_layer (this : HubMiniMap , layer : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HubMiniMap , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_push_layer :: get_method_info () . method_ptr ,) ; inner (this , layer , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_pop_layer { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubMiniMap as :: unity2 :: ClassIdentity > :: class () , "PopLayer" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubMiniMap as :: unity2 :: ClassIdentity > :: NAME , "PopLayer" , e) , } } } pub unsafe fn pop_layer (this : HubMiniMap , layer : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HubMiniMap , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_pop_layer :: get_method_info () . method_ptr ,) ; inner (this , layer , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_push_env_sound_id { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubMiniMap as :: unity2 :: ClassIdentity > :: class () , "PushEnvSoundID" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubMiniMap as :: unity2 :: ClassIdentity > :: NAME , "PushEnvSoundID" , e) , } } } pub unsafe fn push_env_sound_id (this : HubMiniMap , id : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HubMiniMap , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_push_env_sound_id :: get_method_info () . method_ptr ,) ; inner (this , id , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_pop_env_sound_id { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubMiniMap as :: unity2 :: ClassIdentity > :: class () , "PopEnvSoundID" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubMiniMap as :: unity2 :: ClassIdentity > :: NAME , "PopEnvSoundID" , e) , } } } pub unsafe fn pop_env_sound_id (this : HubMiniMap , id : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HubMiniMap , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_pop_env_sound_id :: get_method_info () . method_ptr ,) ; inner (this , id , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_cave { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubMiniMap as :: unity2 :: ClassIdentity > :: class () , "IsCave" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubMiniMap as :: unity2 :: ClassIdentity > :: NAME , "IsCave" , e) , } } } pub unsafe fn is_cave (this : HubMiniMap , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (HubMiniMap , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_cave :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_env_sound_collider_count { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubMiniMap as :: unity2 :: ClassIdentity > :: class () , "get_EnvSoundColliderCount" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubMiniMap as :: unity2 :: ClassIdentity > :: NAME , "get_EnvSoundColliderCount" , e) , } } } pub unsafe fn get_env_sound_collider_count (this : HubMiniMap , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (HubMiniMap , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_env_sound_collider_count :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_env_sound_collider_count { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubMiniMap as :: unity2 :: ClassIdentity > :: class () , "set_EnvSoundColliderCount" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubMiniMap as :: unity2 :: ClassIdentity > :: NAME , "set_EnvSoundColliderCount" , e) , } } } pub unsafe fn set_env_sound_collider_count (this : HubMiniMap , value : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HubMiniMap , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_env_sound_collider_count :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_env_sound_id { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubMiniMap as :: unity2 :: ClassIdentity > :: class () , "get_EnvSoundID" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubMiniMap as :: unity2 :: ClassIdentity > :: NAME , "get_EnvSoundID" , e) , } } } pub unsafe fn get_env_sound_id (this : HubMiniMap , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (HubMiniMap , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_env_sound_id :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_env_sound_id { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubMiniMap as :: unity2 :: ClassIdentity > :: class () , "set_EnvSoundID" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubMiniMap as :: unity2 :: ClassIdentity > :: NAME , "set_EnvSoundID" , e) , } } } pub unsafe fn set_env_sound_id (this : HubMiniMap , value : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HubMiniMap , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_env_sound_id :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_current_map_mode { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubMiniMap as :: unity2 :: ClassIdentity > :: class () , "get_CurrentMapMode" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubMiniMap as :: unity2 :: ClassIdentity > :: NAME , "get_CurrentMapMode" , e) , } } } pub unsafe fn get_current_map_mode (this : HubMiniMap , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: hubminimap :: HubMiniMap_MapMode { let inner : extern "C" fn (HubMiniMap , :: unity2 :: OptionalMethod ,) -> crate :: app :: hubminimap :: HubMiniMap_MapMode = :: core :: mem :: transmute (__lookup_get_current_map_mode :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_current_map_mode { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: hubminimap :: HubMiniMap_MapMode as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubMiniMap as :: unity2 :: ClassIdentity > :: class () , "set_CurrentMapMode" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubMiniMap as :: unity2 :: ClassIdentity > :: NAME , "set_CurrentMapMode" , e) , } } } pub unsafe fn set_current_map_mode (this : HubMiniMap , value : crate :: app :: hubminimap :: HubMiniMap_MapMode , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HubMiniMap , crate :: app :: hubminimap :: HubMiniMap_MapMode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_current_map_mode :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_is_minimap_rotate { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubMiniMap as :: unity2 :: ClassIdentity > :: class () , "get_IsMinimapRotate" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubMiniMap as :: unity2 :: ClassIdentity > :: NAME , "get_IsMinimapRotate" , e) , } } } pub unsafe fn get_is_minimap_rotate (this : HubMiniMap , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (HubMiniMap , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_is_minimap_rotate :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_is_mascot_enable { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubMiniMap as :: unity2 :: ClassIdentity > :: class () , "get_IsMascotEnable" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubMiniMap as :: unity2 :: ClassIdentity > :: NAME , "get_IsMascotEnable" , e) , } } } pub unsafe fn get_is_mascot_enable (this : HubMiniMap , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (HubMiniMap , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_is_mascot_enable :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_capture_param { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubMiniMap as :: unity2 :: ClassIdentity > :: class () , "GetCaptureParam" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubMiniMap as :: unity2 :: ClassIdentity > :: NAME , "GetCaptureParam" , e) , } } } pub unsafe fn get_capture_param (this : HubMiniMap , map_name : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: hubminimapcaptureparam :: HubMiniMapCaptureParam_CaptureParam1 { let inner : extern "C" fn (HubMiniMap , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: app :: hubminimapcaptureparam :: HubMiniMapCaptureParam_CaptureParam1 = :: core :: mem :: transmute (__lookup_get_capture_param :: get_method_info () . method_ptr ,) ; inner (this , map_name , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_load { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubMiniMap as :: unity2 :: ClassIdentity > :: class () , "Load" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubMiniMap as :: unity2 :: ClassIdentity > :: NAME , "Load" , e) , } } } pub unsafe fn load (this : HubMiniMap , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { let inner : extern "C" fn (HubMiniMap , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute (__lookup_load :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_destroy { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubMiniMap as :: unity2 :: ClassIdentity > :: class () , "OnDestroy" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubMiniMap as :: unity2 :: ClassIdentity > :: NAME , "OnDestroy" , e) , } } } pub unsafe fn on_destroy (this : HubMiniMap , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HubMiniMap , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_destroy :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_clear_icon { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubMiniMap as :: unity2 :: ClassIdentity > :: class () , "ClearIcon" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubMiniMap as :: unity2 :: ClassIdentity > :: NAME , "ClearIcon" , e) , } } } pub unsafe fn clear_icon (this : HubMiniMap , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HubMiniMap , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_clear_icon :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_base_point { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: hubaccess :: HubAccess as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubMiniMap as :: unity2 :: ClassIdentity > :: class () , "GetBasePoint" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubMiniMap as :: unity2 :: ClassIdentity > :: NAME , "GetBasePoint" , e) , } } } pub unsafe fn get_base_point (this : HubMiniMap , access : crate :: app :: hubaccess :: HubAccess , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject { let inner : extern "C" fn (HubMiniMap , crate :: app :: hubaccess :: HubAccess , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute (__lookup_get_base_point :: get_method_info () . method_ptr ,) ; inner (this , access , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_dispos_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: hubaccess :: HubAccess as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubMiniMap as :: unity2 :: ClassIdentity > :: class () , "GetDisposName" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubMiniMap as :: unity2 :: ClassIdentity > :: NAME , "GetDisposName" , e) , } } } pub unsafe fn get_dispos_name (this : HubMiniMap , access : crate :: app :: hubaccess :: HubAccess , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (HubMiniMap , crate :: app :: hubaccess :: HubAccess , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_dispos_name :: get_method_info () . method_ptr ,) ; inner (this , access , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_setup { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: gameobject :: GameObject as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubMiniMap as :: unity2 :: ClassIdentity > :: class () , "Setup" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubMiniMap as :: unity2 :: ClassIdentity > :: NAME , "Setup" , e) , } } } pub unsafe fn setup (this : HubMiniMap , root : crate :: unity_engine :: gameobject :: GameObject , prefixless_cid : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HubMiniMap , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_setup :: get_method_info () . method_ptr ,) ; inner (this , root , prefixless_cid , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_restore { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubMiniMap as :: unity2 :: ClassIdentity > :: class () , "Restore" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubMiniMap as :: unity2 :: ClassIdentity > :: NAME , "Restore" , e) , } } } pub unsafe fn restore (this : HubMiniMap , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HubMiniMap , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_restore :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_arrange_icon_position { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubMiniMap as :: unity2 :: ClassIdentity > :: class () , "ArrangeIconPosition" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubMiniMap as :: unity2 :: ClassIdentity > :: NAME , "ArrangeIconPosition" , e) , } } } pub unsafe fn arrange_icon_position (this : HubMiniMap , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HubMiniMap , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_arrange_icon_position :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_show { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubMiniMap as :: unity2 :: ClassIdentity > :: class () , "IsShow" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubMiniMap as :: unity2 :: ClassIdentity > :: NAME , "IsShow" , e) , } } } pub unsafe fn is_show (this : HubMiniMap , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (HubMiniMap , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_show :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubMiniMap as :: unity2 :: ClassIdentity > :: class () , "Update" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubMiniMap as :: unity2 :: ClassIdentity > :: NAME , "Update" , e) , } } } pub unsafe fn update (this : HubMiniMap , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HubMiniMap , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_scroll { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubMiniMap as :: unity2 :: ClassIdentity > :: class () , "Scroll" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubMiniMap as :: unity2 :: ClassIdentity > :: NAME , "Scroll" , e) , } } } pub unsafe fn scroll (this : HubMiniMap , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HubMiniMap , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_scroll :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_mode { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: hubminimap :: HubMiniMap_MapMode as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubMiniMap as :: unity2 :: ClassIdentity > :: class () , "SetMode" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubMiniMap as :: unity2 :: ClassIdentity > :: NAME , "SetMode" , e) , } } } pub unsafe fn set_mode (this : HubMiniMap , mode : crate :: app :: hubminimap :: HubMiniMap_MapMode , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HubMiniMap , crate :: app :: hubminimap :: HubMiniMap_MapMode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_mode :: get_method_info () . method_ptr ,) ; inner (this , mode , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_transform_position { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubMiniMap as :: unity2 :: ClassIdentity > :: class () , "TransformPosition" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubMiniMap as :: unity2 :: ClassIdentity > :: NAME , "TransformPosition" , e) , } } } pub unsafe fn transform_position (this : HubMiniMap , position : crate :: unity_engine :: vector3 :: Vector3 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 { let inner : extern "C" fn (HubMiniMap , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute (__lookup_transform_position :: get_method_info () . method_ptr ,) ; inner (this , position , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_world_to_screen_position { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubMiniMap as :: unity2 :: ClassIdentity > :: class () , "WorldToScreenPosition" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubMiniMap as :: unity2 :: ClassIdentity > :: NAME , "WorldToScreenPosition" , e) , } } } pub unsafe fn world_to_screen_position (this : HubMiniMap , position : crate :: unity_engine :: vector3 :: Vector3 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 { let inner : extern "C" fn (HubMiniMap , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute (__lookup_world_to_screen_position :: get_method_info () . method_ptr ,) ; inner (this , position , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubMiniMap as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubMiniMap as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : HubMiniMap , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HubMiniMap , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-hubminimap")]
-pub trait IHubMiniMap_IconDataMethods: IHubMiniMap_IconData {
-    #[doc = "`SetActive(bool)` overload"]
-    fn set_active(self, active: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver = <HubMiniMap_IconData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubMiniMap_IconData_unity2_raw::set_active(__receiver, ::core::convert::Into::into(active), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <HubMiniMap_IconData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubMiniMap_IconData_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IHubMiniMapMethods : IHubMiniMap { # [doc = "`NextChangeMode()` overload"] fn next_change_mode (self ,) -> () { unsafe { let __receiver = < HubMiniMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubMiniMap_unity2_raw :: next_change_mode (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ShowSystemMenu()` overload"] fn show_system_menu (self ,) -> () { unsafe { let __receiver = < HubMiniMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubMiniMap_unity2_raw :: show_system_menu (__receiver , :: core :: option :: Option :: None) } } # [doc = "`HideSystemMenu()` overload"] fn hide_system_menu (self ,) -> () { unsafe { let __receiver = < HubMiniMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubMiniMap_unity2_raw :: hide_system_menu (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Show()` overload"] fn show (self ,) -> () { unsafe { let __receiver = < HubMiniMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubMiniMap_unity2_raw :: show (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Hide()` overload"] fn hide (self ,) -> () { unsafe { let __receiver = < HubMiniMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubMiniMap_unity2_raw :: hide (__receiver , :: core :: option :: Option :: None) } } # [doc = "`PushLayer(i32)` overload"] fn push_layer (self , layer : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < HubMiniMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubMiniMap_unity2_raw :: push_layer (__receiver , :: core :: convert :: Into :: into (layer) , :: core :: option :: Option :: None) } } # [doc = "`PopLayer(i32)` overload"] fn pop_layer (self , layer : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < HubMiniMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubMiniMap_unity2_raw :: pop_layer (__receiver , :: core :: convert :: Into :: into (layer) , :: core :: option :: Option :: None) } } # [doc = "`PushEnvSoundID(::unity2::Il2CppString)` overload"] fn push_env_sound_id (self , id : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < HubMiniMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubMiniMap_unity2_raw :: push_env_sound_id (__receiver , :: core :: convert :: Into :: into (id) , :: core :: option :: Option :: None) } } # [doc = "`PopEnvSoundID(::unity2::Il2CppString)` overload"] fn pop_env_sound_id (self , id : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < HubMiniMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubMiniMap_unity2_raw :: pop_env_sound_id (__receiver , :: core :: convert :: Into :: into (id) , :: core :: option :: Option :: None) } } # [doc = "`IsCave()` overload"] fn is_cave (self ,) -> bool { unsafe { let __receiver = < HubMiniMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubMiniMap_unity2_raw :: is_cave (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_EnvSoundColliderCount()` overload"] fn get_env_sound_collider_count (self ,) -> i32 { unsafe { let __receiver = < HubMiniMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubMiniMap_unity2_raw :: get_env_sound_collider_count (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_EnvSoundColliderCount(i32)` overload"] fn set_env_sound_collider_count (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < HubMiniMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubMiniMap_unity2_raw :: set_env_sound_collider_count (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_EnvSoundID()` overload"] fn get_env_sound_id (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubMiniMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubMiniMap_unity2_raw :: get_env_sound_id (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_EnvSoundID(::unity2::Il2CppString)` overload"] fn set_env_sound_id (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < HubMiniMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubMiniMap_unity2_raw :: set_env_sound_id (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_CurrentMapMode()` overload"] fn get_current_map_mode (self ,) -> crate :: app :: hubminimap :: HubMiniMap_MapMode { unsafe { let __receiver = < HubMiniMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubMiniMap_unity2_raw :: get_current_map_mode (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_CurrentMapMode(crate::app::hubminimap::HubMiniMap_MapMode)` overload"] fn set_current_map_mode (self , value : impl :: core :: convert :: Into < crate :: app :: hubminimap :: HubMiniMap_MapMode >) -> () { unsafe { let __receiver = < HubMiniMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubMiniMap_unity2_raw :: set_current_map_mode (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_IsMinimapRotate()` overload"] fn get_is_minimap_rotate (self ,) -> bool { unsafe { let __receiver = < HubMiniMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubMiniMap_unity2_raw :: get_is_minimap_rotate (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_IsMascotEnable()` overload"] fn get_is_mascot_enable (self ,) -> bool { unsafe { let __receiver = < HubMiniMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubMiniMap_unity2_raw :: get_is_mascot_enable (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetCaptureParam(::unity2::Il2CppString)` overload"] fn get_capture_param (self , map_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: app :: hubminimapcaptureparam :: HubMiniMapCaptureParam_CaptureParam1 { unsafe { let __receiver = < HubMiniMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubMiniMap_unity2_raw :: get_capture_param (__receiver , :: core :: convert :: Into :: into (map_name) , :: core :: option :: Option :: None) } } # [doc = "`Load()` overload"] fn load (self ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { let __receiver = < HubMiniMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubMiniMap_unity2_raw :: load (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnDestroy()` overload"] fn on_destroy (self ,) -> () { unsafe { let __receiver = < HubMiniMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubMiniMap_unity2_raw :: on_destroy (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ClearIcon()` overload"] fn clear_icon (self ,) -> () { unsafe { let __receiver = < HubMiniMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubMiniMap_unity2_raw :: clear_icon (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetBasePoint(crate::app::hubaccess::HubAccess)` overload"] fn get_base_point (self , access : impl :: core :: convert :: Into < crate :: app :: hubaccess :: HubAccess >) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { let __receiver = < HubMiniMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubMiniMap_unity2_raw :: get_base_point (__receiver , :: core :: convert :: Into :: into (access) , :: core :: option :: Option :: None) } } # [doc = "`GetDisposName(crate::app::hubaccess::HubAccess)` overload"] fn get_dispos_name (self , access : impl :: core :: convert :: Into < crate :: app :: hubaccess :: HubAccess >) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubMiniMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubMiniMap_unity2_raw :: get_dispos_name (__receiver , :: core :: convert :: Into :: into (access) , :: core :: option :: Option :: None) } } # [doc = "`Setup(crate::unity_engine::gameobject::GameObject, ::unity2::Il2CppString)` overload"] fn setup (self , root : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject > , prefixless_cid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < HubMiniMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubMiniMap_unity2_raw :: setup (__receiver , :: core :: convert :: Into :: into (root) , :: core :: convert :: Into :: into (prefixless_cid) , :: core :: option :: Option :: None) } } # [doc = "`Restore()` overload"] fn restore (self ,) -> () { unsafe { let __receiver = < HubMiniMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubMiniMap_unity2_raw :: restore (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ArrangeIconPosition()` overload"] fn arrange_icon_position (self ,) -> () { unsafe { let __receiver = < HubMiniMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubMiniMap_unity2_raw :: arrange_icon_position (__receiver , :: core :: option :: Option :: None) } } # [doc = "`IsShow()` overload"] fn is_show (self ,) -> bool { unsafe { let __receiver = < HubMiniMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubMiniMap_unity2_raw :: is_show (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < HubMiniMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubMiniMap_unity2_raw :: update (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Scroll()` overload"] fn scroll (self ,) -> () { unsafe { let __receiver = < HubMiniMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubMiniMap_unity2_raw :: scroll (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetMode(crate::app::hubminimap::HubMiniMap_MapMode)` overload"] fn set_mode (self , mode : impl :: core :: convert :: Into < crate :: app :: hubminimap :: HubMiniMap_MapMode >) -> () { unsafe { let __receiver = < HubMiniMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubMiniMap_unity2_raw :: set_mode (__receiver , :: core :: convert :: Into :: into (mode) , :: core :: option :: Option :: None) } } # [doc = "`TransformPosition(crate::unity_engine::vector3::Vector3)` overload"] fn transform_position (self , position : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < HubMiniMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubMiniMap_unity2_raw :: transform_position (__receiver , :: core :: convert :: Into :: into (position) , :: core :: option :: Option :: None) } } # [doc = "`WorldToScreenPosition(crate::unity_engine::vector3::Vector3)` overload"] fn world_to_screen_position (self , position : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < HubMiniMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubMiniMap_unity2_raw :: world_to_screen_position (__receiver , :: core :: convert :: Into :: into (position) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HubMiniMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubMiniMap_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-hubminimap")]
-impl<__T: IHubMiniMap_IconData> IHubMiniMap_IconDataMethods for __T {}
+impl < __T : IHubMiniMap > IHubMiniMapMethods for __T { }
 
 #[cfg(feature = "app-hubminimap")]
-impl HubMiniMap_IconData {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(HubMiniMap_IconData),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IHubMiniMap_IconDataMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-hubminimap")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __HubMiniMap_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_next_change_mode {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubMiniMap as ::unity2::ClassIdentity>::class(),
-                "NextChangeMode",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubMiniMap as ::unity2::ClassIdentity>::NAME,
-                        "NextChangeMode",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn next_change_mode(this: HubMiniMap, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(HubMiniMap, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_next_change_mode::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_show_system_menu {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubMiniMap as ::unity2::ClassIdentity>::class(),
-                "ShowSystemMenu",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubMiniMap as ::unity2::ClassIdentity>::NAME,
-                        "ShowSystemMenu",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn show_system_menu(this: HubMiniMap, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(HubMiniMap, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_show_system_menu::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_hide_system_menu {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubMiniMap as ::unity2::ClassIdentity>::class(),
-                "HideSystemMenu",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubMiniMap as ::unity2::ClassIdentity>::NAME,
-                        "HideSystemMenu",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn hide_system_menu(this: HubMiniMap, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(HubMiniMap, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_hide_system_menu::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_show {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<HubMiniMap as ::unity2::ClassIdentity>::class(), "Show", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubMiniMap as ::unity2::ClassIdentity>::NAME,
-                        "Show",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn show(this: HubMiniMap, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(HubMiniMap, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_show::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_hide {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<HubMiniMap as ::unity2::ClassIdentity>::class(), "Hide", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubMiniMap as ::unity2::ClassIdentity>::NAME,
-                        "Hide",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn hide(this: HubMiniMap, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(HubMiniMap, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_hide::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_push_layer {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubMiniMap as ::unity2::ClassIdentity>::class(),
-                "PushLayer",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubMiniMap as ::unity2::ClassIdentity>::NAME,
-                        "PushLayer",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn push_layer(this: HubMiniMap, layer: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(HubMiniMap, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_push_layer::get_method_info().method_ptr);
-        inner(this, layer, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_pop_layer {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<HubMiniMap as ::unity2::ClassIdentity>::class(), "PopLayer", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubMiniMap as ::unity2::ClassIdentity>::NAME,
-                        "PopLayer",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn pop_layer(this: HubMiniMap, layer: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(HubMiniMap, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_pop_layer::get_method_info().method_ptr);
-        inner(this, layer, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_push_env_sound_id {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubMiniMap as ::unity2::ClassIdentity>::class(),
-                "PushEnvSoundID",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubMiniMap as ::unity2::ClassIdentity>::NAME,
-                        "PushEnvSoundID",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn push_env_sound_id(this: HubMiniMap, id: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(HubMiniMap, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_push_env_sound_id::get_method_info().method_ptr);
-        inner(this, id, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_pop_env_sound_id {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubMiniMap as ::unity2::ClassIdentity>::class(),
-                "PopEnvSoundID",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubMiniMap as ::unity2::ClassIdentity>::NAME,
-                        "PopEnvSoundID",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn pop_env_sound_id(this: HubMiniMap, id: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(HubMiniMap, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_pop_env_sound_id::get_method_info().method_ptr);
-        inner(this, id, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_cave {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<HubMiniMap as ::unity2::ClassIdentity>::class(), "IsCave", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubMiniMap as ::unity2::ClassIdentity>::NAME,
-                        "IsCave",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_cave(this: HubMiniMap, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(HubMiniMap, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_cave::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_env_sound_collider_count {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubMiniMap as ::unity2::ClassIdentity>::class(),
-                "get_EnvSoundColliderCount",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubMiniMap as ::unity2::ClassIdentity>::NAME,
-                        "get_EnvSoundColliderCount",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_env_sound_collider_count(this: HubMiniMap, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(HubMiniMap, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_env_sound_collider_count::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_env_sound_collider_count {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubMiniMap as ::unity2::ClassIdentity>::class(),
-                "set_EnvSoundColliderCount",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubMiniMap as ::unity2::ClassIdentity>::NAME,
-                        "set_EnvSoundColliderCount",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_env_sound_collider_count(this: HubMiniMap, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(HubMiniMap, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_env_sound_collider_count::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_env_sound_id {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubMiniMap as ::unity2::ClassIdentity>::class(),
-                "get_EnvSoundID",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubMiniMap as ::unity2::ClassIdentity>::NAME,
-                        "get_EnvSoundID",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_env_sound_id(this: HubMiniMap, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(HubMiniMap, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_env_sound_id::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_env_sound_id {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubMiniMap as ::unity2::ClassIdentity>::class(),
-                "set_EnvSoundID",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubMiniMap as ::unity2::ClassIdentity>::NAME,
-                        "set_EnvSoundID",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_env_sound_id(this: HubMiniMap, value: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(HubMiniMap, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_env_sound_id::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_current_map_mode {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubMiniMap as ::unity2::ClassIdentity>::class(),
-                "get_CurrentMapMode",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubMiniMap as ::unity2::ClassIdentity>::NAME,
-                        "get_CurrentMapMode",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_current_map_mode(
-        this: HubMiniMap,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::hubminimap::HubMiniMap_MapMode {
-        let inner: extern "C" fn(HubMiniMap, ::unity2::OptionalMethod) -> crate::app::hubminimap::HubMiniMap_MapMode =
-            ::core::mem::transmute(__lookup_get_current_map_mode::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_current_map_mode {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::hubminimap::HubMiniMap_MapMode as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubMiniMap as ::unity2::ClassIdentity>::class(),
-                "set_CurrentMapMode",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubMiniMap as ::unity2::ClassIdentity>::NAME,
-                        "set_CurrentMapMode",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_current_map_mode(
-        this: HubMiniMap,
-        value: crate::app::hubminimap::HubMiniMap_MapMode,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubMiniMap, crate::app::hubminimap::HubMiniMap_MapMode, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_current_map_mode::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_is_minimap_rotate {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubMiniMap as ::unity2::ClassIdentity>::class(),
-                "get_IsMinimapRotate",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubMiniMap as ::unity2::ClassIdentity>::NAME,
-                        "get_IsMinimapRotate",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_is_minimap_rotate(this: HubMiniMap, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(HubMiniMap, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_is_minimap_rotate::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_is_mascot_enable {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubMiniMap as ::unity2::ClassIdentity>::class(),
-                "get_IsMascotEnable",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubMiniMap as ::unity2::ClassIdentity>::NAME,
-                        "get_IsMascotEnable",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_is_mascot_enable(this: HubMiniMap, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(HubMiniMap, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_is_mascot_enable::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_capture_param {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubMiniMap as ::unity2::ClassIdentity>::class(),
-                "GetCaptureParam",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubMiniMap as ::unity2::ClassIdentity>::NAME,
-                        "GetCaptureParam",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_capture_param(
-        this: HubMiniMap,
-        map_name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::hubminimapcaptureparam::HubMiniMapCaptureParam_CaptureParam1 {
-        let inner: extern "C" fn(
-            HubMiniMap,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::hubminimapcaptureparam::HubMiniMapCaptureParam_CaptureParam1 =
-            ::core::mem::transmute(__lookup_get_capture_param::get_method_info().method_ptr);
-        inner(this, map_name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_load {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<HubMiniMap as ::unity2::ClassIdentity>::class(), "Load", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubMiniMap as ::unity2::ClassIdentity>::NAME,
-                        "Load",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn load(this: HubMiniMap, __unity2_method_info: ::unity2::OptionalMethod) -> crate::system::collections::ienumerator::IEnumerator {
-        let inner: extern "C" fn(HubMiniMap, ::unity2::OptionalMethod) -> crate::system::collections::ienumerator::IEnumerator =
-            ::core::mem::transmute(__lookup_load::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_destroy {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubMiniMap as ::unity2::ClassIdentity>::class(),
-                "OnDestroy",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubMiniMap as ::unity2::ClassIdentity>::NAME,
-                        "OnDestroy",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_destroy(this: HubMiniMap, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(HubMiniMap, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_destroy::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_clear_icon {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubMiniMap as ::unity2::ClassIdentity>::class(),
-                "ClearIcon",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubMiniMap as ::unity2::ClassIdentity>::NAME,
-                        "ClearIcon",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn clear_icon(this: HubMiniMap, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(HubMiniMap, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_clear_icon::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_base_point {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::hubaccess::HubAccess as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubMiniMap as ::unity2::ClassIdentity>::class(),
-                "GetBasePoint",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubMiniMap as ::unity2::ClassIdentity>::NAME,
-                        "GetBasePoint",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_base_point(
-        this: HubMiniMap,
-        access: crate::app::hubaccess::HubAccess,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::gameobject::GameObject {
-        let inner: extern "C" fn(
-            HubMiniMap,
-            crate::app::hubaccess::HubAccess,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(__lookup_get_base_point::get_method_info().method_ptr);
-        inner(this, access, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_dispos_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::hubaccess::HubAccess as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubMiniMap as ::unity2::ClassIdentity>::class(),
-                "GetDisposName",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubMiniMap as ::unity2::ClassIdentity>::NAME,
-                        "GetDisposName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_dispos_name(
-        this: HubMiniMap,
-        access: crate::app::hubaccess::HubAccess,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(HubMiniMap, crate::app::hubaccess::HubAccess, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_dispos_name::get_method_info().method_ptr);
-        inner(this, access, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_setup {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<HubMiniMap as ::unity2::ClassIdentity>::class(), "Setup", 2, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubMiniMap as ::unity2::ClassIdentity>::NAME,
-                        "Setup",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn setup(
-        this: HubMiniMap,
-        root: crate::unity_engine::gameobject::GameObject,
-        prefixless_cid: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubMiniMap, crate::unity_engine::gameobject::GameObject, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_setup::get_method_info().method_ptr);
-        inner(this, root, prefixless_cid, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_restore {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<HubMiniMap as ::unity2::ClassIdentity>::class(), "Restore", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubMiniMap as ::unity2::ClassIdentity>::NAME,
-                        "Restore",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn restore(this: HubMiniMap, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(HubMiniMap, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_restore::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_arrange_icon_position {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubMiniMap as ::unity2::ClassIdentity>::class(),
-                "ArrangeIconPosition",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubMiniMap as ::unity2::ClassIdentity>::NAME,
-                        "ArrangeIconPosition",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn arrange_icon_position(this: HubMiniMap, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(HubMiniMap, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_arrange_icon_position::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_show {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<HubMiniMap as ::unity2::ClassIdentity>::class(), "IsShow", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubMiniMap as ::unity2::ClassIdentity>::NAME,
-                        "IsShow",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_show(this: HubMiniMap, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(HubMiniMap, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_show::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<HubMiniMap as ::unity2::ClassIdentity>::class(), "Update", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubMiniMap as ::unity2::ClassIdentity>::NAME,
-                        "Update",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update(this: HubMiniMap, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(HubMiniMap, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_update::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_scroll {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<HubMiniMap as ::unity2::ClassIdentity>::class(), "Scroll", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubMiniMap as ::unity2::ClassIdentity>::NAME,
-                        "Scroll",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn scroll(this: HubMiniMap, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(HubMiniMap, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_scroll::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_mode {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::hubminimap::HubMiniMap_MapMode as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<HubMiniMap as ::unity2::ClassIdentity>::class(), "SetMode", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubMiniMap as ::unity2::ClassIdentity>::NAME,
-                        "SetMode",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_mode(this: HubMiniMap, mode: crate::app::hubminimap::HubMiniMap_MapMode, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(HubMiniMap, crate::app::hubminimap::HubMiniMap_MapMode, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_mode::get_method_info().method_ptr);
-        inner(this, mode, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_transform_position {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubMiniMap as ::unity2::ClassIdentity>::class(),
-                "TransformPosition",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubMiniMap as ::unity2::ClassIdentity>::NAME,
-                        "TransformPosition",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn transform_position(
-        this: HubMiniMap,
-        position: crate::unity_engine::vector3::Vector3,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::vector3::Vector3 {
-        let inner: extern "C" fn(
-            HubMiniMap,
-            crate::unity_engine::vector3::Vector3,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(__lookup_transform_position::get_method_info().method_ptr);
-        inner(this, position, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_world_to_screen_position {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubMiniMap as ::unity2::ClassIdentity>::class(),
-                "WorldToScreenPosition",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubMiniMap as ::unity2::ClassIdentity>::NAME,
-                        "WorldToScreenPosition",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn world_to_screen_position(
-        this: HubMiniMap,
-        position: crate::unity_engine::vector3::Vector3,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::vector3::Vector3 {
-        let inner: extern "C" fn(
-            HubMiniMap,
-            crate::unity_engine::vector3::Vector3,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(__lookup_world_to_screen_position::get_method_info().method_ptr);
-        inner(this, position, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<HubMiniMap as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubMiniMap as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: HubMiniMap, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(HubMiniMap, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-hubminimap")]
-pub trait IHubMiniMapMethods: IHubMiniMap {
-    #[doc = "`NextChangeMode()` overload"]
-    fn next_change_mode(self) -> () {
-        unsafe {
-            let __receiver = <HubMiniMap as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubMiniMap_unity2_raw::next_change_mode(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ShowSystemMenu()` overload"]
-    fn show_system_menu(self) -> () {
-        unsafe {
-            let __receiver = <HubMiniMap as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubMiniMap_unity2_raw::show_system_menu(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`HideSystemMenu()` overload"]
-    fn hide_system_menu(self) -> () {
-        unsafe {
-            let __receiver = <HubMiniMap as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubMiniMap_unity2_raw::hide_system_menu(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Show()` overload"]
-    fn show(self) -> () {
-        unsafe {
-            let __receiver = <HubMiniMap as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubMiniMap_unity2_raw::show(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Hide()` overload"]
-    fn hide(self) -> () {
-        unsafe {
-            let __receiver = <HubMiniMap as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubMiniMap_unity2_raw::hide(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`PushLayer(i32)` overload"]
-    fn push_layer(self, layer: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver = <HubMiniMap as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubMiniMap_unity2_raw::push_layer(__receiver, ::core::convert::Into::into(layer), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`PopLayer(i32)` overload"]
-    fn pop_layer(self, layer: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver = <HubMiniMap as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubMiniMap_unity2_raw::pop_layer(__receiver, ::core::convert::Into::into(layer), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`PushEnvSoundID(::unity2::Il2CppString)` overload"]
-    fn push_env_sound_id(self, id: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver = <HubMiniMap as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubMiniMap_unity2_raw::push_env_sound_id(__receiver, ::core::convert::Into::into(id), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`PopEnvSoundID(::unity2::Il2CppString)` overload"]
-    fn pop_env_sound_id(self, id: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver = <HubMiniMap as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubMiniMap_unity2_raw::pop_env_sound_id(__receiver, ::core::convert::Into::into(id), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsCave()` overload"]
-    fn is_cave(self) -> bool {
-        unsafe {
-            let __receiver = <HubMiniMap as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubMiniMap_unity2_raw::is_cave(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_EnvSoundColliderCount()` overload"]
-    fn get_env_sound_collider_count(self) -> i32 {
-        unsafe {
-            let __receiver = <HubMiniMap as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubMiniMap_unity2_raw::get_env_sound_collider_count(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_EnvSoundColliderCount(i32)` overload"]
-    fn set_env_sound_collider_count(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver = <HubMiniMap as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubMiniMap_unity2_raw::set_env_sound_collider_count(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_EnvSoundID()` overload"]
-    fn get_env_sound_id(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <HubMiniMap as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubMiniMap_unity2_raw::get_env_sound_id(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_EnvSoundID(::unity2::Il2CppString)` overload"]
-    fn set_env_sound_id(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver = <HubMiniMap as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubMiniMap_unity2_raw::set_env_sound_id(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_CurrentMapMode()` overload"]
-    fn get_current_map_mode(self) -> crate::app::hubminimap::HubMiniMap_MapMode {
-        unsafe {
-            let __receiver = <HubMiniMap as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubMiniMap_unity2_raw::get_current_map_mode(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_CurrentMapMode(crate::app::hubminimap::HubMiniMap_MapMode)` overload"]
-    fn set_current_map_mode(self, value: impl ::core::convert::Into<crate::app::hubminimap::HubMiniMap_MapMode>) -> () {
-        unsafe {
-            let __receiver = <HubMiniMap as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubMiniMap_unity2_raw::set_current_map_mode(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_IsMinimapRotate()` overload"]
-    fn get_is_minimap_rotate(self) -> bool {
-        unsafe {
-            let __receiver = <HubMiniMap as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubMiniMap_unity2_raw::get_is_minimap_rotate(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_IsMascotEnable()` overload"]
-    fn get_is_mascot_enable(self) -> bool {
-        unsafe {
-            let __receiver = <HubMiniMap as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubMiniMap_unity2_raw::get_is_mascot_enable(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetCaptureParam(::unity2::Il2CppString)` overload"]
-    fn get_capture_param(
-        self,
-        map_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> crate::app::hubminimapcaptureparam::HubMiniMapCaptureParam_CaptureParam1 {
-        unsafe {
-            let __receiver = <HubMiniMap as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubMiniMap_unity2_raw::get_capture_param(__receiver, ::core::convert::Into::into(map_name), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Load()` overload"]
-    fn load(self) -> crate::system::collections::ienumerator::IEnumerator {
-        unsafe {
-            let __receiver = <HubMiniMap as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubMiniMap_unity2_raw::load(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnDestroy()` overload"]
-    fn on_destroy(self) -> () {
-        unsafe {
-            let __receiver = <HubMiniMap as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubMiniMap_unity2_raw::on_destroy(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ClearIcon()` overload"]
-    fn clear_icon(self) -> () {
-        unsafe {
-            let __receiver = <HubMiniMap as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubMiniMap_unity2_raw::clear_icon(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetBasePoint(crate::app::hubaccess::HubAccess)` overload"]
-    fn get_base_point(self, access: impl ::core::convert::Into<crate::app::hubaccess::HubAccess>) -> crate::unity_engine::gameobject::GameObject {
-        unsafe {
-            let __receiver = <HubMiniMap as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubMiniMap_unity2_raw::get_base_point(__receiver, ::core::convert::Into::into(access), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetDisposName(crate::app::hubaccess::HubAccess)` overload"]
-    fn get_dispos_name(self, access: impl ::core::convert::Into<crate::app::hubaccess::HubAccess>) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <HubMiniMap as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubMiniMap_unity2_raw::get_dispos_name(__receiver, ::core::convert::Into::into(access), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Setup(crate::unity_engine::gameobject::GameObject, ::unity2::Il2CppString)` overload"]
-    fn setup(
-        self,
-        root: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-        prefixless_cid: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
-        unsafe {
-            let __receiver = <HubMiniMap as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubMiniMap_unity2_raw::setup(
-                __receiver,
-                ::core::convert::Into::into(root),
-                ::core::convert::Into::into(prefixless_cid),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Restore()` overload"]
-    fn restore(self) -> () {
-        unsafe {
-            let __receiver = <HubMiniMap as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubMiniMap_unity2_raw::restore(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ArrangeIconPosition()` overload"]
-    fn arrange_icon_position(self) -> () {
-        unsafe {
-            let __receiver = <HubMiniMap as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubMiniMap_unity2_raw::arrange_icon_position(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsShow()` overload"]
-    fn is_show(self) -> bool {
-        unsafe {
-            let __receiver = <HubMiniMap as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubMiniMap_unity2_raw::is_show(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Update()` overload"]
-    fn update(self) -> () {
-        unsafe {
-            let __receiver = <HubMiniMap as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubMiniMap_unity2_raw::update(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Scroll()` overload"]
-    fn scroll(self) -> () {
-        unsafe {
-            let __receiver = <HubMiniMap as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubMiniMap_unity2_raw::scroll(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetMode(crate::app::hubminimap::HubMiniMap_MapMode)` overload"]
-    fn set_mode(self, mode: impl ::core::convert::Into<crate::app::hubminimap::HubMiniMap_MapMode>) -> () {
-        unsafe {
-            let __receiver = <HubMiniMap as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubMiniMap_unity2_raw::set_mode(__receiver, ::core::convert::Into::into(mode), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`TransformPosition(crate::unity_engine::vector3::Vector3)` overload"]
-    fn transform_position(
-        self,
-        position: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-    ) -> crate::unity_engine::vector3::Vector3 {
-        unsafe {
-            let __receiver = <HubMiniMap as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubMiniMap_unity2_raw::transform_position(__receiver, ::core::convert::Into::into(position), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`WorldToScreenPosition(crate::unity_engine::vector3::Vector3)` overload"]
-    fn world_to_screen_position(
-        self,
-        position: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-    ) -> crate::unity_engine::vector3::Vector3 {
-        unsafe {
-            let __receiver = <HubMiniMap as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubMiniMap_unity2_raw::world_to_screen_position(__receiver, ::core::convert::Into::into(position), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <HubMiniMap as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubMiniMap_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-hubminimap")]
-impl<__T: IHubMiniMap> IHubMiniMapMethods for __T {}
+impl HubMiniMap { pub fn next_change_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubMiniMap_unity2_raw :: __lookup_next_change_mode :: get_method_info () } pub fn show_system_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubMiniMap_unity2_raw :: __lookup_show_system_menu :: get_method_info () } pub fn hide_system_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubMiniMap_unity2_raw :: __lookup_hide_system_menu :: get_method_info () } pub fn show_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubMiniMap_unity2_raw :: __lookup_show :: get_method_info () } pub fn hide_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubMiniMap_unity2_raw :: __lookup_hide :: get_method_info () } pub fn push_layer_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubMiniMap_unity2_raw :: __lookup_push_layer :: get_method_info () } pub fn pop_layer_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubMiniMap_unity2_raw :: __lookup_pop_layer :: get_method_info () } pub fn push_env_sound_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubMiniMap_unity2_raw :: __lookup_push_env_sound_id :: get_method_info () } pub fn pop_env_sound_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubMiniMap_unity2_raw :: __lookup_pop_env_sound_id :: get_method_info () } pub fn is_cave_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubMiniMap_unity2_raw :: __lookup_is_cave :: get_method_info () } pub fn get_env_sound_collider_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubMiniMap_unity2_raw :: __lookup_get_env_sound_collider_count :: get_method_info () } pub fn set_env_sound_collider_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubMiniMap_unity2_raw :: __lookup_set_env_sound_collider_count :: get_method_info () } pub fn get_env_sound_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubMiniMap_unity2_raw :: __lookup_get_env_sound_id :: get_method_info () } pub fn set_env_sound_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubMiniMap_unity2_raw :: __lookup_set_env_sound_id :: get_method_info () } pub fn get_current_map_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubMiniMap_unity2_raw :: __lookup_get_current_map_mode :: get_method_info () } pub fn set_current_map_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubMiniMap_unity2_raw :: __lookup_set_current_map_mode :: get_method_info () } pub fn get_is_minimap_rotate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubMiniMap_unity2_raw :: __lookup_get_is_minimap_rotate :: get_method_info () } pub fn get_is_mascot_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubMiniMap_unity2_raw :: __lookup_get_is_mascot_enable :: get_method_info () } pub fn get_capture_param_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubMiniMap_unity2_raw :: __lookup_get_capture_param :: get_method_info () } pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubMiniMap_unity2_raw :: __lookup_load :: get_method_info () } pub fn on_destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubMiniMap_unity2_raw :: __lookup_on_destroy :: get_method_info () } pub fn clear_icon_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubMiniMap_unity2_raw :: __lookup_clear_icon :: get_method_info () } pub fn get_base_point_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubMiniMap_unity2_raw :: __lookup_get_base_point :: get_method_info () } pub fn get_dispos_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubMiniMap_unity2_raw :: __lookup_get_dispos_name :: get_method_info () } pub fn setup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubMiniMap_unity2_raw :: __lookup_setup :: get_method_info () } pub fn restore_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubMiniMap_unity2_raw :: __lookup_restore :: get_method_info () } pub fn arrange_icon_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubMiniMap_unity2_raw :: __lookup_arrange_icon_position :: get_method_info () } pub fn is_show_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubMiniMap_unity2_raw :: __lookup_is_show :: get_method_info () } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubMiniMap_unity2_raw :: __lookup_update :: get_method_info () } pub fn scroll_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubMiniMap_unity2_raw :: __lookup_scroll :: get_method_info () } pub fn set_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubMiniMap_unity2_raw :: __lookup_set_mode :: get_method_info () } pub fn transform_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubMiniMap_unity2_raw :: __lookup_transform_position :: get_method_info () } pub fn world_to_screen_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubMiniMap_unity2_raw :: __lookup_world_to_screen_position :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubMiniMap_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-hubminimap")]
 impl HubMiniMap {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(HubMiniMap), ::core::stringify!(new),));
-        <Self as IHubMiniMapMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubMiniMap) , :: core :: stringify ! (new) ,)) ; < Self as IHubMiniMapMethods > :: ctor (this ,) ; this }
+}
+
+#[cfg(feature = "app-hubminimap")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __HubMiniMap_IconData_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_active { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubMiniMap_IconData as :: unity2 :: ClassIdentity > :: class () , "SetActive" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubMiniMap_IconData as :: unity2 :: ClassIdentity > :: NAME , "SetActive" , e) , } } } pub unsafe fn set_active (this : HubMiniMap_IconData , active : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HubMiniMap_IconData , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_active :: get_method_info () . method_ptr ,) ; inner (this , active , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubMiniMap_IconData as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubMiniMap_IconData as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : HubMiniMap_IconData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HubMiniMap_IconData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-hubminimap")]
+pub trait IHubMiniMap_IconDataMethods : IHubMiniMap_IconData { # [doc = "`SetActive(bool)` overload"] fn set_active (self , active : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < HubMiniMap_IconData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubMiniMap_IconData_unity2_raw :: set_active (__receiver , :: core :: convert :: Into :: into (active) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HubMiniMap_IconData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubMiniMap_IconData_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-hubminimap")]
+impl < __T : IHubMiniMap_IconData > IHubMiniMap_IconDataMethods for __T { }
+
+#[cfg(feature = "app-hubminimap")]
+impl HubMiniMap_IconData { pub fn set_active_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubMiniMap_IconData_unity2_raw :: __lookup_set_active :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubMiniMap_IconData_unity2_raw :: __lookup_ctor :: get_method_info () } }
+
+#[cfg(feature = "app-hubminimap")]
+impl HubMiniMap_IconData {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubMiniMap_IconData) , :: core :: stringify ! (new) ,)) ; < Self as IHubMiniMap_IconDataMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-hubminimap")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{
-        HubMiniMap, HubMiniMap_IconData, HubMiniMap_MapMode, IHubMiniMap, IHubMiniMapMethods, IHubMiniMap_IconData, IHubMiniMap_IconDataMethods,
-    };
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::HubMiniMap;
+    pub use super::IHubMiniMap;
+    pub use super::IHubMiniMapMethods;
+    pub use super::HubMiniMap_MapMode;
+    pub use super::HubMiniMap_IconData;
+    pub use super::IHubMiniMap_IconData;
+    pub use super::IHubMiniMap_IconDataMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

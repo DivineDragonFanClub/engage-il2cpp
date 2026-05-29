@@ -2,74 +2,34 @@
 
 #[cfg(feature = "unity_engine-ui-imaskable-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/imaskable/IMaskable.md"))]
-    #[::unity2::class(namespace = "UnityEngine.UI", name = "IMaskable")]
-    pub struct IMaskable {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/imaskable/IMaskable.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "IMaskable")] pub struct IMaskable {}
+
 }
 
 #[cfg(feature = "unity_engine-ui-imaskable-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-ui-imaskable")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __IMaskable_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_recalculate_masking {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <IMaskable as ::unity2::ClassIdentity>::class(),
-                "RecalculateMasking",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <IMaskable as ::unity2::ClassIdentity>::NAME,
-                        "RecalculateMasking",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn recalculate_masking(this: IMaskable, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(IMaskable, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_recalculate_masking::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __IMaskable_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_recalculate_masking { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< IMaskable as :: unity2 :: ClassIdentity > :: class () , "RecalculateMasking" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < IMaskable as :: unity2 :: ClassIdentity > :: NAME , "RecalculateMasking" , e) , } } } pub unsafe fn recalculate_masking (this : IMaskable , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (IMaskable , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_recalculate_masking :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-ui-imaskable")]
-pub trait IIMaskableMethods: IIMaskable {
-    #[doc = "`RecalculateMasking()` overload"]
-    fn recalculate_masking(self) -> () {
-        unsafe {
-            let __receiver = <IMaskable as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __IMaskable_unity2_raw::recalculate_masking(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IIMaskableMethods : IIMaskable { # [doc = "`RecalculateMasking()` overload"] fn recalculate_masking (self ,) -> () { unsafe { let __receiver = < IMaskable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IMaskable_unity2_raw :: recalculate_masking (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-ui-imaskable")]
-impl<__T: IIMaskable> IIMaskableMethods for __T {}
+impl < __T : IIMaskable > IIMaskableMethods for __T { }
+
+#[cfg(feature = "unity_engine-ui-imaskable")]
+impl IMaskable { pub fn recalculate_masking_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __IMaskable_unity2_raw :: __lookup_recalculate_masking :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-ui-imaskable")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IIMaskable, IIMaskableMethods, IMaskable};
+    pub use super::IMaskable;
+    pub use super::IIMaskable;
+    pub use super::IIMaskableMethods;
 }

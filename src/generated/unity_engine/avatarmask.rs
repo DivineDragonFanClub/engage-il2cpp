@@ -2,249 +2,42 @@
 
 #[cfg(feature = "unity_engine-avatarmask-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::object_2::{IObject_2, Object_2},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/avatarmask/AvatarMask.md"))]
-    #[::unity2::class(namespace = "UnityEngine", name = "AvatarMask")]
-    #[parent(crate::unity_engine::object_2::Object_2)]
-    pub struct AvatarMask {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/avatarmask/AvatarMask.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "AvatarMask")] # [parent (crate :: unity_engine :: object_2 :: Object_2)] pub struct AvatarMask {}
+
 }
 
 #[cfg(feature = "unity_engine-avatarmask-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-avatarmask")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AvatarMask_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_humanoid_body_part_active {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::avatarmaskbodypart::AvatarMaskBodyPart as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AvatarMask as ::unity2::ClassIdentity>::class(),
-                "GetHumanoidBodyPartActive",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AvatarMask as ::unity2::ClassIdentity>::NAME,
-                        "GetHumanoidBodyPartActive",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_humanoid_body_part_active(
-        this: AvatarMask,
-        index: crate::unity_engine::avatarmaskbodypart::AvatarMaskBodyPart,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(AvatarMask, crate::unity_engine::avatarmaskbodypart::AvatarMaskBodyPart, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_humanoid_body_part_active::get_method_info().method_ptr);
-        inner(this, index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_transform_count {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AvatarMask as ::unity2::ClassIdentity>::class(),
-                "get_transformCount",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AvatarMask as ::unity2::ClassIdentity>::NAME,
-                        "get_transformCount",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_transform_count(this: AvatarMask, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AvatarMask, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_transform_count::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_transform_path {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AvatarMask as ::unity2::ClassIdentity>::class(),
-                "GetTransformPath",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AvatarMask as ::unity2::ClassIdentity>::NAME,
-                        "GetTransformPath",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_transform_path(this: AvatarMask, index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(AvatarMask, i32, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_transform_path::get_method_info().method_ptr);
-        inner(this, index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_transform_weight {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AvatarMask as ::unity2::ClassIdentity>::class(),
-                "GetTransformWeight",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AvatarMask as ::unity2::ClassIdentity>::NAME,
-                        "GetTransformWeight",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_transform_weight(this: AvatarMask, index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(AvatarMask, i32, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_get_transform_weight::get_method_info().method_ptr);
-        inner(this, index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_transform_active {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AvatarMask as ::unity2::ClassIdentity>::class(),
-                "GetTransformActive",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AvatarMask as ::unity2::ClassIdentity>::NAME,
-                        "GetTransformActive",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_transform_active(this: AvatarMask, index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(AvatarMask, i32, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_transform_active::get_method_info().method_ptr);
-        inner(this, index, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __AvatarMask_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_humanoid_body_part_active { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: avatarmaskbodypart :: AvatarMaskBodyPart as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AvatarMask as :: unity2 :: ClassIdentity > :: class () , "GetHumanoidBodyPartActive" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AvatarMask as :: unity2 :: ClassIdentity > :: NAME , "GetHumanoidBodyPartActive" , e) , } } } pub unsafe fn get_humanoid_body_part_active (this : AvatarMask , index : crate :: unity_engine :: avatarmaskbodypart :: AvatarMaskBodyPart , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (AvatarMask , crate :: unity_engine :: avatarmaskbodypart :: AvatarMaskBodyPart , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_humanoid_body_part_active :: get_method_info () . method_ptr ,) ; inner (this , index , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_transform_count { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AvatarMask as :: unity2 :: ClassIdentity > :: class () , "get_transformCount" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AvatarMask as :: unity2 :: ClassIdentity > :: NAME , "get_transformCount" , e) , } } } pub unsafe fn get_transform_count (this : AvatarMask , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (AvatarMask , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_transform_count :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_transform_path { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AvatarMask as :: unity2 :: ClassIdentity > :: class () , "GetTransformPath" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AvatarMask as :: unity2 :: ClassIdentity > :: NAME , "GetTransformPath" , e) , } } } pub unsafe fn get_transform_path (this : AvatarMask , index : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (AvatarMask , i32 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_transform_path :: get_method_info () . method_ptr ,) ; inner (this , index , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_transform_weight { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AvatarMask as :: unity2 :: ClassIdentity > :: class () , "GetTransformWeight" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AvatarMask as :: unity2 :: ClassIdentity > :: NAME , "GetTransformWeight" , e) , } } } pub unsafe fn get_transform_weight (this : AvatarMask , index : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (AvatarMask , i32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_get_transform_weight :: get_method_info () . method_ptr ,) ; inner (this , index , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_transform_active { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AvatarMask as :: unity2 :: ClassIdentity > :: class () , "GetTransformActive" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AvatarMask as :: unity2 :: ClassIdentity > :: NAME , "GetTransformActive" , e) , } } } pub unsafe fn get_transform_active (this : AvatarMask , index : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (AvatarMask , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_transform_active :: get_method_info () . method_ptr ,) ; inner (this , index , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-avatarmask")]
-pub trait IAvatarMaskMethods: IAvatarMask {
-    #[doc = "`GetHumanoidBodyPartActive(crate::unity_engine::avatarmaskbodypart::AvatarMaskBodyPart)` overload"]
-    fn get_humanoid_body_part_active(self, index: impl ::core::convert::Into<crate::unity_engine::avatarmaskbodypart::AvatarMaskBodyPart>) -> bool {
-        unsafe {
-            let __receiver = <AvatarMask as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AvatarMask_unity2_raw::get_humanoid_body_part_active(__receiver, ::core::convert::Into::into(index), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_transformCount()` overload"]
-    fn get_transform_count(self) -> i32 {
-        unsafe {
-            let __receiver = <AvatarMask as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AvatarMask_unity2_raw::get_transform_count(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetTransformPath(i32)` overload"]
-    fn get_transform_path(self, index: impl ::core::convert::Into<i32>) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <AvatarMask as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AvatarMask_unity2_raw::get_transform_path(__receiver, ::core::convert::Into::into(index), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetTransformWeight(i32)` overload"]
-    fn get_transform_weight(self, index: impl ::core::convert::Into<i32>) -> f32 {
-        unsafe {
-            let __receiver = <AvatarMask as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AvatarMask_unity2_raw::get_transform_weight(__receiver, ::core::convert::Into::into(index), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetTransformActive(i32)` overload"]
-    fn get_transform_active(self, index: impl ::core::convert::Into<i32>) -> bool {
-        unsafe {
-            let __receiver = <AvatarMask as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AvatarMask_unity2_raw::get_transform_active(__receiver, ::core::convert::Into::into(index), ::core::option::Option::None)
-        }
-    }
-}
+pub trait IAvatarMaskMethods : IAvatarMask { # [doc = "`GetHumanoidBodyPartActive(crate::unity_engine::avatarmaskbodypart::AvatarMaskBodyPart)` overload"] fn get_humanoid_body_part_active (self , index : impl :: core :: convert :: Into < crate :: unity_engine :: avatarmaskbodypart :: AvatarMaskBodyPart >) -> bool { unsafe { let __receiver = < AvatarMask as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AvatarMask_unity2_raw :: get_humanoid_body_part_active (__receiver , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } # [doc = "`get_transformCount()` overload"] fn get_transform_count (self ,) -> i32 { unsafe { let __receiver = < AvatarMask as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AvatarMask_unity2_raw :: get_transform_count (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetTransformPath(i32)` overload"] fn get_transform_path (self , index : impl :: core :: convert :: Into < i32 >) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < AvatarMask as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AvatarMask_unity2_raw :: get_transform_path (__receiver , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } # [doc = "`GetTransformWeight(i32)` overload"] fn get_transform_weight (self , index : impl :: core :: convert :: Into < i32 >) -> f32 { unsafe { let __receiver = < AvatarMask as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AvatarMask_unity2_raw :: get_transform_weight (__receiver , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } # [doc = "`GetTransformActive(i32)` overload"] fn get_transform_active (self , index : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { let __receiver = < AvatarMask as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AvatarMask_unity2_raw :: get_transform_active (__receiver , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-avatarmask")]
-impl<__T: IAvatarMask> IAvatarMaskMethods for __T {}
+impl < __T : IAvatarMask > IAvatarMaskMethods for __T { }
+
+#[cfg(feature = "unity_engine-avatarmask")]
+impl AvatarMask { pub fn get_humanoid_body_part_active_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AvatarMask_unity2_raw :: __lookup_get_humanoid_body_part_active :: get_method_info () } pub fn get_transform_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AvatarMask_unity2_raw :: __lookup_get_transform_count :: get_method_info () } pub fn get_transform_path_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AvatarMask_unity2_raw :: __lookup_get_transform_path :: get_method_info () } pub fn get_transform_weight_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AvatarMask_unity2_raw :: __lookup_get_transform_weight :: get_method_info () } pub fn get_transform_active_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AvatarMask_unity2_raw :: __lookup_get_transform_active :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-avatarmask")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{AvatarMask, IAvatarMask, IAvatarMaskMethods};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{system::object::IObject, unity_engine::object_2::IObject_2};
+    pub use super::AvatarMask;
+    pub use super::IAvatarMask;
+    pub use super::IAvatarMaskMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

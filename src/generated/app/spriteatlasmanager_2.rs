@@ -2,402 +2,47 @@
 
 #[cfg(feature = "app-spriteatlasmanager_2-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/spriteatlasmanager_2/SpriteAtlasManager_2.md"))]
-    #[::unity2::class(namespace = "App", name = "SpriteAtlasManager")]
-    #[parent(crate::system::object::Object)]
-    pub struct SpriteAtlasManager_2 {
-        #[offset(16)]
-        #[rename(name = "m_Handle")]
-        pub m_handle: crate::app::tresourcehandle_1::TResourceHandle_1<crate::unity_engine::u2d::spriteatlas::SpriteAtlas>,
-        #[offset(24)]
-        #[rename(name = "m_SpriteAtlas")]
-        pub m_sprite_atlas: crate::unity_engine::u2d::spriteatlas::SpriteAtlas,
-        #[offset(32)]
-        #[rename(name = "m_CacheTable")]
-        pub m_cache_table:
-            crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, crate::unity_engine::sprite::Sprite>,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/spriteatlasmanager_2/SpriteAtlasManager_2.md"))] # [:: unity2 :: class (namespace = "App" , name = "SpriteAtlasManager")] # [parent (crate :: system :: object :: Object)] pub struct SpriteAtlasManager_2 {
+# [offset (16)] # [rename (name = "m_Handle")] pub m_handle : crate :: app :: tresourcehandle_1 :: TResourceHandle_1 < crate :: unity_engine :: u2d :: spriteatlas :: SpriteAtlas > ,
+# [offset (24)] # [rename (name = "m_SpriteAtlas")] pub m_sprite_atlas : crate :: unity_engine :: u2d :: spriteatlas :: SpriteAtlas ,
+# [offset (32)] # [rename (name = "m_CacheTable")] pub m_cache_table : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , crate :: unity_engine :: sprite :: Sprite > ,
+}
+
 }
 
 #[cfg(feature = "app-spriteatlasmanager_2-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-spriteatlasmanager_2")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __SpriteAtlasManager_2_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_load_async {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SpriteAtlasManager_2 as ::unity2::ClassIdentity>::class(),
-                "LoadAsync",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SpriteAtlasManager_2 as ::unity2::ClassIdentity>::NAME,
-                        "LoadAsync",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn load_async(this: SpriteAtlasManager_2, path: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SpriteAtlasManager_2, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_load_async::get_method_info().method_ptr);
-        inner(this, path, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_loading {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SpriteAtlasManager_2 as ::unity2::ClassIdentity>::class(),
-                "IsLoading",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SpriteAtlasManager_2 as ::unity2::ClassIdentity>::NAME,
-                        "IsLoading",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_loading(this: SpriteAtlasManager_2, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(SpriteAtlasManager_2, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_loading::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_loaded {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SpriteAtlasManager_2 as ::unity2::ClassIdentity>::class(),
-                "IsLoaded",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SpriteAtlasManager_2 as ::unity2::ClassIdentity>::NAME,
-                        "IsLoaded",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_loaded(this: SpriteAtlasManager_2, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(SpriteAtlasManager_2, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_loaded::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_unload {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SpriteAtlasManager_2 as ::unity2::ClassIdentity>::class(),
-                "Unload",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SpriteAtlasManager_2 as ::unity2::ClassIdentity>::NAME,
-                        "Unload",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn unload(this: SpriteAtlasManager_2, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SpriteAtlasManager_2, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_unload::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SpriteAtlasManager_2 as ::unity2::ClassIdentity>::class(),
-                "Get",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SpriteAtlasManager_2 as ::unity2::ClassIdentity>::NAME,
-                        "Get",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get(
-        this: SpriteAtlasManager_2,
-        name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::sprite::Sprite {
-        let inner: extern "C" fn(SpriteAtlasManager_2, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> crate::unity_engine::sprite::Sprite =
-            ::core::mem::transmute(__lookup_get::get_method_info().method_ptr);
-        inner(this, name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_try_get {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SpriteAtlasManager_2 as ::unity2::ClassIdentity>::class(),
-                "TryGet",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SpriteAtlasManager_2 as ::unity2::ClassIdentity>::NAME,
-                        "TryGet",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn try_get(
-        this: SpriteAtlasManager_2,
-        name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::sprite::Sprite {
-        let inner: extern "C" fn(SpriteAtlasManager_2, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> crate::unity_engine::sprite::Sprite =
-            ::core::mem::transmute(__lookup_try_get::get_method_info().method_ptr);
-        inner(this, name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_clear_cache {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SpriteAtlasManager_2 as ::unity2::ClassIdentity>::class(),
-                "ClearCache",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SpriteAtlasManager_2 as ::unity2::ClassIdentity>::NAME,
-                        "ClearCache",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn clear_cache(this: SpriteAtlasManager_2, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SpriteAtlasManager_2, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_clear_cache::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SpriteAtlasManager_2 as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SpriteAtlasManager_2 as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: SpriteAtlasManager_2, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SpriteAtlasManager_2, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __SpriteAtlasManager_2_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_load_async { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SpriteAtlasManager_2 as :: unity2 :: ClassIdentity > :: class () , "LoadAsync" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SpriteAtlasManager_2 as :: unity2 :: ClassIdentity > :: NAME , "LoadAsync" , e) , } } } pub unsafe fn load_async (this : SpriteAtlasManager_2 , path : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SpriteAtlasManager_2 , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_load_async :: get_method_info () . method_ptr ,) ; inner (this , path , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_loading { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SpriteAtlasManager_2 as :: unity2 :: ClassIdentity > :: class () , "IsLoading" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SpriteAtlasManager_2 as :: unity2 :: ClassIdentity > :: NAME , "IsLoading" , e) , } } } pub unsafe fn is_loading (this : SpriteAtlasManager_2 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (SpriteAtlasManager_2 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_loading :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_loaded { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SpriteAtlasManager_2 as :: unity2 :: ClassIdentity > :: class () , "IsLoaded" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SpriteAtlasManager_2 as :: unity2 :: ClassIdentity > :: NAME , "IsLoaded" , e) , } } } pub unsafe fn is_loaded (this : SpriteAtlasManager_2 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (SpriteAtlasManager_2 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_loaded :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_unload { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SpriteAtlasManager_2 as :: unity2 :: ClassIdentity > :: class () , "Unload" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SpriteAtlasManager_2 as :: unity2 :: ClassIdentity > :: NAME , "Unload" , e) , } } } pub unsafe fn unload (this : SpriteAtlasManager_2 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SpriteAtlasManager_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_unload :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SpriteAtlasManager_2 as :: unity2 :: ClassIdentity > :: class () , "Get" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SpriteAtlasManager_2 as :: unity2 :: ClassIdentity > :: NAME , "Get" , e) , } } } pub unsafe fn get (this : SpriteAtlasManager_2 , name : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: sprite :: Sprite { let inner : extern "C" fn (SpriteAtlasManager_2 , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: sprite :: Sprite = :: core :: mem :: transmute (__lookup_get :: get_method_info () . method_ptr ,) ; inner (this , name , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_try_get { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SpriteAtlasManager_2 as :: unity2 :: ClassIdentity > :: class () , "TryGet" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SpriteAtlasManager_2 as :: unity2 :: ClassIdentity > :: NAME , "TryGet" , e) , } } } pub unsafe fn try_get (this : SpriteAtlasManager_2 , name : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: sprite :: Sprite { let inner : extern "C" fn (SpriteAtlasManager_2 , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: sprite :: Sprite = :: core :: mem :: transmute (__lookup_try_get :: get_method_info () . method_ptr ,) ; inner (this , name , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_clear_cache { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SpriteAtlasManager_2 as :: unity2 :: ClassIdentity > :: class () , "ClearCache" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SpriteAtlasManager_2 as :: unity2 :: ClassIdentity > :: NAME , "ClearCache" , e) , } } } pub unsafe fn clear_cache (this : SpriteAtlasManager_2 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SpriteAtlasManager_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_clear_cache :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SpriteAtlasManager_2 as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SpriteAtlasManager_2 as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : SpriteAtlasManager_2 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SpriteAtlasManager_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-spriteatlasmanager_2")]
-pub trait ISpriteAtlasManager_2Methods: ISpriteAtlasManager_2 {
-    #[doc = "`LoadAsync(::unity2::Il2CppString)` overload"]
-    fn load_async(self, path: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver =
-                <SpriteAtlasManager_2 as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SpriteAtlasManager_2_unity2_raw::load_async(__receiver, ::core::convert::Into::into(path), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsLoading()` overload"]
-    fn is_loading(self) -> bool {
-        unsafe {
-            let __receiver =
-                <SpriteAtlasManager_2 as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SpriteAtlasManager_2_unity2_raw::is_loading(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsLoaded()` overload"]
-    fn is_loaded(self) -> bool {
-        unsafe {
-            let __receiver =
-                <SpriteAtlasManager_2 as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SpriteAtlasManager_2_unity2_raw::is_loaded(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Unload()` overload"]
-    fn unload(self) -> () {
-        unsafe {
-            let __receiver =
-                <SpriteAtlasManager_2 as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SpriteAtlasManager_2_unity2_raw::unload(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Get(::unity2::Il2CppString)` overload"]
-    fn get(self, name: impl ::core::convert::Into<::unity2::Il2CppString>) -> crate::unity_engine::sprite::Sprite {
-        unsafe {
-            let __receiver =
-                <SpriteAtlasManager_2 as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SpriteAtlasManager_2_unity2_raw::get(__receiver, ::core::convert::Into::into(name), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`TryGet(::unity2::Il2CppString)` overload"]
-    fn try_get(self, name: impl ::core::convert::Into<::unity2::Il2CppString>) -> crate::unity_engine::sprite::Sprite {
-        unsafe {
-            let __receiver =
-                <SpriteAtlasManager_2 as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SpriteAtlasManager_2_unity2_raw::try_get(__receiver, ::core::convert::Into::into(name), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ClearCache()` overload"]
-    fn clear_cache(self) -> () {
-        unsafe {
-            let __receiver =
-                <SpriteAtlasManager_2 as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SpriteAtlasManager_2_unity2_raw::clear_cache(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <SpriteAtlasManager_2 as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SpriteAtlasManager_2_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait ISpriteAtlasManager_2Methods : ISpriteAtlasManager_2 { # [doc = "`LoadAsync(::unity2::Il2CppString)` overload"] fn load_async (self , path : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < SpriteAtlasManager_2 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SpriteAtlasManager_2_unity2_raw :: load_async (__receiver , :: core :: convert :: Into :: into (path) , :: core :: option :: Option :: None) } } # [doc = "`IsLoading()` overload"] fn is_loading (self ,) -> bool { unsafe { let __receiver = < SpriteAtlasManager_2 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SpriteAtlasManager_2_unity2_raw :: is_loading (__receiver , :: core :: option :: Option :: None) } } # [doc = "`IsLoaded()` overload"] fn is_loaded (self ,) -> bool { unsafe { let __receiver = < SpriteAtlasManager_2 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SpriteAtlasManager_2_unity2_raw :: is_loaded (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Unload()` overload"] fn unload (self ,) -> () { unsafe { let __receiver = < SpriteAtlasManager_2 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SpriteAtlasManager_2_unity2_raw :: unload (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Get(::unity2::Il2CppString)` overload"] fn get (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: unity_engine :: sprite :: Sprite { unsafe { let __receiver = < SpriteAtlasManager_2 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SpriteAtlasManager_2_unity2_raw :: get (__receiver , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } # [doc = "`TryGet(::unity2::Il2CppString)` overload"] fn try_get (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: unity_engine :: sprite :: Sprite { unsafe { let __receiver = < SpriteAtlasManager_2 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SpriteAtlasManager_2_unity2_raw :: try_get (__receiver , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } # [doc = "`ClearCache()` overload"] fn clear_cache (self ,) -> () { unsafe { let __receiver = < SpriteAtlasManager_2 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SpriteAtlasManager_2_unity2_raw :: clear_cache (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < SpriteAtlasManager_2 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SpriteAtlasManager_2_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-spriteatlasmanager_2")]
-impl<__T: ISpriteAtlasManager_2> ISpriteAtlasManager_2Methods for __T {}
+impl < __T : ISpriteAtlasManager_2 > ISpriteAtlasManager_2Methods for __T { }
+
+#[cfg(feature = "app-spriteatlasmanager_2")]
+impl SpriteAtlasManager_2 { pub fn load_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SpriteAtlasManager_2_unity2_raw :: __lookup_load_async :: get_method_info () } pub fn is_loading_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SpriteAtlasManager_2_unity2_raw :: __lookup_is_loading :: get_method_info () } pub fn is_loaded_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SpriteAtlasManager_2_unity2_raw :: __lookup_is_loaded :: get_method_info () } pub fn unload_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SpriteAtlasManager_2_unity2_raw :: __lookup_unload :: get_method_info () } pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SpriteAtlasManager_2_unity2_raw :: __lookup_get :: get_method_info () } pub fn try_get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SpriteAtlasManager_2_unity2_raw :: __lookup_try_get :: get_method_info () } pub fn clear_cache_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SpriteAtlasManager_2_unity2_raw :: __lookup_clear_cache :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SpriteAtlasManager_2_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-spriteatlasmanager_2")]
 impl SpriteAtlasManager_2 {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SpriteAtlasManager_2),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISpriteAtlasManager_2Methods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SpriteAtlasManager_2) , :: core :: stringify ! (new) ,)) ; < Self as ISpriteAtlasManager_2Methods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-spriteatlasmanager_2")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{ISpriteAtlasManager_2, ISpriteAtlasManager_2Methods, SpriteAtlasManager_2};
+    pub use super::SpriteAtlasManager_2;
+    pub use super::ISpriteAtlasManager_2;
+    pub use super::ISpriteAtlasManager_2Methods;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

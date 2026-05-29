@@ -2,433 +2,71 @@
 
 #[cfg(feature = "combat-characterillusion-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/characterillusion/CharacterIllusion.md"))]
-    #[::unity2::class(namespace = "Combat", name = "CharacterIllusion")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct CharacterIllusion {
-        #[offset(24)]
-        #[rename(name = "NumIllusions")]
-        pub num_illusions: i32,
-        #[offset(28)]
-        #[rename(name = "Interval")]
-        pub interval: f32,
-        #[offset(32)]
-        #[rename(name = "_cp")]
-        pub cp: crate::combat::character::Character,
-        #[offset(40)]
-        #[rename(name = "illusionHistory")]
-        pub illusion_history: ::unity2::Array<::unity2::Array<crate::combat::bakedmesh::BakedMesh>>,
-        #[offset(48)]
-        #[rename(name = "index")]
-        pub index: i32,
-        #[offset(52)]
-        #[rename(name = "freqency")]
-        pub freqency: f32,
-        #[offset(56)]
-        #[rename(name = "illusionGOs")]
-        pub illusion_g_os: ::unity2::Array<crate::unity_engine::gameobject::GameObject>,
-        #[offset(64)]
-        #[rename(name = "srcSkinnedMeshRenderers")]
-        pub src_skinned_mesh_renderers: ::unity2::Array<crate::unity_engine::skinnedmeshrenderer::SkinnedMeshRenderer>,
-        #[offset(72)]
-        #[rename(name = "srcMeshFilters")]
-        pub src_mesh_filters: ::unity2::Array<crate::unity_engine::meshfilter::MeshFilter>,
-        #[offset(80)]
-        #[rename(name = "srcMeshRenderers")]
-        pub src_mesh_renderers: ::unity2::Array<crate::unity_engine::meshrenderer::MeshRenderer>,
-        #[offset(88)]
-        #[rename(name = "initialized")]
-        pub initialized: bool,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/characterillusion/CharacterIllusion.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "CharacterIllusion")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct CharacterIllusion {
+# [offset (24)] # [rename (name = "NumIllusions")] pub num_illusions : i32 ,
+# [offset (28)] # [rename (name = "Interval")] pub interval : f32 ,
+# [offset (32)] # [rename (name = "_cp")] pub cp : crate :: combat :: character :: Character ,
+# [offset (40)] # [rename (name = "illusionHistory")] pub illusion_history : :: unity2 :: Array < :: unity2 :: Array < crate :: combat :: bakedmesh :: BakedMesh > > ,
+# [offset (48)] # [rename (name = "index")] pub index : i32 ,
+# [offset (52)] # [rename (name = "freqency")] pub freqency : f32 ,
+# [offset (56)] # [rename (name = "illusionGOs")] pub illusion_g_os : :: unity2 :: Array < crate :: unity_engine :: gameobject :: GameObject > ,
+# [offset (64)] # [rename (name = "srcSkinnedMeshRenderers")] pub src_skinned_mesh_renderers : :: unity2 :: Array < crate :: unity_engine :: skinnedmeshrenderer :: SkinnedMeshRenderer > ,
+# [offset (72)] # [rename (name = "srcMeshFilters")] pub src_mesh_filters : :: unity2 :: Array < crate :: unity_engine :: meshfilter :: MeshFilter > ,
+# [offset (80)] # [rename (name = "srcMeshRenderers")] pub src_mesh_renderers : :: unity2 :: Array < crate :: unity_engine :: meshrenderer :: MeshRenderer > ,
+# [offset (88)] # [rename (name = "initialized")] pub initialized : bool ,
+}
+
 }
 
 #[cfg(feature = "combat-characterillusion-types")]
 pub use __types::*;
 
 #[cfg(feature = "combat-characterillusion")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __CharacterIllusion_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_cp {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharacterIllusion as ::unity2::ClassIdentity>::class(),
-                "get_CP",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CharacterIllusion as ::unity2::ClassIdentity>::NAME,
-                        "get_CP",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_cp(this: CharacterIllusion, __unity2_method_info: ::unity2::OptionalMethod) -> crate::combat::character::Character {
-        let inner: extern "C" fn(CharacterIllusion, ::unity2::OptionalMethod) -> crate::combat::character::Character =
-            ::core::mem::transmute(__lookup_get_cp::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharacterIllusion as ::unity2::ClassIdentity>::class(),
-                "On",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CharacterIllusion as ::unity2::ClassIdentity>::NAME,
-                        "On",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on(this: CharacterIllusion, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CharacterIllusion, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_off {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharacterIllusion as ::unity2::ClassIdentity>::class(),
-                "Off",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CharacterIllusion as ::unity2::ClassIdentity>::NAME,
-                        "Off",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn off(this: CharacterIllusion, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CharacterIllusion, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_off::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_stop {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharacterIllusion as ::unity2::ClassIdentity>::class(),
-                "Stop",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CharacterIllusion as ::unity2::ClassIdentity>::NAME,
-                        "Stop",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn stop(this: CharacterIllusion, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CharacterIllusion, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_stop::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_disable {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharacterIllusion as ::unity2::ClassIdentity>::class(),
-                "OnDisable",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CharacterIllusion as ::unity2::ClassIdentity>::NAME,
-                        "OnDisable",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_disable(this: CharacterIllusion, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CharacterIllusion, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_disable::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_my_update {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharacterIllusion as ::unity2::ClassIdentity>::class(),
-                "MyUpdate",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CharacterIllusion as ::unity2::ClassIdentity>::NAME,
-                        "MyUpdate",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn my_update(this: CharacterIllusion, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CharacterIllusion, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_my_update::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_capture {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Array<crate::combat::bakedmesh::BakedMesh> as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharacterIllusion as ::unity2::ClassIdentity>::class(),
-                "Capture",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CharacterIllusion as ::unity2::ClassIdentity>::NAME,
-                        "Capture",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn capture(
-        this: CharacterIllusion,
-        dst_meshes: ::unity2::Array<crate::combat::bakedmesh::BakedMesh>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(CharacterIllusion, ::unity2::Array<crate::combat::bakedmesh::BakedMesh>, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_capture::get_method_info().method_ptr);
-        inner(this, dst_meshes, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharacterIllusion as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CharacterIllusion as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: CharacterIllusion, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CharacterIllusion, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __CharacterIllusion_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_cp { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CharacterIllusion as :: unity2 :: ClassIdentity > :: class () , "get_CP" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CharacterIllusion as :: unity2 :: ClassIdentity > :: NAME , "get_CP" , e) , } } } pub unsafe fn get_cp (this : CharacterIllusion , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: combat :: character :: Character { let inner : extern "C" fn (CharacterIllusion , :: unity2 :: OptionalMethod ,) -> crate :: combat :: character :: Character = :: core :: mem :: transmute (__lookup_get_cp :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CharacterIllusion as :: unity2 :: ClassIdentity > :: class () , "On" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CharacterIllusion as :: unity2 :: ClassIdentity > :: NAME , "On" , e) , } } } pub unsafe fn on (this : CharacterIllusion , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CharacterIllusion , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_off { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CharacterIllusion as :: unity2 :: ClassIdentity > :: class () , "Off" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CharacterIllusion as :: unity2 :: ClassIdentity > :: NAME , "Off" , e) , } } } pub unsafe fn off (this : CharacterIllusion , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CharacterIllusion , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_off :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_stop { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CharacterIllusion as :: unity2 :: ClassIdentity > :: class () , "Stop" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CharacterIllusion as :: unity2 :: ClassIdentity > :: NAME , "Stop" , e) , } } } pub unsafe fn stop (this : CharacterIllusion , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CharacterIllusion , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_stop :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_disable { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CharacterIllusion as :: unity2 :: ClassIdentity > :: class () , "OnDisable" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CharacterIllusion as :: unity2 :: ClassIdentity > :: NAME , "OnDisable" , e) , } } } pub unsafe fn on_disable (this : CharacterIllusion , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CharacterIllusion , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_disable :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_my_update { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CharacterIllusion as :: unity2 :: ClassIdentity > :: class () , "MyUpdate" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CharacterIllusion as :: unity2 :: ClassIdentity > :: NAME , "MyUpdate" , e) , } } } pub unsafe fn my_update (this : CharacterIllusion , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CharacterIllusion , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_my_update :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_capture { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: combat :: bakedmesh :: BakedMesh > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CharacterIllusion as :: unity2 :: ClassIdentity > :: class () , "Capture" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CharacterIllusion as :: unity2 :: ClassIdentity > :: NAME , "Capture" , e) , } } } pub unsafe fn capture (this : CharacterIllusion , dst_meshes : :: unity2 :: Array < crate :: combat :: bakedmesh :: BakedMesh > , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CharacterIllusion , :: unity2 :: Array < crate :: combat :: bakedmesh :: BakedMesh > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_capture :: get_method_info () . method_ptr ,) ; inner (this , dst_meshes , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CharacterIllusion as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CharacterIllusion as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : CharacterIllusion , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CharacterIllusion , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "combat-characterillusion")]
-pub trait ICharacterIllusionMethods: ICharacterIllusion {
-    #[doc = "`get_CP()` overload"]
-    fn get_cp(self) -> crate::combat::character::Character {
-        unsafe {
-            let __receiver = <CharacterIllusion as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CharacterIllusion_unity2_raw::get_cp(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`On()` overload"]
-    fn on(self) -> () {
-        unsafe {
-            let __receiver = <CharacterIllusion as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CharacterIllusion_unity2_raw::on(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Off()` overload"]
-    fn off(self) -> () {
-        unsafe {
-            let __receiver = <CharacterIllusion as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CharacterIllusion_unity2_raw::off(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Stop()` overload"]
-    fn stop(self) -> () {
-        unsafe {
-            let __receiver = <CharacterIllusion as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CharacterIllusion_unity2_raw::stop(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnDisable()` overload"]
-    fn on_disable(self) -> () {
-        unsafe {
-            let __receiver = <CharacterIllusion as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CharacterIllusion_unity2_raw::on_disable(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`MyUpdate()` overload"]
-    fn my_update(self) -> () {
-        unsafe {
-            let __receiver = <CharacterIllusion as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CharacterIllusion_unity2_raw::my_update(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Capture(::unity2::Array<crate::combat::bakedmesh::BakedMesh>)` overload"]
-    fn capture(self, dst_meshes: impl ::core::convert::Into<::unity2::Array<crate::combat::bakedmesh::BakedMesh>>) -> () {
-        unsafe {
-            let __receiver = <CharacterIllusion as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CharacterIllusion_unity2_raw::capture(__receiver, ::core::convert::Into::into(dst_meshes), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <CharacterIllusion as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CharacterIllusion_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait ICharacterIllusionMethods : ICharacterIllusion { # [doc = "`get_CP()` overload"] fn get_cp (self ,) -> crate :: combat :: character :: Character { unsafe { let __receiver = < CharacterIllusion as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CharacterIllusion_unity2_raw :: get_cp (__receiver , :: core :: option :: Option :: None) } } # [doc = "`On()` overload"] fn on (self ,) -> () { unsafe { let __receiver = < CharacterIllusion as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CharacterIllusion_unity2_raw :: on (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Off()` overload"] fn off (self ,) -> () { unsafe { let __receiver = < CharacterIllusion as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CharacterIllusion_unity2_raw :: off (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Stop()` overload"] fn stop (self ,) -> () { unsafe { let __receiver = < CharacterIllusion as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CharacterIllusion_unity2_raw :: stop (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnDisable()` overload"] fn on_disable (self ,) -> () { unsafe { let __receiver = < CharacterIllusion as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CharacterIllusion_unity2_raw :: on_disable (__receiver , :: core :: option :: Option :: None) } } # [doc = "`MyUpdate()` overload"] fn my_update (self ,) -> () { unsafe { let __receiver = < CharacterIllusion as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CharacterIllusion_unity2_raw :: my_update (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Capture(::unity2::Array<crate::combat::bakedmesh::BakedMesh>)` overload"] fn capture (self , dst_meshes : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: combat :: bakedmesh :: BakedMesh > >) -> () { unsafe { let __receiver = < CharacterIllusion as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CharacterIllusion_unity2_raw :: capture (__receiver , :: core :: convert :: Into :: into (dst_meshes) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CharacterIllusion as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CharacterIllusion_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "combat-characterillusion")]
-impl<__T: ICharacterIllusion> ICharacterIllusionMethods for __T {}
+impl < __T : ICharacterIllusion > ICharacterIllusionMethods for __T { }
+
+#[cfg(feature = "combat-characterillusion")]
+impl CharacterIllusion { pub fn get_cp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CharacterIllusion_unity2_raw :: __lookup_get_cp :: get_method_info () } pub fn on_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CharacterIllusion_unity2_raw :: __lookup_on :: get_method_info () } pub fn off_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CharacterIllusion_unity2_raw :: __lookup_off :: get_method_info () } pub fn stop_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CharacterIllusion_unity2_raw :: __lookup_stop :: get_method_info () } pub fn on_disable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CharacterIllusion_unity2_raw :: __lookup_on_disable :: get_method_info () } pub fn my_update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CharacterIllusion_unity2_raw :: __lookup_my_update :: get_method_info () } pub fn capture_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CharacterIllusion_unity2_raw :: __lookup_capture :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CharacterIllusion_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "combat-characterillusion")]
 impl CharacterIllusion {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(CharacterIllusion),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ICharacterIllusionMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CharacterIllusion) , :: core :: stringify ! (new) ,)) ; < Self as ICharacterIllusionMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "combat-characterillusion")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{CharacterIllusion, ICharacterIllusion, ICharacterIllusionMethods};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        system::object::IObject,
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::CharacterIllusion;
+    pub use super::ICharacterIllusion;
+    pub use super::ICharacterIllusionMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

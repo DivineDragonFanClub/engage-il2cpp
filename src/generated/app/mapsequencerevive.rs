@@ -2,923 +2,105 @@
 
 #[cfg(feature = "app-mapsequencerevive-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::procinst::{IProcInst, ProcInst},
-        system::{
-            object::{IObject, Object},
-            r#enum::{Enum, IEnum},
-            valuetype::{IValueType, ValueType},
-        },
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencerevive/MapSequenceRevive_Label.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct MapSequenceRevive_Label {
-        pub value: i32,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: procinst :: { IProcInst , ProcInst }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
 
-    impl ::unity2::ClassIdentity for MapSequenceRevive_Label {
-        const NAME: &'static str = "MapSequenceRevive.Label";
-        const NAMESPACE: &'static str = "App";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencerevive/MapSequenceRevive_Label.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct MapSequenceRevive_Label  {
+    pub value: i32,
+}
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+
+impl  ::unity2::ClassIdentity for MapSequenceRevive_Label  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapSequenceRevive.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for MapSequenceRevive_Label {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  ::unity2::IlType for MapSequenceRevive_Label  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl MapSequenceRevive_Label {
-        pub fn revive() -> Self {
-            Self { value: 0 }
-        }
+}
+
+
+impl  MapSequenceRevive_Label  {
+    pub fn revive() -> Self {
+        Self { value: 0 }
+
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencerevive/MapSequenceRevive.md"))]
-    #[::unity2::class(namespace = "App", name = "MapSequenceRevive")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct MapSequenceRevive {
-        #[offset(112)]
-        #[rename(name = "m_Units")]
-        pub m_units: crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>,
-        #[offset(120)]
-        #[rename(name = "m_Index")]
-        pub m_index: i32,
-    }
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencerevive/MapSequenceRevive.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapSequenceRevive")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct MapSequenceRevive {
+# [offset (112)] # [rename (name = "m_Units")] pub m_units : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unit :: Unit > ,
+# [offset (120)] # [rename (name = "m_Index")] pub m_index : i32 ,
+}
+
 }
 
 #[cfg(feature = "app-mapsequencerevive-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-mapsequencerevive")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapSequenceRevive_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit> as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceRevive as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceRevive as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: MapSequenceRevive,
-        units: crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MapSequenceRevive,
-            crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, units, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_current {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceRevive as ::unity2::ClassIdentity>::class(),
-                "get_Current",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceRevive as ::unity2::ClassIdentity>::NAME,
-                        "get_Current",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_current(this: MapSequenceRevive, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::unit::Unit {
-        let inner: extern "C" fn(MapSequenceRevive, ::unity2::OptionalMethod) -> crate::app::unit::Unit =
-            ::core::mem::transmute(__lookup_get_current::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_focus {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceRevive as ::unity2::ClassIdentity>::class(),
-                "Focus",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceRevive as ::unity2::ClassIdentity>::NAME,
-                        "Focus",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn focus(this: MapSequenceRevive, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapSequenceRevive, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_focus::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_revive_befre {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceRevive as ::unity2::ClassIdentity>::class(),
-                "ReviveBefre",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceRevive as ::unity2::ClassIdentity>::NAME,
-                        "ReviveBefre",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn revive_befre(this: MapSequenceRevive, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapSequenceRevive, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_revive_befre::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_control_hp_stock {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceRevive as ::unity2::ClassIdentity>::class(),
-                "ControlHpStock",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceRevive as ::unity2::ClassIdentity>::NAME,
-                        "ControlHpStock",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn control_hp_stock(this: MapSequenceRevive, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapSequenceRevive, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_control_hp_stock::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_revive_exec {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceRevive as ::unity2::ClassIdentity>::class(),
-                "ReviveExec",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceRevive as ::unity2::ClassIdentity>::NAME,
-                        "ReviveExec",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn revive_exec(this: MapSequenceRevive, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapSequenceRevive, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_revive_exec::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_revive_wait {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceRevive as ::unity2::ClassIdentity>::class(),
-                "ReviveWait",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceRevive as ::unity2::ClassIdentity>::NAME,
-                        "ReviveWait",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn revive_wait(this: MapSequenceRevive, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapSequenceRevive, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_revive_wait::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_hide_hp_stock {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceRevive as ::unity2::ClassIdentity>::class(),
-                "HideHpStock",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceRevive as ::unity2::ClassIdentity>::NAME,
-                        "HideHpStock",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn hide_hp_stock(this: MapSequenceRevive, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapSequenceRevive, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_hide_hp_stock::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_play_hp_stock_effect {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceRevive as ::unity2::ClassIdentity>::class(),
-                "PlayHpStockEffect",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceRevive as ::unity2::ClassIdentity>::NAME,
-                        "PlayHpStockEffect",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn play_hp_stock_effect(this: MapSequenceRevive, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapSequenceRevive, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_play_hp_stock_effect::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_playing_hp_stock_break_effect {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceRevive as ::unity2::ClassIdentity>::class(),
-                "IsPlayingHpStockBreakEffect",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceRevive as ::unity2::ClassIdentity>::NAME,
-                        "IsPlayingHpStockBreakEffect",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_playing_hp_stock_break_effect(this: MapSequenceRevive, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(MapSequenceRevive, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_playing_hp_stock_break_effect::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_show_hp_stock {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceRevive as ::unity2::ClassIdentity>::class(),
-                "ShowHpStock",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceRevive as ::unity2::ClassIdentity>::NAME,
-                        "ShowHpStock",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn show_hp_stock(this: MapSequenceRevive, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapSequenceRevive, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_show_hp_stock::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_release_hp_stock {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceRevive as ::unity2::ClassIdentity>::class(),
-                "ReleaseHpStock",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceRevive as ::unity2::ClassIdentity>::NAME,
-                        "ReleaseHpStock",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn release_hp_stock(this: MapSequenceRevive, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapSequenceRevive, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_release_hp_stock::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_revive_after {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceRevive as ::unity2::ClassIdentity>::class(),
-                "ReviveAfter",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceRevive as ::unity2::ClassIdentity>::NAME,
-                        "ReviveAfter",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn revive_after(this: MapSequenceRevive, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapSequenceRevive, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_revive_after::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_next {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceRevive as ::unity2::ClassIdentity>::class(),
-                "IsNext",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceRevive as ::unity2::ClassIdentity>::NAME,
-                        "IsNext",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_next(this: MapSequenceRevive, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(MapSequenceRevive, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_next::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind_after_battle {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit> as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceRevive as ::unity2::ClassIdentity>::class(),
-                "CreateBindAfterBattle",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceRevive as ::unity2::ClassIdentity>::NAME,
-                        "CreateBindAfterBattle",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_bind_after_battle(
-        super_: crate::app::procinst::ProcInst,
-        dead_units: crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_create_bind_after_battle::get_method_info().method_ptr);
-        inner(super_, dead_units, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind_turn_begin {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceRevive as ::unity2::ClassIdentity>::class(),
-                "CreateBindTurnBegin",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceRevive as ::unity2::ClassIdentity>::NAME,
-                        "CreateBindTurnBegin",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_bind_turn_begin(super_: crate::app::procinst::ProcInst, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_create_bind_turn_begin::get_method_info().method_ptr);
-        inner(super_, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind_dead_event {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceRevive as ::unity2::ClassIdentity>::class(),
-                "CreateBindDeadEvent",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceRevive as ::unity2::ClassIdentity>::NAME,
-                        "CreateBindDeadEvent",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_bind_dead_event(
-        super_: crate::app::procinst::ProcInst,
-        unit: crate::app::unit::Unit,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::app::procinst::ProcInst, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_create_bind_dead_event::get_method_info().method_ptr);
-        inner(super_, unit, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit> as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceRevive as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceRevive as ::unity2::ClassIdentity>::NAME,
-                        "CreateBind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        units: crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
-        inner(super_, units, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_timing_turn_begin {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceRevive as ::unity2::ClassIdentity>::class(),
-                "IsTimingTurnBegin",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSequenceRevive as ::unity2::ClassIdentity>::NAME,
-                        "IsTimingTurnBegin",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_timing_turn_begin(unit: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(crate::app::unit::Unit, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_timing_turn_begin::get_method_info().method_ptr);
-        inner(unit, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MapSequenceRevive_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unit :: Unit > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceRevive as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceRevive as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : MapSequenceRevive , units : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unit :: Unit > , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapSequenceRevive , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unit :: Unit > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , units , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_current { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceRevive as :: unity2 :: ClassIdentity > :: class () , "get_Current" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceRevive as :: unity2 :: ClassIdentity > :: NAME , "get_Current" , e) , } } } pub unsafe fn get_current (this : MapSequenceRevive , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit { let inner : extern "C" fn (MapSequenceRevive , :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit = :: core :: mem :: transmute (__lookup_get_current :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_focus { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceRevive as :: unity2 :: ClassIdentity > :: class () , "Focus" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceRevive as :: unity2 :: ClassIdentity > :: NAME , "Focus" , e) , } } } pub unsafe fn focus (this : MapSequenceRevive , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapSequenceRevive , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_focus :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_revive_befre { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceRevive as :: unity2 :: ClassIdentity > :: class () , "ReviveBefre" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceRevive as :: unity2 :: ClassIdentity > :: NAME , "ReviveBefre" , e) , } } } pub unsafe fn revive_befre (this : MapSequenceRevive , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapSequenceRevive , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_revive_befre :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_control_hp_stock { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceRevive as :: unity2 :: ClassIdentity > :: class () , "ControlHpStock" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceRevive as :: unity2 :: ClassIdentity > :: NAME , "ControlHpStock" , e) , } } } pub unsafe fn control_hp_stock (this : MapSequenceRevive , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapSequenceRevive , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_control_hp_stock :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_revive_exec { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceRevive as :: unity2 :: ClassIdentity > :: class () , "ReviveExec" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceRevive as :: unity2 :: ClassIdentity > :: NAME , "ReviveExec" , e) , } } } pub unsafe fn revive_exec (this : MapSequenceRevive , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapSequenceRevive , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_revive_exec :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_revive_wait { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceRevive as :: unity2 :: ClassIdentity > :: class () , "ReviveWait" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceRevive as :: unity2 :: ClassIdentity > :: NAME , "ReviveWait" , e) , } } } pub unsafe fn revive_wait (this : MapSequenceRevive , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapSequenceRevive , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_revive_wait :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_hide_hp_stock { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceRevive as :: unity2 :: ClassIdentity > :: class () , "HideHpStock" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceRevive as :: unity2 :: ClassIdentity > :: NAME , "HideHpStock" , e) , } } } pub unsafe fn hide_hp_stock (this : MapSequenceRevive , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapSequenceRevive , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_hide_hp_stock :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_play_hp_stock_effect { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceRevive as :: unity2 :: ClassIdentity > :: class () , "PlayHpStockEffect" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceRevive as :: unity2 :: ClassIdentity > :: NAME , "PlayHpStockEffect" , e) , } } } pub unsafe fn play_hp_stock_effect (this : MapSequenceRevive , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapSequenceRevive , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_play_hp_stock_effect :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_playing_hp_stock_break_effect { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceRevive as :: unity2 :: ClassIdentity > :: class () , "IsPlayingHpStockBreakEffect" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceRevive as :: unity2 :: ClassIdentity > :: NAME , "IsPlayingHpStockBreakEffect" , e) , } } } pub unsafe fn is_playing_hp_stock_break_effect (this : MapSequenceRevive , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (MapSequenceRevive , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_playing_hp_stock_break_effect :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_show_hp_stock { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceRevive as :: unity2 :: ClassIdentity > :: class () , "ShowHpStock" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceRevive as :: unity2 :: ClassIdentity > :: NAME , "ShowHpStock" , e) , } } } pub unsafe fn show_hp_stock (this : MapSequenceRevive , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapSequenceRevive , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_show_hp_stock :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_release_hp_stock { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceRevive as :: unity2 :: ClassIdentity > :: class () , "ReleaseHpStock" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceRevive as :: unity2 :: ClassIdentity > :: NAME , "ReleaseHpStock" , e) , } } } pub unsafe fn release_hp_stock (this : MapSequenceRevive , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapSequenceRevive , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_release_hp_stock :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_revive_after { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceRevive as :: unity2 :: ClassIdentity > :: class () , "ReviveAfter" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceRevive as :: unity2 :: ClassIdentity > :: NAME , "ReviveAfter" , e) , } } } pub unsafe fn revive_after (this : MapSequenceRevive , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapSequenceRevive , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_revive_after :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_next { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceRevive as :: unity2 :: ClassIdentity > :: class () , "IsNext" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceRevive as :: unity2 :: ClassIdentity > :: NAME , "IsNext" , e) , } } } pub unsafe fn is_next (this : MapSequenceRevive , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (MapSequenceRevive , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_next :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_bind_after_battle { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unit :: Unit > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceRevive as :: unity2 :: ClassIdentity > :: class () , "CreateBindAfterBattle" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceRevive as :: unity2 :: ClassIdentity > :: NAME , "CreateBindAfterBattle" , e) , } } } pub unsafe fn create_bind_after_battle (super_ : crate :: app :: procinst :: ProcInst , dead_units : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unit :: Unit > , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unit :: Unit > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create_bind_after_battle :: get_method_info () . method_ptr ,) ; inner (super_ , dead_units , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_bind_turn_begin { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceRevive as :: unity2 :: ClassIdentity > :: class () , "CreateBindTurnBegin" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceRevive as :: unity2 :: ClassIdentity > :: NAME , "CreateBindTurnBegin" , e) , } } } pub unsafe fn create_bind_turn_begin (super_ : crate :: app :: procinst :: ProcInst , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create_bind_turn_begin :: get_method_info () . method_ptr ,) ; inner (super_ , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_bind_dead_event { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceRevive as :: unity2 :: ClassIdentity > :: class () , "CreateBindDeadEvent" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceRevive as :: unity2 :: ClassIdentity > :: NAME , "CreateBindDeadEvent" , e) , } } } pub unsafe fn create_bind_dead_event (super_ : crate :: app :: procinst :: ProcInst , unit : crate :: app :: unit :: Unit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create_bind_dead_event :: get_method_info () . method_ptr ,) ; inner (super_ , unit , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_bind { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unit :: Unit > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceRevive as :: unity2 :: ClassIdentity > :: class () , "CreateBind" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceRevive as :: unity2 :: ClassIdentity > :: NAME , "CreateBind" , e) , } } } pub unsafe fn create_bind (super_ : crate :: app :: procinst :: ProcInst , units : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unit :: Unit > , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unit :: Unit > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create_bind :: get_method_info () . method_ptr ,) ; inner (super_ , units , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_timing_turn_begin { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceRevive as :: unity2 :: ClassIdentity > :: class () , "IsTimingTurnBegin" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceRevive as :: unity2 :: ClassIdentity > :: NAME , "IsTimingTurnBegin" , e) , } } } pub unsafe fn is_timing_turn_begin (unit : crate :: app :: unit :: Unit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_timing_turn_begin :: get_method_info () . method_ptr ,) ; inner (unit , __unity2_method_info) } }
+
+#[cfg(feature = "app-mapsequencerevive")]
+impl MapSequenceRevive { # [doc = "`CreateBindAfterBattle(crate::app::procinst::ProcInst, crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>)` overload"] pub fn create_bind_after_battle (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , dead_units : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unit :: Unit > >) -> () { unsafe { __MapSequenceRevive_unity2_raw :: create_bind_after_battle (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (dead_units) , :: core :: option :: Option :: None) } } # [doc = "`CreateBindTurnBegin(crate::app::procinst::ProcInst)` overload"] pub fn create_bind_turn_begin (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { __MapSequenceRevive_unity2_raw :: create_bind_turn_begin (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } # [doc = "`CreateBindDeadEvent(crate::app::procinst::ProcInst, crate::app::unit::Unit)` overload"] pub fn create_bind_dead_event (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { __MapSequenceRevive_unity2_raw :: create_bind_dead_event (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , units : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unit :: Unit > >) -> () { unsafe { __MapSequenceRevive_unity2_raw :: create_bind (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (units) , :: core :: option :: Option :: None) } } # [doc = "`IsTimingTurnBegin(crate::app::unit::Unit)` overload"] pub fn is_timing_turn_begin (unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> bool { unsafe { __MapSequenceRevive_unity2_raw :: is_timing_turn_begin (:: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-mapsequencerevive")]
+pub trait IMapSequenceReviveMethods : IMapSequenceRevive { # [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>)` overload"] fn ctor (self , units : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unit :: Unit > >) -> () { unsafe { let __receiver = < MapSequenceRevive as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceRevive_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (units) , :: core :: option :: Option :: None) } } # [doc = "`get_Current()` overload"] fn get_current (self ,) -> crate :: app :: unit :: Unit { unsafe { let __receiver = < MapSequenceRevive as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceRevive_unity2_raw :: get_current (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Focus()` overload"] fn focus (self ,) -> () { unsafe { let __receiver = < MapSequenceRevive as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceRevive_unity2_raw :: focus (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ReviveBefre()` overload"] fn revive_befre (self ,) -> () { unsafe { let __receiver = < MapSequenceRevive as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceRevive_unity2_raw :: revive_befre (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ControlHpStock()` overload"] fn control_hp_stock (self ,) -> () { unsafe { let __receiver = < MapSequenceRevive as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceRevive_unity2_raw :: control_hp_stock (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ReviveExec()` overload"] fn revive_exec (self ,) -> () { unsafe { let __receiver = < MapSequenceRevive as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceRevive_unity2_raw :: revive_exec (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ReviveWait()` overload"] fn revive_wait (self ,) -> () { unsafe { let __receiver = < MapSequenceRevive as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceRevive_unity2_raw :: revive_wait (__receiver , :: core :: option :: Option :: None) } } # [doc = "`HideHpStock()` overload"] fn hide_hp_stock (self ,) -> () { unsafe { let __receiver = < MapSequenceRevive as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceRevive_unity2_raw :: hide_hp_stock (__receiver , :: core :: option :: Option :: None) } } # [doc = "`PlayHpStockEffect()` overload"] fn play_hp_stock_effect (self ,) -> () { unsafe { let __receiver = < MapSequenceRevive as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceRevive_unity2_raw :: play_hp_stock_effect (__receiver , :: core :: option :: Option :: None) } } # [doc = "`IsPlayingHpStockBreakEffect()` overload"] fn is_playing_hp_stock_break_effect (self ,) -> bool { unsafe { let __receiver = < MapSequenceRevive as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceRevive_unity2_raw :: is_playing_hp_stock_break_effect (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ShowHpStock()` overload"] fn show_hp_stock (self ,) -> () { unsafe { let __receiver = < MapSequenceRevive as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceRevive_unity2_raw :: show_hp_stock (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ReleaseHpStock()` overload"] fn release_hp_stock (self ,) -> () { unsafe { let __receiver = < MapSequenceRevive as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceRevive_unity2_raw :: release_hp_stock (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ReviveAfter()` overload"] fn revive_after (self ,) -> () { unsafe { let __receiver = < MapSequenceRevive as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceRevive_unity2_raw :: revive_after (__receiver , :: core :: option :: Option :: None) } } # [doc = "`IsNext()` overload"] fn is_next (self ,) -> bool { unsafe { let __receiver = < MapSequenceRevive as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceRevive_unity2_raw :: is_next (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-mapsequencerevive")]
+impl < __T : IMapSequenceRevive > IMapSequenceReviveMethods for __T { }
+
+#[cfg(feature = "app-mapsequencerevive")]
+impl MapSequenceRevive { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceRevive_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn get_current_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceRevive_unity2_raw :: __lookup_get_current :: get_method_info () } pub fn focus_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceRevive_unity2_raw :: __lookup_focus :: get_method_info () } pub fn revive_befre_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceRevive_unity2_raw :: __lookup_revive_befre :: get_method_info () } pub fn control_hp_stock_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceRevive_unity2_raw :: __lookup_control_hp_stock :: get_method_info () } pub fn revive_exec_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceRevive_unity2_raw :: __lookup_revive_exec :: get_method_info () } pub fn revive_wait_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceRevive_unity2_raw :: __lookup_revive_wait :: get_method_info () } pub fn hide_hp_stock_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceRevive_unity2_raw :: __lookup_hide_hp_stock :: get_method_info () } pub fn play_hp_stock_effect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceRevive_unity2_raw :: __lookup_play_hp_stock_effect :: get_method_info () } pub fn is_playing_hp_stock_break_effect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceRevive_unity2_raw :: __lookup_is_playing_hp_stock_break_effect :: get_method_info () } pub fn show_hp_stock_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceRevive_unity2_raw :: __lookup_show_hp_stock :: get_method_info () } pub fn release_hp_stock_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceRevive_unity2_raw :: __lookup_release_hp_stock :: get_method_info () } pub fn revive_after_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceRevive_unity2_raw :: __lookup_revive_after :: get_method_info () } pub fn is_next_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceRevive_unity2_raw :: __lookup_is_next :: get_method_info () } pub fn create_bind_after_battle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceRevive_unity2_raw :: __lookup_create_bind_after_battle :: get_method_info () } pub fn create_bind_turn_begin_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceRevive_unity2_raw :: __lookup_create_bind_turn_begin :: get_method_info () } pub fn create_bind_dead_event_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceRevive_unity2_raw :: __lookup_create_bind_dead_event :: get_method_info () } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceRevive_unity2_raw :: __lookup_create_bind :: get_method_info () } pub fn is_timing_turn_begin_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceRevive_unity2_raw :: __lookup_is_timing_turn_begin :: get_method_info () } }
 
 #[cfg(feature = "app-mapsequencerevive")]
 impl MapSequenceRevive {
-    #[doc = "`CreateBindAfterBattle(crate::app::procinst::ProcInst, crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>)` overload"]
-    pub fn create_bind_after_battle(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        dead_units: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>>,
-    ) -> () {
-        unsafe {
-            __MapSequenceRevive_unity2_raw::create_bind_after_battle(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(dead_units),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`CreateBindTurnBegin(crate::app::procinst::ProcInst)` overload"]
-    pub fn create_bind_turn_begin(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
-        unsafe { __MapSequenceRevive_unity2_raw::create_bind_turn_begin(::core::convert::Into::into(super_), ::core::option::Option::None) }
-    }
-
-    #[doc = "`CreateBindDeadEvent(crate::app::procinst::ProcInst, crate::app::unit::Unit)` overload"]
-    pub fn create_bind_dead_event(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-    ) -> () {
-        unsafe {
-            __MapSequenceRevive_unity2_raw::create_bind_dead_event(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(unit),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>)` overload"]
-    pub fn create_bind(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        units: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>>,
-    ) -> () {
-        unsafe {
-            __MapSequenceRevive_unity2_raw::create_bind(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(units),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`IsTimingTurnBegin(crate::app::unit::Unit)` overload"]
-    pub fn is_timing_turn_begin(unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> bool {
-        unsafe { __MapSequenceRevive_unity2_raw::is_timing_turn_begin(::core::convert::Into::into(unit), ::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-mapsequencerevive")]
-pub trait IMapSequenceReviveMethods: IMapSequenceRevive {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>)` overload"]
-    fn ctor(self, units: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>>) -> () {
-        unsafe {
-            let __receiver = <MapSequenceRevive as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSequenceRevive_unity2_raw::ctor(__receiver, ::core::convert::Into::into(units), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Current()` overload"]
-    fn get_current(self) -> crate::app::unit::Unit {
-        unsafe {
-            let __receiver = <MapSequenceRevive as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSequenceRevive_unity2_raw::get_current(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Focus()` overload"]
-    fn focus(self) -> () {
-        unsafe {
-            let __receiver = <MapSequenceRevive as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSequenceRevive_unity2_raw::focus(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ReviveBefre()` overload"]
-    fn revive_befre(self) -> () {
-        unsafe {
-            let __receiver = <MapSequenceRevive as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSequenceRevive_unity2_raw::revive_befre(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ControlHpStock()` overload"]
-    fn control_hp_stock(self) -> () {
-        unsafe {
-            let __receiver = <MapSequenceRevive as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSequenceRevive_unity2_raw::control_hp_stock(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ReviveExec()` overload"]
-    fn revive_exec(self) -> () {
-        unsafe {
-            let __receiver = <MapSequenceRevive as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSequenceRevive_unity2_raw::revive_exec(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ReviveWait()` overload"]
-    fn revive_wait(self) -> () {
-        unsafe {
-            let __receiver = <MapSequenceRevive as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSequenceRevive_unity2_raw::revive_wait(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`HideHpStock()` overload"]
-    fn hide_hp_stock(self) -> () {
-        unsafe {
-            let __receiver = <MapSequenceRevive as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSequenceRevive_unity2_raw::hide_hp_stock(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`PlayHpStockEffect()` overload"]
-    fn play_hp_stock_effect(self) -> () {
-        unsafe {
-            let __receiver = <MapSequenceRevive as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSequenceRevive_unity2_raw::play_hp_stock_effect(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsPlayingHpStockBreakEffect()` overload"]
-    fn is_playing_hp_stock_break_effect(self) -> bool {
-        unsafe {
-            let __receiver = <MapSequenceRevive as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSequenceRevive_unity2_raw::is_playing_hp_stock_break_effect(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ShowHpStock()` overload"]
-    fn show_hp_stock(self) -> () {
-        unsafe {
-            let __receiver = <MapSequenceRevive as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSequenceRevive_unity2_raw::show_hp_stock(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ReleaseHpStock()` overload"]
-    fn release_hp_stock(self) -> () {
-        unsafe {
-            let __receiver = <MapSequenceRevive as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSequenceRevive_unity2_raw::release_hp_stock(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ReviveAfter()` overload"]
-    fn revive_after(self) -> () {
-        unsafe {
-            let __receiver = <MapSequenceRevive as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSequenceRevive_unity2_raw::revive_after(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsNext()` overload"]
-    fn is_next(self) -> bool {
-        unsafe {
-            let __receiver = <MapSequenceRevive as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSequenceRevive_unity2_raw::is_next(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-mapsequencerevive")]
-impl<__T: IMapSequenceRevive> IMapSequenceReviveMethods for __T {}
-
-#[cfg(feature = "app-mapsequencerevive")]
-impl MapSequenceRevive {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>)` — overload selector"]
-    pub fn new(units: crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapSequenceRevive),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapSequenceReviveMethods>::ctor(this, units);
-        this
-    }
+# [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>)` — overload selector"] pub fn new (units : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unit :: Unit >) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapSequenceRevive) , :: core :: stringify ! (new) ,)) ; < Self as IMapSequenceReviveMethods > :: ctor (this , units) ; this }
 }
 
 #[cfg(feature = "app-mapsequencerevive")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IMapSequenceRevive, IMapSequenceReviveMethods, MapSequenceRevive, MapSequenceRevive_Label};
-    #[cfg(feature = "app-procinst")]
-    pub use crate::app::procinst::IProcInstMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::{
-        app::procinst::IProcInst,
-        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
-    };
+    pub use super::MapSequenceRevive_Label;
+    pub use super::MapSequenceRevive;
+    pub use super::IMapSequenceRevive;
+    pub use super::IMapSequenceReviveMethods;
+    pub use crate::app::procinst::IProcInst;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "app-procinst")] pub use crate::app::procinst::IProcInstMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

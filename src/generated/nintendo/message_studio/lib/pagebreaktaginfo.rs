@@ -2,175 +2,43 @@
 
 #[cfg(feature = "nintendo-message_studio-lib-pagebreaktaginfo-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/nintendo/message_studio/lib/pagebreaktaginfo/PageBreakTagInfo.md"))]
-    #[::unity2::class(namespace = "Nintendo.MessageStudio.Lib", name = "PageBreakTagInfo")]
-    #[parent(crate::system::object::Object)]
-    pub struct PageBreakTagInfo {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/nintendo/message_studio/lib/pagebreaktaginfo/PageBreakTagInfo.md"))] # [:: unity2 :: class (namespace = "Nintendo.MessageStudio.Lib" , name = "PageBreakTagInfo")] # [parent (crate :: system :: object :: Object)] pub struct PageBreakTagInfo {}
+
 }
 
 #[cfg(feature = "nintendo-message_studio-lib-pagebreaktaginfo-types")]
 pub use __types::*;
 
 #[cfg(feature = "nintendo-message_studio-lib-pagebreaktaginfo")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __PageBreakTagInfo_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_tag {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PageBreakTagInfo as ::unity2::ClassIdentity>::class(),
-                "get_Tag",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PageBreakTagInfo as ::unity2::ClassIdentity>::NAME,
-                        "get_Tag",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_tag(this: PageBreakTagInfo, __unity2_method_info: ::unity2::OptionalMethod) -> u16 {
-        let inner: extern "C" fn(PageBreakTagInfo, ::unity2::OptionalMethod) -> u16 =
-            ::core::mem::transmute(__lookup_get_tag::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_tag_group {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PageBreakTagInfo as ::unity2::ClassIdentity>::class(),
-                "get_TagGroup",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PageBreakTagInfo as ::unity2::ClassIdentity>::NAME,
-                        "get_TagGroup",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_tag_group(this: PageBreakTagInfo, __unity2_method_info: ::unity2::OptionalMethod) -> u16 {
-        let inner: extern "C" fn(PageBreakTagInfo, ::unity2::OptionalMethod) -> u16 =
-            ::core::mem::transmute(__lookup_get_tag_group::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PageBreakTagInfo as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PageBreakTagInfo as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: PageBreakTagInfo, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(PageBreakTagInfo, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __PageBreakTagInfo_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_tag { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PageBreakTagInfo as :: unity2 :: ClassIdentity > :: class () , "get_Tag" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PageBreakTagInfo as :: unity2 :: ClassIdentity > :: NAME , "get_Tag" , e) , } } } pub unsafe fn get_tag (this : PageBreakTagInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> u16 { let inner : extern "C" fn (PageBreakTagInfo , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute (__lookup_get_tag :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_tag_group { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PageBreakTagInfo as :: unity2 :: ClassIdentity > :: class () , "get_TagGroup" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PageBreakTagInfo as :: unity2 :: ClassIdentity > :: NAME , "get_TagGroup" , e) , } } } pub unsafe fn get_tag_group (this : PageBreakTagInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> u16 { let inner : extern "C" fn (PageBreakTagInfo , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute (__lookup_get_tag_group :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PageBreakTagInfo as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PageBreakTagInfo as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : PageBreakTagInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (PageBreakTagInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "nintendo-message_studio-lib-pagebreaktaginfo")]
-pub trait IPageBreakTagInfoMethods: IPageBreakTagInfo {
-    #[doc = "`get_Tag()` overload"]
-    fn get_tag(self) -> u16 {
-        unsafe {
-            let __receiver = <PageBreakTagInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __PageBreakTagInfo_unity2_raw::get_tag(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_TagGroup()` overload"]
-    fn get_tag_group(self) -> u16 {
-        unsafe {
-            let __receiver = <PageBreakTagInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __PageBreakTagInfo_unity2_raw::get_tag_group(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <PageBreakTagInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __PageBreakTagInfo_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IPageBreakTagInfoMethods : IPageBreakTagInfo { # [doc = "`get_Tag()` overload"] fn get_tag (self ,) -> u16 { unsafe { let __receiver = < PageBreakTagInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __PageBreakTagInfo_unity2_raw :: get_tag (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_TagGroup()` overload"] fn get_tag_group (self ,) -> u16 { unsafe { let __receiver = < PageBreakTagInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __PageBreakTagInfo_unity2_raw :: get_tag_group (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < PageBreakTagInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __PageBreakTagInfo_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "nintendo-message_studio-lib-pagebreaktaginfo")]
-impl<__T: IPageBreakTagInfo> IPageBreakTagInfoMethods for __T {}
+impl < __T : IPageBreakTagInfo > IPageBreakTagInfoMethods for __T { }
+
+#[cfg(feature = "nintendo-message_studio-lib-pagebreaktaginfo")]
+impl PageBreakTagInfo { pub fn get_tag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PageBreakTagInfo_unity2_raw :: __lookup_get_tag :: get_method_info () } pub fn get_tag_group_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PageBreakTagInfo_unity2_raw :: __lookup_get_tag_group :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PageBreakTagInfo_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "nintendo-message_studio-lib-pagebreaktaginfo")]
 impl PageBreakTagInfo {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(PageBreakTagInfo),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IPageBreakTagInfoMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (PageBreakTagInfo) , :: core :: stringify ! (new) ,)) ; < Self as IPageBreakTagInfoMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "nintendo-message_studio-lib-pagebreaktaginfo")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IPageBreakTagInfo, IPageBreakTagInfoMethods, PageBreakTagInfo};
+    pub use super::PageBreakTagInfo;
+    pub use super::IPageBreakTagInfo;
+    pub use super::IPageBreakTagInfoMethods;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

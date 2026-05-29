@@ -2,700 +2,309 @@
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-light2dblendstyle-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        r#enum::{Enum, IEnum},
-        valuetype::{IValueType, ValueType},
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/rendering/universal/light2dblendstyle/Light2DBlendStyle_BlendMode.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct Light2DBlendStyle_BlendMode {
-        pub value: i32,
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/rendering/universal/light2dblendstyle/Light2DBlendStyle.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct Light2DBlendStyle {
+    pub name: :: unity2 :: Il2CppString,
+    pub mask_texture_channel: crate :: unity_engine :: experimental :: rendering :: universal :: light2dblendstyle :: Light2DBlendStyle_TextureChannel,
+    pub render_texture_scale: f32,
+    pub blend_mode: crate :: unity_engine :: experimental :: rendering :: universal :: light2dblendstyle :: Light2DBlendStyle_BlendMode,
+    pub custom_blend_factors: crate :: unity_engine :: experimental :: rendering :: universal :: light2dblendstyle :: Light2DBlendStyle_BlendFactors,
+    pub render_target_handle: crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle,
+}
+
+
+impl ::unity2::ClassIdentity for Light2DBlendStyle {
+    const NAMESPACE: &'static str = "UnityEngine.Experimental.Rendering.Universal";
+
+    const NAME: &'static str = "Light2DBlendStyle";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    impl ::unity2::ClassIdentity for Light2DBlendStyle_BlendMode {
-        const NAME: &'static str = "Light2DBlendStyle.BlendMode";
-        const NAMESPACE: &'static str = "UnityEngine.Experimental.Rendering.Universal";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl ::unity2::IlType for Light2DBlendStyle {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::IlType for Light2DBlendStyle_BlendMode {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/rendering/universal/light2dblendstyle/Light2DBlendStyle_TextureChannel.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct Light2DBlendStyle_TextureChannel  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for Light2DBlendStyle_TextureChannel  {
+    const NAMESPACE: &'static str = "UnityEngine.Experimental.Rendering.Universal";
+
+    const NAME: &'static str = "Light2DBlendStyle.TextureChannel";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl Light2DBlendStyle_BlendMode {
-        pub fn additive() -> Self {
-            Self { value: 0 }
-        }
+}
 
-        pub fn multiply() -> Self {
-            Self { value: 1 }
-        }
 
-        pub fn subtractive() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn custom() -> Self {
-            Self { value: 99 }
-        }
+impl  ::unity2::IlType for Light2DBlendStyle_TextureChannel  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/rendering/universal/light2dblendstyle/Light2DBlendStyle_MaskChannelFilter.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct Light2DBlendStyle_MaskChannelFilter {}
+}
 
-    impl ::unity2::ClassIdentity for Light2DBlendStyle_MaskChannelFilter {
-        const NAME: &'static str = "Light2DBlendStyle.MaskChannelFilter";
-        const NAMESPACE: &'static str = "UnityEngine.Experimental.Rendering.Universal";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+impl  Light2DBlendStyle_TextureChannel  {
+    pub fn none() -> Self {
+        Self { value: 0 }
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
     }
 
-    impl ::unity2::IlType for Light2DBlendStyle_MaskChannelFilter {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+
+    pub fn r() -> Self {
+        Self { value: 1 }
+
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/rendering/universal/light2dblendstyle/Light2DBlendStyle_BlendFactors.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct Light2DBlendStyle_BlendFactors {
-        pub multiplicative: f32,
-        pub additive: f32,
+
+    pub fn g() -> Self {
+        Self { value: 2 }
+
     }
 
-    impl ::unity2::ClassIdentity for Light2DBlendStyle_BlendFactors {
-        const NAME: &'static str = "Light2DBlendStyle.BlendFactors";
-        const NAMESPACE: &'static str = "UnityEngine.Experimental.Rendering.Universal";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+    pub fn b() -> Self {
+        Self { value: 3 }
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
     }
 
-    impl ::unity2::IlType for Light2DBlendStyle_BlendFactors {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+
+    pub fn a() -> Self {
+        Self { value: 4 }
+
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/rendering/universal/light2dblendstyle/Light2DBlendStyle_TextureChannel.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct Light2DBlendStyle_TextureChannel {
-        pub value: i32,
+
+    pub fn one_minus_r() -> Self {
+        Self { value: 5 }
+
     }
 
-    impl ::unity2::ClassIdentity for Light2DBlendStyle_TextureChannel {
-        const NAME: &'static str = "Light2DBlendStyle.TextureChannel";
-        const NAMESPACE: &'static str = "UnityEngine.Experimental.Rendering.Universal";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+    pub fn one_minus_g() -> Self {
+        Self { value: 6 }
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
     }
 
-    impl ::unity2::IlType for Light2DBlendStyle_TextureChannel {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+
+    pub fn one_minus_b() -> Self {
+        Self { value: 7 }
+
     }
 
-    impl Light2DBlendStyle_TextureChannel {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn r() -> Self {
-            Self { value: 1 }
-        }
+    pub fn one_minus_a() -> Self {
+        Self { value: 8 }
 
-        pub fn g() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn b() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn a() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn one_minus_r() -> Self {
-            Self { value: 5 }
-        }
-
-        pub fn one_minus_g() -> Self {
-            Self { value: 6 }
-        }
-
-        pub fn one_minus_b() -> Self {
-            Self { value: 7 }
-        }
-
-        pub fn one_minus_a() -> Self {
-            Self { value: 8 }
-        }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/rendering/universal/light2dblendstyle/Light2DBlendStyle.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct Light2DBlendStyle {
-        pub name: ::unity2::Il2CppString,
-        pub mask_texture_channel: crate::unity_engine::experimental::rendering::universal::light2dblendstyle::Light2DBlendStyle_TextureChannel,
-        pub render_texture_scale: f32,
-        pub blend_mode: crate::unity_engine::experimental::rendering::universal::light2dblendstyle::Light2DBlendStyle_BlendMode,
-        pub custom_blend_factors: crate::unity_engine::experimental::rendering::universal::light2dblendstyle::Light2DBlendStyle_BlendFactors,
-        pub render_target_handle: crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
-    }
+}
 
-    impl ::unity2::ClassIdentity for Light2DBlendStyle {
-        const NAME: &'static str = "Light2DBlendStyle";
-        const NAMESPACE: &'static str = "UnityEngine.Experimental.Rendering.Universal";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/rendering/universal/light2dblendstyle/Light2DBlendStyle_BlendMode.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct Light2DBlendStyle_BlendMode  {
+    pub value: i32,
+}
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+
+impl  ::unity2::ClassIdentity for Light2DBlendStyle_BlendMode  {
+    const NAMESPACE: &'static str = "UnityEngine.Experimental.Rendering.Universal";
+
+    const NAME: &'static str = "Light2DBlendStyle.BlendMode";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for Light2DBlendStyle {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  ::unity2::IlType for Light2DBlendStyle_BlendMode  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
+
+}
+
+
+impl  Light2DBlendStyle_BlendMode  {
+    pub fn additive() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn multiply() -> Self {
+        Self { value: 1 }
+
+    }
+
+
+    pub fn subtractive() -> Self {
+        Self { value: 2 }
+
+    }
+
+
+    pub fn custom() -> Self {
+        Self { value: 99 }
+
+    }
+
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/rendering/universal/light2dblendstyle/Light2DBlendStyle_BlendFactors.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct Light2DBlendStyle_BlendFactors {
+    pub multiplicative: f32,
+    pub additive: f32,
+}
+
+
+impl ::unity2::ClassIdentity for Light2DBlendStyle_BlendFactors {
+    const NAMESPACE: &'static str = "UnityEngine.Experimental.Rendering.Universal";
+
+    const NAME: &'static str = "Light2DBlendStyle.BlendFactors";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl ::unity2::IlType for Light2DBlendStyle_BlendFactors {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/rendering/universal/light2dblendstyle/Light2DBlendStyle_MaskChannelFilter.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct Light2DBlendStyle_MaskChannelFilter {}
+
+
+impl ::unity2::ClassIdentity for Light2DBlendStyle_MaskChannelFilter {
+    const NAMESPACE: &'static str = "UnityEngine.Experimental.Rendering.Universal";
+
+    const NAME: &'static str = "Light2DBlendStyle.MaskChannelFilter";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl ::unity2::IlType for Light2DBlendStyle_MaskChannelFilter {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-light2dblendstyle-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-light2dblendstyle")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __Light2DBlendStyle_MaskChannelFilter_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_mask {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Light2DBlendStyle_MaskChannelFilter as ::unity2::ClassIdentity>::class(),
-                "get_mask",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Light2DBlendStyle_MaskChannelFilter as ::unity2::ClassIdentity>::NAME,
-                        "get_mask",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_mask(
-        this: Light2DBlendStyle_MaskChannelFilter,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::vector4::Vector4 {
-        let inner: extern "C" fn(Light2DBlendStyle_MaskChannelFilter, ::unity2::OptionalMethod) -> crate::unity_engine::vector4::Vector4 =
-            ::core::mem::transmute(__lookup_get_mask::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_mask {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector4::Vector4 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Light2DBlendStyle_MaskChannelFilter as ::unity2::ClassIdentity>::class(),
-                "set_mask",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Light2DBlendStyle_MaskChannelFilter as ::unity2::ClassIdentity>::NAME,
-                        "set_mask",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_mask(
-        this: Light2DBlendStyle_MaskChannelFilter,
-        value: crate::unity_engine::vector4::Vector4,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(Light2DBlendStyle_MaskChannelFilter, crate::unity_engine::vector4::Vector4, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_mask::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_inverted {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Light2DBlendStyle_MaskChannelFilter as ::unity2::ClassIdentity>::class(),
-                "get_inverted",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Light2DBlendStyle_MaskChannelFilter as ::unity2::ClassIdentity>::NAME,
-                        "get_inverted",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_inverted(
-        this: Light2DBlendStyle_MaskChannelFilter,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::vector4::Vector4 {
-        let inner: extern "C" fn(Light2DBlendStyle_MaskChannelFilter, ::unity2::OptionalMethod) -> crate::unity_engine::vector4::Vector4 =
-            ::core::mem::transmute(__lookup_get_inverted::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_inverted {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector4::Vector4 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Light2DBlendStyle_MaskChannelFilter as ::unity2::ClassIdentity>::class(),
-                "set_inverted",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Light2DBlendStyle_MaskChannelFilter as ::unity2::ClassIdentity>::NAME,
-                        "set_inverted",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_inverted(
-        this: Light2DBlendStyle_MaskChannelFilter,
-        value: crate::unity_engine::vector4::Vector4,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(Light2DBlendStyle_MaskChannelFilter, crate::unity_engine::vector4::Vector4, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_inverted::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::vector4::Vector4 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::vector4::Vector4 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Light2DBlendStyle_MaskChannelFilter as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Light2DBlendStyle_MaskChannelFilter as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: Light2DBlendStyle_MaskChannelFilter,
-        m: crate::unity_engine::vector4::Vector4,
-        i: crate::unity_engine::vector4::Vector4,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            Light2DBlendStyle_MaskChannelFilter,
-            crate::unity_engine::vector4::Vector4,
-            crate::unity_engine::vector4::Vector4,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, m, i, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __Light2DBlendStyle_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_blend_factors { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Light2DBlendStyle as :: unity2 :: ClassIdentity > :: class () , "get_blendFactors" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Light2DBlendStyle as :: unity2 :: ClassIdentity > :: NAME , "get_blendFactors" , e) , } } } pub unsafe fn get_blend_factors (this : Light2DBlendStyle , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector2 :: Vector2 { let inner : extern "C" fn (Light2DBlendStyle , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector2 :: Vector2 = :: core :: mem :: transmute (__lookup_get_blend_factors :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_mask_texture_channel_filter { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Light2DBlendStyle as :: unity2 :: ClassIdentity > :: class () , "get_maskTextureChannelFilter" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Light2DBlendStyle as :: unity2 :: ClassIdentity > :: NAME , "get_maskTextureChannelFilter" , e) , } } } pub unsafe fn get_mask_texture_channel_filter (this : Light2DBlendStyle , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: universal :: light2dblendstyle :: Light2DBlendStyle_MaskChannelFilter { let inner : extern "C" fn (Light2DBlendStyle , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: universal :: light2dblendstyle :: Light2DBlendStyle_MaskChannelFilter = :: core :: mem :: transmute (__lookup_get_mask_texture_channel_filter :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_is_dirty { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Light2DBlendStyle as :: unity2 :: ClassIdentity > :: class () , "get_isDirty" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Light2DBlendStyle as :: unity2 :: ClassIdentity > :: NAME , "get_isDirty" , e) , } } } pub unsafe fn get_is_dirty (this : Light2DBlendStyle , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (Light2DBlendStyle , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_is_dirty :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_is_dirty { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Light2DBlendStyle as :: unity2 :: ClassIdentity > :: class () , "set_isDirty" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Light2DBlendStyle as :: unity2 :: ClassIdentity > :: NAME , "set_isDirty" , e) , } } } pub unsafe fn set_is_dirty (this : Light2DBlendStyle , value : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Light2DBlendStyle , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_is_dirty :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_has_render_target { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Light2DBlendStyle as :: unity2 :: ClassIdentity > :: class () , "get_hasRenderTarget" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Light2DBlendStyle as :: unity2 :: ClassIdentity > :: NAME , "get_hasRenderTarget" , e) , } } } pub unsafe fn get_has_render_target (this : Light2DBlendStyle , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (Light2DBlendStyle , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_has_render_target :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_has_render_target { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Light2DBlendStyle as :: unity2 :: ClassIdentity > :: class () , "set_hasRenderTarget" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Light2DBlendStyle as :: unity2 :: ClassIdentity > :: NAME , "set_hasRenderTarget" , e) , } } } pub unsafe fn set_has_render_target (this : Light2DBlendStyle , value : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Light2DBlendStyle , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_has_render_target :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-light2dblendstyle")]
-impl Light2DBlendStyle_MaskChannelFilter {
-    #[doc = "`get_mask()` overload"]
-    pub fn get_mask(self) -> crate::unity_engine::vector4::Vector4 {
-        unsafe { __Light2DBlendStyle_MaskChannelFilter_unity2_raw::get_mask(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_mask(crate::unity_engine::vector4::Vector4)` overload"]
-    pub fn set_mask(self, value: impl ::core::convert::Into<crate::unity_engine::vector4::Vector4>) -> () {
-        unsafe { __Light2DBlendStyle_MaskChannelFilter_unity2_raw::set_mask(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_inverted()` overload"]
-    pub fn get_inverted(self) -> crate::unity_engine::vector4::Vector4 {
-        unsafe { __Light2DBlendStyle_MaskChannelFilter_unity2_raw::get_inverted(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_inverted(crate::unity_engine::vector4::Vector4)` overload"]
-    pub fn set_inverted(self, value: impl ::core::convert::Into<crate::unity_engine::vector4::Vector4>) -> () {
-        unsafe {
-            __Light2DBlendStyle_MaskChannelFilter_unity2_raw::set_inverted(self, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-
-    #[doc = "`.ctor(crate::unity_engine::vector4::Vector4, crate::unity_engine::vector4::Vector4)` overload"]
-    pub fn ctor(
-        self,
-        m: impl ::core::convert::Into<crate::unity_engine::vector4::Vector4>,
-        i: impl ::core::convert::Into<crate::unity_engine::vector4::Vector4>,
-    ) -> () {
-        unsafe {
-            __Light2DBlendStyle_MaskChannelFilter_unity2_raw::ctor(
-                self,
-                ::core::convert::Into::into(m),
-                ::core::convert::Into::into(i),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+impl Light2DBlendStyle { # [doc = "`get_blendFactors()` overload"] pub fn get_blend_factors (self ,) -> crate :: unity_engine :: vector2 :: Vector2 { unsafe { __Light2DBlendStyle_unity2_raw :: get_blend_factors (self , :: core :: option :: Option :: None) } } # [doc = "`get_maskTextureChannelFilter()` overload"] pub fn get_mask_texture_channel_filter (self ,) -> crate :: unity_engine :: experimental :: rendering :: universal :: light2dblendstyle :: Light2DBlendStyle_MaskChannelFilter { unsafe { __Light2DBlendStyle_unity2_raw :: get_mask_texture_channel_filter (self , :: core :: option :: Option :: None) } } # [doc = "`get_isDirty()` overload"] pub fn get_is_dirty (self ,) -> bool { unsafe { __Light2DBlendStyle_unity2_raw :: get_is_dirty (self , :: core :: option :: Option :: None) } } # [doc = "`set_isDirty(bool)` overload"] pub fn set_is_dirty (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { __Light2DBlendStyle_unity2_raw :: set_is_dirty (self , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_hasRenderTarget()` overload"] pub fn get_has_render_target (self ,) -> bool { unsafe { __Light2DBlendStyle_unity2_raw :: get_has_render_target (self , :: core :: option :: Option :: None) } } # [doc = "`set_hasRenderTarget(bool)` overload"] pub fn set_has_render_target (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { __Light2DBlendStyle_unity2_raw :: set_has_render_target (self , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-light2dblendstyle")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __Light2DBlendStyle_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_blend_factors {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Light2DBlendStyle as ::unity2::ClassIdentity>::class(),
-                "get_blendFactors",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Light2DBlendStyle as ::unity2::ClassIdentity>::NAME,
-                        "get_blendFactors",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_blend_factors(
-        this: Light2DBlendStyle,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::vector2::Vector2 {
-        let inner: extern "C" fn(Light2DBlendStyle, ::unity2::OptionalMethod) -> crate::unity_engine::vector2::Vector2 =
-            ::core::mem::transmute(__lookup_get_blend_factors::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_mask_texture_channel_filter {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Light2DBlendStyle as ::unity2::ClassIdentity>::class(),
-                "get_maskTextureChannelFilter",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Light2DBlendStyle as ::unity2::ClassIdentity>::NAME,
-                        "get_maskTextureChannelFilter",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_mask_texture_channel_filter(
-        this: Light2DBlendStyle,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::experimental::rendering::universal::light2dblendstyle::Light2DBlendStyle_MaskChannelFilter {
-        let inner: extern "C" fn(
-            Light2DBlendStyle,
-            ::unity2::OptionalMethod,
-        )
-            -> crate::unity_engine::experimental::rendering::universal::light2dblendstyle::Light2DBlendStyle_MaskChannelFilter =
-            ::core::mem::transmute(__lookup_get_mask_texture_channel_filter::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_is_dirty {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Light2DBlendStyle as ::unity2::ClassIdentity>::class(),
-                "get_isDirty",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Light2DBlendStyle as ::unity2::ClassIdentity>::NAME,
-                        "get_isDirty",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_is_dirty(this: Light2DBlendStyle, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(Light2DBlendStyle, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_is_dirty::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_is_dirty {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Light2DBlendStyle as ::unity2::ClassIdentity>::class(),
-                "set_isDirty",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Light2DBlendStyle as ::unity2::ClassIdentity>::NAME,
-                        "set_isDirty",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_is_dirty(this: Light2DBlendStyle, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Light2DBlendStyle, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_is_dirty::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_has_render_target {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Light2DBlendStyle as ::unity2::ClassIdentity>::class(),
-                "get_hasRenderTarget",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Light2DBlendStyle as ::unity2::ClassIdentity>::NAME,
-                        "get_hasRenderTarget",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_has_render_target(this: Light2DBlendStyle, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(Light2DBlendStyle, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_has_render_target::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_has_render_target {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Light2DBlendStyle as ::unity2::ClassIdentity>::class(),
-                "set_hasRenderTarget",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Light2DBlendStyle as ::unity2::ClassIdentity>::NAME,
-                        "set_hasRenderTarget",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_has_render_target(this: Light2DBlendStyle, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Light2DBlendStyle, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_has_render_target::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-}
+impl Light2DBlendStyle { pub fn get_blend_factors_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Light2DBlendStyle_unity2_raw :: __lookup_get_blend_factors :: get_method_info () } pub fn get_mask_texture_channel_filter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Light2DBlendStyle_unity2_raw :: __lookup_get_mask_texture_channel_filter :: get_method_info () } pub fn get_is_dirty_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Light2DBlendStyle_unity2_raw :: __lookup_get_is_dirty :: get_method_info () } pub fn set_is_dirty_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Light2DBlendStyle_unity2_raw :: __lookup_set_is_dirty :: get_method_info () } pub fn get_has_render_target_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Light2DBlendStyle_unity2_raw :: __lookup_get_has_render_target :: get_method_info () } pub fn set_has_render_target_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Light2DBlendStyle_unity2_raw :: __lookup_set_has_render_target :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-light2dblendstyle")]
-impl Light2DBlendStyle {
-    #[doc = "`get_blendFactors()` overload"]
-    pub fn get_blend_factors(self) -> crate::unity_engine::vector2::Vector2 {
-        unsafe { __Light2DBlendStyle_unity2_raw::get_blend_factors(self, ::core::option::Option::None) }
-    }
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __Light2DBlendStyle_MaskChannelFilter_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_mask { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Light2DBlendStyle_MaskChannelFilter as :: unity2 :: ClassIdentity > :: class () , "get_mask" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Light2DBlendStyle_MaskChannelFilter as :: unity2 :: ClassIdentity > :: NAME , "get_mask" , e) , } } } pub unsafe fn get_mask (this : Light2DBlendStyle_MaskChannelFilter , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector4 :: Vector4 { let inner : extern "C" fn (Light2DBlendStyle_MaskChannelFilter , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector4 :: Vector4 = :: core :: mem :: transmute (__lookup_get_mask :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_mask { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector4 :: Vector4 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Light2DBlendStyle_MaskChannelFilter as :: unity2 :: ClassIdentity > :: class () , "set_mask" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Light2DBlendStyle_MaskChannelFilter as :: unity2 :: ClassIdentity > :: NAME , "set_mask" , e) , } } } pub unsafe fn set_mask (this : Light2DBlendStyle_MaskChannelFilter , value : crate :: unity_engine :: vector4 :: Vector4 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Light2DBlendStyle_MaskChannelFilter , crate :: unity_engine :: vector4 :: Vector4 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_mask :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_inverted { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Light2DBlendStyle_MaskChannelFilter as :: unity2 :: ClassIdentity > :: class () , "get_inverted" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Light2DBlendStyle_MaskChannelFilter as :: unity2 :: ClassIdentity > :: NAME , "get_inverted" , e) , } } } pub unsafe fn get_inverted (this : Light2DBlendStyle_MaskChannelFilter , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector4 :: Vector4 { let inner : extern "C" fn (Light2DBlendStyle_MaskChannelFilter , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector4 :: Vector4 = :: core :: mem :: transmute (__lookup_get_inverted :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_inverted { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector4 :: Vector4 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Light2DBlendStyle_MaskChannelFilter as :: unity2 :: ClassIdentity > :: class () , "set_inverted" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Light2DBlendStyle_MaskChannelFilter as :: unity2 :: ClassIdentity > :: NAME , "set_inverted" , e) , } } } pub unsafe fn set_inverted (this : Light2DBlendStyle_MaskChannelFilter , value : crate :: unity_engine :: vector4 :: Vector4 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Light2DBlendStyle_MaskChannelFilter , crate :: unity_engine :: vector4 :: Vector4 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_inverted :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector4 :: Vector4 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector4 :: Vector4 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Light2DBlendStyle_MaskChannelFilter as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Light2DBlendStyle_MaskChannelFilter as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : Light2DBlendStyle_MaskChannelFilter , m : crate :: unity_engine :: vector4 :: Vector4 , i : crate :: unity_engine :: vector4 :: Vector4 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Light2DBlendStyle_MaskChannelFilter , crate :: unity_engine :: vector4 :: Vector4 , crate :: unity_engine :: vector4 :: Vector4 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , m , i , __unity2_method_info) } }
 
-    #[doc = "`get_maskTextureChannelFilter()` overload"]
-    pub fn get_mask_texture_channel_filter(
-        self,
-    ) -> crate::unity_engine::experimental::rendering::universal::light2dblendstyle::Light2DBlendStyle_MaskChannelFilter {
-        unsafe { __Light2DBlendStyle_unity2_raw::get_mask_texture_channel_filter(self, ::core::option::Option::None) }
-    }
+#[cfg(feature = "unity_engine-experimental-rendering-universal-light2dblendstyle")]
+impl Light2DBlendStyle_MaskChannelFilter { # [doc = "`get_mask()` overload"] pub fn get_mask (self ,) -> crate :: unity_engine :: vector4 :: Vector4 { unsafe { __Light2DBlendStyle_MaskChannelFilter_unity2_raw :: get_mask (self , :: core :: option :: Option :: None) } } # [doc = "`set_mask(crate::unity_engine::vector4::Vector4)` overload"] pub fn set_mask (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: vector4 :: Vector4 >) -> () { unsafe { __Light2DBlendStyle_MaskChannelFilter_unity2_raw :: set_mask (self , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_inverted()` overload"] pub fn get_inverted (self ,) -> crate :: unity_engine :: vector4 :: Vector4 { unsafe { __Light2DBlendStyle_MaskChannelFilter_unity2_raw :: get_inverted (self , :: core :: option :: Option :: None) } } # [doc = "`set_inverted(crate::unity_engine::vector4::Vector4)` overload"] pub fn set_inverted (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: vector4 :: Vector4 >) -> () { unsafe { __Light2DBlendStyle_MaskChannelFilter_unity2_raw :: set_inverted (self , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`.ctor(crate::unity_engine::vector4::Vector4, crate::unity_engine::vector4::Vector4)` overload"] pub fn ctor (self , m : impl :: core :: convert :: Into < crate :: unity_engine :: vector4 :: Vector4 > , i : impl :: core :: convert :: Into < crate :: unity_engine :: vector4 :: Vector4 >) -> () { unsafe { __Light2DBlendStyle_MaskChannelFilter_unity2_raw :: ctor (self , :: core :: convert :: Into :: into (m) , :: core :: convert :: Into :: into (i) , :: core :: option :: Option :: None) } } }
 
-    #[doc = "`get_isDirty()` overload"]
-    pub fn get_is_dirty(self) -> bool {
-        unsafe { __Light2DBlendStyle_unity2_raw::get_is_dirty(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_isDirty(bool)` overload"]
-    pub fn set_is_dirty(self, value: impl ::core::convert::Into<bool>) -> () {
-        unsafe { __Light2DBlendStyle_unity2_raw::set_is_dirty(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_hasRenderTarget()` overload"]
-    pub fn get_has_render_target(self) -> bool {
-        unsafe { __Light2DBlendStyle_unity2_raw::get_has_render_target(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_hasRenderTarget(bool)` overload"]
-    pub fn set_has_render_target(self, value: impl ::core::convert::Into<bool>) -> () {
-        unsafe { __Light2DBlendStyle_unity2_raw::set_has_render_target(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-}
+#[cfg(feature = "unity_engine-experimental-rendering-universal-light2dblendstyle")]
+impl Light2DBlendStyle_MaskChannelFilter { pub fn get_mask_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Light2DBlendStyle_MaskChannelFilter_unity2_raw :: __lookup_get_mask :: get_method_info () } pub fn set_mask_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Light2DBlendStyle_MaskChannelFilter_unity2_raw :: __lookup_set_mask :: get_method_info () } pub fn get_inverted_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Light2DBlendStyle_MaskChannelFilter_unity2_raw :: __lookup_get_inverted :: get_method_info () } pub fn set_inverted_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Light2DBlendStyle_MaskChannelFilter_unity2_raw :: __lookup_set_inverted :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Light2DBlendStyle_MaskChannelFilter_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-light2dblendstyle")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{
-        Light2DBlendStyle, Light2DBlendStyle_BlendFactors, Light2DBlendStyle_BlendMode, Light2DBlendStyle_MaskChannelFilter,
-        Light2DBlendStyle_TextureChannel,
-    };
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::system::{object::IObject, r#enum::IEnum, valuetype::IValueType};
+    pub use super::Light2DBlendStyle;
+    pub use super::Light2DBlendStyle_TextureChannel;
+    pub use super::Light2DBlendStyle_BlendMode;
+    pub use super::Light2DBlendStyle_BlendFactors;
+    pub use super::Light2DBlendStyle_MaskChannelFilter;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

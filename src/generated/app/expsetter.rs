@@ -2,544 +2,96 @@
 
 #[cfg(feature = "app-expsetter-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/expsetter/ExpSetter.md"))]
-    #[::unity2::class(namespace = "App", name = "ExpSetter")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct ExpSetter {
-        #[offset(24)]
-        #[rename(name = "InAnimWait")]
-        pub in_anim_wait: f32,
-        #[offset(32)]
-        #[rename(name = "m_UnitWindow")]
-        pub m_unit_window: crate::app::expsetter::ExpSetter_ExpWindow,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/expsetter/ExpSetter_ExpWindow.md"))]
-    #[::unity2::class(namespace = "App", name = "ExpSetter.ExpWindow")]
-    #[parent(crate::system::object::Object)]
-    pub struct ExpSetter_ExpWindow {
-        #[offset(16)]
-        #[rename(name = "m_Root")]
-        pub m_root: crate::unity_engine::gameobject::GameObject,
-        #[offset(24)]
-        #[rename(name = "m_Name")]
-        pub m_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(32)]
-        #[rename(name = "m_RestExp")]
-        pub m_rest_exp: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(40)]
-        #[rename(name = "m_GetExp")]
-        pub m_get_exp: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(48)]
-        #[rename(name = "m_SpValue")]
-        pub m_sp_value: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(56)]
-        #[rename(name = "m_ExpValue")]
-        pub m_exp_value: crate::unity_engine::gameobject::GameObject,
-        #[offset(64)]
-        #[rename(name = "m_LevelMax")]
-        pub m_level_max: crate::unity_engine::gameobject::GameObject,
-        #[offset(72)]
-        #[rename(name = "m_Gauge")]
-        pub m_gauge: crate::unity_engine::gameobject::GameObject,
-        #[offset(80)]
-        #[rename(name = "m_MaxColor")]
-        pub m_max_color: crate::unity_engine::material::Material,
-        #[offset(88)]
-        #[rename(name = "m_OldLevel")]
-        pub m_old_level: i32,
-    }
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/expsetter/ExpSetter_ExpWindow.md"))] # [:: unity2 :: class (namespace = "App" , name = "ExpSetter.ExpWindow")] # [parent (crate :: system :: object :: Object)] pub struct ExpSetter_ExpWindow {
+# [offset (16)] # [rename (name = "m_Root")] pub m_root : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (24)] # [rename (name = "m_Name")] pub m_name : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (32)] # [rename (name = "m_RestExp")] pub m_rest_exp : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (40)] # [rename (name = "m_GetExp")] pub m_get_exp : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (48)] # [rename (name = "m_SpValue")] pub m_sp_value : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (56)] # [rename (name = "m_ExpValue")] pub m_exp_value : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (64)] # [rename (name = "m_LevelMax")] pub m_level_max : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (72)] # [rename (name = "m_Gauge")] pub m_gauge : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (80)] # [rename (name = "m_MaxColor")] pub m_max_color : crate :: unity_engine :: material :: Material ,
+# [offset (88)] # [rename (name = "m_OldLevel")] pub m_old_level : i32 ,
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/expsetter/ExpSetter.md"))] # [:: unity2 :: class (namespace = "App" , name = "ExpSetter")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct ExpSetter {
+# [offset (24)] # [rename (name = "InAnimWait")] pub in_anim_wait : f32 ,
+# [offset (32)] # [rename (name = "m_UnitWindow")] pub m_unit_window : crate :: app :: expsetter :: ExpSetter_ExpWindow ,
+}
+
 }
 
 #[cfg(feature = "app-expsetter-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-expsetter")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ExpSetter_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_setup {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<ExpSetter as ::unity2::ClassIdentity>::class(), "Setup", 2, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ExpSetter as ::unity2::ClassIdentity>::NAME,
-                        "Setup",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn setup(this: ExpSetter, unit: crate::app::unit::Unit, gain_exp: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ExpSetter, crate::app::unit::Unit, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_setup::get_method_info().method_ptr);
-        inner(this, unit, gain_exp, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_exp {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<ExpSetter as ::unity2::ClassIdentity>::class(), "SetExp", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ExpSetter as ::unity2::ClassIdentity>::NAME,
-                        "SetExp",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_exp(this: ExpSetter, main: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ExpSetter, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_exp::get_method_info().method_ptr);
-        inner(this, main, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_add_exp_main {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ExpSetter as ::unity2::ClassIdentity>::class(),
-                "SetAddExpMain",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ExpSetter as ::unity2::ClassIdentity>::NAME,
-                        "SetAddExpMain",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_add_exp_main(this: ExpSetter, exp: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ExpSetter, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_add_exp_main::get_method_info().method_ptr);
-        inner(this, exp, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<ExpSetter as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ExpSetter as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: ExpSetter, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ExpSetter, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ExpSetter_ExpWindow_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_setup_unit { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ExpSetter_ExpWindow as :: unity2 :: ClassIdentity > :: class () , "SetupUnit" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ExpSetter_ExpWindow as :: unity2 :: ClassIdentity > :: NAME , "SetupUnit" , e) , } } } pub unsafe fn setup_unit (this : ExpSetter_ExpWindow , unit : crate :: app :: unit :: Unit , gain_exp : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ExpSetter_ExpWindow , crate :: app :: unit :: Unit , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_setup_unit :: get_method_info () . method_ptr ,) ; inner (this , unit , gain_exp , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update_unit { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ExpSetter_ExpWindow as :: unity2 :: ClassIdentity > :: class () , "UpdateUnit" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ExpSetter_ExpWindow as :: unity2 :: ClassIdentity > :: NAME , "UpdateUnit" , e) , } } } pub unsafe fn update_unit (this : ExpSetter_ExpWindow , unit : crate :: app :: unit :: Unit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ExpSetter_ExpWindow , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update_unit :: get_method_info () . method_ptr ,) ; inner (this , unit , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update_add_exp { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ExpSetter_ExpWindow as :: unity2 :: ClassIdentity > :: class () , "UpdateAddExp" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ExpSetter_ExpWindow as :: unity2 :: ClassIdentity > :: NAME , "UpdateAddExp" , e) , } } } pub unsafe fn update_add_exp (this : ExpSetter_ExpWindow , exp : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ExpSetter_ExpWindow , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update_add_exp :: get_method_info () . method_ptr ,) ; inner (this , exp , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_level_max { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ExpSetter_ExpWindow as :: unity2 :: ClassIdentity > :: class () , "SetLevelMax" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ExpSetter_ExpWindow as :: unity2 :: ClassIdentity > :: NAME , "SetLevelMax" , e) , } } } pub unsafe fn set_level_max (this : ExpSetter_ExpWindow , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ExpSetter_ExpWindow , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_level_max :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_level_max { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ExpSetter_ExpWindow as :: unity2 :: ClassIdentity > :: class () , "IsLevelMax" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ExpSetter_ExpWindow as :: unity2 :: ClassIdentity > :: NAME , "IsLevelMax" , e) , } } } pub unsafe fn is_level_max (this : ExpSetter_ExpWindow , unit : crate :: app :: unit :: Unit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (ExpSetter_ExpWindow , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_level_max :: get_method_info () . method_ptr ,) ; inner (this , unit , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ExpSetter_ExpWindow as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ExpSetter_ExpWindow as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : ExpSetter_ExpWindow , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ExpSetter_ExpWindow , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-expsetter")]
-pub trait IExpSetterMethods: IExpSetter {
-    #[doc = "`Setup(crate::app::unit::Unit, i32)` overload"]
-    fn setup(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>, gain_exp: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver = <ExpSetter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ExpSetter_unity2_raw::setup(
-                __receiver,
-                ::core::convert::Into::into(unit),
-                ::core::convert::Into::into(gain_exp),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetExp(crate::app::unit::Unit)` overload"]
-    fn set_exp(self, main: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
-        unsafe {
-            let __receiver = <ExpSetter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ExpSetter_unity2_raw::set_exp(__receiver, ::core::convert::Into::into(main), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetAddExpMain(i32)` overload"]
-    fn set_add_exp_main(self, exp: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver = <ExpSetter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ExpSetter_unity2_raw::set_add_exp_main(__receiver, ::core::convert::Into::into(exp), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <ExpSetter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ExpSetter_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IExpSetter_ExpWindowMethods : IExpSetter_ExpWindow { # [doc = "`SetupUnit(crate::app::unit::Unit, i32)` overload"] fn setup_unit (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , gain_exp : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < ExpSetter_ExpWindow as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ExpSetter_ExpWindow_unity2_raw :: setup_unit (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (gain_exp) , :: core :: option :: Option :: None) } } # [doc = "`UpdateUnit(crate::app::unit::Unit)` overload"] fn update_unit (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < ExpSetter_ExpWindow as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ExpSetter_ExpWindow_unity2_raw :: update_unit (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } # [doc = "`UpdateAddExp(i32)` overload"] fn update_add_exp (self , exp : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < ExpSetter_ExpWindow as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ExpSetter_ExpWindow_unity2_raw :: update_add_exp (__receiver , :: core :: convert :: Into :: into (exp) , :: core :: option :: Option :: None) } } # [doc = "`SetLevelMax()` overload"] fn set_level_max (self ,) -> () { unsafe { let __receiver = < ExpSetter_ExpWindow as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ExpSetter_ExpWindow_unity2_raw :: set_level_max (__receiver , :: core :: option :: Option :: None) } } # [doc = "`IsLevelMax(crate::app::unit::Unit)` overload"] fn is_level_max (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> bool { unsafe { let __receiver = < ExpSetter_ExpWindow as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ExpSetter_ExpWindow_unity2_raw :: is_level_max (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ExpSetter_ExpWindow as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ExpSetter_ExpWindow_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-expsetter")]
-impl<__T: IExpSetter> IExpSetterMethods for __T {}
+impl < __T : IExpSetter_ExpWindow > IExpSetter_ExpWindowMethods for __T { }
 
 #[cfg(feature = "app-expsetter")]
-impl ExpSetter {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(ExpSetter), ::core::stringify!(new),));
-        <Self as IExpSetterMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-expsetter")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ExpSetter_ExpWindow_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_setup_unit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ExpSetter_ExpWindow as ::unity2::ClassIdentity>::class(),
-                "SetupUnit",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ExpSetter_ExpWindow as ::unity2::ClassIdentity>::NAME,
-                        "SetupUnit",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn setup_unit(
-        this: ExpSetter_ExpWindow,
-        unit: crate::app::unit::Unit,
-        gain_exp: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(ExpSetter_ExpWindow, crate::app::unit::Unit, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_setup_unit::get_method_info().method_ptr);
-        inner(this, unit, gain_exp, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update_unit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ExpSetter_ExpWindow as ::unity2::ClassIdentity>::class(),
-                "UpdateUnit",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ExpSetter_ExpWindow as ::unity2::ClassIdentity>::NAME,
-                        "UpdateUnit",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update_unit(this: ExpSetter_ExpWindow, unit: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ExpSetter_ExpWindow, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update_unit::get_method_info().method_ptr);
-        inner(this, unit, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update_add_exp {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ExpSetter_ExpWindow as ::unity2::ClassIdentity>::class(),
-                "UpdateAddExp",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ExpSetter_ExpWindow as ::unity2::ClassIdentity>::NAME,
-                        "UpdateAddExp",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update_add_exp(this: ExpSetter_ExpWindow, exp: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ExpSetter_ExpWindow, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update_add_exp::get_method_info().method_ptr);
-        inner(this, exp, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_level_max {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ExpSetter_ExpWindow as ::unity2::ClassIdentity>::class(),
-                "SetLevelMax",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ExpSetter_ExpWindow as ::unity2::ClassIdentity>::NAME,
-                        "SetLevelMax",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_level_max(this: ExpSetter_ExpWindow, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ExpSetter_ExpWindow, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_level_max::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_level_max {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ExpSetter_ExpWindow as ::unity2::ClassIdentity>::class(),
-                "IsLevelMax",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ExpSetter_ExpWindow as ::unity2::ClassIdentity>::NAME,
-                        "IsLevelMax",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_level_max(this: ExpSetter_ExpWindow, unit: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(ExpSetter_ExpWindow, crate::app::unit::Unit, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_level_max::get_method_info().method_ptr);
-        inner(this, unit, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ExpSetter_ExpWindow as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ExpSetter_ExpWindow as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: ExpSetter_ExpWindow, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ExpSetter_ExpWindow, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-expsetter")]
-pub trait IExpSetter_ExpWindowMethods: IExpSetter_ExpWindow {
-    #[doc = "`SetupUnit(crate::app::unit::Unit, i32)` overload"]
-    fn setup_unit(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>, gain_exp: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver = <ExpSetter_ExpWindow as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ExpSetter_ExpWindow_unity2_raw::setup_unit(
-                __receiver,
-                ::core::convert::Into::into(unit),
-                ::core::convert::Into::into(gain_exp),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`UpdateUnit(crate::app::unit::Unit)` overload"]
-    fn update_unit(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
-        unsafe {
-            let __receiver = <ExpSetter_ExpWindow as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ExpSetter_ExpWindow_unity2_raw::update_unit(__receiver, ::core::convert::Into::into(unit), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`UpdateAddExp(i32)` overload"]
-    fn update_add_exp(self, exp: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver = <ExpSetter_ExpWindow as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ExpSetter_ExpWindow_unity2_raw::update_add_exp(__receiver, ::core::convert::Into::into(exp), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetLevelMax()` overload"]
-    fn set_level_max(self) -> () {
-        unsafe {
-            let __receiver = <ExpSetter_ExpWindow as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ExpSetter_ExpWindow_unity2_raw::set_level_max(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsLevelMax(crate::app::unit::Unit)` overload"]
-    fn is_level_max(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> bool {
-        unsafe {
-            let __receiver = <ExpSetter_ExpWindow as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ExpSetter_ExpWindow_unity2_raw::is_level_max(__receiver, ::core::convert::Into::into(unit), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <ExpSetter_ExpWindow as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ExpSetter_ExpWindow_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-expsetter")]
-impl<__T: IExpSetter_ExpWindow> IExpSetter_ExpWindowMethods for __T {}
+impl ExpSetter_ExpWindow { pub fn setup_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ExpSetter_ExpWindow_unity2_raw :: __lookup_setup_unit :: get_method_info () } pub fn update_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ExpSetter_ExpWindow_unity2_raw :: __lookup_update_unit :: get_method_info () } pub fn update_add_exp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ExpSetter_ExpWindow_unity2_raw :: __lookup_update_add_exp :: get_method_info () } pub fn set_level_max_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ExpSetter_ExpWindow_unity2_raw :: __lookup_set_level_max :: get_method_info () } pub fn is_level_max_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ExpSetter_ExpWindow_unity2_raw :: __lookup_is_level_max :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ExpSetter_ExpWindow_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-expsetter")]
 impl ExpSetter_ExpWindow {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ExpSetter_ExpWindow),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IExpSetter_ExpWindowMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ExpSetter_ExpWindow) , :: core :: stringify ! (new) ,)) ; < Self as IExpSetter_ExpWindowMethods > :: ctor (this ,) ; this }
+}
+
+#[cfg(feature = "app-expsetter")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ExpSetter_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_setup { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ExpSetter as :: unity2 :: ClassIdentity > :: class () , "Setup" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ExpSetter as :: unity2 :: ClassIdentity > :: NAME , "Setup" , e) , } } } pub unsafe fn setup (this : ExpSetter , unit : crate :: app :: unit :: Unit , gain_exp : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ExpSetter , crate :: app :: unit :: Unit , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_setup :: get_method_info () . method_ptr ,) ; inner (this , unit , gain_exp , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_exp { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ExpSetter as :: unity2 :: ClassIdentity > :: class () , "SetExp" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ExpSetter as :: unity2 :: ClassIdentity > :: NAME , "SetExp" , e) , } } } pub unsafe fn set_exp (this : ExpSetter , main : crate :: app :: unit :: Unit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ExpSetter , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_exp :: get_method_info () . method_ptr ,) ; inner (this , main , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_add_exp_main { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ExpSetter as :: unity2 :: ClassIdentity > :: class () , "SetAddExpMain" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ExpSetter as :: unity2 :: ClassIdentity > :: NAME , "SetAddExpMain" , e) , } } } pub unsafe fn set_add_exp_main (this : ExpSetter , exp : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ExpSetter , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_add_exp_main :: get_method_info () . method_ptr ,) ; inner (this , exp , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ExpSetter as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ExpSetter as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : ExpSetter , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ExpSetter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-expsetter")]
+pub trait IExpSetterMethods : IExpSetter { # [doc = "`Setup(crate::app::unit::Unit, i32)` overload"] fn setup (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , gain_exp : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < ExpSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ExpSetter_unity2_raw :: setup (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (gain_exp) , :: core :: option :: Option :: None) } } # [doc = "`SetExp(crate::app::unit::Unit)` overload"] fn set_exp (self , main : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < ExpSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ExpSetter_unity2_raw :: set_exp (__receiver , :: core :: convert :: Into :: into (main) , :: core :: option :: Option :: None) } } # [doc = "`SetAddExpMain(i32)` overload"] fn set_add_exp_main (self , exp : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < ExpSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ExpSetter_unity2_raw :: set_add_exp_main (__receiver , :: core :: convert :: Into :: into (exp) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ExpSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ExpSetter_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-expsetter")]
+impl < __T : IExpSetter > IExpSetterMethods for __T { }
+
+#[cfg(feature = "app-expsetter")]
+impl ExpSetter { pub fn setup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ExpSetter_unity2_raw :: __lookup_setup :: get_method_info () } pub fn set_exp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ExpSetter_unity2_raw :: __lookup_set_exp :: get_method_info () } pub fn set_add_exp_main_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ExpSetter_unity2_raw :: __lookup_set_add_exp_main :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ExpSetter_unity2_raw :: __lookup_ctor :: get_method_info () } }
+
+#[cfg(feature = "app-expsetter")]
+impl ExpSetter {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ExpSetter) , :: core :: stringify ! (new) ,)) ; < Self as IExpSetterMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-expsetter")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{ExpSetter, ExpSetter_ExpWindow, IExpSetter, IExpSetterMethods, IExpSetter_ExpWindow, IExpSetter_ExpWindowMethods};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        system::object::IObject,
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::ExpSetter_ExpWindow;
+    pub use super::IExpSetter_ExpWindow;
+    pub use super::IExpSetter_ExpWindowMethods;
+    pub use super::ExpSetter;
+    pub use super::IExpSetter;
+    pub use super::IExpSetterMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

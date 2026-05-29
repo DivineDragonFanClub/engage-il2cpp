@@ -2,512 +2,58 @@
 
 #[cfg(feature = "root-akmusicplaylistcallbackinfo-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        root::{
-            akcallbackinfo::{AkCallbackInfo, IAkCallbackInfo},
-            akeventcallbackinfo::{AkEventCallbackInfo, IAkEventCallbackInfo},
-        },
-        system::object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akmusicplaylistcallbackinfo/AkMusicPlaylistCallbackInfo.md"))]
-    #[::unity2::class(namespace = "", name = "AkMusicPlaylistCallbackInfo")]
-    #[parent(crate::root::akeventcallbackinfo::AkEventCallbackInfo)]
-    pub struct AkMusicPlaylistCallbackInfo {
-        #[offset(40)]
-        #[rename(name = "swigCPtr")]
-        pub swig_c_ptr: ::unity2::IntPtr,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: root :: akcallbackinfo :: { AkCallbackInfo , IAkCallbackInfo }
+ ;
+ use crate :: root :: akeventcallbackinfo :: { AkEventCallbackInfo , IAkEventCallbackInfo }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akmusicplaylistcallbackinfo/AkMusicPlaylistCallbackInfo.md"))] # [:: unity2 :: class (namespace = "" , name = "AkMusicPlaylistCallbackInfo")] # [parent (crate :: root :: akeventcallbackinfo :: AkEventCallbackInfo)] pub struct AkMusicPlaylistCallbackInfo {
+# [offset (40)] # [rename (name = "swigCPtr")] pub swig_c_ptr : :: unity2 :: IntPtr ,
+}
+
 }
 
 #[cfg(feature = "root-akmusicplaylistcallbackinfo-types")]
 pub use __types::*;
 
 #[cfg(feature = "root-akmusicplaylistcallbackinfo")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AkMusicPlaylistCallbackInfo_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::IntPtr as ::unity2::IlType>::il_type(), <bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkMusicPlaylistCallbackInfo as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkMusicPlaylistCallbackInfo as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: AkMusicPlaylistCallbackInfo,
-        c_ptr: ::unity2::IntPtr,
-        c_memory_own: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(AkMusicPlaylistCallbackInfo, ::unity2::IntPtr, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, c_ptr, c_memory_own, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_c_ptr {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::root::akmusicplaylistcallbackinfo::AkMusicPlaylistCallbackInfo as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkMusicPlaylistCallbackInfo as ::unity2::ClassIdentity>::class(),
-                "getCPtr",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkMusicPlaylistCallbackInfo as ::unity2::ClassIdentity>::NAME,
-                        "getCPtr",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_c_ptr(
-        obj: crate::root::akmusicplaylistcallbackinfo::AkMusicPlaylistCallbackInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::IntPtr {
-        let inner: extern "C" fn(
-            crate::root::akmusicplaylistcallbackinfo::AkMusicPlaylistCallbackInfo,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::IntPtr = ::core::mem::transmute(__lookup_get_c_ptr::get_method_info().method_ptr);
-        inner(obj, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_c_ptr {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkMusicPlaylistCallbackInfo as ::unity2::ClassIdentity>::class(),
-                "setCPtr",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkMusicPlaylistCallbackInfo as ::unity2::ClassIdentity>::NAME,
-                        "setCPtr",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_c_ptr(this: AkMusicPlaylistCallbackInfo, c_ptr: ::unity2::IntPtr, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AkMusicPlaylistCallbackInfo, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_c_ptr::get_method_info().method_ptr);
-        inner(this, c_ptr, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_finalize {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkMusicPlaylistCallbackInfo as ::unity2::ClassIdentity>::class(),
-                "Finalize",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkMusicPlaylistCallbackInfo as ::unity2::ClassIdentity>::NAME,
-                        "Finalize",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn finalize(this: AkMusicPlaylistCallbackInfo, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AkMusicPlaylistCallbackInfo, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_finalize::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_dispose {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkMusicPlaylistCallbackInfo as ::unity2::ClassIdentity>::class(),
-                "Dispose",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkMusicPlaylistCallbackInfo as ::unity2::ClassIdentity>::NAME,
-                        "Dispose",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn dispose(this: AkMusicPlaylistCallbackInfo, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AkMusicPlaylistCallbackInfo, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_dispose::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_playlist_id {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkMusicPlaylistCallbackInfo as ::unity2::ClassIdentity>::class(),
-                "get_playlistID",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkMusicPlaylistCallbackInfo as ::unity2::ClassIdentity>::NAME,
-                        "get_playlistID",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_playlist_id(this: AkMusicPlaylistCallbackInfo, __unity2_method_info: ::unity2::OptionalMethod) -> u32 {
-        let inner: extern "C" fn(AkMusicPlaylistCallbackInfo, ::unity2::OptionalMethod) -> u32 =
-            ::core::mem::transmute(__lookup_get_playlist_id::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_u_num_playlist_items {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkMusicPlaylistCallbackInfo as ::unity2::ClassIdentity>::class(),
-                "get_uNumPlaylistItems",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkMusicPlaylistCallbackInfo as ::unity2::ClassIdentity>::NAME,
-                        "get_uNumPlaylistItems",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_u_num_playlist_items(this: AkMusicPlaylistCallbackInfo, __unity2_method_info: ::unity2::OptionalMethod) -> u32 {
-        let inner: extern "C" fn(AkMusicPlaylistCallbackInfo, ::unity2::OptionalMethod) -> u32 =
-            ::core::mem::transmute(__lookup_get_u_num_playlist_items::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_u_playlist_selection {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkMusicPlaylistCallbackInfo as ::unity2::ClassIdentity>::class(),
-                "get_uPlaylistSelection",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkMusicPlaylistCallbackInfo as ::unity2::ClassIdentity>::NAME,
-                        "get_uPlaylistSelection",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_u_playlist_selection(this: AkMusicPlaylistCallbackInfo, __unity2_method_info: ::unity2::OptionalMethod) -> u32 {
-        let inner: extern "C" fn(AkMusicPlaylistCallbackInfo, ::unity2::OptionalMethod) -> u32 =
-            ::core::mem::transmute(__lookup_get_u_playlist_selection::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_u_playlist_item_done {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkMusicPlaylistCallbackInfo as ::unity2::ClassIdentity>::class(),
-                "get_uPlaylistItemDone",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkMusicPlaylistCallbackInfo as ::unity2::ClassIdentity>::NAME,
-                        "get_uPlaylistItemDone",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_u_playlist_item_done(this: AkMusicPlaylistCallbackInfo, __unity2_method_info: ::unity2::OptionalMethod) -> u32 {
-        let inner: extern "C" fn(AkMusicPlaylistCallbackInfo, ::unity2::OptionalMethod) -> u32 =
-            ::core::mem::transmute(__lookup_get_u_playlist_item_done::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkMusicPlaylistCallbackInfo as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkMusicPlaylistCallbackInfo as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor_2(this: AkMusicPlaylistCallbackInfo, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AkMusicPlaylistCallbackInfo, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __AkMusicPlaylistCallbackInfo_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkMusicPlaylistCallbackInfo as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkMusicPlaylistCallbackInfo as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : AkMusicPlaylistCallbackInfo , c_ptr : :: unity2 :: IntPtr , c_memory_own : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkMusicPlaylistCallbackInfo , :: unity2 :: IntPtr , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , c_ptr , c_memory_own , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_c_ptr { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: root :: akmusicplaylistcallbackinfo :: AkMusicPlaylistCallbackInfo as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkMusicPlaylistCallbackInfo as :: unity2 :: ClassIdentity > :: class () , "getCPtr" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkMusicPlaylistCallbackInfo as :: unity2 :: ClassIdentity > :: NAME , "getCPtr" , e) , } } } pub unsafe fn get_c_ptr (obj : crate :: root :: akmusicplaylistcallbackinfo :: AkMusicPlaylistCallbackInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: IntPtr { let inner : extern "C" fn (crate :: root :: akmusicplaylistcallbackinfo :: AkMusicPlaylistCallbackInfo , :: unity2 :: OptionalMethod ,) -> :: unity2 :: IntPtr = :: core :: mem :: transmute (__lookup_get_c_ptr :: get_method_info () . method_ptr ,) ; inner (obj , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_c_ptr { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkMusicPlaylistCallbackInfo as :: unity2 :: ClassIdentity > :: class () , "setCPtr" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkMusicPlaylistCallbackInfo as :: unity2 :: ClassIdentity > :: NAME , "setCPtr" , e) , } } } pub unsafe fn set_c_ptr (this : AkMusicPlaylistCallbackInfo , c_ptr : :: unity2 :: IntPtr , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkMusicPlaylistCallbackInfo , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_c_ptr :: get_method_info () . method_ptr ,) ; inner (this , c_ptr , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_finalize { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkMusicPlaylistCallbackInfo as :: unity2 :: ClassIdentity > :: class () , "Finalize" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkMusicPlaylistCallbackInfo as :: unity2 :: ClassIdentity > :: NAME , "Finalize" , e) , } } } pub unsafe fn finalize (this : AkMusicPlaylistCallbackInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkMusicPlaylistCallbackInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_finalize :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_dispose { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkMusicPlaylistCallbackInfo as :: unity2 :: ClassIdentity > :: class () , "Dispose" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkMusicPlaylistCallbackInfo as :: unity2 :: ClassIdentity > :: NAME , "Dispose" , e) , } } } pub unsafe fn dispose (this : AkMusicPlaylistCallbackInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkMusicPlaylistCallbackInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_dispose :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_playlist_id { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkMusicPlaylistCallbackInfo as :: unity2 :: ClassIdentity > :: class () , "get_playlistID" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkMusicPlaylistCallbackInfo as :: unity2 :: ClassIdentity > :: NAME , "get_playlistID" , e) , } } } pub unsafe fn get_playlist_id (this : AkMusicPlaylistCallbackInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> u32 { let inner : extern "C" fn (AkMusicPlaylistCallbackInfo , :: unity2 :: OptionalMethod ,) -> u32 = :: core :: mem :: transmute (__lookup_get_playlist_id :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_u_num_playlist_items { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkMusicPlaylistCallbackInfo as :: unity2 :: ClassIdentity > :: class () , "get_uNumPlaylistItems" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkMusicPlaylistCallbackInfo as :: unity2 :: ClassIdentity > :: NAME , "get_uNumPlaylistItems" , e) , } } } pub unsafe fn get_u_num_playlist_items (this : AkMusicPlaylistCallbackInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> u32 { let inner : extern "C" fn (AkMusicPlaylistCallbackInfo , :: unity2 :: OptionalMethod ,) -> u32 = :: core :: mem :: transmute (__lookup_get_u_num_playlist_items :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_u_playlist_selection { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkMusicPlaylistCallbackInfo as :: unity2 :: ClassIdentity > :: class () , "get_uPlaylistSelection" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkMusicPlaylistCallbackInfo as :: unity2 :: ClassIdentity > :: NAME , "get_uPlaylistSelection" , e) , } } } pub unsafe fn get_u_playlist_selection (this : AkMusicPlaylistCallbackInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> u32 { let inner : extern "C" fn (AkMusicPlaylistCallbackInfo , :: unity2 :: OptionalMethod ,) -> u32 = :: core :: mem :: transmute (__lookup_get_u_playlist_selection :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_u_playlist_item_done { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkMusicPlaylistCallbackInfo as :: unity2 :: ClassIdentity > :: class () , "get_uPlaylistItemDone" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkMusicPlaylistCallbackInfo as :: unity2 :: ClassIdentity > :: NAME , "get_uPlaylistItemDone" , e) , } } } pub unsafe fn get_u_playlist_item_done (this : AkMusicPlaylistCallbackInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> u32 { let inner : extern "C" fn (AkMusicPlaylistCallbackInfo , :: unity2 :: OptionalMethod ,) -> u32 = :: core :: mem :: transmute (__lookup_get_u_playlist_item_done :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkMusicPlaylistCallbackInfo as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkMusicPlaylistCallbackInfo as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor_2 (this : AkMusicPlaylistCallbackInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkMusicPlaylistCallbackInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor_2 :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "root-akmusicplaylistcallbackinfo")]
+impl AkMusicPlaylistCallbackInfo { # [doc = "`getCPtr(crate::root::akmusicplaylistcallbackinfo::AkMusicPlaylistCallbackInfo)` overload"] pub fn get_c_ptr (obj : impl :: core :: convert :: Into < crate :: root :: akmusicplaylistcallbackinfo :: AkMusicPlaylistCallbackInfo >) -> :: unity2 :: IntPtr { unsafe { __AkMusicPlaylistCallbackInfo_unity2_raw :: get_c_ptr (:: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "root-akmusicplaylistcallbackinfo")]
+pub trait IAkMusicPlaylistCallbackInfoMethods : IAkMusicPlaylistCallbackInfo { # [doc = "`.ctor(::unity2::IntPtr, bool)` overload"] fn ctor (self , c_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr > , c_memory_own : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < AkMusicPlaylistCallbackInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkMusicPlaylistCallbackInfo_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (c_ptr) , :: core :: convert :: Into :: into (c_memory_own) , :: core :: option :: Option :: None) } } # [doc = "`setCPtr(::unity2::IntPtr)` overload"] fn set_c_ptr (self , c_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < AkMusicPlaylistCallbackInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkMusicPlaylistCallbackInfo_unity2_raw :: set_c_ptr (__receiver , :: core :: convert :: Into :: into (c_ptr) , :: core :: option :: Option :: None) } } # [doc = "`Finalize()` overload"] fn finalize (self ,) -> () { unsafe { let __receiver = < AkMusicPlaylistCallbackInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkMusicPlaylistCallbackInfo_unity2_raw :: finalize (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Dispose()` overload"] fn dispose (self ,) -> () { unsafe { let __receiver = < AkMusicPlaylistCallbackInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkMusicPlaylistCallbackInfo_unity2_raw :: dispose (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_playlistID()` overload"] fn get_playlist_id (self ,) -> u32 { unsafe { let __receiver = < AkMusicPlaylistCallbackInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkMusicPlaylistCallbackInfo_unity2_raw :: get_playlist_id (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_uNumPlaylistItems()` overload"] fn get_u_num_playlist_items (self ,) -> u32 { unsafe { let __receiver = < AkMusicPlaylistCallbackInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkMusicPlaylistCallbackInfo_unity2_raw :: get_u_num_playlist_items (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_uPlaylistSelection()` overload"] fn get_u_playlist_selection (self ,) -> u32 { unsafe { let __receiver = < AkMusicPlaylistCallbackInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkMusicPlaylistCallbackInfo_unity2_raw :: get_u_playlist_selection (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_uPlaylistItemDone()` overload"] fn get_u_playlist_item_done (self ,) -> u32 { unsafe { let __receiver = < AkMusicPlaylistCallbackInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkMusicPlaylistCallbackInfo_unity2_raw :: get_u_playlist_item_done (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor_2 (self ,) -> () { unsafe { let __receiver = < AkMusicPlaylistCallbackInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkMusicPlaylistCallbackInfo_unity2_raw :: ctor_2 (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "root-akmusicplaylistcallbackinfo")]
+impl < __T : IAkMusicPlaylistCallbackInfo > IAkMusicPlaylistCallbackInfoMethods for __T { }
+
+#[cfg(feature = "root-akmusicplaylistcallbackinfo")]
+impl AkMusicPlaylistCallbackInfo { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkMusicPlaylistCallbackInfo_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn get_c_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkMusicPlaylistCallbackInfo_unity2_raw :: __lookup_get_c_ptr :: get_method_info () } pub fn set_c_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkMusicPlaylistCallbackInfo_unity2_raw :: __lookup_set_c_ptr :: get_method_info () } pub fn finalize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkMusicPlaylistCallbackInfo_unity2_raw :: __lookup_finalize :: get_method_info () } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkMusicPlaylistCallbackInfo_unity2_raw :: __lookup_dispose :: get_method_info () } pub fn get_playlist_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkMusicPlaylistCallbackInfo_unity2_raw :: __lookup_get_playlist_id :: get_method_info () } pub fn get_u_num_playlist_items_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkMusicPlaylistCallbackInfo_unity2_raw :: __lookup_get_u_num_playlist_items :: get_method_info () } pub fn get_u_playlist_selection_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkMusicPlaylistCallbackInfo_unity2_raw :: __lookup_get_u_playlist_selection :: get_method_info () } pub fn get_u_playlist_item_done_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkMusicPlaylistCallbackInfo_unity2_raw :: __lookup_get_u_playlist_item_done :: get_method_info () } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkMusicPlaylistCallbackInfo_unity2_raw :: __lookup_ctor_2 :: get_method_info () } }
 
 #[cfg(feature = "root-akmusicplaylistcallbackinfo")]
 impl AkMusicPlaylistCallbackInfo {
-    #[doc = "`getCPtr(crate::root::akmusicplaylistcallbackinfo::AkMusicPlaylistCallbackInfo)` overload"]
-    pub fn get_c_ptr(obj: impl ::core::convert::Into<crate::root::akmusicplaylistcallbackinfo::AkMusicPlaylistCallbackInfo>) -> ::unity2::IntPtr {
-        unsafe { __AkMusicPlaylistCallbackInfo_unity2_raw::get_c_ptr(::core::convert::Into::into(obj), ::core::option::Option::None) }
-    }
-}
+# [doc = "`.ctor(::unity2::IntPtr, bool)` — overload selector"] pub fn new (c_ptr : :: unity2 :: IntPtr , c_memory_own : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkMusicPlaylistCallbackInfo) , :: core :: stringify ! (new) ,)) ; < Self as IAkMusicPlaylistCallbackInfoMethods > :: ctor (this , c_ptr , c_memory_own) ; this }
 
-#[cfg(feature = "root-akmusicplaylistcallbackinfo")]
-pub trait IAkMusicPlaylistCallbackInfoMethods: IAkMusicPlaylistCallbackInfo {
-    #[doc = "`.ctor(::unity2::IntPtr, bool)` overload"]
-    fn ctor(self, c_ptr: impl ::core::convert::Into<::unity2::IntPtr>, c_memory_own: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver =
-                <AkMusicPlaylistCallbackInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkMusicPlaylistCallbackInfo_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(c_ptr),
-                ::core::convert::Into::into(c_memory_own),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`setCPtr(::unity2::IntPtr)` overload"]
-    fn set_c_ptr(self, c_ptr: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
-        unsafe {
-            let __receiver =
-                <AkMusicPlaylistCallbackInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkMusicPlaylistCallbackInfo_unity2_raw::set_c_ptr(__receiver, ::core::convert::Into::into(c_ptr), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Finalize()` overload"]
-    fn finalize(self) -> () {
-        unsafe {
-            let __receiver =
-                <AkMusicPlaylistCallbackInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkMusicPlaylistCallbackInfo_unity2_raw::finalize(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Dispose()` overload"]
-    fn dispose(self) -> () {
-        unsafe {
-            let __receiver =
-                <AkMusicPlaylistCallbackInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkMusicPlaylistCallbackInfo_unity2_raw::dispose(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_playlistID()` overload"]
-    fn get_playlist_id(self) -> u32 {
-        unsafe {
-            let __receiver =
-                <AkMusicPlaylistCallbackInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkMusicPlaylistCallbackInfo_unity2_raw::get_playlist_id(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_uNumPlaylistItems()` overload"]
-    fn get_u_num_playlist_items(self) -> u32 {
-        unsafe {
-            let __receiver =
-                <AkMusicPlaylistCallbackInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkMusicPlaylistCallbackInfo_unity2_raw::get_u_num_playlist_items(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_uPlaylistSelection()` overload"]
-    fn get_u_playlist_selection(self) -> u32 {
-        unsafe {
-            let __receiver =
-                <AkMusicPlaylistCallbackInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkMusicPlaylistCallbackInfo_unity2_raw::get_u_playlist_selection(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_uPlaylistItemDone()` overload"]
-    fn get_u_playlist_item_done(self) -> u32 {
-        unsafe {
-            let __receiver =
-                <AkMusicPlaylistCallbackInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkMusicPlaylistCallbackInfo_unity2_raw::get_u_playlist_item_done(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor_2(self) -> () {
-        unsafe {
-            let __receiver =
-                <AkMusicPlaylistCallbackInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkMusicPlaylistCallbackInfo_unity2_raw::ctor_2(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "root-akmusicplaylistcallbackinfo")]
-impl<__T: IAkMusicPlaylistCallbackInfo> IAkMusicPlaylistCallbackInfoMethods for __T {}
-
-#[cfg(feature = "root-akmusicplaylistcallbackinfo")]
-impl AkMusicPlaylistCallbackInfo {
-    #[doc = "`.ctor(::unity2::IntPtr, bool)` — overload selector"]
-    pub fn new(c_ptr: ::unity2::IntPtr, c_memory_own: bool) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AkMusicPlaylistCallbackInfo),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAkMusicPlaylistCallbackInfoMethods>::ctor(this, c_ptr, c_memory_own);
-        this
-    }
-
-    #[doc = "`.ctor()` — no args"]
-    pub fn new_2() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AkMusicPlaylistCallbackInfo),
-                ::core::stringify!(new_2),
-            )
-        });
-        <Self as IAkMusicPlaylistCallbackInfoMethods>::ctor_2(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new_2 () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkMusicPlaylistCallbackInfo) , :: core :: stringify ! (new_2) ,)) ; < Self as IAkMusicPlaylistCallbackInfoMethods > :: ctor_2 (this ,) ; this }
 }
 
 #[cfg(feature = "root-akmusicplaylistcallbackinfo")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{AkMusicPlaylistCallbackInfo, IAkMusicPlaylistCallbackInfo, IAkMusicPlaylistCallbackInfoMethods};
-    #[cfg(feature = "root-akcallbackinfo")]
-    pub use crate::root::akcallbackinfo::IAkCallbackInfoMethods;
-    #[cfg(feature = "root-akeventcallbackinfo")]
-    pub use crate::root::akeventcallbackinfo::IAkEventCallbackInfoMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::{
-        root::{akcallbackinfo::IAkCallbackInfo, akeventcallbackinfo::IAkEventCallbackInfo},
-        system::object::IObject,
-    };
+    pub use super::AkMusicPlaylistCallbackInfo;
+    pub use super::IAkMusicPlaylistCallbackInfo;
+    pub use super::IAkMusicPlaylistCallbackInfoMethods;
+    pub use crate::root::akcallbackinfo::IAkCallbackInfo;
+    pub use crate::root::akeventcallbackinfo::IAkEventCallbackInfo;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "root-akcallbackinfo")] pub use crate::root::akcallbackinfo::IAkCallbackInfoMethods;
+    #[cfg(feature = "root-akeventcallbackinfo")] pub use crate::root::akeventcallbackinfo::IAkEventCallbackInfoMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

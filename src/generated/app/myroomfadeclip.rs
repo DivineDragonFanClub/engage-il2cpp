@@ -2,219 +2,57 @@
 
 #[cfg(feature = "app-myroomfadeclip-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::{
-            object_2::{IObject_2, Object_2},
-            playables::playableasset::{IPlayableAsset, PlayableAsset},
-            scriptableobject::{IScriptableObject, ScriptableObject},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomfadeclip/MyRoomFadeClip.md"))]
-    #[::unity2::class(namespace = "App", name = "MyRoomFadeClip")]
-    #[parent(crate::unity_engine::playables::playableasset::PlayableAsset)]
-    pub struct MyRoomFadeClip {
-        #[offset(24)]
-        #[rename(name = "Template")]
-        pub template: crate::app::myroomfadecolor::MyRoomFadeColor,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+ use crate :: unity_engine :: playables :: playableasset :: { IPlayableAsset , PlayableAsset }
+ ;
+ use crate :: unity_engine :: scriptableobject :: { IScriptableObject , ScriptableObject }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomfadeclip/MyRoomFadeClip.md"))] # [:: unity2 :: class (namespace = "App" , name = "MyRoomFadeClip")] # [parent (crate :: unity_engine :: playables :: playableasset :: PlayableAsset)] pub struct MyRoomFadeClip {
+# [offset (24)] # [rename (name = "Template")] pub template : crate :: app :: myroomfadecolor :: MyRoomFadeColor ,
+}
+
 }
 
 #[cfg(feature = "app-myroomfadeclip-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-myroomfadeclip")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MyRoomFadeClip_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_clip_caps {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MyRoomFadeClip as ::unity2::ClassIdentity>::class(),
-                "get_clipCaps",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MyRoomFadeClip as ::unity2::ClassIdentity>::NAME,
-                        "get_clipCaps",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_clip_caps(
-        this: MyRoomFadeClip,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::timeline::clipcaps::ClipCaps {
-        let inner: extern "C" fn(MyRoomFadeClip, ::unity2::OptionalMethod) -> crate::unity_engine::timeline::clipcaps::ClipCaps =
-            ::core::mem::transmute(__lookup_get_clip_caps::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_playable {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::playables::playablegraph::PlayableGraph as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MyRoomFadeClip as ::unity2::ClassIdentity>::class(),
-                "CreatePlayable",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MyRoomFadeClip as ::unity2::ClassIdentity>::NAME,
-                        "CreatePlayable",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_playable(
-        this: MyRoomFadeClip,
-        graph: crate::unity_engine::playables::playablegraph::PlayableGraph,
-        owner: crate::unity_engine::gameobject::GameObject,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::playables::playable::Playable {
-        let inner: extern "C" fn(
-            MyRoomFadeClip,
-            crate::unity_engine::playables::playablegraph::PlayableGraph,
-            crate::unity_engine::gameobject::GameObject,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::playables::playable::Playable = ::core::mem::transmute(__lookup_create_playable::get_method_info().method_ptr);
-        inner(this, graph, owner, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MyRoomFadeClip as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MyRoomFadeClip as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: MyRoomFadeClip, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MyRoomFadeClip, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MyRoomFadeClip_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_clip_caps { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MyRoomFadeClip as :: unity2 :: ClassIdentity > :: class () , "get_clipCaps" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MyRoomFadeClip as :: unity2 :: ClassIdentity > :: NAME , "get_clipCaps" , e) , } } } pub unsafe fn get_clip_caps (this : MyRoomFadeClip , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: timeline :: clipcaps :: ClipCaps { let inner : extern "C" fn (MyRoomFadeClip , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: timeline :: clipcaps :: ClipCaps = :: core :: mem :: transmute (__lookup_get_clip_caps :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_playable { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playablegraph :: PlayableGraph as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: gameobject :: GameObject as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MyRoomFadeClip as :: unity2 :: ClassIdentity > :: class () , "CreatePlayable" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MyRoomFadeClip as :: unity2 :: ClassIdentity > :: NAME , "CreatePlayable" , e) , } } } pub unsafe fn create_playable (this : MyRoomFadeClip , graph : crate :: unity_engine :: playables :: playablegraph :: PlayableGraph , owner : crate :: unity_engine :: gameobject :: GameObject , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: playables :: playable :: Playable { let inner : extern "C" fn (MyRoomFadeClip , crate :: unity_engine :: playables :: playablegraph :: PlayableGraph , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: playables :: playable :: Playable = :: core :: mem :: transmute (__lookup_create_playable :: get_method_info () . method_ptr ,) ; inner (this , graph , owner , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MyRoomFadeClip as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MyRoomFadeClip as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : MyRoomFadeClip , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MyRoomFadeClip , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-myroomfadeclip")]
-pub trait IMyRoomFadeClipMethods: IMyRoomFadeClip {
-    #[doc = "`get_clipCaps()` overload"]
-    fn get_clip_caps(self) -> crate::unity_engine::timeline::clipcaps::ClipCaps {
-        unsafe {
-            let __receiver = <MyRoomFadeClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MyRoomFadeClip_unity2_raw::get_clip_caps(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CreatePlayable(crate::unity_engine::playables::playablegraph::PlayableGraph, crate::unity_engine::gameobject::GameObject)` overload"]
-    fn create_playable(
-        self,
-        graph: impl ::core::convert::Into<crate::unity_engine::playables::playablegraph::PlayableGraph>,
-        owner: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-    ) -> crate::unity_engine::playables::playable::Playable {
-        unsafe {
-            let __receiver = <MyRoomFadeClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MyRoomFadeClip_unity2_raw::create_playable(
-                __receiver,
-                ::core::convert::Into::into(graph),
-                ::core::convert::Into::into(owner),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <MyRoomFadeClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MyRoomFadeClip_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IMyRoomFadeClipMethods : IMyRoomFadeClip { # [doc = "`get_clipCaps()` overload"] fn get_clip_caps (self ,) -> crate :: unity_engine :: timeline :: clipcaps :: ClipCaps { unsafe { let __receiver = < MyRoomFadeClip as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MyRoomFadeClip_unity2_raw :: get_clip_caps (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CreatePlayable(crate::unity_engine::playables::playablegraph::PlayableGraph, crate::unity_engine::gameobject::GameObject)` overload"] fn create_playable (self , graph : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playablegraph :: PlayableGraph > , owner : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> crate :: unity_engine :: playables :: playable :: Playable { unsafe { let __receiver = < MyRoomFadeClip as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MyRoomFadeClip_unity2_raw :: create_playable (__receiver , :: core :: convert :: Into :: into (graph) , :: core :: convert :: Into :: into (owner) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MyRoomFadeClip as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MyRoomFadeClip_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-myroomfadeclip")]
-impl<__T: IMyRoomFadeClip> IMyRoomFadeClipMethods for __T {}
+impl < __T : IMyRoomFadeClip > IMyRoomFadeClipMethods for __T { }
+
+#[cfg(feature = "app-myroomfadeclip")]
+impl MyRoomFadeClip { pub fn get_clip_caps_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MyRoomFadeClip_unity2_raw :: __lookup_get_clip_caps :: get_method_info () } pub fn create_playable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MyRoomFadeClip_unity2_raw :: __lookup_create_playable :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MyRoomFadeClip_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-myroomfadeclip")]
 impl MyRoomFadeClip {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MyRoomFadeClip),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMyRoomFadeClipMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MyRoomFadeClip) , :: core :: stringify ! (new) ,)) ; < Self as IMyRoomFadeClipMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-myroomfadeclip")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IMyRoomFadeClip, IMyRoomFadeClipMethods, MyRoomFadeClip};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    #[cfg(feature = "unity_engine-playables-playableasset")]
-    pub use crate::unity_engine::playables::playableasset::IPlayableAssetMethods;
-    #[cfg(feature = "unity_engine-scriptableobject")]
-    pub use crate::unity_engine::scriptableobject::IScriptableObjectMethods;
-    pub use crate::{
-        system::object::IObject,
-        unity_engine::{object_2::IObject_2, playables::playableasset::IPlayableAsset, scriptableobject::IScriptableObject},
-    };
+    pub use super::MyRoomFadeClip;
+    pub use super::IMyRoomFadeClip;
+    pub use super::IMyRoomFadeClipMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::object_2::IObject_2;
+    pub use crate::unity_engine::playables::playableasset::IPlayableAsset;
+    pub use crate::unity_engine::scriptableobject::IScriptableObject;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
+    #[cfg(feature = "unity_engine-playables-playableasset")] pub use crate::unity_engine::playables::playableasset::IPlayableAssetMethods;
+    #[cfg(feature = "unity_engine-scriptableobject")] pub use crate::unity_engine::scriptableobject::IScriptableObjectMethods;
 }

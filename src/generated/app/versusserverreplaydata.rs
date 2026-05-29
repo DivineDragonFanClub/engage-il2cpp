@@ -2,399 +2,49 @@
 
 #[cfg(feature = "app-versusserverreplaydata-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versusserverreplaydata/VersusServerReplayData.md"))]
-    #[::unity2::class(namespace = "App", name = "VersusServerReplayData")]
-    #[parent(crate::system::object::Object)]
-    pub struct VersusServerReplayData {
-        #[static_field]
-        #[rename(name = "BufferSize")]
-        pub buffer_size: i32,
-        #[static_field]
-        #[rename(name = "Version")]
-        pub version: u16,
-        #[offset(16)]
-        #[rename(name = "m_Buffer")]
-        pub m_buffer: ::unity2::Array<u8>,
-        #[offset(24)]
-        #[rename(name = "m_Stream")]
-        pub m_stream: crate::app::stream_2::Stream_2,
-        #[offset(32)]
-        #[rename(name = "m_IsEmpty")]
-        pub m_is_empty: bool,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versusserverreplaydata/VersusServerReplayData.md"))] # [:: unity2 :: class (namespace = "App" , name = "VersusServerReplayData")] # [parent (crate :: system :: object :: Object)] pub struct VersusServerReplayData {
+# [static_field] # [rename (name = "BufferSize")] pub buffer_size : i32 ,
+# [static_field] # [rename (name = "Version")] pub version : u16 ,
+# [offset (16)] # [rename (name = "m_Buffer")] pub m_buffer : :: unity2 :: Array < u8 > ,
+# [offset (24)] # [rename (name = "m_Stream")] pub m_stream : crate :: app :: stream_2 :: Stream_2 ,
+# [offset (32)] # [rename (name = "m_IsEmpty")] pub m_is_empty : bool ,
+}
+
 }
 
 #[cfg(feature = "app-versusserverreplaydata-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-versusserverreplaydata")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __VersusServerReplayData_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VersusServerReplayData as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <VersusServerReplayData as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: VersusServerReplayData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(VersusServerReplayData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_clear {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VersusServerReplayData as ::unity2::ClassIdentity>::class(),
-                "Clear",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <VersusServerReplayData as ::unity2::ClassIdentity>::NAME,
-                        "Clear",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn clear(this: VersusServerReplayData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(VersusServerReplayData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_binary {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<u8> as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VersusServerReplayData as ::unity2::ClassIdentity>::class(),
-                "SetBinary",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <VersusServerReplayData as ::unity2::ClassIdentity>::NAME,
-                        "SetBinary",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_binary(this: VersusServerReplayData, bin: ::unity2::Array<u8>, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(VersusServerReplayData, ::unity2::Array<u8>, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_binary::get_method_info().method_ptr);
-        inner(this, bin, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_serialize {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VersusServerReplayData as ::unity2::ClassIdentity>::class(),
-                "Serialize",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <VersusServerReplayData as ::unity2::ClassIdentity>::NAME,
-                        "Serialize",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn serialize(this: VersusServerReplayData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(VersusServerReplayData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_serialize::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_deserialize {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VersusServerReplayData as ::unity2::ClassIdentity>::class(),
-                "Deserialize",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <VersusServerReplayData as ::unity2::ClassIdentity>::NAME,
-                        "Deserialize",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn deserialize(this: VersusServerReplayData, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(VersusServerReplayData, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_deserialize::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_buffer {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VersusServerReplayData as ::unity2::ClassIdentity>::class(),
-                "get_Buffer",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <VersusServerReplayData as ::unity2::ClassIdentity>::NAME,
-                        "get_Buffer",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_buffer(this: VersusServerReplayData, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Array<u8> {
-        let inner: extern "C" fn(VersusServerReplayData, ::unity2::OptionalMethod) -> ::unity2::Array<u8> =
-            ::core::mem::transmute(__lookup_get_buffer::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_size {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VersusServerReplayData as ::unity2::ClassIdentity>::class(),
-                "get_Size",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <VersusServerReplayData as ::unity2::ClassIdentity>::NAME,
-                        "get_Size",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_size(this: VersusServerReplayData, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(VersusServerReplayData, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_size::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_is_empty {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VersusServerReplayData as ::unity2::ClassIdentity>::class(),
-                "get_IsEmpty",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <VersusServerReplayData as ::unity2::ClassIdentity>::NAME,
-                        "get_IsEmpty",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_is_empty(this: VersusServerReplayData, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(VersusServerReplayData, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_is_empty::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __VersusServerReplayData_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< VersusServerReplayData as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < VersusServerReplayData as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : VersusServerReplayData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (VersusServerReplayData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_clear { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< VersusServerReplayData as :: unity2 :: ClassIdentity > :: class () , "Clear" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < VersusServerReplayData as :: unity2 :: ClassIdentity > :: NAME , "Clear" , e) , } } } pub unsafe fn clear (this : VersusServerReplayData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (VersusServerReplayData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_clear :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_binary { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < u8 > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< VersusServerReplayData as :: unity2 :: ClassIdentity > :: class () , "SetBinary" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < VersusServerReplayData as :: unity2 :: ClassIdentity > :: NAME , "SetBinary" , e) , } } } pub unsafe fn set_binary (this : VersusServerReplayData , bin : :: unity2 :: Array < u8 > , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (VersusServerReplayData , :: unity2 :: Array < u8 > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_binary :: get_method_info () . method_ptr ,) ; inner (this , bin , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_serialize { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< VersusServerReplayData as :: unity2 :: ClassIdentity > :: class () , "Serialize" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < VersusServerReplayData as :: unity2 :: ClassIdentity > :: NAME , "Serialize" , e) , } } } pub unsafe fn serialize (this : VersusServerReplayData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (VersusServerReplayData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_serialize :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_deserialize { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< VersusServerReplayData as :: unity2 :: ClassIdentity > :: class () , "Deserialize" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < VersusServerReplayData as :: unity2 :: ClassIdentity > :: NAME , "Deserialize" , e) , } } } pub unsafe fn deserialize (this : VersusServerReplayData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (VersusServerReplayData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_deserialize :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_buffer { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< VersusServerReplayData as :: unity2 :: ClassIdentity > :: class () , "get_Buffer" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < VersusServerReplayData as :: unity2 :: ClassIdentity > :: NAME , "get_Buffer" , e) , } } } pub unsafe fn get_buffer (this : VersusServerReplayData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < u8 > { let inner : extern "C" fn (VersusServerReplayData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < u8 > = :: core :: mem :: transmute (__lookup_get_buffer :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_size { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< VersusServerReplayData as :: unity2 :: ClassIdentity > :: class () , "get_Size" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < VersusServerReplayData as :: unity2 :: ClassIdentity > :: NAME , "get_Size" , e) , } } } pub unsafe fn get_size (this : VersusServerReplayData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (VersusServerReplayData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_size :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_is_empty { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< VersusServerReplayData as :: unity2 :: ClassIdentity > :: class () , "get_IsEmpty" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < VersusServerReplayData as :: unity2 :: ClassIdentity > :: NAME , "get_IsEmpty" , e) , } } } pub unsafe fn get_is_empty (this : VersusServerReplayData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (VersusServerReplayData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_is_empty :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-versusserverreplaydata")]
-pub trait IVersusServerReplayDataMethods: IVersusServerReplayData {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <VersusServerReplayData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __VersusServerReplayData_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Clear()` overload"]
-    fn clear(self) -> () {
-        unsafe {
-            let __receiver =
-                <VersusServerReplayData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __VersusServerReplayData_unity2_raw::clear(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetBinary(::unity2::Array<u8>)` overload"]
-    fn set_binary(self, bin: impl ::core::convert::Into<::unity2::Array<u8>>) -> () {
-        unsafe {
-            let __receiver =
-                <VersusServerReplayData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __VersusServerReplayData_unity2_raw::set_binary(__receiver, ::core::convert::Into::into(bin), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Serialize()` overload"]
-    fn serialize(self) -> () {
-        unsafe {
-            let __receiver =
-                <VersusServerReplayData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __VersusServerReplayData_unity2_raw::serialize(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Deserialize()` overload"]
-    fn deserialize(self) -> bool {
-        unsafe {
-            let __receiver =
-                <VersusServerReplayData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __VersusServerReplayData_unity2_raw::deserialize(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Buffer()` overload"]
-    fn get_buffer(self) -> ::unity2::Array<u8> {
-        unsafe {
-            let __receiver =
-                <VersusServerReplayData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __VersusServerReplayData_unity2_raw::get_buffer(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Size()` overload"]
-    fn get_size(self) -> i32 {
-        unsafe {
-            let __receiver =
-                <VersusServerReplayData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __VersusServerReplayData_unity2_raw::get_size(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_IsEmpty()` overload"]
-    fn get_is_empty(self) -> bool {
-        unsafe {
-            let __receiver =
-                <VersusServerReplayData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __VersusServerReplayData_unity2_raw::get_is_empty(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IVersusServerReplayDataMethods : IVersusServerReplayData { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < VersusServerReplayData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __VersusServerReplayData_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Clear()` overload"] fn clear (self ,) -> () { unsafe { let __receiver = < VersusServerReplayData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __VersusServerReplayData_unity2_raw :: clear (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetBinary(::unity2::Array<u8>)` overload"] fn set_binary (self , bin : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > >) -> () { unsafe { let __receiver = < VersusServerReplayData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __VersusServerReplayData_unity2_raw :: set_binary (__receiver , :: core :: convert :: Into :: into (bin) , :: core :: option :: Option :: None) } } # [doc = "`Serialize()` overload"] fn serialize (self ,) -> () { unsafe { let __receiver = < VersusServerReplayData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __VersusServerReplayData_unity2_raw :: serialize (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Deserialize()` overload"] fn deserialize (self ,) -> bool { unsafe { let __receiver = < VersusServerReplayData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __VersusServerReplayData_unity2_raw :: deserialize (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_Buffer()` overload"] fn get_buffer (self ,) -> :: unity2 :: Array < u8 > { unsafe { let __receiver = < VersusServerReplayData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __VersusServerReplayData_unity2_raw :: get_buffer (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_Size()` overload"] fn get_size (self ,) -> i32 { unsafe { let __receiver = < VersusServerReplayData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __VersusServerReplayData_unity2_raw :: get_size (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_IsEmpty()` overload"] fn get_is_empty (self ,) -> bool { unsafe { let __receiver = < VersusServerReplayData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __VersusServerReplayData_unity2_raw :: get_is_empty (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-versusserverreplaydata")]
-impl<__T: IVersusServerReplayData> IVersusServerReplayDataMethods for __T {}
+impl < __T : IVersusServerReplayData > IVersusServerReplayDataMethods for __T { }
+
+#[cfg(feature = "app-versusserverreplaydata")]
+impl VersusServerReplayData { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __VersusServerReplayData_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __VersusServerReplayData_unity2_raw :: __lookup_clear :: get_method_info () } pub fn set_binary_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __VersusServerReplayData_unity2_raw :: __lookup_set_binary :: get_method_info () } pub fn serialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __VersusServerReplayData_unity2_raw :: __lookup_serialize :: get_method_info () } pub fn deserialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __VersusServerReplayData_unity2_raw :: __lookup_deserialize :: get_method_info () } pub fn get_buffer_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __VersusServerReplayData_unity2_raw :: __lookup_get_buffer :: get_method_info () } pub fn get_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __VersusServerReplayData_unity2_raw :: __lookup_get_size :: get_method_info () } pub fn get_is_empty_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __VersusServerReplayData_unity2_raw :: __lookup_get_is_empty :: get_method_info () } }
 
 #[cfg(feature = "app-versusserverreplaydata")]
 impl VersusServerReplayData {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(VersusServerReplayData),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IVersusServerReplayDataMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (VersusServerReplayData) , :: core :: stringify ! (new) ,)) ; < Self as IVersusServerReplayDataMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-versusserverreplaydata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IVersusServerReplayData, IVersusServerReplayDataMethods, VersusServerReplayData};
+    pub use super::VersusServerReplayData;
+    pub use super::IVersusServerReplayData;
+    pub use super::IVersusServerReplayDataMethods;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

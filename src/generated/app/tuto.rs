@@ -2,245 +2,79 @@
 
 #[cfg(feature = "app-tuto-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::{
-            procdesc::{IProcDesc, ProcDesc},
-            procdescuser::{IProcDescUser, ProcDescUser},
-        },
-        system::object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/tuto/Tuto.md"))]
-    #[::unity2::class(namespace = "App", name = "Tuto")]
-    #[parent(crate::system::object::Object)]
-    pub struct Tuto {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: procdesc :: { IProcDesc , ProcDesc }
+ ;
+ use crate :: app :: procdescuser :: { IProcDescUser , ProcDescUser }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/tuto/Tuto_ProcDescTutorial.md"))]
-    #[::unity2::class(namespace = "App", name = "Tuto.ProcDescTutorial")]
-    #[parent(crate::app::procdescuser::ProcDescUser)]
-    pub struct Tuto_ProcDescTutorial {
-        #[offset(24)]
-        #[rename(name = "m_Tid")]
-        pub m_tid: ::unity2::Il2CppString,
-    }
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/tuto/Tuto.md"))] # [:: unity2 :: class (namespace = "App" , name = "Tuto")] # [parent (crate :: system :: object :: Object)] pub struct Tuto {}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/tuto/Tuto_ProcDescTutorial.md"))] # [:: unity2 :: class (namespace = "App" , name = "Tuto.ProcDescTutorial")] # [parent (crate :: app :: procdescuser :: ProcDescUser)] pub struct Tuto_ProcDescTutorial {
+# [offset (24)] # [rename (name = "m_Tid")] pub m_tid : :: unity2 :: Il2CppString ,
+}
+
 }
 
 #[cfg(feature = "app-tuto-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-tuto")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __Tuto_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<Tuto as ::unity2::ClassIdentity>::class(), "Call", 1, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Tuto as ::unity2::ClassIdentity>::NAME, "Call", e),
-            }
-        }
-    }
-    pub unsafe fn call(tid: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::procdesc::ProcDesc {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> crate::app::procdesc::ProcDesc =
-            ::core::mem::transmute(__lookup_call::get_method_info().method_ptr);
-        inner(tid, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Tuto as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Tuto as ::unity2::ClassIdentity>::NAME, ".ctor", e),
-            }
-        }
-    }
-    pub unsafe fn ctor(this: Tuto, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Tuto, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __Tuto_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_call { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Tuto as :: unity2 :: ClassIdentity > :: class () , "Call" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Tuto as :: unity2 :: ClassIdentity > :: NAME , "Call" , e) , } } } pub unsafe fn call (tid : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: procdesc :: ProcDesc { let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: app :: procdesc :: ProcDesc = :: core :: mem :: transmute (__lookup_call :: get_method_info () . method_ptr ,) ; inner (tid , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Tuto as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Tuto as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : Tuto , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Tuto , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-tuto")]
+impl Tuto { # [doc = "`Call(::unity2::Il2CppString)` overload"] pub fn call (tid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: app :: procdesc :: ProcDesc { unsafe { __Tuto_unity2_raw :: call (:: core :: convert :: Into :: into (tid) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-tuto")]
+pub trait ITutoMethods : ITuto { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Tuto as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Tuto_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-tuto")]
+impl < __T : ITuto > ITutoMethods for __T { }
+
+#[cfg(feature = "app-tuto")]
+impl Tuto { pub fn call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Tuto_unity2_raw :: __lookup_call :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Tuto_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-tuto")]
 impl Tuto {
-    #[doc = "`Call(::unity2::Il2CppString)` overload"]
-    pub fn call(tid: impl ::core::convert::Into<::unity2::Il2CppString>) -> crate::app::procdesc::ProcDesc {
-        unsafe { __Tuto_unity2_raw::call(::core::convert::Into::into(tid), ::core::option::Option::None) }
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Tuto) , :: core :: stringify ! (new) ,)) ; < Self as ITutoMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-tuto")]
-pub trait ITutoMethods: ITuto {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <Tuto as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Tuto_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __Tuto_ProcDescTutorial_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Tuto_ProcDescTutorial as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Tuto_ProcDescTutorial as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : Tuto_ProcDescTutorial , tid : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Tuto_ProcDescTutorial , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , tid , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_execute { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Tuto_ProcDescTutorial as :: unity2 :: ClassIdentity > :: class () , "Execute" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Tuto_ProcDescTutorial as :: unity2 :: ClassIdentity > :: NAME , "Execute" , e) , } } } pub unsafe fn execute (this : Tuto_ProcDescTutorial , inst : crate :: app :: procinst :: ProcInst , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: procdesc :: ProcDesc_Result { let inner : extern "C" fn (Tuto_ProcDescTutorial , crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> crate :: app :: procdesc :: ProcDesc_Result = :: core :: mem :: transmute (__lookup_execute :: get_method_info () . method_ptr ,) ; inner (this , inst , __unity2_method_info) } }
 
 #[cfg(feature = "app-tuto")]
-impl<__T: ITuto> ITutoMethods for __T {}
+pub trait ITuto_ProcDescTutorialMethods : ITuto_ProcDescTutorial { # [doc = "`.ctor(::unity2::Il2CppString)` overload"] fn ctor (self , tid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < Tuto_ProcDescTutorial as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Tuto_ProcDescTutorial_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (tid) , :: core :: option :: Option :: None) } } # [doc = "`Execute(crate::app::procinst::ProcInst)` overload"] fn execute (self , inst : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> crate :: app :: procdesc :: ProcDesc_Result { unsafe { let __receiver = < Tuto_ProcDescTutorial as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Tuto_ProcDescTutorial_unity2_raw :: execute (__receiver , :: core :: convert :: Into :: into (inst) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-tuto")]
-impl Tuto {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(Tuto), ::core::stringify!(new),));
-        <Self as ITutoMethods>::ctor(this);
-        this
-    }
-}
+impl < __T : ITuto_ProcDescTutorial > ITuto_ProcDescTutorialMethods for __T { }
 
 #[cfg(feature = "app-tuto")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __Tuto_ProcDescTutorial_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Tuto_ProcDescTutorial as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Tuto_ProcDescTutorial as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: Tuto_ProcDescTutorial, tid: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Tuto_ProcDescTutorial, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, tid, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_execute {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Tuto_ProcDescTutorial as ::unity2::ClassIdentity>::class(),
-                "Execute",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Tuto_ProcDescTutorial as ::unity2::ClassIdentity>::NAME,
-                        "Execute",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn execute(
-        this: Tuto_ProcDescTutorial,
-        inst: crate::app::procinst::ProcInst,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::procdesc::ProcDesc_Result {
-        let inner: extern "C" fn(
-            Tuto_ProcDescTutorial,
-            crate::app::procinst::ProcInst,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::procdesc::ProcDesc_Result = ::core::mem::transmute(__lookup_execute::get_method_info().method_ptr);
-        inner(this, inst, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-tuto")]
-pub trait ITuto_ProcDescTutorialMethods: ITuto_ProcDescTutorial {
-    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
-    fn ctor(self, tid: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver =
-                <Tuto_ProcDescTutorial as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Tuto_ProcDescTutorial_unity2_raw::ctor(__receiver, ::core::convert::Into::into(tid), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Execute(crate::app::procinst::ProcInst)` overload"]
-    fn execute(self, inst: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> crate::app::procdesc::ProcDesc_Result {
-        unsafe {
-            let __receiver =
-                <Tuto_ProcDescTutorial as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Tuto_ProcDescTutorial_unity2_raw::execute(__receiver, ::core::convert::Into::into(inst), ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-tuto")]
-impl<__T: ITuto_ProcDescTutorial> ITuto_ProcDescTutorialMethods for __T {}
+impl Tuto_ProcDescTutorial { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Tuto_ProcDescTutorial_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn execute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Tuto_ProcDescTutorial_unity2_raw :: __lookup_execute :: get_method_info () } }
 
 #[cfg(feature = "app-tuto")]
 impl Tuto_ProcDescTutorial {
-    #[doc = "`.ctor(::unity2::Il2CppString)` — overload selector"]
-    pub fn new(tid: ::unity2::Il2CppString) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Tuto_ProcDescTutorial),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITuto_ProcDescTutorialMethods>::ctor(this, tid);
-        this
-    }
+# [doc = "`.ctor(::unity2::Il2CppString)` — overload selector"] pub fn new (tid : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Tuto_ProcDescTutorial) , :: core :: stringify ! (new) ,)) ; < Self as ITuto_ProcDescTutorialMethods > :: ctor (this , tid) ; this }
 }
 
 #[cfg(feature = "app-tuto")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{ITuto, ITutoMethods, ITuto_ProcDescTutorial, ITuto_ProcDescTutorialMethods, Tuto, Tuto_ProcDescTutorial};
-    #[cfg(feature = "app-procdesc")]
-    pub use crate::app::procdesc::IProcDescMethods;
-    #[cfg(feature = "app-procdescuser")]
-    pub use crate::app::procdescuser::IProcDescUserMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::{
-        app::{procdesc::IProcDesc, procdescuser::IProcDescUser},
-        system::object::IObject,
-    };
+    pub use super::Tuto;
+    pub use super::ITuto;
+    pub use super::ITutoMethods;
+    pub use super::Tuto_ProcDescTutorial;
+    pub use super::ITuto_ProcDescTutorial;
+    pub use super::ITuto_ProcDescTutorialMethods;
+    pub use crate::app::procdesc::IProcDesc;
+    pub use crate::app::procdescuser::IProcDescUser;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "app-procdesc")] pub use crate::app::procdesc::IProcDescMethods;
+    #[cfg(feature = "app-procdescuser")] pub use crate::app::procdescuser::IProcDescUserMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

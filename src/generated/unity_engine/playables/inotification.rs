@@ -2,74 +2,34 @@
 
 #[cfg(feature = "unity_engine-playables-inotification-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/playables/inotification/INotification.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Playables", name = "INotification")]
-    pub struct INotification {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/playables/inotification/INotification.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Playables" , name = "INotification")] pub struct INotification {}
+
 }
 
 #[cfg(feature = "unity_engine-playables-inotification-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-playables-inotification")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __INotification_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_id {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <INotification as ::unity2::ClassIdentity>::class(),
-                "get_id",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <INotification as ::unity2::ClassIdentity>::NAME,
-                        "get_id",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_id(this: INotification, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::propertyname::PropertyName {
-        let inner: extern "C" fn(INotification, ::unity2::OptionalMethod) -> crate::unity_engine::propertyname::PropertyName =
-            ::core::mem::transmute(__lookup_get_id::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __INotification_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_id { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< INotification as :: unity2 :: ClassIdentity > :: class () , "get_id" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < INotification as :: unity2 :: ClassIdentity > :: NAME , "get_id" , e) , } } } pub unsafe fn get_id (this : INotification , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: propertyname :: PropertyName { let inner : extern "C" fn (INotification , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: propertyname :: PropertyName = :: core :: mem :: transmute (__lookup_get_id :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-playables-inotification")]
-pub trait IINotificationMethods: IINotification {
-    #[doc = "`get_id()` overload"]
-    fn get_id(self) -> crate::unity_engine::propertyname::PropertyName {
-        unsafe {
-            let __receiver = <INotification as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __INotification_unity2_raw::get_id(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IINotificationMethods : IINotification { # [doc = "`get_id()` overload"] fn get_id (self ,) -> crate :: unity_engine :: propertyname :: PropertyName { unsafe { let __receiver = < INotification as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __INotification_unity2_raw :: get_id (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-playables-inotification")]
-impl<__T: IINotification> IINotificationMethods for __T {}
+impl < __T : IINotification > IINotificationMethods for __T { }
+
+#[cfg(feature = "unity_engine-playables-inotification")]
+impl INotification { pub fn get_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __INotification_unity2_raw :: __lookup_get_id :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-playables-inotification")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IINotification, IINotificationMethods, INotification};
+    pub use super::INotification;
+    pub use super::IINotification;
+    pub use super::IINotificationMethods;
 }

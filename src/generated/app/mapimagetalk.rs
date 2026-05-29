@@ -2,211 +2,50 @@
 
 #[cfg(feature = "app-mapimagetalk-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::mapimagecorebit::{IMapImageCoreBit, MapImageCoreBit},
-        system::object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapimagetalk/MapImageTalk.md"))]
-    #[::unity2::class(namespace = "App", name = "MapImageTalk")]
-    #[parent(crate::app::mapimagecorebit::MapImageCoreBit)]
-    pub struct MapImageTalk {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: mapimagecorebit :: { IMapImageCoreBit , MapImageCoreBit }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapimagetalk/MapImageTalk.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapImageTalk")] # [parent (crate :: app :: mapimagecorebit :: MapImageCoreBit)] pub struct MapImageTalk {}
+
 }
 
 #[cfg(feature = "app-mapimagetalk-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-mapimagetalk")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapImageTalk_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_talk {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<MapImageTalk as ::unity2::ClassIdentity>::class(), "IsTalk", 2, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapImageTalk as ::unity2::ClassIdentity>::NAME,
-                        "IsTalk",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_talk(from: crate::app::unit::Unit, to: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(crate::app::unit::Unit, crate::app::unit::Unit, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_talk::get_method_info().method_ptr);
-        inner(from, to, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<MapImageTalk as ::unity2::ClassIdentity>::class(), "Update", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapImageTalk as ::unity2::ClassIdentity>::NAME,
-                        "Update",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update(this: MapImageTalk, from: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapImageTalk, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update::get_method_info().method_ptr);
-        inner(this, from, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_immediate {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapImageTalk as ::unity2::ClassIdentity>::class(),
-                "IsImmediate",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapImageTalk as ::unity2::ClassIdentity>::NAME,
-                        "IsImmediate",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_immediate(this: MapImageTalk, x: i32, z: i32, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(MapImageTalk, i32, i32, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_immediate::get_method_info().method_ptr);
-        inner(this, x, z, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<MapImageTalk as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapImageTalk as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: MapImageTalk, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapImageTalk, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MapImageTalk_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_talk { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapImageTalk as :: unity2 :: ClassIdentity > :: class () , "IsTalk" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapImageTalk as :: unity2 :: ClassIdentity > :: NAME , "IsTalk" , e) , } } } pub unsafe fn is_talk (from : crate :: app :: unit :: Unit , to : crate :: app :: unit :: Unit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (crate :: app :: unit :: Unit , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_talk :: get_method_info () . method_ptr ,) ; inner (from , to , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapImageTalk as :: unity2 :: ClassIdentity > :: class () , "Update" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapImageTalk as :: unity2 :: ClassIdentity > :: NAME , "Update" , e) , } } } pub unsafe fn update (this : MapImageTalk , from : crate :: app :: unit :: Unit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapImageTalk , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update :: get_method_info () . method_ptr ,) ; inner (this , from , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_immediate { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapImageTalk as :: unity2 :: ClassIdentity > :: class () , "IsImmediate" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapImageTalk as :: unity2 :: ClassIdentity > :: NAME , "IsImmediate" , e) , } } } pub unsafe fn is_immediate (this : MapImageTalk , x : i32 , z : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (MapImageTalk , i32 , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_immediate :: get_method_info () . method_ptr ,) ; inner (this , x , z , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapImageTalk as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapImageTalk as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : MapImageTalk , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapImageTalk , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-mapimagetalk")]
+impl MapImageTalk { # [doc = "`IsTalk(crate::app::unit::Unit, crate::app::unit::Unit)` overload"] pub fn is_talk (from : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , to : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> bool { unsafe { __MapImageTalk_unity2_raw :: is_talk (:: core :: convert :: Into :: into (from) , :: core :: convert :: Into :: into (to) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-mapimagetalk")]
+pub trait IMapImageTalkMethods : IMapImageTalk { # [doc = "`Update(crate::app::unit::Unit)` overload"] fn update (self , from : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < MapImageTalk as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapImageTalk_unity2_raw :: update (__receiver , :: core :: convert :: Into :: into (from) , :: core :: option :: Option :: None) } } # [doc = "`IsImmediate(i32, i32)` overload"] fn is_immediate (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { let __receiver = < MapImageTalk as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapImageTalk_unity2_raw :: is_immediate (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapImageTalk as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapImageTalk_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-mapimagetalk")]
+impl < __T : IMapImageTalk > IMapImageTalkMethods for __T { }
+
+#[cfg(feature = "app-mapimagetalk")]
+impl MapImageTalk { pub fn is_talk_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapImageTalk_unity2_raw :: __lookup_is_talk :: get_method_info () } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapImageTalk_unity2_raw :: __lookup_update :: get_method_info () } pub fn is_immediate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapImageTalk_unity2_raw :: __lookup_is_immediate :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapImageTalk_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-mapimagetalk")]
 impl MapImageTalk {
-    #[doc = "`IsTalk(crate::app::unit::Unit, crate::app::unit::Unit)` overload"]
-    pub fn is_talk(from: impl ::core::convert::Into<crate::app::unit::Unit>, to: impl ::core::convert::Into<crate::app::unit::Unit>) -> bool {
-        unsafe {
-            __MapImageTalk_unity2_raw::is_talk(
-                ::core::convert::Into::into(from),
-                ::core::convert::Into::into(to),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-mapimagetalk")]
-pub trait IMapImageTalkMethods: IMapImageTalk {
-    #[doc = "`Update(crate::app::unit::Unit)` overload"]
-    fn update(self, from: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
-        unsafe {
-            let __receiver = <MapImageTalk as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapImageTalk_unity2_raw::update(__receiver, ::core::convert::Into::into(from), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsImmediate(i32, i32)` overload"]
-    fn is_immediate(self, x: impl ::core::convert::Into<i32>, z: impl ::core::convert::Into<i32>) -> bool {
-        unsafe {
-            let __receiver = <MapImageTalk as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapImageTalk_unity2_raw::is_immediate(
-                __receiver,
-                ::core::convert::Into::into(x),
-                ::core::convert::Into::into(z),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <MapImageTalk as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapImageTalk_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-mapimagetalk")]
-impl<__T: IMapImageTalk> IMapImageTalkMethods for __T {}
-
-#[cfg(feature = "app-mapimagetalk")]
-impl MapImageTalk {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(MapImageTalk), ::core::stringify!(new),));
-        <Self as IMapImageTalkMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapImageTalk) , :: core :: stringify ! (new) ,)) ; < Self as IMapImageTalkMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-mapimagetalk")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IMapImageTalk, IMapImageTalkMethods, MapImageTalk};
-    #[cfg(feature = "app-mapimagecorebit")]
-    pub use crate::app::mapimagecorebit::IMapImageCoreBitMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::{app::mapimagecorebit::IMapImageCoreBit, system::object::IObject};
+    pub use super::MapImageTalk;
+    pub use super::IMapImageTalk;
+    pub use super::IMapImageTalkMethods;
+    pub use crate::app::mapimagecorebit::IMapImageCoreBit;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "app-mapimagecorebit")] pub use crate::app::mapimagecorebit::IMapImageCoreBitMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

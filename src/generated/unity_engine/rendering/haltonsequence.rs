@@ -2,72 +2,34 @@
 
 #[cfg(feature = "unity_engine-rendering-haltonsequence-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/haltonsequence/HaltonSequence.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Rendering", name = "HaltonSequence")]
-    #[parent(crate::system::object::Object)]
-    pub struct HaltonSequence {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/haltonsequence/HaltonSequence.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering" , name = "HaltonSequence")] # [parent (crate :: system :: object :: Object)] pub struct HaltonSequence {}
+
 }
 
 #[cfg(feature = "unity_engine-rendering-haltonsequence-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-haltonsequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __HaltonSequence_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<HaltonSequence as ::unity2::ClassIdentity>::class(), "Get", 2, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HaltonSequence as ::unity2::ClassIdentity>::NAME,
-                        "Get",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get(index: i32, radix: i32, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(i32, i32, ::unity2::OptionalMethod) -> f32 = ::core::mem::transmute(__lookup_get::get_method_info().method_ptr);
-        inner(index, radix, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __HaltonSequence_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HaltonSequence as :: unity2 :: ClassIdentity > :: class () , "Get" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HaltonSequence as :: unity2 :: ClassIdentity > :: NAME , "Get" , e) , } } } pub unsafe fn get (index : i32 , radix : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (i32 , i32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_get :: get_method_info () . method_ptr ,) ; inner (index , radix , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-rendering-haltonsequence")]
-impl HaltonSequence {
-    #[doc = "`Get(i32, i32)` overload"]
-    pub fn get(index: impl ::core::convert::Into<i32>, radix: impl ::core::convert::Into<i32>) -> f32 {
-        unsafe {
-            __HaltonSequence_unity2_raw::get(
-                ::core::convert::Into::into(index),
-                ::core::convert::Into::into(radix),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+impl HaltonSequence { # [doc = "`Get(i32, i32)` overload"] pub fn get (index : impl :: core :: convert :: Into < i32 > , radix : impl :: core :: convert :: Into < i32 >) -> f32 { unsafe { __HaltonSequence_unity2_raw :: get (:: core :: convert :: Into :: into (index) , :: core :: convert :: Into :: into (radix) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-rendering-haltonsequence")]
+impl HaltonSequence { pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HaltonSequence_unity2_raw :: __lookup_get :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-rendering-haltonsequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{HaltonSequence, IHaltonSequence};
+    pub use super::HaltonSequence;
+    pub use super::IHaltonSequence;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

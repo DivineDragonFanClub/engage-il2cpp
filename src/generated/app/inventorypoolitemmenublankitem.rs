@@ -2,292 +2,56 @@
 
 #[cfg(feature = "app-inventorypoolitemmenublankitem-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::{
-            basicitemmenuitem::{BasicItemMenuItem, IBasicItemMenuItem},
-            basicmenuitem::{BasicMenuItem, IBasicMenuItem},
-            inventorypoolitemmenuitem::{IInventoryPoolItemMenuItem, InventoryPoolItemMenuItem},
-        },
-        system::object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/inventorypoolitemmenublankitem/InventoryPoolItemMenuBlankItem.md"))]
-    #[::unity2::class(namespace = "App", name = "InventoryPoolItemMenuBlankItem")]
-    #[parent(crate::app::inventorypoolitemmenuitem::InventoryPoolItemMenuItem)]
-    pub struct InventoryPoolItemMenuBlankItem {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: basicitemmenuitem :: { BasicItemMenuItem , IBasicItemMenuItem }
+ ;
+ use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
+ ;
+ use crate :: app :: inventorypoolitemmenuitem :: { IInventoryPoolItemMenuItem , InventoryPoolItemMenuItem }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/inventorypoolitemmenublankitem/InventoryPoolItemMenuBlankItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "InventoryPoolItemMenuBlankItem")] # [parent (crate :: app :: inventorypoolitemmenuitem :: InventoryPoolItemMenuItem)] pub struct InventoryPoolItemMenuBlankItem {}
+
 }
 
 #[cfg(feature = "app-inventorypoolitemmenublankitem-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-inventorypoolitemmenublankitem")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __InventoryPoolItemMenuBlankItem_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InventoryPoolItemMenuBlankItem as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InventoryPoolItemMenuBlankItem as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: InventoryPoolItemMenuBlankItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(InventoryPoolItemMenuBlankItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_build_attribute {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InventoryPoolItemMenuBlankItem as ::unity2::ClassIdentity>::class(),
-                "BuildAttribute",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InventoryPoolItemMenuBlankItem as ::unity2::ClassIdentity>::NAME,
-                        "BuildAttribute",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn build_attribute(
-        this: InventoryPoolItemMenuBlankItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        let inner: extern "C" fn(InventoryPoolItemMenuBlankItem, ::unity2::OptionalMethod) -> crate::app::basicmenuitem::BasicMenuItem_Attribute =
-            ::core::mem::transmute(__lookup_build_attribute::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_a_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InventoryPoolItemMenuBlankItem as ::unity2::ClassIdentity>::class(),
-                "ACall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InventoryPoolItemMenuBlankItem as ::unity2::ClassIdentity>::NAME,
-                        "ACall",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn a_call(
-        this: InventoryPoolItemMenuBlankItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(InventoryPoolItemMenuBlankItem, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
-            ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_menu_item_kind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InventoryPoolItemMenuBlankItem as ::unity2::ClassIdentity>::class(),
-                "GetMenuItemKind",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InventoryPoolItemMenuBlankItem as ::unity2::ClassIdentity>::NAME,
-                        "GetMenuItemKind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_menu_item_kind(
-        this: InventoryPoolItemMenuBlankItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::inventorypoolitemmenuitem::InventoryPoolItemMenuItem_PoolItemKind {
-        let inner: extern "C" fn(
-            InventoryPoolItemMenuBlankItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::inventorypoolitemmenuitem::InventoryPoolItemMenuItem_PoolItemKind =
-            ::core::mem::transmute(__lookup_get_menu_item_kind::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_visible_item_icon_on_blank {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InventoryPoolItemMenuBlankItem as ::unity2::ClassIdentity>::class(),
-                "IsVisibleItemIconOnBlank",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InventoryPoolItemMenuBlankItem as ::unity2::ClassIdentity>::NAME,
-                        "IsVisibleItemIconOnBlank",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_visible_item_icon_on_blank(this: InventoryPoolItemMenuBlankItem, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(InventoryPoolItemMenuBlankItem, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_visible_item_icon_on_blank::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __InventoryPoolItemMenuBlankItem_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InventoryPoolItemMenuBlankItem as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InventoryPoolItemMenuBlankItem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : InventoryPoolItemMenuBlankItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (InventoryPoolItemMenuBlankItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_build_attribute { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InventoryPoolItemMenuBlankItem as :: unity2 :: ClassIdentity > :: class () , "BuildAttribute" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InventoryPoolItemMenuBlankItem as :: unity2 :: ClassIdentity > :: NAME , "BuildAttribute" , e) , } } } pub unsafe fn build_attribute (this : InventoryPoolItemMenuBlankItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { let inner : extern "C" fn (InventoryPoolItemMenuBlankItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute (__lookup_build_attribute :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_a_call { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InventoryPoolItemMenuBlankItem as :: unity2 :: ClassIdentity > :: class () , "ACall" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InventoryPoolItemMenuBlankItem as :: unity2 :: ClassIdentity > :: NAME , "ACall" , e) , } } } pub unsafe fn a_call (this : InventoryPoolItemMenuBlankItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result { let inner : extern "C" fn (InventoryPoolItemMenuBlankItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute (__lookup_a_call :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_menu_item_kind { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InventoryPoolItemMenuBlankItem as :: unity2 :: ClassIdentity > :: class () , "GetMenuItemKind" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InventoryPoolItemMenuBlankItem as :: unity2 :: ClassIdentity > :: NAME , "GetMenuItemKind" , e) , } } } pub unsafe fn get_menu_item_kind (this : InventoryPoolItemMenuBlankItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: inventorypoolitemmenuitem :: InventoryPoolItemMenuItem_PoolItemKind { let inner : extern "C" fn (InventoryPoolItemMenuBlankItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: inventorypoolitemmenuitem :: InventoryPoolItemMenuItem_PoolItemKind = :: core :: mem :: transmute (__lookup_get_menu_item_kind :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_visible_item_icon_on_blank { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InventoryPoolItemMenuBlankItem as :: unity2 :: ClassIdentity > :: class () , "IsVisibleItemIconOnBlank" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InventoryPoolItemMenuBlankItem as :: unity2 :: ClassIdentity > :: NAME , "IsVisibleItemIconOnBlank" , e) , } } } pub unsafe fn is_visible_item_icon_on_blank (this : InventoryPoolItemMenuBlankItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (InventoryPoolItemMenuBlankItem , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_visible_item_icon_on_blank :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-inventorypoolitemmenublankitem")]
-pub trait IInventoryPoolItemMenuBlankItemMethods: IInventoryPoolItemMenuBlankItem {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <InventoryPoolItemMenuBlankItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InventoryPoolItemMenuBlankItem_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`BuildAttribute()` overload"]
-    fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        unsafe {
-            let __receiver =
-                <InventoryPoolItemMenuBlankItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InventoryPoolItemMenuBlankItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ACall()` overload"]
-    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver =
-                <InventoryPoolItemMenuBlankItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InventoryPoolItemMenuBlankItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetMenuItemKind()` overload"]
-    fn get_menu_item_kind(self) -> crate::app::inventorypoolitemmenuitem::InventoryPoolItemMenuItem_PoolItemKind {
-        unsafe {
-            let __receiver =
-                <InventoryPoolItemMenuBlankItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InventoryPoolItemMenuBlankItem_unity2_raw::get_menu_item_kind(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsVisibleItemIconOnBlank()` overload"]
-    fn is_visible_item_icon_on_blank(self) -> bool {
-        unsafe {
-            let __receiver =
-                <InventoryPoolItemMenuBlankItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InventoryPoolItemMenuBlankItem_unity2_raw::is_visible_item_icon_on_blank(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IInventoryPoolItemMenuBlankItemMethods : IInventoryPoolItemMenuBlankItem { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < InventoryPoolItemMenuBlankItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __InventoryPoolItemMenuBlankItem_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < InventoryPoolItemMenuBlankItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __InventoryPoolItemMenuBlankItem_unity2_raw :: build_attribute (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < InventoryPoolItemMenuBlankItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __InventoryPoolItemMenuBlankItem_unity2_raw :: a_call (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetMenuItemKind()` overload"] fn get_menu_item_kind (self ,) -> crate :: app :: inventorypoolitemmenuitem :: InventoryPoolItemMenuItem_PoolItemKind { unsafe { let __receiver = < InventoryPoolItemMenuBlankItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __InventoryPoolItemMenuBlankItem_unity2_raw :: get_menu_item_kind (__receiver , :: core :: option :: Option :: None) } } # [doc = "`IsVisibleItemIconOnBlank()` overload"] fn is_visible_item_icon_on_blank (self ,) -> bool { unsafe { let __receiver = < InventoryPoolItemMenuBlankItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __InventoryPoolItemMenuBlankItem_unity2_raw :: is_visible_item_icon_on_blank (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-inventorypoolitemmenublankitem")]
-impl<__T: IInventoryPoolItemMenuBlankItem> IInventoryPoolItemMenuBlankItemMethods for __T {}
+impl < __T : IInventoryPoolItemMenuBlankItem > IInventoryPoolItemMenuBlankItemMethods for __T { }
+
+#[cfg(feature = "app-inventorypoolitemmenublankitem")]
+impl InventoryPoolItemMenuBlankItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InventoryPoolItemMenuBlankItem_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InventoryPoolItemMenuBlankItem_unity2_raw :: __lookup_build_attribute :: get_method_info () } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InventoryPoolItemMenuBlankItem_unity2_raw :: __lookup_a_call :: get_method_info () } pub fn get_menu_item_kind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InventoryPoolItemMenuBlankItem_unity2_raw :: __lookup_get_menu_item_kind :: get_method_info () } pub fn is_visible_item_icon_on_blank_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InventoryPoolItemMenuBlankItem_unity2_raw :: __lookup_is_visible_item_icon_on_blank :: get_method_info () } }
 
 #[cfg(feature = "app-inventorypoolitemmenublankitem")]
 impl InventoryPoolItemMenuBlankItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(InventoryPoolItemMenuBlankItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IInventoryPoolItemMenuBlankItemMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (InventoryPoolItemMenuBlankItem) , :: core :: stringify ! (new) ,)) ; < Self as IInventoryPoolItemMenuBlankItemMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-inventorypoolitemmenublankitem")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IInventoryPoolItemMenuBlankItem, IInventoryPoolItemMenuBlankItemMethods, InventoryPoolItemMenuBlankItem};
-    #[cfg(feature = "app-basicitemmenuitem")]
-    pub use crate::app::basicitemmenuitem::IBasicItemMenuItemMethods;
-    #[cfg(feature = "app-basicmenuitem")]
-    pub use crate::app::basicmenuitem::IBasicMenuItemMethods;
-    #[cfg(feature = "app-inventorypoolitemmenuitem")]
-    pub use crate::app::inventorypoolitemmenuitem::IInventoryPoolItemMenuItemMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::{
-        app::{
-            basicitemmenuitem::IBasicItemMenuItem,
-            basicmenuitem::IBasicMenuItem,
-            inventorypoolitemmenuitem::{IInventoryPoolItemMenuItem, InventoryPoolItemMenuItem},
-        },
-        system::object::IObject,
-    };
+    pub use super::InventoryPoolItemMenuBlankItem;
+    pub use super::IInventoryPoolItemMenuBlankItem;
+    pub use super::IInventoryPoolItemMenuBlankItemMethods;
+    pub use crate::app::basicitemmenuitem::IBasicItemMenuItem;
+    pub use crate::app::basicmenuitem::IBasicMenuItem;
+    pub use crate::app::inventorypoolitemmenuitem::IInventoryPoolItemMenuItem;
+    pub use crate::app::inventorypoolitemmenuitem::InventoryPoolItemMenuItem;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "app-basicitemmenuitem")] pub use crate::app::basicitemmenuitem::IBasicItemMenuItemMethods;
+    #[cfg(feature = "app-basicmenuitem")] pub use crate::app::basicmenuitem::IBasicMenuItemMethods;
+    #[cfg(feature = "app-inventorypoolitemmenuitem")] pub use crate::app::inventorypoolitemmenuitem::IInventoryPoolItemMenuItemMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

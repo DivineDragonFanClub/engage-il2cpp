@@ -2,24 +2,21 @@
 
 #[cfg(feature = "moon_sharp-interpreter-core_lib-io-fileuserdata-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        moon_sharp::interpreter::{
-            core_lib::io::{
-                fileuserdatabase::{FileUserDataBase, IFileUserDataBase},
-                streamfileuserdatabase::{IStreamFileUserDataBase, StreamFileUserDataBase},
-            },
-            refidobject::{IRefIdObject, RefIdObject},
-        },
-        system::object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/core_lib/io/fileuserdata/FileUserData.md"))]
-    #[::unity2::class(namespace = "MoonSharp.Interpreter.CoreLib.IO", name = "FileUserData")]
-    #[parent(crate::moon_sharp::interpreter::core_lib::io::streamfileuserdatabase::StreamFileUserDataBase)]
-    pub struct FileUserData {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: moon_sharp :: interpreter :: core_lib :: io :: fileuserdatabase :: { FileUserDataBase , IFileUserDataBase }
+ ;
+ use crate :: moon_sharp :: interpreter :: core_lib :: io :: streamfileuserdatabase :: { IStreamFileUserDataBase , StreamFileUserDataBase }
+ ;
+ use crate :: moon_sharp :: interpreter :: refidobject :: { IRefIdObject , RefIdObject }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/core_lib/io/fileuserdata/FileUserData.md"))] # [:: unity2 :: class (namespace = "MoonSharp.Interpreter.CoreLib.IO" , name = "FileUserData")] # [parent (crate :: moon_sharp :: interpreter :: core_lib :: io :: streamfileuserdatabase :: StreamFileUserDataBase)] pub struct FileUserData {}
+
 }
 
 #[cfg(feature = "moon_sharp-interpreter-core_lib-io-fileuserdata-types")]
@@ -28,20 +25,14 @@ pub use __types::*;
 #[cfg(feature = "moon_sharp-interpreter-core_lib-io-fileuserdata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{FileUserData, IFileUserData};
-    #[cfg(feature = "moon_sharp-interpreter-core_lib-io-fileuserdatabase")]
-    pub use crate::moon_sharp::interpreter::core_lib::io::fileuserdatabase::IFileUserDataBaseMethods;
-    #[cfg(feature = "moon_sharp-interpreter-core_lib-io-streamfileuserdatabase")]
-    pub use crate::moon_sharp::interpreter::core_lib::io::streamfileuserdatabase::IStreamFileUserDataBaseMethods;
-    #[cfg(feature = "moon_sharp-interpreter-refidobject")]
-    pub use crate::moon_sharp::interpreter::refidobject::IRefIdObjectMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::{
-        moon_sharp::interpreter::{
-            core_lib::io::{fileuserdatabase::IFileUserDataBase, streamfileuserdatabase::IStreamFileUserDataBase},
-            refidobject::IRefIdObject,
-        },
-        system::object::IObject,
-    };
+    pub use super::FileUserData;
+    pub use super::IFileUserData;
+    pub use crate::moon_sharp::interpreter::core_lib::io::fileuserdatabase::IFileUserDataBase;
+    pub use crate::moon_sharp::interpreter::core_lib::io::streamfileuserdatabase::IStreamFileUserDataBase;
+    pub use crate::moon_sharp::interpreter::refidobject::IRefIdObject;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "moon_sharp-interpreter-core_lib-io-fileuserdatabase")] pub use crate::moon_sharp::interpreter::core_lib::io::fileuserdatabase::IFileUserDataBaseMethods;
+    #[cfg(feature = "moon_sharp-interpreter-core_lib-io-streamfileuserdatabase")] pub use crate::moon_sharp::interpreter::core_lib::io::streamfileuserdatabase::IStreamFileUserDataBaseMethods;
+    #[cfg(feature = "moon_sharp-interpreter-refidobject")] pub use crate::moon_sharp::interpreter::refidobject::IRefIdObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

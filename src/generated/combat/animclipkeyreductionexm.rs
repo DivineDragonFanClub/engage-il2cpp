@@ -2,276 +2,34 @@
 
 #[cfg(feature = "combat-animclipkeyreductionexm-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/animclipkeyreductionexm/AnimClipKeyReductionExM.md"))]
-    #[::unity2::class(namespace = "Combat", name = "AnimClipKeyReductionExM")]
-    #[parent(crate::system::object::Object)]
-    pub struct AnimClipKeyReductionExM {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/animclipkeyreductionexm/AnimClipKeyReductionExM.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "AnimClipKeyReductionExM")] # [parent (crate :: system :: object :: Object)] pub struct AnimClipKeyReductionExM {}
+
 }
 
 #[cfg(feature = "combat-animclipkeyreductionexm-types")]
 pub use __types::*;
 
 #[cfg(feature = "combat-animclipkeyreductionexm")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AnimClipKeyReductionExM_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_value_from_time {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::keyframe::Keyframe as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::keyframe::Keyframe as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AnimClipKeyReductionExM as ::unity2::ClassIdentity>::class(),
-                "GetValueFromTime",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AnimClipKeyReductionExM as ::unity2::ClassIdentity>::NAME,
-                        "GetValueFromTime",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_value_from_time(
-        key1: crate::unity_engine::keyframe::Keyframe,
-        key2: crate::unity_engine::keyframe::Keyframe,
-        time: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
-        let inner: extern "C" fn(
-            crate::unity_engine::keyframe::Keyframe,
-            crate::unity_engine::keyframe::Keyframe,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> f32 = ::core::mem::transmute(__lookup_get_value_from_time::get_method_info().method_ptr);
-        inner(key1, key2, time, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_interpolation_value {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::keyframe::Keyframe as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::keyframe::Keyframe as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::keyframe::Keyframe as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AnimClipKeyReductionExM as ::unity2::ClassIdentity>::class(),
-                "IsInterpolationValue",
-                4,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AnimClipKeyReductionExM as ::unity2::ClassIdentity>::NAME,
-                        "IsInterpolationValue",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_interpolation_value(
-        key1: crate::unity_engine::keyframe::Keyframe,
-        key2: crate::unity_engine::keyframe::Keyframe,
-        comp: crate::unity_engine::keyframe::Keyframe,
-        eps: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            crate::unity_engine::keyframe::Keyframe,
-            crate::unity_engine::keyframe::Keyframe,
-            crate::unity_engine::keyframe::Keyframe,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(__lookup_is_interpolation_value::get_method_info().method_ptr);
-        inner(key1, key2, comp, eps, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_delete_key_index {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Array<crate::unity_engine::keyframe::Keyframe> as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AnimClipKeyReductionExM as ::unity2::ClassIdentity>::class(),
-                "GetDeleteKeyIndex",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AnimClipKeyReductionExM as ::unity2::ClassIdentity>::NAME,
-                        "GetDeleteKeyIndex",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_delete_key_index(
-        keys: ::unity2::Array<crate::unity_engine::keyframe::Keyframe>,
-        eps: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<i32> {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::unity_engine::keyframe::Keyframe>,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<i32> =
-            ::core::mem::transmute(__lookup_get_delete_key_index::get_method_info().method_ptr);
-        inner(keys, eps, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_key_reduction {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::animationcurve::AnimationCurve as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AnimClipKeyReductionExM as ::unity2::ClassIdentity>::class(),
-                "KeyReduction",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AnimClipKeyReductionExM as ::unity2::ClassIdentity>::NAME,
-                        "KeyReduction",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn key_reduction(
-        in_curve: crate::unity_engine::animationcurve::AnimationCurve,
-        eps: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::unity_engine::animationcurve::AnimationCurve, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_key_reduction::get_method_info().method_ptr);
-        inner(in_curve, eps, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __AnimClipKeyReductionExM_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_value_from_time { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: keyframe :: Keyframe as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: keyframe :: Keyframe as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AnimClipKeyReductionExM as :: unity2 :: ClassIdentity > :: class () , "GetValueFromTime" , 3 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AnimClipKeyReductionExM as :: unity2 :: ClassIdentity > :: NAME , "GetValueFromTime" , e) , } } } pub unsafe fn get_value_from_time (key1 : crate :: unity_engine :: keyframe :: Keyframe , key2 : crate :: unity_engine :: keyframe :: Keyframe , time : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (crate :: unity_engine :: keyframe :: Keyframe , crate :: unity_engine :: keyframe :: Keyframe , f32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_get_value_from_time :: get_method_info () . method_ptr ,) ; inner (key1 , key2 , time , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_interpolation_value { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: keyframe :: Keyframe as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: keyframe :: Keyframe as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: keyframe :: Keyframe as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AnimClipKeyReductionExM as :: unity2 :: ClassIdentity > :: class () , "IsInterpolationValue" , 4 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AnimClipKeyReductionExM as :: unity2 :: ClassIdentity > :: NAME , "IsInterpolationValue" , e) , } } } pub unsafe fn is_interpolation_value (key1 : crate :: unity_engine :: keyframe :: Keyframe , key2 : crate :: unity_engine :: keyframe :: Keyframe , comp : crate :: unity_engine :: keyframe :: Keyframe , eps : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (crate :: unity_engine :: keyframe :: Keyframe , crate :: unity_engine :: keyframe :: Keyframe , crate :: unity_engine :: keyframe :: Keyframe , f32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_interpolation_value :: get_method_info () . method_ptr ,) ; inner (key1 , key2 , comp , eps , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_delete_key_index { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: unity_engine :: keyframe :: Keyframe > as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AnimClipKeyReductionExM as :: unity2 :: ClassIdentity > :: class () , "GetDeleteKeyIndex" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AnimClipKeyReductionExM as :: unity2 :: ClassIdentity > :: NAME , "GetDeleteKeyIndex" , e) , } } } pub unsafe fn get_delete_key_index (keys : :: unity2 :: Array < crate :: unity_engine :: keyframe :: Keyframe > , eps : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < i32 > { let inner : extern "C" fn (:: unity2 :: Array < crate :: unity_engine :: keyframe :: Keyframe > , f32 , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < i32 > = :: core :: mem :: transmute (__lookup_get_delete_key_index :: get_method_info () . method_ptr ,) ; inner (keys , eps , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_key_reduction { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: animationcurve :: AnimationCurve as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AnimClipKeyReductionExM as :: unity2 :: ClassIdentity > :: class () , "KeyReduction" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AnimClipKeyReductionExM as :: unity2 :: ClassIdentity > :: NAME , "KeyReduction" , e) , } } } pub unsafe fn key_reduction (in_curve : crate :: unity_engine :: animationcurve :: AnimationCurve , eps : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: unity_engine :: animationcurve :: AnimationCurve , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_key_reduction :: get_method_info () . method_ptr ,) ; inner (in_curve , eps , __unity2_method_info) } }
 
 #[cfg(feature = "combat-animclipkeyreductionexm")]
-impl AnimClipKeyReductionExM {
-    #[doc = "`GetValueFromTime(crate::unity_engine::keyframe::Keyframe, crate::unity_engine::keyframe::Keyframe, f32)` overload"]
-    pub fn get_value_from_time(
-        key1: impl ::core::convert::Into<crate::unity_engine::keyframe::Keyframe>,
-        key2: impl ::core::convert::Into<crate::unity_engine::keyframe::Keyframe>,
-        time: impl ::core::convert::Into<f32>,
-    ) -> f32 {
-        unsafe {
-            __AnimClipKeyReductionExM_unity2_raw::get_value_from_time(
-                ::core::convert::Into::into(key1),
-                ::core::convert::Into::into(key2),
-                ::core::convert::Into::into(time),
-                ::core::option::Option::None,
-            )
-        }
-    }
+impl AnimClipKeyReductionExM { # [doc = "`GetValueFromTime(crate::unity_engine::keyframe::Keyframe, crate::unity_engine::keyframe::Keyframe, f32)` overload"] pub fn get_value_from_time (key1 : impl :: core :: convert :: Into < crate :: unity_engine :: keyframe :: Keyframe > , key2 : impl :: core :: convert :: Into < crate :: unity_engine :: keyframe :: Keyframe > , time : impl :: core :: convert :: Into < f32 >) -> f32 { unsafe { __AnimClipKeyReductionExM_unity2_raw :: get_value_from_time (:: core :: convert :: Into :: into (key1) , :: core :: convert :: Into :: into (key2) , :: core :: convert :: Into :: into (time) , :: core :: option :: Option :: None) } } # [doc = "`IsInterpolationValue(crate::unity_engine::keyframe::Keyframe, crate::unity_engine::keyframe::Keyframe, crate::unity_engine::keyframe::Keyframe, f32)` overload"] pub fn is_interpolation_value (key1 : impl :: core :: convert :: Into < crate :: unity_engine :: keyframe :: Keyframe > , key2 : impl :: core :: convert :: Into < crate :: unity_engine :: keyframe :: Keyframe > , comp : impl :: core :: convert :: Into < crate :: unity_engine :: keyframe :: Keyframe > , eps : impl :: core :: convert :: Into < f32 >) -> bool { unsafe { __AnimClipKeyReductionExM_unity2_raw :: is_interpolation_value (:: core :: convert :: Into :: into (key1) , :: core :: convert :: Into :: into (key2) , :: core :: convert :: Into :: into (comp) , :: core :: convert :: Into :: into (eps) , :: core :: option :: Option :: None) } } # [doc = "`GetDeleteKeyIndex(::unity2::Array<crate::unity_engine::keyframe::Keyframe>, f32)` overload"] pub fn get_delete_key_index (keys : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: unity_engine :: keyframe :: Keyframe > > , eps : impl :: core :: convert :: Into < f32 >) -> crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < i32 > { unsafe { __AnimClipKeyReductionExM_unity2_raw :: get_delete_key_index (:: core :: convert :: Into :: into (keys) , :: core :: convert :: Into :: into (eps) , :: core :: option :: Option :: None) } } # [doc = "`KeyReduction(crate::unity_engine::animationcurve::AnimationCurve, f32)` overload"] pub fn key_reduction (in_curve : impl :: core :: convert :: Into < crate :: unity_engine :: animationcurve :: AnimationCurve > , eps : impl :: core :: convert :: Into < f32 >) -> () { unsafe { __AnimClipKeyReductionExM_unity2_raw :: key_reduction (:: core :: convert :: Into :: into (in_curve) , :: core :: convert :: Into :: into (eps) , :: core :: option :: Option :: None) } } }
 
-    #[doc = "`IsInterpolationValue(crate::unity_engine::keyframe::Keyframe, crate::unity_engine::keyframe::Keyframe, crate::unity_engine::keyframe::Keyframe, f32)` overload"]
-    pub fn is_interpolation_value(
-        key1: impl ::core::convert::Into<crate::unity_engine::keyframe::Keyframe>,
-        key2: impl ::core::convert::Into<crate::unity_engine::keyframe::Keyframe>,
-        comp: impl ::core::convert::Into<crate::unity_engine::keyframe::Keyframe>,
-        eps: impl ::core::convert::Into<f32>,
-    ) -> bool {
-        unsafe {
-            __AnimClipKeyReductionExM_unity2_raw::is_interpolation_value(
-                ::core::convert::Into::into(key1),
-                ::core::convert::Into::into(key2),
-                ::core::convert::Into::into(comp),
-                ::core::convert::Into::into(eps),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`GetDeleteKeyIndex(::unity2::Array<crate::unity_engine::keyframe::Keyframe>, f32)` overload"]
-    pub fn get_delete_key_index(
-        keys: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::keyframe::Keyframe>>,
-        eps: impl ::core::convert::Into<f32>,
-    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<i32> {
-        unsafe {
-            __AnimClipKeyReductionExM_unity2_raw::get_delete_key_index(
-                ::core::convert::Into::into(keys),
-                ::core::convert::Into::into(eps),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`KeyReduction(crate::unity_engine::animationcurve::AnimationCurve, f32)` overload"]
-    pub fn key_reduction(
-        in_curve: impl ::core::convert::Into<crate::unity_engine::animationcurve::AnimationCurve>,
-        eps: impl ::core::convert::Into<f32>,
-    ) -> () {
-        unsafe {
-            __AnimClipKeyReductionExM_unity2_raw::key_reduction(
-                ::core::convert::Into::into(in_curve),
-                ::core::convert::Into::into(eps),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+#[cfg(feature = "combat-animclipkeyreductionexm")]
+impl AnimClipKeyReductionExM { pub fn get_value_from_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AnimClipKeyReductionExM_unity2_raw :: __lookup_get_value_from_time :: get_method_info () } pub fn is_interpolation_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AnimClipKeyReductionExM_unity2_raw :: __lookup_is_interpolation_value :: get_method_info () } pub fn get_delete_key_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AnimClipKeyReductionExM_unity2_raw :: __lookup_get_delete_key_index :: get_method_info () } pub fn key_reduction_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AnimClipKeyReductionExM_unity2_raw :: __lookup_key_reduction :: get_method_info () } }
 
 #[cfg(feature = "combat-animclipkeyreductionexm")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{AnimClipKeyReductionExM, IAnimClipKeyReductionExM};
+    pub use super::AnimClipKeyReductionExM;
+    pub use super::IAnimClipKeyReductionExM;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

@@ -2,673 +2,72 @@
 
 #[cfg(feature = "app-mappos-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        valuetype::{IValueType, ValueType},
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mappos/MapPos.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct MapPos {
-        pub x: i32,
-        pub z: i32,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
 
-    impl ::unity2::ClassIdentity for MapPos {
-        const NAME: &'static str = "MapPos";
-        const NAMESPACE: &'static str = "App";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mappos/MapPos.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct MapPos {
+    pub x: i32,
+    pub z: i32,
+}
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+
+impl ::unity2::ClassIdentity for MapPos {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapPos";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for MapPos {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl ::unity2::IlType for MapPos {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
+
+}
+
 }
 
 #[cfg(feature = "app-mappos-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-mappos")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapPos_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::mappos::MapPos as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<MapPos as ::unity2::ClassIdentity>::class(), ".ctor", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <MapPos as ::unity2::ClassIdentity>::NAME, ".ctor", e),
-            }
-        }
-    }
-    pub unsafe fn ctor(this: MapPos, other: crate::app::mappos::MapPos, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapPos, crate::app::mappos::MapPos, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, other, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<MapPos as ::unity2::ClassIdentity>::class(), ".ctor", 2, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <MapPos as ::unity2::ClassIdentity>::NAME, ".ctor", e),
-            }
-        }
-    }
-    pub unsafe fn ctor_2(this: MapPos, x: i32, z: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapPos, i32, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
-        inner(this, x, z, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_dispose {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<MapPos as ::unity2::ClassIdentity>::class(), "Dispose", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapPos as ::unity2::ClassIdentity>::NAME,
-                        "Dispose",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn dispose(this: MapPos, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapPos, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_dispose::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::mappos::MapPos as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<MapPos as ::unity2::ClassIdentity>::class(), "Add", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <MapPos as ::unity2::ClassIdentity>::NAME, "Add", e),
-            }
-        }
-    }
-    pub unsafe fn add(this: MapPos, other: crate::app::mappos::MapPos, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapPos, crate::app::mappos::MapPos, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add::get_method_info().method_ptr);
-        inner(this, other, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<MapPos as ::unity2::ClassIdentity>::class(), "Add", 2, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <MapPos as ::unity2::ClassIdentity>::NAME, "Add", e),
-            }
-        }
-    }
-    pub unsafe fn add_2(this: MapPos, x: i32, z: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapPos, i32, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add_2::get_method_info().method_ptr);
-        inner(this, x, z, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_x {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<MapPos as ::unity2::ClassIdentity>::class(), "AddX", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <MapPos as ::unity2::ClassIdentity>::NAME, "AddX", e),
-            }
-        }
-    }
-    pub unsafe fn add_x(this: MapPos, x: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapPos, i32, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_add_x::get_method_info().method_ptr);
-        inner(this, x, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_z {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<MapPos as ::unity2::ClassIdentity>::class(), "AddZ", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <MapPos as ::unity2::ClassIdentity>::NAME, "AddZ", e),
-            }
-        }
-    }
-    pub unsafe fn add_z(this: MapPos, z: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapPos, i32, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_add_z::get_method_info().method_ptr);
-        inner(this, z, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_sub {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::mappos::MapPos as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<MapPos as ::unity2::ClassIdentity>::class(), "Sub", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <MapPos as ::unity2::ClassIdentity>::NAME, "Sub", e),
-            }
-        }
-    }
-    pub unsafe fn sub(this: MapPos, other: crate::app::mappos::MapPos, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapPos, crate::app::mappos::MapPos, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_sub::get_method_info().method_ptr);
-        inner(this, other, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_sub_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<MapPos as ::unity2::ClassIdentity>::class(), "Sub", 2, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <MapPos as ::unity2::ClassIdentity>::NAME, "Sub", e),
-            }
-        }
-    }
-    pub unsafe fn sub_2(this: MapPos, x: i32, z: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapPos, i32, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_sub_2::get_method_info().method_ptr);
-        inner(this, x, z, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_sub_x {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<MapPos as ::unity2::ClassIdentity>::class(), "SubX", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <MapPos as ::unity2::ClassIdentity>::NAME, "SubX", e),
-            }
-        }
-    }
-    pub unsafe fn sub_x(this: MapPos, x: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapPos, i32, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_sub_x::get_method_info().method_ptr);
-        inner(this, x, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_sub_z {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<MapPos as ::unity2::ClassIdentity>::class(), "SubZ", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <MapPos as ::unity2::ClassIdentity>::NAME, "SubZ", e),
-            }
-        }
-    }
-    pub unsafe fn sub_z(this: MapPos, z: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapPos, i32, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_sub_z::get_method_info().method_ptr);
-        inner(this, z, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_op_addition {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::mappos::MapPos as ::unity2::IlType>::il_type(),
-                <crate::app::mappos::MapPos as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<MapPos as ::unity2::ClassIdentity>::class(), "op_Addition", 2, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapPos as ::unity2::ClassIdentity>::NAME,
-                        "op_Addition",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn op_addition(
-        lhs: crate::app::mappos::MapPos,
-        rhs: crate::app::mappos::MapPos,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::mappos::MapPos {
-        let inner: extern "C" fn(crate::app::mappos::MapPos, crate::app::mappos::MapPos, ::unity2::OptionalMethod) -> crate::app::mappos::MapPos =
-            ::core::mem::transmute(__lookup_op_addition::get_method_info().method_ptr);
-        inner(lhs, rhs, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_op_subtraction {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::mappos::MapPos as ::unity2::IlType>::il_type(),
-                <crate::app::mappos::MapPos as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapPos as ::unity2::ClassIdentity>::class(),
-                "op_Subtraction",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapPos as ::unity2::ClassIdentity>::NAME,
-                        "op_Subtraction",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn op_subtraction(
-        lhs: crate::app::mappos::MapPos,
-        rhs: crate::app::mappos::MapPos,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::mappos::MapPos {
-        let inner: extern "C" fn(crate::app::mappos::MapPos, crate::app::mappos::MapPos, ::unity2::OptionalMethod) -> crate::app::mappos::MapPos =
-            ::core::mem::transmute(__lookup_op_subtraction::get_method_info().method_ptr);
-        inner(lhs, rhs, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_op_equality {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::mappos::MapPos as ::unity2::IlType>::il_type(),
-                <crate::app::mappos::MapPos as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<MapPos as ::unity2::ClassIdentity>::class(), "op_Equality", 2, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapPos as ::unity2::ClassIdentity>::NAME,
-                        "op_Equality",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn op_equality(
-        lhs: crate::app::mappos::MapPos,
-        rhs: crate::app::mappos::MapPos,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(crate::app::mappos::MapPos, crate::app::mappos::MapPos, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_op_equality::get_method_info().method_ptr);
-        inner(lhs, rhs, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_op_inequality {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::mappos::MapPos as ::unity2::IlType>::il_type(),
-                <crate::app::mappos::MapPos as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<MapPos as ::unity2::ClassIdentity>::class(), "op_Inequality", 2, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapPos as ::unity2::ClassIdentity>::NAME,
-                        "op_Inequality",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn op_inequality(
-        lhs: crate::app::mappos::MapPos,
-        rhs: crate::app::mappos::MapPos,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(crate::app::mappos::MapPos, crate::app::mappos::MapPos, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_op_inequality::get_method_info().method_ptr);
-        inner(lhs, rhs, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_equals {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<MapPos as ::unity2::ClassIdentity>::class(), "Equals", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <MapPos as ::unity2::ClassIdentity>::NAME, "Equals", e),
-            }
-        }
-    }
-    pub unsafe fn equals(this: MapPos, rhs_obj: crate::system::object::Object, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(MapPos, crate::system::object::Object, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_equals::get_method_info().method_ptr);
-        inner(this, rhs_obj, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_equals_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::mappos::MapPos as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<MapPos as ::unity2::ClassIdentity>::class(), "Equals", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <MapPos as ::unity2::ClassIdentity>::NAME, "Equals", e),
-            }
-        }
-    }
-    pub unsafe fn equals_2(this: MapPos, rhs: crate::app::mappos::MapPos, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(MapPos, crate::app::mappos::MapPos, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_equals_2::get_method_info().method_ptr);
-        inner(this, rhs, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_hash_code {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<MapPos as ::unity2::ClassIdentity>::class(), "GetHashCode", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapPos as ::unity2::ClassIdentity>::NAME,
-                        "GetHashCode",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_hash_code(this: MapPos, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(MapPos, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_hash_code::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_to_string {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<MapPos as ::unity2::ClassIdentity>::class(), "ToString", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapPos as ::unity2::ClassIdentity>::NAME,
-                        "ToString",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn to_string(this: MapPos, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(MapPos, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_to_string::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MapPos_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: mappos :: MapPos as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapPos as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapPos as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : MapPos , other : crate :: app :: mappos :: MapPos , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapPos , crate :: app :: mappos :: MapPos , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , other , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapPos as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapPos as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor_2 (this : MapPos , x : i32 , z : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapPos , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor_2 :: get_method_info () . method_ptr ,) ; inner (this , x , z , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_dispose { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapPos as :: unity2 :: ClassIdentity > :: class () , "Dispose" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapPos as :: unity2 :: ClassIdentity > :: NAME , "Dispose" , e) , } } } pub unsafe fn dispose (this : MapPos , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapPos , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_dispose :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: mappos :: MapPos as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapPos as :: unity2 :: ClassIdentity > :: class () , "Add" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapPos as :: unity2 :: ClassIdentity > :: NAME , "Add" , e) , } } } pub unsafe fn add (this : MapPos , other : crate :: app :: mappos :: MapPos , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapPos , crate :: app :: mappos :: MapPos , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add :: get_method_info () . method_ptr ,) ; inner (this , other , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapPos as :: unity2 :: ClassIdentity > :: class () , "Add" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapPos as :: unity2 :: ClassIdentity > :: NAME , "Add" , e) , } } } pub unsafe fn add_2 (this : MapPos , x : i32 , z : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapPos , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_2 :: get_method_info () . method_ptr ,) ; inner (this , x , z , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_x { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapPos as :: unity2 :: ClassIdentity > :: class () , "AddX" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapPos as :: unity2 :: ClassIdentity > :: NAME , "AddX" , e) , } } } pub unsafe fn add_x (this : MapPos , x : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapPos , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_x :: get_method_info () . method_ptr ,) ; inner (this , x , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_z { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapPos as :: unity2 :: ClassIdentity > :: class () , "AddZ" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapPos as :: unity2 :: ClassIdentity > :: NAME , "AddZ" , e) , } } } pub unsafe fn add_z (this : MapPos , z : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapPos , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_z :: get_method_info () . method_ptr ,) ; inner (this , z , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_sub { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: mappos :: MapPos as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapPos as :: unity2 :: ClassIdentity > :: class () , "Sub" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapPos as :: unity2 :: ClassIdentity > :: NAME , "Sub" , e) , } } } pub unsafe fn sub (this : MapPos , other : crate :: app :: mappos :: MapPos , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapPos , crate :: app :: mappos :: MapPos , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_sub :: get_method_info () . method_ptr ,) ; inner (this , other , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_sub_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapPos as :: unity2 :: ClassIdentity > :: class () , "Sub" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapPos as :: unity2 :: ClassIdentity > :: NAME , "Sub" , e) , } } } pub unsafe fn sub_2 (this : MapPos , x : i32 , z : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapPos , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_sub_2 :: get_method_info () . method_ptr ,) ; inner (this , x , z , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_sub_x { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapPos as :: unity2 :: ClassIdentity > :: class () , "SubX" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapPos as :: unity2 :: ClassIdentity > :: NAME , "SubX" , e) , } } } pub unsafe fn sub_x (this : MapPos , x : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapPos , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_sub_x :: get_method_info () . method_ptr ,) ; inner (this , x , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_sub_z { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapPos as :: unity2 :: ClassIdentity > :: class () , "SubZ" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapPos as :: unity2 :: ClassIdentity > :: NAME , "SubZ" , e) , } } } pub unsafe fn sub_z (this : MapPos , z : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapPos , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_sub_z :: get_method_info () . method_ptr ,) ; inner (this , z , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_op_addition { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: mappos :: MapPos as :: unity2 :: IlType > :: il_type () , < crate :: app :: mappos :: MapPos as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapPos as :: unity2 :: ClassIdentity > :: class () , "op_Addition" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapPos as :: unity2 :: ClassIdentity > :: NAME , "op_Addition" , e) , } } } pub unsafe fn op_addition (lhs : crate :: app :: mappos :: MapPos , rhs : crate :: app :: mappos :: MapPos , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: mappos :: MapPos { let inner : extern "C" fn (crate :: app :: mappos :: MapPos , crate :: app :: mappos :: MapPos , :: unity2 :: OptionalMethod ,) -> crate :: app :: mappos :: MapPos = :: core :: mem :: transmute (__lookup_op_addition :: get_method_info () . method_ptr ,) ; inner (lhs , rhs , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_op_subtraction { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: mappos :: MapPos as :: unity2 :: IlType > :: il_type () , < crate :: app :: mappos :: MapPos as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapPos as :: unity2 :: ClassIdentity > :: class () , "op_Subtraction" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapPos as :: unity2 :: ClassIdentity > :: NAME , "op_Subtraction" , e) , } } } pub unsafe fn op_subtraction (lhs : crate :: app :: mappos :: MapPos , rhs : crate :: app :: mappos :: MapPos , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: mappos :: MapPos { let inner : extern "C" fn (crate :: app :: mappos :: MapPos , crate :: app :: mappos :: MapPos , :: unity2 :: OptionalMethod ,) -> crate :: app :: mappos :: MapPos = :: core :: mem :: transmute (__lookup_op_subtraction :: get_method_info () . method_ptr ,) ; inner (lhs , rhs , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_op_equality { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: mappos :: MapPos as :: unity2 :: IlType > :: il_type () , < crate :: app :: mappos :: MapPos as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapPos as :: unity2 :: ClassIdentity > :: class () , "op_Equality" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapPos as :: unity2 :: ClassIdentity > :: NAME , "op_Equality" , e) , } } } pub unsafe fn op_equality (lhs : crate :: app :: mappos :: MapPos , rhs : crate :: app :: mappos :: MapPos , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (crate :: app :: mappos :: MapPos , crate :: app :: mappos :: MapPos , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_op_equality :: get_method_info () . method_ptr ,) ; inner (lhs , rhs , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_op_inequality { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: mappos :: MapPos as :: unity2 :: IlType > :: il_type () , < crate :: app :: mappos :: MapPos as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapPos as :: unity2 :: ClassIdentity > :: class () , "op_Inequality" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapPos as :: unity2 :: ClassIdentity > :: NAME , "op_Inequality" , e) , } } } pub unsafe fn op_inequality (lhs : crate :: app :: mappos :: MapPos , rhs : crate :: app :: mappos :: MapPos , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (crate :: app :: mappos :: MapPos , crate :: app :: mappos :: MapPos , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_op_inequality :: get_method_info () . method_ptr ,) ; inner (lhs , rhs , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_equals { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapPos as :: unity2 :: ClassIdentity > :: class () , "Equals" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapPos as :: unity2 :: ClassIdentity > :: NAME , "Equals" , e) , } } } pub unsafe fn equals (this : MapPos , rhs_obj : crate :: system :: object :: Object , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (MapPos , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_equals :: get_method_info () . method_ptr ,) ; inner (this , rhs_obj , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_equals_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: mappos :: MapPos as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapPos as :: unity2 :: ClassIdentity > :: class () , "Equals" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapPos as :: unity2 :: ClassIdentity > :: NAME , "Equals" , e) , } } } pub unsafe fn equals_2 (this : MapPos , rhs : crate :: app :: mappos :: MapPos , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (MapPos , crate :: app :: mappos :: MapPos , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_equals_2 :: get_method_info () . method_ptr ,) ; inner (this , rhs , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_hash_code { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapPos as :: unity2 :: ClassIdentity > :: class () , "GetHashCode" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapPos as :: unity2 :: ClassIdentity > :: NAME , "GetHashCode" , e) , } } } pub unsafe fn get_hash_code (this : MapPos , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (MapPos , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_hash_code :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_to_string { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapPos as :: unity2 :: ClassIdentity > :: class () , "ToString" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapPos as :: unity2 :: ClassIdentity > :: NAME , "ToString" , e) , } } } pub unsafe fn to_string (this : MapPos , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (MapPos , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_to_string :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-mappos")]
-impl MapPos {
-    #[doc = "`op_Addition(crate::app::mappos::MapPos, crate::app::mappos::MapPos)` overload"]
-    pub fn op_addition(
-        lhs: impl ::core::convert::Into<crate::app::mappos::MapPos>,
-        rhs: impl ::core::convert::Into<crate::app::mappos::MapPos>,
-    ) -> crate::app::mappos::MapPos {
-        unsafe {
-            __MapPos_unity2_raw::op_addition(
-                ::core::convert::Into::into(lhs),
-                ::core::convert::Into::into(rhs),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`op_Subtraction(crate::app::mappos::MapPos, crate::app::mappos::MapPos)` overload"]
-    pub fn op_subtraction(
-        lhs: impl ::core::convert::Into<crate::app::mappos::MapPos>,
-        rhs: impl ::core::convert::Into<crate::app::mappos::MapPos>,
-    ) -> crate::app::mappos::MapPos {
-        unsafe {
-            __MapPos_unity2_raw::op_subtraction(
-                ::core::convert::Into::into(lhs),
-                ::core::convert::Into::into(rhs),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`op_Equality(crate::app::mappos::MapPos, crate::app::mappos::MapPos)` overload"]
-    pub fn op_equality(
-        lhs: impl ::core::convert::Into<crate::app::mappos::MapPos>,
-        rhs: impl ::core::convert::Into<crate::app::mappos::MapPos>,
-    ) -> bool {
-        unsafe {
-            __MapPos_unity2_raw::op_equality(
-                ::core::convert::Into::into(lhs),
-                ::core::convert::Into::into(rhs),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`op_Inequality(crate::app::mappos::MapPos, crate::app::mappos::MapPos)` overload"]
-    pub fn op_inequality(
-        lhs: impl ::core::convert::Into<crate::app::mappos::MapPos>,
-        rhs: impl ::core::convert::Into<crate::app::mappos::MapPos>,
-    ) -> bool {
-        unsafe {
-            __MapPos_unity2_raw::op_inequality(
-                ::core::convert::Into::into(lhs),
-                ::core::convert::Into::into(rhs),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+impl MapPos { # [doc = "`op_Addition(crate::app::mappos::MapPos, crate::app::mappos::MapPos)` overload"] pub fn op_addition (lhs : impl :: core :: convert :: Into < crate :: app :: mappos :: MapPos > , rhs : impl :: core :: convert :: Into < crate :: app :: mappos :: MapPos >) -> crate :: app :: mappos :: MapPos { unsafe { __MapPos_unity2_raw :: op_addition (:: core :: convert :: Into :: into (lhs) , :: core :: convert :: Into :: into (rhs) , :: core :: option :: Option :: None) } } # [doc = "`op_Subtraction(crate::app::mappos::MapPos, crate::app::mappos::MapPos)` overload"] pub fn op_subtraction (lhs : impl :: core :: convert :: Into < crate :: app :: mappos :: MapPos > , rhs : impl :: core :: convert :: Into < crate :: app :: mappos :: MapPos >) -> crate :: app :: mappos :: MapPos { unsafe { __MapPos_unity2_raw :: op_subtraction (:: core :: convert :: Into :: into (lhs) , :: core :: convert :: Into :: into (rhs) , :: core :: option :: Option :: None) } } # [doc = "`op_Equality(crate::app::mappos::MapPos, crate::app::mappos::MapPos)` overload"] pub fn op_equality (lhs : impl :: core :: convert :: Into < crate :: app :: mappos :: MapPos > , rhs : impl :: core :: convert :: Into < crate :: app :: mappos :: MapPos >) -> bool { unsafe { __MapPos_unity2_raw :: op_equality (:: core :: convert :: Into :: into (lhs) , :: core :: convert :: Into :: into (rhs) , :: core :: option :: Option :: None) } } # [doc = "`op_Inequality(crate::app::mappos::MapPos, crate::app::mappos::MapPos)` overload"] pub fn op_inequality (lhs : impl :: core :: convert :: Into < crate :: app :: mappos :: MapPos > , rhs : impl :: core :: convert :: Into < crate :: app :: mappos :: MapPos >) -> bool { unsafe { __MapPos_unity2_raw :: op_inequality (:: core :: convert :: Into :: into (lhs) , :: core :: convert :: Into :: into (rhs) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-mappos")]
-impl MapPos {
-    #[doc = "`.ctor(crate::app::mappos::MapPos)` overload"]
-    pub fn ctor(self, other: impl ::core::convert::Into<crate::app::mappos::MapPos>) -> () {
-        unsafe { __MapPos_unity2_raw::ctor(self, ::core::convert::Into::into(other), ::core::option::Option::None) }
-    }
+impl MapPos { # [doc = "`.ctor(crate::app::mappos::MapPos)` overload"] pub fn ctor (self , other : impl :: core :: convert :: Into < crate :: app :: mappos :: MapPos >) -> () { unsafe { __MapPos_unity2_raw :: ctor (self , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } # [doc = "`.ctor(i32, i32)` overload"] pub fn ctor_2 (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 >) -> () { unsafe { __MapPos_unity2_raw :: ctor_2 (self , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } # [doc = "`Dispose()` overload"] pub fn dispose (self ,) -> () { unsafe { __MapPos_unity2_raw :: dispose (self , :: core :: option :: Option :: None) } } # [doc = "`Add(crate::app::mappos::MapPos)` overload"] pub fn add (self , other : impl :: core :: convert :: Into < crate :: app :: mappos :: MapPos >) -> () { unsafe { __MapPos_unity2_raw :: add (self , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } # [doc = "`Add(i32, i32)` overload"] pub fn add_2 (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 >) -> () { unsafe { __MapPos_unity2_raw :: add_2 (self , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } # [doc = "`AddX(i32)` overload"] pub fn add_x (self , x : impl :: core :: convert :: Into < i32 >) -> () { unsafe { __MapPos_unity2_raw :: add_x (self , :: core :: convert :: Into :: into (x) , :: core :: option :: Option :: None) } } # [doc = "`AddZ(i32)` overload"] pub fn add_z (self , z : impl :: core :: convert :: Into < i32 >) -> () { unsafe { __MapPos_unity2_raw :: add_z (self , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } # [doc = "`Sub(crate::app::mappos::MapPos)` overload"] pub fn sub (self , other : impl :: core :: convert :: Into < crate :: app :: mappos :: MapPos >) -> () { unsafe { __MapPos_unity2_raw :: sub (self , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } # [doc = "`Sub(i32, i32)` overload"] pub fn sub_2 (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 >) -> () { unsafe { __MapPos_unity2_raw :: sub_2 (self , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } # [doc = "`SubX(i32)` overload"] pub fn sub_x (self , x : impl :: core :: convert :: Into < i32 >) -> () { unsafe { __MapPos_unity2_raw :: sub_x (self , :: core :: convert :: Into :: into (x) , :: core :: option :: Option :: None) } } # [doc = "`SubZ(i32)` overload"] pub fn sub_z (self , z : impl :: core :: convert :: Into < i32 >) -> () { unsafe { __MapPos_unity2_raw :: sub_z (self , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } # [doc = "`Equals(crate::system::object::Object)` overload"] pub fn equals (self , rhs_obj : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { __MapPos_unity2_raw :: equals (self , :: core :: convert :: Into :: into (rhs_obj) , :: core :: option :: Option :: None) } } # [doc = "`Equals(crate::app::mappos::MapPos)` overload"] pub fn equals_2 (self , rhs : impl :: core :: convert :: Into < crate :: app :: mappos :: MapPos >) -> bool { unsafe { __MapPos_unity2_raw :: equals_2 (self , :: core :: convert :: Into :: into (rhs) , :: core :: option :: Option :: None) } } # [doc = "`GetHashCode()` overload"] pub fn get_hash_code (self ,) -> i32 { unsafe { __MapPos_unity2_raw :: get_hash_code (self , :: core :: option :: Option :: None) } } # [doc = "`ToString()` overload"] pub fn to_string (self ,) -> :: unity2 :: Il2CppString { unsafe { __MapPos_unity2_raw :: to_string (self , :: core :: option :: Option :: None) } } }
 
-    #[doc = "`.ctor(i32, i32)` overload"]
-    pub fn ctor_2(self, x: impl ::core::convert::Into<i32>, z: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            __MapPos_unity2_raw::ctor_2(
-                self,
-                ::core::convert::Into::into(x),
-                ::core::convert::Into::into(z),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`Dispose()` overload"]
-    pub fn dispose(self) -> () {
-        unsafe { __MapPos_unity2_raw::dispose(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`Add(crate::app::mappos::MapPos)` overload"]
-    pub fn add(self, other: impl ::core::convert::Into<crate::app::mappos::MapPos>) -> () {
-        unsafe { __MapPos_unity2_raw::add(self, ::core::convert::Into::into(other), ::core::option::Option::None) }
-    }
-
-    #[doc = "`Add(i32, i32)` overload"]
-    pub fn add_2(self, x: impl ::core::convert::Into<i32>, z: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            __MapPos_unity2_raw::add_2(
-                self,
-                ::core::convert::Into::into(x),
-                ::core::convert::Into::into(z),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`AddX(i32)` overload"]
-    pub fn add_x(self, x: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __MapPos_unity2_raw::add_x(self, ::core::convert::Into::into(x), ::core::option::Option::None) }
-    }
-
-    #[doc = "`AddZ(i32)` overload"]
-    pub fn add_z(self, z: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __MapPos_unity2_raw::add_z(self, ::core::convert::Into::into(z), ::core::option::Option::None) }
-    }
-
-    #[doc = "`Sub(crate::app::mappos::MapPos)` overload"]
-    pub fn sub(self, other: impl ::core::convert::Into<crate::app::mappos::MapPos>) -> () {
-        unsafe { __MapPos_unity2_raw::sub(self, ::core::convert::Into::into(other), ::core::option::Option::None) }
-    }
-
-    #[doc = "`Sub(i32, i32)` overload"]
-    pub fn sub_2(self, x: impl ::core::convert::Into<i32>, z: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            __MapPos_unity2_raw::sub_2(
-                self,
-                ::core::convert::Into::into(x),
-                ::core::convert::Into::into(z),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`SubX(i32)` overload"]
-    pub fn sub_x(self, x: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __MapPos_unity2_raw::sub_x(self, ::core::convert::Into::into(x), ::core::option::Option::None) }
-    }
-
-    #[doc = "`SubZ(i32)` overload"]
-    pub fn sub_z(self, z: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __MapPos_unity2_raw::sub_z(self, ::core::convert::Into::into(z), ::core::option::Option::None) }
-    }
-
-    #[doc = "`Equals(crate::system::object::Object)` overload"]
-    pub fn equals(self, rhs_obj: impl ::core::convert::Into<crate::system::object::Object>) -> bool {
-        unsafe { __MapPos_unity2_raw::equals(self, ::core::convert::Into::into(rhs_obj), ::core::option::Option::None) }
-    }
-
-    #[doc = "`Equals(crate::app::mappos::MapPos)` overload"]
-    pub fn equals_2(self, rhs: impl ::core::convert::Into<crate::app::mappos::MapPos>) -> bool {
-        unsafe { __MapPos_unity2_raw::equals_2(self, ::core::convert::Into::into(rhs), ::core::option::Option::None) }
-    }
-
-    #[doc = "`GetHashCode()` overload"]
-    pub fn get_hash_code(self) -> i32 {
-        unsafe { __MapPos_unity2_raw::get_hash_code(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`ToString()` overload"]
-    pub fn to_string(self) -> ::unity2::Il2CppString {
-        unsafe { __MapPos_unity2_raw::to_string(self, ::core::option::Option::None) }
-    }
-}
+#[cfg(feature = "app-mappos")]
+impl MapPos { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapPos_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapPos_unity2_raw :: __lookup_ctor_2 :: get_method_info () } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapPos_unity2_raw :: __lookup_dispose :: get_method_info () } pub fn add_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapPos_unity2_raw :: __lookup_add :: get_method_info () } pub fn add_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapPos_unity2_raw :: __lookup_add_2 :: get_method_info () } pub fn add_x_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapPos_unity2_raw :: __lookup_add_x :: get_method_info () } pub fn add_z_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapPos_unity2_raw :: __lookup_add_z :: get_method_info () } pub fn sub_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapPos_unity2_raw :: __lookup_sub :: get_method_info () } pub fn sub_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapPos_unity2_raw :: __lookup_sub_2 :: get_method_info () } pub fn sub_x_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapPos_unity2_raw :: __lookup_sub_x :: get_method_info () } pub fn sub_z_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapPos_unity2_raw :: __lookup_sub_z :: get_method_info () } pub fn op_addition_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapPos_unity2_raw :: __lookup_op_addition :: get_method_info () } pub fn op_subtraction_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapPos_unity2_raw :: __lookup_op_subtraction :: get_method_info () } pub fn op_equality_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapPos_unity2_raw :: __lookup_op_equality :: get_method_info () } pub fn op_inequality_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapPos_unity2_raw :: __lookup_op_inequality :: get_method_info () } pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapPos_unity2_raw :: __lookup_equals :: get_method_info () } pub fn equals_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapPos_unity2_raw :: __lookup_equals_2 :: get_method_info () } pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapPos_unity2_raw :: __lookup_get_hash_code :: get_method_info () } pub fn to_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapPos_unity2_raw :: __lookup_to_string :: get_method_info () } }
 
 #[cfg(feature = "app-mappos")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::MapPos;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::system::{object::IObject, valuetype::IValueType};
+    pub use crate::system::object::IObject;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

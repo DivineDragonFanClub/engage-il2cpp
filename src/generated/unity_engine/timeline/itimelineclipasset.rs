@@ -2,77 +2,34 @@
 
 #[cfg(feature = "unity_engine-timeline-itimelineclipasset-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/itimelineclipasset/ITimelineClipAsset.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Timeline", name = "ITimelineClipAsset")]
-    pub struct ITimelineClipAsset {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/itimelineclipasset/ITimelineClipAsset.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Timeline" , name = "ITimelineClipAsset")] pub struct ITimelineClipAsset {}
+
 }
 
 #[cfg(feature = "unity_engine-timeline-itimelineclipasset-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-timeline-itimelineclipasset")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ITimelineClipAsset_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_clip_caps {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ITimelineClipAsset as ::unity2::ClassIdentity>::class(),
-                "get_clipCaps",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ITimelineClipAsset as ::unity2::ClassIdentity>::NAME,
-                        "get_clipCaps",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_clip_caps(
-        this: ITimelineClipAsset,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::timeline::clipcaps::ClipCaps {
-        let inner: extern "C" fn(ITimelineClipAsset, ::unity2::OptionalMethod) -> crate::unity_engine::timeline::clipcaps::ClipCaps =
-            ::core::mem::transmute(__lookup_get_clip_caps::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ITimelineClipAsset_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_clip_caps { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ITimelineClipAsset as :: unity2 :: ClassIdentity > :: class () , "get_clipCaps" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ITimelineClipAsset as :: unity2 :: ClassIdentity > :: NAME , "get_clipCaps" , e) , } } } pub unsafe fn get_clip_caps (this : ITimelineClipAsset , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: timeline :: clipcaps :: ClipCaps { let inner : extern "C" fn (ITimelineClipAsset , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: timeline :: clipcaps :: ClipCaps = :: core :: mem :: transmute (__lookup_get_clip_caps :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-timeline-itimelineclipasset")]
-pub trait IITimelineClipAssetMethods: IITimelineClipAsset {
-    #[doc = "`get_clipCaps()` overload"]
-    fn get_clip_caps(self) -> crate::unity_engine::timeline::clipcaps::ClipCaps {
-        unsafe {
-            let __receiver = <ITimelineClipAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ITimelineClipAsset_unity2_raw::get_clip_caps(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IITimelineClipAssetMethods : IITimelineClipAsset { # [doc = "`get_clipCaps()` overload"] fn get_clip_caps (self ,) -> crate :: unity_engine :: timeline :: clipcaps :: ClipCaps { unsafe { let __receiver = < ITimelineClipAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ITimelineClipAsset_unity2_raw :: get_clip_caps (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-timeline-itimelineclipasset")]
-impl<__T: IITimelineClipAsset> IITimelineClipAssetMethods for __T {}
+impl < __T : IITimelineClipAsset > IITimelineClipAssetMethods for __T { }
+
+#[cfg(feature = "unity_engine-timeline-itimelineclipasset")]
+impl ITimelineClipAsset { pub fn get_clip_caps_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ITimelineClipAsset_unity2_raw :: __lookup_get_clip_caps :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-timeline-itimelineclipasset")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IITimelineClipAsset, IITimelineClipAssetMethods, ITimelineClipAsset};
+    pub use super::ITimelineClipAsset;
+    pub use super::IITimelineClipAsset;
+    pub use super::IITimelineClipAssetMethods;
 }

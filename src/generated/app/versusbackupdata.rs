@@ -2,191 +2,49 @@
 
 #[cfg(feature = "app-versusbackupdata-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versusbackupdata/VersusBackupData.md"))]
-    #[::unity2::class(namespace = "App", name = "VersusBackupData")]
-    #[parent(crate::system::object::Object)]
-    pub struct VersusBackupData {
-        #[static_field]
-        #[rename(name = "Version")]
-        pub version: u8,
-        #[static_field]
-        #[rename(name = "BufferSize")]
-        pub buffer_size: i32,
-        #[offset(16)]
-        #[rename(name = "m_Buffer")]
-        pub m_buffer: ::unity2::Array<u8>,
-        #[offset(24)]
-        #[rename(name = "m_Stream")]
-        pub m_stream: crate::app::stream_2::Stream_2,
-        #[offset(32)]
-        #[rename(name = "m_SaveData")]
-        pub m_save_data: crate::app::gamesavedata::GameSaveData,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versusbackupdata/VersusBackupData.md"))] # [:: unity2 :: class (namespace = "App" , name = "VersusBackupData")] # [parent (crate :: system :: object :: Object)] pub struct VersusBackupData {
+# [static_field] # [rename (name = "Version")] pub version : u8 ,
+# [static_field] # [rename (name = "BufferSize")] pub buffer_size : i32 ,
+# [offset (16)] # [rename (name = "m_Buffer")] pub m_buffer : :: unity2 :: Array < u8 > ,
+# [offset (24)] # [rename (name = "m_Stream")] pub m_stream : crate :: app :: stream_2 :: Stream_2 ,
+# [offset (32)] # [rename (name = "m_SaveData")] pub m_save_data : crate :: app :: gamesavedata :: GameSaveData ,
+}
+
 }
 
 #[cfg(feature = "app-versusbackupdata-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-versusbackupdata")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __VersusBackupData_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VersusBackupData as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <VersusBackupData as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: VersusBackupData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(VersusBackupData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_serialize {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VersusBackupData as ::unity2::ClassIdentity>::class(),
-                "Serialize",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <VersusBackupData as ::unity2::ClassIdentity>::NAME,
-                        "Serialize",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn serialize(this: VersusBackupData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(VersusBackupData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_serialize::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_deserialize {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VersusBackupData as ::unity2::ClassIdentity>::class(),
-                "Deserialize",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <VersusBackupData as ::unity2::ClassIdentity>::NAME,
-                        "Deserialize",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn deserialize(this: VersusBackupData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(VersusBackupData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_deserialize::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __VersusBackupData_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< VersusBackupData as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < VersusBackupData as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : VersusBackupData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (VersusBackupData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_serialize { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< VersusBackupData as :: unity2 :: ClassIdentity > :: class () , "Serialize" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < VersusBackupData as :: unity2 :: ClassIdentity > :: NAME , "Serialize" , e) , } } } pub unsafe fn serialize (this : VersusBackupData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (VersusBackupData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_serialize :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_deserialize { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< VersusBackupData as :: unity2 :: ClassIdentity > :: class () , "Deserialize" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < VersusBackupData as :: unity2 :: ClassIdentity > :: NAME , "Deserialize" , e) , } } } pub unsafe fn deserialize (this : VersusBackupData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (VersusBackupData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_deserialize :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-versusbackupdata")]
-pub trait IVersusBackupDataMethods: IVersusBackupData {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <VersusBackupData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __VersusBackupData_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Serialize()` overload"]
-    fn serialize(self) -> () {
-        unsafe {
-            let __receiver = <VersusBackupData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __VersusBackupData_unity2_raw::serialize(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Deserialize()` overload"]
-    fn deserialize(self) -> () {
-        unsafe {
-            let __receiver = <VersusBackupData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __VersusBackupData_unity2_raw::deserialize(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IVersusBackupDataMethods : IVersusBackupData { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < VersusBackupData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __VersusBackupData_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Serialize()` overload"] fn serialize (self ,) -> () { unsafe { let __receiver = < VersusBackupData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __VersusBackupData_unity2_raw :: serialize (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Deserialize()` overload"] fn deserialize (self ,) -> () { unsafe { let __receiver = < VersusBackupData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __VersusBackupData_unity2_raw :: deserialize (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-versusbackupdata")]
-impl<__T: IVersusBackupData> IVersusBackupDataMethods for __T {}
+impl < __T : IVersusBackupData > IVersusBackupDataMethods for __T { }
+
+#[cfg(feature = "app-versusbackupdata")]
+impl VersusBackupData { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __VersusBackupData_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn serialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __VersusBackupData_unity2_raw :: __lookup_serialize :: get_method_info () } pub fn deserialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __VersusBackupData_unity2_raw :: __lookup_deserialize :: get_method_info () } }
 
 #[cfg(feature = "app-versusbackupdata")]
 impl VersusBackupData {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(VersusBackupData),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IVersusBackupDataMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (VersusBackupData) , :: core :: stringify ! (new) ,)) ; < Self as IVersusBackupDataMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-versusbackupdata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IVersusBackupData, IVersusBackupDataMethods, VersusBackupData};
+    pub use super::VersusBackupData;
+    pub use super::IVersusBackupData;
+    pub use super::IVersusBackupDataMethods;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

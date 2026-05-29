@@ -2,72 +2,101 @@
 
 #[cfg(feature = "moon_sharp-interpreter-execution-instructionfieldusage-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        r#enum::{Enum, IEnum},
-        valuetype::{IValueType, ValueType},
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/execution/instructionfieldusage/InstructionFieldUsage.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct InstructionFieldUsage {
-        pub value: i32,
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/execution/instructionfieldusage/InstructionFieldUsage.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct InstructionFieldUsage  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for InstructionFieldUsage  {
+    const NAMESPACE: &'static str = "MoonSharp.Interpreter.Execution";
+
+    const NAME: &'static str = "InstructionFieldUsage";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    impl ::unity2::ClassIdentity for InstructionFieldUsage {
-        const NAME: &'static str = "InstructionFieldUsage";
-        const NAMESPACE: &'static str = "MoonSharp.Interpreter.Execution";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  ::unity2::IlType for InstructionFieldUsage  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::IlType for InstructionFieldUsage {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  InstructionFieldUsage  {
+    pub fn none() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl InstructionFieldUsage {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn symbol() -> Self {
-            Self { value: 1 }
-        }
+    pub fn symbol() -> Self {
+        Self { value: 1 }
 
-        pub fn symbol_list() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn name() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn value() -> Self {
-            Self { value: 8 }
-        }
-
-        pub fn num_val() -> Self {
-            Self { value: 16 }
-        }
-
-        pub fn num_val2() -> Self {
-            Self { value: 32 }
-        }
-
-        pub fn num_val_as_code_address() -> Self {
-            Self { value: 32784 }
-        }
     }
+
+
+    pub fn symbol_list() -> Self {
+        Self { value: 2 }
+
+    }
+
+
+    pub fn name() -> Self {
+        Self { value: 4 }
+
+    }
+
+
+    pub fn value() -> Self {
+        Self { value: 8 }
+
+    }
+
+
+    pub fn num_val() -> Self {
+        Self { value: 16 }
+
+    }
+
+
+    pub fn num_val2() -> Self {
+        Self { value: 32 }
+
+    }
+
+
+    pub fn num_val_as_code_address() -> Self {
+        Self { value: 32784 }
+
+    }
+
+}
+
 }
 
 #[cfg(feature = "moon_sharp-interpreter-execution-instructionfieldusage-types")]
@@ -77,11 +106,10 @@ pub use __types::*;
 #[doc(hidden)]
 pub mod prelude {
     pub use super::InstructionFieldUsage;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::system::{object::IObject, r#enum::IEnum, valuetype::IValueType};
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

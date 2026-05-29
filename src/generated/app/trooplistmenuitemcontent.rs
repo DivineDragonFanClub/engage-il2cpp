@@ -2,507 +2,96 @@
 
 #[cfg(feature = "app-trooplistmenuitemcontent-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::basicmenuitemcontent::{BasicMenuItemContent, IBasicMenuItemContent},
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/trooplistmenuitemcontent/TroopListMenuItemContent.md"))]
-    #[::unity2::class(namespace = "App", name = "TroopListMenuItemContent")]
-    #[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]
-    pub struct TroopListMenuItemContent {
-        #[offset(72)]
-        #[rename(name = "m_name")]
-        pub m_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(80)]
-        #[rename(name = "m_face")]
-        pub m_face: crate::unity_engine::ui::image::Image,
-        #[offset(88)]
-        #[rename(name = "m_faceBase")]
-        pub m_face_base: crate::unity_engine::ui::image::Image,
-        #[offset(96)]
-        #[rename(name = "m_statusBase")]
-        pub m_status_base: crate::unity_engine::ui::image::Image,
-        #[offset(104)]
-        #[rename(name = "m_faceFrame")]
-        pub m_face_frame: crate::unity_engine::ui::image::Image,
-        #[offset(112)]
-        #[rename(name = "m_statusFrame")]
-        pub m_status_frame: crate::unity_engine::ui::image::Image,
-        #[offset(120)]
-        #[rename(name = "m_symbolIcon")]
-        pub m_symbol_icon: crate::unity_engine::gameobject::GameObject,
-        #[offset(128)]
-        #[rename(name = "m_checkIcon")]
-        pub m_check_icon: crate::unity_engine::gameobject::GameObject,
-        #[offset(136)]
-        #[rename(name = "m_relayOthersIcon")]
-        pub m_relay_others_icon: crate::unity_engine::gameobject::GameObject,
-        #[offset(144)]
-        #[rename(name = "m_job")]
-        pub m_job: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(152)]
-        #[rename(name = "m_level")]
-        pub m_level: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(160)]
-        #[rename(name = "m_exp")]
-        pub m_exp: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(168)]
-        #[rename(name = "m_expSlash")]
-        pub m_exp_slash: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(176)]
-        #[rename(name = "m_expMax")]
-        pub m_exp_max: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(184)]
-        #[rename(name = "m_hp")]
-        pub m_hp: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(192)]
-        #[rename(name = "m_hpSlash")]
-        pub m_hp_slash: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(200)]
-        #[rename(name = "m_hpMax")]
-        pub m_hp_max: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(208)]
-        #[rename(name = "m_phys")]
-        pub m_phys: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(216)]
-        #[rename(name = "m_str")]
-        pub m_str: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(224)]
-        #[rename(name = "m_magic")]
-        pub m_magic: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(232)]
-        #[rename(name = "m_tech")]
-        pub m_tech: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(240)]
-        #[rename(name = "m_quick")]
-        pub m_quick: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(248)]
-        #[rename(name = "m_luck")]
-        pub m_luck: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(256)]
-        #[rename(name = "m_def")]
-        pub m_def: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(264)]
-        #[rename(name = "m_mdef")]
-        pub m_mdef: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(272)]
-        #[rename(name = "m_atk")]
-        pub m_atk: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(280)]
-        #[rename(name = "m_hit")]
-        pub m_hit: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(288)]
-        #[rename(name = "m_crit")]
-        pub m_crit: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(296)]
-        #[rename(name = "m_avoid")]
-        pub m_avoid: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(304)]
-        #[rename(name = "m_critAvoid")]
-        pub m_crit_avoid: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(312)]
-        #[rename(name = "m_move")]
-        pub m_move: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(320)]
-        #[rename(name = "m_pageRoot")]
-        pub m_page_root: ::unity2::Array<crate::unity_engine::gameobject::GameObject>,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: basicmenuitemcontent :: { BasicMenuItemContent , IBasicMenuItemContent }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/trooplistmenuitemcontent/TroopListMenuItemContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "TroopListMenuItemContent")] # [parent (crate :: app :: basicmenuitemcontent :: BasicMenuItemContent)] pub struct TroopListMenuItemContent {
+# [offset (72)] # [rename (name = "m_name")] pub m_name : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (80)] # [rename (name = "m_face")] pub m_face : crate :: unity_engine :: ui :: image :: Image ,
+# [offset (88)] # [rename (name = "m_faceBase")] pub m_face_base : crate :: unity_engine :: ui :: image :: Image ,
+# [offset (96)] # [rename (name = "m_statusBase")] pub m_status_base : crate :: unity_engine :: ui :: image :: Image ,
+# [offset (104)] # [rename (name = "m_faceFrame")] pub m_face_frame : crate :: unity_engine :: ui :: image :: Image ,
+# [offset (112)] # [rename (name = "m_statusFrame")] pub m_status_frame : crate :: unity_engine :: ui :: image :: Image ,
+# [offset (120)] # [rename (name = "m_symbolIcon")] pub m_symbol_icon : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (128)] # [rename (name = "m_checkIcon")] pub m_check_icon : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (136)] # [rename (name = "m_relayOthersIcon")] pub m_relay_others_icon : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (144)] # [rename (name = "m_job")] pub m_job : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (152)] # [rename (name = "m_level")] pub m_level : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (160)] # [rename (name = "m_exp")] pub m_exp : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (168)] # [rename (name = "m_expSlash")] pub m_exp_slash : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (176)] # [rename (name = "m_expMax")] pub m_exp_max : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (184)] # [rename (name = "m_hp")] pub m_hp : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (192)] # [rename (name = "m_hpSlash")] pub m_hp_slash : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (200)] # [rename (name = "m_hpMax")] pub m_hp_max : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (208)] # [rename (name = "m_phys")] pub m_phys : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (216)] # [rename (name = "m_str")] pub m_str : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (224)] # [rename (name = "m_magic")] pub m_magic : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (232)] # [rename (name = "m_tech")] pub m_tech : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (240)] # [rename (name = "m_quick")] pub m_quick : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (248)] # [rename (name = "m_luck")] pub m_luck : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (256)] # [rename (name = "m_def")] pub m_def : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (264)] # [rename (name = "m_mdef")] pub m_mdef : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (272)] # [rename (name = "m_atk")] pub m_atk : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (280)] # [rename (name = "m_hit")] pub m_hit : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (288)] # [rename (name = "m_crit")] pub m_crit : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (296)] # [rename (name = "m_avoid")] pub m_avoid : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (304)] # [rename (name = "m_critAvoid")] pub m_crit_avoid : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (312)] # [rename (name = "m_move")] pub m_move : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (320)] # [rename (name = "m_pageRoot")] pub m_page_root : :: unity2 :: Array < crate :: unity_engine :: gameobject :: GameObject > ,
+}
+
 }
 
 #[cfg(feature = "app-trooplistmenuitemcontent-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-trooplistmenuitemcontent")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __TroopListMenuItemContent_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_menu_item_unit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TroopListMenuItemContent as ::unity2::ClassIdentity>::class(),
-                "GetMenuItemUnit",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TroopListMenuItemContent as ::unity2::ClassIdentity>::NAME,
-                        "GetMenuItemUnit",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_menu_item_unit(this: TroopListMenuItemContent, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::unit::Unit {
-        let inner: extern "C" fn(TroopListMenuItemContent, ::unity2::OptionalMethod) -> crate::app::unit::Unit =
-            ::core::mem::transmute(__lookup_get_menu_item_unit::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_menu_item_tmp_unit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TroopListMenuItemContent as ::unity2::ClassIdentity>::class(),
-                "GetMenuItemTmpUnit",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TroopListMenuItemContent as ::unity2::ClassIdentity>::NAME,
-                        "GetMenuItemTmpUnit",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_menu_item_tmp_unit(this: TroopListMenuItemContent, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::unit::Unit {
-        let inner: extern "C" fn(TroopListMenuItemContent, ::unity2::OptionalMethod) -> crate::app::unit::Unit =
-            ::core::mem::transmute(__lookup_get_menu_item_tmp_unit::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_build {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::basicmenuitem::BasicMenuItem as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TroopListMenuItemContent as ::unity2::ClassIdentity>::class(),
-                "Build",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TroopListMenuItemContent as ::unity2::ClassIdentity>::NAME,
-                        "Build",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn build(
-        this: TroopListMenuItemContent,
-        menu_item: crate::app::basicmenuitem::BasicMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(TroopListMenuItemContent, crate::app::basicmenuitem::BasicMenuItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_build::get_method_info().method_ptr);
-        inner(this, menu_item, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update_text_color {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TroopListMenuItemContent as ::unity2::ClassIdentity>::class(),
-                "UpdateTextColor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TroopListMenuItemContent as ::unity2::ClassIdentity>::NAME,
-                        "UpdateTextColor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update_text_color(this: TroopListMenuItemContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TroopListMenuItemContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update_text_color::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update_sortie_status {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TroopListMenuItemContent as ::unity2::ClassIdentity>::class(),
-                "UpdateSortieStatus",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TroopListMenuItemContent as ::unity2::ClassIdentity>::NAME,
-                        "UpdateSortieStatus",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update_sortie_status(this: TroopListMenuItemContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TroopListMenuItemContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update_sortie_status::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_check_mark {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TroopListMenuItemContent as ::unity2::ClassIdentity>::class(),
-                "SetCheckMark",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TroopListMenuItemContent as ::unity2::ClassIdentity>::NAME,
-                        "SetCheckMark",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_check_mark(this: TroopListMenuItemContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TroopListMenuItemContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_check_mark::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_page {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TroopListMenuItemContent as ::unity2::ClassIdentity>::class(),
-                "SetPage",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TroopListMenuItemContent as ::unity2::ClassIdentity>::NAME,
-                        "SetPage",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_page(this: TroopListMenuItemContent, page: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TroopListMenuItemContent, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_page::get_method_info().method_ptr);
-        inner(this, page, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TroopListMenuItemContent as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TroopListMenuItemContent as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: TroopListMenuItemContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TroopListMenuItemContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __TroopListMenuItemContent_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_menu_item_unit { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TroopListMenuItemContent as :: unity2 :: ClassIdentity > :: class () , "GetMenuItemUnit" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TroopListMenuItemContent as :: unity2 :: ClassIdentity > :: NAME , "GetMenuItemUnit" , e) , } } } pub unsafe fn get_menu_item_unit (this : TroopListMenuItemContent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit { let inner : extern "C" fn (TroopListMenuItemContent , :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit = :: core :: mem :: transmute (__lookup_get_menu_item_unit :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_menu_item_tmp_unit { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TroopListMenuItemContent as :: unity2 :: ClassIdentity > :: class () , "GetMenuItemTmpUnit" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TroopListMenuItemContent as :: unity2 :: ClassIdentity > :: NAME , "GetMenuItemTmpUnit" , e) , } } } pub unsafe fn get_menu_item_tmp_unit (this : TroopListMenuItemContent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit { let inner : extern "C" fn (TroopListMenuItemContent , :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit = :: core :: mem :: transmute (__lookup_get_menu_item_tmp_unit :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_build { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: basicmenuitem :: BasicMenuItem as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TroopListMenuItemContent as :: unity2 :: ClassIdentity > :: class () , "Build" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TroopListMenuItemContent as :: unity2 :: ClassIdentity > :: NAME , "Build" , e) , } } } pub unsafe fn build (this : TroopListMenuItemContent , menu_item : crate :: app :: basicmenuitem :: BasicMenuItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TroopListMenuItemContent , crate :: app :: basicmenuitem :: BasicMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_build :: get_method_info () . method_ptr ,) ; inner (this , menu_item , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update_text_color { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TroopListMenuItemContent as :: unity2 :: ClassIdentity > :: class () , "UpdateTextColor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TroopListMenuItemContent as :: unity2 :: ClassIdentity > :: NAME , "UpdateTextColor" , e) , } } } pub unsafe fn update_text_color (this : TroopListMenuItemContent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TroopListMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update_text_color :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update_sortie_status { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TroopListMenuItemContent as :: unity2 :: ClassIdentity > :: class () , "UpdateSortieStatus" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TroopListMenuItemContent as :: unity2 :: ClassIdentity > :: NAME , "UpdateSortieStatus" , e) , } } } pub unsafe fn update_sortie_status (this : TroopListMenuItemContent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TroopListMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update_sortie_status :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_check_mark { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TroopListMenuItemContent as :: unity2 :: ClassIdentity > :: class () , "SetCheckMark" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TroopListMenuItemContent as :: unity2 :: ClassIdentity > :: NAME , "SetCheckMark" , e) , } } } pub unsafe fn set_check_mark (this : TroopListMenuItemContent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TroopListMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_check_mark :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_page { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TroopListMenuItemContent as :: unity2 :: ClassIdentity > :: class () , "SetPage" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TroopListMenuItemContent as :: unity2 :: ClassIdentity > :: NAME , "SetPage" , e) , } } } pub unsafe fn set_page (this : TroopListMenuItemContent , page : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TroopListMenuItemContent , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_page :: get_method_info () . method_ptr ,) ; inner (this , page , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TroopListMenuItemContent as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TroopListMenuItemContent as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : TroopListMenuItemContent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TroopListMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-trooplistmenuitemcontent")]
-pub trait ITroopListMenuItemContentMethods: ITroopListMenuItemContent {
-    #[doc = "`GetMenuItemUnit()` overload"]
-    fn get_menu_item_unit(self) -> crate::app::unit::Unit {
-        unsafe {
-            let __receiver =
-                <TroopListMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TroopListMenuItemContent_unity2_raw::get_menu_item_unit(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetMenuItemTmpUnit()` overload"]
-    fn get_menu_item_tmp_unit(self) -> crate::app::unit::Unit {
-        unsafe {
-            let __receiver =
-                <TroopListMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TroopListMenuItemContent_unity2_raw::get_menu_item_tmp_unit(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Build(crate::app::basicmenuitem::BasicMenuItem)` overload"]
-    fn build(self, menu_item: impl ::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem>) -> () {
-        unsafe {
-            let __receiver =
-                <TroopListMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TroopListMenuItemContent_unity2_raw::build(__receiver, ::core::convert::Into::into(menu_item), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`UpdateTextColor()` overload"]
-    fn update_text_color(self) -> () {
-        unsafe {
-            let __receiver =
-                <TroopListMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TroopListMenuItemContent_unity2_raw::update_text_color(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`UpdateSortieStatus()` overload"]
-    fn update_sortie_status(self) -> () {
-        unsafe {
-            let __receiver =
-                <TroopListMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TroopListMenuItemContent_unity2_raw::update_sortie_status(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetCheckMark()` overload"]
-    fn set_check_mark(self) -> () {
-        unsafe {
-            let __receiver =
-                <TroopListMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TroopListMenuItemContent_unity2_raw::set_check_mark(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetPage(i32)` overload"]
-    fn set_page(self, page: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver =
-                <TroopListMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TroopListMenuItemContent_unity2_raw::set_page(__receiver, ::core::convert::Into::into(page), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <TroopListMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TroopListMenuItemContent_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait ITroopListMenuItemContentMethods : ITroopListMenuItemContent { # [doc = "`GetMenuItemUnit()` overload"] fn get_menu_item_unit (self ,) -> crate :: app :: unit :: Unit { unsafe { let __receiver = < TroopListMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TroopListMenuItemContent_unity2_raw :: get_menu_item_unit (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetMenuItemTmpUnit()` overload"] fn get_menu_item_tmp_unit (self ,) -> crate :: app :: unit :: Unit { unsafe { let __receiver = < TroopListMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TroopListMenuItemContent_unity2_raw :: get_menu_item_tmp_unit (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Build(crate::app::basicmenuitem::BasicMenuItem)` overload"] fn build (self , menu_item : impl :: core :: convert :: Into < crate :: app :: basicmenuitem :: BasicMenuItem >) -> () { unsafe { let __receiver = < TroopListMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TroopListMenuItemContent_unity2_raw :: build (__receiver , :: core :: convert :: Into :: into (menu_item) , :: core :: option :: Option :: None) } } # [doc = "`UpdateTextColor()` overload"] fn update_text_color (self ,) -> () { unsafe { let __receiver = < TroopListMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TroopListMenuItemContent_unity2_raw :: update_text_color (__receiver , :: core :: option :: Option :: None) } } # [doc = "`UpdateSortieStatus()` overload"] fn update_sortie_status (self ,) -> () { unsafe { let __receiver = < TroopListMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TroopListMenuItemContent_unity2_raw :: update_sortie_status (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetCheckMark()` overload"] fn set_check_mark (self ,) -> () { unsafe { let __receiver = < TroopListMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TroopListMenuItemContent_unity2_raw :: set_check_mark (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetPage(i32)` overload"] fn set_page (self , page : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < TroopListMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TroopListMenuItemContent_unity2_raw :: set_page (__receiver , :: core :: convert :: Into :: into (page) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TroopListMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TroopListMenuItemContent_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-trooplistmenuitemcontent")]
-impl<__T: ITroopListMenuItemContent> ITroopListMenuItemContentMethods for __T {}
+impl < __T : ITroopListMenuItemContent > ITroopListMenuItemContentMethods for __T { }
+
+#[cfg(feature = "app-trooplistmenuitemcontent")]
+impl TroopListMenuItemContent { pub fn get_menu_item_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TroopListMenuItemContent_unity2_raw :: __lookup_get_menu_item_unit :: get_method_info () } pub fn get_menu_item_tmp_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TroopListMenuItemContent_unity2_raw :: __lookup_get_menu_item_tmp_unit :: get_method_info () } pub fn build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TroopListMenuItemContent_unity2_raw :: __lookup_build :: get_method_info () } pub fn update_text_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TroopListMenuItemContent_unity2_raw :: __lookup_update_text_color :: get_method_info () } pub fn update_sortie_status_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TroopListMenuItemContent_unity2_raw :: __lookup_update_sortie_status :: get_method_info () } pub fn set_check_mark_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TroopListMenuItemContent_unity2_raw :: __lookup_set_check_mark :: get_method_info () } pub fn set_page_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TroopListMenuItemContent_unity2_raw :: __lookup_set_page :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TroopListMenuItemContent_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-trooplistmenuitemcontent")]
 impl TroopListMenuItemContent {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TroopListMenuItemContent),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITroopListMenuItemContentMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TroopListMenuItemContent) , :: core :: stringify ! (new) ,)) ; < Self as ITroopListMenuItemContentMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-trooplistmenuitemcontent")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{ITroopListMenuItemContent, ITroopListMenuItemContentMethods, TroopListMenuItemContent};
-    #[cfg(feature = "app-basicmenuitemcontent")]
-    pub use crate::app::basicmenuitemcontent::IBasicMenuItemContentMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        app::basicmenuitemcontent::IBasicMenuItemContent,
-        system::object::IObject,
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::TroopListMenuItemContent;
+    pub use super::ITroopListMenuItemContent;
+    pub use super::ITroopListMenuItemContentMethods;
+    pub use crate::app::basicmenuitemcontent::IBasicMenuItemContent;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "app-basicmenuitemcontent")] pub use crate::app::basicmenuitemcontent::IBasicMenuItemContentMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

@@ -2,186 +2,60 @@
 
 #[cfg(feature = "app-uicolor-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::singletonscriptableobject_1::{ISingletonScriptableObject_1, SingletonScriptableObject_1},
-        system::object::{IObject, Object},
-        unity_engine::{
-            object_2::{IObject_2, Object_2},
-            scriptableobject::{IScriptableObject, ScriptableObject},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/uicolor/UiColor.md"))]
-    #[::unity2::class(namespace = "App", name = "UiColor")]
-    # [parent (crate :: app :: singletonscriptableobject_1 :: SingletonScriptableObject_1 < crate :: app :: uicolor :: UiColor >)]
-    pub struct UiColor {
-        #[offset(24)]
-        #[rename(name = "紋章士アイコン_出撃")]
-        pub 紋章士アイコン_出撃: crate::unity_engine::color::Color,
-        #[offset(40)]
-        #[rename(name = "紋章士アイコン_非出撃")]
-        pub 紋章士アイコン_非出撃: crate::unity_engine::color::Color,
-        #[offset(56)]
-        #[rename(name = "ユニット選択_ユニット顔絵_出撃")]
-        pub ユニット選択_ユニット顔絵_出撃: crate::unity_engine::color::Color,
-        #[offset(72)]
-        #[rename(name = "ユニット選択_ユニット顔絵_非出撃")]
-        pub ユニット選択_ユニット顔絵_非出撃: crate::unity_engine::color::Color,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: singletonscriptableobject_1 :: { ISingletonScriptableObject_1 , SingletonScriptableObject_1 }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+ use crate :: unity_engine :: scriptableobject :: { IScriptableObject , ScriptableObject }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/uicolor/UiColor.md"))] # [:: unity2 :: class (namespace = "App" , name = "UiColor")] # [parent (crate :: app :: singletonscriptableobject_1 :: SingletonScriptableObject_1 < crate :: app :: uicolor :: UiColor >)] pub struct UiColor {
+# [offset (24)] # [rename (name = "紋章士アイコン_出撃")] pub 紋章士アイコン_出撃 : crate :: unity_engine :: color :: Color ,
+# [offset (40)] # [rename (name = "紋章士アイコン_非出撃")] pub 紋章士アイコン_非出撃 : crate :: unity_engine :: color :: Color ,
+# [offset (56)] # [rename (name = "ユニット選択_ユニット顔絵_出撃")] pub ユニット選択_ユニット顔絵_出撃 : crate :: unity_engine :: color :: Color ,
+# [offset (72)] # [rename (name = "ユニット選択_ユニット顔絵_非出撃")] pub ユニット選択_ユニット顔絵_非出撃 : crate :: unity_engine :: color :: Color ,
+}
+
 }
 
 #[cfg(feature = "app-uicolor-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-uicolor")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __UiColor_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_face_color {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UiColor as ::unity2::ClassIdentity>::class(),
-                "GetFaceColor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UiColor as ::unity2::ClassIdentity>::NAME,
-                        "GetFaceColor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_face_color(this: UiColor, b_on: bool, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::color::Color {
-        let inner: extern "C" fn(UiColor, bool, ::unity2::OptionalMethod) -> crate::unity_engine::color::Color =
-            ::core::mem::transmute(__lookup_get_face_color::get_method_info().method_ptr);
-        inner(this, b_on, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_symbol_color {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UiColor as ::unity2::ClassIdentity>::class(),
-                "GetSymbolColor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UiColor as ::unity2::ClassIdentity>::NAME,
-                        "GetSymbolColor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_symbol_color(this: UiColor, b_on: bool, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::color::Color {
-        let inner: extern "C" fn(UiColor, bool, ::unity2::OptionalMethod) -> crate::unity_engine::color::Color =
-            ::core::mem::transmute(__lookup_get_symbol_color::get_method_info().method_ptr);
-        inner(this, b_on, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<UiColor as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <UiColor as ::unity2::ClassIdentity>::NAME, ".ctor", e),
-            }
-        }
-    }
-    pub unsafe fn ctor(this: UiColor, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(UiColor, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __UiColor_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_face_color { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UiColor as :: unity2 :: ClassIdentity > :: class () , "GetFaceColor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UiColor as :: unity2 :: ClassIdentity > :: NAME , "GetFaceColor" , e) , } } } pub unsafe fn get_face_color (this : UiColor , b_on : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: color :: Color { let inner : extern "C" fn (UiColor , bool , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: color :: Color = :: core :: mem :: transmute (__lookup_get_face_color :: get_method_info () . method_ptr ,) ; inner (this , b_on , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_symbol_color { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UiColor as :: unity2 :: ClassIdentity > :: class () , "GetSymbolColor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UiColor as :: unity2 :: ClassIdentity > :: NAME , "GetSymbolColor" , e) , } } } pub unsafe fn get_symbol_color (this : UiColor , b_on : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: color :: Color { let inner : extern "C" fn (UiColor , bool , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: color :: Color = :: core :: mem :: transmute (__lookup_get_symbol_color :: get_method_info () . method_ptr ,) ; inner (this , b_on , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UiColor as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UiColor as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : UiColor , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UiColor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-uicolor")]
-pub trait IUiColorMethods: IUiColor {
-    #[doc = "`GetFaceColor(bool)` overload"]
-    fn get_face_color(self, b_on: impl ::core::convert::Into<bool>) -> crate::unity_engine::color::Color {
-        unsafe {
-            let __receiver = <UiColor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UiColor_unity2_raw::get_face_color(__receiver, ::core::convert::Into::into(b_on), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetSymbolColor(bool)` overload"]
-    fn get_symbol_color(self, b_on: impl ::core::convert::Into<bool>) -> crate::unity_engine::color::Color {
-        unsafe {
-            let __receiver = <UiColor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UiColor_unity2_raw::get_symbol_color(__receiver, ::core::convert::Into::into(b_on), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <UiColor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UiColor_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IUiColorMethods : IUiColor { # [doc = "`GetFaceColor(bool)` overload"] fn get_face_color (self , b_on : impl :: core :: convert :: Into < bool >) -> crate :: unity_engine :: color :: Color { unsafe { let __receiver = < UiColor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UiColor_unity2_raw :: get_face_color (__receiver , :: core :: convert :: Into :: into (b_on) , :: core :: option :: Option :: None) } } # [doc = "`GetSymbolColor(bool)` overload"] fn get_symbol_color (self , b_on : impl :: core :: convert :: Into < bool >) -> crate :: unity_engine :: color :: Color { unsafe { let __receiver = < UiColor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UiColor_unity2_raw :: get_symbol_color (__receiver , :: core :: convert :: Into :: into (b_on) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < UiColor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UiColor_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-uicolor")]
-impl<__T: IUiColor> IUiColorMethods for __T {}
+impl < __T : IUiColor > IUiColorMethods for __T { }
+
+#[cfg(feature = "app-uicolor")]
+impl UiColor { pub fn get_face_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UiColor_unity2_raw :: __lookup_get_face_color :: get_method_info () } pub fn get_symbol_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UiColor_unity2_raw :: __lookup_get_symbol_color :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UiColor_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-uicolor")]
 impl UiColor {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(UiColor), ::core::stringify!(new),));
-        <Self as IUiColorMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (UiColor) , :: core :: stringify ! (new) ,)) ; < Self as IUiColorMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-uicolor")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IUiColor, IUiColorMethods, UiColor};
-    #[cfg(feature = "app-singletonscriptableobject_1")]
-    pub use crate::app::singletonscriptableobject_1::ISingletonScriptableObject_1Methods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    #[cfg(feature = "unity_engine-scriptableobject")]
-    pub use crate::unity_engine::scriptableobject::IScriptableObjectMethods;
-    pub use crate::{
-        app::singletonscriptableobject_1::ISingletonScriptableObject_1,
-        system::object::IObject,
-        unity_engine::{object_2::IObject_2, scriptableobject::IScriptableObject},
-    };
+    pub use super::UiColor;
+    pub use super::IUiColor;
+    pub use super::IUiColorMethods;
+    pub use crate::app::singletonscriptableobject_1::ISingletonScriptableObject_1;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::object_2::IObject_2;
+    pub use crate::unity_engine::scriptableobject::IScriptableObject;
+    #[cfg(feature = "app-singletonscriptableobject_1")] pub use crate::app::singletonscriptableobject_1::ISingletonScriptableObject_1Methods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
+    #[cfg(feature = "unity_engine-scriptableobject")] pub use crate::unity_engine::scriptableobject::IScriptableObjectMethods;
 }

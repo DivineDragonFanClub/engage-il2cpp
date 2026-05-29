@@ -2,338 +2,48 @@
 
 #[cfg(feature = "unity_engine-trackedreference-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/trackedreference/TrackedReference.md"))]
-    #[::unity2::class(namespace = "UnityEngine", name = "TrackedReference")]
-    #[parent(crate::system::object::Object)]
-    pub struct TrackedReference {
-        #[offset(16)]
-        #[rename(name = "m_Ptr")]
-        pub m_ptr: ::unity2::IntPtr,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/trackedreference/TrackedReference.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "TrackedReference")] # [parent (crate :: system :: object :: Object)] pub struct TrackedReference {
+# [offset (16)] # [rename (name = "m_Ptr")] pub m_ptr : :: unity2 :: IntPtr ,
+}
+
 }
 
 #[cfg(feature = "unity_engine-trackedreference-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-trackedreference")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __TrackedReference_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TrackedReference as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TrackedReference as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: TrackedReference, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TrackedReference, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_op_equality {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::trackedreference::TrackedReference as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::trackedreference::TrackedReference as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TrackedReference as ::unity2::ClassIdentity>::class(),
-                "op_Equality",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TrackedReference as ::unity2::ClassIdentity>::NAME,
-                        "op_Equality",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn op_equality(
-        x: crate::unity_engine::trackedreference::TrackedReference,
-        y: crate::unity_engine::trackedreference::TrackedReference,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            crate::unity_engine::trackedreference::TrackedReference,
-            crate::unity_engine::trackedreference::TrackedReference,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(__lookup_op_equality::get_method_info().method_ptr);
-        inner(x, y, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_op_inequality {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::trackedreference::TrackedReference as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::trackedreference::TrackedReference as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TrackedReference as ::unity2::ClassIdentity>::class(),
-                "op_Inequality",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TrackedReference as ::unity2::ClassIdentity>::NAME,
-                        "op_Inequality",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn op_inequality(
-        x: crate::unity_engine::trackedreference::TrackedReference,
-        y: crate::unity_engine::trackedreference::TrackedReference,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            crate::unity_engine::trackedreference::TrackedReference,
-            crate::unity_engine::trackedreference::TrackedReference,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(__lookup_op_inequality::get_method_info().method_ptr);
-        inner(x, y, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_equals {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TrackedReference as ::unity2::ClassIdentity>::class(),
-                "Equals",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TrackedReference as ::unity2::ClassIdentity>::NAME,
-                        "Equals",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn equals(this: TrackedReference, o: crate::system::object::Object, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(TrackedReference, crate::system::object::Object, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_equals::get_method_info().method_ptr);
-        inner(this, o, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_hash_code {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TrackedReference as ::unity2::ClassIdentity>::class(),
-                "GetHashCode",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TrackedReference as ::unity2::ClassIdentity>::NAME,
-                        "GetHashCode",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_hash_code(this: TrackedReference, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(TrackedReference, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_hash_code::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_op_implicit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::trackedreference::TrackedReference as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TrackedReference as ::unity2::ClassIdentity>::class(),
-                "op_Implicit",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TrackedReference as ::unity2::ClassIdentity>::NAME,
-                        "op_Implicit",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn op_implicit(
-        exists: crate::unity_engine::trackedreference::TrackedReference,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(crate::unity_engine::trackedreference::TrackedReference, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_op_implicit::get_method_info().method_ptr);
-        inner(exists, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __TrackedReference_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TrackedReference as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TrackedReference as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : TrackedReference , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TrackedReference , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_op_equality { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: trackedreference :: TrackedReference as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: trackedreference :: TrackedReference as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TrackedReference as :: unity2 :: ClassIdentity > :: class () , "op_Equality" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TrackedReference as :: unity2 :: ClassIdentity > :: NAME , "op_Equality" , e) , } } } pub unsafe fn op_equality (x : crate :: unity_engine :: trackedreference :: TrackedReference , y : crate :: unity_engine :: trackedreference :: TrackedReference , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (crate :: unity_engine :: trackedreference :: TrackedReference , crate :: unity_engine :: trackedreference :: TrackedReference , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_op_equality :: get_method_info () . method_ptr ,) ; inner (x , y , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_op_inequality { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: trackedreference :: TrackedReference as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: trackedreference :: TrackedReference as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TrackedReference as :: unity2 :: ClassIdentity > :: class () , "op_Inequality" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TrackedReference as :: unity2 :: ClassIdentity > :: NAME , "op_Inequality" , e) , } } } pub unsafe fn op_inequality (x : crate :: unity_engine :: trackedreference :: TrackedReference , y : crate :: unity_engine :: trackedreference :: TrackedReference , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (crate :: unity_engine :: trackedreference :: TrackedReference , crate :: unity_engine :: trackedreference :: TrackedReference , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_op_inequality :: get_method_info () . method_ptr ,) ; inner (x , y , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_equals { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TrackedReference as :: unity2 :: ClassIdentity > :: class () , "Equals" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TrackedReference as :: unity2 :: ClassIdentity > :: NAME , "Equals" , e) , } } } pub unsafe fn equals (this : TrackedReference , o : crate :: system :: object :: Object , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (TrackedReference , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_equals :: get_method_info () . method_ptr ,) ; inner (this , o , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_hash_code { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TrackedReference as :: unity2 :: ClassIdentity > :: class () , "GetHashCode" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TrackedReference as :: unity2 :: ClassIdentity > :: NAME , "GetHashCode" , e) , } } } pub unsafe fn get_hash_code (this : TrackedReference , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (TrackedReference , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_hash_code :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_op_implicit { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: trackedreference :: TrackedReference as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TrackedReference as :: unity2 :: ClassIdentity > :: class () , "op_Implicit" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TrackedReference as :: unity2 :: ClassIdentity > :: NAME , "op_Implicit" , e) , } } } pub unsafe fn op_implicit (exists : crate :: unity_engine :: trackedreference :: TrackedReference , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (crate :: unity_engine :: trackedreference :: TrackedReference , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_op_implicit :: get_method_info () . method_ptr ,) ; inner (exists , __unity2_method_info) } }
+
+#[cfg(feature = "unity_engine-trackedreference")]
+impl TrackedReference { # [doc = "`op_Equality(crate::unity_engine::trackedreference::TrackedReference, crate::unity_engine::trackedreference::TrackedReference)` overload"] pub fn op_equality (x : impl :: core :: convert :: Into < crate :: unity_engine :: trackedreference :: TrackedReference > , y : impl :: core :: convert :: Into < crate :: unity_engine :: trackedreference :: TrackedReference >) -> bool { unsafe { __TrackedReference_unity2_raw :: op_equality (:: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (y) , :: core :: option :: Option :: None) } } # [doc = "`op_Inequality(crate::unity_engine::trackedreference::TrackedReference, crate::unity_engine::trackedreference::TrackedReference)` overload"] pub fn op_inequality (x : impl :: core :: convert :: Into < crate :: unity_engine :: trackedreference :: TrackedReference > , y : impl :: core :: convert :: Into < crate :: unity_engine :: trackedreference :: TrackedReference >) -> bool { unsafe { __TrackedReference_unity2_raw :: op_inequality (:: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (y) , :: core :: option :: Option :: None) } } # [doc = "`op_Implicit(crate::unity_engine::trackedreference::TrackedReference)` overload"] pub fn op_implicit (exists : impl :: core :: convert :: Into < crate :: unity_engine :: trackedreference :: TrackedReference >) -> bool { unsafe { __TrackedReference_unity2_raw :: op_implicit (:: core :: convert :: Into :: into (exists) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-trackedreference")]
+pub trait ITrackedReferenceMethods : ITrackedReference { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TrackedReference as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TrackedReference_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Equals(crate::system::object::Object)` overload"] fn equals (self , o : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { let __receiver = < TrackedReference as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TrackedReference_unity2_raw :: equals (__receiver , :: core :: convert :: Into :: into (o) , :: core :: option :: Option :: None) } } # [doc = "`GetHashCode()` overload"] fn get_hash_code (self ,) -> i32 { unsafe { let __receiver = < TrackedReference as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TrackedReference_unity2_raw :: get_hash_code (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-trackedreference")]
+impl < __T : ITrackedReference > ITrackedReferenceMethods for __T { }
+
+#[cfg(feature = "unity_engine-trackedreference")]
+impl TrackedReference { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TrackedReference_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn op_equality_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TrackedReference_unity2_raw :: __lookup_op_equality :: get_method_info () } pub fn op_inequality_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TrackedReference_unity2_raw :: __lookup_op_inequality :: get_method_info () } pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TrackedReference_unity2_raw :: __lookup_equals :: get_method_info () } pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TrackedReference_unity2_raw :: __lookup_get_hash_code :: get_method_info () } pub fn op_implicit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TrackedReference_unity2_raw :: __lookup_op_implicit :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-trackedreference")]
 impl TrackedReference {
-    #[doc = "`op_Equality(crate::unity_engine::trackedreference::TrackedReference, crate::unity_engine::trackedreference::TrackedReference)` overload"]
-    pub fn op_equality(
-        x: impl ::core::convert::Into<crate::unity_engine::trackedreference::TrackedReference>,
-        y: impl ::core::convert::Into<crate::unity_engine::trackedreference::TrackedReference>,
-    ) -> bool {
-        unsafe {
-            __TrackedReference_unity2_raw::op_equality(
-                ::core::convert::Into::into(x),
-                ::core::convert::Into::into(y),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`op_Inequality(crate::unity_engine::trackedreference::TrackedReference, crate::unity_engine::trackedreference::TrackedReference)` overload"]
-    pub fn op_inequality(
-        x: impl ::core::convert::Into<crate::unity_engine::trackedreference::TrackedReference>,
-        y: impl ::core::convert::Into<crate::unity_engine::trackedreference::TrackedReference>,
-    ) -> bool {
-        unsafe {
-            __TrackedReference_unity2_raw::op_inequality(
-                ::core::convert::Into::into(x),
-                ::core::convert::Into::into(y),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`op_Implicit(crate::unity_engine::trackedreference::TrackedReference)` overload"]
-    pub fn op_implicit(exists: impl ::core::convert::Into<crate::unity_engine::trackedreference::TrackedReference>) -> bool {
-        unsafe { __TrackedReference_unity2_raw::op_implicit(::core::convert::Into::into(exists), ::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "unity_engine-trackedreference")]
-pub trait ITrackedReferenceMethods: ITrackedReference {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <TrackedReference as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TrackedReference_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Equals(crate::system::object::Object)` overload"]
-    fn equals(self, o: impl ::core::convert::Into<crate::system::object::Object>) -> bool {
-        unsafe {
-            let __receiver = <TrackedReference as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TrackedReference_unity2_raw::equals(__receiver, ::core::convert::Into::into(o), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetHashCode()` overload"]
-    fn get_hash_code(self) -> i32 {
-        unsafe {
-            let __receiver = <TrackedReference as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TrackedReference_unity2_raw::get_hash_code(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-trackedreference")]
-impl<__T: ITrackedReference> ITrackedReferenceMethods for __T {}
-
-#[cfg(feature = "unity_engine-trackedreference")]
-impl TrackedReference {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TrackedReference),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITrackedReferenceMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TrackedReference) , :: core :: stringify ! (new) ,)) ; < Self as ITrackedReferenceMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "unity_engine-trackedreference")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{ITrackedReference, ITrackedReferenceMethods, TrackedReference};
+    pub use super::TrackedReference;
+    pub use super::ITrackedReference;
+    pub use super::ITrackedReferenceMethods;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

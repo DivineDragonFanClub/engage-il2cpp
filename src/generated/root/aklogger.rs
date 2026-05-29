@@ -2,506 +2,80 @@
 
 #[cfg(feature = "root-aklogger-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        delegate::{Delegate, IDelegate},
-        multicastdelegate::{IMulticastDelegate, MulticastDelegate},
-        object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/aklogger/AkLogger.md"))]
-    #[::unity2::class(namespace = "", name = "AkLogger")]
-    #[parent(crate::system::object::Object)]
-    pub struct AkLogger {
-        #[static_field]
-        #[rename(name = "ms_Instance")]
-        pub ms_instance: crate::root::aklogger::AkLogger,
-        #[offset(16)]
-        #[rename(name = "errorLoggerDelegate")]
-        pub error_logger_delegate: crate::root::aklogger::AkLogger_ErrorLoggerInteropDelegate,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: delegate :: { Delegate , IDelegate }
+ ;
+ use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/aklogger/AkLogger_ErrorLoggerInteropDelegate.md"))]
-    #[::unity2::class(namespace = "", name = "AkLogger.ErrorLoggerInteropDelegate")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct AkLogger_ErrorLoggerInteropDelegate {}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/aklogger/AkLogger_ErrorLoggerInteropDelegate.md"))] # [:: unity2 :: class (namespace = "" , name = "AkLogger.ErrorLoggerInteropDelegate")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct AkLogger_ErrorLoggerInteropDelegate {}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/aklogger/AkLogger.md"))] # [:: unity2 :: class (namespace = "" , name = "AkLogger")] # [parent (crate :: system :: object :: Object)] pub struct AkLogger {
+# [static_field] # [rename (name = "ms_Instance")] pub ms_instance : crate :: root :: aklogger :: AkLogger ,
+# [offset (16)] # [rename (name = "errorLoggerDelegate")] pub error_logger_delegate : crate :: root :: aklogger :: AkLogger_ErrorLoggerInteropDelegate ,
+}
+
 }
 
 #[cfg(feature = "root-aklogger-types")]
 pub use __types::*;
 
 #[cfg(feature = "root-aklogger")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AkLogger_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<AkLogger as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkLogger as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: AkLogger, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AkLogger, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_instance {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkLogger as ::unity2::ClassIdentity>::class(),
-                "get_Instance",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkLogger as ::unity2::ClassIdentity>::NAME,
-                        "get_Instance",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_instance(__unity2_method_info: ::unity2::OptionalMethod) -> crate::root::aklogger::AkLogger {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::root::aklogger::AkLogger =
-            ::core::mem::transmute(__lookup_get_instance::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_finalize {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<AkLogger as ::unity2::ClassIdentity>::class(), "Finalize", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkLogger as ::unity2::ClassIdentity>::NAME,
-                        "Finalize",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn finalize(this: AkLogger, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AkLogger, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_finalize::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_init {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<AkLogger as ::unity2::ClassIdentity>::class(), "Init", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <AkLogger as ::unity2::ClassIdentity>::NAME, "Init", e),
-            }
-        }
-    }
-    pub unsafe fn init(this: AkLogger, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AkLogger, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_init::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_wwise_internal_log_error {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkLogger as ::unity2::ClassIdentity>::class(),
-                "WwiseInternalLogError",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkLogger as ::unity2::ClassIdentity>::NAME,
-                        "WwiseInternalLogError",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn wwise_internal_log_error(message: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_wwise_internal_log_error::get_method_info().method_ptr);
-        inner(message, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_message {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<AkLogger as ::unity2::ClassIdentity>::class(), "Message", 1, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkLogger as ::unity2::ClassIdentity>::NAME,
-                        "Message",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn message(message: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_message::get_method_info().method_ptr);
-        inner(message, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_warning {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<AkLogger as ::unity2::ClassIdentity>::class(), "Warning", 1, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkLogger as ::unity2::ClassIdentity>::NAME,
-                        "Warning",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn warning(message: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_warning::get_method_info().method_ptr);
-        inner(message, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_error {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<AkLogger as ::unity2::ClassIdentity>::class(), "Error", 1, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkLogger as ::unity2::ClassIdentity>::NAME,
-                        "Error",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn error(message: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_error::get_method_info().method_ptr);
-        inner(message, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<AkLogger as ::unity2::ClassIdentity>::class(), ".cctor", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkLogger as ::unity2::ClassIdentity>::NAME,
-                        ".cctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __AkLogger_ErrorLoggerInteropDelegate_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type () , < :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkLogger_ErrorLoggerInteropDelegate as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkLogger_ErrorLoggerInteropDelegate as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : AkLogger_ErrorLoggerInteropDelegate , object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkLogger_ErrorLoggerInteropDelegate , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , object , method , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_invoke { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkLogger_ErrorLoggerInteropDelegate as :: unity2 :: ClassIdentity > :: class () , "Invoke" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkLogger_ErrorLoggerInteropDelegate as :: unity2 :: ClassIdentity > :: NAME , "Invoke" , e) , } } } pub unsafe fn invoke (this : AkLogger_ErrorLoggerInteropDelegate , message : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkLogger_ErrorLoggerInteropDelegate , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_invoke :: get_method_info () . method_ptr ,) ; inner (this , message , __unity2_method_info) } }
 
 #[cfg(feature = "root-aklogger")]
-impl AkLogger {
-    #[doc = "`get_Instance()` overload"]
-    pub fn get_instance() -> crate::root::aklogger::AkLogger {
-        unsafe { __AkLogger_unity2_raw::get_instance(::core::option::Option::None) }
-    }
-
-    #[doc = "`WwiseInternalLogError(::unity2::Il2CppString)` overload"]
-    pub fn wwise_internal_log_error(message: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe { __AkLogger_unity2_raw::wwise_internal_log_error(::core::convert::Into::into(message), ::core::option::Option::None) }
-    }
-
-    #[doc = "`Message(::unity2::Il2CppString)` overload"]
-    pub fn message(message: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe { __AkLogger_unity2_raw::message(::core::convert::Into::into(message), ::core::option::Option::None) }
-    }
-
-    #[doc = "`Warning(::unity2::Il2CppString)` overload"]
-    pub fn warning(message: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe { __AkLogger_unity2_raw::warning(::core::convert::Into::into(message), ::core::option::Option::None) }
-    }
-
-    #[doc = "`Error(::unity2::Il2CppString)` overload"]
-    pub fn error(message: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe { __AkLogger_unity2_raw::error(::core::convert::Into::into(message), ::core::option::Option::None) }
-    }
-
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __AkLogger_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
+pub trait IAkLogger_ErrorLoggerInteropDelegateMethods : IAkLogger_ErrorLoggerInteropDelegate { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < AkLogger_ErrorLoggerInteropDelegate as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkLogger_ErrorLoggerInteropDelegate_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } # [doc = "`Invoke(::unity2::Il2CppString)` overload"] fn invoke (self , message : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < AkLogger_ErrorLoggerInteropDelegate as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkLogger_ErrorLoggerInteropDelegate_unity2_raw :: invoke (__receiver , :: core :: convert :: Into :: into (message) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "root-aklogger")]
-pub trait IAkLoggerMethods: IAkLogger {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <AkLogger as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkLogger_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Finalize()` overload"]
-    fn finalize(self) -> () {
-        unsafe {
-            let __receiver = <AkLogger as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkLogger_unity2_raw::finalize(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Init()` overload"]
-    fn init(self) -> () {
-        unsafe {
-            let __receiver = <AkLogger as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkLogger_unity2_raw::init(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+impl < __T : IAkLogger_ErrorLoggerInteropDelegate > IAkLogger_ErrorLoggerInteropDelegateMethods for __T { }
 
 #[cfg(feature = "root-aklogger")]
-impl<__T: IAkLogger> IAkLoggerMethods for __T {}
-
-#[cfg(feature = "root-aklogger")]
-impl AkLogger {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(AkLogger), ::core::stringify!(new),));
-        <Self as IAkLoggerMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "root-aklogger")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AkLogger_ErrorLoggerInteropDelegate_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkLogger_ErrorLoggerInteropDelegate as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkLogger_ErrorLoggerInteropDelegate as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: AkLogger_ErrorLoggerInteropDelegate,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            AkLogger_ErrorLoggerInteropDelegate,
-            crate::system::object::Object,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkLogger_ErrorLoggerInteropDelegate as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkLogger_ErrorLoggerInteropDelegate as ::unity2::ClassIdentity>::NAME,
-                        "Invoke",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn invoke(
-        this: AkLogger_ErrorLoggerInteropDelegate,
-        message: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(AkLogger_ErrorLoggerInteropDelegate, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
-        inner(this, message, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "root-aklogger")]
-pub trait IAkLogger_ErrorLoggerInteropDelegateMethods: IAkLogger_ErrorLoggerInteropDelegate {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
-        unsafe {
-            let __receiver = <AkLogger_ErrorLoggerInteropDelegate as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AkLogger_ErrorLoggerInteropDelegate_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invoke(::unity2::Il2CppString)` overload"]
-    fn invoke(self, message: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver = <AkLogger_ErrorLoggerInteropDelegate as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AkLogger_ErrorLoggerInteropDelegate_unity2_raw::invoke(__receiver, ::core::convert::Into::into(message), ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "root-aklogger")]
-impl<__T: IAkLogger_ErrorLoggerInteropDelegate> IAkLogger_ErrorLoggerInteropDelegateMethods for __T {}
+impl AkLogger_ErrorLoggerInteropDelegate { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkLogger_ErrorLoggerInteropDelegate_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkLogger_ErrorLoggerInteropDelegate_unity2_raw :: __lookup_invoke :: get_method_info () } }
 
 #[cfg(feature = "root-aklogger")]
 impl AkLogger_ErrorLoggerInteropDelegate {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AkLogger_ErrorLoggerInteropDelegate),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAkLogger_ErrorLoggerInteropDelegateMethods>::ctor(this, object, method);
-        this
-    }
+# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkLogger_ErrorLoggerInteropDelegate) , :: core :: stringify ! (new) ,)) ; < Self as IAkLogger_ErrorLoggerInteropDelegateMethods > :: ctor (this , object , method) ; this }
+}
+
+#[cfg(feature = "root-aklogger")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __AkLogger_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkLogger as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkLogger as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : AkLogger , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkLogger , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_instance { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkLogger as :: unity2 :: ClassIdentity > :: class () , "get_Instance" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkLogger as :: unity2 :: ClassIdentity > :: NAME , "get_Instance" , e) , } } } pub unsafe fn get_instance (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: root :: aklogger :: AkLogger { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: root :: aklogger :: AkLogger = :: core :: mem :: transmute (__lookup_get_instance :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_finalize { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkLogger as :: unity2 :: ClassIdentity > :: class () , "Finalize" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkLogger as :: unity2 :: ClassIdentity > :: NAME , "Finalize" , e) , } } } pub unsafe fn finalize (this : AkLogger , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkLogger , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_finalize :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_init { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkLogger as :: unity2 :: ClassIdentity > :: class () , "Init" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkLogger as :: unity2 :: ClassIdentity > :: NAME , "Init" , e) , } } } pub unsafe fn init (this : AkLogger , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkLogger , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_init :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_wwise_internal_log_error { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkLogger as :: unity2 :: ClassIdentity > :: class () , "WwiseInternalLogError" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkLogger as :: unity2 :: ClassIdentity > :: NAME , "WwiseInternalLogError" , e) , } } } pub unsafe fn wwise_internal_log_error (message : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_wwise_internal_log_error :: get_method_info () . method_ptr ,) ; inner (message , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_message { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkLogger as :: unity2 :: ClassIdentity > :: class () , "Message" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkLogger as :: unity2 :: ClassIdentity > :: NAME , "Message" , e) , } } } pub unsafe fn message (message : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_message :: get_method_info () . method_ptr ,) ; inner (message , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_warning { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkLogger as :: unity2 :: ClassIdentity > :: class () , "Warning" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkLogger as :: unity2 :: ClassIdentity > :: NAME , "Warning" , e) , } } } pub unsafe fn warning (message : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_warning :: get_method_info () . method_ptr ,) ; inner (message , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_error { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkLogger as :: unity2 :: ClassIdentity > :: class () , "Error" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkLogger as :: unity2 :: ClassIdentity > :: NAME , "Error" , e) , } } } pub unsafe fn error (message : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_error :: get_method_info () . method_ptr ,) ; inner (message , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkLogger as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkLogger as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
+
+#[cfg(feature = "root-aklogger")]
+impl AkLogger { # [doc = "`get_Instance()` overload"] pub fn get_instance () -> crate :: root :: aklogger :: AkLogger { unsafe { __AkLogger_unity2_raw :: get_instance (:: core :: option :: Option :: None) } } # [doc = "`WwiseInternalLogError(::unity2::Il2CppString)` overload"] pub fn wwise_internal_log_error (message : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { __AkLogger_unity2_raw :: wwise_internal_log_error (:: core :: convert :: Into :: into (message) , :: core :: option :: Option :: None) } } # [doc = "`Message(::unity2::Il2CppString)` overload"] pub fn message (message : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { __AkLogger_unity2_raw :: message (:: core :: convert :: Into :: into (message) , :: core :: option :: Option :: None) } } # [doc = "`Warning(::unity2::Il2CppString)` overload"] pub fn warning (message : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { __AkLogger_unity2_raw :: warning (:: core :: convert :: Into :: into (message) , :: core :: option :: Option :: None) } } # [doc = "`Error(::unity2::Il2CppString)` overload"] pub fn error (message : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { __AkLogger_unity2_raw :: error (:: core :: convert :: Into :: into (message) , :: core :: option :: Option :: None) } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { __AkLogger_unity2_raw :: cctor (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "root-aklogger")]
+pub trait IAkLoggerMethods : IAkLogger { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AkLogger as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkLogger_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Finalize()` overload"] fn finalize (self ,) -> () { unsafe { let __receiver = < AkLogger as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkLogger_unity2_raw :: finalize (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Init()` overload"] fn init (self ,) -> () { unsafe { let __receiver = < AkLogger as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkLogger_unity2_raw :: init (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "root-aklogger")]
+impl < __T : IAkLogger > IAkLoggerMethods for __T { }
+
+#[cfg(feature = "root-aklogger")]
+impl AkLogger { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkLogger_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn get_instance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkLogger_unity2_raw :: __lookup_get_instance :: get_method_info () } pub fn finalize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkLogger_unity2_raw :: __lookup_finalize :: get_method_info () } pub fn init_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkLogger_unity2_raw :: __lookup_init :: get_method_info () } pub fn wwise_internal_log_error_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkLogger_unity2_raw :: __lookup_wwise_internal_log_error :: get_method_info () } pub fn message_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkLogger_unity2_raw :: __lookup_message :: get_method_info () } pub fn warning_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkLogger_unity2_raw :: __lookup_warning :: get_method_info () } pub fn error_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkLogger_unity2_raw :: __lookup_error :: get_method_info () } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkLogger_unity2_raw :: __lookup_cctor :: get_method_info () } }
+
+#[cfg(feature = "root-aklogger")]
+impl AkLogger {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkLogger) , :: core :: stringify ! (new) ,)) ; < Self as IAkLoggerMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "root-aklogger")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{
-        AkLogger, AkLogger_ErrorLoggerInteropDelegate, IAkLogger, IAkLoggerMethods, IAkLogger_ErrorLoggerInteropDelegate,
-        IAkLogger_ErrorLoggerInteropDelegateMethods,
-    };
-    #[cfg(feature = "system-delegate")]
-    pub use crate::system::delegate::IDelegateMethods;
-    #[cfg(feature = "system-multicastdelegate")]
-    pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::system::{delegate::IDelegate, multicastdelegate::IMulticastDelegate, object::IObject};
+    pub use super::AkLogger_ErrorLoggerInteropDelegate;
+    pub use super::IAkLogger_ErrorLoggerInteropDelegate;
+    pub use super::IAkLogger_ErrorLoggerInteropDelegateMethods;
+    pub use super::AkLogger;
+    pub use super::IAkLogger;
+    pub use super::IAkLoggerMethods;
+    pub use crate::system::delegate::IDelegate;
+    pub use crate::system::multicastdelegate::IMulticastDelegate;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-delegate")] pub use crate::system::delegate::IDelegateMethods;
+    #[cfg(feature = "system-multicastdelegate")] pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

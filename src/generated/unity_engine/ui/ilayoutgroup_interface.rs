@@ -2,13 +2,13 @@
 
 #[cfg(feature = "unity_engine-ui-ilayoutgroup_interface-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/ilayoutgroup_interface/ILayoutGroup_Interface.md"))]
-    #[::unity2::class(namespace = "UnityEngine.UI", name = "ILayoutGroup")]
-    pub struct ILayoutGroup_Interface {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/ilayoutgroup_interface/ILayoutGroup_Interface.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "ILayoutGroup")] pub struct ILayoutGroup_Interface {}
+
 }
 
 #[cfg(feature = "unity_engine-ui-ilayoutgroup_interface-types")]
@@ -17,5 +17,6 @@ pub use __types::*;
 #[cfg(feature = "unity_engine-ui-ilayoutgroup_interface")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IILayoutGroup_Interface, ILayoutGroup_Interface};
+    pub use super::ILayoutGroup_Interface;
+    pub use super::IILayoutGroup_Interface;
 }

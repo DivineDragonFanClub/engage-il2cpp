@@ -2,759 +2,116 @@
 
 #[cfg(feature = "moon_sharp-interpreter-closure-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        moon_sharp::interpreter::refidobject::{IRefIdObject, RefIdObject},
-        system::{
-            object::{IObject, Object},
-            r#enum::{Enum, IEnum},
-            valuetype::{IValueType, ValueType},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/closure/Closure.md"))]
-    #[::unity2::class(namespace = "MoonSharp.Interpreter", name = "Closure")]
-    #[parent(crate::moon_sharp::interpreter::refidobject::RefIdObject)]
-    pub struct Closure {
-        #[static_field]
-        #[rename(name = "emptyClosure")]
-        pub empty_closure: crate::moon_sharp::interpreter::execution::closurecontext::ClosureContext,
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: moon_sharp :: interpreter :: refidobject :: { IRefIdObject , RefIdObject }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/closure/Closure.md"))] # [:: unity2 :: class (namespace = "MoonSharp.Interpreter" , name = "Closure")] # [parent (crate :: moon_sharp :: interpreter :: refidobject :: RefIdObject)] pub struct Closure {
+# [static_field] # [rename (name = "emptyClosure")] pub empty_closure : crate :: moon_sharp :: interpreter :: execution :: closurecontext :: ClosureContext ,
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/closure/Closure_UpvaluesType.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct Closure_UpvaluesType  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for Closure_UpvaluesType  {
+    const NAMESPACE: &'static str = "MoonSharp.Interpreter";
+
+    const NAME: &'static str = "Closure.UpvaluesType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/closure/Closure_UpvaluesType.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct Closure_UpvaluesType {
-        pub value: i32,
+}
+
+
+impl  ::unity2::IlType for Closure_UpvaluesType  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::ClassIdentity for Closure_UpvaluesType {
-        const NAME: &'static str = "Closure.UpvaluesType";
-        const NAMESPACE: &'static str = "MoonSharp.Interpreter";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  Closure_UpvaluesType  {
+    pub fn none() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl ::unity2::IlType for Closure_UpvaluesType {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+
+    pub fn environment() -> Self {
+        Self { value: 1 }
+
     }
 
-    impl Closure_UpvaluesType {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn environment() -> Self {
-            Self { value: 1 }
-        }
+    pub fn closure() -> Self {
+        Self { value: 2 }
 
-        pub fn closure() -> Self {
-            Self { value: 2 }
-        }
     }
+
+}
+
 }
 
 #[cfg(feature = "moon_sharp-interpreter-closure-types")]
 pub use __types::*;
 
 #[cfg(feature = "moon_sharp-interpreter-closure")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __Closure_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_entry_point_byte_code_location {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Closure as ::unity2::ClassIdentity>::class(),
-                "get_EntryPointByteCodeLocation",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Closure as ::unity2::ClassIdentity>::NAME,
-                        "get_EntryPointByteCodeLocation",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_entry_point_byte_code_location(this: Closure, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(Closure, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_entry_point_byte_code_location::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_entry_point_byte_code_location {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Closure as ::unity2::ClassIdentity>::class(),
-                "set_EntryPointByteCodeLocation",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Closure as ::unity2::ClassIdentity>::NAME,
-                        "set_EntryPointByteCodeLocation",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_entry_point_byte_code_location(this: Closure, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Closure, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_entry_point_byte_code_location::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_owner_script {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Closure as ::unity2::ClassIdentity>::class(),
-                "get_OwnerScript",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Closure as ::unity2::ClassIdentity>::NAME,
-                        "get_OwnerScript",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_owner_script(this: Closure, __unity2_method_info: ::unity2::OptionalMethod) -> crate::moon_sharp::interpreter::script::Script {
-        let inner: extern "C" fn(Closure, ::unity2::OptionalMethod) -> crate::moon_sharp::interpreter::script::Script =
-            ::core::mem::transmute(__lookup_get_owner_script::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_owner_script {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::moon_sharp::interpreter::script::Script as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Closure as ::unity2::ClassIdentity>::class(),
-                "set_OwnerScript",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Closure as ::unity2::ClassIdentity>::NAME,
-                        "set_OwnerScript",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_owner_script(
-        this: Closure,
-        value: crate::moon_sharp::interpreter::script::Script,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(Closure, crate::moon_sharp::interpreter::script::Script, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_owner_script::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_closure_context {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Closure as ::unity2::ClassIdentity>::class(),
-                "get_ClosureContext",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Closure as ::unity2::ClassIdentity>::NAME,
-                        "get_ClosureContext",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_closure_context(
-        this: Closure,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::moon_sharp::interpreter::execution::closurecontext::ClosureContext {
-        let inner: extern "C" fn(Closure, ::unity2::OptionalMethod) -> crate::moon_sharp::interpreter::execution::closurecontext::ClosureContext =
-            ::core::mem::transmute(__lookup_get_closure_context::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_closure_context {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::moon_sharp::interpreter::execution::closurecontext::ClosureContext as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Closure as ::unity2::ClassIdentity>::class(),
-                "set_ClosureContext",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Closure as ::unity2::ClassIdentity>::NAME,
-                        "set_ClosureContext",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_closure_context(
-        this: Closure,
-        value: crate::moon_sharp::interpreter::execution::closurecontext::ClosureContext,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(Closure, crate::moon_sharp::interpreter::execution::closurecontext::ClosureContext, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_closure_context::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: script :: Script as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: moon_sharp :: interpreter :: symbolref :: SymbolRef > as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(<Closure as ::unity2::ClassIdentity>::class(), ".ctor", 4, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Closure as ::unity2::ClassIdentity>::NAME, ".ctor", e),
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: Closure,
-        script: crate::moon_sharp::interpreter::script::Script,
-        idx: i32,
-        symbols: ::unity2::Array<crate::moon_sharp::interpreter::symbolref::SymbolRef>,
-        resolved_locals: crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            Closure,
-            crate::moon_sharp::interpreter::script::Script,
-            i32,
-            ::unity2::Array<crate::moon_sharp::interpreter::symbolref::SymbolRef>,
-            crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, script, idx, symbols, resolved_locals, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Closure as ::unity2::ClassIdentity>::class(), "Call", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Closure as ::unity2::ClassIdentity>::NAME, "Call", e),
-            }
-        }
-    }
-    pub unsafe fn call(this: Closure, __unity2_method_info: ::unity2::OptionalMethod) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
-        let inner: extern "C" fn(Closure, ::unity2::OptionalMethod) -> crate::moon_sharp::interpreter::dynvalue::DynValue =
-            ::core::mem::transmute(__lookup_call::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_call_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Array<crate::system::object::Object> as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<Closure as ::unity2::ClassIdentity>::class(), "Call", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Closure as ::unity2::ClassIdentity>::NAME, "Call", e),
-            }
-        }
-    }
-    pub unsafe fn call_2(
-        this: Closure,
-        args: ::unity2::Array<crate::system::object::Object>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
-        let inner: extern "C" fn(
-            Closure,
-            ::unity2::Array<crate::system::object::Object>,
-            ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(__lookup_call_2::get_method_info().method_ptr);
-        inner(this, args, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_call_3 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<Closure as ::unity2::ClassIdentity>::class(), "Call", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Closure as ::unity2::ClassIdentity>::NAME, "Call", e),
-            }
-        }
-    }
-    pub unsafe fn call_3(
-        this: Closure,
-        args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
-        let inner: extern "C" fn(
-            Closure,
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(__lookup_call_3::get_method_info().method_ptr);
-        inner(this, args, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_delegate {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Closure as ::unity2::ClassIdentity>::class(), "GetDelegate", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Closure as ::unity2::ClassIdentity>::NAME,
-                        "GetDelegate",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_delegate(
-        this: Closure,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::moon_sharp::interpreter::scriptfunctiondelegate::ScriptFunctionDelegate {
-        let inner: extern "C" fn(
-            Closure,
-            ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::scriptfunctiondelegate::ScriptFunctionDelegate =
-            ::core::mem::transmute(__lookup_get_delegate::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_upvalues_count {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Closure as ::unity2::ClassIdentity>::class(),
-                "GetUpvaluesCount",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Closure as ::unity2::ClassIdentity>::NAME,
-                        "GetUpvaluesCount",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_upvalues_count(this: Closure, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(Closure, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_upvalues_count::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_upvalue_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Closure as ::unity2::ClassIdentity>::class(),
-                "GetUpvalueName",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Closure as ::unity2::ClassIdentity>::NAME,
-                        "GetUpvalueName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_upvalue_name(this: Closure, idx: i32, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(Closure, i32, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_upvalue_name::get_method_info().method_ptr);
-        inner(this, idx, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_upvalue {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<Closure as ::unity2::ClassIdentity>::class(), "GetUpvalue", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Closure as ::unity2::ClassIdentity>::NAME,
-                        "GetUpvalue",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_upvalue(
-        this: Closure,
-        idx: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
-        let inner: extern "C" fn(Closure, i32, ::unity2::OptionalMethod) -> crate::moon_sharp::interpreter::dynvalue::DynValue =
-            ::core::mem::transmute(__lookup_get_upvalue::get_method_info().method_ptr);
-        inner(this, idx, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_upvalues_type {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Closure as ::unity2::ClassIdentity>::class(),
-                "GetUpvaluesType",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Closure as ::unity2::ClassIdentity>::NAME,
-                        "GetUpvaluesType",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_upvalues_type(
-        this: Closure,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::moon_sharp::interpreter::closure::Closure_UpvaluesType {
-        let inner: extern "C" fn(Closure, ::unity2::OptionalMethod) -> crate::moon_sharp::interpreter::closure::Closure_UpvaluesType =
-            ::core::mem::transmute(__lookup_get_upvalues_type::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Closure as ::unity2::ClassIdentity>::class(), ".cctor", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Closure as ::unity2::ClassIdentity>::NAME,
-                        ".cctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __Closure_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_entry_point_byte_code_location { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Closure as :: unity2 :: ClassIdentity > :: class () , "get_EntryPointByteCodeLocation" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Closure as :: unity2 :: ClassIdentity > :: NAME , "get_EntryPointByteCodeLocation" , e) , } } } pub unsafe fn get_entry_point_byte_code_location (this : Closure , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (Closure , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_entry_point_byte_code_location :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_entry_point_byte_code_location { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Closure as :: unity2 :: ClassIdentity > :: class () , "set_EntryPointByteCodeLocation" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Closure as :: unity2 :: ClassIdentity > :: NAME , "set_EntryPointByteCodeLocation" , e) , } } } pub unsafe fn set_entry_point_byte_code_location (this : Closure , value : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Closure , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_entry_point_byte_code_location :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_owner_script { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Closure as :: unity2 :: ClassIdentity > :: class () , "get_OwnerScript" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Closure as :: unity2 :: ClassIdentity > :: NAME , "get_OwnerScript" , e) , } } } pub unsafe fn get_owner_script (this : Closure , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: script :: Script { let inner : extern "C" fn (Closure , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: script :: Script = :: core :: mem :: transmute (__lookup_get_owner_script :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_owner_script { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: script :: Script as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Closure as :: unity2 :: ClassIdentity > :: class () , "set_OwnerScript" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Closure as :: unity2 :: ClassIdentity > :: NAME , "set_OwnerScript" , e) , } } } pub unsafe fn set_owner_script (this : Closure , value : crate :: moon_sharp :: interpreter :: script :: Script , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Closure , crate :: moon_sharp :: interpreter :: script :: Script , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_owner_script :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_closure_context { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Closure as :: unity2 :: ClassIdentity > :: class () , "get_ClosureContext" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Closure as :: unity2 :: ClassIdentity > :: NAME , "get_ClosureContext" , e) , } } } pub unsafe fn get_closure_context (this : Closure , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: execution :: closurecontext :: ClosureContext { let inner : extern "C" fn (Closure , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: execution :: closurecontext :: ClosureContext = :: core :: mem :: transmute (__lookup_get_closure_context :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_closure_context { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: execution :: closurecontext :: ClosureContext as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Closure as :: unity2 :: ClassIdentity > :: class () , "set_ClosureContext" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Closure as :: unity2 :: ClassIdentity > :: NAME , "set_ClosureContext" , e) , } } } pub unsafe fn set_closure_context (this : Closure , value : crate :: moon_sharp :: interpreter :: execution :: closurecontext :: ClosureContext , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Closure , crate :: moon_sharp :: interpreter :: execution :: closurecontext :: ClosureContext , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_closure_context :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: script :: Script as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: moon_sharp :: interpreter :: symbolref :: SymbolRef > as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Closure as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 4 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Closure as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : Closure , script : crate :: moon_sharp :: interpreter :: script :: Script , idx : i32 , symbols : :: unity2 :: Array < crate :: moon_sharp :: interpreter :: symbolref :: SymbolRef > , resolved_locals : crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Closure , crate :: moon_sharp :: interpreter :: script :: Script , i32 , :: unity2 :: Array < crate :: moon_sharp :: interpreter :: symbolref :: SymbolRef > , crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , script , idx , symbols , resolved_locals , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_call { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Closure as :: unity2 :: ClassIdentity > :: class () , "Call" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Closure as :: unity2 :: ClassIdentity > :: NAME , "Call" , e) , } } } pub unsafe fn call (this : Closure , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue { let inner : extern "C" fn (Closure , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue = :: core :: mem :: transmute (__lookup_call :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_call_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: system :: object :: Object > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Closure as :: unity2 :: ClassIdentity > :: class () , "Call" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Closure as :: unity2 :: ClassIdentity > :: NAME , "Call" , e) , } } } pub unsafe fn call_2 (this : Closure , args : :: unity2 :: Array < crate :: system :: object :: Object > , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue { let inner : extern "C" fn (Closure , :: unity2 :: Array < crate :: system :: object :: Object > , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue = :: core :: mem :: transmute (__lookup_call_2 :: get_method_info () . method_ptr ,) ; inner (this , args , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_call_3 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Closure as :: unity2 :: ClassIdentity > :: class () , "Call" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Closure as :: unity2 :: ClassIdentity > :: NAME , "Call" , e) , } } } pub unsafe fn call_3 (this : Closure , args : :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue { let inner : extern "C" fn (Closure , :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue = :: core :: mem :: transmute (__lookup_call_3 :: get_method_info () . method_ptr ,) ; inner (this , args , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_delegate { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Closure as :: unity2 :: ClassIdentity > :: class () , "GetDelegate" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Closure as :: unity2 :: ClassIdentity > :: NAME , "GetDelegate" , e) , } } } pub unsafe fn get_delegate (this : Closure , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: scriptfunctiondelegate :: ScriptFunctionDelegate { let inner : extern "C" fn (Closure , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: scriptfunctiondelegate :: ScriptFunctionDelegate = :: core :: mem :: transmute (__lookup_get_delegate :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_upvalues_count { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Closure as :: unity2 :: ClassIdentity > :: class () , "GetUpvaluesCount" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Closure as :: unity2 :: ClassIdentity > :: NAME , "GetUpvaluesCount" , e) , } } } pub unsafe fn get_upvalues_count (this : Closure , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (Closure , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_upvalues_count :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_upvalue_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Closure as :: unity2 :: ClassIdentity > :: class () , "GetUpvalueName" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Closure as :: unity2 :: ClassIdentity > :: NAME , "GetUpvalueName" , e) , } } } pub unsafe fn get_upvalue_name (this : Closure , idx : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (Closure , i32 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_upvalue_name :: get_method_info () . method_ptr ,) ; inner (this , idx , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_upvalue { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Closure as :: unity2 :: ClassIdentity > :: class () , "GetUpvalue" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Closure as :: unity2 :: ClassIdentity > :: NAME , "GetUpvalue" , e) , } } } pub unsafe fn get_upvalue (this : Closure , idx : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue { let inner : extern "C" fn (Closure , i32 , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue = :: core :: mem :: transmute (__lookup_get_upvalue :: get_method_info () . method_ptr ,) ; inner (this , idx , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_upvalues_type { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Closure as :: unity2 :: ClassIdentity > :: class () , "GetUpvaluesType" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Closure as :: unity2 :: ClassIdentity > :: NAME , "GetUpvaluesType" , e) , } } } pub unsafe fn get_upvalues_type (this : Closure , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: closure :: Closure_UpvaluesType { let inner : extern "C" fn (Closure , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: closure :: Closure_UpvaluesType = :: core :: mem :: transmute (__lookup_get_upvalues_type :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Closure as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Closure as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
+
+#[cfg(feature = "moon_sharp-interpreter-closure")]
+impl Closure { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { __Closure_unity2_raw :: cctor (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "moon_sharp-interpreter-closure")]
+pub trait IClosureMethods : IClosure { # [doc = "`get_EntryPointByteCodeLocation()` overload"] fn get_entry_point_byte_code_location (self ,) -> i32 { unsafe { let __receiver = < Closure as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Closure_unity2_raw :: get_entry_point_byte_code_location (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_EntryPointByteCodeLocation(i32)` overload"] fn set_entry_point_byte_code_location (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < Closure as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Closure_unity2_raw :: set_entry_point_byte_code_location (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_OwnerScript()` overload"] fn get_owner_script (self ,) -> crate :: moon_sharp :: interpreter :: script :: Script { unsafe { let __receiver = < Closure as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Closure_unity2_raw :: get_owner_script (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_OwnerScript(crate::moon_sharp::interpreter::script::Script)` overload"] fn set_owner_script (self , value : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: script :: Script >) -> () { unsafe { let __receiver = < Closure as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Closure_unity2_raw :: set_owner_script (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_ClosureContext()` overload"] fn get_closure_context (self ,) -> crate :: moon_sharp :: interpreter :: execution :: closurecontext :: ClosureContext { unsafe { let __receiver = < Closure as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Closure_unity2_raw :: get_closure_context (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_ClosureContext(crate::moon_sharp::interpreter::execution::closurecontext::ClosureContext)` overload"] fn set_closure_context (self , value : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: execution :: closurecontext :: ClosureContext >) -> () { unsafe { let __receiver = < Closure as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Closure_unity2_raw :: set_closure_context (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`.ctor(crate::moon_sharp::interpreter::script::Script, i32, ::unity2::Array<crate::moon_sharp::interpreter::symbolref::SymbolRef>, crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"] fn ctor (self , script : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: script :: Script > , idx : impl :: core :: convert :: Into < i32 > , symbols : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: moon_sharp :: interpreter :: symbolref :: SymbolRef > > , resolved_locals : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > >) -> () { unsafe { let __receiver = < Closure as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Closure_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (script) , :: core :: convert :: Into :: into (idx) , :: core :: convert :: Into :: into (symbols) , :: core :: convert :: Into :: into (resolved_locals) , :: core :: option :: Option :: None) } } # [doc = "`Call()` overload"] fn call (self ,) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue { unsafe { let __receiver = < Closure as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Closure_unity2_raw :: call (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Call(::unity2::Array<crate::system::object::Object>)` overload"] fn call_2 (self , args : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: system :: object :: Object > >) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue { unsafe { let __receiver = < Closure as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Closure_unity2_raw :: call_2 (__receiver , :: core :: convert :: Into :: into (args) , :: core :: option :: Option :: None) } } # [doc = "`Call(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"] fn call_3 (self , args : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > >) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue { unsafe { let __receiver = < Closure as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Closure_unity2_raw :: call_3 (__receiver , :: core :: convert :: Into :: into (args) , :: core :: option :: Option :: None) } } # [doc = "`GetDelegate()` overload"] fn get_delegate (self ,) -> crate :: moon_sharp :: interpreter :: scriptfunctiondelegate :: ScriptFunctionDelegate { unsafe { let __receiver = < Closure as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Closure_unity2_raw :: get_delegate (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetUpvaluesCount()` overload"] fn get_upvalues_count (self ,) -> i32 { unsafe { let __receiver = < Closure as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Closure_unity2_raw :: get_upvalues_count (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetUpvalueName(i32)` overload"] fn get_upvalue_name (self , idx : impl :: core :: convert :: Into < i32 >) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < Closure as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Closure_unity2_raw :: get_upvalue_name (__receiver , :: core :: convert :: Into :: into (idx) , :: core :: option :: Option :: None) } } # [doc = "`GetUpvalue(i32)` overload"] fn get_upvalue (self , idx : impl :: core :: convert :: Into < i32 >) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue { unsafe { let __receiver = < Closure as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Closure_unity2_raw :: get_upvalue (__receiver , :: core :: convert :: Into :: into (idx) , :: core :: option :: Option :: None) } } # [doc = "`GetUpvaluesType()` overload"] fn get_upvalues_type (self ,) -> crate :: moon_sharp :: interpreter :: closure :: Closure_UpvaluesType { unsafe { let __receiver = < Closure as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Closure_unity2_raw :: get_upvalues_type (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "moon_sharp-interpreter-closure")]
+impl < __T : IClosure > IClosureMethods for __T { }
+
+#[cfg(feature = "moon_sharp-interpreter-closure")]
+impl Closure { pub fn get_entry_point_byte_code_location_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Closure_unity2_raw :: __lookup_get_entry_point_byte_code_location :: get_method_info () } pub fn set_entry_point_byte_code_location_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Closure_unity2_raw :: __lookup_set_entry_point_byte_code_location :: get_method_info () } pub fn get_owner_script_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Closure_unity2_raw :: __lookup_get_owner_script :: get_method_info () } pub fn set_owner_script_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Closure_unity2_raw :: __lookup_set_owner_script :: get_method_info () } pub fn get_closure_context_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Closure_unity2_raw :: __lookup_get_closure_context :: get_method_info () } pub fn set_closure_context_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Closure_unity2_raw :: __lookup_set_closure_context :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Closure_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Closure_unity2_raw :: __lookup_call :: get_method_info () } pub fn call_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Closure_unity2_raw :: __lookup_call_2 :: get_method_info () } pub fn call_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Closure_unity2_raw :: __lookup_call_3 :: get_method_info () } pub fn get_delegate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Closure_unity2_raw :: __lookup_get_delegate :: get_method_info () } pub fn get_upvalues_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Closure_unity2_raw :: __lookup_get_upvalues_count :: get_method_info () } pub fn get_upvalue_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Closure_unity2_raw :: __lookup_get_upvalue_name :: get_method_info () } pub fn get_upvalue_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Closure_unity2_raw :: __lookup_get_upvalue :: get_method_info () } pub fn get_upvalues_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Closure_unity2_raw :: __lookup_get_upvalues_type :: get_method_info () } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Closure_unity2_raw :: __lookup_cctor :: get_method_info () } }
 
 #[cfg(feature = "moon_sharp-interpreter-closure")]
 impl Closure {
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __Closure_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "moon_sharp-interpreter-closure")]
-pub trait IClosureMethods: IClosure {
-    #[doc = "`get_EntryPointByteCodeLocation()` overload"]
-    fn get_entry_point_byte_code_location(self) -> i32 {
-        unsafe {
-            let __receiver = <Closure as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Closure_unity2_raw::get_entry_point_byte_code_location(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_EntryPointByteCodeLocation(i32)` overload"]
-    fn set_entry_point_byte_code_location(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver = <Closure as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Closure_unity2_raw::set_entry_point_byte_code_location(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_OwnerScript()` overload"]
-    fn get_owner_script(self) -> crate::moon_sharp::interpreter::script::Script {
-        unsafe {
-            let __receiver = <Closure as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Closure_unity2_raw::get_owner_script(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_OwnerScript(crate::moon_sharp::interpreter::script::Script)` overload"]
-    fn set_owner_script(self, value: impl ::core::convert::Into<crate::moon_sharp::interpreter::script::Script>) -> () {
-        unsafe {
-            let __receiver = <Closure as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Closure_unity2_raw::set_owner_script(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_ClosureContext()` overload"]
-    fn get_closure_context(self) -> crate::moon_sharp::interpreter::execution::closurecontext::ClosureContext {
-        unsafe {
-            let __receiver = <Closure as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Closure_unity2_raw::get_closure_context(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_ClosureContext(crate::moon_sharp::interpreter::execution::closurecontext::ClosureContext)` overload"]
-    fn set_closure_context(self, value: impl ::core::convert::Into<crate::moon_sharp::interpreter::execution::closurecontext::ClosureContext>) -> () {
-        unsafe {
-            let __receiver = <Closure as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Closure_unity2_raw::set_closure_context(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor(crate::moon_sharp::interpreter::script::Script, i32, ::unity2::Array<crate::moon_sharp::interpreter::symbolref::SymbolRef>, crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    fn ctor(
-        self,
-        script: impl ::core::convert::Into<crate::moon_sharp::interpreter::script::Script>,
-        idx: impl ::core::convert::Into<i32>,
-        symbols: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::symbolref::SymbolRef>>,
-        resolved_locals: impl ::core::convert::Into<
-            crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
-    ) -> () {
-        unsafe {
-            let __receiver = <Closure as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Closure_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(script),
-                ::core::convert::Into::into(idx),
-                ::core::convert::Into::into(symbols),
-                ::core::convert::Into::into(resolved_locals),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Call()` overload"]
-    fn call(self) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
-        unsafe {
-            let __receiver = <Closure as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Closure_unity2_raw::call(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Call(::unity2::Array<crate::system::object::Object>)` overload"]
-    fn call_2(
-        self,
-        args: impl ::core::convert::Into<::unity2::Array<crate::system::object::Object>>,
-    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
-        unsafe {
-            let __receiver = <Closure as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Closure_unity2_raw::call_2(__receiver, ::core::convert::Into::into(args), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Call(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    fn call_3(
-        self,
-        args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>,
-    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
-        unsafe {
-            let __receiver = <Closure as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Closure_unity2_raw::call_3(__receiver, ::core::convert::Into::into(args), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetDelegate()` overload"]
-    fn get_delegate(self) -> crate::moon_sharp::interpreter::scriptfunctiondelegate::ScriptFunctionDelegate {
-        unsafe {
-            let __receiver = <Closure as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Closure_unity2_raw::get_delegate(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetUpvaluesCount()` overload"]
-    fn get_upvalues_count(self) -> i32 {
-        unsafe {
-            let __receiver = <Closure as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Closure_unity2_raw::get_upvalues_count(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetUpvalueName(i32)` overload"]
-    fn get_upvalue_name(self, idx: impl ::core::convert::Into<i32>) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <Closure as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Closure_unity2_raw::get_upvalue_name(__receiver, ::core::convert::Into::into(idx), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetUpvalue(i32)` overload"]
-    fn get_upvalue(self, idx: impl ::core::convert::Into<i32>) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
-        unsafe {
-            let __receiver = <Closure as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Closure_unity2_raw::get_upvalue(__receiver, ::core::convert::Into::into(idx), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetUpvaluesType()` overload"]
-    fn get_upvalues_type(self) -> crate::moon_sharp::interpreter::closure::Closure_UpvaluesType {
-        unsafe {
-            let __receiver = <Closure as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Closure_unity2_raw::get_upvalues_type(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "moon_sharp-interpreter-closure")]
-impl<__T: IClosure> IClosureMethods for __T {}
-
-#[cfg(feature = "moon_sharp-interpreter-closure")]
-impl Closure {
-    #[doc = "`.ctor(crate::moon_sharp::interpreter::script::Script, i32, ::unity2::Array<crate::moon_sharp::interpreter::symbolref::SymbolRef>, crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::moon_sharp::interpreter::dynvalue::DynValue>)` — overload selector"]
-    pub fn new(
-        script: crate::moon_sharp::interpreter::script::Script,
-        idx: i32,
-        symbols: ::unity2::Array<crate::moon_sharp::interpreter::symbolref::SymbolRef>,
-        resolved_locals: crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(Closure), ::core::stringify!(new),));
-        <Self as IClosureMethods>::ctor(this, script, idx, symbols, resolved_locals);
-        this
-    }
+# [doc = "`.ctor(crate::moon_sharp::interpreter::script::Script, i32, ::unity2::Array<crate::moon_sharp::interpreter::symbolref::SymbolRef>, crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::moon_sharp::interpreter::dynvalue::DynValue>)` — overload selector"] pub fn new (script : crate :: moon_sharp :: interpreter :: script :: Script , idx : i32 , symbols : :: unity2 :: Array < crate :: moon_sharp :: interpreter :: symbolref :: SymbolRef > , resolved_locals : crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue >) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Closure) , :: core :: stringify ! (new) ,)) ; < Self as IClosureMethods > :: ctor (this , script , idx , symbols , resolved_locals) ; this }
 }
 
 #[cfg(feature = "moon_sharp-interpreter-closure")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{Closure, Closure_UpvaluesType, IClosure, IClosureMethods};
-    #[cfg(feature = "moon_sharp-interpreter-refidobject")]
-    pub use crate::moon_sharp::interpreter::refidobject::IRefIdObjectMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::{
-        moon_sharp::interpreter::refidobject::IRefIdObject,
-        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
-    };
+    pub use super::Closure;
+    pub use super::IClosure;
+    pub use super::IClosureMethods;
+    pub use super::Closure_UpvaluesType;
+    pub use crate::moon_sharp::interpreter::refidobject::IRefIdObject;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "moon_sharp-interpreter-refidobject")] pub use crate::moon_sharp::interpreter::refidobject::IRefIdObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

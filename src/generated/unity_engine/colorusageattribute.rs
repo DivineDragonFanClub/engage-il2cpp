@@ -2,178 +2,56 @@
 
 #[cfg(feature = "unity_engine-colorusageattribute-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::propertyattribute::{IPropertyAttribute, PropertyAttribute},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/colorusageattribute/ColorUsageAttribute.md"))]
-    #[::unity2::class(namespace = "UnityEngine", name = "ColorUsageAttribute")]
-    #[parent(crate::unity_engine::propertyattribute::PropertyAttribute)]
-    pub struct ColorUsageAttribute {
-        #[offset(16)]
-        #[rename(name = "showAlpha")]
-        pub show_alpha: bool,
-        #[offset(17)]
-        #[rename(name = "hdr")]
-        pub hdr: bool,
-        #[offset(20)]
-        #[rename(name = "minBrightness")]
-        pub min_brightness: f32,
-        #[offset(24)]
-        #[rename(name = "maxBrightness")]
-        pub max_brightness: f32,
-        #[offset(28)]
-        #[rename(name = "minExposureValue")]
-        pub min_exposure_value: f32,
-        #[offset(32)]
-        #[rename(name = "maxExposureValue")]
-        pub max_exposure_value: f32,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: propertyattribute :: { IPropertyAttribute , PropertyAttribute }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/colorusageattribute/ColorUsageAttribute.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "ColorUsageAttribute")] # [parent (crate :: unity_engine :: propertyattribute :: PropertyAttribute)] pub struct ColorUsageAttribute {
+# [offset (16)] # [rename (name = "showAlpha")] pub show_alpha : bool ,
+# [offset (17)] # [rename (name = "hdr")] pub hdr : bool ,
+# [offset (20)] # [rename (name = "minBrightness")] pub min_brightness : f32 ,
+# [offset (24)] # [rename (name = "maxBrightness")] pub max_brightness : f32 ,
+# [offset (28)] # [rename (name = "minExposureValue")] pub min_exposure_value : f32 ,
+# [offset (32)] # [rename (name = "maxExposureValue")] pub max_exposure_value : f32 ,
+}
+
 }
 
 #[cfg(feature = "unity_engine-colorusageattribute-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-colorusageattribute")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ColorUsageAttribute_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ColorUsageAttribute as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ColorUsageAttribute as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: ColorUsageAttribute, show_alpha: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ColorUsageAttribute, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, show_alpha, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type(), <bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ColorUsageAttribute as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ColorUsageAttribute as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor_2(this: ColorUsageAttribute, show_alpha: bool, hdr: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ColorUsageAttribute, bool, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
-        inner(this, show_alpha, hdr, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ColorUsageAttribute_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ColorUsageAttribute as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ColorUsageAttribute as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : ColorUsageAttribute , show_alpha : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ColorUsageAttribute , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , show_alpha , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ColorUsageAttribute as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ColorUsageAttribute as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor_2 (this : ColorUsageAttribute , show_alpha : bool , hdr : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ColorUsageAttribute , bool , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor_2 :: get_method_info () . method_ptr ,) ; inner (this , show_alpha , hdr , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-colorusageattribute")]
-pub trait IColorUsageAttributeMethods: IColorUsageAttribute {
-    #[doc = "`.ctor(bool)` overload"]
-    fn ctor(self, show_alpha: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver = <ColorUsageAttribute as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ColorUsageAttribute_unity2_raw::ctor(__receiver, ::core::convert::Into::into(show_alpha), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor(bool, bool)` overload"]
-    fn ctor_2(self, show_alpha: impl ::core::convert::Into<bool>, hdr: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver = <ColorUsageAttribute as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ColorUsageAttribute_unity2_raw::ctor_2(
-                __receiver,
-                ::core::convert::Into::into(show_alpha),
-                ::core::convert::Into::into(hdr),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+pub trait IColorUsageAttributeMethods : IColorUsageAttribute { # [doc = "`.ctor(bool)` overload"] fn ctor (self , show_alpha : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < ColorUsageAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ColorUsageAttribute_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (show_alpha) , :: core :: option :: Option :: None) } } # [doc = "`.ctor(bool, bool)` overload"] fn ctor_2 (self , show_alpha : impl :: core :: convert :: Into < bool > , hdr : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < ColorUsageAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ColorUsageAttribute_unity2_raw :: ctor_2 (__receiver , :: core :: convert :: Into :: into (show_alpha) , :: core :: convert :: Into :: into (hdr) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-colorusageattribute")]
-impl<__T: IColorUsageAttribute> IColorUsageAttributeMethods for __T {}
+impl < __T : IColorUsageAttribute > IColorUsageAttributeMethods for __T { }
+
+#[cfg(feature = "unity_engine-colorusageattribute")]
+impl ColorUsageAttribute { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ColorUsageAttribute_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ColorUsageAttribute_unity2_raw :: __lookup_ctor_2 :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-colorusageattribute")]
 impl ColorUsageAttribute {
-    #[doc = "`.ctor(bool)` — overload selector"]
-    pub fn new(show_alpha: bool) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ColorUsageAttribute),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IColorUsageAttributeMethods>::ctor(this, show_alpha);
-        this
-    }
+# [doc = "`.ctor(bool)` — overload selector"] pub fn new (show_alpha : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ColorUsageAttribute) , :: core :: stringify ! (new) ,)) ; < Self as IColorUsageAttributeMethods > :: ctor (this , show_alpha) ; this }
 
-    #[doc = "`.ctor(bool, bool)` — overload selector"]
-    pub fn new_2(show_alpha: bool, hdr: bool) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ColorUsageAttribute),
-                ::core::stringify!(new_2),
-            )
-        });
-        <Self as IColorUsageAttributeMethods>::ctor_2(this, show_alpha, hdr);
-        this
-    }
+# [doc = "`.ctor(bool, bool)` — overload selector"] pub fn new_2 (show_alpha : bool , hdr : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ColorUsageAttribute) , :: core :: stringify ! (new_2) ,)) ; < Self as IColorUsageAttributeMethods > :: ctor_2 (this , show_alpha , hdr) ; this }
 }
 
 #[cfg(feature = "unity_engine-colorusageattribute")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{ColorUsageAttribute, IColorUsageAttribute, IColorUsageAttributeMethods};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-propertyattribute")]
-    pub use crate::unity_engine::propertyattribute::IPropertyAttributeMethods;
-    pub use crate::{system::object::IObject, unity_engine::propertyattribute::IPropertyAttribute};
+    pub use super::ColorUsageAttribute;
+    pub use super::IColorUsageAttribute;
+    pub use super::IColorUsageAttributeMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::propertyattribute::IPropertyAttribute;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-propertyattribute")] pub use crate::unity_engine::propertyattribute::IPropertyAttributeMethods;
 }

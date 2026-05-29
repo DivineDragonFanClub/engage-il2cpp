@@ -2,354 +2,51 @@
 
 #[cfg(feature = "app-talk3_d-talktaglocalize-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::talk3_d::talktag::{ITalkTag, TalkTag},
-        system::object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talktaglocalize/TalkTagLocalize.md"))]
-    #[::unity2::class(namespace = "App.Talk3D", name = "TalkTagLocalize")]
-    #[parent(crate::app::talk3_d::talktag::TalkTag)]
-    pub struct TalkTagLocalize {
-        #[offset(16)]
-        #[rename(name = "m_TagID")]
-        pub m_tag_id: crate::app::mess::Mess_TagID_Localize,
-        #[offset(24)]
-        #[rename(name = "m_ReplaceStr0")]
-        pub m_replace_str0: ::unity2::Il2CppString,
-        #[offset(32)]
-        #[rename(name = "m_ReplaceStr1")]
-        pub m_replace_str1: ::unity2::Il2CppString,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: talk3_d :: talktag :: { ITalkTag , TalkTag }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talktaglocalize/TalkTagLocalize.md"))] # [:: unity2 :: class (namespace = "App.Talk3D" , name = "TalkTagLocalize")] # [parent (crate :: app :: talk3_d :: talktag :: TalkTag)] pub struct TalkTagLocalize {
+# [offset (16)] # [rename (name = "m_TagID")] pub m_tag_id : crate :: app :: mess :: Mess_TagID_Localize ,
+# [offset (24)] # [rename (name = "m_ReplaceStr0")] pub m_replace_str0 : :: unity2 :: Il2CppString ,
+# [offset (32)] # [rename (name = "m_ReplaceStr1")] pub m_replace_str1 : :: unity2 :: Il2CppString ,
+}
+
 }
 
 #[cfg(feature = "app-talk3_d-talktaglocalize-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-talk3_d-talktaglocalize")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __TalkTagLocalize_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_initialize {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::talk3_d::talkptr::TalkPtr as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkTagLocalize as ::unity2::ClassIdentity>::class(),
-                "Initialize",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TalkTagLocalize as ::unity2::ClassIdentity>::NAME,
-                        "Initialize",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn initialize(
-        this: TalkTagLocalize,
-        talk_ptr: crate::app::talk3_d::talkptr::TalkPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(TalkTagLocalize, crate::app::talk3_d::talkptr::TalkPtr, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_initialize::get_method_info().method_ptr);
-        inner(this, talk_ptr, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_execute {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkTagLocalize as ::unity2::ClassIdentity>::class(),
-                "Execute",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TalkTagLocalize as ::unity2::ClassIdentity>::NAME,
-                        "Execute",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn execute(this: TalkTagLocalize, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TalkTagLocalize, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_execute::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_result {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkTagLocalize as ::unity2::ClassIdentity>::class(),
-                "GetResult",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TalkTagLocalize as ::unity2::ClassIdentity>::NAME,
-                        "GetResult",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_result(this: TalkTagLocalize, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::talk3_d::talktag::TalkTag_Result {
-        let inner: extern "C" fn(TalkTagLocalize, ::unity2::OptionalMethod) -> crate::app::talk3_d::talktag::TalkTag_Result =
-            ::core::mem::transmute(__lookup_get_result::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_tag_id {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkTagLocalize as ::unity2::ClassIdentity>::class(),
-                "GetTagID",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TalkTagLocalize as ::unity2::ClassIdentity>::NAME,
-                        "GetTagID",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_tag_id(this: TalkTagLocalize, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::mess::Mess_TagID_Localize {
-        let inner: extern "C" fn(TalkTagLocalize, ::unity2::OptionalMethod) -> crate::app::mess::Mess_TagID_Localize =
-            ::core::mem::transmute(__lookup_get_tag_id::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_replace_name0 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkTagLocalize as ::unity2::ClassIdentity>::class(),
-                "GetReplaceName0",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TalkTagLocalize as ::unity2::ClassIdentity>::NAME,
-                        "GetReplaceName0",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_replace_name0(this: TalkTagLocalize, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(TalkTagLocalize, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_replace_name0::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_replace_name1 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkTagLocalize as ::unity2::ClassIdentity>::class(),
-                "GetReplaceName1",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TalkTagLocalize as ::unity2::ClassIdentity>::NAME,
-                        "GetReplaceName1",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_replace_name1(this: TalkTagLocalize, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(TalkTagLocalize, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_replace_name1::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkTagLocalize as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TalkTagLocalize as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: TalkTagLocalize, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TalkTagLocalize, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __TalkTagLocalize_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_initialize { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: talk3_d :: talkptr :: TalkPtr as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TalkTagLocalize as :: unity2 :: ClassIdentity > :: class () , "Initialize" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TalkTagLocalize as :: unity2 :: ClassIdentity > :: NAME , "Initialize" , e) , } } } pub unsafe fn initialize (this : TalkTagLocalize , talk_ptr : crate :: app :: talk3_d :: talkptr :: TalkPtr , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TalkTagLocalize , crate :: app :: talk3_d :: talkptr :: TalkPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_initialize :: get_method_info () . method_ptr ,) ; inner (this , talk_ptr , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_execute { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TalkTagLocalize as :: unity2 :: ClassIdentity > :: class () , "Execute" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TalkTagLocalize as :: unity2 :: ClassIdentity > :: NAME , "Execute" , e) , } } } pub unsafe fn execute (this : TalkTagLocalize , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TalkTagLocalize , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_execute :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_result { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TalkTagLocalize as :: unity2 :: ClassIdentity > :: class () , "GetResult" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TalkTagLocalize as :: unity2 :: ClassIdentity > :: NAME , "GetResult" , e) , } } } pub unsafe fn get_result (this : TalkTagLocalize , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: talk3_d :: talktag :: TalkTag_Result { let inner : extern "C" fn (TalkTagLocalize , :: unity2 :: OptionalMethod ,) -> crate :: app :: talk3_d :: talktag :: TalkTag_Result = :: core :: mem :: transmute (__lookup_get_result :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_tag_id { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TalkTagLocalize as :: unity2 :: ClassIdentity > :: class () , "GetTagID" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TalkTagLocalize as :: unity2 :: ClassIdentity > :: NAME , "GetTagID" , e) , } } } pub unsafe fn get_tag_id (this : TalkTagLocalize , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: mess :: Mess_TagID_Localize { let inner : extern "C" fn (TalkTagLocalize , :: unity2 :: OptionalMethod ,) -> crate :: app :: mess :: Mess_TagID_Localize = :: core :: mem :: transmute (__lookup_get_tag_id :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_replace_name0 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TalkTagLocalize as :: unity2 :: ClassIdentity > :: class () , "GetReplaceName0" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TalkTagLocalize as :: unity2 :: ClassIdentity > :: NAME , "GetReplaceName0" , e) , } } } pub unsafe fn get_replace_name0 (this : TalkTagLocalize , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (TalkTagLocalize , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_replace_name0 :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_replace_name1 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TalkTagLocalize as :: unity2 :: ClassIdentity > :: class () , "GetReplaceName1" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TalkTagLocalize as :: unity2 :: ClassIdentity > :: NAME , "GetReplaceName1" , e) , } } } pub unsafe fn get_replace_name1 (this : TalkTagLocalize , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (TalkTagLocalize , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_replace_name1 :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TalkTagLocalize as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TalkTagLocalize as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : TalkTagLocalize , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TalkTagLocalize , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-talk3_d-talktaglocalize")]
-pub trait ITalkTagLocalizeMethods: ITalkTagLocalize {
-    #[doc = "`Initialize(crate::app::talk3_d::talkptr::TalkPtr)` overload"]
-    fn initialize(self, talk_ptr: impl ::core::convert::Into<crate::app::talk3_d::talkptr::TalkPtr>) -> () {
-        unsafe {
-            let __receiver = <TalkTagLocalize as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TalkTagLocalize_unity2_raw::initialize(__receiver, ::core::convert::Into::into(talk_ptr), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Execute()` overload"]
-    fn execute(self) -> () {
-        unsafe {
-            let __receiver = <TalkTagLocalize as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TalkTagLocalize_unity2_raw::execute(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetResult()` overload"]
-    fn get_result(self) -> crate::app::talk3_d::talktag::TalkTag_Result {
-        unsafe {
-            let __receiver = <TalkTagLocalize as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TalkTagLocalize_unity2_raw::get_result(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetTagID()` overload"]
-    fn get_tag_id(self) -> crate::app::mess::Mess_TagID_Localize {
-        unsafe {
-            let __receiver = <TalkTagLocalize as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TalkTagLocalize_unity2_raw::get_tag_id(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetReplaceName0()` overload"]
-    fn get_replace_name0(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <TalkTagLocalize as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TalkTagLocalize_unity2_raw::get_replace_name0(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetReplaceName1()` overload"]
-    fn get_replace_name1(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <TalkTagLocalize as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TalkTagLocalize_unity2_raw::get_replace_name1(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <TalkTagLocalize as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TalkTagLocalize_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait ITalkTagLocalizeMethods : ITalkTagLocalize { # [doc = "`Initialize(crate::app::talk3_d::talkptr::TalkPtr)` overload"] fn initialize (self , talk_ptr : impl :: core :: convert :: Into < crate :: app :: talk3_d :: talkptr :: TalkPtr >) -> () { unsafe { let __receiver = < TalkTagLocalize as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TalkTagLocalize_unity2_raw :: initialize (__receiver , :: core :: convert :: Into :: into (talk_ptr) , :: core :: option :: Option :: None) } } # [doc = "`Execute()` overload"] fn execute (self ,) -> () { unsafe { let __receiver = < TalkTagLocalize as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TalkTagLocalize_unity2_raw :: execute (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetResult()` overload"] fn get_result (self ,) -> crate :: app :: talk3_d :: talktag :: TalkTag_Result { unsafe { let __receiver = < TalkTagLocalize as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TalkTagLocalize_unity2_raw :: get_result (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetTagID()` overload"] fn get_tag_id (self ,) -> crate :: app :: mess :: Mess_TagID_Localize { unsafe { let __receiver = < TalkTagLocalize as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TalkTagLocalize_unity2_raw :: get_tag_id (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetReplaceName0()` overload"] fn get_replace_name0 (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < TalkTagLocalize as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TalkTagLocalize_unity2_raw :: get_replace_name0 (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetReplaceName1()` overload"] fn get_replace_name1 (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < TalkTagLocalize as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TalkTagLocalize_unity2_raw :: get_replace_name1 (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TalkTagLocalize as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TalkTagLocalize_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-talk3_d-talktaglocalize")]
-impl<__T: ITalkTagLocalize> ITalkTagLocalizeMethods for __T {}
+impl < __T : ITalkTagLocalize > ITalkTagLocalizeMethods for __T { }
+
+#[cfg(feature = "app-talk3_d-talktaglocalize")]
+impl TalkTagLocalize { pub fn initialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TalkTagLocalize_unity2_raw :: __lookup_initialize :: get_method_info () } pub fn execute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TalkTagLocalize_unity2_raw :: __lookup_execute :: get_method_info () } pub fn get_result_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TalkTagLocalize_unity2_raw :: __lookup_get_result :: get_method_info () } pub fn get_tag_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TalkTagLocalize_unity2_raw :: __lookup_get_tag_id :: get_method_info () } pub fn get_replace_name0_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TalkTagLocalize_unity2_raw :: __lookup_get_replace_name0 :: get_method_info () } pub fn get_replace_name1_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TalkTagLocalize_unity2_raw :: __lookup_get_replace_name1 :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TalkTagLocalize_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-talk3_d-talktaglocalize")]
 impl TalkTagLocalize {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TalkTagLocalize),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITalkTagLocalizeMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TalkTagLocalize) , :: core :: stringify ! (new) ,)) ; < Self as ITalkTagLocalizeMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-talk3_d-talktaglocalize")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{ITalkTagLocalize, ITalkTagLocalizeMethods, TalkTagLocalize};
-    #[cfg(feature = "app-talk3_d-talktag")]
-    pub use crate::app::talk3_d::talktag::ITalkTagMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::{app::talk3_d::talktag::ITalkTag, system::object::IObject};
+    pub use super::TalkTagLocalize;
+    pub use super::ITalkTagLocalize;
+    pub use super::ITalkTagLocalizeMethods;
+    pub use crate::app::talk3_d::talktag::ITalkTag;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "app-talk3_d-talktag")] pub use crate::app::talk3_d::talktag::ITalkTagMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

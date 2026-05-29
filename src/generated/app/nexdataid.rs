@@ -2,19 +2,17 @@
 
 #[cfg(feature = "app-nexdataid-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexdataid/NexDataId.md"))]
-    #[::unity2::class(namespace = "App", name = "NexDataId")]
-    #[parent(crate::system::object::Object)]
-    pub struct NexDataId {
-        #[static_field]
-        #[rename(name = "Ranking")]
-        pub ranking: u64,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexdataid/NexDataId.md"))] # [:: unity2 :: class (namespace = "App" , name = "NexDataId")] # [parent (crate :: system :: object :: Object)] pub struct NexDataId {
+# [static_field] # [rename (name = "Ranking")] pub ranking : u64 ,
+}
+
 }
 
 #[cfg(feature = "app-nexdataid-types")]
@@ -23,8 +21,8 @@ pub use __types::*;
 #[cfg(feature = "app-nexdataid")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{INexDataId, NexDataId};
+    pub use super::NexDataId;
+    pub use super::INexDataId;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

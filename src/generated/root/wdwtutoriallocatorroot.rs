@@ -2,639 +2,69 @@
 
 #[cfg(feature = "root-wdwtutoriallocatorroot-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/wdwtutoriallocatorroot/WdwTutorialLocatorRoot.md"))]
-    #[::unity2::class(namespace = "", name = "WdwTutorialLocatorRoot")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct WdwTutorialLocatorRoot {
-        #[offset(24)]
-        #[rename(name = "m_RightArrow")]
-        pub m_right_arrow: crate::unity_engine::gameobject::GameObject,
-        #[offset(32)]
-        #[rename(name = "m_LeftArrow")]
-        pub m_left_arrow: crate::unity_engine::gameobject::GameObject,
-        #[offset(40)]
-        #[rename(name = "m_TutorialTitleText")]
-        pub m_tutorial_title_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(48)]
-        #[rename(name = "m_MessageText")]
-        pub m_message_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(56)]
-        #[rename(name = "m_Page0Text")]
-        pub m_page0_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(64)]
-        #[rename(name = "m_Page1Text")]
-        pub m_page1_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(72)]
-        #[rename(name = "m_CaptureImage")]
-        pub m_capture_image: crate::unity_engine::ui::image::Image,
-        #[offset(80)]
-        #[rename(name = "m_WdwTutorialAnimator")]
-        pub m_wdw_tutorial_animator: crate::unity_engine::animator::Animator,
-        #[offset(88)]
-        #[rename(name = "m_Sprite")]
-        pub m_sprite: crate::unity_engine::sprite::Sprite,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/wdwtutoriallocatorroot/WdwTutorialLocatorRoot.md"))] # [:: unity2 :: class (namespace = "" , name = "WdwTutorialLocatorRoot")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct WdwTutorialLocatorRoot {
+# [offset (24)] # [rename (name = "m_RightArrow")] pub m_right_arrow : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (32)] # [rename (name = "m_LeftArrow")] pub m_left_arrow : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (40)] # [rename (name = "m_TutorialTitleText")] pub m_tutorial_title_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (48)] # [rename (name = "m_MessageText")] pub m_message_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (56)] # [rename (name = "m_Page0Text")] pub m_page0_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (64)] # [rename (name = "m_Page1Text")] pub m_page1_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (72)] # [rename (name = "m_CaptureImage")] pub m_capture_image : crate :: unity_engine :: ui :: image :: Image ,
+# [offset (80)] # [rename (name = "m_WdwTutorialAnimator")] pub m_wdw_tutorial_animator : crate :: unity_engine :: animator :: Animator ,
+# [offset (88)] # [rename (name = "m_Sprite")] pub m_sprite : crate :: unity_engine :: sprite :: Sprite ,
+}
+
 }
 
 #[cfg(feature = "root-wdwtutoriallocatorroot-types")]
 pub use __types::*;
 
 #[cfg(feature = "root-wdwtutoriallocatorroot")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __WdwTutorialLocatorRoot_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_destroy {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WdwTutorialLocatorRoot as ::unity2::ClassIdentity>::class(),
-                "OnDestroy",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WdwTutorialLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                        "OnDestroy",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_destroy(this: WdwTutorialLocatorRoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(WdwTutorialLocatorRoot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_destroy::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_active_right_arrow {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WdwTutorialLocatorRoot as ::unity2::ClassIdentity>::class(),
-                "SetActiveRightArrow",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WdwTutorialLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                        "SetActiveRightArrow",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_active_right_arrow(this: WdwTutorialLocatorRoot, enable: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(WdwTutorialLocatorRoot, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_active_right_arrow::get_method_info().method_ptr);
-        inner(this, enable, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_active_left_arrow {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WdwTutorialLocatorRoot as ::unity2::ClassIdentity>::class(),
-                "SetActiveLeftArrow",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WdwTutorialLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                        "SetActiveLeftArrow",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_active_left_arrow(this: WdwTutorialLocatorRoot, enable: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(WdwTutorialLocatorRoot, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_active_left_arrow::get_method_info().method_ptr);
-        inner(this, enable, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_sprite {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::sprite::Sprite as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WdwTutorialLocatorRoot as ::unity2::ClassIdentity>::class(),
-                "SetSprite",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WdwTutorialLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                        "SetSprite",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_sprite(
-        this: WdwTutorialLocatorRoot,
-        sprite: crate::unity_engine::sprite::Sprite,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(WdwTutorialLocatorRoot, crate::unity_engine::sprite::Sprite, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_sprite::get_method_info().method_ptr);
-        inner(this, sprite, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_title {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WdwTutorialLocatorRoot as ::unity2::ClassIdentity>::class(),
-                "SetTitle",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WdwTutorialLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                        "SetTitle",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_title(this: WdwTutorialLocatorRoot, title: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(WdwTutorialLocatorRoot, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_title::get_method_info().method_ptr);
-        inner(this, title, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_text {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WdwTutorialLocatorRoot as ::unity2::ClassIdentity>::class(),
-                "SetText",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WdwTutorialLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                        "SetText",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_text(this: WdwTutorialLocatorRoot, text: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(WdwTutorialLocatorRoot, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_text::get_method_info().method_ptr);
-        inner(this, text, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_page0 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WdwTutorialLocatorRoot as ::unity2::ClassIdentity>::class(),
-                "SetPage0",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WdwTutorialLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                        "SetPage0",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_page0(this: WdwTutorialLocatorRoot, page: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(WdwTutorialLocatorRoot, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_page0::get_method_info().method_ptr);
-        inner(this, page, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_page1 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WdwTutorialLocatorRoot as ::unity2::ClassIdentity>::class(),
-                "SetPage1",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WdwTutorialLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                        "SetPage1",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_page1(this: WdwTutorialLocatorRoot, page: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(WdwTutorialLocatorRoot, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_page1::get_method_info().method_ptr);
-        inner(this, page, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_opening {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WdwTutorialLocatorRoot as ::unity2::ClassIdentity>::class(),
-                "IsOpening",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WdwTutorialLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                        "IsOpening",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_opening(this: WdwTutorialLocatorRoot, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(WdwTutorialLocatorRoot, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_opening::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_closing {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WdwTutorialLocatorRoot as ::unity2::ClassIdentity>::class(),
-                "IsClosing",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WdwTutorialLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                        "IsClosing",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_closing(this: WdwTutorialLocatorRoot, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(WdwTutorialLocatorRoot, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_closing::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_open {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WdwTutorialLocatorRoot as ::unity2::ClassIdentity>::class(),
-                "Open",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WdwTutorialLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                        "Open",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn open(this: WdwTutorialLocatorRoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(WdwTutorialLocatorRoot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_open::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_close {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WdwTutorialLocatorRoot as ::unity2::ClassIdentity>::class(),
-                "Close",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WdwTutorialLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                        "Close",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn close(this: WdwTutorialLocatorRoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(WdwTutorialLocatorRoot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_close::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WdwTutorialLocatorRoot as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WdwTutorialLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: WdwTutorialLocatorRoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(WdwTutorialLocatorRoot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __WdwTutorialLocatorRoot_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_destroy { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WdwTutorialLocatorRoot as :: unity2 :: ClassIdentity > :: class () , "OnDestroy" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WdwTutorialLocatorRoot as :: unity2 :: ClassIdentity > :: NAME , "OnDestroy" , e) , } } } pub unsafe fn on_destroy (this : WdwTutorialLocatorRoot , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (WdwTutorialLocatorRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_destroy :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_active_right_arrow { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WdwTutorialLocatorRoot as :: unity2 :: ClassIdentity > :: class () , "SetActiveRightArrow" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WdwTutorialLocatorRoot as :: unity2 :: ClassIdentity > :: NAME , "SetActiveRightArrow" , e) , } } } pub unsafe fn set_active_right_arrow (this : WdwTutorialLocatorRoot , enable : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (WdwTutorialLocatorRoot , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_active_right_arrow :: get_method_info () . method_ptr ,) ; inner (this , enable , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_active_left_arrow { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WdwTutorialLocatorRoot as :: unity2 :: ClassIdentity > :: class () , "SetActiveLeftArrow" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WdwTutorialLocatorRoot as :: unity2 :: ClassIdentity > :: NAME , "SetActiveLeftArrow" , e) , } } } pub unsafe fn set_active_left_arrow (this : WdwTutorialLocatorRoot , enable : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (WdwTutorialLocatorRoot , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_active_left_arrow :: get_method_info () . method_ptr ,) ; inner (this , enable , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_sprite { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: sprite :: Sprite as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WdwTutorialLocatorRoot as :: unity2 :: ClassIdentity > :: class () , "SetSprite" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WdwTutorialLocatorRoot as :: unity2 :: ClassIdentity > :: NAME , "SetSprite" , e) , } } } pub unsafe fn set_sprite (this : WdwTutorialLocatorRoot , sprite : crate :: unity_engine :: sprite :: Sprite , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (WdwTutorialLocatorRoot , crate :: unity_engine :: sprite :: Sprite , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_sprite :: get_method_info () . method_ptr ,) ; inner (this , sprite , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_title { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WdwTutorialLocatorRoot as :: unity2 :: ClassIdentity > :: class () , "SetTitle" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WdwTutorialLocatorRoot as :: unity2 :: ClassIdentity > :: NAME , "SetTitle" , e) , } } } pub unsafe fn set_title (this : WdwTutorialLocatorRoot , title : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (WdwTutorialLocatorRoot , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_title :: get_method_info () . method_ptr ,) ; inner (this , title , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_text { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WdwTutorialLocatorRoot as :: unity2 :: ClassIdentity > :: class () , "SetText" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WdwTutorialLocatorRoot as :: unity2 :: ClassIdentity > :: NAME , "SetText" , e) , } } } pub unsafe fn set_text (this : WdwTutorialLocatorRoot , text : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (WdwTutorialLocatorRoot , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_text :: get_method_info () . method_ptr ,) ; inner (this , text , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_page0 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WdwTutorialLocatorRoot as :: unity2 :: ClassIdentity > :: class () , "SetPage0" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WdwTutorialLocatorRoot as :: unity2 :: ClassIdentity > :: NAME , "SetPage0" , e) , } } } pub unsafe fn set_page0 (this : WdwTutorialLocatorRoot , page : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (WdwTutorialLocatorRoot , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_page0 :: get_method_info () . method_ptr ,) ; inner (this , page , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_page1 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WdwTutorialLocatorRoot as :: unity2 :: ClassIdentity > :: class () , "SetPage1" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WdwTutorialLocatorRoot as :: unity2 :: ClassIdentity > :: NAME , "SetPage1" , e) , } } } pub unsafe fn set_page1 (this : WdwTutorialLocatorRoot , page : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (WdwTutorialLocatorRoot , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_page1 :: get_method_info () . method_ptr ,) ; inner (this , page , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_opening { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WdwTutorialLocatorRoot as :: unity2 :: ClassIdentity > :: class () , "IsOpening" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WdwTutorialLocatorRoot as :: unity2 :: ClassIdentity > :: NAME , "IsOpening" , e) , } } } pub unsafe fn is_opening (this : WdwTutorialLocatorRoot , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (WdwTutorialLocatorRoot , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_opening :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_closing { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WdwTutorialLocatorRoot as :: unity2 :: ClassIdentity > :: class () , "IsClosing" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WdwTutorialLocatorRoot as :: unity2 :: ClassIdentity > :: NAME , "IsClosing" , e) , } } } pub unsafe fn is_closing (this : WdwTutorialLocatorRoot , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (WdwTutorialLocatorRoot , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_closing :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_open { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WdwTutorialLocatorRoot as :: unity2 :: ClassIdentity > :: class () , "Open" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WdwTutorialLocatorRoot as :: unity2 :: ClassIdentity > :: NAME , "Open" , e) , } } } pub unsafe fn open (this : WdwTutorialLocatorRoot , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (WdwTutorialLocatorRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_open :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_close { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WdwTutorialLocatorRoot as :: unity2 :: ClassIdentity > :: class () , "Close" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WdwTutorialLocatorRoot as :: unity2 :: ClassIdentity > :: NAME , "Close" , e) , } } } pub unsafe fn close (this : WdwTutorialLocatorRoot , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (WdwTutorialLocatorRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_close :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WdwTutorialLocatorRoot as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WdwTutorialLocatorRoot as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : WdwTutorialLocatorRoot , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (WdwTutorialLocatorRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "root-wdwtutoriallocatorroot")]
-pub trait IWdwTutorialLocatorRootMethods: IWdwTutorialLocatorRoot {
-    #[doc = "`OnDestroy()` overload"]
-    fn on_destroy(self) -> () {
-        unsafe {
-            let __receiver =
-                <WdwTutorialLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __WdwTutorialLocatorRoot_unity2_raw::on_destroy(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetActiveRightArrow(bool)` overload"]
-    fn set_active_right_arrow(self, enable: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver =
-                <WdwTutorialLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __WdwTutorialLocatorRoot_unity2_raw::set_active_right_arrow(__receiver, ::core::convert::Into::into(enable), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetActiveLeftArrow(bool)` overload"]
-    fn set_active_left_arrow(self, enable: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver =
-                <WdwTutorialLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __WdwTutorialLocatorRoot_unity2_raw::set_active_left_arrow(__receiver, ::core::convert::Into::into(enable), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetSprite(crate::unity_engine::sprite::Sprite)` overload"]
-    fn set_sprite(self, sprite: impl ::core::convert::Into<crate::unity_engine::sprite::Sprite>) -> () {
-        unsafe {
-            let __receiver =
-                <WdwTutorialLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __WdwTutorialLocatorRoot_unity2_raw::set_sprite(__receiver, ::core::convert::Into::into(sprite), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetTitle(::unity2::Il2CppString)` overload"]
-    fn set_title(self, title: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver =
-                <WdwTutorialLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __WdwTutorialLocatorRoot_unity2_raw::set_title(__receiver, ::core::convert::Into::into(title), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetText(::unity2::Il2CppString)` overload"]
-    fn set_text(self, text: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver =
-                <WdwTutorialLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __WdwTutorialLocatorRoot_unity2_raw::set_text(__receiver, ::core::convert::Into::into(text), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetPage0(i32)` overload"]
-    fn set_page0(self, page: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver =
-                <WdwTutorialLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __WdwTutorialLocatorRoot_unity2_raw::set_page0(__receiver, ::core::convert::Into::into(page), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetPage1(i32)` overload"]
-    fn set_page1(self, page: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver =
-                <WdwTutorialLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __WdwTutorialLocatorRoot_unity2_raw::set_page1(__receiver, ::core::convert::Into::into(page), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsOpening()` overload"]
-    fn is_opening(self) -> bool {
-        unsafe {
-            let __receiver =
-                <WdwTutorialLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __WdwTutorialLocatorRoot_unity2_raw::is_opening(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsClosing()` overload"]
-    fn is_closing(self) -> bool {
-        unsafe {
-            let __receiver =
-                <WdwTutorialLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __WdwTutorialLocatorRoot_unity2_raw::is_closing(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Open()` overload"]
-    fn open(self) -> () {
-        unsafe {
-            let __receiver =
-                <WdwTutorialLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __WdwTutorialLocatorRoot_unity2_raw::open(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Close()` overload"]
-    fn close(self) -> () {
-        unsafe {
-            let __receiver =
-                <WdwTutorialLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __WdwTutorialLocatorRoot_unity2_raw::close(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <WdwTutorialLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __WdwTutorialLocatorRoot_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IWdwTutorialLocatorRootMethods : IWdwTutorialLocatorRoot { # [doc = "`OnDestroy()` overload"] fn on_destroy (self ,) -> () { unsafe { let __receiver = < WdwTutorialLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __WdwTutorialLocatorRoot_unity2_raw :: on_destroy (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetActiveRightArrow(bool)` overload"] fn set_active_right_arrow (self , enable : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < WdwTutorialLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __WdwTutorialLocatorRoot_unity2_raw :: set_active_right_arrow (__receiver , :: core :: convert :: Into :: into (enable) , :: core :: option :: Option :: None) } } # [doc = "`SetActiveLeftArrow(bool)` overload"] fn set_active_left_arrow (self , enable : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < WdwTutorialLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __WdwTutorialLocatorRoot_unity2_raw :: set_active_left_arrow (__receiver , :: core :: convert :: Into :: into (enable) , :: core :: option :: Option :: None) } } # [doc = "`SetSprite(crate::unity_engine::sprite::Sprite)` overload"] fn set_sprite (self , sprite : impl :: core :: convert :: Into < crate :: unity_engine :: sprite :: Sprite >) -> () { unsafe { let __receiver = < WdwTutorialLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __WdwTutorialLocatorRoot_unity2_raw :: set_sprite (__receiver , :: core :: convert :: Into :: into (sprite) , :: core :: option :: Option :: None) } } # [doc = "`SetTitle(::unity2::Il2CppString)` overload"] fn set_title (self , title : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < WdwTutorialLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __WdwTutorialLocatorRoot_unity2_raw :: set_title (__receiver , :: core :: convert :: Into :: into (title) , :: core :: option :: Option :: None) } } # [doc = "`SetText(::unity2::Il2CppString)` overload"] fn set_text (self , text : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < WdwTutorialLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __WdwTutorialLocatorRoot_unity2_raw :: set_text (__receiver , :: core :: convert :: Into :: into (text) , :: core :: option :: Option :: None) } } # [doc = "`SetPage0(i32)` overload"] fn set_page0 (self , page : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < WdwTutorialLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __WdwTutorialLocatorRoot_unity2_raw :: set_page0 (__receiver , :: core :: convert :: Into :: into (page) , :: core :: option :: Option :: None) } } # [doc = "`SetPage1(i32)` overload"] fn set_page1 (self , page : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < WdwTutorialLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __WdwTutorialLocatorRoot_unity2_raw :: set_page1 (__receiver , :: core :: convert :: Into :: into (page) , :: core :: option :: Option :: None) } } # [doc = "`IsOpening()` overload"] fn is_opening (self ,) -> bool { unsafe { let __receiver = < WdwTutorialLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __WdwTutorialLocatorRoot_unity2_raw :: is_opening (__receiver , :: core :: option :: Option :: None) } } # [doc = "`IsClosing()` overload"] fn is_closing (self ,) -> bool { unsafe { let __receiver = < WdwTutorialLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __WdwTutorialLocatorRoot_unity2_raw :: is_closing (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Open()` overload"] fn open (self ,) -> () { unsafe { let __receiver = < WdwTutorialLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __WdwTutorialLocatorRoot_unity2_raw :: open (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Close()` overload"] fn close (self ,) -> () { unsafe { let __receiver = < WdwTutorialLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __WdwTutorialLocatorRoot_unity2_raw :: close (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < WdwTutorialLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __WdwTutorialLocatorRoot_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "root-wdwtutoriallocatorroot")]
-impl<__T: IWdwTutorialLocatorRoot> IWdwTutorialLocatorRootMethods for __T {}
+impl < __T : IWdwTutorialLocatorRoot > IWdwTutorialLocatorRootMethods for __T { }
+
+#[cfg(feature = "root-wdwtutoriallocatorroot")]
+impl WdwTutorialLocatorRoot { pub fn on_destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WdwTutorialLocatorRoot_unity2_raw :: __lookup_on_destroy :: get_method_info () } pub fn set_active_right_arrow_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WdwTutorialLocatorRoot_unity2_raw :: __lookup_set_active_right_arrow :: get_method_info () } pub fn set_active_left_arrow_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WdwTutorialLocatorRoot_unity2_raw :: __lookup_set_active_left_arrow :: get_method_info () } pub fn set_sprite_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WdwTutorialLocatorRoot_unity2_raw :: __lookup_set_sprite :: get_method_info () } pub fn set_title_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WdwTutorialLocatorRoot_unity2_raw :: __lookup_set_title :: get_method_info () } pub fn set_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WdwTutorialLocatorRoot_unity2_raw :: __lookup_set_text :: get_method_info () } pub fn set_page0_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WdwTutorialLocatorRoot_unity2_raw :: __lookup_set_page0 :: get_method_info () } pub fn set_page1_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WdwTutorialLocatorRoot_unity2_raw :: __lookup_set_page1 :: get_method_info () } pub fn is_opening_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WdwTutorialLocatorRoot_unity2_raw :: __lookup_is_opening :: get_method_info () } pub fn is_closing_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WdwTutorialLocatorRoot_unity2_raw :: __lookup_is_closing :: get_method_info () } pub fn open_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WdwTutorialLocatorRoot_unity2_raw :: __lookup_open :: get_method_info () } pub fn close_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WdwTutorialLocatorRoot_unity2_raw :: __lookup_close :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WdwTutorialLocatorRoot_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "root-wdwtutoriallocatorroot")]
 impl WdwTutorialLocatorRoot {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(WdwTutorialLocatorRoot),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IWdwTutorialLocatorRootMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (WdwTutorialLocatorRoot) , :: core :: stringify ! (new) ,)) ; < Self as IWdwTutorialLocatorRootMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "root-wdwtutoriallocatorroot")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IWdwTutorialLocatorRoot, IWdwTutorialLocatorRootMethods, WdwTutorialLocatorRoot};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        system::object::IObject,
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::WdwTutorialLocatorRoot;
+    pub use super::IWdwTutorialLocatorRoot;
+    pub use super::IWdwTutorialLocatorRootMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

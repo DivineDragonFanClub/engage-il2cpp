@@ -2,95 +2,34 @@
 
 #[cfg(feature = "unity_engine-timeline-ipropertypreview-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/ipropertypreview/IPropertyPreview.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Timeline", name = "IPropertyPreview")]
-    pub struct IPropertyPreview {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/ipropertypreview/IPropertyPreview.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Timeline" , name = "IPropertyPreview")] pub struct IPropertyPreview {}
+
 }
 
 #[cfg(feature = "unity_engine-timeline-ipropertypreview-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-timeline-ipropertypreview")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __IPropertyPreview_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_gather_properties {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::playables::playabledirector::PlayableDirector as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::timeline::ipropertycollector::IPropertyCollector as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <IPropertyPreview as ::unity2::ClassIdentity>::class(),
-                "GatherProperties",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <IPropertyPreview as ::unity2::ClassIdentity>::NAME,
-                        "GatherProperties",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn gather_properties(
-        this: IPropertyPreview,
-        director: crate::unity_engine::playables::playabledirector::PlayableDirector,
-        driver: crate::unity_engine::timeline::ipropertycollector::IPropertyCollector,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            IPropertyPreview,
-            crate::unity_engine::playables::playabledirector::PlayableDirector,
-            crate::unity_engine::timeline::ipropertycollector::IPropertyCollector,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_gather_properties::get_method_info().method_ptr);
-        inner(this, director, driver, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __IPropertyPreview_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_gather_properties { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playabledirector :: PlayableDirector as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: timeline :: ipropertycollector :: IPropertyCollector as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< IPropertyPreview as :: unity2 :: ClassIdentity > :: class () , "GatherProperties" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < IPropertyPreview as :: unity2 :: ClassIdentity > :: NAME , "GatherProperties" , e) , } } } pub unsafe fn gather_properties (this : IPropertyPreview , director : crate :: unity_engine :: playables :: playabledirector :: PlayableDirector , driver : crate :: unity_engine :: timeline :: ipropertycollector :: IPropertyCollector , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (IPropertyPreview , crate :: unity_engine :: playables :: playabledirector :: PlayableDirector , crate :: unity_engine :: timeline :: ipropertycollector :: IPropertyCollector , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_gather_properties :: get_method_info () . method_ptr ,) ; inner (this , director , driver , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-timeline-ipropertypreview")]
-pub trait IIPropertyPreviewMethods: IIPropertyPreview {
-    #[doc = "`GatherProperties(crate::unity_engine::playables::playabledirector::PlayableDirector, crate::unity_engine::timeline::ipropertycollector::IPropertyCollector)` overload"]
-    fn gather_properties(
-        self,
-        director: impl ::core::convert::Into<crate::unity_engine::playables::playabledirector::PlayableDirector>,
-        driver: impl ::core::convert::Into<crate::unity_engine::timeline::ipropertycollector::IPropertyCollector>,
-    ) -> () {
-        unsafe {
-            let __receiver = <IPropertyPreview as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __IPropertyPreview_unity2_raw::gather_properties(
-                __receiver,
-                ::core::convert::Into::into(director),
-                ::core::convert::Into::into(driver),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+pub trait IIPropertyPreviewMethods : IIPropertyPreview { # [doc = "`GatherProperties(crate::unity_engine::playables::playabledirector::PlayableDirector, crate::unity_engine::timeline::ipropertycollector::IPropertyCollector)` overload"] fn gather_properties (self , director : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playabledirector :: PlayableDirector > , driver : impl :: core :: convert :: Into < crate :: unity_engine :: timeline :: ipropertycollector :: IPropertyCollector >) -> () { unsafe { let __receiver = < IPropertyPreview as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IPropertyPreview_unity2_raw :: gather_properties (__receiver , :: core :: convert :: Into :: into (director) , :: core :: convert :: Into :: into (driver) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-timeline-ipropertypreview")]
-impl<__T: IIPropertyPreview> IIPropertyPreviewMethods for __T {}
+impl < __T : IIPropertyPreview > IIPropertyPreviewMethods for __T { }
+
+#[cfg(feature = "unity_engine-timeline-ipropertypreview")]
+impl IPropertyPreview { pub fn gather_properties_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __IPropertyPreview_unity2_raw :: __lookup_gather_properties :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-timeline-ipropertypreview")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IIPropertyPreview, IIPropertyPreviewMethods, IPropertyPreview};
+    pub use super::IPropertyPreview;
+    pub use super::IIPropertyPreview;
+    pub use super::IIPropertyPreviewMethods;
 }

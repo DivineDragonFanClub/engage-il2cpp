@@ -2,267 +2,34 @@
 
 #[cfg(feature = "unity_engine-rendering-tilelayoututils-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/tilelayoututils/TileLayoutUtils.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Rendering", name = "TileLayoutUtils")]
-    #[parent(crate::system::object::Object)]
-    pub struct TileLayoutUtils {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/tilelayoututils/TileLayoutUtils.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering" , name = "TileLayoutUtils")] # [parent (crate :: system :: object :: Object)] pub struct TileLayoutUtils {}
+
 }
 
 #[cfg(feature = "unity_engine-rendering-tilelayoututils-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-tilelayoututils")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __TileLayoutUtils_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_try_layout_by_tiles {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::rectint::RectInt as ::unity2::IlType>::il_type(),
-                <u32 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::rectint::RectInt as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::rectint::RectInt as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::rectint::RectInt as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::rectint::RectInt as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TileLayoutUtils as ::unity2::ClassIdentity>::class(),
-                "TryLayoutByTiles",
-                6,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TileLayoutUtils as ::unity2::ClassIdentity>::NAME,
-                        "TryLayoutByTiles",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn try_layout_by_tiles(
-        src: crate::unity_engine::rectint::RectInt,
-        tile_size: u32,
-        main: *mut crate::unity_engine::rectint::RectInt,
-        top_row: *mut crate::unity_engine::rectint::RectInt,
-        right_col: *mut crate::unity_engine::rectint::RectInt,
-        top_right: *mut crate::unity_engine::rectint::RectInt,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            crate::unity_engine::rectint::RectInt,
-            u32,
-            *mut crate::unity_engine::rectint::RectInt,
-            *mut crate::unity_engine::rectint::RectInt,
-            *mut crate::unity_engine::rectint::RectInt,
-            *mut crate::unity_engine::rectint::RectInt,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(__lookup_try_layout_by_tiles::get_method_info().method_ptr);
-        inner(src, tile_size, main, top_row, right_col, top_right, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_try_layout_by_row {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::rectint::RectInt as ::unity2::IlType>::il_type(),
-                <u32 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::rectint::RectInt as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::rectint::RectInt as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TileLayoutUtils as ::unity2::ClassIdentity>::class(),
-                "TryLayoutByRow",
-                4,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TileLayoutUtils as ::unity2::ClassIdentity>::NAME,
-                        "TryLayoutByRow",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn try_layout_by_row(
-        src: crate::unity_engine::rectint::RectInt,
-        tile_size: u32,
-        main: *mut crate::unity_engine::rectint::RectInt,
-        other: *mut crate::unity_engine::rectint::RectInt,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            crate::unity_engine::rectint::RectInt,
-            u32,
-            *mut crate::unity_engine::rectint::RectInt,
-            *mut crate::unity_engine::rectint::RectInt,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(__lookup_try_layout_by_row::get_method_info().method_ptr);
-        inner(src, tile_size, main, other, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_try_layout_by_col {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::rectint::RectInt as ::unity2::IlType>::il_type(),
-                <u32 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::rectint::RectInt as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::rectint::RectInt as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TileLayoutUtils as ::unity2::ClassIdentity>::class(),
-                "TryLayoutByCol",
-                4,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TileLayoutUtils as ::unity2::ClassIdentity>::NAME,
-                        "TryLayoutByCol",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn try_layout_by_col(
-        src: crate::unity_engine::rectint::RectInt,
-        tile_size: u32,
-        main: *mut crate::unity_engine::rectint::RectInt,
-        other: *mut crate::unity_engine::rectint::RectInt,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            crate::unity_engine::rectint::RectInt,
-            u32,
-            *mut crate::unity_engine::rectint::RectInt,
-            *mut crate::unity_engine::rectint::RectInt,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(__lookup_try_layout_by_col::get_method_info().method_ptr);
-        inner(src, tile_size, main, other, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __TileLayoutUtils_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_try_layout_by_tiles { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rectint :: RectInt as :: unity2 :: IlType > :: il_type () , < u32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rectint :: RectInt as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rectint :: RectInt as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rectint :: RectInt as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rectint :: RectInt as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TileLayoutUtils as :: unity2 :: ClassIdentity > :: class () , "TryLayoutByTiles" , 6 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TileLayoutUtils as :: unity2 :: ClassIdentity > :: NAME , "TryLayoutByTiles" , e) , } } } pub unsafe fn try_layout_by_tiles (src : crate :: unity_engine :: rectint :: RectInt , tile_size : u32 , main : * mut crate :: unity_engine :: rectint :: RectInt , top_row : * mut crate :: unity_engine :: rectint :: RectInt , right_col : * mut crate :: unity_engine :: rectint :: RectInt , top_right : * mut crate :: unity_engine :: rectint :: RectInt , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (crate :: unity_engine :: rectint :: RectInt , u32 , * mut crate :: unity_engine :: rectint :: RectInt , * mut crate :: unity_engine :: rectint :: RectInt , * mut crate :: unity_engine :: rectint :: RectInt , * mut crate :: unity_engine :: rectint :: RectInt , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_try_layout_by_tiles :: get_method_info () . method_ptr ,) ; inner (src , tile_size , main , top_row , right_col , top_right , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_try_layout_by_row { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rectint :: RectInt as :: unity2 :: IlType > :: il_type () , < u32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rectint :: RectInt as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rectint :: RectInt as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TileLayoutUtils as :: unity2 :: ClassIdentity > :: class () , "TryLayoutByRow" , 4 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TileLayoutUtils as :: unity2 :: ClassIdentity > :: NAME , "TryLayoutByRow" , e) , } } } pub unsafe fn try_layout_by_row (src : crate :: unity_engine :: rectint :: RectInt , tile_size : u32 , main : * mut crate :: unity_engine :: rectint :: RectInt , other : * mut crate :: unity_engine :: rectint :: RectInt , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (crate :: unity_engine :: rectint :: RectInt , u32 , * mut crate :: unity_engine :: rectint :: RectInt , * mut crate :: unity_engine :: rectint :: RectInt , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_try_layout_by_row :: get_method_info () . method_ptr ,) ; inner (src , tile_size , main , other , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_try_layout_by_col { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rectint :: RectInt as :: unity2 :: IlType > :: il_type () , < u32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rectint :: RectInt as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rectint :: RectInt as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TileLayoutUtils as :: unity2 :: ClassIdentity > :: class () , "TryLayoutByCol" , 4 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TileLayoutUtils as :: unity2 :: ClassIdentity > :: NAME , "TryLayoutByCol" , e) , } } } pub unsafe fn try_layout_by_col (src : crate :: unity_engine :: rectint :: RectInt , tile_size : u32 , main : * mut crate :: unity_engine :: rectint :: RectInt , other : * mut crate :: unity_engine :: rectint :: RectInt , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (crate :: unity_engine :: rectint :: RectInt , u32 , * mut crate :: unity_engine :: rectint :: RectInt , * mut crate :: unity_engine :: rectint :: RectInt , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_try_layout_by_col :: get_method_info () . method_ptr ,) ; inner (src , tile_size , main , other , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-rendering-tilelayoututils")]
-impl TileLayoutUtils {
-    #[doc = "`TryLayoutByTiles(crate::unity_engine::rectint::RectInt, u32, *mutcrate::unity_engine::rectint::RectInt, *mutcrate::unity_engine::rectint::RectInt, *mutcrate::unity_engine::rectint::RectInt, *mutcrate::unity_engine::rectint::RectInt)` overload"]
-    pub fn try_layout_by_tiles(
-        src: impl ::core::convert::Into<crate::unity_engine::rectint::RectInt>,
-        tile_size: impl ::core::convert::Into<u32>,
-    ) -> (
-        bool,
-        crate::unity_engine::rectint::RectInt,
-        crate::unity_engine::rectint::RectInt,
-        crate::unity_engine::rectint::RectInt,
-        crate::unity_engine::rectint::RectInt,
-    ) {
-        unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::rectint::RectInt>::uninit();
-            let mut __out_1 = ::core::mem::MaybeUninit::<crate::unity_engine::rectint::RectInt>::uninit();
-            let mut __out_2 = ::core::mem::MaybeUninit::<crate::unity_engine::rectint::RectInt>::uninit();
-            let mut __out_3 = ::core::mem::MaybeUninit::<crate::unity_engine::rectint::RectInt>::uninit();
-            let __ret = {
-                __TileLayoutUtils_unity2_raw::try_layout_by_tiles(
-                    ::core::convert::Into::into(src),
-                    ::core::convert::Into::into(tile_size),
-                    __out_0.as_mut_ptr(),
-                    __out_1.as_mut_ptr(),
-                    __out_2.as_mut_ptr(),
-                    __out_3.as_mut_ptr(),
-                    ::core::option::Option::None,
-                )
-            };
-            (
-                __ret,
-                __out_0.assume_init(),
-                __out_1.assume_init(),
-                __out_2.assume_init(),
-                __out_3.assume_init(),
-            )
-        }
-    }
+impl TileLayoutUtils { # [doc = "`TryLayoutByTiles(crate::unity_engine::rectint::RectInt, u32, *mutcrate::unity_engine::rectint::RectInt, *mutcrate::unity_engine::rectint::RectInt, *mutcrate::unity_engine::rectint::RectInt, *mutcrate::unity_engine::rectint::RectInt)` overload"] pub fn try_layout_by_tiles (src : impl :: core :: convert :: Into < crate :: unity_engine :: rectint :: RectInt > , tile_size : impl :: core :: convert :: Into < u32 >) -> (bool , crate :: unity_engine :: rectint :: RectInt , crate :: unity_engine :: rectint :: RectInt , crate :: unity_engine :: rectint :: RectInt , crate :: unity_engine :: rectint :: RectInt) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: rectint :: RectInt > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: rectint :: RectInt > :: uninit () ; let mut __out_2 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: rectint :: RectInt > :: uninit () ; let mut __out_3 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: rectint :: RectInt > :: uninit () ; let __ret = { __TileLayoutUtils_unity2_raw :: try_layout_by_tiles (:: core :: convert :: Into :: into (src) , :: core :: convert :: Into :: into (tile_size) , __out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , __out_2 . as_mut_ptr () , __out_3 . as_mut_ptr () , :: core :: option :: Option :: None) } ; (__ret , __out_0 . assume_init () , __out_1 . assume_init () , __out_2 . assume_init () , __out_3 . assume_init ()) } } # [doc = "`TryLayoutByRow(crate::unity_engine::rectint::RectInt, u32, *mutcrate::unity_engine::rectint::RectInt, *mutcrate::unity_engine::rectint::RectInt)` overload"] pub fn try_layout_by_row (src : impl :: core :: convert :: Into < crate :: unity_engine :: rectint :: RectInt > , tile_size : impl :: core :: convert :: Into < u32 >) -> (bool , crate :: unity_engine :: rectint :: RectInt , crate :: unity_engine :: rectint :: RectInt) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: rectint :: RectInt > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: rectint :: RectInt > :: uninit () ; let __ret = { __TileLayoutUtils_unity2_raw :: try_layout_by_row (:: core :: convert :: Into :: into (src) , :: core :: convert :: Into :: into (tile_size) , __out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: option :: Option :: None) } ; (__ret , __out_0 . assume_init () , __out_1 . assume_init ()) } } # [doc = "`TryLayoutByCol(crate::unity_engine::rectint::RectInt, u32, *mutcrate::unity_engine::rectint::RectInt, *mutcrate::unity_engine::rectint::RectInt)` overload"] pub fn try_layout_by_col (src : impl :: core :: convert :: Into < crate :: unity_engine :: rectint :: RectInt > , tile_size : impl :: core :: convert :: Into < u32 >) -> (bool , crate :: unity_engine :: rectint :: RectInt , crate :: unity_engine :: rectint :: RectInt) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: rectint :: RectInt > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: rectint :: RectInt > :: uninit () ; let __ret = { __TileLayoutUtils_unity2_raw :: try_layout_by_col (:: core :: convert :: Into :: into (src) , :: core :: convert :: Into :: into (tile_size) , __out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: option :: Option :: None) } ; (__ret , __out_0 . assume_init () , __out_1 . assume_init ()) } } }
 
-    #[doc = "`TryLayoutByRow(crate::unity_engine::rectint::RectInt, u32, *mutcrate::unity_engine::rectint::RectInt, *mutcrate::unity_engine::rectint::RectInt)` overload"]
-    pub fn try_layout_by_row(
-        src: impl ::core::convert::Into<crate::unity_engine::rectint::RectInt>,
-        tile_size: impl ::core::convert::Into<u32>,
-    ) -> (bool, crate::unity_engine::rectint::RectInt, crate::unity_engine::rectint::RectInt) {
-        unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::rectint::RectInt>::uninit();
-            let mut __out_1 = ::core::mem::MaybeUninit::<crate::unity_engine::rectint::RectInt>::uninit();
-            let __ret = {
-                __TileLayoutUtils_unity2_raw::try_layout_by_row(
-                    ::core::convert::Into::into(src),
-                    ::core::convert::Into::into(tile_size),
-                    __out_0.as_mut_ptr(),
-                    __out_1.as_mut_ptr(),
-                    ::core::option::Option::None,
-                )
-            };
-            (__ret, __out_0.assume_init(), __out_1.assume_init())
-        }
-    }
-
-    #[doc = "`TryLayoutByCol(crate::unity_engine::rectint::RectInt, u32, *mutcrate::unity_engine::rectint::RectInt, *mutcrate::unity_engine::rectint::RectInt)` overload"]
-    pub fn try_layout_by_col(
-        src: impl ::core::convert::Into<crate::unity_engine::rectint::RectInt>,
-        tile_size: impl ::core::convert::Into<u32>,
-    ) -> (bool, crate::unity_engine::rectint::RectInt, crate::unity_engine::rectint::RectInt) {
-        unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::rectint::RectInt>::uninit();
-            let mut __out_1 = ::core::mem::MaybeUninit::<crate::unity_engine::rectint::RectInt>::uninit();
-            let __ret = {
-                __TileLayoutUtils_unity2_raw::try_layout_by_col(
-                    ::core::convert::Into::into(src),
-                    ::core::convert::Into::into(tile_size),
-                    __out_0.as_mut_ptr(),
-                    __out_1.as_mut_ptr(),
-                    ::core::option::Option::None,
-                )
-            };
-            (__ret, __out_0.assume_init(), __out_1.assume_init())
-        }
-    }
-}
+#[cfg(feature = "unity_engine-rendering-tilelayoututils")]
+impl TileLayoutUtils { pub fn try_layout_by_tiles_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TileLayoutUtils_unity2_raw :: __lookup_try_layout_by_tiles :: get_method_info () } pub fn try_layout_by_row_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TileLayoutUtils_unity2_raw :: __lookup_try_layout_by_row :: get_method_info () } pub fn try_layout_by_col_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TileLayoutUtils_unity2_raw :: __lookup_try_layout_by_col :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-rendering-tilelayoututils")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{ITileLayoutUtils, TileLayoutUtils};
+    pub use super::TileLayoutUtils;
+    pub use super::ITileLayoutUtils;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

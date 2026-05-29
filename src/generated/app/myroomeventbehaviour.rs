@@ -2,403 +2,54 @@
 
 #[cfg(feature = "app-myroomeventbehaviour-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::playables::playablebehaviour::{IPlayableBehaviour, PlayableBehaviour},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomeventbehaviour/MyRoomEventBehaviour.md"))]
-    #[::unity2::class(namespace = "App", name = "MyRoomEventBehaviour")]
-    #[parent(crate::unity_engine::playables::playablebehaviour::PlayableBehaviour)]
-    pub struct MyRoomEventBehaviour {
-        #[offset(16)]
-        #[rename(name = "eventType")]
-        pub event_type: crate::app::myroomeventclip::MyRoomEventClip_EventClipType,
-        #[offset(24)]
-        #[rename(name = "eventName")]
-        pub event_name: ::unity2::Il2CppString,
-        #[offset(32)]
-        #[rename(name = "eventLayer")]
-        pub event_layer: crate::app::myroomeventclip::MyRoomEventClip_EventClipLayer,
-        #[offset(36)]
-        #[rename(name = "isOut")]
-        pub is_out: bool,
-        #[offset(40)]
-        #[rename(name = "effectObject")]
-        pub effect_object: crate::unity_engine::gameobject::GameObject,
-        #[offset(48)]
-        #[rename(name = "soundHandle")]
-        pub sound_handle: crate::app::gamesound::GameSound_Handle,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: playables :: playablebehaviour :: { IPlayableBehaviour , PlayableBehaviour }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomeventbehaviour/MyRoomEventBehaviour.md"))] # [:: unity2 :: class (namespace = "App" , name = "MyRoomEventBehaviour")] # [parent (crate :: unity_engine :: playables :: playablebehaviour :: PlayableBehaviour)] pub struct MyRoomEventBehaviour {
+# [offset (16)] # [rename (name = "eventType")] pub event_type : crate :: app :: myroomeventclip :: MyRoomEventClip_EventClipType ,
+# [offset (24)] # [rename (name = "eventName")] pub event_name : :: unity2 :: Il2CppString ,
+# [offset (32)] # [rename (name = "eventLayer")] pub event_layer : crate :: app :: myroomeventclip :: MyRoomEventClip_EventClipLayer ,
+# [offset (36)] # [rename (name = "isOut")] pub is_out : bool ,
+# [offset (40)] # [rename (name = "effectObject")] pub effect_object : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (48)] # [rename (name = "soundHandle")] pub sound_handle : crate :: app :: gamesound :: GameSound_Handle ,
+}
+
 }
 
 #[cfg(feature = "app-myroomeventbehaviour-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-myroomeventbehaviour")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MyRoomEventBehaviour_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_behaviour_play {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::playables::playable::Playable as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::playables::framedata::FrameData as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MyRoomEventBehaviour as ::unity2::ClassIdentity>::class(),
-                "OnBehaviourPlay",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MyRoomEventBehaviour as ::unity2::ClassIdentity>::NAME,
-                        "OnBehaviourPlay",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_behaviour_play(
-        this: MyRoomEventBehaviour,
-        playable: crate::unity_engine::playables::playable::Playable,
-        info: crate::unity_engine::playables::framedata::FrameData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MyRoomEventBehaviour,
-            crate::unity_engine::playables::playable::Playable,
-            crate::unity_engine::playables::framedata::FrameData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_on_behaviour_play::get_method_info().method_ptr);
-        inner(this, playable, info, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_behaviour_pause {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::playables::playable::Playable as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::playables::framedata::FrameData as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MyRoomEventBehaviour as ::unity2::ClassIdentity>::class(),
-                "OnBehaviourPause",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MyRoomEventBehaviour as ::unity2::ClassIdentity>::NAME,
-                        "OnBehaviourPause",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_behaviour_pause(
-        this: MyRoomEventBehaviour,
-        playable: crate::unity_engine::playables::playable::Playable,
-        info: crate::unity_engine::playables::framedata::FrameData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MyRoomEventBehaviour,
-            crate::unity_engine::playables::playable::Playable,
-            crate::unity_engine::playables::framedata::FrameData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_on_behaviour_pause::get_method_info().method_ptr);
-        inner(this, playable, info, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_process_frame {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::playables::playable::Playable as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::playables::framedata::FrameData as ::unity2::IlType>::il_type(),
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MyRoomEventBehaviour as ::unity2::ClassIdentity>::class(),
-                "ProcessFrame",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MyRoomEventBehaviour as ::unity2::ClassIdentity>::NAME,
-                        "ProcessFrame",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn process_frame(
-        this: MyRoomEventBehaviour,
-        playable: crate::unity_engine::playables::playable::Playable,
-        info: crate::unity_engine::playables::framedata::FrameData,
-        player_data: crate::system::object::Object,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MyRoomEventBehaviour,
-            crate::unity_engine::playables::playable::Playable,
-            crate::unity_engine::playables::framedata::FrameData,
-            crate::system::object::Object,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_process_frame::get_method_info().method_ptr);
-        inner(this, playable, info, player_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_effect {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MyRoomEventBehaviour as ::unity2::ClassIdentity>::class(),
-                "CreateEffect",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MyRoomEventBehaviour as ::unity2::ClassIdentity>::NAME,
-                        "CreateEffect",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_effect(
-        this: MyRoomEventBehaviour,
-        name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::gameobject::GameObject {
-        let inner: extern "C" fn(
-            MyRoomEventBehaviour,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(__lookup_create_effect::get_method_info().method_ptr);
-        inner(this, name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_layer_parent {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MyRoomEventBehaviour as ::unity2::ClassIdentity>::class(),
-                "GetLayerParent",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MyRoomEventBehaviour as ::unity2::ClassIdentity>::NAME,
-                        "GetLayerParent",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_layer_parent(
-        this: MyRoomEventBehaviour,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::transform::Transform {
-        let inner: extern "C" fn(MyRoomEventBehaviour, ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform =
-            ::core::mem::transmute(__lookup_get_layer_parent::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MyRoomEventBehaviour as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MyRoomEventBehaviour as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: MyRoomEventBehaviour, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MyRoomEventBehaviour, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MyRoomEventBehaviour_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_behaviour_play { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playable :: Playable as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: playables :: framedata :: FrameData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MyRoomEventBehaviour as :: unity2 :: ClassIdentity > :: class () , "OnBehaviourPlay" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MyRoomEventBehaviour as :: unity2 :: ClassIdentity > :: NAME , "OnBehaviourPlay" , e) , } } } pub unsafe fn on_behaviour_play (this : MyRoomEventBehaviour , playable : crate :: unity_engine :: playables :: playable :: Playable , info : crate :: unity_engine :: playables :: framedata :: FrameData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MyRoomEventBehaviour , crate :: unity_engine :: playables :: playable :: Playable , crate :: unity_engine :: playables :: framedata :: FrameData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_behaviour_play :: get_method_info () . method_ptr ,) ; inner (this , playable , info , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_behaviour_pause { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playable :: Playable as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: playables :: framedata :: FrameData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MyRoomEventBehaviour as :: unity2 :: ClassIdentity > :: class () , "OnBehaviourPause" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MyRoomEventBehaviour as :: unity2 :: ClassIdentity > :: NAME , "OnBehaviourPause" , e) , } } } pub unsafe fn on_behaviour_pause (this : MyRoomEventBehaviour , playable : crate :: unity_engine :: playables :: playable :: Playable , info : crate :: unity_engine :: playables :: framedata :: FrameData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MyRoomEventBehaviour , crate :: unity_engine :: playables :: playable :: Playable , crate :: unity_engine :: playables :: framedata :: FrameData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_behaviour_pause :: get_method_info () . method_ptr ,) ; inner (this , playable , info , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_process_frame { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playable :: Playable as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: playables :: framedata :: FrameData as :: unity2 :: IlType > :: il_type () , < crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MyRoomEventBehaviour as :: unity2 :: ClassIdentity > :: class () , "ProcessFrame" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MyRoomEventBehaviour as :: unity2 :: ClassIdentity > :: NAME , "ProcessFrame" , e) , } } } pub unsafe fn process_frame (this : MyRoomEventBehaviour , playable : crate :: unity_engine :: playables :: playable :: Playable , info : crate :: unity_engine :: playables :: framedata :: FrameData , player_data : crate :: system :: object :: Object , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MyRoomEventBehaviour , crate :: unity_engine :: playables :: playable :: Playable , crate :: unity_engine :: playables :: framedata :: FrameData , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_process_frame :: get_method_info () . method_ptr ,) ; inner (this , playable , info , player_data , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_effect { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MyRoomEventBehaviour as :: unity2 :: ClassIdentity > :: class () , "CreateEffect" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MyRoomEventBehaviour as :: unity2 :: ClassIdentity > :: NAME , "CreateEffect" , e) , } } } pub unsafe fn create_effect (this : MyRoomEventBehaviour , name : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject { let inner : extern "C" fn (MyRoomEventBehaviour , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute (__lookup_create_effect :: get_method_info () . method_ptr ,) ; inner (this , name , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_layer_parent { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MyRoomEventBehaviour as :: unity2 :: ClassIdentity > :: class () , "GetLayerParent" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MyRoomEventBehaviour as :: unity2 :: ClassIdentity > :: NAME , "GetLayerParent" , e) , } } } pub unsafe fn get_layer_parent (this : MyRoomEventBehaviour , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: transform :: Transform { let inner : extern "C" fn (MyRoomEventBehaviour , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: transform :: Transform = :: core :: mem :: transmute (__lookup_get_layer_parent :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MyRoomEventBehaviour as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MyRoomEventBehaviour as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : MyRoomEventBehaviour , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MyRoomEventBehaviour , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-myroomeventbehaviour")]
-pub trait IMyRoomEventBehaviourMethods: IMyRoomEventBehaviour {
-    #[doc = "`OnBehaviourPlay(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::framedata::FrameData)` overload"]
-    fn on_behaviour_play(
-        self,
-        playable: impl ::core::convert::Into<crate::unity_engine::playables::playable::Playable>,
-        info: impl ::core::convert::Into<crate::unity_engine::playables::framedata::FrameData>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <MyRoomEventBehaviour as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MyRoomEventBehaviour_unity2_raw::on_behaviour_play(
-                __receiver,
-                ::core::convert::Into::into(playable),
-                ::core::convert::Into::into(info),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`OnBehaviourPause(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::framedata::FrameData)` overload"]
-    fn on_behaviour_pause(
-        self,
-        playable: impl ::core::convert::Into<crate::unity_engine::playables::playable::Playable>,
-        info: impl ::core::convert::Into<crate::unity_engine::playables::framedata::FrameData>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <MyRoomEventBehaviour as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MyRoomEventBehaviour_unity2_raw::on_behaviour_pause(
-                __receiver,
-                ::core::convert::Into::into(playable),
-                ::core::convert::Into::into(info),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ProcessFrame(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::framedata::FrameData, crate::system::object::Object)` overload"]
-    fn process_frame(
-        self,
-        playable: impl ::core::convert::Into<crate::unity_engine::playables::playable::Playable>,
-        info: impl ::core::convert::Into<crate::unity_engine::playables::framedata::FrameData>,
-        player_data: impl ::core::convert::Into<crate::system::object::Object>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <MyRoomEventBehaviour as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MyRoomEventBehaviour_unity2_raw::process_frame(
-                __receiver,
-                ::core::convert::Into::into(playable),
-                ::core::convert::Into::into(info),
-                ::core::convert::Into::into(player_data),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CreateEffect(::unity2::Il2CppString)` overload"]
-    fn create_effect(self, name: impl ::core::convert::Into<::unity2::Il2CppString>) -> crate::unity_engine::gameobject::GameObject {
-        unsafe {
-            let __receiver =
-                <MyRoomEventBehaviour as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MyRoomEventBehaviour_unity2_raw::create_effect(__receiver, ::core::convert::Into::into(name), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetLayerParent()` overload"]
-    fn get_layer_parent(self) -> crate::unity_engine::transform::Transform {
-        unsafe {
-            let __receiver =
-                <MyRoomEventBehaviour as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MyRoomEventBehaviour_unity2_raw::get_layer_parent(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <MyRoomEventBehaviour as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MyRoomEventBehaviour_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IMyRoomEventBehaviourMethods : IMyRoomEventBehaviour { # [doc = "`OnBehaviourPlay(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::framedata::FrameData)` overload"] fn on_behaviour_play (self , playable : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playable :: Playable > , info : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: framedata :: FrameData >) -> () { unsafe { let __receiver = < MyRoomEventBehaviour as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MyRoomEventBehaviour_unity2_raw :: on_behaviour_play (__receiver , :: core :: convert :: Into :: into (playable) , :: core :: convert :: Into :: into (info) , :: core :: option :: Option :: None) } } # [doc = "`OnBehaviourPause(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::framedata::FrameData)` overload"] fn on_behaviour_pause (self , playable : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playable :: Playable > , info : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: framedata :: FrameData >) -> () { unsafe { let __receiver = < MyRoomEventBehaviour as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MyRoomEventBehaviour_unity2_raw :: on_behaviour_pause (__receiver , :: core :: convert :: Into :: into (playable) , :: core :: convert :: Into :: into (info) , :: core :: option :: Option :: None) } } # [doc = "`ProcessFrame(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::framedata::FrameData, crate::system::object::Object)` overload"] fn process_frame (self , playable : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playable :: Playable > , info : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: framedata :: FrameData > , player_data : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> () { unsafe { let __receiver = < MyRoomEventBehaviour as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MyRoomEventBehaviour_unity2_raw :: process_frame (__receiver , :: core :: convert :: Into :: into (playable) , :: core :: convert :: Into :: into (info) , :: core :: convert :: Into :: into (player_data) , :: core :: option :: Option :: None) } } # [doc = "`CreateEffect(::unity2::Il2CppString)` overload"] fn create_effect (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { let __receiver = < MyRoomEventBehaviour as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MyRoomEventBehaviour_unity2_raw :: create_effect (__receiver , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } # [doc = "`GetLayerParent()` overload"] fn get_layer_parent (self ,) -> crate :: unity_engine :: transform :: Transform { unsafe { let __receiver = < MyRoomEventBehaviour as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MyRoomEventBehaviour_unity2_raw :: get_layer_parent (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MyRoomEventBehaviour as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MyRoomEventBehaviour_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-myroomeventbehaviour")]
-impl<__T: IMyRoomEventBehaviour> IMyRoomEventBehaviourMethods for __T {}
+impl < __T : IMyRoomEventBehaviour > IMyRoomEventBehaviourMethods for __T { }
+
+#[cfg(feature = "app-myroomeventbehaviour")]
+impl MyRoomEventBehaviour { pub fn on_behaviour_play_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MyRoomEventBehaviour_unity2_raw :: __lookup_on_behaviour_play :: get_method_info () } pub fn on_behaviour_pause_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MyRoomEventBehaviour_unity2_raw :: __lookup_on_behaviour_pause :: get_method_info () } pub fn process_frame_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MyRoomEventBehaviour_unity2_raw :: __lookup_process_frame :: get_method_info () } pub fn create_effect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MyRoomEventBehaviour_unity2_raw :: __lookup_create_effect :: get_method_info () } pub fn get_layer_parent_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MyRoomEventBehaviour_unity2_raw :: __lookup_get_layer_parent :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MyRoomEventBehaviour_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-myroomeventbehaviour")]
 impl MyRoomEventBehaviour {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MyRoomEventBehaviour),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMyRoomEventBehaviourMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MyRoomEventBehaviour) , :: core :: stringify ! (new) ,)) ; < Self as IMyRoomEventBehaviourMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-myroomeventbehaviour")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IMyRoomEventBehaviour, IMyRoomEventBehaviourMethods, MyRoomEventBehaviour};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-playables-playablebehaviour")]
-    pub use crate::unity_engine::playables::playablebehaviour::IPlayableBehaviourMethods;
-    pub use crate::{system::object::IObject, unity_engine::playables::playablebehaviour::IPlayableBehaviour};
+    pub use super::MyRoomEventBehaviour;
+    pub use super::IMyRoomEventBehaviour;
+    pub use super::IMyRoomEventBehaviourMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::playables::playablebehaviour::IPlayableBehaviour;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-playables-playablebehaviour")] pub use crate::unity_engine::playables::playablebehaviour::IPlayableBehaviourMethods;
 }

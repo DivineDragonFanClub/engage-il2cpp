@@ -2,496 +2,93 @@
 
 #[cfg(feature = "unity_engine-rendering-universal-deferredshaderdata-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        valuetype::{IValueType, ValueType},
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/deferredshaderdata/DeferredShaderData_ComputeBufferInfo.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct DeferredShaderData_ComputeBufferInfo {
-        pub frame_used: u32,
-        pub r#type: crate::unity_engine::computebuffertype::ComputeBufferType,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
 
-    impl ::unity2::ClassIdentity for DeferredShaderData_ComputeBufferInfo {
-        const NAME: &'static str = "DeferredShaderData.ComputeBufferInfo";
-        const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/deferredshaderdata/DeferredShaderData.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.Universal" , name = "DeferredShaderData")] # [parent (crate :: system :: object :: Object)] pub struct DeferredShaderData {
+# [static_field] # [rename (name = "m_Instance")] pub m_instance : crate :: unity_engine :: rendering :: universal :: deferredshaderdata :: DeferredShaderData ,
+# [offset (24)] # [rename (name = "m_Buffers")] pub m_buffers : :: unity2 :: Array < crate :: unity_engine :: computebuffer :: ComputeBuffer > ,
+# [offset (32)] # [rename (name = "m_BufferInfos")] pub m_buffer_infos : :: unity2 :: Array < crate :: unity_engine :: rendering :: universal :: deferredshaderdata :: DeferredShaderData_ComputeBufferInfo > ,
+# [offset (40)] # [rename (name = "m_BufferCount")] pub m_buffer_count : i32 ,
+# [offset (44)] # [rename (name = "m_CachedBufferIndex")] pub m_cached_buffer_index : i32 ,
+# [offset (48)] # [rename (name = "m_FrameIndex")] pub m_frame_index : u32 ,
+}
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/deferredshaderdata/DeferredShaderData_ComputeBufferInfo.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct DeferredShaderData_ComputeBufferInfo {
+    pub frame_used: u32,
+    pub r#type: crate :: unity_engine :: computebuffertype :: ComputeBufferType,
+}
+
+
+impl ::unity2::ClassIdentity for DeferredShaderData_ComputeBufferInfo {
+    const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal";
+
+    const NAME: &'static str = "DeferredShaderData.ComputeBufferInfo";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for DeferredShaderData_ComputeBufferInfo {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl ::unity2::IlType for DeferredShaderData_ComputeBufferInfo {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/deferredshaderdata/DeferredShaderData.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Rendering.Universal", name = "DeferredShaderData")]
-    #[parent(crate::system::object::Object)]
-    pub struct DeferredShaderData {
-        #[static_field]
-        #[rename(name = "m_Instance")]
-        pub m_instance: crate::unity_engine::rendering::universal::deferredshaderdata::DeferredShaderData,
-        #[offset(24)]
-        #[rename(name = "m_Buffers")]
-        pub m_buffers: ::unity2::Array<crate::unity_engine::computebuffer::ComputeBuffer>,
-        #[offset(32)]
-        #[rename(name = "m_BufferInfos")]
-        pub m_buffer_infos: ::unity2::Array<crate::unity_engine::rendering::universal::deferredshaderdata::DeferredShaderData_ComputeBufferInfo>,
-        #[offset(40)]
-        #[rename(name = "m_BufferCount")]
-        pub m_buffer_count: i32,
-        #[offset(44)]
-        #[rename(name = "m_CachedBufferIndex")]
-        pub m_cached_buffer_index: i32,
-        #[offset(48)]
-        #[rename(name = "m_FrameIndex")]
-        pub m_frame_index: u32,
-    }
+}
+
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-deferredshaderdata-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-universal-deferredshaderdata")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __DeferredShaderData_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DeferredShaderData as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DeferredShaderData as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: DeferredShaderData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DeferredShaderData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_instance {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DeferredShaderData as ::unity2::ClassIdentity>::class(),
-                "get_instance",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DeferredShaderData as ::unity2::ClassIdentity>::NAME,
-                        "get_instance",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_instance(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::rendering::universal::deferredshaderdata::DeferredShaderData {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::unity_engine::rendering::universal::deferredshaderdata::DeferredShaderData =
-            ::core::mem::transmute(__lookup_get_instance::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_dispose {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DeferredShaderData as ::unity2::ClassIdentity>::class(),
-                "Dispose",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DeferredShaderData as ::unity2::ClassIdentity>::NAME,
-                        "Dispose",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn dispose(this: DeferredShaderData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DeferredShaderData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_dispose::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_reset_buffers {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DeferredShaderData as ::unity2::ClassIdentity>::class(),
-                "ResetBuffers",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DeferredShaderData as ::unity2::ClassIdentity>::NAME,
-                        "ResetBuffers",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn reset_buffers(this: DeferredShaderData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DeferredShaderData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_reset_buffers::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_or_update_buffer {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DeferredShaderData as ::unity2::ClassIdentity>::class(),
-                "GetOrUpdateBuffer",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DeferredShaderData as ::unity2::ClassIdentity>::NAME,
-                        "GetOrUpdateBuffer",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_or_update_buffer(
-        this: DeferredShaderData,
-        count: i32,
-        stride: i32,
-        is_constant_buffer: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::computebuffer::ComputeBuffer {
-        let inner: extern "C" fn(DeferredShaderData, i32, i32, bool, ::unity2::OptionalMethod) -> crate::unity_engine::computebuffer::ComputeBuffer =
-            ::core::mem::transmute(__lookup_get_or_update_buffer::get_method_info().method_ptr);
-        inner(this, count, stride, is_constant_buffer, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_less_circular {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u32 as ::unity2::IlType>::il_type(), <u32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DeferredShaderData as ::unity2::ClassIdentity>::class(),
-                "IsLessCircular",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DeferredShaderData as ::unity2::ClassIdentity>::NAME,
-                        "IsLessCircular",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_less_circular(a: u32, b: u32, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(u32, u32, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_less_circular::get_method_info().method_ptr);
-        inner(a, b, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_align {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DeferredShaderData as ::unity2::ClassIdentity>::class(),
-                "Align",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DeferredShaderData as ::unity2::ClassIdentity>::NAME,
-                        "Align",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn align(s: i32, alignment: i32, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(i32, i32, ::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(__lookup_align::get_method_info().method_ptr);
-        inner(s, alignment, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DeferredShaderData as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DeferredShaderData as ::unity2::ClassIdentity>::NAME,
-                        ".cctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __DeferredShaderData_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DeferredShaderData as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DeferredShaderData as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : DeferredShaderData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DeferredShaderData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_instance { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DeferredShaderData as :: unity2 :: ClassIdentity > :: class () , "get_instance" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DeferredShaderData as :: unity2 :: ClassIdentity > :: NAME , "get_instance" , e) , } } } pub unsafe fn get_instance (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: universal :: deferredshaderdata :: DeferredShaderData { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: universal :: deferredshaderdata :: DeferredShaderData = :: core :: mem :: transmute (__lookup_get_instance :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_dispose { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DeferredShaderData as :: unity2 :: ClassIdentity > :: class () , "Dispose" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DeferredShaderData as :: unity2 :: ClassIdentity > :: NAME , "Dispose" , e) , } } } pub unsafe fn dispose (this : DeferredShaderData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DeferredShaderData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_dispose :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_reset_buffers { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DeferredShaderData as :: unity2 :: ClassIdentity > :: class () , "ResetBuffers" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DeferredShaderData as :: unity2 :: ClassIdentity > :: NAME , "ResetBuffers" , e) , } } } pub unsafe fn reset_buffers (this : DeferredShaderData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DeferredShaderData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_reset_buffers :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_or_update_buffer { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DeferredShaderData as :: unity2 :: ClassIdentity > :: class () , "GetOrUpdateBuffer" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DeferredShaderData as :: unity2 :: ClassIdentity > :: NAME , "GetOrUpdateBuffer" , e) , } } } pub unsafe fn get_or_update_buffer (this : DeferredShaderData , count : i32 , stride : i32 , is_constant_buffer : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: computebuffer :: ComputeBuffer { let inner : extern "C" fn (DeferredShaderData , i32 , i32 , bool , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: computebuffer :: ComputeBuffer = :: core :: mem :: transmute (__lookup_get_or_update_buffer :: get_method_info () . method_ptr ,) ; inner (this , count , stride , is_constant_buffer , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_less_circular { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< u32 as :: unity2 :: IlType > :: il_type () , < u32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DeferredShaderData as :: unity2 :: ClassIdentity > :: class () , "IsLessCircular" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DeferredShaderData as :: unity2 :: ClassIdentity > :: NAME , "IsLessCircular" , e) , } } } pub unsafe fn is_less_circular (a : u32 , b : u32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (u32 , u32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_less_circular :: get_method_info () . method_ptr ,) ; inner (a , b , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_align { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DeferredShaderData as :: unity2 :: ClassIdentity > :: class () , "Align" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DeferredShaderData as :: unity2 :: ClassIdentity > :: NAME , "Align" , e) , } } } pub unsafe fn align (s : i32 , alignment : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (i32 , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_align :: get_method_info () . method_ptr ,) ; inner (s , alignment , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DeferredShaderData as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DeferredShaderData as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
+
+#[cfg(feature = "unity_engine-rendering-universal-deferredshaderdata")]
+impl DeferredShaderData { # [doc = "`get_instance()` overload"] pub fn get_instance () -> crate :: unity_engine :: rendering :: universal :: deferredshaderdata :: DeferredShaderData { unsafe { __DeferredShaderData_unity2_raw :: get_instance (:: core :: option :: Option :: None) } } # [doc = "`IsLessCircular(u32, u32)` overload"] pub fn is_less_circular (a : impl :: core :: convert :: Into < u32 > , b : impl :: core :: convert :: Into < u32 >) -> bool { unsafe { __DeferredShaderData_unity2_raw :: is_less_circular (:: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: option :: Option :: None) } } # [doc = "`Align(i32, i32)` overload"] pub fn align (s : impl :: core :: convert :: Into < i32 > , alignment : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { __DeferredShaderData_unity2_raw :: align (:: core :: convert :: Into :: into (s) , :: core :: convert :: Into :: into (alignment) , :: core :: option :: Option :: None) } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { __DeferredShaderData_unity2_raw :: cctor (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-rendering-universal-deferredshaderdata")]
+pub trait IDeferredShaderDataMethods : IDeferredShaderData { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DeferredShaderData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DeferredShaderData_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Dispose()` overload"] fn dispose (self ,) -> () { unsafe { let __receiver = < DeferredShaderData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DeferredShaderData_unity2_raw :: dispose (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ResetBuffers()` overload"] fn reset_buffers (self ,) -> () { unsafe { let __receiver = < DeferredShaderData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DeferredShaderData_unity2_raw :: reset_buffers (__receiver , :: core :: option :: Option :: None) } } fn reserve_buffer < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > (self , count : impl :: core :: convert :: Into < i32 > , as_c_buffer : impl :: core :: convert :: Into < bool >) -> crate :: unity_engine :: computebuffer :: ComputeBuffer { static OPEN : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { :: unity2 :: lookup :: method_info_on_class (< DeferredShaderData as :: unity2 :: ClassIdentity > :: class () , "ReserveBuffer" , 2 ,) }) ; # [allow (clippy :: type_complexity)] static CACHE : :: std :: sync :: OnceLock < :: std :: sync :: Mutex < :: std :: collections :: HashMap < usize , & 'static :: unity2 :: il2cpp :: MethodInfo > , > , > = :: std :: sync :: OnceLock :: new () ; let _ = false ; let __open : & 'static :: unity2 :: il2cpp :: MethodInfo = match & * OPEN { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DeferredShaderData as :: unity2 :: ClassIdentity > :: NAME , "ReserveBuffer" , e) , } ; let __cache = CACHE . get_or_init (|| { :: std :: sync :: Mutex :: new (:: std :: collections :: HashMap :: new ()) }) ; let __key : usize = < M0 as :: unity2 :: IlType > :: il_type () as * const _ as usize ; let __inflated : & 'static :: unity2 :: il2cpp :: MethodInfo = { let mut __guard = __cache . lock () . unwrap () ; * __guard . entry (__key) . or_insert_with (|| { :: unity2 :: il2cpp :: generic :: create_generic_method_info (__open , & [< M0 as :: unity2 :: IlType > :: il_type ()] ,) }) } ; unsafe { let __receiver = < DeferredShaderData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let __f : extern "C" fn (DeferredShaderData , i32 , bool , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: computebuffer :: ComputeBuffer = :: core :: mem :: transmute (__inflated . method_ptr) ; let __mi_opaque : & 'static () = & * (__inflated as * const _ as * const ()) ; __f (__receiver , :: core :: convert :: Into :: into (count) , :: core :: convert :: Into :: into (as_c_buffer) , :: core :: option :: Option :: Some (__mi_opaque) ,) } } # [doc = "`GetOrUpdateBuffer(i32, i32, bool)` overload"] fn get_or_update_buffer (self , count : impl :: core :: convert :: Into < i32 > , stride : impl :: core :: convert :: Into < i32 > , is_constant_buffer : impl :: core :: convert :: Into < bool >) -> crate :: unity_engine :: computebuffer :: ComputeBuffer { unsafe { let __receiver = < DeferredShaderData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DeferredShaderData_unity2_raw :: get_or_update_buffer (__receiver , :: core :: convert :: Into :: into (count) , :: core :: convert :: Into :: into (stride) , :: core :: convert :: Into :: into (is_constant_buffer) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-rendering-universal-deferredshaderdata")]
+impl < __T : IDeferredShaderData > IDeferredShaderDataMethods for __T { }
+
+#[cfg(feature = "unity_engine-rendering-universal-deferredshaderdata")]
+impl DeferredShaderData { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DeferredShaderData_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn get_instance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DeferredShaderData_unity2_raw :: __lookup_get_instance :: get_method_info () } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DeferredShaderData_unity2_raw :: __lookup_dispose :: get_method_info () } pub fn reset_buffers_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DeferredShaderData_unity2_raw :: __lookup_reset_buffers :: get_method_info () } pub fn get_or_update_buffer_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DeferredShaderData_unity2_raw :: __lookup_get_or_update_buffer :: get_method_info () } pub fn is_less_circular_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DeferredShaderData_unity2_raw :: __lookup_is_less_circular :: get_method_info () } pub fn align_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DeferredShaderData_unity2_raw :: __lookup_align :: get_method_info () } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DeferredShaderData_unity2_raw :: __lookup_cctor :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-rendering-universal-deferredshaderdata")]
 impl DeferredShaderData {
-    #[doc = "`get_instance()` overload"]
-    pub fn get_instance() -> crate::unity_engine::rendering::universal::deferredshaderdata::DeferredShaderData {
-        unsafe { __DeferredShaderData_unity2_raw::get_instance(::core::option::Option::None) }
-    }
-
-    #[doc = "`IsLessCircular(u32, u32)` overload"]
-    pub fn is_less_circular(a: impl ::core::convert::Into<u32>, b: impl ::core::convert::Into<u32>) -> bool {
-        unsafe {
-            __DeferredShaderData_unity2_raw::is_less_circular(
-                ::core::convert::Into::into(a),
-                ::core::convert::Into::into(b),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`Align(i32, i32)` overload"]
-    pub fn align(s: impl ::core::convert::Into<i32>, alignment: impl ::core::convert::Into<i32>) -> i32 {
-        unsafe {
-            __DeferredShaderData_unity2_raw::align(
-                ::core::convert::Into::into(s),
-                ::core::convert::Into::into(alignment),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __DeferredShaderData_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-deferredshaderdata")]
-pub trait IDeferredShaderDataMethods: IDeferredShaderData {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <DeferredShaderData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DeferredShaderData_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Dispose()` overload"]
-    fn dispose(self) -> () {
-        unsafe {
-            let __receiver = <DeferredShaderData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DeferredShaderData_unity2_raw::dispose(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ResetBuffers()` overload"]
-    fn reset_buffers(self) -> () {
-        unsafe {
-            let __receiver = <DeferredShaderData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DeferredShaderData_unity2_raw::reset_buffers(__receiver, ::core::option::Option::None)
-        }
-    }
-    fn reserve_buffer<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
-        self,
-        count: impl ::core::convert::Into<i32>,
-        as_c_buffer: impl ::core::convert::Into<bool>,
-    ) -> crate::unity_engine::computebuffer::ComputeBuffer {
-        static OPEN: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            ::unity2::lookup::method_info_on_class(<DeferredShaderData as ::unity2::ClassIdentity>::class(), "ReserveBuffer", 2)
-        });
-        #[allow(clippy::type_complexity)]
-        static CACHE: ::std::sync::OnceLock<::std::sync::Mutex<::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>>> =
-            ::std::sync::OnceLock::new();
-        let _ = false;
-        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
-            ::core::result::Result::Ok(mi) => *mi,
-            ::core::result::Result::Err(e) => {
-                panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DeferredShaderData as ::unity2::ClassIdentity>::NAME,
-                    "ReserveBuffer",
-                    e
-                )
-            },
-        };
-        let __cache = CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
-        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
-        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
-            let mut __guard = __cache.lock().unwrap();
-            *__guard
-                .entry(__key)
-                .or_insert_with(|| ::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as ::unity2::IlType>::il_type()]))
-        };
-        unsafe {
-            let __receiver = <DeferredShaderData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            let __f: extern "C" fn(DeferredShaderData, i32, bool, ::unity2::OptionalMethod) -> crate::unity_engine::computebuffer::ComputeBuffer =
-                ::core::mem::transmute(__inflated.method_ptr);
-            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
-            __f(
-                __receiver,
-                ::core::convert::Into::into(count),
-                ::core::convert::Into::into(as_c_buffer),
-                ::core::option::Option::Some(__mi_opaque),
-            )
-        }
-    }
-    #[doc = "`GetOrUpdateBuffer(i32, i32, bool)` overload"]
-    fn get_or_update_buffer(
-        self,
-        count: impl ::core::convert::Into<i32>,
-        stride: impl ::core::convert::Into<i32>,
-        is_constant_buffer: impl ::core::convert::Into<bool>,
-    ) -> crate::unity_engine::computebuffer::ComputeBuffer {
-        unsafe {
-            let __receiver = <DeferredShaderData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DeferredShaderData_unity2_raw::get_or_update_buffer(
-                __receiver,
-                ::core::convert::Into::into(count),
-                ::core::convert::Into::into(stride),
-                ::core::convert::Into::into(is_constant_buffer),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-deferredshaderdata")]
-impl<__T: IDeferredShaderData> IDeferredShaderDataMethods for __T {}
-
-#[cfg(feature = "unity_engine-rendering-universal-deferredshaderdata")]
-impl DeferredShaderData {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DeferredShaderData),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDeferredShaderDataMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DeferredShaderData) , :: core :: stringify ! (new) ,)) ; < Self as IDeferredShaderDataMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-deferredshaderdata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{DeferredShaderData, DeferredShaderData_ComputeBufferInfo, IDeferredShaderData, IDeferredShaderDataMethods};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::system::{object::IObject, valuetype::IValueType};
+    pub use super::DeferredShaderData;
+    pub use super::IDeferredShaderData;
+    pub use super::IDeferredShaderDataMethods;
+    pub use super::DeferredShaderData_ComputeBufferInfo;
+    pub use crate::system::object::IObject;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

@@ -2,449 +2,71 @@
 
 #[cfg(feature = "unity_engine-animations-animationplayableoutput-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        valuetype::{IValueType, ValueType},
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/animations/animationplayableoutput/AnimationPlayableOutput.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct AnimationPlayableOutput {
-        pub m_handle: crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
 
-    impl ::unity2::ClassIdentity for AnimationPlayableOutput {
-        const NAME: &'static str = "AnimationPlayableOutput";
-        const NAMESPACE: &'static str = "UnityEngine.Animations";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/animations/animationplayableoutput/AnimationPlayableOutput.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct AnimationPlayableOutput {
+    pub m_handle: crate :: unity_engine :: playables :: playableoutputhandle :: PlayableOutputHandle,
+}
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+
+impl ::unity2::ClassIdentity for AnimationPlayableOutput {
+    const NAMESPACE: &'static str = "UnityEngine.Animations";
+
+    const NAME: &'static str = "AnimationPlayableOutput";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for AnimationPlayableOutput {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl ::unity2::IlType for AnimationPlayableOutput {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
+
+}
+
 }
 
 #[cfg(feature = "unity_engine-animations-animationplayableoutput-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-animations-animationplayableoutput")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AnimationPlayableOutput_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::playables::playablegraph::PlayableGraph as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::animator::Animator as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AnimationPlayableOutput as ::unity2::ClassIdentity>::class(),
-                "Create",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AnimationPlayableOutput as ::unity2::ClassIdentity>::NAME,
-                        "Create",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create(
-        graph: crate::unity_engine::playables::playablegraph::PlayableGraph,
-        name: ::unity2::Il2CppString,
-        target: crate::unity_engine::animator::Animator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::animations::animationplayableoutput::AnimationPlayableOutput {
-        let inner: extern "C" fn(
-            crate::unity_engine::playables::playablegraph::PlayableGraph,
-            ::unity2::Il2CppString,
-            crate::unity_engine::animator::Animator,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::animations::animationplayableoutput::AnimationPlayableOutput =
-            ::core::mem::transmute(__lookup_create::get_method_info().method_ptr);
-        inner(graph, name, target, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AnimationPlayableOutput as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AnimationPlayableOutput as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: AnimationPlayableOutput,
-        handle: crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            AnimationPlayableOutput,
-            crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, handle, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_null {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AnimationPlayableOutput as ::unity2::ClassIdentity>::class(),
-                "get_Null",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AnimationPlayableOutput as ::unity2::ClassIdentity>::NAME,
-                        "get_Null",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_null(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::animations::animationplayableoutput::AnimationPlayableOutput {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::unity_engine::animations::animationplayableoutput::AnimationPlayableOutput =
-            ::core::mem::transmute(__lookup_get_null::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_handle {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AnimationPlayableOutput as ::unity2::ClassIdentity>::class(),
-                "GetHandle",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AnimationPlayableOutput as ::unity2::ClassIdentity>::NAME,
-                        "GetHandle",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_handle(
-        this: AnimationPlayableOutput,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle {
-        let inner: extern "C" fn(
-            AnimationPlayableOutput,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle =
-            ::core::mem::transmute(__lookup_get_handle::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_op_implicit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::animations::animationplayableoutput::AnimationPlayableOutput as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AnimationPlayableOutput as ::unity2::ClassIdentity>::class(),
-                "op_Implicit",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AnimationPlayableOutput as ::unity2::ClassIdentity>::NAME,
-                        "op_Implicit",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn op_implicit(
-        output: crate::unity_engine::animations::animationplayableoutput::AnimationPlayableOutput,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::playables::playableoutput::PlayableOutput {
-        let inner: extern "C" fn(
-            crate::unity_engine::animations::animationplayableoutput::AnimationPlayableOutput,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::playables::playableoutput::PlayableOutput =
-            ::core::mem::transmute(__lookup_op_implicit::get_method_info().method_ptr);
-        inner(output, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_op_explicit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::playables::playableoutput::PlayableOutput as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AnimationPlayableOutput as ::unity2::ClassIdentity>::class(),
-                "op_Explicit",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AnimationPlayableOutput as ::unity2::ClassIdentity>::NAME,
-                        "op_Explicit",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn op_explicit(
-        output: crate::unity_engine::playables::playableoutput::PlayableOutput,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::animations::animationplayableoutput::AnimationPlayableOutput {
-        let inner: extern "C" fn(
-            crate::unity_engine::playables::playableoutput::PlayableOutput,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::animations::animationplayableoutput::AnimationPlayableOutput =
-            ::core::mem::transmute(__lookup_op_explicit::get_method_info().method_ptr);
-        inner(output, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_target {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::animator::Animator as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AnimationPlayableOutput as ::unity2::ClassIdentity>::class(),
-                "SetTarget",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AnimationPlayableOutput as ::unity2::ClassIdentity>::NAME,
-                        "SetTarget",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_target(
-        this: AnimationPlayableOutput,
-        value: crate::unity_engine::animator::Animator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(AnimationPlayableOutput, crate::unity_engine::animator::Animator, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_target::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_internal_set_target {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::animator::Animator as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AnimationPlayableOutput as ::unity2::ClassIdentity>::class(),
-                "InternalSetTarget",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AnimationPlayableOutput as ::unity2::ClassIdentity>::NAME,
-                        "InternalSetTarget",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn internal_set_target(
-        handle: *mut crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle,
-        target: crate::unity_engine::animator::Animator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            *mut crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle,
-            crate::unity_engine::animator::Animator,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_internal_set_target::get_method_info().method_ptr);
-        inner(handle, target, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __AnimationPlayableOutput_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playablegraph :: PlayableGraph as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: animator :: Animator as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AnimationPlayableOutput as :: unity2 :: ClassIdentity > :: class () , "Create" , 3 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AnimationPlayableOutput as :: unity2 :: ClassIdentity > :: NAME , "Create" , e) , } } } pub unsafe fn create (graph : crate :: unity_engine :: playables :: playablegraph :: PlayableGraph , name : :: unity2 :: Il2CppString , target : crate :: unity_engine :: animator :: Animator , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: animations :: animationplayableoutput :: AnimationPlayableOutput { let inner : extern "C" fn (crate :: unity_engine :: playables :: playablegraph :: PlayableGraph , :: unity2 :: Il2CppString , crate :: unity_engine :: animator :: Animator , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: animations :: animationplayableoutput :: AnimationPlayableOutput = :: core :: mem :: transmute (__lookup_create :: get_method_info () . method_ptr ,) ; inner (graph , name , target , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playableoutputhandle :: PlayableOutputHandle as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AnimationPlayableOutput as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AnimationPlayableOutput as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : AnimationPlayableOutput , handle : crate :: unity_engine :: playables :: playableoutputhandle :: PlayableOutputHandle , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AnimationPlayableOutput , crate :: unity_engine :: playables :: playableoutputhandle :: PlayableOutputHandle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , handle , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_null { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AnimationPlayableOutput as :: unity2 :: ClassIdentity > :: class () , "get_Null" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AnimationPlayableOutput as :: unity2 :: ClassIdentity > :: NAME , "get_Null" , e) , } } } pub unsafe fn get_null (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: animations :: animationplayableoutput :: AnimationPlayableOutput { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: animations :: animationplayableoutput :: AnimationPlayableOutput = :: core :: mem :: transmute (__lookup_get_null :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_handle { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AnimationPlayableOutput as :: unity2 :: ClassIdentity > :: class () , "GetHandle" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AnimationPlayableOutput as :: unity2 :: ClassIdentity > :: NAME , "GetHandle" , e) , } } } pub unsafe fn get_handle (this : AnimationPlayableOutput , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: playables :: playableoutputhandle :: PlayableOutputHandle { let inner : extern "C" fn (AnimationPlayableOutput , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: playables :: playableoutputhandle :: PlayableOutputHandle = :: core :: mem :: transmute (__lookup_get_handle :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_op_implicit { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: animations :: animationplayableoutput :: AnimationPlayableOutput as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AnimationPlayableOutput as :: unity2 :: ClassIdentity > :: class () , "op_Implicit" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AnimationPlayableOutput as :: unity2 :: ClassIdentity > :: NAME , "op_Implicit" , e) , } } } pub unsafe fn op_implicit (output : crate :: unity_engine :: animations :: animationplayableoutput :: AnimationPlayableOutput , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: playables :: playableoutput :: PlayableOutput { let inner : extern "C" fn (crate :: unity_engine :: animations :: animationplayableoutput :: AnimationPlayableOutput , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: playables :: playableoutput :: PlayableOutput = :: core :: mem :: transmute (__lookup_op_implicit :: get_method_info () . method_ptr ,) ; inner (output , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_op_explicit { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playableoutput :: PlayableOutput as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AnimationPlayableOutput as :: unity2 :: ClassIdentity > :: class () , "op_Explicit" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AnimationPlayableOutput as :: unity2 :: ClassIdentity > :: NAME , "op_Explicit" , e) , } } } pub unsafe fn op_explicit (output : crate :: unity_engine :: playables :: playableoutput :: PlayableOutput , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: animations :: animationplayableoutput :: AnimationPlayableOutput { let inner : extern "C" fn (crate :: unity_engine :: playables :: playableoutput :: PlayableOutput , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: animations :: animationplayableoutput :: AnimationPlayableOutput = :: core :: mem :: transmute (__lookup_op_explicit :: get_method_info () . method_ptr ,) ; inner (output , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_target { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: animator :: Animator as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AnimationPlayableOutput as :: unity2 :: ClassIdentity > :: class () , "SetTarget" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AnimationPlayableOutput as :: unity2 :: ClassIdentity > :: NAME , "SetTarget" , e) , } } } pub unsafe fn set_target (this : AnimationPlayableOutput , value : crate :: unity_engine :: animator :: Animator , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AnimationPlayableOutput , crate :: unity_engine :: animator :: Animator , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_target :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_internal_set_target { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playableoutputhandle :: PlayableOutputHandle as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: animator :: Animator as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AnimationPlayableOutput as :: unity2 :: ClassIdentity > :: class () , "InternalSetTarget" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AnimationPlayableOutput as :: unity2 :: ClassIdentity > :: NAME , "InternalSetTarget" , e) , } } } pub unsafe fn internal_set_target (handle : * mut crate :: unity_engine :: playables :: playableoutputhandle :: PlayableOutputHandle , target : crate :: unity_engine :: animator :: Animator , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (* mut crate :: unity_engine :: playables :: playableoutputhandle :: PlayableOutputHandle , crate :: unity_engine :: animator :: Animator , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_internal_set_target :: get_method_info () . method_ptr ,) ; inner (handle , target , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-animations-animationplayableoutput")]
-impl AnimationPlayableOutput {
-    #[doc = "`Create(crate::unity_engine::playables::playablegraph::PlayableGraph, ::unity2::Il2CppString, crate::unity_engine::animator::Animator)` overload"]
-    pub fn create(
-        graph: impl ::core::convert::Into<crate::unity_engine::playables::playablegraph::PlayableGraph>,
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        target: impl ::core::convert::Into<crate::unity_engine::animator::Animator>,
-    ) -> crate::unity_engine::animations::animationplayableoutput::AnimationPlayableOutput {
-        unsafe {
-            __AnimationPlayableOutput_unity2_raw::create(
-                ::core::convert::Into::into(graph),
-                ::core::convert::Into::into(name),
-                ::core::convert::Into::into(target),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`get_Null()` overload"]
-    pub fn get_null() -> crate::unity_engine::animations::animationplayableoutput::AnimationPlayableOutput {
-        unsafe { __AnimationPlayableOutput_unity2_raw::get_null(::core::option::Option::None) }
-    }
-
-    #[doc = "`op_Implicit(crate::unity_engine::animations::animationplayableoutput::AnimationPlayableOutput)` overload"]
-    pub fn op_implicit(
-        output: impl ::core::convert::Into<crate::unity_engine::animations::animationplayableoutput::AnimationPlayableOutput>,
-    ) -> crate::unity_engine::playables::playableoutput::PlayableOutput {
-        unsafe { __AnimationPlayableOutput_unity2_raw::op_implicit(::core::convert::Into::into(output), ::core::option::Option::None) }
-    }
-
-    #[doc = "`op_Explicit(crate::unity_engine::playables::playableoutput::PlayableOutput)` overload"]
-    pub fn op_explicit(
-        output: impl ::core::convert::Into<crate::unity_engine::playables::playableoutput::PlayableOutput>,
-    ) -> crate::unity_engine::animations::animationplayableoutput::AnimationPlayableOutput {
-        unsafe { __AnimationPlayableOutput_unity2_raw::op_explicit(::core::convert::Into::into(output), ::core::option::Option::None) }
-    }
-
-    #[doc = "`InternalSetTarget(*mutcrate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle, crate::unity_engine::animator::Animator)` overload"]
-    pub fn internal_set_target(
-        target: impl ::core::convert::Into<crate::unity_engine::animator::Animator>,
-    ) -> crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle {
-        unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle>::uninit();
-            __AnimationPlayableOutput_unity2_raw::internal_set_target(
-                __out_0.as_mut_ptr(),
-                ::core::convert::Into::into(target),
-                ::core::option::Option::None,
-            );
-            __out_0.assume_init()
-        }
-    }
-}
+impl AnimationPlayableOutput { # [doc = "`Create(crate::unity_engine::playables::playablegraph::PlayableGraph, ::unity2::Il2CppString, crate::unity_engine::animator::Animator)` overload"] pub fn create (graph : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playablegraph :: PlayableGraph > , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , target : impl :: core :: convert :: Into < crate :: unity_engine :: animator :: Animator >) -> crate :: unity_engine :: animations :: animationplayableoutput :: AnimationPlayableOutput { unsafe { __AnimationPlayableOutput_unity2_raw :: create (:: core :: convert :: Into :: into (graph) , :: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (target) , :: core :: option :: Option :: None) } } # [doc = "`get_Null()` overload"] pub fn get_null () -> crate :: unity_engine :: animations :: animationplayableoutput :: AnimationPlayableOutput { unsafe { __AnimationPlayableOutput_unity2_raw :: get_null (:: core :: option :: Option :: None) } } # [doc = "`op_Implicit(crate::unity_engine::animations::animationplayableoutput::AnimationPlayableOutput)` overload"] pub fn op_implicit (output : impl :: core :: convert :: Into < crate :: unity_engine :: animations :: animationplayableoutput :: AnimationPlayableOutput >) -> crate :: unity_engine :: playables :: playableoutput :: PlayableOutput { unsafe { __AnimationPlayableOutput_unity2_raw :: op_implicit (:: core :: convert :: Into :: into (output) , :: core :: option :: Option :: None) } } # [doc = "`op_Explicit(crate::unity_engine::playables::playableoutput::PlayableOutput)` overload"] pub fn op_explicit (output : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playableoutput :: PlayableOutput >) -> crate :: unity_engine :: animations :: animationplayableoutput :: AnimationPlayableOutput { unsafe { __AnimationPlayableOutput_unity2_raw :: op_explicit (:: core :: convert :: Into :: into (output) , :: core :: option :: Option :: None) } } # [doc = "`InternalSetTarget(*mutcrate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle, crate::unity_engine::animator::Animator)` overload"] pub fn internal_set_target (target : impl :: core :: convert :: Into < crate :: unity_engine :: animator :: Animator >) -> crate :: unity_engine :: playables :: playableoutputhandle :: PlayableOutputHandle { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: playables :: playableoutputhandle :: PlayableOutputHandle > :: uninit () ; __AnimationPlayableOutput_unity2_raw :: internal_set_target (__out_0 . as_mut_ptr () , :: core :: convert :: Into :: into (target) , :: core :: option :: Option :: None) ; __out_0 . assume_init () } } }
 
 #[cfg(feature = "unity_engine-animations-animationplayableoutput")]
-impl AnimationPlayableOutput {
-    #[doc = "`.ctor(crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle)` overload"]
-    pub fn ctor(self, handle: impl ::core::convert::Into<crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle>) -> () {
-        unsafe { __AnimationPlayableOutput_unity2_raw::ctor(self, ::core::convert::Into::into(handle), ::core::option::Option::None) }
-    }
+impl AnimationPlayableOutput { # [doc = "`.ctor(crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle)` overload"] pub fn ctor (self , handle : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playableoutputhandle :: PlayableOutputHandle >) -> () { unsafe { __AnimationPlayableOutput_unity2_raw :: ctor (self , :: core :: convert :: Into :: into (handle) , :: core :: option :: Option :: None) } } # [doc = "`GetHandle()` overload"] pub fn get_handle (self ,) -> crate :: unity_engine :: playables :: playableoutputhandle :: PlayableOutputHandle { unsafe { __AnimationPlayableOutput_unity2_raw :: get_handle (self , :: core :: option :: Option :: None) } } # [doc = "`SetTarget(crate::unity_engine::animator::Animator)` overload"] pub fn set_target (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: animator :: Animator >) -> () { unsafe { __AnimationPlayableOutput_unity2_raw :: set_target (self , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } }
 
-    #[doc = "`GetHandle()` overload"]
-    pub fn get_handle(self) -> crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle {
-        unsafe { __AnimationPlayableOutput_unity2_raw::get_handle(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`SetTarget(crate::unity_engine::animator::Animator)` overload"]
-    pub fn set_target(self, value: impl ::core::convert::Into<crate::unity_engine::animator::Animator>) -> () {
-        unsafe { __AnimationPlayableOutput_unity2_raw::set_target(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-}
+#[cfg(feature = "unity_engine-animations-animationplayableoutput")]
+impl AnimationPlayableOutput { pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AnimationPlayableOutput_unity2_raw :: __lookup_create :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AnimationPlayableOutput_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn get_null_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AnimationPlayableOutput_unity2_raw :: __lookup_get_null :: get_method_info () } pub fn get_handle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AnimationPlayableOutput_unity2_raw :: __lookup_get_handle :: get_method_info () } pub fn op_implicit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AnimationPlayableOutput_unity2_raw :: __lookup_op_implicit :: get_method_info () } pub fn op_explicit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AnimationPlayableOutput_unity2_raw :: __lookup_op_explicit :: get_method_info () } pub fn set_target_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AnimationPlayableOutput_unity2_raw :: __lookup_set_target :: get_method_info () } pub fn internal_set_target_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AnimationPlayableOutput_unity2_raw :: __lookup_internal_set_target :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-animations-animationplayableoutput")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::AnimationPlayableOutput;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::system::{object::IObject, valuetype::IValueType};
+    pub use crate::system::object::IObject;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

@@ -2,294 +2,47 @@
 
 #[cfg(feature = "moon_sharp-interpreter-interop-standard_descriptors-hardwired_descriptors-hardwiredmethodmemberdescriptor-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        moon_sharp::interpreter::interop::functionmemberdescriptorbase::{FunctionMemberDescriptorBase, IFunctionMemberDescriptorBase},
-        system::object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/standard_descriptors/hardwired_descriptors/hardwiredmethodmemberdescriptor/HardwiredMethodMemberDescriptor.md"))]
-    #[::unity2::class(
-        namespace = "MoonSharp.Interpreter.Interop.StandardDescriptors.HardwiredDescriptors",
-        name = "HardwiredMethodMemberDescriptor"
-    )]
-    #[parent(crate::moon_sharp::interpreter::interop::functionmemberdescriptorbase::FunctionMemberDescriptorBase)]
-    pub struct HardwiredMethodMemberDescriptor {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: moon_sharp :: interpreter :: interop :: functionmemberdescriptorbase :: { FunctionMemberDescriptorBase , IFunctionMemberDescriptorBase }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/standard_descriptors/hardwired_descriptors/hardwiredmethodmemberdescriptor/HardwiredMethodMemberDescriptor.md"))] # [:: unity2 :: class (namespace = "MoonSharp.Interpreter.Interop.StandardDescriptors.HardwiredDescriptors" , name = "HardwiredMethodMemberDescriptor")] # [parent (crate :: moon_sharp :: interpreter :: interop :: functionmemberdescriptorbase :: FunctionMemberDescriptorBase)] pub struct HardwiredMethodMemberDescriptor {}
+
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-standard_descriptors-hardwired_descriptors-hardwiredmethodmemberdescriptor-types")]
 pub use __types::*;
 
 #[cfg(feature = "moon_sharp-interpreter-interop-standard_descriptors-hardwired_descriptors-hardwiredmethodmemberdescriptor")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __HardwiredMethodMemberDescriptor_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_execute {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::moon_sharp::interpreter::script::Script as ::unity2::IlType>::il_type(),
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext as ::unity2::IlType>::il_type(),
-                <crate::moon_sharp::interpreter::callbackarguments::CallbackArguments as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HardwiredMethodMemberDescriptor as ::unity2::ClassIdentity>::class(),
-                "Execute",
-                4,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HardwiredMethodMemberDescriptor as ::unity2::ClassIdentity>::NAME,
-                        "Execute",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn execute(
-        this: HardwiredMethodMemberDescriptor,
-        script: crate::moon_sharp::interpreter::script::Script,
-        obj: crate::system::object::Object,
-        context: crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
-        args: crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
-        let inner: extern "C" fn(
-            HardwiredMethodMemberDescriptor,
-            crate::moon_sharp::interpreter::script::Script,
-            crate::system::object::Object,
-            crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
-            crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
-            ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(__lookup_execute::get_method_info().method_ptr);
-        inner(this, script, obj, context, args, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_args_count {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Array<crate::system::object::Object> as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HardwiredMethodMemberDescriptor as ::unity2::ClassIdentity>::class(),
-                "CalcArgsCount",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HardwiredMethodMemberDescriptor as ::unity2::ClassIdentity>::NAME,
-                        "CalcArgsCount",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn calc_args_count(
-        this: HardwiredMethodMemberDescriptor,
-        pars: ::unity2::Array<crate::system::object::Object>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(HardwiredMethodMemberDescriptor, ::unity2::Array<crate::system::object::Object>, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_calc_args_count::get_method_info().method_ptr);
-        inner(this, pars, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::moon_sharp::interpreter::script::Script as ::unity2::IlType>::il_type(),
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::Array<crate::system::object::Object> as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HardwiredMethodMemberDescriptor as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                4,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HardwiredMethodMemberDescriptor as ::unity2::ClassIdentity>::NAME,
-                        "Invoke",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn invoke(
-        this: HardwiredMethodMemberDescriptor,
-        script: crate::moon_sharp::interpreter::script::Script,
-        obj: crate::system::object::Object,
-        pars: ::unity2::Array<crate::system::object::Object>,
-        argscount: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::object::Object {
-        let inner: extern "C" fn(
-            HardwiredMethodMemberDescriptor,
-            crate::moon_sharp::interpreter::script::Script,
-            crate::system::object::Object,
-            ::unity2::Array<crate::system::object::Object>,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::object::Object = ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
-        inner(this, script, obj, pars, argscount, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HardwiredMethodMemberDescriptor as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HardwiredMethodMemberDescriptor as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: HardwiredMethodMemberDescriptor, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(HardwiredMethodMemberDescriptor, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __HardwiredMethodMemberDescriptor_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_execute { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: script :: Script as :: unity2 :: IlType > :: il_type () , < crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: callbackarguments :: CallbackArguments as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HardwiredMethodMemberDescriptor as :: unity2 :: ClassIdentity > :: class () , "Execute" , 4 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HardwiredMethodMemberDescriptor as :: unity2 :: ClassIdentity > :: NAME , "Execute" , e) , } } } pub unsafe fn execute (this : HardwiredMethodMemberDescriptor , script : crate :: moon_sharp :: interpreter :: script :: Script , obj : crate :: system :: object :: Object , context : crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext , args : crate :: moon_sharp :: interpreter :: callbackarguments :: CallbackArguments , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue { let inner : extern "C" fn (HardwiredMethodMemberDescriptor , crate :: moon_sharp :: interpreter :: script :: Script , crate :: system :: object :: Object , crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext , crate :: moon_sharp :: interpreter :: callbackarguments :: CallbackArguments , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue = :: core :: mem :: transmute (__lookup_execute :: get_method_info () . method_ptr ,) ; inner (this , script , obj , context , args , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_calc_args_count { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: system :: object :: Object > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HardwiredMethodMemberDescriptor as :: unity2 :: ClassIdentity > :: class () , "CalcArgsCount" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HardwiredMethodMemberDescriptor as :: unity2 :: ClassIdentity > :: NAME , "CalcArgsCount" , e) , } } } pub unsafe fn calc_args_count (this : HardwiredMethodMemberDescriptor , pars : :: unity2 :: Array < crate :: system :: object :: Object > , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (HardwiredMethodMemberDescriptor , :: unity2 :: Array < crate :: system :: object :: Object > , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_calc_args_count :: get_method_info () . method_ptr ,) ; inner (this , pars , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_invoke { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: script :: Script as :: unity2 :: IlType > :: il_type () , < crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: system :: object :: Object > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HardwiredMethodMemberDescriptor as :: unity2 :: ClassIdentity > :: class () , "Invoke" , 4 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HardwiredMethodMemberDescriptor as :: unity2 :: ClassIdentity > :: NAME , "Invoke" , e) , } } } pub unsafe fn invoke (this : HardwiredMethodMemberDescriptor , script : crate :: moon_sharp :: interpreter :: script :: Script , obj : crate :: system :: object :: Object , pars : :: unity2 :: Array < crate :: system :: object :: Object > , argscount : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object { let inner : extern "C" fn (HardwiredMethodMemberDescriptor , crate :: moon_sharp :: interpreter :: script :: Script , crate :: system :: object :: Object , :: unity2 :: Array < crate :: system :: object :: Object > , i32 , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute (__lookup_invoke :: get_method_info () . method_ptr ,) ; inner (this , script , obj , pars , argscount , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HardwiredMethodMemberDescriptor as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HardwiredMethodMemberDescriptor as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : HardwiredMethodMemberDescriptor , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HardwiredMethodMemberDescriptor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-standard_descriptors-hardwired_descriptors-hardwiredmethodmemberdescriptor")]
-pub trait IHardwiredMethodMemberDescriptorMethods: IHardwiredMethodMemberDescriptor {
-    #[doc = "`Execute(crate::moon_sharp::interpreter::script::Script, crate::system::object::Object, crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext, crate::moon_sharp::interpreter::callbackarguments::CallbackArguments)` overload"]
-    fn execute(
-        self,
-        script: impl ::core::convert::Into<crate::moon_sharp::interpreter::script::Script>,
-        obj: impl ::core::convert::Into<crate::system::object::Object>,
-        context: impl ::core::convert::Into<crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext>,
-        args: impl ::core::convert::Into<crate::moon_sharp::interpreter::callbackarguments::CallbackArguments>,
-    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
-        unsafe {
-            let __receiver =
-                <HardwiredMethodMemberDescriptor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HardwiredMethodMemberDescriptor_unity2_raw::execute(
-                __receiver,
-                ::core::convert::Into::into(script),
-                ::core::convert::Into::into(obj),
-                ::core::convert::Into::into(context),
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CalcArgsCount(::unity2::Array<crate::system::object::Object>)` overload"]
-    fn calc_args_count(self, pars: impl ::core::convert::Into<::unity2::Array<crate::system::object::Object>>) -> i32 {
-        unsafe {
-            let __receiver =
-                <HardwiredMethodMemberDescriptor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HardwiredMethodMemberDescriptor_unity2_raw::calc_args_count(__receiver, ::core::convert::Into::into(pars), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Invoke(crate::moon_sharp::interpreter::script::Script, crate::system::object::Object, ::unity2::Array<crate::system::object::Object>, i32)` overload"]
-    fn invoke(
-        self,
-        script: impl ::core::convert::Into<crate::moon_sharp::interpreter::script::Script>,
-        obj: impl ::core::convert::Into<crate::system::object::Object>,
-        pars: impl ::core::convert::Into<::unity2::Array<crate::system::object::Object>>,
-        argscount: impl ::core::convert::Into<i32>,
-    ) -> crate::system::object::Object {
-        unsafe {
-            let __receiver =
-                <HardwiredMethodMemberDescriptor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HardwiredMethodMemberDescriptor_unity2_raw::invoke(
-                __receiver,
-                ::core::convert::Into::into(script),
-                ::core::convert::Into::into(obj),
-                ::core::convert::Into::into(pars),
-                ::core::convert::Into::into(argscount),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <HardwiredMethodMemberDescriptor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HardwiredMethodMemberDescriptor_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IHardwiredMethodMemberDescriptorMethods : IHardwiredMethodMemberDescriptor { # [doc = "`Execute(crate::moon_sharp::interpreter::script::Script, crate::system::object::Object, crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext, crate::moon_sharp::interpreter::callbackarguments::CallbackArguments)` overload"] fn execute (self , script : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: script :: Script > , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object > , context : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext > , args : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: callbackarguments :: CallbackArguments >) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue { unsafe { let __receiver = < HardwiredMethodMemberDescriptor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HardwiredMethodMemberDescriptor_unity2_raw :: execute (__receiver , :: core :: convert :: Into :: into (script) , :: core :: convert :: Into :: into (obj) , :: core :: convert :: Into :: into (context) , :: core :: convert :: Into :: into (args) , :: core :: option :: Option :: None) } } # [doc = "`CalcArgsCount(::unity2::Array<crate::system::object::Object>)` overload"] fn calc_args_count (self , pars : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: system :: object :: Object > >) -> i32 { unsafe { let __receiver = < HardwiredMethodMemberDescriptor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HardwiredMethodMemberDescriptor_unity2_raw :: calc_args_count (__receiver , :: core :: convert :: Into :: into (pars) , :: core :: option :: Option :: None) } } # [doc = "`Invoke(crate::moon_sharp::interpreter::script::Script, crate::system::object::Object, ::unity2::Array<crate::system::object::Object>, i32)` overload"] fn invoke (self , script : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: script :: Script > , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object > , pars : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: system :: object :: Object > > , argscount : impl :: core :: convert :: Into < i32 >) -> crate :: system :: object :: Object { unsafe { let __receiver = < HardwiredMethodMemberDescriptor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HardwiredMethodMemberDescriptor_unity2_raw :: invoke (__receiver , :: core :: convert :: Into :: into (script) , :: core :: convert :: Into :: into (obj) , :: core :: convert :: Into :: into (pars) , :: core :: convert :: Into :: into (argscount) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HardwiredMethodMemberDescriptor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HardwiredMethodMemberDescriptor_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-standard_descriptors-hardwired_descriptors-hardwiredmethodmemberdescriptor")]
-impl<__T: IHardwiredMethodMemberDescriptor> IHardwiredMethodMemberDescriptorMethods for __T {}
+impl < __T : IHardwiredMethodMemberDescriptor > IHardwiredMethodMemberDescriptorMethods for __T { }
+
+#[cfg(feature = "moon_sharp-interpreter-interop-standard_descriptors-hardwired_descriptors-hardwiredmethodmemberdescriptor")]
+impl HardwiredMethodMemberDescriptor { pub fn execute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HardwiredMethodMemberDescriptor_unity2_raw :: __lookup_execute :: get_method_info () } pub fn calc_args_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HardwiredMethodMemberDescriptor_unity2_raw :: __lookup_calc_args_count :: get_method_info () } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HardwiredMethodMemberDescriptor_unity2_raw :: __lookup_invoke :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HardwiredMethodMemberDescriptor_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-standard_descriptors-hardwired_descriptors-hardwiredmethodmemberdescriptor")]
 impl HardwiredMethodMemberDescriptor {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(HardwiredMethodMemberDescriptor),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IHardwiredMethodMemberDescriptorMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HardwiredMethodMemberDescriptor) , :: core :: stringify ! (new) ,)) ; < Self as IHardwiredMethodMemberDescriptorMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-standard_descriptors-hardwired_descriptors-hardwiredmethodmemberdescriptor")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{HardwiredMethodMemberDescriptor, IHardwiredMethodMemberDescriptor, IHardwiredMethodMemberDescriptorMethods};
-    #[cfg(feature = "moon_sharp-interpreter-interop-functionmemberdescriptorbase")]
-    pub use crate::moon_sharp::interpreter::interop::functionmemberdescriptorbase::IFunctionMemberDescriptorBaseMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::{moon_sharp::interpreter::interop::functionmemberdescriptorbase::IFunctionMemberDescriptorBase, system::object::IObject};
+    pub use super::HardwiredMethodMemberDescriptor;
+    pub use super::IHardwiredMethodMemberDescriptor;
+    pub use super::IHardwiredMethodMemberDescriptorMethods;
+    pub use crate::moon_sharp::interpreter::interop::functionmemberdescriptorbase::IFunctionMemberDescriptorBase;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "moon_sharp-interpreter-interop-functionmemberdescriptorbase")] pub use crate::moon_sharp::interpreter::interop::functionmemberdescriptorbase::IFunctionMemberDescriptorBaseMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

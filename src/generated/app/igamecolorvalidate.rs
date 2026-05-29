@@ -2,74 +2,34 @@
 
 #[cfg(feature = "app-igamecolorvalidate-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/igamecolorvalidate/IGameColorValidate.md"))]
-    #[::unity2::class(namespace = "App", name = "IGameColorValidate")]
-    pub struct IGameColorValidate {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/igamecolorvalidate/IGameColorValidate.md"))] # [:: unity2 :: class (namespace = "App" , name = "IGameColorValidate")] pub struct IGameColorValidate {}
+
 }
 
 #[cfg(feature = "app-igamecolorvalidate-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-igamecolorvalidate")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __IGameColorValidate_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_game_color_validate {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <IGameColorValidate as ::unity2::ClassIdentity>::class(),
-                "OnGameColorValidate",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <IGameColorValidate as ::unity2::ClassIdentity>::NAME,
-                        "OnGameColorValidate",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_game_color_validate(this: IGameColorValidate, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(IGameColorValidate, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_game_color_validate::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __IGameColorValidate_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_game_color_validate { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< IGameColorValidate as :: unity2 :: ClassIdentity > :: class () , "OnGameColorValidate" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < IGameColorValidate as :: unity2 :: ClassIdentity > :: NAME , "OnGameColorValidate" , e) , } } } pub unsafe fn on_game_color_validate (this : IGameColorValidate , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (IGameColorValidate , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_game_color_validate :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-igamecolorvalidate")]
-pub trait IIGameColorValidateMethods: IIGameColorValidate {
-    #[doc = "`OnGameColorValidate()` overload"]
-    fn on_game_color_validate(self) -> () {
-        unsafe {
-            let __receiver = <IGameColorValidate as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __IGameColorValidate_unity2_raw::on_game_color_validate(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IIGameColorValidateMethods : IIGameColorValidate { # [doc = "`OnGameColorValidate()` overload"] fn on_game_color_validate (self ,) -> () { unsafe { let __receiver = < IGameColorValidate as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IGameColorValidate_unity2_raw :: on_game_color_validate (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-igamecolorvalidate")]
-impl<__T: IIGameColorValidate> IIGameColorValidateMethods for __T {}
+impl < __T : IIGameColorValidate > IIGameColorValidateMethods for __T { }
+
+#[cfg(feature = "app-igamecolorvalidate")]
+impl IGameColorValidate { pub fn on_game_color_validate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __IGameColorValidate_unity2_raw :: __lookup_on_game_color_validate :: get_method_info () } }
 
 #[cfg(feature = "app-igamecolorvalidate")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IGameColorValidate, IIGameColorValidate, IIGameColorValidateMethods};
+    pub use super::IGameColorValidate;
+    pub use super::IIGameColorValidate;
+    pub use super::IIGameColorValidateMethods;
 }

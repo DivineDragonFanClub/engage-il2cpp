@@ -2,334 +2,57 @@
 
 #[cfg(feature = "moon_sharp-interpreter-tree-statements-assignmentstatement-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        moon_sharp::interpreter::tree::{
-            nodebase::{INodeBase, NodeBase},
-            statement::{IStatement, Statement},
-        },
-        system::object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/tree/statements/assignmentstatement/AssignmentStatement.md"))]
-    #[::unity2::class(namespace = "MoonSharp.Interpreter.Tree.Statements", name = "AssignmentStatement")]
-    #[parent(crate::moon_sharp::interpreter::tree::statement::Statement)]
-    pub struct AssignmentStatement {
-        #[offset(32)]
-        #[rename(name = "m_LValues")]
-        pub m_l_values: crate::system::collections::generic::list_1::List_1<crate::moon_sharp::interpreter::tree::ivariable::IVariable>,
-        #[offset(40)]
-        #[rename(name = "m_RValues")]
-        pub m_r_values: crate::system::collections::generic::list_1::List_1<crate::moon_sharp::interpreter::tree::expression::Expression>,
-        #[offset(48)]
-        #[rename(name = "m_Ref")]
-        pub m_ref: crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: moon_sharp :: interpreter :: tree :: nodebase :: { INodeBase , NodeBase }
+ ;
+ use crate :: moon_sharp :: interpreter :: tree :: statement :: { IStatement , Statement }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/tree/statements/assignmentstatement/AssignmentStatement.md"))] # [:: unity2 :: class (namespace = "MoonSharp.Interpreter.Tree.Statements" , name = "AssignmentStatement")] # [parent (crate :: moon_sharp :: interpreter :: tree :: statement :: Statement)] pub struct AssignmentStatement {
+# [offset (32)] # [rename (name = "m_LValues")] pub m_l_values : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: moon_sharp :: interpreter :: tree :: ivariable :: IVariable > ,
+# [offset (40)] # [rename (name = "m_RValues")] pub m_r_values : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: moon_sharp :: interpreter :: tree :: expression :: Expression > ,
+# [offset (48)] # [rename (name = "m_Ref")] pub m_ref : crate :: moon_sharp :: interpreter :: debugging :: sourceref :: SourceRef ,
+}
+
 }
 
 #[cfg(feature = "moon_sharp-interpreter-tree-statements-assignmentstatement-types")]
 pub use __types::*;
 
 #[cfg(feature = "moon_sharp-interpreter-tree-statements-assignmentstatement")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AssignmentStatement_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext as ::unity2::IlType>::il_type(),
-                <crate::moon_sharp::interpreter::tree::token::Token as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AssignmentStatement as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AssignmentStatement as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: AssignmentStatement,
-        lcontext: crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,
-        start_token: crate::moon_sharp::interpreter::tree::token::Token,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            AssignmentStatement,
-            crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,
-            crate::moon_sharp::interpreter::tree::token::Token,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, lcontext, start_token, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext as ::unity2::IlType>::il_type(),
-                <crate::moon_sharp::interpreter::tree::expression::Expression as ::unity2::IlType>::il_type(),
-                <crate::moon_sharp::interpreter::tree::token::Token as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AssignmentStatement as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AssignmentStatement as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor_2(
-        this: AssignmentStatement,
-        lcontext: crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,
-        first_expression: crate::moon_sharp::interpreter::tree::expression::Expression,
-        first: crate::moon_sharp::interpreter::tree::token::Token,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            AssignmentStatement,
-            crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,
-            crate::moon_sharp::interpreter::tree::expression::Expression,
-            crate::moon_sharp::interpreter::tree::token::Token,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
-        inner(this, lcontext, first_expression, first, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_check_var {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext as ::unity2::IlType>::il_type(),
-                <crate::moon_sharp::interpreter::tree::expression::Expression as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AssignmentStatement as ::unity2::ClassIdentity>::class(),
-                "CheckVar",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AssignmentStatement as ::unity2::ClassIdentity>::NAME,
-                        "CheckVar",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn check_var(
-        this: AssignmentStatement,
-        lcontext: crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,
-        first_expression: crate::moon_sharp::interpreter::tree::expression::Expression,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::moon_sharp::interpreter::tree::ivariable::IVariable {
-        let inner: extern "C" fn(
-            AssignmentStatement,
-            crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,
-            crate::moon_sharp::interpreter::tree::expression::Expression,
-            ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::tree::ivariable::IVariable = ::core::mem::transmute(__lookup_check_var::get_method_info().method_ptr);
-        inner(this, lcontext, first_expression, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_compile {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AssignmentStatement as ::unity2::ClassIdentity>::class(),
-                "Compile",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AssignmentStatement as ::unity2::ClassIdentity>::NAME,
-                        "Compile",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn compile(
-        this: AssignmentStatement,
-        bc: crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            AssignmentStatement,
-            crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_compile::get_method_info().method_ptr);
-        inner(this, bc, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __AssignmentStatement_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: tree :: token :: Token as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AssignmentStatement as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AssignmentStatement as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : AssignmentStatement , lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext , start_token : crate :: moon_sharp :: interpreter :: tree :: token :: Token , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AssignmentStatement , crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext , crate :: moon_sharp :: interpreter :: tree :: token :: Token , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , lcontext , start_token , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: tree :: expression :: Expression as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: tree :: token :: Token as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AssignmentStatement as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AssignmentStatement as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor_2 (this : AssignmentStatement , lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext , first_expression : crate :: moon_sharp :: interpreter :: tree :: expression :: Expression , first : crate :: moon_sharp :: interpreter :: tree :: token :: Token , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AssignmentStatement , crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext , crate :: moon_sharp :: interpreter :: tree :: expression :: Expression , crate :: moon_sharp :: interpreter :: tree :: token :: Token , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor_2 :: get_method_info () . method_ptr ,) ; inner (this , lcontext , first_expression , first , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_check_var { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: tree :: expression :: Expression as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AssignmentStatement as :: unity2 :: ClassIdentity > :: class () , "CheckVar" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AssignmentStatement as :: unity2 :: ClassIdentity > :: NAME , "CheckVar" , e) , } } } pub unsafe fn check_var (this : AssignmentStatement , lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext , first_expression : crate :: moon_sharp :: interpreter :: tree :: expression :: Expression , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: tree :: ivariable :: IVariable { let inner : extern "C" fn (AssignmentStatement , crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext , crate :: moon_sharp :: interpreter :: tree :: expression :: Expression , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: tree :: ivariable :: IVariable = :: core :: mem :: transmute (__lookup_check_var :: get_method_info () . method_ptr ,) ; inner (this , lcontext , first_expression , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_compile { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: execution :: vm :: bytecode :: ByteCode as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AssignmentStatement as :: unity2 :: ClassIdentity > :: class () , "Compile" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AssignmentStatement as :: unity2 :: ClassIdentity > :: NAME , "Compile" , e) , } } } pub unsafe fn compile (this : AssignmentStatement , bc : crate :: moon_sharp :: interpreter :: execution :: vm :: bytecode :: ByteCode , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AssignmentStatement , crate :: moon_sharp :: interpreter :: execution :: vm :: bytecode :: ByteCode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_compile :: get_method_info () . method_ptr ,) ; inner (this , bc , __unity2_method_info) } }
 
 #[cfg(feature = "moon_sharp-interpreter-tree-statements-assignmentstatement")]
-pub trait IAssignmentStatementMethods: IAssignmentStatement {
-    #[doc = "`.ctor(crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext, crate::moon_sharp::interpreter::tree::token::Token)` overload"]
-    fn ctor(
-        self,
-        lcontext: impl ::core::convert::Into<crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext>,
-        start_token: impl ::core::convert::Into<crate::moon_sharp::interpreter::tree::token::Token>,
-    ) -> () {
-        unsafe {
-            let __receiver = <AssignmentStatement as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AssignmentStatement_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(lcontext),
-                ::core::convert::Into::into(start_token),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor(crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext, crate::moon_sharp::interpreter::tree::expression::Expression, crate::moon_sharp::interpreter::tree::token::Token)` overload"]
-    fn ctor_2(
-        self,
-        lcontext: impl ::core::convert::Into<crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext>,
-        first_expression: impl ::core::convert::Into<crate::moon_sharp::interpreter::tree::expression::Expression>,
-        first: impl ::core::convert::Into<crate::moon_sharp::interpreter::tree::token::Token>,
-    ) -> () {
-        unsafe {
-            let __receiver = <AssignmentStatement as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AssignmentStatement_unity2_raw::ctor_2(
-                __receiver,
-                ::core::convert::Into::into(lcontext),
-                ::core::convert::Into::into(first_expression),
-                ::core::convert::Into::into(first),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CheckVar(crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext, crate::moon_sharp::interpreter::tree::expression::Expression)` overload"]
-    fn check_var(
-        self,
-        lcontext: impl ::core::convert::Into<crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext>,
-        first_expression: impl ::core::convert::Into<crate::moon_sharp::interpreter::tree::expression::Expression>,
-    ) -> crate::moon_sharp::interpreter::tree::ivariable::IVariable {
-        unsafe {
-            let __receiver = <AssignmentStatement as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AssignmentStatement_unity2_raw::check_var(
-                __receiver,
-                ::core::convert::Into::into(lcontext),
-                ::core::convert::Into::into(first_expression),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Compile(crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode)` overload"]
-    fn compile(self, bc: impl ::core::convert::Into<crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode>) -> () {
-        unsafe {
-            let __receiver = <AssignmentStatement as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AssignmentStatement_unity2_raw::compile(__receiver, ::core::convert::Into::into(bc), ::core::option::Option::None)
-        }
-    }
-}
+pub trait IAssignmentStatementMethods : IAssignmentStatement { # [doc = "`.ctor(crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext, crate::moon_sharp::interpreter::tree::token::Token)` overload"] fn ctor (self , lcontext : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext > , start_token : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: tree :: token :: Token >) -> () { unsafe { let __receiver = < AssignmentStatement as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AssignmentStatement_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (lcontext) , :: core :: convert :: Into :: into (start_token) , :: core :: option :: Option :: None) } } # [doc = "`.ctor(crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext, crate::moon_sharp::interpreter::tree::expression::Expression, crate::moon_sharp::interpreter::tree::token::Token)` overload"] fn ctor_2 (self , lcontext : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext > , first_expression : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: tree :: expression :: Expression > , first : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: tree :: token :: Token >) -> () { unsafe { let __receiver = < AssignmentStatement as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AssignmentStatement_unity2_raw :: ctor_2 (__receiver , :: core :: convert :: Into :: into (lcontext) , :: core :: convert :: Into :: into (first_expression) , :: core :: convert :: Into :: into (first) , :: core :: option :: Option :: None) } } # [doc = "`CheckVar(crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext, crate::moon_sharp::interpreter::tree::expression::Expression)` overload"] fn check_var (self , lcontext : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext > , first_expression : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: tree :: expression :: Expression >) -> crate :: moon_sharp :: interpreter :: tree :: ivariable :: IVariable { unsafe { let __receiver = < AssignmentStatement as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AssignmentStatement_unity2_raw :: check_var (__receiver , :: core :: convert :: Into :: into (lcontext) , :: core :: convert :: Into :: into (first_expression) , :: core :: option :: Option :: None) } } # [doc = "`Compile(crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode)` overload"] fn compile (self , bc : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: execution :: vm :: bytecode :: ByteCode >) -> () { unsafe { let __receiver = < AssignmentStatement as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AssignmentStatement_unity2_raw :: compile (__receiver , :: core :: convert :: Into :: into (bc) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "moon_sharp-interpreter-tree-statements-assignmentstatement")]
-impl<__T: IAssignmentStatement> IAssignmentStatementMethods for __T {}
+impl < __T : IAssignmentStatement > IAssignmentStatementMethods for __T { }
+
+#[cfg(feature = "moon_sharp-interpreter-tree-statements-assignmentstatement")]
+impl AssignmentStatement { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AssignmentStatement_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AssignmentStatement_unity2_raw :: __lookup_ctor_2 :: get_method_info () } pub fn check_var_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AssignmentStatement_unity2_raw :: __lookup_check_var :: get_method_info () } pub fn compile_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AssignmentStatement_unity2_raw :: __lookup_compile :: get_method_info () } }
 
 #[cfg(feature = "moon_sharp-interpreter-tree-statements-assignmentstatement")]
 impl AssignmentStatement {
-    #[doc = "`.ctor(crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext, crate::moon_sharp::interpreter::tree::token::Token)` — overload selector"]
-    pub fn new(
-        lcontext: crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,
-        start_token: crate::moon_sharp::interpreter::tree::token::Token,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AssignmentStatement),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAssignmentStatementMethods>::ctor(this, lcontext, start_token);
-        this
-    }
+# [doc = "`.ctor(crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext, crate::moon_sharp::interpreter::tree::token::Token)` — overload selector"] pub fn new (lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext , start_token : crate :: moon_sharp :: interpreter :: tree :: token :: Token) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AssignmentStatement) , :: core :: stringify ! (new) ,)) ; < Self as IAssignmentStatementMethods > :: ctor (this , lcontext , start_token) ; this }
 
-    #[doc = "`.ctor(crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext, crate::moon_sharp::interpreter::tree::expression::Expression, crate::moon_sharp::interpreter::tree::token::Token)` — overload selector"]
-    pub fn new_2(
-        lcontext: crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,
-        first_expression: crate::moon_sharp::interpreter::tree::expression::Expression,
-        first: crate::moon_sharp::interpreter::tree::token::Token,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AssignmentStatement),
-                ::core::stringify!(new_2),
-            )
-        });
-        <Self as IAssignmentStatementMethods>::ctor_2(this, lcontext, first_expression, first);
-        this
-    }
+# [doc = "`.ctor(crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext, crate::moon_sharp::interpreter::tree::expression::Expression, crate::moon_sharp::interpreter::tree::token::Token)` — overload selector"] pub fn new_2 (lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext , first_expression : crate :: moon_sharp :: interpreter :: tree :: expression :: Expression , first : crate :: moon_sharp :: interpreter :: tree :: token :: Token) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AssignmentStatement) , :: core :: stringify ! (new_2) ,)) ; < Self as IAssignmentStatementMethods > :: ctor_2 (this , lcontext , first_expression , first) ; this }
 }
 
 #[cfg(feature = "moon_sharp-interpreter-tree-statements-assignmentstatement")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{AssignmentStatement, IAssignmentStatement, IAssignmentStatementMethods};
-    #[cfg(feature = "moon_sharp-interpreter-tree-nodebase")]
-    pub use crate::moon_sharp::interpreter::tree::nodebase::INodeBaseMethods;
-    #[cfg(feature = "moon_sharp-interpreter-tree-statement")]
-    pub use crate::moon_sharp::interpreter::tree::statement::IStatementMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::{
-        moon_sharp::interpreter::tree::{nodebase::INodeBase, statement::IStatement},
-        system::object::IObject,
-    };
+    pub use super::AssignmentStatement;
+    pub use super::IAssignmentStatement;
+    pub use super::IAssignmentStatementMethods;
+    pub use crate::moon_sharp::interpreter::tree::nodebase::INodeBase;
+    pub use crate::moon_sharp::interpreter::tree::statement::IStatement;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "moon_sharp-interpreter-tree-nodebase")] pub use crate::moon_sharp::interpreter::tree::nodebase::INodeBaseMethods;
+    #[cfg(feature = "moon_sharp-interpreter-tree-statement")] pub use crate::moon_sharp::interpreter::tree::statement::IStatementMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

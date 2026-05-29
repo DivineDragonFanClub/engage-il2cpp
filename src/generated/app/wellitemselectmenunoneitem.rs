@@ -2,323 +2,55 @@
 
 #[cfg(feature = "app-wellitemselectmenunoneitem-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::{
-            basicitemmenuitem::{BasicItemMenuItem, IBasicItemMenuItem},
-            basicmenuitem::{BasicMenuItem, IBasicMenuItem},
-            wellitemselectmenuitem::{IWellItemSelectMenuItem, WellItemSelectMenuItem},
-        },
-        system::object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/wellitemselectmenunoneitem/WellItemSelectMenuNoneItem.md"))]
-    #[::unity2::class(namespace = "App", name = "WellItemSelectMenuNoneItem")]
-    #[parent(crate::app::wellitemselectmenuitem::WellItemSelectMenuItem)]
-    pub struct WellItemSelectMenuNoneItem {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: basicitemmenuitem :: { BasicItemMenuItem , IBasicItemMenuItem }
+ ;
+ use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
+ ;
+ use crate :: app :: wellitemselectmenuitem :: { IWellItemSelectMenuItem , WellItemSelectMenuItem }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/wellitemselectmenunoneitem/WellItemSelectMenuNoneItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "WellItemSelectMenuNoneItem")] # [parent (crate :: app :: wellitemselectmenuitem :: WellItemSelectMenuItem)] pub struct WellItemSelectMenuNoneItem {}
+
 }
 
 #[cfg(feature = "app-wellitemselectmenunoneitem-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-wellitemselectmenunoneitem")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __WellItemSelectMenuNoneItem_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WellItemSelectMenuNoneItem as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WellItemSelectMenuNoneItem as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: WellItemSelectMenuNoneItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(WellItemSelectMenuNoneItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_build_attribute {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WellItemSelectMenuNoneItem as ::unity2::ClassIdentity>::class(),
-                "BuildAttribute",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WellItemSelectMenuNoneItem as ::unity2::ClassIdentity>::NAME,
-                        "BuildAttribute",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn build_attribute(
-        this: WellItemSelectMenuNoneItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        let inner: extern "C" fn(WellItemSelectMenuNoneItem, ::unity2::OptionalMethod) -> crate::app::basicmenuitem::BasicMenuItem_Attribute =
-            ::core::mem::transmute(__lookup_build_attribute::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_a_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WellItemSelectMenuNoneItem as ::unity2::ClassIdentity>::class(),
-                "ACall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WellItemSelectMenuNoneItem as ::unity2::ClassIdentity>::NAME,
-                        "ACall",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn a_call(
-        this: WellItemSelectMenuNoneItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(WellItemSelectMenuNoneItem, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
-            ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_unit_item {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WellItemSelectMenuNoneItem as ::unity2::ClassIdentity>::class(),
-                "GetUnitItem",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WellItemSelectMenuNoneItem as ::unity2::ClassIdentity>::NAME,
-                        "GetUnitItem",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_unit_item(this: WellItemSelectMenuNoneItem, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::unititem::UnitItem {
-        let inner: extern "C" fn(WellItemSelectMenuNoneItem, ::unity2::OptionalMethod) -> crate::app::unititem::UnitItem =
-            ::core::mem::transmute(__lookup_get_unit_item::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_blank_text {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WellItemSelectMenuNoneItem as ::unity2::ClassIdentity>::class(),
-                "GetBlankText",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WellItemSelectMenuNoneItem as ::unity2::ClassIdentity>::NAME,
-                        "GetBlankText",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_blank_text(this: WellItemSelectMenuNoneItem, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(WellItemSelectMenuNoneItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_blank_text::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_visible_item_icon_on_blank {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WellItemSelectMenuNoneItem as ::unity2::ClassIdentity>::class(),
-                "IsVisibleItemIconOnBlank",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WellItemSelectMenuNoneItem as ::unity2::ClassIdentity>::NAME,
-                        "IsVisibleItemIconOnBlank",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_visible_item_icon_on_blank(this: WellItemSelectMenuNoneItem, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(WellItemSelectMenuNoneItem, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_visible_item_icon_on_blank::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __WellItemSelectMenuNoneItem_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WellItemSelectMenuNoneItem as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WellItemSelectMenuNoneItem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : WellItemSelectMenuNoneItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (WellItemSelectMenuNoneItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_build_attribute { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WellItemSelectMenuNoneItem as :: unity2 :: ClassIdentity > :: class () , "BuildAttribute" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WellItemSelectMenuNoneItem as :: unity2 :: ClassIdentity > :: NAME , "BuildAttribute" , e) , } } } pub unsafe fn build_attribute (this : WellItemSelectMenuNoneItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { let inner : extern "C" fn (WellItemSelectMenuNoneItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute (__lookup_build_attribute :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_a_call { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WellItemSelectMenuNoneItem as :: unity2 :: ClassIdentity > :: class () , "ACall" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WellItemSelectMenuNoneItem as :: unity2 :: ClassIdentity > :: NAME , "ACall" , e) , } } } pub unsafe fn a_call (this : WellItemSelectMenuNoneItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result { let inner : extern "C" fn (WellItemSelectMenuNoneItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute (__lookup_a_call :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_unit_item { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WellItemSelectMenuNoneItem as :: unity2 :: ClassIdentity > :: class () , "GetUnitItem" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WellItemSelectMenuNoneItem as :: unity2 :: ClassIdentity > :: NAME , "GetUnitItem" , e) , } } } pub unsafe fn get_unit_item (this : WellItemSelectMenuNoneItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: unititem :: UnitItem { let inner : extern "C" fn (WellItemSelectMenuNoneItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: unititem :: UnitItem = :: core :: mem :: transmute (__lookup_get_unit_item :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_blank_text { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WellItemSelectMenuNoneItem as :: unity2 :: ClassIdentity > :: class () , "GetBlankText" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WellItemSelectMenuNoneItem as :: unity2 :: ClassIdentity > :: NAME , "GetBlankText" , e) , } } } pub unsafe fn get_blank_text (this : WellItemSelectMenuNoneItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (WellItemSelectMenuNoneItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_blank_text :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_visible_item_icon_on_blank { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WellItemSelectMenuNoneItem as :: unity2 :: ClassIdentity > :: class () , "IsVisibleItemIconOnBlank" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WellItemSelectMenuNoneItem as :: unity2 :: ClassIdentity > :: NAME , "IsVisibleItemIconOnBlank" , e) , } } } pub unsafe fn is_visible_item_icon_on_blank (this : WellItemSelectMenuNoneItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (WellItemSelectMenuNoneItem , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_visible_item_icon_on_blank :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-wellitemselectmenunoneitem")]
-pub trait IWellItemSelectMenuNoneItemMethods: IWellItemSelectMenuNoneItem {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <WellItemSelectMenuNoneItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __WellItemSelectMenuNoneItem_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`BuildAttribute()` overload"]
-    fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        unsafe {
-            let __receiver =
-                <WellItemSelectMenuNoneItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __WellItemSelectMenuNoneItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ACall()` overload"]
-    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver =
-                <WellItemSelectMenuNoneItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __WellItemSelectMenuNoneItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetUnitItem()` overload"]
-    fn get_unit_item(self) -> crate::app::unititem::UnitItem {
-        unsafe {
-            let __receiver =
-                <WellItemSelectMenuNoneItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __WellItemSelectMenuNoneItem_unity2_raw::get_unit_item(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetBlankText()` overload"]
-    fn get_blank_text(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver =
-                <WellItemSelectMenuNoneItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __WellItemSelectMenuNoneItem_unity2_raw::get_blank_text(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsVisibleItemIconOnBlank()` overload"]
-    fn is_visible_item_icon_on_blank(self) -> bool {
-        unsafe {
-            let __receiver =
-                <WellItemSelectMenuNoneItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __WellItemSelectMenuNoneItem_unity2_raw::is_visible_item_icon_on_blank(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IWellItemSelectMenuNoneItemMethods : IWellItemSelectMenuNoneItem { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < WellItemSelectMenuNoneItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __WellItemSelectMenuNoneItem_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < WellItemSelectMenuNoneItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __WellItemSelectMenuNoneItem_unity2_raw :: build_attribute (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < WellItemSelectMenuNoneItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __WellItemSelectMenuNoneItem_unity2_raw :: a_call (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetUnitItem()` overload"] fn get_unit_item (self ,) -> crate :: app :: unititem :: UnitItem { unsafe { let __receiver = < WellItemSelectMenuNoneItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __WellItemSelectMenuNoneItem_unity2_raw :: get_unit_item (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetBlankText()` overload"] fn get_blank_text (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < WellItemSelectMenuNoneItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __WellItemSelectMenuNoneItem_unity2_raw :: get_blank_text (__receiver , :: core :: option :: Option :: None) } } # [doc = "`IsVisibleItemIconOnBlank()` overload"] fn is_visible_item_icon_on_blank (self ,) -> bool { unsafe { let __receiver = < WellItemSelectMenuNoneItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __WellItemSelectMenuNoneItem_unity2_raw :: is_visible_item_icon_on_blank (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-wellitemselectmenunoneitem")]
-impl<__T: IWellItemSelectMenuNoneItem> IWellItemSelectMenuNoneItemMethods for __T {}
+impl < __T : IWellItemSelectMenuNoneItem > IWellItemSelectMenuNoneItemMethods for __T { }
+
+#[cfg(feature = "app-wellitemselectmenunoneitem")]
+impl WellItemSelectMenuNoneItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WellItemSelectMenuNoneItem_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WellItemSelectMenuNoneItem_unity2_raw :: __lookup_build_attribute :: get_method_info () } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WellItemSelectMenuNoneItem_unity2_raw :: __lookup_a_call :: get_method_info () } pub fn get_unit_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WellItemSelectMenuNoneItem_unity2_raw :: __lookup_get_unit_item :: get_method_info () } pub fn get_blank_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WellItemSelectMenuNoneItem_unity2_raw :: __lookup_get_blank_text :: get_method_info () } pub fn is_visible_item_icon_on_blank_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WellItemSelectMenuNoneItem_unity2_raw :: __lookup_is_visible_item_icon_on_blank :: get_method_info () } }
 
 #[cfg(feature = "app-wellitemselectmenunoneitem")]
 impl WellItemSelectMenuNoneItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(WellItemSelectMenuNoneItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IWellItemSelectMenuNoneItemMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (WellItemSelectMenuNoneItem) , :: core :: stringify ! (new) ,)) ; < Self as IWellItemSelectMenuNoneItemMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-wellitemselectmenunoneitem")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IWellItemSelectMenuNoneItem, IWellItemSelectMenuNoneItemMethods, WellItemSelectMenuNoneItem};
-    #[cfg(feature = "app-basicitemmenuitem")]
-    pub use crate::app::basicitemmenuitem::IBasicItemMenuItemMethods;
-    #[cfg(feature = "app-basicmenuitem")]
-    pub use crate::app::basicmenuitem::IBasicMenuItemMethods;
-    #[cfg(feature = "app-wellitemselectmenuitem")]
-    pub use crate::app::wellitemselectmenuitem::IWellItemSelectMenuItemMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::{
-        app::{basicitemmenuitem::IBasicItemMenuItem, basicmenuitem::IBasicMenuItem, wellitemselectmenuitem::IWellItemSelectMenuItem},
-        system::object::IObject,
-    };
+    pub use super::WellItemSelectMenuNoneItem;
+    pub use super::IWellItemSelectMenuNoneItem;
+    pub use super::IWellItemSelectMenuNoneItemMethods;
+    pub use crate::app::basicitemmenuitem::IBasicItemMenuItem;
+    pub use crate::app::basicmenuitem::IBasicMenuItem;
+    pub use crate::app::wellitemselectmenuitem::IWellItemSelectMenuItem;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "app-basicitemmenuitem")] pub use crate::app::basicitemmenuitem::IBasicItemMenuItemMethods;
+    #[cfg(feature = "app-basicmenuitem")] pub use crate::app::basicmenuitem::IBasicMenuItemMethods;
+    #[cfg(feature = "app-wellitemselectmenuitem")] pub use crate::app::wellitemselectmenuitem::IWellItemSelectMenuItemMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

@@ -2,83 +2,34 @@
 
 #[cfg(feature = "unity_engine-event_systems-iupdateselectedhandler-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/iupdateselectedhandler/IUpdateSelectedHandler.md"))]
-    #[::unity2::class(namespace = "UnityEngine.EventSystems", name = "IUpdateSelectedHandler")]
-    pub struct IUpdateSelectedHandler {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/iupdateselectedhandler/IUpdateSelectedHandler.md"))] # [:: unity2 :: class (namespace = "UnityEngine.EventSystems" , name = "IUpdateSelectedHandler")] pub struct IUpdateSelectedHandler {}
+
 }
 
 #[cfg(feature = "unity_engine-event_systems-iupdateselectedhandler-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-event_systems-iupdateselectedhandler")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __IUpdateSelectedHandler_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_update_selected {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::event_systems::baseeventdata::BaseEventData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <IUpdateSelectedHandler as ::unity2::ClassIdentity>::class(),
-                "OnUpdateSelected",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <IUpdateSelectedHandler as ::unity2::ClassIdentity>::NAME,
-                        "OnUpdateSelected",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_update_selected(
-        this: IUpdateSelectedHandler,
-        event_data: crate::unity_engine::event_systems::baseeventdata::BaseEventData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            IUpdateSelectedHandler,
-            crate::unity_engine::event_systems::baseeventdata::BaseEventData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_on_update_selected::get_method_info().method_ptr);
-        inner(this, event_data, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __IUpdateSelectedHandler_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_update_selected { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: event_systems :: baseeventdata :: BaseEventData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< IUpdateSelectedHandler as :: unity2 :: ClassIdentity > :: class () , "OnUpdateSelected" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < IUpdateSelectedHandler as :: unity2 :: ClassIdentity > :: NAME , "OnUpdateSelected" , e) , } } } pub unsafe fn on_update_selected (this : IUpdateSelectedHandler , event_data : crate :: unity_engine :: event_systems :: baseeventdata :: BaseEventData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (IUpdateSelectedHandler , crate :: unity_engine :: event_systems :: baseeventdata :: BaseEventData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_update_selected :: get_method_info () . method_ptr ,) ; inner (this , event_data , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-event_systems-iupdateselectedhandler")]
-pub trait IIUpdateSelectedHandlerMethods: IIUpdateSelectedHandler {
-    #[doc = "`OnUpdateSelected(crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]
-    fn on_update_selected(self, event_data: impl ::core::convert::Into<crate::unity_engine::event_systems::baseeventdata::BaseEventData>) -> () {
-        unsafe {
-            let __receiver =
-                <IUpdateSelectedHandler as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __IUpdateSelectedHandler_unity2_raw::on_update_selected(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)
-        }
-    }
-}
+pub trait IIUpdateSelectedHandlerMethods : IIUpdateSelectedHandler { # [doc = "`OnUpdateSelected(crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"] fn on_update_selected (self , event_data : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: baseeventdata :: BaseEventData >) -> () { unsafe { let __receiver = < IUpdateSelectedHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IUpdateSelectedHandler_unity2_raw :: on_update_selected (__receiver , :: core :: convert :: Into :: into (event_data) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-event_systems-iupdateselectedhandler")]
-impl<__T: IIUpdateSelectedHandler> IIUpdateSelectedHandlerMethods for __T {}
+impl < __T : IIUpdateSelectedHandler > IIUpdateSelectedHandlerMethods for __T { }
+
+#[cfg(feature = "unity_engine-event_systems-iupdateselectedhandler")]
+impl IUpdateSelectedHandler { pub fn on_update_selected_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __IUpdateSelectedHandler_unity2_raw :: __lookup_on_update_selected :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-event_systems-iupdateselectedhandler")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IIUpdateSelectedHandler, IIUpdateSelectedHandlerMethods, IUpdateSelectedHandler};
+    pub use super::IUpdateSelectedHandler;
+    pub use super::IIUpdateSelectedHandler;
+    pub use super::IIUpdateSelectedHandlerMethods;
 }

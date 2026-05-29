@@ -2,188 +2,275 @@
 
 #[cfg(feature = "tm_pro-textalignmentoptions-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        r#enum::{Enum, IEnum},
-        valuetype::{IValueType, ValueType},
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/textalignmentoptions/TextAlignmentOptions.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct TextAlignmentOptions {
-        pub value: i32,
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/textalignmentoptions/TextAlignmentOptions.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct TextAlignmentOptions  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for TextAlignmentOptions  {
+    const NAMESPACE: &'static str = "TMPro";
+
+    const NAME: &'static str = "TextAlignmentOptions";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    impl ::unity2::ClassIdentity for TextAlignmentOptions {
-        const NAME: &'static str = "TextAlignmentOptions";
-        const NAMESPACE: &'static str = "TMPro";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  ::unity2::IlType for TextAlignmentOptions  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::IlType for TextAlignmentOptions {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  TextAlignmentOptions  {
+    pub fn top_left() -> Self {
+        Self { value: 257 }
+
     }
 
-    impl TextAlignmentOptions {
-        pub fn top_left() -> Self {
-            Self { value: 257 }
-        }
 
-        pub fn top() -> Self {
-            Self { value: 258 }
-        }
+    pub fn top() -> Self {
+        Self { value: 258 }
 
-        pub fn top_right() -> Self {
-            Self { value: 260 }
-        }
-
-        pub fn top_justified() -> Self {
-            Self { value: 264 }
-        }
-
-        pub fn top_flush() -> Self {
-            Self { value: 272 }
-        }
-
-        pub fn top_geo_aligned() -> Self {
-            Self { value: 288 }
-        }
-
-        pub fn left() -> Self {
-            Self { value: 513 }
-        }
-
-        pub fn center() -> Self {
-            Self { value: 514 }
-        }
-
-        pub fn right() -> Self {
-            Self { value: 516 }
-        }
-
-        pub fn justified() -> Self {
-            Self { value: 520 }
-        }
-
-        pub fn flush() -> Self {
-            Self { value: 528 }
-        }
-
-        pub fn center_geo_aligned() -> Self {
-            Self { value: 544 }
-        }
-
-        pub fn bottom_left() -> Self {
-            Self { value: 1025 }
-        }
-
-        pub fn bottom() -> Self {
-            Self { value: 1026 }
-        }
-
-        pub fn bottom_right() -> Self {
-            Self { value: 1028 }
-        }
-
-        pub fn bottom_justified() -> Self {
-            Self { value: 1032 }
-        }
-
-        pub fn bottom_flush() -> Self {
-            Self { value: 1040 }
-        }
-
-        pub fn bottom_geo_aligned() -> Self {
-            Self { value: 1056 }
-        }
-
-        pub fn baseline_left() -> Self {
-            Self { value: 2049 }
-        }
-
-        pub fn baseline() -> Self {
-            Self { value: 2050 }
-        }
-
-        pub fn baseline_right() -> Self {
-            Self { value: 2052 }
-        }
-
-        pub fn baseline_justified() -> Self {
-            Self { value: 2056 }
-        }
-
-        pub fn baseline_flush() -> Self {
-            Self { value: 2064 }
-        }
-
-        pub fn baseline_geo_aligned() -> Self {
-            Self { value: 2080 }
-        }
-
-        pub fn midline_left() -> Self {
-            Self { value: 4097 }
-        }
-
-        pub fn midline() -> Self {
-            Self { value: 4098 }
-        }
-
-        pub fn midline_right() -> Self {
-            Self { value: 4100 }
-        }
-
-        pub fn midline_justified() -> Self {
-            Self { value: 4104 }
-        }
-
-        pub fn midline_flush() -> Self {
-            Self { value: 4112 }
-        }
-
-        pub fn midline_geo_aligned() -> Self {
-            Self { value: 4128 }
-        }
-
-        pub fn capline_left() -> Self {
-            Self { value: 8193 }
-        }
-
-        pub fn capline() -> Self {
-            Self { value: 8194 }
-        }
-
-        pub fn capline_right() -> Self {
-            Self { value: 8196 }
-        }
-
-        pub fn capline_justified() -> Self {
-            Self { value: 8200 }
-        }
-
-        pub fn capline_flush() -> Self {
-            Self { value: 8208 }
-        }
-
-        pub fn capline_geo_aligned() -> Self {
-            Self { value: 8224 }
-        }
-
-        pub fn converted() -> Self {
-            Self { value: 65535 }
-        }
     }
+
+
+    pub fn top_right() -> Self {
+        Self { value: 260 }
+
+    }
+
+
+    pub fn top_justified() -> Self {
+        Self { value: 264 }
+
+    }
+
+
+    pub fn top_flush() -> Self {
+        Self { value: 272 }
+
+    }
+
+
+    pub fn top_geo_aligned() -> Self {
+        Self { value: 288 }
+
+    }
+
+
+    pub fn left() -> Self {
+        Self { value: 513 }
+
+    }
+
+
+    pub fn center() -> Self {
+        Self { value: 514 }
+
+    }
+
+
+    pub fn right() -> Self {
+        Self { value: 516 }
+
+    }
+
+
+    pub fn justified() -> Self {
+        Self { value: 520 }
+
+    }
+
+
+    pub fn flush() -> Self {
+        Self { value: 528 }
+
+    }
+
+
+    pub fn center_geo_aligned() -> Self {
+        Self { value: 544 }
+
+    }
+
+
+    pub fn bottom_left() -> Self {
+        Self { value: 1025 }
+
+    }
+
+
+    pub fn bottom() -> Self {
+        Self { value: 1026 }
+
+    }
+
+
+    pub fn bottom_right() -> Self {
+        Self { value: 1028 }
+
+    }
+
+
+    pub fn bottom_justified() -> Self {
+        Self { value: 1032 }
+
+    }
+
+
+    pub fn bottom_flush() -> Self {
+        Self { value: 1040 }
+
+    }
+
+
+    pub fn bottom_geo_aligned() -> Self {
+        Self { value: 1056 }
+
+    }
+
+
+    pub fn baseline_left() -> Self {
+        Self { value: 2049 }
+
+    }
+
+
+    pub fn baseline() -> Self {
+        Self { value: 2050 }
+
+    }
+
+
+    pub fn baseline_right() -> Self {
+        Self { value: 2052 }
+
+    }
+
+
+    pub fn baseline_justified() -> Self {
+        Self { value: 2056 }
+
+    }
+
+
+    pub fn baseline_flush() -> Self {
+        Self { value: 2064 }
+
+    }
+
+
+    pub fn baseline_geo_aligned() -> Self {
+        Self { value: 2080 }
+
+    }
+
+
+    pub fn midline_left() -> Self {
+        Self { value: 4097 }
+
+    }
+
+
+    pub fn midline() -> Self {
+        Self { value: 4098 }
+
+    }
+
+
+    pub fn midline_right() -> Self {
+        Self { value: 4100 }
+
+    }
+
+
+    pub fn midline_justified() -> Self {
+        Self { value: 4104 }
+
+    }
+
+
+    pub fn midline_flush() -> Self {
+        Self { value: 4112 }
+
+    }
+
+
+    pub fn midline_geo_aligned() -> Self {
+        Self { value: 4128 }
+
+    }
+
+
+    pub fn capline_left() -> Self {
+        Self { value: 8193 }
+
+    }
+
+
+    pub fn capline() -> Self {
+        Self { value: 8194 }
+
+    }
+
+
+    pub fn capline_right() -> Self {
+        Self { value: 8196 }
+
+    }
+
+
+    pub fn capline_justified() -> Self {
+        Self { value: 8200 }
+
+    }
+
+
+    pub fn capline_flush() -> Self {
+        Self { value: 8208 }
+
+    }
+
+
+    pub fn capline_geo_aligned() -> Self {
+        Self { value: 8224 }
+
+    }
+
+
+    pub fn converted() -> Self {
+        Self { value: 65535 }
+
+    }
+
+}
+
 }
 
 #[cfg(feature = "tm_pro-textalignmentoptions-types")]
@@ -193,11 +280,10 @@ pub use __types::*;
 #[doc(hidden)]
 pub mod prelude {
     pub use super::TextAlignmentOptions;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::system::{object::IObject, r#enum::IEnum, valuetype::IValueType};
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

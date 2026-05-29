@@ -2,85 +2,39 @@
 
 #[cfg(feature = "unity_engine-timeline-matchtargetfieldconstants-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/matchtargetfieldconstants/MatchTargetFieldConstants.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Timeline", name = "MatchTargetFieldConstants")]
-    #[parent(crate::system::object::Object)]
-    pub struct MatchTargetFieldConstants {
-        #[static_field]
-        #[rename(name = "All")]
-        pub all: crate::unity_engine::timeline::matchtargetfields::MatchTargetFields,
-        #[static_field]
-        #[rename(name = "None")]
-        pub none: crate::unity_engine::timeline::matchtargetfields::MatchTargetFields,
-        #[static_field]
-        #[rename(name = "Position")]
-        pub position: crate::unity_engine::timeline::matchtargetfields::MatchTargetFields,
-        #[static_field]
-        #[rename(name = "Rotation")]
-        pub rotation: crate::unity_engine::timeline::matchtargetfields::MatchTargetFields,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/matchtargetfieldconstants/MatchTargetFieldConstants.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Timeline" , name = "MatchTargetFieldConstants")] # [parent (crate :: system :: object :: Object)] pub struct MatchTargetFieldConstants {
+# [static_field] # [rename (name = "All")] pub all : crate :: unity_engine :: timeline :: matchtargetfields :: MatchTargetFields ,
+# [static_field] # [rename (name = "None")] pub none : crate :: unity_engine :: timeline :: matchtargetfields :: MatchTargetFields ,
+# [static_field] # [rename (name = "Position")] pub position : crate :: unity_engine :: timeline :: matchtargetfields :: MatchTargetFields ,
+# [static_field] # [rename (name = "Rotation")] pub rotation : crate :: unity_engine :: timeline :: matchtargetfields :: MatchTargetFields ,
+}
+
 }
 
 #[cfg(feature = "unity_engine-timeline-matchtargetfieldconstants-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-timeline-matchtargetfieldconstants")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MatchTargetFieldConstants_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MatchTargetFieldConstants as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MatchTargetFieldConstants as ::unity2::ClassIdentity>::NAME,
-                        ".cctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MatchTargetFieldConstants_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MatchTargetFieldConstants as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MatchTargetFieldConstants as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-timeline-matchtargetfieldconstants")]
-impl MatchTargetFieldConstants {
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __MatchTargetFieldConstants_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
+impl MatchTargetFieldConstants { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { __MatchTargetFieldConstants_unity2_raw :: cctor (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-timeline-matchtargetfieldconstants")]
+impl MatchTargetFieldConstants { pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MatchTargetFieldConstants_unity2_raw :: __lookup_cctor :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-timeline-matchtargetfieldconstants")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IMatchTargetFieldConstants, MatchTargetFieldConstants};
+    pub use super::MatchTargetFieldConstants;
+    pub use super::IMatchTargetFieldConstants;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

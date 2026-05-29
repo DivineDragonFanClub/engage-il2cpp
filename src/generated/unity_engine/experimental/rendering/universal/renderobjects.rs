@@ -2,499 +2,147 @@
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-renderobjects-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::{
-            object_2::{IObject_2, Object_2},
-            rendering::universal::scriptablerendererfeature::{IScriptableRendererFeature, ScriptableRendererFeature},
-            scriptableobject::{IScriptableObject, ScriptableObject},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/renderobjects/RenderObjects.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Experimental.Rendering.Universal", name = "RenderObjects")]
-    #[parent(crate::unity_engine::rendering::universal::scriptablerendererfeature::ScriptableRendererFeature)]
-    pub struct RenderObjects {
-        #[offset(32)]
-        #[rename(name = "settings")]
-        pub settings: crate::unity_engine::experimental::rendering::universal::renderobjects::RenderObjects_RenderObjectsSettings,
-        #[offset(40)]
-        #[rename(name = "renderObjectsPass")]
-        pub render_objects_pass: crate::unity_engine::experimental::rendering::universal::renderobjectspass::RenderObjectsPass,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+ use crate :: unity_engine :: rendering :: universal :: scriptablerendererfeature :: { IScriptableRendererFeature , ScriptableRendererFeature }
+ ;
+ use crate :: unity_engine :: scriptableobject :: { IScriptableObject , ScriptableObject }
+ ;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/renderobjects/RenderObjects_CustomCameraSettings.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Experimental.Rendering.Universal", name = "RenderObjects.CustomCameraSettings")]
-    #[parent(crate::system::object::Object)]
-    pub struct RenderObjects_CustomCameraSettings {
-        #[offset(16)]
-        #[rename(name = "overrideCamera")]
-        pub override_camera: bool,
-        #[offset(17)]
-        #[rename(name = "restoreCamera")]
-        pub restore_camera: bool,
-        #[offset(20)]
-        #[rename(name = "offset")]
-        pub offset: crate::unity_engine::vector4::Vector4,
-        #[offset(36)]
-        #[rename(name = "cameraFieldOfView")]
-        pub camera_field_of_view: f32,
-    }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/renderobjects/RenderObjects_FilterSettings.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Experimental.Rendering.Universal", name = "RenderObjects.FilterSettings")]
-    #[parent(crate::system::object::Object)]
-    pub struct RenderObjects_FilterSettings {
-        #[offset(16)]
-        #[rename(name = "RenderQueueType")]
-        pub render_queue_type: crate::unity_engine::experimental::rendering::universal::renderqueuetype::RenderQueueType,
-        #[offset(20)]
-        #[rename(name = "LayerMask")]
-        pub layer_mask: crate::unity_engine::layermask::LayerMask,
-        #[offset(24)]
-        #[rename(name = "PassNames")]
-        pub pass_names: ::unity2::Array<::unity2::Il2CppString>,
-    }
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/renderobjects/RenderObjects_FilterSettings.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Experimental.Rendering.Universal" , name = "RenderObjects.FilterSettings")] # [parent (crate :: system :: object :: Object)] pub struct RenderObjects_FilterSettings {
+# [offset (16)] # [rename (name = "RenderQueueType")] pub render_queue_type : crate :: unity_engine :: experimental :: rendering :: universal :: renderqueuetype :: RenderQueueType ,
+# [offset (20)] # [rename (name = "LayerMask")] pub layer_mask : crate :: unity_engine :: layermask :: LayerMask ,
+# [offset (24)] # [rename (name = "PassNames")] pub pass_names : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
+}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/renderobjects/RenderObjects_RenderObjectsSettings.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Experimental.Rendering.Universal", name = "RenderObjects.RenderObjectsSettings")]
-    #[parent(crate::system::object::Object)]
-    pub struct RenderObjects_RenderObjectsSettings {
-        #[offset(16)]
-        #[rename(name = "passTag")]
-        pub pass_tag: ::unity2::Il2CppString,
-        #[offset(24)]
-        #[rename(name = "Event")]
-        pub event: crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent,
-        #[offset(32)]
-        #[rename(name = "filterSettings")]
-        pub filter_settings: crate::unity_engine::experimental::rendering::universal::renderobjects::RenderObjects_FilterSettings,
-        #[offset(40)]
-        #[rename(name = "overrideMaterial")]
-        pub override_material: crate::unity_engine::material::Material,
-        #[offset(48)]
-        #[rename(name = "overrideMaterialPassIndex")]
-        pub override_material_pass_index: i32,
-        #[offset(52)]
-        #[rename(name = "overrideDepthState")]
-        pub override_depth_state: bool,
-        #[offset(56)]
-        #[rename(name = "depthCompareFunction")]
-        pub depth_compare_function: crate::unity_engine::rendering::comparefunction::CompareFunction,
-        #[offset(60)]
-        #[rename(name = "enableWrite")]
-        pub enable_write: bool,
-        #[offset(64)]
-        #[rename(name = "stencilSettings")]
-        pub stencil_settings: crate::unity_engine::rendering::universal::stencilstatedata::StencilStateData,
-        #[offset(72)]
-        #[rename(name = "cameraSettings")]
-        pub camera_settings: crate::unity_engine::experimental::rendering::universal::renderobjects::RenderObjects_CustomCameraSettings,
-    }
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/renderobjects/RenderObjects.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Experimental.Rendering.Universal" , name = "RenderObjects")] # [parent (crate :: unity_engine :: rendering :: universal :: scriptablerendererfeature :: ScriptableRendererFeature)] pub struct RenderObjects {
+# [offset (32)] # [rename (name = "settings")] pub settings : crate :: unity_engine :: experimental :: rendering :: universal :: renderobjects :: RenderObjects_RenderObjectsSettings ,
+# [offset (40)] # [rename (name = "renderObjectsPass")] pub render_objects_pass : crate :: unity_engine :: experimental :: rendering :: universal :: renderobjectspass :: RenderObjectsPass ,
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/renderobjects/RenderObjects_RenderObjectsSettings.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Experimental.Rendering.Universal" , name = "RenderObjects.RenderObjectsSettings")] # [parent (crate :: system :: object :: Object)] pub struct RenderObjects_RenderObjectsSettings {
+# [offset (16)] # [rename (name = "passTag")] pub pass_tag : :: unity2 :: Il2CppString ,
+# [offset (24)] # [rename (name = "Event")] pub event : crate :: unity_engine :: rendering :: universal :: renderpassevent :: RenderPassEvent ,
+# [offset (32)] # [rename (name = "filterSettings")] pub filter_settings : crate :: unity_engine :: experimental :: rendering :: universal :: renderobjects :: RenderObjects_FilterSettings ,
+# [offset (40)] # [rename (name = "overrideMaterial")] pub override_material : crate :: unity_engine :: material :: Material ,
+# [offset (48)] # [rename (name = "overrideMaterialPassIndex")] pub override_material_pass_index : i32 ,
+# [offset (52)] # [rename (name = "overrideDepthState")] pub override_depth_state : bool ,
+# [offset (56)] # [rename (name = "depthCompareFunction")] pub depth_compare_function : crate :: unity_engine :: rendering :: comparefunction :: CompareFunction ,
+# [offset (60)] # [rename (name = "enableWrite")] pub enable_write : bool ,
+# [offset (64)] # [rename (name = "stencilSettings")] pub stencil_settings : crate :: unity_engine :: rendering :: universal :: stencilstatedata :: StencilStateData ,
+# [offset (72)] # [rename (name = "cameraSettings")] pub camera_settings : crate :: unity_engine :: experimental :: rendering :: universal :: renderobjects :: RenderObjects_CustomCameraSettings ,
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/renderobjects/RenderObjects_CustomCameraSettings.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Experimental.Rendering.Universal" , name = "RenderObjects.CustomCameraSettings")] # [parent (crate :: system :: object :: Object)] pub struct RenderObjects_CustomCameraSettings {
+# [offset (16)] # [rename (name = "overrideCamera")] pub override_camera : bool ,
+# [offset (17)] # [rename (name = "restoreCamera")] pub restore_camera : bool ,
+# [offset (20)] # [rename (name = "offset")] pub offset : crate :: unity_engine :: vector4 :: Vector4 ,
+# [offset (36)] # [rename (name = "cameraFieldOfView")] pub camera_field_of_view : f32 ,
+}
+
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-renderobjects-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-renderobjects")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RenderObjects_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RenderObjects as ::unity2::ClassIdentity>::class(),
-                "Create",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RenderObjects as ::unity2::ClassIdentity>::NAME,
-                        "Create",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create(this: RenderObjects, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RenderObjects, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_create::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_render_passes {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::rendering::universal::renderingdata::RenderingData as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RenderObjects as ::unity2::ClassIdentity>::class(),
-                "AddRenderPasses",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RenderObjects as ::unity2::ClassIdentity>::NAME,
-                        "AddRenderPasses",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_render_passes(
-        this: RenderObjects,
-        renderer: crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer,
-        rendering_data: *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RenderObjects,
-            crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer,
-            *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_add_render_passes::get_method_info().method_ptr);
-        inner(this, renderer, rendering_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<RenderObjects as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RenderObjects as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: RenderObjects, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RenderObjects, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __RenderObjects_FilterSettings_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RenderObjects_FilterSettings as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RenderObjects_FilterSettings as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : RenderObjects_FilterSettings , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RenderObjects_FilterSettings , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-renderobjects")]
-pub trait IRenderObjectsMethods: IRenderObjects {
-    #[doc = "`Create()` overload"]
-    fn create(self) -> () {
-        unsafe {
-            let __receiver = <RenderObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RenderObjects_unity2_raw::create(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`AddRenderPasses(crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer, *mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"]
-    fn add_render_passes(
-        self,
-        renderer: impl ::core::convert::Into<crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer>,
-    ) -> crate::unity_engine::rendering::universal::renderingdata::RenderingData {
-        unsafe {
-            let __receiver = <RenderObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::universal::renderingdata::RenderingData>::uninit();
-            __RenderObjects_unity2_raw::add_render_passes(
-                __receiver,
-                ::core::convert::Into::into(renderer),
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
-            __out_0.assume_init()
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <RenderObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RenderObjects_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IRenderObjects_FilterSettingsMethods : IRenderObjects_FilterSettings { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RenderObjects_FilterSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RenderObjects_FilterSettings_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-renderobjects")]
-impl<__T: IRenderObjects> IRenderObjectsMethods for __T {}
+impl < __T : IRenderObjects_FilterSettings > IRenderObjects_FilterSettingsMethods for __T { }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-renderobjects")]
-impl RenderObjects {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(RenderObjects), ::core::stringify!(new),));
-        <Self as IRenderObjectsMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "unity_engine-experimental-rendering-universal-renderobjects")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RenderObjects_CustomCameraSettings_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RenderObjects_CustomCameraSettings as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RenderObjects_CustomCameraSettings as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: RenderObjects_CustomCameraSettings, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RenderObjects_CustomCameraSettings, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "unity_engine-experimental-rendering-universal-renderobjects")]
-pub trait IRenderObjects_CustomCameraSettingsMethods: IRenderObjects_CustomCameraSettings {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <RenderObjects_CustomCameraSettings as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RenderObjects_CustomCameraSettings_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-experimental-rendering-universal-renderobjects")]
-impl<__T: IRenderObjects_CustomCameraSettings> IRenderObjects_CustomCameraSettingsMethods for __T {}
-
-#[cfg(feature = "unity_engine-experimental-rendering-universal-renderobjects")]
-impl RenderObjects_CustomCameraSettings {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RenderObjects_CustomCameraSettings),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRenderObjects_CustomCameraSettingsMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "unity_engine-experimental-rendering-universal-renderobjects")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RenderObjects_FilterSettings_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RenderObjects_FilterSettings as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RenderObjects_FilterSettings as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: RenderObjects_FilterSettings, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RenderObjects_FilterSettings, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "unity_engine-experimental-rendering-universal-renderobjects")]
-pub trait IRenderObjects_FilterSettingsMethods: IRenderObjects_FilterSettings {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <RenderObjects_FilterSettings as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RenderObjects_FilterSettings_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-experimental-rendering-universal-renderobjects")]
-impl<__T: IRenderObjects_FilterSettings> IRenderObjects_FilterSettingsMethods for __T {}
+impl RenderObjects_FilterSettings { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RenderObjects_FilterSettings_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-renderobjects")]
 impl RenderObjects_FilterSettings {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RenderObjects_FilterSettings),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRenderObjects_FilterSettingsMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RenderObjects_FilterSettings) , :: core :: stringify ! (new) ,)) ; < Self as IRenderObjects_FilterSettingsMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-renderobjects")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RenderObjects_RenderObjectsSettings_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RenderObjects_RenderObjectsSettings as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RenderObjects_RenderObjectsSettings as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: RenderObjects_RenderObjectsSettings, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RenderObjects_RenderObjectsSettings, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __RenderObjects_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RenderObjects as :: unity2 :: ClassIdentity > :: class () , "Create" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RenderObjects as :: unity2 :: ClassIdentity > :: NAME , "Create" , e) , } } } pub unsafe fn create (this : RenderObjects , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RenderObjects , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_render_passes { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: universal :: scriptablerenderer :: ScriptableRenderer as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RenderObjects as :: unity2 :: ClassIdentity > :: class () , "AddRenderPasses" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RenderObjects as :: unity2 :: ClassIdentity > :: NAME , "AddRenderPasses" , e) , } } } pub unsafe fn add_render_passes (this : RenderObjects , renderer : crate :: unity_engine :: rendering :: universal :: scriptablerenderer :: ScriptableRenderer , rendering_data : * mut crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RenderObjects , crate :: unity_engine :: rendering :: universal :: scriptablerenderer :: ScriptableRenderer , * mut crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_render_passes :: get_method_info () . method_ptr ,) ; inner (this , renderer , rendering_data , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RenderObjects as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RenderObjects as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : RenderObjects , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RenderObjects , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "unity_engine-experimental-rendering-universal-renderobjects")]
+pub trait IRenderObjectsMethods : IRenderObjects { # [doc = "`Create()` overload"] fn create (self ,) -> () { unsafe { let __receiver = < RenderObjects as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RenderObjects_unity2_raw :: create (__receiver , :: core :: option :: Option :: None) } } # [doc = "`AddRenderPasses(crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer, *mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"] fn add_render_passes (self , renderer : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: universal :: scriptablerenderer :: ScriptableRenderer >) -> crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData { unsafe { let __receiver = < RenderObjects as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData > :: uninit () ; __RenderObjects_unity2_raw :: add_render_passes (__receiver , :: core :: convert :: Into :: into (renderer) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) ; __out_0 . assume_init () } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RenderObjects as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RenderObjects_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-experimental-rendering-universal-renderobjects")]
+impl < __T : IRenderObjects > IRenderObjectsMethods for __T { }
+
+#[cfg(feature = "unity_engine-experimental-rendering-universal-renderobjects")]
+impl RenderObjects { pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RenderObjects_unity2_raw :: __lookup_create :: get_method_info () } pub fn add_render_passes_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RenderObjects_unity2_raw :: __lookup_add_render_passes :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RenderObjects_unity2_raw :: __lookup_ctor :: get_method_info () } }
+
+#[cfg(feature = "unity_engine-experimental-rendering-universal-renderobjects")]
+impl RenderObjects {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RenderObjects) , :: core :: stringify ! (new) ,)) ; < Self as IRenderObjectsMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-renderobjects")]
-pub trait IRenderObjects_RenderObjectsSettingsMethods: IRenderObjects_RenderObjectsSettings {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <RenderObjects_RenderObjectsSettings as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RenderObjects_RenderObjectsSettings_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __RenderObjects_RenderObjectsSettings_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RenderObjects_RenderObjectsSettings as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RenderObjects_RenderObjectsSettings as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : RenderObjects_RenderObjectsSettings , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RenderObjects_RenderObjectsSettings , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-renderobjects")]
-impl<__T: IRenderObjects_RenderObjectsSettings> IRenderObjects_RenderObjectsSettingsMethods for __T {}
+pub trait IRenderObjects_RenderObjectsSettingsMethods : IRenderObjects_RenderObjectsSettings { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RenderObjects_RenderObjectsSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RenderObjects_RenderObjectsSettings_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-experimental-rendering-universal-renderobjects")]
+impl < __T : IRenderObjects_RenderObjectsSettings > IRenderObjects_RenderObjectsSettingsMethods for __T { }
+
+#[cfg(feature = "unity_engine-experimental-rendering-universal-renderobjects")]
+impl RenderObjects_RenderObjectsSettings { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RenderObjects_RenderObjectsSettings_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-renderobjects")]
 impl RenderObjects_RenderObjectsSettings {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RenderObjects_RenderObjectsSettings),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRenderObjects_RenderObjectsSettingsMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RenderObjects_RenderObjectsSettings) , :: core :: stringify ! (new) ,)) ; < Self as IRenderObjects_RenderObjectsSettingsMethods > :: ctor (this ,) ; this }
+}
+
+#[cfg(feature = "unity_engine-experimental-rendering-universal-renderobjects")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __RenderObjects_CustomCameraSettings_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RenderObjects_CustomCameraSettings as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RenderObjects_CustomCameraSettings as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : RenderObjects_CustomCameraSettings , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RenderObjects_CustomCameraSettings , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "unity_engine-experimental-rendering-universal-renderobjects")]
+pub trait IRenderObjects_CustomCameraSettingsMethods : IRenderObjects_CustomCameraSettings { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RenderObjects_CustomCameraSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RenderObjects_CustomCameraSettings_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-experimental-rendering-universal-renderobjects")]
+impl < __T : IRenderObjects_CustomCameraSettings > IRenderObjects_CustomCameraSettingsMethods for __T { }
+
+#[cfg(feature = "unity_engine-experimental-rendering-universal-renderobjects")]
+impl RenderObjects_CustomCameraSettings { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RenderObjects_CustomCameraSettings_unity2_raw :: __lookup_ctor :: get_method_info () } }
+
+#[cfg(feature = "unity_engine-experimental-rendering-universal-renderobjects")]
+impl RenderObjects_CustomCameraSettings {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RenderObjects_CustomCameraSettings) , :: core :: stringify ! (new) ,)) ; < Self as IRenderObjects_CustomCameraSettingsMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-renderobjects")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{
-        IRenderObjects, IRenderObjectsMethods, IRenderObjects_CustomCameraSettings, IRenderObjects_CustomCameraSettingsMethods,
-        IRenderObjects_FilterSettings, IRenderObjects_FilterSettingsMethods, IRenderObjects_RenderObjectsSettings,
-        IRenderObjects_RenderObjectsSettingsMethods, RenderObjects, RenderObjects_CustomCameraSettings, RenderObjects_FilterSettings,
-        RenderObjects_RenderObjectsSettings,
-    };
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    #[cfg(feature = "unity_engine-rendering-universal-scriptablerendererfeature")]
-    pub use crate::unity_engine::rendering::universal::scriptablerendererfeature::IScriptableRendererFeatureMethods;
-    #[cfg(feature = "unity_engine-scriptableobject")]
-    pub use crate::unity_engine::scriptableobject::IScriptableObjectMethods;
-    pub use crate::{
-        system::object::IObject,
-        unity_engine::{
-            object_2::IObject_2, rendering::universal::scriptablerendererfeature::IScriptableRendererFeature, scriptableobject::IScriptableObject,
-        },
-    };
+    pub use super::RenderObjects_FilterSettings;
+    pub use super::IRenderObjects_FilterSettings;
+    pub use super::IRenderObjects_FilterSettingsMethods;
+    pub use super::RenderObjects;
+    pub use super::IRenderObjects;
+    pub use super::IRenderObjectsMethods;
+    pub use super::RenderObjects_RenderObjectsSettings;
+    pub use super::IRenderObjects_RenderObjectsSettings;
+    pub use super::IRenderObjects_RenderObjectsSettingsMethods;
+    pub use super::RenderObjects_CustomCameraSettings;
+    pub use super::IRenderObjects_CustomCameraSettings;
+    pub use super::IRenderObjects_CustomCameraSettingsMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::object_2::IObject_2;
+    pub use crate::unity_engine::rendering::universal::scriptablerendererfeature::IScriptableRendererFeature;
+    pub use crate::unity_engine::scriptableobject::IScriptableObject;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
+    #[cfg(feature = "unity_engine-rendering-universal-scriptablerendererfeature")] pub use crate::unity_engine::rendering::universal::scriptablerendererfeature::IScriptableRendererFeatureMethods;
+    #[cfg(feature = "unity_engine-scriptableobject")] pub use crate::unity_engine::scriptableobject::IScriptableObjectMethods;
 }

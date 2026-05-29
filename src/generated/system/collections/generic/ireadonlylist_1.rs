@@ -2,28 +2,27 @@
 
 #[cfg(feature = "system-collections-generic-ireadonlylist_1-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/ireadonlylist_1/IReadOnlyList_1.md"))]
-    #[::unity2::class(namespace = "System.Collections.Generic", name = "IReadOnlyList`1")]
-    pub struct IReadOnlyList_1<T0: ::unity2::ClassIdentity> {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/ireadonlylist_1/IReadOnlyList_1.md"))] # [:: unity2 :: class (namespace = "System.Collections.Generic" , name = "IReadOnlyList`1")] pub struct IReadOnlyList_1 < T0 : :: unity2 :: ClassIdentity > {}
+
 }
 
 #[cfg(feature = "system-collections-generic-ireadonlylist_1-types")]
 pub use __types::*;
 
 #[cfg(feature = "system-collections-generic-ireadonlylist_1")]
-#[::unity2::methods]
-impl<T0: ::unity2::ClassIdentity> IReadOnlyList_1<T0> {
-    #[doc = "`get_Item(i32)` overload"]
-    #[method(name = "get_Item", args = 1)]
-    pub fn get_item(self, index: i32) -> T0;
+# [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity > IReadOnlyList_1 < T0 > {
+# [doc = "`get_Item(i32)` overload"] # [method (name = "get_Item" , args = 1)] pub fn get_item (self , index : i32) -> T0 ;
 }
 
 #[cfg(feature = "system-collections-generic-ireadonlylist_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IIReadOnlyList_1, IIReadOnlyList_1Methods, IReadOnlyList_1};
+    pub use super::IReadOnlyList_1;
+    pub use super::IIReadOnlyList_1;
+    pub use super::IIReadOnlyList_1Methods;
 }

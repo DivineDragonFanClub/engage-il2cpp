@@ -2,151 +2,34 @@
 
 #[cfg(feature = "unity_engine-setupcoroutine-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/setupcoroutine/SetupCoroutine.md"))]
-    #[::unity2::class(namespace = "UnityEngine", name = "SetupCoroutine")]
-    #[parent(crate::system::object::Object)]
-    pub struct SetupCoroutine {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/setupcoroutine/SetupCoroutine.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "SetupCoroutine")] # [parent (crate :: system :: object :: Object)] pub struct SetupCoroutine {}
+
 }
 
 #[cfg(feature = "unity_engine-setupcoroutine-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-setupcoroutine")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __SetupCoroutine_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke_move_next {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::collections::ienumerator::IEnumerator as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SetupCoroutine as ::unity2::ClassIdentity>::class(),
-                "InvokeMoveNext",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SetupCoroutine as ::unity2::ClassIdentity>::NAME,
-                        "InvokeMoveNext",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn invoke_move_next(
-        enumerator: crate::system::collections::ienumerator::IEnumerator,
-        return_value_address: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::system::collections::ienumerator::IEnumerator, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_invoke_move_next::get_method_info().method_ptr);
-        inner(enumerator, return_value_address, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke_member {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SetupCoroutine as ::unity2::ClassIdentity>::class(),
-                "InvokeMember",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SetupCoroutine as ::unity2::ClassIdentity>::NAME,
-                        "InvokeMember",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn invoke_member(
-        behaviour: crate::system::object::Object,
-        name: ::unity2::Il2CppString,
-        variable: crate::system::object::Object,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::object::Object {
-        let inner: extern "C" fn(
-            crate::system::object::Object,
-            ::unity2::Il2CppString,
-            crate::system::object::Object,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::object::Object = ::core::mem::transmute(__lookup_invoke_member::get_method_info().method_ptr);
-        inner(behaviour, name, variable, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __SetupCoroutine_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_invoke_move_next { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: ienumerator :: IEnumerator as :: unity2 :: IlType > :: il_type () , < :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SetupCoroutine as :: unity2 :: ClassIdentity > :: class () , "InvokeMoveNext" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SetupCoroutine as :: unity2 :: ClassIdentity > :: NAME , "InvokeMoveNext" , e) , } } } pub unsafe fn invoke_move_next (enumerator : crate :: system :: collections :: ienumerator :: IEnumerator , return_value_address : :: unity2 :: IntPtr , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: system :: collections :: ienumerator :: IEnumerator , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_invoke_move_next :: get_method_info () . method_ptr ,) ; inner (enumerator , return_value_address , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_invoke_member { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SetupCoroutine as :: unity2 :: ClassIdentity > :: class () , "InvokeMember" , 3 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SetupCoroutine as :: unity2 :: ClassIdentity > :: NAME , "InvokeMember" , e) , } } } pub unsafe fn invoke_member (behaviour : crate :: system :: object :: Object , name : :: unity2 :: Il2CppString , variable : crate :: system :: object :: Object , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object { let inner : extern "C" fn (crate :: system :: object :: Object , :: unity2 :: Il2CppString , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute (__lookup_invoke_member :: get_method_info () . method_ptr ,) ; inner (behaviour , name , variable , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-setupcoroutine")]
-impl SetupCoroutine {
-    #[doc = "`InvokeMoveNext(crate::system::collections::ienumerator::IEnumerator, ::unity2::IntPtr)` overload"]
-    pub fn invoke_move_next(
-        enumerator: impl ::core::convert::Into<crate::system::collections::ienumerator::IEnumerator>,
-        return_value_address: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
-        unsafe {
-            __SetupCoroutine_unity2_raw::invoke_move_next(
-                ::core::convert::Into::into(enumerator),
-                ::core::convert::Into::into(return_value_address),
-                ::core::option::Option::None,
-            )
-        }
-    }
+impl SetupCoroutine { # [doc = "`InvokeMoveNext(crate::system::collections::ienumerator::IEnumerator, ::unity2::IntPtr)` overload"] pub fn invoke_move_next (enumerator : impl :: core :: convert :: Into < crate :: system :: collections :: ienumerator :: IEnumerator > , return_value_address : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { __SetupCoroutine_unity2_raw :: invoke_move_next (:: core :: convert :: Into :: into (enumerator) , :: core :: convert :: Into :: into (return_value_address) , :: core :: option :: Option :: None) } } # [doc = "`InvokeMember(crate::system::object::Object, ::unity2::Il2CppString, crate::system::object::Object)` overload"] pub fn invoke_member (behaviour : impl :: core :: convert :: Into < crate :: system :: object :: Object > , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , variable : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> crate :: system :: object :: Object { unsafe { __SetupCoroutine_unity2_raw :: invoke_member (:: core :: convert :: Into :: into (behaviour) , :: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (variable) , :: core :: option :: Option :: None) } } }
 
-    #[doc = "`InvokeMember(crate::system::object::Object, ::unity2::Il2CppString, crate::system::object::Object)` overload"]
-    pub fn invoke_member(
-        behaviour: impl ::core::convert::Into<crate::system::object::Object>,
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        variable: impl ::core::convert::Into<crate::system::object::Object>,
-    ) -> crate::system::object::Object {
-        unsafe {
-            __SetupCoroutine_unity2_raw::invoke_member(
-                ::core::convert::Into::into(behaviour),
-                ::core::convert::Into::into(name),
-                ::core::convert::Into::into(variable),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+#[cfg(feature = "unity_engine-setupcoroutine")]
+impl SetupCoroutine { pub fn invoke_move_next_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SetupCoroutine_unity2_raw :: __lookup_invoke_move_next :: get_method_info () } pub fn invoke_member_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SetupCoroutine_unity2_raw :: __lookup_invoke_member :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-setupcoroutine")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{ISetupCoroutine, SetupCoroutine};
+    pub use super::SetupCoroutine;
+    pub use super::ISetupCoroutine;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

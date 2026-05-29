@@ -2,149 +2,92 @@
 
 #[cfg(feature = "unity_engine-switch-operation-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        r#enum::{Enum, IEnum},
-        valuetype::{IValueType, ValueType},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/switch/operation/Operation.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Switch", name = "Operation")]
-    #[parent(crate::system::object::Object)]
-    pub struct Operation {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/switch/operation/Operation_OperationMode.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct Operation_OperationMode {
-        pub value: i32,
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/switch/operation/Operation.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Switch" , name = "Operation")] # [parent (crate :: system :: object :: Object)] pub struct Operation {}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/switch/operation/Operation_OperationMode.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct Operation_OperationMode  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for Operation_OperationMode  {
+    const NAMESPACE: &'static str = "UnityEngine.Switch";
+
+    const NAME: &'static str = "Operation.OperationMode";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    impl ::unity2::ClassIdentity for Operation_OperationMode {
-        const NAME: &'static str = "Operation.OperationMode";
-        const NAMESPACE: &'static str = "UnityEngine.Switch";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  ::unity2::IlType for Operation_OperationMode  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::IlType for Operation_OperationMode {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  Operation_OperationMode  {
+    pub fn handheld() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl Operation_OperationMode {
-        pub fn handheld() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn console() -> Self {
-            Self { value: 1 }
-        }
+    pub fn console() -> Self {
+        Self { value: 1 }
+
     }
+
+}
+
 }
 
 #[cfg(feature = "unity_engine-switch-operation-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-switch-operation")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __Operation_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_mode {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Operation as ::unity2::ClassIdentity>::class(), "get_mode", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Operation as ::unity2::ClassIdentity>::NAME,
-                        "get_mode",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_mode(__unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::switch::operation::Operation_OperationMode {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::unity_engine::switch::operation::Operation_OperationMode =
-            ::core::mem::transmute(__lookup_get_mode::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_mode_internal {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Operation as ::unity2::ClassIdentity>::class(),
-                "GetMode_Internal",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Operation as ::unity2::ClassIdentity>::NAME,
-                        "GetMode_Internal",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_mode_internal(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::switch::operation::Operation_OperationMode {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::unity_engine::switch::operation::Operation_OperationMode =
-            ::core::mem::transmute(__lookup_get_mode_internal::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __Operation_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_mode { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Operation as :: unity2 :: ClassIdentity > :: class () , "get_mode" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Operation as :: unity2 :: ClassIdentity > :: NAME , "get_mode" , e) , } } } pub unsafe fn get_mode (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: switch :: operation :: Operation_OperationMode { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: switch :: operation :: Operation_OperationMode = :: core :: mem :: transmute (__lookup_get_mode :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_mode_internal { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Operation as :: unity2 :: ClassIdentity > :: class () , "GetMode_Internal" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Operation as :: unity2 :: ClassIdentity > :: NAME , "GetMode_Internal" , e) , } } } pub unsafe fn get_mode_internal (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: switch :: operation :: Operation_OperationMode { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: switch :: operation :: Operation_OperationMode = :: core :: mem :: transmute (__lookup_get_mode_internal :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-switch-operation")]
-impl Operation {
-    #[doc = "`get_mode()` overload"]
-    pub fn get_mode() -> crate::unity_engine::switch::operation::Operation_OperationMode {
-        unsafe { __Operation_unity2_raw::get_mode(::core::option::Option::None) }
-    }
+impl Operation { # [doc = "`get_mode()` overload"] pub fn get_mode () -> crate :: unity_engine :: switch :: operation :: Operation_OperationMode { unsafe { __Operation_unity2_raw :: get_mode (:: core :: option :: Option :: None) } } # [doc = "`GetMode_Internal()` overload"] pub fn get_mode_internal () -> crate :: unity_engine :: switch :: operation :: Operation_OperationMode { unsafe { __Operation_unity2_raw :: get_mode_internal (:: core :: option :: Option :: None) } } }
 
-    #[doc = "`GetMode_Internal()` overload"]
-    pub fn get_mode_internal() -> crate::unity_engine::switch::operation::Operation_OperationMode {
-        unsafe { __Operation_unity2_raw::get_mode_internal(::core::option::Option::None) }
-    }
-}
+#[cfg(feature = "unity_engine-switch-operation")]
+impl Operation { pub fn get_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Operation_unity2_raw :: __lookup_get_mode :: get_method_info () } pub fn get_mode_internal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Operation_unity2_raw :: __lookup_get_mode_internal :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-switch-operation")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IOperation, Operation, Operation_OperationMode};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::system::{object::IObject, r#enum::IEnum, valuetype::IValueType};
+    pub use super::Operation;
+    pub use super::IOperation;
+    pub use super::Operation_OperationMode;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

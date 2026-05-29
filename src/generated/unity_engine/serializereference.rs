@@ -2,13 +2,13 @@
 
 #[cfg(feature = "unity_engine-serializereference-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/serializereference/SerializeReference.md"))]
-    #[::unity2::class(namespace = "UnityEngine", name = "SerializeReference")]
-    pub struct SerializeReference {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/serializereference/SerializeReference.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "SerializeReference")] pub struct SerializeReference {}
+
 }
 
 #[cfg(feature = "unity_engine-serializereference-types")]
@@ -17,5 +17,6 @@ pub use __types::*;
 #[cfg(feature = "unity_engine-serializereference")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{ISerializeReference, SerializeReference};
+    pub use super::SerializeReference;
+    pub use super::ISerializeReference;
 }

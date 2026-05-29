@@ -2,28 +2,27 @@
 
 #[cfg(feature = "system-collections-generic-ienumerable_1-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/ienumerable_1/IEnumerable_1.md"))]
-    #[::unity2::class(namespace = "System.Collections.Generic", name = "IEnumerable`1")]
-    pub struct IEnumerable_1<T0: ::unity2::ClassIdentity> {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/ienumerable_1/IEnumerable_1.md"))] # [:: unity2 :: class (namespace = "System.Collections.Generic" , name = "IEnumerable`1")] pub struct IEnumerable_1 < T0 : :: unity2 :: ClassIdentity > {}
+
 }
 
 #[cfg(feature = "system-collections-generic-ienumerable_1-types")]
 pub use __types::*;
 
 #[cfg(feature = "system-collections-generic-ienumerable_1")]
-#[::unity2::methods]
-impl<T0: ::unity2::ClassIdentity> IEnumerable_1<T0> {
-    #[doc = "`GetEnumerator()` overload"]
-    #[method(name = "GetEnumerator", args = 0)]
-    pub fn get_enumerator(self) -> crate::system::collections::generic::ienumerator_1::IEnumerator_1<T0>;
+# [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity > IEnumerable_1 < T0 > {
+# [doc = "`GetEnumerator()` overload"] # [method (name = "GetEnumerator" , args = 0)] pub fn get_enumerator (self ,) -> crate :: system :: collections :: generic :: ienumerator_1 :: IEnumerator_1 < T0 > ;
 }
 
 #[cfg(feature = "system-collections-generic-ienumerable_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IEnumerable_1, IIEnumerable_1, IIEnumerable_1Methods};
+    pub use super::IEnumerable_1;
+    pub use super::IIEnumerable_1;
+    pub use super::IIEnumerable_1Methods;
 }

@@ -2,284 +2,65 @@
 
 #[cfg(feature = "app-dragonridetargetpopup-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonridetargetpopup/DragonRideTargetPopup.md"))]
-    #[::unity2::class(namespace = "App", name = "DragonRideTargetPopup")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct DragonRideTargetPopup {
-        #[offset(24)]
-        #[rename(name = "m_RectTransform")]
-        pub m_rect_transform: crate::unity_engine::recttransform::RectTransform,
-        #[offset(32)]
-        #[rename(name = "m_Camera")]
-        pub m_camera: crate::app::dragonridecamera::DragonRideCamera,
-        #[offset(40)]
-        #[rename(name = "m_WorldPos")]
-        pub m_world_pos: crate::unity_engine::vector3::Vector3,
-        #[offset(56)]
-        #[rename(name = "m_Config")]
-        pub m_config: crate::app::dragonrideconfig::DragonRideConfig,
-        #[offset(64)]
-        #[rename(name = "m_AliveTimer")]
-        pub m_alive_timer: f32,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonridetargetpopup/DragonRideTargetPopup.md"))] # [:: unity2 :: class (namespace = "App" , name = "DragonRideTargetPopup")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct DragonRideTargetPopup {
+# [offset (24)] # [rename (name = "m_RectTransform")] pub m_rect_transform : crate :: unity_engine :: recttransform :: RectTransform ,
+# [offset (32)] # [rename (name = "m_Camera")] pub m_camera : crate :: app :: dragonridecamera :: DragonRideCamera ,
+# [offset (40)] # [rename (name = "m_WorldPos")] pub m_world_pos : crate :: unity_engine :: vector3 :: Vector3 ,
+# [offset (56)] # [rename (name = "m_Config")] pub m_config : crate :: app :: dragonrideconfig :: DragonRideConfig ,
+# [offset (64)] # [rename (name = "m_AliveTimer")] pub m_alive_timer : f32 ,
+}
+
 }
 
 #[cfg(feature = "app-dragonridetargetpopup-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-dragonridetargetpopup")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __DragonRideTargetPopup_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_is_alive {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DragonRideTargetPopup as ::unity2::ClassIdentity>::class(),
-                "get_IsAlive",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DragonRideTargetPopup as ::unity2::ClassIdentity>::NAME,
-                        "get_IsAlive",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_is_alive(this: DragonRideTargetPopup, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(DragonRideTargetPopup, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_is_alive::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DragonRideTargetPopup as ::unity2::ClassIdentity>::class(),
-                "Update",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DragonRideTargetPopup as ::unity2::ClassIdentity>::NAME,
-                        "Update",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update(this: DragonRideTargetPopup, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DragonRideTargetPopup, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_init {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
-                <crate::app::dragonridecamera::DragonRideCamera as ::unity2::IlType>::il_type(),
-                <crate::app::dragonrideconfig::DragonRideConfig as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DragonRideTargetPopup as ::unity2::ClassIdentity>::class(),
-                "Init",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DragonRideTargetPopup as ::unity2::ClassIdentity>::NAME,
-                        "Init",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn init(
-        this: DragonRideTargetPopup,
-        pos: crate::unity_engine::vector3::Vector3,
-        camera: *mut crate::app::dragonridecamera::DragonRideCamera,
-        config: *mut crate::app::dragonrideconfig::DragonRideConfig,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            DragonRideTargetPopup,
-            crate::unity_engine::vector3::Vector3,
-            *mut crate::app::dragonridecamera::DragonRideCamera,
-            *mut crate::app::dragonrideconfig::DragonRideConfig,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_init::get_method_info().method_ptr);
-        inner(this, pos, camera, config, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DragonRideTargetPopup as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DragonRideTargetPopup as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: DragonRideTargetPopup, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DragonRideTargetPopup, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __DragonRideTargetPopup_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_is_alive { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DragonRideTargetPopup as :: unity2 :: ClassIdentity > :: class () , "get_IsAlive" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DragonRideTargetPopup as :: unity2 :: ClassIdentity > :: NAME , "get_IsAlive" , e) , } } } pub unsafe fn get_is_alive (this : DragonRideTargetPopup , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (DragonRideTargetPopup , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_is_alive :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DragonRideTargetPopup as :: unity2 :: ClassIdentity > :: class () , "Update" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DragonRideTargetPopup as :: unity2 :: ClassIdentity > :: NAME , "Update" , e) , } } } pub unsafe fn update (this : DragonRideTargetPopup , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DragonRideTargetPopup , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_init { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < crate :: app :: dragonridecamera :: DragonRideCamera as :: unity2 :: IlType > :: il_type () , < crate :: app :: dragonrideconfig :: DragonRideConfig as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DragonRideTargetPopup as :: unity2 :: ClassIdentity > :: class () , "Init" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DragonRideTargetPopup as :: unity2 :: ClassIdentity > :: NAME , "Init" , e) , } } } pub unsafe fn init (this : DragonRideTargetPopup , pos : crate :: unity_engine :: vector3 :: Vector3 , camera : * mut crate :: app :: dragonridecamera :: DragonRideCamera , config : * mut crate :: app :: dragonrideconfig :: DragonRideConfig , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DragonRideTargetPopup , crate :: unity_engine :: vector3 :: Vector3 , * mut crate :: app :: dragonridecamera :: DragonRideCamera , * mut crate :: app :: dragonrideconfig :: DragonRideConfig , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_init :: get_method_info () . method_ptr ,) ; inner (this , pos , camera , config , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DragonRideTargetPopup as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DragonRideTargetPopup as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : DragonRideTargetPopup , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DragonRideTargetPopup , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-dragonridetargetpopup")]
-pub trait IDragonRideTargetPopupMethods: IDragonRideTargetPopup {
-    #[doc = "`get_IsAlive()` overload"]
-    fn get_is_alive(self) -> bool {
-        unsafe {
-            let __receiver =
-                <DragonRideTargetPopup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DragonRideTargetPopup_unity2_raw::get_is_alive(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Update()` overload"]
-    fn update(self) -> () {
-        unsafe {
-            let __receiver =
-                <DragonRideTargetPopup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DragonRideTargetPopup_unity2_raw::update(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Init(crate::unity_engine::vector3::Vector3, *mutcrate::app::dragonridecamera::DragonRideCamera, *mutcrate::app::dragonrideconfig::DragonRideConfig)` overload"]
-    fn init(
-        self,
-        pos: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-    ) -> (
-        crate::app::dragonridecamera::DragonRideCamera,
-        crate::app::dragonrideconfig::DragonRideConfig,
-    ) {
-        unsafe {
-            let __receiver =
-                <DragonRideTargetPopup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            let mut __out_0 = ::core::mem::MaybeUninit::<crate::app::dragonridecamera::DragonRideCamera>::uninit();
-            let mut __out_1 = ::core::mem::MaybeUninit::<crate::app::dragonrideconfig::DragonRideConfig>::uninit();
-            __DragonRideTargetPopup_unity2_raw::init(
-                __receiver,
-                ::core::convert::Into::into(pos),
-                __out_0.as_mut_ptr(),
-                __out_1.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
-            (__out_0.assume_init(), __out_1.assume_init())
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <DragonRideTargetPopup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DragonRideTargetPopup_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IDragonRideTargetPopupMethods : IDragonRideTargetPopup { # [doc = "`get_IsAlive()` overload"] fn get_is_alive (self ,) -> bool { unsafe { let __receiver = < DragonRideTargetPopup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DragonRideTargetPopup_unity2_raw :: get_is_alive (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < DragonRideTargetPopup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DragonRideTargetPopup_unity2_raw :: update (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Init(crate::unity_engine::vector3::Vector3, *mutcrate::app::dragonridecamera::DragonRideCamera, *mutcrate::app::dragonrideconfig::DragonRideConfig)` overload"] fn init (self , pos : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> (crate :: app :: dragonridecamera :: DragonRideCamera , crate :: app :: dragonrideconfig :: DragonRideConfig) { unsafe { let __receiver = < DragonRideTargetPopup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: app :: dragonridecamera :: DragonRideCamera > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < crate :: app :: dragonrideconfig :: DragonRideConfig > :: uninit () ; __DragonRideTargetPopup_unity2_raw :: init (__receiver , :: core :: convert :: Into :: into (pos) , __out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: option :: Option :: None) ; (__out_0 . assume_init () , __out_1 . assume_init ()) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DragonRideTargetPopup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DragonRideTargetPopup_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-dragonridetargetpopup")]
-impl<__T: IDragonRideTargetPopup> IDragonRideTargetPopupMethods for __T {}
+impl < __T : IDragonRideTargetPopup > IDragonRideTargetPopupMethods for __T { }
+
+#[cfg(feature = "app-dragonridetargetpopup")]
+impl DragonRideTargetPopup { pub fn get_is_alive_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DragonRideTargetPopup_unity2_raw :: __lookup_get_is_alive :: get_method_info () } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DragonRideTargetPopup_unity2_raw :: __lookup_update :: get_method_info () } pub fn init_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DragonRideTargetPopup_unity2_raw :: __lookup_init :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DragonRideTargetPopup_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-dragonridetargetpopup")]
 impl DragonRideTargetPopup {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DragonRideTargetPopup),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDragonRideTargetPopupMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DragonRideTargetPopup) , :: core :: stringify ! (new) ,)) ; < Self as IDragonRideTargetPopupMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-dragonridetargetpopup")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{DragonRideTargetPopup, IDragonRideTargetPopup, IDragonRideTargetPopupMethods};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        system::object::IObject,
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::DragonRideTargetPopup;
+    pub use super::IDragonRideTargetPopup;
+    pub use super::IDragonRideTargetPopupMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

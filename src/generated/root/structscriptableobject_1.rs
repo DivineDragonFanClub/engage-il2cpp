@@ -2,67 +2,46 @@
 
 #[cfg(feature = "root-structscriptableobject_1-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::{
-            object_2::{IObject_2, Object_2},
-            scriptableobject::{IScriptableObject, ScriptableObject},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/structscriptableobject_1/StructScriptableObject_1.md"))]
-    #[::unity2::class(namespace = "", name = "StructScriptableObject`1")]
-    #[parent(crate::unity_engine::scriptableobject::ScriptableObject)]
-    #[parent(crate::unity_engine::object_2::Object_2)]
-    #[parent(crate::system::object::Object)]
-    pub struct StructScriptableObject_1<T0: ::unity2::ClassIdentity> {
-        #[rename(name = "m_List")]
-        pub m_list: crate::system::collections::generic::list_1::List_1<T0>,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+ use crate :: unity_engine :: scriptableobject :: { IScriptableObject , ScriptableObject }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/structscriptableobject_1/StructScriptableObject_1.md"))] # [:: unity2 :: class (namespace = "" , name = "StructScriptableObject`1")] # [parent (crate :: unity_engine :: scriptableobject :: ScriptableObject)] # [parent (crate :: unity_engine :: object_2 :: Object_2)] # [parent (crate :: system :: object :: Object)] pub struct StructScriptableObject_1 < T0 : :: unity2 :: ClassIdentity > {
+# [rename (name = "m_List")] pub m_list : crate :: system :: collections :: generic :: list_1 :: List_1 < T0 > ,
+}
+
 }
 
 #[cfg(feature = "root-structscriptableobject_1-types")]
 pub use __types::*;
 
 #[cfg(feature = "root-structscriptableobject_1")]
-#[::unity2::methods]
-impl<T0: ::unity2::ClassIdentity> StructScriptableObject_1<T0> {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+# [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity > StructScriptableObject_1 < T0 > {
+# [doc = "`.ctor()` overload"] # [method (name = ".ctor" , args = 0)] pub fn ctor (self ,) -> () ;
 }
 
 #[cfg(feature = "root-structscriptableobject_1")]
-impl<T0: ::unity2::ClassIdentity> StructScriptableObject_1<T0> {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(StructScriptableObject_1),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IStructScriptableObject_1Methods<T0>>::ctor(this);
-        this
-    }
+impl < T0 : :: unity2 :: ClassIdentity > StructScriptableObject_1 < T0 > {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (StructScriptableObject_1) , :: core :: stringify ! (new) ,)) ; < Self as IStructScriptableObject_1Methods < T0 > > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "root-structscriptableobject_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IStructScriptableObject_1, IStructScriptableObject_1Methods, StructScriptableObject_1};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    #[cfg(feature = "unity_engine-scriptableobject")]
-    pub use crate::unity_engine::scriptableobject::IScriptableObjectMethods;
-    pub use crate::{
-        system::object::IObject,
-        unity_engine::{object_2::IObject_2, scriptableobject::IScriptableObject},
-    };
+    pub use super::StructScriptableObject_1;
+    pub use super::IStructScriptableObject_1;
+    pub use super::IStructScriptableObject_1Methods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::object_2::IObject_2;
+    pub use crate::unity_engine::scriptableobject::IScriptableObject;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
+    #[cfg(feature = "unity_engine-scriptableobject")] pub use crate::unity_engine::scriptableobject::IScriptableObjectMethods;
 }

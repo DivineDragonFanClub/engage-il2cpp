@@ -2,960 +2,114 @@
 
 #[cfg(feature = "app-unitenhancevalues-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        r#enum::{Enum, IEnum},
-        valuetype::{IValueType, ValueType},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitenhancevalues/UnitEnhanceValues.md"))]
-    #[::unity2::class(namespace = "App", name = "UnitEnhanceValues")]
-    #[parent(crate::system::object::Object)]
-    pub struct UnitEnhanceValues {
-        #[static_field]
-        #[rename(name = "Num")]
-        pub num: i32,
-        #[static_field]
-        #[rename(name = "Version")]
-        pub version: i32,
-        #[offset(16)]
-        #[rename(name = "m_Values")]
-        pub m_values: ::unity2::Array<i32>,
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitenhancevalues/UnitEnhanceValues.md"))] # [:: unity2 :: class (namespace = "App" , name = "UnitEnhanceValues")] # [parent (crate :: system :: object :: Object)] pub struct UnitEnhanceValues {
+# [static_field] # [rename (name = "Num")] pub num : i32 ,
+# [static_field] # [rename (name = "Version")] pub version : i32 ,
+# [offset (16)] # [rename (name = "m_Values")] pub m_values : :: unity2 :: Array < i32 > ,
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitenhancevalues/UnitEnhanceValues_Type.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct UnitEnhanceValues_Type  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for UnitEnhanceValues_Type  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "UnitEnhanceValues.Type";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitenhancevalues/UnitEnhanceValues_Type.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct UnitEnhanceValues_Type {
-        pub value: i32,
+}
+
+
+impl  ::unity2::IlType for UnitEnhanceValues_Type  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::ClassIdentity for UnitEnhanceValues_Type {
-        const NAME: &'static str = "UnitEnhanceValues.Type";
-        const NAMESPACE: &'static str = "App";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  UnitEnhanceValues_Type  {
+    pub fn capability_begin() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl ::unity2::IlType for UnitEnhanceValues_Type {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+
+    pub fn capability_end() -> Self {
+        Self { value: 11 }
+
     }
 
-    impl UnitEnhanceValues_Type {
-        pub fn capability_begin() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn capability_end() -> Self {
-            Self { value: 11 }
-        }
+    pub fn num() -> Self {
+        Self { value: 11 }
 
-        pub fn num() -> Self {
-            Self { value: 11 }
-        }
     }
+
+}
+
 }
 
 #[cfg(feature = "app-unitenhancevalues-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-unitenhancevalues")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __UnitEnhanceValues_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_zero {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitEnhanceValues as ::unity2::ClassIdentity>::class(),
-                "IsZero",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnitEnhanceValues as ::unity2::ClassIdentity>::NAME,
-                        "IsZero",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_zero(this: UnitEnhanceValues, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(UnitEnhanceValues, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_zero::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::unitenhancevalues::UnitEnhanceValues as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitEnhanceValues as ::unity2::ClassIdentity>::class(),
-                "Set",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnitEnhanceValues as ::unity2::ClassIdentity>::NAME,
-                        "Set",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set(
-        this: UnitEnhanceValues,
-        values: crate::app::unitenhancevalues::UnitEnhanceValues,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(UnitEnhanceValues, crate::app::unitenhancevalues::UnitEnhanceValues, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set::get_method_info().method_ptr);
-        inner(this, values, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::unitenhancevalues::UnitEnhanceValues as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitEnhanceValues as ::unity2::ClassIdentity>::class(),
-                "Add",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnitEnhanceValues as ::unity2::ClassIdentity>::NAME,
-                        "Add",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add(
-        this: UnitEnhanceValues,
-        values: crate::app::unitenhancevalues::UnitEnhanceValues,
-        is_not_enhance: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(UnitEnhanceValues, crate::app::unitenhancevalues::UnitEnhanceValues, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add::get_method_info().method_ptr);
-        inner(this, values, is_not_enhance, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_sub {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::unitenhancevalues::UnitEnhanceValues as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitEnhanceValues as ::unity2::ClassIdentity>::class(),
-                "Sub",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnitEnhanceValues as ::unity2::ClassIdentity>::NAME,
-                        "Sub",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn sub(
-        this: UnitEnhanceValues,
-        values: crate::app::unitenhancevalues::UnitEnhanceValues,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(UnitEnhanceValues, crate::app::unitenhancevalues::UnitEnhanceValues, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_sub::get_method_info().method_ptr);
-        inner(this, values, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_merge {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::unitenhancevalues::UnitEnhanceValues as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitEnhanceValues as ::unity2::ClassIdentity>::class(),
-                "Merge",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnitEnhanceValues as ::unity2::ClassIdentity>::NAME,
-                        "Merge",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn merge(
-        this: UnitEnhanceValues,
-        values: crate::app::unitenhancevalues::UnitEnhanceValues,
-        is_not_enhance: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(UnitEnhanceValues, crate::app::unitenhancevalues::UnitEnhanceValues, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_merge::get_method_info().method_ptr);
-        inner(this, values, is_not_enhance, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::capabilitysbyte::CapabilitySbyte as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitEnhanceValues as ::unity2::ClassIdentity>::class(),
-                "Set",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnitEnhanceValues as ::unity2::ClassIdentity>::NAME,
-                        "Set",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_2(
-        this: UnitEnhanceValues,
-        capability: crate::app::capabilitysbyte::CapabilitySbyte,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(UnitEnhanceValues, crate::app::capabilitysbyte::CapabilitySbyte, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_2::get_method_info().method_ptr);
-        inner(this, capability, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::capabilitysbyte::CapabilitySbyte as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitEnhanceValues as ::unity2::ClassIdentity>::class(),
-                "Add",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnitEnhanceValues as ::unity2::ClassIdentity>::NAME,
-                        "Add",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_2(
-        this: UnitEnhanceValues,
-        capability: crate::app::capabilitysbyte::CapabilitySbyte,
-        is_not_enhance: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(UnitEnhanceValues, crate::app::capabilitysbyte::CapabilitySbyte, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add_2::get_method_info().method_ptr);
-        inner(this, capability, is_not_enhance, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_merge_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::capabilitysbyte::CapabilitySbyte as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitEnhanceValues as ::unity2::ClassIdentity>::class(),
-                "Merge",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnitEnhanceValues as ::unity2::ClassIdentity>::NAME,
-                        "Merge",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn merge_2(
-        this: UnitEnhanceValues,
-        capability: crate::app::capabilitysbyte::CapabilitySbyte,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(UnitEnhanceValues, crate::app::capabilitysbyte::CapabilitySbyte, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_merge_2::get_method_info().method_ptr);
-        inner(this, capability, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_3 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::capabilitysbyte::CapabilitySbyte as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitEnhanceValues as ::unity2::ClassIdentity>::class(),
-                "Add",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnitEnhanceValues as ::unity2::ClassIdentity>::NAME,
-                        "Add",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_3(
-        this: UnitEnhanceValues,
-        capability: crate::app::capabilitysbyte::CapabilitySbyte,
-        decay: i32,
-        is_not_enhance: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(UnitEnhanceValues, crate::app::capabilitysbyte::CapabilitySbyte, i32, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add_3::get_method_info().method_ptr);
-        inner(this, capability, decay, is_not_enhance, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_4 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::capabilitydefinition::CapabilityDefinition_Type as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitEnhanceValues as ::unity2::ClassIdentity>::class(),
-                "Add",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnitEnhanceValues as ::unity2::ClassIdentity>::NAME,
-                        "Add",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_4(
-        this: UnitEnhanceValues,
-        r#type: crate::app::capabilitydefinition::CapabilityDefinition_Type,
-        value: i32,
-        is_not_enhance: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            UnitEnhanceValues,
-            crate::app::capabilitydefinition::CapabilityDefinition_Type,
-            i32,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_add_4::get_method_info().method_ptr);
-        inner(this, r#type, value, is_not_enhance, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_clear {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitEnhanceValues as ::unity2::ClassIdentity>::class(),
-                "Clear",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnitEnhanceValues as ::unity2::ClassIdentity>::NAME,
-                        "Clear",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn clear(this: UnitEnhanceValues, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(UnitEnhanceValues, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_clamp {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitEnhanceValues as ::unity2::ClassIdentity>::class(),
-                "Clamp",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnitEnhanceValues as ::unity2::ClassIdentity>::NAME,
-                        "Clamp",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn clamp(this: UnitEnhanceValues, min: i32, max: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(UnitEnhanceValues, i32, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_clamp::get_method_info().method_ptr);
-        inner(this, min, max, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_serialize {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::stream_2::Stream_2 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitEnhanceValues as ::unity2::ClassIdentity>::class(),
-                "Serialize",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnitEnhanceValues as ::unity2::ClassIdentity>::NAME,
-                        "Serialize",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn serialize(this: UnitEnhanceValues, stream: crate::app::stream_2::Stream_2, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(UnitEnhanceValues, crate::app::stream_2::Stream_2, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_serialize::get_method_info().method_ptr);
-        inner(this, stream, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_deserialize {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::stream_2::Stream_2 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitEnhanceValues as ::unity2::ClassIdentity>::class(),
-                "Deserialize",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnitEnhanceValues as ::unity2::ClassIdentity>::NAME,
-                        "Deserialize",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn deserialize(this: UnitEnhanceValues, stream: crate::app::stream_2::Stream_2, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(UnitEnhanceValues, crate::app::stream_2::Stream_2, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_deserialize::get_method_info().method_ptr);
-        inner(this, stream, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_item {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitEnhanceValues as ::unity2::ClassIdentity>::class(),
-                "get_Item",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnitEnhanceValues as ::unity2::ClassIdentity>::NAME,
-                        "get_Item",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_item(this: UnitEnhanceValues, index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(UnitEnhanceValues, i32, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_item::get_method_info().method_ptr);
-        inner(this, index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_item {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitEnhanceValues as ::unity2::ClassIdentity>::class(),
-                "set_Item",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnitEnhanceValues as ::unity2::ClassIdentity>::NAME,
-                        "set_Item",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_item(this: UnitEnhanceValues, index: i32, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(UnitEnhanceValues, i32, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_item::get_method_info().method_ptr);
-        inner(this, index, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_name_for_debug {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitEnhanceValues as ::unity2::ClassIdentity>::class(),
-                "GetNameForDebug",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnitEnhanceValues as ::unity2::ClassIdentity>::NAME,
-                        "GetNameForDebug",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_name_for_debug(index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_name_for_debug::get_method_info().method_ptr);
-        inner(index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitEnhanceValues as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnitEnhanceValues as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: UnitEnhanceValues, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(UnitEnhanceValues, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __UnitEnhanceValues_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_zero { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitEnhanceValues as :: unity2 :: ClassIdentity > :: class () , "IsZero" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitEnhanceValues as :: unity2 :: ClassIdentity > :: NAME , "IsZero" , e) , } } } pub unsafe fn is_zero (this : UnitEnhanceValues , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (UnitEnhanceValues , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_zero :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unitenhancevalues :: UnitEnhanceValues as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitEnhanceValues as :: unity2 :: ClassIdentity > :: class () , "Set" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitEnhanceValues as :: unity2 :: ClassIdentity > :: NAME , "Set" , e) , } } } pub unsafe fn set (this : UnitEnhanceValues , values : crate :: app :: unitenhancevalues :: UnitEnhanceValues , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitEnhanceValues , crate :: app :: unitenhancevalues :: UnitEnhanceValues , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set :: get_method_info () . method_ptr ,) ; inner (this , values , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unitenhancevalues :: UnitEnhanceValues as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitEnhanceValues as :: unity2 :: ClassIdentity > :: class () , "Add" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitEnhanceValues as :: unity2 :: ClassIdentity > :: NAME , "Add" , e) , } } } pub unsafe fn add (this : UnitEnhanceValues , values : crate :: app :: unitenhancevalues :: UnitEnhanceValues , is_not_enhance : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitEnhanceValues , crate :: app :: unitenhancevalues :: UnitEnhanceValues , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add :: get_method_info () . method_ptr ,) ; inner (this , values , is_not_enhance , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_sub { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unitenhancevalues :: UnitEnhanceValues as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitEnhanceValues as :: unity2 :: ClassIdentity > :: class () , "Sub" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitEnhanceValues as :: unity2 :: ClassIdentity > :: NAME , "Sub" , e) , } } } pub unsafe fn sub (this : UnitEnhanceValues , values : crate :: app :: unitenhancevalues :: UnitEnhanceValues , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitEnhanceValues , crate :: app :: unitenhancevalues :: UnitEnhanceValues , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_sub :: get_method_info () . method_ptr ,) ; inner (this , values , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_merge { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unitenhancevalues :: UnitEnhanceValues as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitEnhanceValues as :: unity2 :: ClassIdentity > :: class () , "Merge" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitEnhanceValues as :: unity2 :: ClassIdentity > :: NAME , "Merge" , e) , } } } pub unsafe fn merge (this : UnitEnhanceValues , values : crate :: app :: unitenhancevalues :: UnitEnhanceValues , is_not_enhance : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitEnhanceValues , crate :: app :: unitenhancevalues :: UnitEnhanceValues , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_merge :: get_method_info () . method_ptr ,) ; inner (this , values , is_not_enhance , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: capabilitysbyte :: CapabilitySbyte as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitEnhanceValues as :: unity2 :: ClassIdentity > :: class () , "Set" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitEnhanceValues as :: unity2 :: ClassIdentity > :: NAME , "Set" , e) , } } } pub unsafe fn set_2 (this : UnitEnhanceValues , capability : crate :: app :: capabilitysbyte :: CapabilitySbyte , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitEnhanceValues , crate :: app :: capabilitysbyte :: CapabilitySbyte , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_2 :: get_method_info () . method_ptr ,) ; inner (this , capability , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: capabilitysbyte :: CapabilitySbyte as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitEnhanceValues as :: unity2 :: ClassIdentity > :: class () , "Add" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitEnhanceValues as :: unity2 :: ClassIdentity > :: NAME , "Add" , e) , } } } pub unsafe fn add_2 (this : UnitEnhanceValues , capability : crate :: app :: capabilitysbyte :: CapabilitySbyte , is_not_enhance : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitEnhanceValues , crate :: app :: capabilitysbyte :: CapabilitySbyte , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_2 :: get_method_info () . method_ptr ,) ; inner (this , capability , is_not_enhance , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_merge_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: capabilitysbyte :: CapabilitySbyte as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitEnhanceValues as :: unity2 :: ClassIdentity > :: class () , "Merge" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitEnhanceValues as :: unity2 :: ClassIdentity > :: NAME , "Merge" , e) , } } } pub unsafe fn merge_2 (this : UnitEnhanceValues , capability : crate :: app :: capabilitysbyte :: CapabilitySbyte , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitEnhanceValues , crate :: app :: capabilitysbyte :: CapabilitySbyte , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_merge_2 :: get_method_info () . method_ptr ,) ; inner (this , capability , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_3 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: capabilitysbyte :: CapabilitySbyte as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitEnhanceValues as :: unity2 :: ClassIdentity > :: class () , "Add" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitEnhanceValues as :: unity2 :: ClassIdentity > :: NAME , "Add" , e) , } } } pub unsafe fn add_3 (this : UnitEnhanceValues , capability : crate :: app :: capabilitysbyte :: CapabilitySbyte , decay : i32 , is_not_enhance : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitEnhanceValues , crate :: app :: capabilitysbyte :: CapabilitySbyte , i32 , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_3 :: get_method_info () . method_ptr ,) ; inner (this , capability , decay , is_not_enhance , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_4 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: capabilitydefinition :: CapabilityDefinition_Type as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitEnhanceValues as :: unity2 :: ClassIdentity > :: class () , "Add" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitEnhanceValues as :: unity2 :: ClassIdentity > :: NAME , "Add" , e) , } } } pub unsafe fn add_4 (this : UnitEnhanceValues , r#type : crate :: app :: capabilitydefinition :: CapabilityDefinition_Type , value : i32 , is_not_enhance : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitEnhanceValues , crate :: app :: capabilitydefinition :: CapabilityDefinition_Type , i32 , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_4 :: get_method_info () . method_ptr ,) ; inner (this , r#type , value , is_not_enhance , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_clear { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitEnhanceValues as :: unity2 :: ClassIdentity > :: class () , "Clear" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitEnhanceValues as :: unity2 :: ClassIdentity > :: NAME , "Clear" , e) , } } } pub unsafe fn clear (this : UnitEnhanceValues , value : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitEnhanceValues , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_clear :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_clamp { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitEnhanceValues as :: unity2 :: ClassIdentity > :: class () , "Clamp" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitEnhanceValues as :: unity2 :: ClassIdentity > :: NAME , "Clamp" , e) , } } } pub unsafe fn clamp (this : UnitEnhanceValues , min : i32 , max : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitEnhanceValues , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_clamp :: get_method_info () . method_ptr ,) ; inner (this , min , max , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_serialize { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: stream_2 :: Stream_2 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitEnhanceValues as :: unity2 :: ClassIdentity > :: class () , "Serialize" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitEnhanceValues as :: unity2 :: ClassIdentity > :: NAME , "Serialize" , e) , } } } pub unsafe fn serialize (this : UnitEnhanceValues , stream : crate :: app :: stream_2 :: Stream_2 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitEnhanceValues , crate :: app :: stream_2 :: Stream_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_serialize :: get_method_info () . method_ptr ,) ; inner (this , stream , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_deserialize { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: stream_2 :: Stream_2 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitEnhanceValues as :: unity2 :: ClassIdentity > :: class () , "Deserialize" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitEnhanceValues as :: unity2 :: ClassIdentity > :: NAME , "Deserialize" , e) , } } } pub unsafe fn deserialize (this : UnitEnhanceValues , stream : crate :: app :: stream_2 :: Stream_2 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitEnhanceValues , crate :: app :: stream_2 :: Stream_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_deserialize :: get_method_info () . method_ptr ,) ; inner (this , stream , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_item { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitEnhanceValues as :: unity2 :: ClassIdentity > :: class () , "get_Item" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitEnhanceValues as :: unity2 :: ClassIdentity > :: NAME , "get_Item" , e) , } } } pub unsafe fn get_item (this : UnitEnhanceValues , index : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (UnitEnhanceValues , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_item :: get_method_info () . method_ptr ,) ; inner (this , index , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_item { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitEnhanceValues as :: unity2 :: ClassIdentity > :: class () , "set_Item" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitEnhanceValues as :: unity2 :: ClassIdentity > :: NAME , "set_Item" , e) , } } } pub unsafe fn set_item (this : UnitEnhanceValues , index : i32 , value : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitEnhanceValues , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_item :: get_method_info () . method_ptr ,) ; inner (this , index , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_name_for_debug { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitEnhanceValues as :: unity2 :: ClassIdentity > :: class () , "GetNameForDebug" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitEnhanceValues as :: unity2 :: ClassIdentity > :: NAME , "GetNameForDebug" , e) , } } } pub unsafe fn get_name_for_debug (index : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_name_for_debug :: get_method_info () . method_ptr ,) ; inner (index , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitEnhanceValues as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitEnhanceValues as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : UnitEnhanceValues , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitEnhanceValues , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-unitenhancevalues")]
+impl UnitEnhanceValues { # [doc = "`GetNameForDebug(i32)` overload"] pub fn get_name_for_debug (index : impl :: core :: convert :: Into < i32 >) -> :: unity2 :: Il2CppString { unsafe { __UnitEnhanceValues_unity2_raw :: get_name_for_debug (:: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-unitenhancevalues")]
+pub trait IUnitEnhanceValuesMethods : IUnitEnhanceValues { # [doc = "`IsZero()` overload"] fn is_zero (self ,) -> bool { unsafe { let __receiver = < UnitEnhanceValues as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitEnhanceValues_unity2_raw :: is_zero (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Set(crate::app::unitenhancevalues::UnitEnhanceValues)` overload"] fn set (self , values : impl :: core :: convert :: Into < crate :: app :: unitenhancevalues :: UnitEnhanceValues >) -> () { unsafe { let __receiver = < UnitEnhanceValues as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitEnhanceValues_unity2_raw :: set (__receiver , :: core :: convert :: Into :: into (values) , :: core :: option :: Option :: None) } } # [doc = "`Add(crate::app::unitenhancevalues::UnitEnhanceValues, bool)` overload"] fn add (self , values : impl :: core :: convert :: Into < crate :: app :: unitenhancevalues :: UnitEnhanceValues > , is_not_enhance : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < UnitEnhanceValues as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitEnhanceValues_unity2_raw :: add (__receiver , :: core :: convert :: Into :: into (values) , :: core :: convert :: Into :: into (is_not_enhance) , :: core :: option :: Option :: None) } } # [doc = "`Sub(crate::app::unitenhancevalues::UnitEnhanceValues)` overload"] fn sub (self , values : impl :: core :: convert :: Into < crate :: app :: unitenhancevalues :: UnitEnhanceValues >) -> () { unsafe { let __receiver = < UnitEnhanceValues as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitEnhanceValues_unity2_raw :: sub (__receiver , :: core :: convert :: Into :: into (values) , :: core :: option :: Option :: None) } } # [doc = "`Merge(crate::app::unitenhancevalues::UnitEnhanceValues, bool)` overload"] fn merge (self , values : impl :: core :: convert :: Into < crate :: app :: unitenhancevalues :: UnitEnhanceValues > , is_not_enhance : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < UnitEnhanceValues as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitEnhanceValues_unity2_raw :: merge (__receiver , :: core :: convert :: Into :: into (values) , :: core :: convert :: Into :: into (is_not_enhance) , :: core :: option :: Option :: None) } } # [doc = "`Set(crate::app::capabilitysbyte::CapabilitySbyte)` overload"] fn set_2 (self , capability : impl :: core :: convert :: Into < crate :: app :: capabilitysbyte :: CapabilitySbyte >) -> () { unsafe { let __receiver = < UnitEnhanceValues as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitEnhanceValues_unity2_raw :: set_2 (__receiver , :: core :: convert :: Into :: into (capability) , :: core :: option :: Option :: None) } } # [doc = "`Add(crate::app::capabilitysbyte::CapabilitySbyte, bool)` overload"] fn add_2 (self , capability : impl :: core :: convert :: Into < crate :: app :: capabilitysbyte :: CapabilitySbyte > , is_not_enhance : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < UnitEnhanceValues as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitEnhanceValues_unity2_raw :: add_2 (__receiver , :: core :: convert :: Into :: into (capability) , :: core :: convert :: Into :: into (is_not_enhance) , :: core :: option :: Option :: None) } } # [doc = "`Merge(crate::app::capabilitysbyte::CapabilitySbyte)` overload"] fn merge_2 (self , capability : impl :: core :: convert :: Into < crate :: app :: capabilitysbyte :: CapabilitySbyte >) -> () { unsafe { let __receiver = < UnitEnhanceValues as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitEnhanceValues_unity2_raw :: merge_2 (__receiver , :: core :: convert :: Into :: into (capability) , :: core :: option :: Option :: None) } } # [doc = "`Add(crate::app::capabilitysbyte::CapabilitySbyte, i32, bool)` overload"] fn add_3 (self , capability : impl :: core :: convert :: Into < crate :: app :: capabilitysbyte :: CapabilitySbyte > , decay : impl :: core :: convert :: Into < i32 > , is_not_enhance : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < UnitEnhanceValues as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitEnhanceValues_unity2_raw :: add_3 (__receiver , :: core :: convert :: Into :: into (capability) , :: core :: convert :: Into :: into (decay) , :: core :: convert :: Into :: into (is_not_enhance) , :: core :: option :: Option :: None) } } # [doc = "`Add(crate::app::capabilitydefinition::CapabilityDefinition_Type, i32, bool)` overload"] fn add_4 (self , r#type : impl :: core :: convert :: Into < crate :: app :: capabilitydefinition :: CapabilityDefinition_Type > , value : impl :: core :: convert :: Into < i32 > , is_not_enhance : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < UnitEnhanceValues as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitEnhanceValues_unity2_raw :: add_4 (__receiver , :: core :: convert :: Into :: into (r#type) , :: core :: convert :: Into :: into (value) , :: core :: convert :: Into :: into (is_not_enhance) , :: core :: option :: Option :: None) } } # [doc = "`Clear(i32)` overload"] fn clear (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < UnitEnhanceValues as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitEnhanceValues_unity2_raw :: clear (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`Clamp(i32, i32)` overload"] fn clamp (self , min : impl :: core :: convert :: Into < i32 > , max : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < UnitEnhanceValues as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitEnhanceValues_unity2_raw :: clamp (__receiver , :: core :: convert :: Into :: into (min) , :: core :: convert :: Into :: into (max) , :: core :: option :: Option :: None) } } # [doc = "`Serialize(crate::app::stream_2::Stream_2)` overload"] fn serialize (self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 >) -> () { unsafe { let __receiver = < UnitEnhanceValues as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitEnhanceValues_unity2_raw :: serialize (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: option :: Option :: None) } } # [doc = "`Deserialize(crate::app::stream_2::Stream_2)` overload"] fn deserialize (self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 >) -> () { unsafe { let __receiver = < UnitEnhanceValues as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitEnhanceValues_unity2_raw :: deserialize (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: option :: Option :: None) } } # [doc = "`get_Item(i32)` overload"] fn get_item (self , index : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { let __receiver = < UnitEnhanceValues as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitEnhanceValues_unity2_raw :: get_item (__receiver , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } # [doc = "`set_Item(i32, i32)` overload"] fn set_item (self , index : impl :: core :: convert :: Into < i32 > , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < UnitEnhanceValues as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitEnhanceValues_unity2_raw :: set_item (__receiver , :: core :: convert :: Into :: into (index) , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < UnitEnhanceValues as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitEnhanceValues_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-unitenhancevalues")]
+impl < __T : IUnitEnhanceValues > IUnitEnhanceValuesMethods for __T { }
+
+#[cfg(feature = "app-unitenhancevalues")]
+impl UnitEnhanceValues { pub fn is_zero_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitEnhanceValues_unity2_raw :: __lookup_is_zero :: get_method_info () } pub fn set_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitEnhanceValues_unity2_raw :: __lookup_set :: get_method_info () } pub fn add_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitEnhanceValues_unity2_raw :: __lookup_add :: get_method_info () } pub fn sub_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitEnhanceValues_unity2_raw :: __lookup_sub :: get_method_info () } pub fn merge_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitEnhanceValues_unity2_raw :: __lookup_merge :: get_method_info () } pub fn set_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitEnhanceValues_unity2_raw :: __lookup_set_2 :: get_method_info () } pub fn add_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitEnhanceValues_unity2_raw :: __lookup_add_2 :: get_method_info () } pub fn merge_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitEnhanceValues_unity2_raw :: __lookup_merge_2 :: get_method_info () } pub fn add_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitEnhanceValues_unity2_raw :: __lookup_add_3 :: get_method_info () } pub fn add_4_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitEnhanceValues_unity2_raw :: __lookup_add_4 :: get_method_info () } pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitEnhanceValues_unity2_raw :: __lookup_clear :: get_method_info () } pub fn clamp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitEnhanceValues_unity2_raw :: __lookup_clamp :: get_method_info () } pub fn serialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitEnhanceValues_unity2_raw :: __lookup_serialize :: get_method_info () } pub fn deserialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitEnhanceValues_unity2_raw :: __lookup_deserialize :: get_method_info () } pub fn get_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitEnhanceValues_unity2_raw :: __lookup_get_item :: get_method_info () } pub fn set_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitEnhanceValues_unity2_raw :: __lookup_set_item :: get_method_info () } pub fn get_name_for_debug_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitEnhanceValues_unity2_raw :: __lookup_get_name_for_debug :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitEnhanceValues_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-unitenhancevalues")]
 impl UnitEnhanceValues {
-    #[doc = "`GetNameForDebug(i32)` overload"]
-    pub fn get_name_for_debug(index: impl ::core::convert::Into<i32>) -> ::unity2::Il2CppString {
-        unsafe { __UnitEnhanceValues_unity2_raw::get_name_for_debug(::core::convert::Into::into(index), ::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-unitenhancevalues")]
-pub trait IUnitEnhanceValuesMethods: IUnitEnhanceValues {
-    #[doc = "`IsZero()` overload"]
-    fn is_zero(self) -> bool {
-        unsafe {
-            let __receiver = <UnitEnhanceValues as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnitEnhanceValues_unity2_raw::is_zero(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Set(crate::app::unitenhancevalues::UnitEnhanceValues)` overload"]
-    fn set(self, values: impl ::core::convert::Into<crate::app::unitenhancevalues::UnitEnhanceValues>) -> () {
-        unsafe {
-            let __receiver = <UnitEnhanceValues as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnitEnhanceValues_unity2_raw::set(__receiver, ::core::convert::Into::into(values), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Add(crate::app::unitenhancevalues::UnitEnhanceValues, bool)` overload"]
-    fn add(
-        self,
-        values: impl ::core::convert::Into<crate::app::unitenhancevalues::UnitEnhanceValues>,
-        is_not_enhance: impl ::core::convert::Into<bool>,
-    ) -> () {
-        unsafe {
-            let __receiver = <UnitEnhanceValues as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnitEnhanceValues_unity2_raw::add(
-                __receiver,
-                ::core::convert::Into::into(values),
-                ::core::convert::Into::into(is_not_enhance),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Sub(crate::app::unitenhancevalues::UnitEnhanceValues)` overload"]
-    fn sub(self, values: impl ::core::convert::Into<crate::app::unitenhancevalues::UnitEnhanceValues>) -> () {
-        unsafe {
-            let __receiver = <UnitEnhanceValues as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnitEnhanceValues_unity2_raw::sub(__receiver, ::core::convert::Into::into(values), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Merge(crate::app::unitenhancevalues::UnitEnhanceValues, bool)` overload"]
-    fn merge(
-        self,
-        values: impl ::core::convert::Into<crate::app::unitenhancevalues::UnitEnhanceValues>,
-        is_not_enhance: impl ::core::convert::Into<bool>,
-    ) -> () {
-        unsafe {
-            let __receiver = <UnitEnhanceValues as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnitEnhanceValues_unity2_raw::merge(
-                __receiver,
-                ::core::convert::Into::into(values),
-                ::core::convert::Into::into(is_not_enhance),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Set(crate::app::capabilitysbyte::CapabilitySbyte)` overload"]
-    fn set_2(self, capability: impl ::core::convert::Into<crate::app::capabilitysbyte::CapabilitySbyte>) -> () {
-        unsafe {
-            let __receiver = <UnitEnhanceValues as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnitEnhanceValues_unity2_raw::set_2(__receiver, ::core::convert::Into::into(capability), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Add(crate::app::capabilitysbyte::CapabilitySbyte, bool)` overload"]
-    fn add_2(
-        self,
-        capability: impl ::core::convert::Into<crate::app::capabilitysbyte::CapabilitySbyte>,
-        is_not_enhance: impl ::core::convert::Into<bool>,
-    ) -> () {
-        unsafe {
-            let __receiver = <UnitEnhanceValues as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnitEnhanceValues_unity2_raw::add_2(
-                __receiver,
-                ::core::convert::Into::into(capability),
-                ::core::convert::Into::into(is_not_enhance),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Merge(crate::app::capabilitysbyte::CapabilitySbyte)` overload"]
-    fn merge_2(self, capability: impl ::core::convert::Into<crate::app::capabilitysbyte::CapabilitySbyte>) -> () {
-        unsafe {
-            let __receiver = <UnitEnhanceValues as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnitEnhanceValues_unity2_raw::merge_2(__receiver, ::core::convert::Into::into(capability), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Add(crate::app::capabilitysbyte::CapabilitySbyte, i32, bool)` overload"]
-    fn add_3(
-        self,
-        capability: impl ::core::convert::Into<crate::app::capabilitysbyte::CapabilitySbyte>,
-        decay: impl ::core::convert::Into<i32>,
-        is_not_enhance: impl ::core::convert::Into<bool>,
-    ) -> () {
-        unsafe {
-            let __receiver = <UnitEnhanceValues as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnitEnhanceValues_unity2_raw::add_3(
-                __receiver,
-                ::core::convert::Into::into(capability),
-                ::core::convert::Into::into(decay),
-                ::core::convert::Into::into(is_not_enhance),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Add(crate::app::capabilitydefinition::CapabilityDefinition_Type, i32, bool)` overload"]
-    fn add_4(
-        self,
-        r#type: impl ::core::convert::Into<crate::app::capabilitydefinition::CapabilityDefinition_Type>,
-        value: impl ::core::convert::Into<i32>,
-        is_not_enhance: impl ::core::convert::Into<bool>,
-    ) -> () {
-        unsafe {
-            let __receiver = <UnitEnhanceValues as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnitEnhanceValues_unity2_raw::add_4(
-                __receiver,
-                ::core::convert::Into::into(r#type),
-                ::core::convert::Into::into(value),
-                ::core::convert::Into::into(is_not_enhance),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Clear(i32)` overload"]
-    fn clear(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver = <UnitEnhanceValues as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnitEnhanceValues_unity2_raw::clear(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Clamp(i32, i32)` overload"]
-    fn clamp(self, min: impl ::core::convert::Into<i32>, max: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver = <UnitEnhanceValues as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnitEnhanceValues_unity2_raw::clamp(
-                __receiver,
-                ::core::convert::Into::into(min),
-                ::core::convert::Into::into(max),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Serialize(crate::app::stream_2::Stream_2)` overload"]
-    fn serialize(self, stream: impl ::core::convert::Into<crate::app::stream_2::Stream_2>) -> () {
-        unsafe {
-            let __receiver = <UnitEnhanceValues as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnitEnhanceValues_unity2_raw::serialize(__receiver, ::core::convert::Into::into(stream), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Deserialize(crate::app::stream_2::Stream_2)` overload"]
-    fn deserialize(self, stream: impl ::core::convert::Into<crate::app::stream_2::Stream_2>) -> () {
-        unsafe {
-            let __receiver = <UnitEnhanceValues as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnitEnhanceValues_unity2_raw::deserialize(__receiver, ::core::convert::Into::into(stream), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Item(i32)` overload"]
-    fn get_item(self, index: impl ::core::convert::Into<i32>) -> i32 {
-        unsafe {
-            let __receiver = <UnitEnhanceValues as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnitEnhanceValues_unity2_raw::get_item(__receiver, ::core::convert::Into::into(index), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_Item(i32, i32)` overload"]
-    fn set_item(self, index: impl ::core::convert::Into<i32>, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver = <UnitEnhanceValues as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnitEnhanceValues_unity2_raw::set_item(
-                __receiver,
-                ::core::convert::Into::into(index),
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <UnitEnhanceValues as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnitEnhanceValues_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-unitenhancevalues")]
-impl<__T: IUnitEnhanceValues> IUnitEnhanceValuesMethods for __T {}
-
-#[cfg(feature = "app-unitenhancevalues")]
-impl UnitEnhanceValues {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(UnitEnhanceValues),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IUnitEnhanceValuesMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (UnitEnhanceValues) , :: core :: stringify ! (new) ,)) ; < Self as IUnitEnhanceValuesMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-unitenhancevalues")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IUnitEnhanceValues, IUnitEnhanceValuesMethods, UnitEnhanceValues, UnitEnhanceValues_Type};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::system::{object::IObject, r#enum::IEnum, valuetype::IValueType};
+    pub use super::UnitEnhanceValues;
+    pub use super::IUnitEnhanceValues;
+    pub use super::IUnitEnhanceValuesMethods;
+    pub use super::UnitEnhanceValues_Type;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

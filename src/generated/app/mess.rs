@@ -2,4006 +2,745 @@
 
 #[cfg(feature = "app-mess-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        r#enum::{Enum, IEnum},
-        valuetype::{IValueType, ValueType},
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mess/Mess_IconCategory.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct Mess_IconCategory {
-        pub value: i32,
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mess/Mess_LanguageScope.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct Mess_LanguageScope {
+    pub m_count: i32,
+    pub m_name: :: unity2 :: Il2CppString,
+    pub m_lang: crate :: app :: language :: Language_Langs,
+}
+
+
+impl ::unity2::ClassIdentity for Mess_LanguageScope {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "Mess.LanguageScope";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    impl ::unity2::ClassIdentity for Mess_IconCategory {
-        const NAME: &'static str = "Mess.IconCategory";
-        const NAMESPACE: &'static str = "App";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl ::unity2::IlType for Mess_LanguageScope {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::IlType for Mess_IconCategory {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mess/Mess_ReloadFileInfo.md"))] # [:: unity2 :: class (namespace = "App" , name = "Mess.ReloadFileInfo")] # [parent (crate :: system :: object :: Object)] pub struct Mess_ReloadFileInfo {
+# [offset (16)] # [rename (name = "m_fileName")] pub m_file_name : :: unity2 :: Il2CppString ,
+# [offset (24)] # [rename (name = "m_refCount")] pub m_ref_count : i32 ,
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mess/Mess_TagGroup.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct Mess_TagGroup  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for Mess_TagGroup  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "Mess.TagGroup";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl Mess_IconCategory {
-        pub fn item() -> Self {
-            Self { value: 0 }
-        }
+}
 
-        pub fn skill() -> Self {
-            Self { value: 1 }
-        }
 
-        pub fn system() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn god_symbol_engrave() -> Self {
-            Self { value: 3 }
-        }
+impl  ::unity2::IlType for Mess_TagGroup  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mess/Mess_TagID_Localize.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct Mess_TagID_Localize {
-        pub value: i32,
+}
+
+
+impl  Mess_TagGroup  {
+    pub fn system() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl ::unity2::ClassIdentity for Mess_TagID_Localize {
-        const NAME: &'static str = "Mess.TagID_Localize";
-        const NAMESPACE: &'static str = "App";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+    pub fn arg() -> Self {
+        Self { value: 1 }
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
     }
 
-    impl ::unity2::IlType for Mess_TagID_Localize {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+
+    pub fn talk_type() -> Self {
+        Self { value: 2 }
+
     }
 
-    impl Mess_TagID_Localize {
-        pub fn mf_tag() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn uncap() -> Self {
-            Self { value: 1 }
-        }
+    pub fn window() -> Self {
+        Self { value: 3 }
 
-        pub fn c_nthird() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn t_wthird() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn k_rppn01() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn k_rppn02() -> Self {
-            Self { value: 5 }
-        }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mess/Mess_LanguageScope.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct Mess_LanguageScope {
-        pub m_count: i32,
-        pub m_name: ::unity2::Il2CppString,
-        pub m_lang: crate::app::language::Language_Langs,
+
+    pub fn wait() -> Self {
+        Self { value: 4 }
+
     }
 
-    impl ::unity2::ClassIdentity for Mess_LanguageScope {
-        const NAME: &'static str = "Mess.LanguageScope";
-        const NAMESPACE: &'static str = "App";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+    pub fn expression() -> Self {
+        Self { value: 5 }
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
     }
 
-    impl ::unity2::IlType for Mess_LanguageScope {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+
+    pub fn name() -> Self {
+        Self { value: 6 }
+
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mess/Mess_TagID_Name.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct Mess_TagID_Name {
-        pub value: i32,
+
+    pub fn fade() -> Self {
+        Self { value: 7 }
+
     }
 
-    impl ::unity2::ClassIdentity for Mess_TagID_Name {
-        const NAME: &'static str = "Mess.TagID_Name";
-        const NAMESPACE: &'static str = "App";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+    pub fn icon() -> Self {
+        Self { value: 8 }
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
     }
 
-    impl ::unity2::IlType for Mess_TagID_Name {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+
+    pub fn text() -> Self {
+        Self { value: 9 }
+
     }
 
-    impl Mess_TagID_Name {
-        pub fn replace() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn publish() -> Self {
-            Self { value: 1 }
-        }
+    pub fn localize() -> Self {
+        Self { value: 10 }
 
-        pub fn private() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn user() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn partner() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn mascot() -> Self {
-            Self { value: 5 }
-        }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mess/Mess_TagID_Text.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct Mess_TagID_Text {
-        pub value: i32,
+
+    pub fn picture() -> Self {
+        Self { value: 11 }
+
     }
 
-    impl ::unity2::ClassIdentity for Mess_TagID_Text {
-        const NAME: &'static str = "Mess.TagID_Text";
-        const NAMESPACE: &'static str = "App";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mess/Mess_TagID_Text.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct Mess_TagID_Text  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for Mess_TagID_Text  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "Mess.TagID_Text";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for Mess_TagID_Text {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  ::unity2::IlType for Mess_TagID_Text  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl Mess_TagID_Text {
-        pub fn space() -> Self {
-            Self { value: 0 }
-        }
+}
+
+
+impl  Mess_TagID_Text  {
+    pub fn space() -> Self {
+        Self { value: 0 }
+
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mess/Mess_ArgScope.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct Mess_ArgScope {
-        pub current: ::unity2::Array<::unity2::Il2CppString>,
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mess/Mess_TagID_Name.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct Mess_TagID_Name  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for Mess_TagID_Name  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "Mess.TagID_Name";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    impl ::unity2::ClassIdentity for Mess_ArgScope {
-        const NAME: &'static str = "Mess.ArgScope";
-        const NAMESPACE: &'static str = "App";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  ::unity2::IlType for Mess_TagID_Name  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::IlType for Mess_ArgScope {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  Mess_TagID_Name  {
+    pub fn replace() -> Self {
+        Self { value: 0 }
+
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mess/Mess_TagID_Arg.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct Mess_TagID_Arg {
-        pub value: i32,
+
+    pub fn publish() -> Self {
+        Self { value: 1 }
+
     }
 
-    impl ::unity2::ClassIdentity for Mess_TagID_Arg {
-        const NAME: &'static str = "Mess.TagID_Arg";
-        const NAMESPACE: &'static str = "App";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+    pub fn private() -> Self {
+        Self { value: 2 }
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
     }
 
-    impl ::unity2::IlType for Mess_TagID_Arg {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+
+    pub fn user() -> Self {
+        Self { value: 3 }
+
     }
 
-    impl Mess_TagID_Arg {
-        pub fn arg0() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn arg1() -> Self {
-            Self { value: 1 }
-        }
+    pub fn partner() -> Self {
+        Self { value: 4 }
 
-        pub fn arg2() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn arg3() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn arg4() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn arg5() -> Self {
-            Self { value: 5 }
-        }
-
-        pub fn arg6() -> Self {
-            Self { value: 6 }
-        }
-
-        pub fn arg7() -> Self {
-            Self { value: 7 }
-        }
-
-        pub fn arg_b() -> Self {
-            Self { value: 8 }
-        }
-
-        pub fn arg_bs() -> Self {
-            Self { value: 9 }
-        }
-
-        pub fn arg_b_uncap() -> Self {
-            Self { value: 10 }
-        }
-
-        pub fn arg_bs_uncap() -> Self {
-            Self { value: 11 }
-        }
-
-        pub fn arg_max() -> Self {
-            Self { value: 8 }
-        }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mess/Mess.md"))]
-    #[::unity2::class(namespace = "App", name = "Mess")]
-    #[parent(crate::system::object::Object)]
-    pub struct Mess {
-        #[static_field]
-        #[rename(name = "CharSize")]
-        pub char_size: i32,
-        #[static_field]
-        #[rename(name = "ShiftIn")]
-        pub shift_in: u16,
-        #[static_field]
-        #[rename(name = "ShiftOut")]
-        pub shift_out: u16,
-        #[static_field]
-        #[rename(name = "NotFoundText")]
-        pub not_found_text: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "FileName_HubCommon")]
-        pub file_name_hub_common: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "FileNameHeader_Reliance")]
-        pub file_name_header_reliance: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "FileNameHeader_GodReliance")]
-        pub file_name_header_god_reliance: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "FileNameHeader_MainScenario")]
-        pub file_name_header_main_scenario: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "FileNameHeader_SideScenario")]
-        pub file_name_header_side_scenario: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "FileNameHeader_GodScenario")]
-        pub file_name_header_god_scenario: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "FileNameHeader_EvilScenario")]
-        pub file_name_header_evil_scenario: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "LabelHeader_Reliance")]
-        pub label_header_reliance: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "LabelHeader_GodReliance")]
-        pub label_header_god_reliance: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "LabelHeader_Die")]
-        pub label_header_die: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "LabelHeader_Hub")]
-        pub label_header_hub: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "ReplaceStr_DefaultHeroName")]
-        pub replace_str_default_hero_name: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "ReplaceStr_DefaultMorphName")]
-        pub replace_str_default_morph_name: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "ReplaceStr_DefaultMascotName")]
-        pub replace_str_default_mascot_name: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "ReplaceStr_CNThirdTagMale")]
-        pub replace_str_cn_third_tag_male: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "ReplaceStr_CNThirdTagFemale")]
-        pub replace_str_cn_third_tag_female: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "ReplaceStr_TWThirdTagMale")]
-        pub replace_str_tw_third_tag_male: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "ReplaceStr_TWThirdTagFemale")]
-        pub replace_str_tw_third_tag_female: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "ReplaceStr_Bracelet")]
-        pub replace_str_bracelet: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "ReplaceStr_Bracelets")]
-        pub replace_str_bracelets: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "ReplaceStr_Bracelet_UNCAP")]
-        pub replace_str_bracelet_uncap: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "ReplaceStr_Bracelets_UNCAP")]
-        pub replace_str_bracelets_uncap: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "s_messFileDictionary")]
-        pub s_mess_file_dictionary:
-            crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, crate::app::msgfile::MsgFile>,
-        #[static_field]
-        #[rename(name = "s_soundCmdFileDictionary")]
-        pub s_sound_cmd_file_dictionary:
-            crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, crate::app::msgfile::MsgFile>,
-        #[static_field]
-        #[rename(name = "s_eventCmdFileDictionary")]
-        pub s_event_cmd_file_dictionary:
-            crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, crate::app::msgfile::MsgFile>,
-        #[static_field]
-        #[rename(name = "s_messDataDictionary")]
-        pub s_mess_data_dictionary: crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, ::unity2::IntPtr>,
-        #[static_field]
-        #[rename(name = "s_soundCmdDataDictionary")]
-        pub s_sound_cmd_data_dictionary: crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, ::unity2::IntPtr>,
-        #[static_field]
-        #[rename(name = "s_eventCmdDataDictionary")]
-        pub s_event_cmd_data_dictionary: crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, ::unity2::IntPtr>,
-        #[static_field]
-        #[rename(name = "s_pathDictionary")]
-        pub s_path_dictionary: crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, ::unity2::Il2CppString>,
-        #[static_field]
-        #[rename(name = "s_checkStack")]
-        pub s_check_stack: crate::system::collections::generic::stack_1::Stack_1<
-            crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, i32>,
-        >,
-        #[static_field]
-        #[rename(name = "s_mess")]
-        pub s_mess: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "s_isBody")]
-        pub s_is_body: bool,
-        #[static_field]
-        #[rename(name = "s_isStrToLower")]
-        pub s_is_str_to_lower: bool,
-        #[static_field]
-        #[rename(name = "s_isNesting")]
-        pub s_is_nesting: bool,
-        #[static_field]
-        #[rename(name = "ArgMax")]
-        pub arg_max: i32,
-        #[static_field]
-        #[rename(name = "ArgStack")]
-        pub arg_stack: i32,
-        #[static_field]
-        #[rename(name = "s_argArray")]
-        pub s_arg_array: ::unity2::Array<::unity2::Il2CppString>,
-        #[static_field]
-        #[rename(name = "s_argStack")]
-        pub s_arg_stack: crate::system::collections::generic::stack_1::Stack_1<::unity2::Array<::unity2::Il2CppString>>,
-        #[static_field]
-        #[rename(name = "s_partnerPid")]
-        pub s_partner_pid: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "s_spriteAssetHandleDictionary")]
-        pub s_sprite_asset_handle_dictionary:
-            crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, crate::app::resourcehandle_2::ResourceHandle_2>,
+
+    pub fn mascot() -> Self {
+        Self { value: 5 }
+
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mess/Mess_ReloadFileInfo.md"))]
-    #[::unity2::class(namespace = "App", name = "Mess.ReloadFileInfo")]
-    #[parent(crate::system::object::Object)]
-    pub struct Mess_ReloadFileInfo {
-        #[offset(16)]
-        #[rename(name = "m_fileName")]
-        pub m_file_name: ::unity2::Il2CppString,
-        #[offset(24)]
-        #[rename(name = "m_refCount")]
-        pub m_ref_count: i32,
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mess/Mess_ArgScope.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct Mess_ArgScope {
+    pub current: :: unity2 :: Array < :: unity2 :: Il2CppString >,
+}
+
+
+impl ::unity2::ClassIdentity for Mess_ArgScope {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "Mess.ArgScope";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mess/Mess_TagID_Picture.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct Mess_TagID_Picture {
-        pub value: i32,
+}
+
+
+impl ::unity2::IlType for Mess_ArgScope {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::ClassIdentity for Mess_TagID_Picture {
-        const NAME: &'static str = "Mess.TagID_Picture";
-        const NAMESPACE: &'static str = "App";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mess/Mess_IconCategory.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct Mess_IconCategory  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for Mess_IconCategory  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "Mess.IconCategory";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for Mess_TagID_Picture {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  ::unity2::IlType for Mess_IconCategory  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl Mess_TagID_Picture {
-        pub fn show() -> Self {
-            Self { value: 0 }
-        }
+}
 
-        pub fn hide() -> Self {
-            Self { value: 1 }
-        }
+
+impl  Mess_IconCategory  {
+    pub fn item() -> Self {
+        Self { value: 0 }
+
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mess/Mess_TagGroup.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct Mess_TagGroup {
-        pub value: i32,
+
+    pub fn skill() -> Self {
+        Self { value: 1 }
+
     }
 
-    impl ::unity2::ClassIdentity for Mess_TagGroup {
-        const NAME: &'static str = "Mess.TagGroup";
-        const NAMESPACE: &'static str = "App";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+    pub fn system() -> Self {
+        Self { value: 2 }
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
     }
 
-    impl ::unity2::IlType for Mess_TagGroup {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+
+    pub fn god_symbol_engrave() -> Self {
+        Self { value: 3 }
+
     }
 
-    impl Mess_TagGroup {
-        pub fn system() -> Self {
-            Self { value: 0 }
-        }
+}
 
-        pub fn arg() -> Self {
-            Self { value: 1 }
-        }
 
-        pub fn talk_type() -> Self {
-            Self { value: 2 }
-        }
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mess/Mess_TagID_Arg.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct Mess_TagID_Arg  {
+    pub value: i32,
+}
 
-        pub fn window() -> Self {
-            Self { value: 3 }
-        }
 
-        pub fn wait() -> Self {
-            Self { value: 4 }
-        }
+impl  ::unity2::ClassIdentity for Mess_TagID_Arg  {
+    const NAMESPACE: &'static str = "App";
 
-        pub fn expression() -> Self {
-            Self { value: 5 }
-        }
+    const NAME: &'static str = "Mess.TagID_Arg";
 
-        pub fn name() -> Self {
-            Self { value: 6 }
-        }
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
 
-        pub fn fade() -> Self {
-            Self { value: 7 }
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
-
-        pub fn icon() -> Self {
-            Self { value: 8 }
-        }
-
-        pub fn text() -> Self {
-            Self { value: 9 }
-        }
-
-        pub fn localize() -> Self {
-            Self { value: 10 }
-        }
-
-        pub fn picture() -> Self {
-            Self { value: 11 }
-        }
+)
     }
+
+}
+
+
+impl  ::unity2::IlType for Mess_TagID_Arg  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  Mess_TagID_Arg  {
+    pub fn arg0() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn arg1() -> Self {
+        Self { value: 1 }
+
+    }
+
+
+    pub fn arg2() -> Self {
+        Self { value: 2 }
+
+    }
+
+
+    pub fn arg3() -> Self {
+        Self { value: 3 }
+
+    }
+
+
+    pub fn arg4() -> Self {
+        Self { value: 4 }
+
+    }
+
+
+    pub fn arg5() -> Self {
+        Self { value: 5 }
+
+    }
+
+
+    pub fn arg6() -> Self {
+        Self { value: 6 }
+
+    }
+
+
+    pub fn arg7() -> Self {
+        Self { value: 7 }
+
+    }
+
+
+    pub fn arg_b() -> Self {
+        Self { value: 8 }
+
+    }
+
+
+    pub fn arg_bs() -> Self {
+        Self { value: 9 }
+
+    }
+
+
+    pub fn arg_b_uncap() -> Self {
+        Self { value: 10 }
+
+    }
+
+
+    pub fn arg_bs_uncap() -> Self {
+        Self { value: 11 }
+
+    }
+
+
+    pub fn arg_max() -> Self {
+        Self { value: 8 }
+
+    }
+
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mess/Mess.md"))] # [:: unity2 :: class (namespace = "App" , name = "Mess")] # [parent (crate :: system :: object :: Object)] pub struct Mess {
+# [static_field] # [rename (name = "CharSize")] pub char_size : i32 ,
+# [static_field] # [rename (name = "ShiftIn")] pub shift_in : u16 ,
+# [static_field] # [rename (name = "ShiftOut")] pub shift_out : u16 ,
+# [static_field] # [rename (name = "NotFoundText")] pub not_found_text : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "FileName_HubCommon")] pub file_name_hub_common : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "FileNameHeader_Reliance")] pub file_name_header_reliance : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "FileNameHeader_GodReliance")] pub file_name_header_god_reliance : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "FileNameHeader_MainScenario")] pub file_name_header_main_scenario : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "FileNameHeader_SideScenario")] pub file_name_header_side_scenario : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "FileNameHeader_GodScenario")] pub file_name_header_god_scenario : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "FileNameHeader_EvilScenario")] pub file_name_header_evil_scenario : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "LabelHeader_Reliance")] pub label_header_reliance : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "LabelHeader_GodReliance")] pub label_header_god_reliance : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "LabelHeader_Die")] pub label_header_die : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "LabelHeader_Hub")] pub label_header_hub : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "ReplaceStr_DefaultHeroName")] pub replace_str_default_hero_name : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "ReplaceStr_DefaultMorphName")] pub replace_str_default_morph_name : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "ReplaceStr_DefaultMascotName")] pub replace_str_default_mascot_name : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "ReplaceStr_CNThirdTagMale")] pub replace_str_cn_third_tag_male : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "ReplaceStr_CNThirdTagFemale")] pub replace_str_cn_third_tag_female : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "ReplaceStr_TWThirdTagMale")] pub replace_str_tw_third_tag_male : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "ReplaceStr_TWThirdTagFemale")] pub replace_str_tw_third_tag_female : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "ReplaceStr_Bracelet")] pub replace_str_bracelet : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "ReplaceStr_Bracelets")] pub replace_str_bracelets : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "ReplaceStr_Bracelet_UNCAP")] pub replace_str_bracelet_uncap : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "ReplaceStr_Bracelets_UNCAP")] pub replace_str_bracelets_uncap : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "s_messFileDictionary")] pub s_mess_file_dictionary : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , crate :: app :: msgfile :: MsgFile > ,
+# [static_field] # [rename (name = "s_soundCmdFileDictionary")] pub s_sound_cmd_file_dictionary : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , crate :: app :: msgfile :: MsgFile > ,
+# [static_field] # [rename (name = "s_eventCmdFileDictionary")] pub s_event_cmd_file_dictionary : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , crate :: app :: msgfile :: MsgFile > ,
+# [static_field] # [rename (name = "s_messDataDictionary")] pub s_mess_data_dictionary : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , :: unity2 :: IntPtr > ,
+# [static_field] # [rename (name = "s_soundCmdDataDictionary")] pub s_sound_cmd_data_dictionary : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , :: unity2 :: IntPtr > ,
+# [static_field] # [rename (name = "s_eventCmdDataDictionary")] pub s_event_cmd_data_dictionary : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , :: unity2 :: IntPtr > ,
+# [static_field] # [rename (name = "s_pathDictionary")] pub s_path_dictionary : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , :: unity2 :: Il2CppString > ,
+# [static_field] # [rename (name = "s_checkStack")] pub s_check_stack : crate :: system :: collections :: generic :: stack_1 :: Stack_1 < crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , i32 > > ,
+# [static_field] # [rename (name = "s_mess")] pub s_mess : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "s_isBody")] pub s_is_body : bool ,
+# [static_field] # [rename (name = "s_isStrToLower")] pub s_is_str_to_lower : bool ,
+# [static_field] # [rename (name = "s_isNesting")] pub s_is_nesting : bool ,
+# [static_field] # [rename (name = "ArgMax")] pub arg_max : i32 ,
+# [static_field] # [rename (name = "ArgStack")] pub arg_stack : i32 ,
+# [static_field] # [rename (name = "s_argArray")] pub s_arg_array : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
+# [static_field] # [rename (name = "s_argStack")] pub s_arg_stack : crate :: system :: collections :: generic :: stack_1 :: Stack_1 < :: unity2 :: Array < :: unity2 :: Il2CppString > > ,
+# [static_field] # [rename (name = "s_partnerPid")] pub s_partner_pid : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "s_spriteAssetHandleDictionary")] pub s_sprite_asset_handle_dictionary : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , crate :: app :: resourcehandle_2 :: ResourceHandle_2 > ,
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mess/Mess_TagID_Localize.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct Mess_TagID_Localize  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for Mess_TagID_Localize  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "Mess.TagID_Localize";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for Mess_TagID_Localize  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  Mess_TagID_Localize  {
+    pub fn mf_tag() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn uncap() -> Self {
+        Self { value: 1 }
+
+    }
+
+
+    pub fn c_nthird() -> Self {
+        Self { value: 2 }
+
+    }
+
+
+    pub fn t_wthird() -> Self {
+        Self { value: 3 }
+
+    }
+
+
+    pub fn k_rppn01() -> Self {
+        Self { value: 4 }
+
+    }
+
+
+    pub fn k_rppn02() -> Self {
+        Self { value: 5 }
+
+    }
+
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mess/Mess_TagID_Picture.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct Mess_TagID_Picture  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for Mess_TagID_Picture  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "Mess.TagID_Picture";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for Mess_TagID_Picture  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  Mess_TagID_Picture  {
+    pub fn show() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn hide() -> Self {
+        Self { value: 1 }
+
+    }
+
+}
+
 }
 
 #[cfg(feature = "app-mess-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-mess")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __Mess_LanguageScope_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::app::language::Language_Langs as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess_LanguageScope as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Mess_LanguageScope as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: Mess_LanguageScope,
-        name: ::unity2::Il2CppString,
-        lang: crate::app::language::Language_Langs,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(Mess_LanguageScope, ::unity2::Il2CppString, crate::app::language::Language_Langs, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, name, lang, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_dispose {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess_LanguageScope as ::unity2::ClassIdentity>::class(),
-                "Dispose",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Mess_LanguageScope as ::unity2::ClassIdentity>::NAME,
-                        "Dispose",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn dispose(this: Mess_LanguageScope, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Mess_LanguageScope, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_dispose::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __Mess_LanguageScope_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: app :: language :: Language_Langs as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Mess_LanguageScope as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Mess_LanguageScope as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : Mess_LanguageScope , name : :: unity2 :: Il2CppString , lang : crate :: app :: language :: Language_Langs , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Mess_LanguageScope , :: unity2 :: Il2CppString , crate :: app :: language :: Language_Langs , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , name , lang , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_dispose { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Mess_LanguageScope as :: unity2 :: ClassIdentity > :: class () , "Dispose" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Mess_LanguageScope as :: unity2 :: ClassIdentity > :: NAME , "Dispose" , e) , } } } pub unsafe fn dispose (this : Mess_LanguageScope , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Mess_LanguageScope , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_dispose :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-mess")]
-impl Mess_LanguageScope {
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::app::language::Language_Langs)` overload"]
-    pub fn ctor(
-        self,
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        lang: impl ::core::convert::Into<crate::app::language::Language_Langs>,
-    ) -> () {
-        unsafe {
-            __Mess_LanguageScope_unity2_raw::ctor(
-                self,
-                ::core::convert::Into::into(name),
-                ::core::convert::Into::into(lang),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`Dispose()` overload"]
-    pub fn dispose(self) -> () {
-        unsafe { __Mess_LanguageScope_unity2_raw::dispose(self, ::core::option::Option::None) }
-    }
-}
+impl Mess_LanguageScope { # [doc = "`.ctor(::unity2::Il2CppString, crate::app::language::Language_Langs)` overload"] pub fn ctor (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , lang : impl :: core :: convert :: Into < crate :: app :: language :: Language_Langs >) -> () { unsafe { __Mess_LanguageScope_unity2_raw :: ctor (self , :: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (lang) , :: core :: option :: Option :: None) } } # [doc = "`Dispose()` overload"] pub fn dispose (self ,) -> () { unsafe { __Mess_LanguageScope_unity2_raw :: dispose (self , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-mess")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __Mess_ArgScope_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<Mess_ArgScope as ::unity2::ClassIdentity>::class(), ".ctor", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Mess_ArgScope as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: Mess_ArgScope, dummy: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Mess_ArgScope, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, dummy, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_dispose {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess_ArgScope as ::unity2::ClassIdentity>::class(),
-                "Dispose",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Mess_ArgScope as ::unity2::ClassIdentity>::NAME,
-                        "Dispose",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn dispose(this: Mess_ArgScope, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Mess_ArgScope, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_dispose::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+impl Mess_LanguageScope { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Mess_LanguageScope_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Mess_LanguageScope_unity2_raw :: __lookup_dispose :: get_method_info () } }
 
 #[cfg(feature = "app-mess")]
-impl Mess_ArgScope {
-    #[doc = "`.ctor(i32)` overload"]
-    pub fn ctor(self, dummy: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __Mess_ArgScope_unity2_raw::ctor(self, ::core::convert::Into::into(dummy), ::core::option::Option::None) }
-    }
-
-    #[doc = "`Dispose()` overload"]
-    pub fn dispose(self) -> () {
-        unsafe { __Mess_ArgScope_unity2_raw::dispose(self, ::core::option::Option::None) }
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __Mess_ReloadFileInfo_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Mess_ReloadFileInfo as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Mess_ReloadFileInfo as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : Mess_ReloadFileInfo , file_name : :: unity2 :: Il2CppString , ref_count : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Mess_ReloadFileInfo , :: unity2 :: Il2CppString , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , file_name , ref_count , __unity2_method_info) } }
 
 #[cfg(feature = "app-mess")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __Mess_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_initialize {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "Initialize", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Mess as ::unity2::ClassIdentity>::NAME,
-                        "Initialize",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn initialize(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_initialize::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update_replace_str {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess as ::unity2::ClassIdentity>::class(),
-                "UpdateReplaceStr",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Mess as ::unity2::ClassIdentity>::NAME,
-                        "UpdateReplaceStr",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update_replace_str(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_update_replace_str::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_load_sprite_asset {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "LoadSpriteAsset", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Mess as ::unity2::ClassIdentity>::NAME,
-                        "LoadSpriteAsset",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn load_sprite_asset(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_load_sprite_asset::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_load_sprite_asset_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "LoadSpriteAsset", 1, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Mess as ::unity2::ClassIdentity>::NAME,
-                        "LoadSpriteAsset",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn load_sprite_asset_2(sprite_asset_name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_load_sprite_asset_2::get_method_info().method_ptr);
-        inner(sprite_asset_name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_sprite_exist_in_sprite_asset {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess as ::unity2::ClassIdentity>::class(),
-                "IsSpriteExistInSpriteAsset",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Mess as ::unity2::ClassIdentity>::NAME,
-                        "IsSpriteExistInSpriteAsset",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_sprite_exist_in_sprite_asset(
-        sprite_asset_name: ::unity2::Il2CppString,
-        sprite_name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_sprite_exist_in_sprite_asset::get_method_info().method_ptr);
-        inner(sprite_asset_name, sprite_name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_item_sprite_assets_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::itemdata::ItemData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess as ::unity2::ClassIdentity>::class(),
-                "GetItemSpriteAssetsName",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Mess as ::unity2::ClassIdentity>::NAME,
-                        "GetItemSpriteAssetsName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_item_sprite_assets_name(
-        item: crate::app::itemdata::ItemData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(crate::app::itemdata::ItemData, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_item_sprite_assets_name::get_method_info().method_ptr);
-        inner(item, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_skill_sprite_assets_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::skilldata::SkillData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess as ::unity2::ClassIdentity>::class(),
-                "GetSkillSpriteAssetsName",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Mess as ::unity2::ClassIdentity>::NAME,
-                        "GetSkillSpriteAssetsName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_skill_sprite_assets_name(
-        skill: crate::app::skilldata::SkillData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(crate::app::skilldata::SkillData, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_skill_sprite_assets_name::get_method_info().method_ptr);
-        inner(skill, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_system_sprite_assets_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess as ::unity2::ClassIdentity>::class(),
-                "GetSystemSpriteAssetsName",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Mess as ::unity2::ClassIdentity>::NAME,
-                        "GetSystemSpriteAssetsName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_system_sprite_assets_name(
-        icon_name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_system_sprite_assets_name::get_method_info().method_ptr);
-        inner(icon_name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_god_symbol_engrave_sprite_assets_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess as ::unity2::ClassIdentity>::class(),
-                "GetGodSymbolEngraveSpriteAssetsName",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Mess as ::unity2::ClassIdentity>::NAME,
-                        "GetGodSymbolEngraveSpriteAssetsName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_god_symbol_engrave_sprite_assets_name(
-        icon_name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_god_symbol_engrave_sprite_assets_name::get_method_info().method_ptr);
-        inner(icon_name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_sprite_asset_request_callback {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess as ::unity2::ClassIdentity>::class(),
-                "OnSpriteAssetRequestCallback",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Mess as ::unity2::ClassIdentity>::NAME,
-                        "OnSpriteAssetRequestCallback",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_sprite_asset_request_callback(
-        arg: i32,
-        sprite_asset_name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset {
-        let inner: extern "C" fn(i32, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset =
-            ::core::mem::transmute(__lookup_on_sprite_asset_request_callback::get_method_info().method_ptr);
-        inner(arg, sprite_asset_name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_push_check {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "PushCheck", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Mess as ::unity2::ClassIdentity>::NAME,
-                        "PushCheck",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn push_check(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_push_check::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_pop_check {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "PopCheck", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Mess as ::unity2::ClassIdentity>::NAME, "PopCheck", e),
-            }
-        }
-    }
-    pub unsafe fn pop_check(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_pop_check::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_load {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "Load", 1, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Mess as ::unity2::ClassIdentity>::NAME, "Load", e),
-            }
-        }
-    }
-    pub unsafe fn load(file_name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_load::get_method_info().method_ptr);
-        inner(file_name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_try_load {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "TryLoad", 1, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Mess as ::unity2::ClassIdentity>::NAME, "TryLoad", e),
-            }
-        }
-    }
-    pub unsafe fn try_load(file_name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_try_load::get_method_info().method_ptr);
-        inner(file_name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_load_impl {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "LoadImpl", 2, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Mess as ::unity2::ClassIdentity>::NAME, "LoadImpl", e),
-            }
-        }
-    }
-    pub unsafe fn load_impl(file_name: ::unity2::Il2CppString, is_warning: bool, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::Il2CppString, bool, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_load_impl::get_method_info().method_ptr);
-        inner(file_name, is_warning, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_load_impl_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , crate :: app :: msgfile :: MsgFile > as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , :: unity2 :: IntPtr > as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "LoadImpl", 4, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Mess as ::unity2::ClassIdentity>::NAME, "LoadImpl", e),
-            }
-        }
-    }
-    pub unsafe fn load_impl_2(
-        file_path: ::unity2::Il2CppString,
-        file_dictionary: *mut crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, crate::app::msgfile::MsgFile>,
-        data_dictionary: *mut crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, ::unity2::IntPtr>,
-        is_warning: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            *mut crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, crate::app::msgfile::MsgFile>,
-            *mut crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, ::unity2::IntPtr>,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(__lookup_load_impl_2::get_method_info().method_ptr);
-        inner(file_path, file_dictionary, data_dictionary, is_warning, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_free {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "Free", 1, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Mess as ::unity2::ClassIdentity>::NAME, "Free", e),
-            }
-        }
-    }
-    pub unsafe fn free(file_name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_free::get_method_info().method_ptr);
-        inner(file_name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_try_free {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "TryFree", 1, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Mess as ::unity2::ClassIdentity>::NAME, "TryFree", e),
-            }
-        }
-    }
-    pub unsafe fn try_free(file_name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_try_free::get_method_info().method_ptr);
-        inner(file_name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_free_impl {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "FreeImpl", 2, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Mess as ::unity2::ClassIdentity>::NAME, "FreeImpl", e),
-            }
-        }
-    }
-    pub unsafe fn free_impl(file_name: ::unity2::Il2CppString, is_warning: bool, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::Il2CppString, bool, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_free_impl::get_method_info().method_ptr);
-        inner(file_name, is_warning, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_reference {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "GetReference", 1, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Mess as ::unity2::ClassIdentity>::NAME,
-                        "GetReference",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_reference(file_name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_reference::get_method_info().method_ptr);
-        inner(file_name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_free_impl_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , crate :: app :: msgfile :: MsgFile > as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , :: unity2 :: IntPtr > as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "FreeImpl", 4, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Mess as ::unity2::ClassIdentity>::NAME, "FreeImpl", e),
-            }
-        }
-    }
-    pub unsafe fn free_impl_2(
-        file_name: ::unity2::Il2CppString,
-        file_dictionary: *mut crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, crate::app::msgfile::MsgFile>,
-        data_dictionary: *mut crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, ::unity2::IntPtr>,
-        is_warning: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            *mut crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, crate::app::msgfile::MsgFile>,
-            *mut crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, ::unity2::IntPtr>,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(__lookup_free_impl_2::get_method_info().method_ptr);
-        inner(file_name, file_dictionary, data_dictionary, is_warning, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_reload {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "Reload", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Mess as ::unity2::ClassIdentity>::NAME, "Reload", e),
-            }
-        }
-    }
-    pub unsafe fn reload(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_reload::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_load_done {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "IsLoadDone", 1, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Mess as ::unity2::ClassIdentity>::NAME,
-                        "IsLoadDone",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_load_done(file_name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_load_done::get_method_info().method_ptr);
-        inner(file_name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_file_exist {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "IsFileExist", 1, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Mess as ::unity2::ClassIdentity>::NAME,
-                        "IsFileExist",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_file_exist(file_name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_file_exist::get_method_info().method_ptr);
-        inner(file_name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_hero_female {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "IsHeroFemale", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Mess as ::unity2::ClassIdentity>::NAME,
-                        "IsHeroFemale",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_hero_female(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_is_hero_female::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_language_directory_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess as ::unity2::ClassIdentity>::class(),
-                "GetLanguageDirectoryName",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Mess as ::unity2::ClassIdentity>::NAME,
-                        "GetLanguageDirectoryName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_language_directory_name(__unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_language_directory_name::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_mess_file_path {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess as ::unity2::ClassIdentity>::class(),
-                "CreateMessFilePath",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Mess as ::unity2::ClassIdentity>::NAME,
-                        "CreateMessFilePath",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_mess_file_path(file_name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_create_mess_file_path::get_method_info().method_ptr);
-        inner(file_name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_sound_cmd_file_path {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess as ::unity2::ClassIdentity>::class(),
-                "CreateSoundCmdFilePath",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Mess as ::unity2::ClassIdentity>::NAME,
-                        "CreateSoundCmdFilePath",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_sound_cmd_file_path(
-        file_name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_create_sound_cmd_file_path::get_method_info().method_ptr);
-        inner(file_name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_event_cmd_file_path {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess as ::unity2::ClassIdentity>::class(),
-                "CreateEventCmdFilePath",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Mess as ::unity2::ClassIdentity>::NAME,
-                        "CreateEventCmdFilePath",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_event_cmd_file_path(
-        file_name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_create_event_cmd_file_path::get_method_info().method_ptr);
-        inner(file_name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_file_path {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "GetFilePath", 1, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Mess as ::unity2::ClassIdentity>::NAME,
-                        "GetFilePath",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_file_path(label: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_file_path::get_method_info().method_ptr);
-        inner(label, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_msg_file {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "GetMsgFile", 1, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Mess as ::unity2::ClassIdentity>::NAME,
-                        "GetMsgFile",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_msg_file(file_name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::msgfile::MsgFile {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> crate::app::msgfile::MsgFile =
-            ::core::mem::transmute(__lookup_get_msg_file::get_method_info().method_ptr);
-        inner(file_name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_main_release_scenario_mess_file {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess as ::unity2::ClassIdentity>::class(),
-                "IsMainReleaseScenarioMessFile",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Mess as ::unity2::ClassIdentity>::NAME,
-                        "IsMainReleaseScenarioMessFile",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_main_release_scenario_mess_file(file_name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_main_release_scenario_mess_file::get_method_info().method_ptr);
-        inner(file_name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_dlc_scenario_mess_file {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess as ::unity2::ClassIdentity>::class(),
-                "IsDLCScenarioMessFile",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Mess as ::unity2::ClassIdentity>::NAME,
-                        "IsDLCScenarioMessFile",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_dlc_scenario_mess_file(file_name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_dlc_scenario_mess_file::get_method_info().method_ptr);
-        inner(file_name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_reliance_mess_file {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess as ::unity2::ClassIdentity>::class(),
-                "IsRelianceMessFile",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Mess as ::unity2::ClassIdentity>::NAME,
-                        "IsRelianceMessFile",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_reliance_mess_file(file_name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_reliance_mess_file::get_method_info().method_ptr);
-        inner(file_name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_god_reliance_mess_file {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess as ::unity2::ClassIdentity>::class(),
-                "IsGodRelianceMessFile",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Mess as ::unity2::ClassIdentity>::NAME,
-                        "IsGodRelianceMessFile",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_god_reliance_mess_file(file_name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_god_reliance_mess_file::get_method_info().method_ptr);
-        inner(file_name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_dump_file {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "DumpFile", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Mess as ::unity2::ClassIdentity>::NAME, "DumpFile", e),
-            }
-        }
-    }
-    pub unsafe fn dump_file(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_dump_file::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_dump_label {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "DumpLabel", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Mess as ::unity2::ClassIdentity>::NAME,
-                        "DumpLabel",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn dump_label(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_dump_label::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_all_label {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "GetAllLabel", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Mess as ::unity2::ClassIdentity>::NAME,
-                        "GetAllLabel",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_all_label(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString> {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString> =
-            ::core::mem::transmute(__lookup_get_all_label::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "Get", 1, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Mess as ::unity2::ClassIdentity>::NAME, "Get", e),
-            }
-        }
-    }
-    pub unsafe fn get(label: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get::get_method_info().method_ptr);
-        inner(label, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "Get", 2, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Mess as ::unity2::ClassIdentity>::NAME, "Get", e),
-            }
-        }
-    }
-    pub unsafe fn get_2(
-        label: ::unity2::Il2CppString,
-        arg0: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_2::get_method_info().method_ptr);
-        inner(label, arg0, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_3 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "Get", 3, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Mess as ::unity2::ClassIdentity>::NAME, "Get", e),
-            }
-        }
-    }
-    pub unsafe fn get_3(
-        label: ::unity2::Il2CppString,
-        arg0: ::unity2::Il2CppString,
-        arg1: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            ::unity2::Il2CppString,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(__lookup_get_3::get_method_info().method_ptr);
-        inner(label, arg0, arg1, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_4 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "Get", 4, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Mess as ::unity2::ClassIdentity>::NAME, "Get", e),
-            }
-        }
-    }
-    pub unsafe fn get_4(
-        label: ::unity2::Il2CppString,
-        arg0: ::unity2::Il2CppString,
-        arg1: ::unity2::Il2CppString,
-        arg2: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            ::unity2::Il2CppString,
-            ::unity2::Il2CppString,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(__lookup_get_4::get_method_info().method_ptr);
-        inner(label, arg0, arg1, arg2, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_5 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <::unity2::Array<::unity2::Il2CppString> as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "Get", 2, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Mess as ::unity2::ClassIdentity>::NAME, "Get", e),
-            }
-        }
-    }
-    pub unsafe fn get_5(
-        label: ::unity2::Il2CppString,
-        args: ::unity2::Array<::unity2::Il2CppString>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            ::unity2::Array<::unity2::Il2CppString>,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(__lookup_get_5::get_method_info().method_ptr);
-        inner(label, args, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_try_get_replace {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "TryGetReplace", 1, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Mess as ::unity2::ClassIdentity>::NAME,
-                        "TryGetReplace",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn try_get_replace(label: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_try_get_replace::get_method_info().method_ptr);
-        inner(label, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_int_ptr {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "GetIntPtr", 1, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Mess as ::unity2::ClassIdentity>::NAME,
-                        "GetIntPtr",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_int_ptr(label: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::IntPtr {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> ::unity2::IntPtr =
-            ::core::mem::transmute(__lookup_get_int_ptr::get_method_info().method_ptr);
-        inner(label, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_impl {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "GetImpl", 2, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Mess as ::unity2::ClassIdentity>::NAME, "GetImpl", e),
-            }
-        }
-    }
-    pub unsafe fn get_impl(
-        label: ::unity2::Il2CppString,
-        is_replace: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(::unity2::Il2CppString, bool, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_impl::get_method_info().method_ptr);
-        inner(label, is_replace, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_sound_cmd_text {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "GetSoundCmdText", 1, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Mess as ::unity2::ClassIdentity>::NAME,
-                        "GetSoundCmdText",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_sound_cmd_text(label: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_sound_cmd_text::get_method_info().method_ptr);
-        inner(label, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_sound_cmd_text_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "GetSoundCmdText", 3, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Mess as ::unity2::ClassIdentity>::NAME,
-                        "GetSoundCmdText",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_sound_cmd_text_2(
-        label: ::unity2::Il2CppString,
-        sound_cmd_exec_before: *mut ::unity2::Il2CppString,
-        sound_cmd_exec_after: *mut ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(::unity2::Il2CppString, *mut ::unity2::Il2CppString, *mut ::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_sound_cmd_text_2::get_method_info().method_ptr);
-        inner(label, sound_cmd_exec_before, sound_cmd_exec_after, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_event_cmd_text {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "GetEventCmdText", 1, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Mess as ::unity2::ClassIdentity>::NAME,
-                        "GetEventCmdText",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_event_cmd_text(label: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_event_cmd_text::get_method_info().method_ptr);
-        inner(label, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_event_cmd_text_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "GetEventCmdText", 3, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Mess as ::unity2::ClassIdentity>::NAME,
-                        "GetEventCmdText",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_event_cmd_text_2(
-        label: ::unity2::Il2CppString,
-        event_cmd_exec_before: *mut ::unity2::Il2CppString,
-        event_cmd_exec_after: *mut ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(::unity2::Il2CppString, *mut ::unity2::Il2CppString, *mut ::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_event_cmd_text_2::get_method_info().method_ptr);
-        inner(label, event_cmd_exec_before, event_cmd_exec_after, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_cmd_impl {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , :: unity2 :: IntPtr > as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "GetCmdImpl", 2, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Mess as ::unity2::ClassIdentity>::NAME,
-                        "GetCmdImpl",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_cmd_impl(
-        label: ::unity2::Il2CppString,
-        data_dictionary: crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, ::unity2::IntPtr>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, ::unity2::IntPtr>,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(__lookup_get_cmd_impl::get_method_info().method_ptr);
-        inner(label, data_dictionary, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_cmd_impl_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , :: unity2 :: IntPtr > as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "GetCmdImpl", 4, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Mess as ::unity2::ClassIdentity>::NAME,
-                        "GetCmdImpl",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_cmd_impl_2(
-        label: ::unity2::Il2CppString,
-        data_dictionary: crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, ::unity2::IntPtr>,
-        cmd_exec_before: *mut ::unity2::Il2CppString,
-        cmd_exec_after: *mut ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, ::unity2::IntPtr>,
-            *mut ::unity2::Il2CppString,
-            *mut ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(__lookup_get_cmd_impl_2::get_method_info().method_ptr);
-        inner(label, data_dictionary, cmd_exec_before, cmd_exec_after, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_exist {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "IsExist", 1, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Mess as ::unity2::ClassIdentity>::NAME, "IsExist", e),
-            }
-        }
-    }
-    pub unsafe fn is_exist(label: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_exist::get_method_info().method_ptr);
-        inner(label, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_nesting {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "IsNesting", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Mess as ::unity2::ClassIdentity>::NAME,
-                        "IsNesting",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_nesting(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_is_nesting::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_string {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "GetString", 3, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Mess as ::unity2::ClassIdentity>::NAME,
-                        "GetString",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_string(
-        label: ::unity2::Il2CppString,
-        p_mess_data: ::unity2::IntPtr,
-        is_replace: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::IntPtr, bool, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_string::get_method_info().method_ptr);
-        inner(label, p_mess_data, is_replace, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_read_char {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::IntPtr as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "ReadChar", 2, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Mess as ::unity2::ClassIdentity>::NAME, "ReadChar", e),
-            }
-        }
-    }
-    pub unsafe fn read_char(p: ::unity2::IntPtr, offset: i32, __unity2_method_info: ::unity2::OptionalMethod) -> u16 {
-        let inner: extern "C" fn(::unity2::IntPtr, i32, ::unity2::OptionalMethod) -> u16 =
-            ::core::mem::transmute(__lookup_read_char::get_method_info().method_ptr);
-        inner(p, offset, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_talk_string_total_width {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess as ::unity2::ClassIdentity>::class(),
-                "CalcTalkStringTotalWidth",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Mess as ::unity2::ClassIdentity>::NAME,
-                        "CalcTalkStringTotalWidth",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn calc_talk_string_total_width(mess_str: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_calc_talk_string_total_width::get_method_info().method_ptr);
-        inner(mess_str, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_wait_msec_for_talk_auto_play {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess as ::unity2::ClassIdentity>::class(),
-                "CalcWaitMsecForTalkAutoPlay",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Mess as ::unity2::ClassIdentity>::NAME,
-                        "CalcWaitMsecForTalkAutoPlay",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn calc_wait_msec_for_talk_auto_play(mess_str: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_calc_wait_msec_for_talk_auto_play::get_method_info().method_ptr);
-        inner(mess_str, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_split_cmd {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "SplitCmd", 3, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Mess as ::unity2::ClassIdentity>::NAME, "SplitCmd", e),
-            }
-        }
-    }
-    pub unsafe fn split_cmd(
-        cmd: ::unity2::Il2CppString,
-        cmd_exec_before: *mut ::unity2::Il2CppString,
-        cmd_exec_after: *mut ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(::unity2::Il2CppString, *mut ::unity2::Il2CppString, *mut ::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_split_cmd::get_method_info().method_ptr);
-        inner(cmd, cmd_exec_before, cmd_exec_after, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_tag_string {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <u16 as ::unity2::IlType>::il_type(),
-                <u16 as ::unity2::IlType>::il_type(),
-                <::unity2::Array<u8> as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "AddTagString", 3, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Mess as ::unity2::ClassIdentity>::NAME,
-                        "AddTagString",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_tag_string(tag_group_id: u16, tag_id: u16, param: ::unity2::Array<u8>, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(u16, u16, ::unity2::Array<u8>, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add_tag_string::get_method_info().method_ptr);
-        inner(tag_group_id, tag_id, param, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_replace_arg_string {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::mess::Mess_TagID_Arg as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess as ::unity2::ClassIdentity>::class(),
-                "ReplaceArgString",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Mess as ::unity2::ClassIdentity>::NAME,
-                        "ReplaceArgString",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn replace_arg_string(tag_id: crate::app::mess::Mess_TagID_Arg, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(crate::app::mess::Mess_TagID_Arg, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_replace_arg_string::get_method_info().method_ptr);
-        inner(tag_id, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_tag_string_localize {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u16 as ::unity2::IlType>::il_type(), <::unity2::Array<u8> as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess as ::unity2::ClassIdentity>::class(),
-                "AddTagString_Localize",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Mess as ::unity2::ClassIdentity>::NAME,
-                        "AddTagString_Localize",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_tag_string_localize(tag_id: u16, param: ::unity2::Array<u8>, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(u16, ::unity2::Array<u8>, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add_tag_string_localize::get_method_info().method_ptr);
-        inner(tag_id, param, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_patchim1 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "IsPatchim1", 1, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Mess as ::unity2::ClassIdentity>::NAME,
-                        "IsPatchim1",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_patchim1(c: u16, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(u16, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_is_patchim1::get_method_info().method_ptr);
-        inner(c, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_patchim2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "IsPatchim2", 1, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Mess as ::unity2::ClassIdentity>::NAME,
-                        "IsPatchim2",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_patchim2(c: u16, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(u16, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_is_patchim2::get_method_info().method_ptr);
-        inner(c, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_patchim_str_code {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type(), <bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess as ::unity2::ClassIdentity>::class(),
-                "IsPatchimStrCode",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Mess as ::unity2::ClassIdentity>::NAME,
-                        "IsPatchimStrCode",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_patchim_str_code(chr_code: i32, is_without2: bool, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(i32, bool, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_patchim_str_code::get_method_info().method_ptr);
-        inner(chr_code, is_without2, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_argument {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "SetArgument", 2, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Mess as ::unity2::ClassIdentity>::NAME,
-                        "SetArgument",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_argument(index: i32, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(i32, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_argument::get_method_info().method_ptr);
-        inner(index, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_argument_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "SetArgument", 2, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Mess as ::unity2::ClassIdentity>::NAME,
-                        "SetArgument",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_argument_2(index: i32, value: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(i32, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_argument_2::get_method_info().method_ptr);
-        inner(index, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_clear_argument {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "ClearArgument", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Mess as ::unity2::ClassIdentity>::NAME,
-                        "ClearArgument",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn clear_argument(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_clear_argument::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_argument {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "GetArgument", 1, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Mess as ::unity2::ClassIdentity>::NAME,
-                        "GetArgument",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_argument(index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_argument::get_method_info().method_ptr);
-        inner(index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_new_arg_scope {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "get_NewArgScope", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Mess as ::unity2::ClassIdentity>::NAME,
-                        "get_NewArgScope",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_new_arg_scope(__unity2_method_info: ::unity2::OptionalMethod) -> crate::app::mess::Mess_ArgScope {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::app::mess::Mess_ArgScope =
-            ::core::mem::transmute(__lookup_get_new_arg_scope::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_space_tag {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "CreateSpaceTag", 1, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Mess as ::unity2::ClassIdentity>::NAME,
-                        "CreateSpaceTag",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_space_tag(pixel: u32, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(u32, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_create_space_tag::get_method_info().method_ptr);
-        inner(pixel, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_sprite_tag {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::mess::Mess_IconCategory as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "CreateSpriteTag", 2, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Mess as ::unity2::ClassIdentity>::NAME,
-                        "CreateSpriteTag",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_sprite_tag(
-        icon_category: crate::app::mess::Mess_IconCategory,
-        kind_name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(crate::app::mess::Mess_IconCategory, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_create_sprite_tag::get_method_info().method_ptr);
-        inner(icon_category, kind_name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_sprite_tag_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "CreateSpriteTag", 2, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Mess as ::unity2::ClassIdentity>::NAME,
-                        "CreateSpriteTag",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_sprite_tag_2(
-        sprite_asset_name: ::unity2::Il2CppString,
-        icon_name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_create_sprite_tag_2::get_method_info().method_ptr);
-        inner(sprite_asset_name, icon_name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_item_sprite_tag {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::itemdata::ItemData as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess as ::unity2::ClassIdentity>::class(),
-                "CreateItemSpriteTag",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Mess as ::unity2::ClassIdentity>::NAME,
-                        "CreateItemSpriteTag",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_item_sprite_tag(
-        item: crate::app::itemdata::ItemData,
-        for_system: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(crate::app::itemdata::ItemData, bool, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_create_item_sprite_tag::get_method_info().method_ptr);
-        inner(item, for_system, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_skill_sprite_tag {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::skilldata::SkillData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess as ::unity2::ClassIdentity>::class(),
-                "CreateSkillSpriteTag",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Mess as ::unity2::ClassIdentity>::NAME,
-                        "CreateSkillSpriteTag",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_skill_sprite_tag(
-        skill: crate::app::skilldata::SkillData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(crate::app::skilldata::SkillData, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_create_skill_sprite_tag::get_method_info().method_ptr);
-        inner(skill, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_system_sprite_tag {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess as ::unity2::ClassIdentity>::class(),
-                "CreateSystemSpriteTag",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Mess as ::unity2::ClassIdentity>::NAME,
-                        "CreateSystemSpriteTag",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_system_sprite_tag(
-        icon_name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_create_system_sprite_tag::get_method_info().method_ptr);
-        inner(icon_name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_god_symble_engrave_sprite_tag {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess as ::unity2::ClassIdentity>::class(),
-                "CreateGodSymbleEngraveSpriteTag",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Mess as ::unity2::ClassIdentity>::NAME,
-                        "CreateGodSymbleEngraveSpriteTag",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_god_symble_engrave_sprite_tag(
-        icon_name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_create_god_symble_engrave_sprite_tag::get_method_info().method_ptr);
-        inner(icon_name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_partner_pid {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "SetPartnerPID", 1, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Mess as ::unity2::ClassIdentity>::NAME,
-                        "SetPartnerPID",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_partner_pid(pid: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_partner_pid::get_method_info().method_ptr);
-        inner(pid, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_partner_pid {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "GetPartnerPID", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Mess as ::unity2::ClassIdentity>::NAME,
-                        "GetPartnerPID",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_partner_pid(__unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_partner_pid::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_partner_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "GetPartnerName", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Mess as ::unity2::ClassIdentity>::NAME,
-                        "GetPartnerName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_partner_name(__unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_partner_name::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_game_data_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "GetGameDataName", 1, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Mess as ::unity2::ClassIdentity>::NAME,
-                        "GetGameDataName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_game_data_name(value: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_game_data_name::get_method_info().method_ptr);
-        inner(value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Mess as ::unity2::ClassIdentity>::NAME, ".ctor", e),
-            }
-        }
-    }
-    pub unsafe fn ctor(this: Mess, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Mess, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), ".cctor", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Mess as ::unity2::ClassIdentity>::NAME, ".cctor", e),
-            }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
+pub trait IMess_ReloadFileInfoMethods : IMess_ReloadFileInfo { # [doc = "`.ctor(::unity2::Il2CppString, i32)` overload"] fn ctor (self , file_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , ref_count : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < Mess_ReloadFileInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Mess_ReloadFileInfo_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (file_name) , :: core :: convert :: Into :: into (ref_count) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-mess")]
-impl Mess {
-    #[doc = "`Initialize()` overload"]
-    pub fn initialize() -> () {
-        unsafe { __Mess_unity2_raw::initialize(::core::option::Option::None) }
-    }
-
-    #[doc = "`UpdateReplaceStr()` overload"]
-    pub fn update_replace_str() -> () {
-        unsafe { __Mess_unity2_raw::update_replace_str(::core::option::Option::None) }
-    }
-
-    #[doc = "`LoadSpriteAsset()` overload"]
-    pub fn load_sprite_asset() -> () {
-        unsafe { __Mess_unity2_raw::load_sprite_asset(::core::option::Option::None) }
-    }
-
-    #[doc = "`LoadSpriteAsset(::unity2::Il2CppString)` overload"]
-    pub fn load_sprite_asset_2(sprite_asset_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe { __Mess_unity2_raw::load_sprite_asset_2(::core::convert::Into::into(sprite_asset_name), ::core::option::Option::None) }
-    }
-
-    #[doc = "`IsSpriteExistInSpriteAsset(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
-    pub fn is_sprite_exist_in_sprite_asset(
-        sprite_asset_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        sprite_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> bool {
-        unsafe {
-            __Mess_unity2_raw::is_sprite_exist_in_sprite_asset(
-                ::core::convert::Into::into(sprite_asset_name),
-                ::core::convert::Into::into(sprite_name),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`GetItemSpriteAssetsName(crate::app::itemdata::ItemData)` overload"]
-    pub fn get_item_sprite_assets_name(item: impl ::core::convert::Into<crate::app::itemdata::ItemData>) -> ::unity2::Il2CppString {
-        unsafe { __Mess_unity2_raw::get_item_sprite_assets_name(::core::convert::Into::into(item), ::core::option::Option::None) }
-    }
-
-    #[doc = "`GetSkillSpriteAssetsName(crate::app::skilldata::SkillData)` overload"]
-    pub fn get_skill_sprite_assets_name(skill: impl ::core::convert::Into<crate::app::skilldata::SkillData>) -> ::unity2::Il2CppString {
-        unsafe { __Mess_unity2_raw::get_skill_sprite_assets_name(::core::convert::Into::into(skill), ::core::option::Option::None) }
-    }
-
-    #[doc = "`GetSystemSpriteAssetsName(::unity2::Il2CppString)` overload"]
-    pub fn get_system_sprite_assets_name(icon_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> ::unity2::Il2CppString {
-        unsafe { __Mess_unity2_raw::get_system_sprite_assets_name(::core::convert::Into::into(icon_name), ::core::option::Option::None) }
-    }
-
-    #[doc = "`GetGodSymbolEngraveSpriteAssetsName(::unity2::Il2CppString)` overload"]
-    pub fn get_god_symbol_engrave_sprite_assets_name(icon_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> ::unity2::Il2CppString {
-        unsafe { __Mess_unity2_raw::get_god_symbol_engrave_sprite_assets_name(::core::convert::Into::into(icon_name), ::core::option::Option::None) }
-    }
-
-    #[doc = "`OnSpriteAssetRequestCallback(i32, ::unity2::Il2CppString)` overload"]
-    pub fn on_sprite_asset_request_callback(
-        arg: impl ::core::convert::Into<i32>,
-        sprite_asset_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset {
-        unsafe {
-            __Mess_unity2_raw::on_sprite_asset_request_callback(
-                ::core::convert::Into::into(arg),
-                ::core::convert::Into::into(sprite_asset_name),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`PushCheck()` overload"]
-    pub fn push_check() -> () {
-        unsafe { __Mess_unity2_raw::push_check(::core::option::Option::None) }
-    }
-
-    #[doc = "`PopCheck()` overload"]
-    pub fn pop_check() -> () {
-        unsafe { __Mess_unity2_raw::pop_check(::core::option::Option::None) }
-    }
-
-    #[doc = "`Load(::unity2::Il2CppString)` overload"]
-    pub fn load(file_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
-        unsafe { __Mess_unity2_raw::load(::core::convert::Into::into(file_name), ::core::option::Option::None) }
-    }
-
-    #[doc = "`TryLoad(::unity2::Il2CppString)` overload"]
-    pub fn try_load(file_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
-        unsafe { __Mess_unity2_raw::try_load(::core::convert::Into::into(file_name), ::core::option::Option::None) }
-    }
-
-    #[doc = "`LoadImpl(::unity2::Il2CppString, bool)` overload"]
-    pub fn load_impl(file_name: impl ::core::convert::Into<::unity2::Il2CppString>, is_warning: impl ::core::convert::Into<bool>) -> bool {
-        unsafe {
-            __Mess_unity2_raw::load_impl(
-                ::core::convert::Into::into(file_name),
-                ::core::convert::Into::into(is_warning),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`LoadImpl(::unity2::Il2CppString, *mutcrate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString,crate::app::msgfile::MsgFile>, *mutcrate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString,::unity2::IntPtr>, bool)` overload"]
-    pub fn load_impl_2(
-        file_path: impl ::core::convert::Into<::unity2::Il2CppString>,
-        is_warning: impl ::core::convert::Into<bool>,
-    ) -> (
-        bool,
-        crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, crate::app::msgfile::MsgFile>,
-        crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, ::unity2::IntPtr>,
-    ) {
-        unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, crate::app::msgfile::MsgFile>,
-            >::uninit();
-            let mut __out_1 = ::core::mem::MaybeUninit::<
-                crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, ::unity2::IntPtr>,
-            >::uninit();
-            let __ret = {
-                __Mess_unity2_raw::load_impl_2(
-                    ::core::convert::Into::into(file_path),
-                    __out_0.as_mut_ptr(),
-                    __out_1.as_mut_ptr(),
-                    ::core::convert::Into::into(is_warning),
-                    ::core::option::Option::None,
-                )
-            };
-            (__ret, __out_0.assume_init(), __out_1.assume_init())
-        }
-    }
-
-    #[doc = "`Free(::unity2::Il2CppString)` overload"]
-    pub fn free(file_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
-        unsafe { __Mess_unity2_raw::free(::core::convert::Into::into(file_name), ::core::option::Option::None) }
-    }
-
-    #[doc = "`TryFree(::unity2::Il2CppString)` overload"]
-    pub fn try_free(file_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
-        unsafe { __Mess_unity2_raw::try_free(::core::convert::Into::into(file_name), ::core::option::Option::None) }
-    }
-
-    #[doc = "`FreeImpl(::unity2::Il2CppString, bool)` overload"]
-    pub fn free_impl(file_name: impl ::core::convert::Into<::unity2::Il2CppString>, is_warning: impl ::core::convert::Into<bool>) -> bool {
-        unsafe {
-            __Mess_unity2_raw::free_impl(
-                ::core::convert::Into::into(file_name),
-                ::core::convert::Into::into(is_warning),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`GetReference(::unity2::Il2CppString)` overload"]
-    pub fn get_reference(file_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> i32 {
-        unsafe { __Mess_unity2_raw::get_reference(::core::convert::Into::into(file_name), ::core::option::Option::None) }
-    }
-
-    #[doc = "`FreeImpl(::unity2::Il2CppString, *mutcrate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString,crate::app::msgfile::MsgFile>, *mutcrate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString,::unity2::IntPtr>, bool)` overload"]
-    pub fn free_impl_2(
-        file_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        is_warning: impl ::core::convert::Into<bool>,
-    ) -> (
-        bool,
-        crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, crate::app::msgfile::MsgFile>,
-        crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, ::unity2::IntPtr>,
-    ) {
-        unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, crate::app::msgfile::MsgFile>,
-            >::uninit();
-            let mut __out_1 = ::core::mem::MaybeUninit::<
-                crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, ::unity2::IntPtr>,
-            >::uninit();
-            let __ret = {
-                __Mess_unity2_raw::free_impl_2(
-                    ::core::convert::Into::into(file_name),
-                    __out_0.as_mut_ptr(),
-                    __out_1.as_mut_ptr(),
-                    ::core::convert::Into::into(is_warning),
-                    ::core::option::Option::None,
-                )
-            };
-            (__ret, __out_0.assume_init(), __out_1.assume_init())
-        }
-    }
-
-    #[doc = "`Reload()` overload"]
-    pub fn reload() -> () {
-        unsafe { __Mess_unity2_raw::reload(::core::option::Option::None) }
-    }
-
-    #[doc = "`IsLoadDone(::unity2::Il2CppString)` overload"]
-    pub fn is_load_done(file_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
-        unsafe { __Mess_unity2_raw::is_load_done(::core::convert::Into::into(file_name), ::core::option::Option::None) }
-    }
-
-    #[doc = "`IsFileExist(::unity2::Il2CppString)` overload"]
-    pub fn is_file_exist(file_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
-        unsafe { __Mess_unity2_raw::is_file_exist(::core::convert::Into::into(file_name), ::core::option::Option::None) }
-    }
-
-    #[doc = "`IsHeroFemale()` overload"]
-    pub fn is_hero_female() -> bool {
-        unsafe { __Mess_unity2_raw::is_hero_female(::core::option::Option::None) }
-    }
-
-    #[doc = "`GetLanguageDirectoryName()` overload"]
-    pub fn get_language_directory_name() -> ::unity2::Il2CppString {
-        unsafe { __Mess_unity2_raw::get_language_directory_name(::core::option::Option::None) }
-    }
-
-    #[doc = "`CreateMessFilePath(::unity2::Il2CppString)` overload"]
-    pub fn create_mess_file_path(file_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> ::unity2::Il2CppString {
-        unsafe { __Mess_unity2_raw::create_mess_file_path(::core::convert::Into::into(file_name), ::core::option::Option::None) }
-    }
-
-    #[doc = "`CreateSoundCmdFilePath(::unity2::Il2CppString)` overload"]
-    pub fn create_sound_cmd_file_path(file_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> ::unity2::Il2CppString {
-        unsafe { __Mess_unity2_raw::create_sound_cmd_file_path(::core::convert::Into::into(file_name), ::core::option::Option::None) }
-    }
-
-    #[doc = "`CreateEventCmdFilePath(::unity2::Il2CppString)` overload"]
-    pub fn create_event_cmd_file_path(file_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> ::unity2::Il2CppString {
-        unsafe { __Mess_unity2_raw::create_event_cmd_file_path(::core::convert::Into::into(file_name), ::core::option::Option::None) }
-    }
-
-    #[doc = "`GetFilePath(::unity2::Il2CppString)` overload"]
-    pub fn get_file_path(label: impl ::core::convert::Into<::unity2::Il2CppString>) -> ::unity2::Il2CppString {
-        unsafe { __Mess_unity2_raw::get_file_path(::core::convert::Into::into(label), ::core::option::Option::None) }
-    }
-
-    #[doc = "`GetMsgFile(::unity2::Il2CppString)` overload"]
-    pub fn get_msg_file(file_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> crate::app::msgfile::MsgFile {
-        unsafe { __Mess_unity2_raw::get_msg_file(::core::convert::Into::into(file_name), ::core::option::Option::None) }
-    }
-
-    #[doc = "`IsMainReleaseScenarioMessFile(::unity2::Il2CppString)` overload"]
-    pub fn is_main_release_scenario_mess_file(file_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
-        unsafe { __Mess_unity2_raw::is_main_release_scenario_mess_file(::core::convert::Into::into(file_name), ::core::option::Option::None) }
-    }
-
-    #[doc = "`IsDLCScenarioMessFile(::unity2::Il2CppString)` overload"]
-    pub fn is_dlc_scenario_mess_file(file_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
-        unsafe { __Mess_unity2_raw::is_dlc_scenario_mess_file(::core::convert::Into::into(file_name), ::core::option::Option::None) }
-    }
-
-    #[doc = "`IsRelianceMessFile(::unity2::Il2CppString)` overload"]
-    pub fn is_reliance_mess_file(file_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
-        unsafe { __Mess_unity2_raw::is_reliance_mess_file(::core::convert::Into::into(file_name), ::core::option::Option::None) }
-    }
-
-    #[doc = "`IsGodRelianceMessFile(::unity2::Il2CppString)` overload"]
-    pub fn is_god_reliance_mess_file(file_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
-        unsafe { __Mess_unity2_raw::is_god_reliance_mess_file(::core::convert::Into::into(file_name), ::core::option::Option::None) }
-    }
-
-    #[doc = "`DumpFile()` overload"]
-    pub fn dump_file() -> () {
-        unsafe { __Mess_unity2_raw::dump_file(::core::option::Option::None) }
-    }
-
-    #[doc = "`DumpLabel()` overload"]
-    pub fn dump_label() -> () {
-        unsafe { __Mess_unity2_raw::dump_label(::core::option::Option::None) }
-    }
-
-    #[doc = "`GetAllLabel()` overload"]
-    pub fn get_all_label() -> crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString> {
-        unsafe { __Mess_unity2_raw::get_all_label(::core::option::Option::None) }
-    }
-
-    #[doc = "`Get(::unity2::Il2CppString)` overload"]
-    pub fn get(label: impl ::core::convert::Into<::unity2::Il2CppString>) -> ::unity2::Il2CppString {
-        unsafe { __Mess_unity2_raw::get(::core::convert::Into::into(label), ::core::option::Option::None) }
-    }
-
-    #[doc = "`Get(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
-    pub fn get_2(
-        label: impl ::core::convert::Into<::unity2::Il2CppString>,
-        arg0: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __Mess_unity2_raw::get_2(
-                ::core::convert::Into::into(label),
-                ::core::convert::Into::into(arg0),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`Get(::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
-    pub fn get_3(
-        label: impl ::core::convert::Into<::unity2::Il2CppString>,
-        arg0: impl ::core::convert::Into<::unity2::Il2CppString>,
-        arg1: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __Mess_unity2_raw::get_3(
-                ::core::convert::Into::into(label),
-                ::core::convert::Into::into(arg0),
-                ::core::convert::Into::into(arg1),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`Get(::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
-    pub fn get_4(
-        label: impl ::core::convert::Into<::unity2::Il2CppString>,
-        arg0: impl ::core::convert::Into<::unity2::Il2CppString>,
-        arg1: impl ::core::convert::Into<::unity2::Il2CppString>,
-        arg2: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __Mess_unity2_raw::get_4(
-                ::core::convert::Into::into(label),
-                ::core::convert::Into::into(arg0),
-                ::core::convert::Into::into(arg1),
-                ::core::convert::Into::into(arg2),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`Get(::unity2::Il2CppString, ::unity2::Array<::unity2::Il2CppString>)` overload"]
-    pub fn get_5(
-        label: impl ::core::convert::Into<::unity2::Il2CppString>,
-        args: impl ::core::convert::Into<::unity2::Array<::unity2::Il2CppString>>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __Mess_unity2_raw::get_5(
-                ::core::convert::Into::into(label),
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`TryGetReplace(::unity2::Il2CppString)` overload"]
-    pub fn try_get_replace(label: impl ::core::convert::Into<::unity2::Il2CppString>) -> ::unity2::Il2CppString {
-        unsafe { __Mess_unity2_raw::try_get_replace(::core::convert::Into::into(label), ::core::option::Option::None) }
-    }
-
-    #[doc = "`GetIntPtr(::unity2::Il2CppString)` overload"]
-    pub fn get_int_ptr(label: impl ::core::convert::Into<::unity2::Il2CppString>) -> ::unity2::IntPtr {
-        unsafe { __Mess_unity2_raw::get_int_ptr(::core::convert::Into::into(label), ::core::option::Option::None) }
-    }
-
-    #[doc = "`GetImpl(::unity2::Il2CppString, bool)` overload"]
-    pub fn get_impl(
-        label: impl ::core::convert::Into<::unity2::Il2CppString>,
-        is_replace: impl ::core::convert::Into<bool>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __Mess_unity2_raw::get_impl(
-                ::core::convert::Into::into(label),
-                ::core::convert::Into::into(is_replace),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`GetSoundCmdText(::unity2::Il2CppString)` overload"]
-    pub fn get_sound_cmd_text(label: impl ::core::convert::Into<::unity2::Il2CppString>) -> ::unity2::Il2CppString {
-        unsafe { __Mess_unity2_raw::get_sound_cmd_text(::core::convert::Into::into(label), ::core::option::Option::None) }
-    }
-
-    #[doc = "`GetSoundCmdText(::unity2::Il2CppString, *mut::unity2::Il2CppString, *mut::unity2::Il2CppString)` overload"]
-    pub fn get_sound_cmd_text_2(label: impl ::core::convert::Into<::unity2::Il2CppString>) -> (bool, ::unity2::Il2CppString, ::unity2::Il2CppString) {
-        unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<::unity2::Il2CppString>::uninit();
-            let mut __out_1 = ::core::mem::MaybeUninit::<::unity2::Il2CppString>::uninit();
-            let __ret = {
-                __Mess_unity2_raw::get_sound_cmd_text_2(
-                    ::core::convert::Into::into(label),
-                    __out_0.as_mut_ptr(),
-                    __out_1.as_mut_ptr(),
-                    ::core::option::Option::None,
-                )
-            };
-            (__ret, __out_0.assume_init(), __out_1.assume_init())
-        }
-    }
-
-    #[doc = "`GetEventCmdText(::unity2::Il2CppString)` overload"]
-    pub fn get_event_cmd_text(label: impl ::core::convert::Into<::unity2::Il2CppString>) -> ::unity2::Il2CppString {
-        unsafe { __Mess_unity2_raw::get_event_cmd_text(::core::convert::Into::into(label), ::core::option::Option::None) }
-    }
-
-    #[doc = "`GetEventCmdText(::unity2::Il2CppString, *mut::unity2::Il2CppString, *mut::unity2::Il2CppString)` overload"]
-    pub fn get_event_cmd_text_2(label: impl ::core::convert::Into<::unity2::Il2CppString>) -> (bool, ::unity2::Il2CppString, ::unity2::Il2CppString) {
-        unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<::unity2::Il2CppString>::uninit();
-            let mut __out_1 = ::core::mem::MaybeUninit::<::unity2::Il2CppString>::uninit();
-            let __ret = {
-                __Mess_unity2_raw::get_event_cmd_text_2(
-                    ::core::convert::Into::into(label),
-                    __out_0.as_mut_ptr(),
-                    __out_1.as_mut_ptr(),
-                    ::core::option::Option::None,
-                )
-            };
-            (__ret, __out_0.assume_init(), __out_1.assume_init())
-        }
-    }
-
-    #[doc = "`GetCmdImpl(::unity2::Il2CppString, crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString,::unity2::IntPtr>)` overload"]
-    pub fn get_cmd_impl(
-        label: impl ::core::convert::Into<::unity2::Il2CppString>,
-        data_dictionary: impl ::core::convert::Into<
-            crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, ::unity2::IntPtr>,
-        >,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __Mess_unity2_raw::get_cmd_impl(
-                ::core::convert::Into::into(label),
-                ::core::convert::Into::into(data_dictionary),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`GetCmdImpl(::unity2::Il2CppString, crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString,::unity2::IntPtr>, *mut::unity2::Il2CppString, *mut::unity2::Il2CppString)` overload"]
-    pub fn get_cmd_impl_2(
-        label: impl ::core::convert::Into<::unity2::Il2CppString>,
-        data_dictionary: impl ::core::convert::Into<
-            crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, ::unity2::IntPtr>,
-        >,
-    ) -> (bool, ::unity2::Il2CppString, ::unity2::Il2CppString) {
-        unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<::unity2::Il2CppString>::uninit();
-            let mut __out_1 = ::core::mem::MaybeUninit::<::unity2::Il2CppString>::uninit();
-            let __ret = {
-                __Mess_unity2_raw::get_cmd_impl_2(
-                    ::core::convert::Into::into(label),
-                    ::core::convert::Into::into(data_dictionary),
-                    __out_0.as_mut_ptr(),
-                    __out_1.as_mut_ptr(),
-                    ::core::option::Option::None,
-                )
-            };
-            (__ret, __out_0.assume_init(), __out_1.assume_init())
-        }
-    }
-
-    #[doc = "`IsExist(::unity2::Il2CppString)` overload"]
-    pub fn is_exist(label: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
-        unsafe { __Mess_unity2_raw::is_exist(::core::convert::Into::into(label), ::core::option::Option::None) }
-    }
-
-    #[doc = "`IsNesting()` overload"]
-    pub fn is_nesting() -> bool {
-        unsafe { __Mess_unity2_raw::is_nesting(::core::option::Option::None) }
-    }
-
-    #[doc = "`GetString(::unity2::Il2CppString, ::unity2::IntPtr, bool)` overload"]
-    pub fn get_string(
-        label: impl ::core::convert::Into<::unity2::Il2CppString>,
-        p_mess_data: impl ::core::convert::Into<::unity2::IntPtr>,
-        is_replace: impl ::core::convert::Into<bool>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __Mess_unity2_raw::get_string(
-                ::core::convert::Into::into(label),
-                ::core::convert::Into::into(p_mess_data),
-                ::core::convert::Into::into(is_replace),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`ReadChar(::unity2::IntPtr, i32)` overload"]
-    pub fn read_char(p: impl ::core::convert::Into<::unity2::IntPtr>, offset: impl ::core::convert::Into<i32>) -> u16 {
-        unsafe {
-            __Mess_unity2_raw::read_char(
-                ::core::convert::Into::into(p),
-                ::core::convert::Into::into(offset),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`CalcTalkStringTotalWidth(::unity2::Il2CppString)` overload"]
-    pub fn calc_talk_string_total_width(mess_str: impl ::core::convert::Into<::unity2::Il2CppString>) -> f32 {
-        unsafe { __Mess_unity2_raw::calc_talk_string_total_width(::core::convert::Into::into(mess_str), ::core::option::Option::None) }
-    }
-
-    #[doc = "`CalcWaitMsecForTalkAutoPlay(::unity2::Il2CppString)` overload"]
-    pub fn calc_wait_msec_for_talk_auto_play(mess_str: impl ::core::convert::Into<::unity2::Il2CppString>) -> f32 {
-        unsafe { __Mess_unity2_raw::calc_wait_msec_for_talk_auto_play(::core::convert::Into::into(mess_str), ::core::option::Option::None) }
-    }
-
-    #[doc = "`SplitCmd(::unity2::Il2CppString, *mut::unity2::Il2CppString, *mut::unity2::Il2CppString)` overload"]
-    pub fn split_cmd(cmd: impl ::core::convert::Into<::unity2::Il2CppString>) -> (bool, ::unity2::Il2CppString, ::unity2::Il2CppString) {
-        unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<::unity2::Il2CppString>::uninit();
-            let mut __out_1 = ::core::mem::MaybeUninit::<::unity2::Il2CppString>::uninit();
-            let __ret = {
-                __Mess_unity2_raw::split_cmd(
-                    ::core::convert::Into::into(cmd),
-                    __out_0.as_mut_ptr(),
-                    __out_1.as_mut_ptr(),
-                    ::core::option::Option::None,
-                )
-            };
-            (__ret, __out_0.assume_init(), __out_1.assume_init())
-        }
-    }
-
-    #[doc = "`AddTagString(u16, u16, ::unity2::Array<u8>)` overload"]
-    pub fn add_tag_string(
-        tag_group_id: impl ::core::convert::Into<u16>,
-        tag_id: impl ::core::convert::Into<u16>,
-        param: impl ::core::convert::Into<::unity2::Array<u8>>,
-    ) -> () {
-        unsafe {
-            __Mess_unity2_raw::add_tag_string(
-                ::core::convert::Into::into(tag_group_id),
-                ::core::convert::Into::into(tag_id),
-                ::core::convert::Into::into(param),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`ReplaceArgString(crate::app::mess::Mess_TagID_Arg)` overload"]
-    pub fn replace_arg_string(tag_id: impl ::core::convert::Into<crate::app::mess::Mess_TagID_Arg>) -> () {
-        unsafe { __Mess_unity2_raw::replace_arg_string(::core::convert::Into::into(tag_id), ::core::option::Option::None) }
-    }
-
-    #[doc = "`AddTagString_Localize(u16, ::unity2::Array<u8>)` overload"]
-    pub fn add_tag_string_localize(tag_id: impl ::core::convert::Into<u16>, param: impl ::core::convert::Into<::unity2::Array<u8>>) -> () {
-        unsafe {
-            __Mess_unity2_raw::add_tag_string_localize(
-                ::core::convert::Into::into(tag_id),
-                ::core::convert::Into::into(param),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`IsPatchim1(u16)` overload"]
-    pub fn is_patchim1(c: impl ::core::convert::Into<u16>) -> bool {
-        unsafe { __Mess_unity2_raw::is_patchim1(::core::convert::Into::into(c), ::core::option::Option::None) }
-    }
-
-    #[doc = "`IsPatchim2(u16)` overload"]
-    pub fn is_patchim2(c: impl ::core::convert::Into<u16>) -> bool {
-        unsafe { __Mess_unity2_raw::is_patchim2(::core::convert::Into::into(c), ::core::option::Option::None) }
-    }
-
-    #[doc = "`IsPatchimStrCode(i32, bool)` overload"]
-    pub fn is_patchim_str_code(chr_code: impl ::core::convert::Into<i32>, is_without2: impl ::core::convert::Into<bool>) -> bool {
-        unsafe {
-            __Mess_unity2_raw::is_patchim_str_code(
-                ::core::convert::Into::into(chr_code),
-                ::core::convert::Into::into(is_without2),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`SetArgument(i32, i32)` overload"]
-    pub fn set_argument(index: impl ::core::convert::Into<i32>, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            __Mess_unity2_raw::set_argument(
-                ::core::convert::Into::into(index),
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`SetArgument(i32, ::unity2::Il2CppString)` overload"]
-    pub fn set_argument_2(index: impl ::core::convert::Into<i32>, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            __Mess_unity2_raw::set_argument_2(
-                ::core::convert::Into::into(index),
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`ClearArgument()` overload"]
-    pub fn clear_argument() -> () {
-        unsafe { __Mess_unity2_raw::clear_argument(::core::option::Option::None) }
-    }
-
-    #[doc = "`GetArgument(i32)` overload"]
-    pub fn get_argument(index: impl ::core::convert::Into<i32>) -> ::unity2::Il2CppString {
-        unsafe { __Mess_unity2_raw::get_argument(::core::convert::Into::into(index), ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_NewArgScope()` overload"]
-    pub fn get_new_arg_scope() -> crate::app::mess::Mess_ArgScope {
-        unsafe { __Mess_unity2_raw::get_new_arg_scope(::core::option::Option::None) }
-    }
-
-    #[doc = "`CreateSpaceTag(u32)` overload"]
-    pub fn create_space_tag(pixel: impl ::core::convert::Into<u32>) -> ::unity2::Il2CppString {
-        unsafe { __Mess_unity2_raw::create_space_tag(::core::convert::Into::into(pixel), ::core::option::Option::None) }
-    }
-
-    #[doc = "`CreateSpriteTag(crate::app::mess::Mess_IconCategory, ::unity2::Il2CppString)` overload"]
-    pub fn create_sprite_tag(
-        icon_category: impl ::core::convert::Into<crate::app::mess::Mess_IconCategory>,
-        kind_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __Mess_unity2_raw::create_sprite_tag(
-                ::core::convert::Into::into(icon_category),
-                ::core::convert::Into::into(kind_name),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`CreateSpriteTag(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
-    pub fn create_sprite_tag_2(
-        sprite_asset_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        icon_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __Mess_unity2_raw::create_sprite_tag_2(
-                ::core::convert::Into::into(sprite_asset_name),
-                ::core::convert::Into::into(icon_name),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`CreateItemSpriteTag(crate::app::itemdata::ItemData, bool)` overload"]
-    pub fn create_item_sprite_tag(
-        item: impl ::core::convert::Into<crate::app::itemdata::ItemData>,
-        for_system: impl ::core::convert::Into<bool>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __Mess_unity2_raw::create_item_sprite_tag(
-                ::core::convert::Into::into(item),
-                ::core::convert::Into::into(for_system),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`CreateSkillSpriteTag(crate::app::skilldata::SkillData)` overload"]
-    pub fn create_skill_sprite_tag(skill: impl ::core::convert::Into<crate::app::skilldata::SkillData>) -> ::unity2::Il2CppString {
-        unsafe { __Mess_unity2_raw::create_skill_sprite_tag(::core::convert::Into::into(skill), ::core::option::Option::None) }
-    }
-
-    #[doc = "`CreateSystemSpriteTag(::unity2::Il2CppString)` overload"]
-    pub fn create_system_sprite_tag(icon_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> ::unity2::Il2CppString {
-        unsafe { __Mess_unity2_raw::create_system_sprite_tag(::core::convert::Into::into(icon_name), ::core::option::Option::None) }
-    }
-
-    #[doc = "`CreateGodSymbleEngraveSpriteTag(::unity2::Il2CppString)` overload"]
-    pub fn create_god_symble_engrave_sprite_tag(icon_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> ::unity2::Il2CppString {
-        unsafe { __Mess_unity2_raw::create_god_symble_engrave_sprite_tag(::core::convert::Into::into(icon_name), ::core::option::Option::None) }
-    }
-
-    #[doc = "`SetPartnerPID(::unity2::Il2CppString)` overload"]
-    pub fn set_partner_pid(pid: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe { __Mess_unity2_raw::set_partner_pid(::core::convert::Into::into(pid), ::core::option::Option::None) }
-    }
-
-    #[doc = "`GetPartnerPID()` overload"]
-    pub fn get_partner_pid() -> ::unity2::Il2CppString {
-        unsafe { __Mess_unity2_raw::get_partner_pid(::core::option::Option::None) }
-    }
-
-    #[doc = "`GetPartnerName()` overload"]
-    pub fn get_partner_name() -> ::unity2::Il2CppString {
-        unsafe { __Mess_unity2_raw::get_partner_name(::core::option::Option::None) }
-    }
-
-    #[doc = "`GetGameDataName(::unity2::Il2CppString)` overload"]
-    pub fn get_game_data_name(value: impl ::core::convert::Into<::unity2::Il2CppString>) -> ::unity2::Il2CppString {
-        unsafe { __Mess_unity2_raw::get_game_data_name(::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __Mess_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
+impl < __T : IMess_ReloadFileInfo > IMess_ReloadFileInfoMethods for __T { }
 
 #[cfg(feature = "app-mess")]
-pub trait IMessMethods: IMess {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <Mess as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Mess_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-mess")]
-impl<__T: IMess> IMessMethods for __T {}
-
-#[cfg(feature = "app-mess")]
-impl Mess {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(Mess), ::core::stringify!(new),));
-        <Self as IMessMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-mess")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __Mess_ReloadFileInfo_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess_ReloadFileInfo as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Mess_ReloadFileInfo as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: Mess_ReloadFileInfo,
-        file_name: ::unity2::Il2CppString,
-        ref_count: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(Mess_ReloadFileInfo, ::unity2::Il2CppString, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, file_name, ref_count, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-mess")]
-pub trait IMess_ReloadFileInfoMethods: IMess_ReloadFileInfo {
-    #[doc = "`.ctor(::unity2::Il2CppString, i32)` overload"]
-    fn ctor(self, file_name: impl ::core::convert::Into<::unity2::Il2CppString>, ref_count: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver = <Mess_ReloadFileInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Mess_ReloadFileInfo_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(file_name),
-                ::core::convert::Into::into(ref_count),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-mess")]
-impl<__T: IMess_ReloadFileInfo> IMess_ReloadFileInfoMethods for __T {}
+impl Mess_ReloadFileInfo { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Mess_ReloadFileInfo_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-mess")]
 impl Mess_ReloadFileInfo {
-    #[doc = "`.ctor(::unity2::Il2CppString, i32)` — overload selector"]
-    pub fn new(file_name: ::unity2::Il2CppString, ref_count: i32) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Mess_ReloadFileInfo),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMess_ReloadFileInfoMethods>::ctor(this, file_name, ref_count);
-        this
-    }
+# [doc = "`.ctor(::unity2::Il2CppString, i32)` — overload selector"] pub fn new (file_name : :: unity2 :: Il2CppString , ref_count : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Mess_ReloadFileInfo) , :: core :: stringify ! (new) ,)) ; < Self as IMess_ReloadFileInfoMethods > :: ctor (this , file_name , ref_count) ; this }
+}
+
+#[cfg(feature = "app-mess")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __Mess_ArgScope_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Mess_ArgScope as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Mess_ArgScope as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : Mess_ArgScope , dummy : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Mess_ArgScope , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , dummy , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_dispose { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Mess_ArgScope as :: unity2 :: ClassIdentity > :: class () , "Dispose" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Mess_ArgScope as :: unity2 :: ClassIdentity > :: NAME , "Dispose" , e) , } } } pub unsafe fn dispose (this : Mess_ArgScope , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Mess_ArgScope , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_dispose :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-mess")]
+impl Mess_ArgScope { # [doc = "`.ctor(i32)` overload"] pub fn ctor (self , dummy : impl :: core :: convert :: Into < i32 >) -> () { unsafe { __Mess_ArgScope_unity2_raw :: ctor (self , :: core :: convert :: Into :: into (dummy) , :: core :: option :: Option :: None) } } # [doc = "`Dispose()` overload"] pub fn dispose (self ,) -> () { unsafe { __Mess_ArgScope_unity2_raw :: dispose (self , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-mess")]
+impl Mess_ArgScope { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Mess_ArgScope_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Mess_ArgScope_unity2_raw :: __lookup_dispose :: get_method_info () } }
+
+#[cfg(feature = "app-mess")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __Mess_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_initialize { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Mess as :: unity2 :: ClassIdentity > :: class () , "Initialize" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Mess as :: unity2 :: ClassIdentity > :: NAME , "Initialize" , e) , } } } pub unsafe fn initialize (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_initialize :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update_replace_str { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Mess as :: unity2 :: ClassIdentity > :: class () , "UpdateReplaceStr" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Mess as :: unity2 :: ClassIdentity > :: NAME , "UpdateReplaceStr" , e) , } } } pub unsafe fn update_replace_str (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update_replace_str :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_load_sprite_asset { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Mess as :: unity2 :: ClassIdentity > :: class () , "LoadSpriteAsset" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Mess as :: unity2 :: ClassIdentity > :: NAME , "LoadSpriteAsset" , e) , } } } pub unsafe fn load_sprite_asset (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_load_sprite_asset :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_load_sprite_asset_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Mess as :: unity2 :: ClassIdentity > :: class () , "LoadSpriteAsset" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Mess as :: unity2 :: ClassIdentity > :: NAME , "LoadSpriteAsset" , e) , } } } pub unsafe fn load_sprite_asset_2 (sprite_asset_name : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_load_sprite_asset_2 :: get_method_info () . method_ptr ,) ; inner (sprite_asset_name , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_sprite_exist_in_sprite_asset { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Mess as :: unity2 :: ClassIdentity > :: class () , "IsSpriteExistInSpriteAsset" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Mess as :: unity2 :: ClassIdentity > :: NAME , "IsSpriteExistInSpriteAsset" , e) , } } } pub unsafe fn is_sprite_exist_in_sprite_asset (sprite_asset_name : :: unity2 :: Il2CppString , sprite_name : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_sprite_exist_in_sprite_asset :: get_method_info () . method_ptr ,) ; inner (sprite_asset_name , sprite_name , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_item_sprite_assets_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: itemdata :: ItemData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Mess as :: unity2 :: ClassIdentity > :: class () , "GetItemSpriteAssetsName" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Mess as :: unity2 :: ClassIdentity > :: NAME , "GetItemSpriteAssetsName" , e) , } } } pub unsafe fn get_item_sprite_assets_name (item : crate :: app :: itemdata :: ItemData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (crate :: app :: itemdata :: ItemData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_item_sprite_assets_name :: get_method_info () . method_ptr ,) ; inner (item , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_skill_sprite_assets_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: skilldata :: SkillData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Mess as :: unity2 :: ClassIdentity > :: class () , "GetSkillSpriteAssetsName" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Mess as :: unity2 :: ClassIdentity > :: NAME , "GetSkillSpriteAssetsName" , e) , } } } pub unsafe fn get_skill_sprite_assets_name (skill : crate :: app :: skilldata :: SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (crate :: app :: skilldata :: SkillData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_skill_sprite_assets_name :: get_method_info () . method_ptr ,) ; inner (skill , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_system_sprite_assets_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Mess as :: unity2 :: ClassIdentity > :: class () , "GetSystemSpriteAssetsName" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Mess as :: unity2 :: ClassIdentity > :: NAME , "GetSystemSpriteAssetsName" , e) , } } } pub unsafe fn get_system_sprite_assets_name (icon_name : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_system_sprite_assets_name :: get_method_info () . method_ptr ,) ; inner (icon_name , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_god_symbol_engrave_sprite_assets_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Mess as :: unity2 :: ClassIdentity > :: class () , "GetGodSymbolEngraveSpriteAssetsName" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Mess as :: unity2 :: ClassIdentity > :: NAME , "GetGodSymbolEngraveSpriteAssetsName" , e) , } } } pub unsafe fn get_god_symbol_engrave_sprite_assets_name (icon_name : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_god_symbol_engrave_sprite_assets_name :: get_method_info () . method_ptr ,) ; inner (icon_name , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_sprite_asset_request_callback { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Mess as :: unity2 :: ClassIdentity > :: class () , "OnSpriteAssetRequestCallback" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Mess as :: unity2 :: ClassIdentity > :: NAME , "OnSpriteAssetRequestCallback" , e) , } } } pub unsafe fn on_sprite_asset_request_callback (arg : i32 , sprite_asset_name : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: tm_pro :: tmp_spriteasset :: TMP_SpriteAsset { let inner : extern "C" fn (i32 , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: tm_pro :: tmp_spriteasset :: TMP_SpriteAsset = :: core :: mem :: transmute (__lookup_on_sprite_asset_request_callback :: get_method_info () . method_ptr ,) ; inner (arg , sprite_asset_name , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_push_check { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Mess as :: unity2 :: ClassIdentity > :: class () , "PushCheck" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Mess as :: unity2 :: ClassIdentity > :: NAME , "PushCheck" , e) , } } } pub unsafe fn push_check (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_push_check :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_pop_check { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Mess as :: unity2 :: ClassIdentity > :: class () , "PopCheck" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Mess as :: unity2 :: ClassIdentity > :: NAME , "PopCheck" , e) , } } } pub unsafe fn pop_check (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_pop_check :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_load { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Mess as :: unity2 :: ClassIdentity > :: class () , "Load" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Mess as :: unity2 :: ClassIdentity > :: NAME , "Load" , e) , } } } pub unsafe fn load (file_name : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_load :: get_method_info () . method_ptr ,) ; inner (file_name , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_try_load { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Mess as :: unity2 :: ClassIdentity > :: class () , "TryLoad" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Mess as :: unity2 :: ClassIdentity > :: NAME , "TryLoad" , e) , } } } pub unsafe fn try_load (file_name : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_try_load :: get_method_info () . method_ptr ,) ; inner (file_name , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_load_impl { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Mess as :: unity2 :: ClassIdentity > :: class () , "LoadImpl" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Mess as :: unity2 :: ClassIdentity > :: NAME , "LoadImpl" , e) , } } } pub unsafe fn load_impl (file_name : :: unity2 :: Il2CppString , is_warning : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: Il2CppString , bool , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_load_impl :: get_method_info () . method_ptr ,) ; inner (file_name , is_warning , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_load_impl_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , crate :: app :: msgfile :: MsgFile > as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , :: unity2 :: IntPtr > as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Mess as :: unity2 :: ClassIdentity > :: class () , "LoadImpl" , 4 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Mess as :: unity2 :: ClassIdentity > :: NAME , "LoadImpl" , e) , } } } pub unsafe fn load_impl_2 (file_path : :: unity2 :: Il2CppString , file_dictionary : * mut crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , crate :: app :: msgfile :: MsgFile > , data_dictionary : * mut crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , :: unity2 :: IntPtr > , is_warning : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: Il2CppString , * mut crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , crate :: app :: msgfile :: MsgFile > , * mut crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , :: unity2 :: IntPtr > , bool , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_load_impl_2 :: get_method_info () . method_ptr ,) ; inner (file_path , file_dictionary , data_dictionary , is_warning , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_free { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Mess as :: unity2 :: ClassIdentity > :: class () , "Free" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Mess as :: unity2 :: ClassIdentity > :: NAME , "Free" , e) , } } } pub unsafe fn free (file_name : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_free :: get_method_info () . method_ptr ,) ; inner (file_name , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_try_free { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Mess as :: unity2 :: ClassIdentity > :: class () , "TryFree" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Mess as :: unity2 :: ClassIdentity > :: NAME , "TryFree" , e) , } } } pub unsafe fn try_free (file_name : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_try_free :: get_method_info () . method_ptr ,) ; inner (file_name , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_free_impl { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Mess as :: unity2 :: ClassIdentity > :: class () , "FreeImpl" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Mess as :: unity2 :: ClassIdentity > :: NAME , "FreeImpl" , e) , } } } pub unsafe fn free_impl (file_name : :: unity2 :: Il2CppString , is_warning : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: Il2CppString , bool , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_free_impl :: get_method_info () . method_ptr ,) ; inner (file_name , is_warning , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_reference { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Mess as :: unity2 :: ClassIdentity > :: class () , "GetReference" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Mess as :: unity2 :: ClassIdentity > :: NAME , "GetReference" , e) , } } } pub unsafe fn get_reference (file_name : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_reference :: get_method_info () . method_ptr ,) ; inner (file_name , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_free_impl_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , crate :: app :: msgfile :: MsgFile > as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , :: unity2 :: IntPtr > as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Mess as :: unity2 :: ClassIdentity > :: class () , "FreeImpl" , 4 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Mess as :: unity2 :: ClassIdentity > :: NAME , "FreeImpl" , e) , } } } pub unsafe fn free_impl_2 (file_name : :: unity2 :: Il2CppString , file_dictionary : * mut crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , crate :: app :: msgfile :: MsgFile > , data_dictionary : * mut crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , :: unity2 :: IntPtr > , is_warning : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: Il2CppString , * mut crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , crate :: app :: msgfile :: MsgFile > , * mut crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , :: unity2 :: IntPtr > , bool , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_free_impl_2 :: get_method_info () . method_ptr ,) ; inner (file_name , file_dictionary , data_dictionary , is_warning , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_reload { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Mess as :: unity2 :: ClassIdentity > :: class () , "Reload" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Mess as :: unity2 :: ClassIdentity > :: NAME , "Reload" , e) , } } } pub unsafe fn reload (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_reload :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_load_done { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Mess as :: unity2 :: ClassIdentity > :: class () , "IsLoadDone" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Mess as :: unity2 :: ClassIdentity > :: NAME , "IsLoadDone" , e) , } } } pub unsafe fn is_load_done (file_name : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_load_done :: get_method_info () . method_ptr ,) ; inner (file_name , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_file_exist { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Mess as :: unity2 :: ClassIdentity > :: class () , "IsFileExist" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Mess as :: unity2 :: ClassIdentity > :: NAME , "IsFileExist" , e) , } } } pub unsafe fn is_file_exist (file_name : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_file_exist :: get_method_info () . method_ptr ,) ; inner (file_name , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_hero_female { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Mess as :: unity2 :: ClassIdentity > :: class () , "IsHeroFemale" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Mess as :: unity2 :: ClassIdentity > :: NAME , "IsHeroFemale" , e) , } } } pub unsafe fn is_hero_female (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_hero_female :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_language_directory_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Mess as :: unity2 :: ClassIdentity > :: class () , "GetLanguageDirectoryName" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Mess as :: unity2 :: ClassIdentity > :: NAME , "GetLanguageDirectoryName" , e) , } } } pub unsafe fn get_language_directory_name (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_language_directory_name :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_mess_file_path { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Mess as :: unity2 :: ClassIdentity > :: class () , "CreateMessFilePath" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Mess as :: unity2 :: ClassIdentity > :: NAME , "CreateMessFilePath" , e) , } } } pub unsafe fn create_mess_file_path (file_name : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_create_mess_file_path :: get_method_info () . method_ptr ,) ; inner (file_name , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_sound_cmd_file_path { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Mess as :: unity2 :: ClassIdentity > :: class () , "CreateSoundCmdFilePath" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Mess as :: unity2 :: ClassIdentity > :: NAME , "CreateSoundCmdFilePath" , e) , } } } pub unsafe fn create_sound_cmd_file_path (file_name : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_create_sound_cmd_file_path :: get_method_info () . method_ptr ,) ; inner (file_name , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_event_cmd_file_path { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Mess as :: unity2 :: ClassIdentity > :: class () , "CreateEventCmdFilePath" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Mess as :: unity2 :: ClassIdentity > :: NAME , "CreateEventCmdFilePath" , e) , } } } pub unsafe fn create_event_cmd_file_path (file_name : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_create_event_cmd_file_path :: get_method_info () . method_ptr ,) ; inner (file_name , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_file_path { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Mess as :: unity2 :: ClassIdentity > :: class () , "GetFilePath" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Mess as :: unity2 :: ClassIdentity > :: NAME , "GetFilePath" , e) , } } } pub unsafe fn get_file_path (label : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_file_path :: get_method_info () . method_ptr ,) ; inner (label , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_msg_file { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Mess as :: unity2 :: ClassIdentity > :: class () , "GetMsgFile" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Mess as :: unity2 :: ClassIdentity > :: NAME , "GetMsgFile" , e) , } } } pub unsafe fn get_msg_file (file_name : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: msgfile :: MsgFile { let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: app :: msgfile :: MsgFile = :: core :: mem :: transmute (__lookup_get_msg_file :: get_method_info () . method_ptr ,) ; inner (file_name , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_main_release_scenario_mess_file { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Mess as :: unity2 :: ClassIdentity > :: class () , "IsMainReleaseScenarioMessFile" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Mess as :: unity2 :: ClassIdentity > :: NAME , "IsMainReleaseScenarioMessFile" , e) , } } } pub unsafe fn is_main_release_scenario_mess_file (file_name : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_main_release_scenario_mess_file :: get_method_info () . method_ptr ,) ; inner (file_name , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_dlc_scenario_mess_file { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Mess as :: unity2 :: ClassIdentity > :: class () , "IsDLCScenarioMessFile" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Mess as :: unity2 :: ClassIdentity > :: NAME , "IsDLCScenarioMessFile" , e) , } } } pub unsafe fn is_dlc_scenario_mess_file (file_name : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_dlc_scenario_mess_file :: get_method_info () . method_ptr ,) ; inner (file_name , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_reliance_mess_file { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Mess as :: unity2 :: ClassIdentity > :: class () , "IsRelianceMessFile" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Mess as :: unity2 :: ClassIdentity > :: NAME , "IsRelianceMessFile" , e) , } } } pub unsafe fn is_reliance_mess_file (file_name : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_reliance_mess_file :: get_method_info () . method_ptr ,) ; inner (file_name , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_god_reliance_mess_file { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Mess as :: unity2 :: ClassIdentity > :: class () , "IsGodRelianceMessFile" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Mess as :: unity2 :: ClassIdentity > :: NAME , "IsGodRelianceMessFile" , e) , } } } pub unsafe fn is_god_reliance_mess_file (file_name : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_god_reliance_mess_file :: get_method_info () . method_ptr ,) ; inner (file_name , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_dump_file { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Mess as :: unity2 :: ClassIdentity > :: class () , "DumpFile" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Mess as :: unity2 :: ClassIdentity > :: NAME , "DumpFile" , e) , } } } pub unsafe fn dump_file (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_dump_file :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_dump_label { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Mess as :: unity2 :: ClassIdentity > :: class () , "DumpLabel" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Mess as :: unity2 :: ClassIdentity > :: NAME , "DumpLabel" , e) , } } } pub unsafe fn dump_label (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_dump_label :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_all_label { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Mess as :: unity2 :: ClassIdentity > :: class () , "GetAllLabel" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Mess as :: unity2 :: ClassIdentity > :: NAME , "GetAllLabel" , e) , } } } pub unsafe fn get_all_label (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > = :: core :: mem :: transmute (__lookup_get_all_label :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Mess as :: unity2 :: ClassIdentity > :: class () , "Get" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Mess as :: unity2 :: ClassIdentity > :: NAME , "Get" , e) , } } } pub unsafe fn get (label : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get :: get_method_info () . method_ptr ,) ; inner (label , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Mess as :: unity2 :: ClassIdentity > :: class () , "Get" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Mess as :: unity2 :: ClassIdentity > :: NAME , "Get" , e) , } } } pub unsafe fn get_2 (label : :: unity2 :: Il2CppString , arg0 : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_2 :: get_method_info () . method_ptr ,) ; inner (label , arg0 , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_3 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Mess as :: unity2 :: ClassIdentity > :: class () , "Get" , 3 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Mess as :: unity2 :: ClassIdentity > :: NAME , "Get" , e) , } } } pub unsafe fn get_3 (label : :: unity2 :: Il2CppString , arg0 : :: unity2 :: Il2CppString , arg1 : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_3 :: get_method_info () . method_ptr ,) ; inner (label , arg0 , arg1 , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_4 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Mess as :: unity2 :: ClassIdentity > :: class () , "Get" , 4 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Mess as :: unity2 :: ClassIdentity > :: NAME , "Get" , e) , } } } pub unsafe fn get_4 (label : :: unity2 :: Il2CppString , arg0 : :: unity2 :: Il2CppString , arg1 : :: unity2 :: Il2CppString , arg2 : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_4 :: get_method_info () . method_ptr ,) ; inner (label , arg0 , arg1 , arg2 , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_5 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < :: unity2 :: Il2CppString > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Mess as :: unity2 :: ClassIdentity > :: class () , "Get" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Mess as :: unity2 :: ClassIdentity > :: NAME , "Get" , e) , } } } pub unsafe fn get_5 (label : :: unity2 :: Il2CppString , args : :: unity2 :: Array < :: unity2 :: Il2CppString > , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: Array < :: unity2 :: Il2CppString > , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_5 :: get_method_info () . method_ptr ,) ; inner (label , args , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_try_get_replace { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Mess as :: unity2 :: ClassIdentity > :: class () , "TryGetReplace" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Mess as :: unity2 :: ClassIdentity > :: NAME , "TryGetReplace" , e) , } } } pub unsafe fn try_get_replace (label : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_try_get_replace :: get_method_info () . method_ptr ,) ; inner (label , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_int_ptr { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Mess as :: unity2 :: ClassIdentity > :: class () , "GetIntPtr" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Mess as :: unity2 :: ClassIdentity > :: NAME , "GetIntPtr" , e) , } } } pub unsafe fn get_int_ptr (label : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: IntPtr { let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: IntPtr = :: core :: mem :: transmute (__lookup_get_int_ptr :: get_method_info () . method_ptr ,) ; inner (label , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_impl { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Mess as :: unity2 :: ClassIdentity > :: class () , "GetImpl" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Mess as :: unity2 :: ClassIdentity > :: NAME , "GetImpl" , e) , } } } pub unsafe fn get_impl (label : :: unity2 :: Il2CppString , is_replace : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (:: unity2 :: Il2CppString , bool , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_impl :: get_method_info () . method_ptr ,) ; inner (label , is_replace , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_sound_cmd_text { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Mess as :: unity2 :: ClassIdentity > :: class () , "GetSoundCmdText" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Mess as :: unity2 :: ClassIdentity > :: NAME , "GetSoundCmdText" , e) , } } } pub unsafe fn get_sound_cmd_text (label : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_sound_cmd_text :: get_method_info () . method_ptr ,) ; inner (label , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_sound_cmd_text_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Mess as :: unity2 :: ClassIdentity > :: class () , "GetSoundCmdText" , 3 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Mess as :: unity2 :: ClassIdentity > :: NAME , "GetSoundCmdText" , e) , } } } pub unsafe fn get_sound_cmd_text_2 (label : :: unity2 :: Il2CppString , sound_cmd_exec_before : * mut :: unity2 :: Il2CppString , sound_cmd_exec_after : * mut :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: Il2CppString , * mut :: unity2 :: Il2CppString , * mut :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_sound_cmd_text_2 :: get_method_info () . method_ptr ,) ; inner (label , sound_cmd_exec_before , sound_cmd_exec_after , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_event_cmd_text { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Mess as :: unity2 :: ClassIdentity > :: class () , "GetEventCmdText" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Mess as :: unity2 :: ClassIdentity > :: NAME , "GetEventCmdText" , e) , } } } pub unsafe fn get_event_cmd_text (label : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_event_cmd_text :: get_method_info () . method_ptr ,) ; inner (label , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_event_cmd_text_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Mess as :: unity2 :: ClassIdentity > :: class () , "GetEventCmdText" , 3 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Mess as :: unity2 :: ClassIdentity > :: NAME , "GetEventCmdText" , e) , } } } pub unsafe fn get_event_cmd_text_2 (label : :: unity2 :: Il2CppString , event_cmd_exec_before : * mut :: unity2 :: Il2CppString , event_cmd_exec_after : * mut :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: Il2CppString , * mut :: unity2 :: Il2CppString , * mut :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_event_cmd_text_2 :: get_method_info () . method_ptr ,) ; inner (label , event_cmd_exec_before , event_cmd_exec_after , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_cmd_impl { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , :: unity2 :: IntPtr > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Mess as :: unity2 :: ClassIdentity > :: class () , "GetCmdImpl" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Mess as :: unity2 :: ClassIdentity > :: NAME , "GetCmdImpl" , e) , } } } pub unsafe fn get_cmd_impl (label : :: unity2 :: Il2CppString , data_dictionary : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , :: unity2 :: IntPtr > , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (:: unity2 :: Il2CppString , crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , :: unity2 :: IntPtr > , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_cmd_impl :: get_method_info () . method_ptr ,) ; inner (label , data_dictionary , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_cmd_impl_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , :: unity2 :: IntPtr > as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Mess as :: unity2 :: ClassIdentity > :: class () , "GetCmdImpl" , 4 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Mess as :: unity2 :: ClassIdentity > :: NAME , "GetCmdImpl" , e) , } } } pub unsafe fn get_cmd_impl_2 (label : :: unity2 :: Il2CppString , data_dictionary : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , :: unity2 :: IntPtr > , cmd_exec_before : * mut :: unity2 :: Il2CppString , cmd_exec_after : * mut :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: Il2CppString , crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , :: unity2 :: IntPtr > , * mut :: unity2 :: Il2CppString , * mut :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_cmd_impl_2 :: get_method_info () . method_ptr ,) ; inner (label , data_dictionary , cmd_exec_before , cmd_exec_after , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_exist { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Mess as :: unity2 :: ClassIdentity > :: class () , "IsExist" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Mess as :: unity2 :: ClassIdentity > :: NAME , "IsExist" , e) , } } } pub unsafe fn is_exist (label : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_exist :: get_method_info () . method_ptr ,) ; inner (label , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_nesting { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Mess as :: unity2 :: ClassIdentity > :: class () , "IsNesting" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Mess as :: unity2 :: ClassIdentity > :: NAME , "IsNesting" , e) , } } } pub unsafe fn is_nesting (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_nesting :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_string { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Mess as :: unity2 :: ClassIdentity > :: class () , "GetString" , 3 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Mess as :: unity2 :: ClassIdentity > :: NAME , "GetString" , e) , } } } pub unsafe fn get_string (label : :: unity2 :: Il2CppString , p_mess_data : :: unity2 :: IntPtr , is_replace : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: IntPtr , bool , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_string :: get_method_info () . method_ptr ,) ; inner (label , p_mess_data , is_replace , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_read_char { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Mess as :: unity2 :: ClassIdentity > :: class () , "ReadChar" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Mess as :: unity2 :: ClassIdentity > :: NAME , "ReadChar" , e) , } } } pub unsafe fn read_char (p : :: unity2 :: IntPtr , offset : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> u16 { let inner : extern "C" fn (:: unity2 :: IntPtr , i32 , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute (__lookup_read_char :: get_method_info () . method_ptr ,) ; inner (p , offset , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_calc_talk_string_total_width { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Mess as :: unity2 :: ClassIdentity > :: class () , "CalcTalkStringTotalWidth" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Mess as :: unity2 :: ClassIdentity > :: NAME , "CalcTalkStringTotalWidth" , e) , } } } pub unsafe fn calc_talk_string_total_width (mess_str : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_calc_talk_string_total_width :: get_method_info () . method_ptr ,) ; inner (mess_str , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_calc_wait_msec_for_talk_auto_play { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Mess as :: unity2 :: ClassIdentity > :: class () , "CalcWaitMsecForTalkAutoPlay" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Mess as :: unity2 :: ClassIdentity > :: NAME , "CalcWaitMsecForTalkAutoPlay" , e) , } } } pub unsafe fn calc_wait_msec_for_talk_auto_play (mess_str : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_calc_wait_msec_for_talk_auto_play :: get_method_info () . method_ptr ,) ; inner (mess_str , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_split_cmd { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Mess as :: unity2 :: ClassIdentity > :: class () , "SplitCmd" , 3 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Mess as :: unity2 :: ClassIdentity > :: NAME , "SplitCmd" , e) , } } } pub unsafe fn split_cmd (cmd : :: unity2 :: Il2CppString , cmd_exec_before : * mut :: unity2 :: Il2CppString , cmd_exec_after : * mut :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: Il2CppString , * mut :: unity2 :: Il2CppString , * mut :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_split_cmd :: get_method_info () . method_ptr ,) ; inner (cmd , cmd_exec_before , cmd_exec_after , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_tag_string { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< u16 as :: unity2 :: IlType > :: il_type () , < u16 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < u8 > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Mess as :: unity2 :: ClassIdentity > :: class () , "AddTagString" , 3 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Mess as :: unity2 :: ClassIdentity > :: NAME , "AddTagString" , e) , } } } pub unsafe fn add_tag_string (tag_group_id : u16 , tag_id : u16 , param : :: unity2 :: Array < u8 > , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (u16 , u16 , :: unity2 :: Array < u8 > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_tag_string :: get_method_info () . method_ptr ,) ; inner (tag_group_id , tag_id , param , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_replace_arg_string { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: mess :: Mess_TagID_Arg as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Mess as :: unity2 :: ClassIdentity > :: class () , "ReplaceArgString" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Mess as :: unity2 :: ClassIdentity > :: NAME , "ReplaceArgString" , e) , } } } pub unsafe fn replace_arg_string (tag_id : crate :: app :: mess :: Mess_TagID_Arg , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: mess :: Mess_TagID_Arg , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_replace_arg_string :: get_method_info () . method_ptr ,) ; inner (tag_id , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_tag_string_localize { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< u16 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < u8 > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Mess as :: unity2 :: ClassIdentity > :: class () , "AddTagString_Localize" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Mess as :: unity2 :: ClassIdentity > :: NAME , "AddTagString_Localize" , e) , } } } pub unsafe fn add_tag_string_localize (tag_id : u16 , param : :: unity2 :: Array < u8 > , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (u16 , :: unity2 :: Array < u8 > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_tag_string_localize :: get_method_info () . method_ptr ,) ; inner (tag_id , param , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_patchim1 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< u16 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Mess as :: unity2 :: ClassIdentity > :: class () , "IsPatchim1" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Mess as :: unity2 :: ClassIdentity > :: NAME , "IsPatchim1" , e) , } } } pub unsafe fn is_patchim1 (c : u16 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (u16 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_patchim1 :: get_method_info () . method_ptr ,) ; inner (c , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_patchim2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< u16 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Mess as :: unity2 :: ClassIdentity > :: class () , "IsPatchim2" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Mess as :: unity2 :: ClassIdentity > :: NAME , "IsPatchim2" , e) , } } } pub unsafe fn is_patchim2 (c : u16 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (u16 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_patchim2 :: get_method_info () . method_ptr ,) ; inner (c , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_patchim_str_code { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Mess as :: unity2 :: ClassIdentity > :: class () , "IsPatchimStrCode" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Mess as :: unity2 :: ClassIdentity > :: NAME , "IsPatchimStrCode" , e) , } } } pub unsafe fn is_patchim_str_code (chr_code : i32 , is_without2 : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (i32 , bool , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_patchim_str_code :: get_method_info () . method_ptr ,) ; inner (chr_code , is_without2 , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_argument { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Mess as :: unity2 :: ClassIdentity > :: class () , "SetArgument" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Mess as :: unity2 :: ClassIdentity > :: NAME , "SetArgument" , e) , } } } pub unsafe fn set_argument (index : i32 , value : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_argument :: get_method_info () . method_ptr ,) ; inner (index , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_argument_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Mess as :: unity2 :: ClassIdentity > :: class () , "SetArgument" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Mess as :: unity2 :: ClassIdentity > :: NAME , "SetArgument" , e) , } } } pub unsafe fn set_argument_2 (index : i32 , value : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (i32 , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_argument_2 :: get_method_info () . method_ptr ,) ; inner (index , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_clear_argument { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Mess as :: unity2 :: ClassIdentity > :: class () , "ClearArgument" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Mess as :: unity2 :: ClassIdentity > :: NAME , "ClearArgument" , e) , } } } pub unsafe fn clear_argument (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_clear_argument :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_argument { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Mess as :: unity2 :: ClassIdentity > :: class () , "GetArgument" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Mess as :: unity2 :: ClassIdentity > :: NAME , "GetArgument" , e) , } } } pub unsafe fn get_argument (index : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_argument :: get_method_info () . method_ptr ,) ; inner (index , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_new_arg_scope { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Mess as :: unity2 :: ClassIdentity > :: class () , "get_NewArgScope" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Mess as :: unity2 :: ClassIdentity > :: NAME , "get_NewArgScope" , e) , } } } pub unsafe fn get_new_arg_scope (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: mess :: Mess_ArgScope { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: mess :: Mess_ArgScope = :: core :: mem :: transmute (__lookup_get_new_arg_scope :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_space_tag { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< u32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Mess as :: unity2 :: ClassIdentity > :: class () , "CreateSpaceTag" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Mess as :: unity2 :: ClassIdentity > :: NAME , "CreateSpaceTag" , e) , } } } pub unsafe fn create_space_tag (pixel : u32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (u32 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_create_space_tag :: get_method_info () . method_ptr ,) ; inner (pixel , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_sprite_tag { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: mess :: Mess_IconCategory as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Mess as :: unity2 :: ClassIdentity > :: class () , "CreateSpriteTag" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Mess as :: unity2 :: ClassIdentity > :: NAME , "CreateSpriteTag" , e) , } } } pub unsafe fn create_sprite_tag (icon_category : crate :: app :: mess :: Mess_IconCategory , kind_name : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (crate :: app :: mess :: Mess_IconCategory , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_create_sprite_tag :: get_method_info () . method_ptr ,) ; inner (icon_category , kind_name , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_sprite_tag_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Mess as :: unity2 :: ClassIdentity > :: class () , "CreateSpriteTag" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Mess as :: unity2 :: ClassIdentity > :: NAME , "CreateSpriteTag" , e) , } } } pub unsafe fn create_sprite_tag_2 (sprite_asset_name : :: unity2 :: Il2CppString , icon_name : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_create_sprite_tag_2 :: get_method_info () . method_ptr ,) ; inner (sprite_asset_name , icon_name , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_item_sprite_tag { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: itemdata :: ItemData as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Mess as :: unity2 :: ClassIdentity > :: class () , "CreateItemSpriteTag" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Mess as :: unity2 :: ClassIdentity > :: NAME , "CreateItemSpriteTag" , e) , } } } pub unsafe fn create_item_sprite_tag (item : crate :: app :: itemdata :: ItemData , for_system : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (crate :: app :: itemdata :: ItemData , bool , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_create_item_sprite_tag :: get_method_info () . method_ptr ,) ; inner (item , for_system , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_skill_sprite_tag { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: skilldata :: SkillData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Mess as :: unity2 :: ClassIdentity > :: class () , "CreateSkillSpriteTag" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Mess as :: unity2 :: ClassIdentity > :: NAME , "CreateSkillSpriteTag" , e) , } } } pub unsafe fn create_skill_sprite_tag (skill : crate :: app :: skilldata :: SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (crate :: app :: skilldata :: SkillData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_create_skill_sprite_tag :: get_method_info () . method_ptr ,) ; inner (skill , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_system_sprite_tag { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Mess as :: unity2 :: ClassIdentity > :: class () , "CreateSystemSpriteTag" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Mess as :: unity2 :: ClassIdentity > :: NAME , "CreateSystemSpriteTag" , e) , } } } pub unsafe fn create_system_sprite_tag (icon_name : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_create_system_sprite_tag :: get_method_info () . method_ptr ,) ; inner (icon_name , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_god_symble_engrave_sprite_tag { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Mess as :: unity2 :: ClassIdentity > :: class () , "CreateGodSymbleEngraveSpriteTag" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Mess as :: unity2 :: ClassIdentity > :: NAME , "CreateGodSymbleEngraveSpriteTag" , e) , } } } pub unsafe fn create_god_symble_engrave_sprite_tag (icon_name : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_create_god_symble_engrave_sprite_tag :: get_method_info () . method_ptr ,) ; inner (icon_name , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_partner_pid { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Mess as :: unity2 :: ClassIdentity > :: class () , "SetPartnerPID" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Mess as :: unity2 :: ClassIdentity > :: NAME , "SetPartnerPID" , e) , } } } pub unsafe fn set_partner_pid (pid : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_partner_pid :: get_method_info () . method_ptr ,) ; inner (pid , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_partner_pid { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Mess as :: unity2 :: ClassIdentity > :: class () , "GetPartnerPID" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Mess as :: unity2 :: ClassIdentity > :: NAME , "GetPartnerPID" , e) , } } } pub unsafe fn get_partner_pid (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_partner_pid :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_partner_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Mess as :: unity2 :: ClassIdentity > :: class () , "GetPartnerName" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Mess as :: unity2 :: ClassIdentity > :: NAME , "GetPartnerName" , e) , } } } pub unsafe fn get_partner_name (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_partner_name :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_game_data_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Mess as :: unity2 :: ClassIdentity > :: class () , "GetGameDataName" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Mess as :: unity2 :: ClassIdentity > :: NAME , "GetGameDataName" , e) , } } } pub unsafe fn get_game_data_name (value : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_game_data_name :: get_method_info () . method_ptr ,) ; inner (value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Mess as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Mess as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : Mess , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Mess , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Mess as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Mess as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
+
+#[cfg(feature = "app-mess")]
+impl Mess { # [doc = "`Initialize()` overload"] pub fn initialize () -> () { unsafe { __Mess_unity2_raw :: initialize (:: core :: option :: Option :: None) } } # [doc = "`UpdateReplaceStr()` overload"] pub fn update_replace_str () -> () { unsafe { __Mess_unity2_raw :: update_replace_str (:: core :: option :: Option :: None) } } # [doc = "`LoadSpriteAsset()` overload"] pub fn load_sprite_asset () -> () { unsafe { __Mess_unity2_raw :: load_sprite_asset (:: core :: option :: Option :: None) } } # [doc = "`LoadSpriteAsset(::unity2::Il2CppString)` overload"] pub fn load_sprite_asset_2 (sprite_asset_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { __Mess_unity2_raw :: load_sprite_asset_2 (:: core :: convert :: Into :: into (sprite_asset_name) , :: core :: option :: Option :: None) } } # [doc = "`IsSpriteExistInSpriteAsset(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"] pub fn is_sprite_exist_in_sprite_asset (sprite_asset_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , sprite_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { __Mess_unity2_raw :: is_sprite_exist_in_sprite_asset (:: core :: convert :: Into :: into (sprite_asset_name) , :: core :: convert :: Into :: into (sprite_name) , :: core :: option :: Option :: None) } } # [doc = "`GetItemSpriteAssetsName(crate::app::itemdata::ItemData)` overload"] pub fn get_item_sprite_assets_name (item : impl :: core :: convert :: Into < crate :: app :: itemdata :: ItemData >) -> :: unity2 :: Il2CppString { unsafe { __Mess_unity2_raw :: get_item_sprite_assets_name (:: core :: convert :: Into :: into (item) , :: core :: option :: Option :: None) } } # [doc = "`GetSkillSpriteAssetsName(crate::app::skilldata::SkillData)` overload"] pub fn get_skill_sprite_assets_name (skill : impl :: core :: convert :: Into < crate :: app :: skilldata :: SkillData >) -> :: unity2 :: Il2CppString { unsafe { __Mess_unity2_raw :: get_skill_sprite_assets_name (:: core :: convert :: Into :: into (skill) , :: core :: option :: Option :: None) } } # [doc = "`GetSystemSpriteAssetsName(::unity2::Il2CppString)` overload"] pub fn get_system_sprite_assets_name (icon_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Il2CppString { unsafe { __Mess_unity2_raw :: get_system_sprite_assets_name (:: core :: convert :: Into :: into (icon_name) , :: core :: option :: Option :: None) } } # [doc = "`GetGodSymbolEngraveSpriteAssetsName(::unity2::Il2CppString)` overload"] pub fn get_god_symbol_engrave_sprite_assets_name (icon_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Il2CppString { unsafe { __Mess_unity2_raw :: get_god_symbol_engrave_sprite_assets_name (:: core :: convert :: Into :: into (icon_name) , :: core :: option :: Option :: None) } } # [doc = "`OnSpriteAssetRequestCallback(i32, ::unity2::Il2CppString)` overload"] pub fn on_sprite_asset_request_callback (arg : impl :: core :: convert :: Into < i32 > , sprite_asset_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: tm_pro :: tmp_spriteasset :: TMP_SpriteAsset { unsafe { __Mess_unity2_raw :: on_sprite_asset_request_callback (:: core :: convert :: Into :: into (arg) , :: core :: convert :: Into :: into (sprite_asset_name) , :: core :: option :: Option :: None) } } # [doc = "`PushCheck()` overload"] pub fn push_check () -> () { unsafe { __Mess_unity2_raw :: push_check (:: core :: option :: Option :: None) } } # [doc = "`PopCheck()` overload"] pub fn pop_check () -> () { unsafe { __Mess_unity2_raw :: pop_check (:: core :: option :: Option :: None) } } # [doc = "`Load(::unity2::Il2CppString)` overload"] pub fn load (file_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { __Mess_unity2_raw :: load (:: core :: convert :: Into :: into (file_name) , :: core :: option :: Option :: None) } } # [doc = "`TryLoad(::unity2::Il2CppString)` overload"] pub fn try_load (file_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { __Mess_unity2_raw :: try_load (:: core :: convert :: Into :: into (file_name) , :: core :: option :: Option :: None) } } # [doc = "`LoadImpl(::unity2::Il2CppString, bool)` overload"] pub fn load_impl (file_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , is_warning : impl :: core :: convert :: Into < bool >) -> bool { unsafe { __Mess_unity2_raw :: load_impl (:: core :: convert :: Into :: into (file_name) , :: core :: convert :: Into :: into (is_warning) , :: core :: option :: Option :: None) } } # [doc = "`LoadImpl(::unity2::Il2CppString, *mutcrate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString,crate::app::msgfile::MsgFile>, *mutcrate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString,::unity2::IntPtr>, bool)` overload"] pub fn load_impl_2 (file_path : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , is_warning : impl :: core :: convert :: Into < bool >) -> (bool , crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , crate :: app :: msgfile :: MsgFile > , crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , :: unity2 :: IntPtr >) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , crate :: app :: msgfile :: MsgFile > > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , :: unity2 :: IntPtr > > :: uninit () ; let __ret = { __Mess_unity2_raw :: load_impl_2 (:: core :: convert :: Into :: into (file_path) , __out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: convert :: Into :: into (is_warning) , :: core :: option :: Option :: None) } ; (__ret , __out_0 . assume_init () , __out_1 . assume_init ()) } } # [doc = "`Free(::unity2::Il2CppString)` overload"] pub fn free (file_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { __Mess_unity2_raw :: free (:: core :: convert :: Into :: into (file_name) , :: core :: option :: Option :: None) } } # [doc = "`TryFree(::unity2::Il2CppString)` overload"] pub fn try_free (file_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { __Mess_unity2_raw :: try_free (:: core :: convert :: Into :: into (file_name) , :: core :: option :: Option :: None) } } # [doc = "`FreeImpl(::unity2::Il2CppString, bool)` overload"] pub fn free_impl (file_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , is_warning : impl :: core :: convert :: Into < bool >) -> bool { unsafe { __Mess_unity2_raw :: free_impl (:: core :: convert :: Into :: into (file_name) , :: core :: convert :: Into :: into (is_warning) , :: core :: option :: Option :: None) } } # [doc = "`GetReference(::unity2::Il2CppString)` overload"] pub fn get_reference (file_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> i32 { unsafe { __Mess_unity2_raw :: get_reference (:: core :: convert :: Into :: into (file_name) , :: core :: option :: Option :: None) } } # [doc = "`FreeImpl(::unity2::Il2CppString, *mutcrate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString,crate::app::msgfile::MsgFile>, *mutcrate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString,::unity2::IntPtr>, bool)` overload"] pub fn free_impl_2 (file_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , is_warning : impl :: core :: convert :: Into < bool >) -> (bool , crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , crate :: app :: msgfile :: MsgFile > , crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , :: unity2 :: IntPtr >) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , crate :: app :: msgfile :: MsgFile > > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , :: unity2 :: IntPtr > > :: uninit () ; let __ret = { __Mess_unity2_raw :: free_impl_2 (:: core :: convert :: Into :: into (file_name) , __out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: convert :: Into :: into (is_warning) , :: core :: option :: Option :: None) } ; (__ret , __out_0 . assume_init () , __out_1 . assume_init ()) } } # [doc = "`Reload()` overload"] pub fn reload () -> () { unsafe { __Mess_unity2_raw :: reload (:: core :: option :: Option :: None) } } # [doc = "`IsLoadDone(::unity2::Il2CppString)` overload"] pub fn is_load_done (file_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { __Mess_unity2_raw :: is_load_done (:: core :: convert :: Into :: into (file_name) , :: core :: option :: Option :: None) } } # [doc = "`IsFileExist(::unity2::Il2CppString)` overload"] pub fn is_file_exist (file_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { __Mess_unity2_raw :: is_file_exist (:: core :: convert :: Into :: into (file_name) , :: core :: option :: Option :: None) } } # [doc = "`IsHeroFemale()` overload"] pub fn is_hero_female () -> bool { unsafe { __Mess_unity2_raw :: is_hero_female (:: core :: option :: Option :: None) } } # [doc = "`GetLanguageDirectoryName()` overload"] pub fn get_language_directory_name () -> :: unity2 :: Il2CppString { unsafe { __Mess_unity2_raw :: get_language_directory_name (:: core :: option :: Option :: None) } } # [doc = "`CreateMessFilePath(::unity2::Il2CppString)` overload"] pub fn create_mess_file_path (file_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Il2CppString { unsafe { __Mess_unity2_raw :: create_mess_file_path (:: core :: convert :: Into :: into (file_name) , :: core :: option :: Option :: None) } } # [doc = "`CreateSoundCmdFilePath(::unity2::Il2CppString)` overload"] pub fn create_sound_cmd_file_path (file_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Il2CppString { unsafe { __Mess_unity2_raw :: create_sound_cmd_file_path (:: core :: convert :: Into :: into (file_name) , :: core :: option :: Option :: None) } } # [doc = "`CreateEventCmdFilePath(::unity2::Il2CppString)` overload"] pub fn create_event_cmd_file_path (file_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Il2CppString { unsafe { __Mess_unity2_raw :: create_event_cmd_file_path (:: core :: convert :: Into :: into (file_name) , :: core :: option :: Option :: None) } } # [doc = "`GetFilePath(::unity2::Il2CppString)` overload"] pub fn get_file_path (label : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Il2CppString { unsafe { __Mess_unity2_raw :: get_file_path (:: core :: convert :: Into :: into (label) , :: core :: option :: Option :: None) } } # [doc = "`GetMsgFile(::unity2::Il2CppString)` overload"] pub fn get_msg_file (file_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: app :: msgfile :: MsgFile { unsafe { __Mess_unity2_raw :: get_msg_file (:: core :: convert :: Into :: into (file_name) , :: core :: option :: Option :: None) } } # [doc = "`IsMainReleaseScenarioMessFile(::unity2::Il2CppString)` overload"] pub fn is_main_release_scenario_mess_file (file_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { __Mess_unity2_raw :: is_main_release_scenario_mess_file (:: core :: convert :: Into :: into (file_name) , :: core :: option :: Option :: None) } } # [doc = "`IsDLCScenarioMessFile(::unity2::Il2CppString)` overload"] pub fn is_dlc_scenario_mess_file (file_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { __Mess_unity2_raw :: is_dlc_scenario_mess_file (:: core :: convert :: Into :: into (file_name) , :: core :: option :: Option :: None) } } # [doc = "`IsRelianceMessFile(::unity2::Il2CppString)` overload"] pub fn is_reliance_mess_file (file_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { __Mess_unity2_raw :: is_reliance_mess_file (:: core :: convert :: Into :: into (file_name) , :: core :: option :: Option :: None) } } # [doc = "`IsGodRelianceMessFile(::unity2::Il2CppString)` overload"] pub fn is_god_reliance_mess_file (file_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { __Mess_unity2_raw :: is_god_reliance_mess_file (:: core :: convert :: Into :: into (file_name) , :: core :: option :: Option :: None) } } # [doc = "`DumpFile()` overload"] pub fn dump_file () -> () { unsafe { __Mess_unity2_raw :: dump_file (:: core :: option :: Option :: None) } } # [doc = "`DumpLabel()` overload"] pub fn dump_label () -> () { unsafe { __Mess_unity2_raw :: dump_label (:: core :: option :: Option :: None) } } # [doc = "`GetAllLabel()` overload"] pub fn get_all_label () -> crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > { unsafe { __Mess_unity2_raw :: get_all_label (:: core :: option :: Option :: None) } } # [doc = "`Get(::unity2::Il2CppString)` overload"] pub fn get (label : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Il2CppString { unsafe { __Mess_unity2_raw :: get (:: core :: convert :: Into :: into (label) , :: core :: option :: Option :: None) } } # [doc = "`Get(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"] pub fn get_2 (label : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , arg0 : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Il2CppString { unsafe { __Mess_unity2_raw :: get_2 (:: core :: convert :: Into :: into (label) , :: core :: convert :: Into :: into (arg0) , :: core :: option :: Option :: None) } } # [doc = "`Get(::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"] pub fn get_3 (label : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , arg0 : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , arg1 : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Il2CppString { unsafe { __Mess_unity2_raw :: get_3 (:: core :: convert :: Into :: into (label) , :: core :: convert :: Into :: into (arg0) , :: core :: convert :: Into :: into (arg1) , :: core :: option :: Option :: None) } } # [doc = "`Get(::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"] pub fn get_4 (label : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , arg0 : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , arg1 : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , arg2 : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Il2CppString { unsafe { __Mess_unity2_raw :: get_4 (:: core :: convert :: Into :: into (label) , :: core :: convert :: Into :: into (arg0) , :: core :: convert :: Into :: into (arg1) , :: core :: convert :: Into :: into (arg2) , :: core :: option :: Option :: None) } } # [doc = "`Get(::unity2::Il2CppString, ::unity2::Array<::unity2::Il2CppString>)` overload"] pub fn get_5 (label : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , args : impl :: core :: convert :: Into < :: unity2 :: Array < :: unity2 :: Il2CppString > >) -> :: unity2 :: Il2CppString { unsafe { __Mess_unity2_raw :: get_5 (:: core :: convert :: Into :: into (label) , :: core :: convert :: Into :: into (args) , :: core :: option :: Option :: None) } } # [doc = "`TryGetReplace(::unity2::Il2CppString)` overload"] pub fn try_get_replace (label : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Il2CppString { unsafe { __Mess_unity2_raw :: try_get_replace (:: core :: convert :: Into :: into (label) , :: core :: option :: Option :: None) } } # [doc = "`GetIntPtr(::unity2::Il2CppString)` overload"] pub fn get_int_ptr (label : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: IntPtr { unsafe { __Mess_unity2_raw :: get_int_ptr (:: core :: convert :: Into :: into (label) , :: core :: option :: Option :: None) } } # [doc = "`GetImpl(::unity2::Il2CppString, bool)` overload"] pub fn get_impl (label : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , is_replace : impl :: core :: convert :: Into < bool >) -> :: unity2 :: Il2CppString { unsafe { __Mess_unity2_raw :: get_impl (:: core :: convert :: Into :: into (label) , :: core :: convert :: Into :: into (is_replace) , :: core :: option :: Option :: None) } } # [doc = "`GetSoundCmdText(::unity2::Il2CppString)` overload"] pub fn get_sound_cmd_text (label : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Il2CppString { unsafe { __Mess_unity2_raw :: get_sound_cmd_text (:: core :: convert :: Into :: into (label) , :: core :: option :: Option :: None) } } # [doc = "`GetSoundCmdText(::unity2::Il2CppString, *mut::unity2::Il2CppString, *mut::unity2::Il2CppString)` overload"] pub fn get_sound_cmd_text_2 (label : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> (bool , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < :: unity2 :: Il2CppString > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < :: unity2 :: Il2CppString > :: uninit () ; let __ret = { __Mess_unity2_raw :: get_sound_cmd_text_2 (:: core :: convert :: Into :: into (label) , __out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: option :: Option :: None) } ; (__ret , __out_0 . assume_init () , __out_1 . assume_init ()) } } # [doc = "`GetEventCmdText(::unity2::Il2CppString)` overload"] pub fn get_event_cmd_text (label : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Il2CppString { unsafe { __Mess_unity2_raw :: get_event_cmd_text (:: core :: convert :: Into :: into (label) , :: core :: option :: Option :: None) } } # [doc = "`GetEventCmdText(::unity2::Il2CppString, *mut::unity2::Il2CppString, *mut::unity2::Il2CppString)` overload"] pub fn get_event_cmd_text_2 (label : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> (bool , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < :: unity2 :: Il2CppString > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < :: unity2 :: Il2CppString > :: uninit () ; let __ret = { __Mess_unity2_raw :: get_event_cmd_text_2 (:: core :: convert :: Into :: into (label) , __out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: option :: Option :: None) } ; (__ret , __out_0 . assume_init () , __out_1 . assume_init ()) } } # [doc = "`GetCmdImpl(::unity2::Il2CppString, crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString,::unity2::IntPtr>)` overload"] pub fn get_cmd_impl (label : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , data_dictionary : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , :: unity2 :: IntPtr > >) -> :: unity2 :: Il2CppString { unsafe { __Mess_unity2_raw :: get_cmd_impl (:: core :: convert :: Into :: into (label) , :: core :: convert :: Into :: into (data_dictionary) , :: core :: option :: Option :: None) } } # [doc = "`GetCmdImpl(::unity2::Il2CppString, crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString,::unity2::IntPtr>, *mut::unity2::Il2CppString, *mut::unity2::Il2CppString)` overload"] pub fn get_cmd_impl_2 (label : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , data_dictionary : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , :: unity2 :: IntPtr > >) -> (bool , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < :: unity2 :: Il2CppString > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < :: unity2 :: Il2CppString > :: uninit () ; let __ret = { __Mess_unity2_raw :: get_cmd_impl_2 (:: core :: convert :: Into :: into (label) , :: core :: convert :: Into :: into (data_dictionary) , __out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: option :: Option :: None) } ; (__ret , __out_0 . assume_init () , __out_1 . assume_init ()) } } # [doc = "`IsExist(::unity2::Il2CppString)` overload"] pub fn is_exist (label : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { __Mess_unity2_raw :: is_exist (:: core :: convert :: Into :: into (label) , :: core :: option :: Option :: None) } } # [doc = "`IsNesting()` overload"] pub fn is_nesting () -> bool { unsafe { __Mess_unity2_raw :: is_nesting (:: core :: option :: Option :: None) } } # [doc = "`GetString(::unity2::Il2CppString, ::unity2::IntPtr, bool)` overload"] pub fn get_string (label : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , p_mess_data : impl :: core :: convert :: Into < :: unity2 :: IntPtr > , is_replace : impl :: core :: convert :: Into < bool >) -> :: unity2 :: Il2CppString { unsafe { __Mess_unity2_raw :: get_string (:: core :: convert :: Into :: into (label) , :: core :: convert :: Into :: into (p_mess_data) , :: core :: convert :: Into :: into (is_replace) , :: core :: option :: Option :: None) } } # [doc = "`ReadChar(::unity2::IntPtr, i32)` overload"] pub fn read_char (p : impl :: core :: convert :: Into < :: unity2 :: IntPtr > , offset : impl :: core :: convert :: Into < i32 >) -> u16 { unsafe { __Mess_unity2_raw :: read_char (:: core :: convert :: Into :: into (p) , :: core :: convert :: Into :: into (offset) , :: core :: option :: Option :: None) } } # [doc = "`CalcTalkStringTotalWidth(::unity2::Il2CppString)` overload"] pub fn calc_talk_string_total_width (mess_str : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> f32 { unsafe { __Mess_unity2_raw :: calc_talk_string_total_width (:: core :: convert :: Into :: into (mess_str) , :: core :: option :: Option :: None) } } # [doc = "`CalcWaitMsecForTalkAutoPlay(::unity2::Il2CppString)` overload"] pub fn calc_wait_msec_for_talk_auto_play (mess_str : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> f32 { unsafe { __Mess_unity2_raw :: calc_wait_msec_for_talk_auto_play (:: core :: convert :: Into :: into (mess_str) , :: core :: option :: Option :: None) } } # [doc = "`SplitCmd(::unity2::Il2CppString, *mut::unity2::Il2CppString, *mut::unity2::Il2CppString)` overload"] pub fn split_cmd (cmd : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> (bool , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < :: unity2 :: Il2CppString > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < :: unity2 :: Il2CppString > :: uninit () ; let __ret = { __Mess_unity2_raw :: split_cmd (:: core :: convert :: Into :: into (cmd) , __out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: option :: Option :: None) } ; (__ret , __out_0 . assume_init () , __out_1 . assume_init ()) } } # [doc = "`AddTagString(u16, u16, ::unity2::Array<u8>)` overload"] pub fn add_tag_string (tag_group_id : impl :: core :: convert :: Into < u16 > , tag_id : impl :: core :: convert :: Into < u16 > , param : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > >) -> () { unsafe { __Mess_unity2_raw :: add_tag_string (:: core :: convert :: Into :: into (tag_group_id) , :: core :: convert :: Into :: into (tag_id) , :: core :: convert :: Into :: into (param) , :: core :: option :: Option :: None) } } # [doc = "`ReplaceArgString(crate::app::mess::Mess_TagID_Arg)` overload"] pub fn replace_arg_string (tag_id : impl :: core :: convert :: Into < crate :: app :: mess :: Mess_TagID_Arg >) -> () { unsafe { __Mess_unity2_raw :: replace_arg_string (:: core :: convert :: Into :: into (tag_id) , :: core :: option :: Option :: None) } } # [doc = "`AddTagString_Localize(u16, ::unity2::Array<u8>)` overload"] pub fn add_tag_string_localize (tag_id : impl :: core :: convert :: Into < u16 > , param : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > >) -> () { unsafe { __Mess_unity2_raw :: add_tag_string_localize (:: core :: convert :: Into :: into (tag_id) , :: core :: convert :: Into :: into (param) , :: core :: option :: Option :: None) } } # [doc = "`IsPatchim1(u16)` overload"] pub fn is_patchim1 (c : impl :: core :: convert :: Into < u16 >) -> bool { unsafe { __Mess_unity2_raw :: is_patchim1 (:: core :: convert :: Into :: into (c) , :: core :: option :: Option :: None) } } # [doc = "`IsPatchim2(u16)` overload"] pub fn is_patchim2 (c : impl :: core :: convert :: Into < u16 >) -> bool { unsafe { __Mess_unity2_raw :: is_patchim2 (:: core :: convert :: Into :: into (c) , :: core :: option :: Option :: None) } } # [doc = "`IsPatchimStrCode(i32, bool)` overload"] pub fn is_patchim_str_code (chr_code : impl :: core :: convert :: Into < i32 > , is_without2 : impl :: core :: convert :: Into < bool >) -> bool { unsafe { __Mess_unity2_raw :: is_patchim_str_code (:: core :: convert :: Into :: into (chr_code) , :: core :: convert :: Into :: into (is_without2) , :: core :: option :: Option :: None) } } # [doc = "`SetArgument(i32, i32)` overload"] pub fn set_argument (index : impl :: core :: convert :: Into < i32 > , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { __Mess_unity2_raw :: set_argument (:: core :: convert :: Into :: into (index) , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`SetArgument(i32, ::unity2::Il2CppString)` overload"] pub fn set_argument_2 (index : impl :: core :: convert :: Into < i32 > , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { __Mess_unity2_raw :: set_argument_2 (:: core :: convert :: Into :: into (index) , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`ClearArgument()` overload"] pub fn clear_argument () -> () { unsafe { __Mess_unity2_raw :: clear_argument (:: core :: option :: Option :: None) } } # [doc = "`GetArgument(i32)` overload"] pub fn get_argument (index : impl :: core :: convert :: Into < i32 >) -> :: unity2 :: Il2CppString { unsafe { __Mess_unity2_raw :: get_argument (:: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } # [doc = "`get_NewArgScope()` overload"] pub fn get_new_arg_scope () -> crate :: app :: mess :: Mess_ArgScope { unsafe { __Mess_unity2_raw :: get_new_arg_scope (:: core :: option :: Option :: None) } } # [doc = "`CreateSpaceTag(u32)` overload"] pub fn create_space_tag (pixel : impl :: core :: convert :: Into < u32 >) -> :: unity2 :: Il2CppString { unsafe { __Mess_unity2_raw :: create_space_tag (:: core :: convert :: Into :: into (pixel) , :: core :: option :: Option :: None) } } # [doc = "`CreateSpriteTag(crate::app::mess::Mess_IconCategory, ::unity2::Il2CppString)` overload"] pub fn create_sprite_tag (icon_category : impl :: core :: convert :: Into < crate :: app :: mess :: Mess_IconCategory > , kind_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Il2CppString { unsafe { __Mess_unity2_raw :: create_sprite_tag (:: core :: convert :: Into :: into (icon_category) , :: core :: convert :: Into :: into (kind_name) , :: core :: option :: Option :: None) } } # [doc = "`CreateSpriteTag(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"] pub fn create_sprite_tag_2 (sprite_asset_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , icon_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Il2CppString { unsafe { __Mess_unity2_raw :: create_sprite_tag_2 (:: core :: convert :: Into :: into (sprite_asset_name) , :: core :: convert :: Into :: into (icon_name) , :: core :: option :: Option :: None) } } # [doc = "`CreateItemSpriteTag(crate::app::itemdata::ItemData, bool)` overload"] pub fn create_item_sprite_tag (item : impl :: core :: convert :: Into < crate :: app :: itemdata :: ItemData > , for_system : impl :: core :: convert :: Into < bool >) -> :: unity2 :: Il2CppString { unsafe { __Mess_unity2_raw :: create_item_sprite_tag (:: core :: convert :: Into :: into (item) , :: core :: convert :: Into :: into (for_system) , :: core :: option :: Option :: None) } } # [doc = "`CreateSkillSpriteTag(crate::app::skilldata::SkillData)` overload"] pub fn create_skill_sprite_tag (skill : impl :: core :: convert :: Into < crate :: app :: skilldata :: SkillData >) -> :: unity2 :: Il2CppString { unsafe { __Mess_unity2_raw :: create_skill_sprite_tag (:: core :: convert :: Into :: into (skill) , :: core :: option :: Option :: None) } } # [doc = "`CreateSystemSpriteTag(::unity2::Il2CppString)` overload"] pub fn create_system_sprite_tag (icon_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Il2CppString { unsafe { __Mess_unity2_raw :: create_system_sprite_tag (:: core :: convert :: Into :: into (icon_name) , :: core :: option :: Option :: None) } } # [doc = "`CreateGodSymbleEngraveSpriteTag(::unity2::Il2CppString)` overload"] pub fn create_god_symble_engrave_sprite_tag (icon_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Il2CppString { unsafe { __Mess_unity2_raw :: create_god_symble_engrave_sprite_tag (:: core :: convert :: Into :: into (icon_name) , :: core :: option :: Option :: None) } } # [doc = "`SetPartnerPID(::unity2::Il2CppString)` overload"] pub fn set_partner_pid (pid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { __Mess_unity2_raw :: set_partner_pid (:: core :: convert :: Into :: into (pid) , :: core :: option :: Option :: None) } } # [doc = "`GetPartnerPID()` overload"] pub fn get_partner_pid () -> :: unity2 :: Il2CppString { unsafe { __Mess_unity2_raw :: get_partner_pid (:: core :: option :: Option :: None) } } # [doc = "`GetPartnerName()` overload"] pub fn get_partner_name () -> :: unity2 :: Il2CppString { unsafe { __Mess_unity2_raw :: get_partner_name (:: core :: option :: Option :: None) } } # [doc = "`GetGameDataName(::unity2::Il2CppString)` overload"] pub fn get_game_data_name (value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Il2CppString { unsafe { __Mess_unity2_raw :: get_game_data_name (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { __Mess_unity2_raw :: cctor (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-mess")]
+pub trait IMessMethods : IMess { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Mess as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Mess_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-mess")]
+impl < __T : IMess > IMessMethods for __T { }
+
+#[cfg(feature = "app-mess")]
+impl Mess { pub fn initialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Mess_unity2_raw :: __lookup_initialize :: get_method_info () } pub fn update_replace_str_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Mess_unity2_raw :: __lookup_update_replace_str :: get_method_info () } pub fn load_sprite_asset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Mess_unity2_raw :: __lookup_load_sprite_asset :: get_method_info () } pub fn load_sprite_asset_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Mess_unity2_raw :: __lookup_load_sprite_asset_2 :: get_method_info () } pub fn is_sprite_exist_in_sprite_asset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Mess_unity2_raw :: __lookup_is_sprite_exist_in_sprite_asset :: get_method_info () } pub fn get_item_sprite_assets_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Mess_unity2_raw :: __lookup_get_item_sprite_assets_name :: get_method_info () } pub fn get_skill_sprite_assets_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Mess_unity2_raw :: __lookup_get_skill_sprite_assets_name :: get_method_info () } pub fn get_system_sprite_assets_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Mess_unity2_raw :: __lookup_get_system_sprite_assets_name :: get_method_info () } pub fn get_god_symbol_engrave_sprite_assets_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Mess_unity2_raw :: __lookup_get_god_symbol_engrave_sprite_assets_name :: get_method_info () } pub fn on_sprite_asset_request_callback_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Mess_unity2_raw :: __lookup_on_sprite_asset_request_callback :: get_method_info () } pub fn push_check_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Mess_unity2_raw :: __lookup_push_check :: get_method_info () } pub fn pop_check_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Mess_unity2_raw :: __lookup_pop_check :: get_method_info () } pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Mess_unity2_raw :: __lookup_load :: get_method_info () } pub fn try_load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Mess_unity2_raw :: __lookup_try_load :: get_method_info () } pub fn load_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Mess_unity2_raw :: __lookup_load_impl :: get_method_info () } pub fn load_impl_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Mess_unity2_raw :: __lookup_load_impl_2 :: get_method_info () } pub fn free_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Mess_unity2_raw :: __lookup_free :: get_method_info () } pub fn try_free_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Mess_unity2_raw :: __lookup_try_free :: get_method_info () } pub fn free_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Mess_unity2_raw :: __lookup_free_impl :: get_method_info () } pub fn get_reference_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Mess_unity2_raw :: __lookup_get_reference :: get_method_info () } pub fn free_impl_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Mess_unity2_raw :: __lookup_free_impl_2 :: get_method_info () } pub fn reload_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Mess_unity2_raw :: __lookup_reload :: get_method_info () } pub fn is_load_done_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Mess_unity2_raw :: __lookup_is_load_done :: get_method_info () } pub fn is_file_exist_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Mess_unity2_raw :: __lookup_is_file_exist :: get_method_info () } pub fn is_hero_female_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Mess_unity2_raw :: __lookup_is_hero_female :: get_method_info () } pub fn get_language_directory_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Mess_unity2_raw :: __lookup_get_language_directory_name :: get_method_info () } pub fn create_mess_file_path_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Mess_unity2_raw :: __lookup_create_mess_file_path :: get_method_info () } pub fn create_sound_cmd_file_path_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Mess_unity2_raw :: __lookup_create_sound_cmd_file_path :: get_method_info () } pub fn create_event_cmd_file_path_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Mess_unity2_raw :: __lookup_create_event_cmd_file_path :: get_method_info () } pub fn get_file_path_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Mess_unity2_raw :: __lookup_get_file_path :: get_method_info () } pub fn get_msg_file_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Mess_unity2_raw :: __lookup_get_msg_file :: get_method_info () } pub fn is_main_release_scenario_mess_file_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Mess_unity2_raw :: __lookup_is_main_release_scenario_mess_file :: get_method_info () } pub fn is_dlc_scenario_mess_file_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Mess_unity2_raw :: __lookup_is_dlc_scenario_mess_file :: get_method_info () } pub fn is_reliance_mess_file_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Mess_unity2_raw :: __lookup_is_reliance_mess_file :: get_method_info () } pub fn is_god_reliance_mess_file_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Mess_unity2_raw :: __lookup_is_god_reliance_mess_file :: get_method_info () } pub fn dump_file_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Mess_unity2_raw :: __lookup_dump_file :: get_method_info () } pub fn dump_label_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Mess_unity2_raw :: __lookup_dump_label :: get_method_info () } pub fn get_all_label_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Mess_unity2_raw :: __lookup_get_all_label :: get_method_info () } pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Mess_unity2_raw :: __lookup_get :: get_method_info () } pub fn get_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Mess_unity2_raw :: __lookup_get_2 :: get_method_info () } pub fn get_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Mess_unity2_raw :: __lookup_get_3 :: get_method_info () } pub fn get_4_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Mess_unity2_raw :: __lookup_get_4 :: get_method_info () } pub fn get_5_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Mess_unity2_raw :: __lookup_get_5 :: get_method_info () } pub fn try_get_replace_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Mess_unity2_raw :: __lookup_try_get_replace :: get_method_info () } pub fn get_int_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Mess_unity2_raw :: __lookup_get_int_ptr :: get_method_info () } pub fn get_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Mess_unity2_raw :: __lookup_get_impl :: get_method_info () } pub fn get_sound_cmd_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Mess_unity2_raw :: __lookup_get_sound_cmd_text :: get_method_info () } pub fn get_sound_cmd_text_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Mess_unity2_raw :: __lookup_get_sound_cmd_text_2 :: get_method_info () } pub fn get_event_cmd_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Mess_unity2_raw :: __lookup_get_event_cmd_text :: get_method_info () } pub fn get_event_cmd_text_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Mess_unity2_raw :: __lookup_get_event_cmd_text_2 :: get_method_info () } pub fn get_cmd_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Mess_unity2_raw :: __lookup_get_cmd_impl :: get_method_info () } pub fn get_cmd_impl_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Mess_unity2_raw :: __lookup_get_cmd_impl_2 :: get_method_info () } pub fn is_exist_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Mess_unity2_raw :: __lookup_is_exist :: get_method_info () } pub fn is_nesting_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Mess_unity2_raw :: __lookup_is_nesting :: get_method_info () } pub fn get_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Mess_unity2_raw :: __lookup_get_string :: get_method_info () } pub fn read_char_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Mess_unity2_raw :: __lookup_read_char :: get_method_info () } pub fn calc_talk_string_total_width_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Mess_unity2_raw :: __lookup_calc_talk_string_total_width :: get_method_info () } pub fn calc_wait_msec_for_talk_auto_play_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Mess_unity2_raw :: __lookup_calc_wait_msec_for_talk_auto_play :: get_method_info () } pub fn split_cmd_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Mess_unity2_raw :: __lookup_split_cmd :: get_method_info () } pub fn add_tag_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Mess_unity2_raw :: __lookup_add_tag_string :: get_method_info () } pub fn replace_arg_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Mess_unity2_raw :: __lookup_replace_arg_string :: get_method_info () } pub fn add_tag_string_localize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Mess_unity2_raw :: __lookup_add_tag_string_localize :: get_method_info () } pub fn is_patchim1_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Mess_unity2_raw :: __lookup_is_patchim1 :: get_method_info () } pub fn is_patchim2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Mess_unity2_raw :: __lookup_is_patchim2 :: get_method_info () } pub fn is_patchim_str_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Mess_unity2_raw :: __lookup_is_patchim_str_code :: get_method_info () } pub fn set_argument_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Mess_unity2_raw :: __lookup_set_argument :: get_method_info () } pub fn set_argument_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Mess_unity2_raw :: __lookup_set_argument_2 :: get_method_info () } pub fn clear_argument_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Mess_unity2_raw :: __lookup_clear_argument :: get_method_info () } pub fn get_argument_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Mess_unity2_raw :: __lookup_get_argument :: get_method_info () } pub fn get_new_arg_scope_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Mess_unity2_raw :: __lookup_get_new_arg_scope :: get_method_info () } pub fn create_space_tag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Mess_unity2_raw :: __lookup_create_space_tag :: get_method_info () } pub fn create_sprite_tag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Mess_unity2_raw :: __lookup_create_sprite_tag :: get_method_info () } pub fn create_sprite_tag_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Mess_unity2_raw :: __lookup_create_sprite_tag_2 :: get_method_info () } pub fn create_item_sprite_tag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Mess_unity2_raw :: __lookup_create_item_sprite_tag :: get_method_info () } pub fn create_skill_sprite_tag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Mess_unity2_raw :: __lookup_create_skill_sprite_tag :: get_method_info () } pub fn create_system_sprite_tag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Mess_unity2_raw :: __lookup_create_system_sprite_tag :: get_method_info () } pub fn create_god_symble_engrave_sprite_tag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Mess_unity2_raw :: __lookup_create_god_symble_engrave_sprite_tag :: get_method_info () } pub fn set_partner_pid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Mess_unity2_raw :: __lookup_set_partner_pid :: get_method_info () } pub fn get_partner_pid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Mess_unity2_raw :: __lookup_get_partner_pid :: get_method_info () } pub fn get_partner_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Mess_unity2_raw :: __lookup_get_partner_name :: get_method_info () } pub fn get_game_data_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Mess_unity2_raw :: __lookup_get_game_data_name :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Mess_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Mess_unity2_raw :: __lookup_cctor :: get_method_info () } }
+
+#[cfg(feature = "app-mess")]
+impl Mess {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Mess) , :: core :: stringify ! (new) ,)) ; < Self as IMessMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-mess")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{
-        IMess, IMessMethods, IMess_ReloadFileInfo, IMess_ReloadFileInfoMethods, Mess, Mess_ArgScope, Mess_IconCategory, Mess_LanguageScope,
-        Mess_ReloadFileInfo, Mess_TagGroup, Mess_TagID_Arg, Mess_TagID_Localize, Mess_TagID_Name, Mess_TagID_Picture, Mess_TagID_Text,
-    };
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::system::{object::IObject, r#enum::IEnum, valuetype::IValueType};
+    pub use super::Mess_LanguageScope;
+    pub use super::Mess_ReloadFileInfo;
+    pub use super::IMess_ReloadFileInfo;
+    pub use super::IMess_ReloadFileInfoMethods;
+    pub use super::Mess_TagGroup;
+    pub use super::Mess_TagID_Text;
+    pub use super::Mess_TagID_Name;
+    pub use super::Mess_ArgScope;
+    pub use super::Mess_IconCategory;
+    pub use super::Mess_TagID_Arg;
+    pub use super::Mess;
+    pub use super::IMess;
+    pub use super::IMessMethods;
+    pub use super::Mess_TagID_Localize;
+    pub use super::Mess_TagID_Picture;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

@@ -2,341 +2,120 @@
 
 #[cfg(feature = "app-disposunit-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::{
-            object::{IObject, Object},
-            valuetype::{IValueType, ValueType},
-        },
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/disposunit/DisposUnit_Item.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct DisposUnit_Item {
-        pub m_item: ::unity2::Il2CppString,
-        pub m_is_drop: bool,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
 
-    impl ::unity2::ClassIdentity for DisposUnit_Item {
-        const NAME: &'static str = "DisposUnit.Item";
-        const NAMESPACE: &'static str = "App";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/disposunit/DisposUnit.md"))] # [:: unity2 :: class (namespace = "App" , name = "DisposUnit")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct DisposUnit {
+# [static_field] # [rename (name = "LevelMax")] pub level_max : i32 ,
+# [offset (24)] # [rename (name = "m_Person")] pub m_person : :: unity2 :: Il2CppString ,
+# [offset (32)] # [rename (name = "m_Job")] pub m_job : :: unity2 :: Il2CppString ,
+# [offset (40)] # [rename (name = "m_Force")] pub m_force : :: unity2 :: Il2CppString ,
+# [offset (48)] # [rename (name = "m_Level")] pub m_level : i32 ,
+# [offset (52)] # [rename (name = "m_Normal")] pub m_normal : bool ,
+# [offset (53)] # [rename (name = "m_Hard")] pub m_hard : bool ,
+# [offset (54)] # [rename (name = "m_Lunatic")] pub m_lunatic : bool ,
+# [offset (55)] # [rename (name = "新規生成")] pub 新規生成 : bool ,
+# [offset (56)] # [rename (name = "リーダー")] pub リーダー : bool ,
+# [offset (57)] # [rename (name = "移動禁止")] pub 移動禁止 : bool ,
+# [offset (58)] # [rename (name = "進撃位置")] pub 進撃位置 : bool ,
+# [offset (59)] # [rename (name = "進撃強制")] pub 進撃強制 : bool ,
+# [offset (60)] # [rename (name = "進撃固定")] pub 進撃固定 : bool ,
+# [offset (61)] # [rename (name = "外枠配置")] pub 外枠配置 : bool ,
+# [offset (62)] # [rename (name = "ゲスト")] pub ゲスト : bool ,
+# [offset (64)] # [rename (name = "m_Items")] pub m_items : :: unity2 :: Array < crate :: app :: disposunit :: DisposUnit_Item > ,
+}
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/disposunit/DisposUnit_Item.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct DisposUnit_Item {
+    pub m_item: :: unity2 :: Il2CppString,
+    pub m_is_drop: bool,
+}
+
+
+impl ::unity2::ClassIdentity for DisposUnit_Item {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "DisposUnit.Item";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for DisposUnit_Item {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl ::unity2::IlType for DisposUnit_Item {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/disposunit/DisposUnit.md"))]
-    #[::unity2::class(namespace = "App", name = "DisposUnit")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct DisposUnit {
-        #[static_field]
-        #[rename(name = "LevelMax")]
-        pub level_max: i32,
-        #[offset(24)]
-        #[rename(name = "m_Person")]
-        pub m_person: ::unity2::Il2CppString,
-        #[offset(32)]
-        #[rename(name = "m_Job")]
-        pub m_job: ::unity2::Il2CppString,
-        #[offset(40)]
-        #[rename(name = "m_Force")]
-        pub m_force: ::unity2::Il2CppString,
-        #[offset(48)]
-        #[rename(name = "m_Level")]
-        pub m_level: i32,
-        #[offset(52)]
-        #[rename(name = "m_Normal")]
-        pub m_normal: bool,
-        #[offset(53)]
-        #[rename(name = "m_Hard")]
-        pub m_hard: bool,
-        #[offset(54)]
-        #[rename(name = "m_Lunatic")]
-        pub m_lunatic: bool,
-        #[offset(55)]
-        #[rename(name = "新規生成")]
-        pub 新規生成: bool,
-        #[offset(56)]
-        #[rename(name = "リーダー")]
-        pub リーダー: bool,
-        #[offset(57)]
-        #[rename(name = "移動禁止")]
-        pub 移動禁止: bool,
-        #[offset(58)]
-        #[rename(name = "進撃位置")]
-        pub 進撃位置: bool,
-        #[offset(59)]
-        #[rename(name = "進撃強制")]
-        pub 進撃強制: bool,
-        #[offset(60)]
-        #[rename(name = "進撃固定")]
-        pub 進撃固定: bool,
-        #[offset(61)]
-        #[rename(name = "外枠配置")]
-        pub 外枠配置: bool,
-        #[offset(62)]
-        #[rename(name = "ゲスト")]
-        pub ゲスト: bool,
-        #[offset(64)]
-        #[rename(name = "m_Items")]
-        pub m_items: ::unity2::Array<crate::app::disposunit::DisposUnit_Item>,
-    }
+}
+
 }
 
 #[cfg(feature = "app-disposunit-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-disposunit")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __DisposUnit_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_force_type {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DisposUnit as ::unity2::ClassIdentity>::class(),
-                "GetForceType",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DisposUnit as ::unity2::ClassIdentity>::NAME,
-                        "GetForceType",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_force_type(this: DisposUnit, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::force::Force_Type {
-        let inner: extern "C" fn(DisposUnit, ::unity2::OptionalMethod) -> crate::app::force::Force_Type =
-            ::core::mem::transmute(__lookup_get_force_type::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_force_names {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DisposUnit as ::unity2::ClassIdentity>::class(),
-                "GetForceNames",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DisposUnit as ::unity2::ClassIdentity>::NAME,
-                        "GetForceNames",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_force_names(__unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Array<::unity2::Il2CppString> {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> ::unity2::Array<::unity2::Il2CppString> =
-            ::core::mem::transmute(__lookup_get_force_names::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_force_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DisposUnit as ::unity2::ClassIdentity>::class(),
-                "GetForceName",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DisposUnit as ::unity2::ClassIdentity>::NAME,
-                        "GetForceName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_force_name(index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_force_name::get_method_info().method_ptr);
-        inner(index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_force_index {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DisposUnit as ::unity2::ClassIdentity>::class(),
-                "GetForceIndex",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DisposUnit as ::unity2::ClassIdentity>::NAME,
-                        "GetForceIndex",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_force_index(name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_force_index::get_method_info().method_ptr);
-        inner(name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<DisposUnit as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DisposUnit as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: DisposUnit, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DisposUnit, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __DisposUnit_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_force_type { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DisposUnit as :: unity2 :: ClassIdentity > :: class () , "GetForceType" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DisposUnit as :: unity2 :: ClassIdentity > :: NAME , "GetForceType" , e) , } } } pub unsafe fn get_force_type (this : DisposUnit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: force :: Force_Type { let inner : extern "C" fn (DisposUnit , :: unity2 :: OptionalMethod ,) -> crate :: app :: force :: Force_Type = :: core :: mem :: transmute (__lookup_get_force_type :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_force_names { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DisposUnit as :: unity2 :: ClassIdentity > :: class () , "GetForceNames" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DisposUnit as :: unity2 :: ClassIdentity > :: NAME , "GetForceNames" , e) , } } } pub unsafe fn get_force_names (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > = :: core :: mem :: transmute (__lookup_get_force_names :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_force_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DisposUnit as :: unity2 :: ClassIdentity > :: class () , "GetForceName" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DisposUnit as :: unity2 :: ClassIdentity > :: NAME , "GetForceName" , e) , } } } pub unsafe fn get_force_name (index : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_force_name :: get_method_info () . method_ptr ,) ; inner (index , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_force_index { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DisposUnit as :: unity2 :: ClassIdentity > :: class () , "GetForceIndex" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DisposUnit as :: unity2 :: ClassIdentity > :: NAME , "GetForceIndex" , e) , } } } pub unsafe fn get_force_index (name : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_force_index :: get_method_info () . method_ptr ,) ; inner (name , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DisposUnit as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DisposUnit as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : DisposUnit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DisposUnit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-disposunit")]
+impl DisposUnit { # [doc = "`GetForceNames()` overload"] pub fn get_force_names () -> :: unity2 :: Array < :: unity2 :: Il2CppString > { unsafe { __DisposUnit_unity2_raw :: get_force_names (:: core :: option :: Option :: None) } } # [doc = "`GetForceName(i32)` overload"] pub fn get_force_name (index : impl :: core :: convert :: Into < i32 >) -> :: unity2 :: Il2CppString { unsafe { __DisposUnit_unity2_raw :: get_force_name (:: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } # [doc = "`GetForceIndex(::unity2::Il2CppString)` overload"] pub fn get_force_index (name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> i32 { unsafe { __DisposUnit_unity2_raw :: get_force_index (:: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-disposunit")]
+pub trait IDisposUnitMethods : IDisposUnit { # [doc = "`GetForceType()` overload"] fn get_force_type (self ,) -> crate :: app :: force :: Force_Type { unsafe { let __receiver = < DisposUnit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DisposUnit_unity2_raw :: get_force_type (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DisposUnit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DisposUnit_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-disposunit")]
+impl < __T : IDisposUnit > IDisposUnitMethods for __T { }
+
+#[cfg(feature = "app-disposunit")]
+impl DisposUnit { pub fn get_force_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DisposUnit_unity2_raw :: __lookup_get_force_type :: get_method_info () } pub fn get_force_names_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DisposUnit_unity2_raw :: __lookup_get_force_names :: get_method_info () } pub fn get_force_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DisposUnit_unity2_raw :: __lookup_get_force_name :: get_method_info () } pub fn get_force_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DisposUnit_unity2_raw :: __lookup_get_force_index :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DisposUnit_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-disposunit")]
 impl DisposUnit {
-    #[doc = "`GetForceNames()` overload"]
-    pub fn get_force_names() -> ::unity2::Array<::unity2::Il2CppString> {
-        unsafe { __DisposUnit_unity2_raw::get_force_names(::core::option::Option::None) }
-    }
-
-    #[doc = "`GetForceName(i32)` overload"]
-    pub fn get_force_name(index: impl ::core::convert::Into<i32>) -> ::unity2::Il2CppString {
-        unsafe { __DisposUnit_unity2_raw::get_force_name(::core::convert::Into::into(index), ::core::option::Option::None) }
-    }
-
-    #[doc = "`GetForceIndex(::unity2::Il2CppString)` overload"]
-    pub fn get_force_index(name: impl ::core::convert::Into<::unity2::Il2CppString>) -> i32 {
-        unsafe { __DisposUnit_unity2_raw::get_force_index(::core::convert::Into::into(name), ::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-disposunit")]
-pub trait IDisposUnitMethods: IDisposUnit {
-    #[doc = "`GetForceType()` overload"]
-    fn get_force_type(self) -> crate::app::force::Force_Type {
-        unsafe {
-            let __receiver = <DisposUnit as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DisposUnit_unity2_raw::get_force_type(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <DisposUnit as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DisposUnit_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-disposunit")]
-impl<__T: IDisposUnit> IDisposUnitMethods for __T {}
-
-#[cfg(feature = "app-disposunit")]
-impl DisposUnit {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(DisposUnit), ::core::stringify!(new),));
-        <Self as IDisposUnitMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DisposUnit) , :: core :: stringify ! (new) ,)) ; < Self as IDisposUnitMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-disposunit")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{DisposUnit, DisposUnit_Item, IDisposUnit, IDisposUnitMethods};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        system::{object::IObject, valuetype::IValueType},
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::DisposUnit;
+    pub use super::IDisposUnit;
+    pub use super::IDisposUnitMethods;
+    pub use super::DisposUnit_Item;
+    pub use crate::system::object::IObject;
+    pub use crate::system::valuetype::IValueType;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

@@ -2,4972 +2,539 @@
 
 #[cfg(feature = "app-versus-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::singletonclass_1::{ISingletonClass_1, SingletonClass_1},
-        system::{
-            object::{IObject, Object},
-            r#enum::{Enum, IEnum},
-            valuetype::{IValueType, ValueType},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versus/Versus_DownloadHistory.md"))]
-    #[::unity2::class(namespace = "App", name = "Versus.DownloadHistory")]
-    #[parent(crate::system::object::Object)]
-    pub struct Versus_DownloadHistory {
-        #[static_field]
-        #[rename(name = "CoolTimeSecond")]
-        pub cool_time_second: i64,
-        #[offset(16)]
-        #[rename(name = "m_DownloadedDataList")]
-        pub m_downloaded_data_list: crate::system::collections::generic::list_1::List_1<crate::app::versus::Versus_DownloadHistory_CheckData>,
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: singletonclass_1 :: { ISingletonClass_1 , SingletonClass_1 }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versus/Versus_VersusCheck.md"))] # [:: unity2 :: class (namespace = "App" , name = "Versus.VersusCheck")] # [parent (crate :: system :: object :: Object)] pub struct Versus_VersusCheck {}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/versus/Versus_MapResult.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct Versus_MapResult  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for Versus_MapResult  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "Versus.MapResult";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versus/Versus.md"))]
-    #[::unity2::class(namespace = "App", name = "Versus")]
-    # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: versus :: Versus >)]
-    pub struct Versus {
-        #[offset(32)]
-        #[rename(name = "m_PlayerMetaData")]
-        pub m_player_meta_data: crate::app::versusserverrankedmetadata::VersusServerRankedMetaData,
-        #[offset(40)]
-        #[rename(name = "m_PlayerData")]
-        pub m_player_data: crate::app::versusserverrankeddata::VersusServerRankedData,
-        #[offset(48)]
-        #[rename(name = "m_PlayerRatingList")]
-        pub m_player_rating_list: crate::system::collections::generic::list_1::List_1<crate::app::nexversus::NexVersus_RatingData>,
-        #[offset(56)]
-        #[rename(name = "m_OpponentMetaData")]
-        pub m_opponent_meta_data: crate::app::versusserverrankedmetadata::VersusServerRankedMetaData,
-        #[offset(64)]
-        #[rename(name = "m_OpponentData")]
-        pub m_opponent_data: crate::app::versusserverrankeddata::VersusServerRankedData,
-        #[offset(72)]
-        #[rename(name = "m_ReplayData")]
-        pub m_replay_data: crate::app::versusserverreplaydata::VersusServerReplayData,
-        #[offset(80)]
-        #[rename(name = "m_ReplayMetaData")]
-        pub m_replay_meta_data: crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
-        #[offset(88)]
-        #[rename(name = "m_CasualOpponentMetaData")]
-        pub m_casual_opponent_meta_data: crate::app::versusservercasualmetadata::VersusServerCasualMetaData,
-        #[offset(96)]
-        #[rename(name = "m_CasualOpponentData")]
-        pub m_casual_opponent_data: crate::app::versusservercasualdata::VersusServerCasualData,
-        #[offset(104)]
-        #[rename(name = "m_CasualPlayerData")]
-        pub m_casual_player_data: crate::app::versusservercasualdata::VersusServerCasualData,
-        #[offset(112)]
-        #[rename(name = "m_CasualPlayerMetaData")]
-        pub m_casual_player_meta_data: crate::app::versusservercasualmetadata::VersusServerCasualMetaData,
-        #[offset(120)]
-        #[rename(name = "m_BackupData")]
-        pub m_backup_data: crate::app::versusbackupdata::VersusBackupData,
-        #[offset(128)]
-        #[rename(name = "m_EditBackupData")]
-        pub m_edit_backup_data: crate::app::versuseditmodebackupdata::VersusEditModeBackupData,
-        #[offset(136)]
-        #[rename(name = "m_Mode")]
-        pub m_mode: crate::app::versus::Versus_Mode,
-        #[offset(140)]
-        #[rename(name = "m_MatchingType")]
-        pub m_matching_type: crate::app::versus::Versus_MatchingType,
-        #[offset(144)]
-        #[rename(name = "m_Error")]
-        pub m_error: crate::app::versus::Versus_Error,
-        #[offset(148)]
-        #[rename(name = "m_Result")]
-        pub m_result: crate::app::versus::Versus_MapResult,
-        #[offset(152)]
-        #[rename(name = "m_IsSurrender")]
-        pub m_is_surrender: bool,
-        #[offset(156)]
-        #[rename(name = "m_CasualMapNumber")]
-        pub m_casual_map_number: i32,
-        #[static_field]
-        #[rename(name = "ReplaySlotCount")]
-        pub replay_slot_count: i32,
-        #[offset(169)]
-        #[rename(name = "m_IsExistOnServer")]
-        pub m_is_exist_on_server: bool,
-        #[offset(176)]
-        #[rename(name = "m_History")]
-        pub m_history: crate::app::versus::Versus_DownloadHistory,
+}
+
+
+impl  ::unity2::IlType for Versus_MapResult  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/versus/Versus_CheckDataType.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct Versus_CheckDataType {
-        pub value: i32,
+}
+
+
+impl  Versus_MapResult  {
+    pub fn win() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl ::unity2::ClassIdentity for Versus_CheckDataType {
-        const NAME: &'static str = "Versus.CheckDataType";
-        const NAMESPACE: &'static str = "App";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+    pub fn lose() -> Self {
+        Self { value: 1 }
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
     }
 
-    impl ::unity2::IlType for Versus_CheckDataType {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+
+    pub fn none() -> Self {
+        Self { value: 2 }
+
     }
 
-    impl Versus_CheckDataType {
-        pub fn none() -> Self {
-            Self { value: -1 }
-        }
 
-        pub fn player_casual_meta() -> Self {
-            Self { value: 0 }
-        }
+    pub fn abort() -> Self {
+        Self { value: 3 }
 
-        pub fn player_ranked_meta() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn replay_meta() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn opponent_casual_friend() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn opponent_ranked_friend() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn opponent_casual_profile() -> Self {
-            Self { value: 5 }
-        }
-
-        pub fn opponent_ranked_profile() -> Self {
-            Self { value: 6 }
-        }
-
-        pub fn num() -> Self {
-            Self { value: 7 }
-        }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/versus/Versus_MapResult.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct Versus_MapResult {
-        pub value: i32,
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versus/Versus_MapObjectCounter.md"))] # [:: unity2 :: class (namespace = "App" , name = "Versus.MapObjectCounter")] # [parent (crate :: system :: object :: Object)] pub struct Versus_MapObjectCounter {
+# [offset (16)] # [rename (name = "m_Dict")] pub m_dict : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < crate :: app :: mapeditorcategorydata :: MapEditorCategoryData , i32 > ,
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/versus/Versus_Mode.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct Versus_Mode  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for Versus_Mode  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "Versus.Mode";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    impl ::unity2::ClassIdentity for Versus_MapResult {
-        const NAME: &'static str = "Versus.MapResult";
-        const NAMESPACE: &'static str = "App";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  ::unity2::IlType for Versus_Mode  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::IlType for Versus_MapResult {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  Versus_Mode  {
+    pub fn none() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl Versus_MapResult {
-        pub fn win() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn lose() -> Self {
-            Self { value: 1 }
-        }
+    pub fn edit() -> Self {
+        Self { value: 1 }
 
-        pub fn none() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn abort() -> Self {
-            Self { value: 3 }
-        }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/versus/Versus_MatchingType.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct Versus_MatchingType {
-        pub value: i32,
+
+    pub fn casual() -> Self {
+        Self { value: 2 }
+
     }
 
-    impl ::unity2::ClassIdentity for Versus_MatchingType {
-        const NAME: &'static str = "Versus.MatchingType";
-        const NAMESPACE: &'static str = "App";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+    pub fn ranked() -> Self {
+        Self { value: 3 }
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
     }
 
-    impl ::unity2::IlType for Versus_MatchingType {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+
+    pub fn replay() -> Self {
+        Self { value: 4 }
+
     }
 
-    impl Versus_MatchingType {
-        pub fn random() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn friend() -> Self {
-            Self { value: 1 }
-        }
+    pub fn mock_battle() -> Self {
+        Self { value: 5 }
 
-        pub fn data_code() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn profile() -> Self {
-            Self { value: 3 }
-        }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versus/Versus_VersusCheck.md"))]
-    #[::unity2::class(namespace = "App", name = "Versus.VersusCheck")]
-    #[parent(crate::system::object::Object)]
-    pub struct Versus_VersusCheck {}
+}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versus/Versus_MapObjectCounter.md"))]
-    #[::unity2::class(namespace = "App", name = "Versus.MapObjectCounter")]
-    #[parent(crate::system::object::Object)]
-    pub struct Versus_MapObjectCounter {
-        #[offset(16)]
-        #[rename(name = "m_Dict")]
-        pub m_dict: crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::mapeditorcategorydata::MapEditorCategoryData, i32>,
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/versus/Versus_MatchingType.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct Versus_MatchingType  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for Versus_MatchingType  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "Versus.MatchingType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versus/Versus_DownloadHistory_CheckData.md"))]
-    #[::unity2::class(namespace = "App", name = "Versus.DownloadHistory.CheckData")]
-    #[parent(crate::system::object::Object)]
-    pub struct Versus_DownloadHistory_CheckData {
-        #[offset(16)]
-        #[rename(name = "m_IsDownloaded")]
-        pub m_is_downloaded: bool,
-        #[offset(24)]
-        #[rename(name = "m_DataTime")]
-        pub m_data_time: i64,
+}
+
+
+impl  ::unity2::IlType for Versus_MatchingType  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/versus/Versus_Mode.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct Versus_Mode {
-        pub value: i32,
+}
+
+
+impl  Versus_MatchingType  {
+    pub fn random() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl ::unity2::ClassIdentity for Versus_Mode {
-        const NAME: &'static str = "Versus.Mode";
-        const NAMESPACE: &'static str = "App";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+    pub fn friend() -> Self {
+        Self { value: 1 }
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
     }
 
-    impl ::unity2::IlType for Versus_Mode {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+
+    pub fn data_code() -> Self {
+        Self { value: 2 }
+
     }
 
-    impl Versus_Mode {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn edit() -> Self {
-            Self { value: 1 }
-        }
+    pub fn profile() -> Self {
+        Self { value: 3 }
 
-        pub fn casual() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn ranked() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn replay() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn mock_battle() -> Self {
-            Self { value: 5 }
-        }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/versus/Versus_Error.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct Versus_Error {
-        pub value: i32,
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/versus/Versus_Error.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct Versus_Error  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for Versus_Error  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "Versus.Error";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    impl ::unity2::ClassIdentity for Versus_Error {
-        const NAME: &'static str = "Versus.Error";
-        const NAMESPACE: &'static str = "App";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  ::unity2::IlType for Versus_Error  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::IlType for Versus_Error {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  Versus_Error  {
+    pub fn none() -> Self {
+        Self { value: -1 }
+
     }
 
-    impl Versus_Error {
-        pub fn none() -> Self {
-            Self { value: -1 }
-        }
 
-        pub fn ranked_report() -> Self {
-            Self { value: 101 }
-        }
+    pub fn ranked_report() -> Self {
+        Self { value: 101 }
 
-        pub fn ranked_offence_unit_none() -> Self {
-            Self { value: 102 }
-        }
-
-        pub fn invalid_data() -> Self {
-            Self { value: 103 }
-        }
     }
+
+
+    pub fn ranked_offence_unit_none() -> Self {
+        Self { value: 102 }
+
+    }
+
+
+    pub fn invalid_data() -> Self {
+        Self { value: 103 }
+
+    }
+
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/versus/Versus_CheckDataType.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct Versus_CheckDataType  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for Versus_CheckDataType  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "Versus.CheckDataType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for Versus_CheckDataType  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  Versus_CheckDataType  {
+    pub fn none() -> Self {
+        Self { value: -1 }
+
+    }
+
+
+    pub fn player_casual_meta() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn player_ranked_meta() -> Self {
+        Self { value: 1 }
+
+    }
+
+
+    pub fn replay_meta() -> Self {
+        Self { value: 2 }
+
+    }
+
+
+    pub fn opponent_casual_friend() -> Self {
+        Self { value: 3 }
+
+    }
+
+
+    pub fn opponent_ranked_friend() -> Self {
+        Self { value: 4 }
+
+    }
+
+
+    pub fn opponent_casual_profile() -> Self {
+        Self { value: 5 }
+
+    }
+
+
+    pub fn opponent_ranked_profile() -> Self {
+        Self { value: 6 }
+
+    }
+
+
+    pub fn num() -> Self {
+        Self { value: 7 }
+
+    }
+
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versus/Versus_DownloadHistory_CheckData.md"))] # [:: unity2 :: class (namespace = "App" , name = "Versus.DownloadHistory.CheckData")] # [parent (crate :: system :: object :: Object)] pub struct Versus_DownloadHistory_CheckData {
+# [offset (16)] # [rename (name = "m_IsDownloaded")] pub m_is_downloaded : bool ,
+# [offset (24)] # [rename (name = "m_DataTime")] pub m_data_time : i64 ,
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versus/Versus.md"))] # [:: unity2 :: class (namespace = "App" , name = "Versus")] # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: versus :: Versus >)] pub struct Versus {
+# [offset (32)] # [rename (name = "m_PlayerMetaData")] pub m_player_meta_data : crate :: app :: versusserverrankedmetadata :: VersusServerRankedMetaData ,
+# [offset (40)] # [rename (name = "m_PlayerData")] pub m_player_data : crate :: app :: versusserverrankeddata :: VersusServerRankedData ,
+# [offset (48)] # [rename (name = "m_PlayerRatingList")] pub m_player_rating_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: nexversus :: NexVersus_RatingData > ,
+# [offset (56)] # [rename (name = "m_OpponentMetaData")] pub m_opponent_meta_data : crate :: app :: versusserverrankedmetadata :: VersusServerRankedMetaData ,
+# [offset (64)] # [rename (name = "m_OpponentData")] pub m_opponent_data : crate :: app :: versusserverrankeddata :: VersusServerRankedData ,
+# [offset (72)] # [rename (name = "m_ReplayData")] pub m_replay_data : crate :: app :: versusserverreplaydata :: VersusServerReplayData ,
+# [offset (80)] # [rename (name = "m_ReplayMetaData")] pub m_replay_meta_data : crate :: app :: versusserverreplaymetadata :: VersusServerReplayMetaData ,
+# [offset (88)] # [rename (name = "m_CasualOpponentMetaData")] pub m_casual_opponent_meta_data : crate :: app :: versusservercasualmetadata :: VersusServerCasualMetaData ,
+# [offset (96)] # [rename (name = "m_CasualOpponentData")] pub m_casual_opponent_data : crate :: app :: versusservercasualdata :: VersusServerCasualData ,
+# [offset (104)] # [rename (name = "m_CasualPlayerData")] pub m_casual_player_data : crate :: app :: versusservercasualdata :: VersusServerCasualData ,
+# [offset (112)] # [rename (name = "m_CasualPlayerMetaData")] pub m_casual_player_meta_data : crate :: app :: versusservercasualmetadata :: VersusServerCasualMetaData ,
+# [offset (120)] # [rename (name = "m_BackupData")] pub m_backup_data : crate :: app :: versusbackupdata :: VersusBackupData ,
+# [offset (128)] # [rename (name = "m_EditBackupData")] pub m_edit_backup_data : crate :: app :: versuseditmodebackupdata :: VersusEditModeBackupData ,
+# [offset (136)] # [rename (name = "m_Mode")] pub m_mode : crate :: app :: versus :: Versus_Mode ,
+# [offset (140)] # [rename (name = "m_MatchingType")] pub m_matching_type : crate :: app :: versus :: Versus_MatchingType ,
+# [offset (144)] # [rename (name = "m_Error")] pub m_error : crate :: app :: versus :: Versus_Error ,
+# [offset (148)] # [rename (name = "m_Result")] pub m_result : crate :: app :: versus :: Versus_MapResult ,
+# [offset (152)] # [rename (name = "m_IsSurrender")] pub m_is_surrender : bool ,
+# [offset (156)] # [rename (name = "m_CasualMapNumber")] pub m_casual_map_number : i32 ,
+# [static_field] # [rename (name = "ReplaySlotCount")] pub replay_slot_count : i32 ,
+# [offset (169)] # [rename (name = "m_IsExistOnServer")] pub m_is_exist_on_server : bool ,
+# [offset (176)] # [rename (name = "m_History")] pub m_history : crate :: app :: versus :: Versus_DownloadHistory ,
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versus/Versus_DownloadHistory.md"))] # [:: unity2 :: class (namespace = "App" , name = "Versus.DownloadHistory")] # [parent (crate :: system :: object :: Object)] pub struct Versus_DownloadHistory {
+# [static_field] # [rename (name = "CoolTimeSecond")] pub cool_time_second : i64 ,
+# [offset (16)] # [rename (name = "m_DownloadedDataList")] pub m_downloaded_data_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: versus :: Versus_DownloadHistory_CheckData > ,
+}
+
 }
 
 #[cfg(feature = "app-versus-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-versus")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __Versus_DownloadHistory_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Versus_DownloadHistory as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus_DownloadHistory as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: Versus_DownloadHistory, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Versus_DownloadHistory, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_initialize_check_data {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Versus_DownloadHistory as ::unity2::ClassIdentity>::class(),
-                "InitializeCheckData",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus_DownloadHistory as ::unity2::ClassIdentity>::NAME,
-                        "InitializeCheckData",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn initialize_check_data(this: Versus_DownloadHistory, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Versus_DownloadHistory, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_initialize_check_data::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_donwloaded {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::versus::Versus_CheckDataType as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Versus_DownloadHistory as ::unity2::ClassIdentity>::class(),
-                "SetDonwloaded",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus_DownloadHistory as ::unity2::ClassIdentity>::NAME,
-                        "SetDonwloaded",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_donwloaded(
-        this: Versus_DownloadHistory,
-        data_type: crate::app::versus::Versus_CheckDataType,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(Versus_DownloadHistory, crate::app::versus::Versus_CheckDataType, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_donwloaded::get_method_info().method_ptr);
-        inner(this, data_type, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_downloaded {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::versus::Versus_CheckDataType as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Versus_DownloadHistory as ::unity2::ClassIdentity>::class(),
-                "IsDownloaded",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus_DownloadHistory as ::unity2::ClassIdentity>::NAME,
-                        "IsDownloaded",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_downloaded(
-        this: Versus_DownloadHistory,
-        data_type: crate::app::versus::Versus_CheckDataType,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(Versus_DownloadHistory, crate::app::versus::Versus_CheckDataType, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_downloaded::get_method_info().method_ptr);
-        inner(this, data_type, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_reset_check_data {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::versus::Versus_CheckDataType as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Versus_DownloadHistory as ::unity2::ClassIdentity>::class(),
-                "ResetCheckData",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus_DownloadHistory as ::unity2::ClassIdentity>::NAME,
-                        "ResetCheckData",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn reset_check_data(
-        this: Versus_DownloadHistory,
-        data_type: crate::app::versus::Versus_CheckDataType,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(Versus_DownloadHistory, crate::app::versus::Versus_CheckDataType, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_reset_check_data::get_method_info().method_ptr);
-        inner(this, data_type, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_all_reset {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Versus_DownloadHistory as ::unity2::ClassIdentity>::class(),
-                "AllReset",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus_DownloadHistory as ::unity2::ClassIdentity>::NAME,
-                        "AllReset",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn all_reset(this: Versus_DownloadHistory, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Versus_DownloadHistory, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_all_reset::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Versus_DownloadHistory as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus_DownloadHistory as ::unity2::ClassIdentity>::NAME,
-                        ".cctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __Versus_VersusCheck_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_validate { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus_VersusCheck as :: unity2 :: ClassIdentity > :: class () , "Validate" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus_VersusCheck as :: unity2 :: ClassIdentity > :: NAME , "Validate" , e) , } } } pub unsafe fn validate (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_validate :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_validate_casual { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus_VersusCheck as :: unity2 :: ClassIdentity > :: class () , "ValidateCasual" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus_VersusCheck as :: unity2 :: ClassIdentity > :: NAME , "ValidateCasual" , e) , } } } pub unsafe fn validate_casual (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_validate_casual :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_validate_ranked { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus_VersusCheck as :: unity2 :: ClassIdentity > :: class () , "ValidateRanked" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus_VersusCheck as :: unity2 :: ClassIdentity > :: NAME , "ValidateRanked" , e) , } } } pub unsafe fn validate_ranked (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_validate_ranked :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_validate_save_edit { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus_VersusCheck as :: unity2 :: ClassIdentity > :: class () , "ValidateSaveEdit" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus_VersusCheck as :: unity2 :: ClassIdentity > :: NAME , "ValidateSaveEdit" , e) , } } } pub unsafe fn validate_save_edit (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_validate_save_edit :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_validate_units { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus_VersusCheck as :: unity2 :: ClassIdentity > :: class () , "ValidateUnits" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus_VersusCheck as :: unity2 :: ClassIdentity > :: NAME , "ValidateUnits" , e) , } } } pub unsafe fn validate_units (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_validate_units :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_validate_player_units { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus_VersusCheck as :: unity2 :: ClassIdentity > :: class () , "ValidatePlayerUnits" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus_VersusCheck as :: unity2 :: ClassIdentity > :: NAME , "ValidatePlayerUnits" , e) , } } } pub unsafe fn validate_player_units (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_validate_player_units :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_validate_unit { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus_VersusCheck as :: unity2 :: ClassIdentity > :: class () , "ValidateUnit" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus_VersusCheck as :: unity2 :: ClassIdentity > :: NAME , "ValidateUnit" , e) , } } } pub unsafe fn validate_unit (unit : crate :: app :: unit :: Unit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_validate_unit :: get_method_info () . method_ptr ,) ; inner (unit , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_validate_params { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus_VersusCheck as :: unity2 :: ClassIdentity > :: class () , "ValidateParams" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus_VersusCheck as :: unity2 :: ClassIdentity > :: NAME , "ValidateParams" , e) , } } } pub unsafe fn validate_params (unit : crate :: app :: unit :: Unit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_validate_params :: get_method_info () . method_ptr ,) ; inner (unit , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_validate_skills { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus_VersusCheck as :: unity2 :: ClassIdentity > :: class () , "ValidateSkills" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus_VersusCheck as :: unity2 :: ClassIdentity > :: NAME , "ValidateSkills" , e) , } } } pub unsafe fn validate_skills (unit : crate :: app :: unit :: Unit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_validate_skills :: get_method_info () . method_ptr ,) ; inner (unit , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_validate_equip_ring { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus_VersusCheck as :: unity2 :: ClassIdentity > :: class () , "ValidateEquipRing" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus_VersusCheck as :: unity2 :: ClassIdentity > :: NAME , "ValidateEquipRing" , e) , } } } pub unsafe fn validate_equip_ring (unit : crate :: app :: unit :: Unit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_validate_equip_ring :: get_method_info () . method_ptr ,) ; inner (unit , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_validate_job { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus_VersusCheck as :: unity2 :: ClassIdentity > :: class () , "ValidateJob" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus_VersusCheck as :: unity2 :: ClassIdentity > :: NAME , "ValidateJob" , e) , } } } pub unsafe fn validate_job (unit : crate :: app :: unit :: Unit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_validate_job :: get_method_info () . method_ptr ,) ; inner (unit , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_validate_equip_skill { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: skilldata :: SkillData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus_VersusCheck as :: unity2 :: ClassIdentity > :: class () , "ValidateEquipSkill" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus_VersusCheck as :: unity2 :: ClassIdentity > :: NAME , "ValidateEquipSkill" , e) , } } } pub unsafe fn validate_equip_skill (skill : crate :: app :: skilldata :: SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (crate :: app :: skilldata :: SkillData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_validate_equip_skill :: get_method_info () . method_ptr ,) ; inner (skill , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_validate_god_skills { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: godunit :: GodUnit as :: unity2 :: IlType > :: il_type () , < crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus_VersusCheck as :: unity2 :: ClassIdentity > :: class () , "ValidateGodSkills" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus_VersusCheck as :: unity2 :: ClassIdentity > :: NAME , "ValidateGodSkills" , e) , } } } pub unsafe fn validate_god_skills (god : crate :: app :: godunit :: GodUnit , unit : crate :: app :: unit :: Unit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (crate :: app :: godunit :: GodUnit , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_validate_god_skills :: get_method_info () . method_ptr ,) ; inner (god , unit , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_growth_skills { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: godunit :: GodUnit as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus_VersusCheck as :: unity2 :: ClassIdentity > :: class () , "GetGrowthSkills" , 3 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus_VersusCheck as :: unity2 :: ClassIdentity > :: NAME , "GetGrowthSkills" , e) , } } } pub unsafe fn get_growth_skills (god : crate :: app :: godunit :: GodUnit , growth_synchro_skills : * mut crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > , growth_engage_skills : * mut crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: godunit :: GodUnit , * mut crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > , * mut crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_get_growth_skills :: get_method_info () . method_ptr ,) ; inner (god , growth_synchro_skills , growth_engage_skills , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_validate_force { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< u32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus_VersusCheck as :: unity2 :: ClassIdentity > :: class () , "ValidateForce" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus_VersusCheck as :: unity2 :: ClassIdentity > :: NAME , "ValidateForce" , e) , } } } pub unsafe fn validate_force (force_mask : u32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (u32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_validate_force :: get_method_info () . method_ptr ,) ; inner (force_mask , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_validate_count { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus_VersusCheck as :: unity2 :: ClassIdentity > :: class () , "ValidateCount" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus_VersusCheck as :: unity2 :: ClassIdentity > :: NAME , "ValidateCount" , e) , } } } pub unsafe fn validate_count (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_validate_count :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_validate_edit_map { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus_VersusCheck as :: unity2 :: ClassIdentity > :: class () , "ValidateEditMap" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus_VersusCheck as :: unity2 :: ClassIdentity > :: NAME , "ValidateEditMap" , e) , } } } pub unsafe fn validate_edit_map (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_validate_edit_map :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_count_objects { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: gameobject :: GameObject as :: unity2 :: IlType > :: il_type () , < crate :: app :: versus :: Versus_MapObjectCounter as :: unity2 :: IlType > :: il_type () , < crate :: app :: versus :: Versus_MapObjectCounter as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus_VersusCheck as :: unity2 :: ClassIdentity > :: class () , "CountObjects" , 3 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus_VersusCheck as :: unity2 :: ClassIdentity > :: NAME , "CountObjects" , e) , } } } pub unsafe fn count_objects (root : crate :: unity_engine :: gameobject :: GameObject , player : crate :: app :: versus :: Versus_MapObjectCounter , enemy : crate :: app :: versus :: Versus_MapObjectCounter , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: unity_engine :: gameobject :: GameObject , crate :: app :: versus :: Versus_MapObjectCounter , crate :: app :: versus :: Versus_MapObjectCounter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_count_objects :: get_method_info () . method_ptr ,) ; inner (root , player , enemy , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus_VersusCheck as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus_VersusCheck as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : Versus_VersusCheck , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Versus_VersusCheck , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-versus")]
-impl Versus_DownloadHistory {
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __Versus_DownloadHistory_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
+impl Versus_VersusCheck { # [doc = "`Validate()` overload"] pub fn validate () -> bool { unsafe { __Versus_VersusCheck_unity2_raw :: validate (:: core :: option :: Option :: None) } } # [doc = "`ValidateCasual()` overload"] pub fn validate_casual () -> bool { unsafe { __Versus_VersusCheck_unity2_raw :: validate_casual (:: core :: option :: Option :: None) } } # [doc = "`ValidateRanked()` overload"] pub fn validate_ranked () -> bool { unsafe { __Versus_VersusCheck_unity2_raw :: validate_ranked (:: core :: option :: Option :: None) } } # [doc = "`ValidateSaveEdit()` overload"] pub fn validate_save_edit () -> bool { unsafe { __Versus_VersusCheck_unity2_raw :: validate_save_edit (:: core :: option :: Option :: None) } } # [doc = "`ValidateUnits()` overload"] pub fn validate_units () -> bool { unsafe { __Versus_VersusCheck_unity2_raw :: validate_units (:: core :: option :: Option :: None) } } # [doc = "`ValidatePlayerUnits()` overload"] pub fn validate_player_units () -> bool { unsafe { __Versus_VersusCheck_unity2_raw :: validate_player_units (:: core :: option :: Option :: None) } } # [doc = "`ValidateUnit(crate::app::unit::Unit)` overload"] pub fn validate_unit (unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> bool { unsafe { __Versus_VersusCheck_unity2_raw :: validate_unit (:: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } # [doc = "`ValidateParams(crate::app::unit::Unit)` overload"] pub fn validate_params (unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> bool { unsafe { __Versus_VersusCheck_unity2_raw :: validate_params (:: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } # [doc = "`ValidateSkills(crate::app::unit::Unit)` overload"] pub fn validate_skills (unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> bool { unsafe { __Versus_VersusCheck_unity2_raw :: validate_skills (:: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } # [doc = "`ValidateEquipRing(crate::app::unit::Unit)` overload"] pub fn validate_equip_ring (unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> bool { unsafe { __Versus_VersusCheck_unity2_raw :: validate_equip_ring (:: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } # [doc = "`ValidateJob(crate::app::unit::Unit)` overload"] pub fn validate_job (unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> bool { unsafe { __Versus_VersusCheck_unity2_raw :: validate_job (:: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } # [doc = "`ValidateEquipSkill(crate::app::skilldata::SkillData)` overload"] pub fn validate_equip_skill (skill : impl :: core :: convert :: Into < crate :: app :: skilldata :: SkillData >) -> bool { unsafe { __Versus_VersusCheck_unity2_raw :: validate_equip_skill (:: core :: convert :: Into :: into (skill) , :: core :: option :: Option :: None) } } # [doc = "`ValidateGodSkills(crate::app::godunit::GodUnit, crate::app::unit::Unit)` overload"] pub fn validate_god_skills (god : impl :: core :: convert :: Into < crate :: app :: godunit :: GodUnit > , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> bool { unsafe { __Versus_VersusCheck_unity2_raw :: validate_god_skills (:: core :: convert :: Into :: into (god) , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } # [doc = "`GetGrowthSkills(crate::app::godunit::GodUnit, *mutcrate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>, *mutcrate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>)` overload"] pub fn get_growth_skills (god : impl :: core :: convert :: Into < crate :: app :: godunit :: GodUnit >) -> (crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > , crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString >) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > > :: uninit () ; __Versus_VersusCheck_unity2_raw :: get_growth_skills (:: core :: convert :: Into :: into (god) , __out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: option :: Option :: None) ; (__out_0 . assume_init () , __out_1 . assume_init ()) } } # [doc = "`ValidateForce(u32)` overload"] pub fn validate_force (force_mask : impl :: core :: convert :: Into < u32 >) -> bool { unsafe { __Versus_VersusCheck_unity2_raw :: validate_force (:: core :: convert :: Into :: into (force_mask) , :: core :: option :: Option :: None) } } # [doc = "`ValidateCount()` overload"] pub fn validate_count () -> bool { unsafe { __Versus_VersusCheck_unity2_raw :: validate_count (:: core :: option :: Option :: None) } } # [doc = "`ValidateEditMap()` overload"] pub fn validate_edit_map () -> bool { unsafe { __Versus_VersusCheck_unity2_raw :: validate_edit_map (:: core :: option :: Option :: None) } } # [doc = "`CountObjects(crate::unity_engine::gameobject::GameObject, crate::app::versus::Versus_MapObjectCounter, crate::app::versus::Versus_MapObjectCounter)` overload"] pub fn count_objects (root : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject > , player : impl :: core :: convert :: Into < crate :: app :: versus :: Versus_MapObjectCounter > , enemy : impl :: core :: convert :: Into < crate :: app :: versus :: Versus_MapObjectCounter >) -> () { unsafe { __Versus_VersusCheck_unity2_raw :: count_objects (:: core :: convert :: Into :: into (root) , :: core :: convert :: Into :: into (player) , :: core :: convert :: Into :: into (enemy) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-versus")]
-pub trait IVersus_DownloadHistoryMethods: IVersus_DownloadHistory {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <Versus_DownloadHistory as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Versus_DownloadHistory_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`InitializeCheckData()` overload"]
-    fn initialize_check_data(self) -> () {
-        unsafe {
-            let __receiver =
-                <Versus_DownloadHistory as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Versus_DownloadHistory_unity2_raw::initialize_check_data(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetDonwloaded(crate::app::versus::Versus_CheckDataType)` overload"]
-    fn set_donwloaded(self, data_type: impl ::core::convert::Into<crate::app::versus::Versus_CheckDataType>) -> () {
-        unsafe {
-            let __receiver =
-                <Versus_DownloadHistory as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Versus_DownloadHistory_unity2_raw::set_donwloaded(__receiver, ::core::convert::Into::into(data_type), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsDownloaded(crate::app::versus::Versus_CheckDataType)` overload"]
-    fn is_downloaded(self, data_type: impl ::core::convert::Into<crate::app::versus::Versus_CheckDataType>) -> bool {
-        unsafe {
-            let __receiver =
-                <Versus_DownloadHistory as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Versus_DownloadHistory_unity2_raw::is_downloaded(__receiver, ::core::convert::Into::into(data_type), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ResetCheckData(crate::app::versus::Versus_CheckDataType)` overload"]
-    fn reset_check_data(self, data_type: impl ::core::convert::Into<crate::app::versus::Versus_CheckDataType>) -> () {
-        unsafe {
-            let __receiver =
-                <Versus_DownloadHistory as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Versus_DownloadHistory_unity2_raw::reset_check_data(__receiver, ::core::convert::Into::into(data_type), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`AllReset()` overload"]
-    fn all_reset(self) -> () {
-        unsafe {
-            let __receiver =
-                <Versus_DownloadHistory as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Versus_DownloadHistory_unity2_raw::all_reset(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IVersus_VersusCheckMethods : IVersus_VersusCheck { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Versus_VersusCheck as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_VersusCheck_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-versus")]
-impl<__T: IVersus_DownloadHistory> IVersus_DownloadHistoryMethods for __T {}
+impl < __T : IVersus_VersusCheck > IVersus_VersusCheckMethods for __T { }
 
 #[cfg(feature = "app-versus")]
-impl Versus_DownloadHistory {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Versus_DownloadHistory),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IVersus_DownloadHistoryMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-versus")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __Versus_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_create {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Versus as ::unity2::ClassIdentity>::class(), "OnCreate", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus as ::unity2::ClassIdentity>::NAME,
-                        "OnCreate",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_create(this: Versus, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Versus, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_on_create::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_dispose {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Versus as ::unity2::ClassIdentity>::class(), "OnDispose", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus as ::unity2::ClassIdentity>::NAME,
-                        "OnDispose",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_dispose(this: Versus, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Versus, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_on_dispose::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_valid {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Versus as ::unity2::ClassIdentity>::class(), "IsValid", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus as ::unity2::ClassIdentity>::NAME,
-                        "IsValid",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_valid(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_is_valid::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_versus_mode {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Versus as ::unity2::ClassIdentity>::class(), "IsVersusMode", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus as ::unity2::ClassIdentity>::NAME,
-                        "IsVersusMode",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_versus_mode(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_is_versus_mode::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_casual {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Versus as ::unity2::ClassIdentity>::class(), "IsCasual", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus as ::unity2::ClassIdentity>::NAME,
-                        "IsCasual",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_casual(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_is_casual::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_ranked {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Versus as ::unity2::ClassIdentity>::class(), "IsRanked", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus as ::unity2::ClassIdentity>::NAME,
-                        "IsRanked",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_ranked(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_is_ranked::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_mock_battle {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Versus as ::unity2::ClassIdentity>::class(), "IsMockBattle", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus as ::unity2::ClassIdentity>::NAME,
-                        "IsMockBattle",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_mock_battle(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_is_mock_battle::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_edit_mode {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Versus as ::unity2::ClassIdentity>::class(), "IsEditMode", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus as ::unity2::ClassIdentity>::NAME,
-                        "IsEditMode",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_edit_mode(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_is_edit_mode::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_replay {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Versus as ::unity2::ClassIdentity>::class(), "IsReplay", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus as ::unity2::ClassIdentity>::NAME,
-                        "IsReplay",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_replay(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_is_replay::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_can_sortie_ranked {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Versus as ::unity2::ClassIdentity>::class(),
-                "CanSortieRanked",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus as ::unity2::ClassIdentity>::NAME,
-                        "CanSortieRanked",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn can_sortie_ranked(this: Versus, unit: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(Versus, crate::app::unit::Unit, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_can_sortie_ranked::get_method_info().method_ptr);
-        inner(this, unit, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_can_sortie_ranked_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::godunit::GodUnit as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Versus as ::unity2::ClassIdentity>::class(),
-                "CanSortieRanked",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus as ::unity2::ClassIdentity>::NAME,
-                        "CanSortieRanked",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn can_sortie_ranked_2(this: Versus, god: crate::app::godunit::GodUnit, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(Versus, crate::app::godunit::GodUnit, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_can_sortie_ranked_2::get_method_info().method_ptr);
-        inner(this, god, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_save_casual_units {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Versus as ::unity2::ClassIdentity>::class(),
-                "SaveCasualUnits",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus as ::unity2::ClassIdentity>::NAME,
-                        "SaveCasualUnits",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn save_casual_units(this: Versus, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Versus, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_save_casual_units::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_save_casual_units_init {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Versus as ::unity2::ClassIdentity>::class(),
-                "SaveCasualUnitsInit",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus as ::unity2::ClassIdentity>::NAME,
-                        "SaveCasualUnitsInit",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn save_casual_units_init(this: Versus, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Versus, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_save_casual_units_init::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_map_end_edit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Versus as ::unity2::ClassIdentity>::class(), "MapEndEdit", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus as ::unity2::ClassIdentity>::NAME,
-                        "MapEndEdit",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn map_end_edit(this: Versus, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Versus, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_map_end_edit::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_reset_result {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Versus as ::unity2::ClassIdentity>::class(), "ResetResult", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus as ::unity2::ClassIdentity>::NAME,
-                        "ResetResult",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn reset_result(this: Versus, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Versus, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_reset_result::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_abort {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Versus as ::unity2::ClassIdentity>::class(), "SetAbort", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus as ::unity2::ClassIdentity>::NAME,
-                        "SetAbort",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_abort(this: Versus, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Versus, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_set_abort::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_surrender {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Versus as ::unity2::ClassIdentity>::class(), "SetSurrender", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus as ::unity2::ClassIdentity>::NAME,
-                        "SetSurrender",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_surrender(this: Versus, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Versus, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_surrender::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_result_report {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Versus as ::unity2::ClassIdentity>::class(),
-                "SetResultReport",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus as ::unity2::ClassIdentity>::NAME,
-                        "SetResultReport",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_result_report(this: Versus, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Versus, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_result_report::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_error {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::versus::Versus_Error as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<Versus as ::unity2::ClassIdentity>::class(), "SetError", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus as ::unity2::ClassIdentity>::NAME,
-                        "SetError",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_error(this: Versus, error: crate::app::versus::Versus_Error, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Versus, crate::app::versus::Versus_Error, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_error::get_method_info().method_ptr);
-        inner(this, error, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_map_end_versus {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Versus as ::unity2::ClassIdentity>::class(), "MapEndVersus", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus as ::unity2::ClassIdentity>::NAME,
-                        "MapEndVersus",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn map_end_versus(this: Versus, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Versus, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_map_end_versus::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_map_end_versus_casual {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Versus as ::unity2::ClassIdentity>::class(),
-                "MapEndVersusCasual",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus as ::unity2::ClassIdentity>::NAME,
-                        "MapEndVersusCasual",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn map_end_versus_casual(this: Versus, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Versus, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_map_end_versus_casual::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_map_end_versus_ranked {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Versus as ::unity2::ClassIdentity>::class(),
-                "MapEndVersusRanked",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus as ::unity2::ClassIdentity>::NAME,
-                        "MapEndVersusRanked",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn map_end_versus_ranked(this: Versus, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Versus, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_map_end_versus_ranked::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_reset_god_pool_id {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Versus as ::unity2::ClassIdentity>::class(),
-                "ResetGodPoolId",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus as ::unity2::ClassIdentity>::NAME,
-                        "ResetGodPoolId",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn reset_god_pool_id(this: Versus, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Versus, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_reset_god_pool_id::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_exits_online_node {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Versus as ::unity2::ClassIdentity>::class(),
-                "IsExitsOnlineNode",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus as ::unity2::ClassIdentity>::NAME,
-                        "IsExitsOnlineNode",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_exits_online_node(this: Versus, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(Versus, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_exits_online_node::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_map_end_replay {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Versus as ::unity2::ClassIdentity>::class(), "MapEndReplay", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus as ::unity2::ClassIdentity>::NAME,
-                        "MapEndReplay",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn map_end_replay(this: Versus, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Versus, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_map_end_replay::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_restore_story_chapter {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Versus as ::unity2::ClassIdentity>::class(),
-                "RestoreStoryChapter",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus as ::unity2::ClassIdentity>::NAME,
-                        "RestoreStoryChapter",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn restore_story_chapter(this: Versus, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Versus, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_restore_story_chapter::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_try_set_player_meta_data {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::versusserverrankedmetadata::VersusServerRankedMetaData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Versus as ::unity2::ClassIdentity>::class(),
-                "TrySetPlayerMetaData",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus as ::unity2::ClassIdentity>::NAME,
-                        "TrySetPlayerMetaData",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn try_set_player_meta_data(
-        this: Versus,
-        meta_data: crate::app::versusserverrankedmetadata::VersusServerRankedMetaData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(Versus, crate::app::versusserverrankedmetadata::VersusServerRankedMetaData, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_try_set_player_meta_data::get_method_info().method_ptr);
-        inner(this, meta_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_player_meta_data {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::versusservercasualmetadata::VersusServerCasualMetaData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Versus as ::unity2::ClassIdentity>::class(),
-                "SetPlayerMetaData",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus as ::unity2::ClassIdentity>::NAME,
-                        "SetPlayerMetaData",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_player_meta_data(
-        this: Versus,
-        meta_data: crate::app::versusservercasualmetadata::VersusServerCasualMetaData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(Versus, crate::app::versusservercasualmetadata::VersusServerCasualMetaData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_player_meta_data::get_method_info().method_ptr);
-        inner(this, meta_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_opponent_meta_data {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::versusserverrankedmetadata::VersusServerRankedMetaData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Versus as ::unity2::ClassIdentity>::class(),
-                "SetOpponentMetaData",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus as ::unity2::ClassIdentity>::NAME,
-                        "SetOpponentMetaData",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_opponent_meta_data(
-        this: Versus,
-        meta_data: crate::app::versusserverrankedmetadata::VersusServerRankedMetaData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(Versus, crate::app::versusserverrankedmetadata::VersusServerRankedMetaData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_opponent_meta_data::get_method_info().method_ptr);
-        inner(this, meta_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_opponent_meta_data_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::versusservercasualmetadata::VersusServerCasualMetaData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Versus as ::unity2::ClassIdentity>::class(),
-                "SetOpponentMetaData",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus as ::unity2::ClassIdentity>::NAME,
-                        "SetOpponentMetaData",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_opponent_meta_data_2(
-        this: Versus,
-        meta_data: crate::app::versusservercasualmetadata::VersusServerCasualMetaData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(Versus, crate::app::versusservercasualmetadata::VersusServerCasualMetaData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_opponent_meta_data_2::get_method_info().method_ptr);
-        inner(this, meta_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_player_rating_list {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::collections::generic::list_1::List_1<
-                crate::app::nexversus::NexVersus_RatingData,
-            > as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Versus as ::unity2::ClassIdentity>::class(),
-                "SetPlayerRatingList",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus as ::unity2::ClassIdentity>::NAME,
-                        "SetPlayerRatingList",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_player_rating_list(
-        this: Versus,
-        rating_list: crate::system::collections::generic::list_1::List_1<crate::app::nexversus::NexVersus_RatingData>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            Versus,
-            crate::system::collections::generic::list_1::List_1<crate::app::nexversus::NexVersus_RatingData>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_set_player_rating_list::get_method_info().method_ptr);
-        inner(this, rating_list, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_mode {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::versus::Versus_Mode as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<Versus as ::unity2::ClassIdentity>::class(), "SetMode", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus as ::unity2::ClassIdentity>::NAME,
-                        "SetMode",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_mode(this: Versus, mode: crate::app::versus::Versus_Mode, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Versus, crate::app::versus::Versus_Mode, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_mode::get_method_info().method_ptr);
-        inner(this, mode, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_casual_map {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<Versus as ::unity2::ClassIdentity>::class(), "SetCasualMap", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus as ::unity2::ClassIdentity>::NAME,
-                        "SetCasualMap",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_casual_map(this: Versus, map_number: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Versus, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_casual_map::get_method_info().method_ptr);
-        inner(this, map_number, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_matching_type {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::versus::Versus_MatchingType as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Versus as ::unity2::ClassIdentity>::class(),
-                "SetMatchingType",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus as ::unity2::ClassIdentity>::NAME,
-                        "SetMatchingType",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_matching_type(
-        this: Versus,
-        r#type: crate::app::versus::Versus_MatchingType,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(Versus, crate::app::versus::Versus_MatchingType, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_matching_type::get_method_info().method_ptr);
-        inner(this, r#type, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_have_player_edit_data {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Versus as ::unity2::ClassIdentity>::class(),
-                "IsHavePlayerEditData",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus as ::unity2::ClassIdentity>::NAME,
-                        "IsHavePlayerEditData",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_have_player_edit_data(this: Versus, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(Versus, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_have_player_edit_data::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_saved_local_edit_data {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Versus as ::unity2::ClassIdentity>::class(),
-                "IsSavedLocalEditData",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus as ::unity2::ClassIdentity>::NAME,
-                        "IsSavedLocalEditData",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_saved_local_edit_data(this: Versus, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(Versus, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_saved_local_edit_data::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_use_server_edit_data_for_battle {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Versus as ::unity2::ClassIdentity>::class(),
-                "IsUseServerEditDataForBattle",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus as ::unity2::ClassIdentity>::NAME,
-                        "IsUseServerEditDataForBattle",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_use_server_edit_data_for_battle(this: Versus, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(Versus, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_use_server_edit_data_for_battle::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_use_server_edit_data_for_edit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Versus as ::unity2::ClassIdentity>::class(),
-                "IsUseServerEditDataForEdit",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus as ::unity2::ClassIdentity>::NAME,
-                        "IsUseServerEditDataForEdit",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_use_server_edit_data_for_edit(this: Versus, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(Versus, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_use_server_edit_data_for_edit::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_my_map_edit_data_for_battle {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Versus as ::unity2::ClassIdentity>::class(),
-                "GetMyMapEditDataForBattle",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus as ::unity2::ClassIdentity>::NAME,
-                        "GetMyMapEditDataForBattle",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_my_map_edit_data_for_battle(
-        this: Versus,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::mapeditdata::MapEditData {
-        let inner: extern "C" fn(Versus, ::unity2::OptionalMethod) -> crate::app::mapeditdata::MapEditData =
-            ::core::mem::transmute(__lookup_get_my_map_edit_data_for_battle::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_my_map_edit_data_for_edit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Versus as ::unity2::ClassIdentity>::class(),
-                "GetMyMapEditDataForEdit",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus as ::unity2::ClassIdentity>::NAME,
-                        "GetMyMapEditDataForEdit",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_my_map_edit_data_for_edit(
-        this: Versus,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::mapeditdata::MapEditData {
-        let inner: extern "C" fn(Versus, ::unity2::OptionalMethod) -> crate::app::mapeditdata::MapEditData =
-            ::core::mem::transmute(__lookup_get_my_map_edit_data_for_edit::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_sortie_title {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Versus as ::unity2::ClassIdentity>::class(),
-                "GetSortieTitle",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus as ::unity2::ClassIdentity>::NAME,
-                        "GetSortieTitle",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_sortie_title(this: Versus, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(Versus, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_sortie_title::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_try_get_opponent_info {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <u64 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Versus as ::unity2::ClassIdentity>::class(),
-                "TryGetOpponentInfo",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus as ::unity2::ClassIdentity>::NAME,
-                        "TryGetOpponentInfo",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn try_get_opponent_info(
-        this: Versus,
-        name: *mut ::unity2::Il2CppString,
-        principal_id: *mut u64,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(Versus, *mut ::unity2::Il2CppString, *mut u64, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_try_get_opponent_info::get_method_info().method_ptr);
-        inner(this, name, principal_id, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_use_backup {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Versus as ::unity2::ClassIdentity>::class(), "IsUseBackup", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus as ::unity2::ClassIdentity>::NAME,
-                        "IsUseBackup",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_use_backup(this: Versus, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(Versus, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_use_backup::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_serialize_backup {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Versus as ::unity2::ClassIdentity>::class(),
-                "SerializeBackup",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus as ::unity2::ClassIdentity>::NAME,
-                        "SerializeBackup",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn serialize_backup(this: Versus, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Versus, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_serialize_backup::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_deserialize_backup {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Versus as ::unity2::ClassIdentity>::class(),
-                "DeserializeBackup",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus as ::unity2::ClassIdentity>::NAME,
-                        "DeserializeBackup",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn deserialize_backup(this: Versus, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Versus, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_deserialize_backup::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_casual_sortie_max {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Versus as ::unity2::ClassIdentity>::class(),
-                "GetCasualSortieMax",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus as ::unity2::ClassIdentity>::NAME,
-                        "GetCasualSortieMax",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_casual_sortie_max(__unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_casual_sortie_max::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_offense_sortie_max {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Versus as ::unity2::ClassIdentity>::class(),
-                "GetOffenseSortieMax",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus as ::unity2::ClassIdentity>::NAME,
-                        "GetOffenseSortieMax",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_offense_sortie_max(__unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_offense_sortie_max::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_defense_sortie_max {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Versus as ::unity2::ClassIdentity>::class(),
-                "GetDefenseSortieMax",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus as ::unity2::ClassIdentity>::NAME,
-                        "GetDefenseSortieMax",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_defense_sortie_max(__unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_defense_sortie_max::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_player_meta_data {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Versus as ::unity2::ClassIdentity>::class(),
-                "get_PlayerMetaData",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus as ::unity2::ClassIdentity>::NAME,
-                        "get_PlayerMetaData",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_player_meta_data(
-        this: Versus,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::versusserverrankedmetadata::VersusServerRankedMetaData {
-        let inner: extern "C" fn(Versus, ::unity2::OptionalMethod) -> crate::app::versusserverrankedmetadata::VersusServerRankedMetaData =
-            ::core::mem::transmute(__lookup_get_player_meta_data::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_player_data {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Versus as ::unity2::ClassIdentity>::class(),
-                "get_PlayerData",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus as ::unity2::ClassIdentity>::NAME,
-                        "get_PlayerData",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_player_data(
-        this: Versus,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::versusserverrankeddata::VersusServerRankedData {
-        let inner: extern "C" fn(Versus, ::unity2::OptionalMethod) -> crate::app::versusserverrankeddata::VersusServerRankedData =
-            ::core::mem::transmute(__lookup_get_player_data::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_opponent_meta_data {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Versus as ::unity2::ClassIdentity>::class(),
-                "get_OpponentMetaData",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus as ::unity2::ClassIdentity>::NAME,
-                        "get_OpponentMetaData",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_opponent_meta_data(
-        this: Versus,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::versusserverrankedmetadata::VersusServerRankedMetaData {
-        let inner: extern "C" fn(Versus, ::unity2::OptionalMethod) -> crate::app::versusserverrankedmetadata::VersusServerRankedMetaData =
-            ::core::mem::transmute(__lookup_get_opponent_meta_data::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_opponent_data {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Versus as ::unity2::ClassIdentity>::class(),
-                "get_OpponentData",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus as ::unity2::ClassIdentity>::NAME,
-                        "get_OpponentData",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_opponent_data(
-        this: Versus,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::versusserverrankeddata::VersusServerRankedData {
-        let inner: extern "C" fn(Versus, ::unity2::OptionalMethod) -> crate::app::versusserverrankeddata::VersusServerRankedData =
-            ::core::mem::transmute(__lookup_get_opponent_data::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_replay_data {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Versus as ::unity2::ClassIdentity>::class(),
-                "get_ReplayData",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus as ::unity2::ClassIdentity>::NAME,
-                        "get_ReplayData",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_replay_data(
-        this: Versus,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::versusserverreplaydata::VersusServerReplayData {
-        let inner: extern "C" fn(Versus, ::unity2::OptionalMethod) -> crate::app::versusserverreplaydata::VersusServerReplayData =
-            ::core::mem::transmute(__lookup_get_replay_data::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_replay_meta_data {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Versus as ::unity2::ClassIdentity>::class(),
-                "get_ReplayMetaData",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus as ::unity2::ClassIdentity>::NAME,
-                        "get_ReplayMetaData",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_replay_meta_data(
-        this: Versus,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::versusserverreplaymetadata::VersusServerReplayMetaData {
-        let inner: extern "C" fn(Versus, ::unity2::OptionalMethod) -> crate::app::versusserverreplaymetadata::VersusServerReplayMetaData =
-            ::core::mem::transmute(__lookup_get_replay_meta_data::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_casual_opponent_meta_data {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Versus as ::unity2::ClassIdentity>::class(),
-                "get_CasualOpponentMetaData",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus as ::unity2::ClassIdentity>::NAME,
-                        "get_CasualOpponentMetaData",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_casual_opponent_meta_data(
-        this: Versus,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::versusservercasualmetadata::VersusServerCasualMetaData {
-        let inner: extern "C" fn(Versus, ::unity2::OptionalMethod) -> crate::app::versusservercasualmetadata::VersusServerCasualMetaData =
-            ::core::mem::transmute(__lookup_get_casual_opponent_meta_data::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_casual_opponent_data {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Versus as ::unity2::ClassIdentity>::class(),
-                "get_CasualOpponentData",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus as ::unity2::ClassIdentity>::NAME,
-                        "get_CasualOpponentData",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_casual_opponent_data(
-        this: Versus,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::versusservercasualdata::VersusServerCasualData {
-        let inner: extern "C" fn(Versus, ::unity2::OptionalMethod) -> crate::app::versusservercasualdata::VersusServerCasualData =
-            ::core::mem::transmute(__lookup_get_casual_opponent_data::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_casual_player_data {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Versus as ::unity2::ClassIdentity>::class(),
-                "get_CasualPlayerData",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus as ::unity2::ClassIdentity>::NAME,
-                        "get_CasualPlayerData",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_casual_player_data(
-        this: Versus,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::versusservercasualdata::VersusServerCasualData {
-        let inner: extern "C" fn(Versus, ::unity2::OptionalMethod) -> crate::app::versusservercasualdata::VersusServerCasualData =
-            ::core::mem::transmute(__lookup_get_casual_player_data::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_casual_player_meta_data {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Versus as ::unity2::ClassIdentity>::class(),
-                "get_CasualPlayerMetaData",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus as ::unity2::ClassIdentity>::NAME,
-                        "get_CasualPlayerMetaData",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_casual_player_meta_data(
-        this: Versus,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::versusservercasualmetadata::VersusServerCasualMetaData {
-        let inner: extern "C" fn(Versus, ::unity2::OptionalMethod) -> crate::app::versusservercasualmetadata::VersusServerCasualMetaData =
-            ::core::mem::transmute(__lookup_get_casual_player_meta_data::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_return_chapter {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Versus as ::unity2::ClassIdentity>::class(),
-                "get_ReturnChapter",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus as ::unity2::ClassIdentity>::NAME,
-                        "get_ReturnChapter",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_return_chapter(this: Versus, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::chapterdata::ChapterData {
-        let inner: extern "C" fn(Versus, ::unity2::OptionalMethod) -> crate::app::chapterdata::ChapterData =
-            ::core::mem::transmute(__lookup_get_return_chapter::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_return_chapter {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::chapterdata::ChapterData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Versus as ::unity2::ClassIdentity>::class(),
-                "set_ReturnChapter",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus as ::unity2::ClassIdentity>::NAME,
-                        "set_ReturnChapter",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_return_chapter(
-        this: Versus,
-        value: crate::app::chapterdata::ChapterData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(Versus, crate::app::chapterdata::ChapterData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_return_chapter::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_result {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Versus as ::unity2::ClassIdentity>::class(), "get_Result", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus as ::unity2::ClassIdentity>::NAME,
-                        "get_Result",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_result(this: Versus, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::versus::Versus_MapResult {
-        let inner: extern "C" fn(Versus, ::unity2::OptionalMethod) -> crate::app::versus::Versus_MapResult =
-            ::core::mem::transmute(__lookup_get_result::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_opponent_result {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Versus as ::unity2::ClassIdentity>::class(),
-                "get_OpponentResult",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus as ::unity2::ClassIdentity>::NAME,
-                        "get_OpponentResult",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_opponent_result(this: Versus, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::versus::Versus_MapResult {
-        let inner: extern "C" fn(Versus, ::unity2::OptionalMethod) -> crate::app::versus::Versus_MapResult =
-            ::core::mem::transmute(__lookup_get_opponent_result::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_is_surrender {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Versus as ::unity2::ClassIdentity>::class(),
-                "get_IsSurrender",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus as ::unity2::ClassIdentity>::NAME,
-                        "get_IsSurrender",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_is_surrender(this: Versus, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(Versus, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_is_surrender::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_versus_mode {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Versus as ::unity2::ClassIdentity>::class(),
-                "get_VersusMode",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus as ::unity2::ClassIdentity>::NAME,
-                        "get_VersusMode",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_versus_mode(this: Versus, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::versus::Versus_Mode {
-        let inner: extern "C" fn(Versus, ::unity2::OptionalMethod) -> crate::app::versus::Versus_Mode =
-            ::core::mem::transmute(__lookup_get_versus_mode::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_matching {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Versus as ::unity2::ClassIdentity>::class(), "get_Matching", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus as ::unity2::ClassIdentity>::NAME,
-                        "get_Matching",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_matching(this: Versus, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::versus::Versus_MatchingType {
-        let inner: extern "C" fn(Versus, ::unity2::OptionalMethod) -> crate::app::versus::Versus_MatchingType =
-            ::core::mem::transmute(__lookup_get_matching::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_result_error {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Versus as ::unity2::ClassIdentity>::class(),
-                "get_ResultError",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus as ::unity2::ClassIdentity>::NAME,
-                        "get_ResultError",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_result_error(this: Versus, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::versus::Versus_Error {
-        let inner: extern "C" fn(Versus, ::unity2::OptionalMethod) -> crate::app::versus::Versus_Error =
-            ::core::mem::transmute(__lookup_get_result_error::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_casual_map_number {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Versus as ::unity2::ClassIdentity>::class(),
-                "get_CasualMapNumber",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus as ::unity2::ClassIdentity>::NAME,
-                        "get_CasualMapNumber",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_casual_map_number(this: Versus, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(Versus, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_casual_map_number::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_is_succeed_deserialize_casual {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Versus as ::unity2::ClassIdentity>::class(),
-                "get_IsSucceedDeserializeCasual",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus as ::unity2::ClassIdentity>::NAME,
-                        "get_IsSucceedDeserializeCasual",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_is_succeed_deserialize_casual(this: Versus, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(Versus, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_is_succeed_deserialize_casual::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_is_succeed_deserialize_casual {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Versus as ::unity2::ClassIdentity>::class(),
-                "set_IsSucceedDeserializeCasual",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus as ::unity2::ClassIdentity>::NAME,
-                        "set_IsSucceedDeserializeCasual",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_is_succeed_deserialize_casual(this: Versus, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Versus, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_is_succeed_deserialize_casual::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_is_exist_ranked_on_server {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Versus as ::unity2::ClassIdentity>::class(),
-                "get_IsExistRankedOnServer",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus as ::unity2::ClassIdentity>::NAME,
-                        "get_IsExistRankedOnServer",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_is_exist_ranked_on_server(this: Versus, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(Versus, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_is_exist_ranked_on_server::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_is_exist_ranked_on_server {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Versus as ::unity2::ClassIdentity>::class(),
-                "set_IsExistRankedOnServer",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus as ::unity2::ClassIdentity>::NAME,
-                        "set_IsExistRankedOnServer",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_is_exist_ranked_on_server(this: Versus, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Versus, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_is_exist_ranked_on_server::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_is_upload_different_save_id {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Versus as ::unity2::ClassIdentity>::class(),
-                "get_IsUploadDifferentSaveID",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus as ::unity2::ClassIdentity>::NAME,
-                        "get_IsUploadDifferentSaveID",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_is_upload_different_save_id(this: Versus, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(Versus, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_is_upload_different_save_id::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_is_upload_different_save_id {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Versus as ::unity2::ClassIdentity>::class(),
-                "set_IsUploadDifferentSaveID",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus as ::unity2::ClassIdentity>::NAME,
-                        "set_IsUploadDifferentSaveID",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_is_upload_different_save_id(this: Versus, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Versus, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_is_upload_different_save_id::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_is_force_edit_data_overwrite {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Versus as ::unity2::ClassIdentity>::class(),
-                "get_IsForceEditDataOverwrite",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus as ::unity2::ClassIdentity>::NAME,
-                        "get_IsForceEditDataOverwrite",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_is_force_edit_data_overwrite(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_is_force_edit_data_overwrite::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_is_force_edit_data_overwrite {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Versus as ::unity2::ClassIdentity>::class(),
-                "set_IsForceEditDataOverwrite",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus as ::unity2::ClassIdentity>::NAME,
-                        "set_IsForceEditDataOverwrite",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_is_force_edit_data_overwrite(value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_is_force_edit_data_overwrite::get_method_info().method_ptr);
-        inner(value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_check_valid {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Versus as ::unity2::ClassIdentity>::class(), "CheckValid", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus as ::unity2::ClassIdentity>::NAME,
-                        "CheckValid",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn check_valid(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_check_valid::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_history {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Versus as ::unity2::ClassIdentity>::class(), "get_History", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus as ::unity2::ClassIdentity>::NAME,
-                        "get_History",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_history(this: Versus, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::versus::Versus_DownloadHistory {
-        let inner: extern "C" fn(Versus, ::unity2::OptionalMethod) -> crate::app::versus::Versus_DownloadHistory =
-            ::core::mem::transmute(__lookup_get_history::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Versus as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Versus as ::unity2::ClassIdentity>::NAME, ".ctor", e),
-            }
-        }
-    }
-    pub unsafe fn ctor(this: Versus, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Versus, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Versus as ::unity2::ClassIdentity>::class(), ".cctor", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Versus as ::unity2::ClassIdentity>::NAME, ".cctor", e),
-            }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-versus")]
-impl Versus {
-    #[doc = "`IsValid()` overload"]
-    pub fn is_valid() -> bool {
-        unsafe { __Versus_unity2_raw::is_valid(::core::option::Option::None) }
-    }
-
-    #[doc = "`IsVersusMode()` overload"]
-    pub fn is_versus_mode() -> bool {
-        unsafe { __Versus_unity2_raw::is_versus_mode(::core::option::Option::None) }
-    }
-
-    #[doc = "`IsCasual()` overload"]
-    pub fn is_casual() -> bool {
-        unsafe { __Versus_unity2_raw::is_casual(::core::option::Option::None) }
-    }
-
-    #[doc = "`IsRanked()` overload"]
-    pub fn is_ranked() -> bool {
-        unsafe { __Versus_unity2_raw::is_ranked(::core::option::Option::None) }
-    }
-
-    #[doc = "`IsMockBattle()` overload"]
-    pub fn is_mock_battle() -> bool {
-        unsafe { __Versus_unity2_raw::is_mock_battle(::core::option::Option::None) }
-    }
-
-    #[doc = "`IsEditMode()` overload"]
-    pub fn is_edit_mode() -> bool {
-        unsafe { __Versus_unity2_raw::is_edit_mode(::core::option::Option::None) }
-    }
-
-    #[doc = "`IsReplay()` overload"]
-    pub fn is_replay() -> bool {
-        unsafe { __Versus_unity2_raw::is_replay(::core::option::Option::None) }
-    }
-
-    #[doc = "`GetCasualSortieMax()` overload"]
-    pub fn get_casual_sortie_max() -> i32 {
-        unsafe { __Versus_unity2_raw::get_casual_sortie_max(::core::option::Option::None) }
-    }
-
-    #[doc = "`GetOffenseSortieMax()` overload"]
-    pub fn get_offense_sortie_max() -> i32 {
-        unsafe { __Versus_unity2_raw::get_offense_sortie_max(::core::option::Option::None) }
-    }
-
-    #[doc = "`GetDefenseSortieMax()` overload"]
-    pub fn get_defense_sortie_max() -> i32 {
-        unsafe { __Versus_unity2_raw::get_defense_sortie_max(::core::option::Option::None) }
-    }
-
-    #[doc = "`get_IsForceEditDataOverwrite()` overload"]
-    pub fn get_is_force_edit_data_overwrite() -> bool {
-        unsafe { __Versus_unity2_raw::get_is_force_edit_data_overwrite(::core::option::Option::None) }
-    }
-
-    #[doc = "`set_IsForceEditDataOverwrite(bool)` overload"]
-    pub fn set_is_force_edit_data_overwrite(value: impl ::core::convert::Into<bool>) -> () {
-        unsafe { __Versus_unity2_raw::set_is_force_edit_data_overwrite(::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`CheckValid()` overload"]
-    pub fn check_valid() -> bool {
-        unsafe { __Versus_unity2_raw::check_valid(::core::option::Option::None) }
-    }
-
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __Versus_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-versus")]
-pub trait IVersusMethods: IVersus {
-    #[doc = "`OnCreate()` overload"]
-    fn on_create(self) -> () {
-        unsafe {
-            let __receiver = <Versus as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Versus_unity2_raw::on_create(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnDispose()` overload"]
-    fn on_dispose(self) -> () {
-        unsafe {
-            let __receiver = <Versus as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Versus_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CanSortieRanked(crate::app::unit::Unit)` overload"]
-    fn can_sortie_ranked(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> bool {
-        unsafe {
-            let __receiver = <Versus as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Versus_unity2_raw::can_sortie_ranked(__receiver, ::core::convert::Into::into(unit), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CanSortieRanked(crate::app::godunit::GodUnit)` overload"]
-    fn can_sortie_ranked_2(self, god: impl ::core::convert::Into<crate::app::godunit::GodUnit>) -> bool {
-        unsafe {
-            let __receiver = <Versus as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Versus_unity2_raw::can_sortie_ranked_2(__receiver, ::core::convert::Into::into(god), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SaveCasualUnits()` overload"]
-    fn save_casual_units(self) -> () {
-        unsafe {
-            let __receiver = <Versus as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Versus_unity2_raw::save_casual_units(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SaveCasualUnitsInit()` overload"]
-    fn save_casual_units_init(self) -> () {
-        unsafe {
-            let __receiver = <Versus as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Versus_unity2_raw::save_casual_units_init(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`MapEndEdit()` overload"]
-    fn map_end_edit(self) -> () {
-        unsafe {
-            let __receiver = <Versus as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Versus_unity2_raw::map_end_edit(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ResetResult()` overload"]
-    fn reset_result(self) -> () {
-        unsafe {
-            let __receiver = <Versus as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Versus_unity2_raw::reset_result(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetAbort()` overload"]
-    fn set_abort(self) -> () {
-        unsafe {
-            let __receiver = <Versus as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Versus_unity2_raw::set_abort(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetSurrender()` overload"]
-    fn set_surrender(self) -> () {
-        unsafe {
-            let __receiver = <Versus as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Versus_unity2_raw::set_surrender(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetResultReport()` overload"]
-    fn set_result_report(self) -> () {
-        unsafe {
-            let __receiver = <Versus as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Versus_unity2_raw::set_result_report(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetError(crate::app::versus::Versus_Error)` overload"]
-    fn set_error(self, error: impl ::core::convert::Into<crate::app::versus::Versus_Error>) -> () {
-        unsafe {
-            let __receiver = <Versus as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Versus_unity2_raw::set_error(__receiver, ::core::convert::Into::into(error), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`MapEndVersus()` overload"]
-    fn map_end_versus(self) -> () {
-        unsafe {
-            let __receiver = <Versus as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Versus_unity2_raw::map_end_versus(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`MapEndVersusCasual()` overload"]
-    fn map_end_versus_casual(self) -> () {
-        unsafe {
-            let __receiver = <Versus as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Versus_unity2_raw::map_end_versus_casual(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`MapEndVersusRanked()` overload"]
-    fn map_end_versus_ranked(self) -> () {
-        unsafe {
-            let __receiver = <Versus as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Versus_unity2_raw::map_end_versus_ranked(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ResetGodPoolId()` overload"]
-    fn reset_god_pool_id(self) -> () {
-        unsafe {
-            let __receiver = <Versus as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Versus_unity2_raw::reset_god_pool_id(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsExitsOnlineNode()` overload"]
-    fn is_exits_online_node(self) -> bool {
-        unsafe {
-            let __receiver = <Versus as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Versus_unity2_raw::is_exits_online_node(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`MapEndReplay()` overload"]
-    fn map_end_replay(self) -> () {
-        unsafe {
-            let __receiver = <Versus as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Versus_unity2_raw::map_end_replay(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`RestoreStoryChapter()` overload"]
-    fn restore_story_chapter(self) -> () {
-        unsafe {
-            let __receiver = <Versus as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Versus_unity2_raw::restore_story_chapter(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`TrySetPlayerMetaData(crate::app::versusserverrankedmetadata::VersusServerRankedMetaData)` overload"]
-    fn try_set_player_meta_data(
-        self,
-        meta_data: impl ::core::convert::Into<crate::app::versusserverrankedmetadata::VersusServerRankedMetaData>,
-    ) -> bool {
-        unsafe {
-            let __receiver = <Versus as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Versus_unity2_raw::try_set_player_meta_data(__receiver, ::core::convert::Into::into(meta_data), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetPlayerMetaData(crate::app::versusservercasualmetadata::VersusServerCasualMetaData)` overload"]
-    fn set_player_meta_data(self, meta_data: impl ::core::convert::Into<crate::app::versusservercasualmetadata::VersusServerCasualMetaData>) -> () {
-        unsafe {
-            let __receiver = <Versus as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Versus_unity2_raw::set_player_meta_data(__receiver, ::core::convert::Into::into(meta_data), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetOpponentMetaData(crate::app::versusserverrankedmetadata::VersusServerRankedMetaData)` overload"]
-    fn set_opponent_meta_data(self, meta_data: impl ::core::convert::Into<crate::app::versusserverrankedmetadata::VersusServerRankedMetaData>) -> () {
-        unsafe {
-            let __receiver = <Versus as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Versus_unity2_raw::set_opponent_meta_data(__receiver, ::core::convert::Into::into(meta_data), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetOpponentMetaData(crate::app::versusservercasualmetadata::VersusServerCasualMetaData)` overload"]
-    fn set_opponent_meta_data_2(
-        self,
-        meta_data: impl ::core::convert::Into<crate::app::versusservercasualmetadata::VersusServerCasualMetaData>,
-    ) -> () {
-        unsafe {
-            let __receiver = <Versus as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Versus_unity2_raw::set_opponent_meta_data_2(__receiver, ::core::convert::Into::into(meta_data), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetPlayerRatingList(crate::system::collections::generic::list_1::List_1<crate::app::nexversus::NexVersus_RatingData>)` overload"]
-    fn set_player_rating_list(
-        self,
-        rating_list: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::nexversus::NexVersus_RatingData>>,
-    ) -> () {
-        unsafe {
-            let __receiver = <Versus as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Versus_unity2_raw::set_player_rating_list(__receiver, ::core::convert::Into::into(rating_list), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetMode(crate::app::versus::Versus_Mode)` overload"]
-    fn set_mode(self, mode: impl ::core::convert::Into<crate::app::versus::Versus_Mode>) -> () {
-        unsafe {
-            let __receiver = <Versus as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Versus_unity2_raw::set_mode(__receiver, ::core::convert::Into::into(mode), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetCasualMap(i32)` overload"]
-    fn set_casual_map(self, map_number: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver = <Versus as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Versus_unity2_raw::set_casual_map(__receiver, ::core::convert::Into::into(map_number), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetMatchingType(crate::app::versus::Versus_MatchingType)` overload"]
-    fn set_matching_type(self, r#type: impl ::core::convert::Into<crate::app::versus::Versus_MatchingType>) -> () {
-        unsafe {
-            let __receiver = <Versus as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Versus_unity2_raw::set_matching_type(__receiver, ::core::convert::Into::into(r#type), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsHavePlayerEditData()` overload"]
-    fn is_have_player_edit_data(self) -> bool {
-        unsafe {
-            let __receiver = <Versus as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Versus_unity2_raw::is_have_player_edit_data(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsSavedLocalEditData()` overload"]
-    fn is_saved_local_edit_data(self) -> bool {
-        unsafe {
-            let __receiver = <Versus as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Versus_unity2_raw::is_saved_local_edit_data(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsUseServerEditDataForBattle()` overload"]
-    fn is_use_server_edit_data_for_battle(self) -> bool {
-        unsafe {
-            let __receiver = <Versus as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Versus_unity2_raw::is_use_server_edit_data_for_battle(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsUseServerEditDataForEdit()` overload"]
-    fn is_use_server_edit_data_for_edit(self) -> bool {
-        unsafe {
-            let __receiver = <Versus as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Versus_unity2_raw::is_use_server_edit_data_for_edit(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetMyMapEditDataForBattle()` overload"]
-    fn get_my_map_edit_data_for_battle(self) -> crate::app::mapeditdata::MapEditData {
-        unsafe {
-            let __receiver = <Versus as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Versus_unity2_raw::get_my_map_edit_data_for_battle(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetMyMapEditDataForEdit()` overload"]
-    fn get_my_map_edit_data_for_edit(self) -> crate::app::mapeditdata::MapEditData {
-        unsafe {
-            let __receiver = <Versus as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Versus_unity2_raw::get_my_map_edit_data_for_edit(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetSortieTitle()` overload"]
-    fn get_sortie_title(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <Versus as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Versus_unity2_raw::get_sortie_title(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`TryGetOpponentInfo(*mut::unity2::Il2CppString, *mutu64)` overload"]
-    fn try_get_opponent_info(self) -> (bool, ::unity2::Il2CppString, u64) {
-        unsafe {
-            let __receiver = <Versus as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            let mut __out_0 = ::core::mem::MaybeUninit::<::unity2::Il2CppString>::uninit();
-            let mut __out_1 = ::core::mem::MaybeUninit::<u64>::uninit();
-            let __ret =
-                { __Versus_unity2_raw::try_get_opponent_info(__receiver, __out_0.as_mut_ptr(), __out_1.as_mut_ptr(), ::core::option::Option::None) };
-            (__ret, __out_0.assume_init(), __out_1.assume_init())
-        }
-    }
-    #[doc = "`IsUseBackup()` overload"]
-    fn is_use_backup(self) -> bool {
-        unsafe {
-            let __receiver = <Versus as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Versus_unity2_raw::is_use_backup(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SerializeBackup()` overload"]
-    fn serialize_backup(self) -> () {
-        unsafe {
-            let __receiver = <Versus as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Versus_unity2_raw::serialize_backup(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`DeserializeBackup()` overload"]
-    fn deserialize_backup(self) -> () {
-        unsafe {
-            let __receiver = <Versus as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Versus_unity2_raw::deserialize_backup(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_PlayerMetaData()` overload"]
-    fn get_player_meta_data(self) -> crate::app::versusserverrankedmetadata::VersusServerRankedMetaData {
-        unsafe {
-            let __receiver = <Versus as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Versus_unity2_raw::get_player_meta_data(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_PlayerData()` overload"]
-    fn get_player_data(self) -> crate::app::versusserverrankeddata::VersusServerRankedData {
-        unsafe {
-            let __receiver = <Versus as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Versus_unity2_raw::get_player_data(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_OpponentMetaData()` overload"]
-    fn get_opponent_meta_data(self) -> crate::app::versusserverrankedmetadata::VersusServerRankedMetaData {
-        unsafe {
-            let __receiver = <Versus as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Versus_unity2_raw::get_opponent_meta_data(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_OpponentData()` overload"]
-    fn get_opponent_data(self) -> crate::app::versusserverrankeddata::VersusServerRankedData {
-        unsafe {
-            let __receiver = <Versus as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Versus_unity2_raw::get_opponent_data(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_ReplayData()` overload"]
-    fn get_replay_data(self) -> crate::app::versusserverreplaydata::VersusServerReplayData {
-        unsafe {
-            let __receiver = <Versus as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Versus_unity2_raw::get_replay_data(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_ReplayMetaData()` overload"]
-    fn get_replay_meta_data(self) -> crate::app::versusserverreplaymetadata::VersusServerReplayMetaData {
-        unsafe {
-            let __receiver = <Versus as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Versus_unity2_raw::get_replay_meta_data(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_CasualOpponentMetaData()` overload"]
-    fn get_casual_opponent_meta_data(self) -> crate::app::versusservercasualmetadata::VersusServerCasualMetaData {
-        unsafe {
-            let __receiver = <Versus as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Versus_unity2_raw::get_casual_opponent_meta_data(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_CasualOpponentData()` overload"]
-    fn get_casual_opponent_data(self) -> crate::app::versusservercasualdata::VersusServerCasualData {
-        unsafe {
-            let __receiver = <Versus as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Versus_unity2_raw::get_casual_opponent_data(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_CasualPlayerData()` overload"]
-    fn get_casual_player_data(self) -> crate::app::versusservercasualdata::VersusServerCasualData {
-        unsafe {
-            let __receiver = <Versus as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Versus_unity2_raw::get_casual_player_data(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_CasualPlayerMetaData()` overload"]
-    fn get_casual_player_meta_data(self) -> crate::app::versusservercasualmetadata::VersusServerCasualMetaData {
-        unsafe {
-            let __receiver = <Versus as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Versus_unity2_raw::get_casual_player_meta_data(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_ReturnChapter()` overload"]
-    fn get_return_chapter(self) -> crate::app::chapterdata::ChapterData {
-        unsafe {
-            let __receiver = <Versus as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Versus_unity2_raw::get_return_chapter(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_ReturnChapter(crate::app::chapterdata::ChapterData)` overload"]
-    fn set_return_chapter(self, value: impl ::core::convert::Into<crate::app::chapterdata::ChapterData>) -> () {
-        unsafe {
-            let __receiver = <Versus as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Versus_unity2_raw::set_return_chapter(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Result()` overload"]
-    fn get_result(self) -> crate::app::versus::Versus_MapResult {
-        unsafe {
-            let __receiver = <Versus as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Versus_unity2_raw::get_result(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_OpponentResult()` overload"]
-    fn get_opponent_result(self) -> crate::app::versus::Versus_MapResult {
-        unsafe {
-            let __receiver = <Versus as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Versus_unity2_raw::get_opponent_result(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_IsSurrender()` overload"]
-    fn get_is_surrender(self) -> bool {
-        unsafe {
-            let __receiver = <Versus as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Versus_unity2_raw::get_is_surrender(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_VersusMode()` overload"]
-    fn get_versus_mode(self) -> crate::app::versus::Versus_Mode {
-        unsafe {
-            let __receiver = <Versus as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Versus_unity2_raw::get_versus_mode(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Matching()` overload"]
-    fn get_matching(self) -> crate::app::versus::Versus_MatchingType {
-        unsafe {
-            let __receiver = <Versus as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Versus_unity2_raw::get_matching(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_ResultError()` overload"]
-    fn get_result_error(self) -> crate::app::versus::Versus_Error {
-        unsafe {
-            let __receiver = <Versus as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Versus_unity2_raw::get_result_error(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_CasualMapNumber()` overload"]
-    fn get_casual_map_number(self) -> i32 {
-        unsafe {
-            let __receiver = <Versus as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Versus_unity2_raw::get_casual_map_number(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_IsSucceedDeserializeCasual()` overload"]
-    fn get_is_succeed_deserialize_casual(self) -> bool {
-        unsafe {
-            let __receiver = <Versus as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Versus_unity2_raw::get_is_succeed_deserialize_casual(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_IsSucceedDeserializeCasual(bool)` overload"]
-    fn set_is_succeed_deserialize_casual(self, value: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver = <Versus as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Versus_unity2_raw::set_is_succeed_deserialize_casual(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_IsExistRankedOnServer()` overload"]
-    fn get_is_exist_ranked_on_server(self) -> bool {
-        unsafe {
-            let __receiver = <Versus as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Versus_unity2_raw::get_is_exist_ranked_on_server(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_IsExistRankedOnServer(bool)` overload"]
-    fn set_is_exist_ranked_on_server(self, value: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver = <Versus as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Versus_unity2_raw::set_is_exist_ranked_on_server(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_IsUploadDifferentSaveID()` overload"]
-    fn get_is_upload_different_save_id(self) -> bool {
-        unsafe {
-            let __receiver = <Versus as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Versus_unity2_raw::get_is_upload_different_save_id(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_IsUploadDifferentSaveID(bool)` overload"]
-    fn set_is_upload_different_save_id(self, value: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver = <Versus as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Versus_unity2_raw::set_is_upload_different_save_id(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_History()` overload"]
-    fn get_history(self) -> crate::app::versus::Versus_DownloadHistory {
-        unsafe {
-            let __receiver = <Versus as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Versus_unity2_raw::get_history(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <Versus as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Versus_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-versus")]
-impl<__T: IVersus> IVersusMethods for __T {}
-
-#[cfg(feature = "app-versus")]
-impl Versus {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(Versus), ::core::stringify!(new),));
-        <Self as IVersusMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-versus")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __Versus_VersusCheck_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_validate {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Versus_VersusCheck as ::unity2::ClassIdentity>::class(),
-                "Validate",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus_VersusCheck as ::unity2::ClassIdentity>::NAME,
-                        "Validate",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn validate(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_validate::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_validate_casual {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Versus_VersusCheck as ::unity2::ClassIdentity>::class(),
-                "ValidateCasual",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus_VersusCheck as ::unity2::ClassIdentity>::NAME,
-                        "ValidateCasual",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn validate_casual(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_validate_casual::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_validate_ranked {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Versus_VersusCheck as ::unity2::ClassIdentity>::class(),
-                "ValidateRanked",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus_VersusCheck as ::unity2::ClassIdentity>::NAME,
-                        "ValidateRanked",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn validate_ranked(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_validate_ranked::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_validate_save_edit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Versus_VersusCheck as ::unity2::ClassIdentity>::class(),
-                "ValidateSaveEdit",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus_VersusCheck as ::unity2::ClassIdentity>::NAME,
-                        "ValidateSaveEdit",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn validate_save_edit(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_validate_save_edit::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_validate_units {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Versus_VersusCheck as ::unity2::ClassIdentity>::class(),
-                "ValidateUnits",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus_VersusCheck as ::unity2::ClassIdentity>::NAME,
-                        "ValidateUnits",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn validate_units(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_validate_units::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_validate_player_units {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Versus_VersusCheck as ::unity2::ClassIdentity>::class(),
-                "ValidatePlayerUnits",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus_VersusCheck as ::unity2::ClassIdentity>::NAME,
-                        "ValidatePlayerUnits",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn validate_player_units(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_validate_player_units::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_validate_unit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Versus_VersusCheck as ::unity2::ClassIdentity>::class(),
-                "ValidateUnit",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus_VersusCheck as ::unity2::ClassIdentity>::NAME,
-                        "ValidateUnit",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn validate_unit(unit: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(crate::app::unit::Unit, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_validate_unit::get_method_info().method_ptr);
-        inner(unit, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_validate_params {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Versus_VersusCheck as ::unity2::ClassIdentity>::class(),
-                "ValidateParams",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus_VersusCheck as ::unity2::ClassIdentity>::NAME,
-                        "ValidateParams",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn validate_params(unit: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(crate::app::unit::Unit, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_validate_params::get_method_info().method_ptr);
-        inner(unit, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_validate_skills {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Versus_VersusCheck as ::unity2::ClassIdentity>::class(),
-                "ValidateSkills",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus_VersusCheck as ::unity2::ClassIdentity>::NAME,
-                        "ValidateSkills",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn validate_skills(unit: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(crate::app::unit::Unit, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_validate_skills::get_method_info().method_ptr);
-        inner(unit, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_validate_equip_ring {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Versus_VersusCheck as ::unity2::ClassIdentity>::class(),
-                "ValidateEquipRing",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus_VersusCheck as ::unity2::ClassIdentity>::NAME,
-                        "ValidateEquipRing",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn validate_equip_ring(unit: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(crate::app::unit::Unit, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_validate_equip_ring::get_method_info().method_ptr);
-        inner(unit, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_validate_job {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Versus_VersusCheck as ::unity2::ClassIdentity>::class(),
-                "ValidateJob",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus_VersusCheck as ::unity2::ClassIdentity>::NAME,
-                        "ValidateJob",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn validate_job(unit: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(crate::app::unit::Unit, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_validate_job::get_method_info().method_ptr);
-        inner(unit, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_validate_equip_skill {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::skilldata::SkillData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Versus_VersusCheck as ::unity2::ClassIdentity>::class(),
-                "ValidateEquipSkill",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus_VersusCheck as ::unity2::ClassIdentity>::NAME,
-                        "ValidateEquipSkill",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn validate_equip_skill(skill: crate::app::skilldata::SkillData, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(crate::app::skilldata::SkillData, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_validate_equip_skill::get_method_info().method_ptr);
-        inner(skill, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_validate_god_skills {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::godunit::GodUnit as ::unity2::IlType>::il_type(),
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Versus_VersusCheck as ::unity2::ClassIdentity>::class(),
-                "ValidateGodSkills",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus_VersusCheck as ::unity2::ClassIdentity>::NAME,
-                        "ValidateGodSkills",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn validate_god_skills(
-        god: crate::app::godunit::GodUnit,
-        unit: crate::app::unit::Unit,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(crate::app::godunit::GodUnit, crate::app::unit::Unit, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_validate_god_skills::get_method_info().method_ptr);
-        inner(god, unit, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_growth_skills {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::godunit::GodUnit as ::unity2::IlType>::il_type(),
-                <crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString> as ::unity2::IlType>::il_type(),
-                <crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString> as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Versus_VersusCheck as ::unity2::ClassIdentity>::class(),
-                "GetGrowthSkills",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus_VersusCheck as ::unity2::ClassIdentity>::NAME,
-                        "GetGrowthSkills",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_growth_skills(
-        god: crate::app::godunit::GodUnit,
-        growth_synchro_skills: *mut crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
-        growth_engage_skills: *mut crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::app::godunit::GodUnit,
-            *mut crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
-            *mut crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_get_growth_skills::get_method_info().method_ptr);
-        inner(god, growth_synchro_skills, growth_engage_skills, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_validate_force {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Versus_VersusCheck as ::unity2::ClassIdentity>::class(),
-                "ValidateForce",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus_VersusCheck as ::unity2::ClassIdentity>::NAME,
-                        "ValidateForce",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn validate_force(force_mask: u32, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(u32, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_validate_force::get_method_info().method_ptr);
-        inner(force_mask, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_validate_count {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Versus_VersusCheck as ::unity2::ClassIdentity>::class(),
-                "ValidateCount",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus_VersusCheck as ::unity2::ClassIdentity>::NAME,
-                        "ValidateCount",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn validate_count(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_validate_count::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_validate_edit_map {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Versus_VersusCheck as ::unity2::ClassIdentity>::class(),
-                "ValidateEditMap",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus_VersusCheck as ::unity2::ClassIdentity>::NAME,
-                        "ValidateEditMap",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn validate_edit_map(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_validate_edit_map::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_count_objects {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
-                <crate::app::versus::Versus_MapObjectCounter as ::unity2::IlType>::il_type(),
-                <crate::app::versus::Versus_MapObjectCounter as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Versus_VersusCheck as ::unity2::ClassIdentity>::class(),
-                "CountObjects",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus_VersusCheck as ::unity2::ClassIdentity>::NAME,
-                        "CountObjects",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn count_objects(
-        root: crate::unity_engine::gameobject::GameObject,
-        player: crate::app::versus::Versus_MapObjectCounter,
-        enemy: crate::app::versus::Versus_MapObjectCounter,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::gameobject::GameObject,
-            crate::app::versus::Versus_MapObjectCounter,
-            crate::app::versus::Versus_MapObjectCounter,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_count_objects::get_method_info().method_ptr);
-        inner(root, player, enemy, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Versus_VersusCheck as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus_VersusCheck as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: Versus_VersusCheck, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Versus_VersusCheck, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+impl Versus_VersusCheck { pub fn validate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_VersusCheck_unity2_raw :: __lookup_validate :: get_method_info () } pub fn validate_casual_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_VersusCheck_unity2_raw :: __lookup_validate_casual :: get_method_info () } pub fn validate_ranked_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_VersusCheck_unity2_raw :: __lookup_validate_ranked :: get_method_info () } pub fn validate_save_edit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_VersusCheck_unity2_raw :: __lookup_validate_save_edit :: get_method_info () } pub fn validate_units_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_VersusCheck_unity2_raw :: __lookup_validate_units :: get_method_info () } pub fn validate_player_units_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_VersusCheck_unity2_raw :: __lookup_validate_player_units :: get_method_info () } pub fn validate_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_VersusCheck_unity2_raw :: __lookup_validate_unit :: get_method_info () } pub fn validate_params_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_VersusCheck_unity2_raw :: __lookup_validate_params :: get_method_info () } pub fn validate_skills_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_VersusCheck_unity2_raw :: __lookup_validate_skills :: get_method_info () } pub fn validate_equip_ring_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_VersusCheck_unity2_raw :: __lookup_validate_equip_ring :: get_method_info () } pub fn validate_job_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_VersusCheck_unity2_raw :: __lookup_validate_job :: get_method_info () } pub fn validate_equip_skill_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_VersusCheck_unity2_raw :: __lookup_validate_equip_skill :: get_method_info () } pub fn validate_god_skills_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_VersusCheck_unity2_raw :: __lookup_validate_god_skills :: get_method_info () } pub fn get_growth_skills_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_VersusCheck_unity2_raw :: __lookup_get_growth_skills :: get_method_info () } pub fn validate_force_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_VersusCheck_unity2_raw :: __lookup_validate_force :: get_method_info () } pub fn validate_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_VersusCheck_unity2_raw :: __lookup_validate_count :: get_method_info () } pub fn validate_edit_map_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_VersusCheck_unity2_raw :: __lookup_validate_edit_map :: get_method_info () } pub fn count_objects_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_VersusCheck_unity2_raw :: __lookup_count_objects :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_VersusCheck_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-versus")]
 impl Versus_VersusCheck {
-    #[doc = "`Validate()` overload"]
-    pub fn validate() -> bool {
-        unsafe { __Versus_VersusCheck_unity2_raw::validate(::core::option::Option::None) }
-    }
-
-    #[doc = "`ValidateCasual()` overload"]
-    pub fn validate_casual() -> bool {
-        unsafe { __Versus_VersusCheck_unity2_raw::validate_casual(::core::option::Option::None) }
-    }
-
-    #[doc = "`ValidateRanked()` overload"]
-    pub fn validate_ranked() -> bool {
-        unsafe { __Versus_VersusCheck_unity2_raw::validate_ranked(::core::option::Option::None) }
-    }
-
-    #[doc = "`ValidateSaveEdit()` overload"]
-    pub fn validate_save_edit() -> bool {
-        unsafe { __Versus_VersusCheck_unity2_raw::validate_save_edit(::core::option::Option::None) }
-    }
-
-    #[doc = "`ValidateUnits()` overload"]
-    pub fn validate_units() -> bool {
-        unsafe { __Versus_VersusCheck_unity2_raw::validate_units(::core::option::Option::None) }
-    }
-
-    #[doc = "`ValidatePlayerUnits()` overload"]
-    pub fn validate_player_units() -> bool {
-        unsafe { __Versus_VersusCheck_unity2_raw::validate_player_units(::core::option::Option::None) }
-    }
-
-    #[doc = "`ValidateUnit(crate::app::unit::Unit)` overload"]
-    pub fn validate_unit(unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> bool {
-        unsafe { __Versus_VersusCheck_unity2_raw::validate_unit(::core::convert::Into::into(unit), ::core::option::Option::None) }
-    }
-
-    #[doc = "`ValidateParams(crate::app::unit::Unit)` overload"]
-    pub fn validate_params(unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> bool {
-        unsafe { __Versus_VersusCheck_unity2_raw::validate_params(::core::convert::Into::into(unit), ::core::option::Option::None) }
-    }
-
-    #[doc = "`ValidateSkills(crate::app::unit::Unit)` overload"]
-    pub fn validate_skills(unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> bool {
-        unsafe { __Versus_VersusCheck_unity2_raw::validate_skills(::core::convert::Into::into(unit), ::core::option::Option::None) }
-    }
-
-    #[doc = "`ValidateEquipRing(crate::app::unit::Unit)` overload"]
-    pub fn validate_equip_ring(unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> bool {
-        unsafe { __Versus_VersusCheck_unity2_raw::validate_equip_ring(::core::convert::Into::into(unit), ::core::option::Option::None) }
-    }
-
-    #[doc = "`ValidateJob(crate::app::unit::Unit)` overload"]
-    pub fn validate_job(unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> bool {
-        unsafe { __Versus_VersusCheck_unity2_raw::validate_job(::core::convert::Into::into(unit), ::core::option::Option::None) }
-    }
-
-    #[doc = "`ValidateEquipSkill(crate::app::skilldata::SkillData)` overload"]
-    pub fn validate_equip_skill(skill: impl ::core::convert::Into<crate::app::skilldata::SkillData>) -> bool {
-        unsafe { __Versus_VersusCheck_unity2_raw::validate_equip_skill(::core::convert::Into::into(skill), ::core::option::Option::None) }
-    }
-
-    #[doc = "`ValidateGodSkills(crate::app::godunit::GodUnit, crate::app::unit::Unit)` overload"]
-    pub fn validate_god_skills(
-        god: impl ::core::convert::Into<crate::app::godunit::GodUnit>,
-        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-    ) -> bool {
-        unsafe {
-            __Versus_VersusCheck_unity2_raw::validate_god_skills(
-                ::core::convert::Into::into(god),
-                ::core::convert::Into::into(unit),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`GetGrowthSkills(crate::app::godunit::GodUnit, *mutcrate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>, *mutcrate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>)` overload"]
-    pub fn get_growth_skills(
-        god: impl ::core::convert::Into<crate::app::godunit::GodUnit>,
-    ) -> (
-        crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
-        crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
-    ) {
-        unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>>::uninit();
-            let mut __out_1 = ::core::mem::MaybeUninit::<crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>>::uninit();
-            __Versus_VersusCheck_unity2_raw::get_growth_skills(
-                ::core::convert::Into::into(god),
-                __out_0.as_mut_ptr(),
-                __out_1.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
-            (__out_0.assume_init(), __out_1.assume_init())
-        }
-    }
-
-    #[doc = "`ValidateForce(u32)` overload"]
-    pub fn validate_force(force_mask: impl ::core::convert::Into<u32>) -> bool {
-        unsafe { __Versus_VersusCheck_unity2_raw::validate_force(::core::convert::Into::into(force_mask), ::core::option::Option::None) }
-    }
-
-    #[doc = "`ValidateCount()` overload"]
-    pub fn validate_count() -> bool {
-        unsafe { __Versus_VersusCheck_unity2_raw::validate_count(::core::option::Option::None) }
-    }
-
-    #[doc = "`ValidateEditMap()` overload"]
-    pub fn validate_edit_map() -> bool {
-        unsafe { __Versus_VersusCheck_unity2_raw::validate_edit_map(::core::option::Option::None) }
-    }
-
-    #[doc = "`CountObjects(crate::unity_engine::gameobject::GameObject, crate::app::versus::Versus_MapObjectCounter, crate::app::versus::Versus_MapObjectCounter)` overload"]
-    pub fn count_objects(
-        root: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-        player: impl ::core::convert::Into<crate::app::versus::Versus_MapObjectCounter>,
-        enemy: impl ::core::convert::Into<crate::app::versus::Versus_MapObjectCounter>,
-    ) -> () {
-        unsafe {
-            __Versus_VersusCheck_unity2_raw::count_objects(
-                ::core::convert::Into::into(root),
-                ::core::convert::Into::into(player),
-                ::core::convert::Into::into(enemy),
-                ::core::option::Option::None,
-            )
-        }
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Versus_VersusCheck) , :: core :: stringify ! (new) ,)) ; < Self as IVersus_VersusCheckMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-versus")]
-pub trait IVersus_VersusCheckMethods: IVersus_VersusCheck {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <Versus_VersusCheck as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Versus_VersusCheck_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __Versus_MapObjectCounter_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus_MapObjectCounter as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus_MapObjectCounter as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : Versus_MapObjectCounter , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Versus_MapObjectCounter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus_MapObjectCounter as :: unity2 :: ClassIdentity > :: class () , "Add" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus_MapObjectCounter as :: unity2 :: ClassIdentity > :: NAME , "Add" , e) , } } } pub unsafe fn add (this : Versus_MapObjectCounter , obj_name : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Versus_MapObjectCounter , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add :: get_method_info () . method_ptr ,) ; inner (this , obj_name , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_enumerator { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus_MapObjectCounter as :: unity2 :: ClassIdentity > :: class () , "GetEnumerator" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus_MapObjectCounter as :: unity2 :: ClassIdentity > :: NAME , "GetEnumerator" , e) , } } } pub unsafe fn get_enumerator (this : Versus_MapObjectCounter , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2_Enumerator < crate :: app :: mapeditorcategorydata :: MapEditorCategoryData , i32 > { let inner : extern "C" fn (Versus_MapObjectCounter , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2_Enumerator < crate :: app :: mapeditorcategorydata :: MapEditorCategoryData , i32 > = :: core :: mem :: transmute (__lookup_get_enumerator :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-versus")]
-impl<__T: IVersus_VersusCheck> IVersus_VersusCheckMethods for __T {}
+pub trait IVersus_MapObjectCounterMethods : IVersus_MapObjectCounter { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Versus_MapObjectCounter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_MapObjectCounter_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Add(::unity2::Il2CppString)` overload"] fn add (self , obj_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < Versus_MapObjectCounter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_MapObjectCounter_unity2_raw :: add (__receiver , :: core :: convert :: Into :: into (obj_name) , :: core :: option :: Option :: None) } } # [doc = "`GetEnumerator()` overload"] fn get_enumerator (self ,) -> crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2_Enumerator < crate :: app :: mapeditorcategorydata :: MapEditorCategoryData , i32 > { unsafe { let __receiver = < Versus_MapObjectCounter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_MapObjectCounter_unity2_raw :: get_enumerator (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-versus")]
-impl Versus_VersusCheck {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Versus_VersusCheck),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IVersus_VersusCheckMethods>::ctor(this);
-        this
-    }
-}
+impl < __T : IVersus_MapObjectCounter > IVersus_MapObjectCounterMethods for __T { }
 
 #[cfg(feature = "app-versus")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __Versus_MapObjectCounter_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Versus_MapObjectCounter as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus_MapObjectCounter as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: Versus_MapObjectCounter, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Versus_MapObjectCounter, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Versus_MapObjectCounter as ::unity2::ClassIdentity>::class(),
-                "Add",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus_MapObjectCounter as ::unity2::ClassIdentity>::NAME,
-                        "Add",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add(this: Versus_MapObjectCounter, obj_name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Versus_MapObjectCounter, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add::get_method_info().method_ptr);
-        inner(this, obj_name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_enumerator {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Versus_MapObjectCounter as ::unity2::ClassIdentity>::class(),
-                "GetEnumerator",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus_MapObjectCounter as ::unity2::ClassIdentity>::NAME,
-                        "GetEnumerator",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_enumerator(
-        this: Versus_MapObjectCounter,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::dictionary_2::Dictionary_2_Enumerator<crate::app::mapeditorcategorydata::MapEditorCategoryData, i32>
-    {
-        let inner: extern "C" fn(
-            Versus_MapObjectCounter,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::collections::generic::dictionary_2::Dictionary_2_Enumerator<
-            crate::app::mapeditorcategorydata::MapEditorCategoryData,
-            i32,
-        > = ::core::mem::transmute(__lookup_get_enumerator::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-versus")]
-pub trait IVersus_MapObjectCounterMethods: IVersus_MapObjectCounter {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <Versus_MapObjectCounter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Versus_MapObjectCounter_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Add(::unity2::Il2CppString)` overload"]
-    fn add(self, obj_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver =
-                <Versus_MapObjectCounter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Versus_MapObjectCounter_unity2_raw::add(__receiver, ::core::convert::Into::into(obj_name), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetEnumerator()` overload"]
-    fn get_enumerator(
-        self,
-    ) -> crate::system::collections::generic::dictionary_2::Dictionary_2_Enumerator<crate::app::mapeditorcategorydata::MapEditorCategoryData, i32>
-    {
-        unsafe {
-            let __receiver =
-                <Versus_MapObjectCounter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Versus_MapObjectCounter_unity2_raw::get_enumerator(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-versus")]
-impl<__T: IVersus_MapObjectCounter> IVersus_MapObjectCounterMethods for __T {}
+impl Versus_MapObjectCounter { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_MapObjectCounter_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn add_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_MapObjectCounter_unity2_raw :: __lookup_add :: get_method_info () } pub fn get_enumerator_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_MapObjectCounter_unity2_raw :: __lookup_get_enumerator :: get_method_info () } }
 
 #[cfg(feature = "app-versus")]
 impl Versus_MapObjectCounter {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Versus_MapObjectCounter),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IVersus_MapObjectCounterMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Versus_MapObjectCounter) , :: core :: stringify ! (new) ,)) ; < Self as IVersus_MapObjectCounterMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-versus")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __Versus_DownloadHistory_CheckData_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_reset {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Versus_DownloadHistory_CheckData as ::unity2::ClassIdentity>::class(),
-                "Reset",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus_DownloadHistory_CheckData as ::unity2::ClassIdentity>::NAME,
-                        "Reset",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn reset(this: Versus_DownloadHistory_CheckData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Versus_DownloadHistory_CheckData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_reset::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_downloaded {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Versus_DownloadHistory_CheckData as ::unity2::ClassIdentity>::class(),
-                "IsDownloaded",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus_DownloadHistory_CheckData as ::unity2::ClassIdentity>::NAME,
-                        "IsDownloaded",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_downloaded(this: Versus_DownloadHistory_CheckData, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(Versus_DownloadHistory_CheckData, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_downloaded::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_elapsed_time {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Versus_DownloadHistory_CheckData as ::unity2::ClassIdentity>::class(),
-                "GetElapsedTime",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus_DownloadHistory_CheckData as ::unity2::ClassIdentity>::NAME,
-                        "GetElapsedTime",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_elapsed_time(this: Versus_DownloadHistory_CheckData, __unity2_method_info: ::unity2::OptionalMethod) -> i64 {
-        let inner: extern "C" fn(Versus_DownloadHistory_CheckData, ::unity2::OptionalMethod) -> i64 =
-            ::core::mem::transmute(__lookup_get_elapsed_time::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Versus_DownloadHistory_CheckData as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Versus_DownloadHistory_CheckData as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: Versus_DownloadHistory_CheckData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Versus_DownloadHistory_CheckData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __Versus_DownloadHistory_CheckData_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_reset { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus_DownloadHistory_CheckData as :: unity2 :: ClassIdentity > :: class () , "Reset" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus_DownloadHistory_CheckData as :: unity2 :: ClassIdentity > :: NAME , "Reset" , e) , } } } pub unsafe fn reset (this : Versus_DownloadHistory_CheckData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Versus_DownloadHistory_CheckData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_reset :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_downloaded { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus_DownloadHistory_CheckData as :: unity2 :: ClassIdentity > :: class () , "IsDownloaded" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus_DownloadHistory_CheckData as :: unity2 :: ClassIdentity > :: NAME , "IsDownloaded" , e) , } } } pub unsafe fn is_downloaded (this : Versus_DownloadHistory_CheckData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (Versus_DownloadHistory_CheckData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_downloaded :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_elapsed_time { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus_DownloadHistory_CheckData as :: unity2 :: ClassIdentity > :: class () , "GetElapsedTime" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus_DownloadHistory_CheckData as :: unity2 :: ClassIdentity > :: NAME , "GetElapsedTime" , e) , } } } pub unsafe fn get_elapsed_time (this : Versus_DownloadHistory_CheckData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i64 { let inner : extern "C" fn (Versus_DownloadHistory_CheckData , :: unity2 :: OptionalMethod ,) -> i64 = :: core :: mem :: transmute (__lookup_get_elapsed_time :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus_DownloadHistory_CheckData as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus_DownloadHistory_CheckData as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : Versus_DownloadHistory_CheckData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Versus_DownloadHistory_CheckData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-versus")]
-pub trait IVersus_DownloadHistory_CheckDataMethods: IVersus_DownloadHistory_CheckData {
-    #[doc = "`Reset()` overload"]
-    fn reset(self) -> () {
-        unsafe {
-            let __receiver =
-                <Versus_DownloadHistory_CheckData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Versus_DownloadHistory_CheckData_unity2_raw::reset(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsDownloaded()` overload"]
-    fn is_downloaded(self) -> bool {
-        unsafe {
-            let __receiver =
-                <Versus_DownloadHistory_CheckData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Versus_DownloadHistory_CheckData_unity2_raw::is_downloaded(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetElapsedTime()` overload"]
-    fn get_elapsed_time(self) -> i64 {
-        unsafe {
-            let __receiver =
-                <Versus_DownloadHistory_CheckData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Versus_DownloadHistory_CheckData_unity2_raw::get_elapsed_time(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <Versus_DownloadHistory_CheckData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Versus_DownloadHistory_CheckData_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IVersus_DownloadHistory_CheckDataMethods : IVersus_DownloadHistory_CheckData { # [doc = "`Reset()` overload"] fn reset (self ,) -> () { unsafe { let __receiver = < Versus_DownloadHistory_CheckData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_DownloadHistory_CheckData_unity2_raw :: reset (__receiver , :: core :: option :: Option :: None) } } # [doc = "`IsDownloaded()` overload"] fn is_downloaded (self ,) -> bool { unsafe { let __receiver = < Versus_DownloadHistory_CheckData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_DownloadHistory_CheckData_unity2_raw :: is_downloaded (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetElapsedTime()` overload"] fn get_elapsed_time (self ,) -> i64 { unsafe { let __receiver = < Versus_DownloadHistory_CheckData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_DownloadHistory_CheckData_unity2_raw :: get_elapsed_time (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Versus_DownloadHistory_CheckData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_DownloadHistory_CheckData_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-versus")]
-impl<__T: IVersus_DownloadHistory_CheckData> IVersus_DownloadHistory_CheckDataMethods for __T {}
+impl < __T : IVersus_DownloadHistory_CheckData > IVersus_DownloadHistory_CheckDataMethods for __T { }
+
+#[cfg(feature = "app-versus")]
+impl Versus_DownloadHistory_CheckData { pub fn reset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_DownloadHistory_CheckData_unity2_raw :: __lookup_reset :: get_method_info () } pub fn is_downloaded_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_DownloadHistory_CheckData_unity2_raw :: __lookup_is_downloaded :: get_method_info () } pub fn get_elapsed_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_DownloadHistory_CheckData_unity2_raw :: __lookup_get_elapsed_time :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_DownloadHistory_CheckData_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-versus")]
 impl Versus_DownloadHistory_CheckData {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Versus_DownloadHistory_CheckData),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IVersus_DownloadHistory_CheckDataMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Versus_DownloadHistory_CheckData) , :: core :: stringify ! (new) ,)) ; < Self as IVersus_DownloadHistory_CheckDataMethods > :: ctor (this ,) ; this }
+}
+
+#[cfg(feature = "app-versus")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __Versus_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_create { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus as :: unity2 :: ClassIdentity > :: class () , "OnCreate" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus as :: unity2 :: ClassIdentity > :: NAME , "OnCreate" , e) , } } } pub unsafe fn on_create (this : Versus , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_create :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_dispose { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus as :: unity2 :: ClassIdentity > :: class () , "OnDispose" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus as :: unity2 :: ClassIdentity > :: NAME , "OnDispose" , e) , } } } pub unsafe fn on_dispose (this : Versus , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_dispose :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_valid { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus as :: unity2 :: ClassIdentity > :: class () , "IsValid" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus as :: unity2 :: ClassIdentity > :: NAME , "IsValid" , e) , } } } pub unsafe fn is_valid (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_valid :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_versus_mode { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus as :: unity2 :: ClassIdentity > :: class () , "IsVersusMode" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus as :: unity2 :: ClassIdentity > :: NAME , "IsVersusMode" , e) , } } } pub unsafe fn is_versus_mode (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_versus_mode :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_casual { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus as :: unity2 :: ClassIdentity > :: class () , "IsCasual" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus as :: unity2 :: ClassIdentity > :: NAME , "IsCasual" , e) , } } } pub unsafe fn is_casual (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_casual :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_ranked { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus as :: unity2 :: ClassIdentity > :: class () , "IsRanked" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus as :: unity2 :: ClassIdentity > :: NAME , "IsRanked" , e) , } } } pub unsafe fn is_ranked (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_ranked :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_mock_battle { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus as :: unity2 :: ClassIdentity > :: class () , "IsMockBattle" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus as :: unity2 :: ClassIdentity > :: NAME , "IsMockBattle" , e) , } } } pub unsafe fn is_mock_battle (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_mock_battle :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_edit_mode { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus as :: unity2 :: ClassIdentity > :: class () , "IsEditMode" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus as :: unity2 :: ClassIdentity > :: NAME , "IsEditMode" , e) , } } } pub unsafe fn is_edit_mode (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_edit_mode :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_replay { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus as :: unity2 :: ClassIdentity > :: class () , "IsReplay" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus as :: unity2 :: ClassIdentity > :: NAME , "IsReplay" , e) , } } } pub unsafe fn is_replay (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_replay :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_can_sortie_ranked { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus as :: unity2 :: ClassIdentity > :: class () , "CanSortieRanked" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus as :: unity2 :: ClassIdentity > :: NAME , "CanSortieRanked" , e) , } } } pub unsafe fn can_sortie_ranked (this : Versus , unit : crate :: app :: unit :: Unit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (Versus , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_can_sortie_ranked :: get_method_info () . method_ptr ,) ; inner (this , unit , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_can_sortie_ranked_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: godunit :: GodUnit as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus as :: unity2 :: ClassIdentity > :: class () , "CanSortieRanked" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus as :: unity2 :: ClassIdentity > :: NAME , "CanSortieRanked" , e) , } } } pub unsafe fn can_sortie_ranked_2 (this : Versus , god : crate :: app :: godunit :: GodUnit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (Versus , crate :: app :: godunit :: GodUnit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_can_sortie_ranked_2 :: get_method_info () . method_ptr ,) ; inner (this , god , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_save_casual_units { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus as :: unity2 :: ClassIdentity > :: class () , "SaveCasualUnits" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus as :: unity2 :: ClassIdentity > :: NAME , "SaveCasualUnits" , e) , } } } pub unsafe fn save_casual_units (this : Versus , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_save_casual_units :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_save_casual_units_init { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus as :: unity2 :: ClassIdentity > :: class () , "SaveCasualUnitsInit" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus as :: unity2 :: ClassIdentity > :: NAME , "SaveCasualUnitsInit" , e) , } } } pub unsafe fn save_casual_units_init (this : Versus , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_save_casual_units_init :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_map_end_edit { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus as :: unity2 :: ClassIdentity > :: class () , "MapEndEdit" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus as :: unity2 :: ClassIdentity > :: NAME , "MapEndEdit" , e) , } } } pub unsafe fn map_end_edit (this : Versus , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_map_end_edit :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_reset_result { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus as :: unity2 :: ClassIdentity > :: class () , "ResetResult" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus as :: unity2 :: ClassIdentity > :: NAME , "ResetResult" , e) , } } } pub unsafe fn reset_result (this : Versus , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_reset_result :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_abort { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus as :: unity2 :: ClassIdentity > :: class () , "SetAbort" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus as :: unity2 :: ClassIdentity > :: NAME , "SetAbort" , e) , } } } pub unsafe fn set_abort (this : Versus , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_abort :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_surrender { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus as :: unity2 :: ClassIdentity > :: class () , "SetSurrender" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus as :: unity2 :: ClassIdentity > :: NAME , "SetSurrender" , e) , } } } pub unsafe fn set_surrender (this : Versus , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_surrender :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_result_report { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus as :: unity2 :: ClassIdentity > :: class () , "SetResultReport" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus as :: unity2 :: ClassIdentity > :: NAME , "SetResultReport" , e) , } } } pub unsafe fn set_result_report (this : Versus , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_result_report :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_error { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: versus :: Versus_Error as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus as :: unity2 :: ClassIdentity > :: class () , "SetError" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus as :: unity2 :: ClassIdentity > :: NAME , "SetError" , e) , } } } pub unsafe fn set_error (this : Versus , error : crate :: app :: versus :: Versus_Error , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Versus , crate :: app :: versus :: Versus_Error , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_error :: get_method_info () . method_ptr ,) ; inner (this , error , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_map_end_versus { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus as :: unity2 :: ClassIdentity > :: class () , "MapEndVersus" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus as :: unity2 :: ClassIdentity > :: NAME , "MapEndVersus" , e) , } } } pub unsafe fn map_end_versus (this : Versus , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_map_end_versus :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_map_end_versus_casual { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus as :: unity2 :: ClassIdentity > :: class () , "MapEndVersusCasual" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus as :: unity2 :: ClassIdentity > :: NAME , "MapEndVersusCasual" , e) , } } } pub unsafe fn map_end_versus_casual (this : Versus , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_map_end_versus_casual :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_map_end_versus_ranked { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus as :: unity2 :: ClassIdentity > :: class () , "MapEndVersusRanked" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus as :: unity2 :: ClassIdentity > :: NAME , "MapEndVersusRanked" , e) , } } } pub unsafe fn map_end_versus_ranked (this : Versus , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_map_end_versus_ranked :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_reset_god_pool_id { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus as :: unity2 :: ClassIdentity > :: class () , "ResetGodPoolId" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus as :: unity2 :: ClassIdentity > :: NAME , "ResetGodPoolId" , e) , } } } pub unsafe fn reset_god_pool_id (this : Versus , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_reset_god_pool_id :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_exits_online_node { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus as :: unity2 :: ClassIdentity > :: class () , "IsExitsOnlineNode" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus as :: unity2 :: ClassIdentity > :: NAME , "IsExitsOnlineNode" , e) , } } } pub unsafe fn is_exits_online_node (this : Versus , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_exits_online_node :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_map_end_replay { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus as :: unity2 :: ClassIdentity > :: class () , "MapEndReplay" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus as :: unity2 :: ClassIdentity > :: NAME , "MapEndReplay" , e) , } } } pub unsafe fn map_end_replay (this : Versus , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_map_end_replay :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_restore_story_chapter { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus as :: unity2 :: ClassIdentity > :: class () , "RestoreStoryChapter" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus as :: unity2 :: ClassIdentity > :: NAME , "RestoreStoryChapter" , e) , } } } pub unsafe fn restore_story_chapter (this : Versus , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_restore_story_chapter :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_try_set_player_meta_data { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: versusserverrankedmetadata :: VersusServerRankedMetaData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus as :: unity2 :: ClassIdentity > :: class () , "TrySetPlayerMetaData" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus as :: unity2 :: ClassIdentity > :: NAME , "TrySetPlayerMetaData" , e) , } } } pub unsafe fn try_set_player_meta_data (this : Versus , meta_data : crate :: app :: versusserverrankedmetadata :: VersusServerRankedMetaData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (Versus , crate :: app :: versusserverrankedmetadata :: VersusServerRankedMetaData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_try_set_player_meta_data :: get_method_info () . method_ptr ,) ; inner (this , meta_data , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_player_meta_data { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: versusservercasualmetadata :: VersusServerCasualMetaData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus as :: unity2 :: ClassIdentity > :: class () , "SetPlayerMetaData" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus as :: unity2 :: ClassIdentity > :: NAME , "SetPlayerMetaData" , e) , } } } pub unsafe fn set_player_meta_data (this : Versus , meta_data : crate :: app :: versusservercasualmetadata :: VersusServerCasualMetaData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Versus , crate :: app :: versusservercasualmetadata :: VersusServerCasualMetaData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_player_meta_data :: get_method_info () . method_ptr ,) ; inner (this , meta_data , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_opponent_meta_data { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: versusserverrankedmetadata :: VersusServerRankedMetaData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus as :: unity2 :: ClassIdentity > :: class () , "SetOpponentMetaData" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus as :: unity2 :: ClassIdentity > :: NAME , "SetOpponentMetaData" , e) , } } } pub unsafe fn set_opponent_meta_data (this : Versus , meta_data : crate :: app :: versusserverrankedmetadata :: VersusServerRankedMetaData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Versus , crate :: app :: versusserverrankedmetadata :: VersusServerRankedMetaData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_opponent_meta_data :: get_method_info () . method_ptr ,) ; inner (this , meta_data , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_opponent_meta_data_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: versusservercasualmetadata :: VersusServerCasualMetaData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus as :: unity2 :: ClassIdentity > :: class () , "SetOpponentMetaData" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus as :: unity2 :: ClassIdentity > :: NAME , "SetOpponentMetaData" , e) , } } } pub unsafe fn set_opponent_meta_data_2 (this : Versus , meta_data : crate :: app :: versusservercasualmetadata :: VersusServerCasualMetaData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Versus , crate :: app :: versusservercasualmetadata :: VersusServerCasualMetaData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_opponent_meta_data_2 :: get_method_info () . method_ptr ,) ; inner (this , meta_data , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_player_rating_list { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: nexversus :: NexVersus_RatingData > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus as :: unity2 :: ClassIdentity > :: class () , "SetPlayerRatingList" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus as :: unity2 :: ClassIdentity > :: NAME , "SetPlayerRatingList" , e) , } } } pub unsafe fn set_player_rating_list (this : Versus , rating_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: nexversus :: NexVersus_RatingData > , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Versus , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: nexversus :: NexVersus_RatingData > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_player_rating_list :: get_method_info () . method_ptr ,) ; inner (this , rating_list , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_mode { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: versus :: Versus_Mode as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus as :: unity2 :: ClassIdentity > :: class () , "SetMode" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus as :: unity2 :: ClassIdentity > :: NAME , "SetMode" , e) , } } } pub unsafe fn set_mode (this : Versus , mode : crate :: app :: versus :: Versus_Mode , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Versus , crate :: app :: versus :: Versus_Mode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_mode :: get_method_info () . method_ptr ,) ; inner (this , mode , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_casual_map { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus as :: unity2 :: ClassIdentity > :: class () , "SetCasualMap" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus as :: unity2 :: ClassIdentity > :: NAME , "SetCasualMap" , e) , } } } pub unsafe fn set_casual_map (this : Versus , map_number : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Versus , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_casual_map :: get_method_info () . method_ptr ,) ; inner (this , map_number , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_matching_type { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: versus :: Versus_MatchingType as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus as :: unity2 :: ClassIdentity > :: class () , "SetMatchingType" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus as :: unity2 :: ClassIdentity > :: NAME , "SetMatchingType" , e) , } } } pub unsafe fn set_matching_type (this : Versus , r#type : crate :: app :: versus :: Versus_MatchingType , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Versus , crate :: app :: versus :: Versus_MatchingType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_matching_type :: get_method_info () . method_ptr ,) ; inner (this , r#type , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_have_player_edit_data { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus as :: unity2 :: ClassIdentity > :: class () , "IsHavePlayerEditData" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus as :: unity2 :: ClassIdentity > :: NAME , "IsHavePlayerEditData" , e) , } } } pub unsafe fn is_have_player_edit_data (this : Versus , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_have_player_edit_data :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_saved_local_edit_data { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus as :: unity2 :: ClassIdentity > :: class () , "IsSavedLocalEditData" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus as :: unity2 :: ClassIdentity > :: NAME , "IsSavedLocalEditData" , e) , } } } pub unsafe fn is_saved_local_edit_data (this : Versus , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_saved_local_edit_data :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_use_server_edit_data_for_battle { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus as :: unity2 :: ClassIdentity > :: class () , "IsUseServerEditDataForBattle" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus as :: unity2 :: ClassIdentity > :: NAME , "IsUseServerEditDataForBattle" , e) , } } } pub unsafe fn is_use_server_edit_data_for_battle (this : Versus , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_use_server_edit_data_for_battle :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_use_server_edit_data_for_edit { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus as :: unity2 :: ClassIdentity > :: class () , "IsUseServerEditDataForEdit" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus as :: unity2 :: ClassIdentity > :: NAME , "IsUseServerEditDataForEdit" , e) , } } } pub unsafe fn is_use_server_edit_data_for_edit (this : Versus , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_use_server_edit_data_for_edit :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_my_map_edit_data_for_battle { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus as :: unity2 :: ClassIdentity > :: class () , "GetMyMapEditDataForBattle" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus as :: unity2 :: ClassIdentity > :: NAME , "GetMyMapEditDataForBattle" , e) , } } } pub unsafe fn get_my_map_edit_data_for_battle (this : Versus , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: mapeditdata :: MapEditData { let inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> crate :: app :: mapeditdata :: MapEditData = :: core :: mem :: transmute (__lookup_get_my_map_edit_data_for_battle :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_my_map_edit_data_for_edit { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus as :: unity2 :: ClassIdentity > :: class () , "GetMyMapEditDataForEdit" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus as :: unity2 :: ClassIdentity > :: NAME , "GetMyMapEditDataForEdit" , e) , } } } pub unsafe fn get_my_map_edit_data_for_edit (this : Versus , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: mapeditdata :: MapEditData { let inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> crate :: app :: mapeditdata :: MapEditData = :: core :: mem :: transmute (__lookup_get_my_map_edit_data_for_edit :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_sortie_title { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus as :: unity2 :: ClassIdentity > :: class () , "GetSortieTitle" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus as :: unity2 :: ClassIdentity > :: NAME , "GetSortieTitle" , e) , } } } pub unsafe fn get_sortie_title (this : Versus , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_sortie_title :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_try_get_opponent_info { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < u64 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus as :: unity2 :: ClassIdentity > :: class () , "TryGetOpponentInfo" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus as :: unity2 :: ClassIdentity > :: NAME , "TryGetOpponentInfo" , e) , } } } pub unsafe fn try_get_opponent_info (this : Versus , name : * mut :: unity2 :: Il2CppString , principal_id : * mut u64 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (Versus , * mut :: unity2 :: Il2CppString , * mut u64 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_try_get_opponent_info :: get_method_info () . method_ptr ,) ; inner (this , name , principal_id , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_use_backup { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus as :: unity2 :: ClassIdentity > :: class () , "IsUseBackup" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus as :: unity2 :: ClassIdentity > :: NAME , "IsUseBackup" , e) , } } } pub unsafe fn is_use_backup (this : Versus , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_use_backup :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_serialize_backup { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus as :: unity2 :: ClassIdentity > :: class () , "SerializeBackup" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus as :: unity2 :: ClassIdentity > :: NAME , "SerializeBackup" , e) , } } } pub unsafe fn serialize_backup (this : Versus , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_serialize_backup :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_deserialize_backup { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus as :: unity2 :: ClassIdentity > :: class () , "DeserializeBackup" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus as :: unity2 :: ClassIdentity > :: NAME , "DeserializeBackup" , e) , } } } pub unsafe fn deserialize_backup (this : Versus , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_deserialize_backup :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_casual_sortie_max { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus as :: unity2 :: ClassIdentity > :: class () , "GetCasualSortieMax" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus as :: unity2 :: ClassIdentity > :: NAME , "GetCasualSortieMax" , e) , } } } pub unsafe fn get_casual_sortie_max (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_casual_sortie_max :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_offense_sortie_max { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus as :: unity2 :: ClassIdentity > :: class () , "GetOffenseSortieMax" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus as :: unity2 :: ClassIdentity > :: NAME , "GetOffenseSortieMax" , e) , } } } pub unsafe fn get_offense_sortie_max (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_offense_sortie_max :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_defense_sortie_max { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus as :: unity2 :: ClassIdentity > :: class () , "GetDefenseSortieMax" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus as :: unity2 :: ClassIdentity > :: NAME , "GetDefenseSortieMax" , e) , } } } pub unsafe fn get_defense_sortie_max (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_defense_sortie_max :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_player_meta_data { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus as :: unity2 :: ClassIdentity > :: class () , "get_PlayerMetaData" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus as :: unity2 :: ClassIdentity > :: NAME , "get_PlayerMetaData" , e) , } } } pub unsafe fn get_player_meta_data (this : Versus , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: versusserverrankedmetadata :: VersusServerRankedMetaData { let inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> crate :: app :: versusserverrankedmetadata :: VersusServerRankedMetaData = :: core :: mem :: transmute (__lookup_get_player_meta_data :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_player_data { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus as :: unity2 :: ClassIdentity > :: class () , "get_PlayerData" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus as :: unity2 :: ClassIdentity > :: NAME , "get_PlayerData" , e) , } } } pub unsafe fn get_player_data (this : Versus , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: versusserverrankeddata :: VersusServerRankedData { let inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> crate :: app :: versusserverrankeddata :: VersusServerRankedData = :: core :: mem :: transmute (__lookup_get_player_data :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_opponent_meta_data { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus as :: unity2 :: ClassIdentity > :: class () , "get_OpponentMetaData" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus as :: unity2 :: ClassIdentity > :: NAME , "get_OpponentMetaData" , e) , } } } pub unsafe fn get_opponent_meta_data (this : Versus , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: versusserverrankedmetadata :: VersusServerRankedMetaData { let inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> crate :: app :: versusserverrankedmetadata :: VersusServerRankedMetaData = :: core :: mem :: transmute (__lookup_get_opponent_meta_data :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_opponent_data { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus as :: unity2 :: ClassIdentity > :: class () , "get_OpponentData" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus as :: unity2 :: ClassIdentity > :: NAME , "get_OpponentData" , e) , } } } pub unsafe fn get_opponent_data (this : Versus , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: versusserverrankeddata :: VersusServerRankedData { let inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> crate :: app :: versusserverrankeddata :: VersusServerRankedData = :: core :: mem :: transmute (__lookup_get_opponent_data :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_replay_data { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus as :: unity2 :: ClassIdentity > :: class () , "get_ReplayData" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus as :: unity2 :: ClassIdentity > :: NAME , "get_ReplayData" , e) , } } } pub unsafe fn get_replay_data (this : Versus , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: versusserverreplaydata :: VersusServerReplayData { let inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> crate :: app :: versusserverreplaydata :: VersusServerReplayData = :: core :: mem :: transmute (__lookup_get_replay_data :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_replay_meta_data { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus as :: unity2 :: ClassIdentity > :: class () , "get_ReplayMetaData" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus as :: unity2 :: ClassIdentity > :: NAME , "get_ReplayMetaData" , e) , } } } pub unsafe fn get_replay_meta_data (this : Versus , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: versusserverreplaymetadata :: VersusServerReplayMetaData { let inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> crate :: app :: versusserverreplaymetadata :: VersusServerReplayMetaData = :: core :: mem :: transmute (__lookup_get_replay_meta_data :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_casual_opponent_meta_data { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus as :: unity2 :: ClassIdentity > :: class () , "get_CasualOpponentMetaData" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus as :: unity2 :: ClassIdentity > :: NAME , "get_CasualOpponentMetaData" , e) , } } } pub unsafe fn get_casual_opponent_meta_data (this : Versus , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: versusservercasualmetadata :: VersusServerCasualMetaData { let inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> crate :: app :: versusservercasualmetadata :: VersusServerCasualMetaData = :: core :: mem :: transmute (__lookup_get_casual_opponent_meta_data :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_casual_opponent_data { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus as :: unity2 :: ClassIdentity > :: class () , "get_CasualOpponentData" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus as :: unity2 :: ClassIdentity > :: NAME , "get_CasualOpponentData" , e) , } } } pub unsafe fn get_casual_opponent_data (this : Versus , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: versusservercasualdata :: VersusServerCasualData { let inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> crate :: app :: versusservercasualdata :: VersusServerCasualData = :: core :: mem :: transmute (__lookup_get_casual_opponent_data :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_casual_player_data { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus as :: unity2 :: ClassIdentity > :: class () , "get_CasualPlayerData" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus as :: unity2 :: ClassIdentity > :: NAME , "get_CasualPlayerData" , e) , } } } pub unsafe fn get_casual_player_data (this : Versus , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: versusservercasualdata :: VersusServerCasualData { let inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> crate :: app :: versusservercasualdata :: VersusServerCasualData = :: core :: mem :: transmute (__lookup_get_casual_player_data :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_casual_player_meta_data { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus as :: unity2 :: ClassIdentity > :: class () , "get_CasualPlayerMetaData" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus as :: unity2 :: ClassIdentity > :: NAME , "get_CasualPlayerMetaData" , e) , } } } pub unsafe fn get_casual_player_meta_data (this : Versus , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: versusservercasualmetadata :: VersusServerCasualMetaData { let inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> crate :: app :: versusservercasualmetadata :: VersusServerCasualMetaData = :: core :: mem :: transmute (__lookup_get_casual_player_meta_data :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_return_chapter { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus as :: unity2 :: ClassIdentity > :: class () , "get_ReturnChapter" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus as :: unity2 :: ClassIdentity > :: NAME , "get_ReturnChapter" , e) , } } } pub unsafe fn get_return_chapter (this : Versus , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: chapterdata :: ChapterData { let inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> crate :: app :: chapterdata :: ChapterData = :: core :: mem :: transmute (__lookup_get_return_chapter :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_return_chapter { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: chapterdata :: ChapterData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus as :: unity2 :: ClassIdentity > :: class () , "set_ReturnChapter" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus as :: unity2 :: ClassIdentity > :: NAME , "set_ReturnChapter" , e) , } } } pub unsafe fn set_return_chapter (this : Versus , value : crate :: app :: chapterdata :: ChapterData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Versus , crate :: app :: chapterdata :: ChapterData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_return_chapter :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_result { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus as :: unity2 :: ClassIdentity > :: class () , "get_Result" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus as :: unity2 :: ClassIdentity > :: NAME , "get_Result" , e) , } } } pub unsafe fn get_result (this : Versus , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: versus :: Versus_MapResult { let inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> crate :: app :: versus :: Versus_MapResult = :: core :: mem :: transmute (__lookup_get_result :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_opponent_result { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus as :: unity2 :: ClassIdentity > :: class () , "get_OpponentResult" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus as :: unity2 :: ClassIdentity > :: NAME , "get_OpponentResult" , e) , } } } pub unsafe fn get_opponent_result (this : Versus , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: versus :: Versus_MapResult { let inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> crate :: app :: versus :: Versus_MapResult = :: core :: mem :: transmute (__lookup_get_opponent_result :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_is_surrender { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus as :: unity2 :: ClassIdentity > :: class () , "get_IsSurrender" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus as :: unity2 :: ClassIdentity > :: NAME , "get_IsSurrender" , e) , } } } pub unsafe fn get_is_surrender (this : Versus , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_is_surrender :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_versus_mode { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus as :: unity2 :: ClassIdentity > :: class () , "get_VersusMode" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus as :: unity2 :: ClassIdentity > :: NAME , "get_VersusMode" , e) , } } } pub unsafe fn get_versus_mode (this : Versus , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: versus :: Versus_Mode { let inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> crate :: app :: versus :: Versus_Mode = :: core :: mem :: transmute (__lookup_get_versus_mode :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_matching { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus as :: unity2 :: ClassIdentity > :: class () , "get_Matching" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus as :: unity2 :: ClassIdentity > :: NAME , "get_Matching" , e) , } } } pub unsafe fn get_matching (this : Versus , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: versus :: Versus_MatchingType { let inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> crate :: app :: versus :: Versus_MatchingType = :: core :: mem :: transmute (__lookup_get_matching :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_result_error { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus as :: unity2 :: ClassIdentity > :: class () , "get_ResultError" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus as :: unity2 :: ClassIdentity > :: NAME , "get_ResultError" , e) , } } } pub unsafe fn get_result_error (this : Versus , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: versus :: Versus_Error { let inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> crate :: app :: versus :: Versus_Error = :: core :: mem :: transmute (__lookup_get_result_error :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_casual_map_number { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus as :: unity2 :: ClassIdentity > :: class () , "get_CasualMapNumber" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus as :: unity2 :: ClassIdentity > :: NAME , "get_CasualMapNumber" , e) , } } } pub unsafe fn get_casual_map_number (this : Versus , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_casual_map_number :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_is_succeed_deserialize_casual { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus as :: unity2 :: ClassIdentity > :: class () , "get_IsSucceedDeserializeCasual" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus as :: unity2 :: ClassIdentity > :: NAME , "get_IsSucceedDeserializeCasual" , e) , } } } pub unsafe fn get_is_succeed_deserialize_casual (this : Versus , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_is_succeed_deserialize_casual :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_is_succeed_deserialize_casual { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus as :: unity2 :: ClassIdentity > :: class () , "set_IsSucceedDeserializeCasual" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus as :: unity2 :: ClassIdentity > :: NAME , "set_IsSucceedDeserializeCasual" , e) , } } } pub unsafe fn set_is_succeed_deserialize_casual (this : Versus , value : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Versus , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_is_succeed_deserialize_casual :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_is_exist_ranked_on_server { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus as :: unity2 :: ClassIdentity > :: class () , "get_IsExistRankedOnServer" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus as :: unity2 :: ClassIdentity > :: NAME , "get_IsExistRankedOnServer" , e) , } } } pub unsafe fn get_is_exist_ranked_on_server (this : Versus , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_is_exist_ranked_on_server :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_is_exist_ranked_on_server { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus as :: unity2 :: ClassIdentity > :: class () , "set_IsExistRankedOnServer" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus as :: unity2 :: ClassIdentity > :: NAME , "set_IsExistRankedOnServer" , e) , } } } pub unsafe fn set_is_exist_ranked_on_server (this : Versus , value : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Versus , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_is_exist_ranked_on_server :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_is_upload_different_save_id { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus as :: unity2 :: ClassIdentity > :: class () , "get_IsUploadDifferentSaveID" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus as :: unity2 :: ClassIdentity > :: NAME , "get_IsUploadDifferentSaveID" , e) , } } } pub unsafe fn get_is_upload_different_save_id (this : Versus , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_is_upload_different_save_id :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_is_upload_different_save_id { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus as :: unity2 :: ClassIdentity > :: class () , "set_IsUploadDifferentSaveID" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus as :: unity2 :: ClassIdentity > :: NAME , "set_IsUploadDifferentSaveID" , e) , } } } pub unsafe fn set_is_upload_different_save_id (this : Versus , value : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Versus , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_is_upload_different_save_id :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_is_force_edit_data_overwrite { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus as :: unity2 :: ClassIdentity > :: class () , "get_IsForceEditDataOverwrite" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus as :: unity2 :: ClassIdentity > :: NAME , "get_IsForceEditDataOverwrite" , e) , } } } pub unsafe fn get_is_force_edit_data_overwrite (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_is_force_edit_data_overwrite :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_is_force_edit_data_overwrite { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus as :: unity2 :: ClassIdentity > :: class () , "set_IsForceEditDataOverwrite" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus as :: unity2 :: ClassIdentity > :: NAME , "set_IsForceEditDataOverwrite" , e) , } } } pub unsafe fn set_is_force_edit_data_overwrite (value : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_is_force_edit_data_overwrite :: get_method_info () . method_ptr ,) ; inner (value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_check_valid { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus as :: unity2 :: ClassIdentity > :: class () , "CheckValid" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus as :: unity2 :: ClassIdentity > :: NAME , "CheckValid" , e) , } } } pub unsafe fn check_valid (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_check_valid :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_history { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus as :: unity2 :: ClassIdentity > :: class () , "get_History" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus as :: unity2 :: ClassIdentity > :: NAME , "get_History" , e) , } } } pub unsafe fn get_history (this : Versus , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: versus :: Versus_DownloadHistory { let inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> crate :: app :: versus :: Versus_DownloadHistory = :: core :: mem :: transmute (__lookup_get_history :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : Versus , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
+
+#[cfg(feature = "app-versus")]
+impl Versus { # [doc = "`IsValid()` overload"] pub fn is_valid () -> bool { unsafe { __Versus_unity2_raw :: is_valid (:: core :: option :: Option :: None) } } # [doc = "`IsVersusMode()` overload"] pub fn is_versus_mode () -> bool { unsafe { __Versus_unity2_raw :: is_versus_mode (:: core :: option :: Option :: None) } } # [doc = "`IsCasual()` overload"] pub fn is_casual () -> bool { unsafe { __Versus_unity2_raw :: is_casual (:: core :: option :: Option :: None) } } # [doc = "`IsRanked()` overload"] pub fn is_ranked () -> bool { unsafe { __Versus_unity2_raw :: is_ranked (:: core :: option :: Option :: None) } } # [doc = "`IsMockBattle()` overload"] pub fn is_mock_battle () -> bool { unsafe { __Versus_unity2_raw :: is_mock_battle (:: core :: option :: Option :: None) } } # [doc = "`IsEditMode()` overload"] pub fn is_edit_mode () -> bool { unsafe { __Versus_unity2_raw :: is_edit_mode (:: core :: option :: Option :: None) } } # [doc = "`IsReplay()` overload"] pub fn is_replay () -> bool { unsafe { __Versus_unity2_raw :: is_replay (:: core :: option :: Option :: None) } } # [doc = "`GetCasualSortieMax()` overload"] pub fn get_casual_sortie_max () -> i32 { unsafe { __Versus_unity2_raw :: get_casual_sortie_max (:: core :: option :: Option :: None) } } # [doc = "`GetOffenseSortieMax()` overload"] pub fn get_offense_sortie_max () -> i32 { unsafe { __Versus_unity2_raw :: get_offense_sortie_max (:: core :: option :: Option :: None) } } # [doc = "`GetDefenseSortieMax()` overload"] pub fn get_defense_sortie_max () -> i32 { unsafe { __Versus_unity2_raw :: get_defense_sortie_max (:: core :: option :: Option :: None) } } # [doc = "`get_IsForceEditDataOverwrite()` overload"] pub fn get_is_force_edit_data_overwrite () -> bool { unsafe { __Versus_unity2_raw :: get_is_force_edit_data_overwrite (:: core :: option :: Option :: None) } } # [doc = "`set_IsForceEditDataOverwrite(bool)` overload"] pub fn set_is_force_edit_data_overwrite (value : impl :: core :: convert :: Into < bool >) -> () { unsafe { __Versus_unity2_raw :: set_is_force_edit_data_overwrite (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`CheckValid()` overload"] pub fn check_valid () -> bool { unsafe { __Versus_unity2_raw :: check_valid (:: core :: option :: Option :: None) } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { __Versus_unity2_raw :: cctor (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-versus")]
+pub trait IVersusMethods : IVersus { # [doc = "`OnCreate()` overload"] fn on_create (self ,) -> () { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_unity2_raw :: on_create (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnDispose()` overload"] fn on_dispose (self ,) -> () { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_unity2_raw :: on_dispose (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CanSortieRanked(crate::app::unit::Unit)` overload"] fn can_sortie_ranked (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> bool { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_unity2_raw :: can_sortie_ranked (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } # [doc = "`CanSortieRanked(crate::app::godunit::GodUnit)` overload"] fn can_sortie_ranked_2 (self , god : impl :: core :: convert :: Into < crate :: app :: godunit :: GodUnit >) -> bool { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_unity2_raw :: can_sortie_ranked_2 (__receiver , :: core :: convert :: Into :: into (god) , :: core :: option :: Option :: None) } } # [doc = "`SaveCasualUnits()` overload"] fn save_casual_units (self ,) -> () { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_unity2_raw :: save_casual_units (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SaveCasualUnitsInit()` overload"] fn save_casual_units_init (self ,) -> () { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_unity2_raw :: save_casual_units_init (__receiver , :: core :: option :: Option :: None) } } # [doc = "`MapEndEdit()` overload"] fn map_end_edit (self ,) -> () { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_unity2_raw :: map_end_edit (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ResetResult()` overload"] fn reset_result (self ,) -> () { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_unity2_raw :: reset_result (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetAbort()` overload"] fn set_abort (self ,) -> () { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_unity2_raw :: set_abort (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetSurrender()` overload"] fn set_surrender (self ,) -> () { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_unity2_raw :: set_surrender (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetResultReport()` overload"] fn set_result_report (self ,) -> () { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_unity2_raw :: set_result_report (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetError(crate::app::versus::Versus_Error)` overload"] fn set_error (self , error : impl :: core :: convert :: Into < crate :: app :: versus :: Versus_Error >) -> () { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_unity2_raw :: set_error (__receiver , :: core :: convert :: Into :: into (error) , :: core :: option :: Option :: None) } } # [doc = "`MapEndVersus()` overload"] fn map_end_versus (self ,) -> () { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_unity2_raw :: map_end_versus (__receiver , :: core :: option :: Option :: None) } } # [doc = "`MapEndVersusCasual()` overload"] fn map_end_versus_casual (self ,) -> () { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_unity2_raw :: map_end_versus_casual (__receiver , :: core :: option :: Option :: None) } } # [doc = "`MapEndVersusRanked()` overload"] fn map_end_versus_ranked (self ,) -> () { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_unity2_raw :: map_end_versus_ranked (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ResetGodPoolId()` overload"] fn reset_god_pool_id (self ,) -> () { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_unity2_raw :: reset_god_pool_id (__receiver , :: core :: option :: Option :: None) } } # [doc = "`IsExitsOnlineNode()` overload"] fn is_exits_online_node (self ,) -> bool { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_unity2_raw :: is_exits_online_node (__receiver , :: core :: option :: Option :: None) } } # [doc = "`MapEndReplay()` overload"] fn map_end_replay (self ,) -> () { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_unity2_raw :: map_end_replay (__receiver , :: core :: option :: Option :: None) } } # [doc = "`RestoreStoryChapter()` overload"] fn restore_story_chapter (self ,) -> () { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_unity2_raw :: restore_story_chapter (__receiver , :: core :: option :: Option :: None) } } # [doc = "`TrySetPlayerMetaData(crate::app::versusserverrankedmetadata::VersusServerRankedMetaData)` overload"] fn try_set_player_meta_data (self , meta_data : impl :: core :: convert :: Into < crate :: app :: versusserverrankedmetadata :: VersusServerRankedMetaData >) -> bool { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_unity2_raw :: try_set_player_meta_data (__receiver , :: core :: convert :: Into :: into (meta_data) , :: core :: option :: Option :: None) } } # [doc = "`SetPlayerMetaData(crate::app::versusservercasualmetadata::VersusServerCasualMetaData)` overload"] fn set_player_meta_data (self , meta_data : impl :: core :: convert :: Into < crate :: app :: versusservercasualmetadata :: VersusServerCasualMetaData >) -> () { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_unity2_raw :: set_player_meta_data (__receiver , :: core :: convert :: Into :: into (meta_data) , :: core :: option :: Option :: None) } } # [doc = "`SetOpponentMetaData(crate::app::versusserverrankedmetadata::VersusServerRankedMetaData)` overload"] fn set_opponent_meta_data (self , meta_data : impl :: core :: convert :: Into < crate :: app :: versusserverrankedmetadata :: VersusServerRankedMetaData >) -> () { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_unity2_raw :: set_opponent_meta_data (__receiver , :: core :: convert :: Into :: into (meta_data) , :: core :: option :: Option :: None) } } # [doc = "`SetOpponentMetaData(crate::app::versusservercasualmetadata::VersusServerCasualMetaData)` overload"] fn set_opponent_meta_data_2 (self , meta_data : impl :: core :: convert :: Into < crate :: app :: versusservercasualmetadata :: VersusServerCasualMetaData >) -> () { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_unity2_raw :: set_opponent_meta_data_2 (__receiver , :: core :: convert :: Into :: into (meta_data) , :: core :: option :: Option :: None) } } # [doc = "`SetPlayerRatingList(crate::system::collections::generic::list_1::List_1<crate::app::nexversus::NexVersus_RatingData>)` overload"] fn set_player_rating_list (self , rating_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: nexversus :: NexVersus_RatingData > >) -> () { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_unity2_raw :: set_player_rating_list (__receiver , :: core :: convert :: Into :: into (rating_list) , :: core :: option :: Option :: None) } } # [doc = "`SetMode(crate::app::versus::Versus_Mode)` overload"] fn set_mode (self , mode : impl :: core :: convert :: Into < crate :: app :: versus :: Versus_Mode >) -> () { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_unity2_raw :: set_mode (__receiver , :: core :: convert :: Into :: into (mode) , :: core :: option :: Option :: None) } } # [doc = "`SetCasualMap(i32)` overload"] fn set_casual_map (self , map_number : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_unity2_raw :: set_casual_map (__receiver , :: core :: convert :: Into :: into (map_number) , :: core :: option :: Option :: None) } } # [doc = "`SetMatchingType(crate::app::versus::Versus_MatchingType)` overload"] fn set_matching_type (self , r#type : impl :: core :: convert :: Into < crate :: app :: versus :: Versus_MatchingType >) -> () { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_unity2_raw :: set_matching_type (__receiver , :: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } # [doc = "`IsHavePlayerEditData()` overload"] fn is_have_player_edit_data (self ,) -> bool { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_unity2_raw :: is_have_player_edit_data (__receiver , :: core :: option :: Option :: None) } } # [doc = "`IsSavedLocalEditData()` overload"] fn is_saved_local_edit_data (self ,) -> bool { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_unity2_raw :: is_saved_local_edit_data (__receiver , :: core :: option :: Option :: None) } } # [doc = "`IsUseServerEditDataForBattle()` overload"] fn is_use_server_edit_data_for_battle (self ,) -> bool { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_unity2_raw :: is_use_server_edit_data_for_battle (__receiver , :: core :: option :: Option :: None) } } # [doc = "`IsUseServerEditDataForEdit()` overload"] fn is_use_server_edit_data_for_edit (self ,) -> bool { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_unity2_raw :: is_use_server_edit_data_for_edit (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetMyMapEditDataForBattle()` overload"] fn get_my_map_edit_data_for_battle (self ,) -> crate :: app :: mapeditdata :: MapEditData { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_unity2_raw :: get_my_map_edit_data_for_battle (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetMyMapEditDataForEdit()` overload"] fn get_my_map_edit_data_for_edit (self ,) -> crate :: app :: mapeditdata :: MapEditData { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_unity2_raw :: get_my_map_edit_data_for_edit (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetSortieTitle()` overload"] fn get_sortie_title (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_unity2_raw :: get_sortie_title (__receiver , :: core :: option :: Option :: None) } } # [doc = "`TryGetOpponentInfo(*mut::unity2::Il2CppString, *mutu64)` overload"] fn try_get_opponent_info (self ,) -> (bool , :: unity2 :: Il2CppString , u64) { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < :: unity2 :: Il2CppString > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < u64 > :: uninit () ; let __ret = { __Versus_unity2_raw :: try_get_opponent_info (__receiver , __out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: option :: Option :: None) } ; (__ret , __out_0 . assume_init () , __out_1 . assume_init ()) } } # [doc = "`IsUseBackup()` overload"] fn is_use_backup (self ,) -> bool { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_unity2_raw :: is_use_backup (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SerializeBackup()` overload"] fn serialize_backup (self ,) -> () { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_unity2_raw :: serialize_backup (__receiver , :: core :: option :: Option :: None) } } # [doc = "`DeserializeBackup()` overload"] fn deserialize_backup (self ,) -> () { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_unity2_raw :: deserialize_backup (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_PlayerMetaData()` overload"] fn get_player_meta_data (self ,) -> crate :: app :: versusserverrankedmetadata :: VersusServerRankedMetaData { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_unity2_raw :: get_player_meta_data (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_PlayerData()` overload"] fn get_player_data (self ,) -> crate :: app :: versusserverrankeddata :: VersusServerRankedData { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_unity2_raw :: get_player_data (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_OpponentMetaData()` overload"] fn get_opponent_meta_data (self ,) -> crate :: app :: versusserverrankedmetadata :: VersusServerRankedMetaData { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_unity2_raw :: get_opponent_meta_data (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_OpponentData()` overload"] fn get_opponent_data (self ,) -> crate :: app :: versusserverrankeddata :: VersusServerRankedData { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_unity2_raw :: get_opponent_data (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_ReplayData()` overload"] fn get_replay_data (self ,) -> crate :: app :: versusserverreplaydata :: VersusServerReplayData { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_unity2_raw :: get_replay_data (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_ReplayMetaData()` overload"] fn get_replay_meta_data (self ,) -> crate :: app :: versusserverreplaymetadata :: VersusServerReplayMetaData { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_unity2_raw :: get_replay_meta_data (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_CasualOpponentMetaData()` overload"] fn get_casual_opponent_meta_data (self ,) -> crate :: app :: versusservercasualmetadata :: VersusServerCasualMetaData { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_unity2_raw :: get_casual_opponent_meta_data (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_CasualOpponentData()` overload"] fn get_casual_opponent_data (self ,) -> crate :: app :: versusservercasualdata :: VersusServerCasualData { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_unity2_raw :: get_casual_opponent_data (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_CasualPlayerData()` overload"] fn get_casual_player_data (self ,) -> crate :: app :: versusservercasualdata :: VersusServerCasualData { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_unity2_raw :: get_casual_player_data (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_CasualPlayerMetaData()` overload"] fn get_casual_player_meta_data (self ,) -> crate :: app :: versusservercasualmetadata :: VersusServerCasualMetaData { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_unity2_raw :: get_casual_player_meta_data (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_ReturnChapter()` overload"] fn get_return_chapter (self ,) -> crate :: app :: chapterdata :: ChapterData { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_unity2_raw :: get_return_chapter (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_ReturnChapter(crate::app::chapterdata::ChapterData)` overload"] fn set_return_chapter (self , value : impl :: core :: convert :: Into < crate :: app :: chapterdata :: ChapterData >) -> () { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_unity2_raw :: set_return_chapter (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_Result()` overload"] fn get_result (self ,) -> crate :: app :: versus :: Versus_MapResult { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_unity2_raw :: get_result (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_OpponentResult()` overload"] fn get_opponent_result (self ,) -> crate :: app :: versus :: Versus_MapResult { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_unity2_raw :: get_opponent_result (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_IsSurrender()` overload"] fn get_is_surrender (self ,) -> bool { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_unity2_raw :: get_is_surrender (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_VersusMode()` overload"] fn get_versus_mode (self ,) -> crate :: app :: versus :: Versus_Mode { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_unity2_raw :: get_versus_mode (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_Matching()` overload"] fn get_matching (self ,) -> crate :: app :: versus :: Versus_MatchingType { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_unity2_raw :: get_matching (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_ResultError()` overload"] fn get_result_error (self ,) -> crate :: app :: versus :: Versus_Error { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_unity2_raw :: get_result_error (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_CasualMapNumber()` overload"] fn get_casual_map_number (self ,) -> i32 { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_unity2_raw :: get_casual_map_number (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_IsSucceedDeserializeCasual()` overload"] fn get_is_succeed_deserialize_casual (self ,) -> bool { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_unity2_raw :: get_is_succeed_deserialize_casual (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_IsSucceedDeserializeCasual(bool)` overload"] fn set_is_succeed_deserialize_casual (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_unity2_raw :: set_is_succeed_deserialize_casual (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_IsExistRankedOnServer()` overload"] fn get_is_exist_ranked_on_server (self ,) -> bool { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_unity2_raw :: get_is_exist_ranked_on_server (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_IsExistRankedOnServer(bool)` overload"] fn set_is_exist_ranked_on_server (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_unity2_raw :: set_is_exist_ranked_on_server (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_IsUploadDifferentSaveID()` overload"] fn get_is_upload_different_save_id (self ,) -> bool { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_unity2_raw :: get_is_upload_different_save_id (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_IsUploadDifferentSaveID(bool)` overload"] fn set_is_upload_different_save_id (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_unity2_raw :: set_is_upload_different_save_id (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_History()` overload"] fn get_history (self ,) -> crate :: app :: versus :: Versus_DownloadHistory { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_unity2_raw :: get_history (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-versus")]
+impl < __T : IVersus > IVersusMethods for __T { }
+
+#[cfg(feature = "app-versus")]
+impl Versus { pub fn on_create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_unity2_raw :: __lookup_on_create :: get_method_info () } pub fn on_dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_unity2_raw :: __lookup_on_dispose :: get_method_info () } pub fn is_valid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_unity2_raw :: __lookup_is_valid :: get_method_info () } pub fn is_versus_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_unity2_raw :: __lookup_is_versus_mode :: get_method_info () } pub fn is_casual_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_unity2_raw :: __lookup_is_casual :: get_method_info () } pub fn is_ranked_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_unity2_raw :: __lookup_is_ranked :: get_method_info () } pub fn is_mock_battle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_unity2_raw :: __lookup_is_mock_battle :: get_method_info () } pub fn is_edit_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_unity2_raw :: __lookup_is_edit_mode :: get_method_info () } pub fn is_replay_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_unity2_raw :: __lookup_is_replay :: get_method_info () } pub fn can_sortie_ranked_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_unity2_raw :: __lookup_can_sortie_ranked :: get_method_info () } pub fn can_sortie_ranked_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_unity2_raw :: __lookup_can_sortie_ranked_2 :: get_method_info () } pub fn save_casual_units_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_unity2_raw :: __lookup_save_casual_units :: get_method_info () } pub fn save_casual_units_init_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_unity2_raw :: __lookup_save_casual_units_init :: get_method_info () } pub fn map_end_edit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_unity2_raw :: __lookup_map_end_edit :: get_method_info () } pub fn reset_result_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_unity2_raw :: __lookup_reset_result :: get_method_info () } pub fn set_abort_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_unity2_raw :: __lookup_set_abort :: get_method_info () } pub fn set_surrender_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_unity2_raw :: __lookup_set_surrender :: get_method_info () } pub fn set_result_report_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_unity2_raw :: __lookup_set_result_report :: get_method_info () } pub fn set_error_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_unity2_raw :: __lookup_set_error :: get_method_info () } pub fn map_end_versus_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_unity2_raw :: __lookup_map_end_versus :: get_method_info () } pub fn map_end_versus_casual_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_unity2_raw :: __lookup_map_end_versus_casual :: get_method_info () } pub fn map_end_versus_ranked_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_unity2_raw :: __lookup_map_end_versus_ranked :: get_method_info () } pub fn reset_god_pool_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_unity2_raw :: __lookup_reset_god_pool_id :: get_method_info () } pub fn is_exits_online_node_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_unity2_raw :: __lookup_is_exits_online_node :: get_method_info () } pub fn map_end_replay_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_unity2_raw :: __lookup_map_end_replay :: get_method_info () } pub fn restore_story_chapter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_unity2_raw :: __lookup_restore_story_chapter :: get_method_info () } pub fn try_set_player_meta_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_unity2_raw :: __lookup_try_set_player_meta_data :: get_method_info () } pub fn set_player_meta_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_unity2_raw :: __lookup_set_player_meta_data :: get_method_info () } pub fn set_opponent_meta_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_unity2_raw :: __lookup_set_opponent_meta_data :: get_method_info () } pub fn set_opponent_meta_data_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_unity2_raw :: __lookup_set_opponent_meta_data_2 :: get_method_info () } pub fn set_player_rating_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_unity2_raw :: __lookup_set_player_rating_list :: get_method_info () } pub fn set_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_unity2_raw :: __lookup_set_mode :: get_method_info () } pub fn set_casual_map_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_unity2_raw :: __lookup_set_casual_map :: get_method_info () } pub fn set_matching_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_unity2_raw :: __lookup_set_matching_type :: get_method_info () } pub fn is_have_player_edit_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_unity2_raw :: __lookup_is_have_player_edit_data :: get_method_info () } pub fn is_saved_local_edit_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_unity2_raw :: __lookup_is_saved_local_edit_data :: get_method_info () } pub fn is_use_server_edit_data_for_battle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_unity2_raw :: __lookup_is_use_server_edit_data_for_battle :: get_method_info () } pub fn is_use_server_edit_data_for_edit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_unity2_raw :: __lookup_is_use_server_edit_data_for_edit :: get_method_info () } pub fn get_my_map_edit_data_for_battle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_unity2_raw :: __lookup_get_my_map_edit_data_for_battle :: get_method_info () } pub fn get_my_map_edit_data_for_edit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_unity2_raw :: __lookup_get_my_map_edit_data_for_edit :: get_method_info () } pub fn get_sortie_title_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_unity2_raw :: __lookup_get_sortie_title :: get_method_info () } pub fn try_get_opponent_info_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_unity2_raw :: __lookup_try_get_opponent_info :: get_method_info () } pub fn is_use_backup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_unity2_raw :: __lookup_is_use_backup :: get_method_info () } pub fn serialize_backup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_unity2_raw :: __lookup_serialize_backup :: get_method_info () } pub fn deserialize_backup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_unity2_raw :: __lookup_deserialize_backup :: get_method_info () } pub fn get_casual_sortie_max_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_unity2_raw :: __lookup_get_casual_sortie_max :: get_method_info () } pub fn get_offense_sortie_max_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_unity2_raw :: __lookup_get_offense_sortie_max :: get_method_info () } pub fn get_defense_sortie_max_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_unity2_raw :: __lookup_get_defense_sortie_max :: get_method_info () } pub fn get_player_meta_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_unity2_raw :: __lookup_get_player_meta_data :: get_method_info () } pub fn get_player_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_unity2_raw :: __lookup_get_player_data :: get_method_info () } pub fn get_opponent_meta_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_unity2_raw :: __lookup_get_opponent_meta_data :: get_method_info () } pub fn get_opponent_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_unity2_raw :: __lookup_get_opponent_data :: get_method_info () } pub fn get_replay_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_unity2_raw :: __lookup_get_replay_data :: get_method_info () } pub fn get_replay_meta_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_unity2_raw :: __lookup_get_replay_meta_data :: get_method_info () } pub fn get_casual_opponent_meta_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_unity2_raw :: __lookup_get_casual_opponent_meta_data :: get_method_info () } pub fn get_casual_opponent_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_unity2_raw :: __lookup_get_casual_opponent_data :: get_method_info () } pub fn get_casual_player_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_unity2_raw :: __lookup_get_casual_player_data :: get_method_info () } pub fn get_casual_player_meta_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_unity2_raw :: __lookup_get_casual_player_meta_data :: get_method_info () } pub fn get_return_chapter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_unity2_raw :: __lookup_get_return_chapter :: get_method_info () } pub fn set_return_chapter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_unity2_raw :: __lookup_set_return_chapter :: get_method_info () } pub fn get_result_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_unity2_raw :: __lookup_get_result :: get_method_info () } pub fn get_opponent_result_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_unity2_raw :: __lookup_get_opponent_result :: get_method_info () } pub fn get_is_surrender_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_unity2_raw :: __lookup_get_is_surrender :: get_method_info () } pub fn get_versus_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_unity2_raw :: __lookup_get_versus_mode :: get_method_info () } pub fn get_matching_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_unity2_raw :: __lookup_get_matching :: get_method_info () } pub fn get_result_error_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_unity2_raw :: __lookup_get_result_error :: get_method_info () } pub fn get_casual_map_number_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_unity2_raw :: __lookup_get_casual_map_number :: get_method_info () } pub fn get_is_succeed_deserialize_casual_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_unity2_raw :: __lookup_get_is_succeed_deserialize_casual :: get_method_info () } pub fn set_is_succeed_deserialize_casual_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_unity2_raw :: __lookup_set_is_succeed_deserialize_casual :: get_method_info () } pub fn get_is_exist_ranked_on_server_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_unity2_raw :: __lookup_get_is_exist_ranked_on_server :: get_method_info () } pub fn set_is_exist_ranked_on_server_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_unity2_raw :: __lookup_set_is_exist_ranked_on_server :: get_method_info () } pub fn get_is_upload_different_save_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_unity2_raw :: __lookup_get_is_upload_different_save_id :: get_method_info () } pub fn set_is_upload_different_save_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_unity2_raw :: __lookup_set_is_upload_different_save_id :: get_method_info () } pub fn get_is_force_edit_data_overwrite_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_unity2_raw :: __lookup_get_is_force_edit_data_overwrite :: get_method_info () } pub fn set_is_force_edit_data_overwrite_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_unity2_raw :: __lookup_set_is_force_edit_data_overwrite :: get_method_info () } pub fn check_valid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_unity2_raw :: __lookup_check_valid :: get_method_info () } pub fn get_history_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_unity2_raw :: __lookup_get_history :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_unity2_raw :: __lookup_cctor :: get_method_info () } }
+
+#[cfg(feature = "app-versus")]
+impl Versus {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Versus) , :: core :: stringify ! (new) ,)) ; < Self as IVersusMethods > :: ctor (this ,) ; this }
+}
+
+#[cfg(feature = "app-versus")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __Versus_DownloadHistory_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus_DownloadHistory as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus_DownloadHistory as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : Versus_DownloadHistory , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Versus_DownloadHistory , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_initialize_check_data { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus_DownloadHistory as :: unity2 :: ClassIdentity > :: class () , "InitializeCheckData" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus_DownloadHistory as :: unity2 :: ClassIdentity > :: NAME , "InitializeCheckData" , e) , } } } pub unsafe fn initialize_check_data (this : Versus_DownloadHistory , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Versus_DownloadHistory , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_initialize_check_data :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_donwloaded { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: versus :: Versus_CheckDataType as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus_DownloadHistory as :: unity2 :: ClassIdentity > :: class () , "SetDonwloaded" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus_DownloadHistory as :: unity2 :: ClassIdentity > :: NAME , "SetDonwloaded" , e) , } } } pub unsafe fn set_donwloaded (this : Versus_DownloadHistory , data_type : crate :: app :: versus :: Versus_CheckDataType , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Versus_DownloadHistory , crate :: app :: versus :: Versus_CheckDataType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_donwloaded :: get_method_info () . method_ptr ,) ; inner (this , data_type , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_downloaded { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: versus :: Versus_CheckDataType as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus_DownloadHistory as :: unity2 :: ClassIdentity > :: class () , "IsDownloaded" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus_DownloadHistory as :: unity2 :: ClassIdentity > :: NAME , "IsDownloaded" , e) , } } } pub unsafe fn is_downloaded (this : Versus_DownloadHistory , data_type : crate :: app :: versus :: Versus_CheckDataType , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (Versus_DownloadHistory , crate :: app :: versus :: Versus_CheckDataType , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_downloaded :: get_method_info () . method_ptr ,) ; inner (this , data_type , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_reset_check_data { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: versus :: Versus_CheckDataType as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus_DownloadHistory as :: unity2 :: ClassIdentity > :: class () , "ResetCheckData" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus_DownloadHistory as :: unity2 :: ClassIdentity > :: NAME , "ResetCheckData" , e) , } } } pub unsafe fn reset_check_data (this : Versus_DownloadHistory , data_type : crate :: app :: versus :: Versus_CheckDataType , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Versus_DownloadHistory , crate :: app :: versus :: Versus_CheckDataType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_reset_check_data :: get_method_info () . method_ptr ,) ; inner (this , data_type , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_all_reset { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus_DownloadHistory as :: unity2 :: ClassIdentity > :: class () , "AllReset" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus_DownloadHistory as :: unity2 :: ClassIdentity > :: NAME , "AllReset" , e) , } } } pub unsafe fn all_reset (this : Versus_DownloadHistory , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Versus_DownloadHistory , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_all_reset :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus_DownloadHistory as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus_DownloadHistory as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
+
+#[cfg(feature = "app-versus")]
+impl Versus_DownloadHistory { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { __Versus_DownloadHistory_unity2_raw :: cctor (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-versus")]
+pub trait IVersus_DownloadHistoryMethods : IVersus_DownloadHistory { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Versus_DownloadHistory as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_DownloadHistory_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } # [doc = "`InitializeCheckData()` overload"] fn initialize_check_data (self ,) -> () { unsafe { let __receiver = < Versus_DownloadHistory as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_DownloadHistory_unity2_raw :: initialize_check_data (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetDonwloaded(crate::app::versus::Versus_CheckDataType)` overload"] fn set_donwloaded (self , data_type : impl :: core :: convert :: Into < crate :: app :: versus :: Versus_CheckDataType >) -> () { unsafe { let __receiver = < Versus_DownloadHistory as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_DownloadHistory_unity2_raw :: set_donwloaded (__receiver , :: core :: convert :: Into :: into (data_type) , :: core :: option :: Option :: None) } } # [doc = "`IsDownloaded(crate::app::versus::Versus_CheckDataType)` overload"] fn is_downloaded (self , data_type : impl :: core :: convert :: Into < crate :: app :: versus :: Versus_CheckDataType >) -> bool { unsafe { let __receiver = < Versus_DownloadHistory as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_DownloadHistory_unity2_raw :: is_downloaded (__receiver , :: core :: convert :: Into :: into (data_type) , :: core :: option :: Option :: None) } } # [doc = "`ResetCheckData(crate::app::versus::Versus_CheckDataType)` overload"] fn reset_check_data (self , data_type : impl :: core :: convert :: Into < crate :: app :: versus :: Versus_CheckDataType >) -> () { unsafe { let __receiver = < Versus_DownloadHistory as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_DownloadHistory_unity2_raw :: reset_check_data (__receiver , :: core :: convert :: Into :: into (data_type) , :: core :: option :: Option :: None) } } # [doc = "`AllReset()` overload"] fn all_reset (self ,) -> () { unsafe { let __receiver = < Versus_DownloadHistory as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_DownloadHistory_unity2_raw :: all_reset (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-versus")]
+impl < __T : IVersus_DownloadHistory > IVersus_DownloadHistoryMethods for __T { }
+
+#[cfg(feature = "app-versus")]
+impl Versus_DownloadHistory { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_DownloadHistory_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn initialize_check_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_DownloadHistory_unity2_raw :: __lookup_initialize_check_data :: get_method_info () } pub fn set_donwloaded_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_DownloadHistory_unity2_raw :: __lookup_set_donwloaded :: get_method_info () } pub fn is_downloaded_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_DownloadHistory_unity2_raw :: __lookup_is_downloaded :: get_method_info () } pub fn reset_check_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_DownloadHistory_unity2_raw :: __lookup_reset_check_data :: get_method_info () } pub fn all_reset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_DownloadHistory_unity2_raw :: __lookup_all_reset :: get_method_info () } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_DownloadHistory_unity2_raw :: __lookup_cctor :: get_method_info () } }
+
+#[cfg(feature = "app-versus")]
+impl Versus_DownloadHistory {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Versus_DownloadHistory) , :: core :: stringify ! (new) ,)) ; < Self as IVersus_DownloadHistoryMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-versus")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{
-        IVersus, IVersusMethods, IVersus_DownloadHistory, IVersus_DownloadHistoryMethods, IVersus_DownloadHistory_CheckData,
-        IVersus_DownloadHistory_CheckDataMethods, IVersus_MapObjectCounter, IVersus_MapObjectCounterMethods, IVersus_VersusCheck,
-        IVersus_VersusCheckMethods, Versus, Versus_CheckDataType, Versus_DownloadHistory, Versus_DownloadHistory_CheckData, Versus_Error,
-        Versus_MapObjectCounter, Versus_MapResult, Versus_MatchingType, Versus_Mode, Versus_VersusCheck,
-    };
-    #[cfg(feature = "app-singletonclass_1")]
-    pub use crate::app::singletonclass_1::ISingletonClass_1Methods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::{
-        app::singletonclass_1::ISingletonClass_1,
-        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
-    };
+    pub use super::Versus_VersusCheck;
+    pub use super::IVersus_VersusCheck;
+    pub use super::IVersus_VersusCheckMethods;
+    pub use super::Versus_MapResult;
+    pub use super::Versus_MapObjectCounter;
+    pub use super::IVersus_MapObjectCounter;
+    pub use super::IVersus_MapObjectCounterMethods;
+    pub use super::Versus_Mode;
+    pub use super::Versus_MatchingType;
+    pub use super::Versus_Error;
+    pub use super::Versus_CheckDataType;
+    pub use super::Versus_DownloadHistory_CheckData;
+    pub use super::IVersus_DownloadHistory_CheckData;
+    pub use super::IVersus_DownloadHistory_CheckDataMethods;
+    pub use super::Versus;
+    pub use super::IVersus;
+    pub use super::IVersusMethods;
+    pub use super::Versus_DownloadHistory;
+    pub use super::IVersus_DownloadHistory;
+    pub use super::IVersus_DownloadHistoryMethods;
+    pub use crate::app::singletonclass_1::ISingletonClass_1;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "app-singletonclass_1")] pub use crate::app::singletonclass_1::ISingletonClass_1Methods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

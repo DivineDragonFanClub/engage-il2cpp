@@ -2,157 +2,53 @@
 
 #[cfg(feature = "app-procdescwaitfalse-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::{
-            procdesc::{IProcDesc, ProcDesc},
-            procdescwaitfunc::{IProcDescWaitFunc, ProcDescWaitFunc},
-        },
-        system::object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/procdescwaitfalse/ProcDescWaitFalse.md"))]
-    #[::unity2::class(namespace = "App", name = "ProcDescWaitFalse")]
-    #[parent(crate::app::procdescwaitfunc::ProcDescWaitFunc)]
-    pub struct ProcDescWaitFalse {
-        #[offset(24)]
-        #[rename(name = "m_Function")]
-        pub m_function: crate::app::procboolfunction::ProcBoolFunction,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: procdesc :: { IProcDesc , ProcDesc }
+ ;
+ use crate :: app :: procdescwaitfunc :: { IProcDescWaitFunc , ProcDescWaitFunc }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/procdescwaitfalse/ProcDescWaitFalse.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProcDescWaitFalse")] # [parent (crate :: app :: procdescwaitfunc :: ProcDescWaitFunc)] pub struct ProcDescWaitFalse {
+# [offset (24)] # [rename (name = "m_Function")] pub m_function : crate :: app :: procboolfunction :: ProcBoolFunction ,
+}
+
 }
 
 #[cfg(feature = "app-procdescwaitfalse-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-procdescwaitfalse")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ProcDescWaitFalse_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::procboolfunction::ProcBoolFunction as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProcDescWaitFalse as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProcDescWaitFalse as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: ProcDescWaitFalse,
-        function: crate::app::procboolfunction::ProcBoolFunction,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(ProcDescWaitFalse, crate::app::procboolfunction::ProcBoolFunction, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, function, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_wait {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProcDescWaitFalse as ::unity2::ClassIdentity>::class(),
-                "IsWait",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProcDescWaitFalse as ::unity2::ClassIdentity>::NAME,
-                        "IsWait",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_wait(this: ProcDescWaitFalse, inst: crate::app::procinst::ProcInst, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(ProcDescWaitFalse, crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_wait::get_method_info().method_ptr);
-        inner(this, inst, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ProcDescWaitFalse_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procboolfunction :: ProcBoolFunction as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProcDescWaitFalse as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProcDescWaitFalse as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : ProcDescWaitFalse , function : crate :: app :: procboolfunction :: ProcBoolFunction , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ProcDescWaitFalse , crate :: app :: procboolfunction :: ProcBoolFunction , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , function , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_wait { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProcDescWaitFalse as :: unity2 :: ClassIdentity > :: class () , "IsWait" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProcDescWaitFalse as :: unity2 :: ClassIdentity > :: NAME , "IsWait" , e) , } } } pub unsafe fn is_wait (this : ProcDescWaitFalse , inst : crate :: app :: procinst :: ProcInst , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (ProcDescWaitFalse , crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_wait :: get_method_info () . method_ptr ,) ; inner (this , inst , __unity2_method_info) } }
 
 #[cfg(feature = "app-procdescwaitfalse")]
-pub trait IProcDescWaitFalseMethods: IProcDescWaitFalse {
-    #[doc = "`.ctor(crate::app::procboolfunction::ProcBoolFunction)` overload"]
-    fn ctor(self, function: impl ::core::convert::Into<crate::app::procboolfunction::ProcBoolFunction>) -> () {
-        unsafe {
-            let __receiver = <ProcDescWaitFalse as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ProcDescWaitFalse_unity2_raw::ctor(__receiver, ::core::convert::Into::into(function), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsWait(crate::app::procinst::ProcInst)` overload"]
-    fn is_wait(self, inst: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> bool {
-        unsafe {
-            let __receiver = <ProcDescWaitFalse as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ProcDescWaitFalse_unity2_raw::is_wait(__receiver, ::core::convert::Into::into(inst), ::core::option::Option::None)
-        }
-    }
-}
+pub trait IProcDescWaitFalseMethods : IProcDescWaitFalse { # [doc = "`.ctor(crate::app::procboolfunction::ProcBoolFunction)` overload"] fn ctor (self , function : impl :: core :: convert :: Into < crate :: app :: procboolfunction :: ProcBoolFunction >) -> () { unsafe { let __receiver = < ProcDescWaitFalse as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ProcDescWaitFalse_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (function) , :: core :: option :: Option :: None) } } # [doc = "`IsWait(crate::app::procinst::ProcInst)` overload"] fn is_wait (self , inst : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> bool { unsafe { let __receiver = < ProcDescWaitFalse as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ProcDescWaitFalse_unity2_raw :: is_wait (__receiver , :: core :: convert :: Into :: into (inst) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-procdescwaitfalse")]
-impl<__T: IProcDescWaitFalse> IProcDescWaitFalseMethods for __T {}
+impl < __T : IProcDescWaitFalse > IProcDescWaitFalseMethods for __T { }
+
+#[cfg(feature = "app-procdescwaitfalse")]
+impl ProcDescWaitFalse { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProcDescWaitFalse_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn is_wait_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProcDescWaitFalse_unity2_raw :: __lookup_is_wait :: get_method_info () } }
 
 #[cfg(feature = "app-procdescwaitfalse")]
 impl ProcDescWaitFalse {
-    #[doc = "`.ctor(crate::app::procboolfunction::ProcBoolFunction)` — overload selector"]
-    pub fn new(function: crate::app::procboolfunction::ProcBoolFunction) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ProcDescWaitFalse),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IProcDescWaitFalseMethods>::ctor(this, function);
-        this
-    }
+# [doc = "`.ctor(crate::app::procboolfunction::ProcBoolFunction)` — overload selector"] pub fn new (function : crate :: app :: procboolfunction :: ProcBoolFunction) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProcDescWaitFalse) , :: core :: stringify ! (new) ,)) ; < Self as IProcDescWaitFalseMethods > :: ctor (this , function) ; this }
 }
 
 #[cfg(feature = "app-procdescwaitfalse")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IProcDescWaitFalse, IProcDescWaitFalseMethods, ProcDescWaitFalse};
-    #[cfg(feature = "app-procdesc")]
-    pub use crate::app::procdesc::IProcDescMethods;
-    #[cfg(feature = "app-procdescwaitfunc")]
-    pub use crate::app::procdescwaitfunc::IProcDescWaitFuncMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::{
-        app::{procdesc::IProcDesc, procdescwaitfunc::IProcDescWaitFunc},
-        system::object::IObject,
-    };
+    pub use super::ProcDescWaitFalse;
+    pub use super::IProcDescWaitFalse;
+    pub use super::IProcDescWaitFalseMethods;
+    pub use crate::app::procdesc::IProcDesc;
+    pub use crate::app::procdescwaitfunc::IProcDescWaitFunc;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "app-procdesc")] pub use crate::app::procdesc::IProcDescMethods;
+    #[cfg(feature = "app-procdescwaitfunc")] pub use crate::app::procdescwaitfunc::IProcDescWaitFuncMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

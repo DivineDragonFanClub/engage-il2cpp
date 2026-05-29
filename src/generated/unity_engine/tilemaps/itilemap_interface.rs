@@ -2,190 +2,49 @@
 
 #[cfg(feature = "unity_engine-tilemaps-itilemap_interface-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/tilemaps/itilemap_interface/ITilemap_Interface.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Tilemaps", name = "ITilemap")]
-    #[parent(crate::system::object::Object)]
-    pub struct ITilemap_Interface {
-        #[static_field]
-        #[rename(name = "s_Instance")]
-        pub s_instance: crate::unity_engine::tilemaps::itilemap_interface::ITilemap_Interface,
-        #[offset(16)]
-        #[rename(name = "m_Tilemap")]
-        pub m_tilemap: crate::unity_engine::tilemaps::tilemap::Tilemap,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/tilemaps/itilemap_interface/ITilemap_Interface.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Tilemaps" , name = "ITilemap")] # [parent (crate :: system :: object :: Object)] pub struct ITilemap_Interface {
+# [static_field] # [rename (name = "s_Instance")] pub s_instance : crate :: unity_engine :: tilemaps :: itilemap_interface :: ITilemap_Interface ,
+# [offset (16)] # [rename (name = "m_Tilemap")] pub m_tilemap : crate :: unity_engine :: tilemaps :: tilemap :: Tilemap ,
+}
+
 }
 
 #[cfg(feature = "unity_engine-tilemaps-itilemap_interface-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-tilemaps-itilemap_interface")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ITilemap_Interface_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ITilemap_Interface as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ITilemap_Interface as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: ITilemap_Interface, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ITilemap_Interface, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_refresh_tile {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector3int::Vector3Int as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ITilemap_Interface as ::unity2::ClassIdentity>::class(),
-                "RefreshTile",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ITilemap_Interface as ::unity2::ClassIdentity>::NAME,
-                        "RefreshTile",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn refresh_tile(
-        this: ITilemap_Interface,
-        position: crate::unity_engine::vector3int::Vector3Int,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(ITilemap_Interface, crate::unity_engine::vector3int::Vector3Int, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_refresh_tile::get_method_info().method_ptr);
-        inner(this, position, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_instance {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ITilemap_Interface as ::unity2::ClassIdentity>::class(),
-                "CreateInstance",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ITilemap_Interface as ::unity2::ClassIdentity>::NAME,
-                        "CreateInstance",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_instance(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::tilemaps::itilemap_interface::ITilemap_Interface {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::unity_engine::tilemaps::itilemap_interface::ITilemap_Interface =
-            ::core::mem::transmute(__lookup_create_instance::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ITilemap_Interface_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ITilemap_Interface as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ITilemap_Interface as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : ITilemap_Interface , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ITilemap_Interface , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_refresh_tile { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector3int :: Vector3Int as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ITilemap_Interface as :: unity2 :: ClassIdentity > :: class () , "RefreshTile" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ITilemap_Interface as :: unity2 :: ClassIdentity > :: NAME , "RefreshTile" , e) , } } } pub unsafe fn refresh_tile (this : ITilemap_Interface , position : crate :: unity_engine :: vector3int :: Vector3Int , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ITilemap_Interface , crate :: unity_engine :: vector3int :: Vector3Int , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_refresh_tile :: get_method_info () . method_ptr ,) ; inner (this , position , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_instance { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ITilemap_Interface as :: unity2 :: ClassIdentity > :: class () , "CreateInstance" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ITilemap_Interface as :: unity2 :: ClassIdentity > :: NAME , "CreateInstance" , e) , } } } pub unsafe fn create_instance (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: tilemaps :: itilemap_interface :: ITilemap_Interface { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: tilemaps :: itilemap_interface :: ITilemap_Interface = :: core :: mem :: transmute (__lookup_create_instance :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
+
+#[cfg(feature = "unity_engine-tilemaps-itilemap_interface")]
+impl ITilemap_Interface { # [doc = "`CreateInstance()` overload"] pub fn create_instance () -> crate :: unity_engine :: tilemaps :: itilemap_interface :: ITilemap_Interface { unsafe { __ITilemap_Interface_unity2_raw :: create_instance (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-tilemaps-itilemap_interface")]
+pub trait IITilemap_InterfaceMethods : IITilemap_Interface { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ITilemap_Interface as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ITilemap_Interface_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } # [doc = "`RefreshTile(crate::unity_engine::vector3int::Vector3Int)` overload"] fn refresh_tile (self , position : impl :: core :: convert :: Into < crate :: unity_engine :: vector3int :: Vector3Int >) -> () { unsafe { let __receiver = < ITilemap_Interface as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ITilemap_Interface_unity2_raw :: refresh_tile (__receiver , :: core :: convert :: Into :: into (position) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-tilemaps-itilemap_interface")]
+impl < __T : IITilemap_Interface > IITilemap_InterfaceMethods for __T { }
+
+#[cfg(feature = "unity_engine-tilemaps-itilemap_interface")]
+impl ITilemap_Interface { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ITilemap_Interface_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn refresh_tile_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ITilemap_Interface_unity2_raw :: __lookup_refresh_tile :: get_method_info () } pub fn create_instance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ITilemap_Interface_unity2_raw :: __lookup_create_instance :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-tilemaps-itilemap_interface")]
 impl ITilemap_Interface {
-    #[doc = "`CreateInstance()` overload"]
-    pub fn create_instance() -> crate::unity_engine::tilemaps::itilemap_interface::ITilemap_Interface {
-        unsafe { __ITilemap_Interface_unity2_raw::create_instance(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "unity_engine-tilemaps-itilemap_interface")]
-pub trait IITilemap_InterfaceMethods: IITilemap_Interface {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <ITilemap_Interface as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ITilemap_Interface_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`RefreshTile(crate::unity_engine::vector3int::Vector3Int)` overload"]
-    fn refresh_tile(self, position: impl ::core::convert::Into<crate::unity_engine::vector3int::Vector3Int>) -> () {
-        unsafe {
-            let __receiver = <ITilemap_Interface as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ITilemap_Interface_unity2_raw::refresh_tile(__receiver, ::core::convert::Into::into(position), ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-tilemaps-itilemap_interface")]
-impl<__T: IITilemap_Interface> IITilemap_InterfaceMethods for __T {}
-
-#[cfg(feature = "unity_engine-tilemaps-itilemap_interface")]
-impl ITilemap_Interface {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ITilemap_Interface),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IITilemap_InterfaceMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ITilemap_Interface) , :: core :: stringify ! (new) ,)) ; < Self as IITilemap_InterfaceMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "unity_engine-tilemaps-itilemap_interface")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IITilemap_Interface, IITilemap_InterfaceMethods, ITilemap_Interface};
+    pub use super::ITilemap_Interface;
+    pub use super::IITilemap_Interface;
+    pub use super::IITilemap_InterfaceMethods;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

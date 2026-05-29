@@ -2,185 +2,72 @@
 
 #[cfg(feature = "unity_engine-animatorclipinfo-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        valuetype::{IValueType, ValueType},
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/animatorclipinfo/AnimatorClipInfo.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct AnimatorClipInfo {
-        pub m_clip_instance_id: i32,
-        pub m_weight: f32,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
 
-    impl ::unity2::ClassIdentity for AnimatorClipInfo {
-        const NAME: &'static str = "AnimatorClipInfo";
-        const NAMESPACE: &'static str = "UnityEngine";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/animatorclipinfo/AnimatorClipInfo.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct AnimatorClipInfo {
+    pub m_clip_instance_id: i32,
+    pub m_weight: f32,
+}
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+
+impl ::unity2::ClassIdentity for AnimatorClipInfo {
+    const NAMESPACE: &'static str = "UnityEngine";
+
+    const NAME: &'static str = "AnimatorClipInfo";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for AnimatorClipInfo {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl ::unity2::IlType for AnimatorClipInfo {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
+
+}
+
 }
 
 #[cfg(feature = "unity_engine-animatorclipinfo-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-animatorclipinfo")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AnimatorClipInfo_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_clip {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AnimatorClipInfo as ::unity2::ClassIdentity>::class(),
-                "get_clip",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AnimatorClipInfo as ::unity2::ClassIdentity>::NAME,
-                        "get_clip",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_clip(
-        this: AnimatorClipInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::animationclip::AnimationClip {
-        let inner: extern "C" fn(AnimatorClipInfo, ::unity2::OptionalMethod) -> crate::unity_engine::animationclip::AnimationClip =
-            ::core::mem::transmute(__lookup_get_clip::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_weight {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AnimatorClipInfo as ::unity2::ClassIdentity>::class(),
-                "get_weight",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AnimatorClipInfo as ::unity2::ClassIdentity>::NAME,
-                        "get_weight",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_weight(this: AnimatorClipInfo, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(AnimatorClipInfo, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_get_weight::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_instance_id_to_animation_clip_p_ptr {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AnimatorClipInfo as ::unity2::ClassIdentity>::class(),
-                "InstanceIDToAnimationClipPPtr",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AnimatorClipInfo as ::unity2::ClassIdentity>::NAME,
-                        "InstanceIDToAnimationClipPPtr",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn instance_id_to_animation_clip_p_ptr(
-        instance_id: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::animationclip::AnimationClip {
-        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> crate::unity_engine::animationclip::AnimationClip =
-            ::core::mem::transmute(__lookup_instance_id_to_animation_clip_p_ptr::get_method_info().method_ptr);
-        inner(instance_id, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __AnimatorClipInfo_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_clip { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AnimatorClipInfo as :: unity2 :: ClassIdentity > :: class () , "get_clip" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AnimatorClipInfo as :: unity2 :: ClassIdentity > :: NAME , "get_clip" , e) , } } } pub unsafe fn get_clip (this : AnimatorClipInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: animationclip :: AnimationClip { let inner : extern "C" fn (AnimatorClipInfo , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: animationclip :: AnimationClip = :: core :: mem :: transmute (__lookup_get_clip :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_weight { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AnimatorClipInfo as :: unity2 :: ClassIdentity > :: class () , "get_weight" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AnimatorClipInfo as :: unity2 :: ClassIdentity > :: NAME , "get_weight" , e) , } } } pub unsafe fn get_weight (this : AnimatorClipInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (AnimatorClipInfo , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_get_weight :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_instance_id_to_animation_clip_p_ptr { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AnimatorClipInfo as :: unity2 :: ClassIdentity > :: class () , "InstanceIDToAnimationClipPPtr" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AnimatorClipInfo as :: unity2 :: ClassIdentity > :: NAME , "InstanceIDToAnimationClipPPtr" , e) , } } } pub unsafe fn instance_id_to_animation_clip_p_ptr (instance_id : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: animationclip :: AnimationClip { let inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: animationclip :: AnimationClip = :: core :: mem :: transmute (__lookup_instance_id_to_animation_clip_p_ptr :: get_method_info () . method_ptr ,) ; inner (instance_id , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-animatorclipinfo")]
-impl AnimatorClipInfo {
-    #[doc = "`InstanceIDToAnimationClipPPtr(i32)` overload"]
-    pub fn instance_id_to_animation_clip_p_ptr(instance_id: impl ::core::convert::Into<i32>) -> crate::unity_engine::animationclip::AnimationClip {
-        unsafe {
-            __AnimatorClipInfo_unity2_raw::instance_id_to_animation_clip_p_ptr(::core::convert::Into::into(instance_id), ::core::option::Option::None)
-        }
-    }
-}
+impl AnimatorClipInfo { # [doc = "`InstanceIDToAnimationClipPPtr(i32)` overload"] pub fn instance_id_to_animation_clip_p_ptr (instance_id : impl :: core :: convert :: Into < i32 >) -> crate :: unity_engine :: animationclip :: AnimationClip { unsafe { __AnimatorClipInfo_unity2_raw :: instance_id_to_animation_clip_p_ptr (:: core :: convert :: Into :: into (instance_id) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-animatorclipinfo")]
-impl AnimatorClipInfo {
-    #[doc = "`get_clip()` overload"]
-    pub fn get_clip(self) -> crate::unity_engine::animationclip::AnimationClip {
-        unsafe { __AnimatorClipInfo_unity2_raw::get_clip(self, ::core::option::Option::None) }
-    }
+impl AnimatorClipInfo { # [doc = "`get_clip()` overload"] pub fn get_clip (self ,) -> crate :: unity_engine :: animationclip :: AnimationClip { unsafe { __AnimatorClipInfo_unity2_raw :: get_clip (self , :: core :: option :: Option :: None) } } # [doc = "`get_weight()` overload"] pub fn get_weight (self ,) -> f32 { unsafe { __AnimatorClipInfo_unity2_raw :: get_weight (self , :: core :: option :: Option :: None) } } }
 
-    #[doc = "`get_weight()` overload"]
-    pub fn get_weight(self) -> f32 {
-        unsafe { __AnimatorClipInfo_unity2_raw::get_weight(self, ::core::option::Option::None) }
-    }
-}
+#[cfg(feature = "unity_engine-animatorclipinfo")]
+impl AnimatorClipInfo { pub fn get_clip_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AnimatorClipInfo_unity2_raw :: __lookup_get_clip :: get_method_info () } pub fn get_weight_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AnimatorClipInfo_unity2_raw :: __lookup_get_weight :: get_method_info () } pub fn instance_id_to_animation_clip_p_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AnimatorClipInfo_unity2_raw :: __lookup_instance_id_to_animation_clip_p_ptr :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-animatorclipinfo")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::AnimatorClipInfo;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::system::{object::IObject, valuetype::IValueType};
+    pub use crate::system::object::IObject;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

@@ -2,795 +2,115 @@
 
 #[cfg(feature = "app-synthesisringmenutop-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        delegate::{Delegate, IDelegate},
-        multicastdelegate::{IMulticastDelegate, MulticastDelegate},
-        object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/synthesisringmenutop/SynthesisRingMenuTop_DecideEventHandler.md"))]
-    #[::unity2::class(namespace = "App", name = "SynthesisRingMenuTop.DecideEventHandler")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct SynthesisRingMenuTop_DecideEventHandler {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: delegate :: { Delegate , IDelegate }
+ ;
+ use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/synthesisringmenutop/SynthesisRingMenuTop.md"))]
-    #[::unity2::class(namespace = "App", name = "SynthesisRingMenuTop")]
-    #[parent(crate::system::object::Object)]
-    pub struct SynthesisRingMenuTop {
-        #[offset(16)]
-        #[rename(name = "m_SynthesisRingRoot")]
-        pub m_synthesis_ring_root: crate::app::synthesisringroot::SynthesisRingRoot,
-        #[offset(24)]
-        #[rename(name = "m_SynthesisRingBaseRingMenu")]
-        pub m_synthesis_ring_base_ring_menu: crate::app::synthesisringbaseringmenu::SynthesisRingBaseRingMenu,
-        #[offset(32)]
-        #[rename(name = "m_DecideEventHandler")]
-        pub m_decide_event_handler: crate::app::synthesisringmenutop::SynthesisRingMenuTop_DecideEventHandler,
-        #[offset(40)]
-        #[rename(name = "m_RingData")]
-        pub m_ring_data: crate::app::ringdata::RingData,
-        #[offset(48)]
-        #[rename(name = "m_CountBaseRing")]
-        pub m_count_base_ring: i32,
-        #[offset(52)]
-        #[rename(name = "m_CountPieceOfBonds")]
-        pub m_count_piece_of_bonds: i32,
-        #[offset(56)]
-        #[rename(name = "m_GodUnitIndex")]
-        pub m_god_unit_index: i32,
-        #[offset(64)]
-        #[rename(name = "m_MenuSelect")]
-        pub m_menu_select: crate::app::basicmenuselect::BasicMenuSelect,
-    }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/synthesisringmenutop/SynthesisRingMenuTop_Result.md"))]
-    #[::unity2::class(namespace = "App", name = "SynthesisRingMenuTop.Result")]
-    #[parent(crate::system::object::Object)]
-    pub struct SynthesisRingMenuTop_Result {
-        #[offset(16)]
-        #[rename(name = "m_Rnid")]
-        pub m_rnid: ::unity2::Il2CppString,
-        #[offset(24)]
-        #[rename(name = "m_BaseRingCount")]
-        pub m_base_ring_count: i32,
-        #[offset(28)]
-        #[rename(name = "m_PieceOfBondsCount")]
-        pub m_piece_of_bonds_count: i32,
-        #[offset(32)]
-        #[rename(name = "m_GodUnitIndex")]
-        pub m_god_unit_index: i32,
-        #[offset(40)]
-        #[rename(name = "m_MenuSelect")]
-        pub m_menu_select: crate::app::basicmenuselect::BasicMenuSelect,
-    }
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/synthesisringmenutop/SynthesisRingMenuTop_Result.md"))] # [:: unity2 :: class (namespace = "App" , name = "SynthesisRingMenuTop.Result")] # [parent (crate :: system :: object :: Object)] pub struct SynthesisRingMenuTop_Result {
+# [offset (16)] # [rename (name = "m_Rnid")] pub m_rnid : :: unity2 :: Il2CppString ,
+# [offset (24)] # [rename (name = "m_BaseRingCount")] pub m_base_ring_count : i32 ,
+# [offset (28)] # [rename (name = "m_PieceOfBondsCount")] pub m_piece_of_bonds_count : i32 ,
+# [offset (32)] # [rename (name = "m_GodUnitIndex")] pub m_god_unit_index : i32 ,
+# [offset (40)] # [rename (name = "m_MenuSelect")] pub m_menu_select : crate :: app :: basicmenuselect :: BasicMenuSelect ,
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/synthesisringmenutop/SynthesisRingMenuTop_DecideEventHandler.md"))] # [:: unity2 :: class (namespace = "App" , name = "SynthesisRingMenuTop.DecideEventHandler")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct SynthesisRingMenuTop_DecideEventHandler {}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/synthesisringmenutop/SynthesisRingMenuTop.md"))] # [:: unity2 :: class (namespace = "App" , name = "SynthesisRingMenuTop")] # [parent (crate :: system :: object :: Object)] pub struct SynthesisRingMenuTop {
+# [offset (16)] # [rename (name = "m_SynthesisRingRoot")] pub m_synthesis_ring_root : crate :: app :: synthesisringroot :: SynthesisRingRoot ,
+# [offset (24)] # [rename (name = "m_SynthesisRingBaseRingMenu")] pub m_synthesis_ring_base_ring_menu : crate :: app :: synthesisringbaseringmenu :: SynthesisRingBaseRingMenu ,
+# [offset (32)] # [rename (name = "m_DecideEventHandler")] pub m_decide_event_handler : crate :: app :: synthesisringmenutop :: SynthesisRingMenuTop_DecideEventHandler ,
+# [offset (40)] # [rename (name = "m_RingData")] pub m_ring_data : crate :: app :: ringdata :: RingData ,
+# [offset (48)] # [rename (name = "m_CountBaseRing")] pub m_count_base_ring : i32 ,
+# [offset (52)] # [rename (name = "m_CountPieceOfBonds")] pub m_count_piece_of_bonds : i32 ,
+# [offset (56)] # [rename (name = "m_GodUnitIndex")] pub m_god_unit_index : i32 ,
+# [offset (64)] # [rename (name = "m_MenuSelect")] pub m_menu_select : crate :: app :: basicmenuselect :: BasicMenuSelect ,
+}
+
 }
 
 #[cfg(feature = "app-synthesisringmenutop-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-synthesisringmenutop")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __SynthesisRingMenuTop_DecideEventHandler_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SynthesisRingMenuTop_DecideEventHandler as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SynthesisRingMenuTop_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: SynthesisRingMenuTop_DecideEventHandler,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            SynthesisRingMenuTop_DecideEventHandler,
-            crate::system::object::Object,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::synthesisringmenutop::SynthesisRingMenuTop_Result as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SynthesisRingMenuTop_DecideEventHandler as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SynthesisRingMenuTop_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
-                        "Invoke",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn invoke(
-        this: SynthesisRingMenuTop_DecideEventHandler,
-        result: crate::app::synthesisringmenutop::SynthesisRingMenuTop_Result,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            SynthesisRingMenuTop_DecideEventHandler,
-            crate::app::synthesisringmenutop::SynthesisRingMenuTop_Result,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
-        inner(this, result, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __SynthesisRingMenuTop_Result_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: app :: basicmenuselect :: BasicMenuSelect as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SynthesisRingMenuTop_Result as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 5 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SynthesisRingMenuTop_Result as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : SynthesisRingMenuTop_Result , rnid : :: unity2 :: Il2CppString , base_ring_count : i32 , piece_of_bonds_count : i32 , god_unit_index : i32 , menu_select : crate :: app :: basicmenuselect :: BasicMenuSelect , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SynthesisRingMenuTop_Result , :: unity2 :: Il2CppString , i32 , i32 , i32 , crate :: app :: basicmenuselect :: BasicMenuSelect , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , rnid , base_ring_count , piece_of_bonds_count , god_unit_index , menu_select , __unity2_method_info) } }
 
 #[cfg(feature = "app-synthesisringmenutop")]
-pub trait ISynthesisRingMenuTop_DecideEventHandlerMethods: ISynthesisRingMenuTop_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
-        unsafe {
-            let __receiver = <SynthesisRingMenuTop_DecideEventHandler as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SynthesisRingMenuTop_DecideEventHandler_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invoke(crate::app::synthesisringmenutop::SynthesisRingMenuTop_Result)` overload"]
-    fn invoke(self, result: impl ::core::convert::Into<crate::app::synthesisringmenutop::SynthesisRingMenuTop_Result>) -> () {
-        unsafe {
-            let __receiver = <SynthesisRingMenuTop_DecideEventHandler as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SynthesisRingMenuTop_DecideEventHandler_unity2_raw::invoke(
-                __receiver,
-                ::core::convert::Into::into(result),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+pub trait ISynthesisRingMenuTop_ResultMethods : ISynthesisRingMenuTop_Result { # [doc = "`.ctor(::unity2::Il2CppString, i32, i32, i32, crate::app::basicmenuselect::BasicMenuSelect)` overload"] fn ctor (self , rnid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , base_ring_count : impl :: core :: convert :: Into < i32 > , piece_of_bonds_count : impl :: core :: convert :: Into < i32 > , god_unit_index : impl :: core :: convert :: Into < i32 > , menu_select : impl :: core :: convert :: Into < crate :: app :: basicmenuselect :: BasicMenuSelect >) -> () { unsafe { let __receiver = < SynthesisRingMenuTop_Result as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SynthesisRingMenuTop_Result_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (rnid) , :: core :: convert :: Into :: into (base_ring_count) , :: core :: convert :: Into :: into (piece_of_bonds_count) , :: core :: convert :: Into :: into (god_unit_index) , :: core :: convert :: Into :: into (menu_select) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-synthesisringmenutop")]
-impl<__T: ISynthesisRingMenuTop_DecideEventHandler> ISynthesisRingMenuTop_DecideEventHandlerMethods for __T {}
+impl < __T : ISynthesisRingMenuTop_Result > ISynthesisRingMenuTop_ResultMethods for __T { }
 
 #[cfg(feature = "app-synthesisringmenutop")]
-impl SynthesisRingMenuTop_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SynthesisRingMenuTop_DecideEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISynthesisRingMenuTop_DecideEventHandlerMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-#[cfg(feature = "app-synthesisringmenutop")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __SynthesisRingMenuTop_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <crate::app::basicmenuselect::BasicMenuSelect as ::unity2::IlType>::il_type(),
-                <crate::app::synthesisringmenutop::SynthesisRingMenuTop_DecideEventHandler as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SynthesisRingMenuTop as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                4,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SynthesisRingMenuTop as ::unity2::ClassIdentity>::NAME,
-                        "CreateBind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        initial_god_unit_index: i32,
-        initial_menu_select: crate::app::basicmenuselect::BasicMenuSelect,
-        decide_event_handler: crate::app::synthesisringmenutop::SynthesisRingMenuTop_DecideEventHandler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::synthesisringmenutop::SynthesisRingMenuTop {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            i32,
-            crate::app::basicmenuselect::BasicMenuSelect,
-            crate::app::synthesisringmenutop::SynthesisRingMenuTop_DecideEventHandler,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::synthesisringmenutop::SynthesisRingMenuTop = ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
-        inner(
-            super_,
-            initial_god_unit_index,
-            initial_menu_select,
-            decide_event_handler,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_destroy {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SynthesisRingMenuTop as ::unity2::ClassIdentity>::class(),
-                "Destroy",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SynthesisRingMenuTop as ::unity2::ClassIdentity>::NAME,
-                        "Destroy",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn destroy(this: SynthesisRingMenuTop, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SynthesisRingMenuTop, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_destroy::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <crate::app::basicmenuselect::BasicMenuSelect as ::unity2::IlType>::il_type(),
-                <crate::app::synthesisringmenutop::SynthesisRingMenuTop_DecideEventHandler as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SynthesisRingMenuTop as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                4,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SynthesisRingMenuTop as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: SynthesisRingMenuTop,
-        super_: crate::app::procinst::ProcInst,
-        initial_god_unit_index: i32,
-        initial_menu_select: crate::app::basicmenuselect::BasicMenuSelect,
-        decide_event_handler: crate::app::synthesisringmenutop::SynthesisRingMenuTop_DecideEventHandler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            SynthesisRingMenuTop,
-            crate::app::procinst::ProcInst,
-            i32,
-            crate::app::basicmenuselect::BasicMenuSelect,
-            crate::app::synthesisringmenutop::SynthesisRingMenuTop_DecideEventHandler,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(
-            this,
-            super_,
-            initial_god_unit_index,
-            initial_menu_select,
-            decide_event_handler,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_select {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::ringdata::RingData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SynthesisRingMenuTop as ::unity2::ClassIdentity>::class(),
-                "OnSelect",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SynthesisRingMenuTop as ::unity2::ClassIdentity>::NAME,
-                        "OnSelect",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_select(
-        this: SynthesisRingMenuTop,
-        ring_data: crate::app::ringdata::RingData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(SynthesisRingMenuTop, crate::app::ringdata::RingData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_select::get_method_info().method_ptr);
-        inner(this, ring_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_decide_synthesis {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::ringdata::RingData as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <crate::app::basicmenuselect::BasicMenuSelect as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SynthesisRingMenuTop as ::unity2::ClassIdentity>::class(),
-                "OnDecideSynthesis",
-                5,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SynthesisRingMenuTop as ::unity2::ClassIdentity>::NAME,
-                        "OnDecideSynthesis",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_decide_synthesis(
-        this: SynthesisRingMenuTop,
-        ring_data: crate::app::ringdata::RingData,
-        count_base_ring: i32,
-        count_piece_of_bonds: i32,
-        god_unit_index: i32,
-        menu_select: crate::app::basicmenuselect::BasicMenuSelect,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            SynthesisRingMenuTop,
-            crate::app::ringdata::RingData,
-            i32,
-            i32,
-            i32,
-            crate::app::basicmenuselect::BasicMenuSelect,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_on_decide_synthesis::get_method_info().method_ptr);
-        inner(
-            this,
-            ring_data,
-            count_base_ring,
-            count_piece_of_bonds,
-            god_unit_index,
-            menu_select,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_yes_to_confirm {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SynthesisRingMenuTop as ::unity2::ClassIdentity>::class(),
-                "OnYesToConfirm",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SynthesisRingMenuTop as ::unity2::ClassIdentity>::NAME,
-                        "OnYesToConfirm",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_yes_to_confirm(this: SynthesisRingMenuTop, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SynthesisRingMenuTop, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_yes_to_confirm::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_cancel_close {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SynthesisRingMenuTop as ::unity2::ClassIdentity>::class(),
-                "OnCancelClose",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SynthesisRingMenuTop as ::unity2::ClassIdentity>::NAME,
-                        "OnCancelClose",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_cancel_close(this: SynthesisRingMenuTop, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SynthesisRingMenuTop, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_cancel_close::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-synthesisringmenutop")]
-impl SynthesisRingMenuTop {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, i32, crate::app::basicmenuselect::BasicMenuSelect, crate::app::synthesisringmenutop::SynthesisRingMenuTop_DecideEventHandler)` overload"]
-    pub fn create_bind(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        initial_god_unit_index: impl ::core::convert::Into<i32>,
-        initial_menu_select: impl ::core::convert::Into<crate::app::basicmenuselect::BasicMenuSelect>,
-        decide_event_handler: impl ::core::convert::Into<crate::app::synthesisringmenutop::SynthesisRingMenuTop_DecideEventHandler>,
-    ) -> crate::app::synthesisringmenutop::SynthesisRingMenuTop {
-        unsafe {
-            __SynthesisRingMenuTop_unity2_raw::create_bind(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(initial_god_unit_index),
-                ::core::convert::Into::into(initial_menu_select),
-                ::core::convert::Into::into(decide_event_handler),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-synthesisringmenutop")]
-pub trait ISynthesisRingMenuTopMethods: ISynthesisRingMenuTop {
-    #[doc = "`Destroy()` overload"]
-    fn destroy(self) -> () {
-        unsafe {
-            let __receiver =
-                <SynthesisRingMenuTop as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SynthesisRingMenuTop_unity2_raw::destroy(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor(crate::app::procinst::ProcInst, i32, crate::app::basicmenuselect::BasicMenuSelect, crate::app::synthesisringmenutop::SynthesisRingMenuTop_DecideEventHandler)` overload"]
-    fn ctor(
-        self,
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        initial_god_unit_index: impl ::core::convert::Into<i32>,
-        initial_menu_select: impl ::core::convert::Into<crate::app::basicmenuselect::BasicMenuSelect>,
-        decide_event_handler: impl ::core::convert::Into<crate::app::synthesisringmenutop::SynthesisRingMenuTop_DecideEventHandler>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <SynthesisRingMenuTop as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SynthesisRingMenuTop_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(initial_god_unit_index),
-                ::core::convert::Into::into(initial_menu_select),
-                ::core::convert::Into::into(decide_event_handler),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`OnSelect(crate::app::ringdata::RingData)` overload"]
-    fn on_select(self, ring_data: impl ::core::convert::Into<crate::app::ringdata::RingData>) -> () {
-        unsafe {
-            let __receiver =
-                <SynthesisRingMenuTop as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SynthesisRingMenuTop_unity2_raw::on_select(__receiver, ::core::convert::Into::into(ring_data), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnDecideSynthesis(crate::app::ringdata::RingData, i32, i32, i32, crate::app::basicmenuselect::BasicMenuSelect)` overload"]
-    fn on_decide_synthesis(
-        self,
-        ring_data: impl ::core::convert::Into<crate::app::ringdata::RingData>,
-        count_base_ring: impl ::core::convert::Into<i32>,
-        count_piece_of_bonds: impl ::core::convert::Into<i32>,
-        god_unit_index: impl ::core::convert::Into<i32>,
-        menu_select: impl ::core::convert::Into<crate::app::basicmenuselect::BasicMenuSelect>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <SynthesisRingMenuTop as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SynthesisRingMenuTop_unity2_raw::on_decide_synthesis(
-                __receiver,
-                ::core::convert::Into::into(ring_data),
-                ::core::convert::Into::into(count_base_ring),
-                ::core::convert::Into::into(count_piece_of_bonds),
-                ::core::convert::Into::into(god_unit_index),
-                ::core::convert::Into::into(menu_select),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`OnYesToConfirm()` overload"]
-    fn on_yes_to_confirm(self) -> () {
-        unsafe {
-            let __receiver =
-                <SynthesisRingMenuTop as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SynthesisRingMenuTop_unity2_raw::on_yes_to_confirm(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnCancelClose()` overload"]
-    fn on_cancel_close(self) -> () {
-        unsafe {
-            let __receiver =
-                <SynthesisRingMenuTop as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SynthesisRingMenuTop_unity2_raw::on_cancel_close(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-synthesisringmenutop")]
-impl<__T: ISynthesisRingMenuTop> ISynthesisRingMenuTopMethods for __T {}
-
-#[cfg(feature = "app-synthesisringmenutop")]
-impl SynthesisRingMenuTop {
-    #[doc = "`.ctor(crate::app::procinst::ProcInst, i32, crate::app::basicmenuselect::BasicMenuSelect, crate::app::synthesisringmenutop::SynthesisRingMenuTop_DecideEventHandler)` — overload selector"]
-    pub fn new(
-        super_: crate::app::procinst::ProcInst,
-        initial_god_unit_index: i32,
-        initial_menu_select: crate::app::basicmenuselect::BasicMenuSelect,
-        decide_event_handler: crate::app::synthesisringmenutop::SynthesisRingMenuTop_DecideEventHandler,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SynthesisRingMenuTop),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISynthesisRingMenuTopMethods>::ctor(this, super_, initial_god_unit_index, initial_menu_select, decide_event_handler);
-        this
-    }
-}
-
-#[cfg(feature = "app-synthesisringmenutop")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __SynthesisRingMenuTop_Result_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <crate::app::basicmenuselect::BasicMenuSelect as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SynthesisRingMenuTop_Result as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                5,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SynthesisRingMenuTop_Result as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: SynthesisRingMenuTop_Result,
-        rnid: ::unity2::Il2CppString,
-        base_ring_count: i32,
-        piece_of_bonds_count: i32,
-        god_unit_index: i32,
-        menu_select: crate::app::basicmenuselect::BasicMenuSelect,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            SynthesisRingMenuTop_Result,
-            ::unity2::Il2CppString,
-            i32,
-            i32,
-            i32,
-            crate::app::basicmenuselect::BasicMenuSelect,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(
-            this,
-            rnid,
-            base_ring_count,
-            piece_of_bonds_count,
-            god_unit_index,
-            menu_select,
-            __unity2_method_info,
-        )
-    }
-}
-
-#[cfg(feature = "app-synthesisringmenutop")]
-pub trait ISynthesisRingMenuTop_ResultMethods: ISynthesisRingMenuTop_Result {
-    #[doc = "`.ctor(::unity2::Il2CppString, i32, i32, i32, crate::app::basicmenuselect::BasicMenuSelect)` overload"]
-    fn ctor(
-        self,
-        rnid: impl ::core::convert::Into<::unity2::Il2CppString>,
-        base_ring_count: impl ::core::convert::Into<i32>,
-        piece_of_bonds_count: impl ::core::convert::Into<i32>,
-        god_unit_index: impl ::core::convert::Into<i32>,
-        menu_select: impl ::core::convert::Into<crate::app::basicmenuselect::BasicMenuSelect>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <SynthesisRingMenuTop_Result as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SynthesisRingMenuTop_Result_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(rnid),
-                ::core::convert::Into::into(base_ring_count),
-                ::core::convert::Into::into(piece_of_bonds_count),
-                ::core::convert::Into::into(god_unit_index),
-                ::core::convert::Into::into(menu_select),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-synthesisringmenutop")]
-impl<__T: ISynthesisRingMenuTop_Result> ISynthesisRingMenuTop_ResultMethods for __T {}
+impl SynthesisRingMenuTop_Result { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SynthesisRingMenuTop_Result_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-synthesisringmenutop")]
 impl SynthesisRingMenuTop_Result {
-    #[doc = "`.ctor(::unity2::Il2CppString, i32, i32, i32, crate::app::basicmenuselect::BasicMenuSelect)` — overload selector"]
-    pub fn new(
-        rnid: ::unity2::Il2CppString,
-        base_ring_count: i32,
-        piece_of_bonds_count: i32,
-        god_unit_index: i32,
-        menu_select: crate::app::basicmenuselect::BasicMenuSelect,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SynthesisRingMenuTop_Result),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISynthesisRingMenuTop_ResultMethods>::ctor(this, rnid, base_ring_count, piece_of_bonds_count, god_unit_index, menu_select);
-        this
-    }
+# [doc = "`.ctor(::unity2::Il2CppString, i32, i32, i32, crate::app::basicmenuselect::BasicMenuSelect)` — overload selector"] pub fn new (rnid : :: unity2 :: Il2CppString , base_ring_count : i32 , piece_of_bonds_count : i32 , god_unit_index : i32 , menu_select : crate :: app :: basicmenuselect :: BasicMenuSelect) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SynthesisRingMenuTop_Result) , :: core :: stringify ! (new) ,)) ; < Self as ISynthesisRingMenuTop_ResultMethods > :: ctor (this , rnid , base_ring_count , piece_of_bonds_count , god_unit_index , menu_select) ; this }
+}
+
+#[cfg(feature = "app-synthesisringmenutop")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __SynthesisRingMenuTop_DecideEventHandler_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type () , < :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SynthesisRingMenuTop_DecideEventHandler as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SynthesisRingMenuTop_DecideEventHandler as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : SynthesisRingMenuTop_DecideEventHandler , object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SynthesisRingMenuTop_DecideEventHandler , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , object , method , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_invoke { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: synthesisringmenutop :: SynthesisRingMenuTop_Result as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SynthesisRingMenuTop_DecideEventHandler as :: unity2 :: ClassIdentity > :: class () , "Invoke" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SynthesisRingMenuTop_DecideEventHandler as :: unity2 :: ClassIdentity > :: NAME , "Invoke" , e) , } } } pub unsafe fn invoke (this : SynthesisRingMenuTop_DecideEventHandler , result : crate :: app :: synthesisringmenutop :: SynthesisRingMenuTop_Result , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SynthesisRingMenuTop_DecideEventHandler , crate :: app :: synthesisringmenutop :: SynthesisRingMenuTop_Result , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_invoke :: get_method_info () . method_ptr ,) ; inner (this , result , __unity2_method_info) } }
+
+#[cfg(feature = "app-synthesisringmenutop")]
+pub trait ISynthesisRingMenuTop_DecideEventHandlerMethods : ISynthesisRingMenuTop_DecideEventHandler { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < SynthesisRingMenuTop_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SynthesisRingMenuTop_DecideEventHandler_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } # [doc = "`Invoke(crate::app::synthesisringmenutop::SynthesisRingMenuTop_Result)` overload"] fn invoke (self , result : impl :: core :: convert :: Into < crate :: app :: synthesisringmenutop :: SynthesisRingMenuTop_Result >) -> () { unsafe { let __receiver = < SynthesisRingMenuTop_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SynthesisRingMenuTop_DecideEventHandler_unity2_raw :: invoke (__receiver , :: core :: convert :: Into :: into (result) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-synthesisringmenutop")]
+impl < __T : ISynthesisRingMenuTop_DecideEventHandler > ISynthesisRingMenuTop_DecideEventHandlerMethods for __T { }
+
+#[cfg(feature = "app-synthesisringmenutop")]
+impl SynthesisRingMenuTop_DecideEventHandler { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SynthesisRingMenuTop_DecideEventHandler_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SynthesisRingMenuTop_DecideEventHandler_unity2_raw :: __lookup_invoke :: get_method_info () } }
+
+#[cfg(feature = "app-synthesisringmenutop")]
+impl SynthesisRingMenuTop_DecideEventHandler {
+# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SynthesisRingMenuTop_DecideEventHandler) , :: core :: stringify ! (new) ,)) ; < Self as ISynthesisRingMenuTop_DecideEventHandlerMethods > :: ctor (this , object , method) ; this }
+}
+
+#[cfg(feature = "app-synthesisringmenutop")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __SynthesisRingMenuTop_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_bind { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: app :: basicmenuselect :: BasicMenuSelect as :: unity2 :: IlType > :: il_type () , < crate :: app :: synthesisringmenutop :: SynthesisRingMenuTop_DecideEventHandler as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SynthesisRingMenuTop as :: unity2 :: ClassIdentity > :: class () , "CreateBind" , 4 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SynthesisRingMenuTop as :: unity2 :: ClassIdentity > :: NAME , "CreateBind" , e) , } } } pub unsafe fn create_bind (super_ : crate :: app :: procinst :: ProcInst , initial_god_unit_index : i32 , initial_menu_select : crate :: app :: basicmenuselect :: BasicMenuSelect , decide_event_handler : crate :: app :: synthesisringmenutop :: SynthesisRingMenuTop_DecideEventHandler , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: synthesisringmenutop :: SynthesisRingMenuTop { let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , i32 , crate :: app :: basicmenuselect :: BasicMenuSelect , crate :: app :: synthesisringmenutop :: SynthesisRingMenuTop_DecideEventHandler , :: unity2 :: OptionalMethod ,) -> crate :: app :: synthesisringmenutop :: SynthesisRingMenuTop = :: core :: mem :: transmute (__lookup_create_bind :: get_method_info () . method_ptr ,) ; inner (super_ , initial_god_unit_index , initial_menu_select , decide_event_handler , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_destroy { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SynthesisRingMenuTop as :: unity2 :: ClassIdentity > :: class () , "Destroy" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SynthesisRingMenuTop as :: unity2 :: ClassIdentity > :: NAME , "Destroy" , e) , } } } pub unsafe fn destroy (this : SynthesisRingMenuTop , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SynthesisRingMenuTop , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_destroy :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: app :: basicmenuselect :: BasicMenuSelect as :: unity2 :: IlType > :: il_type () , < crate :: app :: synthesisringmenutop :: SynthesisRingMenuTop_DecideEventHandler as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SynthesisRingMenuTop as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 4 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SynthesisRingMenuTop as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : SynthesisRingMenuTop , super_ : crate :: app :: procinst :: ProcInst , initial_god_unit_index : i32 , initial_menu_select : crate :: app :: basicmenuselect :: BasicMenuSelect , decide_event_handler : crate :: app :: synthesisringmenutop :: SynthesisRingMenuTop_DecideEventHandler , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SynthesisRingMenuTop , crate :: app :: procinst :: ProcInst , i32 , crate :: app :: basicmenuselect :: BasicMenuSelect , crate :: app :: synthesisringmenutop :: SynthesisRingMenuTop_DecideEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , super_ , initial_god_unit_index , initial_menu_select , decide_event_handler , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_select { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: ringdata :: RingData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SynthesisRingMenuTop as :: unity2 :: ClassIdentity > :: class () , "OnSelect" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SynthesisRingMenuTop as :: unity2 :: ClassIdentity > :: NAME , "OnSelect" , e) , } } } pub unsafe fn on_select (this : SynthesisRingMenuTop , ring_data : crate :: app :: ringdata :: RingData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SynthesisRingMenuTop , crate :: app :: ringdata :: RingData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_select :: get_method_info () . method_ptr ,) ; inner (this , ring_data , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_decide_synthesis { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: ringdata :: RingData as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: app :: basicmenuselect :: BasicMenuSelect as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SynthesisRingMenuTop as :: unity2 :: ClassIdentity > :: class () , "OnDecideSynthesis" , 5 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SynthesisRingMenuTop as :: unity2 :: ClassIdentity > :: NAME , "OnDecideSynthesis" , e) , } } } pub unsafe fn on_decide_synthesis (this : SynthesisRingMenuTop , ring_data : crate :: app :: ringdata :: RingData , count_base_ring : i32 , count_piece_of_bonds : i32 , god_unit_index : i32 , menu_select : crate :: app :: basicmenuselect :: BasicMenuSelect , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SynthesisRingMenuTop , crate :: app :: ringdata :: RingData , i32 , i32 , i32 , crate :: app :: basicmenuselect :: BasicMenuSelect , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_decide_synthesis :: get_method_info () . method_ptr ,) ; inner (this , ring_data , count_base_ring , count_piece_of_bonds , god_unit_index , menu_select , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_yes_to_confirm { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SynthesisRingMenuTop as :: unity2 :: ClassIdentity > :: class () , "OnYesToConfirm" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SynthesisRingMenuTop as :: unity2 :: ClassIdentity > :: NAME , "OnYesToConfirm" , e) , } } } pub unsafe fn on_yes_to_confirm (this : SynthesisRingMenuTop , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SynthesisRingMenuTop , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_yes_to_confirm :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_cancel_close { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SynthesisRingMenuTop as :: unity2 :: ClassIdentity > :: class () , "OnCancelClose" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SynthesisRingMenuTop as :: unity2 :: ClassIdentity > :: NAME , "OnCancelClose" , e) , } } } pub unsafe fn on_cancel_close (this : SynthesisRingMenuTop , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SynthesisRingMenuTop , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_cancel_close :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-synthesisringmenutop")]
+impl SynthesisRingMenuTop { # [doc = "`CreateBind(crate::app::procinst::ProcInst, i32, crate::app::basicmenuselect::BasicMenuSelect, crate::app::synthesisringmenutop::SynthesisRingMenuTop_DecideEventHandler)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , initial_god_unit_index : impl :: core :: convert :: Into < i32 > , initial_menu_select : impl :: core :: convert :: Into < crate :: app :: basicmenuselect :: BasicMenuSelect > , decide_event_handler : impl :: core :: convert :: Into < crate :: app :: synthesisringmenutop :: SynthesisRingMenuTop_DecideEventHandler >) -> crate :: app :: synthesisringmenutop :: SynthesisRingMenuTop { unsafe { __SynthesisRingMenuTop_unity2_raw :: create_bind (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (initial_god_unit_index) , :: core :: convert :: Into :: into (initial_menu_select) , :: core :: convert :: Into :: into (decide_event_handler) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-synthesisringmenutop")]
+pub trait ISynthesisRingMenuTopMethods : ISynthesisRingMenuTop { # [doc = "`Destroy()` overload"] fn destroy (self ,) -> () { unsafe { let __receiver = < SynthesisRingMenuTop as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SynthesisRingMenuTop_unity2_raw :: destroy (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor(crate::app::procinst::ProcInst, i32, crate::app::basicmenuselect::BasicMenuSelect, crate::app::synthesisringmenutop::SynthesisRingMenuTop_DecideEventHandler)` overload"] fn ctor (self , super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , initial_god_unit_index : impl :: core :: convert :: Into < i32 > , initial_menu_select : impl :: core :: convert :: Into < crate :: app :: basicmenuselect :: BasicMenuSelect > , decide_event_handler : impl :: core :: convert :: Into < crate :: app :: synthesisringmenutop :: SynthesisRingMenuTop_DecideEventHandler >) -> () { unsafe { let __receiver = < SynthesisRingMenuTop as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SynthesisRingMenuTop_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (initial_god_unit_index) , :: core :: convert :: Into :: into (initial_menu_select) , :: core :: convert :: Into :: into (decide_event_handler) , :: core :: option :: Option :: None) } } # [doc = "`OnSelect(crate::app::ringdata::RingData)` overload"] fn on_select (self , ring_data : impl :: core :: convert :: Into < crate :: app :: ringdata :: RingData >) -> () { unsafe { let __receiver = < SynthesisRingMenuTop as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SynthesisRingMenuTop_unity2_raw :: on_select (__receiver , :: core :: convert :: Into :: into (ring_data) , :: core :: option :: Option :: None) } } # [doc = "`OnDecideSynthesis(crate::app::ringdata::RingData, i32, i32, i32, crate::app::basicmenuselect::BasicMenuSelect)` overload"] fn on_decide_synthesis (self , ring_data : impl :: core :: convert :: Into < crate :: app :: ringdata :: RingData > , count_base_ring : impl :: core :: convert :: Into < i32 > , count_piece_of_bonds : impl :: core :: convert :: Into < i32 > , god_unit_index : impl :: core :: convert :: Into < i32 > , menu_select : impl :: core :: convert :: Into < crate :: app :: basicmenuselect :: BasicMenuSelect >) -> () { unsafe { let __receiver = < SynthesisRingMenuTop as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SynthesisRingMenuTop_unity2_raw :: on_decide_synthesis (__receiver , :: core :: convert :: Into :: into (ring_data) , :: core :: convert :: Into :: into (count_base_ring) , :: core :: convert :: Into :: into (count_piece_of_bonds) , :: core :: convert :: Into :: into (god_unit_index) , :: core :: convert :: Into :: into (menu_select) , :: core :: option :: Option :: None) } } # [doc = "`OnYesToConfirm()` overload"] fn on_yes_to_confirm (self ,) -> () { unsafe { let __receiver = < SynthesisRingMenuTop as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SynthesisRingMenuTop_unity2_raw :: on_yes_to_confirm (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnCancelClose()` overload"] fn on_cancel_close (self ,) -> () { unsafe { let __receiver = < SynthesisRingMenuTop as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SynthesisRingMenuTop_unity2_raw :: on_cancel_close (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-synthesisringmenutop")]
+impl < __T : ISynthesisRingMenuTop > ISynthesisRingMenuTopMethods for __T { }
+
+#[cfg(feature = "app-synthesisringmenutop")]
+impl SynthesisRingMenuTop { pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SynthesisRingMenuTop_unity2_raw :: __lookup_create_bind :: get_method_info () } pub fn destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SynthesisRingMenuTop_unity2_raw :: __lookup_destroy :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SynthesisRingMenuTop_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn on_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SynthesisRingMenuTop_unity2_raw :: __lookup_on_select :: get_method_info () } pub fn on_decide_synthesis_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SynthesisRingMenuTop_unity2_raw :: __lookup_on_decide_synthesis :: get_method_info () } pub fn on_yes_to_confirm_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SynthesisRingMenuTop_unity2_raw :: __lookup_on_yes_to_confirm :: get_method_info () } pub fn on_cancel_close_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SynthesisRingMenuTop_unity2_raw :: __lookup_on_cancel_close :: get_method_info () } }
+
+#[cfg(feature = "app-synthesisringmenutop")]
+impl SynthesisRingMenuTop {
+# [doc = "`.ctor(crate::app::procinst::ProcInst, i32, crate::app::basicmenuselect::BasicMenuSelect, crate::app::synthesisringmenutop::SynthesisRingMenuTop_DecideEventHandler)` — overload selector"] pub fn new (super_ : crate :: app :: procinst :: ProcInst , initial_god_unit_index : i32 , initial_menu_select : crate :: app :: basicmenuselect :: BasicMenuSelect , decide_event_handler : crate :: app :: synthesisringmenutop :: SynthesisRingMenuTop_DecideEventHandler) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SynthesisRingMenuTop) , :: core :: stringify ! (new) ,)) ; < Self as ISynthesisRingMenuTopMethods > :: ctor (this , super_ , initial_god_unit_index , initial_menu_select , decide_event_handler) ; this }
 }
 
 #[cfg(feature = "app-synthesisringmenutop")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{
-        ISynthesisRingMenuTop, ISynthesisRingMenuTopMethods, ISynthesisRingMenuTop_DecideEventHandler,
-        ISynthesisRingMenuTop_DecideEventHandlerMethods, ISynthesisRingMenuTop_Result, ISynthesisRingMenuTop_ResultMethods, SynthesisRingMenuTop,
-        SynthesisRingMenuTop_DecideEventHandler, SynthesisRingMenuTop_Result,
-    };
-    #[cfg(feature = "system-delegate")]
-    pub use crate::system::delegate::IDelegateMethods;
-    #[cfg(feature = "system-multicastdelegate")]
-    pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::system::{delegate::IDelegate, multicastdelegate::IMulticastDelegate, object::IObject};
+    pub use super::SynthesisRingMenuTop_Result;
+    pub use super::ISynthesisRingMenuTop_Result;
+    pub use super::ISynthesisRingMenuTop_ResultMethods;
+    pub use super::SynthesisRingMenuTop_DecideEventHandler;
+    pub use super::ISynthesisRingMenuTop_DecideEventHandler;
+    pub use super::ISynthesisRingMenuTop_DecideEventHandlerMethods;
+    pub use super::SynthesisRingMenuTop;
+    pub use super::ISynthesisRingMenuTop;
+    pub use super::ISynthesisRingMenuTopMethods;
+    pub use crate::system::delegate::IDelegate;
+    pub use crate::system::multicastdelegate::IMulticastDelegate;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-delegate")] pub use crate::system::delegate::IDelegateMethods;
+    #[cfg(feature = "system-multicastdelegate")] pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

@@ -2,221 +2,57 @@
 
 #[cfg(feature = "combat-actionknockoff-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        combat::{
-            actionbase::{ActionBase, IActionBase},
-            actiondisposerholder::{ActionDisposerHolder, IActionDisposerHolder},
-            state::{IState, State},
-        },
-        system::object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/actionknockoff/ActionKnockoff.md"))]
-    #[::unity2::class(namespace = "Combat", name = "ActionKnockoff")]
-    #[parent(crate::combat::actiondisposerholder::ActionDisposerHolder)]
-    pub struct ActionKnockoff {
-        #[offset(48)]
-        #[rename(name = "played")]
-        pub played: bool,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: combat :: actionbase :: { ActionBase , IActionBase }
+ ;
+ use crate :: combat :: actiondisposerholder :: { ActionDisposerHolder , IActionDisposerHolder }
+ ;
+ use crate :: combat :: state :: { IState , State }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/actionknockoff/ActionKnockoff.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "ActionKnockoff")] # [parent (crate :: combat :: actiondisposerholder :: ActionDisposerHolder)] pub struct ActionKnockoff {
+# [offset (48)] # [rename (name = "played")] pub played : bool ,
+}
+
 }
 
 #[cfg(feature = "combat-actionknockoff-types")]
 pub use __types::*;
 
 #[cfg(feature = "combat-actionknockoff")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ActionKnockoff_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ActionKnockoff as ::unity2::ClassIdentity>::class(),
-                "get_Name",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ActionKnockoff as ::unity2::ClassIdentity>::NAME,
-                        "get_Name",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_name(this: ActionKnockoff, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(ActionKnockoff, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::combat::character::Character as ::unity2::IlType>::il_type(),
-                <crate::combat::phase::Phase as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ActionKnockoff as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ActionKnockoff as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: ActionKnockoff,
-        chr: crate::combat::character::Character,
-        phase: crate::combat::phase::Phase,
-        world_hit_time: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ActionKnockoff,
-            crate::combat::character::Character,
-            crate::combat::phase::Phase,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, chr, phase, world_hit_time, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_update {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ActionKnockoff as ::unity2::ClassIdentity>::class(),
-                "OnUpdate",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ActionKnockoff as ::unity2::ClassIdentity>::NAME,
-                        "OnUpdate",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_update(this: ActionKnockoff, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ActionKnockoff, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_update::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ActionKnockoff_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ActionKnockoff as :: unity2 :: ClassIdentity > :: class () , "get_Name" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ActionKnockoff as :: unity2 :: ClassIdentity > :: NAME , "get_Name" , e) , } } } pub unsafe fn get_name (this : ActionKnockoff , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (ActionKnockoff , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_name :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: character :: Character as :: unity2 :: IlType > :: il_type () , < crate :: combat :: phase :: Phase as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ActionKnockoff as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ActionKnockoff as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : ActionKnockoff , chr : crate :: combat :: character :: Character , phase : crate :: combat :: phase :: Phase , world_hit_time : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ActionKnockoff , crate :: combat :: character :: Character , crate :: combat :: phase :: Phase , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , chr , phase , world_hit_time , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_update { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ActionKnockoff as :: unity2 :: ClassIdentity > :: class () , "OnUpdate" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ActionKnockoff as :: unity2 :: ClassIdentity > :: NAME , "OnUpdate" , e) , } } } pub unsafe fn on_update (this : ActionKnockoff , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ActionKnockoff , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_update :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "combat-actionknockoff")]
-pub trait IActionKnockoffMethods: IActionKnockoff {
-    #[doc = "`get_Name()` overload"]
-    fn get_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <ActionKnockoff as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ActionKnockoff_unity2_raw::get_name(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor(crate::combat::character::Character, crate::combat::phase::Phase, f32)` overload"]
-    fn ctor(
-        self,
-        chr: impl ::core::convert::Into<crate::combat::character::Character>,
-        phase: impl ::core::convert::Into<crate::combat::phase::Phase>,
-        world_hit_time: impl ::core::convert::Into<f32>,
-    ) -> () {
-        unsafe {
-            let __receiver = <ActionKnockoff as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ActionKnockoff_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(chr),
-                ::core::convert::Into::into(phase),
-                ::core::convert::Into::into(world_hit_time),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`OnUpdate()` overload"]
-    fn on_update(self) -> () {
-        unsafe {
-            let __receiver = <ActionKnockoff as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ActionKnockoff_unity2_raw::on_update(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IActionKnockoffMethods : IActionKnockoff { # [doc = "`get_Name()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ActionKnockoff as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ActionKnockoff_unity2_raw :: get_name (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor(crate::combat::character::Character, crate::combat::phase::Phase, f32)` overload"] fn ctor (self , chr : impl :: core :: convert :: Into < crate :: combat :: character :: Character > , phase : impl :: core :: convert :: Into < crate :: combat :: phase :: Phase > , world_hit_time : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < ActionKnockoff as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ActionKnockoff_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (chr) , :: core :: convert :: Into :: into (phase) , :: core :: convert :: Into :: into (world_hit_time) , :: core :: option :: Option :: None) } } # [doc = "`OnUpdate()` overload"] fn on_update (self ,) -> () { unsafe { let __receiver = < ActionKnockoff as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ActionKnockoff_unity2_raw :: on_update (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "combat-actionknockoff")]
-impl<__T: IActionKnockoff> IActionKnockoffMethods for __T {}
+impl < __T : IActionKnockoff > IActionKnockoffMethods for __T { }
+
+#[cfg(feature = "combat-actionknockoff")]
+impl ActionKnockoff { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ActionKnockoff_unity2_raw :: __lookup_get_name :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ActionKnockoff_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn on_update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ActionKnockoff_unity2_raw :: __lookup_on_update :: get_method_info () } }
 
 #[cfg(feature = "combat-actionknockoff")]
 impl ActionKnockoff {
-    #[doc = "`.ctor(crate::combat::character::Character, crate::combat::phase::Phase, f32)` — overload selector"]
-    pub fn new(chr: crate::combat::character::Character, phase: crate::combat::phase::Phase, world_hit_time: f32) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ActionKnockoff),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IActionKnockoffMethods>::ctor(this, chr, phase, world_hit_time);
-        this
-    }
+# [doc = "`.ctor(crate::combat::character::Character, crate::combat::phase::Phase, f32)` — overload selector"] pub fn new (chr : crate :: combat :: character :: Character , phase : crate :: combat :: phase :: Phase , world_hit_time : f32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ActionKnockoff) , :: core :: stringify ! (new) ,)) ; < Self as IActionKnockoffMethods > :: ctor (this , chr , phase , world_hit_time) ; this }
 }
 
 #[cfg(feature = "combat-actionknockoff")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{ActionKnockoff, IActionKnockoff, IActionKnockoffMethods};
-    #[cfg(feature = "combat-actionbase")]
-    pub use crate::combat::actionbase::IActionBaseMethods;
-    #[cfg(feature = "combat-actiondisposerholder")]
-    pub use crate::combat::actiondisposerholder::IActionDisposerHolderMethods;
-    #[cfg(feature = "combat-state")]
-    pub use crate::combat::state::IStateMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::{
-        combat::{actionbase::IActionBase, actiondisposerholder::IActionDisposerHolder, state::IState},
-        system::object::IObject,
-    };
+    pub use super::ActionKnockoff;
+    pub use super::IActionKnockoff;
+    pub use super::IActionKnockoffMethods;
+    pub use crate::combat::actionbase::IActionBase;
+    pub use crate::combat::actiondisposerholder::IActionDisposerHolder;
+    pub use crate::combat::state::IState;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "combat-actionbase")] pub use crate::combat::actionbase::IActionBaseMethods;
+    #[cfg(feature = "combat-actiondisposerholder")] pub use crate::combat::actiondisposerholder::IActionDisposerHolderMethods;
+    #[cfg(feature = "combat-state")] pub use crate::combat::state::IStateMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

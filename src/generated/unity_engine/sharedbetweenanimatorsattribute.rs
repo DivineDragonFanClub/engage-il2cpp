@@ -2,13 +2,13 @@
 
 #[cfg(feature = "unity_engine-sharedbetweenanimatorsattribute-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/sharedbetweenanimatorsattribute/SharedBetweenAnimatorsAttribute.md"))]
-    #[::unity2::class(namespace = "UnityEngine", name = "SharedBetweenAnimatorsAttribute")]
-    pub struct SharedBetweenAnimatorsAttribute {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/sharedbetweenanimatorsattribute/SharedBetweenAnimatorsAttribute.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "SharedBetweenAnimatorsAttribute")] pub struct SharedBetweenAnimatorsAttribute {}
+
 }
 
 #[cfg(feature = "unity_engine-sharedbetweenanimatorsattribute-types")]
@@ -17,5 +17,6 @@ pub use __types::*;
 #[cfg(feature = "unity_engine-sharedbetweenanimatorsattribute")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{ISharedBetweenAnimatorsAttribute, SharedBetweenAnimatorsAttribute};
+    pub use super::SharedBetweenAnimatorsAttribute;
+    pub use super::ISharedBetweenAnimatorsAttribute;
 }

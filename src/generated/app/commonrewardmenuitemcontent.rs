@@ -2,377 +2,80 @@
 
 #[cfg(feature = "app-commonrewardmenuitemcontent-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::basicmenuitemcontent::{BasicMenuItemContent, IBasicMenuItemContent},
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/commonrewardmenuitemcontent/CommonRewardMenuItemContent.md"))]
-    #[::unity2::class(namespace = "App", name = "CommonRewardMenuItemContent")]
-    #[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]
-    pub struct CommonRewardMenuItemContent {
-        #[offset(72)]
-        #[rename(name = "m_ImageFace")]
-        pub m_image_face: crate::unity_engine::ui::image::Image,
-        #[offset(80)]
-        #[rename(name = "m_UnitName")]
-        pub m_unit_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(88)]
-        #[rename(name = "m_LevelValue")]
-        pub m_level_value: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(96)]
-        #[rename(name = "m_ExpValue")]
-        pub m_exp_value: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(104)]
-        #[rename(name = "m_ExpAddValue")]
-        pub m_exp_add_value: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(112)]
-        #[rename(name = "m_ObjGauge")]
-        pub m_obj_gauge: crate::unity_engine::gameobject::GameObject,
-        #[offset(120)]
-        #[rename(name = "m_ObjExpValue")]
-        pub m_obj_exp_value: crate::unity_engine::gameobject::GameObject,
-        #[offset(128)]
-        #[rename(name = "m_ObjExpMax")]
-        pub m_obj_exp_max: crate::unity_engine::gameobject::GameObject,
-        #[offset(136)]
-        #[rename(name = "m_ImageGauge")]
-        pub m_image_gauge: crate::unity_engine::ui::image::Image,
-        #[offset(144)]
-        #[rename(name = "m_GaugeMaxColor")]
-        pub m_gauge_max_color: crate::unity_engine::material::Material,
-        #[offset(152)]
-        #[rename(name = "m_AnimLevelUp")]
-        pub m_anim_level_up: crate::unity_engine::animator::Animator,
-        #[offset(160)]
-        #[rename(name = "m_AnimAddValue")]
-        pub m_anim_add_value: crate::unity_engine::animator::Animator,
-        #[offset(168)]
-        #[rename(name = "m_ImageArrow")]
-        pub m_image_arrow: crate::unity_engine::ui::image::Image,
-        #[offset(176)]
-        #[rename(name = "m_StockExp")]
-        pub m_stock_exp: i32,
-        #[offset(184)]
-        #[rename(name = "m_Unit")]
-        pub m_unit: crate::app::unit::Unit,
-        #[offset(192)]
-        #[rename(name = "m_IsPlaySoundExp")]
-        pub m_is_play_sound_exp: bool,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: basicmenuitemcontent :: { BasicMenuItemContent , IBasicMenuItemContent }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/commonrewardmenuitemcontent/CommonRewardMenuItemContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "CommonRewardMenuItemContent")] # [parent (crate :: app :: basicmenuitemcontent :: BasicMenuItemContent)] pub struct CommonRewardMenuItemContent {
+# [offset (72)] # [rename (name = "m_ImageFace")] pub m_image_face : crate :: unity_engine :: ui :: image :: Image ,
+# [offset (80)] # [rename (name = "m_UnitName")] pub m_unit_name : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (88)] # [rename (name = "m_LevelValue")] pub m_level_value : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (96)] # [rename (name = "m_ExpValue")] pub m_exp_value : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (104)] # [rename (name = "m_ExpAddValue")] pub m_exp_add_value : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (112)] # [rename (name = "m_ObjGauge")] pub m_obj_gauge : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (120)] # [rename (name = "m_ObjExpValue")] pub m_obj_exp_value : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (128)] # [rename (name = "m_ObjExpMax")] pub m_obj_exp_max : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (136)] # [rename (name = "m_ImageGauge")] pub m_image_gauge : crate :: unity_engine :: ui :: image :: Image ,
+# [offset (144)] # [rename (name = "m_GaugeMaxColor")] pub m_gauge_max_color : crate :: unity_engine :: material :: Material ,
+# [offset (152)] # [rename (name = "m_AnimLevelUp")] pub m_anim_level_up : crate :: unity_engine :: animator :: Animator ,
+# [offset (160)] # [rename (name = "m_AnimAddValue")] pub m_anim_add_value : crate :: unity_engine :: animator :: Animator ,
+# [offset (168)] # [rename (name = "m_ImageArrow")] pub m_image_arrow : crate :: unity_engine :: ui :: image :: Image ,
+# [offset (176)] # [rename (name = "m_StockExp")] pub m_stock_exp : i32 ,
+# [offset (184)] # [rename (name = "m_Unit")] pub m_unit : crate :: app :: unit :: Unit ,
+# [offset (192)] # [rename (name = "m_IsPlaySoundExp")] pub m_is_play_sound_exp : bool ,
+}
+
 }
 
 #[cfg(feature = "app-commonrewardmenuitemcontent-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-commonrewardmenuitemcontent")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __CommonRewardMenuItemContent_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_build {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::basicmenuitem::BasicMenuItem as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CommonRewardMenuItemContent as ::unity2::ClassIdentity>::class(),
-                "Build",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CommonRewardMenuItemContent as ::unity2::ClassIdentity>::NAME,
-                        "Build",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn build(
-        this: CommonRewardMenuItemContent,
-        menu_item: crate::app::basicmenuitem::BasicMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(CommonRewardMenuItemContent, crate::app::basicmenuitem::BasicMenuItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_build::get_method_info().method_ptr);
-        inner(this, menu_item, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_build_text_color {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CommonRewardMenuItemContent as ::unity2::ClassIdentity>::class(),
-                "BuildTextColor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CommonRewardMenuItemContent as ::unity2::ClassIdentity>::NAME,
-                        "BuildTextColor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn build_text_color(this: CommonRewardMenuItemContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CommonRewardMenuItemContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_build_text_color::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_start_gauge {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CommonRewardMenuItemContent as ::unity2::ClassIdentity>::class(),
-                "StartGauge",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CommonRewardMenuItemContent as ::unity2::ClassIdentity>::NAME,
-                        "StartGauge",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn start_gauge(this: CommonRewardMenuItemContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CommonRewardMenuItemContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_start_gauge::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update_gauge {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CommonRewardMenuItemContent as ::unity2::ClassIdentity>::class(),
-                "UpdateGauge",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CommonRewardMenuItemContent as ::unity2::ClassIdentity>::NAME,
-                        "UpdateGauge",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update_gauge(this: CommonRewardMenuItemContent, speed: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CommonRewardMenuItemContent, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update_gauge::get_method_info().method_ptr);
-        inner(this, speed, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_gauge_end {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CommonRewardMenuItemContent as ::unity2::ClassIdentity>::class(),
-                "IsGaugeEnd",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CommonRewardMenuItemContent as ::unity2::ClassIdentity>::NAME,
-                        "IsGaugeEnd",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_gauge_end(this: CommonRewardMenuItemContent, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(CommonRewardMenuItemContent, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_gauge_end::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CommonRewardMenuItemContent as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CommonRewardMenuItemContent as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: CommonRewardMenuItemContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CommonRewardMenuItemContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __CommonRewardMenuItemContent_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_build { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: basicmenuitem :: BasicMenuItem as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CommonRewardMenuItemContent as :: unity2 :: ClassIdentity > :: class () , "Build" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CommonRewardMenuItemContent as :: unity2 :: ClassIdentity > :: NAME , "Build" , e) , } } } pub unsafe fn build (this : CommonRewardMenuItemContent , menu_item : crate :: app :: basicmenuitem :: BasicMenuItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CommonRewardMenuItemContent , crate :: app :: basicmenuitem :: BasicMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_build :: get_method_info () . method_ptr ,) ; inner (this , menu_item , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_build_text_color { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CommonRewardMenuItemContent as :: unity2 :: ClassIdentity > :: class () , "BuildTextColor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CommonRewardMenuItemContent as :: unity2 :: ClassIdentity > :: NAME , "BuildTextColor" , e) , } } } pub unsafe fn build_text_color (this : CommonRewardMenuItemContent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CommonRewardMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_build_text_color :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_start_gauge { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CommonRewardMenuItemContent as :: unity2 :: ClassIdentity > :: class () , "StartGauge" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CommonRewardMenuItemContent as :: unity2 :: ClassIdentity > :: NAME , "StartGauge" , e) , } } } pub unsafe fn start_gauge (this : CommonRewardMenuItemContent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CommonRewardMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_start_gauge :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update_gauge { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CommonRewardMenuItemContent as :: unity2 :: ClassIdentity > :: class () , "UpdateGauge" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CommonRewardMenuItemContent as :: unity2 :: ClassIdentity > :: NAME , "UpdateGauge" , e) , } } } pub unsafe fn update_gauge (this : CommonRewardMenuItemContent , speed : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CommonRewardMenuItemContent , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update_gauge :: get_method_info () . method_ptr ,) ; inner (this , speed , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_gauge_end { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CommonRewardMenuItemContent as :: unity2 :: ClassIdentity > :: class () , "IsGaugeEnd" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CommonRewardMenuItemContent as :: unity2 :: ClassIdentity > :: NAME , "IsGaugeEnd" , e) , } } } pub unsafe fn is_gauge_end (this : CommonRewardMenuItemContent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (CommonRewardMenuItemContent , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_gauge_end :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CommonRewardMenuItemContent as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CommonRewardMenuItemContent as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : CommonRewardMenuItemContent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CommonRewardMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-commonrewardmenuitemcontent")]
-pub trait ICommonRewardMenuItemContentMethods: ICommonRewardMenuItemContent {
-    #[doc = "`Build(crate::app::basicmenuitem::BasicMenuItem)` overload"]
-    fn build(self, menu_item: impl ::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem>) -> () {
-        unsafe {
-            let __receiver =
-                <CommonRewardMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CommonRewardMenuItemContent_unity2_raw::build(__receiver, ::core::convert::Into::into(menu_item), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`BuildTextColor()` overload"]
-    fn build_text_color(self) -> () {
-        unsafe {
-            let __receiver =
-                <CommonRewardMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CommonRewardMenuItemContent_unity2_raw::build_text_color(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`StartGauge()` overload"]
-    fn start_gauge(self) -> () {
-        unsafe {
-            let __receiver =
-                <CommonRewardMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CommonRewardMenuItemContent_unity2_raw::start_gauge(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`UpdateGauge(i32)` overload"]
-    fn update_gauge(self, speed: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver =
-                <CommonRewardMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CommonRewardMenuItemContent_unity2_raw::update_gauge(__receiver, ::core::convert::Into::into(speed), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsGaugeEnd()` overload"]
-    fn is_gauge_end(self) -> bool {
-        unsafe {
-            let __receiver =
-                <CommonRewardMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CommonRewardMenuItemContent_unity2_raw::is_gauge_end(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <CommonRewardMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CommonRewardMenuItemContent_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait ICommonRewardMenuItemContentMethods : ICommonRewardMenuItemContent { # [doc = "`Build(crate::app::basicmenuitem::BasicMenuItem)` overload"] fn build (self , menu_item : impl :: core :: convert :: Into < crate :: app :: basicmenuitem :: BasicMenuItem >) -> () { unsafe { let __receiver = < CommonRewardMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CommonRewardMenuItemContent_unity2_raw :: build (__receiver , :: core :: convert :: Into :: into (menu_item) , :: core :: option :: Option :: None) } } # [doc = "`BuildTextColor()` overload"] fn build_text_color (self ,) -> () { unsafe { let __receiver = < CommonRewardMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CommonRewardMenuItemContent_unity2_raw :: build_text_color (__receiver , :: core :: option :: Option :: None) } } # [doc = "`StartGauge()` overload"] fn start_gauge (self ,) -> () { unsafe { let __receiver = < CommonRewardMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CommonRewardMenuItemContent_unity2_raw :: start_gauge (__receiver , :: core :: option :: Option :: None) } } # [doc = "`UpdateGauge(i32)` overload"] fn update_gauge (self , speed : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < CommonRewardMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CommonRewardMenuItemContent_unity2_raw :: update_gauge (__receiver , :: core :: convert :: Into :: into (speed) , :: core :: option :: Option :: None) } } # [doc = "`IsGaugeEnd()` overload"] fn is_gauge_end (self ,) -> bool { unsafe { let __receiver = < CommonRewardMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CommonRewardMenuItemContent_unity2_raw :: is_gauge_end (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CommonRewardMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CommonRewardMenuItemContent_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-commonrewardmenuitemcontent")]
-impl<__T: ICommonRewardMenuItemContent> ICommonRewardMenuItemContentMethods for __T {}
+impl < __T : ICommonRewardMenuItemContent > ICommonRewardMenuItemContentMethods for __T { }
+
+#[cfg(feature = "app-commonrewardmenuitemcontent")]
+impl CommonRewardMenuItemContent { pub fn build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CommonRewardMenuItemContent_unity2_raw :: __lookup_build :: get_method_info () } pub fn build_text_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CommonRewardMenuItemContent_unity2_raw :: __lookup_build_text_color :: get_method_info () } pub fn start_gauge_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CommonRewardMenuItemContent_unity2_raw :: __lookup_start_gauge :: get_method_info () } pub fn update_gauge_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CommonRewardMenuItemContent_unity2_raw :: __lookup_update_gauge :: get_method_info () } pub fn is_gauge_end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CommonRewardMenuItemContent_unity2_raw :: __lookup_is_gauge_end :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CommonRewardMenuItemContent_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-commonrewardmenuitemcontent")]
 impl CommonRewardMenuItemContent {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(CommonRewardMenuItemContent),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ICommonRewardMenuItemContentMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CommonRewardMenuItemContent) , :: core :: stringify ! (new) ,)) ; < Self as ICommonRewardMenuItemContentMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-commonrewardmenuitemcontent")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{CommonRewardMenuItemContent, ICommonRewardMenuItemContent, ICommonRewardMenuItemContentMethods};
-    #[cfg(feature = "app-basicmenuitemcontent")]
-    pub use crate::app::basicmenuitemcontent::IBasicMenuItemContentMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        app::basicmenuitemcontent::IBasicMenuItemContent,
-        system::object::IObject,
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::CommonRewardMenuItemContent;
+    pub use super::ICommonRewardMenuItemContent;
+    pub use super::ICommonRewardMenuItemContentMethods;
+    pub use crate::app::basicmenuitemcontent::IBasicMenuItemContent;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "app-basicmenuitemcontent")] pub use crate::app::basicmenuitemcontent::IBasicMenuItemContentMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

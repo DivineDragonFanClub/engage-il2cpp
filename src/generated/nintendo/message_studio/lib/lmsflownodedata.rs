@@ -2,49 +2,60 @@
 
 #[cfg(feature = "nintendo-message_studio-lib-lmsflownodedata-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        valuetype::{IValueType, ValueType},
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/nintendo/message_studio/lib/lmsflownodedata/LMSFlowNodeData.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct LMSFlowNodeData {
-        pub node_type: crate::nintendo::message_studio::lib::lmsflownodetype::LMSFlowNodeType,
-        pub param_type: crate::nintendo::message_studio::lib::lmsflowparamtype::LMSFlowParamType,
-        pub reserved: u16,
-        pub param_value: u32,
-        pub rawdata0: u16,
-        pub rawdata1: u16,
-        pub rawdata2: u16,
-        pub rawdata3: u16,
-        pub entry: crate::nintendo::message_studio::lib::lmsflowentry::LMSFlowEntry,
-        pub message: crate::nintendo::message_studio::lib::lmsflowmessage::LMSFlowMessage,
-        pub branch: crate::nintendo::message_studio::lib::lmsflowbranch::LMSFlowBranch,
-        pub event: crate::nintendo::message_studio::lib::lmsflowevent::LMSFlowEvent,
-        pub jump: crate::nintendo::message_studio::lib::lmsflowjump::LMSFlowJump,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
 
-    impl ::unity2::ClassIdentity for LMSFlowNodeData {
-        const NAME: &'static str = "LMSFlowNodeData";
-        const NAMESPACE: &'static str = "Nintendo.MessageStudio.Lib";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/nintendo/message_studio/lib/lmsflownodedata/LMSFlowNodeData.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct LMSFlowNodeData {
+    pub node_type: crate :: nintendo :: message_studio :: lib :: lmsflownodetype :: LMSFlowNodeType,
+    pub param_type: crate :: nintendo :: message_studio :: lib :: lmsflowparamtype :: LMSFlowParamType,
+    pub reserved: u16,
+    pub param_value: u32,
+    pub rawdata0: u16,
+    pub rawdata1: u16,
+    pub rawdata2: u16,
+    pub rawdata3: u16,
+    pub entry: crate :: nintendo :: message_studio :: lib :: lmsflowentry :: LMSFlowEntry,
+    pub message: crate :: nintendo :: message_studio :: lib :: lmsflowmessage :: LMSFlowMessage,
+    pub branch: crate :: nintendo :: message_studio :: lib :: lmsflowbranch :: LMSFlowBranch,
+    pub event: crate :: nintendo :: message_studio :: lib :: lmsflowevent :: LMSFlowEvent,
+    pub jump: crate :: nintendo :: message_studio :: lib :: lmsflowjump :: LMSFlowJump,
+}
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+
+impl ::unity2::ClassIdentity for LMSFlowNodeData {
+    const NAMESPACE: &'static str = "Nintendo.MessageStudio.Lib";
+
+    const NAME: &'static str = "LMSFlowNodeData";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for LMSFlowNodeData {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl ::unity2::IlType for LMSFlowNodeData {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
+
+}
+
 }
 
 #[cfg(feature = "nintendo-message_studio-lib-lmsflownodedata-types")]
@@ -54,9 +65,8 @@ pub use __types::*;
 #[doc(hidden)]
 pub mod prelude {
     pub use super::LMSFlowNodeData;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::system::{object::IObject, valuetype::IValueType};
+    pub use crate::system::object::IObject;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

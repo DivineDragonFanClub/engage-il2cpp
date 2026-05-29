@@ -2,79 +2,34 @@
 
 #[cfg(feature = "unity_engine-event_systems-icancelhandler-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/icancelhandler/ICancelHandler.md"))]
-    #[::unity2::class(namespace = "UnityEngine.EventSystems", name = "ICancelHandler")]
-    pub struct ICancelHandler {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/icancelhandler/ICancelHandler.md"))] # [:: unity2 :: class (namespace = "UnityEngine.EventSystems" , name = "ICancelHandler")] pub struct ICancelHandler {}
+
 }
 
 #[cfg(feature = "unity_engine-event_systems-icancelhandler-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-event_systems-icancelhandler")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ICancelHandler_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_cancel {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::event_systems::baseeventdata::BaseEventData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ICancelHandler as ::unity2::ClassIdentity>::class(),
-                "OnCancel",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ICancelHandler as ::unity2::ClassIdentity>::NAME,
-                        "OnCancel",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_cancel(
-        this: ICancelHandler,
-        event_data: crate::unity_engine::event_systems::baseeventdata::BaseEventData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(ICancelHandler, crate::unity_engine::event_systems::baseeventdata::BaseEventData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_cancel::get_method_info().method_ptr);
-        inner(this, event_data, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ICancelHandler_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_cancel { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: event_systems :: baseeventdata :: BaseEventData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ICancelHandler as :: unity2 :: ClassIdentity > :: class () , "OnCancel" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ICancelHandler as :: unity2 :: ClassIdentity > :: NAME , "OnCancel" , e) , } } } pub unsafe fn on_cancel (this : ICancelHandler , event_data : crate :: unity_engine :: event_systems :: baseeventdata :: BaseEventData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ICancelHandler , crate :: unity_engine :: event_systems :: baseeventdata :: BaseEventData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_cancel :: get_method_info () . method_ptr ,) ; inner (this , event_data , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-event_systems-icancelhandler")]
-pub trait IICancelHandlerMethods: IICancelHandler {
-    #[doc = "`OnCancel(crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]
-    fn on_cancel(self, event_data: impl ::core::convert::Into<crate::unity_engine::event_systems::baseeventdata::BaseEventData>) -> () {
-        unsafe {
-            let __receiver = <ICancelHandler as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ICancelHandler_unity2_raw::on_cancel(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)
-        }
-    }
-}
+pub trait IICancelHandlerMethods : IICancelHandler { # [doc = "`OnCancel(crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"] fn on_cancel (self , event_data : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: baseeventdata :: BaseEventData >) -> () { unsafe { let __receiver = < ICancelHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ICancelHandler_unity2_raw :: on_cancel (__receiver , :: core :: convert :: Into :: into (event_data) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-event_systems-icancelhandler")]
-impl<__T: IICancelHandler> IICancelHandlerMethods for __T {}
+impl < __T : IICancelHandler > IICancelHandlerMethods for __T { }
+
+#[cfg(feature = "unity_engine-event_systems-icancelhandler")]
+impl ICancelHandler { pub fn on_cancel_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ICancelHandler_unity2_raw :: __lookup_on_cancel :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-event_systems-icancelhandler")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{ICancelHandler, IICancelHandler, IICancelHandlerMethods};
+    pub use super::ICancelHandler;
+    pub use super::IICancelHandler;
+    pub use super::IICancelHandlerMethods;
 }

@@ -2,175 +2,58 @@
 
 #[cfg(feature = "app-interpolatorrotation-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::{
-            interpolator_1::{IInterpolator_1, Interpolator_1},
-            interpolatorfloat::{IInterpolatorFloat, InterpolatorFloat},
-            interpolatortime::{IInterpolatorTime, InterpolatorTime},
-        },
-        system::object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/interpolatorrotation/InterpolatorRotation.md"))]
-    #[::unity2::class(namespace = "App", name = "InterpolatorRotation")]
-    #[parent(crate::app::interpolatorfloat::InterpolatorFloat)]
-    pub struct InterpolatorRotation {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: interpolator_1 :: { IInterpolator_1 , Interpolator_1 }
+ ;
+ use crate :: app :: interpolatorfloat :: { IInterpolatorFloat , InterpolatorFloat }
+ ;
+ use crate :: app :: interpolatortime :: { IInterpolatorTime , InterpolatorTime }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/interpolatorrotation/InterpolatorRotation.md"))] # [:: unity2 :: class (namespace = "App" , name = "InterpolatorRotation")] # [parent (crate :: app :: interpolatorfloat :: InterpolatorFloat)] pub struct InterpolatorRotation {}
+
 }
 
 #[cfg(feature = "app-interpolatorrotation-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-interpolatorrotation")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __InterpolatorRotation_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::curve::Curve_Type as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InterpolatorRotation as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InterpolatorRotation as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: InterpolatorRotation,
-        r#type: crate::app::curve::Curve_Type,
-        num: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(InterpolatorRotation, crate::app::curve::Curve_Type, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, r#type, num, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type(), <f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InterpolatorRotation as ::unity2::ClassIdentity>::class(),
-                "Set",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InterpolatorRotation as ::unity2::ClassIdentity>::NAME,
-                        "Set",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set(this: InterpolatorRotation, value: f32, time: f32, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(InterpolatorRotation, f32, f32, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_set::get_method_info().method_ptr);
-        inner(this, value, time, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __InterpolatorRotation_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: curve :: Curve_Type as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InterpolatorRotation as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InterpolatorRotation as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : InterpolatorRotation , r#type : crate :: app :: curve :: Curve_Type , num : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (InterpolatorRotation , crate :: app :: curve :: Curve_Type , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , r#type , num , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< f32 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InterpolatorRotation as :: unity2 :: ClassIdentity > :: class () , "Set" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InterpolatorRotation as :: unity2 :: ClassIdentity > :: NAME , "Set" , e) , } } } pub unsafe fn set (this : InterpolatorRotation , value : f32 , time : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (InterpolatorRotation , f32 , f32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_set :: get_method_info () . method_ptr ,) ; inner (this , value , time , __unity2_method_info) } }
 
 #[cfg(feature = "app-interpolatorrotation")]
-pub trait IInterpolatorRotationMethods: IInterpolatorRotation {
-    #[doc = "`.ctor(crate::app::curve::Curve_Type, i32)` overload"]
-    fn ctor(self, r#type: impl ::core::convert::Into<crate::app::curve::Curve_Type>, num: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver =
-                <InterpolatorRotation as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InterpolatorRotation_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(r#type),
-                ::core::convert::Into::into(num),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Set(f32, f32)` overload"]
-    fn set(self, value: impl ::core::convert::Into<f32>, time: impl ::core::convert::Into<f32>) -> bool {
-        unsafe {
-            let __receiver =
-                <InterpolatorRotation as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InterpolatorRotation_unity2_raw::set(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::convert::Into::into(time),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+pub trait IInterpolatorRotationMethods : IInterpolatorRotation { # [doc = "`.ctor(crate::app::curve::Curve_Type, i32)` overload"] fn ctor (self , r#type : impl :: core :: convert :: Into < crate :: app :: curve :: Curve_Type > , num : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < InterpolatorRotation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __InterpolatorRotation_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (r#type) , :: core :: convert :: Into :: into (num) , :: core :: option :: Option :: None) } } # [doc = "`Set(f32, f32)` overload"] fn set (self , value : impl :: core :: convert :: Into < f32 > , time : impl :: core :: convert :: Into < f32 >) -> bool { unsafe { let __receiver = < InterpolatorRotation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __InterpolatorRotation_unity2_raw :: set (__receiver , :: core :: convert :: Into :: into (value) , :: core :: convert :: Into :: into (time) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-interpolatorrotation")]
-impl<__T: IInterpolatorRotation> IInterpolatorRotationMethods for __T {}
+impl < __T : IInterpolatorRotation > IInterpolatorRotationMethods for __T { }
+
+#[cfg(feature = "app-interpolatorrotation")]
+impl InterpolatorRotation { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InterpolatorRotation_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn set_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InterpolatorRotation_unity2_raw :: __lookup_set :: get_method_info () } }
 
 #[cfg(feature = "app-interpolatorrotation")]
 impl InterpolatorRotation {
-    #[doc = "`.ctor(crate::app::curve::Curve_Type, i32)` — overload selector"]
-    pub fn new(r#type: crate::app::curve::Curve_Type, num: i32) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(InterpolatorRotation),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IInterpolatorRotationMethods>::ctor(this, r#type, num);
-        this
-    }
+# [doc = "`.ctor(crate::app::curve::Curve_Type, i32)` — overload selector"] pub fn new (r#type : crate :: app :: curve :: Curve_Type , num : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (InterpolatorRotation) , :: core :: stringify ! (new) ,)) ; < Self as IInterpolatorRotationMethods > :: ctor (this , r#type , num) ; this }
 }
 
 #[cfg(feature = "app-interpolatorrotation")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IInterpolatorRotation, IInterpolatorRotationMethods, InterpolatorRotation};
-    #[cfg(feature = "app-interpolator_1")]
-    pub use crate::app::interpolator_1::IInterpolator_1Methods;
-    #[cfg(feature = "app-interpolatorfloat")]
-    pub use crate::app::interpolatorfloat::IInterpolatorFloatMethods;
-    #[cfg(feature = "app-interpolatortime")]
-    pub use crate::app::interpolatortime::IInterpolatorTimeMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::{
-        app::{
-            interpolator_1::{IInterpolator_1, Interpolator_1},
-            interpolatorfloat::{IInterpolatorFloat, InterpolatorFloat},
-            interpolatortime::{IInterpolatorTime, InterpolatorTime},
-        },
-        system::object::IObject,
-    };
+    pub use super::InterpolatorRotation;
+    pub use super::IInterpolatorRotation;
+    pub use super::IInterpolatorRotationMethods;
+    pub use crate::app::interpolator_1::IInterpolator_1;
+    pub use crate::app::interpolator_1::Interpolator_1;
+    pub use crate::app::interpolatorfloat::IInterpolatorFloat;
+    pub use crate::app::interpolatorfloat::InterpolatorFloat;
+    pub use crate::app::interpolatortime::IInterpolatorTime;
+    pub use crate::app::interpolatortime::InterpolatorTime;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "app-interpolator_1")] pub use crate::app::interpolator_1::IInterpolator_1Methods;
+    #[cfg(feature = "app-interpolatorfloat")] pub use crate::app::interpolatorfloat::IInterpolatorFloatMethods;
+    #[cfg(feature = "app-interpolatortime")] pub use crate::app::interpolatortime::IInterpolatorTimeMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

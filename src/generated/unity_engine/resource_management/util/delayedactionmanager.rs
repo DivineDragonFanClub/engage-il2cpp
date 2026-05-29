@@ -2,888 +2,122 @@
 
 #[cfg(feature = "unity_engine-resource_management-util-delayedactionmanager-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::{
-            object::{IObject, Object},
-            valuetype::{IValueType, ValueType},
-        },
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-            resource_management::util::componentsingleton_1_2::{ComponentSingleton_1_2, IComponentSingleton_1_2},
-        },
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/resource_management/util/delayedactionmanager/DelayedActionManager_DelegateInfo.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct DelayedActionManager_DelegateInfo {
-        pub m_id: i32,
-        pub m_delegate: crate::system::delegate::Delegate,
-        pub m_target: ::unity2::Array<crate::system::object::Object>,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+ use crate :: unity_engine :: resource_management :: util :: componentsingleton_1_2 :: { ComponentSingleton_1_2 , IComponentSingleton_1_2 }
+ ;
 
-    impl ::unity2::ClassIdentity for DelayedActionManager_DelegateInfo {
-        const NAME: &'static str = "DelayedActionManager.DelegateInfo";
-        const NAMESPACE: &'static str = "UnityEngine.ResourceManagement.Util";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/util/delayedactionmanager/DelayedActionManager.md"))] # [:: unity2 :: class (namespace = "UnityEngine.ResourceManagement.Util" , name = "DelayedActionManager")] # [parent (crate :: unity_engine :: resource_management :: util :: componentsingleton_1_2 :: ComponentSingleton_1_2 < crate :: unity_engine :: resource_management :: util :: delayedactionmanager :: DelayedActionManager >)] pub struct DelayedActionManager {
+# [offset (24)] # [rename (name = "m_Actions")] pub m_actions : :: unity2 :: Array < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: resource_management :: util :: delayedactionmanager :: DelayedActionManager_DelegateInfo > > ,
+# [offset (32)] # [rename (name = "m_DelayedActions")] pub m_delayed_actions : crate :: system :: collections :: generic :: linkedlist_1 :: LinkedList_1 < crate :: unity_engine :: resource_management :: util :: delayedactionmanager :: DelayedActionManager_DelegateInfo > ,
+# [offset (40)] # [rename (name = "m_NodeCache")] pub m_node_cache : crate :: system :: collections :: generic :: stack_1 :: Stack_1 < crate :: system :: collections :: generic :: linkedlistnode_1 :: LinkedListNode_1 < crate :: unity_engine :: resource_management :: util :: delayedactionmanager :: DelayedActionManager_DelegateInfo > > ,
+# [offset (48)] # [rename (name = "m_CollectionIndex")] pub m_collection_index : i32 ,
+# [offset (52)] # [rename (name = "m_DestroyOnCompletion")] pub m_destroy_on_completion : bool ,
+}
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/resource_management/util/delayedactionmanager/DelayedActionManager_DelegateInfo.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct DelayedActionManager_DelegateInfo {
+    pub m_id: i32,
+    pub m_delegate: crate :: system :: delegate :: Delegate,
+    pub m_target: :: unity2 :: Array < crate :: system :: object :: Object >,
+}
+
+
+impl ::unity2::ClassIdentity for DelayedActionManager_DelegateInfo {
+    const NAMESPACE: &'static str = "UnityEngine.ResourceManagement.Util";
+
+    const NAME: &'static str = "DelayedActionManager.DelegateInfo";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for DelayedActionManager_DelegateInfo {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl ::unity2::IlType for DelayedActionManager_DelegateInfo {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/util/delayedactionmanager/DelayedActionManager.md"))]
-    #[::unity2::class(namespace = "UnityEngine.ResourceManagement.Util", name = "DelayedActionManager")]
-    # [parent (crate :: unity_engine :: resource_management :: util :: componentsingleton_1_2 :: ComponentSingleton_1_2 < crate :: unity_engine :: resource_management :: util :: delayedactionmanager :: DelayedActionManager >)]
-    pub struct DelayedActionManager {
-        #[offset(24)]
-        #[rename(name = "m_Actions")]
-        pub m_actions: ::unity2::Array<
-            crate::system::collections::generic::list_1::List_1<
-                crate::unity_engine::resource_management::util::delayedactionmanager::DelayedActionManager_DelegateInfo,
-            >,
-        >,
-        #[offset(32)]
-        #[rename(name = "m_DelayedActions")]
-        pub m_delayed_actions: crate::system::collections::generic::linkedlist_1::LinkedList_1<
-            crate::unity_engine::resource_management::util::delayedactionmanager::DelayedActionManager_DelegateInfo,
-        >,
-        #[offset(40)]
-        #[rename(name = "m_NodeCache")]
-        pub m_node_cache: crate::system::collections::generic::stack_1::Stack_1<
-            crate::system::collections::generic::linkedlistnode_1::LinkedListNode_1<
-                crate::unity_engine::resource_management::util::delayedactionmanager::DelayedActionManager_DelegateInfo,
-            >,
-        >,
-        #[offset(48)]
-        #[rename(name = "m_CollectionIndex")]
-        pub m_collection_index: i32,
-        #[offset(52)]
-        #[rename(name = "m_DestroyOnCompletion")]
-        pub m_destroy_on_completion: bool,
-    }
+}
+
 }
 
 #[cfg(feature = "unity_engine-resource_management-util-delayedactionmanager-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-resource_management-util-delayedactionmanager")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __DelayedActionManager_DelegateInfo_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::delegate::Delegate as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-                <::unity2::Array<crate::system::object::Object> as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DelayedActionManager_DelegateInfo as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DelayedActionManager_DelegateInfo as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: DelayedActionManager_DelegateInfo,
-        d: crate::system::delegate::Delegate,
-        invocation_time: f32,
-        p: ::unity2::Array<crate::system::object::Object>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            DelayedActionManager_DelegateInfo,
-            crate::system::delegate::Delegate,
-            f32,
-            ::unity2::Array<crate::system::object::Object>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, d, invocation_time, p, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_invocation_time {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DelayedActionManager_DelegateInfo as ::unity2::ClassIdentity>::class(),
-                "get_InvocationTime",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DelayedActionManager_DelegateInfo as ::unity2::ClassIdentity>::NAME,
-                        "get_InvocationTime",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_invocation_time(this: DelayedActionManager_DelegateInfo, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(DelayedActionManager_DelegateInfo, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_get_invocation_time::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_invocation_time {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DelayedActionManager_DelegateInfo as ::unity2::ClassIdentity>::class(),
-                "set_InvocationTime",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DelayedActionManager_DelegateInfo as ::unity2::ClassIdentity>::NAME,
-                        "set_InvocationTime",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_invocation_time(this: DelayedActionManager_DelegateInfo, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DelayedActionManager_DelegateInfo, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_invocation_time::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_to_string {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DelayedActionManager_DelegateInfo as ::unity2::ClassIdentity>::class(),
-                "ToString",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DelayedActionManager_DelegateInfo as ::unity2::ClassIdentity>::NAME,
-                        "ToString",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn to_string(this: DelayedActionManager_DelegateInfo, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(DelayedActionManager_DelegateInfo, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_to_string::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DelayedActionManager_DelegateInfo as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DelayedActionManager_DelegateInfo as ::unity2::ClassIdentity>::NAME,
-                        "Invoke",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn invoke(this: DelayedActionManager_DelegateInfo, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DelayedActionManager_DelegateInfo, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __DelayedActionManager_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_node { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: resource_management :: util :: delayedactionmanager :: DelayedActionManager_DelegateInfo as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DelayedActionManager as :: unity2 :: ClassIdentity > :: class () , "GetNode" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DelayedActionManager as :: unity2 :: ClassIdentity > :: NAME , "GetNode" , e) , } } } pub unsafe fn get_node (this : DelayedActionManager , del : * mut crate :: unity_engine :: resource_management :: util :: delayedactionmanager :: DelayedActionManager_DelegateInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: linkedlistnode_1 :: LinkedListNode_1 < crate :: unity_engine :: resource_management :: util :: delayedactionmanager :: DelayedActionManager_DelegateInfo > { let inner : extern "C" fn (DelayedActionManager , * mut crate :: unity_engine :: resource_management :: util :: delayedactionmanager :: DelayedActionManager_DelegateInfo , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: linkedlistnode_1 :: LinkedListNode_1 < crate :: unity_engine :: resource_management :: util :: delayedactionmanager :: DelayedActionManager_DelegateInfo > = :: core :: mem :: transmute (__lookup_get_node :: get_method_info () . method_ptr ,) ; inner (this , del , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_clear { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DelayedActionManager as :: unity2 :: ClassIdentity > :: class () , "Clear" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DelayedActionManager as :: unity2 :: ClassIdentity > :: NAME , "Clear" , e) , } } } pub unsafe fn clear (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_clear :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_destroy_when_complete { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DelayedActionManager as :: unity2 :: ClassIdentity > :: class () , "DestroyWhenComplete" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DelayedActionManager as :: unity2 :: ClassIdentity > :: NAME , "DestroyWhenComplete" , e) , } } } pub unsafe fn destroy_when_complete (this : DelayedActionManager , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DelayedActionManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_destroy_when_complete :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_action { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: delegate :: Delegate as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: system :: object :: Object > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DelayedActionManager as :: unity2 :: ClassIdentity > :: class () , "AddAction" , 3 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DelayedActionManager as :: unity2 :: ClassIdentity > :: NAME , "AddAction" , e) , } } } pub unsafe fn add_action (action : crate :: system :: delegate :: Delegate , delay : f32 , parameters : :: unity2 :: Array < crate :: system :: object :: Object > , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: system :: delegate :: Delegate , f32 , :: unity2 :: Array < crate :: system :: object :: Object > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_action :: get_method_info () . method_ptr ,) ; inner (action , delay , parameters , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_action_internal { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: delegate :: Delegate as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: system :: object :: Object > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DelayedActionManager as :: unity2 :: ClassIdentity > :: class () , "AddActionInternal" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DelayedActionManager as :: unity2 :: ClassIdentity > :: NAME , "AddActionInternal" , e) , } } } pub unsafe fn add_action_internal (this : DelayedActionManager , action : crate :: system :: delegate :: Delegate , delay : f32 , parameters : :: unity2 :: Array < crate :: system :: object :: Object > , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DelayedActionManager , crate :: system :: delegate :: Delegate , f32 , :: unity2 :: Array < crate :: system :: object :: Object > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_action_internal :: get_method_info () . method_ptr ,) ; inner (this , action , delay , parameters , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_is_active { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DelayedActionManager as :: unity2 :: ClassIdentity > :: class () , "get_IsActive" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DelayedActionManager as :: unity2 :: ClassIdentity > :: NAME , "get_IsActive" , e) , } } } pub unsafe fn get_is_active (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_is_active :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_wait { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< f32 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DelayedActionManager as :: unity2 :: ClassIdentity > :: class () , "Wait" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DelayedActionManager as :: unity2 :: ClassIdentity > :: NAME , "Wait" , e) , } } } pub unsafe fn wait (timeout : f32 , time_advance_amount : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (f32 , f32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_wait :: get_method_info () . method_ptr ,) ; inner (timeout , time_advance_amount , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_late_update { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DelayedActionManager as :: unity2 :: ClassIdentity > :: class () , "LateUpdate" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DelayedActionManager as :: unity2 :: ClassIdentity > :: NAME , "LateUpdate" , e) , } } } pub unsafe fn late_update (this : DelayedActionManager , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DelayedActionManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_late_update :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_internal_late_update { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DelayedActionManager as :: unity2 :: ClassIdentity > :: class () , "InternalLateUpdate" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DelayedActionManager as :: unity2 :: ClassIdentity > :: NAME , "InternalLateUpdate" , e) , } } } pub unsafe fn internal_late_update (this : DelayedActionManager , t : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DelayedActionManager , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_internal_late_update :: get_method_info () . method_ptr ,) ; inner (this , t , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_application_quit { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DelayedActionManager as :: unity2 :: ClassIdentity > :: class () , "OnApplicationQuit" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DelayedActionManager as :: unity2 :: ClassIdentity > :: NAME , "OnApplicationQuit" , e) , } } } pub unsafe fn on_application_quit (this : DelayedActionManager , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DelayedActionManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_application_quit :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DelayedActionManager as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DelayedActionManager as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : DelayedActionManager , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DelayedActionManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-resource_management-util-delayedactionmanager")]
-impl DelayedActionManager_DelegateInfo {
-    #[doc = "`.ctor(crate::system::delegate::Delegate, f32, ::unity2::Array<crate::system::object::Object>)` overload"]
-    pub fn ctor(
-        self,
-        d: impl ::core::convert::Into<crate::system::delegate::Delegate>,
-        invocation_time: impl ::core::convert::Into<f32>,
-        p: impl ::core::convert::Into<::unity2::Array<crate::system::object::Object>>,
-    ) -> () {
-        unsafe {
-            __DelayedActionManager_DelegateInfo_unity2_raw::ctor(
-                self,
-                ::core::convert::Into::into(d),
-                ::core::convert::Into::into(invocation_time),
-                ::core::convert::Into::into(p),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`get_InvocationTime()` overload"]
-    pub fn get_invocation_time(self) -> f32 {
-        unsafe { __DelayedActionManager_DelegateInfo_unity2_raw::get_invocation_time(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_InvocationTime(f32)` overload"]
-    pub fn set_invocation_time(self, value: impl ::core::convert::Into<f32>) -> () {
-        unsafe {
-            __DelayedActionManager_DelegateInfo_unity2_raw::set_invocation_time(
-                self,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`ToString()` overload"]
-    pub fn to_string(self) -> ::unity2::Il2CppString {
-        unsafe { __DelayedActionManager_DelegateInfo_unity2_raw::to_string(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`Invoke()` overload"]
-    pub fn invoke(self) -> () {
-        unsafe { __DelayedActionManager_DelegateInfo_unity2_raw::invoke(self, ::core::option::Option::None) }
-    }
-}
+impl DelayedActionManager { # [doc = "`Clear()` overload"] pub fn clear () -> () { unsafe { __DelayedActionManager_unity2_raw :: clear (:: core :: option :: Option :: None) } } # [doc = "`AddAction(crate::system::delegate::Delegate, f32, ::unity2::Array<crate::system::object::Object>)` overload"] pub fn add_action (action : impl :: core :: convert :: Into < crate :: system :: delegate :: Delegate > , delay : impl :: core :: convert :: Into < f32 > , parameters : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: system :: object :: Object > >) -> () { unsafe { __DelayedActionManager_unity2_raw :: add_action (:: core :: convert :: Into :: into (action) , :: core :: convert :: Into :: into (delay) , :: core :: convert :: Into :: into (parameters) , :: core :: option :: Option :: None) } } # [doc = "`get_IsActive()` overload"] pub fn get_is_active () -> bool { unsafe { __DelayedActionManager_unity2_raw :: get_is_active (:: core :: option :: Option :: None) } } # [doc = "`Wait(f32, f32)` overload"] pub fn wait (timeout : impl :: core :: convert :: Into < f32 > , time_advance_amount : impl :: core :: convert :: Into < f32 >) -> bool { unsafe { __DelayedActionManager_unity2_raw :: wait (:: core :: convert :: Into :: into (timeout) , :: core :: convert :: Into :: into (time_advance_amount) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-resource_management-util-delayedactionmanager")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __DelayedActionManager_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_node {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: resource_management :: util :: delayedactionmanager :: DelayedActionManager_DelegateInfo as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DelayedActionManager as ::unity2::ClassIdentity>::class(),
-                "GetNode",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DelayedActionManager as ::unity2::ClassIdentity>::NAME,
-                        "GetNode",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_node(
-        this: DelayedActionManager,
-        del: *mut crate::unity_engine::resource_management::util::delayedactionmanager::DelayedActionManager_DelegateInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::linkedlistnode_1::LinkedListNode_1<
-        crate::unity_engine::resource_management::util::delayedactionmanager::DelayedActionManager_DelegateInfo,
-    > {
-        let inner: extern "C" fn(
-            DelayedActionManager,
-            *mut crate::unity_engine::resource_management::util::delayedactionmanager::DelayedActionManager_DelegateInfo,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::collections::generic::linkedlistnode_1::LinkedListNode_1<
-            crate::unity_engine::resource_management::util::delayedactionmanager::DelayedActionManager_DelegateInfo,
-        > = ::core::mem::transmute(__lookup_get_node::get_method_info().method_ptr);
-        inner(this, del, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_clear {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DelayedActionManager as ::unity2::ClassIdentity>::class(),
-                "Clear",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DelayedActionManager as ::unity2::ClassIdentity>::NAME,
-                        "Clear",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn clear(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_destroy_when_complete {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DelayedActionManager as ::unity2::ClassIdentity>::class(),
-                "DestroyWhenComplete",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DelayedActionManager as ::unity2::ClassIdentity>::NAME,
-                        "DestroyWhenComplete",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn destroy_when_complete(this: DelayedActionManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DelayedActionManager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_destroy_when_complete::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_action {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::delegate::Delegate as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-                <::unity2::Array<crate::system::object::Object> as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DelayedActionManager as ::unity2::ClassIdentity>::class(),
-                "AddAction",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DelayedActionManager as ::unity2::ClassIdentity>::NAME,
-                        "AddAction",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_action(
-        action: crate::system::delegate::Delegate,
-        delay: f32,
-        parameters: ::unity2::Array<crate::system::object::Object>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::system::delegate::Delegate,
-            f32,
-            ::unity2::Array<crate::system::object::Object>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_add_action::get_method_info().method_ptr);
-        inner(action, delay, parameters, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_action_internal {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::delegate::Delegate as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-                <::unity2::Array<crate::system::object::Object> as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DelayedActionManager as ::unity2::ClassIdentity>::class(),
-                "AddActionInternal",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DelayedActionManager as ::unity2::ClassIdentity>::NAME,
-                        "AddActionInternal",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_action_internal(
-        this: DelayedActionManager,
-        action: crate::system::delegate::Delegate,
-        delay: f32,
-        parameters: ::unity2::Array<crate::system::object::Object>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            DelayedActionManager,
-            crate::system::delegate::Delegate,
-            f32,
-            ::unity2::Array<crate::system::object::Object>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_add_action_internal::get_method_info().method_ptr);
-        inner(this, action, delay, parameters, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_is_active {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DelayedActionManager as ::unity2::ClassIdentity>::class(),
-                "get_IsActive",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DelayedActionManager as ::unity2::ClassIdentity>::NAME,
-                        "get_IsActive",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_is_active(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_get_is_active::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_wait {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type(), <f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DelayedActionManager as ::unity2::ClassIdentity>::class(),
-                "Wait",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DelayedActionManager as ::unity2::ClassIdentity>::NAME,
-                        "Wait",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn wait(timeout: f32, time_advance_amount: f32, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(f32, f32, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_wait::get_method_info().method_ptr);
-        inner(timeout, time_advance_amount, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_late_update {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DelayedActionManager as ::unity2::ClassIdentity>::class(),
-                "LateUpdate",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DelayedActionManager as ::unity2::ClassIdentity>::NAME,
-                        "LateUpdate",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn late_update(this: DelayedActionManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DelayedActionManager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_late_update::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_internal_late_update {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DelayedActionManager as ::unity2::ClassIdentity>::class(),
-                "InternalLateUpdate",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DelayedActionManager as ::unity2::ClassIdentity>::NAME,
-                        "InternalLateUpdate",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn internal_late_update(this: DelayedActionManager, t: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DelayedActionManager, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_internal_late_update::get_method_info().method_ptr);
-        inner(this, t, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_application_quit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DelayedActionManager as ::unity2::ClassIdentity>::class(),
-                "OnApplicationQuit",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DelayedActionManager as ::unity2::ClassIdentity>::NAME,
-                        "OnApplicationQuit",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_application_quit(this: DelayedActionManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DelayedActionManager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_application_quit::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DelayedActionManager as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DelayedActionManager as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: DelayedActionManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DelayedActionManager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+pub trait IDelayedActionManagerMethods : IDelayedActionManager { # [doc = "`GetNode(*mutcrate::unity_engine::resource_management::util::delayedactionmanager::DelayedActionManager_DelegateInfo)` overload"] fn get_node (self ,) -> (crate :: system :: collections :: generic :: linkedlistnode_1 :: LinkedListNode_1 < crate :: unity_engine :: resource_management :: util :: delayedactionmanager :: DelayedActionManager_DelegateInfo > , crate :: unity_engine :: resource_management :: util :: delayedactionmanager :: DelayedActionManager_DelegateInfo) { unsafe { let __receiver = < DelayedActionManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: resource_management :: util :: delayedactionmanager :: DelayedActionManager_DelegateInfo > :: uninit () ; let __ret = { __DelayedActionManager_unity2_raw :: get_node (__receiver , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } ; (__ret , __out_0 . assume_init ()) } } # [doc = "`DestroyWhenComplete()` overload"] fn destroy_when_complete (self ,) -> () { unsafe { let __receiver = < DelayedActionManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DelayedActionManager_unity2_raw :: destroy_when_complete (__receiver , :: core :: option :: Option :: None) } } # [doc = "`AddActionInternal(crate::system::delegate::Delegate, f32, ::unity2::Array<crate::system::object::Object>)` overload"] fn add_action_internal (self , action : impl :: core :: convert :: Into < crate :: system :: delegate :: Delegate > , delay : impl :: core :: convert :: Into < f32 > , parameters : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: system :: object :: Object > >) -> () { unsafe { let __receiver = < DelayedActionManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DelayedActionManager_unity2_raw :: add_action_internal (__receiver , :: core :: convert :: Into :: into (action) , :: core :: convert :: Into :: into (delay) , :: core :: convert :: Into :: into (parameters) , :: core :: option :: Option :: None) } } # [doc = "`LateUpdate()` overload"] fn late_update (self ,) -> () { unsafe { let __receiver = < DelayedActionManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DelayedActionManager_unity2_raw :: late_update (__receiver , :: core :: option :: Option :: None) } } # [doc = "`InternalLateUpdate(f32)` overload"] fn internal_late_update (self , t : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < DelayedActionManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DelayedActionManager_unity2_raw :: internal_late_update (__receiver , :: core :: convert :: Into :: into (t) , :: core :: option :: Option :: None) } } # [doc = "`OnApplicationQuit()` overload"] fn on_application_quit (self ,) -> () { unsafe { let __receiver = < DelayedActionManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DelayedActionManager_unity2_raw :: on_application_quit (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DelayedActionManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DelayedActionManager_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-resource_management-util-delayedactionmanager")]
+impl < __T : IDelayedActionManager > IDelayedActionManagerMethods for __T { }
+
+#[cfg(feature = "unity_engine-resource_management-util-delayedactionmanager")]
+impl DelayedActionManager { pub fn get_node_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DelayedActionManager_unity2_raw :: __lookup_get_node :: get_method_info () } pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DelayedActionManager_unity2_raw :: __lookup_clear :: get_method_info () } pub fn destroy_when_complete_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DelayedActionManager_unity2_raw :: __lookup_destroy_when_complete :: get_method_info () } pub fn add_action_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DelayedActionManager_unity2_raw :: __lookup_add_action :: get_method_info () } pub fn add_action_internal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DelayedActionManager_unity2_raw :: __lookup_add_action_internal :: get_method_info () } pub fn get_is_active_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DelayedActionManager_unity2_raw :: __lookup_get_is_active :: get_method_info () } pub fn wait_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DelayedActionManager_unity2_raw :: __lookup_wait :: get_method_info () } pub fn late_update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DelayedActionManager_unity2_raw :: __lookup_late_update :: get_method_info () } pub fn internal_late_update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DelayedActionManager_unity2_raw :: __lookup_internal_late_update :: get_method_info () } pub fn on_application_quit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DelayedActionManager_unity2_raw :: __lookup_on_application_quit :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DelayedActionManager_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-resource_management-util-delayedactionmanager")]
 impl DelayedActionManager {
-    #[doc = "`Clear()` overload"]
-    pub fn clear() -> () {
-        unsafe { __DelayedActionManager_unity2_raw::clear(::core::option::Option::None) }
-    }
-
-    #[doc = "`AddAction(crate::system::delegate::Delegate, f32, ::unity2::Array<crate::system::object::Object>)` overload"]
-    pub fn add_action(
-        action: impl ::core::convert::Into<crate::system::delegate::Delegate>,
-        delay: impl ::core::convert::Into<f32>,
-        parameters: impl ::core::convert::Into<::unity2::Array<crate::system::object::Object>>,
-    ) -> () {
-        unsafe {
-            __DelayedActionManager_unity2_raw::add_action(
-                ::core::convert::Into::into(action),
-                ::core::convert::Into::into(delay),
-                ::core::convert::Into::into(parameters),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`get_IsActive()` overload"]
-    pub fn get_is_active() -> bool {
-        unsafe { __DelayedActionManager_unity2_raw::get_is_active(::core::option::Option::None) }
-    }
-
-    #[doc = "`Wait(f32, f32)` overload"]
-    pub fn wait(timeout: impl ::core::convert::Into<f32>, time_advance_amount: impl ::core::convert::Into<f32>) -> bool {
-        unsafe {
-            __DelayedActionManager_unity2_raw::wait(
-                ::core::convert::Into::into(timeout),
-                ::core::convert::Into::into(time_advance_amount),
-                ::core::option::Option::None,
-            )
-        }
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DelayedActionManager) , :: core :: stringify ! (new) ,)) ; < Self as IDelayedActionManagerMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "unity_engine-resource_management-util-delayedactionmanager")]
-pub trait IDelayedActionManagerMethods: IDelayedActionManager {
-    #[doc = "`GetNode(*mutcrate::unity_engine::resource_management::util::delayedactionmanager::DelayedActionManager_DelegateInfo)` overload"]
-    fn get_node(
-        self,
-    ) -> (
-        crate::system::collections::generic::linkedlistnode_1::LinkedListNode_1<
-            crate::unity_engine::resource_management::util::delayedactionmanager::DelayedActionManager_DelegateInfo,
-        >,
-        crate::unity_engine::resource_management::util::delayedactionmanager::DelayedActionManager_DelegateInfo,
-    ) {
-        unsafe {
-            let __receiver =
-                <DelayedActionManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::resource_management::util::delayedactionmanager::DelayedActionManager_DelegateInfo,
-            >::uninit();
-            let __ret = { __DelayedActionManager_unity2_raw::get_node(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None) };
-            (__ret, __out_0.assume_init())
-        }
-    }
-    #[doc = "`DestroyWhenComplete()` overload"]
-    fn destroy_when_complete(self) -> () {
-        unsafe {
-            let __receiver =
-                <DelayedActionManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DelayedActionManager_unity2_raw::destroy_when_complete(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`AddActionInternal(crate::system::delegate::Delegate, f32, ::unity2::Array<crate::system::object::Object>)` overload"]
-    fn add_action_internal(
-        self,
-        action: impl ::core::convert::Into<crate::system::delegate::Delegate>,
-        delay: impl ::core::convert::Into<f32>,
-        parameters: impl ::core::convert::Into<::unity2::Array<crate::system::object::Object>>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <DelayedActionManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DelayedActionManager_unity2_raw::add_action_internal(
-                __receiver,
-                ::core::convert::Into::into(action),
-                ::core::convert::Into::into(delay),
-                ::core::convert::Into::into(parameters),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`LateUpdate()` overload"]
-    fn late_update(self) -> () {
-        unsafe {
-            let __receiver =
-                <DelayedActionManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DelayedActionManager_unity2_raw::late_update(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`InternalLateUpdate(f32)` overload"]
-    fn internal_late_update(self, t: impl ::core::convert::Into<f32>) -> () {
-        unsafe {
-            let __receiver =
-                <DelayedActionManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DelayedActionManager_unity2_raw::internal_late_update(__receiver, ::core::convert::Into::into(t), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnApplicationQuit()` overload"]
-    fn on_application_quit(self) -> () {
-        unsafe {
-            let __receiver =
-                <DelayedActionManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DelayedActionManager_unity2_raw::on_application_quit(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <DelayedActionManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DelayedActionManager_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __DelayedActionManager_DelegateInfo_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: delegate :: Delegate as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: system :: object :: Object > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DelayedActionManager_DelegateInfo as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DelayedActionManager_DelegateInfo as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : DelayedActionManager_DelegateInfo , d : crate :: system :: delegate :: Delegate , invocation_time : f32 , p : :: unity2 :: Array < crate :: system :: object :: Object > , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DelayedActionManager_DelegateInfo , crate :: system :: delegate :: Delegate , f32 , :: unity2 :: Array < crate :: system :: object :: Object > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , d , invocation_time , p , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_invocation_time { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DelayedActionManager_DelegateInfo as :: unity2 :: ClassIdentity > :: class () , "get_InvocationTime" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DelayedActionManager_DelegateInfo as :: unity2 :: ClassIdentity > :: NAME , "get_InvocationTime" , e) , } } } pub unsafe fn get_invocation_time (this : DelayedActionManager_DelegateInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (DelayedActionManager_DelegateInfo , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_get_invocation_time :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_invocation_time { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DelayedActionManager_DelegateInfo as :: unity2 :: ClassIdentity > :: class () , "set_InvocationTime" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DelayedActionManager_DelegateInfo as :: unity2 :: ClassIdentity > :: NAME , "set_InvocationTime" , e) , } } } pub unsafe fn set_invocation_time (this : DelayedActionManager_DelegateInfo , value : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DelayedActionManager_DelegateInfo , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_invocation_time :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_to_string { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DelayedActionManager_DelegateInfo as :: unity2 :: ClassIdentity > :: class () , "ToString" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DelayedActionManager_DelegateInfo as :: unity2 :: ClassIdentity > :: NAME , "ToString" , e) , } } } pub unsafe fn to_string (this : DelayedActionManager_DelegateInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (DelayedActionManager_DelegateInfo , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_to_string :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_invoke { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DelayedActionManager_DelegateInfo as :: unity2 :: ClassIdentity > :: class () , "Invoke" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DelayedActionManager_DelegateInfo as :: unity2 :: ClassIdentity > :: NAME , "Invoke" , e) , } } } pub unsafe fn invoke (this : DelayedActionManager_DelegateInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DelayedActionManager_DelegateInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_invoke :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-resource_management-util-delayedactionmanager")]
-impl<__T: IDelayedActionManager> IDelayedActionManagerMethods for __T {}
+impl DelayedActionManager_DelegateInfo { # [doc = "`.ctor(crate::system::delegate::Delegate, f32, ::unity2::Array<crate::system::object::Object>)` overload"] pub fn ctor (self , d : impl :: core :: convert :: Into < crate :: system :: delegate :: Delegate > , invocation_time : impl :: core :: convert :: Into < f32 > , p : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: system :: object :: Object > >) -> () { unsafe { __DelayedActionManager_DelegateInfo_unity2_raw :: ctor (self , :: core :: convert :: Into :: into (d) , :: core :: convert :: Into :: into (invocation_time) , :: core :: convert :: Into :: into (p) , :: core :: option :: Option :: None) } } # [doc = "`get_InvocationTime()` overload"] pub fn get_invocation_time (self ,) -> f32 { unsafe { __DelayedActionManager_DelegateInfo_unity2_raw :: get_invocation_time (self , :: core :: option :: Option :: None) } } # [doc = "`set_InvocationTime(f32)` overload"] pub fn set_invocation_time (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { __DelayedActionManager_DelegateInfo_unity2_raw :: set_invocation_time (self , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`ToString()` overload"] pub fn to_string (self ,) -> :: unity2 :: Il2CppString { unsafe { __DelayedActionManager_DelegateInfo_unity2_raw :: to_string (self , :: core :: option :: Option :: None) } } # [doc = "`Invoke()` overload"] pub fn invoke (self ,) -> () { unsafe { __DelayedActionManager_DelegateInfo_unity2_raw :: invoke (self , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-resource_management-util-delayedactionmanager")]
-impl DelayedActionManager {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DelayedActionManager),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDelayedActionManagerMethods>::ctor(this);
-        this
-    }
-}
+impl DelayedActionManager_DelegateInfo { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DelayedActionManager_DelegateInfo_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn get_invocation_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DelayedActionManager_DelegateInfo_unity2_raw :: __lookup_get_invocation_time :: get_method_info () } pub fn set_invocation_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DelayedActionManager_DelegateInfo_unity2_raw :: __lookup_set_invocation_time :: get_method_info () } pub fn to_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DelayedActionManager_DelegateInfo_unity2_raw :: __lookup_to_string :: get_method_info () } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DelayedActionManager_DelegateInfo_unity2_raw :: __lookup_invoke :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-resource_management-util-delayedactionmanager")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{DelayedActionManager, DelayedActionManager_DelegateInfo, IDelayedActionManager, IDelayedActionManagerMethods};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    #[cfg(feature = "unity_engine-resource_management-util-componentsingleton_1_2")]
-    pub use crate::unity_engine::resource_management::util::componentsingleton_1_2::IComponentSingleton_1_2Methods;
-    pub use crate::{
-        system::{object::IObject, valuetype::IValueType},
-        unity_engine::{
-            behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2,
-            resource_management::util::componentsingleton_1_2::IComponentSingleton_1_2,
-        },
-    };
+    pub use super::DelayedActionManager;
+    pub use super::IDelayedActionManager;
+    pub use super::IDelayedActionManagerMethods;
+    pub use super::DelayedActionManager_DelegateInfo;
+    pub use crate::system::object::IObject;
+    pub use crate::system::valuetype::IValueType;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    pub use crate::unity_engine::resource_management::util::componentsingleton_1_2::IComponentSingleton_1_2;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
+    #[cfg(feature = "unity_engine-resource_management-util-componentsingleton_1_2")] pub use crate::unity_engine::resource_management::util::componentsingleton_1_2::IComponentSingleton_1_2Methods;
 }

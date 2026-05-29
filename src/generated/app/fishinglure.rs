@@ -2,358 +2,59 @@
 
 #[cfg(feature = "app-fishinglure-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishinglure/FishingLure.md"))]
-    #[::unity2::class(namespace = "App", name = "FishingLure")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct FishingLure {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishinglure/FishingLure.md"))] # [:: unity2 :: class (namespace = "App" , name = "FishingLure")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct FishingLure {}
+
 }
 
 #[cfg(feature = "app-fishinglure-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-fishinglure")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __FishingLure_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_hit_area_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FishingLure as ::unity2::ClassIdentity>::class(),
-                "get_HitAreaName",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FishingLure as ::unity2::ClassIdentity>::NAME,
-                        "get_HitAreaName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_hit_area_name(this: FishingLure, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(FishingLure, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_hit_area_name::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_hit_area_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FishingLure as ::unity2::ClassIdentity>::class(),
-                "set_HitAreaName",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FishingLure as ::unity2::ClassIdentity>::NAME,
-                        "set_HitAreaName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_hit_area_name(this: FishingLure, value: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(FishingLure, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_hit_area_name::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_collision_enter {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::collision::Collision as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FishingLure as ::unity2::ClassIdentity>::class(),
-                "OnCollisionEnter",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FishingLure as ::unity2::ClassIdentity>::NAME,
-                        "OnCollisionEnter",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_collision_enter(
-        this: FishingLure,
-        collision: crate::unity_engine::collision::Collision,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(FishingLure, crate::unity_engine::collision::Collision, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_collision_enter::get_method_info().method_ptr);
-        inner(this, collision, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_collision_stay {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::collision::Collision as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FishingLure as ::unity2::ClassIdentity>::class(),
-                "OnCollisionStay",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FishingLure as ::unity2::ClassIdentity>::NAME,
-                        "OnCollisionStay",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_collision_stay(
-        this: FishingLure,
-        collision: crate::unity_engine::collision::Collision,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(FishingLure, crate::unity_engine::collision::Collision, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_collision_stay::get_method_info().method_ptr);
-        inner(this, collision, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_trigger_enter {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::collider::Collider as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FishingLure as ::unity2::ClassIdentity>::class(),
-                "OnTriggerEnter",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FishingLure as ::unity2::ClassIdentity>::NAME,
-                        "OnTriggerEnter",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_trigger_enter(
-        this: FishingLure,
-        other: crate::unity_engine::collider::Collider,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(FishingLure, crate::unity_engine::collider::Collider, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_trigger_enter::get_method_info().method_ptr);
-        inner(this, other, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_trigger_stay {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::collider::Collider as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FishingLure as ::unity2::ClassIdentity>::class(),
-                "OnTriggerStay",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FishingLure as ::unity2::ClassIdentity>::NAME,
-                        "OnTriggerStay",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_trigger_stay(
-        this: FishingLure,
-        other: crate::unity_engine::collider::Collider,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(FishingLure, crate::unity_engine::collider::Collider, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_trigger_stay::get_method_info().method_ptr);
-        inner(this, other, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<FishingLure as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FishingLure as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: FishingLure, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(FishingLure, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __FishingLure_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_hit_area_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FishingLure as :: unity2 :: ClassIdentity > :: class () , "get_HitAreaName" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FishingLure as :: unity2 :: ClassIdentity > :: NAME , "get_HitAreaName" , e) , } } } pub unsafe fn get_hit_area_name (this : FishingLure , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (FishingLure , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_hit_area_name :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_hit_area_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FishingLure as :: unity2 :: ClassIdentity > :: class () , "set_HitAreaName" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FishingLure as :: unity2 :: ClassIdentity > :: NAME , "set_HitAreaName" , e) , } } } pub unsafe fn set_hit_area_name (this : FishingLure , value : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FishingLure , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_hit_area_name :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_collision_enter { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: collision :: Collision as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FishingLure as :: unity2 :: ClassIdentity > :: class () , "OnCollisionEnter" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FishingLure as :: unity2 :: ClassIdentity > :: NAME , "OnCollisionEnter" , e) , } } } pub unsafe fn on_collision_enter (this : FishingLure , collision : crate :: unity_engine :: collision :: Collision , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FishingLure , crate :: unity_engine :: collision :: Collision , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_collision_enter :: get_method_info () . method_ptr ,) ; inner (this , collision , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_collision_stay { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: collision :: Collision as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FishingLure as :: unity2 :: ClassIdentity > :: class () , "OnCollisionStay" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FishingLure as :: unity2 :: ClassIdentity > :: NAME , "OnCollisionStay" , e) , } } } pub unsafe fn on_collision_stay (this : FishingLure , collision : crate :: unity_engine :: collision :: Collision , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FishingLure , crate :: unity_engine :: collision :: Collision , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_collision_stay :: get_method_info () . method_ptr ,) ; inner (this , collision , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_trigger_enter { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: collider :: Collider as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FishingLure as :: unity2 :: ClassIdentity > :: class () , "OnTriggerEnter" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FishingLure as :: unity2 :: ClassIdentity > :: NAME , "OnTriggerEnter" , e) , } } } pub unsafe fn on_trigger_enter (this : FishingLure , other : crate :: unity_engine :: collider :: Collider , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FishingLure , crate :: unity_engine :: collider :: Collider , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_trigger_enter :: get_method_info () . method_ptr ,) ; inner (this , other , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_trigger_stay { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: collider :: Collider as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FishingLure as :: unity2 :: ClassIdentity > :: class () , "OnTriggerStay" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FishingLure as :: unity2 :: ClassIdentity > :: NAME , "OnTriggerStay" , e) , } } } pub unsafe fn on_trigger_stay (this : FishingLure , other : crate :: unity_engine :: collider :: Collider , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FishingLure , crate :: unity_engine :: collider :: Collider , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_trigger_stay :: get_method_info () . method_ptr ,) ; inner (this , other , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FishingLure as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FishingLure as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : FishingLure , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FishingLure , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-fishinglure")]
-pub trait IFishingLureMethods: IFishingLure {
-    #[doc = "`get_HitAreaName()` overload"]
-    fn get_hit_area_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <FishingLure as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FishingLure_unity2_raw::get_hit_area_name(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_HitAreaName(::unity2::Il2CppString)` overload"]
-    fn set_hit_area_name(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver = <FishingLure as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FishingLure_unity2_raw::set_hit_area_name(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnCollisionEnter(crate::unity_engine::collision::Collision)` overload"]
-    fn on_collision_enter(self, collision: impl ::core::convert::Into<crate::unity_engine::collision::Collision>) -> () {
-        unsafe {
-            let __receiver = <FishingLure as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FishingLure_unity2_raw::on_collision_enter(__receiver, ::core::convert::Into::into(collision), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnCollisionStay(crate::unity_engine::collision::Collision)` overload"]
-    fn on_collision_stay(self, collision: impl ::core::convert::Into<crate::unity_engine::collision::Collision>) -> () {
-        unsafe {
-            let __receiver = <FishingLure as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FishingLure_unity2_raw::on_collision_stay(__receiver, ::core::convert::Into::into(collision), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnTriggerEnter(crate::unity_engine::collider::Collider)` overload"]
-    fn on_trigger_enter(self, other: impl ::core::convert::Into<crate::unity_engine::collider::Collider>) -> () {
-        unsafe {
-            let __receiver = <FishingLure as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FishingLure_unity2_raw::on_trigger_enter(__receiver, ::core::convert::Into::into(other), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnTriggerStay(crate::unity_engine::collider::Collider)` overload"]
-    fn on_trigger_stay(self, other: impl ::core::convert::Into<crate::unity_engine::collider::Collider>) -> () {
-        unsafe {
-            let __receiver = <FishingLure as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FishingLure_unity2_raw::on_trigger_stay(__receiver, ::core::convert::Into::into(other), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <FishingLure as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FishingLure_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IFishingLureMethods : IFishingLure { # [doc = "`get_HitAreaName()` overload"] fn get_hit_area_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < FishingLure as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FishingLure_unity2_raw :: get_hit_area_name (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_HitAreaName(::unity2::Il2CppString)` overload"] fn set_hit_area_name (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < FishingLure as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FishingLure_unity2_raw :: set_hit_area_name (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`OnCollisionEnter(crate::unity_engine::collision::Collision)` overload"] fn on_collision_enter (self , collision : impl :: core :: convert :: Into < crate :: unity_engine :: collision :: Collision >) -> () { unsafe { let __receiver = < FishingLure as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FishingLure_unity2_raw :: on_collision_enter (__receiver , :: core :: convert :: Into :: into (collision) , :: core :: option :: Option :: None) } } # [doc = "`OnCollisionStay(crate::unity_engine::collision::Collision)` overload"] fn on_collision_stay (self , collision : impl :: core :: convert :: Into < crate :: unity_engine :: collision :: Collision >) -> () { unsafe { let __receiver = < FishingLure as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FishingLure_unity2_raw :: on_collision_stay (__receiver , :: core :: convert :: Into :: into (collision) , :: core :: option :: Option :: None) } } # [doc = "`OnTriggerEnter(crate::unity_engine::collider::Collider)` overload"] fn on_trigger_enter (self , other : impl :: core :: convert :: Into < crate :: unity_engine :: collider :: Collider >) -> () { unsafe { let __receiver = < FishingLure as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FishingLure_unity2_raw :: on_trigger_enter (__receiver , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } # [doc = "`OnTriggerStay(crate::unity_engine::collider::Collider)` overload"] fn on_trigger_stay (self , other : impl :: core :: convert :: Into < crate :: unity_engine :: collider :: Collider >) -> () { unsafe { let __receiver = < FishingLure as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FishingLure_unity2_raw :: on_trigger_stay (__receiver , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < FishingLure as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FishingLure_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-fishinglure")]
-impl<__T: IFishingLure> IFishingLureMethods for __T {}
+impl < __T : IFishingLure > IFishingLureMethods for __T { }
+
+#[cfg(feature = "app-fishinglure")]
+impl FishingLure { pub fn get_hit_area_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FishingLure_unity2_raw :: __lookup_get_hit_area_name :: get_method_info () } pub fn set_hit_area_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FishingLure_unity2_raw :: __lookup_set_hit_area_name :: get_method_info () } pub fn on_collision_enter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FishingLure_unity2_raw :: __lookup_on_collision_enter :: get_method_info () } pub fn on_collision_stay_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FishingLure_unity2_raw :: __lookup_on_collision_stay :: get_method_info () } pub fn on_trigger_enter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FishingLure_unity2_raw :: __lookup_on_trigger_enter :: get_method_info () } pub fn on_trigger_stay_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FishingLure_unity2_raw :: __lookup_on_trigger_stay :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FishingLure_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-fishinglure")]
 impl FishingLure {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(FishingLure), ::core::stringify!(new),));
-        <Self as IFishingLureMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FishingLure) , :: core :: stringify ! (new) ,)) ; < Self as IFishingLureMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-fishinglure")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{FishingLure, IFishingLure, IFishingLureMethods};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        system::object::IObject,
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::FishingLure;
+    pub use super::IFishingLure;
+    pub use super::IFishingLureMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

@@ -2,313 +2,45 @@
 
 #[cfg(feature = "unity_engine-resource_management-util-asyncophandlescachekey-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/util/asyncophandlescachekey/AsyncOpHandlesCacheKey.md"))]
-    #[::unity2::class(namespace = "UnityEngine.ResourceManagement.Util", name = "AsyncOpHandlesCacheKey")]
-    #[parent(crate::system::object::Object)]
-    pub struct AsyncOpHandlesCacheKey {
-        #[offset(16)]
-        #[rename(name = "m_Handles")]
-        pub m_handles: crate::system::collections::generic::hashset_1::HashSet_1<
-            crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle,
-        >,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/util/asyncophandlescachekey/AsyncOpHandlesCacheKey.md"))] # [:: unity2 :: class (namespace = "UnityEngine.ResourceManagement.Util" , name = "AsyncOpHandlesCacheKey")] # [parent (crate :: system :: object :: Object)] pub struct AsyncOpHandlesCacheKey {
+# [offset (16)] # [rename (name = "m_Handles")] pub m_handles : crate :: system :: collections :: generic :: hashset_1 :: HashSet_1 < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle > ,
+}
+
 }
 
 #[cfg(feature = "unity_engine-resource_management-util-asyncophandlescachekey-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-resource_management-util-asyncophandlescachekey")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AsyncOpHandlesCacheKey_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
-                    crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle,
-                > as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AsyncOpHandlesCacheKey as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AsyncOpHandlesCacheKey as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: AsyncOpHandlesCacheKey,
-        handles: crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
-            crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle,
-        >,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            AsyncOpHandlesCacheKey,
-            crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
-                crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle,
-            >,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, handles, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_hash_code {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AsyncOpHandlesCacheKey as ::unity2::ClassIdentity>::class(),
-                "GetHashCode",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AsyncOpHandlesCacheKey as ::unity2::ClassIdentity>::NAME,
-                        "GetHashCode",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_hash_code(this: AsyncOpHandlesCacheKey, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AsyncOpHandlesCacheKey, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_hash_code::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_equals {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AsyncOpHandlesCacheKey as ::unity2::ClassIdentity>::class(),
-                "Equals",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AsyncOpHandlesCacheKey as ::unity2::ClassIdentity>::NAME,
-                        "Equals",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn equals(this: AsyncOpHandlesCacheKey, obj: crate::system::object::Object, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(AsyncOpHandlesCacheKey, crate::system::object::Object, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_equals::get_method_info().method_ptr);
-        inner(this, obj, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_equals_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::resource_management::util::ioperationcachekey::IOperationCacheKey as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AsyncOpHandlesCacheKey as ::unity2::ClassIdentity>::class(),
-                "Equals",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AsyncOpHandlesCacheKey as ::unity2::ClassIdentity>::NAME,
-                        "Equals",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn equals_2(
-        this: AsyncOpHandlesCacheKey,
-        other: crate::unity_engine::resource_management::util::ioperationcachekey::IOperationCacheKey,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            AsyncOpHandlesCacheKey,
-            crate::unity_engine::resource_management::util::ioperationcachekey::IOperationCacheKey,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(__lookup_equals_2::get_method_info().method_ptr);
-        inner(this, other, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_equals_3 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::resource_management::util::asyncophandlescachekey::AsyncOpHandlesCacheKey as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AsyncOpHandlesCacheKey as ::unity2::ClassIdentity>::class(),
-                "Equals",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AsyncOpHandlesCacheKey as ::unity2::ClassIdentity>::NAME,
-                        "Equals",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn equals_3(
-        this: AsyncOpHandlesCacheKey,
-        other: crate::unity_engine::resource_management::util::asyncophandlescachekey::AsyncOpHandlesCacheKey,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            AsyncOpHandlesCacheKey,
-            crate::unity_engine::resource_management::util::asyncophandlescachekey::AsyncOpHandlesCacheKey,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(__lookup_equals_3::get_method_info().method_ptr);
-        inner(this, other, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __AsyncOpHandlesCacheKey_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AsyncOpHandlesCacheKey as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AsyncOpHandlesCacheKey as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : AsyncOpHandlesCacheKey , handles : crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle > , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AsyncOpHandlesCacheKey , crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , handles , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_hash_code { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AsyncOpHandlesCacheKey as :: unity2 :: ClassIdentity > :: class () , "GetHashCode" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AsyncOpHandlesCacheKey as :: unity2 :: ClassIdentity > :: NAME , "GetHashCode" , e) , } } } pub unsafe fn get_hash_code (this : AsyncOpHandlesCacheKey , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (AsyncOpHandlesCacheKey , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_hash_code :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_equals { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AsyncOpHandlesCacheKey as :: unity2 :: ClassIdentity > :: class () , "Equals" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AsyncOpHandlesCacheKey as :: unity2 :: ClassIdentity > :: NAME , "Equals" , e) , } } } pub unsafe fn equals (this : AsyncOpHandlesCacheKey , obj : crate :: system :: object :: Object , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (AsyncOpHandlesCacheKey , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_equals :: get_method_info () . method_ptr ,) ; inner (this , obj , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_equals_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: resource_management :: util :: ioperationcachekey :: IOperationCacheKey as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AsyncOpHandlesCacheKey as :: unity2 :: ClassIdentity > :: class () , "Equals" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AsyncOpHandlesCacheKey as :: unity2 :: ClassIdentity > :: NAME , "Equals" , e) , } } } pub unsafe fn equals_2 (this : AsyncOpHandlesCacheKey , other : crate :: unity_engine :: resource_management :: util :: ioperationcachekey :: IOperationCacheKey , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (AsyncOpHandlesCacheKey , crate :: unity_engine :: resource_management :: util :: ioperationcachekey :: IOperationCacheKey , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_equals_2 :: get_method_info () . method_ptr ,) ; inner (this , other , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_equals_3 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: resource_management :: util :: asyncophandlescachekey :: AsyncOpHandlesCacheKey as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AsyncOpHandlesCacheKey as :: unity2 :: ClassIdentity > :: class () , "Equals" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AsyncOpHandlesCacheKey as :: unity2 :: ClassIdentity > :: NAME , "Equals" , e) , } } } pub unsafe fn equals_3 (this : AsyncOpHandlesCacheKey , other : crate :: unity_engine :: resource_management :: util :: asyncophandlescachekey :: AsyncOpHandlesCacheKey , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (AsyncOpHandlesCacheKey , crate :: unity_engine :: resource_management :: util :: asyncophandlescachekey :: AsyncOpHandlesCacheKey , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_equals_3 :: get_method_info () . method_ptr ,) ; inner (this , other , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-resource_management-util-asyncophandlescachekey")]
-pub trait IAsyncOpHandlesCacheKeyMethods: IAsyncOpHandlesCacheKey {
-    #[doc = "`.ctor(crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle>)` overload"]
-    fn ctor(
-        self,
-        handles: impl ::core::convert::Into<
-            crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
-                crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle,
-            >,
-        >,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <AsyncOpHandlesCacheKey as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AsyncOpHandlesCacheKey_unity2_raw::ctor(__receiver, ::core::convert::Into::into(handles), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetHashCode()` overload"]
-    fn get_hash_code(self) -> i32 {
-        unsafe {
-            let __receiver =
-                <AsyncOpHandlesCacheKey as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AsyncOpHandlesCacheKey_unity2_raw::get_hash_code(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Equals(crate::system::object::Object)` overload"]
-    fn equals(self, obj: impl ::core::convert::Into<crate::system::object::Object>) -> bool {
-        unsafe {
-            let __receiver =
-                <AsyncOpHandlesCacheKey as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AsyncOpHandlesCacheKey_unity2_raw::equals(__receiver, ::core::convert::Into::into(obj), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Equals(crate::unity_engine::resource_management::util::ioperationcachekey::IOperationCacheKey)` overload"]
-    fn equals_2(
-        self,
-        other: impl ::core::convert::Into<crate::unity_engine::resource_management::util::ioperationcachekey::IOperationCacheKey>,
-    ) -> bool {
-        unsafe {
-            let __receiver =
-                <AsyncOpHandlesCacheKey as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AsyncOpHandlesCacheKey_unity2_raw::equals_2(__receiver, ::core::convert::Into::into(other), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Equals(crate::unity_engine::resource_management::util::asyncophandlescachekey::AsyncOpHandlesCacheKey)` overload"]
-    fn equals_3(
-        self,
-        other: impl ::core::convert::Into<crate::unity_engine::resource_management::util::asyncophandlescachekey::AsyncOpHandlesCacheKey>,
-    ) -> bool {
-        unsafe {
-            let __receiver =
-                <AsyncOpHandlesCacheKey as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AsyncOpHandlesCacheKey_unity2_raw::equals_3(__receiver, ::core::convert::Into::into(other), ::core::option::Option::None)
-        }
-    }
-}
+pub trait IAsyncOpHandlesCacheKeyMethods : IAsyncOpHandlesCacheKey { # [doc = "`.ctor(crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle>)` overload"] fn ctor (self , handles : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle > >) -> () { unsafe { let __receiver = < AsyncOpHandlesCacheKey as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AsyncOpHandlesCacheKey_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (handles) , :: core :: option :: Option :: None) } } # [doc = "`GetHashCode()` overload"] fn get_hash_code (self ,) -> i32 { unsafe { let __receiver = < AsyncOpHandlesCacheKey as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AsyncOpHandlesCacheKey_unity2_raw :: get_hash_code (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Equals(crate::system::object::Object)` overload"] fn equals (self , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { let __receiver = < AsyncOpHandlesCacheKey as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AsyncOpHandlesCacheKey_unity2_raw :: equals (__receiver , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } # [doc = "`Equals(crate::unity_engine::resource_management::util::ioperationcachekey::IOperationCacheKey)` overload"] fn equals_2 (self , other : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: util :: ioperationcachekey :: IOperationCacheKey >) -> bool { unsafe { let __receiver = < AsyncOpHandlesCacheKey as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AsyncOpHandlesCacheKey_unity2_raw :: equals_2 (__receiver , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } # [doc = "`Equals(crate::unity_engine::resource_management::util::asyncophandlescachekey::AsyncOpHandlesCacheKey)` overload"] fn equals_3 (self , other : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: util :: asyncophandlescachekey :: AsyncOpHandlesCacheKey >) -> bool { unsafe { let __receiver = < AsyncOpHandlesCacheKey as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AsyncOpHandlesCacheKey_unity2_raw :: equals_3 (__receiver , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-resource_management-util-asyncophandlescachekey")]
-impl<__T: IAsyncOpHandlesCacheKey> IAsyncOpHandlesCacheKeyMethods for __T {}
+impl < __T : IAsyncOpHandlesCacheKey > IAsyncOpHandlesCacheKeyMethods for __T { }
+
+#[cfg(feature = "unity_engine-resource_management-util-asyncophandlescachekey")]
+impl AsyncOpHandlesCacheKey { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AsyncOpHandlesCacheKey_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AsyncOpHandlesCacheKey_unity2_raw :: __lookup_get_hash_code :: get_method_info () } pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AsyncOpHandlesCacheKey_unity2_raw :: __lookup_equals :: get_method_info () } pub fn equals_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AsyncOpHandlesCacheKey_unity2_raw :: __lookup_equals_2 :: get_method_info () } pub fn equals_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AsyncOpHandlesCacheKey_unity2_raw :: __lookup_equals_3 :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-resource_management-util-asyncophandlescachekey")]
 impl AsyncOpHandlesCacheKey {
-    #[doc = "`.ctor(crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle>)` — overload selector"]
-    pub fn new(
-        handles: crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
-            crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle,
-        >,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AsyncOpHandlesCacheKey),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAsyncOpHandlesCacheKeyMethods>::ctor(this, handles);
-        this
-    }
+# [doc = "`.ctor(crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle>)` — overload selector"] pub fn new (handles : crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle >) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AsyncOpHandlesCacheKey) , :: core :: stringify ! (new) ,)) ; < Self as IAsyncOpHandlesCacheKeyMethods > :: ctor (this , handles) ; this }
 }
 
 #[cfg(feature = "unity_engine-resource_management-util-asyncophandlescachekey")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{AsyncOpHandlesCacheKey, IAsyncOpHandlesCacheKey, IAsyncOpHandlesCacheKeyMethods};
+    pub use super::AsyncOpHandlesCacheKey;
+    pub use super::IAsyncOpHandlesCacheKey;
+    pub use super::IAsyncOpHandlesCacheKeyMethods;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

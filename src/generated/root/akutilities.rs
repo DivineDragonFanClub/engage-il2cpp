@@ -2,435 +2,77 @@
 
 #[cfg(feature = "root-akutilities-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akutilities/AkUtilities.md"))]
-    #[::unity2::class(namespace = "", name = "AkUtilities")]
-    #[parent(crate::system::object::Object)]
-    pub struct AkUtilities {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akutilities/AkUtilities_ShortIDGenerator.md"))]
-    #[::unity2::class(namespace = "", name = "AkUtilities.ShortIDGenerator")]
-    #[parent(crate::system::object::Object)]
-    pub struct AkUtilities_ShortIDGenerator {
-        #[static_field]
-        #[rename(name = "s_prime32")]
-        pub s_prime32: u32,
-        #[static_field]
-        #[rename(name = "s_offsetBasis32")]
-        pub s_offset_basis32: u32,
-        #[static_field]
-        #[rename(name = "s_hashSize")]
-        pub s_hash_size: u8,
-        #[static_field]
-        #[rename(name = "s_mask")]
-        pub s_mask: u32,
-    }
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akutilities/AkUtilities.md"))] # [:: unity2 :: class (namespace = "" , name = "AkUtilities")] # [parent (crate :: system :: object :: Object)] pub struct AkUtilities {}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akutilities/AkUtilities_ShortIDGenerator.md"))] # [:: unity2 :: class (namespace = "" , name = "AkUtilities.ShortIDGenerator")] # [parent (crate :: system :: object :: Object)] pub struct AkUtilities_ShortIDGenerator {
+# [static_field] # [rename (name = "s_prime32")] pub s_prime32 : u32 ,
+# [static_field] # [rename (name = "s_offsetBasis32")] pub s_offset_basis32 : u32 ,
+# [static_field] # [rename (name = "s_hashSize")] pub s_hash_size : u8 ,
+# [static_field] # [rename (name = "s_mask")] pub s_mask : u32 ,
+}
+
 }
 
 #[cfg(feature = "root-akutilities-types")]
 pub use __types::*;
 
 #[cfg(feature = "root-akutilities")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AkUtilities_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_fix_slashes {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <u16 as ::unity2::IlType>::il_type(),
-                <u16 as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkUtilities as ::unity2::ClassIdentity>::class(),
-                "FixSlashes",
-                4,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkUtilities as ::unity2::ClassIdentity>::NAME,
-                        "FixSlashes",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn fix_slashes(
-        path: *mut ::unity2::Il2CppString,
-        separator_char: u16,
-        bad_char: u16,
-        add_trailing_slash: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(*mut ::unity2::Il2CppString, u16, u16, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_fix_slashes::get_method_info().method_ptr);
-        inner(path, separator_char, bad_char, add_trailing_slash, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_fix_slashes_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkUtilities as ::unity2::ClassIdentity>::class(),
-                "FixSlashes",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkUtilities as ::unity2::ClassIdentity>::NAME,
-                        "FixSlashes",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn fix_slashes_2(path: *mut ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(*mut ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_fix_slashes_2::get_method_info().method_ptr);
-        inner(path, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<AkUtilities as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkUtilities as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: AkUtilities, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AkUtilities, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __AkUtilities_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_fix_slashes { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < u16 as :: unity2 :: IlType > :: il_type () , < u16 as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkUtilities as :: unity2 :: ClassIdentity > :: class () , "FixSlashes" , 4 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkUtilities as :: unity2 :: ClassIdentity > :: NAME , "FixSlashes" , e) , } } } pub unsafe fn fix_slashes (path : * mut :: unity2 :: Il2CppString , separator_char : u16 , bad_char : u16 , add_trailing_slash : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (* mut :: unity2 :: Il2CppString , u16 , u16 , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_fix_slashes :: get_method_info () . method_ptr ,) ; inner (path , separator_char , bad_char , add_trailing_slash , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_fix_slashes_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkUtilities as :: unity2 :: ClassIdentity > :: class () , "FixSlashes" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkUtilities as :: unity2 :: ClassIdentity > :: NAME , "FixSlashes" , e) , } } } pub unsafe fn fix_slashes_2 (path : * mut :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (* mut :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_fix_slashes_2 :: get_method_info () . method_ptr ,) ; inner (path , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkUtilities as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkUtilities as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : AkUtilities , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkUtilities , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "root-akutilities")]
+impl AkUtilities { # [doc = "`FixSlashes(*mut::unity2::Il2CppString, u16, u16, bool)` overload"] pub fn fix_slashes (separator_char : impl :: core :: convert :: Into < u16 > , bad_char : impl :: core :: convert :: Into < u16 > , add_trailing_slash : impl :: core :: convert :: Into < bool >) -> :: unity2 :: Il2CppString { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < :: unity2 :: Il2CppString > :: uninit () ; __AkUtilities_unity2_raw :: fix_slashes (__out_0 . as_mut_ptr () , :: core :: convert :: Into :: into (separator_char) , :: core :: convert :: Into :: into (bad_char) , :: core :: convert :: Into :: into (add_trailing_slash) , :: core :: option :: Option :: None) ; __out_0 . assume_init () } } # [doc = "`FixSlashes(*mut::unity2::Il2CppString)` overload"] pub fn fix_slashes_2 () -> :: unity2 :: Il2CppString { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < :: unity2 :: Il2CppString > :: uninit () ; __AkUtilities_unity2_raw :: fix_slashes_2 (__out_0 . as_mut_ptr () , :: core :: option :: Option :: None) ; __out_0 . assume_init () } } }
+
+#[cfg(feature = "root-akutilities")]
+pub trait IAkUtilitiesMethods : IAkUtilities { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AkUtilities as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkUtilities_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "root-akutilities")]
+impl < __T : IAkUtilities > IAkUtilitiesMethods for __T { }
+
+#[cfg(feature = "root-akutilities")]
+impl AkUtilities { pub fn fix_slashes_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkUtilities_unity2_raw :: __lookup_fix_slashes :: get_method_info () } pub fn fix_slashes_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkUtilities_unity2_raw :: __lookup_fix_slashes_2 :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkUtilities_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "root-akutilities")]
 impl AkUtilities {
-    #[doc = "`FixSlashes(*mut::unity2::Il2CppString, u16, u16, bool)` overload"]
-    pub fn fix_slashes(
-        separator_char: impl ::core::convert::Into<u16>,
-        bad_char: impl ::core::convert::Into<u16>,
-        add_trailing_slash: impl ::core::convert::Into<bool>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<::unity2::Il2CppString>::uninit();
-            __AkUtilities_unity2_raw::fix_slashes(
-                __out_0.as_mut_ptr(),
-                ::core::convert::Into::into(separator_char),
-                ::core::convert::Into::into(bad_char),
-                ::core::convert::Into::into(add_trailing_slash),
-                ::core::option::Option::None,
-            );
-            __out_0.assume_init()
-        }
-    }
-
-    #[doc = "`FixSlashes(*mut::unity2::Il2CppString)` overload"]
-    pub fn fix_slashes_2() -> ::unity2::Il2CppString {
-        unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<::unity2::Il2CppString>::uninit();
-            __AkUtilities_unity2_raw::fix_slashes_2(__out_0.as_mut_ptr(), ::core::option::Option::None);
-            __out_0.assume_init()
-        }
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkUtilities) , :: core :: stringify ! (new) ,)) ; < Self as IAkUtilitiesMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "root-akutilities")]
-pub trait IAkUtilitiesMethods: IAkUtilities {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <AkUtilities as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkUtilities_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __AkUtilities_ShortIDGenerator_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkUtilities_ShortIDGenerator as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkUtilities_ShortIDGenerator as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_hash_size { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkUtilities_ShortIDGenerator as :: unity2 :: ClassIdentity > :: class () , "get_HashSize" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkUtilities_ShortIDGenerator as :: unity2 :: ClassIdentity > :: NAME , "get_HashSize" , e) , } } } pub unsafe fn get_hash_size (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> u8 { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute (__lookup_get_hash_size :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_hash_size { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< u8 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkUtilities_ShortIDGenerator as :: unity2 :: ClassIdentity > :: class () , "set_HashSize" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkUtilities_ShortIDGenerator as :: unity2 :: ClassIdentity > :: NAME , "set_HashSize" , e) , } } } pub unsafe fn set_hash_size (value : u8 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (u8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_hash_size :: get_method_info () . method_ptr ,) ; inner (value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_compute { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkUtilities_ShortIDGenerator as :: unity2 :: ClassIdentity > :: class () , "Compute" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkUtilities_ShortIDGenerator as :: unity2 :: ClassIdentity > :: NAME , "Compute" , e) , } } } pub unsafe fn compute (in_name : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> u32 { let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> u32 = :: core :: mem :: transmute (__lookup_compute :: get_method_info () . method_ptr ,) ; inner (in_name , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkUtilities_ShortIDGenerator as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkUtilities_ShortIDGenerator as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : AkUtilities_ShortIDGenerator , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkUtilities_ShortIDGenerator , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "root-akutilities")]
-impl<__T: IAkUtilities> IAkUtilitiesMethods for __T {}
+impl AkUtilities_ShortIDGenerator { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { __AkUtilities_ShortIDGenerator_unity2_raw :: cctor (:: core :: option :: Option :: None) } } # [doc = "`get_HashSize()` overload"] pub fn get_hash_size () -> u8 { unsafe { __AkUtilities_ShortIDGenerator_unity2_raw :: get_hash_size (:: core :: option :: Option :: None) } } # [doc = "`set_HashSize(u8)` overload"] pub fn set_hash_size (value : impl :: core :: convert :: Into < u8 >) -> () { unsafe { __AkUtilities_ShortIDGenerator_unity2_raw :: set_hash_size (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`Compute(::unity2::Il2CppString)` overload"] pub fn compute (in_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> u32 { unsafe { __AkUtilities_ShortIDGenerator_unity2_raw :: compute (:: core :: convert :: Into :: into (in_name) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "root-akutilities")]
-impl AkUtilities {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(AkUtilities), ::core::stringify!(new),));
-        <Self as IAkUtilitiesMethods>::ctor(this);
-        this
-    }
-}
+pub trait IAkUtilities_ShortIDGeneratorMethods : IAkUtilities_ShortIDGenerator { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AkUtilities_ShortIDGenerator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkUtilities_ShortIDGenerator_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "root-akutilities")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AkUtilities_ShortIDGenerator_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkUtilities_ShortIDGenerator as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkUtilities_ShortIDGenerator as ::unity2::ClassIdentity>::NAME,
-                        ".cctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_hash_size {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkUtilities_ShortIDGenerator as ::unity2::ClassIdentity>::class(),
-                "get_HashSize",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkUtilities_ShortIDGenerator as ::unity2::ClassIdentity>::NAME,
-                        "get_HashSize",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_hash_size(__unity2_method_info: ::unity2::OptionalMethod) -> u8 {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> u8 = ::core::mem::transmute(__lookup_get_hash_size::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_hash_size {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u8 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkUtilities_ShortIDGenerator as ::unity2::ClassIdentity>::class(),
-                "set_HashSize",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkUtilities_ShortIDGenerator as ::unity2::ClassIdentity>::NAME,
-                        "set_HashSize",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_hash_size(value: u8, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(u8, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_set_hash_size::get_method_info().method_ptr);
-        inner(value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_compute {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkUtilities_ShortIDGenerator as ::unity2::ClassIdentity>::class(),
-                "Compute",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkUtilities_ShortIDGenerator as ::unity2::ClassIdentity>::NAME,
-                        "Compute",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn compute(in_name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> u32 {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> u32 =
-            ::core::mem::transmute(__lookup_compute::get_method_info().method_ptr);
-        inner(in_name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkUtilities_ShortIDGenerator as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkUtilities_ShortIDGenerator as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: AkUtilities_ShortIDGenerator, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AkUtilities_ShortIDGenerator, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+impl < __T : IAkUtilities_ShortIDGenerator > IAkUtilities_ShortIDGeneratorMethods for __T { }
+
+#[cfg(feature = "root-akutilities")]
+impl AkUtilities_ShortIDGenerator { pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkUtilities_ShortIDGenerator_unity2_raw :: __lookup_cctor :: get_method_info () } pub fn get_hash_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkUtilities_ShortIDGenerator_unity2_raw :: __lookup_get_hash_size :: get_method_info () } pub fn set_hash_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkUtilities_ShortIDGenerator_unity2_raw :: __lookup_set_hash_size :: get_method_info () } pub fn compute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkUtilities_ShortIDGenerator_unity2_raw :: __lookup_compute :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkUtilities_ShortIDGenerator_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "root-akutilities")]
 impl AkUtilities_ShortIDGenerator {
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __AkUtilities_ShortIDGenerator_unity2_raw::cctor(::core::option::Option::None) }
-    }
-
-    #[doc = "`get_HashSize()` overload"]
-    pub fn get_hash_size() -> u8 {
-        unsafe { __AkUtilities_ShortIDGenerator_unity2_raw::get_hash_size(::core::option::Option::None) }
-    }
-
-    #[doc = "`set_HashSize(u8)` overload"]
-    pub fn set_hash_size(value: impl ::core::convert::Into<u8>) -> () {
-        unsafe { __AkUtilities_ShortIDGenerator_unity2_raw::set_hash_size(::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`Compute(::unity2::Il2CppString)` overload"]
-    pub fn compute(in_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> u32 {
-        unsafe { __AkUtilities_ShortIDGenerator_unity2_raw::compute(::core::convert::Into::into(in_name), ::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "root-akutilities")]
-pub trait IAkUtilities_ShortIDGeneratorMethods: IAkUtilities_ShortIDGenerator {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <AkUtilities_ShortIDGenerator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkUtilities_ShortIDGenerator_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "root-akutilities")]
-impl<__T: IAkUtilities_ShortIDGenerator> IAkUtilities_ShortIDGeneratorMethods for __T {}
-
-#[cfg(feature = "root-akutilities")]
-impl AkUtilities_ShortIDGenerator {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AkUtilities_ShortIDGenerator),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAkUtilities_ShortIDGeneratorMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkUtilities_ShortIDGenerator) , :: core :: stringify ! (new) ,)) ; < Self as IAkUtilities_ShortIDGeneratorMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "root-akutilities")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{
-        AkUtilities, AkUtilities_ShortIDGenerator, IAkUtilities, IAkUtilitiesMethods, IAkUtilities_ShortIDGenerator,
-        IAkUtilities_ShortIDGeneratorMethods,
-    };
+    pub use super::AkUtilities;
+    pub use super::IAkUtilities;
+    pub use super::IAkUtilitiesMethods;
+    pub use super::AkUtilities_ShortIDGenerator;
+    pub use super::IAkUtilities_ShortIDGenerator;
+    pub use super::IAkUtilities_ShortIDGeneratorMethods;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

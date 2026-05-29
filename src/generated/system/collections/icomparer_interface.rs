@@ -2,91 +2,34 @@
 
 #[cfg(feature = "system-collections-icomparer_interface-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/icomparer_interface/IComparer_Interface.md"))]
-    #[::unity2::class(namespace = "System.Collections", name = "IComparer")]
-    pub struct IComparer_Interface {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/icomparer_interface/IComparer_Interface.md"))] # [:: unity2 :: class (namespace = "System.Collections" , name = "IComparer")] pub struct IComparer_Interface {}
+
 }
 
 #[cfg(feature = "system-collections-icomparer_interface-types")]
 pub use __types::*;
 
 #[cfg(feature = "system-collections-icomparer_interface")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __IComparer_Interface_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_compare {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <IComparer_Interface as ::unity2::ClassIdentity>::class(),
-                "Compare",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <IComparer_Interface as ::unity2::ClassIdentity>::NAME,
-                        "Compare",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn compare(
-        this: IComparer_Interface,
-        x: crate::system::object::Object,
-        y: crate::system::object::Object,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(IComparer_Interface, crate::system::object::Object, crate::system::object::Object, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_compare::get_method_info().method_ptr);
-        inner(this, x, y, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __IComparer_Interface_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_compare { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type () , < crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< IComparer_Interface as :: unity2 :: ClassIdentity > :: class () , "Compare" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < IComparer_Interface as :: unity2 :: ClassIdentity > :: NAME , "Compare" , e) , } } } pub unsafe fn compare (this : IComparer_Interface , x : crate :: system :: object :: Object , y : crate :: system :: object :: Object , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (IComparer_Interface , crate :: system :: object :: Object , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_compare :: get_method_info () . method_ptr ,) ; inner (this , x , y , __unity2_method_info) } }
 
 #[cfg(feature = "system-collections-icomparer_interface")]
-pub trait IIComparer_InterfaceMethods: IIComparer_Interface {
-    #[doc = "`Compare(crate::system::object::Object, crate::system::object::Object)` overload"]
-    fn compare(
-        self,
-        x: impl ::core::convert::Into<crate::system::object::Object>,
-        y: impl ::core::convert::Into<crate::system::object::Object>,
-    ) -> i32 {
-        unsafe {
-            let __receiver = <IComparer_Interface as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __IComparer_Interface_unity2_raw::compare(
-                __receiver,
-                ::core::convert::Into::into(x),
-                ::core::convert::Into::into(y),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+pub trait IIComparer_InterfaceMethods : IIComparer_Interface { # [doc = "`Compare(crate::system::object::Object, crate::system::object::Object)` overload"] fn compare (self , x : impl :: core :: convert :: Into < crate :: system :: object :: Object > , y : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> i32 { unsafe { let __receiver = < IComparer_Interface as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IComparer_Interface_unity2_raw :: compare (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (y) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "system-collections-icomparer_interface")]
-impl<__T: IIComparer_Interface> IIComparer_InterfaceMethods for __T {}
+impl < __T : IIComparer_Interface > IIComparer_InterfaceMethods for __T { }
+
+#[cfg(feature = "system-collections-icomparer_interface")]
+impl IComparer_Interface { pub fn compare_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __IComparer_Interface_unity2_raw :: __lookup_compare :: get_method_info () } }
 
 #[cfg(feature = "system-collections-icomparer_interface")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IComparer_Interface, IIComparer_Interface, IIComparer_InterfaceMethods};
+    pub use super::IComparer_Interface;
+    pub use super::IIComparer_Interface;
+    pub use super::IIComparer_InterfaceMethods;
 }

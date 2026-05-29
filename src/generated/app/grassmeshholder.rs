@@ -2,173 +2,63 @@
 
 #[cfg(feature = "app-grassmeshholder-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::{
-            object_2::{IObject_2, Object_2},
-            scriptableobject::{IScriptableObject, ScriptableObject},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/grassmeshholder/GrassMeshHolder.md"))]
-    #[::unity2::class(namespace = "App", name = "GrassMeshHolder")]
-    #[parent(crate::unity_engine::scriptableobject::ScriptableObject)]
-    pub struct GrassMeshHolder {
-        #[static_field]
-        #[rename(name = "StartNameWithOrgMeshNoVersion")]
-        pub start_name_with_org_mesh_no_version: i32,
-        #[static_field]
-        #[rename(name = "UV3MeshNoVersion")]
-        pub uv3_mesh_no_version: i32,
-        #[static_field]
-        #[rename(name = "CurrentVersion")]
-        pub current_version: i32,
-        #[offset(24)]
-        #[rename(name = "m_version")]
-        pub m_version: i32,
-        #[offset(28)]
-        #[rename(name = "m_splitNum")]
-        pub m_split_num: i32,
-        #[offset(32)]
-        #[rename(name = "m_offset")]
-        pub m_offset: crate::unity_engine::vector3::Vector3,
-        #[offset(44)]
-        #[rename(name = "m_size")]
-        pub m_size: crate::unity_engine::vector3::Vector3,
-        #[offset(56)]
-        #[rename(name = "m_meshes")]
-        pub m_meshes: crate::system::collections::generic::list_1::List_1<crate::unity_engine::mesh::Mesh>,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+ use crate :: unity_engine :: scriptableobject :: { IScriptableObject , ScriptableObject }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/grassmeshholder/GrassMeshHolder.md"))] # [:: unity2 :: class (namespace = "App" , name = "GrassMeshHolder")] # [parent (crate :: unity_engine :: scriptableobject :: ScriptableObject)] pub struct GrassMeshHolder {
+# [static_field] # [rename (name = "StartNameWithOrgMeshNoVersion")] pub start_name_with_org_mesh_no_version : i32 ,
+# [static_field] # [rename (name = "UV3MeshNoVersion")] pub uv3_mesh_no_version : i32 ,
+# [static_field] # [rename (name = "CurrentVersion")] pub current_version : i32 ,
+# [offset (24)] # [rename (name = "m_version")] pub m_version : i32 ,
+# [offset (28)] # [rename (name = "m_splitNum")] pub m_split_num : i32 ,
+# [offset (32)] # [rename (name = "m_offset")] pub m_offset : crate :: unity_engine :: vector3 :: Vector3 ,
+# [offset (44)] # [rename (name = "m_size")] pub m_size : crate :: unity_engine :: vector3 :: Vector3 ,
+# [offset (56)] # [rename (name = "m_meshes")] pub m_meshes : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: mesh :: Mesh > ,
+}
+
 }
 
 #[cfg(feature = "app-grassmeshholder-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-grassmeshholder")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __GrassMeshHolder_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GrassMeshHolder as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GrassMeshHolder as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: GrassMeshHolder, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GrassMeshHolder, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GrassMeshHolder as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GrassMeshHolder as ::unity2::ClassIdentity>::NAME,
-                        ".cctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __GrassMeshHolder_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GrassMeshHolder as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GrassMeshHolder as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : GrassMeshHolder , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GrassMeshHolder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GrassMeshHolder as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GrassMeshHolder as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
+
+#[cfg(feature = "app-grassmeshholder")]
+impl GrassMeshHolder { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { __GrassMeshHolder_unity2_raw :: cctor (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-grassmeshholder")]
+pub trait IGrassMeshHolderMethods : IGrassMeshHolder { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GrassMeshHolder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GrassMeshHolder_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-grassmeshholder")]
+impl < __T : IGrassMeshHolder > IGrassMeshHolderMethods for __T { }
+
+#[cfg(feature = "app-grassmeshholder")]
+impl GrassMeshHolder { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GrassMeshHolder_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GrassMeshHolder_unity2_raw :: __lookup_cctor :: get_method_info () } }
 
 #[cfg(feature = "app-grassmeshholder")]
 impl GrassMeshHolder {
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __GrassMeshHolder_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-grassmeshholder")]
-pub trait IGrassMeshHolderMethods: IGrassMeshHolder {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <GrassMeshHolder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GrassMeshHolder_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-grassmeshholder")]
-impl<__T: IGrassMeshHolder> IGrassMeshHolderMethods for __T {}
-
-#[cfg(feature = "app-grassmeshholder")]
-impl GrassMeshHolder {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GrassMeshHolder),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGrassMeshHolderMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GrassMeshHolder) , :: core :: stringify ! (new) ,)) ; < Self as IGrassMeshHolderMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-grassmeshholder")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{GrassMeshHolder, IGrassMeshHolder, IGrassMeshHolderMethods};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    #[cfg(feature = "unity_engine-scriptableobject")]
-    pub use crate::unity_engine::scriptableobject::IScriptableObjectMethods;
-    pub use crate::{
-        system::object::IObject,
-        unity_engine::{object_2::IObject_2, scriptableobject::IScriptableObject},
-    };
+    pub use super::GrassMeshHolder;
+    pub use super::IGrassMeshHolder;
+    pub use super::IGrassMeshHolderMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::object_2::IObject_2;
+    pub use crate::unity_engine::scriptableobject::IScriptableObject;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
+    #[cfg(feature = "unity_engine-scriptableobject")] pub use crate::unity_engine::scriptableobject::IScriptableObjectMethods;
 }

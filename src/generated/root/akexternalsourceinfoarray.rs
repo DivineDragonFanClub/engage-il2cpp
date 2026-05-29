@@ -2,358 +2,47 @@
 
 #[cfg(feature = "root-akexternalsourceinfoarray-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        root::akbasearray_1::{AkBaseArray_1, IAkBaseArray_1},
-        system::object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akexternalsourceinfoarray/AkExternalSourceInfoArray.md"))]
-    #[::unity2::class(namespace = "", name = "AkExternalSourceInfoArray")]
-    # [parent (crate :: root :: akbasearray_1 :: AkBaseArray_1 < crate :: root :: akexternalsourceinfo :: AkExternalSourceInfo >)]
-    pub struct AkExternalSourceInfoArray {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: root :: akbasearray_1 :: { AkBaseArray_1 , IAkBaseArray_1 }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akexternalsourceinfoarray/AkExternalSourceInfoArray.md"))] # [:: unity2 :: class (namespace = "" , name = "AkExternalSourceInfoArray")] # [parent (crate :: root :: akbasearray_1 :: AkBaseArray_1 < crate :: root :: akexternalsourceinfo :: AkExternalSourceInfo >)] pub struct AkExternalSourceInfoArray {}
+
 }
 
 #[cfg(feature = "root-akexternalsourceinfoarray-types")]
 pub use __types::*;
 
 #[cfg(feature = "root-akexternalsourceinfoarray")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AkExternalSourceInfoArray_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkExternalSourceInfoArray as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkExternalSourceInfoArray as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: AkExternalSourceInfoArray, count: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AkExternalSourceInfoArray, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, count, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_structure_size {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkExternalSourceInfoArray as ::unity2::ClassIdentity>::class(),
-                "get_StructureSize",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkExternalSourceInfoArray as ::unity2::ClassIdentity>::NAME,
-                        "get_StructureSize",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_structure_size(this: AkExternalSourceInfoArray, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AkExternalSourceInfoArray, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_structure_size::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_default_construct_at_int_ptr {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkExternalSourceInfoArray as ::unity2::ClassIdentity>::class(),
-                "DefaultConstructAtIntPtr",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkExternalSourceInfoArray as ::unity2::ClassIdentity>::NAME,
-                        "DefaultConstructAtIntPtr",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn default_construct_at_int_ptr(
-        this: AkExternalSourceInfoArray,
-        address: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(AkExternalSourceInfoArray, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_default_construct_at_int_ptr::get_method_info().method_ptr);
-        inner(this, address, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_release_allocated_memory_from_reference_at_int_ptr {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkExternalSourceInfoArray as ::unity2::ClassIdentity>::class(),
-                "ReleaseAllocatedMemoryFromReferenceAtIntPtr",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkExternalSourceInfoArray as ::unity2::ClassIdentity>::NAME,
-                        "ReleaseAllocatedMemoryFromReferenceAtIntPtr",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn release_allocated_memory_from_reference_at_int_ptr(
-        this: AkExternalSourceInfoArray,
-        address: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(AkExternalSourceInfoArray, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_release_allocated_memory_from_reference_at_int_ptr::get_method_info().method_ptr);
-        inner(this, address, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_new_reference_from_int_ptr {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkExternalSourceInfoArray as ::unity2::ClassIdentity>::class(),
-                "CreateNewReferenceFromIntPtr",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkExternalSourceInfoArray as ::unity2::ClassIdentity>::NAME,
-                        "CreateNewReferenceFromIntPtr",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_new_reference_from_int_ptr(
-        this: AkExternalSourceInfoArray,
-        address: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::root::akexternalsourceinfo::AkExternalSourceInfo {
-        let inner: extern "C" fn(
-            AkExternalSourceInfoArray,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> crate::root::akexternalsourceinfo::AkExternalSourceInfo =
-            ::core::mem::transmute(__lookup_create_new_reference_from_int_ptr::get_method_info().method_ptr);
-        inner(this, address, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_clone_into_reference_from_int_ptr {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-                <crate::root::akexternalsourceinfo::AkExternalSourceInfo as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkExternalSourceInfoArray as ::unity2::ClassIdentity>::class(),
-                "CloneIntoReferenceFromIntPtr",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkExternalSourceInfoArray as ::unity2::ClassIdentity>::NAME,
-                        "CloneIntoReferenceFromIntPtr",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn clone_into_reference_from_int_ptr(
-        this: AkExternalSourceInfoArray,
-        address: ::unity2::IntPtr,
-        other: crate::root::akexternalsourceinfo::AkExternalSourceInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            AkExternalSourceInfoArray,
-            ::unity2::IntPtr,
-            crate::root::akexternalsourceinfo::AkExternalSourceInfo,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_clone_into_reference_from_int_ptr::get_method_info().method_ptr);
-        inner(this, address, other, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __AkExternalSourceInfoArray_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkExternalSourceInfoArray as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkExternalSourceInfoArray as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : AkExternalSourceInfoArray , count : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkExternalSourceInfoArray , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , count , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_structure_size { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkExternalSourceInfoArray as :: unity2 :: ClassIdentity > :: class () , "get_StructureSize" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkExternalSourceInfoArray as :: unity2 :: ClassIdentity > :: NAME , "get_StructureSize" , e) , } } } pub unsafe fn get_structure_size (this : AkExternalSourceInfoArray , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (AkExternalSourceInfoArray , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_structure_size :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_default_construct_at_int_ptr { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkExternalSourceInfoArray as :: unity2 :: ClassIdentity > :: class () , "DefaultConstructAtIntPtr" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkExternalSourceInfoArray as :: unity2 :: ClassIdentity > :: NAME , "DefaultConstructAtIntPtr" , e) , } } } pub unsafe fn default_construct_at_int_ptr (this : AkExternalSourceInfoArray , address : :: unity2 :: IntPtr , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkExternalSourceInfoArray , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_default_construct_at_int_ptr :: get_method_info () . method_ptr ,) ; inner (this , address , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_release_allocated_memory_from_reference_at_int_ptr { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkExternalSourceInfoArray as :: unity2 :: ClassIdentity > :: class () , "ReleaseAllocatedMemoryFromReferenceAtIntPtr" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkExternalSourceInfoArray as :: unity2 :: ClassIdentity > :: NAME , "ReleaseAllocatedMemoryFromReferenceAtIntPtr" , e) , } } } pub unsafe fn release_allocated_memory_from_reference_at_int_ptr (this : AkExternalSourceInfoArray , address : :: unity2 :: IntPtr , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkExternalSourceInfoArray , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_release_allocated_memory_from_reference_at_int_ptr :: get_method_info () . method_ptr ,) ; inner (this , address , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_new_reference_from_int_ptr { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkExternalSourceInfoArray as :: unity2 :: ClassIdentity > :: class () , "CreateNewReferenceFromIntPtr" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkExternalSourceInfoArray as :: unity2 :: ClassIdentity > :: NAME , "CreateNewReferenceFromIntPtr" , e) , } } } pub unsafe fn create_new_reference_from_int_ptr (this : AkExternalSourceInfoArray , address : :: unity2 :: IntPtr , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: root :: akexternalsourceinfo :: AkExternalSourceInfo { let inner : extern "C" fn (AkExternalSourceInfoArray , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> crate :: root :: akexternalsourceinfo :: AkExternalSourceInfo = :: core :: mem :: transmute (__lookup_create_new_reference_from_int_ptr :: get_method_info () . method_ptr ,) ; inner (this , address , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_clone_into_reference_from_int_ptr { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type () , < crate :: root :: akexternalsourceinfo :: AkExternalSourceInfo as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkExternalSourceInfoArray as :: unity2 :: ClassIdentity > :: class () , "CloneIntoReferenceFromIntPtr" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkExternalSourceInfoArray as :: unity2 :: ClassIdentity > :: NAME , "CloneIntoReferenceFromIntPtr" , e) , } } } pub unsafe fn clone_into_reference_from_int_ptr (this : AkExternalSourceInfoArray , address : :: unity2 :: IntPtr , other : crate :: root :: akexternalsourceinfo :: AkExternalSourceInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkExternalSourceInfoArray , :: unity2 :: IntPtr , crate :: root :: akexternalsourceinfo :: AkExternalSourceInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_clone_into_reference_from_int_ptr :: get_method_info () . method_ptr ,) ; inner (this , address , other , __unity2_method_info) } }
 
 #[cfg(feature = "root-akexternalsourceinfoarray")]
-pub trait IAkExternalSourceInfoArrayMethods: IAkExternalSourceInfoArray {
-    #[doc = "`.ctor(i32)` overload"]
-    fn ctor(self, count: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver =
-                <AkExternalSourceInfoArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkExternalSourceInfoArray_unity2_raw::ctor(__receiver, ::core::convert::Into::into(count), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_StructureSize()` overload"]
-    fn get_structure_size(self) -> i32 {
-        unsafe {
-            let __receiver =
-                <AkExternalSourceInfoArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkExternalSourceInfoArray_unity2_raw::get_structure_size(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`DefaultConstructAtIntPtr(::unity2::IntPtr)` overload"]
-    fn default_construct_at_int_ptr(self, address: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
-        unsafe {
-            let __receiver =
-                <AkExternalSourceInfoArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkExternalSourceInfoArray_unity2_raw::default_construct_at_int_ptr(
-                __receiver,
-                ::core::convert::Into::into(address),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ReleaseAllocatedMemoryFromReferenceAtIntPtr(::unity2::IntPtr)` overload"]
-    fn release_allocated_memory_from_reference_at_int_ptr(self, address: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
-        unsafe {
-            let __receiver =
-                <AkExternalSourceInfoArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkExternalSourceInfoArray_unity2_raw::release_allocated_memory_from_reference_at_int_ptr(
-                __receiver,
-                ::core::convert::Into::into(address),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CreateNewReferenceFromIntPtr(::unity2::IntPtr)` overload"]
-    fn create_new_reference_from_int_ptr(
-        self,
-        address: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> crate::root::akexternalsourceinfo::AkExternalSourceInfo {
-        unsafe {
-            let __receiver =
-                <AkExternalSourceInfoArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkExternalSourceInfoArray_unity2_raw::create_new_reference_from_int_ptr(
-                __receiver,
-                ::core::convert::Into::into(address),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CloneIntoReferenceFromIntPtr(::unity2::IntPtr, crate::root::akexternalsourceinfo::AkExternalSourceInfo)` overload"]
-    fn clone_into_reference_from_int_ptr(
-        self,
-        address: impl ::core::convert::Into<::unity2::IntPtr>,
-        other: impl ::core::convert::Into<crate::root::akexternalsourceinfo::AkExternalSourceInfo>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <AkExternalSourceInfoArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkExternalSourceInfoArray_unity2_raw::clone_into_reference_from_int_ptr(
-                __receiver,
-                ::core::convert::Into::into(address),
-                ::core::convert::Into::into(other),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+pub trait IAkExternalSourceInfoArrayMethods : IAkExternalSourceInfoArray { # [doc = "`.ctor(i32)` overload"] fn ctor (self , count : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < AkExternalSourceInfoArray as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkExternalSourceInfoArray_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (count) , :: core :: option :: Option :: None) } } # [doc = "`get_StructureSize()` overload"] fn get_structure_size (self ,) -> i32 { unsafe { let __receiver = < AkExternalSourceInfoArray as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkExternalSourceInfoArray_unity2_raw :: get_structure_size (__receiver , :: core :: option :: Option :: None) } } # [doc = "`DefaultConstructAtIntPtr(::unity2::IntPtr)` overload"] fn default_construct_at_int_ptr (self , address : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < AkExternalSourceInfoArray as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkExternalSourceInfoArray_unity2_raw :: default_construct_at_int_ptr (__receiver , :: core :: convert :: Into :: into (address) , :: core :: option :: Option :: None) } } # [doc = "`ReleaseAllocatedMemoryFromReferenceAtIntPtr(::unity2::IntPtr)` overload"] fn release_allocated_memory_from_reference_at_int_ptr (self , address : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < AkExternalSourceInfoArray as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkExternalSourceInfoArray_unity2_raw :: release_allocated_memory_from_reference_at_int_ptr (__receiver , :: core :: convert :: Into :: into (address) , :: core :: option :: Option :: None) } } # [doc = "`CreateNewReferenceFromIntPtr(::unity2::IntPtr)` overload"] fn create_new_reference_from_int_ptr (self , address : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> crate :: root :: akexternalsourceinfo :: AkExternalSourceInfo { unsafe { let __receiver = < AkExternalSourceInfoArray as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkExternalSourceInfoArray_unity2_raw :: create_new_reference_from_int_ptr (__receiver , :: core :: convert :: Into :: into (address) , :: core :: option :: Option :: None) } } # [doc = "`CloneIntoReferenceFromIntPtr(::unity2::IntPtr, crate::root::akexternalsourceinfo::AkExternalSourceInfo)` overload"] fn clone_into_reference_from_int_ptr (self , address : impl :: core :: convert :: Into < :: unity2 :: IntPtr > , other : impl :: core :: convert :: Into < crate :: root :: akexternalsourceinfo :: AkExternalSourceInfo >) -> () { unsafe { let __receiver = < AkExternalSourceInfoArray as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkExternalSourceInfoArray_unity2_raw :: clone_into_reference_from_int_ptr (__receiver , :: core :: convert :: Into :: into (address) , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "root-akexternalsourceinfoarray")]
-impl<__T: IAkExternalSourceInfoArray> IAkExternalSourceInfoArrayMethods for __T {}
+impl < __T : IAkExternalSourceInfoArray > IAkExternalSourceInfoArrayMethods for __T { }
+
+#[cfg(feature = "root-akexternalsourceinfoarray")]
+impl AkExternalSourceInfoArray { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkExternalSourceInfoArray_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn get_structure_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkExternalSourceInfoArray_unity2_raw :: __lookup_get_structure_size :: get_method_info () } pub fn default_construct_at_int_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkExternalSourceInfoArray_unity2_raw :: __lookup_default_construct_at_int_ptr :: get_method_info () } pub fn release_allocated_memory_from_reference_at_int_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkExternalSourceInfoArray_unity2_raw :: __lookup_release_allocated_memory_from_reference_at_int_ptr :: get_method_info () } pub fn create_new_reference_from_int_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkExternalSourceInfoArray_unity2_raw :: __lookup_create_new_reference_from_int_ptr :: get_method_info () } pub fn clone_into_reference_from_int_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkExternalSourceInfoArray_unity2_raw :: __lookup_clone_into_reference_from_int_ptr :: get_method_info () } }
 
 #[cfg(feature = "root-akexternalsourceinfoarray")]
 impl AkExternalSourceInfoArray {
-    #[doc = "`.ctor(i32)` — overload selector"]
-    pub fn new(count: i32) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AkExternalSourceInfoArray),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAkExternalSourceInfoArrayMethods>::ctor(this, count);
-        this
-    }
+# [doc = "`.ctor(i32)` — overload selector"] pub fn new (count : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkExternalSourceInfoArray) , :: core :: stringify ! (new) ,)) ; < Self as IAkExternalSourceInfoArrayMethods > :: ctor (this , count) ; this }
 }
 
 #[cfg(feature = "root-akexternalsourceinfoarray")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{AkExternalSourceInfoArray, IAkExternalSourceInfoArray, IAkExternalSourceInfoArrayMethods};
-    #[cfg(feature = "root-akbasearray_1")]
-    pub use crate::root::akbasearray_1::IAkBaseArray_1Methods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::{root::akbasearray_1::IAkBaseArray_1, system::object::IObject};
+    pub use super::AkExternalSourceInfoArray;
+    pub use super::IAkExternalSourceInfoArray;
+    pub use super::IAkExternalSourceInfoArrayMethods;
+    pub use crate::root::akbasearray_1::IAkBaseArray_1;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "root-akbasearray_1")] pub use crate::root::akbasearray_1::IAkBaseArray_1Methods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

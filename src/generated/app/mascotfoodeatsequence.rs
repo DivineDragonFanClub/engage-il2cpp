@@ -2,559 +2,114 @@
 
 #[cfg(feature = "app-mascotfoodeatsequence-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::{
-            procinst::{IProcInst, ProcInst},
-            singletonprocinst_1::{ISingletonProcInst_1, SingletonProcInst_1},
-        },
-        system::{
-            object::{IObject, Object},
-            r#enum::{Enum, IEnum},
-            valuetype::{IValueType, ValueType},
-        },
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mascotfoodeatsequence/MascotFoodEatSequence_Label.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct MascotFoodEatSequence_Label {
-        pub value: i32,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: procinst :: { IProcInst , ProcInst }
+ ;
+ use crate :: app :: singletonprocinst_1 :: { ISingletonProcInst_1 , SingletonProcInst_1 }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
 
-    impl ::unity2::ClassIdentity for MascotFoodEatSequence_Label {
-        const NAME: &'static str = "MascotFoodEatSequence.Label";
-        const NAMESPACE: &'static str = "App";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mascotfoodeatsequence/MascotFoodEatSequence_Label.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct MascotFoodEatSequence_Label  {
+    pub value: i32,
+}
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+
+impl  ::unity2::ClassIdentity for MascotFoodEatSequence_Label  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MascotFoodEatSequence.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for MascotFoodEatSequence_Label {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  ::unity2::IlType for MascotFoodEatSequence_Label  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl MascotFoodEatSequence_Label {
-        pub fn eat_food() -> Self {
-            Self { value: 0 }
-        }
+}
 
-        pub fn exit() -> Self {
-            Self { value: 1 }
-        }
+
+impl  MascotFoodEatSequence_Label  {
+    pub fn eat_food() -> Self {
+        Self { value: 0 }
+
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mascotfoodeatsequence/MascotFoodEatSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "MascotFoodEatSequence")]
-    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: mascotfoodeatsequence :: MascotFoodEatSequence >)]
-    pub struct MascotFoodEatSequence {
-        #[offset(120)]
-        #[rename(name = "m_foodStuffData")]
-        pub m_food_stuff_data: crate::app::foodstuffdata::FoodstuffData,
+
+    pub fn exit() -> Self {
+        Self { value: 1 }
+
     }
+
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mascotfoodeatsequence/MascotFoodEatSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "MascotFoodEatSequence")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: mascotfoodeatsequence :: MascotFoodEatSequence >)] pub struct MascotFoodEatSequence {
+# [offset (120)] # [rename (name = "m_foodStuffData")] pub m_food_stuff_data : crate :: app :: foodstuffdata :: FoodstuffData ,
+}
+
 }
 
 #[cfg(feature = "app-mascotfoodeatsequence-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-mascotfoodeatsequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MascotFoodEatSequence_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::foodstuffdata::FoodstuffData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MascotFoodEatSequence as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MascotFoodEatSequence as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: MascotFoodEatSequence,
-        foodstuff_data: crate::app::foodstuffdata::FoodstuffData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MascotFoodEatSequence, crate::app::foodstuffdata::FoodstuffData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, foodstuff_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_player_controller {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MascotFoodEatSequence as ::unity2::ClassIdentity>::class(),
-                "get_PlayerController",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MascotFoodEatSequence as ::unity2::ClassIdentity>::NAME,
-                        "get_PlayerController",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_player_controller(
-        this: MascotFoodEatSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::hubplayercontroller::HubPlayerController {
-        let inner: extern "C" fn(MascotFoodEatSequence, ::unity2::OptionalMethod) -> crate::app::hubplayercontroller::HubPlayerController =
-            ::core::mem::transmute(__lookup_get_player_controller::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_player {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MascotFoodEatSequence as ::unity2::ClassIdentity>::class(),
-                "get_Player",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MascotFoodEatSequence as ::unity2::ClassIdentity>::NAME,
-                        "get_Player",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_player(
-        this: MascotFoodEatSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::hubunitcontroller::HubUnitController {
-        let inner: extern "C" fn(MascotFoodEatSequence, ::unity2::OptionalMethod) -> crate::app::hubunitcontroller::HubUnitController =
-            ::core::mem::transmute(__lookup_get_player::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_mascot {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MascotFoodEatSequence as ::unity2::ClassIdentity>::class(),
-                "get_Mascot",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MascotFoodEatSequence as ::unity2::ClassIdentity>::NAME,
-                        "get_Mascot",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_mascot(
-        this: MascotFoodEatSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::hubmascotcontroller::HubMascotController {
-        let inner: extern "C" fn(MascotFoodEatSequence, ::unity2::OptionalMethod) -> crate::app::hubmascotcontroller::HubMascotController =
-            ::core::mem::transmute(__lookup_get_mascot::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_init_eat_food {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MascotFoodEatSequence as ::unity2::ClassIdentity>::class(),
-                "InitEatFood",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MascotFoodEatSequence as ::unity2::ClassIdentity>::NAME,
-                        "InitEatFood",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn init_eat_food(this: MascotFoodEatSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MascotFoodEatSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_init_eat_food::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_eat_food {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MascotFoodEatSequence as ::unity2::ClassIdentity>::class(),
-                "EatFood",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MascotFoodEatSequence as ::unity2::ClassIdentity>::NAME,
-                        "EatFood",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn eat_food(
-        this: MascotFoodEatSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::ienumerator::IEnumerator {
-        let inner: extern "C" fn(MascotFoodEatSequence, ::unity2::OptionalMethod) -> crate::system::collections::ienumerator::IEnumerator =
-            ::core::mem::transmute(__lookup_eat_food::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_exit_eat_food {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MascotFoodEatSequence as ::unity2::ClassIdentity>::class(),
-                "ExitEatFood",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MascotFoodEatSequence as ::unity2::ClassIdentity>::NAME,
-                        "ExitEatFood",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn exit_eat_food(this: MascotFoodEatSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MascotFoodEatSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_exit_eat_food::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_bond {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MascotFoodEatSequence as ::unity2::ClassIdentity>::class(),
-                "GetBond",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MascotFoodEatSequence as ::unity2::ClassIdentity>::NAME,
-                        "GetBond",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_bond(this: MascotFoodEatSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MascotFoodEatSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_get_bond::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_desc {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MascotFoodEatSequence as ::unity2::ClassIdentity>::class(),
-                "CreateDesc",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MascotFoodEatSequence as ::unity2::ClassIdentity>::NAME,
-                        "CreateDesc",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_desc(
-        this: MascotFoodEatSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Array<crate::app::procdesc::ProcDesc> {
-        let inner: extern "C" fn(MascotFoodEatSequence, ::unity2::OptionalMethod) -> ::unity2::Array<crate::app::procdesc::ProcDesc> =
-            ::core::mem::transmute(__lookup_create_desc::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <crate::app::foodstuffdata::FoodstuffData as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MascotFoodEatSequence as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MascotFoodEatSequence as ::unity2::ClassIdentity>::NAME,
-                        "CreateBind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        foodstuff_data: crate::app::foodstuffdata::FoodstuffData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::app::procinst::ProcInst, crate::app::foodstuffdata::FoodstuffData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
-        inner(super_, foodstuff_data, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MascotFoodEatSequence_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: foodstuffdata :: FoodstuffData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MascotFoodEatSequence as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MascotFoodEatSequence as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : MascotFoodEatSequence , foodstuff_data : crate :: app :: foodstuffdata :: FoodstuffData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MascotFoodEatSequence , crate :: app :: foodstuffdata :: FoodstuffData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , foodstuff_data , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_player_controller { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MascotFoodEatSequence as :: unity2 :: ClassIdentity > :: class () , "get_PlayerController" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MascotFoodEatSequence as :: unity2 :: ClassIdentity > :: NAME , "get_PlayerController" , e) , } } } pub unsafe fn get_player_controller (this : MascotFoodEatSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: hubplayercontroller :: HubPlayerController { let inner : extern "C" fn (MascotFoodEatSequence , :: unity2 :: OptionalMethod ,) -> crate :: app :: hubplayercontroller :: HubPlayerController = :: core :: mem :: transmute (__lookup_get_player_controller :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_player { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MascotFoodEatSequence as :: unity2 :: ClassIdentity > :: class () , "get_Player" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MascotFoodEatSequence as :: unity2 :: ClassIdentity > :: NAME , "get_Player" , e) , } } } pub unsafe fn get_player (this : MascotFoodEatSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: hubunitcontroller :: HubUnitController { let inner : extern "C" fn (MascotFoodEatSequence , :: unity2 :: OptionalMethod ,) -> crate :: app :: hubunitcontroller :: HubUnitController = :: core :: mem :: transmute (__lookup_get_player :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_mascot { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MascotFoodEatSequence as :: unity2 :: ClassIdentity > :: class () , "get_Mascot" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MascotFoodEatSequence as :: unity2 :: ClassIdentity > :: NAME , "get_Mascot" , e) , } } } pub unsafe fn get_mascot (this : MascotFoodEatSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: hubmascotcontroller :: HubMascotController { let inner : extern "C" fn (MascotFoodEatSequence , :: unity2 :: OptionalMethod ,) -> crate :: app :: hubmascotcontroller :: HubMascotController = :: core :: mem :: transmute (__lookup_get_mascot :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_init_eat_food { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MascotFoodEatSequence as :: unity2 :: ClassIdentity > :: class () , "InitEatFood" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MascotFoodEatSequence as :: unity2 :: ClassIdentity > :: NAME , "InitEatFood" , e) , } } } pub unsafe fn init_eat_food (this : MascotFoodEatSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MascotFoodEatSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_init_eat_food :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_eat_food { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MascotFoodEatSequence as :: unity2 :: ClassIdentity > :: class () , "EatFood" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MascotFoodEatSequence as :: unity2 :: ClassIdentity > :: NAME , "EatFood" , e) , } } } pub unsafe fn eat_food (this : MascotFoodEatSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { let inner : extern "C" fn (MascotFoodEatSequence , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute (__lookup_eat_food :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_exit_eat_food { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MascotFoodEatSequence as :: unity2 :: ClassIdentity > :: class () , "ExitEatFood" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MascotFoodEatSequence as :: unity2 :: ClassIdentity > :: NAME , "ExitEatFood" , e) , } } } pub unsafe fn exit_eat_food (this : MascotFoodEatSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MascotFoodEatSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_exit_eat_food :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_bond { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MascotFoodEatSequence as :: unity2 :: ClassIdentity > :: class () , "GetBond" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MascotFoodEatSequence as :: unity2 :: ClassIdentity > :: NAME , "GetBond" , e) , } } } pub unsafe fn get_bond (this : MascotFoodEatSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MascotFoodEatSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_get_bond :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_desc { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MascotFoodEatSequence as :: unity2 :: ClassIdentity > :: class () , "CreateDesc" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MascotFoodEatSequence as :: unity2 :: ClassIdentity > :: NAME , "CreateDesc" , e) , } } } pub unsafe fn create_desc (this : MascotFoodEatSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > { let inner : extern "C" fn (MascotFoodEatSequence , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > = :: core :: mem :: transmute (__lookup_create_desc :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_bind { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: foodstuffdata :: FoodstuffData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MascotFoodEatSequence as :: unity2 :: ClassIdentity > :: class () , "CreateBind" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MascotFoodEatSequence as :: unity2 :: ClassIdentity > :: NAME , "CreateBind" , e) , } } } pub unsafe fn create_bind (super_ : crate :: app :: procinst :: ProcInst , foodstuff_data : crate :: app :: foodstuffdata :: FoodstuffData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: foodstuffdata :: FoodstuffData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create_bind :: get_method_info () . method_ptr ,) ; inner (super_ , foodstuff_data , __unity2_method_info) } }
+
+#[cfg(feature = "app-mascotfoodeatsequence")]
+impl MascotFoodEatSequence { # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::foodstuffdata::FoodstuffData)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , foodstuff_data : impl :: core :: convert :: Into < crate :: app :: foodstuffdata :: FoodstuffData >) -> () { unsafe { __MascotFoodEatSequence_unity2_raw :: create_bind (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (foodstuff_data) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-mascotfoodeatsequence")]
+pub trait IMascotFoodEatSequenceMethods : IMascotFoodEatSequence { # [doc = "`.ctor(crate::app::foodstuffdata::FoodstuffData)` overload"] fn ctor (self , foodstuff_data : impl :: core :: convert :: Into < crate :: app :: foodstuffdata :: FoodstuffData >) -> () { unsafe { let __receiver = < MascotFoodEatSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MascotFoodEatSequence_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (foodstuff_data) , :: core :: option :: Option :: None) } } # [doc = "`get_PlayerController()` overload"] fn get_player_controller (self ,) -> crate :: app :: hubplayercontroller :: HubPlayerController { unsafe { let __receiver = < MascotFoodEatSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MascotFoodEatSequence_unity2_raw :: get_player_controller (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_Player()` overload"] fn get_player (self ,) -> crate :: app :: hubunitcontroller :: HubUnitController { unsafe { let __receiver = < MascotFoodEatSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MascotFoodEatSequence_unity2_raw :: get_player (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_Mascot()` overload"] fn get_mascot (self ,) -> crate :: app :: hubmascotcontroller :: HubMascotController { unsafe { let __receiver = < MascotFoodEatSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MascotFoodEatSequence_unity2_raw :: get_mascot (__receiver , :: core :: option :: Option :: None) } } # [doc = "`InitEatFood()` overload"] fn init_eat_food (self ,) -> () { unsafe { let __receiver = < MascotFoodEatSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MascotFoodEatSequence_unity2_raw :: init_eat_food (__receiver , :: core :: option :: Option :: None) } } # [doc = "`EatFood()` overload"] fn eat_food (self ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { let __receiver = < MascotFoodEatSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MascotFoodEatSequence_unity2_raw :: eat_food (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ExitEatFood()` overload"] fn exit_eat_food (self ,) -> () { unsafe { let __receiver = < MascotFoodEatSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MascotFoodEatSequence_unity2_raw :: exit_eat_food (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetBond()` overload"] fn get_bond (self ,) -> () { unsafe { let __receiver = < MascotFoodEatSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MascotFoodEatSequence_unity2_raw :: get_bond (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CreateDesc()` overload"] fn create_desc (self ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > { unsafe { let __receiver = < MascotFoodEatSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MascotFoodEatSequence_unity2_raw :: create_desc (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-mascotfoodeatsequence")]
+impl < __T : IMascotFoodEatSequence > IMascotFoodEatSequenceMethods for __T { }
+
+#[cfg(feature = "app-mascotfoodeatsequence")]
+impl MascotFoodEatSequence { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MascotFoodEatSequence_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn get_player_controller_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MascotFoodEatSequence_unity2_raw :: __lookup_get_player_controller :: get_method_info () } pub fn get_player_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MascotFoodEatSequence_unity2_raw :: __lookup_get_player :: get_method_info () } pub fn get_mascot_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MascotFoodEatSequence_unity2_raw :: __lookup_get_mascot :: get_method_info () } pub fn init_eat_food_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MascotFoodEatSequence_unity2_raw :: __lookup_init_eat_food :: get_method_info () } pub fn eat_food_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MascotFoodEatSequence_unity2_raw :: __lookup_eat_food :: get_method_info () } pub fn exit_eat_food_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MascotFoodEatSequence_unity2_raw :: __lookup_exit_eat_food :: get_method_info () } pub fn get_bond_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MascotFoodEatSequence_unity2_raw :: __lookup_get_bond :: get_method_info () } pub fn create_desc_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MascotFoodEatSequence_unity2_raw :: __lookup_create_desc :: get_method_info () } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MascotFoodEatSequence_unity2_raw :: __lookup_create_bind :: get_method_info () } }
 
 #[cfg(feature = "app-mascotfoodeatsequence")]
 impl MascotFoodEatSequence {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::foodstuffdata::FoodstuffData)` overload"]
-    pub fn create_bind(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        foodstuff_data: impl ::core::convert::Into<crate::app::foodstuffdata::FoodstuffData>,
-    ) -> () {
-        unsafe {
-            __MascotFoodEatSequence_unity2_raw::create_bind(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(foodstuff_data),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-mascotfoodeatsequence")]
-pub trait IMascotFoodEatSequenceMethods: IMascotFoodEatSequence {
-    #[doc = "`.ctor(crate::app::foodstuffdata::FoodstuffData)` overload"]
-    fn ctor(self, foodstuff_data: impl ::core::convert::Into<crate::app::foodstuffdata::FoodstuffData>) -> () {
-        unsafe {
-            let __receiver =
-                <MascotFoodEatSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MascotFoodEatSequence_unity2_raw::ctor(__receiver, ::core::convert::Into::into(foodstuff_data), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_PlayerController()` overload"]
-    fn get_player_controller(self) -> crate::app::hubplayercontroller::HubPlayerController {
-        unsafe {
-            let __receiver =
-                <MascotFoodEatSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MascotFoodEatSequence_unity2_raw::get_player_controller(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Player()` overload"]
-    fn get_player(self) -> crate::app::hubunitcontroller::HubUnitController {
-        unsafe {
-            let __receiver =
-                <MascotFoodEatSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MascotFoodEatSequence_unity2_raw::get_player(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Mascot()` overload"]
-    fn get_mascot(self) -> crate::app::hubmascotcontroller::HubMascotController {
-        unsafe {
-            let __receiver =
-                <MascotFoodEatSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MascotFoodEatSequence_unity2_raw::get_mascot(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`InitEatFood()` overload"]
-    fn init_eat_food(self) -> () {
-        unsafe {
-            let __receiver =
-                <MascotFoodEatSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MascotFoodEatSequence_unity2_raw::init_eat_food(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`EatFood()` overload"]
-    fn eat_food(self) -> crate::system::collections::ienumerator::IEnumerator {
-        unsafe {
-            let __receiver =
-                <MascotFoodEatSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MascotFoodEatSequence_unity2_raw::eat_food(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ExitEatFood()` overload"]
-    fn exit_eat_food(self) -> () {
-        unsafe {
-            let __receiver =
-                <MascotFoodEatSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MascotFoodEatSequence_unity2_raw::exit_eat_food(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetBond()` overload"]
-    fn get_bond(self) -> () {
-        unsafe {
-            let __receiver =
-                <MascotFoodEatSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MascotFoodEatSequence_unity2_raw::get_bond(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CreateDesc()` overload"]
-    fn create_desc(self) -> ::unity2::Array<crate::app::procdesc::ProcDesc> {
-        unsafe {
-            let __receiver =
-                <MascotFoodEatSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MascotFoodEatSequence_unity2_raw::create_desc(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-mascotfoodeatsequence")]
-impl<__T: IMascotFoodEatSequence> IMascotFoodEatSequenceMethods for __T {}
-
-#[cfg(feature = "app-mascotfoodeatsequence")]
-impl MascotFoodEatSequence {
-    #[doc = "`.ctor(crate::app::foodstuffdata::FoodstuffData)` — overload selector"]
-    pub fn new(foodstuff_data: crate::app::foodstuffdata::FoodstuffData) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MascotFoodEatSequence),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMascotFoodEatSequenceMethods>::ctor(this, foodstuff_data);
-        this
-    }
+# [doc = "`.ctor(crate::app::foodstuffdata::FoodstuffData)` — overload selector"] pub fn new (foodstuff_data : crate :: app :: foodstuffdata :: FoodstuffData) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MascotFoodEatSequence) , :: core :: stringify ! (new) ,)) ; < Self as IMascotFoodEatSequenceMethods > :: ctor (this , foodstuff_data) ; this }
 }
 
 #[cfg(feature = "app-mascotfoodeatsequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IMascotFoodEatSequence, IMascotFoodEatSequenceMethods, MascotFoodEatSequence, MascotFoodEatSequence_Label};
-    #[cfg(feature = "app-procinst")]
-    pub use crate::app::procinst::IProcInstMethods;
-    #[cfg(feature = "app-singletonprocinst_1")]
-    pub use crate::app::singletonprocinst_1::ISingletonProcInst_1Methods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::{
-        app::{procinst::IProcInst, singletonprocinst_1::ISingletonProcInst_1},
-        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
-    };
+    pub use super::MascotFoodEatSequence_Label;
+    pub use super::MascotFoodEatSequence;
+    pub use super::IMascotFoodEatSequence;
+    pub use super::IMascotFoodEatSequenceMethods;
+    pub use crate::app::procinst::IProcInst;
+    pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "app-procinst")] pub use crate::app::procinst::IProcInstMethods;
+    #[cfg(feature = "app-singletonprocinst_1")] pub use crate::app::singletonprocinst_1::ISingletonProcInst_1Methods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

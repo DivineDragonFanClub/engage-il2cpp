@@ -2,2033 +2,223 @@
 
 #[cfg(feature = "app-dragonridesequence-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::{
-            procinst::{IProcInst, ProcInst},
-            procscenesequence_1::{IProcSceneSequence_1, ProcSceneSequence_1},
-            singletonprocinst_1::{ISingletonProcInst_1, SingletonProcInst_1},
-        },
-        system::{
-            object::{IObject, Object},
-            r#enum::{Enum, IEnum},
-            valuetype::{IValueType, ValueType},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonridesequence/DragonRideSequence_PrizeData.md"))]
-    #[::unity2::class(namespace = "App", name = "DragonRideSequence.PrizeData")]
-    #[parent(crate::system::object::Object)]
-    pub struct DragonRideSequence_PrizeData {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: procinst :: { IProcInst , ProcInst }
+ ;
+ use crate :: app :: procscenesequence_1 :: { IProcSceneSequence_1 , ProcSceneSequence_1 }
+ ;
+ use crate :: app :: singletonprocinst_1 :: { ISingletonProcInst_1 , SingletonProcInst_1 }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonridesequence/DragonRideSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "DragonRideSequence")]
-    # [parent (crate :: app :: procscenesequence_1 :: ProcSceneSequence_1 < crate :: app :: hubsequence :: HubSequence >)]
-    pub struct DragonRideSequence {
-        #[offset(133)]
-        #[rename(name = "m_IsLoadMenuContent")]
-        pub m_is_load_menu_content: bool,
-        #[offset(136)]
-        #[rename(name = "m_PrizeBondData")]
-        pub m_prize_bond_data: crate::app::dragonridesequence::DragonRideSequence_PrizeData,
-        #[offset(144)]
-        #[rename(name = "m_PrizeItemDataList")]
-        pub m_prize_item_data_list: crate::system::collections::generic::list_1::List_1<crate::app::dragonridesequence::DragonRideSequence_PrizeData>,
-        #[offset(152)]
-        #[rename(name = "m_PrizeItemMax")]
-        pub m_prize_item_max: i32,
-        #[offset(156)]
-        #[rename(name = "m_PrizeItemCount")]
-        pub m_prize_item_count: i32,
-        #[offset(160)]
-        #[rename(name = "m_AnnouceDifficult")]
-        pub m_annouce_difficult: crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
-        #[offset(168)]
-        #[rename(name = "m_IsAnnounceVoiceOnce")]
-        pub m_is_announce_voice_once: bool,
-        #[offset(176)]
-        #[rename(name = "m_Talker")]
-        pub m_talker: crate::unity_engine::gameobject::GameObject,
-        #[offset(184)]
-        #[rename(name = "m_TalkerChara")]
-        pub m_talker_chara: crate::combat::character::Character,
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonridesequence/DragonRideSequence_PrizeData.md"))] # [:: unity2 :: class (namespace = "App" , name = "DragonRideSequence.PrizeData")] # [parent (crate :: system :: object :: Object)] pub struct DragonRideSequence_PrizeData {}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dragonridesequence/DragonRideSequence_Label.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct DragonRideSequence_Label  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for DragonRideSequence_Label  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "DragonRideSequence.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dragonridesequence/DragonRideSequence_Label.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct DragonRideSequence_Label {
-        pub value: i32,
+}
+
+
+impl  ::unity2::IlType for DragonRideSequence_Label  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::ClassIdentity for DragonRideSequence_Label {
-        const NAME: &'static str = "DragonRideSequence.Label";
-        const NAMESPACE: &'static str = "App";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  DragonRideSequence_Label  {
+    pub fn none() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl ::unity2::IlType for DragonRideSequence_Label {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+
+    pub fn init() -> Self {
+        Self { value: 1 }
+
     }
 
-    impl DragonRideSequence_Label {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn init() -> Self {
-            Self { value: 1 }
-        }
+    pub fn check_test() -> Self {
+        Self { value: 2 }
 
-        pub fn check_test() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn ready_menu() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn play_select() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn check_new_difficult() -> Self {
-            Self { value: 5 }
-        }
-
-        pub fn announce_new_difficult() -> Self {
-            Self { value: 6 }
-        }
-
-        pub fn difficult_select() -> Self {
-            Self { value: 7 }
-        }
-
-        pub fn ready_game() -> Self {
-            Self { value: 8 }
-        }
-
-        pub fn execute_game() -> Self {
-            Self { value: 9 }
-        }
-
-        pub fn prize_talk() -> Self {
-            Self { value: 10 }
-        }
-
-        pub fn prize_bond() -> Self {
-            Self { value: 11 }
-        }
-
-        pub fn prize_item() -> Self {
-            Self { value: 12 }
-        }
-
-        pub fn exit() -> Self {
-            Self { value: 13 }
-        }
     }
+
+
+    pub fn ready_menu() -> Self {
+        Self { value: 3 }
+
+    }
+
+
+    pub fn play_select() -> Self {
+        Self { value: 4 }
+
+    }
+
+
+    pub fn check_new_difficult() -> Self {
+        Self { value: 5 }
+
+    }
+
+
+    pub fn announce_new_difficult() -> Self {
+        Self { value: 6 }
+
+    }
+
+
+    pub fn difficult_select() -> Self {
+        Self { value: 7 }
+
+    }
+
+
+    pub fn ready_game() -> Self {
+        Self { value: 8 }
+
+    }
+
+
+    pub fn execute_game() -> Self {
+        Self { value: 9 }
+
+    }
+
+
+    pub fn prize_talk() -> Self {
+        Self { value: 10 }
+
+    }
+
+
+    pub fn prize_bond() -> Self {
+        Self { value: 11 }
+
+    }
+
+
+    pub fn prize_item() -> Self {
+        Self { value: 12 }
+
+    }
+
+
+    pub fn exit() -> Self {
+        Self { value: 13 }
+
+    }
+
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonridesequence/DragonRideSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "DragonRideSequence")] # [parent (crate :: app :: procscenesequence_1 :: ProcSceneSequence_1 < crate :: app :: hubsequence :: HubSequence >)] pub struct DragonRideSequence {
+# [offset (133)] # [rename (name = "m_IsLoadMenuContent")] pub m_is_load_menu_content : bool ,
+# [offset (136)] # [rename (name = "m_PrizeBondData")] pub m_prize_bond_data : crate :: app :: dragonridesequence :: DragonRideSequence_PrizeData ,
+# [offset (144)] # [rename (name = "m_PrizeItemDataList")] pub m_prize_item_data_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: dragonridesequence :: DragonRideSequence_PrizeData > ,
+# [offset (152)] # [rename (name = "m_PrizeItemMax")] pub m_prize_item_max : i32 ,
+# [offset (156)] # [rename (name = "m_PrizeItemCount")] pub m_prize_item_count : i32 ,
+# [offset (160)] # [rename (name = "m_AnnouceDifficult")] pub m_annouce_difficult : crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > ,
+# [offset (168)] # [rename (name = "m_IsAnnounceVoiceOnce")] pub m_is_announce_voice_once : bool ,
+# [offset (176)] # [rename (name = "m_Talker")] pub m_talker : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (184)] # [rename (name = "m_TalkerChara")] pub m_talker_chara : crate :: combat :: character :: Character ,
+}
+
 }
 
 #[cfg(feature = "app-dragonridesequence-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-dragonridesequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __DragonRideSequence_PrizeData_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DragonRideSequence_PrizeData as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DragonRideSequence_PrizeData as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: DragonRideSequence_PrizeData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DragonRideSequence_PrizeData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::itemdata::ItemData as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DragonRideSequence_PrizeData as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DragonRideSequence_PrizeData as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor_2(
-        this: DragonRideSequence_PrizeData,
-        set_item: crate::app::itemdata::ItemData,
-        set_num: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(DragonRideSequence_PrizeData, crate::app::itemdata::ItemData, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
-        inner(this, set_item, set_num, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_num {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DragonRideSequence_PrizeData as ::unity2::ClassIdentity>::class(),
-                "AddNum",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DragonRideSequence_PrizeData as ::unity2::ClassIdentity>::NAME,
-                        "AddNum",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_num(this: DragonRideSequence_PrizeData, add: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DragonRideSequence_PrizeData, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add_num::get_method_info().method_ptr);
-        inner(this, add, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_id {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DragonRideSequence_PrizeData as ::unity2::ClassIdentity>::class(),
-                "get_ID",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DragonRideSequence_PrizeData as ::unity2::ClassIdentity>::NAME,
-                        "get_ID",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_id(this: DragonRideSequence_PrizeData, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(DragonRideSequence_PrizeData, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_id::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_id {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DragonRideSequence_PrizeData as ::unity2::ClassIdentity>::class(),
-                "set_ID",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DragonRideSequence_PrizeData as ::unity2::ClassIdentity>::NAME,
-                        "set_ID",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_id(this: DragonRideSequence_PrizeData, value: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DragonRideSequence_PrizeData, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_id::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_item {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DragonRideSequence_PrizeData as ::unity2::ClassIdentity>::class(),
-                "get_item",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DragonRideSequence_PrizeData as ::unity2::ClassIdentity>::NAME,
-                        "get_item",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_item(this: DragonRideSequence_PrizeData, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::itemdata::ItemData {
-        let inner: extern "C" fn(DragonRideSequence_PrizeData, ::unity2::OptionalMethod) -> crate::app::itemdata::ItemData =
-            ::core::mem::transmute(__lookup_get_item::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_item {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::itemdata::ItemData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DragonRideSequence_PrizeData as ::unity2::ClassIdentity>::class(),
-                "set_item",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DragonRideSequence_PrizeData as ::unity2::ClassIdentity>::NAME,
-                        "set_item",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_item(
-        this: DragonRideSequence_PrizeData,
-        value: crate::app::itemdata::ItemData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(DragonRideSequence_PrizeData, crate::app::itemdata::ItemData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_item::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_num {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DragonRideSequence_PrizeData as ::unity2::ClassIdentity>::class(),
-                "get_num",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DragonRideSequence_PrizeData as ::unity2::ClassIdentity>::NAME,
-                        "get_num",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_num(this: DragonRideSequence_PrizeData, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(DragonRideSequence_PrizeData, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_num::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_num {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DragonRideSequence_PrizeData as ::unity2::ClassIdentity>::class(),
-                "set_num",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DragonRideSequence_PrizeData as ::unity2::ClassIdentity>::NAME,
-                        "set_num",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_num(this: DragonRideSequence_PrizeData, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DragonRideSequence_PrizeData, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_num::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __DragonRideSequence_PrizeData_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DragonRideSequence_PrizeData as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DragonRideSequence_PrizeData as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : DragonRideSequence_PrizeData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DragonRideSequence_PrizeData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: itemdata :: ItemData as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DragonRideSequence_PrizeData as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DragonRideSequence_PrizeData as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor_2 (this : DragonRideSequence_PrizeData , set_item : crate :: app :: itemdata :: ItemData , set_num : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DragonRideSequence_PrizeData , crate :: app :: itemdata :: ItemData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor_2 :: get_method_info () . method_ptr ,) ; inner (this , set_item , set_num , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_num { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DragonRideSequence_PrizeData as :: unity2 :: ClassIdentity > :: class () , "AddNum" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DragonRideSequence_PrizeData as :: unity2 :: ClassIdentity > :: NAME , "AddNum" , e) , } } } pub unsafe fn add_num (this : DragonRideSequence_PrizeData , add : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DragonRideSequence_PrizeData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_num :: get_method_info () . method_ptr ,) ; inner (this , add , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_id { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DragonRideSequence_PrizeData as :: unity2 :: ClassIdentity > :: class () , "get_ID" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DragonRideSequence_PrizeData as :: unity2 :: ClassIdentity > :: NAME , "get_ID" , e) , } } } pub unsafe fn get_id (this : DragonRideSequence_PrizeData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (DragonRideSequence_PrizeData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_id :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_id { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DragonRideSequence_PrizeData as :: unity2 :: ClassIdentity > :: class () , "set_ID" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DragonRideSequence_PrizeData as :: unity2 :: ClassIdentity > :: NAME , "set_ID" , e) , } } } pub unsafe fn set_id (this : DragonRideSequence_PrizeData , value : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DragonRideSequence_PrizeData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_id :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_item { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DragonRideSequence_PrizeData as :: unity2 :: ClassIdentity > :: class () , "get_item" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DragonRideSequence_PrizeData as :: unity2 :: ClassIdentity > :: NAME , "get_item" , e) , } } } pub unsafe fn get_item (this : DragonRideSequence_PrizeData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: itemdata :: ItemData { let inner : extern "C" fn (DragonRideSequence_PrizeData , :: unity2 :: OptionalMethod ,) -> crate :: app :: itemdata :: ItemData = :: core :: mem :: transmute (__lookup_get_item :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_item { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: itemdata :: ItemData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DragonRideSequence_PrizeData as :: unity2 :: ClassIdentity > :: class () , "set_item" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DragonRideSequence_PrizeData as :: unity2 :: ClassIdentity > :: NAME , "set_item" , e) , } } } pub unsafe fn set_item (this : DragonRideSequence_PrizeData , value : crate :: app :: itemdata :: ItemData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DragonRideSequence_PrizeData , crate :: app :: itemdata :: ItemData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_item :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_num { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DragonRideSequence_PrizeData as :: unity2 :: ClassIdentity > :: class () , "get_num" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DragonRideSequence_PrizeData as :: unity2 :: ClassIdentity > :: NAME , "get_num" , e) , } } } pub unsafe fn get_num (this : DragonRideSequence_PrizeData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (DragonRideSequence_PrizeData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_num :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_num { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DragonRideSequence_PrizeData as :: unity2 :: ClassIdentity > :: class () , "set_num" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DragonRideSequence_PrizeData as :: unity2 :: ClassIdentity > :: NAME , "set_num" , e) , } } } pub unsafe fn set_num (this : DragonRideSequence_PrizeData , value : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DragonRideSequence_PrizeData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_num :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } }
 
 #[cfg(feature = "app-dragonridesequence")]
-pub trait IDragonRideSequence_PrizeDataMethods: IDragonRideSequence_PrizeData {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <DragonRideSequence_PrizeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DragonRideSequence_PrizeData_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor(crate::app::itemdata::ItemData, i32)` overload"]
-    fn ctor_2(self, set_item: impl ::core::convert::Into<crate::app::itemdata::ItemData>, set_num: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver =
-                <DragonRideSequence_PrizeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DragonRideSequence_PrizeData_unity2_raw::ctor_2(
-                __receiver,
-                ::core::convert::Into::into(set_item),
-                ::core::convert::Into::into(set_num),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`AddNum(i32)` overload"]
-    fn add_num(self, add: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver =
-                <DragonRideSequence_PrizeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DragonRideSequence_PrizeData_unity2_raw::add_num(__receiver, ::core::convert::Into::into(add), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_ID()` overload"]
-    fn get_id(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver =
-                <DragonRideSequence_PrizeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DragonRideSequence_PrizeData_unity2_raw::get_id(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_ID(::unity2::Il2CppString)` overload"]
-    fn set_id(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver =
-                <DragonRideSequence_PrizeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DragonRideSequence_PrizeData_unity2_raw::set_id(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_item()` overload"]
-    fn get_item(self) -> crate::app::itemdata::ItemData {
-        unsafe {
-            let __receiver =
-                <DragonRideSequence_PrizeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DragonRideSequence_PrizeData_unity2_raw::get_item(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_item(crate::app::itemdata::ItemData)` overload"]
-    fn set_item(self, value: impl ::core::convert::Into<crate::app::itemdata::ItemData>) -> () {
-        unsafe {
-            let __receiver =
-                <DragonRideSequence_PrizeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DragonRideSequence_PrizeData_unity2_raw::set_item(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_num()` overload"]
-    fn get_num(self) -> i32 {
-        unsafe {
-            let __receiver =
-                <DragonRideSequence_PrizeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DragonRideSequence_PrizeData_unity2_raw::get_num(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_num(i32)` overload"]
-    fn set_num(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver =
-                <DragonRideSequence_PrizeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DragonRideSequence_PrizeData_unity2_raw::set_num(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-}
+pub trait IDragonRideSequence_PrizeDataMethods : IDragonRideSequence_PrizeData { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DragonRideSequence_PrizeData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DragonRideSequence_PrizeData_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor(crate::app::itemdata::ItemData, i32)` overload"] fn ctor_2 (self , set_item : impl :: core :: convert :: Into < crate :: app :: itemdata :: ItemData > , set_num : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < DragonRideSequence_PrizeData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DragonRideSequence_PrizeData_unity2_raw :: ctor_2 (__receiver , :: core :: convert :: Into :: into (set_item) , :: core :: convert :: Into :: into (set_num) , :: core :: option :: Option :: None) } } # [doc = "`AddNum(i32)` overload"] fn add_num (self , add : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < DragonRideSequence_PrizeData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DragonRideSequence_PrizeData_unity2_raw :: add_num (__receiver , :: core :: convert :: Into :: into (add) , :: core :: option :: Option :: None) } } # [doc = "`get_ID()` overload"] fn get_id (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < DragonRideSequence_PrizeData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DragonRideSequence_PrizeData_unity2_raw :: get_id (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_ID(::unity2::Il2CppString)` overload"] fn set_id (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < DragonRideSequence_PrizeData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DragonRideSequence_PrizeData_unity2_raw :: set_id (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_item()` overload"] fn get_item (self ,) -> crate :: app :: itemdata :: ItemData { unsafe { let __receiver = < DragonRideSequence_PrizeData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DragonRideSequence_PrizeData_unity2_raw :: get_item (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_item(crate::app::itemdata::ItemData)` overload"] fn set_item (self , value : impl :: core :: convert :: Into < crate :: app :: itemdata :: ItemData >) -> () { unsafe { let __receiver = < DragonRideSequence_PrizeData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DragonRideSequence_PrizeData_unity2_raw :: set_item (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_num()` overload"] fn get_num (self ,) -> i32 { unsafe { let __receiver = < DragonRideSequence_PrizeData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DragonRideSequence_PrizeData_unity2_raw :: get_num (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_num(i32)` overload"] fn set_num (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < DragonRideSequence_PrizeData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DragonRideSequence_PrizeData_unity2_raw :: set_num (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-dragonridesequence")]
-impl<__T: IDragonRideSequence_PrizeData> IDragonRideSequence_PrizeDataMethods for __T {}
+impl < __T : IDragonRideSequence_PrizeData > IDragonRideSequence_PrizeDataMethods for __T { }
+
+#[cfg(feature = "app-dragonridesequence")]
+impl DragonRideSequence_PrizeData { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DragonRideSequence_PrizeData_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DragonRideSequence_PrizeData_unity2_raw :: __lookup_ctor_2 :: get_method_info () } pub fn add_num_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DragonRideSequence_PrizeData_unity2_raw :: __lookup_add_num :: get_method_info () } pub fn get_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DragonRideSequence_PrizeData_unity2_raw :: __lookup_get_id :: get_method_info () } pub fn set_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DragonRideSequence_PrizeData_unity2_raw :: __lookup_set_id :: get_method_info () } pub fn get_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DragonRideSequence_PrizeData_unity2_raw :: __lookup_get_item :: get_method_info () } pub fn set_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DragonRideSequence_PrizeData_unity2_raw :: __lookup_set_item :: get_method_info () } pub fn get_num_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DragonRideSequence_PrizeData_unity2_raw :: __lookup_get_num :: get_method_info () } pub fn set_num_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DragonRideSequence_PrizeData_unity2_raw :: __lookup_set_num :: get_method_info () } }
 
 #[cfg(feature = "app-dragonridesequence")]
 impl DragonRideSequence_PrizeData {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DragonRideSequence_PrizeData),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDragonRideSequence_PrizeDataMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DragonRideSequence_PrizeData) , :: core :: stringify ! (new) ,)) ; < Self as IDragonRideSequence_PrizeDataMethods > :: ctor (this ,) ; this }
 
-    #[doc = "`.ctor(crate::app::itemdata::ItemData, i32)` — overload selector"]
-    pub fn new_2(set_item: crate::app::itemdata::ItemData, set_num: i32) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DragonRideSequence_PrizeData),
-                ::core::stringify!(new_2),
-            )
-        });
-        <Self as IDragonRideSequence_PrizeDataMethods>::ctor_2(this, set_item, set_num);
-        this
-    }
+# [doc = "`.ctor(crate::app::itemdata::ItemData, i32)` — overload selector"] pub fn new_2 (set_item : crate :: app :: itemdata :: ItemData , set_num : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DragonRideSequence_PrizeData) , :: core :: stringify ! (new_2) ,)) ; < Self as IDragonRideSequence_PrizeDataMethods > :: ctor_2 (this , set_item , set_num) ; this }
 }
 
 #[cfg(feature = "app-dragonridesequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __DragonRideSequence_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_from_debug_menu {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DragonRideSequence as ::unity2::ClassIdentity>::class(),
-                "get_FromDebugMenu",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DragonRideSequence as ::unity2::ClassIdentity>::NAME,
-                        "get_FromDebugMenu",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_from_debug_menu(this: DragonRideSequence, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(DragonRideSequence, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_from_debug_menu::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_from_debug_menu {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DragonRideSequence as ::unity2::ClassIdentity>::class(),
-                "set_FromDebugMenu",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DragonRideSequence as ::unity2::ClassIdentity>::NAME,
-                        "set_FromDebugMenu",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_from_debug_menu(this: DragonRideSequence, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DragonRideSequence, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_from_debug_menu::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_common_debug_menu {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DragonRideSequence as ::unity2::ClassIdentity>::class(),
-                "_CommonDebugMenu",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DragonRideSequence as ::unity2::ClassIdentity>::NAME,
-                        "_CommonDebugMenu",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn common_debug_menu(this: DragonRideSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DragonRideSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_common_debug_menu::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_shutdown {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DragonRideSequence as ::unity2::ClassIdentity>::class(),
-                "OnShutdown",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DragonRideSequence as ::unity2::ClassIdentity>::NAME,
-                        "OnShutdown",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_shutdown(this: DragonRideSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DragonRideSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_shutdown::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cancel_fade {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DragonRideSequence as ::unity2::ClassIdentity>::class(),
-                "CancelFade",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DragonRideSequence as ::unity2::ClassIdentity>::NAME,
-                        "CancelFade",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cancel_fade(this: DragonRideSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DragonRideSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_cancel_fade::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_check_test_execute {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DragonRideSequence as ::unity2::ClassIdentity>::class(),
-                "CheckTestExecute",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DragonRideSequence as ::unity2::ClassIdentity>::NAME,
-                        "CheckTestExecute",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn check_test_execute(this: DragonRideSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DragonRideSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_check_test_execute::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_load_resource {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DragonRideSequence as ::unity2::ClassIdentity>::class(),
-                "LoadResource",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DragonRideSequence as ::unity2::ClassIdentity>::NAME,
-                        "LoadResource",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn load_resource(this: DragonRideSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DragonRideSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_load_resource::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_loading_resource {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DragonRideSequence as ::unity2::ClassIdentity>::class(),
-                "IsLoadingResource",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DragonRideSequence as ::unity2::ClassIdentity>::NAME,
-                        "IsLoadingResource",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_loading_resource(this: DragonRideSequence, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(DragonRideSequence, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_loading_resource::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_unload_resouce {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DragonRideSequence as ::unity2::ClassIdentity>::class(),
-                "UnloadResouce",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DragonRideSequence as ::unity2::ClassIdentity>::NAME,
-                        "UnloadResouce",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn unload_resouce(this: DragonRideSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DragonRideSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_unload_resouce::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_init {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DragonRideSequence as ::unity2::ClassIdentity>::class(),
-                "Init",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DragonRideSequence as ::unity2::ClassIdentity>::NAME,
-                        "Init",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn init(this: DragonRideSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DragonRideSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_init::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_exit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DragonRideSequence as ::unity2::ClassIdentity>::class(),
-                "Exit",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DragonRideSequence as ::unity2::ClassIdentity>::NAME,
-                        "Exit",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn exit(this: DragonRideSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DragonRideSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_exit::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_check_new_difficult {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DragonRideSequence as ::unity2::ClassIdentity>::class(),
-                "CheckNewDifficult",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DragonRideSequence as ::unity2::ClassIdentity>::NAME,
-                        "CheckNewDifficult",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn check_new_difficult(this: DragonRideSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DragonRideSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_check_new_difficult::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_announce_new_difficult {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DragonRideSequence as ::unity2::ClassIdentity>::class(),
-                "AnnounceNewDifficult",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DragonRideSequence as ::unity2::ClassIdentity>::NAME,
-                        "AnnounceNewDifficult",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn announce_new_difficult(this: DragonRideSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DragonRideSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_announce_new_difficult::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_check_announce_difficult {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DragonRideSequence as ::unity2::ClassIdentity>::class(),
-                "CheckAnnounceDifficult",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DragonRideSequence as ::unity2::ClassIdentity>::NAME,
-                        "CheckAnnounceDifficult",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn check_announce_difficult(this: DragonRideSequence, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(DragonRideSequence, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_check_announce_difficult::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_title_bar {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DragonRideSequence as ::unity2::ClassIdentity>::class(),
-                "CreateTitleBar",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DragonRideSequence as ::unity2::ClassIdentity>::NAME,
-                        "CreateTitleBar",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_title_bar(this: DragonRideSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DragonRideSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_create_title_bar::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_close_title_bar {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DragonRideSequence as ::unity2::ClassIdentity>::class(),
-                "CloseTitleBar",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DragonRideSequence as ::unity2::ClassIdentity>::NAME,
-                        "CloseTitleBar",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn close_title_bar(this: DragonRideSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DragonRideSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_close_title_bar::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_select_menu {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DragonRideSequence as ::unity2::ClassIdentity>::class(),
-                "CreateSelectMenu",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DragonRideSequence as ::unity2::ClassIdentity>::NAME,
-                        "CreateSelectMenu",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_select_menu(this: DragonRideSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DragonRideSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_create_select_menu::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_talk_course_select {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DragonRideSequence as ::unity2::ClassIdentity>::class(),
-                "Talk_CourseSelect",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DragonRideSequence as ::unity2::ClassIdentity>::NAME,
-                        "Talk_CourseSelect",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn talk_course_select(this: DragonRideSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DragonRideSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_talk_course_select::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_confirm_assist {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DragonRideSequence as ::unity2::ClassIdentity>::class(),
-                "ConfirmAssist",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DragonRideSequence as ::unity2::ClassIdentity>::NAME,
-                        "ConfirmAssist",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn confirm_assist(this: DragonRideSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DragonRideSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_confirm_assist::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_game_sequence {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DragonRideSequence as ::unity2::ClassIdentity>::class(),
-                "CreateGameSequence",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DragonRideSequence as ::unity2::ClassIdentity>::NAME,
-                        "CreateGameSequence",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_game_sequence(this: DragonRideSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DragonRideSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_create_game_sequence::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_check_retire_minigame {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DragonRideSequence as ::unity2::ClassIdentity>::class(),
-                "CheckRetireMinigame",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DragonRideSequence as ::unity2::ClassIdentity>::NAME,
-                        "CheckRetireMinigame",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn check_retire_minigame(this: DragonRideSequence, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(DragonRideSequence, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_check_retire_minigame::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_check_getable_prize {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DragonRideSequence as ::unity2::ClassIdentity>::class(),
-                "CheckGetablePrize",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DragonRideSequence as ::unity2::ClassIdentity>::NAME,
-                        "CheckGetablePrize",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn check_getable_prize(this: DragonRideSequence, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(DragonRideSequence, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_check_getable_prize::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_prize_flag {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DragonRideSequence as ::unity2::ClassIdentity>::class(),
-                "SetPrizeFlag",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DragonRideSequence as ::unity2::ClassIdentity>::NAME,
-                        "SetPrizeFlag",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_prize_flag(this: DragonRideSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DragonRideSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_prize_flag::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_prize_list {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DragonRideSequence as ::unity2::ClassIdentity>::class(),
-                "SetPrizeList",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DragonRideSequence as ::unity2::ClassIdentity>::NAME,
-                        "SetPrizeList",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_prize_list(this: DragonRideSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DragonRideSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_prize_list::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_prize_bond {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DragonRideSequence as ::unity2::ClassIdentity>::class(),
-                "GetPrizeBond",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DragonRideSequence as ::unity2::ClassIdentity>::NAME,
-                        "GetPrizeBond",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_prize_bond(this: DragonRideSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DragonRideSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_get_prize_bond::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_prize_item {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DragonRideSequence as ::unity2::ClassIdentity>::class(),
-                "GetPrizeItem",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DragonRideSequence as ::unity2::ClassIdentity>::NAME,
-                        "GetPrizeItem",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_prize_item(this: DragonRideSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DragonRideSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_get_prize_item::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_get_all_prize_item {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DragonRideSequence as ::unity2::ClassIdentity>::class(),
-                "isGetAllPrizeItem",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DragonRideSequence as ::unity2::ClassIdentity>::NAME,
-                        "isGetAllPrizeItem",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_get_all_prize_item(this: DragonRideSequence, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(DragonRideSequence, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_get_all_prize_item::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_voice_announce_new_difficult {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DragonRideSequence as ::unity2::ClassIdentity>::class(),
-                "VoiceAnnounceNewDifficult",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DragonRideSequence as ::unity2::ClassIdentity>::NAME,
-                        "VoiceAnnounceNewDifficult",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn voice_announce_new_difficult(this: DragonRideSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DragonRideSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_voice_announce_new_difficult::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_stop_voice_new_difficult {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DragonRideSequence as ::unity2::ClassIdentity>::class(),
-                "StopVoiceNewDifficult",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DragonRideSequence as ::unity2::ClassIdentity>::NAME,
-                        "StopVoiceNewDifficult",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn stop_voice_new_difficult(this: DragonRideSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DragonRideSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_stop_voice_new_difficult::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_voice_select_difficult {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DragonRideSequence as ::unity2::ClassIdentity>::class(),
-                "VoiceSelectDifficult",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DragonRideSequence as ::unity2::ClassIdentity>::NAME,
-                        "VoiceSelectDifficult",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn voice_select_difficult(this: DragonRideSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DragonRideSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_voice_select_difficult::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_voice_start {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DragonRideSequence as ::unity2::ClassIdentity>::class(),
-                "VoiceStart",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DragonRideSequence as ::unity2::ClassIdentity>::NAME,
-                        "VoiceStart",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn voice_start(this: DragonRideSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DragonRideSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_voice_start::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_voice_end {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DragonRideSequence as ::unity2::ClassIdentity>::class(),
-                "VoiceEnd",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DragonRideSequence as ::unity2::ClassIdentity>::NAME,
-                        "VoiceEnd",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn voice_end(this: DragonRideSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DragonRideSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_voice_end::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DragonRideSequence as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DragonRideSequence as ::unity2::ClassIdentity>::NAME,
-                        "CreateBind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_bind(super_: crate::app::procinst::ProcInst, from_debug_menu: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(crate::app::procinst::ProcInst, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
-        inner(super_, from_debug_menu, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_regist_flag {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DragonRideSequence as ::unity2::ClassIdentity>::class(),
-                "RegistFlag",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DragonRideSequence as ::unity2::ClassIdentity>::NAME,
-                        "RegistFlag",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn regist_flag(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_regist_flag::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DragonRideSequence as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DragonRideSequence as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: DragonRideSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DragonRideSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __DragonRideSequence_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_from_debug_menu { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DragonRideSequence as :: unity2 :: ClassIdentity > :: class () , "get_FromDebugMenu" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DragonRideSequence as :: unity2 :: ClassIdentity > :: NAME , "get_FromDebugMenu" , e) , } } } pub unsafe fn get_from_debug_menu (this : DragonRideSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (DragonRideSequence , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_from_debug_menu :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_from_debug_menu { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DragonRideSequence as :: unity2 :: ClassIdentity > :: class () , "set_FromDebugMenu" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DragonRideSequence as :: unity2 :: ClassIdentity > :: NAME , "set_FromDebugMenu" , e) , } } } pub unsafe fn set_from_debug_menu (this : DragonRideSequence , value : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DragonRideSequence , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_from_debug_menu :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_common_debug_menu { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DragonRideSequence as :: unity2 :: ClassIdentity > :: class () , "_CommonDebugMenu" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DragonRideSequence as :: unity2 :: ClassIdentity > :: NAME , "_CommonDebugMenu" , e) , } } } pub unsafe fn common_debug_menu (this : DragonRideSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DragonRideSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_common_debug_menu :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_shutdown { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DragonRideSequence as :: unity2 :: ClassIdentity > :: class () , "OnShutdown" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DragonRideSequence as :: unity2 :: ClassIdentity > :: NAME , "OnShutdown" , e) , } } } pub unsafe fn on_shutdown (this : DragonRideSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DragonRideSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_shutdown :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cancel_fade { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DragonRideSequence as :: unity2 :: ClassIdentity > :: class () , "CancelFade" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DragonRideSequence as :: unity2 :: ClassIdentity > :: NAME , "CancelFade" , e) , } } } pub unsafe fn cancel_fade (this : DragonRideSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DragonRideSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cancel_fade :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_check_test_execute { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DragonRideSequence as :: unity2 :: ClassIdentity > :: class () , "CheckTestExecute" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DragonRideSequence as :: unity2 :: ClassIdentity > :: NAME , "CheckTestExecute" , e) , } } } pub unsafe fn check_test_execute (this : DragonRideSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DragonRideSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_check_test_execute :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_load_resource { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DragonRideSequence as :: unity2 :: ClassIdentity > :: class () , "LoadResource" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DragonRideSequence as :: unity2 :: ClassIdentity > :: NAME , "LoadResource" , e) , } } } pub unsafe fn load_resource (this : DragonRideSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DragonRideSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_load_resource :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_loading_resource { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DragonRideSequence as :: unity2 :: ClassIdentity > :: class () , "IsLoadingResource" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DragonRideSequence as :: unity2 :: ClassIdentity > :: NAME , "IsLoadingResource" , e) , } } } pub unsafe fn is_loading_resource (this : DragonRideSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (DragonRideSequence , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_loading_resource :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_unload_resouce { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DragonRideSequence as :: unity2 :: ClassIdentity > :: class () , "UnloadResouce" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DragonRideSequence as :: unity2 :: ClassIdentity > :: NAME , "UnloadResouce" , e) , } } } pub unsafe fn unload_resouce (this : DragonRideSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DragonRideSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_unload_resouce :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_init { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DragonRideSequence as :: unity2 :: ClassIdentity > :: class () , "Init" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DragonRideSequence as :: unity2 :: ClassIdentity > :: NAME , "Init" , e) , } } } pub unsafe fn init (this : DragonRideSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DragonRideSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_init :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_exit { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DragonRideSequence as :: unity2 :: ClassIdentity > :: class () , "Exit" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DragonRideSequence as :: unity2 :: ClassIdentity > :: NAME , "Exit" , e) , } } } pub unsafe fn exit (this : DragonRideSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DragonRideSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_exit :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_check_new_difficult { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DragonRideSequence as :: unity2 :: ClassIdentity > :: class () , "CheckNewDifficult" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DragonRideSequence as :: unity2 :: ClassIdentity > :: NAME , "CheckNewDifficult" , e) , } } } pub unsafe fn check_new_difficult (this : DragonRideSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DragonRideSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_check_new_difficult :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_announce_new_difficult { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DragonRideSequence as :: unity2 :: ClassIdentity > :: class () , "AnnounceNewDifficult" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DragonRideSequence as :: unity2 :: ClassIdentity > :: NAME , "AnnounceNewDifficult" , e) , } } } pub unsafe fn announce_new_difficult (this : DragonRideSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DragonRideSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_announce_new_difficult :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_check_announce_difficult { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DragonRideSequence as :: unity2 :: ClassIdentity > :: class () , "CheckAnnounceDifficult" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DragonRideSequence as :: unity2 :: ClassIdentity > :: NAME , "CheckAnnounceDifficult" , e) , } } } pub unsafe fn check_announce_difficult (this : DragonRideSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (DragonRideSequence , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_check_announce_difficult :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_title_bar { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DragonRideSequence as :: unity2 :: ClassIdentity > :: class () , "CreateTitleBar" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DragonRideSequence as :: unity2 :: ClassIdentity > :: NAME , "CreateTitleBar" , e) , } } } pub unsafe fn create_title_bar (this : DragonRideSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DragonRideSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create_title_bar :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_close_title_bar { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DragonRideSequence as :: unity2 :: ClassIdentity > :: class () , "CloseTitleBar" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DragonRideSequence as :: unity2 :: ClassIdentity > :: NAME , "CloseTitleBar" , e) , } } } pub unsafe fn close_title_bar (this : DragonRideSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DragonRideSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_close_title_bar :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_select_menu { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DragonRideSequence as :: unity2 :: ClassIdentity > :: class () , "CreateSelectMenu" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DragonRideSequence as :: unity2 :: ClassIdentity > :: NAME , "CreateSelectMenu" , e) , } } } pub unsafe fn create_select_menu (this : DragonRideSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DragonRideSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create_select_menu :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_talk_course_select { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DragonRideSequence as :: unity2 :: ClassIdentity > :: class () , "Talk_CourseSelect" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DragonRideSequence as :: unity2 :: ClassIdentity > :: NAME , "Talk_CourseSelect" , e) , } } } pub unsafe fn talk_course_select (this : DragonRideSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DragonRideSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_talk_course_select :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_confirm_assist { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DragonRideSequence as :: unity2 :: ClassIdentity > :: class () , "ConfirmAssist" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DragonRideSequence as :: unity2 :: ClassIdentity > :: NAME , "ConfirmAssist" , e) , } } } pub unsafe fn confirm_assist (this : DragonRideSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DragonRideSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_confirm_assist :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_game_sequence { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DragonRideSequence as :: unity2 :: ClassIdentity > :: class () , "CreateGameSequence" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DragonRideSequence as :: unity2 :: ClassIdentity > :: NAME , "CreateGameSequence" , e) , } } } pub unsafe fn create_game_sequence (this : DragonRideSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DragonRideSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create_game_sequence :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_check_retire_minigame { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DragonRideSequence as :: unity2 :: ClassIdentity > :: class () , "CheckRetireMinigame" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DragonRideSequence as :: unity2 :: ClassIdentity > :: NAME , "CheckRetireMinigame" , e) , } } } pub unsafe fn check_retire_minigame (this : DragonRideSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (DragonRideSequence , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_check_retire_minigame :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_check_getable_prize { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DragonRideSequence as :: unity2 :: ClassIdentity > :: class () , "CheckGetablePrize" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DragonRideSequence as :: unity2 :: ClassIdentity > :: NAME , "CheckGetablePrize" , e) , } } } pub unsafe fn check_getable_prize (this : DragonRideSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (DragonRideSequence , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_check_getable_prize :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_prize_flag { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DragonRideSequence as :: unity2 :: ClassIdentity > :: class () , "SetPrizeFlag" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DragonRideSequence as :: unity2 :: ClassIdentity > :: NAME , "SetPrizeFlag" , e) , } } } pub unsafe fn set_prize_flag (this : DragonRideSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DragonRideSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_prize_flag :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_prize_list { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DragonRideSequence as :: unity2 :: ClassIdentity > :: class () , "SetPrizeList" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DragonRideSequence as :: unity2 :: ClassIdentity > :: NAME , "SetPrizeList" , e) , } } } pub unsafe fn set_prize_list (this : DragonRideSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DragonRideSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_prize_list :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_prize_bond { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DragonRideSequence as :: unity2 :: ClassIdentity > :: class () , "GetPrizeBond" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DragonRideSequence as :: unity2 :: ClassIdentity > :: NAME , "GetPrizeBond" , e) , } } } pub unsafe fn get_prize_bond (this : DragonRideSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DragonRideSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_get_prize_bond :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_prize_item { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DragonRideSequence as :: unity2 :: ClassIdentity > :: class () , "GetPrizeItem" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DragonRideSequence as :: unity2 :: ClassIdentity > :: NAME , "GetPrizeItem" , e) , } } } pub unsafe fn get_prize_item (this : DragonRideSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DragonRideSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_get_prize_item :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_get_all_prize_item { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DragonRideSequence as :: unity2 :: ClassIdentity > :: class () , "isGetAllPrizeItem" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DragonRideSequence as :: unity2 :: ClassIdentity > :: NAME , "isGetAllPrizeItem" , e) , } } } pub unsafe fn is_get_all_prize_item (this : DragonRideSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (DragonRideSequence , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_get_all_prize_item :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_voice_announce_new_difficult { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DragonRideSequence as :: unity2 :: ClassIdentity > :: class () , "VoiceAnnounceNewDifficult" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DragonRideSequence as :: unity2 :: ClassIdentity > :: NAME , "VoiceAnnounceNewDifficult" , e) , } } } pub unsafe fn voice_announce_new_difficult (this : DragonRideSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DragonRideSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_voice_announce_new_difficult :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_stop_voice_new_difficult { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DragonRideSequence as :: unity2 :: ClassIdentity > :: class () , "StopVoiceNewDifficult" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DragonRideSequence as :: unity2 :: ClassIdentity > :: NAME , "StopVoiceNewDifficult" , e) , } } } pub unsafe fn stop_voice_new_difficult (this : DragonRideSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DragonRideSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_stop_voice_new_difficult :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_voice_select_difficult { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DragonRideSequence as :: unity2 :: ClassIdentity > :: class () , "VoiceSelectDifficult" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DragonRideSequence as :: unity2 :: ClassIdentity > :: NAME , "VoiceSelectDifficult" , e) , } } } pub unsafe fn voice_select_difficult (this : DragonRideSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DragonRideSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_voice_select_difficult :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_voice_start { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DragonRideSequence as :: unity2 :: ClassIdentity > :: class () , "VoiceStart" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DragonRideSequence as :: unity2 :: ClassIdentity > :: NAME , "VoiceStart" , e) , } } } pub unsafe fn voice_start (this : DragonRideSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DragonRideSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_voice_start :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_voice_end { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DragonRideSequence as :: unity2 :: ClassIdentity > :: class () , "VoiceEnd" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DragonRideSequence as :: unity2 :: ClassIdentity > :: NAME , "VoiceEnd" , e) , } } } pub unsafe fn voice_end (this : DragonRideSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DragonRideSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_voice_end :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_bind { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DragonRideSequence as :: unity2 :: ClassIdentity > :: class () , "CreateBind" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DragonRideSequence as :: unity2 :: ClassIdentity > :: NAME , "CreateBind" , e) , } } } pub unsafe fn create_bind (super_ : crate :: app :: procinst :: ProcInst , from_debug_menu : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create_bind :: get_method_info () . method_ptr ,) ; inner (super_ , from_debug_menu , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_regist_flag { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DragonRideSequence as :: unity2 :: ClassIdentity > :: class () , "RegistFlag" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DragonRideSequence as :: unity2 :: ClassIdentity > :: NAME , "RegistFlag" , e) , } } } pub unsafe fn regist_flag (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_regist_flag :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DragonRideSequence as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DragonRideSequence as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : DragonRideSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DragonRideSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-dragonridesequence")]
+impl DragonRideSequence { # [doc = "`CreateBind(crate::app::procinst::ProcInst, bool)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , from_debug_menu : impl :: core :: convert :: Into < bool >) -> () { unsafe { __DragonRideSequence_unity2_raw :: create_bind (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (from_debug_menu) , :: core :: option :: Option :: None) } } # [doc = "`RegistFlag()` overload"] pub fn regist_flag () -> () { unsafe { __DragonRideSequence_unity2_raw :: regist_flag (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-dragonridesequence")]
+pub trait IDragonRideSequenceMethods : IDragonRideSequence { # [doc = "`get_FromDebugMenu()` overload"] fn get_from_debug_menu (self ,) -> bool { unsafe { let __receiver = < DragonRideSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DragonRideSequence_unity2_raw :: get_from_debug_menu (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_FromDebugMenu(bool)` overload"] fn set_from_debug_menu (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < DragonRideSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DragonRideSequence_unity2_raw :: set_from_debug_menu (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`_CommonDebugMenu()` overload"] fn common_debug_menu (self ,) -> () { unsafe { let __receiver = < DragonRideSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DragonRideSequence_unity2_raw :: common_debug_menu (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnShutdown()` overload"] fn on_shutdown (self ,) -> () { unsafe { let __receiver = < DragonRideSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DragonRideSequence_unity2_raw :: on_shutdown (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CancelFade()` overload"] fn cancel_fade (self ,) -> () { unsafe { let __receiver = < DragonRideSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DragonRideSequence_unity2_raw :: cancel_fade (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CheckTestExecute()` overload"] fn check_test_execute (self ,) -> () { unsafe { let __receiver = < DragonRideSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DragonRideSequence_unity2_raw :: check_test_execute (__receiver , :: core :: option :: Option :: None) } } # [doc = "`LoadResource()` overload"] fn load_resource (self ,) -> () { unsafe { let __receiver = < DragonRideSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DragonRideSequence_unity2_raw :: load_resource (__receiver , :: core :: option :: Option :: None) } } # [doc = "`IsLoadingResource()` overload"] fn is_loading_resource (self ,) -> bool { unsafe { let __receiver = < DragonRideSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DragonRideSequence_unity2_raw :: is_loading_resource (__receiver , :: core :: option :: Option :: None) } } # [doc = "`UnloadResouce()` overload"] fn unload_resouce (self ,) -> () { unsafe { let __receiver = < DragonRideSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DragonRideSequence_unity2_raw :: unload_resouce (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Init()` overload"] fn init (self ,) -> () { unsafe { let __receiver = < DragonRideSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DragonRideSequence_unity2_raw :: init (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Exit()` overload"] fn exit (self ,) -> () { unsafe { let __receiver = < DragonRideSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DragonRideSequence_unity2_raw :: exit (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CheckNewDifficult()` overload"] fn check_new_difficult (self ,) -> () { unsafe { let __receiver = < DragonRideSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DragonRideSequence_unity2_raw :: check_new_difficult (__receiver , :: core :: option :: Option :: None) } } # [doc = "`AnnounceNewDifficult()` overload"] fn announce_new_difficult (self ,) -> () { unsafe { let __receiver = < DragonRideSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DragonRideSequence_unity2_raw :: announce_new_difficult (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CheckAnnounceDifficult()` overload"] fn check_announce_difficult (self ,) -> bool { unsafe { let __receiver = < DragonRideSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DragonRideSequence_unity2_raw :: check_announce_difficult (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CreateTitleBar()` overload"] fn create_title_bar (self ,) -> () { unsafe { let __receiver = < DragonRideSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DragonRideSequence_unity2_raw :: create_title_bar (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CloseTitleBar()` overload"] fn close_title_bar (self ,) -> () { unsafe { let __receiver = < DragonRideSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DragonRideSequence_unity2_raw :: close_title_bar (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CreateSelectMenu()` overload"] fn create_select_menu (self ,) -> () { unsafe { let __receiver = < DragonRideSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DragonRideSequence_unity2_raw :: create_select_menu (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Talk_CourseSelect()` overload"] fn talk_course_select (self ,) -> () { unsafe { let __receiver = < DragonRideSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DragonRideSequence_unity2_raw :: talk_course_select (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ConfirmAssist()` overload"] fn confirm_assist (self ,) -> () { unsafe { let __receiver = < DragonRideSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DragonRideSequence_unity2_raw :: confirm_assist (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CreateGameSequence()` overload"] fn create_game_sequence (self ,) -> () { unsafe { let __receiver = < DragonRideSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DragonRideSequence_unity2_raw :: create_game_sequence (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CheckRetireMinigame()` overload"] fn check_retire_minigame (self ,) -> bool { unsafe { let __receiver = < DragonRideSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DragonRideSequence_unity2_raw :: check_retire_minigame (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CheckGetablePrize()` overload"] fn check_getable_prize (self ,) -> bool { unsafe { let __receiver = < DragonRideSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DragonRideSequence_unity2_raw :: check_getable_prize (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetPrizeFlag()` overload"] fn set_prize_flag (self ,) -> () { unsafe { let __receiver = < DragonRideSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DragonRideSequence_unity2_raw :: set_prize_flag (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetPrizeList()` overload"] fn set_prize_list (self ,) -> () { unsafe { let __receiver = < DragonRideSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DragonRideSequence_unity2_raw :: set_prize_list (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetPrizeBond()` overload"] fn get_prize_bond (self ,) -> () { unsafe { let __receiver = < DragonRideSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DragonRideSequence_unity2_raw :: get_prize_bond (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetPrizeItem()` overload"] fn get_prize_item (self ,) -> () { unsafe { let __receiver = < DragonRideSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DragonRideSequence_unity2_raw :: get_prize_item (__receiver , :: core :: option :: Option :: None) } } # [doc = "`isGetAllPrizeItem()` overload"] fn is_get_all_prize_item (self ,) -> bool { unsafe { let __receiver = < DragonRideSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DragonRideSequence_unity2_raw :: is_get_all_prize_item (__receiver , :: core :: option :: Option :: None) } } # [doc = "`VoiceAnnounceNewDifficult()` overload"] fn voice_announce_new_difficult (self ,) -> () { unsafe { let __receiver = < DragonRideSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DragonRideSequence_unity2_raw :: voice_announce_new_difficult (__receiver , :: core :: option :: Option :: None) } } # [doc = "`StopVoiceNewDifficult()` overload"] fn stop_voice_new_difficult (self ,) -> () { unsafe { let __receiver = < DragonRideSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DragonRideSequence_unity2_raw :: stop_voice_new_difficult (__receiver , :: core :: option :: Option :: None) } } # [doc = "`VoiceSelectDifficult()` overload"] fn voice_select_difficult (self ,) -> () { unsafe { let __receiver = < DragonRideSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DragonRideSequence_unity2_raw :: voice_select_difficult (__receiver , :: core :: option :: Option :: None) } } # [doc = "`VoiceStart()` overload"] fn voice_start (self ,) -> () { unsafe { let __receiver = < DragonRideSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DragonRideSequence_unity2_raw :: voice_start (__receiver , :: core :: option :: Option :: None) } } # [doc = "`VoiceEnd()` overload"] fn voice_end (self ,) -> () { unsafe { let __receiver = < DragonRideSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DragonRideSequence_unity2_raw :: voice_end (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DragonRideSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DragonRideSequence_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-dragonridesequence")]
+impl < __T : IDragonRideSequence > IDragonRideSequenceMethods for __T { }
+
+#[cfg(feature = "app-dragonridesequence")]
+impl DragonRideSequence { pub fn get_from_debug_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DragonRideSequence_unity2_raw :: __lookup_get_from_debug_menu :: get_method_info () } pub fn set_from_debug_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DragonRideSequence_unity2_raw :: __lookup_set_from_debug_menu :: get_method_info () } pub fn common_debug_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DragonRideSequence_unity2_raw :: __lookup_common_debug_menu :: get_method_info () } pub fn on_shutdown_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DragonRideSequence_unity2_raw :: __lookup_on_shutdown :: get_method_info () } pub fn cancel_fade_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DragonRideSequence_unity2_raw :: __lookup_cancel_fade :: get_method_info () } pub fn check_test_execute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DragonRideSequence_unity2_raw :: __lookup_check_test_execute :: get_method_info () } pub fn load_resource_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DragonRideSequence_unity2_raw :: __lookup_load_resource :: get_method_info () } pub fn is_loading_resource_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DragonRideSequence_unity2_raw :: __lookup_is_loading_resource :: get_method_info () } pub fn unload_resouce_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DragonRideSequence_unity2_raw :: __lookup_unload_resouce :: get_method_info () } pub fn init_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DragonRideSequence_unity2_raw :: __lookup_init :: get_method_info () } pub fn exit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DragonRideSequence_unity2_raw :: __lookup_exit :: get_method_info () } pub fn check_new_difficult_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DragonRideSequence_unity2_raw :: __lookup_check_new_difficult :: get_method_info () } pub fn announce_new_difficult_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DragonRideSequence_unity2_raw :: __lookup_announce_new_difficult :: get_method_info () } pub fn check_announce_difficult_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DragonRideSequence_unity2_raw :: __lookup_check_announce_difficult :: get_method_info () } pub fn create_title_bar_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DragonRideSequence_unity2_raw :: __lookup_create_title_bar :: get_method_info () } pub fn close_title_bar_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DragonRideSequence_unity2_raw :: __lookup_close_title_bar :: get_method_info () } pub fn create_select_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DragonRideSequence_unity2_raw :: __lookup_create_select_menu :: get_method_info () } pub fn talk_course_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DragonRideSequence_unity2_raw :: __lookup_talk_course_select :: get_method_info () } pub fn confirm_assist_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DragonRideSequence_unity2_raw :: __lookup_confirm_assist :: get_method_info () } pub fn create_game_sequence_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DragonRideSequence_unity2_raw :: __lookup_create_game_sequence :: get_method_info () } pub fn check_retire_minigame_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DragonRideSequence_unity2_raw :: __lookup_check_retire_minigame :: get_method_info () } pub fn check_getable_prize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DragonRideSequence_unity2_raw :: __lookup_check_getable_prize :: get_method_info () } pub fn set_prize_flag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DragonRideSequence_unity2_raw :: __lookup_set_prize_flag :: get_method_info () } pub fn set_prize_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DragonRideSequence_unity2_raw :: __lookup_set_prize_list :: get_method_info () } pub fn get_prize_bond_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DragonRideSequence_unity2_raw :: __lookup_get_prize_bond :: get_method_info () } pub fn get_prize_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DragonRideSequence_unity2_raw :: __lookup_get_prize_item :: get_method_info () } pub fn is_get_all_prize_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DragonRideSequence_unity2_raw :: __lookup_is_get_all_prize_item :: get_method_info () } pub fn voice_announce_new_difficult_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DragonRideSequence_unity2_raw :: __lookup_voice_announce_new_difficult :: get_method_info () } pub fn stop_voice_new_difficult_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DragonRideSequence_unity2_raw :: __lookup_stop_voice_new_difficult :: get_method_info () } pub fn voice_select_difficult_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DragonRideSequence_unity2_raw :: __lookup_voice_select_difficult :: get_method_info () } pub fn voice_start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DragonRideSequence_unity2_raw :: __lookup_voice_start :: get_method_info () } pub fn voice_end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DragonRideSequence_unity2_raw :: __lookup_voice_end :: get_method_info () } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DragonRideSequence_unity2_raw :: __lookup_create_bind :: get_method_info () } pub fn regist_flag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DragonRideSequence_unity2_raw :: __lookup_regist_flag :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DragonRideSequence_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-dragonridesequence")]
 impl DragonRideSequence {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, bool)` overload"]
-    pub fn create_bind(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>, from_debug_menu: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            __DragonRideSequence_unity2_raw::create_bind(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(from_debug_menu),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`RegistFlag()` overload"]
-    pub fn regist_flag() -> () {
-        unsafe { __DragonRideSequence_unity2_raw::regist_flag(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-dragonridesequence")]
-pub trait IDragonRideSequenceMethods: IDragonRideSequence {
-    #[doc = "`get_FromDebugMenu()` overload"]
-    fn get_from_debug_menu(self) -> bool {
-        unsafe {
-            let __receiver = <DragonRideSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DragonRideSequence_unity2_raw::get_from_debug_menu(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_FromDebugMenu(bool)` overload"]
-    fn set_from_debug_menu(self, value: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver = <DragonRideSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DragonRideSequence_unity2_raw::set_from_debug_menu(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`_CommonDebugMenu()` overload"]
-    fn common_debug_menu(self) -> () {
-        unsafe {
-            let __receiver = <DragonRideSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DragonRideSequence_unity2_raw::common_debug_menu(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnShutdown()` overload"]
-    fn on_shutdown(self) -> () {
-        unsafe {
-            let __receiver = <DragonRideSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DragonRideSequence_unity2_raw::on_shutdown(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CancelFade()` overload"]
-    fn cancel_fade(self) -> () {
-        unsafe {
-            let __receiver = <DragonRideSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DragonRideSequence_unity2_raw::cancel_fade(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CheckTestExecute()` overload"]
-    fn check_test_execute(self) -> () {
-        unsafe {
-            let __receiver = <DragonRideSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DragonRideSequence_unity2_raw::check_test_execute(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`LoadResource()` overload"]
-    fn load_resource(self) -> () {
-        unsafe {
-            let __receiver = <DragonRideSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DragonRideSequence_unity2_raw::load_resource(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsLoadingResource()` overload"]
-    fn is_loading_resource(self) -> bool {
-        unsafe {
-            let __receiver = <DragonRideSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DragonRideSequence_unity2_raw::is_loading_resource(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`UnloadResouce()` overload"]
-    fn unload_resouce(self) -> () {
-        unsafe {
-            let __receiver = <DragonRideSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DragonRideSequence_unity2_raw::unload_resouce(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Init()` overload"]
-    fn init(self) -> () {
-        unsafe {
-            let __receiver = <DragonRideSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DragonRideSequence_unity2_raw::init(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Exit()` overload"]
-    fn exit(self) -> () {
-        unsafe {
-            let __receiver = <DragonRideSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DragonRideSequence_unity2_raw::exit(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CheckNewDifficult()` overload"]
-    fn check_new_difficult(self) -> () {
-        unsafe {
-            let __receiver = <DragonRideSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DragonRideSequence_unity2_raw::check_new_difficult(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`AnnounceNewDifficult()` overload"]
-    fn announce_new_difficult(self) -> () {
-        unsafe {
-            let __receiver = <DragonRideSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DragonRideSequence_unity2_raw::announce_new_difficult(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CheckAnnounceDifficult()` overload"]
-    fn check_announce_difficult(self) -> bool {
-        unsafe {
-            let __receiver = <DragonRideSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DragonRideSequence_unity2_raw::check_announce_difficult(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CreateTitleBar()` overload"]
-    fn create_title_bar(self) -> () {
-        unsafe {
-            let __receiver = <DragonRideSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DragonRideSequence_unity2_raw::create_title_bar(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CloseTitleBar()` overload"]
-    fn close_title_bar(self) -> () {
-        unsafe {
-            let __receiver = <DragonRideSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DragonRideSequence_unity2_raw::close_title_bar(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CreateSelectMenu()` overload"]
-    fn create_select_menu(self) -> () {
-        unsafe {
-            let __receiver = <DragonRideSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DragonRideSequence_unity2_raw::create_select_menu(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Talk_CourseSelect()` overload"]
-    fn talk_course_select(self) -> () {
-        unsafe {
-            let __receiver = <DragonRideSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DragonRideSequence_unity2_raw::talk_course_select(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ConfirmAssist()` overload"]
-    fn confirm_assist(self) -> () {
-        unsafe {
-            let __receiver = <DragonRideSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DragonRideSequence_unity2_raw::confirm_assist(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CreateGameSequence()` overload"]
-    fn create_game_sequence(self) -> () {
-        unsafe {
-            let __receiver = <DragonRideSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DragonRideSequence_unity2_raw::create_game_sequence(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CheckRetireMinigame()` overload"]
-    fn check_retire_minigame(self) -> bool {
-        unsafe {
-            let __receiver = <DragonRideSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DragonRideSequence_unity2_raw::check_retire_minigame(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CheckGetablePrize()` overload"]
-    fn check_getable_prize(self) -> bool {
-        unsafe {
-            let __receiver = <DragonRideSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DragonRideSequence_unity2_raw::check_getable_prize(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetPrizeFlag()` overload"]
-    fn set_prize_flag(self) -> () {
-        unsafe {
-            let __receiver = <DragonRideSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DragonRideSequence_unity2_raw::set_prize_flag(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetPrizeList()` overload"]
-    fn set_prize_list(self) -> () {
-        unsafe {
-            let __receiver = <DragonRideSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DragonRideSequence_unity2_raw::set_prize_list(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetPrizeBond()` overload"]
-    fn get_prize_bond(self) -> () {
-        unsafe {
-            let __receiver = <DragonRideSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DragonRideSequence_unity2_raw::get_prize_bond(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetPrizeItem()` overload"]
-    fn get_prize_item(self) -> () {
-        unsafe {
-            let __receiver = <DragonRideSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DragonRideSequence_unity2_raw::get_prize_item(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`isGetAllPrizeItem()` overload"]
-    fn is_get_all_prize_item(self) -> bool {
-        unsafe {
-            let __receiver = <DragonRideSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DragonRideSequence_unity2_raw::is_get_all_prize_item(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`VoiceAnnounceNewDifficult()` overload"]
-    fn voice_announce_new_difficult(self) -> () {
-        unsafe {
-            let __receiver = <DragonRideSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DragonRideSequence_unity2_raw::voice_announce_new_difficult(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`StopVoiceNewDifficult()` overload"]
-    fn stop_voice_new_difficult(self) -> () {
-        unsafe {
-            let __receiver = <DragonRideSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DragonRideSequence_unity2_raw::stop_voice_new_difficult(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`VoiceSelectDifficult()` overload"]
-    fn voice_select_difficult(self) -> () {
-        unsafe {
-            let __receiver = <DragonRideSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DragonRideSequence_unity2_raw::voice_select_difficult(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`VoiceStart()` overload"]
-    fn voice_start(self) -> () {
-        unsafe {
-            let __receiver = <DragonRideSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DragonRideSequence_unity2_raw::voice_start(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`VoiceEnd()` overload"]
-    fn voice_end(self) -> () {
-        unsafe {
-            let __receiver = <DragonRideSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DragonRideSequence_unity2_raw::voice_end(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <DragonRideSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DragonRideSequence_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-dragonridesequence")]
-impl<__T: IDragonRideSequence> IDragonRideSequenceMethods for __T {}
-
-#[cfg(feature = "app-dragonridesequence")]
-impl DragonRideSequence {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DragonRideSequence),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDragonRideSequenceMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DragonRideSequence) , :: core :: stringify ! (new) ,)) ; < Self as IDragonRideSequenceMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-dragonridesequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{
-        DragonRideSequence, DragonRideSequence_Label, DragonRideSequence_PrizeData, IDragonRideSequence, IDragonRideSequenceMethods,
-        IDragonRideSequence_PrizeData, IDragonRideSequence_PrizeDataMethods,
-    };
-    #[cfg(feature = "app-procinst")]
-    pub use crate::app::procinst::IProcInstMethods;
-    #[cfg(feature = "app-procscenesequence_1")]
-    pub use crate::app::procscenesequence_1::IProcSceneSequence_1Methods;
-    #[cfg(feature = "app-singletonprocinst_1")]
-    pub use crate::app::singletonprocinst_1::ISingletonProcInst_1Methods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::{
-        app::{procinst::IProcInst, procscenesequence_1::IProcSceneSequence_1, singletonprocinst_1::ISingletonProcInst_1},
-        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
-    };
+    pub use super::DragonRideSequence_PrizeData;
+    pub use super::IDragonRideSequence_PrizeData;
+    pub use super::IDragonRideSequence_PrizeDataMethods;
+    pub use super::DragonRideSequence_Label;
+    pub use super::DragonRideSequence;
+    pub use super::IDragonRideSequence;
+    pub use super::IDragonRideSequenceMethods;
+    pub use crate::app::procinst::IProcInst;
+    pub use crate::app::procscenesequence_1::IProcSceneSequence_1;
+    pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "app-procinst")] pub use crate::app::procinst::IProcInstMethods;
+    #[cfg(feature = "app-procscenesequence_1")] pub use crate::app::procscenesequence_1::IProcSceneSequence_1Methods;
+    #[cfg(feature = "app-singletonprocinst_1")] pub use crate::app::singletonprocinst_1::ISingletonProcInst_1Methods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

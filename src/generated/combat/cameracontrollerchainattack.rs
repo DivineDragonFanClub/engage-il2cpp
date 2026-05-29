@@ -2,430 +2,68 @@
 
 #[cfg(feature = "combat-cameracontrollerchainattack-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        combat::basecameracontroller::{BaseCameraController, IBaseCameraController},
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/cameracontrollerchainattack/CameraControllerChainAttack.md"))]
-    #[::unity2::class(namespace = "Combat", name = "CameraControllerChainAttack")]
-    #[parent(crate::combat::basecameracontroller::BaseCameraController)]
-    pub struct CameraControllerChainAttack {
-        #[offset(168)]
-        #[rename(name = "Distance")]
-        pub distance: f32,
-        #[offset(172)]
-        #[rename(name = "EnemyDistance")]
-        pub enemy_distance: f32,
-        #[offset(176)]
-        #[rename(name = "Height")]
-        pub height: f32,
-        #[offset(180)]
-        #[rename(name = "Back")]
-        pub back: f32,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: combat :: basecameracontroller :: { BaseCameraController , IBaseCameraController }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/cameracontrollerchainattack/CameraControllerChainAttack.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "CameraControllerChainAttack")] # [parent (crate :: combat :: basecameracontroller :: BaseCameraController)] pub struct CameraControllerChainAttack {
+# [offset (168)] # [rename (name = "Distance")] pub distance : f32 ,
+# [offset (172)] # [rename (name = "EnemyDistance")] pub enemy_distance : f32 ,
+# [offset (176)] # [rename (name = "Height")] pub height : f32 ,
+# [offset (180)] # [rename (name = "Back")] pub back : f32 ,
+}
+
 }
 
 #[cfg(feature = "combat-cameracontrollerchainattack-types")]
 pub use __types::*;
 
 #[cfg(feature = "combat-cameracontrollerchainattack")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __CameraControllerChainAttack_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_is_enemy_atk {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CameraControllerChainAttack as ::unity2::ClassIdentity>::class(),
-                "get_IsEnemyAtk",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CameraControllerChainAttack as ::unity2::ClassIdentity>::NAME,
-                        "get_IsEnemyAtk",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_is_enemy_atk(this: CameraControllerChainAttack, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(CameraControllerChainAttack, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_is_enemy_atk::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_is_enemy_atk {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CameraControllerChainAttack as ::unity2::ClassIdentity>::class(),
-                "set_IsEnemyAtk",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CameraControllerChainAttack as ::unity2::ClassIdentity>::NAME,
-                        "set_IsEnemyAtk",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_is_enemy_atk(this: CameraControllerChainAttack, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CameraControllerChainAttack, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_is_enemy_atk::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_is_inverse {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CameraControllerChainAttack as ::unity2::ClassIdentity>::class(),
-                "get_IsInverse",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CameraControllerChainAttack as ::unity2::ClassIdentity>::NAME,
-                        "get_IsInverse",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_is_inverse(this: CameraControllerChainAttack, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(CameraControllerChainAttack, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_is_inverse::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_is_inverse {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CameraControllerChainAttack as ::unity2::ClassIdentity>::class(),
-                "set_IsInverse",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CameraControllerChainAttack as ::unity2::ClassIdentity>::NAME,
-                        "set_IsInverse",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_is_inverse(this: CameraControllerChainAttack, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CameraControllerChainAttack, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_is_inverse::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_inverse {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type(), <bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CameraControllerChainAttack as ::unity2::ClassIdentity>::class(),
-                "SetInverse",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CameraControllerChainAttack as ::unity2::ClassIdentity>::NAME,
-                        "SetInverse",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_inverse(
-        this: CameraControllerChainAttack,
-        inv_side: bool,
-        inv_camera: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(CameraControllerChainAttack, bool, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_inverse::get_method_info().method_ptr);
-        inner(this, inv_side, inv_camera, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_check_usable {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CameraControllerChainAttack as ::unity2::ClassIdentity>::class(),
-                "CheckUsable",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CameraControllerChainAttack as ::unity2::ClassIdentity>::NAME,
-                        "CheckUsable",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn check_usable(this: CameraControllerChainAttack, is_routine: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CameraControllerChainAttack, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_check_usable::get_method_info().method_ptr);
-        inner(this, is_routine, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_camera_targets {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CameraControllerChainAttack as ::unity2::ClassIdentity>::class(),
-                "GetCameraTargets",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CameraControllerChainAttack as ::unity2::ClassIdentity>::NAME,
-                        "GetCameraTargets",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_camera_targets(this: CameraControllerChainAttack, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Array<i32> {
-        let inner: extern "C" fn(CameraControllerChainAttack, ::unity2::OptionalMethod) -> ::unity2::Array<i32> =
-            ::core::mem::transmute(__lookup_get_camera_targets::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CameraControllerChainAttack as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CameraControllerChainAttack as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: CameraControllerChainAttack, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CameraControllerChainAttack, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __CameraControllerChainAttack_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_is_enemy_atk { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CameraControllerChainAttack as :: unity2 :: ClassIdentity > :: class () , "get_IsEnemyAtk" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CameraControllerChainAttack as :: unity2 :: ClassIdentity > :: NAME , "get_IsEnemyAtk" , e) , } } } pub unsafe fn get_is_enemy_atk (this : CameraControllerChainAttack , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (CameraControllerChainAttack , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_is_enemy_atk :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_is_enemy_atk { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CameraControllerChainAttack as :: unity2 :: ClassIdentity > :: class () , "set_IsEnemyAtk" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CameraControllerChainAttack as :: unity2 :: ClassIdentity > :: NAME , "set_IsEnemyAtk" , e) , } } } pub unsafe fn set_is_enemy_atk (this : CameraControllerChainAttack , value : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CameraControllerChainAttack , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_is_enemy_atk :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_is_inverse { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CameraControllerChainAttack as :: unity2 :: ClassIdentity > :: class () , "get_IsInverse" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CameraControllerChainAttack as :: unity2 :: ClassIdentity > :: NAME , "get_IsInverse" , e) , } } } pub unsafe fn get_is_inverse (this : CameraControllerChainAttack , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (CameraControllerChainAttack , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_is_inverse :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_is_inverse { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CameraControllerChainAttack as :: unity2 :: ClassIdentity > :: class () , "set_IsInverse" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CameraControllerChainAttack as :: unity2 :: ClassIdentity > :: NAME , "set_IsInverse" , e) , } } } pub unsafe fn set_is_inverse (this : CameraControllerChainAttack , value : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CameraControllerChainAttack , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_is_inverse :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_inverse { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CameraControllerChainAttack as :: unity2 :: ClassIdentity > :: class () , "SetInverse" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CameraControllerChainAttack as :: unity2 :: ClassIdentity > :: NAME , "SetInverse" , e) , } } } pub unsafe fn set_inverse (this : CameraControllerChainAttack , inv_side : bool , inv_camera : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CameraControllerChainAttack , bool , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_inverse :: get_method_info () . method_ptr ,) ; inner (this , inv_side , inv_camera , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_check_usable { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CameraControllerChainAttack as :: unity2 :: ClassIdentity > :: class () , "CheckUsable" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CameraControllerChainAttack as :: unity2 :: ClassIdentity > :: NAME , "CheckUsable" , e) , } } } pub unsafe fn check_usable (this : CameraControllerChainAttack , is_routine : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CameraControllerChainAttack , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_check_usable :: get_method_info () . method_ptr ,) ; inner (this , is_routine , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_camera_targets { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CameraControllerChainAttack as :: unity2 :: ClassIdentity > :: class () , "GetCameraTargets" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CameraControllerChainAttack as :: unity2 :: ClassIdentity > :: NAME , "GetCameraTargets" , e) , } } } pub unsafe fn get_camera_targets (this : CameraControllerChainAttack , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < i32 > { let inner : extern "C" fn (CameraControllerChainAttack , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < i32 > = :: core :: mem :: transmute (__lookup_get_camera_targets :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CameraControllerChainAttack as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CameraControllerChainAttack as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : CameraControllerChainAttack , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CameraControllerChainAttack , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "combat-cameracontrollerchainattack")]
-pub trait ICameraControllerChainAttackMethods: ICameraControllerChainAttack {
-    #[doc = "`get_IsEnemyAtk()` overload"]
-    fn get_is_enemy_atk(self) -> bool {
-        unsafe {
-            let __receiver =
-                <CameraControllerChainAttack as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CameraControllerChainAttack_unity2_raw::get_is_enemy_atk(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_IsEnemyAtk(bool)` overload"]
-    fn set_is_enemy_atk(self, value: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver =
-                <CameraControllerChainAttack as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CameraControllerChainAttack_unity2_raw::set_is_enemy_atk(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_IsInverse()` overload"]
-    fn get_is_inverse(self) -> bool {
-        unsafe {
-            let __receiver =
-                <CameraControllerChainAttack as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CameraControllerChainAttack_unity2_raw::get_is_inverse(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_IsInverse(bool)` overload"]
-    fn set_is_inverse(self, value: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver =
-                <CameraControllerChainAttack as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CameraControllerChainAttack_unity2_raw::set_is_inverse(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetInverse(bool, bool)` overload"]
-    fn set_inverse(self, inv_side: impl ::core::convert::Into<bool>, inv_camera: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver =
-                <CameraControllerChainAttack as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CameraControllerChainAttack_unity2_raw::set_inverse(
-                __receiver,
-                ::core::convert::Into::into(inv_side),
-                ::core::convert::Into::into(inv_camera),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CheckUsable(bool)` overload"]
-    fn check_usable(self, is_routine: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver =
-                <CameraControllerChainAttack as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CameraControllerChainAttack_unity2_raw::check_usable(__receiver, ::core::convert::Into::into(is_routine), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetCameraTargets()` overload"]
-    fn get_camera_targets(self) -> ::unity2::Array<i32> {
-        unsafe {
-            let __receiver =
-                <CameraControllerChainAttack as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CameraControllerChainAttack_unity2_raw::get_camera_targets(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <CameraControllerChainAttack as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CameraControllerChainAttack_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait ICameraControllerChainAttackMethods : ICameraControllerChainAttack { # [doc = "`get_IsEnemyAtk()` overload"] fn get_is_enemy_atk (self ,) -> bool { unsafe { let __receiver = < CameraControllerChainAttack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CameraControllerChainAttack_unity2_raw :: get_is_enemy_atk (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_IsEnemyAtk(bool)` overload"] fn set_is_enemy_atk (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < CameraControllerChainAttack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CameraControllerChainAttack_unity2_raw :: set_is_enemy_atk (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_IsInverse()` overload"] fn get_is_inverse (self ,) -> bool { unsafe { let __receiver = < CameraControllerChainAttack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CameraControllerChainAttack_unity2_raw :: get_is_inverse (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_IsInverse(bool)` overload"] fn set_is_inverse (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < CameraControllerChainAttack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CameraControllerChainAttack_unity2_raw :: set_is_inverse (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`SetInverse(bool, bool)` overload"] fn set_inverse (self , inv_side : impl :: core :: convert :: Into < bool > , inv_camera : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < CameraControllerChainAttack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CameraControllerChainAttack_unity2_raw :: set_inverse (__receiver , :: core :: convert :: Into :: into (inv_side) , :: core :: convert :: Into :: into (inv_camera) , :: core :: option :: Option :: None) } } # [doc = "`CheckUsable(bool)` overload"] fn check_usable (self , is_routine : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < CameraControllerChainAttack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CameraControllerChainAttack_unity2_raw :: check_usable (__receiver , :: core :: convert :: Into :: into (is_routine) , :: core :: option :: Option :: None) } } # [doc = "`GetCameraTargets()` overload"] fn get_camera_targets (self ,) -> :: unity2 :: Array < i32 > { unsafe { let __receiver = < CameraControllerChainAttack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CameraControllerChainAttack_unity2_raw :: get_camera_targets (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CameraControllerChainAttack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CameraControllerChainAttack_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "combat-cameracontrollerchainattack")]
-impl<__T: ICameraControllerChainAttack> ICameraControllerChainAttackMethods for __T {}
+impl < __T : ICameraControllerChainAttack > ICameraControllerChainAttackMethods for __T { }
+
+#[cfg(feature = "combat-cameracontrollerchainattack")]
+impl CameraControllerChainAttack { pub fn get_is_enemy_atk_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CameraControllerChainAttack_unity2_raw :: __lookup_get_is_enemy_atk :: get_method_info () } pub fn set_is_enemy_atk_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CameraControllerChainAttack_unity2_raw :: __lookup_set_is_enemy_atk :: get_method_info () } pub fn get_is_inverse_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CameraControllerChainAttack_unity2_raw :: __lookup_get_is_inverse :: get_method_info () } pub fn set_is_inverse_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CameraControllerChainAttack_unity2_raw :: __lookup_set_is_inverse :: get_method_info () } pub fn set_inverse_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CameraControllerChainAttack_unity2_raw :: __lookup_set_inverse :: get_method_info () } pub fn check_usable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CameraControllerChainAttack_unity2_raw :: __lookup_check_usable :: get_method_info () } pub fn get_camera_targets_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CameraControllerChainAttack_unity2_raw :: __lookup_get_camera_targets :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CameraControllerChainAttack_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "combat-cameracontrollerchainattack")]
 impl CameraControllerChainAttack {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(CameraControllerChainAttack),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ICameraControllerChainAttackMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CameraControllerChainAttack) , :: core :: stringify ! (new) ,)) ; < Self as ICameraControllerChainAttackMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "combat-cameracontrollerchainattack")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{CameraControllerChainAttack, ICameraControllerChainAttack, ICameraControllerChainAttackMethods};
-    #[cfg(feature = "combat-basecameracontroller")]
-    pub use crate::combat::basecameracontroller::IBaseCameraControllerMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        combat::basecameracontroller::IBaseCameraController,
-        system::object::IObject,
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::CameraControllerChainAttack;
+    pub use super::ICameraControllerChainAttack;
+    pub use super::ICameraControllerChainAttackMethods;
+    pub use crate::combat::basecameracontroller::IBaseCameraController;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "combat-basecameracontroller")] pub use crate::combat::basecameracontroller::IBaseCameraControllerMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

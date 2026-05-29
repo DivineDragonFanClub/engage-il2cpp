@@ -2,353 +2,71 @@
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphobjectpool-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/render_graph_module/rendergraphobjectpool/RenderGraphObjectPool.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Experimental.Rendering.RenderGraphModule", name = "RenderGraphObjectPool")]
-    #[parent(crate::system::object::Object)]
-    pub struct RenderGraphObjectPool {
-        #[offset(32)]
-        #[rename(name = "m_AllocatedMaterialPropertyBlocks")]
-        pub m_allocated_material_property_blocks:
-            crate::system::collections::generic::list_1::List_1<crate::unity_engine::materialpropertyblock::MaterialPropertyBlock>,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/render_graph_module/rendergraphobjectpool/RenderGraphObjectPool_SharedObjectPool_1.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Experimental.Rendering.RenderGraphModule",
-        name = "RenderGraphObjectPool.SharedObjectPool`1"
-    )]
-    #[parent(crate::system::object::Object)]
-    pub struct RenderGraphObjectPool_SharedObjectPool_1<T0: ::unity2::ClassIdentity> {
-        #[rename(name = "m_Pool")]
-        pub m_pool: crate::system::collections::generic::stack_1::Stack_1<T0>,
-    }
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/render_graph_module/rendergraphobjectpool/RenderGraphObjectPool.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Experimental.Rendering.RenderGraphModule" , name = "RenderGraphObjectPool")] # [parent (crate :: system :: object :: Object)] pub struct RenderGraphObjectPool {
+# [offset (32)] # [rename (name = "m_AllocatedMaterialPropertyBlocks")] pub m_allocated_material_property_blocks : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: materialpropertyblock :: MaterialPropertyBlock > ,
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/render_graph_module/rendergraphobjectpool/RenderGraphObjectPool_SharedObjectPool_1.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Experimental.Rendering.RenderGraphModule" , name = "RenderGraphObjectPool.SharedObjectPool`1")] # [parent (crate :: system :: object :: Object)] pub struct RenderGraphObjectPool_SharedObjectPool_1 < T0 : :: unity2 :: ClassIdentity > {
+# [rename (name = "m_Pool")] pub m_pool : crate :: system :: collections :: generic :: stack_1 :: Stack_1 < T0 > ,
+}
+
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphobjectpool-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphobjectpool")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RenderGraphObjectPool_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RenderGraphObjectPool as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RenderGraphObjectPool as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: RenderGraphObjectPool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RenderGraphObjectPool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_temp_material_property_block {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RenderGraphObjectPool as ::unity2::ClassIdentity>::class(),
-                "GetTempMaterialPropertyBlock",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RenderGraphObjectPool as ::unity2::ClassIdentity>::NAME,
-                        "GetTempMaterialPropertyBlock",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_temp_material_property_block(
-        this: RenderGraphObjectPool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::materialpropertyblock::MaterialPropertyBlock {
-        let inner: extern "C" fn(
-            RenderGraphObjectPool,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::materialpropertyblock::MaterialPropertyBlock =
-            ::core::mem::transmute(__lookup_get_temp_material_property_block::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_release_all_temp_alloc {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RenderGraphObjectPool as ::unity2::ClassIdentity>::class(),
-                "ReleaseAllTempAlloc",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RenderGraphObjectPool as ::unity2::ClassIdentity>::NAME,
-                        "ReleaseAllTempAlloc",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn release_all_temp_alloc(this: RenderGraphObjectPool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RenderGraphObjectPool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_release_all_temp_alloc::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __RenderGraphObjectPool_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RenderGraphObjectPool as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RenderGraphObjectPool as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : RenderGraphObjectPool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RenderGraphObjectPool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_temp_material_property_block { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RenderGraphObjectPool as :: unity2 :: ClassIdentity > :: class () , "GetTempMaterialPropertyBlock" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RenderGraphObjectPool as :: unity2 :: ClassIdentity > :: NAME , "GetTempMaterialPropertyBlock" , e) , } } } pub unsafe fn get_temp_material_property_block (this : RenderGraphObjectPool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: materialpropertyblock :: MaterialPropertyBlock { let inner : extern "C" fn (RenderGraphObjectPool , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: materialpropertyblock :: MaterialPropertyBlock = :: core :: mem :: transmute (__lookup_get_temp_material_property_block :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_release_all_temp_alloc { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RenderGraphObjectPool as :: unity2 :: ClassIdentity > :: class () , "ReleaseAllTempAlloc" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RenderGraphObjectPool as :: unity2 :: ClassIdentity > :: NAME , "ReleaseAllTempAlloc" , e) , } } } pub unsafe fn release_all_temp_alloc (this : RenderGraphObjectPool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RenderGraphObjectPool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_release_all_temp_alloc :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphobjectpool")]
-pub trait IRenderGraphObjectPoolMethods: IRenderGraphObjectPool {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <RenderGraphObjectPool as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RenderGraphObjectPool_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    fn get_temp_array<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
-        self,
-        size: impl ::core::convert::Into<i32>,
-    ) -> ::unity2::Array<M0> {
-        static OPEN: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            ::unity2::lookup::method_info_on_class(<RenderGraphObjectPool as ::unity2::ClassIdentity>::class(), "GetTempArray", 1)
-        });
-        #[allow(clippy::type_complexity)]
-        static CACHE: ::std::sync::OnceLock<::std::sync::Mutex<::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>>> =
-            ::std::sync::OnceLock::new();
-        let _ = false;
-        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
-            ::core::result::Result::Ok(mi) => *mi,
-            ::core::result::Result::Err(e) => {
-                panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RenderGraphObjectPool as ::unity2::ClassIdentity>::NAME,
-                    "GetTempArray",
-                    e
-                )
-            },
-        };
-        let __cache = CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
-        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
-        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
-            let mut __guard = __cache.lock().unwrap();
-            *__guard
-                .entry(__key)
-                .or_insert_with(|| ::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as ::unity2::IlType>::il_type()]))
-        };
-        unsafe {
-            let __receiver =
-                <RenderGraphObjectPool as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            let __f: extern "C" fn(RenderGraphObjectPool, i32, ::unity2::OptionalMethod) -> ::unity2::Array<M0> =
-                ::core::mem::transmute(__inflated.method_ptr);
-            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
-            __f(__receiver, ::core::convert::Into::into(size), ::core::option::Option::Some(__mi_opaque))
-        }
-    }
-    #[doc = "`GetTempMaterialPropertyBlock()` overload"]
-    fn get_temp_material_property_block(self) -> crate::unity_engine::materialpropertyblock::MaterialPropertyBlock {
-        unsafe {
-            let __receiver =
-                <RenderGraphObjectPool as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RenderGraphObjectPool_unity2_raw::get_temp_material_property_block(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ReleaseAllTempAlloc()` overload"]
-    fn release_all_temp_alloc(self) -> () {
-        unsafe {
-            let __receiver =
-                <RenderGraphObjectPool as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RenderGraphObjectPool_unity2_raw::release_all_temp_alloc(__receiver, ::core::option::Option::None)
-        }
-    }
-    fn get<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(self) -> M0 {
-        static OPEN: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            ::unity2::lookup::method_info_on_class(<RenderGraphObjectPool as ::unity2::ClassIdentity>::class(), "Get", 0)
-        });
-        #[allow(clippy::type_complexity)]
-        static CACHE: ::std::sync::OnceLock<::std::sync::Mutex<::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>>> =
-            ::std::sync::OnceLock::new();
-        let _ = false;
-        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
-            ::core::result::Result::Ok(mi) => *mi,
-            ::core::result::Result::Err(e) => {
-                panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RenderGraphObjectPool as ::unity2::ClassIdentity>::NAME,
-                    "Get",
-                    e
-                )
-            },
-        };
-        let __cache = CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
-        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
-        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
-            let mut __guard = __cache.lock().unwrap();
-            *__guard
-                .entry(__key)
-                .or_insert_with(|| ::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as ::unity2::IlType>::il_type()]))
-        };
-        unsafe {
-            let __receiver =
-                <RenderGraphObjectPool as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            let __f: extern "C" fn(RenderGraphObjectPool, ::unity2::OptionalMethod) -> M0 = ::core::mem::transmute(__inflated.method_ptr);
-            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
-            __f(__receiver, ::core::option::Option::Some(__mi_opaque))
-        }
-    }
-    fn release<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(self, value: impl ::core::convert::Into<M0>) -> () {
-        static OPEN: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            ::unity2::lookup::method_info_on_class(<RenderGraphObjectPool as ::unity2::ClassIdentity>::class(), "Release", 1)
-        });
-        #[allow(clippy::type_complexity)]
-        static CACHE: ::std::sync::OnceLock<::std::sync::Mutex<::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>>> =
-            ::std::sync::OnceLock::new();
-        let _ = false;
-        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
-            ::core::result::Result::Ok(mi) => *mi,
-            ::core::result::Result::Err(e) => {
-                panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RenderGraphObjectPool as ::unity2::ClassIdentity>::NAME,
-                    "Release",
-                    e
-                )
-            },
-        };
-        let __cache = CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
-        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
-        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
-            let mut __guard = __cache.lock().unwrap();
-            *__guard
-                .entry(__key)
-                .or_insert_with(|| ::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as ::unity2::IlType>::il_type()]))
-        };
-        unsafe {
-            let __receiver =
-                <RenderGraphObjectPool as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            let __f: extern "C" fn(RenderGraphObjectPool, M0, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__inflated.method_ptr);
-            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
-            __f(__receiver, ::core::convert::Into::into(value), ::core::option::Option::Some(__mi_opaque))
-        }
-    }
-}
+pub trait IRenderGraphObjectPoolMethods : IRenderGraphObjectPool { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RenderGraphObjectPool as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RenderGraphObjectPool_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } fn get_temp_array < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > (self , size : impl :: core :: convert :: Into < i32 >) -> :: unity2 :: Array < M0 > { static OPEN : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { :: unity2 :: lookup :: method_info_on_class (< RenderGraphObjectPool as :: unity2 :: ClassIdentity > :: class () , "GetTempArray" , 1 ,) }) ; # [allow (clippy :: type_complexity)] static CACHE : :: std :: sync :: OnceLock < :: std :: sync :: Mutex < :: std :: collections :: HashMap < usize , & 'static :: unity2 :: il2cpp :: MethodInfo > , > , > = :: std :: sync :: OnceLock :: new () ; let _ = false ; let __open : & 'static :: unity2 :: il2cpp :: MethodInfo = match & * OPEN { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RenderGraphObjectPool as :: unity2 :: ClassIdentity > :: NAME , "GetTempArray" , e) , } ; let __cache = CACHE . get_or_init (|| { :: std :: sync :: Mutex :: new (:: std :: collections :: HashMap :: new ()) }) ; let __key : usize = < M0 as :: unity2 :: IlType > :: il_type () as * const _ as usize ; let __inflated : & 'static :: unity2 :: il2cpp :: MethodInfo = { let mut __guard = __cache . lock () . unwrap () ; * __guard . entry (__key) . or_insert_with (|| { :: unity2 :: il2cpp :: generic :: create_generic_method_info (__open , & [< M0 as :: unity2 :: IlType > :: il_type ()] ,) }) } ; unsafe { let __receiver = < RenderGraphObjectPool as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let __f : extern "C" fn (RenderGraphObjectPool , i32 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < M0 > = :: core :: mem :: transmute (__inflated . method_ptr) ; let __mi_opaque : & 'static () = & * (__inflated as * const _ as * const ()) ; __f (__receiver , :: core :: convert :: Into :: into (size) , :: core :: option :: Option :: Some (__mi_opaque) ,) } } # [doc = "`GetTempMaterialPropertyBlock()` overload"] fn get_temp_material_property_block (self ,) -> crate :: unity_engine :: materialpropertyblock :: MaterialPropertyBlock { unsafe { let __receiver = < RenderGraphObjectPool as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RenderGraphObjectPool_unity2_raw :: get_temp_material_property_block (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ReleaseAllTempAlloc()` overload"] fn release_all_temp_alloc (self ,) -> () { unsafe { let __receiver = < RenderGraphObjectPool as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RenderGraphObjectPool_unity2_raw :: release_all_temp_alloc (__receiver , :: core :: option :: Option :: None) } } fn get < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > (self ,) -> M0 { static OPEN : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { :: unity2 :: lookup :: method_info_on_class (< RenderGraphObjectPool as :: unity2 :: ClassIdentity > :: class () , "Get" , 0 ,) }) ; # [allow (clippy :: type_complexity)] static CACHE : :: std :: sync :: OnceLock < :: std :: sync :: Mutex < :: std :: collections :: HashMap < usize , & 'static :: unity2 :: il2cpp :: MethodInfo > , > , > = :: std :: sync :: OnceLock :: new () ; let _ = false ; let __open : & 'static :: unity2 :: il2cpp :: MethodInfo = match & * OPEN { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RenderGraphObjectPool as :: unity2 :: ClassIdentity > :: NAME , "Get" , e) , } ; let __cache = CACHE . get_or_init (|| { :: std :: sync :: Mutex :: new (:: std :: collections :: HashMap :: new ()) }) ; let __key : usize = < M0 as :: unity2 :: IlType > :: il_type () as * const _ as usize ; let __inflated : & 'static :: unity2 :: il2cpp :: MethodInfo = { let mut __guard = __cache . lock () . unwrap () ; * __guard . entry (__key) . or_insert_with (|| { :: unity2 :: il2cpp :: generic :: create_generic_method_info (__open , & [< M0 as :: unity2 :: IlType > :: il_type ()] ,) }) } ; unsafe { let __receiver = < RenderGraphObjectPool as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let __f : extern "C" fn (RenderGraphObjectPool , :: unity2 :: OptionalMethod ,) -> M0 = :: core :: mem :: transmute (__inflated . method_ptr) ; let __mi_opaque : & 'static () = & * (__inflated as * const _ as * const ()) ; __f (__receiver , :: core :: option :: Option :: Some (__mi_opaque) ,) } } fn release < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > (self , value : impl :: core :: convert :: Into < M0 >) -> () { static OPEN : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { :: unity2 :: lookup :: method_info_on_class (< RenderGraphObjectPool as :: unity2 :: ClassIdentity > :: class () , "Release" , 1 ,) }) ; # [allow (clippy :: type_complexity)] static CACHE : :: std :: sync :: OnceLock < :: std :: sync :: Mutex < :: std :: collections :: HashMap < usize , & 'static :: unity2 :: il2cpp :: MethodInfo > , > , > = :: std :: sync :: OnceLock :: new () ; let _ = false ; let __open : & 'static :: unity2 :: il2cpp :: MethodInfo = match & * OPEN { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RenderGraphObjectPool as :: unity2 :: ClassIdentity > :: NAME , "Release" , e) , } ; let __cache = CACHE . get_or_init (|| { :: std :: sync :: Mutex :: new (:: std :: collections :: HashMap :: new ()) }) ; let __key : usize = < M0 as :: unity2 :: IlType > :: il_type () as * const _ as usize ; let __inflated : & 'static :: unity2 :: il2cpp :: MethodInfo = { let mut __guard = __cache . lock () . unwrap () ; * __guard . entry (__key) . or_insert_with (|| { :: unity2 :: il2cpp :: generic :: create_generic_method_info (__open , & [< M0 as :: unity2 :: IlType > :: il_type ()] ,) }) } ; unsafe { let __receiver = < RenderGraphObjectPool as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let __f : extern "C" fn (RenderGraphObjectPool , M0 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__inflated . method_ptr) ; let __mi_opaque : & 'static () = & * (__inflated as * const _ as * const ()) ; __f (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: Some (__mi_opaque) ,) } } }
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphobjectpool")]
-impl<__T: IRenderGraphObjectPool> IRenderGraphObjectPoolMethods for __T {}
+impl < __T : IRenderGraphObjectPool > IRenderGraphObjectPoolMethods for __T { }
+
+#[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphobjectpool")]
+impl RenderGraphObjectPool { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RenderGraphObjectPool_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn get_temp_material_property_block_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RenderGraphObjectPool_unity2_raw :: __lookup_get_temp_material_property_block :: get_method_info () } pub fn release_all_temp_alloc_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RenderGraphObjectPool_unity2_raw :: __lookup_release_all_temp_alloc :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphobjectpool")]
 impl RenderGraphObjectPool {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RenderGraphObjectPool),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRenderGraphObjectPoolMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RenderGraphObjectPool) , :: core :: stringify ! (new) ,)) ; < Self as IRenderGraphObjectPoolMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphobjectpool")]
-#[::unity2::methods]
-impl<T0: ::unity2::ClassIdentity> RenderGraphObjectPool_SharedObjectPool_1<T0> {
-    #[doc = "`Get()` overload"]
-    #[method(name = "Get", args = 0)]
-    pub fn get(self) -> T0;
+# [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity > RenderGraphObjectPool_SharedObjectPool_1 < T0 > {
+# [doc = "`Get()` overload"] # [method (name = "Get" , args = 0)] pub fn get (self ,) -> T0 ;
 
-    #[doc = "`Release(T0)` overload"]
-    #[method(name = "Release", args = 1)]
-    pub fn release(self, value: T0) -> ();
+# [doc = "`Release(T0)` overload"] # [method (name = "Release" , args = 1)] pub fn release (self , value : T0) -> () ;
 
-    #[doc = "`get_sharedPool()` overload"]
-    #[method(name = "get_sharedPool", args = 0)]
-    pub fn get_shared_pool(
-    ) -> crate::unity_engine::experimental::rendering::render_graph_module::rendergraphobjectpool::RenderGraphObjectPool_SharedObjectPool_1<T0>;
+# [doc = "`get_sharedPool()` overload"] # [method (name = "get_sharedPool" , args = 0)] pub fn get_shared_pool () -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphobjectpool :: RenderGraphObjectPool_SharedObjectPool_1 < T0 > ;
 
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+# [doc = "`.ctor()` overload"] # [method (name = ".ctor" , args = 0)] pub fn ctor (self ,) -> () ;
 
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
+# [doc = "`.cctor()` overload"] # [method (name = ".cctor" , args = 0)] pub fn cctor () -> () ;
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphobjectpool")]
-impl<T0: ::unity2::ClassIdentity> RenderGraphObjectPool_SharedObjectPool_1<T0> {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RenderGraphObjectPool_SharedObjectPool_1),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRenderGraphObjectPool_SharedObjectPool_1Methods<T0>>::ctor(this);
-        this
-    }
+impl < T0 : :: unity2 :: ClassIdentity > RenderGraphObjectPool_SharedObjectPool_1 < T0 > {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RenderGraphObjectPool_SharedObjectPool_1) , :: core :: stringify ! (new) ,)) ; < Self as IRenderGraphObjectPool_SharedObjectPool_1Methods < T0 > > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphobjectpool")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{
-        IRenderGraphObjectPool, IRenderGraphObjectPoolMethods, IRenderGraphObjectPool_SharedObjectPool_1,
-        IRenderGraphObjectPool_SharedObjectPool_1Methods, RenderGraphObjectPool, RenderGraphObjectPool_SharedObjectPool_1,
-    };
+    pub use super::RenderGraphObjectPool;
+    pub use super::IRenderGraphObjectPool;
+    pub use super::IRenderGraphObjectPoolMethods;
+    pub use super::RenderGraphObjectPool_SharedObjectPool_1;
+    pub use super::IRenderGraphObjectPool_SharedObjectPool_1;
+    pub use super::IRenderGraphObjectPool_SharedObjectPool_1Methods;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

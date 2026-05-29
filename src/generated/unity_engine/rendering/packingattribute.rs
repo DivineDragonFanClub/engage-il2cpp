@@ -2,346 +2,50 @@
 
 #[cfg(feature = "unity_engine-rendering-packingattribute-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/packingattribute/PackingAttribute.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Rendering", name = "PackingAttribute")]
-    pub struct PackingAttribute {
-        #[offset(16)]
-        #[rename(name = "displayNames")]
-        pub display_names: ::unity2::Array<::unity2::Il2CppString>,
-        #[offset(24)]
-        #[rename(name = "range")]
-        pub range: ::unity2::Array<f32>,
-        #[offset(32)]
-        #[rename(name = "packingScheme")]
-        pub packing_scheme: crate::unity_engine::rendering::fieldpacking::FieldPacking,
-        #[offset(36)]
-        #[rename(name = "offsetInSource")]
-        pub offset_in_source: i32,
-        #[offset(40)]
-        #[rename(name = "sizeInBits")]
-        pub size_in_bits: i32,
-        #[offset(44)]
-        #[rename(name = "isDirection")]
-        pub is_direction: bool,
-        #[offset(45)]
-        #[rename(name = "sRGBDisplay")]
-        pub s_rgb_display: bool,
-        #[offset(46)]
-        #[rename(name = "checkIsNormalized")]
-        pub check_is_normalized: bool,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/packingattribute/PackingAttribute.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering" , name = "PackingAttribute")] pub struct PackingAttribute {
+# [offset (16)] # [rename (name = "displayNames")] pub display_names : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
+# [offset (24)] # [rename (name = "range")] pub range : :: unity2 :: Array < f32 > ,
+# [offset (32)] # [rename (name = "packingScheme")] pub packing_scheme : crate :: unity_engine :: rendering :: fieldpacking :: FieldPacking ,
+# [offset (36)] # [rename (name = "offsetInSource")] pub offset_in_source : i32 ,
+# [offset (40)] # [rename (name = "sizeInBits")] pub size_in_bits : i32 ,
+# [offset (44)] # [rename (name = "isDirection")] pub is_direction : bool ,
+# [offset (45)] # [rename (name = "sRGBDisplay")] pub s_rgb_display : bool ,
+# [offset (46)] # [rename (name = "checkIsNormalized")] pub check_is_normalized : bool ,
+}
+
 }
 
 #[cfg(feature = "unity_engine-rendering-packingattribute-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-packingattribute")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __PackingAttribute_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Array<::unity2::Il2CppString> as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::rendering::fieldpacking::FieldPacking as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PackingAttribute as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                9,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PackingAttribute as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: PackingAttribute,
-        display_names: ::unity2::Array<::unity2::Il2CppString>,
-        packing_scheme: crate::unity_engine::rendering::fieldpacking::FieldPacking,
-        bit_size: i32,
-        offset_in_source: i32,
-        min_value: f32,
-        max_value: f32,
-        is_direction: bool,
-        s_rgb_display: bool,
-        check_is_normalized: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            PackingAttribute,
-            ::unity2::Array<::unity2::Il2CppString>,
-            crate::unity_engine::rendering::fieldpacking::FieldPacking,
-            i32,
-            i32,
-            f32,
-            f32,
-            bool,
-            bool,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(
-            this,
-            display_names,
-            packing_scheme,
-            bit_size,
-            offset_in_source,
-            min_value,
-            max_value,
-            is_direction,
-            s_rgb_display,
-            check_is_normalized,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::rendering::fieldpacking::FieldPacking as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PackingAttribute as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                9,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PackingAttribute as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor_2(
-        this: PackingAttribute,
-        display_name: ::unity2::Il2CppString,
-        packing_scheme: crate::unity_engine::rendering::fieldpacking::FieldPacking,
-        bit_size: i32,
-        offset_in_source: i32,
-        min_value: f32,
-        max_value: f32,
-        is_direction: bool,
-        s_rgb_display: bool,
-        check_is_normalized: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            PackingAttribute,
-            ::unity2::Il2CppString,
-            crate::unity_engine::rendering::fieldpacking::FieldPacking,
-            i32,
-            i32,
-            f32,
-            f32,
-            bool,
-            bool,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
-        inner(
-            this,
-            display_name,
-            packing_scheme,
-            bit_size,
-            offset_in_source,
-            min_value,
-            max_value,
-            is_direction,
-            s_rgb_display,
-            check_is_normalized,
-            __unity2_method_info,
-        )
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __PackingAttribute_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < :: unity2 :: Il2CppString > as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: fieldpacking :: FieldPacking as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PackingAttribute as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 9 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PackingAttribute as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : PackingAttribute , display_names : :: unity2 :: Array < :: unity2 :: Il2CppString > , packing_scheme : crate :: unity_engine :: rendering :: fieldpacking :: FieldPacking , bit_size : i32 , offset_in_source : i32 , min_value : f32 , max_value : f32 , is_direction : bool , s_rgb_display : bool , check_is_normalized : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (PackingAttribute , :: unity2 :: Array < :: unity2 :: Il2CppString > , crate :: unity_engine :: rendering :: fieldpacking :: FieldPacking , i32 , i32 , f32 , f32 , bool , bool , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , display_names , packing_scheme , bit_size , offset_in_source , min_value , max_value , is_direction , s_rgb_display , check_is_normalized , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: fieldpacking :: FieldPacking as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PackingAttribute as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 9 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PackingAttribute as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor_2 (this : PackingAttribute , display_name : :: unity2 :: Il2CppString , packing_scheme : crate :: unity_engine :: rendering :: fieldpacking :: FieldPacking , bit_size : i32 , offset_in_source : i32 , min_value : f32 , max_value : f32 , is_direction : bool , s_rgb_display : bool , check_is_normalized : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (PackingAttribute , :: unity2 :: Il2CppString , crate :: unity_engine :: rendering :: fieldpacking :: FieldPacking , i32 , i32 , f32 , f32 , bool , bool , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor_2 :: get_method_info () . method_ptr ,) ; inner (this , display_name , packing_scheme , bit_size , offset_in_source , min_value , max_value , is_direction , s_rgb_display , check_is_normalized , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-rendering-packingattribute")]
-pub trait IPackingAttributeMethods: IPackingAttribute {
-    #[doc = "`.ctor(::unity2::Array<::unity2::Il2CppString>, crate::unity_engine::rendering::fieldpacking::FieldPacking, i32, i32, f32, f32, bool, bool, bool)` overload"]
-    fn ctor(
-        self,
-        display_names: impl ::core::convert::Into<::unity2::Array<::unity2::Il2CppString>>,
-        packing_scheme: impl ::core::convert::Into<crate::unity_engine::rendering::fieldpacking::FieldPacking>,
-        bit_size: impl ::core::convert::Into<i32>,
-        offset_in_source: impl ::core::convert::Into<i32>,
-        min_value: impl ::core::convert::Into<f32>,
-        max_value: impl ::core::convert::Into<f32>,
-        is_direction: impl ::core::convert::Into<bool>,
-        s_rgb_display: impl ::core::convert::Into<bool>,
-        check_is_normalized: impl ::core::convert::Into<bool>,
-    ) -> () {
-        unsafe {
-            let __receiver = <PackingAttribute as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __PackingAttribute_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(display_names),
-                ::core::convert::Into::into(packing_scheme),
-                ::core::convert::Into::into(bit_size),
-                ::core::convert::Into::into(offset_in_source),
-                ::core::convert::Into::into(min_value),
-                ::core::convert::Into::into(max_value),
-                ::core::convert::Into::into(is_direction),
-                ::core::convert::Into::into(s_rgb_display),
-                ::core::convert::Into::into(check_is_normalized),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::unity_engine::rendering::fieldpacking::FieldPacking, i32, i32, f32, f32, bool, bool, bool)` overload"]
-    fn ctor_2(
-        self,
-        display_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        packing_scheme: impl ::core::convert::Into<crate::unity_engine::rendering::fieldpacking::FieldPacking>,
-        bit_size: impl ::core::convert::Into<i32>,
-        offset_in_source: impl ::core::convert::Into<i32>,
-        min_value: impl ::core::convert::Into<f32>,
-        max_value: impl ::core::convert::Into<f32>,
-        is_direction: impl ::core::convert::Into<bool>,
-        s_rgb_display: impl ::core::convert::Into<bool>,
-        check_is_normalized: impl ::core::convert::Into<bool>,
-    ) -> () {
-        unsafe {
-            let __receiver = <PackingAttribute as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __PackingAttribute_unity2_raw::ctor_2(
-                __receiver,
-                ::core::convert::Into::into(display_name),
-                ::core::convert::Into::into(packing_scheme),
-                ::core::convert::Into::into(bit_size),
-                ::core::convert::Into::into(offset_in_source),
-                ::core::convert::Into::into(min_value),
-                ::core::convert::Into::into(max_value),
-                ::core::convert::Into::into(is_direction),
-                ::core::convert::Into::into(s_rgb_display),
-                ::core::convert::Into::into(check_is_normalized),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+pub trait IPackingAttributeMethods : IPackingAttribute { # [doc = "`.ctor(::unity2::Array<::unity2::Il2CppString>, crate::unity_engine::rendering::fieldpacking::FieldPacking, i32, i32, f32, f32, bool, bool, bool)` overload"] fn ctor (self , display_names : impl :: core :: convert :: Into < :: unity2 :: Array < :: unity2 :: Il2CppString > > , packing_scheme : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: fieldpacking :: FieldPacking > , bit_size : impl :: core :: convert :: Into < i32 > , offset_in_source : impl :: core :: convert :: Into < i32 > , min_value : impl :: core :: convert :: Into < f32 > , max_value : impl :: core :: convert :: Into < f32 > , is_direction : impl :: core :: convert :: Into < bool > , s_rgb_display : impl :: core :: convert :: Into < bool > , check_is_normalized : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < PackingAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __PackingAttribute_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (display_names) , :: core :: convert :: Into :: into (packing_scheme) , :: core :: convert :: Into :: into (bit_size) , :: core :: convert :: Into :: into (offset_in_source) , :: core :: convert :: Into :: into (min_value) , :: core :: convert :: Into :: into (max_value) , :: core :: convert :: Into :: into (is_direction) , :: core :: convert :: Into :: into (s_rgb_display) , :: core :: convert :: Into :: into (check_is_normalized) , :: core :: option :: Option :: None) } } # [doc = "`.ctor(::unity2::Il2CppString, crate::unity_engine::rendering::fieldpacking::FieldPacking, i32, i32, f32, f32, bool, bool, bool)` overload"] fn ctor_2 (self , display_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , packing_scheme : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: fieldpacking :: FieldPacking > , bit_size : impl :: core :: convert :: Into < i32 > , offset_in_source : impl :: core :: convert :: Into < i32 > , min_value : impl :: core :: convert :: Into < f32 > , max_value : impl :: core :: convert :: Into < f32 > , is_direction : impl :: core :: convert :: Into < bool > , s_rgb_display : impl :: core :: convert :: Into < bool > , check_is_normalized : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < PackingAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __PackingAttribute_unity2_raw :: ctor_2 (__receiver , :: core :: convert :: Into :: into (display_name) , :: core :: convert :: Into :: into (packing_scheme) , :: core :: convert :: Into :: into (bit_size) , :: core :: convert :: Into :: into (offset_in_source) , :: core :: convert :: Into :: into (min_value) , :: core :: convert :: Into :: into (max_value) , :: core :: convert :: Into :: into (is_direction) , :: core :: convert :: Into :: into (s_rgb_display) , :: core :: convert :: Into :: into (check_is_normalized) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-rendering-packingattribute")]
-impl<__T: IPackingAttribute> IPackingAttributeMethods for __T {}
+impl < __T : IPackingAttribute > IPackingAttributeMethods for __T { }
+
+#[cfg(feature = "unity_engine-rendering-packingattribute")]
+impl PackingAttribute { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PackingAttribute_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PackingAttribute_unity2_raw :: __lookup_ctor_2 :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-rendering-packingattribute")]
 impl PackingAttribute {
-    #[doc = "`.ctor(::unity2::Array<::unity2::Il2CppString>, crate::unity_engine::rendering::fieldpacking::FieldPacking, i32, i32, f32, f32, bool, bool, bool)` — overload selector"]
-    pub fn new(
-        display_names: ::unity2::Array<::unity2::Il2CppString>,
-        packing_scheme: crate::unity_engine::rendering::fieldpacking::FieldPacking,
-        bit_size: i32,
-        offset_in_source: i32,
-        min_value: f32,
-        max_value: f32,
-        is_direction: bool,
-        s_rgb_display: bool,
-        check_is_normalized: bool,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(PackingAttribute),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IPackingAttributeMethods>::ctor(
-            this,
-            display_names,
-            packing_scheme,
-            bit_size,
-            offset_in_source,
-            min_value,
-            max_value,
-            is_direction,
-            s_rgb_display,
-            check_is_normalized,
-        );
-        this
-    }
+# [doc = "`.ctor(::unity2::Array<::unity2::Il2CppString>, crate::unity_engine::rendering::fieldpacking::FieldPacking, i32, i32, f32, f32, bool, bool, bool)` — overload selector"] pub fn new (display_names : :: unity2 :: Array < :: unity2 :: Il2CppString > , packing_scheme : crate :: unity_engine :: rendering :: fieldpacking :: FieldPacking , bit_size : i32 , offset_in_source : i32 , min_value : f32 , max_value : f32 , is_direction : bool , s_rgb_display : bool , check_is_normalized : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (PackingAttribute) , :: core :: stringify ! (new) ,)) ; < Self as IPackingAttributeMethods > :: ctor (this , display_names , packing_scheme , bit_size , offset_in_source , min_value , max_value , is_direction , s_rgb_display , check_is_normalized) ; this }
 
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::unity_engine::rendering::fieldpacking::FieldPacking, i32, i32, f32, f32, bool, bool, bool)` — overload selector"]
-    pub fn new_2(
-        display_name: ::unity2::Il2CppString,
-        packing_scheme: crate::unity_engine::rendering::fieldpacking::FieldPacking,
-        bit_size: i32,
-        offset_in_source: i32,
-        min_value: f32,
-        max_value: f32,
-        is_direction: bool,
-        s_rgb_display: bool,
-        check_is_normalized: bool,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(PackingAttribute),
-                ::core::stringify!(new_2),
-            )
-        });
-        <Self as IPackingAttributeMethods>::ctor_2(
-            this,
-            display_name,
-            packing_scheme,
-            bit_size,
-            offset_in_source,
-            min_value,
-            max_value,
-            is_direction,
-            s_rgb_display,
-            check_is_normalized,
-        );
-        this
-    }
+# [doc = "`.ctor(::unity2::Il2CppString, crate::unity_engine::rendering::fieldpacking::FieldPacking, i32, i32, f32, f32, bool, bool, bool)` — overload selector"] pub fn new_2 (display_name : :: unity2 :: Il2CppString , packing_scheme : crate :: unity_engine :: rendering :: fieldpacking :: FieldPacking , bit_size : i32 , offset_in_source : i32 , min_value : f32 , max_value : f32 , is_direction : bool , s_rgb_display : bool , check_is_normalized : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (PackingAttribute) , :: core :: stringify ! (new_2) ,)) ; < Self as IPackingAttributeMethods > :: ctor_2 (this , display_name , packing_scheme , bit_size , offset_in_source , min_value , max_value , is_direction , s_rgb_display , check_is_normalized) ; this }
 }
 
 #[cfg(feature = "unity_engine-rendering-packingattribute")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IPackingAttribute, IPackingAttributeMethods, PackingAttribute};
+    pub use super::PackingAttribute;
+    pub use super::IPackingAttribute;
+    pub use super::IPackingAttributeMethods;
 }

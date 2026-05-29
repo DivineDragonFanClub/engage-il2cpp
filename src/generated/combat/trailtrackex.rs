@@ -2,105 +2,34 @@
 
 #[cfg(feature = "combat-trailtrackex-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/trailtrackex/TrailTrackEx.md"))]
-    #[::unity2::class(namespace = "Combat", name = "TrailTrackEx")]
-    #[parent(crate::system::object::Object)]
-    pub struct TrailTrackEx {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/trailtrackex/TrailTrackEx.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "TrailTrackEx")] # [parent (crate :: system :: object :: Object)] pub struct TrailTrackEx {}
+
 }
 
 #[cfg(feature = "combat-trailtrackex-types")]
 pub use __types::*;
 
 #[cfg(feature = "combat-trailtrackex")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __TrailTrackEx_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_null {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::combat::trailtrack::TrailTrack as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<TrailTrackEx as ::unity2::ClassIdentity>::class(), "IsNull", 1, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TrailTrackEx as ::unity2::ClassIdentity>::NAME,
-                        "IsNull",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_null(a: crate::combat::trailtrack::TrailTrack, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(crate::combat::trailtrack::TrailTrack, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_null::get_method_info().method_ptr);
-        inner(a, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_not_null {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::combat::trailtrack::TrailTrack as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TrailTrackEx as ::unity2::ClassIdentity>::class(),
-                "IsNotNull",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TrailTrackEx as ::unity2::ClassIdentity>::NAME,
-                        "IsNotNull",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_not_null(a: crate::combat::trailtrack::TrailTrack, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(crate::combat::trailtrack::TrailTrack, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_not_null::get_method_info().method_ptr);
-        inner(a, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __TrailTrackEx_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_null { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: trailtrack :: TrailTrack as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TrailTrackEx as :: unity2 :: ClassIdentity > :: class () , "IsNull" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TrailTrackEx as :: unity2 :: ClassIdentity > :: NAME , "IsNull" , e) , } } } pub unsafe fn is_null (a : crate :: combat :: trailtrack :: TrailTrack , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (crate :: combat :: trailtrack :: TrailTrack , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_null :: get_method_info () . method_ptr ,) ; inner (a , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_not_null { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: trailtrack :: TrailTrack as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TrailTrackEx as :: unity2 :: ClassIdentity > :: class () , "IsNotNull" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TrailTrackEx as :: unity2 :: ClassIdentity > :: NAME , "IsNotNull" , e) , } } } pub unsafe fn is_not_null (a : crate :: combat :: trailtrack :: TrailTrack , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (crate :: combat :: trailtrack :: TrailTrack , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_not_null :: get_method_info () . method_ptr ,) ; inner (a , __unity2_method_info) } }
 
 #[cfg(feature = "combat-trailtrackex")]
-impl TrailTrackEx {
-    #[doc = "`IsNull(crate::combat::trailtrack::TrailTrack)` overload"]
-    pub fn is_null(a: impl ::core::convert::Into<crate::combat::trailtrack::TrailTrack>) -> bool {
-        unsafe { __TrailTrackEx_unity2_raw::is_null(::core::convert::Into::into(a), ::core::option::Option::None) }
-    }
+impl TrailTrackEx { # [doc = "`IsNull(crate::combat::trailtrack::TrailTrack)` overload"] pub fn is_null (a : impl :: core :: convert :: Into < crate :: combat :: trailtrack :: TrailTrack >) -> bool { unsafe { __TrailTrackEx_unity2_raw :: is_null (:: core :: convert :: Into :: into (a) , :: core :: option :: Option :: None) } } # [doc = "`IsNotNull(crate::combat::trailtrack::TrailTrack)` overload"] pub fn is_not_null (a : impl :: core :: convert :: Into < crate :: combat :: trailtrack :: TrailTrack >) -> bool { unsafe { __TrailTrackEx_unity2_raw :: is_not_null (:: core :: convert :: Into :: into (a) , :: core :: option :: Option :: None) } } }
 
-    #[doc = "`IsNotNull(crate::combat::trailtrack::TrailTrack)` overload"]
-    pub fn is_not_null(a: impl ::core::convert::Into<crate::combat::trailtrack::TrailTrack>) -> bool {
-        unsafe { __TrailTrackEx_unity2_raw::is_not_null(::core::convert::Into::into(a), ::core::option::Option::None) }
-    }
-}
+#[cfg(feature = "combat-trailtrackex")]
+impl TrailTrackEx { pub fn is_null_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TrailTrackEx_unity2_raw :: __lookup_is_null :: get_method_info () } pub fn is_not_null_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TrailTrackEx_unity2_raw :: __lookup_is_not_null :: get_method_info () } }
 
 #[cfg(feature = "combat-trailtrackex")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{ITrailTrackEx, TrailTrackEx};
+    pub use super::TrailTrackEx;
+    pub use super::ITrailTrackEx;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

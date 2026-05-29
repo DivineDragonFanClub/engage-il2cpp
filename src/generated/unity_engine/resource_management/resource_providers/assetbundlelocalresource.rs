@@ -2,403 +2,53 @@
 
 #[cfg(feature = "unity_engine-resource_management-resource_providers-assetbundlelocalresource-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/resource_providers/assetbundlelocalresource/AssetBundleLocalResource.md"))]
-    #[::unity2::class(namespace = "UnityEngine.ResourceManagement.ResourceProviders", name = "AssetBundleLocalResource")]
-    #[parent(crate::system::object::Object)]
-    pub struct AssetBundleLocalResource {
-        #[offset(16)]
-        #[rename(name = "m_AssetBundle")]
-        pub m_asset_bundle: crate::unity_engine::assetbundle::AssetBundle,
-        #[offset(24)]
-        #[rename(name = "m_RequestOperation")]
-        pub m_request_operation: crate::unity_engine::asyncoperation::AsyncOperation,
-        #[offset(32)]
-        #[rename(name = "m_ProgressHandler")]
-        pub m_progress_handler: crate::system::func_1::Func_1<f32>,
-        #[offset(40)]
-        #[rename(name = "m_WaitForCompletionHandler")]
-        pub m_wait_for_completion_handler: crate::system::func_1::Func_1<bool>,
-        #[offset(48)]
-        #[rename(name = "m_CompleteHandler")]
-        pub m_complete_handler: crate::system::action_1::Action_1<crate::unity_engine::asyncoperation::AsyncOperation>,
-        #[offset(56)]
-        #[rename(name = "m_ProvideHandle")]
-        pub m_provide_handle: crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle,
-        #[offset(80)]
-        #[rename(name = "m_Key")]
-        pub m_key: ::unity2::Il2CppString,
-        #[offset(88)]
-        #[rename(name = "m_Time")]
-        pub m_time: f32,
-        #[offset(92)]
-        #[rename(name = "m_Completed")]
-        pub m_completed: bool,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/resource_providers/assetbundlelocalresource/AssetBundleLocalResource.md"))] # [:: unity2 :: class (namespace = "UnityEngine.ResourceManagement.ResourceProviders" , name = "AssetBundleLocalResource")] # [parent (crate :: system :: object :: Object)] pub struct AssetBundleLocalResource {
+# [offset (16)] # [rename (name = "m_AssetBundle")] pub m_asset_bundle : crate :: unity_engine :: assetbundle :: AssetBundle ,
+# [offset (24)] # [rename (name = "m_RequestOperation")] pub m_request_operation : crate :: unity_engine :: asyncoperation :: AsyncOperation ,
+# [offset (32)] # [rename (name = "m_ProgressHandler")] pub m_progress_handler : crate :: system :: func_1 :: Func_1 < f32 > ,
+# [offset (40)] # [rename (name = "m_WaitForCompletionHandler")] pub m_wait_for_completion_handler : crate :: system :: func_1 :: Func_1 < bool > ,
+# [offset (48)] # [rename (name = "m_CompleteHandler")] pub m_complete_handler : crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: asyncoperation :: AsyncOperation > ,
+# [offset (56)] # [rename (name = "m_ProvideHandle")] pub m_provide_handle : crate :: unity_engine :: resource_management :: resource_providers :: providehandle :: ProvideHandle ,
+# [offset (80)] # [rename (name = "m_Key")] pub m_key : :: unity2 :: Il2CppString ,
+# [offset (88)] # [rename (name = "m_Time")] pub m_time : f32 ,
+# [offset (92)] # [rename (name = "m_Completed")] pub m_completed : bool ,
+}
+
 }
 
 #[cfg(feature = "unity_engine-resource_management-resource_providers-assetbundlelocalresource-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-resource_management-resource_providers-assetbundlelocalresource")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AssetBundleLocalResource_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_asset_bundle {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AssetBundleLocalResource as ::unity2::ClassIdentity>::class(),
-                "GetAssetBundle",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AssetBundleLocalResource as ::unity2::ClassIdentity>::NAME,
-                        "GetAssetBundle",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_asset_bundle(
-        this: AssetBundleLocalResource,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::assetbundle::AssetBundle {
-        let inner: extern "C" fn(AssetBundleLocalResource, ::unity2::OptionalMethod) -> crate::unity_engine::assetbundle::AssetBundle =
-            ::core::mem::transmute(__lookup_get_asset_bundle::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AssetBundleLocalResource as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AssetBundleLocalResource as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: AssetBundleLocalResource, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AssetBundleLocalResource, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_percent_complete {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AssetBundleLocalResource as ::unity2::ClassIdentity>::class(),
-                "PercentComplete",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AssetBundleLocalResource as ::unity2::ClassIdentity>::NAME,
-                        "PercentComplete",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn percent_complete(this: AssetBundleLocalResource, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(AssetBundleLocalResource, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_percent_complete::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_local_request_operation_completed {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::asyncoperation::AsyncOperation as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AssetBundleLocalResource as ::unity2::ClassIdentity>::class(),
-                "LocalRequestOperationCompleted",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AssetBundleLocalResource as ::unity2::ClassIdentity>::NAME,
-                        "LocalRequestOperationCompleted",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn local_request_operation_completed(
-        this: AssetBundleLocalResource,
-        op: crate::unity_engine::asyncoperation::AsyncOperation,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(AssetBundleLocalResource, crate::unity_engine::asyncoperation::AsyncOperation, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_local_request_operation_completed::get_method_info().method_ptr);
-        inner(this, op, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_wait_for_completion_handler {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AssetBundleLocalResource as ::unity2::ClassIdentity>::class(),
-                "WaitForCompletionHandler",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AssetBundleLocalResource as ::unity2::ClassIdentity>::NAME,
-                        "WaitForCompletionHandler",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn wait_for_completion_handler(this: AssetBundleLocalResource, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(AssetBundleLocalResource, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_wait_for_completion_handler::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_load {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AssetBundleLocalResource as ::unity2::ClassIdentity>::class(),
-                "Load",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AssetBundleLocalResource as ::unity2::ClassIdentity>::NAME,
-                        "Load",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn load(
-        this: AssetBundleLocalResource,
-        key: ::unity2::Il2CppString,
-        provide_handle: crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            AssetBundleLocalResource,
-            ::unity2::Il2CppString,
-            crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_load::get_method_info().method_ptr);
-        inner(this, key, provide_handle, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_unload {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AssetBundleLocalResource as ::unity2::ClassIdentity>::class(),
-                "Unload",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AssetBundleLocalResource as ::unity2::ClassIdentity>::NAME,
-                        "Unload",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn unload(this: AssetBundleLocalResource, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AssetBundleLocalResource, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_unload::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __AssetBundleLocalResource_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_asset_bundle { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AssetBundleLocalResource as :: unity2 :: ClassIdentity > :: class () , "GetAssetBundle" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AssetBundleLocalResource as :: unity2 :: ClassIdentity > :: NAME , "GetAssetBundle" , e) , } } } pub unsafe fn get_asset_bundle (this : AssetBundleLocalResource , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: assetbundle :: AssetBundle { let inner : extern "C" fn (AssetBundleLocalResource , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: assetbundle :: AssetBundle = :: core :: mem :: transmute (__lookup_get_asset_bundle :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AssetBundleLocalResource as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AssetBundleLocalResource as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : AssetBundleLocalResource , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AssetBundleLocalResource , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_percent_complete { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AssetBundleLocalResource as :: unity2 :: ClassIdentity > :: class () , "PercentComplete" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AssetBundleLocalResource as :: unity2 :: ClassIdentity > :: NAME , "PercentComplete" , e) , } } } pub unsafe fn percent_complete (this : AssetBundleLocalResource , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (AssetBundleLocalResource , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_percent_complete :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_local_request_operation_completed { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: asyncoperation :: AsyncOperation as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AssetBundleLocalResource as :: unity2 :: ClassIdentity > :: class () , "LocalRequestOperationCompleted" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AssetBundleLocalResource as :: unity2 :: ClassIdentity > :: NAME , "LocalRequestOperationCompleted" , e) , } } } pub unsafe fn local_request_operation_completed (this : AssetBundleLocalResource , op : crate :: unity_engine :: asyncoperation :: AsyncOperation , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AssetBundleLocalResource , crate :: unity_engine :: asyncoperation :: AsyncOperation , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_local_request_operation_completed :: get_method_info () . method_ptr ,) ; inner (this , op , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_wait_for_completion_handler { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AssetBundleLocalResource as :: unity2 :: ClassIdentity > :: class () , "WaitForCompletionHandler" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AssetBundleLocalResource as :: unity2 :: ClassIdentity > :: NAME , "WaitForCompletionHandler" , e) , } } } pub unsafe fn wait_for_completion_handler (this : AssetBundleLocalResource , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (AssetBundleLocalResource , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_wait_for_completion_handler :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_load { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: resource_management :: resource_providers :: providehandle :: ProvideHandle as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AssetBundleLocalResource as :: unity2 :: ClassIdentity > :: class () , "Load" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AssetBundleLocalResource as :: unity2 :: ClassIdentity > :: NAME , "Load" , e) , } } } pub unsafe fn load (this : AssetBundleLocalResource , key : :: unity2 :: Il2CppString , provide_handle : crate :: unity_engine :: resource_management :: resource_providers :: providehandle :: ProvideHandle , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AssetBundleLocalResource , :: unity2 :: Il2CppString , crate :: unity_engine :: resource_management :: resource_providers :: providehandle :: ProvideHandle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_load :: get_method_info () . method_ptr ,) ; inner (this , key , provide_handle , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_unload { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AssetBundleLocalResource as :: unity2 :: ClassIdentity > :: class () , "Unload" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AssetBundleLocalResource as :: unity2 :: ClassIdentity > :: NAME , "Unload" , e) , } } } pub unsafe fn unload (this : AssetBundleLocalResource , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AssetBundleLocalResource , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_unload :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-resource_management-resource_providers-assetbundlelocalresource")]
-pub trait IAssetBundleLocalResourceMethods: IAssetBundleLocalResource {
-    #[doc = "`GetAssetBundle()` overload"]
-    fn get_asset_bundle(self) -> crate::unity_engine::assetbundle::AssetBundle {
-        unsafe {
-            let __receiver =
-                <AssetBundleLocalResource as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AssetBundleLocalResource_unity2_raw::get_asset_bundle(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <AssetBundleLocalResource as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AssetBundleLocalResource_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`PercentComplete()` overload"]
-    fn percent_complete(self) -> f32 {
-        unsafe {
-            let __receiver =
-                <AssetBundleLocalResource as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AssetBundleLocalResource_unity2_raw::percent_complete(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`LocalRequestOperationCompleted(crate::unity_engine::asyncoperation::AsyncOperation)` overload"]
-    fn local_request_operation_completed(self, op: impl ::core::convert::Into<crate::unity_engine::asyncoperation::AsyncOperation>) -> () {
-        unsafe {
-            let __receiver =
-                <AssetBundleLocalResource as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AssetBundleLocalResource_unity2_raw::local_request_operation_completed(
-                __receiver,
-                ::core::convert::Into::into(op),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`WaitForCompletionHandler()` overload"]
-    fn wait_for_completion_handler(self) -> bool {
-        unsafe {
-            let __receiver =
-                <AssetBundleLocalResource as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AssetBundleLocalResource_unity2_raw::wait_for_completion_handler(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Load(::unity2::Il2CppString, crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle)` overload"]
-    fn load(
-        self,
-        key: impl ::core::convert::Into<::unity2::Il2CppString>,
-        provide_handle: impl ::core::convert::Into<crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <AssetBundleLocalResource as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AssetBundleLocalResource_unity2_raw::load(
-                __receiver,
-                ::core::convert::Into::into(key),
-                ::core::convert::Into::into(provide_handle),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Unload()` overload"]
-    fn unload(self) -> () {
-        unsafe {
-            let __receiver =
-                <AssetBundleLocalResource as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AssetBundleLocalResource_unity2_raw::unload(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IAssetBundleLocalResourceMethods : IAssetBundleLocalResource { # [doc = "`GetAssetBundle()` overload"] fn get_asset_bundle (self ,) -> crate :: unity_engine :: assetbundle :: AssetBundle { unsafe { let __receiver = < AssetBundleLocalResource as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AssetBundleLocalResource_unity2_raw :: get_asset_bundle (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AssetBundleLocalResource as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AssetBundleLocalResource_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } # [doc = "`PercentComplete()` overload"] fn percent_complete (self ,) -> f32 { unsafe { let __receiver = < AssetBundleLocalResource as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AssetBundleLocalResource_unity2_raw :: percent_complete (__receiver , :: core :: option :: Option :: None) } } # [doc = "`LocalRequestOperationCompleted(crate::unity_engine::asyncoperation::AsyncOperation)` overload"] fn local_request_operation_completed (self , op : impl :: core :: convert :: Into < crate :: unity_engine :: asyncoperation :: AsyncOperation >) -> () { unsafe { let __receiver = < AssetBundleLocalResource as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AssetBundleLocalResource_unity2_raw :: local_request_operation_completed (__receiver , :: core :: convert :: Into :: into (op) , :: core :: option :: Option :: None) } } # [doc = "`WaitForCompletionHandler()` overload"] fn wait_for_completion_handler (self ,) -> bool { unsafe { let __receiver = < AssetBundleLocalResource as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AssetBundleLocalResource_unity2_raw :: wait_for_completion_handler (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Load(::unity2::Il2CppString, crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle)` overload"] fn load (self , key : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , provide_handle : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: resource_providers :: providehandle :: ProvideHandle >) -> () { unsafe { let __receiver = < AssetBundleLocalResource as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AssetBundleLocalResource_unity2_raw :: load (__receiver , :: core :: convert :: Into :: into (key) , :: core :: convert :: Into :: into (provide_handle) , :: core :: option :: Option :: None) } } # [doc = "`Unload()` overload"] fn unload (self ,) -> () { unsafe { let __receiver = < AssetBundleLocalResource as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AssetBundleLocalResource_unity2_raw :: unload (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-resource_management-resource_providers-assetbundlelocalresource")]
-impl<__T: IAssetBundleLocalResource> IAssetBundleLocalResourceMethods for __T {}
+impl < __T : IAssetBundleLocalResource > IAssetBundleLocalResourceMethods for __T { }
+
+#[cfg(feature = "unity_engine-resource_management-resource_providers-assetbundlelocalresource")]
+impl AssetBundleLocalResource { pub fn get_asset_bundle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AssetBundleLocalResource_unity2_raw :: __lookup_get_asset_bundle :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AssetBundleLocalResource_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn percent_complete_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AssetBundleLocalResource_unity2_raw :: __lookup_percent_complete :: get_method_info () } pub fn local_request_operation_completed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AssetBundleLocalResource_unity2_raw :: __lookup_local_request_operation_completed :: get_method_info () } pub fn wait_for_completion_handler_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AssetBundleLocalResource_unity2_raw :: __lookup_wait_for_completion_handler :: get_method_info () } pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AssetBundleLocalResource_unity2_raw :: __lookup_load :: get_method_info () } pub fn unload_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AssetBundleLocalResource_unity2_raw :: __lookup_unload :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-resource_management-resource_providers-assetbundlelocalresource")]
 impl AssetBundleLocalResource {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AssetBundleLocalResource),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAssetBundleLocalResourceMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AssetBundleLocalResource) , :: core :: stringify ! (new) ,)) ; < Self as IAssetBundleLocalResourceMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "unity_engine-resource_management-resource_providers-assetbundlelocalresource")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{AssetBundleLocalResource, IAssetBundleLocalResource, IAssetBundleLocalResourceMethods};
+    pub use super::AssetBundleLocalResource;
+    pub use super::IAssetBundleLocalResource;
+    pub use super::IAssetBundleLocalResourceMethods;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

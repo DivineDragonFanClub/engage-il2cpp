@@ -2,116 +2,51 @@
 
 #[cfg(feature = "app-profilecardfavoriterelaymapemptymenuitem-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::{
-            basicmenuitem::{BasicMenuItem, IBasicMenuItem},
-            profilecardfavoriterelaymapmenuitem::{IProfileCardFavoriteRelayMapMenuItem, ProfileCardFavoriteRelayMapMenuItem},
-        },
-        system::object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardfavoriterelaymapemptymenuitem/ProfileCardFavoriteRelayMapEmptyMenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "ProfileCardFavoriteRelayMapEmptyMenuItem")]
-    #[parent(crate::app::profilecardfavoriterelaymapmenuitem::ProfileCardFavoriteRelayMapMenuItem)]
-    pub struct ProfileCardFavoriteRelayMapEmptyMenuItem {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
+ ;
+ use crate :: app :: profilecardfavoriterelaymapmenuitem :: { IProfileCardFavoriteRelayMapMenuItem , ProfileCardFavoriteRelayMapMenuItem }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardfavoriterelaymapemptymenuitem/ProfileCardFavoriteRelayMapEmptyMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProfileCardFavoriteRelayMapEmptyMenuItem")] # [parent (crate :: app :: profilecardfavoriterelaymapmenuitem :: ProfileCardFavoriteRelayMapMenuItem)] pub struct ProfileCardFavoriteRelayMapEmptyMenuItem {}
+
 }
 
 #[cfg(feature = "app-profilecardfavoriterelaymapemptymenuitem-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-profilecardfavoriterelaymapemptymenuitem")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ProfileCardFavoriteRelayMapEmptyMenuItem_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCardFavoriteRelayMapEmptyMenuItem as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProfileCardFavoriteRelayMapEmptyMenuItem as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: ProfileCardFavoriteRelayMapEmptyMenuItem, initial_select: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ProfileCardFavoriteRelayMapEmptyMenuItem, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, initial_select, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ProfileCardFavoriteRelayMapEmptyMenuItem_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileCardFavoriteRelayMapEmptyMenuItem as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileCardFavoriteRelayMapEmptyMenuItem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : ProfileCardFavoriteRelayMapEmptyMenuItem , initial_select : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ProfileCardFavoriteRelayMapEmptyMenuItem , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , initial_select , __unity2_method_info) } }
 
 #[cfg(feature = "app-profilecardfavoriterelaymapemptymenuitem")]
-pub trait IProfileCardFavoriteRelayMapEmptyMenuItemMethods: IProfileCardFavoriteRelayMapEmptyMenuItem {
-    #[doc = "`.ctor(bool)` overload"]
-    fn ctor(self, initial_select: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver = <ProfileCardFavoriteRelayMapEmptyMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ProfileCardFavoriteRelayMapEmptyMenuItem_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(initial_select),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+pub trait IProfileCardFavoriteRelayMapEmptyMenuItemMethods : IProfileCardFavoriteRelayMapEmptyMenuItem { # [doc = "`.ctor(bool)` overload"] fn ctor (self , initial_select : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < ProfileCardFavoriteRelayMapEmptyMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ProfileCardFavoriteRelayMapEmptyMenuItem_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (initial_select) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-profilecardfavoriterelaymapemptymenuitem")]
-impl<__T: IProfileCardFavoriteRelayMapEmptyMenuItem> IProfileCardFavoriteRelayMapEmptyMenuItemMethods for __T {}
+impl < __T : IProfileCardFavoriteRelayMapEmptyMenuItem > IProfileCardFavoriteRelayMapEmptyMenuItemMethods for __T { }
+
+#[cfg(feature = "app-profilecardfavoriterelaymapemptymenuitem")]
+impl ProfileCardFavoriteRelayMapEmptyMenuItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProfileCardFavoriteRelayMapEmptyMenuItem_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-profilecardfavoriterelaymapemptymenuitem")]
 impl ProfileCardFavoriteRelayMapEmptyMenuItem {
-    #[doc = "`.ctor(bool)` — overload selector"]
-    pub fn new(initial_select: bool) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ProfileCardFavoriteRelayMapEmptyMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IProfileCardFavoriteRelayMapEmptyMenuItemMethods>::ctor(this, initial_select);
-        this
-    }
+# [doc = "`.ctor(bool)` — overload selector"] pub fn new (initial_select : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProfileCardFavoriteRelayMapEmptyMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IProfileCardFavoriteRelayMapEmptyMenuItemMethods > :: ctor (this , initial_select) ; this }
 }
 
 #[cfg(feature = "app-profilecardfavoriterelaymapemptymenuitem")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{
-        IProfileCardFavoriteRelayMapEmptyMenuItem, IProfileCardFavoriteRelayMapEmptyMenuItemMethods, ProfileCardFavoriteRelayMapEmptyMenuItem,
-    };
-    #[cfg(feature = "app-basicmenuitem")]
-    pub use crate::app::basicmenuitem::IBasicMenuItemMethods;
-    #[cfg(feature = "app-profilecardfavoriterelaymapmenuitem")]
-    pub use crate::app::profilecardfavoriterelaymapmenuitem::IProfileCardFavoriteRelayMapMenuItemMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::{
-        app::{basicmenuitem::IBasicMenuItem, profilecardfavoriterelaymapmenuitem::IProfileCardFavoriteRelayMapMenuItem},
-        system::object::IObject,
-    };
+    pub use super::ProfileCardFavoriteRelayMapEmptyMenuItem;
+    pub use super::IProfileCardFavoriteRelayMapEmptyMenuItem;
+    pub use super::IProfileCardFavoriteRelayMapEmptyMenuItemMethods;
+    pub use crate::app::basicmenuitem::IBasicMenuItem;
+    pub use crate::app::profilecardfavoriterelaymapmenuitem::IProfileCardFavoriteRelayMapMenuItem;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "app-basicmenuitem")] pub use crate::app::basicmenuitem::IBasicMenuItemMethods;
+    #[cfg(feature = "app-profilecardfavoriterelaymapmenuitem")] pub use crate::app::profilecardfavoriterelaymapmenuitem::IProfileCardFavoriteRelayMapMenuItemMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

@@ -2,384 +2,94 @@
 
 #[cfg(feature = "app-hubenv-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubenv/HubEnv.md"))]
-    #[::unity2::class(namespace = "App", name = "HubEnv")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct HubEnv {
-        #[offset(24)]
-        #[rename(name = "m_EnableEditMode")]
-        pub m_enable_edit_mode: bool,
-        #[offset(28)]
-        #[rename(name = "m_editTimezoneType")]
-        pub m_edit_timezone_type: crate::app::hubutil::HubUtil_TimezoneType,
-        #[offset(32)]
-        #[rename(name = "m_EnableMorning")]
-        pub m_enable_morning: bool,
-        #[offset(36)]
-        #[rename(name = "m_MorningAmbientSkyColor")]
-        pub m_morning_ambient_sky_color: crate::unity_engine::color::Color,
-        #[offset(52)]
-        #[rename(name = "m_MorningAmbientEquatorColor")]
-        pub m_morning_ambient_equator_color: crate::unity_engine::color::Color,
-        #[offset(68)]
-        #[rename(name = "m_MorningAmbientGroundColor")]
-        pub m_morning_ambient_ground_color: crate::unity_engine::color::Color,
-        #[offset(84)]
-        #[rename(name = "m_MorningFogColor")]
-        pub m_morning_fog_color: crate::unity_engine::color::Color,
-        #[offset(100)]
-        #[rename(name = "m_MorningFogStart")]
-        pub m_morning_fog_start: f32,
-        #[offset(104)]
-        #[rename(name = "m_MorningFogEnd")]
-        pub m_morning_fog_end: f32,
-        #[offset(108)]
-        #[rename(name = "m_EnableDay")]
-        pub m_enable_day: bool,
-        #[offset(112)]
-        #[rename(name = "m_DayAmbientSkyColor")]
-        pub m_day_ambient_sky_color: crate::unity_engine::color::Color,
-        #[offset(128)]
-        #[rename(name = "m_DayAmbientEquatorColor")]
-        pub m_day_ambient_equator_color: crate::unity_engine::color::Color,
-        #[offset(144)]
-        #[rename(name = "m_DayAmbientGroundColor")]
-        pub m_day_ambient_ground_color: crate::unity_engine::color::Color,
-        #[offset(160)]
-        #[rename(name = "m_DayFogColor")]
-        pub m_day_fog_color: crate::unity_engine::color::Color,
-        #[offset(176)]
-        #[rename(name = "m_DayFogStart")]
-        pub m_day_fog_start: f32,
-        #[offset(180)]
-        #[rename(name = "m_DayFogEnd")]
-        pub m_day_fog_end: f32,
-        #[offset(184)]
-        #[rename(name = "m_EnableEvening")]
-        pub m_enable_evening: bool,
-        #[offset(188)]
-        #[rename(name = "m_EveningAmbientSkyColor")]
-        pub m_evening_ambient_sky_color: crate::unity_engine::color::Color,
-        #[offset(204)]
-        #[rename(name = "m_EveningAmbientEquatorColor")]
-        pub m_evening_ambient_equator_color: crate::unity_engine::color::Color,
-        #[offset(220)]
-        #[rename(name = "m_EveningAmbientGroundColor")]
-        pub m_evening_ambient_ground_color: crate::unity_engine::color::Color,
-        #[offset(236)]
-        #[rename(name = "m_EveningFogColor")]
-        pub m_evening_fog_color: crate::unity_engine::color::Color,
-        #[offset(252)]
-        #[rename(name = "m_EveningFogStart")]
-        pub m_evening_fog_start: f32,
-        #[offset(256)]
-        #[rename(name = "m_EveningFogEnd")]
-        pub m_evening_fog_end: f32,
-        #[offset(260)]
-        #[rename(name = "m_EnableNight")]
-        pub m_enable_night: bool,
-        #[offset(264)]
-        #[rename(name = "m_NightAmbientSkyColor")]
-        pub m_night_ambient_sky_color: crate::unity_engine::color::Color,
-        #[offset(280)]
-        #[rename(name = "m_NightAmbientEquatorColor")]
-        pub m_night_ambient_equator_color: crate::unity_engine::color::Color,
-        #[offset(296)]
-        #[rename(name = "m_NightAmbientGroundColor")]
-        pub m_night_ambient_ground_color: crate::unity_engine::color::Color,
-        #[offset(312)]
-        #[rename(name = "m_NightFogColor")]
-        pub m_night_fog_color: crate::unity_engine::color::Color,
-        #[offset(328)]
-        #[rename(name = "m_NightFogStart")]
-        pub m_night_fog_start: f32,
-        #[offset(332)]
-        #[rename(name = "m_NightFogEnd")]
-        pub m_night_fog_end: f32,
-        #[offset(336)]
-        #[rename(name = "baseTimezoneName")]
-        pub base_timezone_name: ::unity2::Array<::unity2::Il2CppString>,
-        #[offset(344)]
-        #[rename(name = "textureNames")]
-        pub texture_names: ::unity2::Array<::unity2::Il2CppString>,
-        #[offset(352)]
-        #[rename(name = "resourceHandles")]
-        pub resource_handles: crate::system::collections::generic::list_1::List_1<crate::app::resourcehandle_2::ResourceHandle_2>,
-        #[offset(360)]
-        #[rename(name = "m_lightmapData")]
-        pub m_lightmap_data: ::unity2::Array<crate::unity_engine::lightmapdata::LightmapData>,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubenv/HubEnv.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubEnv")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct HubEnv {
+# [offset (24)] # [rename (name = "m_EnableEditMode")] pub m_enable_edit_mode : bool ,
+# [offset (28)] # [rename (name = "m_editTimezoneType")] pub m_edit_timezone_type : crate :: app :: hubutil :: HubUtil_TimezoneType ,
+# [offset (32)] # [rename (name = "m_EnableMorning")] pub m_enable_morning : bool ,
+# [offset (36)] # [rename (name = "m_MorningAmbientSkyColor")] pub m_morning_ambient_sky_color : crate :: unity_engine :: color :: Color ,
+# [offset (52)] # [rename (name = "m_MorningAmbientEquatorColor")] pub m_morning_ambient_equator_color : crate :: unity_engine :: color :: Color ,
+# [offset (68)] # [rename (name = "m_MorningAmbientGroundColor")] pub m_morning_ambient_ground_color : crate :: unity_engine :: color :: Color ,
+# [offset (84)] # [rename (name = "m_MorningFogColor")] pub m_morning_fog_color : crate :: unity_engine :: color :: Color ,
+# [offset (100)] # [rename (name = "m_MorningFogStart")] pub m_morning_fog_start : f32 ,
+# [offset (104)] # [rename (name = "m_MorningFogEnd")] pub m_morning_fog_end : f32 ,
+# [offset (108)] # [rename (name = "m_EnableDay")] pub m_enable_day : bool ,
+# [offset (112)] # [rename (name = "m_DayAmbientSkyColor")] pub m_day_ambient_sky_color : crate :: unity_engine :: color :: Color ,
+# [offset (128)] # [rename (name = "m_DayAmbientEquatorColor")] pub m_day_ambient_equator_color : crate :: unity_engine :: color :: Color ,
+# [offset (144)] # [rename (name = "m_DayAmbientGroundColor")] pub m_day_ambient_ground_color : crate :: unity_engine :: color :: Color ,
+# [offset (160)] # [rename (name = "m_DayFogColor")] pub m_day_fog_color : crate :: unity_engine :: color :: Color ,
+# [offset (176)] # [rename (name = "m_DayFogStart")] pub m_day_fog_start : f32 ,
+# [offset (180)] # [rename (name = "m_DayFogEnd")] pub m_day_fog_end : f32 ,
+# [offset (184)] # [rename (name = "m_EnableEvening")] pub m_enable_evening : bool ,
+# [offset (188)] # [rename (name = "m_EveningAmbientSkyColor")] pub m_evening_ambient_sky_color : crate :: unity_engine :: color :: Color ,
+# [offset (204)] # [rename (name = "m_EveningAmbientEquatorColor")] pub m_evening_ambient_equator_color : crate :: unity_engine :: color :: Color ,
+# [offset (220)] # [rename (name = "m_EveningAmbientGroundColor")] pub m_evening_ambient_ground_color : crate :: unity_engine :: color :: Color ,
+# [offset (236)] # [rename (name = "m_EveningFogColor")] pub m_evening_fog_color : crate :: unity_engine :: color :: Color ,
+# [offset (252)] # [rename (name = "m_EveningFogStart")] pub m_evening_fog_start : f32 ,
+# [offset (256)] # [rename (name = "m_EveningFogEnd")] pub m_evening_fog_end : f32 ,
+# [offset (260)] # [rename (name = "m_EnableNight")] pub m_enable_night : bool ,
+# [offset (264)] # [rename (name = "m_NightAmbientSkyColor")] pub m_night_ambient_sky_color : crate :: unity_engine :: color :: Color ,
+# [offset (280)] # [rename (name = "m_NightAmbientEquatorColor")] pub m_night_ambient_equator_color : crate :: unity_engine :: color :: Color ,
+# [offset (296)] # [rename (name = "m_NightAmbientGroundColor")] pub m_night_ambient_ground_color : crate :: unity_engine :: color :: Color ,
+# [offset (312)] # [rename (name = "m_NightFogColor")] pub m_night_fog_color : crate :: unity_engine :: color :: Color ,
+# [offset (328)] # [rename (name = "m_NightFogStart")] pub m_night_fog_start : f32 ,
+# [offset (332)] # [rename (name = "m_NightFogEnd")] pub m_night_fog_end : f32 ,
+# [offset (336)] # [rename (name = "baseTimezoneName")] pub base_timezone_name : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
+# [offset (344)] # [rename (name = "textureNames")] pub texture_names : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
+# [offset (352)] # [rename (name = "resourceHandles")] pub resource_handles : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: resourcehandle_2 :: ResourceHandle_2 > ,
+# [offset (360)] # [rename (name = "m_lightmapData")] pub m_lightmap_data : :: unity2 :: Array < crate :: unity_engine :: lightmapdata :: LightmapData > ,
+}
+
 }
 
 #[cfg(feature = "app-hubenv-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-hubenv")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __HubEnv_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_load {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::app::hubutil::HubUtil_TimezoneType as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<HubEnv as ::unity2::ClassIdentity>::class(), "Load", 2, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <HubEnv as ::unity2::ClassIdentity>::NAME, "Load", e),
-            }
-        }
-    }
-    pub unsafe fn load(
-        this: HubEnv,
-        scene_name: ::unity2::Il2CppString,
-        timezone_type: crate::app::hubutil::HubUtil_TimezoneType,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::ienumerator::IEnumerator {
-        let inner: extern "C" fn(
-            HubEnv,
-            ::unity2::Il2CppString,
-            crate::app::hubutil::HubUtil_TimezoneType,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::collections::ienumerator::IEnumerator = ::core::mem::transmute(__lookup_load::get_method_info().method_ptr);
-        inner(this, scene_name, timezone_type, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_apply {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::hubutil::HubUtil_TimezoneType as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<HubEnv as ::unity2::ClassIdentity>::class(), "Apply", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <HubEnv as ::unity2::ClassIdentity>::NAME, "Apply", e),
-            }
-        }
-    }
-    pub unsafe fn apply(
-        this: HubEnv,
-        timezone_type: crate::app::hubutil::HubUtil_TimezoneType,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubEnv, crate::app::hubutil::HubUtil_TimezoneType, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_apply::get_method_info().method_ptr);
-        inner(this, timezone_type, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_destroy {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<HubEnv as ::unity2::ClassIdentity>::class(), "OnDestroy", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubEnv as ::unity2::ClassIdentity>::NAME,
-                        "OnDestroy",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_destroy(this: HubEnv, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(HubEnv, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_on_destroy::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_loading {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<HubEnv as ::unity2::ClassIdentity>::class(), "IsLoading", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubEnv as ::unity2::ClassIdentity>::NAME,
-                        "IsLoading",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_loading(this: HubEnv, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(HubEnv, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_loading::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_clear_resources {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubEnv as ::unity2::ClassIdentity>::class(),
-                "ClearResources",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubEnv as ::unity2::ClassIdentity>::NAME,
-                        "ClearResources",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn clear_resources(this: HubEnv, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(HubEnv, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_clear_resources::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<HubEnv as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <HubEnv as ::unity2::ClassIdentity>::NAME, ".ctor", e),
-            }
-        }
-    }
-    pub unsafe fn ctor(this: HubEnv, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(HubEnv, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __HubEnv_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_load { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: app :: hubutil :: HubUtil_TimezoneType as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubEnv as :: unity2 :: ClassIdentity > :: class () , "Load" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubEnv as :: unity2 :: ClassIdentity > :: NAME , "Load" , e) , } } } pub unsafe fn load (this : HubEnv , scene_name : :: unity2 :: Il2CppString , timezone_type : crate :: app :: hubutil :: HubUtil_TimezoneType , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { let inner : extern "C" fn (HubEnv , :: unity2 :: Il2CppString , crate :: app :: hubutil :: HubUtil_TimezoneType , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute (__lookup_load :: get_method_info () . method_ptr ,) ; inner (this , scene_name , timezone_type , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_apply { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: hubutil :: HubUtil_TimezoneType as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubEnv as :: unity2 :: ClassIdentity > :: class () , "Apply" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubEnv as :: unity2 :: ClassIdentity > :: NAME , "Apply" , e) , } } } pub unsafe fn apply (this : HubEnv , timezone_type : crate :: app :: hubutil :: HubUtil_TimezoneType , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HubEnv , crate :: app :: hubutil :: HubUtil_TimezoneType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_apply :: get_method_info () . method_ptr ,) ; inner (this , timezone_type , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_destroy { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubEnv as :: unity2 :: ClassIdentity > :: class () , "OnDestroy" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubEnv as :: unity2 :: ClassIdentity > :: NAME , "OnDestroy" , e) , } } } pub unsafe fn on_destroy (this : HubEnv , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HubEnv , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_destroy :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_loading { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubEnv as :: unity2 :: ClassIdentity > :: class () , "IsLoading" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubEnv as :: unity2 :: ClassIdentity > :: NAME , "IsLoading" , e) , } } } pub unsafe fn is_loading (this : HubEnv , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (HubEnv , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_loading :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_clear_resources { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubEnv as :: unity2 :: ClassIdentity > :: class () , "ClearResources" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubEnv as :: unity2 :: ClassIdentity > :: NAME , "ClearResources" , e) , } } } pub unsafe fn clear_resources (this : HubEnv , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HubEnv , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_clear_resources :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubEnv as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubEnv as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : HubEnv , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HubEnv , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-hubenv")]
-pub trait IHubEnvMethods: IHubEnv {
-    #[doc = "`Load(::unity2::Il2CppString, crate::app::hubutil::HubUtil_TimezoneType)` overload"]
-    fn load(
-        self,
-        scene_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        timezone_type: impl ::core::convert::Into<crate::app::hubutil::HubUtil_TimezoneType>,
-    ) -> crate::system::collections::ienumerator::IEnumerator {
-        unsafe {
-            let __receiver = <HubEnv as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubEnv_unity2_raw::load(
-                __receiver,
-                ::core::convert::Into::into(scene_name),
-                ::core::convert::Into::into(timezone_type),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Apply(crate::app::hubutil::HubUtil_TimezoneType)` overload"]
-    fn apply(self, timezone_type: impl ::core::convert::Into<crate::app::hubutil::HubUtil_TimezoneType>) -> () {
-        unsafe {
-            let __receiver = <HubEnv as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubEnv_unity2_raw::apply(__receiver, ::core::convert::Into::into(timezone_type), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnDestroy()` overload"]
-    fn on_destroy(self) -> () {
-        unsafe {
-            let __receiver = <HubEnv as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubEnv_unity2_raw::on_destroy(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsLoading()` overload"]
-    fn is_loading(self) -> bool {
-        unsafe {
-            let __receiver = <HubEnv as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubEnv_unity2_raw::is_loading(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ClearResources()` overload"]
-    fn clear_resources(self) -> () {
-        unsafe {
-            let __receiver = <HubEnv as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubEnv_unity2_raw::clear_resources(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <HubEnv as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubEnv_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IHubEnvMethods : IHubEnv { # [doc = "`Load(::unity2::Il2CppString, crate::app::hubutil::HubUtil_TimezoneType)` overload"] fn load (self , scene_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , timezone_type : impl :: core :: convert :: Into < crate :: app :: hubutil :: HubUtil_TimezoneType >) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { let __receiver = < HubEnv as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubEnv_unity2_raw :: load (__receiver , :: core :: convert :: Into :: into (scene_name) , :: core :: convert :: Into :: into (timezone_type) , :: core :: option :: Option :: None) } } # [doc = "`Apply(crate::app::hubutil::HubUtil_TimezoneType)` overload"] fn apply (self , timezone_type : impl :: core :: convert :: Into < crate :: app :: hubutil :: HubUtil_TimezoneType >) -> () { unsafe { let __receiver = < HubEnv as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubEnv_unity2_raw :: apply (__receiver , :: core :: convert :: Into :: into (timezone_type) , :: core :: option :: Option :: None) } } # [doc = "`OnDestroy()` overload"] fn on_destroy (self ,) -> () { unsafe { let __receiver = < HubEnv as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubEnv_unity2_raw :: on_destroy (__receiver , :: core :: option :: Option :: None) } } # [doc = "`IsLoading()` overload"] fn is_loading (self ,) -> bool { unsafe { let __receiver = < HubEnv as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubEnv_unity2_raw :: is_loading (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ClearResources()` overload"] fn clear_resources (self ,) -> () { unsafe { let __receiver = < HubEnv as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubEnv_unity2_raw :: clear_resources (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HubEnv as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubEnv_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-hubenv")]
-impl<__T: IHubEnv> IHubEnvMethods for __T {}
+impl < __T : IHubEnv > IHubEnvMethods for __T { }
+
+#[cfg(feature = "app-hubenv")]
+impl HubEnv { pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubEnv_unity2_raw :: __lookup_load :: get_method_info () } pub fn apply_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubEnv_unity2_raw :: __lookup_apply :: get_method_info () } pub fn on_destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubEnv_unity2_raw :: __lookup_on_destroy :: get_method_info () } pub fn is_loading_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubEnv_unity2_raw :: __lookup_is_loading :: get_method_info () } pub fn clear_resources_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubEnv_unity2_raw :: __lookup_clear_resources :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubEnv_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-hubenv")]
 impl HubEnv {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(HubEnv), ::core::stringify!(new),));
-        <Self as IHubEnvMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubEnv) , :: core :: stringify ! (new) ,)) ; < Self as IHubEnvMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-hubenv")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{HubEnv, IHubEnv, IHubEnvMethods};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        system::object::IObject,
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::HubEnv;
+    pub use super::IHubEnv;
+    pub use super::IHubEnvMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

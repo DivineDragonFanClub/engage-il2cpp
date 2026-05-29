@@ -2,96 +2,34 @@
 
 #[cfg(feature = "unity_engine-icanvasraycastfilter-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/icanvasraycastfilter/ICanvasRaycastFilter.md"))]
-    #[::unity2::class(namespace = "UnityEngine", name = "ICanvasRaycastFilter")]
-    pub struct ICanvasRaycastFilter {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/icanvasraycastfilter/ICanvasRaycastFilter.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "ICanvasRaycastFilter")] pub struct ICanvasRaycastFilter {}
+
 }
 
 #[cfg(feature = "unity_engine-icanvasraycastfilter-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-icanvasraycastfilter")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ICanvasRaycastFilter_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_raycast_location_valid {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::camera::Camera as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ICanvasRaycastFilter as ::unity2::ClassIdentity>::class(),
-                "IsRaycastLocationValid",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ICanvasRaycastFilter as ::unity2::ClassIdentity>::NAME,
-                        "IsRaycastLocationValid",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_raycast_location_valid(
-        this: ICanvasRaycastFilter,
-        sp: crate::unity_engine::vector2::Vector2,
-        event_camera: crate::unity_engine::camera::Camera,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            ICanvasRaycastFilter,
-            crate::unity_engine::vector2::Vector2,
-            crate::unity_engine::camera::Camera,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(__lookup_is_raycast_location_valid::get_method_info().method_ptr);
-        inner(this, sp, event_camera, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ICanvasRaycastFilter_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_raycast_location_valid { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector2 :: Vector2 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: camera :: Camera as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ICanvasRaycastFilter as :: unity2 :: ClassIdentity > :: class () , "IsRaycastLocationValid" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ICanvasRaycastFilter as :: unity2 :: ClassIdentity > :: NAME , "IsRaycastLocationValid" , e) , } } } pub unsafe fn is_raycast_location_valid (this : ICanvasRaycastFilter , sp : crate :: unity_engine :: vector2 :: Vector2 , event_camera : crate :: unity_engine :: camera :: Camera , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (ICanvasRaycastFilter , crate :: unity_engine :: vector2 :: Vector2 , crate :: unity_engine :: camera :: Camera , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_raycast_location_valid :: get_method_info () . method_ptr ,) ; inner (this , sp , event_camera , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-icanvasraycastfilter")]
-pub trait IICanvasRaycastFilterMethods: IICanvasRaycastFilter {
-    #[doc = "`IsRaycastLocationValid(crate::unity_engine::vector2::Vector2, crate::unity_engine::camera::Camera)` overload"]
-    fn is_raycast_location_valid(
-        self,
-        sp: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
-        event_camera: impl ::core::convert::Into<crate::unity_engine::camera::Camera>,
-    ) -> bool {
-        unsafe {
-            let __receiver =
-                <ICanvasRaycastFilter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ICanvasRaycastFilter_unity2_raw::is_raycast_location_valid(
-                __receiver,
-                ::core::convert::Into::into(sp),
-                ::core::convert::Into::into(event_camera),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+pub trait IICanvasRaycastFilterMethods : IICanvasRaycastFilter { # [doc = "`IsRaycastLocationValid(crate::unity_engine::vector2::Vector2, crate::unity_engine::camera::Camera)` overload"] fn is_raycast_location_valid (self , sp : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 > , event_camera : impl :: core :: convert :: Into < crate :: unity_engine :: camera :: Camera >) -> bool { unsafe { let __receiver = < ICanvasRaycastFilter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ICanvasRaycastFilter_unity2_raw :: is_raycast_location_valid (__receiver , :: core :: convert :: Into :: into (sp) , :: core :: convert :: Into :: into (event_camera) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-icanvasraycastfilter")]
-impl<__T: IICanvasRaycastFilter> IICanvasRaycastFilterMethods for __T {}
+impl < __T : IICanvasRaycastFilter > IICanvasRaycastFilterMethods for __T { }
+
+#[cfg(feature = "unity_engine-icanvasraycastfilter")]
+impl ICanvasRaycastFilter { pub fn is_raycast_location_valid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ICanvasRaycastFilter_unity2_raw :: __lookup_is_raycast_location_valid :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-icanvasraycastfilter")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{ICanvasRaycastFilter, IICanvasRaycastFilter, IICanvasRaycastFilterMethods};
+    pub use super::ICanvasRaycastFilter;
+    pub use super::IICanvasRaycastFilter;
+    pub use super::IICanvasRaycastFilterMethods;
 }

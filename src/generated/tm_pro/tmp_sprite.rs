@@ -2,104 +2,53 @@
 
 #[cfg(feature = "tm_pro-tmp_sprite-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        tm_pro::tmp_textelement_legacy::{ITMP_TextElement_Legacy, TMP_TextElement_Legacy},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_sprite/TMP_Sprite.md"))]
-    #[::unity2::class(namespace = "TMPro", name = "TMP_Sprite")]
-    #[parent(crate::tm_pro::tmp_textelement_legacy::TMP_TextElement_Legacy)]
-    pub struct TMP_Sprite {
-        #[offset(56)]
-        #[rename(name = "name")]
-        pub name: ::unity2::Il2CppString,
-        #[offset(64)]
-        #[rename(name = "hashCode")]
-        pub hash_code: i32,
-        #[offset(68)]
-        #[rename(name = "unicode")]
-        pub unicode: i32,
-        #[offset(72)]
-        #[rename(name = "pivot")]
-        pub pivot: crate::unity_engine::vector2::Vector2,
-        #[offset(80)]
-        #[rename(name = "sprite")]
-        pub sprite: crate::unity_engine::sprite::Sprite,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: tm_pro :: tmp_textelement_legacy :: { ITMP_TextElement_Legacy , TMP_TextElement_Legacy }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_sprite/TMP_Sprite.md"))] # [:: unity2 :: class (namespace = "TMPro" , name = "TMP_Sprite")] # [parent (crate :: tm_pro :: tmp_textelement_legacy :: TMP_TextElement_Legacy)] pub struct TMP_Sprite {
+# [offset (56)] # [rename (name = "name")] pub name : :: unity2 :: Il2CppString ,
+# [offset (64)] # [rename (name = "hashCode")] pub hash_code : i32 ,
+# [offset (68)] # [rename (name = "unicode")] pub unicode : i32 ,
+# [offset (72)] # [rename (name = "pivot")] pub pivot : crate :: unity_engine :: vector2 :: Vector2 ,
+# [offset (80)] # [rename (name = "sprite")] pub sprite : crate :: unity_engine :: sprite :: Sprite ,
+}
+
 }
 
 #[cfg(feature = "tm_pro-tmp_sprite-types")]
 pub use __types::*;
 
 #[cfg(feature = "tm_pro-tmp_sprite")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __TMP_Sprite_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<TMP_Sprite as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TMP_Sprite as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: TMP_Sprite, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TMP_Sprite, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __TMP_Sprite_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TMP_Sprite as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TMP_Sprite as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : TMP_Sprite , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TMP_Sprite , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "tm_pro-tmp_sprite")]
-pub trait ITMP_SpriteMethods: ITMP_Sprite {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <TMP_Sprite as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TMP_Sprite_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait ITMP_SpriteMethods : ITMP_Sprite { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TMP_Sprite as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TMP_Sprite_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "tm_pro-tmp_sprite")]
-impl<__T: ITMP_Sprite> ITMP_SpriteMethods for __T {}
+impl < __T : ITMP_Sprite > ITMP_SpriteMethods for __T { }
+
+#[cfg(feature = "tm_pro-tmp_sprite")]
+impl TMP_Sprite { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TMP_Sprite_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "tm_pro-tmp_sprite")]
 impl TMP_Sprite {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(TMP_Sprite), ::core::stringify!(new),));
-        <Self as ITMP_SpriteMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TMP_Sprite) , :: core :: stringify ! (new) ,)) ; < Self as ITMP_SpriteMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "tm_pro-tmp_sprite")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{ITMP_Sprite, ITMP_SpriteMethods, TMP_Sprite};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "tm_pro-tmp_textelement_legacy")]
-    pub use crate::tm_pro::tmp_textelement_legacy::ITMP_TextElement_LegacyMethods;
-    pub use crate::{system::object::IObject, tm_pro::tmp_textelement_legacy::ITMP_TextElement_Legacy};
+    pub use super::TMP_Sprite;
+    pub use super::ITMP_Sprite;
+    pub use super::ITMP_SpriteMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::tm_pro::tmp_textelement_legacy::ITMP_TextElement_Legacy;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "tm_pro-tmp_textelement_legacy")] pub use crate::tm_pro::tmp_textelement_legacy::ITMP_TextElement_LegacyMethods;
 }

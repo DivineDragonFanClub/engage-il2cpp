@@ -2,1030 +2,249 @@
 
 #[cfg(feature = "app-sortiesequence-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::{
-            procinst::{IProcInst, ProcInst},
-            singletonprocinst_1::{ISingletonProcInst_1, SingletonProcInst_1},
-        },
-        system::{
-            object::{IObject, Object},
-            r#enum::{Enum, IEnum},
-            valuetype::{IValueType, ValueType},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortiesequence/SortieSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "SortieSequence")]
-    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: sortiesequence :: SortieSequence >)]
-    pub struct SortieSequence {
-        #[static_field]
-        #[rename(name = "s_IsDecidedToBattle")]
-        pub s_is_decided_to_battle: bool,
-        #[offset(116)]
-        #[rename(name = "m_Mode")]
-        pub m_mode: crate::app::sortiesequence::SortieSequence_Modes,
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: procinst :: { IProcInst , ProcInst }
+ ;
+ use crate :: app :: singletonprocinst_1 :: { ISingletonProcInst_1 , SingletonProcInst_1 }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortiesequence/SortieSequence_Modes.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct SortieSequence_Modes  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for SortieSequence_Modes  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "SortieSequence.Modes";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortiesequence/SortieSequence_Label.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct SortieSequence_Label {
-        pub value: i32,
+}
+
+
+impl  ::unity2::IlType for SortieSequence_Modes  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::ClassIdentity for SortieSequence_Label {
-        const NAME: &'static str = "SortieSequence.Label";
-        const NAMESPACE: &'static str = "App";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  SortieSequence_Modes  {
+    pub fn map() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl ::unity2::IlType for SortieSequence_Label {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+
+    pub fn hub() -> Self {
+        Self { value: 1 }
+
     }
 
-    impl SortieSequence_Label {
-        pub fn notice() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn top_menu() -> Self {
-            Self { value: 1 }
-        }
+    pub fn edit() -> Self {
+        Self { value: 2 }
 
-        pub fn selection_unit() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn position_change() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn inventory() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn god() -> Self {
-            Self { value: 5 }
-        }
-
-        pub fn tutorial() -> Self {
-            Self { value: 6 }
-        }
-
-        pub fn reliance() -> Self {
-            Self { value: 7 }
-        }
-
-        pub fn weapon_shop() -> Self {
-            Self { value: 8 }
-        }
-
-        pub fn item_shop() -> Self {
-            Self { value: 9 }
-        }
-
-        pub fn friend_list() -> Self {
-            Self { value: 10 }
-        }
-
-        pub fn ring_list() -> Self {
-            Self { value: 11 }
-        }
-
-        pub fn config() -> Self {
-            Self { value: 12 }
-        }
-
-        pub fn save() -> Self {
-            Self { value: 13 }
-        }
-
-        pub fn end() -> Self {
-            Self { value: 14 }
-        }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortiesequence/SortieSequence_Modes.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct SortieSequence_Modes {
-        pub value: i32,
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortiesequence/SortieSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "SortieSequence")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: sortiesequence :: SortieSequence >)] pub struct SortieSequence {
+# [static_field] # [rename (name = "s_IsDecidedToBattle")] pub s_is_decided_to_battle : bool ,
+# [offset (116)] # [rename (name = "m_Mode")] pub m_mode : crate :: app :: sortiesequence :: SortieSequence_Modes ,
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortiesequence/SortieSequence_Label.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct SortieSequence_Label  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for SortieSequence_Label  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "SortieSequence.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    impl ::unity2::ClassIdentity for SortieSequence_Modes {
-        const NAME: &'static str = "SortieSequence.Modes";
-        const NAMESPACE: &'static str = "App";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  ::unity2::IlType for SortieSequence_Label  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::IlType for SortieSequence_Modes {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  SortieSequence_Label  {
+    pub fn notice() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl SortieSequence_Modes {
-        pub fn map() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn hub() -> Self {
-            Self { value: 1 }
-        }
+    pub fn top_menu() -> Self {
+        Self { value: 1 }
 
-        pub fn edit() -> Self {
-            Self { value: 2 }
-        }
     }
+
+
+    pub fn selection_unit() -> Self {
+        Self { value: 2 }
+
+    }
+
+
+    pub fn position_change() -> Self {
+        Self { value: 3 }
+
+    }
+
+
+    pub fn inventory() -> Self {
+        Self { value: 4 }
+
+    }
+
+
+    pub fn god() -> Self {
+        Self { value: 5 }
+
+    }
+
+
+    pub fn tutorial() -> Self {
+        Self { value: 6 }
+
+    }
+
+
+    pub fn reliance() -> Self {
+        Self { value: 7 }
+
+    }
+
+
+    pub fn weapon_shop() -> Self {
+        Self { value: 8 }
+
+    }
+
+
+    pub fn item_shop() -> Self {
+        Self { value: 9 }
+
+    }
+
+
+    pub fn friend_list() -> Self {
+        Self { value: 10 }
+
+    }
+
+
+    pub fn ring_list() -> Self {
+        Self { value: 11 }
+
+    }
+
+
+    pub fn config() -> Self {
+        Self { value: 12 }
+
+    }
+
+
+    pub fn save() -> Self {
+        Self { value: 13 }
+
+    }
+
+
+    pub fn end() -> Self {
+        Self { value: 14 }
+
+    }
+
+}
+
 }
 
 #[cfg(feature = "app-sortiesequence-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-sortiesequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __SortieSequence_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind_map {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieSequence as ::unity2::ClassIdentity>::class(),
-                "CreateBindMap",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SortieSequence as ::unity2::ClassIdentity>::NAME,
-                        "CreateBindMap",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_bind_map(
-        super_: crate::app::procinst::ProcInst,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::procinst::ProcInst {
-        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> crate::app::procinst::ProcInst =
-            ::core::mem::transmute(__lookup_create_bind_map::get_method_info().method_ptr);
-        inner(super_, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind_hub {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieSequence as ::unity2::ClassIdentity>::class(),
-                "CreateBindHub",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SortieSequence as ::unity2::ClassIdentity>::NAME,
-                        "CreateBindHub",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_bind_hub(
-        super_: crate::app::procinst::ProcInst,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::procinst::ProcInst {
-        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> crate::app::procinst::ProcInst =
-            ::core::mem::transmute(__lookup_create_bind_hub::get_method_info().method_ptr);
-        inner(super_, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind_edit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieSequence as ::unity2::ClassIdentity>::class(),
-                "CreateBindEdit",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SortieSequence as ::unity2::ClassIdentity>::NAME,
-                        "CreateBindEdit",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_bind_edit(
-        super_: crate::app::procinst::ProcInst,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::procinst::ProcInst {
-        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> crate::app::procinst::ProcInst =
-            ::core::mem::transmute(__lookup_create_bind_edit::get_method_info().method_ptr);
-        inner(super_, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind_impl {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <crate::app::sortiesequence::SortieSequence_Modes as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieSequence as ::unity2::ClassIdentity>::class(),
-                "CreateBindImpl",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SortieSequence as ::unity2::ClassIdentity>::NAME,
-                        "CreateBindImpl",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_bind_impl(
-        super_: crate::app::procinst::ProcInst,
-        mode: crate::app::sortiesequence::SortieSequence_Modes,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::procinst::ProcInst {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            crate::app::sortiesequence::SortieSequence_Modes,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::procinst::ProcInst = ::core::mem::transmute(__lookup_create_bind_impl::get_method_info().method_ptr);
-        inner(super_, mode, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_decide_to_battle {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieSequence as ::unity2::ClassIdentity>::class(),
-                "DecideToBattle",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SortieSequence as ::unity2::ClassIdentity>::NAME,
-                        "DecideToBattle",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn decide_to_battle(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_decide_to_battle::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_decided_to_battle {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieSequence as ::unity2::ClassIdentity>::class(),
-                "IsDecidedToBattle",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SortieSequence as ::unity2::ClassIdentity>::NAME,
-                        "IsDecidedToBattle",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_decided_to_battle(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_decided_to_battle::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_mode {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieSequence as ::unity2::ClassIdentity>::class(),
-                "get_Mode",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SortieSequence as ::unity2::ClassIdentity>::NAME,
-                        "get_Mode",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_mode(this: SortieSequence, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::sortiesequence::SortieSequence_Modes {
-        let inner: extern "C" fn(SortieSequence, ::unity2::OptionalMethod) -> crate::app::sortiesequence::SortieSequence_Modes =
-            ::core::mem::transmute(__lookup_get_mode::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::sortiesequence::SortieSequence_Modes as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieSequence as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SortieSequence as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: SortieSequence,
-        mode: crate::app::sortiesequence::SortieSequence_Modes,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(SortieSequence, crate::app::sortiesequence::SortieSequence_Modes, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, mode, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_dispose {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieSequence as ::unity2::ClassIdentity>::class(),
-                "OnDispose",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SortieSequence as ::unity2::ClassIdentity>::NAME,
-                        "OnDispose",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_dispose(this: SortieSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SortieSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_dispose::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_shutdown {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieSequence as ::unity2::ClassIdentity>::class(),
-                "OnShutdown",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SortieSequence as ::unity2::ClassIdentity>::NAME,
-                        "OnShutdown",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_shutdown(this: SortieSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SortieSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_shutdown::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_setup_units {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieSequence as ::unity2::ClassIdentity>::class(),
-                "SetupUnits",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SortieSequence as ::unity2::ClassIdentity>::NAME,
-                        "SetupUnits",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn setup_units(this: SortieSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SortieSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_setup_units::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_post_setup_units {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieSequence as ::unity2::ClassIdentity>::class(),
-                "PostSetupUnits",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SortieSequence as ::unity2::ClassIdentity>::NAME,
-                        "PostSetupUnits",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn post_setup_units(this: SortieSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SortieSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_post_setup_units::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_try_show_tutorial {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieSequence as ::unity2::ClassIdentity>::class(),
-                "TryShowTutorial",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SortieSequence as ::unity2::ClassIdentity>::NAME,
-                        "TryShowTutorial",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn try_show_tutorial(this: SortieSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SortieSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_try_show_tutorial::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_notice {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieSequence as ::unity2::ClassIdentity>::class(),
-                "Notice",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SortieSequence as ::unity2::ClassIdentity>::NAME,
-                        "Notice",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn notice(this: SortieSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SortieSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_notice::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_reset_managers {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieSequence as ::unity2::ClassIdentity>::class(),
-                "ResetManagers",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SortieSequence as ::unity2::ClassIdentity>::NAME,
-                        "ResetManagers",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn reset_managers(this: SortieSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SortieSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_reset_managers::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_show_help {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieSequence as ::unity2::ClassIdentity>::class(),
-                "ShowHelp",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SortieSequence as ::unity2::ClassIdentity>::NAME,
-                        "ShowHelp",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn show_help(this: SortieSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SortieSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_show_help::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_hide_help {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieSequence as ::unity2::ClassIdentity>::class(),
-                "HideHelp",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SortieSequence as ::unity2::ClassIdentity>::NAME,
-                        "HideHelp",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn hide_help(this: SortieSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SortieSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_hide_help::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_play_bgm {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieSequence as ::unity2::ClassIdentity>::class(),
-                "PlayBgm",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SortieSequence as ::unity2::ClassIdentity>::NAME,
-                        "PlayBgm",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn play_bgm(this: SortieSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SortieSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_play_bgm::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_stop_bgm {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieSequence as ::unity2::ClassIdentity>::class(),
-                "StopBgm",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SortieSequence as ::unity2::ClassIdentity>::NAME,
-                        "StopBgm",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn stop_bgm(this: SortieSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SortieSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_stop_bgm::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_stop_field_bgm_for_relay_take_over {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieSequence as ::unity2::ClassIdentity>::class(),
-                "StopFieldBgmForRelayTakeOver",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SortieSequence as ::unity2::ClassIdentity>::NAME,
-                        "StopFieldBgmForRelayTakeOver",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn stop_field_bgm_for_relay_take_over(this: SortieSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SortieSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_stop_field_bgm_for_relay_take_over::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __SortieSequence_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_bind_map { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SortieSequence as :: unity2 :: ClassIdentity > :: class () , "CreateBindMap" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SortieSequence as :: unity2 :: ClassIdentity > :: NAME , "CreateBindMap" , e) , } } } pub unsafe fn create_bind_map (super_ : crate :: app :: procinst :: ProcInst , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: procinst :: ProcInst { let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> crate :: app :: procinst :: ProcInst = :: core :: mem :: transmute (__lookup_create_bind_map :: get_method_info () . method_ptr ,) ; inner (super_ , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_bind_hub { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SortieSequence as :: unity2 :: ClassIdentity > :: class () , "CreateBindHub" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SortieSequence as :: unity2 :: ClassIdentity > :: NAME , "CreateBindHub" , e) , } } } pub unsafe fn create_bind_hub (super_ : crate :: app :: procinst :: ProcInst , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: procinst :: ProcInst { let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> crate :: app :: procinst :: ProcInst = :: core :: mem :: transmute (__lookup_create_bind_hub :: get_method_info () . method_ptr ,) ; inner (super_ , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_bind_edit { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SortieSequence as :: unity2 :: ClassIdentity > :: class () , "CreateBindEdit" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SortieSequence as :: unity2 :: ClassIdentity > :: NAME , "CreateBindEdit" , e) , } } } pub unsafe fn create_bind_edit (super_ : crate :: app :: procinst :: ProcInst , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: procinst :: ProcInst { let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> crate :: app :: procinst :: ProcInst = :: core :: mem :: transmute (__lookup_create_bind_edit :: get_method_info () . method_ptr ,) ; inner (super_ , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_bind_impl { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: sortiesequence :: SortieSequence_Modes as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SortieSequence as :: unity2 :: ClassIdentity > :: class () , "CreateBindImpl" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SortieSequence as :: unity2 :: ClassIdentity > :: NAME , "CreateBindImpl" , e) , } } } pub unsafe fn create_bind_impl (super_ : crate :: app :: procinst :: ProcInst , mode : crate :: app :: sortiesequence :: SortieSequence_Modes , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: procinst :: ProcInst { let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: sortiesequence :: SortieSequence_Modes , :: unity2 :: OptionalMethod ,) -> crate :: app :: procinst :: ProcInst = :: core :: mem :: transmute (__lookup_create_bind_impl :: get_method_info () . method_ptr ,) ; inner (super_ , mode , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_decide_to_battle { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SortieSequence as :: unity2 :: ClassIdentity > :: class () , "DecideToBattle" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SortieSequence as :: unity2 :: ClassIdentity > :: NAME , "DecideToBattle" , e) , } } } pub unsafe fn decide_to_battle (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_decide_to_battle :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_decided_to_battle { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SortieSequence as :: unity2 :: ClassIdentity > :: class () , "IsDecidedToBattle" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SortieSequence as :: unity2 :: ClassIdentity > :: NAME , "IsDecidedToBattle" , e) , } } } pub unsafe fn is_decided_to_battle (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_decided_to_battle :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_mode { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SortieSequence as :: unity2 :: ClassIdentity > :: class () , "get_Mode" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SortieSequence as :: unity2 :: ClassIdentity > :: NAME , "get_Mode" , e) , } } } pub unsafe fn get_mode (this : SortieSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: sortiesequence :: SortieSequence_Modes { let inner : extern "C" fn (SortieSequence , :: unity2 :: OptionalMethod ,) -> crate :: app :: sortiesequence :: SortieSequence_Modes = :: core :: mem :: transmute (__lookup_get_mode :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: sortiesequence :: SortieSequence_Modes as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SortieSequence as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SortieSequence as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : SortieSequence , mode : crate :: app :: sortiesequence :: SortieSequence_Modes , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SortieSequence , crate :: app :: sortiesequence :: SortieSequence_Modes , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , mode , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_dispose { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SortieSequence as :: unity2 :: ClassIdentity > :: class () , "OnDispose" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SortieSequence as :: unity2 :: ClassIdentity > :: NAME , "OnDispose" , e) , } } } pub unsafe fn on_dispose (this : SortieSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SortieSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_dispose :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_shutdown { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SortieSequence as :: unity2 :: ClassIdentity > :: class () , "OnShutdown" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SortieSequence as :: unity2 :: ClassIdentity > :: NAME , "OnShutdown" , e) , } } } pub unsafe fn on_shutdown (this : SortieSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SortieSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_shutdown :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_setup_units { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SortieSequence as :: unity2 :: ClassIdentity > :: class () , "SetupUnits" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SortieSequence as :: unity2 :: ClassIdentity > :: NAME , "SetupUnits" , e) , } } } pub unsafe fn setup_units (this : SortieSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SortieSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_setup_units :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_post_setup_units { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SortieSequence as :: unity2 :: ClassIdentity > :: class () , "PostSetupUnits" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SortieSequence as :: unity2 :: ClassIdentity > :: NAME , "PostSetupUnits" , e) , } } } pub unsafe fn post_setup_units (this : SortieSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SortieSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_post_setup_units :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_try_show_tutorial { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SortieSequence as :: unity2 :: ClassIdentity > :: class () , "TryShowTutorial" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SortieSequence as :: unity2 :: ClassIdentity > :: NAME , "TryShowTutorial" , e) , } } } pub unsafe fn try_show_tutorial (this : SortieSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SortieSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_try_show_tutorial :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_notice { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SortieSequence as :: unity2 :: ClassIdentity > :: class () , "Notice" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SortieSequence as :: unity2 :: ClassIdentity > :: NAME , "Notice" , e) , } } } pub unsafe fn notice (this : SortieSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SortieSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_notice :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_reset_managers { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SortieSequence as :: unity2 :: ClassIdentity > :: class () , "ResetManagers" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SortieSequence as :: unity2 :: ClassIdentity > :: NAME , "ResetManagers" , e) , } } } pub unsafe fn reset_managers (this : SortieSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SortieSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_reset_managers :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_show_help { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SortieSequence as :: unity2 :: ClassIdentity > :: class () , "ShowHelp" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SortieSequence as :: unity2 :: ClassIdentity > :: NAME , "ShowHelp" , e) , } } } pub unsafe fn show_help (this : SortieSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SortieSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_show_help :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_hide_help { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SortieSequence as :: unity2 :: ClassIdentity > :: class () , "HideHelp" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SortieSequence as :: unity2 :: ClassIdentity > :: NAME , "HideHelp" , e) , } } } pub unsafe fn hide_help (this : SortieSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SortieSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_hide_help :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_play_bgm { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SortieSequence as :: unity2 :: ClassIdentity > :: class () , "PlayBgm" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SortieSequence as :: unity2 :: ClassIdentity > :: NAME , "PlayBgm" , e) , } } } pub unsafe fn play_bgm (this : SortieSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SortieSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_play_bgm :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_stop_bgm { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SortieSequence as :: unity2 :: ClassIdentity > :: class () , "StopBgm" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SortieSequence as :: unity2 :: ClassIdentity > :: NAME , "StopBgm" , e) , } } } pub unsafe fn stop_bgm (this : SortieSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SortieSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_stop_bgm :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_stop_field_bgm_for_relay_take_over { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SortieSequence as :: unity2 :: ClassIdentity > :: class () , "StopFieldBgmForRelayTakeOver" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SortieSequence as :: unity2 :: ClassIdentity > :: NAME , "StopFieldBgmForRelayTakeOver" , e) , } } } pub unsafe fn stop_field_bgm_for_relay_take_over (this : SortieSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SortieSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_stop_field_bgm_for_relay_take_over :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-sortiesequence")]
+impl SortieSequence { # [doc = "`CreateBindMap(crate::app::procinst::ProcInst)` overload"] pub fn create_bind_map (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> crate :: app :: procinst :: ProcInst { unsafe { __SortieSequence_unity2_raw :: create_bind_map (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } # [doc = "`CreateBindHub(crate::app::procinst::ProcInst)` overload"] pub fn create_bind_hub (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> crate :: app :: procinst :: ProcInst { unsafe { __SortieSequence_unity2_raw :: create_bind_hub (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } # [doc = "`CreateBindEdit(crate::app::procinst::ProcInst)` overload"] pub fn create_bind_edit (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> crate :: app :: procinst :: ProcInst { unsafe { __SortieSequence_unity2_raw :: create_bind_edit (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } # [doc = "`CreateBindImpl(crate::app::procinst::ProcInst, crate::app::sortiesequence::SortieSequence_Modes)` overload"] pub fn create_bind_impl (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , mode : impl :: core :: convert :: Into < crate :: app :: sortiesequence :: SortieSequence_Modes >) -> crate :: app :: procinst :: ProcInst { unsafe { __SortieSequence_unity2_raw :: create_bind_impl (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (mode) , :: core :: option :: Option :: None) } } # [doc = "`DecideToBattle()` overload"] pub fn decide_to_battle () -> () { unsafe { __SortieSequence_unity2_raw :: decide_to_battle (:: core :: option :: Option :: None) } } # [doc = "`IsDecidedToBattle()` overload"] pub fn is_decided_to_battle () -> bool { unsafe { __SortieSequence_unity2_raw :: is_decided_to_battle (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-sortiesequence")]
+pub trait ISortieSequenceMethods : ISortieSequence { # [doc = "`get_Mode()` overload"] fn get_mode (self ,) -> crate :: app :: sortiesequence :: SortieSequence_Modes { unsafe { let __receiver = < SortieSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SortieSequence_unity2_raw :: get_mode (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor(crate::app::sortiesequence::SortieSequence_Modes)` overload"] fn ctor (self , mode : impl :: core :: convert :: Into < crate :: app :: sortiesequence :: SortieSequence_Modes >) -> () { unsafe { let __receiver = < SortieSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SortieSequence_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (mode) , :: core :: option :: Option :: None) } } # [doc = "`OnDispose()` overload"] fn on_dispose (self ,) -> () { unsafe { let __receiver = < SortieSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SortieSequence_unity2_raw :: on_dispose (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnShutdown()` overload"] fn on_shutdown (self ,) -> () { unsafe { let __receiver = < SortieSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SortieSequence_unity2_raw :: on_shutdown (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetupUnits()` overload"] fn setup_units (self ,) -> () { unsafe { let __receiver = < SortieSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SortieSequence_unity2_raw :: setup_units (__receiver , :: core :: option :: Option :: None) } } # [doc = "`PostSetupUnits()` overload"] fn post_setup_units (self ,) -> () { unsafe { let __receiver = < SortieSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SortieSequence_unity2_raw :: post_setup_units (__receiver , :: core :: option :: Option :: None) } } # [doc = "`TryShowTutorial()` overload"] fn try_show_tutorial (self ,) -> () { unsafe { let __receiver = < SortieSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SortieSequence_unity2_raw :: try_show_tutorial (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Notice()` overload"] fn notice (self ,) -> () { unsafe { let __receiver = < SortieSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SortieSequence_unity2_raw :: notice (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ResetManagers()` overload"] fn reset_managers (self ,) -> () { unsafe { let __receiver = < SortieSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SortieSequence_unity2_raw :: reset_managers (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ShowHelp()` overload"] fn show_help (self ,) -> () { unsafe { let __receiver = < SortieSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SortieSequence_unity2_raw :: show_help (__receiver , :: core :: option :: Option :: None) } } # [doc = "`HideHelp()` overload"] fn hide_help (self ,) -> () { unsafe { let __receiver = < SortieSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SortieSequence_unity2_raw :: hide_help (__receiver , :: core :: option :: Option :: None) } } # [doc = "`PlayBgm()` overload"] fn play_bgm (self ,) -> () { unsafe { let __receiver = < SortieSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SortieSequence_unity2_raw :: play_bgm (__receiver , :: core :: option :: Option :: None) } } # [doc = "`StopBgm()` overload"] fn stop_bgm (self ,) -> () { unsafe { let __receiver = < SortieSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SortieSequence_unity2_raw :: stop_bgm (__receiver , :: core :: option :: Option :: None) } } # [doc = "`StopFieldBgmForRelayTakeOver()` overload"] fn stop_field_bgm_for_relay_take_over (self ,) -> () { unsafe { let __receiver = < SortieSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SortieSequence_unity2_raw :: stop_field_bgm_for_relay_take_over (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-sortiesequence")]
+impl < __T : ISortieSequence > ISortieSequenceMethods for __T { }
+
+#[cfg(feature = "app-sortiesequence")]
+impl SortieSequence { pub fn create_bind_map_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SortieSequence_unity2_raw :: __lookup_create_bind_map :: get_method_info () } pub fn create_bind_hub_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SortieSequence_unity2_raw :: __lookup_create_bind_hub :: get_method_info () } pub fn create_bind_edit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SortieSequence_unity2_raw :: __lookup_create_bind_edit :: get_method_info () } pub fn create_bind_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SortieSequence_unity2_raw :: __lookup_create_bind_impl :: get_method_info () } pub fn decide_to_battle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SortieSequence_unity2_raw :: __lookup_decide_to_battle :: get_method_info () } pub fn is_decided_to_battle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SortieSequence_unity2_raw :: __lookup_is_decided_to_battle :: get_method_info () } pub fn get_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SortieSequence_unity2_raw :: __lookup_get_mode :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SortieSequence_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn on_dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SortieSequence_unity2_raw :: __lookup_on_dispose :: get_method_info () } pub fn on_shutdown_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SortieSequence_unity2_raw :: __lookup_on_shutdown :: get_method_info () } pub fn setup_units_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SortieSequence_unity2_raw :: __lookup_setup_units :: get_method_info () } pub fn post_setup_units_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SortieSequence_unity2_raw :: __lookup_post_setup_units :: get_method_info () } pub fn try_show_tutorial_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SortieSequence_unity2_raw :: __lookup_try_show_tutorial :: get_method_info () } pub fn notice_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SortieSequence_unity2_raw :: __lookup_notice :: get_method_info () } pub fn reset_managers_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SortieSequence_unity2_raw :: __lookup_reset_managers :: get_method_info () } pub fn show_help_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SortieSequence_unity2_raw :: __lookup_show_help :: get_method_info () } pub fn hide_help_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SortieSequence_unity2_raw :: __lookup_hide_help :: get_method_info () } pub fn play_bgm_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SortieSequence_unity2_raw :: __lookup_play_bgm :: get_method_info () } pub fn stop_bgm_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SortieSequence_unity2_raw :: __lookup_stop_bgm :: get_method_info () } pub fn stop_field_bgm_for_relay_take_over_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SortieSequence_unity2_raw :: __lookup_stop_field_bgm_for_relay_take_over :: get_method_info () } }
 
 #[cfg(feature = "app-sortiesequence")]
 impl SortieSequence {
-    #[doc = "`CreateBindMap(crate::app::procinst::ProcInst)` overload"]
-    pub fn create_bind_map(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> crate::app::procinst::ProcInst {
-        unsafe { __SortieSequence_unity2_raw::create_bind_map(::core::convert::Into::into(super_), ::core::option::Option::None) }
-    }
-
-    #[doc = "`CreateBindHub(crate::app::procinst::ProcInst)` overload"]
-    pub fn create_bind_hub(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> crate::app::procinst::ProcInst {
-        unsafe { __SortieSequence_unity2_raw::create_bind_hub(::core::convert::Into::into(super_), ::core::option::Option::None) }
-    }
-
-    #[doc = "`CreateBindEdit(crate::app::procinst::ProcInst)` overload"]
-    pub fn create_bind_edit(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> crate::app::procinst::ProcInst {
-        unsafe { __SortieSequence_unity2_raw::create_bind_edit(::core::convert::Into::into(super_), ::core::option::Option::None) }
-    }
-
-    #[doc = "`CreateBindImpl(crate::app::procinst::ProcInst, crate::app::sortiesequence::SortieSequence_Modes)` overload"]
-    pub fn create_bind_impl(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        mode: impl ::core::convert::Into<crate::app::sortiesequence::SortieSequence_Modes>,
-    ) -> crate::app::procinst::ProcInst {
-        unsafe {
-            __SortieSequence_unity2_raw::create_bind_impl(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(mode),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`DecideToBattle()` overload"]
-    pub fn decide_to_battle() -> () {
-        unsafe { __SortieSequence_unity2_raw::decide_to_battle(::core::option::Option::None) }
-    }
-
-    #[doc = "`IsDecidedToBattle()` overload"]
-    pub fn is_decided_to_battle() -> bool {
-        unsafe { __SortieSequence_unity2_raw::is_decided_to_battle(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-sortiesequence")]
-pub trait ISortieSequenceMethods: ISortieSequence {
-    #[doc = "`get_Mode()` overload"]
-    fn get_mode(self) -> crate::app::sortiesequence::SortieSequence_Modes {
-        unsafe {
-            let __receiver = <SortieSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SortieSequence_unity2_raw::get_mode(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor(crate::app::sortiesequence::SortieSequence_Modes)` overload"]
-    fn ctor(self, mode: impl ::core::convert::Into<crate::app::sortiesequence::SortieSequence_Modes>) -> () {
-        unsafe {
-            let __receiver = <SortieSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SortieSequence_unity2_raw::ctor(__receiver, ::core::convert::Into::into(mode), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnDispose()` overload"]
-    fn on_dispose(self) -> () {
-        unsafe {
-            let __receiver = <SortieSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SortieSequence_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnShutdown()` overload"]
-    fn on_shutdown(self) -> () {
-        unsafe {
-            let __receiver = <SortieSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SortieSequence_unity2_raw::on_shutdown(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetupUnits()` overload"]
-    fn setup_units(self) -> () {
-        unsafe {
-            let __receiver = <SortieSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SortieSequence_unity2_raw::setup_units(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`PostSetupUnits()` overload"]
-    fn post_setup_units(self) -> () {
-        unsafe {
-            let __receiver = <SortieSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SortieSequence_unity2_raw::post_setup_units(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`TryShowTutorial()` overload"]
-    fn try_show_tutorial(self) -> () {
-        unsafe {
-            let __receiver = <SortieSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SortieSequence_unity2_raw::try_show_tutorial(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Notice()` overload"]
-    fn notice(self) -> () {
-        unsafe {
-            let __receiver = <SortieSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SortieSequence_unity2_raw::notice(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ResetManagers()` overload"]
-    fn reset_managers(self) -> () {
-        unsafe {
-            let __receiver = <SortieSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SortieSequence_unity2_raw::reset_managers(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ShowHelp()` overload"]
-    fn show_help(self) -> () {
-        unsafe {
-            let __receiver = <SortieSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SortieSequence_unity2_raw::show_help(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`HideHelp()` overload"]
-    fn hide_help(self) -> () {
-        unsafe {
-            let __receiver = <SortieSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SortieSequence_unity2_raw::hide_help(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`PlayBgm()` overload"]
-    fn play_bgm(self) -> () {
-        unsafe {
-            let __receiver = <SortieSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SortieSequence_unity2_raw::play_bgm(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`StopBgm()` overload"]
-    fn stop_bgm(self) -> () {
-        unsafe {
-            let __receiver = <SortieSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SortieSequence_unity2_raw::stop_bgm(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`StopFieldBgmForRelayTakeOver()` overload"]
-    fn stop_field_bgm_for_relay_take_over(self) -> () {
-        unsafe {
-            let __receiver = <SortieSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SortieSequence_unity2_raw::stop_field_bgm_for_relay_take_over(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-sortiesequence")]
-impl<__T: ISortieSequence> ISortieSequenceMethods for __T {}
-
-#[cfg(feature = "app-sortiesequence")]
-impl SortieSequence {
-    #[doc = "`.ctor(crate::app::sortiesequence::SortieSequence_Modes)` — overload selector"]
-    pub fn new(mode: crate::app::sortiesequence::SortieSequence_Modes) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SortieSequence),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISortieSequenceMethods>::ctor(this, mode);
-        this
-    }
+# [doc = "`.ctor(crate::app::sortiesequence::SortieSequence_Modes)` — overload selector"] pub fn new (mode : crate :: app :: sortiesequence :: SortieSequence_Modes) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SortieSequence) , :: core :: stringify ! (new) ,)) ; < Self as ISortieSequenceMethods > :: ctor (this , mode) ; this }
 }
 
 #[cfg(feature = "app-sortiesequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{ISortieSequence, ISortieSequenceMethods, SortieSequence, SortieSequence_Label, SortieSequence_Modes};
-    #[cfg(feature = "app-procinst")]
-    pub use crate::app::procinst::IProcInstMethods;
-    #[cfg(feature = "app-singletonprocinst_1")]
-    pub use crate::app::singletonprocinst_1::ISingletonProcInst_1Methods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::{
-        app::{procinst::IProcInst, singletonprocinst_1::ISingletonProcInst_1},
-        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
-    };
+    pub use super::SortieSequence_Modes;
+    pub use super::SortieSequence;
+    pub use super::ISortieSequence;
+    pub use super::ISortieSequenceMethods;
+    pub use super::SortieSequence_Label;
+    pub use crate::app::procinst::IProcInst;
+    pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "app-procinst")] pub use crate::app::procinst::IProcInstMethods;
+    #[cfg(feature = "app-singletonprocinst_1")] pub use crate::app::singletonprocinst_1::ISingletonProcInst_1Methods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

@@ -2,890 +2,131 @@
 
 #[cfg(feature = "unity_engine-switch-networkinterfacewrapper-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        delegate::{Delegate, IDelegate},
-        multicastdelegate::{IMulticastDelegate, MulticastDelegate},
-        object::{IObject, Object},
-        r#enum::{Enum, IEnum},
-        valuetype::{IValueType, ValueType},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/switch/networkinterfacewrapper/NetworkInterfaceWrapper_NetworkConnectedHandler.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Switch", name = "NetworkInterfaceWrapper.NetworkConnectedHandler")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct NetworkInterfaceWrapper_NetworkConnectedHandler {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: delegate :: { Delegate , IDelegate }
+ ;
+ use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/switch/networkinterfacewrapper/NetworkInterfaceWrapper.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Switch", name = "NetworkInterfaceWrapper")]
-    #[parent(crate::system::object::Object)]
-    pub struct NetworkInterfaceWrapper {
-        #[static_field]
-        #[rename(name = "_networkConnected")]
-        pub network_connected: crate::unity_engine::switch::networkinterfacewrapper::NetworkInterfaceWrapper_NetworkConnectedHandler,
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/switch/networkinterfacewrapper/NetworkInterfaceWrapper.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Switch" , name = "NetworkInterfaceWrapper")] # [parent (crate :: system :: object :: Object)] pub struct NetworkInterfaceWrapper {
+# [static_field] # [rename (name = "_networkConnected")] pub network_connected : crate :: unity_engine :: switch :: networkinterfacewrapper :: NetworkInterfaceWrapper_NetworkConnectedHandler ,
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/switch/networkinterfacewrapper/NetworkInterfaceWrapper_NetworkConnectedHandler.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Switch" , name = "NetworkInterfaceWrapper.NetworkConnectedHandler")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct NetworkInterfaceWrapper_NetworkConnectedHandler {}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/switch/networkinterfacewrapper/NetworkInterfaceWrapper_NetworkConnectedResult.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct NetworkInterfaceWrapper_NetworkConnectedResult  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for NetworkInterfaceWrapper_NetworkConnectedResult  {
+    const NAMESPACE: &'static str = "UnityEngine.Switch";
+
+    const NAME: &'static str = "NetworkInterfaceWrapper.NetworkConnectedResult";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/switch/networkinterfacewrapper/NetworkInterfaceWrapper_NetworkConnectedResult.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct NetworkInterfaceWrapper_NetworkConnectedResult {
-        pub value: i32,
+}
+
+
+impl  ::unity2::IlType for NetworkInterfaceWrapper_NetworkConnectedResult  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::ClassIdentity for NetworkInterfaceWrapper_NetworkConnectedResult {
-        const NAME: &'static str = "NetworkInterfaceWrapper.NetworkConnectedResult";
-        const NAMESPACE: &'static str = "UnityEngine.Switch";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  NetworkInterfaceWrapper_NetworkConnectedResult  {
+    pub fn pending() -> Self {
+        Self { value: -1 }
+
     }
 
-    impl ::unity2::IlType for NetworkInterfaceWrapper_NetworkConnectedResult {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+
+    pub fn denied() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl NetworkInterfaceWrapper_NetworkConnectedResult {
-        pub fn pending() -> Self {
-            Self { value: -1 }
-        }
 
-        pub fn denied() -> Self {
-            Self { value: 0 }
-        }
+    pub fn accepted() -> Self {
+        Self { value: 1 }
 
-        pub fn accepted() -> Self {
-            Self { value: 1 }
-        }
     }
+
+}
+
 }
 
 #[cfg(feature = "unity_engine-switch-networkinterfacewrapper-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-switch-networkinterfacewrapper")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __NetworkInterfaceWrapper_NetworkConnectedHandler_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NetworkInterfaceWrapper_NetworkConnectedHandler as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <NetworkInterfaceWrapper_NetworkConnectedHandler as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: NetworkInterfaceWrapper_NetworkConnectedHandler,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            NetworkInterfaceWrapper_NetworkConnectedHandler,
-            crate::system::object::Object,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NetworkInterfaceWrapper_NetworkConnectedHandler as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <NetworkInterfaceWrapper_NetworkConnectedHandler as ::unity2::ClassIdentity>::NAME,
-                        "Invoke",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn invoke(
-        this: NetworkInterfaceWrapper_NetworkConnectedHandler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::switch::networkinterfacewrapper::NetworkInterfaceWrapper_NetworkConnectedResult {
-        let inner: extern "C" fn(
-            NetworkInterfaceWrapper_NetworkConnectedHandler,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::switch::networkinterfacewrapper::NetworkInterfaceWrapper_NetworkConnectedResult =
-            ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __NetworkInterfaceWrapper_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_enter_network_connecting { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< NetworkInterfaceWrapper as :: unity2 :: ClassIdentity > :: class () , "EnterNetworkConnecting" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NetworkInterfaceWrapper as :: unity2 :: ClassIdentity > :: NAME , "EnterNetworkConnecting" , e) , } } } pub unsafe fn enter_network_connecting (is_local_network_mode : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (bool , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_enter_network_connecting :: get_method_info () . method_ptr ,) ; inner (is_local_network_mode , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_enter_network_connecting_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< NetworkInterfaceWrapper as :: unity2 :: ClassIdentity > :: class () , "EnterNetworkConnecting" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NetworkInterfaceWrapper as :: unity2 :: ClassIdentity > :: NAME , "EnterNetworkConnecting" , e) , } } } pub unsafe fn enter_network_connecting_2 (is_local_network_mode : bool , report_if_unavailable : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (bool , bool , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_enter_network_connecting_2 :: get_method_info () . method_ptr ,) ; inner (is_local_network_mode , report_if_unavailable , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_weak_enter_network_connecting { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< NetworkInterfaceWrapper as :: unity2 :: ClassIdentity > :: class () , "WeakEnterNetworkConnecting" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NetworkInterfaceWrapper as :: unity2 :: ClassIdentity > :: NAME , "WeakEnterNetworkConnecting" , e) , } } } pub unsafe fn weak_enter_network_connecting (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_weak_enter_network_connecting :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_leave_network_connecting { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< NetworkInterfaceWrapper as :: unity2 :: ClassIdentity > :: class () , "LeaveNetworkConnecting" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NetworkInterfaceWrapper as :: unity2 :: ClassIdentity > :: NAME , "LeaveNetworkConnecting" , e) , } } } pub unsafe fn leave_network_connecting (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_leave_network_connecting :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_network_connecting { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< NetworkInterfaceWrapper as :: unity2 :: ClassIdentity > :: class () , "IsNetworkConnecting" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NetworkInterfaceWrapper as :: unity2 :: ClassIdentity > :: NAME , "IsNetworkConnecting" , e) , } } } pub unsafe fn is_network_connecting (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_network_connecting :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_wait_for_network_connecting { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< NetworkInterfaceWrapper as :: unity2 :: ClassIdentity > :: class () , "WaitForNetworkConnecting" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NetworkInterfaceWrapper as :: unity2 :: ClassIdentity > :: NAME , "WaitForNetworkConnecting" , e) , } } } pub unsafe fn wait_for_network_connecting (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_wait_for_network_connecting :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_network_accepted { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< NetworkInterfaceWrapper as :: unity2 :: ClassIdentity > :: class () , "IsNetworkAccepted" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NetworkInterfaceWrapper as :: unity2 :: ClassIdentity > :: NAME , "IsNetworkAccepted" , e) , } } } pub unsafe fn is_network_accepted (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_network_accepted :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_network_finished { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< NetworkInterfaceWrapper as :: unity2 :: ClassIdentity > :: class () , "IsNetworkFinished" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NetworkInterfaceWrapper as :: unity2 :: ClassIdentity > :: NAME , "IsNetworkFinished" , e) , } } } pub unsafe fn is_network_finished (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_network_finished :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_network_reference_count { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< NetworkInterfaceWrapper as :: unity2 :: ClassIdentity > :: class () , "GetNetworkReferenceCount" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NetworkInterfaceWrapper as :: unity2 :: ClassIdentity > :: NAME , "GetNetworkReferenceCount" , e) , } } } pub unsafe fn get_network_reference_count (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_network_reference_count :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_network_available { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< NetworkInterfaceWrapper as :: unity2 :: ClassIdentity > :: class () , "IsNetworkAvailable" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NetworkInterfaceWrapper as :: unity2 :: ClassIdentity > :: NAME , "IsNetworkAvailable" , e) , } } } pub unsafe fn is_network_available (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_network_available :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_network_connecting_on_background { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< NetworkInterfaceWrapper as :: unity2 :: ClassIdentity > :: class () , "IsNetworkConnectingOnBackground" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NetworkInterfaceWrapper as :: unity2 :: ClassIdentity > :: NAME , "IsNetworkConnectingOnBackground" , e) , } } } pub unsafe fn is_network_connecting_on_background (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_network_connecting_on_background :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_network_connecting_on_background { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< NetworkInterfaceWrapper as :: unity2 :: ClassIdentity > :: class () , "SetNetworkConnectingOnBackground" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NetworkInterfaceWrapper as :: unity2 :: ClassIdentity > :: NAME , "SetNetworkConnectingOnBackground" , e) , } } } pub unsafe fn set_network_connecting_on_background (is_background : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_network_connecting_on_background :: get_method_info () . method_ptr ,) ; inner (is_background , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_network_connected_enabled { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< NetworkInterfaceWrapper as :: unity2 :: ClassIdentity > :: class () , "SetNetworkConnectedEnabled" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NetworkInterfaceWrapper as :: unity2 :: ClassIdentity > :: NAME , "SetNetworkConnectedEnabled" , e) , } } } pub unsafe fn set_network_connected_enabled (is_enabled : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_network_connected_enabled :: get_method_info () . method_ptr ,) ; inner (is_enabled , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_invoke_network_connected { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< NetworkInterfaceWrapper as :: unity2 :: ClassIdentity > :: class () , "InvokeNetworkConnected" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NetworkInterfaceWrapper as :: unity2 :: ClassIdentity > :: NAME , "InvokeNetworkConnected" , e) , } } } pub unsafe fn invoke_network_connected (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_invoke_network_connected :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_network_connected { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: switch :: networkinterfacewrapper :: NetworkInterfaceWrapper_NetworkConnectedHandler as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< NetworkInterfaceWrapper as :: unity2 :: ClassIdentity > :: class () , "add_networkConnected" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NetworkInterfaceWrapper as :: unity2 :: ClassIdentity > :: NAME , "add_networkConnected" , e) , } } } pub unsafe fn add_network_connected (value : crate :: unity_engine :: switch :: networkinterfacewrapper :: NetworkInterfaceWrapper_NetworkConnectedHandler , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: unity_engine :: switch :: networkinterfacewrapper :: NetworkInterfaceWrapper_NetworkConnectedHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_network_connected :: get_method_info () . method_ptr ,) ; inner (value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_remove_network_connected { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: switch :: networkinterfacewrapper :: NetworkInterfaceWrapper_NetworkConnectedHandler as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< NetworkInterfaceWrapper as :: unity2 :: ClassIdentity > :: class () , "remove_networkConnected" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NetworkInterfaceWrapper as :: unity2 :: ClassIdentity > :: NAME , "remove_networkConnected" , e) , } } } pub unsafe fn remove_network_connected (value : crate :: unity_engine :: switch :: networkinterfacewrapper :: NetworkInterfaceWrapper_NetworkConnectedHandler , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: unity_engine :: switch :: networkinterfacewrapper :: NetworkInterfaceWrapper_NetworkConnectedHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_remove_network_connected :: get_method_info () . method_ptr ,) ; inner (value , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-switch-networkinterfacewrapper")]
-pub trait INetworkInterfaceWrapper_NetworkConnectedHandlerMethods: INetworkInterfaceWrapper_NetworkConnectedHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
-        unsafe {
-            let __receiver = <NetworkInterfaceWrapper_NetworkConnectedHandler as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __NetworkInterfaceWrapper_NetworkConnectedHandler_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invoke()` overload"]
-    fn invoke(self) -> crate::unity_engine::switch::networkinterfacewrapper::NetworkInterfaceWrapper_NetworkConnectedResult {
-        unsafe {
-            let __receiver = <NetworkInterfaceWrapper_NetworkConnectedHandler as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __NetworkInterfaceWrapper_NetworkConnectedHandler_unity2_raw::invoke(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+impl NetworkInterfaceWrapper { # [doc = "`EnterNetworkConnecting(bool)` overload"] pub fn enter_network_connecting (is_local_network_mode : impl :: core :: convert :: Into < bool >) -> bool { unsafe { __NetworkInterfaceWrapper_unity2_raw :: enter_network_connecting (:: core :: convert :: Into :: into (is_local_network_mode) , :: core :: option :: Option :: None) } } # [doc = "`EnterNetworkConnecting(bool, bool)` overload"] pub fn enter_network_connecting_2 (is_local_network_mode : impl :: core :: convert :: Into < bool > , report_if_unavailable : impl :: core :: convert :: Into < bool >) -> bool { unsafe { __NetworkInterfaceWrapper_unity2_raw :: enter_network_connecting_2 (:: core :: convert :: Into :: into (is_local_network_mode) , :: core :: convert :: Into :: into (report_if_unavailable) , :: core :: option :: Option :: None) } } # [doc = "`WeakEnterNetworkConnecting()` overload"] pub fn weak_enter_network_connecting () -> bool { unsafe { __NetworkInterfaceWrapper_unity2_raw :: weak_enter_network_connecting (:: core :: option :: Option :: None) } } # [doc = "`LeaveNetworkConnecting()` overload"] pub fn leave_network_connecting () -> () { unsafe { __NetworkInterfaceWrapper_unity2_raw :: leave_network_connecting (:: core :: option :: Option :: None) } } # [doc = "`IsNetworkConnecting()` overload"] pub fn is_network_connecting () -> bool { unsafe { __NetworkInterfaceWrapper_unity2_raw :: is_network_connecting (:: core :: option :: Option :: None) } } # [doc = "`WaitForNetworkConnecting()` overload"] pub fn wait_for_network_connecting () -> () { unsafe { __NetworkInterfaceWrapper_unity2_raw :: wait_for_network_connecting (:: core :: option :: Option :: None) } } # [doc = "`IsNetworkAccepted()` overload"] pub fn is_network_accepted () -> bool { unsafe { __NetworkInterfaceWrapper_unity2_raw :: is_network_accepted (:: core :: option :: Option :: None) } } # [doc = "`IsNetworkFinished()` overload"] pub fn is_network_finished () -> bool { unsafe { __NetworkInterfaceWrapper_unity2_raw :: is_network_finished (:: core :: option :: Option :: None) } } # [doc = "`GetNetworkReferenceCount()` overload"] pub fn get_network_reference_count () -> i32 { unsafe { __NetworkInterfaceWrapper_unity2_raw :: get_network_reference_count (:: core :: option :: Option :: None) } } # [doc = "`IsNetworkAvailable()` overload"] pub fn is_network_available () -> bool { unsafe { __NetworkInterfaceWrapper_unity2_raw :: is_network_available (:: core :: option :: Option :: None) } } # [doc = "`IsNetworkConnectingOnBackground()` overload"] pub fn is_network_connecting_on_background () -> bool { unsafe { __NetworkInterfaceWrapper_unity2_raw :: is_network_connecting_on_background (:: core :: option :: Option :: None) } } # [doc = "`SetNetworkConnectingOnBackground(bool)` overload"] pub fn set_network_connecting_on_background (is_background : impl :: core :: convert :: Into < bool >) -> () { unsafe { __NetworkInterfaceWrapper_unity2_raw :: set_network_connecting_on_background (:: core :: convert :: Into :: into (is_background) , :: core :: option :: Option :: None) } } # [doc = "`SetNetworkConnectedEnabled(bool)` overload"] pub fn set_network_connected_enabled (is_enabled : impl :: core :: convert :: Into < bool >) -> () { unsafe { __NetworkInterfaceWrapper_unity2_raw :: set_network_connected_enabled (:: core :: convert :: Into :: into (is_enabled) , :: core :: option :: Option :: None) } } # [doc = "`InvokeNetworkConnected()` overload"] pub fn invoke_network_connected () -> i32 { unsafe { __NetworkInterfaceWrapper_unity2_raw :: invoke_network_connected (:: core :: option :: Option :: None) } } # [doc = "`add_networkConnected(crate::unity_engine::switch::networkinterfacewrapper::NetworkInterfaceWrapper_NetworkConnectedHandler)` overload"] pub fn add_network_connected (value : impl :: core :: convert :: Into < crate :: unity_engine :: switch :: networkinterfacewrapper :: NetworkInterfaceWrapper_NetworkConnectedHandler >) -> () { unsafe { __NetworkInterfaceWrapper_unity2_raw :: add_network_connected (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`remove_networkConnected(crate::unity_engine::switch::networkinterfacewrapper::NetworkInterfaceWrapper_NetworkConnectedHandler)` overload"] pub fn remove_network_connected (value : impl :: core :: convert :: Into < crate :: unity_engine :: switch :: networkinterfacewrapper :: NetworkInterfaceWrapper_NetworkConnectedHandler >) -> () { unsafe { __NetworkInterfaceWrapper_unity2_raw :: remove_network_connected (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-switch-networkinterfacewrapper")]
-impl<__T: INetworkInterfaceWrapper_NetworkConnectedHandler> INetworkInterfaceWrapper_NetworkConnectedHandlerMethods for __T {}
+impl NetworkInterfaceWrapper { pub fn enter_network_connecting_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __NetworkInterfaceWrapper_unity2_raw :: __lookup_enter_network_connecting :: get_method_info () } pub fn enter_network_connecting_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __NetworkInterfaceWrapper_unity2_raw :: __lookup_enter_network_connecting_2 :: get_method_info () } pub fn weak_enter_network_connecting_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __NetworkInterfaceWrapper_unity2_raw :: __lookup_weak_enter_network_connecting :: get_method_info () } pub fn leave_network_connecting_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __NetworkInterfaceWrapper_unity2_raw :: __lookup_leave_network_connecting :: get_method_info () } pub fn is_network_connecting_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __NetworkInterfaceWrapper_unity2_raw :: __lookup_is_network_connecting :: get_method_info () } pub fn wait_for_network_connecting_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __NetworkInterfaceWrapper_unity2_raw :: __lookup_wait_for_network_connecting :: get_method_info () } pub fn is_network_accepted_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __NetworkInterfaceWrapper_unity2_raw :: __lookup_is_network_accepted :: get_method_info () } pub fn is_network_finished_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __NetworkInterfaceWrapper_unity2_raw :: __lookup_is_network_finished :: get_method_info () } pub fn get_network_reference_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __NetworkInterfaceWrapper_unity2_raw :: __lookup_get_network_reference_count :: get_method_info () } pub fn is_network_available_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __NetworkInterfaceWrapper_unity2_raw :: __lookup_is_network_available :: get_method_info () } pub fn is_network_connecting_on_background_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __NetworkInterfaceWrapper_unity2_raw :: __lookup_is_network_connecting_on_background :: get_method_info () } pub fn set_network_connecting_on_background_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __NetworkInterfaceWrapper_unity2_raw :: __lookup_set_network_connecting_on_background :: get_method_info () } pub fn set_network_connected_enabled_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __NetworkInterfaceWrapper_unity2_raw :: __lookup_set_network_connected_enabled :: get_method_info () } pub fn invoke_network_connected_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __NetworkInterfaceWrapper_unity2_raw :: __lookup_invoke_network_connected :: get_method_info () } pub fn add_network_connected_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __NetworkInterfaceWrapper_unity2_raw :: __lookup_add_network_connected :: get_method_info () } pub fn remove_network_connected_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __NetworkInterfaceWrapper_unity2_raw :: __lookup_remove_network_connected :: get_method_info () } }
+
+#[cfg(feature = "unity_engine-switch-networkinterfacewrapper")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __NetworkInterfaceWrapper_NetworkConnectedHandler_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type () , < :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< NetworkInterfaceWrapper_NetworkConnectedHandler as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NetworkInterfaceWrapper_NetworkConnectedHandler as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : NetworkInterfaceWrapper_NetworkConnectedHandler , object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (NetworkInterfaceWrapper_NetworkConnectedHandler , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , object , method , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_invoke { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< NetworkInterfaceWrapper_NetworkConnectedHandler as :: unity2 :: ClassIdentity > :: class () , "Invoke" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NetworkInterfaceWrapper_NetworkConnectedHandler as :: unity2 :: ClassIdentity > :: NAME , "Invoke" , e) , } } } pub unsafe fn invoke (this : NetworkInterfaceWrapper_NetworkConnectedHandler , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: switch :: networkinterfacewrapper :: NetworkInterfaceWrapper_NetworkConnectedResult { let inner : extern "C" fn (NetworkInterfaceWrapper_NetworkConnectedHandler , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: switch :: networkinterfacewrapper :: NetworkInterfaceWrapper_NetworkConnectedResult = :: core :: mem :: transmute (__lookup_invoke :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "unity_engine-switch-networkinterfacewrapper")]
+pub trait INetworkInterfaceWrapper_NetworkConnectedHandlerMethods : INetworkInterfaceWrapper_NetworkConnectedHandler { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < NetworkInterfaceWrapper_NetworkConnectedHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __NetworkInterfaceWrapper_NetworkConnectedHandler_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } # [doc = "`Invoke()` overload"] fn invoke (self ,) -> crate :: unity_engine :: switch :: networkinterfacewrapper :: NetworkInterfaceWrapper_NetworkConnectedResult { unsafe { let __receiver = < NetworkInterfaceWrapper_NetworkConnectedHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __NetworkInterfaceWrapper_NetworkConnectedHandler_unity2_raw :: invoke (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-switch-networkinterfacewrapper")]
+impl < __T : INetworkInterfaceWrapper_NetworkConnectedHandler > INetworkInterfaceWrapper_NetworkConnectedHandlerMethods for __T { }
+
+#[cfg(feature = "unity_engine-switch-networkinterfacewrapper")]
+impl NetworkInterfaceWrapper_NetworkConnectedHandler { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __NetworkInterfaceWrapper_NetworkConnectedHandler_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __NetworkInterfaceWrapper_NetworkConnectedHandler_unity2_raw :: __lookup_invoke :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-switch-networkinterfacewrapper")]
 impl NetworkInterfaceWrapper_NetworkConnectedHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(NetworkInterfaceWrapper_NetworkConnectedHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as INetworkInterfaceWrapper_NetworkConnectedHandlerMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-#[cfg(feature = "unity_engine-switch-networkinterfacewrapper")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __NetworkInterfaceWrapper_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_enter_network_connecting {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NetworkInterfaceWrapper as ::unity2::ClassIdentity>::class(),
-                "EnterNetworkConnecting",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <NetworkInterfaceWrapper as ::unity2::ClassIdentity>::NAME,
-                        "EnterNetworkConnecting",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn enter_network_connecting(is_local_network_mode: bool, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(bool, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_enter_network_connecting::get_method_info().method_ptr);
-        inner(is_local_network_mode, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_enter_network_connecting_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type(), <bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NetworkInterfaceWrapper as ::unity2::ClassIdentity>::class(),
-                "EnterNetworkConnecting",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <NetworkInterfaceWrapper as ::unity2::ClassIdentity>::NAME,
-                        "EnterNetworkConnecting",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn enter_network_connecting_2(
-        is_local_network_mode: bool,
-        report_if_unavailable: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(bool, bool, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_enter_network_connecting_2::get_method_info().method_ptr);
-        inner(is_local_network_mode, report_if_unavailable, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_weak_enter_network_connecting {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NetworkInterfaceWrapper as ::unity2::ClassIdentity>::class(),
-                "WeakEnterNetworkConnecting",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <NetworkInterfaceWrapper as ::unity2::ClassIdentity>::NAME,
-                        "WeakEnterNetworkConnecting",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn weak_enter_network_connecting(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_weak_enter_network_connecting::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_leave_network_connecting {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NetworkInterfaceWrapper as ::unity2::ClassIdentity>::class(),
-                "LeaveNetworkConnecting",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <NetworkInterfaceWrapper as ::unity2::ClassIdentity>::NAME,
-                        "LeaveNetworkConnecting",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn leave_network_connecting(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_leave_network_connecting::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_network_connecting {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NetworkInterfaceWrapper as ::unity2::ClassIdentity>::class(),
-                "IsNetworkConnecting",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <NetworkInterfaceWrapper as ::unity2::ClassIdentity>::NAME,
-                        "IsNetworkConnecting",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_network_connecting(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_network_connecting::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_wait_for_network_connecting {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NetworkInterfaceWrapper as ::unity2::ClassIdentity>::class(),
-                "WaitForNetworkConnecting",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <NetworkInterfaceWrapper as ::unity2::ClassIdentity>::NAME,
-                        "WaitForNetworkConnecting",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn wait_for_network_connecting(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_wait_for_network_connecting::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_network_accepted {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NetworkInterfaceWrapper as ::unity2::ClassIdentity>::class(),
-                "IsNetworkAccepted",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <NetworkInterfaceWrapper as ::unity2::ClassIdentity>::NAME,
-                        "IsNetworkAccepted",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_network_accepted(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_network_accepted::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_network_finished {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NetworkInterfaceWrapper as ::unity2::ClassIdentity>::class(),
-                "IsNetworkFinished",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <NetworkInterfaceWrapper as ::unity2::ClassIdentity>::NAME,
-                        "IsNetworkFinished",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_network_finished(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_network_finished::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_network_reference_count {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NetworkInterfaceWrapper as ::unity2::ClassIdentity>::class(),
-                "GetNetworkReferenceCount",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <NetworkInterfaceWrapper as ::unity2::ClassIdentity>::NAME,
-                        "GetNetworkReferenceCount",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_network_reference_count(__unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_network_reference_count::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_network_available {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NetworkInterfaceWrapper as ::unity2::ClassIdentity>::class(),
-                "IsNetworkAvailable",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <NetworkInterfaceWrapper as ::unity2::ClassIdentity>::NAME,
-                        "IsNetworkAvailable",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_network_available(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_network_available::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_network_connecting_on_background {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NetworkInterfaceWrapper as ::unity2::ClassIdentity>::class(),
-                "IsNetworkConnectingOnBackground",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <NetworkInterfaceWrapper as ::unity2::ClassIdentity>::NAME,
-                        "IsNetworkConnectingOnBackground",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_network_connecting_on_background(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_network_connecting_on_background::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_network_connecting_on_background {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NetworkInterfaceWrapper as ::unity2::ClassIdentity>::class(),
-                "SetNetworkConnectingOnBackground",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <NetworkInterfaceWrapper as ::unity2::ClassIdentity>::NAME,
-                        "SetNetworkConnectingOnBackground",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_network_connecting_on_background(is_background: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_network_connecting_on_background::get_method_info().method_ptr);
-        inner(is_background, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_network_connected_enabled {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NetworkInterfaceWrapper as ::unity2::ClassIdentity>::class(),
-                "SetNetworkConnectedEnabled",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <NetworkInterfaceWrapper as ::unity2::ClassIdentity>::NAME,
-                        "SetNetworkConnectedEnabled",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_network_connected_enabled(is_enabled: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_network_connected_enabled::get_method_info().method_ptr);
-        inner(is_enabled, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke_network_connected {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NetworkInterfaceWrapper as ::unity2::ClassIdentity>::class(),
-                "InvokeNetworkConnected",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <NetworkInterfaceWrapper as ::unity2::ClassIdentity>::NAME,
-                        "InvokeNetworkConnected",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn invoke_network_connected(__unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_invoke_network_connected::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_network_connected {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::switch::networkinterfacewrapper::NetworkInterfaceWrapper_NetworkConnectedHandler as ::unity2::IlType>::il_type(
-                ),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NetworkInterfaceWrapper as ::unity2::ClassIdentity>::class(),
-                "add_networkConnected",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <NetworkInterfaceWrapper as ::unity2::ClassIdentity>::NAME,
-                        "add_networkConnected",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_network_connected(
-        value: crate::unity_engine::switch::networkinterfacewrapper::NetworkInterfaceWrapper_NetworkConnectedHandler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::switch::networkinterfacewrapper::NetworkInterfaceWrapper_NetworkConnectedHandler,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_add_network_connected::get_method_info().method_ptr);
-        inner(value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_remove_network_connected {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::switch::networkinterfacewrapper::NetworkInterfaceWrapper_NetworkConnectedHandler as ::unity2::IlType>::il_type(
-                ),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NetworkInterfaceWrapper as ::unity2::ClassIdentity>::class(),
-                "remove_networkConnected",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <NetworkInterfaceWrapper as ::unity2::ClassIdentity>::NAME,
-                        "remove_networkConnected",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn remove_network_connected(
-        value: crate::unity_engine::switch::networkinterfacewrapper::NetworkInterfaceWrapper_NetworkConnectedHandler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::switch::networkinterfacewrapper::NetworkInterfaceWrapper_NetworkConnectedHandler,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_remove_network_connected::get_method_info().method_ptr);
-        inner(value, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "unity_engine-switch-networkinterfacewrapper")]
-impl NetworkInterfaceWrapper {
-    #[doc = "`EnterNetworkConnecting(bool)` overload"]
-    pub fn enter_network_connecting(is_local_network_mode: impl ::core::convert::Into<bool>) -> bool {
-        unsafe {
-            __NetworkInterfaceWrapper_unity2_raw::enter_network_connecting(
-                ::core::convert::Into::into(is_local_network_mode),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`EnterNetworkConnecting(bool, bool)` overload"]
-    pub fn enter_network_connecting_2(
-        is_local_network_mode: impl ::core::convert::Into<bool>,
-        report_if_unavailable: impl ::core::convert::Into<bool>,
-    ) -> bool {
-        unsafe {
-            __NetworkInterfaceWrapper_unity2_raw::enter_network_connecting_2(
-                ::core::convert::Into::into(is_local_network_mode),
-                ::core::convert::Into::into(report_if_unavailable),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`WeakEnterNetworkConnecting()` overload"]
-    pub fn weak_enter_network_connecting() -> bool {
-        unsafe { __NetworkInterfaceWrapper_unity2_raw::weak_enter_network_connecting(::core::option::Option::None) }
-    }
-
-    #[doc = "`LeaveNetworkConnecting()` overload"]
-    pub fn leave_network_connecting() -> () {
-        unsafe { __NetworkInterfaceWrapper_unity2_raw::leave_network_connecting(::core::option::Option::None) }
-    }
-
-    #[doc = "`IsNetworkConnecting()` overload"]
-    pub fn is_network_connecting() -> bool {
-        unsafe { __NetworkInterfaceWrapper_unity2_raw::is_network_connecting(::core::option::Option::None) }
-    }
-
-    #[doc = "`WaitForNetworkConnecting()` overload"]
-    pub fn wait_for_network_connecting() -> () {
-        unsafe { __NetworkInterfaceWrapper_unity2_raw::wait_for_network_connecting(::core::option::Option::None) }
-    }
-
-    #[doc = "`IsNetworkAccepted()` overload"]
-    pub fn is_network_accepted() -> bool {
-        unsafe { __NetworkInterfaceWrapper_unity2_raw::is_network_accepted(::core::option::Option::None) }
-    }
-
-    #[doc = "`IsNetworkFinished()` overload"]
-    pub fn is_network_finished() -> bool {
-        unsafe { __NetworkInterfaceWrapper_unity2_raw::is_network_finished(::core::option::Option::None) }
-    }
-
-    #[doc = "`GetNetworkReferenceCount()` overload"]
-    pub fn get_network_reference_count() -> i32 {
-        unsafe { __NetworkInterfaceWrapper_unity2_raw::get_network_reference_count(::core::option::Option::None) }
-    }
-
-    #[doc = "`IsNetworkAvailable()` overload"]
-    pub fn is_network_available() -> bool {
-        unsafe { __NetworkInterfaceWrapper_unity2_raw::is_network_available(::core::option::Option::None) }
-    }
-
-    #[doc = "`IsNetworkConnectingOnBackground()` overload"]
-    pub fn is_network_connecting_on_background() -> bool {
-        unsafe { __NetworkInterfaceWrapper_unity2_raw::is_network_connecting_on_background(::core::option::Option::None) }
-    }
-
-    #[doc = "`SetNetworkConnectingOnBackground(bool)` overload"]
-    pub fn set_network_connecting_on_background(is_background: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            __NetworkInterfaceWrapper_unity2_raw::set_network_connecting_on_background(
-                ::core::convert::Into::into(is_background),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`SetNetworkConnectedEnabled(bool)` overload"]
-    pub fn set_network_connected_enabled(is_enabled: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            __NetworkInterfaceWrapper_unity2_raw::set_network_connected_enabled(::core::convert::Into::into(is_enabled), ::core::option::Option::None)
-        }
-    }
-
-    #[doc = "`InvokeNetworkConnected()` overload"]
-    pub fn invoke_network_connected() -> i32 {
-        unsafe { __NetworkInterfaceWrapper_unity2_raw::invoke_network_connected(::core::option::Option::None) }
-    }
-
-    #[doc = "`add_networkConnected(crate::unity_engine::switch::networkinterfacewrapper::NetworkInterfaceWrapper_NetworkConnectedHandler)` overload"]
-    pub fn add_network_connected(
-        value: impl ::core::convert::Into<crate::unity_engine::switch::networkinterfacewrapper::NetworkInterfaceWrapper_NetworkConnectedHandler>,
-    ) -> () {
-        unsafe { __NetworkInterfaceWrapper_unity2_raw::add_network_connected(::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`remove_networkConnected(crate::unity_engine::switch::networkinterfacewrapper::NetworkInterfaceWrapper_NetworkConnectedHandler)` overload"]
-    pub fn remove_network_connected(
-        value: impl ::core::convert::Into<crate::unity_engine::switch::networkinterfacewrapper::NetworkInterfaceWrapper_NetworkConnectedHandler>,
-    ) -> () {
-        unsafe { __NetworkInterfaceWrapper_unity2_raw::remove_network_connected(::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
+# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (NetworkInterfaceWrapper_NetworkConnectedHandler) , :: core :: stringify ! (new) ,)) ; < Self as INetworkInterfaceWrapper_NetworkConnectedHandlerMethods > :: ctor (this , object , method) ; this }
 }
 
 #[cfg(feature = "unity_engine-switch-networkinterfacewrapper")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{
-        INetworkInterfaceWrapper, INetworkInterfaceWrapper_NetworkConnectedHandler, INetworkInterfaceWrapper_NetworkConnectedHandlerMethods,
-        NetworkInterfaceWrapper, NetworkInterfaceWrapper_NetworkConnectedHandler, NetworkInterfaceWrapper_NetworkConnectedResult,
-    };
-    #[cfg(feature = "system-delegate")]
-    pub use crate::system::delegate::IDelegateMethods;
-    #[cfg(feature = "system-multicastdelegate")]
-    pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::system::{delegate::IDelegate, multicastdelegate::IMulticastDelegate, object::IObject, r#enum::IEnum, valuetype::IValueType};
+    pub use super::NetworkInterfaceWrapper;
+    pub use super::INetworkInterfaceWrapper;
+    pub use super::NetworkInterfaceWrapper_NetworkConnectedHandler;
+    pub use super::INetworkInterfaceWrapper_NetworkConnectedHandler;
+    pub use super::INetworkInterfaceWrapper_NetworkConnectedHandlerMethods;
+    pub use super::NetworkInterfaceWrapper_NetworkConnectedResult;
+    pub use crate::system::delegate::IDelegate;
+    pub use crate::system::multicastdelegate::IMulticastDelegate;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-delegate")] pub use crate::system::delegate::IDelegateMethods;
+    #[cfg(feature = "system-multicastdelegate")] pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

@@ -2,109 +2,51 @@
 
 #[cfg(feature = "app-mapdeploysupportforunitimage-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::{
-            mapdeploybitimage::{IMapDeployBitImage, MapDeployBitImage},
-            mapimagecorebit::{IMapImageCoreBit, MapImageCoreBit},
-        },
-        system::object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapdeploysupportforunitimage/MapDeploySupportForUnitImage.md"))]
-    #[::unity2::class(namespace = "App", name = "MapDeploySupportForUnitImage")]
-    #[parent(crate::app::mapdeploybitimage::MapDeployBitImage)]
-    pub struct MapDeploySupportForUnitImage {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: mapdeploybitimage :: { IMapDeployBitImage , MapDeployBitImage }
+ ;
+ use crate :: app :: mapimagecorebit :: { IMapImageCoreBit , MapImageCoreBit }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapdeploysupportforunitimage/MapDeploySupportForUnitImage.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapDeploySupportForUnitImage")] # [parent (crate :: app :: mapdeploybitimage :: MapDeployBitImage)] pub struct MapDeploySupportForUnitImage {}
+
 }
 
 #[cfg(feature = "app-mapdeploysupportforunitimage-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-mapdeploysupportforunitimage")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapDeploySupportForUnitImage_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapDeploySupportForUnitImage as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapDeploySupportForUnitImage as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: MapDeploySupportForUnitImage, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapDeploySupportForUnitImage, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MapDeploySupportForUnitImage_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapDeploySupportForUnitImage as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapDeploySupportForUnitImage as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : MapDeploySupportForUnitImage , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapDeploySupportForUnitImage , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-mapdeploysupportforunitimage")]
-pub trait IMapDeploySupportForUnitImageMethods: IMapDeploySupportForUnitImage {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <MapDeploySupportForUnitImage as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapDeploySupportForUnitImage_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IMapDeploySupportForUnitImageMethods : IMapDeploySupportForUnitImage { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapDeploySupportForUnitImage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapDeploySupportForUnitImage_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-mapdeploysupportforunitimage")]
-impl<__T: IMapDeploySupportForUnitImage> IMapDeploySupportForUnitImageMethods for __T {}
+impl < __T : IMapDeploySupportForUnitImage > IMapDeploySupportForUnitImageMethods for __T { }
+
+#[cfg(feature = "app-mapdeploysupportforunitimage")]
+impl MapDeploySupportForUnitImage { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapDeploySupportForUnitImage_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-mapdeploysupportforunitimage")]
 impl MapDeploySupportForUnitImage {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapDeploySupportForUnitImage),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapDeploySupportForUnitImageMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapDeploySupportForUnitImage) , :: core :: stringify ! (new) ,)) ; < Self as IMapDeploySupportForUnitImageMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-mapdeploysupportforunitimage")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IMapDeploySupportForUnitImage, IMapDeploySupportForUnitImageMethods, MapDeploySupportForUnitImage};
-    #[cfg(feature = "app-mapdeploybitimage")]
-    pub use crate::app::mapdeploybitimage::IMapDeployBitImageMethods;
-    #[cfg(feature = "app-mapimagecorebit")]
-    pub use crate::app::mapimagecorebit::IMapImageCoreBitMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::{
-        app::{mapdeploybitimage::IMapDeployBitImage, mapimagecorebit::IMapImageCoreBit},
-        system::object::IObject,
-    };
+    pub use super::MapDeploySupportForUnitImage;
+    pub use super::IMapDeploySupportForUnitImage;
+    pub use super::IMapDeploySupportForUnitImageMethods;
+    pub use crate::app::mapdeploybitimage::IMapDeployBitImage;
+    pub use crate::app::mapimagecorebit::IMapImageCoreBit;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "app-mapdeploybitimage")] pub use crate::app::mapdeploybitimage::IMapDeployBitImageMethods;
+    #[cfg(feature = "app-mapimagecorebit")] pub use crate::app::mapimagecorebit::IMapImageCoreBitMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

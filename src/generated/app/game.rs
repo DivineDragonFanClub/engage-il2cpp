@@ -2,71 +2,36 @@
 
 #[cfg(feature = "app-game-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/game/Game.md"))]
-    #[::unity2::class(namespace = "App", name = "Game")]
-    #[parent(crate::system::object::Object)]
-    pub struct Game {
-        #[static_field]
-        #[rename(name = "Version")]
-        pub version: i32,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/game/Game.md"))] # [:: unity2 :: class (namespace = "App" , name = "Game")] # [parent (crate :: system :: object :: Object)] pub struct Game {
+# [static_field] # [rename (name = "Version")] pub version : i32 ,
+}
+
 }
 
 #[cfg(feature = "app-game-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-game")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __Game_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_patch_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Game as ::unity2::ClassIdentity>::class(), "GetPatchName", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Game as ::unity2::ClassIdentity>::NAME,
-                        "GetPatchName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_patch_name(__unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_patch_name::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __Game_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_patch_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Game as :: unity2 :: ClassIdentity > :: class () , "GetPatchName" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Game as :: unity2 :: ClassIdentity > :: NAME , "GetPatchName" , e) , } } } pub unsafe fn get_patch_name (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_patch_name :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
 
 #[cfg(feature = "app-game")]
-impl Game {
-    #[doc = "`GetPatchName()` overload"]
-    pub fn get_patch_name() -> ::unity2::Il2CppString {
-        unsafe { __Game_unity2_raw::get_patch_name(::core::option::Option::None) }
-    }
-}
+impl Game { # [doc = "`GetPatchName()` overload"] pub fn get_patch_name () -> :: unity2 :: Il2CppString { unsafe { __Game_unity2_raw :: get_patch_name (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-game")]
+impl Game { pub fn get_patch_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Game_unity2_raw :: __lookup_get_patch_name :: get_method_info () } }
 
 #[cfg(feature = "app-game")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{Game, IGame};
+    pub use super::Game;
+    pub use super::IGame;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

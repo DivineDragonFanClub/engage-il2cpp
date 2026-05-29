@@ -2,261 +2,47 @@
 
 #[cfg(feature = "unity_engine-rendering-surfacedataattributes-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/surfacedataattributes/SurfaceDataAttributes.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Rendering", name = "SurfaceDataAttributes")]
-    pub struct SurfaceDataAttributes {
-        #[offset(16)]
-        #[rename(name = "displayNames")]
-        pub display_names: ::unity2::Array<::unity2::Il2CppString>,
-        #[offset(24)]
-        #[rename(name = "isDirection")]
-        pub is_direction: bool,
-        #[offset(25)]
-        #[rename(name = "sRGBDisplay")]
-        pub s_rgb_display: bool,
-        #[offset(28)]
-        #[rename(name = "precision")]
-        pub precision: crate::unity_engine::rendering::fieldprecision::FieldPrecision,
-        #[offset(32)]
-        #[rename(name = "checkIsNormalized")]
-        pub check_is_normalized: bool,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/surfacedataattributes/SurfaceDataAttributes.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering" , name = "SurfaceDataAttributes")] pub struct SurfaceDataAttributes {
+# [offset (16)] # [rename (name = "displayNames")] pub display_names : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
+# [offset (24)] # [rename (name = "isDirection")] pub is_direction : bool ,
+# [offset (25)] # [rename (name = "sRGBDisplay")] pub s_rgb_display : bool ,
+# [offset (28)] # [rename (name = "precision")] pub precision : crate :: unity_engine :: rendering :: fieldprecision :: FieldPrecision ,
+# [offset (32)] # [rename (name = "checkIsNormalized")] pub check_is_normalized : bool ,
+}
+
 }
 
 #[cfg(feature = "unity_engine-rendering-surfacedataattributes-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-surfacedataattributes")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __SurfaceDataAttributes_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::rendering::fieldprecision::FieldPrecision as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SurfaceDataAttributes as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                5,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SurfaceDataAttributes as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: SurfaceDataAttributes,
-        display_name: ::unity2::Il2CppString,
-        is_direction: bool,
-        s_rgb_display: bool,
-        precision: crate::unity_engine::rendering::fieldprecision::FieldPrecision,
-        check_is_normalized: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            SurfaceDataAttributes,
-            ::unity2::Il2CppString,
-            bool,
-            bool,
-            crate::unity_engine::rendering::fieldprecision::FieldPrecision,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(
-            this,
-            display_name,
-            is_direction,
-            s_rgb_display,
-            precision,
-            check_is_normalized,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Array<::unity2::Il2CppString> as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::rendering::fieldprecision::FieldPrecision as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SurfaceDataAttributes as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                5,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SurfaceDataAttributes as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor_2(
-        this: SurfaceDataAttributes,
-        display_names: ::unity2::Array<::unity2::Il2CppString>,
-        is_direction: bool,
-        s_rgb_display: bool,
-        check_is_normalized: bool,
-        precision: crate::unity_engine::rendering::fieldprecision::FieldPrecision,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            SurfaceDataAttributes,
-            ::unity2::Array<::unity2::Il2CppString>,
-            bool,
-            bool,
-            bool,
-            crate::unity_engine::rendering::fieldprecision::FieldPrecision,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
-        inner(
-            this,
-            display_names,
-            is_direction,
-            s_rgb_display,
-            check_is_normalized,
-            precision,
-            __unity2_method_info,
-        )
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __SurfaceDataAttributes_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: fieldprecision :: FieldPrecision as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SurfaceDataAttributes as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 5 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SurfaceDataAttributes as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : SurfaceDataAttributes , display_name : :: unity2 :: Il2CppString , is_direction : bool , s_rgb_display : bool , precision : crate :: unity_engine :: rendering :: fieldprecision :: FieldPrecision , check_is_normalized : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SurfaceDataAttributes , :: unity2 :: Il2CppString , bool , bool , crate :: unity_engine :: rendering :: fieldprecision :: FieldPrecision , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , display_name , is_direction , s_rgb_display , precision , check_is_normalized , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < :: unity2 :: Il2CppString > as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: fieldprecision :: FieldPrecision as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SurfaceDataAttributes as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 5 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SurfaceDataAttributes as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor_2 (this : SurfaceDataAttributes , display_names : :: unity2 :: Array < :: unity2 :: Il2CppString > , is_direction : bool , s_rgb_display : bool , check_is_normalized : bool , precision : crate :: unity_engine :: rendering :: fieldprecision :: FieldPrecision , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SurfaceDataAttributes , :: unity2 :: Array < :: unity2 :: Il2CppString > , bool , bool , bool , crate :: unity_engine :: rendering :: fieldprecision :: FieldPrecision , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor_2 :: get_method_info () . method_ptr ,) ; inner (this , display_names , is_direction , s_rgb_display , check_is_normalized , precision , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-rendering-surfacedataattributes")]
-pub trait ISurfaceDataAttributesMethods: ISurfaceDataAttributes {
-    #[doc = "`.ctor(::unity2::Il2CppString, bool, bool, crate::unity_engine::rendering::fieldprecision::FieldPrecision, bool)` overload"]
-    fn ctor(
-        self,
-        display_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        is_direction: impl ::core::convert::Into<bool>,
-        s_rgb_display: impl ::core::convert::Into<bool>,
-        precision: impl ::core::convert::Into<crate::unity_engine::rendering::fieldprecision::FieldPrecision>,
-        check_is_normalized: impl ::core::convert::Into<bool>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <SurfaceDataAttributes as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SurfaceDataAttributes_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(display_name),
-                ::core::convert::Into::into(is_direction),
-                ::core::convert::Into::into(s_rgb_display),
-                ::core::convert::Into::into(precision),
-                ::core::convert::Into::into(check_is_normalized),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor(::unity2::Array<::unity2::Il2CppString>, bool, bool, bool, crate::unity_engine::rendering::fieldprecision::FieldPrecision)` overload"]
-    fn ctor_2(
-        self,
-        display_names: impl ::core::convert::Into<::unity2::Array<::unity2::Il2CppString>>,
-        is_direction: impl ::core::convert::Into<bool>,
-        s_rgb_display: impl ::core::convert::Into<bool>,
-        check_is_normalized: impl ::core::convert::Into<bool>,
-        precision: impl ::core::convert::Into<crate::unity_engine::rendering::fieldprecision::FieldPrecision>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <SurfaceDataAttributes as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SurfaceDataAttributes_unity2_raw::ctor_2(
-                __receiver,
-                ::core::convert::Into::into(display_names),
-                ::core::convert::Into::into(is_direction),
-                ::core::convert::Into::into(s_rgb_display),
-                ::core::convert::Into::into(check_is_normalized),
-                ::core::convert::Into::into(precision),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+pub trait ISurfaceDataAttributesMethods : ISurfaceDataAttributes { # [doc = "`.ctor(::unity2::Il2CppString, bool, bool, crate::unity_engine::rendering::fieldprecision::FieldPrecision, bool)` overload"] fn ctor (self , display_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , is_direction : impl :: core :: convert :: Into < bool > , s_rgb_display : impl :: core :: convert :: Into < bool > , precision : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: fieldprecision :: FieldPrecision > , check_is_normalized : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < SurfaceDataAttributes as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SurfaceDataAttributes_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (display_name) , :: core :: convert :: Into :: into (is_direction) , :: core :: convert :: Into :: into (s_rgb_display) , :: core :: convert :: Into :: into (precision) , :: core :: convert :: Into :: into (check_is_normalized) , :: core :: option :: Option :: None) } } # [doc = "`.ctor(::unity2::Array<::unity2::Il2CppString>, bool, bool, bool, crate::unity_engine::rendering::fieldprecision::FieldPrecision)` overload"] fn ctor_2 (self , display_names : impl :: core :: convert :: Into < :: unity2 :: Array < :: unity2 :: Il2CppString > > , is_direction : impl :: core :: convert :: Into < bool > , s_rgb_display : impl :: core :: convert :: Into < bool > , check_is_normalized : impl :: core :: convert :: Into < bool > , precision : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: fieldprecision :: FieldPrecision >) -> () { unsafe { let __receiver = < SurfaceDataAttributes as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SurfaceDataAttributes_unity2_raw :: ctor_2 (__receiver , :: core :: convert :: Into :: into (display_names) , :: core :: convert :: Into :: into (is_direction) , :: core :: convert :: Into :: into (s_rgb_display) , :: core :: convert :: Into :: into (check_is_normalized) , :: core :: convert :: Into :: into (precision) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-rendering-surfacedataattributes")]
-impl<__T: ISurfaceDataAttributes> ISurfaceDataAttributesMethods for __T {}
+impl < __T : ISurfaceDataAttributes > ISurfaceDataAttributesMethods for __T { }
+
+#[cfg(feature = "unity_engine-rendering-surfacedataattributes")]
+impl SurfaceDataAttributes { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SurfaceDataAttributes_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SurfaceDataAttributes_unity2_raw :: __lookup_ctor_2 :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-rendering-surfacedataattributes")]
 impl SurfaceDataAttributes {
-    #[doc = "`.ctor(::unity2::Il2CppString, bool, bool, crate::unity_engine::rendering::fieldprecision::FieldPrecision, bool)` — overload selector"]
-    pub fn new(
-        display_name: ::unity2::Il2CppString,
-        is_direction: bool,
-        s_rgb_display: bool,
-        precision: crate::unity_engine::rendering::fieldprecision::FieldPrecision,
-        check_is_normalized: bool,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SurfaceDataAttributes),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISurfaceDataAttributesMethods>::ctor(this, display_name, is_direction, s_rgb_display, precision, check_is_normalized);
-        this
-    }
+# [doc = "`.ctor(::unity2::Il2CppString, bool, bool, crate::unity_engine::rendering::fieldprecision::FieldPrecision, bool)` — overload selector"] pub fn new (display_name : :: unity2 :: Il2CppString , is_direction : bool , s_rgb_display : bool , precision : crate :: unity_engine :: rendering :: fieldprecision :: FieldPrecision , check_is_normalized : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SurfaceDataAttributes) , :: core :: stringify ! (new) ,)) ; < Self as ISurfaceDataAttributesMethods > :: ctor (this , display_name , is_direction , s_rgb_display , precision , check_is_normalized) ; this }
 
-    #[doc = "`.ctor(::unity2::Array<::unity2::Il2CppString>, bool, bool, bool, crate::unity_engine::rendering::fieldprecision::FieldPrecision)` — overload selector"]
-    pub fn new_2(
-        display_names: ::unity2::Array<::unity2::Il2CppString>,
-        is_direction: bool,
-        s_rgb_display: bool,
-        check_is_normalized: bool,
-        precision: crate::unity_engine::rendering::fieldprecision::FieldPrecision,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SurfaceDataAttributes),
-                ::core::stringify!(new_2),
-            )
-        });
-        <Self as ISurfaceDataAttributesMethods>::ctor_2(this, display_names, is_direction, s_rgb_display, check_is_normalized, precision);
-        this
-    }
+# [doc = "`.ctor(::unity2::Array<::unity2::Il2CppString>, bool, bool, bool, crate::unity_engine::rendering::fieldprecision::FieldPrecision)` — overload selector"] pub fn new_2 (display_names : :: unity2 :: Array < :: unity2 :: Il2CppString > , is_direction : bool , s_rgb_display : bool , check_is_normalized : bool , precision : crate :: unity_engine :: rendering :: fieldprecision :: FieldPrecision) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SurfaceDataAttributes) , :: core :: stringify ! (new_2) ,)) ; < Self as ISurfaceDataAttributesMethods > :: ctor_2 (this , display_names , is_direction , s_rgb_display , check_is_normalized , precision) ; this }
 }
 
 #[cfg(feature = "unity_engine-rendering-surfacedataattributes")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{ISurfaceDataAttributes, ISurfaceDataAttributesMethods, SurfaceDataAttributes};
+    pub use super::SurfaceDataAttributes;
+    pub use super::ISurfaceDataAttributes;
+    pub use super::ISurfaceDataAttributesMethods;
 }

@@ -2,444 +2,73 @@
 
 #[cfg(feature = "unity_engine-raycasthit-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        valuetype::{IValueType, ValueType},
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/raycasthit/RaycastHit.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct RaycastHit {
-        pub m_point: crate::unity_engine::vector3::Vector3,
-        pub m_normal: crate::unity_engine::vector3::Vector3,
-        pub m_face_id: u32,
-        pub m_distance: f32,
-        pub m_uv: crate::unity_engine::vector2::Vector2,
-        pub m_collider: i32,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
 
-    impl ::unity2::ClassIdentity for RaycastHit {
-        const NAME: &'static str = "RaycastHit";
-        const NAMESPACE: &'static str = "UnityEngine";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/raycasthit/RaycastHit.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct RaycastHit {
+    pub m_point: crate :: unity_engine :: vector3 :: Vector3,
+    pub m_normal: crate :: unity_engine :: vector3 :: Vector3,
+    pub m_face_id: u32,
+    pub m_distance: f32,
+    pub m_uv: crate :: unity_engine :: vector2 :: Vector2,
+    pub m_collider: i32,
+}
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+
+impl ::unity2::ClassIdentity for RaycastHit {
+    const NAMESPACE: &'static str = "UnityEngine";
+
+    const NAME: &'static str = "RaycastHit";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for RaycastHit {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl ::unity2::IlType for RaycastHit {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
+
+}
+
 }
 
 #[cfg(feature = "unity_engine-raycasthit-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-raycasthit")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RaycastHit_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_collider {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RaycastHit as ::unity2::ClassIdentity>::class(),
-                "get_collider",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RaycastHit as ::unity2::ClassIdentity>::NAME,
-                        "get_collider",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_collider(this: RaycastHit, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::collider::Collider {
-        let inner: extern "C" fn(RaycastHit, ::unity2::OptionalMethod) -> crate::unity_engine::collider::Collider =
-            ::core::mem::transmute(__lookup_get_collider::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_point {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RaycastHit as ::unity2::ClassIdentity>::class(),
-                "get_point",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RaycastHit as ::unity2::ClassIdentity>::NAME,
-                        "get_point",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_point(this: RaycastHit, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 {
-        let inner: extern "C" fn(RaycastHit, ::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 =
-            ::core::mem::transmute(__lookup_get_point::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_point {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RaycastHit as ::unity2::ClassIdentity>::class(),
-                "set_point",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RaycastHit as ::unity2::ClassIdentity>::NAME,
-                        "set_point",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_point(this: RaycastHit, value: crate::unity_engine::vector3::Vector3, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RaycastHit, crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_point::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_normal {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RaycastHit as ::unity2::ClassIdentity>::class(),
-                "get_normal",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RaycastHit as ::unity2::ClassIdentity>::NAME,
-                        "get_normal",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_normal(this: RaycastHit, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 {
-        let inner: extern "C" fn(RaycastHit, ::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 =
-            ::core::mem::transmute(__lookup_get_normal::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_normal {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RaycastHit as ::unity2::ClassIdentity>::class(),
-                "set_normal",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RaycastHit as ::unity2::ClassIdentity>::NAME,
-                        "set_normal",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_normal(this: RaycastHit, value: crate::unity_engine::vector3::Vector3, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RaycastHit, crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_normal::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_distance {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RaycastHit as ::unity2::ClassIdentity>::class(),
-                "get_distance",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RaycastHit as ::unity2::ClassIdentity>::NAME,
-                        "get_distance",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_distance(this: RaycastHit, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(RaycastHit, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_get_distance::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_distance {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RaycastHit as ::unity2::ClassIdentity>::class(),
-                "set_distance",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RaycastHit as ::unity2::ClassIdentity>::NAME,
-                        "set_distance",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_distance(this: RaycastHit, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RaycastHit, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_distance::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_triangle_index {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RaycastHit as ::unity2::ClassIdentity>::class(),
-                "get_triangleIndex",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RaycastHit as ::unity2::ClassIdentity>::NAME,
-                        "get_triangleIndex",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_triangle_index(this: RaycastHit, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(RaycastHit, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_triangle_index::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_transform {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RaycastHit as ::unity2::ClassIdentity>::class(),
-                "get_transform",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RaycastHit as ::unity2::ClassIdentity>::NAME,
-                        "get_transform",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_transform(this: RaycastHit, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform {
-        let inner: extern "C" fn(RaycastHit, ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform =
-            ::core::mem::transmute(__lookup_get_transform::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_rigidbody {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RaycastHit as ::unity2::ClassIdentity>::class(),
-                "get_rigidbody",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RaycastHit as ::unity2::ClassIdentity>::NAME,
-                        "get_rigidbody",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_rigidbody(this: RaycastHit, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::rigidbody::Rigidbody {
-        let inner: extern "C" fn(RaycastHit, ::unity2::OptionalMethod) -> crate::unity_engine::rigidbody::Rigidbody =
-            ::core::mem::transmute(__lookup_get_rigidbody::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __RaycastHit_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_collider { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RaycastHit as :: unity2 :: ClassIdentity > :: class () , "get_collider" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RaycastHit as :: unity2 :: ClassIdentity > :: NAME , "get_collider" , e) , } } } pub unsafe fn get_collider (this : RaycastHit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: collider :: Collider { let inner : extern "C" fn (RaycastHit , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: collider :: Collider = :: core :: mem :: transmute (__lookup_get_collider :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_point { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RaycastHit as :: unity2 :: ClassIdentity > :: class () , "get_point" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RaycastHit as :: unity2 :: ClassIdentity > :: NAME , "get_point" , e) , } } } pub unsafe fn get_point (this : RaycastHit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 { let inner : extern "C" fn (RaycastHit , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute (__lookup_get_point :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_point { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RaycastHit as :: unity2 :: ClassIdentity > :: class () , "set_point" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RaycastHit as :: unity2 :: ClassIdentity > :: NAME , "set_point" , e) , } } } pub unsafe fn set_point (this : RaycastHit , value : crate :: unity_engine :: vector3 :: Vector3 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RaycastHit , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_point :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_normal { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RaycastHit as :: unity2 :: ClassIdentity > :: class () , "get_normal" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RaycastHit as :: unity2 :: ClassIdentity > :: NAME , "get_normal" , e) , } } } pub unsafe fn get_normal (this : RaycastHit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 { let inner : extern "C" fn (RaycastHit , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute (__lookup_get_normal :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_normal { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RaycastHit as :: unity2 :: ClassIdentity > :: class () , "set_normal" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RaycastHit as :: unity2 :: ClassIdentity > :: NAME , "set_normal" , e) , } } } pub unsafe fn set_normal (this : RaycastHit , value : crate :: unity_engine :: vector3 :: Vector3 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RaycastHit , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_normal :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_distance { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RaycastHit as :: unity2 :: ClassIdentity > :: class () , "get_distance" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RaycastHit as :: unity2 :: ClassIdentity > :: NAME , "get_distance" , e) , } } } pub unsafe fn get_distance (this : RaycastHit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (RaycastHit , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_get_distance :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_distance { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RaycastHit as :: unity2 :: ClassIdentity > :: class () , "set_distance" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RaycastHit as :: unity2 :: ClassIdentity > :: NAME , "set_distance" , e) , } } } pub unsafe fn set_distance (this : RaycastHit , value : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RaycastHit , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_distance :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_triangle_index { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RaycastHit as :: unity2 :: ClassIdentity > :: class () , "get_triangleIndex" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RaycastHit as :: unity2 :: ClassIdentity > :: NAME , "get_triangleIndex" , e) , } } } pub unsafe fn get_triangle_index (this : RaycastHit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (RaycastHit , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_triangle_index :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_transform { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RaycastHit as :: unity2 :: ClassIdentity > :: class () , "get_transform" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RaycastHit as :: unity2 :: ClassIdentity > :: NAME , "get_transform" , e) , } } } pub unsafe fn get_transform (this : RaycastHit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: transform :: Transform { let inner : extern "C" fn (RaycastHit , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: transform :: Transform = :: core :: mem :: transmute (__lookup_get_transform :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_rigidbody { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RaycastHit as :: unity2 :: ClassIdentity > :: class () , "get_rigidbody" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RaycastHit as :: unity2 :: ClassIdentity > :: NAME , "get_rigidbody" , e) , } } } pub unsafe fn get_rigidbody (this : RaycastHit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rigidbody :: Rigidbody { let inner : extern "C" fn (RaycastHit , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rigidbody :: Rigidbody = :: core :: mem :: transmute (__lookup_get_rigidbody :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-raycasthit")]
-impl RaycastHit {
-    #[doc = "`get_collider()` overload"]
-    pub fn get_collider(self) -> crate::unity_engine::collider::Collider {
-        unsafe { __RaycastHit_unity2_raw::get_collider(self, ::core::option::Option::None) }
-    }
+impl RaycastHit { # [doc = "`get_collider()` overload"] pub fn get_collider (self ,) -> crate :: unity_engine :: collider :: Collider { unsafe { __RaycastHit_unity2_raw :: get_collider (self , :: core :: option :: Option :: None) } } # [doc = "`get_point()` overload"] pub fn get_point (self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { __RaycastHit_unity2_raw :: get_point (self , :: core :: option :: Option :: None) } } # [doc = "`set_point(crate::unity_engine::vector3::Vector3)` overload"] pub fn set_point (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> () { unsafe { __RaycastHit_unity2_raw :: set_point (self , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_normal()` overload"] pub fn get_normal (self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { __RaycastHit_unity2_raw :: get_normal (self , :: core :: option :: Option :: None) } } # [doc = "`set_normal(crate::unity_engine::vector3::Vector3)` overload"] pub fn set_normal (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> () { unsafe { __RaycastHit_unity2_raw :: set_normal (self , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_distance()` overload"] pub fn get_distance (self ,) -> f32 { unsafe { __RaycastHit_unity2_raw :: get_distance (self , :: core :: option :: Option :: None) } } # [doc = "`set_distance(f32)` overload"] pub fn set_distance (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { __RaycastHit_unity2_raw :: set_distance (self , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_triangleIndex()` overload"] pub fn get_triangle_index (self ,) -> i32 { unsafe { __RaycastHit_unity2_raw :: get_triangle_index (self , :: core :: option :: Option :: None) } } # [doc = "`get_transform()` overload"] pub fn get_transform (self ,) -> crate :: unity_engine :: transform :: Transform { unsafe { __RaycastHit_unity2_raw :: get_transform (self , :: core :: option :: Option :: None) } } # [doc = "`get_rigidbody()` overload"] pub fn get_rigidbody (self ,) -> crate :: unity_engine :: rigidbody :: Rigidbody { unsafe { __RaycastHit_unity2_raw :: get_rigidbody (self , :: core :: option :: Option :: None) } } }
 
-    #[doc = "`get_point()` overload"]
-    pub fn get_point(self) -> crate::unity_engine::vector3::Vector3 {
-        unsafe { __RaycastHit_unity2_raw::get_point(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_point(crate::unity_engine::vector3::Vector3)` overload"]
-    pub fn set_point(self, value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>) -> () {
-        unsafe { __RaycastHit_unity2_raw::set_point(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_normal()` overload"]
-    pub fn get_normal(self) -> crate::unity_engine::vector3::Vector3 {
-        unsafe { __RaycastHit_unity2_raw::get_normal(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_normal(crate::unity_engine::vector3::Vector3)` overload"]
-    pub fn set_normal(self, value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>) -> () {
-        unsafe { __RaycastHit_unity2_raw::set_normal(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_distance()` overload"]
-    pub fn get_distance(self) -> f32 {
-        unsafe { __RaycastHit_unity2_raw::get_distance(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_distance(f32)` overload"]
-    pub fn set_distance(self, value: impl ::core::convert::Into<f32>) -> () {
-        unsafe { __RaycastHit_unity2_raw::set_distance(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_triangleIndex()` overload"]
-    pub fn get_triangle_index(self) -> i32 {
-        unsafe { __RaycastHit_unity2_raw::get_triangle_index(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_transform()` overload"]
-    pub fn get_transform(self) -> crate::unity_engine::transform::Transform {
-        unsafe { __RaycastHit_unity2_raw::get_transform(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_rigidbody()` overload"]
-    pub fn get_rigidbody(self) -> crate::unity_engine::rigidbody::Rigidbody {
-        unsafe { __RaycastHit_unity2_raw::get_rigidbody(self, ::core::option::Option::None) }
-    }
-}
+#[cfg(feature = "unity_engine-raycasthit")]
+impl RaycastHit { pub fn get_collider_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RaycastHit_unity2_raw :: __lookup_get_collider :: get_method_info () } pub fn get_point_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RaycastHit_unity2_raw :: __lookup_get_point :: get_method_info () } pub fn set_point_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RaycastHit_unity2_raw :: __lookup_set_point :: get_method_info () } pub fn get_normal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RaycastHit_unity2_raw :: __lookup_get_normal :: get_method_info () } pub fn set_normal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RaycastHit_unity2_raw :: __lookup_set_normal :: get_method_info () } pub fn get_distance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RaycastHit_unity2_raw :: __lookup_get_distance :: get_method_info () } pub fn set_distance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RaycastHit_unity2_raw :: __lookup_set_distance :: get_method_info () } pub fn get_triangle_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RaycastHit_unity2_raw :: __lookup_get_triangle_index :: get_method_info () } pub fn get_transform_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RaycastHit_unity2_raw :: __lookup_get_transform :: get_method_info () } pub fn get_rigidbody_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RaycastHit_unity2_raw :: __lookup_get_rigidbody :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-raycasthit")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::RaycastHit;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::system::{object::IObject, valuetype::IValueType};
+    pub use crate::system::object::IObject;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

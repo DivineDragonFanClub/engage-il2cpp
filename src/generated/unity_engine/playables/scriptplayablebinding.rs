@@ -2,155 +2,34 @@
 
 #[cfg(feature = "unity_engine-playables-scriptplayablebinding-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/playables/scriptplayablebinding/ScriptPlayableBinding.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Playables", name = "ScriptPlayableBinding")]
-    #[parent(crate::system::object::Object)]
-    pub struct ScriptPlayableBinding {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/playables/scriptplayablebinding/ScriptPlayableBinding.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Playables" , name = "ScriptPlayableBinding")] # [parent (crate :: system :: object :: Object)] pub struct ScriptPlayableBinding {}
+
 }
 
 #[cfg(feature = "unity_engine-playables-scriptplayablebinding-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-playables-scriptplayablebinding")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ScriptPlayableBinding_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::object_2::Object_2 as ::unity2::IlType>::il_type(),
-                <::unity2::SystemType as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ScriptPlayableBinding as ::unity2::ClassIdentity>::class(),
-                "Create",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ScriptPlayableBinding as ::unity2::ClassIdentity>::NAME,
-                        "Create",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create(
-        name: ::unity2::Il2CppString,
-        key: crate::unity_engine::object_2::Object_2,
-        r#type: ::unity2::SystemType,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::playables::playablebinding::PlayableBinding {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            crate::unity_engine::object_2::Object_2,
-            ::unity2::SystemType,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::playables::playablebinding::PlayableBinding = ::core::mem::transmute(__lookup_create::get_method_info().method_ptr);
-        inner(name, key, r#type, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_script_output {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::playables::playablegraph::PlayableGraph as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ScriptPlayableBinding as ::unity2::ClassIdentity>::class(),
-                "CreateScriptOutput",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ScriptPlayableBinding as ::unity2::ClassIdentity>::NAME,
-                        "CreateScriptOutput",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_script_output(
-        graph: crate::unity_engine::playables::playablegraph::PlayableGraph,
-        name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::playables::playableoutput::PlayableOutput {
-        let inner: extern "C" fn(
-            crate::unity_engine::playables::playablegraph::PlayableGraph,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::playables::playableoutput::PlayableOutput =
-            ::core::mem::transmute(__lookup_create_script_output::get_method_info().method_ptr);
-        inner(graph, name, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ScriptPlayableBinding_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: object_2 :: Object_2 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: SystemType as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ScriptPlayableBinding as :: unity2 :: ClassIdentity > :: class () , "Create" , 3 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ScriptPlayableBinding as :: unity2 :: ClassIdentity > :: NAME , "Create" , e) , } } } pub unsafe fn create (name : :: unity2 :: Il2CppString , key : crate :: unity_engine :: object_2 :: Object_2 , r#type : :: unity2 :: SystemType , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: playables :: playablebinding :: PlayableBinding { let inner : extern "C" fn (:: unity2 :: Il2CppString , crate :: unity_engine :: object_2 :: Object_2 , :: unity2 :: SystemType , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: playables :: playablebinding :: PlayableBinding = :: core :: mem :: transmute (__lookup_create :: get_method_info () . method_ptr ,) ; inner (name , key , r#type , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_script_output { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playablegraph :: PlayableGraph as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ScriptPlayableBinding as :: unity2 :: ClassIdentity > :: class () , "CreateScriptOutput" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ScriptPlayableBinding as :: unity2 :: ClassIdentity > :: NAME , "CreateScriptOutput" , e) , } } } pub unsafe fn create_script_output (graph : crate :: unity_engine :: playables :: playablegraph :: PlayableGraph , name : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: playables :: playableoutput :: PlayableOutput { let inner : extern "C" fn (crate :: unity_engine :: playables :: playablegraph :: PlayableGraph , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: playables :: playableoutput :: PlayableOutput = :: core :: mem :: transmute (__lookup_create_script_output :: get_method_info () . method_ptr ,) ; inner (graph , name , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-playables-scriptplayablebinding")]
-impl ScriptPlayableBinding {
-    #[doc = "`Create(::unity2::Il2CppString, crate::unity_engine::object_2::Object_2, ::unity2::SystemType)` overload"]
-    pub fn create(
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        key: impl ::core::convert::Into<crate::unity_engine::object_2::Object_2>,
-        r#type: impl ::core::convert::Into<::unity2::SystemType>,
-    ) -> crate::unity_engine::playables::playablebinding::PlayableBinding {
-        unsafe {
-            __ScriptPlayableBinding_unity2_raw::create(
-                ::core::convert::Into::into(name),
-                ::core::convert::Into::into(key),
-                ::core::convert::Into::into(r#type),
-                ::core::option::Option::None,
-            )
-        }
-    }
+impl ScriptPlayableBinding { # [doc = "`Create(::unity2::Il2CppString, crate::unity_engine::object_2::Object_2, ::unity2::SystemType)` overload"] pub fn create (name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , key : impl :: core :: convert :: Into < crate :: unity_engine :: object_2 :: Object_2 > , r#type : impl :: core :: convert :: Into < :: unity2 :: SystemType >) -> crate :: unity_engine :: playables :: playablebinding :: PlayableBinding { unsafe { __ScriptPlayableBinding_unity2_raw :: create (:: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (key) , :: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } # [doc = "`CreateScriptOutput(crate::unity_engine::playables::playablegraph::PlayableGraph, ::unity2::Il2CppString)` overload"] pub fn create_script_output (graph : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playablegraph :: PlayableGraph > , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: unity_engine :: playables :: playableoutput :: PlayableOutput { unsafe { __ScriptPlayableBinding_unity2_raw :: create_script_output (:: core :: convert :: Into :: into (graph) , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } }
 
-    #[doc = "`CreateScriptOutput(crate::unity_engine::playables::playablegraph::PlayableGraph, ::unity2::Il2CppString)` overload"]
-    pub fn create_script_output(
-        graph: impl ::core::convert::Into<crate::unity_engine::playables::playablegraph::PlayableGraph>,
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> crate::unity_engine::playables::playableoutput::PlayableOutput {
-        unsafe {
-            __ScriptPlayableBinding_unity2_raw::create_script_output(
-                ::core::convert::Into::into(graph),
-                ::core::convert::Into::into(name),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+#[cfg(feature = "unity_engine-playables-scriptplayablebinding")]
+impl ScriptPlayableBinding { pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ScriptPlayableBinding_unity2_raw :: __lookup_create :: get_method_info () } pub fn create_script_output_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ScriptPlayableBinding_unity2_raw :: __lookup_create_script_output :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-playables-scriptplayablebinding")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IScriptPlayableBinding, ScriptPlayableBinding};
+    pub use super::ScriptPlayableBinding;
+    pub use super::IScriptPlayableBinding;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

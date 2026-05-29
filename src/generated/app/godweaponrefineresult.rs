@@ -2,193 +2,47 @@
 
 #[cfg(feature = "app-godweaponrefineresult-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godweaponrefineresult/GodWeaponRefineResult.md"))]
-    #[::unity2::class(namespace = "App", name = "GodWeaponRefineResult")]
-    #[parent(crate::system::object::Object)]
-    pub struct GodWeaponRefineResult {
-        #[offset(16)]
-        #[rename(name = "m_Enhance")]
-        pub m_enhance: crate::app::capabilitysbyte::CapabilitySbyte,
-        #[offset(24)]
-        #[rename(name = "m_EquipSkills")]
-        pub m_equip_skills: crate::app::skillarray::SkillArray,
-        #[offset(32)]
-        #[rename(name = "m_EnchantSkills")]
-        pub m_enchant_skills: crate::app::skillarray::SkillArray,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godweaponrefineresult/GodWeaponRefineResult.md"))] # [:: unity2 :: class (namespace = "App" , name = "GodWeaponRefineResult")] # [parent (crate :: system :: object :: Object)] pub struct GodWeaponRefineResult {
+# [offset (16)] # [rename (name = "m_Enhance")] pub m_enhance : crate :: app :: capabilitysbyte :: CapabilitySbyte ,
+# [offset (24)] # [rename (name = "m_EquipSkills")] pub m_equip_skills : crate :: app :: skillarray :: SkillArray ,
+# [offset (32)] # [rename (name = "m_EnchantSkills")] pub m_enchant_skills : crate :: app :: skillarray :: SkillArray ,
+}
+
 }
 
 #[cfg(feature = "app-godweaponrefineresult-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-godweaponrefineresult")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __GodWeaponRefineResult_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GodWeaponRefineResult as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GodWeaponRefineResult as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: GodWeaponRefineResult, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GodWeaponRefineResult, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_clear {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GodWeaponRefineResult as ::unity2::ClassIdentity>::class(),
-                "Clear",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GodWeaponRefineResult as ::unity2::ClassIdentity>::NAME,
-                        "Clear",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn clear(this: GodWeaponRefineResult, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GodWeaponRefineResult, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_copy_from {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::godweaponrefineresult::GodWeaponRefineResult as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GodWeaponRefineResult as ::unity2::ClassIdentity>::class(),
-                "CopyFrom",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GodWeaponRefineResult as ::unity2::ClassIdentity>::NAME,
-                        "CopyFrom",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn copy_from(
-        this: GodWeaponRefineResult,
-        from: crate::app::godweaponrefineresult::GodWeaponRefineResult,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(GodWeaponRefineResult, crate::app::godweaponrefineresult::GodWeaponRefineResult, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_copy_from::get_method_info().method_ptr);
-        inner(this, from, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __GodWeaponRefineResult_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GodWeaponRefineResult as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GodWeaponRefineResult as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : GodWeaponRefineResult , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GodWeaponRefineResult , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_clear { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GodWeaponRefineResult as :: unity2 :: ClassIdentity > :: class () , "Clear" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GodWeaponRefineResult as :: unity2 :: ClassIdentity > :: NAME , "Clear" , e) , } } } pub unsafe fn clear (this : GodWeaponRefineResult , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GodWeaponRefineResult , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_clear :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_copy_from { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: godweaponrefineresult :: GodWeaponRefineResult as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GodWeaponRefineResult as :: unity2 :: ClassIdentity > :: class () , "CopyFrom" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GodWeaponRefineResult as :: unity2 :: ClassIdentity > :: NAME , "CopyFrom" , e) , } } } pub unsafe fn copy_from (this : GodWeaponRefineResult , from : crate :: app :: godweaponrefineresult :: GodWeaponRefineResult , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GodWeaponRefineResult , crate :: app :: godweaponrefineresult :: GodWeaponRefineResult , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_copy_from :: get_method_info () . method_ptr ,) ; inner (this , from , __unity2_method_info) } }
 
 #[cfg(feature = "app-godweaponrefineresult")]
-pub trait IGodWeaponRefineResultMethods: IGodWeaponRefineResult {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <GodWeaponRefineResult as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GodWeaponRefineResult_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Clear()` overload"]
-    fn clear(self) -> () {
-        unsafe {
-            let __receiver =
-                <GodWeaponRefineResult as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GodWeaponRefineResult_unity2_raw::clear(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CopyFrom(crate::app::godweaponrefineresult::GodWeaponRefineResult)` overload"]
-    fn copy_from(self, from: impl ::core::convert::Into<crate::app::godweaponrefineresult::GodWeaponRefineResult>) -> () {
-        unsafe {
-            let __receiver =
-                <GodWeaponRefineResult as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GodWeaponRefineResult_unity2_raw::copy_from(__receiver, ::core::convert::Into::into(from), ::core::option::Option::None)
-        }
-    }
-}
+pub trait IGodWeaponRefineResultMethods : IGodWeaponRefineResult { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GodWeaponRefineResult as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GodWeaponRefineResult_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Clear()` overload"] fn clear (self ,) -> () { unsafe { let __receiver = < GodWeaponRefineResult as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GodWeaponRefineResult_unity2_raw :: clear (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CopyFrom(crate::app::godweaponrefineresult::GodWeaponRefineResult)` overload"] fn copy_from (self , from : impl :: core :: convert :: Into < crate :: app :: godweaponrefineresult :: GodWeaponRefineResult >) -> () { unsafe { let __receiver = < GodWeaponRefineResult as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GodWeaponRefineResult_unity2_raw :: copy_from (__receiver , :: core :: convert :: Into :: into (from) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-godweaponrefineresult")]
-impl<__T: IGodWeaponRefineResult> IGodWeaponRefineResultMethods for __T {}
+impl < __T : IGodWeaponRefineResult > IGodWeaponRefineResultMethods for __T { }
+
+#[cfg(feature = "app-godweaponrefineresult")]
+impl GodWeaponRefineResult { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GodWeaponRefineResult_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GodWeaponRefineResult_unity2_raw :: __lookup_clear :: get_method_info () } pub fn copy_from_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GodWeaponRefineResult_unity2_raw :: __lookup_copy_from :: get_method_info () } }
 
 #[cfg(feature = "app-godweaponrefineresult")]
 impl GodWeaponRefineResult {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GodWeaponRefineResult),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGodWeaponRefineResultMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GodWeaponRefineResult) , :: core :: stringify ! (new) ,)) ; < Self as IGodWeaponRefineResultMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-godweaponrefineresult")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{GodWeaponRefineResult, IGodWeaponRefineResult, IGodWeaponRefineResultMethods};
+    pub use super::GodWeaponRefineResult;
+    pub use super::IGodWeaponRefineResult;
+    pub use super::IGodWeaponRefineResultMethods;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

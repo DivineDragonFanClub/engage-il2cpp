@@ -2,202 +2,34 @@
 
 #[cfg(feature = "unity_engine-timeline-imarker_interface-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/imarker_interface/IMarker_Interface.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Timeline", name = "IMarker")]
-    pub struct IMarker_Interface {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/imarker_interface/IMarker_Interface.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Timeline" , name = "IMarker")] pub struct IMarker_Interface {}
+
 }
 
 #[cfg(feature = "unity_engine-timeline-imarker_interface-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-timeline-imarker_interface")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __IMarker_Interface_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_time {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <IMarker_Interface as ::unity2::ClassIdentity>::class(),
-                "get_time",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <IMarker_Interface as ::unity2::ClassIdentity>::NAME,
-                        "get_time",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_time(this: IMarker_Interface, __unity2_method_info: ::unity2::OptionalMethod) -> f64 {
-        let inner: extern "C" fn(IMarker_Interface, ::unity2::OptionalMethod) -> f64 =
-            ::core::mem::transmute(__lookup_get_time::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_time {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f64 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <IMarker_Interface as ::unity2::ClassIdentity>::class(),
-                "set_time",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <IMarker_Interface as ::unity2::ClassIdentity>::NAME,
-                        "set_time",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_time(this: IMarker_Interface, value: f64, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(IMarker_Interface, f64, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_time::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_parent {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <IMarker_Interface as ::unity2::ClassIdentity>::class(),
-                "get_parent",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <IMarker_Interface as ::unity2::ClassIdentity>::NAME,
-                        "get_parent",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_parent(
-        this: IMarker_Interface,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::timeline::trackasset::TrackAsset {
-        let inner: extern "C" fn(IMarker_Interface, ::unity2::OptionalMethod) -> crate::unity_engine::timeline::trackasset::TrackAsset =
-            ::core::mem::transmute(__lookup_get_parent::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_initialize {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::timeline::trackasset::TrackAsset as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <IMarker_Interface as ::unity2::ClassIdentity>::class(),
-                "Initialize",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <IMarker_Interface as ::unity2::ClassIdentity>::NAME,
-                        "Initialize",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn initialize(
-        this: IMarker_Interface,
-        parent: crate::unity_engine::timeline::trackasset::TrackAsset,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(IMarker_Interface, crate::unity_engine::timeline::trackasset::TrackAsset, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_initialize::get_method_info().method_ptr);
-        inner(this, parent, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __IMarker_Interface_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_time { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< IMarker_Interface as :: unity2 :: ClassIdentity > :: class () , "get_time" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < IMarker_Interface as :: unity2 :: ClassIdentity > :: NAME , "get_time" , e) , } } } pub unsafe fn get_time (this : IMarker_Interface , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f64 { let inner : extern "C" fn (IMarker_Interface , :: unity2 :: OptionalMethod ,) -> f64 = :: core :: mem :: transmute (__lookup_get_time :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_time { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< f64 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< IMarker_Interface as :: unity2 :: ClassIdentity > :: class () , "set_time" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < IMarker_Interface as :: unity2 :: ClassIdentity > :: NAME , "set_time" , e) , } } } pub unsafe fn set_time (this : IMarker_Interface , value : f64 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (IMarker_Interface , f64 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_time :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_parent { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< IMarker_Interface as :: unity2 :: ClassIdentity > :: class () , "get_parent" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < IMarker_Interface as :: unity2 :: ClassIdentity > :: NAME , "get_parent" , e) , } } } pub unsafe fn get_parent (this : IMarker_Interface , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: timeline :: trackasset :: TrackAsset { let inner : extern "C" fn (IMarker_Interface , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: timeline :: trackasset :: TrackAsset = :: core :: mem :: transmute (__lookup_get_parent :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_initialize { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: timeline :: trackasset :: TrackAsset as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< IMarker_Interface as :: unity2 :: ClassIdentity > :: class () , "Initialize" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < IMarker_Interface as :: unity2 :: ClassIdentity > :: NAME , "Initialize" , e) , } } } pub unsafe fn initialize (this : IMarker_Interface , parent : crate :: unity_engine :: timeline :: trackasset :: TrackAsset , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (IMarker_Interface , crate :: unity_engine :: timeline :: trackasset :: TrackAsset , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_initialize :: get_method_info () . method_ptr ,) ; inner (this , parent , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-timeline-imarker_interface")]
-pub trait IIMarker_InterfaceMethods: IIMarker_Interface {
-    #[doc = "`get_time()` overload"]
-    fn get_time(self) -> f64 {
-        unsafe {
-            let __receiver = <IMarker_Interface as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __IMarker_Interface_unity2_raw::get_time(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_time(f64)` overload"]
-    fn set_time(self, value: impl ::core::convert::Into<f64>) -> () {
-        unsafe {
-            let __receiver = <IMarker_Interface as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __IMarker_Interface_unity2_raw::set_time(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_parent()` overload"]
-    fn get_parent(self) -> crate::unity_engine::timeline::trackasset::TrackAsset {
-        unsafe {
-            let __receiver = <IMarker_Interface as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __IMarker_Interface_unity2_raw::get_parent(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Initialize(crate::unity_engine::timeline::trackasset::TrackAsset)` overload"]
-    fn initialize(self, parent: impl ::core::convert::Into<crate::unity_engine::timeline::trackasset::TrackAsset>) -> () {
-        unsafe {
-            let __receiver = <IMarker_Interface as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __IMarker_Interface_unity2_raw::initialize(__receiver, ::core::convert::Into::into(parent), ::core::option::Option::None)
-        }
-    }
-}
+pub trait IIMarker_InterfaceMethods : IIMarker_Interface { # [doc = "`get_time()` overload"] fn get_time (self ,) -> f64 { unsafe { let __receiver = < IMarker_Interface as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IMarker_Interface_unity2_raw :: get_time (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_time(f64)` overload"] fn set_time (self , value : impl :: core :: convert :: Into < f64 >) -> () { unsafe { let __receiver = < IMarker_Interface as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IMarker_Interface_unity2_raw :: set_time (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_parent()` overload"] fn get_parent (self ,) -> crate :: unity_engine :: timeline :: trackasset :: TrackAsset { unsafe { let __receiver = < IMarker_Interface as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IMarker_Interface_unity2_raw :: get_parent (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Initialize(crate::unity_engine::timeline::trackasset::TrackAsset)` overload"] fn initialize (self , parent : impl :: core :: convert :: Into < crate :: unity_engine :: timeline :: trackasset :: TrackAsset >) -> () { unsafe { let __receiver = < IMarker_Interface as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IMarker_Interface_unity2_raw :: initialize (__receiver , :: core :: convert :: Into :: into (parent) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-timeline-imarker_interface")]
-impl<__T: IIMarker_Interface> IIMarker_InterfaceMethods for __T {}
+impl < __T : IIMarker_Interface > IIMarker_InterfaceMethods for __T { }
+
+#[cfg(feature = "unity_engine-timeline-imarker_interface")]
+impl IMarker_Interface { pub fn get_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __IMarker_Interface_unity2_raw :: __lookup_get_time :: get_method_info () } pub fn set_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __IMarker_Interface_unity2_raw :: __lookup_set_time :: get_method_info () } pub fn get_parent_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __IMarker_Interface_unity2_raw :: __lookup_get_parent :: get_method_info () } pub fn initialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __IMarker_Interface_unity2_raw :: __lookup_initialize :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-timeline-imarker_interface")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IIMarker_Interface, IIMarker_InterfaceMethods, IMarker_Interface};
+    pub use super::IMarker_Interface;
+    pub use super::IIMarker_Interface;
+    pub use super::IIMarker_InterfaceMethods;
 }

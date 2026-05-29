@@ -2,545 +2,66 @@
 
 #[cfg(feature = "root-akroomawareobject-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akroomawareobject/AkRoomAwareObject.md"))]
-    #[::unity2::class(namespace = "", name = "AkRoomAwareObject")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct AkRoomAwareObject {
-        #[static_field]
-        #[rename(name = "ColliderToRoomAwareObjectMap")]
-        pub collider_to_room_aware_object_map: crate::system::collections::generic::dictionary_2::Dictionary_2<
-            crate::unity_engine::collider::Collider,
-            crate::root::akroomawareobject::AkRoomAwareObject,
-        >,
-        #[offset(24)]
-        #[rename(name = "m_Collider")]
-        pub m_collider: crate::unity_engine::collider::Collider,
-        #[offset(32)]
-        #[rename(name = "roomPriorityList")]
-        pub room_priority_list: crate::root::akroom::AkRoom_PriorityList,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akroomawareobject/AkRoomAwareObject.md"))] # [:: unity2 :: class (namespace = "" , name = "AkRoomAwareObject")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct AkRoomAwareObject {
+# [static_field] # [rename (name = "ColliderToRoomAwareObjectMap")] pub collider_to_room_aware_object_map : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < crate :: unity_engine :: collider :: Collider , crate :: root :: akroomawareobject :: AkRoomAwareObject > ,
+# [offset (24)] # [rename (name = "m_Collider")] pub m_collider : crate :: unity_engine :: collider :: Collider ,
+# [offset (32)] # [rename (name = "roomPriorityList")] pub room_priority_list : crate :: root :: akroom :: AkRoom_PriorityList ,
+}
+
 }
 
 #[cfg(feature = "root-akroomawareobject-types")]
 pub use __types::*;
 
 #[cfg(feature = "root-akroomawareobject")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AkRoomAwareObject_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_ak_room_aware_object_from_collider {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::collider::Collider as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkRoomAwareObject as ::unity2::ClassIdentity>::class(),
-                "GetAkRoomAwareObjectFromCollider",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkRoomAwareObject as ::unity2::ClassIdentity>::NAME,
-                        "GetAkRoomAwareObjectFromCollider",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_ak_room_aware_object_from_collider(
-        collider: crate::unity_engine::collider::Collider,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::root::akroomawareobject::AkRoomAwareObject {
-        let inner: extern "C" fn(
-            crate::unity_engine::collider::Collider,
-            ::unity2::OptionalMethod,
-        ) -> crate::root::akroomawareobject::AkRoomAwareObject =
-            ::core::mem::transmute(__lookup_get_ak_room_aware_object_from_collider::get_method_info().method_ptr);
-        inner(collider, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_awake {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkRoomAwareObject as ::unity2::ClassIdentity>::class(),
-                "Awake",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkRoomAwareObject as ::unity2::ClassIdentity>::NAME,
-                        "Awake",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn awake(this: AkRoomAwareObject, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AkRoomAwareObject, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_awake::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_enable {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkRoomAwareObject as ::unity2::ClassIdentity>::class(),
-                "OnEnable",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkRoomAwareObject as ::unity2::ClassIdentity>::NAME,
-                        "OnEnable",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_enable(this: AkRoomAwareObject, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AkRoomAwareObject, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_enable::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_disable {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkRoomAwareObject as ::unity2::ClassIdentity>::class(),
-                "OnDisable",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkRoomAwareObject as ::unity2::ClassIdentity>::NAME,
-                        "OnDisable",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_disable(this: AkRoomAwareObject, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AkRoomAwareObject, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_disable::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_destroy {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkRoomAwareObject as ::unity2::ClassIdentity>::class(),
-                "OnDestroy",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkRoomAwareObject as ::unity2::ClassIdentity>::NAME,
-                        "OnDestroy",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_destroy(this: AkRoomAwareObject, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AkRoomAwareObject, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_destroy::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_game_object_in_highest_priority_active_and_enabled_room {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkRoomAwareObject as ::unity2::ClassIdentity>::class(),
-                "SetGameObjectInHighestPriorityActiveAndEnabledRoom",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkRoomAwareObject as ::unity2::ClassIdentity>::NAME,
-                        "SetGameObjectInHighestPriorityActiveAndEnabledRoom",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_game_object_in_highest_priority_active_and_enabled_room(
-        this: AkRoomAwareObject,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(AkRoomAwareObject, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_game_object_in_highest_priority_active_and_enabled_room::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_game_object_in_room {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::root::akroom::AkRoom as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkRoomAwareObject as ::unity2::ClassIdentity>::class(),
-                "SetGameObjectInRoom",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkRoomAwareObject as ::unity2::ClassIdentity>::NAME,
-                        "SetGameObjectInRoom",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_game_object_in_room(
-        this: AkRoomAwareObject,
-        room: crate::root::akroom::AkRoom,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(AkRoomAwareObject, crate::root::akroom::AkRoom, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_game_object_in_room::get_method_info().method_ptr);
-        inner(this, room, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_entered_room {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::root::akroom::AkRoom as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkRoomAwareObject as ::unity2::ClassIdentity>::class(),
-                "EnteredRoom",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkRoomAwareObject as ::unity2::ClassIdentity>::NAME,
-                        "EnteredRoom",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn entered_room(this: AkRoomAwareObject, room: crate::root::akroom::AkRoom, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AkRoomAwareObject, crate::root::akroom::AkRoom, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_entered_room::get_method_info().method_ptr);
-        inner(this, room, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_exited_room {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::root::akroom::AkRoom as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkRoomAwareObject as ::unity2::ClassIdentity>::class(),
-                "ExitedRoom",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkRoomAwareObject as ::unity2::ClassIdentity>::NAME,
-                        "ExitedRoom",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn exited_room(this: AkRoomAwareObject, room: crate::root::akroom::AkRoom, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AkRoomAwareObject, crate::root::akroom::AkRoom, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_exited_room::get_method_info().method_ptr);
-        inner(this, room, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkRoomAwareObject as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkRoomAwareObject as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: AkRoomAwareObject, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AkRoomAwareObject, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkRoomAwareObject as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkRoomAwareObject as ::unity2::ClassIdentity>::NAME,
-                        ".cctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __AkRoomAwareObject_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_ak_room_aware_object_from_collider { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: collider :: Collider as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkRoomAwareObject as :: unity2 :: ClassIdentity > :: class () , "GetAkRoomAwareObjectFromCollider" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkRoomAwareObject as :: unity2 :: ClassIdentity > :: NAME , "GetAkRoomAwareObjectFromCollider" , e) , } } } pub unsafe fn get_ak_room_aware_object_from_collider (collider : crate :: unity_engine :: collider :: Collider , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: root :: akroomawareobject :: AkRoomAwareObject { let inner : extern "C" fn (crate :: unity_engine :: collider :: Collider , :: unity2 :: OptionalMethod ,) -> crate :: root :: akroomawareobject :: AkRoomAwareObject = :: core :: mem :: transmute (__lookup_get_ak_room_aware_object_from_collider :: get_method_info () . method_ptr ,) ; inner (collider , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_awake { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkRoomAwareObject as :: unity2 :: ClassIdentity > :: class () , "Awake" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkRoomAwareObject as :: unity2 :: ClassIdentity > :: NAME , "Awake" , e) , } } } pub unsafe fn awake (this : AkRoomAwareObject , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkRoomAwareObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_awake :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_enable { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkRoomAwareObject as :: unity2 :: ClassIdentity > :: class () , "OnEnable" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkRoomAwareObject as :: unity2 :: ClassIdentity > :: NAME , "OnEnable" , e) , } } } pub unsafe fn on_enable (this : AkRoomAwareObject , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkRoomAwareObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_enable :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_disable { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkRoomAwareObject as :: unity2 :: ClassIdentity > :: class () , "OnDisable" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkRoomAwareObject as :: unity2 :: ClassIdentity > :: NAME , "OnDisable" , e) , } } } pub unsafe fn on_disable (this : AkRoomAwareObject , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkRoomAwareObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_disable :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_destroy { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkRoomAwareObject as :: unity2 :: ClassIdentity > :: class () , "OnDestroy" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkRoomAwareObject as :: unity2 :: ClassIdentity > :: NAME , "OnDestroy" , e) , } } } pub unsafe fn on_destroy (this : AkRoomAwareObject , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkRoomAwareObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_destroy :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_game_object_in_highest_priority_active_and_enabled_room { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkRoomAwareObject as :: unity2 :: ClassIdentity > :: class () , "SetGameObjectInHighestPriorityActiveAndEnabledRoom" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkRoomAwareObject as :: unity2 :: ClassIdentity > :: NAME , "SetGameObjectInHighestPriorityActiveAndEnabledRoom" , e) , } } } pub unsafe fn set_game_object_in_highest_priority_active_and_enabled_room (this : AkRoomAwareObject , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkRoomAwareObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_game_object_in_highest_priority_active_and_enabled_room :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_game_object_in_room { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: root :: akroom :: AkRoom as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkRoomAwareObject as :: unity2 :: ClassIdentity > :: class () , "SetGameObjectInRoom" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkRoomAwareObject as :: unity2 :: ClassIdentity > :: NAME , "SetGameObjectInRoom" , e) , } } } pub unsafe fn set_game_object_in_room (this : AkRoomAwareObject , room : crate :: root :: akroom :: AkRoom , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkRoomAwareObject , crate :: root :: akroom :: AkRoom , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_game_object_in_room :: get_method_info () . method_ptr ,) ; inner (this , room , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_entered_room { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: root :: akroom :: AkRoom as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkRoomAwareObject as :: unity2 :: ClassIdentity > :: class () , "EnteredRoom" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkRoomAwareObject as :: unity2 :: ClassIdentity > :: NAME , "EnteredRoom" , e) , } } } pub unsafe fn entered_room (this : AkRoomAwareObject , room : crate :: root :: akroom :: AkRoom , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkRoomAwareObject , crate :: root :: akroom :: AkRoom , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_entered_room :: get_method_info () . method_ptr ,) ; inner (this , room , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_exited_room { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: root :: akroom :: AkRoom as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkRoomAwareObject as :: unity2 :: ClassIdentity > :: class () , "ExitedRoom" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkRoomAwareObject as :: unity2 :: ClassIdentity > :: NAME , "ExitedRoom" , e) , } } } pub unsafe fn exited_room (this : AkRoomAwareObject , room : crate :: root :: akroom :: AkRoom , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkRoomAwareObject , crate :: root :: akroom :: AkRoom , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_exited_room :: get_method_info () . method_ptr ,) ; inner (this , room , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkRoomAwareObject as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkRoomAwareObject as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : AkRoomAwareObject , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkRoomAwareObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkRoomAwareObject as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkRoomAwareObject as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
+
+#[cfg(feature = "root-akroomawareobject")]
+impl AkRoomAwareObject { # [doc = "`GetAkRoomAwareObjectFromCollider(crate::unity_engine::collider::Collider)` overload"] pub fn get_ak_room_aware_object_from_collider (collider : impl :: core :: convert :: Into < crate :: unity_engine :: collider :: Collider >) -> crate :: root :: akroomawareobject :: AkRoomAwareObject { unsafe { __AkRoomAwareObject_unity2_raw :: get_ak_room_aware_object_from_collider (:: core :: convert :: Into :: into (collider) , :: core :: option :: Option :: None) } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { __AkRoomAwareObject_unity2_raw :: cctor (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "root-akroomawareobject")]
+pub trait IAkRoomAwareObjectMethods : IAkRoomAwareObject { # [doc = "`Awake()` overload"] fn awake (self ,) -> () { unsafe { let __receiver = < AkRoomAwareObject as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkRoomAwareObject_unity2_raw :: awake (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnEnable()` overload"] fn on_enable (self ,) -> () { unsafe { let __receiver = < AkRoomAwareObject as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkRoomAwareObject_unity2_raw :: on_enable (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnDisable()` overload"] fn on_disable (self ,) -> () { unsafe { let __receiver = < AkRoomAwareObject as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkRoomAwareObject_unity2_raw :: on_disable (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnDestroy()` overload"] fn on_destroy (self ,) -> () { unsafe { let __receiver = < AkRoomAwareObject as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkRoomAwareObject_unity2_raw :: on_destroy (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetGameObjectInHighestPriorityActiveAndEnabledRoom()` overload"] fn set_game_object_in_highest_priority_active_and_enabled_room (self ,) -> () { unsafe { let __receiver = < AkRoomAwareObject as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkRoomAwareObject_unity2_raw :: set_game_object_in_highest_priority_active_and_enabled_room (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetGameObjectInRoom(crate::root::akroom::AkRoom)` overload"] fn set_game_object_in_room (self , room : impl :: core :: convert :: Into < crate :: root :: akroom :: AkRoom >) -> () { unsafe { let __receiver = < AkRoomAwareObject as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkRoomAwareObject_unity2_raw :: set_game_object_in_room (__receiver , :: core :: convert :: Into :: into (room) , :: core :: option :: Option :: None) } } # [doc = "`EnteredRoom(crate::root::akroom::AkRoom)` overload"] fn entered_room (self , room : impl :: core :: convert :: Into < crate :: root :: akroom :: AkRoom >) -> () { unsafe { let __receiver = < AkRoomAwareObject as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkRoomAwareObject_unity2_raw :: entered_room (__receiver , :: core :: convert :: Into :: into (room) , :: core :: option :: Option :: None) } } # [doc = "`ExitedRoom(crate::root::akroom::AkRoom)` overload"] fn exited_room (self , room : impl :: core :: convert :: Into < crate :: root :: akroom :: AkRoom >) -> () { unsafe { let __receiver = < AkRoomAwareObject as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkRoomAwareObject_unity2_raw :: exited_room (__receiver , :: core :: convert :: Into :: into (room) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AkRoomAwareObject as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkRoomAwareObject_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "root-akroomawareobject")]
+impl < __T : IAkRoomAwareObject > IAkRoomAwareObjectMethods for __T { }
+
+#[cfg(feature = "root-akroomawareobject")]
+impl AkRoomAwareObject { pub fn get_ak_room_aware_object_from_collider_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkRoomAwareObject_unity2_raw :: __lookup_get_ak_room_aware_object_from_collider :: get_method_info () } pub fn awake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkRoomAwareObject_unity2_raw :: __lookup_awake :: get_method_info () } pub fn on_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkRoomAwareObject_unity2_raw :: __lookup_on_enable :: get_method_info () } pub fn on_disable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkRoomAwareObject_unity2_raw :: __lookup_on_disable :: get_method_info () } pub fn on_destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkRoomAwareObject_unity2_raw :: __lookup_on_destroy :: get_method_info () } pub fn set_game_object_in_highest_priority_active_and_enabled_room_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkRoomAwareObject_unity2_raw :: __lookup_set_game_object_in_highest_priority_active_and_enabled_room :: get_method_info () } pub fn set_game_object_in_room_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkRoomAwareObject_unity2_raw :: __lookup_set_game_object_in_room :: get_method_info () } pub fn entered_room_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkRoomAwareObject_unity2_raw :: __lookup_entered_room :: get_method_info () } pub fn exited_room_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkRoomAwareObject_unity2_raw :: __lookup_exited_room :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkRoomAwareObject_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkRoomAwareObject_unity2_raw :: __lookup_cctor :: get_method_info () } }
 
 #[cfg(feature = "root-akroomawareobject")]
 impl AkRoomAwareObject {
-    #[doc = "`GetAkRoomAwareObjectFromCollider(crate::unity_engine::collider::Collider)` overload"]
-    pub fn get_ak_room_aware_object_from_collider(
-        collider: impl ::core::convert::Into<crate::unity_engine::collider::Collider>,
-    ) -> crate::root::akroomawareobject::AkRoomAwareObject {
-        unsafe {
-            __AkRoomAwareObject_unity2_raw::get_ak_room_aware_object_from_collider(
-                ::core::convert::Into::into(collider),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __AkRoomAwareObject_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "root-akroomawareobject")]
-pub trait IAkRoomAwareObjectMethods: IAkRoomAwareObject {
-    #[doc = "`Awake()` overload"]
-    fn awake(self) -> () {
-        unsafe {
-            let __receiver = <AkRoomAwareObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkRoomAwareObject_unity2_raw::awake(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnEnable()` overload"]
-    fn on_enable(self) -> () {
-        unsafe {
-            let __receiver = <AkRoomAwareObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkRoomAwareObject_unity2_raw::on_enable(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnDisable()` overload"]
-    fn on_disable(self) -> () {
-        unsafe {
-            let __receiver = <AkRoomAwareObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkRoomAwareObject_unity2_raw::on_disable(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnDestroy()` overload"]
-    fn on_destroy(self) -> () {
-        unsafe {
-            let __receiver = <AkRoomAwareObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkRoomAwareObject_unity2_raw::on_destroy(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetGameObjectInHighestPriorityActiveAndEnabledRoom()` overload"]
-    fn set_game_object_in_highest_priority_active_and_enabled_room(self) -> () {
-        unsafe {
-            let __receiver = <AkRoomAwareObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkRoomAwareObject_unity2_raw::set_game_object_in_highest_priority_active_and_enabled_room(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetGameObjectInRoom(crate::root::akroom::AkRoom)` overload"]
-    fn set_game_object_in_room(self, room: impl ::core::convert::Into<crate::root::akroom::AkRoom>) -> () {
-        unsafe {
-            let __receiver = <AkRoomAwareObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkRoomAwareObject_unity2_raw::set_game_object_in_room(__receiver, ::core::convert::Into::into(room), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`EnteredRoom(crate::root::akroom::AkRoom)` overload"]
-    fn entered_room(self, room: impl ::core::convert::Into<crate::root::akroom::AkRoom>) -> () {
-        unsafe {
-            let __receiver = <AkRoomAwareObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkRoomAwareObject_unity2_raw::entered_room(__receiver, ::core::convert::Into::into(room), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ExitedRoom(crate::root::akroom::AkRoom)` overload"]
-    fn exited_room(self, room: impl ::core::convert::Into<crate::root::akroom::AkRoom>) -> () {
-        unsafe {
-            let __receiver = <AkRoomAwareObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkRoomAwareObject_unity2_raw::exited_room(__receiver, ::core::convert::Into::into(room), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <AkRoomAwareObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkRoomAwareObject_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "root-akroomawareobject")]
-impl<__T: IAkRoomAwareObject> IAkRoomAwareObjectMethods for __T {}
-
-#[cfg(feature = "root-akroomawareobject")]
-impl AkRoomAwareObject {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AkRoomAwareObject),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAkRoomAwareObjectMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkRoomAwareObject) , :: core :: stringify ! (new) ,)) ; < Self as IAkRoomAwareObjectMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "root-akroomawareobject")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{AkRoomAwareObject, IAkRoomAwareObject, IAkRoomAwareObjectMethods};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        system::object::IObject,
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::AkRoomAwareObject;
+    pub use super::IAkRoomAwareObject;
+    pub use super::IAkRoomAwareObjectMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

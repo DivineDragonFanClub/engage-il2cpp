@@ -2,183 +2,55 @@
 
 #[cfg(feature = "system-reflection-rtfieldinfo-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        reflection::{
-            fieldinfo::{FieldInfo, IFieldInfo},
-            memberinfo::{IMemberInfo, MemberInfo},
-            runtimefieldinfo::{IRuntimeFieldInfo, RuntimeFieldInfo},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/rtfieldinfo/RtFieldInfo.md"))]
-    #[::unity2::class(namespace = "System.Reflection", name = "RtFieldInfo")]
-    #[parent(crate::system::reflection::runtimefieldinfo::RuntimeFieldInfo)]
-    pub struct RtFieldInfo {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: reflection :: fieldinfo :: { FieldInfo , IFieldInfo }
+ ;
+ use crate :: system :: reflection :: memberinfo :: { IMemberInfo , MemberInfo }
+ ;
+ use crate :: system :: reflection :: runtimefieldinfo :: { IRuntimeFieldInfo , RuntimeFieldInfo }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/rtfieldinfo/RtFieldInfo.md"))] # [:: unity2 :: class (namespace = "System.Reflection" , name = "RtFieldInfo")] # [parent (crate :: system :: reflection :: runtimefieldinfo :: RuntimeFieldInfo)] pub struct RtFieldInfo {}
+
 }
 
 #[cfg(feature = "system-reflection-rtfieldinfo-types")]
 pub use __types::*;
 
 #[cfg(feature = "system-reflection-rtfieldinfo")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RtFieldInfo_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_unsafe_get_value {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RtFieldInfo as ::unity2::ClassIdentity>::class(),
-                "UnsafeGetValue",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RtFieldInfo as ::unity2::ClassIdentity>::NAME,
-                        "UnsafeGetValue",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn unsafe_get_value(
-        this: RtFieldInfo,
-        obj: crate::system::object::Object,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::object::Object {
-        let inner: extern "C" fn(RtFieldInfo, crate::system::object::Object, ::unity2::OptionalMethod) -> crate::system::object::Object =
-            ::core::mem::transmute(__lookup_unsafe_get_value::get_method_info().method_ptr);
-        inner(this, obj, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_check_consistency {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RtFieldInfo as ::unity2::ClassIdentity>::class(),
-                "CheckConsistency",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RtFieldInfo as ::unity2::ClassIdentity>::NAME,
-                        "CheckConsistency",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn check_consistency(this: RtFieldInfo, target: crate::system::object::Object, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RtFieldInfo, crate::system::object::Object, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_check_consistency::get_method_info().method_ptr);
-        inner(this, target, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<RtFieldInfo as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RtFieldInfo as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: RtFieldInfo, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RtFieldInfo, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __RtFieldInfo_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_unsafe_get_value { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RtFieldInfo as :: unity2 :: ClassIdentity > :: class () , "UnsafeGetValue" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RtFieldInfo as :: unity2 :: ClassIdentity > :: NAME , "UnsafeGetValue" , e) , } } } pub unsafe fn unsafe_get_value (this : RtFieldInfo , obj : crate :: system :: object :: Object , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object { let inner : extern "C" fn (RtFieldInfo , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute (__lookup_unsafe_get_value :: get_method_info () . method_ptr ,) ; inner (this , obj , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_check_consistency { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RtFieldInfo as :: unity2 :: ClassIdentity > :: class () , "CheckConsistency" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RtFieldInfo as :: unity2 :: ClassIdentity > :: NAME , "CheckConsistency" , e) , } } } pub unsafe fn check_consistency (this : RtFieldInfo , target : crate :: system :: object :: Object , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RtFieldInfo , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_check_consistency :: get_method_info () . method_ptr ,) ; inner (this , target , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RtFieldInfo as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RtFieldInfo as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : RtFieldInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RtFieldInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "system-reflection-rtfieldinfo")]
-pub trait IRtFieldInfoMethods: IRtFieldInfo {
-    #[doc = "`UnsafeGetValue(crate::system::object::Object)` overload"]
-    fn unsafe_get_value(self, obj: impl ::core::convert::Into<crate::system::object::Object>) -> crate::system::object::Object {
-        unsafe {
-            let __receiver = <RtFieldInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RtFieldInfo_unity2_raw::unsafe_get_value(__receiver, ::core::convert::Into::into(obj), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CheckConsistency(crate::system::object::Object)` overload"]
-    fn check_consistency(self, target: impl ::core::convert::Into<crate::system::object::Object>) -> () {
-        unsafe {
-            let __receiver = <RtFieldInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RtFieldInfo_unity2_raw::check_consistency(__receiver, ::core::convert::Into::into(target), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <RtFieldInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RtFieldInfo_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IRtFieldInfoMethods : IRtFieldInfo { # [doc = "`UnsafeGetValue(crate::system::object::Object)` overload"] fn unsafe_get_value (self , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> crate :: system :: object :: Object { unsafe { let __receiver = < RtFieldInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RtFieldInfo_unity2_raw :: unsafe_get_value (__receiver , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } # [doc = "`CheckConsistency(crate::system::object::Object)` overload"] fn check_consistency (self , target : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> () { unsafe { let __receiver = < RtFieldInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RtFieldInfo_unity2_raw :: check_consistency (__receiver , :: core :: convert :: Into :: into (target) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RtFieldInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RtFieldInfo_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "system-reflection-rtfieldinfo")]
-impl<__T: IRtFieldInfo> IRtFieldInfoMethods for __T {}
+impl < __T : IRtFieldInfo > IRtFieldInfoMethods for __T { }
+
+#[cfg(feature = "system-reflection-rtfieldinfo")]
+impl RtFieldInfo { pub fn unsafe_get_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RtFieldInfo_unity2_raw :: __lookup_unsafe_get_value :: get_method_info () } pub fn check_consistency_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RtFieldInfo_unity2_raw :: __lookup_check_consistency :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RtFieldInfo_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "system-reflection-rtfieldinfo")]
 impl RtFieldInfo {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(RtFieldInfo), ::core::stringify!(new),));
-        <Self as IRtFieldInfoMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RtFieldInfo) , :: core :: stringify ! (new) ,)) ; < Self as IRtFieldInfoMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "system-reflection-rtfieldinfo")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IRtFieldInfo, IRtFieldInfoMethods, RtFieldInfo};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-reflection-fieldinfo")]
-    pub use crate::system::reflection::fieldinfo::IFieldInfoMethods;
-    #[cfg(feature = "system-reflection-memberinfo")]
-    pub use crate::system::reflection::memberinfo::IMemberInfoMethods;
-    #[cfg(feature = "system-reflection-runtimefieldinfo")]
-    pub use crate::system::reflection::runtimefieldinfo::IRuntimeFieldInfoMethods;
-    pub use crate::system::{
-        object::IObject,
-        reflection::{fieldinfo::IFieldInfo, memberinfo::IMemberInfo, runtimefieldinfo::IRuntimeFieldInfo},
-    };
+    pub use super::RtFieldInfo;
+    pub use super::IRtFieldInfo;
+    pub use super::IRtFieldInfoMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::system::reflection::fieldinfo::IFieldInfo;
+    pub use crate::system::reflection::memberinfo::IMemberInfo;
+    pub use crate::system::reflection::runtimefieldinfo::IRuntimeFieldInfo;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-reflection-fieldinfo")] pub use crate::system::reflection::fieldinfo::IFieldInfoMethods;
+    #[cfg(feature = "system-reflection-memberinfo")] pub use crate::system::reflection::memberinfo::IMemberInfoMethods;
+    #[cfg(feature = "system-reflection-runtimefieldinfo")] pub use crate::system::reflection::runtimefieldinfo::IRuntimeFieldInfoMethods;
 }

@@ -2,157 +2,46 @@
 
 #[cfg(feature = "app-synthesisringexecute-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/synthesisringexecute/SynthesisRingExecute.md"))]
-    #[::unity2::class(namespace = "App", name = "SynthesisRingExecute")]
-    #[parent(crate::system::object::Object)]
-    pub struct SynthesisRingExecute {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/synthesisringexecute/SynthesisRingExecute.md"))] # [:: unity2 :: class (namespace = "App" , name = "SynthesisRingExecute")] # [parent (crate :: system :: object :: Object)] pub struct SynthesisRingExecute {}
+
 }
 
 #[cfg(feature = "app-synthesisringexecute-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-synthesisringexecute")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __SynthesisRingExecute_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_do {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SynthesisRingExecute as ::unity2::ClassIdentity>::class(),
-                "Do",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SynthesisRingExecute as ::unity2::ClassIdentity>::NAME,
-                        "Do",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn r#do(
-        base_ring_rnid: ::unity2::Il2CppString,
-        count_base_ring: i32,
-        count_piece_of_bonds: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(::unity2::Il2CppString, i32, i32, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_do::get_method_info().method_ptr);
-        inner(base_ring_rnid, count_base_ring, count_piece_of_bonds, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SynthesisRingExecute as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SynthesisRingExecute as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: SynthesisRingExecute, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SynthesisRingExecute, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __SynthesisRingExecute_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_do { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SynthesisRingExecute as :: unity2 :: ClassIdentity > :: class () , "Do" , 3 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SynthesisRingExecute as :: unity2 :: ClassIdentity > :: NAME , "Do" , e) , } } } pub unsafe fn r#do (base_ring_rnid : :: unity2 :: Il2CppString , count_base_ring : i32 , count_piece_of_bonds : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: Il2CppString , i32 , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_do :: get_method_info () . method_ptr ,) ; inner (base_ring_rnid , count_base_ring , count_piece_of_bonds , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SynthesisRingExecute as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SynthesisRingExecute as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : SynthesisRingExecute , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SynthesisRingExecute , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-synthesisringexecute")]
+impl SynthesisRingExecute { # [doc = "`Do(::unity2::Il2CppString, i32, i32)` overload"] pub fn r#do (base_ring_rnid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , count_base_ring : impl :: core :: convert :: Into < i32 > , count_piece_of_bonds : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { __SynthesisRingExecute_unity2_raw :: r#do (:: core :: convert :: Into :: into (base_ring_rnid) , :: core :: convert :: Into :: into (count_base_ring) , :: core :: convert :: Into :: into (count_piece_of_bonds) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-synthesisringexecute")]
+pub trait ISynthesisRingExecuteMethods : ISynthesisRingExecute { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < SynthesisRingExecute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SynthesisRingExecute_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-synthesisringexecute")]
+impl < __T : ISynthesisRingExecute > ISynthesisRingExecuteMethods for __T { }
+
+#[cfg(feature = "app-synthesisringexecute")]
+impl SynthesisRingExecute { pub fn do_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SynthesisRingExecute_unity2_raw :: __lookup_do :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SynthesisRingExecute_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-synthesisringexecute")]
 impl SynthesisRingExecute {
-    #[doc = "`Do(::unity2::Il2CppString, i32, i32)` overload"]
-    pub fn r#do(
-        base_ring_rnid: impl ::core::convert::Into<::unity2::Il2CppString>,
-        count_base_ring: impl ::core::convert::Into<i32>,
-        count_piece_of_bonds: impl ::core::convert::Into<i32>,
-    ) -> bool {
-        unsafe {
-            __SynthesisRingExecute_unity2_raw::r#do(
-                ::core::convert::Into::into(base_ring_rnid),
-                ::core::convert::Into::into(count_base_ring),
-                ::core::convert::Into::into(count_piece_of_bonds),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-synthesisringexecute")]
-pub trait ISynthesisRingExecuteMethods: ISynthesisRingExecute {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <SynthesisRingExecute as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SynthesisRingExecute_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-synthesisringexecute")]
-impl<__T: ISynthesisRingExecute> ISynthesisRingExecuteMethods for __T {}
-
-#[cfg(feature = "app-synthesisringexecute")]
-impl SynthesisRingExecute {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SynthesisRingExecute),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISynthesisRingExecuteMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SynthesisRingExecute) , :: core :: stringify ! (new) ,)) ; < Self as ISynthesisRingExecuteMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-synthesisringexecute")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{ISynthesisRingExecute, ISynthesisRingExecuteMethods, SynthesisRingExecute};
+    pub use super::SynthesisRingExecute;
+    pub use super::ISynthesisRingExecute;
+    pub use super::ISynthesisRingExecuteMethods;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

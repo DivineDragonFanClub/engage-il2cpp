@@ -2,280 +2,81 @@
 
 #[cfg(feature = "combat-hash-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/hash/Hash.md"))]
-    #[::unity2::class(namespace = "Combat", name = "Hash")]
-    #[parent(crate::system::object::Object)]
-    pub struct Hash {
-        #[static_field]
-        #[rename(name = "Attack1")]
-        pub attack1: i32,
-        #[static_field]
-        #[rename(name = "Attack2")]
-        pub attack2: i32,
-        #[static_field]
-        #[rename(name = "Attack3")]
-        pub attack3: i32,
-        #[static_field]
-        #[rename(name = "Attack4")]
-        pub attack4: i32,
-        #[static_field]
-        #[rename(name = "Attack5")]
-        pub attack5: i32,
-        #[static_field]
-        #[rename(name = "AttackC")]
-        pub attack_c: i32,
-        #[static_field]
-        #[rename(name = "AttackT")]
-        pub attack_t: i32,
-        #[static_field]
-        #[rename(name = "DamageHigh")]
-        pub damage_high: i32,
-        #[static_field]
-        #[rename(name = "DamageMidB")]
-        pub damage_mid_b: i32,
-        #[static_field]
-        #[rename(name = "DamageMidDU")]
-        pub damage_mid_du: i32,
-        #[static_field]
-        #[rename(name = "DamageMidUD")]
-        pub damage_mid_ud: i32,
-        #[static_field]
-        #[rename(name = "DieB")]
-        pub die_b: i32,
-        #[static_field]
-        #[rename(name = "DieL")]
-        pub die_l: i32,
-        #[static_field]
-        #[rename(name = "DieR")]
-        pub die_r: i32,
-        #[static_field]
-        #[rename(name = "Dive")]
-        pub dive: i32,
-        #[static_field]
-        #[rename(name = "Engage1")]
-        pub engage1: i32,
-        #[static_field]
-        #[rename(name = "Engage2")]
-        pub engage2: i32,
-        #[static_field]
-        #[rename(name = "Engage3")]
-        pub engage3: i32,
-        #[static_field]
-        #[rename(name = "EvasionB")]
-        pub evasion_b: i32,
-        #[static_field]
-        #[rename(name = "EvasionL")]
-        pub evasion_l: i32,
-        #[static_field]
-        #[rename(name = "EvasionR")]
-        pub evasion_r: i32,
-        #[static_field]
-        #[rename(name = "Guard")]
-        pub guard: i32,
-        #[static_field]
-        #[rename(name = "HoveringLoop")]
-        pub hovering_loop: i32,
-        #[static_field]
-        #[rename(name = "Idle")]
-        pub idle: i32,
-        #[static_field]
-        #[rename(name = "ParryL")]
-        pub parry_l: i32,
-        #[static_field]
-        #[rename(name = "ParryR")]
-        pub parry_r: i32,
-        #[static_field]
-        #[rename(name = "Ready")]
-        pub ready: i32,
-        #[static_field]
-        #[rename(name = "RelaxLoop")]
-        pub relax_loop: i32,
-        #[static_field]
-        #[rename(name = "Repelled")]
-        pub repelled: i32,
-        #[static_field]
-        #[rename(name = "RunLoop")]
-        pub run_loop: i32,
-        #[static_field]
-        #[rename(name = "RunStart")]
-        pub run_start: i32,
-        #[static_field]
-        #[rename(name = "Special1")]
-        pub special1: i32,
-        #[static_field]
-        #[rename(name = "Start")]
-        pub start: i32,
-        #[static_field]
-        #[rename(name = "Win")]
-        pub win: i32,
-        #[static_field]
-        #[rename(name = "WinLoop")]
-        pub win_loop: i32,
-        #[static_field]
-        #[rename(name = "AttackAll")]
-        pub attack_all: i32,
-        #[static_field]
-        #[rename(name = "DamageMidAll")]
-        pub damage_mid_all: i32,
-        #[static_field]
-        #[rename(name = "DieAll")]
-        pub die_all: i32,
-        #[static_field]
-        #[rename(name = "EvasionAll")]
-        pub evasion_all: i32,
-        #[static_field]
-        #[rename(name = "ParryAll")]
-        pub parry_all: i32,
-        #[static_field]
-        #[rename(name = "PlaybackRate")]
-        pub playback_rate: i32,
-        #[static_field]
-        #[rename(name = "IsRunning")]
-        pub is_running: i32,
-        #[static_field]
-        #[rename(name = "Dying")]
-        pub dying: i32,
-        #[static_field]
-        #[rename(name = "FacialNormal")]
-        pub facial_normal: i32,
-        #[static_field]
-        #[rename(name = "FacialPain")]
-        pub facial_pain: i32,
-        #[static_field]
-        #[rename(name = "FacialDie")]
-        pub facial_die: i32,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/hash/Hash.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "Hash")] # [parent (crate :: system :: object :: Object)] pub struct Hash {
+# [static_field] # [rename (name = "Attack1")] pub attack1 : i32 ,
+# [static_field] # [rename (name = "Attack2")] pub attack2 : i32 ,
+# [static_field] # [rename (name = "Attack3")] pub attack3 : i32 ,
+# [static_field] # [rename (name = "Attack4")] pub attack4 : i32 ,
+# [static_field] # [rename (name = "Attack5")] pub attack5 : i32 ,
+# [static_field] # [rename (name = "AttackC")] pub attack_c : i32 ,
+# [static_field] # [rename (name = "AttackT")] pub attack_t : i32 ,
+# [static_field] # [rename (name = "DamageHigh")] pub damage_high : i32 ,
+# [static_field] # [rename (name = "DamageMidB")] pub damage_mid_b : i32 ,
+# [static_field] # [rename (name = "DamageMidDU")] pub damage_mid_du : i32 ,
+# [static_field] # [rename (name = "DamageMidUD")] pub damage_mid_ud : i32 ,
+# [static_field] # [rename (name = "DieB")] pub die_b : i32 ,
+# [static_field] # [rename (name = "DieL")] pub die_l : i32 ,
+# [static_field] # [rename (name = "DieR")] pub die_r : i32 ,
+# [static_field] # [rename (name = "Dive")] pub dive : i32 ,
+# [static_field] # [rename (name = "Engage1")] pub engage1 : i32 ,
+# [static_field] # [rename (name = "Engage2")] pub engage2 : i32 ,
+# [static_field] # [rename (name = "Engage3")] pub engage3 : i32 ,
+# [static_field] # [rename (name = "EvasionB")] pub evasion_b : i32 ,
+# [static_field] # [rename (name = "EvasionL")] pub evasion_l : i32 ,
+# [static_field] # [rename (name = "EvasionR")] pub evasion_r : i32 ,
+# [static_field] # [rename (name = "Guard")] pub guard : i32 ,
+# [static_field] # [rename (name = "HoveringLoop")] pub hovering_loop : i32 ,
+# [static_field] # [rename (name = "Idle")] pub idle : i32 ,
+# [static_field] # [rename (name = "ParryL")] pub parry_l : i32 ,
+# [static_field] # [rename (name = "ParryR")] pub parry_r : i32 ,
+# [static_field] # [rename (name = "Ready")] pub ready : i32 ,
+# [static_field] # [rename (name = "RelaxLoop")] pub relax_loop : i32 ,
+# [static_field] # [rename (name = "Repelled")] pub repelled : i32 ,
+# [static_field] # [rename (name = "RunLoop")] pub run_loop : i32 ,
+# [static_field] # [rename (name = "RunStart")] pub run_start : i32 ,
+# [static_field] # [rename (name = "Special1")] pub special1 : i32 ,
+# [static_field] # [rename (name = "Start")] pub start : i32 ,
+# [static_field] # [rename (name = "Win")] pub win : i32 ,
+# [static_field] # [rename (name = "WinLoop")] pub win_loop : i32 ,
+# [static_field] # [rename (name = "AttackAll")] pub attack_all : i32 ,
+# [static_field] # [rename (name = "DamageMidAll")] pub damage_mid_all : i32 ,
+# [static_field] # [rename (name = "DieAll")] pub die_all : i32 ,
+# [static_field] # [rename (name = "EvasionAll")] pub evasion_all : i32 ,
+# [static_field] # [rename (name = "ParryAll")] pub parry_all : i32 ,
+# [static_field] # [rename (name = "PlaybackRate")] pub playback_rate : i32 ,
+# [static_field] # [rename (name = "IsRunning")] pub is_running : i32 ,
+# [static_field] # [rename (name = "Dying")] pub dying : i32 ,
+# [static_field] # [rename (name = "FacialNormal")] pub facial_normal : i32 ,
+# [static_field] # [rename (name = "FacialPain")] pub facial_pain : i32 ,
+# [static_field] # [rename (name = "FacialDie")] pub facial_die : i32 ,
+}
+
 }
 
 #[cfg(feature = "combat-hash-types")]
 pub use __types::*;
 
 #[cfg(feature = "combat-hash")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __Hash_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_to_hash {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<Hash as ::unity2::ClassIdentity>::class(), "ToHash", 1, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Hash as ::unity2::ClassIdentity>::NAME, "ToHash", e),
-            }
-        }
-    }
-    pub unsafe fn to_hash(name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_to_hash::get_method_info().method_ptr);
-        inner(name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_to_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<Hash as ::unity2::ClassIdentity>::class(), "ToName", 1, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Hash as ::unity2::ClassIdentity>::NAME, "ToName", e),
-            }
-        }
-    }
-    pub unsafe fn to_name(hash: i32, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_to_name::get_method_info().method_ptr);
-        inner(hash, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_hash_array {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Hash as ::unity2::ClassIdentity>::class(), "get_HashArray", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Hash as ::unity2::ClassIdentity>::NAME,
-                        "get_HashArray",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_hash_array(__unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Array<i32> {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> ::unity2::Array<i32> =
-            ::core::mem::transmute(__lookup_get_hash_array::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Hash as ::unity2::ClassIdentity>::class(), ".cctor", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Hash as ::unity2::ClassIdentity>::NAME, ".cctor", e),
-            }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __Hash_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_to_hash { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Hash as :: unity2 :: ClassIdentity > :: class () , "ToHash" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Hash as :: unity2 :: ClassIdentity > :: NAME , "ToHash" , e) , } } } pub unsafe fn to_hash (name : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_to_hash :: get_method_info () . method_ptr ,) ; inner (name , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_to_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Hash as :: unity2 :: ClassIdentity > :: class () , "ToName" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Hash as :: unity2 :: ClassIdentity > :: NAME , "ToName" , e) , } } } pub unsafe fn to_name (hash : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_to_name :: get_method_info () . method_ptr ,) ; inner (hash , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_hash_array { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Hash as :: unity2 :: ClassIdentity > :: class () , "get_HashArray" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Hash as :: unity2 :: ClassIdentity > :: NAME , "get_HashArray" , e) , } } } pub unsafe fn get_hash_array (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < i32 > { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < i32 > = :: core :: mem :: transmute (__lookup_get_hash_array :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Hash as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Hash as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
 
 #[cfg(feature = "combat-hash")]
-impl Hash {
-    #[doc = "`ToHash(::unity2::Il2CppString)` overload"]
-    pub fn to_hash(name: impl ::core::convert::Into<::unity2::Il2CppString>) -> i32 {
-        unsafe { __Hash_unity2_raw::to_hash(::core::convert::Into::into(name), ::core::option::Option::None) }
-    }
+impl Hash { # [doc = "`ToHash(::unity2::Il2CppString)` overload"] pub fn to_hash (name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> i32 { unsafe { __Hash_unity2_raw :: to_hash (:: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } # [doc = "`ToName(i32)` overload"] pub fn to_name (hash : impl :: core :: convert :: Into < i32 >) -> :: unity2 :: Il2CppString { unsafe { __Hash_unity2_raw :: to_name (:: core :: convert :: Into :: into (hash) , :: core :: option :: Option :: None) } } # [doc = "`get_HashArray()` overload"] pub fn get_hash_array () -> :: unity2 :: Array < i32 > { unsafe { __Hash_unity2_raw :: get_hash_array (:: core :: option :: Option :: None) } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { __Hash_unity2_raw :: cctor (:: core :: option :: Option :: None) } } }
 
-    #[doc = "`ToName(i32)` overload"]
-    pub fn to_name(hash: impl ::core::convert::Into<i32>) -> ::unity2::Il2CppString {
-        unsafe { __Hash_unity2_raw::to_name(::core::convert::Into::into(hash), ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_HashArray()` overload"]
-    pub fn get_hash_array() -> ::unity2::Array<i32> {
-        unsafe { __Hash_unity2_raw::get_hash_array(::core::option::Option::None) }
-    }
-
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __Hash_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
+#[cfg(feature = "combat-hash")]
+impl Hash { pub fn to_hash_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Hash_unity2_raw :: __lookup_to_hash :: get_method_info () } pub fn to_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Hash_unity2_raw :: __lookup_to_name :: get_method_info () } pub fn get_hash_array_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Hash_unity2_raw :: __lookup_get_hash_array :: get_method_info () } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Hash_unity2_raw :: __lookup_cctor :: get_method_info () } }
 
 #[cfg(feature = "combat-hash")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{Hash, IHash};
+    pub use super::Hash;
+    pub use super::IHash;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

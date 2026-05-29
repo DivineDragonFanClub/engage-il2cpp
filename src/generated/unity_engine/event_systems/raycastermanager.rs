@@ -2,203 +2,36 @@
 
 #[cfg(feature = "unity_engine-event_systems-raycastermanager-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/raycastermanager/RaycasterManager.md"))]
-    #[::unity2::class(namespace = "UnityEngine.EventSystems", name = "RaycasterManager")]
-    #[parent(crate::system::object::Object)]
-    pub struct RaycasterManager {
-        #[static_field]
-        #[rename(name = "s_Raycasters")]
-        pub s_raycasters: crate::system::collections::generic::list_1::List_1<crate::unity_engine::event_systems::baseraycaster::BaseRaycaster>,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/raycastermanager/RaycasterManager.md"))] # [:: unity2 :: class (namespace = "UnityEngine.EventSystems" , name = "RaycasterManager")] # [parent (crate :: system :: object :: Object)] pub struct RaycasterManager {
+# [static_field] # [rename (name = "s_Raycasters")] pub s_raycasters : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: event_systems :: baseraycaster :: BaseRaycaster > ,
+}
+
 }
 
 #[cfg(feature = "unity_engine-event_systems-raycastermanager-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-event_systems-raycastermanager")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RaycasterManager_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_raycaster {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::event_systems::baseraycaster::BaseRaycaster as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RaycasterManager as ::unity2::ClassIdentity>::class(),
-                "AddRaycaster",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RaycasterManager as ::unity2::ClassIdentity>::NAME,
-                        "AddRaycaster",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_raycaster(
-        base_raycaster: crate::unity_engine::event_systems::baseraycaster::BaseRaycaster,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::unity_engine::event_systems::baseraycaster::BaseRaycaster, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add_raycaster::get_method_info().method_ptr);
-        inner(base_raycaster, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_raycasters {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RaycasterManager as ::unity2::ClassIdentity>::class(),
-                "GetRaycasters",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RaycasterManager as ::unity2::ClassIdentity>::NAME,
-                        "GetRaycasters",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_raycasters(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::list_1::List_1<crate::unity_engine::event_systems::baseraycaster::BaseRaycaster> {
-        let inner: extern "C" fn(
-            ::unity2::OptionalMethod,
-        ) -> crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::event_systems::baseraycaster::BaseRaycaster,
-        > = ::core::mem::transmute(__lookup_get_raycasters::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_remove_raycasters {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::event_systems::baseraycaster::BaseRaycaster as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RaycasterManager as ::unity2::ClassIdentity>::class(),
-                "RemoveRaycasters",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RaycasterManager as ::unity2::ClassIdentity>::NAME,
-                        "RemoveRaycasters",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn remove_raycasters(
-        base_raycaster: crate::unity_engine::event_systems::baseraycaster::BaseRaycaster,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::unity_engine::event_systems::baseraycaster::BaseRaycaster, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_remove_raycasters::get_method_info().method_ptr);
-        inner(base_raycaster, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RaycasterManager as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RaycasterManager as ::unity2::ClassIdentity>::NAME,
-                        ".cctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __RaycasterManager_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_raycaster { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: event_systems :: baseraycaster :: BaseRaycaster as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RaycasterManager as :: unity2 :: ClassIdentity > :: class () , "AddRaycaster" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RaycasterManager as :: unity2 :: ClassIdentity > :: NAME , "AddRaycaster" , e) , } } } pub unsafe fn add_raycaster (base_raycaster : crate :: unity_engine :: event_systems :: baseraycaster :: BaseRaycaster , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: unity_engine :: event_systems :: baseraycaster :: BaseRaycaster , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_raycaster :: get_method_info () . method_ptr ,) ; inner (base_raycaster , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_raycasters { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RaycasterManager as :: unity2 :: ClassIdentity > :: class () , "GetRaycasters" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RaycasterManager as :: unity2 :: ClassIdentity > :: NAME , "GetRaycasters" , e) , } } } pub unsafe fn get_raycasters (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: event_systems :: baseraycaster :: BaseRaycaster > { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: event_systems :: baseraycaster :: BaseRaycaster > = :: core :: mem :: transmute (__lookup_get_raycasters :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_remove_raycasters { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: event_systems :: baseraycaster :: BaseRaycaster as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RaycasterManager as :: unity2 :: ClassIdentity > :: class () , "RemoveRaycasters" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RaycasterManager as :: unity2 :: ClassIdentity > :: NAME , "RemoveRaycasters" , e) , } } } pub unsafe fn remove_raycasters (base_raycaster : crate :: unity_engine :: event_systems :: baseraycaster :: BaseRaycaster , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: unity_engine :: event_systems :: baseraycaster :: BaseRaycaster , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_remove_raycasters :: get_method_info () . method_ptr ,) ; inner (base_raycaster , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RaycasterManager as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RaycasterManager as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-event_systems-raycastermanager")]
-impl RaycasterManager {
-    #[doc = "`AddRaycaster(crate::unity_engine::event_systems::baseraycaster::BaseRaycaster)` overload"]
-    pub fn add_raycaster(base_raycaster: impl ::core::convert::Into<crate::unity_engine::event_systems::baseraycaster::BaseRaycaster>) -> () {
-        unsafe { __RaycasterManager_unity2_raw::add_raycaster(::core::convert::Into::into(base_raycaster), ::core::option::Option::None) }
-    }
+impl RaycasterManager { # [doc = "`AddRaycaster(crate::unity_engine::event_systems::baseraycaster::BaseRaycaster)` overload"] pub fn add_raycaster (base_raycaster : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: baseraycaster :: BaseRaycaster >) -> () { unsafe { __RaycasterManager_unity2_raw :: add_raycaster (:: core :: convert :: Into :: into (base_raycaster) , :: core :: option :: Option :: None) } } # [doc = "`GetRaycasters()` overload"] pub fn get_raycasters () -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: event_systems :: baseraycaster :: BaseRaycaster > { unsafe { __RaycasterManager_unity2_raw :: get_raycasters (:: core :: option :: Option :: None) } } # [doc = "`RemoveRaycasters(crate::unity_engine::event_systems::baseraycaster::BaseRaycaster)` overload"] pub fn remove_raycasters (base_raycaster : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: baseraycaster :: BaseRaycaster >) -> () { unsafe { __RaycasterManager_unity2_raw :: remove_raycasters (:: core :: convert :: Into :: into (base_raycaster) , :: core :: option :: Option :: None) } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { __RaycasterManager_unity2_raw :: cctor (:: core :: option :: Option :: None) } } }
 
-    #[doc = "`GetRaycasters()` overload"]
-    pub fn get_raycasters() -> crate::system::collections::generic::list_1::List_1<crate::unity_engine::event_systems::baseraycaster::BaseRaycaster> {
-        unsafe { __RaycasterManager_unity2_raw::get_raycasters(::core::option::Option::None) }
-    }
-
-    #[doc = "`RemoveRaycasters(crate::unity_engine::event_systems::baseraycaster::BaseRaycaster)` overload"]
-    pub fn remove_raycasters(base_raycaster: impl ::core::convert::Into<crate::unity_engine::event_systems::baseraycaster::BaseRaycaster>) -> () {
-        unsafe { __RaycasterManager_unity2_raw::remove_raycasters(::core::convert::Into::into(base_raycaster), ::core::option::Option::None) }
-    }
-
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __RaycasterManager_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
+#[cfg(feature = "unity_engine-event_systems-raycastermanager")]
+impl RaycasterManager { pub fn add_raycaster_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RaycasterManager_unity2_raw :: __lookup_add_raycaster :: get_method_info () } pub fn get_raycasters_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RaycasterManager_unity2_raw :: __lookup_get_raycasters :: get_method_info () } pub fn remove_raycasters_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RaycasterManager_unity2_raw :: __lookup_remove_raycasters :: get_method_info () } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RaycasterManager_unity2_raw :: __lookup_cctor :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-event_systems-raycastermanager")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IRaycasterManager, RaycasterManager};
+    pub use super::RaycasterManager;
+    pub use super::IRaycasterManager;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

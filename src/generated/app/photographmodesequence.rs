@@ -2,396 +2,126 @@
 
 #[cfg(feature = "app-photographmodesequence-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::procinst::{IProcInst, ProcInst},
-        system::{
-            object::{IObject, Object},
-            r#enum::{Enum, IEnum},
-            valuetype::{IValueType, ValueType},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographmodesequence/PhotographModeSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "PhotographModeSequence")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct PhotographModeSequence {
-        #[offset(112)]
-        #[rename(name = "m_AllMenuContent")]
-        pub m_all_menu_content: crate::app::photographallmenucontent::PhotographAllMenuContent,
-        #[offset(120)]
-        #[rename(name = "m_CameraController")]
-        pub m_camera_controller: crate::app::photographcameracontroller::PhotographCameraController,
-        #[offset(128)]
-        #[rename(name = "m_DisposManager")]
-        pub m_dispos_manager: crate::app::photographdisposmanager::PhotographDisposManager,
-        #[offset(136)]
-        #[rename(name = "m_IsHelpVisible")]
-        pub m_is_help_visible: bool,
-        #[offset(140)]
-        #[rename(name = "m_ReservedLabel")]
-        pub m_reserved_label: crate::app::photographmodesequence::PhotographModeSequence_Label,
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: procinst :: { IProcInst , ProcInst }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographmodesequence/PhotographModeSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "PhotographModeSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct PhotographModeSequence {
+# [offset (112)] # [rename (name = "m_AllMenuContent")] pub m_all_menu_content : crate :: app :: photographallmenucontent :: PhotographAllMenuContent ,
+# [offset (120)] # [rename (name = "m_CameraController")] pub m_camera_controller : crate :: app :: photographcameracontroller :: PhotographCameraController ,
+# [offset (128)] # [rename (name = "m_DisposManager")] pub m_dispos_manager : crate :: app :: photographdisposmanager :: PhotographDisposManager ,
+# [offset (136)] # [rename (name = "m_IsHelpVisible")] pub m_is_help_visible : bool ,
+# [offset (140)] # [rename (name = "m_ReservedLabel")] pub m_reserved_label : crate :: app :: photographmodesequence :: PhotographModeSequence_Label ,
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/photographmodesequence/PhotographModeSequence_Label.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct PhotographModeSequence_Label  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for PhotographModeSequence_Label  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "PhotographModeSequence.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/photographmodesequence/PhotographModeSequence_Label.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct PhotographModeSequence_Label {
-        pub value: i32,
+}
+
+
+impl  ::unity2::IlType for PhotographModeSequence_Label  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::ClassIdentity for PhotographModeSequence_Label {
-        const NAME: &'static str = "PhotographModeSequence.Label";
-        const NAMESPACE: &'static str = "App";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  PhotographModeSequence_Label  {
+    pub fn entry() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl ::unity2::IlType for PhotographModeSequence_Label {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+
+    pub fn tick() -> Self {
+        Self { value: 1 }
+
     }
 
-    impl PhotographModeSequence_Label {
-        pub fn entry() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn tick() -> Self {
-            Self { value: 1 }
-        }
+    pub fn photograph() -> Self {
+        Self { value: 2 }
 
-        pub fn photograph() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn exit() -> Self {
-            Self { value: 3 }
-        }
     }
+
+
+    pub fn exit() -> Self {
+        Self { value: 3 }
+
+    }
+
+}
+
 }
 
 #[cfg(feature = "app-photographmodesequence-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-photographmodesequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __PhotographModeSequence_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <crate::app::photographallmenucontent::PhotographAllMenuContent as ::unity2::IlType>::il_type(),
-                <crate::app::photographcameracontroller::PhotographCameraController as ::unity2::IlType>::il_type(),
-                <crate::app::photographdisposmanager::PhotographDisposManager as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PhotographModeSequence as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                4,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PhotographModeSequence as ::unity2::ClassIdentity>::NAME,
-                        "CreateBind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        all_menu_content: crate::app::photographallmenucontent::PhotographAllMenuContent,
-        camera_controller: crate::app::photographcameracontroller::PhotographCameraController,
-        dispos_manager: crate::app::photographdisposmanager::PhotographDisposManager,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            crate::app::photographallmenucontent::PhotographAllMenuContent,
-            crate::app::photographcameracontroller::PhotographCameraController,
-            crate::app::photographdisposmanager::PhotographDisposManager,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
-        inner(super_, all_menu_content, camera_controller, dispos_manager, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_jump_reserved_label {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PhotographModeSequence as ::unity2::ClassIdentity>::class(),
-                "JumpReservedLabel",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PhotographModeSequence as ::unity2::ClassIdentity>::NAME,
-                        "JumpReservedLabel",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn jump_reserved_label(this: PhotographModeSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(PhotographModeSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_jump_reserved_label::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::photographallmenucontent::PhotographAllMenuContent as ::unity2::IlType>::il_type(),
-                <crate::app::photographcameracontroller::PhotographCameraController as ::unity2::IlType>::il_type(),
-                <crate::app::photographdisposmanager::PhotographDisposManager as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PhotographModeSequence as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PhotographModeSequence as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: PhotographModeSequence,
-        all_menu_content: crate::app::photographallmenucontent::PhotographAllMenuContent,
-        camera_controller: crate::app::photographcameracontroller::PhotographCameraController,
-        dispos_manager: crate::app::photographdisposmanager::PhotographDisposManager,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            PhotographModeSequence,
-            crate::app::photographallmenucontent::PhotographAllMenuContent,
-            crate::app::photographcameracontroller::PhotographCameraController,
-            crate::app::photographdisposmanager::PhotographDisposManager,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, all_menu_content, camera_controller, dispos_manager, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_tick {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PhotographModeSequence as ::unity2::ClassIdentity>::class(),
-                "Tick",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PhotographModeSequence as ::unity2::ClassIdentity>::NAME,
-                        "Tick",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn tick(this: PhotographModeSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(PhotographModeSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_tick::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_photograph_coroutine {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PhotographModeSequence as ::unity2::ClassIdentity>::class(),
-                "PhotographCoroutine",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PhotographModeSequence as ::unity2::ClassIdentity>::NAME,
-                        "PhotographCoroutine",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn photograph_coroutine(
-        this: PhotographModeSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::ienumerator::IEnumerator {
-        let inner: extern "C" fn(PhotographModeSequence, ::unity2::OptionalMethod) -> crate::system::collections::ienumerator::IEnumerator =
-            ::core::mem::transmute(__lookup_photograph_coroutine::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __PhotographModeSequence_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_bind { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: photographallmenucontent :: PhotographAllMenuContent as :: unity2 :: IlType > :: il_type () , < crate :: app :: photographcameracontroller :: PhotographCameraController as :: unity2 :: IlType > :: il_type () , < crate :: app :: photographdisposmanager :: PhotographDisposManager as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PhotographModeSequence as :: unity2 :: ClassIdentity > :: class () , "CreateBind" , 4 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PhotographModeSequence as :: unity2 :: ClassIdentity > :: NAME , "CreateBind" , e) , } } } pub unsafe fn create_bind (super_ : crate :: app :: procinst :: ProcInst , all_menu_content : crate :: app :: photographallmenucontent :: PhotographAllMenuContent , camera_controller : crate :: app :: photographcameracontroller :: PhotographCameraController , dispos_manager : crate :: app :: photographdisposmanager :: PhotographDisposManager , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: photographallmenucontent :: PhotographAllMenuContent , crate :: app :: photographcameracontroller :: PhotographCameraController , crate :: app :: photographdisposmanager :: PhotographDisposManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create_bind :: get_method_info () . method_ptr ,) ; inner (super_ , all_menu_content , camera_controller , dispos_manager , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_jump_reserved_label { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PhotographModeSequence as :: unity2 :: ClassIdentity > :: class () , "JumpReservedLabel" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PhotographModeSequence as :: unity2 :: ClassIdentity > :: NAME , "JumpReservedLabel" , e) , } } } pub unsafe fn jump_reserved_label (this : PhotographModeSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (PhotographModeSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_jump_reserved_label :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: photographallmenucontent :: PhotographAllMenuContent as :: unity2 :: IlType > :: il_type () , < crate :: app :: photographcameracontroller :: PhotographCameraController as :: unity2 :: IlType > :: il_type () , < crate :: app :: photographdisposmanager :: PhotographDisposManager as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PhotographModeSequence as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PhotographModeSequence as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : PhotographModeSequence , all_menu_content : crate :: app :: photographallmenucontent :: PhotographAllMenuContent , camera_controller : crate :: app :: photographcameracontroller :: PhotographCameraController , dispos_manager : crate :: app :: photographdisposmanager :: PhotographDisposManager , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (PhotographModeSequence , crate :: app :: photographallmenucontent :: PhotographAllMenuContent , crate :: app :: photographcameracontroller :: PhotographCameraController , crate :: app :: photographdisposmanager :: PhotographDisposManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , all_menu_content , camera_controller , dispos_manager , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_tick { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PhotographModeSequence as :: unity2 :: ClassIdentity > :: class () , "Tick" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PhotographModeSequence as :: unity2 :: ClassIdentity > :: NAME , "Tick" , e) , } } } pub unsafe fn tick (this : PhotographModeSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (PhotographModeSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_tick :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_photograph_coroutine { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PhotographModeSequence as :: unity2 :: ClassIdentity > :: class () , "PhotographCoroutine" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PhotographModeSequence as :: unity2 :: ClassIdentity > :: NAME , "PhotographCoroutine" , e) , } } } pub unsafe fn photograph_coroutine (this : PhotographModeSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { let inner : extern "C" fn (PhotographModeSequence , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute (__lookup_photograph_coroutine :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-photographmodesequence")]
+impl PhotographModeSequence { # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::photographallmenucontent::PhotographAllMenuContent, crate::app::photographcameracontroller::PhotographCameraController, crate::app::photographdisposmanager::PhotographDisposManager)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , all_menu_content : impl :: core :: convert :: Into < crate :: app :: photographallmenucontent :: PhotographAllMenuContent > , camera_controller : impl :: core :: convert :: Into < crate :: app :: photographcameracontroller :: PhotographCameraController > , dispos_manager : impl :: core :: convert :: Into < crate :: app :: photographdisposmanager :: PhotographDisposManager >) -> () { unsafe { __PhotographModeSequence_unity2_raw :: create_bind (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (all_menu_content) , :: core :: convert :: Into :: into (camera_controller) , :: core :: convert :: Into :: into (dispos_manager) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-photographmodesequence")]
+pub trait IPhotographModeSequenceMethods : IPhotographModeSequence { # [doc = "`JumpReservedLabel()` overload"] fn jump_reserved_label (self ,) -> () { unsafe { let __receiver = < PhotographModeSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __PhotographModeSequence_unity2_raw :: jump_reserved_label (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor(crate::app::photographallmenucontent::PhotographAllMenuContent, crate::app::photographcameracontroller::PhotographCameraController, crate::app::photographdisposmanager::PhotographDisposManager)` overload"] fn ctor (self , all_menu_content : impl :: core :: convert :: Into < crate :: app :: photographallmenucontent :: PhotographAllMenuContent > , camera_controller : impl :: core :: convert :: Into < crate :: app :: photographcameracontroller :: PhotographCameraController > , dispos_manager : impl :: core :: convert :: Into < crate :: app :: photographdisposmanager :: PhotographDisposManager >) -> () { unsafe { let __receiver = < PhotographModeSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __PhotographModeSequence_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (all_menu_content) , :: core :: convert :: Into :: into (camera_controller) , :: core :: convert :: Into :: into (dispos_manager) , :: core :: option :: Option :: None) } } # [doc = "`Tick()` overload"] fn tick (self ,) -> () { unsafe { let __receiver = < PhotographModeSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __PhotographModeSequence_unity2_raw :: tick (__receiver , :: core :: option :: Option :: None) } } # [doc = "`PhotographCoroutine()` overload"] fn photograph_coroutine (self ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { let __receiver = < PhotographModeSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __PhotographModeSequence_unity2_raw :: photograph_coroutine (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-photographmodesequence")]
+impl < __T : IPhotographModeSequence > IPhotographModeSequenceMethods for __T { }
+
+#[cfg(feature = "app-photographmodesequence")]
+impl PhotographModeSequence { pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PhotographModeSequence_unity2_raw :: __lookup_create_bind :: get_method_info () } pub fn jump_reserved_label_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PhotographModeSequence_unity2_raw :: __lookup_jump_reserved_label :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PhotographModeSequence_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PhotographModeSequence_unity2_raw :: __lookup_tick :: get_method_info () } pub fn photograph_coroutine_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PhotographModeSequence_unity2_raw :: __lookup_photograph_coroutine :: get_method_info () } }
 
 #[cfg(feature = "app-photographmodesequence")]
 impl PhotographModeSequence {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::photographallmenucontent::PhotographAllMenuContent, crate::app::photographcameracontroller::PhotographCameraController, crate::app::photographdisposmanager::PhotographDisposManager)` overload"]
-    pub fn create_bind(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        all_menu_content: impl ::core::convert::Into<crate::app::photographallmenucontent::PhotographAllMenuContent>,
-        camera_controller: impl ::core::convert::Into<crate::app::photographcameracontroller::PhotographCameraController>,
-        dispos_manager: impl ::core::convert::Into<crate::app::photographdisposmanager::PhotographDisposManager>,
-    ) -> () {
-        unsafe {
-            __PhotographModeSequence_unity2_raw::create_bind(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(all_menu_content),
-                ::core::convert::Into::into(camera_controller),
-                ::core::convert::Into::into(dispos_manager),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-photographmodesequence")]
-pub trait IPhotographModeSequenceMethods: IPhotographModeSequence {
-    #[doc = "`JumpReservedLabel()` overload"]
-    fn jump_reserved_label(self) -> () {
-        unsafe {
-            let __receiver =
-                <PhotographModeSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __PhotographModeSequence_unity2_raw::jump_reserved_label(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor(crate::app::photographallmenucontent::PhotographAllMenuContent, crate::app::photographcameracontroller::PhotographCameraController, crate::app::photographdisposmanager::PhotographDisposManager)` overload"]
-    fn ctor(
-        self,
-        all_menu_content: impl ::core::convert::Into<crate::app::photographallmenucontent::PhotographAllMenuContent>,
-        camera_controller: impl ::core::convert::Into<crate::app::photographcameracontroller::PhotographCameraController>,
-        dispos_manager: impl ::core::convert::Into<crate::app::photographdisposmanager::PhotographDisposManager>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <PhotographModeSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __PhotographModeSequence_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(all_menu_content),
-                ::core::convert::Into::into(camera_controller),
-                ::core::convert::Into::into(dispos_manager),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Tick()` overload"]
-    fn tick(self) -> () {
-        unsafe {
-            let __receiver =
-                <PhotographModeSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __PhotographModeSequence_unity2_raw::tick(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`PhotographCoroutine()` overload"]
-    fn photograph_coroutine(self) -> crate::system::collections::ienumerator::IEnumerator {
-        unsafe {
-            let __receiver =
-                <PhotographModeSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __PhotographModeSequence_unity2_raw::photograph_coroutine(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-photographmodesequence")]
-impl<__T: IPhotographModeSequence> IPhotographModeSequenceMethods for __T {}
-
-#[cfg(feature = "app-photographmodesequence")]
-impl PhotographModeSequence {
-    #[doc = "`.ctor(crate::app::photographallmenucontent::PhotographAllMenuContent, crate::app::photographcameracontroller::PhotographCameraController, crate::app::photographdisposmanager::PhotographDisposManager)` — overload selector"]
-    pub fn new(
-        all_menu_content: crate::app::photographallmenucontent::PhotographAllMenuContent,
-        camera_controller: crate::app::photographcameracontroller::PhotographCameraController,
-        dispos_manager: crate::app::photographdisposmanager::PhotographDisposManager,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(PhotographModeSequence),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IPhotographModeSequenceMethods>::ctor(this, all_menu_content, camera_controller, dispos_manager);
-        this
-    }
+# [doc = "`.ctor(crate::app::photographallmenucontent::PhotographAllMenuContent, crate::app::photographcameracontroller::PhotographCameraController, crate::app::photographdisposmanager::PhotographDisposManager)` — overload selector"] pub fn new (all_menu_content : crate :: app :: photographallmenucontent :: PhotographAllMenuContent , camera_controller : crate :: app :: photographcameracontroller :: PhotographCameraController , dispos_manager : crate :: app :: photographdisposmanager :: PhotographDisposManager) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (PhotographModeSequence) , :: core :: stringify ! (new) ,)) ; < Self as IPhotographModeSequenceMethods > :: ctor (this , all_menu_content , camera_controller , dispos_manager) ; this }
 }
 
 #[cfg(feature = "app-photographmodesequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IPhotographModeSequence, IPhotographModeSequenceMethods, PhotographModeSequence, PhotographModeSequence_Label};
-    #[cfg(feature = "app-procinst")]
-    pub use crate::app::procinst::IProcInstMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::{
-        app::procinst::IProcInst,
-        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
-    };
+    pub use super::PhotographModeSequence;
+    pub use super::IPhotographModeSequence;
+    pub use super::IPhotographModeSequenceMethods;
+    pub use super::PhotographModeSequence_Label;
+    pub use crate::app::procinst::IProcInst;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "app-procinst")] pub use crate::app::procinst::IProcInstMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

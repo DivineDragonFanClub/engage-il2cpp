@@ -2,262 +2,98 @@
 
 #[cfg(feature = "unity_engine-rendering-universal-shaderkeywordstrings-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/shaderkeywordstrings/ShaderKeywordStrings.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Rendering.Universal", name = "ShaderKeywordStrings")]
-    #[parent(crate::system::object::Object)]
-    pub struct ShaderKeywordStrings {
-        #[static_field]
-        #[rename(name = "MainLightShadows")]
-        pub main_light_shadows: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "MainLightShadowCascades")]
-        pub main_light_shadow_cascades: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "AdditionalLightsVertex")]
-        pub additional_lights_vertex: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "AdditionalLightsPixel")]
-        pub additional_lights_pixel: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "AdditionalLightShadows")]
-        pub additional_light_shadows: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "SoftShadows")]
-        pub soft_shadows: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "MixedLightingSubtractive")]
-        pub mixed_lighting_subtractive: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "LightmapShadowMixing")]
-        pub lightmap_shadow_mixing: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "ShadowsShadowMask")]
-        pub shadows_shadow_mask: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "DepthNoMsaa")]
-        pub depth_no_msaa: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "DepthMsaa2")]
-        pub depth_msaa2: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "DepthMsaa4")]
-        pub depth_msaa4: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "DepthMsaa8")]
-        pub depth_msaa8: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "LinearToSRGBConversion")]
-        pub linear_to_srgb_conversion: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "SmaaLow")]
-        pub smaa_low: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "SmaaMedium")]
-        pub smaa_medium: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "SmaaHigh")]
-        pub smaa_high: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "SmaaCustomLow")]
-        pub smaa_custom_low: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "PaniniGeneric")]
-        pub panini_generic: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "PaniniUnitDistance")]
-        pub panini_unit_distance: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "BloomLQ")]
-        pub bloom_lq: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "BloomHQ")]
-        pub bloom_hq: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "BloomLQDirt")]
-        pub bloom_lq_dirt: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "BloomHQDirt")]
-        pub bloom_hq_dirt: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "UseRGBM")]
-        pub use_rgbm: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "Distortion")]
-        pub distortion: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "ChromaticAberration")]
-        pub chromatic_aberration: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "HDRGrading")]
-        pub hdr_grading: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "TonemapACES")]
-        pub tonemap_aces: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "TonemapNeutral")]
-        pub tonemap_neutral: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "FilmGrain")]
-        pub film_grain: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "Fxaa")]
-        pub fxaa: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "Dithering")]
-        pub dithering: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "ScreenSpaceOcclusion")]
-        pub screen_space_occlusion: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "HighQualitySampling")]
-        pub high_quality_sampling: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "DOWNSAMPLING_SIZE_2")]
-        pub downsampling_size_2: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "DOWNSAMPLING_SIZE_4")]
-        pub downsampling_size_4: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "DOWNSAMPLING_SIZE_8")]
-        pub downsampling_size_8: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "DOWNSAMPLING_SIZE_16")]
-        pub downsampling_size_16: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "_SPOT")]
-        pub spot: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "_DIRECTIONAL")]
-        pub directional: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "_POINT")]
-        pub point: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "_DEFERRED_ADDITIONAL_LIGHT_SHADOWS")]
-        pub deferred_additional_light_shadows: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "_GBUFFER_NORMALS_OCT")]
-        pub gbuffer_normals_oct: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "_DEFERRED_SUBTRACTIVE_LIGHTING")]
-        pub deferred_subtractive_lighting: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "LIGHTMAP_ON")]
-        pub lightmap_on: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "_ALPHATEST_ON")]
-        pub alphatest_on: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "DIRLIGHTMAP_COMBINED")]
-        pub dirlightmap_combined: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "_DETAIL_MULX2")]
-        pub detail_mulx2: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "_DETAIL_SCALED")]
-        pub detail_scaled: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "_CLEARCOAT")]
-        pub clearcoat: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "_CLEARCOATMAP")]
-        pub clearcoatmap: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "UseDrawProcedural")]
-        pub use_draw_procedural: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "CustomShadows")]
-        pub custom_shadows: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "TonemapCustom")]
-        pub tonemap_custom: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "MixedLightingShadowmask")]
-        pub mixed_lighting_shadowmask: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "CustomRPShadowMask")]
-        pub custom_rp_shadow_mask: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "SRGBToLinearConversion")]
-        pub srgb_to_linear_conversion: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "DevBruteForceLighting")]
-        pub dev_brute_force_lighting: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "Sharpen")]
-        pub sharpen: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "DebugMode")]
-        pub debug_mode: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "SaveMode")]
-        pub save_mode: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "SpecialRendering")]
-        pub special_rendering: ::unity2::Il2CppString,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/shaderkeywordstrings/ShaderKeywordStrings.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.Universal" , name = "ShaderKeywordStrings")] # [parent (crate :: system :: object :: Object)] pub struct ShaderKeywordStrings {
+# [static_field] # [rename (name = "MainLightShadows")] pub main_light_shadows : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "MainLightShadowCascades")] pub main_light_shadow_cascades : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "AdditionalLightsVertex")] pub additional_lights_vertex : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "AdditionalLightsPixel")] pub additional_lights_pixel : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "AdditionalLightShadows")] pub additional_light_shadows : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "SoftShadows")] pub soft_shadows : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "MixedLightingSubtractive")] pub mixed_lighting_subtractive : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "LightmapShadowMixing")] pub lightmap_shadow_mixing : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "ShadowsShadowMask")] pub shadows_shadow_mask : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "DepthNoMsaa")] pub depth_no_msaa : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "DepthMsaa2")] pub depth_msaa2 : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "DepthMsaa4")] pub depth_msaa4 : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "DepthMsaa8")] pub depth_msaa8 : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "LinearToSRGBConversion")] pub linear_to_srgb_conversion : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "SmaaLow")] pub smaa_low : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "SmaaMedium")] pub smaa_medium : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "SmaaHigh")] pub smaa_high : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "SmaaCustomLow")] pub smaa_custom_low : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "PaniniGeneric")] pub panini_generic : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "PaniniUnitDistance")] pub panini_unit_distance : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "BloomLQ")] pub bloom_lq : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "BloomHQ")] pub bloom_hq : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "BloomLQDirt")] pub bloom_lq_dirt : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "BloomHQDirt")] pub bloom_hq_dirt : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "UseRGBM")] pub use_rgbm : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "Distortion")] pub distortion : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "ChromaticAberration")] pub chromatic_aberration : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "HDRGrading")] pub hdr_grading : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "TonemapACES")] pub tonemap_aces : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "TonemapNeutral")] pub tonemap_neutral : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "FilmGrain")] pub film_grain : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "Fxaa")] pub fxaa : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "Dithering")] pub dithering : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "ScreenSpaceOcclusion")] pub screen_space_occlusion : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "HighQualitySampling")] pub high_quality_sampling : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "DOWNSAMPLING_SIZE_2")] pub downsampling_size_2 : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "DOWNSAMPLING_SIZE_4")] pub downsampling_size_4 : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "DOWNSAMPLING_SIZE_8")] pub downsampling_size_8 : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "DOWNSAMPLING_SIZE_16")] pub downsampling_size_16 : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "_SPOT")] pub spot : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "_DIRECTIONAL")] pub directional : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "_POINT")] pub point : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "_DEFERRED_ADDITIONAL_LIGHT_SHADOWS")] pub deferred_additional_light_shadows : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "_GBUFFER_NORMALS_OCT")] pub gbuffer_normals_oct : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "_DEFERRED_SUBTRACTIVE_LIGHTING")] pub deferred_subtractive_lighting : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "LIGHTMAP_ON")] pub lightmap_on : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "_ALPHATEST_ON")] pub alphatest_on : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "DIRLIGHTMAP_COMBINED")] pub dirlightmap_combined : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "_DETAIL_MULX2")] pub detail_mulx2 : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "_DETAIL_SCALED")] pub detail_scaled : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "_CLEARCOAT")] pub clearcoat : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "_CLEARCOATMAP")] pub clearcoatmap : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "UseDrawProcedural")] pub use_draw_procedural : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "CustomShadows")] pub custom_shadows : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "TonemapCustom")] pub tonemap_custom : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "MixedLightingShadowmask")] pub mixed_lighting_shadowmask : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "CustomRPShadowMask")] pub custom_rp_shadow_mask : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "SRGBToLinearConversion")] pub srgb_to_linear_conversion : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "DevBruteForceLighting")] pub dev_brute_force_lighting : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "Sharpen")] pub sharpen : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "DebugMode")] pub debug_mode : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "SaveMode")] pub save_mode : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "SpecialRendering")] pub special_rendering : :: unity2 :: Il2CppString ,
+}
+
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-shaderkeywordstrings-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-universal-shaderkeywordstrings")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ShaderKeywordStrings_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ShaderKeywordStrings as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ShaderKeywordStrings as ::unity2::ClassIdentity>::NAME,
-                        ".cctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ShaderKeywordStrings_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ShaderKeywordStrings as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ShaderKeywordStrings as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-rendering-universal-shaderkeywordstrings")]
-impl ShaderKeywordStrings {
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __ShaderKeywordStrings_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
+impl ShaderKeywordStrings { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { __ShaderKeywordStrings_unity2_raw :: cctor (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-rendering-universal-shaderkeywordstrings")]
+impl ShaderKeywordStrings { pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ShaderKeywordStrings_unity2_raw :: __lookup_cctor :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-rendering-universal-shaderkeywordstrings")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IShaderKeywordStrings, ShaderKeywordStrings};
+    pub use super::ShaderKeywordStrings;
+    pub use super::IShaderKeywordStrings;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

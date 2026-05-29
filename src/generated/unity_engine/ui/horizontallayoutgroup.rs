@@ -2,297 +2,71 @@
 
 #[cfg(feature = "unity_engine-ui-horizontallayoutgroup-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            event_systems::uibehaviour::{IUIBehaviour, UIBehaviour},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-            ui::{
-                horizontalorverticallayoutgroup::{HorizontalOrVerticalLayoutGroup, IHorizontalOrVerticalLayoutGroup},
-                layoutgroup::{ILayoutGroup, LayoutGroup},
-            },
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/horizontallayoutgroup/HorizontalLayoutGroup.md"))]
-    #[::unity2::class(namespace = "UnityEngine.UI", name = "HorizontalLayoutGroup")]
-    #[parent(crate::unity_engine::ui::horizontalorverticallayoutgroup::HorizontalOrVerticalLayoutGroup)]
-    pub struct HorizontalLayoutGroup {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: event_systems :: uibehaviour :: { IUIBehaviour , UIBehaviour }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+ use crate :: unity_engine :: ui :: horizontalorverticallayoutgroup :: { HorizontalOrVerticalLayoutGroup , IHorizontalOrVerticalLayoutGroup }
+ ;
+ use crate :: unity_engine :: ui :: layoutgroup :: { ILayoutGroup , LayoutGroup }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/horizontallayoutgroup/HorizontalLayoutGroup.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "HorizontalLayoutGroup")] # [parent (crate :: unity_engine :: ui :: horizontalorverticallayoutgroup :: HorizontalOrVerticalLayoutGroup)] pub struct HorizontalLayoutGroup {}
+
 }
 
 #[cfg(feature = "unity_engine-ui-horizontallayoutgroup-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-ui-horizontallayoutgroup")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __HorizontalLayoutGroup_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HorizontalLayoutGroup as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HorizontalLayoutGroup as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: HorizontalLayoutGroup, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(HorizontalLayoutGroup, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calculate_layout_input_horizontal {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HorizontalLayoutGroup as ::unity2::ClassIdentity>::class(),
-                "CalculateLayoutInputHorizontal",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HorizontalLayoutGroup as ::unity2::ClassIdentity>::NAME,
-                        "CalculateLayoutInputHorizontal",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn calculate_layout_input_horizontal(this: HorizontalLayoutGroup, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(HorizontalLayoutGroup, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_calculate_layout_input_horizontal::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calculate_layout_input_vertical {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HorizontalLayoutGroup as ::unity2::ClassIdentity>::class(),
-                "CalculateLayoutInputVertical",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HorizontalLayoutGroup as ::unity2::ClassIdentity>::NAME,
-                        "CalculateLayoutInputVertical",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn calculate_layout_input_vertical(this: HorizontalLayoutGroup, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(HorizontalLayoutGroup, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_calculate_layout_input_vertical::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_layout_horizontal {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HorizontalLayoutGroup as ::unity2::ClassIdentity>::class(),
-                "SetLayoutHorizontal",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HorizontalLayoutGroup as ::unity2::ClassIdentity>::NAME,
-                        "SetLayoutHorizontal",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_layout_horizontal(this: HorizontalLayoutGroup, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(HorizontalLayoutGroup, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_layout_horizontal::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_layout_vertical {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HorizontalLayoutGroup as ::unity2::ClassIdentity>::class(),
-                "SetLayoutVertical",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HorizontalLayoutGroup as ::unity2::ClassIdentity>::NAME,
-                        "SetLayoutVertical",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_layout_vertical(this: HorizontalLayoutGroup, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(HorizontalLayoutGroup, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_layout_vertical::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __HorizontalLayoutGroup_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HorizontalLayoutGroup as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HorizontalLayoutGroup as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : HorizontalLayoutGroup , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HorizontalLayoutGroup , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_calculate_layout_input_horizontal { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HorizontalLayoutGroup as :: unity2 :: ClassIdentity > :: class () , "CalculateLayoutInputHorizontal" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HorizontalLayoutGroup as :: unity2 :: ClassIdentity > :: NAME , "CalculateLayoutInputHorizontal" , e) , } } } pub unsafe fn calculate_layout_input_horizontal (this : HorizontalLayoutGroup , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HorizontalLayoutGroup , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_calculate_layout_input_horizontal :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_calculate_layout_input_vertical { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HorizontalLayoutGroup as :: unity2 :: ClassIdentity > :: class () , "CalculateLayoutInputVertical" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HorizontalLayoutGroup as :: unity2 :: ClassIdentity > :: NAME , "CalculateLayoutInputVertical" , e) , } } } pub unsafe fn calculate_layout_input_vertical (this : HorizontalLayoutGroup , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HorizontalLayoutGroup , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_calculate_layout_input_vertical :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_layout_horizontal { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HorizontalLayoutGroup as :: unity2 :: ClassIdentity > :: class () , "SetLayoutHorizontal" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HorizontalLayoutGroup as :: unity2 :: ClassIdentity > :: NAME , "SetLayoutHorizontal" , e) , } } } pub unsafe fn set_layout_horizontal (this : HorizontalLayoutGroup , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HorizontalLayoutGroup , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_layout_horizontal :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_layout_vertical { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HorizontalLayoutGroup as :: unity2 :: ClassIdentity > :: class () , "SetLayoutVertical" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HorizontalLayoutGroup as :: unity2 :: ClassIdentity > :: NAME , "SetLayoutVertical" , e) , } } } pub unsafe fn set_layout_vertical (this : HorizontalLayoutGroup , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HorizontalLayoutGroup , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_layout_vertical :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-ui-horizontallayoutgroup")]
-pub trait IHorizontalLayoutGroupMethods: IHorizontalLayoutGroup {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <HorizontalLayoutGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HorizontalLayoutGroup_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CalculateLayoutInputHorizontal()` overload"]
-    fn calculate_layout_input_horizontal(self) -> () {
-        unsafe {
-            let __receiver =
-                <HorizontalLayoutGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HorizontalLayoutGroup_unity2_raw::calculate_layout_input_horizontal(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CalculateLayoutInputVertical()` overload"]
-    fn calculate_layout_input_vertical(self) -> () {
-        unsafe {
-            let __receiver =
-                <HorizontalLayoutGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HorizontalLayoutGroup_unity2_raw::calculate_layout_input_vertical(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetLayoutHorizontal()` overload"]
-    fn set_layout_horizontal(self) -> () {
-        unsafe {
-            let __receiver =
-                <HorizontalLayoutGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HorizontalLayoutGroup_unity2_raw::set_layout_horizontal(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetLayoutVertical()` overload"]
-    fn set_layout_vertical(self) -> () {
-        unsafe {
-            let __receiver =
-                <HorizontalLayoutGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HorizontalLayoutGroup_unity2_raw::set_layout_vertical(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IHorizontalLayoutGroupMethods : IHorizontalLayoutGroup { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HorizontalLayoutGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HorizontalLayoutGroup_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CalculateLayoutInputHorizontal()` overload"] fn calculate_layout_input_horizontal (self ,) -> () { unsafe { let __receiver = < HorizontalLayoutGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HorizontalLayoutGroup_unity2_raw :: calculate_layout_input_horizontal (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CalculateLayoutInputVertical()` overload"] fn calculate_layout_input_vertical (self ,) -> () { unsafe { let __receiver = < HorizontalLayoutGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HorizontalLayoutGroup_unity2_raw :: calculate_layout_input_vertical (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetLayoutHorizontal()` overload"] fn set_layout_horizontal (self ,) -> () { unsafe { let __receiver = < HorizontalLayoutGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HorizontalLayoutGroup_unity2_raw :: set_layout_horizontal (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetLayoutVertical()` overload"] fn set_layout_vertical (self ,) -> () { unsafe { let __receiver = < HorizontalLayoutGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HorizontalLayoutGroup_unity2_raw :: set_layout_vertical (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-ui-horizontallayoutgroup")]
-impl<__T: IHorizontalLayoutGroup> IHorizontalLayoutGroupMethods for __T {}
+impl < __T : IHorizontalLayoutGroup > IHorizontalLayoutGroupMethods for __T { }
+
+#[cfg(feature = "unity_engine-ui-horizontallayoutgroup")]
+impl HorizontalLayoutGroup { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HorizontalLayoutGroup_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn calculate_layout_input_horizontal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HorizontalLayoutGroup_unity2_raw :: __lookup_calculate_layout_input_horizontal :: get_method_info () } pub fn calculate_layout_input_vertical_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HorizontalLayoutGroup_unity2_raw :: __lookup_calculate_layout_input_vertical :: get_method_info () } pub fn set_layout_horizontal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HorizontalLayoutGroup_unity2_raw :: __lookup_set_layout_horizontal :: get_method_info () } pub fn set_layout_vertical_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HorizontalLayoutGroup_unity2_raw :: __lookup_set_layout_vertical :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-ui-horizontallayoutgroup")]
 impl HorizontalLayoutGroup {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(HorizontalLayoutGroup),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IHorizontalLayoutGroupMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HorizontalLayoutGroup) , :: core :: stringify ! (new) ,)) ; < Self as IHorizontalLayoutGroupMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "unity_engine-ui-horizontallayoutgroup")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{HorizontalLayoutGroup, IHorizontalLayoutGroup, IHorizontalLayoutGroupMethods};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-event_systems-uibehaviour")]
-    pub use crate::unity_engine::event_systems::uibehaviour::IUIBehaviourMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    #[cfg(feature = "unity_engine-ui-horizontalorverticallayoutgroup")]
-    pub use crate::unity_engine::ui::horizontalorverticallayoutgroup::IHorizontalOrVerticalLayoutGroupMethods;
-    #[cfg(feature = "unity_engine-ui-layoutgroup")]
-    pub use crate::unity_engine::ui::layoutgroup::ILayoutGroupMethods;
-    pub use crate::{
-        system::object::IObject,
-        unity_engine::{
-            behaviour::IBehaviour,
-            component::IComponent,
-            event_systems::uibehaviour::IUIBehaviour,
-            monobehaviour::IMonoBehaviour,
-            object_2::IObject_2,
-            ui::{horizontalorverticallayoutgroup::IHorizontalOrVerticalLayoutGroup, layoutgroup::ILayoutGroup},
-        },
-    };
+    pub use super::HorizontalLayoutGroup;
+    pub use super::IHorizontalLayoutGroup;
+    pub use super::IHorizontalLayoutGroupMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::event_systems::uibehaviour::IUIBehaviour;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    pub use crate::unity_engine::ui::horizontalorverticallayoutgroup::IHorizontalOrVerticalLayoutGroup;
+    pub use crate::unity_engine::ui::layoutgroup::ILayoutGroup;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-event_systems-uibehaviour")] pub use crate::unity_engine::event_systems::uibehaviour::IUIBehaviourMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
+    #[cfg(feature = "unity_engine-ui-horizontalorverticallayoutgroup")] pub use crate::unity_engine::ui::horizontalorverticallayoutgroup::IHorizontalOrVerticalLayoutGroupMethods;
+    #[cfg(feature = "unity_engine-ui-layoutgroup")] pub use crate::unity_engine::ui::layoutgroup::ILayoutGroupMethods;
 }

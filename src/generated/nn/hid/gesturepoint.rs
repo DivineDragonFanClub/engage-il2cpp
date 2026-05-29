@@ -2,322 +2,72 @@
 
 #[cfg(feature = "nn-hid-gesturepoint-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        valuetype::{IValueType, ValueType},
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/nn/hid/gesturepoint/GesturePoint.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct GesturePoint {
-        pub x: i32,
-        pub y: i32,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
 
-    impl ::unity2::ClassIdentity for GesturePoint {
-        const NAME: &'static str = "GesturePoint";
-        const NAMESPACE: &'static str = "nn.hid";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/nn/hid/gesturepoint/GesturePoint.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct GesturePoint {
+    pub x: i32,
+    pub y: i32,
+}
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+
+impl ::unity2::ClassIdentity for GesturePoint {
+    const NAMESPACE: &'static str = "nn.hid";
+
+    const NAME: &'static str = "GesturePoint";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for GesturePoint {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl ::unity2::IlType for GesturePoint {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
+
+}
+
 }
 
 #[cfg(feature = "nn-hid-gesturepoint-types")]
 pub use __types::*;
 
 #[cfg(feature = "nn-hid-gesturepoint")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __GesturePoint_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_to_string {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GesturePoint as ::unity2::ClassIdentity>::class(),
-                "ToString",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GesturePoint as ::unity2::ClassIdentity>::NAME,
-                        "ToString",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn to_string(this: GesturePoint, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(GesturePoint, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_to_string::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_op_equality {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::nn::hid::gesturepoint::GesturePoint as ::unity2::IlType>::il_type(),
-                <crate::nn::hid::gesturepoint::GesturePoint as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GesturePoint as ::unity2::ClassIdentity>::class(),
-                "op_Equality",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GesturePoint as ::unity2::ClassIdentity>::NAME,
-                        "op_Equality",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn op_equality(
-        lhs: crate::nn::hid::gesturepoint::GesturePoint,
-        rhs: crate::nn::hid::gesturepoint::GesturePoint,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            crate::nn::hid::gesturepoint::GesturePoint,
-            crate::nn::hid::gesturepoint::GesturePoint,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(__lookup_op_equality::get_method_info().method_ptr);
-        inner(lhs, rhs, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_op_inequality {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::nn::hid::gesturepoint::GesturePoint as ::unity2::IlType>::il_type(),
-                <crate::nn::hid::gesturepoint::GesturePoint as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GesturePoint as ::unity2::ClassIdentity>::class(),
-                "op_Inequality",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GesturePoint as ::unity2::ClassIdentity>::NAME,
-                        "op_Inequality",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn op_inequality(
-        lhs: crate::nn::hid::gesturepoint::GesturePoint,
-        rhs: crate::nn::hid::gesturepoint::GesturePoint,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            crate::nn::hid::gesturepoint::GesturePoint,
-            crate::nn::hid::gesturepoint::GesturePoint,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(__lookup_op_inequality::get_method_info().method_ptr);
-        inner(lhs, rhs, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_equals {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<GesturePoint as ::unity2::ClassIdentity>::class(), "Equals", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GesturePoint as ::unity2::ClassIdentity>::NAME,
-                        "Equals",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn equals(this: GesturePoint, right: crate::system::object::Object, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(GesturePoint, crate::system::object::Object, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_equals::get_method_info().method_ptr);
-        inner(this, right, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_equals_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::nn::hid::gesturepoint::GesturePoint as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<GesturePoint as ::unity2::ClassIdentity>::class(), "Equals", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GesturePoint as ::unity2::ClassIdentity>::NAME,
-                        "Equals",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn equals_2(
-        this: GesturePoint,
-        other: crate::nn::hid::gesturepoint::GesturePoint,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(GesturePoint, crate::nn::hid::gesturepoint::GesturePoint, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_equals_2::get_method_info().method_ptr);
-        inner(this, other, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_hash_code {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GesturePoint as ::unity2::ClassIdentity>::class(),
-                "GetHashCode",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GesturePoint as ::unity2::ClassIdentity>::NAME,
-                        "GetHashCode",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_hash_code(this: GesturePoint, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(GesturePoint, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_hash_code::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __GesturePoint_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_to_string { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GesturePoint as :: unity2 :: ClassIdentity > :: class () , "ToString" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GesturePoint as :: unity2 :: ClassIdentity > :: NAME , "ToString" , e) , } } } pub unsafe fn to_string (this : GesturePoint , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (GesturePoint , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_to_string :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_op_equality { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: nn :: hid :: gesturepoint :: GesturePoint as :: unity2 :: IlType > :: il_type () , < crate :: nn :: hid :: gesturepoint :: GesturePoint as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GesturePoint as :: unity2 :: ClassIdentity > :: class () , "op_Equality" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GesturePoint as :: unity2 :: ClassIdentity > :: NAME , "op_Equality" , e) , } } } pub unsafe fn op_equality (lhs : crate :: nn :: hid :: gesturepoint :: GesturePoint , rhs : crate :: nn :: hid :: gesturepoint :: GesturePoint , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (crate :: nn :: hid :: gesturepoint :: GesturePoint , crate :: nn :: hid :: gesturepoint :: GesturePoint , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_op_equality :: get_method_info () . method_ptr ,) ; inner (lhs , rhs , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_op_inequality { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: nn :: hid :: gesturepoint :: GesturePoint as :: unity2 :: IlType > :: il_type () , < crate :: nn :: hid :: gesturepoint :: GesturePoint as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GesturePoint as :: unity2 :: ClassIdentity > :: class () , "op_Inequality" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GesturePoint as :: unity2 :: ClassIdentity > :: NAME , "op_Inequality" , e) , } } } pub unsafe fn op_inequality (lhs : crate :: nn :: hid :: gesturepoint :: GesturePoint , rhs : crate :: nn :: hid :: gesturepoint :: GesturePoint , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (crate :: nn :: hid :: gesturepoint :: GesturePoint , crate :: nn :: hid :: gesturepoint :: GesturePoint , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_op_inequality :: get_method_info () . method_ptr ,) ; inner (lhs , rhs , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_equals { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GesturePoint as :: unity2 :: ClassIdentity > :: class () , "Equals" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GesturePoint as :: unity2 :: ClassIdentity > :: NAME , "Equals" , e) , } } } pub unsafe fn equals (this : GesturePoint , right : crate :: system :: object :: Object , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (GesturePoint , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_equals :: get_method_info () . method_ptr ,) ; inner (this , right , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_equals_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: nn :: hid :: gesturepoint :: GesturePoint as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GesturePoint as :: unity2 :: ClassIdentity > :: class () , "Equals" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GesturePoint as :: unity2 :: ClassIdentity > :: NAME , "Equals" , e) , } } } pub unsafe fn equals_2 (this : GesturePoint , other : crate :: nn :: hid :: gesturepoint :: GesturePoint , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (GesturePoint , crate :: nn :: hid :: gesturepoint :: GesturePoint , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_equals_2 :: get_method_info () . method_ptr ,) ; inner (this , other , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_hash_code { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GesturePoint as :: unity2 :: ClassIdentity > :: class () , "GetHashCode" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GesturePoint as :: unity2 :: ClassIdentity > :: NAME , "GetHashCode" , e) , } } } pub unsafe fn get_hash_code (this : GesturePoint , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (GesturePoint , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_hash_code :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "nn-hid-gesturepoint")]
-impl GesturePoint {
-    #[doc = "`op_Equality(crate::nn::hid::gesturepoint::GesturePoint, crate::nn::hid::gesturepoint::GesturePoint)` overload"]
-    pub fn op_equality(
-        lhs: impl ::core::convert::Into<crate::nn::hid::gesturepoint::GesturePoint>,
-        rhs: impl ::core::convert::Into<crate::nn::hid::gesturepoint::GesturePoint>,
-    ) -> bool {
-        unsafe {
-            __GesturePoint_unity2_raw::op_equality(
-                ::core::convert::Into::into(lhs),
-                ::core::convert::Into::into(rhs),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`op_Inequality(crate::nn::hid::gesturepoint::GesturePoint, crate::nn::hid::gesturepoint::GesturePoint)` overload"]
-    pub fn op_inequality(
-        lhs: impl ::core::convert::Into<crate::nn::hid::gesturepoint::GesturePoint>,
-        rhs: impl ::core::convert::Into<crate::nn::hid::gesturepoint::GesturePoint>,
-    ) -> bool {
-        unsafe {
-            __GesturePoint_unity2_raw::op_inequality(
-                ::core::convert::Into::into(lhs),
-                ::core::convert::Into::into(rhs),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+impl GesturePoint { # [doc = "`op_Equality(crate::nn::hid::gesturepoint::GesturePoint, crate::nn::hid::gesturepoint::GesturePoint)` overload"] pub fn op_equality (lhs : impl :: core :: convert :: Into < crate :: nn :: hid :: gesturepoint :: GesturePoint > , rhs : impl :: core :: convert :: Into < crate :: nn :: hid :: gesturepoint :: GesturePoint >) -> bool { unsafe { __GesturePoint_unity2_raw :: op_equality (:: core :: convert :: Into :: into (lhs) , :: core :: convert :: Into :: into (rhs) , :: core :: option :: Option :: None) } } # [doc = "`op_Inequality(crate::nn::hid::gesturepoint::GesturePoint, crate::nn::hid::gesturepoint::GesturePoint)` overload"] pub fn op_inequality (lhs : impl :: core :: convert :: Into < crate :: nn :: hid :: gesturepoint :: GesturePoint > , rhs : impl :: core :: convert :: Into < crate :: nn :: hid :: gesturepoint :: GesturePoint >) -> bool { unsafe { __GesturePoint_unity2_raw :: op_inequality (:: core :: convert :: Into :: into (lhs) , :: core :: convert :: Into :: into (rhs) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "nn-hid-gesturepoint")]
-impl GesturePoint {
-    #[doc = "`ToString()` overload"]
-    pub fn to_string(self) -> ::unity2::Il2CppString {
-        unsafe { __GesturePoint_unity2_raw::to_string(self, ::core::option::Option::None) }
-    }
+impl GesturePoint { # [doc = "`ToString()` overload"] pub fn to_string (self ,) -> :: unity2 :: Il2CppString { unsafe { __GesturePoint_unity2_raw :: to_string (self , :: core :: option :: Option :: None) } } # [doc = "`Equals(crate::system::object::Object)` overload"] pub fn equals (self , right : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { __GesturePoint_unity2_raw :: equals (self , :: core :: convert :: Into :: into (right) , :: core :: option :: Option :: None) } } # [doc = "`Equals(crate::nn::hid::gesturepoint::GesturePoint)` overload"] pub fn equals_2 (self , other : impl :: core :: convert :: Into < crate :: nn :: hid :: gesturepoint :: GesturePoint >) -> bool { unsafe { __GesturePoint_unity2_raw :: equals_2 (self , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } # [doc = "`GetHashCode()` overload"] pub fn get_hash_code (self ,) -> i32 { unsafe { __GesturePoint_unity2_raw :: get_hash_code (self , :: core :: option :: Option :: None) } } }
 
-    #[doc = "`Equals(crate::system::object::Object)` overload"]
-    pub fn equals(self, right: impl ::core::convert::Into<crate::system::object::Object>) -> bool {
-        unsafe { __GesturePoint_unity2_raw::equals(self, ::core::convert::Into::into(right), ::core::option::Option::None) }
-    }
-
-    #[doc = "`Equals(crate::nn::hid::gesturepoint::GesturePoint)` overload"]
-    pub fn equals_2(self, other: impl ::core::convert::Into<crate::nn::hid::gesturepoint::GesturePoint>) -> bool {
-        unsafe { __GesturePoint_unity2_raw::equals_2(self, ::core::convert::Into::into(other), ::core::option::Option::None) }
-    }
-
-    #[doc = "`GetHashCode()` overload"]
-    pub fn get_hash_code(self) -> i32 {
-        unsafe { __GesturePoint_unity2_raw::get_hash_code(self, ::core::option::Option::None) }
-    }
-}
+#[cfg(feature = "nn-hid-gesturepoint")]
+impl GesturePoint { pub fn to_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GesturePoint_unity2_raw :: __lookup_to_string :: get_method_info () } pub fn op_equality_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GesturePoint_unity2_raw :: __lookup_op_equality :: get_method_info () } pub fn op_inequality_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GesturePoint_unity2_raw :: __lookup_op_inequality :: get_method_info () } pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GesturePoint_unity2_raw :: __lookup_equals :: get_method_info () } pub fn equals_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GesturePoint_unity2_raw :: __lookup_equals_2 :: get_method_info () } pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GesturePoint_unity2_raw :: __lookup_get_hash_code :: get_method_info () } }
 
 #[cfg(feature = "nn-hid-gesturepoint")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::GesturePoint;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::system::{object::IObject, valuetype::IValueType};
+    pub use crate::system::object::IObject;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

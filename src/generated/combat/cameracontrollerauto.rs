@@ -2,758 +2,118 @@
 
 #[cfg(feature = "combat-cameracontrollerauto-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        combat::basecameracontroller::{BaseCameraController, IBaseCameraController},
-        system::{
-            object::{IObject, Object},
-            valuetype::{IValueType, ValueType},
-        },
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/cameracontrollerauto/CameraControllerAuto.md"))]
-    #[::unity2::class(namespace = "Combat", name = "CameraControllerAuto")]
-    #[parent(crate::combat::basecameracontroller::BaseCameraController)]
-    pub struct CameraControllerAuto {
-        #[offset(168)]
-        #[rename(name = "DistanceCurve")]
-        pub distance_curve: crate::unity_engine::animationcurve::AnimationCurve,
-        #[offset(176)]
-        #[rename(name = "VirticalMinMax")]
-        pub virtical_min_max: crate::unity_engine::vector2::Vector2,
-        #[offset(184)]
-        #[rename(name = "HorizontalMinMax")]
-        pub horizontal_min_max: crate::unity_engine::vector2::Vector2,
-        #[offset(220)]
-        #[rename(name = "m_Time")]
-        pub m_time: f32,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: combat :: basecameracontroller :: { BaseCameraController , IBaseCameraController }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/cameracontrollerauto/CameraControllerAuto_CamRotate.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct CameraControllerAuto_CamRotate {
-        pub start_degree: f32,
-        pub end_degree: f32,
-        pub speed: f32,
-    }
 
-    impl ::unity2::ClassIdentity for CameraControllerAuto_CamRotate {
-        const NAME: &'static str = "CameraControllerAuto.CamRotate";
-        const NAMESPACE: &'static str = "Combat";
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/cameracontrollerauto/CameraControllerAuto.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "CameraControllerAuto")] # [parent (crate :: combat :: basecameracontroller :: BaseCameraController)] pub struct CameraControllerAuto {
+# [offset (168)] # [rename (name = "DistanceCurve")] pub distance_curve : crate :: unity_engine :: animationcurve :: AnimationCurve ,
+# [offset (176)] # [rename (name = "VirticalMinMax")] pub virtical_min_max : crate :: unity_engine :: vector2 :: Vector2 ,
+# [offset (184)] # [rename (name = "HorizontalMinMax")] pub horizontal_min_max : crate :: unity_engine :: vector2 :: Vector2 ,
+# [offset (220)] # [rename (name = "m_Time")] pub m_time : f32 ,
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/cameracontrollerauto/CameraControllerAuto_CamRotate.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct CameraControllerAuto_CamRotate {
+    pub start_degree: f32,
+    pub end_degree: f32,
+    pub speed: f32,
+}
+
+
+impl ::unity2::ClassIdentity for CameraControllerAuto_CamRotate {
+    const NAMESPACE: &'static str = "Combat";
+
+    const NAME: &'static str = "CameraControllerAuto.CamRotate";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for CameraControllerAuto_CamRotate {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl ::unity2::IlType for CameraControllerAuto_CamRotate {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
+
+}
+
 }
 
 #[cfg(feature = "combat-cameracontrollerauto-types")]
 pub use __types::*;
 
 #[cfg(feature = "combat-cameracontrollerauto")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __CameraControllerAuto_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_time_length {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CameraControllerAuto as ::unity2::ClassIdentity>::class(),
-                "get_TimeLength",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CameraControllerAuto as ::unity2::ClassIdentity>::NAME,
-                        "get_TimeLength",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_time_length(this: CameraControllerAuto, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(CameraControllerAuto, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_get_time_length::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_time_length {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CameraControllerAuto as ::unity2::ClassIdentity>::class(),
-                "set_TimeLength",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CameraControllerAuto as ::unity2::ClassIdentity>::NAME,
-                        "set_TimeLength",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_time_length(this: CameraControllerAuto, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CameraControllerAuto, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_time_length::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_vertical {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CameraControllerAuto as ::unity2::ClassIdentity>::class(),
-                "get_Vertical",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CameraControllerAuto as ::unity2::ClassIdentity>::NAME,
-                        "get_Vertical",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_vertical(
-        this: CameraControllerAuto,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::combat::cameracontrollerauto::CameraControllerAuto_CamRotate {
-        let inner: extern "C" fn(
-            CameraControllerAuto,
-            ::unity2::OptionalMethod,
-        ) -> crate::combat::cameracontrollerauto::CameraControllerAuto_CamRotate =
-            ::core::mem::transmute(__lookup_get_vertical::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_vertical {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::combat::cameracontrollerauto::CameraControllerAuto_CamRotate as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CameraControllerAuto as ::unity2::ClassIdentity>::class(),
-                "set_Vertical",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CameraControllerAuto as ::unity2::ClassIdentity>::NAME,
-                        "set_Vertical",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_vertical(
-        this: CameraControllerAuto,
-        value: crate::combat::cameracontrollerauto::CameraControllerAuto_CamRotate,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            CameraControllerAuto,
-            crate::combat::cameracontrollerauto::CameraControllerAuto_CamRotate,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_set_vertical::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_horizontal {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CameraControllerAuto as ::unity2::ClassIdentity>::class(),
-                "get_Horizontal",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CameraControllerAuto as ::unity2::ClassIdentity>::NAME,
-                        "get_Horizontal",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_horizontal(
-        this: CameraControllerAuto,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::combat::cameracontrollerauto::CameraControllerAuto_CamRotate {
-        let inner: extern "C" fn(
-            CameraControllerAuto,
-            ::unity2::OptionalMethod,
-        ) -> crate::combat::cameracontrollerauto::CameraControllerAuto_CamRotate =
-            ::core::mem::transmute(__lookup_get_horizontal::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_horizontal {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::combat::cameracontrollerauto::CameraControllerAuto_CamRotate as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CameraControllerAuto as ::unity2::ClassIdentity>::class(),
-                "set_Horizontal",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CameraControllerAuto as ::unity2::ClassIdentity>::NAME,
-                        "set_Horizontal",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_horizontal(
-        this: CameraControllerAuto,
-        value: crate::combat::cameracontrollerauto::CameraControllerAuto_CamRotate,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            CameraControllerAuto,
-            crate::combat::cameracontrollerauto::CameraControllerAuto_CamRotate,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_set_horizontal::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_check_usable {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CameraControllerAuto as ::unity2::ClassIdentity>::class(),
-                "CheckUsable",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CameraControllerAuto as ::unity2::ClassIdentity>::NAME,
-                        "CheckUsable",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn check_usable(this: CameraControllerAuto, is_routine: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CameraControllerAuto, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_check_usable::get_method_info().method_ptr);
-        inner(this, is_routine, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_activate {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CameraControllerAuto as ::unity2::ClassIdentity>::class(),
-                "Activate",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CameraControllerAuto as ::unity2::ClassIdentity>::NAME,
-                        "Activate",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn activate(this: CameraControllerAuto, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CameraControllerAuto, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_activate::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_initialize {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CameraControllerAuto as ::unity2::ClassIdentity>::class(),
-                "Initialize",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CameraControllerAuto as ::unity2::ClassIdentity>::NAME,
-                        "Initialize",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn initialize(this: CameraControllerAuto, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CameraControllerAuto, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_initialize::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_deactivate {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CameraControllerAuto as ::unity2::ClassIdentity>::class(),
-                "Deactivate",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CameraControllerAuto as ::unity2::ClassIdentity>::NAME,
-                        "Deactivate",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn deactivate(this: CameraControllerAuto, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CameraControllerAuto, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_deactivate::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_random {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <f32 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CameraControllerAuto as ::unity2::ClassIdentity>::class(),
-                "CreateRandom",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CameraControllerAuto as ::unity2::ClassIdentity>::NAME,
-                        "CreateRandom",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_random(
-        this: CameraControllerAuto,
-        time: f32,
-        min: f32,
-        max: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::combat::cameracontrollerauto::CameraControllerAuto_CamRotate {
-        let inner: extern "C" fn(
-            CameraControllerAuto,
-            f32,
-            f32,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> crate::combat::cameracontrollerauto::CameraControllerAuto_CamRotate =
-            ::core::mem::transmute(__lookup_create_random::get_method_info().method_ptr);
-        inner(this, time, min, max, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_camera_targets {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CameraControllerAuto as ::unity2::ClassIdentity>::class(),
-                "GetCameraTargets",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CameraControllerAuto as ::unity2::ClassIdentity>::NAME,
-                        "GetCameraTargets",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_camera_targets(this: CameraControllerAuto, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Array<i32> {
-        let inner: extern "C" fn(CameraControllerAuto, ::unity2::OptionalMethod) -> ::unity2::Array<i32> =
-            ::core::mem::transmute(__lookup_get_camera_targets::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CameraControllerAuto as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CameraControllerAuto as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: CameraControllerAuto, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CameraControllerAuto, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __CameraControllerAuto_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_time_length { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CameraControllerAuto as :: unity2 :: ClassIdentity > :: class () , "get_TimeLength" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CameraControllerAuto as :: unity2 :: ClassIdentity > :: NAME , "get_TimeLength" , e) , } } } pub unsafe fn get_time_length (this : CameraControllerAuto , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (CameraControllerAuto , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_get_time_length :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_time_length { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CameraControllerAuto as :: unity2 :: ClassIdentity > :: class () , "set_TimeLength" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CameraControllerAuto as :: unity2 :: ClassIdentity > :: NAME , "set_TimeLength" , e) , } } } pub unsafe fn set_time_length (this : CameraControllerAuto , value : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CameraControllerAuto , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_time_length :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_vertical { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CameraControllerAuto as :: unity2 :: ClassIdentity > :: class () , "get_Vertical" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CameraControllerAuto as :: unity2 :: ClassIdentity > :: NAME , "get_Vertical" , e) , } } } pub unsafe fn get_vertical (this : CameraControllerAuto , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: combat :: cameracontrollerauto :: CameraControllerAuto_CamRotate { let inner : extern "C" fn (CameraControllerAuto , :: unity2 :: OptionalMethod ,) -> crate :: combat :: cameracontrollerauto :: CameraControllerAuto_CamRotate = :: core :: mem :: transmute (__lookup_get_vertical :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_vertical { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: cameracontrollerauto :: CameraControllerAuto_CamRotate as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CameraControllerAuto as :: unity2 :: ClassIdentity > :: class () , "set_Vertical" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CameraControllerAuto as :: unity2 :: ClassIdentity > :: NAME , "set_Vertical" , e) , } } } pub unsafe fn set_vertical (this : CameraControllerAuto , value : crate :: combat :: cameracontrollerauto :: CameraControllerAuto_CamRotate , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CameraControllerAuto , crate :: combat :: cameracontrollerauto :: CameraControllerAuto_CamRotate , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_vertical :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_horizontal { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CameraControllerAuto as :: unity2 :: ClassIdentity > :: class () , "get_Horizontal" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CameraControllerAuto as :: unity2 :: ClassIdentity > :: NAME , "get_Horizontal" , e) , } } } pub unsafe fn get_horizontal (this : CameraControllerAuto , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: combat :: cameracontrollerauto :: CameraControllerAuto_CamRotate { let inner : extern "C" fn (CameraControllerAuto , :: unity2 :: OptionalMethod ,) -> crate :: combat :: cameracontrollerauto :: CameraControllerAuto_CamRotate = :: core :: mem :: transmute (__lookup_get_horizontal :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_horizontal { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: cameracontrollerauto :: CameraControllerAuto_CamRotate as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CameraControllerAuto as :: unity2 :: ClassIdentity > :: class () , "set_Horizontal" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CameraControllerAuto as :: unity2 :: ClassIdentity > :: NAME , "set_Horizontal" , e) , } } } pub unsafe fn set_horizontal (this : CameraControllerAuto , value : crate :: combat :: cameracontrollerauto :: CameraControllerAuto_CamRotate , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CameraControllerAuto , crate :: combat :: cameracontrollerauto :: CameraControllerAuto_CamRotate , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_horizontal :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_check_usable { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CameraControllerAuto as :: unity2 :: ClassIdentity > :: class () , "CheckUsable" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CameraControllerAuto as :: unity2 :: ClassIdentity > :: NAME , "CheckUsable" , e) , } } } pub unsafe fn check_usable (this : CameraControllerAuto , is_routine : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CameraControllerAuto , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_check_usable :: get_method_info () . method_ptr ,) ; inner (this , is_routine , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_activate { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CameraControllerAuto as :: unity2 :: ClassIdentity > :: class () , "Activate" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CameraControllerAuto as :: unity2 :: ClassIdentity > :: NAME , "Activate" , e) , } } } pub unsafe fn activate (this : CameraControllerAuto , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CameraControllerAuto , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_activate :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_initialize { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CameraControllerAuto as :: unity2 :: ClassIdentity > :: class () , "Initialize" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CameraControllerAuto as :: unity2 :: ClassIdentity > :: NAME , "Initialize" , e) , } } } pub unsafe fn initialize (this : CameraControllerAuto , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CameraControllerAuto , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_initialize :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_deactivate { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CameraControllerAuto as :: unity2 :: ClassIdentity > :: class () , "Deactivate" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CameraControllerAuto as :: unity2 :: ClassIdentity > :: NAME , "Deactivate" , e) , } } } pub unsafe fn deactivate (this : CameraControllerAuto , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CameraControllerAuto , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_deactivate :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_random { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< f32 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CameraControllerAuto as :: unity2 :: ClassIdentity > :: class () , "CreateRandom" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CameraControllerAuto as :: unity2 :: ClassIdentity > :: NAME , "CreateRandom" , e) , } } } pub unsafe fn create_random (this : CameraControllerAuto , time : f32 , min : f32 , max : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: combat :: cameracontrollerauto :: CameraControllerAuto_CamRotate { let inner : extern "C" fn (CameraControllerAuto , f32 , f32 , f32 , :: unity2 :: OptionalMethod ,) -> crate :: combat :: cameracontrollerauto :: CameraControllerAuto_CamRotate = :: core :: mem :: transmute (__lookup_create_random :: get_method_info () . method_ptr ,) ; inner (this , time , min , max , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_camera_targets { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CameraControllerAuto as :: unity2 :: ClassIdentity > :: class () , "GetCameraTargets" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CameraControllerAuto as :: unity2 :: ClassIdentity > :: NAME , "GetCameraTargets" , e) , } } } pub unsafe fn get_camera_targets (this : CameraControllerAuto , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < i32 > { let inner : extern "C" fn (CameraControllerAuto , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < i32 > = :: core :: mem :: transmute (__lookup_get_camera_targets :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CameraControllerAuto as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CameraControllerAuto as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : CameraControllerAuto , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CameraControllerAuto , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "combat-cameracontrollerauto")]
-pub trait ICameraControllerAutoMethods: ICameraControllerAuto {
-    #[doc = "`get_TimeLength()` overload"]
-    fn get_time_length(self) -> f32 {
-        unsafe {
-            let __receiver =
-                <CameraControllerAuto as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CameraControllerAuto_unity2_raw::get_time_length(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_TimeLength(f32)` overload"]
-    fn set_time_length(self, value: impl ::core::convert::Into<f32>) -> () {
-        unsafe {
-            let __receiver =
-                <CameraControllerAuto as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CameraControllerAuto_unity2_raw::set_time_length(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Vertical()` overload"]
-    fn get_vertical(self) -> crate::combat::cameracontrollerauto::CameraControllerAuto_CamRotate {
-        unsafe {
-            let __receiver =
-                <CameraControllerAuto as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CameraControllerAuto_unity2_raw::get_vertical(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_Vertical(crate::combat::cameracontrollerauto::CameraControllerAuto_CamRotate)` overload"]
-    fn set_vertical(self, value: impl ::core::convert::Into<crate::combat::cameracontrollerauto::CameraControllerAuto_CamRotate>) -> () {
-        unsafe {
-            let __receiver =
-                <CameraControllerAuto as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CameraControllerAuto_unity2_raw::set_vertical(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Horizontal()` overload"]
-    fn get_horizontal(self) -> crate::combat::cameracontrollerauto::CameraControllerAuto_CamRotate {
-        unsafe {
-            let __receiver =
-                <CameraControllerAuto as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CameraControllerAuto_unity2_raw::get_horizontal(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_Horizontal(crate::combat::cameracontrollerauto::CameraControllerAuto_CamRotate)` overload"]
-    fn set_horizontal(self, value: impl ::core::convert::Into<crate::combat::cameracontrollerauto::CameraControllerAuto_CamRotate>) -> () {
-        unsafe {
-            let __receiver =
-                <CameraControllerAuto as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CameraControllerAuto_unity2_raw::set_horizontal(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CheckUsable(bool)` overload"]
-    fn check_usable(self, is_routine: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver =
-                <CameraControllerAuto as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CameraControllerAuto_unity2_raw::check_usable(__receiver, ::core::convert::Into::into(is_routine), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Activate()` overload"]
-    fn activate(self) -> () {
-        unsafe {
-            let __receiver =
-                <CameraControllerAuto as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CameraControllerAuto_unity2_raw::activate(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Initialize()` overload"]
-    fn initialize(self) -> () {
-        unsafe {
-            let __receiver =
-                <CameraControllerAuto as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CameraControllerAuto_unity2_raw::initialize(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Deactivate()` overload"]
-    fn deactivate(self) -> () {
-        unsafe {
-            let __receiver =
-                <CameraControllerAuto as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CameraControllerAuto_unity2_raw::deactivate(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CreateRandom(f32, f32, f32)` overload"]
-    fn create_random(
-        self,
-        time: impl ::core::convert::Into<f32>,
-        min: impl ::core::convert::Into<f32>,
-        max: impl ::core::convert::Into<f32>,
-    ) -> crate::combat::cameracontrollerauto::CameraControllerAuto_CamRotate {
-        unsafe {
-            let __receiver =
-                <CameraControllerAuto as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CameraControllerAuto_unity2_raw::create_random(
-                __receiver,
-                ::core::convert::Into::into(time),
-                ::core::convert::Into::into(min),
-                ::core::convert::Into::into(max),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetCameraTargets()` overload"]
-    fn get_camera_targets(self) -> ::unity2::Array<i32> {
-        unsafe {
-            let __receiver =
-                <CameraControllerAuto as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CameraControllerAuto_unity2_raw::get_camera_targets(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <CameraControllerAuto as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CameraControllerAuto_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait ICameraControllerAutoMethods : ICameraControllerAuto { # [doc = "`get_TimeLength()` overload"] fn get_time_length (self ,) -> f32 { unsafe { let __receiver = < CameraControllerAuto as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CameraControllerAuto_unity2_raw :: get_time_length (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_TimeLength(f32)` overload"] fn set_time_length (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < CameraControllerAuto as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CameraControllerAuto_unity2_raw :: set_time_length (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_Vertical()` overload"] fn get_vertical (self ,) -> crate :: combat :: cameracontrollerauto :: CameraControllerAuto_CamRotate { unsafe { let __receiver = < CameraControllerAuto as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CameraControllerAuto_unity2_raw :: get_vertical (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_Vertical(crate::combat::cameracontrollerauto::CameraControllerAuto_CamRotate)` overload"] fn set_vertical (self , value : impl :: core :: convert :: Into < crate :: combat :: cameracontrollerauto :: CameraControllerAuto_CamRotate >) -> () { unsafe { let __receiver = < CameraControllerAuto as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CameraControllerAuto_unity2_raw :: set_vertical (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_Horizontal()` overload"] fn get_horizontal (self ,) -> crate :: combat :: cameracontrollerauto :: CameraControllerAuto_CamRotate { unsafe { let __receiver = < CameraControllerAuto as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CameraControllerAuto_unity2_raw :: get_horizontal (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_Horizontal(crate::combat::cameracontrollerauto::CameraControllerAuto_CamRotate)` overload"] fn set_horizontal (self , value : impl :: core :: convert :: Into < crate :: combat :: cameracontrollerauto :: CameraControllerAuto_CamRotate >) -> () { unsafe { let __receiver = < CameraControllerAuto as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CameraControllerAuto_unity2_raw :: set_horizontal (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`CheckUsable(bool)` overload"] fn check_usable (self , is_routine : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < CameraControllerAuto as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CameraControllerAuto_unity2_raw :: check_usable (__receiver , :: core :: convert :: Into :: into (is_routine) , :: core :: option :: Option :: None) } } # [doc = "`Activate()` overload"] fn activate (self ,) -> () { unsafe { let __receiver = < CameraControllerAuto as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CameraControllerAuto_unity2_raw :: activate (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Initialize()` overload"] fn initialize (self ,) -> () { unsafe { let __receiver = < CameraControllerAuto as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CameraControllerAuto_unity2_raw :: initialize (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Deactivate()` overload"] fn deactivate (self ,) -> () { unsafe { let __receiver = < CameraControllerAuto as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CameraControllerAuto_unity2_raw :: deactivate (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CreateRandom(f32, f32, f32)` overload"] fn create_random (self , time : impl :: core :: convert :: Into < f32 > , min : impl :: core :: convert :: Into < f32 > , max : impl :: core :: convert :: Into < f32 >) -> crate :: combat :: cameracontrollerauto :: CameraControllerAuto_CamRotate { unsafe { let __receiver = < CameraControllerAuto as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CameraControllerAuto_unity2_raw :: create_random (__receiver , :: core :: convert :: Into :: into (time) , :: core :: convert :: Into :: into (min) , :: core :: convert :: Into :: into (max) , :: core :: option :: Option :: None) } } # [doc = "`GetCameraTargets()` overload"] fn get_camera_targets (self ,) -> :: unity2 :: Array < i32 > { unsafe { let __receiver = < CameraControllerAuto as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CameraControllerAuto_unity2_raw :: get_camera_targets (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CameraControllerAuto as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CameraControllerAuto_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "combat-cameracontrollerauto")]
-impl<__T: ICameraControllerAuto> ICameraControllerAutoMethods for __T {}
+impl < __T : ICameraControllerAuto > ICameraControllerAutoMethods for __T { }
+
+#[cfg(feature = "combat-cameracontrollerauto")]
+impl CameraControllerAuto { pub fn get_time_length_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CameraControllerAuto_unity2_raw :: __lookup_get_time_length :: get_method_info () } pub fn set_time_length_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CameraControllerAuto_unity2_raw :: __lookup_set_time_length :: get_method_info () } pub fn get_vertical_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CameraControllerAuto_unity2_raw :: __lookup_get_vertical :: get_method_info () } pub fn set_vertical_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CameraControllerAuto_unity2_raw :: __lookup_set_vertical :: get_method_info () } pub fn get_horizontal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CameraControllerAuto_unity2_raw :: __lookup_get_horizontal :: get_method_info () } pub fn set_horizontal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CameraControllerAuto_unity2_raw :: __lookup_set_horizontal :: get_method_info () } pub fn check_usable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CameraControllerAuto_unity2_raw :: __lookup_check_usable :: get_method_info () } pub fn activate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CameraControllerAuto_unity2_raw :: __lookup_activate :: get_method_info () } pub fn initialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CameraControllerAuto_unity2_raw :: __lookup_initialize :: get_method_info () } pub fn deactivate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CameraControllerAuto_unity2_raw :: __lookup_deactivate :: get_method_info () } pub fn create_random_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CameraControllerAuto_unity2_raw :: __lookup_create_random :: get_method_info () } pub fn get_camera_targets_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CameraControllerAuto_unity2_raw :: __lookup_get_camera_targets :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CameraControllerAuto_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "combat-cameracontrollerauto")]
 impl CameraControllerAuto {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(CameraControllerAuto),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ICameraControllerAutoMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CameraControllerAuto) , :: core :: stringify ! (new) ,)) ; < Self as ICameraControllerAutoMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "combat-cameracontrollerauto")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __CameraControllerAuto_CamRotate_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CameraControllerAuto_CamRotate as ::unity2::ClassIdentity>::class(),
-                "Get",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CameraControllerAuto_CamRotate as ::unity2::ClassIdentity>::NAME,
-                        "Get",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get(this: CameraControllerAuto_CamRotate, rate: f32, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(CameraControllerAuto_CamRotate, f32, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_get::get_method_info().method_ptr);
-        inner(this, rate, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __CameraControllerAuto_CamRotate_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CameraControllerAuto_CamRotate as :: unity2 :: ClassIdentity > :: class () , "Get" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CameraControllerAuto_CamRotate as :: unity2 :: ClassIdentity > :: NAME , "Get" , e) , } } } pub unsafe fn get (this : CameraControllerAuto_CamRotate , rate : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (CameraControllerAuto_CamRotate , f32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_get :: get_method_info () . method_ptr ,) ; inner (this , rate , __unity2_method_info) } }
 
 #[cfg(feature = "combat-cameracontrollerauto")]
-impl CameraControllerAuto_CamRotate {
-    #[doc = "`Get(f32)` overload"]
-    pub fn get(self, rate: impl ::core::convert::Into<f32>) -> f32 {
-        unsafe { __CameraControllerAuto_CamRotate_unity2_raw::get(self, ::core::convert::Into::into(rate), ::core::option::Option::None) }
-    }
-}
+impl CameraControllerAuto_CamRotate { # [doc = "`Get(f32)` overload"] pub fn get (self , rate : impl :: core :: convert :: Into < f32 >) -> f32 { unsafe { __CameraControllerAuto_CamRotate_unity2_raw :: get (self , :: core :: convert :: Into :: into (rate) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "combat-cameracontrollerauto")]
+impl CameraControllerAuto_CamRotate { pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CameraControllerAuto_CamRotate_unity2_raw :: __lookup_get :: get_method_info () } }
 
 #[cfg(feature = "combat-cameracontrollerauto")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{CameraControllerAuto, CameraControllerAuto_CamRotate, ICameraControllerAuto, ICameraControllerAutoMethods};
-    #[cfg(feature = "combat-basecameracontroller")]
-    pub use crate::combat::basecameracontroller::IBaseCameraControllerMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        combat::basecameracontroller::IBaseCameraController,
-        system::{object::IObject, valuetype::IValueType},
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::CameraControllerAuto;
+    pub use super::ICameraControllerAuto;
+    pub use super::ICameraControllerAutoMethods;
+    pub use super::CameraControllerAuto_CamRotate;
+    pub use crate::combat::basecameracontroller::IBaseCameraController;
+    pub use crate::system::object::IObject;
+    pub use crate::system::valuetype::IValueType;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "combat-basecameracontroller")] pub use crate::combat::basecameracontroller::IBaseCameraControllerMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

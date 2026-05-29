@@ -2,88 +2,32 @@
 
 #[cfg(feature = "unity_engine-guitargetattribute-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/guitargetattribute/GUITargetAttribute.md"))]
-    #[::unity2::class(namespace = "UnityEngine", name = "GUITargetAttribute")]
-    pub struct GUITargetAttribute {
-        #[offset(16)]
-        #[rename(name = "displayMask")]
-        pub display_mask: i32,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/guitargetattribute/GUITargetAttribute.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "GUITargetAttribute")] pub struct GUITargetAttribute {
+# [offset (16)] # [rename (name = "displayMask")] pub display_mask : i32 ,
+}
+
 }
 
 #[cfg(feature = "unity_engine-guitargetattribute-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-guitargetattribute")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __GUITargetAttribute_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_gui_target_attr_value {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::SystemType as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GUITargetAttribute as ::unity2::ClassIdentity>::class(),
-                "GetGUITargetAttrValue",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GUITargetAttribute as ::unity2::ClassIdentity>::NAME,
-                        "GetGUITargetAttrValue",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_gui_target_attr_value(
-        klass: ::unity2::SystemType,
-        method_name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(::unity2::SystemType, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_gui_target_attr_value::get_method_info().method_ptr);
-        inner(klass, method_name, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __GUITargetAttribute_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_gui_target_attr_value { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: SystemType as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GUITargetAttribute as :: unity2 :: ClassIdentity > :: class () , "GetGUITargetAttrValue" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GUITargetAttribute as :: unity2 :: ClassIdentity > :: NAME , "GetGUITargetAttrValue" , e) , } } } pub unsafe fn get_gui_target_attr_value (klass : :: unity2 :: SystemType , method_name : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (:: unity2 :: SystemType , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_gui_target_attr_value :: get_method_info () . method_ptr ,) ; inner (klass , method_name , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-guitargetattribute")]
-impl GUITargetAttribute {
-    #[doc = "`GetGUITargetAttrValue(::unity2::SystemType, ::unity2::Il2CppString)` overload"]
-    pub fn get_gui_target_attr_value(
-        klass: impl ::core::convert::Into<::unity2::SystemType>,
-        method_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> i32 {
-        unsafe {
-            __GUITargetAttribute_unity2_raw::get_gui_target_attr_value(
-                ::core::convert::Into::into(klass),
-                ::core::convert::Into::into(method_name),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+impl GUITargetAttribute { # [doc = "`GetGUITargetAttrValue(::unity2::SystemType, ::unity2::Il2CppString)` overload"] pub fn get_gui_target_attr_value (klass : impl :: core :: convert :: Into < :: unity2 :: SystemType > , method_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> i32 { unsafe { __GUITargetAttribute_unity2_raw :: get_gui_target_attr_value (:: core :: convert :: Into :: into (klass) , :: core :: convert :: Into :: into (method_name) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-guitargetattribute")]
+impl GUITargetAttribute { pub fn get_gui_target_attr_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GUITargetAttribute_unity2_raw :: __lookup_get_gui_target_attr_value :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-guitargetattribute")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{GUITargetAttribute, IGUITargetAttribute};
+    pub use super::GUITargetAttribute;
+    pub use super::IGUITargetAttribute;
 }

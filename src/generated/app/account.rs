@@ -2,996 +2,239 @@
 
 #[cfg(feature = "app-account-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::procinst::{IProcInst, ProcInst},
-        system::{
-            delegate::{Delegate, IDelegate},
-            multicastdelegate::{IMulticastDelegate, MulticastDelegate},
-            object::{IObject, Object},
-            r#enum::{Enum, IEnum},
-            valuetype::{IValueType, ValueType},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/account/Account_SetupNsaResultFunction.md"))]
-    #[::unity2::class(namespace = "App", name = "Account.SetupNsaResultFunction")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct Account_SetupNsaResultFunction {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: procinst :: { IProcInst , ProcInst }
+ ;
+ use crate :: system :: delegate :: { Delegate , IDelegate }
+ ;
+ use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/account/Account_SetupNsaResult.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct Account_SetupNsaResult {
-        pub value: i32,
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/account/Account_SetupNsaResult.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct Account_SetupNsaResult  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for Account_SetupNsaResult  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "Account.SetupNsaResult";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    impl ::unity2::ClassIdentity for Account_SetupNsaResult {
-        const NAME: &'static str = "Account.SetupNsaResult";
-        const NAMESPACE: &'static str = "App";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  ::unity2::IlType for Account_SetupNsaResult  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::IlType for Account_SetupNsaResult {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  Account_SetupNsaResult  {
+    pub fn failed() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl Account_SetupNsaResult {
-        pub fn failed() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn cancelled() -> Self {
-            Self { value: 1 }
-        }
+    pub fn cancelled() -> Self {
+        Self { value: 1 }
 
-        pub fn succeeded() -> Self {
-            Self { value: 2 }
-        }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/account/Account_SetupNsaSequence_Label.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct Account_SetupNsaSequence_Label {
-        pub value: i32,
+
+    pub fn succeeded() -> Self {
+        Self { value: 2 }
+
     }
 
-    impl ::unity2::ClassIdentity for Account_SetupNsaSequence_Label {
-        const NAME: &'static str = "Account.SetupNsaSequence.Label";
-        const NAMESPACE: &'static str = "App";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/account/Account.md"))] # [:: unity2 :: class (namespace = "App" , name = "Account")] # [parent (crate :: system :: object :: Object)] pub struct Account {
+# [static_field] # [rename (name = "s_IsNsaValid")] pub s_is_nsa_valid : bool ,
+# [static_field] # [rename (name = "s_NsaIdTokenCache")] pub s_nsa_id_token_cache : :: unity2 :: Array < u8 > ,
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/account/Account_SetupNsaResultFunction.md"))] # [:: unity2 :: class (namespace = "App" , name = "Account.SetupNsaResultFunction")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct Account_SetupNsaResultFunction {}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/account/Account_SetupNsaSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "Account.SetupNsaSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct Account_SetupNsaSequence {
+# [offset (112)] # [rename (name = "m_IsShowError")] pub m_is_show_error : bool ,
+# [offset (120)] # [rename (name = "m_ResultFunc")] pub m_result_func : crate :: app :: account :: Account_SetupNsaResultFunction ,
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/account/Account_SetupNsaSequence_Label.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct Account_SetupNsaSequence_Label  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for Account_SetupNsaSequence_Label  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "Account.SetupNsaSequence.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for Account_SetupNsaSequence_Label {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  ::unity2::IlType for Account_SetupNsaSequence_Label  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl Account_SetupNsaSequence_Label {
-        pub fn ensure() -> Self {
-            Self { value: 0 }
-        }
+}
 
-        pub fn ensure_id_token_cache() -> Self {
-            Self { value: 1 }
-        }
 
-        pub fn error() -> Self {
-            Self { value: 2 }
-        }
+impl  Account_SetupNsaSequence_Label  {
+    pub fn ensure() -> Self {
+        Self { value: 0 }
 
-        pub fn show_error() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn cancel() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn end() -> Self {
-            Self { value: 5 }
-        }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/account/Account.md"))]
-    #[::unity2::class(namespace = "App", name = "Account")]
-    #[parent(crate::system::object::Object)]
-    pub struct Account {
-        #[static_field]
-        #[rename(name = "s_IsNsaValid")]
-        pub s_is_nsa_valid: bool,
-        #[static_field]
-        #[rename(name = "s_NsaIdTokenCache")]
-        pub s_nsa_id_token_cache: ::unity2::Array<u8>,
+
+    pub fn ensure_id_token_cache() -> Self {
+        Self { value: 1 }
+
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/account/Account_SetupNsaSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "Account.SetupNsaSequence")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct Account_SetupNsaSequence {
-        #[offset(112)]
-        #[rename(name = "m_IsShowError")]
-        pub m_is_show_error: bool,
-        #[offset(120)]
-        #[rename(name = "m_ResultFunc")]
-        pub m_result_func: crate::app::account::Account_SetupNsaResultFunction,
+
+    pub fn error() -> Self {
+        Self { value: 2 }
+
     }
+
+
+    pub fn show_error() -> Self {
+        Self { value: 3 }
+
+    }
+
+
+    pub fn cancel() -> Self {
+        Self { value: 4 }
+
+    }
+
+
+    pub fn end() -> Self {
+        Self { value: 5 }
+
+    }
+
+}
+
 }
 
 #[cfg(feature = "app-account-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-account")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __Account_SetupNsaResultFunction_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Account_SetupNsaResultFunction as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Account_SetupNsaResultFunction as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: Account_SetupNsaResultFunction,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(Account_SetupNsaResultFunction, crate::system::object::Object, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::account::Account_SetupNsaResult as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Account_SetupNsaResultFunction as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Account_SetupNsaResultFunction as ::unity2::ClassIdentity>::NAME,
-                        "Invoke",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn invoke(
-        this: Account_SetupNsaResultFunction,
-        result: crate::app::account::Account_SetupNsaResult,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(Account_SetupNsaResultFunction, crate::app::account::Account_SetupNsaResult, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
-        inner(this, result, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __Account_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_initialize { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Account as :: unity2 :: ClassIdentity > :: class () , "Initialize" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Account as :: unity2 :: ClassIdentity > :: NAME , "Initialize" , e) , } } } pub unsafe fn initialize (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_initialize :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_setup_nsa { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < crate :: app :: account :: Account_SetupNsaResultFunction as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Account as :: unity2 :: ClassIdentity > :: class () , "SetupNsa" , 3 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Account as :: unity2 :: ClassIdentity > :: NAME , "SetupNsa" , e) , } } } pub unsafe fn setup_nsa (super_ : crate :: app :: procinst :: ProcInst , is_show_error : bool , result_func : crate :: app :: account :: Account_SetupNsaResultFunction , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , bool , crate :: app :: account :: Account_SetupNsaResultFunction , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_setup_nsa :: get_method_info () . method_ptr ,) ; inner (super_ , is_show_error , result_func , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_user_valid { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Account as :: unity2 :: ClassIdentity > :: class () , "IsUserValid" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Account as :: unity2 :: ClassIdentity > :: NAME , "IsUserValid" , e) , } } } pub unsafe fn is_user_valid (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_user_valid :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_nsa_valid { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Account as :: unity2 :: ClassIdentity > :: class () , "IsNsaValid" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Account as :: unity2 :: ClassIdentity > :: NAME , "IsNsaValid" , e) , } } } pub unsafe fn is_nsa_valid (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_nsa_valid :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_nickname { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Account as :: unity2 :: ClassIdentity > :: class () , "GetNickname" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Account as :: unity2 :: ClassIdentity > :: NAME , "GetNickname" , e) , } } } pub unsafe fn get_nickname (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_nickname :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_nsa_id_token_cache { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Account as :: unity2 :: ClassIdentity > :: class () , "get_NsaIdTokenCache" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Account as :: unity2 :: ClassIdentity > :: NAME , "get_NsaIdTokenCache" , e) , } } } pub unsafe fn get_nsa_id_token_cache (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < u8 > { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < u8 > = :: core :: mem :: transmute (__lookup_get_nsa_id_token_cache :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Account as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Account as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
 
 #[cfg(feature = "app-account")]
-pub trait IAccount_SetupNsaResultFunctionMethods: IAccount_SetupNsaResultFunction {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
-        unsafe {
-            let __receiver =
-                <Account_SetupNsaResultFunction as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Account_SetupNsaResultFunction_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invoke(crate::app::account::Account_SetupNsaResult)` overload"]
-    fn invoke(self, result: impl ::core::convert::Into<crate::app::account::Account_SetupNsaResult>) -> () {
-        unsafe {
-            let __receiver =
-                <Account_SetupNsaResultFunction as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Account_SetupNsaResultFunction_unity2_raw::invoke(__receiver, ::core::convert::Into::into(result), ::core::option::Option::None)
-        }
-    }
-}
+impl Account { # [doc = "`Initialize()` overload"] pub fn initialize () -> () { unsafe { __Account_unity2_raw :: initialize (:: core :: option :: Option :: None) } } # [doc = "`SetupNsa(crate::app::procinst::ProcInst, bool, crate::app::account::Account_SetupNsaResultFunction)` overload"] pub fn setup_nsa (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , is_show_error : impl :: core :: convert :: Into < bool > , result_func : impl :: core :: convert :: Into < crate :: app :: account :: Account_SetupNsaResultFunction >) -> () { unsafe { __Account_unity2_raw :: setup_nsa (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (is_show_error) , :: core :: convert :: Into :: into (result_func) , :: core :: option :: Option :: None) } } # [doc = "`IsUserValid()` overload"] pub fn is_user_valid () -> bool { unsafe { __Account_unity2_raw :: is_user_valid (:: core :: option :: Option :: None) } } # [doc = "`IsNsaValid()` overload"] pub fn is_nsa_valid () -> bool { unsafe { __Account_unity2_raw :: is_nsa_valid (:: core :: option :: Option :: None) } } # [doc = "`GetNickname()` overload"] pub fn get_nickname () -> :: unity2 :: Il2CppString { unsafe { __Account_unity2_raw :: get_nickname (:: core :: option :: Option :: None) } } # [doc = "`get_NsaIdTokenCache()` overload"] pub fn get_nsa_id_token_cache () -> :: unity2 :: Array < u8 > { unsafe { __Account_unity2_raw :: get_nsa_id_token_cache (:: core :: option :: Option :: None) } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { __Account_unity2_raw :: cctor (:: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-account")]
-impl<__T: IAccount_SetupNsaResultFunction> IAccount_SetupNsaResultFunctionMethods for __T {}
+impl Account { pub fn initialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Account_unity2_raw :: __lookup_initialize :: get_method_info () } pub fn setup_nsa_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Account_unity2_raw :: __lookup_setup_nsa :: get_method_info () } pub fn is_user_valid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Account_unity2_raw :: __lookup_is_user_valid :: get_method_info () } pub fn is_nsa_valid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Account_unity2_raw :: __lookup_is_nsa_valid :: get_method_info () } pub fn get_nickname_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Account_unity2_raw :: __lookup_get_nickname :: get_method_info () } pub fn get_nsa_id_token_cache_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Account_unity2_raw :: __lookup_get_nsa_id_token_cache :: get_method_info () } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Account_unity2_raw :: __lookup_cctor :: get_method_info () } }
+
+#[cfg(feature = "app-account")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __Account_SetupNsaResultFunction_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type () , < :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Account_SetupNsaResultFunction as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Account_SetupNsaResultFunction as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : Account_SetupNsaResultFunction , object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Account_SetupNsaResultFunction , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , object , method , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_invoke { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: account :: Account_SetupNsaResult as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Account_SetupNsaResultFunction as :: unity2 :: ClassIdentity > :: class () , "Invoke" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Account_SetupNsaResultFunction as :: unity2 :: ClassIdentity > :: NAME , "Invoke" , e) , } } } pub unsafe fn invoke (this : Account_SetupNsaResultFunction , result : crate :: app :: account :: Account_SetupNsaResult , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Account_SetupNsaResultFunction , crate :: app :: account :: Account_SetupNsaResult , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_invoke :: get_method_info () . method_ptr ,) ; inner (this , result , __unity2_method_info) } }
+
+#[cfg(feature = "app-account")]
+pub trait IAccount_SetupNsaResultFunctionMethods : IAccount_SetupNsaResultFunction { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < Account_SetupNsaResultFunction as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Account_SetupNsaResultFunction_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } # [doc = "`Invoke(crate::app::account::Account_SetupNsaResult)` overload"] fn invoke (self , result : impl :: core :: convert :: Into < crate :: app :: account :: Account_SetupNsaResult >) -> () { unsafe { let __receiver = < Account_SetupNsaResultFunction as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Account_SetupNsaResultFunction_unity2_raw :: invoke (__receiver , :: core :: convert :: Into :: into (result) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-account")]
+impl < __T : IAccount_SetupNsaResultFunction > IAccount_SetupNsaResultFunctionMethods for __T { }
+
+#[cfg(feature = "app-account")]
+impl Account_SetupNsaResultFunction { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Account_SetupNsaResultFunction_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Account_SetupNsaResultFunction_unity2_raw :: __lookup_invoke :: get_method_info () } }
 
 #[cfg(feature = "app-account")]
 impl Account_SetupNsaResultFunction {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Account_SetupNsaResultFunction),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAccount_SetupNsaResultFunctionMethods>::ctor(this, object, method);
-        this
-    }
+# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Account_SetupNsaResultFunction) , :: core :: stringify ! (new) ,)) ; < Self as IAccount_SetupNsaResultFunctionMethods > :: ctor (this , object , method) ; this }
 }
 
 #[cfg(feature = "app-account")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __Account_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_initialize {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Account as ::unity2::ClassIdentity>::class(), "Initialize", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Account as ::unity2::ClassIdentity>::NAME,
-                        "Initialize",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn initialize(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_initialize::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_setup_nsa {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-                <crate::app::account::Account_SetupNsaResultFunction as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<Account as ::unity2::ClassIdentity>::class(), "SetupNsa", 3, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Account as ::unity2::ClassIdentity>::NAME,
-                        "SetupNsa",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn setup_nsa(
-        super_: crate::app::procinst::ProcInst,
-        is_show_error: bool,
-        result_func: crate::app::account::Account_SetupNsaResultFunction,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            bool,
-            crate::app::account::Account_SetupNsaResultFunction,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_setup_nsa::get_method_info().method_ptr);
-        inner(super_, is_show_error, result_func, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_user_valid {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Account as ::unity2::ClassIdentity>::class(), "IsUserValid", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Account as ::unity2::ClassIdentity>::NAME,
-                        "IsUserValid",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_user_valid(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_is_user_valid::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_nsa_valid {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Account as ::unity2::ClassIdentity>::class(), "IsNsaValid", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Account as ::unity2::ClassIdentity>::NAME,
-                        "IsNsaValid",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_nsa_valid(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_is_nsa_valid::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_nickname {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Account as ::unity2::ClassIdentity>::class(), "GetNickname", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Account as ::unity2::ClassIdentity>::NAME,
-                        "GetNickname",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_nickname(__unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_nickname::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_nsa_id_token_cache {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Account as ::unity2::ClassIdentity>::class(),
-                "get_NsaIdTokenCache",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Account as ::unity2::ClassIdentity>::NAME,
-                        "get_NsaIdTokenCache",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_nsa_id_token_cache(__unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Array<u8> {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> ::unity2::Array<u8> =
-            ::core::mem::transmute(__lookup_get_nsa_id_token_cache::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Account as ::unity2::ClassIdentity>::class(), ".cctor", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Account as ::unity2::ClassIdentity>::NAME,
-                        ".cctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __Account_SetupNsaSequence_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type () , < crate :: app :: account :: Account_SetupNsaResultFunction as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Account_SetupNsaSequence as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Account_SetupNsaSequence as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : Account_SetupNsaSequence , is_show_error : bool , result_func : crate :: app :: account :: Account_SetupNsaResultFunction , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Account_SetupNsaSequence , bool , crate :: app :: account :: Account_SetupNsaResultFunction , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , is_show_error , result_func , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ensure { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Account_SetupNsaSequence as :: unity2 :: ClassIdentity > :: class () , "Ensure" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Account_SetupNsaSequence as :: unity2 :: ClassIdentity > :: NAME , "Ensure" , e) , } } } pub unsafe fn ensure (this : Account_SetupNsaSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Account_SetupNsaSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ensure :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ensure_id_token_cache { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Account_SetupNsaSequence as :: unity2 :: ClassIdentity > :: class () , "EnsureIdTokenCache" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Account_SetupNsaSequence as :: unity2 :: ClassIdentity > :: NAME , "EnsureIdTokenCache" , e) , } } } pub unsafe fn ensure_id_token_cache (this : Account_SetupNsaSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Account_SetupNsaSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ensure_id_token_cache :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ensure_id_token_cache_tick { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Account_SetupNsaSequence as :: unity2 :: ClassIdentity > :: class () , "EnsureIdTokenCacheTick" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Account_SetupNsaSequence as :: unity2 :: ClassIdentity > :: NAME , "EnsureIdTokenCacheTick" , e) , } } } pub unsafe fn ensure_id_token_cache_tick (this : Account_SetupNsaSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Account_SetupNsaSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ensure_id_token_cache_tick :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_success { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Account_SetupNsaSequence as :: unity2 :: ClassIdentity > :: class () , "Success" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Account_SetupNsaSequence as :: unity2 :: ClassIdentity > :: NAME , "Success" , e) , } } } pub unsafe fn success (this : Account_SetupNsaSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Account_SetupNsaSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_success :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_check_error { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Account_SetupNsaSequence as :: unity2 :: ClassIdentity > :: class () , "CheckError" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Account_SetupNsaSequence as :: unity2 :: ClassIdentity > :: NAME , "CheckError" , e) , } } } pub unsafe fn check_error (this : Account_SetupNsaSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Account_SetupNsaSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_check_error :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_show_error { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Account_SetupNsaSequence as :: unity2 :: ClassIdentity > :: class () , "ShowError" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Account_SetupNsaSequence as :: unity2 :: ClassIdentity > :: NAME , "ShowError" , e) , } } } pub unsafe fn show_error (this : Account_SetupNsaSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Account_SetupNsaSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_show_error :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cancel { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Account_SetupNsaSequence as :: unity2 :: ClassIdentity > :: class () , "Cancel" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Account_SetupNsaSequence as :: unity2 :: ClassIdentity > :: NAME , "Cancel" , e) , } } } pub unsafe fn cancel (this : Account_SetupNsaSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Account_SetupNsaSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cancel :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_bind { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < crate :: app :: account :: Account_SetupNsaResultFunction as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Account_SetupNsaSequence as :: unity2 :: ClassIdentity > :: class () , "CreateBind" , 3 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Account_SetupNsaSequence as :: unity2 :: ClassIdentity > :: NAME , "CreateBind" , e) , } } } pub unsafe fn create_bind (super_ : crate :: app :: procinst :: ProcInst , is_show_error : bool , result_func : crate :: app :: account :: Account_SetupNsaResultFunction , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , bool , crate :: app :: account :: Account_SetupNsaResultFunction , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create_bind :: get_method_info () . method_ptr ,) ; inner (super_ , is_show_error , result_func , __unity2_method_info) } }
 
 #[cfg(feature = "app-account")]
-impl Account {
-    #[doc = "`Initialize()` overload"]
-    pub fn initialize() -> () {
-        unsafe { __Account_unity2_raw::initialize(::core::option::Option::None) }
-    }
-
-    #[doc = "`SetupNsa(crate::app::procinst::ProcInst, bool, crate::app::account::Account_SetupNsaResultFunction)` overload"]
-    pub fn setup_nsa(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        is_show_error: impl ::core::convert::Into<bool>,
-        result_func: impl ::core::convert::Into<crate::app::account::Account_SetupNsaResultFunction>,
-    ) -> () {
-        unsafe {
-            __Account_unity2_raw::setup_nsa(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(is_show_error),
-                ::core::convert::Into::into(result_func),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`IsUserValid()` overload"]
-    pub fn is_user_valid() -> bool {
-        unsafe { __Account_unity2_raw::is_user_valid(::core::option::Option::None) }
-    }
-
-    #[doc = "`IsNsaValid()` overload"]
-    pub fn is_nsa_valid() -> bool {
-        unsafe { __Account_unity2_raw::is_nsa_valid(::core::option::Option::None) }
-    }
-
-    #[doc = "`GetNickname()` overload"]
-    pub fn get_nickname() -> ::unity2::Il2CppString {
-        unsafe { __Account_unity2_raw::get_nickname(::core::option::Option::None) }
-    }
-
-    #[doc = "`get_NsaIdTokenCache()` overload"]
-    pub fn get_nsa_id_token_cache() -> ::unity2::Array<u8> {
-        unsafe { __Account_unity2_raw::get_nsa_id_token_cache(::core::option::Option::None) }
-    }
-
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __Account_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
+impl Account_SetupNsaSequence { # [doc = "`CreateBind(crate::app::procinst::ProcInst, bool, crate::app::account::Account_SetupNsaResultFunction)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , is_show_error : impl :: core :: convert :: Into < bool > , result_func : impl :: core :: convert :: Into < crate :: app :: account :: Account_SetupNsaResultFunction >) -> () { unsafe { __Account_SetupNsaSequence_unity2_raw :: create_bind (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (is_show_error) , :: core :: convert :: Into :: into (result_func) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-account")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __Account_SetupNsaSequence_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <bool as ::unity2::IlType>::il_type(),
-                <crate::app::account::Account_SetupNsaResultFunction as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Account_SetupNsaSequence as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Account_SetupNsaSequence as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: Account_SetupNsaSequence,
-        is_show_error: bool,
-        result_func: crate::app::account::Account_SetupNsaResultFunction,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            Account_SetupNsaSequence,
-            bool,
-            crate::app::account::Account_SetupNsaResultFunction,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, is_show_error, result_func, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ensure {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Account_SetupNsaSequence as ::unity2::ClassIdentity>::class(),
-                "Ensure",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Account_SetupNsaSequence as ::unity2::ClassIdentity>::NAME,
-                        "Ensure",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ensure(this: Account_SetupNsaSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Account_SetupNsaSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ensure::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ensure_id_token_cache {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Account_SetupNsaSequence as ::unity2::ClassIdentity>::class(),
-                "EnsureIdTokenCache",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Account_SetupNsaSequence as ::unity2::ClassIdentity>::NAME,
-                        "EnsureIdTokenCache",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ensure_id_token_cache(this: Account_SetupNsaSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Account_SetupNsaSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ensure_id_token_cache::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ensure_id_token_cache_tick {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Account_SetupNsaSequence as ::unity2::ClassIdentity>::class(),
-                "EnsureIdTokenCacheTick",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Account_SetupNsaSequence as ::unity2::ClassIdentity>::NAME,
-                        "EnsureIdTokenCacheTick",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ensure_id_token_cache_tick(this: Account_SetupNsaSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Account_SetupNsaSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ensure_id_token_cache_tick::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_success {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Account_SetupNsaSequence as ::unity2::ClassIdentity>::class(),
-                "Success",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Account_SetupNsaSequence as ::unity2::ClassIdentity>::NAME,
-                        "Success",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn success(this: Account_SetupNsaSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Account_SetupNsaSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_success::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_check_error {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Account_SetupNsaSequence as ::unity2::ClassIdentity>::class(),
-                "CheckError",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Account_SetupNsaSequence as ::unity2::ClassIdentity>::NAME,
-                        "CheckError",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn check_error(this: Account_SetupNsaSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Account_SetupNsaSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_check_error::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_show_error {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Account_SetupNsaSequence as ::unity2::ClassIdentity>::class(),
-                "ShowError",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Account_SetupNsaSequence as ::unity2::ClassIdentity>::NAME,
-                        "ShowError",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn show_error(this: Account_SetupNsaSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Account_SetupNsaSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_show_error::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cancel {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Account_SetupNsaSequence as ::unity2::ClassIdentity>::class(),
-                "Cancel",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Account_SetupNsaSequence as ::unity2::ClassIdentity>::NAME,
-                        "Cancel",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cancel(this: Account_SetupNsaSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Account_SetupNsaSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_cancel::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-                <crate::app::account::Account_SetupNsaResultFunction as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Account_SetupNsaSequence as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Account_SetupNsaSequence as ::unity2::ClassIdentity>::NAME,
-                        "CreateBind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        is_show_error: bool,
-        result_func: crate::app::account::Account_SetupNsaResultFunction,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            bool,
-            crate::app::account::Account_SetupNsaResultFunction,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
-        inner(super_, is_show_error, result_func, __unity2_method_info)
-    }
-}
+pub trait IAccount_SetupNsaSequenceMethods : IAccount_SetupNsaSequence { # [doc = "`.ctor(bool, crate::app::account::Account_SetupNsaResultFunction)` overload"] fn ctor (self , is_show_error : impl :: core :: convert :: Into < bool > , result_func : impl :: core :: convert :: Into < crate :: app :: account :: Account_SetupNsaResultFunction >) -> () { unsafe { let __receiver = < Account_SetupNsaSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Account_SetupNsaSequence_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (is_show_error) , :: core :: convert :: Into :: into (result_func) , :: core :: option :: Option :: None) } } # [doc = "`Ensure()` overload"] fn ensure (self ,) -> () { unsafe { let __receiver = < Account_SetupNsaSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Account_SetupNsaSequence_unity2_raw :: ensure (__receiver , :: core :: option :: Option :: None) } } # [doc = "`EnsureIdTokenCache()` overload"] fn ensure_id_token_cache (self ,) -> () { unsafe { let __receiver = < Account_SetupNsaSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Account_SetupNsaSequence_unity2_raw :: ensure_id_token_cache (__receiver , :: core :: option :: Option :: None) } } # [doc = "`EnsureIdTokenCacheTick()` overload"] fn ensure_id_token_cache_tick (self ,) -> () { unsafe { let __receiver = < Account_SetupNsaSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Account_SetupNsaSequence_unity2_raw :: ensure_id_token_cache_tick (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Success()` overload"] fn success (self ,) -> () { unsafe { let __receiver = < Account_SetupNsaSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Account_SetupNsaSequence_unity2_raw :: success (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CheckError()` overload"] fn check_error (self ,) -> () { unsafe { let __receiver = < Account_SetupNsaSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Account_SetupNsaSequence_unity2_raw :: check_error (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ShowError()` overload"] fn show_error (self ,) -> () { unsafe { let __receiver = < Account_SetupNsaSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Account_SetupNsaSequence_unity2_raw :: show_error (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Cancel()` overload"] fn cancel (self ,) -> () { unsafe { let __receiver = < Account_SetupNsaSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Account_SetupNsaSequence_unity2_raw :: cancel (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-account")]
+impl < __T : IAccount_SetupNsaSequence > IAccount_SetupNsaSequenceMethods for __T { }
+
+#[cfg(feature = "app-account")]
+impl Account_SetupNsaSequence { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Account_SetupNsaSequence_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn ensure_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Account_SetupNsaSequence_unity2_raw :: __lookup_ensure :: get_method_info () } pub fn ensure_id_token_cache_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Account_SetupNsaSequence_unity2_raw :: __lookup_ensure_id_token_cache :: get_method_info () } pub fn ensure_id_token_cache_tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Account_SetupNsaSequence_unity2_raw :: __lookup_ensure_id_token_cache_tick :: get_method_info () } pub fn success_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Account_SetupNsaSequence_unity2_raw :: __lookup_success :: get_method_info () } pub fn check_error_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Account_SetupNsaSequence_unity2_raw :: __lookup_check_error :: get_method_info () } pub fn show_error_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Account_SetupNsaSequence_unity2_raw :: __lookup_show_error :: get_method_info () } pub fn cancel_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Account_SetupNsaSequence_unity2_raw :: __lookup_cancel :: get_method_info () } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Account_SetupNsaSequence_unity2_raw :: __lookup_create_bind :: get_method_info () } }
 
 #[cfg(feature = "app-account")]
 impl Account_SetupNsaSequence {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, bool, crate::app::account::Account_SetupNsaResultFunction)` overload"]
-    pub fn create_bind(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        is_show_error: impl ::core::convert::Into<bool>,
-        result_func: impl ::core::convert::Into<crate::app::account::Account_SetupNsaResultFunction>,
-    ) -> () {
-        unsafe {
-            __Account_SetupNsaSequence_unity2_raw::create_bind(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(is_show_error),
-                ::core::convert::Into::into(result_func),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-account")]
-pub trait IAccount_SetupNsaSequenceMethods: IAccount_SetupNsaSequence {
-    #[doc = "`.ctor(bool, crate::app::account::Account_SetupNsaResultFunction)` overload"]
-    fn ctor(
-        self,
-        is_show_error: impl ::core::convert::Into<bool>,
-        result_func: impl ::core::convert::Into<crate::app::account::Account_SetupNsaResultFunction>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <Account_SetupNsaSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Account_SetupNsaSequence_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(is_show_error),
-                ::core::convert::Into::into(result_func),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Ensure()` overload"]
-    fn ensure(self) -> () {
-        unsafe {
-            let __receiver =
-                <Account_SetupNsaSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Account_SetupNsaSequence_unity2_raw::ensure(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`EnsureIdTokenCache()` overload"]
-    fn ensure_id_token_cache(self) -> () {
-        unsafe {
-            let __receiver =
-                <Account_SetupNsaSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Account_SetupNsaSequence_unity2_raw::ensure_id_token_cache(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`EnsureIdTokenCacheTick()` overload"]
-    fn ensure_id_token_cache_tick(self) -> () {
-        unsafe {
-            let __receiver =
-                <Account_SetupNsaSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Account_SetupNsaSequence_unity2_raw::ensure_id_token_cache_tick(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Success()` overload"]
-    fn success(self) -> () {
-        unsafe {
-            let __receiver =
-                <Account_SetupNsaSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Account_SetupNsaSequence_unity2_raw::success(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CheckError()` overload"]
-    fn check_error(self) -> () {
-        unsafe {
-            let __receiver =
-                <Account_SetupNsaSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Account_SetupNsaSequence_unity2_raw::check_error(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ShowError()` overload"]
-    fn show_error(self) -> () {
-        unsafe {
-            let __receiver =
-                <Account_SetupNsaSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Account_SetupNsaSequence_unity2_raw::show_error(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Cancel()` overload"]
-    fn cancel(self) -> () {
-        unsafe {
-            let __receiver =
-                <Account_SetupNsaSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Account_SetupNsaSequence_unity2_raw::cancel(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-account")]
-impl<__T: IAccount_SetupNsaSequence> IAccount_SetupNsaSequenceMethods for __T {}
-
-#[cfg(feature = "app-account")]
-impl Account_SetupNsaSequence {
-    #[doc = "`.ctor(bool, crate::app::account::Account_SetupNsaResultFunction)` — overload selector"]
-    pub fn new(is_show_error: bool, result_func: crate::app::account::Account_SetupNsaResultFunction) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Account_SetupNsaSequence),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAccount_SetupNsaSequenceMethods>::ctor(this, is_show_error, result_func);
-        this
-    }
+# [doc = "`.ctor(bool, crate::app::account::Account_SetupNsaResultFunction)` — overload selector"] pub fn new (is_show_error : bool , result_func : crate :: app :: account :: Account_SetupNsaResultFunction) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Account_SetupNsaSequence) , :: core :: stringify ! (new) ,)) ; < Self as IAccount_SetupNsaSequenceMethods > :: ctor (this , is_show_error , result_func) ; this }
 }
 
 #[cfg(feature = "app-account")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{
-        Account, Account_SetupNsaResult, Account_SetupNsaResultFunction, Account_SetupNsaSequence, Account_SetupNsaSequence_Label, IAccount,
-        IAccount_SetupNsaResultFunction, IAccount_SetupNsaResultFunctionMethods, IAccount_SetupNsaSequence, IAccount_SetupNsaSequenceMethods,
-    };
-    #[cfg(feature = "app-procinst")]
-    pub use crate::app::procinst::IProcInstMethods;
-    #[cfg(feature = "system-delegate")]
-    pub use crate::system::delegate::IDelegateMethods;
-    #[cfg(feature = "system-multicastdelegate")]
-    pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::{
-        app::procinst::IProcInst,
-        system::{delegate::IDelegate, multicastdelegate::IMulticastDelegate, object::IObject, r#enum::IEnum, valuetype::IValueType},
-    };
+    pub use super::Account_SetupNsaResult;
+    pub use super::Account;
+    pub use super::IAccount;
+    pub use super::Account_SetupNsaResultFunction;
+    pub use super::IAccount_SetupNsaResultFunction;
+    pub use super::IAccount_SetupNsaResultFunctionMethods;
+    pub use super::Account_SetupNsaSequence;
+    pub use super::IAccount_SetupNsaSequence;
+    pub use super::IAccount_SetupNsaSequenceMethods;
+    pub use super::Account_SetupNsaSequence_Label;
+    pub use crate::app::procinst::IProcInst;
+    pub use crate::system::delegate::IDelegate;
+    pub use crate::system::multicastdelegate::IMulticastDelegate;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "app-procinst")] pub use crate::app::procinst::IProcInstMethods;
+    #[cfg(feature = "system-delegate")] pub use crate::system::delegate::IDelegateMethods;
+    #[cfg(feature = "system-multicastdelegate")] pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

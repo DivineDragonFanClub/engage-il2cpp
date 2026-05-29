@@ -2,329 +2,72 @@
 
 #[cfg(feature = "root-akswitch-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        root::{
-            akdragdroptriggerhandler::{AkDragDropTriggerHandler, IAkDragDropTriggerHandler},
-            aktriggerhandler::{AkTriggerHandler, IAkTriggerHandler},
-        },
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akswitch/AkSwitch.md"))]
-    #[::unity2::class(namespace = "", name = "AkSwitch")]
-    #[parent(crate::root::akdragdroptriggerhandler::AkDragDropTriggerHandler)]
-    pub struct AkSwitch {
-        #[offset(56)]
-        #[rename(name = "valueIdInternal")]
-        pub value_id_internal: i32,
-        #[offset(60)]
-        #[rename(name = "groupIdInternal")]
-        pub group_id_internal: i32,
-        #[offset(64)]
-        #[rename(name = "valueGuidInternal")]
-        pub value_guid_internal: ::unity2::Array<u8>,
-        #[offset(72)]
-        #[rename(name = "groupGuidInternal")]
-        pub group_guid_internal: ::unity2::Array<u8>,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: root :: akdragdroptriggerhandler :: { AkDragDropTriggerHandler , IAkDragDropTriggerHandler }
+ ;
+ use crate :: root :: aktriggerhandler :: { AkTriggerHandler , IAkTriggerHandler }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akswitch/AkSwitch.md"))] # [:: unity2 :: class (namespace = "" , name = "AkSwitch")] # [parent (crate :: root :: akdragdroptriggerhandler :: AkDragDropTriggerHandler)] pub struct AkSwitch {
+# [offset (56)] # [rename (name = "valueIdInternal")] pub value_id_internal : i32 ,
+# [offset (60)] # [rename (name = "groupIdInternal")] pub group_id_internal : i32 ,
+# [offset (64)] # [rename (name = "valueGuidInternal")] pub value_guid_internal : :: unity2 :: Array < u8 > ,
+# [offset (72)] # [rename (name = "groupGuidInternal")] pub group_guid_internal : :: unity2 :: Array < u8 > ,
+}
+
 }
 
 #[cfg(feature = "root-akswitch-types")]
 pub use __types::*;
 
 #[cfg(feature = "root-akswitch")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AkSwitch_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_handle_event {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkSwitch as ::unity2::ClassIdentity>::class(),
-                "HandleEvent",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkSwitch as ::unity2::ClassIdentity>::NAME,
-                        "HandleEvent",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn handle_event(
-        this: AkSwitch,
-        in_game_object: crate::unity_engine::gameobject::GameObject,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(AkSwitch, crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_handle_event::get_method_info().method_ptr);
-        inner(this, in_game_object, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_value_id {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkSwitch as ::unity2::ClassIdentity>::class(),
-                "get_valueID",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkSwitch as ::unity2::ClassIdentity>::NAME,
-                        "get_valueID",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_value_id(this: AkSwitch, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AkSwitch, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_value_id::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_group_id {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkSwitch as ::unity2::ClassIdentity>::class(),
-                "get_groupID",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkSwitch as ::unity2::ClassIdentity>::NAME,
-                        "get_groupID",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_group_id(this: AkSwitch, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AkSwitch, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_group_id::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_value_guid {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkSwitch as ::unity2::ClassIdentity>::class(),
-                "get_valueGuid",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkSwitch as ::unity2::ClassIdentity>::NAME,
-                        "get_valueGuid",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_value_guid(this: AkSwitch, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Array<u8> {
-        let inner: extern "C" fn(AkSwitch, ::unity2::OptionalMethod) -> ::unity2::Array<u8> =
-            ::core::mem::transmute(__lookup_get_value_guid::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_group_guid {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkSwitch as ::unity2::ClassIdentity>::class(),
-                "get_groupGuid",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkSwitch as ::unity2::ClassIdentity>::NAME,
-                        "get_groupGuid",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_group_guid(this: AkSwitch, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Array<u8> {
-        let inner: extern "C" fn(AkSwitch, ::unity2::OptionalMethod) -> ::unity2::Array<u8> =
-            ::core::mem::transmute(__lookup_get_group_guid::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<AkSwitch as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkSwitch as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: AkSwitch, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AkSwitch, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __AkSwitch_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_handle_event { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: gameobject :: GameObject as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkSwitch as :: unity2 :: ClassIdentity > :: class () , "HandleEvent" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkSwitch as :: unity2 :: ClassIdentity > :: NAME , "HandleEvent" , e) , } } } pub unsafe fn handle_event (this : AkSwitch , in_game_object : crate :: unity_engine :: gameobject :: GameObject , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkSwitch , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_handle_event :: get_method_info () . method_ptr ,) ; inner (this , in_game_object , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_value_id { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkSwitch as :: unity2 :: ClassIdentity > :: class () , "get_valueID" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkSwitch as :: unity2 :: ClassIdentity > :: NAME , "get_valueID" , e) , } } } pub unsafe fn get_value_id (this : AkSwitch , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (AkSwitch , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_value_id :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_group_id { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkSwitch as :: unity2 :: ClassIdentity > :: class () , "get_groupID" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkSwitch as :: unity2 :: ClassIdentity > :: NAME , "get_groupID" , e) , } } } pub unsafe fn get_group_id (this : AkSwitch , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (AkSwitch , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_group_id :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_value_guid { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkSwitch as :: unity2 :: ClassIdentity > :: class () , "get_valueGuid" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkSwitch as :: unity2 :: ClassIdentity > :: NAME , "get_valueGuid" , e) , } } } pub unsafe fn get_value_guid (this : AkSwitch , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < u8 > { let inner : extern "C" fn (AkSwitch , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < u8 > = :: core :: mem :: transmute (__lookup_get_value_guid :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_group_guid { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkSwitch as :: unity2 :: ClassIdentity > :: class () , "get_groupGuid" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkSwitch as :: unity2 :: ClassIdentity > :: NAME , "get_groupGuid" , e) , } } } pub unsafe fn get_group_guid (this : AkSwitch , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < u8 > { let inner : extern "C" fn (AkSwitch , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < u8 > = :: core :: mem :: transmute (__lookup_get_group_guid :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkSwitch as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkSwitch as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : AkSwitch , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkSwitch , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "root-akswitch")]
-pub trait IAkSwitchMethods: IAkSwitch {
-    #[doc = "`HandleEvent(crate::unity_engine::gameobject::GameObject)` overload"]
-    fn handle_event(self, in_game_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>) -> () {
-        unsafe {
-            let __receiver = <AkSwitch as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkSwitch_unity2_raw::handle_event(__receiver, ::core::convert::Into::into(in_game_object), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_valueID()` overload"]
-    fn get_value_id(self) -> i32 {
-        unsafe {
-            let __receiver = <AkSwitch as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkSwitch_unity2_raw::get_value_id(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_groupID()` overload"]
-    fn get_group_id(self) -> i32 {
-        unsafe {
-            let __receiver = <AkSwitch as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkSwitch_unity2_raw::get_group_id(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_valueGuid()` overload"]
-    fn get_value_guid(self) -> ::unity2::Array<u8> {
-        unsafe {
-            let __receiver = <AkSwitch as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkSwitch_unity2_raw::get_value_guid(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_groupGuid()` overload"]
-    fn get_group_guid(self) -> ::unity2::Array<u8> {
-        unsafe {
-            let __receiver = <AkSwitch as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkSwitch_unity2_raw::get_group_guid(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <AkSwitch as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkSwitch_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IAkSwitchMethods : IAkSwitch { # [doc = "`HandleEvent(crate::unity_engine::gameobject::GameObject)` overload"] fn handle_event (self , in_game_object : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> () { unsafe { let __receiver = < AkSwitch as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkSwitch_unity2_raw :: handle_event (__receiver , :: core :: convert :: Into :: into (in_game_object) , :: core :: option :: Option :: None) } } # [doc = "`get_valueID()` overload"] fn get_value_id (self ,) -> i32 { unsafe { let __receiver = < AkSwitch as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkSwitch_unity2_raw :: get_value_id (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_groupID()` overload"] fn get_group_id (self ,) -> i32 { unsafe { let __receiver = < AkSwitch as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkSwitch_unity2_raw :: get_group_id (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_valueGuid()` overload"] fn get_value_guid (self ,) -> :: unity2 :: Array < u8 > { unsafe { let __receiver = < AkSwitch as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkSwitch_unity2_raw :: get_value_guid (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_groupGuid()` overload"] fn get_group_guid (self ,) -> :: unity2 :: Array < u8 > { unsafe { let __receiver = < AkSwitch as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkSwitch_unity2_raw :: get_group_guid (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AkSwitch as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkSwitch_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "root-akswitch")]
-impl<__T: IAkSwitch> IAkSwitchMethods for __T {}
+impl < __T : IAkSwitch > IAkSwitchMethods for __T { }
+
+#[cfg(feature = "root-akswitch")]
+impl AkSwitch { pub fn handle_event_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkSwitch_unity2_raw :: __lookup_handle_event :: get_method_info () } pub fn get_value_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkSwitch_unity2_raw :: __lookup_get_value_id :: get_method_info () } pub fn get_group_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkSwitch_unity2_raw :: __lookup_get_group_id :: get_method_info () } pub fn get_value_guid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkSwitch_unity2_raw :: __lookup_get_value_guid :: get_method_info () } pub fn get_group_guid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkSwitch_unity2_raw :: __lookup_get_group_guid :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkSwitch_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "root-akswitch")]
 impl AkSwitch {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(AkSwitch), ::core::stringify!(new),));
-        <Self as IAkSwitchMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkSwitch) , :: core :: stringify ! (new) ,)) ; < Self as IAkSwitchMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "root-akswitch")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{AkSwitch, IAkSwitch, IAkSwitchMethods};
-    #[cfg(feature = "root-akdragdroptriggerhandler")]
-    pub use crate::root::akdragdroptriggerhandler::IAkDragDropTriggerHandlerMethods;
-    #[cfg(feature = "root-aktriggerhandler")]
-    pub use crate::root::aktriggerhandler::IAkTriggerHandlerMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        root::{akdragdroptriggerhandler::IAkDragDropTriggerHandler, aktriggerhandler::IAkTriggerHandler},
-        system::object::IObject,
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::AkSwitch;
+    pub use super::IAkSwitch;
+    pub use super::IAkSwitchMethods;
+    pub use crate::root::akdragdroptriggerhandler::IAkDragDropTriggerHandler;
+    pub use crate::root::aktriggerhandler::IAkTriggerHandler;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "root-akdragdroptriggerhandler")] pub use crate::root::akdragdroptriggerhandler::IAkDragDropTriggerHandlerMethods;
+    #[cfg(feature = "root-aktriggerhandler")] pub use crate::root::aktriggerhandler::IAkTriggerHandlerMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

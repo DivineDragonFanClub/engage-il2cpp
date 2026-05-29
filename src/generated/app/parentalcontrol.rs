@@ -2,475 +2,66 @@
 
 #[cfg(feature = "app-parentalcontrol-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::procinst::{IProcInst, ProcInst},
-        system::object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/parentalcontrol/ParentalControl_BeginFCSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "ParentalControl.BeginFCSequence")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct ParentalControl_BeginFCSequence {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: procinst :: { IProcInst , ProcInst }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/parentalcontrol/ParentalControl.md"))]
-    #[::unity2::class(namespace = "App", name = "ParentalControl")]
-    #[parent(crate::system::object::Object)]
-    pub struct ParentalControl {
-        #[static_field]
-        #[rename(name = "s_IsBeginFC")]
-        pub s_is_begin_fc: bool,
-    }
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/parentalcontrol/ParentalControl.md"))] # [:: unity2 :: class (namespace = "App" , name = "ParentalControl")] # [parent (crate :: system :: object :: Object)] pub struct ParentalControl {
+# [static_field] # [rename (name = "s_IsBeginFC")] pub s_is_begin_fc : bool ,
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/parentalcontrol/ParentalControl_BeginFCSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "ParentalControl.BeginFCSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct ParentalControl_BeginFCSequence {}
+
 }
 
 #[cfg(feature = "app-parentalcontrol-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-parentalcontrol")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ParentalControl_BeginFCSequence_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_net_keep_alive_on {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ParentalControl_BeginFCSequence as ::unity2::ClassIdentity>::class(),
-                "NetKeepAliveOn",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ParentalControl_BeginFCSequence as ::unity2::ClassIdentity>::NAME,
-                        "NetKeepAliveOn",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn net_keep_alive_on(this: ParentalControl_BeginFCSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ParentalControl_BeginFCSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_net_keep_alive_on::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_net_keep_alive_off {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ParentalControl_BeginFCSequence as ::unity2::ClassIdentity>::class(),
-                "NetKeepAliveOff",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ParentalControl_BeginFCSequence as ::unity2::ClassIdentity>::NAME,
-                        "NetKeepAliveOff",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn net_keep_alive_off(this: ParentalControl_BeginFCSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ParentalControl_BeginFCSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_net_keep_alive_off::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_try_begin {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ParentalControl_BeginFCSequence as ::unity2::ClassIdentity>::class(),
-                "TryBegin",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ParentalControl_BeginFCSequence as ::unity2::ClassIdentity>::NAME,
-                        "TryBegin",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn try_begin(this: ParentalControl_BeginFCSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ParentalControl_BeginFCSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_try_begin::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ParentalControl_BeginFCSequence as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ParentalControl_BeginFCSequence as ::unity2::ClassIdentity>::NAME,
-                        "CreateBind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_bind(super_: crate::app::procinst::ProcInst, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
-        inner(super_, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ParentalControl_BeginFCSequence as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ParentalControl_BeginFCSequence as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: ParentalControl_BeginFCSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ParentalControl_BeginFCSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ParentalControl_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_begin_free_communication { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ParentalControl as :: unity2 :: ClassIdentity > :: class () , "BeginFreeCommunication" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ParentalControl as :: unity2 :: ClassIdentity > :: NAME , "BeginFreeCommunication" , e) , } } } pub unsafe fn begin_free_communication (super_ : crate :: app :: procinst :: ProcInst , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_begin_free_communication :: get_method_info () . method_ptr ,) ; inner (super_ , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_result_begin_free_communication { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ParentalControl as :: unity2 :: ClassIdentity > :: class () , "get_ResultBeginFreeCommunication" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ParentalControl as :: unity2 :: ClassIdentity > :: NAME , "get_ResultBeginFreeCommunication" , e) , } } } pub unsafe fn get_result_begin_free_communication (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_result_begin_free_communication :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_end_free_communication { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ParentalControl as :: unity2 :: ClassIdentity > :: class () , "EndFreeCommunication" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ParentalControl as :: unity2 :: ClassIdentity > :: NAME , "EndFreeCommunication" , e) , } } } pub unsafe fn end_free_communication (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_end_free_communication :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_free_communication_available { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ParentalControl as :: unity2 :: ClassIdentity > :: class () , "IsFreeCommunicationAvailable" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ParentalControl as :: unity2 :: ClassIdentity > :: NAME , "IsFreeCommunicationAvailable" , e) , } } } pub unsafe fn is_free_communication_available (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_free_communication_available :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ParentalControl as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ParentalControl as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
+
+#[cfg(feature = "app-parentalcontrol")]
+impl ParentalControl { # [doc = "`BeginFreeCommunication(crate::app::procinst::ProcInst)` overload"] pub fn begin_free_communication (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { __ParentalControl_unity2_raw :: begin_free_communication (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } # [doc = "`get_ResultBeginFreeCommunication()` overload"] pub fn get_result_begin_free_communication () -> bool { unsafe { __ParentalControl_unity2_raw :: get_result_begin_free_communication (:: core :: option :: Option :: None) } } # [doc = "`EndFreeCommunication()` overload"] pub fn end_free_communication () -> () { unsafe { __ParentalControl_unity2_raw :: end_free_communication (:: core :: option :: Option :: None) } } # [doc = "`IsFreeCommunicationAvailable()` overload"] pub fn is_free_communication_available () -> bool { unsafe { __ParentalControl_unity2_raw :: is_free_communication_available (:: core :: option :: Option :: None) } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { __ParentalControl_unity2_raw :: cctor (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-parentalcontrol")]
+impl ParentalControl { pub fn begin_free_communication_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ParentalControl_unity2_raw :: __lookup_begin_free_communication :: get_method_info () } pub fn get_result_begin_free_communication_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ParentalControl_unity2_raw :: __lookup_get_result_begin_free_communication :: get_method_info () } pub fn end_free_communication_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ParentalControl_unity2_raw :: __lookup_end_free_communication :: get_method_info () } pub fn is_free_communication_available_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ParentalControl_unity2_raw :: __lookup_is_free_communication_available :: get_method_info () } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ParentalControl_unity2_raw :: __lookup_cctor :: get_method_info () } }
+
+#[cfg(feature = "app-parentalcontrol")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ParentalControl_BeginFCSequence_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_net_keep_alive_on { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ParentalControl_BeginFCSequence as :: unity2 :: ClassIdentity > :: class () , "NetKeepAliveOn" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ParentalControl_BeginFCSequence as :: unity2 :: ClassIdentity > :: NAME , "NetKeepAliveOn" , e) , } } } pub unsafe fn net_keep_alive_on (this : ParentalControl_BeginFCSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ParentalControl_BeginFCSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_net_keep_alive_on :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_net_keep_alive_off { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ParentalControl_BeginFCSequence as :: unity2 :: ClassIdentity > :: class () , "NetKeepAliveOff" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ParentalControl_BeginFCSequence as :: unity2 :: ClassIdentity > :: NAME , "NetKeepAliveOff" , e) , } } } pub unsafe fn net_keep_alive_off (this : ParentalControl_BeginFCSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ParentalControl_BeginFCSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_net_keep_alive_off :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_try_begin { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ParentalControl_BeginFCSequence as :: unity2 :: ClassIdentity > :: class () , "TryBegin" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ParentalControl_BeginFCSequence as :: unity2 :: ClassIdentity > :: NAME , "TryBegin" , e) , } } } pub unsafe fn try_begin (this : ParentalControl_BeginFCSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ParentalControl_BeginFCSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_try_begin :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_bind { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ParentalControl_BeginFCSequence as :: unity2 :: ClassIdentity > :: class () , "CreateBind" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ParentalControl_BeginFCSequence as :: unity2 :: ClassIdentity > :: NAME , "CreateBind" , e) , } } } pub unsafe fn create_bind (super_ : crate :: app :: procinst :: ProcInst , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create_bind :: get_method_info () . method_ptr ,) ; inner (super_ , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ParentalControl_BeginFCSequence as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ParentalControl_BeginFCSequence as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : ParentalControl_BeginFCSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ParentalControl_BeginFCSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-parentalcontrol")]
+impl ParentalControl_BeginFCSequence { # [doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { __ParentalControl_BeginFCSequence_unity2_raw :: create_bind (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-parentalcontrol")]
+pub trait IParentalControl_BeginFCSequenceMethods : IParentalControl_BeginFCSequence { # [doc = "`NetKeepAliveOn()` overload"] fn net_keep_alive_on (self ,) -> () { unsafe { let __receiver = < ParentalControl_BeginFCSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ParentalControl_BeginFCSequence_unity2_raw :: net_keep_alive_on (__receiver , :: core :: option :: Option :: None) } } # [doc = "`NetKeepAliveOff()` overload"] fn net_keep_alive_off (self ,) -> () { unsafe { let __receiver = < ParentalControl_BeginFCSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ParentalControl_BeginFCSequence_unity2_raw :: net_keep_alive_off (__receiver , :: core :: option :: Option :: None) } } # [doc = "`TryBegin()` overload"] fn try_begin (self ,) -> () { unsafe { let __receiver = < ParentalControl_BeginFCSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ParentalControl_BeginFCSequence_unity2_raw :: try_begin (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ParentalControl_BeginFCSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ParentalControl_BeginFCSequence_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-parentalcontrol")]
+impl < __T : IParentalControl_BeginFCSequence > IParentalControl_BeginFCSequenceMethods for __T { }
+
+#[cfg(feature = "app-parentalcontrol")]
+impl ParentalControl_BeginFCSequence { pub fn net_keep_alive_on_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ParentalControl_BeginFCSequence_unity2_raw :: __lookup_net_keep_alive_on :: get_method_info () } pub fn net_keep_alive_off_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ParentalControl_BeginFCSequence_unity2_raw :: __lookup_net_keep_alive_off :: get_method_info () } pub fn try_begin_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ParentalControl_BeginFCSequence_unity2_raw :: __lookup_try_begin :: get_method_info () } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ParentalControl_BeginFCSequence_unity2_raw :: __lookup_create_bind :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ParentalControl_BeginFCSequence_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-parentalcontrol")]
 impl ParentalControl_BeginFCSequence {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
-    pub fn create_bind(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
-        unsafe { __ParentalControl_BeginFCSequence_unity2_raw::create_bind(::core::convert::Into::into(super_), ::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-parentalcontrol")]
-pub trait IParentalControl_BeginFCSequenceMethods: IParentalControl_BeginFCSequence {
-    #[doc = "`NetKeepAliveOn()` overload"]
-    fn net_keep_alive_on(self) -> () {
-        unsafe {
-            let __receiver =
-                <ParentalControl_BeginFCSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ParentalControl_BeginFCSequence_unity2_raw::net_keep_alive_on(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`NetKeepAliveOff()` overload"]
-    fn net_keep_alive_off(self) -> () {
-        unsafe {
-            let __receiver =
-                <ParentalControl_BeginFCSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ParentalControl_BeginFCSequence_unity2_raw::net_keep_alive_off(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`TryBegin()` overload"]
-    fn try_begin(self) -> () {
-        unsafe {
-            let __receiver =
-                <ParentalControl_BeginFCSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ParentalControl_BeginFCSequence_unity2_raw::try_begin(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <ParentalControl_BeginFCSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ParentalControl_BeginFCSequence_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-parentalcontrol")]
-impl<__T: IParentalControl_BeginFCSequence> IParentalControl_BeginFCSequenceMethods for __T {}
-
-#[cfg(feature = "app-parentalcontrol")]
-impl ParentalControl_BeginFCSequence {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ParentalControl_BeginFCSequence),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IParentalControl_BeginFCSequenceMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-parentalcontrol")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ParentalControl_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_begin_free_communication {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ParentalControl as ::unity2::ClassIdentity>::class(),
-                "BeginFreeCommunication",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ParentalControl as ::unity2::ClassIdentity>::NAME,
-                        "BeginFreeCommunication",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn begin_free_communication(super_: crate::app::procinst::ProcInst, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_begin_free_communication::get_method_info().method_ptr);
-        inner(super_, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_result_begin_free_communication {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ParentalControl as ::unity2::ClassIdentity>::class(),
-                "get_ResultBeginFreeCommunication",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ParentalControl as ::unity2::ClassIdentity>::NAME,
-                        "get_ResultBeginFreeCommunication",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_result_begin_free_communication(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_result_begin_free_communication::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_end_free_communication {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ParentalControl as ::unity2::ClassIdentity>::class(),
-                "EndFreeCommunication",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ParentalControl as ::unity2::ClassIdentity>::NAME,
-                        "EndFreeCommunication",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn end_free_communication(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_end_free_communication::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_free_communication_available {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ParentalControl as ::unity2::ClassIdentity>::class(),
-                "IsFreeCommunicationAvailable",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ParentalControl as ::unity2::ClassIdentity>::NAME,
-                        "IsFreeCommunicationAvailable",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_free_communication_available(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_free_communication_available::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ParentalControl as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ParentalControl as ::unity2::ClassIdentity>::NAME,
-                        ".cctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-parentalcontrol")]
-impl ParentalControl {
-    #[doc = "`BeginFreeCommunication(crate::app::procinst::ProcInst)` overload"]
-    pub fn begin_free_communication(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
-        unsafe { __ParentalControl_unity2_raw::begin_free_communication(::core::convert::Into::into(super_), ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_ResultBeginFreeCommunication()` overload"]
-    pub fn get_result_begin_free_communication() -> bool {
-        unsafe { __ParentalControl_unity2_raw::get_result_begin_free_communication(::core::option::Option::None) }
-    }
-
-    #[doc = "`EndFreeCommunication()` overload"]
-    pub fn end_free_communication() -> () {
-        unsafe { __ParentalControl_unity2_raw::end_free_communication(::core::option::Option::None) }
-    }
-
-    #[doc = "`IsFreeCommunicationAvailable()` overload"]
-    pub fn is_free_communication_available() -> bool {
-        unsafe { __ParentalControl_unity2_raw::is_free_communication_available(::core::option::Option::None) }
-    }
-
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __ParentalControl_unity2_raw::cctor(::core::option::Option::None) }
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ParentalControl_BeginFCSequence) , :: core :: stringify ! (new) ,)) ; < Self as IParentalControl_BeginFCSequenceMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-parentalcontrol")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{
-        IParentalControl, IParentalControl_BeginFCSequence, IParentalControl_BeginFCSequenceMethods, ParentalControl, ParentalControl_BeginFCSequence,
-    };
-    #[cfg(feature = "app-procinst")]
-    pub use crate::app::procinst::IProcInstMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::{app::procinst::IProcInst, system::object::IObject};
+    pub use super::ParentalControl;
+    pub use super::IParentalControl;
+    pub use super::ParentalControl_BeginFCSequence;
+    pub use super::IParentalControl_BeginFCSequence;
+    pub use super::IParentalControl_BeginFCSequenceMethods;
+    pub use crate::app::procinst::IProcInst;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "app-procinst")] pub use crate::app::procinst::IProcInstMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

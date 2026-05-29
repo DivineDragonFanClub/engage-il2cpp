@@ -2,82 +2,34 @@
 
 #[cfg(feature = "unity_engine-event_systems-iscrollhandler-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/iscrollhandler/IScrollHandler.md"))]
-    #[::unity2::class(namespace = "UnityEngine.EventSystems", name = "IScrollHandler")]
-    pub struct IScrollHandler {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/iscrollhandler/IScrollHandler.md"))] # [:: unity2 :: class (namespace = "UnityEngine.EventSystems" , name = "IScrollHandler")] pub struct IScrollHandler {}
+
 }
 
 #[cfg(feature = "unity_engine-event_systems-iscrollhandler-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-event_systems-iscrollhandler")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __IScrollHandler_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_scroll {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::event_systems::pointereventdata::PointerEventData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <IScrollHandler as ::unity2::ClassIdentity>::class(),
-                "OnScroll",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <IScrollHandler as ::unity2::ClassIdentity>::NAME,
-                        "OnScroll",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_scroll(
-        this: IScrollHandler,
-        event_data: crate::unity_engine::event_systems::pointereventdata::PointerEventData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            IScrollHandler,
-            crate::unity_engine::event_systems::pointereventdata::PointerEventData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_on_scroll::get_method_info().method_ptr);
-        inner(this, event_data, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __IScrollHandler_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_scroll { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< IScrollHandler as :: unity2 :: ClassIdentity > :: class () , "OnScroll" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < IScrollHandler as :: unity2 :: ClassIdentity > :: NAME , "OnScroll" , e) , } } } pub unsafe fn on_scroll (this : IScrollHandler , event_data : crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (IScrollHandler , crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_scroll :: get_method_info () . method_ptr ,) ; inner (this , event_data , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-event_systems-iscrollhandler")]
-pub trait IIScrollHandlerMethods: IIScrollHandler {
-    #[doc = "`OnScroll(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]
-    fn on_scroll(self, event_data: impl ::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>) -> () {
-        unsafe {
-            let __receiver = <IScrollHandler as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __IScrollHandler_unity2_raw::on_scroll(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)
-        }
-    }
-}
+pub trait IIScrollHandlerMethods : IIScrollHandler { # [doc = "`OnScroll(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"] fn on_scroll (self , event_data : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData >) -> () { unsafe { let __receiver = < IScrollHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IScrollHandler_unity2_raw :: on_scroll (__receiver , :: core :: convert :: Into :: into (event_data) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-event_systems-iscrollhandler")]
-impl<__T: IIScrollHandler> IIScrollHandlerMethods for __T {}
+impl < __T : IIScrollHandler > IIScrollHandlerMethods for __T { }
+
+#[cfg(feature = "unity_engine-event_systems-iscrollhandler")]
+impl IScrollHandler { pub fn on_scroll_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __IScrollHandler_unity2_raw :: __lookup_on_scroll :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-event_systems-iscrollhandler")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IIScrollHandler, IIScrollHandlerMethods, IScrollHandler};
+    pub use super::IScrollHandler;
+    pub use super::IIScrollHandler;
+    pub use super::IIScrollHandlerMethods;
 }

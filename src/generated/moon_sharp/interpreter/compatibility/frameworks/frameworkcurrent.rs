@@ -2,263 +2,55 @@
 
 #[cfg(feature = "moon_sharp-interpreter-compatibility-frameworks-frameworkcurrent-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        moon_sharp::interpreter::compatibility::frameworks::{
-            frameworkbase::{FrameworkBase, IFrameworkBase},
-            frameworkclrbase::{FrameworkClrBase, IFrameworkClrBase},
-            frameworkreflectionbase::{FrameworkReflectionBase, IFrameworkReflectionBase},
-        },
-        system::object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/compatibility/frameworks/frameworkcurrent/FrameworkCurrent.md"))]
-    #[::unity2::class(namespace = "MoonSharp.Interpreter.Compatibility.Frameworks", name = "FrameworkCurrent")]
-    #[parent(crate::moon_sharp::interpreter::compatibility::frameworks::frameworkclrbase::FrameworkClrBase)]
-    pub struct FrameworkCurrent {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: moon_sharp :: interpreter :: compatibility :: frameworks :: frameworkbase :: { FrameworkBase , IFrameworkBase }
+ ;
+ use crate :: moon_sharp :: interpreter :: compatibility :: frameworks :: frameworkclrbase :: { FrameworkClrBase , IFrameworkClrBase }
+ ;
+ use crate :: moon_sharp :: interpreter :: compatibility :: frameworks :: frameworkreflectionbase :: { FrameworkReflectionBase , IFrameworkReflectionBase }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/compatibility/frameworks/frameworkcurrent/FrameworkCurrent.md"))] # [:: unity2 :: class (namespace = "MoonSharp.Interpreter.Compatibility.Frameworks" , name = "FrameworkCurrent")] # [parent (crate :: moon_sharp :: interpreter :: compatibility :: frameworks :: frameworkclrbase :: FrameworkClrBase)] pub struct FrameworkCurrent {}
+
 }
 
 #[cfg(feature = "moon_sharp-interpreter-compatibility-frameworks-frameworkcurrent-types")]
 pub use __types::*;
 
 #[cfg(feature = "moon_sharp-interpreter-compatibility-frameworks-frameworkcurrent")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __FrameworkCurrent_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_db_null {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FrameworkCurrent as ::unity2::ClassIdentity>::class(),
-                "IsDbNull",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FrameworkCurrent as ::unity2::ClassIdentity>::NAME,
-                        "IsDbNull",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_db_null(this: FrameworkCurrent, o: crate::system::object::Object, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(FrameworkCurrent, crate::system::object::Object, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_db_null::get_method_info().method_ptr);
-        inner(this, o, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_string_contains_char {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <u16 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FrameworkCurrent as ::unity2::ClassIdentity>::class(),
-                "StringContainsChar",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FrameworkCurrent as ::unity2::ClassIdentity>::NAME,
-                        "StringContainsChar",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn string_contains_char(
-        this: FrameworkCurrent,
-        str: ::unity2::Il2CppString,
-        chr: u16,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(FrameworkCurrent, ::unity2::Il2CppString, u16, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_string_contains_char::get_method_info().method_ptr);
-        inner(this, str, chr, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_interface {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::SystemType as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FrameworkCurrent as ::unity2::ClassIdentity>::class(),
-                "GetInterface",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FrameworkCurrent as ::unity2::ClassIdentity>::NAME,
-                        "GetInterface",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_interface(
-        this: FrameworkCurrent,
-        r#type: ::unity2::SystemType,
-        name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::SystemType {
-        let inner: extern "C" fn(FrameworkCurrent, ::unity2::SystemType, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> ::unity2::SystemType =
-            ::core::mem::transmute(__lookup_get_interface::get_method_info().method_ptr);
-        inner(this, r#type, name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FrameworkCurrent as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FrameworkCurrent as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: FrameworkCurrent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(FrameworkCurrent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __FrameworkCurrent_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_db_null { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FrameworkCurrent as :: unity2 :: ClassIdentity > :: class () , "IsDbNull" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FrameworkCurrent as :: unity2 :: ClassIdentity > :: NAME , "IsDbNull" , e) , } } } pub unsafe fn is_db_null (this : FrameworkCurrent , o : crate :: system :: object :: Object , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (FrameworkCurrent , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_db_null :: get_method_info () . method_ptr ,) ; inner (this , o , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_string_contains_char { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < u16 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FrameworkCurrent as :: unity2 :: ClassIdentity > :: class () , "StringContainsChar" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FrameworkCurrent as :: unity2 :: ClassIdentity > :: NAME , "StringContainsChar" , e) , } } } pub unsafe fn string_contains_char (this : FrameworkCurrent , str : :: unity2 :: Il2CppString , chr : u16 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (FrameworkCurrent , :: unity2 :: Il2CppString , u16 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_string_contains_char :: get_method_info () . method_ptr ,) ; inner (this , str , chr , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_interface { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: SystemType as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FrameworkCurrent as :: unity2 :: ClassIdentity > :: class () , "GetInterface" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FrameworkCurrent as :: unity2 :: ClassIdentity > :: NAME , "GetInterface" , e) , } } } pub unsafe fn get_interface (this : FrameworkCurrent , r#type : :: unity2 :: SystemType , name : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: SystemType { let inner : extern "C" fn (FrameworkCurrent , :: unity2 :: SystemType , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: SystemType = :: core :: mem :: transmute (__lookup_get_interface :: get_method_info () . method_ptr ,) ; inner (this , r#type , name , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FrameworkCurrent as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FrameworkCurrent as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : FrameworkCurrent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FrameworkCurrent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "moon_sharp-interpreter-compatibility-frameworks-frameworkcurrent")]
-pub trait IFrameworkCurrentMethods: IFrameworkCurrent {
-    #[doc = "`IsDbNull(crate::system::object::Object)` overload"]
-    fn is_db_null(self, o: impl ::core::convert::Into<crate::system::object::Object>) -> bool {
-        unsafe {
-            let __receiver = <FrameworkCurrent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FrameworkCurrent_unity2_raw::is_db_null(__receiver, ::core::convert::Into::into(o), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`StringContainsChar(::unity2::Il2CppString, u16)` overload"]
-    fn string_contains_char(self, str: impl ::core::convert::Into<::unity2::Il2CppString>, chr: impl ::core::convert::Into<u16>) -> bool {
-        unsafe {
-            let __receiver = <FrameworkCurrent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FrameworkCurrent_unity2_raw::string_contains_char(
-                __receiver,
-                ::core::convert::Into::into(str),
-                ::core::convert::Into::into(chr),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetInterface(::unity2::SystemType, ::unity2::Il2CppString)` overload"]
-    fn get_interface(
-        self,
-        r#type: impl ::core::convert::Into<::unity2::SystemType>,
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> ::unity2::SystemType {
-        unsafe {
-            let __receiver = <FrameworkCurrent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FrameworkCurrent_unity2_raw::get_interface(
-                __receiver,
-                ::core::convert::Into::into(r#type),
-                ::core::convert::Into::into(name),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <FrameworkCurrent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FrameworkCurrent_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IFrameworkCurrentMethods : IFrameworkCurrent { # [doc = "`IsDbNull(crate::system::object::Object)` overload"] fn is_db_null (self , o : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { let __receiver = < FrameworkCurrent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FrameworkCurrent_unity2_raw :: is_db_null (__receiver , :: core :: convert :: Into :: into (o) , :: core :: option :: Option :: None) } } # [doc = "`StringContainsChar(::unity2::Il2CppString, u16)` overload"] fn string_contains_char (self , str : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , chr : impl :: core :: convert :: Into < u16 >) -> bool { unsafe { let __receiver = < FrameworkCurrent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FrameworkCurrent_unity2_raw :: string_contains_char (__receiver , :: core :: convert :: Into :: into (str) , :: core :: convert :: Into :: into (chr) , :: core :: option :: Option :: None) } } # [doc = "`GetInterface(::unity2::SystemType, ::unity2::Il2CppString)` overload"] fn get_interface (self , r#type : impl :: core :: convert :: Into < :: unity2 :: SystemType > , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: SystemType { unsafe { let __receiver = < FrameworkCurrent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FrameworkCurrent_unity2_raw :: get_interface (__receiver , :: core :: convert :: Into :: into (r#type) , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < FrameworkCurrent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FrameworkCurrent_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "moon_sharp-interpreter-compatibility-frameworks-frameworkcurrent")]
-impl<__T: IFrameworkCurrent> IFrameworkCurrentMethods for __T {}
+impl < __T : IFrameworkCurrent > IFrameworkCurrentMethods for __T { }
+
+#[cfg(feature = "moon_sharp-interpreter-compatibility-frameworks-frameworkcurrent")]
+impl FrameworkCurrent { pub fn is_db_null_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FrameworkCurrent_unity2_raw :: __lookup_is_db_null :: get_method_info () } pub fn string_contains_char_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FrameworkCurrent_unity2_raw :: __lookup_string_contains_char :: get_method_info () } pub fn get_interface_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FrameworkCurrent_unity2_raw :: __lookup_get_interface :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FrameworkCurrent_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "moon_sharp-interpreter-compatibility-frameworks-frameworkcurrent")]
 impl FrameworkCurrent {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(FrameworkCurrent),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IFrameworkCurrentMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FrameworkCurrent) , :: core :: stringify ! (new) ,)) ; < Self as IFrameworkCurrentMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "moon_sharp-interpreter-compatibility-frameworks-frameworkcurrent")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{FrameworkCurrent, IFrameworkCurrent, IFrameworkCurrentMethods};
-    #[cfg(feature = "moon_sharp-interpreter-compatibility-frameworks-frameworkbase")]
-    pub use crate::moon_sharp::interpreter::compatibility::frameworks::frameworkbase::IFrameworkBaseMethods;
-    #[cfg(feature = "moon_sharp-interpreter-compatibility-frameworks-frameworkclrbase")]
-    pub use crate::moon_sharp::interpreter::compatibility::frameworks::frameworkclrbase::IFrameworkClrBaseMethods;
-    #[cfg(feature = "moon_sharp-interpreter-compatibility-frameworks-frameworkreflectionbase")]
-    pub use crate::moon_sharp::interpreter::compatibility::frameworks::frameworkreflectionbase::IFrameworkReflectionBaseMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::{
-        moon_sharp::interpreter::compatibility::frameworks::{
-            frameworkbase::IFrameworkBase, frameworkclrbase::IFrameworkClrBase, frameworkreflectionbase::IFrameworkReflectionBase,
-        },
-        system::object::IObject,
-    };
+    pub use super::FrameworkCurrent;
+    pub use super::IFrameworkCurrent;
+    pub use super::IFrameworkCurrentMethods;
+    pub use crate::moon_sharp::interpreter::compatibility::frameworks::frameworkbase::IFrameworkBase;
+    pub use crate::moon_sharp::interpreter::compatibility::frameworks::frameworkclrbase::IFrameworkClrBase;
+    pub use crate::moon_sharp::interpreter::compatibility::frameworks::frameworkreflectionbase::IFrameworkReflectionBase;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "moon_sharp-interpreter-compatibility-frameworks-frameworkbase")] pub use crate::moon_sharp::interpreter::compatibility::frameworks::frameworkbase::IFrameworkBaseMethods;
+    #[cfg(feature = "moon_sharp-interpreter-compatibility-frameworks-frameworkclrbase")] pub use crate::moon_sharp::interpreter::compatibility::frameworks::frameworkclrbase::IFrameworkClrBaseMethods;
+    #[cfg(feature = "moon_sharp-interpreter-compatibility-frameworks-frameworkreflectionbase")] pub use crate::moon_sharp::interpreter::compatibility::frameworks::frameworkreflectionbase::IFrameworkReflectionBaseMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

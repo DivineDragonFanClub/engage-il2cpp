@@ -2,243 +2,55 @@
 
 #[cfg(feature = "root-gamemessageopen-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::{
-            object_2::{IObject_2, Object_2},
-            scriptableobject::{IScriptableObject, ScriptableObject},
-            statemachinebehaviour::{IStateMachineBehaviour, StateMachineBehaviour},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/gamemessageopen/GameMessageOpen.md"))]
-    #[::unity2::class(namespace = "", name = "GameMessageOpen")]
-    #[parent(crate::unity_engine::statemachinebehaviour::StateMachineBehaviour)]
-    pub struct GameMessageOpen {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+ use crate :: unity_engine :: scriptableobject :: { IScriptableObject , ScriptableObject }
+ ;
+ use crate :: unity_engine :: statemachinebehaviour :: { IStateMachineBehaviour , StateMachineBehaviour }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/gamemessageopen/GameMessageOpen.md"))] # [:: unity2 :: class (namespace = "" , name = "GameMessageOpen")] # [parent (crate :: unity_engine :: statemachinebehaviour :: StateMachineBehaviour)] pub struct GameMessageOpen {}
+
 }
 
 #[cfg(feature = "root-gamemessageopen-types")]
 pub use __types::*;
 
 #[cfg(feature = "root-gamemessageopen")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __GameMessageOpen_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_state_enter {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::animator::Animator as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::animatorstateinfo::AnimatorStateInfo as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GameMessageOpen as ::unity2::ClassIdentity>::class(),
-                "OnStateEnter",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GameMessageOpen as ::unity2::ClassIdentity>::NAME,
-                        "OnStateEnter",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_state_enter(
-        this: GameMessageOpen,
-        animator: crate::unity_engine::animator::Animator,
-        state_info: crate::unity_engine::animatorstateinfo::AnimatorStateInfo,
-        layer_index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            GameMessageOpen,
-            crate::unity_engine::animator::Animator,
-            crate::unity_engine::animatorstateinfo::AnimatorStateInfo,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_on_state_enter::get_method_info().method_ptr);
-        inner(this, animator, state_info, layer_index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_state_exit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::animator::Animator as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::animatorstateinfo::AnimatorStateInfo as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GameMessageOpen as ::unity2::ClassIdentity>::class(),
-                "OnStateExit",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GameMessageOpen as ::unity2::ClassIdentity>::NAME,
-                        "OnStateExit",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_state_exit(
-        this: GameMessageOpen,
-        animator: crate::unity_engine::animator::Animator,
-        state_info: crate::unity_engine::animatorstateinfo::AnimatorStateInfo,
-        layer_index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            GameMessageOpen,
-            crate::unity_engine::animator::Animator,
-            crate::unity_engine::animatorstateinfo::AnimatorStateInfo,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_on_state_exit::get_method_info().method_ptr);
-        inner(this, animator, state_info, layer_index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GameMessageOpen as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GameMessageOpen as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: GameMessageOpen, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GameMessageOpen, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __GameMessageOpen_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_state_enter { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: animator :: Animator as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: animatorstateinfo :: AnimatorStateInfo as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GameMessageOpen as :: unity2 :: ClassIdentity > :: class () , "OnStateEnter" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GameMessageOpen as :: unity2 :: ClassIdentity > :: NAME , "OnStateEnter" , e) , } } } pub unsafe fn on_state_enter (this : GameMessageOpen , animator : crate :: unity_engine :: animator :: Animator , state_info : crate :: unity_engine :: animatorstateinfo :: AnimatorStateInfo , layer_index : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GameMessageOpen , crate :: unity_engine :: animator :: Animator , crate :: unity_engine :: animatorstateinfo :: AnimatorStateInfo , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_state_enter :: get_method_info () . method_ptr ,) ; inner (this , animator , state_info , layer_index , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_state_exit { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: animator :: Animator as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: animatorstateinfo :: AnimatorStateInfo as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GameMessageOpen as :: unity2 :: ClassIdentity > :: class () , "OnStateExit" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GameMessageOpen as :: unity2 :: ClassIdentity > :: NAME , "OnStateExit" , e) , } } } pub unsafe fn on_state_exit (this : GameMessageOpen , animator : crate :: unity_engine :: animator :: Animator , state_info : crate :: unity_engine :: animatorstateinfo :: AnimatorStateInfo , layer_index : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GameMessageOpen , crate :: unity_engine :: animator :: Animator , crate :: unity_engine :: animatorstateinfo :: AnimatorStateInfo , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_state_exit :: get_method_info () . method_ptr ,) ; inner (this , animator , state_info , layer_index , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GameMessageOpen as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GameMessageOpen as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : GameMessageOpen , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GameMessageOpen , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "root-gamemessageopen")]
-pub trait IGameMessageOpenMethods: IGameMessageOpen {
-    #[doc = "`OnStateEnter(crate::unity_engine::animator::Animator, crate::unity_engine::animatorstateinfo::AnimatorStateInfo, i32)` overload"]
-    fn on_state_enter(
-        self,
-        animator: impl ::core::convert::Into<crate::unity_engine::animator::Animator>,
-        state_info: impl ::core::convert::Into<crate::unity_engine::animatorstateinfo::AnimatorStateInfo>,
-        layer_index: impl ::core::convert::Into<i32>,
-    ) -> () {
-        unsafe {
-            let __receiver = <GameMessageOpen as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GameMessageOpen_unity2_raw::on_state_enter(
-                __receiver,
-                ::core::convert::Into::into(animator),
-                ::core::convert::Into::into(state_info),
-                ::core::convert::Into::into(layer_index),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`OnStateExit(crate::unity_engine::animator::Animator, crate::unity_engine::animatorstateinfo::AnimatorStateInfo, i32)` overload"]
-    fn on_state_exit(
-        self,
-        animator: impl ::core::convert::Into<crate::unity_engine::animator::Animator>,
-        state_info: impl ::core::convert::Into<crate::unity_engine::animatorstateinfo::AnimatorStateInfo>,
-        layer_index: impl ::core::convert::Into<i32>,
-    ) -> () {
-        unsafe {
-            let __receiver = <GameMessageOpen as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GameMessageOpen_unity2_raw::on_state_exit(
-                __receiver,
-                ::core::convert::Into::into(animator),
-                ::core::convert::Into::into(state_info),
-                ::core::convert::Into::into(layer_index),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <GameMessageOpen as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GameMessageOpen_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IGameMessageOpenMethods : IGameMessageOpen { # [doc = "`OnStateEnter(crate::unity_engine::animator::Animator, crate::unity_engine::animatorstateinfo::AnimatorStateInfo, i32)` overload"] fn on_state_enter (self , animator : impl :: core :: convert :: Into < crate :: unity_engine :: animator :: Animator > , state_info : impl :: core :: convert :: Into < crate :: unity_engine :: animatorstateinfo :: AnimatorStateInfo > , layer_index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < GameMessageOpen as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GameMessageOpen_unity2_raw :: on_state_enter (__receiver , :: core :: convert :: Into :: into (animator) , :: core :: convert :: Into :: into (state_info) , :: core :: convert :: Into :: into (layer_index) , :: core :: option :: Option :: None) } } # [doc = "`OnStateExit(crate::unity_engine::animator::Animator, crate::unity_engine::animatorstateinfo::AnimatorStateInfo, i32)` overload"] fn on_state_exit (self , animator : impl :: core :: convert :: Into < crate :: unity_engine :: animator :: Animator > , state_info : impl :: core :: convert :: Into < crate :: unity_engine :: animatorstateinfo :: AnimatorStateInfo > , layer_index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < GameMessageOpen as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GameMessageOpen_unity2_raw :: on_state_exit (__receiver , :: core :: convert :: Into :: into (animator) , :: core :: convert :: Into :: into (state_info) , :: core :: convert :: Into :: into (layer_index) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GameMessageOpen as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GameMessageOpen_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "root-gamemessageopen")]
-impl<__T: IGameMessageOpen> IGameMessageOpenMethods for __T {}
+impl < __T : IGameMessageOpen > IGameMessageOpenMethods for __T { }
+
+#[cfg(feature = "root-gamemessageopen")]
+impl GameMessageOpen { pub fn on_state_enter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GameMessageOpen_unity2_raw :: __lookup_on_state_enter :: get_method_info () } pub fn on_state_exit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GameMessageOpen_unity2_raw :: __lookup_on_state_exit :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GameMessageOpen_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "root-gamemessageopen")]
 impl GameMessageOpen {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GameMessageOpen),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGameMessageOpenMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GameMessageOpen) , :: core :: stringify ! (new) ,)) ; < Self as IGameMessageOpenMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "root-gamemessageopen")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{GameMessageOpen, IGameMessageOpen, IGameMessageOpenMethods};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    #[cfg(feature = "unity_engine-scriptableobject")]
-    pub use crate::unity_engine::scriptableobject::IScriptableObjectMethods;
-    #[cfg(feature = "unity_engine-statemachinebehaviour")]
-    pub use crate::unity_engine::statemachinebehaviour::IStateMachineBehaviourMethods;
-    pub use crate::{
-        system::object::IObject,
-        unity_engine::{object_2::IObject_2, scriptableobject::IScriptableObject, statemachinebehaviour::IStateMachineBehaviour},
-    };
+    pub use super::GameMessageOpen;
+    pub use super::IGameMessageOpen;
+    pub use super::IGameMessageOpenMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::object_2::IObject_2;
+    pub use crate::unity_engine::scriptableobject::IScriptableObject;
+    pub use crate::unity_engine::statemachinebehaviour::IStateMachineBehaviour;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
+    #[cfg(feature = "unity_engine-scriptableobject")] pub use crate::unity_engine::scriptableobject::IScriptableObjectMethods;
+    #[cfg(feature = "unity_engine-statemachinebehaviour")] pub use crate::unity_engine::statemachinebehaviour::IStateMachineBehaviourMethods;
 }

@@ -2,225 +2,52 @@
 
 #[cfg(feature = "combat-fsmbuildercannon-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        combat::fsmbuilder::{FSMBuilder, IFSMBuilder},
-        system::object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/fsmbuildercannon/FSMBuilderCannon.md"))]
-    #[::unity2::class(namespace = "Combat", name = "FSMBuilderCannon")]
-    #[parent(crate::combat::fsmbuilder::FSMBuilder)]
-    pub struct FSMBuilderCannon {
-        #[offset(16)]
-        #[rename(name = "m_Cannon")]
-        pub m_cannon: crate::app::mapobject::MapObject,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: combat :: fsmbuilder :: { FSMBuilder , IFSMBuilder }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/fsmbuildercannon/FSMBuilderCannon.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "FSMBuilderCannon")] # [parent (crate :: combat :: fsmbuilder :: FSMBuilder)] pub struct FSMBuilderCannon {
+# [offset (16)] # [rename (name = "m_Cannon")] pub m_cannon : crate :: app :: mapobject :: MapObject ,
+}
+
 }
 
 #[cfg(feature = "combat-fsmbuildercannon-types")]
 pub use __types::*;
 
 #[cfg(feature = "combat-fsmbuildercannon")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __FSMBuilderCannon_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_build {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FSMBuilderCannon as ::unity2::ClassIdentity>::class(),
-                "Build",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FSMBuilderCannon as ::unity2::ClassIdentity>::NAME,
-                        "Build",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn build(this: FSMBuilderCannon, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(FSMBuilderCannon, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_build::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_rotate {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FSMBuilderCannon as ::unity2::ClassIdentity>::class(),
-                "Rotate",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FSMBuilderCannon as ::unity2::ClassIdentity>::NAME,
-                        "Rotate",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn rotate(__unity2_method_info: ::unity2::OptionalMethod) -> crate::system::collections::ienumerator::IEnumerator {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::system::collections::ienumerator::IEnumerator =
-            ::core::mem::transmute(__lookup_rotate::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_build_skipover {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FSMBuilderCannon as ::unity2::ClassIdentity>::class(),
-                "BuildSkipover",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FSMBuilderCannon as ::unity2::ClassIdentity>::NAME,
-                        "BuildSkipover",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn build_skipover(this: FSMBuilderCannon, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(FSMBuilderCannon, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_build_skipover::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FSMBuilderCannon as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FSMBuilderCannon as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: FSMBuilderCannon, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(FSMBuilderCannon, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __FSMBuilderCannon_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_build { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FSMBuilderCannon as :: unity2 :: ClassIdentity > :: class () , "Build" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FSMBuilderCannon as :: unity2 :: ClassIdentity > :: NAME , "Build" , e) , } } } pub unsafe fn build (this : FSMBuilderCannon , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FSMBuilderCannon , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_build :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_rotate { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FSMBuilderCannon as :: unity2 :: ClassIdentity > :: class () , "Rotate" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FSMBuilderCannon as :: unity2 :: ClassIdentity > :: NAME , "Rotate" , e) , } } } pub unsafe fn rotate (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute (__lookup_rotate :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_build_skipover { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FSMBuilderCannon as :: unity2 :: ClassIdentity > :: class () , "BuildSkipover" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FSMBuilderCannon as :: unity2 :: ClassIdentity > :: NAME , "BuildSkipover" , e) , } } } pub unsafe fn build_skipover (this : FSMBuilderCannon , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FSMBuilderCannon , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_build_skipover :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FSMBuilderCannon as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FSMBuilderCannon as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : FSMBuilderCannon , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FSMBuilderCannon , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "combat-fsmbuildercannon")]
+impl FSMBuilderCannon { # [doc = "`Rotate()` overload"] pub fn rotate () -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { __FSMBuilderCannon_unity2_raw :: rotate (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "combat-fsmbuildercannon")]
+pub trait IFSMBuilderCannonMethods : IFSMBuilderCannon { # [doc = "`Build()` overload"] fn build (self ,) -> () { unsafe { let __receiver = < FSMBuilderCannon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FSMBuilderCannon_unity2_raw :: build (__receiver , :: core :: option :: Option :: None) } } # [doc = "`BuildSkipover()` overload"] fn build_skipover (self ,) -> () { unsafe { let __receiver = < FSMBuilderCannon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FSMBuilderCannon_unity2_raw :: build_skipover (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < FSMBuilderCannon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FSMBuilderCannon_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "combat-fsmbuildercannon")]
+impl < __T : IFSMBuilderCannon > IFSMBuilderCannonMethods for __T { }
+
+#[cfg(feature = "combat-fsmbuildercannon")]
+impl FSMBuilderCannon { pub fn build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FSMBuilderCannon_unity2_raw :: __lookup_build :: get_method_info () } pub fn rotate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FSMBuilderCannon_unity2_raw :: __lookup_rotate :: get_method_info () } pub fn build_skipover_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FSMBuilderCannon_unity2_raw :: __lookup_build_skipover :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FSMBuilderCannon_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "combat-fsmbuildercannon")]
 impl FSMBuilderCannon {
-    #[doc = "`Rotate()` overload"]
-    pub fn rotate() -> crate::system::collections::ienumerator::IEnumerator {
-        unsafe { __FSMBuilderCannon_unity2_raw::rotate(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "combat-fsmbuildercannon")]
-pub trait IFSMBuilderCannonMethods: IFSMBuilderCannon {
-    #[doc = "`Build()` overload"]
-    fn build(self) -> () {
-        unsafe {
-            let __receiver = <FSMBuilderCannon as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FSMBuilderCannon_unity2_raw::build(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`BuildSkipover()` overload"]
-    fn build_skipover(self) -> () {
-        unsafe {
-            let __receiver = <FSMBuilderCannon as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FSMBuilderCannon_unity2_raw::build_skipover(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <FSMBuilderCannon as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FSMBuilderCannon_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "combat-fsmbuildercannon")]
-impl<__T: IFSMBuilderCannon> IFSMBuilderCannonMethods for __T {}
-
-#[cfg(feature = "combat-fsmbuildercannon")]
-impl FSMBuilderCannon {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(FSMBuilderCannon),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IFSMBuilderCannonMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FSMBuilderCannon) , :: core :: stringify ! (new) ,)) ; < Self as IFSMBuilderCannonMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "combat-fsmbuildercannon")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{FSMBuilderCannon, IFSMBuilderCannon, IFSMBuilderCannonMethods};
-    #[cfg(feature = "combat-fsmbuilder")]
-    pub use crate::combat::fsmbuilder::IFSMBuilderMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::{combat::fsmbuilder::IFSMBuilder, system::object::IObject};
+    pub use super::FSMBuilderCannon;
+    pub use super::IFSMBuilderCannon;
+    pub use super::IFSMBuilderCannonMethods;
+    pub use crate::combat::fsmbuilder::IFSMBuilder;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "combat-fsmbuilder")] pub use crate::combat::fsmbuilder::IFSMBuilderMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

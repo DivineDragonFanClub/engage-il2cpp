@@ -2,80 +2,48 @@
 
 #[cfg(feature = "moon_sharp-interpreter-interop-propertytableassigner_1-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/propertytableassigner_1/PropertyTableAssigner_1.md"))]
-    #[::unity2::class(namespace = "MoonSharp.Interpreter.Interop", name = "PropertyTableAssigner`1")]
-    #[parent(crate::system::object::Object)]
-    pub struct PropertyTableAssigner_1<T0: ::unity2::ClassIdentity> {
-        #[rename(name = "m_InternalAssigner")]
-        pub m_internal_assigner: crate::moon_sharp::interpreter::interop::propertytableassigner::PropertyTableAssigner,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/propertytableassigner_1/PropertyTableAssigner_1.md"))] # [:: unity2 :: class (namespace = "MoonSharp.Interpreter.Interop" , name = "PropertyTableAssigner`1")] # [parent (crate :: system :: object :: Object)] pub struct PropertyTableAssigner_1 < T0 : :: unity2 :: ClassIdentity > {
+# [rename (name = "m_InternalAssigner")] pub m_internal_assigner : crate :: moon_sharp :: interpreter :: interop :: propertytableassigner :: PropertyTableAssigner ,
+}
+
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-propertytableassigner_1-types")]
 pub use __types::*;
 
 #[cfg(feature = "moon_sharp-interpreter-interop-propertytableassigner_1")]
-#[::unity2::methods]
-impl<T0: ::unity2::ClassIdentity> PropertyTableAssigner_1<T0> {
-    #[doc = "`.ctor(::unity2::Array<::unity2::Il2CppString>)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, expected_missing_properties: ::unity2::Array<::unity2::Il2CppString>) -> ();
+# [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity > PropertyTableAssigner_1 < T0 > {
+# [doc = "`.ctor(::unity2::Array<::unity2::Il2CppString>)` overload"] # [method (name = ".ctor" , args = 1)] pub fn ctor (self , expected_missing_properties : :: unity2 :: Array < :: unity2 :: Il2CppString >) -> () ;
 
-    #[doc = "`AddExpectedMissingProperty(::unity2::Il2CppString)` overload"]
-    #[method(name = "AddExpectedMissingProperty", args = 1)]
-    pub fn add_expected_missing_property(self, name: ::unity2::Il2CppString) -> ();
+# [doc = "`AddExpectedMissingProperty(::unity2::Il2CppString)` overload"] # [method (name = "AddExpectedMissingProperty" , args = 1)] pub fn add_expected_missing_property (self , name : :: unity2 :: Il2CppString) -> () ;
 
-    #[doc = "`AssignObject(T0, crate::moon_sharp::interpreter::table::Table)` overload"]
-    #[method(name = "AssignObject", args = 2)]
-    pub fn assign_object(self, obj: T0, data: crate::moon_sharp::interpreter::table::Table) -> ();
+# [doc = "`AssignObject(T0, crate::moon_sharp::interpreter::table::Table)` overload"] # [method (name = "AssignObject" , args = 2)] pub fn assign_object (self , obj : T0 , data : crate :: moon_sharp :: interpreter :: table :: Table) -> () ;
 
-    #[doc = "`GetTypeUnsafeAssigner()` overload"]
-    #[method(name = "GetTypeUnsafeAssigner", args = 0)]
-    pub fn get_type_unsafe_assigner(self) -> crate::moon_sharp::interpreter::interop::propertytableassigner::PropertyTableAssigner;
+# [doc = "`GetTypeUnsafeAssigner()` overload"] # [method (name = "GetTypeUnsafeAssigner" , args = 0)] pub fn get_type_unsafe_assigner (self ,) -> crate :: moon_sharp :: interpreter :: interop :: propertytableassigner :: PropertyTableAssigner ;
 
-    #[doc = "`SetSubassignerForType(::unity2::SystemType, crate::moon_sharp::interpreter::interop::ipropertytableassigner_interface::IPropertyTableAssigner_Interface)` overload"]
-    #[method(name = "SetSubassignerForType", args = 2)]
-    pub fn set_subassigner_for_type(
-        self,
-        property_type: ::unity2::SystemType,
-        assigner: crate::moon_sharp::interpreter::interop::ipropertytableassigner_interface::IPropertyTableAssigner_Interface,
-    ) -> ();
+# [doc = "`SetSubassignerForType(::unity2::SystemType, crate::moon_sharp::interpreter::interop::ipropertytableassigner_interface::IPropertyTableAssigner_Interface)` overload"] # [method (name = "SetSubassignerForType" , args = 2)] pub fn set_subassigner_for_type (self , property_type : :: unity2 :: SystemType , assigner : crate :: moon_sharp :: interpreter :: interop :: ipropertytableassigner_interface :: IPropertyTableAssigner_Interface) -> () ;
 
-    #[doc = "`MoonSharp.Interpreter.Interop.IPropertyTableAssigner.AssignObjectUnchecked(crate::system::object::Object, crate::moon_sharp::interpreter::table::Table)` overload"]
-    #[method(name = "MoonSharp.Interpreter.Interop.IPropertyTableAssigner.AssignObjectUnchecked", args = 2)]
-    pub fn moon_sharp_interpreter_interop_i_property_table_assigner_assign_object_unchecked(
-        self,
-        o: crate::system::object::Object,
-        data: crate::moon_sharp::interpreter::table::Table,
-    ) -> ();
+# [doc = "`MoonSharp.Interpreter.Interop.IPropertyTableAssigner.AssignObjectUnchecked(crate::system::object::Object, crate::moon_sharp::interpreter::table::Table)` overload"] # [method (name = "MoonSharp.Interpreter.Interop.IPropertyTableAssigner.AssignObjectUnchecked" , args = 2)] pub fn moon_sharp_interpreter_interop_i_property_table_assigner_assign_object_unchecked (self , o : crate :: system :: object :: Object , data : crate :: moon_sharp :: interpreter :: table :: Table) -> () ;
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-propertytableassigner_1")]
-impl<T0: ::unity2::ClassIdentity> PropertyTableAssigner_1<T0> {
-    #[doc = "`.ctor(::unity2::Array<::unity2::Il2CppString>)` — overload selector"]
-    pub fn new(expected_missing_properties: ::unity2::Array<::unity2::Il2CppString>) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(PropertyTableAssigner_1),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IPropertyTableAssigner_1Methods<T0>>::ctor(this, expected_missing_properties);
-        this
-    }
+impl < T0 : :: unity2 :: ClassIdentity > PropertyTableAssigner_1 < T0 > {
+# [doc = "`.ctor(::unity2::Array<::unity2::Il2CppString>)` — overload selector"] pub fn new (expected_missing_properties : :: unity2 :: Array < :: unity2 :: Il2CppString >) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (PropertyTableAssigner_1) , :: core :: stringify ! (new) ,)) ; < Self as IPropertyTableAssigner_1Methods < T0 > > :: ctor (this , expected_missing_properties) ; this }
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-propertytableassigner_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IPropertyTableAssigner_1, IPropertyTableAssigner_1Methods, PropertyTableAssigner_1};
+    pub use super::PropertyTableAssigner_1;
+    pub use super::IPropertyTableAssigner_1;
+    pub use super::IPropertyTableAssigner_1Methods;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

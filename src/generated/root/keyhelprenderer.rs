@@ -2,215 +2,70 @@
 
 #[cfg(feature = "root-keyhelprenderer-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            event_systems::uibehaviour::{IUIBehaviour, UIBehaviour},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-            ui::graphic::{Graphic, IGraphic},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/keyhelprenderer/KeyHelpRenderer.md"))]
-    #[::unity2::class(namespace = "", name = "KeyHelpRenderer")]
-    #[parent(crate::unity_engine::ui::graphic::Graphic)]
-    pub struct KeyHelpRenderer {
-        #[offset(156)]
-        #[rename(name = "fadeOffset")]
-        pub fade_offset: f32,
-        #[offset(160)]
-        #[rename(name = "m_Horizontal")]
-        pub m_horizontal: crate::unity_engine::ui::horizontallayoutgroup::HorizontalLayoutGroup,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: event_systems :: uibehaviour :: { IUIBehaviour , UIBehaviour }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+ use crate :: unity_engine :: ui :: graphic :: { Graphic , IGraphic }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/keyhelprenderer/KeyHelpRenderer.md"))] # [:: unity2 :: class (namespace = "" , name = "KeyHelpRenderer")] # [parent (crate :: unity_engine :: ui :: graphic :: Graphic)] pub struct KeyHelpRenderer {
+# [offset (156)] # [rename (name = "fadeOffset")] pub fade_offset : f32 ,
+# [offset (160)] # [rename (name = "m_Horizontal")] pub m_horizontal : crate :: unity_engine :: ui :: horizontallayoutgroup :: HorizontalLayoutGroup ,
+}
+
 }
 
 #[cfg(feature = "root-keyhelprenderer-types")]
 pub use __types::*;
 
 #[cfg(feature = "root-keyhelprenderer")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __KeyHelpRenderer_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_populate_mesh {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::ui::vertexhelper::VertexHelper as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <KeyHelpRenderer as ::unity2::ClassIdentity>::class(),
-                "OnPopulateMesh",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <KeyHelpRenderer as ::unity2::ClassIdentity>::NAME,
-                        "OnPopulateMesh",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_populate_mesh(
-        this: KeyHelpRenderer,
-        vh: crate::unity_engine::ui::vertexhelper::VertexHelper,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(KeyHelpRenderer, crate::unity_engine::ui::vertexhelper::VertexHelper, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_populate_mesh::get_method_info().method_ptr);
-        inner(this, vh, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_padding {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <KeyHelpRenderer as ::unity2::ClassIdentity>::class(),
-                "GetPadding",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <KeyHelpRenderer as ::unity2::ClassIdentity>::NAME,
-                        "GetPadding",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_padding(this: KeyHelpRenderer, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::rectoffset::RectOffset {
-        let inner: extern "C" fn(KeyHelpRenderer, ::unity2::OptionalMethod) -> crate::unity_engine::rectoffset::RectOffset =
-            ::core::mem::transmute(__lookup_get_padding::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <KeyHelpRenderer as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <KeyHelpRenderer as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: KeyHelpRenderer, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(KeyHelpRenderer, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __KeyHelpRenderer_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_populate_mesh { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: ui :: vertexhelper :: VertexHelper as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< KeyHelpRenderer as :: unity2 :: ClassIdentity > :: class () , "OnPopulateMesh" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < KeyHelpRenderer as :: unity2 :: ClassIdentity > :: NAME , "OnPopulateMesh" , e) , } } } pub unsafe fn on_populate_mesh (this : KeyHelpRenderer , vh : crate :: unity_engine :: ui :: vertexhelper :: VertexHelper , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (KeyHelpRenderer , crate :: unity_engine :: ui :: vertexhelper :: VertexHelper , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_populate_mesh :: get_method_info () . method_ptr ,) ; inner (this , vh , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_padding { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< KeyHelpRenderer as :: unity2 :: ClassIdentity > :: class () , "GetPadding" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < KeyHelpRenderer as :: unity2 :: ClassIdentity > :: NAME , "GetPadding" , e) , } } } pub unsafe fn get_padding (this : KeyHelpRenderer , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rectoffset :: RectOffset { let inner : extern "C" fn (KeyHelpRenderer , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rectoffset :: RectOffset = :: core :: mem :: transmute (__lookup_get_padding :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< KeyHelpRenderer as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < KeyHelpRenderer as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : KeyHelpRenderer , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (KeyHelpRenderer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "root-keyhelprenderer")]
-pub trait IKeyHelpRendererMethods: IKeyHelpRenderer {
-    #[doc = "`OnPopulateMesh(crate::unity_engine::ui::vertexhelper::VertexHelper)` overload"]
-    fn on_populate_mesh(self, vh: impl ::core::convert::Into<crate::unity_engine::ui::vertexhelper::VertexHelper>) -> () {
-        unsafe {
-            let __receiver = <KeyHelpRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __KeyHelpRenderer_unity2_raw::on_populate_mesh(__receiver, ::core::convert::Into::into(vh), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetPadding()` overload"]
-    fn get_padding(self) -> crate::unity_engine::rectoffset::RectOffset {
-        unsafe {
-            let __receiver = <KeyHelpRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __KeyHelpRenderer_unity2_raw::get_padding(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <KeyHelpRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __KeyHelpRenderer_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IKeyHelpRendererMethods : IKeyHelpRenderer { # [doc = "`OnPopulateMesh(crate::unity_engine::ui::vertexhelper::VertexHelper)` overload"] fn on_populate_mesh (self , vh : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: vertexhelper :: VertexHelper >) -> () { unsafe { let __receiver = < KeyHelpRenderer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __KeyHelpRenderer_unity2_raw :: on_populate_mesh (__receiver , :: core :: convert :: Into :: into (vh) , :: core :: option :: Option :: None) } } # [doc = "`GetPadding()` overload"] fn get_padding (self ,) -> crate :: unity_engine :: rectoffset :: RectOffset { unsafe { let __receiver = < KeyHelpRenderer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __KeyHelpRenderer_unity2_raw :: get_padding (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < KeyHelpRenderer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __KeyHelpRenderer_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "root-keyhelprenderer")]
-impl<__T: IKeyHelpRenderer> IKeyHelpRendererMethods for __T {}
+impl < __T : IKeyHelpRenderer > IKeyHelpRendererMethods for __T { }
+
+#[cfg(feature = "root-keyhelprenderer")]
+impl KeyHelpRenderer { pub fn on_populate_mesh_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __KeyHelpRenderer_unity2_raw :: __lookup_on_populate_mesh :: get_method_info () } pub fn get_padding_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __KeyHelpRenderer_unity2_raw :: __lookup_get_padding :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __KeyHelpRenderer_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "root-keyhelprenderer")]
 impl KeyHelpRenderer {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(KeyHelpRenderer),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IKeyHelpRendererMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (KeyHelpRenderer) , :: core :: stringify ! (new) ,)) ; < Self as IKeyHelpRendererMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "root-keyhelprenderer")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IKeyHelpRenderer, IKeyHelpRendererMethods, KeyHelpRenderer};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-event_systems-uibehaviour")]
-    pub use crate::unity_engine::event_systems::uibehaviour::IUIBehaviourMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    #[cfg(feature = "unity_engine-ui-graphic")]
-    pub use crate::unity_engine::ui::graphic::IGraphicMethods;
-    pub use crate::{
-        system::object::IObject,
-        unity_engine::{
-            behaviour::IBehaviour, component::IComponent, event_systems::uibehaviour::IUIBehaviour, monobehaviour::IMonoBehaviour,
-            object_2::IObject_2, ui::graphic::IGraphic,
-        },
-    };
+    pub use super::KeyHelpRenderer;
+    pub use super::IKeyHelpRenderer;
+    pub use super::IKeyHelpRendererMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::event_systems::uibehaviour::IUIBehaviour;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    pub use crate::unity_engine::ui::graphic::IGraphic;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-event_systems-uibehaviour")] pub use crate::unity_engine::event_systems::uibehaviour::IUIBehaviourMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
+    #[cfg(feature = "unity_engine-ui-graphic")] pub use crate::unity_engine::ui::graphic::IGraphicMethods;
 }

@@ -2,93 +2,49 @@
 
 #[cfg(feature = "unity_engine-minattribute-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::propertyattribute::{IPropertyAttribute, PropertyAttribute},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/minattribute/MinAttribute.md"))]
-    #[::unity2::class(namespace = "UnityEngine", name = "MinAttribute")]
-    #[parent(crate::unity_engine::propertyattribute::PropertyAttribute)]
-    pub struct MinAttribute {
-        #[offset(16)]
-        #[rename(name = "min")]
-        pub min: f32,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: propertyattribute :: { IPropertyAttribute , PropertyAttribute }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/minattribute/MinAttribute.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "MinAttribute")] # [parent (crate :: unity_engine :: propertyattribute :: PropertyAttribute)] pub struct MinAttribute {
+# [offset (16)] # [rename (name = "min")] pub min : f32 ,
+}
+
 }
 
 #[cfg(feature = "unity_engine-minattribute-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-minattribute")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MinAttribute_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<MinAttribute as ::unity2::ClassIdentity>::class(), ".ctor", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MinAttribute as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: MinAttribute, min: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MinAttribute, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, min, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MinAttribute_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MinAttribute as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MinAttribute as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : MinAttribute , min : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MinAttribute , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , min , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-minattribute")]
-pub trait IMinAttributeMethods: IMinAttribute {
-    #[doc = "`.ctor(f32)` overload"]
-    fn ctor(self, min: impl ::core::convert::Into<f32>) -> () {
-        unsafe {
-            let __receiver = <MinAttribute as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MinAttribute_unity2_raw::ctor(__receiver, ::core::convert::Into::into(min), ::core::option::Option::None)
-        }
-    }
-}
+pub trait IMinAttributeMethods : IMinAttribute { # [doc = "`.ctor(f32)` overload"] fn ctor (self , min : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < MinAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MinAttribute_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (min) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-minattribute")]
-impl<__T: IMinAttribute> IMinAttributeMethods for __T {}
+impl < __T : IMinAttribute > IMinAttributeMethods for __T { }
+
+#[cfg(feature = "unity_engine-minattribute")]
+impl MinAttribute { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MinAttribute_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-minattribute")]
 impl MinAttribute {
-    #[doc = "`.ctor(f32)` — overload selector"]
-    pub fn new(min: f32) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(MinAttribute), ::core::stringify!(new),));
-        <Self as IMinAttributeMethods>::ctor(this, min);
-        this
-    }
+# [doc = "`.ctor(f32)` — overload selector"] pub fn new (min : f32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MinAttribute) , :: core :: stringify ! (new) ,)) ; < Self as IMinAttributeMethods > :: ctor (this , min) ; this }
 }
 
 #[cfg(feature = "unity_engine-minattribute")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IMinAttribute, IMinAttributeMethods, MinAttribute};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-propertyattribute")]
-    pub use crate::unity_engine::propertyattribute::IPropertyAttributeMethods;
-    pub use crate::{system::object::IObject, unity_engine::propertyattribute::IPropertyAttribute};
+    pub use super::MinAttribute;
+    pub use super::IMinAttribute;
+    pub use super::IMinAttributeMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::propertyattribute::IPropertyAttribute;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-propertyattribute")] pub use crate::unity_engine::propertyattribute::IPropertyAttributeMethods;
 }

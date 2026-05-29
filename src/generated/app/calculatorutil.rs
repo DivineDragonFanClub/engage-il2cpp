@@ -2,1298 +2,356 @@
 
 #[cfg(feature = "app-calculatorutil-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        r#enum::{Enum, IEnum},
-        valuetype::{IValueType, ValueType},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/calculatorutil/CalculatorUtil_Entity.md"))]
-    #[::unity2::class(namespace = "App", name = "CalculatorUtil.Entity")]
-    #[parent(crate::system::object::Object)]
-    pub struct CalculatorUtil_Entity {
-        #[offset(16)]
-        #[rename(name = "m_Type")]
-        pub m_type: crate::app::calculatorutil::CalculatorUtil_Type,
-        #[offset(24)]
-        #[rename(name = "m_Name")]
-        pub m_name: ::unity2::Il2CppString,
-        #[offset(32)]
-        #[rename(name = "m_Value")]
-        pub m_value: f32,
-        #[offset(36)]
-        #[rename(name = "m_Code")]
-        pub m_code: i32,
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/calculatorutil/CalculatorUtil_Type.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct CalculatorUtil_Type  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for CalculatorUtil_Type  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "CalculatorUtil.Type";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/calculatorutil/CalculatorUtil.md"))]
-    #[::unity2::class(namespace = "App", name = "CalculatorUtil")]
-    #[parent(crate::system::object::Object)]
-    pub struct CalculatorUtil {
-        #[static_field]
-        #[rename(name = "NullArgs")]
-        pub null_args: crate::system::collections::generic::list_1::List_1<f32>,
+}
+
+
+impl  ::unity2::IlType for CalculatorUtil_Type  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/calculatorutil/CalculatorUtil_Type.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct CalculatorUtil_Type {
-        pub value: i32,
+}
+
+
+impl  CalculatorUtil_Type  {
+    pub fn none() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl ::unity2::ClassIdentity for CalculatorUtil_Type {
-        const NAME: &'static str = "CalculatorUtil.Type";
-        const NAMESPACE: &'static str = "App";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+    pub fn add() -> Self {
+        Self { value: 1 }
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
     }
 
-    impl ::unity2::IlType for CalculatorUtil_Type {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+
+    pub fn sub() -> Self {
+        Self { value: 2 }
+
     }
 
-    impl CalculatorUtil_Type {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn add() -> Self {
-            Self { value: 1 }
-        }
+    pub fn mul() -> Self {
+        Self { value: 3 }
 
-        pub fn sub() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn mul() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn div() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn per() -> Self {
-            Self { value: 5 }
-        }
-
-        pub fn or() -> Self {
-            Self { value: 6 }
-        }
-
-        pub fn and() -> Self {
-            Self { value: 7 }
-        }
-
-        pub fn xor() -> Self {
-            Self { value: 8 }
-        }
-
-        pub fn l_shift() -> Self {
-            Self { value: 9 }
-        }
-
-        pub fn r_shift() -> Self {
-            Self { value: 10 }
-        }
-
-        pub fn equal() -> Self {
-            Self { value: 11 }
-        }
-
-        pub fn nequal() -> Self {
-            Self { value: 12 }
-        }
-
-        pub fn less() -> Self {
-            Self { value: 13 }
-        }
-
-        pub fn lequal() -> Self {
-            Self { value: 14 }
-        }
-
-        pub fn greater() -> Self {
-            Self { value: 15 }
-        }
-
-        pub fn gequal() -> Self {
-            Self { value: 16 }
-        }
-
-        pub fn assign() -> Self {
-            Self { value: 17 }
-        }
-
-        pub fn or_assign() -> Self {
-            Self { value: 18 }
-        }
-
-        pub fn and_assign() -> Self {
-            Self { value: 19 }
-        }
-
-        pub fn xor_assign() -> Self {
-            Self { value: 20 }
-        }
-
-        pub fn add_assign() -> Self {
-            Self { value: 21 }
-        }
-
-        pub fn sub_assign() -> Self {
-            Self { value: 22 }
-        }
-
-        pub fn mul_assign() -> Self {
-            Self { value: 23 }
-        }
-
-        pub fn div_assign() -> Self {
-            Self { value: 24 }
-        }
-
-        pub fn per_assign() -> Self {
-            Self { value: 25 }
-        }
-
-        pub fn ls_assign() -> Self {
-            Self { value: 26 }
-        }
-
-        pub fn rs_assign() -> Self {
-            Self { value: 27 }
-        }
-
-        pub fn open() -> Self {
-            Self { value: 28 }
-        }
-
-        pub fn close() -> Self {
-            Self { value: 29 }
-        }
-
-        pub fn comma() -> Self {
-            Self { value: 30 }
-        }
-
-        pub fn log_or() -> Self {
-            Self { value: 31 }
-        }
-
-        pub fn log_and() -> Self {
-            Self { value: 32 }
-        }
-
-        pub fn negative() -> Self {
-            Self { value: 33 }
-        }
-
-        pub fn number() -> Self {
-            Self { value: 34 }
-        }
-
-        pub fn variable() -> Self {
-            Self { value: 35 }
-        }
-
-        pub fn function() -> Self {
-            Self { value: 36 }
-        }
-
-        pub fn args() -> Self {
-            Self { value: 37 }
-        }
-
-        pub fn string() -> Self {
-            Self { value: 38 }
-        }
     }
+
+
+    pub fn div() -> Self {
+        Self { value: 4 }
+
+    }
+
+
+    pub fn per() -> Self {
+        Self { value: 5 }
+
+    }
+
+
+    pub fn or() -> Self {
+        Self { value: 6 }
+
+    }
+
+
+    pub fn and() -> Self {
+        Self { value: 7 }
+
+    }
+
+
+    pub fn xor() -> Self {
+        Self { value: 8 }
+
+    }
+
+
+    pub fn l_shift() -> Self {
+        Self { value: 9 }
+
+    }
+
+
+    pub fn r_shift() -> Self {
+        Self { value: 10 }
+
+    }
+
+
+    pub fn equal() -> Self {
+        Self { value: 11 }
+
+    }
+
+
+    pub fn nequal() -> Self {
+        Self { value: 12 }
+
+    }
+
+
+    pub fn less() -> Self {
+        Self { value: 13 }
+
+    }
+
+
+    pub fn lequal() -> Self {
+        Self { value: 14 }
+
+    }
+
+
+    pub fn greater() -> Self {
+        Self { value: 15 }
+
+    }
+
+
+    pub fn gequal() -> Self {
+        Self { value: 16 }
+
+    }
+
+
+    pub fn assign() -> Self {
+        Self { value: 17 }
+
+    }
+
+
+    pub fn or_assign() -> Self {
+        Self { value: 18 }
+
+    }
+
+
+    pub fn and_assign() -> Self {
+        Self { value: 19 }
+
+    }
+
+
+    pub fn xor_assign() -> Self {
+        Self { value: 20 }
+
+    }
+
+
+    pub fn add_assign() -> Self {
+        Self { value: 21 }
+
+    }
+
+
+    pub fn sub_assign() -> Self {
+        Self { value: 22 }
+
+    }
+
+
+    pub fn mul_assign() -> Self {
+        Self { value: 23 }
+
+    }
+
+
+    pub fn div_assign() -> Self {
+        Self { value: 24 }
+
+    }
+
+
+    pub fn per_assign() -> Self {
+        Self { value: 25 }
+
+    }
+
+
+    pub fn ls_assign() -> Self {
+        Self { value: 26 }
+
+    }
+
+
+    pub fn rs_assign() -> Self {
+        Self { value: 27 }
+
+    }
+
+
+    pub fn open() -> Self {
+        Self { value: 28 }
+
+    }
+
+
+    pub fn close() -> Self {
+        Self { value: 29 }
+
+    }
+
+
+    pub fn comma() -> Self {
+        Self { value: 30 }
+
+    }
+
+
+    pub fn log_or() -> Self {
+        Self { value: 31 }
+
+    }
+
+
+    pub fn log_and() -> Self {
+        Self { value: 32 }
+
+    }
+
+
+    pub fn negative() -> Self {
+        Self { value: 33 }
+
+    }
+
+
+    pub fn number() -> Self {
+        Self { value: 34 }
+
+    }
+
+
+    pub fn variable() -> Self {
+        Self { value: 35 }
+
+    }
+
+
+    pub fn function() -> Self {
+        Self { value: 36 }
+
+    }
+
+
+    pub fn args() -> Self {
+        Self { value: 37 }
+
+    }
+
+
+    pub fn string() -> Self {
+        Self { value: 38 }
+
+    }
+
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/calculatorutil/CalculatorUtil.md"))] # [:: unity2 :: class (namespace = "App" , name = "CalculatorUtil")] # [parent (crate :: system :: object :: Object)] pub struct CalculatorUtil {
+# [static_field] # [rename (name = "NullArgs")] pub null_args : crate :: system :: collections :: generic :: list_1 :: List_1 < f32 > ,
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/calculatorutil/CalculatorUtil_Entity.md"))] # [:: unity2 :: class (namespace = "App" , name = "CalculatorUtil.Entity")] # [parent (crate :: system :: object :: Object)] pub struct CalculatorUtil_Entity {
+# [offset (16)] # [rename (name = "m_Type")] pub m_type : crate :: app :: calculatorutil :: CalculatorUtil_Type ,
+# [offset (24)] # [rename (name = "m_Name")] pub m_name : :: unity2 :: Il2CppString ,
+# [offset (32)] # [rename (name = "m_Value")] pub m_value : f32 ,
+# [offset (36)] # [rename (name = "m_Code")] pub m_code : i32 ,
+}
+
 }
 
 #[cfg(feature = "app-calculatorutil-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-calculatorutil")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __CalculatorUtil_Entity_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_type {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CalculatorUtil_Entity as ::unity2::ClassIdentity>::class(),
-                "get_Type",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CalculatorUtil_Entity as ::unity2::ClassIdentity>::NAME,
-                        "get_Type",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_type(
-        this: CalculatorUtil_Entity,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::calculatorutil::CalculatorUtil_Type {
-        let inner: extern "C" fn(CalculatorUtil_Entity, ::unity2::OptionalMethod) -> crate::app::calculatorutil::CalculatorUtil_Type =
-            ::core::mem::transmute(__lookup_get_type::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CalculatorUtil_Entity as ::unity2::ClassIdentity>::class(),
-                "get_Name",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CalculatorUtil_Entity as ::unity2::ClassIdentity>::NAME,
-                        "get_Name",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_name(this: CalculatorUtil_Entity, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(CalculatorUtil_Entity, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_value {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CalculatorUtil_Entity as ::unity2::ClassIdentity>::class(),
-                "get_Value",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CalculatorUtil_Entity as ::unity2::ClassIdentity>::NAME,
-                        "get_Value",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_value(this: CalculatorUtil_Entity, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(CalculatorUtil_Entity, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_get_value::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_code {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CalculatorUtil_Entity as ::unity2::ClassIdentity>::class(),
-                "get_Code",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CalculatorUtil_Entity as ::unity2::ClassIdentity>::NAME,
-                        "get_Code",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_code(this: CalculatorUtil_Entity, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(CalculatorUtil_Entity, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_code::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::calculatorutil::CalculatorUtil_Type as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CalculatorUtil_Entity as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CalculatorUtil_Entity as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: CalculatorUtil_Entity,
-        r#type: crate::app::calculatorutil::CalculatorUtil_Type,
-        name: ::unity2::Il2CppString,
-        value: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            CalculatorUtil_Entity,
-            crate::app::calculatorutil::CalculatorUtil_Type,
-            ::unity2::Il2CppString,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, r#type, name, value, __unity2_method_info)
-    }
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __CalculatorUtil_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_priority { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: calculatorutil :: CalculatorUtil_Type as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CalculatorUtil as :: unity2 :: ClassIdentity > :: class () , "GetPriority" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CalculatorUtil as :: unity2 :: ClassIdentity > :: NAME , "GetPriority" , e) , } } } pub unsafe fn get_priority (r#type : crate :: app :: calculatorutil :: CalculatorUtil_Type , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (crate :: app :: calculatorutil :: CalculatorUtil_Type , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_priority :: get_method_info () . method_ptr ,) ; inner (r#type , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_negative { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: calculatorutil :: CalculatorUtil_Type as :: unity2 :: IlType > :: il_type () , < crate :: app :: calculatorutil :: CalculatorUtil_Type as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CalculatorUtil as :: unity2 :: ClassIdentity > :: class () , "IsNegative" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CalculatorUtil as :: unity2 :: ClassIdentity > :: NAME , "IsNegative" , e) , } } } pub unsafe fn is_negative (now : crate :: app :: calculatorutil :: CalculatorUtil_Type , old : crate :: app :: calculatorutil :: CalculatorUtil_Type , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (crate :: app :: calculatorutil :: CalculatorUtil_Type , crate :: app :: calculatorutil :: CalculatorUtil_Type , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_negative :: get_method_info () . method_ptr ,) ; inner (now , old , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_assign { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: calculatorutil :: CalculatorUtil_Type as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CalculatorUtil as :: unity2 :: ClassIdentity > :: class () , "IsAssign" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CalculatorUtil as :: unity2 :: ClassIdentity > :: NAME , "IsAssign" , e) , } } } pub unsafe fn is_assign (r#type : crate :: app :: calculatorutil :: CalculatorUtil_Type , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (crate :: app :: calculatorutil :: CalculatorUtil_Type , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_assign :: get_method_info () . method_ptr ,) ; inner (r#type , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_single_type { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< u16 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CalculatorUtil as :: unity2 :: ClassIdentity > :: class () , "GetSingleType" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CalculatorUtil as :: unity2 :: ClassIdentity > :: NAME , "GetSingleType" , e) , } } } pub unsafe fn get_single_type (name : u16 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: calculatorutil :: CalculatorUtil_Type { let inner : extern "C" fn (u16 , :: unity2 :: OptionalMethod ,) -> crate :: app :: calculatorutil :: CalculatorUtil_Type = :: core :: mem :: transmute (__lookup_get_single_type :: get_method_info () . method_ptr ,) ; inner (name , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_three_type { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CalculatorUtil as :: unity2 :: ClassIdentity > :: class () , "GetThreeType" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CalculatorUtil as :: unity2 :: ClassIdentity > :: NAME , "GetThreeType" , e) , } } } pub unsafe fn get_three_type (name : :: unity2 :: Il2CppString , index : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: calculatorutil :: CalculatorUtil_Type { let inner : extern "C" fn (:: unity2 :: Il2CppString , i32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: calculatorutil :: CalculatorUtil_Type = :: core :: mem :: transmute (__lookup_get_three_type :: get_method_info () . method_ptr ,) ; inner (name , index , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_double_type { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CalculatorUtil as :: unity2 :: ClassIdentity > :: class () , "GetDoubleType" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CalculatorUtil as :: unity2 :: ClassIdentity > :: NAME , "GetDoubleType" , e) , } } } pub unsafe fn get_double_type (name : :: unity2 :: Il2CppString , index : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: calculatorutil :: CalculatorUtil_Type { let inner : extern "C" fn (:: unity2 :: Il2CppString , i32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: calculatorutil :: CalculatorUtil_Type = :: core :: mem :: transmute (__lookup_get_double_type :: get_method_info () . method_ptr ,) ; inner (name , index , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_code { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< u16 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CalculatorUtil as :: unity2 :: ClassIdentity > :: class () , "IsCode" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CalculatorUtil as :: unity2 :: ClassIdentity > :: NAME , "IsCode" , e) , } } } pub unsafe fn is_code (name : u16 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (u16 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_code :: get_method_info () . method_ptr ,) ; inner (name , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_number { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< u16 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CalculatorUtil as :: unity2 :: ClassIdentity > :: class () , "IsNumber" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CalculatorUtil as :: unity2 :: ClassIdentity > :: NAME , "IsNumber" , e) , } } } pub unsafe fn is_number (name : u16 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (u16 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_number :: get_method_info () . method_ptr ,) ; inner (name , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_string { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< u16 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CalculatorUtil as :: unity2 :: ClassIdentity > :: class () , "IsString" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CalculatorUtil as :: unity2 :: ClassIdentity > :: NAME , "IsString" , e) , } } } pub unsafe fn is_string (name : u16 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (u16 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_string :: get_method_info () . method_ptr ,) ; inner (name , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_args { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CalculatorUtil as :: unity2 :: ClassIdentity > :: class () , "IsArgs" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CalculatorUtil as :: unity2 :: ClassIdentity > :: NAME , "IsArgs" , e) , } } } pub unsafe fn is_args (name : :: unity2 :: Il2CppString , index : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: Il2CppString , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_args :: get_method_info () . method_ptr ,) ; inner (name , index , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_empty { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< u16 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CalculatorUtil as :: unity2 :: ClassIdentity > :: class () , "IsEmpty" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CalculatorUtil as :: unity2 :: ClassIdentity > :: NAME , "IsEmpty" , e) , } } } pub unsafe fn is_empty (name : u16 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (u16 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_empty :: get_method_info () . method_ptr ,) ; inner (name , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_string_to_number { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CalculatorUtil as :: unity2 :: ClassIdentity > :: class () , "StringToNumber" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CalculatorUtil as :: unity2 :: ClassIdentity > :: NAME , "StringToNumber" , e) , } } } pub unsafe fn string_to_number (name : :: unity2 :: Il2CppString , index : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (:: unity2 :: Il2CppString , i32 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_string_to_number :: get_method_info () . method_ptr ,) ; inner (name , index , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_string_to_string { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CalculatorUtil as :: unity2 :: ClassIdentity > :: class () , "StringToString" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CalculatorUtil as :: unity2 :: ClassIdentity > :: NAME , "StringToString" , e) , } } } pub unsafe fn string_to_string (name : :: unity2 :: Il2CppString , index : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (:: unity2 :: Il2CppString , i32 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_string_to_string :: get_method_info () . method_ptr ,) ; inner (name , index , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_string_to_args { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CalculatorUtil as :: unity2 :: ClassIdentity > :: class () , "StringToArgs" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CalculatorUtil as :: unity2 :: ClassIdentity > :: NAME , "StringToArgs" , e) , } } } pub unsafe fn string_to_args (name : :: unity2 :: Il2CppString , index : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (:: unity2 :: Il2CppString , i32 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_string_to_args :: get_method_info () . method_ptr ,) ; inner (name , index , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_string_to_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CalculatorUtil as :: unity2 :: ClassIdentity > :: class () , "StringToName" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CalculatorUtil as :: unity2 :: ClassIdentity > :: NAME , "StringToName" , e) , } } } pub unsafe fn string_to_name (name : :: unity2 :: Il2CppString , index : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (:: unity2 :: Il2CppString , i32 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_string_to_name :: get_method_info () . method_ptr ,) ; inner (name , index , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CalculatorUtil as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CalculatorUtil as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : CalculatorUtil , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CalculatorUtil , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CalculatorUtil as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CalculatorUtil as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
+
+#[cfg(feature = "app-calculatorutil")]
+impl CalculatorUtil { # [doc = "`GetPriority(crate::app::calculatorutil::CalculatorUtil_Type)` overload"] pub fn get_priority (r#type : impl :: core :: convert :: Into < crate :: app :: calculatorutil :: CalculatorUtil_Type >) -> i32 { unsafe { __CalculatorUtil_unity2_raw :: get_priority (:: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } # [doc = "`IsNegative(crate::app::calculatorutil::CalculatorUtil_Type, crate::app::calculatorutil::CalculatorUtil_Type)` overload"] pub fn is_negative (now : impl :: core :: convert :: Into < crate :: app :: calculatorutil :: CalculatorUtil_Type > , old : impl :: core :: convert :: Into < crate :: app :: calculatorutil :: CalculatorUtil_Type >) -> bool { unsafe { __CalculatorUtil_unity2_raw :: is_negative (:: core :: convert :: Into :: into (now) , :: core :: convert :: Into :: into (old) , :: core :: option :: Option :: None) } } # [doc = "`IsAssign(crate::app::calculatorutil::CalculatorUtil_Type)` overload"] pub fn is_assign (r#type : impl :: core :: convert :: Into < crate :: app :: calculatorutil :: CalculatorUtil_Type >) -> bool { unsafe { __CalculatorUtil_unity2_raw :: is_assign (:: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } # [doc = "`GetSingleType(u16)` overload"] pub fn get_single_type (name : impl :: core :: convert :: Into < u16 >) -> crate :: app :: calculatorutil :: CalculatorUtil_Type { unsafe { __CalculatorUtil_unity2_raw :: get_single_type (:: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } # [doc = "`GetThreeType(::unity2::Il2CppString, i32)` overload"] pub fn get_three_type (name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , index : impl :: core :: convert :: Into < i32 >) -> crate :: app :: calculatorutil :: CalculatorUtil_Type { unsafe { __CalculatorUtil_unity2_raw :: get_three_type (:: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } # [doc = "`GetDoubleType(::unity2::Il2CppString, i32)` overload"] pub fn get_double_type (name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , index : impl :: core :: convert :: Into < i32 >) -> crate :: app :: calculatorutil :: CalculatorUtil_Type { unsafe { __CalculatorUtil_unity2_raw :: get_double_type (:: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } # [doc = "`IsCode(u16)` overload"] pub fn is_code (name : impl :: core :: convert :: Into < u16 >) -> bool { unsafe { __CalculatorUtil_unity2_raw :: is_code (:: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } # [doc = "`IsNumber(u16)` overload"] pub fn is_number (name : impl :: core :: convert :: Into < u16 >) -> bool { unsafe { __CalculatorUtil_unity2_raw :: is_number (:: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } # [doc = "`IsString(u16)` overload"] pub fn is_string (name : impl :: core :: convert :: Into < u16 >) -> bool { unsafe { __CalculatorUtil_unity2_raw :: is_string (:: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } # [doc = "`IsArgs(::unity2::Il2CppString, i32)` overload"] pub fn is_args (name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , index : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { __CalculatorUtil_unity2_raw :: is_args (:: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } # [doc = "`IsEmpty(u16)` overload"] pub fn is_empty (name : impl :: core :: convert :: Into < u16 >) -> bool { unsafe { __CalculatorUtil_unity2_raw :: is_empty (:: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } # [doc = "`StringToNumber(::unity2::Il2CppString, i32)` overload"] pub fn string_to_number (name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , index : impl :: core :: convert :: Into < i32 >) -> :: unity2 :: Il2CppString { unsafe { __CalculatorUtil_unity2_raw :: string_to_number (:: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } # [doc = "`StringToString(::unity2::Il2CppString, i32)` overload"] pub fn string_to_string (name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , index : impl :: core :: convert :: Into < i32 >) -> :: unity2 :: Il2CppString { unsafe { __CalculatorUtil_unity2_raw :: string_to_string (:: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } # [doc = "`StringToArgs(::unity2::Il2CppString, i32)` overload"] pub fn string_to_args (name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , index : impl :: core :: convert :: Into < i32 >) -> :: unity2 :: Il2CppString { unsafe { __CalculatorUtil_unity2_raw :: string_to_args (:: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } # [doc = "`StringToName(::unity2::Il2CppString, i32)` overload"] pub fn string_to_name (name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , index : impl :: core :: convert :: Into < i32 >) -> :: unity2 :: Il2CppString { unsafe { __CalculatorUtil_unity2_raw :: string_to_name (:: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { __CalculatorUtil_unity2_raw :: cctor (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-calculatorutil")]
+pub trait ICalculatorUtilMethods : ICalculatorUtil { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CalculatorUtil as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CalculatorUtil_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-calculatorutil")]
+impl < __T : ICalculatorUtil > ICalculatorUtilMethods for __T { }
+
+#[cfg(feature = "app-calculatorutil")]
+impl CalculatorUtil { pub fn get_priority_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CalculatorUtil_unity2_raw :: __lookup_get_priority :: get_method_info () } pub fn is_negative_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CalculatorUtil_unity2_raw :: __lookup_is_negative :: get_method_info () } pub fn is_assign_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CalculatorUtil_unity2_raw :: __lookup_is_assign :: get_method_info () } pub fn get_single_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CalculatorUtil_unity2_raw :: __lookup_get_single_type :: get_method_info () } pub fn get_three_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CalculatorUtil_unity2_raw :: __lookup_get_three_type :: get_method_info () } pub fn get_double_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CalculatorUtil_unity2_raw :: __lookup_get_double_type :: get_method_info () } pub fn is_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CalculatorUtil_unity2_raw :: __lookup_is_code :: get_method_info () } pub fn is_number_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CalculatorUtil_unity2_raw :: __lookup_is_number :: get_method_info () } pub fn is_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CalculatorUtil_unity2_raw :: __lookup_is_string :: get_method_info () } pub fn is_args_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CalculatorUtil_unity2_raw :: __lookup_is_args :: get_method_info () } pub fn is_empty_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CalculatorUtil_unity2_raw :: __lookup_is_empty :: get_method_info () } pub fn string_to_number_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CalculatorUtil_unity2_raw :: __lookup_string_to_number :: get_method_info () } pub fn string_to_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CalculatorUtil_unity2_raw :: __lookup_string_to_string :: get_method_info () } pub fn string_to_args_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CalculatorUtil_unity2_raw :: __lookup_string_to_args :: get_method_info () } pub fn string_to_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CalculatorUtil_unity2_raw :: __lookup_string_to_name :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CalculatorUtil_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CalculatorUtil_unity2_raw :: __lookup_cctor :: get_method_info () } }
+
+#[cfg(feature = "app-calculatorutil")]
+impl CalculatorUtil {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CalculatorUtil) , :: core :: stringify ! (new) ,)) ; < Self as ICalculatorUtilMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-calculatorutil")]
-pub trait ICalculatorUtil_EntityMethods: ICalculatorUtil_Entity {
-    #[doc = "`get_Type()` overload"]
-    fn get_type(self) -> crate::app::calculatorutil::CalculatorUtil_Type {
-        unsafe {
-            let __receiver =
-                <CalculatorUtil_Entity as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CalculatorUtil_Entity_unity2_raw::get_type(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Name()` overload"]
-    fn get_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver =
-                <CalculatorUtil_Entity as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CalculatorUtil_Entity_unity2_raw::get_name(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Value()` overload"]
-    fn get_value(self) -> f32 {
-        unsafe {
-            let __receiver =
-                <CalculatorUtil_Entity as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CalculatorUtil_Entity_unity2_raw::get_value(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Code()` overload"]
-    fn get_code(self) -> i32 {
-        unsafe {
-            let __receiver =
-                <CalculatorUtil_Entity as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CalculatorUtil_Entity_unity2_raw::get_code(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor(crate::app::calculatorutil::CalculatorUtil_Type, ::unity2::Il2CppString, f32)` overload"]
-    fn ctor(
-        self,
-        r#type: impl ::core::convert::Into<crate::app::calculatorutil::CalculatorUtil_Type>,
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        value: impl ::core::convert::Into<f32>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <CalculatorUtil_Entity as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CalculatorUtil_Entity_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(r#type),
-                ::core::convert::Into::into(name),
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __CalculatorUtil_Entity_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_type { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CalculatorUtil_Entity as :: unity2 :: ClassIdentity > :: class () , "get_Type" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CalculatorUtil_Entity as :: unity2 :: ClassIdentity > :: NAME , "get_Type" , e) , } } } pub unsafe fn get_type (this : CalculatorUtil_Entity , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: calculatorutil :: CalculatorUtil_Type { let inner : extern "C" fn (CalculatorUtil_Entity , :: unity2 :: OptionalMethod ,) -> crate :: app :: calculatorutil :: CalculatorUtil_Type = :: core :: mem :: transmute (__lookup_get_type :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CalculatorUtil_Entity as :: unity2 :: ClassIdentity > :: class () , "get_Name" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CalculatorUtil_Entity as :: unity2 :: ClassIdentity > :: NAME , "get_Name" , e) , } } } pub unsafe fn get_name (this : CalculatorUtil_Entity , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (CalculatorUtil_Entity , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_name :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_value { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CalculatorUtil_Entity as :: unity2 :: ClassIdentity > :: class () , "get_Value" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CalculatorUtil_Entity as :: unity2 :: ClassIdentity > :: NAME , "get_Value" , e) , } } } pub unsafe fn get_value (this : CalculatorUtil_Entity , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (CalculatorUtil_Entity , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_get_value :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_code { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CalculatorUtil_Entity as :: unity2 :: ClassIdentity > :: class () , "get_Code" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CalculatorUtil_Entity as :: unity2 :: ClassIdentity > :: NAME , "get_Code" , e) , } } } pub unsafe fn get_code (this : CalculatorUtil_Entity , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (CalculatorUtil_Entity , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_code :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: calculatorutil :: CalculatorUtil_Type as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CalculatorUtil_Entity as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CalculatorUtil_Entity as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : CalculatorUtil_Entity , r#type : crate :: app :: calculatorutil :: CalculatorUtil_Type , name : :: unity2 :: Il2CppString , value : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CalculatorUtil_Entity , crate :: app :: calculatorutil :: CalculatorUtil_Type , :: unity2 :: Il2CppString , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , r#type , name , value , __unity2_method_info) } }
 
 #[cfg(feature = "app-calculatorutil")]
-impl<__T: ICalculatorUtil_Entity> ICalculatorUtil_EntityMethods for __T {}
+pub trait ICalculatorUtil_EntityMethods : ICalculatorUtil_Entity { # [doc = "`get_Type()` overload"] fn get_type (self ,) -> crate :: app :: calculatorutil :: CalculatorUtil_Type { unsafe { let __receiver = < CalculatorUtil_Entity as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CalculatorUtil_Entity_unity2_raw :: get_type (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_Name()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < CalculatorUtil_Entity as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CalculatorUtil_Entity_unity2_raw :: get_name (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_Value()` overload"] fn get_value (self ,) -> f32 { unsafe { let __receiver = < CalculatorUtil_Entity as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CalculatorUtil_Entity_unity2_raw :: get_value (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_Code()` overload"] fn get_code (self ,) -> i32 { unsafe { let __receiver = < CalculatorUtil_Entity as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CalculatorUtil_Entity_unity2_raw :: get_code (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor(crate::app::calculatorutil::CalculatorUtil_Type, ::unity2::Il2CppString, f32)` overload"] fn ctor (self , r#type : impl :: core :: convert :: Into < crate :: app :: calculatorutil :: CalculatorUtil_Type > , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < CalculatorUtil_Entity as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CalculatorUtil_Entity_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (r#type) , :: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-calculatorutil")]
+impl < __T : ICalculatorUtil_Entity > ICalculatorUtil_EntityMethods for __T { }
+
+#[cfg(feature = "app-calculatorutil")]
+impl CalculatorUtil_Entity { pub fn get_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CalculatorUtil_Entity_unity2_raw :: __lookup_get_type :: get_method_info () } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CalculatorUtil_Entity_unity2_raw :: __lookup_get_name :: get_method_info () } pub fn get_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CalculatorUtil_Entity_unity2_raw :: __lookup_get_value :: get_method_info () } pub fn get_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CalculatorUtil_Entity_unity2_raw :: __lookup_get_code :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CalculatorUtil_Entity_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-calculatorutil")]
 impl CalculatorUtil_Entity {
-    #[doc = "`.ctor(crate::app::calculatorutil::CalculatorUtil_Type, ::unity2::Il2CppString, f32)` — overload selector"]
-    pub fn new(r#type: crate::app::calculatorutil::CalculatorUtil_Type, name: ::unity2::Il2CppString, value: f32) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(CalculatorUtil_Entity),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ICalculatorUtil_EntityMethods>::ctor(this, r#type, name, value);
-        this
-    }
-}
-
-#[cfg(feature = "app-calculatorutil")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __CalculatorUtil_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_priority {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::calculatorutil::CalculatorUtil_Type as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CalculatorUtil as ::unity2::ClassIdentity>::class(),
-                "GetPriority",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CalculatorUtil as ::unity2::ClassIdentity>::NAME,
-                        "GetPriority",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_priority(r#type: crate::app::calculatorutil::CalculatorUtil_Type, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(crate::app::calculatorutil::CalculatorUtil_Type, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_priority::get_method_info().method_ptr);
-        inner(r#type, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_negative {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::calculatorutil::CalculatorUtil_Type as ::unity2::IlType>::il_type(),
-                <crate::app::calculatorutil::CalculatorUtil_Type as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CalculatorUtil as ::unity2::ClassIdentity>::class(),
-                "IsNegative",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CalculatorUtil as ::unity2::ClassIdentity>::NAME,
-                        "IsNegative",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_negative(
-        now: crate::app::calculatorutil::CalculatorUtil_Type,
-        old: crate::app::calculatorutil::CalculatorUtil_Type,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            crate::app::calculatorutil::CalculatorUtil_Type,
-            crate::app::calculatorutil::CalculatorUtil_Type,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(__lookup_is_negative::get_method_info().method_ptr);
-        inner(now, old, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_assign {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::calculatorutil::CalculatorUtil_Type as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CalculatorUtil as ::unity2::ClassIdentity>::class(),
-                "IsAssign",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CalculatorUtil as ::unity2::ClassIdentity>::NAME,
-                        "IsAssign",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_assign(r#type: crate::app::calculatorutil::CalculatorUtil_Type, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(crate::app::calculatorutil::CalculatorUtil_Type, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_assign::get_method_info().method_ptr);
-        inner(r#type, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_single_type {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CalculatorUtil as ::unity2::ClassIdentity>::class(),
-                "GetSingleType",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CalculatorUtil as ::unity2::ClassIdentity>::NAME,
-                        "GetSingleType",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_single_type(name: u16, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::calculatorutil::CalculatorUtil_Type {
-        let inner: extern "C" fn(u16, ::unity2::OptionalMethod) -> crate::app::calculatorutil::CalculatorUtil_Type =
-            ::core::mem::transmute(__lookup_get_single_type::get_method_info().method_ptr);
-        inner(name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_three_type {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CalculatorUtil as ::unity2::ClassIdentity>::class(),
-                "GetThreeType",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CalculatorUtil as ::unity2::ClassIdentity>::NAME,
-                        "GetThreeType",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_three_type(
-        name: ::unity2::Il2CppString,
-        index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::calculatorutil::CalculatorUtil_Type {
-        let inner: extern "C" fn(::unity2::Il2CppString, i32, ::unity2::OptionalMethod) -> crate::app::calculatorutil::CalculatorUtil_Type =
-            ::core::mem::transmute(__lookup_get_three_type::get_method_info().method_ptr);
-        inner(name, index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_double_type {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CalculatorUtil as ::unity2::ClassIdentity>::class(),
-                "GetDoubleType",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CalculatorUtil as ::unity2::ClassIdentity>::NAME,
-                        "GetDoubleType",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_double_type(
-        name: ::unity2::Il2CppString,
-        index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::calculatorutil::CalculatorUtil_Type {
-        let inner: extern "C" fn(::unity2::Il2CppString, i32, ::unity2::OptionalMethod) -> crate::app::calculatorutil::CalculatorUtil_Type =
-            ::core::mem::transmute(__lookup_get_double_type::get_method_info().method_ptr);
-        inner(name, index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_code {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CalculatorUtil as ::unity2::ClassIdentity>::class(),
-                "IsCode",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CalculatorUtil as ::unity2::ClassIdentity>::NAME,
-                        "IsCode",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_code(name: u16, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(u16, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_is_code::get_method_info().method_ptr);
-        inner(name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_number {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CalculatorUtil as ::unity2::ClassIdentity>::class(),
-                "IsNumber",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CalculatorUtil as ::unity2::ClassIdentity>::NAME,
-                        "IsNumber",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_number(name: u16, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(u16, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_is_number::get_method_info().method_ptr);
-        inner(name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_string {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CalculatorUtil as ::unity2::ClassIdentity>::class(),
-                "IsString",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CalculatorUtil as ::unity2::ClassIdentity>::NAME,
-                        "IsString",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_string(name: u16, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(u16, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_is_string::get_method_info().method_ptr);
-        inner(name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_args {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CalculatorUtil as ::unity2::ClassIdentity>::class(),
-                "IsArgs",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CalculatorUtil as ::unity2::ClassIdentity>::NAME,
-                        "IsArgs",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_args(name: ::unity2::Il2CppString, index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::Il2CppString, i32, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_args::get_method_info().method_ptr);
-        inner(name, index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_empty {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CalculatorUtil as ::unity2::ClassIdentity>::class(),
-                "IsEmpty",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CalculatorUtil as ::unity2::ClassIdentity>::NAME,
-                        "IsEmpty",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_empty(name: u16, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(u16, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_is_empty::get_method_info().method_ptr);
-        inner(name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_string_to_number {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CalculatorUtil as ::unity2::ClassIdentity>::class(),
-                "StringToNumber",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CalculatorUtil as ::unity2::ClassIdentity>::NAME,
-                        "StringToNumber",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn string_to_number(
-        name: ::unity2::Il2CppString,
-        index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(::unity2::Il2CppString, i32, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_string_to_number::get_method_info().method_ptr);
-        inner(name, index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_string_to_string {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CalculatorUtil as ::unity2::ClassIdentity>::class(),
-                "StringToString",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CalculatorUtil as ::unity2::ClassIdentity>::NAME,
-                        "StringToString",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn string_to_string(
-        name: ::unity2::Il2CppString,
-        index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(::unity2::Il2CppString, i32, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_string_to_string::get_method_info().method_ptr);
-        inner(name, index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_string_to_args {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CalculatorUtil as ::unity2::ClassIdentity>::class(),
-                "StringToArgs",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CalculatorUtil as ::unity2::ClassIdentity>::NAME,
-                        "StringToArgs",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn string_to_args(name: ::unity2::Il2CppString, index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(::unity2::Il2CppString, i32, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_string_to_args::get_method_info().method_ptr);
-        inner(name, index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_string_to_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CalculatorUtil as ::unity2::ClassIdentity>::class(),
-                "StringToName",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CalculatorUtil as ::unity2::ClassIdentity>::NAME,
-                        "StringToName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn string_to_name(name: ::unity2::Il2CppString, index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(::unity2::Il2CppString, i32, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_string_to_name::get_method_info().method_ptr);
-        inner(name, index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CalculatorUtil as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CalculatorUtil as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: CalculatorUtil, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CalculatorUtil, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CalculatorUtil as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CalculatorUtil as ::unity2::ClassIdentity>::NAME,
-                        ".cctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-calculatorutil")]
-impl CalculatorUtil {
-    #[doc = "`GetPriority(crate::app::calculatorutil::CalculatorUtil_Type)` overload"]
-    pub fn get_priority(r#type: impl ::core::convert::Into<crate::app::calculatorutil::CalculatorUtil_Type>) -> i32 {
-        unsafe { __CalculatorUtil_unity2_raw::get_priority(::core::convert::Into::into(r#type), ::core::option::Option::None) }
-    }
-
-    #[doc = "`IsNegative(crate::app::calculatorutil::CalculatorUtil_Type, crate::app::calculatorutil::CalculatorUtil_Type)` overload"]
-    pub fn is_negative(
-        now: impl ::core::convert::Into<crate::app::calculatorutil::CalculatorUtil_Type>,
-        old: impl ::core::convert::Into<crate::app::calculatorutil::CalculatorUtil_Type>,
-    ) -> bool {
-        unsafe {
-            __CalculatorUtil_unity2_raw::is_negative(
-                ::core::convert::Into::into(now),
-                ::core::convert::Into::into(old),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`IsAssign(crate::app::calculatorutil::CalculatorUtil_Type)` overload"]
-    pub fn is_assign(r#type: impl ::core::convert::Into<crate::app::calculatorutil::CalculatorUtil_Type>) -> bool {
-        unsafe { __CalculatorUtil_unity2_raw::is_assign(::core::convert::Into::into(r#type), ::core::option::Option::None) }
-    }
-
-    #[doc = "`GetSingleType(u16)` overload"]
-    pub fn get_single_type(name: impl ::core::convert::Into<u16>) -> crate::app::calculatorutil::CalculatorUtil_Type {
-        unsafe { __CalculatorUtil_unity2_raw::get_single_type(::core::convert::Into::into(name), ::core::option::Option::None) }
-    }
-
-    #[doc = "`GetThreeType(::unity2::Il2CppString, i32)` overload"]
-    pub fn get_three_type(
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        index: impl ::core::convert::Into<i32>,
-    ) -> crate::app::calculatorutil::CalculatorUtil_Type {
-        unsafe {
-            __CalculatorUtil_unity2_raw::get_three_type(
-                ::core::convert::Into::into(name),
-                ::core::convert::Into::into(index),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`GetDoubleType(::unity2::Il2CppString, i32)` overload"]
-    pub fn get_double_type(
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        index: impl ::core::convert::Into<i32>,
-    ) -> crate::app::calculatorutil::CalculatorUtil_Type {
-        unsafe {
-            __CalculatorUtil_unity2_raw::get_double_type(
-                ::core::convert::Into::into(name),
-                ::core::convert::Into::into(index),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`IsCode(u16)` overload"]
-    pub fn is_code(name: impl ::core::convert::Into<u16>) -> bool {
-        unsafe { __CalculatorUtil_unity2_raw::is_code(::core::convert::Into::into(name), ::core::option::Option::None) }
-    }
-
-    #[doc = "`IsNumber(u16)` overload"]
-    pub fn is_number(name: impl ::core::convert::Into<u16>) -> bool {
-        unsafe { __CalculatorUtil_unity2_raw::is_number(::core::convert::Into::into(name), ::core::option::Option::None) }
-    }
-
-    #[doc = "`IsString(u16)` overload"]
-    pub fn is_string(name: impl ::core::convert::Into<u16>) -> bool {
-        unsafe { __CalculatorUtil_unity2_raw::is_string(::core::convert::Into::into(name), ::core::option::Option::None) }
-    }
-
-    #[doc = "`IsArgs(::unity2::Il2CppString, i32)` overload"]
-    pub fn is_args(name: impl ::core::convert::Into<::unity2::Il2CppString>, index: impl ::core::convert::Into<i32>) -> bool {
-        unsafe {
-            __CalculatorUtil_unity2_raw::is_args(
-                ::core::convert::Into::into(name),
-                ::core::convert::Into::into(index),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`IsEmpty(u16)` overload"]
-    pub fn is_empty(name: impl ::core::convert::Into<u16>) -> bool {
-        unsafe { __CalculatorUtil_unity2_raw::is_empty(::core::convert::Into::into(name), ::core::option::Option::None) }
-    }
-
-    #[doc = "`StringToNumber(::unity2::Il2CppString, i32)` overload"]
-    pub fn string_to_number(
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        index: impl ::core::convert::Into<i32>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __CalculatorUtil_unity2_raw::string_to_number(
-                ::core::convert::Into::into(name),
-                ::core::convert::Into::into(index),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`StringToString(::unity2::Il2CppString, i32)` overload"]
-    pub fn string_to_string(
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        index: impl ::core::convert::Into<i32>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __CalculatorUtil_unity2_raw::string_to_string(
-                ::core::convert::Into::into(name),
-                ::core::convert::Into::into(index),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`StringToArgs(::unity2::Il2CppString, i32)` overload"]
-    pub fn string_to_args(
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        index: impl ::core::convert::Into<i32>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __CalculatorUtil_unity2_raw::string_to_args(
-                ::core::convert::Into::into(name),
-                ::core::convert::Into::into(index),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`StringToName(::unity2::Il2CppString, i32)` overload"]
-    pub fn string_to_name(
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        index: impl ::core::convert::Into<i32>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __CalculatorUtil_unity2_raw::string_to_name(
-                ::core::convert::Into::into(name),
-                ::core::convert::Into::into(index),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __CalculatorUtil_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-calculatorutil")]
-pub trait ICalculatorUtilMethods: ICalculatorUtil {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <CalculatorUtil as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CalculatorUtil_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-calculatorutil")]
-impl<__T: ICalculatorUtil> ICalculatorUtilMethods for __T {}
-
-#[cfg(feature = "app-calculatorutil")]
-impl CalculatorUtil {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(CalculatorUtil),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ICalculatorUtilMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor(crate::app::calculatorutil::CalculatorUtil_Type, ::unity2::Il2CppString, f32)` — overload selector"] pub fn new (r#type : crate :: app :: calculatorutil :: CalculatorUtil_Type , name : :: unity2 :: Il2CppString , value : f32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CalculatorUtil_Entity) , :: core :: stringify ! (new) ,)) ; < Self as ICalculatorUtil_EntityMethods > :: ctor (this , r#type , name , value) ; this }
 }
 
 #[cfg(feature = "app-calculatorutil")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{
-        CalculatorUtil, CalculatorUtil_Entity, CalculatorUtil_Type, ICalculatorUtil, ICalculatorUtilMethods, ICalculatorUtil_Entity,
-        ICalculatorUtil_EntityMethods,
-    };
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::system::{object::IObject, r#enum::IEnum, valuetype::IValueType};
+    pub use super::CalculatorUtil_Type;
+    pub use super::CalculatorUtil;
+    pub use super::ICalculatorUtil;
+    pub use super::ICalculatorUtilMethods;
+    pub use super::CalculatorUtil_Entity;
+    pub use super::ICalculatorUtil_Entity;
+    pub use super::ICalculatorUtil_EntityMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

@@ -2,41 +2,52 @@
 
 #[cfg(feature = "unity_engine-rendering-rthandleproperties-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        valuetype::{IValueType, ValueType},
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/rthandleproperties/RTHandleProperties.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct RTHandleProperties {
-        pub previous_viewport_size: crate::unity_engine::vector2int::Vector2Int,
-        pub previous_render_target_size: crate::unity_engine::vector2int::Vector2Int,
-        pub current_viewport_size: crate::unity_engine::vector2int::Vector2Int,
-        pub current_render_target_size: crate::unity_engine::vector2int::Vector2Int,
-        pub rt_handle_scale: crate::unity_engine::vector4::Vector4,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
 
-    impl ::unity2::ClassIdentity for RTHandleProperties {
-        const NAME: &'static str = "RTHandleProperties";
-        const NAMESPACE: &'static str = "UnityEngine.Rendering";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/rthandleproperties/RTHandleProperties.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct RTHandleProperties {
+    pub previous_viewport_size: crate :: unity_engine :: vector2int :: Vector2Int,
+    pub previous_render_target_size: crate :: unity_engine :: vector2int :: Vector2Int,
+    pub current_viewport_size: crate :: unity_engine :: vector2int :: Vector2Int,
+    pub current_render_target_size: crate :: unity_engine :: vector2int :: Vector2Int,
+    pub rt_handle_scale: crate :: unity_engine :: vector4 :: Vector4,
+}
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+
+impl ::unity2::ClassIdentity for RTHandleProperties {
+    const NAMESPACE: &'static str = "UnityEngine.Rendering";
+
+    const NAME: &'static str = "RTHandleProperties";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for RTHandleProperties {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl ::unity2::IlType for RTHandleProperties {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
+
+}
+
 }
 
 #[cfg(feature = "unity_engine-rendering-rthandleproperties-types")]
@@ -46,9 +57,8 @@ pub use __types::*;
 #[doc(hidden)]
 pub mod prelude {
     pub use super::RTHandleProperties;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::system::{object::IObject, valuetype::IValueType};
+    pub use crate::system::object::IObject;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

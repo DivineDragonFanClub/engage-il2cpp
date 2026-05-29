@@ -2,215 +2,129 @@
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphdebugdata-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        valuetype::{IValueType, ValueType},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/render_graph_module/rendergraphdebugdata/RenderGraphDebugData.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Experimental.Rendering.RenderGraphModule", name = "RenderGraphDebugData")]
-    #[parent(crate::system::object::Object)]
-    pub struct RenderGraphDebugData {
-        #[offset(16)]
-        #[rename(name = "passList")]
-        pub pass_list: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::experimental::rendering::render_graph_module::rendergraphdebugdata::RenderGraphDebugData_PassDebugData,
-        >,
-        #[offset(24)]
-        #[rename(name = "resourceLists")]
-        pub resource_lists: ::unity2::Array<
-            crate::system::collections::generic::list_1::List_1<
-                crate::unity_engine::experimental::rendering::render_graph_module::rendergraphdebugdata::RenderGraphDebugData_ResourceDebugData,
-            >,
-        >,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/rendering/render_graph_module/rendergraphdebugdata/RenderGraphDebugData_ResourceDebugData.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct RenderGraphDebugData_ResourceDebugData {
-        pub name: ::unity2::Il2CppString,
-        pub imported: bool,
-        pub creation_pass_index: i32,
-        pub release_pass_index: i32,
-        pub consumer_list: crate::system::collections::generic::list_1::List_1<i32>,
-        pub producer_list: crate::system::collections::generic::list_1::List_1<i32>,
-    }
 
-    impl ::unity2::ClassIdentity for RenderGraphDebugData_ResourceDebugData {
-        const NAME: &'static str = "RenderGraphDebugData.ResourceDebugData";
-        const NAMESPACE: &'static str = "UnityEngine.Experimental.Rendering.RenderGraphModule";
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/render_graph_module/rendergraphdebugdata/RenderGraphDebugData.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Experimental.Rendering.RenderGraphModule" , name = "RenderGraphDebugData")] # [parent (crate :: system :: object :: Object)] pub struct RenderGraphDebugData {
+# [offset (16)] # [rename (name = "passList")] pub pass_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphdebugdata :: RenderGraphDebugData_PassDebugData > ,
+# [offset (24)] # [rename (name = "resourceLists")] pub resource_lists : :: unity2 :: Array < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphdebugdata :: RenderGraphDebugData_ResourceDebugData > > ,
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/rendering/render_graph_module/rendergraphdebugdata/RenderGraphDebugData_ResourceDebugData.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct RenderGraphDebugData_ResourceDebugData {
+    pub name: :: unity2 :: Il2CppString,
+    pub imported: bool,
+    pub creation_pass_index: i32,
+    pub release_pass_index: i32,
+    pub consumer_list: crate :: system :: collections :: generic :: list_1 :: List_1 < i32 >,
+    pub producer_list: crate :: system :: collections :: generic :: list_1 :: List_1 < i32 >,
+}
+
+
+impl ::unity2::ClassIdentity for RenderGraphDebugData_ResourceDebugData {
+    const NAMESPACE: &'static str = "UnityEngine.Experimental.Rendering.RenderGraphModule";
+
+    const NAME: &'static str = "RenderGraphDebugData.ResourceDebugData";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for RenderGraphDebugData_ResourceDebugData {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+}
+
+
+impl ::unity2::IlType for RenderGraphDebugData_ResourceDebugData {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/rendering/render_graph_module/rendergraphdebugdata/RenderGraphDebugData_PassDebugData.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct RenderGraphDebugData_PassDebugData {
+    pub name: :: unity2 :: Il2CppString,
+    pub resource_read_lists: :: unity2 :: Array < crate :: system :: collections :: generic :: list_1 :: List_1 < i32 > >,
+    pub resource_write_lists: :: unity2 :: Array < crate :: system :: collections :: generic :: list_1 :: List_1 < i32 > >,
+    pub culled: bool,
+    pub generate_debug_data: bool,
+}
+
+
+impl ::unity2::ClassIdentity for RenderGraphDebugData_PassDebugData {
+    const NAMESPACE: &'static str = "UnityEngine.Experimental.Rendering.RenderGraphModule";
+
+    const NAME: &'static str = "RenderGraphDebugData.PassDebugData";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/rendering/render_graph_module/rendergraphdebugdata/RenderGraphDebugData_PassDebugData.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct RenderGraphDebugData_PassDebugData {
-        pub name: ::unity2::Il2CppString,
-        pub resource_read_lists: ::unity2::Array<crate::system::collections::generic::list_1::List_1<i32>>,
-        pub resource_write_lists: ::unity2::Array<crate::system::collections::generic::list_1::List_1<i32>>,
-        pub culled: bool,
-        pub generate_debug_data: bool,
+}
+
+
+impl ::unity2::IlType for RenderGraphDebugData_PassDebugData {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::ClassIdentity for RenderGraphDebugData_PassDebugData {
-        const NAME: &'static str = "RenderGraphDebugData.PassDebugData";
-        const NAMESPACE: &'static str = "UnityEngine.Experimental.Rendering.RenderGraphModule";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for RenderGraphDebugData_PassDebugData {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphdebugdata-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphdebugdata")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RenderGraphDebugData_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_clear {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RenderGraphDebugData as ::unity2::ClassIdentity>::class(),
-                "Clear",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RenderGraphDebugData as ::unity2::ClassIdentity>::NAME,
-                        "Clear",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn clear(this: RenderGraphDebugData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RenderGraphDebugData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RenderGraphDebugData as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RenderGraphDebugData as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: RenderGraphDebugData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RenderGraphDebugData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __RenderGraphDebugData_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_clear { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RenderGraphDebugData as :: unity2 :: ClassIdentity > :: class () , "Clear" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RenderGraphDebugData as :: unity2 :: ClassIdentity > :: NAME , "Clear" , e) , } } } pub unsafe fn clear (this : RenderGraphDebugData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RenderGraphDebugData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_clear :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RenderGraphDebugData as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RenderGraphDebugData as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : RenderGraphDebugData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RenderGraphDebugData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphdebugdata")]
-pub trait IRenderGraphDebugDataMethods: IRenderGraphDebugData {
-    #[doc = "`Clear()` overload"]
-    fn clear(self) -> () {
-        unsafe {
-            let __receiver =
-                <RenderGraphDebugData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RenderGraphDebugData_unity2_raw::clear(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <RenderGraphDebugData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RenderGraphDebugData_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IRenderGraphDebugDataMethods : IRenderGraphDebugData { # [doc = "`Clear()` overload"] fn clear (self ,) -> () { unsafe { let __receiver = < RenderGraphDebugData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RenderGraphDebugData_unity2_raw :: clear (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RenderGraphDebugData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RenderGraphDebugData_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphdebugdata")]
-impl<__T: IRenderGraphDebugData> IRenderGraphDebugDataMethods for __T {}
+impl < __T : IRenderGraphDebugData > IRenderGraphDebugDataMethods for __T { }
+
+#[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphdebugdata")]
+impl RenderGraphDebugData { pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RenderGraphDebugData_unity2_raw :: __lookup_clear :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RenderGraphDebugData_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphdebugdata")]
 impl RenderGraphDebugData {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RenderGraphDebugData),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRenderGraphDebugDataMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RenderGraphDebugData) , :: core :: stringify ! (new) ,)) ; < Self as IRenderGraphDebugDataMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphdebugdata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{
-        IRenderGraphDebugData, IRenderGraphDebugDataMethods, RenderGraphDebugData, RenderGraphDebugData_PassDebugData,
-        RenderGraphDebugData_ResourceDebugData,
-    };
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::system::{object::IObject, valuetype::IValueType};
+    pub use super::RenderGraphDebugData;
+    pub use super::IRenderGraphDebugData;
+    pub use super::IRenderGraphDebugDataMethods;
+    pub use super::RenderGraphDebugData_ResourceDebugData;
+    pub use super::RenderGraphDebugData_PassDebugData;
+    pub use crate::system::object::IObject;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

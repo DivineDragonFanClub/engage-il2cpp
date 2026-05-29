@@ -2,289 +2,75 @@
 
 #[cfg(feature = "app-battlerecordlinesetter-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battlerecordlinesetter/BattleRecordLineSetter.md"))]
-    #[::unity2::class(namespace = "App", name = "BattleRecordLineSetter")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct BattleRecordLineSetter {
-        #[offset(24)]
-        #[rename(name = "InfoTurnCount")]
-        pub info_turn_count: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(32)]
-        #[rename(name = "InfoTime")]
-        pub info_time: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(40)]
-        #[rename(name = "InfoMVP")]
-        pub info_mvp: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(48)]
-        #[rename(name = "ChapterNumber")]
-        pub chapter_number: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(56)]
-        #[rename(name = "ChapterName")]
-        pub chapter_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(64)]
-        #[rename(name = "TurnCount")]
-        pub turn_count: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(72)]
-        #[rename(name = "Time")]
-        pub time: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(80)]
-        #[rename(name = "MVPSolo")]
-        pub mvp_solo: crate::unity_engine::gameobject::GameObject,
-        #[offset(88)]
-        #[rename(name = "MVPSoloUnit")]
-        pub mvp_solo_unit: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(96)]
-        #[rename(name = "MVPSoloImg")]
-        pub mvp_solo_img: crate::app::uniticon::UnitIcon,
-        #[offset(104)]
-        #[rename(name = "MVPDuet")]
-        pub mvp_duet: crate::unity_engine::gameobject::GameObject,
-        #[offset(112)]
-        #[rename(name = "MVPDuetUnit")]
-        pub mvp_duet_unit: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(120)]
-        #[rename(name = "MVPDuetEmblem")]
-        pub mvp_duet_emblem: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(128)]
-        #[rename(name = "MVPDuetUnitImg")]
-        pub mvp_duet_unit_img: crate::app::uniticon::UnitIcon,
-        #[offset(136)]
-        #[rename(name = "MVPDuetEmblemImg")]
-        pub mvp_duet_emblem_img: crate::app::uniticon::UnitIcon,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battlerecordlinesetter/BattleRecordLineSetter.md"))] # [:: unity2 :: class (namespace = "App" , name = "BattleRecordLineSetter")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct BattleRecordLineSetter {
+# [offset (24)] # [rename (name = "InfoTurnCount")] pub info_turn_count : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (32)] # [rename (name = "InfoTime")] pub info_time : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (40)] # [rename (name = "InfoMVP")] pub info_mvp : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (48)] # [rename (name = "ChapterNumber")] pub chapter_number : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (56)] # [rename (name = "ChapterName")] pub chapter_name : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (64)] # [rename (name = "TurnCount")] pub turn_count : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (72)] # [rename (name = "Time")] pub time : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (80)] # [rename (name = "MVPSolo")] pub mvp_solo : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (88)] # [rename (name = "MVPSoloUnit")] pub mvp_solo_unit : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (96)] # [rename (name = "MVPSoloImg")] pub mvp_solo_img : crate :: app :: uniticon :: UnitIcon ,
+# [offset (104)] # [rename (name = "MVPDuet")] pub mvp_duet : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (112)] # [rename (name = "MVPDuetUnit")] pub mvp_duet_unit : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (120)] # [rename (name = "MVPDuetEmblem")] pub mvp_duet_emblem : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (128)] # [rename (name = "MVPDuetUnitImg")] pub mvp_duet_unit_img : crate :: app :: uniticon :: UnitIcon ,
+# [offset (136)] # [rename (name = "MVPDuetEmblemImg")] pub mvp_duet_emblem_img : crate :: app :: uniticon :: UnitIcon ,
+}
+
 }
 
 #[cfg(feature = "app-battlerecordlinesetter-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-battlerecordlinesetter")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __BattleRecordLineSetter_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::chapterrecord::ChapterRecord_Record as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleRecordLineSetter as ::unity2::ClassIdentity>::class(),
-                "Set",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <BattleRecordLineSetter as ::unity2::ClassIdentity>::NAME,
-                        "Set",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set(
-        this: BattleRecordLineSetter,
-        rec: crate::app::chapterrecord::ChapterRecord_Record,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(BattleRecordLineSetter, crate::app::chapterrecord::ChapterRecord_Record, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set::get_method_info().method_ptr);
-        inner(this, rec, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_data {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleRecordLineSetter as ::unity2::ClassIdentity>::class(),
-                "SetData",
-                6,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <BattleRecordLineSetter as ::unity2::ClassIdentity>::NAME,
-                        "SetData",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_data(
-        this: BattleRecordLineSetter,
-        cid: ::unity2::Il2CppString,
-        turn: i32,
-        time: f32,
-        pid: ::unity2::Il2CppString,
-        jid: ::unity2::Il2CppString,
-        gid: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            BattleRecordLineSetter,
-            ::unity2::Il2CppString,
-            i32,
-            f32,
-            ::unity2::Il2CppString,
-            ::unity2::Il2CppString,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_set_data::get_method_info().method_ptr);
-        inner(this, cid, turn, time, pid, jid, gid, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleRecordLineSetter as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <BattleRecordLineSetter as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: BattleRecordLineSetter, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(BattleRecordLineSetter, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __BattleRecordLineSetter_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: chapterrecord :: ChapterRecord_Record as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< BattleRecordLineSetter as :: unity2 :: ClassIdentity > :: class () , "Set" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < BattleRecordLineSetter as :: unity2 :: ClassIdentity > :: NAME , "Set" , e) , } } } pub unsafe fn set (this : BattleRecordLineSetter , rec : crate :: app :: chapterrecord :: ChapterRecord_Record , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (BattleRecordLineSetter , crate :: app :: chapterrecord :: ChapterRecord_Record , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set :: get_method_info () . method_ptr ,) ; inner (this , rec , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_data { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< BattleRecordLineSetter as :: unity2 :: ClassIdentity > :: class () , "SetData" , 6 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < BattleRecordLineSetter as :: unity2 :: ClassIdentity > :: NAME , "SetData" , e) , } } } pub unsafe fn set_data (this : BattleRecordLineSetter , cid : :: unity2 :: Il2CppString , turn : i32 , time : f32 , pid : :: unity2 :: Il2CppString , jid : :: unity2 :: Il2CppString , gid : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (BattleRecordLineSetter , :: unity2 :: Il2CppString , i32 , f32 , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_data :: get_method_info () . method_ptr ,) ; inner (this , cid , turn , time , pid , jid , gid , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< BattleRecordLineSetter as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < BattleRecordLineSetter as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : BattleRecordLineSetter , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (BattleRecordLineSetter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-battlerecordlinesetter")]
-pub trait IBattleRecordLineSetterMethods: IBattleRecordLineSetter {
-    #[doc = "`Set(crate::app::chapterrecord::ChapterRecord_Record)` overload"]
-    fn set(self, rec: impl ::core::convert::Into<crate::app::chapterrecord::ChapterRecord_Record>) -> () {
-        unsafe {
-            let __receiver =
-                <BattleRecordLineSetter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __BattleRecordLineSetter_unity2_raw::set(__receiver, ::core::convert::Into::into(rec), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetData(::unity2::Il2CppString, i32, f32, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
-    fn set_data(
-        self,
-        cid: impl ::core::convert::Into<::unity2::Il2CppString>,
-        turn: impl ::core::convert::Into<i32>,
-        time: impl ::core::convert::Into<f32>,
-        pid: impl ::core::convert::Into<::unity2::Il2CppString>,
-        jid: impl ::core::convert::Into<::unity2::Il2CppString>,
-        gid: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <BattleRecordLineSetter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __BattleRecordLineSetter_unity2_raw::set_data(
-                __receiver,
-                ::core::convert::Into::into(cid),
-                ::core::convert::Into::into(turn),
-                ::core::convert::Into::into(time),
-                ::core::convert::Into::into(pid),
-                ::core::convert::Into::into(jid),
-                ::core::convert::Into::into(gid),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <BattleRecordLineSetter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __BattleRecordLineSetter_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IBattleRecordLineSetterMethods : IBattleRecordLineSetter { # [doc = "`Set(crate::app::chapterrecord::ChapterRecord_Record)` overload"] fn set (self , rec : impl :: core :: convert :: Into < crate :: app :: chapterrecord :: ChapterRecord_Record >) -> () { unsafe { let __receiver = < BattleRecordLineSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __BattleRecordLineSetter_unity2_raw :: set (__receiver , :: core :: convert :: Into :: into (rec) , :: core :: option :: Option :: None) } } # [doc = "`SetData(::unity2::Il2CppString, i32, f32, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"] fn set_data (self , cid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , turn : impl :: core :: convert :: Into < i32 > , time : impl :: core :: convert :: Into < f32 > , pid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , jid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , gid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < BattleRecordLineSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __BattleRecordLineSetter_unity2_raw :: set_data (__receiver , :: core :: convert :: Into :: into (cid) , :: core :: convert :: Into :: into (turn) , :: core :: convert :: Into :: into (time) , :: core :: convert :: Into :: into (pid) , :: core :: convert :: Into :: into (jid) , :: core :: convert :: Into :: into (gid) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < BattleRecordLineSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __BattleRecordLineSetter_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-battlerecordlinesetter")]
-impl<__T: IBattleRecordLineSetter> IBattleRecordLineSetterMethods for __T {}
+impl < __T : IBattleRecordLineSetter > IBattleRecordLineSetterMethods for __T { }
+
+#[cfg(feature = "app-battlerecordlinesetter")]
+impl BattleRecordLineSetter { pub fn set_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __BattleRecordLineSetter_unity2_raw :: __lookup_set :: get_method_info () } pub fn set_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __BattleRecordLineSetter_unity2_raw :: __lookup_set_data :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __BattleRecordLineSetter_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-battlerecordlinesetter")]
 impl BattleRecordLineSetter {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(BattleRecordLineSetter),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IBattleRecordLineSetterMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (BattleRecordLineSetter) , :: core :: stringify ! (new) ,)) ; < Self as IBattleRecordLineSetterMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-battlerecordlinesetter")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{BattleRecordLineSetter, IBattleRecordLineSetter, IBattleRecordLineSetterMethods};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        system::object::IObject,
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::BattleRecordLineSetter;
+    pub use super::IBattleRecordLineSetter;
+    pub use super::IBattleRecordLineSetterMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

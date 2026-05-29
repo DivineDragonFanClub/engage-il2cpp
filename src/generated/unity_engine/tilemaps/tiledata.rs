@@ -2,293 +2,73 @@
 
 #[cfg(feature = "unity_engine-tilemaps-tiledata-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        valuetype::{IValueType, ValueType},
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/tilemaps/tiledata/TileData.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct TileData {
-        pub m_sprite: crate::unity_engine::sprite::Sprite,
-        pub m_color: crate::unity_engine::color::Color,
-        pub m_transform: crate::unity_engine::matrix4x4::Matrix4x4,
-        pub m_game_object: crate::unity_engine::gameobject::GameObject,
-        pub m_flags: crate::unity_engine::tilemaps::tileflags::TileFlags,
-        pub m_collider_type: crate::unity_engine::tilemaps::tile::Tile_ColliderType,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
 
-    impl ::unity2::ClassIdentity for TileData {
-        const NAME: &'static str = "TileData";
-        const NAMESPACE: &'static str = "UnityEngine.Tilemaps";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/tilemaps/tiledata/TileData.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct TileData {
+    pub m_sprite: crate :: unity_engine :: sprite :: Sprite,
+    pub m_color: crate :: unity_engine :: color :: Color,
+    pub m_transform: crate :: unity_engine :: matrix4x4 :: Matrix4x4,
+    pub m_game_object: crate :: unity_engine :: gameobject :: GameObject,
+    pub m_flags: crate :: unity_engine :: tilemaps :: tileflags :: TileFlags,
+    pub m_collider_type: crate :: unity_engine :: tilemaps :: tile :: Tile_ColliderType,
+}
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+
+impl ::unity2::ClassIdentity for TileData {
+    const NAMESPACE: &'static str = "UnityEngine.Tilemaps";
+
+    const NAME: &'static str = "TileData";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for TileData {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl ::unity2::IlType for TileData {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
+
+}
+
 }
 
 #[cfg(feature = "unity_engine-tilemaps-tiledata-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-tilemaps-tiledata")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __TileData_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_sprite {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::sprite::Sprite as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<TileData as ::unity2::ClassIdentity>::class(), "set_sprite", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TileData as ::unity2::ClassIdentity>::NAME,
-                        "set_sprite",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_sprite(this: TileData, value: crate::unity_engine::sprite::Sprite, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TileData, crate::unity_engine::sprite::Sprite, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_sprite::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_color {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::color::Color as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<TileData as ::unity2::ClassIdentity>::class(), "set_color", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TileData as ::unity2::ClassIdentity>::NAME,
-                        "set_color",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_color(this: TileData, value: crate::unity_engine::color::Color, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TileData, crate::unity_engine::color::Color, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_color::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_transform {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TileData as ::unity2::ClassIdentity>::class(),
-                "set_transform",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TileData as ::unity2::ClassIdentity>::NAME,
-                        "set_transform",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_transform(
-        this: TileData,
-        value: crate::unity_engine::matrix4x4::Matrix4x4,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(TileData, crate::unity_engine::matrix4x4::Matrix4x4, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_transform::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_game_object {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TileData as ::unity2::ClassIdentity>::class(),
-                "set_gameObject",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TileData as ::unity2::ClassIdentity>::NAME,
-                        "set_gameObject",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_game_object(
-        this: TileData,
-        value: crate::unity_engine::gameobject::GameObject,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(TileData, crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_game_object::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_flags {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::tilemaps::tileflags::TileFlags as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<TileData as ::unity2::ClassIdentity>::class(), "set_flags", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TileData as ::unity2::ClassIdentity>::NAME,
-                        "set_flags",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_flags(
-        this: TileData,
-        value: crate::unity_engine::tilemaps::tileflags::TileFlags,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(TileData, crate::unity_engine::tilemaps::tileflags::TileFlags, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_flags::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_collider_type {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::tilemaps::tile::Tile_ColliderType as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TileData as ::unity2::ClassIdentity>::class(),
-                "set_colliderType",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TileData as ::unity2::ClassIdentity>::NAME,
-                        "set_colliderType",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_collider_type(
-        this: TileData,
-        value: crate::unity_engine::tilemaps::tile::Tile_ColliderType,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(TileData, crate::unity_engine::tilemaps::tile::Tile_ColliderType, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_collider_type::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __TileData_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_sprite { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: sprite :: Sprite as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TileData as :: unity2 :: ClassIdentity > :: class () , "set_sprite" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TileData as :: unity2 :: ClassIdentity > :: NAME , "set_sprite" , e) , } } } pub unsafe fn set_sprite (this : TileData , value : crate :: unity_engine :: sprite :: Sprite , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TileData , crate :: unity_engine :: sprite :: Sprite , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_sprite :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_color { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: color :: Color as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TileData as :: unity2 :: ClassIdentity > :: class () , "set_color" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TileData as :: unity2 :: ClassIdentity > :: NAME , "set_color" , e) , } } } pub unsafe fn set_color (this : TileData , value : crate :: unity_engine :: color :: Color , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TileData , crate :: unity_engine :: color :: Color , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_color :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_transform { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: matrix4x4 :: Matrix4x4 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TileData as :: unity2 :: ClassIdentity > :: class () , "set_transform" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TileData as :: unity2 :: ClassIdentity > :: NAME , "set_transform" , e) , } } } pub unsafe fn set_transform (this : TileData , value : crate :: unity_engine :: matrix4x4 :: Matrix4x4 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TileData , crate :: unity_engine :: matrix4x4 :: Matrix4x4 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_transform :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_game_object { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: gameobject :: GameObject as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TileData as :: unity2 :: ClassIdentity > :: class () , "set_gameObject" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TileData as :: unity2 :: ClassIdentity > :: NAME , "set_gameObject" , e) , } } } pub unsafe fn set_game_object (this : TileData , value : crate :: unity_engine :: gameobject :: GameObject , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TileData , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_game_object :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_flags { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: tilemaps :: tileflags :: TileFlags as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TileData as :: unity2 :: ClassIdentity > :: class () , "set_flags" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TileData as :: unity2 :: ClassIdentity > :: NAME , "set_flags" , e) , } } } pub unsafe fn set_flags (this : TileData , value : crate :: unity_engine :: tilemaps :: tileflags :: TileFlags , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TileData , crate :: unity_engine :: tilemaps :: tileflags :: TileFlags , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_flags :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_collider_type { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: tilemaps :: tile :: Tile_ColliderType as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TileData as :: unity2 :: ClassIdentity > :: class () , "set_colliderType" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TileData as :: unity2 :: ClassIdentity > :: NAME , "set_colliderType" , e) , } } } pub unsafe fn set_collider_type (this : TileData , value : crate :: unity_engine :: tilemaps :: tile :: Tile_ColliderType , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TileData , crate :: unity_engine :: tilemaps :: tile :: Tile_ColliderType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_collider_type :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-tilemaps-tiledata")]
-impl TileData {
-    #[doc = "`set_sprite(crate::unity_engine::sprite::Sprite)` overload"]
-    pub fn set_sprite(self, value: impl ::core::convert::Into<crate::unity_engine::sprite::Sprite>) -> () {
-        unsafe { __TileData_unity2_raw::set_sprite(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
+impl TileData { # [doc = "`set_sprite(crate::unity_engine::sprite::Sprite)` overload"] pub fn set_sprite (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: sprite :: Sprite >) -> () { unsafe { __TileData_unity2_raw :: set_sprite (self , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`set_color(crate::unity_engine::color::Color)` overload"] pub fn set_color (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color >) -> () { unsafe { __TileData_unity2_raw :: set_color (self , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`set_transform(crate::unity_engine::matrix4x4::Matrix4x4)` overload"] pub fn set_transform (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: matrix4x4 :: Matrix4x4 >) -> () { unsafe { __TileData_unity2_raw :: set_transform (self , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`set_gameObject(crate::unity_engine::gameobject::GameObject)` overload"] pub fn set_game_object (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> () { unsafe { __TileData_unity2_raw :: set_game_object (self , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`set_flags(crate::unity_engine::tilemaps::tileflags::TileFlags)` overload"] pub fn set_flags (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: tilemaps :: tileflags :: TileFlags >) -> () { unsafe { __TileData_unity2_raw :: set_flags (self , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`set_colliderType(crate::unity_engine::tilemaps::tile::Tile_ColliderType)` overload"] pub fn set_collider_type (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: tilemaps :: tile :: Tile_ColliderType >) -> () { unsafe { __TileData_unity2_raw :: set_collider_type (self , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } }
 
-    #[doc = "`set_color(crate::unity_engine::color::Color)` overload"]
-    pub fn set_color(self, value: impl ::core::convert::Into<crate::unity_engine::color::Color>) -> () {
-        unsafe { __TileData_unity2_raw::set_color(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_transform(crate::unity_engine::matrix4x4::Matrix4x4)` overload"]
-    pub fn set_transform(self, value: impl ::core::convert::Into<crate::unity_engine::matrix4x4::Matrix4x4>) -> () {
-        unsafe { __TileData_unity2_raw::set_transform(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_gameObject(crate::unity_engine::gameobject::GameObject)` overload"]
-    pub fn set_game_object(self, value: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>) -> () {
-        unsafe { __TileData_unity2_raw::set_game_object(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_flags(crate::unity_engine::tilemaps::tileflags::TileFlags)` overload"]
-    pub fn set_flags(self, value: impl ::core::convert::Into<crate::unity_engine::tilemaps::tileflags::TileFlags>) -> () {
-        unsafe { __TileData_unity2_raw::set_flags(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_colliderType(crate::unity_engine::tilemaps::tile::Tile_ColliderType)` overload"]
-    pub fn set_collider_type(self, value: impl ::core::convert::Into<crate::unity_engine::tilemaps::tile::Tile_ColliderType>) -> () {
-        unsafe { __TileData_unity2_raw::set_collider_type(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-}
+#[cfg(feature = "unity_engine-tilemaps-tiledata")]
+impl TileData { pub fn set_sprite_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TileData_unity2_raw :: __lookup_set_sprite :: get_method_info () } pub fn set_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TileData_unity2_raw :: __lookup_set_color :: get_method_info () } pub fn set_transform_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TileData_unity2_raw :: __lookup_set_transform :: get_method_info () } pub fn set_game_object_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TileData_unity2_raw :: __lookup_set_game_object :: get_method_info () } pub fn set_flags_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TileData_unity2_raw :: __lookup_set_flags :: get_method_info () } pub fn set_collider_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TileData_unity2_raw :: __lookup_set_collider_type :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-tilemaps-tiledata")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::TileData;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::system::{object::IObject, valuetype::IValueType};
+    pub use crate::system::object::IObject;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

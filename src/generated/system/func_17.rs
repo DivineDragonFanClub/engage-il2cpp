@@ -2,132 +2,46 @@
 
 #[cfg(feature = "system-func_17-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        delegate::{Delegate, IDelegate},
-        multicastdelegate::{IMulticastDelegate, MulticastDelegate},
-        object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/func_17/Func_17.md"))]
-    #[::unity2::class(namespace = "System", name = "Func`17")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    #[parent(crate::system::delegate::Delegate)]
-    #[parent(crate::system::object::Object)]
-    pub struct Func_17<
-        T0: ::unity2::ClassIdentity,
-        T1: ::unity2::ClassIdentity,
-        T2: ::unity2::ClassIdentity,
-        T3: ::unity2::ClassIdentity,
-        T4: ::unity2::ClassIdentity,
-        T5: ::unity2::ClassIdentity,
-        T6: ::unity2::ClassIdentity,
-        T7: ::unity2::ClassIdentity,
-        T8: ::unity2::ClassIdentity,
-        T9: ::unity2::ClassIdentity,
-        T10: ::unity2::ClassIdentity,
-        T11: ::unity2::ClassIdentity,
-        T12: ::unity2::ClassIdentity,
-        T13: ::unity2::ClassIdentity,
-        T14: ::unity2::ClassIdentity,
-        T15: ::unity2::ClassIdentity,
-        T16: ::unity2::ClassIdentity,
-    > {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: delegate :: { Delegate , IDelegate }
+ ;
+ use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/func_17/Func_17.md"))] # [:: unity2 :: class (namespace = "System" , name = "Func`17")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] # [parent (crate :: system :: delegate :: Delegate)] # [parent (crate :: system :: object :: Object)] pub struct Func_17 < T0 : :: unity2 :: ClassIdentity , T1 : :: unity2 :: ClassIdentity , T2 : :: unity2 :: ClassIdentity , T3 : :: unity2 :: ClassIdentity , T4 : :: unity2 :: ClassIdentity , T5 : :: unity2 :: ClassIdentity , T6 : :: unity2 :: ClassIdentity , T7 : :: unity2 :: ClassIdentity , T8 : :: unity2 :: ClassIdentity , T9 : :: unity2 :: ClassIdentity , T10 : :: unity2 :: ClassIdentity , T11 : :: unity2 :: ClassIdentity , T12 : :: unity2 :: ClassIdentity , T13 : :: unity2 :: ClassIdentity , T14 : :: unity2 :: ClassIdentity , T15 : :: unity2 :: ClassIdentity , T16 : :: unity2 :: ClassIdentity > {}
+
 }
 
 #[cfg(feature = "system-func_17-types")]
 pub use __types::*;
 
 #[cfg(feature = "system-func_17")]
-#[::unity2::methods]
-impl<
-        T0: ::unity2::ClassIdentity,
-        T1: ::unity2::ClassIdentity,
-        T2: ::unity2::ClassIdentity,
-        T3: ::unity2::ClassIdentity,
-        T4: ::unity2::ClassIdentity,
-        T5: ::unity2::ClassIdentity,
-        T6: ::unity2::ClassIdentity,
-        T7: ::unity2::ClassIdentity,
-        T8: ::unity2::ClassIdentity,
-        T9: ::unity2::ClassIdentity,
-        T10: ::unity2::ClassIdentity,
-        T11: ::unity2::ClassIdentity,
-        T12: ::unity2::ClassIdentity,
-        T13: ::unity2::ClassIdentity,
-        T14: ::unity2::ClassIdentity,
-        T15: ::unity2::ClassIdentity,
-        T16: ::unity2::ClassIdentity,
-    > Func_17<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16>
-{
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+# [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity , T1 : :: unity2 :: ClassIdentity , T2 : :: unity2 :: ClassIdentity , T3 : :: unity2 :: ClassIdentity , T4 : :: unity2 :: ClassIdentity , T5 : :: unity2 :: ClassIdentity , T6 : :: unity2 :: ClassIdentity , T7 : :: unity2 :: ClassIdentity , T8 : :: unity2 :: ClassIdentity , T9 : :: unity2 :: ClassIdentity , T10 : :: unity2 :: ClassIdentity , T11 : :: unity2 :: ClassIdentity , T12 : :: unity2 :: ClassIdentity , T13 : :: unity2 :: ClassIdentity , T14 : :: unity2 :: ClassIdentity , T15 : :: unity2 :: ClassIdentity , T16 : :: unity2 :: ClassIdentity > Func_17 < T0 , T1 , T2 , T3 , T4 , T5 , T6 , T7 , T8 , T9 , T10 , T11 , T12 , T13 , T14 , T15 , T16 > {
+# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] # [method (name = ".ctor" , args = 2)] pub fn ctor (self , object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> () ;
 
-    #[doc = "`Invoke(T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15)` overload"]
-    #[method(name = "Invoke", args = 16)]
-    pub fn invoke(
-        self,
-        arg1: T0,
-        arg2: T1,
-        arg3: T2,
-        arg4: T3,
-        arg5: T4,
-        arg6: T5,
-        arg7: T6,
-        arg8: T7,
-        arg9: T8,
-        arg10: T9,
-        arg11: T10,
-        arg12: T11,
-        arg13: T12,
-        arg14: T13,
-        arg15: T14,
-        arg16: T15,
-    ) -> T16;
+# [doc = "`Invoke(T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15)` overload"] # [method (name = "Invoke" , args = 16)] pub fn invoke (self , arg1 : T0 , arg2 : T1 , arg3 : T2 , arg4 : T3 , arg5 : T4 , arg6 : T5 , arg7 : T6 , arg8 : T7 , arg9 : T8 , arg10 : T9 , arg11 : T10 , arg12 : T11 , arg13 : T12 , arg14 : T13 , arg15 : T14 , arg16 : T15) -> T16 ;
 }
 
 #[cfg(feature = "system-func_17")]
-impl<
-        T0: ::unity2::ClassIdentity,
-        T1: ::unity2::ClassIdentity,
-        T2: ::unity2::ClassIdentity,
-        T3: ::unity2::ClassIdentity,
-        T4: ::unity2::ClassIdentity,
-        T5: ::unity2::ClassIdentity,
-        T6: ::unity2::ClassIdentity,
-        T7: ::unity2::ClassIdentity,
-        T8: ::unity2::ClassIdentity,
-        T9: ::unity2::ClassIdentity,
-        T10: ::unity2::ClassIdentity,
-        T11: ::unity2::ClassIdentity,
-        T12: ::unity2::ClassIdentity,
-        T13: ::unity2::ClassIdentity,
-        T14: ::unity2::ClassIdentity,
-        T15: ::unity2::ClassIdentity,
-        T16: ::unity2::ClassIdentity,
-    > Func_17<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16>
-{
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(Func_17), ::core::stringify!(new),));
-        <Self as IFunc_17Methods<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16>>::ctor(this, object, method);
-        this
-    }
+impl < T0 : :: unity2 :: ClassIdentity , T1 : :: unity2 :: ClassIdentity , T2 : :: unity2 :: ClassIdentity , T3 : :: unity2 :: ClassIdentity , T4 : :: unity2 :: ClassIdentity , T5 : :: unity2 :: ClassIdentity , T6 : :: unity2 :: ClassIdentity , T7 : :: unity2 :: ClassIdentity , T8 : :: unity2 :: ClassIdentity , T9 : :: unity2 :: ClassIdentity , T10 : :: unity2 :: ClassIdentity , T11 : :: unity2 :: ClassIdentity , T12 : :: unity2 :: ClassIdentity , T13 : :: unity2 :: ClassIdentity , T14 : :: unity2 :: ClassIdentity , T15 : :: unity2 :: ClassIdentity , T16 : :: unity2 :: ClassIdentity > Func_17 < T0 , T1 , T2 , T3 , T4 , T5 , T6 , T7 , T8 , T9 , T10 , T11 , T12 , T13 , T14 , T15 , T16 > {
+# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Func_17) , :: core :: stringify ! (new) ,)) ; < Self as IFunc_17Methods < T0 , T1 , T2 , T3 , T4 , T5 , T6 , T7 , T8 , T9 , T10 , T11 , T12 , T13 , T14 , T15 , T16 > > :: ctor (this , object , method) ; this }
 }
 
 #[cfg(feature = "system-func_17")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{Func_17, IFunc_17, IFunc_17Methods};
-    #[cfg(feature = "system-delegate")]
-    pub use crate::system::delegate::IDelegateMethods;
-    #[cfg(feature = "system-multicastdelegate")]
-    pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::system::{delegate::IDelegate, multicastdelegate::IMulticastDelegate, object::IObject};
+    pub use super::Func_17;
+    pub use super::IFunc_17;
+    pub use super::IFunc_17Methods;
+    pub use crate::system::delegate::IDelegate;
+    pub use crate::system::multicastdelegate::IMulticastDelegate;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-delegate")] pub use crate::system::delegate::IDelegateMethods;
+    #[cfg(feature = "system-multicastdelegate")] pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

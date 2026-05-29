@@ -2,911 +2,149 @@
 
 #[cfg(feature = "app-hubmascotcontroller-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::{
-            object::{IObject, Object},
-            r#enum::{Enum, IEnum},
-            valuetype::{IValueType, ValueType},
-        },
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubmascotcontroller/HubMascotController_Mode.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct HubMascotController_Mode {
-        pub value: i32,
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubmascotcontroller/HubMascotController_Mode.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct HubMascotController_Mode  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for HubMascotController_Mode  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "HubMascotController.Mode";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    impl ::unity2::ClassIdentity for HubMascotController_Mode {
-        const NAME: &'static str = "HubMascotController.Mode";
-        const NAMESPACE: &'static str = "App";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  ::unity2::IlType for HubMascotController_Mode  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::IlType for HubMascotController_Mode {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  HubMascotController_Mode  {
+    pub fn none() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl HubMascotController_Mode {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn pedestal() -> Self {
-            Self { value: 1 }
-        }
+    pub fn pedestal() -> Self {
+        Self { value: 1 }
 
-        pub fn follow() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn lost() -> Self {
-            Self { value: 3 }
-        }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmascotcontroller/HubMascotController.md"))]
-    #[::unity2::class(namespace = "App", name = "HubMascotController")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct HubMascotController {
-        #[offset(40)]
-        #[rename(name = "FollowSpeed1")]
-        pub follow_speed1: f32,
-        #[offset(44)]
-        #[rename(name = "FollowSpeed2")]
-        pub follow_speed2: f32,
-        #[offset(48)]
-        #[rename(name = "SpeedRate")]
-        pub speed_rate: f32,
-        #[offset(64)]
-        #[rename(name = "overlapColliders")]
-        pub overlap_colliders: ::unity2::Array<crate::unity_engine::collider::Collider>,
-        #[offset(72)]
-        #[rename(name = "results")]
-        pub results: ::unity2::Array<crate::unity_engine::raycasthit::RaycastHit>,
-        #[offset(80)]
-        #[rename(name = "m_animator")]
-        pub m_animator: crate::unity_engine::animator::Animator,
-        #[offset(88)]
-        #[rename(name = "m_speed")]
-        pub m_speed: f32,
-        #[offset(92)]
-        #[rename(name = "m_angle")]
-        pub m_angle: f32,
-        #[offset(96)]
-        #[rename(name = "m_lastAngle")]
-        pub m_last_angle: f32,
-        #[offset(100)]
-        #[rename(name = "m_reactionCounter")]
-        pub m_reaction_counter: f32,
-        #[offset(104)]
-        #[rename(name = "m_moveDelay")]
-        pub m_move_delay: f32,
-        #[offset(108)]
-        #[rename(name = "m_distanceTime")]
-        pub m_distance_time: f32,
-        #[offset(112)]
-        #[rename(name = "m_keepAway")]
-        pub m_keep_away: bool,
-        #[offset(113)]
-        #[rename(name = "m_reactionFirst")]
-        pub m_reaction_first: bool,
-        #[offset(116)]
-        #[rename(name = "m_findLast")]
-        pub m_find_last: crate::unity_engine::vector3::Vector3,
-        #[offset(128)]
-        #[rename(name = "m_agent")]
-        pub m_agent: crate::unity_engine::ai::navmeshagent::NavMeshAgent,
-        #[offset(136)]
-        #[rename(name = "m_path")]
-        pub m_path: crate::unity_engine::ai::navmeshpath::NavMeshPath,
-        #[offset(144)]
-        #[rename(name = "ObjectCollisionLayerMask")]
-        pub object_collision_layer_mask: i32,
-        #[offset(148)]
-        #[rename(name = "GroundCollisionLayerMask")]
-        pub ground_collision_layer_mask: i32,
+
+    pub fn follow() -> Self {
+        Self { value: 2 }
+
     }
+
+
+    pub fn lost() -> Self {
+        Self { value: 3 }
+
+    }
+
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmascotcontroller/HubMascotController.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubMascotController")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct HubMascotController {
+# [offset (40)] # [rename (name = "FollowSpeed1")] pub follow_speed1 : f32 ,
+# [offset (44)] # [rename (name = "FollowSpeed2")] pub follow_speed2 : f32 ,
+# [offset (48)] # [rename (name = "SpeedRate")] pub speed_rate : f32 ,
+# [offset (64)] # [rename (name = "overlapColliders")] pub overlap_colliders : :: unity2 :: Array < crate :: unity_engine :: collider :: Collider > ,
+# [offset (72)] # [rename (name = "results")] pub results : :: unity2 :: Array < crate :: unity_engine :: raycasthit :: RaycastHit > ,
+# [offset (80)] # [rename (name = "m_animator")] pub m_animator : crate :: unity_engine :: animator :: Animator ,
+# [offset (88)] # [rename (name = "m_speed")] pub m_speed : f32 ,
+# [offset (92)] # [rename (name = "m_angle")] pub m_angle : f32 ,
+# [offset (96)] # [rename (name = "m_lastAngle")] pub m_last_angle : f32 ,
+# [offset (100)] # [rename (name = "m_reactionCounter")] pub m_reaction_counter : f32 ,
+# [offset (104)] # [rename (name = "m_moveDelay")] pub m_move_delay : f32 ,
+# [offset (108)] # [rename (name = "m_distanceTime")] pub m_distance_time : f32 ,
+# [offset (112)] # [rename (name = "m_keepAway")] pub m_keep_away : bool ,
+# [offset (113)] # [rename (name = "m_reactionFirst")] pub m_reaction_first : bool ,
+# [offset (116)] # [rename (name = "m_findLast")] pub m_find_last : crate :: unity_engine :: vector3 :: Vector3 ,
+# [offset (128)] # [rename (name = "m_agent")] pub m_agent : crate :: unity_engine :: ai :: navmeshagent :: NavMeshAgent ,
+# [offset (136)] # [rename (name = "m_path")] pub m_path : crate :: unity_engine :: ai :: navmeshpath :: NavMeshPath ,
+# [offset (144)] # [rename (name = "ObjectCollisionLayerMask")] pub object_collision_layer_mask : i32 ,
+# [offset (148)] # [rename (name = "GroundCollisionLayerMask")] pub ground_collision_layer_mask : i32 ,
+}
+
 }
 
 #[cfg(feature = "app-hubmascotcontroller-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-hubmascotcontroller")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __HubMascotController_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_current_mode {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubMascotController as ::unity2::ClassIdentity>::class(),
-                "get_CurrentMode",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubMascotController as ::unity2::ClassIdentity>::NAME,
-                        "get_CurrentMode",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_current_mode(
-        this: HubMascotController,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::hubmascotcontroller::HubMascotController_Mode {
-        let inner: extern "C" fn(HubMascotController, ::unity2::OptionalMethod) -> crate::app::hubmascotcontroller::HubMascotController_Mode =
-            ::core::mem::transmute(__lookup_get_current_mode::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_current_mode {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::hubmascotcontroller::HubMascotController_Mode as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubMascotController as ::unity2::ClassIdentity>::class(),
-                "set_CurrentMode",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubMascotController as ::unity2::ClassIdentity>::NAME,
-                        "set_CurrentMode",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_current_mode(
-        this: HubMascotController,
-        value: crate::app::hubmascotcontroller::HubMascotController_Mode,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubMascotController, crate::app::hubmascotcontroller::HubMascotController_Mode, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_current_mode::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_agent {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubMascotController as ::unity2::ClassIdentity>::class(),
-                "get_Agent",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubMascotController as ::unity2::ClassIdentity>::NAME,
-                        "get_Agent",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_agent(
-        this: HubMascotController,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::ai::navmeshagent::NavMeshAgent {
-        let inner: extern "C" fn(HubMascotController, ::unity2::OptionalMethod) -> crate::unity_engine::ai::navmeshagent::NavMeshAgent =
-            ::core::mem::transmute(__lookup_get_agent::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_follow {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubMascotController as ::unity2::ClassIdentity>::class(),
-                "get_Follow",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubMascotController as ::unity2::ClassIdentity>::NAME,
-                        "get_Follow",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_follow(this: HubMascotController, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform {
-        let inner: extern "C" fn(HubMascotController, ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform =
-            ::core::mem::transmute(__lookup_get_follow::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_follow {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubMascotController as ::unity2::ClassIdentity>::class(),
-                "set_Follow",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubMascotController as ::unity2::ClassIdentity>::NAME,
-                        "set_Follow",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_follow(
-        this: HubMascotController,
-        value: crate::unity_engine::transform::Transform,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubMascotController, crate::unity_engine::transform::Transform, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_follow::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_is_stop {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubMascotController as ::unity2::ClassIdentity>::class(),
-                "get_IsStop",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubMascotController as ::unity2::ClassIdentity>::NAME,
-                        "get_IsStop",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_is_stop(this: HubMascotController, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(HubMascotController, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_is_stop::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_is_stop {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubMascotController as ::unity2::ClassIdentity>::class(),
-                "set_IsStop",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubMascotController as ::unity2::ClassIdentity>::NAME,
-                        "set_IsStop",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_is_stop(this: HubMascotController, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(HubMascotController, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_is_stop::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_default_look_at_target {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubMascotController as ::unity2::ClassIdentity>::class(),
-                "get_DefaultLookAtTarget",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubMascotController as ::unity2::ClassIdentity>::NAME,
-                        "get_DefaultLookAtTarget",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_default_look_at_target(
-        this: HubMascotController,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::gameobject::GameObject {
-        let inner: extern "C" fn(HubMascotController, ::unity2::OptionalMethod) -> crate::unity_engine::gameobject::GameObject =
-            ::core::mem::transmute(__lookup_get_default_look_at_target::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_default_look_at_target {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubMascotController as ::unity2::ClassIdentity>::class(),
-                "set_DefaultLookAtTarget",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubMascotController as ::unity2::ClassIdentity>::NAME,
-                        "set_DefaultLookAtTarget",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_default_look_at_target(
-        this: HubMascotController,
-        value: crate::unity_engine::gameobject::GameObject,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubMascotController, crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_default_look_at_target::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_awake {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubMascotController as ::unity2::ClassIdentity>::class(),
-                "Awake",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubMascotController as ::unity2::ClassIdentity>::NAME,
-                        "Awake",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn awake(this: HubMascotController, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(HubMascotController, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_awake::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_start {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubMascotController as ::unity2::ClassIdentity>::class(),
-                "Start",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubMascotController as ::unity2::ClassIdentity>::NAME,
-                        "Start",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn start(this: HubMascotController, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(HubMascotController, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_start::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_bool {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubMascotController as ::unity2::ClassIdentity>::class(),
-                "SetBool",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubMascotController as ::unity2::ClassIdentity>::NAME,
-                        "SetBool",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_bool(
-        this: HubMascotController,
-        param_name: ::unity2::Il2CppString,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubMascotController, ::unity2::Il2CppString, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_bool::get_method_info().method_ptr);
-        inner(this, param_name, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_play {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubMascotController as ::unity2::ClassIdentity>::class(),
-                "Play",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubMascotController as ::unity2::ClassIdentity>::NAME,
-                        "Play",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn play(
-        this: HubMascotController,
-        anim_name: ::unity2::Il2CppString,
-        forced: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubMascotController, ::unity2::Il2CppString, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_play::get_method_info().method_ptr);
-        inner(this, anim_name, forced, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubMascotController as ::unity2::ClassIdentity>::class(),
-                "Update",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubMascotController as ::unity2::ClassIdentity>::NAME,
-                        "Update",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update(this: HubMascotController, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(HubMascotController, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update_agent {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubMascotController as ::unity2::ClassIdentity>::class(),
-                "UpdateAgent",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubMascotController as ::unity2::ClassIdentity>::NAME,
-                        "UpdateAgent",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update_agent(this: HubMascotController, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(HubMascotController, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update_agent::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update_trace {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubMascotController as ::unity2::ClassIdentity>::class(),
-                "UpdateTrace",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubMascotController as ::unity2::ClassIdentity>::NAME,
-                        "UpdateTrace",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update_trace(this: HubMascotController, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(HubMascotController, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update_trace::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubMascotController as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubMascotController as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: HubMascotController, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(HubMascotController, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __HubMascotController_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_current_mode { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubMascotController as :: unity2 :: ClassIdentity > :: class () , "get_CurrentMode" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubMascotController as :: unity2 :: ClassIdentity > :: NAME , "get_CurrentMode" , e) , } } } pub unsafe fn get_current_mode (this : HubMascotController , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: hubmascotcontroller :: HubMascotController_Mode { let inner : extern "C" fn (HubMascotController , :: unity2 :: OptionalMethod ,) -> crate :: app :: hubmascotcontroller :: HubMascotController_Mode = :: core :: mem :: transmute (__lookup_get_current_mode :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_current_mode { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: hubmascotcontroller :: HubMascotController_Mode as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubMascotController as :: unity2 :: ClassIdentity > :: class () , "set_CurrentMode" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubMascotController as :: unity2 :: ClassIdentity > :: NAME , "set_CurrentMode" , e) , } } } pub unsafe fn set_current_mode (this : HubMascotController , value : crate :: app :: hubmascotcontroller :: HubMascotController_Mode , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HubMascotController , crate :: app :: hubmascotcontroller :: HubMascotController_Mode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_current_mode :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_agent { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubMascotController as :: unity2 :: ClassIdentity > :: class () , "get_Agent" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubMascotController as :: unity2 :: ClassIdentity > :: NAME , "get_Agent" , e) , } } } pub unsafe fn get_agent (this : HubMascotController , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ai :: navmeshagent :: NavMeshAgent { let inner : extern "C" fn (HubMascotController , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ai :: navmeshagent :: NavMeshAgent = :: core :: mem :: transmute (__lookup_get_agent :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_follow { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubMascotController as :: unity2 :: ClassIdentity > :: class () , "get_Follow" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubMascotController as :: unity2 :: ClassIdentity > :: NAME , "get_Follow" , e) , } } } pub unsafe fn get_follow (this : HubMascotController , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: transform :: Transform { let inner : extern "C" fn (HubMascotController , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: transform :: Transform = :: core :: mem :: transmute (__lookup_get_follow :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_follow { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: transform :: Transform as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubMascotController as :: unity2 :: ClassIdentity > :: class () , "set_Follow" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubMascotController as :: unity2 :: ClassIdentity > :: NAME , "set_Follow" , e) , } } } pub unsafe fn set_follow (this : HubMascotController , value : crate :: unity_engine :: transform :: Transform , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HubMascotController , crate :: unity_engine :: transform :: Transform , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_follow :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_is_stop { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubMascotController as :: unity2 :: ClassIdentity > :: class () , "get_IsStop" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubMascotController as :: unity2 :: ClassIdentity > :: NAME , "get_IsStop" , e) , } } } pub unsafe fn get_is_stop (this : HubMascotController , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (HubMascotController , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_is_stop :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_is_stop { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubMascotController as :: unity2 :: ClassIdentity > :: class () , "set_IsStop" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubMascotController as :: unity2 :: ClassIdentity > :: NAME , "set_IsStop" , e) , } } } pub unsafe fn set_is_stop (this : HubMascotController , value : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HubMascotController , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_is_stop :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_default_look_at_target { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubMascotController as :: unity2 :: ClassIdentity > :: class () , "get_DefaultLookAtTarget" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubMascotController as :: unity2 :: ClassIdentity > :: NAME , "get_DefaultLookAtTarget" , e) , } } } pub unsafe fn get_default_look_at_target (this : HubMascotController , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject { let inner : extern "C" fn (HubMascotController , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute (__lookup_get_default_look_at_target :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_default_look_at_target { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: gameobject :: GameObject as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubMascotController as :: unity2 :: ClassIdentity > :: class () , "set_DefaultLookAtTarget" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubMascotController as :: unity2 :: ClassIdentity > :: NAME , "set_DefaultLookAtTarget" , e) , } } } pub unsafe fn set_default_look_at_target (this : HubMascotController , value : crate :: unity_engine :: gameobject :: GameObject , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HubMascotController , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_default_look_at_target :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_awake { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubMascotController as :: unity2 :: ClassIdentity > :: class () , "Awake" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubMascotController as :: unity2 :: ClassIdentity > :: NAME , "Awake" , e) , } } } pub unsafe fn awake (this : HubMascotController , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HubMascotController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_awake :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_start { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubMascotController as :: unity2 :: ClassIdentity > :: class () , "Start" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubMascotController as :: unity2 :: ClassIdentity > :: NAME , "Start" , e) , } } } pub unsafe fn start (this : HubMascotController , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HubMascotController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_start :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_bool { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubMascotController as :: unity2 :: ClassIdentity > :: class () , "SetBool" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubMascotController as :: unity2 :: ClassIdentity > :: NAME , "SetBool" , e) , } } } pub unsafe fn set_bool (this : HubMascotController , param_name : :: unity2 :: Il2CppString , value : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HubMascotController , :: unity2 :: Il2CppString , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_bool :: get_method_info () . method_ptr ,) ; inner (this , param_name , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_play { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubMascotController as :: unity2 :: ClassIdentity > :: class () , "Play" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubMascotController as :: unity2 :: ClassIdentity > :: NAME , "Play" , e) , } } } pub unsafe fn play (this : HubMascotController , anim_name : :: unity2 :: Il2CppString , forced : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HubMascotController , :: unity2 :: Il2CppString , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_play :: get_method_info () . method_ptr ,) ; inner (this , anim_name , forced , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubMascotController as :: unity2 :: ClassIdentity > :: class () , "Update" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubMascotController as :: unity2 :: ClassIdentity > :: NAME , "Update" , e) , } } } pub unsafe fn update (this : HubMascotController , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HubMascotController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update_agent { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubMascotController as :: unity2 :: ClassIdentity > :: class () , "UpdateAgent" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubMascotController as :: unity2 :: ClassIdentity > :: NAME , "UpdateAgent" , e) , } } } pub unsafe fn update_agent (this : HubMascotController , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HubMascotController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update_agent :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update_trace { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubMascotController as :: unity2 :: ClassIdentity > :: class () , "UpdateTrace" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubMascotController as :: unity2 :: ClassIdentity > :: NAME , "UpdateTrace" , e) , } } } pub unsafe fn update_trace (this : HubMascotController , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HubMascotController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update_trace :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubMascotController as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubMascotController as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : HubMascotController , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HubMascotController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-hubmascotcontroller")]
-pub trait IHubMascotControllerMethods: IHubMascotController {
-    #[doc = "`get_CurrentMode()` overload"]
-    fn get_current_mode(self) -> crate::app::hubmascotcontroller::HubMascotController_Mode {
-        unsafe {
-            let __receiver = <HubMascotController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubMascotController_unity2_raw::get_current_mode(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_CurrentMode(crate::app::hubmascotcontroller::HubMascotController_Mode)` overload"]
-    fn set_current_mode(self, value: impl ::core::convert::Into<crate::app::hubmascotcontroller::HubMascotController_Mode>) -> () {
-        unsafe {
-            let __receiver = <HubMascotController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubMascotController_unity2_raw::set_current_mode(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Agent()` overload"]
-    fn get_agent(self) -> crate::unity_engine::ai::navmeshagent::NavMeshAgent {
-        unsafe {
-            let __receiver = <HubMascotController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubMascotController_unity2_raw::get_agent(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Follow()` overload"]
-    fn get_follow(self) -> crate::unity_engine::transform::Transform {
-        unsafe {
-            let __receiver = <HubMascotController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubMascotController_unity2_raw::get_follow(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_Follow(crate::unity_engine::transform::Transform)` overload"]
-    fn set_follow(self, value: impl ::core::convert::Into<crate::unity_engine::transform::Transform>) -> () {
-        unsafe {
-            let __receiver = <HubMascotController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubMascotController_unity2_raw::set_follow(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_IsStop()` overload"]
-    fn get_is_stop(self) -> bool {
-        unsafe {
-            let __receiver = <HubMascotController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubMascotController_unity2_raw::get_is_stop(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_IsStop(bool)` overload"]
-    fn set_is_stop(self, value: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver = <HubMascotController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubMascotController_unity2_raw::set_is_stop(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_DefaultLookAtTarget()` overload"]
-    fn get_default_look_at_target(self) -> crate::unity_engine::gameobject::GameObject {
-        unsafe {
-            let __receiver = <HubMascotController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubMascotController_unity2_raw::get_default_look_at_target(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_DefaultLookAtTarget(crate::unity_engine::gameobject::GameObject)` overload"]
-    fn set_default_look_at_target(self, value: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>) -> () {
-        unsafe {
-            let __receiver = <HubMascotController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubMascotController_unity2_raw::set_default_look_at_target(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Awake()` overload"]
-    fn awake(self) -> () {
-        unsafe {
-            let __receiver = <HubMascotController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubMascotController_unity2_raw::awake(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Start()` overload"]
-    fn start(self) -> () {
-        unsafe {
-            let __receiver = <HubMascotController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubMascotController_unity2_raw::start(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetBool(::unity2::Il2CppString, bool)` overload"]
-    fn set_bool(self, param_name: impl ::core::convert::Into<::unity2::Il2CppString>, value: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver = <HubMascotController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubMascotController_unity2_raw::set_bool(
-                __receiver,
-                ::core::convert::Into::into(param_name),
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Play(::unity2::Il2CppString, bool)` overload"]
-    fn play(self, anim_name: impl ::core::convert::Into<::unity2::Il2CppString>, forced: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver = <HubMascotController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubMascotController_unity2_raw::play(
-                __receiver,
-                ::core::convert::Into::into(anim_name),
-                ::core::convert::Into::into(forced),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Update()` overload"]
-    fn update(self) -> () {
-        unsafe {
-            let __receiver = <HubMascotController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubMascotController_unity2_raw::update(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`UpdateAgent()` overload"]
-    fn update_agent(self) -> () {
-        unsafe {
-            let __receiver = <HubMascotController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubMascotController_unity2_raw::update_agent(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`UpdateTrace()` overload"]
-    fn update_trace(self) -> () {
-        unsafe {
-            let __receiver = <HubMascotController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubMascotController_unity2_raw::update_trace(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <HubMascotController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubMascotController_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IHubMascotControllerMethods : IHubMascotController { # [doc = "`get_CurrentMode()` overload"] fn get_current_mode (self ,) -> crate :: app :: hubmascotcontroller :: HubMascotController_Mode { unsafe { let __receiver = < HubMascotController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubMascotController_unity2_raw :: get_current_mode (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_CurrentMode(crate::app::hubmascotcontroller::HubMascotController_Mode)` overload"] fn set_current_mode (self , value : impl :: core :: convert :: Into < crate :: app :: hubmascotcontroller :: HubMascotController_Mode >) -> () { unsafe { let __receiver = < HubMascotController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubMascotController_unity2_raw :: set_current_mode (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_Agent()` overload"] fn get_agent (self ,) -> crate :: unity_engine :: ai :: navmeshagent :: NavMeshAgent { unsafe { let __receiver = < HubMascotController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubMascotController_unity2_raw :: get_agent (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_Follow()` overload"] fn get_follow (self ,) -> crate :: unity_engine :: transform :: Transform { unsafe { let __receiver = < HubMascotController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubMascotController_unity2_raw :: get_follow (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_Follow(crate::unity_engine::transform::Transform)` overload"] fn set_follow (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: transform :: Transform >) -> () { unsafe { let __receiver = < HubMascotController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubMascotController_unity2_raw :: set_follow (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_IsStop()` overload"] fn get_is_stop (self ,) -> bool { unsafe { let __receiver = < HubMascotController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubMascotController_unity2_raw :: get_is_stop (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_IsStop(bool)` overload"] fn set_is_stop (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < HubMascotController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubMascotController_unity2_raw :: set_is_stop (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_DefaultLookAtTarget()` overload"] fn get_default_look_at_target (self ,) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { let __receiver = < HubMascotController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubMascotController_unity2_raw :: get_default_look_at_target (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_DefaultLookAtTarget(crate::unity_engine::gameobject::GameObject)` overload"] fn set_default_look_at_target (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> () { unsafe { let __receiver = < HubMascotController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubMascotController_unity2_raw :: set_default_look_at_target (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`Awake()` overload"] fn awake (self ,) -> () { unsafe { let __receiver = < HubMascotController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubMascotController_unity2_raw :: awake (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < HubMascotController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubMascotController_unity2_raw :: start (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetBool(::unity2::Il2CppString, bool)` overload"] fn set_bool (self , param_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < HubMascotController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubMascotController_unity2_raw :: set_bool (__receiver , :: core :: convert :: Into :: into (param_name) , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`Play(::unity2::Il2CppString, bool)` overload"] fn play (self , anim_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , forced : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < HubMascotController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubMascotController_unity2_raw :: play (__receiver , :: core :: convert :: Into :: into (anim_name) , :: core :: convert :: Into :: into (forced) , :: core :: option :: Option :: None) } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < HubMascotController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubMascotController_unity2_raw :: update (__receiver , :: core :: option :: Option :: None) } } # [doc = "`UpdateAgent()` overload"] fn update_agent (self ,) -> () { unsafe { let __receiver = < HubMascotController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubMascotController_unity2_raw :: update_agent (__receiver , :: core :: option :: Option :: None) } } # [doc = "`UpdateTrace()` overload"] fn update_trace (self ,) -> () { unsafe { let __receiver = < HubMascotController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubMascotController_unity2_raw :: update_trace (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HubMascotController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubMascotController_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-hubmascotcontroller")]
-impl<__T: IHubMascotController> IHubMascotControllerMethods for __T {}
+impl < __T : IHubMascotController > IHubMascotControllerMethods for __T { }
+
+#[cfg(feature = "app-hubmascotcontroller")]
+impl HubMascotController { pub fn get_current_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubMascotController_unity2_raw :: __lookup_get_current_mode :: get_method_info () } pub fn set_current_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubMascotController_unity2_raw :: __lookup_set_current_mode :: get_method_info () } pub fn get_agent_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubMascotController_unity2_raw :: __lookup_get_agent :: get_method_info () } pub fn get_follow_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubMascotController_unity2_raw :: __lookup_get_follow :: get_method_info () } pub fn set_follow_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubMascotController_unity2_raw :: __lookup_set_follow :: get_method_info () } pub fn get_is_stop_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubMascotController_unity2_raw :: __lookup_get_is_stop :: get_method_info () } pub fn set_is_stop_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubMascotController_unity2_raw :: __lookup_set_is_stop :: get_method_info () } pub fn get_default_look_at_target_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubMascotController_unity2_raw :: __lookup_get_default_look_at_target :: get_method_info () } pub fn set_default_look_at_target_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubMascotController_unity2_raw :: __lookup_set_default_look_at_target :: get_method_info () } pub fn awake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubMascotController_unity2_raw :: __lookup_awake :: get_method_info () } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubMascotController_unity2_raw :: __lookup_start :: get_method_info () } pub fn set_bool_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubMascotController_unity2_raw :: __lookup_set_bool :: get_method_info () } pub fn play_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubMascotController_unity2_raw :: __lookup_play :: get_method_info () } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubMascotController_unity2_raw :: __lookup_update :: get_method_info () } pub fn update_agent_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubMascotController_unity2_raw :: __lookup_update_agent :: get_method_info () } pub fn update_trace_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubMascotController_unity2_raw :: __lookup_update_trace :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubMascotController_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-hubmascotcontroller")]
 impl HubMascotController {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(HubMascotController),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IHubMascotControllerMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubMascotController) , :: core :: stringify ! (new) ,)) ; < Self as IHubMascotControllerMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-hubmascotcontroller")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{HubMascotController, HubMascotController_Mode, IHubMascotController, IHubMascotControllerMethods};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::HubMascotController_Mode;
+    pub use super::HubMascotController;
+    pub use super::IHubMascotController;
+    pub use super::IHubMascotControllerMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

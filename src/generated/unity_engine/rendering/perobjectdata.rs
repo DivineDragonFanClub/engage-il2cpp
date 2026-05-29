@@ -2,88 +2,125 @@
 
 #[cfg(feature = "unity_engine-rendering-perobjectdata-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        r#enum::{Enum, IEnum},
-        valuetype::{IValueType, ValueType},
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/perobjectdata/PerObjectData.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct PerObjectData {
-        pub value: i32,
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/perobjectdata/PerObjectData.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct PerObjectData  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for PerObjectData  {
+    const NAMESPACE: &'static str = "UnityEngine.Rendering";
+
+    const NAME: &'static str = "PerObjectData";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    impl ::unity2::ClassIdentity for PerObjectData {
-        const NAME: &'static str = "PerObjectData";
-        const NAMESPACE: &'static str = "UnityEngine.Rendering";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  ::unity2::IlType for PerObjectData  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::IlType for PerObjectData {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  PerObjectData  {
+    pub fn none() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl PerObjectData {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn light_probe() -> Self {
-            Self { value: 1 }
-        }
+    pub fn light_probe() -> Self {
+        Self { value: 1 }
 
-        pub fn reflection_probes() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn light_probe_proxy_volume() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn lightmaps() -> Self {
-            Self { value: 8 }
-        }
-
-        pub fn light_data() -> Self {
-            Self { value: 16 }
-        }
-
-        pub fn motion_vectors() -> Self {
-            Self { value: 32 }
-        }
-
-        pub fn light_indices() -> Self {
-            Self { value: 64 }
-        }
-
-        pub fn reflection_probe_data() -> Self {
-            Self { value: 128 }
-        }
-
-        pub fn occlusion_probe() -> Self {
-            Self { value: 256 }
-        }
-
-        pub fn occlusion_probe_proxy_volume() -> Self {
-            Self { value: 512 }
-        }
-
-        pub fn shadow_mask() -> Self {
-            Self { value: 1024 }
-        }
     }
+
+
+    pub fn reflection_probes() -> Self {
+        Self { value: 2 }
+
+    }
+
+
+    pub fn light_probe_proxy_volume() -> Self {
+        Self { value: 4 }
+
+    }
+
+
+    pub fn lightmaps() -> Self {
+        Self { value: 8 }
+
+    }
+
+
+    pub fn light_data() -> Self {
+        Self { value: 16 }
+
+    }
+
+
+    pub fn motion_vectors() -> Self {
+        Self { value: 32 }
+
+    }
+
+
+    pub fn light_indices() -> Self {
+        Self { value: 64 }
+
+    }
+
+
+    pub fn reflection_probe_data() -> Self {
+        Self { value: 128 }
+
+    }
+
+
+    pub fn occlusion_probe() -> Self {
+        Self { value: 256 }
+
+    }
+
+
+    pub fn occlusion_probe_proxy_volume() -> Self {
+        Self { value: 512 }
+
+    }
+
+
+    pub fn shadow_mask() -> Self {
+        Self { value: 1024 }
+
+    }
+
+}
+
 }
 
 #[cfg(feature = "unity_engine-rendering-perobjectdata-types")]
@@ -93,11 +130,10 @@ pub use __types::*;
 #[doc(hidden)]
 pub mod prelude {
     pub use super::PerObjectData;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::system::{object::IObject, r#enum::IEnum, valuetype::IValueType};
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

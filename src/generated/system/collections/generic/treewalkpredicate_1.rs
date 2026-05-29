@@ -2,63 +2,46 @@
 
 #[cfg(feature = "system-collections-generic-treewalkpredicate_1-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        delegate::{Delegate, IDelegate},
-        multicastdelegate::{IMulticastDelegate, MulticastDelegate},
-        object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/treewalkpredicate_1/TreeWalkPredicate_1.md"))]
-    #[::unity2::class(namespace = "System.Collections.Generic", name = "TreeWalkPredicate`1")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    #[parent(crate::system::delegate::Delegate)]
-    #[parent(crate::system::object::Object)]
-    pub struct TreeWalkPredicate_1<T0: ::unity2::ClassIdentity> {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: delegate :: { Delegate , IDelegate }
+ ;
+ use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/treewalkpredicate_1/TreeWalkPredicate_1.md"))] # [:: unity2 :: class (namespace = "System.Collections.Generic" , name = "TreeWalkPredicate`1")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] # [parent (crate :: system :: delegate :: Delegate)] # [parent (crate :: system :: object :: Object)] pub struct TreeWalkPredicate_1 < T0 : :: unity2 :: ClassIdentity > {}
+
 }
 
 #[cfg(feature = "system-collections-generic-treewalkpredicate_1-types")]
 pub use __types::*;
 
 #[cfg(feature = "system-collections-generic-treewalkpredicate_1")]
-#[::unity2::methods]
-impl<T0: ::unity2::ClassIdentity> TreeWalkPredicate_1<T0> {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+# [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity > TreeWalkPredicate_1 < T0 > {
+# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] # [method (name = ".ctor" , args = 2)] pub fn ctor (self , object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> () ;
 
-    #[doc = "`Invoke(crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>)` overload"]
-    #[method(name = "Invoke", args = 1)]
-    pub fn invoke(self, node: crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>) -> bool;
+# [doc = "`Invoke(crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>)` overload"] # [method (name = "Invoke" , args = 1)] pub fn invoke (self , node : crate :: system :: collections :: generic :: sortedset_1 :: SortedSet_1_Node < T0 >) -> bool ;
 }
 
 #[cfg(feature = "system-collections-generic-treewalkpredicate_1")]
-impl<T0: ::unity2::ClassIdentity> TreeWalkPredicate_1<T0> {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TreeWalkPredicate_1),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITreeWalkPredicate_1Methods<T0>>::ctor(this, object, method);
-        this
-    }
+impl < T0 : :: unity2 :: ClassIdentity > TreeWalkPredicate_1 < T0 > {
+# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TreeWalkPredicate_1) , :: core :: stringify ! (new) ,)) ; < Self as ITreeWalkPredicate_1Methods < T0 > > :: ctor (this , object , method) ; this }
 }
 
 #[cfg(feature = "system-collections-generic-treewalkpredicate_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{ITreeWalkPredicate_1, ITreeWalkPredicate_1Methods, TreeWalkPredicate_1};
-    #[cfg(feature = "system-delegate")]
-    pub use crate::system::delegate::IDelegateMethods;
-    #[cfg(feature = "system-multicastdelegate")]
-    pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::system::{delegate::IDelegate, multicastdelegate::IMulticastDelegate, object::IObject};
+    pub use super::TreeWalkPredicate_1;
+    pub use super::ITreeWalkPredicate_1;
+    pub use super::ITreeWalkPredicate_1Methods;
+    pub use crate::system::delegate::IDelegate;
+    pub use crate::system::multicastdelegate::IMulticastDelegate;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-delegate")] pub use crate::system::delegate::IDelegateMethods;
+    #[cfg(feature = "system-multicastdelegate")] pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

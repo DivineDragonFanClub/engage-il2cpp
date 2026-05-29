@@ -2,15 +2,15 @@
 
 #[cfg(feature = "app-nexdatastoreresultextensions-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexdatastoreresultextensions/NexDataStoreResultExtensions.md"))]
-    #[::unity2::class(namespace = "App", name = "NexDataStoreResultExtensions")]
-    #[parent(crate::system::object::Object)]
-    pub struct NexDataStoreResultExtensions {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexdatastoreresultextensions/NexDataStoreResultExtensions.md"))] # [:: unity2 :: class (namespace = "App" , name = "NexDataStoreResultExtensions")] # [parent (crate :: system :: object :: Object)] pub struct NexDataStoreResultExtensions {}
+
 }
 
 #[cfg(feature = "app-nexdatastoreresultextensions-types")]
@@ -19,8 +19,8 @@ pub use __types::*;
 #[cfg(feature = "app-nexdatastoreresultextensions")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{INexDataStoreResultExtensions, NexDataStoreResultExtensions};
+    pub use super::NexDataStoreResultExtensions;
+    pub use super::INexDataStoreResultExtensions;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

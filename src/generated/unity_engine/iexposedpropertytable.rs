@@ -2,99 +2,34 @@
 
 #[cfg(feature = "unity_engine-iexposedpropertytable-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/iexposedpropertytable/IExposedPropertyTable.md"))]
-    #[::unity2::class(namespace = "UnityEngine", name = "IExposedPropertyTable")]
-    pub struct IExposedPropertyTable {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/iexposedpropertytable/IExposedPropertyTable.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "IExposedPropertyTable")] pub struct IExposedPropertyTable {}
+
 }
 
 #[cfg(feature = "unity_engine-iexposedpropertytable-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-iexposedpropertytable")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __IExposedPropertyTable_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_reference_value {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::propertyname::PropertyName as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <IExposedPropertyTable as ::unity2::ClassIdentity>::class(),
-                "GetReferenceValue",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <IExposedPropertyTable as ::unity2::ClassIdentity>::NAME,
-                        "GetReferenceValue",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_reference_value(
-        this: IExposedPropertyTable,
-        id: crate::unity_engine::propertyname::PropertyName,
-        id_valid: *mut bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::object_2::Object_2 {
-        let inner: extern "C" fn(
-            IExposedPropertyTable,
-            crate::unity_engine::propertyname::PropertyName,
-            *mut bool,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::object_2::Object_2 = ::core::mem::transmute(__lookup_get_reference_value::get_method_info().method_ptr);
-        inner(this, id, id_valid, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __IExposedPropertyTable_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_reference_value { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: propertyname :: PropertyName as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< IExposedPropertyTable as :: unity2 :: ClassIdentity > :: class () , "GetReferenceValue" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < IExposedPropertyTable as :: unity2 :: ClassIdentity > :: NAME , "GetReferenceValue" , e) , } } } pub unsafe fn get_reference_value (this : IExposedPropertyTable , id : crate :: unity_engine :: propertyname :: PropertyName , id_valid : * mut bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: object_2 :: Object_2 { let inner : extern "C" fn (IExposedPropertyTable , crate :: unity_engine :: propertyname :: PropertyName , * mut bool , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: object_2 :: Object_2 = :: core :: mem :: transmute (__lookup_get_reference_value :: get_method_info () . method_ptr ,) ; inner (this , id , id_valid , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-iexposedpropertytable")]
-pub trait IIExposedPropertyTableMethods: IIExposedPropertyTable {
-    #[doc = "`GetReferenceValue(crate::unity_engine::propertyname::PropertyName, *mutbool)` overload"]
-    fn get_reference_value(
-        self,
-        id: impl ::core::convert::Into<crate::unity_engine::propertyname::PropertyName>,
-    ) -> (crate::unity_engine::object_2::Object_2, bool) {
-        unsafe {
-            let __receiver =
-                <IExposedPropertyTable as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            let mut __out_0 = ::core::mem::MaybeUninit::<bool>::uninit();
-            let __ret = {
-                __IExposedPropertyTable_unity2_raw::get_reference_value(
-                    __receiver,
-                    ::core::convert::Into::into(id),
-                    __out_0.as_mut_ptr(),
-                    ::core::option::Option::None,
-                )
-            };
-            (__ret, __out_0.assume_init())
-        }
-    }
-}
+pub trait IIExposedPropertyTableMethods : IIExposedPropertyTable { # [doc = "`GetReferenceValue(crate::unity_engine::propertyname::PropertyName, *mutbool)` overload"] fn get_reference_value (self , id : impl :: core :: convert :: Into < crate :: unity_engine :: propertyname :: PropertyName >) -> (crate :: unity_engine :: object_2 :: Object_2 , bool) { unsafe { let __receiver = < IExposedPropertyTable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < bool > :: uninit () ; let __ret = { __IExposedPropertyTable_unity2_raw :: get_reference_value (__receiver , :: core :: convert :: Into :: into (id) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } ; (__ret , __out_0 . assume_init ()) } } }
 
 #[cfg(feature = "unity_engine-iexposedpropertytable")]
-impl<__T: IIExposedPropertyTable> IIExposedPropertyTableMethods for __T {}
+impl < __T : IIExposedPropertyTable > IIExposedPropertyTableMethods for __T { }
+
+#[cfg(feature = "unity_engine-iexposedpropertytable")]
+impl IExposedPropertyTable { pub fn get_reference_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __IExposedPropertyTable_unity2_raw :: __lookup_get_reference_value :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-iexposedpropertytable")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IExposedPropertyTable, IIExposedPropertyTable, IIExposedPropertyTableMethods};
+    pub use super::IExposedPropertyTable;
+    pub use super::IIExposedPropertyTable;
+    pub use super::IIExposedPropertyTableMethods;
 }

@@ -2,563 +2,67 @@
 
 #[cfg(feature = "unity_engine-ai-navmesh-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        delegate::{Delegate, IDelegate},
-        multicastdelegate::{IMulticastDelegate, MulticastDelegate},
-        object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ai/navmesh/NavMesh.md"))]
-    #[::unity2::class(namespace = "UnityEngine.AI", name = "NavMesh")]
-    #[parent(crate::system::object::Object)]
-    pub struct NavMesh {
-        #[static_field]
-        #[rename(name = "onPreUpdate")]
-        pub on_pre_update: crate::unity_engine::ai::navmesh::NavMesh_OnNavMeshPreUpdate,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: delegate :: { Delegate , IDelegate }
+ ;
+ use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ai/navmesh/NavMesh_OnNavMeshPreUpdate.md"))]
-    #[::unity2::class(namespace = "UnityEngine.AI", name = "NavMesh.OnNavMeshPreUpdate")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct NavMesh_OnNavMeshPreUpdate {}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ai/navmesh/NavMesh_OnNavMeshPreUpdate.md"))] # [:: unity2 :: class (namespace = "UnityEngine.AI" , name = "NavMesh.OnNavMeshPreUpdate")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct NavMesh_OnNavMeshPreUpdate {}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ai/navmesh/NavMesh.md"))] # [:: unity2 :: class (namespace = "UnityEngine.AI" , name = "NavMesh")] # [parent (crate :: system :: object :: Object)] pub struct NavMesh {
+# [static_field] # [rename (name = "onPreUpdate")] pub on_pre_update : crate :: unity_engine :: ai :: navmesh :: NavMesh_OnNavMeshPreUpdate ,
+}
+
 }
 
 #[cfg(feature = "unity_engine-ai-navmesh-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-ai-navmesh")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __NavMesh_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_internal_call_on_nav_mesh_pre_update {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NavMesh as ::unity2::ClassIdentity>::class(),
-                "Internal_CallOnNavMeshPreUpdate",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <NavMesh as ::unity2::ClassIdentity>::NAME,
-                        "Internal_CallOnNavMeshPreUpdate",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn internal_call_on_nav_mesh_pre_update(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_internal_call_on_nav_mesh_pre_update::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calculate_path {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::ai::navmeshpath::NavMeshPath as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NavMesh as ::unity2::ClassIdentity>::class(),
-                "CalculatePath",
-                4,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <NavMesh as ::unity2::ClassIdentity>::NAME,
-                        "CalculatePath",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn calculate_path(
-        source_position: crate::unity_engine::vector3::Vector3,
-        target_position: crate::unity_engine::vector3::Vector3,
-        area_mask: i32,
-        path: crate::unity_engine::ai::navmeshpath::NavMeshPath,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            crate::unity_engine::vector3::Vector3,
-            crate::unity_engine::vector3::Vector3,
-            i32,
-            crate::unity_engine::ai::navmeshpath::NavMeshPath,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(__lookup_calculate_path::get_method_info().method_ptr);
-        inner(source_position, target_position, area_mask, path, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calculate_path_internal {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::ai::navmeshpath::NavMeshPath as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NavMesh as ::unity2::ClassIdentity>::class(),
-                "CalculatePathInternal",
-                4,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <NavMesh as ::unity2::ClassIdentity>::NAME,
-                        "CalculatePathInternal",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn calculate_path_internal(
-        source_position: crate::unity_engine::vector3::Vector3,
-        target_position: crate::unity_engine::vector3::Vector3,
-        area_mask: i32,
-        path: crate::unity_engine::ai::navmeshpath::NavMeshPath,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            crate::unity_engine::vector3::Vector3,
-            crate::unity_engine::vector3::Vector3,
-            i32,
-            crate::unity_engine::ai::navmeshpath::NavMeshPath,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(__lookup_calculate_path_internal::get_method_info().method_ptr);
-        inner(source_position, target_position, area_mask, path, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_sample_position {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::ai::navmeshhit::NavMeshHit as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NavMesh as ::unity2::ClassIdentity>::class(),
-                "SamplePosition",
-                4,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <NavMesh as ::unity2::ClassIdentity>::NAME,
-                        "SamplePosition",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn sample_position(
-        source_position: crate::unity_engine::vector3::Vector3,
-        hit: *mut crate::unity_engine::ai::navmeshhit::NavMeshHit,
-        max_distance: f32,
-        area_mask: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            crate::unity_engine::vector3::Vector3,
-            *mut crate::unity_engine::ai::navmeshhit::NavMeshHit,
-            f32,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(__lookup_sample_position::get_method_info().method_ptr);
-        inner(source_position, hit, max_distance, area_mask, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calculate_path_internal_injected {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::ai::navmeshpath::NavMeshPath as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NavMesh as ::unity2::ClassIdentity>::class(),
-                "CalculatePathInternal_Injected",
-                4,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <NavMesh as ::unity2::ClassIdentity>::NAME,
-                        "CalculatePathInternal_Injected",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn calculate_path_internal_injected(
-        source_position: *mut crate::unity_engine::vector3::Vector3,
-        target_position: *mut crate::unity_engine::vector3::Vector3,
-        area_mask: i32,
-        path: crate::unity_engine::ai::navmeshpath::NavMeshPath,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            *mut crate::unity_engine::vector3::Vector3,
-            *mut crate::unity_engine::vector3::Vector3,
-            i32,
-            crate::unity_engine::ai::navmeshpath::NavMeshPath,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(__lookup_calculate_path_internal_injected::get_method_info().method_ptr);
-        inner(source_position, target_position, area_mask, path, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_sample_position_injected {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::ai::navmeshhit::NavMeshHit as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NavMesh as ::unity2::ClassIdentity>::class(),
-                "SamplePosition_Injected",
-                4,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <NavMesh as ::unity2::ClassIdentity>::NAME,
-                        "SamplePosition_Injected",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn sample_position_injected(
-        source_position: *mut crate::unity_engine::vector3::Vector3,
-        hit: *mut crate::unity_engine::ai::navmeshhit::NavMeshHit,
-        max_distance: f32,
-        area_mask: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            *mut crate::unity_engine::vector3::Vector3,
-            *mut crate::unity_engine::ai::navmeshhit::NavMeshHit,
-            f32,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(__lookup_sample_position_injected::get_method_info().method_ptr);
-        inner(source_position, hit, max_distance, area_mask, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __NavMesh_OnNavMeshPreUpdate_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type () , < :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< NavMesh_OnNavMeshPreUpdate as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NavMesh_OnNavMeshPreUpdate as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : NavMesh_OnNavMeshPreUpdate , object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (NavMesh_OnNavMeshPreUpdate , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , object , method , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_invoke { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< NavMesh_OnNavMeshPreUpdate as :: unity2 :: ClassIdentity > :: class () , "Invoke" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NavMesh_OnNavMeshPreUpdate as :: unity2 :: ClassIdentity > :: NAME , "Invoke" , e) , } } } pub unsafe fn invoke (this : NavMesh_OnNavMeshPreUpdate , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (NavMesh_OnNavMeshPreUpdate , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_invoke :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-ai-navmesh")]
-impl NavMesh {
-    #[doc = "`Internal_CallOnNavMeshPreUpdate()` overload"]
-    pub fn internal_call_on_nav_mesh_pre_update() -> () {
-        unsafe { __NavMesh_unity2_raw::internal_call_on_nav_mesh_pre_update(::core::option::Option::None) }
-    }
-
-    #[doc = "`CalculatePath(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, i32, crate::unity_engine::ai::navmeshpath::NavMeshPath)` overload"]
-    pub fn calculate_path(
-        source_position: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-        target_position: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-        area_mask: impl ::core::convert::Into<i32>,
-        path: impl ::core::convert::Into<crate::unity_engine::ai::navmeshpath::NavMeshPath>,
-    ) -> bool {
-        unsafe {
-            __NavMesh_unity2_raw::calculate_path(
-                ::core::convert::Into::into(source_position),
-                ::core::convert::Into::into(target_position),
-                ::core::convert::Into::into(area_mask),
-                ::core::convert::Into::into(path),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`CalculatePathInternal(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, i32, crate::unity_engine::ai::navmeshpath::NavMeshPath)` overload"]
-    pub fn calculate_path_internal(
-        source_position: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-        target_position: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-        area_mask: impl ::core::convert::Into<i32>,
-        path: impl ::core::convert::Into<crate::unity_engine::ai::navmeshpath::NavMeshPath>,
-    ) -> bool {
-        unsafe {
-            __NavMesh_unity2_raw::calculate_path_internal(
-                ::core::convert::Into::into(source_position),
-                ::core::convert::Into::into(target_position),
-                ::core::convert::Into::into(area_mask),
-                ::core::convert::Into::into(path),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`SamplePosition(crate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::ai::navmeshhit::NavMeshHit, f32, i32)` overload"]
-    pub fn sample_position(
-        source_position: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-        max_distance: impl ::core::convert::Into<f32>,
-        area_mask: impl ::core::convert::Into<i32>,
-    ) -> (bool, crate::unity_engine::ai::navmeshhit::NavMeshHit) {
-        unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::ai::navmeshhit::NavMeshHit>::uninit();
-            let __ret = {
-                __NavMesh_unity2_raw::sample_position(
-                    ::core::convert::Into::into(source_position),
-                    __out_0.as_mut_ptr(),
-                    ::core::convert::Into::into(max_distance),
-                    ::core::convert::Into::into(area_mask),
-                    ::core::option::Option::None,
-                )
-            };
-            (__ret, __out_0.assume_init())
-        }
-    }
-
-    #[doc = "`CalculatePathInternal_Injected(*mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::vector3::Vector3, i32, crate::unity_engine::ai::navmeshpath::NavMeshPath)` overload"]
-    pub fn calculate_path_internal_injected(
-        area_mask: impl ::core::convert::Into<i32>,
-        path: impl ::core::convert::Into<crate::unity_engine::ai::navmeshpath::NavMeshPath>,
-    ) -> (bool, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3) {
-        unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
-            let mut __out_1 = ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
-            let __ret = {
-                __NavMesh_unity2_raw::calculate_path_internal_injected(
-                    __out_0.as_mut_ptr(),
-                    __out_1.as_mut_ptr(),
-                    ::core::convert::Into::into(area_mask),
-                    ::core::convert::Into::into(path),
-                    ::core::option::Option::None,
-                )
-            };
-            (__ret, __out_0.assume_init(), __out_1.assume_init())
-        }
-    }
-
-    #[doc = "`SamplePosition_Injected(*mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::ai::navmeshhit::NavMeshHit, f32, i32)` overload"]
-    pub fn sample_position_injected(
-        max_distance: impl ::core::convert::Into<f32>,
-        area_mask: impl ::core::convert::Into<i32>,
-    ) -> (
-        bool,
-        crate::unity_engine::vector3::Vector3,
-        crate::unity_engine::ai::navmeshhit::NavMeshHit,
-    ) {
-        unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
-            let mut __out_1 = ::core::mem::MaybeUninit::<crate::unity_engine::ai::navmeshhit::NavMeshHit>::uninit();
-            let __ret = {
-                __NavMesh_unity2_raw::sample_position_injected(
-                    __out_0.as_mut_ptr(),
-                    __out_1.as_mut_ptr(),
-                    ::core::convert::Into::into(max_distance),
-                    ::core::convert::Into::into(area_mask),
-                    ::core::option::Option::None,
-                )
-            };
-            (__ret, __out_0.assume_init(), __out_1.assume_init())
-        }
-    }
-}
+pub trait INavMesh_OnNavMeshPreUpdateMethods : INavMesh_OnNavMeshPreUpdate { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < NavMesh_OnNavMeshPreUpdate as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __NavMesh_OnNavMeshPreUpdate_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } # [doc = "`Invoke()` overload"] fn invoke (self ,) -> () { unsafe { let __receiver = < NavMesh_OnNavMeshPreUpdate as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __NavMesh_OnNavMeshPreUpdate_unity2_raw :: invoke (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-ai-navmesh")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __NavMesh_OnNavMeshPreUpdate_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NavMesh_OnNavMeshPreUpdate as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <NavMesh_OnNavMeshPreUpdate as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: NavMesh_OnNavMeshPreUpdate,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(NavMesh_OnNavMeshPreUpdate, crate::system::object::Object, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NavMesh_OnNavMeshPreUpdate as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <NavMesh_OnNavMeshPreUpdate as ::unity2::ClassIdentity>::NAME,
-                        "Invoke",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn invoke(this: NavMesh_OnNavMeshPreUpdate, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(NavMesh_OnNavMeshPreUpdate, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+impl < __T : INavMesh_OnNavMeshPreUpdate > INavMesh_OnNavMeshPreUpdateMethods for __T { }
 
 #[cfg(feature = "unity_engine-ai-navmesh")]
-pub trait INavMesh_OnNavMeshPreUpdateMethods: INavMesh_OnNavMeshPreUpdate {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
-        unsafe {
-            let __receiver =
-                <NavMesh_OnNavMeshPreUpdate as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __NavMesh_OnNavMeshPreUpdate_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invoke()` overload"]
-    fn invoke(self) -> () {
-        unsafe {
-            let __receiver =
-                <NavMesh_OnNavMeshPreUpdate as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __NavMesh_OnNavMeshPreUpdate_unity2_raw::invoke(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-ai-navmesh")]
-impl<__T: INavMesh_OnNavMeshPreUpdate> INavMesh_OnNavMeshPreUpdateMethods for __T {}
+impl NavMesh_OnNavMeshPreUpdate { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __NavMesh_OnNavMeshPreUpdate_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __NavMesh_OnNavMeshPreUpdate_unity2_raw :: __lookup_invoke :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-ai-navmesh")]
 impl NavMesh_OnNavMeshPreUpdate {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(NavMesh_OnNavMeshPreUpdate),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as INavMesh_OnNavMeshPreUpdateMethods>::ctor(this, object, method);
-        this
-    }
+# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (NavMesh_OnNavMeshPreUpdate) , :: core :: stringify ! (new) ,)) ; < Self as INavMesh_OnNavMeshPreUpdateMethods > :: ctor (this , object , method) ; this }
 }
+
+#[cfg(feature = "unity_engine-ai-navmesh")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __NavMesh_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_internal_call_on_nav_mesh_pre_update { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< NavMesh as :: unity2 :: ClassIdentity > :: class () , "Internal_CallOnNavMeshPreUpdate" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NavMesh as :: unity2 :: ClassIdentity > :: NAME , "Internal_CallOnNavMeshPreUpdate" , e) , } } } pub unsafe fn internal_call_on_nav_mesh_pre_update (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_internal_call_on_nav_mesh_pre_update :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_calculate_path { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: ai :: navmeshpath :: NavMeshPath as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< NavMesh as :: unity2 :: ClassIdentity > :: class () , "CalculatePath" , 4 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NavMesh as :: unity2 :: ClassIdentity > :: NAME , "CalculatePath" , e) , } } } pub unsafe fn calculate_path (source_position : crate :: unity_engine :: vector3 :: Vector3 , target_position : crate :: unity_engine :: vector3 :: Vector3 , area_mask : i32 , path : crate :: unity_engine :: ai :: navmeshpath :: NavMeshPath , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector3 :: Vector3 , i32 , crate :: unity_engine :: ai :: navmeshpath :: NavMeshPath , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_calculate_path :: get_method_info () . method_ptr ,) ; inner (source_position , target_position , area_mask , path , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_calculate_path_internal { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: ai :: navmeshpath :: NavMeshPath as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< NavMesh as :: unity2 :: ClassIdentity > :: class () , "CalculatePathInternal" , 4 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NavMesh as :: unity2 :: ClassIdentity > :: NAME , "CalculatePathInternal" , e) , } } } pub unsafe fn calculate_path_internal (source_position : crate :: unity_engine :: vector3 :: Vector3 , target_position : crate :: unity_engine :: vector3 :: Vector3 , area_mask : i32 , path : crate :: unity_engine :: ai :: navmeshpath :: NavMeshPath , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector3 :: Vector3 , i32 , crate :: unity_engine :: ai :: navmeshpath :: NavMeshPath , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_calculate_path_internal :: get_method_info () . method_ptr ,) ; inner (source_position , target_position , area_mask , path , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_sample_position { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: ai :: navmeshhit :: NavMeshHit as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< NavMesh as :: unity2 :: ClassIdentity > :: class () , "SamplePosition" , 4 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NavMesh as :: unity2 :: ClassIdentity > :: NAME , "SamplePosition" , e) , } } } pub unsafe fn sample_position (source_position : crate :: unity_engine :: vector3 :: Vector3 , hit : * mut crate :: unity_engine :: ai :: navmeshhit :: NavMeshHit , max_distance : f32 , area_mask : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (crate :: unity_engine :: vector3 :: Vector3 , * mut crate :: unity_engine :: ai :: navmeshhit :: NavMeshHit , f32 , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_sample_position :: get_method_info () . method_ptr ,) ; inner (source_position , hit , max_distance , area_mask , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_calculate_path_internal_injected { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: ai :: navmeshpath :: NavMeshPath as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< NavMesh as :: unity2 :: ClassIdentity > :: class () , "CalculatePathInternal_Injected" , 4 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NavMesh as :: unity2 :: ClassIdentity > :: NAME , "CalculatePathInternal_Injected" , e) , } } } pub unsafe fn calculate_path_internal_injected (source_position : * mut crate :: unity_engine :: vector3 :: Vector3 , target_position : * mut crate :: unity_engine :: vector3 :: Vector3 , area_mask : i32 , path : crate :: unity_engine :: ai :: navmeshpath :: NavMeshPath , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (* mut crate :: unity_engine :: vector3 :: Vector3 , * mut crate :: unity_engine :: vector3 :: Vector3 , i32 , crate :: unity_engine :: ai :: navmeshpath :: NavMeshPath , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_calculate_path_internal_injected :: get_method_info () . method_ptr ,) ; inner (source_position , target_position , area_mask , path , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_sample_position_injected { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: ai :: navmeshhit :: NavMeshHit as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< NavMesh as :: unity2 :: ClassIdentity > :: class () , "SamplePosition_Injected" , 4 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NavMesh as :: unity2 :: ClassIdentity > :: NAME , "SamplePosition_Injected" , e) , } } } pub unsafe fn sample_position_injected (source_position : * mut crate :: unity_engine :: vector3 :: Vector3 , hit : * mut crate :: unity_engine :: ai :: navmeshhit :: NavMeshHit , max_distance : f32 , area_mask : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (* mut crate :: unity_engine :: vector3 :: Vector3 , * mut crate :: unity_engine :: ai :: navmeshhit :: NavMeshHit , f32 , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_sample_position_injected :: get_method_info () . method_ptr ,) ; inner (source_position , hit , max_distance , area_mask , __unity2_method_info) } }
+
+#[cfg(feature = "unity_engine-ai-navmesh")]
+impl NavMesh { # [doc = "`Internal_CallOnNavMeshPreUpdate()` overload"] pub fn internal_call_on_nav_mesh_pre_update () -> () { unsafe { __NavMesh_unity2_raw :: internal_call_on_nav_mesh_pre_update (:: core :: option :: Option :: None) } } # [doc = "`CalculatePath(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, i32, crate::unity_engine::ai::navmeshpath::NavMeshPath)` overload"] pub fn calculate_path (source_position : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , target_position : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , area_mask : impl :: core :: convert :: Into < i32 > , path : impl :: core :: convert :: Into < crate :: unity_engine :: ai :: navmeshpath :: NavMeshPath >) -> bool { unsafe { __NavMesh_unity2_raw :: calculate_path (:: core :: convert :: Into :: into (source_position) , :: core :: convert :: Into :: into (target_position) , :: core :: convert :: Into :: into (area_mask) , :: core :: convert :: Into :: into (path) , :: core :: option :: Option :: None) } } # [doc = "`CalculatePathInternal(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, i32, crate::unity_engine::ai::navmeshpath::NavMeshPath)` overload"] pub fn calculate_path_internal (source_position : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , target_position : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , area_mask : impl :: core :: convert :: Into < i32 > , path : impl :: core :: convert :: Into < crate :: unity_engine :: ai :: navmeshpath :: NavMeshPath >) -> bool { unsafe { __NavMesh_unity2_raw :: calculate_path_internal (:: core :: convert :: Into :: into (source_position) , :: core :: convert :: Into :: into (target_position) , :: core :: convert :: Into :: into (area_mask) , :: core :: convert :: Into :: into (path) , :: core :: option :: Option :: None) } } # [doc = "`SamplePosition(crate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::ai::navmeshhit::NavMeshHit, f32, i32)` overload"] pub fn sample_position (source_position : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , max_distance : impl :: core :: convert :: Into < f32 > , area_mask : impl :: core :: convert :: Into < i32 >) -> (bool , crate :: unity_engine :: ai :: navmeshhit :: NavMeshHit) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: ai :: navmeshhit :: NavMeshHit > :: uninit () ; let __ret = { __NavMesh_unity2_raw :: sample_position (:: core :: convert :: Into :: into (source_position) , __out_0 . as_mut_ptr () , :: core :: convert :: Into :: into (max_distance) , :: core :: convert :: Into :: into (area_mask) , :: core :: option :: Option :: None) } ; (__ret , __out_0 . assume_init ()) } } # [doc = "`CalculatePathInternal_Injected(*mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::vector3::Vector3, i32, crate::unity_engine::ai::navmeshpath::NavMeshPath)` overload"] pub fn calculate_path_internal_injected (area_mask : impl :: core :: convert :: Into < i32 > , path : impl :: core :: convert :: Into < crate :: unity_engine :: ai :: navmeshpath :: NavMeshPath >) -> (bool , crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector3 :: Vector3) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector3 :: Vector3 > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector3 :: Vector3 > :: uninit () ; let __ret = { __NavMesh_unity2_raw :: calculate_path_internal_injected (__out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: convert :: Into :: into (area_mask) , :: core :: convert :: Into :: into (path) , :: core :: option :: Option :: None) } ; (__ret , __out_0 . assume_init () , __out_1 . assume_init ()) } } # [doc = "`SamplePosition_Injected(*mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::ai::navmeshhit::NavMeshHit, f32, i32)` overload"] pub fn sample_position_injected (max_distance : impl :: core :: convert :: Into < f32 > , area_mask : impl :: core :: convert :: Into < i32 >) -> (bool , crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: ai :: navmeshhit :: NavMeshHit) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector3 :: Vector3 > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: ai :: navmeshhit :: NavMeshHit > :: uninit () ; let __ret = { __NavMesh_unity2_raw :: sample_position_injected (__out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: convert :: Into :: into (max_distance) , :: core :: convert :: Into :: into (area_mask) , :: core :: option :: Option :: None) } ; (__ret , __out_0 . assume_init () , __out_1 . assume_init ()) } } }
+
+#[cfg(feature = "unity_engine-ai-navmesh")]
+impl NavMesh { pub fn internal_call_on_nav_mesh_pre_update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __NavMesh_unity2_raw :: __lookup_internal_call_on_nav_mesh_pre_update :: get_method_info () } pub fn calculate_path_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __NavMesh_unity2_raw :: __lookup_calculate_path :: get_method_info () } pub fn calculate_path_internal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __NavMesh_unity2_raw :: __lookup_calculate_path_internal :: get_method_info () } pub fn sample_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __NavMesh_unity2_raw :: __lookup_sample_position :: get_method_info () } pub fn calculate_path_internal_injected_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __NavMesh_unity2_raw :: __lookup_calculate_path_internal_injected :: get_method_info () } pub fn sample_position_injected_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __NavMesh_unity2_raw :: __lookup_sample_position_injected :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-ai-navmesh")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{INavMesh, INavMesh_OnNavMeshPreUpdate, INavMesh_OnNavMeshPreUpdateMethods, NavMesh, NavMesh_OnNavMeshPreUpdate};
-    #[cfg(feature = "system-delegate")]
-    pub use crate::system::delegate::IDelegateMethods;
-    #[cfg(feature = "system-multicastdelegate")]
-    pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::system::{delegate::IDelegate, multicastdelegate::IMulticastDelegate, object::IObject};
+    pub use super::NavMesh_OnNavMeshPreUpdate;
+    pub use super::INavMesh_OnNavMeshPreUpdate;
+    pub use super::INavMesh_OnNavMeshPreUpdateMethods;
+    pub use super::NavMesh;
+    pub use super::INavMesh;
+    pub use crate::system::delegate::IDelegate;
+    pub use crate::system::multicastdelegate::IMulticastDelegate;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-delegate")] pub use crate::system::delegate::IDelegateMethods;
+    #[cfg(feature = "system-multicastdelegate")] pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

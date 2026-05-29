@@ -2,598 +2,114 @@
 
 #[cfg(feature = "app-animalaccesssequence-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::{
-            procinst::{IProcInst, ProcInst},
-            singletonprocinst_1::{ISingletonProcInst_1, SingletonProcInst_1},
-        },
-        system::{
-            object::{IObject, Object},
-            r#enum::{Enum, IEnum},
-            valuetype::{IValueType, ValueType},
-        },
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/animalaccesssequence/AnimalAccessSequence_Label.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct AnimalAccessSequence_Label {
-        pub value: i32,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: procinst :: { IProcInst , ProcInst }
+ ;
+ use crate :: app :: singletonprocinst_1 :: { ISingletonProcInst_1 , SingletonProcInst_1 }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
 
-    impl ::unity2::ClassIdentity for AnimalAccessSequence_Label {
-        const NAME: &'static str = "AnimalAccessSequence.Label";
-        const NAMESPACE: &'static str = "App";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/animalaccesssequence/AnimalAccessSequence_Label.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct AnimalAccessSequence_Label  {
+    pub value: i32,
+}
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+
+impl  ::unity2::ClassIdentity for AnimalAccessSequence_Label  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "AnimalAccessSequence.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for AnimalAccessSequence_Label {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  ::unity2::IlType for AnimalAccessSequence_Label  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl AnimalAccessSequence_Label {
-        pub fn main() -> Self {
-            Self { value: 0 }
-        }
+}
 
-        pub fn end() -> Self {
-            Self { value: 1 }
-        }
+
+impl  AnimalAccessSequence_Label  {
+    pub fn main() -> Self {
+        Self { value: 0 }
+
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/animalaccesssequence/AnimalAccessSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "AnimalAccessSequence")]
-    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: animalaccesssequence :: AnimalAccessSequence >)]
-    pub struct AnimalAccessSequence {
-        #[offset(136)]
-        #[rename(name = "m_AnimalCamera")]
-        pub m_animal_camera: crate::app::animalaccesscamera::AnimalAccessCamera,
+
+    pub fn end() -> Self {
+        Self { value: 1 }
+
     }
+
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/animalaccesssequence/AnimalAccessSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "AnimalAccessSequence")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: animalaccesssequence :: AnimalAccessSequence >)] pub struct AnimalAccessSequence {
+# [offset (136)] # [rename (name = "m_AnimalCamera")] pub m_animal_camera : crate :: app :: animalaccesscamera :: AnimalAccessCamera ,
+}
+
 }
 
 #[cfg(feature = "app-animalaccesssequence-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-animalaccesssequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AnimalAccessSequence_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_access {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AnimalAccessSequence as ::unity2::ClassIdentity>::class(),
-                "get_Access",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AnimalAccessSequence as ::unity2::ClassIdentity>::NAME,
-                        "get_Access",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_access(this: AnimalAccessSequence, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::hubaccess::HubAccess {
-        let inner: extern "C" fn(AnimalAccessSequence, ::unity2::OptionalMethod) -> crate::app::hubaccess::HubAccess =
-            ::core::mem::transmute(__lookup_get_access::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_access {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::hubaccess::HubAccess as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AnimalAccessSequence as ::unity2::ClassIdentity>::class(),
-                "set_Access",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AnimalAccessSequence as ::unity2::ClassIdentity>::NAME,
-                        "set_Access",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_access(
-        this: AnimalAccessSequence,
-        value: crate::app::hubaccess::HubAccess,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(AnimalAccessSequence, crate::app::hubaccess::HubAccess, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_access::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_animal {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AnimalAccessSequence as ::unity2::ClassIdentity>::class(),
-                "get_Animal",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AnimalAccessSequence as ::unity2::ClassIdentity>::NAME,
-                        "get_Animal",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_animal(this: AnimalAccessSequence, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::animaldata::AnimalData {
-        let inner: extern "C" fn(AnimalAccessSequence, ::unity2::OptionalMethod) -> crate::app::animaldata::AnimalData =
-            ::core::mem::transmute(__lookup_get_animal::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_animal {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::animaldata::AnimalData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AnimalAccessSequence as ::unity2::ClassIdentity>::class(),
-                "set_Animal",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AnimalAccessSequence as ::unity2::ClassIdentity>::NAME,
-                        "set_Animal",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_animal(
-        this: AnimalAccessSequence,
-        value: crate::app::animaldata::AnimalData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(AnimalAccessSequence, crate::app::animaldata::AnimalData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_animal::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_player {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AnimalAccessSequence as ::unity2::ClassIdentity>::class(),
-                "get_Player",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AnimalAccessSequence as ::unity2::ClassIdentity>::NAME,
-                        "get_Player",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_player(
-        this: AnimalAccessSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::hubplayercontroller::HubPlayerController {
-        let inner: extern "C" fn(AnimalAccessSequence, ::unity2::OptionalMethod) -> crate::app::hubplayercontroller::HubPlayerController =
-            ::core::mem::transmute(__lookup_get_player::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_camera {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AnimalAccessSequence as ::unity2::ClassIdentity>::class(),
-                "get_Camera",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AnimalAccessSequence as ::unity2::ClassIdentity>::NAME,
-                        "get_Camera",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_camera(this: AnimalAccessSequence, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::hubcamera::HubCamera {
-        let inner: extern "C" fn(AnimalAccessSequence, ::unity2::OptionalMethod) -> crate::app::hubcamera::HubCamera =
-            ::core::mem::transmute(__lookup_get_camera::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::hubaccess::HubAccess as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AnimalAccessSequence as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AnimalAccessSequence as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: AnimalAccessSequence, access: crate::app::hubaccess::HubAccess, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AnimalAccessSequence, crate::app::hubaccess::HubAccess, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, access, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_start {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AnimalAccessSequence as ::unity2::ClassIdentity>::class(),
-                "Start",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AnimalAccessSequence as ::unity2::ClassIdentity>::NAME,
-                        "Start",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn start(this: AnimalAccessSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AnimalAccessSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_start::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_main {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AnimalAccessSequence as ::unity2::ClassIdentity>::class(),
-                "Main",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AnimalAccessSequence as ::unity2::ClassIdentity>::NAME,
-                        "Main",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn main(
-        this: AnimalAccessSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::ienumerator::IEnumerator {
-        let inner: extern "C" fn(AnimalAccessSequence, ::unity2::OptionalMethod) -> crate::system::collections::ienumerator::IEnumerator =
-            ::core::mem::transmute(__lookup_main::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_end {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AnimalAccessSequence as ::unity2::ClassIdentity>::class(),
-                "End",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AnimalAccessSequence as ::unity2::ClassIdentity>::NAME,
-                        "End",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn end(this: AnimalAccessSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AnimalAccessSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_end::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <crate::app::hubaccess::HubAccess as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AnimalAccessSequence as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AnimalAccessSequence as ::unity2::ClassIdentity>::NAME,
-                        "CreateBind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        access: crate::app::hubaccess::HubAccess,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::procinst::ProcInst {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            crate::app::hubaccess::HubAccess,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::procinst::ProcInst = ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
-        inner(super_, access, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __AnimalAccessSequence_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_access { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AnimalAccessSequence as :: unity2 :: ClassIdentity > :: class () , "get_Access" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AnimalAccessSequence as :: unity2 :: ClassIdentity > :: NAME , "get_Access" , e) , } } } pub unsafe fn get_access (this : AnimalAccessSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: hubaccess :: HubAccess { let inner : extern "C" fn (AnimalAccessSequence , :: unity2 :: OptionalMethod ,) -> crate :: app :: hubaccess :: HubAccess = :: core :: mem :: transmute (__lookup_get_access :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_access { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: hubaccess :: HubAccess as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AnimalAccessSequence as :: unity2 :: ClassIdentity > :: class () , "set_Access" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AnimalAccessSequence as :: unity2 :: ClassIdentity > :: NAME , "set_Access" , e) , } } } pub unsafe fn set_access (this : AnimalAccessSequence , value : crate :: app :: hubaccess :: HubAccess , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AnimalAccessSequence , crate :: app :: hubaccess :: HubAccess , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_access :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_animal { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AnimalAccessSequence as :: unity2 :: ClassIdentity > :: class () , "get_Animal" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AnimalAccessSequence as :: unity2 :: ClassIdentity > :: NAME , "get_Animal" , e) , } } } pub unsafe fn get_animal (this : AnimalAccessSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: animaldata :: AnimalData { let inner : extern "C" fn (AnimalAccessSequence , :: unity2 :: OptionalMethod ,) -> crate :: app :: animaldata :: AnimalData = :: core :: mem :: transmute (__lookup_get_animal :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_animal { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: animaldata :: AnimalData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AnimalAccessSequence as :: unity2 :: ClassIdentity > :: class () , "set_Animal" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AnimalAccessSequence as :: unity2 :: ClassIdentity > :: NAME , "set_Animal" , e) , } } } pub unsafe fn set_animal (this : AnimalAccessSequence , value : crate :: app :: animaldata :: AnimalData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AnimalAccessSequence , crate :: app :: animaldata :: AnimalData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_animal :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_player { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AnimalAccessSequence as :: unity2 :: ClassIdentity > :: class () , "get_Player" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AnimalAccessSequence as :: unity2 :: ClassIdentity > :: NAME , "get_Player" , e) , } } } pub unsafe fn get_player (this : AnimalAccessSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: hubplayercontroller :: HubPlayerController { let inner : extern "C" fn (AnimalAccessSequence , :: unity2 :: OptionalMethod ,) -> crate :: app :: hubplayercontroller :: HubPlayerController = :: core :: mem :: transmute (__lookup_get_player :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_camera { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AnimalAccessSequence as :: unity2 :: ClassIdentity > :: class () , "get_Camera" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AnimalAccessSequence as :: unity2 :: ClassIdentity > :: NAME , "get_Camera" , e) , } } } pub unsafe fn get_camera (this : AnimalAccessSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: hubcamera :: HubCamera { let inner : extern "C" fn (AnimalAccessSequence , :: unity2 :: OptionalMethod ,) -> crate :: app :: hubcamera :: HubCamera = :: core :: mem :: transmute (__lookup_get_camera :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: hubaccess :: HubAccess as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AnimalAccessSequence as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AnimalAccessSequence as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : AnimalAccessSequence , access : crate :: app :: hubaccess :: HubAccess , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AnimalAccessSequence , crate :: app :: hubaccess :: HubAccess , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , access , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_start { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AnimalAccessSequence as :: unity2 :: ClassIdentity > :: class () , "Start" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AnimalAccessSequence as :: unity2 :: ClassIdentity > :: NAME , "Start" , e) , } } } pub unsafe fn start (this : AnimalAccessSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AnimalAccessSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_start :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_main { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AnimalAccessSequence as :: unity2 :: ClassIdentity > :: class () , "Main" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AnimalAccessSequence as :: unity2 :: ClassIdentity > :: NAME , "Main" , e) , } } } pub unsafe fn main (this : AnimalAccessSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { let inner : extern "C" fn (AnimalAccessSequence , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute (__lookup_main :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_end { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AnimalAccessSequence as :: unity2 :: ClassIdentity > :: class () , "End" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AnimalAccessSequence as :: unity2 :: ClassIdentity > :: NAME , "End" , e) , } } } pub unsafe fn end (this : AnimalAccessSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AnimalAccessSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_end :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_bind { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: hubaccess :: HubAccess as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AnimalAccessSequence as :: unity2 :: ClassIdentity > :: class () , "CreateBind" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AnimalAccessSequence as :: unity2 :: ClassIdentity > :: NAME , "CreateBind" , e) , } } } pub unsafe fn create_bind (super_ : crate :: app :: procinst :: ProcInst , access : crate :: app :: hubaccess :: HubAccess , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: procinst :: ProcInst { let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: hubaccess :: HubAccess , :: unity2 :: OptionalMethod ,) -> crate :: app :: procinst :: ProcInst = :: core :: mem :: transmute (__lookup_create_bind :: get_method_info () . method_ptr ,) ; inner (super_ , access , __unity2_method_info) } }
+
+#[cfg(feature = "app-animalaccesssequence")]
+impl AnimalAccessSequence { # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::hubaccess::HubAccess)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , access : impl :: core :: convert :: Into < crate :: app :: hubaccess :: HubAccess >) -> crate :: app :: procinst :: ProcInst { unsafe { __AnimalAccessSequence_unity2_raw :: create_bind (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (access) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-animalaccesssequence")]
+pub trait IAnimalAccessSequenceMethods : IAnimalAccessSequence { # [doc = "`get_Access()` overload"] fn get_access (self ,) -> crate :: app :: hubaccess :: HubAccess { unsafe { let __receiver = < AnimalAccessSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AnimalAccessSequence_unity2_raw :: get_access (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_Access(crate::app::hubaccess::HubAccess)` overload"] fn set_access (self , value : impl :: core :: convert :: Into < crate :: app :: hubaccess :: HubAccess >) -> () { unsafe { let __receiver = < AnimalAccessSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AnimalAccessSequence_unity2_raw :: set_access (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_Animal()` overload"] fn get_animal (self ,) -> crate :: app :: animaldata :: AnimalData { unsafe { let __receiver = < AnimalAccessSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AnimalAccessSequence_unity2_raw :: get_animal (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_Animal(crate::app::animaldata::AnimalData)` overload"] fn set_animal (self , value : impl :: core :: convert :: Into < crate :: app :: animaldata :: AnimalData >) -> () { unsafe { let __receiver = < AnimalAccessSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AnimalAccessSequence_unity2_raw :: set_animal (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_Player()` overload"] fn get_player (self ,) -> crate :: app :: hubplayercontroller :: HubPlayerController { unsafe { let __receiver = < AnimalAccessSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AnimalAccessSequence_unity2_raw :: get_player (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_Camera()` overload"] fn get_camera (self ,) -> crate :: app :: hubcamera :: HubCamera { unsafe { let __receiver = < AnimalAccessSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AnimalAccessSequence_unity2_raw :: get_camera (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor(crate::app::hubaccess::HubAccess)` overload"] fn ctor (self , access : impl :: core :: convert :: Into < crate :: app :: hubaccess :: HubAccess >) -> () { unsafe { let __receiver = < AnimalAccessSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AnimalAccessSequence_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (access) , :: core :: option :: Option :: None) } } # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < AnimalAccessSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AnimalAccessSequence_unity2_raw :: start (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Main()` overload"] fn main (self ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { let __receiver = < AnimalAccessSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AnimalAccessSequence_unity2_raw :: main (__receiver , :: core :: option :: Option :: None) } } # [doc = "`End()` overload"] fn end (self ,) -> () { unsafe { let __receiver = < AnimalAccessSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AnimalAccessSequence_unity2_raw :: end (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-animalaccesssequence")]
+impl < __T : IAnimalAccessSequence > IAnimalAccessSequenceMethods for __T { }
+
+#[cfg(feature = "app-animalaccesssequence")]
+impl AnimalAccessSequence { pub fn get_access_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AnimalAccessSequence_unity2_raw :: __lookup_get_access :: get_method_info () } pub fn set_access_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AnimalAccessSequence_unity2_raw :: __lookup_set_access :: get_method_info () } pub fn get_animal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AnimalAccessSequence_unity2_raw :: __lookup_get_animal :: get_method_info () } pub fn set_animal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AnimalAccessSequence_unity2_raw :: __lookup_set_animal :: get_method_info () } pub fn get_player_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AnimalAccessSequence_unity2_raw :: __lookup_get_player :: get_method_info () } pub fn get_camera_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AnimalAccessSequence_unity2_raw :: __lookup_get_camera :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AnimalAccessSequence_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AnimalAccessSequence_unity2_raw :: __lookup_start :: get_method_info () } pub fn main_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AnimalAccessSequence_unity2_raw :: __lookup_main :: get_method_info () } pub fn end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AnimalAccessSequence_unity2_raw :: __lookup_end :: get_method_info () } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AnimalAccessSequence_unity2_raw :: __lookup_create_bind :: get_method_info () } }
 
 #[cfg(feature = "app-animalaccesssequence")]
 impl AnimalAccessSequence {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::hubaccess::HubAccess)` overload"]
-    pub fn create_bind(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        access: impl ::core::convert::Into<crate::app::hubaccess::HubAccess>,
-    ) -> crate::app::procinst::ProcInst {
-        unsafe {
-            __AnimalAccessSequence_unity2_raw::create_bind(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(access),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-animalaccesssequence")]
-pub trait IAnimalAccessSequenceMethods: IAnimalAccessSequence {
-    #[doc = "`get_Access()` overload"]
-    fn get_access(self) -> crate::app::hubaccess::HubAccess {
-        unsafe {
-            let __receiver =
-                <AnimalAccessSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AnimalAccessSequence_unity2_raw::get_access(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_Access(crate::app::hubaccess::HubAccess)` overload"]
-    fn set_access(self, value: impl ::core::convert::Into<crate::app::hubaccess::HubAccess>) -> () {
-        unsafe {
-            let __receiver =
-                <AnimalAccessSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AnimalAccessSequence_unity2_raw::set_access(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Animal()` overload"]
-    fn get_animal(self) -> crate::app::animaldata::AnimalData {
-        unsafe {
-            let __receiver =
-                <AnimalAccessSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AnimalAccessSequence_unity2_raw::get_animal(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_Animal(crate::app::animaldata::AnimalData)` overload"]
-    fn set_animal(self, value: impl ::core::convert::Into<crate::app::animaldata::AnimalData>) -> () {
-        unsafe {
-            let __receiver =
-                <AnimalAccessSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AnimalAccessSequence_unity2_raw::set_animal(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Player()` overload"]
-    fn get_player(self) -> crate::app::hubplayercontroller::HubPlayerController {
-        unsafe {
-            let __receiver =
-                <AnimalAccessSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AnimalAccessSequence_unity2_raw::get_player(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Camera()` overload"]
-    fn get_camera(self) -> crate::app::hubcamera::HubCamera {
-        unsafe {
-            let __receiver =
-                <AnimalAccessSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AnimalAccessSequence_unity2_raw::get_camera(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor(crate::app::hubaccess::HubAccess)` overload"]
-    fn ctor(self, access: impl ::core::convert::Into<crate::app::hubaccess::HubAccess>) -> () {
-        unsafe {
-            let __receiver =
-                <AnimalAccessSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AnimalAccessSequence_unity2_raw::ctor(__receiver, ::core::convert::Into::into(access), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Start()` overload"]
-    fn start(self) -> () {
-        unsafe {
-            let __receiver =
-                <AnimalAccessSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AnimalAccessSequence_unity2_raw::start(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Main()` overload"]
-    fn main(self) -> crate::system::collections::ienumerator::IEnumerator {
-        unsafe {
-            let __receiver =
-                <AnimalAccessSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AnimalAccessSequence_unity2_raw::main(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`End()` overload"]
-    fn end(self) -> () {
-        unsafe {
-            let __receiver =
-                <AnimalAccessSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AnimalAccessSequence_unity2_raw::end(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-animalaccesssequence")]
-impl<__T: IAnimalAccessSequence> IAnimalAccessSequenceMethods for __T {}
-
-#[cfg(feature = "app-animalaccesssequence")]
-impl AnimalAccessSequence {
-    #[doc = "`.ctor(crate::app::hubaccess::HubAccess)` — overload selector"]
-    pub fn new(access: crate::app::hubaccess::HubAccess) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AnimalAccessSequence),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAnimalAccessSequenceMethods>::ctor(this, access);
-        this
-    }
+# [doc = "`.ctor(crate::app::hubaccess::HubAccess)` — overload selector"] pub fn new (access : crate :: app :: hubaccess :: HubAccess) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AnimalAccessSequence) , :: core :: stringify ! (new) ,)) ; < Self as IAnimalAccessSequenceMethods > :: ctor (this , access) ; this }
 }
 
 #[cfg(feature = "app-animalaccesssequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{AnimalAccessSequence, AnimalAccessSequence_Label, IAnimalAccessSequence, IAnimalAccessSequenceMethods};
-    #[cfg(feature = "app-procinst")]
-    pub use crate::app::procinst::IProcInstMethods;
-    #[cfg(feature = "app-singletonprocinst_1")]
-    pub use crate::app::singletonprocinst_1::ISingletonProcInst_1Methods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::{
-        app::{procinst::IProcInst, singletonprocinst_1::ISingletonProcInst_1},
-        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
-    };
+    pub use super::AnimalAccessSequence_Label;
+    pub use super::AnimalAccessSequence;
+    pub use super::IAnimalAccessSequence;
+    pub use super::IAnimalAccessSequenceMethods;
+    pub use crate::app::procinst::IProcInst;
+    pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "app-procinst")] pub use crate::app::procinst::IProcInstMethods;
+    #[cfg(feature = "app-singletonprocinst_1")] pub use crate::app::singletonprocinst_1::ISingletonProcInst_1Methods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

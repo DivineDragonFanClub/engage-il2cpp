@@ -2,1325 +2,196 @@
 
 #[cfg(feature = "app-loadinglogo-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::singletonmonobehaviour_1::{ISingletonMonoBehaviour_1, SingletonMonoBehaviour_1},
-        system::{
-            object::{IObject, Object},
-            r#enum::{Enum, IEnum},
-            valuetype::{IValueType, ValueType},
-        },
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/loadinglogo/LoadingLogo_Sequences.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct LoadingLogo_Sequences {
-        pub value: i32,
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: singletonmonobehaviour_1 :: { ISingletonMonoBehaviour_1 , SingletonMonoBehaviour_1 }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/loadinglogo/LoadingLogo.md"))] # [:: unity2 :: class (namespace = "App" , name = "LoadingLogo")] # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: loadinglogo :: LoadingLogo >)] pub struct LoadingLogo {
+# [static_field] # [rename (name = "GroundImageMax")] pub ground_image_max : i32 ,
+# [static_field] # [rename (name = "UnitDotMax")] pub unit_dot_max : i32 ,
+# [offset (32)] # [rename (name = "m_Tips")] pub m_tips : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (40)] # [rename (name = "m_Icon")] pub m_icon : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (48)] # [rename (name = "m_IconCanvasGroup")] pub m_icon_canvas_group : crate :: unity_engine :: canvasgroup :: CanvasGroup ,
+# [offset (56)] # [rename (name = "m_TipsCanvasGroup")] pub m_tips_canvas_group : crate :: unity_engine :: canvasgroup :: CanvasGroup ,
+# [offset (64)] # [rename (name = "m_TipsUnitIcon")] pub m_tips_unit_icon : crate :: app :: uniticon :: UnitIcon ,
+# [offset (72)] # [rename (name = "m_ItemIconRootObject")] pub m_item_icon_root_object : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (80)] # [rename (name = "m_ItemIconFrameImage")] pub m_item_icon_frame_image : crate :: unity_engine :: ui :: image :: Image ,
+# [offset (88)] # [rename (name = "m_ItemIconImage")] pub m_item_icon_image : crate :: unity_engine :: ui :: image :: Image ,
+# [offset (96)] # [rename (name = "m_SkillIconImage")] pub m_skill_icon_image : crate :: unity_engine :: ui :: image :: Image ,
+# [offset (104)] # [rename (name = "m_TitleFrameImage")] pub m_title_frame_image : crate :: unity_engine :: ui :: image :: Image ,
+# [offset (112)] # [rename (name = "m_TitleText")] pub m_title_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (120)] # [rename (name = "m_TipsText")] pub m_tips_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (128)] # [rename (name = "m_UnitIconAndGroundRootObject")] pub m_unit_icon_and_ground_root_object : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (136)] # [rename (name = "m_GroundImageObjects")] pub m_ground_image_objects : :: unity2 :: Array < crate :: unity_engine :: gameobject :: GameObject > ,
+# [offset (144)] # [rename (name = "m_UnitDotObjects")] pub m_unit_dot_objects : :: unity2 :: Array < crate :: app :: loadinglogo :: LoadingLogo_UnitDotObject > ,
+# [offset (152)] # [rename (name = "m_TipsData")] pub m_tips_data : crate :: app :: tipsdata :: TipsData ,
+# [offset (160)] # [rename (name = "m_TipsAlpha")] pub m_tips_alpha : crate :: app :: interpolatorfloat :: InterpolatorFloat ,
+# [offset (168)] # [rename (name = "m_IconAlpha")] pub m_icon_alpha : crate :: app :: interpolatorfloat :: InterpolatorFloat ,
+# [offset (176)] # [rename (name = "m_LoadingMode")] pub m_loading_mode : crate :: app :: loadingmanager :: LoadingManager_Modes ,
+# [offset (180)] # [rename (name = "m_Sequence")] pub m_sequence : crate :: app :: loadinglogo :: LoadingLogo_Sequences ,
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/loadinglogo/LoadingLogo_Sequences.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct LoadingLogo_Sequences  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for LoadingLogo_Sequences  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "LoadingLogo.Sequences";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    impl ::unity2::ClassIdentity for LoadingLogo_Sequences {
-        const NAME: &'static str = "LoadingLogo.Sequences";
-        const NAMESPACE: &'static str = "App";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  ::unity2::IlType for LoadingLogo_Sequences  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::IlType for LoadingLogo_Sequences {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  LoadingLogo_Sequences  {
+    pub fn none() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl LoadingLogo_Sequences {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn show() -> Self {
-            Self { value: 1 }
-        }
+    pub fn show() -> Self {
+        Self { value: 1 }
 
-        pub fn idle() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn change() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn hide() -> Self {
-            Self { value: 4 }
-        }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/loadinglogo/LoadingLogo_UnitDotObject.md"))]
-    #[::unity2::class(namespace = "App", name = "LoadingLogo.UnitDotObject")]
-    #[parent(crate::system::object::Object)]
-    pub struct LoadingLogo_UnitDotObject {
-        #[offset(16)]
-        #[rename(name = "m_RootObject")]
-        pub m_root_object: crate::unity_engine::gameobject::GameObject,
-        #[offset(24)]
-        #[rename(name = "m_Image")]
-        pub m_image: crate::unity_engine::ui::rawimage::RawImage,
-        #[offset(32)]
-        #[rename(name = "m_Animator")]
-        pub m_animator: crate::unity_engine::animator::Animator,
-        #[offset(40)]
-        #[rename(name = "m_Material")]
-        pub m_material: crate::unity_engine::material::Material,
+
+    pub fn idle() -> Self {
+        Self { value: 2 }
+
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/loadinglogo/LoadingLogo.md"))]
-    #[::unity2::class(namespace = "App", name = "LoadingLogo")]
-    # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: loadinglogo :: LoadingLogo >)]
-    pub struct LoadingLogo {
-        #[static_field]
-        #[rename(name = "GroundImageMax")]
-        pub ground_image_max: i32,
-        #[static_field]
-        #[rename(name = "UnitDotMax")]
-        pub unit_dot_max: i32,
-        #[offset(32)]
-        #[rename(name = "m_Tips")]
-        pub m_tips: crate::unity_engine::gameobject::GameObject,
-        #[offset(40)]
-        #[rename(name = "m_Icon")]
-        pub m_icon: crate::unity_engine::gameobject::GameObject,
-        #[offset(48)]
-        #[rename(name = "m_IconCanvasGroup")]
-        pub m_icon_canvas_group: crate::unity_engine::canvasgroup::CanvasGroup,
-        #[offset(56)]
-        #[rename(name = "m_TipsCanvasGroup")]
-        pub m_tips_canvas_group: crate::unity_engine::canvasgroup::CanvasGroup,
-        #[offset(64)]
-        #[rename(name = "m_TipsUnitIcon")]
-        pub m_tips_unit_icon: crate::app::uniticon::UnitIcon,
-        #[offset(72)]
-        #[rename(name = "m_ItemIconRootObject")]
-        pub m_item_icon_root_object: crate::unity_engine::gameobject::GameObject,
-        #[offset(80)]
-        #[rename(name = "m_ItemIconFrameImage")]
-        pub m_item_icon_frame_image: crate::unity_engine::ui::image::Image,
-        #[offset(88)]
-        #[rename(name = "m_ItemIconImage")]
-        pub m_item_icon_image: crate::unity_engine::ui::image::Image,
-        #[offset(96)]
-        #[rename(name = "m_SkillIconImage")]
-        pub m_skill_icon_image: crate::unity_engine::ui::image::Image,
-        #[offset(104)]
-        #[rename(name = "m_TitleFrameImage")]
-        pub m_title_frame_image: crate::unity_engine::ui::image::Image,
-        #[offset(112)]
-        #[rename(name = "m_TitleText")]
-        pub m_title_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(120)]
-        #[rename(name = "m_TipsText")]
-        pub m_tips_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(128)]
-        #[rename(name = "m_UnitIconAndGroundRootObject")]
-        pub m_unit_icon_and_ground_root_object: crate::unity_engine::gameobject::GameObject,
-        #[offset(136)]
-        #[rename(name = "m_GroundImageObjects")]
-        pub m_ground_image_objects: ::unity2::Array<crate::unity_engine::gameobject::GameObject>,
-        #[offset(144)]
-        #[rename(name = "m_UnitDotObjects")]
-        pub m_unit_dot_objects: ::unity2::Array<crate::app::loadinglogo::LoadingLogo_UnitDotObject>,
-        #[offset(152)]
-        #[rename(name = "m_TipsData")]
-        pub m_tips_data: crate::app::tipsdata::TipsData,
-        #[offset(160)]
-        #[rename(name = "m_TipsAlpha")]
-        pub m_tips_alpha: crate::app::interpolatorfloat::InterpolatorFloat,
-        #[offset(168)]
-        #[rename(name = "m_IconAlpha")]
-        pub m_icon_alpha: crate::app::interpolatorfloat::InterpolatorFloat,
-        #[offset(176)]
-        #[rename(name = "m_LoadingMode")]
-        pub m_loading_mode: crate::app::loadingmanager::LoadingManager_Modes,
-        #[offset(180)]
-        #[rename(name = "m_Sequence")]
-        pub m_sequence: crate::app::loadinglogo::LoadingLogo_Sequences,
+
+    pub fn change() -> Self {
+        Self { value: 3 }
+
     }
+
+
+    pub fn hide() -> Self {
+        Self { value: 4 }
+
+    }
+
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/loadinglogo/LoadingLogo_UnitDotObject.md"))] # [:: unity2 :: class (namespace = "App" , name = "LoadingLogo.UnitDotObject")] # [parent (crate :: system :: object :: Object)] pub struct LoadingLogo_UnitDotObject {
+# [offset (16)] # [rename (name = "m_RootObject")] pub m_root_object : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (24)] # [rename (name = "m_Image")] pub m_image : crate :: unity_engine :: ui :: rawimage :: RawImage ,
+# [offset (32)] # [rename (name = "m_Animator")] pub m_animator : crate :: unity_engine :: animator :: Animator ,
+# [offset (40)] # [rename (name = "m_Material")] pub m_material : crate :: unity_engine :: material :: Material ,
+}
+
 }
 
 #[cfg(feature = "app-loadinglogo-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-loadinglogo")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __LoadingLogo_UnitDotObject_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <LoadingLogo_UnitDotObject as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <LoadingLogo_UnitDotObject as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: LoadingLogo_UnitDotObject,
-        root_object: crate::unity_engine::gameobject::GameObject,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(LoadingLogo_UnitDotObject, crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, root_object, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_setup {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::persondata::PersonData as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <LoadingLogo_UnitDotObject as ::unity2::ClassIdentity>::class(),
-                "Setup",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <LoadingLogo_UnitDotObject as ::unity2::ClassIdentity>::NAME,
-                        "Setup",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn setup(
-        this: LoadingLogo_UnitDotObject,
-        person: crate::app::persondata::PersonData,
-        is_female: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(LoadingLogo_UnitDotObject, crate::app::persondata::PersonData, bool, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_setup::get_method_info().method_ptr);
-        inner(this, person, is_female, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_clear {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <LoadingLogo_UnitDotObject as ::unity2::ClassIdentity>::class(),
-                "Clear",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <LoadingLogo_UnitDotObject as ::unity2::ClassIdentity>::NAME,
-                        "Clear",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn clear(this: LoadingLogo_UnitDotObject, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(LoadingLogo_UnitDotObject, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_unit_dot_texture_path {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::persondata::PersonData as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <LoadingLogo_UnitDotObject as ::unity2::ClassIdentity>::class(),
-                "GetUnitDotTexturePath",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <LoadingLogo_UnitDotObject as ::unity2::ClassIdentity>::NAME,
-                        "GetUnitDotTexturePath",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_unit_dot_texture_path(
-        person: crate::app::persondata::PersonData,
-        is_female: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(crate::app::persondata::PersonData, bool, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_unit_dot_texture_path::get_method_info().method_ptr);
-        inner(person, is_female, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_load_unit_dot_texture_all {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <LoadingLogo_UnitDotObject as ::unity2::ClassIdentity>::class(),
-                "LoadUnitDotTextureAll",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <LoadingLogo_UnitDotObject as ::unity2::ClassIdentity>::NAME,
-                        "LoadUnitDotTextureAll",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn load_unit_dot_texture_all(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_load_unit_dot_texture_all::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __LoadingLogo_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_awake { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LoadingLogo as :: unity2 :: ClassIdentity > :: class () , "Awake" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LoadingLogo as :: unity2 :: ClassIdentity > :: NAME , "Awake" , e) , } } } pub unsafe fn awake (this : LoadingLogo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (LoadingLogo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_awake :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_start { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LoadingLogo as :: unity2 :: ClassIdentity > :: class () , "Start" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LoadingLogo as :: unity2 :: ClassIdentity > :: NAME , "Start" , e) , } } } pub unsafe fn start (this : LoadingLogo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (LoadingLogo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_start :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_late_update { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LoadingLogo as :: unity2 :: ClassIdentity > :: class () , "LateUpdate" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LoadingLogo as :: unity2 :: ClassIdentity > :: NAME , "LateUpdate" , e) , } } } pub unsafe fn late_update (this : LoadingLogo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (LoadingLogo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_late_update :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_next_tips_data { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: tipsdata :: TipsData as :: unity2 :: IlType > :: il_type () , < crate :: app :: loadingmanager :: LoadingManager_Modes as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LoadingLogo as :: unity2 :: ClassIdentity > :: class () , "GetNextTipsData" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LoadingLogo as :: unity2 :: ClassIdentity > :: NAME , "GetNextTipsData" , e) , } } } pub unsafe fn get_next_tips_data (now : crate :: app :: tipsdata :: TipsData , mode : crate :: app :: loadingmanager :: LoadingManager_Modes , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: tipsdata :: TipsData { let inner : extern "C" fn (crate :: app :: tipsdata :: TipsData , crate :: app :: loadingmanager :: LoadingManager_Modes , :: unity2 :: OptionalMethod ,) -> crate :: app :: tipsdata :: TipsData = :: core :: mem :: transmute (__lookup_get_next_tips_data :: get_method_info () . method_ptr ,) ; inner (now , mode , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_text { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LoadingLogo as :: unity2 :: ClassIdentity > :: class () , "SetText" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LoadingLogo as :: unity2 :: ClassIdentity > :: NAME , "SetText" , e) , } } } pub unsafe fn set_text (this : LoadingLogo , text_mesh : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI , text : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (LoadingLogo , crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_text :: get_method_info () . method_ptr ,) ; inner (this , text_mesh , text , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_tips_data { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: tipsdata :: TipsData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LoadingLogo as :: unity2 :: ClassIdentity > :: class () , "SetTipsData" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LoadingLogo as :: unity2 :: ClassIdentity > :: NAME , "SetTipsData" , e) , } } } pub unsafe fn set_tips_data (this : LoadingLogo , tips_data : crate :: app :: tipsdata :: TipsData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (LoadingLogo , crate :: app :: tipsdata :: TipsData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_tips_data :: get_method_info () . method_ptr ,) ; inner (this , tips_data , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_clear { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LoadingLogo as :: unity2 :: ClassIdentity > :: class () , "Clear" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LoadingLogo as :: unity2 :: ClassIdentity > :: NAME , "Clear" , e) , } } } pub unsafe fn clear (this : LoadingLogo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (LoadingLogo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_clear :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_show_impl { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: loadingmanager :: LoadingManager_Modes as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LoadingLogo as :: unity2 :: ClassIdentity > :: class () , "ShowImpl" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LoadingLogo as :: unity2 :: ClassIdentity > :: NAME , "ShowImpl" , e) , } } } pub unsafe fn show_impl (this : LoadingLogo , mode : crate :: app :: loadingmanager :: LoadingManager_Modes , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (LoadingLogo , crate :: app :: loadingmanager :: LoadingManager_Modes , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_show_impl :: get_method_info () . method_ptr ,) ; inner (this , mode , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_show_impl_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LoadingLogo as :: unity2 :: ClassIdentity > :: class () , "ShowImpl" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LoadingLogo as :: unity2 :: ClassIdentity > :: NAME , "ShowImpl" , e) , } } } pub unsafe fn show_impl_2 (this : LoadingLogo , hero_unit : crate :: app :: unit :: Unit , eat_unit0 : crate :: app :: unit :: Unit , eat_unit1 : crate :: app :: unit :: Unit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (LoadingLogo , crate :: app :: unit :: Unit , crate :: app :: unit :: Unit , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_show_impl_2 :: get_method_info () . method_ptr ,) ; inner (this , hero_unit , eat_unit0 , eat_unit1 , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_show_impl_3 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: tipsdata :: TipsData as :: unity2 :: IlType > :: il_type () , < crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LoadingLogo as :: unity2 :: ClassIdentity > :: class () , "ShowImpl" , 4 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LoadingLogo as :: unity2 :: ClassIdentity > :: NAME , "ShowImpl" , e) , } } } pub unsafe fn show_impl_3 (this : LoadingLogo , tips_data : crate :: app :: tipsdata :: TipsData , hero_unit : crate :: app :: unit :: Unit , eat_unit0 : crate :: app :: unit :: Unit , eat_unit1 : crate :: app :: unit :: Unit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (LoadingLogo , crate :: app :: tipsdata :: TipsData , crate :: app :: unit :: Unit , crate :: app :: unit :: Unit , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_show_impl_3 :: get_method_info () . method_ptr ,) ; inner (this , tips_data , hero_unit , eat_unit0 , eat_unit1 , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_setup_unit_dot { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LoadingLogo as :: unity2 :: ClassIdentity > :: class () , "SetupUnitDot" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LoadingLogo as :: unity2 :: ClassIdentity > :: NAME , "SetupUnitDot" , e) , } } } pub unsafe fn setup_unit_dot (this : LoadingLogo , icon_index : i32 , unit : crate :: app :: unit :: Unit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (LoadingLogo , i32 , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_setup_unit_dot :: get_method_info () . method_ptr ,) ; inner (this , icon_index , unit , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_setup_unit_dot_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < crate :: app :: persondata :: PersonData as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LoadingLogo as :: unity2 :: ClassIdentity > :: class () , "SetupUnitDot" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LoadingLogo as :: unity2 :: ClassIdentity > :: NAME , "SetupUnitDot" , e) , } } } pub unsafe fn setup_unit_dot_2 (this : LoadingLogo , icon_index : i32 , person : crate :: app :: persondata :: PersonData , is_female : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (LoadingLogo , i32 , crate :: app :: persondata :: PersonData , bool , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_setup_unit_dot_2 :: get_method_info () . method_ptr ,) ; inner (this , icon_index , person , is_female , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_hide_impl { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LoadingLogo as :: unity2 :: ClassIdentity > :: class () , "HideImpl" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LoadingLogo as :: unity2 :: ClassIdentity > :: NAME , "HideImpl" , e) , } } } pub unsafe fn hide_impl (this : LoadingLogo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (LoadingLogo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_hide_impl :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_commit { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LoadingLogo as :: unity2 :: ClassIdentity > :: class () , "Commit" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LoadingLogo as :: unity2 :: ClassIdentity > :: NAME , "Commit" , e) , } } } pub unsafe fn commit (this : LoadingLogo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (LoadingLogo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_commit :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_show { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: loadingmanager :: LoadingManager_Modes as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LoadingLogo as :: unity2 :: ClassIdentity > :: class () , "Show" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LoadingLogo as :: unity2 :: ClassIdentity > :: NAME , "Show" , e) , } } } pub unsafe fn show (mode : crate :: app :: loadingmanager :: LoadingManager_Modes , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: loadingmanager :: LoadingManager_Modes , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_show :: get_method_info () . method_ptr ,) ; inner (mode , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_show_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: tipsdata :: TipsData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LoadingLogo as :: unity2 :: ClassIdentity > :: class () , "Show" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LoadingLogo as :: unity2 :: ClassIdentity > :: NAME , "Show" , e) , } } } pub unsafe fn show_2 (tips_data : crate :: app :: tipsdata :: TipsData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: tipsdata :: TipsData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_show_2 :: get_method_info () . method_ptr ,) ; inner (tips_data , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_show_3 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LoadingLogo as :: unity2 :: ClassIdentity > :: class () , "Show" , 3 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LoadingLogo as :: unity2 :: ClassIdentity > :: NAME , "Show" , e) , } } } pub unsafe fn show_3 (hero_unit : crate :: app :: unit :: Unit , eat_unit0 : crate :: app :: unit :: Unit , eat_unit1 : crate :: app :: unit :: Unit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: unit :: Unit , crate :: app :: unit :: Unit , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_show_3 :: get_method_info () . method_ptr ,) ; inner (hero_unit , eat_unit0 , eat_unit1 , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_hide { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LoadingLogo as :: unity2 :: ClassIdentity > :: class () , "Hide" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LoadingLogo as :: unity2 :: ClassIdentity > :: NAME , "Hide" , e) , } } } pub unsafe fn hide (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_hide :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LoadingLogo as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LoadingLogo as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : LoadingLogo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (LoadingLogo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-loadinglogo")]
-impl LoadingLogo_UnitDotObject {
-    #[doc = "`GetUnitDotTexturePath(crate::app::persondata::PersonData, bool)` overload"]
-    pub fn get_unit_dot_texture_path(
-        person: impl ::core::convert::Into<crate::app::persondata::PersonData>,
-        is_female: impl ::core::convert::Into<bool>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __LoadingLogo_UnitDotObject_unity2_raw::get_unit_dot_texture_path(
-                ::core::convert::Into::into(person),
-                ::core::convert::Into::into(is_female),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`LoadUnitDotTextureAll()` overload"]
-    pub fn load_unit_dot_texture_all() -> () {
-        unsafe { __LoadingLogo_UnitDotObject_unity2_raw::load_unit_dot_texture_all(::core::option::Option::None) }
-    }
-}
+impl LoadingLogo { # [doc = "`GetNextTipsData(crate::app::tipsdata::TipsData, crate::app::loadingmanager::LoadingManager_Modes)` overload"] pub fn get_next_tips_data (now : impl :: core :: convert :: Into < crate :: app :: tipsdata :: TipsData > , mode : impl :: core :: convert :: Into < crate :: app :: loadingmanager :: LoadingManager_Modes >) -> crate :: app :: tipsdata :: TipsData { unsafe { __LoadingLogo_unity2_raw :: get_next_tips_data (:: core :: convert :: Into :: into (now) , :: core :: convert :: Into :: into (mode) , :: core :: option :: Option :: None) } } # [doc = "`Show(crate::app::loadingmanager::LoadingManager_Modes)` overload"] pub fn show (mode : impl :: core :: convert :: Into < crate :: app :: loadingmanager :: LoadingManager_Modes >) -> () { unsafe { __LoadingLogo_unity2_raw :: show (:: core :: convert :: Into :: into (mode) , :: core :: option :: Option :: None) } } # [doc = "`Show(crate::app::tipsdata::TipsData)` overload"] pub fn show_2 (tips_data : impl :: core :: convert :: Into < crate :: app :: tipsdata :: TipsData >) -> () { unsafe { __LoadingLogo_unity2_raw :: show_2 (:: core :: convert :: Into :: into (tips_data) , :: core :: option :: Option :: None) } } # [doc = "`Show(crate::app::unit::Unit, crate::app::unit::Unit, crate::app::unit::Unit)` overload"] pub fn show_3 (hero_unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , eat_unit0 : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , eat_unit1 : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { __LoadingLogo_unity2_raw :: show_3 (:: core :: convert :: Into :: into (hero_unit) , :: core :: convert :: Into :: into (eat_unit0) , :: core :: convert :: Into :: into (eat_unit1) , :: core :: option :: Option :: None) } } # [doc = "`Hide()` overload"] pub fn hide () -> () { unsafe { __LoadingLogo_unity2_raw :: hide (:: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-loadinglogo")]
-pub trait ILoadingLogo_UnitDotObjectMethods: ILoadingLogo_UnitDotObject {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
-    fn ctor(self, root_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>) -> () {
-        unsafe {
-            let __receiver =
-                <LoadingLogo_UnitDotObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __LoadingLogo_UnitDotObject_unity2_raw::ctor(__receiver, ::core::convert::Into::into(root_object), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Setup(crate::app::persondata::PersonData, bool)` overload"]
-    fn setup(self, person: impl ::core::convert::Into<crate::app::persondata::PersonData>, is_female: impl ::core::convert::Into<bool>) -> bool {
-        unsafe {
-            let __receiver =
-                <LoadingLogo_UnitDotObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __LoadingLogo_UnitDotObject_unity2_raw::setup(
-                __receiver,
-                ::core::convert::Into::into(person),
-                ::core::convert::Into::into(is_female),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Clear()` overload"]
-    fn clear(self) -> () {
-        unsafe {
-            let __receiver =
-                <LoadingLogo_UnitDotObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __LoadingLogo_UnitDotObject_unity2_raw::clear(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait ILoadingLogoMethods : ILoadingLogo { # [doc = "`Awake()` overload"] fn awake (self ,) -> () { unsafe { let __receiver = < LoadingLogo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __LoadingLogo_unity2_raw :: awake (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < LoadingLogo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __LoadingLogo_unity2_raw :: start (__receiver , :: core :: option :: Option :: None) } } # [doc = "`LateUpdate()` overload"] fn late_update (self ,) -> () { unsafe { let __receiver = < LoadingLogo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __LoadingLogo_unity2_raw :: late_update (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetText(crate::tm_pro::textmeshprougui::TextMeshProUGUI, ::unity2::Il2CppString)` overload"] fn set_text (self , text_mesh : impl :: core :: convert :: Into < crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI > , text : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < LoadingLogo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __LoadingLogo_unity2_raw :: set_text (__receiver , :: core :: convert :: Into :: into (text_mesh) , :: core :: convert :: Into :: into (text) , :: core :: option :: Option :: None) } } # [doc = "`SetTipsData(crate::app::tipsdata::TipsData)` overload"] fn set_tips_data (self , tips_data : impl :: core :: convert :: Into < crate :: app :: tipsdata :: TipsData >) -> () { unsafe { let __receiver = < LoadingLogo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __LoadingLogo_unity2_raw :: set_tips_data (__receiver , :: core :: convert :: Into :: into (tips_data) , :: core :: option :: Option :: None) } } # [doc = "`Clear()` overload"] fn clear (self ,) -> () { unsafe { let __receiver = < LoadingLogo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __LoadingLogo_unity2_raw :: clear (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ShowImpl(crate::app::loadingmanager::LoadingManager_Modes)` overload"] fn show_impl (self , mode : impl :: core :: convert :: Into < crate :: app :: loadingmanager :: LoadingManager_Modes >) -> () { unsafe { let __receiver = < LoadingLogo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __LoadingLogo_unity2_raw :: show_impl (__receiver , :: core :: convert :: Into :: into (mode) , :: core :: option :: Option :: None) } } # [doc = "`ShowImpl(crate::app::unit::Unit, crate::app::unit::Unit, crate::app::unit::Unit)` overload"] fn show_impl_2 (self , hero_unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , eat_unit0 : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , eat_unit1 : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < LoadingLogo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __LoadingLogo_unity2_raw :: show_impl_2 (__receiver , :: core :: convert :: Into :: into (hero_unit) , :: core :: convert :: Into :: into (eat_unit0) , :: core :: convert :: Into :: into (eat_unit1) , :: core :: option :: Option :: None) } } # [doc = "`ShowImpl(crate::app::tipsdata::TipsData, crate::app::unit::Unit, crate::app::unit::Unit, crate::app::unit::Unit)` overload"] fn show_impl_3 (self , tips_data : impl :: core :: convert :: Into < crate :: app :: tipsdata :: TipsData > , hero_unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , eat_unit0 : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , eat_unit1 : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < LoadingLogo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __LoadingLogo_unity2_raw :: show_impl_3 (__receiver , :: core :: convert :: Into :: into (tips_data) , :: core :: convert :: Into :: into (hero_unit) , :: core :: convert :: Into :: into (eat_unit0) , :: core :: convert :: Into :: into (eat_unit1) , :: core :: option :: Option :: None) } } # [doc = "`SetupUnitDot(i32, crate::app::unit::Unit)` overload"] fn setup_unit_dot (self , icon_index : impl :: core :: convert :: Into < i32 > , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> bool { unsafe { let __receiver = < LoadingLogo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __LoadingLogo_unity2_raw :: setup_unit_dot (__receiver , :: core :: convert :: Into :: into (icon_index) , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } # [doc = "`SetupUnitDot(i32, crate::app::persondata::PersonData, bool)` overload"] fn setup_unit_dot_2 (self , icon_index : impl :: core :: convert :: Into < i32 > , person : impl :: core :: convert :: Into < crate :: app :: persondata :: PersonData > , is_female : impl :: core :: convert :: Into < bool >) -> bool { unsafe { let __receiver = < LoadingLogo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __LoadingLogo_unity2_raw :: setup_unit_dot_2 (__receiver , :: core :: convert :: Into :: into (icon_index) , :: core :: convert :: Into :: into (person) , :: core :: convert :: Into :: into (is_female) , :: core :: option :: Option :: None) } } # [doc = "`HideImpl()` overload"] fn hide_impl (self ,) -> () { unsafe { let __receiver = < LoadingLogo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __LoadingLogo_unity2_raw :: hide_impl (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Commit()` overload"] fn commit (self ,) -> () { unsafe { let __receiver = < LoadingLogo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __LoadingLogo_unity2_raw :: commit (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < LoadingLogo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __LoadingLogo_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-loadinglogo")]
-impl<__T: ILoadingLogo_UnitDotObject> ILoadingLogo_UnitDotObjectMethods for __T {}
+impl < __T : ILoadingLogo > ILoadingLogoMethods for __T { }
 
 #[cfg(feature = "app-loadinglogo")]
-impl LoadingLogo_UnitDotObject {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
-    pub fn new(root_object: crate::unity_engine::gameobject::GameObject) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(LoadingLogo_UnitDotObject),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ILoadingLogo_UnitDotObjectMethods>::ctor(this, root_object);
-        this
-    }
-}
-
-#[cfg(feature = "app-loadinglogo")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __LoadingLogo_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_awake {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<LoadingLogo as ::unity2::ClassIdentity>::class(), "Awake", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <LoadingLogo as ::unity2::ClassIdentity>::NAME,
-                        "Awake",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn awake(this: LoadingLogo, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(LoadingLogo, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_awake::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_start {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<LoadingLogo as ::unity2::ClassIdentity>::class(), "Start", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <LoadingLogo as ::unity2::ClassIdentity>::NAME,
-                        "Start",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn start(this: LoadingLogo, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(LoadingLogo, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_start::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_late_update {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <LoadingLogo as ::unity2::ClassIdentity>::class(),
-                "LateUpdate",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <LoadingLogo as ::unity2::ClassIdentity>::NAME,
-                        "LateUpdate",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn late_update(this: LoadingLogo, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(LoadingLogo, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_late_update::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_next_tips_data {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::tipsdata::TipsData as ::unity2::IlType>::il_type(),
-                <crate::app::loadingmanager::LoadingManager_Modes as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <LoadingLogo as ::unity2::ClassIdentity>::class(),
-                "GetNextTipsData",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <LoadingLogo as ::unity2::ClassIdentity>::NAME,
-                        "GetNextTipsData",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_next_tips_data(
-        now: crate::app::tipsdata::TipsData,
-        mode: crate::app::loadingmanager::LoadingManager_Modes,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::tipsdata::TipsData {
-        let inner: extern "C" fn(
-            crate::app::tipsdata::TipsData,
-            crate::app::loadingmanager::LoadingManager_Modes,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::tipsdata::TipsData = ::core::mem::transmute(__lookup_get_next_tips_data::get_method_info().method_ptr);
-        inner(now, mode, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_text {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::tm_pro::textmeshprougui::TextMeshProUGUI as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<LoadingLogo as ::unity2::ClassIdentity>::class(), "SetText", 2, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <LoadingLogo as ::unity2::ClassIdentity>::NAME,
-                        "SetText",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_text(
-        this: LoadingLogo,
-        text_mesh: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        text: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            LoadingLogo,
-            crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_set_text::get_method_info().method_ptr);
-        inner(this, text_mesh, text, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_tips_data {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::tipsdata::TipsData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <LoadingLogo as ::unity2::ClassIdentity>::class(),
-                "SetTipsData",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <LoadingLogo as ::unity2::ClassIdentity>::NAME,
-                        "SetTipsData",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_tips_data(this: LoadingLogo, tips_data: crate::app::tipsdata::TipsData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(LoadingLogo, crate::app::tipsdata::TipsData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_tips_data::get_method_info().method_ptr);
-        inner(this, tips_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_clear {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<LoadingLogo as ::unity2::ClassIdentity>::class(), "Clear", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <LoadingLogo as ::unity2::ClassIdentity>::NAME,
-                        "Clear",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn clear(this: LoadingLogo, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(LoadingLogo, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_show_impl {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::loadingmanager::LoadingManager_Modes as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <LoadingLogo as ::unity2::ClassIdentity>::class(),
-                "ShowImpl",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <LoadingLogo as ::unity2::ClassIdentity>::NAME,
-                        "ShowImpl",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn show_impl(
-        this: LoadingLogo,
-        mode: crate::app::loadingmanager::LoadingManager_Modes,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(LoadingLogo, crate::app::loadingmanager::LoadingManager_Modes, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_show_impl::get_method_info().method_ptr);
-        inner(this, mode, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_show_impl_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <LoadingLogo as ::unity2::ClassIdentity>::class(),
-                "ShowImpl",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <LoadingLogo as ::unity2::ClassIdentity>::NAME,
-                        "ShowImpl",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn show_impl_2(
-        this: LoadingLogo,
-        hero_unit: crate::app::unit::Unit,
-        eat_unit0: crate::app::unit::Unit,
-        eat_unit1: crate::app::unit::Unit,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            LoadingLogo,
-            crate::app::unit::Unit,
-            crate::app::unit::Unit,
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_show_impl_2::get_method_info().method_ptr);
-        inner(this, hero_unit, eat_unit0, eat_unit1, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_show_impl_3 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::tipsdata::TipsData as ::unity2::IlType>::il_type(),
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <LoadingLogo as ::unity2::ClassIdentity>::class(),
-                "ShowImpl",
-                4,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <LoadingLogo as ::unity2::ClassIdentity>::NAME,
-                        "ShowImpl",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn show_impl_3(
-        this: LoadingLogo,
-        tips_data: crate::app::tipsdata::TipsData,
-        hero_unit: crate::app::unit::Unit,
-        eat_unit0: crate::app::unit::Unit,
-        eat_unit1: crate::app::unit::Unit,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            LoadingLogo,
-            crate::app::tipsdata::TipsData,
-            crate::app::unit::Unit,
-            crate::app::unit::Unit,
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_show_impl_3::get_method_info().method_ptr);
-        inner(this, tips_data, hero_unit, eat_unit0, eat_unit1, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_setup_unit_dot {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <LoadingLogo as ::unity2::ClassIdentity>::class(),
-                "SetupUnitDot",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <LoadingLogo as ::unity2::ClassIdentity>::NAME,
-                        "SetupUnitDot",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn setup_unit_dot(
-        this: LoadingLogo,
-        icon_index: i32,
-        unit: crate::app::unit::Unit,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(LoadingLogo, i32, crate::app::unit::Unit, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_setup_unit_dot::get_method_info().method_ptr);
-        inner(this, icon_index, unit, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_setup_unit_dot_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <crate::app::persondata::PersonData as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <LoadingLogo as ::unity2::ClassIdentity>::class(),
-                "SetupUnitDot",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <LoadingLogo as ::unity2::ClassIdentity>::NAME,
-                        "SetupUnitDot",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn setup_unit_dot_2(
-        this: LoadingLogo,
-        icon_index: i32,
-        person: crate::app::persondata::PersonData,
-        is_female: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(LoadingLogo, i32, crate::app::persondata::PersonData, bool, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_setup_unit_dot_2::get_method_info().method_ptr);
-        inner(this, icon_index, person, is_female, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_hide_impl {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <LoadingLogo as ::unity2::ClassIdentity>::class(),
-                "HideImpl",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <LoadingLogo as ::unity2::ClassIdentity>::NAME,
-                        "HideImpl",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn hide_impl(this: LoadingLogo, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(LoadingLogo, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_hide_impl::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_commit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<LoadingLogo as ::unity2::ClassIdentity>::class(), "Commit", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <LoadingLogo as ::unity2::ClassIdentity>::NAME,
-                        "Commit",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn commit(this: LoadingLogo, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(LoadingLogo, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_commit::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_show {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::loadingmanager::LoadingManager_Modes as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<LoadingLogo as ::unity2::ClassIdentity>::class(), "Show", 1, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <LoadingLogo as ::unity2::ClassIdentity>::NAME,
-                        "Show",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn show(mode: crate::app::loadingmanager::LoadingManager_Modes, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(crate::app::loadingmanager::LoadingManager_Modes, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_show::get_method_info().method_ptr);
-        inner(mode, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_show_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::tipsdata::TipsData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<LoadingLogo as ::unity2::ClassIdentity>::class(), "Show", 1, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <LoadingLogo as ::unity2::ClassIdentity>::NAME,
-                        "Show",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn show_2(tips_data: crate::app::tipsdata::TipsData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(crate::app::tipsdata::TipsData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_show_2::get_method_info().method_ptr);
-        inner(tips_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_show_3 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<LoadingLogo as ::unity2::ClassIdentity>::class(), "Show", 3, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <LoadingLogo as ::unity2::ClassIdentity>::NAME,
-                        "Show",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn show_3(
-        hero_unit: crate::app::unit::Unit,
-        eat_unit0: crate::app::unit::Unit,
-        eat_unit1: crate::app::unit::Unit,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::app::unit::Unit, crate::app::unit::Unit, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_show_3::get_method_info().method_ptr);
-        inner(hero_unit, eat_unit0, eat_unit1, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_hide {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<LoadingLogo as ::unity2::ClassIdentity>::class(), "Hide", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <LoadingLogo as ::unity2::ClassIdentity>::NAME,
-                        "Hide",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn hide(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_hide::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<LoadingLogo as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <LoadingLogo as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: LoadingLogo, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(LoadingLogo, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+impl LoadingLogo { pub fn awake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __LoadingLogo_unity2_raw :: __lookup_awake :: get_method_info () } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __LoadingLogo_unity2_raw :: __lookup_start :: get_method_info () } pub fn late_update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __LoadingLogo_unity2_raw :: __lookup_late_update :: get_method_info () } pub fn get_next_tips_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __LoadingLogo_unity2_raw :: __lookup_get_next_tips_data :: get_method_info () } pub fn set_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __LoadingLogo_unity2_raw :: __lookup_set_text :: get_method_info () } pub fn set_tips_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __LoadingLogo_unity2_raw :: __lookup_set_tips_data :: get_method_info () } pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __LoadingLogo_unity2_raw :: __lookup_clear :: get_method_info () } pub fn show_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __LoadingLogo_unity2_raw :: __lookup_show_impl :: get_method_info () } pub fn show_impl_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __LoadingLogo_unity2_raw :: __lookup_show_impl_2 :: get_method_info () } pub fn show_impl_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __LoadingLogo_unity2_raw :: __lookup_show_impl_3 :: get_method_info () } pub fn setup_unit_dot_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __LoadingLogo_unity2_raw :: __lookup_setup_unit_dot :: get_method_info () } pub fn setup_unit_dot_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __LoadingLogo_unity2_raw :: __lookup_setup_unit_dot_2 :: get_method_info () } pub fn hide_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __LoadingLogo_unity2_raw :: __lookup_hide_impl :: get_method_info () } pub fn commit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __LoadingLogo_unity2_raw :: __lookup_commit :: get_method_info () } pub fn show_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __LoadingLogo_unity2_raw :: __lookup_show :: get_method_info () } pub fn show_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __LoadingLogo_unity2_raw :: __lookup_show_2 :: get_method_info () } pub fn show_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __LoadingLogo_unity2_raw :: __lookup_show_3 :: get_method_info () } pub fn hide_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __LoadingLogo_unity2_raw :: __lookup_hide :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __LoadingLogo_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-loadinglogo")]
 impl LoadingLogo {
-    #[doc = "`GetNextTipsData(crate::app::tipsdata::TipsData, crate::app::loadingmanager::LoadingManager_Modes)` overload"]
-    pub fn get_next_tips_data(
-        now: impl ::core::convert::Into<crate::app::tipsdata::TipsData>,
-        mode: impl ::core::convert::Into<crate::app::loadingmanager::LoadingManager_Modes>,
-    ) -> crate::app::tipsdata::TipsData {
-        unsafe {
-            __LoadingLogo_unity2_raw::get_next_tips_data(
-                ::core::convert::Into::into(now),
-                ::core::convert::Into::into(mode),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`Show(crate::app::loadingmanager::LoadingManager_Modes)` overload"]
-    pub fn show(mode: impl ::core::convert::Into<crate::app::loadingmanager::LoadingManager_Modes>) -> () {
-        unsafe { __LoadingLogo_unity2_raw::show(::core::convert::Into::into(mode), ::core::option::Option::None) }
-    }
-
-    #[doc = "`Show(crate::app::tipsdata::TipsData)` overload"]
-    pub fn show_2(tips_data: impl ::core::convert::Into<crate::app::tipsdata::TipsData>) -> () {
-        unsafe { __LoadingLogo_unity2_raw::show_2(::core::convert::Into::into(tips_data), ::core::option::Option::None) }
-    }
-
-    #[doc = "`Show(crate::app::unit::Unit, crate::app::unit::Unit, crate::app::unit::Unit)` overload"]
-    pub fn show_3(
-        hero_unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-        eat_unit0: impl ::core::convert::Into<crate::app::unit::Unit>,
-        eat_unit1: impl ::core::convert::Into<crate::app::unit::Unit>,
-    ) -> () {
-        unsafe {
-            __LoadingLogo_unity2_raw::show_3(
-                ::core::convert::Into::into(hero_unit),
-                ::core::convert::Into::into(eat_unit0),
-                ::core::convert::Into::into(eat_unit1),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`Hide()` overload"]
-    pub fn hide() -> () {
-        unsafe { __LoadingLogo_unity2_raw::hide(::core::option::Option::None) }
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (LoadingLogo) , :: core :: stringify ! (new) ,)) ; < Self as ILoadingLogoMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-loadinglogo")]
-pub trait ILoadingLogoMethods: ILoadingLogo {
-    #[doc = "`Awake()` overload"]
-    fn awake(self) -> () {
-        unsafe {
-            let __receiver = <LoadingLogo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __LoadingLogo_unity2_raw::awake(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Start()` overload"]
-    fn start(self) -> () {
-        unsafe {
-            let __receiver = <LoadingLogo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __LoadingLogo_unity2_raw::start(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`LateUpdate()` overload"]
-    fn late_update(self) -> () {
-        unsafe {
-            let __receiver = <LoadingLogo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __LoadingLogo_unity2_raw::late_update(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetText(crate::tm_pro::textmeshprougui::TextMeshProUGUI, ::unity2::Il2CppString)` overload"]
-    fn set_text(
-        self,
-        text_mesh: impl ::core::convert::Into<crate::tm_pro::textmeshprougui::TextMeshProUGUI>,
-        text: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
-        unsafe {
-            let __receiver = <LoadingLogo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __LoadingLogo_unity2_raw::set_text(
-                __receiver,
-                ::core::convert::Into::into(text_mesh),
-                ::core::convert::Into::into(text),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetTipsData(crate::app::tipsdata::TipsData)` overload"]
-    fn set_tips_data(self, tips_data: impl ::core::convert::Into<crate::app::tipsdata::TipsData>) -> () {
-        unsafe {
-            let __receiver = <LoadingLogo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __LoadingLogo_unity2_raw::set_tips_data(__receiver, ::core::convert::Into::into(tips_data), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Clear()` overload"]
-    fn clear(self) -> () {
-        unsafe {
-            let __receiver = <LoadingLogo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __LoadingLogo_unity2_raw::clear(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ShowImpl(crate::app::loadingmanager::LoadingManager_Modes)` overload"]
-    fn show_impl(self, mode: impl ::core::convert::Into<crate::app::loadingmanager::LoadingManager_Modes>) -> () {
-        unsafe {
-            let __receiver = <LoadingLogo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __LoadingLogo_unity2_raw::show_impl(__receiver, ::core::convert::Into::into(mode), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ShowImpl(crate::app::unit::Unit, crate::app::unit::Unit, crate::app::unit::Unit)` overload"]
-    fn show_impl_2(
-        self,
-        hero_unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-        eat_unit0: impl ::core::convert::Into<crate::app::unit::Unit>,
-        eat_unit1: impl ::core::convert::Into<crate::app::unit::Unit>,
-    ) -> () {
-        unsafe {
-            let __receiver = <LoadingLogo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __LoadingLogo_unity2_raw::show_impl_2(
-                __receiver,
-                ::core::convert::Into::into(hero_unit),
-                ::core::convert::Into::into(eat_unit0),
-                ::core::convert::Into::into(eat_unit1),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ShowImpl(crate::app::tipsdata::TipsData, crate::app::unit::Unit, crate::app::unit::Unit, crate::app::unit::Unit)` overload"]
-    fn show_impl_3(
-        self,
-        tips_data: impl ::core::convert::Into<crate::app::tipsdata::TipsData>,
-        hero_unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-        eat_unit0: impl ::core::convert::Into<crate::app::unit::Unit>,
-        eat_unit1: impl ::core::convert::Into<crate::app::unit::Unit>,
-    ) -> () {
-        unsafe {
-            let __receiver = <LoadingLogo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __LoadingLogo_unity2_raw::show_impl_3(
-                __receiver,
-                ::core::convert::Into::into(tips_data),
-                ::core::convert::Into::into(hero_unit),
-                ::core::convert::Into::into(eat_unit0),
-                ::core::convert::Into::into(eat_unit1),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetupUnitDot(i32, crate::app::unit::Unit)` overload"]
-    fn setup_unit_dot(self, icon_index: impl ::core::convert::Into<i32>, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> bool {
-        unsafe {
-            let __receiver = <LoadingLogo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __LoadingLogo_unity2_raw::setup_unit_dot(
-                __receiver,
-                ::core::convert::Into::into(icon_index),
-                ::core::convert::Into::into(unit),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetupUnitDot(i32, crate::app::persondata::PersonData, bool)` overload"]
-    fn setup_unit_dot_2(
-        self,
-        icon_index: impl ::core::convert::Into<i32>,
-        person: impl ::core::convert::Into<crate::app::persondata::PersonData>,
-        is_female: impl ::core::convert::Into<bool>,
-    ) -> bool {
-        unsafe {
-            let __receiver = <LoadingLogo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __LoadingLogo_unity2_raw::setup_unit_dot_2(
-                __receiver,
-                ::core::convert::Into::into(icon_index),
-                ::core::convert::Into::into(person),
-                ::core::convert::Into::into(is_female),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`HideImpl()` overload"]
-    fn hide_impl(self) -> () {
-        unsafe {
-            let __receiver = <LoadingLogo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __LoadingLogo_unity2_raw::hide_impl(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Commit()` overload"]
-    fn commit(self) -> () {
-        unsafe {
-            let __receiver = <LoadingLogo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __LoadingLogo_unity2_raw::commit(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <LoadingLogo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __LoadingLogo_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __LoadingLogo_UnitDotObject_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: gameobject :: GameObject as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LoadingLogo_UnitDotObject as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LoadingLogo_UnitDotObject as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : LoadingLogo_UnitDotObject , root_object : crate :: unity_engine :: gameobject :: GameObject , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (LoadingLogo_UnitDotObject , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , root_object , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_setup { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: persondata :: PersonData as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LoadingLogo_UnitDotObject as :: unity2 :: ClassIdentity > :: class () , "Setup" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LoadingLogo_UnitDotObject as :: unity2 :: ClassIdentity > :: NAME , "Setup" , e) , } } } pub unsafe fn setup (this : LoadingLogo_UnitDotObject , person : crate :: app :: persondata :: PersonData , is_female : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (LoadingLogo_UnitDotObject , crate :: app :: persondata :: PersonData , bool , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_setup :: get_method_info () . method_ptr ,) ; inner (this , person , is_female , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_clear { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LoadingLogo_UnitDotObject as :: unity2 :: ClassIdentity > :: class () , "Clear" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LoadingLogo_UnitDotObject as :: unity2 :: ClassIdentity > :: NAME , "Clear" , e) , } } } pub unsafe fn clear (this : LoadingLogo_UnitDotObject , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (LoadingLogo_UnitDotObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_clear :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_unit_dot_texture_path { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: persondata :: PersonData as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LoadingLogo_UnitDotObject as :: unity2 :: ClassIdentity > :: class () , "GetUnitDotTexturePath" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LoadingLogo_UnitDotObject as :: unity2 :: ClassIdentity > :: NAME , "GetUnitDotTexturePath" , e) , } } } pub unsafe fn get_unit_dot_texture_path (person : crate :: app :: persondata :: PersonData , is_female : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (crate :: app :: persondata :: PersonData , bool , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_unit_dot_texture_path :: get_method_info () . method_ptr ,) ; inner (person , is_female , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_load_unit_dot_texture_all { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LoadingLogo_UnitDotObject as :: unity2 :: ClassIdentity > :: class () , "LoadUnitDotTextureAll" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LoadingLogo_UnitDotObject as :: unity2 :: ClassIdentity > :: NAME , "LoadUnitDotTextureAll" , e) , } } } pub unsafe fn load_unit_dot_texture_all (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_load_unit_dot_texture_all :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
 
 #[cfg(feature = "app-loadinglogo")]
-impl<__T: ILoadingLogo> ILoadingLogoMethods for __T {}
+impl LoadingLogo_UnitDotObject { # [doc = "`GetUnitDotTexturePath(crate::app::persondata::PersonData, bool)` overload"] pub fn get_unit_dot_texture_path (person : impl :: core :: convert :: Into < crate :: app :: persondata :: PersonData > , is_female : impl :: core :: convert :: Into < bool >) -> :: unity2 :: Il2CppString { unsafe { __LoadingLogo_UnitDotObject_unity2_raw :: get_unit_dot_texture_path (:: core :: convert :: Into :: into (person) , :: core :: convert :: Into :: into (is_female) , :: core :: option :: Option :: None) } } # [doc = "`LoadUnitDotTextureAll()` overload"] pub fn load_unit_dot_texture_all () -> () { unsafe { __LoadingLogo_UnitDotObject_unity2_raw :: load_unit_dot_texture_all (:: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-loadinglogo")]
-impl LoadingLogo {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(LoadingLogo), ::core::stringify!(new),));
-        <Self as ILoadingLogoMethods>::ctor(this);
-        this
-    }
+pub trait ILoadingLogo_UnitDotObjectMethods : ILoadingLogo_UnitDotObject { # [doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"] fn ctor (self , root_object : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> () { unsafe { let __receiver = < LoadingLogo_UnitDotObject as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __LoadingLogo_UnitDotObject_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (root_object) , :: core :: option :: Option :: None) } } # [doc = "`Setup(crate::app::persondata::PersonData, bool)` overload"] fn setup (self , person : impl :: core :: convert :: Into < crate :: app :: persondata :: PersonData > , is_female : impl :: core :: convert :: Into < bool >) -> bool { unsafe { let __receiver = < LoadingLogo_UnitDotObject as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __LoadingLogo_UnitDotObject_unity2_raw :: setup (__receiver , :: core :: convert :: Into :: into (person) , :: core :: convert :: Into :: into (is_female) , :: core :: option :: Option :: None) } } # [doc = "`Clear()` overload"] fn clear (self ,) -> () { unsafe { let __receiver = < LoadingLogo_UnitDotObject as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __LoadingLogo_UnitDotObject_unity2_raw :: clear (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-loadinglogo")]
+impl < __T : ILoadingLogo_UnitDotObject > ILoadingLogo_UnitDotObjectMethods for __T { }
+
+#[cfg(feature = "app-loadinglogo")]
+impl LoadingLogo_UnitDotObject { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __LoadingLogo_UnitDotObject_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn setup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __LoadingLogo_UnitDotObject_unity2_raw :: __lookup_setup :: get_method_info () } pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __LoadingLogo_UnitDotObject_unity2_raw :: __lookup_clear :: get_method_info () } pub fn get_unit_dot_texture_path_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __LoadingLogo_UnitDotObject_unity2_raw :: __lookup_get_unit_dot_texture_path :: get_method_info () } pub fn load_unit_dot_texture_all_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __LoadingLogo_UnitDotObject_unity2_raw :: __lookup_load_unit_dot_texture_all :: get_method_info () } }
+
+#[cfg(feature = "app-loadinglogo")]
+impl LoadingLogo_UnitDotObject {
+# [doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"] pub fn new (root_object : crate :: unity_engine :: gameobject :: GameObject) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (LoadingLogo_UnitDotObject) , :: core :: stringify ! (new) ,)) ; < Self as ILoadingLogo_UnitDotObjectMethods > :: ctor (this , root_object) ; this }
 }
 
 #[cfg(feature = "app-loadinglogo")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{
-        ILoadingLogo, ILoadingLogoMethods, ILoadingLogo_UnitDotObject, ILoadingLogo_UnitDotObjectMethods, LoadingLogo, LoadingLogo_Sequences,
-        LoadingLogo_UnitDotObject,
-    };
-    #[cfg(feature = "app-singletonmonobehaviour_1")]
-    pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1Methods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1,
-        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::LoadingLogo;
+    pub use super::ILoadingLogo;
+    pub use super::ILoadingLogoMethods;
+    pub use super::LoadingLogo_Sequences;
+    pub use super::LoadingLogo_UnitDotObject;
+    pub use super::ILoadingLogo_UnitDotObject;
+    pub use super::ILoadingLogo_UnitDotObjectMethods;
+    pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "app-singletonmonobehaviour_1")] pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1Methods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

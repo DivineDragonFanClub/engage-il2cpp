@@ -2,291 +2,54 @@
 
 #[cfg(feature = "app-capabilityshort-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::{
-            capabilitybase_1::{CapabilityBase_1, ICapabilityBase_1},
-            capabilitydefinition::{CapabilityDefinition, ICapabilityDefinition},
-        },
-        system::object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/capabilityshort/CapabilityShort.md"))]
-    #[::unity2::class(namespace = "App", name = "CapabilityShort")]
-    # [parent (crate :: app :: capabilitybase_1 :: CapabilityBase_1 < i16 >)]
-    pub struct CapabilityShort {
-        #[static_field]
-        #[rename(name = "Min")]
-        pub min: i32,
-        #[static_field]
-        #[rename(name = "Max")]
-        pub max: i32,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: capabilitybase_1 :: { CapabilityBase_1 , ICapabilityBase_1 }
+ ;
+ use crate :: app :: capabilitydefinition :: { CapabilityDefinition , ICapabilityDefinition }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/capabilityshort/CapabilityShort.md"))] # [:: unity2 :: class (namespace = "App" , name = "CapabilityShort")] # [parent (crate :: app :: capabilitybase_1 :: CapabilityBase_1 < i16 >)] pub struct CapabilityShort {
+# [static_field] # [rename (name = "Min")] pub min : i32 ,
+# [static_field] # [rename (name = "Max")] pub max : i32 ,
+}
+
 }
 
 #[cfg(feature = "app-capabilityshort-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-capabilityshort")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __CapabilityShort_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i16 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CapabilityShort as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CapabilityShort as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: CapabilityShort, value: i16, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CapabilityShort, i16, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i16 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<CapabilityShort as ::unity2::ClassIdentity>::class(), "Add", 2, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CapabilityShort as ::unity2::ClassIdentity>::NAME,
-                        "Add",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add(this: CapabilityShort, i: i32, v: i16, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CapabilityShort, i32, i16, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add::get_method_info().method_ptr);
-        inner(this, i, v, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_zero {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CapabilityShort as ::unity2::ClassIdentity>::class(),
-                "IsZero",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CapabilityShort as ::unity2::ClassIdentity>::NAME,
-                        "IsZero",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_zero(this: CapabilityShort, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(CapabilityShort, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_zero::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_write_to_stream {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::stream_2::Stream_2 as ::unity2::IlType>::il_type(),
-                <i16 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CapabilityShort as ::unity2::ClassIdentity>::class(),
-                "WriteToStream",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CapabilityShort as ::unity2::ClassIdentity>::NAME,
-                        "WriteToStream",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn write_to_stream(
-        this: CapabilityShort,
-        stream: crate::app::stream_2::Stream_2,
-        v: i16,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(CapabilityShort, crate::app::stream_2::Stream_2, i16, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_write_to_stream::get_method_info().method_ptr);
-        inner(this, stream, v, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_read_from_stream {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::stream_2::Stream_2 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CapabilityShort as ::unity2::ClassIdentity>::class(),
-                "ReadFromStream",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CapabilityShort as ::unity2::ClassIdentity>::NAME,
-                        "ReadFromStream",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn read_from_stream(
-        this: CapabilityShort,
-        stream: crate::app::stream_2::Stream_2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i16 {
-        let inner: extern "C" fn(CapabilityShort, crate::app::stream_2::Stream_2, ::unity2::OptionalMethod) -> i16 =
-            ::core::mem::transmute(__lookup_read_from_stream::get_method_info().method_ptr);
-        inner(this, stream, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __CapabilityShort_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i16 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CapabilityShort as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CapabilityShort as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : CapabilityShort , value : i16 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CapabilityShort , i16 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < i16 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CapabilityShort as :: unity2 :: ClassIdentity > :: class () , "Add" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CapabilityShort as :: unity2 :: ClassIdentity > :: NAME , "Add" , e) , } } } pub unsafe fn add (this : CapabilityShort , i : i32 , v : i16 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CapabilityShort , i32 , i16 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add :: get_method_info () . method_ptr ,) ; inner (this , i , v , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_zero { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CapabilityShort as :: unity2 :: ClassIdentity > :: class () , "IsZero" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CapabilityShort as :: unity2 :: ClassIdentity > :: NAME , "IsZero" , e) , } } } pub unsafe fn is_zero (this : CapabilityShort , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (CapabilityShort , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_zero :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_write_to_stream { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: stream_2 :: Stream_2 as :: unity2 :: IlType > :: il_type () , < i16 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CapabilityShort as :: unity2 :: ClassIdentity > :: class () , "WriteToStream" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CapabilityShort as :: unity2 :: ClassIdentity > :: NAME , "WriteToStream" , e) , } } } pub unsafe fn write_to_stream (this : CapabilityShort , stream : crate :: app :: stream_2 :: Stream_2 , v : i16 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CapabilityShort , crate :: app :: stream_2 :: Stream_2 , i16 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_write_to_stream :: get_method_info () . method_ptr ,) ; inner (this , stream , v , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_read_from_stream { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: stream_2 :: Stream_2 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CapabilityShort as :: unity2 :: ClassIdentity > :: class () , "ReadFromStream" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CapabilityShort as :: unity2 :: ClassIdentity > :: NAME , "ReadFromStream" , e) , } } } pub unsafe fn read_from_stream (this : CapabilityShort , stream : crate :: app :: stream_2 :: Stream_2 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i16 { let inner : extern "C" fn (CapabilityShort , crate :: app :: stream_2 :: Stream_2 , :: unity2 :: OptionalMethod ,) -> i16 = :: core :: mem :: transmute (__lookup_read_from_stream :: get_method_info () . method_ptr ,) ; inner (this , stream , __unity2_method_info) } }
 
 #[cfg(feature = "app-capabilityshort")]
-pub trait ICapabilityShortMethods: ICapabilityShort {
-    #[doc = "`.ctor(i16)` overload"]
-    fn ctor(self, value: impl ::core::convert::Into<i16>) -> () {
-        unsafe {
-            let __receiver = <CapabilityShort as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CapabilityShort_unity2_raw::ctor(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Add(i32, i16)` overload"]
-    fn add(self, i: impl ::core::convert::Into<i32>, v: impl ::core::convert::Into<i16>) -> () {
-        unsafe {
-            let __receiver = <CapabilityShort as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CapabilityShort_unity2_raw::add(
-                __receiver,
-                ::core::convert::Into::into(i),
-                ::core::convert::Into::into(v),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`IsZero()` overload"]
-    fn is_zero(self) -> bool {
-        unsafe {
-            let __receiver = <CapabilityShort as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CapabilityShort_unity2_raw::is_zero(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`WriteToStream(crate::app::stream_2::Stream_2, i16)` overload"]
-    fn write_to_stream(self, stream: impl ::core::convert::Into<crate::app::stream_2::Stream_2>, v: impl ::core::convert::Into<i16>) -> () {
-        unsafe {
-            let __receiver = <CapabilityShort as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CapabilityShort_unity2_raw::write_to_stream(
-                __receiver,
-                ::core::convert::Into::into(stream),
-                ::core::convert::Into::into(v),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ReadFromStream(crate::app::stream_2::Stream_2)` overload"]
-    fn read_from_stream(self, stream: impl ::core::convert::Into<crate::app::stream_2::Stream_2>) -> i16 {
-        unsafe {
-            let __receiver = <CapabilityShort as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CapabilityShort_unity2_raw::read_from_stream(__receiver, ::core::convert::Into::into(stream), ::core::option::Option::None)
-        }
-    }
-}
+pub trait ICapabilityShortMethods : ICapabilityShort { # [doc = "`.ctor(i16)` overload"] fn ctor (self , value : impl :: core :: convert :: Into < i16 >) -> () { unsafe { let __receiver = < CapabilityShort as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CapabilityShort_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`Add(i32, i16)` overload"] fn add (self , i : impl :: core :: convert :: Into < i32 > , v : impl :: core :: convert :: Into < i16 >) -> () { unsafe { let __receiver = < CapabilityShort as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CapabilityShort_unity2_raw :: add (__receiver , :: core :: convert :: Into :: into (i) , :: core :: convert :: Into :: into (v) , :: core :: option :: Option :: None) } } # [doc = "`IsZero()` overload"] fn is_zero (self ,) -> bool { unsafe { let __receiver = < CapabilityShort as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CapabilityShort_unity2_raw :: is_zero (__receiver , :: core :: option :: Option :: None) } } # [doc = "`WriteToStream(crate::app::stream_2::Stream_2, i16)` overload"] fn write_to_stream (self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 > , v : impl :: core :: convert :: Into < i16 >) -> () { unsafe { let __receiver = < CapabilityShort as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CapabilityShort_unity2_raw :: write_to_stream (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: convert :: Into :: into (v) , :: core :: option :: Option :: None) } } # [doc = "`ReadFromStream(crate::app::stream_2::Stream_2)` overload"] fn read_from_stream (self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 >) -> i16 { unsafe { let __receiver = < CapabilityShort as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CapabilityShort_unity2_raw :: read_from_stream (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-capabilityshort")]
-impl<__T: ICapabilityShort> ICapabilityShortMethods for __T {}
+impl < __T : ICapabilityShort > ICapabilityShortMethods for __T { }
+
+#[cfg(feature = "app-capabilityshort")]
+impl CapabilityShort { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CapabilityShort_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn add_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CapabilityShort_unity2_raw :: __lookup_add :: get_method_info () } pub fn is_zero_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CapabilityShort_unity2_raw :: __lookup_is_zero :: get_method_info () } pub fn write_to_stream_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CapabilityShort_unity2_raw :: __lookup_write_to_stream :: get_method_info () } pub fn read_from_stream_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CapabilityShort_unity2_raw :: __lookup_read_from_stream :: get_method_info () } }
 
 #[cfg(feature = "app-capabilityshort")]
 impl CapabilityShort {
-    #[doc = "`.ctor(i16)` — overload selector"]
-    pub fn new(value: i16) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(CapabilityShort),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ICapabilityShortMethods>::ctor(this, value);
-        this
-    }
+# [doc = "`.ctor(i16)` — overload selector"] pub fn new (value : i16) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CapabilityShort) , :: core :: stringify ! (new) ,)) ; < Self as ICapabilityShortMethods > :: ctor (this , value) ; this }
 }
 
 #[cfg(feature = "app-capabilityshort")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{CapabilityShort, ICapabilityShort, ICapabilityShortMethods};
-    #[cfg(feature = "app-capabilitybase_1")]
-    pub use crate::app::capabilitybase_1::ICapabilityBase_1Methods;
-    #[cfg(feature = "app-capabilitydefinition")]
-    pub use crate::app::capabilitydefinition::ICapabilityDefinitionMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::{
-        app::{capabilitybase_1::ICapabilityBase_1, capabilitydefinition::ICapabilityDefinition},
-        system::object::IObject,
-    };
+    pub use super::CapabilityShort;
+    pub use super::ICapabilityShort;
+    pub use super::ICapabilityShortMethods;
+    pub use crate::app::capabilitybase_1::ICapabilityBase_1;
+    pub use crate::app::capabilitydefinition::ICapabilityDefinition;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "app-capabilitybase_1")] pub use crate::app::capabilitybase_1::ICapabilityBase_1Methods;
+    #[cfg(feature = "app-capabilitydefinition")] pub use crate::app::capabilitydefinition::ICapabilityDefinitionMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

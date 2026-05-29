@@ -2,101 +2,34 @@
 
 #[cfg(feature = "unity_engine-playables-inotificationreceiver-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/playables/inotificationreceiver/INotificationReceiver.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Playables", name = "INotificationReceiver")]
-    pub struct INotificationReceiver {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/playables/inotificationreceiver/INotificationReceiver.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Playables" , name = "INotificationReceiver")] pub struct INotificationReceiver {}
+
 }
 
 #[cfg(feature = "unity_engine-playables-inotificationreceiver-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-playables-inotificationreceiver")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __INotificationReceiver_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_notify {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::playables::playable::Playable as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::playables::inotification::INotification as ::unity2::IlType>::il_type(),
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <INotificationReceiver as ::unity2::ClassIdentity>::class(),
-                "OnNotify",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <INotificationReceiver as ::unity2::ClassIdentity>::NAME,
-                        "OnNotify",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_notify(
-        this: INotificationReceiver,
-        origin: crate::unity_engine::playables::playable::Playable,
-        notification: crate::unity_engine::playables::inotification::INotification,
-        context: crate::system::object::Object,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            INotificationReceiver,
-            crate::unity_engine::playables::playable::Playable,
-            crate::unity_engine::playables::inotification::INotification,
-            crate::system::object::Object,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_on_notify::get_method_info().method_ptr);
-        inner(this, origin, notification, context, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __INotificationReceiver_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_notify { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playable :: Playable as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: playables :: inotification :: INotification as :: unity2 :: IlType > :: il_type () , < crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< INotificationReceiver as :: unity2 :: ClassIdentity > :: class () , "OnNotify" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < INotificationReceiver as :: unity2 :: ClassIdentity > :: NAME , "OnNotify" , e) , } } } pub unsafe fn on_notify (this : INotificationReceiver , origin : crate :: unity_engine :: playables :: playable :: Playable , notification : crate :: unity_engine :: playables :: inotification :: INotification , context : crate :: system :: object :: Object , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (INotificationReceiver , crate :: unity_engine :: playables :: playable :: Playable , crate :: unity_engine :: playables :: inotification :: INotification , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_notify :: get_method_info () . method_ptr ,) ; inner (this , origin , notification , context , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-playables-inotificationreceiver")]
-pub trait IINotificationReceiverMethods: IINotificationReceiver {
-    #[doc = "`OnNotify(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::inotification::INotification, crate::system::object::Object)` overload"]
-    fn on_notify(
-        self,
-        origin: impl ::core::convert::Into<crate::unity_engine::playables::playable::Playable>,
-        notification: impl ::core::convert::Into<crate::unity_engine::playables::inotification::INotification>,
-        context: impl ::core::convert::Into<crate::system::object::Object>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <INotificationReceiver as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __INotificationReceiver_unity2_raw::on_notify(
-                __receiver,
-                ::core::convert::Into::into(origin),
-                ::core::convert::Into::into(notification),
-                ::core::convert::Into::into(context),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+pub trait IINotificationReceiverMethods : IINotificationReceiver { # [doc = "`OnNotify(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::inotification::INotification, crate::system::object::Object)` overload"] fn on_notify (self , origin : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playable :: Playable > , notification : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: inotification :: INotification > , context : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> () { unsafe { let __receiver = < INotificationReceiver as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __INotificationReceiver_unity2_raw :: on_notify (__receiver , :: core :: convert :: Into :: into (origin) , :: core :: convert :: Into :: into (notification) , :: core :: convert :: Into :: into (context) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-playables-inotificationreceiver")]
-impl<__T: IINotificationReceiver> IINotificationReceiverMethods for __T {}
+impl < __T : IINotificationReceiver > IINotificationReceiverMethods for __T { }
+
+#[cfg(feature = "unity_engine-playables-inotificationreceiver")]
+impl INotificationReceiver { pub fn on_notify_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __INotificationReceiver_unity2_raw :: __lookup_on_notify :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-playables-inotificationreceiver")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IINotificationReceiver, IINotificationReceiverMethods, INotificationReceiver};
+    pub use super::INotificationReceiver;
+    pub use super::IINotificationReceiver;
+    pub use super::IINotificationReceiverMethods;
 }

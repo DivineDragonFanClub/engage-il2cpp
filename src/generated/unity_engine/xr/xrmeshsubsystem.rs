@@ -2,175 +2,53 @@
 
 #[cfg(feature = "unity_engine-xr-xrmeshsubsystem-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::{
-            integratedsubsystem::{IIntegratedSubsystem, IntegratedSubsystem},
-            integratedsubsystem_1::{IIntegratedSubsystem_1, IntegratedSubsystem_1},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/xr/xrmeshsubsystem/XRMeshSubsystem.md"))]
-    #[::unity2::class(namespace = "UnityEngine.XR", name = "XRMeshSubsystem")]
-    # [parent (crate :: unity_engine :: integratedsubsystem_1 :: IntegratedSubsystem_1 < crate :: unity_engine :: xr :: xrmeshsubsystemdescriptor :: XRMeshSubsystemDescriptor >)]
-    pub struct XRMeshSubsystem {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: integratedsubsystem :: { IIntegratedSubsystem , IntegratedSubsystem }
+ ;
+ use crate :: unity_engine :: integratedsubsystem_1 :: { IIntegratedSubsystem_1 , IntegratedSubsystem_1 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/xr/xrmeshsubsystem/XRMeshSubsystem.md"))] # [:: unity2 :: class (namespace = "UnityEngine.XR" , name = "XRMeshSubsystem")] # [parent (crate :: unity_engine :: integratedsubsystem_1 :: IntegratedSubsystem_1 < crate :: unity_engine :: xr :: xrmeshsubsystemdescriptor :: XRMeshSubsystemDescriptor >)] pub struct XRMeshSubsystem {}
+
 }
 
 #[cfg(feature = "unity_engine-xr-xrmeshsubsystem-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-xr-xrmeshsubsystem")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __XRMeshSubsystem_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke_mesh_ready_delegate {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::xr::meshgenerationresult::MeshGenerationResult as ::unity2::IlType>::il_type(),
-                <crate::system::action_1::Action_1<crate::unity_engine::xr::meshgenerationresult::MeshGenerationResult> as ::unity2::IlType>::il_type(
-                ),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <XRMeshSubsystem as ::unity2::ClassIdentity>::class(),
-                "InvokeMeshReadyDelegate",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <XRMeshSubsystem as ::unity2::ClassIdentity>::NAME,
-                        "InvokeMeshReadyDelegate",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn invoke_mesh_ready_delegate(
-        this: XRMeshSubsystem,
-        result: crate::unity_engine::xr::meshgenerationresult::MeshGenerationResult,
-        on_mesh_generation_complete: crate::system::action_1::Action_1<crate::unity_engine::xr::meshgenerationresult::MeshGenerationResult>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            XRMeshSubsystem,
-            crate::unity_engine::xr::meshgenerationresult::MeshGenerationResult,
-            crate::system::action_1::Action_1<crate::unity_engine::xr::meshgenerationresult::MeshGenerationResult>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_invoke_mesh_ready_delegate::get_method_info().method_ptr);
-        inner(this, result, on_mesh_generation_complete, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <XRMeshSubsystem as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <XRMeshSubsystem as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: XRMeshSubsystem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(XRMeshSubsystem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __XRMeshSubsystem_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_invoke_mesh_ready_delegate { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: xr :: meshgenerationresult :: MeshGenerationResult as :: unity2 :: IlType > :: il_type () , < crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: xr :: meshgenerationresult :: MeshGenerationResult > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< XRMeshSubsystem as :: unity2 :: ClassIdentity > :: class () , "InvokeMeshReadyDelegate" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < XRMeshSubsystem as :: unity2 :: ClassIdentity > :: NAME , "InvokeMeshReadyDelegate" , e) , } } } pub unsafe fn invoke_mesh_ready_delegate (this : XRMeshSubsystem , result : crate :: unity_engine :: xr :: meshgenerationresult :: MeshGenerationResult , on_mesh_generation_complete : crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: xr :: meshgenerationresult :: MeshGenerationResult > , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (XRMeshSubsystem , crate :: unity_engine :: xr :: meshgenerationresult :: MeshGenerationResult , crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: xr :: meshgenerationresult :: MeshGenerationResult > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_invoke_mesh_ready_delegate :: get_method_info () . method_ptr ,) ; inner (this , result , on_mesh_generation_complete , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< XRMeshSubsystem as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < XRMeshSubsystem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : XRMeshSubsystem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (XRMeshSubsystem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-xr-xrmeshsubsystem")]
-pub trait IXRMeshSubsystemMethods: IXRMeshSubsystem {
-    #[doc = "`InvokeMeshReadyDelegate(crate::unity_engine::xr::meshgenerationresult::MeshGenerationResult, crate::system::action_1::Action_1<crate::unity_engine::xr::meshgenerationresult::MeshGenerationResult>)` overload"]
-    fn invoke_mesh_ready_delegate(
-        self,
-        result: impl ::core::convert::Into<crate::unity_engine::xr::meshgenerationresult::MeshGenerationResult>,
-        on_mesh_generation_complete: impl ::core::convert::Into<
-            crate::system::action_1::Action_1<crate::unity_engine::xr::meshgenerationresult::MeshGenerationResult>,
-        >,
-    ) -> () {
-        unsafe {
-            let __receiver = <XRMeshSubsystem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __XRMeshSubsystem_unity2_raw::invoke_mesh_ready_delegate(
-                __receiver,
-                ::core::convert::Into::into(result),
-                ::core::convert::Into::into(on_mesh_generation_complete),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <XRMeshSubsystem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __XRMeshSubsystem_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IXRMeshSubsystemMethods : IXRMeshSubsystem { # [doc = "`InvokeMeshReadyDelegate(crate::unity_engine::xr::meshgenerationresult::MeshGenerationResult, crate::system::action_1::Action_1<crate::unity_engine::xr::meshgenerationresult::MeshGenerationResult>)` overload"] fn invoke_mesh_ready_delegate (self , result : impl :: core :: convert :: Into < crate :: unity_engine :: xr :: meshgenerationresult :: MeshGenerationResult > , on_mesh_generation_complete : impl :: core :: convert :: Into < crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: xr :: meshgenerationresult :: MeshGenerationResult > >) -> () { unsafe { let __receiver = < XRMeshSubsystem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __XRMeshSubsystem_unity2_raw :: invoke_mesh_ready_delegate (__receiver , :: core :: convert :: Into :: into (result) , :: core :: convert :: Into :: into (on_mesh_generation_complete) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < XRMeshSubsystem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __XRMeshSubsystem_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-xr-xrmeshsubsystem")]
-impl<__T: IXRMeshSubsystem> IXRMeshSubsystemMethods for __T {}
+impl < __T : IXRMeshSubsystem > IXRMeshSubsystemMethods for __T { }
+
+#[cfg(feature = "unity_engine-xr-xrmeshsubsystem")]
+impl XRMeshSubsystem { pub fn invoke_mesh_ready_delegate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __XRMeshSubsystem_unity2_raw :: __lookup_invoke_mesh_ready_delegate :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __XRMeshSubsystem_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-xr-xrmeshsubsystem")]
 impl XRMeshSubsystem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(XRMeshSubsystem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IXRMeshSubsystemMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (XRMeshSubsystem) , :: core :: stringify ! (new) ,)) ; < Self as IXRMeshSubsystemMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "unity_engine-xr-xrmeshsubsystem")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IXRMeshSubsystem, IXRMeshSubsystemMethods, XRMeshSubsystem};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-integratedsubsystem")]
-    pub use crate::unity_engine::integratedsubsystem::IIntegratedSubsystemMethods;
-    #[cfg(feature = "unity_engine-integratedsubsystem_1")]
-    pub use crate::unity_engine::integratedsubsystem_1::IIntegratedSubsystem_1Methods;
-    pub use crate::{
-        system::object::IObject,
-        unity_engine::{
-            integratedsubsystem::{IIntegratedSubsystem, IntegratedSubsystem},
-            integratedsubsystem_1::{IIntegratedSubsystem_1, IntegratedSubsystem_1},
-        },
-    };
+    pub use super::XRMeshSubsystem;
+    pub use super::IXRMeshSubsystem;
+    pub use super::IXRMeshSubsystemMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::integratedsubsystem::IIntegratedSubsystem;
+    pub use crate::unity_engine::integratedsubsystem::IntegratedSubsystem;
+    pub use crate::unity_engine::integratedsubsystem_1::IIntegratedSubsystem_1;
+    pub use crate::unity_engine::integratedsubsystem_1::IntegratedSubsystem_1;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-integratedsubsystem")] pub use crate::unity_engine::integratedsubsystem::IIntegratedSubsystemMethods;
+    #[cfg(feature = "unity_engine-integratedsubsystem_1")] pub use crate::unity_engine::integratedsubsystem_1::IIntegratedSubsystem_1Methods;
 }

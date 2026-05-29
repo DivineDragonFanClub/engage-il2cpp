@@ -2,73 +2,47 @@
 
 #[cfg(feature = "app-eachdictionary_2-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eachdictionary_2/EachDictionary_2.md"))]
-    #[::unity2::class(namespace = "App", name = "EachDictionary`2")]
-    #[parent(crate::system::object::Object)]
-    pub struct EachDictionary_2<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> {
-        #[rename(name = "m_Dictionary")]
-        pub m_dictionary: crate::system::collections::generic::dictionary_2::Dictionary_2<
-            T0,
-            crate::system::collections::generic::dictionary_2::Dictionary_2<T0, T1>,
-        >,
-        #[rename(name = "m_Capacity")]
-        pub m_capacity: i32,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eachdictionary_2/EachDictionary_2.md"))] # [:: unity2 :: class (namespace = "App" , name = "EachDictionary`2")] # [parent (crate :: system :: object :: Object)] pub struct EachDictionary_2 < T0 : :: unity2 :: ClassIdentity , T1 : :: unity2 :: ClassIdentity > {
+# [rename (name = "m_Dictionary")] pub m_dictionary : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < T0 , crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < T0 , T1 > > ,
+# [rename (name = "m_Capacity")] pub m_capacity : i32 ,
+}
+
 }
 
 #[cfg(feature = "app-eachdictionary_2-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-eachdictionary_2")]
-#[::unity2::methods]
-impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> EachDictionary_2<T0, T1> {
-    #[doc = "`.ctor(i32)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, capacity: i32) -> ();
+# [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity , T1 : :: unity2 :: ClassIdentity > EachDictionary_2 < T0 , T1 > {
+# [doc = "`.ctor(i32)` overload"] # [method (name = ".ctor" , args = 1)] pub fn ctor (self , capacity : i32) -> () ;
 
-    #[doc = "`Clear()` overload"]
-    #[method(name = "Clear", args = 0)]
-    pub fn clear(self) -> ();
+# [doc = "`Clear()` overload"] # [method (name = "Clear" , args = 0)] pub fn clear (self ,) -> () ;
 
-    #[doc = "`Add(T0, T0, T1)` overload"]
-    #[method(name = "Add", args = 3)]
-    pub fn add(self, key_a: T0, key_b: T0, data: T1) -> ();
+# [doc = "`Add(T0, T0, T1)` overload"] # [method (name = "Add" , args = 3)] pub fn add (self , key_a : T0 , key_b : T0 , data : T1) -> () ;
 
-    #[doc = "`ContainsKey(T0, T0)` overload"]
-    #[method(name = "ContainsKey", args = 2)]
-    pub fn contains_key(self, key_a: T0, key_b: T0) -> bool;
+# [doc = "`ContainsKey(T0, T0)` overload"] # [method (name = "ContainsKey" , args = 2)] pub fn contains_key (self , key_a : T0 , key_b : T0) -> bool ;
 
-    #[doc = "`TryGetValue(T0, T0, *mutT1)` overload"]
-    #[method(name = "TryGetValue", args = 3)]
-    pub fn try_get_value(self, key_a: T0, key_b: T0, data: *mut T1) -> bool;
+# [doc = "`TryGetValue(T0, T0, *mutT1)` overload"] # [method (name = "TryGetValue" , args = 3)] pub fn try_get_value (self , key_a : T0 , key_b : T0 , data : * mut T1) -> bool ;
 }
 
 #[cfg(feature = "app-eachdictionary_2")]
-impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> EachDictionary_2<T0, T1> {
-    #[doc = "`.ctor(i32)` — overload selector"]
-    pub fn new(capacity: i32) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(EachDictionary_2),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IEachDictionary_2Methods<T0, T1>>::ctor(this, capacity);
-        this
-    }
+impl < T0 : :: unity2 :: ClassIdentity , T1 : :: unity2 :: ClassIdentity > EachDictionary_2 < T0 , T1 > {
+# [doc = "`.ctor(i32)` — overload selector"] pub fn new (capacity : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (EachDictionary_2) , :: core :: stringify ! (new) ,)) ; < Self as IEachDictionary_2Methods < T0 , T1 > > :: ctor (this , capacity) ; this }
 }
 
 #[cfg(feature = "app-eachdictionary_2")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{EachDictionary_2, IEachDictionary_2, IEachDictionary_2Methods};
+    pub use super::EachDictionary_2;
+    pub use super::IEachDictionary_2;
+    pub use super::IEachDictionary_2Methods;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

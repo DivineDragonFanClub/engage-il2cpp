@@ -2,192 +2,46 @@
 
 #[cfg(feature = "root-cinemachinerecomposer-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/cinemachinerecomposer/CinemachineRecomposer.md"))]
-    #[::unity2::class(namespace = "", name = "CinemachineRecomposer")]
-    pub struct CinemachineRecomposer {
-        #[offset(44)]
-        #[rename(name = "m_Tilt")]
-        pub m_tilt: f32,
-        #[offset(48)]
-        #[rename(name = "m_Pan")]
-        pub m_pan: f32,
-        #[offset(52)]
-        #[rename(name = "m_Dutch")]
-        pub m_dutch: f32,
-        #[offset(56)]
-        #[rename(name = "m_ZoomScale")]
-        pub m_zoom_scale: f32,
-        #[offset(60)]
-        #[rename(name = "m_FollowAttachment")]
-        pub m_follow_attachment: f32,
-        #[offset(64)]
-        #[rename(name = "m_LookAtAttachment")]
-        pub m_look_at_attachment: f32,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/cinemachinerecomposer/CinemachineRecomposer.md"))] # [:: unity2 :: class (namespace = "" , name = "CinemachineRecomposer")] pub struct CinemachineRecomposer {
+# [offset (44)] # [rename (name = "m_Tilt")] pub m_tilt : f32 ,
+# [offset (48)] # [rename (name = "m_Pan")] pub m_pan : f32 ,
+# [offset (52)] # [rename (name = "m_Dutch")] pub m_dutch : f32 ,
+# [offset (56)] # [rename (name = "m_ZoomScale")] pub m_zoom_scale : f32 ,
+# [offset (60)] # [rename (name = "m_FollowAttachment")] pub m_follow_attachment : f32 ,
+# [offset (64)] # [rename (name = "m_LookAtAttachment")] pub m_look_at_attachment : f32 ,
+}
+
 }
 
 #[cfg(feature = "root-cinemachinerecomposer-types")]
 pub use __types::*;
 
 #[cfg(feature = "root-cinemachinerecomposer")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __CinemachineRecomposer_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_reset {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CinemachineRecomposer as ::unity2::ClassIdentity>::class(),
-                "Reset",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CinemachineRecomposer as ::unity2::ClassIdentity>::NAME,
-                        "Reset",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn reset(this: CinemachineRecomposer, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CinemachineRecomposer, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_reset::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_validate {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CinemachineRecomposer as ::unity2::ClassIdentity>::class(),
-                "OnValidate",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CinemachineRecomposer as ::unity2::ClassIdentity>::NAME,
-                        "OnValidate",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_validate(this: CinemachineRecomposer, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CinemachineRecomposer, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_validate::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CinemachineRecomposer as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CinemachineRecomposer as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: CinemachineRecomposer, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CinemachineRecomposer, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __CinemachineRecomposer_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_reset { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CinemachineRecomposer as :: unity2 :: ClassIdentity > :: class () , "Reset" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CinemachineRecomposer as :: unity2 :: ClassIdentity > :: NAME , "Reset" , e) , } } } pub unsafe fn reset (this : CinemachineRecomposer , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CinemachineRecomposer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_reset :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_validate { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CinemachineRecomposer as :: unity2 :: ClassIdentity > :: class () , "OnValidate" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CinemachineRecomposer as :: unity2 :: ClassIdentity > :: NAME , "OnValidate" , e) , } } } pub unsafe fn on_validate (this : CinemachineRecomposer , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CinemachineRecomposer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_validate :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CinemachineRecomposer as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CinemachineRecomposer as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : CinemachineRecomposer , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CinemachineRecomposer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "root-cinemachinerecomposer")]
-pub trait ICinemachineRecomposerMethods: ICinemachineRecomposer {
-    #[doc = "`Reset()` overload"]
-    fn reset(self) -> () {
-        unsafe {
-            let __receiver =
-                <CinemachineRecomposer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CinemachineRecomposer_unity2_raw::reset(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnValidate()` overload"]
-    fn on_validate(self) -> () {
-        unsafe {
-            let __receiver =
-                <CinemachineRecomposer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CinemachineRecomposer_unity2_raw::on_validate(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <CinemachineRecomposer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CinemachineRecomposer_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait ICinemachineRecomposerMethods : ICinemachineRecomposer { # [doc = "`Reset()` overload"] fn reset (self ,) -> () { unsafe { let __receiver = < CinemachineRecomposer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CinemachineRecomposer_unity2_raw :: reset (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnValidate()` overload"] fn on_validate (self ,) -> () { unsafe { let __receiver = < CinemachineRecomposer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CinemachineRecomposer_unity2_raw :: on_validate (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CinemachineRecomposer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CinemachineRecomposer_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "root-cinemachinerecomposer")]
-impl<__T: ICinemachineRecomposer> ICinemachineRecomposerMethods for __T {}
+impl < __T : ICinemachineRecomposer > ICinemachineRecomposerMethods for __T { }
+
+#[cfg(feature = "root-cinemachinerecomposer")]
+impl CinemachineRecomposer { pub fn reset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CinemachineRecomposer_unity2_raw :: __lookup_reset :: get_method_info () } pub fn on_validate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CinemachineRecomposer_unity2_raw :: __lookup_on_validate :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CinemachineRecomposer_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "root-cinemachinerecomposer")]
 impl CinemachineRecomposer {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(CinemachineRecomposer),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ICinemachineRecomposerMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CinemachineRecomposer) , :: core :: stringify ! (new) ,)) ; < Self as ICinemachineRecomposerMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "root-cinemachinerecomposer")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{CinemachineRecomposer, ICinemachineRecomposer, ICinemachineRecomposerMethods};
+    pub use super::CinemachineRecomposer;
+    pub use super::ICinemachineRecomposer;
+    pub use super::ICinemachineRecomposerMethods;
 }

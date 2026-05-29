@@ -2,13 +2,13 @@
 
 #[cfg(feature = "unity_engine-event_systems-ieventsystemhandler-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/ieventsystemhandler/IEventSystemHandler.md"))]
-    #[::unity2::class(namespace = "UnityEngine.EventSystems", name = "IEventSystemHandler")]
-    pub struct IEventSystemHandler {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/ieventsystemhandler/IEventSystemHandler.md"))] # [:: unity2 :: class (namespace = "UnityEngine.EventSystems" , name = "IEventSystemHandler")] pub struct IEventSystemHandler {}
+
 }
 
 #[cfg(feature = "unity_engine-event_systems-ieventsystemhandler-types")]
@@ -17,5 +17,6 @@ pub use __types::*;
 #[cfg(feature = "unity_engine-event_systems-ieventsystemhandler")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IEventSystemHandler, IIEventSystemHandler};
+    pub use super::IEventSystemHandler;
+    pub use super::IIEventSystemHandler;
 }

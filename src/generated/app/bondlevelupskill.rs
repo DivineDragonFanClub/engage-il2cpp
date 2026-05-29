@@ -2,375 +2,66 @@
 
 #[cfg(feature = "app-bondlevelupskill-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/bondlevelupskill/BondLevelUpSkill.md"))]
-    #[::unity2::class(namespace = "App", name = "BondLevelUpSkill")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct BondLevelUpSkill {
-        #[offset(24)]
-        #[rename(name = "m_Skill")]
-        pub m_skill: crate::app::ringlistskillmenuitemcontent::RingListSkillMenuItemContent,
-        #[offset(32)]
-        #[rename(name = "m_SkillDetailHelp")]
-        pub m_skill_detail_help: crate::unity_engine::gameobject::GameObject,
-        #[offset(40)]
-        #[rename(name = "m_SkillDetailSetter")]
-        pub m_skill_detail_setter: crate::unity_engine::gameobject::GameObject,
-        #[offset(48)]
-        #[rename(name = "m_Anim")]
-        pub m_anim: crate::unity_engine::animator::Animator,
-        #[offset(56)]
-        #[rename(name = "m_NextMenuItem")]
-        pub m_next_menu_item: crate::app::basicmenuitem::BasicMenuItem,
-        #[offset(64)]
-        #[rename(name = "m_NextGod")]
-        pub m_next_god: crate::app::godunit::GodUnit,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/bondlevelupskill/BondLevelUpSkill.md"))] # [:: unity2 :: class (namespace = "App" , name = "BondLevelUpSkill")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct BondLevelUpSkill {
+# [offset (24)] # [rename (name = "m_Skill")] pub m_skill : crate :: app :: ringlistskillmenuitemcontent :: RingListSkillMenuItemContent ,
+# [offset (32)] # [rename (name = "m_SkillDetailHelp")] pub m_skill_detail_help : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (40)] # [rename (name = "m_SkillDetailSetter")] pub m_skill_detail_setter : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (48)] # [rename (name = "m_Anim")] pub m_anim : crate :: unity_engine :: animator :: Animator ,
+# [offset (56)] # [rename (name = "m_NextMenuItem")] pub m_next_menu_item : crate :: app :: basicmenuitem :: BasicMenuItem ,
+# [offset (64)] # [rename (name = "m_NextGod")] pub m_next_god : crate :: app :: godunit :: GodUnit ,
+}
+
 }
 
 #[cfg(feature = "app-bondlevelupskill-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-bondlevelupskill")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __BondLevelUpSkill_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BondLevelUpSkill as ::unity2::ClassIdentity>::class(),
-                "Update",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <BondLevelUpSkill as ::unity2::ClassIdentity>::NAME,
-                        "Update",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update(this: BondLevelUpSkill, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(BondLevelUpSkill, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_skill {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::basicmenuitem::BasicMenuItem as ::unity2::IlType>::il_type(),
-                <crate::app::godunit::GodUnit as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BondLevelUpSkill as ::unity2::ClassIdentity>::class(),
-                "SetSkill",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <BondLevelUpSkill as ::unity2::ClassIdentity>::NAME,
-                        "SetSkill",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_skill(
-        this: BondLevelUpSkill,
-        menu_item: crate::app::basicmenuitem::BasicMenuItem,
-        god: crate::app::godunit::GodUnit,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            BondLevelUpSkill,
-            crate::app::basicmenuitem::BasicMenuItem,
-            crate::app::godunit::GodUnit,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_set_skill::get_method_info().method_ptr);
-        inner(this, menu_item, god, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_next {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::basicmenuitem::BasicMenuItem as ::unity2::IlType>::il_type(),
-                <crate::app::godunit::GodUnit as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BondLevelUpSkill as ::unity2::ClassIdentity>::class(),
-                "SetNext",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <BondLevelUpSkill as ::unity2::ClassIdentity>::NAME,
-                        "SetNext",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_next(
-        this: BondLevelUpSkill,
-        menu_item: crate::app::basicmenuitem::BasicMenuItem,
-        god: crate::app::godunit::GodUnit,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            BondLevelUpSkill,
-            crate::app::basicmenuitem::BasicMenuItem,
-            crate::app::godunit::GodUnit,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_set_next::get_method_info().method_ptr);
-        inner(this, menu_item, god, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_play_anim {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BondLevelUpSkill as ::unity2::ClassIdentity>::class(),
-                "IsPlayAnim",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <BondLevelUpSkill as ::unity2::ClassIdentity>::NAME,
-                        "IsPlayAnim",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_play_anim(this: BondLevelUpSkill, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(BondLevelUpSkill, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_play_anim::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_close {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BondLevelUpSkill as ::unity2::ClassIdentity>::class(),
-                "Close",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <BondLevelUpSkill as ::unity2::ClassIdentity>::NAME,
-                        "Close",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn close(this: BondLevelUpSkill, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(BondLevelUpSkill, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_close::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BondLevelUpSkill as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <BondLevelUpSkill as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: BondLevelUpSkill, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(BondLevelUpSkill, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __BondLevelUpSkill_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< BondLevelUpSkill as :: unity2 :: ClassIdentity > :: class () , "Update" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < BondLevelUpSkill as :: unity2 :: ClassIdentity > :: NAME , "Update" , e) , } } } pub unsafe fn update (this : BondLevelUpSkill , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (BondLevelUpSkill , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_skill { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: basicmenuitem :: BasicMenuItem as :: unity2 :: IlType > :: il_type () , < crate :: app :: godunit :: GodUnit as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< BondLevelUpSkill as :: unity2 :: ClassIdentity > :: class () , "SetSkill" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < BondLevelUpSkill as :: unity2 :: ClassIdentity > :: NAME , "SetSkill" , e) , } } } pub unsafe fn set_skill (this : BondLevelUpSkill , menu_item : crate :: app :: basicmenuitem :: BasicMenuItem , god : crate :: app :: godunit :: GodUnit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (BondLevelUpSkill , crate :: app :: basicmenuitem :: BasicMenuItem , crate :: app :: godunit :: GodUnit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_skill :: get_method_info () . method_ptr ,) ; inner (this , menu_item , god , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_next { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: basicmenuitem :: BasicMenuItem as :: unity2 :: IlType > :: il_type () , < crate :: app :: godunit :: GodUnit as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< BondLevelUpSkill as :: unity2 :: ClassIdentity > :: class () , "SetNext" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < BondLevelUpSkill as :: unity2 :: ClassIdentity > :: NAME , "SetNext" , e) , } } } pub unsafe fn set_next (this : BondLevelUpSkill , menu_item : crate :: app :: basicmenuitem :: BasicMenuItem , god : crate :: app :: godunit :: GodUnit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (BondLevelUpSkill , crate :: app :: basicmenuitem :: BasicMenuItem , crate :: app :: godunit :: GodUnit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_next :: get_method_info () . method_ptr ,) ; inner (this , menu_item , god , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_play_anim { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< BondLevelUpSkill as :: unity2 :: ClassIdentity > :: class () , "IsPlayAnim" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < BondLevelUpSkill as :: unity2 :: ClassIdentity > :: NAME , "IsPlayAnim" , e) , } } } pub unsafe fn is_play_anim (this : BondLevelUpSkill , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (BondLevelUpSkill , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_play_anim :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_close { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< BondLevelUpSkill as :: unity2 :: ClassIdentity > :: class () , "Close" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < BondLevelUpSkill as :: unity2 :: ClassIdentity > :: NAME , "Close" , e) , } } } pub unsafe fn close (this : BondLevelUpSkill , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (BondLevelUpSkill , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_close :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< BondLevelUpSkill as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < BondLevelUpSkill as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : BondLevelUpSkill , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (BondLevelUpSkill , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-bondlevelupskill")]
-pub trait IBondLevelUpSkillMethods: IBondLevelUpSkill {
-    #[doc = "`Update()` overload"]
-    fn update(self) -> () {
-        unsafe {
-            let __receiver = <BondLevelUpSkill as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __BondLevelUpSkill_unity2_raw::update(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetSkill(crate::app::basicmenuitem::BasicMenuItem, crate::app::godunit::GodUnit)` overload"]
-    fn set_skill(
-        self,
-        menu_item: impl ::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem>,
-        god: impl ::core::convert::Into<crate::app::godunit::GodUnit>,
-    ) -> () {
-        unsafe {
-            let __receiver = <BondLevelUpSkill as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __BondLevelUpSkill_unity2_raw::set_skill(
-                __receiver,
-                ::core::convert::Into::into(menu_item),
-                ::core::convert::Into::into(god),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetNext(crate::app::basicmenuitem::BasicMenuItem, crate::app::godunit::GodUnit)` overload"]
-    fn set_next(
-        self,
-        menu_item: impl ::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem>,
-        god: impl ::core::convert::Into<crate::app::godunit::GodUnit>,
-    ) -> () {
-        unsafe {
-            let __receiver = <BondLevelUpSkill as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __BondLevelUpSkill_unity2_raw::set_next(
-                __receiver,
-                ::core::convert::Into::into(menu_item),
-                ::core::convert::Into::into(god),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`IsPlayAnim()` overload"]
-    fn is_play_anim(self) -> bool {
-        unsafe {
-            let __receiver = <BondLevelUpSkill as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __BondLevelUpSkill_unity2_raw::is_play_anim(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Close()` overload"]
-    fn close(self) -> () {
-        unsafe {
-            let __receiver = <BondLevelUpSkill as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __BondLevelUpSkill_unity2_raw::close(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <BondLevelUpSkill as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __BondLevelUpSkill_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IBondLevelUpSkillMethods : IBondLevelUpSkill { # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < BondLevelUpSkill as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __BondLevelUpSkill_unity2_raw :: update (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetSkill(crate::app::basicmenuitem::BasicMenuItem, crate::app::godunit::GodUnit)` overload"] fn set_skill (self , menu_item : impl :: core :: convert :: Into < crate :: app :: basicmenuitem :: BasicMenuItem > , god : impl :: core :: convert :: Into < crate :: app :: godunit :: GodUnit >) -> () { unsafe { let __receiver = < BondLevelUpSkill as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __BondLevelUpSkill_unity2_raw :: set_skill (__receiver , :: core :: convert :: Into :: into (menu_item) , :: core :: convert :: Into :: into (god) , :: core :: option :: Option :: None) } } # [doc = "`SetNext(crate::app::basicmenuitem::BasicMenuItem, crate::app::godunit::GodUnit)` overload"] fn set_next (self , menu_item : impl :: core :: convert :: Into < crate :: app :: basicmenuitem :: BasicMenuItem > , god : impl :: core :: convert :: Into < crate :: app :: godunit :: GodUnit >) -> () { unsafe { let __receiver = < BondLevelUpSkill as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __BondLevelUpSkill_unity2_raw :: set_next (__receiver , :: core :: convert :: Into :: into (menu_item) , :: core :: convert :: Into :: into (god) , :: core :: option :: Option :: None) } } # [doc = "`IsPlayAnim()` overload"] fn is_play_anim (self ,) -> bool { unsafe { let __receiver = < BondLevelUpSkill as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __BondLevelUpSkill_unity2_raw :: is_play_anim (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Close()` overload"] fn close (self ,) -> () { unsafe { let __receiver = < BondLevelUpSkill as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __BondLevelUpSkill_unity2_raw :: close (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < BondLevelUpSkill as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __BondLevelUpSkill_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-bondlevelupskill")]
-impl<__T: IBondLevelUpSkill> IBondLevelUpSkillMethods for __T {}
+impl < __T : IBondLevelUpSkill > IBondLevelUpSkillMethods for __T { }
+
+#[cfg(feature = "app-bondlevelupskill")]
+impl BondLevelUpSkill { pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __BondLevelUpSkill_unity2_raw :: __lookup_update :: get_method_info () } pub fn set_skill_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __BondLevelUpSkill_unity2_raw :: __lookup_set_skill :: get_method_info () } pub fn set_next_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __BondLevelUpSkill_unity2_raw :: __lookup_set_next :: get_method_info () } pub fn is_play_anim_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __BondLevelUpSkill_unity2_raw :: __lookup_is_play_anim :: get_method_info () } pub fn close_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __BondLevelUpSkill_unity2_raw :: __lookup_close :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __BondLevelUpSkill_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-bondlevelupskill")]
 impl BondLevelUpSkill {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(BondLevelUpSkill),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IBondLevelUpSkillMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (BondLevelUpSkill) , :: core :: stringify ! (new) ,)) ; < Self as IBondLevelUpSkillMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-bondlevelupskill")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{BondLevelUpSkill, IBondLevelUpSkill, IBondLevelUpSkillMethods};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        system::object::IObject,
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::BondLevelUpSkill;
+    pub use super::IBondLevelUpSkill;
+    pub use super::IBondLevelUpSkillMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

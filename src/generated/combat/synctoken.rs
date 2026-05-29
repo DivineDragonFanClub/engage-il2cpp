@@ -2,358 +2,112 @@
 
 #[cfg(feature = "combat-synctoken-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        r#enum::{Enum, IEnum},
-        valuetype::{IValueType, ValueType},
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/synctoken/SyncToken_State.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct SyncToken_State {
-        pub value: i32,
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/synctoken/SyncToken.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "SyncToken")] # [parent (crate :: system :: object :: Object)] pub struct SyncToken {
+# [offset (16)] # [rename (name = "state")] pub state : :: unity2 :: Array < crate :: combat :: synctoken :: SyncToken_State > ,
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/synctoken/SyncToken_State.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct SyncToken_State  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for SyncToken_State  {
+    const NAMESPACE: &'static str = "Combat";
+
+    const NAME: &'static str = "SyncToken.State";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    impl ::unity2::ClassIdentity for SyncToken_State {
-        const NAME: &'static str = "SyncToken.State";
-        const NAMESPACE: &'static str = "Combat";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  ::unity2::IlType for SyncToken_State  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::IlType for SyncToken_State {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  SyncToken_State  {
+    pub fn none() -> Self {
+        Self { value: 131328 }
+
     }
 
-    impl SyncToken_State {
-        pub fn none() -> Self {
-            Self { value: 131328 }
-        }
 
-        pub fn waiting() -> Self {
-            Self { value: 513 }
-        }
+    pub fn waiting() -> Self {
+        Self { value: 513 }
 
-        pub fn reached() -> Self {
-            Self { value: 2 }
-        }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/synctoken/SyncToken.md"))]
-    #[::unity2::class(namespace = "Combat", name = "SyncToken")]
-    #[parent(crate::system::object::Object)]
-    pub struct SyncToken {
-        #[offset(16)]
-        #[rename(name = "state")]
-        pub state: ::unity2::Array<crate::combat::synctoken::SyncToken_State>,
+
+    pub fn reached() -> Self {
+        Self { value: 2 }
+
     }
+
+}
+
 }
 
 #[cfg(feature = "combat-synctoken-types")]
 pub use __types::*;
 
 #[cfg(feature = "combat-synctoken")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __SyncToken_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_join {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::combat::character::Character as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<SyncToken as ::unity2::ClassIdentity>::class(), "Join", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SyncToken as ::unity2::ClassIdentity>::NAME,
-                        "Join",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn join(this: SyncToken, chara: crate::combat::character::Character, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SyncToken, crate::combat::character::Character, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_join::get_method_info().method_ptr);
-        inner(this, chara, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_join_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<SyncToken as ::unity2::ClassIdentity>::class(), "Join", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SyncToken as ::unity2::ClassIdentity>::NAME,
-                        "Join",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn join_2(this: SyncToken, index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SyncToken, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_join_2::get_method_info().method_ptr);
-        inner(this, index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_reach {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::combat::character::Character as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<SyncToken as ::unity2::ClassIdentity>::class(), "Reach", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SyncToken as ::unity2::ClassIdentity>::NAME,
-                        "Reach",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn reach(this: SyncToken, chara: crate::combat::character::Character, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SyncToken, crate::combat::character::Character, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_reach::get_method_info().method_ptr);
-        inner(this, chara, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_arrived_everyone {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SyncToken as ::unity2::ClassIdentity>::class(),
-                "IsArrivedEveryone",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SyncToken as ::unity2::ClassIdentity>::NAME,
-                        "IsArrivedEveryone",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_arrived_everyone(this: SyncToken, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(SyncToken, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_arrived_everyone::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_chr_to_index {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::combat::character::Character as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<SyncToken as ::unity2::ClassIdentity>::class(), "ChrToIndex", 1, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SyncToken as ::unity2::ClassIdentity>::NAME,
-                        "ChrToIndex",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn chr_to_index(chara: crate::combat::character::Character, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(crate::combat::character::Character, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_chr_to_index::get_method_info().method_ptr);
-        inner(chara, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_index_to_chr {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::combat::combatworld::CombatWorld as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<SyncToken as ::unity2::ClassIdentity>::class(), "IndexToChr", 2, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SyncToken as ::unity2::ClassIdentity>::NAME,
-                        "IndexToChr",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn index_to_chr(
-        world: crate::combat::combatworld::CombatWorld,
-        i: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::combat::character::Character {
-        let inner: extern "C" fn(crate::combat::combatworld::CombatWorld, i32, ::unity2::OptionalMethod) -> crate::combat::character::Character =
-            ::core::mem::transmute(__lookup_index_to_chr::get_method_info().method_ptr);
-        inner(world, i, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<SyncToken as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SyncToken as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: SyncToken, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SyncToken, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __SyncToken_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_join { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: character :: Character as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SyncToken as :: unity2 :: ClassIdentity > :: class () , "Join" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SyncToken as :: unity2 :: ClassIdentity > :: NAME , "Join" , e) , } } } pub unsafe fn join (this : SyncToken , chara : crate :: combat :: character :: Character , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SyncToken , crate :: combat :: character :: Character , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_join :: get_method_info () . method_ptr ,) ; inner (this , chara , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_join_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SyncToken as :: unity2 :: ClassIdentity > :: class () , "Join" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SyncToken as :: unity2 :: ClassIdentity > :: NAME , "Join" , e) , } } } pub unsafe fn join_2 (this : SyncToken , index : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SyncToken , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_join_2 :: get_method_info () . method_ptr ,) ; inner (this , index , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_reach { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: character :: Character as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SyncToken as :: unity2 :: ClassIdentity > :: class () , "Reach" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SyncToken as :: unity2 :: ClassIdentity > :: NAME , "Reach" , e) , } } } pub unsafe fn reach (this : SyncToken , chara : crate :: combat :: character :: Character , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SyncToken , crate :: combat :: character :: Character , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_reach :: get_method_info () . method_ptr ,) ; inner (this , chara , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_arrived_everyone { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SyncToken as :: unity2 :: ClassIdentity > :: class () , "IsArrivedEveryone" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SyncToken as :: unity2 :: ClassIdentity > :: NAME , "IsArrivedEveryone" , e) , } } } pub unsafe fn is_arrived_everyone (this : SyncToken , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (SyncToken , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_arrived_everyone :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_chr_to_index { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: character :: Character as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SyncToken as :: unity2 :: ClassIdentity > :: class () , "ChrToIndex" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SyncToken as :: unity2 :: ClassIdentity > :: NAME , "ChrToIndex" , e) , } } } pub unsafe fn chr_to_index (chara : crate :: combat :: character :: Character , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (crate :: combat :: character :: Character , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_chr_to_index :: get_method_info () . method_ptr ,) ; inner (chara , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_index_to_chr { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: combatworld :: CombatWorld as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SyncToken as :: unity2 :: ClassIdentity > :: class () , "IndexToChr" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SyncToken as :: unity2 :: ClassIdentity > :: NAME , "IndexToChr" , e) , } } } pub unsafe fn index_to_chr (world : crate :: combat :: combatworld :: CombatWorld , i : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: combat :: character :: Character { let inner : extern "C" fn (crate :: combat :: combatworld :: CombatWorld , i32 , :: unity2 :: OptionalMethod ,) -> crate :: combat :: character :: Character = :: core :: mem :: transmute (__lookup_index_to_chr :: get_method_info () . method_ptr ,) ; inner (world , i , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SyncToken as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SyncToken as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : SyncToken , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SyncToken , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "combat-synctoken")]
+impl SyncToken { # [doc = "`ChrToIndex(crate::combat::character::Character)` overload"] pub fn chr_to_index (chara : impl :: core :: convert :: Into < crate :: combat :: character :: Character >) -> i32 { unsafe { __SyncToken_unity2_raw :: chr_to_index (:: core :: convert :: Into :: into (chara) , :: core :: option :: Option :: None) } } # [doc = "`IndexToChr(crate::combat::combatworld::CombatWorld, i32)` overload"] pub fn index_to_chr (world : impl :: core :: convert :: Into < crate :: combat :: combatworld :: CombatWorld > , i : impl :: core :: convert :: Into < i32 >) -> crate :: combat :: character :: Character { unsafe { __SyncToken_unity2_raw :: index_to_chr (:: core :: convert :: Into :: into (world) , :: core :: convert :: Into :: into (i) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "combat-synctoken")]
+pub trait ISyncTokenMethods : ISyncToken { # [doc = "`Join(crate::combat::character::Character)` overload"] fn join (self , chara : impl :: core :: convert :: Into < crate :: combat :: character :: Character >) -> () { unsafe { let __receiver = < SyncToken as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SyncToken_unity2_raw :: join (__receiver , :: core :: convert :: Into :: into (chara) , :: core :: option :: Option :: None) } } # [doc = "`Join(i32)` overload"] fn join_2 (self , index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < SyncToken as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SyncToken_unity2_raw :: join_2 (__receiver , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } # [doc = "`Reach(crate::combat::character::Character)` overload"] fn reach (self , chara : impl :: core :: convert :: Into < crate :: combat :: character :: Character >) -> () { unsafe { let __receiver = < SyncToken as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SyncToken_unity2_raw :: reach (__receiver , :: core :: convert :: Into :: into (chara) , :: core :: option :: Option :: None) } } # [doc = "`IsArrivedEveryone()` overload"] fn is_arrived_everyone (self ,) -> bool { unsafe { let __receiver = < SyncToken as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SyncToken_unity2_raw :: is_arrived_everyone (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < SyncToken as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SyncToken_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "combat-synctoken")]
+impl < __T : ISyncToken > ISyncTokenMethods for __T { }
+
+#[cfg(feature = "combat-synctoken")]
+impl SyncToken { pub fn join_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SyncToken_unity2_raw :: __lookup_join :: get_method_info () } pub fn join_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SyncToken_unity2_raw :: __lookup_join_2 :: get_method_info () } pub fn reach_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SyncToken_unity2_raw :: __lookup_reach :: get_method_info () } pub fn is_arrived_everyone_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SyncToken_unity2_raw :: __lookup_is_arrived_everyone :: get_method_info () } pub fn chr_to_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SyncToken_unity2_raw :: __lookup_chr_to_index :: get_method_info () } pub fn index_to_chr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SyncToken_unity2_raw :: __lookup_index_to_chr :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SyncToken_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "combat-synctoken")]
 impl SyncToken {
-    #[doc = "`ChrToIndex(crate::combat::character::Character)` overload"]
-    pub fn chr_to_index(chara: impl ::core::convert::Into<crate::combat::character::Character>) -> i32 {
-        unsafe { __SyncToken_unity2_raw::chr_to_index(::core::convert::Into::into(chara), ::core::option::Option::None) }
-    }
-
-    #[doc = "`IndexToChr(crate::combat::combatworld::CombatWorld, i32)` overload"]
-    pub fn index_to_chr(
-        world: impl ::core::convert::Into<crate::combat::combatworld::CombatWorld>,
-        i: impl ::core::convert::Into<i32>,
-    ) -> crate::combat::character::Character {
-        unsafe {
-            __SyncToken_unity2_raw::index_to_chr(
-                ::core::convert::Into::into(world),
-                ::core::convert::Into::into(i),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "combat-synctoken")]
-pub trait ISyncTokenMethods: ISyncToken {
-    #[doc = "`Join(crate::combat::character::Character)` overload"]
-    fn join(self, chara: impl ::core::convert::Into<crate::combat::character::Character>) -> () {
-        unsafe {
-            let __receiver = <SyncToken as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SyncToken_unity2_raw::join(__receiver, ::core::convert::Into::into(chara), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Join(i32)` overload"]
-    fn join_2(self, index: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver = <SyncToken as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SyncToken_unity2_raw::join_2(__receiver, ::core::convert::Into::into(index), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Reach(crate::combat::character::Character)` overload"]
-    fn reach(self, chara: impl ::core::convert::Into<crate::combat::character::Character>) -> () {
-        unsafe {
-            let __receiver = <SyncToken as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SyncToken_unity2_raw::reach(__receiver, ::core::convert::Into::into(chara), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsArrivedEveryone()` overload"]
-    fn is_arrived_everyone(self) -> bool {
-        unsafe {
-            let __receiver = <SyncToken as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SyncToken_unity2_raw::is_arrived_everyone(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <SyncToken as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SyncToken_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "combat-synctoken")]
-impl<__T: ISyncToken> ISyncTokenMethods for __T {}
-
-#[cfg(feature = "combat-synctoken")]
-impl SyncToken {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(SyncToken), ::core::stringify!(new),));
-        <Self as ISyncTokenMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SyncToken) , :: core :: stringify ! (new) ,)) ; < Self as ISyncTokenMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "combat-synctoken")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{ISyncToken, ISyncTokenMethods, SyncToken, SyncToken_State};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::system::{object::IObject, r#enum::IEnum, valuetype::IValueType};
+    pub use super::SyncToken;
+    pub use super::ISyncToken;
+    pub use super::ISyncTokenMethods;
+    pub use super::SyncToken_State;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

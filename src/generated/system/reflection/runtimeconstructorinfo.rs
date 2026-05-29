@@ -2,329 +2,55 @@
 
 #[cfg(feature = "system-reflection-runtimeconstructorinfo-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        reflection::{
-            constructorinfo::{ConstructorInfo, IConstructorInfo},
-            memberinfo::{IMemberInfo, MemberInfo},
-            methodbase::{IMethodBase, MethodBase},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/runtimeconstructorinfo/RuntimeConstructorInfo.md"))]
-    #[::unity2::class(namespace = "System.Reflection", name = "RuntimeConstructorInfo")]
-    #[parent(crate::system::reflection::constructorinfo::ConstructorInfo)]
-    pub struct RuntimeConstructorInfo {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: reflection :: constructorinfo :: { ConstructorInfo , IConstructorInfo }
+ ;
+ use crate :: system :: reflection :: memberinfo :: { IMemberInfo , MemberInfo }
+ ;
+ use crate :: system :: reflection :: methodbase :: { IMethodBase , MethodBase }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/runtimeconstructorinfo/RuntimeConstructorInfo.md"))] # [:: unity2 :: class (namespace = "System.Reflection" , name = "RuntimeConstructorInfo")] # [parent (crate :: system :: reflection :: constructorinfo :: ConstructorInfo)] pub struct RuntimeConstructorInfo {}
+
 }
 
 #[cfg(feature = "system-reflection-runtimeconstructorinfo-types")]
 pub use __types::*;
 
 #[cfg(feature = "system-reflection-runtimeconstructorinfo")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RuntimeConstructorInfo_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_module {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RuntimeConstructorInfo as ::unity2::ClassIdentity>::class(),
-                "get_Module",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RuntimeConstructorInfo as ::unity2::ClassIdentity>::NAME,
-                        "get_Module",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_module(
-        this: RuntimeConstructorInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::reflection::module::Module {
-        let inner: extern "C" fn(RuntimeConstructorInfo, ::unity2::OptionalMethod) -> crate::system::reflection::module::Module =
-            ::core::mem::transmute(__lookup_get_module::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_runtime_module {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RuntimeConstructorInfo as ::unity2::ClassIdentity>::class(),
-                "GetRuntimeModule",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RuntimeConstructorInfo as ::unity2::ClassIdentity>::NAME,
-                        "GetRuntimeModule",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_runtime_module(
-        this: RuntimeConstructorInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::reflection::runtimemodule::RuntimeModule {
-        let inner: extern "C" fn(RuntimeConstructorInfo, ::unity2::OptionalMethod) -> crate::system::reflection::runtimemodule::RuntimeModule =
-            ::core::mem::transmute(__lookup_get_runtime_module::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_binding_flags {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RuntimeConstructorInfo as ::unity2::ClassIdentity>::class(),
-                "get_BindingFlags",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RuntimeConstructorInfo as ::unity2::ClassIdentity>::NAME,
-                        "get_BindingFlags",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_binding_flags(
-        this: RuntimeConstructorInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::reflection::bindingflags::BindingFlags {
-        let inner: extern "C" fn(RuntimeConstructorInfo, ::unity2::OptionalMethod) -> crate::system::reflection::bindingflags::BindingFlags =
-            ::core::mem::transmute(__lookup_get_binding_flags::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_reflected_type_internal {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RuntimeConstructorInfo as ::unity2::ClassIdentity>::class(),
-                "get_ReflectedTypeInternal",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RuntimeConstructorInfo as ::unity2::ClassIdentity>::NAME,
-                        "get_ReflectedTypeInternal",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_reflected_type_internal(
-        this: RuntimeConstructorInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::runtimetype::RuntimeType {
-        let inner: extern "C" fn(RuntimeConstructorInfo, ::unity2::OptionalMethod) -> crate::system::runtimetype::RuntimeType =
-            ::core::mem::transmute(__lookup_get_reflected_type_internal::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_serialization_to_string {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RuntimeConstructorInfo as ::unity2::ClassIdentity>::class(),
-                "SerializationToString",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RuntimeConstructorInfo as ::unity2::ClassIdentity>::NAME,
-                        "SerializationToString",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn serialization_to_string(this: RuntimeConstructorInfo, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(RuntimeConstructorInfo, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_serialization_to_string::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RuntimeConstructorInfo as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RuntimeConstructorInfo as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: RuntimeConstructorInfo, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RuntimeConstructorInfo, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __RuntimeConstructorInfo_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_module { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RuntimeConstructorInfo as :: unity2 :: ClassIdentity > :: class () , "get_Module" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RuntimeConstructorInfo as :: unity2 :: ClassIdentity > :: NAME , "get_Module" , e) , } } } pub unsafe fn get_module (this : RuntimeConstructorInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: module :: Module { let inner : extern "C" fn (RuntimeConstructorInfo , :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: module :: Module = :: core :: mem :: transmute (__lookup_get_module :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_runtime_module { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RuntimeConstructorInfo as :: unity2 :: ClassIdentity > :: class () , "GetRuntimeModule" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RuntimeConstructorInfo as :: unity2 :: ClassIdentity > :: NAME , "GetRuntimeModule" , e) , } } } pub unsafe fn get_runtime_module (this : RuntimeConstructorInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: runtimemodule :: RuntimeModule { let inner : extern "C" fn (RuntimeConstructorInfo , :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: runtimemodule :: RuntimeModule = :: core :: mem :: transmute (__lookup_get_runtime_module :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_binding_flags { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RuntimeConstructorInfo as :: unity2 :: ClassIdentity > :: class () , "get_BindingFlags" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RuntimeConstructorInfo as :: unity2 :: ClassIdentity > :: NAME , "get_BindingFlags" , e) , } } } pub unsafe fn get_binding_flags (this : RuntimeConstructorInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: bindingflags :: BindingFlags { let inner : extern "C" fn (RuntimeConstructorInfo , :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: bindingflags :: BindingFlags = :: core :: mem :: transmute (__lookup_get_binding_flags :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_reflected_type_internal { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RuntimeConstructorInfo as :: unity2 :: ClassIdentity > :: class () , "get_ReflectedTypeInternal" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RuntimeConstructorInfo as :: unity2 :: ClassIdentity > :: NAME , "get_ReflectedTypeInternal" , e) , } } } pub unsafe fn get_reflected_type_internal (this : RuntimeConstructorInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: runtimetype :: RuntimeType { let inner : extern "C" fn (RuntimeConstructorInfo , :: unity2 :: OptionalMethod ,) -> crate :: system :: runtimetype :: RuntimeType = :: core :: mem :: transmute (__lookup_get_reflected_type_internal :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_serialization_to_string { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RuntimeConstructorInfo as :: unity2 :: ClassIdentity > :: class () , "SerializationToString" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RuntimeConstructorInfo as :: unity2 :: ClassIdentity > :: NAME , "SerializationToString" , e) , } } } pub unsafe fn serialization_to_string (this : RuntimeConstructorInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (RuntimeConstructorInfo , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_serialization_to_string :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RuntimeConstructorInfo as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RuntimeConstructorInfo as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : RuntimeConstructorInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RuntimeConstructorInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "system-reflection-runtimeconstructorinfo")]
-pub trait IRuntimeConstructorInfoMethods: IRuntimeConstructorInfo {
-    #[doc = "`get_Module()` overload"]
-    fn get_module(self) -> crate::system::reflection::module::Module {
-        unsafe {
-            let __receiver =
-                <RuntimeConstructorInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RuntimeConstructorInfo_unity2_raw::get_module(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetRuntimeModule()` overload"]
-    fn get_runtime_module(self) -> crate::system::reflection::runtimemodule::RuntimeModule {
-        unsafe {
-            let __receiver =
-                <RuntimeConstructorInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RuntimeConstructorInfo_unity2_raw::get_runtime_module(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_BindingFlags()` overload"]
-    fn get_binding_flags(self) -> crate::system::reflection::bindingflags::BindingFlags {
-        unsafe {
-            let __receiver =
-                <RuntimeConstructorInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RuntimeConstructorInfo_unity2_raw::get_binding_flags(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_ReflectedTypeInternal()` overload"]
-    fn get_reflected_type_internal(self) -> crate::system::runtimetype::RuntimeType {
-        unsafe {
-            let __receiver =
-                <RuntimeConstructorInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RuntimeConstructorInfo_unity2_raw::get_reflected_type_internal(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SerializationToString()` overload"]
-    fn serialization_to_string(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver =
-                <RuntimeConstructorInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RuntimeConstructorInfo_unity2_raw::serialization_to_string(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <RuntimeConstructorInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RuntimeConstructorInfo_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IRuntimeConstructorInfoMethods : IRuntimeConstructorInfo { # [doc = "`get_Module()` overload"] fn get_module (self ,) -> crate :: system :: reflection :: module :: Module { unsafe { let __receiver = < RuntimeConstructorInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RuntimeConstructorInfo_unity2_raw :: get_module (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetRuntimeModule()` overload"] fn get_runtime_module (self ,) -> crate :: system :: reflection :: runtimemodule :: RuntimeModule { unsafe { let __receiver = < RuntimeConstructorInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RuntimeConstructorInfo_unity2_raw :: get_runtime_module (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_BindingFlags()` overload"] fn get_binding_flags (self ,) -> crate :: system :: reflection :: bindingflags :: BindingFlags { unsafe { let __receiver = < RuntimeConstructorInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RuntimeConstructorInfo_unity2_raw :: get_binding_flags (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_ReflectedTypeInternal()` overload"] fn get_reflected_type_internal (self ,) -> crate :: system :: runtimetype :: RuntimeType { unsafe { let __receiver = < RuntimeConstructorInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RuntimeConstructorInfo_unity2_raw :: get_reflected_type_internal (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SerializationToString()` overload"] fn serialization_to_string (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < RuntimeConstructorInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RuntimeConstructorInfo_unity2_raw :: serialization_to_string (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RuntimeConstructorInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RuntimeConstructorInfo_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "system-reflection-runtimeconstructorinfo")]
-impl<__T: IRuntimeConstructorInfo> IRuntimeConstructorInfoMethods for __T {}
+impl < __T : IRuntimeConstructorInfo > IRuntimeConstructorInfoMethods for __T { }
+
+#[cfg(feature = "system-reflection-runtimeconstructorinfo")]
+impl RuntimeConstructorInfo { pub fn get_module_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RuntimeConstructorInfo_unity2_raw :: __lookup_get_module :: get_method_info () } pub fn get_runtime_module_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RuntimeConstructorInfo_unity2_raw :: __lookup_get_runtime_module :: get_method_info () } pub fn get_binding_flags_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RuntimeConstructorInfo_unity2_raw :: __lookup_get_binding_flags :: get_method_info () } pub fn get_reflected_type_internal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RuntimeConstructorInfo_unity2_raw :: __lookup_get_reflected_type_internal :: get_method_info () } pub fn serialization_to_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RuntimeConstructorInfo_unity2_raw :: __lookup_serialization_to_string :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RuntimeConstructorInfo_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "system-reflection-runtimeconstructorinfo")]
 impl RuntimeConstructorInfo {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RuntimeConstructorInfo),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRuntimeConstructorInfoMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RuntimeConstructorInfo) , :: core :: stringify ! (new) ,)) ; < Self as IRuntimeConstructorInfoMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "system-reflection-runtimeconstructorinfo")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IRuntimeConstructorInfo, IRuntimeConstructorInfoMethods, RuntimeConstructorInfo};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-reflection-constructorinfo")]
-    pub use crate::system::reflection::constructorinfo::IConstructorInfoMethods;
-    #[cfg(feature = "system-reflection-memberinfo")]
-    pub use crate::system::reflection::memberinfo::IMemberInfoMethods;
-    #[cfg(feature = "system-reflection-methodbase")]
-    pub use crate::system::reflection::methodbase::IMethodBaseMethods;
-    pub use crate::system::{
-        object::IObject,
-        reflection::{constructorinfo::IConstructorInfo, memberinfo::IMemberInfo, methodbase::IMethodBase},
-    };
+    pub use super::RuntimeConstructorInfo;
+    pub use super::IRuntimeConstructorInfo;
+    pub use super::IRuntimeConstructorInfoMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::system::reflection::constructorinfo::IConstructorInfo;
+    pub use crate::system::reflection::memberinfo::IMemberInfo;
+    pub use crate::system::reflection::methodbase::IMethodBase;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-reflection-constructorinfo")] pub use crate::system::reflection::constructorinfo::IConstructorInfoMethods;
+    #[cfg(feature = "system-reflection-memberinfo")] pub use crate::system::reflection::memberinfo::IMemberInfoMethods;
+    #[cfg(feature = "system-reflection-methodbase")] pub use crate::system::reflection::methodbase::IMethodBaseMethods;
 }

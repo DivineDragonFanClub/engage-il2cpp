@@ -2,2958 +2,415 @@
 
 #[cfg(feature = "unity_engine-networking-unitywebrequest-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        r#enum::{Enum, IEnum},
-        valuetype::{IValueType, ValueType},
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/networking/unitywebrequest/UnityWebRequest_UnityWebRequestMethod.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct UnityWebRequest_UnityWebRequestMethod {
-        pub value: i32,
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/networking/unitywebrequest/UnityWebRequest_Result.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct UnityWebRequest_Result  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for UnityWebRequest_Result  {
+    const NAMESPACE: &'static str = "UnityEngine.Networking";
+
+    const NAME: &'static str = "UnityWebRequest.Result";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    impl ::unity2::ClassIdentity for UnityWebRequest_UnityWebRequestMethod {
-        const NAME: &'static str = "UnityWebRequest.UnityWebRequestMethod";
-        const NAMESPACE: &'static str = "UnityEngine.Networking";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  ::unity2::IlType for UnityWebRequest_Result  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::IlType for UnityWebRequest_UnityWebRequestMethod {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  UnityWebRequest_Result  {
+    pub fn in_progress() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl UnityWebRequest_UnityWebRequestMethod {
-        pub fn get() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn post() -> Self {
-            Self { value: 1 }
-        }
+    pub fn success() -> Self {
+        Self { value: 1 }
 
-        pub fn put() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn head() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn custom() -> Self {
-            Self { value: 4 }
-        }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/networking/unitywebrequest/UnityWebRequest_UnityWebRequestError.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct UnityWebRequest_UnityWebRequestError {
-        pub value: i32,
+
+    pub fn connection_error() -> Self {
+        Self { value: 2 }
+
     }
 
-    impl ::unity2::ClassIdentity for UnityWebRequest_UnityWebRequestError {
-        const NAME: &'static str = "UnityWebRequest.UnityWebRequestError";
-        const NAMESPACE: &'static str = "UnityEngine.Networking";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+    pub fn protocol_error() -> Self {
+        Self { value: 3 }
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
     }
 
-    impl ::unity2::IlType for UnityWebRequest_UnityWebRequestError {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+
+    pub fn data_processing_error() -> Self {
+        Self { value: 4 }
+
     }
 
-    impl UnityWebRequest_UnityWebRequestError {
-        pub fn ok() -> Self {
-            Self { value: 0 }
-        }
+}
 
-        pub fn unknown() -> Self {
-            Self { value: 1 }
-        }
 
-        pub fn sdk_error() -> Self {
-            Self { value: 2 }
-        }
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/networking/unitywebrequest/UnityWebRequest_UnityWebRequestError.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct UnityWebRequest_UnityWebRequestError  {
+    pub value: i32,
+}
 
-        pub fn unsupported_protocol() -> Self {
-            Self { value: 3 }
-        }
 
-        pub fn malformatted_url() -> Self {
-            Self { value: 4 }
-        }
+impl  ::unity2::ClassIdentity for UnityWebRequest_UnityWebRequestError  {
+    const NAMESPACE: &'static str = "UnityEngine.Networking";
 
-        pub fn cannot_resolve_proxy() -> Self {
-            Self { value: 5 }
-        }
+    const NAME: &'static str = "UnityWebRequest.UnityWebRequestError";
 
-        pub fn cannot_resolve_host() -> Self {
-            Self { value: 6 }
-        }
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
 
-        pub fn cannot_connect_to_host() -> Self {
-            Self { value: 7 }
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
-
-        pub fn access_denied() -> Self {
-            Self { value: 8 }
-        }
-
-        pub fn generic_http_error() -> Self {
-            Self { value: 9 }
-        }
-
-        pub fn write_error() -> Self {
-            Self { value: 10 }
-        }
-
-        pub fn read_error() -> Self {
-            Self { value: 11 }
-        }
-
-        pub fn out_of_memory() -> Self {
-            Self { value: 12 }
-        }
-
-        pub fn timeout() -> Self {
-            Self { value: 13 }
-        }
-
-        pub fn http_post_error() -> Self {
-            Self { value: 14 }
-        }
-
-        pub fn ssl_cannot_connect() -> Self {
-            Self { value: 15 }
-        }
-
-        pub fn aborted() -> Self {
-            Self { value: 16 }
-        }
-
-        pub fn too_many_redirects() -> Self {
-            Self { value: 17 }
-        }
-
-        pub fn received_no_data() -> Self {
-            Self { value: 18 }
-        }
-
-        pub fn ssl_not_supported() -> Self {
-            Self { value: 19 }
-        }
-
-        pub fn failed_to_send_data() -> Self {
-            Self { value: 20 }
-        }
-
-        pub fn failed_to_receive_data() -> Self {
-            Self { value: 21 }
-        }
-
-        pub fn ssl_certificate_error() -> Self {
-            Self { value: 22 }
-        }
-
-        pub fn ssl_cipher_not_available() -> Self {
-            Self { value: 23 }
-        }
-
-        pub fn sslca_cert_error() -> Self {
-            Self { value: 24 }
-        }
-
-        pub fn unrecognized_content_encoding() -> Self {
-            Self { value: 25 }
-        }
-
-        pub fn login_failed() -> Self {
-            Self { value: 26 }
-        }
-
-        pub fn ssl_shutdown_failed() -> Self {
-            Self { value: 27 }
-        }
-
-        pub fn no_internet_connection() -> Self {
-            Self { value: 28 }
-        }
+)
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/networking/unitywebrequest/UnityWebRequest.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Networking", name = "UnityWebRequest")]
-    #[parent(crate::system::object::Object)]
-    pub struct UnityWebRequest {
-        #[offset(16)]
-        #[rename(name = "m_Ptr")]
-        pub m_ptr: ::unity2::IntPtr,
-        #[offset(24)]
-        #[rename(name = "m_DownloadHandler")]
-        pub m_download_handler: crate::unity_engine::networking::downloadhandler::DownloadHandler,
-        #[offset(32)]
-        #[rename(name = "m_UploadHandler")]
-        pub m_upload_handler: crate::unity_engine::networking::uploadhandler::UploadHandler,
-        #[offset(40)]
-        #[rename(name = "m_CertificateHandler")]
-        pub m_certificate_handler: crate::unity_engine::networking::certificatehandler::CertificateHandler,
-        #[static_field]
-        #[rename(name = "kHttpVerbGET")]
-        pub k_http_verb_get: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "kHttpVerbHEAD")]
-        pub k_http_verb_head: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "kHttpVerbPOST")]
-        pub k_http_verb_post: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "kHttpVerbPUT")]
-        pub k_http_verb_put: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "kHttpVerbCREATE")]
-        pub k_http_verb_create: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "kHttpVerbDELETE")]
-        pub k_http_verb_delete: ::unity2::Il2CppString,
+}
+
+
+impl  ::unity2::IlType for UnityWebRequest_UnityWebRequestError  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/networking/unitywebrequest/UnityWebRequest_Result.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct UnityWebRequest_Result {
-        pub value: i32,
+}
+
+
+impl  UnityWebRequest_UnityWebRequestError  {
+    pub fn ok() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl ::unity2::ClassIdentity for UnityWebRequest_Result {
-        const NAME: &'static str = "UnityWebRequest.Result";
-        const NAMESPACE: &'static str = "UnityEngine.Networking";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+    pub fn unknown() -> Self {
+        Self { value: 1 }
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
     }
 
-    impl ::unity2::IlType for UnityWebRequest_Result {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+
+    pub fn sdk_error() -> Self {
+        Self { value: 2 }
+
     }
 
-    impl UnityWebRequest_Result {
-        pub fn in_progress() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn success() -> Self {
-            Self { value: 1 }
-        }
+    pub fn unsupported_protocol() -> Self {
+        Self { value: 3 }
 
-        pub fn connection_error() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn protocol_error() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn data_processing_error() -> Self {
-            Self { value: 4 }
-        }
     }
+
+
+    pub fn malformatted_url() -> Self {
+        Self { value: 4 }
+
+    }
+
+
+    pub fn cannot_resolve_proxy() -> Self {
+        Self { value: 5 }
+
+    }
+
+
+    pub fn cannot_resolve_host() -> Self {
+        Self { value: 6 }
+
+    }
+
+
+    pub fn cannot_connect_to_host() -> Self {
+        Self { value: 7 }
+
+    }
+
+
+    pub fn access_denied() -> Self {
+        Self { value: 8 }
+
+    }
+
+
+    pub fn generic_http_error() -> Self {
+        Self { value: 9 }
+
+    }
+
+
+    pub fn write_error() -> Self {
+        Self { value: 10 }
+
+    }
+
+
+    pub fn read_error() -> Self {
+        Self { value: 11 }
+
+    }
+
+
+    pub fn out_of_memory() -> Self {
+        Self { value: 12 }
+
+    }
+
+
+    pub fn timeout() -> Self {
+        Self { value: 13 }
+
+    }
+
+
+    pub fn http_post_error() -> Self {
+        Self { value: 14 }
+
+    }
+
+
+    pub fn ssl_cannot_connect() -> Self {
+        Self { value: 15 }
+
+    }
+
+
+    pub fn aborted() -> Self {
+        Self { value: 16 }
+
+    }
+
+
+    pub fn too_many_redirects() -> Self {
+        Self { value: 17 }
+
+    }
+
+
+    pub fn received_no_data() -> Self {
+        Self { value: 18 }
+
+    }
+
+
+    pub fn ssl_not_supported() -> Self {
+        Self { value: 19 }
+
+    }
+
+
+    pub fn failed_to_send_data() -> Self {
+        Self { value: 20 }
+
+    }
+
+
+    pub fn failed_to_receive_data() -> Self {
+        Self { value: 21 }
+
+    }
+
+
+    pub fn ssl_certificate_error() -> Self {
+        Self { value: 22 }
+
+    }
+
+
+    pub fn ssl_cipher_not_available() -> Self {
+        Self { value: 23 }
+
+    }
+
+
+    pub fn sslca_cert_error() -> Self {
+        Self { value: 24 }
+
+    }
+
+
+    pub fn unrecognized_content_encoding() -> Self {
+        Self { value: 25 }
+
+    }
+
+
+    pub fn login_failed() -> Self {
+        Self { value: 26 }
+
+    }
+
+
+    pub fn ssl_shutdown_failed() -> Self {
+        Self { value: 27 }
+
+    }
+
+
+    pub fn no_internet_connection() -> Self {
+        Self { value: 28 }
+
+    }
+
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/networking/unitywebrequest/UnityWebRequest.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Networking" , name = "UnityWebRequest")] # [parent (crate :: system :: object :: Object)] pub struct UnityWebRequest {
+# [offset (16)] # [rename (name = "m_Ptr")] pub m_ptr : :: unity2 :: IntPtr ,
+# [offset (24)] # [rename (name = "m_DownloadHandler")] pub m_download_handler : crate :: unity_engine :: networking :: downloadhandler :: DownloadHandler ,
+# [offset (32)] # [rename (name = "m_UploadHandler")] pub m_upload_handler : crate :: unity_engine :: networking :: uploadhandler :: UploadHandler ,
+# [offset (40)] # [rename (name = "m_CertificateHandler")] pub m_certificate_handler : crate :: unity_engine :: networking :: certificatehandler :: CertificateHandler ,
+# [static_field] # [rename (name = "kHttpVerbGET")] pub k_http_verb_get : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "kHttpVerbHEAD")] pub k_http_verb_head : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "kHttpVerbPOST")] pub k_http_verb_post : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "kHttpVerbPUT")] pub k_http_verb_put : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "kHttpVerbCREATE")] pub k_http_verb_create : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "kHttpVerbDELETE")] pub k_http_verb_delete : :: unity2 :: Il2CppString ,
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/networking/unitywebrequest/UnityWebRequest_UnityWebRequestMethod.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct UnityWebRequest_UnityWebRequestMethod  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for UnityWebRequest_UnityWebRequestMethod  {
+    const NAMESPACE: &'static str = "UnityEngine.Networking";
+
+    const NAME: &'static str = "UnityWebRequest.UnityWebRequestMethod";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for UnityWebRequest_UnityWebRequestMethod  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  UnityWebRequest_UnityWebRequestMethod  {
+    pub fn get() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn post() -> Self {
+        Self { value: 1 }
+
+    }
+
+
+    pub fn put() -> Self {
+        Self { value: 2 }
+
+    }
+
+
+    pub fn head() -> Self {
+        Self { value: 3 }
+
+    }
+
+
+    pub fn custom() -> Self {
+        Self { value: 4 }
+
+    }
+
+}
+
 }
 
 #[cfg(feature = "unity_engine-networking-unitywebrequest-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-networking-unitywebrequest")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __UnityWebRequest_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_web_error_string {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::networking::unitywebrequest::UnityWebRequest_UnityWebRequestError as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnityWebRequest as ::unity2::ClassIdentity>::class(),
-                "GetWebErrorString",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnityWebRequest as ::unity2::ClassIdentity>::NAME,
-                        "GetWebErrorString",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_web_error_string(
-        err: crate::unity_engine::networking::unitywebrequest::UnityWebRequest_UnityWebRequestError,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            crate::unity_engine::networking::unitywebrequest::UnityWebRequest_UnityWebRequestError,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(__lookup_get_web_error_string::get_method_info().method_ptr);
-        inner(err, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_http_status_string {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i64 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnityWebRequest as ::unity2::ClassIdentity>::class(),
-                "GetHTTPStatusString",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnityWebRequest as ::unity2::ClassIdentity>::NAME,
-                        "GetHTTPStatusString",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_http_status_string(response_code: i64, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(i64, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_http_status_string::get_method_info().method_ptr);
-        inner(response_code, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_dispose_certificate_handler_on_dispose {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnityWebRequest as ::unity2::ClassIdentity>::class(),
-                "get_disposeCertificateHandlerOnDispose",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnityWebRequest as ::unity2::ClassIdentity>::NAME,
-                        "get_disposeCertificateHandlerOnDispose",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_dispose_certificate_handler_on_dispose(this: UnityWebRequest, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(UnityWebRequest, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_dispose_certificate_handler_on_dispose::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_dispose_certificate_handler_on_dispose {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnityWebRequest as ::unity2::ClassIdentity>::class(),
-                "set_disposeCertificateHandlerOnDispose",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnityWebRequest as ::unity2::ClassIdentity>::NAME,
-                        "set_disposeCertificateHandlerOnDispose",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_dispose_certificate_handler_on_dispose(
-        this: UnityWebRequest,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(UnityWebRequest, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_dispose_certificate_handler_on_dispose::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_dispose_download_handler_on_dispose {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnityWebRequest as ::unity2::ClassIdentity>::class(),
-                "get_disposeDownloadHandlerOnDispose",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnityWebRequest as ::unity2::ClassIdentity>::NAME,
-                        "get_disposeDownloadHandlerOnDispose",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_dispose_download_handler_on_dispose(this: UnityWebRequest, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(UnityWebRequest, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_dispose_download_handler_on_dispose::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_dispose_download_handler_on_dispose {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnityWebRequest as ::unity2::ClassIdentity>::class(),
-                "set_disposeDownloadHandlerOnDispose",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnityWebRequest as ::unity2::ClassIdentity>::NAME,
-                        "set_disposeDownloadHandlerOnDispose",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_dispose_download_handler_on_dispose(this: UnityWebRequest, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(UnityWebRequest, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_dispose_download_handler_on_dispose::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_dispose_upload_handler_on_dispose {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnityWebRequest as ::unity2::ClassIdentity>::class(),
-                "get_disposeUploadHandlerOnDispose",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnityWebRequest as ::unity2::ClassIdentity>::NAME,
-                        "get_disposeUploadHandlerOnDispose",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_dispose_upload_handler_on_dispose(this: UnityWebRequest, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(UnityWebRequest, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_dispose_upload_handler_on_dispose::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_dispose_upload_handler_on_dispose {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnityWebRequest as ::unity2::ClassIdentity>::class(),
-                "set_disposeUploadHandlerOnDispose",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnityWebRequest as ::unity2::ClassIdentity>::NAME,
-                        "set_disposeUploadHandlerOnDispose",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_dispose_upload_handler_on_dispose(this: UnityWebRequest, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(UnityWebRequest, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_dispose_upload_handler_on_dispose::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnityWebRequest as ::unity2::ClassIdentity>::class(),
-                "Create",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnityWebRequest as ::unity2::ClassIdentity>::NAME,
-                        "Create",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create(__unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::IntPtr {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> ::unity2::IntPtr =
-            ::core::mem::transmute(__lookup_create::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_release {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnityWebRequest as ::unity2::ClassIdentity>::class(),
-                "Release",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnityWebRequest as ::unity2::ClassIdentity>::NAME,
-                        "Release",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn release(this: UnityWebRequest, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(UnityWebRequest, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_release::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_internal_destroy {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnityWebRequest as ::unity2::ClassIdentity>::class(),
-                "InternalDestroy",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnityWebRequest as ::unity2::ClassIdentity>::NAME,
-                        "InternalDestroy",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn internal_destroy(this: UnityWebRequest, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(UnityWebRequest, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_internal_destroy::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_internal_set_defaults {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnityWebRequest as ::unity2::ClassIdentity>::class(),
-                "InternalSetDefaults",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnityWebRequest as ::unity2::ClassIdentity>::NAME,
-                        "InternalSetDefaults",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn internal_set_defaults(this: UnityWebRequest, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(UnityWebRequest, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_internal_set_defaults::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnityWebRequest as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnityWebRequest as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: UnityWebRequest,
-        url: ::unity2::Il2CppString,
-        method: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(UnityWebRequest, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, url, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::networking::downloadhandler::DownloadHandler as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::networking::uploadhandler::UploadHandler as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnityWebRequest as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                4,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnityWebRequest as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor_2(
-        this: UnityWebRequest,
-        url: ::unity2::Il2CppString,
-        method: ::unity2::Il2CppString,
-        download_handler: crate::unity_engine::networking::downloadhandler::DownloadHandler,
-        upload_handler: crate::unity_engine::networking::uploadhandler::UploadHandler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            UnityWebRequest,
-            ::unity2::Il2CppString,
-            ::unity2::Il2CppString,
-            crate::unity_engine::networking::downloadhandler::DownloadHandler,
-            crate::unity_engine::networking::uploadhandler::UploadHandler,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
-        inner(this, url, method, download_handler, upload_handler, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_finalize {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnityWebRequest as ::unity2::ClassIdentity>::class(),
-                "Finalize",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnityWebRequest as ::unity2::ClassIdentity>::NAME,
-                        "Finalize",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn finalize(this: UnityWebRequest, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(UnityWebRequest, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_finalize::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_dispose {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnityWebRequest as ::unity2::ClassIdentity>::class(),
-                "Dispose",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnityWebRequest as ::unity2::ClassIdentity>::NAME,
-                        "Dispose",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn dispose(this: UnityWebRequest, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(UnityWebRequest, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_dispose::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_dispose_handlers {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnityWebRequest as ::unity2::ClassIdentity>::class(),
-                "DisposeHandlers",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnityWebRequest as ::unity2::ClassIdentity>::NAME,
-                        "DisposeHandlers",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn dispose_handlers(this: UnityWebRequest, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(UnityWebRequest, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_dispose_handlers::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_begin_web_request {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnityWebRequest as ::unity2::ClassIdentity>::class(),
-                "BeginWebRequest",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnityWebRequest as ::unity2::ClassIdentity>::NAME,
-                        "BeginWebRequest",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn begin_web_request(
-        this: UnityWebRequest,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::networking::unitywebrequestasyncoperation::UnityWebRequestAsyncOperation {
-        let inner: extern "C" fn(
-            UnityWebRequest,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::networking::unitywebrequestasyncoperation::UnityWebRequestAsyncOperation =
-            ::core::mem::transmute(__lookup_begin_web_request::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_send_web_request {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnityWebRequest as ::unity2::ClassIdentity>::class(),
-                "SendWebRequest",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnityWebRequest as ::unity2::ClassIdentity>::NAME,
-                        "SendWebRequest",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn send_web_request(
-        this: UnityWebRequest,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::networking::unitywebrequestasyncoperation::UnityWebRequestAsyncOperation {
-        let inner: extern "C" fn(
-            UnityWebRequest,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::networking::unitywebrequestasyncoperation::UnityWebRequestAsyncOperation =
-            ::core::mem::transmute(__lookup_send_web_request::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_abort {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnityWebRequest as ::unity2::ClassIdentity>::class(),
-                "Abort",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnityWebRequest as ::unity2::ClassIdentity>::NAME,
-                        "Abort",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn abort(this: UnityWebRequest, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(UnityWebRequest, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_abort::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_method {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::networking::unitywebrequest::UnityWebRequest_UnityWebRequestMethod as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnityWebRequest as ::unity2::ClassIdentity>::class(),
-                "SetMethod",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnityWebRequest as ::unity2::ClassIdentity>::NAME,
-                        "SetMethod",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_method(
-        this: UnityWebRequest,
-        method_type: crate::unity_engine::networking::unitywebrequest::UnityWebRequest_UnityWebRequestMethod,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::networking::unitywebrequest::UnityWebRequest_UnityWebRequestError {
-        let inner: extern "C" fn(
-            UnityWebRequest,
-            crate::unity_engine::networking::unitywebrequest::UnityWebRequest_UnityWebRequestMethod,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::networking::unitywebrequest::UnityWebRequest_UnityWebRequestError =
-            ::core::mem::transmute(__lookup_set_method::get_method_info().method_ptr);
-        inner(this, method_type, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_internal_set_method {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::networking::unitywebrequest::UnityWebRequest_UnityWebRequestMethod as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnityWebRequest as ::unity2::ClassIdentity>::class(),
-                "InternalSetMethod",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnityWebRequest as ::unity2::ClassIdentity>::NAME,
-                        "InternalSetMethod",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn internal_set_method(
-        this: UnityWebRequest,
-        method_type: crate::unity_engine::networking::unitywebrequest::UnityWebRequest_UnityWebRequestMethod,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            UnityWebRequest,
-            crate::unity_engine::networking::unitywebrequest::UnityWebRequest_UnityWebRequestMethod,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_internal_set_method::get_method_info().method_ptr);
-        inner(this, method_type, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_custom_method {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnityWebRequest as ::unity2::ClassIdentity>::class(),
-                "SetCustomMethod",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnityWebRequest as ::unity2::ClassIdentity>::NAME,
-                        "SetCustomMethod",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_custom_method(
-        this: UnityWebRequest,
-        custom_method_name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::networking::unitywebrequest::UnityWebRequest_UnityWebRequestError {
-        let inner: extern "C" fn(
-            UnityWebRequest,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::networking::unitywebrequest::UnityWebRequest_UnityWebRequestError =
-            ::core::mem::transmute(__lookup_set_custom_method::get_method_info().method_ptr);
-        inner(this, custom_method_name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_internal_set_custom_method {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnityWebRequest as ::unity2::ClassIdentity>::class(),
-                "InternalSetCustomMethod",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnityWebRequest as ::unity2::ClassIdentity>::NAME,
-                        "InternalSetCustomMethod",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn internal_set_custom_method(
-        this: UnityWebRequest,
-        custom_method_name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(UnityWebRequest, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_internal_set_custom_method::get_method_info().method_ptr);
-        inner(this, custom_method_name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_method {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnityWebRequest as ::unity2::ClassIdentity>::class(),
-                "GetMethod",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnityWebRequest as ::unity2::ClassIdentity>::NAME,
-                        "GetMethod",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_method(
-        this: UnityWebRequest,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::networking::unitywebrequest::UnityWebRequest_UnityWebRequestMethod {
-        let inner: extern "C" fn(
-            UnityWebRequest,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::networking::unitywebrequest::UnityWebRequest_UnityWebRequestMethod =
-            ::core::mem::transmute(__lookup_get_method::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_custom_method {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnityWebRequest as ::unity2::ClassIdentity>::class(),
-                "GetCustomMethod",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnityWebRequest as ::unity2::ClassIdentity>::NAME,
-                        "GetCustomMethod",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_custom_method(this: UnityWebRequest, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(UnityWebRequest, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_custom_method::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_method_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnityWebRequest as ::unity2::ClassIdentity>::class(),
-                "set_method",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnityWebRequest as ::unity2::ClassIdentity>::NAME,
-                        "set_method",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_method_2(this: UnityWebRequest, value: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(UnityWebRequest, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_method_2::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_error {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnityWebRequest as ::unity2::ClassIdentity>::class(),
-                "GetError",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnityWebRequest as ::unity2::ClassIdentity>::NAME,
-                        "GetError",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_error(
-        this: UnityWebRequest,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::networking::unitywebrequest::UnityWebRequest_UnityWebRequestError {
-        let inner: extern "C" fn(
-            UnityWebRequest,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::networking::unitywebrequest::UnityWebRequest_UnityWebRequestError =
-            ::core::mem::transmute(__lookup_get_error::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_url {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnityWebRequest as ::unity2::ClassIdentity>::class(),
-                "get_url",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnityWebRequest as ::unity2::ClassIdentity>::NAME,
-                        "get_url",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_url(this: UnityWebRequest, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(UnityWebRequest, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_url::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_url {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnityWebRequest as ::unity2::ClassIdentity>::class(),
-                "set_url",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnityWebRequest as ::unity2::ClassIdentity>::NAME,
-                        "set_url",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_url(this: UnityWebRequest, value: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(UnityWebRequest, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_url::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_internal_set_url {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnityWebRequest as ::unity2::ClassIdentity>::class(),
-                "InternalSetUrl",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnityWebRequest as ::unity2::ClassIdentity>::NAME,
-                        "InternalSetUrl",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn internal_set_url(this: UnityWebRequest, url: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(UnityWebRequest, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_internal_set_url::get_method_info().method_ptr);
-        inner(this, url, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_response_code {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnityWebRequest as ::unity2::ClassIdentity>::class(),
-                "get_responseCode",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnityWebRequest as ::unity2::ClassIdentity>::NAME,
-                        "get_responseCode",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_response_code(this: UnityWebRequest, __unity2_method_info: ::unity2::OptionalMethod) -> i64 {
-        let inner: extern "C" fn(UnityWebRequest, ::unity2::OptionalMethod) -> i64 =
-            ::core::mem::transmute(__lookup_get_response_code::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_executing {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnityWebRequest as ::unity2::ClassIdentity>::class(),
-                "IsExecuting",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnityWebRequest as ::unity2::ClassIdentity>::NAME,
-                        "IsExecuting",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_executing(this: UnityWebRequest, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(UnityWebRequest, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_executing::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_is_modifiable {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnityWebRequest as ::unity2::ClassIdentity>::class(),
-                "get_isModifiable",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnityWebRequest as ::unity2::ClassIdentity>::NAME,
-                        "get_isModifiable",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_is_modifiable(this: UnityWebRequest, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(UnityWebRequest, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_is_modifiable::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_is_done {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnityWebRequest as ::unity2::ClassIdentity>::class(),
-                "get_isDone",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnityWebRequest as ::unity2::ClassIdentity>::NAME,
-                        "get_isDone",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_is_done(this: UnityWebRequest, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(UnityWebRequest, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_is_done::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_result {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnityWebRequest as ::unity2::ClassIdentity>::class(),
-                "get_result",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnityWebRequest as ::unity2::ClassIdentity>::NAME,
-                        "get_result",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_result(
-        this: UnityWebRequest,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::networking::unitywebrequest::UnityWebRequest_Result {
-        let inner: extern "C" fn(
-            UnityWebRequest,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::networking::unitywebrequest::UnityWebRequest_Result =
-            ::core::mem::transmute(__lookup_get_result::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_download_progress {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnityWebRequest as ::unity2::ClassIdentity>::class(),
-                "GetDownloadProgress",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnityWebRequest as ::unity2::ClassIdentity>::NAME,
-                        "GetDownloadProgress",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_download_progress(this: UnityWebRequest, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(UnityWebRequest, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_get_download_progress::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_downloaded_bytes {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnityWebRequest as ::unity2::ClassIdentity>::class(),
-                "get_downloadedBytes",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnityWebRequest as ::unity2::ClassIdentity>::NAME,
-                        "get_downloadedBytes",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_downloaded_bytes(this: UnityWebRequest, __unity2_method_info: ::unity2::OptionalMethod) -> u64 {
-        let inner: extern "C" fn(UnityWebRequest, ::unity2::OptionalMethod) -> u64 =
-            ::core::mem::transmute(__lookup_get_downloaded_bytes::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_redirect_limit_from_scripting {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnityWebRequest as ::unity2::ClassIdentity>::class(),
-                "SetRedirectLimitFromScripting",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnityWebRequest as ::unity2::ClassIdentity>::NAME,
-                        "SetRedirectLimitFromScripting",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_redirect_limit_from_scripting(this: UnityWebRequest, limit: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(UnityWebRequest, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_redirect_limit_from_scripting::get_method_info().method_ptr);
-        inner(this, limit, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_redirect_limit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnityWebRequest as ::unity2::ClassIdentity>::class(),
-                "set_redirectLimit",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnityWebRequest as ::unity2::ClassIdentity>::NAME,
-                        "set_redirectLimit",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_redirect_limit(this: UnityWebRequest, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(UnityWebRequest, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_redirect_limit::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_chunked {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnityWebRequest as ::unity2::ClassIdentity>::class(),
-                "SetChunked",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnityWebRequest as ::unity2::ClassIdentity>::NAME,
-                        "SetChunked",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_chunked(
-        this: UnityWebRequest,
-        chunked: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::networking::unitywebrequest::UnityWebRequest_UnityWebRequestError {
-        let inner: extern "C" fn(
-            UnityWebRequest,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::networking::unitywebrequest::UnityWebRequest_UnityWebRequestError =
-            ::core::mem::transmute(__lookup_set_chunked::get_method_info().method_ptr);
-        inner(this, chunked, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_chunked_transfer {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnityWebRequest as ::unity2::ClassIdentity>::class(),
-                "set_chunkedTransfer",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnityWebRequest as ::unity2::ClassIdentity>::NAME,
-                        "set_chunkedTransfer",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_chunked_transfer(this: UnityWebRequest, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(UnityWebRequest, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_chunked_transfer::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_internal_set_request_header {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnityWebRequest as ::unity2::ClassIdentity>::class(),
-                "InternalSetRequestHeader",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnityWebRequest as ::unity2::ClassIdentity>::NAME,
-                        "InternalSetRequestHeader",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn internal_set_request_header(
-        this: UnityWebRequest,
-        name: ::unity2::Il2CppString,
-        value: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::networking::unitywebrequest::UnityWebRequest_UnityWebRequestError {
-        let inner: extern "C" fn(
-            UnityWebRequest,
-            ::unity2::Il2CppString,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::networking::unitywebrequest::UnityWebRequest_UnityWebRequestError =
-            ::core::mem::transmute(__lookup_internal_set_request_header::get_method_info().method_ptr);
-        inner(this, name, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_request_header {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnityWebRequest as ::unity2::ClassIdentity>::class(),
-                "SetRequestHeader",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnityWebRequest as ::unity2::ClassIdentity>::NAME,
-                        "SetRequestHeader",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_request_header(
-        this: UnityWebRequest,
-        name: ::unity2::Il2CppString,
-        value: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(UnityWebRequest, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_request_header::get_method_info().method_ptr);
-        inner(this, name, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_response_header {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnityWebRequest as ::unity2::ClassIdentity>::class(),
-                "GetResponseHeader",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnityWebRequest as ::unity2::ClassIdentity>::NAME,
-                        "GetResponseHeader",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_response_header(
-        this: UnityWebRequest,
-        name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(UnityWebRequest, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_response_header::get_method_info().method_ptr);
-        inner(this, name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_response_header_keys {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnityWebRequest as ::unity2::ClassIdentity>::class(),
-                "GetResponseHeaderKeys",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnityWebRequest as ::unity2::ClassIdentity>::NAME,
-                        "GetResponseHeaderKeys",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_response_header_keys(
-        this: UnityWebRequest,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Array<::unity2::Il2CppString> {
-        let inner: extern "C" fn(UnityWebRequest, ::unity2::OptionalMethod) -> ::unity2::Array<::unity2::Il2CppString> =
-            ::core::mem::transmute(__lookup_get_response_header_keys::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_response_headers {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnityWebRequest as ::unity2::ClassIdentity>::class(),
-                "GetResponseHeaders",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnityWebRequest as ::unity2::ClassIdentity>::NAME,
-                        "GetResponseHeaders",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_response_headers(
-        this: UnityWebRequest,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, ::unity2::Il2CppString> {
-        let inner: extern "C" fn(
-            UnityWebRequest,
-            ::unity2::OptionalMethod,
-        )
-            -> crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, ::unity2::Il2CppString> =
-            ::core::mem::transmute(__lookup_get_response_headers::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_upload_handler {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::networking::uploadhandler::UploadHandler as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnityWebRequest as ::unity2::ClassIdentity>::class(),
-                "SetUploadHandler",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnityWebRequest as ::unity2::ClassIdentity>::NAME,
-                        "SetUploadHandler",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_upload_handler(
-        this: UnityWebRequest,
-        uh: crate::unity_engine::networking::uploadhandler::UploadHandler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::networking::unitywebrequest::UnityWebRequest_UnityWebRequestError {
-        let inner: extern "C" fn(
-            UnityWebRequest,
-            crate::unity_engine::networking::uploadhandler::UploadHandler,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::networking::unitywebrequest::UnityWebRequest_UnityWebRequestError =
-            ::core::mem::transmute(__lookup_set_upload_handler::get_method_info().method_ptr);
-        inner(this, uh, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_upload_handler {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnityWebRequest as ::unity2::ClassIdentity>::class(),
-                "get_uploadHandler",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnityWebRequest as ::unity2::ClassIdentity>::NAME,
-                        "get_uploadHandler",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_upload_handler(
-        this: UnityWebRequest,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::networking::uploadhandler::UploadHandler {
-        let inner: extern "C" fn(UnityWebRequest, ::unity2::OptionalMethod) -> crate::unity_engine::networking::uploadhandler::UploadHandler =
-            ::core::mem::transmute(__lookup_get_upload_handler::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_download_handler {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::networking::downloadhandler::DownloadHandler as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnityWebRequest as ::unity2::ClassIdentity>::class(),
-                "SetDownloadHandler",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnityWebRequest as ::unity2::ClassIdentity>::NAME,
-                        "SetDownloadHandler",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_download_handler(
-        this: UnityWebRequest,
-        dh: crate::unity_engine::networking::downloadhandler::DownloadHandler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::networking::unitywebrequest::UnityWebRequest_UnityWebRequestError {
-        let inner: extern "C" fn(
-            UnityWebRequest,
-            crate::unity_engine::networking::downloadhandler::DownloadHandler,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::networking::unitywebrequest::UnityWebRequest_UnityWebRequestError =
-            ::core::mem::transmute(__lookup_set_download_handler::get_method_info().method_ptr);
-        inner(this, dh, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_download_handler {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnityWebRequest as ::unity2::ClassIdentity>::class(),
-                "get_downloadHandler",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnityWebRequest as ::unity2::ClassIdentity>::NAME,
-                        "get_downloadHandler",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_download_handler(
-        this: UnityWebRequest,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::networking::downloadhandler::DownloadHandler {
-        let inner: extern "C" fn(UnityWebRequest, ::unity2::OptionalMethod) -> crate::unity_engine::networking::downloadhandler::DownloadHandler =
-            ::core::mem::transmute(__lookup_get_download_handler::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_certificate_handler {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::networking::certificatehandler::CertificateHandler as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnityWebRequest as ::unity2::ClassIdentity>::class(),
-                "SetCertificateHandler",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnityWebRequest as ::unity2::ClassIdentity>::NAME,
-                        "SetCertificateHandler",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_certificate_handler(
-        this: UnityWebRequest,
-        ch: crate::unity_engine::networking::certificatehandler::CertificateHandler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::networking::unitywebrequest::UnityWebRequest_UnityWebRequestError {
-        let inner: extern "C" fn(
-            UnityWebRequest,
-            crate::unity_engine::networking::certificatehandler::CertificateHandler,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::networking::unitywebrequest::UnityWebRequest_UnityWebRequestError =
-            ::core::mem::transmute(__lookup_set_certificate_handler::get_method_info().method_ptr);
-        inner(this, ch, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_certificate_handler {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnityWebRequest as ::unity2::ClassIdentity>::class(),
-                "get_certificateHandler",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnityWebRequest as ::unity2::ClassIdentity>::NAME,
-                        "get_certificateHandler",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_certificate_handler(
-        this: UnityWebRequest,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::networking::certificatehandler::CertificateHandler {
-        let inner: extern "C" fn(
-            UnityWebRequest,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::networking::certificatehandler::CertificateHandler =
-            ::core::mem::transmute(__lookup_get_certificate_handler::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_timeout_msec {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnityWebRequest as ::unity2::ClassIdentity>::class(),
-                "SetTimeoutMsec",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnityWebRequest as ::unity2::ClassIdentity>::NAME,
-                        "SetTimeoutMsec",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_timeout_msec(
-        this: UnityWebRequest,
-        timeout: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::networking::unitywebrequest::UnityWebRequest_UnityWebRequestError {
-        let inner: extern "C" fn(
-            UnityWebRequest,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::networking::unitywebrequest::UnityWebRequest_UnityWebRequestError =
-            ::core::mem::transmute(__lookup_set_timeout_msec::get_method_info().method_ptr);
-        inner(this, timeout, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_timeout {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnityWebRequest as ::unity2::ClassIdentity>::class(),
-                "set_timeout",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnityWebRequest as ::unity2::ClassIdentity>::NAME,
-                        "set_timeout",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_timeout(this: UnityWebRequest, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(UnityWebRequest, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_timeout::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<UnityWebRequest as ::unity2::ClassIdentity>::class(), "Get", 1, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnityWebRequest as ::unity2::ClassIdentity>::NAME,
-                        "Get",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get(
-        uri: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::networking::unitywebrequest::UnityWebRequest {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::networking::unitywebrequest::UnityWebRequest = ::core::mem::transmute(__lookup_get::get_method_info().method_ptr);
-        inner(uri, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_post {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::wwwform::WWWForm as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<UnityWebRequest as ::unity2::ClassIdentity>::class(), "Post", 2, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnityWebRequest as ::unity2::ClassIdentity>::NAME,
-                        "Post",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn post(
-        uri: ::unity2::Il2CppString,
-        form_data: crate::unity_engine::wwwform::WWWForm,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::networking::unitywebrequest::UnityWebRequest {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            crate::unity_engine::wwwform::WWWForm,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::networking::unitywebrequest::UnityWebRequest = ::core::mem::transmute(__lookup_post::get_method_info().method_ptr);
-        inner(uri, form_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_setup_post {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::networking::unitywebrequest::UnityWebRequest as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::wwwform::WWWForm as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnityWebRequest as ::unity2::ClassIdentity>::class(),
-                "SetupPost",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnityWebRequest as ::unity2::ClassIdentity>::NAME,
-                        "SetupPost",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn setup_post(
-        request: crate::unity_engine::networking::unitywebrequest::UnityWebRequest,
-        form_data: crate::unity_engine::wwwform::WWWForm,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::networking::unitywebrequest::UnityWebRequest,
-            crate::unity_engine::wwwform::WWWForm,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_setup_post::get_method_info().method_ptr);
-        inner(request, form_data, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __UnityWebRequest_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_web_error_string { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: networking :: unitywebrequest :: UnityWebRequest_UnityWebRequestError as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnityWebRequest as :: unity2 :: ClassIdentity > :: class () , "GetWebErrorString" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnityWebRequest as :: unity2 :: ClassIdentity > :: NAME , "GetWebErrorString" , e) , } } } pub unsafe fn get_web_error_string (err : crate :: unity_engine :: networking :: unitywebrequest :: UnityWebRequest_UnityWebRequestError , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (crate :: unity_engine :: networking :: unitywebrequest :: UnityWebRequest_UnityWebRequestError , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_web_error_string :: get_method_info () . method_ptr ,) ; inner (err , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_http_status_string { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i64 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnityWebRequest as :: unity2 :: ClassIdentity > :: class () , "GetHTTPStatusString" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnityWebRequest as :: unity2 :: ClassIdentity > :: NAME , "GetHTTPStatusString" , e) , } } } pub unsafe fn get_http_status_string (response_code : i64 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (i64 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_http_status_string :: get_method_info () . method_ptr ,) ; inner (response_code , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_dispose_certificate_handler_on_dispose { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnityWebRequest as :: unity2 :: ClassIdentity > :: class () , "get_disposeCertificateHandlerOnDispose" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnityWebRequest as :: unity2 :: ClassIdentity > :: NAME , "get_disposeCertificateHandlerOnDispose" , e) , } } } pub unsafe fn get_dispose_certificate_handler_on_dispose (this : UnityWebRequest , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (UnityWebRequest , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_dispose_certificate_handler_on_dispose :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_dispose_certificate_handler_on_dispose { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnityWebRequest as :: unity2 :: ClassIdentity > :: class () , "set_disposeCertificateHandlerOnDispose" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnityWebRequest as :: unity2 :: ClassIdentity > :: NAME , "set_disposeCertificateHandlerOnDispose" , e) , } } } pub unsafe fn set_dispose_certificate_handler_on_dispose (this : UnityWebRequest , value : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnityWebRequest , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_dispose_certificate_handler_on_dispose :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_dispose_download_handler_on_dispose { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnityWebRequest as :: unity2 :: ClassIdentity > :: class () , "get_disposeDownloadHandlerOnDispose" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnityWebRequest as :: unity2 :: ClassIdentity > :: NAME , "get_disposeDownloadHandlerOnDispose" , e) , } } } pub unsafe fn get_dispose_download_handler_on_dispose (this : UnityWebRequest , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (UnityWebRequest , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_dispose_download_handler_on_dispose :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_dispose_download_handler_on_dispose { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnityWebRequest as :: unity2 :: ClassIdentity > :: class () , "set_disposeDownloadHandlerOnDispose" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnityWebRequest as :: unity2 :: ClassIdentity > :: NAME , "set_disposeDownloadHandlerOnDispose" , e) , } } } pub unsafe fn set_dispose_download_handler_on_dispose (this : UnityWebRequest , value : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnityWebRequest , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_dispose_download_handler_on_dispose :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_dispose_upload_handler_on_dispose { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnityWebRequest as :: unity2 :: ClassIdentity > :: class () , "get_disposeUploadHandlerOnDispose" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnityWebRequest as :: unity2 :: ClassIdentity > :: NAME , "get_disposeUploadHandlerOnDispose" , e) , } } } pub unsafe fn get_dispose_upload_handler_on_dispose (this : UnityWebRequest , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (UnityWebRequest , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_dispose_upload_handler_on_dispose :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_dispose_upload_handler_on_dispose { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnityWebRequest as :: unity2 :: ClassIdentity > :: class () , "set_disposeUploadHandlerOnDispose" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnityWebRequest as :: unity2 :: ClassIdentity > :: NAME , "set_disposeUploadHandlerOnDispose" , e) , } } } pub unsafe fn set_dispose_upload_handler_on_dispose (this : UnityWebRequest , value : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnityWebRequest , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_dispose_upload_handler_on_dispose :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnityWebRequest as :: unity2 :: ClassIdentity > :: class () , "Create" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnityWebRequest as :: unity2 :: ClassIdentity > :: NAME , "Create" , e) , } } } pub unsafe fn create (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: IntPtr { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: IntPtr = :: core :: mem :: transmute (__lookup_create :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_release { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnityWebRequest as :: unity2 :: ClassIdentity > :: class () , "Release" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnityWebRequest as :: unity2 :: ClassIdentity > :: NAME , "Release" , e) , } } } pub unsafe fn release (this : UnityWebRequest , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnityWebRequest , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_release :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_internal_destroy { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnityWebRequest as :: unity2 :: ClassIdentity > :: class () , "InternalDestroy" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnityWebRequest as :: unity2 :: ClassIdentity > :: NAME , "InternalDestroy" , e) , } } } pub unsafe fn internal_destroy (this : UnityWebRequest , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnityWebRequest , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_internal_destroy :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_internal_set_defaults { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnityWebRequest as :: unity2 :: ClassIdentity > :: class () , "InternalSetDefaults" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnityWebRequest as :: unity2 :: ClassIdentity > :: NAME , "InternalSetDefaults" , e) , } } } pub unsafe fn internal_set_defaults (this : UnityWebRequest , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnityWebRequest , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_internal_set_defaults :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnityWebRequest as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnityWebRequest as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : UnityWebRequest , url : :: unity2 :: Il2CppString , method : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnityWebRequest , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , url , method , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: networking :: downloadhandler :: DownloadHandler as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: networking :: uploadhandler :: UploadHandler as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnityWebRequest as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 4 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnityWebRequest as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor_2 (this : UnityWebRequest , url : :: unity2 :: Il2CppString , method : :: unity2 :: Il2CppString , download_handler : crate :: unity_engine :: networking :: downloadhandler :: DownloadHandler , upload_handler : crate :: unity_engine :: networking :: uploadhandler :: UploadHandler , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnityWebRequest , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , crate :: unity_engine :: networking :: downloadhandler :: DownloadHandler , crate :: unity_engine :: networking :: uploadhandler :: UploadHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor_2 :: get_method_info () . method_ptr ,) ; inner (this , url , method , download_handler , upload_handler , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_finalize { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnityWebRequest as :: unity2 :: ClassIdentity > :: class () , "Finalize" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnityWebRequest as :: unity2 :: ClassIdentity > :: NAME , "Finalize" , e) , } } } pub unsafe fn finalize (this : UnityWebRequest , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnityWebRequest , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_finalize :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_dispose { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnityWebRequest as :: unity2 :: ClassIdentity > :: class () , "Dispose" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnityWebRequest as :: unity2 :: ClassIdentity > :: NAME , "Dispose" , e) , } } } pub unsafe fn dispose (this : UnityWebRequest , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnityWebRequest , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_dispose :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_dispose_handlers { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnityWebRequest as :: unity2 :: ClassIdentity > :: class () , "DisposeHandlers" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnityWebRequest as :: unity2 :: ClassIdentity > :: NAME , "DisposeHandlers" , e) , } } } pub unsafe fn dispose_handlers (this : UnityWebRequest , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnityWebRequest , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_dispose_handlers :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_begin_web_request { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnityWebRequest as :: unity2 :: ClassIdentity > :: class () , "BeginWebRequest" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnityWebRequest as :: unity2 :: ClassIdentity > :: NAME , "BeginWebRequest" , e) , } } } pub unsafe fn begin_web_request (this : UnityWebRequest , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: networking :: unitywebrequestasyncoperation :: UnityWebRequestAsyncOperation { let inner : extern "C" fn (UnityWebRequest , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: networking :: unitywebrequestasyncoperation :: UnityWebRequestAsyncOperation = :: core :: mem :: transmute (__lookup_begin_web_request :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_send_web_request { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnityWebRequest as :: unity2 :: ClassIdentity > :: class () , "SendWebRequest" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnityWebRequest as :: unity2 :: ClassIdentity > :: NAME , "SendWebRequest" , e) , } } } pub unsafe fn send_web_request (this : UnityWebRequest , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: networking :: unitywebrequestasyncoperation :: UnityWebRequestAsyncOperation { let inner : extern "C" fn (UnityWebRequest , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: networking :: unitywebrequestasyncoperation :: UnityWebRequestAsyncOperation = :: core :: mem :: transmute (__lookup_send_web_request :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_abort { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnityWebRequest as :: unity2 :: ClassIdentity > :: class () , "Abort" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnityWebRequest as :: unity2 :: ClassIdentity > :: NAME , "Abort" , e) , } } } pub unsafe fn abort (this : UnityWebRequest , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnityWebRequest , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_abort :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_method { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: networking :: unitywebrequest :: UnityWebRequest_UnityWebRequestMethod as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnityWebRequest as :: unity2 :: ClassIdentity > :: class () , "SetMethod" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnityWebRequest as :: unity2 :: ClassIdentity > :: NAME , "SetMethod" , e) , } } } pub unsafe fn set_method (this : UnityWebRequest , method_type : crate :: unity_engine :: networking :: unitywebrequest :: UnityWebRequest_UnityWebRequestMethod , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: networking :: unitywebrequest :: UnityWebRequest_UnityWebRequestError { let inner : extern "C" fn (UnityWebRequest , crate :: unity_engine :: networking :: unitywebrequest :: UnityWebRequest_UnityWebRequestMethod , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: networking :: unitywebrequest :: UnityWebRequest_UnityWebRequestError = :: core :: mem :: transmute (__lookup_set_method :: get_method_info () . method_ptr ,) ; inner (this , method_type , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_internal_set_method { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: networking :: unitywebrequest :: UnityWebRequest_UnityWebRequestMethod as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnityWebRequest as :: unity2 :: ClassIdentity > :: class () , "InternalSetMethod" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnityWebRequest as :: unity2 :: ClassIdentity > :: NAME , "InternalSetMethod" , e) , } } } pub unsafe fn internal_set_method (this : UnityWebRequest , method_type : crate :: unity_engine :: networking :: unitywebrequest :: UnityWebRequest_UnityWebRequestMethod , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnityWebRequest , crate :: unity_engine :: networking :: unitywebrequest :: UnityWebRequest_UnityWebRequestMethod , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_internal_set_method :: get_method_info () . method_ptr ,) ; inner (this , method_type , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_custom_method { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnityWebRequest as :: unity2 :: ClassIdentity > :: class () , "SetCustomMethod" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnityWebRequest as :: unity2 :: ClassIdentity > :: NAME , "SetCustomMethod" , e) , } } } pub unsafe fn set_custom_method (this : UnityWebRequest , custom_method_name : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: networking :: unitywebrequest :: UnityWebRequest_UnityWebRequestError { let inner : extern "C" fn (UnityWebRequest , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: networking :: unitywebrequest :: UnityWebRequest_UnityWebRequestError = :: core :: mem :: transmute (__lookup_set_custom_method :: get_method_info () . method_ptr ,) ; inner (this , custom_method_name , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_internal_set_custom_method { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnityWebRequest as :: unity2 :: ClassIdentity > :: class () , "InternalSetCustomMethod" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnityWebRequest as :: unity2 :: ClassIdentity > :: NAME , "InternalSetCustomMethod" , e) , } } } pub unsafe fn internal_set_custom_method (this : UnityWebRequest , custom_method_name : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnityWebRequest , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_internal_set_custom_method :: get_method_info () . method_ptr ,) ; inner (this , custom_method_name , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_method { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnityWebRequest as :: unity2 :: ClassIdentity > :: class () , "GetMethod" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnityWebRequest as :: unity2 :: ClassIdentity > :: NAME , "GetMethod" , e) , } } } pub unsafe fn get_method (this : UnityWebRequest , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: networking :: unitywebrequest :: UnityWebRequest_UnityWebRequestMethod { let inner : extern "C" fn (UnityWebRequest , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: networking :: unitywebrequest :: UnityWebRequest_UnityWebRequestMethod = :: core :: mem :: transmute (__lookup_get_method :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_custom_method { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnityWebRequest as :: unity2 :: ClassIdentity > :: class () , "GetCustomMethod" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnityWebRequest as :: unity2 :: ClassIdentity > :: NAME , "GetCustomMethod" , e) , } } } pub unsafe fn get_custom_method (this : UnityWebRequest , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (UnityWebRequest , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_custom_method :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_method_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnityWebRequest as :: unity2 :: ClassIdentity > :: class () , "set_method" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnityWebRequest as :: unity2 :: ClassIdentity > :: NAME , "set_method" , e) , } } } pub unsafe fn set_method_2 (this : UnityWebRequest , value : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnityWebRequest , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_method_2 :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_error { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnityWebRequest as :: unity2 :: ClassIdentity > :: class () , "GetError" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnityWebRequest as :: unity2 :: ClassIdentity > :: NAME , "GetError" , e) , } } } pub unsafe fn get_error (this : UnityWebRequest , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: networking :: unitywebrequest :: UnityWebRequest_UnityWebRequestError { let inner : extern "C" fn (UnityWebRequest , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: networking :: unitywebrequest :: UnityWebRequest_UnityWebRequestError = :: core :: mem :: transmute (__lookup_get_error :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_url { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnityWebRequest as :: unity2 :: ClassIdentity > :: class () , "get_url" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnityWebRequest as :: unity2 :: ClassIdentity > :: NAME , "get_url" , e) , } } } pub unsafe fn get_url (this : UnityWebRequest , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (UnityWebRequest , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_url :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_url { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnityWebRequest as :: unity2 :: ClassIdentity > :: class () , "set_url" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnityWebRequest as :: unity2 :: ClassIdentity > :: NAME , "set_url" , e) , } } } pub unsafe fn set_url (this : UnityWebRequest , value : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnityWebRequest , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_url :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_internal_set_url { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnityWebRequest as :: unity2 :: ClassIdentity > :: class () , "InternalSetUrl" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnityWebRequest as :: unity2 :: ClassIdentity > :: NAME , "InternalSetUrl" , e) , } } } pub unsafe fn internal_set_url (this : UnityWebRequest , url : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnityWebRequest , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_internal_set_url :: get_method_info () . method_ptr ,) ; inner (this , url , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_response_code { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnityWebRequest as :: unity2 :: ClassIdentity > :: class () , "get_responseCode" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnityWebRequest as :: unity2 :: ClassIdentity > :: NAME , "get_responseCode" , e) , } } } pub unsafe fn get_response_code (this : UnityWebRequest , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i64 { let inner : extern "C" fn (UnityWebRequest , :: unity2 :: OptionalMethod ,) -> i64 = :: core :: mem :: transmute (__lookup_get_response_code :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_executing { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnityWebRequest as :: unity2 :: ClassIdentity > :: class () , "IsExecuting" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnityWebRequest as :: unity2 :: ClassIdentity > :: NAME , "IsExecuting" , e) , } } } pub unsafe fn is_executing (this : UnityWebRequest , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (UnityWebRequest , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_executing :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_is_modifiable { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnityWebRequest as :: unity2 :: ClassIdentity > :: class () , "get_isModifiable" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnityWebRequest as :: unity2 :: ClassIdentity > :: NAME , "get_isModifiable" , e) , } } } pub unsafe fn get_is_modifiable (this : UnityWebRequest , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (UnityWebRequest , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_is_modifiable :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_is_done { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnityWebRequest as :: unity2 :: ClassIdentity > :: class () , "get_isDone" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnityWebRequest as :: unity2 :: ClassIdentity > :: NAME , "get_isDone" , e) , } } } pub unsafe fn get_is_done (this : UnityWebRequest , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (UnityWebRequest , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_is_done :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_result { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnityWebRequest as :: unity2 :: ClassIdentity > :: class () , "get_result" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnityWebRequest as :: unity2 :: ClassIdentity > :: NAME , "get_result" , e) , } } } pub unsafe fn get_result (this : UnityWebRequest , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: networking :: unitywebrequest :: UnityWebRequest_Result { let inner : extern "C" fn (UnityWebRequest , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: networking :: unitywebrequest :: UnityWebRequest_Result = :: core :: mem :: transmute (__lookup_get_result :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_download_progress { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnityWebRequest as :: unity2 :: ClassIdentity > :: class () , "GetDownloadProgress" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnityWebRequest as :: unity2 :: ClassIdentity > :: NAME , "GetDownloadProgress" , e) , } } } pub unsafe fn get_download_progress (this : UnityWebRequest , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (UnityWebRequest , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_get_download_progress :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_downloaded_bytes { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnityWebRequest as :: unity2 :: ClassIdentity > :: class () , "get_downloadedBytes" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnityWebRequest as :: unity2 :: ClassIdentity > :: NAME , "get_downloadedBytes" , e) , } } } pub unsafe fn get_downloaded_bytes (this : UnityWebRequest , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> u64 { let inner : extern "C" fn (UnityWebRequest , :: unity2 :: OptionalMethod ,) -> u64 = :: core :: mem :: transmute (__lookup_get_downloaded_bytes :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_redirect_limit_from_scripting { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnityWebRequest as :: unity2 :: ClassIdentity > :: class () , "SetRedirectLimitFromScripting" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnityWebRequest as :: unity2 :: ClassIdentity > :: NAME , "SetRedirectLimitFromScripting" , e) , } } } pub unsafe fn set_redirect_limit_from_scripting (this : UnityWebRequest , limit : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnityWebRequest , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_redirect_limit_from_scripting :: get_method_info () . method_ptr ,) ; inner (this , limit , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_redirect_limit { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnityWebRequest as :: unity2 :: ClassIdentity > :: class () , "set_redirectLimit" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnityWebRequest as :: unity2 :: ClassIdentity > :: NAME , "set_redirectLimit" , e) , } } } pub unsafe fn set_redirect_limit (this : UnityWebRequest , value : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnityWebRequest , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_redirect_limit :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_chunked { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnityWebRequest as :: unity2 :: ClassIdentity > :: class () , "SetChunked" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnityWebRequest as :: unity2 :: ClassIdentity > :: NAME , "SetChunked" , e) , } } } pub unsafe fn set_chunked (this : UnityWebRequest , chunked : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: networking :: unitywebrequest :: UnityWebRequest_UnityWebRequestError { let inner : extern "C" fn (UnityWebRequest , bool , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: networking :: unitywebrequest :: UnityWebRequest_UnityWebRequestError = :: core :: mem :: transmute (__lookup_set_chunked :: get_method_info () . method_ptr ,) ; inner (this , chunked , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_chunked_transfer { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnityWebRequest as :: unity2 :: ClassIdentity > :: class () , "set_chunkedTransfer" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnityWebRequest as :: unity2 :: ClassIdentity > :: NAME , "set_chunkedTransfer" , e) , } } } pub unsafe fn set_chunked_transfer (this : UnityWebRequest , value : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnityWebRequest , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_chunked_transfer :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_internal_set_request_header { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnityWebRequest as :: unity2 :: ClassIdentity > :: class () , "InternalSetRequestHeader" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnityWebRequest as :: unity2 :: ClassIdentity > :: NAME , "InternalSetRequestHeader" , e) , } } } pub unsafe fn internal_set_request_header (this : UnityWebRequest , name : :: unity2 :: Il2CppString , value : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: networking :: unitywebrequest :: UnityWebRequest_UnityWebRequestError { let inner : extern "C" fn (UnityWebRequest , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: networking :: unitywebrequest :: UnityWebRequest_UnityWebRequestError = :: core :: mem :: transmute (__lookup_internal_set_request_header :: get_method_info () . method_ptr ,) ; inner (this , name , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_request_header { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnityWebRequest as :: unity2 :: ClassIdentity > :: class () , "SetRequestHeader" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnityWebRequest as :: unity2 :: ClassIdentity > :: NAME , "SetRequestHeader" , e) , } } } pub unsafe fn set_request_header (this : UnityWebRequest , name : :: unity2 :: Il2CppString , value : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnityWebRequest , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_request_header :: get_method_info () . method_ptr ,) ; inner (this , name , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_response_header { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnityWebRequest as :: unity2 :: ClassIdentity > :: class () , "GetResponseHeader" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnityWebRequest as :: unity2 :: ClassIdentity > :: NAME , "GetResponseHeader" , e) , } } } pub unsafe fn get_response_header (this : UnityWebRequest , name : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (UnityWebRequest , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_response_header :: get_method_info () . method_ptr ,) ; inner (this , name , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_response_header_keys { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnityWebRequest as :: unity2 :: ClassIdentity > :: class () , "GetResponseHeaderKeys" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnityWebRequest as :: unity2 :: ClassIdentity > :: NAME , "GetResponseHeaderKeys" , e) , } } } pub unsafe fn get_response_header_keys (this : UnityWebRequest , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > { let inner : extern "C" fn (UnityWebRequest , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > = :: core :: mem :: transmute (__lookup_get_response_header_keys :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_response_headers { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnityWebRequest as :: unity2 :: ClassIdentity > :: class () , "GetResponseHeaders" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnityWebRequest as :: unity2 :: ClassIdentity > :: NAME , "GetResponseHeaders" , e) , } } } pub unsafe fn get_response_headers (this : UnityWebRequest , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , :: unity2 :: Il2CppString > { let inner : extern "C" fn (UnityWebRequest , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , :: unity2 :: Il2CppString > = :: core :: mem :: transmute (__lookup_get_response_headers :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_upload_handler { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: networking :: uploadhandler :: UploadHandler as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnityWebRequest as :: unity2 :: ClassIdentity > :: class () , "SetUploadHandler" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnityWebRequest as :: unity2 :: ClassIdentity > :: NAME , "SetUploadHandler" , e) , } } } pub unsafe fn set_upload_handler (this : UnityWebRequest , uh : crate :: unity_engine :: networking :: uploadhandler :: UploadHandler , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: networking :: unitywebrequest :: UnityWebRequest_UnityWebRequestError { let inner : extern "C" fn (UnityWebRequest , crate :: unity_engine :: networking :: uploadhandler :: UploadHandler , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: networking :: unitywebrequest :: UnityWebRequest_UnityWebRequestError = :: core :: mem :: transmute (__lookup_set_upload_handler :: get_method_info () . method_ptr ,) ; inner (this , uh , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_upload_handler { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnityWebRequest as :: unity2 :: ClassIdentity > :: class () , "get_uploadHandler" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnityWebRequest as :: unity2 :: ClassIdentity > :: NAME , "get_uploadHandler" , e) , } } } pub unsafe fn get_upload_handler (this : UnityWebRequest , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: networking :: uploadhandler :: UploadHandler { let inner : extern "C" fn (UnityWebRequest , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: networking :: uploadhandler :: UploadHandler = :: core :: mem :: transmute (__lookup_get_upload_handler :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_download_handler { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: networking :: downloadhandler :: DownloadHandler as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnityWebRequest as :: unity2 :: ClassIdentity > :: class () , "SetDownloadHandler" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnityWebRequest as :: unity2 :: ClassIdentity > :: NAME , "SetDownloadHandler" , e) , } } } pub unsafe fn set_download_handler (this : UnityWebRequest , dh : crate :: unity_engine :: networking :: downloadhandler :: DownloadHandler , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: networking :: unitywebrequest :: UnityWebRequest_UnityWebRequestError { let inner : extern "C" fn (UnityWebRequest , crate :: unity_engine :: networking :: downloadhandler :: DownloadHandler , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: networking :: unitywebrequest :: UnityWebRequest_UnityWebRequestError = :: core :: mem :: transmute (__lookup_set_download_handler :: get_method_info () . method_ptr ,) ; inner (this , dh , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_download_handler { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnityWebRequest as :: unity2 :: ClassIdentity > :: class () , "get_downloadHandler" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnityWebRequest as :: unity2 :: ClassIdentity > :: NAME , "get_downloadHandler" , e) , } } } pub unsafe fn get_download_handler (this : UnityWebRequest , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: networking :: downloadhandler :: DownloadHandler { let inner : extern "C" fn (UnityWebRequest , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: networking :: downloadhandler :: DownloadHandler = :: core :: mem :: transmute (__lookup_get_download_handler :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_certificate_handler { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: networking :: certificatehandler :: CertificateHandler as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnityWebRequest as :: unity2 :: ClassIdentity > :: class () , "SetCertificateHandler" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnityWebRequest as :: unity2 :: ClassIdentity > :: NAME , "SetCertificateHandler" , e) , } } } pub unsafe fn set_certificate_handler (this : UnityWebRequest , ch : crate :: unity_engine :: networking :: certificatehandler :: CertificateHandler , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: networking :: unitywebrequest :: UnityWebRequest_UnityWebRequestError { let inner : extern "C" fn (UnityWebRequest , crate :: unity_engine :: networking :: certificatehandler :: CertificateHandler , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: networking :: unitywebrequest :: UnityWebRequest_UnityWebRequestError = :: core :: mem :: transmute (__lookup_set_certificate_handler :: get_method_info () . method_ptr ,) ; inner (this , ch , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_certificate_handler { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnityWebRequest as :: unity2 :: ClassIdentity > :: class () , "get_certificateHandler" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnityWebRequest as :: unity2 :: ClassIdentity > :: NAME , "get_certificateHandler" , e) , } } } pub unsafe fn get_certificate_handler (this : UnityWebRequest , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: networking :: certificatehandler :: CertificateHandler { let inner : extern "C" fn (UnityWebRequest , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: networking :: certificatehandler :: CertificateHandler = :: core :: mem :: transmute (__lookup_get_certificate_handler :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_timeout_msec { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnityWebRequest as :: unity2 :: ClassIdentity > :: class () , "SetTimeoutMsec" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnityWebRequest as :: unity2 :: ClassIdentity > :: NAME , "SetTimeoutMsec" , e) , } } } pub unsafe fn set_timeout_msec (this : UnityWebRequest , timeout : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: networking :: unitywebrequest :: UnityWebRequest_UnityWebRequestError { let inner : extern "C" fn (UnityWebRequest , i32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: networking :: unitywebrequest :: UnityWebRequest_UnityWebRequestError = :: core :: mem :: transmute (__lookup_set_timeout_msec :: get_method_info () . method_ptr ,) ; inner (this , timeout , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_timeout { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnityWebRequest as :: unity2 :: ClassIdentity > :: class () , "set_timeout" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnityWebRequest as :: unity2 :: ClassIdentity > :: NAME , "set_timeout" , e) , } } } pub unsafe fn set_timeout (this : UnityWebRequest , value : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnityWebRequest , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_timeout :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnityWebRequest as :: unity2 :: ClassIdentity > :: class () , "Get" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnityWebRequest as :: unity2 :: ClassIdentity > :: NAME , "Get" , e) , } } } pub unsafe fn get (uri : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: networking :: unitywebrequest :: UnityWebRequest { let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: networking :: unitywebrequest :: UnityWebRequest = :: core :: mem :: transmute (__lookup_get :: get_method_info () . method_ptr ,) ; inner (uri , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_post { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: wwwform :: WWWForm as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnityWebRequest as :: unity2 :: ClassIdentity > :: class () , "Post" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnityWebRequest as :: unity2 :: ClassIdentity > :: NAME , "Post" , e) , } } } pub unsafe fn post (uri : :: unity2 :: Il2CppString , form_data : crate :: unity_engine :: wwwform :: WWWForm , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: networking :: unitywebrequest :: UnityWebRequest { let inner : extern "C" fn (:: unity2 :: Il2CppString , crate :: unity_engine :: wwwform :: WWWForm , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: networking :: unitywebrequest :: UnityWebRequest = :: core :: mem :: transmute (__lookup_post :: get_method_info () . method_ptr ,) ; inner (uri , form_data , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_setup_post { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: networking :: unitywebrequest :: UnityWebRequest as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: wwwform :: WWWForm as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnityWebRequest as :: unity2 :: ClassIdentity > :: class () , "SetupPost" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnityWebRequest as :: unity2 :: ClassIdentity > :: NAME , "SetupPost" , e) , } } } pub unsafe fn setup_post (request : crate :: unity_engine :: networking :: unitywebrequest :: UnityWebRequest , form_data : crate :: unity_engine :: wwwform :: WWWForm , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: unity_engine :: networking :: unitywebrequest :: UnityWebRequest , crate :: unity_engine :: wwwform :: WWWForm , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_setup_post :: get_method_info () . method_ptr ,) ; inner (request , form_data , __unity2_method_info) } }
+
+#[cfg(feature = "unity_engine-networking-unitywebrequest")]
+impl UnityWebRequest { # [doc = "`GetWebErrorString(crate::unity_engine::networking::unitywebrequest::UnityWebRequest_UnityWebRequestError)` overload"] pub fn get_web_error_string (err : impl :: core :: convert :: Into < crate :: unity_engine :: networking :: unitywebrequest :: UnityWebRequest_UnityWebRequestError >) -> :: unity2 :: Il2CppString { unsafe { __UnityWebRequest_unity2_raw :: get_web_error_string (:: core :: convert :: Into :: into (err) , :: core :: option :: Option :: None) } } # [doc = "`GetHTTPStatusString(i64)` overload"] pub fn get_http_status_string (response_code : impl :: core :: convert :: Into < i64 >) -> :: unity2 :: Il2CppString { unsafe { __UnityWebRequest_unity2_raw :: get_http_status_string (:: core :: convert :: Into :: into (response_code) , :: core :: option :: Option :: None) } } # [doc = "`Create()` overload"] pub fn create () -> :: unity2 :: IntPtr { unsafe { __UnityWebRequest_unity2_raw :: create (:: core :: option :: Option :: None) } } # [doc = "`Get(::unity2::Il2CppString)` overload"] pub fn get (uri : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: unity_engine :: networking :: unitywebrequest :: UnityWebRequest { unsafe { __UnityWebRequest_unity2_raw :: get (:: core :: convert :: Into :: into (uri) , :: core :: option :: Option :: None) } } # [doc = "`Post(::unity2::Il2CppString, crate::unity_engine::wwwform::WWWForm)` overload"] pub fn post (uri : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , form_data : impl :: core :: convert :: Into < crate :: unity_engine :: wwwform :: WWWForm >) -> crate :: unity_engine :: networking :: unitywebrequest :: UnityWebRequest { unsafe { __UnityWebRequest_unity2_raw :: post (:: core :: convert :: Into :: into (uri) , :: core :: convert :: Into :: into (form_data) , :: core :: option :: Option :: None) } } # [doc = "`SetupPost(crate::unity_engine::networking::unitywebrequest::UnityWebRequest, crate::unity_engine::wwwform::WWWForm)` overload"] pub fn setup_post (request : impl :: core :: convert :: Into < crate :: unity_engine :: networking :: unitywebrequest :: UnityWebRequest > , form_data : impl :: core :: convert :: Into < crate :: unity_engine :: wwwform :: WWWForm >) -> () { unsafe { __UnityWebRequest_unity2_raw :: setup_post (:: core :: convert :: Into :: into (request) , :: core :: convert :: Into :: into (form_data) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-networking-unitywebrequest")]
+pub trait IUnityWebRequestMethods : IUnityWebRequest { # [doc = "`get_disposeCertificateHandlerOnDispose()` overload"] fn get_dispose_certificate_handler_on_dispose (self ,) -> bool { unsafe { let __receiver = < UnityWebRequest as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnityWebRequest_unity2_raw :: get_dispose_certificate_handler_on_dispose (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_disposeCertificateHandlerOnDispose(bool)` overload"] fn set_dispose_certificate_handler_on_dispose (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < UnityWebRequest as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnityWebRequest_unity2_raw :: set_dispose_certificate_handler_on_dispose (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_disposeDownloadHandlerOnDispose()` overload"] fn get_dispose_download_handler_on_dispose (self ,) -> bool { unsafe { let __receiver = < UnityWebRequest as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnityWebRequest_unity2_raw :: get_dispose_download_handler_on_dispose (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_disposeDownloadHandlerOnDispose(bool)` overload"] fn set_dispose_download_handler_on_dispose (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < UnityWebRequest as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnityWebRequest_unity2_raw :: set_dispose_download_handler_on_dispose (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_disposeUploadHandlerOnDispose()` overload"] fn get_dispose_upload_handler_on_dispose (self ,) -> bool { unsafe { let __receiver = < UnityWebRequest as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnityWebRequest_unity2_raw :: get_dispose_upload_handler_on_dispose (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_disposeUploadHandlerOnDispose(bool)` overload"] fn set_dispose_upload_handler_on_dispose (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < UnityWebRequest as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnityWebRequest_unity2_raw :: set_dispose_upload_handler_on_dispose (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`Release()` overload"] fn release (self ,) -> () { unsafe { let __receiver = < UnityWebRequest as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnityWebRequest_unity2_raw :: release (__receiver , :: core :: option :: Option :: None) } } # [doc = "`InternalDestroy()` overload"] fn internal_destroy (self ,) -> () { unsafe { let __receiver = < UnityWebRequest as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnityWebRequest_unity2_raw :: internal_destroy (__receiver , :: core :: option :: Option :: None) } } # [doc = "`InternalSetDefaults()` overload"] fn internal_set_defaults (self ,) -> () { unsafe { let __receiver = < UnityWebRequest as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnityWebRequest_unity2_raw :: internal_set_defaults (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"] fn ctor (self , url : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , method : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < UnityWebRequest as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnityWebRequest_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (url) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } # [doc = "`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString, crate::unity_engine::networking::downloadhandler::DownloadHandler, crate::unity_engine::networking::uploadhandler::UploadHandler)` overload"] fn ctor_2 (self , url : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , method : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , download_handler : impl :: core :: convert :: Into < crate :: unity_engine :: networking :: downloadhandler :: DownloadHandler > , upload_handler : impl :: core :: convert :: Into < crate :: unity_engine :: networking :: uploadhandler :: UploadHandler >) -> () { unsafe { let __receiver = < UnityWebRequest as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnityWebRequest_unity2_raw :: ctor_2 (__receiver , :: core :: convert :: Into :: into (url) , :: core :: convert :: Into :: into (method) , :: core :: convert :: Into :: into (download_handler) , :: core :: convert :: Into :: into (upload_handler) , :: core :: option :: Option :: None) } } # [doc = "`Finalize()` overload"] fn finalize (self ,) -> () { unsafe { let __receiver = < UnityWebRequest as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnityWebRequest_unity2_raw :: finalize (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Dispose()` overload"] fn dispose (self ,) -> () { unsafe { let __receiver = < UnityWebRequest as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnityWebRequest_unity2_raw :: dispose (__receiver , :: core :: option :: Option :: None) } } # [doc = "`DisposeHandlers()` overload"] fn dispose_handlers (self ,) -> () { unsafe { let __receiver = < UnityWebRequest as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnityWebRequest_unity2_raw :: dispose_handlers (__receiver , :: core :: option :: Option :: None) } } # [doc = "`BeginWebRequest()` overload"] fn begin_web_request (self ,) -> crate :: unity_engine :: networking :: unitywebrequestasyncoperation :: UnityWebRequestAsyncOperation { unsafe { let __receiver = < UnityWebRequest as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnityWebRequest_unity2_raw :: begin_web_request (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SendWebRequest()` overload"] fn send_web_request (self ,) -> crate :: unity_engine :: networking :: unitywebrequestasyncoperation :: UnityWebRequestAsyncOperation { unsafe { let __receiver = < UnityWebRequest as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnityWebRequest_unity2_raw :: send_web_request (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Abort()` overload"] fn abort (self ,) -> () { unsafe { let __receiver = < UnityWebRequest as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnityWebRequest_unity2_raw :: abort (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetMethod(crate::unity_engine::networking::unitywebrequest::UnityWebRequest_UnityWebRequestMethod)` overload"] fn set_method (self , method_type : impl :: core :: convert :: Into < crate :: unity_engine :: networking :: unitywebrequest :: UnityWebRequest_UnityWebRequestMethod >) -> crate :: unity_engine :: networking :: unitywebrequest :: UnityWebRequest_UnityWebRequestError { unsafe { let __receiver = < UnityWebRequest as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnityWebRequest_unity2_raw :: set_method (__receiver , :: core :: convert :: Into :: into (method_type) , :: core :: option :: Option :: None) } } # [doc = "`InternalSetMethod(crate::unity_engine::networking::unitywebrequest::UnityWebRequest_UnityWebRequestMethod)` overload"] fn internal_set_method (self , method_type : impl :: core :: convert :: Into < crate :: unity_engine :: networking :: unitywebrequest :: UnityWebRequest_UnityWebRequestMethod >) -> () { unsafe { let __receiver = < UnityWebRequest as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnityWebRequest_unity2_raw :: internal_set_method (__receiver , :: core :: convert :: Into :: into (method_type) , :: core :: option :: Option :: None) } } # [doc = "`SetCustomMethod(::unity2::Il2CppString)` overload"] fn set_custom_method (self , custom_method_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: unity_engine :: networking :: unitywebrequest :: UnityWebRequest_UnityWebRequestError { unsafe { let __receiver = < UnityWebRequest as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnityWebRequest_unity2_raw :: set_custom_method (__receiver , :: core :: convert :: Into :: into (custom_method_name) , :: core :: option :: Option :: None) } } # [doc = "`InternalSetCustomMethod(::unity2::Il2CppString)` overload"] fn internal_set_custom_method (self , custom_method_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < UnityWebRequest as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnityWebRequest_unity2_raw :: internal_set_custom_method (__receiver , :: core :: convert :: Into :: into (custom_method_name) , :: core :: option :: Option :: None) } } # [doc = "`GetMethod()` overload"] fn get_method (self ,) -> crate :: unity_engine :: networking :: unitywebrequest :: UnityWebRequest_UnityWebRequestMethod { unsafe { let __receiver = < UnityWebRequest as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnityWebRequest_unity2_raw :: get_method (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetCustomMethod()` overload"] fn get_custom_method (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < UnityWebRequest as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnityWebRequest_unity2_raw :: get_custom_method (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_method(::unity2::Il2CppString)` overload"] fn set_method_2 (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < UnityWebRequest as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnityWebRequest_unity2_raw :: set_method_2 (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`GetError()` overload"] fn get_error (self ,) -> crate :: unity_engine :: networking :: unitywebrequest :: UnityWebRequest_UnityWebRequestError { unsafe { let __receiver = < UnityWebRequest as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnityWebRequest_unity2_raw :: get_error (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_url()` overload"] fn get_url (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < UnityWebRequest as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnityWebRequest_unity2_raw :: get_url (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_url(::unity2::Il2CppString)` overload"] fn set_url (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < UnityWebRequest as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnityWebRequest_unity2_raw :: set_url (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`InternalSetUrl(::unity2::Il2CppString)` overload"] fn internal_set_url (self , url : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < UnityWebRequest as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnityWebRequest_unity2_raw :: internal_set_url (__receiver , :: core :: convert :: Into :: into (url) , :: core :: option :: Option :: None) } } # [doc = "`get_responseCode()` overload"] fn get_response_code (self ,) -> i64 { unsafe { let __receiver = < UnityWebRequest as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnityWebRequest_unity2_raw :: get_response_code (__receiver , :: core :: option :: Option :: None) } } # [doc = "`IsExecuting()` overload"] fn is_executing (self ,) -> bool { unsafe { let __receiver = < UnityWebRequest as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnityWebRequest_unity2_raw :: is_executing (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_isModifiable()` overload"] fn get_is_modifiable (self ,) -> bool { unsafe { let __receiver = < UnityWebRequest as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnityWebRequest_unity2_raw :: get_is_modifiable (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_isDone()` overload"] fn get_is_done (self ,) -> bool { unsafe { let __receiver = < UnityWebRequest as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnityWebRequest_unity2_raw :: get_is_done (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_result()` overload"] fn get_result (self ,) -> crate :: unity_engine :: networking :: unitywebrequest :: UnityWebRequest_Result { unsafe { let __receiver = < UnityWebRequest as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnityWebRequest_unity2_raw :: get_result (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetDownloadProgress()` overload"] fn get_download_progress (self ,) -> f32 { unsafe { let __receiver = < UnityWebRequest as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnityWebRequest_unity2_raw :: get_download_progress (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_downloadedBytes()` overload"] fn get_downloaded_bytes (self ,) -> u64 { unsafe { let __receiver = < UnityWebRequest as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnityWebRequest_unity2_raw :: get_downloaded_bytes (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetRedirectLimitFromScripting(i32)` overload"] fn set_redirect_limit_from_scripting (self , limit : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < UnityWebRequest as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnityWebRequest_unity2_raw :: set_redirect_limit_from_scripting (__receiver , :: core :: convert :: Into :: into (limit) , :: core :: option :: Option :: None) } } # [doc = "`set_redirectLimit(i32)` overload"] fn set_redirect_limit (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < UnityWebRequest as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnityWebRequest_unity2_raw :: set_redirect_limit (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`SetChunked(bool)` overload"] fn set_chunked (self , chunked : impl :: core :: convert :: Into < bool >) -> crate :: unity_engine :: networking :: unitywebrequest :: UnityWebRequest_UnityWebRequestError { unsafe { let __receiver = < UnityWebRequest as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnityWebRequest_unity2_raw :: set_chunked (__receiver , :: core :: convert :: Into :: into (chunked) , :: core :: option :: Option :: None) } } # [doc = "`set_chunkedTransfer(bool)` overload"] fn set_chunked_transfer (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < UnityWebRequest as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnityWebRequest_unity2_raw :: set_chunked_transfer (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`InternalSetRequestHeader(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"] fn internal_set_request_header (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: unity_engine :: networking :: unitywebrequest :: UnityWebRequest_UnityWebRequestError { unsafe { let __receiver = < UnityWebRequest as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnityWebRequest_unity2_raw :: internal_set_request_header (__receiver , :: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`SetRequestHeader(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"] fn set_request_header (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < UnityWebRequest as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnityWebRequest_unity2_raw :: set_request_header (__receiver , :: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`GetResponseHeader(::unity2::Il2CppString)` overload"] fn get_response_header (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < UnityWebRequest as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnityWebRequest_unity2_raw :: get_response_header (__receiver , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } # [doc = "`GetResponseHeaderKeys()` overload"] fn get_response_header_keys (self ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > { unsafe { let __receiver = < UnityWebRequest as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnityWebRequest_unity2_raw :: get_response_header_keys (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetResponseHeaders()` overload"] fn get_response_headers (self ,) -> crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , :: unity2 :: Il2CppString > { unsafe { let __receiver = < UnityWebRequest as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnityWebRequest_unity2_raw :: get_response_headers (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetUploadHandler(crate::unity_engine::networking::uploadhandler::UploadHandler)` overload"] fn set_upload_handler (self , uh : impl :: core :: convert :: Into < crate :: unity_engine :: networking :: uploadhandler :: UploadHandler >) -> crate :: unity_engine :: networking :: unitywebrequest :: UnityWebRequest_UnityWebRequestError { unsafe { let __receiver = < UnityWebRequest as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnityWebRequest_unity2_raw :: set_upload_handler (__receiver , :: core :: convert :: Into :: into (uh) , :: core :: option :: Option :: None) } } # [doc = "`get_uploadHandler()` overload"] fn get_upload_handler (self ,) -> crate :: unity_engine :: networking :: uploadhandler :: UploadHandler { unsafe { let __receiver = < UnityWebRequest as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnityWebRequest_unity2_raw :: get_upload_handler (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetDownloadHandler(crate::unity_engine::networking::downloadhandler::DownloadHandler)` overload"] fn set_download_handler (self , dh : impl :: core :: convert :: Into < crate :: unity_engine :: networking :: downloadhandler :: DownloadHandler >) -> crate :: unity_engine :: networking :: unitywebrequest :: UnityWebRequest_UnityWebRequestError { unsafe { let __receiver = < UnityWebRequest as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnityWebRequest_unity2_raw :: set_download_handler (__receiver , :: core :: convert :: Into :: into (dh) , :: core :: option :: Option :: None) } } # [doc = "`get_downloadHandler()` overload"] fn get_download_handler (self ,) -> crate :: unity_engine :: networking :: downloadhandler :: DownloadHandler { unsafe { let __receiver = < UnityWebRequest as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnityWebRequest_unity2_raw :: get_download_handler (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetCertificateHandler(crate::unity_engine::networking::certificatehandler::CertificateHandler)` overload"] fn set_certificate_handler (self , ch : impl :: core :: convert :: Into < crate :: unity_engine :: networking :: certificatehandler :: CertificateHandler >) -> crate :: unity_engine :: networking :: unitywebrequest :: UnityWebRequest_UnityWebRequestError { unsafe { let __receiver = < UnityWebRequest as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnityWebRequest_unity2_raw :: set_certificate_handler (__receiver , :: core :: convert :: Into :: into (ch) , :: core :: option :: Option :: None) } } # [doc = "`get_certificateHandler()` overload"] fn get_certificate_handler (self ,) -> crate :: unity_engine :: networking :: certificatehandler :: CertificateHandler { unsafe { let __receiver = < UnityWebRequest as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnityWebRequest_unity2_raw :: get_certificate_handler (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetTimeoutMsec(i32)` overload"] fn set_timeout_msec (self , timeout : impl :: core :: convert :: Into < i32 >) -> crate :: unity_engine :: networking :: unitywebrequest :: UnityWebRequest_UnityWebRequestError { unsafe { let __receiver = < UnityWebRequest as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnityWebRequest_unity2_raw :: set_timeout_msec (__receiver , :: core :: convert :: Into :: into (timeout) , :: core :: option :: Option :: None) } } # [doc = "`set_timeout(i32)` overload"] fn set_timeout (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < UnityWebRequest as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnityWebRequest_unity2_raw :: set_timeout (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-networking-unitywebrequest")]
+impl < __T : IUnityWebRequest > IUnityWebRequestMethods for __T { }
+
+#[cfg(feature = "unity_engine-networking-unitywebrequest")]
+impl UnityWebRequest { pub fn get_web_error_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnityWebRequest_unity2_raw :: __lookup_get_web_error_string :: get_method_info () } pub fn get_http_status_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnityWebRequest_unity2_raw :: __lookup_get_http_status_string :: get_method_info () } pub fn get_dispose_certificate_handler_on_dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnityWebRequest_unity2_raw :: __lookup_get_dispose_certificate_handler_on_dispose :: get_method_info () } pub fn set_dispose_certificate_handler_on_dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnityWebRequest_unity2_raw :: __lookup_set_dispose_certificate_handler_on_dispose :: get_method_info () } pub fn get_dispose_download_handler_on_dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnityWebRequest_unity2_raw :: __lookup_get_dispose_download_handler_on_dispose :: get_method_info () } pub fn set_dispose_download_handler_on_dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnityWebRequest_unity2_raw :: __lookup_set_dispose_download_handler_on_dispose :: get_method_info () } pub fn get_dispose_upload_handler_on_dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnityWebRequest_unity2_raw :: __lookup_get_dispose_upload_handler_on_dispose :: get_method_info () } pub fn set_dispose_upload_handler_on_dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnityWebRequest_unity2_raw :: __lookup_set_dispose_upload_handler_on_dispose :: get_method_info () } pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnityWebRequest_unity2_raw :: __lookup_create :: get_method_info () } pub fn release_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnityWebRequest_unity2_raw :: __lookup_release :: get_method_info () } pub fn internal_destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnityWebRequest_unity2_raw :: __lookup_internal_destroy :: get_method_info () } pub fn internal_set_defaults_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnityWebRequest_unity2_raw :: __lookup_internal_set_defaults :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnityWebRequest_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnityWebRequest_unity2_raw :: __lookup_ctor_2 :: get_method_info () } pub fn finalize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnityWebRequest_unity2_raw :: __lookup_finalize :: get_method_info () } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnityWebRequest_unity2_raw :: __lookup_dispose :: get_method_info () } pub fn dispose_handlers_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnityWebRequest_unity2_raw :: __lookup_dispose_handlers :: get_method_info () } pub fn begin_web_request_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnityWebRequest_unity2_raw :: __lookup_begin_web_request :: get_method_info () } pub fn send_web_request_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnityWebRequest_unity2_raw :: __lookup_send_web_request :: get_method_info () } pub fn abort_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnityWebRequest_unity2_raw :: __lookup_abort :: get_method_info () } pub fn set_method_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnityWebRequest_unity2_raw :: __lookup_set_method :: get_method_info () } pub fn internal_set_method_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnityWebRequest_unity2_raw :: __lookup_internal_set_method :: get_method_info () } pub fn set_custom_method_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnityWebRequest_unity2_raw :: __lookup_set_custom_method :: get_method_info () } pub fn internal_set_custom_method_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnityWebRequest_unity2_raw :: __lookup_internal_set_custom_method :: get_method_info () } pub fn get_method_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnityWebRequest_unity2_raw :: __lookup_get_method :: get_method_info () } pub fn get_custom_method_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnityWebRequest_unity2_raw :: __lookup_get_custom_method :: get_method_info () } pub fn set_method_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnityWebRequest_unity2_raw :: __lookup_set_method_2 :: get_method_info () } pub fn get_error_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnityWebRequest_unity2_raw :: __lookup_get_error :: get_method_info () } pub fn get_url_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnityWebRequest_unity2_raw :: __lookup_get_url :: get_method_info () } pub fn set_url_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnityWebRequest_unity2_raw :: __lookup_set_url :: get_method_info () } pub fn internal_set_url_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnityWebRequest_unity2_raw :: __lookup_internal_set_url :: get_method_info () } pub fn get_response_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnityWebRequest_unity2_raw :: __lookup_get_response_code :: get_method_info () } pub fn is_executing_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnityWebRequest_unity2_raw :: __lookup_is_executing :: get_method_info () } pub fn get_is_modifiable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnityWebRequest_unity2_raw :: __lookup_get_is_modifiable :: get_method_info () } pub fn get_is_done_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnityWebRequest_unity2_raw :: __lookup_get_is_done :: get_method_info () } pub fn get_result_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnityWebRequest_unity2_raw :: __lookup_get_result :: get_method_info () } pub fn get_download_progress_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnityWebRequest_unity2_raw :: __lookup_get_download_progress :: get_method_info () } pub fn get_downloaded_bytes_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnityWebRequest_unity2_raw :: __lookup_get_downloaded_bytes :: get_method_info () } pub fn set_redirect_limit_from_scripting_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnityWebRequest_unity2_raw :: __lookup_set_redirect_limit_from_scripting :: get_method_info () } pub fn set_redirect_limit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnityWebRequest_unity2_raw :: __lookup_set_redirect_limit :: get_method_info () } pub fn set_chunked_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnityWebRequest_unity2_raw :: __lookup_set_chunked :: get_method_info () } pub fn set_chunked_transfer_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnityWebRequest_unity2_raw :: __lookup_set_chunked_transfer :: get_method_info () } pub fn internal_set_request_header_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnityWebRequest_unity2_raw :: __lookup_internal_set_request_header :: get_method_info () } pub fn set_request_header_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnityWebRequest_unity2_raw :: __lookup_set_request_header :: get_method_info () } pub fn get_response_header_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnityWebRequest_unity2_raw :: __lookup_get_response_header :: get_method_info () } pub fn get_response_header_keys_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnityWebRequest_unity2_raw :: __lookup_get_response_header_keys :: get_method_info () } pub fn get_response_headers_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnityWebRequest_unity2_raw :: __lookup_get_response_headers :: get_method_info () } pub fn set_upload_handler_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnityWebRequest_unity2_raw :: __lookup_set_upload_handler :: get_method_info () } pub fn get_upload_handler_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnityWebRequest_unity2_raw :: __lookup_get_upload_handler :: get_method_info () } pub fn set_download_handler_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnityWebRequest_unity2_raw :: __lookup_set_download_handler :: get_method_info () } pub fn get_download_handler_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnityWebRequest_unity2_raw :: __lookup_get_download_handler :: get_method_info () } pub fn set_certificate_handler_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnityWebRequest_unity2_raw :: __lookup_set_certificate_handler :: get_method_info () } pub fn get_certificate_handler_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnityWebRequest_unity2_raw :: __lookup_get_certificate_handler :: get_method_info () } pub fn set_timeout_msec_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnityWebRequest_unity2_raw :: __lookup_set_timeout_msec :: get_method_info () } pub fn set_timeout_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnityWebRequest_unity2_raw :: __lookup_set_timeout :: get_method_info () } pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnityWebRequest_unity2_raw :: __lookup_get :: get_method_info () } pub fn post_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnityWebRequest_unity2_raw :: __lookup_post :: get_method_info () } pub fn setup_post_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnityWebRequest_unity2_raw :: __lookup_setup_post :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-networking-unitywebrequest")]
 impl UnityWebRequest {
-    #[doc = "`GetWebErrorString(crate::unity_engine::networking::unitywebrequest::UnityWebRequest_UnityWebRequestError)` overload"]
-    pub fn get_web_error_string(
-        err: impl ::core::convert::Into<crate::unity_engine::networking::unitywebrequest::UnityWebRequest_UnityWebRequestError>,
-    ) -> ::unity2::Il2CppString {
-        unsafe { __UnityWebRequest_unity2_raw::get_web_error_string(::core::convert::Into::into(err), ::core::option::Option::None) }
-    }
+# [doc = "`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString)` — overload selector"] pub fn new (url : :: unity2 :: Il2CppString , method : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (UnityWebRequest) , :: core :: stringify ! (new) ,)) ; < Self as IUnityWebRequestMethods > :: ctor (this , url , method) ; this }
 
-    #[doc = "`GetHTTPStatusString(i64)` overload"]
-    pub fn get_http_status_string(response_code: impl ::core::convert::Into<i64>) -> ::unity2::Il2CppString {
-        unsafe { __UnityWebRequest_unity2_raw::get_http_status_string(::core::convert::Into::into(response_code), ::core::option::Option::None) }
-    }
-
-    #[doc = "`Create()` overload"]
-    pub fn create() -> ::unity2::IntPtr {
-        unsafe { __UnityWebRequest_unity2_raw::create(::core::option::Option::None) }
-    }
-
-    #[doc = "`Get(::unity2::Il2CppString)` overload"]
-    pub fn get(uri: impl ::core::convert::Into<::unity2::Il2CppString>) -> crate::unity_engine::networking::unitywebrequest::UnityWebRequest {
-        unsafe { __UnityWebRequest_unity2_raw::get(::core::convert::Into::into(uri), ::core::option::Option::None) }
-    }
-
-    #[doc = "`Post(::unity2::Il2CppString, crate::unity_engine::wwwform::WWWForm)` overload"]
-    pub fn post(
-        uri: impl ::core::convert::Into<::unity2::Il2CppString>,
-        form_data: impl ::core::convert::Into<crate::unity_engine::wwwform::WWWForm>,
-    ) -> crate::unity_engine::networking::unitywebrequest::UnityWebRequest {
-        unsafe {
-            __UnityWebRequest_unity2_raw::post(
-                ::core::convert::Into::into(uri),
-                ::core::convert::Into::into(form_data),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`SetupPost(crate::unity_engine::networking::unitywebrequest::UnityWebRequest, crate::unity_engine::wwwform::WWWForm)` overload"]
-    pub fn setup_post(
-        request: impl ::core::convert::Into<crate::unity_engine::networking::unitywebrequest::UnityWebRequest>,
-        form_data: impl ::core::convert::Into<crate::unity_engine::wwwform::WWWForm>,
-    ) -> () {
-        unsafe {
-            __UnityWebRequest_unity2_raw::setup_post(
-                ::core::convert::Into::into(request),
-                ::core::convert::Into::into(form_data),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-networking-unitywebrequest")]
-pub trait IUnityWebRequestMethods: IUnityWebRequest {
-    #[doc = "`get_disposeCertificateHandlerOnDispose()` overload"]
-    fn get_dispose_certificate_handler_on_dispose(self) -> bool {
-        unsafe {
-            let __receiver = <UnityWebRequest as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnityWebRequest_unity2_raw::get_dispose_certificate_handler_on_dispose(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_disposeCertificateHandlerOnDispose(bool)` overload"]
-    fn set_dispose_certificate_handler_on_dispose(self, value: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver = <UnityWebRequest as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnityWebRequest_unity2_raw::set_dispose_certificate_handler_on_dispose(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_disposeDownloadHandlerOnDispose()` overload"]
-    fn get_dispose_download_handler_on_dispose(self) -> bool {
-        unsafe {
-            let __receiver = <UnityWebRequest as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnityWebRequest_unity2_raw::get_dispose_download_handler_on_dispose(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_disposeDownloadHandlerOnDispose(bool)` overload"]
-    fn set_dispose_download_handler_on_dispose(self, value: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver = <UnityWebRequest as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnityWebRequest_unity2_raw::set_dispose_download_handler_on_dispose(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_disposeUploadHandlerOnDispose()` overload"]
-    fn get_dispose_upload_handler_on_dispose(self) -> bool {
-        unsafe {
-            let __receiver = <UnityWebRequest as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnityWebRequest_unity2_raw::get_dispose_upload_handler_on_dispose(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_disposeUploadHandlerOnDispose(bool)` overload"]
-    fn set_dispose_upload_handler_on_dispose(self, value: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver = <UnityWebRequest as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnityWebRequest_unity2_raw::set_dispose_upload_handler_on_dispose(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Release()` overload"]
-    fn release(self) -> () {
-        unsafe {
-            let __receiver = <UnityWebRequest as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnityWebRequest_unity2_raw::release(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`InternalDestroy()` overload"]
-    fn internal_destroy(self) -> () {
-        unsafe {
-            let __receiver = <UnityWebRequest as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnityWebRequest_unity2_raw::internal_destroy(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`InternalSetDefaults()` overload"]
-    fn internal_set_defaults(self) -> () {
-        unsafe {
-            let __receiver = <UnityWebRequest as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnityWebRequest_unity2_raw::internal_set_defaults(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
-    fn ctor(self, url: impl ::core::convert::Into<::unity2::Il2CppString>, method: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver = <UnityWebRequest as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnityWebRequest_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(url),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString, crate::unity_engine::networking::downloadhandler::DownloadHandler, crate::unity_engine::networking::uploadhandler::UploadHandler)` overload"]
-    fn ctor_2(
-        self,
-        url: impl ::core::convert::Into<::unity2::Il2CppString>,
-        method: impl ::core::convert::Into<::unity2::Il2CppString>,
-        download_handler: impl ::core::convert::Into<crate::unity_engine::networking::downloadhandler::DownloadHandler>,
-        upload_handler: impl ::core::convert::Into<crate::unity_engine::networking::uploadhandler::UploadHandler>,
-    ) -> () {
-        unsafe {
-            let __receiver = <UnityWebRequest as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnityWebRequest_unity2_raw::ctor_2(
-                __receiver,
-                ::core::convert::Into::into(url),
-                ::core::convert::Into::into(method),
-                ::core::convert::Into::into(download_handler),
-                ::core::convert::Into::into(upload_handler),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Finalize()` overload"]
-    fn finalize(self) -> () {
-        unsafe {
-            let __receiver = <UnityWebRequest as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnityWebRequest_unity2_raw::finalize(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Dispose()` overload"]
-    fn dispose(self) -> () {
-        unsafe {
-            let __receiver = <UnityWebRequest as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnityWebRequest_unity2_raw::dispose(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`DisposeHandlers()` overload"]
-    fn dispose_handlers(self) -> () {
-        unsafe {
-            let __receiver = <UnityWebRequest as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnityWebRequest_unity2_raw::dispose_handlers(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`BeginWebRequest()` overload"]
-    fn begin_web_request(self) -> crate::unity_engine::networking::unitywebrequestasyncoperation::UnityWebRequestAsyncOperation {
-        unsafe {
-            let __receiver = <UnityWebRequest as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnityWebRequest_unity2_raw::begin_web_request(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SendWebRequest()` overload"]
-    fn send_web_request(self) -> crate::unity_engine::networking::unitywebrequestasyncoperation::UnityWebRequestAsyncOperation {
-        unsafe {
-            let __receiver = <UnityWebRequest as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnityWebRequest_unity2_raw::send_web_request(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Abort()` overload"]
-    fn abort(self) -> () {
-        unsafe {
-            let __receiver = <UnityWebRequest as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnityWebRequest_unity2_raw::abort(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetMethod(crate::unity_engine::networking::unitywebrequest::UnityWebRequest_UnityWebRequestMethod)` overload"]
-    fn set_method(
-        self,
-        method_type: impl ::core::convert::Into<crate::unity_engine::networking::unitywebrequest::UnityWebRequest_UnityWebRequestMethod>,
-    ) -> crate::unity_engine::networking::unitywebrequest::UnityWebRequest_UnityWebRequestError {
-        unsafe {
-            let __receiver = <UnityWebRequest as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnityWebRequest_unity2_raw::set_method(__receiver, ::core::convert::Into::into(method_type), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`InternalSetMethod(crate::unity_engine::networking::unitywebrequest::UnityWebRequest_UnityWebRequestMethod)` overload"]
-    fn internal_set_method(
-        self,
-        method_type: impl ::core::convert::Into<crate::unity_engine::networking::unitywebrequest::UnityWebRequest_UnityWebRequestMethod>,
-    ) -> () {
-        unsafe {
-            let __receiver = <UnityWebRequest as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnityWebRequest_unity2_raw::internal_set_method(__receiver, ::core::convert::Into::into(method_type), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetCustomMethod(::unity2::Il2CppString)` overload"]
-    fn set_custom_method(
-        self,
-        custom_method_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> crate::unity_engine::networking::unitywebrequest::UnityWebRequest_UnityWebRequestError {
-        unsafe {
-            let __receiver = <UnityWebRequest as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnityWebRequest_unity2_raw::set_custom_method(__receiver, ::core::convert::Into::into(custom_method_name), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`InternalSetCustomMethod(::unity2::Il2CppString)` overload"]
-    fn internal_set_custom_method(self, custom_method_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver = <UnityWebRequest as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnityWebRequest_unity2_raw::internal_set_custom_method(
-                __receiver,
-                ::core::convert::Into::into(custom_method_name),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetMethod()` overload"]
-    fn get_method(self) -> crate::unity_engine::networking::unitywebrequest::UnityWebRequest_UnityWebRequestMethod {
-        unsafe {
-            let __receiver = <UnityWebRequest as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnityWebRequest_unity2_raw::get_method(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetCustomMethod()` overload"]
-    fn get_custom_method(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <UnityWebRequest as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnityWebRequest_unity2_raw::get_custom_method(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_method(::unity2::Il2CppString)` overload"]
-    fn set_method_2(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver = <UnityWebRequest as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnityWebRequest_unity2_raw::set_method_2(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetError()` overload"]
-    fn get_error(self) -> crate::unity_engine::networking::unitywebrequest::UnityWebRequest_UnityWebRequestError {
-        unsafe {
-            let __receiver = <UnityWebRequest as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnityWebRequest_unity2_raw::get_error(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_url()` overload"]
-    fn get_url(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <UnityWebRequest as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnityWebRequest_unity2_raw::get_url(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_url(::unity2::Il2CppString)` overload"]
-    fn set_url(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver = <UnityWebRequest as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnityWebRequest_unity2_raw::set_url(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`InternalSetUrl(::unity2::Il2CppString)` overload"]
-    fn internal_set_url(self, url: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver = <UnityWebRequest as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnityWebRequest_unity2_raw::internal_set_url(__receiver, ::core::convert::Into::into(url), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_responseCode()` overload"]
-    fn get_response_code(self) -> i64 {
-        unsafe {
-            let __receiver = <UnityWebRequest as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnityWebRequest_unity2_raw::get_response_code(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsExecuting()` overload"]
-    fn is_executing(self) -> bool {
-        unsafe {
-            let __receiver = <UnityWebRequest as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnityWebRequest_unity2_raw::is_executing(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_isModifiable()` overload"]
-    fn get_is_modifiable(self) -> bool {
-        unsafe {
-            let __receiver = <UnityWebRequest as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnityWebRequest_unity2_raw::get_is_modifiable(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_isDone()` overload"]
-    fn get_is_done(self) -> bool {
-        unsafe {
-            let __receiver = <UnityWebRequest as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnityWebRequest_unity2_raw::get_is_done(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_result()` overload"]
-    fn get_result(self) -> crate::unity_engine::networking::unitywebrequest::UnityWebRequest_Result {
-        unsafe {
-            let __receiver = <UnityWebRequest as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnityWebRequest_unity2_raw::get_result(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetDownloadProgress()` overload"]
-    fn get_download_progress(self) -> f32 {
-        unsafe {
-            let __receiver = <UnityWebRequest as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnityWebRequest_unity2_raw::get_download_progress(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_downloadedBytes()` overload"]
-    fn get_downloaded_bytes(self) -> u64 {
-        unsafe {
-            let __receiver = <UnityWebRequest as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnityWebRequest_unity2_raw::get_downloaded_bytes(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetRedirectLimitFromScripting(i32)` overload"]
-    fn set_redirect_limit_from_scripting(self, limit: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver = <UnityWebRequest as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnityWebRequest_unity2_raw::set_redirect_limit_from_scripting(
-                __receiver,
-                ::core::convert::Into::into(limit),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`set_redirectLimit(i32)` overload"]
-    fn set_redirect_limit(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver = <UnityWebRequest as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnityWebRequest_unity2_raw::set_redirect_limit(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetChunked(bool)` overload"]
-    fn set_chunked(
-        self,
-        chunked: impl ::core::convert::Into<bool>,
-    ) -> crate::unity_engine::networking::unitywebrequest::UnityWebRequest_UnityWebRequestError {
-        unsafe {
-            let __receiver = <UnityWebRequest as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnityWebRequest_unity2_raw::set_chunked(__receiver, ::core::convert::Into::into(chunked), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_chunkedTransfer(bool)` overload"]
-    fn set_chunked_transfer(self, value: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver = <UnityWebRequest as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnityWebRequest_unity2_raw::set_chunked_transfer(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`InternalSetRequestHeader(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
-    fn internal_set_request_header(
-        self,
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        value: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> crate::unity_engine::networking::unitywebrequest::UnityWebRequest_UnityWebRequestError {
-        unsafe {
-            let __receiver = <UnityWebRequest as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnityWebRequest_unity2_raw::internal_set_request_header(
-                __receiver,
-                ::core::convert::Into::into(name),
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetRequestHeader(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
-    fn set_request_header(
-        self,
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        value: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
-        unsafe {
-            let __receiver = <UnityWebRequest as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnityWebRequest_unity2_raw::set_request_header(
-                __receiver,
-                ::core::convert::Into::into(name),
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetResponseHeader(::unity2::Il2CppString)` overload"]
-    fn get_response_header(self, name: impl ::core::convert::Into<::unity2::Il2CppString>) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <UnityWebRequest as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnityWebRequest_unity2_raw::get_response_header(__receiver, ::core::convert::Into::into(name), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetResponseHeaderKeys()` overload"]
-    fn get_response_header_keys(self) -> ::unity2::Array<::unity2::Il2CppString> {
-        unsafe {
-            let __receiver = <UnityWebRequest as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnityWebRequest_unity2_raw::get_response_header_keys(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetResponseHeaders()` overload"]
-    fn get_response_headers(self) -> crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, ::unity2::Il2CppString> {
-        unsafe {
-            let __receiver = <UnityWebRequest as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnityWebRequest_unity2_raw::get_response_headers(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetUploadHandler(crate::unity_engine::networking::uploadhandler::UploadHandler)` overload"]
-    fn set_upload_handler(
-        self,
-        uh: impl ::core::convert::Into<crate::unity_engine::networking::uploadhandler::UploadHandler>,
-    ) -> crate::unity_engine::networking::unitywebrequest::UnityWebRequest_UnityWebRequestError {
-        unsafe {
-            let __receiver = <UnityWebRequest as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnityWebRequest_unity2_raw::set_upload_handler(__receiver, ::core::convert::Into::into(uh), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_uploadHandler()` overload"]
-    fn get_upload_handler(self) -> crate::unity_engine::networking::uploadhandler::UploadHandler {
-        unsafe {
-            let __receiver = <UnityWebRequest as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnityWebRequest_unity2_raw::get_upload_handler(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetDownloadHandler(crate::unity_engine::networking::downloadhandler::DownloadHandler)` overload"]
-    fn set_download_handler(
-        self,
-        dh: impl ::core::convert::Into<crate::unity_engine::networking::downloadhandler::DownloadHandler>,
-    ) -> crate::unity_engine::networking::unitywebrequest::UnityWebRequest_UnityWebRequestError {
-        unsafe {
-            let __receiver = <UnityWebRequest as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnityWebRequest_unity2_raw::set_download_handler(__receiver, ::core::convert::Into::into(dh), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_downloadHandler()` overload"]
-    fn get_download_handler(self) -> crate::unity_engine::networking::downloadhandler::DownloadHandler {
-        unsafe {
-            let __receiver = <UnityWebRequest as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnityWebRequest_unity2_raw::get_download_handler(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetCertificateHandler(crate::unity_engine::networking::certificatehandler::CertificateHandler)` overload"]
-    fn set_certificate_handler(
-        self,
-        ch: impl ::core::convert::Into<crate::unity_engine::networking::certificatehandler::CertificateHandler>,
-    ) -> crate::unity_engine::networking::unitywebrequest::UnityWebRequest_UnityWebRequestError {
-        unsafe {
-            let __receiver = <UnityWebRequest as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnityWebRequest_unity2_raw::set_certificate_handler(__receiver, ::core::convert::Into::into(ch), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_certificateHandler()` overload"]
-    fn get_certificate_handler(self) -> crate::unity_engine::networking::certificatehandler::CertificateHandler {
-        unsafe {
-            let __receiver = <UnityWebRequest as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnityWebRequest_unity2_raw::get_certificate_handler(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetTimeoutMsec(i32)` overload"]
-    fn set_timeout_msec(
-        self,
-        timeout: impl ::core::convert::Into<i32>,
-    ) -> crate::unity_engine::networking::unitywebrequest::UnityWebRequest_UnityWebRequestError {
-        unsafe {
-            let __receiver = <UnityWebRequest as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnityWebRequest_unity2_raw::set_timeout_msec(__receiver, ::core::convert::Into::into(timeout), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_timeout(i32)` overload"]
-    fn set_timeout(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver = <UnityWebRequest as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnityWebRequest_unity2_raw::set_timeout(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-networking-unitywebrequest")]
-impl<__T: IUnityWebRequest> IUnityWebRequestMethods for __T {}
-
-#[cfg(feature = "unity_engine-networking-unitywebrequest")]
-impl UnityWebRequest {
-    #[doc = "`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString)` — overload selector"]
-    pub fn new(url: ::unity2::Il2CppString, method: ::unity2::Il2CppString) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(UnityWebRequest),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IUnityWebRequestMethods>::ctor(this, url, method);
-        this
-    }
-
-    #[doc = "`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString, crate::unity_engine::networking::downloadhandler::DownloadHandler, crate::unity_engine::networking::uploadhandler::UploadHandler)` — overload selector"]
-    pub fn new_2(
-        url: ::unity2::Il2CppString,
-        method: ::unity2::Il2CppString,
-        download_handler: crate::unity_engine::networking::downloadhandler::DownloadHandler,
-        upload_handler: crate::unity_engine::networking::uploadhandler::UploadHandler,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(UnityWebRequest),
-                ::core::stringify!(new_2),
-            )
-        });
-        <Self as IUnityWebRequestMethods>::ctor_2(this, url, method, download_handler, upload_handler);
-        this
-    }
+# [doc = "`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString, crate::unity_engine::networking::downloadhandler::DownloadHandler, crate::unity_engine::networking::uploadhandler::UploadHandler)` — overload selector"] pub fn new_2 (url : :: unity2 :: Il2CppString , method : :: unity2 :: Il2CppString , download_handler : crate :: unity_engine :: networking :: downloadhandler :: DownloadHandler , upload_handler : crate :: unity_engine :: networking :: uploadhandler :: UploadHandler) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (UnityWebRequest) , :: core :: stringify ! (new_2) ,)) ; < Self as IUnityWebRequestMethods > :: ctor_2 (this , url , method , download_handler , upload_handler) ; this }
 }
 
 #[cfg(feature = "unity_engine-networking-unitywebrequest")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{
-        IUnityWebRequest, IUnityWebRequestMethods, UnityWebRequest, UnityWebRequest_Result, UnityWebRequest_UnityWebRequestError,
-        UnityWebRequest_UnityWebRequestMethod,
-    };
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::system::{object::IObject, r#enum::IEnum, valuetype::IValueType};
+    pub use super::UnityWebRequest_Result;
+    pub use super::UnityWebRequest_UnityWebRequestError;
+    pub use super::UnityWebRequest;
+    pub use super::IUnityWebRequest;
+    pub use super::IUnityWebRequestMethods;
+    pub use super::UnityWebRequest_UnityWebRequestMethod;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

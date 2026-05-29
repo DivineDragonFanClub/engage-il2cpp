@@ -2,181 +2,34 @@
 
 #[cfg(feature = "app-typename-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/typename/TypeName.md"))]
-    #[::unity2::class(namespace = "App", name = "TypeName")]
-    #[parent(crate::system::object::Object)]
-    pub struct TypeName {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/typename/TypeName.md"))] # [:: unity2 :: class (namespace = "App" , name = "TypeName")] # [parent (crate :: system :: object :: Object)] pub struct TypeName {}
+
 }
 
 #[cfg(feature = "app-typename-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-typename")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __TypeName_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_game_mode {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TypeName as ::unity2::ClassIdentity>::class(),
-                "get_GameMode",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TypeName as ::unity2::ClassIdentity>::NAME,
-                        "get_GameMode",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_game_mode(__unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_game_mode::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_difficulty {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TypeName as ::unity2::ClassIdentity>::class(),
-                "get_Difficulty",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TypeName as ::unity2::ClassIdentity>::NAME,
-                        "get_Difficulty",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_difficulty(__unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_difficulty::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_grow_mode {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TypeName as ::unity2::ClassIdentity>::class(),
-                "get_GrowMode",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TypeName as ::unity2::ClassIdentity>::NAME,
-                        "get_GrowMode",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_grow_mode(__unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_grow_mode::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_gender {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<TypeName as ::unity2::ClassIdentity>::class(), "get_Gender", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TypeName as ::unity2::ClassIdentity>::NAME,
-                        "get_Gender",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_gender(__unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_gender::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __TypeName_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_game_mode { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TypeName as :: unity2 :: ClassIdentity > :: class () , "get_GameMode" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TypeName as :: unity2 :: ClassIdentity > :: NAME , "get_GameMode" , e) , } } } pub unsafe fn get_game_mode (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_game_mode :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_difficulty { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TypeName as :: unity2 :: ClassIdentity > :: class () , "get_Difficulty" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TypeName as :: unity2 :: ClassIdentity > :: NAME , "get_Difficulty" , e) , } } } pub unsafe fn get_difficulty (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_difficulty :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_grow_mode { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TypeName as :: unity2 :: ClassIdentity > :: class () , "get_GrowMode" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TypeName as :: unity2 :: ClassIdentity > :: NAME , "get_GrowMode" , e) , } } } pub unsafe fn get_grow_mode (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_grow_mode :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_gender { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TypeName as :: unity2 :: ClassIdentity > :: class () , "get_Gender" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TypeName as :: unity2 :: ClassIdentity > :: NAME , "get_Gender" , e) , } } } pub unsafe fn get_gender (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_gender :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
 
 #[cfg(feature = "app-typename")]
-impl TypeName {
-    #[doc = "`get_GameMode()` overload"]
-    pub fn get_game_mode() -> ::unity2::Il2CppString {
-        unsafe { __TypeName_unity2_raw::get_game_mode(::core::option::Option::None) }
-    }
+impl TypeName { # [doc = "`get_GameMode()` overload"] pub fn get_game_mode () -> :: unity2 :: Il2CppString { unsafe { __TypeName_unity2_raw :: get_game_mode (:: core :: option :: Option :: None) } } # [doc = "`get_Difficulty()` overload"] pub fn get_difficulty () -> :: unity2 :: Il2CppString { unsafe { __TypeName_unity2_raw :: get_difficulty (:: core :: option :: Option :: None) } } # [doc = "`get_GrowMode()` overload"] pub fn get_grow_mode () -> :: unity2 :: Il2CppString { unsafe { __TypeName_unity2_raw :: get_grow_mode (:: core :: option :: Option :: None) } } # [doc = "`get_Gender()` overload"] pub fn get_gender () -> :: unity2 :: Il2CppString { unsafe { __TypeName_unity2_raw :: get_gender (:: core :: option :: Option :: None) } } }
 
-    #[doc = "`get_Difficulty()` overload"]
-    pub fn get_difficulty() -> ::unity2::Il2CppString {
-        unsafe { __TypeName_unity2_raw::get_difficulty(::core::option::Option::None) }
-    }
-
-    #[doc = "`get_GrowMode()` overload"]
-    pub fn get_grow_mode() -> ::unity2::Il2CppString {
-        unsafe { __TypeName_unity2_raw::get_grow_mode(::core::option::Option::None) }
-    }
-
-    #[doc = "`get_Gender()` overload"]
-    pub fn get_gender() -> ::unity2::Il2CppString {
-        unsafe { __TypeName_unity2_raw::get_gender(::core::option::Option::None) }
-    }
-}
+#[cfg(feature = "app-typename")]
+impl TypeName { pub fn get_game_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TypeName_unity2_raw :: __lookup_get_game_mode :: get_method_info () } pub fn get_difficulty_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TypeName_unity2_raw :: __lookup_get_difficulty :: get_method_info () } pub fn get_grow_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TypeName_unity2_raw :: __lookup_get_grow_mode :: get_method_info () } pub fn get_gender_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TypeName_unity2_raw :: __lookup_get_gender :: get_method_info () } }
 
 #[cfg(feature = "app-typename")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{ITypeName, TypeName};
+    pub use super::TypeName;
+    pub use super::ITypeName;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

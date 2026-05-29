@@ -2,48 +2,59 @@
 
 #[cfg(feature = "unity_engine-rendering-universal-shadowdata-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        valuetype::{IValueType, ValueType},
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/shadowdata/ShadowData.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct ShadowData {
-        pub supports_main_light_shadows: bool,
-        pub requires_screen_space_shadow_resolve: bool,
-        pub main_light_shadowmap_width: i32,
-        pub main_light_shadowmap_height: i32,
-        pub main_light_shadow_cascades_count: i32,
-        pub main_light_shadow_cascades_split: crate::unity_engine::vector3::Vector3,
-        pub supports_additional_light_shadows: bool,
-        pub additional_lights_shadowmap_width: i32,
-        pub additional_lights_shadowmap_height: i32,
-        pub supports_soft_shadows: bool,
-        pub shadowmap_depth_buffer_bits: i32,
-        pub bias: crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector4::Vector4>,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
 
-    impl ::unity2::ClassIdentity for ShadowData {
-        const NAME: &'static str = "ShadowData";
-        const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/shadowdata/ShadowData.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct ShadowData {
+    pub supports_main_light_shadows: bool,
+    pub requires_screen_space_shadow_resolve: bool,
+    pub main_light_shadowmap_width: i32,
+    pub main_light_shadowmap_height: i32,
+    pub main_light_shadow_cascades_count: i32,
+    pub main_light_shadow_cascades_split: crate :: unity_engine :: vector3 :: Vector3,
+    pub supports_additional_light_shadows: bool,
+    pub additional_lights_shadowmap_width: i32,
+    pub additional_lights_shadowmap_height: i32,
+    pub supports_soft_shadows: bool,
+    pub shadowmap_depth_buffer_bits: i32,
+    pub bias: crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: vector4 :: Vector4 >,
+}
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+
+impl ::unity2::ClassIdentity for ShadowData {
+    const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal";
+
+    const NAME: &'static str = "ShadowData";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for ShadowData {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl ::unity2::IlType for ShadowData {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
+
+}
+
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-shadowdata-types")]
@@ -53,9 +64,8 @@ pub use __types::*;
 #[doc(hidden)]
 pub mod prelude {
     pub use super::ShadowData;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::system::{object::IObject, valuetype::IValueType};
+    pub use crate::system::object::IObject;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

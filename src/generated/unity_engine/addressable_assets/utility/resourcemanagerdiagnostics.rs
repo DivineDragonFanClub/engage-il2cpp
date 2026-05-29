@@ -2,328 +2,46 @@
 
 #[cfg(feature = "unity_engine-addressable_assets-utility-resourcemanagerdiagnostics-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addressable_assets/utility/resourcemanagerdiagnostics/ResourceManagerDiagnostics.md"))]
-    #[::unity2::class(namespace = "UnityEngine.AddressableAssets.Utility", name = "ResourceManagerDiagnostics")]
-    #[parent(crate::system::object::Object)]
-    pub struct ResourceManagerDiagnostics {
-        #[offset(16)]
-        #[rename(name = "m_ResourceManager")]
-        pub m_resource_manager: crate::unity_engine::resource_management::resourcemanager::ResourceManager,
-        #[offset(24)]
-        #[rename(name = "m_cachedDiagnosticInfo")]
-        pub m_cached_diagnostic_info: crate::system::collections::generic::dictionary_2::Dictionary_2<
-            i32,
-            crate::unity_engine::addressable_assets::utility::diagnosticinfo::DiagnosticInfo,
-        >,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addressable_assets/utility/resourcemanagerdiagnostics/ResourceManagerDiagnostics.md"))] # [:: unity2 :: class (namespace = "UnityEngine.AddressableAssets.Utility" , name = "ResourceManagerDiagnostics")] # [parent (crate :: system :: object :: Object)] pub struct ResourceManagerDiagnostics {
+# [offset (16)] # [rename (name = "m_ResourceManager")] pub m_resource_manager : crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager ,
+# [offset (24)] # [rename (name = "m_cachedDiagnosticInfo")] pub m_cached_diagnostic_info : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < i32 , crate :: unity_engine :: addressable_assets :: utility :: diagnosticinfo :: DiagnosticInfo > ,
+}
+
 }
 
 #[cfg(feature = "unity_engine-addressable_assets-utility-resourcemanagerdiagnostics-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-addressable_assets-utility-resourcemanagerdiagnostics")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ResourceManagerDiagnostics_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::resource_management::resourcemanager::ResourceManager as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ResourceManagerDiagnostics as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ResourceManagerDiagnostics as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: ResourceManagerDiagnostics,
-        resource_manager: crate::unity_engine::resource_management::resourcemanager::ResourceManager,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ResourceManagerDiagnostics,
-            crate::unity_engine::resource_management::resourcemanager::ResourceManager,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, resource_manager, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_sum_dependency_name_hash_codes {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle as ::unity2::IlType>::il_type(
-                ),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ResourceManagerDiagnostics as ::unity2::ClassIdentity>::class(),
-                "SumDependencyNameHashCodes",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ResourceManagerDiagnostics as ::unity2::ClassIdentity>::NAME,
-                        "SumDependencyNameHashCodes",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn sum_dependency_name_hash_codes(
-        this: ResourceManagerDiagnostics,
-        handle: crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(
-            ResourceManagerDiagnostics,
-            crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(__lookup_sum_dependency_name_hash_codes::get_method_info().method_ptr);
-        inner(this, handle, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calculate_hash_code {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle as ::unity2::IlType>::il_type(
-                ),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ResourceManagerDiagnostics as ::unity2::ClassIdentity>::class(),
-                "CalculateHashCode",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ResourceManagerDiagnostics as ::unity2::ClassIdentity>::NAME,
-                        "CalculateHashCode",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn calculate_hash_code(
-        this: ResourceManagerDiagnostics,
-        handle: crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(
-            ResourceManagerDiagnostics,
-            crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(__lookup_calculate_hash_code::get_method_info().method_ptr);
-        inner(this, handle, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_resource_manager_diagnostic_event {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::resource_management::resourcemanager::ResourceManager_DiagnosticEventContext as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ResourceManagerDiagnostics as ::unity2::ClassIdentity>::class(),
-                "OnResourceManagerDiagnosticEvent",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ResourceManagerDiagnostics as ::unity2::ClassIdentity>::NAME,
-                        "OnResourceManagerDiagnosticEvent",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_resource_manager_diagnostic_event(
-        this: ResourceManagerDiagnostics,
-        event_context: crate::unity_engine::resource_management::resourcemanager::ResourceManager_DiagnosticEventContext,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ResourceManagerDiagnostics,
-            crate::unity_engine::resource_management::resourcemanager::ResourceManager_DiagnosticEventContext,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_on_resource_manager_diagnostic_event::get_method_info().method_ptr);
-        inner(this, event_context, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_dispose {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ResourceManagerDiagnostics as ::unity2::ClassIdentity>::class(),
-                "Dispose",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ResourceManagerDiagnostics as ::unity2::ClassIdentity>::NAME,
-                        "Dispose",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn dispose(this: ResourceManagerDiagnostics, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ResourceManagerDiagnostics, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_dispose::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ResourceManagerDiagnostics_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ResourceManagerDiagnostics as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ResourceManagerDiagnostics as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : ResourceManagerDiagnostics , resource_manager : crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ResourceManagerDiagnostics , crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , resource_manager , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_sum_dependency_name_hash_codes { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ResourceManagerDiagnostics as :: unity2 :: ClassIdentity > :: class () , "SumDependencyNameHashCodes" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ResourceManagerDiagnostics as :: unity2 :: ClassIdentity > :: NAME , "SumDependencyNameHashCodes" , e) , } } } pub unsafe fn sum_dependency_name_hash_codes (this : ResourceManagerDiagnostics , handle : crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (ResourceManagerDiagnostics , crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_sum_dependency_name_hash_codes :: get_method_info () . method_ptr ,) ; inner (this , handle , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_calculate_hash_code { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ResourceManagerDiagnostics as :: unity2 :: ClassIdentity > :: class () , "CalculateHashCode" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ResourceManagerDiagnostics as :: unity2 :: ClassIdentity > :: NAME , "CalculateHashCode" , e) , } } } pub unsafe fn calculate_hash_code (this : ResourceManagerDiagnostics , handle : crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (ResourceManagerDiagnostics , crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_calculate_hash_code :: get_method_info () . method_ptr ,) ; inner (this , handle , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_resource_manager_diagnostic_event { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager_DiagnosticEventContext as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ResourceManagerDiagnostics as :: unity2 :: ClassIdentity > :: class () , "OnResourceManagerDiagnosticEvent" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ResourceManagerDiagnostics as :: unity2 :: ClassIdentity > :: NAME , "OnResourceManagerDiagnosticEvent" , e) , } } } pub unsafe fn on_resource_manager_diagnostic_event (this : ResourceManagerDiagnostics , event_context : crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager_DiagnosticEventContext , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ResourceManagerDiagnostics , crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager_DiagnosticEventContext , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_resource_manager_diagnostic_event :: get_method_info () . method_ptr ,) ; inner (this , event_context , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_dispose { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ResourceManagerDiagnostics as :: unity2 :: ClassIdentity > :: class () , "Dispose" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ResourceManagerDiagnostics as :: unity2 :: ClassIdentity > :: NAME , "Dispose" , e) , } } } pub unsafe fn dispose (this : ResourceManagerDiagnostics , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ResourceManagerDiagnostics , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_dispose :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-addressable_assets-utility-resourcemanagerdiagnostics")]
-pub trait IResourceManagerDiagnosticsMethods: IResourceManagerDiagnostics {
-    #[doc = "`.ctor(crate::unity_engine::resource_management::resourcemanager::ResourceManager)` overload"]
-    fn ctor(self, resource_manager: impl ::core::convert::Into<crate::unity_engine::resource_management::resourcemanager::ResourceManager>) -> () {
-        unsafe {
-            let __receiver =
-                <ResourceManagerDiagnostics as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ResourceManagerDiagnostics_unity2_raw::ctor(__receiver, ::core::convert::Into::into(resource_manager), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SumDependencyNameHashCodes(crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle)` overload"]
-    fn sum_dependency_name_hash_codes(
-        self,
-        handle: impl ::core::convert::Into<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle>,
-    ) -> i32 {
-        unsafe {
-            let __receiver =
-                <ResourceManagerDiagnostics as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ResourceManagerDiagnostics_unity2_raw::sum_dependency_name_hash_codes(
-                __receiver,
-                ::core::convert::Into::into(handle),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CalculateHashCode(crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle)` overload"]
-    fn calculate_hash_code(
-        self,
-        handle: impl ::core::convert::Into<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle>,
-    ) -> i32 {
-        unsafe {
-            let __receiver =
-                <ResourceManagerDiagnostics as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ResourceManagerDiagnostics_unity2_raw::calculate_hash_code(
-                __receiver,
-                ::core::convert::Into::into(handle),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`OnResourceManagerDiagnosticEvent(crate::unity_engine::resource_management::resourcemanager::ResourceManager_DiagnosticEventContext)` overload"]
-    fn on_resource_manager_diagnostic_event(
-        self,
-        event_context: impl ::core::convert::Into<crate::unity_engine::resource_management::resourcemanager::ResourceManager_DiagnosticEventContext>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <ResourceManagerDiagnostics as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ResourceManagerDiagnostics_unity2_raw::on_resource_manager_diagnostic_event(
-                __receiver,
-                ::core::convert::Into::into(event_context),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Dispose()` overload"]
-    fn dispose(self) -> () {
-        unsafe {
-            let __receiver =
-                <ResourceManagerDiagnostics as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ResourceManagerDiagnostics_unity2_raw::dispose(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IResourceManagerDiagnosticsMethods : IResourceManagerDiagnostics { # [doc = "`.ctor(crate::unity_engine::resource_management::resourcemanager::ResourceManager)` overload"] fn ctor (self , resource_manager : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager >) -> () { unsafe { let __receiver = < ResourceManagerDiagnostics as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ResourceManagerDiagnostics_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (resource_manager) , :: core :: option :: Option :: None) } } # [doc = "`SumDependencyNameHashCodes(crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle)` overload"] fn sum_dependency_name_hash_codes (self , handle : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle >) -> i32 { unsafe { let __receiver = < ResourceManagerDiagnostics as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ResourceManagerDiagnostics_unity2_raw :: sum_dependency_name_hash_codes (__receiver , :: core :: convert :: Into :: into (handle) , :: core :: option :: Option :: None) } } # [doc = "`CalculateHashCode(crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle)` overload"] fn calculate_hash_code (self , handle : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle >) -> i32 { unsafe { let __receiver = < ResourceManagerDiagnostics as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ResourceManagerDiagnostics_unity2_raw :: calculate_hash_code (__receiver , :: core :: convert :: Into :: into (handle) , :: core :: option :: Option :: None) } } # [doc = "`OnResourceManagerDiagnosticEvent(crate::unity_engine::resource_management::resourcemanager::ResourceManager_DiagnosticEventContext)` overload"] fn on_resource_manager_diagnostic_event (self , event_context : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager_DiagnosticEventContext >) -> () { unsafe { let __receiver = < ResourceManagerDiagnostics as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ResourceManagerDiagnostics_unity2_raw :: on_resource_manager_diagnostic_event (__receiver , :: core :: convert :: Into :: into (event_context) , :: core :: option :: Option :: None) } } # [doc = "`Dispose()` overload"] fn dispose (self ,) -> () { unsafe { let __receiver = < ResourceManagerDiagnostics as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ResourceManagerDiagnostics_unity2_raw :: dispose (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-addressable_assets-utility-resourcemanagerdiagnostics")]
-impl<__T: IResourceManagerDiagnostics> IResourceManagerDiagnosticsMethods for __T {}
+impl < __T : IResourceManagerDiagnostics > IResourceManagerDiagnosticsMethods for __T { }
+
+#[cfg(feature = "unity_engine-addressable_assets-utility-resourcemanagerdiagnostics")]
+impl ResourceManagerDiagnostics { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ResourceManagerDiagnostics_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn sum_dependency_name_hash_codes_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ResourceManagerDiagnostics_unity2_raw :: __lookup_sum_dependency_name_hash_codes :: get_method_info () } pub fn calculate_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ResourceManagerDiagnostics_unity2_raw :: __lookup_calculate_hash_code :: get_method_info () } pub fn on_resource_manager_diagnostic_event_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ResourceManagerDiagnostics_unity2_raw :: __lookup_on_resource_manager_diagnostic_event :: get_method_info () } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ResourceManagerDiagnostics_unity2_raw :: __lookup_dispose :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-addressable_assets-utility-resourcemanagerdiagnostics")]
 impl ResourceManagerDiagnostics {
-    #[doc = "`.ctor(crate::unity_engine::resource_management::resourcemanager::ResourceManager)` — overload selector"]
-    pub fn new(resource_manager: crate::unity_engine::resource_management::resourcemanager::ResourceManager) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ResourceManagerDiagnostics),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IResourceManagerDiagnosticsMethods>::ctor(this, resource_manager);
-        this
-    }
+# [doc = "`.ctor(crate::unity_engine::resource_management::resourcemanager::ResourceManager)` — overload selector"] pub fn new (resource_manager : crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ResourceManagerDiagnostics) , :: core :: stringify ! (new) ,)) ; < Self as IResourceManagerDiagnosticsMethods > :: ctor (this , resource_manager) ; this }
 }
 
 #[cfg(feature = "unity_engine-addressable_assets-utility-resourcemanagerdiagnostics")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IResourceManagerDiagnostics, IResourceManagerDiagnosticsMethods, ResourceManagerDiagnostics};
+    pub use super::ResourceManagerDiagnostics;
+    pub use super::IResourceManagerDiagnostics;
+    pub use super::IResourceManagerDiagnosticsMethods;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

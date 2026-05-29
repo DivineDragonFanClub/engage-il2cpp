@@ -2,244 +2,85 @@
 
 #[cfg(feature = "unity_engine-textgenerationsettings-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        valuetype::{IValueType, ValueType},
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/textgenerationsettings/TextGenerationSettings.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct TextGenerationSettings {
-        pub font: crate::unity_engine::font::Font,
-        pub color: crate::unity_engine::color::Color,
-        pub font_size: i32,
-        pub line_spacing: f32,
-        pub rich_text: bool,
-        pub scale_factor: f32,
-        pub font_style: crate::unity_engine::fontstyle::FontStyle,
-        pub text_anchor: crate::unity_engine::textanchor::TextAnchor,
-        pub align_by_geometry: bool,
-        pub resize_text_for_best_fit: bool,
-        pub resize_text_min_size: i32,
-        pub resize_text_max_size: i32,
-        pub update_bounds: bool,
-        pub vertical_overflow: crate::unity_engine::verticalwrapmode::VerticalWrapMode,
-        pub horizontal_overflow: crate::unity_engine::horizontalwrapmode::HorizontalWrapMode,
-        pub generation_extents: crate::unity_engine::vector2::Vector2,
-        pub pivot: crate::unity_engine::vector2::Vector2,
-        pub generate_out_of_bounds: bool,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
 
-    impl ::unity2::ClassIdentity for TextGenerationSettings {
-        const NAME: &'static str = "TextGenerationSettings";
-        const NAMESPACE: &'static str = "UnityEngine";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/textgenerationsettings/TextGenerationSettings.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct TextGenerationSettings {
+    pub font: crate :: unity_engine :: font :: Font,
+    pub color: crate :: unity_engine :: color :: Color,
+    pub font_size: i32,
+    pub line_spacing: f32,
+    pub rich_text: bool,
+    pub scale_factor: f32,
+    pub font_style: crate :: unity_engine :: fontstyle :: FontStyle,
+    pub text_anchor: crate :: unity_engine :: textanchor :: TextAnchor,
+    pub align_by_geometry: bool,
+    pub resize_text_for_best_fit: bool,
+    pub resize_text_min_size: i32,
+    pub resize_text_max_size: i32,
+    pub update_bounds: bool,
+    pub vertical_overflow: crate :: unity_engine :: verticalwrapmode :: VerticalWrapMode,
+    pub horizontal_overflow: crate :: unity_engine :: horizontalwrapmode :: HorizontalWrapMode,
+    pub generation_extents: crate :: unity_engine :: vector2 :: Vector2,
+    pub pivot: crate :: unity_engine :: vector2 :: Vector2,
+    pub generate_out_of_bounds: bool,
+}
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+
+impl ::unity2::ClassIdentity for TextGenerationSettings {
+    const NAMESPACE: &'static str = "UnityEngine";
+
+    const NAME: &'static str = "TextGenerationSettings";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for TextGenerationSettings {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl ::unity2::IlType for TextGenerationSettings {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
+
+}
+
 }
 
 #[cfg(feature = "unity_engine-textgenerationsettings-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-textgenerationsettings")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __TextGenerationSettings_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_compare_colors {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TextGenerationSettings as ::unity2::ClassIdentity>::class(),
-                "CompareColors",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TextGenerationSettings as ::unity2::ClassIdentity>::NAME,
-                        "CompareColors",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn compare_colors(
-        this: TextGenerationSettings,
-        left: crate::unity_engine::color::Color,
-        right: crate::unity_engine::color::Color,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            TextGenerationSettings,
-            crate::unity_engine::color::Color,
-            crate::unity_engine::color::Color,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(__lookup_compare_colors::get_method_info().method_ptr);
-        inner(this, left, right, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_compare_vector2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TextGenerationSettings as ::unity2::ClassIdentity>::class(),
-                "CompareVector2",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TextGenerationSettings as ::unity2::ClassIdentity>::NAME,
-                        "CompareVector2",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn compare_vector2(
-        this: TextGenerationSettings,
-        left: crate::unity_engine::vector2::Vector2,
-        right: crate::unity_engine::vector2::Vector2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            TextGenerationSettings,
-            crate::unity_engine::vector2::Vector2,
-            crate::unity_engine::vector2::Vector2,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(__lookup_compare_vector2::get_method_info().method_ptr);
-        inner(this, left, right, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_equals {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::textgenerationsettings::TextGenerationSettings as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TextGenerationSettings as ::unity2::ClassIdentity>::class(),
-                "Equals",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TextGenerationSettings as ::unity2::ClassIdentity>::NAME,
-                        "Equals",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn equals(
-        this: TextGenerationSettings,
-        other: crate::unity_engine::textgenerationsettings::TextGenerationSettings,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            TextGenerationSettings,
-            crate::unity_engine::textgenerationsettings::TextGenerationSettings,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(__lookup_equals::get_method_info().method_ptr);
-        inner(this, other, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __TextGenerationSettings_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_compare_colors { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: color :: Color as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: color :: Color as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TextGenerationSettings as :: unity2 :: ClassIdentity > :: class () , "CompareColors" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TextGenerationSettings as :: unity2 :: ClassIdentity > :: NAME , "CompareColors" , e) , } } } pub unsafe fn compare_colors (this : TextGenerationSettings , left : crate :: unity_engine :: color :: Color , right : crate :: unity_engine :: color :: Color , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (TextGenerationSettings , crate :: unity_engine :: color :: Color , crate :: unity_engine :: color :: Color , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_compare_colors :: get_method_info () . method_ptr ,) ; inner (this , left , right , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_compare_vector2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector2 :: Vector2 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector2 :: Vector2 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TextGenerationSettings as :: unity2 :: ClassIdentity > :: class () , "CompareVector2" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TextGenerationSettings as :: unity2 :: ClassIdentity > :: NAME , "CompareVector2" , e) , } } } pub unsafe fn compare_vector2 (this : TextGenerationSettings , left : crate :: unity_engine :: vector2 :: Vector2 , right : crate :: unity_engine :: vector2 :: Vector2 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (TextGenerationSettings , crate :: unity_engine :: vector2 :: Vector2 , crate :: unity_engine :: vector2 :: Vector2 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_compare_vector2 :: get_method_info () . method_ptr ,) ; inner (this , left , right , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_equals { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: textgenerationsettings :: TextGenerationSettings as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TextGenerationSettings as :: unity2 :: ClassIdentity > :: class () , "Equals" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TextGenerationSettings as :: unity2 :: ClassIdentity > :: NAME , "Equals" , e) , } } } pub unsafe fn equals (this : TextGenerationSettings , other : crate :: unity_engine :: textgenerationsettings :: TextGenerationSettings , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (TextGenerationSettings , crate :: unity_engine :: textgenerationsettings :: TextGenerationSettings , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_equals :: get_method_info () . method_ptr ,) ; inner (this , other , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-textgenerationsettings")]
-impl TextGenerationSettings {
-    #[doc = "`CompareColors(crate::unity_engine::color::Color, crate::unity_engine::color::Color)` overload"]
-    pub fn compare_colors(
-        self,
-        left: impl ::core::convert::Into<crate::unity_engine::color::Color>,
-        right: impl ::core::convert::Into<crate::unity_engine::color::Color>,
-    ) -> bool {
-        unsafe {
-            __TextGenerationSettings_unity2_raw::compare_colors(
-                self,
-                ::core::convert::Into::into(left),
-                ::core::convert::Into::into(right),
-                ::core::option::Option::None,
-            )
-        }
-    }
+impl TextGenerationSettings { # [doc = "`CompareColors(crate::unity_engine::color::Color, crate::unity_engine::color::Color)` overload"] pub fn compare_colors (self , left : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color > , right : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color >) -> bool { unsafe { __TextGenerationSettings_unity2_raw :: compare_colors (self , :: core :: convert :: Into :: into (left) , :: core :: convert :: Into :: into (right) , :: core :: option :: Option :: None) } } # [doc = "`CompareVector2(crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2)` overload"] pub fn compare_vector2 (self , left : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 > , right : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 >) -> bool { unsafe { __TextGenerationSettings_unity2_raw :: compare_vector2 (self , :: core :: convert :: Into :: into (left) , :: core :: convert :: Into :: into (right) , :: core :: option :: Option :: None) } } # [doc = "`Equals(crate::unity_engine::textgenerationsettings::TextGenerationSettings)` overload"] pub fn equals (self , other : impl :: core :: convert :: Into < crate :: unity_engine :: textgenerationsettings :: TextGenerationSettings >) -> bool { unsafe { __TextGenerationSettings_unity2_raw :: equals (self , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } }
 
-    #[doc = "`CompareVector2(crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2)` overload"]
-    pub fn compare_vector2(
-        self,
-        left: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
-        right: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
-    ) -> bool {
-        unsafe {
-            __TextGenerationSettings_unity2_raw::compare_vector2(
-                self,
-                ::core::convert::Into::into(left),
-                ::core::convert::Into::into(right),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`Equals(crate::unity_engine::textgenerationsettings::TextGenerationSettings)` overload"]
-    pub fn equals(self, other: impl ::core::convert::Into<crate::unity_engine::textgenerationsettings::TextGenerationSettings>) -> bool {
-        unsafe { __TextGenerationSettings_unity2_raw::equals(self, ::core::convert::Into::into(other), ::core::option::Option::None) }
-    }
-}
+#[cfg(feature = "unity_engine-textgenerationsettings")]
+impl TextGenerationSettings { pub fn compare_colors_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TextGenerationSettings_unity2_raw :: __lookup_compare_colors :: get_method_info () } pub fn compare_vector2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TextGenerationSettings_unity2_raw :: __lookup_compare_vector2 :: get_method_info () } pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TextGenerationSettings_unity2_raw :: __lookup_equals :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-textgenerationsettings")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::TextGenerationSettings;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::system::{object::IObject, valuetype::IValueType};
+    pub use crate::system::object::IObject;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

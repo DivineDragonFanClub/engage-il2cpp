@@ -2,399 +2,64 @@
 
 #[cfg(feature = "app-ringcleaningroot-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringcleaningroot/RingCleaningRoot.md"))]
-    #[::unity2::class(namespace = "App", name = "RingCleaningRoot")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct RingCleaningRoot {
-        #[offset(24)]
-        #[rename(name = "m_ConditionIcon")]
-        pub m_condition_icon: crate::app::ringcleaningconditionicon::RingCleaningConditionIcon,
-        #[offset(32)]
-        #[rename(name = "m_GaugeController")]
-        pub m_gauge_controller: crate::app::ringcleaninggaugecontroller::RingCleaningGaugeController,
-        #[offset(40)]
-        #[rename(name = "m_Cloth")]
-        pub m_cloth: crate::app::ringcleaningcloth::RingCleaningCloth,
-        #[offset(48)]
-        #[rename(name = "m_Ring")]
-        pub m_ring: crate::app::ringcleaningringcontroller::RingCleaningRingController,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringcleaningroot/RingCleaningRoot.md"))] # [:: unity2 :: class (namespace = "App" , name = "RingCleaningRoot")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct RingCleaningRoot {
+# [offset (24)] # [rename (name = "m_ConditionIcon")] pub m_condition_icon : crate :: app :: ringcleaningconditionicon :: RingCleaningConditionIcon ,
+# [offset (32)] # [rename (name = "m_GaugeController")] pub m_gauge_controller : crate :: app :: ringcleaninggaugecontroller :: RingCleaningGaugeController ,
+# [offset (40)] # [rename (name = "m_Cloth")] pub m_cloth : crate :: app :: ringcleaningcloth :: RingCleaningCloth ,
+# [offset (48)] # [rename (name = "m_Ring")] pub m_ring : crate :: app :: ringcleaningringcontroller :: RingCleaningRingController ,
+}
+
 }
 
 #[cfg(feature = "app-ringcleaningroot-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-ringcleaningroot")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RingCleaningRoot_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_gauge_controller {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingCleaningRoot as ::unity2::ClassIdentity>::class(),
-                "get_GaugeController",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingCleaningRoot as ::unity2::ClassIdentity>::NAME,
-                        "get_GaugeController",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_gauge_controller(
-        this: RingCleaningRoot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::ringcleaninggaugecontroller::RingCleaningGaugeController {
-        let inner: extern "C" fn(RingCleaningRoot, ::unity2::OptionalMethod) -> crate::app::ringcleaninggaugecontroller::RingCleaningGaugeController =
-            ::core::mem::transmute(__lookup_get_gauge_controller::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_condition_icon {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingCleaningRoot as ::unity2::ClassIdentity>::class(),
-                "get_ConditionIcon",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingCleaningRoot as ::unity2::ClassIdentity>::NAME,
-                        "get_ConditionIcon",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_condition_icon(
-        this: RingCleaningRoot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::ringcleaningconditionicon::RingCleaningConditionIcon {
-        let inner: extern "C" fn(RingCleaningRoot, ::unity2::OptionalMethod) -> crate::app::ringcleaningconditionicon::RingCleaningConditionIcon =
-            ::core::mem::transmute(__lookup_get_condition_icon::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_init {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::godunit::GodUnit as ::unity2::IlType>::il_type(),
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-                <crate::app::ringcleaningringcontroller::RingCleaningRingController as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingCleaningRoot as ::unity2::ClassIdentity>::class(),
-                "Init",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingCleaningRoot as ::unity2::ClassIdentity>::NAME,
-                        "Init",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn init(
-        this: RingCleaningRoot,
-        god: crate::app::godunit::GodUnit,
-        unit: crate::app::unit::Unit,
-        ring_controller: crate::app::ringcleaningringcontroller::RingCleaningRingController,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RingCleaningRoot,
-            crate::app::godunit::GodUnit,
-            crate::app::unit::Unit,
-            crate::app::ringcleaningringcontroller::RingCleaningRingController,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_init::get_method_info().method_ptr);
-        inner(this, god, unit, ring_controller, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update_dirty {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingCleaningRoot as ::unity2::ClassIdentity>::class(),
-                "UpdateDirty",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingCleaningRoot as ::unity2::ClassIdentity>::NAME,
-                        "UpdateDirty",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update_dirty(this: RingCleaningRoot, new_dirty: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RingCleaningRoot, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update_dirty::get_method_info().method_ptr);
-        inner(this, new_dirty, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_finish_cleaning {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingCleaningRoot as ::unity2::ClassIdentity>::class(),
-                "IsFinishCleaning",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingCleaningRoot as ::unity2::ClassIdentity>::NAME,
-                        "IsFinishCleaning",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_finish_cleaning(this: RingCleaningRoot, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(RingCleaningRoot, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_finish_cleaning::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_texture_dirty {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingCleaningRoot as ::unity2::ClassIdentity>::class(),
-                "GetTextureDirty",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingCleaningRoot as ::unity2::ClassIdentity>::NAME,
-                        "GetTextureDirty",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_texture_dirty(this: RingCleaningRoot, dirty: i32, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(RingCleaningRoot, i32, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_get_texture_dirty::get_method_info().method_ptr);
-        inner(this, dirty, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingCleaningRoot as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingCleaningRoot as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: RingCleaningRoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RingCleaningRoot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __RingCleaningRoot_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_gauge_controller { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RingCleaningRoot as :: unity2 :: ClassIdentity > :: class () , "get_GaugeController" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RingCleaningRoot as :: unity2 :: ClassIdentity > :: NAME , "get_GaugeController" , e) , } } } pub unsafe fn get_gauge_controller (this : RingCleaningRoot , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: ringcleaninggaugecontroller :: RingCleaningGaugeController { let inner : extern "C" fn (RingCleaningRoot , :: unity2 :: OptionalMethod ,) -> crate :: app :: ringcleaninggaugecontroller :: RingCleaningGaugeController = :: core :: mem :: transmute (__lookup_get_gauge_controller :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_condition_icon { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RingCleaningRoot as :: unity2 :: ClassIdentity > :: class () , "get_ConditionIcon" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RingCleaningRoot as :: unity2 :: ClassIdentity > :: NAME , "get_ConditionIcon" , e) , } } } pub unsafe fn get_condition_icon (this : RingCleaningRoot , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: ringcleaningconditionicon :: RingCleaningConditionIcon { let inner : extern "C" fn (RingCleaningRoot , :: unity2 :: OptionalMethod ,) -> crate :: app :: ringcleaningconditionicon :: RingCleaningConditionIcon = :: core :: mem :: transmute (__lookup_get_condition_icon :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_init { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: godunit :: GodUnit as :: unity2 :: IlType > :: il_type () , < crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < crate :: app :: ringcleaningringcontroller :: RingCleaningRingController as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RingCleaningRoot as :: unity2 :: ClassIdentity > :: class () , "Init" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RingCleaningRoot as :: unity2 :: ClassIdentity > :: NAME , "Init" , e) , } } } pub unsafe fn init (this : RingCleaningRoot , god : crate :: app :: godunit :: GodUnit , unit : crate :: app :: unit :: Unit , ring_controller : crate :: app :: ringcleaningringcontroller :: RingCleaningRingController , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RingCleaningRoot , crate :: app :: godunit :: GodUnit , crate :: app :: unit :: Unit , crate :: app :: ringcleaningringcontroller :: RingCleaningRingController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_init :: get_method_info () . method_ptr ,) ; inner (this , god , unit , ring_controller , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update_dirty { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RingCleaningRoot as :: unity2 :: ClassIdentity > :: class () , "UpdateDirty" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RingCleaningRoot as :: unity2 :: ClassIdentity > :: NAME , "UpdateDirty" , e) , } } } pub unsafe fn update_dirty (this : RingCleaningRoot , new_dirty : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RingCleaningRoot , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update_dirty :: get_method_info () . method_ptr ,) ; inner (this , new_dirty , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_finish_cleaning { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RingCleaningRoot as :: unity2 :: ClassIdentity > :: class () , "IsFinishCleaning" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RingCleaningRoot as :: unity2 :: ClassIdentity > :: NAME , "IsFinishCleaning" , e) , } } } pub unsafe fn is_finish_cleaning (this : RingCleaningRoot , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (RingCleaningRoot , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_finish_cleaning :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_texture_dirty { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RingCleaningRoot as :: unity2 :: ClassIdentity > :: class () , "GetTextureDirty" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RingCleaningRoot as :: unity2 :: ClassIdentity > :: NAME , "GetTextureDirty" , e) , } } } pub unsafe fn get_texture_dirty (this : RingCleaningRoot , dirty : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (RingCleaningRoot , i32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_get_texture_dirty :: get_method_info () . method_ptr ,) ; inner (this , dirty , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RingCleaningRoot as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RingCleaningRoot as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : RingCleaningRoot , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RingCleaningRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-ringcleaningroot")]
-pub trait IRingCleaningRootMethods: IRingCleaningRoot {
-    #[doc = "`get_GaugeController()` overload"]
-    fn get_gauge_controller(self) -> crate::app::ringcleaninggaugecontroller::RingCleaningGaugeController {
-        unsafe {
-            let __receiver = <RingCleaningRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RingCleaningRoot_unity2_raw::get_gauge_controller(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_ConditionIcon()` overload"]
-    fn get_condition_icon(self) -> crate::app::ringcleaningconditionicon::RingCleaningConditionIcon {
-        unsafe {
-            let __receiver = <RingCleaningRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RingCleaningRoot_unity2_raw::get_condition_icon(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Init(crate::app::godunit::GodUnit, crate::app::unit::Unit, crate::app::ringcleaningringcontroller::RingCleaningRingController)` overload"]
-    fn init(
-        self,
-        god: impl ::core::convert::Into<crate::app::godunit::GodUnit>,
-        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-        ring_controller: impl ::core::convert::Into<crate::app::ringcleaningringcontroller::RingCleaningRingController>,
-    ) -> () {
-        unsafe {
-            let __receiver = <RingCleaningRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RingCleaningRoot_unity2_raw::init(
-                __receiver,
-                ::core::convert::Into::into(god),
-                ::core::convert::Into::into(unit),
-                ::core::convert::Into::into(ring_controller),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`UpdateDirty(i32)` overload"]
-    fn update_dirty(self, new_dirty: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver = <RingCleaningRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RingCleaningRoot_unity2_raw::update_dirty(__receiver, ::core::convert::Into::into(new_dirty), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsFinishCleaning()` overload"]
-    fn is_finish_cleaning(self) -> bool {
-        unsafe {
-            let __receiver = <RingCleaningRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RingCleaningRoot_unity2_raw::is_finish_cleaning(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetTextureDirty(i32)` overload"]
-    fn get_texture_dirty(self, dirty: impl ::core::convert::Into<i32>) -> f32 {
-        unsafe {
-            let __receiver = <RingCleaningRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RingCleaningRoot_unity2_raw::get_texture_dirty(__receiver, ::core::convert::Into::into(dirty), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <RingCleaningRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RingCleaningRoot_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IRingCleaningRootMethods : IRingCleaningRoot { # [doc = "`get_GaugeController()` overload"] fn get_gauge_controller (self ,) -> crate :: app :: ringcleaninggaugecontroller :: RingCleaningGaugeController { unsafe { let __receiver = < RingCleaningRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RingCleaningRoot_unity2_raw :: get_gauge_controller (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_ConditionIcon()` overload"] fn get_condition_icon (self ,) -> crate :: app :: ringcleaningconditionicon :: RingCleaningConditionIcon { unsafe { let __receiver = < RingCleaningRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RingCleaningRoot_unity2_raw :: get_condition_icon (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Init(crate::app::godunit::GodUnit, crate::app::unit::Unit, crate::app::ringcleaningringcontroller::RingCleaningRingController)` overload"] fn init (self , god : impl :: core :: convert :: Into < crate :: app :: godunit :: GodUnit > , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , ring_controller : impl :: core :: convert :: Into < crate :: app :: ringcleaningringcontroller :: RingCleaningRingController >) -> () { unsafe { let __receiver = < RingCleaningRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RingCleaningRoot_unity2_raw :: init (__receiver , :: core :: convert :: Into :: into (god) , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (ring_controller) , :: core :: option :: Option :: None) } } # [doc = "`UpdateDirty(i32)` overload"] fn update_dirty (self , new_dirty : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < RingCleaningRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RingCleaningRoot_unity2_raw :: update_dirty (__receiver , :: core :: convert :: Into :: into (new_dirty) , :: core :: option :: Option :: None) } } # [doc = "`IsFinishCleaning()` overload"] fn is_finish_cleaning (self ,) -> bool { unsafe { let __receiver = < RingCleaningRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RingCleaningRoot_unity2_raw :: is_finish_cleaning (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetTextureDirty(i32)` overload"] fn get_texture_dirty (self , dirty : impl :: core :: convert :: Into < i32 >) -> f32 { unsafe { let __receiver = < RingCleaningRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RingCleaningRoot_unity2_raw :: get_texture_dirty (__receiver , :: core :: convert :: Into :: into (dirty) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RingCleaningRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RingCleaningRoot_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-ringcleaningroot")]
-impl<__T: IRingCleaningRoot> IRingCleaningRootMethods for __T {}
+impl < __T : IRingCleaningRoot > IRingCleaningRootMethods for __T { }
+
+#[cfg(feature = "app-ringcleaningroot")]
+impl RingCleaningRoot { pub fn get_gauge_controller_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RingCleaningRoot_unity2_raw :: __lookup_get_gauge_controller :: get_method_info () } pub fn get_condition_icon_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RingCleaningRoot_unity2_raw :: __lookup_get_condition_icon :: get_method_info () } pub fn init_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RingCleaningRoot_unity2_raw :: __lookup_init :: get_method_info () } pub fn update_dirty_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RingCleaningRoot_unity2_raw :: __lookup_update_dirty :: get_method_info () } pub fn is_finish_cleaning_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RingCleaningRoot_unity2_raw :: __lookup_is_finish_cleaning :: get_method_info () } pub fn get_texture_dirty_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RingCleaningRoot_unity2_raw :: __lookup_get_texture_dirty :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RingCleaningRoot_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-ringcleaningroot")]
 impl RingCleaningRoot {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RingCleaningRoot),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRingCleaningRootMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RingCleaningRoot) , :: core :: stringify ! (new) ,)) ; < Self as IRingCleaningRootMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-ringcleaningroot")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IRingCleaningRoot, IRingCleaningRootMethods, RingCleaningRoot};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        system::object::IObject,
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::RingCleaningRoot;
+    pub use super::IRingCleaningRoot;
+    pub use super::IRingCleaningRootMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

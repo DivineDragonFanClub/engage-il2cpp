@@ -2,403 +2,67 @@
 
 #[cfg(feature = "unity_engine-rendering-ui-debuguihandlerpanel-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/ui/debuguihandlerpanel/DebugUIHandlerPanel.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Rendering.UI", name = "DebugUIHandlerPanel")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct DebugUIHandlerPanel {
-        #[offset(24)]
-        #[rename(name = "nameLabel")]
-        pub name_label: crate::unity_engine::ui::text::Text,
-        #[offset(32)]
-        #[rename(name = "scrollRect")]
-        pub scroll_rect: crate::unity_engine::ui::scrollrect::ScrollRect,
-        #[offset(40)]
-        #[rename(name = "viewport")]
-        pub viewport: crate::unity_engine::recttransform::RectTransform,
-        #[offset(48)]
-        #[rename(name = "m_ScrollTransform")]
-        pub m_scroll_transform: crate::unity_engine::recttransform::RectTransform,
-        #[offset(56)]
-        #[rename(name = "m_ContentTransform")]
-        pub m_content_transform: crate::unity_engine::recttransform::RectTransform,
-        #[offset(64)]
-        #[rename(name = "m_MaskTransform")]
-        pub m_mask_transform: crate::unity_engine::recttransform::RectTransform,
-        #[offset(72)]
-        #[rename(name = "m_Panel")]
-        pub m_panel: crate::unity_engine::rendering::debugui::DebugUI_Panel,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/ui/debuguihandlerpanel/DebugUIHandlerPanel.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.UI" , name = "DebugUIHandlerPanel")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct DebugUIHandlerPanel {
+# [offset (24)] # [rename (name = "nameLabel")] pub name_label : crate :: unity_engine :: ui :: text :: Text ,
+# [offset (32)] # [rename (name = "scrollRect")] pub scroll_rect : crate :: unity_engine :: ui :: scrollrect :: ScrollRect ,
+# [offset (40)] # [rename (name = "viewport")] pub viewport : crate :: unity_engine :: recttransform :: RectTransform ,
+# [offset (48)] # [rename (name = "m_ScrollTransform")] pub m_scroll_transform : crate :: unity_engine :: recttransform :: RectTransform ,
+# [offset (56)] # [rename (name = "m_ContentTransform")] pub m_content_transform : crate :: unity_engine :: recttransform :: RectTransform ,
+# [offset (64)] # [rename (name = "m_MaskTransform")] pub m_mask_transform : crate :: unity_engine :: recttransform :: RectTransform ,
+# [offset (72)] # [rename (name = "m_Panel")] pub m_panel : crate :: unity_engine :: rendering :: debugui :: DebugUI_Panel ,
+}
+
 }
 
 #[cfg(feature = "unity_engine-rendering-ui-debuguihandlerpanel-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-ui-debuguihandlerpanel")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __DebugUIHandlerPanel_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_enable {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugUIHandlerPanel as ::unity2::ClassIdentity>::class(),
-                "OnEnable",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DebugUIHandlerPanel as ::unity2::ClassIdentity>::NAME,
-                        "OnEnable",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_enable(this: DebugUIHandlerPanel, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DebugUIHandlerPanel, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_enable::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_panel {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::rendering::debugui::DebugUI_Panel as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugUIHandlerPanel as ::unity2::ClassIdentity>::class(),
-                "SetPanel",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DebugUIHandlerPanel as ::unity2::ClassIdentity>::NAME,
-                        "SetPanel",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_panel(
-        this: DebugUIHandlerPanel,
-        panel: crate::unity_engine::rendering::debugui::DebugUI_Panel,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(DebugUIHandlerPanel, crate::unity_engine::rendering::debugui::DebugUI_Panel, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_panel::get_method_info().method_ptr);
-        inner(this, panel, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_panel {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugUIHandlerPanel as ::unity2::ClassIdentity>::class(),
-                "GetPanel",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DebugUIHandlerPanel as ::unity2::ClassIdentity>::NAME,
-                        "GetPanel",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_panel(
-        this: DebugUIHandlerPanel,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::rendering::debugui::DebugUI_Panel {
-        let inner: extern "C" fn(DebugUIHandlerPanel, ::unity2::OptionalMethod) -> crate::unity_engine::rendering::debugui::DebugUI_Panel =
-            ::core::mem::transmute(__lookup_get_panel::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_scroll_to {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugUIHandlerPanel as ::unity2::ClassIdentity>::class(),
-                "ScrollTo",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DebugUIHandlerPanel as ::unity2::ClassIdentity>::NAME,
-                        "ScrollTo",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn scroll_to(
-        this: DebugUIHandlerPanel,
-        target: crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            DebugUIHandlerPanel,
-            crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_scroll_to::get_method_info().method_ptr);
-        inner(this, target, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_y_pos_in_scroll {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::recttransform::RectTransform as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugUIHandlerPanel as ::unity2::ClassIdentity>::class(),
-                "GetYPosInScroll",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DebugUIHandlerPanel as ::unity2::ClassIdentity>::NAME,
-                        "GetYPosInScroll",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_y_pos_in_scroll(
-        this: DebugUIHandlerPanel,
-        target: crate::unity_engine::recttransform::RectTransform,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
-        let inner: extern "C" fn(DebugUIHandlerPanel, crate::unity_engine::recttransform::RectTransform, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_get_y_pos_in_scroll::get_method_info().method_ptr);
-        inner(this, target, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_first_item {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugUIHandlerPanel as ::unity2::ClassIdentity>::class(),
-                "GetFirstItem",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DebugUIHandlerPanel as ::unity2::ClassIdentity>::NAME,
-                        "GetFirstItem",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_first_item(
-        this: DebugUIHandlerPanel,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget {
-        let inner: extern "C" fn(
-            DebugUIHandlerPanel,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget =
-            ::core::mem::transmute(__lookup_get_first_item::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugUIHandlerPanel as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DebugUIHandlerPanel as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: DebugUIHandlerPanel, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DebugUIHandlerPanel, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __DebugUIHandlerPanel_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_enable { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DebugUIHandlerPanel as :: unity2 :: ClassIdentity > :: class () , "OnEnable" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DebugUIHandlerPanel as :: unity2 :: ClassIdentity > :: NAME , "OnEnable" , e) , } } } pub unsafe fn on_enable (this : DebugUIHandlerPanel , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DebugUIHandlerPanel , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_enable :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_panel { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: debugui :: DebugUI_Panel as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DebugUIHandlerPanel as :: unity2 :: ClassIdentity > :: class () , "SetPanel" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DebugUIHandlerPanel as :: unity2 :: ClassIdentity > :: NAME , "SetPanel" , e) , } } } pub unsafe fn set_panel (this : DebugUIHandlerPanel , panel : crate :: unity_engine :: rendering :: debugui :: DebugUI_Panel , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DebugUIHandlerPanel , crate :: unity_engine :: rendering :: debugui :: DebugUI_Panel , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_panel :: get_method_info () . method_ptr ,) ; inner (this , panel , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_panel { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DebugUIHandlerPanel as :: unity2 :: ClassIdentity > :: class () , "GetPanel" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DebugUIHandlerPanel as :: unity2 :: ClassIdentity > :: NAME , "GetPanel" , e) , } } } pub unsafe fn get_panel (this : DebugUIHandlerPanel , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: debugui :: DebugUI_Panel { let inner : extern "C" fn (DebugUIHandlerPanel , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: debugui :: DebugUI_Panel = :: core :: mem :: transmute (__lookup_get_panel :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_scroll_to { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: ui :: debuguihandlerwidget :: DebugUIHandlerWidget as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DebugUIHandlerPanel as :: unity2 :: ClassIdentity > :: class () , "ScrollTo" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DebugUIHandlerPanel as :: unity2 :: ClassIdentity > :: NAME , "ScrollTo" , e) , } } } pub unsafe fn scroll_to (this : DebugUIHandlerPanel , target : crate :: unity_engine :: rendering :: ui :: debuguihandlerwidget :: DebugUIHandlerWidget , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DebugUIHandlerPanel , crate :: unity_engine :: rendering :: ui :: debuguihandlerwidget :: DebugUIHandlerWidget , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_scroll_to :: get_method_info () . method_ptr ,) ; inner (this , target , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_y_pos_in_scroll { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: recttransform :: RectTransform as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DebugUIHandlerPanel as :: unity2 :: ClassIdentity > :: class () , "GetYPosInScroll" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DebugUIHandlerPanel as :: unity2 :: ClassIdentity > :: NAME , "GetYPosInScroll" , e) , } } } pub unsafe fn get_y_pos_in_scroll (this : DebugUIHandlerPanel , target : crate :: unity_engine :: recttransform :: RectTransform , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (DebugUIHandlerPanel , crate :: unity_engine :: recttransform :: RectTransform , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_get_y_pos_in_scroll :: get_method_info () . method_ptr ,) ; inner (this , target , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_first_item { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DebugUIHandlerPanel as :: unity2 :: ClassIdentity > :: class () , "GetFirstItem" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DebugUIHandlerPanel as :: unity2 :: ClassIdentity > :: NAME , "GetFirstItem" , e) , } } } pub unsafe fn get_first_item (this : DebugUIHandlerPanel , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: ui :: debuguihandlerwidget :: DebugUIHandlerWidget { let inner : extern "C" fn (DebugUIHandlerPanel , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: ui :: debuguihandlerwidget :: DebugUIHandlerWidget = :: core :: mem :: transmute (__lookup_get_first_item :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DebugUIHandlerPanel as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DebugUIHandlerPanel as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : DebugUIHandlerPanel , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DebugUIHandlerPanel , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-rendering-ui-debuguihandlerpanel")]
-pub trait IDebugUIHandlerPanelMethods: IDebugUIHandlerPanel {
-    #[doc = "`OnEnable()` overload"]
-    fn on_enable(self) -> () {
-        unsafe {
-            let __receiver = <DebugUIHandlerPanel as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DebugUIHandlerPanel_unity2_raw::on_enable(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetPanel(crate::unity_engine::rendering::debugui::DebugUI_Panel)` overload"]
-    fn set_panel(self, panel: impl ::core::convert::Into<crate::unity_engine::rendering::debugui::DebugUI_Panel>) -> () {
-        unsafe {
-            let __receiver = <DebugUIHandlerPanel as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DebugUIHandlerPanel_unity2_raw::set_panel(__receiver, ::core::convert::Into::into(panel), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetPanel()` overload"]
-    fn get_panel(self) -> crate::unity_engine::rendering::debugui::DebugUI_Panel {
-        unsafe {
-            let __receiver = <DebugUIHandlerPanel as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DebugUIHandlerPanel_unity2_raw::get_panel(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ScrollTo(crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget)` overload"]
-    fn scroll_to(self, target: impl ::core::convert::Into<crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget>) -> () {
-        unsafe {
-            let __receiver = <DebugUIHandlerPanel as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DebugUIHandlerPanel_unity2_raw::scroll_to(__receiver, ::core::convert::Into::into(target), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetYPosInScroll(crate::unity_engine::recttransform::RectTransform)` overload"]
-    fn get_y_pos_in_scroll(self, target: impl ::core::convert::Into<crate::unity_engine::recttransform::RectTransform>) -> f32 {
-        unsafe {
-            let __receiver = <DebugUIHandlerPanel as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DebugUIHandlerPanel_unity2_raw::get_y_pos_in_scroll(__receiver, ::core::convert::Into::into(target), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetFirstItem()` overload"]
-    fn get_first_item(self) -> crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget {
-        unsafe {
-            let __receiver = <DebugUIHandlerPanel as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DebugUIHandlerPanel_unity2_raw::get_first_item(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <DebugUIHandlerPanel as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DebugUIHandlerPanel_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IDebugUIHandlerPanelMethods : IDebugUIHandlerPanel { # [doc = "`OnEnable()` overload"] fn on_enable (self ,) -> () { unsafe { let __receiver = < DebugUIHandlerPanel as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DebugUIHandlerPanel_unity2_raw :: on_enable (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetPanel(crate::unity_engine::rendering::debugui::DebugUI_Panel)` overload"] fn set_panel (self , panel : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: debugui :: DebugUI_Panel >) -> () { unsafe { let __receiver = < DebugUIHandlerPanel as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DebugUIHandlerPanel_unity2_raw :: set_panel (__receiver , :: core :: convert :: Into :: into (panel) , :: core :: option :: Option :: None) } } # [doc = "`GetPanel()` overload"] fn get_panel (self ,) -> crate :: unity_engine :: rendering :: debugui :: DebugUI_Panel { unsafe { let __receiver = < DebugUIHandlerPanel as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DebugUIHandlerPanel_unity2_raw :: get_panel (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ScrollTo(crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget)` overload"] fn scroll_to (self , target : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: ui :: debuguihandlerwidget :: DebugUIHandlerWidget >) -> () { unsafe { let __receiver = < DebugUIHandlerPanel as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DebugUIHandlerPanel_unity2_raw :: scroll_to (__receiver , :: core :: convert :: Into :: into (target) , :: core :: option :: Option :: None) } } # [doc = "`GetYPosInScroll(crate::unity_engine::recttransform::RectTransform)` overload"] fn get_y_pos_in_scroll (self , target : impl :: core :: convert :: Into < crate :: unity_engine :: recttransform :: RectTransform >) -> f32 { unsafe { let __receiver = < DebugUIHandlerPanel as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DebugUIHandlerPanel_unity2_raw :: get_y_pos_in_scroll (__receiver , :: core :: convert :: Into :: into (target) , :: core :: option :: Option :: None) } } # [doc = "`GetFirstItem()` overload"] fn get_first_item (self ,) -> crate :: unity_engine :: rendering :: ui :: debuguihandlerwidget :: DebugUIHandlerWidget { unsafe { let __receiver = < DebugUIHandlerPanel as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DebugUIHandlerPanel_unity2_raw :: get_first_item (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DebugUIHandlerPanel as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DebugUIHandlerPanel_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-rendering-ui-debuguihandlerpanel")]
-impl<__T: IDebugUIHandlerPanel> IDebugUIHandlerPanelMethods for __T {}
+impl < __T : IDebugUIHandlerPanel > IDebugUIHandlerPanelMethods for __T { }
+
+#[cfg(feature = "unity_engine-rendering-ui-debuguihandlerpanel")]
+impl DebugUIHandlerPanel { pub fn on_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DebugUIHandlerPanel_unity2_raw :: __lookup_on_enable :: get_method_info () } pub fn set_panel_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DebugUIHandlerPanel_unity2_raw :: __lookup_set_panel :: get_method_info () } pub fn get_panel_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DebugUIHandlerPanel_unity2_raw :: __lookup_get_panel :: get_method_info () } pub fn scroll_to_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DebugUIHandlerPanel_unity2_raw :: __lookup_scroll_to :: get_method_info () } pub fn get_y_pos_in_scroll_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DebugUIHandlerPanel_unity2_raw :: __lookup_get_y_pos_in_scroll :: get_method_info () } pub fn get_first_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DebugUIHandlerPanel_unity2_raw :: __lookup_get_first_item :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DebugUIHandlerPanel_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-rendering-ui-debuguihandlerpanel")]
 impl DebugUIHandlerPanel {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DebugUIHandlerPanel),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDebugUIHandlerPanelMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DebugUIHandlerPanel) , :: core :: stringify ! (new) ,)) ; < Self as IDebugUIHandlerPanelMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "unity_engine-rendering-ui-debuguihandlerpanel")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{DebugUIHandlerPanel, IDebugUIHandlerPanel, IDebugUIHandlerPanelMethods};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        system::object::IObject,
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::DebugUIHandlerPanel;
+    pub use super::IDebugUIHandlerPanel;
+    pub use super::IDebugUIHandlerPanelMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

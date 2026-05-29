@@ -2,78 +2,34 @@
 
 #[cfg(feature = "unity_engine-xr-hashcodehelper-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/xr/hashcodehelper/HashCodeHelper.md"))]
-    #[::unity2::class(namespace = "UnityEngine.XR", name = "HashCodeHelper")]
-    #[parent(crate::system::object::Object)]
-    pub struct HashCodeHelper {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/xr/hashcodehelper/HashCodeHelper.md"))] # [:: unity2 :: class (namespace = "UnityEngine.XR" , name = "HashCodeHelper")] # [parent (crate :: system :: object :: Object)] pub struct HashCodeHelper {}
+
 }
 
 #[cfg(feature = "unity_engine-xr-hashcodehelper-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-xr-hashcodehelper")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __HashCodeHelper_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_combine {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HashCodeHelper as ::unity2::ClassIdentity>::class(),
-                "Combine",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HashCodeHelper as ::unity2::ClassIdentity>::NAME,
-                        "Combine",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn combine(hash1: i32, hash2: i32, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(i32, i32, ::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(__lookup_combine::get_method_info().method_ptr);
-        inner(hash1, hash2, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __HashCodeHelper_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_combine { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HashCodeHelper as :: unity2 :: ClassIdentity > :: class () , "Combine" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HashCodeHelper as :: unity2 :: ClassIdentity > :: NAME , "Combine" , e) , } } } pub unsafe fn combine (hash1 : i32 , hash2 : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (i32 , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_combine :: get_method_info () . method_ptr ,) ; inner (hash1 , hash2 , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-xr-hashcodehelper")]
-impl HashCodeHelper {
-    #[doc = "`Combine(i32, i32)` overload"]
-    pub fn combine(hash1: impl ::core::convert::Into<i32>, hash2: impl ::core::convert::Into<i32>) -> i32 {
-        unsafe {
-            __HashCodeHelper_unity2_raw::combine(
-                ::core::convert::Into::into(hash1),
-                ::core::convert::Into::into(hash2),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+impl HashCodeHelper { # [doc = "`Combine(i32, i32)` overload"] pub fn combine (hash1 : impl :: core :: convert :: Into < i32 > , hash2 : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { __HashCodeHelper_unity2_raw :: combine (:: core :: convert :: Into :: into (hash1) , :: core :: convert :: Into :: into (hash2) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-xr-hashcodehelper")]
+impl HashCodeHelper { pub fn combine_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HashCodeHelper_unity2_raw :: __lookup_combine :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-xr-hashcodehelper")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{HashCodeHelper, IHashCodeHelper};
+    pub use super::HashCodeHelper;
+    pub use super::IHashCodeHelper;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

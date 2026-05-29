@@ -2,238 +2,51 @@
 
 #[cfg(feature = "app-fieldinfoitem-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::{
-            memberinfoitem_1::{IMemberInfoItem_1, MemberInfoItem_1},
-            menuitem::{IMenuItem, MenuItem},
-        },
-        system::object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fieldinfoitem/FieldInfoItem.md"))]
-    #[::unity2::class(namespace = "App", name = "FieldInfoItem")]
-    # [parent (crate :: app :: memberinfoitem_1 :: MemberInfoItem_1 < crate :: system :: reflection :: fieldinfo :: FieldInfo >)]
-    pub struct FieldInfoItem {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: memberinfoitem_1 :: { IMemberInfoItem_1 , MemberInfoItem_1 }
+ ;
+ use crate :: app :: menuitem :: { IMenuItem , MenuItem }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fieldinfoitem/FieldInfoItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "FieldInfoItem")] # [parent (crate :: app :: memberinfoitem_1 :: MemberInfoItem_1 < crate :: system :: reflection :: fieldinfo :: FieldInfo >)] pub struct FieldInfoItem {}
+
 }
 
 #[cfg(feature = "app-fieldinfoitem-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-fieldinfoitem")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __FieldInfoItem_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <crate::system::reflection::fieldinfo::FieldInfo as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<FieldInfoItem as ::unity2::ClassIdentity>::class(), ".ctor", 2, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FieldInfoItem as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: FieldInfoItem,
-        obj: crate::system::object::Object,
-        info: crate::system::reflection::fieldinfo::FieldInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            FieldInfoItem,
-            crate::system::object::Object,
-            crate::system::reflection::fieldinfo::FieldInfo,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, obj, info, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_value_type {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FieldInfoItem as ::unity2::ClassIdentity>::class(),
-                "GetValueType",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FieldInfoItem as ::unity2::ClassIdentity>::NAME,
-                        "GetValueType",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_value_type(this: FieldInfoItem, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::SystemType {
-        let inner: extern "C" fn(FieldInfoItem, ::unity2::OptionalMethod) -> ::unity2::SystemType =
-            ::core::mem::transmute(__lookup_get_value_type::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_value {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FieldInfoItem as ::unity2::ClassIdentity>::class(),
-                "GetValue",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FieldInfoItem as ::unity2::ClassIdentity>::NAME,
-                        "GetValue",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_value(this: FieldInfoItem, __unity2_method_info: ::unity2::OptionalMethod) -> crate::system::object::Object {
-        let inner: extern "C" fn(FieldInfoItem, ::unity2::OptionalMethod) -> crate::system::object::Object =
-            ::core::mem::transmute(__lookup_get_value::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_value {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FieldInfoItem as ::unity2::ClassIdentity>::class(),
-                "SetValue",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FieldInfoItem as ::unity2::ClassIdentity>::NAME,
-                        "SetValue",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_value(this: FieldInfoItem, value: crate::system::object::Object, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(FieldInfoItem, crate::system::object::Object, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_value::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __FieldInfoItem_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type () , < crate :: system :: reflection :: fieldinfo :: FieldInfo as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FieldInfoItem as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FieldInfoItem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : FieldInfoItem , obj : crate :: system :: object :: Object , info : crate :: system :: reflection :: fieldinfo :: FieldInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FieldInfoItem , crate :: system :: object :: Object , crate :: system :: reflection :: fieldinfo :: FieldInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , obj , info , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_value_type { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FieldInfoItem as :: unity2 :: ClassIdentity > :: class () , "GetValueType" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FieldInfoItem as :: unity2 :: ClassIdentity > :: NAME , "GetValueType" , e) , } } } pub unsafe fn get_value_type (this : FieldInfoItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: SystemType { let inner : extern "C" fn (FieldInfoItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: SystemType = :: core :: mem :: transmute (__lookup_get_value_type :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_value { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FieldInfoItem as :: unity2 :: ClassIdentity > :: class () , "GetValue" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FieldInfoItem as :: unity2 :: ClassIdentity > :: NAME , "GetValue" , e) , } } } pub unsafe fn get_value (this : FieldInfoItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object { let inner : extern "C" fn (FieldInfoItem , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute (__lookup_get_value :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_value { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FieldInfoItem as :: unity2 :: ClassIdentity > :: class () , "SetValue" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FieldInfoItem as :: unity2 :: ClassIdentity > :: NAME , "SetValue" , e) , } } } pub unsafe fn set_value (this : FieldInfoItem , value : crate :: system :: object :: Object , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FieldInfoItem , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_value :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } }
 
 #[cfg(feature = "app-fieldinfoitem")]
-pub trait IFieldInfoItemMethods: IFieldInfoItem {
-    #[doc = "`.ctor(crate::system::object::Object, crate::system::reflection::fieldinfo::FieldInfo)` overload"]
-    fn ctor(
-        self,
-        obj: impl ::core::convert::Into<crate::system::object::Object>,
-        info: impl ::core::convert::Into<crate::system::reflection::fieldinfo::FieldInfo>,
-    ) -> () {
-        unsafe {
-            let __receiver = <FieldInfoItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FieldInfoItem_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(obj),
-                ::core::convert::Into::into(info),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetValueType()` overload"]
-    fn get_value_type(self) -> ::unity2::SystemType {
-        unsafe {
-            let __receiver = <FieldInfoItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FieldInfoItem_unity2_raw::get_value_type(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetValue()` overload"]
-    fn get_value(self) -> crate::system::object::Object {
-        unsafe {
-            let __receiver = <FieldInfoItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FieldInfoItem_unity2_raw::get_value(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetValue(crate::system::object::Object)` overload"]
-    fn set_value(self, value: impl ::core::convert::Into<crate::system::object::Object>) -> () {
-        unsafe {
-            let __receiver = <FieldInfoItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FieldInfoItem_unity2_raw::set_value(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-}
+pub trait IFieldInfoItemMethods : IFieldInfoItem { # [doc = "`.ctor(crate::system::object::Object, crate::system::reflection::fieldinfo::FieldInfo)` overload"] fn ctor (self , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object > , info : impl :: core :: convert :: Into < crate :: system :: reflection :: fieldinfo :: FieldInfo >) -> () { unsafe { let __receiver = < FieldInfoItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FieldInfoItem_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (obj) , :: core :: convert :: Into :: into (info) , :: core :: option :: Option :: None) } } # [doc = "`GetValueType()` overload"] fn get_value_type (self ,) -> :: unity2 :: SystemType { unsafe { let __receiver = < FieldInfoItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FieldInfoItem_unity2_raw :: get_value_type (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetValue()` overload"] fn get_value (self ,) -> crate :: system :: object :: Object { unsafe { let __receiver = < FieldInfoItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FieldInfoItem_unity2_raw :: get_value (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetValue(crate::system::object::Object)` overload"] fn set_value (self , value : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> () { unsafe { let __receiver = < FieldInfoItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FieldInfoItem_unity2_raw :: set_value (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-fieldinfoitem")]
-impl<__T: IFieldInfoItem> IFieldInfoItemMethods for __T {}
+impl < __T : IFieldInfoItem > IFieldInfoItemMethods for __T { }
+
+#[cfg(feature = "app-fieldinfoitem")]
+impl FieldInfoItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FieldInfoItem_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn get_value_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FieldInfoItem_unity2_raw :: __lookup_get_value_type :: get_method_info () } pub fn get_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FieldInfoItem_unity2_raw :: __lookup_get_value :: get_method_info () } pub fn set_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FieldInfoItem_unity2_raw :: __lookup_set_value :: get_method_info () } }
 
 #[cfg(feature = "app-fieldinfoitem")]
 impl FieldInfoItem {
-    #[doc = "`.ctor(crate::system::object::Object, crate::system::reflection::fieldinfo::FieldInfo)` — overload selector"]
-    pub fn new(obj: crate::system::object::Object, info: crate::system::reflection::fieldinfo::FieldInfo) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(FieldInfoItem), ::core::stringify!(new),));
-        <Self as IFieldInfoItemMethods>::ctor(this, obj, info);
-        this
-    }
+# [doc = "`.ctor(crate::system::object::Object, crate::system::reflection::fieldinfo::FieldInfo)` — overload selector"] pub fn new (obj : crate :: system :: object :: Object , info : crate :: system :: reflection :: fieldinfo :: FieldInfo) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FieldInfoItem) , :: core :: stringify ! (new) ,)) ; < Self as IFieldInfoItemMethods > :: ctor (this , obj , info) ; this }
 }
 
 #[cfg(feature = "app-fieldinfoitem")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{FieldInfoItem, IFieldInfoItem, IFieldInfoItemMethods};
-    #[cfg(feature = "app-memberinfoitem_1")]
-    pub use crate::app::memberinfoitem_1::IMemberInfoItem_1Methods;
-    #[cfg(feature = "app-menuitem")]
-    pub use crate::app::menuitem::IMenuItemMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::{
-        app::{memberinfoitem_1::IMemberInfoItem_1, menuitem::IMenuItem},
-        system::object::IObject,
-    };
+    pub use super::FieldInfoItem;
+    pub use super::IFieldInfoItem;
+    pub use super::IFieldInfoItemMethods;
+    pub use crate::app::memberinfoitem_1::IMemberInfoItem_1;
+    pub use crate::app::menuitem::IMenuItem;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "app-memberinfoitem_1")] pub use crate::app::memberinfoitem_1::IMemberInfoItem_1Methods;
+    #[cfg(feature = "app-menuitem")] pub use crate::app::menuitem::IMenuItemMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

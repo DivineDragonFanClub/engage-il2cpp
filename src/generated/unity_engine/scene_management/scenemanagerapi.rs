@@ -2,342 +2,48 @@
 
 #[cfg(feature = "unity_engine-scene_management-scenemanagerapi-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/scene_management/scenemanagerapi/SceneManagerAPI.md"))]
-    #[::unity2::class(namespace = "UnityEngine.SceneManagement", name = "SceneManagerAPI")]
-    #[parent(crate::system::object::Object)]
-    pub struct SceneManagerAPI {
-        #[static_field]
-        #[rename(name = "s_DefaultAPI")]
-        pub s_default_api: crate::unity_engine::scene_management::scenemanagerapi::SceneManagerAPI,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/scene_management/scenemanagerapi/SceneManagerAPI.md"))] # [:: unity2 :: class (namespace = "UnityEngine.SceneManagement" , name = "SceneManagerAPI")] # [parent (crate :: system :: object :: Object)] pub struct SceneManagerAPI {
+# [static_field] # [rename (name = "s_DefaultAPI")] pub s_default_api : crate :: unity_engine :: scene_management :: scenemanagerapi :: SceneManagerAPI ,
+}
+
 }
 
 #[cfg(feature = "unity_engine-scene_management-scenemanagerapi-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-scene_management-scenemanagerapi")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __SceneManagerAPI_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_active_api {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SceneManagerAPI as ::unity2::ClassIdentity>::class(),
-                "get_ActiveAPI",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SceneManagerAPI as ::unity2::ClassIdentity>::NAME,
-                        "get_ActiveAPI",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_active_api(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::scene_management::scenemanagerapi::SceneManagerAPI {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::unity_engine::scene_management::scenemanagerapi::SceneManagerAPI =
-            ::core::mem::transmute(__lookup_get_active_api::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_override_api {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SceneManagerAPI as ::unity2::ClassIdentity>::class(),
-                "get_overrideAPI",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SceneManagerAPI as ::unity2::ClassIdentity>::NAME,
-                        "get_overrideAPI",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_override_api(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::scene_management::scenemanagerapi::SceneManagerAPI {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::unity_engine::scene_management::scenemanagerapi::SceneManagerAPI =
-            ::core::mem::transmute(__lookup_get_override_api::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SceneManagerAPI as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SceneManagerAPI as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: SceneManagerAPI, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SceneManagerAPI, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_load_scene_async_by_name_or_index {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::scene_management::loadsceneparameters::LoadSceneParameters as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SceneManagerAPI as ::unity2::ClassIdentity>::class(),
-                "LoadSceneAsyncByNameOrIndex",
-                4,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SceneManagerAPI as ::unity2::ClassIdentity>::NAME,
-                        "LoadSceneAsyncByNameOrIndex",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn load_scene_async_by_name_or_index(
-        this: SceneManagerAPI,
-        scene_name: ::unity2::Il2CppString,
-        scene_build_index: i32,
-        parameters: crate::unity_engine::scene_management::loadsceneparameters::LoadSceneParameters,
-        must_complete_next_frame: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::asyncoperation::AsyncOperation {
-        let inner: extern "C" fn(
-            SceneManagerAPI,
-            ::unity2::Il2CppString,
-            i32,
-            crate::unity_engine::scene_management::loadsceneparameters::LoadSceneParameters,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::asyncoperation::AsyncOperation =
-            ::core::mem::transmute(__lookup_load_scene_async_by_name_or_index::get_method_info().method_ptr);
-        inner(
-            this,
-            scene_name,
-            scene_build_index,
-            parameters,
-            must_complete_next_frame,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_load_first_scene {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SceneManagerAPI as ::unity2::ClassIdentity>::class(),
-                "LoadFirstScene",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SceneManagerAPI as ::unity2::ClassIdentity>::NAME,
-                        "LoadFirstScene",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn load_first_scene(
-        this: SceneManagerAPI,
-        must_load_async: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::asyncoperation::AsyncOperation {
-        let inner: extern "C" fn(SceneManagerAPI, bool, ::unity2::OptionalMethod) -> crate::unity_engine::asyncoperation::AsyncOperation =
-            ::core::mem::transmute(__lookup_load_first_scene::get_method_info().method_ptr);
-        inner(this, must_load_async, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SceneManagerAPI as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SceneManagerAPI as ::unity2::ClassIdentity>::NAME,
-                        ".cctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __SceneManagerAPI_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_active_api { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SceneManagerAPI as :: unity2 :: ClassIdentity > :: class () , "get_ActiveAPI" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SceneManagerAPI as :: unity2 :: ClassIdentity > :: NAME , "get_ActiveAPI" , e) , } } } pub unsafe fn get_active_api (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: scene_management :: scenemanagerapi :: SceneManagerAPI { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: scene_management :: scenemanagerapi :: SceneManagerAPI = :: core :: mem :: transmute (__lookup_get_active_api :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_override_api { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SceneManagerAPI as :: unity2 :: ClassIdentity > :: class () , "get_overrideAPI" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SceneManagerAPI as :: unity2 :: ClassIdentity > :: NAME , "get_overrideAPI" , e) , } } } pub unsafe fn get_override_api (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: scene_management :: scenemanagerapi :: SceneManagerAPI { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: scene_management :: scenemanagerapi :: SceneManagerAPI = :: core :: mem :: transmute (__lookup_get_override_api :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SceneManagerAPI as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SceneManagerAPI as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : SceneManagerAPI , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SceneManagerAPI , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_load_scene_async_by_name_or_index { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: scene_management :: loadsceneparameters :: LoadSceneParameters as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SceneManagerAPI as :: unity2 :: ClassIdentity > :: class () , "LoadSceneAsyncByNameOrIndex" , 4 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SceneManagerAPI as :: unity2 :: ClassIdentity > :: NAME , "LoadSceneAsyncByNameOrIndex" , e) , } } } pub unsafe fn load_scene_async_by_name_or_index (this : SceneManagerAPI , scene_name : :: unity2 :: Il2CppString , scene_build_index : i32 , parameters : crate :: unity_engine :: scene_management :: loadsceneparameters :: LoadSceneParameters , must_complete_next_frame : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: asyncoperation :: AsyncOperation { let inner : extern "C" fn (SceneManagerAPI , :: unity2 :: Il2CppString , i32 , crate :: unity_engine :: scene_management :: loadsceneparameters :: LoadSceneParameters , bool , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: asyncoperation :: AsyncOperation = :: core :: mem :: transmute (__lookup_load_scene_async_by_name_or_index :: get_method_info () . method_ptr ,) ; inner (this , scene_name , scene_build_index , parameters , must_complete_next_frame , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_load_first_scene { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SceneManagerAPI as :: unity2 :: ClassIdentity > :: class () , "LoadFirstScene" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SceneManagerAPI as :: unity2 :: ClassIdentity > :: NAME , "LoadFirstScene" , e) , } } } pub unsafe fn load_first_scene (this : SceneManagerAPI , must_load_async : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: asyncoperation :: AsyncOperation { let inner : extern "C" fn (SceneManagerAPI , bool , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: asyncoperation :: AsyncOperation = :: core :: mem :: transmute (__lookup_load_first_scene :: get_method_info () . method_ptr ,) ; inner (this , must_load_async , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SceneManagerAPI as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SceneManagerAPI as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
+
+#[cfg(feature = "unity_engine-scene_management-scenemanagerapi")]
+impl SceneManagerAPI { # [doc = "`get_ActiveAPI()` overload"] pub fn get_active_api () -> crate :: unity_engine :: scene_management :: scenemanagerapi :: SceneManagerAPI { unsafe { __SceneManagerAPI_unity2_raw :: get_active_api (:: core :: option :: Option :: None) } } # [doc = "`get_overrideAPI()` overload"] pub fn get_override_api () -> crate :: unity_engine :: scene_management :: scenemanagerapi :: SceneManagerAPI { unsafe { __SceneManagerAPI_unity2_raw :: get_override_api (:: core :: option :: Option :: None) } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { __SceneManagerAPI_unity2_raw :: cctor (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-scene_management-scenemanagerapi")]
+pub trait ISceneManagerAPIMethods : ISceneManagerAPI { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < SceneManagerAPI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SceneManagerAPI_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } # [doc = "`LoadSceneAsyncByNameOrIndex(::unity2::Il2CppString, i32, crate::unity_engine::scene_management::loadsceneparameters::LoadSceneParameters, bool)` overload"] fn load_scene_async_by_name_or_index (self , scene_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , scene_build_index : impl :: core :: convert :: Into < i32 > , parameters : impl :: core :: convert :: Into < crate :: unity_engine :: scene_management :: loadsceneparameters :: LoadSceneParameters > , must_complete_next_frame : impl :: core :: convert :: Into < bool >) -> crate :: unity_engine :: asyncoperation :: AsyncOperation { unsafe { let __receiver = < SceneManagerAPI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SceneManagerAPI_unity2_raw :: load_scene_async_by_name_or_index (__receiver , :: core :: convert :: Into :: into (scene_name) , :: core :: convert :: Into :: into (scene_build_index) , :: core :: convert :: Into :: into (parameters) , :: core :: convert :: Into :: into (must_complete_next_frame) , :: core :: option :: Option :: None) } } # [doc = "`LoadFirstScene(bool)` overload"] fn load_first_scene (self , must_load_async : impl :: core :: convert :: Into < bool >) -> crate :: unity_engine :: asyncoperation :: AsyncOperation { unsafe { let __receiver = < SceneManagerAPI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SceneManagerAPI_unity2_raw :: load_first_scene (__receiver , :: core :: convert :: Into :: into (must_load_async) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-scene_management-scenemanagerapi")]
+impl < __T : ISceneManagerAPI > ISceneManagerAPIMethods for __T { }
+
+#[cfg(feature = "unity_engine-scene_management-scenemanagerapi")]
+impl SceneManagerAPI { pub fn get_active_api_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SceneManagerAPI_unity2_raw :: __lookup_get_active_api :: get_method_info () } pub fn get_override_api_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SceneManagerAPI_unity2_raw :: __lookup_get_override_api :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SceneManagerAPI_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn load_scene_async_by_name_or_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SceneManagerAPI_unity2_raw :: __lookup_load_scene_async_by_name_or_index :: get_method_info () } pub fn load_first_scene_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SceneManagerAPI_unity2_raw :: __lookup_load_first_scene :: get_method_info () } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SceneManagerAPI_unity2_raw :: __lookup_cctor :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-scene_management-scenemanagerapi")]
 impl SceneManagerAPI {
-    #[doc = "`get_ActiveAPI()` overload"]
-    pub fn get_active_api() -> crate::unity_engine::scene_management::scenemanagerapi::SceneManagerAPI {
-        unsafe { __SceneManagerAPI_unity2_raw::get_active_api(::core::option::Option::None) }
-    }
-
-    #[doc = "`get_overrideAPI()` overload"]
-    pub fn get_override_api() -> crate::unity_engine::scene_management::scenemanagerapi::SceneManagerAPI {
-        unsafe { __SceneManagerAPI_unity2_raw::get_override_api(::core::option::Option::None) }
-    }
-
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __SceneManagerAPI_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "unity_engine-scene_management-scenemanagerapi")]
-pub trait ISceneManagerAPIMethods: ISceneManagerAPI {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <SceneManagerAPI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SceneManagerAPI_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`LoadSceneAsyncByNameOrIndex(::unity2::Il2CppString, i32, crate::unity_engine::scene_management::loadsceneparameters::LoadSceneParameters, bool)` overload"]
-    fn load_scene_async_by_name_or_index(
-        self,
-        scene_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        scene_build_index: impl ::core::convert::Into<i32>,
-        parameters: impl ::core::convert::Into<crate::unity_engine::scene_management::loadsceneparameters::LoadSceneParameters>,
-        must_complete_next_frame: impl ::core::convert::Into<bool>,
-    ) -> crate::unity_engine::asyncoperation::AsyncOperation {
-        unsafe {
-            let __receiver = <SceneManagerAPI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SceneManagerAPI_unity2_raw::load_scene_async_by_name_or_index(
-                __receiver,
-                ::core::convert::Into::into(scene_name),
-                ::core::convert::Into::into(scene_build_index),
-                ::core::convert::Into::into(parameters),
-                ::core::convert::Into::into(must_complete_next_frame),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`LoadFirstScene(bool)` overload"]
-    fn load_first_scene(self, must_load_async: impl ::core::convert::Into<bool>) -> crate::unity_engine::asyncoperation::AsyncOperation {
-        unsafe {
-            let __receiver = <SceneManagerAPI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SceneManagerAPI_unity2_raw::load_first_scene(__receiver, ::core::convert::Into::into(must_load_async), ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-scene_management-scenemanagerapi")]
-impl<__T: ISceneManagerAPI> ISceneManagerAPIMethods for __T {}
-
-#[cfg(feature = "unity_engine-scene_management-scenemanagerapi")]
-impl SceneManagerAPI {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SceneManagerAPI),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISceneManagerAPIMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SceneManagerAPI) , :: core :: stringify ! (new) ,)) ; < Self as ISceneManagerAPIMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "unity_engine-scene_management-scenemanagerapi")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{ISceneManagerAPI, ISceneManagerAPIMethods, SceneManagerAPI};
+    pub use super::SceneManagerAPI;
+    pub use super::ISceneManagerAPI;
+    pub use super::ISceneManagerAPIMethods;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

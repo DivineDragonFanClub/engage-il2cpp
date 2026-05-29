@@ -2,349 +2,49 @@
 
 #[cfg(feature = "unity_engine-vfx-vfxspawnerstate-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/vfx/vfxspawnerstate/VFXSpawnerState.md"))]
-    #[::unity2::class(namespace = "UnityEngine.VFX", name = "VFXSpawnerState")]
-    #[parent(crate::system::object::Object)]
-    pub struct VFXSpawnerState {
-        #[offset(16)]
-        #[rename(name = "m_Ptr")]
-        pub m_ptr: ::unity2::IntPtr,
-        #[offset(24)]
-        #[rename(name = "m_Owner")]
-        pub m_owner: bool,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/vfx/vfxspawnerstate/VFXSpawnerState.md"))] # [:: unity2 :: class (namespace = "UnityEngine.VFX" , name = "VFXSpawnerState")] # [parent (crate :: system :: object :: Object)] pub struct VFXSpawnerState {
+# [offset (16)] # [rename (name = "m_Ptr")] pub m_ptr : :: unity2 :: IntPtr ,
+# [offset (24)] # [rename (name = "m_Owner")] pub m_owner : bool ,
+}
+
 }
 
 #[cfg(feature = "unity_engine-vfx-vfxspawnerstate-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-vfx-vfxspawnerstate")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __VFXSpawnerState_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::IntPtr as ::unity2::IlType>::il_type(), <bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VFXSpawnerState as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <VFXSpawnerState as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: VFXSpawnerState, ptr: ::unity2::IntPtr, owner: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(VFXSpawnerState, ::unity2::IntPtr, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, ptr, owner, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_spawner_state_wrapper {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VFXSpawnerState as ::unity2::ClassIdentity>::class(),
-                "CreateSpawnerStateWrapper",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <VFXSpawnerState as ::unity2::ClassIdentity>::NAME,
-                        "CreateSpawnerStateWrapper",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_spawner_state_wrapper(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::vfx::vfxspawnerstate::VFXSpawnerState {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::unity_engine::vfx::vfxspawnerstate::VFXSpawnerState =
-            ::core::mem::transmute(__lookup_create_spawner_state_wrapper::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_wrap_value {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VFXSpawnerState as ::unity2::ClassIdentity>::class(),
-                "SetWrapValue",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <VFXSpawnerState as ::unity2::ClassIdentity>::NAME,
-                        "SetWrapValue",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_wrap_value(this: VFXSpawnerState, ptr: ::unity2::IntPtr, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(VFXSpawnerState, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_wrap_value::get_method_info().method_ptr);
-        inner(this, ptr, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_release {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VFXSpawnerState as ::unity2::ClassIdentity>::class(),
-                "Release",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <VFXSpawnerState as ::unity2::ClassIdentity>::NAME,
-                        "Release",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn release(this: VFXSpawnerState, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(VFXSpawnerState, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_release::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_finalize {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VFXSpawnerState as ::unity2::ClassIdentity>::class(),
-                "Finalize",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <VFXSpawnerState as ::unity2::ClassIdentity>::NAME,
-                        "Finalize",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn finalize(this: VFXSpawnerState, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(VFXSpawnerState, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_finalize::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_dispose {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VFXSpawnerState as ::unity2::ClassIdentity>::class(),
-                "Dispose",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <VFXSpawnerState as ::unity2::ClassIdentity>::NAME,
-                        "Dispose",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn dispose(this: VFXSpawnerState, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(VFXSpawnerState, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_dispose::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_internal_destroy {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VFXSpawnerState as ::unity2::ClassIdentity>::class(),
-                "Internal_Destroy",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <VFXSpawnerState as ::unity2::ClassIdentity>::NAME,
-                        "Internal_Destroy",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn internal_destroy(ptr: ::unity2::IntPtr, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_internal_destroy::get_method_info().method_ptr);
-        inner(ptr, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __VFXSpawnerState_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< VFXSpawnerState as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < VFXSpawnerState as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : VFXSpawnerState , ptr : :: unity2 :: IntPtr , owner : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (VFXSpawnerState , :: unity2 :: IntPtr , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , ptr , owner , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_spawner_state_wrapper { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< VFXSpawnerState as :: unity2 :: ClassIdentity > :: class () , "CreateSpawnerStateWrapper" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < VFXSpawnerState as :: unity2 :: ClassIdentity > :: NAME , "CreateSpawnerStateWrapper" , e) , } } } pub unsafe fn create_spawner_state_wrapper (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vfx :: vfxspawnerstate :: VFXSpawnerState { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vfx :: vfxspawnerstate :: VFXSpawnerState = :: core :: mem :: transmute (__lookup_create_spawner_state_wrapper :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_wrap_value { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< VFXSpawnerState as :: unity2 :: ClassIdentity > :: class () , "SetWrapValue" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < VFXSpawnerState as :: unity2 :: ClassIdentity > :: NAME , "SetWrapValue" , e) , } } } pub unsafe fn set_wrap_value (this : VFXSpawnerState , ptr : :: unity2 :: IntPtr , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (VFXSpawnerState , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_wrap_value :: get_method_info () . method_ptr ,) ; inner (this , ptr , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_release { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< VFXSpawnerState as :: unity2 :: ClassIdentity > :: class () , "Release" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < VFXSpawnerState as :: unity2 :: ClassIdentity > :: NAME , "Release" , e) , } } } pub unsafe fn release (this : VFXSpawnerState , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (VFXSpawnerState , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_release :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_finalize { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< VFXSpawnerState as :: unity2 :: ClassIdentity > :: class () , "Finalize" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < VFXSpawnerState as :: unity2 :: ClassIdentity > :: NAME , "Finalize" , e) , } } } pub unsafe fn finalize (this : VFXSpawnerState , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (VFXSpawnerState , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_finalize :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_dispose { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< VFXSpawnerState as :: unity2 :: ClassIdentity > :: class () , "Dispose" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < VFXSpawnerState as :: unity2 :: ClassIdentity > :: NAME , "Dispose" , e) , } } } pub unsafe fn dispose (this : VFXSpawnerState , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (VFXSpawnerState , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_dispose :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_internal_destroy { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< VFXSpawnerState as :: unity2 :: ClassIdentity > :: class () , "Internal_Destroy" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < VFXSpawnerState as :: unity2 :: ClassIdentity > :: NAME , "Internal_Destroy" , e) , } } } pub unsafe fn internal_destroy (ptr : :: unity2 :: IntPtr , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_internal_destroy :: get_method_info () . method_ptr ,) ; inner (ptr , __unity2_method_info) } }
+
+#[cfg(feature = "unity_engine-vfx-vfxspawnerstate")]
+impl VFXSpawnerState { # [doc = "`CreateSpawnerStateWrapper()` overload"] pub fn create_spawner_state_wrapper () -> crate :: unity_engine :: vfx :: vfxspawnerstate :: VFXSpawnerState { unsafe { __VFXSpawnerState_unity2_raw :: create_spawner_state_wrapper (:: core :: option :: Option :: None) } } # [doc = "`Internal_Destroy(::unity2::IntPtr)` overload"] pub fn internal_destroy (ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { __VFXSpawnerState_unity2_raw :: internal_destroy (:: core :: convert :: Into :: into (ptr) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-vfx-vfxspawnerstate")]
+pub trait IVFXSpawnerStateMethods : IVFXSpawnerState { # [doc = "`.ctor(::unity2::IntPtr, bool)` overload"] fn ctor (self , ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr > , owner : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < VFXSpawnerState as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __VFXSpawnerState_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (ptr) , :: core :: convert :: Into :: into (owner) , :: core :: option :: Option :: None) } } # [doc = "`SetWrapValue(::unity2::IntPtr)` overload"] fn set_wrap_value (self , ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < VFXSpawnerState as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __VFXSpawnerState_unity2_raw :: set_wrap_value (__receiver , :: core :: convert :: Into :: into (ptr) , :: core :: option :: Option :: None) } } # [doc = "`Release()` overload"] fn release (self ,) -> () { unsafe { let __receiver = < VFXSpawnerState as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __VFXSpawnerState_unity2_raw :: release (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Finalize()` overload"] fn finalize (self ,) -> () { unsafe { let __receiver = < VFXSpawnerState as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __VFXSpawnerState_unity2_raw :: finalize (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Dispose()` overload"] fn dispose (self ,) -> () { unsafe { let __receiver = < VFXSpawnerState as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __VFXSpawnerState_unity2_raw :: dispose (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-vfx-vfxspawnerstate")]
+impl < __T : IVFXSpawnerState > IVFXSpawnerStateMethods for __T { }
+
+#[cfg(feature = "unity_engine-vfx-vfxspawnerstate")]
+impl VFXSpawnerState { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __VFXSpawnerState_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn create_spawner_state_wrapper_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __VFXSpawnerState_unity2_raw :: __lookup_create_spawner_state_wrapper :: get_method_info () } pub fn set_wrap_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __VFXSpawnerState_unity2_raw :: __lookup_set_wrap_value :: get_method_info () } pub fn release_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __VFXSpawnerState_unity2_raw :: __lookup_release :: get_method_info () } pub fn finalize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __VFXSpawnerState_unity2_raw :: __lookup_finalize :: get_method_info () } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __VFXSpawnerState_unity2_raw :: __lookup_dispose :: get_method_info () } pub fn internal_destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __VFXSpawnerState_unity2_raw :: __lookup_internal_destroy :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-vfx-vfxspawnerstate")]
 impl VFXSpawnerState {
-    #[doc = "`CreateSpawnerStateWrapper()` overload"]
-    pub fn create_spawner_state_wrapper() -> crate::unity_engine::vfx::vfxspawnerstate::VFXSpawnerState {
-        unsafe { __VFXSpawnerState_unity2_raw::create_spawner_state_wrapper(::core::option::Option::None) }
-    }
-
-    #[doc = "`Internal_Destroy(::unity2::IntPtr)` overload"]
-    pub fn internal_destroy(ptr: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
-        unsafe { __VFXSpawnerState_unity2_raw::internal_destroy(::core::convert::Into::into(ptr), ::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "unity_engine-vfx-vfxspawnerstate")]
-pub trait IVFXSpawnerStateMethods: IVFXSpawnerState {
-    #[doc = "`.ctor(::unity2::IntPtr, bool)` overload"]
-    fn ctor(self, ptr: impl ::core::convert::Into<::unity2::IntPtr>, owner: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver = <VFXSpawnerState as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __VFXSpawnerState_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(ptr),
-                ::core::convert::Into::into(owner),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetWrapValue(::unity2::IntPtr)` overload"]
-    fn set_wrap_value(self, ptr: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
-        unsafe {
-            let __receiver = <VFXSpawnerState as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __VFXSpawnerState_unity2_raw::set_wrap_value(__receiver, ::core::convert::Into::into(ptr), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Release()` overload"]
-    fn release(self) -> () {
-        unsafe {
-            let __receiver = <VFXSpawnerState as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __VFXSpawnerState_unity2_raw::release(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Finalize()` overload"]
-    fn finalize(self) -> () {
-        unsafe {
-            let __receiver = <VFXSpawnerState as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __VFXSpawnerState_unity2_raw::finalize(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Dispose()` overload"]
-    fn dispose(self) -> () {
-        unsafe {
-            let __receiver = <VFXSpawnerState as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __VFXSpawnerState_unity2_raw::dispose(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-vfx-vfxspawnerstate")]
-impl<__T: IVFXSpawnerState> IVFXSpawnerStateMethods for __T {}
-
-#[cfg(feature = "unity_engine-vfx-vfxspawnerstate")]
-impl VFXSpawnerState {
-    #[doc = "`.ctor(::unity2::IntPtr, bool)` — overload selector"]
-    pub fn new(ptr: ::unity2::IntPtr, owner: bool) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(VFXSpawnerState),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IVFXSpawnerStateMethods>::ctor(this, ptr, owner);
-        this
-    }
+# [doc = "`.ctor(::unity2::IntPtr, bool)` — overload selector"] pub fn new (ptr : :: unity2 :: IntPtr , owner : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (VFXSpawnerState) , :: core :: stringify ! (new) ,)) ; < Self as IVFXSpawnerStateMethods > :: ctor (this , ptr , owner) ; this }
 }
 
 #[cfg(feature = "unity_engine-vfx-vfxspawnerstate")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IVFXSpawnerState, IVFXSpawnerStateMethods, VFXSpawnerState};
+    pub use super::VFXSpawnerState;
+    pub use super::IVFXSpawnerState;
+    pub use super::IVFXSpawnerStateMethods;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

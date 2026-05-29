@@ -2,226 +2,54 @@
 
 #[cfg(feature = "unity_engine-polygoncollider2d-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            collider2d::{Collider2D, ICollider2D},
-            component::{Component, IComponent},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/polygoncollider2d/PolygonCollider2D.md"))]
-    #[::unity2::class(namespace = "UnityEngine", name = "PolygonCollider2D")]
-    #[parent(crate::unity_engine::collider2d::Collider2D)]
-    pub struct PolygonCollider2D {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: collider2d :: { Collider2D , ICollider2D }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/polygoncollider2d/PolygonCollider2D.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "PolygonCollider2D")] # [parent (crate :: unity_engine :: collider2d :: Collider2D)] pub struct PolygonCollider2D {}
+
 }
 
 #[cfg(feature = "unity_engine-polygoncollider2d-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-polygoncollider2d")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __PolygonCollider2D_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_total_point_count {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PolygonCollider2D as ::unity2::ClassIdentity>::class(),
-                "GetTotalPointCount",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PolygonCollider2D as ::unity2::ClassIdentity>::NAME,
-                        "GetTotalPointCount",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_total_point_count(this: PolygonCollider2D, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(PolygonCollider2D, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_total_point_count::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_path_count {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PolygonCollider2D as ::unity2::ClassIdentity>::class(),
-                "get_pathCount",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PolygonCollider2D as ::unity2::ClassIdentity>::NAME,
-                        "get_pathCount",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_path_count(this: PolygonCollider2D, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(PolygonCollider2D, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_path_count::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_path {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PolygonCollider2D as ::unity2::ClassIdentity>::class(),
-                "GetPath",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PolygonCollider2D as ::unity2::ClassIdentity>::NAME,
-                        "GetPath",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_path(
-        this: PolygonCollider2D,
-        index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Array<crate::unity_engine::vector2::Vector2> {
-        let inner: extern "C" fn(PolygonCollider2D, i32, ::unity2::OptionalMethod) -> ::unity2::Array<crate::unity_engine::vector2::Vector2> =
-            ::core::mem::transmute(__lookup_get_path::get_method_info().method_ptr);
-        inner(this, index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_path_internal {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PolygonCollider2D as ::unity2::ClassIdentity>::class(),
-                "GetPath_Internal",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PolygonCollider2D as ::unity2::ClassIdentity>::NAME,
-                        "GetPath_Internal",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_path_internal(
-        this: PolygonCollider2D,
-        index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Array<crate::unity_engine::vector2::Vector2> {
-        let inner: extern "C" fn(PolygonCollider2D, i32, ::unity2::OptionalMethod) -> ::unity2::Array<crate::unity_engine::vector2::Vector2> =
-            ::core::mem::transmute(__lookup_get_path_internal::get_method_info().method_ptr);
-        inner(this, index, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __PolygonCollider2D_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_total_point_count { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PolygonCollider2D as :: unity2 :: ClassIdentity > :: class () , "GetTotalPointCount" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PolygonCollider2D as :: unity2 :: ClassIdentity > :: NAME , "GetTotalPointCount" , e) , } } } pub unsafe fn get_total_point_count (this : PolygonCollider2D , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (PolygonCollider2D , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_total_point_count :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_path_count { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PolygonCollider2D as :: unity2 :: ClassIdentity > :: class () , "get_pathCount" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PolygonCollider2D as :: unity2 :: ClassIdentity > :: NAME , "get_pathCount" , e) , } } } pub unsafe fn get_path_count (this : PolygonCollider2D , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (PolygonCollider2D , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_path_count :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_path { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PolygonCollider2D as :: unity2 :: ClassIdentity > :: class () , "GetPath" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PolygonCollider2D as :: unity2 :: ClassIdentity > :: NAME , "GetPath" , e) , } } } pub unsafe fn get_path (this : PolygonCollider2D , index : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: unity_engine :: vector2 :: Vector2 > { let inner : extern "C" fn (PolygonCollider2D , i32 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: unity_engine :: vector2 :: Vector2 > = :: core :: mem :: transmute (__lookup_get_path :: get_method_info () . method_ptr ,) ; inner (this , index , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_path_internal { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PolygonCollider2D as :: unity2 :: ClassIdentity > :: class () , "GetPath_Internal" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PolygonCollider2D as :: unity2 :: ClassIdentity > :: NAME , "GetPath_Internal" , e) , } } } pub unsafe fn get_path_internal (this : PolygonCollider2D , index : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: unity_engine :: vector2 :: Vector2 > { let inner : extern "C" fn (PolygonCollider2D , i32 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: unity_engine :: vector2 :: Vector2 > = :: core :: mem :: transmute (__lookup_get_path_internal :: get_method_info () . method_ptr ,) ; inner (this , index , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-polygoncollider2d")]
-pub trait IPolygonCollider2DMethods: IPolygonCollider2D {
-    #[doc = "`GetTotalPointCount()` overload"]
-    fn get_total_point_count(self) -> i32 {
-        unsafe {
-            let __receiver = <PolygonCollider2D as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __PolygonCollider2D_unity2_raw::get_total_point_count(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_pathCount()` overload"]
-    fn get_path_count(self) -> i32 {
-        unsafe {
-            let __receiver = <PolygonCollider2D as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __PolygonCollider2D_unity2_raw::get_path_count(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetPath(i32)` overload"]
-    fn get_path(self, index: impl ::core::convert::Into<i32>) -> ::unity2::Array<crate::unity_engine::vector2::Vector2> {
-        unsafe {
-            let __receiver = <PolygonCollider2D as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __PolygonCollider2D_unity2_raw::get_path(__receiver, ::core::convert::Into::into(index), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetPath_Internal(i32)` overload"]
-    fn get_path_internal(self, index: impl ::core::convert::Into<i32>) -> ::unity2::Array<crate::unity_engine::vector2::Vector2> {
-        unsafe {
-            let __receiver = <PolygonCollider2D as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __PolygonCollider2D_unity2_raw::get_path_internal(__receiver, ::core::convert::Into::into(index), ::core::option::Option::None)
-        }
-    }
-}
+pub trait IPolygonCollider2DMethods : IPolygonCollider2D { # [doc = "`GetTotalPointCount()` overload"] fn get_total_point_count (self ,) -> i32 { unsafe { let __receiver = < PolygonCollider2D as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __PolygonCollider2D_unity2_raw :: get_total_point_count (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_pathCount()` overload"] fn get_path_count (self ,) -> i32 { unsafe { let __receiver = < PolygonCollider2D as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __PolygonCollider2D_unity2_raw :: get_path_count (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetPath(i32)` overload"] fn get_path (self , index : impl :: core :: convert :: Into < i32 >) -> :: unity2 :: Array < crate :: unity_engine :: vector2 :: Vector2 > { unsafe { let __receiver = < PolygonCollider2D as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __PolygonCollider2D_unity2_raw :: get_path (__receiver , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } # [doc = "`GetPath_Internal(i32)` overload"] fn get_path_internal (self , index : impl :: core :: convert :: Into < i32 >) -> :: unity2 :: Array < crate :: unity_engine :: vector2 :: Vector2 > { unsafe { let __receiver = < PolygonCollider2D as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __PolygonCollider2D_unity2_raw :: get_path_internal (__receiver , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-polygoncollider2d")]
-impl<__T: IPolygonCollider2D> IPolygonCollider2DMethods for __T {}
+impl < __T : IPolygonCollider2D > IPolygonCollider2DMethods for __T { }
+
+#[cfg(feature = "unity_engine-polygoncollider2d")]
+impl PolygonCollider2D { pub fn get_total_point_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PolygonCollider2D_unity2_raw :: __lookup_get_total_point_count :: get_method_info () } pub fn get_path_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PolygonCollider2D_unity2_raw :: __lookup_get_path_count :: get_method_info () } pub fn get_path_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PolygonCollider2D_unity2_raw :: __lookup_get_path :: get_method_info () } pub fn get_path_internal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PolygonCollider2D_unity2_raw :: __lookup_get_path_internal :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-polygoncollider2d")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IPolygonCollider2D, IPolygonCollider2DMethods, PolygonCollider2D};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-collider2d")]
-    pub use crate::unity_engine::collider2d::ICollider2DMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        system::object::IObject,
-        unity_engine::{behaviour::IBehaviour, collider2d::ICollider2D, component::IComponent, object_2::IObject_2},
-    };
+    pub use super::PolygonCollider2D;
+    pub use super::IPolygonCollider2D;
+    pub use super::IPolygonCollider2DMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::collider2d::ICollider2D;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-collider2d")] pub use crate::unity_engine::collider2d::ICollider2DMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

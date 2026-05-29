@@ -2,384 +2,66 @@
 
 #[cfg(feature = "unity_engine-xr-meshgenerationresult-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        valuetype::{IValueType, ValueType},
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/xr/meshgenerationresult/MeshGenerationResult.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct MeshGenerationResult {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
 
-    impl ::unity2::ClassIdentity for MeshGenerationResult {
-        const NAME: &'static str = "MeshGenerationResult";
-        const NAMESPACE: &'static str = "UnityEngine.XR";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/xr/meshgenerationresult/MeshGenerationResult.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct MeshGenerationResult {}
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+
+impl ::unity2::ClassIdentity for MeshGenerationResult {
+    const NAMESPACE: &'static str = "UnityEngine.XR";
+
+    const NAME: &'static str = "MeshGenerationResult";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for MeshGenerationResult {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl ::unity2::IlType for MeshGenerationResult {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
+
+}
+
 }
 
 #[cfg(feature = "unity_engine-xr-meshgenerationresult-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-xr-meshgenerationresult")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MeshGenerationResult_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_mesh_id {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MeshGenerationResult as ::unity2::ClassIdentity>::class(),
-                "get_MeshId",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MeshGenerationResult as ::unity2::ClassIdentity>::NAME,
-                        "get_MeshId",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_mesh_id(this: MeshGenerationResult, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::xr::meshid::MeshId {
-        let inner: extern "C" fn(MeshGenerationResult, ::unity2::OptionalMethod) -> crate::unity_engine::xr::meshid::MeshId =
-            ::core::mem::transmute(__lookup_get_mesh_id::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_mesh {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MeshGenerationResult as ::unity2::ClassIdentity>::class(),
-                "get_Mesh",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MeshGenerationResult as ::unity2::ClassIdentity>::NAME,
-                        "get_Mesh",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_mesh(this: MeshGenerationResult, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::mesh::Mesh {
-        let inner: extern "C" fn(MeshGenerationResult, ::unity2::OptionalMethod) -> crate::unity_engine::mesh::Mesh =
-            ::core::mem::transmute(__lookup_get_mesh::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_mesh_collider {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MeshGenerationResult as ::unity2::ClassIdentity>::class(),
-                "get_MeshCollider",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MeshGenerationResult as ::unity2::ClassIdentity>::NAME,
-                        "get_MeshCollider",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_mesh_collider(
-        this: MeshGenerationResult,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::meshcollider::MeshCollider {
-        let inner: extern "C" fn(MeshGenerationResult, ::unity2::OptionalMethod) -> crate::unity_engine::meshcollider::MeshCollider =
-            ::core::mem::transmute(__lookup_get_mesh_collider::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_status {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MeshGenerationResult as ::unity2::ClassIdentity>::class(),
-                "get_Status",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MeshGenerationResult as ::unity2::ClassIdentity>::NAME,
-                        "get_Status",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_status(
-        this: MeshGenerationResult,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::xr::meshgenerationstatus::MeshGenerationStatus {
-        let inner: extern "C" fn(
-            MeshGenerationResult,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::xr::meshgenerationstatus::MeshGenerationStatus =
-            ::core::mem::transmute(__lookup_get_status::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_attributes {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MeshGenerationResult as ::unity2::ClassIdentity>::class(),
-                "get_Attributes",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MeshGenerationResult as ::unity2::ClassIdentity>::NAME,
-                        "get_Attributes",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_attributes(
-        this: MeshGenerationResult,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::xr::meshvertexattributes::MeshVertexAttributes {
-        let inner: extern "C" fn(
-            MeshGenerationResult,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::xr::meshvertexattributes::MeshVertexAttributes =
-            ::core::mem::transmute(__lookup_get_attributes::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_equals {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MeshGenerationResult as ::unity2::ClassIdentity>::class(),
-                "Equals",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MeshGenerationResult as ::unity2::ClassIdentity>::NAME,
-                        "Equals",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn equals(this: MeshGenerationResult, obj: crate::system::object::Object, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(MeshGenerationResult, crate::system::object::Object, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_equals::get_method_info().method_ptr);
-        inner(this, obj, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_equals_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::xr::meshgenerationresult::MeshGenerationResult as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MeshGenerationResult as ::unity2::ClassIdentity>::class(),
-                "Equals",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MeshGenerationResult as ::unity2::ClassIdentity>::NAME,
-                        "Equals",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn equals_2(
-        this: MeshGenerationResult,
-        other: crate::unity_engine::xr::meshgenerationresult::MeshGenerationResult,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            MeshGenerationResult,
-            crate::unity_engine::xr::meshgenerationresult::MeshGenerationResult,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(__lookup_equals_2::get_method_info().method_ptr);
-        inner(this, other, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_hash_code {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MeshGenerationResult as ::unity2::ClassIdentity>::class(),
-                "GetHashCode",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MeshGenerationResult as ::unity2::ClassIdentity>::NAME,
-                        "GetHashCode",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_hash_code(this: MeshGenerationResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(MeshGenerationResult, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_hash_code::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MeshGenerationResult_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_mesh_id { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MeshGenerationResult as :: unity2 :: ClassIdentity > :: class () , "get_MeshId" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MeshGenerationResult as :: unity2 :: ClassIdentity > :: NAME , "get_MeshId" , e) , } } } pub unsafe fn get_mesh_id (this : MeshGenerationResult , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: xr :: meshid :: MeshId { let inner : extern "C" fn (MeshGenerationResult , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: xr :: meshid :: MeshId = :: core :: mem :: transmute (__lookup_get_mesh_id :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_mesh { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MeshGenerationResult as :: unity2 :: ClassIdentity > :: class () , "get_Mesh" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MeshGenerationResult as :: unity2 :: ClassIdentity > :: NAME , "get_Mesh" , e) , } } } pub unsafe fn get_mesh (this : MeshGenerationResult , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: mesh :: Mesh { let inner : extern "C" fn (MeshGenerationResult , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: mesh :: Mesh = :: core :: mem :: transmute (__lookup_get_mesh :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_mesh_collider { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MeshGenerationResult as :: unity2 :: ClassIdentity > :: class () , "get_MeshCollider" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MeshGenerationResult as :: unity2 :: ClassIdentity > :: NAME , "get_MeshCollider" , e) , } } } pub unsafe fn get_mesh_collider (this : MeshGenerationResult , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: meshcollider :: MeshCollider { let inner : extern "C" fn (MeshGenerationResult , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: meshcollider :: MeshCollider = :: core :: mem :: transmute (__lookup_get_mesh_collider :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_status { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MeshGenerationResult as :: unity2 :: ClassIdentity > :: class () , "get_Status" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MeshGenerationResult as :: unity2 :: ClassIdentity > :: NAME , "get_Status" , e) , } } } pub unsafe fn get_status (this : MeshGenerationResult , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: xr :: meshgenerationstatus :: MeshGenerationStatus { let inner : extern "C" fn (MeshGenerationResult , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: xr :: meshgenerationstatus :: MeshGenerationStatus = :: core :: mem :: transmute (__lookup_get_status :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_attributes { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MeshGenerationResult as :: unity2 :: ClassIdentity > :: class () , "get_Attributes" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MeshGenerationResult as :: unity2 :: ClassIdentity > :: NAME , "get_Attributes" , e) , } } } pub unsafe fn get_attributes (this : MeshGenerationResult , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: xr :: meshvertexattributes :: MeshVertexAttributes { let inner : extern "C" fn (MeshGenerationResult , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: xr :: meshvertexattributes :: MeshVertexAttributes = :: core :: mem :: transmute (__lookup_get_attributes :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_equals { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MeshGenerationResult as :: unity2 :: ClassIdentity > :: class () , "Equals" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MeshGenerationResult as :: unity2 :: ClassIdentity > :: NAME , "Equals" , e) , } } } pub unsafe fn equals (this : MeshGenerationResult , obj : crate :: system :: object :: Object , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (MeshGenerationResult , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_equals :: get_method_info () . method_ptr ,) ; inner (this , obj , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_equals_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: xr :: meshgenerationresult :: MeshGenerationResult as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MeshGenerationResult as :: unity2 :: ClassIdentity > :: class () , "Equals" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MeshGenerationResult as :: unity2 :: ClassIdentity > :: NAME , "Equals" , e) , } } } pub unsafe fn equals_2 (this : MeshGenerationResult , other : crate :: unity_engine :: xr :: meshgenerationresult :: MeshGenerationResult , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (MeshGenerationResult , crate :: unity_engine :: xr :: meshgenerationresult :: MeshGenerationResult , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_equals_2 :: get_method_info () . method_ptr ,) ; inner (this , other , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_hash_code { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MeshGenerationResult as :: unity2 :: ClassIdentity > :: class () , "GetHashCode" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MeshGenerationResult as :: unity2 :: ClassIdentity > :: NAME , "GetHashCode" , e) , } } } pub unsafe fn get_hash_code (this : MeshGenerationResult , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (MeshGenerationResult , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_hash_code :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-xr-meshgenerationresult")]
-impl MeshGenerationResult {
-    #[doc = "`get_MeshId()` overload"]
-    pub fn get_mesh_id(self) -> crate::unity_engine::xr::meshid::MeshId {
-        unsafe { __MeshGenerationResult_unity2_raw::get_mesh_id(self, ::core::option::Option::None) }
-    }
+impl MeshGenerationResult { # [doc = "`get_MeshId()` overload"] pub fn get_mesh_id (self ,) -> crate :: unity_engine :: xr :: meshid :: MeshId { unsafe { __MeshGenerationResult_unity2_raw :: get_mesh_id (self , :: core :: option :: Option :: None) } } # [doc = "`get_Mesh()` overload"] pub fn get_mesh (self ,) -> crate :: unity_engine :: mesh :: Mesh { unsafe { __MeshGenerationResult_unity2_raw :: get_mesh (self , :: core :: option :: Option :: None) } } # [doc = "`get_MeshCollider()` overload"] pub fn get_mesh_collider (self ,) -> crate :: unity_engine :: meshcollider :: MeshCollider { unsafe { __MeshGenerationResult_unity2_raw :: get_mesh_collider (self , :: core :: option :: Option :: None) } } # [doc = "`get_Status()` overload"] pub fn get_status (self ,) -> crate :: unity_engine :: xr :: meshgenerationstatus :: MeshGenerationStatus { unsafe { __MeshGenerationResult_unity2_raw :: get_status (self , :: core :: option :: Option :: None) } } # [doc = "`get_Attributes()` overload"] pub fn get_attributes (self ,) -> crate :: unity_engine :: xr :: meshvertexattributes :: MeshVertexAttributes { unsafe { __MeshGenerationResult_unity2_raw :: get_attributes (self , :: core :: option :: Option :: None) } } # [doc = "`Equals(crate::system::object::Object)` overload"] pub fn equals (self , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { __MeshGenerationResult_unity2_raw :: equals (self , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } # [doc = "`Equals(crate::unity_engine::xr::meshgenerationresult::MeshGenerationResult)` overload"] pub fn equals_2 (self , other : impl :: core :: convert :: Into < crate :: unity_engine :: xr :: meshgenerationresult :: MeshGenerationResult >) -> bool { unsafe { __MeshGenerationResult_unity2_raw :: equals_2 (self , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } # [doc = "`GetHashCode()` overload"] pub fn get_hash_code (self ,) -> i32 { unsafe { __MeshGenerationResult_unity2_raw :: get_hash_code (self , :: core :: option :: Option :: None) } } }
 
-    #[doc = "`get_Mesh()` overload"]
-    pub fn get_mesh(self) -> crate::unity_engine::mesh::Mesh {
-        unsafe { __MeshGenerationResult_unity2_raw::get_mesh(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_MeshCollider()` overload"]
-    pub fn get_mesh_collider(self) -> crate::unity_engine::meshcollider::MeshCollider {
-        unsafe { __MeshGenerationResult_unity2_raw::get_mesh_collider(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_Status()` overload"]
-    pub fn get_status(self) -> crate::unity_engine::xr::meshgenerationstatus::MeshGenerationStatus {
-        unsafe { __MeshGenerationResult_unity2_raw::get_status(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_Attributes()` overload"]
-    pub fn get_attributes(self) -> crate::unity_engine::xr::meshvertexattributes::MeshVertexAttributes {
-        unsafe { __MeshGenerationResult_unity2_raw::get_attributes(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`Equals(crate::system::object::Object)` overload"]
-    pub fn equals(self, obj: impl ::core::convert::Into<crate::system::object::Object>) -> bool {
-        unsafe { __MeshGenerationResult_unity2_raw::equals(self, ::core::convert::Into::into(obj), ::core::option::Option::None) }
-    }
-
-    #[doc = "`Equals(crate::unity_engine::xr::meshgenerationresult::MeshGenerationResult)` overload"]
-    pub fn equals_2(self, other: impl ::core::convert::Into<crate::unity_engine::xr::meshgenerationresult::MeshGenerationResult>) -> bool {
-        unsafe { __MeshGenerationResult_unity2_raw::equals_2(self, ::core::convert::Into::into(other), ::core::option::Option::None) }
-    }
-
-    #[doc = "`GetHashCode()` overload"]
-    pub fn get_hash_code(self) -> i32 {
-        unsafe { __MeshGenerationResult_unity2_raw::get_hash_code(self, ::core::option::Option::None) }
-    }
-}
+#[cfg(feature = "unity_engine-xr-meshgenerationresult")]
+impl MeshGenerationResult { pub fn get_mesh_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MeshGenerationResult_unity2_raw :: __lookup_get_mesh_id :: get_method_info () } pub fn get_mesh_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MeshGenerationResult_unity2_raw :: __lookup_get_mesh :: get_method_info () } pub fn get_mesh_collider_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MeshGenerationResult_unity2_raw :: __lookup_get_mesh_collider :: get_method_info () } pub fn get_status_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MeshGenerationResult_unity2_raw :: __lookup_get_status :: get_method_info () } pub fn get_attributes_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MeshGenerationResult_unity2_raw :: __lookup_get_attributes :: get_method_info () } pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MeshGenerationResult_unity2_raw :: __lookup_equals :: get_method_info () } pub fn equals_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MeshGenerationResult_unity2_raw :: __lookup_equals_2 :: get_method_info () } pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MeshGenerationResult_unity2_raw :: __lookup_get_hash_code :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-xr-meshgenerationresult")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::MeshGenerationResult;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::system::{object::IObject, valuetype::IValueType};
+    pub use crate::system::object::IObject;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }
